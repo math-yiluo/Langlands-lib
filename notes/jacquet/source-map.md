@@ -3,9 +3,9 @@
 Author: Worker 19, task `616fab20-3cae-49ab-94f4-d28791b2b93f`.
 Opposite-induction documentation contributed by Worker 264.
 Source audit updated on 22 October 2026 against the Library commit
-`dd9f9be571b3d712bb77031f3e6347bebd97a214`. The support/summand coverage entry
-also records contribution `f490f06d-c2c8-4618-ac7c-6d7bceab3750`, integrated
-with this update. Declaration names refer to the Library tree containing this
+`cddb0412f1a617f8f0476ab118a15618a386cf2d`. This update records the published
+support/summand and actual parabolic-cone families, with exact publication
+receipts below. Declaration names refer to the Library tree containing this
 note. Publication records identify earlier
 commits where the indicated contributions entered the Library. Review approval
 alone does not make an unpublished candidate a Library dependency.
@@ -114,7 +114,7 @@ the family yet. It is not a placeholder assertion.
 | **Fixed central character splitting.** C95 Thm 5.3.1 (stated p.48, proved p.49), Thm 5.4.1 with Prop. 5.4.2, pp.49–50, and Cor. 5.4.4, pp.50–51; used in S78 Cor. 5.4, p.100. | `GLFixedCentralCharacterSplittingStatement` and `HasCompactSmoothCoefficientsModCenter` in `Langlands.Representation.Classification.FixedCentralSplittingStatement`: sections of surjections onto, and retractions of injections out of, an admissible representation with compactly supported coefficients modulo the center, all with one fixed scalar central character. |
 | **Square-integrability prerequisites.** C95 pp.21–22 and §2.5, pp.28–29, including Prop. 2.5.3 (one coefficient suffices for an irreducible representation). | `GLSquareIntegrabilityPrerequisitesStatement` in `Langlands.Representation.Classification.SquareIntegrabilityStatement`: Haar-measure independence, unitary twists, the contragredient, and Prop. 2.5.3, over the analytic `IsSquareIntegrableModCenter`. |
 | **Jordan–Hölder multiplicities.** S78 §1, p.97 (`[π_2, π_1]`, the number of factors of a composition series of `π_1` equivalent to `π_2`); BZ77 §1.2, p.443 (`JH^0(π)` with multiplicities). Both treat the number as well defined without stating the Jordan–Hölder theorem. | `ObjectRepFiltration.factorMultiplicity`, `HasJordanHolderMultiplicity` and `JordanHolderMultiplicityIndependenceStatement` in `Langlands.Representation.Filtration.MultiplicityStatement`, over any field and monoid. `HasJordanHolderMultiplicity A τ m` asks for one composition series with exactly `m` factors equivalent to `τ`; the independence statement makes `m` unique. |
-| **Root/weight cone.** S78 Lemma 7.1, p.103; L-UBC Lemma 4.4, pp.61–62. Weight coefficients strictly positive; complementary root coefficients nonnegative and subtracted. | `RootWeightConeDecompositionStatement` in `Langlands.Representation.Classification.RootWeightConeStatement`. Only the support set is asserted unique. Its specialization to parabolic roots is not yet stated. |
+| **Root/weight cone.** S78 Lemma 7.1, p.103; L-UBC Lemma 4.4, pp.61–62. Weight coefficients strictly positive; complementary root coefficients nonnegative and subtracted. | `RootWeightConeDecompositionStatement` in `Langlands.Representation.Classification.RootWeightConeStatement`. Only the support set is asserted unique. Its actual block-parabolic specialization is published as `GLParabolicRootWeightConeStatement` in `Langlands.Representation.Classification.ParabolicConeStatement`: a unique consecutive coarsening, strictly decreasing averaged determinant exponents, nonpositive within-fiber residual partial sums, and upper-parabolic/embedded-Levi containments over every commutative ring. Central shifts are unrestricted; only the coarser shape is asserted unique. |
 | **Square-integrability exponent criterion.** C95 Thm 4.4.6, p.45; W03 Prop. III.1.1, p.263. Related S79 Thm 4.4.4, pp.177–180 (coefficients on bounded central strips), Thm 4.5.10, pp.188–189 (unitary central character, modulo the center). | Published: `GLSquareIntegrableExponentCriterionStatement` in `Langlands.Representation.Classification.SquareIntegrableExponentStatement`. For a nonzero admissible scalar-central-character representation: analytic square-integrability iff the central character is unitary and every normalized Jacquet exponent is strictly bounded by one on the closed negative chamber outside compact/central directions. |
 | **Tempered exponent criterion.** S78 p.98; S79 Lemma 4.5.3 and Cor. 4.5.4, pp.185–186, Lemma 4.5.6, p.187; W03 Prop. III.2.2, pp.265–266. | Published: `GLTemperedExponentCriterionStatement` in `Langlands.Representation.Classification.TemperedExponentStatement`. For an admissible scalar-central-character representation: analytic `L^(2+ε)` temperedness iff every normalized Jacquet exponent has norm at most one on the entire closed negative chamber. The one-block condition forces unitarity when the representation is nonzero. The analytic bridge is derived in the paired Markdown. |
 | **Tempered unitarity and induction.** S79 Cor. 4.5.13, p.190, and Lemma 4.5.15, p.191. | `GLTemperedInductionPrerequisitesStatement`, comprising `GLTemperedUnitarityStatement` and `GLTemperedInductionStatement` in `Langlands.Representation.Classification.TemperedInductionStatement`, is published. It states irreducible analytic tempered unitarity, and unitarizability of arbitrary irreducible tempered block-Levi input together with complete reducibility and analytic temperedness of its actual normalized induction. It assumes no tensor decomposition and asserts no general induction irreducibility. |
@@ -123,7 +123,7 @@ the family yet. It is not a placeholder assertion.
 | **Cuspidal Jacquet multiplicities.** S78 §2, pp.97–98; S79 Thm 5.4.1.1, pp.287–288, Thm 3.3.1, pp.126–127, §5.4.4, pp.307–311. For discrete-series data the quoted result covers only the maximal tempered summand. | The quasicuspidal case is stated for `GL_n`: `PadicQuasicuspidalJacquetTheorems` in `Langlands.Representation.CuspidalSupport.JacquetInductionStatement` (Bernstein–Zelevinsky 1977, Cor. 2.13; its `AssociatedJacquetFiltrationTheorem` gives a filtration of the normalized Jacquet module of quasicuspidal induction with one Weyl-transported quotient per minimal conjugating permutation). This is the `GL_n` counterpart of S79 Thm 5.4.1.1. Not yet stated: the multiplicity statements themselves (how many composition factors of the Jacquet module carry a given exponent or are equivalent to a given constituent, counted with `HasJordanHolderMultiplicity`), and the non-cuspidal case used for discrete-series data. |
 | **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. The finer multiplicity comparisons of Lemmas 5.3 and 5.6 are not yet stated. They need exponents, standard parabolic chains, Jacquet transitivity and tempered bounds; the counts are `HasJordanHolderMultiplicity`. Genericity must not replace regularity in the final statement. |
 | **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The relative recovery and cosocle multiplicities of Props. 5.7–5.9 and semistandard conjugacy of Cor. 6.2 remain unstated. |
-| **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The maximal-cone construction used in its proof remains unstated and needs the parabolic cone specialization, class exponents, larger-Levi maps and tempered criterion. |
+| **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level maximal-cone construction used in its proof remains unstated. The parabolic cone specialization is now published; its application still needs class exponents, larger-Levi maps and the tempered criterion. |
 | **Regular-chamber quotient theorem.** S78 Thm 4.1(1)–(3), p.99, proof §§5–7. | Published: `GLRegularLanglandsQuotientStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`, the conjunction of unique-head existence, ordered inducing-data uniqueness and exhaustion. The actual upper standard module uses irreducible analytically tempered blocks with strictly decreasing real determinant exponents. All central twists are allowed; one-block regularity is vacuous. Head existence and equality of irreducible quotient kernels are conclusions, not datum fields. |
 
 The two exponent-criterion pairs were independently accepted and published in
@@ -142,6 +142,12 @@ The discrete-series Jacquet contribution
 published at `e3c2fa98be720f63c6981efbbdf15cd223329e76`; the regular quotient
 contribution `f230e502-ddf4-4a2a-a2e9-b6c701272d51` version 1 is independently
 accepted and published at `2f8d1873fbaeb581719bc35dbf6f5c9f2d4a8df4`.
+The support/summand contribution `f490f06d-c2c8-4618-ac7c-6d7bceab3750`
+version 1 is independently accepted and published at
+`6c3030e24467888afeb3d4e60546c2301ce4f38d`.
+The actual parabolic-cone contribution
+`b47f086e-f36d-4aff-85b2-3d237d457424` version 1 is independently accepted
+and published at `67dfb8a24d65657a6bf35da262b1009383d873d5`.
 These publication statuses concern proposition definitions, not theorem proofs.
 
 ## Library statements reused by these families
@@ -232,8 +238,13 @@ is independently accepted and published at
 The pinned Library now contains
 `Langlands.Representation.Exponents.Chambers`: coordinate `centreHMap` and
 `leviHMap`, partial-sum positive/closed root cones, and their pairing and
-exponent-bound equivalences. Applying the abstract root/weight decomposition
-lemma to all required parabolic refinements is still a separate obligation.
+exponent-bound equivalences. The actual parabolic coordinate specialization is now stated in
+`GLParabolicRootWeightConeStatement`. For scalar exponents `r_i` and block
+sizes `n_i`, its residuals are `r_i - n_i t_(q i)`: each fiber has total zero
+and every prefix has nonpositive sum. The strictly decreasing `t` are the
+averaged determinant exponents on the unique coarsening. The statement also
+includes the actual matrix subgroup containments. Its proof and the
+representation-level maximal-exponent construction remain separate obligations.
 The two published exponent criteria use inequalities directly.
 
 The opposite-parabolic geometry is also published in
