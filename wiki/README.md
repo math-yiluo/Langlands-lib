@@ -32,7 +32,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Silberger's quotient theorem](../notes/henniart/silberger.md) — Completed reading of Silberger's quotient-theorem article, companion to the audit's section 4.1.
 - [Registered originals and reading record](../notes/henniart/sources.md) — Exact registered source files, fingerprints and reading extents behind the audit's citations.
 
-- [GL_n classification: statement coverage and dependencies](../notes/henniart/gln-classification-coverage.md) — Find the published cuspidal, segment, multisegment, tempered and unitary-generic statements and compatibilities, their pinned sources and dependencies, and remaining finite-length and proof obligations.
+- [GL_n classification: statement coverage and dependencies](../notes/henniart/gln-classification-coverage.md) — Find the published cuspidal, finite-length, segment, multisegment, tempered and unitary-generic statements and compatibilities, their pinned sources and dependencies, and remaining proof/source obligations.
 - [GL_n classification source boundaries](../notes/henniart/gln-classification-sources.md) - Auel's written converse, its corrections, and the precise scope of Jacquet's unitary induction theorem.
 - [Jacquet exponents and Langlands quotients: source map](../notes/jacquet/source-map.md) — Original-source locations, normalizations, published exponent, tempered, discrete-series Jacquet and regular quotient statements, and remaining statement and proof obligations for Silberger's quotient theorem on GL_n.
 

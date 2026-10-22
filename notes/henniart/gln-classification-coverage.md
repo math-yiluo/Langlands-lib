@@ -2,18 +2,19 @@
 
 Author: Worker 47, using the published cuspidal-induction pair of Worker 14
 and tempered-block pair of Worker 15, whose grouping interface was coordinated
-with Worker 19; the generic-product pair of Worker 118; and the unitary-generic
-pair of Workers 62 and 69; the core multisegment pair of Workers 34 and 126;
+with Worker 19; the generic-product and general-factor finite-length pairs
+of Worker 118; the unitary-generic pair of Workers 62 and 69;
+the core multisegment pair of Workers 34 and 126;
 the multisegment-compatibility pair of Workers 67, 126 and 111; and the
 unitary-compatibility pair of Workers 17, 192 and 69.
 
-This note maps eleven independently accepted and published statement pairs in
-Library commit `0686b4fa6c8df22845bba2e2668a723a41d47c84`. Their Lean and
+This note maps twelve independently accepted and published statement pairs in
+Library commit `dd9f9be571b3d712bb77031f3e6347bebd97a214`. Their Lean and
 Markdown bytes were checked against their accepted version-1 bundles at this
 commit. Every aggregate below is a proposition definition. Publication accepts
 the formulation and its source correspondence; it does not prove the proposition.
-The arbitrary-factor finite-length installment remains outstanding, as
-listed below.
+The statement installments cover the assigned classification scope;
+the substantive theorem proofs and source obligations remain as listed below.
 
 Use the current Library by Lean module and declaration name. The commit pins
 the versions described here, including the imported definitions. The linked
@@ -25,12 +26,12 @@ quantifiers, and longer derivations.
 The groups are actual `GeneralLinear n F.Carrier`, with `F : PadicField p`
 an actual finite extension of `ℚ_p`, for every prime `p`. A compatible
 `T : F.TopologicalData` supplies topology and normalized absolute value.
-All eleven aggregates quantify over every such `F` and `T`. Their clauses
+All twelve aggregates quantify over every such `F` and `T`. Their clauses
 usually require positive output rank. The core multisegment classification
 also includes rank zero: Ze80 explicitly includes the empty socle parameter;
 the empty head is a derived extension using the empty tensor product. The
-square-integrable-block classification and both new compatibility families
-require positive output rank. Segment rank and length are intrinsically
+square-integrable-block classification and the multisegment and unitary
+compatibility families require positive output rank. Segment rank and length are intrinsically
 positive. The complex representation carriers have explicit universes; they
 are not required to be finite-dimensional. The exhaustion statements use
 carriers in `Type (max uF uV)`, large enough for the actual induced spaces.
@@ -67,13 +68,14 @@ character. None of these predicates is defined by a classification image.
 
 ## Published aggregates
 
-The ten classification aggregates have namespace `Langlands.Classification`.
+The eleven classification aggregates have namespace `Langlands.Classification`.
 The cuspidal aggregate has namespace `Langlands.CuspidalSupport`.
 The module prefix in the table is `Langlands.Representation`.
 
 | Module and paired explanation | Aggregate declaration | First publication commit |
 | --- | --- | --- |
 | [CuspidalSupport.NormalizedCuspidalInductionStatement](../../Langlands/Representation/CuspidalSupport/NormalizedCuspidalInductionStatement.md) | `PadicCuspidalInductionTheorems` | `00f9ac4d66cfd40043d36dbe31ea364e1316cde9` |
+| [Classification.NormalizedProductFiniteLengthStatement](../../Langlands/Representation/Classification/NormalizedProductFiniteLengthStatement.md) | `PadicNormalizedProductFiniteLengthTheorems` | `5fabe967f891ba0c63610f6fc73911da14923207` |
 | [Classification.SupercuspidalProductStatement](../../Langlands/Representation/Classification/SupercuspidalProductStatement.md) | `PadicSupercuspidalProductIrreducibilityTheorems` | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
 | [Classification.SegmentConstituentStatement](../../Langlands/Representation/Classification/SegmentConstituentStatement.md) | `PadicSegmentConstituentTheorems` | `7465248e53e542902394c4c99a735557141755c3` |
 | [Classification.SegmentConstituentCompatibilityStatement](../../Langlands/Representation/Classification/SegmentConstituentCompatibilityStatement.md) | `PadicSegmentConstituentCompatibilityTheorems` | `30e8a0cddc6dfcb47d746bc7ba1d6a38de7f4198` |
@@ -85,7 +87,7 @@ The module prefix in the table is `Langlands.Representation`.
 | [Classification.MultisegmentConstituentCompatibilityStatement](../../Langlands/Representation/Classification/MultisegmentConstituentCompatibilityStatement.md) | `PadicMultisegmentConstituentCompatibilityTheorems` | `e3c2fa98be720f63c6981efbbdf15cd223329e76` |
 | [Classification.UnitaryGenericCompatibilityStatement](../../Langlands/Representation/Classification/UnitaryGenericCompatibilityStatement.md) | `AllPadicUnitaryGenericCompatibilityStatement` | `e3c2fa98be720f63c6981efbbdf15cd223329e76` |
 
-All eleven pairs are present with their accepted bytes at the snapshot above.
+All twelve pairs are present with their accepted bytes at the snapshot above.
 The following tables list the component proposition definitions, rather than
 only the final aggregates. Grouped rows still identify every component name.
 
@@ -103,14 +105,39 @@ belong to `Langlands.Classification`.
 | `SupercuspidalProductIrreducibilityCriterion` | A product of supercuspidal blocks is irreducible when no pair satisfies `ρ_j ≅ νρ_i`, with ranks included in the comparison. BZ77 Theorem 4.2, p.454; §4.1 defines the product. |
 | `SupercuspidalProductReducibilityTheorem` | Existence of such a pair makes the product reducible. BZ77 Remark 4.2(2), p.454, announces this; Ze80 Theorem 4.2, p.184, specializes to singleton segments. |
 
-The cuspidal finite-length clause does **not** cover H02 §2.5's induction
-of arbitrary irreducible GL factors. That separate statement obligation is
-listed below. Neither admissibility alone nor compilation supplies it.
+The cuspidal clause includes a factorial length bound under its cuspidality
+hypothesis. The separate general-factor installment below states finite
+length without that bound. BZ77 Remark 2.10, p.448, warns that the bound
+can fail without cuspidality.
+
+### General-factor induction finite length
+
+The names in this and the remaining component tables belong to
+`Langlands.Classification`.
+
+| Declaration | Content and exact source |
+| --- | --- |
+| `IrreducibleProductFiniteLength F T` | The actual normalized upper product induction of arbitrary irreducible smooth complex positive-rank GL factors has finite group-module length. H02 §2.5, pp.594–595. No cuspidality or admissibility hypothesis is added. |
+| `AdmissibleFiniteLengthProductPreservation F T` | The same conclusion holds when every factor is admissible and of finite group-module length. Derived from Ca95 Corollary 6.3.8, p.60, by the external tensor-product Levi translation recorded in the pair; both hypotheses are required. |
+
+Both clauses use `IsFiniteLength` on the actual induced representation's
+group-algebra module. They require positive total rank and an ordered
+`BlockShape` with positive block ranks summing to it. Factor carriers have
+universe `uV`, independent of the field universe `uF`; the induced function
+carrier has universe `max uF uV`. No finite-dimensional carrier assumption
+or numerical length bound is asserted. The second clause permits reducible
+and zero factors.
+
+The derived factor clause needs product-Levi admissibility, invariant-space
+comparison, tensor exactness and a finite composition filtration with
+irreducible tensor-product factors (BZ77 §2.7, p.447), followed by actual
+normalized-induction preservation. BZ77 Theorem 2.5 provides irreducible
+admissibility for an alternative route to the first clause. These remain
+proof obligations. The separate `Langlands.GLAdmissibleFiniteLengthStatement`
+concerns admissibility together with finite generation; it does not replace
+either induction clause.
 
 ### Segment constituents
-
-All names in this and the remaining component tables belong to
-`Langlands.Classification`.
 
 | Declaration | Content and exact source |
 | --- | --- |
@@ -304,8 +331,8 @@ quotient classification.
 
 ## Definition dependencies at the pinned Library version
 
-The following are exact direct imports of the eleven entry modules at
-`0686b4fa6c8df22845bba2e2668a723a41d47c84`. That commit also pins their
+The following are exact direct imports of the twelve entry modules at
+`dd9f9be571b3d712bb77031f3e6347bebd97a214`. That commit also pins their
 transitive imports and paired explanations. No draft import is used.
 `R` below abbreviates `Langlands.Representation`; `G` abbreviates
 `Langlands.Group.GL`.
@@ -313,6 +340,7 @@ transitive imports and paired explanations. No draft import is used.
 | Entry module after `R.` | Direct imports |
 | --- | --- |
 | `CuspidalSupport.NormalizedCuspidalInductionStatement` | `R.CuspidalSupport.LeviDefinitions`, `R.Category.Subquotients`, `R.Filtration.ObjectDefinitions`, `R.Induction.Definitions`, `G.BlockModulus` |
+| `Classification.NormalizedProductFiniteLengthStatement` | `R.Induction.BlockFactors`, `R.Category.Subquotients` |
 | `Classification.SupercuspidalProductStatement` | `R.Classification.SupercuspidalTwist`, `R.Induction.BlockFactors` |
 | `Classification.SegmentConstituentStatement` | `R.Classification.Segments` |
 | `Classification.SegmentConstituentCompatibilityStatement` | `R.Classification.Segments`, `R.Smooth.Contragredient.Definitions` |
@@ -326,7 +354,7 @@ transitive imports and paired explanations. No draft import is used.
 
 The imported statement modules supply proposition targets, not proofs;
 none is used as an assumed theorem. The transitive project closure consists
-of 88 modules with paired Markdown at this commit. The principal imported
+of 89 modules with paired Markdown at this commit. The principal imported
 construction interfaces are:
 
 | Published definition pair | Use in the statements |
@@ -348,17 +376,17 @@ construction interfaces are:
 These imports give meanings to propositions. A mathematical route mentioning
 induction transitivity, duality, classification or Haar-measure independence
 does not make those results hypotheses, proofs, or constructor fields in
-the eleven statement pairs.
+the twelve statement pairs.
 
-## Outstanding statement scope
+## Statement scope and adjacent assignments
 
-At this snapshot the following installment remains required by classification
-task `992634be-7c14-4c9f-aba0-be59fc810b85`. These task references identify
-coordination scope, not accepted mathematical dependencies.
-
-| Scope still to publish | Responsible task |
-| --- | --- |
-| H02 §2.5 finite length for arbitrary irreducible inducing factors, and the admissible finite-length preservation variant from Ca95 Corollary 6.3.8. | `4e7abbfd-8651-473e-b8f7-78f9228e3b3e`, revision 1. |
+The twelve published pairs cover the classification statement installments
+required by task `992634be-7c14-4c9f-aba0-be59fc810b85`, including both the
+cuspidal bound and general-factor induction finite length. The latter was
+published through focused task `4e7abbfd-8651-473e-b8f7-78f9228e3b3e`,
+revision 1. These task references identify coordination scope; the module
+names and Library pin above identify the mathematical content. This coverage
+claim concerns statements and their source/dependency correspondence.
 
 The regular-chamber quotient theorem and Jacquet exponent criteria belong to
 the companion branch described in the [Jacquet source map](../jacquet/source-map.md).
@@ -369,7 +397,7 @@ local factors and local converse are separate assignments.
 ## Remaining proof and source obligations
 
 None of the substantive component propositions listed here has a proof in
-these eleven statement files. Their paired Markdown records the proof routes
+these twelve statement files. Their paired Markdown records the proof routes
 and limitations. The following boundaries are especially relevant when
 selecting future proof tasks.
 
@@ -378,7 +406,11 @@ selecting future proof tasks.
   structure and Jordan–Hölder theory. The Weyl representative count needs
   its actual identification. Ca95 Corollary 6.3.8, p.60, assumes an
   **admissible** finite-length Levi representation. The product-factor
-  translation also needs tensor-product Levi admissibility/finite length.
+  translation needs product compact-open invariant-space comparison,
+  tensor exactness, and a composition filtration with irreducible tensor
+  factors, using BZ77 §2.7. Actual normalized-induction exactness,
+  transitivity, finite-length preservation and normalization comparison
+  remain proof obligations.
 - **Basic reducibility.** Ze80 Proposition 1.11, p.175, gives a sketch of
   reducibility of `ρ × νρ`. A complete written proof of that step remains
   a source obligation. It also enters the segment graph argument and the
@@ -443,6 +475,6 @@ Source abbreviations are BZ77 (Bernstein–Zelevinsky, 1977), Ze80
 draft), Ca19 (Casselman's *Jacquet modules*, revision 29 April 2019),
 Ja77 (Jacquet, 1977), JS83 (Jacquet–Shalika, 1983), Ro82
 (Rodier, 1982) and Ku94 (Kudla, 1994). Page numbers above are printed
-pages. The eleven paired explanations and the
+pages. The twelve paired explanations and the
 [registered-source record](sources.md) give retained editions and reading
 extents; this note makes no additional claim of complete-paper reading.
