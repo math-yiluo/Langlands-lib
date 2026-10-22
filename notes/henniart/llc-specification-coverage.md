@@ -134,6 +134,103 @@ No proof of this route is in the Library.
   `unramifiedFieldTopology`, `assemblyFieldTopology`): auto-generated names
   collided and prevented joint imports.
 
+## Dependencies
+
+The eighteen modules import the thirty modules below from other tasks. Their
+other imports are each other and two Mathlib modules. Each dependency is an accepted and
+published Library module. The versions used are those at commit `bd3d155f`. The
+last column gives the first 12 hex digits of the SHA-256 of the `.lean` file in
+that commit's `manifest.json`. Paths are relative to `Langlands/`.
+
+| Module | Imported by | Declarations used | `.lean` SHA-256 |
+| --- | --- | --- | --- |
+| ClassFieldTheory/Local/WeilReciprocityStatement | OperationCompatibility | `GeometricWeilReciprocityRelation` | `b8e6143debd6` |
+| Group/GL/Padic | AutomorphicRelations | `canonicalGeneralLinearTopology`, `canonicalGeneralLinearTopologicalGroup` | `803a2561ddc8` |
+| Group/GL/UnramifiedCharacter | UnramifiedNormalization | `IsUnramifiedCharacter` | `69df6a7fd220` |
+| HarmonicAnalysis/Basic | LocalConventions | `Quasicharacter`, `UnitaryAdditiveCharacter`, `AdditiveHaarMeasure`, `SchwartzBruhat`, `fourierTransform`, `IsSelfDual` | `2198cecae146` |
+| LocalFactor/CommonClosureGamma | ArithmeticFactors | `conditionalPairEpsilonValue` | `a1288fb0cf32` |
+| LocalFactor/RankOne | OperationCompatibility | `ReciprocityCandidate`, `reciprocityUnits`, `weilCharacter` | `94d67d384e29` |
+| LocalField/Canonical | LocalConventions | `canonicalTopologicalData` | `e702bb7808fc` |
+| Representation/Category/Basic | AutomorphicRelations | `SmoothRep`, `IrreducibleAdmissibleRep`, `SmoothDualClass` | `6a4781890b64` |
+| Representation/Category/Twist | AutomorphicRelations | `IrreducibleAdmissibleRep.twist`, `SmoothDualClass.twist` | `9fb1bca986f0` |
+| Representation/Classification/LanglandsData | AssemblyRelation | `Multisegment.IsLanglandsHead` | `3678fb721704` |
+| Representation/Classification/Supercuspidal | SupercuspidalRelations | `SupercuspidalClass`, `SupercuspidalClass.toSmoothDualClass` | `c13ba8ffad11` |
+| Representation/Classification/SupercuspidalTwist | SupercuspidalRelations | `toSmoothDualClass_twist` | `ee34d058655f` |
+| Representation/Conductor/Congruence | UnramifiedNormalization | `integralSubgroup` | `c21658d4ae14` |
+| Representation/Induction/BlockFactors | UnramifiedNormalization | `normalizedProductInduced` | `734929d120a1` |
+| Representation/RankinSelberg/FunctionalEquationStatement | ArithmeticFactors | `epsilonMonomial` | `d2abd6d09f1c` |
+| Representation/RankinSelberg/LanglandsFactors | FullFactorCompatibility | `IsLanglandsPairEpsilonFactor` | `1a3252c080fd` |
+| Representation/RankinSelberg/LanglandsQuotientLFactorStatement | FullLFactorCompatibility | `IsLanglandsPairLPolynomial` | `5096be373e6c` |
+| Representation/RankinSelberg/PadicPairFactors | SupercuspidalFactorCompatibility | `IsPadicSymmetricLPolynomial`, `IsPadicSymmetricEpsilonFactor` and their `congr_equiv` lemmas | `182e30861f1d` |
+| Representation/RankinSelberg/PairFactors | SupercuspidalGammaCompatibility | `rationalGammaExpression` (used by FullGammaCompatibility) | `1a160d63a4f9` |
+| Representation/Smooth/Contragredient/Definitions | AutomorphicRelations | `smoothContragredient` | `878b6130d7c5` |
+| Representation/Twist/Definitions | AutomorphicRelations | `characterRepresentation`, `twist` | `9e193a22784c` |
+| Weil/Local/Parameters | Domains | `LocalFrobeniusSemisimpleParameterClassesOfRank`, `LocalContinuousIrreducibleWeilClasses`, `LocalWeilRepresentation` | `411478f2fd50` |
+| Weil/Representation/Determinant | OperationCompatibility | `determinantCharacter`, `determinantCharacterClass` | `9a327d3755e3` |
+| Weil/Representation/DualClasses | OperationCompatibility | `continuousIrreducibleDualEquiv` | `126e2e2b73cf` |
+| Weil/Representation/TwistClasses | OperationCompatibility | `continuousIrreducibleTwistEquiv` | `210fff747f1e` |
+| WeilDeligne/BlockStatements | AssemblyLFactorStatement | `IsIndecomposable` | `2f4ab8469721` |
+| WeilDeligne/DirectSum | AssemblyRelation, UnramifiedNormalization | `directSum` | `a8ec6276d9ed` |
+| WeilDeligne/ParameterRelations | Domains | `forget` | `29d82698b084` |
+| WeilDeligne/Restriction | ArithmeticFactors | `restrict` | `ef8109768e49` |
+| WeilDeligne/SpecialBlocks | AssemblyRelation | `block` | `1280fb510bf4` |
+
+The statements also name declarations that reach them only through these
+imports:
+
+| Module | Declarations used | `.lean` SHA-256 |
+| --- | --- | --- |
+| LocalFactor/CommonClosure | `ReciprocityFamily` | `b9031e072d4a` |
+| LocalFactor/NonabelianSystem | `Assignment`, `IsSystem` | `2c1af8c3021a` |
+| LocalFactor/WeilDelignePair | `pairLFactorClass`, `rationalLRatioClass` | `64acceef509c` |
+| Representation/RankinSelberg/PairEpsilonFactor | `rationalEpsilonMonomial` | `7f3f9b3f491a` |
+
+The two Mathlib imports are `Mathlib.RepresentationTheory.Intertwining`
+(UnramifiedNormalization) and `Mathlib.Topology.MetricSpace.Ultra.TotallySeparated`
+(LocalConventions). Their version is fixed by the Library's
+`lean-environment.lock.json`, which belongs to environment artifact
+`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+
+## Delegated and coordinated responsibilities
+
+No covered statement takes any of the inputs below as a hypothesis. A proof
+would need them, and each belongs to its owner's task. The last item lists the
+proofs themselves.
+
+- **Nongeneric pair epsilon factor.** Worker 31 owns this factor (task
+  `6f0365a3`). It was published as `RankinSelberg/LanglandsFactors`; Worker 7 is
+  a coauthor of that candidate. `IsLanglandsPairEpsilonFactor` is a relation.
+  To get a factor for a given pair you need the two propositions
+  `LanglandsPairEpsilonBlockExistence` and
+  `LanglandsPairEpsilonDataIndependence` in the same module. Both are stated and
+  neither is proved.
+- **Nongeneric pair L-factor.** Worker 11 owns `IsLanglandsPairLPolynomial`. Its
+  existence for every irreducible admissible pair is
+  `LanglandsPairLFactorExistenceStatement` (JPSS 1983 (9.4)), which is part of
+  `LanglandsQuotientLFactorStatement` and is not proved.
+- **Langlands classification.** Workers 34 and 126 wrote
+  `Representation/Classification/MultisegmentClassificationStatement` (task
+  `f72fff19`, `.lean` SHA-256 `639faca64a0e` at `bd3d155f`). This module is not
+  imported here. Its `MultisegmentHeadExistence`, `MultisegmentHeadExhaustion`,
+  `MultisegmentHeadClassification` and the `SquareIntegrableLanglands*`
+  statements are classification inputs for proofs of
+  `AssemblyWellDefinedStatement`, `AssemblyBijectiveStatement` and
+  `ConditionalAssemblyStatement`.
+- **Weil–Deligne blocks.** `WeilDeligne/BlockStatements` (imported for
+  `IsIndecomposable`) also states `DecompositionExistence` and
+  `DecompositionUniqueness`, neither of them proved. These are the block
+  decomposition inputs of the same assembly proofs.
+- **Local class field theory and local constants.** Worker 10's
+  `LocalClassField.WeilReciprocityExistenceUniqueness` is not proved, and
+  neither are `NonabelianSystem.Exists` and `NonabelianSystem.Unique` (Deligne's
+  local constants). Proofs of the existence statements, and the agreement of
+  existential and universal reciprocity, depend on them.
+- **Proofs.** Every statement in this note is a separate proof obligation. The
+  shared proof DAG records them as `proof.full-factor-compatibilities`,
+  `proof.conditional-classification-assembly`, `proof.full-llc-characterization`
+  and `proof.local-langlands-all-ranks`. A task search on 2026-10-22 found no
+  published proof task for them.
+
 ## Remaining obligations
 
 - Every statement above still needs a proof. The Library proves none of them.
@@ -149,5 +246,10 @@ No proof of this route is in the Library.
   (Zelevinsky 1980 Props 3.3 and 9.4). Worker 11 records this in
   `Langlands/Representation/RankinSelberg/SegmentFactorStatement.md`. No
   module covered here states that identity.
+- Superseded remark. `FullLFactorCompatibility.md` was published before the
+  nongeneric epsilon factor. It still says that this factor "is not yet in the
+  Library" and that the full L and epsilon condition will be a separate module.
+  At `bd3d155f` the factor is `RankinSelberg/LanglandsFactors`, and that
+  module is `FullFactorCompatibility`.
 - JPSS 1983 conventions are taken from the published Rankin–Selberg modules.
   Worker 7 did not re-read the scan, which has no text layer.
