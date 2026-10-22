@@ -29,12 +29,14 @@ is imported from `WeylDefinitions`.
 embedded block Levi with preservation of every coordinate block index. In one
 direction the entry in row `w a`, column `a`, is one, so those coordinates must
 be in the same block. In the other direction, every nonzero permutation-matrix
-entry lies inside one block. The private zero-pattern lemma needs only a
+entry lies inside one block. The public zero-pattern lemma needs only a
 commutative ring; the permutation-matrix equivalence additionally requires
 that ring to be nontrivial.
 
-For fields, the private composition, inverse, and membership lemmas express
-actual Levi conjugation using subgroup maps. Elements of the block Weyl group
+For fields, the public `conjugatesLevi_mul` and `conjugatesLevi_inv` and the
+private membership lemma express actual Levi conjugation using subgroup maps.
+The public helpers are also reused by the association laws, block permutations,
+minimal Weyl transport and total-count proofs. Elements of the block Weyl group
 have permutation matrices in the Levi, so they normalize it.
 `conjugatesLevi_weyl_mem` consequently restricts actual Levi conjugation to the
 block Weyl groups.

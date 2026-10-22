@@ -9,7 +9,7 @@ universe u
 
 variable {n : ℕ} {R : Type u} [CommRing R]
 
-private theorem levi_mem_iff (B : BlockShape n) (g : GeneralLinear n R) :
+theorem levi_mem_iff (B : BlockShape n) (g : GeneralLinear n R) :
     g ∈ B.leviSubgroup R ↔
       ∀ a b, blockIndex B a ≠ blockIndex B b → g a b = 0 := by
   constructor
@@ -66,7 +66,7 @@ private theorem map_conj_mul {G : Type*} [Group G] (H : Subgroup G) (x y : G) :
 
 variable {F : Type u} [Field F] {B C D : BlockShape n}
 
-private theorem conjugatesLevi_mul {w v : Equiv.Perm (Fin n)}
+theorem conjugatesLevi_mul {w v : Equiv.Perm (Fin n)}
     (hw : ConjugatesLevi (F := F) B C w)
     (hv : ConjugatesLevi (F := F) C D v) :
     ConjugatesLevi (F := F) B D (v * w) := by
@@ -80,7 +80,7 @@ private theorem conjugatesLevi_mem_iff {w : Equiv.Perm (Fin n)}
   rw [← hw]
   exact Subgroup.mem_map_iff_mem (MulAut.conj (permutation n F w)).injective
 
-private theorem conjugatesLevi_inv {w : Equiv.Perm (Fin n)}
+theorem conjugatesLevi_inv {w : Equiv.Perm (Fin n)}
     (hw : ConjugatesLevi (F := F) B C w) :
     ConjugatesLevi (F := F) C B w⁻¹ := by
   apply Subgroup.ext
