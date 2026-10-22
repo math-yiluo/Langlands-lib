@@ -20,7 +20,9 @@ These definitions do not prove these assertions. The accompanying Haar-existence
 helper is proved. This contribution does not assert irreducibility of induction,
 existence or uniqueness of a Langlands quotient, or exhaustion by such quotients.
 Silberger's discrete-series support and summand assertions (Corollary 4.5.11 and
-Theorem 4.5.18) remain separate statement obligations.
+Theorem 4.5.18) are stated separately in
+[TemperedSupportStatement](TemperedSupportStatement.md). Their proofs and the
+weakly critical-exponent refinement remain open.
 
 ## Exact mathematical statement
 

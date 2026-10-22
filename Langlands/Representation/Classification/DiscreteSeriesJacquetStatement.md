@@ -166,8 +166,9 @@ used here. This justifies the stated quantification over every such measure.
 The analytic bridge, square-integrable-to-tempered implication, and Jacquet
 quotient criterion still require Lean proofs. Theorem 4.5.18(3), involving
 both normalized induced representations and their direct summands, and
-Corollary 4.5.11, giving discrete-series support, remain separate statement
-obligations. In particular this pair does not claim the whole of Theorem
+Corollary 4.5.11, giving discrete-series support, are stated separately in
+[TemperedSupportStatement](TemperedSupportStatement.md), with proofs still
+open. In particular this pair does not claim the whole of Theorem
 4.5.18, induction irreducibility, support uniqueness, or Langlands quotient
 classification. Corollary 4.5.11's weakly critical-exponent refinement remains
 open as well.
