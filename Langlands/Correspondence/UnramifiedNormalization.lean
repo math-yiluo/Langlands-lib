@@ -23,13 +23,15 @@ universe uF uP uA uV uW
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier :=
+local instance unramifiedFieldTopology : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
-local instance (n : ℕ) : TopologicalSpace (GeneralLinear n F.Carrier) :=
+local instance unramifiedGeneralLinearTopology (n : ℕ) :
+    TopologicalSpace (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopology n
 
-local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
+local instance unramifiedGeneralLinearTopologicalGroup (n : ℕ) :
+    IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopologicalGroup n
 
 /-- The hyperspecial maximal compact subgroup `GL_(r+1)(O_F)` of the actual group,
