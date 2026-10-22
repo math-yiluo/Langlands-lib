@@ -38,6 +38,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [GL_n classification source boundaries](../notes/henniart/gln-classification-sources.md) - Auel's written converse, its corrections, and the precise scope of Jacquet's unitary induction theorem.
 - [Local Langlands correspondence for GL_n: specification and statement coverage](../notes/henniart/llc-specification-coverage.md) — Find the published correspondence predicates, factor compatibilities, existence, uniqueness, characterization and assembly statements, with their sources, the exact versions of the modules they depend on, the inputs delegated to other tasks and the obligations still unproved.
 - [Jacquet exponents and Langlands quotients: source map](../notes/jacquet/source-map.md) — Original-source locations, normalizations, published exponent, tempered, discrete-series Jacquet and regular quotient statements, and remaining statement and proof obligations for Silberger's quotient theorem on GL_n.
+- [Rankin-Selberg local factors of pairs: statement coverage](../notes/local-factors/coverage.md) — Find the published statements on Whittaker models, JPSS integrals, epsilon, gamma and L factors of pairs, conductors and the local converse theorem, with their original sources, retained source gaps, the delegated Shahidi comparison and the open proof obligations.
 
 The links above are relative to the Library root (`paths.library`); the published
 notes themselves are in `paths.public_notes`.
