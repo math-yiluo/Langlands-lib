@@ -219,3 +219,6 @@ representations.
 The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). The module adds no
 axioms and contains no proof holes.
+
+The unchanged first- and second-factor action declarations, through `secondOp`,
+are imported from [`MultiplicityDefinitions`](MultiplicityDefinitions.md).

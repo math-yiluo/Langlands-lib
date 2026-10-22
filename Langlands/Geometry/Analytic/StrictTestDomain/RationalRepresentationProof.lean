@@ -7,6 +7,19 @@ universe u
 
 namespace Langlands.Analytic.StrictTestDomain
 
+namespace RationalData
+
+variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
+  {P : PresentedStrictAffinoidAlgebra K}
+
+/-- The no-common-zero input gives the algebraic unit-ideal condition. -/
+theorem generatesUnitIdeal (d : RationalData K P) :
+    RationalLocalization.GeneratesUnitIdeal K P d.arity d.denominator d.numerator :=
+  (RationalFactorization.generatesUnitIdeal_iff_no_common_zero _ _ _ _ _).mpr
+    d.no_common_zero
+
+end RationalData
+
 /-- The constructed rational quotient represents its closed rational locus for
 all presented strict affinoid tests, from the absence of common spectrum zeros. -/
 theorem rationalRepresentation : RationalRepresentationStatement.{u} := by

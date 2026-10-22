@@ -76,3 +76,8 @@ The proof also does not identify the enlarged Tate quotient with the source's
 relative power-series presentation `A{p⁻¹T}/(gT_i − f_i)`. General affinoid
 tests, arbitrary positive radii, structure sheaves, analytic atlases and sites
 remain separate work.
+
+`RationalData.generatesUnitIdeal` packages the same no-common-zero implication
+for supplied rational data. It is shared by
+[`RationalPullbackProof`](RationalPullbackProof.md) and
+[`RationalLimits`](RationalLimits.md).

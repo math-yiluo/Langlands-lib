@@ -1,4 +1,5 @@
 import Langlands.Representation.Smooth.Factorization.TwoFactorStatement
+import Langlands.Representation.Smooth.Factorization.MultiplicityDefinitions
 import Langlands.Representation.Smooth.Schur.Proof
 import Langlands.Representation.Compact.ProjectionProof
 import Langlands.Representation.Hecke.CommonInvarianceProof
@@ -116,42 +117,6 @@ section Factors
 variable {G₁ : Type uG₁} {G₂ : Type uG₂} [Group G₁] [Group G₂]
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
 variable (ρ : Representation ℂ (G₁ × G₂) V)
-
-/-- The restriction of a representation of `G₁ × G₂` to the first factor. -/
-def first : Representation ℂ G₁ V := ρ.comp (MonoidHom.inl G₁ G₂)
-
-/-- The restriction of a representation of `G₁ × G₂` to the second factor. -/
-def second : Representation ℂ G₂ V := ρ.comp (MonoidHom.inr G₁ G₂)
-
-theorem first_apply (g : G₁) (v : V) : first ρ g v = ρ (g, 1) v := rfl
-
-theorem second_apply (g : G₂) (v : V) : second ρ g v = ρ (1, g) v := rfl
-
-theorem second_first_apply (g : G₁ × G₂) (v : V) :
-    second ρ g.2 (first ρ g.1 v) = ρ g v := by
-  have h : ((1 : G₁), g.2) * (g.1, (1 : G₂)) = g := by ext <;> simp
-  rw [first_apply, second_apply, ← Module.End.mul_apply, ← map_mul, h]
-
-theorem first_second_apply (g : G₁ × G₂) (v : V) :
-    first ρ g.1 (second ρ g.2 v) = ρ g v := by
-  have h : (g.1, (1 : G₂)) * ((1 : G₁), g.2) = g := by ext <;> simp
-  rw [first_apply, second_apply, ← Module.End.mul_apply, ← map_mul, h]
-
-theorem first_second_comm (g₁ : G₁) (g₂ : G₂) (v : V) :
-    first ρ g₁ (second ρ g₂ v) = second ρ g₂ (first ρ g₁ v) := by
-  rw [first_second_apply ρ (g₁, g₂), second_first_apply ρ (g₁, g₂)]
-
-theorem first_mul_apply (g h : G₁) (v : V) :
-    first ρ g (first ρ h v) = first ρ (g * h) v := by
-  rw [map_mul, Module.End.mul_apply]
-
-/-- The action of an element of the second factor, as an endomorphism of the
-restriction to the first factor. -/
-def secondOp (g : G₂) : (first ρ).IntertwiningMap (first ρ) where
-  toLinearMap := second ρ g
-  isIntertwining' h := by
-    ext v
-    exact (first_second_comm ρ h g v).symm
 
 /-- The subrepresentation of the first-factor restriction spanned by the orbit
 of a vector. -/

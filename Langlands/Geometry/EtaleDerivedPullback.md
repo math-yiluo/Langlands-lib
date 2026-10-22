@@ -98,9 +98,9 @@ above describe the implemented Lean proofs. No theorem from the original
 Harris or Berkovich literature is asserted here.
 
 The scope is ordinary module-valued cohomology on small étale sites and étale
-scheme morphisms. The module does not yet prove that these cohomology maps
-respect scheme-morphism identities and compositions in every degree; those
-compatibilities are separate subsequent obligations. General scheme
+scheme morphisms. Compatibility with scheme-morphism identities and
+compositions in every degree is proved in
+[`EtaleDerivedPullbackFunctoriality`](EtaleDerivedPullbackFunctoriality.md). General scheme
 morphisms, analytic sites, compact support, smooth equivariant or Galois
 actions, and specialization to Harris's spaces are likewise outside this
 construction group and remain part of the broader framework work.
