@@ -1,0 +1,207 @@
+# Iwasawa decomposition of `GL_(n+1)` over a valued field
+
+This module proves the decomposition `g = u · ϖ^λ · k` of an invertible matrix
+into an upper unipotent matrix, a diagonal power of a uniformizing element and
+an integral matrix. It also proves that the exponent `λ` is unique, and that
+for a dominant exponent the unipotent part is unique modulo integral unipotent
+matrices. All declarations are in the namespace
+`Langlands.GeneralLinear.Iwasawa`.
+
+The matrix field `F` is arbitrary. It carries an explicit valuation
+`v : Valuation F Γ₀` with values in a linearly ordered commutative group with
+zero (Mathlib's multiplicative convention, so `x` is integral when
+`v(x) ≤ 1`). The integers are `O = v.integer`. The integral group
+`GL_(n+1)(O)` is the published `integralSubgroup v.integer n` of
+`Langlands.Representation.Conductor.Congruence`: the image of
+`GL_(n+1)(O)` in `GL_(n+1)(F)`, characterized by `mem_integralSubgroup` as the
+matrices `g` with `g` and `g⁻¹` entrywise integral. The upper unipotent group
+is Worker 6's published `upperUnipotent (n + 1) F` (upper triangular with unit
+diagonal). No topology and no local-field hypothesis is used, except in the
+last section. The rank is `n + 1`, so `GL_1` is included.
+
+## Integral matrices and elementary operations
+
+- `div_mem_integer`: if `a ≠ 0` and `v(b) ≤ v(a)`, then `b / a ∈ O`.
+- `integralRange v m` is the image of `GL_m(O)` in `GL_m(F)` in every rank
+  `m`, including rank zero, which the recursion below needs.
+  `integralRange_succ` proves that in rank `n + 1` it is, by definition, the
+  published `integralSubgroup v.integer n`.
+- `ofInverse A B hAB hBA` is the invertible matrix `A` with explicit two-sided
+  inverse `B`. `ofInverse_mem` proves that it lies in the integral group when
+  `A` and `B` are entrywise integral.
+- `transvection_mem`: Mathlib's transvection `1 + c E_(i,j)` has integral
+  entries when `c ∈ O`.
+- `rankInclusion_castSucc_castSucc`, `rankInclusion_castSucc_last`,
+  `rankInclusion_last_castSucc` and `rankInclusion_last_last` compute the
+  entries of the published `rankInclusion 1 g = diag(g, 1)` (Worker 6's
+  `Langlands.Group.GL.RankMaps`) over any commutative ring. They are the
+  rank-one cases of the published `blockSum_apply_*` lemmas, stated with
+  `Fin.castSucc` and `Fin.last` indices.
+- `rankInclusion_map` proves that `diag(·, 1)` commutes with the coefficient
+  map from `O` to `F`, and `rankInclusion_mem` deduces that `diag(k, 1)` is
+  integral in rank `m + 1` when `k ∈ integralRange v m`.
+
+## Column reduction to upper triangular form
+
+Write `last` for the last index of `Fin (m + 1)`.
+
+- `exists_last_dominant`: for every `g ∈ GL_(m+1)(F)` there is an integral `k`
+  such that the last diagonal entry of `g k` is nonzero and has the largest
+  valuation in the last row of `g k`. If the maximum of the last row is not
+  already attained at the diagonal, a column transvection adds the column of a
+  maximal entry to the last column. The ultrametric inequality then makes the
+  new last entry maximal. The last row of `g` is nonzero because `det g ≠ 0`.
+- `lastRowClearing c` is the matrix whose only nonzero entries are `c j` at
+  positions `(last, j)` with `j ≠ last`. `lastRowClearing_mul_self` proves that
+  its square is zero, so `1 - N` has inverse `1 + N`.
+- `exists_clear_last_row`: if the last diagonal entry `h_(last,last)` of `h` is
+  nonzero and of maximal valuation in its row, then right multiplication by the
+  integral matrix `1 - N`, with `N = lastRowClearing (j ↦ h_(last,j) /
+  h_(last,last))`, makes the last row vanish off the diagonal and keeps the
+  last diagonal entry. The entries of `N` are integral by `div_mem_integer`.
+- `det_eq_last_mul_det_castSucc`: if the last row of a square matrix vanishes
+  off the diagonal, its determinant is the last diagonal entry times the
+  determinant of the matrix with the last row and column removed (Laplace
+  expansion along the last row).
+- `exists_mul_upperTriangular`: for every `m` and every `g ∈ GL_m(F)` there is
+  `k ∈ integralRange v m` with `g k` upper triangular. The proof is by
+  induction on `m`. It clears the last row with the two previous steps and
+  applies the induction hypothesis to the upper-left block, which is invertible
+  by `det_eq_last_mul_det_castSucc`. The resulting integral matrix `k₃` acts
+  through `diag(k₃, 1)`.
+- `exists_upperTriangular_mul`: every `g ∈ GL_(n+1)(F)` is `b k` with `b`
+  invertible upper triangular and `k ∈ integralSubgroup v.integer n`.
+
+## Diagonal matrices and the uniformizing element
+
+- `diagonalUnits` is the monoid homomorphism from `(Fin m → Fˣ)` to `GL_m(F)`
+  sending `d` to `diag(d_0, …, d_(m-1))`, and `diagonalUnits_val` computes its
+  underlying matrix.
+- `IsUniformizingElement v ϖ` is the proposition that the unit `ϖ` satisfies
+  `v(ϖ) < 1` and that every nonzero `x ∈ F` has `v(x) = v(ϖ)^m` for some
+  integer `m`. Equivalently, the image of `Fˣ` under `v` is the infinite cyclic
+  group generated by `v(ϖ) < 1`. This says that `v` is a discrete valuation and
+  `ϖ` a uniformizer; for the trivial valuation no such `ϖ` exists.
+- `torus ϖ λ` is `diag(ϖ^(λ_0), …, ϖ^(λ_(m-1)))` for `λ : Fin m → ℤ`, defined
+  through `diagonalUnits`. `torus_val`, `torus_inv_val` and `torus_inv` compute
+  it and its inverse.
+- `diagonalUnits_mem`: a diagonal matrix whose entries have valuation one is in
+  the integral group.
+- `upperTriangular_mul_apply_self`: the diagonal entries of a product of upper
+  triangular matrices are the products of the diagonal entries. This is a
+  public counterpart of a private lemma of `Langlands.Group.GL.UpperUnipotent`.
+- `valuation_diag_eq_one`: an upper triangular element of the integral group
+  has diagonal entries of valuation one. Its inverse is again upper triangular,
+  so the diagonal entries of `b` and `b⁻¹` are integral and multiply to one.
+
+## The decomposition
+
+`exists_iwasawa hϖ g`: for `hϖ : IsUniformizingElement v ϖ` and every
+`g ∈ GL_(n+1)(F)` there are `u ∈ upperUnipotent (n + 1) F`, `λ : Fin (n + 1) →
+ℤ` and `k ∈ integralSubgroup v.integer n` with
+
+`g = u * torus ϖ λ * k`.
+
+Write `g = b k₀` as above. Each diagonal entry `b_(i,i)` is nonzero, so
+`v(b_(i,i)) = v(ϖ)^(λ_i)` for some integer `λ_i`. The unit
+`ε_i = b_(i,i) ϖ^(-λ_i)` has valuation one. Then `u = b · diag(b_(i,i))⁻¹` is
+upper unipotent and `k = diag(ε) k₀` is integral.
+
+## Uniqueness
+
+- `diagonalUnits_mul_mul_apply` computes the entries of `diag(d) · b · diag(e)`
+  as `d_i b_(i,j) e_j`, and `valuation_pos` records `0 < v(ϖ)` for a unit `ϖ`.
+- `iwasawa_exponent_unique`: if
+  `u * torus ϖ λ * k = u' * torus ϖ λ' * k'` with `u, u'` upper unipotent and
+  `k, k'` integral, then `λ = λ'`. Indeed
+  `(ϖ^λ')⁻¹ (u'⁻¹ u) ϖ^λ = k' k⁻¹` is integral and upper triangular with
+  diagonal entries `ϖ^(λ_i - λ'_i)`. These have valuation one by
+  `valuation_diag_eq_one`, and `m ↦ v(ϖ)^m` is injective because
+  `v(ϖ) < 1`. Together with `exists_iwasawa`, this says that the double cosets
+  `N ϖ^λ GL_(n+1)(O)` with `λ ∈ ℤ^(n+1)` are pairwise disjoint and cover
+  `GL_(n+1)(F)`.
+- `torus_conj_entry_mem`: let `v(ϖ) ≤ 1` and let `λ` be antitone, i.e.
+  `λ_0 ≥ λ_1 ≥ … ≥ λ_n` (Mathlib's `Antitone`). If `w = ϖ^λ b ϖ^(-λ)` is upper
+  triangular and `b` has integral entries, then `w` has integral entries. The
+  entries above the diagonal are `ϖ^(λ_i - λ_j) b_(i,j)` with
+  `λ_i - λ_j ≥ 0`.
+- `iwasawa_unipotent_ambiguity`: for `v(ϖ) ≤ 1`, antitone `λ`, upper unipotent
+  `u, u'` and integral `k, k'`, the equation
+  `u * torus ϖ λ * k = u' * torus ϖ λ * k'` implies
+  `u'⁻¹ * u ∈ integralSubgroup v.integer n`. Here `u'⁻¹ u` and its inverse are
+  upper triangular conjugates of the integral matrices `k' k⁻¹` and `k k'⁻¹`,
+  so `torus_conj_entry_mem` applies to both. Since `u'⁻¹ u` is also upper
+  unipotent, `u = u' n` with `n` an integral point of the upper unipotent
+  group. Consequently, for a function on the upper unipotent group that is
+  right invariant under its integral points (for example a character trivial
+  on them), the value at the unipotent part of a decomposition with dominant
+  exponent does not depend on the decomposition. No statement is made about non-dominant
+  exponents.
+
+## The exponent of an invertible matrix
+
+- `exponent hϖ g : Fin (n + 1) → ℤ` is the exponent of a decomposition chosen
+  from `exists_iwasawa`. `exists_eq_exponent` gives a decomposition
+  `g = u * torus ϖ (exponent hϖ g) * k`.
+- `exponent_eq`: the exponent of any decomposition `g = u * torus ϖ λ * k` is
+  `exponent hϖ g`, by `iwasawa_exponent_unique`. So the choice affects only the
+  proof, not the value.
+- `exponent_torus`: `exponent hϖ (torus ϖ λ) = λ`.
+- `exponent_mul_integral` and `exponent_unipotent_mul`: the exponent is right
+  invariant under the integral group and left invariant under the upper
+  unipotent group.
+
+## Nonarchimedean local fields
+
+`exists_isUniformizingElement K` proves that a nonarchimedean local field
+`K` (Mathlib's `IsNonarchimedeanLocalField K`, with its `ValuativeRel K` and
+topology) has a unit `ϖ` with `IsUniformizingElement (ValuativeRel.valuation K)
+ϖ`. Mathlib's order isomorphism `valueGroupWithZeroIsoInt K` identifies the
+value group with zero with `ℤᵐ⁰`. The element `ϖ` is any element whose
+valuation corresponds to `exp(-1)`, and the integer exponent of `y ≠ 0` is
+`-log` of the image of `v(y)`. So all results above apply to `GL_(n+1)(K)`, whose integral group
+`integralSubgroup (ValuativeRel.valuation K).integer n` is `GL_(n+1)(O_K)`.
+
+## Provenance and scope
+
+Takuro Shintani, *On an explicit formula for class-1 "Whittaker functions" on
+GL_n over P-adic fields*, Proc. Japan Acad. 52 (1976), no. 4, 180–182,
+DOI 10.3792/pja/1195518347.
+
+- Literature ID: `shintani-1976-class-one-whittaker`.
+- SHA-256: `08c9229a7c54f07b4dffee55f3ab6bbb4fcb03e9c7eb0668451eabb3b1b0ab94`.
+- Retained PDF:
+  `/home/taskhub/central-library/Shintani--On an explicit formula for class-1 Whittaker functions on GL(n) over p-adic fields--1976.pdf`.
+
+On page 180, with `k` a finite extension of `Q_p`, `O` its integers, `π` a
+generator of the maximal ideal, `G = GL_n(k)`, `K = GL_n(O)` and `N` the upper
+unipotent group, Shintani writes `π^f` for the diagonal matrix with `i`-th
+diagonal entry `π^(f_i)` and states, as known, that `G` is the disjoint union
+of the double cosets `N π^f K` over `f ∈ Z^n`. This page was read directly.
+`exists_iwasawa` and `iwasawa_exponent_unique` are this statement in rank
+`n + 1`, with `torus ϖ λ` for `π^f` and indices starting at `0`. The same page uses it to evaluate a class-1
+Whittaker function from its values `w(f) = W(π^f)`, and notes that `w(f)`
+vanishes unless `f_1 ≥ f_2 ≥ … ≥ f_n` because the additive character has
+conductor `O`. `iwasawa_unipotent_ambiguity` is the internal well-definedness
+fact for the dominant exponents that this evaluation uses. The vanishing for
+non-dominant `f` and the Whittaker functions themselves are not formalized
+here.
+
+Generalizing from `p`-adic fields to an arbitrary field with a valuation and an
+explicit uniformizing element is derived; nonarchimedean local fields are the
+instance supplied by `exists_isUniformizingElement`. The proof route (column
+reduction of the last row by integral transvections and a square-zero clearing
+matrix, then induction on the rank) is internal; Shintani gives no proof. The
+chosen `exponent` and its invariance lemmas are internal conveniences.
+
+## Dependencies
+
+Imports are the published modules
+`Langlands.Representation.Conductor.Congruence` (`integralSubgroup`,
+`mem_integralSubgroup`), `Langlands.Group.GL.UpperUnipotent`
+(`upperUnipotent`) and `Langlands.Group.GL.RankMaps` (`rankInclusion`,
+`blockSum_apply_*`), together with `Mathlib.LinearAlgebra.Matrix.Transvection`.
+They are present in Library commit
+`f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f`. Environment
+`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. Worker 43 authored this module.
