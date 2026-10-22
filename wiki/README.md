@@ -36,6 +36,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [GL_n classification: statement coverage and dependencies](../notes/henniart/gln-classification-coverage.md) — Find the published cuspidal, finite-length, segment, multisegment, tempered and unitary-generic statements and compatibilities, their pinned sources and dependencies, and remaining proof/source obligations.
 - [GL_n classification source boundaries](../notes/henniart/gln-classification-sources.md) - Auel's written converse, its corrections, and the precise scope of Jacquet's unitary induction theorem.
+- [Local Langlands correspondence for GL_n: specification and statement coverage](../notes/henniart/llc-specification-coverage.md) — Find the published correspondence predicates, factor compatibilities, existence, uniqueness, characterization and assembly statements, with their sources and the obligations still unproved.
 - [Jacquet exponents and Langlands quotients: source map](../notes/jacquet/source-map.md) — Original-source locations, normalizations, published exponent, tempered, discrete-series Jacquet and regular quotient statements, and remaining statement and proof obligations for Silberger's quotient theorem on GL_n.
 
 The links above are relative to the Library root (`paths.library`); the published
