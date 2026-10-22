@@ -9,8 +9,9 @@ smooth-dual coefficients and an actual smooth representation `A`, the
 `c`-isotypic subrepresentation is the supremum of the ranges of all intertwiners
 from representatives of `c` into `A`. The `c`-annihilator is the infimum of the
 kernels of all intertwiners from `A` to representatives of `c`. These intrinsic
-lattice objects correspond to Bernstein--Zelevinsky's (1976, §§2.43--2.44)
-`E_ω` and `E_ω^⊥`. No complement, projector, splitting or finiteness is asserted.
+lattice objects are intended as targets for Bernstein--Zelevinsky's (1976,
+§§2.43--2.44) `E_ω` and `E_ω^⊥`; no identification with them is proved here.
+No complement, projector, splitting or finiteness is asserted.
 The representative carrier universe `uV` and the ambient carrier universes are
 independent.
 -/
