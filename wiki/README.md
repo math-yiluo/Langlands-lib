@@ -18,6 +18,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Imperial FLT Haar scaling audit](../notes/reuse/imperial-haar-audit-2026-10-21.md) — Exact dependencies, adapted axiom checks, normalization and topology gaps, and a focused determinant-scaling reuse plan.
 - [External Lean reuse survey](../notes/reuse/external-lean-survey-2026-10-21.md) — Pinned external results, maturity, licenses, version differences and focused audit tasks for reusable FLT, CFT and epsilon-factor infrastructure.
 - [Ueda epsilon_FML local constants: normalization audit](../notes/reuse/epsilon-fml-local-constant-audit.md) — How Ueda's First Main Lemma `Δ` relates to the project's rank-one epsilon and self-dual constant, with pins, license, evidence limits, an adapt verdict, port units and the epsilon_SML boundary.
+- [Finite-adele base change: Imperial and Anthropic FLT audit](../notes/reuse/finite-adele-base-change-audit.md) — Pins, import closure, compatibility patches, axiom checks and attribution for Imperial's `L ⊗[K] 𝔸ᶠ_K ≃ 𝔸ᶠ_L`, how it matches the Library's `finiteAdeleInclusion`, an adapt verdict and port units.
 
 - [Library module atlas](../notes/library/module-atlas.md) — Reproduce the import graph and find isolated interfaces, existing consumer tasks and integration routes.
 - [Checking complete Lean declaration types](../notes/lean/complete-declaration-checks.md) — Detect parameter-order mismatches that applied theorem examples can hide.
