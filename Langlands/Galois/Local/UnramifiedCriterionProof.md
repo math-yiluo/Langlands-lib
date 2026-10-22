@@ -179,3 +179,57 @@ and the unused Galois instance. It composes `absoluteInertia_le_fixingSubgroup_i
 with `absoluteInertia_le_extensionGaloisMap_range_iff_ramificationIndex_eq` applied
 to `EP` and `intermediateEmbedding F E`. The symmetric form of the resulting
 equivalence is exactly the target.
+
+## Normal intermediate fields and alternate index formulas
+
+The following supplementary lemmas are due to Worker 282. They reuse the
+existing `extensionResidueIntermediateField` and
+`Langlands.Weil.Local.intermediateEmbedding` definitions, which are the same
+constructions as that contribution's `criterionResidueImage` and
+`criterionInclusion`. The closing theorem above and the existing public helpers
+retain their statements and proofs.
+
+`criterion_residueImage_index` states that
+`(extensionResidueIntermediateField F E f).fixingSubgroup.index` equals
+`extensionResidueDegree F E f`. It applies
+`IntermediateField.finrank_eq_fixingSubgroup_index` to the residue image and
+identifies its dimension with that of the residue field using
+`AlgHom.equivFieldRange`. This is the fixing-subgroup form of the existing
+`extensionResidueGaloisMap_range_index`.
+
+`criterion_ramificationIndex_mul` retains the alternate orientation of the
+ramification identity:
+
+```lean
+F.canonicalTopologicalData.ramificationIndex * extensionDegree F E f =
+  E.canonicalTopologicalData.ramificationIndex * extensionResidueDegree F E f
+```
+
+Its proof first deduces the residue-degree tower identity from
+`extensionResidueCardinality` and injectivity of powers of the prime `p`. It
+then combines the absolute ramification identities with
+`finrank_mul_extensionDegree` and cancels the positive absolute residue degree
+of `F`. Its hypotheses and independent field universes are unchanged.
+
+For `E : LocalClassField.FiniteIntermediateExtension F.Carrier`, the remaining
+two lemmas assume `Normal F.Carrier E.field`. They use the actual inclusion
+`intermediateEmbedding F E` with the composite p-adic algebra of
+`E.asPadicField`.
+
+- `criterion_intermediateField_eq` identifies the chosen comparison field
+  `extensionIntermediateField F (E.asPadicField (p := p))
+  (intermediateEmbedding F E)` with `E.field`. The proof packages
+  `extensionFieldEmbedding` as an `F.Carrier`-algebra homomorphism using
+  `extensionFieldEmbedding_comp`, then applies
+  `AlgHom.fieldRange_of_normal`.
+- `criterion_galoisMap_range` rewrites `extensionGaloisMap_range` with that
+  equality to identify the image of the absolute Galois map with the actual
+  `E.field.fixingSubgroup`.
+
+These normality-based equalities supplement the existing
+`absoluteInertia_le_fixingSubgroup_iff`, whose proof does not require normality.
+The duplicate residue-range, mapped-range and joined-inertia-index lemmas use
+the existing `extensionResidueGaloisMap_range`,
+`map_localResidueMap_extensionGaloisMap_range` and
+`extensionGaloisMap_range_sup_absoluteInertia_index` declarations. The identical
+final criterion is represented by `canonicalUnramifiedCriterion` above.

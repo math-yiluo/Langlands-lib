@@ -209,4 +209,71 @@ theorem canonicalUnramifiedCriterion : CanonicalUnramifiedCriterion.{u} := by
     (absoluteInertia_le_extensionGaloisMap_range_iff_ramificationIndex_eq F
       (E.asPadicField (p := p)) (Weil.Local.intermediateEmbedding F E))).symm
 
+section ResidueSupplement
+
+variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p) (E : PadicField.{v} p)
+  (f : F.Carrier →ₐ[Padic p] E.Carrier)
+
+/-- The fixing subgroup of the image of `k_E` has index the relative residue degree. -/
+theorem criterion_residueImage_index :
+    (extensionResidueIntermediateField F E f).fixingSubgroup.index = extensionResidueDegree F E f := by
+  let : Algebra (localResidueField F) (localResidueField E) := extensionResidueAlgebra F E f
+  have : IsGalois (localResidueField F) (AlgebraicClosure (localResidueField F)) := ⟨⟩
+  rw [← IntermediateField.finrank_eq_fixingSubgroup_index]
+  exact (AlgHom.equivFieldRange (extensionResidueFieldAlgHom F E f)).toLinearEquiv.finrank_eq.symm
+
+/-- The canonical absolute indices and the two relative degrees satisfy `e_F n = e_E r`. -/
+theorem criterion_ramificationIndex_mul :
+    F.canonicalTopologicalData.ramificationIndex * extensionDegree F E f =
+      E.canonicalTopologicalData.ramificationIndex * extensionResidueDegree F E f := by
+  have hres : E.canonicalTopologicalData.residueDegree =
+      F.canonicalTopologicalData.residueDegree * extensionResidueDegree F E f := by
+    apply Nat.pow_right_injective (Fact.out : p.Prime).two_le
+    change p ^ E.canonicalTopologicalData.residueDegree =
+      p ^ (F.canonicalTopologicalData.residueDegree * extensionResidueDegree F E f)
+    rw [← TopologicalData.residueCardinality_eq_pow, pow_mul,
+      ← TopologicalData.residueCardinality_eq_pow]
+    exact extensionResidueCardinality F E f
+  have hF := F.canonicalTopologicalData.ramificationIndex_mul_residueDegree
+  have hE := E.canonicalTopologicalData.ramificationIndex_mul_residueDegree
+  have hdeg := finrank_mul_extensionDegree F E f
+  apply Nat.eq_of_mul_eq_mul_left F.canonicalTopologicalData.residueDegree_pos
+  calc F.canonicalTopologicalData.residueDegree *
+        (F.canonicalTopologicalData.ramificationIndex * extensionDegree F E f)
+      = (F.canonicalTopologicalData.ramificationIndex *
+          F.canonicalTopologicalData.residueDegree) * extensionDegree F E f := by ring
+    _ = E.canonicalTopologicalData.ramificationIndex *
+          E.canonicalTopologicalData.residueDegree := by rw [hF, hdeg, hE]
+    _ = F.canonicalTopologicalData.residueDegree *
+          (E.canonicalTopologicalData.ramificationIndex * extensionResidueDegree F E f) := by
+      rw [hres]; ring
+
+end ResidueSupplement
+
+section NormalIntermediate
+
+variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p)
+  (E : LocalClassField.FiniteIntermediateExtension F.Carrier)
+
+/-- For a normal intermediate field, the closure comparison returns the same field. -/
+theorem criterion_intermediateField_eq [Normal F.Carrier E.field] :
+    extensionIntermediateField F (E.asPadicField (p := p)) (intermediateEmbedding F E) =
+      E.field := by
+  let g : E.field →ₐ[F.Carrier] AlgebraicClosure F.Carrier :=
+    { toRingHom := extensionFieldEmbedding F (E.asPadicField (p := p)) (intermediateEmbedding F E)
+      commutes' := fun x =>
+        extensionFieldEmbedding_comp F (E.asPadicField (p := p)) (intermediateEmbedding F E) x }
+  rw [← AlgHom.fieldRange_of_normal g]
+  ext y
+  rw [mem_extensionIntermediateField, AlgHom.mem_fieldRange]
+  rfl
+
+/-- The image of `G_E` is the actual fixing subgroup of `E.field`. -/
+theorem criterion_galoisMap_range [Normal F.Carrier E.field] :
+    (extensionGaloisMap F (E.asPadicField (p := p)) (intermediateEmbedding F E)).toMonoidHom.range =
+      E.field.fixingSubgroup := by
+  rw [extensionGaloisMap_range, criterion_intermediateField_eq]
+
+end NormalIntermediate
+
 end Langlands.PadicField
