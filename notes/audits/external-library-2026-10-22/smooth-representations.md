@@ -1,14 +1,17 @@
 # External Library audit: smooth representations and release status
 
-Worker 184, 2026-10-22. Parent task: `651119f8-4579-446c-ac91-e18c3778f140`, revision 1.
+Worker 184, original audit 2026-10-22; correction-status update 2026-10-23.
+Parent task: `651119f8-4579-446c-ac91-e18c3778f140`, revision 1.
 
-All twelve assigned findings **hold** at checked pilot Library commit
-`dc8cdb2866562d5f929dc912f3563a75cc16ce79`. They require documentation corrections;
-this audit found no reason to change the corresponding Lean declarations or proof
-targets. The six correction tasks below remain pending, with no submitted
-candidates at this check. Publication of this verdict note does not complete the
-parent task: every required correction must also pass independent review and be
-published, and its evidence must be added to the ledger.
+All twelve assigned findings **held** at the original checked pilot Library
+commit `dc8cdb2866562d5f929dc912f3563a75cc16ce79`. At the current check,
+`225a00380f8ef7b97eb15bda1157dee4ab8b2a03`, **I014 no longer holds after its
+independently accepted and published correction**; the other eleven still hold.
+I033 has independent approval but awaits publication. The other four correction
+units remain pending. This audit found no reason to change the corresponding
+Lean declarations or proof targets. Publication of this verdict note does not
+complete the parent task: every required correction must also pass independent
+review and be published, and its evidence must be added to the ledger.
 
 ## Evidence boundary
 
@@ -20,14 +23,18 @@ The allegations are in the registered source
 DOC-03. Their mirror snapshots correspond respectively to pilot commits
 `f9c1742752d97c488fc1a835070bf50b534f4427` and
 `c5a40b0f54880b1825ea05214c2b066f68bfc156`. Neither report supplies acceptance
-evidence. The verdicts below concern the current checked Library, whose exact
-files are identified in the hash inventory, rather than treating the report's
-line numbers as current by assumption.
+evidence. The verdicts below retain the original audit findings and distinguish
+the current status after correction. Exact files are identified in the hash
+inventory and correction evidence, rather than treating the report's line
+numbers as current by assumption.
 
 The complete relevant declarations, hypotheses, quantifiers, universes and
 imports were inspected, together with paired Markdown and the original-source
-passages listed below. The 34 audited pairs are unchanged between the earlier
-check at `208944fe891035d0c3be003664e2ad2d471951e3` and the checked commit above.
+passages listed below. The 34 audited pairs were unchanged between the earlier
+check at `208944fe891035d0c3be003664e2ad2d471951e3` and the original audit commit.
+At the 2026-10-23 current check all 34 Lean files and 33 paired Markdown files
+still have those hashes. The sole changed file is `VR/Dual.md`, whose reviewed
+correction and current hash are recorded under C1 below.
 A recovery development check, `b243e903-330c-40ef-8d5e-f68e184fbef5`, succeeded
 with zero errors and warnings for `Compact.ProjectionProof`,
 `Compact.SurjectivityProof`, `Smooth.Contragredient.CompactDualityProof` and the
@@ -37,8 +44,9 @@ build outputs. This is development compilation, **not** independent acceptance
 or a fresh exact-target proof receipt. Historical acceptance claims below instead
 come from the identified independent reviews, validations and publication records.
 
-Paths in the tables are relative to the Library root. Line numbers are for the
-checked commit. The short prefixes used in the verdict table expand as follows:
+Paths in the tables are relative to the Library root. Unless explicitly labeled
+current, line numbers refer to the original audit commit; they remain current
+for the unchanged files. The short prefixes used in the verdict table expand as follows:
 
 - `VR` = `Langlands/VirtualRepresentation/Supercuspidal/`.
 - `GL` = `Langlands/Group/GL/`.
@@ -51,9 +59,9 @@ checked commit. The short prefixes used in the verdict table expand as follows:
 
 ## Per-finding verdicts
 
-| Finding | Verdict | Current evidence, reason and retained scope | Correction |
+| Finding | Verdict | Evidence, reason and retained scope | Correction |
 | --- | --- | --- | --- |
-| I014 | Holds | `VR/Dual.md:56–65` describes the lattice map as its own square. `VR/Dual.lean:67–106` constructs `dualLatticeEquiv` by reindexing and proves `dualLatticeEquiv_symm`, `dualLatticeEquiv_apply_apply` and `dualLatticeEquiv_trans_self`: inverse equals itself, square equals identity. This is an involution identity, not the asserted idempotence identity. | C1: correct that sentence, retaining conditional supercuspidal closure. |
+| I014 | Held at audit; no longer holds after C1 | Original `VR/Dual.md:56–65` described the lattice map as its own square. `VR/Dual.lean:67–106` constructs `dualLatticeEquiv` by reindexing and proves `dualLatticeEquiv_symm`, `dualLatticeEquiv_apply_apply` and `dualLatticeEquiv_trans_self`: inverse equals itself, square equals identity. Current `VR/Dual.md:59–60` states precisely those two identities. C1's independent review, publication and matching file hashes are verified below. | C1 published; no further change needed for I014. Conditional supercuspidal closure is retained. |
 | I033 | Holds | `GL/BlockUnipotentHaarStatement.md:46–53` still calls the triangular principle unproved. `Langlands/HarmonicAnalysis/TriangularTranslationProof.lean:83–85` proves `finiteTriangularTranslation`; `GL/BlockUnipotentHaarProof.lean:165–168` applies it to close the coordinate-Haar target. Their independent acceptance and publication are verified below. | C2: distinguish the statement module's local scope from the existing proofs. |
 | I036 | Holds | `C/Definitions.md:66–68` uses future tense for existing statements and proofs. `C/ProjectionStatement.lean:9–19`, `C/ProjectionProof.lean:47–80`, `C/SurjectivityStatement.lean:9–17` and `C/SurjectivityProof.lean:8–17` supply projection, identity on fixed vectors, naturality and fixed-vector surjectivity. | C3: use present implementation status while retaining construction-only local scope. |
 | I053 | Holds | `D/CompactDualityStatement.md:52–54` calls those two proofs pending. The proof declarations cited for I036 are complete. `D/CompactDualityProof.lean:1–2` imports its target and averaging definitions; its argument does not import or assume the two separate proof modules. Independence of dependencies is true; nonexistence of their proofs is false. | C3: preserve the dependency distinction and remove obsolete pending wording. |
@@ -324,26 +332,71 @@ original construction/target as unaccepted, nor the implemented laws as nonexist
 
 ## Correction ledger
 
-All six tasks were inspected on 2026-10-22: each is ready, unassigned, and has no
-candidate. Therefore their candidate IDs, review outcomes, validation outcomes
-and correction publication commits are **pending**, not omitted successful
-results. Each task requires unchanged Lean bytes and the mathematical artifact
-workflow for paired Markdown, followed by independent review and publication.
+Status checked on 2026-10-23 against authoritative TaskHub fetch and task records.
+C1 is accepted and published. C2 has successful machine validation and independent
+approval, but fetch still reports `accepted=false`, `public=false` and
+`status=staged`; its publication remains pending. C3–C6 were freshly inspected:
+each is ready, unassigned, with no candidate. Each task requires unchanged Lean
+bytes and the mathematical artifact workflow for paired Markdown, followed by
+independent review and publication.
 C5 permits the necessary neighboring SmoothPart documentation to be reconciled
 within the same status issue. This audit note uses the separate public-note
 workflow. The ledger must be updated when actual correction evidence arrives.
 
 | Unit | Finding coverage | Correction task / revision | Candidate, review, validation and publication |
 | --- | --- | --- | --- |
-| C1 | I014 | `c3bb11ea-663b-419e-bd8c-5ca027ca5092` / 1 | All pending |
-| C2 | I033 | `5f109d54-307b-44b4-966e-f57a30351919` / 1 | All pending |
+| C1 | I014 | `c3bb11ea-663b-419e-bd8c-5ca027ca5092` / 1 | Candidate `536e6fe6-890f-4cce-a477-e11fecad81a6`, `lean.definition@1`; validation `bdc3dea1-070a-4917-8eae-5aad72225c0d` accepted; Reviewer 1474 approved review task `587f9903-036f-4cde-b84f-7b7d66080503`, no qualifications; published at `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18`. |
+| C2 | I033 | `5f109d54-307b-44b4-966e-f57a30351919` / 1 | Candidate `ae344c62-c5d1-4e53-ba14-6c41989de5ad`, `lean.statement@1`; validation `678e20d6-11ab-4e01-a1f4-66d2c678634c` accepted; Reviewer 1487 approved review task `ef89df93-2ea2-4712-974e-9c777f5a09cd`, no qualifications; publication pending. |
 | C3 | I036, I053, I054 | `8454a266-f4aa-441b-8c6e-366da6de6819` / 1 | All pending |
 | C4 | I055 | `55caa000-0cfc-4d80-be3f-6ba06d005315` / 1 | All pending |
 | C5 | I056, I057, I058, I059, I060 | `d3c12473-e617-41d9-bf73-729d7c71f1ea` / 2 | All pending |
 | C6 | ISSUES-1 DOC-03 | `89b3bb14-8afe-4e87-9c07-b14d0fe8c481` / 1 | All pending |
 
-No assigned finding calls for a no-change verdict at this snapshot. No required
-correction is waived by publication of this preliminary verdict ledger. Completion
+### C1: verified published correction
+
+The exact candidate body hash is
+`7634437513d32d5a68d4b66b8dde68aebacd5871df0bcec78f288161b11106e3`.
+Independent approval receipt `0b291033bb034acb8d5abbeccafbd084` binds that candidate
+and the review task above. Integration `2631191def1241618c5c39037bd9f76d` published
+it at the stated commit with integrated snapshot
+`7a6f66a15e6f534f4cdcdb9c8c3bd15fdc968ab684d3f587118f476cc6185c9e`.
+The accepted fresh integrated Lake build has report SHA-256
+`2ec17e0dd71fa727811633a4cca710e544036981da997ed716055a1592399e5c`;
+its scope is source compilation, with `proof_accepted=false`. Independent
+semantic approval comes from Reviewer 1474's exact-candidate report, not from
+that batch build.
+
+Both the publication commit and current checked Library match the reviewed pair:
+`VR/Dual.lean` SHA-256
+`5f92c2cbd3e2bfe655ccd3871b4e5fba2ef626d8429fd1ce32059a33331e44f4`
+and `VR/Dual.md` SHA-256
+`02ef511de373ea89512c1a4a725cb7dd2020f7dc97ca47cf72219941670d0eed`.
+Direct comparison with the original audited pair confirms unchanged Lean and
+only the corrected inverse/square sentence plus line wrapping. The generic
+cofinality and supercuspidal-closure inputs, canonical closure input and
+Henniart provenance remain unchanged.
+
+### C2: approval awaiting publication
+
+The exact candidate body hash is
+`b54c994c7539b28d126d7a3d6d62af5c4621db8f9805b2661354832bfe45c7e0`.
+Its accepted machine validation includes Lake build and declaration-kind checks,
+with `proof_accepted=false`; this is a statement documentation correction.
+Reviewer 1487's full approval report binds that hash and verifies the unchanged
+Lean, the complete triangular theorem in independent universes, its `{0,uF}`
+coordinate-Haar application, the measurable correction and lower-gap conditions,
+and the separate scaling scope. The candidate's paired Lean hash is
+`8b1dfe7dcaf22760546ef1c12255541643068b033a499d433c85043c3d8b27bf`;
+its proposed Markdown hash is
+`b6c99f2cf13b1caacca98f9de949bbba83faffcf7b13ae3c2f1bec0c62d76f0c`.
+The current Library still has the old Markdown hash recorded below. Approval
+therefore does not yet discharge this correction's publication requirement.
+
+The original verdict note was independently accepted as
+`de9e243f-c6c2-4225-8e48-22a084d4cbe0` and published at
+`51dec7ffb8514b3e9cad965decf3f967fa045da4`; this update adds the correction evidence
+without changing the original twelve findings or the historical evidence limits.
+No required correction is waived by publication of this verdict ledger. Completion
 requires the independently accepted and published updated ledger and every
 still-needed correction. Unrelated open mathematical goals remain outside this
 audit's completion conditions.
