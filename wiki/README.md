@@ -17,10 +17,11 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Automorphic differential growth: source map](../notes/automorphic/differential-growth-source-map.md) — Original reproduction, admissibility and elliptic analyticity arguments, with their exact hypotheses and remaining formalization obligations.
 
-- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve finding verdicts, verified I014 correction publication, historical release receipts, and the remaining correction ledger with approval distinguished from publication.
+- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve finding verdicts, verified I014 and I033 correction publications, historical release receipts, and the remaining correction ledger with staging, approval and publication distinguished.
 
 - [External Library audit: geometry, sheaves and cohomology](../notes/audits/external-library-2026-10-22/geometry-cohomology.md) — Historical finding verdicts, original-source checks, six findings repaired by four verified correction publications, and the remaining ledger with approval distinguished from publication.
 - [External Library audit: local factors and correspondence](../notes/audits/external-library-2026-10-22/factors-correspondence.md) — Nine finding verdicts, published class-factor transport evidence, and the pending correction ledger.
+- [External Library audit: Whittaker hypotheses and Rankin–Selberg status](../notes/audits/external-library-2026-10-22/whittaker-rankin-selberg.md) — Twenty finding verdicts, seven verified correction publications, exact companion receipts and the remaining mathematical proof obligations.
 
 - [Imperial FLT Haar scaling audit](../notes/reuse/imperial-haar-audit-2026-10-21.md) — Exact dependencies, adapted axiom checks, normalization and topology gaps, and a focused determinant-scaling reuse plan.
 - [External Lean reuse survey](../notes/reuse/external-lean-survey-2026-10-21.md) — Pinned external results, maturity, licenses, version differences and focused audit tasks for reusable FLT, CFT and epsilon-factor infrastructure.
