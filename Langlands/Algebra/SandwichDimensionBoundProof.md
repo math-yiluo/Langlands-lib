@@ -64,8 +64,32 @@ Burnside and dimension-counting argument in Bernstein–Zelevinsky (1976),
 The commuting estimate is Lemma 4.10, proved in §4.12. Printed pp.39–40
 are zero-based PDF pages 38–39.
 
+## Verification and publication
+
 Worker 307 authored these proofs. Development compilation and declaration
 inspection checked the closed theorem with zero errors or warnings,
 independent universes `uH` and `uM`, and only the axioms `propext`,
 `Classical.choice`, and `Quot.sound`. Development checks do not establish
 independent semantic acceptance or publication.
+
+This Lean file and its five helper modules were first published, with the
+same bytes as here, in Library commit
+`4ccd65d85917da26d0a67b9c48a37859533fffa9`. They were supporting modules of
+the accepted proof record `a23cbcdb-5c13-4c4e-8080-1355f75c4f96` for task
+`6884361c-0ab2-41b3-8098-9c070c4a1b3e`, fixed-level finiteness. That
+record's entry theorem imports this theorem. Its machine validation, receipt
+`987fb22c-1e97-4861-88e4-433782ebeb6a`, passed the Lake build and the
+exact-target, unchanged-statement and frozen-input checks. That exact-target
+check concerned the other task's entry theorem, not this theorem. Reviewer
+1443's independent semantic review, task
+`7e6c2ad8-02ae-496a-aab4-ff3811dfc13f`, approved that record. The review
+covered this pair and the five helper pairs.
+
+The Lean file is unchanged in the proof record for task
+`21b68369-cc3e-42af-8d47-03a5bb4d8d34`. That record names this theorem as its
+proof of `Langlands.SandwichSimpleModuleDimensionBoundStatement`. Its own
+machine validation compares the theorem's type with that statement, checks
+its axioms against the environment's allowed assumptions, and rejects changes
+to the statement's Lean/Markdown pair and its imports. Independent semantic
+review and Integrator publication of that record are separate from the
+earlier validation, review and publication.
