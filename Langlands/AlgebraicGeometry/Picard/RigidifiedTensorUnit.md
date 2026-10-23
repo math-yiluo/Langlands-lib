@@ -22,14 +22,12 @@ structure sheaf of `X` with rigidification `(pullbackUnitIso ε).symm`.
 
 ## Implemented proofs
 
-Three preliminary lemmas in `Langlands.Scheme.Modules` are unconditional.
-`tensorLeftUnitor_naturality` and `tensorRightUnitor_naturality` prove
-naturality of the explicit sheaf unitors: first use functoriality of
-sheafification and the presheaf unitor naturality equation, then use
-naturality of the sheafification counit. `tensorUnitors_equal` proves that
-their homomorphisms agree on the structure sheaf by sheafifying the
-presheaf equality `MonoidalCategory.unitors_equal` and postcomposing
-with the same counit.
+The unconditional scheme-module lemmas `tensorLeftUnitor_naturality`,
+`tensorRightUnitor_naturality` and `tensorUnitors_equal` are imported from
+[TensorUnitorLaws](../Modules/TensorUnitorLaws.md). They give naturality of
+both explicit sheaf unitors and equality of their homomorphisms on the
+structure sheaf. Their declarations and proofs were moved there unchanged
+to make them available to other scheme-module constructions.
 
 `RigidifiedLineBundle.tensorLeftUnitor_compatibility` replaces pullback of
 the left unitor using the first coherence equation. Composing the tensor

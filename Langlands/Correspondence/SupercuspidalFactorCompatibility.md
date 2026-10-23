@@ -1,6 +1,7 @@
 # Pair-factor compatibility of supercuspidal families
 
-Author: Worker 7. This module states the pair L- and epsilon-factor
+Author: Worker 7. I001 documentation correction: Worker 100, following
+Worker 46's audit. This module states the pair L- and epsilon-factor
 condition (4) of Henniart 2000, §1.2, for the irreducible-Weil to
 supercuspidal family `SupercuspidalMap` of `Domains`: for irreducible Weil
 classes `σ`, `τ`, the Rankin–Selberg factors of `π(σ) × π(τ)` defined by
@@ -93,6 +94,12 @@ universe `uP`, the universe of the Weil classes, so the pair transport of
   `σ × π`, with `σ` of smaller rank, are those of `π × σ`. This module takes
   that convention from the published relations; I did not re-read the JPSS
   scan, which has no text layer.
+- Tate 1979, (3.4.1), printed pp.14–15 (retained Part II PDF pp.23–24),
+  asserts existence and uniqueness of the nonabelian local-constant function
+  with rank-one agreement and degree-zero induction. The following
+  (3.4.2)–(3.4.3) give additivity and Haar scaling. This is the source of the
+  system properties; the fixed-family quantifier comparison below is a
+  logical consequence of existence and uniqueness.
 - Tate 1979, (3.6.4), printed p.17 (PDF p.26): Langlands' `ε(s, V, ψ)` is
   Deligne's constant at the measure self-dual for `ψ`. JPSS also use the
   self-dual measure; the published `RankinSelberg/EpsilonFactor` records this
@@ -133,13 +140,33 @@ Source files:
   and the measure-independence of the arithmetic side make that dependence
   harmless.
 - **Local constants.** The arithmetic epsilon factor is computed from an
-  existentially quantified system satisfying the published `IsSystem`, whose
-  base reciprocity component is the candidate `e`. Deligne's theorem (Tate
-  1979, (3.4.1)) gives existence and uniqueness of such a system; the Library
-  states these as `NonabelianSystem.Exists` and `NonabelianSystem.Unique`
-  without proof. A universally quantified system would make the condition
-  vacuous until existence is proved, so the system is existential. Under
-  `Unique` for the family, the existential and universal forms agree.
+  existentially quantified assignment `ε` with
+  `hε : NonabelianSystem.IsSystem F eC ε`. This property includes
+  `NormalizedReciprocity F eC`; a `ReciprocityFamily F` alone is only a family
+  of candidate equivalences and supplies neither normalization nor a system.
+  For the **same fixed** reciprocity family `eC`, an actual witness
+  `∃ ε, NonabelianSystem.IsSystem F eC ε` together with
+  `NonabelianSystem.Unique F eC` makes compatibility for some such system
+  equivalent to compatibility for every such system. Uniqueness identifies
+  any system with the existential compatibility witness; conversely, the
+  actual existence witness lets us instantiate universal compatibility.
+  The proof argument `hε` does not affect this comparison, by proof
+  irrelevance. If the existence witness is obtained from
+  `NonabelianSystem.Exists F eC`, one must also supply
+  `NormalizedReciprocity F eC`, since `Exists` is the implication from that
+  normalization to system existence.
+
+  The outer existential choice of `eC` with `IsBaseReciprocity F e eC`
+  remains in `SupercuspidalFactorCompatibility`. Uniqueness for one family
+  does not compare systems for different families or remove that choice.
+  Deligne's theorem (Tate 1979, (3.4.1)) asserts existence as well as
+  uniqueness; the Library's `Exists` and `Unique` are proposition definitions,
+  not proofs of those assertions. If there were no system for a fixed
+  family, universal compatibility and uniqueness would hold vacuously while
+  existential compatibility would fail. This logical observation does not
+  assert mathematical nonexistence for an actual arithmetic family, and a
+  missing formal existence proof does not establish vacuity. The existential
+  definition explicitly retains the required system witness.
 - **Reciprocity.** The candidate `e` is an input here. The full
   specification must quantify `e` existentially together with
   `IsGeometricReciprocity F e`, as for the other conditions of
