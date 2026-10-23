@@ -5,13 +5,18 @@ Parent task: `651119f8-4579-446c-ac91-e18c3778f140`, revision 1.
 
 All twelve assigned findings **held** at the original checked pilot Library
 commit `dc8cdb2866562d5f929dc912f3563a75cc16ce79`. At the current check,
-`9945aad13b444857950d4381970e4475b0f9673b`, **I014 and I033 no longer hold after
+`6e8b1662b2777952bbde62145eb5269a8b2efbef`, **I014 and I033 no longer hold after
 their independently accepted and published corrections**; the other ten still
-hold. The other four correction units remain pending; C4 has a staged candidate
-awaiting validation and review. This audit found no reason to change the corresponding
+hold. The other four correction units remain pending; C4 and C6 have passed
+machine validation and independent review but await publication. This audit
+found no reason to change the corresponding
 Lean declarations or proof targets. Publication of this verdict note does not
 complete the parent task: every required correction must also pass independent
 review and be published, and its evidence must be added to the ledger.
+
+All correction statuses below describe this check at Library
+`6e8b1662b2777952bbde62145eb5269a8b2efbef`; they do not assert the status of
+later Library revisions.
 
 ## Evidence boundary
 
@@ -334,9 +339,10 @@ original construction/target as unaccepted, nor the implemented laws as nonexist
 ## Correction ledger
 
 Status checked on 2026-10-23 against authoritative TaskHub fetch and task records.
-C1 and C2 are accepted and published. C4 has a staged candidate: fetch reports
-`accepted=false`, `public=false`, no validation receipt and no independent review
-yet. C3, C5 and C6 have assigned executors but no candidates on this check.
+C1 and C2 are accepted and published. C4 and C6 have accepted machine validations
+and independent approving review reports. Their fetch records still report
+`status=staged`, `accepted=false` and `public=false`: neither correction has a
+publication yet. C3 and C5 have assigned executors but no candidates on this check.
 Each task requires unchanged Lean
 bytes and the mathematical artifact workflow for paired Markdown, followed by
 independent review and publication.
@@ -349,9 +355,9 @@ workflow. The ledger must be updated when actual correction evidence arrives.
 | C1 | I014 | `c3bb11ea-663b-419e-bd8c-5ca027ca5092` / 1 | Candidate `536e6fe6-890f-4cce-a477-e11fecad81a6`, `lean.definition@1`; validation `bdc3dea1-070a-4917-8eae-5aad72225c0d` accepted; Reviewer 1474 approved review task `587f9903-036f-4cde-b84f-7b7d66080503`, no qualifications; published at `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18`. |
 | C2 | I033 | `5f109d54-307b-44b4-966e-f57a30351919` / 1 | Candidate `ae344c62-c5d1-4e53-ba14-6c41989de5ad`, `lean.statement@1`; validation `678e20d6-11ab-4e01-a1f4-66d2c678634c` accepted; Reviewer 1487 approved review task `ef89df93-2ea2-4712-974e-9c777f5a09cd`, no qualifications; published at `451f42a052568843a4d727659c3d0a6c66d38ca6`. |
 | C3 | I036, I053, I054 | `8454a266-f4aa-441b-8c6e-366da6de6819` / 1 | All pending |
-| C4 | I055 | `55caa000-0cfc-4d80-be3f-6ba06d005315` / 1 | Candidate `a6cd0a84-f1fb-4f19-8752-05ad59077227`, `lean.statement@1`, staged; review task `a567610c-2256-4843-a437-a546010dcf2d`; validation, independent review and publication pending. |
+| C4 | I055 | `55caa000-0cfc-4d80-be3f-6ba06d005315` / 1 | Candidate `a6cd0a84-f1fb-4f19-8752-05ad59077227`, `lean.statement@1`; validation `2e8f557d-0392-426e-828f-011dd6dbf0f2` accepted; Reviewer 1541 approved review task `a567610c-2256-4843-a437-a546010dcf2d`, no qualifications; publication pending. |
 | C5 | I056, I057, I058, I059, I060 | `d3c12473-e617-41d9-bf73-729d7c71f1ea` / 2 | All pending |
-| C6 | ISSUES-1 DOC-03 | `89b3bb14-8afe-4e87-9c07-b14d0fe8c481` / 1 | All pending |
+| C6 | ISSUES-1 DOC-03 | `89b3bb14-8afe-4e87-9c07-b14d0fe8c481` / 1 | Candidate `0b475cba-c9c0-4e82-b0c4-8326efa2de98`, `lean.statement@1`; validation `0662be3c-7bf8-4d13-a903-7fbb312021e9` accepted; Reviewer 1549 approved review task `fc700860-f4b7-4f83-9ed9-f50af6b99ddd`, no qualifications; publication pending. |
 
 ### C1: verified published correction
 
@@ -407,7 +413,7 @@ the complete triangular theorem, measurable correction, strict lower-gap
 dependence and `{0,uF}` application; lines `74–76` retain the separate
 determinant-scaling and block-modulus scope. I033 is therefore corrected.
 
-### C4: staged correction
+### C4: independently approved correction awaiting publication
 
 Candidate `a6cd0a84-f1fb-4f19-8752-05ad59077227` has body SHA-256
 `f0d9db00916382e837423c527337cd201584eef2b67fc0175df85cd40d492940`.
@@ -415,10 +421,43 @@ Its record preserves the audited Lean hash
 `e3d72b95a267b6f0291efde9c11776fa6107fb4ff9091c58d58b8efad8ff1223`
 and proposes Markdown hash
 `cea307af8be1439f64e9a3785c1b67569cc4ef598143f814e69e4637d408a128`.
-The correction documents existing algebraic separation while retaining the
-four representation-theoretic targets. These are candidate claims awaiting
-independent validation and review; the current Library still has the original
-Markdown hash in the inventory below, and I055 remains open.
+The frozen pair was compared with the current Library: the sole change is the
+availability paragraph, and the Lean hash is unchanged. Machine validation
+`2e8f557d-0392-426e-828f-011dd6dbf0f2` passed Lake-build and declaration-kind
+checks with no qualifications and `proof_accepted=false`. Its report SHA-256 is
+`ff864b3ef69f81a0112af04b1f9dc382792a045fbf7109d165027d0bd24972d9`.
+Reviewer 1541's full approving report binds this exact candidate hash and
+verifies the four existing algebraic equivalences, their independent universes,
+reference-vector conditions, actual restricted-product action and original
+Flath pp.179–183. The review has no unresolved qualifications. The correction
+retains all four distinct representation-theoretic targets and the separate
+general-factorization scope. This independent approval is distinct from
+publication: the current Library still has the original Markdown hash in the
+inventory below, so I055 remains open.
+
+### C6: independently approved correction awaiting publication
+
+Candidate `0b475cba-c9c0-4e82-b0c4-8326efa2de98` has body SHA-256
+`f97f4c1df0ae7091a493006b4e6d20845acf8aa727e71d19b0a2a9634767d8f9`.
+Its frozen Lean hash
+`2abc2da82d63e7d3d0990232003e3c1647149a1463a28ffa7621da700e8d1118`
+matches the audited and current `CS/TotalConjugatingCountStatement.lean`.
+The proposed Markdown hash is
+`0448a3105681043302fafee9291bbffba6b48c28c6e520e15c1733760f14030d`.
+Direct comparison shows only the correction attribution and the availability
+paragraph changed. Machine validation `0662be3c-7bf8-4d13-a903-7fbb312021e9`
+passed Lake-build and declaration-kind checks with no qualifications and
+`proof_accepted=false`; report SHA-256
+`ee004796060329e3c64f3b4cb0bfa4d8c23bb0f9e4b9727ff31f62c8285946bb`.
+
+Reviewer 1549's full approving report binds the exact candidate hash and has no
+unresolved qualifications. It verifies the helper's all-rank finiteness,
+including zero, its absence from the statement's complete import closure,
+finite dependent-sum infrastructure, unchanged factorial target and original
+BZ77 pp.447–449. The correction does not infer the factorial equality from
+finite instances or deny the separate downstream counting proof. Publication
+remains pending; the current Library retains the original Markdown hash in the
+inventory, so DOC-03 remains open.
 
 ### Verdict-note publication history
 
@@ -433,15 +472,37 @@ Metadata validation `ddec7a78-ad33-4c16-8303-51d012e39c1c` was accepted.
 Integration `c09621bbc161407e9c9b93b910b41f8a` published it at
 `bf3c3860965e0b6c10d816a5d41e68a8003ef281` after accepted fresh
 public-documentation validation. Neither validation claims Lean compilation
-or proof acceptance. The reviewed note, its publication and the pre-update note in the checked
-Library share SHA-256
+or proof acceptance. That reviewed note, its publication and its later copy at
+Library `9945aad13b444857950d4381970e4475b0f9673b` share SHA-256
 `bc58efc296197e139ab18162a33c7cd3a52b50cc675ede3338dee8e2de244be7`;
 the audit README entry also agrees, although later publications updated sibling
 entries. That update was pinned to the earlier check at
 `225a00380f8ef7b97eb15bda1157dee4ab8b2a03`.
 
-This update adds C2 publication and C4 staging evidence without changing the
-original twelve findings or the historical evidence limits.
+The C2-status update `c2eea7f3-ffdb-453b-91ee-06d6b4eb9eb8` was independently
+approved by Reviewer 1535 in review task
+`90e118c2-1cdf-4cfc-a269-be07df359bea`, receipt
+`7551441025a94aa180abd01962983c74`, with no qualifications.
+Metadata validation `c5be8898-9d6a-421c-8bf7-91186ec764ab` was accepted.
+Integration `cc80c6b8954a446783868086c195f4a4` published it at
+`6e8b1662b2777952bbde62145eb5269a8b2efbef` after accepted fresh
+public-documentation validation, with integrated snapshot
+`daa1493c2e755951912cc719e4b668e0138d0ace7be9822b8393131b18cac35d`.
+The reviewed note, publication and pre-update note in the current checked Library
+have identical SHA-256
+`5ebde6525a664c45fa5ece4903cc8feca84917fc7c48d8f524f6a42dccf1663c`.
+The reviewed README hash is
+`0cf969ad4d7c661e5be3d4f5acc0c64d4984ad1211ba9fb274f77e7a2b3a6336`;
+the published/current README hash is
+`311a9a8b3ee5007729be733b667d1e4237f74b3bf90d6ebf8533c81de5d889b1`.
+Their audit entries are identical; integration added the sibling Whittaker audit
+entry. These public-note validations make no Lean compilation or proof-acceptance
+claim. That note was pinned to the earlier check at
+`9945aad13b444857950d4381970e4475b0f9673b`.
+
+This update records C4 and C6 validation and independent approval, and the
+C2-status ledger publication, without changing the original twelve findings or
+the historical evidence limits.
 No required correction is waived by publication of this verdict ledger. Completion
 requires the independently accepted and published updated ledger and every
 still-needed correction. Unrelated open mathematical goals remain outside this
