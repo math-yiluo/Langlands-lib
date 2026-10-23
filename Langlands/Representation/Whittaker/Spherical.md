@@ -1,8 +1,9 @@
 # The explicit spherical Whittaker function on `GL_(n+1)`
 
-This module defines the explicit spherical (class-one) Whittaker function on
-`GL_(n+1)(F)` with Satake parameters `x`. On the double coset
-`u · ϖ^λ · GL_(n+1)(O)` its value is
+This module defines `sphericalWhittaker` on `GL_(n+1)(F)` with Satake parameters
+`x`, using a chosen Iwasawa decomposition. The definition accepts any character
+`θ`. If `IsIntegrallyTrivial v θ` holds, its value at every
+`u · ϖ^λ · k`, with `u` upper unipotent and `k ∈ GL_(n+1)(O)`, is
 
 `θ(u) · δ_B^(1/2)(ϖ^λ) · s_λ(x)` if `λ_0 ≥ λ_1 ≥ … ≥ λ_n`, and `0` otherwise,
 
@@ -21,8 +22,10 @@ unipotent group is `upperUnipotent (n + 1) F`, and `torus ϖ λ` is
 `diag(ϖ^(λ_0), …, ϖ^(λ_n))`. A weight `λ : Fin (n + 1) → ℤ` is dominant when it
 is antitone (Mathlib's `Antitone`), i.e. `λ_0 ≥ λ_1 ≥ … ≥ λ_n`. Indices start
 at `0`. Characters `θ : upperUnipotent (n + 1) F →* ℂˣ` are arbitrary monoid
-homomorphisms. No topology is used, except for the additive characters in the
-section on standard characters.
+homomorphisms in the definition. Equivariance, right integral invariance,
+normalization at `1`, and the formula for arbitrary decompositions require
+`IsIntegrallyTrivial v θ`. No topology is used, except for the additive
+characters in the section on standard characters.
 
 ## Functions given by their values on dominant cells
 
@@ -91,9 +94,10 @@ state `ψ`.
 
 The published `WhittakerFunctions ψ n` and `InverseWhittakerFunctions ψ n`
 (module `Langlands.Representation.RankinSelberg.QuotientIntegrals`) are
-abbreviations of the equivariant spaces for these two characters. So
-`sphericalWhittaker_mem` below gives membership in them. This module does not
-import `QuotientIntegrals`.
+abbreviations of the equivariant spaces for these two characters. When `ψ`
+is trivial on `v.integer`, the preceding lemmas and `sphericalWhittaker_mem`
+below give membership in those spaces. This module does not import
+`QuotientIntegrals`.
 
 ## Schur functions at Satake parameters
 
@@ -135,10 +139,14 @@ subgroup, one has `δ_B(ϖ^λ) = q^(-Σ_i (n - 2i) λ_i)`. So `halfModulus q λ`
 
 ## The spherical Whittaker function
 
-- `sphericalWhittaker hϖ θ q x` is the cell function with torus values
-  `λ ↦ halfModulus q λ · satakeSchur x λ`. Its value at `u * torus ϖ λ * k` is
-  `θ(u) · δ_B^(1/2)(ϖ^λ) · s_λ(x)` for antitone `λ` and `0` otherwise, in the
-  notation above.
+- `sphericalWhittaker hϖ θ q x` is `cellFunction` with coefficient
+  `λ ↦ halfModulus q λ · satakeSchur x λ`. For arbitrary `θ`, this specifies
+  the value using `unipotentPart hϖ g` and `exponent hϖ g`, the chosen
+  decomposition of `g`. If `IsIntegrallyTrivial v θ` holds, its value at every
+  `u * torus ϖ λ * k` with upper unipotent `u` and integral `k` is
+  `θ(u) · halfModulus q λ · satakeSchur x λ` for antitone `λ` and `0`
+  otherwise. The modulus and Schur notation above applies in the source
+  setting.
 
 With `IsIntegrallyTrivial v θ`:
 
@@ -149,6 +157,13 @@ With `IsIntegrallyTrivial v θ`:
 - `sphericalWhittaker_torus`: its value at `torus ϖ λ` is
   `halfModulus q λ * satakeSchur x λ` if `λ` is antitone, and `0` otherwise.
 - `sphericalWhittaker_one`: its value at `1` is `1`.
+
+Integral triviality is necessary for these three properties to hold together:
+`θ`-equivariance, right integral invariance, and value `1` at `1`. Indeed,
+for `u ∈ N ∩ GL_(n+1)(O)`, equivariance gives `W(u) = θ(u) W(1) = θ(u)`,
+whereas right integral invariance gives `W(u) = W(1) = 1`. Hence `θ(u) = 1`.
+This is an elementary consequence of the definitions; it is not an additional
+Lean theorem in this module.
 
 ## Provenance and scope
 
@@ -161,8 +176,9 @@ DOI 10.2969/jmsj/06610017.
 - Literature ID: `miyauchi-2014-newform-whittaker-gln`.
 - SHA-256: `52d52dcca7b916e06b79a11f362a709f6e908bb25870d75bbf8083bf24c1cd68`.
 
-Notation (Section 2, p. 18): `F` is a nonarchimedean local field, `|ϖ| = q^(-1)`
-with `q` the residue cardinality, `ψ` has conductor `O`, `B` is the upper
+Notation (Section 2, p. 18): `F` is a nonarchimedean local field of characteristic
+zero, `|ϖ| = q^(-1)` with `q` the residue cardinality, `ψ` has conductor `O`
+(in particular, it is trivial on `O`), `B` is the upper
 Borel subgroup with unipotent radical `U`, and `ψ(u) = ψ(Σ_i u_(i,i+1))`. On
 p. 19, `ϖ^f = diag(ϖ^(f_1), …, ϖ^(f_(n-1)), 1)` for `f ∈ Z^(n-1)`. Section 4,
 p. 21, writes `L(s, π) = Π_i (1 - α_i q^(-s))^(-1)` and uses the Schur
@@ -192,10 +208,14 @@ The relation of `sphericalWhittaker` to this theorem is derived, as follows.
   formula with `c(π) = 0` and `W(1) = 1`.
 - The general character `θ` and the general valued field are derived
   generalizations. The source case is `θ = standardCharacter ψ n` with `ψ` of
-  conductor `O`, `v` the valuation of a nonarchimedean local field, and `q` its
-  residue cardinality. For other `θ`, `v` or `q`, the definition still gives a
-  `θ`-equivariant, right `GL_(n+1)(O)`-invariant function with value `1` at
-  `1`, but no further meaning is claimed.
+  conductor `O`, `v` the valuation of a nonarchimedean local field of
+  characteristic zero, and `q` its residue cardinality. For other `θ`, `v`
+  or `q`, with the stated uniformizing-element hypothesis, the choice-defined
+  function still exists. Under `IsIntegrallyTrivial v θ`, it is
+  `θ`-equivariant, right `GL_(n+1)(O)`-invariant and has value `1` at `1`;
+  the arbitrary-decomposition and torus formulas also retain this hypothesis.
+  These conclusions are not asserted for arbitrary `θ`. No further
+  representation-theoretic identification is claimed for the generalization.
 - The vanishing off antitone weights is built into `cellFunction`. In the
   source it is a theorem about Whittaker functions. Here it is part of the
   definition.
