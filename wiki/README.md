@@ -17,10 +17,11 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Automorphic differential growth: source map](../notes/automorphic/differential-growth-source-map.md) — Original reproduction, admissibility and elliptic analyticity arguments, with their exact hypotheses and remaining formalization obligations.
 
-- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve finding verdicts, verified I014 and I033 publications, approved I055 and DOC-03 corrections awaiting publication at the checked snapshot, and historical release receipts with remaining obligations.
+- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve finding verdicts, four verified correction publications, historical release receipts and eight findings with remaining correction obligations.
 
-- [External Library audit: geometry, sheaves and cohomology](../notes/audits/external-library-2026-10-22/geometry-cohomology.md) — Historical finding verdicts, original-source checks, ten findings repaired by eight verified correction publications, and the remaining ledger with approval distinguished from publication.
-- [External Library audit: local factors and correspondence](../notes/audits/external-library-2026-10-22/factors-correspondence.md) — Nine finding verdicts, published class-factor transport evidence, and the pending correction ledger.
+- [External Library audit: geometry, sheaves and cohomology](../notes/audits/external-library-2026-10-22/geometry-cohomology.md) — All 23 historical and current finding verdicts, original-source checks, and thirteen verified correction publications repairing sixteen findings while preserving seven accurate no-change observations.
+- [External Library audit: local factors and correspondence](../notes/audits/external-library-2026-10-22/factors-correspondence.md) — Nine final finding verdicts, seven verified correction publications, original-source and file fingerprints, and the remaining correspondence proof obligations.
+- [External Library audit: local class-field theory, Tate cohomology and Weil parameters](../notes/audits/external-library-2026-10-22/local-cft-tate-weil.md) — Ten verified findings, eight published documentation corrections, original-source comparisons and exact companion acceptance and publication evidence.
 - [External Library audit: Whittaker hypotheses and Rankin–Selberg status](../notes/audits/external-library-2026-10-22/whittaker-rankin-selberg.md) — Twenty finding verdicts, seven verified correction publications, exact companion receipts and the remaining mathematical proof obligations.
 
 - [Imperial FLT Haar scaling audit](../notes/reuse/imperial-haar-audit-2026-10-21.md) — Exact dependencies, adapted axiom checks, normalization and topology gaps, and a focused determinant-scaling reuse plan.
