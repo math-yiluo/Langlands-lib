@@ -25,13 +25,26 @@ continuous homomorphism has domain `Ideles L` and codomain
 `IdeleClasses K`. Its group-theoretic range is the norm-image subgroup
 used in this file. The domain has deliberately not been quotiented:
 this composition is constructed without a principal-norm compatibility
-theorem or a norm on `IdeleClasses L`. Once that compatibility is proved,
-the image of the descended class norm is exactly this subgroup, because
-the quotient map from ideles to idele classes is surjective.
+theorem or a norm on `IdeleClasses L`.
 
-This formulation preserves the ordinary class-field norm subgroup
-while keeping the unfinished quotient-descent construction explicit.
-It does not prove that descent or assume it as a hypothesis.
+The compatibility and quotient construction are now published separately:
+`Langlands.Global.AdelicFunctoriality.normCompatibility` in
+[NormCompatibilityProof](../AdelicFunctoriality/NormCompatibilityProof.md)
+proves the completed-tensor comparison and principal-adele formula.
+[IdeleClassNorm](../AdelicFunctoriality/IdeleClassNorm.md) proves the principal
+identities and subgroup preservation and constructs
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm`, with its representative
+formula, continuity and uniqueness. The representative formula
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm_mk` and surjectivity
+of the quotient map show mathematically that its image is the same direct
+norm-image subgroup used here; this module does not contain a separate
+Lean theorem asserting that equality of ranges.
+
+The direct definition remains useful because it depends only on the raw
+idele norm and the base quotient map. This module imports neither of the
+closing norm modules, assumes no quotient descent, and still only states
+the four class-field-theory targets below. Constructing the class norm
+does not prove those targets.
 
 ## The four targets
 
@@ -130,7 +143,9 @@ The use of an idele norm followed by the class quotient is another
 explicit reformulation. Artin–Tate's class norm has this image by
 definition of its descent. The prerequisite equality of global norms
 with products of completed local norms and the principal-norm formula
-are Worker 50's separate construction and theorem obligations.
+are supplied by the published completed-tensor and norm-compatibility
+proofs cited above. They are separate from the reciprocity, local/global
+norm-image, index and character-factorization assertions of this file.
 
 Source fingerprints:
 

@@ -28,16 +28,36 @@ only of absolute values or valuations, and it is not an extension-of-scalars
 embedding. The already implemented norm is multiplicative and continuous;
 this statement supplies the additional local/global arithmetic identity.
 
-The tensor-decomposition obligation and the norm identity are separate
-conjuncts so that their proof dependencies are visible. A proof may derive
-the latter from the former using determinant compatibility with base change
-and finite products. `Norm.lean` already proves the infinite-place comparison
-from weak approximation and Mathlib's infinite local-degree sum. The
-finite-place comparison and the global norm identity remain unproved;
-the determinant argument is a proposed proof route, not claimed existing
-Mathlib support or a completed proof. Passing from this identity to norms
-on principal units and then the principal-idele quotient remains a further
-construction obligation. No quotient norm is asserted to exist by this file.
+The tensor comparison and principal identity are separate conjuncts whose
+proofs are now published. `Norm.lean` proves the infinite-place comparison
+from weak approximation and Mathlib's infinite local-degree sum.
+`Langlands.Global.AdelicFunctoriality.completedTensorComparison` in
+[CompletedTensorComparisonProof](CompletedTensorComparisonProof.md) proves
+both the finite and infinite comparisons, using the proved completed
+local-degree bounds for the finite part.
+
+[NormReduction](NormReduction.md) implements the determinant argument:
+`Langlands.Global.AdelicFunctoriality.norm_baseChange` proves compatibility
+with scalar extension, while
+`Langlands.Global.AdelicFunctoriality.norm_prod` and
+`Langlands.Global.AdelicFunctoriality.norm_pi` prove the binary and finite
+dependent-product formulas. The theorem
+`Langlands.Global.AdelicFunctoriality.principalNormCompatibility_of_completedTensorComparison`
+derives the principal identity from the comparison target.
+`Langlands.Global.AdelicFunctoriality.normCompatibility` in
+[NormCompatibilityProof](NormCompatibilityProof.md) supplies the proved
+comparison to this reduction through `normAssembly`, proving the entire
+`Langlands.Global.AdelicFunctoriality.NormCompatibility.{u, v}` target
+without an additional arithmetic premise.
+
+[IdeleClassNorm](IdeleClassNorm.md) proves the principal-adele and
+principal-idele identities and preservation of the principal subgroup,
+then constructs `Langlands.Global.AdelicFunctoriality.ideleClassNorm`.
+Its representative formula, continuity, principal-class identity and
+uniqueness are proved there. The present file still only defines `Prop`
+targets and imports `Norm`; it does not itself assert quotient-norm
+existence. These results require no Galois or abelian hypothesis and do
+not prove the separate class-field-theory statements.
 
 The original source is Andre Weil, *Basic Number Theory*, second edition
 (1973), Chapter III section 4, Theorem 4, printed pp. 56-57 (PDF pp. 73-74),
