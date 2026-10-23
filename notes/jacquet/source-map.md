@@ -2,15 +2,14 @@
 
 Author: Worker 19, task `616fab20-3cae-49ab-94f4-d28791b2b93f`.
 Opposite-induction documentation contributed by Worker 264.
-Source audit updated on 23 October 2026 against the Library commit
-`b263cfa454b11d485198ae46d8290f32435e48c6`. This update adds the published
-discrete-series unitary-part multiplicity statements, uniform nilpotence index,
-full-dual opposite Jacquet construction and comparison statements, concrete
-conjugate parabolic pairs and weak-critical predicates. Exact publication
-receipts appear below. Declaration names refer to the Library tree containing
-this note. Publication records identify earlier
-commits where the indicated contributions entered the Library. Review approval
-alone does not make an unpublished candidate a Library dependency.
+Source audit updated on 23 October 2026 against Library commit
+`225a00380f8ef7b97eb15bda1157dee4ab8b2a03`. This update records publication of
+the weak-critical support family and the actual opposite-refinement geometry
+and normalized functors, and links the reviewed scope audit of S78 Lemma 5.3.
+Exact publication receipts appear below. Declaration names refer to this
+Library tree; receipts identify earlier commits where contributions entered
+it. Review approval alone does not make an unpublished candidate a Library
+dependency.
 
 This note maps the original theorems behind Silberger's Langlands quotient
 theorem for `GL_n` to the Lean proposition definitions that state them, and
@@ -69,8 +68,10 @@ bibliography.
   actual lower block parabolic with the inverse `(T.leviHalfModulus B)⁻¹` of
   the same upper half modulus, inflated along the opposite Levi projection.
   Reading this scalar as `δ_(P̄)^(1/2)` needs a separate Haar-modulus
-  comparison, which the module does not prove. Even the upper-radical version
-  is only stated, as `Langlands.GLBlockModulusHaarStatement`. The Library's
+  comparison, which the module does not prove. The upper-radical version
+  `Langlands.GLBlockModulusHaarStatement` is now proved by
+  `Langlands.glBlockModulusHaar` in
+  `Langlands.Group.GL.BlockModulusHaarProof`. The Library's
   `normalizedJacquet` (in
   `Langlands.Representation.Jacquet.Parabolic`) acts on the coinvariants of the
   **upper** block unipotent radical by `m·[v] = δ_P(m)^(-1/2) [ρ(m) v]`, with
@@ -106,6 +107,13 @@ bibliography.
   Lemma 4.5.15, p.191, gives complete reducibility and temperedness of
   tempered induction for general reductive groups, not irreducibility.
 
+The upper Haar comparison is Worker 117's independently accepted proof
+`3008bd3f-5a63-44c7-aa33-d84249d03f88` version 1, published at
+`9488f8128fc175e4f17b08d2a86eac54056fa753` with integration receipt
+`d3d0eb9b1fc1484991942b6d554b4f4d`. Its closing theorem has exactly the published
+statement as its type and covers every block shape. This status does not itself
+supply the opposite or relative refinement Haar comparisons.
+
 ## Families and their Lean status
 
 "Not yet stated" means that the Library has no source-faithful proposition for
@@ -123,12 +131,12 @@ the family yet. It is not a placeholder assertion.
 | **Tempered exponent criterion.** S78 p.98; S79 Lemma 4.5.3 and Cor. 4.5.4, pp.185–186, Lemma 4.5.6, p.187; W03 Prop. III.2.2, pp.265–266. | Published: `GLTemperedExponentCriterionStatement` in `Langlands.Representation.Classification.TemperedExponentStatement`. For an admissible scalar-central-character representation: analytic `L^(2+ε)` temperedness iff every normalized Jacquet exponent has norm at most one on the entire closed negative chamber. The one-block condition forces unitarity when the representation is nonzero. The analytic bridge is derived in the paired Markdown. |
 | **Tempered unitarity and induction.** S79 Cor. 4.5.13, p.190, and Lemma 4.5.15, p.191. | `GLTemperedInductionPrerequisitesStatement`, comprising `GLTemperedUnitarityStatement` and `GLTemperedInductionStatement` in `Langlands.Representation.Classification.TemperedInductionStatement`, is published. It states irreducible analytic tempered unitarity, and unitarizability of arbitrary irreducible tempered block-Levi input together with complete reducibility and analytic temperedness of its actual normalized induction. It assumes no tensor decomposition and asserts no general induction irreducibility. |
 | **Discrete-series temperedness and Jacquet quotients.** S79 Thm 4.5.10(1)–(2), pp.188–189, and Thm 4.5.18(1)–(2), p.193; class-exponent identification in Lemma 3.2.2(2), p.121, and Thm 3.2.4, pp.122–123. | Published: `GLDiscreteSeriesJacquetPrerequisitesStatement` in `Langlands.Representation.Classification.DiscreteSeriesJacquetStatement`. Its components state analytic temperedness of irreducible square-integrable product-Levi representations and, for discrete-series Levi input and irreducible tempered `π`, equivalence of subquotient occurrence in the actual opposite normalized Jacquet module with a surjective intertwiner from that whole module. |
-| **Discrete-series support and tempered Jacquet summands.** S79 Cor. 4.5.11, pp.189–190, and Thm 4.5.18, p.193. | `GLTemperedDiscreteSeriesPrerequisitesStatement` in `Langlands.Representation.Classification.TemperedSupportStatement` states support and the both-inductions summand clause; the Jacquet quotient equivalence is stated separately in the preceding row. The support clause embeds an irreducible tempered representation into normalized opposite induction from discrete-series Levi data. The summand clause retains discrete-series input and equates its subquotient occurrence in the actual opposite normalized Jacquet module with complete reducibility of both opposite normalized inductions and occurrence of the original representation as a direct summand of each. These are proposition definitions with proofs still open. Cor. 4.5.11's prescribed weakly critical-exponent refinement is staged separately; see the status below. It is not yet a published Library statement. |
+| **Discrete-series support and tempered Jacquet summands.** S79 Cor. 4.5.11, pp.189–190, and Thm 4.5.18, p.193. | `GLTemperedDiscreteSeriesPrerequisitesStatement` in `Langlands.Representation.Classification.TemperedSupportStatement` states support and the both-inductions summand clause; the Jacquet quotient equivalence is stated separately in the preceding row. The support clause embeds an irreducible tempered representation into normalized opposite induction from discrete-series Levi data. The summand clause retains discrete-series input and equates its subquotient occurrence in the actual opposite normalized Jacquet module with complete reducibility of both opposite normalized inductions and occurrence of the original representation as a direct summand of each. These are proposition definitions with proofs still open. Cor. 4.5.11's prescribed weakly critical-exponent refinement is now published separately; see the status below. |
 | **Cuspidal Jacquet multiplicities.** S78 §2, pp.97–98; S79 Thm 5.4.1.1, pp.287–288, Thm 3.3.1, pp.126–127, §5.4.4, pp.307–311. For discrete-series data the quoted result covers only the maximal tempered summand. | The quasicuspidal case is stated for `GL_n`: `PadicQuasicuspidalJacquetTheorems` in `Langlands.Representation.CuspidalSupport.JacquetInductionStatement` (Bernstein–Zelevinsky 1977, Cor. 2.13; its `AssociatedJacquetFiltrationTheorem` gives a filtration of the normalized Jacquet module of quasicuspidal induction with one Weyl-transported quotient per minimal conjugating permutation). This is the `GL_n` counterpart of S79 Thm 5.4.1.1. Published: `GLCuspidalJacquetMultiplicityPrerequisitesStatement` in `Langlands.Representation.Classification.CuspidalJacquetMultiplicityStatement`. For irreducible cuspidal input and associated standard positive-rank Levis, it gives the full upper and opposite normalized Jacquet composition lengths and each constituent's exact `HasJordanHolderMultiplicity`, counted by the actual minimal conjugating permutations and their representation-equivalence subtype. It assumes neither finite length nor a decomposition. The non-cuspidal discrete-series formula applies to the unitary central part and is now stated separately in the following row. |
 | **Discrete-series Jacquet multiplicities.** S79 Thm 5.4.1.1, pp.287–288, and §5.4.4, pp.307–311; weak-exponent comparison on p.187; C95 Prop. 2.1.9, p.21. | Published: `GLDiscreteSeriesJacquetMultiplicityStatement` in `Langlands.Representation.Classification.DiscreteSeriesMultiplicityStatement`. For associated standard positive-rank GL Levis and irreducible square-integrable input, the actual unitary central parts of both normalized Jacquet modules of upper induction are admissible, have the Weyl-count lengths and exact constituent multiplicities, and contain exactly the invariant subspaces with finite tempered composition factors. It neither bounds the full Jacquet length nor imposes one scalar central character on the tempered sum. The identification with tempered composition factors is stated; its full-center/split-center and analytic justifications are documented as derived steps. The representation-theoretic proofs remain open. |
 | **Full-dual exponents and class comparison.** S79 §2.4, pp.90–92; Lemmas 3.2.1–3.2.2, Thm 3.2.4 and Cor. 3.2.5(1), pp.120–123; Lemma 4.5.6 and Cor. 4.5.7, pp.187–188. | Published: `GLDualJacquetExponentPrerequisitesStatement` in `Langlands.Representation.Exponents.DualJacquetStatement`. For irreducible admissible positive-rank GL_n sources, its four components state finite smooth dual spectrum, finite uniform nilpotence indices and spanning of the full dual; dual occurrence iff an actual irreducible admissible opposite Jacquet constituent has the prescribed scalar split-center character; analytic temperedness of such a constituent iff that character is unitary for a tempered source; and tempered opposite-inducing support retaining a prescribed unitary character. The arbitrary constituent carrier has its own universe. These statements use the published full transpose dual construction, not the inverse-element contragredient, and do not prove the comparisons. |
-| **Weak-critical predicates and support refinement.** S79 §0.3, pp.5–6, and the paragraph before Cor. 4.5.11 through Cor. 4.5.12(3), pp.189–190. | Published constructions: `Exponents.ConjugateBlockPair` and its actual scalar restriction in `Langlands.Representation.Exponents.ParabolicPair`, and `PadicField.TopologicalData.IsWeaklyCriticalDualJacquetExponent`, `IsWeaklyCriticalDualJacquetPair`, `IsWeaklyMinimalDualJacquetPair` in `Langlands.Representation.Exponents.WeakCritical`. Weak criticality requires an occurring unitary exponent and tests strict uniform-index decrease over every proper finer concrete conjugate pair and every extending unitary exponent. Minimality is separately defined; its intrinsic implication to criticality is proved. The converse and prescribed discrete-series support are staged as described below, not yet published results. |
-| **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The finer representation-theoretic multiplicity comparisons of Lemmas 5.3 and 5.6 are not yet stated; their tempered/discrete-series/cuspidal hypotheses remain necessary. They need exponents, standard parabolic chains, Jacquet transitivity and tempered bounds; the counts are `HasJordanHolderMultiplicity`. Genericity must not replace regularity in the final statement. |
+| **Weak-critical predicates and support refinement.** S79 §0.3, pp.5–6, and the paragraph before Cor. 4.5.11 through Cor. 4.5.12(3), pp.189–190. | Published constructions: `Exponents.ConjugateBlockPair` and its actual scalar restriction in `Langlands.Representation.Exponents.ParabolicPair`, and `PadicField.TopologicalData.IsWeaklyCriticalDualJacquetExponent`, `IsWeaklyCriticalDualJacquetPair`, `IsWeaklyMinimalDualJacquetPair` in `Langlands.Representation.Exponents.WeakCritical`. Weak criticality requires an occurring unitary exponent and tests strict uniform-index decrease over every proper finer concrete conjugate pair and every extending unitary exponent. Minimality is separately defined; its intrinsic implication to criticality is proved. The converse and prescribed discrete-series support are published proposition definitions in `GLWeaklyCriticalTemperedRefinementStatement`, described below; their proofs remain open. |
+| **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The finer representation-theoretic comparisons are not yet stated. The [reviewed scope audit](silberger-lemma53-scope.md) gives a GL₂ obstruction to the unrestricted printed Lemma 5.3: its positive-weight sum argument supports equality only for actual constituents of the specified inner induction. A repaired target must retain this restriction and identify it as derived from the proof. Lemma 5.6 already assumes a tempered inner quotient; its continuation to every regular positive parameter still needs its own argument. The counts are `HasJordanHolderMultiplicity`, and genericity must not replace regularity in the final statement. |
 | **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The relative recovery and cosocle multiplicities of Props. 5.7–5.9 and semistandard conjugacy of Cor. 6.2 remain unstated. |
 | **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level maximal-cone construction used in its proof remains unstated. The parabolic cone specialization is now published; its application still needs class exponents, larger-Levi maps and the tempered criterion. |
 | **Regular-chamber quotient theorem.** S78 Thm 4.1(1)–(3), p.99, proof §§5–7. | Published: `GLRegularLanglandsQuotientStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`, the conjunction of unique-head existence, ordered inducing-data uniqueness and exhaustion. The actual upper standard module uses irreducible analytically tempered blocks with strictly decreasing real determinant exponents. All central twists are allowed; one-block regularity is vacuous. Head existence and equality of irreducible quotient kernels are conclusions, not datum fields. |
@@ -188,17 +196,19 @@ These publication statuses do not constitute proofs of the proposition
 families. The construction units include their intrinsic algebraic and
 coordinate laws only.
 
-The prepared support family is staged as
-`3daaab4e-3930-4f66-adae-36f87a7e30d3`, with review
-`2aef0357-aa4a-4427-a692-fad7d211a196`. Its intended entry is
+The support family `3daaab4e-3930-4f66-adae-36f87a7e30d3` version 1 is
+independently accepted and published at
+`a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302`, with integration receipt
+`579add5eed7847cf9d3125a6aea3b8bd`. Its entry is
 `Langlands.GLWeaklyCriticalTemperedRefinementStatement` in
 `Langlands.Representation.Exponents.WeakCriticalStatement`. For an irreducible
 analytically tempered source it states existence of a standard pair minimal
 among all concrete conjugate pairs, discrete-series opposite-inducing support with a prescribed critical character, and criticality
 iff minimality for all such pairs. The source route uses Cor. 4.5.11 to supply
 the discrete-series class-exponent premise of Cor. 4.5.12(3). Exact Prop
-inspection and machine validation have passed. Independent review and
-publication are pending; this candidate is not a Library dependency or a proof.
+inspection, machine validation, independent review and publication have
+passed. The Lean/Markdown pair in the pinned Library matches the frozen
+contribution hashes. This publishes the proposition family, not its proof.
 
 ## Library statements reused by these families
 
@@ -326,19 +336,60 @@ comparison. Following S79 p.189, weak criticality requires
 `d_Q(ψ) < d_P(χ)` for every proper finer pair and every extending unitary dual
 exponent. Separately, weak minimality means nonempty unitary spectrum and no
 unitary spectrum at any proper finer pair. Minimality implies criticality by
-eliminating the forbidden finer witness; the converse needs the staged support
-family above and remains a representation-theoretic proof obligation.
+eliminating the forbidden finer witness; the converse is now stated in the
+published support family above and remains a representation-theoretic proof
+obligation.
 
-The relative multiplicity/recovery families still need actual inner and composed
-opposite Jacquet functors sharing one refined-Levi codomain. Their geometric
-prerequisite is Worker 328's staged
-`Langlands.Representation.Parabolic.OppositeRefinementDefinitions`, candidate
-`baf6b13a-0ec5-48dc-8ece-e454d63db6d7`. Independent review/publication remain
-pending. The planned functors use coinvariants by the actual lower radicals and
-the inverse full upper modulus; a sign change on upper-radical coinvariants
-would not give this construction. Relative transitivity, comparison,
-semistandard recovery and the representation-level maximal-cone argument remain
-separate statement or proof obligations.
+The relative multiplicity/recovery families now have actual inner and composed
+opposite Jacquet functors sharing one refined-Levi codomain. The geometry is
+Worker 328's `Langlands.Representation.Parabolic.OppositeRefinementDefinitions`,
+contribution `baf6b13a-0ec5-48dc-8ece-e454d63db6d7` version 1, independently
+accepted and published at `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` with
+integration receipt `1d452f3c45464b34aeaf208d4701c7f4`. Its actual inner lower
+radical lies in the product Levi. Its full ambient lower radical is the
+preimage of that inner radical under the outer opposite Levi projection, so
+it includes the outer lower radical as well.
+
+`Langlands.Representation.Parabolic.OppositeRefinementFunctors` supplies the
+coinvariant carriers, surjective quotient maps, normalizer actions and
+descended intertwiners. The normalized actions are
+`T.normalizedRefinedOppositeJacquet B S` and
+`T.normalizedComposedOppositeJacquet B S`. Both target the actual
+`Geometric.refinedLevi F.Carrier B S`. They multiply the raw lower-radical
+quotient action by the positive half of the corresponding full upper
+character. The ambient character includes both the restricted outer character
+and the inner character. This is the inverse-half normalization of the inverse
+full upper character. The module proves representative formulas, smoothness,
+and identity/composition laws for the bundled functors
+`T.normalizedRefinedOppositeJacquetFunctor B S` and
+`T.normalizedComposedOppositeJacquetFunctor B S`. Field and representation
+universes are independent; rank zero uses an empty shape, and each present
+block has positive size.
+
+This construction is contribution `e4fc2023-de03-4637-8e0e-7ca78d74ccc6`
+version 1, by Worker 19 with Workers 8 and 14, independently accepted and
+published at `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18` with integration receipt
+`84223cdb13764c2687f13cecec3ded77`. Both geometry and functor pairs in the pinned
+Library match their frozen hashes. Their explicit characters have not been
+identified with Haar conjugation scaling by these modules. They assert no
+relative transitivity, multiplicity comparison or inducing-data recovery.
+
+The [Lemma 5.3 scope audit](silberger-lemma53-scope.md), contribution
+`e575b5df-8966-4fea-a9e7-bb7c9a08033f`, is independently reviewed and published
+at the pinned commit, with integration receipt `eeaa2ff73ec84df1a6231a4bcb6f9e73`.
+It explains the constituent restriction and the fine twist
+`-nu_0 + nu''|M`, with a GL₂ counterexample to the printed unrestricted
+comparison. It is a source audit, not a Lean theorem or an author-issued
+erratum. It does not contradict the Langlands quotient theorem or supply the
+all-regular continuation argument in Lemma 5.6.
+
+The comparison statements still need the actual coordinate equivalence from
+the refined Levi to the product Levi of the flattened block shape, so that the
+existing cuspidality predicate can apply to the transported representation.
+That construction, relative transitivity, the constituent-restricted generic
+comparison, all-regular comparison, relative recovery/cosocle multiplicities,
+semistandard conjugacy and the representation-level maximal-cone argument
+remain separate construction, statement or proof obligations.
 
 The grouping of equal exponents into tempered blocks is now stated by
 `Langlands.Classification.SquareIntegrableEqualExponentGrouping F T` in
