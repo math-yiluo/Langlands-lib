@@ -52,8 +52,18 @@ by the already published `centralIdeleCharacter_principal`.
 
 All cuspidal declarations retain the instance parameter
 `[CompactSpace (AdeleQuotient K)]`. This is the actual additive adele quotient
-with its published quotient topology. Its compactness remains a separate
-arithmetic proof obligation; it is not a freely chosen topology.
+with its published quotient topology. For every `K : Type u` with
+`[Field K] [NumberField K]`, `Langlands.Global.adeleQuotientCompact K` proves
+its compactness in
+[`Langlands.Global.AdeleQuotientCompactProof`](../Global/AdeleQuotientCompactProof.md).
+A caller can add `import Langlands.Global.AdeleQuotientCompactProof` and use
+`haveI := Langlands.Global.compactSpace_adeleQuotient K` locally to supply the
+required instance. This companion theorem has type
+`CompactSpace (AdeleQuotient K)` and is not registered as a global instance.
+The explicit parameter remains part of this module's interface; the arithmetic
+proof supplies it for the fixed quotient topology. See
+[`ConstantTerm`](ConstantTerm.md) for the compactness source and measure
+construction.
 
 `cuspidalAutomorphicSubrepresentation` pulls back `cuspidalSubrepresentation`
 from `ConstantTerm`. Its carrier `CuspidalAutomorphicForms` therefore consists

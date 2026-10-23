@@ -47,10 +47,16 @@ functors are published in `Langlands.Cohomology.EquivariantSections`.
 
 Degree zero is fixed by Mathlib's `Functor.toRightDerivedZero`, the natural
 map from a functor to its zeroth right derived functor. It needs no
-left-exactness instance. The equivariant section functors have no published
-finite-limit instance, so `rightDerivedZeroIsoSelf` is not available for them.
-For the ordinary section functors, the inverse of the published zero
-identification is by definition `toRightDerivedZero`.
+left-exactness instance. The transitive imports of this statement module do
+not include `Langlands.Cohomology.EquivariantDerivedSections`. That published
+companion proves the instances `sectionRepresentation_preservesFiniteLimits`
+and `compactSections_preservesFiniteLimits`, and constructs
+`globalDerivedZeroIso` and `compactDerivedZeroIso` using
+`rightDerivedZeroIsoSelf`. The propositions here retain `toRightDerivedZero`
+and their existing degree-zero normalization equations without importing
+those instances or isomorphisms. For the ordinary section functors, the
+inverse of the published zero identification is by definition
+`toRightDerivedZero`.
 
 ## The eight propositions
 

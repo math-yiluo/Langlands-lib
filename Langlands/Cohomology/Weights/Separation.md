@@ -2,13 +2,15 @@
 
 Author: Worker 41. This is a proposition-definition contribution for task
 `8dc52f5f-7184-4bf3-b9a6-ffec96c1e83c`, revision 1.
+Proof-status correction: Worker 333.
 
 The paired Lean file defines an actual proposition over number fields,
 polynomials, and their fraction fields. It isolates the algebraic implication
 used in Kottwitz's Section 6. It is not the full Kottwitz theorem: it assumes
 the polynomial trace identity and purity as hypotheses of an implication and
 does not claim that any cohomology or automorphic object realizes those inputs.
-It is neither an axiom nor an implemented proof.
+This file defines the proposition, rather than an axiom or a proof. The
+companion [SeparationProof](SeparationProof.md) proves that proposition.
 
 Let \(L\) be a number field, \(d\) a natural number, \(q>1\) a natural number,
 and \(w,a\) integers, and fix an embedding \(\iota:L\to\mathbf C\).
@@ -43,8 +45,8 @@ than storing them as assumed fields of a cohomological object. The existential
 quantifier lies in the conclusion. For positive \(a\), the last condition
 removes odd degrees; for negative \(a\), it removes even degrees. Zero
 cohomological summands are represented by characteristic polynomial \(1\).
-The unique factors are asserted over \(L\), so descent from complex
-factorization is explicitly part of the pending proof.
+The unique factors are over \(L\), so descent from complex factorization is
+part of the conclusion established by the companion proof.
 
 ## Original source and conventions
 
@@ -88,12 +90,21 @@ The only other dependency is the pinned Mathlib environment
 `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The algebraic statement still needs a proof. The separate unreviewed
-`Algebraic` pair now constructs the factors over the coefficient field and proves
-their comparison at every complex embedding under the appropriate root-purity
-hypothesis. The signed rational-function argument needed to establish that
-hypothesis and the multiplicity identities here remains a separate obligation.
-No cohomological, compatible-family, Hodge–Tate, automorphic transfer,
-parity-removal, or ramified compatibility theorem is proved or assumed as
-an axiom here. The complete Kottwitz/Harris targets remain outstanding and
-require the actual independently published global and geometric definitions.
+The independently accepted and published theorem
+[`Langlands.Cohomology.Weights.weightSeparationStatement`](SeparationProof.lean#L129)
+in `Langlands.Cohomology.Weights.SeparationProof` proves exactly
+`WeightSeparationStatement.{u}`. It proves the nonvanishing equivalence and,
+when \(a\ne0\), existence and uniqueness of the factors over \(L\), including
+their purity, multiplicity identities and wrong-parity factors equal to \(1\).
+Its signed rational-function argument gives the root-multiplicity identity;
+distinct weights give root coverage and the purity hypothesis needed for the
+coefficient-field factors. Descent, multiplicities and algebraic parity are
+therefore established, not pending obligations.
+
+This proof retains \(q>1\), monicity, positive degree of \(P\), root purity,
+and the rational-function identity as hypotheses. It supplies no geometric
+trace identity or cohomological purity theorem. No cohomological,
+compatible-family, Hodge–Tate, automorphic transfer, representation-theoretic
+parity-removal, or ramified compatibility theorem is proved or assumed as an
+axiom here. The complete Kottwitz/Harris results require further global and
+geometric inputs beyond this algebraic proposition.

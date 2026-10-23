@@ -121,10 +121,25 @@ Source file: `henniart-2002-characterization`, SHA-256
 
 ## Scope
 
-- The epsilon part of Theorem 1.5(iii) and Corollaries 1.6 and 1.8 need the
-  nongeneric pair epsilon factor, the product construction of Henniart 2002,
-  §2.8. That factor is owned by task 6f0365a3 and is not yet in the Library.
-  They will be separate modules of this task.
+- This module's inheritance and characterization goals remain L-only and
+  unproved. The nongeneric epsilon product of Henniart 2002, §2.8, is
+  implemented in `RankinSelberg/LanglandsFactors`, with actual quotient-data
+  witnesses, block-factor existence and datum independence required by its
+  constructor. The published `FullFactorCompatibility` supplies the epsilon
+  condition on actual automorphic classes and combines it with full L
+  compatibility; `FullSpecification` supplies `IsFullCorrespondence` and
+  unproved existence and uniqueness goals (see `FullLFactorCompatibility`,
+  Scope).
+- The epsilon part of Theorem 1.5(iii) is the separate, unproved
+  `AssemblyEpsilonInheritanceStatement` in `AssemblyTheorems`: a
+  supercuspidal correspondence and its assembly satisfy
+  `FullEpsilonCompatibility` for each geometrically normalized reciprocity
+  candidate. The same module's `ConditionalAssemblyStatement` says that,
+  given a supercuspidal correspondence, an assembly exists and every
+  assembly is a full correspondence. Both declarations are `Prop` targets,
+  not proofs. Their availability does not assert formalization or proof of
+  every corollary mentioned above, or unconditional analytic existence,
+  classification or descent.
 - Theorems 1.6, 1.7 and 1.9 characterize classes on one side only (the
   parameter side or the representation side); they are not statements of
   this task.

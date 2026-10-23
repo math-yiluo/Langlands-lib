@@ -127,13 +127,31 @@ Source files:
 ## Scope
 
 - Only the L half of the full-family pair-factor condition is stated here.
-  The epsilon half needs the pair epsilon factor of nongeneric
-  representations, the product construction of Henniart 2002, §2.8. The
-  published JPSS epsilon relations need nonzero Whittaker functionals, so
-  they do not apply to nongeneric images. That epsilon factor is owned by
-  task 6f0365a3 and is not yet in the Library. The full factor condition,
-  L and epsilon together, will be a separate module of this task that
-  imports this one.
+  These are `Prop` conditions; this module proves no compatibility result.
+  The published `RankinSelberg/LanglandsFactors` implements the nongeneric
+  epsilon product of Henniart 2002, §2.8:
+  `IsLanglandsPairEpsilonFactor` requires actual square-integrable Langlands
+  quotient data for both representations and the same block product for
+  every such presentation. Its uniqueness is proved. The constructor
+  `langlandsPairEpsilonFactor` requires quotient-data witnesses, block-factor
+  existence and independence of the presenting data.
+- The published `FullFactorCompatibility` imports this module and supplies
+  `IsAutomorphicPairEpsilonFactor` on actual automorphic classes, using
+  representatives and equivalent smooth representations in carrier universe
+  `max uF uA`. `IsPairEpsilonCompatibleAt` explicitly requires a self-dual
+  measure to exist and, for every such measure, a common nonzero monomial
+  `e : ℂˣ × ℤ` satisfying both the automorphic and arithmetic epsilon
+  relations. `FullEpsilonCompatibility` existentially retains a normalized
+  local-constant system with the prescribed base reciprocity, and
+  `FullFactorCompatibility` conjoins it with the full L condition.
+  In `FullSpecification`, `IsFullCorrespondence` combines these pair-factor
+  conditions for every nontrivial additive character with rankwise
+  bijectivity, duality, and rank-one, determinant and twist compatibility
+  for the same geometrically normalized reciprocity candidate.
+  `FullCorrespondenceExistence`, `FullCorrespondenceUniqueness` and
+  `FullCorrespondenceStatement` are unproved `Prop` goals. These interfaces
+  and conditional constructions do not establish unconditional analytic
+  factor existence, classification or descent.
 - The module imports, and does not copy: Worker 11's
   `RankinSelberg/LanglandsQuotientLFactorStatement`
   (`IsLanglandsPairLPolynomial`), `LocalConventions`

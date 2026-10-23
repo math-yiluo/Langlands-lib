@@ -213,12 +213,25 @@ in the ordinary-topology analogue.
   Berkovich's étale or quasi-étale site of an analytic space. Analytic
   spaces, `X(G)`, the Drinfeld spaces and the base change to `F̄` in Harris
   are not formalized here.
-- The comparison `H^q_c(X{G}, F) ≅ H^q_c(X, b^*F)` of Corollary 1.5.2(i)
-  needs derived functors on the category of smooth equivariant sheaves.
-  No abelian structure on Worker 13's `SmoothTopologicalSheaf` is published
-  yet, so this comparison is not stated. For a discrete group, the
-  comparison is the published `EquivariantCompactSectionsDerivedStatement`
-  of `Langlands.Cohomology.OperatorSpace.Statement`.
+- The ordinary-topology analogue of the comparison
+  `H^q_c(X{G}, F) ≅ H^q_c(X, b^*F)` of Corollary 1.5.2(i) uses derived
+  functors on the category of smooth equivariant sheaves. Under the
+  coefficient, topology, action and common-universe assumptions above,
+  together with `HasStableNeighbourhoods G X`,
+  `Langlands.Sheaf.Equivariant.SmoothAbelian` publishes
+  `smoothTopologicalSheaf_abelian` and
+  `smoothTopologicalSheaf_enoughInjectives` for `SmoothTopologicalSheaf R G X`.
+  For locally compact Hausdorff `X`, with the same stable-neighbourhood
+  hypothesis, `Langlands.Cohomology.SmoothCompactComparison.Statement`
+  defines `SmoothInjectiveCompactAcyclicStatement`,
+  `SmoothCompactDerivedComparisonStatement` and their conjunction
+  `SmoothCompactComparisonStatements`. The comparison goal asks for natural
+  isomorphisms in `Rep R G` in every degree, with the specified canonical
+  identification through compact sections in degree zero. These are
+  Prop-valued goals, not proofs of acyclicity or comparison. These companion
+  modules are available in the Library but are not imported here. For a
+  discrete group, `Langlands.Cohomology.OperatorSpace.Statement` also states
+  `EquivariantCompactSectionsDerivedStatement`.
 - The spectral sequence of Corollary 1.5.2(i) is not stated. The published
   `Langlands.Cohomology.OperatorSpace.Statement` explains why it fails for
   infinite discrete groups.

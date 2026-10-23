@@ -132,9 +132,20 @@ workspace's Library base
 `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-No pending `RestrictedTensor.Separation` module or two-factor statement is
-imported to state this group. A future proof may use the published separation
-construction once available. General factorization existence, the spherical
+Neither `RestrictedTensor.Separation` nor a two-factor statement is imported to
+state this group. The separately published `RestrictedTensor.Separation` already
+constructs the linear equivalences `finiteSeparation`, its inverse `reassemble`,
+`localSeparation` exposing an actual local carrier, and `productSeparation` for
+bundled reference vectors. These algebraic constructions work over any field,
+with independent coefficient, index and local-carrier universes and no
+finite-dimensionality hypothesis. They require nonzero reference vectors only
+outside the original finite exceptional set `E`. Any finite set `A` can be
+separated; it need not contain `E`, and the complementary restricted tensor
+retains the exceptional indices outside `A`.
+
+This existing algebraic separation is available for proof work, but does not
+alone establish any of the four representation-theoretic targets above or
+general Flath decomposition. General factorization existence, the spherical
 Hecke algebra hypothesis of Theorem 2, the archimedean `(g,K)` category of
 Theorem 3, and the Hilbert completion of Theorem 4 remain separate obligations.
 This group supplies prerequisites for local components; it does not define

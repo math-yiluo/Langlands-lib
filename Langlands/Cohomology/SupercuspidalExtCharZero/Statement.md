@@ -221,7 +221,8 @@ sequence (10), over `Q̄_ℓ` (with the remark on p.95 that one may choose
 
 ## Scope
 
-- `L_ℓ` is a finite product of fields of characteristic zero, not a field.
+- `L_ℓ` is a finite product of fields of characteristic zero, not
+  necessarily a field; it is a field when there is only one factor.
   The module covers each factor field. The decomposition of smooth
   `L_ℓ[GJ]`-modules and their `Ext` groups along the factors is not
   formalized.

@@ -147,8 +147,23 @@ Derivations and choices:
 
 - The coefficients of the second and third components are complex. Harris
   1997 works with `Q̄_ℓ` and says that one may choose an isomorphism
-  `Q̄_ℓ ≅ ℂ` (p.95). Harris 1999 works over the `ℓ`-adic field `L_ℓ`, which
-  is not algebraically closed; that case is not covered.
+  `Q̄_ℓ ≅ ℂ` (p.95). Harris 1999, printed p.306 (PDF p.8), final
+  paragraph, defines `L_v = L ⊗_ℚ ℚ_v` for a place `v` of `ℚ`, with `L`
+  the number field over which the coefficient representation is rational.
+  At a finite prime `ℓ`, the usual decomposition into completions gives
+  `L_ℓ ≅ ∏_{λ | ℓ} L_λ`. Thus Harris's `L_ℓ` is a finite-product
+  coefficient algebra, not necessarily a field: there may be just one
+  factor. A chosen completion `L_λ` at a finite place `λ` of `L` above `ℓ`
+  is a field, but Harris's notation denotes the whole tensor-product
+  algebra. In (4.10.1), printed p.311 (PDF p.13), his `Ext` is taken in
+  smooth `L_ℓ[GJ]`-modules. This module's second and third components do
+  not cover those coefficients. The companion
+  `Langlands.Cohomology.SupercuspidalExtCharZero.Statement` states the
+  corresponding goals for `[Field k] [CharZero k]`, hence for each
+  individual factor `L_λ`. Neither of these two modules formalizes the
+  decomposition of smooth representations and their `Ext` groups along
+  the factors, so these field-level goals do not supply a product-algebra
+  `Ext` vanishing theorem.
 - No central-character category is introduced. As in Harris 1997, the
   passage to `GJ^0`, which has compact center, replaces it.
 - The geometric input `H^j_c(M_N) ≅ c-Ind_{GJ^0}^{GJ} H^j_c(R_N)` (Harris
@@ -168,7 +183,8 @@ Derivations and choices:
   Theorem 5.4.1, which Harris also cites, was not read.
 - `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, PDF SHA-256
   `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`:
-  printed p.312 (PDF p.14), read visually from the page scan.
+  printed pp.306, 311 and 312 (PDF pp.8, 13 and 14), read visually from
+  the page scans.
 - `bernstein-zelevinsky-1976-representations-gln`, PDF SHA-256
   `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`:
   2.28-2.29, pp.23-24; 2.40-2.44, pp.26-28; 3.26-3.28, p.36; read in the

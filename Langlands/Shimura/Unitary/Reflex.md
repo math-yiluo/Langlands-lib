@@ -52,11 +52,13 @@ General part:
 - `hodgeSubspace_eq_of_diagonal` and `hodgeNumber_of_diagonal`: if `h(z)` is
   diagonal with entries `z` on a set `p` of coordinates and `z̄` elsewhere,
   then `V₁` is spanned by the coordinates in `p`, and `n(i)` is their number.
-- `hodgeNumber_correctedComplexHom_conj r`: at a factor of signature
-  `(r, n-r)`, Kottwitz's homomorphism is `correctedComplexHom n r ∘ conj`,
-  which is `z` on the first `r` coordinates and `z̄` on the rest, so `n = r`.
-  `hodgeNumber_correctedComplexHom r`: on the entrywise conjugate factor the
-  number is `n - r`.
+- `hodgeNumber_correctedComplexHom_conj r hr`, with `hr : r ≤ n`: at a
+  factor of signature `(r, n-r)`, Kottwitz's homomorphism is
+  `correctedComplexHom n r ∘ conj`, which is `z` on the first `r` coordinates
+  and `z̄` on the rest, so `n(i) = hodgeNumber = r`. Here `n` remains the
+  ambient matrix rank, `dim_ℂ V = n`.
+  `hodgeNumber_correctedComplexHom r hr`, under the same hypothesis: on the
+  entrywise conjugate factor the Hodge number is `n - r`.
 - `realPlaceBelow E i` is the real embedding of the totally real field `E`
   below a complex embedding `i` of `K`. `realPlaceBelow_eq_iff`,
   `comp_realPlaceBelow`, `realPlaceBelow_conjugate` (an embedding and its

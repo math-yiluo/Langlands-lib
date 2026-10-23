@@ -1,5 +1,10 @@
 # Adelic extension norms
 
+For fields `K : Type u` and `L : Type v` with `NumberField K`,
+`NumberField L` and `Algebra K L`, this module constructs the norms below.
+The number-field instances supply finite relative dimension; no Galois or
+abelian hypothesis is required.
+
 This construction uses the determinant norms of the actual completed
 extensions in `Extension.lean`. At a base finite place, it takes their finite
 product over all genuine primes lying above that place. This is a
@@ -47,11 +52,23 @@ product. Surjectivity between these equal finite dimensions proves
 bijectivity. The implementation proves the needed scalar tower through `L`
 and supplies nontriviality of the completed norm using the element `2`.
 
-Finite-place bijectivity, principal-norm compatibility and quotient descent
-remain unproved. They are exposed as exact arithmetic obligations in the
-paired `NormStatement` file; the statement is not used as an assumption in
-this construction. No desired equivalence, norm or compatibility certificate
-is assumed, and this group does not complete the task.
+The separate [NormStatement](NormStatement.md) module defines the exact
+`Prop` targets. They are proved in the published companion modules:
+`Langlands.Global.AdelicFunctoriality.completedTensorComparison` in
+[CompletedTensorComparisonProof](CompletedTensorComparisonProof.md) proves
+bijectivity at every actual finite and infinite place, and
+`Langlands.Global.AdelicFunctoriality.normCompatibility` in
+[NormCompatibilityProof](NormCompatibilityProof.md) proves both that target
+and the principal-adele norm identity. Its determinant base-change and
+finite-product reductions are implemented in [NormReduction](NormReduction.md).
+
+[IdeleClassNorm](IdeleClassNorm.md) proves the principal-adele and
+principal-idele identities and preservation of the principal subgroup, then
+constructs `Langlands.Global.AdelicFunctoriality.ideleClassNorm` with its
+representative formula, continuity and uniqueness. These are separate
+modules: `Norm.lean` imports neither the targets nor their proofs and
+constructs its maps without assuming any desired comparison or compatibility
+certificate. The norm results do not establish global class-field theory.
 
 The defining product is Andre Weil, *Basic Number Theory*, second edition
 (1973), Chapter IV section 1, Corollary 3, printed p. 64 (PDF p. 81).

@@ -3,9 +3,9 @@
 This module proves the quotient step for the already constructed genuine
 adelic and idelic norm. Its input is the exact arithmetic equation saying
 that the norm of a principal adele is the principal adele of the determinant
-field norm. That equation is an explicit hypothesis, not a proved global
-compatibility result. The module therefore does not yet give an unconditional
-idele-class norm or complete the task.
+field norm. That equation remains an explicit hypothesis of this module's
+constructions. The unconditional principal formula and idele-class norm
+are supplied by the separate published modules described below.
 
 `ideleNorm_principal_of_principal_formula` applies equality of units to the
 principal-adele equation. The resulting equation uses the actual field-unit
@@ -27,8 +27,34 @@ this construction.
 determinant reduction in `NormReduction.lean`. The only additional arithmetic
 premise in this version is bijectivity of every canonical finite completed
 tensor map. The infinite comparison is already proved in `Norm.lean`.
-The finite premise remains unproved; no arbitrary map, norm, or equivalence
-is supplied in its place. Both field universes remain independent.
+The finite premise remains explicit in this definition; no arbitrary map,
+norm, or equivalence is supplied in its place. The fields `K : Type u` and
+`L : Type v` have their field, number-field and `Algebra K L` instances,
+with finite relative dimension inferred and both universes independent.
+No Galois or abelian hypothesis is required.
+
+`Langlands.Global.AdelicFunctoriality.completedTensorComparison` in
+[CompletedTensorComparisonProof](CompletedTensorComparisonProof.md) proves
+this finite premise as well as the infinite-place comparison.
+`Langlands.Global.AdelicFunctoriality.normCompatibility` in
+[NormCompatibilityProof](NormCompatibilityProof.md) proves the comparison
+and principal-adele formula, using the determinant reductions in
+[NormReduction](NormReduction.md).
+
+[IdeleClassNorm](IdeleClassNorm.md) specializes the descent helpers with a
+proved principal formula. In that module,
+`Langlands.Global.AdelicFunctoriality.adeleNorm_principal` and
+`Langlands.Global.AdelicFunctoriality.ideleNorm_principal` give the two
+principal identities, and
+`Langlands.Global.AdelicFunctoriality.ideleNorm_principal_le` gives subgroup
+preservation. The actual continuous homomorphism is
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm`; its laws are
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm_mk`,
+`Langlands.Global.AdelicFunctoriality.continuous_ideleClassNorm`,
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm_principal` and
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm_unique`.
+These unconditional results leave the present module's conditional
+interfaces unchanged and do not prove global reciprocity.
 
 The original arithmetic source is Andre Weil, *Basic Number Theory*, second
 edition (1973), Chapter III section 4, Theorem 4 and Corollary 3, printed
@@ -39,5 +65,6 @@ the adelic product; and Chapter IV sections 3-4, printed pp. 71-76
 passages were read. Registered original: `weil-1973-basic-number-theory`,
 SHA256 `32fff78f8ccc5d6378907941e26746c34e20fc3adf5096508844cfe8a301e33b`.
 The quotient and continuity arguments above describe the implemented Lean
-proof. This is a conditional reduction of the remaining arithmetic obligation,
-not an assumption that the source's full theorem has been formalized.
+proof. This module is a conditional reduction; its arithmetic premise is
+proved separately, and the cited source also contains results beyond these
+norm and quotient constructions.

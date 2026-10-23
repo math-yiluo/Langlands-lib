@@ -1,9 +1,12 @@
 # Compatibility of actual lambda-adic Galois representations
 
 Author: Worker 41.
+Documentation correction (I028): Worker 32.
 It defines compatibility and purity, and proves the independence of
-geometric-Frobenius lifts needed by the definition. It proves no existence
-theorem for automorphic Galois representations.
+geometric-Frobenius lifts needed by the definition. The published companion
+`Langlands.Galois.FrobeniusLift` proves lift existence for these same local
+objects. Neither module proves an existence theorem for automorphic Galois
+representations.
 
 Let `K` and `L` be actual number fields. Finite places are the published
 `Global.FinitePlace` objects, nonzero prime ideals in their rings of integers.
@@ -17,7 +20,8 @@ completion. No arbitrary group, residue homomorphism or inertia subgroup is
 supplied as replacement data. `IsGeometricFrobeniusLift v g` says that the
 inverse of this actual local Galois element acts on every residue element by
 `x ↦ x^(Nv)`. Thus it fixes the geometric, rather than arithmetic, direction.
-This condition does not choose or assert the existence of a lift.
+The predicate itself does not choose a lift; existence is proved separately by
+`Langlands.GaloisRepresentation.exists_geometricFrobeniusLift` in the companion.
 The scoped Mathlib `Valued` instance supplies the nontrivial norm on the
 actual number-field completion; no additional norm or valuation is an input.
 
@@ -32,9 +36,20 @@ characteristic and Euler polynomials therefore agree.
 
 `HasEulerPolynomialAt A v P` requires both unramifiedness and an actual
 geometric lift whose Euler polynomial is `P`. The proved `forall_lifts` law
-gives the same equality for every geometric lift. This existential clause
-prevents a universal implication from making the condition vacuous if the
-existence of lifts has not yet been proved in the local construction.
+gives the same equality for every geometric lift. The existential clause
+records an actual witness; the companion now supplies one for every `v`.
+Its theorem `Langlands.GaloisRepresentation.hasEulerPolynomialAt_iff` states
+
+`HasEulerPolynomialAt A v P ↔
+  IsUnramifiedAt A v ∧ frobeniusEulerPolynomial A v = P`.
+
+Here `frobeniusEulerPolynomial A v` evaluates the existing Euler polynomial
+at `geometricFrobeniusLift v`, chosen from the proved existence theorem.
+All these names have prefix `Langlands.GaloisRepresentation`. Evaluation is
+defined even for ramified representations, but equality with evaluation at
+every geometric lift requires `IsUnramifiedAt A v`. The equivalence retains
+that condition; it does not infer unramifiedness from a chosen-lift identity.
+The chosen lift is not asserted to be canonical.
 
 `Collection K L excluded` is a dependent collection of genuine continuous
 finite-dimensional representations over the actual `L_lambda`, indexed by
@@ -73,26 +88,52 @@ Chapter I, Section 7, printed pp.20–22, read in the retained original:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 Its finite-extension surjectivity result is not assumed here.
 
-The published imports are `Langlands.Global.Adelic`,
+The original dependency record below concerns Library commit
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`: the published dependencies were
+`Langlands.Global.Adelic`,
 `Langlands.Weil.Representation.Basic`,
 `Langlands.Galois.Local.SpectralDefinitions` and
-`Langlands.Cohomology.Weights.Polynomial`, read at Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`. The new paired
+`Langlands.Cohomology.Weights.Polynomial`. The then-new paired
 `Langlands.Galois.CoefficientRepresentation` supplies the actual continuous
 representation and restriction layer.
 
-The local owner still must prove existence of geometric lifts, the residue
-identification and cardinality comparison, and the relevant local Weil
-assembly. No such existence theorem is embedded as an axiom or assumed
-constructor argument. Here the number-field completion is used directly;
-transport to a separately constructed finite extension of `Q_p` remains
-another arithmetic comparison. Independence under a different choice of the
-global-to-local closure embedding remains a separate theorem. Full compatible
-family existence, purity of cohomology, multiplicity removal, automorphic
-weak association with its unitary normalization, and ramified compatibility
-are not consequences of these definitions alone.
+For every number field `K` and actual finite place `v : Global.FinitePlace K`,
+the published `Langlands.GaloisRepresentation.exists_geometricFrobeniusLift`
+proves `∃ g : LocalGroup v, IsGeometricFrobeniusLift v g`. It uses exactly
+this module's `LocalGroup`, `localResidueAction`, `LocalResidueClosure` and
+`residueCardinality`, with the same canonical completion norm. The companion
+imports this module, so using its existence and chosen-lift theorems requires
+importing `Langlands.Galois.FrobeniusLift`.
 
-All new code uses Lean 4.34.0 and pinned Mathlib
+The residue comparison is also proved.
+`Langlands.Global.CompletionResidue.residueEquiv` identifies
+`NumberField.RingOfIntegers K ⧸ v.asIdeal` with
+`IsLocalRing.ResidueField
+  (Langlands.LocalGalois.baseIntegers (Global.FiniteCompletion K v))`
+through the actual embedding and reduction map.
+`Langlands.Global.CompletionResidue.card_residueField` identifies its
+`Nat.card` with `Ideal.absNorm v.asIdeal`, exactly `residueCardinality v`.
+The companion's `Langlands.GaloisRepresentation.residueArithmeticFrobenius_apply`
+therefore gives the cardinality-power action on `LocalResidueClosure v`.
+Its `Langlands.GaloisRepresentation.localResidueAction_surjective` specializes
+the proved spectral residue-action surjectivity to this completion. Lifting
+arithmetic Frobenius and taking the inverse proves the geometric-lift
+existence assertion without an additional existence hypothesis.
+
+These intrinsic results were checked in Library commit
+`5150bf6c9c8e6dd90b1329f6188324b9fb00a0da`, and the Tate and Harris passages
+above were reread for this correction. They use the number-field completion
+directly. Transport to a separately constructed finite extension of `Q_p`
+and independence under a different global-to-local closure embedding remain
+separate arithmetic comparisons. Local Weil-group assembly belongs to the
+separate `Langlands.Weil.Local.Assembly` and `AssemblyProof` modules; it is
+not a consequence of this lift-existence theorem. Full compatible-family or
+automorphic Galois-representation existence, purity of cohomology,
+multiplicity removal, automorphic weak association with its unitary
+normalization, and ramified compatibility are not supplied by these
+intrinsic lift and Euler-polynomial results.
+
+The original development used Lean 4.34.0 and pinned Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. Native compilation and the exact
 Lake check succeeded with zero errors or warnings. The latter reports
 `IsCompatible` as a definition returning `Prop`, with independent universes
@@ -101,7 +142,7 @@ evidence does not establish independent semantic acceptance or publication.
 
 ## Declaration and dependency map
 
-All new names below have prefix `Langlands.GaloisRepresentation`.
+All names defined in this module below have prefix `Langlands.GaloisRepresentation`.
 
 | Declarations | Meaning and dependency |
 | --- | --- |
@@ -113,8 +154,8 @@ All new names below have prefix `Langlands.GaloisRepresentation`.
 | `residueAction_eq_of_geometricFrobenius`, `action_eq_of_residueAction_eq`, `eulerPolynomial_eq_of_geometricFrobenius`, `HasEulerPolynomialAt.forall_lifts` | Proved independence of lift using the actual kernel and representation laws |
 | `Collection`, `MatchesOutside`, `IsCompatible`, `HasRank`, `IsPureCompatible` | Actual coefficient-indexed collection and separate compatibility, dimension and integral-weight propositions |
 
-The dependency versions are the current Library commit specified above.
-The Lean SHA256 fingerprints are:
+The following fingerprints record dependencies of the original submission at
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`:
 
 | Published module | SHA256 |
 | --- | --- |
@@ -123,7 +164,8 @@ The Lean SHA256 fingerprints are:
 | `Langlands.Galois.Local.SpectralDefinitions` | `7b05ea4f6904f852d6870c3c323a42939d98c8e03bfc08fb7aa37a58d46e8d9a` |
 | `Langlands.Cohomology.Weights.Polynomial` | `47a03391e9b60f456f2b30133179940bb3fa75ee2b8c740b03641aaa0742964f` |
 
-Their paired Markdown was read and the workspace copies were checked against
-the published bytes. `CoefficientRepresentation` is the sole new helper pair
-included with this contribution. No unreviewed global automorphic,
-cohomological or local-Weil draft is imported.
+Their paired Markdown was read and the original workspace copies were checked
+against the published bytes. `CoefficientRepresentation` was the sole new
+helper pair included with that submission. No unreviewed global automorphic,
+cohomological or local-Weil draft is imported. The I028 correction changes
+only this Markdown; the Lean module and its imports are unchanged.

@@ -13,10 +13,21 @@ need. No statement of the module is left unproved.
 Every measure-theoretic declaration takes the instance parameter
 `[CompactSpace (AdeleQuotient K)]`. Here `AdeleQuotient K` is
 `Adeles K ⧸ principalAdeles K` with the quotient topology, from
-`Langlands.Global.AdeleQuotientStatement`. Its compactness is
-`AdeleQuotientCompactStatement K`, which is stated there but not yet proved.
-Once it is proved, the parameter is discharged by that proof. No other topological
-hypothesis is assumed. In particular, neither Hausdorffness of `𝔸_K / K` nor
+`Langlands.Global.AdeleQuotientStatement`. For every `K : Type u` with
+`[Field K] [NumberField K]`, `Langlands.Global.adeleQuotientCompact K` proves
+`AdeleQuotientCompactStatement K` in
+[`Langlands.Global.AdeleQuotientCompactProof`](../Global/AdeleQuotientCompactProof.md).
+Its companion `Langlands.Global.compactSpace_adeleQuotient K` has type
+`CompactSpace (AdeleQuotient K)` with the same hypotheses. The proof maps a
+compact adelic fundamental set surjectively onto this actual quotient.
+
+A caller can add `import Langlands.Global.AdeleQuotientCompactProof` and install
+the result locally with
+`haveI := Langlands.Global.compactSpace_adeleQuotient K`.
+The theorem is not registered as a global instance. This module imports the
+statement module and retains its explicit compactness parameter, which the
+separate proof supplies. No other topological hypothesis is assumed.
+In particular, neither Hausdorffness of `𝔸_K / K` nor
 closedness of `K` in `𝔸_K` is used. Mathlib's Haar construction
 `Measure.addHaarMeasure` needs only a topological additive group with its Borel
 σ-algebra and a compact set with nonempty interior. Here that set is the whole
@@ -113,6 +124,13 @@ Proc. Sympos. Pure Math. 33, part 1 (1979), pp. 189–202 (literature ID
 
 Here `G = GL_n` over the number field `F = K`.
 
+The compactness supplied by the separate proof is the number-field case
+`E = K` of A. Weil, *Basic Number Theory*, second edition (1973), IV §2,
+Theorem 2, printed pp.64–65 (one-based PDF pp.81–82; literature ID
+`weil-1973-basic-number-theory`). Weil treats finite-dimensional vector spaces
+over global fields; the cited Lean theorem proves compactness of `𝔸_K / K`
+for number fields.
+
 ## Derived content
 
 - **Maximal block parabolics.** The proper maximal parabolic `K`-subgroups of `GL_n`
@@ -140,5 +158,6 @@ Here `G = GL_n` over the number field `F = K`.
 
 All declarations are definitions or proved lemmas under the single instance
 parameter `[CompactSpace (AdeleQuotient K)]`. The additive quotient comes from
-the published `Langlands.Global.AdeleQuotientStatement`; its compactness
-statement remains a separate proof obligation.
+the published `Langlands.Global.AdeleQuotientStatement`; its compactness is
+proved separately in `Langlands.Global.AdeleQuotientCompactProof` under
+`[Field K] [NumberField K]` and can supply this parameter as described above.

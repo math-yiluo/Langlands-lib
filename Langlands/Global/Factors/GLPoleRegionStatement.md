@@ -178,13 +178,28 @@ Its proof is in §4.8, printed pp.162-163. Here `π, π' ∈ 𝒜_F` are irreduc
 admissible (§2.5). Cuspidal means supercuspidal, `𝒜^0` in §2.5. The
 formalization makes the following documented choices.
 
-- **Generic domain.** The Library's JPSS L-polynomial is defined by the
-  zeta integrals of Whittaker functions. It therefore attaches a factor only
-  to representations with a nonzero Whittaker functional. For other
-  representations the zeta values are `{0}` and no generator exists. The
-  Langlands-data L-factor of non-generic representations (Henniart §2.6(a)(1))
-  is not in the Library. Hence both members are assumed generic irreducible
-  admissible.
+- **Generic domain.** This module uses the JPSS L-polynomial relations
+  defined by zeta integrals of Whittaker functions. Without a nonzero
+  Whittaker functional the zeta values are `{0}` and no normalized
+  L-polynomial generator exists. Both members here are therefore assumed
+  generic irreducible admissible. Separately, the Library's
+  `RankinSelberg/LanglandsQuotientLFactorStatement` defines
+  `Langlands.RankinSelberg.IsLanglandsPairLPolynomial` through actual tempered
+  Langlands quotient data for both representations and the standard-module
+  L-polynomial relation for every such pair of presentations. This relation
+  applies also to nongeneric quotients without a vacuous universal condition, and
+  `IsLanglandsPairLPolynomial.unique` proves uniqueness. Its provenance is
+  JPSS §9.4, printed p.458, which extends the factor through standard modules,
+  consistent with Henniart §§2.5–2.6(a). The universal
+  `LanglandsPairLFactorExistenceStatement` and the generic identification
+  `GenericLanglandsQuotientLFactorStatement` remain unproved `Prop`
+  definitions. `RankinSelberg/LanglandsLFactor` also constructs certified
+  polynomials from explicit classification, exhaustion and standard-module
+  factor-existence inputs, and the rational unit `1 / P(X)` from a certified
+  polynomial. These conditional constructions do not prove their inputs.
+  These available interfaces do not establish general existence
+  or identification with the integral factors used here. This module retains
+  the following generic specialization of Henniart's Proposition 4.5(ii):
   - In the tempered case this loses nothing, since irreducible essentially
     tempered representations are generic. That is a theorem, not used here.
   - In the supercuspidal case, Henniart's hypothesis on `π` is replaced by its

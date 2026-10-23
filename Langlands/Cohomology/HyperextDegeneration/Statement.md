@@ -2,6 +2,9 @@
 
 Author: Worker 3.
 
+Documentation correction: Worker 54, with source and infrastructure audit by
+Worker 291.
+
 This module declares one auxiliary definition and one proposition in the
 namespace `Langlands.Cohomology`. The proposition
 `HyperextDegenerationStatement` is a theorem-statement definition, not a
@@ -131,10 +134,13 @@ half spaces; elaboration of Carayol's program*, Invent. Math. 129 (1997),
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), 299-318:
 
-Here `O` is the ring of integers of the `ℓ`-adic field `L_ℓ` (p.307), and
+Harris defines `L_v = L ⊗_ℚ ℚ_v` for a number field `L` (p.306).
+Thus `L_ℓ` is a finite-product coefficient algebra over `ℚ_ℓ`, a product
+of the completions of `L` at places above `ℓ`; it may be a single field.
+Here `O` retains Harris's notation for its ring of integers (p.307), and
 `𝒜_ℓ(GJ, ρ, H)` is the space of automorphic forms of section 3, (3.3), with
 values in the `L_ℓ`-points of the coefficient representation `W`. It is an
-`L_ℓ`-vector space with a smooth action of `GJ`.
+`L_ℓ`-module with a smooth action of `GJ`.
 
 - Proposition 4.10, (4.10.1), printed p.311, is a spectral sequence of
   `O`-modules
@@ -160,9 +166,9 @@ values in the `L_ℓ`-points of the coefficient representation `W`. It is an
 
 Coefficients in (5.2). The first argument of `Hom` in (5.2) is printed with
 `O(n-1)` coefficients, while the spectral sequence (4.10.1) has `L_ℓ(n-1)`.
-The second argument `𝒜_ℓ(GJ, ρ, H)[π^v]` is an `L_ℓ`-vector space. A
-`GJ`-equivariant `O`-linear map from an `O`-module `M` to an `L_ℓ`-vector
-space `V` extends uniquely to an `L_ℓ`-linear map from `M ⊗_O L_ℓ`, so
+The second argument `𝒜_ℓ(GJ, ρ, H)[π^v]` is an `L_ℓ`-module. A
+`GJ`-equivariant `O`-linear map from an `O`-module `M` to an `L_ℓ`-module
+`V` extends uniquely to an `L_ℓ`-linear map from `M ⊗_O L_ℓ`, so
 `Hom_{GJ}(M, V) = Hom_{GJ}(M ⊗_O L_ℓ, V)`. The `L_ℓ`-coefficient complexes
 are obtained from the integral ones by tensoring with `L_ℓ` (compare Harris
 1997 p.92: "Tensoring with `Q_ℓ`, we obtain our complex"). Since `L_ℓ` is
@@ -222,11 +228,23 @@ Harris's application only the middle degree `j = n-1` contributes
 
 ## Scope
 
-- The category is an arbitrary abelian category. The supercuspidal input,
-  vanishing of higher `Ext` from Harris's cohomology groups into a
-  supercuspidal coefficient representation, is not stated here. It needs the
-  abelian category of smooth representations and its `Ext`, which are not
-  yet in the Library.
+- The statement concerns an arbitrary abelian category. The Library already
+  supplies the abelian category of smooth representations in
+  [Category/Abelian](../../Representation/Category/Abelian.md), enough
+  injectives in
+  [SmoothPartAdjunction](../../Representation/Category/SmoothPartAdjunction.md),
+  and [SmoothExt](../SmoothExt.md). The latter defines `ext` by right-deriving
+  equivariant Hom in the second argument, with `extMap`, `bifunctor`,
+  `isoHomologyOfInjectiveResolution`, `extZeroIso`, and positive-degree
+  vanishing for injective second arguments. Its scope is an arbitrary
+  commutative ring `R` and topological group `G`, with `R`, `G` and
+  representation carriers in one universe. This module imports only
+  Mathlib, not those companion modules. Their availability does not
+  discharge the statement's bounded-above or `Abelian.Ext`-vanishing
+  hypotheses. The Harris-specific specialization, identification of the
+  relevant Ext constructions, and vanishing from his cohomology objects
+  into the supercuspidal coefficient representation remain separate
+  obligations; that supercuspidal vanishing is not stated here.
 - The spectral sequence itself, its other edge maps and its behaviour without
   the vanishing hypothesis are not stated.
 - Only bounded-above `K` are covered (see above).
@@ -243,9 +261,11 @@ Harris's application only the middle degree `j = n-1` contributes
 - `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`: Harris,
   J. Math. Kyoto Univ. 39-2 (1999), 299-318, PDF SHA-256
   `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`;
-  the coefficient conventions of section 3, printed p.307, and Proposition
+  the coefficient conventions of section 3, printed pp.306-307, and Proposition
   4.10 with (4.10.1)-(4.10.4) and section 5 through (5.3), printed
-  pp.311-312 (PDF pp.9, 13-14), read visually from the page scans.
+  pp.311-312 (PDF pp.8-9, 13-14), read visually from the page scans.
+  Worker 54 rechecked the original coefficient convention and ring of
+  integers on pp.306-307 visually for this documentation correction.
 
 ## Formal dependencies and checks
 

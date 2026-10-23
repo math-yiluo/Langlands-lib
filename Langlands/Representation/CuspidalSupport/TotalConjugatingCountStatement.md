@@ -1,6 +1,7 @@
 # Total count of minimal conjugating block permutations
 
 Author: Worker 204.
+Documentation correction: Worker 179.
 
 This pair states the count `l(M) = r!` from Bernstein–Zelevinsky (1977),
 section 2.8. For an actual standard Levi of a general linear group over a
@@ -41,10 +42,24 @@ blocks. Mathlib's `Nat.card` is `0` on an infinite type. The factorial is
 positive, so the second conjunct in fact implies the first. The first is
 stated explicitly anyway, so that finiteness is part of the statement
 rather than a consequence of the `Nat.card` convention. Each fiber
-`MinimalConjugatingPermutations B C` already has a published `Finite`
-instance. Finiteness of `S` is still a real claim, because the Library has
-no `Finite` instance for the index type `BlockShape n`: only finitely many
-target shapes may have nonempty fibers.
+`MinimalConjugatingPermutations B C` has a `Finite` instance in
+`LeviDefinitions`. The Library also provides
+`Langlands.GeneralLinear.BlockShape.finiteBlockShape :
+∀ {n : ℕ}, Finite (BlockShape n)` in
+`Langlands.Representation.CuspidalSupport.FiniteBlockShapes`. That helper
+defines `BlockShape.toComposition : BlockShape n → Composition n`, proves
+`BlockShape.toComposition_injective`, and transfers finiteness from
+Mathlib's compositions. It applies to every natural rank, including zero,
+with no field hypothesis.
+
+The statement module imports only `LeviDefinitions`, and its complete
+transitive import closure excludes `FiniteBlockShapes`. Thus the
+finite-shape instance is published in the Library but is not available
+through this statement module's imports. After importing the helper, the
+finite index type and the existing finite fibers supply `Finite S`.
+This establishes finiteness only: the exact equality
+`Nat.card S = Nat.factorial B.length` remains the substantive counting
+claim, and does not follow from those finite instances.
 
 ## The objects counted
 

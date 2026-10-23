@@ -61,6 +61,18 @@ proved.
     `(π̌₁, π₂)`, `π_i` irreducible generic unitary:
     `f(π̌₁ × π₂, ψ) = f(π̌₁ × π₂) + n₁n₂c(ψ)`, `f(π̌₁ × π₂)` independent of
     `ψ`.
+- **JPSS 1983**, *Rankin-Selberg convolutions* (registered as
+  `jpss-1983-rankin-selberg`), §2.1, printed page 386 / PDF page 21,
+  formula (4) and the following paragraph: the Whittaker function
+  transformation and, separately for irreducible representations, the
+  Gelfand-Kazhdan identification with the contragredient. The original scan
+  was read visually for the status distinction below.
+- **Henniart 2002**, *Une caractérisation de la correspondance de Langlands
+  locale pour GL(n)* (registered as `henniart-2002-characterization`), §2.8,
+  printed page 596 / PDF page 10: Langlands quotients of essentially
+  square-integrable data and the product formula for epsilon factors of
+  arbitrary irreducible pairs. This supplies the convention of the separate
+  `LanglandsFactors` interface discussed below.
 
 ## Definitions
 
@@ -131,13 +143,42 @@ read first.
   Classically this follows from the Gelfand-Kazhdan theorem `π̌ ≅ π^ι`,
   `π^ι(g) = π(ᵗg⁻¹)`: for `W` a Whittaker function of `π` for `ψ`, the
   function `g ↦ W(w ᵗg⁻¹)` is one of `π^ι` for the conjugate character.
-  BH99 §3.3 uses this map. The Library proves neither fact. Epsilon factors
-  of a pair are unique (`IsPadicPairEpsilonFactor.unique`), so given
-  existence the statement determines `ε(1/2, π × π̌, ψ)`.
+  BH99 §3.3 uses this map. The Library constructs `dualFunctional` in
+  `Whittaker/DualTransform`, proves its formula (`dualFunctional_apply`)
+  and preservation of nonvanishing (`dualFunctional_nonzero`), and proves
+  the coefficient transformation (`dualFunction_coefficient`).
+  `dualFunction_mem_whittakerSet` in `RankinSelberg/LocalFactor` proves that
+  the transformed function belongs to the Whittaker set of
+  `inverseTransposePullback π` for `ψ.scale (-1)`. These results do not
+  identify that pullback with `smoothContragredient π`; the separate
+  Gelfand-Kazhdan identification is still needed for this route to
+  contragredient genericity. They also do not prove epsilon-factor existence
+  or the central-value formula. Epsilon factors of a pair are unique
+  (`IsPadicPairEpsilonFactor.unique`), so given existence the statement
+  determines `ε(1/2, π × π̌, ψ)`.
 - **Generic representations only.** BH99 states Théorème 2 for every
   irreducible admissible `π`. For nongeneric `π` the factor is defined as
-  the product over the Langlands data (BH99 p.538). The Library has no
-  epsilon factor for nongeneric pairs, so only generic `π` is stated.
+  the product over the Langlands data (BH99 p.538; Henniart 2002 §2.8).
+  This module's central-value goal uses the generic integral relation
+  `IsPadicPairEpsilonFactor`. The separate `RankinSelberg/LanglandsFactors`
+  module defines `IsLanglandsPairEpsilonFactor` using actual
+  square-integrable Langlands quotient data for both representations and
+  agreement with the block product for every such presentation. The
+  existence clauses prevent vacuity from missing presentations.
+  `IsLanglandsPairEpsilonFactor.unique` proves uniqueness, and
+  `langlandsPairEpsilonFactor` constructs a factor from quotient-data
+  witnesses, block-factor existence and presentation independence.
+  `langlandsPairEpsilonFactorOfClassification` in
+  `RankinSelberg/LanglandsFactorDescent` derives the independence step and
+  constructs the factor from irreducibility,
+  square-integrable exhaustion and classification hypotheses at the
+  required carrier universes, and block-factor existence. Those inputs are
+  not proved by the constructor. These conditional constructions do not
+  establish unconditional nongeneric factor existence, comparison with the
+  generic integral relation, or a nongeneric version of either normalization
+  goal here. `Correspondence/FullFactorCompatibility` and
+  `Correspondence/FullSpecification` consume the Langlands relation in
+  their predicates and goals; neither module proves the correspondence.
 - **Independence of `ψ`.** The value `ω_π(-1)^(n-1)` does not depend on `ψ`,
   and the statement holds for every `ψ` and `ν`. For `GL_1` it gives
   `ε(1/2, χ × χ⁻¹, ψ) = 1`, Tate's `ε(1/2, 1, ψ) = 1` for the self-dual
@@ -153,7 +194,8 @@ read first.
   functionals (for `ψ` on the member read first, for `ψ⁻¹` on the other).
   For a pair without them no `e` satisfies the relation, and the statement
   holds with any `a`. So its content concerns generic pairs, the pairs for
-  which the Library defines the epsilon factor. Admissibility is a
+  which this module uses the integral-based epsilon relation. The separate
+  Langlands-data relation above does not occur in this goal. Admissibility is a
   hypothesis. Every irreducible smooth representation of `GL_n(F)` is
   admissible (Jacquet, Bernstein), but the Library does not prove this.
   BH99 §1.3 gives the same exponent for supercuspidal pairs.
