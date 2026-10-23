@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [External Library audit: geometry, sheaves and cohomology](../notes/audits/external-library-2026-10-22/geometry-cohomology.md) — Independent verdicts on the 2026-10-22 audit findings, original-source checks, exact Library evidence and tracked documentation corrections.
+
 - [Imperial FLT Haar scaling audit](../notes/reuse/imperial-haar-audit-2026-10-21.md) — Exact dependencies, adapted axiom checks, normalization and topology gaps, and a focused determinant-scaling reuse plan.
 - [External Lean reuse survey](../notes/reuse/external-lean-survey-2026-10-21.md) — Pinned external results, maturity, licenses, version differences and focused audit tasks for reusable FLT, CFT and epsilon-factor infrastructure.
 - [Ueda epsilon_FML local constants: normalization audit](../notes/reuse/epsilon-fml-local-constant-audit.md) — How Ueda's First Main Lemma `Δ` relates to the project's rank-one epsilon and self-dual constant, with pins, license, evidence limits, an adapt verdict, port units and the epsilon_SML boundary.
