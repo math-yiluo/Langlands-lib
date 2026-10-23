@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve finding verdicts, exact Lean and source evidence, verified historical release receipts, and pending documentation corrections.
+
 - [External Library audit: geometry, sheaves and cohomology](../notes/audits/external-library-2026-10-22/geometry-cohomology.md) — Independent verdicts on the 2026-10-22 audit findings, original-source checks, exact Library evidence and tracked documentation corrections.
 - [External Library audit: local factors and correspondence](../notes/audits/external-library-2026-10-22/factors-correspondence.md) — Nine finding verdicts, current source and publication evidence, and the pending correction ledger.
 
