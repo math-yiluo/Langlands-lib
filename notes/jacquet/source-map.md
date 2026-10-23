@@ -3,9 +3,9 @@
 Author: Worker 19, task `616fab20-3cae-49ab-94f4-d28791b2b93f`.
 Opposite-induction documentation contributed by Worker 264.
 Source audit updated on 22 October 2026 against the Library commit
-`cddb0412f1a617f8f0476ab118a15618a386cf2d`. This update records the published
-support/summand and actual parabolic-cone families, with exact publication
-receipts below. Declaration names refer to the Library tree containing this
+`f1b212cc117b9c34dced95c0ac88e6328827334d`. This update adds the published
+cuspidal Jacquet multiplicities, relative genericity and algebraic unitary
+central part, with exact publication receipts below. Declaration names refer to the Library tree containing this
 note. Publication records identify earlier
 commits where the indicated contributions entered the Library. Review approval
 alone does not make an unpublished candidate a Library dependency.
@@ -37,11 +37,13 @@ Silberger 1979 inputs and the Lean side.
 | BZ77 | I. N. Bernstein and A. V. Zelevinsky, *Induced representations of reductive p-adic groups. I*, Ann. Sci. ENS (4) 10 (1977), 441–472. Central-Library file `Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`; PDF page = printed page − 439. | `bernstein-zelevinsky-1977-induced-i` |
 
 S78 was read in full, with page images for the formulas and proofs.
-From S79, the front matter and pp.1–9, p.25, pp.35–36, pp.119–129,
+From S79, the front matter and pp.1–9, p.25, pp.35–36, pp.90–92, pp.119–129,
 pp.177–194, pp.287–292 and pp.307–311 were read; this is not a reading of
 the whole book. From C95, pp.13, 16–24, 27–29, 44–45 and 47–51 were read. From
 L-UBC, the title page and pp.60–62 (Lemma 4.4 and its proof) were read. From
-BZ77, only §1.2, p.443, was read for the multiplicity row below.
+BZ77, §1.2 and §1.7, p.443, the normalization on p.444, §§2.1–2.7,
+pp.446–447, and Corollary 2.13(c) with §2.15(3), p.449, were read for
+the multiplicity families below.
 Formula-bearing pages in the original reading ranges were checked visually.
 For the two exponent criteria, W03 §§I.1–I.3 (pp.239–243), Theorem I.4.1
 (p.245), Lemmas II.1.1 and II.1.5 (pp.251–252), Proposition III.1.1
@@ -120,8 +122,8 @@ the family yet. It is not a placeholder assertion.
 | **Tempered unitarity and induction.** S79 Cor. 4.5.13, p.190, and Lemma 4.5.15, p.191. | `GLTemperedInductionPrerequisitesStatement`, comprising `GLTemperedUnitarityStatement` and `GLTemperedInductionStatement` in `Langlands.Representation.Classification.TemperedInductionStatement`, is published. It states irreducible analytic tempered unitarity, and unitarizability of arbitrary irreducible tempered block-Levi input together with complete reducibility and analytic temperedness of its actual normalized induction. It assumes no tensor decomposition and asserts no general induction irreducibility. |
 | **Discrete-series temperedness and Jacquet quotients.** S79 Thm 4.5.10(1)–(2), pp.188–189, and Thm 4.5.18(1)–(2), p.193; class-exponent identification in Lemma 3.2.2(2), p.121, and Thm 3.2.4, pp.122–123. | Published: `GLDiscreteSeriesJacquetPrerequisitesStatement` in `Langlands.Representation.Classification.DiscreteSeriesJacquetStatement`. Its components state analytic temperedness of irreducible square-integrable product-Levi representations and, for discrete-series Levi input and irreducible tempered `π`, equivalence of subquotient occurrence in the actual opposite normalized Jacquet module with a surjective intertwiner from that whole module. |
 | **Discrete-series support and tempered Jacquet summands.** S79 Cor. 4.5.11, pp.189–190, and Thm 4.5.18, p.193. | `GLTemperedDiscreteSeriesPrerequisitesStatement` in `Langlands.Representation.Classification.TemperedSupportStatement` states support and the both-inductions summand clause; the Jacquet quotient equivalence is stated separately in the preceding row. The support clause embeds an irreducible tempered representation into normalized opposite induction from discrete-series Levi data. The summand clause retains discrete-series input and equates its subquotient occurrence in the actual opposite normalized Jacquet module with complete reducibility of both opposite normalized inductions and occurrence of the original representation as a direct summand of each. These are proposition definitions with proofs still open. Cor. 4.5.11's weakly critical-exponent refinement remains unstated. |
-| **Cuspidal Jacquet multiplicities.** S78 §2, pp.97–98; S79 Thm 5.4.1.1, pp.287–288, Thm 3.3.1, pp.126–127, §5.4.4, pp.307–311. For discrete-series data the quoted result covers only the maximal tempered summand. | The quasicuspidal case is stated for `GL_n`: `PadicQuasicuspidalJacquetTheorems` in `Langlands.Representation.CuspidalSupport.JacquetInductionStatement` (Bernstein–Zelevinsky 1977, Cor. 2.13; its `AssociatedJacquetFiltrationTheorem` gives a filtration of the normalized Jacquet module of quasicuspidal induction with one Weyl-transported quotient per minimal conjugating permutation). This is the `GL_n` counterpart of S79 Thm 5.4.1.1. Not yet stated: the multiplicity statements themselves (how many composition factors of the Jacquet module carry a given exponent or are equivalent to a given constituent, counted with `HasJordanHolderMultiplicity`), and the non-cuspidal case used for discrete-series data. |
-| **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. The finer multiplicity comparisons of Lemmas 5.3 and 5.6 are not yet stated. They need exponents, standard parabolic chains, Jacquet transitivity and tempered bounds; the counts are `HasJordanHolderMultiplicity`. Genericity must not replace regularity in the final statement. |
+| **Cuspidal Jacquet multiplicities.** S78 §2, pp.97–98; S79 Thm 5.4.1.1, pp.287–288, Thm 3.3.1, pp.126–127, §5.4.4, pp.307–311. For discrete-series data the quoted result covers only the maximal tempered summand. | The quasicuspidal case is stated for `GL_n`: `PadicQuasicuspidalJacquetTheorems` in `Langlands.Representation.CuspidalSupport.JacquetInductionStatement` (Bernstein–Zelevinsky 1977, Cor. 2.13; its `AssociatedJacquetFiltrationTheorem` gives a filtration of the normalized Jacquet module of quasicuspidal induction with one Weyl-transported quotient per minimal conjugating permutation). This is the `GL_n` counterpart of S79 Thm 5.4.1.1. Published: `GLCuspidalJacquetMultiplicityPrerequisitesStatement` in `Langlands.Representation.Classification.CuspidalJacquetMultiplicityStatement`. For irreducible cuspidal input and associated standard positive-rank Levis, it gives the full upper and opposite normalized Jacquet composition lengths and each constituent's exact `HasJordanHolderMultiplicity`, counted by the actual minimal conjugating permutations and their representation-equivalence subtype. It assumes neither finite length nor a decomposition. The non-cuspidal discrete-series maximal-tempered-part formula is a separate family and is not included in this published result. |
+| **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The finer representation-theoretic multiplicity comparisons of Lemmas 5.3 and 5.6 are not yet stated; their tempered/discrete-series/cuspidal hypotheses remain necessary. They need exponents, standard parabolic chains, Jacquet transitivity and tempered bounds; the counts are `HasJordanHolderMultiplicity`. Genericity must not replace regularity in the final statement. |
 | **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The relative recovery and cosocle multiplicities of Props. 5.7–5.9 and semistandard conjugacy of Cor. 6.2 remain unstated. |
 | **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level maximal-cone construction used in its proof remains unstated. The parabolic cone specialization is now published; its application still needs class exponents, larger-Levi maps and the tempered criterion. |
 | **Regular-chamber quotient theorem.** S78 Thm 4.1(1)–(3), p.99, proof §§5–7. | Published: `GLRegularLanglandsQuotientStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`, the conjunction of unique-head existence, ordered inducing-data uniqueness and exhaustion. The actual upper standard module uses irreducible analytically tempered blocks with strictly decreasing real determinant exponents. All central twists are allowed; one-block regularity is vacuous. Head existence and equality of irreducible quotient kernels are conclusions, not datum fields. |
@@ -148,7 +150,19 @@ version 1 is independently accepted and published at
 The actual parabolic-cone contribution
 `b47f086e-f36d-4aff-85b2-3d237d457424` version 1 is independently accepted
 and published at `67dfb8a24d65657a6bf35da262b1009383d873d5`.
-These publication statuses concern proposition definitions, not theorem proofs.
+The cuspidal multiplicity contribution
+`dcb679fc-8b35-4155-bf59-f1a12f4d4d4a` version 1 and relative genericity
+contribution `49ee1f52-e0da-4ea4-9656-e3a2ea6c8da0` version 1 are independently
+accepted and published at `f1b212cc117b9c34dced95c0ac88e6328827334d`.
+Their exact integration receipts are respectively
+`4b88ece5e4394eb7a3d41ae3e20dbdbc` and `de00eff0143048778d9887f08a268f82`.
+The same commit publishes the independently accepted algebraic construction
+`75808046-dba5-4d84-acb8-5f6b2ab94a81` version 1,
+`Langlands.Representation.Exponents.UnitaryPart`, with integration receipt
+`a943f08eaf554518ad849a583b8ea067`. The three Lean/Markdown pairs in the pinned
+Library match their frozen contribution hashes.
+These statement publication statuses do not constitute theorem proofs; the
+unitary-part construction includes its intrinsic algebraic laws only.
 
 ## Library statements reused by these families
 
@@ -223,6 +237,28 @@ Three previously missing interfaces are now in the pinned Library:
    field. `SquareIntegrableLanglandsDatum` has weakly ordered exponents and is
    a different object. The actual head and socle constructions are available
    in `Langlands.Representation.Classification.CanonicalConstituents`.
+
+The published `Langlands.Representation.Exponents.UnitaryPart` constructs
+`unitaryCentralPart ρ`, the actual algebraic sum of generalized character
+subrepresentations indexed by norm-one characters of the full group center.
+It supplies the least-containing-subrepresentation property, the scalar-unitary
+case, preservation by intertwiners, restricted maps and equivalences, and
+natural inclusions. It permits several central characters and extensions;
+it does not require that the whole sum have one scalar central character.
+This construction assumes no topology or finite length and does not identify
+its result with a maximal tempered part. That comparison, the full-center versus
+split-center bridge for GL Levis, and the discrete-series multiplicity formula
+remain separate representation-theoretic obligations.
+
+S79 pp.90–92 define dual exponents using nonzero opposite-unipotent-invariant
+functionals in the full algebraic dual, with the transpose action and the
+opposite positive half-modulus on the eigenvalue. Their `d(χ)` is the maximum
+uniform nilpotence order on the generalized dual component, not its dimension
+or its Jordan–Hölder multiplicity. S79 p.189 uses strict comparisons of these
+orders for extensions of weak exponents along proper smaller p-pairs. A
+source-faithful weak-critical refinement therefore still needs this dual
+component and order, its class-exponent comparison and finite bounds. Merely
+excluding all finer weak exponents would change the condition.
 
 The grouping of equal exponents into tempered blocks is now stated by
 `Langlands.Classification.SquareIntegrableEqualExponentGrouping F T` in
