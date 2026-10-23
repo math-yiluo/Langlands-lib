@@ -27,7 +27,8 @@ lemma pullbackUnitIdentity : PullbackUnitIdentityStatement.{u} := by
   simp only [Category.id_comp]
   rfl
 
-private lemma homEquiv_conjugate {C D : Type*} [Category* C] [Category* D]
+/-- Transport an adjunction hom-equivalence along conjugate transformations. -/
+lemma homEquiv_conjugate {C D : Type*} [Category* C] [Category* D]
     {L₁ L₂ : C ⥤ D} {R₁ R₂ : D ⥤ C}
     (adj₁ : L₁ ⊣ R₁) (adj₂ : L₂ ⊣ R₂) (α : L₂ ⟶ L₁)
     {A : C} {B : D} (k : L₁.obj A ⟶ B) :
@@ -37,7 +38,8 @@ private lemma homEquiv_conjugate {C D : Type*} [Category* C] [Category* D]
   rw [← unit_conjugateEquiv]
   rw [Category.assoc, ← NatTrans.naturality, ← Category.assoc]
 
-private lemma homEquiv_comp_map {C D E : Type*}
+/-- Evaluate a composite adjunction on a composite involving a mapped morphism. -/
+lemma homEquiv_comp_map {C D E : Type*}
     [Category* C] [Category* D] [Category* E]
     {L₁ : C ⥤ D} {R₁ : D ⥤ C} {L₂ : D ⥤ E} {R₂ : E ⥤ D}
     (adj₁ : L₁ ⊣ R₁) (adj₂ : L₂ ⊣ R₂)

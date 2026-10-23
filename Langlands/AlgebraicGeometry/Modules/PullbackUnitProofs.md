@@ -20,13 +20,14 @@ the adjoint of the identity comparison with the inverse pushforward identity
 comparison. At the structure sheaf its component is definitionally the
 structure-sheaf map for the identity scheme morphism.
 
-For composition, two private general lemmas keep the categorical calculations
+For composition, two reusable general lemmas keep the categorical calculations
 independent of scheme wrappers. `homEquiv_conjugate` says that precomposing with
 a natural transformation between left adjoints corresponds to postcomposing
 with its conjugate between right adjoints. It follows from the adjunction unit
 formula and naturality. `homEquiv_comp_map` computes the hom-set equivalence of
 a composite adjunction on a composite involving a mapped morphism, using the
-composition formula and naturality of each hom-set equivalence.
+composition formula and naturality of each hom-set equivalence. These helpers
+are also reused by the tensor and dual pullback comparisons.
 
 `pullbackUnitComposition` applies these lemmas and the two adjunction
 characterizations to the unit maps. Mathlib's

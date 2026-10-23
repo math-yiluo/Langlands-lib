@@ -21,14 +21,6 @@ local instance : MonoidalCategory X.PresheafOfModules :=
 local instance : SymmetricCategory X.PresheafOfModules :=
   inferInstanceAs (SymmetricCategory (PresheafOfModulesOfCommRing.{u} X.presheaf))
 
-/-- The explicit sheaf tensor swap is natural in both variables. -/
-lemma tensorComm_naturality {M M' N N' : X.Modules} (f : M ⟶ M') (g : N ⟶ N') :
-    tensorMap f g ≫ (tensorComm M' N').hom =
-      (tensorComm M N).hom ≫ tensorMap g f := by
-  change (sheafify X).map (f.val ⊗ₘ g.val) ≫ (sheafify X).map (β_ M'.val N'.val).hom =
-    (sheafify X).map (β_ M.val N.val).hom ≫ (sheafify X).map (g.val ⊗ₘ f.val)
-  erw [← Functor.map_comp, ← Functor.map_comp, braiding_naturality]
-
 /-- Swapping the two copies of the structure sheaf is the identity. -/
 lemma tensorComm_structureSheaf (X : Scheme.{u}) :
     (tensorComm (structureSheaf X) (structureSheaf X)).hom = 𝟙 _ := by

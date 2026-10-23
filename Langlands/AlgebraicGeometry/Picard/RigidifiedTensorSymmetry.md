@@ -18,7 +18,8 @@ hypothesis of its commutativity results.
 
 ## The explicit sheaf tensor swap
 
-`tensorComm_naturality` proves
+The shared `tensorComm_naturality` lemma from
+[Tensor](../Modules/Tensor.md) proves
 
 `tensorMap f g ≫ tensorComm(M',N').hom = tensorComm(M,N).hom ≫ tensorMap g f`.
 

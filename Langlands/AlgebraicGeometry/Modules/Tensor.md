@@ -38,7 +38,11 @@ tensor. The file does not introduce a separate type of bilinear sheaf maps or
 claim a formal equivalence with such a type.
 
 `structureSheaf X` is exactly `SheafOfModules.unit X.ringCatSheaf`.
-`tensorComm M N` sheafifies the presheaf symmetry. `tensorLeftUnitor M` and
+`tensorComm M N` sheafifies the presheaf symmetry. Its naturality is the
+shared lemma `tensorComm_naturality`, obtained by applying sheafification to
+presheaf braiding naturality. This lemma was moved unchanged from
+[RigidifiedTensorSymmetry](../Picard/RigidifiedTensorSymmetry.md) so that
+foundational tensor proofs can reuse it. `tensorLeftUnitor M` and
 `tensorRightUnitor M` sheafify the respective presheaf unit isomorphism and
 then compose with the counit isomorphism. These are actual isomorphisms;
 this file does not yet package them into a monoidal structure.

@@ -69,6 +69,14 @@ def tensorHomEquiv (M N P : X.Modules) :
 def tensorComm (M N : X.Modules) : tensorObj M N ≅ tensorObj N M :=
   (sheafify X).mapIso (β_ M.val N.val)
 
+/-- The explicit sheaf tensor swap is natural in both variables. -/
+lemma tensorComm_naturality {M M' N N' : X.Modules} (f : M ⟶ M') (g : N ⟶ N') :
+    tensorMap f g ≫ (tensorComm M' N').hom =
+      (tensorComm M N).hom ≫ tensorMap g f := by
+  change (sheafify X).map (f.val ⊗ₘ g.val) ≫ (sheafify X).map (β_ M'.val N'.val).hom =
+    (sheafify X).map (β_ M.val N.val).hom ≫ (sheafify X).map (g.val ⊗ₘ f.val)
+  erw [← Functor.map_comp, ← Functor.map_comp, braiding_naturality]
+
 /-- The left unit isomorphism for the sheafified tensor. -/
 def tensorLeftUnitor (M : X.Modules) : tensorObj (structureSheaf X) M ≅ M :=
   (sheafify X).mapIso (λ_ M.val) ≪≫ (sheafifyForgetIso X).app M

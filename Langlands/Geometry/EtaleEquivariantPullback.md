@@ -38,7 +38,8 @@ evaluated at the indicated sheaf, and composition is written in execution order.
 The proofs apply sheaf and natural-transformation extensionality. After
 unfolding the geometric restriction comparisons and translation functors,
 their components are images under the underlying presheaf of arrows in the
-small étale site. A private equality-transport lemma identifies the inverse
+small étale site. The reusable equality-transport lemma
+`restrictionCongr_inv_component` identifies the inverse
 restriction comparison with the image of the opposite of the forward
 `MorphismProperty.Over.mapCongr` component. Combining consecutive maps with
 presheaf functoriality reduces both coherence equations to the defining

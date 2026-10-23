@@ -19,7 +19,8 @@ set_option backward.defeqAttrib.useBackward true
 
 variable {X Y : Scheme.{u}} (R : Type u) [CommRing R]
 
-private theorem restrictionCongr_inv_component {f k : Y ⟶ X}
+/-- Component of inverse restriction comparison along equal scheme morphisms. -/
+theorem restrictionCongr_inv_component {f k : Y ⟶ X}
     [Etale f] [Etale k] (h : f = k)
     (F : EtaleDerivedSections.ModuleSheaf X R) (U : Y.Etaleᵒᵖ) :
     ((restrictionCongr R h).inv.app F).hom.app U =
