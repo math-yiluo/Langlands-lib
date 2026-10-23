@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [External Library audit: global adeles, norms and Shimura conventions](../notes/audits/external-library-2026-10-22/global-adeles-shimura.md) — Nine historical finding verdicts, original-source and declaration checks, six verified correction publications repairing all ten assigned Markdown files, and the preserved mathematical scope.
+
 - [Automorphic differential growth: source map](../notes/automorphic/differential-growth-source-map.md) — Original reproduction, admissibility and elliptic analyticity arguments, with their exact hypotheses and remaining formalization obligations.
 
 - [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve finding verdicts, four verified correction publications, historical release receipts and eight findings with remaining correction obligations.
