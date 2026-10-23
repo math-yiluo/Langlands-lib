@@ -31,7 +31,8 @@ For `j = n` it drops the last entry.
 ```
 
 It is built with `LinearMap.mk₂`. The four bilinearity side conditions follow
-pointwise from the linearity of `f`, `g`, `B.ρ` and `φ.bilinear`.
+from pointwise addition and scalar multiplication of cochains, together with
+the linearity of `B.ρ` and `φ.bilinear`.
 `ordinaryCochainCup_apply`, proved by `rfl`, gives its value on a tuple
 `s : Fin (p + q) → G`:
 
