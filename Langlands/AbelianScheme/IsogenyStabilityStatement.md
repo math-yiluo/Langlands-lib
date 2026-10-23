@@ -30,5 +30,7 @@ inherits those properties. Mathlib's
 `CategoryTheory.MorphismProperty.overPullbackMap` expresses the resulting
 base-change assertion on the underlying morphism of `Over.pullback`.
 
-The Lean file defines the exact proposition; it does not prove it. A separate
-proof contribution will establish this target.
+The Lean file defines the exact proposition; it does not prove it. The published
+companion [IsogenyStability](IsogenyStability.md) proves this target as
+`Langlands.GroupScheme.isogenyStability : IsogenyStabilityStatement.{u}`,
+with no additional geometric hypotheses.

@@ -129,14 +129,32 @@ provides compact Hausdorff totally disconnected topological group structure
 under precisely that hypothesis; it does not construct an inverse-limit
 presentation or state that this group classifies covers.
 
-## Remaining geometric obligations
+## Published geometric targets and remaining obligations
 
-Finiteness of the actual fibres, the Galois-category structure of `Cover S`, the
-fibre-functor axioms for `fiberFunctor s hfin`, and the assertion that the actual
-`continuousActionFunctor s hfin` is an equivalence remain separate obligations.
-The geometric Galois and equivalence statements must retain algebraic closure
-of `Ω` and connected locally noetherian `S` for the intended application. They
-will be stated as exact `Prop`-valued definitions after this module is published,
-with separate proof tasks. No instances for those unproved geometric claims
-are installed here. Base-point transport, torsion schemes, Tate limits and
-sheaf cohomology are outside this module's scope.
+The companion module `Langlands.AlgebraicGeometry.FiniteEtale.Statements`
+defines three exact `Prop`-valued targets, all with `IsAlgClosed Ω`:
+
+- `GeometricFiberFinite s` asserts `∀ Y : Cover S, Finite (Fiber s Y)`, without
+  assuming `hfin`, connectedness or local noetherianity of `S`. The published
+  theorem `geometricFiberFinite` in
+  `Langlands.AlgebraicGeometry.FiniteEtale.GeometricFiberFiniteProof` proves
+  this exact target. Its internal proof uses finite base change, finiteness of
+  sections of a finite morphism to a field's spectrum, and `fiberEquivPoints`;
+  it does not use a geometric classification theorem.
+- `GeometricGaloisFiberFunctor s hfin` additionally assumes `ConnectedSpace S`
+  and `IsLocallyNoetherian S`, and retains
+  `hfin : ∀ Y : Cover S, Finite (Fiber s Y)` as an explicit parameter. It asserts
+  existence of `hG : GaloisCategory (Cover S)` for which the actual
+  `fiberFunctor s hfin` satisfies `PreGaloisCategory.FiberFunctor`.
+- `GeometricContinuousActionEquivalence s hfin` retains the same hypotheses
+  and explicit `hfin` as the preceding target. It asserts exactly
+  `(continuousActionFunctor s hfin).IsEquivalence`, for the existing functor
+  with its evaluation actions and topology.
+
+The last two targets remain separate proof obligations. The finiteness theorem
+can supply `hfin` under its stated hypotheses, but this definition module does
+not import its proof module and keeps `hfin` explicit throughout the finite
+packaging and topological constructions. It supplies no unconditional geometric
+Galois classification and installs no instances for the remaining geometric
+claims. Base-point transport, torsion schemes, Tate limits and sheaf cohomology
+are outside this module's scope.

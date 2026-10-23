@@ -40,6 +40,30 @@ torsion inclusion if and only if its integer power is the unit. The proof uses
 the inverse of `torsionPointsEquiv` for existence and its injectivity for
 uniqueness. This includes zero and negative integers.
 
-This focused unit supplies the torsion object and its pointwise description.
-Base-change comparison, specialization to the parent's abelian-scheme bundle,
-and the separate finite étale statement are subsequent obligations.
+This module supplies the torsion object and its pointwise description. The
+published companion [TorsionBaseChange](TorsionBaseChange.md) constructs
+`Langlands.GroupScheme.torsionBaseChangeIso` for every scheme map `b : S' ⟶ S`
+and every integer `n`, together with its inclusion equations and compatibility
+with the torsion-point equivalences (`torsionBaseChangeIso_points`). This
+comparison requires no positivity, invertibility or geometric restriction on
+the base-change map.
+
+[TorsionSpecialization](TorsionSpecialization.md) supplies the corresponding
+kernel and integer-torsion interfaces for the actual bundle
+`Langlands.AbelianScheme S`, including arbitrary base change and compatibility
+on points. This bundle has explicit commutativity, a smooth proper structure
+map and geometrically connected fibres. Its torsion object remains the generic
+group-scheme kernel, with the same unrestricted integer index.
+
+[TorsionFiniteEtaleStatement](TorsionFiniteEtaleStatement.md) defines the
+`Prop` target `Langlands.AbelianScheme.TorsionFiniteEtaleStatement`, and the
+published theorem `Langlands.AbelianScheme.torsionFiniteEtale` in
+[TorsionFiniteEtale](TorsionFiniteEtale.md) proves that exact target. For every
+scheme `S`, every `A : Langlands.AbelianScheme S`, and every `n : ℕ` with
+`0 < n` and `IsUnit (n : Γ(S, ⊤))`, it proves both `IsFinite` and `Etale` for
+the structure morphism
+`(Langlands.GroupScheme.torsion A.toGrp (n : ℤ)).X.hom` to `S`.
+There is no affineness, noetherianity or constant-relative-dimension assumption
+on the base. These are geometric conclusions about the torsion structure
+morphism under the stated hypotheses; the integer-torsion construction above
+itself imposes none of them.

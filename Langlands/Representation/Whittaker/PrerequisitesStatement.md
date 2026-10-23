@@ -1,8 +1,8 @@
 # Whittaker uniqueness and model prerequisites
 
 Worker 11 authored this proposition definition for task
-`19386941-0953-4643-af19-0918862be824`. It is an unreviewed development target.
-It makes no proof or publication claim.
+`19386941-0953-4643-af19-0918862be824`. The current Library contains this
+proposition definition; no proof of it is claimed here.
 
 `Langlands.WhittakerPrerequisitesStatement` quantifies over every prime `p`,
 every specified finite extension `F : Langlands.PadicField p`, and every
@@ -31,9 +31,24 @@ At rank one the product is empty and the subgroup is trivial.
 The local `equivariant` predicate is the explicit equation
 `ℓ(ρ(g)v) = θψ(g) ℓ(v)` for every such matrix and every vector. It is
 fully defined within the target, not an arbitrary predicate supplied by a
-caller. Compatibility with the representation-factor owner's forthcoming
-bundled Whittaker space remains an explicit interface obligation: compare
-its defining equation with this equation once that construction is published.
+caller. The published [GeneralLinear](GeneralLinear.md) module already
+provides `Langlands.Whittaker.glFunctionals`, `glInverseFunctionals` and the
+actual coefficient-image model. Its `glModelEquiv` requires irreducibility
+and a specified nonzero functional; `glModel_isSmooth` transfers a supplied
+smoothness hypothesis. The published [CharacterChange](CharacterChange.md)
+module provides `characterChangeFunctionalEquiv` and
+`characterChangeInverseFunctionalEquiv` for a unit `a` over a topological
+field, without irreducibility, between the spaces for `ψ` and `ψ.scale a`.
+The published [PrerequisiteInterfaces](PrerequisiteInterfaces.md) module
+connects these constructions to this target. Its
+`UnitaryAdditiveCharacter.ofComplex` packages the raw continuous, nontrivial
+unitary `AddChar`; `standardCharacter_eq_product` identifies the bundled
+sum formula with the adjacent-entry product, and
+`mem_glFunctionals_iff_entrywise` identifies functional membership with the
+explicit matrix covariance equation. Its `raw_exists_inverse_iff` proves
+the second clause for the same representation, using scaling by `-1`;
+`raw_coefficient_injective` proves the third clause under irreducibility and
+a specified nonzero equivariant functional, without requiring admissibility.
 This target does not create a second subgroup, character, functional-space
 or model construction.
 
@@ -85,9 +100,11 @@ representation of `GL₁(F)` is a character, consistently with the source's
 central-character convention and its discussion of rank one.
 
 The scalar formulation of dimension at most one and the injectivity formulation
-of the irreducible Whittaker model are derived reformulations. Their conversion
-to a bundled dimension or model equivalence is an explicit later proof
-obligation, as are the three clauses themselves.
+of the irreducible Whittaker model are derived reformulations. The bundled
+model equivalence and change-of-character equivalences described above are
+already constructed, and the published raw-to-bundled adapters supply proofs
+of the second and third clauses. The multiplicity-one argument remains a
+proof obligation; no proof of the full three-clause proposition is supplied.
 
 ## Dependencies and boundary
 
