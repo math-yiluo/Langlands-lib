@@ -11,7 +11,10 @@ The published ordinary restriction-corestriction identity multiplies a
 degree-two class by the subgroup index. Apply it to the trivial subgroup:
 positive-degree cohomology of that subgroup is zero, so corestriction is the
 zero map. The index is the cardinality of the finite group. Hence that
-cardinality annihilates every degree-two class.
+cardinality annihilates every degree-two class. The public helper
+`Langlands.ClassField.Global.card_nsmul_H2_eq_zero` records this result for
+any finite group and representation over a commutative ring. It is also
+reused by `GlobalReciprocityProof` for the reduction to prime-power torsion.
 
 For the actual idele representation, the Galois group cardinality equals
 `Module.finrank F E`. Applying the additive total invariant to this

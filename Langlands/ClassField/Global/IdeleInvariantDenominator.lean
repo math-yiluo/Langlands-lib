@@ -14,7 +14,8 @@ open CategoryTheory
 
 universe u
 
-private theorem card_nsmul_H2_eq_zero
+/-- Degree-two group cohomology of a finite group is killed by the group order. -/
+theorem card_nsmul_H2_eq_zero
     {k G : Type u} [CommRing k] [Group G] [Finite G]
     (A : Rep.{u} k G) (c : groupCohomology A 2) :
     Nat.card G • c = 0 := by
