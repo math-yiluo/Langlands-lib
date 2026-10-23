@@ -1,7 +1,9 @@
 # Algebraic interface for the generic Weil pullback
 
-`Langlands.Weil.AlgebraicProperties` is a proposition definition. It is an exact
-target for a future proof; the module does not prove it or introduce an axiom.
+`Langlands.Weil.AlgebraicProperties` is a proposition definition. The companion
+[AlgebraicProof](AlgebraicProof.md) in the current Library proves it as
+`Langlands.Weil.algebraicProperties : AlgebraicProperties.{u}`. This statement
+module defines the target without introducing an axiom or importing its proof.
 The parameter `u` allows the original group to live in any chosen universe.
 
 The statement asserts injectivity of the canonical integer map into the actual
@@ -26,8 +28,10 @@ integers, so the kernel is degree zero.
 
 This is derived algebraic content of the explicit pair construction in
 `Langlands.Weil.Pullback`. The injectivity of the integer map is the
-residual-finiteness property of the integers, to be proved using their finite
-quotients (or an applicable Mathlib result). The other clauses express
+residual-finiteness property of the integers. In `AlgebraicProof`,
+`degree_residuallyFinite` separates a nonzero integer `n` using the finite
+cyclic quotient `ZMod (|n| + 1)`; `frobenius_injective` then applies Mathlib's
+criterion for injectivity into the profinite completion. The other clauses express
 coordinate identities, the image/kernel description, and the consequence
 of surjectivity of `φ`. They do not depend on unproved field-theoretic facts.
 
@@ -51,16 +55,23 @@ statement and its dependencies must be independently reviewed.
 
 ## Exact dependencies and validation boundary
 
-The only project definition dependency is the exact version of
-`Langlands.Weil.Pullback` named in the submission manifest. No project proof
-dependency is used. Its paired Markdown records the field-theoretic
-specialization still missing and the arithmetic/geometric sign convention.
+The only project definition dependency of this statement module is
+`Langlands.Weil.Pullback`. No project proof dependency is imported here.
+Its [paired Markdown](Pullback.md) explains the generic construction.
+The actual p-adic specialization and geometric sign convention are supplied
+by [Local/Assembly](Local/Assembly.md) and
+[Local/AssemblyProof](Local/AssemblyProof.md).
 
 Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The checked target fingerprint is recorded by `lean_check` and copied into
-the statement manifest. Compilation and that fingerprint do not prove the
-proposition. An accepted, published version of this target must be pinned
-before any future proof submission.
+Compilation and target inspection check this proposition definition. Its proof
+is the theorem in `AlgebraicProof`, including `degree_surjective`, which still
+requires `Function.Surjective φ`. The current theorem and its full declaration
+were checked for this documentation correction. The exported Test 2 receipts
+record independent approval by Reviewer 82, accepted proof validation including
+the exact target, and publication of `AlgebraicProof` at Test 2 commit
+`5bc58c2525e0499012801c80f17b6a9c04d57263`. Its archived final Lean/Markdown
+pair matches the pair carried into the current pilot Library. That commit
+belongs to Test 2, whose Library seeded this pilot; it is not a pilot commit.

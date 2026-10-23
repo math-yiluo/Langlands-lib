@@ -66,11 +66,20 @@ Source ID: `henniart-2000-simple-proof`.
 PDF SHA256:
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 
-This group-level adapter is a derived generalization. Its specialization to
-the actual local Weil group of each p-adic field remains required. No local
+This group-level adapter is a derived generalization. Its companion
+[Local](Local.md) specializes it to `Langlands.Weil.Local.localWeilGroup F`
+for every prime `p` and `F : PadicField.{uF} p`, retaining an independent
+representation-carrier universe `uV`. No local
 field, Frobenius convention, reciprocity map, irreducible decomposition, or
-global restriction is supplied by this module. Dual and character-twist
-operations will use the parameter branch's actual operations once available.
+global restriction is supplied by this module. The published companion
+[Dual](Dual.md) constructs `dualBasisEquiv` and `dualLatticeEquiv` under
+`[IsTopologicalGroup G]`; [Twist](Twist.md) constructs `twistBasisEquiv` and
+`twistLatticeEquiv` for a continuous character `χ : G →ₜ* ℂˣ`, without that
+additional topological-group hypothesis. These declarations are in
+`Langlands.VirtualRepresentation.Weil` and retain independent group and
+representation-carrier universes `uG` and `uV`. They provide the actual
+operations on the irreducible basis and its integral lattice in companion
+modules; this module supplies their underlying types.
 The automorphic-side lattice still requires genuine supercuspidal classes and
 must not be replaced with all irreducible GL_n classes. No character
 orthogonality, isometry, spanning, or numerical finiteness theorem is assumed.

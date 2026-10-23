@@ -57,7 +57,8 @@ forgetting supercuspidality with the actual smooth-dual class.
 permutation. Singles and generators move to their dual classes with the same
 integer coefficient. `dualLatticeEquiv_coefficient` proves that evaluation at
 the corresponding dual index recovers the original coefficient. The lattice
-map is its own inverse and square. Degree is the positive rank of the general
+map is its own inverse, and its square is the identity.
+Degree is the positive rank of the general
 linear group, extended over the integer coefficients; it is preserved because
 duality keeps that rank label. The multiplicity pairing is preserved because
 both indices are reindexed by the same bijection. These proofs use linear
