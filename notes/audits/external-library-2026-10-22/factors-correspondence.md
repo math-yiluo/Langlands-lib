@@ -2,7 +2,7 @@
 
 Author: Worker 46. Audit task `7d7f925d-f349-4657-b964-a38871b7c372`, revision 2.
 Checked on 2026-10-22 against Library
-`aee7fdb7f6d4283cce4db9035fd9478c923d4926`.
+`9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6`.
 
 The nine assigned findings are assessed below. Seven focused documentation
 corrections are required and remain pending. This note records verification;
@@ -11,8 +11,10 @@ All assigned primary Lean and paired Markdown were read, together with the
 relevant definitions and consumers. Original-source reading and accepted
 publication evidence are recorded below. No Lean change is required by these
 findings, and no Lean file was changed in this audit workspace. Verification
-began at `b26cde6370d6c0976d0002a7f4c955db801efd02`; all 66 fingerprinted files
-were rechecked unchanged at the current snapshot immediately before submission.
+began at `b26cde6370d6c0976d0002a7f4c955db801efd02`; all 66 baseline files
+were rechecked unchanged at the current snapshot. This update also checks the
+newly published `AutomorphicPairFactors` Lean/Markdown pair and records its
+conditional class transport and uniqueness results.
 
 The external reports are leads, not acceptance evidence. Their registered source
 is `external-library-audits-2026-10-22`, folder fingerprint
@@ -204,12 +206,35 @@ actual-dual L certificates. Its acceptance does not identify it with the
 correspondence gamma predicate: the auxiliary-character and representative
 comparison remains separate.
 
-The class predicate is an existential envelope on class values. Its availability
-does not prove that every class pair has a factor, that every chosen pair of
-equivalent representatives carries the same certificate, or that the full
-correspondence exists. Thus the absent-predicate, absent-unified-goal and
-no-consumer subclaims do not hold, while the distinction between conditional
-constructions and unconditional proofs remains valid.
+The newly published `Correspondence/AutomorphicPairFactors` supplies the
+representative-independence bridge as well. Its
+`IsLanglandsPairEpsilonFactor.congr_equiv` and
+`IsLanglandsPairLPolynomial.congr_equiv` (Lean lines 92–136) transport actual
+quotient witnesses forward and universally quantified datum certificates
+backward, preserving the same block universes. The class iff lemmas (153–191)
+compare the existential class predicates with the relations on supplied
+equivalent representatives. The two class `unique` theorems (195–214) then
+transport one certificate to the other's representatives and apply the
+published representation-level uniqueness result.
+
+These results fix the additive character and Haar measure. The class adapters
+use block universe `uA` on both sides and carriers in `max uF uA`, with actual
+equivariant linear equivalences to the class representatives. The L constructor
+(231–254) forms the rational unit `1/P(X)` from a certified polynomial; the
+epsilon constructor (256–276) still requires quotient-data existence for both
+representations, block-factor existence and datum independence. It does not
+silently use the classification constructor at a different block universe.
+The complete pair and independent review were read; the integrated files match
+the submitted hashes. Henniart 2002 §1.2, p.589, and §2.8, p.596, and JPSS §9.4,
+p.458, supply the normalization and class/product interpretation already checked
+from the originals.
+
+Thus representative independence and uniqueness for these certified class
+relations are now proved, in addition to the earlier predicates and
+specification. The absent-adapter, absent-unified-goal and no-consumer subclaims
+do not hold. Existence of a factor for every class pair, character/measure
+independence, block-universe lowering and the full correspondence proofs are
+not established by this construction.
 
 The remaining work is already within these responsibilities; task and DAG
 references describe ownership and plans, not accepted mathematical evidence:
@@ -223,9 +248,8 @@ references describe ownership and plans, not accepted mathematical evidence:
 | Full factor compatibility, assembly, characterization and final LLC proofs | Shared proof DAG revision 340: `proof.full-factor-compatibilities`, `proof.conditional-classification-assembly`, `proof.full-llc-characterization`, `proof.local-langlands-all-ranks`. These are planned proof obligations, not implemented theorems. |
 
 No new statement or proof task is justified merely by an accurately disclosed
-open goal. Any further intrinsic class-transport bridge must retain the actual
-factor and classification hypotheses and belongs with the existing factor and
-correspondence owners.
+open goal. The published class-transport bridge belongs to the existing factor
+host; its acceptance does not discharge that host's remaining existence work.
 
 ## Original-source record
 
@@ -266,6 +290,7 @@ published companions used above, not completion of their broad host tasks.
 | Full compatibility/specification/assembly bundle | `93e999f3-90cd-4126-94fb-a4f181baaa27` | `b65bce71-9b18-4ffa-a31e-338c481c7435` (approve) | `a93d5169d27e08500e30b75e254252103329adc1` |
 | Epsilon descent conditional on classification | `1adb6aa6-c23b-4b42-962a-b89cb4a26bb5` | `c68c11b2-3b8a-4ea5-aafb-cd706e34173f` (approve) | `ed386d3458bf6efda6bdcd8bafd745280be7efb6` |
 | Conditional nongeneric gamma unit | `79e2d944-1b25-4560-86d0-0ca08a35d740` | `2f1fb87c-ae81-4a2a-8796-0469bf7e973c` (approve) | `f1b212cc117b9c34dced95c0ac88e6328827334d` |
+| Certified automorphic-class pair factors and representative independence | `9f85b200-5b60-43e9-b3d8-91652d027ea4` | `dbcb00a4-c1b2-440b-afd4-d06210120cf1` (approve, Reviewer 1266) | `9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6` |
 
 The gamma candidate's archived submission differs from the integrated module:
 the duplicate reciprocal-residue scale and its coercion lemma were moved to
@@ -279,14 +304,28 @@ module preserves its value. This is an integration adjustment, not byte identity
 with the original submitted pair. The full-compatibility/specification/assembly,
 epsilon-descent and nongeneric-L pairs do equal their archived submissions.
 
+The class-adapter candidate has accepted machine validation
+`6e2b61f0-d0cf-45e5-bad4-6ae1fc2dd642` under `lean.definition@1` and unqualified
+independent approval. Its publication integration
+`148983378bb2432f91bb11e3c3da274c` records a successful fresh integrated Lake
+build of snapshot
+`d9065036c82d8e163875e4f95ce3ae42466ca33d4787557bbda0e8d35856d1a1`.
+The integrated review differs from the original approval only by integration
+identifiers. This acceptance concerns the certified construction, not universal
+factor existence or completion of the broad host.
+
 ## Correction ledger
 
-All seven tasks were inspected during this verification. They are ready with no
-executor, candidate, validation, review or publication yet. A dash below means
-**not available**, not accepted. Each task requires unchanged Lean bytes and
-ordinary mathematical-artifact review of its paired Markdown. This public note
-is submitted separately for independent review. The ledger must be updated from
-actual receipts before audit completion.
+All seven tasks were inspected during this verification. At their latest
+inspections they were ready with no executor, candidate, validation, review or
+publication. None of their publication requirements is satisfied at this update.
+A dash below means **not available**, not accepted. Each task requires unchanged Lean bytes and
+ordinary mathematical-artifact review of its paired Markdown. The initial audit
+note `b065d09c-70a3-43f8-a800-1a50055ffad8` was independently approved in review
+`a395b363-6293-4bc2-8ccf-c785250db498` and published at
+`dc8cdb2866562d5f929dc912f3563a75cc16ce79`. This update is submitted separately
+for independent review. The ledger must be updated from actual corrective
+publication receipts before audit completion.
 
 | Finding coverage | Correction task (revision) | Candidate | Validation / review | Publication |
 | --- | --- | --- | --- | --- |
@@ -296,7 +335,12 @@ actual receipts before audit completion.
 | I035 | `ca457911-4ae7-4810-bf81-70b1905008fa` (1) | — | — | — |
 | I050 and DOC-08, PairEpsilonNormalizationStatement | `cfd3fa07-a9f1-4ad0-b4e1-ab40bd2645b5` (1) | — | — | — |
 | DOC-08, FullLFactorCompatibility and AssemblyLFactorStatement | `ee850127-e062-4b61-81d1-9d472cee0126` (1) | — | — | — |
-| DOC-08, GLPoleRegionStatement | `e70861e2-26e4-4421-8ca3-1aa394092a9c` (2) | — | — | — |
+| DOC-08, GLPoleRegionStatement | `e70861e2-26e4-4421-8ca3-1aa394092a9c` (3) | — | — | — |
+
+Pole-task revision 3 corrects only the declaration name to the existing
+`Langlands.Global.GLPairPoleRegionStatement`. Successful inspection
+`e82e6a69-7291-47c3-a47e-1a7a1cf32fe0` confirmed that it returns `Prop`;
+the mathematical target and Lean bytes did not change.
 
 GOAL-01 requires no correction. GOAL-02's superseded absence claims require no
 new interface candidate; the accepted bundle above is the counterevidence.
@@ -306,9 +350,12 @@ The remaining proof/construction obligations remain in the work map.
 
 Paths below are relative to `Langlands/`; each row records the complete SHA-256
 of both files, including all assigned primary documents and the principal
-counterevidence modules. The snapshot is fixed at
-`aee7fdb7f6d4283cce4db9035fd9478c923d4926`; later correction publications must be
-recorded separately rather than silently replacing these verification hashes.
+counterevidence modules. The original 33 pairs were fingerprinted at
+`aee7fdb7f6d4283cce4db9035fd9478c923d4926` and rechecked byte-identical at
+`9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6`. The final row records the newly
+published class-adapter pair at the latter snapshot. Later correction
+publications must be recorded separately rather than silently replacing these
+verification hashes.
 
 | Module path without extension | Lean SHA-256 | Markdown SHA-256 |
 | --- | --- | --- |
@@ -345,3 +392,4 @@ recorded separately rather than silently replacing these verification hashes.
 | `Correspondence/FullSpecification` | `c47b7d95881fdd1fe1aa1da030eab43614f5da5996a864735ecd5c4fa1ee10eb` | `15263e32729bc10e61a13169212f287672cb88498e493a8485c50854ce77a8cb` |
 | `Correspondence/AssemblyTheorems` | `2691d0f6bfb71e205f71ef0f62a34d3ea8e6f7417f1214232972f94c0ad94bec` | `7957e9535e23cf0007e2c9ff13110c7d4c2475f81e1a80e8f5d3478bf8417c1e` |
 | `Global/Factors/GLPoleRegionStatement` | `3b1f8b980a4dca255c3116ca6ed7cd7ecdc5f6c24a6b927fe34530b01bbaf297` | `b75dd24111bf2097435bcc2d75865b8e5ea2cb97c3550a4177fef65683dffb4b` |
+| `Correspondence/AutomorphicPairFactors` | `c471f183e5de79ce9f4fbbc0bd1d9045593f1f9b932f30d31299bb637ede1c4f` | `258298e90a25b9e6185fd3885f28b72851dddb8dc55f48db37da30ec00976385` |
