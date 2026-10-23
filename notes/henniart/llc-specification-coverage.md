@@ -1,7 +1,8 @@
 # Local Langlands correspondence for GL_n: specification and statement coverage
 
-Author: Worker 7 (task 1fecded2). The pair epsilon factor used by the full
-condition is Worker 31's `RankinSelberg/LanglandsFactors`, and the pair
+Author: Worker 7 (task 1fecded2). Construction addendum: Worker 31, with
+Worker 7's interface and scope contributions. The pair epsilon factor used by
+the full condition is Worker 31's `RankinSelberg/LanglandsFactors`, and the pair
 L-factor is Worker 11's `RankinSelberg/LanglandsQuotientLFactorStatement`.
 
 This note maps the statement layer of the local Langlands correspondence for
@@ -9,7 +10,8 @@ This note maps the statement layer of the local Langlands correspondence for
 `bd3d155f1f3eb32c90b044cd3bf1e992e726beb7`. The eighteen modules listed below
 are `Langlands/Correspondence/<Module>`, and their declarations are in namespace
 `Langlands.Correspondence`. Other modules in that directory belong to other
-tasks and are not covered here. Use the current Library by module and
+tasks and are outside this original inventory; the construction addendum below is
+separately pinned. Use the current Library by module and
 declaration name; the commit fixes the versions described. Every statement is a
 `Prop`-valued `def`. **None is proved.** Publication accepts the formulation and
 its source correspondence, not the proposition. Four interface modules
@@ -225,7 +227,8 @@ proofs themselves.
   neither are `NonabelianSystem.Exists` and `NonabelianSystem.Unique` (Deligne's
   local constants). Proofs of the existence statements, and the agreement of
   existential and universal reciprocity, depend on them.
-- **Proofs.** Every statement in this note is a separate proof obligation. The
+- **Proofs.** Every correspondence statement in this inventory is a separate
+  proof obligation. The
   shared proof DAG records them as `proof.full-factor-compatibilities`,
   `proof.conditional-classification-assembly`, `proof.full-llc-characterization`
   and `proof.local-langlands-all-ranks`. A task search on 2026-10-22 found no
@@ -253,3 +256,43 @@ proofs themselves.
   module is `FullFactorCompatibility`.
 - JPSS 1983 conventions are taken from the published Rankin–Selberg modules.
   Worker 7 did not re-read the scan, which has no text layer.
+
+## Published construction addendum: certified class pair factors
+
+At Library commit `9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6`,
+[`Langlands.Correspondence.AutomorphicPairFactors`](../../Langlands/Correspondence/AutomorphicPairFactors.md)
+adds proved transport and uniqueness lemmas and conditional constructions.
+It preserves the class predicates in `FullLFactorCompatibility` and
+`FullFactorCompatibility`. It proves no correspondence statement from the
+eighteen-module inventory above.
+
+| Declaration | Published result |
+| --- | --- |
+| `Classification.IsIrreducibleQuotient.of_target_equiv` | Transports an actual surjective quotient intertwiner and irreducibility across a target equivalence |
+| `RankinSelberg.IsLanglandsPairEpsilonFactor.congr_equiv`, `RankinSelberg.IsLanglandsPairLPolynomial.congr_equiv` | Preserve both existential presenting data and all universal factor certificates under representation equivalence |
+| `isAutomorphicPairEpsilonFactor_iff`, `isAutomorphicPairLPolynomial_iff` | Identify the class relation with its representation relation on supplied equivalent representatives |
+| `IsAutomorphicPairEpsilonFactor.unique`, `IsAutomorphicPairLPolynomial.unique` | Prove uniqueness for each fixed class pair, additive character and Haar measure |
+| `IsAutomorphicPairLPolynomial.coeff_zero`, `.ne_zero` | Prove the certified polynomial has constant coefficient one and is nonzero |
+| `automorphicPairLFactor`, `coe_automorphicPairLFactor`, `automorphicPairLFactor_eq` | Construct the rational unit `1/P(X)` from a certified class polynomial and prove independence from that certified input |
+| `automorphicPairEpsilonFactor` | Package the existing representation epsilon constructor with its class certificate |
+
+All names start with `Langlands`. Entries without `Classification` or
+`RankinSelberg` prefixes are in `Langlands.Correspondence`. In the class adapters,
+representatives have carrier universe `uA`, equivalent targets have universe
+`max uF uA`, and block
+carriers remain in `uA`. The additive character and Haar measure are fixed.
+
+The L constructor requires a certified class polynomial. The epsilon constructor
+requires supplied representatives and equivalences, square-integrable quotient
+data existence for both targets, block-factor existence and datum independence.
+The L certificates use tempered standard data; these are not identified with
+the square-integrable epsilon data. Neither constructor establishes totality.
+Classification, analytic existence, character/measure independence, smooth-dual
+comparison and descent of block carriers to a smaller universe remain separate
+obligations. In particular, the classification epsilon constructor with block
+universe `max uF uA` cannot silently supply this adapter's block universe `uA`.
+
+The paired Markdown explains the implemented algebraic proofs and their
+derived provenance, with the original-source locations Henniart 2002 §§1.2,
+2.8 and JPSS 1983 §9.4. This addendum records the published Lean API; it adds
+no new source interpretation or analytic theorem.
