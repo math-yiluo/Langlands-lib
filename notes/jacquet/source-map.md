@@ -3,9 +3,10 @@
 Author: Worker 19, task `616fab20-3cae-49ab-94f4-d28791b2b93f`.
 Opposite-induction documentation contributed by Worker 264.
 Source audit updated on 23 October 2026 against Library commit
-`225a00380f8ef7b97eb15bda1157dee4ab8b2a03`. This update records publication of
-the weak-critical support family and the actual opposite-refinement geometry
-and normalized functors, and links the reviewed scope audit of S78 Lemma 5.3.
+`2da3640f8f3978d2ba6ce703d6c26cf1941ba234`. This update records publication of
+the fixed-parameter tensor recovery statement, actual real Levi twists and
+maximal-cone selection statement, together with their exact proof tasks and
+concrete construction prerequisites. The reviewed scope audit of S78 Lemma 5.3 remains applicable.
 Exact publication receipts appear below. Declaration names refer to this
 Library tree; receipts identify earlier commits where contributions entered
 it. Review approval alone does not make an unpublished candidate a Library
@@ -137,8 +138,8 @@ the family yet. It is not a placeholder assertion.
 | **Full-dual exponents and class comparison.** S79 §2.4, pp.90–92; Lemmas 3.2.1–3.2.2, Thm 3.2.4 and Cor. 3.2.5(1), pp.120–123; Lemma 4.5.6 and Cor. 4.5.7, pp.187–188. | Published: `GLDualJacquetExponentPrerequisitesStatement` in `Langlands.Representation.Exponents.DualJacquetStatement`. For irreducible admissible positive-rank GL_n sources, its four components state finite smooth dual spectrum, finite uniform nilpotence indices and spanning of the full dual; dual occurrence iff an actual irreducible admissible opposite Jacquet constituent has the prescribed scalar split-center character; analytic temperedness of such a constituent iff that character is unitary for a tempered source; and tempered opposite-inducing support retaining a prescribed unitary character. The arbitrary constituent carrier has its own universe. These statements use the published full transpose dual construction, not the inverse-element contragredient, and do not prove the comparisons. |
 | **Weak-critical predicates and support refinement.** S79 §0.3, pp.5–6, and the paragraph before Cor. 4.5.11 through Cor. 4.5.12(3), pp.189–190. | Published constructions: `Exponents.ConjugateBlockPair` and its actual scalar restriction in `Langlands.Representation.Exponents.ParabolicPair`, and `PadicField.TopologicalData.IsWeaklyCriticalDualJacquetExponent`, `IsWeaklyCriticalDualJacquetPair`, `IsWeaklyMinimalDualJacquetPair` in `Langlands.Representation.Exponents.WeakCritical`. Weak criticality requires an occurring unitary exponent and tests strict uniform-index decrease over every proper finer concrete conjugate pair and every extending unitary exponent. Minimality is separately defined; its intrinsic implication to criticality is proved. The converse and prescribed discrete-series support are published proposition definitions in `GLWeaklyCriticalTemperedRefinementStatement`, described below; their proofs remain open. |
 | **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The finer representation-theoretic comparisons are not yet stated. The [reviewed scope audit](silberger-lemma53-scope.md) gives a GL₂ obstruction to the unrestricted printed Lemma 5.3: its positive-weight sum argument supports equality only for actual constituents of the specified inner induction. A repaired target must retain this restriction and identify it as derived from the proof. Lemma 5.6 already assumes a tempered inner quotient; its continuation to every regular positive parameter still needs its own argument. The counts are `HasJordanHolderMultiplicity`, and genericity must not replace regularity in the final statement. |
-| **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The relative recovery and cosocle multiplicities of Props. 5.7–5.9 and semistandard conjugacy of Cor. 6.2 remain unstated. |
-| **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level maximal-cone construction used in its proof remains unstated. The parabolic cone specialization is now published; its application still needs class exponents, larger-Levi maps and the tempered criterion. |
+| **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The published `GLRegularLanglandsTensorRecoveryStatement` in `Langlands.Representation.Classification.RegularLanglandsTensorRecoveryStatement` isolates the fixed-shape, fixed-exponent consequence: isomorphic arbitrary irreducible quotients recover equivalence of the actual untwisted tensors of irreducible analytically tempered blocks. It is derived from Prop. 6.1, whose concluding route uses Prop. 5.8 and then Prop. 5.7; it is not unrestricted Prop. 5.7. The detailed relative recovery and cosocle multiplicities of Props. 5.7–5.9 and semistandard conjugacy of Cor. 6.2 remain unstated. |
+| **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level intermediate `GLMaximalConeJacquetQuotientStatement` in `Langlands.Representation.Classification.MaximalConeStatement` is independently accepted and published as contribution `548a0480-4a37-4eef-ab27-086c3e403491`. It selects an actual dual exponent, a globally maximal numerical cone coarsening, its restricted occurring character and an irreducible quotient of the whole opposite Jacquet module that becomes analytically tempered after removing the actual real Levi twist. The statement assumes no tensor factorization and retains arbitrary ambient central twists. Its proof remains open, separately from final exhaustion. |
 | **Regular-chamber quotient theorem.** S78 Thm 4.1(1)–(3), p.99, proof §§5–7. | Published: `GLRegularLanglandsQuotientStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`, the conjunction of unique-head existence, ordered inducing-data uniqueness and exhaustion. The actual upper standard module uses irreducible analytically tempered blocks with strictly decreasing real determinant exponents. All central twists are allowed; one-block regularity is vacuous. Head existence and equality of irreducible quotient kernels are conclusions, not datum fields. |
 
 The two exponent-criterion pairs were independently accepted and published in
@@ -209,6 +210,67 @@ the discrete-series class-exponent premise of Cor. 4.5.12(3). Exact Prop
 inspection, machine validation, independent review and publication have
 passed. The Lean/Markdown pair in the pinned Library matches the frozen
 contribution hashes. This publishes the proposition family, not its proof.
+
+## Tensor recovery, real Levi twists and maximal-cone status
+
+The fixed-parameter tensor recovery statement is contribution
+`722cffa6-afa3-4fdd-a6f0-095a7bfd87a4` version 1, authored by Workers 19 and 47,
+independently approved by Reviewer 1626 and published with integration receipt
+`780708401cef4db6989b66704aaf1dff`. The actual real Levi character and twist
+construction is contribution `d3f6b7e1-475c-471a-9249-cc6e2ae0485d` version 1,
+independently approved by Reviewer 1638 and published with integration receipt
+`7a66500a61d746818803be2009cc3583`. Both pairs were verified in Library
+`4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9` and remain unchanged in the pinned
+snapshot. Their published Lean/Markdown hashes match the workspace pairs.
+
+The tensor recovery target keeps independent field and carrier universes,
+positive total rank, a fixed ordered shape and `StrictAnti` exponent, actual
+analytic temperedness of every irreducible factor, and weak irreducible
+quotient premises. The quotient targets may differ and are related by an
+actual smooth isomorphism. Its conclusion is equivalence of the untwisted
+product-Levi tensors. It assumes no head or canonical quotient. Its separate
+exact proof task `d2bdfb40-719d-4b6b-a907-94d3e6ae182d` must prove this target
+without assuming full inducing-data uniqueness. The published helper
+`PadicField.TopologicalData.blockIsoOfTensorEquiv` then recovers individual
+factor isomorphisms; that helper does not prove tensor recovery.
+
+`Langlands.Representation.Twist.LeviRealPower` constructs
+`T.leviRealPowerCharacter B t` and `T.leviRealPowerTwist B t` for arbitrary
+real vectors and arbitrary actual representations of the product Levi. It
+proves determinant-product and block-scalar formulas, open kernel,
+zero/addition/inverse laws, cancellation and preservation and reflection of
+smoothness. At block scalars the character has exponents `B.size i * t i`.
+Neither a tensor decomposition nor a temperedness certificate is required.
+The empty rank-zero shape is included. These intrinsic laws supply the
+negative real twist used by the maximal-cone target, not its temperedness
+conclusion.
+
+The maximal-cone statement contribution `548a0480-4a37-4eef-ab27-086c3e403491`
+version 1 has terminal machine acceptance `e0b9b5fc-214f-4178-a5d2-94edbd031671`
+and unqualified independent Reviewer 1655 approval in review
+`7268291c-6ef3-4b52-9961-ccb858f81cfc`. It is published at Library
+`2da3640f8f3978d2ba6ce703d6c26cf1941ba234`, with integration receipt
+`84bbaaa905d74daeae75494e72aabdbf`. Its published pair matches the independently
+reviewed hashes. Exact recovery check `e11eb0d2-b670-4d0b-9274-3776b02a1898`
+returned zero diagnostics and confirmed a Prop-valued definition with independent
+`uF` and `uV`. Its separate exact proof task is
+`b291a31b-9606-4ffc-b9d8-ce62346cfa09`; that task excludes circular use of final
+Langlands exhaustion. These receipts establish publication of the statement,
+not a proof of its assertion.
+
+The maximality compares the selected coarsened block count with every numerical
+cone coarsening of every actual dual exponent, without assuming a quotient or
+temperedness for competitors. Character restriction is pointwise composition
+with the consecutive grouping map. The selected representation is a quotient
+of the whole normalized opposite Jacquet module, and removing its determinant
+exponents gives `IsTemperedModCenter` for every Borel Haar measure on the full
+Levi central quotient. The published Haar-existence construction makes this
+quantification nonvacuous. The assertion includes arbitrary ambient real central
+twists. Its exact source is the selection argument in S78 Proposition 7.2,
+pp.103–104; the original final inequality on p.104 is `≤ 1`. The one-way
+weak-coefficient-to-integrability bridge uses S79 Theorem 4.5.1 and definition,
+pp.183–184, Lemma 4.5.3, pp.185–186, and W03 I.1(5), p.241, II.1.1, p.251, and
+III.2/III.2.2, pp.265–266. This is derived source correspondence, not a proof.
 
 ## Library statements reused by these families
 
@@ -376,7 +438,8 @@ relative transitivity, multiplicity comparison or inducing-data recovery.
 
 The [Lemma 5.3 scope audit](silberger-lemma53-scope.md), contribution
 `e575b5df-8966-4fea-a9e7-bb7c9a08033f`, is independently reviewed and published
-at the pinned commit, with integration receipt `eeaa2ff73ec84df1a6231a4bcb6f9e73`.
+at `225a00380f8ef7b97eb15bda1157dee4ab8b2a03`, with integration receipt
+`eeaa2ff73ec84df1a6231a4bcb6f9e73`.
 It explains the constituent restriction and the fine twist
 `-nu_0 + nu''|M`, with a GL₂ counterexample to the printed unrestricted
 comparison. It is a source audit, not a Lean theorem or an author-issued
@@ -386,10 +449,26 @@ all-regular continuation argument in Lemma 5.6.
 The comparison statements still need the actual coordinate equivalence from
 the refined Levi to the product Levi of the flattened block shape, so that the
 existing cuspidality predicate can apply to the transported representation.
-That construction, relative transitivity, the constituent-restricted generic
-comparison, all-regular comparison, relative recovery/cosocle multiplicities,
-semistandard conjugacy and the representation-level maximal-cone argument
-remain separate construction, statement or proof obligations.
+The actual refined/flattened Levi equivalence is construction task
+`38ac2d45-04ed-4c71-aff9-7b0c2d9ff912`. The actual induction from a conjugate
+block parabolic, with the explicit left-translation equivalence, is construction
+task `ccad01fb-b32b-4d19-a856-31e79c6ceae6`; this supplies an input to Corollary
+6.2, not its semistandard Weyl-conjugacy conclusion. Proposition 5.9 also needs
+the actual maximal semisimple quotient, separated as construction task
+`28c1a0f3-8772-4c94-9ce3-c353cb470e8f`: the invariant-radical quotient with
+finite-length semisimplicity, universal factorization, induced maps and
+smoothness. These task contracts are plans, not accepted constructions.
+
+Relative transitivity, the constituent-restricted generic comparison,
+all-regular comparison, detailed relative recovery/cosocle multiplicities and
+semistandard conjugacy remain separate statement or proof obligations.
+Proposition 5.7 must retain its specific inner cuspidal and intermediate
+discrete-series support setup; its second clause allows any supported
+irreducible inner quotient, not only a tempered one. Proposition 5.8 begins
+with arbitrary irreducible tempered outer-Levi data and needs its separate
+continuation argument after the Lemma 5.3 scope repair. The published maximal-cone
+statement and its exact proof task are recorded above; its proof and the
+final regular-head exhaustion proof remain distinct.
 
 The grouping of equal exponents into tempered blocks is now stated by
 `Langlands.Classification.SquareIntegrableEqualExponentGrouping F T` in
@@ -411,7 +490,8 @@ sizes `n_i`, its residuals are `r_i - n_i t_(q i)`: each fiber has total zero
 and every prefix has nonpositive sum. The strictly decreasing `t` are the
 averaged determinant exponents on the unique coarsening. The statement also
 includes the actual matrix subgroup containments. Its proof and the
-representation-level maximal-exponent construction remain separate obligations.
+proof of the representation-level maximal-exponent statement remain separate
+obligations; the latter statement is described above.
 The two published exponent criteria use inequalities directly.
 
 The opposite-parabolic geometry is also published in
