@@ -39,10 +39,19 @@ For rank one the empty adjacent-entry product is one and the
 unitriangular subgroup is trivial; the statement includes the usual
 character conductor case.
 
-The local predicates simply expand the target. A separately constructed
-congruence subgroup and its identification with this matrix predicate
-remain infrastructure work. No subgroup-closure or openness result is
-assumed as a record field. The conductor equality with the exponent of
+The local predicates simply expand the target. The current Library's
+[Congruence](Congruence.md) module already constructs
+`Langlands.Conductor.integralCongruence`, `congruenceSubgroup` and
+`levelSubgroup`. It proves the last-row congruence characterization on
+integral representatives, identifies `integralSubgroup` with matrices whose
+entries and inverse entries are integral, and proves `levelSubgroup_zero`
+and `levelSubgroup_antitone`. With a compatible valuation and topology
+and an `IsNonarchimedeanLocalField` instance, `levelOpenSubgroup` and
+`isCompact_levelOpenSubgroup` provide the open subgroup and its compactness.
+The adapter identifying this target's inline predicate over `T.Integers`
+with that bundled subgroup remains unproved, as does the minimal-newvector
+theorem itself. No subgroup-closure or openness result is assumed as a
+record field. The conductor equality with the exponent of
 the epsilon factor, the essential vector's Rankin--Selberg test-integral
 identity, and arbitrary-character normalization formulas are separate
 targets; they are not asserted by this proposition.

@@ -29,9 +29,14 @@ universe: `max 0 uV = uV`. The group and vector-space universes remain independe
 
 These equality predicates neither assert existence of an output nor choose one.
 They are meaningful for every character. To obtain an output in the restricted
-parameter set, the separate `ParameterRelationStatements` targets state
-preservation, existence, and uniqueness as propositions to be proved. In particular, twist totality requires
-the character to have open kernel on inertia. Continuity alone does not
+parameter set, the published [ParameterRelationStatements](ParameterRelationStatements.md)
+targets state preservation, existence, and uniqueness as proposition definitions.
+The complete target is
+`Langlands.WeilDeligneRepresentation.ParameterRelationLaws.Statement.{uG, uV}`,
+with independent group and carrier universes and an explicit
+`[IsTopologicalGroup G]` binder. Its twist totality clauses take
+`χ : G →* ℂˣ` and require `IsOpen ((χ.comp I.subtype).ker : Set I)`.
+Continuity alone does not
 replace this condition for an arbitrary topological group.
 
 The intended downstream correspondence clause is nonvacuous: it existentially
@@ -88,9 +93,17 @@ Lean hashes:
 Through these it uses the pair core `Langlands.WeilDeligne.Basic` and the
 finite-representation framework under `Langlands.Weil.Representation`.
 
-This pair is a definition layer. Its theorem targets are the separate
-`ParameterRelationStatements` family, which will be submitted after this pair
-is published; no proof of them is assumed here.
+This pair is a published definition layer. Its companion
+`ParameterRelationStatements` family is also published. No theorem proving
+the complete `ParameterRelationLaws.Statement` was found in the current
+Library during this status check. Related certified constructions already
+exist: [ParameterOperations](ParameterOperations.md) supplies `parameterDual`
+and `parameterTwist` for open-inertia parameter objects, and
+`parameterDualClass` and `parameterTwistClass` for their classes, under
+`[IsTopologicalGroup G]`, with the character's open inertia-kernel hypothesis
+for twisting. These do not by themselves prove the complete relation family
+for Frobenius-semisimple, rank-indexed classes. This status statement makes no
+claim that every individual component fact remains unproved.
 
 ## Check
 
@@ -105,5 +118,7 @@ over that Library commit with no errors or warnings. It inspected
 and type SHA-256
 `c385e78a25c12c14185a69c7125c5a3458463ec7d5510752b7203a8e2c0665f9`;
 its axioms are `propext`, `Classical.choice` and `Quot.sound`. This is
-development evidence; independent semantic acceptance and Library publication
-remain outstanding.
+development evidence. Independent semantic review and publication subsequently
+accepted this definition pair and the companion target family. Their publication
+establishes the availability of definitions and targets, not a proof of the
+complete target family.

@@ -1,0 +1,94 @@
+# Double-coset spanning and sandwich structure of compact-open Hecke corners
+
+This module proves a generic form of the sandwich structure in
+Bernstein--Zelevinsky (1976), Lemma 4.9, page 39. It works for any Hausdorff
+topological group `G` with Borel measurable structure and a left Haar measure
+`μ` (`μ.IsHaarMeasure`), and any open subgroup `K` with compact underlying set
+(`hK`). Only left invariance of `μ` is used. The group-theoretic input is
+stated as hypotheses: a compact subgroup `Γ` normalizing `K`, a monoid `M` with
+the dominance property `m₁ K m₂ ⊆ K m₁ m₂ K`, and a decomposition `G = Γ M Γ`.
+For `G°` these hypotheses are verified in
+`Langlands.Representation.CuspidalSupport.DeterminantUnitCornerStructureProof`.
+
+The notation `doubleCosetSet K g` is the set `K g K`, and `doubleCoset K hK μ g`
+is the corner element of the published module
+`Langlands.Representation.Hecke.DoubleCoset`: the indicator of `K g K` divided
+by `μ(K)`.
+
+## Declarations
+
+- `HeckeAlgebra.integral_mul`: the total integral of a convolution `f * g` is
+  the product of the total integrals. The proof is compact-support Fubini
+  (`integral_integral_swap_of_hasCompactSupport`) followed by left invariance
+  (`integral_mul_left_eq_self`).
+- `TestFunction.mem_doubleCosetSet_self`: `g ∈ K g K`.
+- `TestFunction.mem_doubleCosetSet_mul_mul_iff`: if `γ` and `γ'` normalize `K`,
+  then `x ∈ K (γ g γ') K` if and only if `γ⁻¹ x γ'⁻¹ ∈ K g K`.
+- `TestFunction.doubleCosetSet_mass_pos`: `K g K` has positive finite Haar
+  measure; it is open, nonempty and compact.
+- `Corner.sub_apply`, `Corner.smul_apply`, `Corner.zero_apply`,
+  `Corner.one_apply`, `Corner.ext'`: evaluation lemmas for corner elements and
+  extensionality by values.
+- `Corner.apply_eq_of_mem_doubleCosetSet`: a corner element is constant on each
+  double coset `K g K`, by its left and right `K`-invariance.
+- `Corner.span_range_doubleCoset`: the corner is spanned over `ℂ` by the
+  elements `doubleCoset K hK μ g`. Induction on a finite set `t` of double
+  cosets covering the support: subtracting `μ(K) f(g) · doubleCoset g` removes
+  the double coset of `g`. The support of a corner element is compact, so
+  finitely many open double cosets cover it.
+- `Corner.doubleCoset_apply_of_mem_normalizer`,
+  `Corner.doubleCoset_apply_of_mem_normalizer'`: for `γ` normalizing `K`,
+  `doubleCoset γ` is the left translate `x ↦ 1(γ⁻¹ x)` and the right translate
+  `x ↦ 1(x γ⁻¹)` of the unit.
+- `Corner.doubleCoset_mul_apply_of_mem_normalizer`,
+  `Corner.mul_doubleCoset_apply_of_mem_normalizer`: for `γ` normalizing `K`,
+  `(doubleCoset γ * f)(x) = f(γ⁻¹ x)` and `(f * doubleCoset γ)(x) = f(x γ⁻¹)`.
+  The first uses left invariance of `μ` to move the translation.
+- `Corner.doubleCoset_mul_mul_of_mem_normalizer`: for `γ, γ'` normalizing `K`,
+  `doubleCoset γ * doubleCoset g * doubleCoset γ' = doubleCoset (γ g γ')`.
+- `Corner.massIndicator K hK μ g`: the indicator of `K g K` divided by
+  `μ(K g K)`, a corner element of total integral one.
+  - `massIndicator_apply` gives its values.
+  - `doubleCoset_eq_smul_massIndicator`: `doubleCoset g` is the multiple
+    `μ(K g K) μ(K)⁻¹` of `massIndicator g`.
+  - `massIndicator_one`: `massIndicator 1 = 1`.
+  - `integral_massIndicator`: its total integral is `1`.
+  - `doubleCosetSet_complex_mass_ne_zero`: `μ(K g K) ≠ 0` as a complex number.
+- `Corner.massIndicator_mul`: if `g₁ k g₂ ∈ K g₁ g₂ K` for all `k ∈ K`, then
+  `massIndicator g₁ * massIndicator g₂ = massIndicator (g₁ g₂)`.
+  1. The product vanishes off `K g₁ g₂ K`: a nonzero integrand value at `y`
+     gives `x = a g₁ (b c) g₂ d` with `a, b, c, d ∈ K`, and the hypothesis puts
+     `g₁ (b c) g₂` in `K g₁ g₂ K`.
+  2. It is constant on `K g₁ g₂ K`, so it is a multiple of
+     `massIndicator (g₁ g₂)`.
+  3. Comparing total integrals with `integral_mul` shows the multiple is `1`.
+- `Corner.exists_sandwich_of_decomposition K hK μ Γ hΓc hΓ M hM D hDM hDcomm hdecomp`:
+  the generic sandwich structure. The hypotheses are:
+  - `Γ` is a subgroup with compact underlying set, contained in the normalizer
+    of `K`;
+  - `M` is a submonoid with `m₁ k m₂ ∈ K m₁ m₂ K` for `m₁, m₂ ∈ M`, `k ∈ K`;
+  - `D : Fin l → G` takes values in `M` and its values commute pairwise;
+  - every `g` is `γ m γ'` with `γ, γ' ∈ Γ` and `m` in the submonoid generated
+    by the range of `D`.
+
+  The conclusion has the shape of the published proposition
+  `DeterminantUnitCornerStructureStatement`: there are `q`,
+  `x : Fin q → Corner μ K hK` and pairwise commuting `a : Fin l → Corner μ K hK`
+  such that the products `x i * m * x j`, with `m` in
+  `Algebra.adjoin ℂ (Set.range a)`, span the corner.
+
+## Proof of `exists_sandwich_of_decomposition`
+
+1. Compactness of `Γ` gives finitely many `R i ∈ Γ` with `Γ ⊆ ⋃ R i K`.
+2. Put `a i = massIndicator (D i)`. By `massIndicator_mul` and the dominance
+   property of `M`, `massIndicator m` lies in `Algebra.adjoin ℂ (Set.range a)`
+   for every `m` in the submonoid generated by the `D i`
+   (`Submonoid.closure_induction`). The `a i` commute because
+   `a i * a j = massIndicator (D i D j)` and the `D i` commute.
+3. Put `x i = doubleCoset (R i)`. By `span_range_doubleCoset` it suffices to
+   reach every `doubleCoset g`. Write `g = γ m γ'` and pick `i, j` with
+   `(R i)⁻¹ γ ∈ K` and `(R j)⁻¹ γ' ∈ K`. Since `R i` normalizes `K`,
+   `g ∈ K (R i m R j) K`, so `doubleCoset g = doubleCoset (R i m R j)`.
+4. By `doubleCoset_mul_mul_of_mem_normalizer` this equals
+   `x i * doubleCoset m * x j`, and `doubleCoset m` is a scalar multiple of
+   `massIndicator m`, which lies in the adjoined subalgebra.

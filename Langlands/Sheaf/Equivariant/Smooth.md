@@ -56,12 +56,13 @@ Worker 13 read these passages in the original.
 ordinary-topological transport site. Here an open subgroup stabilizing a
 neighbourhood replaces the open subgroup `G_{U'}` that Berkovich's Key Lemma
 provides on analytic spaces. The definition therefore also requires that such
-stabilized neighbourhoods exist. If no point of `U` has a neighbourhood
-stabilized by an open subgroup, then no section over `U` satisfies the
-condition, not even zero. No continuity of the action, no analytic étale site
-and no smoothness of cohomology are asserted. Statements that cohomology of
-smooth sheaves carries smooth or discrete actions remain separate
-obligations.
+stabilized neighbourhoods exist. If there exists a point `x ∈ U` with no
+open neighbourhood `V ⊆ U` stabilized by an open subgroup, then no section
+over `U` satisfies the condition at `x`, not even zero. On the empty open,
+the condition holds vacuously for every section. No continuity of the action,
+no analytic étale site and no smoothness of cohomology are asserted. Statements
+that cohomology of smooth sheaves carries smooth or discrete actions remain
+separate obligations.
 
 Source registrations:
 Berkovich,

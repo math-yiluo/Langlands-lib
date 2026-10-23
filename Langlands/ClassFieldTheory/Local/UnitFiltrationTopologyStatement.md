@@ -2,7 +2,11 @@
 
 Worker 92 authored this statement module. It defines propositions only; no
 compactness, separation, lifting, or norm theorem is proved here. All declarations
-are in `Langlands.LocalClassField`.
+are in `Langlands.LocalClassField`. The Library proofs are in
+[UnitFiltrationStructuralProof](UnitFiltrationStructuralProof.md),
+[UnitFiltrationTopologyProof](UnitFiltrationTopologyProof.md), and, for the
+separate arithmetic application, [UnitNormProof](UnitNormProof.md).
+Worker 159 corrected the documentation of their availability.
 
 ## Exact statements
 
@@ -45,13 +49,16 @@ The conclusion is equality of actual subgroups
 `(S.unitFiltration n).map f.toMonoidHom = T.unitFiltration n` for every `n`.
 In particular it includes surjectivity onto the full valuation-unit subgroup
 at `n = 0`. The topology, compactness, closedness and separation facts are not
-extra field assumptions in this criterion. They are obligations for its future
-proof using the actual local-field data.
+extra field assumptions in this criterion. The published
+`unitFiltrationStructuralLaws` proves them from the actual local-field data;
+`unitFiltrationCompactLifting` uses that result to prove the criterion with
+exactly the preservation and one-level approximation hypotheses above.
 
 `UnitFiltrationTopologyTheorems.{u,v}` is the complete target: structural laws
 in universe `u`, structural laws in universe `v`, and the lifting criterion
-between those universes. Including both structural-law instances lets a future
-proof of this single target supply the prerequisites for both fields.
+between those universes. The published
+`unitFiltrationTopologyTheorems.{u,v}` proves this exact conjunction, including
+both structural-law instances.
 
 ## Source correspondence and derived scope
 
@@ -76,43 +83,54 @@ Worker 92 read the following original passages:
 The structural bundle specializes the first two passages to the published
 actual p-adic fields. Compactness of all levels follows mathematically from
 compactness of the integer ring and closedness of the unit congruence groups;
-separation uses the Hausdorff valuation topology. These are derived assertions,
-not a claim that Serre states the exact Lean bundle verbatim.
+the published structural proof establishes separation using Krull intersection
+for the maximal-ideal powers in the Noetherian local integer ring. These are
+derived assertions, not a claim that Serre states the exact Lean bundle or this
+implemented proof route verbatim.
 
 The lifting criterion is a derived compact local-field specialization of the
 surjectivity part of Lemma 2, with the filtration shifted by any starting level
 `n`. Preservation makes the maps on successive quotients well defined, and the
 stated one-level approximation expresses their surjectivity without introducing
-quotient representatives as additional data. A possible future proof constructs
-nested nonempty closed sets of approximate preimages in the compact source
-level. Compactness supplies a common preimage candidate, and target separation
-forces its error to be `1`. This describes the intended mathematical reduction;
-there is no implemented Lean proof in this module.
+quotient representatives as additional data. The published topology proof
+constructs successive corrections and then nested nonempty closed sets of
+approximate preimages in the compact source level. Compactness supplies a common
+preimage candidate, and target separation forces its error to be `1`.
+`unitFiltrationCompactLifting_of_structural` isolates the argument with structural
+laws as premises; `unitFiltrationCompactLifting` discharges those premises using
+the published structural theorem. The implementation is in the separate proof
+module; this statement module still contains only proposition definitions.
 
-This is a conditional auxiliary target for arbitrary continuous homomorphisms.
-The unconditional `UnramifiedUnitNorms` target remains a separate arithmetic
-obligation: its proof must establish preservation, continuity, and the
-one-level approximation for the actual determinant norm. Neither a norm
-surjectivity theorem, surjectivity at all finite truncations, nor local
-reciprocity is assumed or imported here.
+This is a conditional auxiliary theorem for arbitrary continuous homomorphisms.
+The separate published `unramifiedUnitNorms.{u,v}` in `UnitNormProof` proves
+`UnramifiedUnitNorms.{u,v}` for the actual determinant norm of a compatible finite
+extension, with arbitrary supplied topological data and equality of the absolute
+ramification indices. It establishes continuity, preservation and one-level
+approximation for that norm and applies compact lifting. Thus its final statement
+has no additional preservation or approximation premises, requires no Galois
+hypothesis, and covers every level including zero in two independent carrier
+universes. This proves the unramified-unit-norm target, not the entire
+`UnitNormTheorems` bundle or local reciprocity. The statement module imports none
+of these proof modules.
 
 ## Dependency and duplicate audit
 
 The module imports the existing `Langlands.ClassFieldTheory.Local.Units` and Mathlib's
-`Topology.Compactness.Compact`. It changes no existing Library pair. The units
+`Topology.Compactness.Compact`. The units
 module supplies the exact subgroups and reductions but no structural-law or
-compact-lifting theorem. The existing `UnitNormStatement` states the arithmetic
-norm conclusion and does not provide this auxiliary criterion.
+compact-lifting theorem. `UnitFiltrationStructuralProof` proves the structural
+laws, and `UnitFiltrationTopologyProof` imports that proof and proves the compact
+lifting criterion and complete topology bundle. The existing `UnitNormStatement`
+states the arithmetic norm conclusion used by `UnitNormProof`.
 
-A search of the current Library and pinned Mathlib topology and p-adic sources
-found no statement for these actual unit filtrations and no duplicate lifting
-criterion. Mathlib does provide general compact-intersection tools, including
-`IsCompact.inter_iInter_nonempty` and
+The topology proof uses Mathlib's general compact-intersection tool
 `IsCompact.nonempty_iInter_of_sequence_nonempty_isCompact_isClosed` in
-`Mathlib/Topology/Compactness/Compact.lean`; these are possible ingredients for
-the later proof, not proofs of the present statements. The published
-`Langlands.LocalField.Normalization.Proof` also supplies arithmetic and topology
-comparisons if needed by that proof, but is not needed for this statement.
+`Mathlib/Topology/Compactness/Compact.lean`. The structural proof also imports
+the existing local-field topology and Mathlib's Krull intersection theorem.
+These separate proof modules supply the results for the actual filtration;
+the general Mathlib tools alone do not state this bundle. The published
+`Langlands.LocalField.Normalization.Proof` supplies arithmetic comparisons used
+by the norm application and is not needed for this statement.
 
 The pinned environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -3,6 +3,8 @@
 Author: Worker 10. This proposition family states actual geometric local
 Weil reciprocity and its quasicharacter consequences. All construction
 imports are published. No reciprocity theorem is claimed as proved.
+Worker 159 corrected the documentation of the separate published
+coherent-system and absolute-filtration definitions and targets.
 
 ## Objects and normalization
 
@@ -92,10 +94,36 @@ transport is the complex-valued normalized absolute value of the field.
 No complex logarithm, chosen exponent of a norm character, or chosen
 Frobenius lift occurs in these statements.
 
-`WeilReciprocityTheorems` conjoins the six targets. The coherent
-finite-extension family and higher absolute filtration are separate
-statement units. Their outstanding definitions and semantic obligations
-are not hidden in this aggregate.
+`WeilReciprocityTheorems` conjoins exactly these six targets. The coherent
+finite-extension system and higher absolute filtration are separate
+published units:
+
+- [ReciprocitySystem](ReciprocitySystem.md) defines
+  `CommonClosure.CoherentFamilyRelation` and `CommonClosure.CoherentFamilyExistence`
+  for candidates on every finite intermediate field in a common algebraic
+  closure, including nonnormal fields. Coherence comprises the actual norm,
+  transfer and conjugation squares, density and completion comparison.
+  `NormalizedSystemRelation` adds geometric normalization; coherence alone
+  is not the normalized reciprocity system.
+  [ReciprocitySystemStatement](ReciprocitySystemStatement.md) specializes to
+  the constructed geometric residue degree and canonical extension-field
+  topologies. Its `CommonClosureReciprocityTheorems` states existence and
+  uniqueness of this normalized system for every base field and supplied
+  base topology.
+- [Herbrand.Absolute](../../LocalFactor/Ramification/Herbrand/Absolute.md)
+  constructs `Langlands.Ramification.Padic.absoluteUpperRamificationGroup`
+  from the intersection of actual finite Galois restriction preimages and
+  `localAbelianUpperRamificationGroup` as its image in the abelianization.
+  [AbsoluteReciprocityStatement](AbsoluteReciprocityStatement.md) states the
+  separate `AbsoluteUpperReciprocityTheorems`: inertia image, natural and real
+  higher-unit images, conductor-level equivalence and last-upper-break
+  characterization. These targets quantify a supplied map satisfying
+  `GeometricProfiniteReciprocityRelation`; they do not construct one.
+
+These definitions and statement targets are already available in the Library.
+Proofs of the Weil, common-closure and absolute-reciprocity targets remain
+outstanding. None of the separate system or higher-filtration targets is an
+additional conjunct or an assumed input of the six-part Weil aggregate.
 
 ## Original-source correspondence
 
@@ -110,6 +138,8 @@ printed page 20 / PDF page 29. The first pages define the topological
 abelianizations and reciprocity isomorphisms. Section 1.4.1, printed
 page 6 / PDF page 15, describes the actual nonarchimedean Weil subgroup
 and its topology and explicitly chooses the geometric convention.
+Thus a uniformizer corresponds to geometric Frobenius, the inverse of
+arithmetic Frobenius.
 Section 1.4.6, printed page 7 / PDF page 16, identifies its norm with
 the normalized absolute value under reciprocity. Section 4.1.3,
 printed page 20 / PDF page 29, confirms `|w| = q^(-v(w))`.
@@ -150,6 +180,7 @@ unrestricted universe `u`, and the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`. The environment is
 `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Independent semantic review and publication are separate requirements.
-This contribution consists only of the present statement pair and does
-not resubmit imported constructions.
+This statement pair has independent semantic acceptance and is published;
+that status does not supply proofs of its proposition definitions.
+The separate definitions and targets linked above are also published.
+This documentation correction changes no Lean declaration or import.
