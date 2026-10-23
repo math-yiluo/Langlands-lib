@@ -21,36 +21,51 @@ locally profinite and countability hypotheses and Noetherian rational
 coefficient rings.
 
 This version specializes the coefficients to complex numbers, matching the
-accepted averaging construction, and needs only a specified compact open
+implemented averaging construction, and needs only a specified compact open
 subgroup. Smoothness makes each orbit under that subgroup finite; a normalized
-finite sum therefore gives the needed inverse. The original source was read,
-including its ambient conventions.
+finite sum therefore gives the needed inverse. No cofinality of compact open
+subgroups is assumed. The original source was read, including its ambient
+conventions.
 
 Literature ID: `casselman-2019-smooth-representations`.
 SHA256: `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 Actual file:
-`C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
+`/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 
-## Development dependencies
+## Dependencies and implemented proof
 
-The statement imports accepted fixed-functional construction
-`9a629b79-9346-46b2-950a-7c31ed1b5587`, version 1, published at
-`9db46907db3181b0c1dfd287b8ab2f1f02054cab`, with independent receipt
-`b2938ccc8de248d8b66eaca960639ca3`. Its five transitive construction
-dependencies are accepted version 1 of
-`be3f8221-aa6f-4069-8faa-f04e1f5dc4b7` (smooth contragredient),
-`8bf36df6-8b13-4713-89e0-7d2ba5aa6824` (smooth-part fixed vectors),
-`079d7c1a-8b96-4917-997a-536d6954d55b` (algebraic dual),
-`9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d` (smooth part), and
-`665022df-625b-44ae-9dbd-425f6e266bab` (smoothness and fixed vectors).
-Their complete twelve-file effective source closure was verified current at
-Library `196cb468ed4d64d896980a67063afd48f8285185` and matches the local
-sources. No project proof is imported by the statement.
-This proposition definition is proposed for independent statement review;
-the adjacent complete proof and its finite-mean helpers remain one draft.
+This module defines the Prop-valued
+`Langlands.SmoothDualCompactFixedDualityStatement`. It directly imports
+`Langlands.Representation.Smooth.Contragredient.FixedVectorsDefinitions` and
+`Mathlib.Basic.Complex.Basic`. Its transitive project construction imports
+supply the smooth contragredient, smooth-part fixed vectors, algebraic dual,
+smooth part, and smoothness and fixed-vector definitions. No project proof
+module is imported by the statement.
 
-The adjacent proof uses the accepted compact-averaging construction
-`ed385ab4-3443-4345-a7c7-5d91c74940f9`, version 1. It does not assume the
-separately pending projection or fixed-vector-surjectivity proofs.
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The separate [CompactDualityProof](CompactDualityProof.md) is implemented in
+the Library. `Langlands.smoothDualFixedRestriction_bijective` proves bijectivity
+of the actual restriction map, and `Langlands.smoothDualCompactFixedDuality`
+proves the whole proposition, with the same independent group and carrier
+universes and internally quantified topological-group hypothesis.
+The proof imports this statement and
+`Langlands.Representation.Compact.Definitions`. Its private finite-mean lemmas
+show that averaging lands in the fixed space, fixes that space, and is unchanged
+by the subgroup action. A fixed functional is determined by its values on
+averages, giving injectivity; composing a functional on the fixed space with
+averaging gives its fixed smooth extension, giving surjectivity.
+
+The separate compact projection and fixed-vector-surjectivity proofs are also
+implemented: `Langlands.Compact.averageMap_isProj` and
+`Langlands.Compact.projectionAndNaturality` are in `Compact.ProjectionProof`,
+and `Langlands.Compact.fixedVectorSurjectivity` is in
+`Compact.SurjectivityProof` (all under `Langlands.Representation`).
+The compact-duality proof neither imports those proof modules nor assumes their
+conclusions as hypotheses; it establishes the finite-mean properties it uses
+locally.
+
+These are statements about implemented, currently published source, not claims
+that historical independent acceptance records for compact projection,
+surjectivity or compact duality were recovered. Worker 320 checked the
+declarations, imports and proof routes against Library
+`fb40559309dd366f4145aa31aad8c3db11b7cc07`; the original pre-migration proof
+acceptance records were not verified in this correction.

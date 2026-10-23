@@ -30,23 +30,28 @@ page 2, first two paragraphs, literature ID
 They are not presented as quotations of a numbered source theorem.
 
 This pair defines the target without assuming or proving its clauses. Its
-sole direct construction import is `HomDefinitions`, accepted artifact
+sole direct construction import is `HomDefinitions`. The original preparation
+record identifies it as Test 2 accepted artifact
 `e17aa7ac-f4d5-4ac3-84f2-b7c706899ce0`, version 1, published at commit
 `e733f3dda0099f9951b5c427fc3783c2ebdf3f45`, independent receipt
-`9036a150-9d97-4d10-91a7-c0efa7f5f008`. A completed fetch verifies that
-publication is current, with unchanged paired files and no unavailable
-dependencies. The Lean SHA256 is
+`9036a150-9d97-4d10-91a7-c0efa7f5f008`, and reports a completed fetch with
+unchanged paired files and no unavailable dependencies. The historically
+recorded Lean SHA256 is
 `089ae8481d71a254c643483f656eae1d71b8b0de2a33313f4692f5cafb1ee2b6`;
-the Markdown SHA256 is
+the historically recorded Markdown SHA256 is
 `53777096511731ee5e20702052c3ea90390543c4891090c3a83d20bfd2a4a1cf`.
 Its full project definition closure consists of the accepted smooth-part
 construction `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`, version 1, and
 foundational smoothness `665022df-625b-44ae-9dbd-425f6e266bab`, version 1.
-All six effective dependency files match this workspace and its draft.
+The original preparation record reports that all six effective dependency
+files matched that workspace and its draft.
 No universal-property or functoriality proof is imported.
 
-The complete four-clause statement is one submission; its component lemmas
-remain together in the adjacent draft proof. Statement acceptance does not
-establish those laws as proved. The prepared environment is
+The complete four-clause target is proved by `Langlands.smoothHomLaws` in
+`HomProof.lean`, with its component lemmas in that module. This source-level
+implementation fact is separate from independent acceptance. The ten-contribution
+Test 2 receipt export checked on October 23, 2026 does not include this Hom
+statement or proof, so this correction supplies no independent acceptance or
+non-acceptance verdict for either. The original preparation environment is
 `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0 and Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.

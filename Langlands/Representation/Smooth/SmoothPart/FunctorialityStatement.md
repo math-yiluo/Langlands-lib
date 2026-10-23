@@ -1,6 +1,6 @@
 # Smooth-part maps and equivalence: proposition target
 
-`Langlands.SmoothPartFunctorialityStatement` is an unaccepted proposition
+`Langlands.SmoothPartFunctorialityStatement` is a proposition
 definition for a commutative ring `R`, a group `G` with a topology, and
 independently universed `R`-modules `V`, `W`, and `U`. It explicitly quantifies a
 topological-group instance and asserts four clauses:
@@ -26,12 +26,33 @@ Chapter II, revision June 16, 2019, Section 1, page 2, first two paragraphs.
 The original file, construction proofs, and exact foundational dependency and
 environment are in [Definitions](Definitions.md).
 
-The direct construction dependency is artifact
+The original Test 2 record of the direct construction dependency is artifact
 `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`, version 1, independently published at
-Library commit `cd8210540c75a7d0a9e2431e4bc9a2535ceaf919`, with receipt
+Test 2 commit `cd8210540c75a7d0a9e2431e4bc9a2535ceaf919`, with receipt
 `1f969dc8-79b0-4e70-adf8-502752d70c6a`. Its transitive foundation is
-`665022df-625b-44ae-9dbd-425f6e266bab`, version 1. Both pairs are currently
-published and their local bytes match the effective reviewed versions.
-This target is submitted for independent statement review. The adjacent
-compiled proof remains development evidence until the target and exact bound
-proof pass independent review.
+`665022df-625b-44ae-9dbd-425f6e266bab`, version 1.
+
+`FunctorialityProof.lean` implements all four clauses as
+`Langlands.smoothPartFunctoriality`, introducing the topological-group instance
+at its internal binder. The first three clauses hold for arbitrary
+representations; only the fourth assumes smoothness. The statement defines the
+proposition; the separate proof establishes it.
+
+## Verified historical status
+
+Both original pairs were independently accepted and published. Worker 159
+checked the original Test 2 export on October 23, 2026, using the records and
+byte comparison described in [Definitions](Definitions.md#verified-historical-status).
+These are separate statement and proof acceptances:
+
+| Contribution | Original candidate | Accepted original validation | Independent approval | Recorded Test 2 publication |
+| --- | --- | --- | --- | --- |
+| FunctorialityStatement, version 1 | `80ed7208-2a32-4a3f-b295-66c8a37f919a` | `f3e0277e-2659-4769-a705-bf384c2e654a` | Reviewer 29, `0bbecfbd-08f8-4f0e-a83e-dd6a6d423711`, October 14, 2026 | `672a1bfbca2444507019dc6764810d0c0bcb81e5`, October 14, 2026 |
+| FunctorialityProof, version 1 | `9417e847-122a-4e31-8fc0-2206b502b4fa` | `5d8f864d-330e-43c0-b26e-519dbaa668ff` | Reviewer 73, `be1294303e9b47058b1ae4894da9a552`, October 15, 2026 | `d0f5322f745425b08ae8e72c1031206f45cb049e`, October 15, 2026 |
+
+The proof validation reports `proof_accepted=true` and successful exact-target
+checking. The export also retains an earlier rejected statement validation
+`fa1c3c0a-b1ae-48ed-89a0-db9d69bf78c7` and an unavailable proof check
+`068d657a-0ad3-43cc-8d72-256152fea878`; neither supplies acceptance evidence.
+The accepted validations above supersede those unsuccessful attempts. These
+historical records do not accept this later Markdown correction.

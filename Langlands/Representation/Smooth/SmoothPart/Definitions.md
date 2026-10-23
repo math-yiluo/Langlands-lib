@@ -1,8 +1,10 @@
 # The smooth part of an algebraic representation
 
 Worker 0 defines the smooth vectors and their canonical representation
-constructions. This pair is unaccepted development. Its only project import is
-the accepted foundational smoothness pair; it imports no pending project theorem.
+constructions. The original definition pair was independently accepted and
+published in Test 2 on October 13, 2026; the verified records are given below.
+Its only project import is the foundational smoothness pair,
+`Langlands.Representation.Smooth.Definitions`.
 
 ## Mathematical content
 
@@ -65,9 +67,10 @@ The coefficient and group hypotheses are broader than the ambient setting in
 Casselman's chapter. The direct construction-field proofs above justify that
 generality without importing averaging, exactness, or finiteness results.
 
-## Exact dependencies and interface
+## Dependencies and historical preparation
 
-The project import `Langlands.Representation.Smooth.Definitions` is artifact
+The original Test 2 dependency record identifies
+`Langlands.Representation.Smooth.Definitions` as artifact
 `665022df-625b-44ae-9dbd-425f6e266bab`, version 1, accepted and published at
 commit `10c81beaaff024987cf2945c64d0c9511f6cb686`. Its Lean SHA is
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`.
@@ -78,9 +81,47 @@ images, continuous conjugation, `Representation.inv_apply_eq_iff`,
 `LinearMap.codRestrict`, and the equivalence constructor for a bijective
 intertwiner. This interface reuses these bundled objects.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
+Original Test 2 preparation environment:
+`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
 Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Native compilation and axiom inspection succeeded for this pair and its draft
-consumers. These checks supply no semantic acceptance or independent proof
-receipt.
+Native compilation and axiom inspection were preparation checks; independent
+acceptance is established by the separate records below.
+
+## Verified historical status
+
+Worker 159 checked the operator-supplied *Test 2 acceptance receipts of
+smooth-part contributions* export on October 23, 2026. Its registered source ID
+is `test2-smooth-part-acceptance-receipts-2026-10-22`, with directory SHA256
+`4d77169bf746114b7df83c650215ba7794fb523f1deb51a6be1b16ebfb376c6d`.
+The export is at
+`literature/Test 2 acceptance receipts of smooth-part contributions` in the
+project. The evidence consists of `README.md`, `summary.json`, and each named
+contribution's `receipts.json` and `archive/1/{record,manifest,publication}.json`,
+including the original validator result and independent review rationale.
+The IDs and commits in these historical records belong to Test 2; they are
+not pilot artifact or Library commit identifiers.
+
+For `Langlands.Representation.Smooth.SmoothPart.Definitions` version 1:
+
+- Original candidate: `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`.
+- Accepted original validation: `049abffe-7b50-461f-b601-9df3ab4c8d67`.
+- Independent approval: Reviewer 15,
+  `1f969dc8-79b0-4e70-adf8-502752d70c6a`, October 13, 2026.
+- Recorded Test 2 publication:
+  `cd8210540c75a7d0a9e2431e4bc9a2535ceaf919`, October 13, 2026.
+
+Before these documentation corrections, all ten exported SmoothPart pairs
+matched their original accepted bundle hashes at pilot Library
+`fb40559309dd366f4145aa31aad8c3db11b7cc07`. Nine also matched their archived
+final files; the FixedVectorsProof export has no final files, as detailed in
+[FixedVectorsDefinitions](FixedVectorsDefinitions.md#verified-historical-status).
+This comparison identifies
+the historical source bytes; it does not substitute for the review and validation
+records or accept this later Markdown correction.
+
+The definition acceptance covers the seven constructions and their intrinsic
+proof fields. The separate basic, universal, functoriality and fixed-vector
+targets and proofs have their own historical records in the export. Neither
+construction acceptance nor those results assert
+completion of the local Langlands correspondence.

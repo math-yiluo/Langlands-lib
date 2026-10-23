@@ -16,7 +16,7 @@ page 2, first two paragraphs (`casselman-2019-smooth-representations`,
 SHA `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`,
 June 16, 2019); the naturality equation is a project formulation.
 
-The direct project imports are independently published constructions:
+The direct project imports have these original Test 2 publication records:
 
 - `SmoothPart.FixedVectorsDefinitions`, artifact
   `8bf36df6-8b13-4713-89e0-7d2ba5aa6824` version 1, published at
@@ -30,15 +30,30 @@ The direct project imports are independently published constructions:
 Their transitive project definitions are the smooth-part construction
 `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d` version 1 and foundational
 smoothness definitions `665022df-625b-44ae-9dbd-425f6e266bab` version 1.
-Current publication and the complete eight-file source closure were verified at
-`bb596ce619f2174816281f508cce65b3303beeb4`; the normal and draft copies match
-all effective published hashes. No project proof is a dependency.
+The original preparation record reports verification of publication and the
+complete eight-file source closure at Test 2 commit
+`bb596ce619f2174816281f508cce65b3303beeb4`, with matching normal and draft
+copies. This is a historical preparation observation. No project proof is a
+dependency.
 
 For an open `K`, every original `K`-fixed vector is smooth with witness `K`.
 The accepted equivalence therefore preserves the underlying vector in both
 directions. Both composites in the naturality square have underlying function
 `v ↦ f v`, justifying these three internally derived laws under the stated
-generality. This is a definition returning `Prop`, proposed as one coherent
-target for independent review; it assumes none of these laws as a theorem.
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
+generality. This is a definition returning `Prop`; it assumes none of these laws
+as a theorem. `FixedVectorsProof.lean` proves the entire target as
+`Langlands.smoothPartFixedVectors`, introducing the topological-group instance
+at the proposition's internal binder.
+The original Test 2 preparation environment is
+`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
 pinning Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+
+Both the statement and the separate proof were independently accepted and
+published in Test 2, respectively on October 15 and October 18, 2026. Worker 159
+verified the original validation, review and publication records on October 23,
+2026. The exact references and the proof's final-export limitation are given in
+[FixedVectorsDefinitions](FixedVectorsDefinitions.md#verified-historical-status).
+In particular, the proof has original `proof_accepted=true` evidence; its
+exported final integration check is only a batch build, and there are no archived
+final source files for comparison. These are historical records, separate from
+acceptance of this Markdown correction.

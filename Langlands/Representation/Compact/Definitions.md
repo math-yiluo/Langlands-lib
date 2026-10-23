@@ -27,7 +27,7 @@ Chapter II: *Smooth representations*, revision June 16, 2019, Section 1,
 page 3 (normalized compact-subgroup projection), page 4 (finite-coset formula in
 the proof of Proposition II.1.2 and the fixed-vector exactness clause of II.1.3).
 The actual file is
-`C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
+`/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 Literature ID: `casselman-2019-smooth-representations`; content SHA256:
 `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 
@@ -53,16 +53,34 @@ At Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`:
   `MulAction.orbitEquivQuotientStabilizer`. No new finite-index topological
   theorem is needed.
 
-## Exact project dependencies
+## Project dependencies and implemented results
 
-The smoothness and fixed-vector definitions are the published definition artifact
-`665022df-625b-44ae-9dbd-425f6e266bab`, version 1, effective snapshot
-`092f2dc612370a1612d3c08d1e60ff18add554e831ee02c7041342ac9dff16c0`.
-The local source hashes were checked against its effective record.
-`FiniteMean` is the accompanying internal algebraic implementation.
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0 and the Mathlib commit above.
+The construction imports `Langlands.Representation.Compact.FiniteMean`,
+`Langlands.Representation.Smooth.Definitions`, and
+`Mathlib.Topology.Algebra.Group.Subgroup`. `FiniteMean` supplies the internal
+finite-orbit algebra; `Smooth.Definitions` supplies smoothness and fixed vectors.
+The group and the two representation carriers have independent universes
+`uG uV uW`.
 
-The projection, fixed-vector identity, naturality, and surjectivity properties
-will be explicit proposition targets and separate checked proofs. This document
-does not identify successful compilation with independent acceptance.
+The separate proposition targets and proofs are present in the Library.
+[ProjectionStatement](ProjectionStatement.md) defines
+`Langlands.Compact.ProjectionAndNaturality`;
+[ProjectionProof](ProjectionProof.md) proves `averageMap_isProj` and the whole
+target as `projectionAndNaturality`. Its finite-orbit argument shows that the
+average is fixed, is the identity on fixed vectors, and commutes with
+intertwiners. [SurjectivityStatement](SurjectivityStatement.md) defines
+`Langlands.Compact.FixedVectorSurjectivity`;
+[SurjectivityProof](SurjectivityProof.md) imports the projection proof and proves
+`fixedVectorSurjectivity` by averaging a preimage under a surjective intertwiner.
+
+Both targets quantify smooth complex representations on independent carriers,
+a topological group, and one specified compact open subgroup; surjectivity also
+assumes that the intertwiner is surjective. Neither requires a cofinal family
+of compact open subgroups or admissibility. The construction in this file does
+not import these separate proof modules.
+
+This describes the implemented, currently published source. It does not infer
+historical independent acceptance of those proof submissions from source
+presence or compilation; their original pre-migration acceptance records were
+not verified in this correction. Worker 320 checked this status and scope
+against Library `fb40559309dd366f4145aa31aad8c3db11b7cc07`.

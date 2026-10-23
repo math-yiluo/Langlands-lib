@@ -1,8 +1,9 @@
 # Proof of the norm assembly reductions
 
-`normAssembly` proves the exact proposition `NormAssembly.{u, v}` in
-`NormAssemblyStatement.lean`, preserving both independent universe
-parameters. The proposition is a conjunction of two implications. Its
+`Langlands.Global.AdelicFunctoriality.normAssembly` proves the exact proposition
+`Langlands.Global.AdelicFunctoriality.NormAssembly.{u, v}` in
+`NormAssemblyStatement.lean`, preserving both independent universe parameters.
+The proposition is a conjunction of two implications. Its
 proof does not prove either arithmetic premise or supply an unconditional
 idele-class norm.
 
@@ -46,8 +47,23 @@ uses the actual principal quotient and idele topology discussed in
 Chapter IV sections 3-4, pp. 71-76. The exact conjunction is the project's
 derived organization of these reductions.
 
-The outstanding task remains the unconditional completed tensor
-comparison at finite places. Once it is proved, the first implication
-supplies `PrincipalNormCompatibility`; the second supplies the unique
-continuous quotient map. Publishing these implications alone does not
-complete the full action and norm task.
+The arithmetic premises are discharged in separate published modules.
+`Langlands.Global.AdelicFunctoriality.completedTensorComparison` in
+[CompletedTensorComparisonProof](CompletedTensorComparisonProof.md) proves
+the canonical comparison at all actual finite and infinite places.
+`Langlands.Global.AdelicFunctoriality.normCompatibility` in
+[NormCompatibilityProof](NormCompatibilityProof.md) combines it with the
+first implication of `normAssembly` to prove the full compatibility target.
+Both quantify fields `K : Type u` and `L : Type v` with their field,
+number-field and `Algebra K L` instances; finite relative dimension follows
+from those instances. No Galois or abelian assumption is added.
+
+[IdeleClassNorm](IdeleClassNorm.md) uses the same completed comparison and
+first implication to obtain
+`Langlands.Global.AdelicFunctoriality.adeleNorm_principal`, then specializes
+the descent helpers to construct
+`Langlands.Global.AdelicFunctoriality.ideleClassNorm`. That module proves
+the principal-idele identity and subgroup preservation, the representative
+formula, continuity, the principal-class identity and uniqueness. The
+present module still proves exactly two conditional reductions; the
+separate norm construction does not prove the class-field-theory targets.
