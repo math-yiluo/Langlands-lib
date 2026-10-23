@@ -141,8 +141,20 @@ in the paired `FundamentalClasses.md`.
 This is a definition group over published cohomology, invariant,
 comparison, formation, and corestriction constructions. It specifies
 properties and constructs the underlying local formation, but proves no
-invariant existence or local class-field theorem. The separate
-`ClassFormationStatement` pair will quantify one invariant family with
-these properties as conclusions. Absolute continuous corestriction and
-the full Tate functoriality family remain separate obligations of the
-umbrella task. This focused definition group does not claim its completion.
+invariant existence or local class-field theorem. The published
+[ClassFormationStatement](ClassFormationStatement.md) pair defines
+`LocalRelativeClassFormationStatement` and
+`LocalCompatibleClassFormationStatement`. Each quantifies every prime `p`
+and asserts the existence of one `InvariantFamily.{u,u} p` with the stated
+properties as conclusions, over an arbitrary common carrier universe.
+The compatible target additionally requires the continuous absolute
+properties and finite-stage comparison, all-integer Tate cup bijectivity,
+and positive Tate inflation compatibility for that same family.
+These are proposition definitions; their local realization remains unproved.
+The separately published
+[ClassFormationTransferStatement](ClassFormationTransferStatement.md)
+defines `LocalTransferCompatibleClassFormationStatement`, adding all-integer
+Tate restriction/corestriction cup compatibility. That strengthening is
+also a target, not a proof. Absolute continuous corestriction is not a
+clause of these targets. This focused definition group does not claim
+completion of the umbrella task.

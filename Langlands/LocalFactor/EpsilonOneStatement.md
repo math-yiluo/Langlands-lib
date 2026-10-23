@@ -14,10 +14,14 @@ is proved, and nothing is assumed as an axiom.
 Everything except one abbreviation comes from the published Library.
 
 - `PadicField.TopologicalData T` of a p-adic field `F`, with:
-  - `T.ord`, the normalized valuation (`ord π = 1`), and
-    `T.residueCardinality = q`;
-  - `T.principalUnits m`, the unit group `U^m` of units `u` with
-    `ord(u - 1) ≥ m`, so that `U^0 = Oˣ`;
+  - `T.ord`, the integer-valued normalized additive order
+    (`T.ord π = 1`, `T.ord 0 = 0`), and `T.residueCardinality = q`;
+  - `T.principalUnits m`, the subgroup `U^m` of `F^×` defined by
+    `T.discreteValuation u = 1` and
+    `T.discreteValuation (u - 1) ≤ WithZero.exp (-(m : ℤ))`.
+    The first condition restricts to integral units; the second includes
+    `u = 1` at every level because `T.discreteValuation 0 = 0`.
+    At level zero, `U^0 = Oˣ`;
   - `T.additiveConductor ψ`, Tate's `n(ψ)`: the largest `n` with
     `ψ(π^(-n) O) = 1`;
   - `T.multiplicativeConductor χ`, Tate's `a(χ)`: the least `m ≥ 0` with `χ`

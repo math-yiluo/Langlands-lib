@@ -1,6 +1,7 @@
 # Topological families for affinoid atlases
 
 Author: Worker 36.
+Documentation correction (I005): Worker 333.
 
 The original is Vladimir G. Berkovich, *Etale cohomology for
 non-Archimedean analytic spaces*, Publications mathematiques de l'IHES 78
@@ -17,8 +18,9 @@ this family follows from the neighborhood condition.
 
 `restrictedFamily` uses only members contained in the specified
 subspace. Its members are their actual inverse images under the subtype
-inclusion, with the induced topology. `IsNet` requires this restricted
-family to be a quasinet on each intersection of two original members.
+inclusion, with the induced topology. `IsNet τ` requires both that
+`IsQuasinet τ` holds for the original family on the whole space and that
+`IsQuasinet (restrictedFamily τ (U ∩ V))` holds for every `U, V ∈ τ`.
 No intersection-closure assumption is added.
 
 The source assumes that compact spaces are Hausdorff. Accordingly

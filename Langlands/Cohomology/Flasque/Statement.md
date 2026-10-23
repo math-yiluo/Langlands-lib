@@ -2,6 +2,9 @@
 
 Author: Worker 3.
 
+Documentation corrections I003 and I023: Worker 100, with source and publication
+audit contributions from Worker 291.
+
 This pair defines eight propositions and their conjunction
 `Langlands.Cohomology.FlasqueGodementCohomologyStatements`. They concern the
 published Godement, compact-support and derived-section constructions. The
@@ -99,9 +102,18 @@ The hypotheses are as follows:
   published `ResolutionLiftStatement` and
   `ResolutionComparisonIndependenceStatement`.
 
-These targets quantify over `ε` rather than naming a constructed chain map.
-The constructed chain map exists in a separately staged, still unpublished
-Godement exactness family and therefore is not imported.
+These targets choose to quantify over any `ε` with the prescribed degree-zero
+component, so their formulation does not depend on naming a particular
+chain-map construction. Such a construction is already published in
+[`Langlands.Sheaf.Godement.ExactnessStatement`](../../Sheaf/Godement/ExactnessStatement.md):
+`Langlands.Cohomology.CokernelComplex.augmentationMap`, with its degree-zero
+formula `augmentationMap_f_zero`, naturality lemma
+`augmentationMap_naturality`, and natural transformation `augmentationNat`.
+Specializing it to the respective Godement endofunctor and coaugmentation
+gives the required `ε`. This module does not import that construction; its
+quantified formulation is a design choice. The construction and these
+identities do not prove exactness of the augmented complex or this pair's
+flasqueness, acyclicity and comparison assertions.
 
 ## Original-source correspondence
 
@@ -161,9 +173,12 @@ They do not identify an algebraic etale site with Berkovich's analytic site.
 
 Berkovich's supplied unfinished 1995-1996 manuscript, section 1.5, p.10, recalls
 the Godement resolution of SGA 4 XVII 4.2 on the etale site of `X(G)` with
-properties (i)-(iii), including flabbiness. Proposition 1.5.1 and Corollary
-1.5.2, pp.10-12, then prove softness of the direct images to `X` and the
-compact-support comparison for analytic `G`-spaces. Harris 1999, section 2,
+properties (i)-(iii), including flabbiness. Example 1.1.3, p.3, fixes the
+morphism `b : X -> X(G)`. Proposition 1.5.1, p.10, asserts that the inverse
+images (pullbacks) `b^*(C^m(F))` are soft sheaves on the analytic etale site
+`X_et`. Corollary 1.5.2(i), pp.11-12, gives the compact-support comparison
+`H^q_c(X{G}, F) ≅ H^q_c(X, b^*F)` for analytic `G`-spaces.
+Harris 1999, section 2,
 p.304, uses a smooth equivariant resolution that is acyclic for compactly
 supported cohomology. Those analytic and equivariant assertions are not
 asserted by this pair. It supplies the ordinary topological and scheme-etale
@@ -195,7 +210,10 @@ characteristic hypothesis is introduced.
   `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`,
   member PDF SHA-256
   `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`;
-  section 1.5, pp.10-12, cited for context only.
+  member `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`
+  in the same-title literature folder. Example 1.1.3, p.3, and section 1.5,
+  pp.10-12, were independently read for this correction and are cited for
+  context only.
 - `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`: Harris 1999,
   PDF SHA-256
   `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`;

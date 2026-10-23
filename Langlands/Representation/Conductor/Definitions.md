@@ -63,10 +63,24 @@ through Theorem 4.1, page 208. Its integral characterization requires
 the actual Whittaker models, spherical test family and JPSS integrals.
 The original existence proof is erroneous. H. Jacquet's 2012
 correction, Theorem 1, page 517 and Sections 1–3, pages 517–523,
-supplies the corrected existence argument. Constructing that relation,
-proving its existence and uniqueness, and choosing the essential
-vector remain distinct outstanding work; the constructions here do
-not count as its completion.
+supplies the corrected existence argument.
+
+The published companion [Essential](Essential.md) now defines
+`SatisfiesEssentialIdentity` and `IsEssentialVector`. The former requires
+corank-one convergence on a right half-plane and the stated rational
+continuation for every nonzero Satake-parameter tuple. The latter uses
+an actual normalized JPSS polynomial for `π × 1` and the source's
+restriction-invariance condition. Its `essentialVector` selects a vector
+only from an explicit proof of unique existence, with
+`essentialVector_spec` and `isEssentialVector_iff_eq` characterizing
+that selection. These constructions do not prove existence or uniqueness.
+The corresponding `EssentialVectorStatement` in
+[EssentialStatement](EssentialStatement.md) remains a proposition to prove.
+Identification of the explicit spherical function with Jacquet's
+Hecke-eigenfunction and comparison of the JPSS standard factor with
+the source's Godement–Jacquet factor remain separate proof obligations.
+The arbitrary nonzero fixed vector constructed here is not thereby
+identified with the essential vector.
 
 Exact sources:
 

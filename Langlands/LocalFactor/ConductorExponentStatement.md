@@ -163,10 +163,26 @@ extended to general `ψ` by (3.4.5).
 
 ### Consequences not stated
 
-- Deligne's `ε_0(V) = ε(V) det(-Φ | V^I)` (Deligne (5.1)) and the second
-  formulas of (5.5.1) and (5.5.2), with exponent
-  `sw(V) + dim V · (n(ψ) + 1)`, follow from the clauses above. The Library has
-  no `ε_0`, so they are not stated.
+- Deligne's `ε_0(V) = ε(V) det(-Φ | V^I)` (Deligne (5.1)) is defined in
+  [EpsilonZeroStatement](EpsilonZeroStatement.md). Its `EpsilonZero.value`
+  multiplies `conditionalDeligneValue` by `EpsilonZero.invariantDeterminant`,
+  with a supplied reciprocity family, assignment and
+  `hε : NonabelianSystem.IsSystem F e ε`, a genuine continuous representation,
+  and a supplied geometric Frobenius. At `s = 0` this is the displayed
+  expression; at general `s` the determinant is `det(-q_E^(-s) Φ | V^I)`.
+  `EpsilonZero.invariantDeterminant_eq_of_frobenius` and
+  `EpsilonZero.value_eq_of_frobenius` prove independence of the supplied lift.
+  The companion module also states `EpsilonZero.SpectralSwanStatement`,
+  `EpsilonZero.UnramifiedCharacterSwanStatement` and
+  `EpsilonZero.UnramifiedTensorSwanStatement`, corresponding to the second
+  formulas of Deligne (5.5.2), (5.5.1) and (5.5.3). These are unproved `Prop`
+  goals at the base field, with the system, genuine continuous representation,
+  finite-inertia presentation `P`, surjectivity `hsurj` of the actual restriction
+  map, and geometric lift explicit. They use the rational Swan conductor
+  `P.swanConductor hsurj`; the character and tensor clauses additionally require
+  an integer `m` equal in `ℚ` to `sw(V) + dim V · (n(ψ) + 1)`, and the character
+  clause requires an element of valuation `m`. This conditional value and these
+  targets do not supply unconditional system existence or prove a conductor law.
 - The Weil–Deligne value does not depend on the Frobenius lift and is
   invariant under equivalence of pairs. Both are already proved in
   `CommonClosureWeilDeligne` (`conditionalEpsilonValue_eq_of_frobenius`,

@@ -89,10 +89,24 @@ above are a derived implementation of these operations; no local-factor
 identity or analytic theorem from the cited pages is claimed.
 
 This module deliberately takes the degree and positive `q` as inputs.
-The arithmetic specialization must use the actual local Weil degree and
-`q = #k_F`; this module neither constructs that group nor identifies an
-arbitrary degree with it. The pending local Weil assembly remains a separate
-dependency. For each complex parameter the character is continuous in `G`;
+It neither constructs an arithmetic group nor identifies arbitrary `d,q`
+with arithmetic data. The published companion
+[`Langlands.Weil.Local.Assembly`](../Weil/Local/Assembly.md) constructs
+`localResidueDegree`, `localWeilGroup`, and `localDegree` for finite p-adic
+fields from the actual residue action. It proves degree surjectivity and
+chooses `localGeometricFrobenius` with geometric degree `+1`. The convention
+agrees with Tate (1.4.1), printed page 6 / PDF page 15: geometric Frobenius
+has norm `q_F⁻¹`, where `q_F = #k_F`.
+
+[`Langlands.LocalFactor.CommonClosureSpectral`](CommonClosureSpectral.md)
+already specializes `character` and `virtualTwist` to the actual subgroup
+fixing an intermediate field `E` in the common closure. Its `baseDegree F E`
+restricts `localDegree F`, and `baseCardinality F` is the actual `q_F`.
+Both retain the base-field normalization: the restricted degree is not
+renormalized to degree one at a geometric Frobenius over `E`, and the
+cardinality is not replaced by `q_E`. These companions instantiate the
+general construction; they do not prove subsequent local-factor laws.
+For each complex parameter the character is continuous in `G`;
 no topology on the exact virtual group or analytic dependence of its
 automorphism group is asserted.
 

@@ -99,15 +99,31 @@ eigenfunction property and `W(e) = 1`, is on page 516. Theorem 1 and the
 following restriction-invariance uniqueness clause are on page 517. These
 pages were read directly.
 
-This pair is a derived preparation for Theorem 1. The source's spectrally
-indexed spherical functions, their Satake properties, the corank-one integral
-with `|det g|^(s - 1/2)` (page 517, and page 519) and the normalized
-L-polynomial must still be constructed before a test from this space can
-instantiate the theorem's identity; the integral is deliberately not part of
-this module. It does not define an essential vector by choosing an arbitrary
-nonzero newvector or an unconstrained factor function. Statements of the
-corrected existence and uniqueness theorems are owned by Worker 11's
-statement task.
+This pair is a derived preparation for Theorem 1. The published
+[QuotientIntegrals](../RankinSelberg/QuotientIntegrals.md) already defines
+`corankOneIntegrand`, `CorankOneConverges` and `corankOneIntegral`. For `W`
+on `GL_(n+2)` and an inverse-character `W'` on `GL_(n+1)`, the integrand
+is the product
+`W(diag(g,1)) W'(g) |det g|^(s - 1/2)`, descended to
+`N_(n+1) \ GL_(n+1)`. Its measure is an explicit input, and convergence is
+a separate integrability predicate. The total Bochner integral is defined
+without asserting that predicate. The integral remains outside this module.
+
+The published [Essential](Essential.md) packages the explicit
+`inverseSphericalWhittaker` family and uses this integral in
+`SatisfiesEssentialIdentity`, requiring right-half-plane convergence and
+rational continuation for every nonzero parameter tuple. Its
+`IsEssentialVector` additionally requires an actual normalized
+`IsCharacterLPolynomial` for `π × 1` and restriction invariance.
+Existence of such a polynomial, existence and uniqueness of an essential
+vector, and the integral identity are still theorem obligations.
+Identification of the explicit spherical family with the source's
+Hecke/Satake characterization, and comparison of the JPSS standard factor
+with the source's Godement–Jacquet factor, also remain separate.
+The conditional selector requires a proof of unique existence; it does
+not choose an arbitrary nonzero newvector or an unconstrained factor.
+[EssentialStatement](EssentialStatement.md) contains the corresponding
+essential-vector and conductor proposition targets.
 
 ## Dependencies
 

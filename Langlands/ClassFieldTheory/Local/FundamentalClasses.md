@@ -70,21 +70,35 @@ at `C:/Central-Library/Henniart--Une preuve simple des conjectures de Langlands 
 These definitions do not change the sign of the
 fundamental class to accommodate that separate convention.
 
-This group supplies the predicates whose operations are already available.
-A downstream corestriction predicate must use the genuine positive-degree transfer
-being constructed in existing prerequisite task
-`bc3f0bd4-2281-4247-a4b9-931c9cf179e8`, specialized to the actual Galois
-subgroup. The local proposition family will existentially quantify
-Worker 42's data-only invariant family and assert the class-formation
-axioms, existence/uniqueness, and all four laws; it will not assume them
-as hypotheses. Its absolute/relative coherence must use the genuine
-finite-to-continuous comparison under existing task
-`c6ea3f74-2826-48db-9ab1-46587ae2dd92`. The absence of those dependent
-operations here does not replace or discharge either requirement of
-the full task.
+This group supplies the inflation, restriction, and conjugacy predicates.
+The published [Corestriction](Corestriction.md) module constructs
+`relativeCorestriction` in every positive ordinary degree by identifying
+`Gal(M/L)` with its actual subgroup of `Gal(M/K)` and transporting the
+genuine Tate transfer through the positive-degree comparisons.
+[ClassFormation](ClassFormation.md) defines
+`FundamentalClassCorestriction`, expressing
+`Cor(u[M/L]) = [L:K] u[M/K]` through that constructed map.
+
+The published [ClassFormationStatement](ClassFormationStatement.md) defines
+`LocalRelativeClassFormationStatement` and
+`LocalCompatibleClassFormationStatement`. For every prime, each
+existentially quantifies Worker 42's data-only
+`InvariantFamily.{u,u}` in an arbitrary common carrier universe and
+asserts the class-formation properties, unique fundamental classes with
+their exact order and generation, and all four functorial laws.
+The compatible target also requires continuous absolute properties,
+the genuine finite-stage/absolute invariant diagram, all-integer Tate
+cup bijectivity, and positive Tate inflation compatibility for the same
+family. [FiniteComparison](FiniteComparison.md) constructs the comparison,
+and [FiniteInvariantCompatibility](FiniteInvariantCompatibility.md)
+defines the ordinary-class diagram and proves its equivalence with the
+continuous finite-stage formulation. These constructions and proposition
+definitions are published; proofs of the local realization targets
+remain separate obligations.
 
 The published `Langlands.ClassFieldTheory.Local.Cohomology` module supplies
 the actual relative cohomology, restriction, inflation, rational quotient, and
 reciprocal class. The accompanying `Conjugacy` pair in this definition group
-supplies the constructed field-square transport. The remaining operations
-described above are not imported or assumed by this pair.
+supplies the constructed field-square transport. The corestriction and
+comparison modules described above are downstream of this pair, not
+additional imports or hypotheses of its predicates.
