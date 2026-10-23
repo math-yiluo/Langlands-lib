@@ -36,6 +36,12 @@ J. Math. 105 (1983).
   convention and contragredients keep ranks, `γ` follows it too. The gamma
   relation here uses that convention.
 
+The companion quotient-measure construction cited below specializes Folland,
+*A Course in Abstract Harmonic Analysis*, second edition (2015), §2.6,
+Proposition 2.50 and Theorem 2.51, printed pages 62–63, formula (2.52).
+`UnipotentQuotient.md` explains the Library's left-coset/right-action convention
+and its fixed Haar normalizations.
+
 ## Definitions
 
 Throughout, `F : PadicField p` carries its canonical topological data. In each
@@ -91,17 +97,27 @@ In equal rank `π` is the candidate. `IsPadicSymmetricEpsilonFactor` (witness
   here depends on them.
 - **Whittaker functionals.** For `r < n` the representation `π` is the test,
   so the relations use its `ψ̄`-Whittaker functionals. This is the JPSS
-  convention in (2.12). For a generic `π` they are nonzero (conjugate by a
-  diagonal matrix), but that is not proved in the Library. The nonvacuity
-  parts of the gamma and epsilon relations require nonzero functionals of both
-  representations.
+  convention in (2.12). `Whittaker.characterChangeFunctionalEquiv` at
+  `a = -1`, together with `standardCharacter_scale_neg_one`, gives a linear
+  equivalence from the `ψ`-functional space to the inverse-character space
+  (JPSS §2.1, printed page 385). It transports nonzero functionals, so a
+  generic `π` has nonzero `ψ̄`-functionals. The nonvacuity parts of the gamma
+  and epsilon relations require nonzero functionals of both representations;
+  this transport does not prove analytic factor existence or the functional
+  equation.
 - **Measures.** `IsPadicPairLPolynomial` quantifies over every compatible
   quotient measure and requires one to exist, like the published p-adic
   epsilon and gamma relations. So uniqueness needs no uniqueness of
-  compatible measures, and a missing measure gives no witness. Compatible
-  measures agree up to positive scalars (not proved in the Library). A
-  positive scalar does not change the L-polynomial (published
-  `isPairLPolynomial_smul_measure`).
+  compatible measures, and a missing measure gives no witness. With the
+  `generalLinearHaar` and `unipotentHaar` normalizations fixed,
+  `unipotentQuotientHaar_unique` in `RankinSelberg/UnipotentQuotient` proves
+  that every compatible measure is exactly `unipotentQuotientHaar`.
+  Existence is proved there by `unipotent_compatibleMeasureExists` and, for
+  the p-adic statement, by `quotientHaarExistence` in
+  `RankinSelberg/QuotientHaarExistence`. The L-polynomial uniqueness proof
+  here uses only one compatible measure and does not depend on this stronger
+  measure uniqueness theorem. Separately, a positive scalar does not change
+  the L-polynomial (published `isPairLPolynomial_smul_measure`).
 - **Field.** `F` is a p-adic field, not an arbitrary nonarchimedean local
   field. The canonical topological data are published only for `PadicField`.
 

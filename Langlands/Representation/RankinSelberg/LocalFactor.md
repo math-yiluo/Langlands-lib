@@ -73,10 +73,20 @@ in the p-adic case it should be the normalized absolute value with
 function `normalizedAbs`, but exports no bundled `AbsoluteValue`, so `abv` is
 taken as an argument. `μ` is any measure on the
 published left-unipotent quotient and `ν` any measure on the `j × (n + 1)`
-matrices. The quotient measure compatible with Haar measures on `GL_(n+1)(F)`
-and on its upper-unipotent subgroup exists in the Library only in rank one
-(`RankOneQuotient`); its construction in every rank is the separate task
-67018abd.
+matrices. For every natural `n` and nonarchimedean local field `F`, with Borel
+structures on the ambient group, subgroup and quotient, the published
+[UnipotentQuotient](UnipotentQuotient.md) constructs `unipotentQuotientHaar`
+on `N_(n+1) \ GL_(n+1)(F)`. It proves
+`unipotentQuotientHaar_isCompatible` and
+`unipotent_compatibleMeasureExists` for the normalized `generalLinearHaar`
+and `unipotentHaar`. Its `unipotentQuotientHaar_unique` proves exact equality
+with this measure for any compatible measure with those same fixed Haar
+normalizations. The p-adic companion
+[QuotientHaarExistence](QuotientHaarExistence.md) proves the exact
+`QuotientHaarExistenceStatement F T n` for every supplied `TopologicalData T`.
+These constructions leave the arbitrary measure parameters here unchanged.
+Convergence, rationality and existence of a normalized generator remain
+separate analytic obligations.
 
 ## L-polynomials and L-factors
 

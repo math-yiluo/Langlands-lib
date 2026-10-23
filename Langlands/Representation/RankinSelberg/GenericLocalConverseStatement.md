@@ -68,8 +68,11 @@ hypothesis on the gamma factors.
   genericity does not depend on `ψ`. The gamma relation pairs the
   `ψ`-functionals of `π` with the `ψ̄`-functionals of the test, as in
   `W(τ, ψ̄)` of Henniart's Section 2.2; a generic `τ` has nonzero
-  `ψ̄`-functionals (conjugate by `diag(1, -1, 1, ...)`), which is not proved in
-  the Library. A supercuspidal representation is generic (Henniart p.342,
+  `ψ̄`-functionals: `Whittaker.characterChangeFunctionalEquiv` at `a = -1`,
+  together with `standardCharacter_scale_neg_one`, gives a linear equivalence
+  from its `ψ`-functional space to its inverse-character space and preserves
+  nonzero functionals (JPSS §2.1, printed page 385). A supercuspidal
+  representation is generic (Henniart p.342,
   citing Gelfand--Kazhdan; published `SupercuspidalKirillovStatement`, not
   proved); the Remark keeps genericity of `π` and `π'` as a hypothesis, as
   Henniart does, and does not require it of the tests.
@@ -78,9 +81,13 @@ hypothesis on the gamma factors.
   most one solution (`IsPadicPairGammaFactor.unique`), so this is equality of
   the factors whenever they exist. It never makes two missing factors agree,
   so the hypothesis is never weaker than Henniart's. That the factors exist for
-  generic `π` and every test (JPSS Theorem 2.7, a compatible quotient measure,
-  nonzero functionals) is not proved here; without it the hypotheses could not
-  be met.
+  generic `π` and every test still needs the analytic inputs of JPSS
+  Theorem 2.7 and the relevant nonzero functionals. Compatible quotient
+  measures already exist by `quotientHaarExistence` in
+  `RankinSelberg/QuotientHaarExistence`, and the inverse-character transport
+  above preserves existing nonzero functionals. These results do not prove
+  analytic factor existence or supercuspidal genericity; without factor
+  existence the hypotheses could not be met.
 - **Measure.** The relations are evaluated at a self-dual `ν`, as Henniart
   requires. The targets do not assert that such a measure exists (that is the
   separate published `SelfDualMeasureExists`); without one they would hold
@@ -94,12 +101,15 @@ hypothesis on the gamma factors.
   data, the supercuspidal objects and the self-dual measures are published only
   for `PadicField`.
 - **Universes.** `π` and `π'` live in universe `uV` and the tests in universe
-  `uW`. An irreducible admissible representation of `GL_m(F)` has countable
-  dimension, so it is equivalent to one on a carrier in any universe, and the
-  gamma relation is invariant under equivalences between carriers in
-  different universes (`IsPadicPairGammaFactor.congr_equiv`). So the fixed
-  test universe is no restriction; the countability fact is not proved in the
-  Library.
+  `uW`. `Langlands.padicIrreducibleSmoothSmallRealization` in
+  `Smooth/SmallRealizationProof` proves that every irreducible smooth complex
+  representation of `GL_m(F)` has an equivalent irreducible smooth realization
+  in any independently prescribed carrier universe. Its proof chooses a
+  countable basis inside the spanning orbit of a nonzero smooth vector;
+  admissibility is not an additional hypothesis. The gamma relation is
+  invariant under equivalences between carriers in different universes
+  (`IsPadicPairGammaFactor.congr_equiv`), so the fixed test universe is no
+  restriction.
 
 ## Lean checks
 

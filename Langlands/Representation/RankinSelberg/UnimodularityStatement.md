@@ -32,8 +32,8 @@ The provenance is internal and derived from the published
 constructs `generalLinearHaar F n` with the integral general-linear subgroup
 of mass one and `unipotentHaar F n` with the integral upper-unipotent subgroup
 of mass one. It already supplies their `IsHaarMeasure` and `Regular`
-instances. The new propositions ask for right invariance of those exact
-measures, so their proofs will establish the two-sided invariance needed by
+instances. These propositions ask for right invariance of those exact
+measures. Their companion proofs establish the two-sided invariance used by
 the compatible quotient-measure construction. This specialization is an
 internal obligation; no claim is made that an original source states these
 Lean declarations or these particular project normalizations.
@@ -41,7 +41,23 @@ Lean declarations or these particular project normalizations.
 No measure definition or normalization is changed. The statements assume
 neither right invariance nor unimodularity, an Iwasawa decomposition, or the
 existence of a quotient measure. They contain no implication from either
-target back to itself. The published `RankOneQuotient` module proves the
-rank-one instances, but it is not imported here and does not replace the
-all-rank targets. Independent proofs of the two propositions and construction
-of a compatible quotient measure are subsequent tasks.
+target back to itself. The published
+[GeneralLinearUnimodularity](GeneralLinearUnimodularity.md) proves
+`generalLinearHaarRightInvariant`, and
+[UnipotentUnimodularity](UnipotentUnimodularity.md) proves
+`unipotentHaar_rightInvariant`. They prove these exact targets for every
+natural `n` under the hypotheses above, and expose the results as
+`generalLinearHaar_isMulRightInvariant` and
+`unipotentHaar_isMulRightInvariant`. The rank-one results in
+`RankOneQuotient` are special cases of the scope of these results.
+
+The companion [UnipotentQuotient](UnipotentQuotient.md) constructs
+`unipotentQuotientHaar` on `N_(n+1) \ GL_(n+1)(F)` in every rank, with Borel
+structures on the ambient group, subgroup and quotient. It proves all fields
+of `IsCompatible`, supplies `unipotent_compatibleMeasureExists`, and proves
+exact uniqueness for the fixed ambient and subgroup Haar measures.
+[QuotientHaarExistence](QuotientHaarExistence.md) specializes this construction
+to prove `QuotientHaarExistenceStatement F T n` for every p-adic field `F`
+and supplied `TopologicalData T`. This file remains a statement module; those
+companion results establish measure existence and invariance, while the three
+JPSS analytic targets in [AnalyticStatement](AnalyticStatement.md) remain open.

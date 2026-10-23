@@ -1,6 +1,7 @@
 # L-factors of pairs: supercuspidal, square-integrable and tempered representations
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+Author: Worker 11. Documentation corrections: Worker 331.
+This module, in namespace `Langlands.RankinSelberg`, states
 the L-factor computations of Section 8 of Jacquet, Piatetski-Shapiro and
 Shalika, *Rankin-Selberg convolutions*, Amer. J. Math. 105 (1983):
 Proposition (8.1), Theorem (8.2) with its statement (6), and Proposition
@@ -137,16 +138,19 @@ An L-witness `P` has constant term `1`, and `L(s) = 1/P(q^{-s})`.
   `π ⊗ α^{-u} ≃ σ̃`.
 - **The set `A`.** Every nonzero complex number is some `q^{-u}`, and `u` is
   determined by `a` up to `2πi/log q`, which does not change `α^{-u}`. The
-  statement asserts that the set of such `a` is finite and that `L` is the
-  product of the factors `1 - aX`, each `a` once, as in the source (the poles
-  are simple). Finiteness is part of the claim.
+  statement asserts that the set of such `a` is finite and that the
+  denominator polynomial is `P(X) = ∏_{a ∈ A} (1 - aX)`, each `a` once.
+  Thus `L(s, π × σ) = 1/P(q^{-s}) = ∏_{a ∈ A} (1 - a q^{-s})^{-1}`,
+  as in the source (the poles are simple). Finiteness is part of the claim.
 - **Whittaker type and genericity.** In (8.1) `σ` is of Whittaker type for
   `θ_ψ = standardCharacter ψ` (JPSS Section 2.1); `π` is not assumed generic,
   JPSS note that it is. In (8.2) and (8.4) no genericity is assumed. The
-  relations require nonzero Whittaker functionals (`ψ` for the representation
-  of larger rank, `ψ̄` for the other, as in JPSS), so the conclusions include
-  the genericity of the representations, which JPSS cite (Gelfand-Kazhdan,
-  [H.J. II]) and which is not proved in the Library.
+  L-polynomial relations use the zeta values from all Whittaker coefficient
+  models (`ψ` for the representation of larger rank, `ψ̄` for the other,
+  as in JPSS). They do not contain a separate existential clause for nonzero
+  functionals: they require `1/P` to generate that zeta span. The genericity
+  results cited by JPSS (Gelfand-Kazhdan, [H.J. II]) remain separate proof
+  obligations; the quotient-measure theorem below does not supply them.
 - **Components.** JPSS define `σ(π_1, …, π_m)` as the unique
   quasi-square-integrable component of `ξ`, quoting Bernstein-Zelevinsky for
   existence and uniqueness. The statement assumes that `π` is an irreducible
@@ -183,12 +187,22 @@ An L-witness `P` has constant term `1`, and `L(s) = 1/P(q^{-s})`.
   `P(q^{-s}) = 0`, and `Re(s) > 0` exactly when `‖q^{-s}‖ < 1` (`q > 1`).
   Every `z` with `0 < ‖z‖ < 1` is some `q^{-s}`, and `P(0) = 1`. So "no pole in
   `Re(s) > 0`" is "`P(z) ≠ 0` for `‖z‖ < 1`".
-- **Existence of factors.** The conclusions assert that the factors exist, as
-  well as the identities: the nonvacuity parts of the relations (a compatible
-  quotient measure and nonzero functionals) and the ideal generators of JPSS
-  Theorem 2.7. None of this is proved in the Library. Each relation has at
-  most one solution (`IsPadicPairLPolynomial.unique`,
-  `IsPadicSymmetricLPolynomial.unique`).
+- **Existence of factors.** The conclusions assert that the factors exist,
+  as well as the identities. The measure prerequisite is proved:
+  `quotientHaarExistence` in `RankinSelberg/QuotientHaarExistence` proves
+  `QuotientHaarExistenceStatement F T n` for every prime `p`,
+  `F : PadicField p`, `T : F.TopologicalData` and `n`. With
+  `T = F.canonicalTopologicalData` and the Borel measurable structures, it
+  supplies the right invariance of `unipotentHaar` and compatible quotient
+  measure required by `IsPadicPairLPolynomial`. Its measure witness comes
+  from `unipotent_compatibleMeasureExists` in `RankinSelberg/UnipotentQuotient`.
+  The relation additionally requires the normalized generator for every
+  compatible quotient measure. The general existence of these generators
+  from JPSS Theorem 2.7, the nonzero Whittaker functionals needed for the
+  analytic argument, and the supercuspidal, square-integrable and tempered
+  formulas remain proof obligations. Each relation has at most one solution
+  (`IsPadicPairLPolynomial.unique`, `IsPadicSymmetricLPolynomial.unique`);
+  uniqueness alone does not establish factor existence.
 - **Measures and field.** The additive measure `ν.val` is self-dual; the
   L-polynomials do not depend on it, and the statements hold vacuously if it
   does not exist. Every compatible quotient measure is quantified in the

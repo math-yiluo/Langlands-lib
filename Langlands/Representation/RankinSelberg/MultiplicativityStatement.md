@@ -124,14 +124,22 @@ has constant term `1` and `L(s) = 1/P(q^{-s})`.
   proved in the Library. The relations pair `ψ`-functionals of the
   representation of larger rank with `ψ̄`-functionals of the other, as in
   JPSS. For representations of Whittaker type the `ψ̄`-functionals also form
-  a line (conjugate by `diag(1, -1, 1, …)`), which is not proved in the
-  Library either.
+  a line: `Whittaker.characterChangeFunctionalEquiv` at `a = -1`, together
+  with `standardCharacter_scale_neg_one`, identifies the two functional
+  spaces by a linear equivalence, preserving their dimension (JPSS §2.1,
+  printed page 385). This transports the given one-dimensionality; it does
+  not prove preservation of Whittaker type under induction.
 - **Existence of factors.** The conclusions assert that all factors exist, as
   well as the identities: the nonvacuity parts of the relations (a compatible
   quotient measure, nonzero functionals and, for gamma, a nonzero integral) and
   the functional equations or ideal generators of JPSS Theorem 2.7, which JPSS
-  prove for representations of Whittaker type. None of this is proved in the
-  Library. Each relation has at most one solution
+  prove for representations of Whittaker type. Compatible quotient measures
+  already exist in every positive rank by `unipotent_compatibleMeasureExists`
+  in `RankinSelberg/UnipotentQuotient` and the p-adic statement proof
+  `quotientHaarExistence` in `RankinSelberg/QuotientHaarExistence`.
+  The character equivalence above transports existing nonzero functionals.
+  Induction preservation, the analytic inputs and multiplicativity itself
+  remain separate proof obligations. Each relation has at most one solution
   (`IsPadicSymmetricGammaFactor.unique`,
   `IsPadicSymmetricLPolynomial.unique`), so (i) says that the gamma factor of
   `π` against the induced representation is the product of the gamma factors

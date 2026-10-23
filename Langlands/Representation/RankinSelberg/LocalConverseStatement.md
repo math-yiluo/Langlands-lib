@@ -106,16 +106,26 @@ How this matches the Corollary:
   Existence of a factor for supercuspidal pairs needs JPSS Theorem 2.7 (the
   published `FunctionalEquationStatement` targets), nonzero Whittaker
   functionals (supercuspidal representations are generic: the published
-  `SupercuspidalKirillovStatement`) and a compatible quotient measure
-  (`QuotientHaarExistenceStatement`); none of these is proved in the Library.
+  `SupercuspidalKirillovStatement`) and a compatible quotient measure.
+  The measure prerequisite is proved: `quotientHaarExistence` in
+  `RankinSelberg/QuotientHaarExistence` proves
+  `QuotientHaarExistenceStatement F T n` for every supplied topological data
+  `T` and every `n`, using the all-rank construction in `UnipotentQuotient`.
+  The JPSS analytic inputs and supercuspidal genericity remain unproved;
+  measure existence alone does not establish factor existence.
   Given that existence, the hypothesis is equivalent to Henniart's equality
   `ε(π × τ, s, ψ) = ε(π' × τ, s, ψ)`. Without it, the hypothesis is stronger,
   and it never makes two missing factors agree.
 - Universes. `π` and `π'` have carriers in universe `uV`, and the test classes
   have carriers in universe `uW`. Henniart quantifies over all supercuspidal
-  `τ`. The universe `uW` is no restriction, because every supercuspidal
-  representation has countable dimension and so is equivalent to one on a
-  carrier in any universe. This fact is not proved in the Library.
+  `τ`. The universe `uW` is no restriction:
+  `Langlands.padicIrreducibleSmoothSmallRealization` in
+  `Smooth/SmallRealizationProof` constructs an equivalent irreducible smooth
+  complex representation in any independently prescribed carrier universe.
+  Its proof uses a countable basis inside a spanning smooth-vector orbit and
+  requires no additional admissibility assumption. The class formulation
+  still uses the representative-agreement lemma above and the
+  equivalence-invariance of the factor relation.
 
 Scope. Henniart's `F` is any nonarchimedean local field, and his application
 (Section 1.2) is to fields of positive characteristic. Here `F` is a p-adic

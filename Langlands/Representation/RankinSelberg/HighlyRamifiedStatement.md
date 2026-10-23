@@ -119,9 +119,13 @@ encodes `ε(s) = c q^{-ms}`, as in the published epsilon relation.
 - **Genericity.** `Whittaker.IsGeneric ψ m τ` is irreducibility,
   admissibility and a nonzero Whittaker functional for the standard character
   of `ψ`. The relations pair the `ψ`-functionals of the representation of
-  larger rank with the `ψ̄`-functionals of the other, as in JPSS. That a
-  generic representation has nonzero `ψ̄`-functionals (conjugate by
-  `diag(1, -1, 1, ...)`) is not proved in the Library.
+  larger rank with the `ψ̄`-functionals of the other, as in JPSS.
+  `Whittaker.characterChangeFunctionalEquiv` at `a = -1`, together with
+  `standardCharacter_scale_neg_one`, gives a linear equivalence to the
+  inverse-character functional space. It preserves nonzero functionals, so
+  a generic representation has nonzero `ψ̄`-functionals (JPSS §2.1, printed
+  page 385). This transport does not supply genericity for a representation
+  without the original nonzero functional.
 - **Equality and existence of factors.** Agreement of two factors is
   expressed as one common witness of both relations. Each relation has at most
   one solution (`IsPadicSymmetricGammaFactor.unique`,
@@ -131,14 +135,21 @@ encodes `ε(s) = c q^{-ms}`, as in the published epsilon relation.
   nonvacuity parts of the relations (a compatible quotient measure, nonzero
   functionals for both representations and, for gamma and epsilon, a nonzero
   integral) and the functional equations of JPSS 1983 Theorem 2.7. Jacquet and
-  Shalika take these from JPSS. They are not proved in the Library, so each
-  conclusion claims existence together with the equality.
+  Shalika take these from JPSS. Compatible quotient-measure existence is
+  proved by `quotientHaarExistence` in `RankinSelberg/QuotientHaarExistence`,
+  and inverse-character transport is available as above. The analytic
+  existence inputs and the stability conclusions remain proof obligations;
+  each conclusion claims factor existence together with the equality.
 - **Measures.** As in Jacquet and Shalika (Section 2.1, display (4)), the
   additive measure is the self-dual one, `ν.val`. The statements do not assert
   that such a measure exists; that is the separate published
   `SelfDualMeasureExists`, and without it the statements hold vacuously. All
-  compatible quotient measures are quantified. They agree up to positive
-  scalars (not proved in the Library), and a positive scalar does not change
+  compatible quotient measures are quantified. For the fixed
+  `generalLinearHaar` and `unipotentHaar` normalizations,
+  `unipotentQuotientHaar_unique` in `RankinSelberg/UnipotentQuotient` proves
+  that each is exactly `unipotentQuotientHaar`; the same module proves
+  existence by `unipotent_compatibleMeasureExists`. This uniqueness concerns
+  those fixed Haar measures. Separately, a positive scalar does not change
   the L-polynomial (published `isPairLPolynomial_smul_measure`). The
   L-polynomial does not depend on `ν` or `ψ` either, which is not proved in the
   Library; the L-statement keeps the paper's standing assumption on `ψ`.
@@ -152,14 +163,18 @@ encodes `ε(s) = c q^{-ms}`, as in the published epsilon relation.
   arbitrary nonarchimedean local field: the canonical topological data and the
   self-dual measures are published only for `PadicField`.
 - **Universes.** The twisted representations live in universe `uV` and `σ` in
-  `uW`. An irreducible admissible representation of `GL_m(F)` has
-  countable dimension, so it is equivalent to one on a carrier in any
-  universe, and the relations are invariant under equivalences between
-  universes (`IsPadicSymmetricGammaFactor.congr_equiv`,
+  `uW`. `Langlands.padicIrreducibleSmoothSmallRealization` in
+  `Smooth/SmallRealizationProof` supplies an equivalent irreducible smooth
+  complex representation in any independently prescribed carrier universe,
+  for any `F.TopologicalData` and rank. Its proof chooses a countable basis
+  inside the spanning orbit of a nonzero smooth vector and realizes the
+  carrier as `Shrink.{uV} b →₀ ℂ`. It requires irreducibility and smoothness,
+  with no additional admissibility assumption. The relations are invariant
+  under equivalences between universes
+  (`IsPadicSymmetricGammaFactor.congr_equiv`,
   `IsPadicSymmetricEpsilonFactor.congr_equiv`,
   `IsPadicSymmetricLPolynomial.congr_equiv`).
-  So fixed universes lose nothing, though the countability fact is not proved
-  in the Library.
+  So fixed carrier universes lose nothing for these representations.
 
 ## Lean checks
 

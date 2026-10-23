@@ -8,8 +8,11 @@ Author: Worker 11. This file defines four proposition targets in namespace
 - `UnequalRankAnalyticStatement`,
 - `UnequalRankCommonGeneratorStatement`.
 
-None of them is proved, and none is assumed anywhere. They restate parts (i)
-and (ii) of Theorem 2.7 of Jacquet--Piatetski-Shapiro--Shalika (JPSS),
+This module defines the targets. The companion
+[QuotientHaarExistence](QuotientHaarExistence.md) proves the first one as
+`quotientHaarExistence`. The three analytic targets remain open; downstream
+conditional constructions may take them as explicit hypotheses. They restate
+parts (i) and (ii) of Theorem 2.7 of Jacquet--Piatetski-Shapiro--Shalika (JPSS),
 *Rankin--Selberg convolutions*, Amer. J. Math. 105 (1983), printed pages
 390--391, for representations of Whittaker type. The integrals, characters,
 coefficient images and Haar measures are the published constructions of
@@ -105,21 +108,35 @@ This is the Weil integration formula. It fixes the scale of `μ`, so `μ` is
 the unique quotient measure for these two Haar measures. The averaging
 operator descends to the quotient only when the measure on `N` is right
 invariant. The published predicate therefore takes the instance
-`Measure.IsMulRightInvariant (unipotentHaar F n)`. The Library proves this
-instance only in rank one. Each analytic target binds it explicitly as
-`∀ [Measure.IsMulRightInvariant (unipotentHaar F n)]`. It is true, since
-unipotent groups are unimodular. Its proof is part of the existence
-obligation below.
+`Measure.IsMulRightInvariant (unipotentHaar F n)`. Each analytic target
+retains this explicit instance binder. The companion
+[UnipotentUnimodularity](UnipotentUnimodularity.md) proves
+`unipotentHaar_rightInvariant` and supplies `unipotentHaar_isMulRightInvariant`
+for every natural `n`. Likewise,
+[GeneralLinearUnimodularity](GeneralLinearUnimodularity.md) proves
+`generalLinearHaarRightInvariant` and supplies
+`generalLinearHaar_isMulRightInvariant` for the ambient measure. These results
+hold over every nonarchimedean local field with a Borel measurable structure
+on the respective group, and preserve the normalized Haar measures above.
 
 `QuotientHaarExistenceStatement n` asserts that `unipotentHaar F n` is right
 invariant and that `CompatibleMeasureExists` holds. The latter means that
 some quotient measure satisfies `IsCompatible`. No representation or integral
-occurs in it. The analytic targets quantify over every compatible `μ`. So
-they say nothing about integrals unless this separate statement is proved.
-Worker 31's construction task `67018abd` ("Construct the compatible invariant
-measure on the unipotent quotient N\GL_(n+1)(F) in every rank") targets
-exactly this proposition. No quotient measure is chosen from an unproved
-assertion.
+occurs in it. The published
+[UnipotentQuotient](UnipotentQuotient.md) constructs `unipotentQuotientHaar`,
+proves `unipotentQuotientHaar_isCompatible`, and supplies
+`unipotent_compatibleMeasureExists` in every rank over a nonarchimedean local
+field, with Borel structures on the ambient group, subgroup and quotient.
+Its `unipotentQuotientHaar_unique` identifies every compatible measure with
+that construction exactly, for these fixed ambient and subgroup Haar measures.
+The companion theorem `quotientHaarExistence` proves
+`QuotientHaarExistenceStatement F T n` for every `PadicField F`, every supplied
+`TopologicalData T`, and every natural `n`. It installs the topology,
+valuation and local-field structure specified by `T` and the three Borel
+structures, then uses the constructed measure and proved right invariance;
+neither is an additional hypothesis. There is no restriction to canonical
+topological data. The analytic targets still quantify over every compatible
+`μ`; the measure construction does not prove their analytic conclusions.
 
 The unequal-rank inner integral uses `rectangularMeasure ν j (n + 1)`, the
 published product of an arbitrary additive Haar measure `ν` on `F` over the
@@ -136,9 +153,14 @@ self-dual normalization of `ν` enters only in the functional equations of
 four clauses.
 
 1. Every coefficient-model integral converges absolutely on some right
-   half-plane `a < Re s`. This uses the published `EqualRankConverges` and
-   `UnequalRankConverges`, which is integrability of the integrand on the
-   quotient. The bound `a` may depend on the vectors and on `Φ`.
+   half-plane `a < Re s`. `EqualRankConverges` requires integrability on the
+   quotient under `μ`. `UnequalRankConverges` requires joint integrability on
+   the product of the quotient and the rectangular matrix space under
+   `μ.prod ν`, where this analytic target uses
+   `ν = rectangularMeasure ν₀ j (n + 1)` for its additive Haar measure `ν₀`
+   on `F`. The separately defined iterated Bochner integral does not by itself
+   assert joint absolute integrability. The bound `a` may depend on the
+   vectors and on `Φ`.
 2. Every such integral has a rational continuation: `HasRationalContinuation q
    I R` for some `R ∈ ℂ(X)`. This means `I(s) = R(q^{-s})` with nonzero
    denominator throughout some right half-plane. A pole cannot satisfy it
