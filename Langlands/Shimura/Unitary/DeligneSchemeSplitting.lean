@@ -1,5 +1,6 @@
 import Langlands.GroupScheme.CorepresentedPoints
 import Langlands.GroupScheme.Multiplicative
+import Langlands.GroupScheme.Products
 import Langlands.Shimura.Unitary.DeligneGroupScheme
 import Langlands.Shimura.Unitary.DeligneSplitting
 
@@ -58,14 +59,10 @@ abbrev splitGroupScheme :=
   (GroupScheme.Gm (Spec (CommRingCat.of ℂ))).toGrp ⊗
     (GroupScheme.Gm (Spec (CommRingCat.of ℂ))).toGrp
 
-/-- Points of a product group scheme are pairs, with componentwise multiplication. -/
+/-- Compatibility name for the generic product point comparison. -/
 def productPointsEquiv {S : Scheme} (G H : GroupScheme S) (T : Over S) :
     (T ⟶ (G ⊗ H).X) ≃* (T ⟶ G.X) × (T ⟶ H.X) :=
-  { homEquivToProd with
-    map_mul' := fun x y => by
-      apply Prod.ext <;> simp only [homEquivToProd, Prod.mul_def]
-      · exact MonObj.mul_comp x y (fst G.X H.X)
-      · exact MonObj.mul_comp x y (snd G.X H.X) }
+  GroupScheme.productPointsEquiv G H T
 
 /-- Points of the split group scheme are two global units. -/
 def splitSchemePointsEquiv (T : Over (Spec (CommRingCat.of ℂ))) :

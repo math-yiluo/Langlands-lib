@@ -52,7 +52,9 @@ copies of the global unit group. Its naturality follows by applying
 
 `splitGroupScheme` is the Cartesian monoidal product of two copies of
 `GroupScheme.Gm (Spec ℂ)`, regarded as group objects. The helper
-`productPointsEquiv` works for arbitrary group schemes over any same-universe
+`productPointsEquiv` is a definitionally equal compatibility wrapper for
+`Langlands.GroupScheme.productPointsEquiv` in `GroupScheme.Products`. It
+works for arbitrary group schemes over any same-universe
 base scheme: a point of their product corresponds to the pair of composites
 with the projections. Multiplicativity follows because both projections are
 monoid morphisms. `splitSchemePointsEquiv T` composes this product comparison
