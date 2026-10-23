@@ -103,12 +103,23 @@ the derived functors `EquivariantDerivedSections.globalDerived` and
 It does not prove that the full `G`-action on Godement cohomology is smooth or
 discrete. It also does not cover invariant (Berkovich `X(G)`) cohomology,
 spectral sequences, analytic étale sites, Shimura level towers, Hecke or
-Galois actions. These remain separate obligations. Worker 3's unproved
-statements `Langlands.Cohomology.EquivariantGodementUnderlyingStatement` and
-`Langlands.Cohomology.EquivariantGodementComputesSectionsStatement`, in the
-module `Langlands.Cohomology.EquivariantGodement.Statement` (Library commit
-`7465248e53e542902394c4c99a735557141755c3`), formulate two such comparisons
-for the same cokernel construction. This module does not import them.
+Galois actions. These remain separate obligations.
+
+The underlying-complex comparison is proved separately: Worker 149's
+`Langlands.Cohomology.equivariantGodementUnderlying`, in
+[`EquivariantGodement/UnderlyingProof.lean`](EquivariantGodement/UnderlyingProof.lean),
+proves exactly `Langlands.Cohomology.EquivariantGodementUnderlyingStatement.{u}`.
+For a commutative ring `R`, a group `G` and a topological space `X` in the same
+arbitrary universe `u`, with `MulAction G X` and `ContinuousConstSMul G X`,
+it gives a natural isomorphism from the equivariant Godement complex after
+forgetting equivariance to the ordinary Godement complex of the underlying
+sheaf, compatibly with the augmentations in degree zero.
+Worker 3's `Langlands.Cohomology.EquivariantGodementComputesSectionsStatement`,
+in [`EquivariantGodement/Statement.lean`](EquivariantGodement/Statement.lean),
+remains a separate target for computing the right-derived global and compact
+section representations in every degree. The underlying-complex comparison
+does not establish that target. This module imports neither comparison module;
+its own constructive and degree-zero scope is unchanged.
 
 Source registrations:
 Berkovich,
