@@ -12,7 +12,8 @@ no family, character, measure or local-constant system is chosen.
 `F : PadicField p` carries its canonical topological data, `q` is its residue
 cardinality, and factors are rational functions of `X = q^(-s)`.
 
-- `residueReflection F` is the published unit
+- `LocalFactor.residueReflection F`, imported from
+  `LocalFactor/ResidueReflection`, is the published unit
   `WeilDeligne.reflectionScale q = q⁻¹`. The published
   `spectralParameter_one_sub` shows that `s ↦ 1 - s` is `X ↦ q⁻¹/X`. The
   positivity of `q` comes from the published `residueCardinality_gt_one`.
@@ -95,7 +96,7 @@ Source files:
   needed for the statements here.
 
 The module imports, and does not copy: `LocalFactor.WeilDelignePair`
-(`rationalLRatioClass`, `reflectionScale`), `WeilDeligne.SumsTensor`
+(`rationalLRatioClass`), `LocalFactor.ResidueReflection` (`residueReflection`), `WeilDeligne.SumsTensor`
 (`tensorClass`), `RankinSelberg.PairEpsilonFactor`
 (`rationalEpsilonMonomial`), `RankinSelberg.PadicPairFactors`
 (`IsPadicSymmetricGammaFactor` and its `congr_equiv`), and this task's
@@ -105,5 +106,5 @@ The module imports, and does not copy: `LocalFactor.WeilDelignePair`
 ## Validation
 
 The module compiles in the project Lean service with no errors or warnings.
-There is no `sorry` and no new axiom. Every definition except
-`residueReflection` returns `Prop`.
+There is no `sorry` and no new axiom. Every definition in this module returns `Prop`; the imported reflection
+scalar is documented in `LocalFactor/ResidueReflection`.

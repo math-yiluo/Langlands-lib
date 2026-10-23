@@ -11,7 +11,8 @@ additive character, measure or local-constant system is chosen.
 
 `F : PadicField p` carries its canonical topological data, `q` is its residue
 cardinality, and factors are rational functions of `X = q^(-s)`.
-`residueReflection F` is the unit `q⁻¹` of `SupercuspidalGammaCompatibility`;
+`LocalFactor.residueReflection F` is the unit `q⁻¹` of
+`LocalFactor/ResidueReflection`;
 `X ↦ q⁻¹/X` is `s ↦ 1 - s`.
 
 `IsAutomorphicPairGammaFactor F ψ ν π π' G`, for automorphic classes `π` of
@@ -112,7 +113,8 @@ Source files:
   (`IsAutomorphicPairEpsilonFactor`, `FullPairEpsilonCompatibility`),
   `FullLFactorCompatibility` (`IsAutomorphicPairLPolynomial`,
   `FullPairLCompatibility`), `SupercuspidalGammaCompatibility`
-  (`residueReflection`, `IsArithmeticPairGammaFactor`),
+  (`IsArithmeticPairGammaFactor`), `LocalFactor/ResidueReflection`
+  (`residueReflection`),
   `OperationCompatibility` (`DualCompatibility`) and `AutomorphicRelations`
   (`IsSmoothDual`), and the published `RankinSelberg/PairFactors`
   (`rationalGammaExpression`).

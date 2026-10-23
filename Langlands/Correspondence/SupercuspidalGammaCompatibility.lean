@@ -1,5 +1,6 @@
 import Langlands.Correspondence.SupercuspidalFactorCompatibility
 import Langlands.Representation.RankinSelberg.PairFactors
+import Langlands.LocalFactor.ResidueReflection
 
 /-!
 # Derived gamma compatibility of supercuspidal families
@@ -20,12 +21,6 @@ universe uF uP uA uV uW
 open LocalFactor LocalFactor.CommonClosure Weil.Local
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
-
-/-- The unit `q⁻¹` for the canonical residue cardinality `q`: the reflection
-`X ↦ q⁻¹ / X` corresponds to `s ↦ 1 - s` at `X = q^(-s)`. -/
-def residueReflection : ℂˣ :=
-  WeilDeligne.reflectionScale (F.canonicalTopologicalData.residueCardinality : ℝ)
-    (by exact_mod_cast Nat.zero_lt_one.trans F.canonicalTopologicalData.residueCardinality_gt_one)
 
 /-- `γ(s, X ⊗ Y, ψ) = G(q^(-s))` for the supplied system: for some `c q^(-ms)` that
 is the arithmetic epsilon factor, `G` is `c X^m L((X ⊗ Y)^∨)(q⁻¹/X) / L(X ⊗ Y)(X)`. -/
