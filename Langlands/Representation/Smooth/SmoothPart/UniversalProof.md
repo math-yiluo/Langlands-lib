@@ -1,5 +1,12 @@
 # Unique factorization through the smooth part: implemented proof
 
+The original proof was independently accepted and published in Test 2 on
+October 15, 2026. The exact validation, independent approval and publication
+records, verified on October 23, are in
+[UniversalStatement](UniversalStatement.md#verified-historical-status).
+The preparation accounts, artifact IDs, environment and commits below are
+historical Test 2 records, distinct from the later pilot documentation correction.
+
 `Langlands.smoothPartUniversalProperty` proves the complete adjacent
 proposition `SmoothPartUniversalProperty`, accepted statement artifact
 `16500d55-deee-48eb-b34b-91e7fe62065f`, version 1. Worker 0 authored the
@@ -59,39 +66,47 @@ than a separately numbered theorem in that passage. The chapter's
 stronger locally profinite, countability, and Noetherian rational-coefficient
 assumptions are not used in this proof.
 
-The target is independently published at
+The target's recorded Test 2 publication is
 `a28679cf25a4ce001af4e724a51fd7db72864cd3`, with receipt
-`ed612220-3b7d-4722-aac7-8b1e058f92fd`. Fresh fetch confirms current availability
-at `bb596ce619f2174816281f508cce65b3303beeb4`, with no changed files or
-unavailable dependencies. Its target fingerprint is
+`ed612220-3b7d-4722-aac7-8b1e058f92fd`. During original preparation, a fresh
+fetch confirmed availability at `bb596ce619f2174816281f508cce65b3303beeb4`,
+with no changed files or unavailable dependencies. Its target fingerprint is
 `45f835d980b6814c9f6ae0fdcc0e7d13f0261fabbb3c7144dc0fd2d5795b6bb6`.
 The only imported project target is this statement. Its exact transitive
 definitions are smooth-part construction
 `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d` and foundation
 `665022df-625b-44ae-9dbd-425f6e266bab`, both version 1.
-Worker 30 matched all six local dependency files to their effective
-accepted pairs. Their publication references are:
+At that preparation checkpoint, Worker 30 matched all six local dependency
+files to their effective accepted pairs. Their publication references are:
 
 | Dependency | Publication commit | Independent receipt |
 | --- | --- | --- |
 | Smooth-part construction | `cd8210540c75a7d0a9e2431e4bc9a2535ceaf919` | `1f969dc8-79b0-4e70-adf8-502752d70c6a` |
 | Smoothness foundation | `10c81beaaff024987cf2945c64d0c9511f6cb686` | `a26076cd-7da3-4621-992f-5c0207f7fe1e` |
 
-These recorded publications establish the dependencies' current accepted
-status; their preserved Markdown still contains historical draft labels.
+These are historical dependency records. The smooth-part definition and
+statement documentation now records the verified original acceptances separately
+from the later documentation corrections; see
+[Definitions](Definitions.md#verified-historical-status) and
+[UniversalStatement](UniversalStatement.md#verified-historical-status).
 The proof imports only `UniversalStatement`. The pinned Mathlib
 `RepresentationTheory/Intertwining.lean`, lines 51-55 and 213-223,
 supplies intertwiner extensionality and the composition convention used here.
 
-Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pins Lean
+The original preparation environment
+`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pinned Lean
 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 The whole-target theorem retains four independent universes and introduces the
 topological-group instance only at the target's internal binder. The two helper
 lemmas and closing theorem belong to this one proof contribution.
-Native compilation and assignment to the entire accepted proposition with
-four independent universes passed with exit code 0. The check has no
-external topological-group instance. The inspected axiom closures of both
-helpers and the closing theorem contain only `propext`, `Classical.choice`,
-and `Quot.sound`. These are development checks. Registered independent proof checking,
-independent semantic review and current Library publication are required
-for acceptance. No placeholders or project axioms are introduced.
+During original preparation, native compilation and assignment to the entire
+accepted proposition with four independent universes passed with exit code 0.
+That check had no external topological-group instance. The inspected axiom
+closures of both helpers and the closing theorem contained only `propext`,
+`Classical.choice`, and `Quot.sound`. No placeholders or project axioms are
+introduced. Those preparation checks were development checks only. The
+original acceptance rests on the separate registered proof validation,
+independent approval and Test 2 publication recorded in
+[UniversalStatement](UniversalStatement.md#verified-historical-status).
+Neither those historical records nor source compilation accepts this later
+Markdown correction.

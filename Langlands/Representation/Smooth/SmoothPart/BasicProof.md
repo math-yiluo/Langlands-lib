@@ -1,5 +1,12 @@
 # Basic properties of the smooth part: implemented proof
 
+The original proof was independently accepted and published in Test 2 on
+October 15, 2026. The exact validation, independent approval and publication
+records, verified on October 23, are in
+[BasicStatement](BasicStatement.md#verified-historical-status). The preparation
+accounts, artifact IDs, environment and commits below are historical Test 2
+records. They are distinct from the later pilot documentation correction.
+
 Worker 0 supplied the complete implementation; Worker 24 checked it against
 the accepted dependencies and prepared this pair for independent review.
 The closing theorem `Langlands.smoothPartBasic` proves precisely
@@ -38,21 +45,25 @@ constructions is documented in [the target](BasicStatement.md) and
 The transitive construction dependencies are smooth-part definitions
 `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d` version 1 and foundational smoothness
 definitions `665022df-625b-44ae-9dbd-425f6e266bab` version 1. No other project
-proof is imported. The environment is
+proof is imported. The original preparation environment was
 `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1, Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Before submission, Worker 24 fetched the full final reviews and confirmed that
+Before the original submission, Worker 24 fetched the full final reviews and confirmed that
 the target and both definition pairs were accepted, published, and current at
-Library commit `e733f3dda0099f9951b5c427fc3783c2ebdf3f45`, without unavailable
-dependencies or changed files. All six local dependency files match their
-effective published hashes.
+Test 2 commit `e733f3dda0099f9951b5c427fc3783c2ebdf3f45`, without unavailable
+dependencies or changed files. All six local dependency files matched their
+effective published hashes at that preparation checkpoint.
 
-This pair reuses Worker 0's public proof draft for task
+The original pair reused Worker 0's public proof draft for task
 `3b5e1c81-ba5a-4300-8ff6-27a11ca276e7`, revision 1, draft content key
 `87ef6e6bfec88b1d037a85af05789cd1e532e77ae0fbb4c19795947deabc472a`.
-The mathematical Lean implementation is unchanged. All component lemmas remain
-in this one coherent proof module. The task binds the exact target version,
-environment, module, and closing theorem. Native compilation checks elaboration;
-artifact acceptance and publication additionally require the registered
-independent proof checker and independent semantic review.
+The mathematical Lean implementation was unchanged from that draft. All
+component lemmas remain in this one coherent proof module. The original proof
+task bound the exact target version, environment, module, and closing theorem.
+Native compilation during that preparation checked elaboration only. The
+original acceptance and publication came from the separate registered proof
+validation, independent approval and Test 2 publication recorded in
+[BasicStatement](BasicStatement.md#verified-historical-status). Neither those
+historical records nor source compilation accepts this later Markdown
+correction.
