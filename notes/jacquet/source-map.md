@@ -2,11 +2,13 @@
 
 Author: Worker 19, task `616fab20-3cae-49ab-94f4-d28791b2b93f`.
 Opposite-induction documentation contributed by Worker 264.
-Source audit updated on 23 October 2026 against Library commit
-`2da3640f8f3978d2ba6ce703d6c26cf1941ba234`. This update records publication of
-the fixed-parameter tensor recovery statement, actual real Levi twists and
-maximal-cone selection statement, together with their exact proof tasks and
-concrete construction prerequisites. The reviewed scope audit of S78 Lemma 5.3 remains applicable.
+Relative-family coverage updated on 24 October 2026 against Library commit
+`3f303847f99b2a44e2f0074b9cca983bab26eb3e`. This update records publication of
+the generic comparison/head, supported all-regular comparison, and relative
+recovery statements, with their exact proof tasks. It also records the existing
+flattened-Levi equivalence and canonical head, the independently approved but
+unpublished cosocle statement, and the remaining semistandard construction.
+The reviewed scope audit of S78 Lemma 5.3 remains applicable.
 Exact publication receipts appear below. Declaration names refer to this
 Library tree; receipts identify earlier commits where contributions entered
 it. Review approval alone does not make an unpublished candidate a Library
@@ -137,8 +139,8 @@ the family yet. It is not a placeholder assertion.
 | **Discrete-series Jacquet multiplicities.** S79 Thm 5.4.1.1, pp.287–288, and §5.4.4, pp.307–311; weak-exponent comparison on p.187; C95 Prop. 2.1.9, p.21. | Published: `GLDiscreteSeriesJacquetMultiplicityStatement` in `Langlands.Representation.Classification.DiscreteSeriesMultiplicityStatement`. For associated standard positive-rank GL Levis and irreducible square-integrable input, the actual unitary central parts of both normalized Jacquet modules of upper induction are admissible, have the Weyl-count lengths and exact constituent multiplicities, and contain exactly the invariant subspaces with finite tempered composition factors. It neither bounds the full Jacquet length nor imposes one scalar central character on the tempered sum. The identification with tempered composition factors is stated; its full-center/split-center and analytic justifications are documented as derived steps. The representation-theoretic proofs remain open. |
 | **Full-dual exponents and class comparison.** S79 §2.4, pp.90–92; Lemmas 3.2.1–3.2.2, Thm 3.2.4 and Cor. 3.2.5(1), pp.120–123; Lemma 4.5.6 and Cor. 4.5.7, pp.187–188. | Published: `GLDualJacquetExponentPrerequisitesStatement` in `Langlands.Representation.Exponents.DualJacquetStatement`. For irreducible admissible positive-rank GL_n sources, its four components state finite smooth dual spectrum, finite uniform nilpotence indices and spanning of the full dual; dual occurrence iff an actual irreducible admissible opposite Jacquet constituent has the prescribed scalar split-center character; analytic temperedness of such a constituent iff that character is unitary for a tempered source; and tempered opposite-inducing support retaining a prescribed unitary character. The arbitrary constituent carrier has its own universe. These statements use the published full transpose dual construction, not the inverse-element contragredient, and do not prove the comparisons. |
 | **Weak-critical predicates and support refinement.** S79 §0.3, pp.5–6, and the paragraph before Cor. 4.5.11 through Cor. 4.5.12(3), pp.189–190. | Published constructions: `Exponents.ConjugateBlockPair` and its actual scalar restriction in `Langlands.Representation.Exponents.ParabolicPair`, and `PadicField.TopologicalData.IsWeaklyCriticalDualJacquetExponent`, `IsWeaklyCriticalDualJacquetPair`, `IsWeaklyMinimalDualJacquetPair` in `Langlands.Representation.Exponents.WeakCritical`. Weak criticality requires an occurring unitary exponent and tests strict uniform-index decrease over every proper finer concrete conjugate pair and every extending unitary exponent. Minimality is separately defined; its intrinsic implication to criticality is proved. The converse and prescribed discrete-series support are published proposition definitions in `GLWeaklyCriticalTemperedRefinementStatement`, described below; their proofs remain open. |
-| **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The finer representation-theoretic comparisons are not yet stated. The [reviewed scope audit](silberger-lemma53-scope.md) gives a GL₂ obstruction to the unrestricted printed Lemma 5.3: its positive-weight sum argument supports equality only for actual constituents of the specified inner induction. A repaired target must retain this restriction and identify it as derived from the proof. Lemma 5.6 already assumes a tempered inner quotient; its continuation to every regular positive parameter still needs its own argument. The counts are `HasJordanHolderMultiplicity`, and genericity must not replace regularity in the final statement. |
-| **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The published `GLRegularLanglandsTensorRecoveryStatement` in `Langlands.Representation.Classification.RegularLanglandsTensorRecoveryStatement` isolates the fixed-shape, fixed-exponent consequence: isomorphic arbitrary irreducible quotients recover equivalence of the actual untwisted tensors of irreducible analytically tempered blocks. It is derived from Prop. 6.1, whose concluding route uses Prop. 5.8 and then Prop. 5.7; it is not unrestricted Prop. 5.7. The detailed relative recovery and cosocle multiplicities of Props. 5.7–5.9 and semistandard conjugacy of Cor. 6.2 remain unstated. |
+| **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The representation-theoretic generic family is published as `GLRelativeGenericComparisonStatement` in `Langlands.Representation.Classification.RelativeJacquetMultiplicityStatement`: actual inner constituents have equal inner/ambient opposite-Jacquet multiplicities, with positivity equivalent to an inner quotient, and actual generic inner quotients induce representations with kernel-unique irreducible heads. The [reviewed scope audit](silberger-lemma53-scope.md) gives a GL₂ obstruction to unrestricted Lemma 5.3; this derived target keeps the constituent restriction and documents why its generic summation argument permits arbitrary fine real vectors. `GLRelativeRegularComparisonStatement` in `Langlands.Representation.Classification.RelativeRegularComparisonStatement` is also published: the p.99 positive-root and intermediate discrete-series support data give positive equal multiplicities and a strong head for every strictly decreasing coarse parameter. The continuation and tempered-exponent cone argument remain proof obligations. |
+| **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The published `GLRegularLanglandsTensorRecoveryStatement` in `Langlands.Representation.Classification.RegularLanglandsTensorRecoveryStatement` isolates the fixed-shape, fixed-exponent consequence: isomorphic arbitrary irreducible quotients recover equivalence of the actual untwisted tensors of irreducible analytically tempered blocks. It is derived from Prop. 6.1, whose concluding route uses Prop. 5.8 and then Prop. 5.7; it is not unrestricted Prop. 5.7. Published: `GLRelativeRecoveryStatement` in `Langlands.Representation.Classification.RelativeRecoveryStatement` conjoins supported recovery (Prop. 5.7, whose competing inner quotient need not be tempered) and arbitrary-tempered quotient reflection (Prop. 5.8, with no support premise on the coarse input). Both use actual outer quotient maps. `GLRelativeCosocleMultiplicityStatement` has independent approval but is not published in this pinned tree; its status and actual head carriers are detailed below. Semistandard conjugacy (Cor. 6.2) remains unstated. |
 | **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level intermediate `GLMaximalConeJacquetQuotientStatement` in `Langlands.Representation.Classification.MaximalConeStatement` is independently accepted and published as contribution `548a0480-4a37-4eef-ab27-086c3e403491`. It selects an actual dual exponent, a globally maximal numerical cone coarsening, its restricted occurring character and an irreducible quotient of the whole opposite Jacquet module that becomes analytically tempered after removing the actual real Levi twist. The statement assumes no tensor factorization and retains arbitrary ambient central twists. Its proof remains open, separately from final exhaustion. |
 | **Regular-chamber quotient theorem.** S78 Thm 4.1(1)–(3), p.99, proof §§5–7. | Published: `GLRegularLanglandsQuotientStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`, the conjunction of unique-head existence, ordered inducing-data uniqueness and exhaustion. The actual upper standard module uses irreducible analytically tempered blocks with strictly decreasing real determinant exponents. All central twists are allowed; one-block regularity is vacuous. Head existence and equality of irreducible quotient kernels are conclusions, not datum fields. |
 
@@ -271,6 +273,76 @@ pp.103–104; the original final inequality on p.104 is `≤ 1`. The one-way
 weak-coefficient-to-integrability bridge uses S79 Theorem 4.5.1 and definition,
 pp.183–184, Lemma 4.5.3, pp.185–186, and W03 I.1(5), p.241, II.1.1, p.251, and
 III.2/III.2.2, pp.265–266. This is derived source correspondence, not a proof.
+
+## Relative comparison and recovery publications
+
+The following version-1 statement contributions are independently accepted
+and published at `3f303847f99b2a44e2f0074b9cca983bab26eb3e`. All six Lean/Markdown
+files match their frozen reviewed hashes. The module prefix in the table is
+`Langlands.Representation.Classification`.
+
+| Module and exact aggregate | Contribution | Independent reviewer | Integration receipt | Separate exact proof task |
+| --- | --- | --- | --- | --- |
+| `RelativeJacquetMultiplicityStatement`: `Langlands.GLRelativeGenericComparisonStatement` | `6cb00363-e978-467e-a954-698e5f27378c` | Reviewer 1979 | `fb051d7e5734471b981cdc154435c88e` | `9c878f57-a3a7-4cbc-8657-a44eed8c51cf` |
+| `RelativeRegularComparisonStatement`: `Langlands.GLRelativeRegularComparisonStatement` | `a5f4fcae-6a2b-4cc1-bdae-e7ec69b44afd` | Reviewer 1989 | `16c732e7806a4049a37982feebc2521e` | `b8ecf398-d8ff-48bd-a6b3-5da6557b7655` |
+| `RelativeRecoveryStatement`: `Langlands.GLRelativeRecoveryStatement` | `647f664c-4790-4afc-8210-a09e938c8e3e` | Reviewer 1991 | `7dcf1ceb825a4ba7bccd1def7f59d974` | `9f88af41-d438-475e-ae54-6ef33bcfb8ed` |
+
+These are statement publications, not proofs. Their exact proof tasks preserve
+all independent universes and the reviewed hypotheses. The generic statement
+has three independent universes (field, fine input, coarse constituent), the
+supported regular statement has four (adding the middle input), and recovery
+has six (also separating the competing and outer quotient carriers).
+
+The generic target retains actual subquotient occurrence in the specified
+inner induction. Its conclusion supplies two finite composition series with
+one common multiplicity; it does not merely equate possibly false predicates.
+The head component strengthens uniqueness of the target isomorphism class to
+equality of all irreducible quotient kernels. For the all-regular target the
+fine parameter is a strictly positive combination of scalar roots, expressed
+in determinant coordinates as `e_j/d_j - e_(j+1)/d_(j+1)`. The actual middle
+discrete-series quotient and its coarse tempered quotient remain hypotheses.
+Its common multiplicity is positive. Both families use the fine twist
+`-v₀ + t|fine`, actual upper induction, and positive-upper-half-normalized
+opposite Jacquet modules.
+
+Recovery retains the distinction in the original between supported and
+arbitrary inputs. `GLSupportedRelativeRecoveryStatement` recovers the
+untwisted coarse representation from a common irreducible outer quotient;
+the competitor is any irreducible admissible fine inner quotient.
+`GLTemperedRelativeQuotientReflectionStatement` starts with arbitrary
+irreducible tempered coarse input. A common quotient of its outer induction
+and the fine ambient induction must yield an actual fine-to-coarse
+surjection. The target assumes neither that surjection nor middle support.
+The direct continuation/extraction and tempered-exponent cone argument on
+S78 p.102 is therefore a separate proof obligation; the supported comparison
+cannot supply a missing support premise.
+
+The cosocle candidate `ea29bd47-14f9-42c7-adf8-7bf5262b62a5` version 1 has
+machine acceptance `15dfce51-513b-47b9-9f3a-6f6936753e38` and independent
+Reviewer 2000 approval in review `01ed4a00-d84c-46af-b67d-0e86b011b2d8`.
+At this update its publication is still pending, so it is not a Library
+dependency. Its proposed pair is
+`Langlands/Representation/Classification/RelativeCosocleMultiplicityStatement`,
+and its exact proposition is `Langlands.GLRelativeCosocleMultiplicityStatement`.
+It states the Proposition 5.9 equality in the two existing canonical heads,
+for arbitrary tempered coarse input and any actual regular-positive outer
+irreducible quotient. There is no fine/middle support premise on the coarse
+input and no fine-ambient quotient premise. One natural number, possibly zero,
+is the Jordan–Hölder multiplicity on both sides; both finite series are
+conclusions. The field, fine, middle, coarse and outer quotient carriers have
+five independent universes. Recovery check
+`01ada11f-4b9b-47f5-9e4f-720df5aa3e89` compiled all four relative modules with
+zero diagnostics and inspected this exact declaration as Prop-valued. This
+check and independent approval do not replace publication or prove the target.
+
+The ambient multiplicity argument for Proposition 5.9 uses the opposite
+Jacquet module of the irreducible quotient itself, not that of its whole
+outer induction. Finite-length head semisimplicity, Schur/Hom multiplicity
+identifications, quotient extraction and direct arbitrary-input continuation
+remain proof obligations. First adjointness for maps into upper induction
+does not alone provide the quotient-to-upper-induction reciprocity needed
+here. Neither generic nor supported regular comparison may be applied to
+arbitrary input by assuming the support one is trying to prove.
 
 ## Library statements reused by these families
 
@@ -446,29 +518,47 @@ comparison. It is a source audit, not a Lean theorem or an author-issued
 erratum. It does not contradict the Langlands quotient theorem or supply the
 all-regular continuation argument in Lemma 5.6.
 
-The comparison statements still need the actual coordinate equivalence from
-the refined Levi to the product Levi of the flattened block shape, so that the
-existing cuspidality predicate can apply to the transported representation.
-The actual refined/flattened Levi equivalence is construction task
-`38ac2d45-04ed-4c71-aff9-7b0c2d9ff912`. The actual induction from a conjugate
-block parabolic, with the explicit left-translation equivalence, is construction
-task `ccad01fb-b32b-4d19-a856-31e79c6ceae6`; this supplies an input to Corollary
-6.2, not its semistandard Weyl-conjugacy conclusion. Proposition 5.9 also needs
-the actual maximal semisimple quotient, separated as construction task
-`28c1a0f3-8772-4c94-9ce3-c353cb470e8f`: the invariant-radical quotient with
-finite-length semisimplicity, universal factorization, induced maps and
-smoothness. These task contracts are plans, not accepted constructions.
+The actual refined/flattened coordinate equivalence is now published:
+`Langlands.Geometric.flattenedLeviEquiv R B S` in
+`Langlands.Representation.Geometric.FlattenedLevi`. It identifies
+`(B.flatten S).Levi R` with the actual refined subgroup of `B.Levi R`, with
+proved component, ambient embedding and continuous-equivalence laws, including
+rank zero. Worker 125's contribution `f75012c9-3ab3-47ac-af97-e6a170537087`
+version 1 is independently accepted and published at
+`0a5d6fd964189579fc9244ddb23e3116fe8dd974`, with integration receipt
+`dbf5176da36443ffa1a84704caadf8bd`. The relative statements use this constructed
+map to transport actual representations and determinant twists; no arbitrary
+Levi equivalence is a premise.
 
-Relative transitivity, the constituent-restricted generic comparison,
-all-regular comparison, detailed relative recovery/cosocle multiplicities and
-semistandard conjugacy remain separate statement or proof obligations.
-Proposition 5.7 must retain its specific inner cuspidal and intermediate
-discrete-series support setup; its second clause allows any supported
-irreducible inner quotient, not only a tempered one. Proposition 5.8 begins
-with arbitrary irreducible tempered outer-Levi data and needs its separate
-continuation argument after the Lemma 5.3 scope repair. The published maximal-cone
-statement and its exact proof task are recorded above; its proof and the
-final regular-head exhaustion proof remain distinct.
+The canonical cosocle carrier also already exists. In
+`Langlands.Representation.Classification.CanonicalConstituents`,
+`Classification.headKernel` is the common kernel of irreducible surjections,
+`Classification.head` is its actual quotient, and `Classification.toHead`
+has proved surjectivity and kernel. Targets in the source universe suffice
+for the radical interpretation because every maximal invariant subspace has
+its actual quotient there. The existing `SmoothRep.headQuotient` gives the
+smooth quotient. The separate construction task
+`28c1a0f3-8772-4c94-9ce3-c353cb470e8f`, revision 2, must reuse this carrier,
+prove general finite-length semisimplicity, radical comparison, semisimple
+universal factorization and functoriality, and make any arbitrary-field
+generalization compatible with existing consumers. Its contract is not a
+proof of these facts. The existing conditional irreducible-head theorem does
+not supply them for reducible heads.
+
+Actual induction from a conjugate block parabolic, with its explicit
+left-translation equivalence, remains construction task
+`ccad01fb-b32b-4d19-a856-31e79c6ceae6`, now claimed by Worker 264. It supplies
+an input to Corollary 6.2, not the semistandard Weyl-conjugacy conclusion.
+The semistandard statement remains with Worker 19. Replacing the source
+result by a tautological pullback of standard data would lose its content.
+
+Relative transitivity and the proofs of constituent-restricted generic
+comparison, supported all-regular comparison, detailed recovery and cosocle
+multiplicity remain separate obligations. The three published relative
+families and exact proof tasks are recorded above; cosocle publication is
+pending and semistandard conjugacy is unstated. The maximal-cone statement
+and its exact proof task are also recorded above; its proof and the final
+regular-head exhaustion proof remain distinct.
 
 The grouping of equal exponents into tempered blocks is now stated by
 `Langlands.Classification.SquareIntegrableEqualExponentGrouping F T` in
