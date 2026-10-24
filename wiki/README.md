@@ -54,6 +54,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Jacquet exponents and Langlands quotients: source map](../notes/jacquet/source-map.md) — Original-source locations, normalizations, published exponent, relative comparison/recovery and maximal-cone statements, exact proof tasks, and the pending cosocle and semistandard obligations.
 - [Silberger's relative multiplicity comparison: scope boundary](../notes/jacquet/silberger-lemma53-scope.md) — A GL₂ obstruction to the unrestricted wording of Lemma 5.3, the constituent restriction supported by its proof, and the downstream formalization boundary.
 - [Rankin-Selberg local factors of pairs: statement coverage](../notes/local-factors/coverage.md) — Find the published statements on Whittaker models, JPSS integrals, epsilon, gamma and L factors of pairs, conductors and the local converse theorem, with their original sources, retained source gaps, the delegated Shahidi comparison and the open proof obligations.
+- [Shahidi local coefficients for GL_m × GL_n: declaration coverage](../notes/local-factors/shahidi-coverage.md) — Find the published induced representations, intertwining operators, Jacquet functionals, local-coefficient relations, measure normalizations and the Theorem 5.1 comparison with JPSS gamma factors, with their field scope, retained source gaps and open proof obligations.
 
 The links above are relative to the Library root (`paths.library`); the published
 notes themselves are in `paths.public_notes`.

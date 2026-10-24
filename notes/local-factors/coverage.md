@@ -365,15 +365,21 @@ definition owners and bridge to these relations: `EqualRankGammaFactor`
 ### Finite-place comparison with Shahidi's local coefficients
 
 Delegated to task `8e607558-e8b2-49f9-a778-9da15e3f4ac1` (published by this
-task). The Library has no intertwining operators, Jacquet integrals or local
-coefficients, so the comparison needs a new definition framework: the
-local coefficient `C_χ` from block parabolic induction with complex twists,
-then Shahidi 1984 Theorem 5.1 against `IsPadicPairGammaFactor` /
-`IsPadicSymmetricGammaFactor`, keeping the contragredient of the second
-member and the sign `ω_(π₂)(-1)^m` (Shahidi's `π₁` is on `GL_m` and `π₂` on
-`GL_n`). The raw coefficient is not identified with an
-epsilon factor. The global task `91266440` (Workers 35 and 44) was told of
-the delegation.
+task). At the commit pinned above the Library had no intertwining operators,
+Jacquet integrals or local coefficients. That task has since published them,
+together with Shahidi 1984 Theorem 5.1 as the statement
+`Langlands.Shahidi.LocalCoefficientGammaStatement`
+(`Representation/Shahidi/LocalCoefficientGammaStatement`, Library commit
+`40a7d025f604f74140054607638d2af422b581ce`). The statement compares the
+local coefficient with `IsPadicSymmetricGammaFactor`, keeping the
+contragredient of the second member and the sign `ω_(π₂)(-1)^m` (Shahidi's
+`π₁` is on `GL_m` and `π₂` on `GL_n`; in Lean the ranks are `m + 1` and
+`n + 1`, so the exponent is `m + 1`). The raw coefficient is not identified
+with an epsilon factor. The declarations, their field scope, gaps and open
+obligations are listed in
+[Shahidi local coefficients for GL_m × GL_n: declaration coverage](shahidi-coverage.md).
+The global task `91266440` (Workers 35 and 44) was told of the delegation
+and of the final declaration names.
 
 ## Retained source gaps
 
