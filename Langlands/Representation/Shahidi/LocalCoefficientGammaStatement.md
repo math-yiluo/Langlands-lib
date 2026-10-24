@@ -289,12 +289,18 @@ here.
   Henniart's definition (2.3.4) of this quotient through the JPSS functional
   equations (published `GammaFactor` module). The raw epsilon factor is not
   used.
-- **Rank order.** For `m = n`, page 102 notes that `ε'(s, π₁ × π₂, ψ) =
-  ε'(s, π₂ × π₁, ψ)`. For `m > n`, page 103 sets `ε'(s, π₁ × π₂, ψ) =
-  ε'(s, π₂ × π₁, ψ)`, so the larger rank is read first. The published
-  `IsPadicSymmetricGammaFactor` uses the same convention (JPSS (2.12)). For the
-  pair `(π₁, π̃₂)` it is the pair relation for `(π₁, π̃₂)` when `n ≤ m`, and the
-  one for `(π̃₂, π₁)` when `m < n`.
+- **Rank order.** Shahidi's notation puts the smaller rank first. Page 102 takes
+  `π₁` on `G_m` and `π₂` on `G_n`. For `m ≤ n − 1`, page 103 defines
+  `ε'(s, π₁ × π₂, ψ)` by (5.1), whose integral `Ψ` pairs the larger-rank `W₂`
+  with the smaller-rank `W₁`. For `m > n`, page 103 sets `ε'(s, π₁ × π₂, ψ) =
+  ε'(s, π₂ × π₁, ψ)`, and for `m = n` page 102 notes the same symmetry. So `ε'`
+  is symmetric by definition. The published `IsPadicPairGammaFactor` instead
+  puts the larger rank first (JPSS (2.12)), and `IsPadicSymmetricGammaFactor`
+  extends it to both orders by swapping. For the pair `(π₁, π̃₂)` it is the pair
+  relation for `(π₁, π̃₂)` when `n ≤ m`, and the one for `(π̃₂, π₁)` when
+  `m < n`. The translation only changes the order in which the pair is
+  written: in both conventions the larger-rank representation is the one in
+  its `ψ`-model (next item).
 - **ψ against ψ̄.** In the Library's pair relation the larger-rank candidate is
   in its `ψ`-Whittaker model and the test representation is in its `ψ̄`-model
   (`glInverseFunctionals`). In Shahidi's integral `Ψ` on page 103, the

@@ -1,6 +1,7 @@
 # Continuous Galois representations and the two polynomial conventions
 
-Author: Worker 41. This pair supplies definitions and their intrinsic construction
+Author: Worker 41. Documentation correction (Frobenius-lift status): Worker 282.
+This pair supplies definitions and their intrinsic construction
 proofs for compatible families. The automorphic existence theorems remain
 separate obligations.
 
@@ -46,13 +47,63 @@ of that choice is asserted here. `atFinitePlace` applies it to the actual
 number-field completion embedding. The two pullback polynomial formulas hold
 by construction, and continuity follows by composition.
 
-These definitions give polynomials for any actual Galois element. The paired
-`CompatibleFamily` module defines inertia and the geometric-lift condition,
-and proves lift independence under unramifiedness. Existence of these lifts
-is an arithmetic proof obligation.
+These definitions give polynomials for any actual Galois element. This
+module itself defines no Frobenius element and proves no lift existence. The
+paired `CompatibleFamily` module defines the actual inertia kernel and the
+condition `IsGeometricFrobeniusLift v g`: the inverse of `g` acts on the
+residue closure by the residue-cardinality power. That is the geometric,
+not the arithmetic, Frobenius direction. It proves lift independence under
+unramifiedness: if `IsUnramifiedAt A v`, then
+`eulerPolynomial (atFinitePlace v A)` takes the same value at any two such
+lifts.
+
+Existence of these lifts is proved in the separately published module
+`Langlands.Galois.FrobeniusLift`. That module imports `CompatibleFamily`, and
+through it this module; this module does not import it, so using its results
+requires importing `Langlands.Galois.FrobeniusLift`. For every number
+field `K` and every `v : Global.FinitePlace K`, its theorem
+`Langlands.GaloisRepresentation.exists_geometricFrobeniusLift v` proves
+`∃ g : LocalGroup v, IsGeometricFrobeniusLift v g`. Here `LocalGroup v` is
+`Field.absoluteGaloisGroup (Global.FiniteCompletion K v)`, the group acting
+in `atFinitePlace v A`. The same module defines
+`Langlands.GaloisRepresentation.geometricFrobeniusLift v` by classical choice
+from this existence proof. It is an arbitrary lift, not a canonical Galois
+element. `frobeniusEulerPolynomial A v` is
+`eulerPolynomial (atFinitePlace v A) (geometricFrobeniusLift v)`. It is
+defined for every representation, but independence of the chosen lift is
+proved only under `IsUnramifiedAt A v`. No lift independence is claimed for
+ramified representations.
+
+The global-to-local algebraic-closure choice enters only through
+restriction. `atFinitePlace` uses `pullback`, hence
+`Field.absoluteGaloisGroup.map`, which selects Mathlib's closure embedding
+`IsAlgClosed.lift`. The lift `geometricFrobeniusLift v` does not use that
+embedding. It is chosen in `LocalGroup v` using the action of that group on
+the residue field of the algebraic closure of the completion itself. The
+global embedding enters `frobeniusEulerPolynomial A v` only through
+`atFinitePlace v A`.
+
+This module proves no independence of the closure embedding. The separately
+published module `Langlands.Galois.ClosureRestriction`, which imports
+`CompatibleFamily` and is not imported here, proves it for representations.
+Let `ι` be any closure embedding of type
+`ClosureEmbedding (NumberField.FinitePlace.embedding v)`, that is, compatible
+with the completion embedding. Then `atFinitePlaceAlongClosureEquiv`
+constructs an actual intertwining equivalence from
+`atFinitePlaceAlongClosure v ι A` to `atFinitePlace v A`.
+`eulerPolynomial_atFinitePlaceAlongClosure_eq` gives equal Euler polynomials
+at every element of `LocalGroup v`. `isUnramifiedAt_iff_alongClosure` and
+`hasEulerPolynomialAt_iff_alongClosure` show that unramifiedness and
+existential Euler matching do not depend on `ι`. These results keep the same
+algebraic closure of the completion and the same residue-action model. The
+restriction homomorphisms for different embeddings are not asserted equal,
+and no canonical restriction homomorphism is constructed. Comparison between
+different residue-closure models is not claimed.
+
 Compatibility across coefficient places, finite exceptional sets, purity,
 weak automorphic association and ramified local compatibility remain distinct
-propositions. No compatible-family existence conclusion is assumed here.
+propositions. No compatible-family or automorphic existence conclusion is
+assumed here, and none follows from lift existence.
 
 ## Source and dependency boundary
 
@@ -66,8 +117,28 @@ The original pages were reread for this implementation.
 Literature ID: `harris-1998-local-langlands`; SHA256:
 `7934239ea37d0b91f741ae70c2ac157fe5d619cda4dd992ac24e39ae460c375b`.
 
-The reusable representation and adelic names were read in the current Library
-at commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`:
+For the Frobenius-lift status correction, Harris Section 1, printed
+pp.183–184 (PDF pp.7–8), was reread in this original. These pages use
+geometric Frobenius `Frob_v` without addressing existence of lifts. The
+inverse-power form of the geometric convention is Tate, *Number theoretic background*,
+Corvallis Part II (1979), Section 1.4.1, printed p.6 (retained `Part II.pdf`,
+PDF p.15). There inertia fixes the residue closure, and uniformizers
+correspond to the inverse of the cardinality-power Frobenius. This page was
+reread in the registered original `tate-1979-number-theoretic-background`,
+SHA256 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
+Neither source is the origin of the lift-existence proof. `FrobeniusLift`
+derives it from the Library's proved surjectivity of the spectral residue
+action and finite-field Frobenius. The cited names were read in Library
+commit `0c88a81463e8a4e1a52fe535b3aa7490adc9ab76`; `FrobeniusLift` was
+published at `e7e1cf75d8341a5fe60f25d4e6bb64d251921cbf` as accepted artifact
+`88845882-20e5-49d4-96ca-d282e661b114`. `ClosureRestriction` was published
+at `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` as accepted artifact
+`efa168c5-76b0-4d89-b7c3-bc21e1b9e077`; its own source attribution is in
+its paired Markdown.
+
+For the original submission, the reusable representation and adelic names
+were read in the Library at commit
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`:
 `Langlands.Weil.Representation.Basic` and `Langlands.Global.Adelic`.
 The complex-only predicates in `Langlands.Weil.Representation.Predicates`
 are not used for lambda-adic continuity. This pair adds the coefficient-field
@@ -80,7 +151,9 @@ Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 Native compilation and the exact Lake check of the paired compatible-family
 module succeeded with no diagnostics. These author checks do not constitute
-independent semantic review or publication.
+independent semantic review or publication. The Frobenius-lift status
+correction changes only this Markdown; the Lean module, its imports and its
+declarations are byte-identical.
 
 The exported construction names, all in `Langlands.GaloisRepresentation`, are:
 
