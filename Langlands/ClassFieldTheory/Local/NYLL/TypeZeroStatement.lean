@@ -16,4 +16,8 @@ abbrev FiniteAbelianReciprocityTypeZeroStatement : Prop :=
 abbrev FiniteAbelianNormTransferTypeZeroStatement : Prop :=
   Langlands.LocalClassField.FiniteAbelianNormTransfer.{0, 0, 0}
 
+/-- The host finite tower restriction proposition at field universes zero. -/
+abbrev FiniteAbelianRestrictionTypeZeroStatement : Prop :=
+  Langlands.LocalClassField.FiniteAbelianRestriction.{0, 0, 0}
+
 end Langlands.LocalClassField.NYLL

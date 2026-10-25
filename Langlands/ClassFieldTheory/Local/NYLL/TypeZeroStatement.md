@@ -1,6 +1,6 @@
 # Universe-zero finite reciprocity targets
 
-This module provides two transparent, closed `Prop` abbreviations in
+This module provides three transparent, closed `Prop` abbreviations in
 `Langlands.LocalClassField.NYLL`. It imports the existing
 [`FiniteReciprocityStatement`](../FiniteReciprocityStatement.lean) and changes
 only the universe arguments at which its propositions are instantiated.
@@ -9,6 +9,7 @@ only the universe arguments at which its propositions are instantiated.
 | --- | --- |
 | `FiniteAbelianReciprocityTypeZeroStatement` | `FiniteAbelianReciprocity.{0, 0}` |
 | `FiniteAbelianNormTransferTypeZeroStatement` | `FiniteAbelianNormTransfer.{0, 0, 0}` |
+| `FiniteAbelianRestrictionTypeZeroStatement` | `FiniteAbelianRestriction.{0, 0, 0}` |
 
 Each abbreviation has unapplied type `Prop`, no universe parameters, and no
 outer term parameters. Its value is the indicated host proposition, with every
@@ -44,9 +45,15 @@ followed by that Galois inclusion, corresponds to the
 `Module.finrank F.Carrier E.Carrier` power. Norm and scalar inclusion retain
 their distinct directions.
 
+The restriction target retains the tower hypotheses, arbitrary supplied `TF`,
+and quotient equivalences for `E/F` and `L/F` with their original norm
+subgroups. The equation uses `AlgEquiv.restrictNormalHom`; the intermediate
+abelian Galois instance is derived by the host's
+`IsAbelianGalois.tower_bot`, with no extra hypothesis.
+
 No abbreviation takes a reciprocity map, selected family, normalization
 certificate or comparison theorem as a premise. Each preserves the existential
-choices of its host proposition. The two propositions do not identify their
+choices of its host proposition. The three propositions do not identify their
 respective existential witnesses with each other, assert uniqueness, or assert
 simultaneous coherence over every tower.
 

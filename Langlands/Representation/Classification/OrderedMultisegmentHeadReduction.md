@@ -1,0 +1,9 @@
+# Rank-zero heads and conditional ordered-product assembly
+
+This internal algebraic support module proves the rank-zero case and gives conditional reductions of ordered-product head existence. It does not prove the unconditional positive-rank theorem. The conversion, equal-exponent grouping, and regular tempered head propositions remain explicit hypotheses.
+
+The rank-zero block index set is empty because each block has positive size. The ambient group GL(0) is trivial, so the actual parabolic subgroup is the full group and its normalized inducing action is trivial. Evaluation at identity, implemented by `Induction.smoothInducedTopEquiv`, identifies the actual smooth induction with the empty tensor. Mathlib's `PiTensorProduct.isEmptyEquiv` identifies that tensor with the complex numbers. The carrier therefore has only zero and full submodules, which proves irreducibility. Identity supplies a surjective head map; every surjective intertwiner to an irreducible target is injective by irreducibility of the source, so all such kernels are zero.
+
+For positive rank, the grouping premise supplies an actual isomorphism from a square-integrable product to a tempered standard module. The regular head premise supplies the latter's strong head. The published `IsIrreducibleHead.of_equiv` transports the full kernel-uniqueness relation. The conversion premise then supplies an actual isomorphism from the ordered segment product to a square-integrable product. Rank zero uses the unconditional result above.
+
+All constructions are derived from the named Library definitions and Mathlib algebra; no external mathematical theorem is asserted as proved here. The field and carrier universes remain independent, and the final heads retain the saturated carrier universe. This is a supporting reduction, not completion of the ordered multisegment head proof task.
