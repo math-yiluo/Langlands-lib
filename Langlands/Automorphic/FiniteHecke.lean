@@ -13,10 +13,10 @@ open MeasureTheory Langlands.Hecke
 
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
+local instance finiteHeckeRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
+local instance finiteHeckeContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
+local instance finiteHeckeSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
+local instance finiteHeckeFormsAddCommGroup : AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
 
 variable [MeasurableSpace (FiniteAdelicGL K n)] [BorelSpace (FiniteAdelicGL K n)]
 variable (μ : Measure (FiniteAdelicGL K n)) [μ.IsHaarMeasure]
@@ -98,7 +98,7 @@ theorem automorphicHeckeAction_nondegenerate (f : AutomorphicForms K n)
 
 variable (S : Subrepresentation (continuousRightAction K n))
 
-local instance : AddCommGroup (RestrictedAutomorphicForms K n S) := Submodule.addCommGroup _
+local instance finiteHeckeRestrictedFormsAddCommGroup : AddCommGroup (RestrictedAutomorphicForms K n S) := Submodule.addCommGroup _
 
 /-- Finite Hecke operators on an actual invariant restriction of the form space. -/
 def restrictedAutomorphicHeckeAction :

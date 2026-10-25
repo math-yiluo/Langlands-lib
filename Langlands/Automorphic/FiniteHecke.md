@@ -63,3 +63,14 @@ This supplies only the finite Hecke action. It does not construct the infinite
 Hecke algebra or a full (g,K) category, prove admissibility, construct irreducible
 automorphic subquotients or local components, or assert existence of a nonzero
 form. No such consequence is inferred from nondegeneracy of the operator action.
+
+The five local additive-group instances have explicit module-specific names:
+`finiteHeckeRationalAddCommGroup`, `finiteHeckeContinuousAddCommGroup`,
+`finiteHeckeSmoothAddCommGroup`, `finiteHeckeFormsAddCommGroup`, and
+`finiteHeckeRestrictedFormsAddCommGroup`. This implementation-only correction
+avoids generated declaration-name collisions with `OperatorCore` when
+`OperatorEquivalence` and `PresentedSpectralSystem` are imported together.
+The instances remain local and each retains its original type and
+`Submodule.addCommGroup _` body. All mathematical definitions, theorem statements,
+proof bodies, hypotheses, normalizations, and public mathematical names are
+unchanged.

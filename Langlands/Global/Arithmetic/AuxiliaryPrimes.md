@@ -1,0 +1,121 @@
+# Auxiliary primes for a Kummer extension of prime degree
+
+Author: Worker 226.
+
+Let `K` be a number field containing a primitive `p`-th root of unity, `p` prime, and let `S`
+be a finite set of finite places of `K` such that `p` is a unit at every finite place outside
+`S`. Let `α` be an `S`-unit that is not a `p`-th power in `K`. This module chooses a finite set
+`T` of finite places outside `S` with `|T| + 1 = |S| + |S_∞|`. At every place of `T`, `α` is a
+local `p`-th power, and the `S`-units realize every family of local units on `T` modulo local
+`p`-th powers. This is the set `S₂` of Artin–Tate, Chapter VI §3, in the proof of Lemma 3. The
+main theorem assumes the Library statement `CyclicNonsplitPrimeStatement` as an explicit
+hypothesis. Everything is in namespace `Langlands.Global.Arithmetic.AuxiliaryPrimes`.
+
+## Group theory
+
+`V` is a finite commutative group in which every element satisfies `v ^ p = 1`, with `p` prime.
+
+- `card_inf_ker_mul`: let `χ : V →* A` be a homomorphism into a finite group `A` with
+  `|A| ≤ p`, and let `W` be a subgroup of `V` that is not contained in `ker χ`. Then
+  `|W ⊓ ker χ| · p = |W|`. Proof: `W` is a `p`-group, so the image of `W` has order a power of
+  `p`. It is at most `p` and not `1`, so it is exactly `p`.
+- `exists_finset_inf_iInf_ker`: let `χ i : V →* A i` be a family of homomorphisms with
+  `|A i| ≤ p`, and let `α ∈ V`. Assume the separation property: for every subgroup `W`
+  containing `α` other than `⟨α⟩`, some `χ i` kills `α` and does not kill all of `W`. Then every
+  subgroup `W` containing `α` has a finite set `T` of indices with
+  `W ⊓ ⨅_{i ∈ T} ker (χ i) = ⟨α⟩` and `|⟨α⟩| · p ^ |T| ≤ |W|`. Proof: strong induction on `|W|`,
+  cutting `W` by one separating `χ i` at a time (`card_inf_ker_mul`).
+- `exists_finset_surjective`: if moreover `α ≠ 1` and `|V| = p ^ s`, then some finite `T`
+  satisfies `|T| + 1 = s` and `⨅_{i ∈ T} ker (χ i) = ⟨α⟩`, and the product map
+  `V → ∏_{i ∈ T} A i` is surjective. Proof: apply the previous result to `W = V`. The product
+  map has kernel `⟨α⟩` of order `p`, so its image has order `p ^ (s - 1)`. The codomain has
+  order at most `p ^ |T|`, and `p ^ (|T| + 1) ≤ p ^ s`. Hence `|T| + 1 = s`, and the image fills
+  the codomain.
+
+## Local characters
+
+`sUnits K S` is the group of `S`-units of the Library module
+`Langlands.Global.Arithmetic.SUnitIndex`. `localUnits q` is the subgroup `U_q` of valuation
+units of `K_qˣ` (Library module `Langlands.ClassField.Global.LocalUnitCohomology`), and
+`localUnitPowers q p` is its subgroup `U_q ^ p` of `p`-th powers (Library module
+`Langlands.ClassField.Global.LocalUnitPowers`).
+
+- `sUnitsToLocalUnits S q hq : sUnits K S →* localUnits q`, for a finite place `q ∉ S`, sends an
+  `S`-unit to its image in `K_q`. That image is a unit because its `q`-adic valuation is `1`
+  (Mathlib's `valuedAdicCompletion_eq_valuation'`). `coe_sUnitsToLocalUnits` computes the
+  value in `K_q`.
+- `sUnitsModPowers S p` is the quotient `U_S / U_S ^ p` of the `S`-units by their `p`-th powers.
+- `localChar S p q hq : U_S / U_S ^ p →* U_q / U_q ^ p` is the map induced by
+  `sUnitsToLocalUnits`. `localChar_mk` evaluates it on classes.
+- `card_localUnits_quotient_le`: if `p ≠ 0` and `p` is a unit in the valuation ring `O_q`, then
+  `|U_q / U_q ^ p| ≤ p`. This is the Library bound `index_localUnitPowers_le`
+  (`≤ p · |O_q / p O_q|`, module `LocalPowerIndex`) with `p O_q = O_q`.
+- `localChar_separates`: let `K'` be a number field over `K` and `Q` a finite place of `K'`
+  lying over `q ∉ S`. Assume `|U_q / U_q ^ p| ≤ p`. Let `α, β ∈ U_S` such that `α` is a `p`-th
+  power in `K'_Q` and `β` is not. Then `χ_q(α) = 1` and `χ_q(β) ≠ 1`. Proof: if `χ_q(x) = 1`,
+  then `x` is the `p`-th power of a unit of `K_q`, hence a `p`-th power in `K'_Q`. This gives
+  `χ_q(β) ≠ 1`. If `χ_q(α) ≠ 1`, then `χ_q(α)` has order `p` and generates `U_q / U_q ^ p`, so
+  `χ_q(β) = χ_q(α) ^ k` for some integer `k`. Then `β α^{-k} = c'^p` in `K'_Q`. With `c ^ p = α`
+  in `K'_Q`, this gives `β = (c' c^k) ^ p`, a contradiction.
+
+## The auxiliary primes
+
+- `exists_finset_under_mem`: for an extension `K'/K` of number fields, the finite places of
+  `K'` lying over a finite set `S` of finite places of `K` are contained in a finite set
+  (Mathlib's `IsDedekindDomain.primesOver_finite`).
+- `exists_eq_pow_mul_pow_of_radical`: let `K` contain a primitive `p`-th root of unity and let
+  `a ∈ K` not be a `p`-th power. If `b ∈ K` becomes a `p`-th power in
+  `K(a^{1/p}) = radicalExtension K p a`, then `b = a ^ k · c ^ p` with `k ∈ ℕ` and `c ∈ K`. This is
+  Kummer theory: the Library theorem `exists_eq_pow_mul_pow_of_eq_pow` of module
+  `Langlands.Global.Arithmetic.KummerRadical`, applied to the cyclic extension of degree `p`
+  given there by `isGalois_radicalExtension` and `finrank_radicalExtension`.
+- `mk_mem_zpowers_of_eq`: if `a, b` are `S`-units, `c ∈ K`, and `b = a ^ k · c ^ p`, then `c` is
+  an `S`-unit and the class of `b` in `U_S / U_S ^ p` lies in the subgroup generated by the
+  class of `a`.
+- `exists_auxiliaryPrimes hNS hζ S hpS α hαS hα` is the main theorem. Its hypotheses: `hNS` is
+  the Library statement `CyclicNonsplitPrimeStatement` (in universes `u, u`), `ζ ∈ K` is a
+  primitive `p`-th root of unity, `p` is a unit in `O_v` for every finite place `v ∉ S`, `α` is
+  an `S`-unit, and `α` is not a `p`-th power in `K`. It gives a finite set `T` of finite places
+  with:
+  - `T` disjoint from `S`;
+  - `|T| + 1 = |S| + Fintype.card (InfinitePlace K)`;
+  - `α` is a `p`-th power in `K_q` for every `q ∈ T`;
+  - for every family `u` of elements `u q ∈ K_qˣ` that are valuation units at the places
+    `q ∈ T`, there is an `S`-unit `e` with `u q = e · c_q ^ p` for some `c_q ∈ K_qˣ`, for every
+    `q ∈ T`.
+
+  Proof. Let `V = U_S / U_S ^ p`. It has order `p ^ (|S| + |S_∞|)` by the Library theorem
+  `index_pow_sUnits` (module `SUnitIndex`; this uses `ζ`). Every element of `V` satisfies
+  `v ^ p = 1`, and the class of `α` is not trivial. The characters are `χ_q = localChar` for
+  `q ∉ S`, and `|U_q / U_q ^ p| ≤ p` by `card_localUnits_quotient_le`. For the separation
+  property, let `W` contain `[α]` and differ from `⟨[α]⟩`, and pick `[β] ∈ W` outside
+  `⟨[α]⟩`. Put `K' = K(α^{1/p})`. By `exists_eq_pow_mul_pow_of_radical` and
+  `mk_mem_zpowers_of_eq`, `β` is not a `p`-th power in `K'`. So `L = K'(β^{1/p})` is cyclic of
+  degree `p` over `K'` (the Library's `radicalExtension`, `isGalois_radicalExtension`,
+  `finrank_radicalExtension`). Apply `hNS` to `L/K'` and to the finite set of places of `K'`
+  above `S`. This gives a finite place `Q` of `K'` lying over some `q ∉ S` and a place `w` of
+  `L` above `Q` with `[L_w : K'_Q] ≠ 1`. If `β` were a `p`-th power in `K'_Q`, then
+  `[L_w : K'_Q] = 1` by the Library's `finrank_adicCompletion_eq_one` (module `KummerRadical`).
+  So `β` is not a `p`-th power in `K'_Q`, while `α` is a `p`-th power already in `K'`. Hence
+  `localChar_separates` gives `χ_q(α) = 1` and `χ_q(β) ≠ 1`, so `W ⊄ ker χ_q`.
+  `exists_finset_surjective` now yields `T`. Its kernel property gives `χ_q(α) = 1` for all
+  `q ∈ T`, i.e. `α` is the `p`-th power of a local unit there. Its surjectivity gives an
+  `S`-unit `e` with `χ_q(e) = [u q]` for all `q ∈ T`, i.e. `u q = e · y_q ^ p` with `y_q ∈ U_q`.
+
+## Provenance
+
+Artin–Tate, *Class Field Theory*, Chapter VI §3, proof of Lemma 3 (printed pp. 26–27), take a
+set `S₁` of `s₁` primes containing the archimedean primes and the primes dividing `n` and `α`.
+They extend `α = α₁` to a basis `α₁, …, α_{s₁}` of `k_{S₁} / k_{S₁}^n`. Then, by Theorem 4 of
+Chapter V, they choose primes `q_i ∉ S₁` that remain prime in `k(α_i^{1/n})` and split
+completely in the other `k(α_j^{1/n})`. Their `S₂ = {q₂, …, q_{s₁}}` has `s₁ - 1` elements and
+the same two properties as `T` here: `α` is an `n`-th power at `S₂`, and the principal ideles
+`α₂, …, α_{s₁}` generate `∏_{q ∈ S₂} U_q / U_q^n`. Here `S` holds only the finite places, so
+`s₁ = |S| + |S_∞|`.
+
+The proof here differs from theirs. It does not use a basis or Theorem 4 of Chapter V.
+Separating primes are found one at a time. Each comes from the cyclic nonsplit-prime
+statement (the cyclic case of Artin–Tate V §4, Theorem 2, stated in the Library as
+`CyclicNonsplitPrimeStatement`), applied to `K(α^{1/p})(β^{1/p}) / K(α^{1/p})`. The
+`F_p`-linear choice of `T` is replaced by the induction of `exists_finset_inf_iInf_ker`. These
+group-theoretic lemmas, the local characters and the Lean proofs are internal.
