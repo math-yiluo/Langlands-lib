@@ -32,7 +32,8 @@ private lemma tensorSheafifyUnit_eq_forgetComparison (M N : X.Modules) :
   rw [forgetTensorComparison, Category.assoc, ← SheafOfModules.comp_val,
     Iso.inv_hom_id, SheafOfModules.id_val, Category.comp_id]
 
-private lemma localizedTensorIso_associativity (M N P : X.Modules) :
+/-- The localized tensor comparison intertwines the two fixed associators. -/
+lemma localizedTensorIso_associativity (M N P : X.Modules) :
     ((localizedTensorIso X M N).hom ⊗ₘ 𝟙 P) ≫
         (localizedTensorIso X (tensorObj M N) P).hom ≫ (tensorAssociator M N P).hom =
       (α_ M N P).hom ≫ (𝟙 M ⊗ₘ (localizedTensorIso X N P).hom) ≫

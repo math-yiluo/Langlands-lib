@@ -38,7 +38,8 @@ induced forgetful tensor comparison `μ` by definitional equality:
 
 Cancelling the comparison isomorphism gives
 `e(M,N) = μ(M,N) ≫ U.map d(M,N).hom`. Unfolding the fixed definition of `A`
-gives `localizedTensorIso_associativity`. Naturality and associativity of the
+gives the public lemma `localizedTensorIso_associativity`, also reused by
+`PullbackTensorAssociativityProofs`. Naturality and associativity of the
 derived lax comparison `μ` then prove `tensorSheafifyUnit_associator`:
 
 ```text
@@ -86,7 +87,8 @@ Its mathematical inputs are the existing `Tensor`, `PullbackTensor`,
 `TensorMonoidal`, and `TensorCoherenceMaps` constructions, imported through
 the statement module, together with Mathlib's monoidal-adjunction coherence
 and module tensor extensionality. It introduces no new literature assertion.
-All helper lemmas and the auxiliary lax instance are private or local.
+The associator comparison `localizedTensorIso_associativity` is public; all
+other helper lemmas and the auxiliary lax instance are private or local.
 
 The theorem assumes no monoidal structure on pullback or pushforward, no
 invertibility of their canonical tensor comparisons, and no geometric
