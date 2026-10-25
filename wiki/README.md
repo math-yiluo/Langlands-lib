@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Anthropic Chebotarev: realization and canonical completion audit](../notes/reuse/anthropic-chebotarev-audit.md) — Complete source closure, private universe-general realization and completion bridges, exact machine evidence, and dependency-ordered port obligations.
+
 - [Anthropic Brauer trace induction: audit and character-lattice bridge](../notes/reuse/anthropic-brauer-audit.md) — Exact source closure, compatibility and axiom evidence, universe transport feasibility, and the separate actual-induction and faithfulness obligations.
 
 - [Anthropic abelian Hasse–Arf: actual p-adic ramification audit](../notes/reuse/anthropic-hasse-arf-audit.md) — Complete source reading, two-edit feasibility, an actual-ring adapter experiment, exact evidence, and focused port obligations.
