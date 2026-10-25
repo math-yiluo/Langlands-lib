@@ -1,0 +1,9 @@
+# Galois transport of actual cocharacter weight ranks
+
+`ComplexCocharacterGaloisWeightRanks` is a proposition with three conjuncts, retaining the complete central-simple unitary datum, signature charts and CM section. For every rational algebra automorphism `s` of the complex numbers and every CM embedding `i`, it asserts that the inverse-weight rank of a transported cocharacter at `s ∘ i` equals the original rank at `i`. The first conjunct uses the direct rational-to-complex base change and `transportCocharacter`; the second uses the iterated rational-to-real-to-complex model and `galoisCocharacter`. The third specializes the second to the first-factor Kottwitz cocharacter and gives the original `realHodgeFunction C i`.
+
+These are ranks of actual submodules of `Fin n → ℂ`, obtained by evaluating actual scheme cocharacters and taking their existing embedding matrix coordinates. They are not assigned numerical labels. The inverse-weight convention is the condition that evaluation at a unit `u` acts on a vector through `u⁻¹`; it agrees with the existing Kottwitz normalization. There is no continuity assumption on `s`.
+
+This is an internal comparison target for the Harris geometry construction. Its intended derivation uses the published formula for Galois transport of point matrices: inverse transport of the unit parameter, entrywise coefficient transport, and the complex-linear chart comparison. Innerness of that matrix algebra automorphism and semilinear invariance of inverse-weight ranks supply the first conjunct; the canonical comparison of the two complex models and the established Kottwitz Hodge-rank formula supply the others.
+
+The file defines the proposition and supplies no proof of it. The statement does not assert conjugacy of cocharacters from equality of ranks, identify a reflex field, or construct PEL moduli.
