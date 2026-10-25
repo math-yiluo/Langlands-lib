@@ -5,30 +5,35 @@ Opposite-induction documentation contributed by Worker 264.
 Maximal-cone defect and map-direction reports contributed by Worker 23.
 Exhaustion consumer and proof-route status contributed by Worker 126.
 Tempered-support proof decomposition contributed by Worker 387.
+Dominance correction contributed by Worker 436.
+Prerequisite and proof-route updates contributed by Workers 373, 430, 435 and 388.
 Coverage updated on 25 October 2026 against Library commit
-`123284c0f07314aa4544e028a94932bf9eb256af`. The relative generic, regular,
+`23456098808e122c63dfcb62b745ec37af306be6`. The relative generic, regular,
 recovery and cosocle statements are published, with separate exact proof tasks.
 The conjugate-induction and general cosocle constructions are published.
 The semistandard statement is independently accepted and published, with an
-exact proof successor. A reported defect in the published
-maximal-cone selection statement is under focused correction; the historical
-publication must not be treated as resolving that defect. The reviewed scope
-audit of S78 Lemma 5.3 remains applicable.
+exact proof successor. The maximal-cone selection statement now has an
+independently accepted and published dominance correction. Its exact proof
+task has been revised to the corrected target; no proof of that target is
+claimed. The reviewed scope audit of S78 Lemma 5.3 remains applicable.
 Exact publication receipts appear below. Declaration names refer to this
 Library tree; receipts identify earlier commits where contributions entered
 it. Review approval alone does not make an unpublished candidate a Library
 dependency.
 
-An exact archive audit of the 33 published primary pairs cited here, including
-the general cosocle construction, checked each contribution's own record and
-publication ID. All 33 Lean files match their frozen hashes at the pinned
-commit. Four paired Markdown files have later published documentation changes:
-`TemperedExponentStatement` corrects the Waldspurger I.4.1 page to 245;
-`DiscreteSeriesJacquetStatement` and `TemperedInductionStatement` link the
-published support family; `RelativeCosocleMultiplicityStatement` links the
-proved general cosocle construction. The remaining 29 Markdown files match
-their frozen hashes. These checks establish file identity and documented
-changes, not the truth of unproved proposition definitions.
+An exact archive audit of the 42 current published primary pairs cited here,
+including the general cosocle construction, checked each contribution's own
+record, actual published version and publication ID. All 42 Lean files match
+their frozen hashes at the pinned commit. The superseded maximal-cone pair
+is recorded separately and is not counted as current. Four paired Markdown
+files have later published documentation changes: `TemperedExponentStatement`
+corrects the Waldspurger I.4.1 page to 245; `DiscreteSeriesJacquetStatement`
+and `TemperedInductionStatement` link the published support family;
+`RelativeCosocleMultiplicityStatement` links the proved general cosocle
+construction. The remaining 38 Markdown files match their frozen hashes.
+Every audited current file also matches the workspace copy. These checks
+establish file identity and documented changes, not the truth of unproved
+proposition definitions.
 
 This note maps the original theorems behind Silberger's Langlands quotient
 theorem for `GL_n` to the Lean proposition definitions that state them, and
@@ -167,7 +172,7 @@ the family yet. It is not a placeholder assertion.
 | **Weak-critical predicates and support refinement.** S79 §0.3, pp.5–6, and the paragraph before Cor. 4.5.11 through Cor. 4.5.12(3), pp.189–190. | Published constructions: `Exponents.ConjugateBlockPair` and its actual scalar restriction in `Langlands.Representation.Exponents.ParabolicPair`, and `PadicField.TopologicalData.IsWeaklyCriticalDualJacquetExponent`, `IsWeaklyCriticalDualJacquetPair`, `IsWeaklyMinimalDualJacquetPair` in `Langlands.Representation.Exponents.WeakCritical`. Weak criticality requires an occurring unitary exponent and tests strict uniform-index decrease over every proper finer concrete conjugate pair and every extending unitary exponent. Minimality is separately defined; its intrinsic implication to criticality is proved. The converse and prescribed discrete-series support are published proposition definitions in `GLWeaklyCriticalTemperedRefinementStatement`, described below; their proofs remain open. |
 | **Multiplicity comparison.** S78 Prop. 5.1, p.99, Lemmas 5.2–5.6, pp.99–101: generic parameters first, then every regular positive one. | The unique-head conclusion of Prop. 5.1 is included in the published regular family below. Lemma 5.2's type-A genericity is now stated as `GLRelativeGenericParameterStatement` in `Langlands.Representation.Classification.RelativeGenericityStatement`: for nested standard block partitions and every real fine-block vector `v₀`, the actual regular coarse parameters whose fine-Weyl stabilizers of `v₀ − t` lie in the coarse Levi Weyl group form an open dense set. This linear-algebraic specialization imposes no representation hypotheses. The representation-theoretic generic family is published as `GLRelativeGenericComparisonStatement` in `Langlands.Representation.Classification.RelativeJacquetMultiplicityStatement`: actual inner constituents have equal inner/ambient opposite-Jacquet multiplicities, with positivity equivalent to an inner quotient, and actual generic inner quotients induce representations with kernel-unique irreducible heads. The [reviewed scope audit](silberger-lemma53-scope.md) gives a GL₂ obstruction to unrestricted Lemma 5.3; this derived target keeps the constituent restriction and documents why its generic summation argument permits arbitrary fine real vectors. `GLRelativeRegularComparisonStatement` in `Langlands.Representation.Classification.RelativeRegularComparisonStatement` is also published: the p.99 positive-root and intermediate discrete-series support data give positive equal multiplicities and a strong head for every strictly decreasing coarse parameter. The continuation and tempered-exponent cone argument remain proof obligations. |
 | **Recovery of inducing data.** S78 Props. 5.7–5.9, pp.101–102, Prop. 6.1 and Cor. 6.2, pp.102–103. | Published: `GLRegularLanglandsDataUniquenessStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement` states the ordered block form of Prop. 6.1: isomorphic arbitrary irreducible quotients recover the order, ranks, real exponents and tempered blocks after rank transport. The published `GLRegularLanglandsTensorRecoveryStatement` in `Langlands.Representation.Classification.RegularLanglandsTensorRecoveryStatement` isolates the fixed-shape, fixed-exponent consequence: isomorphic arbitrary irreducible quotients recover equivalence of the actual untwisted tensors of irreducible analytically tempered blocks. It is derived from Prop. 6.1, whose concluding route uses Prop. 5.8 and then Prop. 5.7; it is not unrestricted Prop. 5.7. Published: `GLRelativeRecoveryStatement` in `Langlands.Representation.Classification.RelativeRecoveryStatement` conjoins supported recovery (Prop. 5.7, whose competing inner quotient need not be tempered) and arbitrary-tempered quotient reflection (Prop. 5.8, with no support premise on the coarse input). Both use actual outer quotient maps. `GLRelativeCosocleMultiplicityStatement` is published; its exact receipt, proof task and actual head carriers are detailed below. Semistandard conjugacy (Cor. 6.2) is independently published as `GLSemistandardLanglandsConjugacyStatement` in `Langlands.Representation.Classification.SemistandardLanglandsStatement`; its publication receipt and exact proof successor are recorded below. |
-| **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The representation-level intermediate `GLMaximalConeJacquetQuotientStatement` in `Langlands.Representation.Classification.MaximalConeStatement` was published as contribution `548a0480-4a37-4eef-ab27-086c3e403491`, but its maximum-block-count clause is now disputed by a reported GL₄ counterexample. Correction task `2bfba492-cf09-422a-b730-c2eda55ae7d4` must verify the obstruction and repair the selection order and documented map direction. No corrected statement or proof is published in this pinned tree. The final exhaustion target is unchanged; its current proof route is independent of this intermediate. |
+| **Exhaustion.** S78 Prop. 7.2, pp.103–104. | Published: `GLRegularLanglandsExhaustionStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`: every irreducible admissible smooth positive-rank `GL_n` representation is the head of a regular tempered standard module. The intermediate `GLMaximalConeJacquetQuotientStatement` in `Langlands.Representation.Classification.MaximalConeStatement` now uses dominance of positive parts instead of the false maximum-block-count clause. Corrected contribution `e269c29d-c269-4f1b-b72d-bdbaa19615c4` version 2 is independently accepted and published; it supersedes the historical `548a0480-4a37-4eef-ab27-086c3e403491` pair. Exact proof task `b291a31b-9606-4ffc-b9d8-ce62346cfa09` revision 2 preserves the unrestricted competitor class and whole opposite-Jacquet quotient conclusion. The final exhaustion target is unchanged, and its separate proof route remains independent of this intermediate. |
 | **Regular-chamber quotient theorem.** S78 Thm 4.1(1)–(3), p.99, proof §§5–7. | Published: `GLRegularLanglandsQuotientStatement` in `Langlands.Representation.Classification.RegularLanglandsStatement`, the conjunction of unique-head existence, ordered inducing-data uniqueness and exhaustion. The actual upper standard module uses irreducible analytically tempered blocks with strictly decreasing real determinant exponents. All central twists are allowed; one-block regularity is vacuous. Head existence and equality of irreducible quotient kernels are conclusions, not datum fields. |
 
 The two exponent-criterion pairs were independently accepted and published in
@@ -311,67 +316,65 @@ The empty rank-zero shape is included. These intrinsic laws supply the
 negative real twist used by the maximal-cone target, not its temperedness
 conclusion.
 
-The maximal-cone statement contribution `548a0480-4a37-4eef-ab27-086c3e403491`
-version 1 has terminal machine acceptance `e0b9b5fc-214f-4178-a5d2-94edbd031671`
-and unqualified independent Reviewer 1655 approval in review
-`7268291c-6ef3-4b52-9961-ccb858f81cfc`. It is published at Library
+### Published dominance correction and remaining proof boundary
+
+The historical maximal-cone contribution
+`548a0480-4a37-4eef-ab27-086c3e403491` version 1 was published at
 `2da3640f8f3978d2ba6ce703d6c26cf1941ba234`, with integration receipt
-`84bbaaa905d74daeae75494e72aabdbf`. Its published pair matches the independently
-reviewed hashes. Exact recovery check `e11eb0d2-b670-4d0b-9274-3776b02a1898`
-returned zero diagnostics and confirmed a Prop-valued definition with independent
-`uF` and `uV`. Its separate exact proof task is
-`b291a31b-9606-4ffc-b9d8-ce62346cfa09`; that task excludes circular use of final
-Langlands exhaustion. These receipts establish historical publication of the
-statement, not a proof of its assertion or resolution of the newly reported
-defect. That proof task is blocked on the correction described below.
+`84bbaaa905d74daeae75494e72aabdbf`. Its maximum-block-count clause is
+superseded. The current pair is Worker 436's corrected contribution
+`e269c29d-c269-4f1b-b72d-bdbaa19615c4` version 2, independently approved by
+Reviewer 2363 in `bf33a851-8817-42d8-8457-14005f7c1b67` and published at
+`3e255196ad168b37f73124db5bdb4d6a5168a4da`, integration
+`dbf53a4a60854cfa93d740dbecf607f0`. Both corrected files match the frozen
+reviewed hashes in the pinned Library. The
+[corrected paired explanation](../../Langlands/Representation/Classification/MaximalConeStatement.md)
+records the source argument and independently checked obstruction.
 
-The maximality compares the selected coarsened block count with every numerical
-cone coarsening of every actual dual exponent, without assuming a quotient or
-temperedness for competitors. Character restriction is pointwise composition
-with the consecutive grouping map. The selected representation is a quotient
-of the whole normalized opposite Jacquet module, and removing its determinant
-exponents gives `IsTemperedModCenter` for every Borel Haar measure on the full
-Levi central quotient. The published Haar-existence construction makes this
-quantification nonvacuous. The assertion includes arbitrary ambient real central
-twists. This is a description of the currently published formula, whose
-conjunction is now disputed. Its intended source was the selection argument
-in S78 Proposition 7.2, pp.103–104; the original final inequality on p.104
-is `≤ 1`. The one-way
-weak-coefficient-to-integrability bridge uses S79 Theorem 4.5.1 and definition,
-pp.183–184, Lemma 4.5.3, pp.185–186, and W03 I.1(5), p.241, II.1.1, p.251, and
-III.2/III.2.2, pp.265–266. This is derived source correspondence, not a proof.
+`GLBlockPositivePartStrictlyDominates C₁ t₁ C₂ t₂` compares the rank-length
+vectors obtained by repeating each determinant exponent by its block size.
+It requires equal totals, every prefix sum for the first vector at least the
+second, and one strictly larger prefix. The selected positive part has no
+strictly dominating competitor. Competitors still range over every actual
+dual exponent on every standard shape, every real part and every numerical
+cone coarsening; no quotient or temperedness premise is added to them.
+Character restriction remains pointwise composition with the consecutive
+grouping map. The conclusion retains an irreducible admissible quotient of
+the **whole** normalized opposite Jacquet module. Its negative determinant
+twist is analytically tempered for every Borel Haar measure on the full Levi
+central quotient. Arbitrary ambient central twists and independent `uF` and
+`uV` remain in scope.
 
-### Reported maximal-cone defect and correction boundary
+Worker 23's obstruction uses `A = 1_GL₂ × 1_GL₂`. The opposite Borel
+scalar exponent vectors in the correction are
+`(1/2,-1/2,1/2,-1/2)` and `(1/2,1/2,-1/2,-1/2)`.
+Worker 19's own check was limited to exact rational enumeration of the
+numerical cone clauses on those vectors: maximum block count selects
+`C=(1,2,1)`, `t=(1/2,0,-1/2)`, with polygon
+`(0,1/2,1/2,1/2,0)`, strictly dominated by the polygon
+`(0,1/2,1,1/2,0)` of `C=(2,2)`, `t=(1/2,-1/2)`.
+Worker 436 supplied the representation-theoretic verification, and Reviewer
+2363 independently checked it before accepting the correction. Worker 19
+does not claim a separate original-source verification of that part.
 
-Worker 23 reports that `A = 1_GL₂ × 1_GL₂` gives a counterexample to the
-maximum-block-count selection. The reported opposite Borel scalar exponent
-vectors are `(1/2,-1/2,1/2,-1/2)` and `(1/2,1/2,-1/2,-1/2)`.
-Worker 19 independently enumerated the five numerical cone clauses over all
-eight ordered block shapes, using these reported vectors and exact rational
-arithmetic. The maximum block count is three, attained only by
-`C=(1,2,1)`, `t=(1/2,0,-1/2)`. Its cumulative polygon is
-`(0,1/2,1/2,1/2,0)`, whereas the competing `C=(2,2)`, `t=(1/2,-1/2)`
-has polygon `(0,1/2,1,1/2,0)` and strictly dominates it.
+The corrected Markdown derives full-spectrum selection and extraction of a
+whole-module quotient using the annihilator of the Levi orbit of a dual
+eigenfunctional. It identifies these as extensions of K03's narrower
+subrepresentation route. First adjointness turns the whole opposite-Jacquet
+quotient into an embedding in opposite normalized induction. A strong head
+of upper normalized induction still needs a correctly oriented separate
+bridge; K03 p.396 instead uses a subrepresentation followed by duality.
+Finer Jacquet exactness, transitivity, the dominance argument and the analytic
+temperedness bridge remain Lean proof obligations. The latter uses S79
+Theorem 4.5.1 and definition, pp.183–184, Lemma 4.5.3, pp.185–186, and W03
+I.1(5), p.241, II.1.1, p.251, and III.2/III.2.2, pp.265–266.
 
-This calculation verifies the numerical consequence of the reported exponent
-list. It does **not** independently verify the representation's irreducibility,
-that list's occurrence and completeness, or the reported Hom-space vanishing
-that excludes a tempered whole-Jacquet quotient at the length-maximal choice.
-Those representation-theoretic checks remain with focused correction task
-`2bfba492-cf09-422a-b730-c2eda55ae7d4`, revision 1. The task requires a
-source-supported dominance-maximal selection and an independently reviewed
-Lean/Markdown replacement; neither is yet published.
-
-The correction must also distinguish the actual map directions. The current
-statement requests a quotient of the whole opposite Jacquet module. First
-adjointness connects that quotient to an embedding into opposite normalized
-induction. A surjection from upper normalized induction requires another
-bridge. K03 p.396 instead selects a subrepresentation and invokes duality
-before Frobenius reciprocity. Worker 23 proposes retaining the whole-module
-quotient by using the annihilator of the Levi orbit of a dual eigenfunctional,
-then an irreducible quotient with scalar character; finer Jacquet right
-exactness and transitivity would support the dominance argument. This is a
-reported proof route requiring verification, not an available Lean proof.
+Exact proof task `b291a31b-9606-4ffc-b9d8-ce62346cfa09` was revised to
+revision 2, contract hash
+`b27bac865dc5e915de491c10d8ec9e501a626f8cbeb78fb1bf42ae92cabe306f`.
+It names the unchanged declaration with its corrected semantics and excludes
+circular use of final Langlands exhaustion. This is a proof obligation,
+not a proof publication.
 
 Regular exhaustion task `bf433f0a-921a-428c-b0c0-6475438125ac` currently
 uses square-integrable exhaustion and equal-exponent grouping, independently
@@ -380,6 +383,75 @@ owner reports that the alternate Jacquet route needs regular exponents, the
 whole-module quotient, scalar character and analytic temperedness, but no
 maximality conclusion. The correction does not establish those separate
 exhaustion prerequisites or their proofs.
+
+## Additional published prerequisites and scoped successors
+
+The following statement contributions are independently accepted and published,
+all at version 1. They are prerequisites with separate exact proof tasks, not
+proofs of the relative comparison or recovery families. Module links give the
+full scope and provenance; the table records the contribution, its publication
+commit and integration receipt, and the task that retains the proof obligation.
+
+| Declaration and scope | Contribution; publication commit; integration | Exact proof task |
+| --- | --- | --- |
+| [`GLOppositeProductReversalStatement`](../../Langlands/Representation/Induction/OppositeProductReversalStatement.md): actual opposite induction of a smooth block tensor is equivalent to upper induction of the reversed tensor, with both function maps specified; includes rank zero and reducible inputs. | `d2134d24-a6bc-4475-832c-95cd6779d176`; `ec55903e24f28e3dc27f6ba202ff0af22883c525`; `c9e8bf94a63e4e0d9763d9131c5773eb` | `217bc764-94f7-4775-8b6c-eb96939cf3ba` |
+| [`Classification.HeadQuotientCriterionStatement`](../../Langlands/Representation/Classification/HeadQuotientCriterionStatement.md): a strong head is equivalent to existence of an irreducible quotient and absence of a quotient onto a product of two irreducibles, including repeated factors. It imposes no topology or finite-length premise. | `91a140ca-3ee2-437d-bda4-53e494e39cb4`; `ec55903e24f28e3dc27f6ba202ff0af22883c525`; `c41515a066904e0eb871905b0f7a583e` | `751de03d-f147-4248-a488-f675241a3088` |
+| [`CentralOperatorExpansionStatement`](../../Langlands/Representation/Smooth/CentralOperatorExpansionStatement.md): admissibility and finite generation give a uniform finite expansion of actual central action operators by continuous functions with finite-dimensional translate spans. Those functions need not be characters. | `99d1093e-4605-4faf-876b-1cc3b05b8f70`; `e9ecbfeda9579d84259f3a6c2f76fe0354602b13`; `8c99b9da3c5e432181c649eae2157792` | `4b2d5db7-1c47-477d-964f-d041f88f7724` |
+| [`Parabolic.FlattenedJacquetQuotientStatement`](../../Langlands/Representation/Parabolic/FlattenedJacquetQuotientStatement.md): the prescribed upper flattened-to-iterated Jacquet linear quotient is equivariant and surjective with the actual normalized actions, in all ranks and without smoothness assumptions. It asserts no injectivity or full transitivity. | `75ad2e76-8a9c-4d34-a6a7-050297b34a3e`; `84f5d5a32df09643d499627f7ca72504805d3365`; `18fa15b206b74fc49786f75c82cfd686` | `f03acd6a-d6f4-4447-af56-abe8c49d3a57` |
+| [`GLDiscreteSeriesPositiveRootSupportStatement`](../../Langlands/Representation/Classification/DiscreteSeriesPositiveRootSupportStatement.md): arbitrary irreducible analytic discrete-series product-Levi input has unitary cuspidal fine support with a strictly positive scalar-root expansion and an actual upper refined-induction surjection. It assumes no tensor presentation or support certificate. | `a55672be-aab1-4713-a6f4-05fa49027d14`; `cc52f4db904e440c7ced6e759968a1c216438809`; `834c789586654c09b07daa957614032a` | `9af5b508-2ac3-4243-8c36-2d40f55ab5bc` |
+| [`Parabolic.NormalizedRefinedOppositeJacquetExactnessStatement`](../../Langlands/Representation/Parabolic/OppositeRefinementExactnessStatement.md): injection preservation into a smooth middle representation, algebraic right exactness, and the binary-product equivalence sending `[(u,v)]` to `([u],[v])`, with four independent universes and all ranks. | `dc28cdfc-4fa1-40a9-837c-7e46c1bbd2f4`; `3e255196ad168b37f73124db5bdb4d6a5168a4da`; `839a760200714381a2e991bb1c9414b0` | `861ba1ec-4ca0-4821-9950-f199dae43989`, revision 2 |
+| [`GLTemperedJointSupportStatement`](../../Langlands/Representation/Classification/TemperedJointSupportStatement.md): arbitrary irreducible analytically tempered product-Levi input has compatible fine cuspidal and middle discrete-series support, a positive scalar-root expansion, literal flatten equality and three actual upper-induction surjections. Support is a conclusion. | `a9cce766-40f7-44a6-af81-e86982ef9733`; `3e255196ad168b37f73124db5bdb4d6a5168a4da`; `c5112c1188af4c0b8bea6dfe0b90bf73` | `a05d7ed9-95c6-49ed-a77d-a164c0bf4004` |
+
+The last two statements were independently approved by Reviewers 2354 and
+2368. The joint-support successor retains independent field and input-carrier
+universes, with existential support carriers in `Type (max uF uV)`. It must
+reuse the fine-support, tempered opposite-support and analytic induction
+branches; it does not permit downstream classification as an assumption.
+
+Exactness proof candidate `7e36c88e-4868-4f6b-bac3-bc65e52987a8`, submitted
+under recovery task `9f88af41-d438-475e-ae54-6ef33bcfb8ed`, has passed the
+Lake build and exact-target checks and independent Reviewer 2404 approval.
+The fresh fetch for this update still reports it staged and nonpublic, with
+no integration receipt. It is therefore not counted as a published proof
+in this note. The focused successor's revision 2 explicitly requires reuse
+and reconciliation of that candidate, avoiding a duplicate implementation.
+It supplies no multiplicity, transitivity or recovery conclusion.
+
+Two further prerequisites are already proved or constructed and published at
+`cc52f4db904e440c7ced6e759968a1c216438809`:
+
+- [`jordanHolderMultiplicityIndependence`](../../Langlands/Representation/Filtration/MultiplicityIndependenceProof.md), contribution `619455f4-776b-4180-b24c-4bafaab18ff2` version 1, integration `a6878811a90d4d729678c561aad828ed`, independently approved by Reviewer 2335. It proves independence of factor counts for supplied composition series and uniqueness of multiplicity. It does not construct a series or prove additivity or recovery.
+- [`CuspidalSupport.leviCuspidalConstituentMaps`](../../Langlands/Representation/CuspidalSupport/ConstituentUniverse.md), contribution `245716a0-d474-4f96-9217-a7b893069e93` version 1, integration `ddcaa6f926dc45ee9e7e1ac2a4c7b4a5`, independently approved by Reviewer 2348. It produces actual embedding and quotient maps across independent carrier universes from occurrence as a quotient of an invariant subspace. The ambient representation is arbitrary admissible input; only the irreducible constituent is cuspidal. It assumes no fixed central character and asserts no splitting, Jacquet multiplicity, reciprocity or head theorem.
+
+The strict exponent criterion has exact proof successor
+`e33b2583-948a-4355-a590-07eaa029a02d`, revision 1, targeting
+`GLSquareIntegrableExponentCriterionStatement` without restricting to
+irreducible representations. It retains the arbitrary nontrivial admissible
+carrier, supplied scalar character, separate unitarity condition, strict
+chamber bound off compact and central directions, independent universes and
+all Haar measures. The local-invariance and analytic asymptotic bridges
+remain proof obligations independent of downstream classification.
+
+The following contracts retain narrower missing interfaces; recording them
+is planning evidence, not publication of mathematics. Task
+`3f10e4b5-2aee-4624-9639-37bc6e884e78` revision 2 requests admissibility,
+finite length and an actual composition series for normalized refined
+induction of arbitrary irreducible cuspidal fine-Levi input. Task
+`0931c7d4-8817-4f7d-8bb3-19ff4c34b240` requests evaluation-at-identity
+surjectivity and nontriviality for smooth refined-induction input, with no
+admissibility, irreducibility or cuspidality premise. Both retain all ranks
+and independent universes, and require exact proof successors after statement
+publication. Neither is a replacement for the generic multiplicity comparison.
+
+For the summand route, task `59a20dd0-6b32-44b6-a840-fce0e02b716e` requests
+the same-sigma opposite-to-upper discrete-series induction interface: an
+irreducible tempered representation embedding in opposite induction from a
+given discrete-series `σ` yields opposite induced semisimplicity and an
+embedding in upper induction from that **same** `σ`. Upper semisimplicity
+remains in task `fb462a13-96b1-4ac1-a47d-4fd7510d0ac4`. Conjugation that
+transports `σ` and adjunctions with another map direction do not establish
+this interface. Its source-backed proof must avoid assuming the parent
+summand or classification theorem; no full induction isomorphism is required.
 
 ## Relative comparison and recovery publications
 
@@ -708,8 +780,8 @@ Relative transitivity and the proofs of constituent-restricted generic
 comparison, supported all-regular comparison, detailed recovery and cosocle
 multiplicity remain separate obligations. The four published relative
 families and their exact proof tasks are recorded above. The maximal-cone
-correction remains unresolved; the corrected selection proof and final
-regular-head exhaustion proof are distinct.
+statement correction is published; its selection proof and the final
+regular-head exhaustion proof remain distinct obligations.
 
 The grouping of equal exponents into tempered blocks is now stated by
 `Langlands.Classification.SquareIntegrableEqualExponentGrouping F T` in
