@@ -15,13 +15,18 @@ registered file is a scan without a text layer. Page numbers below are
 printed pages; printed page `p` is PDF page `p − 65`.
 
 Every module below is in `Langlands/Representation/Shahidi/` unless another
-path is given, and its paired Markdown gives exact locators and interpretive
-choices. The eight-character IDs are prefixes of the accepted candidate IDs;
-"Source records" below gives the full IDs. Every declaration named here is
-in Library commit `40a7d025f604f74140054607638d2af422b581ce`. Statements are
+path (relative to `Langlands/`) is given, and its paired Markdown gives exact
+locators and interpretive choices. The eight-character IDs are prefixes of
+the accepted candidate IDs; "Source records" below gives the full IDs. Every
+declaration named here is in Library commit
+`ec55903e24f28e3dc27f6ba202ff0af22883c525`. Statements are
 proposition definitions (`def … : Prop`). Publishing a statement accepts its
 formulation, not its truth, and no statement is an axiom or a structure
 field.
+
+Items 1–5 below describe the p-adic formalization. "General non-archimedean
+local fields" describes the parallel statements over every non-archimedean
+local field, including positive characteristic.
 
 ## Item 1: the induced representations
 
@@ -161,35 +166,110 @@ a measurable structure where integrals occur. These layers are `source` and
 `target` (`Induction`), `intertwiningInduced` (`IntertwiningInduced`),
 `IsSourceJacquetFunctional` and `IsTargetJacquetFunctional`
 (`JacquetInduced`) and the function-level relation `IsLocalCoefficient`
-(`LocalCoefficient`). The following are stated for p-adic fields
+(`LocalCoefficient`). Items 1–5 above are stated for p-adic fields
 (`PadicField p`, finite extensions of `ℚ_p`): the p-adic layers, the
 statements of `IntertwiningStatements` and `JacquetStatements`, the relation
-`IsShahidiLocalCoefficient`, and Theorem 5.1. The p-adic setting is that of
-the published gamma relations `IsPadicPairGammaFactor` and
-`IsPadicSymmetricGammaFactor`.
+`IsShahidiLocalCoefficient`, and `LocalCoefficientGammaStatement`. The
+p-adic setting is that of the published gamma relations
+`IsPadicPairGammaFactor` and `IsPadicSymmetricGammaFactor`.
 
-Worker 99 has published statements over an arbitrary non-archimedean local
-field, including positive characteristic: `GeneralJacquetStatements`
-(`ffff3780`: `GeneralJacquetStatement`), `GeneralIntertwiningFamilies`
-(`f04ef550`: `IsGeneralFlatFamily`, `generalIntertwiningCoefficient`) and
-`GeneralIntertwiningStatements` (`1ee4a99e`:
-`GeneralIntertwiningAnalyticStatement`). The general-field JPSS relation
-`Langlands.RankinSelberg.IsPairGammaFactor` (`RankinSelberg/GammaFactor`)
-exists. `RankinSelberg/GeneralPairGamma` (`1fbc982e`, Worker 99 with Worker
-11) defines `IsGeneralSymmetricGammaFactor`, its larger-rank-first form.
+## General non-archimedean local fields
 
-The Library has no general-field Theorem 5.1 statement. Such a statement
-needs the local-coefficient relation on the general-field induced spaces.
-That relation is task `569f1dba-2e8f-46f0-89a2-8089f04623a5`. Worker 99 has
-taken the general-field adaptation of `LocalCoefficientGammaStatement`. Task
-`d0db1e47-052b-4b1b-a4ce-b498833a7e2e` is to state residue-normalized Haar
-scaling over general local fields. That statement is needed to read the
-general intertwining statements through the actual operator. On 2026-10-24
-both tasks were ready, with no members and no candidates.
-`TensorBridge` (`62360656`) relates `pairFlip` and `pairFunctional` to the
-binary tensor product.
+The modules below apply the generic layers to a field `F` with `Field`,
+`ValuativeRel`, `TopologicalSpace` and `IsNonarchimedeanLocalField`
+instances. This includes fields of positive characteristic. All their
+analytic statements normalize `q` and `abv` as in the first two points
+below. The statements that involve `ψ` (Jacquet, coefficient and Theorem 5.1
+statements) also normalize `ψ` as in the third point.
+
+- `q` is the cardinality of the residue field of
+  `(ValuativeRel.valuation F).integer`;
+- `abv ϖ = q⁻¹` for a uniformizing element `ϖ` (`IsUniformizingElement`,
+  `Representation/Whittaker/Iwasawa`), and `abv x = 1` when the valuation
+  of `x` is `1`; where `IsOpenNormOne abv` is needed, it is obtained through
+  `isOpenNormOne_of_valuation` (`Induction`);
+- `ψ` satisfies `Conductor.HasIntegerConductor ψ`
+  (`Representation/Conductor/Essential`): `ψ` is trivial on the valuation
+  ring `O`, and `ψ(xO) = 1` only for `x ∈ O`. This replaces the p-adic
+  hypothesis `additiveConductor ψ = 0`.
+
+The modules, by scope item:
+
+- **Item 2.** `GeneralIntertwiningFamilies` (`f04ef550`, Worker 99):
+  `generalMaximalCompact` (`GL_r(O_F)`), `IsGeneralFlatFamily` and
+  `generalIntertwiningCoefficient`, the scalar integral of (0.1) tested by a
+  smooth functional. Proved: `generalIntertwiningCoefficient_eq`, which on
+  the convergence domain identifies the scalar integral with the functional
+  applied to the actual value of `intertwiningInduced`, read through the
+  tensor flip. It assumes smooth factors, `CompactOpenCofinal` for the Levi
+  and the Jacobian law `IsModulusScaling` (`IntertwiningInduced`) for the
+  measure. `GeneralIntertwiningStatements` (`1ee4a99e`, Worker 99,
+  statements): `GeneralIntertwiningConvergenceStatement`,
+  `GeneralIntertwiningRationalityStatement` (at points of
+  `generalMaximalCompact`, for flat families) and their conjunction
+  `GeneralIntertwiningAnalyticStatement`. Their hypotheses on the factors
+  are admissibility and irreducibility.
+- **Haar scaling.** `HarmonicAnalysis/GeneralHaarScalingStatement`
+  (`a6d2e9f0`, Worker 378, statements): `GeneralScalarHaarScalingStatement`,
+  `GeneralRectangularHaarScalingStatement`, `GeneralModulusScalingStatement`
+  (`IsModulusScaling` for every additive Haar measure on `n × m` matrices)
+  and their conjunction `GeneralAdditiveHaarScalingStatement`. In the p-adic
+  layer the corresponding law is proved (`isModulusScaling_padic`,
+  `IntertwiningPadic`).
+- **Item 3.** `GeneralJacquetStatements` (`ffff3780`, Worker 99, statements):
+  `GeneralJacquetStabilizationStatement`,
+  `GeneralInducedWhittakerMultiplicityOneStatement` and their conjunction
+  `GeneralJacquetStatement`. `GeneralLocalCoefficientExistenceStatement`
+  (`82cd2101`, Worker 99, statements):
+  `GeneralLocalCoefficientExistenceStatement` (a rational coefficient exists
+  for three arbitrary fixed Haar measures; not the measure-normalized
+  comparison) and
+  `GeneralJacquetAndCoefficientStatement`, the conjunction with
+  `GeneralJacquetStatement`.
+- **Item 4.** `LocalCoefficientGeneral` (`18090f4c`, Worker 33):
+  `generalSourceFunctions`, `IsGeneralLocalCoefficientFor` and
+  `IsGeneralLocalCoefficient`, the general-field forms of the p-adic
+  relations of `LocalCoefficientPadic`. Proved there:
+  `generalLeviCompactOpenCofinal` (every open subgroup of a block Levi
+  contains a compact open subgroup), `IsGeneralLocalCoefficientFor.unique`
+  and `IsGeneralLocalCoefficient.unique` (for smooth factors and `1 < q`),
+  `IsGeneralLocalCoefficientFor.smul`, `isGeneralLocalCoefficientFor_smul_iff`,
+  `IsGeneralLocalCoefficientFor.isGeneralLocalCoefficient` (under explicit
+  multiplicity-one hypotheses) and
+  `satisfiesLocalCoefficientEquation_sourceEval_iff`, the literal form of
+  (0.3) through the actual operator, which assumes `IsModulusScaling` for
+  the intertwining measure.
+- **Item 5.** `Representation/RankinSelberg/GeneralPairGamma` (`1fbc982e`,
+  Worker 99 with Worker 11) defines `IsGeneralSymmetricGammaFactor`, the
+  larger-rank-first form of the general-field JPSS relation
+  `Langlands.RankinSelberg.IsPairGammaFactor`
+  (`Representation/RankinSelberg/GammaFactor`).
+  `GeneralLocalCoefficientGammaStatement` (`2ca640bc`, Worker 99 with Worker
+  11, statements): `IsGeneralLocalCoefficientGammaComparison`,
+  `GeneralLocalCoefficientGammaAllRanksStatement`,
+  `GeneralLocalCoefficientGammaEqualRankStatement` and their conjunction
+  `Langlands.Shahidi.GeneralLocalCoefficientGammaStatement F`, Theorem 5.1
+  over `F`. The comparison asserts `IsGeneralLocalCoefficient` and
+  `IsGeneralSymmetricGammaFactor q ψ abv ν π₁ (smoothContragredient π₂)`
+  with `C = ω(−1)^{m+1} • G`. Here `ν` is an additive Haar measure with
+  `IsSelfDual ψ ν` (`HarmonicAnalysis/Basic`), and `ω` is a central
+  character of `π₂`. The measures follow the p-adic statement: product
+  measures with a shared scalar Jacquet measure for all positive ranks, and
+  an `EqualRankMeasureData (ValuativeRel.valuation F).integer n` satisfying
+  `IsEqualRankGeometricNormalized ψ abv` at equal ranks at least two.
+
+The general-field Theorem 5.1 does not replace the p-adic one. The p-adic
+statement quantifies over bundled p-adic fields, while the general one takes
+`F` and its normalizations explicitly, and no implication between the two is
+proved. `TensorBridge` (`62360656`) relates `pairFlip` and `pairFunctional`
+to the binary tensor product.
 
 ## Retained source gaps
+
+The gaps below apply to the general-field modules as well, with
+`IsGeneralLocalCoefficient` and `IsGeneralSymmetricGammaFactor` in place of
+the p-adic relations and `HasIntegerConductor ψ` in place of
+`additiveConductor ψ = 0`.
 
 - **Induction exponents (pages 67 and 72).** Read literally, the display
   gives exponents `s/2 + n/4` and `−(s/2 + m/4)`. `Induction` implements the
@@ -244,16 +324,21 @@ binary tensor product.
 ## Open proof obligations
 
 - `ShahidiIntertwiningConvergenceStatement` and
-  `ShahidiIntertwiningRationalityStatement`.
-- `ShahidiJacquetAndCoefficientStatement` and the general-field statements of
-  Worker 99.
-- `LocalCoefficientGammaStatement` (Theorem 5.1), including existence of the
-  local coefficient, of the gamma factor and of a geometrically normalized
-  equal-rank datum.
-- Not stated: Theorem 5.1 over non-archimedean local fields of positive
-  characteristic (see "Field scope"); Lemma 5.1, Propositions 3.1 and 4.2,
-  the multiplicativity of `C_χ` and `ε'`, and the Plancherel measures of
-  Section 6.
+  `ShahidiIntertwiningRationalityStatement`; over general fields,
+  `GeneralIntertwiningAnalyticStatement`.
+- `ShahidiJacquetAndCoefficientStatement`; over general fields,
+  `GeneralJacquetAndCoefficientStatement`.
+- `LocalCoefficientGammaStatement` and `GeneralLocalCoefficientGammaStatement`
+  (Theorem 5.1), including existence of the local coefficient, of the gamma
+  factor and of a geometrically normalized equal-rank datum.
+- `GeneralAdditiveHaarScalingStatement`. Its modulus component supplies the
+  `IsModulusScaling` hypothesis of `generalIntertwiningCoefficient_eq` and
+  `satisfiesLocalCoefficientEquation_sourceEval_iff` over general fields.
+  The scalar component is task `01ff89df-9275-4c4d-b3fa-3371ce965860`
+  (published by Worker 99; ready, with no members, on 2026-10-25). The
+  rectangular and modulus components depend on it.
+- Not stated: Lemma 5.1, Propositions 3.1 and 4.2, the multiplicativity of
+  `C_χ` and `ε'`, and the Plancherel measures of Section 6.
 
 ## Source records
 
@@ -263,8 +348,9 @@ TaskHub `fetch` of the ID returns the candidate record; the project
 artifact store holds the same record at `artifacts/<ID>/1/record.json`. The
 record's `sources` array gives the literature ID, the SHA-256 of the
 retained file (`content_sha256`) and a locator. Every record cites
-`shahidi-1984-fourier` (SHA-256 above). The record of `1fbc982e` also cites
-`jpss-1983-rankin-selberg`.
+`shahidi-1984-fourier` (SHA-256 above), except that of `a6d2e9f0`, an
+internal prerequisite with no literature source. The records of `1fbc982e`
+and `2ca640bc` also cite `jpss-1983-rankin-selberg`.
 
 | Candidate | Module | Kind |
 | --- | --- | --- |
@@ -298,22 +384,34 @@ retained file (`content_sha256`) and a locator. Every record cites
 | `f04ef550-5601-48de-bbd5-eadd81b7e579` | `GeneralIntertwiningFamilies` | definition |
 | `1ee4a99e-f85b-4718-9f6e-0bbbe1494ec5` | `GeneralIntertwiningStatements` | statement |
 | `62360656-13ea-40d6-9171-40f6b6bcdcc4` | `TensorBridge` | definition |
-| `1fbc982e-4c9e-4173-a10d-2b4a531a544b` | `RankinSelberg/GeneralPairGamma` | definition |
+| `1fbc982e-4c9e-4173-a10d-2b4a531a544b` | `Representation/RankinSelberg/GeneralPairGamma` | definition |
+| `18090f4c-9df7-4dd0-89e6-d26866fd2f3e` | `LocalCoefficientGeneral` | definition |
+| `82cd2101-135d-4e43-8cc2-8a7e239508e9` | `GeneralLocalCoefficientExistenceStatement` | statement |
+| `2ca640bc-03a4-43db-ad9e-f19a736d96f8` | `GeneralLocalCoefficientGammaStatement` | statement |
+| `a6d2e9f0-ea30-4f7e-a56d-5cee3a24f164` | `HarmonicAnalysis/GeneralHaarScalingStatement` | statement |
 
-These are all thirty modules of `Langlands/Representation/Shahidi/` at the
-pinned commit, together with `RankinSelberg/GeneralPairGamma`.
+These are all thirty-three modules of `Langlands/Representation/Shahidi/` at
+the pinned commit, together with
+`Representation/RankinSelberg/GeneralPairGamma` and
+`HarmonicAnalysis/GeneralHaarScalingStatement`.
 
 ## Checking this note
 
 Every declaration name above was looked up at the pinned commit. For each
 module in the table, the SHA-256 of its Lean and Markdown files at the
 pinned commit was compared with the record's bundle hashes (`lean_sha256`,
-`markdown_sha256`). They agree, with two integration-time exceptions. In
-both, the declaration names are unchanged.
+`markdown_sha256`). They agree, with three exceptions. In all three, the
+declaration names are unchanged.
 
-- `Geometry` (Lean and Markdown): the Integrator replaced a private matrix
-  helper (`upperCoordinates`) by the shared `GeneralLinear.sumBlockUnipotent`
-  of `Langlands/Group/GL/BlockUnipotent` and added a two-sentence Markdown
-  paragraph saying so.
-- `IntertwiningCovariance.md`: a reference to `HasIntertwiningIntegral.unique`
-  became `SmoothWeakIntegral.HasIntegral.unique` (applied pointwise).
+- `Geometry` (Lean and Markdown), at integration: the Integrator replaced a
+  private matrix helper (`upperCoordinates`) by the shared
+  `GeneralLinear.sumBlockUnipotent` of `Langlands/Group/GL/BlockUnipotent`
+  and added a two-sentence Markdown paragraph saying so.
+- `IntertwiningCovariance.md`, at integration: a reference to
+  `HasIntertwiningIntegral.unique` became
+  `SmoothWeakIntegral.HasIntegral.unique` (applied pointwise).
+- `LocalCoefficientGammaStatement.md`: the later accepted Markdown-only
+  correction `b7af61a0-72e4-41f3-bdf6-e8b7525a7a4f` replaced it. It rewrote
+  the rank-order bullet (the source puts the smaller rank first, the Library
+  the larger). The Lean file is unchanged, and both files at the pinned
+  commit match that record's bundle hashes.

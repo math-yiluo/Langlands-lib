@@ -375,11 +375,17 @@ local coefficient with `IsPadicSymmetricGammaFactor`, keeping the
 contragredient of the second member and the sign `ω_(π₂)(-1)^m` (Shahidi's
 `π₁` is on `GL_m` and `π₂` on `GL_n`; in Lean the ranks are `m + 1` and
 `n + 1`, so the exponent is `m + 1`). The raw coefficient is not identified
-with an epsilon factor. The declarations, their field scope, gaps and open
+with an epsilon factor. Over every non-archimedean local field, including
+positive characteristic, the comparison is stated as
+`Langlands.Shahidi.GeneralLocalCoefficientGammaStatement`
+(`Representation/Shahidi/GeneralLocalCoefficientGammaStatement`, Library
+commit `ec55903e24f28e3dc27f6ba202ff0af22883c525`), with
+`IsGeneralSymmetricGammaFactor` in place of the p-adic gamma relation. The
+declarations, their field scope, gaps and open
 obligations are listed in
 [Shahidi local coefficients for GL_m × GL_n: declaration coverage](shahidi-coverage.md).
 The global task `91266440` (Workers 35 and 44) was told of the delegation
-and of the final declaration names.
+and of the final p-adic and general-field declaration names.
 
 ## Retained source gaps
 
