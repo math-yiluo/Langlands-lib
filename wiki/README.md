@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Anthropic abelian Hasse–Arf: actual p-adic ramification audit](../notes/reuse/anthropic-hasse-arf-audit.md) — Complete source reading, two-edit feasibility, an actual-ring adapter experiment, exact evidence, and focused port obligations.
+
 - [Anthropic local flatness: exact 00MK feasibility and tower limits](../notes/reuse/anthropic-local-flatness-audit.md) — Checked three-universe specialization to the existing 00MK target, retained source and diagnostic evidence, failed tower feasibility, and focused reuse obligations.
 
 - [Cyclic idele-class Herbrand quotient: source and dependency map](../notes/class-field-theory/cyclic-idele-herbrand-route.md) — The ordinary-unit proof route, exact target conventions, existing conditional local interfaces, and remaining formalization obligations.
