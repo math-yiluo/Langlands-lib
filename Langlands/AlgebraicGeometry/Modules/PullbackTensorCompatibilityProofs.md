@@ -15,6 +15,15 @@ sectionwise structures on **presheaves** of modules. The proof supplies no
 monoidal instance on pullback or on module sheaves and assumes no tensor
 comparison invertibility.
 
+The local instances have explicit module-specific names,
+`pullbackTensorCompatibilityPresheafMonoidal` and
+`pullbackTensorCompatibilityPresheafSymmetric`. This implementation correction
+prevents their generated auxiliary declarations from colliding with those of
+`Picard.RigidifiedTensorSymmetry` when the modules are imported together. Their
+types, bodies, and local scope are unchanged, as are all mathematical statements
+and proofs. The compatibility statement and the Mumford homomorphism statement,
+including their import closures, are unchanged.
+
 ## Proof mechanism
 
 Write `F_f` and `R_f` for pullback and pushforward, `δ_f` for the canonical

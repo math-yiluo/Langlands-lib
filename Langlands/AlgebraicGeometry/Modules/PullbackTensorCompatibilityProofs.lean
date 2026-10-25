@@ -6,9 +6,11 @@ universe u
 open CategoryTheory MonoidalCategory BraidedCategory AlgebraicGeometry
 namespace Langlands.Scheme.Modules
 
-local instance (X : Scheme.{u}) : MonoidalCategory X.PresheafOfModules :=
+local instance pullbackTensorCompatibilityPresheafMonoidal (X : Scheme.{u}) :
+    MonoidalCategory X.PresheafOfModules :=
   inferInstanceAs (MonoidalCategory (PresheafOfModulesOfCommRing.{u} X.presheaf))
-local instance (X : Scheme.{u}) : SymmetricCategory X.PresheafOfModules :=
+local instance pullbackTensorCompatibilityPresheafSymmetric (X : Scheme.{u}) :
+    SymmetricCategory X.PresheafOfModules :=
   inferInstanceAs (SymmetricCategory (PresheafOfModulesOfCommRing.{u} X.presheaf))
 
 set_option backward.isDefEq.respectTransparency false
