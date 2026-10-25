@@ -26,7 +26,8 @@ private theorem integral_injective [IsAddTorsionFree M] :
   intro c
   exact zsmul_right_injective (mem_nonZeroDivisors_iff_ne_zero.mp c.property)
 
-private theorem exists_chart (z : ℚ ⊗[ℤ] M) :
+/-- Every rationalized element lies in a chart with nonzero rational coefficient. -/
+theorem exists_chart (z : ℚ ⊗[ℤ] M) :
     ∃ (q : ℚ), q ≠ 0 ∧ ∃ x : M, q ⊗ₜ[ℤ] x = z := by
   obtain ⟨⟨m, s⟩, hs⟩ := IsLocalizedModule.surj (nonZeroDivisors ℤ)
     (TensorProduct.mk ℤ ℚ M 1) z

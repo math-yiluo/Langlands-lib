@@ -13,7 +13,7 @@ is open in `M`. This module installs that definition locally when forming
 its topological declarations. There is no arbitrary topology parameter on
 the tensor product, no comparison hypothesis, and no global topology instance.
 
-Except for the scalar homeomorphism and purely algebraic action definitions,
+Except for `exists_chart`, the scalar homeomorphism and purely algebraic action definitions,
 the results assume `[AddCommGroup M] [TopologicalSpace M]
 [IsTopologicalAddGroup M]` and the explicit conditional hypothesis
 
@@ -62,13 +62,17 @@ for this purpose.
 
 ## Implemented topological proofs
 
-The private algebraic helpers use Mathlib's
+The algebraic helpers use Mathlib's
 `tensorProduct_isLocalizedModule` instance to regard the existing tensor
 product as localization at the nonzero integers. They do not replace its
 carrier by a new type. Once `IsAddTorsionFree M` is available,
 `IsLocalizedModule.injective_iff_isRegular` and injectivity of nonzero integer
 multiplication show that the integral chart is injective. Localization
-surjectivity places every tensor in some nonzero rational chart. The finite
+surjectivity places every tensor in some nonzero rational chart. The public
+theorem `exists_chart` exposes this covering result for reuse by
+[Comparison](Comparison.md) and
+[AdelicScalarTopology](../../AbelianScheme/Tate/AdelicScalarTopology.md);
+it requires only `[AddCommGroup M]` and no topology or torsion hypothesis. The finite
 common-denominator lemma `IsLocalizedModule.exist_integer_multiples_of_finite`,
 applied to a Boolean-indexed pair, places any two tensors in the same nonzero
 chart. These covering statements need only the additive group structure.
