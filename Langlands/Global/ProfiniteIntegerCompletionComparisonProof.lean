@@ -8,7 +8,8 @@ namespace Langlands.Global
 
 open Langlands.Weil ProfiniteGrp CategoryTheory
 
-private theorem residue_integer_dense : DenseRange ProfiniteIntegerRing.intCastHom := by
+/-- The canonical integer residue families are dense in the profinite-integer ring. -/
+theorem residue_integer_dense : DenseRange ProfiniteIntegerRing.intCastHom := by
   classical
   apply dense_iff_inter_open.mpr
   rintro U ⟨s, hsO, hsv⟩ ⟨x, hx⟩

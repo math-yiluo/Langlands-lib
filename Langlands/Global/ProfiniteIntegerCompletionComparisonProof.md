@@ -15,7 +15,9 @@ it sends the residue family of `z` to
 
 ## Implemented proof
 
-The auxiliary declarations are private to this proof module.
+The density lemma `Langlands.Global.residue_integer_dense` is public for reuse
+by the [integral away comparison](PrimeToIntegralProfiniteIntegerComparisonProof.md).
+The remaining auxiliary declarations are private to this proof module.
 
 1. **Density of integers in the residue ring.** An open neighborhood in the
    subspace topology contains a product neighborhood restricting only finitely
