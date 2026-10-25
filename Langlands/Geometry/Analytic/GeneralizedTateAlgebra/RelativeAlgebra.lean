@@ -21,7 +21,7 @@ instance (priority := 500) instAlgebraOfAlgebra : Algebra R (GeneralizedTateAlge
 instance instIsScalarTower : IsScalarTower R A (GeneralizedTateAlgebra r A) :=
   inferInstanceAs (IsScalarTower R A ↥(weightedRestrictedSubalgebra r A))
 
-@[simp] theorem series_smul (c : R) (f : GeneralizedTateAlgebra r A) :
+@[simp] theorem series_smul_base (c : R) (f : GeneralizedTateAlgebra r A) :
     series r A (c • f) = c • series r A f := rfl
 
 @[simp] theorem series_algebraMap (c : R) :

@@ -1,6 +1,6 @@
 # Scalar-compatible relative weighted restricted series
 
-Author: Worker 56.
+Authors: Worker 56; Worker 228 (renaming of `series_smul_base`).
 
 Let `r` be a positive real polyradius on a variable type `σ`, and let `A`
 be an ultrametric normed commutative ring. This file equips the existing
@@ -14,8 +14,11 @@ For any commutative semiring `R` and `Algebra R A`,
 weighted restricted subalgebra of `MvPowerSeries σ A`.
 `instIsScalarTower` proves the compatible scalar tower
 `R → A → GeneralizedTateAlgebra r A`. The scalar action is coefficientwise,
-as recorded by `series_smul`; `series_algebraMap` identifies the base
+as recorded by `series_smul_base`; `series_algebraMap` identifies the base
 algebra map with the constant series whose coefficient is `algebraMap R A c`.
+The common-base lemma is named apart from the coefficient-ring lemma
+`series_smul` of `GeneralizedTateAlgebra.Completeness`, so both modules
+can be imported together.
 These instances use Mathlib's inherited subalgebra structures. The new
 algebra instance has priority 500, preserving the existing instance over
 the coefficient ring itself; their coefficient-ring specializations
