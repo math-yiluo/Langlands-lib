@@ -15,6 +15,9 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Initial source-read assertions, full section backlog, general reductive scope and dependency/ownership boundaries.
+- [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
+
 - [Anthropic Chebotarev: realization and canonical completion audit](../notes/reuse/anthropic-chebotarev-audit.md) — Complete source closure, private universe-general realization and completion bridges, exact machine evidence, and dependency-ordered port obligations.
 
 - [Anthropic Brauer trace induction: audit and character-lattice bridge](../notes/reuse/anthropic-brauer-audit.md) — Exact source closure, compatibility and axiom evidence, universe transport feasibility, and the separate actual-induction and faithfulness obligations.
