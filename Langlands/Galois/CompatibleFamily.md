@@ -2,6 +2,7 @@
 
 Author: Worker 41.
 Documentation correction (I028): Worker 32.
+Closure-comparison documentation clarification: Worker 100.
 It defines compatibility and purity, and proves the independence of
 geometric-Frobenius lifts needed by the definition. The published companion
 `Langlands.Galois.FrobeniusLift` proves lift existence for these same local
@@ -122,10 +123,45 @@ existence assertion without an additional existence hypothesis.
 
 These intrinsic results were checked in Library commit
 `5150bf6c9c8e6dd90b1329f6188324b9fb00a0da`, and the Tate and Harris passages
-above were reread for this correction. They use the number-field completion
-directly. Transport to a separately constructed finite extension of `Q_p`
-and independence under a different global-to-local closure embedding remain
-separate arithmetic comparisons. Local Weil-group assembly belongs to the
+above were reread for the I028 correction. They use the number-field completion
+directly. Independence under a different compatible global-to-local closure
+embedding is a separate arithmetic comparison already proved in the published
+[`Langlands.Galois.ClosureRestriction`](ClosureRestriction.md). It requires
+importing `Langlands.Galois.ClosureRestriction`; importing `CompatibleFamily`
+or `FrobeniusLift` alone does not supply it.
+
+For `ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)`,
+`Langlands.GaloisRepresentation.atFinitePlaceAlongClosureEquiv v ι A`
+constructs an actual representation equivalence from
+`atFinitePlaceAlongClosure v ι A` to the existing `atFinitePlace v A`.
+`eulerPolynomial_atFinitePlaceAlongClosure_eq` gives equality of their
+Euler polynomials at every same `g : LocalGroup v`, without assuming
+unramifiedness. `isUnramifiedAt_iff_alongClosure` identifies the existing
+unramifiedness predicate with triviality of the specified-embedding
+restriction on the fixed actual inertia subgroup `localInertia v`.
+`hasEulerPolynomialAt_iff_alongClosure` identifies `HasEulerPolynomialAt A v P`
+with the conjunction of that inertia-triviality condition and
+`∃ g : LocalGroup v, IsGeometricFrobeniusLift v g ∧
+  eulerPolynomial (atFinitePlaceAlongClosure v ι A) g = P`.
+All these declarations have prefix `Langlands.GaloisRepresentation`.
+The existential actual lift is retained.
+
+This closure-embedding independence fixes the algebraic closure of the
+completion, the actual local group and the residue-action model. Raw
+restriction homomorphisms are not asserted equal or canonical. The
+same-element comparison does not assume unramifiedness, whereas independence
+of different geometric Frobenius elements is the distinct theorem
+`eulerPolynomial_eq_of_geometricFrobenius` in this module, which requires it.
+Lift existence is the separate `exists_geometricFrobeniusLift` theorem in
+`FrobeniusLift`; its chosen geometric lift remains arbitrary. The closure
+comparison is derived from the construction documented in `ClosureRestriction`,
+whose source motivation is Serre, Chapter X, Section 4, printed pp.155–156
+(PDF pp.161–162). Serre's Proposition 5 concerns induced cohomology maps;
+the representation consequences are derived results of the companion.
+
+Changes of residue-closure model and transport to a separately constructed
+local-field realization, including a finite extension of `Q_p`, remain
+outside these results. Local Weil-group assembly belongs to the
 separate `Langlands.Weil.Local.Assembly` and `AssemblyProof` modules; it is
 not a consequence of this lift-existence theorem. Full compatible-family or
 automorphic Galois-representation existence, purity of cohomology,

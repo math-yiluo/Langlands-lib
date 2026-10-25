@@ -1,6 +1,7 @@
 # Geometric Frobenius lifts at number-field completions
 
 Author: Worker 41.
+Closure-comparison documentation clarification: Worker 100.
 
 This module constructs a geometric Frobenius lift at every actual finite place
 of a number field, then defines evaluation of a genuine Galois representation's
@@ -53,8 +54,8 @@ For a genuine continuous finite-dimensional representation
 topology and carrier universe `uV`, `frobeniusEulerPolynomial A v` is
 `eulerPolynomial (atFinitePlace v A) (geometricFrobeniusLift v)`.
 Thus it retains the existing geometric convention `det(1 - rho(Frob_v) T)`.
-It is defined even for ramified representations, but no independence or
-local-factor interpretation is asserted in that case.
+It is defined even for ramified representations, but no independence of the
+geometric lift or local-factor interpretation is asserted in that case.
 
 For `IsUnramifiedAt A v`, `frobeniusEulerPolynomial_eq_of_lift` identifies
 this value with evaluation at any geometric lift, by the published kernel
@@ -126,15 +127,55 @@ and algebraic-extension hypotheses were inspected in
 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 This module closes the lift-existence gap for the already published
-compatible-family interface. Independence from a different global-to-local
-closure embedding is a separate obligation. No compatible family is
-constructed from automorphic forms or Shimura cohomology here; purity,
+compatible-family interface. Independence from a different compatible
+global-to-local closure embedding is proved in the separately published
+[`Langlands.Galois.ClosureRestriction`](ClosureRestriction.md). Using that
+comparison requires importing `Langlands.Galois.ClosureRestriction`; it is
+not supplied by importing `FrobeniusLift` or `CompatibleFamily` alone.
+
+For `ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)`,
+`Langlands.GaloisRepresentation.atFinitePlaceAlongClosureEquiv v ι A`
+constructs an actual representation equivalence from
+`atFinitePlaceAlongClosure v ι A` to `atFinitePlace v A`.
+`eulerPolynomial_atFinitePlaceAlongClosure_eq` proves equality of their
+Euler polynomials at every same `g : LocalGroup v`, without an
+unramifiedness hypothesis.
+`isUnramifiedAt_iff_alongClosure` identifies `IsUnramifiedAt A v` with
+triviality of the specified-embedding restriction on the fixed actual
+`localInertia v`. `hasEulerPolynomialAt_iff_alongClosure` identifies
+`HasEulerPolynomialAt A v P` with that same inertia-triviality condition
+conjoined with the existence of an actual `g : LocalGroup v` satisfying
+`IsGeometricFrobeniusLift v g` and having Euler polynomial `P` for the
+specified-embedding restriction. These names have prefix
+`Langlands.GaloisRepresentation`.
+
+Closure-embedding independence keeps the algebraic closure of the completion,
+the actual local group and the residue-action model fixed. It asserts neither
+equality nor canonicity of the raw restriction homomorphisms. It is distinct
+from independence of different geometric Frobenius elements, proved under
+unramifiedness in `CompatibleFamily` by
+`Langlands.GaloisRepresentation.eulerPolynomial_eq_of_geometricFrobenius`, and from
+lift existence, proved here by `exists_geometricFrobeniusLift`. The chosen
+geometric lift remains arbitrary. Changing the residue-closure model or
+transporting to a separately constructed local-field realization is outside
+these results.
+
+The closure comparison is a derived representation consequence of the
+construction documented in `ClosureRestriction`, motivated by Serre,
+*Local Fields*, Chapter X, Section 4, printed pp.155–156 (PDF pp.161–162).
+Serre's Proposition 5 concerns induced cohomology maps; these representation
+results are not an assertion of that proposition. The registered original is
+`serre-1979-local-fields`, SHA256
+`109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
+
+No compatible family is constructed from automorphic forms or Shimura
+cohomology here; purity,
 multiplicity removal, semisimplicity, geometric origin and Hodge–Tate
 properties are not consequences of this module. It does not define a
 ramified Euler factor via inertia invariants or establish ramified local
 compatibility. The full host theorem-statement task remains incomplete.
 
-Development compilation and declaration inspection succeeded without errors
+Original development compilation and declaration inspection succeeded without errors
 or warnings. Complete types preserve independent universes and introduce no
 extra Galois, finite-residue-field or lift-existence assumption. Unapplied
 assignments checked the full existence and unique-matching theorem types.

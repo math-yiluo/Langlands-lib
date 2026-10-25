@@ -5,8 +5,9 @@ import Langlands.Representation.Twist.LeviRealPower
 /-!
 # Maximal-cone selection of an essentially tempered Jacquet quotient
 
-This proposition spells out the representation-theoretic selection in the
-proof of Silberger 1978, Proposition 7.2, in actual GL block coordinates.
+This proposition uses dominance of positive parts, following Konno 2003,
+Lemmas 3.3–3.4 and Theorem 3.5(i). It corrects the block-cardinality selection
+previously transcribed from Silberger 1978, Proposition 7.2.
 -/
 
 namespace Langlands
@@ -16,7 +17,24 @@ open scoped BigOperators
 
 universe uF uV
 
-/-- An actual dual exponent admits a maximal consecutive cone coarsening whose
+/-- Strict dominance of block positive parts in standard GL coordinates.
+The first vector dominates the second: totals agree, every prefix sum is at
+least as large, and some prefix sum is strictly larger. The endpoints are
+included, so the order retains the common central value. -/
+def GLBlockPositivePartStrictlyDominates {n : ℕ}
+    (C₁ : BlockShape n) (t₁ : Fin C₁.length → ℝ)
+    (C₂ : BlockShape n) (t₂ : Fin C₂.length → ℝ) : Prop :=
+  let Λ₁ : Fin n → ℝ := fun i => t₁ ((C₁.indexEquiv.symm i).1)
+  let Λ₂ : Fin n → ℝ := fun i => t₂ ((C₂.indexEquiv.symm i).1)
+  (∑ i, Λ₁ i) = (∑ i, Λ₂ i) ∧
+    (∀ k : Fin (n + 1),
+      (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val), Λ₂ i) ≤
+        ∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val), Λ₁ i) ∧
+    ∃ k : Fin (n + 1),
+      (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val), Λ₂ i) <
+        ∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val), Λ₁ i
+
+/-- An actual dual exponent admits a dominance-maximal consecutive cone coarsening whose
 restricted character supports an irreducible quotient of the whole opposite
 Jacquet module, tempered after removal of its real determinant character. -/
 def GLMaximalConeJacquetQuotientStatement : Prop :=
@@ -63,6 +81,6 @@ def GLMaximalConeJacquetQuotientStatement : Prop :=
               (C'.size j : ℝ) * t' j) →
             (∀ i, (∑ k ∈ Finset.univ.filter (fun k => q' k = q' i ∧ k ≤ i),
               (r' k - (B'.size k : ℝ) * t' (q' i))) ≤ 0) →
-            C'.length ≤ C.length)
+            ¬ GLBlockPositivePartStrictlyDominates C' t' C t)
 
 end Langlands
