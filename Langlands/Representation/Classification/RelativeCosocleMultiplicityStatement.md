@@ -66,11 +66,12 @@ cosocle carrier or arbitrary maximal semisimple quotient witness.
 For finite-length representations the radical quotient is the maximal
 semisimple quotient, called the maximum completely reducible quotient in
 the source. The existing quotient construction and its projection laws
-are proved. Its general finite-length semisimplicity, radical comparison,
-semisimple universal property and functoriality remain separate algebraic
-proof obligations. The existing conditional theorem that a head is
-irreducible when `HasIrreducibleHead` holds does not establish these facts
-for the potentially reducible `I_in` and `I_out`.
+are proved. [The cosocle module](Cosocle.md) proves its general finite-length
+semisimplicity, radical comparison, semisimple universal property and
+functoriality. Applying finite-length semisimplicity to the potentially
+reducible `I_in` and `I_out` still requires the finite-length hypotheses
+for those inductions; the multiplicity comparison remains a separate
+proof obligation.
 
 `GLRelativeCosocleMultiplicityStatement` supplies a natural number `m`
 such that

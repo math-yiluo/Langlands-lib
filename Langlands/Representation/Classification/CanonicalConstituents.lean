@@ -5,12 +5,13 @@ import Langlands.Weil.Representation.IsomorphismInvarianceProof
 /-!
 # Canonical heads and socles
 
-For a complex representation `ρ` on `V`, the head kernel is the common kernel of
-all irreducible quotient maps of `ρ` with targets in the universe of `V`, and the
-socle is the sum of the images of all irreducible embeddings into `ρ` with sources
-in that universe. Both are defined for every `ρ`, without choices. The head is the
-actual quotient representation by the head kernel and the socle representation is
-the actual restriction to the socle.
+For a representation `ρ` on `V` over a field `k`, the head kernel is the common
+kernel of all irreducible quotient maps of `ρ` with targets in the universe of `V`,
+and the head is the actual quotient representation by the head kernel. For a
+complex representation `ρ`, the socle is the sum of the images of all irreducible
+embeddings into `ρ` with sources in that universe, and the socle representation is
+the actual restriction to the socle. Both are defined for every `ρ`, without
+choices.
 
 When `ρ` has an irreducible head in the sense of `IsIrreducibleHead`, the head is
 one, and every irreducible head of `ρ` is equivalent to it; dually for socles. No
@@ -21,19 +22,20 @@ noncomputable section
 
 namespace Langlands.Classification
 
-universe uG uV
+universe uk uG uV
 
 variable {G : Type uG} [Group G]
-variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
 
 section Head
 
+variable {k : Type uk} [Field k] {V : Type uV} [AddCommGroup V] [Module k V]
+
 /-- The head kernel of `ρ`: the vectors killed by every irreducible quotient map of
 `ρ` whose target has its carrier in the universe of `V`. -/
-def headKernel (ρ : Representation ℂ G V) : Subrepresentation ρ where
+def headKernel (ρ : Representation k G V) : Subrepresentation ρ where
   toSubmodule :=
-    { carrier := {v | ∀ (W : Type uV) [AddCommGroup W] [Module ℂ W]
-        (π : Representation ℂ G W), Representation.IsIrreducible π →
+    { carrier := {v | ∀ (W : Type uV) [AddCommGroup W] [Module k W]
+        (π : Representation k G W), Representation.IsIrreducible π →
         ∀ q : ρ.IntertwiningMap π, Function.Surjective q → q v = 0}
       add_mem' := fun {a b} ha hb W _ _ π hπ q hq => by
         rw [map_add, ha W π hπ q hq, hb W π hπ q hq, add_zero]
@@ -43,56 +45,51 @@ def headKernel (ρ : Representation ℂ G V) : Subrepresentation ρ where
   apply_mem_toSubmodule g v hv W _ _ π hπ q hq := by
     rw [q.isIntertwining, hv W π hπ q hq, map_zero]
 
-theorem mem_headKernel_iff (ρ : Representation ℂ G V) (v : V) :
+theorem mem_headKernel_iff (ρ : Representation k G V) (v : V) :
     v ∈ (headKernel ρ).toSubmodule ↔
-      ∀ (W : Type uV) [AddCommGroup W] [Module ℂ W]
-        (π : Representation ℂ G W), Representation.IsIrreducible π →
+      ∀ (W : Type uV) [AddCommGroup W] [Module k W]
+        (π : Representation k G W), Representation.IsIrreducible π →
         ∀ q : ρ.IntertwiningMap π, Function.Surjective q → q v = 0 :=
   Iff.rfl
 
-theorem headKernel_stable (ρ : Representation ℂ G V) (g : G) :
+theorem headKernel_stable (ρ : Representation k G V) (g : G) :
     (headKernel ρ).toSubmodule ≤ (headKernel ρ).toSubmodule.comap (ρ g) :=
   fun _ hv => (headKernel ρ).apply_mem_toSubmodule g hv
 
 /-- The head of `ρ`: the actual quotient representation by the head kernel. -/
-def head (ρ : Representation ℂ G V) :
-    Representation ℂ G (V ⧸ (headKernel ρ).toSubmodule) :=
+def head (ρ : Representation k G V) :
+    Representation k G (V ⧸ (headKernel ρ).toSubmodule) :=
   ρ.quotient (headKernel ρ).toSubmodule (headKernel_stable ρ)
 
 /-- The canonical quotient map onto the head. -/
-def toHead (ρ : Representation ℂ G V) : ρ.IntertwiningMap (head ρ) where
+def toHead (ρ : Representation k G V) : ρ.IntertwiningMap (head ρ) where
   toLinearMap := (headKernel ρ).toSubmodule.mkQ
   isIntertwining' _ := rfl
 
 @[simp]
-theorem toHead_apply (ρ : Representation ℂ G V) (v : V) :
+theorem toHead_apply (ρ : Representation k G V) (v : V) :
     toHead ρ v = Submodule.Quotient.mk v :=
   rfl
 
-theorem toHead_surjective (ρ : Representation ℂ G V) :
+theorem toHead_surjective (ρ : Representation k G V) :
     Function.Surjective (toHead ρ) :=
   Submodule.mkQ_surjective _
 
-theorem ker_toHead (ρ : Representation ℂ G V) :
+theorem ker_toHead (ρ : Representation k G V) :
     LinearMap.ker (toHead ρ).toLinearMap = (headKernel ρ).toSubmodule :=
   Submodule.ker_mkQ _
 
 /-- The head kernel lies in the kernel of every irreducible quotient map. -/
-theorem headKernel_le_ker {ρ : Representation ℂ G V} {W : Type uV} [AddCommGroup W]
-    [Module ℂ W] (π : Representation ℂ G W) (hπ : Representation.IsIrreducible π)
+theorem headKernel_le_ker {ρ : Representation k G V} {W : Type uV} [AddCommGroup W]
+    [Module k W] (π : Representation k G W) (hπ : Representation.IsIrreducible π)
     (q : ρ.IntertwiningMap π) (hq : Function.Surjective q) :
     (headKernel ρ).toSubmodule ≤ LinearMap.ker q.toLinearMap :=
   fun _ hv => hv W π hπ q hq
 
-/-- `ρ` has an irreducible head with carrier in the universe of `V`. -/
-def HasIrreducibleHead (ρ : Representation ℂ G V) : Prop :=
-  ∃ (W : Type uV) (_ : AddCommGroup W) (_ : Module ℂ W) (π : Representation ℂ G W),
-    IsIrreducibleHead ρ π
-
 /-- An irreducible quotient map whose kernel is the head kernel identifies the head
 with its target. -/
-def headEquivOfSurjective {ρ : Representation ℂ G V} {W : Type*} [AddCommGroup W]
-    [Module ℂ W] {π : Representation ℂ G W} (q : ρ.IntertwiningMap π)
+def headEquivOfSurjective {ρ : Representation k G V} {W : Type*} [AddCommGroup W]
+    [Module k W] {π : Representation k G W} (q : ρ.IntertwiningMap π)
     (hq : Function.Surjective q)
     (hK : (headKernel ρ).toSubmodule = LinearMap.ker q.toLinearMap) :
     (head ρ).Equiv π :=
@@ -105,12 +102,23 @@ def headEquivOfSurjective {ρ : Representation ℂ G V} {W : Type*} [AddCommGrou
       exact Representation.IntertwiningMap.isIntertwining _ _ q g v
 
 @[simp]
-theorem headEquivOfSurjective_apply {ρ : Representation ℂ G V} {W : Type*}
-    [AddCommGroup W] [Module ℂ W] {π : Representation ℂ G W}
+theorem headEquivOfSurjective_apply {ρ : Representation k G V} {W : Type*}
+    [AddCommGroup W] [Module k W] {π : Representation k G W}
     (q : ρ.IntertwiningMap π) (hq : Function.Surjective q)
     (hK : (headKernel ρ).toSubmodule = LinearMap.ker q.toLinearMap) (v : V) :
     headEquivOfSurjective q hq hK (toHead ρ v) = q v :=
   rfl
+
+end Head
+
+variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
+
+section IrreducibleHead
+
+/-- `ρ` has an irreducible head with carrier in the universe of `V`. -/
+def HasIrreducibleHead (ρ : Representation ℂ G V) : Prop :=
+  ∃ (W : Type uV) (_ : AddCommGroup W) (_ : Module ℂ W) (π : Representation ℂ G W),
+    IsIrreducibleHead ρ π
 
 variable {ρ : Representation ℂ G V} {W : Type uV} [AddCommGroup W] [Module ℂ W]
   {π : Representation ℂ G W}
@@ -149,7 +157,7 @@ theorem isIrreducibleHead_head_iff (ρ : Representation ℂ G V) :
     IsIrreducibleHead ρ (head ρ) ↔ HasIrreducibleHead ρ :=
   ⟨fun h => ⟨_, _, _, head ρ, h⟩, fun ⟨_, _, _, _, h⟩ => h.isIrreducibleHead_head⟩
 
-end Head
+end IrreducibleHead
 
 section Socle
 
@@ -271,15 +279,18 @@ end Langlands.Classification
 
 namespace Langlands.SmoothRep
 
-universe uG uV
+universe uk uG uV
 
 open CategoryTheory
 
 variable {G : Type uG} [Group G] [TopologicalSpace G]
-variable (A : SmoothRep.{0, uG, uV} ℂ G)
+
+section Head
+
+variable {k : Type uk} [Field k] (A : SmoothRep.{uk, uG, uV} k G)
 
 /-- The head of a smooth representation: its actual quotient by the head kernel. -/
-def headQuotient : SmoothRep.{0, uG, uV} ℂ G :=
+def headQuotient : SmoothRep.{uk, uG, uV} k G :=
   quotient A (Classification.headKernel A.representation)
 
 theorem headQuotient_representation :
@@ -292,6 +303,10 @@ def toHeadQuotient : A ⟶ A.headQuotient :=
 
 theorem toHeadQuotient_surjective : Function.Surjective (hom A.toHeadQuotient) :=
   mkQ_surjective A _
+
+end Head
+
+variable (A : SmoothRep.{0, uG, uV} ℂ G)
 
 /-- The socle of a smooth representation: its actual restriction to the socle. -/
 def socleSubrepresentation : SmoothRep.{0, uG, uV} ℂ G :=
