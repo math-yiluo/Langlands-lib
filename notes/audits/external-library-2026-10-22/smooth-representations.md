@@ -1,24 +1,23 @@
 # External Library audit: smooth representations and release status
 
-Worker 184, original audit 2026-10-22; correction-status update 2026-10-23.
+Worker 184, original audit 2026-10-22; final correction-status check 2026-10-24.
 Parent task: `651119f8-4579-446c-ac91-e18c3778f140`, revision 1.
 
 All twelve assigned findings **held** at the original checked pilot Library
 commit `dc8cdb2866562d5f929dc912f3563a75cc16ce79`. At the current check,
-`4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9`, **I014, I033, I036, I053,
-I054, I055 and DOC-03 no longer hold after their independently accepted and
-published corrections**. The five primary passages for I056–I060 are also
-corrected by the published C5 definition and statement units. C5 remains open
-for the necessary neighboring proof-document consistency correction, including
-`SP/UniversalProof.md:80–81`; its publication is not yet established. This audit
-found no reason to change the corresponding Lean declarations or proof targets.
-Publication of this verdict note does not
-complete the parent task: every required correction must also pass independent
-review and be published, and its evidence must be added to the ledger.
+`e4296643398fb6f96e73eb81e8e5d19a0d2650be`, **all twelve no longer hold after
+independently accepted and published documentation corrections**. Eight
+correction candidates cover C1–C6, including the C5 definition, statement and
+neighboring proof-document units. Their exact validation, independent-review,
+publication and file-comparison evidence is recorded below. This audit found
+no reason to change the corresponding Lean declarations or proof targets.
+The final verdict-note update itself still requires independent acceptance and
+publication before parent-task completion.
 
-All correction statuses below describe this check at Library
-`4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9`; they do not assert the status of
-later Library revisions.
+All correction statuses below describe the 2026-10-24 check at Library
+`e4296643398fb6f96e73eb81e8e5d19a0d2650be`; they do not assert the status of
+later Library revisions. Historical evidence limits and unrelated mathematical
+proof obligations remain as explicitly described below.
 
 ## Evidence boundary
 
@@ -39,13 +38,18 @@ The complete relevant declarations, hypotheses, quantifiers, universes and
 imports were inspected, together with paired Markdown and the original-source
 passages listed below. The 34 audited pairs were unchanged between the earlier
 check at `208944fe891035d0c3be003664e2ad2d471951e3` and the original audit commit.
-At the 2026-10-23 current check all 34 Lean files and 19 paired Markdown files
-still have those hashes. The 15 changed Markdown files are exactly the corrected
-files recorded with their current hashes under C1–C6 below: the previous four
-C1/C2/C4/C6 pages, three C3 pages, and eight C5 definition/statement pages.
-Every file submitted by the three new correction candidates matches its
-reviewed and published bytes. No Lean module was changed in this continuation;
-the accepted fresh integrated build is recorded below.
+At the 2026-10-24 current check all 34 Lean files and 14 paired Markdown files
+still have those hashes. The 20 changed Markdown files are exactly the corrected
+files recorded with their current hashes under C1–C6 below: four C1/C2/C4/C6
+pages, three C3 pages, eight C5 definition/statement pages, and five C5 proof
+pages. The five newly corrected proof pages and their submitted Lean file match
+their reviewed, published and current bytes. All 106 project modules in the
+audited import closure retain unchanged Lean since the prior check at
+`62ea36c5cce8fa88e0b551b153b0fdc3087190e0`; the only paired-Markdown changes
+in that closure are the five C5 proof pages. All 2,408 workspace Lean files match
+the current Library. There is no changed Lean module to recompile in this
+continuation; the exact-candidate proof validation and fresh integrated build
+for the new correction are recorded separately below.
 A recovery development check, `b243e903-330c-40ef-8d5e-f68e184fbef5`, succeeded
 with zero errors and warnings for `Compact.ProjectionProof`,
 `Compact.SurjectivityProof`, `Smooth.Contragredient.CompactDualityProof` and the
@@ -78,11 +82,11 @@ for the unchanged files. The short prefixes used in the verdict table expand as 
 | I053 | Held at audit; no longer holds after C3 | Original `D/CompactDualityStatement.md:52–54` called those two proofs pending. The proof declarations cited for I036 are complete. `D/CompactDualityProof.lean:1–2` imports its target and averaging definitions; its argument does not import or assume the two separate proof modules. Current `D/CompactDualityStatement.md:45–71` preserves this dependency distinction and names the existing proofs. | C3 published; historical independent acceptance of the three compact proof submissions is not inferred. |
 | I054 | Held at audit; no longer holds after C3 | Original `D/FixedVectorsProof.md:62` called compact duality and reflexivity pending. `D/CompactDualityProof.lean:113–118` proves `smoothDualCompactFixedDuality`; `D/AdmissibleDualityProof.lean:116–123` proves `smoothAdmissibleDuality`. Current `D/FixedVectorsProof.md:60–92,103–111` describes these separate results, their actual assumptions and verified admissible-duality receipt. | C3 published; compact-open cofinality and the distinct smoothness/admissibility clauses retained. |
 | I055 | Held at audit; no longer holds after C4 | Original `F/RestrictedTensorStatement.md:135–139` described separation as pending/unavailable. `RT/Separation.lean:293–301,330–336,384–392,422–429` constructs `finiteSeparation`, inverse `reassemble`, `localSeparation` and `productSeparation`. Current `F/RestrictedTensorStatement.md:135–150` describes these available algebraic constructions and preserves the separate representation-theoretic targets. C4's independent review, publication and matching hashes are verified below. | C4 published; no further change needed for I055. Algebraic separation does not prove the four targets or general factorization. |
-| I056 | Held at audit; no longer holds in corrected primary passage | Original `SP/BasicStatement.md:3–6,41–44` called the target unaccepted and the proof development-only. `SP/BasicProof.lean:63–71`, theorem `Langlands.smoothPartBasic`, supplies the entire target. Current `SP/BasicStatement.md:41–60` identifies that proof and records the separate original statement/proof acceptances and publications. | C5 statement unit published; neighboring proof-document consistency work remains under C5. |
-| I057 | Held at audit; no longer holds in corrected primary passage | Original `SP/Definitions.md:3–5` called the pair unaccepted development. `SP/Definitions.lean:20–102` constructs the smooth-vector submodule, restricted representation, inclusion, lift, map and smooth equivalence. Current `SP/Definitions.md:3–7,91–127` records verified historical approval/publication and distinguishes construction fields from separate laws. | C5 definition unit published; neighboring proof-document consistency work remains under C5. |
-| I058 | Held at audit; no longer holds in corrected primary passage | Original `SP/FixedVectorsDefinitions.md:27–35` called this construction merely proposed and neighboring laws unaccepted drafts. `SP/FixedVectorsDefinitions.lean:16–23` constructs `smoothPartFixedVectorsEquiv`; `SP/FixedVectorsProof.lean:13–35` proves the whole target. Current `SP/FixedVectorsDefinitions.md:38–72` and `SP/FixedVectorsStatement.md:51–59` separate the three original acceptances and preserve the proof final-export limitation. | C5 definition/statement units published; neighboring proof-document consistency work remains under C5. |
-| I059 | Held at audit; no longer holds in corrected primary passage | Original `SP/FunctorialityStatement.md:3–6,35–37` labeled the target unaccepted and the proof development evidence. `SP/FunctorialityProof.lean:36–41`, `Langlands.smoothPartFunctoriality`, proves all four clauses. Current `SP/FunctorialityStatement.md:35–58` identifies that proof and records successful original validation, independent approval and publication separately from earlier unsuccessful checks. | C5 statement unit published; neighboring proof-document consistency work remains under C5. |
-| I060 | Held at audit; primary passage corrected, neighboring status issue remains | Original `SP/UniversalStatement.md:3–8,36–37` described an unaccepted target awaiting a separate proof. `SP/UniversalProof.lean:28–33`, `Langlands.smoothPartUniversalProperty`, proves the whole target. Current `SP/UniversalStatement.md:38–58` identifies it and records separate original acceptances/publications. The unchanged neighboring `SP/UniversalProof.md:80–81` still says its dependencies retain draft labels; that statement now needs historical qualification. | C5 statement unit published; necessary proof-document follow-up remains open. No target or binder change is required. |
+| I056 | Held at audit; no longer holds after C5 | Original `SP/BasicStatement.md:3–6,41–44` called the target unaccepted and the proof development-only. `SP/BasicProof.lean:63–71`, theorem `Langlands.smoothPartBasic`, supplies the entire target. Current `SP/BasicStatement.md:41–60` identifies that proof and records the separate original statement/proof acceptances and publications. | C5 statement and proof-document units published; no further change needed. |
+| I057 | Held at audit; no longer holds after C5 | Original `SP/Definitions.md:3–5` called the pair unaccepted development. `SP/Definitions.lean:20–102` constructs the smooth-vector submodule, restricted representation, inclusion, lift, map and smooth equivalence. Current `SP/Definitions.md:3–7,91–127` records verified historical approval/publication and distinguishes construction fields from separate laws. | C5 definition and proof-document units published; no further change needed. |
+| I058 | Held at audit; no longer holds after C5 | Original `SP/FixedVectorsDefinitions.md:27–35` called this construction merely proposed and neighboring laws unaccepted drafts. `SP/FixedVectorsDefinitions.lean:16–23` constructs `smoothPartFixedVectorsEquiv`; `SP/FixedVectorsProof.lean:13–35` proves the whole target. Current `SP/FixedVectorsDefinitions.md:38–72` and `SP/FixedVectorsStatement.md:51–59` separate the three original acceptances and preserve the proof final-export limitation. | All three C5 units published; historical final-export limit retained. |
+| I059 | Held at audit; no longer holds after C5 | Original `SP/FunctorialityStatement.md:3–6,35–37` labeled the target unaccepted and the proof development evidence. `SP/FunctorialityProof.lean:36–41`, `Langlands.smoothPartFunctoriality`, proves all four clauses. Current `SP/FunctorialityStatement.md:35–58` identifies that proof and records successful original validation, independent approval and publication separately from earlier unsuccessful checks. | C5 statement and proof-document units published; no further change needed. |
+| I060 | Held at audit; no longer holds after C5 | Original `SP/UniversalStatement.md:3–8,36–37` described an unaccepted target awaiting a separate proof. `SP/UniversalProof.lean:28–33`, `Langlands.smoothPartUniversalProperty`, proves the whole target. Current `SP/UniversalStatement.md:38–58` identifies it and records separate original acceptances/publications. Current `SP/UniversalProof.md:79–91,102–112` makes the preparation account historical and links the corrected dependency status sections. | C5 statement and proof-document units published; no target or binder change was required. |
 | ISSUES-1 DOC-03 | Held at audit; no longer holds after C6 | Original `CS/TotalConjugatingCountStatement.md:43–47` denied a Library `Finite (BlockShape n)` instance. `CS/FiniteBlockShapes.lean:10–34` constructs `BlockShape.toComposition`, proves its injectivity and supplies `finiteBlockShape` for every natural rank, including zero. Current `CS/TotalConjugatingCountStatement.md:44–62` names the helper, explains its absence from the statement's complete import closure and distinguishes finite-sum infrastructure from the factorial count. C6's independent review, publication and matching hashes are verified below. | C6 published; no further change needed for DOC-03. The exact factorial target and all imports remain unchanged. |
 
 ## Mathematical scope and original-source checks
@@ -296,7 +300,7 @@ documentation corrections, all ten Lean/Markdown pairs at pilot
 Library `fb40559309dd366f4145aa31aad8c3db11b7cc07` matched their original
 accepted bundle SHA-256 values. For nine pairs the archived `archive/1/final/`
 files were also present and matched those pre-correction bytes. All ten Lean
-files remain identical at the current check; six of their Markdown files now
+files remain identical at the current check; all ten of their Markdown files now
 carry the C5 corrections recorded below. The exception to the archived-final
 comparison is detailed immediately after the table.
 
@@ -328,38 +332,41 @@ These earlier outcomes were retained, not treated as the final outcome.
 
 **FixedVectorsProof evidence limit.** Candidate
 `845f3f41-937b-4cd6-93ac-408338821da3` has no `archive/1/final/` directory in this
-export. Its current Lean hash
+export. Its unchanged current Lean hash
 `62ce8bc649cf6947c364e7fd368aeaceb96343ed8b30e9a1a794e0ad7f6e988f`
-and Markdown hash
+and pre-correction Markdown hash
 `6609d0147f6b4f96212902886307714314cd4ce2ddd18d78b12aefa8a350a8d9`
-match the exact original accepted bundle. Original validation
+match the exact original accepted bundle. The current Markdown instead has
+the C5 proof-document correction hash recorded below; it is not asserted to
+match that original bundle. Original validation
 `997582d4-ff38-42e2-a2da-611cc12605a4` has `proof_accepted=true`, Lake build and
 exact-target evidence, and Reviewer 167 independently approved it. Its publication
 row is present at the Test 2 commit in the table. However, the exported final
 integration validation is a shared batch build with `proof_accepted=false`,
 not a fresh exact-target proof acceptance; it supplies no final semantic-check
 or source-binding record. Thus this note verifies original proof acceptance,
-recorded publication and current equality to the original accepted hashes. It
+recorded publication, unchanged current Lean, and pre-correction Markdown
+equality to the original accepted hashes. It
 does not claim an archived-final-byte comparison or fresh exact-target acceptance
 of that final integration batch. This limitation does not justify describing the
 original construction/target as unaccepted, nor the implemented laws as nonexistent.
 
 ## Correction ledger
 
-Status checked on 2026-10-23 against authoritative TaskHub fetch and task records.
-C1, C2, C3, C4 and C6 are accepted and published. C5's definition and statement
-units are also accepted and published; the necessary proof-document follow-up
-has no candidate on this check. Exact fetch records, independent approval
-reports, final integrated validations and reviewed/published/current hashes have
-been verified for all seven correction publications. C5 remains incomplete
-until its necessary follow-up is accepted and published; the parent also
-requires acceptance and publication of the final ledger.
-Each task requires unchanged Lean
-bytes and the mathematical artifact workflow for paired Markdown, followed by
-independent review and publication.
-C5 permits the necessary neighboring SmoothPart documentation to be reconciled
-within the same status issue. This audit note uses the separate public-note
-workflow. The ledger must be updated when actual correction evidence arrives.
+Status checked on 2026-10-24 against authoritative TaskHub fetch and publication
+records. All eight correction candidates under C1–C6 are independently accepted
+and published. Exact candidate bindings, complete independent approval reports,
+final integrated validations and reviewed/published/current file comparisons
+have been verified. No necessary correction candidate remains pending. C5's
+executor retains its task-completion declaration, distinct from the verified
+publication of all required corrections. Parent completion also requires
+acceptance and publication of this final ledger update.
+
+Each correction preserved Lean bytes and used the mathematical artifact workflow
+for paired Markdown. The neighboring SmoothPart proof-document unit was
+published as a focused proof task, preserving the exact published target. This
+audit note uses the separate public-note workflow. Neither a note's validation
+nor its publication supplies mathematical proof acceptance.
 
 | Unit | Finding coverage | Correction task / revision | Candidate, review, validation and publication |
 | --- | --- | --- | --- |
@@ -367,7 +374,7 @@ workflow. The ledger must be updated when actual correction evidence arrives.
 | C2 | I033 | `5f109d54-307b-44b4-966e-f57a30351919` / 1 | Candidate `ae344c62-c5d1-4e53-ba14-6c41989de5ad`, `lean.statement@1`; validation `678e20d6-11ab-4e01-a1f4-66d2c678634c` accepted; Reviewer 1487 approved review task `ef89df93-2ea2-4712-974e-9c777f5a09cd`, no qualifications; published at `451f42a052568843a4d727659c3d0a6c66d38ca6`. |
 | C3 | I036, I053, I054 | `8454a266-f4aa-441b-8c6e-366da6de6819` / 1 | Candidate `aa209996-51b4-409b-89fc-f762a4229d07`, `lean.statement@1`; validation `3428fcdc-0575-449a-95c5-38423a307e1a` accepted; Reviewer 1621 approved review task `6d9b4447-244e-468b-8e9d-bfd84a5d5dd5`, no qualifications; published at `4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9`. |
 | C4 | I055 | `55caa000-0cfc-4d80-be3f-6ba06d005315` / 1 | Candidate `a6cd0a84-f1fb-4f19-8752-05ad59077227`, `lean.statement@1`; validation `2e8f557d-0392-426e-828f-011dd6dbf0f2` accepted; Reviewer 1541 approved review task `a567610c-2256-4843-a437-a546010dcf2d`, no qualifications; published at `4ab35fd7cc442c437d97a7e9a247b902533aa199`. |
-| C5 | I056, I057, I058, I059, I060 | `d3c12473-e617-41d9-bf73-729d7c71f1ea` / 2 | Definition candidate `c0047c69-da72-4c96-8eb6-9d7ae4069f5e`, `lean.definition@1`, accepted validation `a5206020-a292-4d3c-a54b-97940b7c1785`, Reviewer 1623 approval `83fdb6e2-887d-45b5-abb3-75d495ae6432`; statement candidate `078ba475-a6a9-4a33-8f4a-0fae37df22ff`, `lean.statement@1`, accepted validation `08c8c041-93e3-49d1-a9c7-b653ccd85499`, Reviewer 1629 approval `74e5aac7-ab60-4cae-9fcc-3aa885b10ef6`. Both published at `4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9`, with no qualifications. Necessary proof-document follow-up remains open. |
+| C5 | I056, I057, I058, I059, I060 | `d3c12473-e617-41d9-bf73-729d7c71f1ea` / 2 | Definition candidate `c0047c69-da72-4c96-8eb6-9d7ae4069f5e`, `lean.definition@1`, accepted validation `a5206020-a292-4d3c-a54b-97940b7c1785`, Reviewer 1623 approval `83fdb6e2-887d-45b5-abb3-75d495ae6432`; statement candidate `078ba475-a6a9-4a33-8f4a-0fae37df22ff`, `lean.statement@1`, accepted validation `08c8c041-93e3-49d1-a9c7-b653ccd85499`, Reviewer 1629 approval `74e5aac7-ab60-4cae-9fcc-3aa885b10ef6`. Both published at `4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9`, with no qualifications. Proof-document follow-up task `c559eb4c-3815-402d-bb34-46e14b686334` / 1: candidate `995398b4-f6f2-45dd-8a7f-d181404cc8c9`, `lean.proof@1`, accepted validation `c0dadffa-5f30-4ef5-8451-709ffde73efd`, Reviewer 2090 approval in `bc9c4b76-bc3a-4344-9e23-e24edd262f42`; published at `e4296643398fb6f96e73eb81e8e5d19a0d2650be`, no qualifications. All necessary C5 corrections are published. |
 | C6 | ISSUES-1 DOC-03 | `89b3bb14-8afe-4e87-9c07-b14d0fe8c481` / 1 | Candidate `0b475cba-c9c0-4e82-b0c4-8326efa2de98`, `lean.statement@1`; validation `0662be3c-7bf8-4d13-a903-7fbb312021e9` accepted; Reviewer 1549 approved review task `fc700860-f4b7-4f83-9ed9-f50af6b99ddd`, no qualifications; published at `4ab35fd7cc442c437d97a7e9a247b902533aa199`. |
 
 ### C1: verified published correction
@@ -509,7 +516,7 @@ laws from compact duality and admissible reflexivity, retaining compact-open
 cofinality and the separate smoothness/admissibility requirements. Missing
 historical compact-proof receipts remain explicitly outside these claims.
 
-### C5: verified definition and statement publications; proof documents pending
+### C5: verified definition, statement and proof-document publications
 
 The definition candidate `c0047c69-da72-4c96-8eb6-9d7ae4069f5e` has body hash
 `a728be58e4a0791913b7a7851014baa7430915b966e4d82d6d317bd15f2e529f`.
@@ -533,15 +540,63 @@ FixedVectorsProof final-export limit. `SP/HomDefinitions.md:47–56` and
 `SP/HomStatement.md:50–57` accurately limit the ten-contribution export: it
 does not establish acceptance or non-acceptance of the Hom pairs.
 
-These two units do not change the proof Markdown. The unchanged
-`SP/UniversalProof.md:62–81` still mixes original Test 2 preparation status with
-undated current availability and says the dependencies retain draft labels.
-After the published definition/statement corrections, this needs historical
-qualification. The necessary neighboring proof-document consistency unit
-remains open under C5; no independently accepted/published follow-up candidate
-has been verified at this check. This is a remaining documentation obligation,
-not a newly asserted gap in the original proof acceptance or a request to change
-any Lean target.
+The subsequent proof-document unit is now independently accepted and published.
+Current `SP/BasicProof.md:3–8,45–69`, `SP/FixedVectorsProof.md:3–11,79–91`,
+`SP/FunctorialityProof.md:3–8,72–97` and
+`SP/UniversalProof.md:3–8,69–91,102–112` explicitly distinguish original Test 2
+preparation, validation, independent approval and publication from the later
+pilot documentation correction. Universal no longer claims that its current
+dependency Markdown retains draft labels. `SP/HomProof.md:8–13,38–62,79–87`
+retains the ten-contribution export's coverage limit and asserts no independently
+verified historical Hom acceptance or non-acceptance. Its Windows source locator
+is labeled historical, with a readable current path at lines 64–77.
+Functoriality's Casselman title is corrected at lines 77–82.
+
+The exact candidate is `995398b4-f6f2-45dd-8a7f-d181404cc8c9`, body SHA-256
+`91067e3b2388429b4c93da1d74d4fd25fcdcd878cd14bdc62f09aa0f912eebc3`, submitted
+by Worker 374 with the original and reused-draft coauthors retained. Its primary
+theorem is `Langlands.smoothPartUniversalProperty`, with the exact unchanged
+`statement_declaration` `Langlands.SmoothPartUniversalProperty`. Accepted fresh
+candidate validation `c0dadffa-5f30-4ef5-8451-709ffde73efd` binds its snapshot
+`8dbb286a691e80b46a8e9fba11c0545f4d5d05028e5e89a0e0a6c8fc997e01ab` and
+records `proof_accepted=true` with Lake-build, exact-target, unchanged-statement
+and frozen-input checks. Its report SHA-256 is
+`04b42aa494e3c46870a51b47ed250f99e8f27bedf38c6bad21225df8f93af871`.
+Reviewer 2090's complete independent approval report, receipt
+`45ad386c59b0420284ec55780e8a0eb2`, binds this candidate and verifies the five
+explanations, original Casselman pp.1–2 and original Test 2 evidence. It has no
+qualifications. This exact-target receipt concerns the Universal primary theorem;
+it does not create missing historical Hom or FixedVectors final-export evidence.
+
+Integration `7d0d94927504403e8b50d17428507678` published this correction at
+`e4296643398fb6f96e73eb81e8e5d19a0d2650be`, integrated snapshot
+`40dde754183034e47dd2200bf09d021822064741fe5a4f43e6dfecc6070f1812`.
+The accepted fresh integrated batch validation has report SHA-256
+`060ff2637339330b339ad5d7958e5dc44ba6b0a4c4964dfd5ab3ce45038df17a`,
+`acceptance_scope=source-compilation-only` and `proof_accepted=false`.
+It is a compilation receipt, distinct from the candidate's exact-target proof
+validation and independent semantic approval. The six submitted files match
+reviewed, published and current bytes exactly. Relative to the candidate's base
+`e6045276bfca31676e0ceb0c8ed92e2709c53f61`, exactly the five proof Markdown
+files changed in SmoothPart; all Lean and every other pair in that folder are
+unchanged. The Universal target and the complete project import closure of its
+statement, including the smooth-part and foundational definitions, are also
+unchanged in both Lean and Markdown.
+
+| File | Reviewed = published = current SHA-256 |
+| --- | --- |
+| `SP/BasicProof.md` | `aeb2a008caea74aa07c09f1fce5741adf518a63239e239545f2f0c5ba7ad0ed8` |
+| `SP/FixedVectorsProof.md` | `3fa810121862bb82e77e53314b28f141e5b0cb7691cebe723a98d0584db1e0a0` |
+| `SP/FunctorialityProof.md` | `f29b7db66221e5ef7e0db1e169378d4b3b51b7e5754d53c2b371e1ee4e17a56d` |
+| `SP/HomProof.md` | `fc43b84cb9b238a2b711f12fbb7e8abfb97ea9ccd155e345b8db452763e1291f` |
+| `SP/UniversalProof.lean` | `e8f0bf938c8b069f480b0ca6d41b6b65b8dca24033a960c5bf254388a1d4eea9` |
+| `SP/UniversalProof.md` | `00c9919fc60ee4e0990251fd7f916b49998d05b02ee3b0ea06898bb969add1be` |
+
+The corrected FixedVectors proof page preserves the original proof acceptance,
+recorded publication, absence of archived final sources/binding and the final
+exported batch's `proof_accepted=false`. No missing historical receipt is
+invented. I056–I060 and their necessary neighboring status inconsistencies are
+therefore corrected without changing any Lean target, binder or import.
 
 ### C3/C5 integrated validation and exact files
 
@@ -652,23 +707,44 @@ independently approved by Reviewer 1619 in review task
 `77dd1c1a3e2a15672de3bfaa7198bc3488dafe34354d9a5470dc56b8bb581a8c`
 and accepted fresh public-documentation validation. Neither validation claims
 Lean compilation or proof acceptance. The reviewed note, publication and
-pre-update note at this check share SHA-256
+pre-update note at the earlier check
+`4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9` share SHA-256
 `f2ea23f85c07cf49211e128cbf12179f55e8cf00a11f1bd68361f2a0308e9697`.
 The reviewed README hash is
 `4ba52103bf46500e8f5bab82d7034df901289978b01e8c3ce7e0ed70ab3f1310`;
-the published/current pre-update README hash is
+the published README hash at that earlier check is
 `dff6d8a355fd58dd43234c2b797d9cf3c5589080d9664d75c9dc8467e63e2b1c`.
 This audit's entry is identical. Integration updated the geometry and factors
 sibling entries and added the local-CFT sibling entry. That note's statuses
 were explicitly pinned to `fb40559309dd366f4145aa31aad8c3db11b7cc07`.
 
-This update records C3 and both C5 publications and the preceding ledger
-publication, retaining all twelve original findings and every historical
-evidence limit. C5's necessary proof-document follow-up remains required.
-No required correction is waived by publication of this verdict ledger.
-Completion requires the independently accepted and published final ledger and
-every still-needed correction. Unrelated open mathematical goals remain outside
-this audit's completion conditions.
+The C3/C5-definition-and-statement update
+`cc1a2607-7ad2-4cb3-bccf-ebd57d88a27e` was independently approved by Reviewer
+1651 in review task `6ce92e59-eb9b-4e1d-a4ab-53a3daaa26da`, receipt
+`5d02bc0502fe43fba2f784d83bd7f36b`, without qualifications. Metadata validation
+`b6ad0ee0-3b8a-4c44-ad9a-d3b5925f19a1` was accepted. Integration
+`f43c9ded87ba4c48ae1256768cacbdec` published it at
+`acc39e30113233fe5beb6a6316d99215aec1ef8b`, integrated snapshot
+`dbf66603db9a01a64ec1518bc7958f293acf317a020cf1d0d3c9ef68c63052c6`, after
+accepted fresh public-documentation validation. Neither validation claims Lean
+compilation or proof acceptance. Its reviewed and published note and the
+pre-update note at the current check share SHA-256
+`7d96b77123fed9849e77d14957ec1d113e113e7c1faf01df5a89be7ffa39c457`.
+The reviewed README hash is
+`e4ca1bd77d0ef9c243771ec0f17c4c4090594a81979b20bd9684cceadca0dea8`;
+the publication's README hash is
+`63c2272c2a1753f813d2ce048e00dd9522b740f11517fb97643406132cb7bb19`.
+Integration only added the global-adeles-shimura sibling entry. Later Library
+updates changed other sibling entries; this audit's entry remains unchanged
+before the current edit. That note's statuses were explicitly pinned to
+`4750a03e101b9ad45fc1a4d90a6a3d02d69c73e9`.
+
+This final update records the C5 proof-document publication and preceding
+ledger publication, retains all twelve historical/current verdicts and every
+evidence limit, and verifies all eight necessary correction publications.
+Independent acceptance and publication of this final ledger remain required
+before parent completion. Unrelated open mathematical goals and the explicitly
+unavailable historical evidence do not become accepted results by this audit.
 
 ## Checked file hashes
 

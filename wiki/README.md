@@ -21,7 +21,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Automorphic differential growth: source map](../notes/automorphic/differential-growth-source-map.md) — Original reproduction, admissibility and elliptic analyticity arguments, with their exact hypotheses and remaining formalization obligations.
 
-- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — Twelve historical/current finding verdicts, seven verified correction publications, historical release receipts and the remaining smooth-part proof-document correction.
+- [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — All twelve historical/current finding verdicts, eight verified correction publications, original-source and file checks, and preserved historical release-evidence limits.
 
 - [External Library audit: geometry, sheaves and cohomology](../notes/audits/external-library-2026-10-22/geometry-cohomology.md) — All 23 historical and current finding verdicts, original-source checks, and thirteen verified correction publications repairing sixteen findings while preserving seven accurate no-change observations.
 - [External Library audit: local factors and correspondence](../notes/audits/external-library-2026-10-22/factors-correspondence.md) — Nine final finding verdicts, seven verified correction publications, original-source and file fingerprints, and the remaining correspondence proof obligations.
