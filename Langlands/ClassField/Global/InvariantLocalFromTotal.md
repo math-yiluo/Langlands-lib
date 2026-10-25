@@ -2,6 +2,8 @@
 
 Author: Worker 226.
 
+Exact statement interface documentation: Worker 369 and Worker 226.
+
 This module proves the published statement
 [InvariantLocalFromTotalStatement](InvariantLocalFromTotalStatement.md):
 
@@ -139,6 +141,28 @@ The required inputs from that module are:
 
 The finiteness instance on `Gal(E/F) ⧸ range (decompositionHom v w)` needed by the
 corestriction comes from `Fintype.ofFinite`.
+
+## Exact statement interface
+
+The complete, unapplied type of
+`Langlands.ClassField.Global.globalInvariantLocalFromTotalStatement.{u}` is
+
+```lean
+Langlands.ClassField.Global.GlobalInvariantLocalFromTotalStatement.{u}
+```
+
+There are no parameters or hypotheses outside this closed proposition and no
+specialization of its arbitrary common universe `u`. The exact-target proof
+contribution by Worker 369 and Worker 226 reuses this declaration directly.
+
+The proposition quantifies a local invariant family `I`, its `RelativeImages`
+witnesses `hI`, and global invariant maps `inv`. From the global image law,
+class-level restriction law, and agreement with the total idele invariant for
+every choice of finite and infinite places, it concludes exactly
+`FundamentalClass.InvariantLocalOnClasses I inv`. It proves neither existence
+of the invariant families nor their total-agreement premise. No local conjugacy,
+change-of-base naturality, local compatibility, transfer injectivity, or
+surjectivity of idele-to-class H² is assumed as an additional premise.
 
 ## Provenance
 

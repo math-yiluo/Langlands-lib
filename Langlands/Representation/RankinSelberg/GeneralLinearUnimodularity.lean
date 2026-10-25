@@ -111,7 +111,9 @@ private theorem character_transvection (χ : GeneralLinearGroup ι F →* ℝ≥
     simpa only [map_mul, map_one, ← heq, pow_two] using congrArg χ hm
   exact (pow_eq_one_iff_of_nonneg (zero_le) (by decide : 2 ≠ 0)).mp hp
 
-private theorem character_eq_one (χ : GeneralLinearGroup ι F →* ℝ≥0)
+/-- Any nonnegative-real character of a finite general linear group which is
+trivial on scalar matrices is trivial. No topology or continuity is required. -/
+theorem character_eq_one (χ : GeneralLinearGroup ι F →* ℝ≥0)
     (hscalar : ∀ a : Fˣ, χ (GeneralLinearGroup.scalar ι a) = 1)
     (g : GeneralLinearGroup ι F) : χ g = 1 := by
   let P : Matrix ι ι F → Prop := fun A =>

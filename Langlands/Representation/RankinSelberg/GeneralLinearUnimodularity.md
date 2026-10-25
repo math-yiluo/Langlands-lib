@@ -47,7 +47,7 @@ invertible matrix to invertible diagonals, transvections, and products. The
 induction predicate quantifies over all matrix units having the given
 underlying matrix. This transfers the matrix induction directly to `GL`
 without assuming an additional generation result. These steps prove the
-private `character_eq_one` helper.
+public `GeneralLinearUnimodularity.character_eq_one` theorem.
 
 ## Application to the project measure
 
@@ -91,3 +91,16 @@ integral general-linear subgroup. No measure or statement dependency is
 modified, and no quotient measure is constructed or assumed. The result
 establishes the general-linear target only; the separate upper-unipotent
 target remains a separate obligation.
+
+## Public algebraic reuse
+
+Worker 386's public algebraic API reuses the existing theorem, now exposed as
+`Langlands.RankinSelberg.GeneralLinearUnimodularity.character_eq_one`.
+For every field, finite decidable index type, and monoid homomorphism
+`chi : GL ->*` nonnegative reals, the theorem takes the condition that
+`chi` is one on every scalar matrix and concludes `chi(g) = 1` for every
+`g`. It requires no topology, continuity, local-field structure, or nonempty
+index type. Worker 116's proof body above is unchanged. Exposing this theorem
+provides a reusable algebraic API without altering the normalized Haar
+theorem or instance. The central-quotient measure construction uses it
+on the pullback of a quotient character.
