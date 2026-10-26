@@ -48,26 +48,12 @@ Notation: composition `f ≫ g` is `f` followed by `g`. `e` is Mathlib's
 
 ## Extension and functors
 
-`C`, `D` are categories with zero morphisms and zero objects,
-`F, G : C ⥤ D` preserve zero morphisms, and `e : c.Embedding c'` is an
-embedding of complex shapes. The Library's `DerivedPlus.mapExtendIso F K e` is
-an isomorphism from the extension of `F` applied to `K` to `F` applied to the
-extension of `K`. Its components `DerivedPlus.extendXMapIso F K i` are the
-identity in the degrees coming from `c`, and the unique isomorphism of zero
-objects elsewhere.
-
-- `extendMapIso e F K`: the inverse isomorphism
-  `(F.mapHomologicalComplex c').obj (K.extend e) ≅
-  ((F.mapHomologicalComplex c).obj K).extend e`. By `extendMapIso_hom_f`, its
-  component in degree `i'` is the inverse of `DerivedPlus.extendXMapIso F K (e.r i')`.
-- `extendXMapIso_inv_mapX` and `extendMapIso_hom_naturality`: `extendMapIso`
-  is natural in `K` with respect to Mathlib's `extendMap`. In degrees coming
-  from `c` both sides equal `F` of the component. In the other degrees the
-  target is zero.
-- `extendXMapIso_inv_app` and `extendMapIso_hom_app`: `extendMapIso` is
-  natural in the functor. For `α : F ⟶ G`, `α` applied degreewise to `K.extend e`,
-  followed by `extendMapIso e G K`, equals `extendMapIso e F K` followed by the
-  extension of `α` applied degreewise to `K`. The proof is the same.
+The generic extension comparison and its naturality identities now live in
+[`Langlands.Cohomology.ExtendMap`](../ExtendMap.md), imported by this module.
+The declarations `extendMapIso`, `extendMapIso_hom_f`,
+`extendXMapIso_inv_mapX`, `extendMapIso_hom_naturality`,
+`extendXMapIso_inv_app` and `extendMapIso_hom_app` retain their original names,
+types and definitions in `Langlands.Cohomology` and remain available here.
 
 ## Trivial actions and smoothness under isomorphisms
 
