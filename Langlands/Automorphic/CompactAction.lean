@@ -12,11 +12,16 @@ open Langlands.Global
 
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions K n) := Submodule.addCommGroup _
+local instance compactActionRationalAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
+local instance compactActionContinuousAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
+local instance compactActionSmoothAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
+local instance compactActionFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
+local instance compactActionStableAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions K n) := Submodule.addCommGroup _
 
 /-- The full automorphic subspace is stable under the actual standard compact group. -/
 def automorphicCompactSubrepresentation :

@@ -5,6 +5,11 @@ and `CompactTranslationProof` APIs. It bundles the proved compact-preservation
 theorem into a representation on the existing full space `AutomorphicForms`.
 It introduces no new original-literature identification or analytic hypothesis.
 
+The five local `AddCommGroup` instances have explicit module-specific names
+prefixed `compactAction`. This permits combined imports with `OperatorLieAction`
+and its `OperatorRealization` dependency in either order while preserving the
+instances' definitions and the compact action.
+
 ## Parameters and actual action
 
 The field is any `K : Type u` with `Field K` and `NumberField K`, and the rank
