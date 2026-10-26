@@ -19,7 +19,7 @@ path (relative to `Langlands/`) is given, and its paired Markdown gives exact
 locators and interpretive choices. The eight-character IDs are prefixes of
 the accepted candidate IDs; "Source records" below gives the full IDs. Every
 declaration named here is in Library commit
-`ec55903e24f28e3dc27f6ba202ff0af22883c525`. Statements are
+`d1e92cc3fedd601726630b19e4e6d1a9dc84b2cd`. Statements are
 proposition definitions (`def … : Prop`). Publishing a statement accepts its
 formulation, not its truth, and no statement is an axiom or a structure
 field.
@@ -213,8 +213,22 @@ The modules, by scope item:
   (`a6d2e9f0`, Worker 378, statements): `GeneralScalarHaarScalingStatement`,
   `GeneralRectangularHaarScalingStatement`, `GeneralModulusScalingStatement`
   (`IsModulusScaling` for every additive Haar measure on `n × m` matrices)
-  and their conjunction `GeneralAdditiveHaarScalingStatement`. In the p-adic
-  layer the corresponding law is proved (`isModulusScaling_padic`,
+  and their conjunction `GeneralAdditiveHaarScalingStatement`. All four are
+  proved, with no added hypotheses.
+  `HarmonicAnalysis/GeneralScalarHaarScalingProof` (`89c292a2`, Worker 11,
+  proof) proves the scalar law as `generalScalarHaarScalingStatement`. It
+  also has helper theorems in `Langlands.HarmonicAnalysis.GeneralLocalField`,
+  such as `secondCountableTopology`, which derive regularity and countability
+  from the local-field hypotheses. `HarmonicAnalysis/GeneralHaarScalingProof`
+  (`8b0a012d`, Worker 99 with Worker 11, proof) proves
+  `generalRectangularHaarScalingStatement`, `generalModulusScalingStatement`
+  and `generalAdditiveHaarScalingStatement`. So, for the residue-normalized
+  `abv`, a Borel structure on `F` and an additive Haar measure on the radical,
+  `generalModulusScalingStatement` supplies the `IsModulusScaling`
+  hypothesis of `generalIntertwiningCoefficient_eq` and
+  `satisfiesLocalCoefficientEquation_sourceEval_iff`. In the p-adic layer the
+  corresponding law is proved
+  (`Langlands.PadicField.TopologicalData.isModulusScaling_padic`,
   `IntertwiningPadic`).
 - **Item 3.** `GeneralJacquetStatements` (`ffff3780`, Worker 99, statements):
   `GeneralJacquetStabilizationStatement`,
@@ -331,12 +345,6 @@ the p-adic relations and `HasIntegerConductor ψ` in place of
 - `LocalCoefficientGammaStatement` and `GeneralLocalCoefficientGammaStatement`
   (Theorem 5.1), including existence of the local coefficient, of the gamma
   factor and of a geometrically normalized equal-rank datum.
-- `GeneralAdditiveHaarScalingStatement`. Its modulus component supplies the
-  `IsModulusScaling` hypothesis of `generalIntertwiningCoefficient_eq` and
-  `satisfiesLocalCoefficientEquation_sourceEval_iff` over general fields.
-  The scalar component is task `01ff89df-9275-4c4d-b3fa-3371ce965860`
-  (published by Worker 99; ready, with no members, on 2026-10-25). The
-  rectangular and modulus components depend on it.
 - Not stated: Lemma 5.1, Propositions 3.1 and 4.2, the multiplicativity of
   `C_χ` and `ε'`, and the Plancherel measures of Section 6.
 
@@ -347,10 +355,13 @@ published; each candidate published one Lean module with its Markdown.
 TaskHub `fetch` of the ID returns the candidate record; the project
 artifact store holds the same record at `artifacts/<ID>/1/record.json`. The
 record's `sources` array gives the literature ID, the SHA-256 of the
-retained file (`content_sha256`) and a locator. Every record cites
-`shahidi-1984-fourier` (SHA-256 above), except that of `a6d2e9f0`, an
-internal prerequisite with no literature source. The records of `1fbc982e`
-and `2ca640bc` also cite `jpss-1983-rankin-selberg`.
+retained file (`content_sha256`) and a locator. Every definition and
+statement record cites `shahidi-1984-fourier` (SHA-256 above), except that
+of `a6d2e9f0`, an internal prerequisite with no literature source. The
+records of `1fbc982e` and `2ca640bc` also cite `jpss-1983-rankin-selberg`.
+The two proof records (`89c292a2`, `8b0a012d`) have no `sources` array; their
+records name the proved statement (`statement_declaration`), and their
+Markdown states that the constructions are internal.
 
 | Candidate | Module | Kind |
 | --- | --- | --- |
@@ -389,18 +400,20 @@ and `2ca640bc` also cite `jpss-1983-rankin-selberg`.
 | `82cd2101-135d-4e43-8cc2-8a7e239508e9` | `GeneralLocalCoefficientExistenceStatement` | statement |
 | `2ca640bc-03a4-43db-ad9e-f19a736d96f8` | `GeneralLocalCoefficientGammaStatement` | statement |
 | `a6d2e9f0-ea30-4f7e-a56d-5cee3a24f164` | `HarmonicAnalysis/GeneralHaarScalingStatement` | statement |
+| `89c292a2-3858-4eb6-bed1-7c4d0fae1672` | `HarmonicAnalysis/GeneralScalarHaarScalingProof` | proof |
+| `8b0a012d-46a0-46c9-841c-bddcaa4e0f9a` | `HarmonicAnalysis/GeneralHaarScalingProof` | proof |
 
 These are all thirty-three modules of `Langlands/Representation/Shahidi/` at
 the pinned commit, together with
-`Representation/RankinSelberg/GeneralPairGamma` and
-`HarmonicAnalysis/GeneralHaarScalingStatement`.
+`Representation/RankinSelberg/GeneralPairGamma` and the three
+`HarmonicAnalysis` modules on general-field Haar scaling.
 
 ## Checking this note
 
 Every declaration name above was looked up at the pinned commit. For each
 module in the table, the SHA-256 of its Lean and Markdown files at the
 pinned commit was compared with the record's bundle hashes (`lean_sha256`,
-`markdown_sha256`). They agree, with three exceptions. In all three, the
+`markdown_sha256`). They agree, with four exceptions. In all four, the
 declaration names are unchanged.
 
 - `Geometry` (Lean and Markdown), at integration: the Integrator replaced a
@@ -415,3 +428,7 @@ declaration names are unchanged.
   the rank-order bullet (the source puts the smaller rank first, the Library
   the larger). The Lean file is unchanged, and both files at the pinned
   commit match that record's bundle hashes.
+- `GeneralHaarScalingProof.md`, at integration: the provenance reference
+  `Langlands.Shahidi.isModulusScaling_padic` became
+  `Langlands.PadicField.TopologicalData.isModulusScaling_padic`, the
+  correction noted in the review.
