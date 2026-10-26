@@ -6,7 +6,7 @@ representation universes. It retains the statement's arbitrary compact subset,
 arbitrary finite subtype measure, smooth coefficient-model data, Schwartz row
 test, and explicit determinant norm-one condition.
 
-The private helper `CompactIntegration.finite_average` works with any locally
+The reusable helper `CompactIntegration.finite_average` works with any locally
 constant finite-range map `D : A → B` on a space whose open sets are measurable,
 and any finite measure `μ` on `A`. It enumerates the range of `D` by `Fin m`.
 The resulting label map is measurable because its fibers are the open fibers

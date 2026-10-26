@@ -1,0 +1,15 @@
+# Polynomial-Proj projective space and H-projectivity
+
+This module constructs finite projective space over any commutative ring `R : Type u`, in the same universe, including dimension zero and the zero ring. The source is the registered original `stacks-projective-space-twists-morphisms-2026-10-26`: Stacks Section 27.13, Definition 27.13.2, the following relative-Proj description, and Lemma 27.13.3; and Section 29.44, Definition 29.44.1(2). Its local files are `literature/Stacks Project - Projective space, twists and projective morphisms (HTML snapshot 2026-10-26)/01ND.html` and `01W7.html`.
+
+`ProjectiveCoordinateRing R n` is `MvPolynomial (Fin (n + 1)) R`. `projectiveSpaceGrading R n` is Mathlib's family of homogeneous submodules for ordinary total degree; `projectiveSpaceGradedAlgebra` supplies Mathlib's corresponding graded-algebra structure. Thus every coordinate variable has degree one, as recorded by `projectiveSpace_X_mem`.
+
+`projectiveSpaceConstants R n` is the actual ring homomorphism sending `r` to the constant polynomial `C r` in degree zero. The constant homogeneity theorem supplies membership, and the ring laws follow from those of `MvPolynomial.C` by subtype extensionality. `projectiveSpaceConstants_coe` records its underlying value.
+
+`ProjectiveSpace R n` is the actual scheme `Proj (projectiveSpaceGrading R n)`. Its structure morphism `projectiveSpaceToSpec R n` composes Mathlib's `Proj.toSpecZero` with `Spec.map` of the constants homomorphism, so its target is `Spec (CommRingCat.of R)`. The construction specializes the polynomial relative-Proj description in Section 27.13 to a ring base. Stacks initially defines projective space over a general scheme by base change from the integer model; a formal comparison with that base-change presentation is outside this module.
+
+`projectiveSpaceCoordinateOpen R n i` is Mathlib's actual Proj basic open `D₊(X i)`. Its point membership is exactly exclusion of that variable from the corresponding homogeneous prime ideal, as stated by `mem_projectiveSpaceCoordinateOpen`. These are the opens named in Lemma 27.13.3. This module does not assert their affine-space descriptions or that they cover.
+
+`IsHProjective p` is a proposition about an actual scheme morphism `p : X ⟶ Spec R`. Its witnesses are a natural number `n`, a scheme morphism `i : X ⟶ ProjectiveSpace R n`, the actual property `IsClosedImmersion i`, and the equality `i ≫ projectiveSpaceToSpec R n = p`. This is precisely the finite-projective-space embedding convention, called H-projective in Stacks Definition 29.44.1(2). It does not assert comparison with clause (1), which permits a projective bundle of a finite type quasi-coherent module over a general base.
+
+No line bundle, ample sheaf, polarization, comparison certificate or existence theorem enters these definitions. Affine charts, base change, projectivity of particular schemes, twisting sheaves and ampleness are separate obligations. The small verification lemmas above directly unpack the construction and reuse Mathlib; they add no geometric hypotheses.

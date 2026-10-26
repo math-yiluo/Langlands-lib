@@ -12,7 +12,7 @@ open MeasureTheory HarmonicAnalysis Whittaker
 
 namespace CompactIntegration
 
-private theorem finite_average {A B : Type*} [TopologicalSpace A]
+theorem finite_average {A B : Type*} [TopologicalSpace A]
     [MeasurableSpace A] [OpensMeasurableSpace A] (D : A → B)
     (hD : IsLocallyConstant D) (hfin : (Set.range D).Finite)
     (μ : Measure A) [IsFiniteMeasure μ] :
