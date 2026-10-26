@@ -19,7 +19,9 @@ The target statement and its imported Lean/Markdown pairs are unchanged.
 
 ## Implemented proof
 
-The private helper `pi_nnreal_smul` identifies the finite product of rescaled
+The shared helper `HarmonicAnalysis.pi_nnreal_smul` in
+[FiniteProductMeasureScaling](../../HarmonicAnalysis/FiniteProductMeasureScaling.md)
+identifies the finite product of rescaled
 sigma-finite measures with their product rescaled by the product of the
 nonnegative scalars. It checks measurable rectangles using `Measure.pi_eq`,
 `Measure.pi_pi`, and `Finset.prod_smul`.
@@ -48,7 +50,7 @@ factor under `X_ij ↦ m_i X_ij m_j⁻¹` as that factor multiplied by
 `(|det m_i|^(B.size j) / |det m_j|^(B.size i))⁻¹`.
 The image measure is also sigma-finite because it equals a finite nonnegative
 scalar multiple of the original measure. `Measure.pi_map_pi` and
-`pi_nnreal_smul` combine these identities. Reindexing the modulus product and
+`HarmonicAnalysis.pi_nnreal_smul` combine these identities. Reindexing the modulus product and
 moving inversion outside the finite product give exactly the inverse of
 `T.leviModulus B m`.
 

@@ -1,3 +1,4 @@
+import Langlands.HarmonicAnalysis.FiniteProductMeasureScaling
 import Langlands.Group.GL.BlockModulusHaarStatement
 import Langlands.Group.GL.BlockUnipotentHaarProof
 import Langlands.HarmonicAnalysis.PadicRectangularHaarScalingProof
@@ -7,15 +8,6 @@ open MeasureTheory MeasureTheory.Measure
 open scoped BigOperators NNReal ENNReal
 
 namespace Langlands
-
-private theorem pi_nnreal_smul {ι : Type*} [Fintype ι] {X : ι → Type*}
-    [∀ i, MeasurableSpace (X i)] (μ : (i : ι) → Measure (X i))
-    [∀ i, SigmaFinite (μ i)] (c : ι → ℝ≥0) :
-    Measure.pi (fun i => c i • μ i) = (∏ i, c i) • Measure.pi μ := by
-  apply Measure.pi_eq
-  intro s _
-  simp only [Measure.smul_apply, Measure.pi_pi]
-  exact (Finset.prod_smul _ _ _).symm
 
 namespace PadicField.TopologicalData
 
@@ -94,7 +86,7 @@ theorem glBlockModulusHaarStatement_of_prerequisites
       ((T.leviModulus B m : ℝ≥0)⁻¹) • Measure.pi ν := by
     rw [Measure.pi_map_pi (fun ij => (hf ij).aemeasurable)]
     simp_rw [hscale]
-    rw [pi_nnreal_smul]
+    rw [HarmonicAnalysis.pi_nnreal_smul]
     congr 1
     rw [T.leviModulus_eq_upperPair_prod B]
     exact Finset.prod_inv_distrib _
