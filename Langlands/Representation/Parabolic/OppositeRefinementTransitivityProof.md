@@ -31,7 +31,8 @@ introduced.
 
 ## Characters on the inner radical
 
-The private lemma `lower_determinant_one` proves that each matrix in an
+The public lemma
+`Langlands.Parabolic.OppositeTransitivity.lower_determinant_one` proves that each matrix in an
 actual lower block-unipotent subgroup has determinant one. It reindexes
 the matrix by the block index equivalence, regards it as block triangular
 for the dual order, identifies every diagonal block with the identity,

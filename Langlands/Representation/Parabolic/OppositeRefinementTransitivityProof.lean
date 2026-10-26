@@ -10,7 +10,8 @@ open GeneralLinear Geometric
 
 universe uF uV
 
-private theorem lower_determinant_one {R : Type*} [CommRing R] {n : ℕ}
+/-- Elements of an opposite block radical have determinant one. -/
+theorem lower_determinant_one {R : Type*} [CommRing R] {n : ℕ}
     (B : BlockShape n) {g : GeneralLinear n R}
     (hg : g ∈ B.oppositeUnipotentSubgroup R) : determinant g = 1 := by
   obtain ⟨hp, hd⟩ := (B.mem_oppositeUnipotentSubgroup_iff R g).mp hg
