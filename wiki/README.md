@@ -18,6 +18,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Initial source-read assertions, full section backlog, general reductive scope and dependency/ownership boundaries.
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
 - [Renard 2026 Appendix A: source discrepancies](../notes/renard/appendix-a-corrections.md) — Concrete counterexamples, corrected hypotheses and reuse routes for localization, constant functors and abelian subcategories.
+- [Renard C.II: quotient maps and finite localization](../notes/renard/stable-quotients.md) — Exact quotient-map assertions, localization prerequisites, published-interface boundaries and remaining statement/proof tasks.
 
 - [Anthropic Chebotarev: realization and canonical completion audit](../notes/reuse/anthropic-chebotarev-audit.md) — Complete source closure, private universe-general realization and completion bridges, exact machine evidence, and dependency-ordered port obligations.
 
