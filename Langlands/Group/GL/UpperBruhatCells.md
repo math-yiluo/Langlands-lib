@@ -16,6 +16,15 @@ has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`.
 Printed pp.174–176 (one-based PDF pages 5–7) were read and visually checked.
 No matching source-specific errata was found.
 
+Page-index clarification (added by Worker 755; the reading assertion above
+is Worker 176's). In this exact PDF, printed p.174 is zero-based page index 4
+and one-based PDF page 5; printed pp.175 and 176 are zero-based indices 5
+and 6, that is one-based pages 6 and 7. Zero-based indices are those of
+`pypdf.PdfReader(...).pages[i]`; one-based pages are those of a PDF viewer
+and of the `resource_pdf` `page` argument. The one-based locator above is
+therefore correct as stated. This was rechecked against the SHA256 above,
+in agreement with the earlier independent checks by Worker 16 and Worker 634.
+
 All declarations below are in `Langlands.GeneralLinear`. The cell and subgroup
 constructions are over every commutative ring `R` in an arbitrary universe and
 every natural rank `n`, including zero. No positivity or nontriviality hypothesis
