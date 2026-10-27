@@ -11,35 +11,35 @@ namespace Langlands.SchemeModule
 
 variable {X : Scheme.{u}}
 
-private noncomputable def unitEndValue (φ : structureModule X ⟶ structureModule X)
+noncomputable def unitEndCoefficient (φ : structureModule X ⟶ structureModule X)
     (U : X.Opens) : Γ(X, U) := φ.app U (1 : Γ(X, U))
 
-private lemma unitEnd_app (φ : structureModule X ⟶ structureModule X)
-    (U : X.Opens) (a : Γ(X, U)) : φ.app U a = a * (unitEndValue φ U) := by
+lemma unitEndCoefficient_app (φ : structureModule X ⟶ structureModule X)
+    (U : X.Opens) (a : Γ(X, U)) : φ.app U a = a * (unitEndCoefficient φ U) := by
   have h := φ.app_smul a (1 : Γ(X, U))
-  change φ.app U ((a * 1 : Γ(X, U))) = a * unitEndValue φ U at h
+  change φ.app U ((a * 1 : Γ(X, U))) = a * unitEndCoefficient φ U at h
   simpa using h
 
-private lemma unitEnd_naturality (φ : structureModule X ⟶ structureModule X)
+lemma unitEnd_naturality (φ : structureModule X ⟶ structureModule X)
     {U V : X.Opens} (i : U ⟶ V) (a : Γ(X, V)) :
     φ.app U (X.presheaf.map i.op a) = X.presheaf.map i.op (φ.app V a) := by
   exact (ConcreteCategory.congr_hom (φ.mapPresheaf.naturality i.op) a)
 
-private lemma unitEnd_app_isIso (φ : structureModule X ⟶ structureModule X)
-    (U : X.Opens) (h : IsUnit (unitEndValue φ U)) : IsIso (φ.app U) := by
+lemma unitEnd_app_isIso (φ : structureModule X ⟶ structureModule X)
+    (U : X.Opens) (h : IsUnit (unitEndCoefficient φ U)) : IsIso (φ.app U) := by
   rw [ConcreteCategory.isIso_iff_bijective]
   obtain ⟨r, hr⟩ := h
   have he : (fun a : Γ(X, U) ↦ φ.app U a) = fun a : Γ(X, U) ↦ a * (r : Γ(X, U)) := by
     funext a
-    rw [unitEnd_app, hr]
+    rw [unitEndCoefficient_app, hr]
   change @Function.Bijective Γ(X, U) Γ(X, U) (fun a ↦ φ.app U a)
   rw [he]
   exact ⟨fun a b h ↦ (Units.mul_left_inj r).mp h,
     fun a ↦ ⟨a * ↑r⁻¹, by simp [mul_assoc]⟩⟩
 
-private lemma unitEnd_localUnit (φ : structureModule X ⟶ structureModule X) (x : X)
+lemma unitEnd_localUnit (φ : structureModule X ⟶ structureModule X) (x : X)
     [IsIso ((TopCat.Presheaf.stalkFunctor Ab.{u} x).map φ.mapPresheaf)] :
-    ∃ V : X.Opens, x ∈ V ∧ IsUnit (unitEndValue φ V) := by
+    ∃ V : X.Opens, x ∈ V ∧ IsUnit (unitEndCoefficient φ V) := by
   let P := (structureModule X).presheaf
   obtain ⟨b, hb⟩ := (ConcreteCategory.bijective_of_isIso
     ((TopCat.Presheaf.stalkFunctor Ab.{u} x).map φ.mapPresheaf)).surjective
@@ -53,11 +53,11 @@ private lemma unitEnd_localUnit (φ : structureModule X ⟶ structureModule X) (
     change X.presheaf.map iU.op (φ.app U a) = X.presheaf.map iT.op (1 : Γ(X, ⊤)) at he
     simpa only [map_one] using he
   refine ⟨V, hxV, ?_⟩
-  rw [unitEnd_app, mul_comm] at he'
+  rw [unitEndCoefficient_app, mul_comm] at he'
   exact IsUnit.of_mul_eq_one _ he'
 
-private lemma unitEnd_restrict_isIso (φ : structureModule X ⟶ structureModule X)
-    (V : X.Opens) (h : IsUnit (unitEndValue φ V)) :
+lemma unitEnd_restrict_isIso (φ : structureModule X ⟶ structureModule X)
+    (V : X.Opens) (h : IsUnit (unitEndCoefficient φ V)) :
     IsIso ((Scheme.Modules.restrictFunctor V.ι).map φ) := by
   rw [Scheme.Modules.Hom.isIso_iff_isIso_app]
   intro W
@@ -66,7 +66,7 @@ private lemma unitEnd_restrict_isIso (φ : structureModule X ⟶ structureModule
   let i : (V.ι ''ᵁ W) ⟶ V := homOfLE (by
     rintro z ⟨y, _, rfl⟩
     exact y.2)
-  have he : unitEndValue φ (V.ι ''ᵁ W) = X.presheaf.map i.op (unitEndValue φ V) := by
+  have he : unitEndCoefficient φ (V.ι ''ᵁ W) = X.presheaf.map i.op (unitEndCoefficient φ V) := by
     have he := unitEnd_naturality φ i (1 : Γ(X, V))
     rw [map_one] at he
     exact he

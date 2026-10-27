@@ -6,6 +6,16 @@ no additional hypotheses on the scheme. The theorem
 `Langlands.SchemeModule.lineBundleStalkFrameOpen` proves exactly the published
 proposition `Langlands.SchemeModule.LineBundleStalkFrameOpen`.
 
+The scalar helpers are public for reuse by
+[AffineGenerationLocusIntersectionProof](../Picard/AffineGenerationLocusIntersectionProof.md).
+`unitEndCoefficient` is the value at one, and `unitEndCoefficient_app`
+expresses multiplication by that value. The lemmas `unitEnd_naturality`,
+`unitEnd_app_isIso`, `unitEnd_localUnit` and `unitEnd_restrict_isIso`
+provide restriction compatibility, section invertibility, a local unit
+from a stalk isomorphism, and invertibility of the restricted morphism.
+These are the original helpers with public visibility; `unitEndValue`
+and `unitEnd_app` were renamed to the coefficient names above.
+
 First an endomorphism of the structure module acts on sections by
 multiplication by its value at one; this follows from module linearity.
 An invertible stalk map is surjective on the underlying abelian group, so

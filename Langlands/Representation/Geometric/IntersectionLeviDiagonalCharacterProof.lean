@@ -1,7 +1,7 @@
 import Langlands.Representation.Geometric.IntersectionLeviDiagonalCharacterStatement
 import Langlands.Representation.Geometric.StandardIntersectionsProof
 import Langlands.Representation.Geometric.RefinementDefinitions
-import Mathlib.LinearAlgebra.Matrix.Transvection
+import Langlands.Group.GL.Transvection
 import Mathlib.Algebra.Group.Pi.Lemmas
 
 /-! Algebraic determination of characters by literal diagonal matrices. -/
@@ -33,14 +33,6 @@ def diagonalUnit {k : ℕ} (t : Fin k → Fˣ) : GeneralLinear k F where
     diagonalUnit (1 : Fin k → Fˣ) = 1 := by
   apply Units.ext
   simp [diagonalUnit]
-
-/-- A transvection, including its explicit inverse. -/
-def transvectionUnit {k : ℕ} (i j : Fin k) (hij : i ≠ j) (c : F) :
-    GeneralLinear k F where
-  val := Matrix.transvection i j c
-  inv := Matrix.transvection i j (-c)
-  val_inv := by rw [Matrix.transvection_mul_transvection_same _ _ hij]; simp
-  inv_val := by rw [Matrix.transvection_mul_transvection_same _ _ hij]; simp
 
 /-- Scaling one row by two conjugates a transvection to its square. -/
 theorem scale_transvection [CharZero F] {k : ℕ} (i j : Fin k)

@@ -25,13 +25,16 @@ character enters the proof.
 
 ## Characters of one general linear group
 
-The helper declarations lie in `Langlands.Geometric.DiagonalCharacter`.
+The character-specific helper declarations lie in
+`Langlands.Geometric.DiagonalCharacter`.
 `diagonalUnit t` is the element of `GeneralLinear k F` whose matrix is
 `Matrix.diagonal (fun i => (t i : F))`, with inverse given by the diagonal
 of the inverse units. The two inverse laws follow from diagonal matrix
 multiplication. `diagonalUnit_one` proves that the all-one family gives
 the identity, including in rank zero.
 
+The shared `Langlands.GeneralLinear.transvectionUnit` is imported from
+[Group.GL.Transvection](../../Group/GL/Transvection.md).
 For distinct indices `i j : Fin k`, `transvectionUnit i j hij c` has matrix
 `1 + Matrix.single i j c` and inverse with coefficient `-c`. The inverse
 laws use Mathlib's multiplication formula for transvections with the same

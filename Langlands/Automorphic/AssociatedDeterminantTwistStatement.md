@@ -213,7 +213,7 @@ sends a geometric Frobenius to the class of a uniformizer. In the Library's
 arithmetic convention the transfer sends a geometric Frobenius to the class
 of the inverse of a uniformizer, so `τ_F` is its inverse.
 
-## Why the arithmetic hypothesis is needed
+## Why the statements assume the arithmetic hypothesis
 
 The computation above uses only places that split completely in `E`. Two
 characters of `C_F` that agree at almost all such places can still differ by
@@ -226,13 +226,18 @@ with local reciprocity for `F_v` followed by `F_v^× → C_F`. Classically this
 follows from the decomposition of the transfer over the double cosets of the
 decomposition group, together with local class field theory, when `c F E` is
 the arithmetic fundamental class. The reciprocity law `W_{E/F}^{ab} ≅ C_F`
-used below is also a property of the arithmetic class. For other class
-families neither fact is available. For the zero family and `E ≠ F`, for
-instance, the extension `RelativeWeilGroup c F E` splits, whereas the Weil
-group extension does not. So all three statements assume
-`IsArithmeticClassFamily c`, and the module claims nothing for other
-families. Neither the compatibility nor the reciprocity law is proved in
-the Library.
+used below is also a property of the arithmetic class. The cited sources
+prove neither fact for other class families. Some other families do satisfy
+the reciprocity law: as explained in
+[RelativeWeilTransferReciprocityStatement](../ClassField/Global/RelativeWeilTransferReciprocityStatement.md),
+the negated classes `-u_{E/F}` also give a surjective transfer whose kernel
+is the commutator subgroup. Other families do not give the Weil group at
+all: for the zero family and `E ≠ F`, for instance, the extension
+`RelativeWeilGroup c F E` splits, whereas the Weil group extension does
+not. So all three statements assume `IsArithmeticClassFamily c`. The
+argument below uses this hypothesis, but it is not shown to be necessary,
+and the module claims nothing for other families. Neither the compatibility
+nor the reciprocity law is proved in the Library.
 
 ## Why the statements are true
 
