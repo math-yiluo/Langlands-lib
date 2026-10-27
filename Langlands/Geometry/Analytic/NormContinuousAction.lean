@@ -1,5 +1,5 @@
 import Langlands.Geometry.Analytic.StrictTestDomain.ContinuousActionProof
-import Mathlib.CategoryTheory.Action.Continuous
+import Langlands.CategoryTheory.TopCatSelfForget
 import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
 
 /-! # Norm-continuous actions on actual presented strict affinoid algebras -/
@@ -143,13 +143,6 @@ instance (f : H →ₜ* G) : (restrict (K := K) f).Faithful where
 end Restriction
 
 section Spectrum
-
-/-- The identity forgetful functor, used explicitly for Mathlib's continuous
-actions on `TopCat` itself. It is not registered as a global instance. -/
-@[instance_reducible]
-def topCatSelfForget : HasForget₂ TopCat.{u} TopCat.{u} where
-  forget₂ := 𝟭 _
-  forget_comp := rfl
 
 attribute [local instance] topCatSelfForget
 

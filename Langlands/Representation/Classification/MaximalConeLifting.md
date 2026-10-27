@@ -37,7 +37,9 @@ In namespace `Langlands.GeneralLinear.BlockShape`, for `D : BlockRefinement C`:
 
 ## Opposite Jacquet classes
 
-In namespace `Langlands.PadicField.TopologicalData`:
+In namespace `Langlands.PadicField.TopologicalData`, the quotient map is
+imported from [OppositeJacquetMap](../Parabolic/OppositeJacquetMap.md); its
+properties below are proved here:
 
 - `oppositeJacquetMk T C A`: the published coinvariant map `Jacquet.mk`, typed with
   the bundled `CuspidalJacquetMultiplicity.oppositeJacquet T C A` as target.

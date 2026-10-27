@@ -1,4 +1,5 @@
 import Langlands.Representation.Classification.MaximalConeExponents
+import Langlands.Representation.Parabolic.OppositeJacquetMap
 import Langlands.Representation.Parabolic.OppositeRefinementTransitivityProof
 import Langlands.Representation.Parabolic.FlattenedOppositeUnipotentComparisonProof
 import Langlands.Representation.Parabolic.FlattenedRefinementModulusCalculation
@@ -117,11 +118,6 @@ end GeneralLinear.BlockShape
 namespace PadicField.TopologicalData
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} (T : F.TopologicalData) {n : ℕ}
-
-/-- The opposite coinvariant map, with the bundled opposite Jacquet module as target. -/
-def oppositeJacquetMk (C : BlockShape n) (A : Rep.{uV} ℂ (GeneralLinear n F.Carrier)) :
-    A →ₗ[ℂ] CuspidalJacquetMultiplicity.oppositeJacquet T C A :=
-  Jacquet.mk A.ρ (C.oppositeUnipotentSubgroup F.Carrier)
 
 theorem oppositeJacquetMk_surjective (C : BlockShape n)
     (A : Rep.{uV} ℂ (GeneralLinear n F.Carrier)) :

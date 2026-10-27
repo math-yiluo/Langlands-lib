@@ -63,7 +63,8 @@ proof applies the published `continuous_spectrumAction` theorem to
 continuity as input.
 
 Mathlib's continuous-action category takes a specified forgetful functor
-to `TopCat`. Here `topCatSelfForget` supplies exactly the identity functor,
+to `TopCat`. The shared [TopCatSelfForget](../../CategoryTheory/TopCatSelfForget.md)
+module retains the published `topCatSelfForget` declaration, which supplies the identity functor,
 with its compatibility equation proved by reflexivity. It is installed
 locally in this file, and the exported definitions retain that specified
 instance. A downstream file spelling the target as `ContAction TopCat G`
