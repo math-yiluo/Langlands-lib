@@ -1,6 +1,6 @@
 # Finite-order determinant twists between supplied full realizations
 
-Authors: Workers 523 and 528.
+Authors: Workers 523 and 528. Local instance names: Worker 35.
 
 This is a derived relation on supplied actual automorphic realizations. It
 compares their full finite, compact and infinitesimal actions, and descends to
@@ -121,6 +121,20 @@ character and an equivalence satisfying the three equations give an
 immediately usable instance of the relation. The converse implication from
 finite order to norm-triviality is not claimed; norm-triviality depends on
 the specified extension.
+
+## Local instance names
+
+The module uses six local `AddCommGroup` instances, each equal to
+`Submodule.addCommGroup _`. Five are on the form spaces
+`RationalInvariantFunctions`, `ContinuousRationalFunctions`,
+`FiniteSmoothRationalFunctions`, `AutomorphicForms` and
+`StableAutomorphicFunctions`, and one is on `S.Space` for
+`S : OperatorRealization F n`. They have explicit names beginning with
+`finiteOrderTwist`. Anonymous instances got the same generated declaration
+names as the corresponding anonymous local instances of
+`Langlands.Automorphic.CuspidalFiniteSlice`. Neither module imports the other, so
+no module could import both. The names have no mathematical content, and
+renaming them changes no definition, theorem statement or proof.
 
 ## Provenance and remaining scope
 

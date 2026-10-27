@@ -13,15 +13,20 @@ open Langlands.Global
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) :=
+local instance finiteOrderTwistRationalInvariantAddCommGroup (n : ℕ) :
+    AddCommGroup (RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) :=
+local instance finiteOrderTwistContinuousRationalAddCommGroup (n : ℕ) :
+    AddCommGroup (ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) :=
+local instance finiteOrderTwistFiniteSmoothRationalAddCommGroup (n : ℕ) :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (AutomorphicForms F n) :=
+local instance finiteOrderTwistAutomorphicFormsAddCommGroup (n : ℕ) :
+    AddCommGroup (AutomorphicForms F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) :=
+local instance finiteOrderTwistStableAutomorphicAddCommGroup (n : ℕ) :
+    AddCommGroup (StableAutomorphicFunctions F n) :=
   Submodule.addCommGroup _
 
 /-- The actual determinant character, coerced from complex units to a scalar. -/
@@ -50,7 +55,8 @@ theorem determinantTwistScalar_ne_zero (χ : HeckeCharacter F) (g : AdelicGL F n
 
 namespace OperatorRealization
 
-local instance (S : OperatorRealization F n) : AddCommGroup S.Space :=
+local instance finiteOrderTwistSpaceAddCommGroup (S : OperatorRealization F n) :
+    AddCommGroup S.Space :=
   Submodule.addCommGroup _
 
 variable {S T U : OperatorRealization F n} {χ ψ : HeckeCharacter F}
