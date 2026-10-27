@@ -35,6 +35,59 @@ component is the character of an integral infinity type. -/
 def IsAlgebraic [IsTotallyComplex K] (χ : HeckeCharacter K) : Prop :=
   ∃ a : InfinityType K, χ.HasPrescribedInfinityComponent (InfinityType.toCharacter a)
 
+/-- Harris 1998, page 195: `χ · ‖·‖^{a/2}` is of type `A₀`, that is, `χ` is
+algebraic after the twist by `‖·‖^{a/2}`. Every place of `K` is complex with
+normalized absolute value `|z|²`, so `‖·‖^{a/2}` is `∏_τ |z_τ|^a` at infinity.
+Harris takes `a = n - 1` for automorphic induction to `GL(n)`. -/
+def IsAlgebraicAfterTwist [IsTotallyComplex K] (a : ℕ) (χ : HeckeCharacter K) : Prop :=
+  ∃ t : InfinityType K, ∀ x : (InfiniteAdeles K)ˣ,
+    (χ.atInfinity x : ℂ) *
+        ∏ τ : InfinitePlace K, ((‖(InfinityType.coordinate τ x : ℂ)‖ : ℝ) : ℂ) ^ a =
+      (InfinityType.toCharacter t x : ℂ)
+
+/-- Without a twist, the condition is `IsAlgebraic`. -/
+theorem isAlgebraicAfterTwist_zero_iff [IsTotallyComplex K] (χ : HeckeCharacter K) :
+    IsAlgebraicAfterTwist 0 χ ↔ IsAlgebraic χ := by
+  simp only [IsAlgebraicAfterTwist, IsAlgebraic, HeckeCharacter.HasPrescribedInfinityComponent,
+    pow_zero, Finset.prod_const_one, mul_one]
+  constructor
+  · rintro ⟨t, ht⟩
+    exact ⟨t, ContinuousMonoidHom.ext fun x ↦ Units.ext (ht x)⟩
+  · rintro ⟨t, ht⟩
+    exact ⟨t, fun x ↦ by rw [ht]⟩
+
+private theorem toCharacter_add [IsTotallyComplex K] (t s : InfinityType K)
+    (x : (InfiniteAdeles K)ˣ) :
+    InfinityType.toCharacter (t + s) x =
+      InfinityType.toCharacter t x * InfinityType.toCharacter s x := by
+  simp only [InfinityType.toCharacter_apply, Pi.add_apply, zpow_add, ← Finset.prod_mul_distrib]
+  exact Finset.prod_congr rfl fun τ _ ↦ mul_mul_mul_comm _ _ _ _
+
+/-- `∏_τ |z_τ|²` is the character of the infinity type with all exponents `1`. -/
+private theorem prod_norm_pow_add_two [IsTotallyComplex K] (a : ℕ) (x : (InfiniteAdeles K)ˣ) :
+    ∏ τ : InfinitePlace K, ((‖(InfinityType.coordinate τ x : ℂ)‖ : ℝ) : ℂ) ^ (a + 2) =
+      (∏ τ : InfinitePlace K, ((‖(InfinityType.coordinate τ x : ℂ)‖ : ℝ) : ℂ) ^ a) *
+        (InfinityType.toCharacter (fun _ ↦ 1) x : ℂ) := by
+  rw [InfinityType.toCharacter_apply, Units.coe_prod, ← Finset.prod_mul_distrib]
+  refine Finset.prod_congr rfl fun τ _ ↦ ?_
+  rw [pow_add, zpow_one, zpow_one, Units.val_mul, Units.coe_star, Complex.star_def,
+    Complex.mul_conj']
+
+/-- The condition depends only on the parity of `a` (Harris, page 195: any `a`
+congruent to the `a(ν)` modulo `2`). -/
+theorem isAlgebraicAfterTwist_add_two_iff [IsTotallyComplex K] (a : ℕ) (χ : HeckeCharacter K) :
+    IsAlgebraicAfterTwist (a + 2) χ ↔ IsAlgebraicAfterTwist a χ := by
+  constructor
+  · rintro ⟨t, ht⟩
+    refine ⟨t - fun _ ↦ 1, fun x ↦ ?_⟩
+    have hx := ht x
+    rw [prod_norm_pow_add_two, ← mul_assoc, ← sub_add_cancel t (fun _ ↦ 1), toCharacter_add,
+      Units.val_mul] at hx
+    exact mul_right_cancel₀ (Units.ne_zero _) hx
+  · rintro ⟨t, ht⟩
+    refine ⟨t + fun _ ↦ 1, fun x ↦ ?_⟩
+    rw [prod_norm_pow_add_two, ← mul_assoc, ht x, toCharacter_add, Units.val_mul]
+
 /-- Harris's `χ = χ⁻¹ ∘ c` on a CM field, with the actual arithmetic complex
 conjugation of the idele-class group. -/
 def IsConjugateInverse [IsCMField K] (χ : HeckeCharacter K) : Prop :=
@@ -133,7 +186,8 @@ it; `L` is the Galois closure of the CM extension `E'/E`; `P` gives `v₁` and
 exactly one place of `L` above it; the two pairs differ; `χs` is in general
 position relative to `F` through the reciprocity family `e`; and `ξ` is an
 `E'/E`-regular algebraic Hecke character with `ξ = ξ⁻¹ ∘ c` and components `χ`
-at `v₁'` and `χs` at `v(*)₁'`. -/
+at `v₁'` and `χs` at `v(*)₁'`. "Algebraic" uses Harris's normalization for
+`GL(n)`, `n = [E' : E]` (page 195): `ξ · ‖·‖^{(n-1)/2}` is of type `A₀`. -/
 def IsProposition48Datum (e : ReciprocityFamily F) (χ χs : FieldCharacter F F')
     (K₀ : IntermediateField ℚ E) (P Ps : PlaceDatum F F' E E' L)
     (ξ : HeckeCharacter E') : Prop :=
@@ -145,7 +199,8 @@ def IsProposition48Datum (e : ReciprocityFamily F) (χ χs : FieldCharacter F F'
   HasUniquePlaceAbove L Ps.v ∧ HasUniquePlaceAbove L (conjPlace E Ps.v) ∧
   Ps.v ≠ P.v ∧ Ps.v ≠ conjPlace E P.v ∧
   IsInGeneralPosition F F' (weilCharacter F e F' χs) ∧
-  IsAlgebraic ξ ∧ IsRelativelyRegular E ξ ∧ IsConjugateInverse ξ ∧
+  IsAlgebraicAfterTwist (Module.finrank E E' - 1) ξ ∧ IsRelativelyRegular E ξ ∧
+  IsConjugateInverse ξ ∧
   P.HasComponent ξ χ ∧ Ps.HasComponent ξ χs
 
 end Langlands.Global.Harris

@@ -2,10 +2,14 @@
 
 Author: Worker 35. Definition contribution to task
 `91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
-All declarations are proposition definitions or a structure of data.
-Nothing is proved or assumed about them. In particular no automorphic
-representation, no weak automorphic induction and no existence theorem
-appears here. The conclusion of Proposition 4.8 is a separate statement.
+The declarations are proposition definitions, a structure of data, and two
+proved lemmas about `IsAlgebraicAfterTwist` (with two private helper lemmas).
+Nothing is assumed. No automorphic representation, no weak automorphic
+induction and no existence theorem appears here. The conclusion of
+Proposition 4.8 is a separate statement.
+
+This version corrects the infinity-type condition of the datum; see
+[Correction](#correction).
 
 ## Mathematical content
 
@@ -35,6 +39,26 @@ the local multiplicative groups.
   Every pair of integers occurs at every place. The condition therefore
   says that `χ_∞(x) = ∏_σ σ(x)^{a(σ)}` with integral exponents
   (Weil's type `A₀`).
+- `IsAlgebraicAfterTwist a χ`, for a totally complex `K` and `a : ℕ`:
+  there is an integral infinity type `t` such that, for every archimedean
+  idele `x` with coordinates `z_τ`,
+
+  \[
+    \chi_\infty(x) \cdot \prod_\tau |z_\tau|^{a} = \mathrm{toCharacter}(t)(x).
+  \]
+
+  Every place `τ` is complex, and its normalized absolute value is
+  `‖z‖_τ = |z|²`, so `∏_τ |z_τ|^a` is the archimedean part of the idele
+  norm `‖·‖^{a/2}`. The condition is therefore Harris's "`χ · ‖·‖^{a/2}` is
+  of type `A₀`" (p.195). Only the archimedean part matters: the finite part
+  of `‖·‖^{a/2}` does not affect the infinity type. Two lemmas are proved:
+  - `isAlgebraicAfterTwist_zero_iff`: for `a = 0` the condition is
+    `IsAlgebraic χ`;
+  - `isAlgebraicAfterTwist_add_two_iff`: the conditions for `a + 2` and
+    `a` are equivalent, because `∏_τ |z_τ|² = ∏_τ z_τ z̄_τ` is the
+    character of the infinity type with all exponents `1`. So the
+    condition depends only on the parity of `a`, as Harris says ("if `a` is
+    any integer congruent to `a(ν) (mod 2)`").
 - `IsConjugateInverse χ`, for a CM field `K`: `χ(c x) = χ(x)⁻¹` for every
   idele class `x`. Here `c` is the Library's
   `AdelicFunctoriality.ideleClassComplexConj`, the action of Mathlib's
@@ -115,7 +139,11 @@ conjunction of:
    `χs`, pulled back to `W_{F'}` through `e`, is in general position
    relative to `F` (Harris Definition 4.5, published in
    `GeneralPositionStatement`);
-7. `IsAlgebraic ξ`, `IsRelativelyRegular E ξ` and `IsConjugateInverse ξ`;
+7. `IsAlgebraicAfterTwist ([E' : E] - 1) ξ` (written
+   `Module.finrank E E' - 1`), `IsRelativelyRegular E ξ` and
+   `IsConjugateInverse ξ`. The first is Harris's normalization of
+   "algebraic" for automorphic induction to `GL(n)`, `n = [E' : E]`
+   (derived choice 11). It is not `IsAlgebraic ξ` when `n` is even;
 8. `P.HasComponent ξ χ` and `Ps.HasComponent ξ χs`.
 
 ## Instances, universes and scope
@@ -128,7 +156,7 @@ conjunction of:
 - `ReciprocityFamily F` is the Library's candidate family of local
   reciprocity maps. The datum does not assume `NormalizedReciprocity F e`.
   For an unnormalized `e`, condition 6 is about the wrong Weil
-  characters. The planned statement of Proposition 4.8 will assume
+  characters. The statement of Proposition 4.8 assumes
   `NormalizedReciprocity F e`, as the published Library statements do.
 - Every prime `p` is included, `p = 2` among them. There is no condition
   `n < p` and no tameness condition.
@@ -142,13 +170,24 @@ page − 176. Each passage was read in both the PDF and the arXiv TeX source
 `math_9611226v1.tex`; the pages below were checked against the printed
 page numbers of the PDF.
 
+The cohomological condition is taken from L. Clozel, *Motifs et formes
+automorphes: applications du principe de fonctorialité*, in *Automorphic
+Forms, Shimura Varieties, and L-functions I* (1990): Définition 1.8 and the
+Remarque after it (printed pp.89–90, PDF pages 100–101) and Définition 3.12
+(printed p.111, PDF page 122), as in the published
+`Langlands/Automorphic/RegularAlgebraic`.
+
 - **Reg(n,E) and Theorem 1.2, p.185 (PDF page 9; TeX lines 514–537).**
   `Reg(n,E)` consists of the isobaric representations whose cuspidal
   constituents are of cohomological type at infinity. Theorem 1.2(ii)
   takes `E = E₀·K₀` with `E₀` totally real and `K₀` imaginary quadratic,
-  and `c` the nontrivial element of `Gal(E/E₀)`. Harris does not define
-  "algebraic Hecke character" separately. For `n = 1` the cohomological
-  condition is that `χ_∞` is algebraic in the sense of `IsAlgebraic`.
+  and `c` the nontrivial element of `Gal(E/E₀)`. The cohomological type
+  is Clozel's (1990, Définitions 1.8 and 3.12): the restriction to `ℂ^×` of
+  the parameter at each infinite place is `χ_1 ⊕ ⋯ ⊕ χ_n` with
+  `χ_i(z) = z^{p_i+(n-1)/2} z̄^{q_i+(n-1)/2}`, `p_i, q_i ∈ ℤ`. The exponents
+  lie in `(n−1)/2 + ℤ`, so their integrality depends on the parity of `n`.
+  For `n = 1` the condition is that `χ_∞` is algebraic in the sense of
+  `IsAlgebraic`.
 - **Section 2, global setup, pp.192–193 (PDF pages 16–17; TeX lines
   996–1022).** The places `v₁, v₂` of `E` are the two primes above a place
   `v` of `E₀`, which splits because `p` splits in `K₀`. The primes `v'_i`,
@@ -161,6 +200,24 @@ page numbers of the PDF.
   archimedean place `τ` of `E`, the components of `χ` at the distinct
   places of `E'` dividing `τ` are distinct. This is
   `IsRelativelyRegular`.
+- **Proposition 2.4 and (2.4.1), p.193 (PDF page 17; TeX lines
+  1031–1049).** For the induced representation `π` of Proposition 2.4,
+  `π_τ ≅ χ_{τ_1} ⊞ ⋯ ⊞ χ_{τ_n}` at every archimedean place `τ` of `E`,
+  where `τ_1, …, τ_n` are the places of `E'` above `τ`. So the archimedean
+  exponents of `π` are those of the components of `χ`, without a shift.
+- **The infinity type, p.195 (PDF page 19; TeX lines 1186–1219).**
+  Section 3 constructs a Hecke character with the hypotheses of
+  Proposition 2.4. Each of its archimedean components is
+  `χ_ν = (z/z̄)^{a(ν)/2}`, with all `a(ν)` integers of the same parity.
+  Then "if `a` is any integer congruent to `a(ν) (mod 2)` ... the product
+  `χ · ‖•‖^{a/2}` is a Hecke character of type `A₀`, in Weil's
+  terminology". And: "In order to obtain cohomological representations of
+  `GL(n)` by automorphic induction we will take `a(ν) ≡ n−1 (mod 2)`".
+  This is the normalization of condition 7, `IsAlgebraicAfterTwist`
+  (derived choice 11). Harris also notes (p.191, PDF page 15; TeX lines
+  866–875) that the induced representations are defined over the field of
+  values "up to twisting by a half-integer power of the absolute value
+  character".
 - **Section 4, setup, p.200 (PDF page 24; TeX lines 1466–1500).**
   `(F', χ) ∈ G⁰(F)` with `[F' : F] = n`, and `F̃` is the Galois closure of
   `F'/F`. `E'/E` is an extension of CM fields as in Theorem 1.2(ii), with
@@ -180,7 +237,9 @@ page numbers of the PDF.
   `W_{F'}`, with `χ(*)` in general position relative to `F`. `𝛘` is an
   `E'/E`-regular algebraic Hecke character of `E'` with components `χ`
   and `χ(*)` at `v'₁` and `v(*)'₁`, and `𝛘 = 𝛘⁻¹ ∘ c`. These are
-  conditions 6–8. The conclusion (a cuspidal `Π ∈ CU(n,E)` that is a weak
+  conditions 6–8. Harris introduces Proposition 4.8 as "the following
+  extension of Proposition 2.4", so "algebraic" is read in the
+  normalization of p.195. The conclusion (a cuspidal `Π ∈ CU(n,E)` that is a weak
   automorphic induction of `𝛘`, supercuspidal at `v(*)₁`) is not part of
   this module.
 
@@ -247,6 +306,47 @@ explained here and are not formalized.
    `weilCharacter F e F'` only for general position.
 10. **Name.** Harris's global character is a bold `𝛘`. The Lean name is
     `ξ`, because `𝛘` is not a valid identifier.
+11. **"Algebraic".** Propositions 2.4 and 4.8 ask for an "algebraic"
+    Hecke character without fixing the parity of its infinity type. Page
+    195 fixes it for automorphic induction to `GL(n)`, and the conclusion
+    of Proposition 4.8 requires it (see the consistency check below). The
+    Lean datum states this as
+    `IsAlgebraicAfterTwist (n - 1) ξ` with `n = [E' : E]`. By
+    `isAlgebraicAfterTwist_add_two_iff`, any `a ≡ n − 1 (mod 2)` gives the
+    same condition. Together with `IsConjugateInverse ξ` it says exactly
+    that every archimedean component is `ξ_w(z) = (z/z̄)^{b_w/2}` with an
+    integer `b_w ≡ n − 1 (mod 2)`, where `(z/z̄)^{b/2}` means `(z/|z|)^b`.
+    The argument is as follows (it is not formalized). Since `E'` is CM,
+    the involution `c` fixes every archimedean place `w` and acts on
+    `E'_w ≅ ℂ` as complex conjugation. So `IsConjugateInverse` gives
+    `ξ_w(z) ξ_w(z̄) = 1`. If `ξ_w(z) |z|^a = z^p z̄^q` with `p, q ∈ ℤ`, this
+    gives `|z|^{2(p+q-a)} = 1`, so `p + q = a` and
+    `ξ_w(z) = (z/|z|)^{p-q}` with `p − q = 2p − a ≡ a (mod 2)`.
+    Conversely, `(z/|z|)^b |z|^a = z^{(a+b)/2} z̄^{(a-b)/2}` has integral
+    exponents when `b ≡ a (mod 2)`.
+
+    **Consistency with the conclusion.** By (2.4.1), the induced
+    representation has archimedean exponents `±b_w/2` for the places `w`
+    above `τ`. These lie in `(n−1)/2 + ℤ`, as Clozel's `Alg(n)` requires,
+    exactly when `b_w ≡ n − 1 (mod 2)`. Relative regularity says that
+    the components above `τ` are distinct as characters of `E_τˣ`. In one
+    coordinate `z` of `E_τ`, the component at `w` is `(z/|z|)^{±b_w}`, with
+    the sign `−` when `ι_w` is complex conjugation in coordinates. So the
+    exponents read in that coordinate are distinct, which is Clozel's
+    regularity (distinct exponents). In the Library's convention
+    (`Langlands/Automorphic/RegularAlgebraic`) the infinitesimal character
+    is `λ = μ + δ` with `μ` dominant integral and
+    `δ = ((n−1)/2, …, −(n−1)/2)`.
+
+    **Even-rank check.** Take `n = 2`, a place `τ` of `E` with places
+    `w₁, w₂` of `E'` above it, and `b_{w₁} = 1`, `b_{w₂} = −1`. Then
+    `ξ_{w_i}(z) |z| = z` or `z̄`, so condition 7 holds, and the
+    holomorphic exponents `(1/2, −1/2)` give `μ = λ − δ = (0, 0)`: trivial
+    coefficients. With the earlier condition `IsAlgebraic ξ`, every
+    `b_w` is even. Then `λ` is integral, for example `λ = (1, −1)`, and
+    `μ = λ − δ = (1/2, −1/2)` is not integral. No reordering or sign
+    change makes it integral. For even `n` the earlier datum therefore
+    did not match the conclusion of Proposition 4.8.
 
 ## Relation to other Library units
 
@@ -256,9 +356,28 @@ explained here and are not formalized.
   `Langlands/LocalFactor/CommonClosure`).
 - The weak automorphic induction of the conclusion uses the published
   numerical relation `SpectralSystem.IsWeakInductionOf`
-  (`Langlands/Automorphic/Unramified/WeakInduction`). The conjugate
-  self-duality in `CU(n,E)` is the published
+  (`Langlands/Automorphic/Unramified/WeakInduction`), whose Euler factors
+  use the unitary Satake normalization and the unshifted values of the
+  character. The conjugate self-duality in `CU(n,E)` is the published
   `CuspidalOperatorRealization.IsoClass.IsConjugateSelfDual`
   (`Langlands/Automorphic/ConjugateContragredient`). The cohomological
-  infinity-type condition of `Reg(n,E)` has no Library interface yet. For
-  this reason the statement of Proposition 4.8 is left to a later unit.
+  condition of `Reg(n,E)` is the published
+  `CuspidalOperatorRealization.IsoClass.IsRegularAlgebraic`
+  (`Langlands/Automorphic/RegularAlgebraic`).
+- The statement of Proposition 4.8, which combines this datum with
+  `NormalizedReciprocity F e` and the conclusion, is a separate unit.
+
+## Correction
+
+The version published as artifact `69aadfaf-211b-493a-9964-5d44d632f329`
+required `IsAlgebraic ξ` in condition 7. Reviewer 3482 found the defect
+while reviewing the statement of Proposition 4.8 (candidate
+`66d7ff71-1c22-4ccb-bf8b-7a43be9a62e2`, correction task
+`541b5c26-ea9b-4ad0-80a0-6b89b978a05d`). For even `n` that condition
+contradicts the normalization of p.195, as the even-rank check in derived
+choice 11 shows. The earlier Markdown also said that Harris does not
+define "algebraic Hecke character" separately, and it missed the
+normalization of p.195. This version keeps `IsAlgebraic`
+unchanged and replaces it in the datum by
+`IsAlgebraicAfterTwist ([E' : E] - 1) ξ`. For odd `n` the new condition is
+equivalent to the old one, by the two lemmas.
