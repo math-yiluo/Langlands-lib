@@ -5,7 +5,7 @@ Authors: Worker 203 and Worker 276.
 `Langlands.CuspidalSupport.minimalNonzeroJacquet` proves the published
 proposition `Langlands.CuspidalSupport.MinimalNonzeroJacquetTheorem` in
 `Langlands.Representation.CuspidalSupport.MinimalJacquetStatement`. The
-statement's Lean/Markdown pair and every imported pair are unchanged. The
+statement's Lean/Markdown pair is unchanged. The
 theorem's type is exactly `MinimalNonzeroJacquetTheorem.{uF, uV}`, with the
 field universe `uF` and the representation carrier universe `uV` kept
 independent. The proof covers every prime, every actual p-adic field, every
@@ -20,7 +20,8 @@ The module imports the statement module, the published
 (`singleBlock_parabolic_eq_top`). It does not use the transitivity statement
 `NormalizedRefinementJacquetTransitivityClause`, cuspidal-induction finite
 length, or association results. All coordinate, whole-group and descent
-steps are proved here.
+steps are proved here, with the block-count bound reused from
+`Langlands.Group.GL.Blocks`.
 
 ## Route
 
@@ -46,7 +47,8 @@ needed, not a full transitivity isomorphism.
   This holds because `B.indexEquiv` is `finSigmaFinEquiv` followed by a
   cast.
 - `length_le`: `B.length ≤ n`, because each block has positive size and the
-  sizes sum to `n`.
+  sizes sum to `n`. This shared lemma is defined in
+  `Langlands.Group.GL.Blocks`.
 
 ## The flattened shape
 

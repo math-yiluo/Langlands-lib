@@ -21,6 +21,12 @@ namespace BlockShape
 
 variable {n : ℕ} (B : BlockShape n)
 
+/-- A block shape has at most as many blocks as its total rank. -/
+theorem length_le : B.length ≤ n := by
+  calc B.length = ∑ _i : Fin B.length, 1 := by simp
+    _ ≤ ∑ i, B.size i := Finset.sum_le_sum fun i _ => B.positive i
+    _ = n := B.sum_eq
+
 /-- Coordinates indexed first by their block, then by their position in it. -/
 abbrev Index := (i : Fin B.length) × Fin (B.size i)
 

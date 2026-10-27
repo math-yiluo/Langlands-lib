@@ -79,12 +79,6 @@ theorem index_lt_iff {i j : Fin B.length} (a : Fin (B.size i)) (b : Fin (B.size 
   simp only [indexEquiv, Equiv.trans_apply, finCongr_apply, Fin.val_cast]
   exact Fin.lt_def.symm.trans (finSigmaFinEquiv_lt_iff ⟨i, a⟩ ⟨j, b⟩)
 
-/-- A block shape has at most as many blocks as its total rank. -/
-theorem length_le : B.length ≤ n := by
-  calc B.length = ∑ _i : Fin B.length, 1 := by simp
-    _ ≤ ∑ i, B.size i := Finset.sum_le_sum fun i _ => B.positive i
-    _ = n := B.sum_eq
-
 end Order
 
 section Flatten

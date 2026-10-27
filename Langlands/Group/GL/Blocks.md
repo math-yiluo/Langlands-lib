@@ -9,6 +9,11 @@ type labels a coordinate by a block and a coordinate inside that block.
 equality. Thus numbering uses consecutive blocks in the given order, not an
 arbitrary permutation of a finite set.
 
+`BlockShape.length_le` bounds the number of blocks by the total rank:
+each positive block size is at least one, and the sizes sum to `n`.
+This lemma is shared by the conjugate-pair refinement and minimal Jacquet
+descent proofs.
+
 All groups are actual matrix unit groups over an arbitrary commutative ring.
 The parabolic condition is Mathlib's `BlockTriangular`, with the block index
 as ordering map. Its subgroup fields use the existing one, multiplication and
