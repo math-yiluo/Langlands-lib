@@ -12,8 +12,9 @@ Library's `BlockShape`, `BlockRefinement` and `Iwasawa.torus` conventions.
 
 ## Auxiliary block shapes
 
-- `oneBlock m hm` is the block shape of the positive rank `m` with a single
-  block of size `m`.
+- `oneBlock m hm`, imported from
+  [`OneBlockShape`](../../Group/GL/OneBlockShape.md), is the block shape of the
+  positive rank `m` with a single block of size `m`.
 - `twoBlock m a ha`, for `a + 1 < m`, has two blocks of sizes `a + 1` and
   `m - (a + 1)`.
 - `index_val` computes the numbering `B.index i b` of the coordinate `b` of

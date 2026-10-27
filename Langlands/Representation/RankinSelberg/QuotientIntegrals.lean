@@ -51,6 +51,13 @@ def lastRow {n : ℕ} (g : Langlands.GeneralLinear (n + 1) F) : Fin (n + 1) → 
   fun j => g (Fin.last n) j
 
 omit [TopologicalSpace F] in
+/-- The last row of a product is the last row of the left factor times the right factor. -/
+theorem lastRow_mul_eq_vecMul {n : ℕ} (g h : Langlands.GeneralLinear (n + 1) F) :
+    lastRow (g * h) = Matrix.vecMul (lastRow g)
+      (h : Matrix (Fin (n + 1)) (Fin (n + 1)) F) :=
+  rfl
+
+omit [TopologicalSpace F] in
 /-- Left upper-unipotent multiplication fixes the last row. -/
 @[simp] theorem lastRow_unipotent_mul {n : ℕ} (u : upperUnipotent (n + 1) F)
     (g : Langlands.GeneralLinear (n + 1) F) :

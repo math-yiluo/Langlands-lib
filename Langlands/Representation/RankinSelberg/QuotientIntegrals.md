@@ -14,6 +14,12 @@ Schwartz–Bruhat space of locally constant, compactly supported functions.
 The coefficient field is complex; the matrix field, its absolute value, topology,
 and the complex spectral variable are explicit. Rank one is included.
 
+The algebraic identity `lastRow_mul_eq_vecMul` states
+`lastRow (g * h) = Matrix.vecMul (lastRow g) h` over any field, without a
+topology assumption. It holds by definition of matrix multiplication. This
+existing declaration is moved from `LastRowCompactOrbitProof` to this module
+beside `lastRow`, so both the compact-orbit and continuation modules reuse it.
+
 The quotient is `Quotient (QuotientGroup.rightRel N)`: its classes are `N * g`.
 It does not use the opposite quotient by `g * N` or assume normality.
 The intrinsic descent proof cancels the two character factors, proves that

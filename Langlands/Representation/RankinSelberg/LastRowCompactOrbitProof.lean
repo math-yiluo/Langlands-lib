@@ -22,12 +22,6 @@ section Algebra
 variable {K : Type uF} [Field K] [TopologicalSpace K] {n : ℕ}
 
 omit [TopologicalSpace K] in
-/-- The last row of a product is the last row of the left factor times the right factor. -/
-theorem lastRow_mul_eq_vecMul (g h : Langlands.GeneralLinear (n + 1) K) :
-    lastRow (g * h) = lastRow g ᵥ* (h : Matrix (Fin (n + 1)) (Fin (n + 1)) K) :=
-  rfl
-
-omit [TopologicalSpace K] in
 /-- The mirabolic group is exactly the stabilizer of the last row of the identity. -/
 theorem mem_mirabolic_iff_lastRow (a : Langlands.GeneralLinear (n + 1) K) :
     a ∈ mirabolic n K ↔ lastRow a = lastRow (1 : Langlands.GeneralLinear (n + 1) K) := by

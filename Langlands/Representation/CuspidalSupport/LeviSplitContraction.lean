@@ -1,3 +1,4 @@
+import Langlands.Group.GL.OneBlockShape
 import Langlands.Representation.CuspidalSupport.JacquetVanishingSubgroups
 import Langlands.Representation.Geometric.RefinementDefinitions
 import Langlands.Representation.Whittaker.Iwasawa
@@ -23,13 +24,6 @@ universe uF
 /-! ### Auxiliary block shapes -/
 
 section Shapes
-
-/-- The block shape of rank `m` with a single block. -/
-def oneBlock (m : ℕ) (hm : 0 < m) : BlockShape m where
-  length := 1
-  size := fun _ => m
-  positive := fun _ => hm
-  sum_eq := by simp
 
 /-- The block shape of rank `m` with blocks of sizes `a + 1` and `m - (a + 1)`. -/
 def twoBlock (m a : ℕ) (ha : a + 1 < m) : BlockShape m where

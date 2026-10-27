@@ -28,7 +28,8 @@ arbitrary `J : OpenSubgroup` with compact underlying set. Write
 These lemmas hold over any field and use no topology.
 
 - `lastRow_mul_eq_vecMul`: `lastRow (g * h)` is the row vector
-  `lastRow g ᵥ* h`. This holds by definition of matrix multiplication.
+  `lastRow g ᵥ* h`. This holds by definition of matrix multiplication and is
+  imported from [`QuotientIntegrals`](QuotientIntegrals.md).
 - `mem_mirabolic_iff_lastRow`: `a` lies in the mirabolic subgroup if and only
   if `lastRow a = lastRow 1`. Both sides say that the last row of `a` is
   `(0, …, 0, 1)`.
@@ -121,4 +122,5 @@ does not prove the source's existence theorem.
 `isEmbedding_generalLinear_val`, `isOpenEmbedding_generalLinear_val`,
 `lastRow_image_mem_nhds`, `isOpen_lastRow_image`, `compactOpenIndicator` and
 `lastRowCompactOrbit_of_field` are public declarations in the namespace
-`Langlands.RankinSelberg`. Their hypotheses are as stated above.
+`Langlands.RankinSelberg`. The first is imported from `QuotientIntegrals`;
+the others are defined here. Their hypotheses are as stated above.

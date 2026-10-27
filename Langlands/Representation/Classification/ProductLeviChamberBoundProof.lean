@@ -1,3 +1,4 @@
+import Langlands.Group.GL.OneBlockShape
 import Langlands.Representation.Classification.ProductLeviChamberBoundStatement
 import Langlands.Representation.Classification.ProductLeviDualOppositeAdapter
 import Langlands.Representation.Jacquet.RefinedUpperCompressionProof
@@ -22,13 +23,6 @@ open GeneralLinear Geometric
 universe uF uV
 
 /-! ### Auxiliary block shapes -/
-
-/-- The block shape of `N` with a single block. -/
-def oneBlock (N : ℕ) (hN : 0 < N) : BlockShape N where
-  length := 1
-  size := fun _ => N
-  positive := fun _ => hN
-  sum_eq := by simp
 
 /-- The block shape `(k, N - k)` of `N`. -/
 def twoBlock (N k : ℕ) (hk : 0 < k) (hkN : k < N) : BlockShape N where
@@ -81,10 +75,10 @@ theorem twoBlock_blockLabel (N k : ℕ) (hk : 0 < k) (hkN : k < N) (x : Fin N) :
     simp
 
 theorem oneBlock_blockLabel (N : ℕ) (hN : 0 < N) (x : Fin N) :
-    blockLabel (oneBlock N hN) x = 0 := by
+    blockLabel (CuspidalSupport.LeviAdmissibility.oneBlock N hN) x = 0 := by
   unfold blockLabel
-  have : ((oneBlock N hN).indexEquiv.symm x).1.val < 1 :=
-    ((oneBlock N hN).indexEquiv.symm x).1.isLt
+  have : ((CuspidalSupport.LeviAdmissibility.oneBlock N hN).indexEquiv.symm x).1.val < 1 :=
+    ((CuspidalSupport.LeviAdmissibility.oneBlock N hN).indexEquiv.symm x).1.isLt
   omega
 
 /-- A block scalar matrix is the diagonal matrix of the scalars of the blocks. -/
@@ -555,7 +549,7 @@ theorem fundIndex_lt (s : FundIndex C) : s.2.val + 1 < C.size s.1 := by
 
 /-- The refinement `(k, C.size j - k)` of block `j`, all other blocks left whole. -/
 def fundRefinement (s : FundIndex C) : BlockRefinement C :=
-  Function.update (fun j' => oneBlock (C.size j') (C.positive j')) s.1
+  Function.update (fun j' => CuspidalSupport.LeviAdmissibility.oneBlock (C.size j') (C.positive j')) s.1
     (twoBlock (C.size s.1) (s.2.val + 1) (Nat.succ_pos _) (fundIndex_lt C s))
 
 /-- The scalars `(ϖ, 1)` in block `j` and `1` elsewhere. -/
