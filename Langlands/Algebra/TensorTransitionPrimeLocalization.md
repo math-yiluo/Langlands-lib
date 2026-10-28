@@ -1,0 +1,7 @@
+# Prime localization for an actual system transition
+
+This small internal adapter applies the tensor pushout criterion to the published `LocalAlgebraSystem.ringBaseChangeMap`. For a fixed transition, the earlier and later component rings are assumed to be localizations of rings `Q` and `Q'`. The later quotient is a pushout of the earlier quotient along the actual base transition. The supplied algebra structures form the stated scalar towers, and the component transition commutes with the quotient maps.
+
+The conclusion is exactly `D.IsPrimeLocalization h`. The proof chooses the inverse image of the maximal ideal of the later component under `D.ringBaseChangeMap h`. It uses the canonical pushout map to the tensor product. Agreement on `Q` follows from the assumed compatibility of the quotient maps and the component transition. Agreement on the later base follows from the defining pure-tensor formula for `ringBaseChangeMap` and the later scalar tower. The prime-localization instance uses exactly the algebra induced by that actual ring map.
+
+The index, base components, algebra components, ambient rings, and two quotient carriers retain independent universes. This is a derived adapter for the prime-localization clause in Stacks 00QV, not a whole-system existence assertion and not a new hypothesis on the published 00QV target. Its mathematical input is the internal tensor pushout theorem implemented in `PrimeLocalizationCriterion`; the other definitions are imported unchanged from `LocalApproximationSystem`.

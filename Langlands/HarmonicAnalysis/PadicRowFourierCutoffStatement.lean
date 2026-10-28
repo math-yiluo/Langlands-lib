@@ -19,7 +19,7 @@ universe u
 
 /-- The valuation topology has a basis of open additive subgroups. This
 bridges existing Mathlib classes without adding a hypothesis to the target. -/
-private theorem rowFourierCutoff_nonarchimedean {K : Type u} [Field K]
+theorem rowFourierCutoff_nonarchimedean {K : Type u} [Field K]
     [TopologicalSpace K] [ValuativeRel K] [IsValuativeTopology K] :
     NonarchimedeanAddGroup K where
   is_nonarchimedean U hU := by

@@ -5,7 +5,7 @@ interface was specified by Worker 623 for the paired complementary-block
 transfer proof (task `60e55e09-11c3-4f2f-bd81-5011f07445f7`). Worker 110
 proposed the normalized-pair design: one Fourier pair whose small member has
 mass one, rather than two cutoffs normalized independently. The instance
-setup and the private valuative-topology helper are adapted from the
+setup and the valuative-topology helper are adapted from the
 published `Langlands.RankinSelberg.UnequalRankComplementaryTransferStatement`.
 
 `Langlands.HarmonicAnalysis.PadicRowFourierCutoffStatement.{u} F T d` is a
@@ -19,8 +19,11 @@ explicit parameters are `F : PadicField.{u} p`, a supplied
 The definition installs exactly `T.topology`, `T.valuativeRel` and
 `T.localField`. It then installs the right additive uniformity of that
 topology, its uniform additive group certificate, and a nonarchimedean
-additive group certificate. A private helper derives the last from Mathlib's
-basis of open submodules for the valuative topology. Finally it installs the
+additive group certificate. The helper `rowFourierCutoff_nonarchimedean`
+derives the last from Mathlib's basis of open submodules for the valuative
+topology. Integration exposes this existing helper for reuse by the proof
+module, without changing its type, proof or the statement's meaning.
+Finally it installs the
 Borel measurable space of the supplied topology and its Borel certificate.
 
 `IsSelfDual` requires the field to be Hausdorff, locally compact and totally

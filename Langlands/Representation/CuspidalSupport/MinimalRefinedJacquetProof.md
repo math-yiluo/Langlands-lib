@@ -210,6 +210,14 @@ any excluded task:
 The proof also uses no results of the arbitrary irreducible-Levi task
 `3b437c95`, the finite-length admissibility task `d9898ee2`, the parabolic
 finite-length task `2a216dfa`, or the upper/opposite refinement-transitivity
-task `32edfd0a`. From `CuspidalSupport.MinimalJacquetProof` it reuses only the
-group-level lemma `BlockShape.flatten_unipotentSubgroup_le`, not the GL-input
-`minimalNonzeroJacquet`.
+task `32edfd0a`. From `CuspidalSupport.MinimalJacquetProof` it reuses only
+group-level material in namespace `GeneralLinear.BlockShape`:
+
+- the shape constructions `BlockShape.flatten` and `BlockShape.flattenBlockEquiv`,
+  which the statement itself uses;
+- the lemmas `BlockShape.flatten_size_flattenBlockEquiv`,
+  `BlockShape.length_lt_flatten`, `BlockShape.flatten_unipotentSubgroup_le` and
+  `BlockShape.unipotentRadical_val_eq_one`.
+
+It uses nothing from namespace `CuspidalSupport.MinimalJacquet`, in particular
+neither the GL-input theorem `minimalNonzeroJacquet` nor `flattenJacquetMap`.
