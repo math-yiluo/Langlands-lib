@@ -24,9 +24,9 @@ provides:
    with `A = ℂ`.
 
 Stable subspaces and quotients (part 3 of the task) are **not** in this module.
-They need the stable-subspace interface of task
-`225c0c50-f2f1-4da9-9cbd-b70bd64c5b33`, which is not yet in the Library. They
-will follow in a separate module.
+They need the stable-subspace interface `Langlands.Algebra.CompatibleSubmodule`
+of task `225c0c50-f2f1-4da9-9cbd-b70bd64c5b33`, and are in the separate module
+`Langlands/Algebra/CompatibleUnitizationSubmodule.lean`, which imports both.
 
 The module imports the published bridge `Langlands.Algebra.CompatibleNonUnitalAction`
 by Lean name and reuses its `LinearIntertwiner`, `LinearIntertwiner.id`,
@@ -276,8 +276,8 @@ The following remain separate obligations:
 
 - part 3 of the task: the order isomorphism between stable `k`-subspaces of `ρ`
   and `Submodule (Unitization k A) M`, and the restricted and quotient
-  comparisons. These need the published interface of task
-  `225c0c50-f2f1-4da9-9cbd-b70bd64c5b33`;
+  comparisons. These are in `Langlands/Algebra/CompatibleUnitizationSubmodule.lean`,
+  not here;
 - the tensor-product formula of I.2.1, and the equality (I.2.1.2) for canonical
   scalar structures on nondegenerate modules;
 - simplicity transfer, countable dimension, Schur, separation, finite
