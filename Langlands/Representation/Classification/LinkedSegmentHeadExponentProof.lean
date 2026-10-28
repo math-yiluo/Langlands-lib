@@ -1,5 +1,5 @@
 import Langlands.Representation.Classification.LinkedSegmentHeadExponentStatement
-import Langlands.Representation.Classification.UnitaryExponentScalarNormStatement
+import Langlands.Representation.Classification.UnitaryExponentScalarNormProof
 import Langlands.Representation.Classification.SegmentConstituentCentralCharacterProof
 import Langlands.Representation.Classification.SegmentLinkageOrientationProof
 import Langlands.Representation.Classification.SegmentSupportContainment
@@ -9,8 +9,8 @@ import Langlands.LocalField.Uniformizer
 /-!
 # Linked-head exponent comparison
 
-Both clauses follow from the segment scalar character, direct cancellation
-in each supplied positive form, and the linkage endpoint inequalities.
+Both clauses follow from the segment scalar character, the public scalar-norm
+theorem for each supplied positive form, and the linkage endpoint inequalities.
 -/
 
 namespace Langlands.Classification
@@ -19,42 +19,6 @@ open GeneralLinear
 open scoped NNReal
 
 universe uG uF uV
-
-/-- Worker 252’s direct cancellation in the arbitrary supplied positive form. -/
-private theorem scalarNormExtraction : UnitaryExponentScalarNorm.{uG, uV} := by
-  intro G _ V _ _ _ ν ρ u g c hc
-  obtain ⟨v, hv⟩ := exists_ne (0 : V)
-  let : InnerProductSpace.Core ℂ V := u.form.toInnerProductCore
-  let : Inner ℂ V := ⟨u.form.inner⟩
-  have hb : u.form.inner v v ≠ 0 := fun h => hv (u.form.definite v h)
-  let x : ℝ := ((ν g : ℝ≥0) : ℝ)
-  have hx : 0 < x := by
-    exact_mod_cast pos_iff_ne_zero.mpr (ν g).ne_zero
-  let k : ℂ := ((x ^ (-u.exponent) : ℝ) : ℂ) * c
-  have haction : realPowerTwist ν (-u.exponent) ρ g v = k • v := by
-    rw [realPowerTwist_apply, hc, smul_smul]
-  have hinvariant := u.form.invariant g v v
-  rw [haction] at hinvariant
-  change inner ℂ (k • v) (k • v) = inner ℂ v v at hinvariant
-  rw [InnerProductSpace.Core.inner_smul_left,
-    InnerProductSpace.Core.inner_smul_right] at hinvariant
-  have hproduct : starRingEnd ℂ k * k = 1 := by
-    apply mul_right_cancel₀ hb
-    simpa only [mul_assoc, one_mul] using hinvariant
-  have hk : ‖k‖ = 1 := by
-    have h := congrArg norm hproduct
-    change ‖star k * k‖ = ‖(1 : ℂ)‖ at h
-    simp only [norm_mul, norm_star, norm_one] at h
-    nlinarith [norm_nonneg k]
-  have hk' : x ^ (-u.exponent) * ‖c‖ = 1 := by
-    simpa only [k, norm_mul, Complex.norm_real, Real.norm_eq_abs,
-      abs_of_pos (Real.rpow_pos_of_pos hx _)] using hk
-  rw [Real.rpow_neg hx.le] at hk'
-  have hpos : x ^ u.exponent ≠ 0 := (Real.rpow_pos_of_pos hx _).ne'
-  change ‖c‖ = x ^ u.exponent
-  field_simp at hk'
-  linarith
-
 
 /-- Taking logarithms cancels the common scalar character and gives the
 difference of the two arbitrary supplied exponents. -/
@@ -148,7 +112,7 @@ private theorem segmentHead_norm_identity :
   let : Nontrivial π :=
     IsSimpleModule.nontrivial (MonoidAlgebra ℂ (GeneralLinear Δa.degree F.Carrier))
       π.representation.asModule
-  have hnorm' := scalarNormExtraction (GeneralLinear Δa.degree F.Carrier) π
+  have hnorm' := unitaryExponentScalarNorm (GeneralLinear Δa.degree F.Carrier) π
     (T.determinantNorm Δa.degree) π.representation u (scalar z) _ (hscalar z)
   change ‖((ωa z : ℂ) ^ m *
     (T.determinantPowerCharacter (m * ρ.rank) (((m : ℝ) - 1) / 2)

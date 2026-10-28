@@ -26,9 +26,9 @@ The second clause uses the linkage already contained in `Precedes`.
 
 ## Scalar cancellation in the supplied form
 
-The private `scalarNormExtraction` proves the published proposition
-`Langlands.UnitaryExponentScalarNorm` directly. The imported statement serves
-only to name its exact scope; the norm identity is proved in this module.
+The imported theorem `Langlands.unitaryExponentScalarNorm` proves the published
+proposition `Langlands.UnitaryExponentScalarNorm`. Its proof is in
+[UnitaryExponentScalarNormProof](UnitaryExponentScalarNormProof.md).
 The argument works for any group and any nontrivial complex vector space,
 without topology, dimension or a norm on that space.
 
