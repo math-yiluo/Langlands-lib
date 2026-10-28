@@ -20,8 +20,10 @@ submodule carriers from `Langlands.HarmonicAnalysis.Basic`.
 This is an internal derived proof by Worker 128 of the prerequisite specified
 for Worker 110's row Fourier argument. It is not a transcription of an external
 theorem. It uses the existing Mathlib clopen-basis, compactness, locally constant
-indicator, and linear-span results. All auxiliary declarations in the module are
-private; the only new public interface is the theorem above. The proof does not
+indicator, and linear-span results. The compact-clopen neighborhood lemma
+`Langlands.HarmonicAnalysis.exists_compact_clopen` is also public, so
+[closed restriction](Distribution/ClosedRestrictionProof.md) can reuse the same
+statement and proof. The other auxiliary declarations are private. The proof does not
 construct an abstract tensor product or prove any Fourier or integration result.
 
 The implemented argument proceeds as follows.

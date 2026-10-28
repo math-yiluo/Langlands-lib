@@ -80,7 +80,9 @@ private theorem box_indicator [T2Space X] (U : Fin d → Set X)
     change (U i).indicator (fun _ => (1 : ℂ)) (x i) = 0
     exact Set.indicator_of_notMem hi _
 
-private theorem exists_compact_clopen [LocallyCompactSpace X] [T2Space X]
+/-- Every neighborhood in a locally compact Hausdorff totally disconnected space
+contains a compact clopen neighborhood. -/
+theorem exists_compact_clopen [LocallyCompactSpace X] [T2Space X]
     [TotallyDisconnectedSpace X] {x : X} {V : Set X} (hV : V ∈ 𝓝 x) :
     ∃ U : Set X, IsCompact U ∧ IsClopen U ∧ x ∈ U ∧ U ⊆ V := by
   obtain ⟨K, hKc, hK⟩ := exists_compact_mem_nhds x

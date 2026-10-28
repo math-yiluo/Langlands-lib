@@ -1,4 +1,8 @@
 import Langlands.Representation.Classification.ProductLeviTemperedSufficiencyProof
+import Langlands.Representation.Classification.ProductLeviTemperedFactorizationAdapter
+import Langlands.Representation.Classification.ProductLeviTemperedExponentNecessityStatement
+import Langlands.Representation.Classification.InverseTransposeAnalyticProof
+import Langlands.Group.GL.OneBlockShape
 import Langlands.Representation.Classification.ProductLeviDualOppositeAdapter
 import Langlands.Representation.Classification.OppositeCuspidalJacquetFiltrationProof
 import Langlands.Representation.Classification.ProductLeviCentralCharacter
@@ -429,6 +433,30 @@ theorem blockPrefix_nonpos_of_global {m : ℕ} (C : BlockShape m) (D : BlockRefi
 
 end Bounds
 
+section OneBlock
+
+variable {n : ℕ} (hn : 0 < n)
+
+/-- The single-block product Levi of rank `n` is `GL_n` itself, through evaluation at the
+unique block. -/
+def oneBlockLeviEquiv :
+    letI := T.topology
+    (CuspidalSupport.LeviAdmissibility.oneBlock n hn).Levi F.Carrier ≃ₜ*
+      GeneralLinear n F.Carrier :=
+  letI := T.topology
+  { toFun := fun g => g ⟨0, Nat.one_pos⟩
+    invFun := fun h _ => h
+    left_inv := fun g => by
+      funext i
+      obtain rfl : i = ⟨0, Nat.one_pos⟩ := Fin.ext (Nat.lt_one_iff.mp i.isLt)
+      rfl
+    right_inv := fun _ => rfl
+    map_mul' := fun _ _ => rfl
+    continuous_toFun := continuous_apply _
+    continuous_invFun := continuous_pi fun _ => continuous_id }
+
+end OneBlock
+
 end Langlands.ScalarLayer
 
 namespace Langlands
@@ -437,11 +465,93 @@ open GeneralLinear Geometric ProductLeviDualOpposite
 
 universe uF uV uW
 
-/-- Conditional assembly: the GL_n exponent criterion and the inheritance of opposite
-dual exponents by Jacquet subquotients imply that tempered scalar-character layers of the
-opposite Jacquet module are tempered modulo the centre. -/
-theorem glTemperedOppositeJacquetScalarLayer_of
-    (hcrit : GLTemperedExponentCriterionStatement.{uF, uV})
+/-- The hypothesis shape used by the assembly: every exponent of every upper normalized
+Jacquet module of an irreducible analytically tempered `GL_n` representation has norm at
+most one on tuples with monotone absolute values. -/
+def ScalarLayer.TemperedUpperExponentBound : Prop :=
+  ∀ (p : ℕ) [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData) (n : ℕ), 0 < n →
+    ∀ (V : Type uV) [AddCommGroup V] [Module ℂ V]
+      (π : Representation ℂ (GeneralLinear n F.Carrier) V),
+      Representation.IsIrreducible π → T.IsTempered π →
+      ∀ (B : BlockShape n) (χ : (Fin B.length → F.Carrierˣ) →* ℂˣ),
+        T.IsJacquetExponent B π χ →
+        ∀ a : Fin B.length → F.Carrierˣ,
+          Monotone (fun i => T.normalizedAbs (a i : F.Carrier)) → ‖(χ a : ℂ)‖ ≤ 1
+
+/-- The forward direction of the GL_n exponent criterion gives the upper exponent bounds of
+irreducible tempered representations. -/
+theorem ScalarLayer.temperedUpperExponentBound_of_criterion
+    (hcrit : GLTemperedExponentCriterionStatement.{uF, uV}) :
+    ScalarLayer.TemperedUpperExponentBound.{uF, uV} := by
+  intro p _ F T n hn V _ _ π _ htemp
+  let := T.topology
+  have hπadm : IsAdmissible π := htemp.isAdmissible
+  -- A unitary scalar character of `π`, obtained from temperedness for one Haar measure.
+  have := T.generalLinearTopologicalGroup n
+  let := T.centralQuotientMeasurableSpace n
+  have := T.centralQuotientBorelSpace n
+  obtain ⟨μπ, hμπ⟩ := T.exists_isHaarMeasure_centralQuotient n
+  obtain ⟨-, cπ, -⟩ := htemp μπ
+  let ωπ : F.Carrierˣ →* ℂˣ := cπ.character.comp GeneralLinear.scalarToCenter
+  have hωπ : ∀ (a : F.Carrierˣ) (v : V), π (GeneralLinear.scalar a) v = (ωπ a : ℂ) • v :=
+    fun a v => cπ.acts (GeneralLinear.scalarToCenter a) v
+  exact (hcrit p F T n hn V π ωπ hπadm hωπ).mp htemp
+
+/-- The upper exponent bounds of irreducible tempered `GL_n` representations follow from the
+necessity theorem for product Levis, applied to the single-block Levi `GL_n` with the
+refinement `B` of its unique block. -/
+theorem ScalarLayer.temperedUpperExponentBound_of_productLeviNecessity
+    (hnec : GLProductLeviTemperedExponentNecessityStatement.{uF, uV}) :
+    ScalarLayer.TemperedUpperExponentBound.{uF, uV} := by
+  intro p _ F T n hn V _ _ π hirr htemp B χ hχ a ha
+  let := T.topology
+  let C := CuspidalSupport.LeviAdmissibility.oneBlock n hn
+  have := T.generalLinearTopologicalGroup n
+  have := T.leviTopologicalGroup C
+  let e := ScalarLayer.oneBlockLeviEquiv T hn
+  -- The representation `π` of `GL_n`, viewed on the single-block Levi.
+  let σ : Representation ℂ (C.Levi F.Carrier) V := π.comp e.toMonoidHom
+  have hσirr : Representation.IsIrreducible σ :=
+    (isIrreducible_comp_continuousMulEquiv_iff π e).mpr hirr
+  have hVne : Nontrivial V := by
+    let := hσirr
+    exact IsSimpleModule.nontrivial (MonoidAlgebra ℂ (C.Levi F.Carrier)) σ.asModule
+  -- A Borel Haar measure on the central quotient of the single-block Levi.
+  let := T.centralQuotientMeasurableSpace n
+  have := T.centralQuotientBorelSpace n
+  obtain ⟨ν, hν⟩ := T.exists_isHaarMeasure_centralQuotient n
+  let mQ : MeasurableSpace (C.Levi F.Carrier ⧸ Subgroup.center (C.Levi F.Carrier)) := borel _
+  have bQ : BorelSpace (C.Levi F.Carrier ⧸ Subgroup.center (C.Levi F.Carrier)) := ⟨rfl⟩
+  let μ := ν.map (centralQuotientCongr e).symm
+  have hσtemp : IsTemperedModCenter σ μ :=
+    isTemperedModCenter_comp_continuousMulEquiv π e μ (htemp _)
+  have hcore := hnec p F T n hn C μ V σ hσirr hσtemp
+  obtain ⟨hσadm, c, -⟩ := hσtemp
+  let := T.moduleTopology
+  let : IsTopologicalRing F.Carrier := IsModuleTopology.isTopologicalRing (Padic p) F.Carrier
+  have hωopen : IsOpen ((ScalarLayer.blockScalarCharacter C c).ker :
+      Set (Fin C.length → F.Carrierˣ)) :=
+    Classification.HasScalarCharacter.isOpen_ker
+      (ScalarLayer.hasScalarCharacter_blockScalarCharacter C c)
+      (ProductLeviTemperedFactorization.continuous_blockScalarLevi C F.Carrier) hσadm.1
+  let i : Fin C.length := ⟨0, Nat.one_pos⟩
+  have hD : ∀ j, j ≠ i → ((fun _ => B : BlockRefinement C) j).length = 1 :=
+    fun j hj => absurd (Fin.ext (Nat.lt_one_iff.mp j.isLt)) hj
+  exact ProductLeviTemperedFactorization.jacquetExponent_bound_of_core T C σ
+    (ScalarLayer.blockScalarCharacter C c) (ScalarLayer.hasScalarCharacter_blockScalarCharacter C c)
+    (ScalarLayer.norm_blockScalarCharacter C c) hωopen hcore i π LinearMap.id LinearMap.id
+    (fun _ => rfl)
+    (fun h x => by
+      change π h x = π ((Pi.mulSingle i h : C.Levi F.Carrier) i) x
+      rw [Pi.mulSingle_eq_same])
+    (fun _ _ _ => rfl) (fun _ => B) hD χ hχ a ha
+
+/-- Conditional assembly: the upper exponent bounds of irreducible tempered `GL_n`
+representations and the inheritance of opposite dual exponents by Jacquet subquotients imply
+that tempered scalar-character layers of the opposite Jacquet module are tempered modulo the
+centre. -/
+theorem glTemperedOppositeJacquetScalarLayer_of_upperBound
+    (hup : ScalarLayer.TemperedUpperExponentBound.{uF, uV})
     (hinh : GLOppositeJacquetSubquotientExponentInheritanceStatement.{uF, uV, uW}) :
     GLTemperedOppositeJacquetScalarLayerStatement.{uF, uV, uW} := by
   intro p _ F T
@@ -463,16 +573,7 @@ theorem glTemperedOppositeJacquetScalarLayer_of
       ⟨L.1, L.2.1, fun x hx => L.2.2 hx⟩
   have hρadm : IsAdmissible ρ :=
     Unramified.SphericalExistence.isAdmissible_of_surjective hcof q hq hSadm
-  -- A unitary scalar character of `π`, obtained from temperedness for one Haar measure.
-  have := T.generalLinearTopologicalGroup n
-  let := T.centralQuotientMeasurableSpace n
-  have := T.centralQuotientBorelSpace n
-  obtain ⟨μπ, hμπ⟩ := T.exists_isHaarMeasure_centralQuotient n
-  obtain ⟨-, cπ, -⟩ := htemp μπ
-  let ωπ : F.Carrierˣ →* ℂˣ := cπ.character.comp GeneralLinear.scalarToCenter
-  have hωπ : ∀ (a : F.Carrierˣ) (v : V), π (GeneralLinear.scalar a) v = (ωπ a : ℂ) • v :=
-    fun a v => cπ.acts (GeneralLinear.scalarToCenter a) v
-  have hbound := (hcrit p F T n hn V π ωπ hπadm hωπ).mp htemp
+  have hbound := hup p F T n hn V π hirr htemp
   -- The block scalars act on `ρ` through the restriction of its central character.
   have hω := ScalarLayer.hasScalarCharacter_blockScalarCharacter B c
   have hunit := ScalarLayer.norm_blockScalarCharacter B c
@@ -563,12 +664,36 @@ theorem glTemperedOppositeJacquetScalarLayer_of
     (fun i i' hii' => Real.log_le_log (hpos _) (ha j (Fin.rev_le_rev.mpr hii')))
     (hpre j) (hzero j)
 
+/-- The scalar-layer statement follows from the upper exponent bounds alone, the inheritance
+input being the published `glOppositeJacquetSubquotientExponentInheritance`. -/
+theorem glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound
+    (hup : ScalarLayer.TemperedUpperExponentBound.{uF, uV}) :
+    GLTemperedOppositeJacquetScalarLayerStatement.{uF, uV, uW} :=
+  glTemperedOppositeJacquetScalarLayer_of_upperBound hup
+    glOppositeJacquetSubquotientExponentInheritance.{uF, uV, uW}
+
+/-- Conditional assembly from the GL_n exponent criterion and the inheritance statement. -/
+theorem glTemperedOppositeJacquetScalarLayer_of
+    (hcrit : GLTemperedExponentCriterionStatement.{uF, uV})
+    (hinh : GLOppositeJacquetSubquotientExponentInheritanceStatement.{uF, uV, uW}) :
+    GLTemperedOppositeJacquetScalarLayerStatement.{uF, uV, uW} :=
+  glTemperedOppositeJacquetScalarLayer_of_upperBound
+    (ScalarLayer.temperedUpperExponentBound_of_criterion hcrit) hinh
+
 /-- The scalar-layer statement follows from the GL_n exponent criterion alone, the
 inheritance input being the published `glOppositeJacquetSubquotientExponentInheritance`. -/
 theorem glTemperedOppositeJacquetScalarLayer_of_criterion
     (hcrit : GLTemperedExponentCriterionStatement.{uF, uV}) :
     GLTemperedOppositeJacquetScalarLayerStatement.{uF, uV, uW} :=
-  glTemperedOppositeJacquetScalarLayer_of hcrit
-    glOppositeJacquetSubquotientExponentInheritance.{uF, uV, uW}
+  glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound
+    (ScalarLayer.temperedUpperExponentBound_of_criterion hcrit)
+
+/-- The scalar-layer statement follows from the necessary upper Jacquet bounds for
+analytically tempered product Levis. -/
+theorem glTemperedOppositeJacquetScalarLayer_of_productLeviNecessity
+    (hnec : GLProductLeviTemperedExponentNecessityStatement.{uF, uV}) :
+    GLTemperedOppositeJacquetScalarLayerStatement.{uF, uV, uW} :=
+  glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound
+    (ScalarLayer.temperedUpperExponentBound_of_productLeviNecessity hnec)
 
 end Langlands

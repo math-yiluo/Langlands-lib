@@ -3,11 +3,32 @@
 This module reduces the published proposition
 `Langlands.GLTemperedOppositeJacquetScalarLayerStatement.{uF,uV,uW}` of
 [TemperedOppositeJacquetScalarLayerStatement](TemperedOppositeJacquetScalarLayerStatement.md)
-to one unproved input: the forward direction of the `GL_n` exponent criterion
-`Langlands.GLTemperedExponentCriterionStatement.{uF,uV}` of
-[TemperedExponentStatement](TemperedExponentStatement.md). Its main results are
+to a single bound on the upper Jacquet exponents of irreducible tempered
+representations of `GL_n(F)`, the proposition
+`Langlands.ScalarLayer.TemperedUpperExponentBound.{uF,uV}` defined below. That
+bound is proved from **either** of two published statements:
+
+- the forward direction of the `GL_n` exponent criterion
+  `Langlands.GLTemperedExponentCriterionStatement.{uF,uV}` of
+  [TemperedExponentStatement](TemperedExponentStatement.md), or
+- the product-Levi necessity statement
+  `Langlands.GLProductLeviTemperedExponentNecessityStatement.{uF,uV}` of
+  [ProductLeviTemperedExponentNecessityStatement](ProductLeviTemperedExponentNecessityStatement.md),
+  applied to the single-block Levi `GL_n`. Its proof is supplied by
+  [ProductLeviTemperedExponentNecessityProof](ProductLeviTemperedExponentNecessityProof.md).
+
+Its main results are
 
 ```text
+glTemperedOppositeJacquetScalarLayer_of_upperBound
+  (hup : ScalarLayer.TemperedUpperExponentBound.{uF,uV})
+  (hinh : GLOppositeJacquetSubquotientExponentInheritanceStatement.{uF,uV,uW}) :
+  GLTemperedOppositeJacquetScalarLayerStatement.{uF,uV,uW}
+
+glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound
+  (hup : ScalarLayer.TemperedUpperExponentBound.{uF,uV}) :
+  GLTemperedOppositeJacquetScalarLayerStatement.{uF,uV,uW}
+
 glTemperedOppositeJacquetScalarLayer_of
   (hcrit : GLTemperedExponentCriterionStatement.{uF,uV})
   (hinh : GLOppositeJacquetSubquotientExponentInheritanceStatement.{uF,uV,uW}) :
@@ -16,18 +37,25 @@ glTemperedOppositeJacquetScalarLayer_of
 glTemperedOppositeJacquetScalarLayer_of_criterion
   (hcrit : GLTemperedExponentCriterionStatement.{uF,uV}) :
   GLTemperedOppositeJacquetScalarLayerStatement.{uF,uV,uW}
+
+glTemperedOppositeJacquetScalarLayer_of_productLeviNecessity
+  (hnec : GLProductLeviTemperedExponentNecessityStatement.{uF,uV}) :
+  GLTemperedOppositeJacquetScalarLayerStatement.{uF,uV,uW}
 ```
 
-The second theorem supplies `hinh` by the published proof
-`Langlands.glOppositeJacquetSubquotientExponentInheritance`. The criterion
-statement has no published proof, so this module does **not** prove the
-scalar-layer statement unconditionally. Once a proof of the criterion is
-published, the unconditional theorem is the term
-`glTemperedOppositeJacquetScalarLayer_of_criterion` applied to that proof.
+The theorems without `hinh` supply it by the published proof
+`Langlands.glOppositeJacquetSubquotientExponentInheritance`. This module keeps
+the criterion or necessity proof as an explicit hypothesis and does **not**
+export an unconditional scalar-layer theorem. The product-Levi necessity
+proof is available in its separate proof module; applying the adapter to
+that proof remains a separate assembly step. The theorems
+`glTemperedOppositeJacquetScalarLayer_of` and
+`glTemperedOppositeJacquetScalarLayer_of_criterion` keep the types they had
+when this module was first published.
 
-All results below except the last two are in namespace `Langlands.ScalarLayer`;
-the last two are in `Langlands`. The module introduces no axioms and uses only
-`propext`, `Classical.choice` and `Quot.sound`.
+The five theorems above are in namespace `Langlands`; every other result
+below is in `Langlands.ScalarLayer`. The module introduces no axioms and uses
+only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## The definition `blockScalarCharacter`
 
@@ -148,9 +176,76 @@ block is `≤ 0`. Proof: by the published order lemma
 sum of all outer blocks before `j` (each zero) plus the prefix of block `j`
 ending at `i`.
 
+### The single-block Levi is `GL_n`
+
+`oneBlockLeviEquiv T hn`: for `0 < n`, the published single-block shape
+`CuspidalSupport.LeviAdmissibility.oneBlock n hn` (one block of size `n`) has
+product Levi `∏_(i : Fin 1) GL_n(F)`, and evaluation at the unique block is an
+isomorphism of topological groups onto `GL_n(F)` (type `≃ₜ*`, with the
+topology `T.topology`). Its inverse sends `h` to the constant family `h`.
+Both directions are continuous because evaluation and constant maps into a
+product are continuous.
+
+## The hypothesis interface `TemperedUpperExponentBound`
+
+`TemperedUpperExponentBound.{uF,uV}` is the proposition: for every prime `p`,
+`p`-adic field `F`, topological data `T`, `0 < n`, every irreducible complex
+representation `π` of `GL_n(F)` on a space in universe `uV` with
+`T.IsTempered π`, every block shape `B` of `n`, every exponent `χ` of the upper
+normalized Jacquet module of `π` along `B` (`T.IsJacquetExponent B π χ`) and
+every `a : Fin B.length → F^×` whose normalized absolute values are monotone,
+`‖χ a‖ ≤ 1`. This is the content of Waldspurger's Proposition III.2.2,
+direction (i)⇒(ii), for irreducible representations of `GL_n(F)` and the
+standard upper parabolics; it is the exact form of the bound the main proof
+consumes. It is an internal interface, introduced so that the main proof does
+not depend on which of the two inputs below supplies it.
+
+`temperedUpperExponentBound_of_criterion hcrit`: the forward direction of
+`GLTemperedExponentCriterionStatement` gives the bound. Temperedness of `π` for
+one Haar measure (`T.exists_isHaarMeasure_centralQuotient`) supplies a unitary
+central character of `π`; restricted to scalar matrices through
+`GeneralLinear.scalarToCenter` it gives the scalar character `ω_π` the
+criterion requires, and `π` is admissible because it is tempered. Then
+`(hcrit … ω_π hadm hω).mp htemp` is the bound.
+
+`temperedUpperExponentBound_of_productLeviNecessity hnec`: the necessity
+statement for product Levis gives the bound. Let `C = oneBlock n hn` and `e =
+oneBlockLeviEquiv T hn`.
+
+1. `σ = π ∘ e` is a representation of `C.Levi F`. It is irreducible by the
+   published `isIrreducible_comp_continuousMulEquiv_iff`, so its space is
+   nontrivial.
+2. Choose a Borel Haar measure `ν` on `GL_n(F) / Z`
+   (`T.exists_isHaarMeasure_centralQuotient`) and push it forward to the
+   central quotient of `C.Levi F` by the inverse of the published
+   `centralQuotientCongr e`, giving `μ`. The published
+   `isTemperedModCenter_comp_continuousMulEquiv` turns `T.IsTempered π`
+   (at `ν`) into `IsTemperedModCenter σ μ`.
+3. `hnec` applied to `σ`, `μ` gives the core hypothesis: every open-kernel
+   generalized eigencharacter of the flattened block scalars on every refined
+   upper normalized Jacquet module of `σ` has norm `≤ 1` on blockwise monotone
+   tuples.
+4. From the unitary central character `c` contained in
+   `IsTemperedModCenter σ μ`, `blockScalarCharacter C c` is a unitary character
+   through which the block scalars act on `σ`; its kernel is open by the
+   published `Classification.HasScalarCharacter.isOpen_ker`, using that the
+   block-scalar map is continuous
+   (`ProductLeviTemperedFactorization.continuous_blockScalarLevi`) and that
+   `σ` is smooth.
+5. The published `ProductLeviTemperedFactorization.jacquetExponent_bound_of_core`
+   turns the core hypothesis for `σ` into the bound for exponents of a block
+   factor. It is applied with the unique block `i = 0`, the block factor
+   `τ = π` on `X = V`, insertion and contraction both the identity map (the
+   required compatibilities hold by `rfl` and `Pi.mulSingle_eq_same`, since a
+   family over `Fin 1` is determined by its value at `0`), and the refinement
+   `D` that refines the unique block by `B`; the side condition "every other
+   block has length one" is vacuous. Its conclusion is `‖χ a‖ ≤ 1` for every
+   exponent `χ` of the upper Jacquet module of `π` along `B` and every monotone
+   `a`.
+
 ## The conditional main theorem
 
-`glTemperedOppositeJacquetScalarLayer_of hcrit hinh` proves the exact
+`glTemperedOppositeJacquetScalarLayer_of_upperBound hup hinh` proves the exact
 published proposition. Fix the data of that statement: `π` irreducible and
 `T.IsTempered π`, `c : UnitaryCentralCharacter ρ`, a subrepresentation `S` of
 the opposite normalized Jacquet representation `J` with a surjective
@@ -161,13 +256,10 @@ intertwiner `q : S → ρ`, and a Haar measure `μ` on `M / Z(M)`.
    (`isAdmissible_of_injective` along the inclusion), and so is its quotient
    `ρ` (`Unramified.SphericalExistence.isAdmissible_of_surjective`, using
    compact open subgroups of the Levi from `T.leviCompactOpen`).
-2. *Exponent bounds for `π`.* Temperedness of `π` for one Haar measure
-   (`T.exists_isHaarMeasure_centralQuotient`) supplies a unitary central
-   character of `π`; restricted to scalar matrices it gives the scalar
-   character `ω_π` required by the criterion. The forward direction of
-   `hcrit` then gives: for every block shape `B'`, every exponent `χ` of the
-   upper normalized Jacquet module of `π` along `B'`, and every `a` with
-   monotone absolute values, `‖χ a‖ ≤ 1`.
+2. *Exponent bounds for `π`.* `hup` applied to the irreducible tempered `π`
+   gives: for every block shape `B'`, every exponent `χ` of the upper
+   normalized Jacquet module of `π` along `B'`, and every `a` with monotone
+   absolute values, `‖χ a‖ ≤ 1`.
 3. *Reduction to upper exponents of `ρ`.* By
    `tempered_of_upperExponentHypothesis` with the given `c`, it suffices to
    prove `UpperExponentHypothesis T B ρ`. Fix a refinement `D`, an open-kernel
@@ -202,21 +294,36 @@ intertwiner `q : S → ρ`, and a Haar measure `μ` on `M / Z(M)`.
    sums, zero total, antitone weights) makes each block contribution `≤ 0`.
    Hence `‖ψ a‖ ≤ 1`.
 
-`glTemperedOppositeJacquetScalarLayer_of_criterion hcrit` is
-`glTemperedOppositeJacquetScalarLayer_of hcrit
-glOppositeJacquetSubquotientExponentInheritance`.
+The remaining theorems are compositions:
+
+- `glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound hup` is
+  `glTemperedOppositeJacquetScalarLayer_of_upperBound hup
+  glOppositeJacquetSubquotientExponentInheritance`;
+- `glTemperedOppositeJacquetScalarLayer_of hcrit hinh` is
+  `glTemperedOppositeJacquetScalarLayer_of_upperBound
+  (temperedUpperExponentBound_of_criterion hcrit) hinh`;
+- `glTemperedOppositeJacquetScalarLayer_of_criterion hcrit` is
+  `glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound
+  (temperedUpperExponentBound_of_criterion hcrit)`;
+- `glTemperedOppositeJacquetScalarLayer_of_productLeviNecessity hnec` is
+  `glTemperedOppositeJacquetScalarLayer_of_temperedUpperExponentBound
+  (temperedUpperExponentBound_of_productLeviNecessity hnec)`.
 
 ## Scope and status
 
-- Only the forward implication (temperedness implies the exponent bounds) of
-  `GLTemperedExponentCriterionStatement` is used, applied to the irreducible
-  `π` with the scalar character obtained from its temperedness. That
-  statement is owned by task `c98c74eb-a4cb-4924-8df8-f7556ca47689` and has no
-  published proof.
+- The main proof uses only `TemperedUpperExponentBound`, i.e. the bound
+  for irreducible tempered representations of `GL_n(F)`. It is supplied
+  either by the forward implication (temperedness implies the exponent
+  bounds) of `GLTemperedExponentCriterionStatement`, owned by task
+  `c98c74eb-a4cb-4924-8df8-f7556ca47689`, or by
+  `GLProductLeviTemperedExponentNecessityStatement` for the single-block
+  Levi, owned by task `b0fd413c-ec79-49a5-a99b-8ba0ec7c77aa`. The latter now has
+  the separate proof linked above; this module's interfaces remain conditional.
 - The module does not assume irreducibility, finite length or semisimplicity
   of `ρ`, nor admissibility of `ρ`; admissibility is proved.
-- No new statement is introduced; the target statement pair and every
-  imported pair are unchanged.
+- No new statement of a published task is introduced; the target statement
+  pair and every imported pair are unchanged. `TemperedUpperExponentBound` is
+  an internal hypothesis interface, not a task statement.
 
 ## Provenance
 
@@ -229,9 +336,13 @@ printed page − 234):
 - Proposition III.2.2, printed pp.265–266: an admissible representation is
   tempered iff the real parts of all exponents of all semi-standard Jacquet
   modules lie in the closed positive cone. The implication (i)⇒(ii) for
-  `GL_n(F)` is the input `hcrit`; the implication (ii)⇒(i) for the Levi `M` is
-  the role of `tempered_of_upperExponentHypothesis`, whose Lean proof is the
-  Library's Cartan-cell argument rather than Waldspurger's `Ξ` estimate.
+  irreducible representations of `GL_n(F)` is `TemperedUpperExponentBound`,
+  supplied by `hcrit` (the same implication for admissible `GL_n`
+  representations) or by `hnec` (the same implication for irreducible
+  representations of product Levis, specialised to the single-block Levi); the
+  implication (ii)⇒(i) for the Levi `M` is the role of
+  `tempered_of_upperExponentHypothesis`, whose Lean proof is the Library's
+  Cartan-cell argument rather than Waldspurger's `Ξ` estimate.
 - §III.3 and Lemma III.3.1, printed p.267: the weak part of a tempered Jacquet
   module is tempered. The present proof does not pass through the
   decomposition `π_P = π_P^w ⊕ π_P^+`; instead it shows directly that every
@@ -245,4 +356,7 @@ printed page − 234):
 
 `blockScalarCharacter` is an internal construction (restriction of a given
 central character to the block-scalar torus) with no separate literature
-source.
+source. `oneBlockLeviEquiv` is the internal identification of the
+single-block product Levi with `GL_n(F)`, and `TemperedUpperExponentBound` is
+an internal interface stating the Proposition III.2.2 bound in the form used
+here; neither has a separate literature source.
