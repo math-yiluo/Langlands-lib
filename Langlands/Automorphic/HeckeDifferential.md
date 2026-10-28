@@ -68,3 +68,7 @@ The action-type abbreviations `FiniteSmoothHeckeAction`,
 submodule, not a new carrier or a new hypothesis. These abbreviations preserve
 the definitions and algebraic laws while avoiding repeated expansion of the
 nested concrete function-space instances during declaration inspection.
+
+The local additive-group instances have explicit module-specific names; each
+uses the existing `Submodule.addCommGroup` structure. This avoids generated-name
+collisions when the complete Library is checked together.

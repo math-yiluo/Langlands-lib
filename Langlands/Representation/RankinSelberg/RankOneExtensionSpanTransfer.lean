@@ -1,5 +1,5 @@
 import Langlands.Representation.RankinSelberg.RankOneExtensionSpanComparisonStatement
-import Langlands.Representation.RankinSelberg.RankOneExtensionAnalyticData
+import Langlands.Representation.RankinSelberg.RankOneExtensionCellAlgebra
 import Langlands.Group.GL.RankReindex
 import Langlands.Representation.RankinSelberg.WhittakerRankCast
 
@@ -236,22 +236,6 @@ theorem rankInclusion_entry (n d : ℕ) (g : Langlands.GeneralLinear n K)
   change blockSum (g, 1) i j = _
   cases i using Fin.addCases <;> cases j using Fin.addCases <;>
     all_goals (simp [Fin.ext_iff, Matrix.one_apply]; try omega)
-
-/-- Numeric entries of the lower block `[m, 0; x, a]` in `GL(1 + (t + 1))`. -/
-theorem rankOneExtensionLowerBlock_entry (t : ℕ) (m : Langlands.GeneralLinear (t + 1) K)
-    (x : Fin (t + 1) → K) (a : Kˣ) (i j : Fin (1 + (t + 1))) :
-    rankOneExtensionLowerBlock t m x a i j =
-      if hi : i.val < t + 1 then
-        if hj : j.val < t + 1 then m ⟨i.val, hi⟩ ⟨j.val, hj⟩ else 0
-      else if hj : j.val < t + 1 then x ⟨j.val, hj⟩ else a.val := by
-  obtain ⟨i, rfl⟩ := (rankOneExtensionCellCoordinates t).surjective i
-  obtain ⟨j, rfl⟩ := (rankOneExtensionCellCoordinates t).surjective j
-  rw [rankOneExtensionLowerBlock_apply]
-  rcases i with i | i <;> rcases j with j | j
-  · simp [rankOneExtensionCellCoordinates, Fin.is_le]
-  · simp [rankOneExtensionCellCoordinates, Fin.val_eq_zero, not_lt.2 (Fin.is_le i)]
-  · simp [rankOneExtensionCellCoordinates, Fin.val_eq_zero, not_lt.2 (Fin.is_le j)]
-  · simp [rankOneExtensionCellCoordinates, Fin.val_eq_zero]
 
 /-- The lower block factors as `[m, 0; x, 1] * [1, 0; 0, a]`. -/
 theorem rankOneExtensionLowerBlock_eq_mul (t : ℕ) (m : Langlands.GeneralLinear (t + 1) K)

@@ -130,7 +130,8 @@ section LocalField
 variable (F : Type uF) [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 
-private theorem localField_t2 : T2Space F := by
+/-- A nonarchimedean local field is Hausdorff, via its uniform additive group. -/
+theorem localField_t2 : T2Space F := by
   let := IsTopologicalAddGroup.rightUniformSpace F
   have := isUniformAddGroup_of_addCommGroup (G := F)
   infer_instance

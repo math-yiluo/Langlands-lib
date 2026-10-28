@@ -49,6 +49,10 @@ used as a substitute for disintegration. Quotient existence, its normalization
 relative to unipotent Haar, and the Weil integration formula remain explicit
 prerequisites. Convergence and local-factor constructions remain unfinished.
 
+The public helper `Langlands.RankinSelberg.localField_t2` proves that a
+nonarchimedean local field is Hausdorff using its uniform additive group. It
+is available for reuse and is not registered as a global instance.
+
 The group and field universes are explicit. Measurable structures on the groups
 are supplied with their Borel compatibility; the local-field construction uses
 the project's nonarchimedean-local-field class. Rectangular additive measures

@@ -77,7 +77,8 @@ for these data.
 All matrix lemmas hold over an arbitrary field.
 
 - `rankInclusion_entry` gives the entries of `rankInclusion d g = diag(g, I_d)`.
-- `rankOneExtensionLowerBlock_entry` gives the entries of the published lower block
+- `rankOneExtensionLowerBlock_entry`, imported from
+  [RankOneExtensionCellAlgebra](RankOneExtensionCellAlgebra.md), gives the entries of the published lower block
   `[m, 0; x, a]` in `GL(1 + (t + 1))` by numeric index. The large block comes first
   and the scalar row has index `t + 1`.
 - `rankOneExtensionLowerBlock_eq_mul` and

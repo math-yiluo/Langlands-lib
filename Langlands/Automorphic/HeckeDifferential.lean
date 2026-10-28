@@ -13,10 +13,10 @@ open MeasureTheory Langlands.Hecke
 
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (CenterFiniteFiniteSmoothRationalFunctions K n) :=
+local instance heckeDifferentialRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
+local instance heckeDifferentialContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
+local instance heckeDifferentialSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
+local instance heckeDifferentialCenterFiniteAddCommGroup : AddCommGroup (CenterFiniteFiniteSmoothRationalFunctions K n) :=
   Submodule.addCommGroup _
 
 /-- The actual finite action is smooth by the common open stabilizer condition. -/
