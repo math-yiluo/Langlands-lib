@@ -33,7 +33,7 @@ finite-dimensional carrier or finite expansion is assumed.
 ## Implemented proof
 
 The module reuses the published normalization equality, proves finite
-generation of the unnormalized action, constructs the center-valued
+generation of the unnormalized action, imports the center-valued
 block-scalar map, and combines the published finiteness results.
 
 ### 1. Normalized action as a twist of the unnormalized action
@@ -89,7 +89,9 @@ twist.
 
 ### 3. Block scalars in the center of the product Levi
 
-`blockScalarCenter B` is the homomorphism
+`blockScalarCenter B`, now imported from
+[BlockScalarCenter](../../Group/GL/BlockScalarCenter.md) with its original
+declaration and namespace unchanged, is the homomorphism
 
 ```text
 (Fin B.length → F.Carrierˣ) →* Subgroup.center (B.Levi F.Carrier)

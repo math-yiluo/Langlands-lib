@@ -1,4 +1,5 @@
 import Langlands.Representation.Parabolic.JacquetCenterSpanStatement
+import Langlands.Group.GL.BlockScalarCenter
 import Langlands.Representation.Exponents.JacquetEigenvectorProof
 import Langlands.Representation.Parabolic.JacquetFiniteGenerationProof
 import Langlands.Representation.Parabolic.NormalizedJacquetAdmissibilityProof
@@ -32,14 +33,6 @@ theorem finite_leviCoinvariants :
   have h := normalizedJacquetFiniteGeneration p F T m B V ρ hρ hfg
   rw [← twist_inverseHalfCharacter_leviCoinvariants F T B ρ] at h
   exact (finite_asModule_twist_iff _ _).mp h
-
-/-- The block-scalar tuples, as a homomorphism into the center of the actual
-product Levi. -/
-def blockScalarCenter :
-    (Fin B.length → F.Carrierˣ) →* Subgroup.center (B.Levi F.Carrier) :=
-  (B.blockScalarLevi F.Carrier).codRestrict (Subgroup.center (B.Levi F.Carrier))
-    fun a => Subgroup.mem_center_iff.mpr fun l =>
-      (B.blockScalarLevi_commute F.Carrier a l).symm
 
 end Transport
 
