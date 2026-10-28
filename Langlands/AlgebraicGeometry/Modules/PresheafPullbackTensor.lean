@@ -18,7 +18,8 @@ open AlgebraicGeometry
 
 namespace Langlands.Scheme.Modules
 
-local instance (X : AlgebraicGeometry.Scheme.{u}) : MonoidalCategory X.PresheafOfModules :=
+local instance presheafPullbackTensorMonoidalCategory (X : AlgebraicGeometry.Scheme.{u}) :
+    MonoidalCategory X.PresheafOfModules :=
   inferInstanceAs (MonoidalCategory (PresheafOfModulesOfCommRing.{u} X.presheaf))
 
 variable {X Y : AlgebraicGeometry.Scheme.{u}} (f : X ⟶ Y)

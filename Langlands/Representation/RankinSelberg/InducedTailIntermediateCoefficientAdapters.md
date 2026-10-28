@@ -27,7 +27,10 @@ functions with evaluation after the explicit numerical matrix reindexing. Their
 membership theorems transport the representation by that same equality and
 retain actual coefficient-image membership. The smoothness adapter likewise
 transports a supplied smoothness proof by equality. These are equality
-transports only.
+transports only. The standard `whittakerRankCast` definition and its evaluation
+theorem now live in the imported [WhittakerRankCast](WhittakerRankCast.md) pair,
+with their original namespace and meaning. This module retains the inverse
+cast, both coefficient-image membership lemmas and the smoothness adapter.
 
 An additional identity identifies the actual zero-row unequal-rank tail
 function at `ψ.scale (-1)` with the product used in the lower-block

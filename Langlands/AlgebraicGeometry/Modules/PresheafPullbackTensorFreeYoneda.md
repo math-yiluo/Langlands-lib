@@ -25,9 +25,18 @@ its hom exactly:
 ```
 
 These declarations have no additional parameters or assumptions. The tensor
-is the sectionwise tensor over the structure ring presheaf, using the same
-file-local monoidal instance as `PresheafPullbackTensor`. The construction
-uses the existing presheaf pullback functor and its adjunction.
+is the sectionwise tensor over the structure ring presheaf. It is supplied by
+the file-local instance `presheafPullbackTensorFreeYonedaMonoidalCategory X`,
+which has the same definition as the local instance in
+`PresheafPullbackTensor`: `inferInstanceAs` applied to the monoidal instance
+on `PresheafOfModulesOfCommRing X.presheaf`. This instance was first
+published anonymously. Its explicit name is an integration-only correction.
+Its generated name and auxiliary declarations coincided with those of the
+anonymous local instance in
+`Langlands.AlgebraicGeometry.Picard.RigidifiedTensorSymmetry`, so the two
+modules could not be imported together. The instance body and the source
+text of every other declaration are unchanged. The construction uses the
+existing presheaf pullback functor and its adjunction.
 
 Let `p_U = presheafPullbackFreeYonedaIso f U`, the isomorphism
 `L.obj A_Y(U) ≅ A_X(F.obj U)`. Let

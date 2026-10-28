@@ -35,8 +35,16 @@ The ring presheaves are explicitly `X.ringCatSheaf.obj` and
 no additional adjoint or comparison is assumed. Its unit is denoted by `η`
 below, and its counit by `ε`.
 
-A local instance exposes Mathlib's sectionwise monoidal structure on the
-definitionally equal category `X.PresheafOfModules`. The elaboration option
+A local instance, `presheafPullbackTensorMonoidalCategory X`, exposes
+Mathlib's sectionwise monoidal structure on the definitionally equal category
+`X.PresheafOfModules`. It is `inferInstanceAs` applied to the monoidal
+instance on `PresheafOfModulesOfCommRing X.presheaf`. It was first published
+as an anonymous instance. Its explicit name is an integration-only
+correction: the generated name and its auxiliary declarations coincided with
+those of the anonymous local instance in
+`Langlands.AlgebraicGeometry.Picard.RigidifiedTensorSymmetry`, so the two
+modules could not be imported together. The instance body and the source text
+of every other declaration are unchanged. The elaboration option
 `backward.isDefEq.respectTransparency false` permits Lean to unfold these
 category presentations during elaboration; it adds no mathematical assumption.
 
