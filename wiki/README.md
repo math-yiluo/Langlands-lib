@@ -33,6 +33,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [External Library audit: global adeles, norms and Shimura conventions](../notes/audits/external-library-2026-10-22/global-adeles-shimura.md) — Nine historical finding verdicts, original-source and declaration checks, six verified correction publications repairing all ten assigned Markdown files, and the preserved mathematical scope.
 
 - [Automorphic differential growth: source map](../notes/automorphic/differential-growth-source-map.md) — Original reproduction, admissibility and elliptic analyticity arguments, with their exact hypotheses and remaining formalization obligations.
+- [Interior elliptic analytic regularity: Morrey–Nirenberg route](../notes/automorphic/elliptic-analyticity-source-map.md) — Original interior estimates, factorial analyticity route and remaining concrete matrix proof obligations.
 
 - [External Library audit: smooth representations and release status](../notes/audits/external-library-2026-10-22/smooth-representations.md) — All twelve historical/current finding verdicts, eight verified correction publications, original-source and file checks, and preserved historical release-evidence limits.
 
