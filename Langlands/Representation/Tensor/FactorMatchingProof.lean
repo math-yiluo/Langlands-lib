@@ -4,6 +4,7 @@ import Langlands.Representation.Tensor.FiniteProperties
 import Langlands.Representation.Tensor.FiniteEquivalences
 import Langlands.Representation.Filtration.GradedRefinementProof
 import Langlands.Representation.Filtration.JordanHolderProof
+import Langlands.Representation.Filtration.JordanHolderTransportProof
 import Langlands.Representation.CuspidalSupport.AssociationReduction
 import Langlands.Representation.Unramified.SphericalConstituentExistenceProof
 import Langlands.Representation.Smooth.Schur.Proof
@@ -19,21 +20,6 @@ universe uK uG uH uV uW uX uY
 section Algebra
 
 variable {k : Type uK} [Field k] {G : Type uG} [Monoid G]
-
-private theorem matching_transport {A : Rep.{uV} k G} {B : Rep.{uW} k G}
-    {C : Rep.{uX} k G} {D : Rep.{uY} k G}
-    (h : HaveSameJordanHolderFactors A B)
-    (e : A.ρ.Equiv C.ρ) (f : B.ρ.Equiv D.ρ) :
-    HaveSameJordanHolderFactors C D := by
-  obtain ⟨n, s, t, hs, ht, p, hp⟩ := h
-  obtain ⟨s', hs', es⟩ := jordanHolderSeriesTransport k G A C e n s hs
-  obtain ⟨t', ht', et⟩ := jordanHolderSeriesTransport k G B D f n t ht
-  refine ⟨n, s', t', hs', ht', p, ?_⟩
-  intro i
-  obtain ⟨a⟩ := es i
-  obtain ⟨b⟩ := hp i
-  obtain ⟨c⟩ := et (p i)
-  exact ⟨(a.symm.trans b).trans c⟩
 
 variable {H : Type uH} [Monoid H]
 
@@ -82,7 +68,7 @@ private theorem matching_of_comp {A : Rep.{uV} k G} {B : Rep.{uW} k G}
       (Rep.of (A.ρ.comp e.toMonoidHom)) (Rep.of (B.ρ.comp e.toMonoidHom))) :
     HaveSameJordanHolderFactors A B := by
   have h' := matching_comp h e.symm.toMonoidHom e.symm.surjective
-  apply matching_transport h'
+  apply haveSameJordanHolderFactors_transport h'
   · exact Representation.Equiv.mk (LinearEquiv.refl k _) (by
       intro g
       change A.ρ (e (e.symm g)) = A.ρ g
@@ -116,7 +102,7 @@ private theorem tensor_right_matching_of_graded
       (Rep.of (Representation.tprod A'.ρ B'.ρ)) := by
   apply gradedJordanHolderRefinement k G _ _ n (s.tensorRight B) (t.tensorRight B') p
   intro i
-  exact matching_transport (h i) (s.tensorRightGradedEquiv B i).symm
+  exact haveSameJordanHolderFactors_transport (h i) (s.tensorRightGradedEquiv B i).symm
     (t.tensorRightGradedEquiv B' (p i)).symm
 
 end Algebra
@@ -269,14 +255,14 @@ private theorem simple_left_matching
     intro i
     obtain ⟨f⟩ := hp i
     have hm := binary_simple_matching ha (graded_admissible hH s hb i) hi (hs i) e f
-    apply matching_transport hm
+    apply haveSameJordanHolderFactors_transport hm
     · exact (Representation.TensorProduct.comm _ _).trans
         (tensorEquiv (gradedComp s (MonoidHom.snd G H) (fun b => ⟨(1, b), rfl⟩) i).symm
           (Representation.Equiv.refl _))
     · exact (Representation.TensorProduct.comm _ _).trans
         (tensorEquiv (gradedComp t (MonoidHom.snd G H) (fun b => ⟨(1, b), rfl⟩) (p i)).symm
           (Representation.Equiv.refl _))
-  exact matching_transport hswap (Representation.TensorProduct.comm _ _)
+  exact haveSameJordanHolderFactors_transport hswap (Representation.TensorProduct.comm _ _)
     (Representation.TensorProduct.comm _ _)
 
 variable [IsTopologicalGroup G]
@@ -304,7 +290,7 @@ private theorem binary_matching
   intro i
   obtain ⟨e⟩ := hp i
   have hm := simple_left_matching hH (graded_admissible hG s ha i) hb (hs i) e hB
-  apply matching_transport hm
+  apply haveSameJordanHolderFactors_transport hm
   · exact tensorEquiv (gradedComp s (MonoidHom.fst G H) (fun a => ⟨(a, 1), rfl⟩) i).symm
       (Representation.Equiv.refl _)
   · exact tensorEquiv (gradedComp t (MonoidHom.fst G H) (fun a => ⟨(a, 1), rfl⟩) (p i)).symm
@@ -366,7 +352,7 @@ private theorem finite_matching :
   | zero =>
       intro H _ _ _ _ _ _ A A' ha hm
       apply matching_of_comp (evalOne H).symm
-      exact matching_transport (hm 0) (singletonEquiv (fun i => (A i).ρ)).symm
+      exact haveSameJordanHolderFactors_transport (hm 0) (singletonEquiv (fun i => (A i).ρ)).symm
         (singletonEquiv (fun i => (A' i).ρ)).symm
   | succ r ih =>
       intro H _ _ _ _ _ _ A A' ha hm
@@ -378,7 +364,7 @@ private theorem finite_matching :
       have hbin := binary_matching (compactOpen_cofinal (H 0))
         (compactOpen_cofinal (∀ j : Fin (r + 1), H j.succ)) (ha 0) htadm (hm 0) htail
       apply matching_of_comp (headTail H).symm
-      exact matching_transport hbin (headTailEquiv (fun i => (A i).ρ)).symm
+      exact haveSameJordanHolderFactors_transport hbin (headTailEquiv (fun i => (A i).ρ)).symm
         (headTailEquiv (fun i => (A' i).ρ)).symm
 
 end Langlands.FiniteTensor.FactorMatchingProof

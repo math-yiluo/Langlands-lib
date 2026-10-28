@@ -5,7 +5,7 @@ import Langlands.Representation.Filtration.LengthCriterionProof
 
 namespace Langlands
 
-universe uK uG uA uB
+universe uK uG uA uB uC uD
 
 namespace JordanHolderTransportProof
 
@@ -116,5 +116,23 @@ theorem jordanHolderSeriesTransport : JordanHolderSeriesTransportStatement.{uK, 
   refine ⟨t, (hasSimpleFactors_iff_covBy t).mpr fun i => ?_, fun i => ?_⟩
   · exact (apply_covBy_apply_iff e).mpr ((hasSimpleFactors_iff_covBy s).mp hs i)
   · exact ⟨quotientEquiv φ (s.subrepresentation i.castSucc) (s.subrepresentation i.succ)⟩
+
+/-- Transport matching composition series along two actual representation equivalences. -/
+theorem haveSameJordanHolderFactors_transport
+    {k : Type uK} [Field k] {G : Type uG} [Monoid G]
+    {A : Rep.{uA} k G} {B : Rep.{uB} k G}
+    {C : Rep.{uC} k G} {D : Rep.{uD} k G}
+    (h : HaveSameJordanHolderFactors A B)
+    (e : A.ρ.Equiv C.ρ) (f : B.ρ.Equiv D.ρ) :
+    HaveSameJordanHolderFactors C D := by
+  obtain ⟨n, s, t, hs, ht, p, hp⟩ := h
+  obtain ⟨s', hs', es⟩ := jordanHolderSeriesTransport k G A C e n s hs
+  obtain ⟨t', ht', et⟩ := jordanHolderSeriesTransport k G B D f n t ht
+  refine ⟨n, s', t', hs', ht', p, ?_⟩
+  intro i
+  obtain ⟨a⟩ := es i
+  obtain ⟨b⟩ := hp i
+  obtain ⟨c⟩ := et (p i)
+  exact ⟨(a.symm.trans b).trans c⟩
 
 end Langlands

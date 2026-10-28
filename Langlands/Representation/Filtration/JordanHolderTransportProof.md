@@ -17,9 +17,9 @@ index.
 There are no further hypotheses: no finite-dimensionality, global finite
 length, nontriviality, or group structure. The case `n = 0` is covered by the
 same construction. The statement pair and every pair it imports are unchanged.
-This pair proves only the transport component. Comparison of two series,
-transitivity, and assembly of `JordanHolderSeriesStatement` are separate proof
-work. The helpers below are in the namespace
+This pair proves the transport component and transports a supplied matching
+between two series. Comparison of arbitrary series, transitivity, and assembly
+of `JordanHolderSeriesStatement` are separate proof work. The helpers below are in the namespace
 `Langlands.JordanHolderTransportProof`.
 
 ## Images of invariant subspaces
@@ -80,6 +80,16 @@ preserve covering. At index `i`, the required equivalence of graded quotients is
 `(t.gradedRepresentation i).ρ`. No index permutation is needed.
 
 ## Provenance and scope
+
+`Langlands.haveSameJordanHolderFactors_transport` transports a supplied
+`HaveSameJordanHolderFactors A B` along actual equivalences from `A` to `C`
+and from `B` to `D`, retaining independent universes for all four carriers.
+It applies `jordanHolderSeriesTransport` to the two supplied series and
+composes the graded equivalences with the original matching. The length and
+index permutation are retained. This is the existing `matching_transport`
+helper from `Tensor/FactorMatchingProof`, moved here for shared use with
+`CuspidalSupport/AdjacentTensorReduction`; its hypotheses and proof are
+unchanged.
 
 This is derived general module theory for representations of an arbitrary
 monoid over a field. It is the elementary fact that an isomorphism carries a
