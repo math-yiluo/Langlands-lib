@@ -24,7 +24,9 @@ coverage theorem, no positive-form exponent data, and no unitary normalization
 of a selected cuspidal presentation. The statement pair and all its imports
 are unchanged.
 
-For the support comparison, `Segment.support_subset_of_base_shift` sends the
+For the support comparison, `Segment.support_subset_of_base_shift`, now imported
+from [SegmentSupportContainment](SegmentSupportContainment.md) with its original
+name, statement and proof, sends the
 `i`th member of a segment starting at position `k` in another segment to its
 member `k+i`, using `CuspidalDatum.twist_twist`. The translated length bound
 ensures that this index is in range. For bases at natural positions `a,b` in a

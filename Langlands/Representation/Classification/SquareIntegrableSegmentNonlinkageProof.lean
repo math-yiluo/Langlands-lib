@@ -1,4 +1,5 @@
 import Langlands.Representation.Classification.SquareIntegrableSegmentNonlinkageStatement
+import Langlands.Representation.Classification.SegmentSupportContainment
 import Langlands.Representation.Classification.SegmentConstituentCentralCharacterProof
 import Langlands.Representation.Smooth.Schur.Proof
 import Langlands.LocalField.Uniformizer
@@ -17,16 +18,6 @@ universe uF uV
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
   {T : F.TopologicalData}
-
-/-- If the base of the second segment starts `k` positions into the first and
-its last index stays inside the first, its support is contained in the first. -/
-theorem support_subset_of_base_shift {Δ Δ' : T.Segment.{uV, uF}} {k : ℕ}
-    (hbase : Δ'.base = Δ.base.twist (k : ℝ))
-    (hend : k + Δ'.length ≤ Δ.length) : Δ'.support ⊆ Δ.support := by
-  rintro ρ ⟨i, hi, rfl⟩
-  refine ⟨k + i, by omega, ?_⟩
-  simp only [member, hbase, CuspidalDatum.twist_twist, Nat.cast_add]
-  rw [add_comm]
 
 /-- Segments in one integer twist string with equal midpoints have nested
 supports. No injectivity or nonperiodicity of the twist action is needed. -/
