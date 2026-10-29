@@ -9,6 +9,10 @@ original carrier, including when that action is reducible.
 
 ## The form construction
 
+The generic declarations below are shared through
+[Representation/Unitary/Restriction](../../Representation/Unitary/Restriction.md),
+which contains their unchanged definitions, statements and proofs.
+
 For monoids `G`, `H` and `J` in independent universes, a complex vector space
 `V : Type uV`, an actual representation `ρ` of `G` on `V`, and a monoid
 homomorphism `φ : H →* G`,
@@ -74,7 +78,7 @@ Effective unitary irreducible expansion of this full class remains a separate
 theorem obligation. No existence of local maps, global associated objects,
 automorphic unitary support, absolute comparison or correspondence is asserted.
 
-The imports are `Langlands.Representation.Unitary.Basic`,
+The imports are `Langlands.Representation.Unitary.Restriction`,
 `Langlands.Weil.Representation.UnitaryProof` and
 `Langlands.Weil.Representation.InductionContinuity`. They supply the existing
 form, finite unitarity bridge, restriction functor and continuity result.

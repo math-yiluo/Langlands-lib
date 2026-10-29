@@ -29,7 +29,8 @@ They do not assume the conclusion or a common bound on the operators.
    bounded map between actual presentations is contractive if each coordinate
    image has norm at most one. If the target is a subsingleton, its norm is
    zero and the estimate follows directly. Otherwise
-   `quotient_norm_one_le` and `one_le_norm_one` supply a local `NormOneClass`
+   `quotient_norm_one_le` (now imported from
+   [AffinoidUnitNorm](../AffinoidUnitNorm.md)) and `one_le_norm_one` supply a local `NormOneClass`
    instance on the target. Composing with the source's Tate projection,
    `map_eq_evaluate` and `evaluate_norm_le` bound the image of every Tate
    representative by its Gauss norm. `exists_representative_norm_lt` then

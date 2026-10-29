@@ -36,15 +36,16 @@ It adds no convergence, integrability or finiteness premise. The result is an
 equality of measures and thus applies to nonnegative measurable functions
 before complex integrability is established.
 
-The private `diagonalConj` identifies conjugation by an invertible diagonal
+The shared helpers in [DiagonalUnipotentHaar](DiagonalUnipotentHaar.md) retain
+the definitions and proofs extracted from this module. `diagonalConj` identifies conjugation by an invertible diagonal
 matrix on `N` with the singleton-block Levi action, using the published group
 equivalence between `N` and the singleton unipotent radical.
 `diagonalConj_val` identifies its underlying matrix formula, and
 `continuous_diagonalConj` proves continuity from multiplication and the
 subgroup inclusion. The published `glBlockModulusHaar` theorem then gives
 `diagonalConj_map`: pushing unipotent Haar through this conjugation scales it
-by the inverse singleton-block Levi modulus. The private
-`singleton_modulus_real` identifies that modulus with `δ(a)`, and
+by the inverse singleton-block Levi modulus.
+`singleton_modulus_real` identifies that modulus with `δ(a)`, and the private
 `singleton_modulus_inverse` converts its inverse to the exact `ENNReal.ofReal`
 density used in the target.
 

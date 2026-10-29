@@ -1,4 +1,5 @@
 import Langlands.Geometry.Analytic.StrictTestDomain.RationalSectionContinuityStatement
+import Langlands.Geometry.Analytic.AffinoidUnitNorm
 import Mathlib.Analysis.Normed.Ring.Units
 
 /-! # Continuity of the fixed rational-quotient section action -/
@@ -16,13 +17,6 @@ open PresentedStrictAffinoidAlgebra StrictTateAlgebra
 namespace PresentedStrictAffinoidAlgebra
 
 variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
-
-omit [CompleteSpace K] in
-/-- The quotient norm of the unit is at most one, also in a zero quotient. -/
-theorem quotient_norm_one_le (A : PresentedStrictAffinoidAlgebra K) :
-    ‖(1 : A)‖ ≤ 1 := by
-  exact (Ideal.Quotient.norm_mk_le A.ideal
-    (1 : StrictTateAlgebra (Fin A.arity) K)).trans_eq norm_one
 
 /-- Coordinate images in the unit ball force a bounded map of actual
 presentations to be contractive. The zero target is included. -/
