@@ -17,17 +17,25 @@ open ArchimedeanGL
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+-- Explicit names keep these canonical local structures from colliding with
+-- generated instance names in sibling modules imported alongside this one.
+local instance horizontalFiniteActionRationalInvariantAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance horizontalFiniteActionContinuousRationalAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalFiniteActionFiniteSmoothRationalAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalFiniteActionAutomorphicFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance horizontalFiniteActionStableAutomorphicAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance horizontalFiniteActionSpaceAddCommGroup : AddCommGroup S.Space :=
+  Submodule.addCommGroup _
 
 /-- Actual finite translation, viewed as a full-compact coefficient intertwiner. -/
 def finiteCompactIntertwiner (d : FiniteAdelicGL F n) :

@@ -70,3 +70,16 @@ closure and the proof module's closure contain only `propext`,
 Development compilation and inspection do not replace the registered
 independent checker, semantic review or publication. No concrete p-adic group
 instance or local Langlands correspondence is established by this module.
+
+## Shared local-constancy consequence
+
+The existing declaration
+`Langlands.RankinSelberg.isLocallyConstant_of_continuous_complex_character`
+was moved here from `RankOneExtensionLowerJacquetFunctionalProof`, retaining
+its full name, statement and proof. For any group `H` with a topology and
+`NonarchimedeanGroup H`, a continuous homomorphism `θ : H →* ℂˣ` has locally
+constant complex values. Its open kernel gives an open coset neighborhood
+on which the value is constant. This existing result is shared by the
+rank-one Jacquet functional and `BruhatCompatibleSupportProof`; no local
+compactness or Hausdorff hypothesis is added. The moved proof retains its
+provenance in the original paired module.

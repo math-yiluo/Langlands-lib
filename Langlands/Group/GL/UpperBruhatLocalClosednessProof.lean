@@ -15,7 +15,7 @@ section RankTopology
 variable {K : Type u} [Field K] [TopologicalSpace K] [IsTopologicalRing K]
   [T2Space K] {n : ℕ}
 
-private theorem isOpen_matrix_rank_ge (k : ℕ) :
+theorem isOpen_matrix_rank_ge (k : ℕ) :
     IsOpen {A : Matrix (Fin n) (Fin n) K | k ≤ A.rank} := by
   classical
   refine isOpen_iff_forall_mem_open.mpr ?_
@@ -42,7 +42,7 @@ private theorem isOpen_matrix_rank_ge (k : ℕ) :
       continuous_const
   · simp only [Set.mem_ofPred_eq, hminor, Matrix.det_one, ne_eq, one_ne_zero, not_false_eq_true]
 
-private theorem isClosed_matrix_rank_le (k : ℕ) :
+theorem isClosed_matrix_rank_le (k : ℕ) :
     IsClosed {A : Matrix (Fin n) (Fin n) K | A.rank ≤ k} := by
   have hopen := isOpen_matrix_rank_ge (K := K) (n := n) (k + 1)
   convert hopen.isClosed_compl using 1
@@ -73,7 +73,7 @@ private theorem isLocallyClosed_matrix_rank_profile
       fun h i => le_antisymm (h.2 i) (h.1 i)⟩
 
 omit [IsTopologicalRing K] [T2Space K] in
-private theorem continuous_lowerLeftCorner (i j : Fin (n + 1)) :
+theorem continuous_lowerLeftCorner (i j : Fin (n + 1)) :
     Continuous (fun g : Langlands.GeneralLinear n K =>
       ((fun r c : Fin n =>
         if i.val ≤ r.val ∧ c.val < j.val then g r c else 0) :

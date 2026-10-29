@@ -107,7 +107,7 @@ theorem nonempty_oppositeForms_equiv (ψ : UnitaryAdditiveCharacter F) (n : ℕ)
 end Generic
 
 /-- A field with a valuative topology is a nonarchimedean additive group. -/
-private theorem valuative_nonarchimedean {K : Type*} [Field K]
+theorem valuative_nonarchimedean {K : Type*} [Field K]
     [TopologicalSpace K] [ValuativeRel K] [IsValuativeTopology K] :
     NonarchimedeanAddGroup K where
   is_nonarchimedean U hU := by

@@ -72,7 +72,9 @@ the published product formula `mirabolicCharacter_eq_product`).
    open (`MirabolicWhittaker.isOpen_complex_eq_one`).
 4. **Instances for the p-adic field** (main theorem). With `T.topology`,
    `T.valuativeRel` and `T.localField`: `T.fieldT2`; the field is a
-   nonarchimedean additive group (`valuative_nonarchimedean`, from the open
+   nonarchimedean additive group (the public
+   `MirabolicCompactTwistedPairing.valuative_nonarchimedean`, shared with
+   `UnequalRankCompactPairingFunctionals`, from the open
    submodule basis of the valuation integers; a copy of the private lemma in
    `HarmonicAnalysis.PadicRowFourierCutoffStatement`); `GL_m` is nonarchimedean
    and locally compact (`T.generalLinearNonarchimedean`,

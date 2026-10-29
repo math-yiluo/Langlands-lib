@@ -102,9 +102,12 @@ lemmas from that module apply.
   and from `MeasurePreserving.integrable_comp_emb` and `MeasurePreserving.integral_comp`.
   `Whittaker.exists_functional_extension_of_subgroup_intertwiner` extends this functional
   from the subrepresentation `D` to `V`.
-- `isLocallyConstant_of_continuous_complex_character`: a continuous complex character of
-  a nonarchimedean group has an open kernel (`isOpen_ker_of_continuous_complex_character`),
-  so it is locally constant.
+- `isLocallyConstant_of_continuous_complex_character`, now imported from
+  `Langlands.Representation.Twist.ContinuousCharacterProof` with its existing
+  `Langlands.RankinSelberg` name: a continuous complex character of a
+  nonarchimedean group has an open kernel
+  (`isOpen_ker_of_continuous_complex_character`), so it is locally constant.
+  Integration moved this declaration with its statement and proof unchanged.
 
 ## Final theorem
 

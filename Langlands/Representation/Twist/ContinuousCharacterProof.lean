@@ -1,6 +1,7 @@
 import Langlands.Representation.Twist.ContinuousCharacterStatement
 import Mathlib.Algebra.Ring.GeomSum
 import Mathlib.Tactic.Linarith
+import Mathlib.Topology.LocallyConstant.Basic
 
 namespace Langlands
 
@@ -67,3 +68,23 @@ theorem continuousComplexCharacterOpenKernel :
   exact isOpen_ker_of_continuous_complex_character chi hchi
 
 end Langlands
+
+namespace Langlands.RankinSelberg
+
+/-- A continuous complex character of a nonarchimedean group is locally constant. -/
+theorem isLocallyConstant_of_continuous_complex_character {H : Type*} [Group H]
+    [TopologicalSpace H] [NonarchimedeanGroup H] (θ : H →* ℂˣ)
+    (hθc : Continuous θ) : IsLocallyConstant (fun u : H => (θ u : ℂ)) := by
+  have hθopen : IsOpen (θ.ker : Set H) := isOpen_ker_of_continuous_complex_character θ hθc
+  apply (IsLocallyConstant.iff_exists_open _).mpr
+  intro u
+  refine ⟨(fun v : H => u⁻¹ * v) ⁻¹' (θ.ker : Set H),
+    hθopen.preimage (continuous_const.mul continuous_id), ?_, ?_⟩
+  · simp
+  · intro v hv
+    have hv' : θ (u⁻¹ * v) = 1 := hv
+    have he : (θ u)⁻¹ * θ v = 1 := by
+      simpa only [map_mul, map_inv] using hv'
+    exact congrArg Units.val (inv_mul_eq_one.mp he).symm
+
+end Langlands.RankinSelberg

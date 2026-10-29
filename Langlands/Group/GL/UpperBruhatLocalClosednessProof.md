@@ -19,7 +19,7 @@ including zero, and every permutation are retained.
 
 ## Open rank lower bounds
 
-The private lemma `isOpen_matrix_rank_ge` proves that
+The public lemma `isOpen_matrix_rank_ge` proves that
 `{A : Matrix (Fin n) (Fin n) K | k ≤ A.rank}` is open over a field with a
 Hausdorff topological ring structure.
 
@@ -76,6 +76,10 @@ retains rows `r` with `i.val ≤ r.val` and columns `c` with `c.val < j.val`.
 Each output entry is either a constant zero or an entry of the underlying
 matrix. The latter is continuous by `Units.continuous_val` followed by two
 coordinate projections. This uses the existing topology on matrix units.
+
+`isOpen_matrix_rank_ge`, `isClosed_matrix_rank_le` and
+`continuous_lowerLeftCorner` are public helpers in `Langlands.GeneralLinear`,
+shared with `UpperBruhatBoundaryProof`. Their statements and proofs are unchanged.
 
 The private lemma
 `upperBruhatCell_isLocallyClosed_of_rank_characterization` applies the finite
