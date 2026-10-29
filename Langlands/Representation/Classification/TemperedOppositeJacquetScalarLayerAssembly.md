@@ -121,7 +121,10 @@ finite, and the published `countableCellLpUpper` converts the cell bound into
 ### Dual exponents are exponents of the opposite Jacquet module
 
 `pow_sub_smul_apply_of_eigen`: if `L x = μ • x` then
-`(L - c • 1)^k x = (μ - c)^k • x`; proved by induction on `k`.
+`(L - c • 1)^k x = (μ - c)^k • x`; proved by induction on `k`. The unchanged
+declaration is imported from
+[EigenvectorDefect](../../LinearAlgebra/EigenvectorDefect.md), which also supports
+the general admissible central dual-to-primal proof.
 
 `isGeneralizedEigencharacter_of_isDualJacquetExponent`: let `A` be an
 irreducible admissible representation of `GL_n(F)` and `ψ` a full-dual
