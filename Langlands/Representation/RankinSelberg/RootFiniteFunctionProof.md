@@ -5,11 +5,15 @@
 The proof retains every prime, p-adic field, supplied topological data and
 positive rank, including rank one.
 
-First, a private helper identifies the supplied field topology with the
+First, the shared helper `T.continuous_normalizedAbs` from
+`Langlands.LocalField.Normalization.Continuity` identifies the supplied field topology with the
 canonical norm topology. The published normalization identity expresses the
 normalized absolute value as a natural power of the canonical norm. Continuity
 of the norm and of natural powers then proves continuity of the actual
 normalized absolute value with respect to the supplied topology.
+The Integrator moved the former private helper to that module so this proof
+and the scalar Schwartz–Bruhat valuation-bounds proof use one declaration;
+the helper's proof and the theorem's meaning are unchanged.
 
 On the torus, composition with coordinate evaluation and the units coercion
 makes each normalized absolute value continuous. Complex coercion, natural

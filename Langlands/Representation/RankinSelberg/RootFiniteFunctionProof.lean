@@ -1,7 +1,7 @@
 import Langlands.Representation.RankinSelberg.RootFiniteFunctionStatement
 import Langlands.Representation.RankinSelberg.RootCoordinateProof
 import Langlands.Representation.RankinSelberg.FiniteFunctionClosureProof
-import Langlands.LocalField.Normalization.Proof
+import Langlands.LocalField.Normalization.Continuity
 
 noncomputable section
 
@@ -10,19 +10,6 @@ namespace Langlands.RankinSelberg
 open scoped BigOperators
 
 universe uF
-
-private theorem continuous_normalizedAbs {p : ℕ} [Fact p.Prime]
-    (F : PadicField.{uF} p) (T : F.TopologicalData) :
-    letI := T.topology
-    Continuous T.normalizedAbs := by
-  rw [T.topology_eq_canonicalNormTopology]
-  let := F.canonicalNormedField
-  have habs (x : F.Carrier) :
-      T.normalizedAbs x = ‖x‖ ^ Module.finrank (Padic p) F.Carrier :=
-    T.normalizedAbs_eq_canonicalNorm_pow_degree x
-  simp_rw [show T.normalizedAbs = fun x =>
-    ‖x‖ ^ Module.finrank (Padic p) F.Carrier from funext habs]
-  exact continuous_norm.pow _
 
 /-- The actual inverse modulus in root coordinates preserves the continuous
 translation-finite functions used in the torus Mellin reduction. -/
@@ -43,7 +30,7 @@ theorem rootCoordinateFiniteFunction {p : ℕ} [Fact p.Prime]
     apply continuous_finsetProd
     intro i _
     exact (Complex.continuous_ofReal.comp
-      ((continuous_normalizedAbs F T).comp
+      (T.continuous_normalizedAbs.comp
         (Units.continuous_val.comp (continuous_apply i)))).pow _
   have hn (a : A) : (∏ i, (T.normalizedAbs (a i : F.Carrier) : ℂ) ^
       ((i.val + 1) * (n - i.val))) ≠ 0 := by
