@@ -7,9 +7,11 @@ the actual product and constituent proofs.
 `MultiplicityOneConstituentCriterionStatement` as its type. It pairs the
 following two complete cores, importing the published target statement.
 
-The implemented helper constructs the actual product of two smooth
-representations. Open subgroups fixing each coordinate intersect to give an
-open subgroup fixing the pair. Under an additive functor, images of the four
+The reusable `Langlands.Classification.smoothProduct` constructs the actual
+product of two smooth representations.
+`Langlands.Classification.mappedProductSplitting` supplies the split image maps
+used both here and by `PositiveTotalHeadCriterionProof`. Open subgroups fixing
+each coordinate intersect to give an open subgroup fixing the pair. Under an additive functor, images of the four
 actual inclusions and projections retain their identity and zero composites.
 Thus the paired image projections are surjective, and the sum of the two image
 inclusions is injective. These facts retain actual product carriers and do not

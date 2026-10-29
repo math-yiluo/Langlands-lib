@@ -24,7 +24,8 @@ universe uG uH uV uW uT
 variable {G : Type uG} [Group G] [TopologicalSpace G]
   {H : Type uH} [Monoid H]
 
-private def smoothProduct (P Q : SmoothRep.{0, uG, uV} ℂ G) :
+/-- The actual product of two smooth complex representations. -/
+def smoothProduct (P Q : SmoothRep.{0, uG, uV} ℂ G) :
     SmoothRep.{0, uG, uV} ℂ G :=
   SmoothRep.of (P.representation.prod Q.representation) (by
     intro x
@@ -38,7 +39,7 @@ private def smoothProduct (P Q : SmoothRep.{0, uG, uV} ℂ G) :
 
 /-- The images of the actual product inclusions split the pair of image
 projections. Only preservation of zero morphisms is used here. -/
-private theorem mappedProductSplitting
+theorem mappedProductSplitting
     (F : SmoothRep.{0, uG, uV} ℂ G ⥤ Rep.{uW} ℂ H) [F.Additive]
     (P Q : SmoothRep.{0, uG, uV} ℂ G) :
     ∃ (u : (F.obj (smoothProduct P Q)).ρ.IntertwiningMap
