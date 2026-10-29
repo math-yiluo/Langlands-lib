@@ -46,7 +46,9 @@ preservation instances for it. The following are in the namespace
   `Rep.invariantsFunctor k H`. Both preserve limits (the invariants functor is
   a right adjoint), and the forgetful functor reflects limits, so Mathlib's
   `preservesLimits_of_reflects_of_preserves` applies.
-- `quotientInvariantsInclusion k H` is the natural transformation from
+- `quotientInvariantsInclusion k H`, imported from
+  `Langlands.Representation.Induction.QuotientAdjunction` with its original
+  `Langlands.Cohomology` namespace, is the natural transformation from
   `Rep.quotientToInvariantsFunctor k H ⋙ Rep.resFunctor (QuotientGroup.mk' H)`
   (invariants, inflated back to `G` along the quotient map) to the identity
   functor of `Rep k G`. Its component at `A` is the inclusion of the invariant

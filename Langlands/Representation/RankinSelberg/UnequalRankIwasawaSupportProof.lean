@@ -119,7 +119,7 @@ private theorem unequalRankMatrix_last_row {K : Type u} [Field K]
     show ¬n + (j + k + 1) < n + 1 by omega,
     show ¬n + (j + k + 1) < n + 1 + j by omega]
 
-private theorem normalizedAbs_prod {p : ℕ} [Fact p.Prime]
+theorem normalizedAbs_prod {p : ℕ} [Fact p.Prime]
     (F : PadicField.{uF} p) (T : F.TopologicalData) {ι : Type*}
     (s : Finset ι) (f : ι → F.Carrier) :
     T.normalizedAbs (∏ i ∈ s, f i) = ∏ i ∈ s, T.normalizedAbs (f i) := by
@@ -128,7 +128,7 @@ private theorem normalizedAbs_prod {p : ℕ} [Fact p.Prime]
   | empty => simp [T.normalizedAbs_one]
   | @insert a s ha ih => simp [ha, T.normalizedAbs_mul, ih]
 
-private theorem diagonal_abs_last {p : ℕ} [Fact p.Prime]
+theorem diagonal_abs_last {p : ℕ} [Fact p.Prime]
     (F : PadicField.{uF} p) (T : F.TopologicalData) :
     letI := T.valuativeRel
     ∀ (r : ℕ) (M u : Langlands.GeneralLinear (r + 1) F.Carrier)
@@ -185,7 +185,7 @@ private theorem diagonal_abs_last {p : ℕ} [Fact p.Prime]
       _ = _ := mul_one _
   exact le_antisymm ha_le hge
 
-private theorem diagonal_abs_bound {p : ℕ} [Fact p.Prime]
+theorem diagonal_abs_bound {p : ℕ} [Fact p.Prime]
     (F : PadicField.{uF} p) (T : F.TopologicalData) (r : ℕ)
     (a : Fin (r + 1) → F.Carrierˣ) (B : ℝ) (hB : 1 ≤ B)
     (hlast : T.normalizedAbs (a (Fin.last r) : F.Carrier) = 1)

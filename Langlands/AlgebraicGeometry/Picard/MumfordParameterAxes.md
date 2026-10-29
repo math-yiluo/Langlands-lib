@@ -33,3 +33,8 @@ Picard-zero or representability assumption. The proof uses published categorical
 coherence theorems internally. The implemented comparisons follow directly
 from the published constructions; this module introduces no additional claim
 from original literature and supplies no geometric cube theorem.
+
+`Langlands.AbelianScheme.classesPullback_comp` is public for reuse by the
+closed-agreement reduction. It identifies two successive pullbacks of rigidified
+classes with pullback along the composite, using `relativePullbackComp` on a
+representative. Its original statement and proof are unchanged.

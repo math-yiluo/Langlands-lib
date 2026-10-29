@@ -1,3 +1,4 @@
+import Langlands.Representation.Induction.QuotientAdjunction
 import Langlands.Cohomology.DivisibleSystem.Sections
 import Langlands.Representation.Category.Abelian
 import Mathlib.RepresentationTheory.Invariants
@@ -52,17 +53,6 @@ instance quotientToInvariantsFunctor_preservesLimits :
     inferInstanceAs (PreservesLimitsOfSize.{w, w}
       (Rep.resFunctor.{w} H.subtype ⋙ Rep.invariantsFunctor.{w} k H))
   preservesLimits_of_reflects_of_preserves _ (forget₂ (Rep.{w} k (G ⧸ H)) (ModuleCat.{w} k))
-
-/-- The inclusion of the `H`-invariants, as a morphism of representations of `G` after
-inflating the representation of `G ⧸ H` along the quotient map. -/
-@[simps]
-def quotientInvariantsInclusion :
-    Rep.quotientToInvariantsFunctor.{w} k H ⋙ Rep.resFunctor (QuotientGroup.mk' H) ⟶
-      𝟭 (Rep.{w} k G) where
-  app A := Rep.ofHom (A.ρ.quotientToInvariants_lift H)
-  naturality _ _ _ := by
-    ext
-    rfl
 
 end QuotientInvariants
 

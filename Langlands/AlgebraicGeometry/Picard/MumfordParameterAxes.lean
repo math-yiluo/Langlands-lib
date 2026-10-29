@@ -38,7 +38,7 @@ def mumfordParameterSecondAxis : A.X ⟶ A.X ⊗ A.X :=
   change (1 : A.X ⟶ A.X) * 𝟙 A.X = 𝟙 A.X
   exact one_mul _
 
-private lemma classesPullback_comp {T U V : Over S} (h : T ⟶ U) (k : U ⟶ V)
+lemma classesPullback_comp {T U V : Over S} (h : T ⟶ U) (k : U ⟶ V)
     (q : RigidifiedClasses A V) :
     RigidifiedLineBundle.classesPullback A.X.hom (unitSection A) (unitSection_comp A) h
       (RigidifiedLineBundle.classesPullback A.X.hom (unitSection A) (unitSection_comp A) k q) =

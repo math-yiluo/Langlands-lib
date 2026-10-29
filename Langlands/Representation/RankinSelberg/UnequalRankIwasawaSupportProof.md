@@ -14,8 +14,8 @@ The proposition and its source specialization are documented in
 The source there is Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin-Selberg Convolutions* (1983), §2.4(3), Lemma 2.6 and its proof,
 and the unequal-rank application on printed p.393. This module supplies an
-internal derived proof of the published geometric implication. Its private
-algebraic lemmas implement the argument below; they are not new assertions
+internal derived proof of the published geometric implication. Its algebraic
+lemmas implement the argument below; they are not new assertions
 about the source's full gauge lemma. The proof uses a direct factorization
 of suffix minors, rather than proving invariance of a maximum of minors.
 
@@ -116,3 +116,9 @@ trailing identity block still has size one, so the standard final row
 used to normalize `a_r` remains present. These arguments also cover
 `n=j=k=0`. Values `0<R<1` are covered by replacing `R` with `max 1 R`
 in the estimates while retaining the exact proposition's hypotheses.
+
+The helpers `normalizedAbs_prod`, `diagonal_abs_last` and
+`diagonal_abs_bound` are public for reuse by the weighted Whittaker square
+reduction. Their statements and proofs are unchanged: they express finite-product
+multiplicativity, the unit final Iwasawa coordinate, and the bound from adjacent
+ratios, respectively.
