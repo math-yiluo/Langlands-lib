@@ -5,7 +5,8 @@ unreviewed compiled proof prototype `FineOppositeJacquetQuotientDetectionProof`
 in the shared draft of task `ebf9d80c-dcd4-45c5-91f8-428ad29b1363`, revision 2.
 This proposition transcribes that prototype's theorem type. Worker 435 designed
 the change-of-group and flattened Hom transports that the prototype adapts.
-Worker 845 wrote this statement pair.
+Worker 845 wrote this statement pair. Worker 979 later updated this Markdown
+after the second-adjointness proof was published. The Lean file is unchanged.
 
 `Langlands.FineOppositeJacquetQuotientDetectionStatement.{uF,uV,uW,uZ}` is a
 closed proposition definition (`def ... : Prop`). This module states the
@@ -25,11 +26,26 @@ The proposition is an implication. Its first two hypotheses are:
    same kind of family inside a product Levi: `σ` is on the refined subgroup
    with carrier in `uV`, and `π` is on `B.Levi F.Carrier` with carrier in `uW`.
 
-Both clauses are published *statements* in `Parabolic.SecondAdjointnessStatement`.
-They are not proved in the Library, and this proposition does not treat them as
-established. The conclusion below is asserted only under these two premises.
-The naturality parts of the clauses are present in the premises but are not
-needed by the intended proof.
+Both clauses are defined in `Parabolic.SecondAdjointnessStatement`, which this
+statement imports for them. They are proved separately in the Library.
+`Langlands.Parabolic.normalizedSecondAdjointness`, in
+`Parabolic.SecondAdjointnessProof`, proves
+`Parabolic.NormalizedSecondAdjointnessStatement.{uF, uV, uW}` with no hypotheses.
+That proposition is the conjunction of the standard and refined clauses at
+those three universes. Its first projection at `{uF, uV, uZ}` is the first
+premise, and its second projection at `{uF, uV, uW}` is the second premise.
+Since `uW` and `uZ` are independent here, the theorem is used twice with
+different universes:
+`(Parabolic.normalizedSecondAdjointness.{uF, uV, uZ}).1` and
+`(Parabolic.normalizedSecondAdjointness.{uF, uV, uW}).2`.
+
+The proposition itself is still an implication. It does not import
+`Parabolic.SecondAdjointnessProof`, and the conclusion below is asserted only
+under the two premises. A consumer that needs the conclusion without premises
+may import `Parabolic.SecondAdjointnessProof` itself and supply the two
+premises by these two instantiations. The naturality parts of the clauses
+are present in the premises. The published proof of this implication,
+`Langlands.fineOppositeJacquetQuotientDetection`, does not use them.
 
 ## Quantified data and hypotheses
 
@@ -151,7 +167,9 @@ The statement does not supply arbitrary-tempered quotient reflection, occurrence
 continuation, or an equality of positive Hom dimensions. It does not identify
 Jordan–Hölder multiplicities with these Hom spaces. The parent J-specific Hom
 comparison `Langlands.GLRelativeCosocleHomComparisonStatement` is not proved by
-it.
+it. Supplying the two premises with
+`Parabolic.normalizedSecondAdjointness` does not change this. The conclusion
+is still the same pair of equivalences, with none of these further results.
 
 ## Internal provenance
 
@@ -161,11 +179,15 @@ literature. The two-clause shape, the explicit adjointness premises and these
 Hom spaces are formalization choices. They are not attributed to Silberger's
 1978 article or to any other printed theorem. The original-source provenance of
 the two assumed clauses (Casselman 2019, Chapter III) is recorded with
-`Parabolic.SecondAdjointnessStatement`. Citing that provenance does not make
-adjointness established.
+`Parabolic.SecondAdjointnessStatement`. That citation is not a proof. In the
+Library the clauses are proved by the separate theorem
+`Langlands.Parabolic.normalizedSecondAdjointness` described above, which this
+statement does not import.
 
-The rationale is the following route through published results, which a
-separate proof must still assemble. The compiled prototype follows it.
+The rationale is the following route through published results. The
+separately published theorem `Langlands.fineOppositeJacquetQuotientDetection`,
+in `Classification.FineOppositeJacquetQuotientDetectionProof`, implements it
+and keeps the two premises as hypotheses.
 
 * `Langlands.fineTwistIrreducibleAdmissible`, in
   `Classification.FineTwistRegularityProof`, proves that `τ` is irreducible and
@@ -194,4 +216,6 @@ The statement imports only the modules defining its notions:
 `Classification.RelativeRecoveryStatement`, for `fineAmbientInduced` and,
 through its imports, `fineTwist`, `innerInduced` and the two normalized
 opposite Jacquet representations; and `Parabolic.SecondAdjointnessStatement`,
-for the two premises. None of the proof modules above is imported.
+for the two premises. It imports none of the proof modules named in this file,
+including `Parabolic.SecondAdjointnessProof` and
+`Classification.FineOppositeJacquetQuotientDetectionProof`.

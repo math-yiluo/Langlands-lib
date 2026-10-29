@@ -177,3 +177,5 @@ element of each factor. It obtains the chamber bound by summation by parts
 rather than by reversing the vector `s`. No literature result is formalized
 here beyond these elementary steps; the mathematical sources of the two
 propositions are listed in the statement module.
+
+`reverseRefinement`, `reverseRefinement_apply`, and `reverseWeyl` are imported from [RefinementReversal](../Parabolic/RefinementReversal.md), with their original namespace and definitions.

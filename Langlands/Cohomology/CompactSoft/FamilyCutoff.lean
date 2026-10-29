@@ -1,3 +1,4 @@
+import Langlands.Sheaf.Equivariant.FamilySections
 import Langlands.Sheaf.CompactSoft
 import Langlands.Sheaf.Equivariant.SmoothPart
 
@@ -48,10 +49,6 @@ theorem exists_compact_stable_neighbourhood [T2Space X] [LocallyCompactSpace X]
   obtain ⟨i, hi, hyi⟩ := Set.mem_iUnion₂.1 hy
   exact Set.mem_iUnion₂.2 ⟨i, hi,
     hHV i h (OpenSubgroup.iInfOfFinite_le (fun i : s => H i.1) ⟨i, hi⟩ hh) y hyi⟩
-
-/-- The coordinate type for a coinduced sheaf of arbitrary coefficient families. -/
-abbrev FamilySections (A : X → ModuleCat.{u} R) (U : ActionOpens G X) :=
-  ∀ (g : G) (y : {y : X // g • y ∈ U.openSet}), A y.1
 
 section Coordinates
 

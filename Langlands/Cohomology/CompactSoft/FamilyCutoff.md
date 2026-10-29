@@ -86,3 +86,5 @@ formula. Applying it to the smooth Godement construction requires a separate
 comparison with the published Kan-extension coinduction, followed by the
 published Godement comparison. This module makes no claim to provide either
 comparison or the full target theorem.
+
+`FamilySections` is imported from [the shared family-section module](../../Sheaf/Equivariant/FamilySections.md), with its original namespace and definition.

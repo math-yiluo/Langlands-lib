@@ -1,3 +1,5 @@
+import Langlands.Representation.RankinSelberg.RankOneExtensionCellTopology
+import Langlands.Group.GL.OppositeBlockIntersection
 import Langlands.Representation.RankinSelberg.RankOneExtensionCompactSectionStatement
 import Langlands.Representation.RankinSelberg.RankOneExtensionCellAlgebra
 import Langlands.Representation.Induction.CompactLocalSection
@@ -21,52 +23,6 @@ upper cell and its support.
 noncomputable section
 
 open MeasureTheory Topology
-
-namespace Langlands.GeneralLinear.BlockShape
-
-universe u
-
-variable {n : ℕ} (B : BlockShape n) (R : Type u) [CommRing R]
-
-/-- The lower block parabolic meets the upper block radical trivially. -/
-theorem eq_one_of_mem_oppositeParabolic_of_mem_unipotentSubgroup
-    {g : GeneralLinear n R} (hP : g ∈ B.oppositeParabolic R)
-    (hU : g ∈ B.unipotentSubgroup R) : g = 1 := by
-  rw [B.mem_oppositeParabolic_iff] at hP
-  rw [B.mem_unipotentSubgroup_iff, B.mem_parabolic_iff] at hU
-  obtain ⟨hU, hD⟩ := hU
-  apply Units.ext
-  ext r s
-  obtain ⟨⟨i, a⟩, rfl⟩ := B.indexEquiv.surjective r
-  obtain ⟨⟨j, b⟩, rfl⟩ := B.indexEquiv.surjective s
-  change g (B.index i a) (B.index j b) =
-    (1 : Matrix (Fin n) (Fin n) R) (B.index i a) (B.index j b)
-  rcases lt_trichotomy i j with h | rfl | h
-  · rw [hP i j a b h, Matrix.one_apply_ne]
-    intro he
-    exact (ne_of_lt h) (congrArg Sigma.fst
-      (B.indexEquiv.injective (show B.indexEquiv ⟨i, a⟩ = B.indexEquiv ⟨j, b⟩ from he)))
-  · rw [hD i a b]
-    by_cases hab : a = b
-    · subst hab
-      simp
-    · simp [hab, Matrix.one_apply_ne ((B.index i).injective.ne hab)]
-  · rw [hU i j a b h, Matrix.one_apply_ne]
-    intro he
-    exact (ne_of_lt h) (congrArg Sigma.fst
-      (B.indexEquiv.injective (show B.indexEquiv ⟨i, a⟩ = B.indexEquiv ⟨j, b⟩ from he))).symm
-
-theorem oppositeUnipotentSubgroup_le_oppositeParabolic :
-    B.oppositeUnipotentSubgroup R ≤ B.oppositeParabolic R := by
-  rintro _ ⟨h, -, rfl⟩
-  exact h.property
-
-theorem leviSubgroup_le_oppositeParabolic :
-    B.leviSubgroup R ≤ B.oppositeParabolic R := by
-  rintro _ ⟨m, rfl⟩
-  exact (B.oppositeLeviInParabolic R m).property
-
-end Langlands.GeneralLinear.BlockShape
 
 namespace Langlands.RankinSelberg
 
@@ -109,11 +65,6 @@ theorem rankOneExtensionCellCoordinate_upperCell (y : Fin (t + 1) → R) :
     rankOneExtensionCellCoordinate t (rankOneExtensionUpperCell t y) = y := by
   funext i
   exact (rankOneExtensionUpperCell_apply t y (Sum.inl i) (Sum.inr 0)).trans (by simp)
-
-theorem rankOneExtensionUpperCell_inv (y : Fin (t + 1) → R) :
-    (rankOneExtensionUpperCell t y)⁻¹ = rankOneExtensionUpperCell t (-y) := by
-  apply Units.ext
-  rfl
 
 theorem rankOneExtensionUpperCell_index_one_zero (y : Fin (t + 1) → R)
     (a : Fin 1) (b : Fin (t + 1)) :
@@ -194,23 +145,6 @@ omit [IsTopologicalRing R] in
 theorem continuous_rankOneExtensionCellCoordinate :
     Continuous (rankOneExtensionCellCoordinate (R := R) t) :=
   continuous_pi fun _ => (GeneralLinear.entry _ _).continuous
-
-theorem continuous_rankOneExtensionUpperCell :
-    Continuous (rankOneExtensionUpperCell (K := R) t) := by
-  have hval : Continuous fun y : Fin (t + 1) → R =>
-      ((rankOneExtensionUpperCell t y : Langlands.GeneralLinear (1 + (t + 1)) R) :
-        Matrix (Fin (1 + (t + 1))) (Fin (1 + (t + 1))) R) := by
-    apply continuous_pi
-    intro r
-    apply continuous_pi
-    intro s
-    obtain ⟨i, rfl⟩ := (rankOneExtensionCellCoordinates t).surjective r
-    obtain ⟨j, rfl⟩ := (rankOneExtensionCellCoordinates t).surjective s
-    simp only [rankOneExtensionUpperCell_apply]
-    rcases i with a | a <;> rcases j with b | b <;> simp <;> fun_prop
-  refine Units.continuous_iff.mpr ⟨hval, ?_⟩
-  simp only [rankOneExtensionUpperCell_inv]
-  exact hval.comp continuous_neg
 
 end Cell
 

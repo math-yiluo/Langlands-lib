@@ -38,7 +38,7 @@ cell, not only at one point.
   - Reading the coordinates of `u(y)` gives `y`.
   - `u(0) = 1` reuses `rankOneExtensionUpperCell_zero` from
     [RankOneExtensionCellAlgebra](RankOneExtensionCellAlgebra.md);
-    this module proves `u(y)⁻¹ = u(-y)`.
+    the shared cell topology module supplies `u(y)⁻¹ = u(-y)`.
   - `u(y) ∈ N` (`rankOneExtensionUpperCell_mem_unipotentSubgroup`).
   - Every `n ∈ N` equals `u` of its own coordinates
     (`eq_rankOneExtensionUpperCell_of_mem_unipotentSubgroup`).
@@ -139,3 +139,7 @@ specifies.
 
 This proof is an internal derivation from published Library results. Worker 816
 wrote it.
+
+The three general block-subgroup lemmas above are imported from [OppositeBlockIntersection](../../Group/GL/OppositeBlockIntersection.md).
+
+The inverse law and continuity of the upper cell are imported from [RankOneExtensionCellTopology](RankOneExtensionCellTopology.md).

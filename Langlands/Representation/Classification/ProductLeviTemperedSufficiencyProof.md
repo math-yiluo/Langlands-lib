@@ -92,3 +92,5 @@ have finite sum over `FundIndex C → ℕ`. The published `countableCellLpUpper`
 then gives `MemLp`, where almost-everywhere strong measurability comes from
 `UnitaryCentralCharacter.aestronglyMeasurable_coefficientNorm`. Admissibility
 is a hypothesis of the statement.
+
+The unchanged `discreteValuation_integer` and `maximalCompact_eq` are imported from [CartanIntegralSubgroup](../../Group/GL/CartanIntegralSubgroup.md).

@@ -78,3 +78,5 @@ Project imports are the unchanged `Jacquet.ExactStatement`,
 finite mean lemmas), and `Smooth.Transfer.SubquotientProof`. Published results
 are reused by their Lean names. The original statement pair and its full import
 closure are unchanged. This new pair is authored by Worker 200.
+
+`Compact.orbitMean_apply` is imported from [OrbitMeanTranslation](../Compact/OrbitMeanTranslation.md), with its original type and proof.

@@ -1,3 +1,4 @@
+import Langlands.Representation.Compact.OrbitMeanTranslation
 import Langlands.Representation.Jacquet.ExactStatement
 import Langlands.Representation.Compact.ProjectionProof
 import Langlands.Representation.Smooth.Transfer.SubquotientProof
@@ -22,18 +23,6 @@ theorem coinvariants_ker_comp_subgroup_le (ρ : Representation ℂ G V) (K : Sub
   apply Submodule.span_le.mpr
   rintro _ ⟨⟨g, v⟩, rfl⟩
   exact Coinvariants.sub_mem_ker (ρ := ρ) g.val v
-
-/-- Translating the initial vector does not change its orbit mean. -/
-theorem Compact.orbitMean_apply (ρ : Representation ℂ G V) (g : G) (v : V) :
-    Compact.orbitMean ρ (ρ g v) = Compact.orbitMean ρ v := by
-  have horbit : Compact.orbit ρ (ρ g v) = Compact.orbit ρ v := by
-    ext x
-    constructor
-    · rintro ⟨h, rfl⟩
-      exact ⟨h * g, by simp⟩
-    · rintro ⟨h, rfl⟩
-      exact ⟨h * g⁻¹, by simp⟩
-  exact congrArg (fun S : Set V => (Nat.card S : ℂ)⁻¹ • ∑ᶠ x : S, x.val) horbit
 
 /-- Finite averaging preserves the class of a vector in the coinvariants. -/
 theorem Compact.mk_orbitMean (ρ : Representation ℂ G V) (v : V)

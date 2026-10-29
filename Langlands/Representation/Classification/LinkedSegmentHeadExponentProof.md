@@ -30,7 +30,8 @@ The imported theorem `Langlands.unitaryExponentScalarNorm` proves the published
 proposition `Langlands.UnitaryExponentScalarNorm`. Its proof is in
 [UnitaryExponentScalarNormProof](UnitaryExponentScalarNormProof.md).
 The argument works for any group and any nontrivial complex vector space,
-without topology, dimension or a norm on that space.
+without topology, dimension or a norm on that space. That imported proof runs
+as follows.
 
 Given scalar action `ρ g w = c • w` and an arbitrary exponent witness `u`,
 choose a nonzero vector `w`. Put `x = ν(g) > 0` and
@@ -59,8 +60,8 @@ character. The published theorem
 `Langlands.Classification.segmentConstituentCentralCharacter` computes the
 scalar action on its increasing normalized induction and transfers it to the
 quotient supplied by the strong-head hypothesis. Irreducibility of that head
-supplies a nontrivial carrier. Apply the proved scalar cancellation to its
-arbitrary witness `u`.
+supplies a nontrivial carrier. Apply `Langlands.unitaryExponentScalarNorm`
+to its arbitrary witness `u`.
 
 The private determinant-power norm calculation retains the rank and yields,
 for every field unit `z`, with `t = |z|`,
@@ -102,13 +103,20 @@ the strict result in reverse order implies the required weak inequality.
 
 ## Reused results, provenance and independence
 
-The proof imports the exact linked-head statement, the scalar-norm statement,
-`SegmentConstituentCentralCharacterProof`, `SegmentLinkageOrientationProof`,
-`SegmentSupportContainment`, `Smooth.Schur.Proof`, and `LocalField.Uniformizer`. Worker 264 authored the
-published segment scalar-action proof. Workers 346 and 328 authored and
-prepared the published linkage orientation proof. The scalar-norm calculation
-used here is included as a private proof, so no pending generic scalar-norm
-proof is an input.
+The proof imports the exact linked-head statement,
+`UnitaryExponentScalarNormProof`, `SegmentConstituentCentralCharacterProof`,
+`SegmentLinkageOrientationProof`, `SegmentSupportContainment`,
+`Smooth.Schur.Proof`, and `LocalField.Uniformizer`. The scalar-norm
+statement `Langlands.UnitaryExponentScalarNorm` enters only through the import
+of its proof module. Worker 264 authored the published segment scalar-action
+proof. Workers 346 and 328 authored and prepared the published linkage
+orientation proof.
+
+This module contains no private scalar-norm proof. It calls the accepted
+public theorem `Langlands.unitaryExponentScalarNorm` from
+`UnitaryExponentScalarNormProof`. Worker 438 implemented that theorem from the
+derivation by Worker 252 described above, and it is published in the Library.
+No pending scalar-norm proof is an input.
 
 This is an internal derivation from the existing segment relations, actual
 representations and invariant positive forms. Convention passages read are
@@ -120,9 +128,10 @@ not used. The published source-boundary note was consulted. The disputed
 contragredient formula and the Jacquet exhaustion citation do not enter the
 argument.
 
-The complete project import closure was checked against the task's excluded
-ordered conversion, square-integrable and regular exhaustion, classification,
-tempered-block uniqueness, multisegment exhaustion, ordered-head existence and
-quotient-coverage consumers. None occurs. The proof adds no analytic
+The complete project import closure of this module, 76 project modules counting
+the module itself and including the scalar-norm proof and statement modules,
+was checked against the task's excluded ordered conversion, square-integrable
+and regular exhaustion, classification, tempered-block uniqueness, multisegment
+exhaustion, ordered-head existence and quotient-coverage consumers. None occurs. The proof adds no analytic
 square-integrability, admissibility, common-base, equal-rank, selected character
 or classification premise. It proves no existence of exponent witnesses.

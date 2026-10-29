@@ -1,3 +1,4 @@
+import Langlands.Representation.Parabolic.RefinementReversal
 import Langlands.Representation.Classification.MaximalConeAssembly
 import Langlands.Representation.Exponents.DualEigenfunctionalExistence
 import Langlands.Representation.Induction.OppositeProductReversalProof
@@ -198,12 +199,6 @@ section Reversal
 
 variable {n : ℕ} (C : BlockShape n) (D : BlockRefinement C)
 
-/-- Reverse the order of the inner blocks in every outer block. -/
-def reverseRefinement : BlockRefinement C := fun j => (D j).reverse
-
-@[simp] theorem reverseRefinement_apply (j : Fin C.length) :
-    reverseRefinement C D j = (D j).reverse := rfl
-
 /-- The flattened labels of the reversed refinement, sent to the flattened
 labels of `D` with reversed inner position. -/
 def reverseLabel :
@@ -228,9 +223,6 @@ theorem reverseLabel_symm_apply (j : Fin C.length) (i : Fin (D j).length) :
   exact congrArg (fun x => C.flattenBlockEquiv D ⟨j, x⟩) (Fin.rev_rev i).symm
 
 variable (R : Type u) [CommRing R]
-
-/-- The blockwise reversal matrices in the outer product Levi. -/
-def reverseWeyl : C.Levi R := fun j => (D j).reverseMatrix R
 
 /-- Conjugation by the blockwise reversal carries the opposite radical of the
 reversed refinement onto the upper radical of `D`. -/
