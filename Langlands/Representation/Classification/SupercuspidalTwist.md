@@ -13,6 +13,9 @@ p-adic field.
 
 - `Jacquet.twist_comp_subtype`: if `N ≤ χ.ker`, the restriction of
   `twist χ ρ` to `N` equals the restriction of `ρ`, as actual representations.
+  Its unchanged declaration now lives in the imported
+  `Jacquet/CharacterTwistEquiv` module for reuse by the general quotient
+  equivalences.
 - `Jacquet.subsingleton_coinvariants_twist_iff`: hence the published
   coinvariant quotient `Jacquet.Coinvariants (twist χ ρ) N` is literally the
   quotient `Jacquet.Coinvariants ρ N`, so one vanishes iff the other does.

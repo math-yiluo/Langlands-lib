@@ -109,7 +109,7 @@ private theorem entryIdeal_lower_inv_conj {k : Type*} [Field k] {n : ℕ}
     simpa only [Matrix.one_apply, ite_eq_right hne, sub_zero] using
       congrArg (fun z : k => ((((a i)⁻¹ * a j : kˣ) : k) * z)) he
 
-private theorem principal_upper_conj
+theorem principal_upper_conj
     {k : Type u} [Field k] {n : ℕ} (B : GeneralLinear.BlockShape (n + 1))
     (O : Subring k) (I : Ideal O) (a : Fin B.length → kˣ)
     (ha : ∀ i j : Fin B.length, i < j → ((a i * (a j)⁻¹ : kˣ) : k) ∈ O)
@@ -126,7 +126,7 @@ private theorem principal_upper_conj
       entryIdeal_upper_conj B O I a ha
         ((B.unipotentSubgroup k).inv_mem hg) hinverse
 
-private theorem principal_lower_inv_conj
+theorem principal_lower_inv_conj
     {k : Type u} [Field k] {n : ℕ} (B : GeneralLinear.BlockShape (n + 1))
     (O : Subring k) (I : Ideal O) (a : Fin B.length → kˣ)
     (ha : ∀ i j : Fin B.length, i < j → ((a i * (a j)⁻¹ : kˣ) : k) ∈ O)

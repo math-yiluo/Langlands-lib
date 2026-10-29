@@ -1,3 +1,4 @@
+import Langlands.Representation.Jacquet.CharacterTwistEquiv
 import Langlands.Group.GL.NormalizedCharacter
 import Langlands.Representation.Category.Twist
 import Langlands.Representation.Classification.Supercuspidal
@@ -24,14 +25,6 @@ namespace Jacquet
 
 variable {R : Type uR} [CommRing R] {G : Type uG} [Group G]
   {V : Type uV} [AddCommGroup V] [Module R V]
-
-/-- A character trivial on `N` does not change the restricted action of `N`. -/
-theorem twist_comp_subtype (χ : G →* Rˣ) (ρ : Representation R G V) {N : Subgroup G}
-    (hN : N ≤ χ.ker) : (twist χ ρ).comp N.subtype = ρ.comp N.subtype := by
-  ext x v
-  have hx : χ x = 1 := hN x.property
-  change ((χ x : R) • ρ x) v = ρ x v
-  rw [hx, Units.val_one, one_smul]
 
 /-- Twisting by a character trivial on `N` leaves the coinvariant quotient unchanged. -/
 theorem subsingleton_coinvariants_twist_iff (χ : G →* Rˣ) (ρ : Representation R G V)

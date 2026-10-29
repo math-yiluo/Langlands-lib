@@ -9,13 +9,14 @@ a valuative relation, `O` is its valuation ring
 `(ValuativeRel.valuation k).integer`, and `Iwasawa.torus ϖ lam` is the diagonal
 matrix with entries `ϖ ^ lam i`.
 
-## Conjugation lemmas (copied)
+## Conjugation lemmas
 
-The private declarations `EntryIdeal`, `entryIdeal_upper_conj`,
-`entryIdeal_lower_inv_conj`, `principal_upper_conj` and
-`principal_lower_inv_conj` are copied verbatim from the private section of the
-published module `Langlands.Group.GL.BlockIwahoriBasis`. They are private
-there and cannot be imported. They state the following. Let `a` be block
+The proofs originate in the private section of
+`Langlands.Group.GL.BlockIwahoriBasis`. The declarations `EntryIdeal`,
+`entryIdeal_upper_conj` and `entryIdeal_lower_inv_conj` remain private here.
+The unchanged theorems `principal_upper_conj` and `principal_lower_inv_conj`
+are public in `Langlands.GeneralLinear`, so the unipotent sandwich proof can
+reuse them without a second copy of this section. They state the following. Let `a` be block
 scalars with `a i / a j ∈ O` for `i < j`. Conjugating a block-upper unipotent
 element of a principal congruence subgroup by `diag(a)` stays in that
 subgroup, and so does conjugating a block-lower unipotent element by
