@@ -23,8 +23,9 @@ each induced-filtration grade.
 For each original index,
 `Parabolic.normalizedInductionFiltrationGradedEquiv` identifies that
 actual induced grade with the outer normalized induction of the
-original coarse-Levi grade. A private helper descends this equivalence
-through the normalized composed opposite Jacquet construction. It
+original coarse-Levi grade. The reusable helper
+`Langlands.RelativeJacquetFiltrationMultiplicityProof.composedOppositeJacquetCongr`
+descends this equivalence through the normalized composed opposite Jacquet construction. It
 uses the existing descended maps of the equivalence and its inverse;
 their compositions are the identity on quotient classes, hence on the
 whole quotients because each quotient map is surjective. The

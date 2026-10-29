@@ -15,7 +15,7 @@ universe uF uV uX
 
 /-- Descend an actual ambient equivalence and its inverse to the normalized
 composed opposite quotients. -/
-private def composedOppositeJacquetCongr
+def composedOppositeJacquetCongr
     {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
     (T : F.TopologicalData) {n : ℕ} (B : BlockShape n) (S : BlockRefinement B)
     {V : Type uV} [AddCommGroup V] [Module ℂ V]
