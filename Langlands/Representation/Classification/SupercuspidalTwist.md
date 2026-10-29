@@ -77,6 +77,12 @@ For `F : PadicField p` with a supplied realization `T`:
   `realPowerCharacter (T.determinantNorm n) s`, that is `g ↦ |det g|^s` in
   `ℂˣ`. Here `T.determinantNorm n` is the published residue-normalized
   absolute value of the determinant, with `|ϖ| = q^(-1)`.
+- `T.norm_determinantPowerCharacter_scalar n s z` gives the scalar-matrix
+  norm `|z|^(n * s)`. This is Worker 167's existing proof, moved here from
+  the linked-head exponent module for reuse by the linked-head,
+  square-integrable nonlinkage and descending-interval proofs. It expands
+  the real-power character and uses `determinantNorm_scalar` and the
+  nonnegativity of the normalized absolute value.
 - `isOpen_ker_determinantPowerCharacter` (for the topology of `T`) follows
   from the published openness of the kernel of `T.determinantNorm n`, and
   `ker_determinant_le_ker_determinantPowerCharacter` from its factorization

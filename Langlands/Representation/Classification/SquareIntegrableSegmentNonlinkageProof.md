@@ -43,8 +43,9 @@ Irreducibility supplies a nonzero vector. Equality of the prescribed scalar
 action and the unitary central action on this vector shows that the prescribed
 scalar character has norm one on every scalar matrix. This step uses only the
 unitary-central-character part of the analytic predicate; it does not assert
-existence of an invariant positive Hermitian form. The private lemma
-`norm_determinantPowerCharacter_scalar` computes the norm of the actual real
+existence of an invariant positive Hermitian form. The shared lemma
+`T.norm_determinantPowerCharacter_scalar` from
+[SupercuspidalTwist](SupercuspidalTwist.md) computes the norm of the actual real
 determinant-power character at `z I_r` as `|z|^(r s)`, retaining the rank factor.
 
 For a head whose base is the `a`th twist of a common cuspidal datum of rank `r`,

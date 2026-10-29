@@ -56,17 +56,6 @@ private theorem exponent_difference_of_norm_identities
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} (T : F.TopologicalData)
 
-/-- Worker 167's determinant-power norm calculation, with the rank retained. -/
-private theorem norm_determinantPowerCharacter_scalar (n : ℕ) (s : ℝ)
-    (z : F.Carrierˣ) :
-    ‖(T.determinantPowerCharacter n s (scalar z) : ℂ)‖ =
-      T.normalizedAbs z ^ ((n : ℝ) * s) := by
-  rw [coe_realPowerCharacter, T.determinantNorm_scalar]
-  change ‖(((T.normalizedAbs z ^ n) ^ s : ℝ) : ℂ)‖ = _
-  rw [Complex.norm_real, Real.norm_eq_abs,
-    abs_of_nonneg (Real.rpow_nonneg (pow_nonneg (T.normalizedAbs_nonneg _) _) _),
-    ← Real.rpow_natCast_mul (T.normalizedAbs_nonneg _)]
-
 /-- Adaptation of Worker 167's twisted representative and scalar calculation.
 Here the arbitrary supplied positive form replaces analytic square-integrability. -/
 private theorem segmentHead_norm_identity :
@@ -117,7 +106,7 @@ private theorem segmentHead_norm_identity :
   change ‖((ωa z : ℂ) ^ m *
     (T.determinantPowerCharacter (m * ρ.rank) (((m : ℝ) - 1) / 2)
       (scalar z) : ℂ))‖ = _ at hnorm'
-  rw [norm_mul, norm_pow, norm_determinantPowerCharacter_scalar,
+  rw [norm_mul, norm_pow, T.norm_determinantPowerCharacter_scalar,
     T.determinantNorm_scalar] at hnorm'
   change ‖(ωa z : ℂ)‖ ^ m *
       T.normalizedAbs z ^ ((m * ρ.rank : ℕ) * (((m : ℝ) - 1) / 2)) =
@@ -127,7 +116,7 @@ private theorem segmentHead_norm_identity :
       ‖(ω z : ℂ)‖ * T.normalizedAbs z ^ ((ρ.rank : ℝ) * a) := by
     change ‖((ω z : ℂ) *
       (T.determinantPowerCharacter ρ.rank a (scalar z) : ℂ))‖ = _
-    rw [norm_mul, norm_determinantPowerCharacter_scalar]
+    rw [norm_mul, T.norm_determinantPowerCharacter_scalar]
   rw [hωnorm, mul_pow, mul_assoc,
     ← Real.rpow_mul_natCast (T.normalizedAbs_nonneg _),
     ← Real.rpow_add (T.normalizedAbs_pos (Units.ne_zero z))] at hnorm'

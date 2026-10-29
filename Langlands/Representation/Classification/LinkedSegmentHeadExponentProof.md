@@ -63,7 +63,8 @@ quotient supplied by the strong-head hypothesis. Irreducibility of that head
 supplies a nontrivial carrier. Apply `Langlands.unitaryExponentScalarNorm`
 to its arbitrary witness `u`.
 
-The private determinant-power norm calculation retains the rank and yields,
+The shared `T.norm_determinantPowerCharacter_scalar` calculation in
+[SupercuspidalTwist](SupercuspidalTwist.md) retains the rank and yields,
 for every field unit `z`, with `t = |z|`,
 
     norm(ω(z))^m t^(r m (a + (m-1)/2)) = t^(r m u.exponent).

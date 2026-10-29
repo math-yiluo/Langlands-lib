@@ -117,18 +117,6 @@ private theorem scalarCharacter_norm_eq_one {n : ℕ} {V : Type uV}
     exact (hω z v).symm.trans (c.acts (scalarToCenter z) v)
   rw [heq, c.norm_eq_one]
 
-/-- The norm of a real determinant power on a scalar matrix retains the rank
-factor in its exponent. -/
-private theorem norm_determinantPowerCharacter_scalar (n : ℕ) (s : ℝ)
-    (z : F.Carrierˣ) :
-    ‖(T.determinantPowerCharacter n s (scalar z) : ℂ)‖ =
-      T.normalizedAbs z ^ ((n : ℝ) * s) := by
-  rw [coe_realPowerCharacter, T.determinantNorm_scalar]
-  change ‖(((T.normalizedAbs z ^ n) ^ s : ℝ) : ℂ)‖ = _
-  rw [Complex.norm_real, Real.norm_eq_abs,
-    abs_of_nonneg (Real.rpow_nonneg (pow_nonneg (T.normalizedAbs_nonneg _) _) _),
-    ← Real.rpow_natCast_mul (T.normalizedAbs_nonneg _)]
-
 /-- The segment scalar formula, if supplied, gives the exact norm identity for
 any head whose base lies at a specified position in a common twist string. -/
 private theorem segmentHead_norm_identity
@@ -174,12 +162,12 @@ private theorem segmentHead_norm_identity
   change ‖((ωa z : ℂ) ^ m *
     (T.determinantPowerCharacter (m * ρ.rank) (((m : ℝ) - 1) / 2)
       (scalar z) : ℂ))‖ = 1 at hnorm
-  rw [norm_mul, norm_pow, norm_determinantPowerCharacter_scalar] at hnorm
+  rw [norm_mul, norm_pow, T.norm_determinantPowerCharacter_scalar] at hnorm
   have hωnorm : ‖(ωa z : ℂ)‖ =
       ‖(ω z : ℂ)‖ * T.normalizedAbs z ^ ((ρ.rank : ℝ) * a) := by
     change ‖((ω z : ℂ) *
       (T.determinantPowerCharacter ρ.rank a (scalar z) : ℂ))‖ = _
-    rw [norm_mul, norm_determinantPowerCharacter_scalar]
+    rw [norm_mul, T.norm_determinantPowerCharacter_scalar]
   rw [hωnorm, mul_pow, mul_assoc,
     ← Real.rpow_mul_natCast (T.normalizedAbs_nonneg _),
     ← Real.rpow_add (T.normalizedAbs_pos (Units.ne_zero z))] at hnorm

@@ -232,6 +232,17 @@ variable {F : PadicField.{uF} p} (T : F.TopologicalData)
 abbrev determinantPowerCharacter (n : ℕ) (s : ℝ) : GeneralLinear n F.Carrier →* ℂˣ :=
   realPowerCharacter (T.determinantNorm n) s
 
+/-- Worker 167's determinant-power norm calculation, with the rank retained. -/
+theorem norm_determinantPowerCharacter_scalar (n : ℕ) (s : ℝ)
+    (z : F.Carrierˣ) :
+    ‖(T.determinantPowerCharacter n s (GeneralLinear.scalar z) : ℂ)‖ =
+      T.normalizedAbs z ^ ((n : ℝ) * s) := by
+  rw [coe_realPowerCharacter, T.determinantNorm_scalar]
+  change ‖(((T.normalizedAbs z ^ n) ^ s : ℝ) : ℂ)‖ = _
+  rw [Complex.norm_real, Real.norm_eq_abs,
+    abs_of_nonneg (Real.rpow_nonneg (pow_nonneg (T.normalizedAbs_nonneg _) _) _),
+    ← Real.rpow_natCast_mul (T.normalizedAbs_nonneg _)]
+
 theorem isOpen_ker_determinantPowerCharacter (n : ℕ) (s : ℝ) :
     letI := T.topology
     IsOpen ((T.determinantPowerCharacter n s).ker : Set (GeneralLinear n F.Carrier)) := by
