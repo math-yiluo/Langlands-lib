@@ -18,7 +18,7 @@ The registered original is `jpss-1983-rankin-selberg`, retained at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Printed pages 406–407 are zero-based PDF pages 41–42 in this retained scan;
+Printed pages 406–407 are zero-based PDF pages 40–41 in this retained scan;
 both pages were read visually. No source-specific registered errata note
 was found in the project or current Library `notes/errata` locations.
 
