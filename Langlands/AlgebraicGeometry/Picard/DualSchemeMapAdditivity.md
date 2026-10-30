@@ -12,11 +12,23 @@ two explicit hypotheses: `classification`, a proof of
 `PicardZeroLineBundleClassificationStatement`, and `globalFunctions`, a proof
 of `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions`. The
 target statement itself quantifies over
-`preservation : pullbackTensorComparisonIsIsoStatement` and
-`stability : PicardZeroPullbackStatement`. The module proves no instance of
-these four propositions. A separate proof module is intended to supply the
-two hypotheses from their proofs once those are published. The
-homomorphism-pullback input is the published `homPicardZeroPullback`.
+`preservation : pullbackTensorComparisonIsIsoStatement`,
+`stability : PicardZeroPullbackStatement` and the chosen duals
+`hA hB : HasDualScheme _`. This module proves none of the four propositions
+`PicardZeroLineBundleClassificationStatement`,
+`SmoothProperConnectedGlobalFunctions`, `pullbackTensorComparisonIsIsoStatement`
+and `PicardZeroPullbackStatement`.
+
+The two hypotheses are proved elsewhere in the Library, as
+`Langlands.AbelianScheme.picardZeroLineBundleClassification` and
+`Langlands.AlgebraicGeometry.smoothProperConnectedGlobalFunctions`. The
+separate module `Langlands.AlgebraicGeometry.Picard.FieldDualSchemeMapAdditivityProof`
+passes them to `fieldDualSchemeMapAdditivity_of_classification` and so proves
+the target as `Langlands.AbelianScheme.fieldDualSchemeMapAdditivity`. Like the
+target, that theorem keeps `preservation`, `stability`, `hA` and `hB` as
+arguments. Similarly, `Langlands.AbelianScheme.relativeDualSchemeMapAdditivity`
+passes the two proofs to `dualSchemeMap_add`. The homomorphism-pullback input
+is the published `homPicardZeroPullback`.
 
 ## Tensor compatibility of pullback (`Langlands.AlgebraicGeometry.Picard.RigidifiedLineBundle`)
 

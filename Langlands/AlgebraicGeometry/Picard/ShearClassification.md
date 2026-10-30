@@ -10,8 +10,7 @@ the underlying bundle of `L` back along the shear map
 map `φ : T ×_S B ⟶ B^∨`. It then shows that `φ` factors through the projection
 to `T`. Everything is in the namespace `Langlands.AbelianScheme`.
 
-Several results take explicit proofs of unproved Library propositions as
-arguments:
+Several results take explicit proofs of Library propositions as arguments:
 
 * `preservation : pullbackTensorComparisonIsIsoStatement`, which makes
   `LineBundle.tensor` available;
@@ -19,7 +18,13 @@ arguments:
 * `stability : PicardZeroPullbackStatement`;
 * `globalFunctions : Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions`.
 
-The module proves no instance of these propositions.
+The module proves no instance of these propositions and keeps them as explicit
+arguments. Each is proved elsewhere in the Library:
+`Langlands.Scheme.Modules.pullbackTensorComparisonIsIso`,
+`Langlands.AbelianScheme.picardZeroLineBundleClassification`,
+`Langlands.AbelianScheme.picardZeroPullback` and
+`Langlands.AlgebraicGeometry.smoothProperConnectedGlobalFunctions`, so a caller
+can supply them.
 
 ## Definitions and small lemmas
 

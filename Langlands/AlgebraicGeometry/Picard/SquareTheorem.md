@@ -6,11 +6,15 @@ It proves the Picard-zero form of the theorem of the square for a rigidified fam
 `T ×_S B`, where `B/S` is an abelian scheme with `HasDualScheme B` and
 `T : Over S` is arbitrary. The result is an isomorphism of underlying line
 bundles, and it is conditional. Both theorems take explicit proofs of four
-unproved Library propositions as arguments: `pullbackTensorComparisonIsIsoStatement`
+Library propositions as arguments: `pullbackTensorComparisonIsIsoStatement`
 (`preservation`), `PicardZeroLineBundleClassificationStatement`
 (`classification`), `PicardZeroPullbackStatement` (`stability`) and
 `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions`
-(`globalFunctions`). Everything is in the namespace `Langlands.AbelianScheme`.
+(`globalFunctions`). This module proves none of them. Each is proved elsewhere
+in the Library, as `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso`,
+`picardZeroLineBundleClassification`, `picardZeroPullback` and
+`Langlands.AlgebraicGeometry.smoothProperConnectedGlobalFunctions`, so a caller
+can supply them. Everything is in the namespace `Langlands.AbelianScheme`.
 
 ## Statements
 

@@ -1,13 +1,16 @@
 # Discrete-series support and summands of tempered representations
 
-Author: Worker 19.
+Author: Worker 19. Worker 1058 updated the proof status for the 2026-10-29
+documentation audit; the Lean file is unchanged.
 
 This pair states discrete-series support and the equivalence between opposite
 Jacquet occurrence and actual direct summands in both normalized inductions.
 Its induction objects come from the published
 `Langlands.Representation.Induction.OppositeParabolic` and
 `Langlands.Representation.Induction.Parabolic` constructions. All declarations
-are proposition definitions; no representation-theoretic implication is proved.
+are proposition definitions; this pair proves no representation-theoretic
+implication. Separate published proof modules prove both components; see
+[Proof status and boundaries](#proof-status-and-boundaries).
 
 ## Statements and scope
 
@@ -101,7 +104,9 @@ character are tempered coefficients. Applying it to each coefficient on the
 actual product Levi and then the Cartan lattice-sum argument gives the
 analytic tempered predicate, without a tensor decomposition. This source step
 was checked visually on pp.188–189 and is now documented in the separately
-published `DiscreteSeriesJacquetStatement.md`; its Lean proof is still open.
+published `DiscreteSeriesJacquetStatement.md`. The published theorem
+`Langlands.glLeviDiscreteSeriesTempered` proves its Lean statement
+`GLLeviDiscreteSeriesTemperedStatement`.
 
 The analytic inputs are J.-L. Waldspurger, *La formule de Plancherel pour les
 groupes p-adiques, d’après Harish-Chandra* (2003), registered as
@@ -142,10 +147,28 @@ support assertion; the fixed-parabolic summand assertion uses its specified
 standard block shape and the actual opposite. No irreducibility of general
 tempered induction is asserted.
 
-## Remaining boundaries
+## Proof status and boundaries
+
+Both components are proved, each exactly and with no further hypotheses:
+
+- `Langlands.glTemperedDiscreteSeriesSupport`, in
+  `Langlands.Representation.Classification.TemperedSupportProof`, proves
+  `GLTemperedDiscreteSeriesSupportStatement.{uF, uV}`;
+- `Langlands.glTemperedDiscreteSeriesSummand`, in
+  `Langlands.Representation.Classification.TemperedDiscreteSeriesSummandProof`,
+  proves `GLTemperedDiscreteSeriesSummandStatement.{uF, uV, uW}`.
+
+The conjunction `GLTemperedDiscreteSeriesPrerequisitesStatement.{uF, uV, uW}`
+follows by pairing these two theorems. The Library has no separately named
+theorem for it.
 
 The more precise weakly critical-pair/exponent refinement in Corollary 4.5.11
-is not encoded in this existence clause. Criticality and the refinement remain
-separate source-to-declaration obligations. This pair does not assert uniqueness of discrete-series support or prove any
-representation-theoretic implication. The regular Langlands quotient theorem
-is a separate statement family in `RegularLanglandsStatement`.
+is not encoded in this existence clause. It is stated separately as the
+conjunction `GLWeaklyCriticalTemperedRefinementStatement` in
+`Langlands.Representation.Exponents.WeakCriticalStatement`. Two of its three
+components are proved, by `glWeaklyMinimalStandardPairExistence` and
+`glWeaklyCriticalDiscreteSeriesSupport`. Its pair-minimality component
+`GLWeaklyCriticalPairMinimalityStatement` has no proof in the Library, so
+the refinement as a whole is unproved. This pair does not assert uniqueness
+of discrete-series support. The regular Langlands quotient theorem is a
+separate statement family in `RegularLanglandsStatement`.

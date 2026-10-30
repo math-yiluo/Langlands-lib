@@ -4,7 +4,8 @@ This pair states two prerequisites for the discrete-series support and summand
 results used in the tempered part of the Langlands quotient argument.
 `Langlands.GLDiscreteSeriesJacquetPrerequisitesStatement` is their conjunction.
 All three declarations are proposition definitions; this file proves none of the
-representation-theoretic implications.
+representation-theoretic implications. Separate published proof modules prove
+both components; see [Proof status and boundaries](#proof-status-and-boundaries).
 
 ## Exact statements and actual objects
 
@@ -161,14 +162,38 @@ these locally compact second-countable quotients differ by a positive finite
 scalar, which does not change membership in any of the finite `L^r` spaces
 used here. This justifies the stated quantification over every such measure.
 
-## Remaining boundaries
+## Proof status and boundaries
 
-The analytic bridge, square-integrable-to-tempered implication, and Jacquet
-quotient criterion still require Lean proofs. Theorem 4.5.18(3), involving
-both normalized induced representations and their direct summands, and
-Corollary 4.5.11, giving discrete-series support, are stated separately in
-[TemperedSupportStatement](TemperedSupportStatement.md), with proofs still
-open. In particular this pair does not claim the whole of Theorem
-4.5.18, induction irreducibility, support uniqueness, or Langlands quotient
-classification. Corollary 4.5.11's weakly critical-exponent refinement remains
-open as well.
+Both components are proved, each exactly and with no further hypotheses:
+
+- `Langlands.glLeviDiscreteSeriesTempered`, in
+  `Langlands.Representation.Classification.LeviDiscreteSeriesTemperedProof`,
+  proves `GLLeviDiscreteSeriesTemperedStatement.{uF, uW}`;
+- `Langlands.glTemperedDiscreteSeriesJacquetQuotient`, in
+  `Langlands.Representation.Classification.TemperedDiscreteSeriesJacquetQuotientProof`,
+  proves `GLTemperedDiscreteSeriesJacquetQuotientStatement.{uF, uV, uW}`.
+
+The conjunction `GLDiscreteSeriesJacquetPrerequisitesStatement.{uF, uV, uW}`
+follows by pairing these two theorems. The Library has no separately named
+theorem for it. The source-convention derivations above are provenance for
+the statements; the documentation of each proof module describes the route
+that the Lean proof takes.
+
+Theorem 4.5.18(3), involving both normalized induced representations and
+their direct summands, and Corollary 4.5.11, giving discrete-series support,
+are stated separately in [TemperedSupportStatement](TemperedSupportStatement.md).
+Both are proved: `Langlands.glTemperedDiscreteSeriesSummand` proves the
+summand statement, and `Langlands.glTemperedDiscreteSeriesSupport` proves
+the support existence statement. Corollary 4.5.11's weakly critical-exponent
+refinement is the separate conjunction
+`GLWeaklyCriticalTemperedRefinementStatement` in
+`Langlands.Representation.Exponents.WeakCriticalStatement`. Two of its three
+components are proved, by `glWeaklyMinimalStandardPairExistence` and
+`glWeaklyCriticalDiscreteSeriesSupport`. Its pair-minimality component
+`GLWeaklyCriticalPairMinimalityStatement` has no proof in the Library, so
+the refinement as a whole is unproved. This pair does not claim the whole of
+Theorem 4.5.18, induction irreducibility, support uniqueness, or Langlands
+quotient classification.
+
+Worker 1058 updated the proof status in this file for the 2026-10-29
+documentation audit; the Lean file is unchanged.

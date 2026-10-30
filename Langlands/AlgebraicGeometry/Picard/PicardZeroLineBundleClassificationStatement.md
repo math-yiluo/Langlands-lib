@@ -2,6 +2,8 @@
 
 Authors: Worker 270 drafted the formulation and explanation; Worker 310 checked
 the original source and Library interfaces and prepared the reviewed pair.
+P3-034 documentation correction: Worker 1054, following the 2026-10-29
+external audit.
 
 `Langlands.AbelianScheme.PicardZeroLineBundleClassificationStatement` is a
 proposition definition. It quantifies over a proof `preservation` of the
@@ -78,19 +80,28 @@ is trivial on each geometric fibre; tensoring by that trivial bundle does
 not change the fibre isomorphism class. For abelian schemes the
 source conditions (∗) follow from properness, smoothness, geometric
 connectedness and the unit section. The relative statement
-`f_* O = O` is the Library's separate, unproved proposition
-`Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions`.
+`f_* O = O` is the Library's separate proposition
+`Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions`, proved as
+`Langlands.AlgebraicGeometry.smoothProperConnectedGlobalFunctions` in module
+`Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctionsProof`.
 
 The cited pages were checked directly, including the normalization formula
 in (6.2)(ii). No source-specific project errata note was present.
 
 This explanation records the mathematical provenance. It is not a proof.
-The module contains no proof or axiom of the proposition.
+The module contains no proof or axiom of the proposition. The proposition is
+proved elsewhere in the Library, as
+`Langlands.AbelianScheme.picardZeroLineBundleClassification` in module
+`Langlands.AlgebraicGeometry.Picard.PicardZeroLineBundleClassificationProof`.
+That theorem applies `picardZeroLineBundleClassification_of_inverse` (module
+`PicardZeroLineBundleClassificationFromInverse`) to the existence of tensor
+inverses of line bundles, `LineBundle.exists_tensorObj_iso_structureSheaf`.
 
 ## Intended proof route
 
-The following route is a lead for the separate proof task, not a formal
-result. Cover `T` by opens on which `e_T^* N` is trivial. On each such open,
+The following route was recorded as a lead for the proof task before that
+proof existed. It is not a formal result and does not describe the Lean proof.
+Cover `T` by opens on which `e_T^* N` is trivial. On each such open,
 a trivialization makes `N` a rigidified family whose class is Picard-zero, so
 `dualClassify` gives a local parameter map. Changing the trivialization by a
 unit changes the rigidified class by a scalar automorphism, so the local maps
@@ -108,3 +119,5 @@ Task `b71714f0-c50a-4258-94ac-e065ce455f61` uses this proposition to prove
 the proposition to `N = (m × id)^* P` on `B ×_S (B ×_S T)` for the
 group law `m` of `B` and the Poincaré bundle `P` of `B`. A rigidity argument
 then shows that the classifying map factors through the projection to `T`.
+That target is proved as `Langlands.AbelianScheme.fieldDualSchemeMapAdditivity`
+in module `Langlands.AlgebraicGeometry.Picard.FieldDualSchemeMapAdditivityProof`.
