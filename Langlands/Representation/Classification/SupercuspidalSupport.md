@@ -5,10 +5,29 @@ Author: Worker 23.
 This module defines Zelevinsky's support of an irreducible representation of
 `GL_n(F)`: a finite multiset `{ρ_1, …, ρ_k}` of supercuspidal classes such that the
 representation is an irreducible subquotient of `ρ_1 × ⋯ × ρ_k`. The support is
-recorded by relations on a given representation `π`. The module does not prove
+recorded by relations on a given representation `π`. This module does not prove
 that a support exists, that it is unique, or that some ordering of it contains
-`π` as a subrepresentation. These are the content of Zelevinsky's Proposition 1.10
-and remain theorems to be stated and proved.
+`π` as a subrepresentation. These are the content of Zelevinsky's Proposition
+1.10. They are stated separately, for positive rank `n > 0` and irreducible
+smooth `π`, in `Classification/SupercuspidalSupportStatement`:
+
+- `GLSupercuspidalEmbeddingStatement` asserts that `π` embeds into a product of
+  supercuspidal representatives: `T.IsCuspidalSubrepresentation ρ π` for some
+  `ρ : Fin k → CuspidalDatum`. The theorem `glSupercuspidalEmbedding` in
+  `Classification/SupercuspidalEmbeddingProof` proves it, with the field and
+  supercuspidal-factor universes independent. If `s` is the multiset of
+  `List.ofFn ρ`, then `T.IsSupercuspidalEmbeddingSupport π s` holds by
+  definition. It follows that `T.IsSupercuspidalSupport π s` by
+  `IsSupercuspidalEmbeddingSupport.isSupercuspidalSupport`. So every irreducible
+  smooth representation of `GL_n(F)`, `n > 0`, with carrier in
+  `Type (max uF uV)` has a support and an embedding ordering. The Library has
+  no separately named theorem for this one-step consequence.
+- `GLSupercuspidalSupportUniquenessStatement` asserts that any two supports of
+  `π` are equal. It is unproved, and so is the conjunction
+  `GLSupercuspidalSupportStatement` of the two statements.
+
+Rank zero is outside both statements, and the embedding theorem says nothing
+about uniqueness.
 
 ## Subquotients in the smooth category
 
@@ -99,7 +118,10 @@ For `s` a multiset of cuspidal data:
   - `IsSupercuspidalSupport.eq_supercuspidalSupport`: if the supports of `π` are
     unique, then every support of `π` equals `T.supercuspidalSupport π`.
 
-Neither hypothesis is proved here.
+Neither hypothesis is proved here. For irreducible `π` of positive rank, the
+first one follows from `glSupercuspidalEmbedding`, as explained at the top of
+this file. The second one is the unproved
+`GLSupercuspidalSupportUniquenessStatement`.
 
 ## Sources
 
@@ -140,7 +162,7 @@ pp. 170–173).
 | the multiset {ρ_1, …, ρ_r} on 𝒞 | `(List.ofFn ρ : Multiset _)` |
 | support of ω | `T.IsSupercuspidalSupport π s`, `T.supercuspidalSupport π` |
 | ω embedded into ρ_{i_1} × … × ρ_{i_r} | `T.IsCuspidalSubrepresentation ρ π`, `T.IsSupercuspidalEmbeddingSupport π s` |
-| existence, "determined by ω", existence of the ordering | not asserted |
+| existence, "determined by ω", existence of the ordering | not asserted in this module; stated for `n > 0` in `SupercuspidalSupportStatement` |
 
 G. Henniart, *Une preuve simple des conjectures de Langlands pour GL(n) sur un
 corps p-adique*, Invent. Math. 139 (2000), 439–455 (registered source
@@ -161,3 +183,6 @@ data. Their products, and the represented `π`, have carriers in
 `Type (max uF uV)`, the universe of the published segment induced
 representations. The field `F` is any p-adic field in `PadicField.{uF} p`; all
 `n` and all `k`, including `k = 0` (then `n = 0`), are allowed.
+
+Worker 1058 updated the status of the support theorems for the 2026-10-29
+documentation audit; the Lean file is unchanged.

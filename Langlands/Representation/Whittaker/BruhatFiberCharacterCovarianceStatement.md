@@ -7,7 +7,10 @@ documentation comments, compiled it, checked the sign against the source and wro
 Markdown.
 
 `Langlands.Whittaker.BruhatFiberCharacterCovarianceStatement.{uF}` is the following
-unproved proposition. This module defines the proposition and supplies no proof. Its
+proposition. This module defines the proposition and supplies no proof. Its proof,
+`Langlands.Whittaker.bruhatFiberCharacterCovariance`, whose type is exactly this
+proposition at the same universe, is in the companion module
+`Langlands.Representation.Whittaker.BruhatFiberCharacterCovarianceProof`. Its
 universe `uF`, the universe of the p-adic field, is the only parameter of the
 definition. It imports these published modules, all used unchanged:
 
@@ -155,7 +158,8 @@ does not integrate over the orbit.
 
 ## The sign
 
-The following explains the stated multiplier; it is not proved here.
+The following explains the stated multiplier. It is not a Lean proof; the proof
+`bruhatFiberCharacterCovariance` in the companion module establishes the multiplier.
 
 Shalika computes, in the proof of Proposition 1.13 (printed p.177), for `h ∈ H` and
 `u ∈ U_w⁺`,
@@ -173,11 +177,12 @@ Thus the multiplier of the proposition is exactly Shalika's `δ`, and it is the 
 of the defect, not the defect itself. For the unitary character `χ`, Shalika's
 `χ̄(u₁u₂)` is the weight `(χ u₁ * χ u₂)⁻¹` of `characterAverage`.
 
-## Intended proof
+## Proof route (proved in the companion module)
 
-The following route is the intended proof of the separate proof task. It is
-recorded here only to explain the hypotheses; it is not carried out or checked in
-this unit.
+The following route was recorded with the statement to explain the hypotheses. It is
+not carried out in this module. The proof `bruhatFiberCharacterCovariance` in the
+companion module follows it; its Markdown, `BruhatFiberCharacterCovarianceProof.md`,
+describes the implemented argument.
 
 Fix `d` and let `g ∈ U` have matrix `s * u⁻¹ * s⁻¹`. The left side is the integral of
 `α (z.1 * g, (d, ι u * z.2)) * (χ z.1 * χ z.2)⁻¹` over `z ∈ U × U`. Make two changes of
@@ -197,21 +202,22 @@ field `ℂ` gives
     (χ z.1 * χ z.2)⁻¹ = χ g * χ (ι u) * (χ v₁ * χ v₂)⁻¹.
 
 The constant `χ g * χ (ι u) = χ(s u⁻¹ s⁻¹) χ(u)` is the inverted defect computed above,
-and the remaining integral is `characterAverage χ μ α d`. The expected Mathlib tools
-are `measurePreserving_mul_right`, `measurePreserving_mul_left`,
+and the remaining integral is `characterAverage χ μ α d`. The proof uses the Mathlib
+tools `measurePreserving_mul_right`, `measurePreserving_mul_left`,
 `MeasurePreserving.prod` and `MeasurePreserving.integral_comp'`, with
 `compatibilityDefect_eq_div` for the multiplier.
 
 This uses each invariance once and on a different factor than the generic
-covariance task `5117fcbc-03d9-4605-8425-3f503fe5a3da`, which translates the first
+covariance proposition `Langlands.HarmonicAnalysis.SchwartzBruhat.CharacterAverageCovarianceStatement`
+(proved by the published `characterAverageCovariance`), which translates the first
 factor on the left and the last factor on the right by constants. The present action
-translates the first factor on the right by a `d`-dependent element. This statement
-neither assumes nor reuses that generic task's unproved result.
+translates the first factor on the right by a `d`-dependent element. Neither this
+statement nor its proof assumes or uses that generic result.
 
 ## Hypotheses: internal derived generality
 
 Shalika integrates against a Haar measure on the unimodular group `U`. The hypotheses
-on `μ` here are instead the explicit, independent conditions that the intended change
+on `μ` here are instead the explicit, independent conditions that the proof's change
 of variables uses: s-finiteness (for the product measure and its change of variables),
 finiteness on compact sets (required by the imported `characterAverage`), left
 invariance and right invariance. This choice is internal derived generality, not part
@@ -226,9 +232,9 @@ a premise.
 
 ## Scope
 
-This is a statement only. It proves no covariance: the equality above is the
-conclusion of an unproved proposition, whose proof is a separate task. The unit also
-states and proves nothing about:
+This module is a statement only. It proves no covariance: the equality above is the
+conclusion of the proposition, which is proved by `bruhatFiberCharacterCovariance` in
+the companion module. This module also states and proves nothing about:
 
 - the support of `τ` or of any distribution (Shalika's Proposition 1.13 itself);
 - orbital descent from `M` to the cell, or the function `f_α` of Lemma 1.10 and (1.11);
@@ -265,4 +271,6 @@ literature notes record no errata for this paper, and none was found for these p
 The proposition is an intermediate target for the exact Shalika distribution-invariance
 work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
 Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`). It
-proves neither. A separate proof task for this proposition follows its publication.
+proves neither. Its proof `bruhatFiberCharacterCovariance` is used by the published
+proof `Langlands.Whittaker.bruhatCompatibleSupport` of
+`BruhatCompatibleSupportStatement`.

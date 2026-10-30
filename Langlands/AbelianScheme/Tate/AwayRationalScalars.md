@@ -1,5 +1,8 @@
 # Prime-to-modulus adelic actions on actual rational Tate modules
 
+Worker 1060 updated the scalar-comparison status sentences after the
+2026-10-29 documentation audit (finding P3-027).
+
 This module constructs the action of the existing prime-to-modulus finite
 adeles on the actual away rational Tate module. It keeps both the full scalar
 comparison and its compatible away comparison as explicit hypotheses. It
@@ -24,9 +27,17 @@ hAway : Global.PrimeToRationalProfiniteIntegerAdeleComparison h m
 ```
 
 They are proposition proofs, not fields supplying arbitrary scalar actions.
-This module does not prove either comparison. The away proposition requires
-normalized integral and rational equivalences compatible with the coupled
-full witnesses chosen from `h`.
+This module does not prove either comparison. Both are published theorems in
+separate modules: `Langlands.Global.rationalProfiniteIntegerAdeleComparison`,
+in `Langlands.Global.RationalProfiniteIntegerComparisonProof`, proves the full
+comparison, and
+`Langlands.Global.primeToRationalProfiniteIntegerAdeleComparisons`, in
+`Langlands.Global.PrimeToRationalProfiniteIntegerComparisonProof`, proves the
+away comparison for every full comparison proof `h` and every natural `m`. A
+caller can therefore supply `h` and `hAway` from these theorems; the
+definitions here keep them as explicit parameters. The away proposition
+requires normalized integral and rational equivalences compatible with the
+coupled full witnesses chosen from `h`.
 
 In `Global.PrimeToRationalProfiniteIntegerAdeleComparison`, `integralEquiv`
 chooses the integral away witness `e₀`, and `rationalEquiv` chooses its coupled
@@ -146,8 +157,9 @@ scheme, group-scheme generality and natural-modulus extension are internal.
 The carrier stays `ℚ ⊗[ℤ] T^mA`; there is no tensoring of `T^mA` over `ℤ` with
 finite adeles.
 
-The scalar comparisons remain unproved hypotheses. No independence of
-comparison witnesses, rational topology, continuity of these actions,
-restricted-product comparison of Tate modules, monodromy, Weil pairing or
-PEL orbit construction is established here. This focused action construction
-does not complete the parent PEL task.
+The scalar comparisons are explicit hypotheses of this module. They are proved
+by the published theorems named above, which this module neither imports nor
+applies. No independence of comparison witnesses, rational topology,
+continuity of these actions, restricted-product comparison of Tate modules,
+monodromy, Weil pairing or PEL orbit construction is established here. This
+focused action construction does not complete the parent PEL task.

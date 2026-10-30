@@ -4,9 +4,12 @@ Authors: Worker 885 and Worker 634. The Lean text of the proposition is Worker 6
 type-checked private design. Worker 885 placed it, otherwise unchanged, in the final
 namespace `Langlands.Whittaker` and this module, and wrote this Markdown.
 
-`Langlands.Whittaker.BruhatCompatibleSupportStatement.{uF}` is the following unproved
+`Langlands.Whittaker.BruhatCompatibleSupportStatement.{uF}` is the following
 proposition. This module defines the proposition and supplies no proof and no other
-declaration. It imports, unchanged, the published modules
+declaration. Its proof, `Langlands.Whittaker.bruhatCompatibleSupport`, whose type is
+exactly this proposition at the same universe, is in the companion module
+`Langlands.Representation.Whittaker.BruhatCompatibleSupportProof`. This module imports,
+unchanged, the published modules
 `Langlands.Representation.Whittaker.BruhatFiberAverage`,
 `Langlands.HarmonicAnalysis.Distribution.CharacterAverage` and
 `Langlands.HarmonicAnalysis.Distribution.Subspace`.
@@ -222,10 +225,19 @@ contains one misprint, which affects only its reading: the map "β ↦ (γ − 1
 read as `β ↦ (δ − 1)β`, with the `δ` defined two lines earlier; no `γ` is defined
 there.
 
-## Intended proof (not part of this unit)
+## Intended proof (now proved in the companion module)
 
-The following outlines how the proposition is expected to be proved. It describes no
-proof contained here.
+The following outline was written with the statement, before the proof existed. The
+implemented proof `bruhatCompatibleSupport` follows this route; its own Markdown,
+`BruhatCompatibleSupportProof.md`, describes the argument as implemented. It takes
+step 1 from the published `Langlands.Whittaker.bruhatFiberCharacterCovariance`, which
+proves `BruhatFiberCharacterCovarianceStatement`. That theorem gives
+`β_{α^u} d = (compatibilityDefect ψ n w u d)⁻¹ · β_α d`, with `u ∈ P` viewed in `U`.
+This agrees with the formula of step 1 below: for `u ∈ P`, `compatibilityDefect_eq_div`
+and multiplicativity of `χ` give
+`compatibilityDefect ψ n w u⁻¹ d = (compatibilityDefect ψ n w u d)⁻¹`. This identity is
+an explanatory remark and is not stated in Lean. The implemented proof carries out steps 3 and 4 on clopen level
+sets of the defect and glues them by an induction over a finite clopen cover.
 
 1. **Inverse-defect covariance.** For `u ∈ P` and `d ∈ H`, write `s = p_w * h(d)` and
    `y = s * u⁻¹ * s⁻¹ ∈ U`. In the integral for `β_{α^u} d`, substitute `z.1 ↦ z.1 * y⁻¹`
@@ -239,11 +251,16 @@ proof contained here.
    and `χ(u⁻¹)⁻¹ = χ(u)`. Shalika's `δ(h) = χ(whu⁻¹h⁻¹w⁻¹) χ(u)` is this defect at
    `u⁻¹`. The product-measure change of variables uses `SFinite μ`.
 2. **Surjectivity.** With `δ_u = compatibilityDefect ψ n w u⁻¹`, the hypothesis becomes
-   `τ((δ_u − 1) · β_α) = 0` for every `α`. By surjectivity of `α ↦ β_α`, which is the
-   published generic statement `CharacterAverageSurjectiveStatement` (task
-   `327ddc57-f51d-40b9-8de6-466ad8f7c789`, proof pending) applied to `U` and `Y = H`,
-   this gives `τ((δ_u − 1) · g) = 0` for every test function `g` on `H` and every
-   `u ∈ P`.
+   `τ((δ_u − 1) · β_α) = 0` for every `α`. By surjectivity of `α ↦ β_α`, this gives
+   `τ((δ_u − 1) · g) = 0` for every test function `g` on `H` and every `u ∈ P`.
+   Surjectivity is the published generic proposition
+   `Langlands.HarmonicAnalysis.SchwartzBruhat.CharacterAverageSurjectiveStatement`,
+   applied to `G = U` and `Y = H`. It is proved by the published
+   `Langlands.HarmonicAnalysis.SchwartzBruhat.characterAverageSurjective` in
+   `Langlands.HarmonicAnalysis.Distribution.CharacterAverageSurjectiveProof`. The
+   published `CharacterAverageSurjectiveStatement.surjective_standardCharacterAverage`
+   specializes it to `standardCharacterAverage F n ψ μ`, which is `characterAverage χ μ`
+   on this `U` and `H`, for every Haar measure `μ`.
 3. **Local constancy of a nontrivial defect.** If `d₀ ∉ compatibleTorus ψ n w`, the
    published `mem_compatibleTorus_iff_defect` and the fact that `P` is closed under
    inverses give `u ∈ P` with `δ_u d₀ ≠ 1`. The defect is `ψ` of a continuous function of
@@ -263,9 +280,12 @@ interchanged with an integral, and no continuity of `τ` is used.
 
 ## Scope
 
-This is a statement only. It proves no support assertion. It also states and proves
-nothing about: the covariance law of step 1, surjectivity of the average,
-factorization of a bi-equivariant distribution through the average, closed restriction or
+This module is a statement only. It proves no support assertion; the support
+assertion is proved by `bruhatCompatibleSupport` in the companion module. The covariance
+law of step 1 and surjectivity of the average are not stated or proved here; they are
+proved by the published `bruhatFiberCharacterCovariance` and
+`characterAverageSurjective`, cited above. This module also states and proves nothing
+about factorization of a bi-equivariant distribution through the average, closed restriction or
 supported descent, cellwise or global invariance of distributions, Shalika's Propositions
 1.8, 1.12 or 1.13 as stated in the source, or multiplicity one.
 
@@ -283,4 +303,5 @@ Proposition 1.13 on printed p.177.
 The proposition is an intermediate target for the exact Shalika distribution-invariance
 work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
 Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`, Worker 16).
-A separate proof task follows publication of this statement.
+Its proof is `Langlands.Whittaker.bruhatCompatibleSupport` in
+`Langlands.Representation.Whittaker.BruhatCompatibleSupportProof`.

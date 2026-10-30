@@ -5,8 +5,9 @@ import Langlands.Representation.Whittaker.Distribution
 # Compatible monomial representatives are fixed by Weyl-conjugated transpose
 
 The monomial specialization of Shalika (1974), property (1.5), to canonical p-adic
-fields and the standard all-ones character. This module defines an unproved
-proposition.
+fields and the standard all-ones character. This module defines the
+proposition; its proof `compatibleMonomialFixed` is in
+`Langlands.Representation.Whittaker.CompatibleMonomialFixedProof`.
 -/
 
 namespace Langlands.Whittaker

@@ -296,7 +296,8 @@ theorem mem_infiniteUnitPowers_iff (d : ℕ) (x : (v.Completion)ˣ) :
 theorem infiniteUnitPowers_one : infiniteUnitPowers v 1 = ⊤ := by
   refine eq_top_iff.mpr fun x _ => ⟨x, pow_one x⟩
 
-/-- At a real place, squares have index at most two in the units of the completion. -/
+/-- At a real place, squares have finite index in the units of the completion. The proof shows
+that the classes of `1` and `-1` cover the quotient; that bound is not part of the statement. -/
 theorem infiniteUnitPowers_two_finiteIndex (hv : v.IsReal) :
     (infiniteUnitPowers v 2).FiniteIndex := by
   let φ := InfinitePlace.Completion.ringEquivRealOfIsReal hv

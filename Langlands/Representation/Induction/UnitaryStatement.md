@@ -5,7 +5,9 @@ Author: Worker 388.
 This module states preservation of an invariant positive definite Hermitian
 form by the actual normalized upper parabolic induction construction. It
 contains three closed `Prop`-valued definitions. It supplies targets for a
-subsequent proof; none of these preservation assertions is proved here.
+subsequent proof; none of these preservation assertions is proved here. All
+three are proved in `Langlands.Representation.Induction.UnitaryProof`; see
+"Proof status" below.
 
 ## Exact targets and scope
 
@@ -148,10 +150,12 @@ universe-polymorphic specialization are derived algebraic steps. Accordingly
 the contribution has derived provenance, with the two originals supplying
 the normalized-induction assertion and compact-picture argument.
 
-## Remaining proof obligations
+## Proof plan written with the statement
 
-The following describes a mathematical proof plan, not Lean proofs supplied
-by this module.
+The following mathematical proof plan was written with the statement, before
+any proof existed. It is not a Lean proof supplied by this module. The
+published proofs, described under "Proof status" below, follow a shorter route
+for the scalar integration step.
 
 1. **Iwasawa and measure comparison.** For each supplied realization and
    block parabolic, construct a compact open subgroup `K` with `G = P K`,
@@ -163,8 +167,9 @@ by this module.
    This uses the appropriate Haar normalizations and unimodularity of `GL_n`.
    It requires identification of the explicit determinant product `δ_B`
    with the Haar module of conjugation on the upper unipotent radical.
-   `Group/GL/BlockModulus` supplies the explicit character and its half;
-   its Markdown leaves this Haar-module comparison as a theorem obligation.
+   `Group/GL/BlockModulus` supplies the explicit character and its half.
+   The Haar-module comparison is a separate theorem; it is now proved by
+   `Langlands.glBlockModulusHaar` (see "Proof status").
    No invariant scalar measure on `P \ G` is being assumed. The functional
    integrates sections with the displayed modulus covariance.
 
@@ -225,10 +230,41 @@ by this module.
    product topology. Apply Levi preservation at the tensor carrier universe,
    then use the actual product-functor identification above.
 
-The present imports provide the representations, forms, and tensor smoothness
-used in this plan. Neither `Tensor/Finite` nor `Tensor/FiniteProperties`
-supplies the invariant positive tensor form needed in the last obligation.
-Iwasawa decomposition, the needed integration and Haar-module comparisons,
-and these preservation proofs remain to be formalized. The statements and
-the cited source assertions supply no proved induction-unitarity input to
-downstream square-integrable or tempered classification tasks.
+The imports of this statement module provide the representations, forms, and
+tensor smoothness used in this plan. Neither `Tensor/Finite` nor
+`Tensor/FiniteProperties` supplies the invariant positive tensor form needed in
+the last step; it is supplied by a separate module, named below.
+
+## Proof status
+
+`Langlands.Representation.Induction.UnitaryProof` proves all three
+propositions, each with type exactly the stated proposition and with the
+independent universes `uF` and `uV`:
+
+- `Langlands.glNormalizedParabolicInductionUnitarity` proves
+  `GLNormalizedParabolicInductionUnitarityStatement.{uF, uV}`;
+- `Langlands.glNormalizedProductInductionUnitarity` proves
+  `GLNormalizedProductInductionUnitarityStatement.{uF, uV}`;
+- `Langlands.glNormalizedInductionUnitarity` proves the conjunction
+  `GLNormalizedInductionUnitarityStatement.{uF, uV}`.
+
+None adds a hypothesis. In particular, there is no admissibility,
+irreducibility or finite-dimensionality condition. The Levi clause takes `K`,
+the Haar probability measure on `K`, the factorization `G = P K` and the scalar
+invariance from `Langlands.glParabolicCompactScalarIntegral`
+(`Induction/CompactScalarProof`). This replaces steps 1 and 4's appeal to a
+disintegration or to `I_δ`. The proof then applies the conditional constructor
+`T.normalizedIntegralForm` of `Induction/NormalizedIntegralForm`, which builds
+the compact-picture form of steps 2-4 from the input form. The product clause
+takes the invariant positive form on the full algebraic tensor product from
+`Langlands.FiniteTensor.invariantPositiveForm` (`Tensor/UnitaryProof`) and
+smoothness from `FiniteTensor.isSmooth_external`. It applies the Levi clause at
+the tensor carrier universe `max uF uV`, after rewriting with the
+product-functor identification. The Haar-module comparison of step 1 is proved
+separately by `Langlands.glBlockModulusHaar` (`Group/GL/BlockModulusHaarProof`).
+The scalar proof uses it to identify the full block modulus with the modular
+character of the parabolic.
+
+These theorems prove preservation of unitarizability only. The statements and
+the cited source assertions do not by themselves supply any square-integrable
+or tempered classification result.

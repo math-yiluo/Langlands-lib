@@ -2,10 +2,13 @@
 
 Author: Worker 826.
 
-`Langlands.Whittaker.CompatibleMonomialFixedStatement.{uF}` is an unproved
-Prop-valued statement. It is the monomial specialization of property (1.5) of
+`Langlands.Whittaker.CompatibleMonomialFixedStatement.{uF}` is a Prop-valued
+statement. It is the monomial specialization of property (1.5) of
 Shalika (1974), printed p.174, to canonical p-adic fields and the standard
 all-ones character. This module only defines the proposition; it proves nothing.
+Its proof, `Langlands.Whittaker.compatibleMonomialFixed`, whose type is exactly
+this proposition at the same universe, is in the companion module
+`Langlands.Representation.Whittaker.CompatibleMonomialFixedProof`.
 
 ## The statement
 
@@ -149,5 +152,7 @@ invariance of any distribution under `weylTransposeHomeomorph`; that is the
 separate `ShalikaDistributionInvarianceStatement`. It does not claim that any
 Bruhat cell is stable, unconditionally or otherwise. It does not classify the
 compatible permutations `w` or the compatible parameters `d`. Shalika's
-combinatorial proof of (1.5) is not formalized here. A proof is left to a
-separate task.
+combinatorial proof of (1.5) is not formalized here. The proof
+`compatibleMonomialFixed` in the companion module is a self-contained elementary
+argument with root transvections, not a transcription of Shalika's argument; its
+Markdown, `CompatibleMonomialFixedProof.md`, describes it.

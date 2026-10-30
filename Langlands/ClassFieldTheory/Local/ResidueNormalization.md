@@ -3,11 +3,11 @@
 This construction uses the published spectral valuation and residue action
 `Langlands.LocalGalois.residueHom`, its actual inertia kernel, and the proved
 continuous multiplicative equivalence `residueQuotientEquiv`. For a complete
-nonarchimedean normed field with finite residue field and an algebraic Galois
-extension, `geometricFrobeniusClass` is the inverse image of the existing
-finite-field geometric Frobenius under that equivalence. It is a canonical
-element of the Galois group modulo inertia. No representative in the Galois
-group is selected.
+nontrivially normed nonarchimedean field with finite residue field and an
+algebraic Galois extension, `geometricFrobeniusClass` is the inverse image of
+the existing finite-field geometric Frobenius under that equivalence. It is a
+canonical element of the Galois group modulo inertia. No representative in the
+Galois group is selected.
 
 `HasGeometricResidueAction` compares the actual residue action with geometric
 Frobenius. Its two intrinsic characterizations say that the Galois class is

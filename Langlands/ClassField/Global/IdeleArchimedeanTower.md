@@ -48,4 +48,7 @@ adapts the stabilizer case split of `ReciprocityTower` to idele coefficients;
 the additional completion argument is needed for arbitrary idele coordinates.
 This pair does not assert a total finite-plus-infinite formula, restriction
 scaling, or the existence of the global invariant family on idele-class
-cohomology. `GlobalInvariantStatement` remains open.
+cohomology. That existence is the separate statement `GlobalInvariantStatement`,
+which keeps a local invariant family satisfying the class-formation and
+arithmetic-normalization laws as a hypothesis. It is proved as
+`globalInvariantStatement` in `Langlands.ClassField.Global.InvariantProof`.

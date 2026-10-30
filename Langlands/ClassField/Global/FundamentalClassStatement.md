@@ -89,9 +89,16 @@ of the family `c` for the given `I`.
 ## Normalizations
 
 The local classes have invariant `+1 / [E_w : F_v]` for the arithmetic
-normalization, as in Artin–Tate. Global invariants are not formalized. In the
-literature `inv_{E/F} u_{E/F} = 1 / [E : F]`, and the stated degree factors are
-those forced by it. Restriction multiplies invariants by `[F' : F]`
+normalization, as in Artin–Tate. This statement does not mention global
+invariants. They are formalized separately: `GlobalInvariantStatement` (module
+`Langlands.ClassField.Global.InvariantStatement`) asserts, for every local
+family `I` satisfying the same class-formation and normalization hypotheses,
+homomorphisms `inv_{E/F} : H²(Gal(E/F), C_E) → ℚ/ℤ` with the laws
+`InvariantImages`, `InvariantRestriction`, `InvariantInflation` and
+`InvariantLocal`. It is proved as `globalInvariantStatement` (module
+`Langlands.ClassField.Global.InvariantProof`). In the literature
+`inv_{E/F} u_{E/F} = 1 / [E : F]`, and the stated degree factors are those
+forced by it. Restriction multiplies invariants by `[F' : F]`
 (Artin–Tate XIV §3, Axiom II b), so `Res u_{E/F}` has invariant
 `[F' : F] / [E : F] = 1 / [E : F']`. Inflation preserves invariants
 (Artin–Tate VII §3, Lemma 1), so `Inf u_{E/F}` has invariant
@@ -153,7 +160,12 @@ The class `u_{E/F'}` is defined by its invariant (Theorem 7).
   be vacuous; with it, the statement asserts the actual global fundamental
   classes.
 - Global invariant maps, the Weil groups built from the classes, and
-  reciprocity are later work. A proof of this statement is a separate task.
+  reciprocity are not part of this statement. The statement is proved as
+  `globalFundamentalClassStatement` (module
+  `Langlands.ClassField.Global.FundamentalClassProof`) from
+  `ideleClassH1Vanishing` and `globalInvariantStatement`. That proof keeps the
+  local family `I` and its class-formation and normalization hypotheses as
+  inputs; it does not construct such a family.
 
 ## Provenance
 

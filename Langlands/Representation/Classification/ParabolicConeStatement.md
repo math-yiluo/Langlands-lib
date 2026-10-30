@@ -5,7 +5,9 @@ Author: Worker 19.
 `Langlands.GLParabolicRootWeightConeStatement` is a derived coordinate
 specialization of Silberger 1978, Lemma 7.1. It states the unique standard
 parabolic coarsening associated to a real exponent vector, including its
-central component. It is a proposition definition, not a proof.
+central component. It is a proposition definition, not a proof. The
+published theorem `glParabolicRootWeightCone` proves it; see the last
+section.
 
 ## Statement over actual block shapes
 
@@ -127,9 +129,26 @@ the actual block parabolics over every commutative ring; the representation
 theory consuming them remains over finite extensions of `Q_p`.
 The ring universe is arbitrary. No representation carrier universe occurs.
 
-The abstract cone lemma, its coordinate specialization, and the matrix
-containments still require Lean proofs. This family supplies the parabolic
-cone target. It does not assert that a vector is a Jacquet exponent, choose
-a maximal exponent of an irreducible representation, prove temperedness of
-any Levi representation, or give the maximal-cone argument in Proposition
-7.2. Those remain separate representation-theoretic obligations.
+The coordinate statement is proved. `Langlands.glParabolicRootWeightCone`
+(module `Langlands.Representation.Classification.ParabolicConeProof`) proves
+`GLParabolicRootWeightConeStatement.{uR}`. It combines three proved
+statements of `ParabolicConeAuxiliaryStatement`:
+
+- `glBlockConeExists` proves numerical existence by pooling adjacent blocks
+  until the averages strictly decrease;
+- `glBlockConeUnique` proves uniqueness of the coarser shape by summation by
+  parts;
+- `glBlockCoarseningSubgroups` proves the parabolic and Levi containments
+  over every commutative ring.
+
+This proof does not use the derivation from Silberger's lemma given above
+and does not use the abstract `RootWeightConeDecompositionStatement`. That
+abstract lemma is still unproved in the Library.
+
+This family supplies the parabolic cone target. It does not assert that a
+vector is a Jacquet exponent, choose a maximal exponent of an irreducible
+representation, prove temperedness of any Levi representation, or give the
+maximal-cone argument in Proposition 7.2. The Library treats that selection
+separately. `GLMaximalConeJacquetQuotientStatement` (module
+`MaximalConeStatement`) is a corrected dominance form of it, and
+`glMaximalConeJacquetQuotient` proves it using `glBlockConeExists`.

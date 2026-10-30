@@ -44,8 +44,11 @@ family `I : InvariantFamily.{u,u} p` in the arbitrary universe `u`.
   for every finite Galois `L / F` and every class `c` whose invariant is
   `1/[L:F]`, the actual left cup `relativeTateCup F L n c` is bijective for
   every integer `n`. Tate's theorem is a premise of the proposition, not an
-  axiom. A proof of `TateCupIsomorphism` can be applied to it once that proof
-  exists.
+  axiom. The Library proves it as `Langlands.Tate.tateCupIsomorphism`
+  (module `Langlands.Cohomology.Tate.TateTheoremProof`), under its own Sylow
+  hypotheses and in every integer degree, so that proof can be supplied for
+  this premise. The proposition itself keeps the premise explicit, and it
+  still assumes `I.RelativeClassFormation` for the given family.
 - `ClassFormationInflationLawsStatement` concludes
   `I.PositiveTateInflation ∧ I.OrdinaryInflation` (`TateInflation`,
   `OrdinaryCupInflation`). These are the scaled diagrams
@@ -77,8 +80,9 @@ These propositions split the generic part of the local realization proof
 one invariant family. Once a family is known to satisfy
 `RelativeClassFormation`, the proofs of these propositions supply its
 `TateIsomorphisms`, `PositiveTateInflation`, `TateTransferCompatibility` and
-`OrdinaryInflation` clauses. Tate's theorem is a separate proof task
-(`7a725b31-76e3-4fcd-8995-535498ab2ec3`).
+`OrdinaryInflation` clauses. Tate's theorem, the first premise of
+`ClassFormationTateIsomorphismsStatement`, is proved separately as
+`Langlands.Tate.tateCupIsomorphism`.
 
 The content is the passage after the definition of fundamental classes in
 Jean-Pierre Serre, *Local Fields* (1979), XI.3. Printed p. 168 (PDF p. 174)

@@ -13,9 +13,14 @@ three explicit geometric hypotheses:
   hypothesis. It is exactly the proposition requested by statement task
   `39e84a50-12a4-4e68-a013-c5e551c531c5`
   (`LocalTwoAxisTrivialityStatement`, Worker 606's interface), with the bound
-  variables renamed. That statement is not yet published. Once it is, it can
-  be passed for `hL` unchanged, since the two propositions agree up to the
-  names of bound variables;
+  variables renamed. That statement is now published as
+  `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityStatement` in
+  module `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityStatement`
+  (statement only; no proof of it is published). Since the two propositions
+  agree up to the names of bound variables, a term of
+  `LocalTwoAxisTrivialityStatement.{u}` can be passed for `hL` unchanged; a
+  development check of exactly this application compiles. This module does not
+  import that statement;
 * `hZ : RigidifiedClassesZariskiSeparatedStatement.{u}`, the published
   Zariski separatedness of actual rigidified classes (statement only; its
   proof is owned by task `f34bab0f-25a2-40c7-a05c-6c0f06ed4283`).

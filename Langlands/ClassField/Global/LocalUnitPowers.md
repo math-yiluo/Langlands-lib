@@ -82,14 +82,21 @@ For an infinite place `v` of a field `K`:
 
 J. S. Milne, *Class Field Theory*, version 4.03 (2020), Chapter I, 1.7, printed
 p.22 (PDF p.31), registered original `milne-2020-class-field-theory`. It states
-that Newton's lemma applied to `X^m - a` shows every `a ∈ O_K` with
+that Newton's lemma applied to `X^m - a` shows every `a ∈ O_K^×` with
 `|1 - a| < |m|^2` is of the form `u^m` with `u ∈ 1 + 𝔪`, in characteristic zero.
-`exists_pow_eq_one_add_sq_mul` is this statement for `O_v`; the condition
-`a - 1 ∈ m^2 𝔪` is the same inequality. The Lean proof substitutes
-`X = 1 + m Y` and solves for `Y` with a simple root. It does not use the
-stronger Newton lemma. Milne, the same chapter, 1.6, printed p.22 (PDF p.31),
-says that the squares of `ℝ^×` are the positive reals, which is the content of
-`infiniteUnitPowers_two_finiteIndex`. The finite-index conclusion
+`exists_pow_eq_one_add_sq_mul` exports only the existence part of this
+statement for `O_v`, with `m = d`: the condition `a - 1 ∈ m^2 𝔪` is the same
+inequality, and the conclusion is a root `y ∈ O_v` with `y^m = a`. The
+congruence `y ∈ 1 + 𝔪` is not part of the Lean conclusion. The Lean proof
+substitutes `X = 1 + m Y` and solves for `Y` with a simple root. The root it
+builds is `1 + m z` with `z ∈ 𝔪`, but that membership is discarded. It does not
+use the stronger Newton lemma. Milne, the same chapter, 1.6, printed p.22
+(PDF p.31), says that `ℝ^{×m}` is `ℝ^×` or `ℝ_{>0}` according as `m` is odd or
+even. In particular, the squares of `ℝ^×` are the positive reals and have index
+two. `infiniteUnitPowers_two_finiteIndex` exports only the consequence that
+squares have finite index at a real place. Its proof shows that `x` or `-x` is
+a square, but the Lean statement neither identifies the squares with the
+positive units nor gives the exact index. The finite-index conclusion
 `localUnitPowers_finiteIndex` is the standard consequence used in Emil Artin and
 John Tate, *Class Field Theory*, AMS Chelsea edition (2009), Chapter VI §1,
 first lemma, printed p.20 (PDF p.29), registered original
