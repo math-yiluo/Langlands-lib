@@ -305,8 +305,8 @@ Read as a Library proof, either route leaves these obligations.
   `Langlands.AlgebraicGeometry.Picard.AmpleIsoStatement`, proved in the
   Library as `ampleIso`.
 - Ampleness of tensor products of ample bundles. This is
-  `Langlands.AlgebraicGeometry.Picard.AmpleTensorStatement`, which has no
-  published proof yet.
+  `Langlands.AlgebraicGeometry.Picard.AmpleTensorStatement`, proved in the
+  Library as `ampleTensor`.
 - Finiteness of a proper scheme with a trivial ample bundle. This is
   `Langlands.AlgebraicGeometry.Picard.ProperAmpleTrivialFiniteStatement`,
   proved in the Library as `properAmpleTrivialFinite`.

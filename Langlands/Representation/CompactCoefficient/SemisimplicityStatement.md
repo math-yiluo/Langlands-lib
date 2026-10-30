@@ -2,8 +2,10 @@
 
 `Langlands.CompactCoefficientSemisimplicityStatement` states the last sentence
 of Bernstein–Zelevinsky (1976), Theorem 2.44(b): every finite module is
-completely reducible. It is a proposition definition; its truth has not been
-proved in Lean.
+completely reducible. It is a proposition definition and proves nothing by
+itself. The theorem `Langlands.compactCoefficientSemisimplicity`, in
+`Langlands.Representation.CompactCoefficient.SemisimplicityProof`, proves it
+for every group and measure satisfying the binders below; see "Proof status".
 
 ## The proposition
 
@@ -151,21 +153,47 @@ further comment. If \(E\) is finite, then so is its quotient \(E/E^f\), by the
 remark after Lemma-Definition 2.40 that subfactors of finite representations
 are finite. Lemma 2.6(b) gives every nonzero module an irreducible subfactor,
 which would then be a nonzero finite subfactor of \(E/E^f\). Hence
-\(E=E^f\). This explains the literature implication only; no Lean proof of
-it, of Theorem 2.42, or of the projectors of Section 2.43 is supplied or
-asserted.
+\(E=E^f\). This explains the literature implication only. This module
+supplies no Lean proof of that implication, of Theorem 2.42 or of the
+projectors of Section 2.43. The Library proof described in "Proof status"
+reaches the conclusion by a different route and does not prove these results
+either.
 
 ## Relation to other Library statements
 
 `Langlands.CompactCoefficientSplittingStatement` is the derived consequence of
 Theorem 2.44(a) for a single irreducible representation. The present
 proposition is the separate conclusion of Theorem 2.44(b) for an arbitrary
-compact-coefficient representation. Both are unproved, and the splitting
-statement is unchanged. The present target does not construct isotypic parts,
-annihilators or the projectors \(\pi(\varepsilon_\omega)\). It says nothing
-about representations whose coefficients are compact only modulo a centre.
-It also does not state the transfer of complete reducibility along a
+compact-coefficient representation. The present proposition is proved, as
+described in "Proof status". The splitting statement has no proof in the
+Library, and it is unchanged. The present target does not construct isotypic
+parts, annihilators or the projectors \(\pi(\varepsilon_\omega)\). It says
+nothing about representations whose coefficients are compact only modulo a
+centre. It also does not state the transfer of complete reducibility along a
 normal subgroup of finite index, which is Lemma 2.9(a).
+
+## Proof status
+
+`Langlands.compactCoefficientSemisimplicity`, in
+`Langlands.Representation.CompactCoefficient.SemisimplicityProof`, takes
+exactly the binders of this statement and has type
+`CompactCoefficientSemisimplicityStatement.{uG, uV} G μ`. The universes of the
+group and the carrier stay independent, and no hypothesis on \(A\) is added.
+Its own Markdown describes the proof. The proof does not follow the
+Bernstein–Zelevinsky route through Theorem 2.42 and the projectors of Section
+2.43. For a vector \(a_0\) outside a subrepresentation \(M\), it builds a
+smooth functional \(\ell\) vanishing on \(M\) with \(\ell(a_0)\neq0\), and a
+vector \(a_1\) lying in every subrepresentation that contains \(a_0\). The
+intertwiner
+\[
+  S(v)=\int_G \ell(A(g^{-1})v)\,A(g)a_1\,d\mu(g)
+\]
+kills \(M\), and a positivity argument shows \(S(a_1)\notin M\). A Zorn
+argument then shows that the irreducible subrepresentations span, and
+Mathlib turns this into complemented subrepresentations. The proof uses only
+a left Haar measure. It accepts `SigmaCompactSpace G`, `Measure.Regular μ` and
+`Measure.IsMulRightInvariant μ` as hypotheses but does not use them. It does
+not prove `Langlands.CompactCoefficientSplittingStatement`.
 
 ## Exact formal dependencies
 

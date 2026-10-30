@@ -7,6 +7,10 @@ revision 1. Worker 510 isolated the interface and specified it.
 a closed Prop-valued definition. It states an interface and proves nothing.
 It does not assume, and is not, second adjointness. No theorem or
 proposition definition in this module establishes the property it states.
+The exact proposition is proved separately by
+`Langlands.Exponents.refinedQuotientOppositeCharacter` in
+`Langlands.Representation.Exponents.RefinedQuotientOppositeCharacterProof`;
+see "Proof status" below.
 
 ## Exact statement and actual objects
 
@@ -125,11 +129,16 @@ none is made. Worker 510 isolated it from the support proof task
 tied to an actual exponent before cone arguments apply. The statement is a
 consequence of refined second adjointness together with linearity, scalar
 equivariance, smoothness and continuity. The Library states refined second
-adjointness, without proof, as
+adjointness as
 `Langlands.Parabolic.RefinedSecondAdjointnessClause` in
 `Langlands.Representation.Parabolic.SecondAdjointnessStatement`. That clause
 is stated for the same functors and at the same universes `uF`, `uV`, `uW`.
-Its own Markdown records its provenance. The derivation runs as follows.
+Its own Markdown records its provenance. It is the second conjunct of
+`Langlands.Parabolic.NormalizedSecondAdjointnessStatement`, which
+`Langlands.Parabolic.normalizedSecondAdjointness` in
+`Langlands.Representation.Parabolic.SecondAdjointnessProof` proves. Thus
+`normalizedSecondAdjointness.2` proves the refined clause, with all of its
+admissibility hypotheses. The derivation runs as follows.
 
 1. Since `π.V` is nontrivial and `q` is surjective, `q ≠ 0`.
 2. Refined second adjointness gives a complex-linear equivalence
@@ -152,13 +161,25 @@ Its own Markdown records its provenance. The derivation runs as follows.
    `v`, gives the same conclusion.
 
 This route needs neither an injective Jacquet map nor an irreducible source.
-A future proof must establish each ingredient independently. In particular
-it must prove second adjointness, or obtain it from an accepted Library
-proof. It must also prove the nonzero-map and continuity steps. It may not
-add any of them as a hypothesis of this closed statement. The proposition
-definition above is not a theorem. The existing second-adjointness proof task
-`eb76bbde-911c-4875-9611-a11b9ba0300e` is a possible source of the first
-ingredient.
+None of its ingredients may be added as a hypothesis of this closed
+statement. The proposition definition above is not a theorem.
+
+## Proof status
+
+`Langlands.Exponents.refinedQuotientOppositeCharacter`, in
+`Langlands.Representation.Exponents.RefinedQuotientOppositeCharacterProof`,
+has type exactly `RefinedQuotientOppositeCharacterStatement.{uF,uV,uW}` and
+adds no hypothesis. It implements the four steps above, applying them to the
+actual quotient map `q` and the actual character `χ`. It obtains `E` from
+`Langlands.Parabolic.normalizedSecondAdjointness.{uF,uV,uW}.2` at the given
+`B` and `S`. The intertwining property of `E q`, combined with the scalar
+action of `χ`, gives the eigenvector, and `isGeneralizedEigencharacter_of_eigenvector`
+gives the second conjunct. For the open kernel, a private lemma uses the open
+stabilizer of that eigenvector in the smooth opposite Jacquet module
+(`T.isSmooth_normalizedRefinedOppositeJacquet`) and continuity of `z`, built from
+`Geometric.flattenedLeviEquivContinuous` and `GeneralLinear.scalarContinuous`.
+Second adjointness, the nonzero-map step and continuity are therefore proved,
+not assumed.
 
 ## Scope and boundaries
 

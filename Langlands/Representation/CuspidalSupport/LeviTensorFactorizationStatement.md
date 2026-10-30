@@ -4,7 +4,10 @@ Author: Worker 82.
 
 `Langlands.CuspidalSupport.PadicLeviCuspidalFactorizationStatement.{uF,uW,uV}`
 is a closed proposition definition. It is a derived theorem target; this pair
-proves neither tensor factorization nor existence of small realizations.
+proves neither tensor factorization nor existence of small realizations. The
+published theorem
+`Langlands.CuspidalSupport.padicLeviCuspidalFactorization.{uF,uW,uV}` (module
+[`LeviTensorFactorizationProof`](LeviTensorFactorizationProof.md)) proves it.
 
 ## Exact statement and constructions
 
@@ -81,16 +84,32 @@ The following retained originals were read directly on 2026-10-21.
   classification or support uniqueness assertion is included here.
 
 The published `Langlands.AdmissibleProductFactorizationStatement` in
-`Representation.Smooth.Factorization.TwoFactorStatement` is an existing
-proposition target for Flath's two-factor result, not a proved theorem. It
+`Representation.Smooth.Factorization.TwoFactorStatement` is the Library's
+proposition for Flath's two-factor result. It is proved by the published
+theorem `Langlands.admissibleProductFactorization` (module
+`Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof`). It
 provides factors in the original representation-carrier universe. Neither its
 truth nor a change of universe is assumed by the present statement.
 
-## Derived small-realization rationale and proof obligations
+## Derived small-realization rationale and proof outline
 
 The universe reduction is additional derived content, not a claim that the
-cited papers identify Lean universes. A concrete mathematical route is as
-follows; formal implementation of all these steps remains outstanding.
+cited papers identify Lean universes. The following mathematical route was
+written before the proof. The statement pair itself asserts none of these
+steps.
+
+The published proof `padicLeviCuspidalFactorization` composes three published
+theorems; its Markdown gives the exact Lean steps.
+`padicLeviAdmissibleFactorization` carries out step 1 and gives irreducible
+admissible factors in `uW`. `padicLeviTensorSupercuspidalReflection` carries
+out step 2 by the single-block quotient contraction route. Steps 3–5 are
+applied to each block factor separately through
+`Langlands.padicIrreducibleSmoothSmallRealization`. That proof obtains the
+countable orbit in step 4 from a countable dense subset of the
+second-countable block group, not by counting cosets. Supercuspidality is
+transferred to the realization by `GeneralLinear.isSupercuspidal_of_equiv`.
+The proof module tensors the factor equivalences with a private construction,
+`blockTensorEquiv`, and composes the result with the step 1 equivalence.
 
 1. Apply finite iteration of admissible product factorization to the actual
    product Levi. The p-adic block groups have the Hausdorff, locally compact,
@@ -138,5 +157,5 @@ This pair imports the existing `CuspidalSupport.LeviDefinitions`,
 their Lean or Markdown. It is complementary to forward tensor
 irreducibility/cuspidality and permutation association; it asserts only
 exhaustion. Compilation and complete declaration inspection establish that
-this is a well-formed closed proposition. Independent semantic review and
-publication are required, followed by a separate proof of this exact target.
+this is a well-formed closed proposition. Its proof is the separate theorem
+`padicLeviCuspidalFactorization`.

@@ -57,10 +57,17 @@ actual filtration of `E/F`, not a supplied filtration or group isomorphism.
 
 There is no assertion here that such a `t` exists. For the present `E/F`,
 existence is the separate published statement
-`Langlands.LocalClassField.PrimeTotallyRamifiedBreak`, which is not yet
-proved in the Library. The conclusion only
-needs the top/bottom pattern, so the statement does not name a restriction
-isomorphism between the two automorphism groups.
+`Langlands.LocalClassField.PrimeTotallyRamifiedBreak`. It is proved as
+`Langlands.LocalClassField.primeTotallyRamifiedBreak` (module
+`Langlands.ClassFieldTheory.Local.PrimeRamificationBreakProof`), with
+independent universes for the base and the extension. That theorem supplies a
+lower break `t` with the top/bottom pattern, the criterion `0 < t ↔ ell = p`,
+and the inverse-Herbrand formula. It does not give the comparison stated here,
+which is proved separately as
+`Langlands.LocalClassField.primeBreakUnramifiedBaseChange` (module
+`Langlands.ClassFieldTheory.Local.PrimeBreakUnramifiedBaseChangeProof`). The
+conclusion only needs the top/bottom pattern, so the statement does not name a
+restriction isomorphism between the two automorphism groups.
 
 ## Scalar maps and local structures
 

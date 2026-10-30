@@ -98,8 +98,16 @@ linear system `d` is very ample if
 In Milne's second step, `d` is the complete linear system `|3D|`. This module
 uses the complete linear system of `L`: every `s` in `Γ(X, L)` is allowed, and
 no subspace is chosen. A divisor `D` of `d` corresponds to a nonzero section
-`s` with `D` the zero divisor of `s`. Then `a ∈ D` means that `s` vanishes at
-`a`, which `VanishesAlong L x s` expresses for the `K`-point `x` at `a`.
+`s` through its zero subscheme `Z(s)`. This is the largest closed subscheme on
+which `s` vanishes, cut out locally by a local equation of `s` (Stacks Project,
+Lemma 31.15.9, Tag 02OR). The same lemma says that `Z(s)` is an effective
+Cartier divisor exactly when `s` is a regular section. On an integral `X`, such
+as Milne's varieties, every nonzero `s` is regular, so `Z(s)` is the divisor
+`D`. This module allows arbitrary `X`, where `Z(s)` need not be a divisor. For
+example, on `X = Spec K[ε]` with `ε² = 0`, the section `ε` of `O_X` is a zero
+divisor, and its zero subscheme is not an effective Cartier divisor. In every
+case `a ∈ Z(s)` means that `s` vanishes at `a`, which `VanishesAlong L x s`
+expresses for the `K`-point `x` at `a`.
 
 The following comparison is informal background, not formalized here. Let `K`
 be algebraically closed and let `X` be locally of finite type over `K`. Then
@@ -109,12 +117,23 @@ corresponds to a `K`-linear functional `v` on `m_x/m_x²`, and `π ≫ x` gives
 `v = 0`. Suppose `s` vanishes at `x`, and let `f ∈ m_x` be a local equation of
 `s` in a trivialization of `L` near `x`. Then the pullback `t*s` corresponds
 to `v(f mod m_x²) · ε`. So `t*s ≠ 0` says that `v` does not vanish on the class
-of `f`, which is Hartshorne's `t ∉ T_x(D)` for the zero divisor `D` of `s`.
+of `f`, that is, `t ∉ T_x(Z(s))` for the zero subscheme `Z(s)` of `s`. When
+`Z(s)` is the divisor `D`, this is Hartshorne's `t ∉ T_x(D)`.
 Hence `C₂`, for all nonzero `t` at `x`, says that no nonzero functional on
 `m_x/m_x²` annihilates the classes of the sections vanishing at `x`. That is,
-these sections span `m_x L_x / m_x² L_x`. In the same setting, `C₁` is Milne's
-item (a). Item (b) concerns nonzero tangent vectors, since the zero vector lies
-in every `T_a(D)`, and `C₂` quantifies over those.
+these sections span `m_x L_x / m_x² L_x`. In the same setting, `C₁` says that
+for distinct rational points `x` and `y` some section `s` has `x ∈ Z(s)` and
+`y ∉ Z(s)`. This is the zero-subscheme analogue of Milne's item (a). It is
+item (a) itself, for the complete linear system of `L`, when every `Z(s)` used
+is an effective Cartier divisor, that is, when the separating sections are
+regular. This holds when `X` is integral, because a section that does not vanish
+at `y` is nonzero. Without such a hypothesis the two conditions differ. For
+`X = Spec (K × K)` and `L = O_X`, the sections `(0, 1)` and `(1, 0)` separate
+the two rational points in either order, so `C₁` holds. But every regular
+element of `K × K` is a unit, so every effective Cartier divisor on `X` is
+empty, and no divisor separates the two points. Item (b) concerns nonzero
+tangent vectors, since the zero vector lies in every `T_a(D)`, and `C₂`
+quantifies over those.
 
 No equivalence between these predicates and the classical conditions, or with
 very ampleness, is proved or assumed here. The module also does not compare
@@ -141,3 +160,8 @@ Hartshorne's *Algebraic Geometry* is not registered in the project
 literature. It is cited only through Milne's statement of the criterion on
 pp.10–11. Milne's errata page (snapshot of 2026-10-25) lists no correction to
 Section 7.
+
+The facts about the zero subscheme `Z(s)` are from the Stacks Project,
+Lemma 31.15.9 (Tag 02OR), registered as
+`stacks-zero-scheme-cartier-02OR-2026-10-29`. They enter only the informal
+comparison, not the Lean definitions.

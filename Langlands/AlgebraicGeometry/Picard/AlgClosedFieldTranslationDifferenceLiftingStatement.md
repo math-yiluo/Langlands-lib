@@ -111,8 +111,10 @@ certificates or axioms.
   `pullbackTensorComparison f` is an isomorphism. `LineBundle.tensor` uses
   it only to show that the tensor product is again locally free of rank
   one. Pullback of modules commuting with tensor products is a standard
-  fact, but this Library statement currently has no published proof, so it
-  is an explicit premise here, as in the other actual-tensor statements.
+  fact, and the Library proves this statement as
+  `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso`. The proposition
+  nevertheless keeps `preservation` as an explicit premise, as in the other
+  actual-tensor statements; a proof can supply it with that theorem.
 - A section `x : Over.mk (𝟙 (Spec K)) ⟶ A.X` is a `K`-rational point of
   `A`. `GroupScheme.translation A.toGrp x` is
   `(Over.mkIdTerminal.from A.X ≫ x) * 𝟙 A.X`, the translation built from
@@ -259,7 +261,9 @@ this equivalence under two hypotheses. The first,
 `Langlands.SchemeModule.lineBundleResidueOpenComparison`. The second is
 local rank one of every actual tensor power `tensorPow L.obj n`, the
 separate statement
-`Langlands.AlgebraicGeometry.Picard.TensorPowLocallyFreeRankOneStatement`.
+`Langlands.AlgebraicGeometry.Picard.TensorPowLocallyFreeRankOneStatement`,
+available as the theorem
+`Langlands.AlgebraicGeometry.Picard.tensorPow_isLocallyFreeRankOne`.
 
 As used in a proof of this statement, `L.IsAmple` is a hypothesis. A proof
 along the source route must derive from it whatever ampleness consequences

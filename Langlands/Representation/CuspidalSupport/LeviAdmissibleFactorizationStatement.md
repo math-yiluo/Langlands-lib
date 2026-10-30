@@ -4,7 +4,11 @@ Author: Worker 278.
 
 `Langlands.CuspidalSupport.PadicLeviAdmissibleFactorizationStatement.{uF,uW}`
 is a closed proposition definition. It is a derived theorem target. This pair
-does not prove the factorization, and it assumes no two-factor theorem.
+does not prove the factorization, and it assumes no two-factor theorem. The
+published theorem
+`Langlands.CuspidalSupport.padicLeviAdmissibleFactorization.{uF,uW}` (module
+[`LeviAdmissibleFactorizationProof`](LeviAdmissibleFactorizationProof.md))
+proves it.
 
 ## Exact statement and constructions
 
@@ -108,23 +112,26 @@ Theorem 1(1.2) along the actual product decomposition of BZ77 section 2.2.
 The two-factor input is the published
 `Langlands.AdmissibleProductFactorizationStatement.{uG₁,uG₂,uV}` in
 `Langlands.Representation.Smooth.Factorization.TwoFactorStatement` (author
-Worker 44). That pair is a proposition target, not a proved theorem. Its exact
-proof is requested by task `ea7e032e-0818-4425-9fc4-6f30126f4fc4`, revision 2.
-Its factors lie in `ModuleCat.{uV} ℂ` with `uV` the source carrier universe.
-This is what keeps every iterated factor in `uW`.
+Worker 44). It is proved by the published theorem
+`Langlands.admissibleProductFactorization` (module
+`Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof`, task
+`ea7e032e-0818-4425-9fc4-6f30126f4fc4`). Its factors lie in `ModuleCat.{uV} ℂ`
+with `uV` the source carrier universe. This is what keeps every iterated factor
+in `uW`.
 
 The present pair does not import that two-factor pair. Its Lean statement
-neither assumes nor mentions it. A two-factor proposition is not a proof. A
-later proof of this exact target must use a proved and published closing
-theorem of the two-factor statement, or prove that content itself. It must not
-take `AdmissibleProductFactorizationStatement` as a hypothesis or assume the
-desired finite factorization. It must not use forward tensor irreducibility
-or admissibility (Flath (1.1), `AdmissibleExternalTensorStatement`) as a
+neither assumes nor mentions it. The proof `padicLeviAdmissibleFactorization`
+uses the proved theorem `admissibleProductFactorization`. It does not take
+`AdmissibleProductFactorizationStatement` as a hypothesis or assume the desired
+finite factorization. It does not use forward tensor irreducibility or
+admissibility (Flath (1.1), `AdmissibleExternalTensorStatement`) as a
 substitute for existence.
 
-A mathematical route is as follows. Its formal implementation remains
-outstanding; the identifications below are retained proof obligations, not
-facts asserted by this pair.
+The following mathematical route was written before the proof. The published
+proof follows it, as a finite induction over an arbitrary dependent family of
+Hausdorff, locally compact, totally disconnected groups, specialized to the
+block groups of `B`. Its Markdown gives the exact Lean steps. The statement
+pair itself asserts none of the identifications below.
 
 1. **Topological hypotheses.** For `T.topology`, each `GL_m(F)` and each finite
    product of them must be a Hausdorff, locally compact, totally disconnected
@@ -133,7 +140,9 @@ facts asserted by this pair.
    `generalLinearT2Space` and `generalLinearLocallyCompactSpace`, together with
    the Levi versions `leviTopologicalGroup`, `leviT2Space` and
    `leviLocallyCompactSpace`. Total disconnectedness of these groups is not
-   yet a named Library result and remains to be proved.
+   a public named Library result. The proof module proves it with private
+   lemmas (`fieldTotallyDisconnected`, `generalLinearTotallyDisconnected`,
+   `leviTotallyDisconnected`).
 2. **Continuous group reindexing.** For `B.length = r + 1`, construct a
    topological group isomorphism between `B.Levi F.Carrier` and the product
    `GL_{n₀}(F) × ∏_{j<r} GL_{n_{j+1}}(F)`, which separates the first block
@@ -168,11 +177,16 @@ facts asserted by this pair.
    `B.blockTensor (fun i => (A i).representation)` for the constructed
    family `A`.
 
-The project's all-open-subgroups admissibility convention differs from Flath's
-compact-open one. Bridging the two conventions belongs to the two-factor proof,
-as its own Markdown explains. Steps 2–6 then use only the project convention.
-If any of steps 1–5 needs a substantial reviewed construction, the proof
-worker should publish it as a separate definition or statement task first.
+Flath's proof works with compact open subgroups, while the project's
+admissibility predicate requires a finite-dimensional fixed space for every
+open subgroup. The published two-factor proof needs no comparison of these
+conventions: as its own Markdown explains, it proves both factors admissible
+directly in the all-open-subgroups sense. Steps 2–6 likewise use only the
+project convention.
+The group splittings and tensor identifications of steps 2, 4 and 5 were
+published separately in `Langlands.Representation.Tensor.FiniteEquivalences`
+(`FiniteTensor.headTailContinuous`, `FiniteTensor.headTailEquiv`,
+`FiniteTensor.evalOneContinuous` and `FiniteTensor.singletonEquiv`).
 
 ## Dependencies and remaining scope
 
@@ -185,11 +199,11 @@ changed. The environment is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`, environment
 `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
 
-The immediate consumer is the exhaustion proof task
-`334e2222-c3e9-47e3-b05c-2afe12f49e94` for
-`PadicLeviCuspidalFactorizationStatement`. That proof must still derive
-factorwise supercuspidality and independently smaller carriers. Neither is
-asserted here. Compilation and complete declaration inspection show only that
-this is a well-formed closed proposition with level parameters `uF`, `uW`.
-Independent semantic review and publication are required, followed by a
-separate proof of this exact target.
+The immediate consumer is `PadicLeviCuspidalFactorizationStatement`. Its
+published proof `Langlands.CuspidalSupport.padicLeviCuspidalFactorization`
+(module `LeviTensorFactorizationProof`, task
+`334e2222-c3e9-47e3-b05c-2afe12f49e94`) applies this theorem and derives
+factorwise supercuspidality and independently smaller carriers separately.
+Neither is asserted here. Compilation and complete declaration inspection show
+only that this is a well-formed closed proposition with level parameters `uF`,
+`uW`. Its proof is the separate theorem `padicLeviAdmissibleFactorization`.

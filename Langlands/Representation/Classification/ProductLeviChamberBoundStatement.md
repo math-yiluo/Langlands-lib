@@ -8,7 +8,13 @@ independent field and representation universes. It is a `Prop`-valued
 definition; nothing is proved here. It is an internal intermediate statement
 for the proof of
 [`GLProductLeviTemperedExponentSufficiencyStatement`](ProductLeviTemperedSufficiencyStatement.md)
-in task `ea9d1814-a777-42a1-9bf7-29b9b44dc87e`.
+in task `ea9d1814-a777-42a1-9bf7-29b9b44dc87e`. Both are now proved. The
+published theorem `Langlands.glProductLeviChamberCoefficientBound` (module
+[`ProductLeviChamberBoundProof`](ProductLeviChamberBoundProof.md)) proves
+this statement. The published `glProductLeviTemperedExponentSufficiency`
+(module `ProductLeviTemperedSufficiencyProof`) proves the sufficiency
+statement and uses the general form `ProductLeviChamber.chamber_bound` of
+the chamber bound.
 
 ## Exact statement
 
@@ -85,7 +91,15 @@ Waldspurger. The sign conventions agree: the positive chamber of printed
 p.239–240 for the upper Borel of each factor is `Antitone`, and its modulus is
 `δ₀(a(lam_j)) = delta T (lam_j)`.
 
-## Intended proof (not part of the statement)
+## Proof outline (not part of the statement)
+
+This outline was written before the proof. The published proof
+`glProductLeviChamberCoefficientBound` follows this route, and its Markdown
+gives the exact Lean steps. It uses compressed actions `Jacquet.compressedAction` on
+compact-open fixed vectors, bijectivity of the Jacquet map on the stable
+image (`Jacquet.refinedStableImageJacquetBijective`), a common eigenvector
+giving an open-kernel eigencharacter, and the power bound
+`EndomorphismBound.exists_endNorm_pow_le` for the spectral-radius step.
 
 Fix a compact open subgroup `K` of `M_C` fixing `v` and `ℓ` with an Iwahori
 factorization for every block refinement, and the finite-dimensional space
@@ -100,4 +114,5 @@ of the block-scalar centre then gives an open-kernel eigencharacter, and the
 hypothesis at the scalar `(ϖ, 1)` in block `j` yields
 `|α| ≤ δ_s^(1/2)`, `δ_s = q^(-k(C.size j - k))`. Gelfand's spectral-radius
 formula gives `‖A_s^m‖ ≤ c_s (δ_s^(1/2-η))^m`, and submultiplicativity gives
-the stated bound. All of these steps remain to be proved.
+the stated bound. All of these steps are proved in
+`ProductLeviChamberBoundProof`.

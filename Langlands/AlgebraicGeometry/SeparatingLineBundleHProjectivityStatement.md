@@ -87,7 +87,17 @@ statement relates to Milne's sentence as follows.
   closed field `K`. So the residue field of every closed point is `K` (Hilbert's
   Nullstellensatz), and the closed points are exactly the images of the
   rational points `x` with `x ≫ p = 𝟙 _`. Distinct closed points give distinct
-  rational points. Clause C₁ is therefore Milne's item (a).
+  rational points. Clause C₁ therefore says that for distinct closed points
+  `a` and `b` some section `s` has `a ∈ Z(s)` and `b ∉ Z(s)`. This is the
+  zero-subscheme analogue of Milne's item (a). It is item (a) itself, for the
+  complete linear system `Γ(X, L)`, when the separating sections are regular,
+  so that each `Z(s)` used is an effective Cartier divisor. This holds when `X`
+  is integral. Without such a hypothesis the two conditions differ. For
+  example, `X = Spec (K × K)` is finite, hence proper, over `K`. For
+  `L = O_X`, the sections `(0, 1)` and `(1, 0)` separate its two rational
+  points in either order, so C₁ holds. But every regular element of `K × K` is
+  a unit, so every effective Cartier divisor on `X` is empty, and no divisor
+  separates the two points.
 - Tangent vectors. A `K[ε]`-point `t` of `X` over `K` with `ι ≫ t = x` is the
   same as a `K`-linear functional `v` on the Zariski cotangent space
   `m_x/m_x²`, that is, a tangent vector at `x`. The point `π ≫ x` gives `v = 0`.
@@ -95,9 +105,14 @@ statement relates to Milne's sentence as follows.
   `L` near `x`, the pullback of `s` along `t` is `v(f mod m_x²) · ε`. So
   "`s` does not vanish along `t`" says `t ∉ T_a(Z(s))` for the zero subscheme
   `Z(s)` of `s`, which is Milne's `t ∉ T_a(D)` when `Z(s)` is the divisor
-  `D`. Clause C₂ is Milne's item (b) for nonzero tangent vectors; the
-  zero vector lies in every `T_a(D)`, so item (b) concerns only those.
-  Equivalently, the sections vanishing at `x` span `m_x L_x / m_x² L_x`.
+  `D`. Clause C₂ is therefore the zero-subscheme analogue of Milne's item (b)
+  for nonzero tangent vectors; the zero vector lies in every `T_a(D)`, so
+  item (b) concerns only those. Equivalently, the sections vanishing at `x`
+  span `m_x L_x / m_x² L_x`. It is item (b) itself when the separating
+  sections are regular, for example when `X` is integral. On
+  `X = Spec K[ε]` with `L = O_X`, the section `ε` vanishes at the only
+  rational point and not along any nonzero tangent vector there, so C₂ holds,
+  although every effective Cartier divisor on `X` is empty.
 - Base points. Clause C₀ is the base-point freeness that a linear system
   needs to define a morphism to projective space. For `X` with at least two
   rational points it follows from C₁; it is required separately so that

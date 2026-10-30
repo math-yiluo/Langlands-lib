@@ -130,7 +130,13 @@ Remarks on what is asserted:
   published `Langlands.Cohomology.ResolutionLiftStatement`, applied to the
   augmentation, which is a quasi-isomorphism by the published
   `Langlands.Cohomology.CokernelResolutionStatement` because `η` is monic.
-  Both are unproved statements.
+  The first is proved: `resolutionLiftStatement` in
+  `Langlands.Cohomology.AcyclicResolution.LiftProof` proves it at arbitrary object and
+  Hom universes. For an augmentation that is a quasi-isomorphism, it gives a lift
+  compatible with the augmentation and the uniqueness of such lifts up to homotopy.
+  `CokernelResolutionStatement` is not proved, so for the smooth Godement augmentation
+  the quasi-isomorphism hypothesis, and hence this application, still rests on that
+  open statement.
 - The degree-zero proposition is stated without separation or local
   compactness, because only left exactness of compact sections is involved.
 

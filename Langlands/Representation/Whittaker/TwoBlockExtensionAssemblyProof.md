@@ -48,6 +48,17 @@ formula. All three universe parameters are independent.
 
 This is an internal derivation from the imported Library results, rather than
 an additional claim extracted from the literature. The proof retains the
-explicit row-surjectivity family as its sole additional premise. An
-unconditional proof of that analytic family is still needed to discharge the
-unchanged parent target.
+explicit row-surjectivity family as its sole additional premise; this module
+does not import a proof of that family, and its theorem remains the
+conditional implication `TwoBlockExtensionAssemblyStatement`.
+
+That family is proved by the separate published theorem
+[`Langlands.HarmonicAnalysis.padicRowFourierSurjectivity`](../../HarmonicAnalysis/PadicRowFourierSurjectivityProof.md),
+in `Langlands.HarmonicAnalysis.PadicRowFourierSurjectivityProof`, for every
+`F : PadicField.{u} p`, every `T : F.TopologicalData` and every row
+dimension `d`, hence for `F.canonicalTopologicalData`. The separate published
+theorem
+[`Langlands.Whittaker.twoBlockWhittakerExtension`](TwoBlockExtensionProof.md),
+in `Langlands.Representation.Whittaker.TwoBlockExtensionProof`, applies the
+theorem of this module to that canonical specialization and proves the
+unconditional parent `TwoBlockWhittakerExtensionStatement.{uF, uV₁, uV₂}`.
