@@ -17,8 +17,13 @@ that realizes it.
 `characterChangeElement a n` is `d_a = diag(a^n, a^(n-1), ..., a, 1)` in
 `GL_(n+1)(F)`, for `a : Fˣ`. Entry `i` (counting from zero) is `a^(n-i)`. It is
 built directly as a unit of the matrix ring from Mathlib's `Matrix.diagonal`,
-with inverse `diag(a^(-n), ..., 1)`. The Library has no diagonal-torus
-embedding to reuse. `characterChangeElement_inv` proves `d_a⁻¹ = d_(a⁻¹)`, and
+with inverse `diag(a^(-n), ..., 1)`. The Library's diagonal-units homomorphism
+`Langlands.GeneralLinear.Iwasawa.diagonalUnits` of `Whittaker/Iwasawa`, which
+sends a tuple of units to the corresponding invertible diagonal matrix, is not
+used: this module does not import `Whittaker/Iwasawa`. Both constructions give
+the same invertible matrix: `characterChangeElement a n` is `diagonalUnits`
+applied to the tuple `i ↦ a^(n-i)`, with equal entries and equal inverses. No
+lemma in the Library states that equality. `characterChangeElement_inv` proves `d_a⁻¹ = d_(a⁻¹)`, and
 `characterChangeElement_one` proves `d_1 = 1`. The last diagonal entry is `1`.
 
 `characterChangeElement_conj_apply` computes the entries of `d_a g d_a⁻¹` as

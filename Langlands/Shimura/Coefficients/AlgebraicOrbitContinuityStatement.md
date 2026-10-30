@@ -1,6 +1,12 @@
 # Continuity of algebraic coefficient orbit maps
 
-Author: Worker 57. This is a proposition target, not a proof.
+Author: Worker 57. This is a proposition target, not a proof. Worker 1060
+updated the application and proof-status section after the 2026-10-29
+documentation audit (finding P3-040).
+
+The published theorem `Langlands.Shimura.Coefficients.algebraicOrbitContinuity`,
+in `Langlands.Shimura.Coefficients.AlgebraicOrbitContinuityProof`, proves this
+exact proposition.
 
 ## Exact assertion
 
@@ -27,24 +33,34 @@ to `S`. All three vector-space carriers and `S` lie in the declared universe;
 this respects the universe of algebra arguments in the published
 `AlgebraicRepresentation` definition.
 
-## Intended application and proof obligation
+## Application and published proof
 
 For a rational algebra with anti-involution, its scalar extension to a
 number field supplies `A` in this assertion. Taking `S` to be a finite-place
-completion would give the missing continuity hypothesis for the completed
-algebraic action in the coefficient-place construction. Composing with a
-continuous map from finite adelic points then gives continuous adelic orbit
-maps. Neither that specialization nor an invariant lattice is constructed by
-this statement.
+completion gives the continuity hypothesis for the completed algebraic action
+in the coefficient-place construction. The published module
+`Langlands.Shimura.Coefficients.AlgebraicCompactCoefficient` carries out this
+specialization. For `ρ : (σ.baseChange L).AlgebraicRepresentation W` over a
+number field `L` and a finite place `l`, `continuous_algebraicCoefficient_orbit`
+gives continuity of the local orbit maps over `FiniteCompletion L l`. For a
+finite place `p` of `ℚ` below `l`, `continuous_algebraicAdelicCoefficient_orbit`
+then gives continuous orbit maps for the action `ρ.placeAction p l` of the
+finite-adelic points `σ.FiniteAdelicPoints`.
+`algebraicCompactCoefficientLattice` and `algebraicCompactFiniteCoefficientAction`
+then supply this continuity to the compact-level stable lattice and its finite
+quotient-ring actions. This statement module itself constructs neither that
+specialization nor an invariant lattice.
 
-A possible proof uses a finite basis of `A` to construct a universal
-similitude over a quotient of a polynomial algebra, with coordinates for
-the element, its inverse, the multiplier and its inverse. Naturality
-expresses the coefficient action by evaluation of the universal action.
-Finite tensor expressions then make each orbit map continuous by continuous
-polynomial evaluation and the module topology. This is an unproved route,
-not an additional hypothesis. A proof must establish the exact declaration,
-including its general topological-ring and universe quantifiers.
+The published proof `algebraicOrbitContinuity` follows the route first
+recorded here. For a finite basis `b` of `A` it reuses the published coordinate
+ring `σ.similitudeCoordinateRing b`, a quotient of a polynomial algebra with
+coordinates for the element, its inverse, the multiplier and its inverse,
+together with its universal similitude. Naturality expresses the coefficient
+action by evaluation of the universal action. Induction on tensors then makes
+each orbit map continuous by continuous polynomial evaluation and the module
+topology. The proof establishes the exact declaration, including its general
+topological-ring and universe quantifiers, and adds no hypothesis; its own
+Markdown describes the steps.
 
 ## Derived provenance
 

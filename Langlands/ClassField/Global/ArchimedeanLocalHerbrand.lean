@@ -21,7 +21,8 @@ section Generic
 
 variable {k G : Type u} [CommRing k] [Group G]
 
-/-- A subquotient `ker φ ⧸ range ψ` is trivial when `ker φ` lies in the range of `ψ`. -/
+/-- The subquotient `Subquotient φ ψ = ker φ ⧸ (range ψ ∩ ker φ)` is trivial when `ker φ` lies in
+the range of `ψ`. -/
 theorem subsingleton_subquotient_of_forall {X : Type*} [AddCommGroup X] [Module k X]
     {φ ψ : X →ₗ[k] X} (h : ∀ x, φ x = 0 → x ∈ LinearMap.range ψ) :
     Subsingleton (Subquotient φ ψ) := by

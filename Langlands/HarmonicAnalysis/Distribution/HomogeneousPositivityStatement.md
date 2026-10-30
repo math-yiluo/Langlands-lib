@@ -1,8 +1,10 @@
 # Positive rational proportionality on compact open sets
 
 `Langlands.HarmonicAnalysis.Distribution.HomogeneousIndicatorProportionalityStatement.{uG, uX}`
-is an unproved proposition. The module defines this proposition as a `Prop`;
-it supplies no proof of it.
+is a proposition. The module defines this proposition as a `Prop` and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.Distribution.homogeneousIndicatorProportionality`
+proves it (see [Status](#status)).
 
 ## Statement and exact scope
 
@@ -70,6 +72,20 @@ strengthening of the indicator comparison in the published proof plan in
 `Langlands/HarmonicAnalysis/Distribution/HomogeneousVanishingStatement.md`.
 It is a separate target for the compact open orbit partition argument
 described there. It is not a verbatim theorem of Bernstein–Zelevinsky and
-does not identify invariant algebraic distributions with measures. The
-separate proof remains to be supplied; no partition or proportionality
-result is proved in this module.
+does not identify invariant algebraic distributions with measures. No
+partition or proportionality result is proved in this module.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.homogeneousIndicatorProportionality.{uG, uX}`
+in `Langlands.HarmonicAnalysis.Distribution.HomogeneousPositivityProof`, by
+the compact open orbit partition and positive rational counting argument
+described in [HomogeneousPositivityProof](HomogeneousPositivityProof.md). Its
+type is exactly `HomogeneousIndicatorProportionalityStatement.{uG, uX}`, with
+the same independent universes and no added hypothesis. The proof is artifact
+`ec24ad2f-ed4c-41f7-a91b-668e9f69120a` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `6d91111e6f9b7a27124b1de32a4984bbdd222a61`.
+It proves only the positive rational comparison stated here. The published
+theorem `homogeneousAntiInvariantVanishing` uses it.

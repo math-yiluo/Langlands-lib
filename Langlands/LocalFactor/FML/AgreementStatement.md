@@ -7,7 +7,9 @@ over `{p : ℕ}`, `[Fact p.Prime]`, `F : Langlands.PadicField.{u} p`, and
 `T : F.TopologicalData`.
 
 These are statement targets. This module supplies no proof of an agreement and
-does not choose conductors or construct certified character packages.
+does not choose conductors or construct certified character packages. The
+published proofs and packages that do are listed in
+[Published proofs and packages](#published-proofs-and-packages).
 
 ## Exact targets and hypotheses
 
@@ -80,8 +82,28 @@ The Library's existing specifications are `additiveConductor_spec`,
 `additiveTrivialAt_iff_le_conductor`, `multiplicativeConductor_spec`, and
 `multiplicativeTrivialAt_iff_conductor_le`, in
 `Langlands.PadicField.TopologicalData`. They motivate the conductor comparisons.
-Proving the four targets and then constructing canonical FML packages using
-those proofs is subsequent work.
+
+## Published proofs and packages
+
+All four targets are proved, outside this module, in
+`Langlands.LocalFactor.FML.AgreementProof`, at the same arbitrary universe
+`u`:
+
+| Theorem after `Langlands.FML.Padic.` | Proves |
+| --- | --- |
+| `latticeAgreement` | `LatticeAgreementStatement.{u}` |
+| `unitFiltrationAgreement` | `UnitFiltrationAgreementStatement.{u}`, every `k : ℕ`, including the zero layer |
+| `additiveConductorAgreement` | `AdditiveConductorAgreementStatement.{u}` |
+| `multiplicativeConductorAgreement` | `MultiplicativeConductorAgreementStatement.{u}` |
+
+The canonical FML packages are constructed in
+`Langlands.LocalFactor.FML.CanonicalPackages`.
+`localQuasiCharData T χ` packages a Library quasicharacter with its existing
+conductor `T.multiplicativeConductor χ`, certified by
+`multiplicativeConductorAgreement`. `localAddCharData T ψ` packages the
+transported character `FML.ofUnitaryAdditiveCharacter ψ` with
+`T.additiveConductor ψ`, certified by `additiveConductorAgreement`.
+Neither construction chooses a new conductor.
 
 ## Provenance and modifications
 

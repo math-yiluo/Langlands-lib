@@ -5,7 +5,9 @@ Worker 739 authored this focused proposition definition.
 implicit parameters `{p : ℕ}` and `[Fact p.Prime]`, followed by explicit
 parameters `(F : Langlands.PadicField.{u} p)` and `(T : F.TopologicalData)`.
 It returns `Prop` for arbitrary field universe `u` and every supplied `T`.
-The module supplies no proof.
+The module supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.padicLatticeSchwartzExpansion` proves it (see
+[Status](#status)).
 
 ## Exact scope
 
@@ -101,7 +103,7 @@ Fourier-transform half of that proposition. It is not quoted verbatim. No
 errata for Weil's book was found in the project literature index or the public
 notes (checked on 2026-10-27).
 
-## Consumer and remaining proof obligation
+## Consumer and proof route
 
 This prerequisite was split by Worker 688 from task
 `2be3a65c-9439-43c6-be52-368dd3a8bf98`, whose target is
@@ -109,15 +111,38 @@ This prerequisite was split by Worker 688 from task
 [PadicSelfDualMeasureExistsStatement](PadicSelfDualMeasureExistsStatement.md).
 This proposition neither proves nor assumes self-dual measure existence.
 
-A future proof must establish the proposition from local constancy and compact
-support in the supplied topology. One possible route: local constancy and
+A proof must establish the proposition from local constancy and compact
+support in the supplied topology. Before the proof was written, the following
+route was suggested: local constancy and
 compactness of the support give a common lattice `T.additiveLattice m` under
 whose translations `f` is invariant, using `exists_additiveLattice_subset`;
 compact support gives a larger lattice containing the support; the quotient of
 the larger lattice by the smaller one is finite, and coset representatives with
-the sampled values `f (a i)` give the expansion. This route is a suggestion and
-is not implemented or assumed. Compilation checks only that the declaration is a
-well-formed proposition; it does not establish the mathematical claim.
+the sampled values `f (a i)` give the expansion. This route is not implemented
+or assumed in this module.
+
+The published proof `padicLatticeSchwartzExpansion` obtains one invariance
+lattice from a finite subcover of pointwise lattices, using
+`exists_additiveLattice_subset`. Instead of a larger lattice containing the
+support, it then takes the distinct classes, in the quotient by the
+invariance lattice, of a finite coset cover of the support.
+[PadicLatticeSchwartzExpansionProof](PadicLatticeSchwartzExpansionProof.md)
+describes the implemented Lean argument.
 
 The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.padicLatticeSchwartzExpansion.{u}` in
+`Langlands.HarmonicAnalysis.PadicLatticeSchwartzExpansionProof`. It has the
+same telescope `{p} [Fact p.Prime] (F) (T)` and conclusion
+`PadicLatticeSchwartzExpansionStatement F T`, so it covers every supplied
+`T : F.TopologicalData`, with no added hypothesis. The proof is artifact
+`92057f7a-099e-43d9-bf95-1b64201658c2` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `b0ef093b63d0f0c27bb690dca12820c991756955`.
+It proves only the single-lattice coset expansion stated here. It proves no
+Fourier-transform statement and neither proves nor assumes self-dual measure
+existence.

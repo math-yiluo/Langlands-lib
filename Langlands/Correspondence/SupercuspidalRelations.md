@@ -45,10 +45,22 @@ hypothesis of that map is supplied by the published
 `isCharacterTwist_iff_eq_twist`, the published compatibility
 `toSmoothDualClass_twist` and injectivity of the inclusion. The open-kernel
 hypothesis is the published adapter's own hypothesis; this module does not
-prove it for every continuous `χ`. No statement about smooth duals of
-supercuspidal classes is made: that closure is the separate published
-statement `Langlands.GeneralLinear.SupercuspidalContragredientStatement` of the
-classification branch, which is not yet proved.
+prove it for every continuous `χ`. This module makes no statement about smooth
+duals of supercuspidal classes, and it does not import the contragredient
+results. That closure is the separate published statement
+`Langlands.GeneralLinear.SupercuspidalContragredientStatement` of the
+classification branch. It is proved by the published theorem
+`Langlands.GeneralLinear.supercuspidalContragredient`
+(`Representation/Classification/SupercuspidalContragredientProof`): the smooth
+contragredient of a smooth representation is supercuspidal exactly when the
+representation is, and, for admissible representations, irreducible exactly when
+the representation is. With that theorem as its argument, the published
+`Langlands.PadicField.SupercuspidalClass.contragredient` of
+`Representation/Classification/SupercuspidalContragredient` is an involution of
+`PadicField.SupercuspidalClass F n hn`; at `hn = n.pos` this is the class space
+`SupercuspidalAutomorphicClass F n` used here. This module
+does not prove an analogue of `isSupercuspidalCharacterTwist_iff_eq_twist`
+relating `IsSupercuspidalSmoothDual` to that map.
 
 ## Sources and provenance
 

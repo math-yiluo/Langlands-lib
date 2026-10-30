@@ -3,7 +3,10 @@
 `Langlands.HarmonicAnalysis.PadicLatticeGeometryStatement.{u}` is a Prop-valued
 definition. It states that every supplied topology on a finite extension of
 `ℚ_p` is totally disconnected and that every actual valuation lattice
-`T.additiveLattice m` is compact and open in it. The module supplies no proof.
+`T.additiveLattice m` is compact and open in it. The module supplies no proof
+of it; the separate published theorem
+`Langlands.HarmonicAnalysis.padicLatticeGeometry` proves it (see
+[Status](#status)).
 The proposition is a derived internal prerequisite, not a verbatim theorem of
 the cited sources.
 
@@ -156,10 +159,10 @@ pp. 14, 15, 31, 63, 74, 75 and to pages from p. 110 on. It lists none for
 printed p. 27, so it does not affect the cited Chapter II §1, Proposition 1.
 The Library has no `notes/errata` directory (checked on 2026-10-27).
 
-## Purpose and remaining proof obligation
+## Purpose and proof route
 
 Worker 688 split this prerequisite from task
-`2be3a65c-9439-43c6-be52-368dd3a8bf98` revision 2, which must prove
+`2be3a65c-9439-43c6-be52-368dd3a8bf98` revision 2, whose target is
 `Langlands.HarmonicAnalysis.PadicSelfDualMeasureExistsStatement` for every
 prime, every `PadicField.{u}` and every supplied `TopologicalData`. The first
 conjunct supplies that statement's total-disconnectedness certificate. The
@@ -167,8 +170,9 @@ second supplies compact open lattices at every level, as used for test
 functions and lattice volumes. This proposition does not change or prove that
 statement.
 
-A future proof must establish all three facts from the supplied data alone.
-Worker 180 suggested a route for total disconnectedness:
+A proof must establish all three facts from the supplied data alone. Before
+the proof was written, Worker 180 suggested a route for total
+disconnectedness:
 
 - import `Mathlib.Topology.Algebra.Nonarchimedean.TotallyDisconnected`;
 - obtain `NonarchimedeanRing F.Carrier` from `ValuativeRel.nonarchimedeanRing`,
@@ -183,9 +187,14 @@ For the lattices, one possible route is the following:
   `T.Integers` onto `T.additiveLattice m`;
 - combine this with `isCompact_integers` and `isOpen_integers`.
 
-These routes are suggestions. They are neither implemented nor assumed.
-Compilation checks only that the declaration is a well-formed proposition. It
-does not establish the mathematical claim.
+These routes are neither implemented nor assumed in this module. The
+published proof `padicLatticeGeometry` follows Worker 180's route for total
+disconnectedness. For the lattices it applies the published theorems
+`PadicField.TopologicalData.isCompact_additiveLattice` and
+`PadicField.TopologicalData.isOpen_additiveLattice`, whose proofs use the
+uniformizer-power description of the lattices.
+[PadicLatticeGeometryProof](PadicLatticeGeometryProof.md) describes the
+implemented Lean argument.
 
 ## Environment and authorship
 
@@ -193,3 +202,17 @@ The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. The module imports
 only `Langlands.HarmonicAnalysis.Conductor`. Worker 723 authored this pair from
 the formulation in task `8031460c-9263-44a4-a117-e80aed4f1458` revision 1.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.padicLatticeGeometry.{u}` in
+`Langlands.HarmonicAnalysis.PadicLatticeGeometryProof`. It has the same
+telescope `{p} [Fact p.Prime] (F) (T)` and conclusion
+`PadicLatticeGeometryStatement F T`, so it covers every supplied
+`T : F.TopologicalData` and every integer level `m`, with no added hypothesis.
+The proof is artifact `d4d3bd16-22c3-4fd2-9ebc-fc0d73167286` version 1. Its
+validation passed the Lake build and exact-target checks, an independent review
+approved it, and it was published at Library commit
+`a2f65909d0470e0c9b71d24975a4fb12723f855f`. It proves only the topological
+facts stated here, not `PadicSelfDualMeasureExistsStatement`.

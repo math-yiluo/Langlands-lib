@@ -55,15 +55,26 @@ gamma factor of every image pair exists.
 `SupercuspidalPairFactorCompatibility F eC ε hε c` and
 `SupercuspidalDualCompatibility F c` hold, then
 `SupercuspidalPairGammaCompatibility F eC ε hε c` holds, for the same system
-and the same map. It is a statement, not a theorem; its proof is a separate
-obligation. The intended proof applies the L condition to the duals
+and the same map. It is a statement, not a theorem; the Library contains no
+proof of it. The intended proof applies the L condition to the duals
 `σ^∨`, `τ^∨`, uses dual compatibility to identify their images with the
 contragredients of `c σ` and `c τ`, and then uses the JPSS functional
 equation to identify the JPSS gamma factor with
-`ε L(1 - s, π^∨ × τ^∨)/L(s, π × τ)`. That last identification, and the
-identification of the inverse-transpose pullback used by the published
-Rankin–Selberg modules with the smooth contragredient, are not proved in the
-Library.
+`ε L(1 - s, π^∨ × τ^∨)/L(s, π × τ)`. That last identification is not proved
+in the Library.
+
+The other comparison this route needs is proved. The published Rankin–Selberg
+modules use the inverse-transpose pullback `g ↦ π(ᵗg⁻¹)`, while dual
+compatibility uses the actual smooth contragredient. The published theorem
+`Langlands.gelfandKazhdanContragredient` proves that, for an irreducible
+admissible representation of `GL_(n+1)(F)`, the two are equivalent.
+`RankinSelberg/SmoothDualPairFactors` turns this into the chosen equivalence
+`RankinSelberg.inverseTransposeSmoothDualEquiv`. It also proves
+`RankinSelberg.isPadicSymmetricLPolynomial_inverseTranspose_iff_smoothContragredient`
+and its epsilon and gamma analogues: each symmetric L, epsilon or gamma relation
+of two irreducible admissible representations holds for their inverse-transpose
+pullbacks exactly when it holds for their smooth contragredients. This module
+does not import these results.
 
 ## Sources and provenance
 

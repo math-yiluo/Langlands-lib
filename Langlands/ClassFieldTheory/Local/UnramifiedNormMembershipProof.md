@@ -18,7 +18,8 @@ The final theorem has no Galois hypothesis or additional proof premise.
 
 ## Implemented proof
 
-The private helper `mem_unitFiltration_zero_of_ord_eq_zero` constructs an
+The public helper
+`Langlands.PadicField.TopologicalData.mem_unitFiltration_zero_of_ord_eq_zero` constructs an
 integer-ring unit from a field unit of order zero. The element and its inverse
 have normalized absolute value one, so both belong to the supplied integer
 ring. Their inverse identities construct the integer-ring unit. Reduction
@@ -38,7 +39,7 @@ which exhibits the required divisibility. Conversely, write
 `T.ord a = [E:F] * k`. The published `S.ord_surjective_nonzero` supplies a
 nonzero element of order `k`, hence a field unit `b` of that order.
 Multiplicativity of order, its inverse formula, and the norm-order identity
-show that `a / N(b)` has order zero. The private helper places this quotient
+show that `a / N(b)` has order zero. The helper places this quotient
 in `T.unitFiltration 0`. Surjectivity on that group supplies a unit `c` with
 `N(c) = a / N(b)`, and multiplicativity gives `N(c * b) = a`.
 

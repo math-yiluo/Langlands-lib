@@ -1,6 +1,7 @@
 # Congruence-group towers and finite quotient-ring coefficient actions
 
-Author: Worker 57.
+Author: Worker 57. Worker 1060 updated the orbit-continuity status paragraph
+after the 2026-10-29 documentation audit (finding P3-040).
 
 This module connects the published integral congruence kernels to the actions
 over the actual quotient coefficient rings. It constructs their group tower,
@@ -88,10 +89,19 @@ the published openness of the congruence kernel in the compact level; module
 finiteness comes from `FiniteReduction`. The group transitions, faithfulness
 and coefficient equivariance above apply to this same lattice.
 
-The separate algebraic orbit-continuity statement remains a proof obligation;
-this module retains `hρ` exactly. It does not identify these congruence quotients
-with geometric deck groups, construct a tower of scheme covers, or prove local
-triviality of an associated sheaf. It also asserts neither that the intersection
+This module retains `hρ` exactly, as an explicit hypothesis. The separate
+algebraic orbit-continuity statement `AlgebraicOrbitContinuityStatement` is
+proved by the published theorem `algebraicOrbitContinuity`. The published module
+[AlgebraicCompactCoefficient](AlgebraicCompactCoefficient.md) supplies `hρ` as
+`continuous_algebraicCoefficient_orbit ρ l`: its
+`algebraicCompactCoefficientLattice` is `compactStableCoefficientLattice` with
+that argument, and `algebraicCompactFiniteCoefficientAction` and
+`algebraicCompactFiniteCoefficientAction_finite` give the corresponding finite
+quotient-ring actions and their finiteness without a continuity hypothesis.
+
+This module does not identify these congruence quotients with geometric deck
+groups, construct a tower of scheme covers, or prove local triviality of an
+associated sheaf. It also asserts neither that the intersection
 of all kernels is trivial nor that the original level equals the inverse limit.
 
 ## Derived provenance

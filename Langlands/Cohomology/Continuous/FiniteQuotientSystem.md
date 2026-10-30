@@ -48,16 +48,30 @@ separate cochain comparison; that conversion is not asserted here.
 `DiscreteModule.restrict` restricts the joint action along a subgroup's
 continuous inclusion, preserving the discrete coefficient topology.
 `continuousRestriction` is defined by Mathlib's `ContinuousCohomology.map`
-for that inclusion with identity coefficient map. Thus the eventual transfer
-laws will use the existing restriction map.
+for that inclusion with identity coefficient map. The continuous transfer
+laws cited below use this restriction map.
 
 The algebraic diagram is defined for any representation and any topological
 group carrier; compactness is needed to conclude that its quotients are
-finite, and profiniteness and the continuous discrete action are needed
-for the intended comparison. No comparison is assumed or supplied by
-the definition of this colimit. The comparison with Mathlib's nested
-continuous homogeneous-cochain homology and the transfer laws remain
-separate proof obligations.
+finite. No comparison is assumed or supplied by the definition of this
+colimit. The comparison with Mathlib's nested continuous homogeneous-cochain
+homology is a separate result. `FiniteQuotientComparisonIsIso` in
+`FiniteQuotientComparisonStatement.lean` states that the canonical map
+`finiteQuotientComparison A q` is an isomorphism for every commutative ring
+k with a topology, every compact, locally compact topological group G, every
+`A : DiscreteModule k G` and every natural degree q, all in one universe.
+`finiteQuotientComparisonIsIso` in `FiniteQuotientComparisonProof.lean`
+proves it. The comparison uses the discrete topology and the jointly
+continuous action carried by A, but it assumes neither total
+disconnectedness nor the Hausdorff property of G. Serre's setting, the
+compact and totally disconnected Galois group of a possibly infinite Galois
+extension, is therefore a motivating special case rather than a hypothesis.
+For example, the circle group is compact, locally compact and connected but
+not profinite; the theorem applies to it, and its only open normal subgroup
+is the whole group. The transfer laws are also separate results:
+`restrictionComparisonLaws` in `RestrictionComparisonProof.lean` for
+restriction, and `continuousCorestrictionLaws` in
+`CorestrictionLawsProof.lean` for corestriction over compact G.
 
 All ring, group and coefficient carriers inhabit arbitrary `Type u`.
 This follows the common-universe requirement of pinned `groupCohomology`;
@@ -81,5 +95,5 @@ There are no project mathematical imports. The prepared environment is
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 This definition contribution supplies the system and the basic continuous maps.
-The remaining comparisons and transfer laws require their own exact statements,
-checked proofs, independent semantic review and publication.
+The comparison and transfer laws cited above are stated and proved in their
+own modules, which build on this one; this module does not depend on them.

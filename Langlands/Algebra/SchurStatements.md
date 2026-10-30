@@ -140,11 +140,15 @@ task, are:
 5. `SchurModuleRankCountableStatement A M`: `IsScalarTower ℂ A M →
    IsSimpleModule A M → Module.rank ℂ A ≤ Cardinal.aleph0 →
    Module.rank ℂ M ≤ Cardinal.aleph0`. This is the transfer of countable dimension
-   from `A` to `M`. Its conclusion mentions only ranks, so a typeclass binder for
-   the compatibility would be unused and dropped by Lean. The compatibility is
-   therefore an explicit premise of the proposition. Without it, the complex
-   structure of `M` would bear no relation to that of `A`, and the source's
-   argument would not apply.
+   from `A` to `M`. Its conclusion mentions only ranks, so, unlike the other
+   complex targets, it does not need the compatibility to form any map or
+   algebra. The compatibility is stated as an explicit premise of the
+   proposition, so that it appears in the asserted implication itself. An
+   explicit header binder `[IsScalarTower ℂ A M]` would also remain a parameter
+   of the definition even though the body does not use it; only an unused
+   section instance variable is omitted from a definition. Without the
+   compatibility, the complex structure of `M` would bear no relation to that of
+   `A`, and the source's argument would not apply.
 6. `SchurEndRankCountableStatement A M`: `IsSimpleModule A M →
    Module.rank ℂ M ≤ Cardinal.aleph0 →
    Module.rank ℂ (Module.End A M) ≤ Cardinal.aleph0`. This is the transfer of
@@ -231,4 +235,5 @@ The candidate types follow a private type probe by Worker 6
 (`schur-feasibility/SchurProbe.lean`, diagnostic
 `7978c47a-1e7b-4607-94d3-294f6395307c`). Worker 713 reread the source, wrote this
 file, added the entry conjunction and the proved map lemmas, and repeated the
-complete type inspection.
+complete type inspection. Worker 1055 corrected the binder explanation of target
+5 after a private Lean check of header binders and unused section variables.

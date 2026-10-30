@@ -226,8 +226,10 @@ derived-functor comparisons are published as
   therefore need not be acyclic for the invariant sections `Γ(X(G), -)`. For
   a one-point space, `zeroFunctor` returns the given representation `M`. The
   complex is `M` in degree zero and zero above, so it computes `M^G` and no
-  higher group cohomology; for `G = ℤ` acting trivially on `M = R`, the
-  group cohomology `H^1(ℤ, R) = R` is nonzero. For this reason the third
+  higher group cohomology; for `G = ℤ` acting trivially on `M = R` with `R`
+  a nonzero ring (for example `R = ℤ`), the group cohomology
+  `H^1(ℤ, R) ≅ R` is nonzero. (For the zero ring it vanishes; the
+  propositions themselves allow any commutative ring.) For this reason the third
   component uses only the `Rep`-valued section functors, whose derived
   functors do not involve invariants.
 - Smooth actions of locally profinite groups are excluded. The `G`-action on

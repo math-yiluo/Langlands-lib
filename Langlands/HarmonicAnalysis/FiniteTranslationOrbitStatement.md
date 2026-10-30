@@ -2,7 +2,9 @@
 
 `Langlands.HarmonicAnalysis.FiniteTranslationOrbitStatement.{uG}` is a
 Prop-valued definition. The module states a finite-dimensional fact about
-translation orbits of finite functions and supplies no proof. It is a
+translation orbits of finite functions and supplies no proof of it; the
+separate published theorem `Langlands.HarmonicAnalysis.finiteTranslationOrbit`
+proves it (see [Status](#status)). It is a
 derived internal interface for the valuation-shell recurrence route to the
 one-variable Mellin target `Langlands.RankinSelberg.OneVariableMellinStatement`.
 It is not a separately numbered result of the cited literature. It does not
@@ -117,21 +119,42 @@ records only the finite-dimensional orbit facts. Using it for
 convergence, continuation or denominators remains the parent proof's
 obligation.
 
-## Remaining proof obligation
+## Proof route
 
-A later exact-target proof task must prove this proposition from the
-stated hypotheses alone. One possible route is the following, which is a
-suggestion and not something assumed or implemented here. Let `V` be the
+The following route was suggested before the proof was written; it is not
+assumed or implemented in this module. Let `V` be the
 finite-dimensional translation span. Left multiplication by `t` in the
 argument, `f ↦ (a ↦ f (t * a))`, preserves `V` and is invertible on it.
 Its characteristic polynomial, by Cayley–Hamilton, then gives a
 recurrence that is uniform in evaluation points and shifts. Finitely many
 evaluation points separating `V` give a norm on `V`. Powers of the
 operator and its inverse are exponentially bounded, and continuity of the
-basis functions bounds the coordinates on compact sets. Compilation
-checks only that the declaration is a well-formed proposition
-(`statement_returns_prop`). It does not establish the mathematical
-theorem.
+basis functions bounds the coordinates on compact sets.
+
+The published proof `finiteTranslationOrbit` follows this route for the
+recurrence, using Cayley–Hamilton for the restricted translation operator.
+For growth it does not use a norm on `V` or bounds on operator powers.
+Instead it applies an elementary recurrence estimate to `t` and `t⁻¹`
+separately, with initial values bounded on the compact set by continuity.
+[FiniteTranslationOrbitProof](FiniteTranslationOrbitProof.md) describes the
+implemented Lean argument.
 
 Worker 277 authored this pair from the task contract's formulation, which
 was requested for Worker 656's one-variable Mellin proof route.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.finiteTranslationOrbit.{uG}` in
+`Langlands.HarmonicAnalysis.FiniteTranslationOrbitProof`. Its type is exactly
+`FiniteTranslationOrbitStatement.{uG}`, with the same arbitrary universe and
+no added hypothesis. The proof is artifact
+`af428e16-007c-44a3-9821-6b052f1cc993` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `4021bb1d1ec99e65990e08addda3ade7caa73058`.
+It proves only the uniform recurrence and compact-set growth stated here,
+for arbitrary topological groups and including the edge cases listed above.
+It proves no Mellin convergence, rational continuation or denominator
+statement. The one-variable Mellin target
+`Langlands.RankinSelberg.OneVariableMellinStatement` is a separate
+proposition.

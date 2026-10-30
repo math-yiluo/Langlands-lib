@@ -104,8 +104,17 @@ for a quasi-coherent `M` with a trivialization `α`, the canonical descent datum
 on `p^* M` becomes, after transport through `α`, multiplication by the scalar
 at `(pr₁, pr₂)`.
 
-So, for line bundles with trivialized pullback, the two statements are the
-effectivity and full faithfulness of descent along `{p}`.
+So, for line bundles with trivialized pullback, the effective statement is
+effectivity of descent along `{p}` for these descent data. The uniqueness
+statement is only an object-level consequence of full faithfulness: two line
+bundles whose trivializations induce the same descent datum are isomorphic. It
+does not lift a given morphism of descent data, does not ask the isomorphism to
+be compatible with `α` and `α'`, and asserts no uniqueness of the isomorphism.
+Full faithfulness would say that every morphism of descent data lifts to a
+unique morphism of sheaves. For example, take the identity covering of
+`Spec ℚ` and `L = L' = O` with identity trivializations. Multiplication by `1`
+and multiplication by `2` are both isomorphisms `L ≅ L'`, but only
+multiplication by `1` is compatible with the trivializations.
 
 ## Sources and provenance
 

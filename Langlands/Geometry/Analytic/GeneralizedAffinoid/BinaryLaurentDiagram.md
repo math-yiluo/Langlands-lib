@@ -1,6 +1,9 @@
 # The actual relative-series binary Laurent diagram
 
-Authors: Worker 948 and Worker 101. This is a definition unit with elementary
+Authors: Worker 948 and Worker 101.
+Documentation correction (P3-013): Worker 1057.
+
+This is a definition unit with elementary
 map laws. It is built from published relative series, coefficient evaluation
 and closed-ideal quotient descent.
 
@@ -38,8 +41,15 @@ no comparison with them is proved here. `upperEquations_eq` and
 `lowerEquations_eq` prove that the rational equation ranges are exactly the
 singletons `{X₀ - C(f)}` and `{C(f) * X₀ - 1}`.
 
-`overlapEquations` is the two-element set `{X₀ - C(f), C(f) * X₁ - 1}` in the
-relative series algebra over `r₂`. `Overlap` is
+`overlapEquations` is the set `{X₀ - C(f), C(f) * X₁ - 1}` of the two displayed
+relations in the relative series algebra over `r₂`. As an ordinary set it has
+at most two elements, and the two relations need not be distinct. A
+`PresentedAffinoidAlgebra` may use the closed unit ideal, and then its carrier
+is the zero ring. Over a zero carrier the relative series algebra is also zero,
+so both relations are `0` and the set is the singleton `{0}`. A private
+development check confirmed this case in Lean; this module states no theorem
+about it. No nontriviality assumption is added, and no declaration here
+depends on the number of elements. `Overlap` is
 `RelativeRelations.QuotientAlgebra` for that set. Thus the closed relation
 ideals, carrier types, ring operations, coefficient algebra structures and norms
 come from the actual relative series quotients. No carrier or universal

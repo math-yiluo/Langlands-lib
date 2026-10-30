@@ -1,8 +1,10 @@
 # Anti-invariant distributions on homogeneous spaces vanish
 
 `Langlands.HarmonicAnalysis.Distribution.HomogeneousAntiInvariantVanishingStatement.{uG, uX}`
-is the following unproved proposition. This module defines the proposition and
-supplies no proof.
+is the following proposition. This module defines the proposition and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.Distribution.homogeneousAntiInvariantVanishing`
+proves it (see [Status](#status)).
 
 ## Statement
 
@@ -51,8 +53,9 @@ positivity argument. It is designed for the proof of
 a verbatim source statement:
 
 - It asserts only that a `σ`-anti-invariant invariant distribution vanishes.
-  This is the special case of the conclusion `σT = T` that the intended proof
-  uses after replacing `T` by `T - σ_* T`.
+  This is the special case of the conclusion `σT = T` that the published
+  proof of the transpose statement needs after replacing `T` by
+  `T - σ_* T`.
 - It assumes nothing about `σ`. The source needs condition b) of Theorem 6.13
   to make `σ_* T` again invariant; here that invariance is part of the
   hypotheses on `D`.
@@ -60,8 +63,8 @@ a verbatim source statement:
 
 ## Why the proposition is true
 
-This sketch is a plan for the separate proof, not a claimed Lean theorem.
-Fix `x : X`. By Mathlib's `isOpenMap_smul_of_sigmaCompact`, the orbit map
+This sketch was written as the plan for the proof; this module does not
+prove it. Fix `x : X`. By Mathlib's `isOpenMap_smul_of_sigmaCompact`, the orbit map
 `g ↦ g • x` is open, so for every compact open subgroup `K` of `G` the set
 `K • x` is compact and open. These sets form a neighbourhood basis at `x`,
 and translating them gives one at every point. In particular `X` is totally
@@ -80,3 +83,24 @@ complex number `a`.
 Apply this to `U = σ ⁻¹ (K • x)`. The identity `σ_* D = -D` gives
 `r_U * a = -a`, so `(r_U + 1) * a = 0` and `a = 0`. Then `D` vanishes on every
 indicator of a compact open set, hence on every test function.
+
+The published proof `homogeneousAntiInvariantVanishing` follows this
+argument. The positive rational comparison of indicator values is the
+separate proposition `HomogeneousIndicatorProportionalityStatement`, proved
+by the published theorem `homogeneousIndicatorProportionality`, and the
+anti-invariance step is then a short algebraic deduction.
+[HomogeneousVanishingProof](HomogeneousVanishingProof.md) describes the
+implemented Lean argument.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.homogeneousAntiInvariantVanishing.{uG, uX}`
+in `Langlands.HarmonicAnalysis.Distribution.HomogeneousVanishingProof`. Its
+type is exactly `HomogeneousAntiInvariantVanishingStatement.{uG, uX}`, with
+the same independent universes and no added hypothesis. The proof is artifact
+`0dcd54e0-fdea-4fd5-a15c-904ca2bb3ec0` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `914d13e3395c5a4417f36ffd7646c45c721a4b3e`.
+It proves only the vanishing stated here. It does not identify invariant
+distributions with measures or prove Example 6.12 of Bernstein–Zelevinsky.

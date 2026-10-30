@@ -1,9 +1,13 @@
 # Cumulative-product coordinates for the JPSS torus
 
-`Langlands.RankinSelberg.RootCoordinateChangeStatement F T n` is an
-unproved proposition for every p-adic field, every supplied topological data
-`T`, and every natural number `n`. The matrix rank is `n + 1`, including rank
-one. The field universe is unrestricted.
+`Langlands.RankinSelberg.RootCoordinateChangeStatement F T n` is a
+proposition for every p-adic field, every supplied topological data `T`, and
+every natural number `n`. The matrix rank is `n + 1`, including rank one. The
+field universe is unrestricted. This module supplies only the proposition
+definition; it is proved, with exactly these parameters, by
+`Langlands.RankinSelberg.rootCoordinateChange` in
+[RootCoordinateProof](RootCoordinateProof.md), as recorded in the final
+section.
 
 Write `r = n + 1` and use zero-based indices. On the torus
 `A = (F×)^r`, the two explicitly specified maps are
@@ -24,9 +28,9 @@ the valuation and topology from `T`, and its Borel measurable structure. Let
 `dA` be the finite product measure `Measure.pi` of these measures. The target
 asserts `Measure.map τ dA = dA`. Each factor's integral-unit subgroup has
 mass one. This normalization matters: `τ` and `ρ` preserve the product of
-integral-unit groups, so Haar uniqueness can give the asserted equality
-without an unspecified scalar. This paragraph explains the intended
-justification; it does not claim a formal proof has been supplied.
+integral-unit groups, so Haar uniqueness gives the asserted equality
+without an unspecified scalar. This is the argument implemented by the
+published proof.
 
 For each `a`, put `D(a) = Iwasawa.diagonalUnits (τ a)`. The remaining clauses
 state the explicit formulas needed by the integral:
@@ -45,7 +49,7 @@ state the explicit formulas needed by the integral:
 These formulas keep the modulus itself positive and un-inverted. The
 quotient-Iwasawa integral uses its inverse. No quotient integration formula,
 Whittaker expansion, convergence, rationality, or denominator result is
-asserted by this statement.
+asserted by this statement or established by its proof.
 
 The provenance is derived from Jacquet–Piatetski-Shapiro–Shalika,
 *Rankin–Selberg Convolutions* (1983), proof of Theorem 2.7, printed pp. 391–392.
@@ -60,3 +64,24 @@ count the pairs of indices across each simple root.
 Source: `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`,
 printed pp. 391–392, displays (3)–(6).
+
+## Proof in the Library
+
+The theorem `Langlands.RankinSelberg.rootCoordinateChange` has type
+
+```lean
+{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
+  (T : F.TopologicalData) (n : ℕ) :
+  RootCoordinateChangeStatement F T n
+```
+
+for an arbitrary universe `uF`. Its type adds no hypothesis, so every clause
+above holds for every supplied topology and every rank `n + 1`: continuity,
+the two inverse identities and multiplicativity, `Measure.map τ dA = dA`, the
+simple-root and final coordinates, the determinant and last-row formulas,
+and the positive-modulus formula. These are coordinate facts only.
+Integration on the left-unipotent quotient is the separate
+`QuotientIwasawaIntegrationStatement`, proved by
+`quotientIwasawaIntegration`, and its transport to these coordinates is the
+separate conditional `QuotientRootIntegrationStatement`. Convergence of the
+JPSS Rankin–Selberg integrals is not part of this result.

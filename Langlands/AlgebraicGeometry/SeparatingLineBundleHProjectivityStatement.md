@@ -74,8 +74,15 @@ statement relates to Milne's sentence as follows.
 
 - Linear system. The linear system is the complete one, `Γ(X, L)`: every
   global section of `L` may be used, as for Milne's `|3D|`. A divisor `D` of
-  the system is the zero divisor of a nonzero section `s`, and `a ∈ D` means
-  that `s` vanishes at `a`.
+  the system corresponds to a nonzero section `s` through its zero subscheme
+  `Z(s)`, the largest closed subscheme on which `s` vanishes. `Z(s)` is an
+  effective Cartier divisor exactly when `s` is a regular section (Stacks
+  Project, Lemma 31.15.9, Tag 02OR). This holds for every nonzero `s` when `X`
+  is integral, as Milne's varieties are, but not on every proper `X`. For
+  example, `X = Spec K[ε]` with `ε² = 0` is finite, hence proper, over `K`,
+  and the section `ε` of `O_X` is a zero divisor whose zero subscheme is not
+  an effective Cartier divisor. In every case `a ∈ Z(s)` means that `s`
+  vanishes at `a`.
 - Closed points. `X` is proper, hence of finite type, over the algebraically
   closed field `K`. So the residue field of every closed point is `K` (Hilbert's
   Nullstellensatz), and the closed points are exactly the images of the
@@ -86,8 +93,9 @@ statement relates to Milne's sentence as follows.
   `m_x/m_x²`, that is, a tangent vector at `x`. The point `π ≫ x` gives `v = 0`.
   If `s` vanishes at `x` with local equation `f ∈ m_x` in a trivialization of
   `L` near `x`, the pullback of `s` along `t` is `v(f mod m_x²) · ε`. So
-  "`s` does not vanish along `t`" is Milne's `t ∉ T_a(D)` for the zero divisor
-  `D` of `s`. Clause C₂ is Milne's item (b) for nonzero tangent vectors; the
+  "`s` does not vanish along `t`" says `t ∉ T_a(Z(s))` for the zero subscheme
+  `Z(s)` of `s`, which is Milne's `t ∉ T_a(D)` when `Z(s)` is the divisor
+  `D`. Clause C₂ is Milne's item (b) for nonzero tangent vectors; the
   zero vector lies in every `T_a(D)`, so item (b) concerns only those.
   Equivalently, the sections vanishing at `x` span `m_x L_x / m_x² L_x`.
 - Base points. Clause C₀ is the base-point freeness that a linear system
@@ -151,3 +159,8 @@ Hartshorne's *Algebraic Geometry* is not registered in the project
 literature, so it is cited only through Milne's sentence on pp.10–11.
 Milne's errata page (snapshot of 2026-10-25) lists no correction to the
 pages containing Section 7.
+
+The facts about the zero subscheme `Z(s)` are from the Stacks Project,
+Lemma 31.15.9 (Tag 02OR), registered as
+`stacks-zero-scheme-cartier-02OR-2026-10-29`. They enter only the informal
+identifications, not the Lean statement.

@@ -119,14 +119,24 @@ the bases and the component algebras are the identity. In that case
 `map_comm` forces the two transition maps to agree. Remark 00QW does not
 apply here.
 
-The published proof module `Langlands.Algebra.LocalAlgebraApproximationExistence`
+The published module `Langlands.Algebra.LocalAlgebraApproximationExistence`
 already defines finite-set subrings
 `LocalAlgebraApproximationExistence.gen C A` and their unit-fraction
 localizations `LocalAlgebraApproximationExistence.locSub C A`. It proves
 these are local, have local inclusions into `R`, and are essentially of
 finite type over `ℤ`. A later proof may reuse them, for example with
-`C = ∅`. That module also proves 00QV; this proposition is the base-ring step
-of the source argument and is not meant to be derived from 00QV.
+`C = ∅`. That module also builds the concrete system attached to a
+presentation and proves the conditional assembly
+`LocalAlgebraApproximationExistence.exists_isApproximation`. That theorem
+still takes the prime-localization clause for those systems as its
+hypothesis `h4`. The unconditional Stacks 00QV result is
+`Langlands.Algebra.localAlgebraApproximationExistence`, in the proof
+companion `Langlands.Algebra.LocalAlgebraApproximationExistenceProof`. It
+proves `LocalAlgebraApproximationExistenceStatement` by supplying `h4` from
+`LocalAlgebraApproximationExistence.Pres.isPrimeLocalization_system` in
+`Langlands.Algebra.LocalAlgebraApproximationTransition`. This proposition is
+the base-ring step of the source argument and is not meant to be derived
+from 00QV.
 
 ## Internal universe packaging
 

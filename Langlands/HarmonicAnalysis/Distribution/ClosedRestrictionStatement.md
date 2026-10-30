@@ -1,8 +1,10 @@
 # Restriction of Schwartz–Bruhat functions to closed subsets is surjective
 
 `Langlands.HarmonicAnalysis.SchwartzBruhat.ClosedRestrictionSurjectiveStatement.{u}`
-is the following unproved proposition. This module defines the proposition and
-supplies no proof.
+is the following proposition. This module defines the proposition and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.SchwartzBruhat.closedRestrictionSurjective` proves
+it (see [Status](#status)).
 
 ## Statement
 
@@ -85,9 +87,10 @@ Hausdorff, locally compact, totally disconnected space. Its meaning does not
 rely on the source's manifold structure or its proof by localization. No
 errata for this passage are recorded in the project's notes.
 
-## Intended proof route (not proved here)
+## Proof route
 
-A later proof task is expected to argue directly. A function `g` in
+This plan was written before the proof; this module does not prove it. A
+function `g` in
 `SchwartzBruhat Z` takes finitely many values, and each nonzero value is taken
 on a compact open subset of `Z`. In `X`, compact open sets form a basis of the
 topology, so each such subset is the trace on `Z` of a compact open subset of
@@ -95,8 +98,13 @@ topology, so each such subset is the trace on `Z` of a compact open subset of
 ambient open set whose trace on `Z` is that subset. Making these finitely many
 ambient sets disjoint and taking the corresponding finite combination of their
 indicator functions gives an extension of `g` that is zero outside a compact
-open set. This route is a plan, not something this unit proves; each step must
-be checked against the actual Mathlib API in the proof.
+open set.
+
+The published proof `closedRestrictionSurjective` argues directly along these
+lines, with one difference: it does not make the ambient compact clopen lifts
+disjoint. They may overlap away from `Z`, which does not affect the
+restriction. [ClosedRestrictionProof](ClosedRestrictionProof.md) describes the
+implemented Lean argument.
 
 ## Consumers
 
@@ -104,4 +112,20 @@ The proposition is intended as the closed-restriction input for the Whittaker
 multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`), the
 Shalika distribution-invariance proof (task
 `f79ca82c-d050-4ffa-821b-c347b60e36e0`) and the finite-orbit vanishing proof
-(task `51a122ec-9363-4c38-9df9-593ffdb99219`).
+(task `51a122ec-9363-4c38-9df9-593ffdb99219`). The published proofs
+`Langlands.HarmonicAnalysis.Distribution.finiteOrbitAntiInvariantVanishing`
+and `Langlands.HarmonicAnalysis.Distribution.closedSupportedDescent` use
+`closedRestrictionSurjective`.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.SchwartzBruhat.closedRestrictionSurjective.{u}` in
+`Langlands.HarmonicAnalysis.Distribution.ClosedRestrictionProof`. Its type is
+exactly `ClosedRestrictionSurjectiveStatement.{u}`, with no added hypothesis.
+The proof is artifact `9f1d0056-dabe-4632-a2e4-dc0bcdf368e1` version 1. Its
+validation passed the Lake build and exact-target checks, an independent review
+approved it, and it was published at Library commit
+`a2f65909d0470e0c9b71d24975a4fb12723f855f`. It proves only the surjectivity of
+`restrictClosed hZ` stated here. The distribution consequences listed under
+[Scope](#scope) are separate propositions.

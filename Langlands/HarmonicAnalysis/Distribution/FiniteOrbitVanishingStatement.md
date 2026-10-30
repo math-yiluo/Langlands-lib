@@ -1,8 +1,10 @@
 # Anti-invariant distributions supported on finitely many orbits vanish
 
 `Langlands.HarmonicAnalysis.Distribution.FiniteOrbitAntiInvariantVanishingStatement.{uG, uX}`
-is the following unproved proposition. This module defines the proposition and
-supplies no proof.
+is the following proposition. This module defines the proposition and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.Distribution.finiteOrbitAntiInvariantVanishing`
+proves it (see [Status](#status)).
 
 ## Statement
 
@@ -54,7 +56,8 @@ open invariant subset on which the action is regular. Theorem 6.10
 The present proposition is an internal variant of this orbit-by-orbit step for
 a closed invariant set made of finitely many orbits. It is designed for the
 proof of `Langlands.GeneralLinearConjugationDistributionTransposeStatement`,
-where `Z` will be a fiber of the characteristic-polynomial map. It differs
+and that published proof applies it with `Z` a fiber of the map to the
+characteristic-polynomial coefficients. It differs
 from the source in these ways:
 
 - Constructiveness of the action is replaced by the hypothesis that `Z` is a
@@ -67,8 +70,8 @@ from the source in these ways:
 
 ## Why the proposition is true
 
-This sketch is a plan for the separate proof, not a claimed Lean theorem.
-The closed set `Z` is locally compact and Hausdorff, and `G` acts on it with
+This sketch was written as the plan for the proof; this module does not
+prove it. The closed set `Z` is locally compact and Hausdorff, and `G` acts on it with
 finitely many orbits. The published `Langlands.Topology.FiniteOrbitOrdering`
 orders these orbits so that the union of the first `k` of them is open in `Z`
 for each `k`. Remove the orbits one at a time in this order; at each stage
@@ -86,3 +89,28 @@ shows that this distribution is zero. Hence `D` vanishes on test functions
 supported in `W`, so `D` is supported in the smaller closed invariant set
 `Z' \ O`. After finitely many steps `D` is supported in the empty set and is
 zero.
+
+The published proof `finiteOrbitAntiInvariantVanishing` follows this
+orbit-removal induction, with these differences in detail. It obtains a
+relatively open orbit from the published
+`Langlands.Topology.FiniteOrbitProof.exists_relOpen_orbit` and inducts on the
+number of supported orbits. It first descends `D` to the closed support,
+using the published theorem `SchwartzBruhat.closedRestrictionSurjective`, and
+then restricts to the open orbit by extension by zero. On the orbit it applies
+the published theorem `homogeneousAntiInvariantVanishing`.
+[FiniteOrbitVanishingProof](FiniteOrbitVanishingProof.md) describes the
+implemented Lean argument.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.finiteOrbitAntiInvariantVanishing.{uG, uX}`
+in `Langlands.HarmonicAnalysis.Distribution.FiniteOrbitVanishingProof`. Its
+type is exactly `FiniteOrbitAntiInvariantVanishingStatement.{uG, uX}`, with
+the same independent universes and no added hypothesis. The proof is artifact
+`2cc18a52-13df-4784-b7eb-a58602ee13bc` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `00be69b7f127e77ee2fd0511ffe34c48595b64d4`.
+It proves only the vanishing stated here, under the finite-orbit hypotheses
+above. It is not a formalization of the constructive-action Theorems 6.9,
+6.10 or 6.13 of Bernstein–Zelevinsky.

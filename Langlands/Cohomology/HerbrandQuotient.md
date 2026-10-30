@@ -84,9 +84,20 @@ Mathlib's existing `Rep.FiniteCyclicGroup` API instead of a separate Tate-cohomo
   `G` nontrivial.
 - **Degrees.** Only the ordinary groups `H¹ = groupCohomology A 1` and
   `H² = groupCohomology A 2` occur. Tate cohomology is not used.
-- **Finiteness.** Every cardinality statement comes with explicit `Finite` hypotheses or
-  conclusions. The rational quotient form is used only when both groups are finite, so
-  `Nat.card = 0` for infinite types never makes a statement vacuous.
+- **Finiteness.** Five auxiliary cardinality identities have no finiteness hypotheses:
+  `card_eq_card_ker_mul_card_range`, `card_hexagon`, `CompatibleExact.card_subquotients`,
+  `CompatibleExact.card_subquotients_rat` and `card_subquotient_mul_card_range`. They are
+  identities of Lean's totalized `Nat.card`, which is `0` on infinite types, and can hold for
+  that reason alone: for `f = id` on `ℤ`, `card_eq_card_ker_mul_card_range` reads
+  `0 = 1 · 0`. Apart from deriving one another, they are applied in this module only together
+  with finiteness hypotheses, in `finite_of_exact`, `card_subquotient_eq_of_finite` and
+  `CompatibleExact.hasSubquotientRatio_mid`, `_left` and `_right`. Every other cardinality
+  statement comes with explicit `Finite` hypotheses or conclusions: `HasSubquotientRatio` and
+  `HasHerbrandQuotient` include finiteness of both groups, and the `natCard_*` theorems
+  assume or conclude finiteness (in `natCard_groupCohomology_two_trivialIntegers`, the
+  hypothesis `[Finite G]` makes `Nat.card G` positive). The rational quotient form is used only
+  when both groups are finite, so for these statements `Nat.card = 0` for infinite types does
+  not make them vacuous.
 - **Short exact sequences** are Mathlib's `S : ShortComplex (Rep k G)` with
   `hS : S.ShortExact`. The terms are `S.X₁ → S.X₂ → S.X₃`.
 

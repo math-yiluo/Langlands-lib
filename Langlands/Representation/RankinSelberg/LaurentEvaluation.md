@@ -63,7 +63,7 @@ not vanish.
 The two facts are proved together by Mathlib's induction principle
 `LaurentPolynomial.induction_on_mul_T`. It writes every Laurent polynomial as
 `p.toLaurent * T (-n)`, with `p` a polynomial and `n` a natural number. Such an
-element maps to the quotient `p / X ^ n` of embedded polynomials. The private
+element maps to the quotient `p / X ^ n` of embedded polynomials. The public
 lemma `regular_and_eval_div` treats an arbitrary quotient `N / D` with
 `D.eval z ≠ 0`. The reduced denominator of `N / D` divides `D`
 (`RatFunc.denom_div_dvd`), so it does not vanish at `z`. The value is computed

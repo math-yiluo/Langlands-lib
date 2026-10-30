@@ -2,8 +2,11 @@
 
 `Langlands.RankinSelberg.QuotientIwasawaIntegrationStatement` states the
 Iwasawa measure identity on the actual left quotient
-`N_(n+1) \ GL_(n+1)(F)`. This module supplies one proposition definition;
-it supplies no proof of that proposition.
+`N_(n+1) \ GL_(n+1)(F)`. This module supplies one proposition definition
+and no proof. The proposition is proved, with exactly its parameters, by
+`Langlands.RankinSelberg.quotientIwasawaIntegration` in
+[QuotientIwasawaIntegrationProof](QuotientIwasawaIntegrationProof.md); see
+the final section.
 
 The parameters are every prime `p`, `F : PadicField.{uF} p`, supplied
 `T : F.TopologicalData`, and natural `n`, so the actual rank is `n+1`.
@@ -61,8 +64,7 @@ for nonnegative measurable functions, including functions with infinite
 integral. Conversely, such an identity for all nonnegative measurable
 functions determines the measure by taking indicators of measurable sets.
 Measurability of the coordinate map and density is a consequence of their
-continuous group and absolute-value constructions; checking this and proving
-the measure identity are future proof obligations. The stated equality has
+continuous group and absolute-value constructions. The stated equality has
 no complex integrability premise and therefore supports absolute-convergence
 arguments. It is not restricted to compactly supported integrands.
 
@@ -83,14 +85,40 @@ quotient scale relative to the latter two measures. Accordingly there is
 no free scalar in the conclusion. The normalization can be checked on the
 image of `K`: averaging its indicator over `N` gives the indicator of that
 image because `N ∩ K` has mass one, while ordinary diagonal integral units
-have product mass one and modulus one. This explains the scalar choice;
-formal extension of the Weil formula and this calculation remain part of
-the future proof.
+have product mass one and modulus one. This explains the scalar choice.
+The published proof does not use this heuristic calculation; it fixes the
+scalar through the same mass-one normalizations, as its Markdown explains.
 
 The published `UnipotentQuotient` construction and uniqueness theorem already
 provide compatible measures with this scale. The algebraic
 `GeneralLinear.Iwasawa.exists_iwasawa` supplies decompositions but does not
-prove this integration identity. The missing analytic identity is precisely
-the new target. All constructions in this file are local bindings within
-its Prop-valued definition; no additional public non-Prop declarations or
-changes to existing Library pairs are introduced.
+by itself prove this integration identity. All constructions in this file
+are local bindings within its Prop-valued definition; no additional public
+non-Prop declarations are introduced.
+
+## Proof in the Library
+
+The theorem `Langlands.RankinSelberg.quotientIwasawaIntegration` has type
+
+```lean
+{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
+  (T : F.TopologicalData) (n : ℕ) :
+  QuotientIwasawaIntegrationStatement F T n
+```
+
+for an arbitrary universe `uF`. It therefore proves the identity above for
+every supplied topological data `T`, every rank `n+1` including rank one,
+and every compatible measure on the actual left-unipotent quotient, under
+the unipotent right-invariance instance retained by the proposition. Its type
+adds no hypothesis. The torus-sum identity
+`Langlands.RankinSelberg.iwasawaTorusSum` is supplied inside the proof, so
+no torus-sum premise remains for consumers.
+
+The proved result is only the ordinary-diagonal quotient formula above. It
+is not an Iwasawa formula for Haar measure on the ambient group
+`GL_(n+1)(F)`. The cumulative-product reparameterization of p391 equation
+(4) is the separate `RootCoordinateChangeStatement`, and its transport of
+this quotient formula is the separate conditional
+`QuotientRootIntegrationStatement`, whose explicit premise is this
+proposition. Convergence of the JPSS Rankin–Selberg integrals, as on p392,
+is not asserted or proved here.

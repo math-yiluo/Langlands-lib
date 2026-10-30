@@ -317,7 +317,18 @@ discreteness consequence of Corollary 1.5.2(i): `H^q_c(U(ẽ)_{F̄}, ℤ/ℓ^m �
   formalized here.
 - Compatibility with connecting morphisms is not stated (see above).
 - Softness of `D⁰`, Berkovich's Proposition 1.5.1, appears only in the truth
-  argument. No `c`-softness predicate for equivariant sheaves is published.
+  argument; it is not stated in Lean. A `c`-softness predicate is published:
+  `Langlands.Sheaf.CompactSoft.IsCSoft` on ordinary module sheaves, which
+  applies to an equivariant sheaf through its underlying sheaf.
+  `SmoothGodementZeroCSoftStatement` in `Langlands.Cohomology.CompactSoft.Statement`
+  applies it to the sheaf underlying `smoothZeroFunctor R G X M` (through
+  `smoothForget`), and `smoothGodementZeroCSoft` in
+  `Langlands.Cohomology.CompactSoft.SmoothZeroProof` proves that statement.
+  That object is the smooth coinduction of the ordinary degree-zero Godement
+  sheaf of `M`, not the `D⁰(M)` of the truth argument, the smooth part of the
+  equivariant degree-zero Godement sheaf of `M`. No identification of the two
+  is claimed. The `c`-softness of `D⁰(M)` is not stated, and that published
+  theorem proves neither proposition of this module.
 - The spectral sequence of Corollary 1.5.2(i), Corollary 1.5.2(ii) on ringed
   spaces, and the relative versions of Corollary 1.5.3 are not stated.
 - `compactCohomology` is not replaced by Worker 13's `smoothCompactCohomology`,

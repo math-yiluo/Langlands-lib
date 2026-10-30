@@ -192,10 +192,17 @@ satisfied by unrelated isomorphisms.
 The source says these assertions follow easily from the 3-by-3 lemma
 A.VI.2(8). That lemma is stated separately in
 `Langlands.CategoryTheory.RenardThreeByThreeBottomRowStatement`. This module
-neither imports nor assumes it. These definitions are statements awaiting proof:
-the file assumes none of their conclusions and contains no proof declarations.
-A later proof may use the 3-by-3 lemma or any other valid route. Its own Markdown
-must record which route it takes.
+neither imports nor assumes it. These definitions are statements only: the file
+assumes none of their conclusions and contains no proof declarations.
+
+The aggregate `NoetherIsomorphismsStatement C` is proved for every abelian
+category `C` by `noetherIsomorphisms` in the separate proof module
+`Langlands.CategoryTheory.RenardNoetherIsomorphisms`, from its components
+`nestedQuotientIso`, `secondIso` and `complementarySubobjectsSum`. Those proofs
+target exactly the statements above, so they keep the cokernel normalizations of
+the first two and the actual coproduct map `coprod.desc A.arrow B.arrow` of the
+third. As its Markdown records, that proof does not use the 3-by-3 lemma. It uses
+exactness of short complexes and the lattice structure of `Subobject X`.
 
 ## Coverage boundary
 

@@ -1,6 +1,7 @@
 # Finite étaleness of the roots-of-unity coordinate algebra
 
-Author: Worker 427.
+Author: Worker 427. Worker 1060 updated the proof-status paragraph after the
+2026-10-29 documentation audit (finding P3-039).
 
 `Langlands.GroupScheme.MuCoordinateAlgebraStatement.{u}` is the proposition
 
@@ -45,7 +46,8 @@ The retained Tag 03PL comments are part of the reading: Comment 7888 explains
 why invertibility is required, and Comment 8155 states that the natural numbers
 in that section are positive. Thus Lean's `0 < n` explicitly records the source
 convention. This is a mathematical derivation of a statement, not an implemented
-Lean proof of the calculation.
+Lean proof of the calculation. The implemented proof is the separate published
+theorem described below.
 
 The registered source is `stacks-mu-finite-etale-2026-10-23`, retained as
 `literature/Stacks Project - Roots of unity and the Kummer finite etale calculation (2026-10-23)/`.
@@ -64,9 +66,12 @@ no finite or étale instances. It imports only unchanged Mathlib modules and doe
 not change any existing group-scheme construction or statement.
 
 The quotient is the algebraic input for an affine comparison with the published
-`Langlands.GroupScheme.mu`. An exact-target proof of this algebra statement,
-the affine comparison, and the local-to-global assembly needed for
-`Langlands.GroupScheme.MuFiniteEtaleStatement` remain separate obligations.
+`Langlands.GroupScheme.mu`. All three steps are published theorems in
+separate modules: `Langlands.GroupScheme.muCoordinateAlgebra` proves this exact
+algebra statement, `Langlands.GroupScheme.muAffinePresentation` proves the
+affine comparison `MuAffinePresentationStatement`, and
+`Langlands.GroupScheme.muFiniteEtale` performs the local-to-global assembly
+proving `Langlands.GroupScheme.MuFiniteEtaleStatement`.
 The existing Edixhoven–van der Geer–Moonen Chapter III Examples 2–3 citation
 is construction provenance for the imported multiplicative group-scheme work;
 it is not the source of the finite-étale assertion stated here.

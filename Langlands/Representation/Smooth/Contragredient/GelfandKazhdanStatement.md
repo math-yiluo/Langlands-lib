@@ -1,7 +1,10 @@
 # Gelfand–Kazhdan realization of the smooth contragredient
 
-`Langlands.GelfandKazhdanContragredientStatement.{uF,uV}` is an unproved
-proposition. For every prime `p`, finite p-adic extension
+`Langlands.GelfandKazhdanContragredientStatement.{uF,uV}` is a `Prop`-valued
+definition; this module proves nothing. The proposition is proved by the
+published theorem `Langlands.gelfandKazhdanContragredient` in
+`Langlands.Representation.Smooth.Contragredient.GelfandKazhdanProof` (see
+Status below). For every prime `p`, finite p-adic extension
 `F : PadicField.{uF} p`, natural number `n`, and complex representation
 `rho` on `V : Type uV` of the actual group `GL_(n+1)(F)`, it asserts:
 if `rho` is admissible and irreducible, there is a complex linear equivalence
@@ -59,8 +62,10 @@ Indeed both sides are `rho(s_r theta(g)) v`. Thus, if `E_s` intertwines
 statement. Conversely, composing `E` with `I inverse` gives `E_s`.
 This is an elementary convention conversion, not an extra hypothesis or an
 identification of the signed matrix with the unsigned long Weyl matrix.
-The present module records only the resulting proposition; it does not
-formalize either the deep theorem or this explanatory conversion proof.
+The present module records only the resulting proposition. The deep theorem
+is proved in a separate module (see Status below). That proof establishes the
+displayed inverse-transpose form directly, so this explanatory conversion is
+not formalized in the Library.
 
 The consumer convention is Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin-Selberg Convolutions*, American Journal of Mathematics 105 (1983),
@@ -82,7 +87,18 @@ This module defines one `Prop`-valued target and proves no representation
 equivalence. The original proof uses equality of distribution characters,
 conjugation invariance, invariance under transposition, and character
 separation. None is assumed as an axiom or supplied by defining this target.
-The later proof remains a separate obligation.
+
+The published theorem
+`Langlands.gelfandKazhdanContragredient : GelfandKazhdanContragredientStatement.{uF,uV}`,
+in `Langlands.Representation.Smooth.Contragredient.GelfandKazhdanProof`, proves
+exactly this proposition, with the same independent universes and no added
+hypothesis. It follows the character route: the conditional assembly
+`Langlands.gelfandKazhdanContragredient_of_character_inputs` (module
+`GelfandKazhdanAssembly`) is applied to the published theorems
+`Langlands.characterSeparation` and
+`Langlands.generalLinearConjugationDistributionTranspose`. That proof module
+describes the argument. The equivalence it supplies is existential and carries
+no normalization.
 
 The module reuses `Langlands.Group.GL.Maps` and
 `Langlands.Representation.Smooth.Contragredient.Definitions`; their imports
@@ -90,6 +106,8 @@ supply the actual p-adic fields, inverse transpose, admissibility and smooth
 dual. Mathlib supplies complex scalars, representations and irreducibility.
 No existing statement or imported definition is changed. In particular,
 `GenericContragredientStatement` retains its genericity hypothesis and its
-additional inverse-character Whittaker-functional conclusion. This stronger
-realization statement supplies only the equivalence needed for that future
-assembly; it makes no independent assertion about Whittaker functionals.
+additional inverse-character Whittaker-functional conclusion. Its published
+proof `Langlands.genericContragredient` (module
+`Langlands.Representation.Whittaker.GenericDualProof`) uses the proved
+realization theorem and transports the Whittaker functional separately. The
+present statement makes no assertion about Whittaker functionals.

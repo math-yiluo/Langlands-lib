@@ -52,7 +52,7 @@ theorem laurentEval_smul (x : ℂˣ) (c : ℂ) (a : LaurentCoefficients) :
 
 /-- A quotient of polynomials whose denominator does not vanish at `z` is
 regular at `z`, with the expected value. -/
-private theorem regular_and_eval_div (z : ℂ) (N D : ℂ[X]) (hD : D.eval z ≠ 0) :
+theorem regular_and_eval_div (z : ℂ) (N D : ℂ[X]) (hD : D.eval z ≠ 0) :
     (algebraMap ℂ[X] RationalFunctions N / algebraMap ℂ[X] RationalFunctions D).denom.eval z
         ≠ 0 ∧
       RatFunc.eval (RingHom.id ℂ) z

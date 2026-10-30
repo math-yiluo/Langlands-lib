@@ -1,8 +1,10 @@
 # Localization of equivariant distributions along an invariant map
 
 `Langlands.HarmonicAnalysis.Distribution.EquivariantLocalizationStatement.{uX, uY, uI}`
-is the following unproved proposition. This module defines the proposition and
-supplies no proof.
+is the following proposition. This module defines the proposition and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.Distribution.equivariantLocalization` proves it
+(see [Status](#status)).
 
 ## Statement
 
@@ -57,9 +59,9 @@ constant sheaf of locally constant functions, designed for the proof of
 from the source in these ways:
 
 - Group invariance is replaced by equivariance under an arbitrary family of
-  fiber-preserving homeomorphisms with arbitrary scalar factors. The intended
-  use takes the conjugations with factor `1` together with the transpose with
-  factor `-1`.
+  fiber-preserving homeomorphisms with arbitrary scalar factors. The
+  published proof of the transpose statement takes the conjugations with
+  factor `1` together with the transpose with factor `-1`.
 - A distribution on the fiber is replaced by a distribution on `X` supported
   in the fiber, which avoids restriction maps to the fiber. When `X` is an
   l-space these are the same thing by the exact sequence of Proposition 1.8
@@ -69,8 +71,8 @@ from the source in these ways:
 
 ## Why the proposition is true
 
-This sketch is a plan for the separate proof, not a claimed Lean theorem.
-Let `N` be the linear span of the test functions `f ∘ h i - χ i • f`, and let
+This sketch was written as the plan for the proof; this module does not
+prove it. Let `N` be the linear span of the test functions `f ∘ h i - χ i • f`, and let
 `I_y` be the test functions vanishing on `q ⁻¹ {y}`. A distribution vanishes on
 `N` exactly when it satisfies all the equivariance identities. The fiber
 hypothesis says that no nonzero linear functional vanishes on `N + I_y`, so
@@ -85,3 +87,24 @@ is compact and open, and its image under `q` is a compact set not containing
 in `N`. Finitely many such `V` cover the compact set `q(supp f)`. Refining them
 to a finite disjoint family of compact open sets and summing shows `f ∈ N`.
 Hence every equivariant distribution is zero.
+
+The published proof `equivariantLocalization` follows this algebraic
+localization argument, with one difference: it does not refine the clopen
+neighbourhoods to a disjoint family. It combines the finitely many cutoffs by
+an inclusion–exclusion identity for the cutoff of a union instead.
+[LocalizationProof](LocalizationProof.md) describes the implemented Lean
+argument.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.equivariantLocalization.{uX, uY, uI}`
+in `Langlands.HarmonicAnalysis.Distribution.LocalizationProof`. Its type is
+exactly `EquivariantLocalizationStatement.{uX, uY, uI}`, with the same
+independent universes and no added hypothesis. The proof is artifact
+`8f3e3767-6c71-4b9e-a9f7-73744cd5d0f3` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `d1e92cc3fedd601726630b19e4e6d1a9dc84b2cd`.
+It proves only the localization stated here. It does not formalize the
+l-sheaf statements Proposition 2.36 or Corollary 2.37 of
+Bernstein–Zelevinsky.

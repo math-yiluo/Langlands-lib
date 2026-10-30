@@ -44,8 +44,9 @@ theorem normalizedInductionFiltration_subrepresentation
         (twist (T.parabolicHalfModulus B) (σ.comp (B.leviProjection F.Carrier)))
         (s.subrepresentation i).toSubmodule := rfl
 
-/-- A graded piece of the induced filtration is the actual normalized induction
-of any smooth representation equivalent to the corresponding Levi quotient. -/
+/-- For a smooth Levi representation `σ`, a graded piece of the induced filtration
+is the actual normalized induction of any smooth representation equivalent to the
+corresponding Levi quotient. -/
 theorem nonempty_normalizedInductionFiltrationGradedEquiv
     (σ : Representation ℂ (B.Levi F.Carrier) V)
     {m : ℕ} (s : ObjectRepFiltration (Rep.of σ) m) (i : Fin m)
@@ -62,8 +63,9 @@ theorem nonempty_normalizedInductionFiltrationGradedEquiv
     (normalizedInducedSurjectivity_of_smoothInductionSurjectivity T B
       Induction.smoothInductionSurjectivity) hσ hπ e
 
-/-- The actual graded representation of normalized induction is equivalent to
-the normalized induction of the actual graded representation. -/
+/-- For a smooth Levi representation `σ`, the actual graded representation of
+normalized induction is equivalent to the normalized induction of the actual
+graded representation. -/
 def normalizedInductionFiltrationGradedEquiv
     (σ : Representation ℂ (B.Levi F.Carrier) V)
     {m : ℕ} (s : ObjectRepFiltration (Rep.of σ) m) (i : Fin m) :

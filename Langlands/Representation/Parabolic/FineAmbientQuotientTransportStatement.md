@@ -2,7 +2,10 @@
 
 `Langlands.FineAmbientQuotientTransportStatement.{uF,uV,uW,uZ}` is an internal
 algebraic transport target for the actual normalized induction constructions.
-This file defines the proposition and supplies no proof.
+This file defines the proposition and supplies no proof. The proof
+`Langlands.fineAmbientQuotientTransport`, whose type is exactly this
+proposition at the same four universes, is in the companion
+`Langlands.Representation.Parabolic.FineAmbientQuotientTransportProof`.
 
 ## Statement
 
@@ -55,8 +58,9 @@ quotient of the coarse outer induction to the fine ambient induction used in
 that reflection nor supported recovery, and it is distinct from nested
 induction inside a product Levi.
 
-The intended proof composes existing Library results. The published
-`Langlands.refinedLeviRealTwist` turns `q₀` into a surjection from the inner
+The proof `Langlands.fineAmbientQuotientTransport` composes existing Library
+results. The published `Langlands.refinedLeviRealTwist` turns `q₀` into a
+surjection from the inner
 induction of `fineTwist T B S ω v₀ t` onto `T.leviRealPowerTwist B t π.ρ`.
 Normalized parabolic induction preserves smooth surjections by
 `Langlands.Parabolic.normalizedInducedSurjectivity_of_smoothInductionSurjectivity`
@@ -70,5 +74,5 @@ That equivalence needs a smooth input, which smoothness of `ω` supplies.
 The coordinate identification is
 `Langlands.GeneralLinear.BlockShape.leviRefinementEquiv_flatten` in
 `Langlands.Representation.Parabolic.ComposedFlattenedInductionProof`; no
-arbitrary Levi equivalence is an input. This route is planning information
-only: no proof of this proposition is published.
+arbitrary Levi equivalence is an input. The companion proof Markdown
+`FineAmbientQuotientTransportProof.md` describes the implemented proof.

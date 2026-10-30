@@ -153,7 +153,12 @@ end Abelian
 
 /-- Specialization `w = max u v`: since `Subobject X : Type (max u v)`, the
 subtype of any set of subobjects is a family index of this size, and the sum
-of that family is the least upper bound of the set. -/
+of that family is the least upper bound of the set.
+
+The global hypothesis `HasCoproducts.{max u v} C` is degenerate: by Freyd's
+Cantor argument it makes every Hom type a subsingleton, so in an abelian
+category every object is zero. For nonzero applications use
+`isLUB_subobjectSum` with the particular coproduct of the family at hand. -/
 theorem isLUB_subobjectSum_set {C : Type u} [Category.{v} C] [HasImages C]
     [HasCoproducts.{max u v} C] {X : C} (s : Set (Subobject X)) :
     IsLUB s (subobjectSum fun P : s => (P : Subobject X)) := by

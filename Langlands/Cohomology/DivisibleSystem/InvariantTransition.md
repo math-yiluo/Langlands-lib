@@ -56,8 +56,11 @@ with `F K` extended along `e`.
 
 - `extendXMapIso_inv_comp_comp α K j`: the component at the index `j` of
   the extension (Mathlib's `extend.X K j`) of the next lemma. For
-  `j = none` the target is a zero object; for `j = some i` all the maps are
-  identities, up to `F₂.map_id`.
+  `j = none` the target is a zero object, so the two sides agree. For
+  `j = some i` the three extension comparisons `extendXMapIso` are
+  identities (the one under `F₂` up to `F₂.map_id`), and both sides reduce
+  to the same component `α.inv.app (K.X i)` of the natural isomorphism. This
+  component is arbitrary and need not be an identity.
 - `extendMapIso_hom_comp e α K`: the comparisons `extendMapIso` for `F₁`,
   `F₂` and `F₃` are compatible with `α`: `α.inv` on `K` extended,
   followed by `F₂` of the comparison for `F₁` and the comparison for `F₂`

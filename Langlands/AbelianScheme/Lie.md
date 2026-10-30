@@ -70,7 +70,10 @@ Registered sources:
 
 This is the object-construction unit. The differential of a group-scheme
 homomorphism, its identity/composition and additivity laws, endomorphism
-actions, base-change comparison, local freeness and rank statements remain
-separate work. No Lie bracket is constructed here. The pending universal
-property proof of the constructed differential sheaf is not assumed as an
-input or claimed as a theorem of this module.
+actions, base-change comparison, local freeness and rank statements are not
+part of this module. No Lie bracket is constructed here. The universal
+property of the constructed differential sheaf is proved separately:
+`Langlands.Scheme.relativeDifferentialsUniversal :
+RelativeDifferentialsUniversalStatement f`, for every morphism `f`, in module
+`Langlands.AlgebraicGeometry.RelativeDifferentialsUniversal`. This module does
+not import that theorem and does not use it.

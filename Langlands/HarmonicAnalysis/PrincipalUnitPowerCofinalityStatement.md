@@ -4,7 +4,9 @@ The module `Langlands.HarmonicAnalysis.PrincipalUnitPowerCofinalityStatement`
 defines the closed proposition
 `Langlands.HarmonicAnalysis.PrincipalUnitPowerCofinalityStatement.{uF}`.
 Its only project import is `Langlands.HarmonicAnalysis.Conductor`. It is a
-statement definition, with no proof of the proposition.
+statement definition, with no proof of the proposition; the separate
+published theorem `Langlands.HarmonicAnalysis.principalUnitPowerCofinality`
+proves it (see [Status](#status)).
 
 The complete formula is:
 
@@ -60,7 +62,8 @@ residue characteristic `p`. The zero power is excluded: its image is
 only `{1}`, and every zeroth character power is one. No coprimality,
 unramified-field, number-field-realization, open-power-image or Hensel
 certificate is an input. Establishing power cofinality for these actual
-characteristic-zero local fields remains the substantive proof obligation.
+characteristic-zero local fields is the substantive part of the proof; the
+published proof does it by a Hensel-type lifting (see [Status](#status)).
 
 ## Why the conductor assertion follows
 
@@ -76,7 +79,9 @@ Fix an `N` from the first clause and set `A = N + 1`. If
 The homomorphism law gives `(χ v)^m = χ (v^m) = χ u ≠ 1`, as required.
 Equivalently, triviality of `χ^m` on `Uᵇ` would force triviality of `χ` on
 `Uᴺ`, contradicting the conductor bound. This explains the mathematical
-implication; this module does not implement its Lean proof.
+implication; this module does not implement its Lean proof. The published
+theorem `Langlands.PadicField.TopologicalData.exists_conductor_bound_pow_ne_one`
+in the proof module implements this argument.
 
 The assertion does not say that raising a character to the `m`th power
 preserves its conductor. Such equality need not hold when `p` divides `m`.
@@ -124,6 +129,26 @@ locations when this pair was authored.
 
 Worker 615 authored this pair from Worker 394's statement specification and
 conductor derivation. No Whittaker expansion, Mellin integration theorem,
-L-factor vanishing theorem, or proof of power cofinality is supplied here.
-Compilation and proposition inspection are development checks; independent
-semantic acceptance and Library publication remain separate requirements.
+L-factor vanishing theorem, or proof of power cofinality is supplied in this
+module. Compilation and proposition inspection were development checks. The
+statement pair was later independently accepted and published as artifact
+`166fbe28-b98c-4910-b486-b36f766ad4e6`.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.principalUnitPowerCofinality.{uF}` in
+`Langlands.HarmonicAnalysis.PrincipalUnitPowerCofinalityProof`. Its type is
+exactly `PrincipalUnitPowerCofinalityStatement.{uF}`, with the same arbitrary
+field universe and no added hypothesis. It pairs the public theorems
+`Langlands.PadicField.TopologicalData.exists_principalUnits_subset_pow`
+(power cofinality) and
+`Langlands.PadicField.TopologicalData.exists_conductor_bound_pow_ne_one`
+(the uniform conductor threshold). All positive `m`, including multiples of
+`p`, and all levels `b` are covered. The proof is artifact
+`fef59053-24ac-46e0-8c9f-2182a2ac3d3f` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `2ae54bcc0a7e682d7ed288b2dfc5e9071e3e2e3f`.
+It proves only the two clauses stated here. It does not prove conductor
+equality for character powers, construct a character of large conductor,
+or prove any Mellin or L-factor statement.

@@ -1,12 +1,14 @@
 # Closed inversion layers and open neighborhoods of actual upper Bruhat cells
 
 Author: Worker 914.
+Documentation correction (P3-014): Worker 1057.
 
 `Langlands.GeneralLinear.UpperBruhatFiltrationGeometryStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatFiltrationGeometryStatement`. This module states
-the proposition only; it provides no proof of it. The proof is a separate
-obligation.
+the proposition only. Its proof is the separate published theorem
+`Langlands.GeneralLinear.upperBruhatFiltrationGeometry` in
+`Langlands.Group.GL.UpperBruhatFiltrationGeometryProof`; see Status below.
 
 ## Exact proposition
 
@@ -159,10 +161,12 @@ by finite rank conditions. The cells are characterized by the ranks of the
 lower-left submatrices (rows at least `i`, columns at most `j`). Upper bounds on
 such ranks are vanishing conditions on finitely many minors. These are closed
 conditions in the inherited topology, because `{0}` is closed in a Hausdorff
-field. This indicates an intended proof route only. The module proves neither the
-rank characterization, nor the Bruhat-order closure relations, nor any of the
-four conclusions. The later proof may use this route or any other genuine
-argument.
+field. This module itself proves neither the rank characterization, nor the
+Bruhat-order closure relations, nor any of the four conclusions. The published
+proof `upperBruhatFiltrationGeometry` uses the separately published rank
+characterization `upperBruhatRankCharacterization` and boundary theorem
+`upperBruhatBoundary` (every point of `closure C_w \ C_w` lies in a cell of
+strictly smaller inversion count). Its Markdown describes the route.
 
 ## Exclusions
 
@@ -177,16 +181,40 @@ It also asserts none of the following:
 - that an individual cell `upperBruhatCell n K w` is open in the ambient group;
 - disjointness or coverage of the cells, or a Bruhat decomposition (full Bruhat
   coverage is already available as `fieldUpperBruhatFactorizationTheorem` in
-  `Langlands.Group.GL.UpperBruhatProof`, and the later proof may reuse it);
-- local closedness of each cell, which is the separate statement
-  `UpperBruhatLocalClosednessStatement`;
+  `Langlands.Group.GL.UpperBruhatProof`, and the published proof reuses it);
 - Lemma 1.7's submanifold, analytic or dimension claims;
 - injectivity or homeomorphism of `upperBruhatCellMap` or `upperBruhatTorusMap`;
 - stability of an individual cell under transpose, `θ` or any Weyl-twisted
   transpose, or preservation of the count by `upperBruhatTransposeIndex`.
 
+## Consequence: local closedness of each cell
+
+Conclusions 3 and 4 together imply that each cell `upperBruhatCell n K w` is
+locally closed in the ambient group. A closed subset of the subtype
+`upperBruhatCellNeighborhood n K w` is the preimage under `Subtype.val` of some
+closed set `Z` of the ambient group. Since the cell lies in its neighborhood,
+the cell equals `upperBruhatCellNeighborhood n K w ∩ Z`. This is the
+intersection of an open set (conclusion 3) and a closed set, which is Mathlib's
+`IsLocallyClosed`. A private development check confirmed in Lean that this
+proposition implies `UpperBruhatLocalClosednessStatement` with the same
+universe. This module does not state that implication as a declaration. The
+converse is not immediate: local closedness of each single cell says nothing
+directly about the closed layers, the open higher-cell unions or the open
+neighborhoods of conclusions 1–3. So local closedness is a consequence of this
+proposition, not a proof of it.
+
+The Library also states local closedness on its own, as
+`UpperBruhatLocalClosednessStatement`. That statement is proved independently
+by `upperBruhatLocalClosedness` in
+`Langlands.Group.GL.UpperBruhatLocalClosednessProof`, through rank conditions
+and not through this proposition.
+
 ## Status
 
-The proposition is stated and unproved. It is a common geometry prerequisite for
-the Shalika distribution and Whittaker multiplicity-one developments. It is not a
-proof of either parent theorem.
+The proposition is proved by the published theorem
+`Langlands.GeneralLinear.upperBruhatFiltrationGeometry` in
+`Langlands.Group.GL.UpperBruhatFiltrationGeometryProof`. The proof's inputs are
+named in the derived-formulation section above. The proposition is a common
+geometry prerequisite for the Shalika distribution and Whittaker
+multiplicity-one developments. Neither this statement nor its proof is a proof
+of either parent theorem.

@@ -64,5 +64,17 @@ associated maps `Spec Γ(X,V) ⟶ X` and `Spec Γ(S,U) ⟶ S` are open immersion
 The statement applies to their commuting square with the induced spectrum
 map. Its intended use is to establish invertibility of the published
 `relativeDifferentialsAffineChartSquareMap`, enabling comparison with affine
-Kähler differentials on arbitrary charts. The separate affine Kähler
-comparison and the proof of this locality statement remain further work.
+Kähler differentials on arbitrary charts. The proof of this locality
+statement and the affine Kähler comparison are now published, in separate
+modules that this file does not import. The locality statement is proved by
+`Langlands.Scheme.relativeDifferentialsOpenImmersionIsIso :
+RelativeDifferentialsOpenImmersionIsIsoStatement.{u}` in
+`Langlands.AlgebraicGeometry.RelativeDifferentialsOpenImmersionProof`. The
+affine Kähler comparison is
+`Langlands.Scheme.relativeDifferentialsSpecMapIsIso :
+RelativeDifferentialsSpecMapIsIsoStatement.{u}` in
+`Langlands.AlgebraicGeometry.RelativeDifferentialsSpecMapIsIso`. Module
+`Langlands.AlgebraicGeometry.RelativeDifferentialsAffineChart` combines them:
+its instance `relativeDifferentialsAffineChartSquareMap_isIso` applies the
+locality theorem to the affine-chart square, and
+`relativeDifferentialsAffineChartIso` is the resulting chart isomorphism.

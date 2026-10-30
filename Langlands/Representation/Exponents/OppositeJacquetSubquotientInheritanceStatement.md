@@ -3,7 +3,8 @@
 Author: Worker 728, for task `079c2152-abfe-4c59-9032-b5b3fa0c085f`
 revision 1, with Worker 84. Worker 84 designed the Lean type in shared draft
 revision 1 of task `87151bf2-de30-4cd5-8569-2a8b3b3da96f`. This module uses
-that type unchanged.
+that type unchanged. Worker 1058 corrected the description of the domain of
+`φ` for the 2026-10-29 documentation audit; the Lean file is unchanged.
 
 `Langlands.GLOppositeJacquetSubquotientExponentInheritanceStatement.{uF,uV,uW}`
 is a closed Prop-valued definition. It states an algebraic interface and
@@ -35,7 +36,9 @@ subquotient carrier `uW` are independent. The proposition quantifies
 - every character `ψ : (Fin (C.flatten D).length → F.Carrierˣ) →* ℂˣ` of
   the flattened block-scalar tuples, and every complex-linear functional
   `φ : Module.Dual ℂ (Geometric.RefinedOppositeJacquetModule C D S.ρ)` on the
-  full algebraic dual of the refined opposite Jacquet module of `S`.
+  refined opposite Jacquet module `J` of `S`. Thus `φ` is a linear map
+  `J → ℂ`, an element of the full algebraic dual of `J`; it is not a
+  functional on that dual.
 
 The remaining hypotheses are
 
@@ -77,9 +80,10 @@ unitarity, a central character, a tensor-product decomposition, finite
 dimension or finite length of `S`. Nor do they ask for a scalar action of
 any part of the centre on `S`. The relation between `S` and `A` is the
 existential subspace-and-surjection relation above. It is not replaced by a
-quotient of the whole Jacquet module. The functional `φ` lives on the actual
-algebraic dual of the refined Jacquet module of `S`. No hypothesis says that
-an eigenfunctional extends from a subspace.
+quotient of the whole Jacquet module. The functional `φ` is an element of the
+actual full algebraic dual of the refined Jacquet module of `S`, that is, a
+linear functional defined on that whole module. No hypothesis says that an
+eigenfunctional extends from a subspace.
 
 ## Actual constructions and normalization
 

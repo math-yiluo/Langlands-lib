@@ -1,8 +1,10 @@
 # Unique descent of distributions supported on a closed subset
 
 `Langlands.HarmonicAnalysis.Distribution.ClosedSupportedDescentStatement.{u}`
-is the following unproved proposition. This module defines the proposition and
-supplies no proof.
+is the following proposition. This module defines the proposition and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.Distribution.closedSupportedDescent` proves it
+(see [Status](#status)).
 
 ## Statement
 
@@ -114,17 +116,23 @@ distribution-theoretic support. Its meaning does not rely on the source's
 manifold structure. No errata file for this source is recorded in the
 project's literature pointers or notes.
 
-## Intended proof route (not proved here)
+## Proof route
 
-A later proof task is expected to combine two observations, as in the source
-remark. Surjectivity of closed test-function restriction for such `X` gives
+This plan was written before the proof; this module does not prove it. It
+combines two observations, as in the source remark. Surjectivity of closed test-function restriction for such `X` gives
 injectivity: if `D ∘ restrictClosed hZ = 0`, then `D` vanishes on every test
 function on `Z`. For surjectivity, given `T` in `supportedOn Z`, define `D g`
 as `T f` for any extension `f` of `g`; two extensions differ by a function
 vanishing on `Z`, which `T` annihilates, so `D` is well defined and linear.
 Restriction surjectivity is the content of the separate statement
-`SchwartzBruhat.ClosedRestrictionSurjectiveStatement`. This route is a plan,
-not something this unit proves.
+`SchwartzBruhat.ClosedRestrictionSurjectiveStatement`.
+
+The published proof `closedSupportedDescent` follows this route. It proves
+bijectivity from surjectivity of `restrictClosed hZ` by Mathlib's dual-map
+and quotient constructions, then supplies that surjectivity with the
+published theorem `SchwartzBruhat.closedRestrictionSurjective`.
+[ClosedSupportedDescentProof](ClosedSupportedDescentProof.md) describes the
+implemented Lean argument.
 
 ## Consumers
 
@@ -133,3 +141,17 @@ Shalika distribution-invariance task
 `f79ca82c-d050-4ffa-821b-c347b60e36e0`, and is intended for the Whittaker
 multiplicity-one work of Worker 16 (task
 `209cde88-bab8-4a85-8a9d-72b8864b6fa0`).
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.closedSupportedDescent.{u}` in
+`Langlands.HarmonicAnalysis.Distribution.ClosedSupportedDescentProof`. Its
+type is exactly `ClosedSupportedDescentStatement.{u}`, with no added
+hypothesis. The proof is artifact `9f406413-d230-4c0b-a1fa-239bd99494c7`
+version 1. Its validation passed the Lake build and exact-target checks, an
+independent review approved it, and it was published at Library commit
+`00be69b7f127e77ee2fd0511ffe34c48595b64d4`. It proves only the bijectivity
+stated here. The locally closed, orbit-vanishing, invariance and
+multiplicity statements listed under [Scope](#scope) are not consequences of
+this unit.

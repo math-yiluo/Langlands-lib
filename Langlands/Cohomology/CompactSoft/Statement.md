@@ -172,10 +172,21 @@ closure of `V` because it is zero there; and at a point of the closure of `V` no
 `V` by the intersection of `H` with a subgroup witnessing local fixedness of `t`
 there. So `t'` is a global section of `D(M)`, its support lies in the compact closure
 of `V`, and its germ along `K` is that of `t`. Besides the description of sections in
-Worker 3's Step 0, which comes from the right Kan extension defining coinduction and is
-not constructed in Lean, only local compactness, the Hausdorff property and
-`HasStableNeighbourhoods` are used; paracompactness of `X`, assumed by Berkovich, is
-not needed for this form.
+Worker 3's Step 0, which comes from the right Kan extension defining coinduction, only
+local compactness, the Hausdorff property and `HasStableNeighbourhoods` are used;
+paracompactness of `X`, assumed by Berkovich, is not needed for this form.
+
+The Step 0 description is constructed in Lean outside this module. In
+`Langlands.Sheaf.Equivariant.CoinducedFamilies.Coordinates`, `coordinateIso`
+identifies the sections over `U` of the published coinduction `coinducedZero` of the
+ordinary sheaf of stalk families with the families indexed by the pairs `(g, y)` with
+`g • y ∈ U`; `read` gives these coordinates as a linear map, and `read_map` is the
+transport formula along the action (the label changes by left multiplication, the
+stalk point is kept). The theorem `smoothGodementZeroCSoft` in
+`Langlands.Cohomology.CompactSoft.SmoothZeroProof` proves the third proposition with
+them, through `CompactSoft.smoothGodementZeroCSoft_of_coinducedZero` and
+`CompactSoft.isCSoft_smooth_of_family`. This statement module imports none of these
+and proves nothing.
 
 ## Provenance
 

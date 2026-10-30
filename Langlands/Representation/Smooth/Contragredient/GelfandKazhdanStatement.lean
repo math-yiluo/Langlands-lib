@@ -6,8 +6,9 @@ import Mathlib.RepresentationTheory.Irreducible
 /-!
 # Gelfand–Kazhdan realization of the smooth contragredient
 
-This is the unproved inverse-transpose formulation of Bernstein–Zelevinsky
-(1976), Theorem 7.3. Its hypotheses do not include genericity.
+This is the inverse-transpose formulation of Bernstein–Zelevinsky (1976),
+Theorem 7.3, as a proposition definition. It is proved in
+`GelfandKazhdanProof`. Its hypotheses do not include genericity.
 -/
 
 namespace Langlands

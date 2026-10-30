@@ -16,7 +16,7 @@ universe u
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{u} p} (T : F.TopologicalData)
 
 /-- An element of normalized order zero belongs to the actual zeroth unit filtration. -/
-private theorem mem_unitFiltration_zero_of_ord_eq_zero (a : F.Carrierˣ)
+theorem mem_unitFiltration_zero_of_ord_eq_zero (a : F.Carrierˣ)
     (ha : T.ord (a : F.Carrier) = 0) : a ∈ T.unitFiltration 0 := by
   have haInt : (a : F.Carrier) ∈ T.Integers := by
     apply (T.normalizedAbs_le_one_iff_mem_integers _).mp

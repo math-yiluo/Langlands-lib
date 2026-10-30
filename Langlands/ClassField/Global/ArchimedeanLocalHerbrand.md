@@ -12,7 +12,10 @@ module proves:
 
 Both cohomology groups are Mathlib's ordinary `groupCohomology`. No hypothesis beyond
 `[Field F] [Field E] [NumberField E] [Algebra F E]` is needed. In particular `E/F` need not be
-Galois or finite. The group `D_w` always has order `1` or `2`, so it is cyclic.
+Galois. No finite-degree hypothesis is needed either, because `E/F` is automatically finite:
+`algebraMap F E` is an injective ring map into a field of characteristic zero, so `F` has
+characteristic zero and contains `ℚ`, and a `ℚ`-basis of `E` spans `E` over `F`. The group `D_w`
+always has order `1` or `2`, so it is cyclic.
 
 This is infrastructure for the first fundamental inequality in global class field theory
 (task fb66219f): it is the archimedean factor of the per-place Herbrand computation.
@@ -82,8 +85,9 @@ come from the Library's `Langlands.ClassField.Global.IdeleArchimedean`.
 
 ### `Generic` (any commutative ring `k` and group `G`)
 
-- `subsingleton_subquotient_of_forall`: `Subquotient φ ψ = ker φ ⧸ range ψ` is a subsingleton
-  when every `x` with `φ x = 0` lies in `range ψ`.
+- `subsingleton_subquotient_of_forall`: `Subquotient φ ψ = ker φ ⧸ (range ψ ∩ ker φ)` is a
+  subsingleton when every `x` with `φ x = 0` lies in `range ψ`. No relation `φ ∘ ψ = 0` is
+  assumed, so `range ψ` need not lie in `ker φ`; the quotient is by the intersection.
 - `subsingleton_groupCohomology_of_subsingleton`: for a trivial group `G` and any `A : Rep k G`,
   `groupCohomology A 1` and `groupCohomology A 2` are subsingletons.
 

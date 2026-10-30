@@ -1,11 +1,14 @@
 # Local closedness of actual upper Bruhat cells
 
 Author: Worker 780.
+Documentation correction (P3-059): Worker 1057.
 
 `Langlands.GeneralLinear.UpperBruhatLocalClosednessStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatLocalClosednessStatement`. This module states the
-proposition only; it provides no proof of it. The proof is a separate obligation.
+proposition only. Its proof is the separate published theorem
+`Langlands.GeneralLinear.upperBruhatLocalClosedness` in
+`Langlands.Group.GL.UpperBruhatLocalClosednessProof`; see Status below.
 
 ## Exact proposition
 
@@ -94,9 +97,10 @@ of the lower-left submatrices (rows at least `i`, columns at most `j`) are
 constant. Lower bounds on such ranks are nonvanishing conditions on finitely
 many minors and upper bounds are vanishing conditions. In a Hausdorff
 topological ring these are open and closed conditions respectively. This
-indicates an intended route only; the module proves neither this rank
-characterization nor the local closedness. The later proof may use it or any
-other genuine argument.
+module itself proves neither this rank characterization nor the local
+closedness. The published proof `upperBruhatLocalClosedness` follows this
+route. It uses the separately published rank characterization
+`upperBruhatRankCharacterization` from `Langlands.Group.GL.UpperBruhatRankProof`.
 
 The statement assumes no local compactness, sigma compactness, countability,
 properness, algebraic-group structure, closed-orbit lemma, finite-orbit ordering
@@ -111,8 +115,23 @@ consequence of it as an input. It also asserts none of the following:
 - the factorization `U = U_w⁺ U_w⁻` of Lemma 1.9;
 - stability of an individual cell under any transpose or Weyl involution.
 
+## Relation to the filtration geometry statement
+
+The companion proposition `UpperBruhatFiltrationGeometryStatement` asserts that
+each cell neighborhood `upperBruhatCellNeighborhood n K w` is open and that the
+cell is closed in it for the subtype topology. Those two conclusions together
+imply this proposition, since the cell is then the intersection of that open
+neighborhood with a closed set of the ambient group. The companion's Markdown
+explains this, and a private development check confirmed the implication in
+Lean. The converse is not immediate: local closedness of each single cell says
+nothing directly about the companion's closed layers or open neighborhoods. The
+two statements have independent published proofs.
+
 ## Status
 
-The proposition is stated and unproved. It is a common geometry prerequisite
-for the Shalika distribution and Whittaker multiplicity-one developments; it
-is not a proof of either parent theorem.
+The proposition is proved by the published theorem
+`Langlands.GeneralLinear.upperBruhatLocalClosedness` in
+`Langlands.Group.GL.UpperBruhatLocalClosednessProof`. It is a common geometry
+prerequisite for the Shalika distribution and Whittaker multiplicity-one
+developments. Neither this statement nor its proof is a proof of either parent
+theorem.

@@ -1,8 +1,10 @@
 # Translation covariance of character-weighted product averaging
 
 `Langlands.HarmonicAnalysis.SchwartzBruhat.CharacterAverageCovarianceStatement.{uG, uY}`
-is the following unproved proposition. This module defines the proposition and
-supplies no proof. Its only import is the published module
+is the following proposition. This module defines the proposition and
+supplies no proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.SchwartzBruhat.characterAverageCovariance` proves
+it (see [Status](#status)). Its only import is the published module
 `Langlands.HarmonicAnalysis.Distribution.CharacterAverage`, used unchanged.
 
 ## Statement
@@ -78,8 +80,8 @@ substitute test-function space is introduced.
 
 ## The sign from the change of variables
 
-The following explains why the stated scalar is `χ a * χ b`; it is not proved
-here. Fix `y`. The left side is the integral of
+The following explains why the stated scalar is `χ a * χ b`; this module does
+not prove it. Fix `y`. The left side is the integral of
 `α (a * g₁, (y, g₂ * b)) * (χ g₁ * χ g₂)⁻¹` over `(g₁, g₂)`. Substitute
 `h₁ = a * g₁` and `h₂ = g₂ * b`, that is `g₁ = a⁻¹ * h₁` and `g₂ = h₂ * b⁻¹`.
 Because `χ` is multiplicative,
@@ -101,11 +103,13 @@ translation by `b` preserves `μ` (right invariance, used on the second factor
 only). A product of measure-preserving maps preserves the product measure for
 s-finite measures; this is one use of `SFinite μ`. The Borel structure makes
 both translations measurable. After the substitution the integral is
-`χ a * χ b` times the integral defining `characterAverage χ μ α y`. A private
-check confirmed that the proposition is provable along exactly this route, by
+`χ a * χ b` times the integral defining `characterAverage χ μ α y`. The
+published proof `characterAverageCovariance` follows this route, using
 Mathlib's `measurePreserving_mul_left`, `measurePreserving_mul_right`,
-`MeasurePreserving.prod` and `MeasurePreserving.integral_comp'`; that proof is
-not part of this unit.
+`MeasurePreserving.prod` and `MeasurePreserving.integral_comp'`; it lives in
+the separate module described in
+[CharacterAverageCovarianceProof](CharacterAverageCovarianceProof.md), not in
+this unit.
 
 The sign agrees with the published convention for bi-equivariant
 distributions. Shalika's condition (see Provenance) is
@@ -171,9 +175,10 @@ reasons.
 
 ## Scope
 
-This is a statement only. It proves no covariance: the equality above is the
-conclusion of an unproved proposition, whose proof is a separate task. The unit
-also states and proves nothing about:
+This module is a statement only and proves no covariance itself. The equality
+above is proved by the separate theorem `characterAverageCovariance` (see
+[Status](#status)), for exactly the hypotheses listed above. This unit also
+states and proves nothing about:
 
 - surjectivity of the averaging map `α ↦ characterAverage χ μ α`;
 - factorization of a bi-equivariant distribution on `G × (Y × G)` through
@@ -227,5 +232,20 @@ single Haar measure on each factor.
 
 The proposition is intended for the exact Shalika distribution-invariance work
 (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`) and, through it, the Whittaker
-multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`). A separate
-proof task for this proposition follows its publication.
+multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`). Its proof
+was supplied by task `71db8a18-f07f-4ab5-903a-dad529415e84`; see
+[Status](#status).
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.SchwartzBruhat.characterAverageCovariance.{uG, uY}`
+in `Langlands.HarmonicAnalysis.Distribution.CharacterAverageCovarianceProof`.
+Its type is exactly `CharacterAverageCovarianceStatement.{uG, uY}`, with the
+same independent universes and no added hypothesis. The proof is artifact
+`c6cadd36-7426-4e30-9a89-c0c0ba0a7a5a` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b`.
+It proves only the covariance law stated here. It does not prove the
+surjectivity, factorization or Shalika invariance results listed under
+[Scope](#scope), or the upper-unipotent specialization.

@@ -34,11 +34,18 @@ the explicit pullback-composition isomorphism
 `cotangentBaseChangePullbackIso b G`. This composite is precisely
 `cotangentBaseChangeMap b G` by its definition. The identity-section
 compatibility used in that composition is already proved in
-`LieBaseChange`; invertibility of the concrete differential comparison
-is a remaining geometric proof obligation and is not assumed here.
+`LieBaseChange`. Invertibility of the concrete differential comparison
+is also published, as a separate theorem that this file does not import:
+`Langlands.Scheme.relativeDifferentialsBaseChangeIsIso S :
+RelativeDifferentialsBaseChangeIsIsoStatement S` in module
+`Langlands.AlgebraicGeometry.RelativeDifferentialsBaseChangeIsIso` gives
+`IsIso (relativeDifferentialsBaseChangeMap f b)` for all `f : X ⟶ S` and
+`b : T ⟶ S`, in particular for `f = G.X.hom`.
 
 This target is about the cotangent module. It does not assert that
 the internal dual of an arbitrary module commutes with arbitrary
 pullback, and it does not claim unrestricted Lie base change.
-A separate exact-target proof task is to be published after this
-statement is accepted and appears in the Library.
+No exact-target proof of this proposition is in the Library yet. With
+the published differential comparison it only remains to note that
+pullback along the identity section preserves isomorphisms and that the
+composite of two isomorphisms is an isomorphism.

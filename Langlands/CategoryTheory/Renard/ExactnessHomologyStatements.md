@@ -1,7 +1,8 @@
 # Sequence exactness, exact short complexes and homology
 
 Authors: Worker 6 (statement specification, implementation and source/interface audit);
-Worker 691 (direct source and interface verification, declaration checks and submission).
+Worker 691 (direct source and interface verification, declaration checks and submission);
+Worker 1055 (proof-status correction after the 29 October 2026 Library audit).
 
 Module: `Langlands.CategoryTheory.Renard.ExactnessHomologyStatements`.
 All four declarations are in namespace `Langlands.Renard`.
@@ -105,7 +106,7 @@ categorical setting. No finite-preservation or homology-preservation instance,
 exactness comparison, or desired conclusion is assumed as a premise of these
 definitions.
 
-## Existing proof route and remaining obligations
+## Proof route and related results
 
 At Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, the actual
 `Functor.preservesFiniteLimits_tfae F` and
@@ -117,16 +118,34 @@ preservation of every middle-exact short complex, the actual
 finite-colimit preservation. These declarations are in
 `Mathlib/Algebra/Homology/ShortComplex/ExactFunctor.lean`, which was read in
 full for this interface audit. Their category parameters allow the four
-independent universes used here. This describes a later proof route; this
-statement module implements no adapter theorem.
+independent universes used here. This statement module implements no adapter
+theorem. The separate proof `exactnessHomologyComparison` in
+`Langlands.CategoryTheory.Renard.ExactnessHomology` follows this route. It
+proves `ExactnessHomologyComparisonStatement F` for every additive functor `F`
+between abelian categories, with independent object universes `u₁`, `u₂` and
+Hom universes `v₁`, `v₂`.
 
-The separate finite-preservation comparison statement task is
-`e2039435-dc17-46af-b839-614fefcf48aa`. Its draft is not imported or assumed.
-The exact aggregate above must be independently accepted and public before
-a proof successor targets it. All proof, faithfulness, Hom object-property
-and complex-level comparison obligations remain open. This unit constructs
-no chain-complex functor or natural homology comparison isomorphism and states
-no such further comparison target. Its parent whole-book responsibility is
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2; its focused statement task is
-`2344b69e-42b7-4a4b-b933-e5e9641547cd` revision 1. Compilation and draft sharing
-supply neither independent mathematical acceptance nor publication.
+The related comparisons are separate units with their own published proofs,
+none of which is imported here:
+
+- `FinitePreservationComparisonStatement F`, in
+  `Langlands.CategoryTheory.Renard.FinitePreservationStatements`, is proved by
+  `finitePreservationComparison` in
+  `Langlands.CategoryTheory.Renard.FinitePreservation`;
+- `FaithfulnessCriteriaStatement F`, in
+  `Langlands.CategoryTheory.Renard.FaithfulnessStatements`, is proved by
+  `faithfulnessCriteria` in `Langlands.CategoryTheory.Renard.Faithfulness`.
+
+Both have the same additive-functor hypotheses and the same four independent
+universes as `exactnessHomologyComparison`. The Hom object properties are
+defined in `Langlands.CategoryTheory.Renard.HomObjectProperties`. For an object
+`P` of one abelian category, `HomExactnessComparisonStatement P` and
+`HomGeneratorCriteriaStatement P` are proved by `homExactnessComparison` in
+`Langlands.CategoryTheory.Renard.HomExactnessComparison` and by
+`homGeneratorCriteria` in `Langlands.CategoryTheory.Renard.HomGeneratorCriteria`.
+This unit constructs no chain-complex functor or natural homology comparison
+isomorphism and states no such complex-level comparison target.
+
+Its parent whole-book responsibility is `f5d1f399-a1f8-4ab5-a981-90b92abd4857`
+revision 2; its focused statement task is `2344b69e-42b7-4a4b-b933-e5e9641547cd`
+revision 1.

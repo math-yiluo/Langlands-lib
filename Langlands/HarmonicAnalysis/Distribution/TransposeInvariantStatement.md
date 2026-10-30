@@ -1,7 +1,9 @@
 # Transpose invariance of conjugation-invariant distributions
 
 `Langlands.GeneralLinearConjugationDistributionTransposeStatement.{uF}` is
-the following unproved proposition. For every prime `p`, every actual
+the following proposition; this module only defines it, and the separate
+published theorem `Langlands.generalLinearConjugationDistributionTranspose`
+proves it (see [Status](#status)). For every prime `p`, every actual
 `F : PadicField.{uF} p`, and every natural number `n`, put
 `G = Matrix.GeneralLinearGroup (Fin (n + 1)) F.Carrier`. Use the normed-field
 structure `F.canonicalNormedField` and the resulting topology on `G`. Every
@@ -73,14 +75,45 @@ condition, and conjugacy of every invertible matrix to its transpose for
 the fourth.
 
 These conditions, the relevant l-space and countability facts, and the
-general invariant-distribution argument are obligations of an eventual
-proof, rather than additional hypotheses in this statement. In particular,
+general invariant-distribution argument are not hypotheses of this
+statement; a proof must supply whatever it uses of them. In particular,
 orbit preservation alone does not supply the asserted distribution
 invariance. The existing transport lemmas prove that transpose sends a
 conjugation-invariant distribution to another such distribution; they do
 not identify the two distributions.
 
+The published proof `generalLinearConjugationDistributionTranspose` does not
+follow the source's route through constructiveness. It applies the published
+`HarmonicAnalysis.Distribution.equivariantLocalization` along the
+characteristic-polynomial coefficients to the anti-invariant difference
+`D - τ_* D`. Each fibre is a closed finite union of conjugacy classes, and
+there it applies the published
+`HarmonicAnalysis.Distribution.finiteOrbitAntiInvariantVanishing`. It also
+uses the published theorems `matrixTransposeConjugate` (every square matrix
+over a field is conjugate to its transpose) and
+`matrixCharpolyFiniteConjugacy` (finitely many conjugacy classes have a given
+characteristic polynomial).
+[TransposeInvariantProof](TransposeInvariantProof.md) describes the
+implemented Lean argument.
+
 This module only defines the proposition. It supplies no proof of transpose
 invariance, no representation character, and no representation equivalence.
-The parent generic contragredient theorem and the full Gelfand–Kazhdan
-realization theorem remain separate proof obligations.
+The generic contragredient target `Langlands.GenericContragredientStatement`
+and the Gelfand–Kazhdan realization target
+`Langlands.GelfandKazhdanContragredientStatement` are separate propositions.
+They are proved by the separate published theorems
+`Langlands.genericContragredient` and `Langlands.gelfandKazhdanContragredient`,
+not by this unit or by its proof.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.generalLinearConjugationDistributionTranspose.{uF}` in
+`Langlands.HarmonicAnalysis.Distribution.TransposeInvariantProof`. Its type is
+exactly `GeneralLinearConjugationDistributionTransposeStatement.{uF}`, with
+the same field universe and no added hypothesis. The proof is artifact
+`a273f153-573e-4de5-a169-47a467c37f10` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `910a6df80701415e9aa68c646393c66ac9bc7512`.
+It proves only the transpose invariance of conjugation-invariant
+distributions stated here.

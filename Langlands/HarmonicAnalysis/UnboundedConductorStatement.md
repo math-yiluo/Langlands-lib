@@ -6,7 +6,10 @@ It is a closed proposition definition, with an arbitrary independent field
 universe `uF`. It asserts that for every prime `p`, every finite extension
 `F : PadicField.{uF} p`, and every natural number `A`, there is a continuous
 complex quasicharacter of the actual field-unit group whose multiplicative
-conductor is at least `A`.
+conductor is at least `A`. The module supplies no proof of it; the separate
+published theorem
+`Langlands.HarmonicAnalysis.padicQuasicharacterUnboundedConductor` proves it
+(see [Status](#status)).
 
 Its complete formula is:
 
@@ -100,25 +103,47 @@ This is the convention implemented by the imported Library conductor.
 No source-specific errata note for either registered source was found in
 the current public Library notes or shared public-note locations at authoring.
 
-## Remaining proof obligation and scope
+## Proof ingredients and scope
 
-A later proof must construct actual continuous characters and establish
-these conductor lower bounds. Finite unit quotients, character separation,
+A proof must construct actual continuous characters and establish these
+conductor lower bounds. Finite unit quotients, character separation,
 and extension to the full field-unit group are possible proof ingredients,
 not hypotheses of this proposition. The proposition has no reciprocity
 family, additive character, Haar measure, representation classification,
 local Langlands correspondence, finite extension tower, character-extension
 or separation theorem, filtration-strictness certificate, or existing
-high-conductor existence assertion as an input.
+high-conductor existence assertion as an input. The published proof
+`padicQuasicharacterUnboundedConductor` separates a principal unit of exact
+level by a character of the discrete quotient of the field units by a deeper
+principal-unit subgroup, and composes that character with the quotient map;
+[UnboundedConductorProof](UnboundedConductorProof.md) describes the
+implemented Lean argument.
 
 Rank-one Whittaker-type certificates, high-ramification L-vanishing, and
 factor multiplicativity are separate results. In particular the existing
 `Langlands.RankinSelberg.WhittakerTypeHighlyRamifiedLVanishingStatement`
 supplies a threshold for all characters beyond it and does not itself
 supply a character meeting it. The present statement supplies precisely
-that existence conclusion when later proved, independently of L-factors.
+that existence conclusion, independently of L-factors, and its published
+proof establishes it.
 
 Worker 455 authored the Lean and Markdown pair. Worker 53 supplied the
 concrete statement specification and consumer scope in the task contract.
-Compilation and inspection are development checks; mathematical statement
-acceptance requires independent semantic review and Library publication.
+Compilation and inspection were development checks. The statement pair was
+later independently accepted and published as artifact
+`191c0fe5-81ec-4f6f-878c-95b0a2f07af1`.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.padicQuasicharacterUnboundedConductor.{uF}` in
+`Langlands.HarmonicAnalysis.UnboundedConductorProof`. Its type is exactly
+`PadicQuasicharacterUnboundedConductorStatement.{uF}`, with the same
+independent field universe and no added hypothesis; it covers every bound
+`A`, including zero. The proof is artifact
+`04eb9829-c345-4b64-bad1-f52e69d25f79` version 1. Its validation passed the
+Lake build and exact-target checks, an independent review approved it, and it
+was published at Library commit `24af03c708d2441a8b505c2999c4fd8905a0559d`.
+It proves only the existence of characters with large conductor stated here.
+It proves no L-factor vanishing, Whittaker-type or factor-multiplicativity
+result.

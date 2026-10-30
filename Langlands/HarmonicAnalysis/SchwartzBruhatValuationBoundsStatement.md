@@ -5,8 +5,10 @@ Prop-valued definition. It states three elementary properties of one scalar
 Schwartz–Bruhat function on a finite extension of `ℚ_p`: a uniform bound, a
 lower order cutoff below which the function vanishes on units, and an upper
 order cutoff above which it is constant on units. The module supplies no
-proof. The proposition is a derived internal interface, not a numbered
-result of the cited source.
+proof of it; the separate published theorem
+`Langlands.HarmonicAnalysis.schwartzBruhatValuationBounds` proves it (see
+[Status](#status)). The proposition is a derived internal interface, not a
+numbered result of the cited source.
 
 ## Exact scope
 
@@ -99,10 +101,11 @@ The consumer is the weighted one-variable Mellin statement
 `a : F.Carrierˣ` with the same local `T.topology`. This proposition is a
 separate prerequisite; the Mellin statement is unchanged.
 
-## Remaining proof obligation
+## Proof route
 
-A future proof must establish the proposition from local constancy and
-compact support in the supplied topology. One possible route: a continuous
+A proof must establish the proposition from local constancy and compact
+support in the supplied topology. Before the proof was written, the
+following route was suggested: a continuous
 compactly supported function is bounded; compact support bounds
 `T.normalizedAbs` on the support and hence the order of units in the support
 from below; local constancy at zero gives a small `T.normalizedAbs` ball
@@ -111,9 +114,25 @@ large order. Published results such as
 `Langlands.PadicField.TopologicalData.normalizedAbs_eq_canonicalNorm_pow_degree`,
 `topology_eq_canonicalNormTopology`, `normalizedAbs_balls_basis`,
 `normalizedAbs_of_ne_zero` and `residueCardinality_gt_one` may help. This
-route is a suggestion and is not implemented or assumed. Compilation checks
-only that the declaration is a well-formed proposition; it does not
-establish the mathematical claim.
+route is not implemented or assumed in this module. The published proof
+`schwartzBruhatValuationBounds` follows it, using these published results;
+[SchwartzBruhatValuationBoundsProof](SchwartzBruhatValuationBoundsProof.md)
+describes the implemented Lean argument.
 
 Worker 231 authored this pair from the formulation specified by Worker 656's
 task.
+
+## Status
+
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.schwartzBruhatValuationBounds.{uF}` in
+`Langlands.HarmonicAnalysis.SchwartzBruhatValuationBoundsProof`. Its type is
+exactly `SchwartzBruhatValuationBoundsStatement.{uF}`, with the same
+arbitrary field universe and the supplied topology `T.topology`, and no added
+hypothesis. The proof is artifact `c7adeca0-8f92-4b1c-bc39-b14c151c8cfd`
+version 1. Its validation passed the Lake build and exact-target checks, an
+independent review approved it, and it was published at Library commit
+`4021bb1d1ec99e65990e08addda3ade7caa73058`. It proves only the bound and the
+two order cutoffs stated here. It makes no measure, Mellin convergence or
+rational-continuation assertion, and the one-variable Mellin statement remains
+a separate proposition.

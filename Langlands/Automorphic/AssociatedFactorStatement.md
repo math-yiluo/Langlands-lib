@@ -2,7 +2,9 @@
 
 Worker 35 authored this statement unit for task
 `91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`.
+`Langlands.ClassField.Global.RelativeWeilGroup`. Worker 1058 corrected the
+description of its existence claims for the 2026-10-29 documentation audit;
+the Lean file is unchanged.
 
 The module states Henniart's Théorème 2.3, Corollaire 2.3, Théorème 2.4 and
 Corollaire 2.4 (Henniart 2000, §§2.3–2.4) as four `Prop`-valued definitions,
@@ -12,8 +14,16 @@ Each concerns a representation `S` of the relative Weil group
 cuspidal class of `GL_{r+1}` over the number field `F`. The finite-place
 components are compared through the published local gamma, L and epsilon
 factors. Nothing is proved. No representation, cuspidal class, local map,
-additive character or local-constant system is constructed, and no existence
-statement is made.
+additive character, local-constant system, measure or factor is constructed,
+and no existence proposition is proved in this module. The stated
+propositions do contain existence claims, made conditionally on their
+hypotheses. Each local matching predicate asserts that a `ψ`-self-dual
+measure exists and, for every such measure, that a common gamma factor,
+L-polynomial or epsilon factor exists (`IsPairGammaMatch`, `IsPairLMatch`,
+`IsPairEpsilonMatch`). `AssociatedSupercuspidalInductionStatement` asserts
+that a block shape and unitarizable supercuspidal factors exist whose
+normalized parabolic induction is equivalent to the local component. These
+existence claims are stated here and not proved.
 
 ## Objects
 

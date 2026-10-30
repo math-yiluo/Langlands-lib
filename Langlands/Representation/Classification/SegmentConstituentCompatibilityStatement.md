@@ -10,7 +10,7 @@ restriction to the scalar matrices. The constituents involved are
 Zelevinsky's `⟨Δ⟩`, the irreducible subrepresentation of
 `ρ × νρ × ⋯ × ν^(m-1) ρ` (Ze80 §3.1), and the special representation
 `⟨Δ⟩^t = St_m(ρ)`, the irreducible quotient of the same product (Ze80 §9.1).
-Nothing is proved and no theorem is assumed as data. No constituent, dual
+This module proves nothing and assumes no theorem as data. No constituent, dual
 segment or central character is chosen: every statement relates actual
 representations through actual intertwiners or actual isomorphisms.
 
@@ -143,8 +143,11 @@ proposition is BZ77 Proposition 2.3(d): induction commutes with the
 contragredient. Ze80 Proposition 9.4 (p.198) states
 `(⟨Δ⟩^t)^∨ = ⟨Δ^∨⟩^t`, "the proof is the same as that of 3.3".
 
-The Library has no contragredient map on supercuspidal classes. The
-statement therefore takes actual representations: `B` represents
+This module does not import a contragredient map on supercuspidal classes.
+The published map `PadicField.TopologicalData.supercuspidalClassContragredient`
+of `Classification/SupercuspidalContragredient` takes
+`GeneralLinear.SupercuspidalContragredientStatement` as an argument. The
+statement here takes actual representations instead: `B` represents
 `ρ' = ν^(m-1) ρ`, and `B'` is a supercuspidal representation isomorphic to
 `B^∨`. Then `Δv` has members `ν^i ρ'^∨ = (ν^(m-1-i) ρ)^∨` for
 `0 ≤ i < m`. These are exactly the duals of the members of `Δ`, so `Δv` is
@@ -160,12 +163,15 @@ or quotient). By the uniqueness in Ze80 §3.1 and §9.1, such a `π` is
 (unique subobject or unique quotient object) for `Δ^∨`.
 
 The statement needs some supercuspidal `B'` isomorphic to `B^∨` with
-carrier in `uV`; for a `Δ` with no such `B'` it is vacuous. The published
-proposition `GeneralLinear.SupercuspidalContragredientStatement`, which is
-stated but not proved, provides `B'`: the smooth contragredient of the
-admissible supercuspidal `B` is supercuspidal and irreducible, and its
-carrier `SmoothDual` lies in `uV`. The statement does not depend on that
-proposition; it is quantified over every such `B'`.
+carrier in `uV`; for a `Δ` with no such `B'` it would be vacuous. The
+published proposition `GeneralLinear.SupercuspidalContragredientStatement`
+provides `B'`: the smooth contragredient of the admissible supercuspidal `B`
+is supercuspidal and irreducible, and its carrier `SmoothDual` lies in `uV`.
+That proposition is proved by the published theorem
+`GeneralLinear.supercuspidalContragredient`
+(`Classification/SupercuspidalContragredientProof`), so such a `B'` always
+exists. The statement does not depend on that theorem; it is quantified over
+every such `B'`.
 
 **Central character.** This statement is derived; it is not a numbered
 source theorem. The scalar matrix `z · 1_{mr}` is central and lies in the
@@ -184,8 +190,15 @@ ambient representation; the algebraic form of this step is the published
 
 ## Scope
 
-- No proof is given. The twist statements follow formally from BZ77
-  1.9(f). The contragredient statement relies on Ze80 §3.1 and §9.1, whose
+- This module gives no proof. The central-character statement
+  `SegmentConstituentCentralCharacter` is proved, for every `F` and `T`, by
+  the published theorem `Classification.segmentConstituentCentralCharacter`
+  (`Classification/SegmentConstituentCentralCharacterProof`). The two twist
+  statements, the contragredient statement and the bundles
+  `SegmentConstituentCompatibilityTheorems` and
+  `PadicSegmentConstituentCompatibilityTheorems` have no proof in the
+  Library. The twist statements follow formally from BZ77 1.9(f). The
+  contragredient statement relies on Ze80 §3.1 and §9.1, whose
   proofs go through Ze80 Theorem 2.2 and Proposition 2.10 and hence through
   Ze80 Proposition 1.11; Zelevinsky only sketches the reducibility half of
   1.11 (p.175).

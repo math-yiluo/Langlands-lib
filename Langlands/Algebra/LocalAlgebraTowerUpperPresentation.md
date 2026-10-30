@@ -34,9 +34,13 @@ sense.
 `LocalAlgebraApproximationExistence.nonempty_pres` and then applies `nonempty_pres_upper`.
 
 These results do not prove `EssFinitePresentation S T`. That is the tower cancellation
-statement `EssFinitePresentationTowerCancellationStatement`, which is still unproved in the
-Library and is not used here. The tower construction needs only the `Pres` form, which is
-the lemma proved here.
+statement `EssFinitePresentationTowerCancellationStatement`. It is proved separately, with
+the given algebra tower, the hypotheses `EssFinitePresentation R S` and
+`EssFinitePresentation R T`, and three independent universes, by
+`essFinitePresentationTowerCancellation` in
+`Langlands.Algebra.EssFinitePresentationTowerCancellationProof`. This module neither imports
+nor uses that theorem. The tower construction needs only the `Pres` form, which is the
+lemma proved here.
 
 ## Proof of `nonempty_pres_upper`
 

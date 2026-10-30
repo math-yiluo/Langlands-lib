@@ -1,6 +1,7 @@
 # Etale positive multiplication on abelian schemes
 
-Author: Worker 299.
+Author: Worker 299. P3-001 documentation correction: Worker 1054, following
+the 2026-10-29 external audit.
 
 `Langlands.AbelianScheme.MultiplicationEtaleStatement` is a proposition target.
 For every scheme `S`, every published `Langlands.AbelianScheme S` `A`, and
@@ -43,16 +44,24 @@ pages below were read directly.
   bundle carries commutativity explicitly, which the imported multiplication
   needs; this statement does not prove commutativity.
 - Proposition 20.7, p.44: for an abelian scheme `A` of relative dimension `g`
-  over `S`, multiplication `n_A` is finite, flat and surjective, and "`n_A`
-  (and therefore its kernel) is étale if and only if `n` is not divisible by
-  any of the characteristics of the residue fields of `S`". This target is the
-  forward implication of that last sentence for `n_A` itself. The proof
-  derives it from Theorem 8.2.
+  over `S`, multiplication `n_A` is finite, flat and surjective. Its last
+  sentence says that `n_A` (and therefore its kernel) is étale when `n` is not
+  divisible by any of the characteristics of the residue fields of `S`, and
+  states the converse as well. This target is only that sufficient direction,
+  for `n_A` itself. The proof derives it from Theorem 8.2.
 - Theorem 8.2, p.13: for an abelian variety of dimension `g` over a field `k`
-  and an integer `n > 0`, `n_A` is an isogeny of degree `n^(2g)`, étale if and
-  only if the characteristic of `k` does not divide `n`. The sentence of
+  and an integer `n > 0`, `n_A` is an isogeny of degree `n^(2g)`. It is étale
+  when the characteristic of `k` does not divide `n`. The sentence of
   Proposition 20.7 does not state a sign for `n`, but its proof invokes this
   positive-integer theorem, so the target keeps `0 < n`.
+
+The converse directions of Theorem 8.2 and Proposition 20.7 need positive
+(relative) dimension, and this target does not use them. Milne, p.3, defines an
+abelian variety as a complete connected group variety, so dimension `0` is
+allowed. In dimension `0` multiplication is the identity, which is étale for
+every `n`. For example, take `S = Spec 𝔽_p` and the trivial abelian scheme
+`A = S` with `n = p`: then `n_A` is étale although `p` is the residue
+characteristic.
 
 ## The global-unit hypothesis
 
@@ -90,10 +99,13 @@ separate `Langlands.GroupScheme.MultiplicationIsogenyStatement` covers these
 for nonzero integers), no degree or rank formula, nothing about negative
 integers, and nothing about the kernel (the separate
 `Langlands.AbelianScheme.TorsionFiniteEtaleStatement` concerns positive
-torsion; its proof task plans to use this target as an input).
+torsion; its published proof `Langlands.AbelianScheme.torsionFiniteEtale` does
+not use this target).
 
 ## Formal status
 
 The declaration is a `Prop`-valued `def` in universe `u`, not a theorem, an
-axiom, or a field of the abelian-scheme bundle. Its proof is a separate
-obligation after independent acceptance and publication of this statement.
+axiom, or a field of the abelian-scheme bundle. A separate module proves it:
+`Langlands.AbelianScheme.multiplicationEtale :
+MultiplicationEtaleStatement.{u}` in
+`Langlands.AbelianScheme.MultiplicationEtale`.

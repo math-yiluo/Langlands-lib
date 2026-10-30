@@ -1,6 +1,7 @@
 # Finite étaleness of the actual roots-of-unity group scheme
 
-Author: Worker 306.
+Author: Worker 306. Worker 1060 updated the proof-status paragraphs after the
+2026-10-29 documentation audit (finding P3-039).
 
 `Langlands.GroupScheme.MuFiniteEtaleStatement.{u}` is the proposition
 
@@ -12,7 +13,9 @@ Author: Worker 306.
 
 Here `IsFinite` and `Etale` are Mathlib's properties of the structure morphism
 of the existing group scheme. The module defines a proposition; it does not
-prove it or install geometric instances.
+prove it or install geometric instances. The published theorem
+`Langlands.GroupScheme.muFiniteEtale`, in
+`Langlands.GroupScheme.MuFiniteEtaleProof`, proves this exact proposition.
 
 ## Existing construction and exact scope
 
@@ -27,9 +30,11 @@ Langlands.GroupScheme.kernel
 ```
 
 This follows by unfolding `mu` and `torsion`; in particular the structure
-morphisms agree definitionally. Thus a future proof of this proposition will
-supply the finite and étale kernel hypotheses used by the existing Tate
-monodromy constructions. No arbitrary replacement scheme or structure field
+morphisms agree definitionally. Thus the published proof `muFiniteEtale`
+supplies the finite and étale kernel hypotheses used by the existing Tate
+monodromy constructions; the published adapter
+`Langlands.AbelianScheme.Tate.TwistMonodromyUnits` takes the two projections
+of that theorem. No arbitrary replacement scheme or structure field
 containing the desired conclusion occurs in this statement.
 
 The quantifiers include every scheme in universe `u` and every positive natural
@@ -49,9 +54,11 @@ The Stacks Project, [Example 39.5.2, Tag 040M](https://stacks.math.columbia.edu/
 gives `Spec(ℤ[x]/(xⁿ−1))` and its base changes as the representing schemes.
 For positive `n`, the polynomial coordinate is already invertible, so this
 agrees with the Laurent-coordinate description. The imported natural
-`mu.pointsEquiv` identifies the same represented functor; the comparison with
-this affine model follows mathematically by Yoneda and remains part of the
-future Lean proof.
+`mu.pointsEquiv` identifies the same represented functor. The comparison with
+this affine model, for positive `n` over every affine base `Spec A`, is the
+separate published proposition `MuAffinePresentationStatement`; its published
+proof `muAffinePresentation` obtains the isomorphism by Yoneda from a natural
+comparison of points built on `mu.pointsEquiv`.
 
 The geometric claim is derived from the **proof**, rather than the sheaf-exactness
 conclusion, of [Lemma 59.28.1, Tag 03PL](https://stacks.math.columbia.edu/tag/03PL).
@@ -60,9 +67,12 @@ algebra is `A[t]/(tⁿ−1)`, free on `1,t,…,tⁿ⁻¹`. The restriction of th
 `n` stays invertible; `t` is invertible and the derivative `n tⁿ⁻¹` is a unit.
 The source's standard-étale calculation therefore gives étaleness, and the
 finite affine algebras give finiteness over `S`. This is a source derivation,
-not an implemented proof in this module. The retained comments to Tag 03PL
-explicitly clarify that its natural numbers are positive and that invertibility
-is essential. No additional base hypothesis is used.
+not an implemented proof in this module. The implemented Lean proof
+`muFiniteEtale` uses the published affine theorems `muAffinePresentation` and
+`muCoordinateAlgebra` and descends finiteness and étaleness over an affine
+open cover of `S`; its own Markdown describes that route. The retained
+comments to Tag 03PL explicitly clarify that its natural numbers are positive
+and that invertibility is essential. No additional base hypothesis is used.
 
 ## Retained sources and reading record
 
@@ -81,4 +91,5 @@ is essential. No additional base hypothesis is used.
 
 No project errata note for either source was present when checked. This
 statement does not assert a rank formula, a trivialization, or a monodromy
-comparison. Its exact-target proof is a separate follow-up task.
+comparison. Its exact-target proof is the published theorem
+`Langlands.GroupScheme.muFiniteEtale`.

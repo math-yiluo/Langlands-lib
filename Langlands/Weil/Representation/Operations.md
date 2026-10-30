@@ -2,8 +2,10 @@
 
 Worker 25 states a coherent family of properties of actual finite-dimensional
 complex representations. `Langlands.Weil.RepresentationOperations` is the
-conjunction of the five proposition definitions listed below. It is a target
-for later proof, not an axiom or a proved theorem.
+conjunction of the five proposition definitions listed below. This module
+states these propositions and proves none of them; it adds no axiom. The
+separately published proofs are listed in
+[Published proofs](#published-proofs).
 
 The inputs are Mathlib representations on actual vector spaces. Their group
 and three carrier universes are independent. Direct sum uses the binary
@@ -43,14 +45,17 @@ It does not assume semisimplicity or a chosen complement.
 Continuity uses `moduleTopology ℂ (Module.End ℂ V)`, the usual complex
 finite-dimensional endomorphism topology. No topology on the carrier is
 selected, and the complex scalars are not discrete. This is exactly the
-predicate presentation used by the construction companion's
-`FiniteRepresentation.IsContinuous`. Its `representation`, `inertiaKernel`,
+predicate presentation of the published `Langlands.FiniteRepresentation.IsContinuous`
+in `Langlands.Weil.Representation.Predicates`. Its `representation`
+(from `Langlands.Weil.Representation.Basic`), `inertiaKernel`,
 `HasOpenInertiaKernel`, `HasFiniteInertiaImage`, `HasFiniteImage`,
 `IsUnramified`, `IsIrreducible` and `IsSemisimple` unfold to the expressions
-in this target. The target is stated on these underlying Mathlib objects so
-that it does not introduce a competing bundle or wait for companion publication.
-The companion's quotient rank invariance remains its existing definition
-obligation; this family also supplies determinant and property invariance.
+in this target. The target is stated on these underlying Mathlib objects and
+does not import that bundle, so it introduces no competing bundle. The bundle's
+own rank invariance under linear equivalence,
+`FiniteRepresentation.rank_eq_of_equiv`, and the descended
+`FiniteRepresentation.classRank` on its isomorphism quotient are already in
+`Basic`; this family adds determinant and property invariance.
 
 The closure target assumes a topological group, as continuity of the inverse
 action is needed for duals and openness of larger subgroups is used for
@@ -75,6 +80,23 @@ No classification witness is assumed in a structure field. This is a
 parameter-side normalization interface; it is not local reciprocity or
 the local Langlands correspondence.
 
+## Published proofs
+
+Every proposition of this family is proved, outside this module, at
+independent universes. The theorems are in namespace `Langlands.Weil`:
+
+| Theorem | Proves | Module after `Langlands.Weil.Representation.` |
+| --- | --- | --- |
+| `representationIsomorphismInvariance` | `RepresentationIsomorphismInvariance.{uG, uV, uU}` | `IsomorphismInvarianceProof` |
+| `representationRankDeterminant` | `RepresentationRankDeterminant.{uG, uV, uU}` | `RankDeterminantProof` |
+| `representationExactSequenceInvariants` | `RepresentationExactSequenceInvariants.{uG, uV, uU, uT}` | `ExactSequenceProof` |
+| `representationOperationClosure` | `RepresentationOperationClosure.{uG, uV, uU}` | `OperationClosureProof` |
+| `representationCharacterNormalization` | `RepresentationCharacterNormalization.{uG, uV}` | `CharacterNormalizationProof` |
+| `representationOperations` | `RepresentationOperations.{uG, uV, uU, uT}` | `OperationsProof` |
+
+`representationOperations` is the conjunction of the five component theorems,
+in the order of the conjunction.
+
 ## Exact sources and dependencies
 
 - Tate, *Number theoretic background*, Corvallis Part II (1979),
@@ -94,13 +116,17 @@ the local Langlands correspondence.
   identities are reused as infrastructure and are not restated here.
 - Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
   Lean 4.34.0, Mathlib commit
-  `5ed2965256430c3649e86755f9576b54eca72435`.
+  `5ed2965256430c3649e86755f9576b54eca72435`, where the family was first
+  stated. The current check environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+  uses the same Lean version and Mathlib commit.
   The mathematical interfaces are `Representation.prod`, `tprod`, `dual`,
   `Equiv`, `IntertwiningMap`, `Module.finrank`, `LinearMap.det`,
   `Representation.IsIrreducible` and `IsSemisimpleRepresentation`.
 
-No project definition is copied from the companion draft. Its existing
-Mathlib carrier/action interface determines the compatibility described above.
+No project definition is copied from the companion `Basic` and `Predicates`
+modules, which were an unpublished draft when this family was stated and are
+now published. Their Mathlib carrier/action interface determines the
+compatibility described above.
 This family does not construct an actual local Weil group or supply WD
 monodromy, Frobenius semisimplification, block classification, or arithmetic
 L/epsilon/gamma identities. Those remain distinct assigned families.
