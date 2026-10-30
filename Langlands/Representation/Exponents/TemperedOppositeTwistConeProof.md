@@ -67,8 +67,10 @@ one on diagonal scalars. The published closed-cone characterization then
 gives total sum zero and every proper prefix inequality for that weighted
 block vector.
 
-`diagonal_cone_of_weighted_block_cone` expands each block parameter over
-all its coordinates. The block-sum and block-prefix identities give the
+`Langlands.Exponents.diagonal_cone_of_weighted_block_cone`, now shared in
+`WeightedBlockCone`, expands each block parameter over all its coordinates.
+Its proof and supporting numerical lemmas were moved without changing their
+statements or arguments. The block-sum and block-prefix identities give the
 total and the inequalities at block boundaries. On each block the
 parameter is constant, so `MaximalConePolygon.pre_nonneg_of_antitone`
 interpolates between the adjacent boundary sums and supplies every

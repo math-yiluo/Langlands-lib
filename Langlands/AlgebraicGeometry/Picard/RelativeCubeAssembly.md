@@ -22,13 +22,19 @@ three explicit geometric hypotheses:
   development check of exactly this application compiles. This module does not
   import that statement;
 * `hZ : RigidifiedClassesZariskiSeparatedStatement.{u}`, the published
-  Zariski separatedness of actual rigidified classes (statement only; its
-  proof is owned by task `f34bab0f-25a2-40c7-a05c-6c0f06ed4283`).
+  Zariski separatedness of actual rigidified classes. It is now proved, with
+  no further hypotheses, as
+  `Langlands.AbelianScheme.rigidifiedClassesZariskiSeparated` in module
+  `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesZariskiSeparatedProof`.
+  This module does not import that proof and keeps `hZ` as an explicit
+  hypothesis.
 
 Tensor preservation is not a hypothesis: the published proved theorem
 `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso` is used directly.
 None of `hF`, `hL` or `hZ` is proved here. Therefore this module does not
 prove the relative theorem of the cube. It reduces it to these three inputs.
+Of the three, only `hZ` has a published proof, so the relative theorem of the
+cube still depends on the unproved `hF` and `hL`.
 
 ## Main declarations
 

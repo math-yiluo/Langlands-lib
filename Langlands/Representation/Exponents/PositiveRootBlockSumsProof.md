@@ -19,7 +19,9 @@ identify the fine block containing each coordinate. Each fine value occurs
 exactly its block size times, so the resulting sum is `weighted_sum`.
 
 `transport_blockIndex` eliminates a literal block-shape equality and proves
-that the expanded vector is unchanged by its equality transport.
+that the expanded vector is unchanged by its equality transport. It is exposed
+for reuse by `SupportedRegularWeylParameterCones`, with the same statement and
+proof as the former private helper.
 `coarse_sum` uses this fact and reindexes a coarse block through `Q`.
 The actual nested-coordinate identity decomposes the result into middle
 block sums, after the finite casts identifying each middle block's size.

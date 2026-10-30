@@ -80,7 +80,8 @@ theorem middle_sum {n : ℕ} (D : BlockShape n) (R : BlockRefinement D)
   simpa only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
     using weighted_sum D R v hv i
 
-private theorem transport_blockIndex {n : ℕ} {C C' : BlockShape n}
+/-- Literal block-shape equality preserves the expanded parameter vector. -/
+theorem transport_blockIndex {n : ℕ} {C C' : BlockShape n}
     (h : C = C') (v : Fin C.length → ℝ) (a : Fin n) :
     (h ▸ v) (blockIndex C' a) = v (blockIndex C a) := by
   subst C'
