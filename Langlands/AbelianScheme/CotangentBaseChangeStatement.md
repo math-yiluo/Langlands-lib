@@ -45,7 +45,10 @@ RelativeDifferentialsBaseChangeIsIsoStatement S` in module
 This target is about the cotangent module. It does not assert that
 the internal dual of an arbitrary module commutes with arbitrary
 pullback, and it does not claim unrestricted Lie base change.
-No exact-target proof of this proposition is in the Library yet. With
-the published differential comparison it only remains to note that
-pullback along the identity section preserves isomorphisms and that the
-composite of two isomorphisms is an isomorphism.
+The proposition is proved, exactly as stated, by
+`Langlands.GroupScheme.cotangentBaseChangeIsIso S :
+CotangentBaseChangeIsIsoStatement S` in module
+`Langlands.AbelianScheme.CotangentBaseChangeProof`. That proof follows the
+derivation above. It pulls the published differential comparison back
+along the identity section, which preserves isomorphisms, and composes
+with `cotangentBaseChangePullbackIso b G`.

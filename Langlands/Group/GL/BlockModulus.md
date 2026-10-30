@@ -43,10 +43,23 @@ This formula is the standard upper-block modulus formula. Its factors are
 the determinant contribution of the left-right action
 `X_ij -> m_i X_ij m_j^(-1)` on each rectangular off-diagonal block:
 the row action contributes `det(m_i)^(n_j)` and the column action contributes
-`det(m_j)^(-n_i)`. Formal identification with the determinant of the full
-conjugation action or with Haar scaling on the unipotent radical remains a
-separate theorem obligation. Neither identification is assumed by this
-explicit finite-product construction.
+`det(m_j)^(-n_i)`. The Haar-scaling identification is proved downstream:
+`Langlands.glBlockModulusHaar` in `Group/GL/BlockModulusHaarProof` proves
+`Langlands.GLBlockModulusHaarStatement` of
+`Group/GL/BlockModulusHaarStatement`, with no further hypotheses. For every
+prime `p`, field `F : PadicField p`, realization `T`, rank `n`, ordered block
+shape `B`, supplied measurable space with Borel structure on
+`B.unipotentRadical F.Carrier` (which carries the subspace topology induced
+by `T`), Haar measure `μ` on it and Levi element `m`, it gives
+`μ.map (B.leviAction F.Carrier m) = (T.leviModulus B m)⁻¹ • μ`, where
+`B.leviAction F.Carrier m` is conjugation `u -> m u m^(-1)`. Since the
+Bernstein--Zelevinsky formula `∫ f(σ^(-1) u) dμ(u) = mod_U(σ) ∫ f dμ` means
+that the image of `μ` under `σ` is `mod_U(σ)^(-1) μ`, the reciprocal scalar
+says exactly `mod_U(m) = T.leviModulus B m`. This module does not import that
+theorem. No Library theorem identifies `leviModulus` with the absolute
+determinant of the full conjugation action on the radical (on its Lie algebra
+or its matrix coordinates); that identification is not formalized. Neither
+identification is assumed by this explicit finite-product construction.
 
 Source conventions: Bernstein--Zelevinsky (1977), section 1.7 and section 1.8,
 printed page 444 / PDF page 5, defines the module of conjugation on the

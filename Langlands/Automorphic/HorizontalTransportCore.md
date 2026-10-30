@@ -47,4 +47,17 @@ coefficient spaces; square zero, cycles, boundaries, cohomology, smoothness
 of the horizontal representation and general tensor coefficients remain
 separate obligations.
 
-Authorship: Worker 2.
+Implementation note. The local `AddCommGroup` instances on
+`RationalInvariantFunctions F n`, `ContinuousRationalFunctions F n`,
+`FiniteSmoothRationalFunctions F n`, `AutomorphicForms F n`,
+`StableAutomorphicFunctions F n`, `S.Space`, `T.Space` and `U.Space` are
+exactly the canonical `Submodule.addCommGroup` structures and remain local to
+this module. They have explicit names with the prefix
+`horizontalTransportCore`. Anonymous instances would receive generated public
+declaration names coinciding with those of `HorizontalCohomology` or
+`HorizontalCohomologyClasses`; the explicit names permit importing this module
+together with both of those modules, in either order. No construction or
+theorem changes.
+
+Authorship: Worker 2. Import-collision correction (explicit local instance
+names): Worker 986.

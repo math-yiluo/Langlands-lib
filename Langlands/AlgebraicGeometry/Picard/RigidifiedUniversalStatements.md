@@ -2,8 +2,10 @@
 
 `Langlands.AlgebraicGeometry.Picard.RigidifiedLineBundle.UniversalBundleUniquenessStatement`
 is the proposition that two universal rigidified line bundles have a unique
-compatible isomorphism of their parameter schemes. It is a statement awaiting
-a separate proof.
+compatible isomorphism of their parameter schemes. This module states it and
+contains no proof. It is proved, exactly as stated, by
+`Langlands.AlgebraicGeometry.Picard.RigidifiedLineBundle.universalBundleUniqueness`
+in module `Langlands.AlgebraicGeometry.Picard.RigidifiedUniversalUniquenessProof`.
 
 More precisely, suppose `f : X → S` has a section `ε`. Let `P` and `Q` be
 `S`-schemes, with actual rigidified line bundles `L` on `P ×_S X` and `M`
@@ -19,10 +21,16 @@ The statement takes
 at the same universe as the schemes. This is the precise canonical
 identity/composition compatibility proposition used to construct the
 class presheaf and its representability bridge. No extra coherence
-axiom is introduced. The intended proof uses the constructed
-`comparisonIso`, or the two unique classifying maps together with the
-pullback identity and composition laws. Equality of classes is equivalent
-to existence of the required rigidified bundle isomorphism.
+axiom is introduced. The proof `universalBundleUniqueness` also keeps this
+hypothesis. It uses the two classifying maps together with the pullback
+identity and composition laws `classifyingMap_id` and `classifyingMap_comp`,
+which need the hypothesis. Equality of classes is equivalent to existence of
+the required rigidified bundle isomorphism (`classifyingMap_eq_iff`). The
+hypothesis itself is proved separately, as
+`Langlands.SchemeModule.RigidifiedModule.pullbackCoherence` in module
+`Langlands.AlgebraicGeometry.Picard.RigidifiedPullbackProofs`. So
+`universalBundleUniqueness pullbackCoherence` proves the quantified
+uniqueness assertion with no coherence hypothesis left.
 
 This is a derived Yoneda uniqueness target for the universal property in
 Edixhoven–van der Geer–Moonen, *Abelian Varieties*, Chapter VI §1, (6.2),

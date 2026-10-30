@@ -17,19 +17,29 @@ open ArchimedeanGL
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+-- Explicit names keep these canonical local structures from colliding with
+-- generated instance names in sibling modules imported alongside this one.
+local instance horizontalTransportCoreRationalInvariantAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance horizontalTransportCoreContinuousRationalAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalTransportCoreFiniteSmoothRationalAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalTransportCoreAutomorphicFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance horizontalTransportCoreStableAutomorphicAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S T U : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
-local instance : AddCommGroup T.Space := Submodule.addCommGroup _
-local instance : AddCommGroup U.Space := Submodule.addCommGroup _
+local instance horizontalTransportCoreSSpaceAddCommGroup : AddCommGroup S.Space :=
+  Submodule.addCommGroup _
+local instance horizontalTransportCoreTSpaceAddCommGroup : AddCommGroup T.Space :=
+  Submodule.addCommGroup _
+local instance horizontalTransportCoreUSpaceAddCommGroup : AddCommGroup U.Space :=
+  Submodule.addCommGroup _
 
 
 namespace Intertwiner

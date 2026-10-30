@@ -1,7 +1,10 @@
 # Comparison of universal smooth-family parameters
 
 `Langlands.AbelianScheme.SmoothFamilyUniversalComparisonStatement.{u}` is a
-proposition definition. It is not a proof, and no axiom is introduced.
+proposition definition. It is not a proof, and no axiom is introduced. The
+proposition is proved, exactly as stated, by
+`Langlands.AbelianScheme.smoothFamilyUniversalComparison` in module
+`Langlands.AlgebraicGeometry.Picard.SmoothFamilyUniversalComparisonProof`.
 
 ## Exact statement
 
@@ -73,21 +76,25 @@ a quasi-separated base, this statement applied with the first parameter
 geometric properties of `B.X.hom` transport to `P.hom`. This is why the
 quasi-separatedness assumption is placed on the first parameter only.
 
-## Expected proof route
+## Proof route
 
-A future proof is expected to proceed as follows; none of these steps is
-implemented in this module, and none is a hypothesis.
+The proof `smoothFamilyUniversalComparison` follows these steps. None of them
+is implemented in this module, and none is a hypothesis of the statement.
 
 1. Classify `L` by `M`: since `P.left` is quasi-separated, `P` is a permitted
    test, so the universality of `M` gives a unique `k : P ⟶ Q` whose
    classifying map sends the identity to the class of `L`.
 2. Show that `g ↦ g ≫ k` is bijective on morphisms from every
    quasi-separated test `T`. This uses
-   `RigidifiedLineBundle.classifyingMap_comp` (with the module pullback
-   coherence) and requires that the smooth-family condition is preserved by
-   actual rigidified pullback, so that pullbacks of `L` and `M` define
-   classes in `AlgebraicallyTrivialClassesViaSmoothFamily`. That pullback
-   stability is not yet in the Library and is a separate obligation.
+   `RigidifiedLineBundle.classifyingMap_comp`, instantiated with the
+   published module pullback coherence
+   `Langlands.SchemeModule.RigidifiedModule.pullbackCoherence`. It also
+   requires that the smooth-family condition is preserved by actual
+   rigidified pullback, so that pullbacks of `L` and `M` define classes in
+   `AlgebraicallyTrivialClassesViaSmoothFamily`. That pullback stability is
+   the published theorem
+   `Langlands.AbelianScheme.smoothFamilyPullback : SmoothFamilyPullbackStatement.{u}`
+   in module `Langlands.AlgebraicGeometry.Picard.SmoothFamilyPullbackProof`.
 3. Conclude `IsIso k` by the published criterion
    `Langlands.AlgebraicGeometry.quasiSeparatedTestIsoDetection`, which tests
    only quasi-separated schemes and needs no hypothesis on `Q.left`.
