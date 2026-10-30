@@ -18,6 +18,9 @@ The proof supplies an actual quotient of normalized cuspidal induction,
 then the subquotient required by that support relation. It preserves all
 member occurrences, including equal members and repeated segments.
 
+The two normalized-map surjectivity adapters are imported from
+[InducedMapSurjectivity](../Parabolic/InducedMapSurjectivity.md).
+
 ## Primitive quotients and their normalized product
 
 For each block index `j`, the proof applies
@@ -32,7 +35,7 @@ q j : segmentInduced (A j).obj (d.segments j).length → d.blocks j.
 These choices use the existing quotient witnesses; they require no assertion
 that segment heads exist.
 
-The local `normalizedParabolicMap_surjective` applies the published
+The shared `normalizedParabolicMap_surjective` applies the published
 `Induction.smoothInductionSurjectivity` to the actual block parabolic in
 `GL n`. Compact open subgroups are cofinal by
 `T.generalLinearCompactOpen`, and `B.isClosed_parabolic` supplies closedness.
@@ -41,7 +44,7 @@ projection and twisted by the inflated positive half-modulus character.
 Their smoothness follows from smooth pullback and the open-kernel twist
 lemma. The underlying intertwiner is still the given surjective map.
 
-The local `normalizedProductMap_surjective` then uses the published
+The shared `normalizedProductMap_surjective` then uses the published
 `FiniteTensor.externalMapSurjectivity` on the family of primitive maps and
 applies the parabolic adapter to their external tensor map. This is the actual
 `T.normalizedProductInducedMap`, whose definition is normalized parabolic

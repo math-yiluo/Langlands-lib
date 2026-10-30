@@ -19,24 +19,25 @@ universality.
 ## Implemented proof
 
 The proof reuses the published family naturality comparison and then implements
-the following argument through private helpers.
+the following argument through the shared helpers in
+[DualBaseChangeClasses](DualBaseChangeClasses.md) and a private isomorphism constructor.
 
 1. The published [family base-change naturality](FamilyBaseChangeNaturality.md)
    module supplies `familyBaseChangeSpaceMap_naturality` and
    `familyBaseChangeNaturality`. The proof uses the inverse of the latter
    natural isomorphism to compare the two orders of pullback on classes.
 
-2. `familyClassesBaseChange` sends a rigidified line-bundle class to its pullback
+2. `rigidifiedClassesBaseChange` sends a rigidified line-bundle class to its pullback
    class along the actual base-change map. Functoriality makes this well-defined
    on isomorphism classes. The preceding natural isomorphism gives its
    compatibility with parameter pullback. The rigidified
    `pullbackTensorIso`, with the stated preservation, composition, and left-unit
    coherence premises, proves that this class map preserves tensor products.
 
-3. `baseChangeFamily_classifyingMap` identifies classification by a base-changed
+3. `classifyingMap_baseChangeFamily` identifies classification by a base-changed
    family with base change of the old classified class. Applying this to the
    Poincare family and using `dualSchemeBaseChangePullbackIso` yields
-   `dualBaseChange_point_class`: composition with the prescribed comparison
+   `dualPointClass_dualSchemeBaseChangeIso`: composition with the prescribed comparison
    induces precisely this base-change map on rigidified classes.
 
 4. For each test scheme `T`, the old point classification is composed with
@@ -44,7 +45,7 @@ the following argument through private helpers.
    into rigidified classes. This is a monoid homomorphism `F`. The new dual's
    classification followed by the corresponding inclusion gives an injective
    monoid homomorphism `G`. The preceding identity says
-   `G (p ≫ e.hom) = familyClassesBaseChange b A T (F p)`, where `e` is the
+   `G (p ≫ e.hom) = rigidifiedClassesBaseChange b A T (F p)`, where `e` is the
    prescribed scheme isomorphism. Tensor preservation and injectivity of `G`
    show that composition with `e.hom` preserves multiplication.
 

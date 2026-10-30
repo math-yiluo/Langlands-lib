@@ -242,3 +242,7 @@ statement's intended route. The constant is
 `c = κ μG(J) / (vol(Y₀) μG'(A))`, where `κ` relates the coordinate product
 measure to `unipotentHaar F.Carrier (n + 1)`; the theorem asserts only that
 `c > 0`.
+
+The compact-character lemma `eq_one_of_isCompact` is imported from
+[CompactNormCharacter](../../Topology/CompactNormCharacter.md).
+Its declaration and proof retain their original namespace and meaning.
