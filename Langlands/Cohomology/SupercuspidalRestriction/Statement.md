@@ -80,8 +80,21 @@ It applies the general statement at `H = G°`, with
 `unitDeterminantSubgroup_normal`. The general statement at `GL_n(F)` needs
 `TotallyDisconnectedSpace` and `SigmaCompactSpace` instances for the canonical
 topology. Instance search finds neither in the Library (checked in the
-private test below), so the theorem takes them as instance arguments. The
-`GL_n` restriction statement is therefore also stated separately.
+private test below), so the theorem takes them as instance arguments. Both
+properties are proved in the Library, but not as instances. The public theorem
+`PadicField.TopologicalData.generalLinearSigmaCompactSpace` in
+`Langlands.Group.GL.CountabilityProof`, applied to `F.canonicalTopologicalData`,
+gives σ-compactness for this topology, so a caller can supply that argument
+with it. Total disconnectedness is proved only by private theorems named
+`generalLinearTotallyDisconnected`, in
+`Langlands.Representation.CuspidalSupport.LeviAdmissibleFactorizationProof` and
+`Langlands.Representation.Tensor.FactorMatchingProof`, for the matrix-unit
+topology of a supplied `F.TopologicalData`, which is the canonical topology
+when that data is `F.canonicalTopologicalData`. Private declarations cannot be
+used outside their modules, and a search of the Library's Lean files found no
+public theorem stating total disconnectedness of `GL_n(F)`. Because the
+theorem has these extra arguments, the `GL_n` restriction statement is also
+stated separately.
 
 Together with openness of `G°` and the published complex
 `CompactInductionSupercuspidalExtVanishingStatement` at `G = GL_n(F)`, it
@@ -232,3 +245,9 @@ a private test in which instance search failed to find
 `TotallyDisconnectedSpace` and `SigmaCompactSpace` for the canonical topology
 of `GL_n(F)`, and `TotallyDisconnectedSpace` for `F`. These checks establish
 well-formed statements. They do not prove any of the propositions.
+
+Check `9ee26d36-77e2-4e60-8169-592663d5eb35`, a later private test with no
+errors or warnings, elaborated
+`F.canonicalTopologicalData.generalLinearSigmaCompactSpace n` as a proof of
+`SigmaCompactSpace (GeneralLinear n F.Carrier)` for
+`F.canonicalGeneralLinearTopology n`, the topology this module uses.

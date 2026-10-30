@@ -28,8 +28,15 @@ J. Math. 105 (1983).
   write by convention `L(s, σ × π) = L(s, π × σ)`." It is "easy to see
   directly" that `ε(s, π × σ, ψ) = ε(s, σ × π, ψ)` for `r = t`, "thus, if
   `r > t`, we may also define `ε(s, σ × π, ψ) = ε(s, π × σ, ψ)`." The same
-  paragraph notes that `L(s, π × σ)` does not depend on `ψ`; that is not
-  proved in the Library.
+  paragraph notes that `L(s, π × σ)` does not depend on `ψ`. The Library
+  proves the case of scaling by a unit for the ordered relation:
+  `isPairLPolynomial_characterChange_canonical`
+  (`RankinSelberg/CanonicalPairLFactor`) shows that the published
+  `IsPairLPolynomial`, for any supplied topological data of `F`, the quotient
+  measure `unipotentQuotientHaar` and a fixed additive Haar measure, holds for
+  `ψ` if and only if it holds for `ψ.scale a`, `a ∈ F^×`, with the same
+  polynomial. This module states no `ψ`-independence for its own relations,
+  and nothing here depends on it.
 - **Gamma factor (derived).** JPSS do not state a gamma convention at (2.12).
   The gamma factor is `γ = ε L(1 - s, π̃ × σ̃)/L(s, π × σ)` (Jacquet and
   Shalika 1985, (4.1), printed page 326). Since `L` and `ε` follow the
@@ -93,8 +100,19 @@ In equal rank `π` is the candidate. `IsPadicSymmetricEpsilonFactor` (witness
   smaller rank, as those of `π × σ`. The symmetric relations implement exactly
   this definition. In equal rank they keep the given order. JPSS's equal-rank
   identities `L(s, π × σ) = L(s, σ × π)` and
-  `ε(s, π × σ, ψ) = ε(s, σ × π, ψ)` are not proved in the Library, and nothing
-  here depends on them.
+  `ε(s, π × σ, ψ) = ε(s, σ × π, ψ)` are proved downstream as exchanges of
+  certificates, in `RankinSelberg/EqualRankFactorSwapProof`.
+  `isPadicPairLPolynomial_swap_equalRank` proves
+  `IsPadicPairLPolynomial F ψ ν π σ P ↔ IsPadicPairLPolynomial F ψ ν σ π P`
+  for equal ranks, at the same `ψ` and the same supplied additive Haar
+  measure `ν`, for arbitrary representations. `equalRankFactorSwap` proves
+  `EqualRankFactorSwapStatement`: the same exchange of the L, epsilon and
+  gamma certificates, at the same `ψ` and a self-dual
+  `ν : SelfDualHaar F.canonicalTopologicalData ψ`, for `π` and `σ` of
+  Whittaker type for `standardCharacter ψ n`, with independent carrier
+  universes `uV` and `uW`. These results transport a given certificate; they
+  do not assert that any factor exists. Nothing here depends on them, and the
+  symmetric relations remain defined with the given order in equal rank.
 - **Whittaker functionals.** For `r < n` the representation `π` is the test,
   so the relations use its `ψ̄`-Whittaker functionals. This is the JPSS
   convention in (2.12). `Whittaker.characterChangeFunctionalEquiv` at

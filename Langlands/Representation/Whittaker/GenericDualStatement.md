@@ -1,11 +1,25 @@
 # Generic contragredients and inverse transpose
 
-`Langlands.GenericContragredientStatement` is an unproved proposition about
+`Langlands.GenericContragredientStatement` is a proposition about
 actual complex representations of `GL_(n+1)(F)`, for every positive rank,
 every prime `p`, and every finite extension `F : Langlands.PadicField p`.
 The field and representation-space universes are independent. The topology
 is that of `F.canonicalNormedField`. No topology is put on the vector space,
 and that space is not assumed finite-dimensional.
+
+This module defines the proposition and proves nothing. Its proof,
+`Langlands.genericContragredient`, whose type is exactly
+`GenericContragredientStatement.{uF,uV}`, is in the companion module
+`Langlands.Representation.Whittaker.GenericDualProof`. That proof takes the
+first conclusion from the published Gelfand–Kazhdan theorem
+`Langlands.gelfandKazhdanContragredient`, of
+`Langlands.Representation.Smooth.Contragredient.GelfandKazhdanProof`, which
+needs only admissibility and irreducibility. It takes the second conclusion
+from the published `Langlands.Whittaker.explicitSmoothDualFunctional` and its
+lemmas `explicitSmoothDualFunctional_ne_zero` and
+`explicitSmoothDualFunctional_covariance`, of
+`Langlands.Representation.Whittaker.GenericDualTransport`, applied to the
+given nonzero functional.
 
 The hypotheses are irreducibility and admissibility of the representation,
 and genericity for a specified continuous nontrivial unitary additive
@@ -34,8 +48,11 @@ well-formedness certificate: transposition preserves determinant and the
 inverse of an invertible matrix has nonzero determinant. It does not prove
 either conclusion of the proposition. No arbitrary automorphism or
 assumed representation is supplied in place of the actual matrix formula.
-The group-geometry task remains responsible for its reusable bundled
-inverse-transpose homomorphism and geometric laws.
+The Library's reusable bundled inverse-transpose automorphism is the separate
+`Langlands.GeneralLinear.inverseTranspose` of `Langlands.Group.GL.Maps`. This
+module does not import it. The companion proof identifies `invTranspose g`
+with `GeneralLinear.inverseTranspose (n + 1) F.Carrier g` by `Units.ext` and
+`rfl`.
 
 The second conclusion asserts that the smooth contragredient has a nonzero
 Whittaker functional for `psi inverse`, using the same explicit upper
@@ -65,8 +82,10 @@ American Journal of Mathematics 105 (1983), 367--464:
 
 The source attributes the contragredient equivalence to Gelfand--Kazhdan.
 This target records the specialization used by JPSS in its integral theory;
-it supplies no formalization of that proof. It retains the generic
-irreducible admissible scope. Existence of a nonzero functional together
+this module supplies no formalization of that proof. The companion proof
+obtains the equivalence from the published
+`Langlands.gelfandKazhdanContragredient`, described above. The target retains
+the generic irreducible admissible scope. Existence of a nonzero functional together
 with irreducible multiplicity one gives the source's Whittaker-type
 hypothesis; that multiplicity-one fact remains a separate proof obligation,
 not an axiom imported by this target. Inverse-character genericity of the
@@ -127,5 +146,5 @@ the actual inverse-transpose formula, and both conclusions. No additional
 representation-space topology, finite-dimensionality, equivalence or dual
 genericity hypothesis was introduced by elaboration.
 
-Independent semantic review and publication remain separate requirements.
-Neither assertion is proved by defining or compiling this proposition.
+Neither assertion is proved by defining or compiling this proposition. Both
+are proved by the separate theorem `genericContragredient`.

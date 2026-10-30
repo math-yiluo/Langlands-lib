@@ -88,24 +88,46 @@ has constant term `1` and `L(s) = 1/P(q^{-s})`.
 - **Factor (ii).** With `X = q^{-s}`, `L(s, π × σ) = 1/P(X)` and
   `L(s, π × σ_i) = 1/P_i(X)`, membership in
   `∏ L(s, π × σ_i) ℂ[q^{-s}, q^{s}]` says `∏ P_i / P` is a Laurent
-  polynomial `Q/X^e`, which is `X^e ∏ P_i = Q P`. Since `P(0) = 1`, `X` is
-  prime to `P`, so this is equivalent to `P ∣ ∏ P_i`. That equivalence is not
-  proved in the Library, and the statement keeps the paper's form.
+  polynomial `Q/X^e`, which is `X^e ∏ P_i = Q P`. The statement keeps this
+  cleared form of the paper. With `A = ∏ P_i` it is equivalent to `P ∣ A` by
+  two published proofs in `RankinSelberg/LaurentDivisibilityProof`.
+  `reciprocalLaurentSpanClearing` shows, for nonzero `P` and `A`, that `1/P`
+  lies in the Laurent span of `1/A` if and only if `X^e A = Q P` for some
+  polynomial `Q` and `e : ℕ`. `normalizedReciprocalLaurentSpanDivisibility`
+  shows, for `P.coeff 0 = 1` and `A ≠ 0`, that the same membership holds if
+  and only if `P ∣ A`; its proof uses that `X` is coprime to `P`. The
+  certified polynomials meet these conditions: `P` and every `Pi i` have
+  constant coefficient `1` (`IsPadicSymmetricLPolynomial.coeff_zero`), so
+  `∏ i, Pi i` has constant coefficient `1` and is nonzero. These algebraic
+  criteria do not prove that the factors exist or that (ii) holds.
 - **Parabolic.** JPSS induce from the lower standard parabolic `Q` of type
-  `(t_1, …, t_p)`. The Library induces from the standard upper block
-  parabolic. Let `w` be the block-antidiagonal permutation matrix with identity
-  blocks, so that `w Q w^{-1}` is the upper parabolic `P'` of the reversed type
-  `(t_p, …, t_1)`, and `w diag(m_1, …, m_p) w^{-1} = diag(m_p, …, m_1)`. Then
-  `f ↦ f(w^{-1} ·)` is an equivalence from `Ind(G_t, Q; σ_1, …, σ_p)` to the
-  upper induction of `(σ_p, …, σ_1)`. The modulus characters agree: the
-  exponent of `|det m_i|` is `∑_{j<i} t_j - ∑_{j>i} t_j` for `δ_Q` and for
-  `δ_{P'}` at the reversed position. The statements quantify over all families,
-  the product `∏ G_i` and the condition in (ii) do not depend on the order of
-  the blocks, and the relations are invariant under equivalence
-  (`IsPadicSymmetricGammaFactor.congr_equiv`,
-  `IsPadicSymmetricLPolynomial.congr_equiv`). So the statement for all families
-  is the paper's statement for all families. This equivalence of induced
-  representations is derived here and is not proved in the Library.
+  `(t_1, …, t_p)`. The statements induce from the standard upper block
+  parabolic. For a block shape `B`, the Library's normalized induction from
+  the lower block parabolic is
+  `T.normalizedOppositeParabolicInduced B (B.blockTensor σ)` of
+  `Induction/OppositeParabolic`. Its normalizing character is the inverse of
+  the upper half modulus, which is JPSS's `δ_Q^{1/2}`: the exponent of
+  `|det m_i|` in `δ_Q` is `∑_{j<i} t_j - ∑_{j>i} t_j`, the negative of its
+  exponent in the upper modulus of the same type. The published proof
+  `glOppositeProductReversal` (`Induction/OppositeProductReversalProof`)
+  compares the two inductions. For every supplied `T`, every block shape `B`
+  and every family of smooth block representations `σ i`, it gives a
+  representation equivalence `E` from this opposite induction to the upper
+  induction `T.normalizedProductInduced B.reverse (fun i => σ i.rev)` of the
+  reversed family. It satisfies
+  `Induction.eval (E f) x = R (Induction.eval f (w * x))`, with
+  `w = B.reverseMatrix F.Carrier` and
+  `R = PiTensorProduct.reindex ℂ V Fin.revPerm`, and the corresponding
+  inverse formula. Representations of Whittaker type are admissible, hence
+  smooth, so it applies with `T = F.canonicalTopologicalData`, whose upper
+  induction is `canonicalNormalizedProductInduced`. The statements quantify
+  over all families, the product `∏ G_i` and the condition in (ii) do not
+  depend on the order of the blocks, and the relations are invariant under
+  equivalence (`IsPadicSymmetricGammaFactor.congr_equiv`,
+  `IsPadicSymmetricLPolynomial.congr_equiv`). So the statement for all
+  families is the paper's statement for all families. The reversal
+  equivalence only compares induced representations. It does not prove
+  multiplicativity, the existence of factors or Proposition (2.3).
 - **Normalization.** JPSS's display (9) with `G = GL_t(F)` unimodular is
   `f(hg) = δ_Q^{1/2}(h) σ(h) f(g)`, and their module `δ_Q` is the standard
   modulus `|det Ad(m)|` on the Lie algebra of the unipotent radical (check with

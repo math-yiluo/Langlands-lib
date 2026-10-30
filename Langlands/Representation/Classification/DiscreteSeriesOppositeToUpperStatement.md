@@ -1,11 +1,17 @@
 # Same-sigma opposite-to-upper discrete-series induction comparison
 
-Author: Worker 470.
+Author: Worker 470. Worker 1058 updated the proof status for the 2026-10-29
+documentation audit; the Lean file is unchanged.
 
 `Langlands.GLTemperedDiscreteSeriesOppositeToUpperStatement` is a proposition
 definition. It isolates one implication needed by the published
-`GLTemperedDiscreteSeriesSummandStatement`. This pair proves no analytic or
-representation-theoretic implication.
+`GLTemperedDiscreteSeriesSummandStatement`. This statement pair proves no
+analytic or representation-theoretic implication. The companion module
+`Langlands.Representation.Classification.DiscreteSeriesOppositeToUpperProof`
+proves the proposition: `Langlands.glTemperedDiscreteSeriesOppositeToUpper`
+has exactly the type
+`GLTemperedDiscreteSeriesOppositeToUpperStatement.{uF, uV, uW}`, with no
+further hypotheses.
 
 ## Exact statement and universes
 
@@ -167,31 +173,34 @@ both inductions and identifies `π` as a summand of each when its equivalent
 Jacquet conditions hold. An opposite embedding gives the corresponding
 Jacquet quotient through actual first adjointness, and hence the required
 class occurrence. This explains the narrower implication stated here; it
-does not make the parent summand proposition a proved input.
+does not make the parent summand proposition a hypothesis or input of this
+statement. The published theorem `Langlands.glTemperedDiscreteSeriesSummand`
+proves that parent proposition and uses
+`glTemperedDiscreteSeriesOppositeToUpper`.
 
 Theorem 4.5.18's proof refers to Theorem 3.3.1 with a temperedness condition
 on its auxiliary module and on the analogous Jacquet component. The printed
-Theorem 3.3.1 itself assumes cuspidal inducing data. A proof for the present
-discrete-series input must implement the tempered adaptation, including its
-map and duality steps; the cuspidal theorem alone does not prove this target.
-One possible route obtains an upper quotient and uses the separate upper
-semisimplicity result to obtain the required upper embedding.
+Theorem 3.3.1 itself assumes cuspidal inducing data, so the cuspidal theorem
+alone does not prove this target. The companion proof implements the tempered
+adaptation. Its auxiliary modules are the scalar layers of the opposite
+Jacquet module of `π`. They are tempered by
+`glTemperedOppositeJacquetScalarLayer`, and the isotypic projector of
+`glTemperedDiscreteSeriesIsotypic` turns the given quotient `σ` into a
+subrepresentation. Second adjointness then gives a nonzero map from upper
+induction onto `π`. Semisimplicity of upper induction, from
+`isSemisimple_bothInduced_of_squareIntegrable`, splits that map into the
+required upper embedding.
 
-## Remaining proof obligations
+## Proof status
 
-The exact proposition is still unproved. A successor must construct opposite
-semisimplicity and the injective upper map on the actual function spaces,
-justify every analytic and normalization comparison used, and preserve
-`uF`, `uV`, `uW` independently. Existing statements of first/second
-adjointness, induction duality, or Jacquet duality supply proofs only after
-their own acceptance and Library publication; a staged candidate is not an
-available theorem. Semisimplicity hypotheses in conditional reciprocity
-lemmas must themselves be discharged.
+The companion theorem `Langlands.glTemperedDiscreteSeriesOppositeToUpper`, in
+`Langlands.Representation.Classification.DiscreteSeriesOppositeToUpperProof`,
+proves the exact proposition. It keeps `uF`, `uV` and `uW` independent and
+adds no hypotheses. It constructs opposite semisimplicity and the injective
+upper map on the actual function spaces, keeping the given `σ` in both
+inductions. [The proof's documentation](DiscreteSeriesOppositeToUpperProof.md)
+lists each published theorem the proof uses.
 
-The successor may reuse independently proved upper induction results. It
-must not assume the parent summand theorem, a closed regular Langlands head
-theorem, regular exhaustion, square-integrable Langlands classification,
-or downstream tempered exhaustion. Substantial missing prerequisites should
-be separated after searching existing tasks and coordinating their owners.
-No assumed proof package or replacement for the fixed inducing representation
-is an input to this statement.
+The proof does not use `GLTemperedInductionStatement` or the parent summand
+theorem. No assumed proof package or replacement for the fixed inducing
+representation is an input to this statement.

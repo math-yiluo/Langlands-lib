@@ -110,16 +110,32 @@ The rank of `π` is `n + 2` (Henniart's `n ≥ 2`), and the test ranks are
   - The published `GeneralLinear.IsSupercuspidal` (admissibility and
     vanishing of all proper Jacquet modules) is invariant under equivalence
     (`isSupercuspidal_iff_of_equiv`).
-  - So is the L relation (`IsPadicSymmetricLPolynomial.congr_equiv`).
+  - So is the L relation, for representations with the same universe
+    parameters `uF`, `uV`, `uW`
+    (`IsLanglandsPairLPolynomial.congr_equiv` in
+    `Correspondence/AutomorphicPairFactors`).
   - Equality of classes is `Nonempty` of a representation equivalence.
 - **Universes.** The test representations `ρ` range over carriers in the
-  fixed universe `max uF uW`, independent of the universe of `π`. An
-  irreducible smooth representation of `GL_r(F)` has countable dimension:
-  it is spanned by the translates of one vector fixed by an open subgroup
-  `K`, indexed by the countable set `GL_r(F)/K`. Hence every class in
-  `A_0(r)` or `A_2(r)` has a representative in every universe, and
-  quantifying over one universe is quantifying over all classes. This
-  derived argument is not proved in the Library.
+  fixed universe `max uF uW`, independent of the universe of `π`. Every
+  class in `A_0(r)` or `A_2(r)` has a representative there. The published
+  proof `padicIrreducibleSmoothSmallRealization`
+  (`Smooth/SmallRealizationProof`) shows that every irreducible smooth
+  representation of `GL_n(F)`, for any supplied topological data and any
+  carrier universe, is equivalent to an irreducible smooth representation in
+  any other carrier universe. It uses no admissibility or smallness
+  hypothesis: the orbit of a nonzero vector is countable and spans, and a
+  basis chosen inside it is reindexed by a type in the target universe.
+  Supercuspidality, essential square-integrability and irreducibility are
+  invariant under equivalences between carrier universes
+  (`isSupercuspidal_iff_of_equiv`,
+  `isEssentiallySquareIntegrable_iff_of_equiv`,
+  `isIrreducible_iff_of_equiv`). Within the fixed universe the L relation is
+  invariant under equivalence, so quantifying over one universe is
+  quantifying over all classes. The transport of the L relation itself is a
+  separate matter: `IsLanglandsPairLPolynomial.congr_equiv` keeps the
+  universe parameters fixed, and the Library proves no transport of
+  `IsLanglandsPairLPolynomial` between different universe parameters, so no
+  Lean theorem relates the statements for different `uV`, `uW`.
 - **The L-factors.**
   - Henniart's `L(s, π × ρ)` for arbitrary irreducible pairs is that of
     JPSS. JPSS define it for nongeneric pairs through the Langlands
@@ -143,8 +159,10 @@ The rank of `π` is `n + 2` (Henniart's `n ≥ 2`), and the test ranks are
   (§2.8), which is not defined in the Library.
 - **The Galois side.** Théorèmes 1.6(a) and 1.7(a), on representations of the
   Weil–Deligne group, belong to the arithmetic side and are not stated here.
-- **Measures and field.** As in the other units, `ν` is self-dual for `ψ`,
-  and the L relation does not otherwise depend on `ψ`. `F` is a p-adic field
+- **Measures and field.** As in the other units, `ν` is self-dual for `ψ`.
+  The Lean relation takes `ψ` as a parameter, through the Whittaker
+  functionals of the standard modules, and this module states no
+  `ψ`-independence for it. `F` is a p-adic field
   (`PadicField`) because the canonical topological data and Langlands data
   are published only for p-adic fields. Henniart's `F` is any nonarchimedean
   local field.

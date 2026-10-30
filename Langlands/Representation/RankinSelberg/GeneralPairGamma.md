@@ -20,10 +20,13 @@ left-unipotent quotient. Its additive Haar input `ν` is measured on the Borel
 structure of `F`. There are no external measurable-space choices to reconcile.
 
 The spectral integer `q`, real absolute value `abv` and Fourier Haar measure
-`ν` remain explicit. The relation itself does not assert residue normalization,
-nontriviality of `ψ` or self-duality of `ν`. Consumers interpreting it as the
-normalized local gamma factor must supply those hypotheses in their theorem
-statements. Uniqueness below requires `1 < q`.
+`ν` remain explicit. The character `ψ` has type `UnitaryAdditiveCharacter F`,
+whose structure bundles continuity, values in the unit circle and nontriviality
+(`toAddChar ≠ 1`), so `ψ` is nontrivial by its type and needs no separate
+hypothesis. The relation itself does not assert residue normalization or
+self-duality of `ν`. Consumers interpreting it as the normalized local gamma
+factor must supply those hypotheses in their theorem statements. Uniqueness
+below requires `1 < q`.
 
 This is literally the published JPSS relation: it requires a compatible quotient
 measure and nonzero Whittaker functionals to exist, and the gamma equation holds

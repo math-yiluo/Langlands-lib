@@ -1,9 +1,17 @@
 # Cohomological triviality and the comparison theorem
 
 This module states three Prop-valued propositions about Mathlib's actual Tate
-cohomology `tateCohomology` of finite groups. They are the three ingredients of
-Serre's proof of Tate's theorem (Chapter IX of *Local Fields*) that the Library
-does not yet contain. No proof is given here.
+cohomology `tateCohomology` of finite groups. They are three ingredients of
+Serre's proof of Tate's theorem (Chapter IX of *Local Fields*). No proof is
+given in this module. Each proposition is proved, with exactly the coefficient
+ring and universe scope stated below, in a companion module:
+`Langlands.Tate.pGroupTateVanishing` in
+[PGroupTateVanishingProof](PGroupTateVanishingProof.md),
+`Langlands.Tate.sylowTateVanishing` in
+[SylowTateVanishingProof](SylowTateVanishingProof.md), and
+`Langlands.Tate.tateComparison` in
+[TateComparisonProof](TateComparisonProof.md). The last is derived from the
+other two.
 
 Throughout, `IntegralScalar.{u}` is `ULift ℤ` (module `ZeroDefinitions`), so a
 `Rep.{u} IntegralScalar.{u} G` is a `G`-module in universe `u`. Restriction of
@@ -72,5 +80,7 @@ These propositions are prerequisites for `Langlands.Tate.TateCupIsomorphism`
 (module `TateTheoremStatement`): writing the degree-two class through dimension
 shifting as a degree-zero class turns cup product with it into the map induced
 by a morphism of representations, to which `TateComparison` applies with
-`m = -1`. `TateComparison` itself follows from the other two propositions by
-Serre's mapping-cone argument.
+`m = -1`. The proof `Langlands.Tate.tateCupIsomorphism` in
+[TateTheoremProof](TateTheoremProof.md) follows this route with the proved
+`tateComparison`. `TateComparison` itself follows from the other two
+propositions by Serre's mapping-cone argument (`tateComparison_of`).

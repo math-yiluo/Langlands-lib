@@ -60,9 +60,11 @@ The binders are:
   one, `F.canonicalTopologicalData.topology`, and the measurable space is its
   Borel σ-algebra.
 - `ψ : UnitaryAdditiveCharacter F.Carrier` is any supplied character for that
-  topology. The source's `ψ` is a fixed nontrivial character; no
-  nontriviality or conductor hypothesis is imposed here, since the
-  self-duality of `ν` (below) is with respect to this same `ψ`.
+  topology. The source's `ψ` is a fixed nontrivial character. The structure
+  `UnitaryAdditiveCharacter` bundles continuity, values in the unit circle and
+  nontriviality (`toAddChar ≠ 1`), so every admissible `ψ` is nontrivial by its
+  type. No conductor hypothesis is imposed; the self-duality of `ν` (below) is
+  with respect to this same `ψ`.
 - `ν : LocalFactor.PadicAbelian.SelfDualHaar F.canonicalTopologicalData ψ` is
   any supplied self-dual Haar measure. The statement neither chooses one nor
   assumes that one exists. If none exists, the statement is vacuous for that

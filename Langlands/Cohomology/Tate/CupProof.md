@@ -29,8 +29,15 @@ These are proofs about the constructed maps, not hypotheses defining
 them. `CupLawsProof` assembles the exact published cup-law target from these
 lemmas and the boundary and subgroup compatibility modules.
 `CupDefinitions` and `ZeroProof` are unchanged published dependencies;
-`TensorNaturality` supplies the tensor shift naturality lemmas. The separate
-comparison with ordinary cochain cup products remains open.
+`TensorNaturality` supplies the tensor shift naturality lemmas. The
+comparison with ordinary cochain cup products is a separate result, not proved
+in this file. It is the published statement `OrdinaryTateCupLaws`, proved as
+`ordinaryTateCupLaws` (through the lemma `ordinaryToTate_cup`) in
+[OrdinaryTateCupProof](OrdinaryTateCupProof.md). It covers every commutative
+coefficient ring, finite group and equivariant pairing, and all natural
+bidegrees `(p, q)` including zero, with no flatness hypothesis. In degree zero
+the comparison map `ordinaryToTate` is the quotient map from invariants to
+`Ĥ⁰`, not an isomorphism. Negative ordinary degrees are not asserted.
 
 The normalization and naturality statements are from Serre, *Local
 Fields* (1979), Chapter VIII, section 3, Proposition 5(i–ii),

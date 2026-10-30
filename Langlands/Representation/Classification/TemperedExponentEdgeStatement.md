@@ -3,7 +3,9 @@
 This is an internal statement interface supporting
 `Langlands.GLTemperedExponentCriterionStatement`. It imports the published
 criterion without changing it or its dependencies. It contains proposition
-definitions, not proofs.
+definitions, not proofs. The published theorem `Langlands.glTemperedExponentEdge`
+(module [`TemperedExponentEdgeProof`](TemperedExponentEdgeProof.md)) proves
+`GLTemperedExponentEdgeStatement`, and hence both clauses below.
 
 `GLTemperedZeroCarrierStatement` quantifies over every supplied finite p-adic
 field and topological realization, every rank (including zero), and every
@@ -29,11 +31,12 @@ The nontrivial-carrier hypothesis is confined to the second clause. In
 particular, the interface does not assert that an arbitrarily supplied scalar
 character on the zero representation is unitary.
 
-## Derived provenance and remaining proof obligations
+## Derived provenance and proof outline
 
 These are elementary reductions internal to the published definitions, rather
 than translations of a separate theorem from the literature. No outside source
-is claimed for this interface. The proposed proof obligations are as follows.
+is claimed for this interface. The following outline was written before the
+Lean proof, and `glTemperedExponentEdge` follows it.
 
 For a zero carrier, all fixed-vector spaces are zero and hence finite, and
 every vector is smooth. The trivial character of the full center supplies
@@ -52,8 +55,18 @@ inverse forces its character norm to equal one. Identifying the full center
 of positive-rank `GL_n` with the scalar units then provides the required
 `UnitaryCentralCharacter`.
 
-All of these algebraic, topological and quotient identifications still require
-Lean proofs. This statement supplies no asymptotic theorem, spectral
-decomposition, coefficient bound, Haar-volume estimate or integrability
-argument for a nonzero representation, and it does not prove the full
-tempered exponent criterion.
+These algebraic, topological and quotient identifications are proved in
+`TemperedExponentEdgeProof`: its private lemmas `zeroCarrierClause` and
+`unitaryCentralCharacterClause` prove the two clauses. Neither this statement
+nor that proof supplies an asymptotic theorem, spectral decomposition,
+coefficient bound, Haar-volume estimate or integrability argument for a
+nonzero representation. The edge theorem alone therefore does not prove the
+full tempered exponent criterion `GLTemperedExponentCriterionStatement`. That
+criterion is proved separately by the published theorem
+`Langlands.glTemperedExponentCriterion` (module
+[`TemperedExponentProof`](TemperedExponentProof.md)), which uses
+`glTemperedExponentEdge` for zero carriers and to construct the unitary
+central-character datum. Some declarations in
+`TemperedOppositeJacquetScalarLayerAssembly` and
+`ProductLeviTemperedFactorizationAdapter` still take the criterion as an
+explicit hypothesis (`hcrit`).

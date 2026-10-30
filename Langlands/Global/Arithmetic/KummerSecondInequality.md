@@ -4,7 +4,18 @@ Author: Worker 226.
 
 This module proves the Library statement `IdeleClassKummerPrimeDegreeSecondInequality.{u, u}`
 (module `Langlands.Global.AdelicFunctoriality.IdeleClassCyclotomicSecondInequalityStatement`)
-from three unproved Library statements, which it takes as hypotheses. Let `L/K` be a Galois
+from three Library statements, which it takes as explicit hypotheses:
+`CyclicNonsplitPrimeStatement.{u, u}`, `IdeleClassGaloisDescent.{u, u}` and
+`CyclicIdeleClassHerbrandQuotient.{u, u}`. Each is proved elsewhere in the Library, with
+independent universes for the base and the extension: `Langlands.Global.cyclicNonsplitPrimeStatement`
+(module `Langlands.Global.Arithmetic.CyclicNonsplitPrimeProof`),
+`Langlands.ClassField.Global.ideleClassGaloisDescent` (module
+`Langlands.ClassField.Global.IdeleClassGaloisDescentProof`) and
+`Langlands.ClassField.Global.cyclicIdeleClassHerbrandQuotient` (module
+`Langlands.ClassField.Global.CyclicIdeleClassHerbrandAssembly`). This module does not import
+those proofs, and its main theorem keeps the three explicit arguments. The module
+`Langlands.Global.AdelicFunctoriality.IdeleClassPrimeDegreeSecondInequalityProof` applies it to
+them at equal universes. Let `L/K` be a Galois
 extension of number fields of prime degree `p`, with `K` containing a primitive `p`-th root of
 unity. Then the index of the range of the idele-class norm `C_L → C_K` divides `p`. The proof
 follows Artin–Tate, *Class Field Theory*, Chapter VI §3, Lemmas 2 and 3. Everything is in

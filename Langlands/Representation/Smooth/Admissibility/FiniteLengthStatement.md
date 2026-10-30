@@ -1,7 +1,12 @@
 # Admissibility of finite-length smooth GL and product-Levi representations
 
-This module declares three proposition definitions and no theorems. Nothing
-here proves them; a proof is a separate later task.
+This module declares three proposition definitions and no theorems. The
+companion module `Langlands.Representation.Smooth.Admissibility.FiniteLengthProof`
+proves all three: `Langlands.glFiniteLengthAdmissibility`,
+`Langlands.leviFiniteLengthAdmissibility` and
+`Langlands.finiteLengthAdmissibility` have exactly the three proposition types
+below, for the same `F` and `T`, with independent universes `uF` and `uV` and
+no further hypotheses.
 
 Throughout, `F : PadicField.{uF} p` is an arbitrary finite extension of `ℚ_p`
 and `T : F.TopologicalData` is an arbitrary supplied local-field realization.
@@ -18,9 +23,9 @@ The only topology used is `T.topology` on `F.Carrier`. It is not specialized to
   `A : SmoothRep.{0, uF, uV} ℂ (B.Levi F.Carrier)`,
   `A.HasFiniteLength → A.IsAdmissible`.
 - `Langlands.FiniteLengthAdmissibilityStatement.{uF, uV} F T` is the conjunction
-  of the two clauses at the same `F`, `T`, `uF` and `uV`. It is the intended
-  exact target of the later proof. Inspection reports its level parameters as
-  `[uF, uV]` and its type as `Prop`.
+  of the two clauses at the same `F`, `T`, `uF` and `uV`. It is the exact type
+  of `Langlands.finiteLengthAdmissibility`. Inspection reports its level
+  parameters as `[uF, uV]` and its type as `Prop`.
 
 The suggested names were unused in the Library and are adopted unchanged.
 
@@ -44,8 +49,9 @@ the units-of-matrices topology induced by `T.topology`. This topology agrees
 by definition with `T.generalLinearTopology n`. `B.Levi F.Carrier` is the
 product over the blocks of `GeneralLinear (B.size i) F.Carrier`, with the
 product topology. The predicates need only these topologies. Hence no
-`IsTopologicalGroup` instance appears in the statement. A proof may install
-`T.generalLinearTopologicalGroup` itself.
+`IsTopologicalGroup` instance appears in the statement. The companion proof
+installs `T.generalLinearTopologicalGroup n` or `T.leviTopologicalGroup B`
+itself.
 
 ## Scope
 
@@ -145,8 +151,13 @@ central-library listing or the public notes.
 ## Derivation, for explanation only
 
 The statement is presented as a consequence of irreducible admissibility and
-admissibility in short exact sequences. A later proof may follow this route
-or another.
+admissibility in short exact sequences. The companion proof follows this
+route. A general reduction, for any topological group whose open subgroups
+contain compact open subgroups, inducts on Mathlib's `IsFiniteLength` over the
+complex group algebra. It treats the simple quotient with irreducible
+admissibility and the extension with the published
+`isAdmissible_iff_of_shortExact`. `FiniteLengthProof.md` documents the
+implementation.
 
 1. **Induction on finite length.** Mathlib's `IsFiniteLength` is generated in
    two ways: a subsingleton module, or a module `M` with a submodule `N` such
@@ -169,9 +180,11 @@ of `0 × 0` matrices and is trivial. The empty product Levi is also trivial.
 Over a trivial group, `ℂ[G]` is `ℂ`, so finite length means finite dimension.
 The only open subgroup is the whole group, whose fixed vectors form the whole
 space. So finite length implies admissibility here by elementary reasoning.
-Finite length of the zero representation is likewise elementary.
+Finite length of the zero representation is likewise elementary. The
+companion proof has no separate rank-zero case. Its published irreducible
+inputs cover every rank, including zero.
 
-**Library inputs for a later proof.** These are not hypotheses of this
+**Library inputs of the companion proof.** These are not hypotheses of this
 statement.
 
 - `Langlands.CuspidalSupport.cuspidalEmbedding` concludes admissibility of
@@ -179,12 +192,24 @@ statement.
   `0`, every supplied `F`, `T` and independent carrier universes.
 - `Langlands.AdmissibleShortExactStatement` states the short-exact-sequence
   admissibility of Corollary II.1.4 under explicit topological-group and
-  compact-open cofinality hypotheses. It is a statement; its proof is
-  separate.
-- Admissibility of an arbitrary irreducible representation of a product Levi
-  is not yet stated in the Library. It must be justified independently. The
-  restriction of an irreducible `GL_n` representation to a Levi need not be
-  irreducible, and a block tensor factorization may not be assumed.
+  compact-open cofinality hypotheses. It is proved separately by
+  `Langlands.admissibleShortExact` in
+  `Langlands.Representation.Smooth.Admissibility.ExactProof`. The companion
+  proof uses that module's lemma `isAdmissible_iff_of_shortExact`. It obtains
+  the cofinality from `T.generalLinearCompactOpen` and `T.leviCompactOpen`.
+- Admissibility of an arbitrary irreducible smooth representation of a
+  product Levi is the separate statement
+  `Langlands.CuspidalSupport.IrreducibleLeviAdmissibilityTheorem F T` in
+  `Langlands.Representation.CuspidalSupport.IrreducibleLeviAdmissibilityStatement`.
+  It quantifies every rank `n`, including `0`, and every block shape `B`, for
+  the supplied `F` and `T`, with carrier universe `uV` independent of `uF`. It
+  has no tensor-factorization or quasicuspidal premise. The theorem
+  `Langlands.CuspidalSupport.irreducibleLeviAdmissibility` in
+  `Langlands.Representation.CuspidalSupport.IrreducibleLeviAdmissibilityProof`
+  proves it. The companion proof passes from irreducible representations to
+  finite-length ones by the induction above. It does not restrict irreducible
+  `GL_n` representations to a Levi, where they need not remain irreducible,
+  and it assumes no block tensor factorization.
 
 ## Dependencies and checking
 
@@ -200,4 +225,6 @@ The module was compiled with `lean_check` in environment
 `5ed2965256430c3649e86755f9576b54eca72435`) with no errors or warnings.
 Inspection of `Langlands.FiniteLengthAdmissibilityStatement` reported
 `statement_returns_prop: true`. No existing Library pair is changed. Worker 237
-wrote this statement and its explanation.
+wrote this statement and its explanation. Worker 1058 updated the proof
+status of these statements and of their Library inputs for the 2026-10-29
+documentation audit; the Lean file is unchanged.

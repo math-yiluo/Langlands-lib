@@ -29,6 +29,20 @@ interfaces, rather than an additional claim extracted from the original
 literature.
 
 This file defines a conditional proposition; it proves neither row Fourier
-surjectivity nor the unconditional extension. The unchanged parent target
-still requires an unconditional surjectivity theorem before this implication
-can discharge it.
+surjectivity nor the unconditional extension. The implication is proved by
+`Langlands.Whittaker.twoBlockWhittakerExtension_of_rowFourierSurjectivity`
+in the companion module
+`Langlands.Representation.Whittaker.TwoBlockExtensionAssemblyProof`.
+
+The premise family is proved separately. The published theorem
+`Langlands.HarmonicAnalysis.padicRowFourierSurjectivity`, of
+`Langlands.HarmonicAnalysis.PadicRowFourierSurjectivityProof`, proves
+`PadicRowFourierSurjectivityStatement F T d` for every p-adic field `F`,
+every topological data `T` and every row dimension `d`. In particular it
+covers `F.canonicalTopologicalData`, with every character, scalar Haar
+measure and cutoff. The separate published theorem
+`Langlands.Whittaker.twoBlockWhittakerExtension`, of
+`Langlands.Representation.Whittaker.TwoBlockExtensionProof`, applies this
+implication to that theorem. It proves the unconditional parent target
+`TwoBlockWhittakerExtensionStatement.{uF, uV₁, uV₂}`. Neither theorem changes
+this proposition, whose row-surjectivity premise remains explicit.

@@ -115,8 +115,11 @@ def GLSupercuspidalRestrictionStatement (n : ℕ) : Prop :=
 
 /-- The `GL_n` restriction statement follows from the general one at `GL_n(F)`,
 from Bernstein–Zelevinsky 3.20 and from Harish-Chandra's theorem. Total
-disconnectedness and σ-compactness of `GL_n(F)` are taken as instance
-arguments; they are not proved in the Library. -/
+disconnectedness and σ-compactness of `GL_n(F)` for the canonical topology are
+taken as instance arguments because instance search does not find them. Both are
+proved in the Library, but not as instances: σ-compactness by the public theorem
+`PadicField.TopologicalData.generalLinearSigmaCompactSpace`, total disconnectedness
+only by private theorems that other modules cannot use. -/
 theorem glSupercuspidalRestriction_of_compactModCenter (n : ℕ)
     [TotallyDisconnectedSpace (GeneralLinear n F.Carrier)]
     [SigmaCompactSpace (GeneralLinear n F.Carrier)]

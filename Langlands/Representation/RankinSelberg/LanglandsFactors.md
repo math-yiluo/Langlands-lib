@@ -51,9 +51,11 @@ does not prove an exchange theorem for equal ranks.
 `F : PadicField.{uF} p` has its canonical topology and residue cardinality `q`.
 The coefficient field is `ℂ`. The unitary additive character `ψ` and additive
 Haar measure `ν` are explicit, and the same `ψ,ν` are used at every block pair.
-The definition accepts an arbitrary such `ν`; any necessary self-duality,
-nontriviality, or analytic assumptions belong to proofs of the required block
-existence input. There is no assertion that block existence holds for every
+The type `UnitaryAdditiveCharacter` of `ψ` bundles continuity, values in the
+unit circle and nontriviality (`toAddChar ≠ 1`), so `ψ` is nontrivial by its
+type. The definition accepts an arbitrary such `ν`; any necessary self-duality
+or analytic assumptions belong to proofs of the required block existence
+input. There is no assertion that block existence holds for every
 choice of these parameters.
 
 The representations have the same carrier-universe shape as the published
