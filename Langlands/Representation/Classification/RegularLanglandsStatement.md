@@ -194,10 +194,13 @@ status differs:
   specialization `GLParabolicRootWeightConeStatement` in
   `Classification/ParabolicConeStatement` is proved by
   `glParabolicRootWeightCone` in `Classification/ParabolicConeProof`.
-- Of the exponent criteria, `GLSquareIntegrableExponentCriterionStatement` is
-  proved by `glSquareIntegrableExponentCriterion` in
+- Both exponent criteria are proved.
+  `GLSquareIntegrableExponentCriterionStatement` is proved by
+  `glSquareIntegrableExponentCriterion` in
   `Classification/SquareIntegrableExponentProof`. The tempered criterion
-  `GLTemperedExponentCriterionStatement` is unproved.
+  `GLTemperedExponentCriterionStatement` in
+  `Classification/TemperedExponentStatement` is proved by
+  `glTemperedExponentCriterion` in `Classification/TemperedExponentProof`.
 - The fixed-central-character splitting
   `GLFixedCentralCharacterSplittingStatement` in
   `Classification/FixedCentralSplittingStatement` is unproved.

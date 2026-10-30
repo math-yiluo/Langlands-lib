@@ -17,12 +17,18 @@ retains an arbitrary representation of the actual Levi. It neither assumes a
 tensor-product factorization nor needs such a factorization to state the result.
 
 These definitions do not prove these assertions. The accompanying Haar-existence
-helper is proved. This contribution does not assert irreducibility of induction,
+helper is proved. The proof status of each component is recorded under
+[Implemented helper, proof status and retained obligations](#implemented-helper-proof-status-and-retained-obligations).
+This contribution does not assert irreducibility of induction,
 existence or uniqueness of a Langlands quotient, or exhaustion by such quotients.
 Silberger's discrete-series support and summand assertions (Corollary 4.5.11 and
 Theorem 4.5.18) are stated separately in
-[TemperedSupportStatement](TemperedSupportStatement.md). Their proofs and the
-weakly critical-exponent refinement remain open.
+[TemperedSupportStatement](TemperedSupportStatement.md). Both are proved, by
+`Langlands.glTemperedDiscreteSeriesSupport` and
+`Langlands.glTemperedDiscreteSeriesSummand`. The weakly critical-exponent
+refinement of Corollary 4.5.11 is the separate conjunction
+`GLWeaklyCriticalTemperedRefinementStatement`. Its pair-minimality component
+has no proof in the Library, so the refinement as a whole is unproved.
 
 ## Exact mathematical statement
 
@@ -218,7 +224,7 @@ For Silberger the one-based PDF page is the printed page plus six. For
 Waldspurger it is the printed page minus 234. The formulas in Silberger's
 pp.190–191 were checked visually because the text layer omits symbols.
 
-## Implemented helper and retained proof obligations
+## Implemented helper, proof status and retained obligations
 
 `PadicField.TopologicalData.exists_isHaarMeasure_leviCentralQuotient` supplies a
 Borel Haar measure on the actual quotient of `B.Levi F.Carrier` by its center.
@@ -229,10 +235,30 @@ instances are inferred from the actual topological group. This is an internal
 measure-existence construction following the existing ambient-group helper;
 it proves that the analytic measure quantification is nonvacuous.
 
-The substantive representation-theoretic implications remain proposition
-statements. A later proof must implement the analytic bridge, specialize the
-source theorems to these actual groups, and prove the unitarity and induction
-assertions. Silberger's p.190 proof invokes Corollaries 1.7.9 and 4.5.11; his
-p.191 proof invokes the character criterion and continuity of constant terms.
-Their transitive proofs are not reimplemented or certified by this contribution.
+This pair proves none of the representation-theoretic implications. Their
+status in the Library is as follows.
+
+- `Langlands.glTemperedUnitarity`, in
+  `Langlands.Representation.Classification.TemperedUnitarityProof`, proves
+  `GLTemperedUnitarityStatement.{uF, uV}` exactly.
+- The first conclusion of `GLTemperedInductionStatement`, unitarizability of
+  `σ`, is isolated with exactly the same inputs and hypotheses as
+  `GLLeviTemperedUnitarityStatement`. `Langlands.glLeviTemperedUnitarity`
+  proves it.
+- The second conclusion, semisimplicity of the normalized induction, follows
+  from that theorem, the admissibility contained in `IsTemperedModCenter`, and
+  `isSemisimple_normalizedParabolicInduced_of_admissible_unitarizable`. The
+  Library has no separately named theorem for this conclusion.
+- The final conclusion, temperedness of the normalized induction, is isolated
+  as `GLTemperedInductionPreservationStatement`. It has no proof in the
+  Library.
+
+Hence `GLTemperedInductionStatement` and the conjunction
+`GLTemperedInductionPrerequisitesStatement` are unproved. Silberger's p.190
+proof invokes Corollaries 1.7.9 and 4.5.11; his p.191 proof invokes the
+character criterion and continuity of constant terms. Their transitive proofs
+are not reimplemented or certified by this contribution.
 No Langlands-classification conclusion is an input field or an assumed axiom.
+
+Worker 1058 updated the proof status in this file for the 2026-10-29
+documentation audit; the Lean file is unchanged.
