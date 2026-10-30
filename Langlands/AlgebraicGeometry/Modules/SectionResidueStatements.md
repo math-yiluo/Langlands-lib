@@ -1,7 +1,12 @@
 # Comparison targets for residue-field values of line-bundle sections
 
-These are precise propositions awaiting a separate proof. They concern
-every scheme `X`, every actual locally free rank-one module sheaf
+These are precise propositions. Separate modules prove them:
+`Langlands.SchemeModule.lineBundleResidueStalkCriterion` in
+`Langlands.AlgebraicGeometry.Modules.SectionResidueStalkProof`, and
+`Langlands.SchemeModule.lineBundleResidueOpenComparison` and
+`Langlands.SchemeModule.lineBundleSectionResidueComparison` in
+`Langlands.AlgebraicGeometry.Modules.SectionResidueComparison`. The
+propositions concern every scheme `X`, every actual locally free rank-one module sheaf
 `L : LineBundle X`, and every global section `s` of `L.obj`, all at universe
 `u`. No quasi-compactness or separation assumption is imposed.
 
@@ -35,8 +40,9 @@ in `stacks-invertible-picard-ampleness-2026-10-21`, directory SHA256
 file `01CY.html`. The source defines the locus by the germ not lying
 in `𝔪_x L_x`, proves that the germ is then a basis, and proves openness
 and trivialization. The geometric residue-field presentation used here
-pulls the section back along `Spec κ(x) → X`. Establishing the
-comparison with the stalk-frame condition is part of the proof obligation.
+pulls the section back along `Spec κ(x) → X`. Its comparison with the
+stalk-frame condition is not taken from the source; it is the content of
+`LineBundleResidueStalkCriterion`, proved separately as above.
 Local rank one is explicit in `LineBundle`, so the local algebra is the
 rank-one case over a local ring. The formulation is a derived
 scheme specialization and interface for the published constructions.

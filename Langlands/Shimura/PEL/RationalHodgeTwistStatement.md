@@ -1,9 +1,14 @@
 # A rational skew twist with the Kottwitz Hodge sign
 
-Worker 57. `RationalHodgePolarizingTwistExists` is a proposition, awaiting
-proof, for the actual Harris algebra and its constructed complex homomorphism.
-It strengthens the published `PositiveRationalSkewTwistExists` target by
-requiring the Hodge sign for the same rational skew unit.
+Worker 57. Worker 1060 updated the proof-status sentences after the
+2026-10-29 documentation audit (finding P3-042).
+`RationalHodgePolarizingTwistExists` is a proposition for the actual Harris
+algebra and its constructed complex homomorphism. It is proved by the
+published theorem
+`Langlands.Shimura.CentralSimpleUnitaryData.rationalHodgePolarizingTwistExists`
+in `Langlands.Shimura.PEL.RationalHodgeTwistProof`. It strengthens the
+published `PositiveRationalSkewTwistExists` target by requiring the Hodge sign
+for the same rational skew unit.
 
 The inputs are `CentralSimpleUnitaryData D` over the given totally real field
 E and quadratic totally complex extension K, with the displayed scalar
@@ -51,8 +56,13 @@ Harris charts, and the conjugated Kottwitz convention are inherited from
 `RationalTrace`, `TracePairing`, `PositiveInput` and `RealPositivity`.
 
 This is an internal strengthening in that fixed specialization, rather than
-a verbatim theorem from either source. The existing existence theorem only
-proves positivity of tau; replacing beta by -beta preserves tau and reverses
-psi, so that theorem alone does not establish this target. This file defines
-no witness and contains no existence proof. It supplies no integral lattice,
-polarization of an abelian scheme, moduli representability or canonical model.
+a verbatim theorem from either source. The published existence theorem
+`positiveRationalSkewTwistExists` only proves positivity of tau; replacing beta
+by -beta preserves tau and reverses psi, so that theorem alone does not
+establish this target. This file defines no witness and contains no existence
+proof. The separate published proof `rationalHodgePolarizingTwistExists`
+selects one rational skew element satisfying both trace positivity conditions
+at once, and the published module `Langlands.Shimura.PEL.HarrisHodgeInput`
+chooses its witness as `harrisHodgePELUnit` to build the auxiliary PEL algebra
+and form. This statement supplies no integral lattice, polarization of an
+abelian scheme, moduli representability or canonical model.

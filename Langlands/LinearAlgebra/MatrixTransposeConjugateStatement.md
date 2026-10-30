@@ -1,7 +1,9 @@
 # Every square matrix over a field is conjugate to its transpose
 
-`Langlands.MatrixTransposeConjugateStatement.{uK}` is the following unproved
-proposition. This module defines the proposition and supplies no proof.
+`Langlands.MatrixTransposeConjugateStatement.{uK}` is the following
+proposition. This module defines the proposition and supplies no proof. The
+published theorem `Langlands.matrixTransposeConjugate.{uK}` in
+`Langlands.LinearAlgebra.MatrixTransposeConjugateProof` proves it.
 
 ## Statement
 
@@ -29,17 +31,18 @@ In Section 7.3 (printed pp.57–58) the source verifies condition d) of Theorem
 `σ`, by the sentence "Transposed matrices are conjugate in G" (printed p.58).
 The source gives no proof of this classical fact of linear algebra. The present
 proposition states it for square matrices over an arbitrary field, which
-includes the invertible matrices over a p-adic field needed in the proof of
+includes the invertible matrices over a p-adic field needed in the published
+proof `Langlands.generalLinearConjugationDistributionTranspose` of
 `Langlands.GeneralLinearConjugationDistributionTransposeStatement`. Mathlib, at
 the pinned commit, contains no rational canonical form and no theorem that a
 matrix is similar to its transpose.
 
 ## Why the proposition is true
 
-This sketch is a plan for the separate proof, not a claimed Lean theorem. It
-suffices to find an invertible symmetric matrix `S` with `S * x = xᵀ * S`, that
-is, a nondegenerate symmetric bilinear form on `K^n` for which `x` is
-self-adjoint. Then `g = S` works.
+This sketch explains why the proposition is true; it is not the Lean proof.
+It suffices to find an invertible symmetric matrix `S` with
+`S * x = xᵀ * S`, that is, a nondegenerate symmetric bilinear form on `K^n`
+for which `x` is self-adjoint. Then `g = S` works.
 
 Make `K^n` a torsion module over `K[X]` with `X` acting by `x`. By Mathlib's
 structure theorem `Module.equiv_directSum_of_isTorsion`, it is a finite direct
@@ -50,3 +53,11 @@ and its Gram matrix `(φ(X^(i+j)))` in the basis `1, X, …, X^(d-1)` has zeros
 for `i + j < d - 1` and ones for `i + j = d - 1`, so it is invertible. The
 orthogonal sum of these forms, transported to `K^n`, is the required form, and
 its Gram matrix `S` satisfies `S * x = xᵀ * S`.
+
+The published proof `matrixTransposeConjugate` follows this route with two
+differences. First, each cyclic form is supplied by the published
+`Langlands.cyclicQuotientPairing` for the nonzero prime-power generators of the
+decomposition, and its two-sided nondegeneracy replaces the Gram-matrix
+computation. Second, invertibility of `S` comes from Mathlib's equivalence
+between nondegeneracy of a form and nonvanishing of the determinant of its
+Gram matrix. The resulting unit `g` has underlying matrix `S`.

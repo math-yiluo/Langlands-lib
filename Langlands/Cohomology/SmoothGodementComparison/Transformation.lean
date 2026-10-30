@@ -21,10 +21,11 @@ property as an explicit hypothesis `hK`, and derives it from the published
   every injective resolution `I` of `F` and every augmentation-compatible `φ`.
 * `comparisonTrans_zero`: in degree zero it is the published identification of both sides
   with compact sections.
-* `comparisonIso`: on a locally compact Hausdorff space, under the unproved published
-  statements `AcyclicResolutionComparisonStatement` and
-  `SmoothGodementCompactDerivedAcyclicStatement` as explicit hypotheses, the comparison
-  transformation is a natural isomorphism.
+* `comparisonIso`: on a locally compact Hausdorff space, under the published statements
+  `AcyclicResolutionComparisonStatement` (proved as `acyclicResolutionComparisonStatement`
+  in `AcyclicResolution.ComparisonProof`, not imported here) and
+  `SmoothGodementCompactDerivedAcyclicStatement` (unproved) as explicit hypotheses, the
+  comparison transformation is a natural isomorphism.
 -/
 
 noncomputable section

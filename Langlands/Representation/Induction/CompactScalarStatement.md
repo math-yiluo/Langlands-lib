@@ -5,9 +5,12 @@ interface in task `1d0b7d25-f62a-449c-9207-b07a3d358d5b`; Worker 166 formalized 
 and wrote this explanation.
 
 `Langlands.GLParabolicCompactScalarIntegralStatement` is a closed proposition
-definition awaiting proof. It specifies a single compact-picture integration
+definition. It specifies a single compact-picture integration
 functional for each actual standard block parabolic, independently of any
-inducing representation.
+inducing representation. This module contains no proof. The exact proposition
+is proved by `Langlands.glParabolicCompactScalarIntegral` in
+`Langlands.Representation.Induction.CompactScalarProof`; see "Proof status"
+below.
 
 ## Exact assertion and conventions
 
@@ -84,9 +87,10 @@ and integrability of each translated scalar function on compact `K`.
 This formulation separates the scalar existence and invariance assertion from
 any assertion about an induced representation or its smooth dual.
 
-## Existing inputs and remaining proof obligations
+## Inputs available when the statement was written
 
-The Library already supplies the following reusable constructions and proofs:
+When this statement was written, the Library already supplied the following
+reusable constructions and proofs:
 
 - `Langlands.Parabolic.isCompact_integralRange` and
   `quotientMap_image_integralRange` in
@@ -105,17 +109,34 @@ The Library already supplies the following reusable constructions and proofs:
   `T.leviModulus B m`. That inverse is compatible with the forward-pushforward
   convention and does not reverse the covariance in this statement.
 
-These results do not by themselves establish this new proposition. A proof
-must still construct the parabolic Haar disintegration or another valid
-scalar integration argument and identify the compact average with the
-right-invariant functional. It must establish the probability Haar choice,
-integrability, and every ambient translation identity, with the stated
-normalizations. `QuotientIwasawaIntegrationStatement` concerns the unipotent
-quotient and is a different target.
+These results did not by themselves establish the proposition.
+`QuotientIwasawaIntegrationStatement` concerns the unipotent quotient and is a
+different target.
 
-This pair supplies no proof of scalar integral existence, normalized-induction
-unitarity, natural induction duality, refined product-Levi integration,
-second adjointness, Jacquet multiplicity comparison, or the irreducible-head
-consequence. In particular, the natural induction-duality target also needs
-rank zero, arbitrary refined Levi groups, actual perfect pairings, and
-naturality on intertwiners; those are separate obligations.
+## Proof status
+
+`Langlands.glParabolicCompactScalarIntegral`, in
+`Langlands.Representation.Induction.CompactScalarProof`, has type exactly
+`GLParabolicCompactScalarIntegralStatement.{uF}` for arbitrary `uF`, with no
+further hypotheses. It takes for `K` the level-zero subgroup `GL_n(O_F)`,
+obtains `G = P K` from the Iwasawa factorization, and takes for `mu` the
+restriction to `K` of the Haar measure on `G` that gives `K` mass one. It
+identifies the full block modulus `T.leviModulus B` with Mathlib's modular
+character of `P` (helper module `Langlands.Group.GL.ParabolicModularCharacter`).
+Invariance then follows from an abstract compact-averaging theorem
+(helper module `Langlands.Analysis.Local.ModularCompactAverage`). Thus `K` and
+`mu` are constructed before the scalar functions and translations are
+quantified. The proof does not construct Casselman's functional `I_delta`, a
+quotient measure on `P \ G` or a Haar disintegration; its Markdown describes
+the implemented route.
+
+This statement pair contains no proof. The scalar theorem does not by itself
+give normalized-induction unitarity, natural induction duality, refined
+product-Levi integration, second adjointness, Jacquet multiplicity comparison,
+or the irreducible-head consequence. These are separate targets with their own
+modules. In particular, the natural induction-duality target also needs rank
+zero, arbitrary refined Levi groups, actual perfect pairings, and naturality on
+intertwiners. The published proofs of normalized-induction unitarity
+(`Langlands.Representation.Induction.UnitaryProof`) and of natural normalized
+induction duality (`Langlands.Representation.Parabolic.NaturalInductionDualityProof`)
+import this scalar theorem as one of their inputs.

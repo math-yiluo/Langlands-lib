@@ -1,7 +1,9 @@
 # Polynomial-module isomorphisms give matrix conjugacy
 
-`Langlands.MatrixAEvalConjugacyStatement.{uK}` is an unproved proposition.
-This module states it and supplies no proof.
+`Langlands.MatrixAEvalConjugacyStatement.{uK}` is a proposition. This module
+states it and supplies no proof. The published theorem
+`Langlands.matrixAEvalConjugacy.{uK}` in
+`Langlands.LinearAlgebra.MatrixAEvalConjugacyProof` proves it.
 
 For every field `K : Type uK`, natural number `n`, and two matrices `x` and
 `y` in `Matrix (Fin n) (Fin n) K`, every `Polynomial K`-linear equivalence
@@ -16,13 +18,16 @@ The underlying vector space of `Module.AEval' x.mulVecLin` is `Fin n → K`.
 The action of the polynomial variable `X` is matrix multiplication by `x`.
 A polynomial-linear equivalence therefore restricts to a `K`-linear
 equivalence intertwining `x` and `y`. Its matrix `g` satisfies `g * x = y * g`,
-which gives the displayed conjugation formula. This paragraph explains the
-intended mathematical argument; its formal proof is a separate contribution.
+which gives the displayed conjugation formula. The published proof
+`matrixAEvalConjugacy` follows this argument. The matrices of the restricted
+equivalence and of its inverse form the unit `g`.
 
 ## Provenance
 
-This is an internal linear algebra bridge for the matrix transpose-conjugacy
-and fixed-characteristic-polynomial finiteness proofs. It is not a quotation
+This internal linear algebra bridge was specified for the matrix
+transpose-conjugacy and fixed-characteristic-polynomial finiteness proofs.
+Of the published proofs, `Langlands.matrixCharpolyFiniteConjugacy` uses it;
+`Langlands.matrixTransposeConjugate` does not. It is not a quotation
 or reformulation of a separate source statement. The formulation uses
 Mathlib's existing `Module.AEval'`, `Matrix.mulVecLin` and
 `Matrix.GeneralLinearGroup` constructions, without adding data or hypotheses.

@@ -33,9 +33,19 @@ published local Weil group.
   `X = q^(-s)`, for the actual tensor pair `X ⊗ Y` with monodromy
   `N ⊗ 1 + 1 ⊗ N`. Two Frobenius lifts differ by an inertia element, which
   acts trivially on `(ker N)^I`, so the value does not depend on the lift.
-  The Library proves this independence only for common-closure pairs
-  (`CommonClosureGamma.eulerPolynomial_eq_of_frobenius`); nothing here
-  depends on it.
+  The Library proves this for every Weil–Deligne representation, not only
+  for common-closure pairs: `WeilDeligne.rationalLFactor_eq_of_coset`
+  (module `Langlands.LocalFactor.WeilDeligne`) gives
+  `rationalLFactor A I h = rationalLFactor A I g` for every normal subgroup
+  `I` and all `g, h` with `h * g⁻¹ ∈ I`. The published
+  `WeilDeligne.pairLFactor A B I g` is `rationalLFactor` of the actual tensor
+  of `A` and `B`, so the theorem applies to pair factors of representatives.
+  `localInertia F` is by definition the kernel of the degree map of `W_F`,
+  so two elements of degree `+1` satisfy the hypothesis. The common-closure
+  form is `CommonClosureGamma.eulerPolynomial_eq_of_frobenius`. The Library
+  states no version for `pairLFactorClass` on classes; there it follows by
+  applying the theorem to representatives. Nothing here depends on this
+  independence.
 
 The arithmetic epsilon factor is computed with the published common-closure
 local-constant machinery (`LocalFactor.CommonClosure`,

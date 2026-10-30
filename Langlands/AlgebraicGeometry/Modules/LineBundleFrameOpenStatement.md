@@ -14,7 +14,9 @@ This is a derived prerequisite for the existing
 stalk-frame locus. The present statement isolates the extra consequence of
 local rank one that makes this the whole locus. It does not compare the
 stalk condition to the section on a residue-field pullback. That comparison
-remains the separate `LineBundleResidueStalkCriterion` obligation.
+is the separate `LineBundleResidueStalkCriterion`, proved by
+`Langlands.SchemeModule.lineBundleResidueStalkCriterion` in module
+`Langlands.AlgebraicGeometry.Modules.SectionResidueStalkProof`.
 
 The source motivation is the openness and local-trivialization argument in
 Stacks Project Lemma 17.25.10, tag [01CY](https://stacks.math.columbia.edu/tag/01CY),
@@ -26,5 +28,7 @@ times the module, obtains a stalk basis, and extends its inverse over a
 neighborhood. This target isolates the portion starting from a stalk basis,
 using the Library's existing actual module and stalk constructions. It
 asserts neither the residue-field comparison nor construction of an inverse
-bundle section. It is a proposition definition awaiting independent proof,
-not an axiom.
+bundle section. It is a proposition definition, not an axiom. A separate
+module proves it: `Langlands.SchemeModule.lineBundleStalkFrameOpen :
+LineBundleStalkFrameOpen.{u}` in
+`Langlands.AlgebraicGeometry.Modules.LineBundleFrameOpen`.

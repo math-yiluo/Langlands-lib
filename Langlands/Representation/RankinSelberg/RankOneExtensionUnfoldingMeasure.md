@@ -72,21 +72,33 @@ The exchange map (`section CellExchangeMap`):
   and `measurable_rankOneExtensionCellExchange`: the fibre action, the scaling and the
   exchange map are measurable. `secondCountable_generalLinear` and
   `secondCountable_lowerTriangular` record the second countability used for this.
-- `map_cellExchange`: suppose `μQ` is invariant under every right translation, `ρ` is
-  right-invariant, and `y ↦ a y` scales `dy` by `w a` for every `a ≠ 0`. Then the
+- `map_cellExchange`: suppose `xrow` and `w` are measurable, the measures `dy`, `μQ` and
+  `ρ` are s-finite (`dx` is arbitrary), `μQ` is invariant under every right translation,
+  `ρ` is right-invariant, and `y ↦ a y` scales `dy` by `w a` for every `a ≠ 0`. Then the
   exchange map sends `(dx × dy) × (μQ × ρ)` to the same measure with density
   `w(lowerScalarEntry h)`. The proof is `map_skewScalingMap`. For fixed `(x, y)`, the map
   `(q, h) ↦ (q r, h s⁻¹)` preserves `μQ × ρ`, and the scaling factor is `h' = h s⁻¹`.
 
-Product measures (`section ProductScaling`):
+Product measures (`section ProductScaling`). Here `K` is a field with a topological-ring
+structure, second countable, with its Borel σ-algebra, and `ν` is a **σ-finite** measure
+on `K` (`SigmaFinite ν`). Each of the three theorems below assumes the σ-finiteness of
+`ν`.
 
-- `productMeasure_map_const_smul`: suppose `x ↦ a x` scales `ν` by `χ(a)⁻¹`. Then
-  `y ↦ a y` scales the product measure `ν^ι` by `χ(a)^(-|ι|)`. This is the diagonal case
-  of the Library's `HarmonicAnalysis.productMeasure_map_diagonal`.
-- `productMeasure_cellScalar_eq_zero`: if `ν` has no atoms (`NullSingletonClass`), the
-  hyperplane `{y | 1 + x · y = 0}` is `ν^(t+1)`-null for every `x`.
-- `prod_cellScalar_eq_zero`: the set `{1 + x · y = 0}` is null for
-  `(dx × ν^(t+1)) × μ'`.
+- `productMeasure_map_const_smul`: let `ν` be σ-finite and `χ : K →*₀ ℝ≥0`. Suppose
+  `x ↦ a x` scales `ν` by `χ(a)⁻¹` for every `a ≠ 0`. Then, for each `a ≠ 0`, `y ↦ a y`
+  scales the product measure `ν^ι` over a finite type `ι` by `χ(a)^(-|ι|)`. This is the
+  diagonal case of the Library's `HarmonicAnalysis.productMeasure_map_diagonal`.
+- `productMeasure_cellScalar_eq_zero`: suppose `K` is also T1 and `ν` is σ-finite and has
+  no atoms (`SigmaFinite ν` and `NullSingletonClass ν`). Then the hyperplane
+  `{y | 1 + x · y = 0}` is `ν^(t+1)`-null for every `x`. Atomlessness alone is not enough.
+  On the Borel sets of `ℝ`, let `ν` be `0` on countable sets and `∞` on uncountable
+  ones. This `ν` has no atoms, but it is not σ-finite. For `t = 1` and `x = (1, 1)`, the
+  finite-product construction `Measure.pi` gives the line `{1 + y₀ + y₁ = 0}` infinite
+  measure, so the conclusion fails. This example is not formalized.
+- `prod_cellScalar_eq_zero`: under the same assumptions on `K` and `ν`, let
+  `xrow : X → K^(t+1)` be measurable and let `dx` on `X` and `μ'` on `B` be s-finite
+  (`SFinite dx`, `SFinite μ'`). Then the set `{((x, y), b) | 1 + xrow(x) · y = 0}` is
+  null for `(dx × ν^(t+1)) × μ'`.
 
 ## Proof method
 
@@ -106,5 +118,13 @@ countable, through the same embedding. The Borel σ-algebra on the product is th
 the product σ-algebra, and multiplication is jointly measurable.
 
 For the null hyperplane, choose a coordinate `j` with `x_j ≠ 0`. Split `K^(t+1)` as
-`K × K^t` along `j` with `measurePreserving_piFinSuccAbove`. Each slice
-`{a | 1 + x · insertNth j a z = 0}` has at most one point, so it is `ν`-null.
+`K × K^t` along `j` with `measurePreserving_piFinSuccAbove`, which needs `ν` to be
+σ-finite. Each slice `{a | 1 + x · insertNth j a z = 0}` has at most one point, so it is
+`ν`-null, and `Measure.prod_apply_symm` integrates the null slices. In
+`prod_cellScalar_eq_zero` the set is a product with all of `B` (`Measure.prod_prod`), and
+`Measure.prod_apply` integrates the `ν^(t+1)`-null fibres over `dx`. Each of these
+product formulas needs only its right factor to be s-finite: `Measure.prod_prod` uses
+`SFinite μ'`, and `Measure.prod_apply` uses the s-finiteness of `ν^(t+1)`, which follows
+from `SigmaFinite ν`. Neither formula uses `SFinite dx`; that hypothesis is retained as
+an explicit assumption in the interface of `prod_cellScalar_eq_zero`, but this proof
+does not use it.

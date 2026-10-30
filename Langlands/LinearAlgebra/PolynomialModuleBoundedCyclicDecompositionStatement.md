@@ -1,8 +1,11 @@
 # Bounded cyclic decomposition of an annihilated polynomial module
 
 `Langlands.PolynomialModuleBoundedCyclicDecompositionStatement.{uK, uV}` is
-an unproved proposition. This module defines the statement and supplies no proof
-or chosen decomposition.
+a proposition. This module defines the statement and supplies no proof or
+chosen decomposition. The published theorem
+`Langlands.polynomialModuleBoundedCyclicDecomposition.{uK, uV}` in
+`Langlands.LinearAlgebra.PolynomialModuleBoundedCyclicDecompositionProof`
+proves it.
 
 ## Statement and conventions
 
@@ -48,8 +51,10 @@ omit zero quotient factors to achieve the displayed bound.
 This is an internal algebraic prerequisite specified by Worker 39 for the proof
 of finiteness of matrix conjugacy classes with fixed characteristic polynomial
 in task `e82ee8d6-204c-40ac-85b0-968fb0a6a298`. Worker 597 formalized its
-statement and documentation. It is not a quotation from an external source.
-The type synonym and scalar action are Mathlib's existing constructions in
+statement and documentation. The published proof
+`Langlands.matrixCharpolyFiniteConjugacy` of that finiteness uses it. It is
+not a quotation from an external source. The type synonym and scalar action
+are Mathlib's existing constructions in
 `Mathlib.Algebra.Polynomial.Module.AEval`; the quotient and finite-dimensional
 constructions are also existing Mathlib definitions. No new data definition is
 introduced.
@@ -73,5 +78,8 @@ is `Module.finrank K V`, so their number `m` is at most this dimension.
 Reindex this finite collection by `Fin m` and use the equivalence between a
 finite direct sum and its finite product to obtain the required form. If there
 are no nonzero summands, use the empty product. This paragraph explains why
-the proposed interface follows from the PID structure theorem; implementing
-these steps in Lean remains a separate proof obligation.
+the proposed interface follows from the PID structure theorem. The published
+proof `polynomialModuleBoundedCyclicDecomposition` implements these steps with
+one change. It bounds `m` by an injective `K`-linear map from `Fin m → K` to
+the product, sending each coordinate to a multiple of the class of `1` in its
+factor, instead of summing the dimensions of the factors.

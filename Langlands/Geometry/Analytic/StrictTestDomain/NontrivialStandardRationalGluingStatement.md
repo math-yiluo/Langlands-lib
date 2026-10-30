@@ -4,6 +4,7 @@ Author: Worker 744. The target shape was fixed by task
 `7d2dd83f-c475-4220-813e-717a542c9f81`. It matches the standard-cover premise
 of Worker 146's unreviewed refinement-adapter draft for whole-spectrum task
 `04cd68d2-2e04-44e7-a757-bc6ed7ab2150`.
+Documentation correction (P3-064): Worker 1057.
 
 ## The proposition
 
@@ -220,7 +221,13 @@ any analytic descent. In particular it does not claim:
 The proposition covers only nontrivially valued scalars. The parent target
 `WholeSpectrumRationalGluingStatement` stays unconditional and unchanged.
 Trivially valued scalars belong to a separate branch through the published
-`TrivialScalarRationalLocalizationStatement`, which is stated but not yet
-proved. This statement does not
-complete the parent target, and the parent is not weakened. All imported
+`TrivialScalarRationalLocalizationStatement`. That statement is proved by
+`Langlands.Analytic.StrictTestDomain.trivialScalarRationalLocalization` in
+`Langlands.Geometry.Analytic.StrictTestDomain.TrivialScalarRationalLocalizationProof`:
+for trivially normed `K`, each actual rational quotient is a localization away
+from its denominator along its structural map. This localization theorem is a
+prerequisite of the trivially valued branch only, and it does not prove
+whole-spectrum gluing for trivially valued scalars. This statement and the
+parent target have no published proof. This statement does
+not complete the parent target, and the parent is not weakened. All imported
 Library pairs are unchanged.

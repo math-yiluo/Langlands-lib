@@ -53,11 +53,17 @@ Reordering (`section Reorder`):
   `(dx × dy) × (μQ × ρ)` for s-finite measures.
 
 Integrals (`section Integral`), for a second-countable topological field `K` with Borel
-σ-algebras, a measure `ν` on `K` without atoms, and the row measure `ν^(t+1)`:
+σ-algebras:
 
 - `measurable_lowerCell_mul_upperCell`: `((x, y), (q, h)) ↦ (q, B(1, x, h) u(y))` is
   measurable.
 - `integral_cellExchange`. Hypotheses:
+  - finiteness: the measure `dx` on the `1 × (t+1)` row matrices, `μQ` and `ρ` are
+    s-finite (`SFinite dx`, `SFinite μQ`, `SFinite ρ`), and `ν` on `K` is σ-finite
+    (`SigmaFinite ν`). The other hypotheses below do not imply these. For example, for
+    `K = ℝ`, counting measure on `B⁻_1 ≅ ℝ^×` is right-invariant but not s-finite;
+  - `ν` has no atoms (`NullSingletonClass ν`); `y` is integrated against the row
+    measure `ν^(t+1)`;
   - `μQ` on `H \ GL_(t+1)` is invariant under every right translation;
   - `ρ` on `B⁻_1` is right-invariant;
   - `χ : K →*₀ ℝ≥0` is measurable and `x ↦ a x` sends `ν` to `χ(a)⁻¹ • ν` for `a ≠ 0`;
@@ -67,9 +73,10 @@ Integrals (`section Integral`), for a second-countable topological field `K` wit
   `Ψ(q, u(y) B(1, x, h))` is integrable if and only if
   `χ(h)^(-(t+1)) • Ψ(q, B(1, x, h) u(y))` is integrable, and the two integrals are equal.
   Here `χ(h)` means `χ` applied to `lowerScalarEntry h`.
-- `integral_cellExchange_reorder`: the same statement on
-  `(μQ × (dx × ρ)) × ν^(t+1)`, the order in which the lower-block disintegration
-  `(μQ × (dx × ρ))` is followed by the upper-cell variable `y`.
+- `integral_cellExchange_reorder`: under the same hypotheses, including the four
+  finiteness assumptions, the same statement on `(μQ × (dx × ρ)) × ν^(t+1)`, the order in
+  which the lower-block disintegration `(μQ × (dx × ρ))` is followed by the upper-cell
+  variable `y`.
 
 ## Proof method
 
@@ -83,6 +90,11 @@ from `productMeasure_map_const_smul`. The conclusion then follows from
 `integral_withDensity_eq_integral_smul`. The reordered form transports both statements
 along the measure-preserving equivalence `cellReorder`
 (`MeasurePreserving.integrable_comp_emb`, `MeasurePreserving.integral_comp'`).
+
+The finiteness assumptions enter as follows. `productMeasure_map_const_smul` and the null
+set `prod_cellScalar_eq_zero` need `ν` σ-finite; the latter also needs `dx` and
+`μQ × ρ` s-finite. `map_cellExchange` needs `ν^(t+1)`, `μQ` and `ρ` s-finite, and
+`measurePreserving_cellReorder` needs all four factors s-finite.
 
 Measurability of `G` uses that `GL_(1+(t+1))(K)` is second countable
 (`secondCountable_generalLinear`), so multiplication is jointly measurable, together with

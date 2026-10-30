@@ -78,8 +78,11 @@ here.
   `hcomp : AcyclicResolutionComparisonStatement.{u + 1, u, u + 1, u}` and
   `hacyc : SmoothGodement.SmoothGodementCompactDerivedAcyclicStatement R G X`. The first is
   Worker 3's statement that acyclic resolutions compute right derived functors. The second
-  says that the terms of the smooth Godement complex are acyclic for `compactDerived`. Both
-  are published statements without proofs. The isomorphism is
+  says that the terms of the smooth Godement complex are acyclic for `compactDerived`. The
+  first is proved, at all universes and so at these, by the theorem
+  `acyclicResolutionComparisonStatement` in
+  `Langlands.Cohomology.AcyclicResolution.ComparisonProof`, which this module does not
+  import. The Library has no proof of the second. The isomorphism is
   `AcyclicResolution.comparisonNatIso` for the smooth Godement resolution, and
   `comparisonIso_hom` (`simp`) says that its morphism is `comparisonTrans hK q`.
 
@@ -98,7 +101,10 @@ proved here. The lemmas above reduce them to short arguments.
   `SmoothGodementComparisonNaturalStatement` follows from `comparisonIso` with
   `comparisonTrans_app`, and `SmoothGodementComparisonIsIsoStatement` from the same.
 
-A separate proof task for these propositions is planned once this module is published.
+`SmoothGodementComparisonZeroStatement` is proved by `smoothGodementComparisonZero` in
+`Langlands.Cohomology.SmoothGodementComparison.ZeroProof`. The other two propositions
+have no proof in the Library: besides the proved `hcomp`, they need `hK` (or a proof of
+`CokernelResolutionStatement`) and `hacyc`, neither of which is proved.
 
 ## Provenance and interpretation
 

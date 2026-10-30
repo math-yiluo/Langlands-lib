@@ -1,8 +1,13 @@
 # Local rank one of actual tensor powers of line bundles
 
-`TensorPowLocallyFreeRankOneStatement` is a precise proposition awaiting a
-separate proof. It is not assumed, installed as an axiom, or used as a
-premise by any imported construction.
+`TensorPowLocallyFreeRankOneStatement` is a precise proposition. It is not
+assumed, installed as an axiom, or used as a premise by any imported
+construction. A separate module proves it:
+`Langlands.AlgebraicGeometry.Picard.tensorPow_isLocallyFreeRankOne :
+TensorPowLocallyFreeRankOneStatement.{u}` in
+`Langlands.AlgebraicGeometry.Picard.TensorRankOneProof`, by induction on `n`
+from `IsLocallyFreeRankOne.tensor` and the published theorem
+`Langlands.Scheme.Modules.pullbackTensorComparisonIsIso`.
 
 ## Statement
 
@@ -77,8 +82,10 @@ of `tensorObj M N` for locally free rank-one `M` and `N`, is not stated here.
 A version of that binary closure that depends on an extra premise is already
 published as `IsLocallyFreeRankOne.tensor` in
 `Langlands.AlgebraicGeometry.Picard.LineBundleTensor`. It takes the explicit premise
-`Langlands.Scheme.Modules.pullbackTensorComparisonIsIsoStatement`. This
-module does not import it and does not depend on that premise.
+`Langlands.Scheme.Modules.pullbackTensorComparisonIsIsoStatement`, which the
+published theorem `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso`
+proves. This module does not import either and does not depend on that
+premise.
 
 The downstream ampleness interface `Langlands.AlgebraicGeometry.Picard.Ample`
 takes the hypothesis `∀ n : ℕ, IsLocallyFreeRankOne (tensorPow L.obj n)` in

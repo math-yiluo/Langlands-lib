@@ -119,15 +119,16 @@ With `[PreservesFiniteLimits F]`:
 - `comparisonNatIso F 𝒦 e he hcomp hacyc n :
   𝒦 ⋙ F.mapHomologicalComplex _ ⋙ homologyFunctor D _ n ≅ F.rightDerived n` takes two
   hypotheses: `hcomp : AcyclicResolutionComparisonStatement.{u, v, u', v'}`, Worker 3's
-  unproved statement that acyclic resolutions compute right derived functors, and
+  statement that acyclic resolutions compute right derived functors, and
   `hacyc : ∀ A i n, IsZero ((F.rightDerived (n + 1)).obj ((𝒦.obj A).X i))`, the
   `F`-acyclicity of every term. Under these, every component of `comparisonNatTrans` is an
   isomorphism, and `comparisonNatIso` is `asIso` of it (`comparisonNatIso_hom`, `simp`).
-  The statement is not proved in this module. A separate proof task for it is planned,
-  using the long exact sequence of right derived functors in my module
-  `Langlands.Cohomology.RightDerivedSequence` (definition candidate `25a38938`, approved in
-  review and awaiting publication when this module was written). This module does not
-  import it.
+  The statement is not proved in this module, which keeps `hcomp` as a hypothesis. It is
+  proved, at the same four universes, by the theorem `acyclicResolutionComparisonStatement`
+  in `Langlands.Cohomology.AcyclicResolution.ComparisonProof`, which uses the long exact
+  sequence of right derived functors in `Langlands.Cohomology.RightDerivedSequence`; this
+  module imports neither. A caller can supply that theorem as `hcomp`; `hacyc` remains a
+  separate input.
 
 ## Provenance and interpretation
 
@@ -173,21 +174,28 @@ augmentation-compatible lifts by `comparisonNatTrans_app`.
 
 - `comparison_eq` and `comparison_naturality` contain the mathematical content of Worker
   3's `ResolutionComparisonIndependenceStatement` and
-  `ResolutionComparisonNaturalityStatement`. Proofs of these are the open proof tasks
-  `aa4e1211-72de-4f5e-9c48-e6af4c377518` and `ca6fb6ed-5cfd-42c5-89ba-5ac0e399849c`,
-  which I published and which have no executor. With this module each of these proofs
-  becomes a direct application. This module does not prove the statement propositions
-  themselves, which quantify over all categories at fixed universes.
-- `ResolutionLiftStatement` (task `02f2d14c-716f-4dcf-829f-cf83ae2c9ced`), `ResolutionComparisonTransformationStatement`
-  (task `00e33a4e-59c9-46bc-afee-078f9aff83ab`), `AcyclicResolutionComparisonStatement` and
-  `AcyclicResolutionEquivarianceStatement` are not addressed.
+  `ResolutionComparisonNaturalityStatement`. This module does not prove the statement
+  propositions themselves, which quantify over all categories at fixed universes. They are
+  proved, as direct applications of these two theorems, by
+  `resolutionComparisonIndependenceStatement` in
+  `Langlands.Cohomology.AcyclicResolution.IndependenceProof` and
+  `resolutionComparisonNaturalityStatement` in
+  `Langlands.Cohomology.AcyclicResolution.NaturalityProof`.
+- `ResolutionLiftStatement`, `ResolutionComparisonTransformationStatement`,
+  `AcyclicResolutionComparisonStatement` and `AcyclicResolutionEquivarianceStatement` are
+  not addressed by this module. The first three are proved elsewhere:
+  `resolutionLiftStatement` in `AcyclicResolution.LiftProof`,
+  `resolutionComparisonTransformationStatement` in `AcyclicResolution.TransformationProof`
+  and `acyclicResolutionComparisonStatement` in `AcyclicResolution.ComparisonProof`. The
+  Library has no proof of `AcyclicResolutionEquivarianceStatement`.
 - Worker 3's `SmoothGodementComparison.comparisonMap R G X I φ q` is `comparison` for
   `F := smoothSheafCompactSections R G X`, by definition.
 
 ## Scope
 
 - One covariant additive functor of one variable and `ℕ`-indexed cochain complexes only.
-- Invertibility in positive degrees is not proved: `comparisonNatIso` takes
-  `AcyclicResolutionComparisonStatement` as an explicit hypothesis.
+- Invertibility in positive degrees is not proved in this module: `comparisonNatIso` takes
+  `AcyclicResolutionComparisonStatement` as an explicit hypothesis, which the theorem
+  `acyclicResolutionComparisonStatement` proves.
 - `homologyZeroIso`, `comparison_zero`, `homologyZeroNatIso` and `comparisonNatTrans_zero`
   require `F` to preserve finite limits; `toRightDerivedZero_eq_comparison` does not.

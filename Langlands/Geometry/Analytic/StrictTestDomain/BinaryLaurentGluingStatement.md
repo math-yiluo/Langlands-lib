@@ -2,6 +2,7 @@
 
 Author: Worker 742. The focused target was specified by Worker 146 as a
 prerequisite of the whole-spectrum scalar descent work.
+Documentation correction (P3-064): Worker 1057.
 
 `Langlands.Analytic.StrictTestDomain.BinaryLaurentGluingStatement.{u}` is a
 proposition-valued definition, not a theorem or an assumption of descent. It
@@ -132,9 +133,10 @@ module or, as far as the current Library shows, anywhere else.
   The Library quotient takes an explicit closure instead.
 
 For trivially normed `K` the analytic argument does not apply, and the
-intended route is algebraic. The published but unproved
-`TrivialScalarRationalLocalizationStatement` asserts that each rational
-quotient is `IsLocalization.Away` its denominator along its base map. For the
+route is algebraic. The published `TrivialScalarRationalLocalizationStatement`
+asserts that each rational quotient is `IsLocalization.Away` its denominator
+along its base map. It is proved by `trivialScalarRationalLocalization`; see
+Status below. For the
 upper input the denominator is `1`, so its base map would be bijective. The
 lower quotient and the overlap would be localizations away from `f` and
 `1 * f`. The overlap restriction from the lower quotient commutes with the
@@ -144,8 +146,8 @@ would be injective. Take `a` to be the inverse image of
 at `a` is then the overlap base map at `a`. That equals the left restriction
 of `sUpper`, hence the right restriction of `sLower`. Injectivity gives
 `(laurentLower f).baseMap a = sLower`, and uniqueness follows from the
-upper bijection. This sketch is guidance for the successor proof task. It
-depends on that unproved statement and proves nothing here.
+upper bijection. This module proves nothing about this route. The published
+theorem `binaryLaurentGluing_of_trivialScalar` implements it; see Status below.
 
 The retained originals were read directly: Achinger pp.6 and 63-65, and
 Berkovich pp.2-10. When checked on 2026-10-27, no source-specific errata note
@@ -154,5 +156,29 @@ Library notes.
 
 This module changes no imported Library pair. It leaves the whole-spectrum
 target `WholeSpectrumRationalGluingStatement`, the relative gluing
-statements and the trivial-scalar localization statement unchanged and
-unproved. A separate task will supply the proof of this proposition.
+statements and the trivial-scalar localization statement unchanged.
+
+## Status
+
+The proposition itself, for every complete ultrametric normed field `K`, has
+no published proof. In particular, nontrivially valued `K` is not covered by
+the results below.
+
+- `Langlands.Analytic.StrictTestDomain.trivialScalarRationalLocalization` in
+  `Langlands.Geometry.Analytic.StrictTestDomain.TrivialScalarRationalLocalizationProof`
+  proves `TrivialScalarRationalLocalizationStatement`. For complete ultrametric
+  `K` with `∀ c : K, ‖c‖ ≤ 1`, every presented strict affinoid algebra `P` and
+  every `d : RationalData K P`, the actual rational quotient is
+  `IsLocalization.Away d.denominator` along the actual structural map
+  `d.baseMap`. Apart from the no-common-zero field of the rational datum, it
+  assumes no nonzero denominator, reducedness or nonempty spectrum.
+- `Langlands.Analytic.StrictTestDomain.binaryLaurentGluing_of_trivialScalar`
+  in `Langlands.Geometry.Analytic.StrictTestDomain.BinaryLaurentTrivialScalar`
+  proves the conclusion of this proposition under the extra hypothesis
+  `∀ c : K, ‖c‖ ≤ 1`, for the same `P`, `f`, `sUpper` and `sLower`. It follows
+  the algebraic route above, through that localization theorem. It is not a
+  proof of this proposition.
+
+The whole-spectrum target `WholeSpectrumRationalGluingStatement` and the
+nontrivial standard target `NontrivialStandardRationalGluingStatement` also
+have no published proof.

@@ -3,7 +3,10 @@
 Worker 128 states
 `Langlands.Induction.CompactInductionNormalCoinvariantKernel.{uG,uV}`.
 This is a Prop-valued definition for a separate proof. It introduces no
-construction and proves no kernel equality.
+construction and proves no kernel equality. The exact proposition is proved by
+`Langlands.Induction.compactInductionNormalCoinvariantKernel` in
+[`NormalCoinvariantKernelProof`](NormalCoinvariantKernelProof.md); see
+"Proof status" below.
 
 ## Quantifiers and conclusion
 
@@ -104,7 +107,10 @@ the same source specialization for the full comparison. This focused
 statement isolates the relation-kernel obligation needed for that
 comparison; it does not assert its surjectivity or naturality.
 
-## Elementary proof route still to be implemented
+## Elementary proof route proposed with the statement
+
+This route was written with the statement, before any proof existed. The
+published proof implements it in substance; see "Proof status" below.
 
 For `n ∈ N`, normality gives `g * n * g⁻¹ ∈ N ⊆ H`, hence
 `H * g * n = H * g`. Covariance therefore sends an evaluated global
@@ -127,8 +133,25 @@ existing [`compactQuotientCutoff`](CompactQuotientCutoff.md) and a finite
 clopen refinement. Because `N` fixes every point of `H \ G`, cutoff
 multiplication commutes with its action and preserves the global
 relation span. Establishing this preservation and the finite global
-relation expression is part of the future proof, not an assumed kernel
+relation expression was left to the proof. Neither is an assumed kernel
 exactness or an additional hypothesis here.
+
+## Proof status
+
+`Langlands.Induction.compactInductionNormalCoinvariantKernel`, in
+`Langlands.Representation.Induction.NormalCoinvariantKernelProof`, has type
+exactly `CompactInductionNormalCoinvariantKernel.{uG,uV}`. It keeps the two
+independent universes and every hypothesis above: the compact open subgroup
+basis, closedness of `H` and `N`, normality of `N`, `N ≤ H` and smoothness of
+`σ`. It adds no hypothesis. Evaluation of global relation generators gives
+the forward implication. For the reverse implication, each coefficient relation
+is lifted to a global relation through `compactLocalSection`. The difference
+between `f` and that relation has closed projected support missing the chosen
+coset, which gives a compact clopen quotient neighborhood on which they agree.
+Cutoff multiplication by `compactQuotientCutoff` preserves the global relation
+span, and finitely many such cutoffs covering the compact projected support of
+`f` are patched together. The proof companion explains the details and notes
+that closedness of `N` is not used by the argument.
 
 The Lean imports only `Induction.Definitions`, Mathlib's coinvariants,
 and the complex coefficient infrastructure. The section and cutoff

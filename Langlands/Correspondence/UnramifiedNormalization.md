@@ -57,9 +57,34 @@ For a full map `c : FullMap F` and a reciprocity candidate `e`:
 
 The parameter class `D` is asserted to exist, so the condition does not hold
 vacuously. The spherical constituent is not selected: the condition says that
-`c D` is one. Uniqueness of the spherical constituent up to isomorphism, its
-independence of the order of the `χ_i`, and its multiplicity one are theorems
-(Borel 1979, §10.4) that are not proved in the Library and are not used here.
+`c D` is one.
+
+This module proves no theorem about spherical constituents and imports none.
+Other Library modules prove two of the facts of Borel 1979, §10.4. They are
+stated for the uniformizer-value form of the principal series in
+`Langlands.Representation.Unramified.PrincipalSeries`, which imports this
+module. There `principalSeriesOfTuple F z` is
+`principalSeries F r (characterTuple F z)`, and
+`IsSphericalConstituent F z A` is the conjunction of the two last clauses of
+`PrincipalSeriesCompatibility` for that principal series. By
+`characterTuple_characterValues` in the same module, every tuple `χ` of
+unramified quasi-characters equals `characterTuple F (characterValues F χ)`.
+So the representative in `PrincipalSeriesCompatibility` is exactly an
+`IsSphericalConstituent F (characterValues F χ) A`.
+
+- Uniqueness up to isomorphism and independence of the order of the `χ_i`:
+  `Unramified.sphericalConstituentUniqueness` proves
+  `SphericalConstituentUniquenessStatement`. If two tuples have the same
+  unordered uniformizer values (`Eigenvalues.ofTuple`, which keeps
+  multiplicities), then spherical constituents of their principal series are
+  equivalent. The two carriers may lie in different universes.
+- Existence: `Unramified.SphericalExistence.sphericalConstituentExistence`
+  proves `SphericalConstituentExistenceStatement`: every such principal series
+  has a spherical constituent whose carrier lies in the field universe.
+
+That the spherical constituent occurs with multiplicity one in the principal
+series is not stated or proved in the Library. None of these results is used
+here.
 
 ## Normalization
 

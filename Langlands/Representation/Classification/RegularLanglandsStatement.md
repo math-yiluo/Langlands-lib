@@ -146,14 +146,78 @@ GL-specific step is a separate theorem target; it is not an assumption or
 a proof supplied by this pair. No irreducibility of arbitrary reductive
 tempered induction is asserted here.
 
-This pair supplies the three top-level conclusions of Theorem 4.1 and the
-conclusions of Propositions 5.1, 6.1, and 7.2. It does not separately encode
-the finer cuspidal Jacquet multiplicity comparisons of Lemmas 5.3 and 5.6,
-the relative recovery and cosocle multiplicity assertions of Propositions
-5.7–5.9, the semistandard conjugacy formulation of Corollary 6.2, or the
-maximal-cone construction inside the proof of Proposition 7.2. Those remain
-statement obligations in the broader task. The general root/weight cone
-lemma, exponent criteria, fixed-central-character splitting and tempered
-prerequisite families already have separate targets; their proofs, product
-specialization, chamber conversion and the present three implications all
-remain open. No proposition from those families is imported as a proved fact.
+This pair states, without proof, the three top-level conclusions of
+Theorem 4.1 and the conclusions of Propositions 5.1, 6.1, and 7.2. It does
+not encode the intermediate results of Silberger's proof. Separate published
+modules state derived `GL_n` forms of those results, and each module documents
+its own adaptation:
+
+- Lemma 5.2, generic real parameters: `GLRelativeGenericParameterStatement`
+  in `Classification/RelativeGenericityStatement`.
+- Lemmas 5.3 and 5.5, the constituent-restricted generic relative Jacquet
+  comparison and generic heads: `GLRelativeGenericJacquetMultiplicityStatement`,
+  `GLRelativeGenericHeadStatement` and their conjunction
+  `GLRelativeGenericComparisonStatement` in
+  `Classification/RelativeJacquetMultiplicityStatement`.
+- Lemma 5.6, the all-regular comparison with discrete-series support:
+  `GLRelativeRegularComparisonStatement` in
+  `Classification/RelativeRegularComparisonStatement`.
+- Propositions 5.7 and 5.8, relative recovery:
+  `GLSupportedRelativeRecoveryStatement`,
+  `GLTemperedRelativeQuotientReflectionStatement` and their conjunction
+  `GLRelativeRecoveryStatement` in `Classification/RelativeRecoveryStatement`.
+- Proposition 5.9, cosocle multiplicities:
+  `GLRelativeCosocleMultiplicityStatement` in
+  `Classification/RelativeCosocleMultiplicityStatement`.
+- Corollary 6.2, semistandard conjugacy:
+  `GLSemistandardLanglandsConjugacyStatement` in
+  `Classification/SemistandardLanglandsStatement`.
+- The maximal-cone selection inside the proof of Proposition 7.2:
+  `GLMaximalConeJacquetQuotientStatement` in
+  `Classification/MaximalConeStatement`. Its final clause is the corrected
+  dominance condition, following Konno (2003) as documented there: no
+  competing dual exponent and cone coarsening has a positive part that
+  strictly dominates the selected one. The source's proof selects a cone with the maximum number of blocks.
+  With these conclusions that selection is false, so it is not stated.
+  `glMaximalConeJacquetQuotient` in `Classification/MaximalConeProof` proves
+  this corrected statement. It does not certify the printed selection
+  argument, and it does not prove any of the three clauses of this pair.
+
+When this text was revised, `glMaximalConeJacquetQuotient` was the only
+Library proof of a statement in this list.
+
+The other inputs to Silberger's route also have separate targets, and their
+status differs:
+
+- The general root/weight cone lemma `RootWeightConeDecompositionStatement`
+  in `Classification/RootWeightConeStatement` is unproved. Its product
+  specialization `GLParabolicRootWeightConeStatement` in
+  `Classification/ParabolicConeStatement` is proved by
+  `glParabolicRootWeightCone` in `Classification/ParabolicConeProof`.
+- Of the exponent criteria, `GLSquareIntegrableExponentCriterionStatement` is
+  proved by `glSquareIntegrableExponentCriterion` in
+  `Classification/SquareIntegrableExponentProof`. The tempered criterion
+  `GLTemperedExponentCriterionStatement` is unproved.
+- The fixed-central-character splitting
+  `GLFixedCentralCharacterSplittingStatement` in
+  `Classification/FixedCentralSplittingStatement` is unproved.
+- Each tempered prerequisite family is a conjunction of two statements.
+  `GLTemperedDiscreteSeriesPrerequisitesStatement` combines support and the
+  summand equivalence. They are proved separately by
+  `glTemperedDiscreteSeriesSupport` and `glTemperedDiscreteSeriesSummand`.
+  `GLDiscreteSeriesJacquetPrerequisitesStatement` combines
+  square-integrable-to-tempered and the Jacquet quotient. They are proved
+  separately by `glLeviDiscreteSeriesTempered` and
+  `glTemperedDiscreteSeriesJacquetQuotient`.
+  `GLTemperedInductionPrerequisitesStatement` combines unitarity, proved by
+  `glTemperedUnitarity`, with `GLTemperedInductionStatement`, which is
+  unproved. None of the three conjunctions is a named Library theorem.
+- No Lean result converts Silberger's regular chamber into the `StrictAnti`
+  condition. That conversion is the computation documented above.
+- The three clauses of this pair are unproved.
+
+The sole project import is `LanglandsData`. No proposition from these
+families is imported, either as a proved fact or as a hypothesis.
+
+Worker 1058 updated this status paragraph for the 2026-10-29 documentation
+audit; the Lean file is unchanged.

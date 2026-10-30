@@ -1,8 +1,9 @@
 # Finitely many conjugacy classes with a given characteristic polynomial
 
 `Langlands.MatrixCharpolyFiniteConjugacyStatement.{uK}` is the following
-unproved proposition. This module defines the proposition and supplies no
-proof.
+proposition. This module defines the proposition and supplies no proof. The
+published theorem `Langlands.matrixCharpolyFiniteConjugacy.{uK}` in
+`Langlands.LinearAlgebra.MatrixCharpolyConjugacyProof` proves it.
 
 ## Statement
 
@@ -36,16 +37,19 @@ Section 6.15 (Theorem A) and Example 6.16 (printed pp.56–57). Remark 7.4 (prin
 constructiveness can also be verified directly and leaves this to the reader.
 
 The present proposition is an internal prerequisite and not a source
-statement. It is the finiteness behind such a direct verification: the proof of
-`Langlands.GeneralLinearConjugationDistributionTransposeStatement` will use it
-to see that each fiber of the characteristic-polynomial map on the general
-linear group is a finite union of conjugacy classes. It is classical linear
+statement. It is the finiteness behind such a direct verification. The
+published proof `Langlands.generalLinearConjugationDistributionTranspose` of
+`Langlands.GeneralLinearConjugationDistributionTransposeStatement`, in
+`Langlands.HarmonicAnalysis.Distribution.TransposeInvariantProof`, uses it to
+see that each fiber of the characteristic-polynomial map on the general linear
+group is a finite union of conjugacy classes. It is classical linear
 algebra and is stated over an arbitrary field. Mathlib, at the pinned commit,
 contains no rational canonical form from which it could be read off directly.
 
 ## Why the proposition is true
 
-This sketch is a plan for the separate proof, not a claimed Lean theorem. Make
+This sketch explains why the proposition is true; it is not the Lean proof.
+The published proof differs from it; see the end of this section. Make
 `K^n` a finitely generated torsion module over the principal ideal domain
 `K[X]`, with `X` acting by `x`; by Cayley–Hamilton it is killed by
 `x.charpoly`. By Mathlib's `Module.equiv_directSum_of_isTorsion`, it is
@@ -56,3 +60,15 @@ are at most `n` nonzero summands. Hence only finitely many isomorphism classes
 of such `K[X]`-modules occur. Two matrices whose `K[X]`-modules are isomorphic
 are conjugate by the matrix of a `K`-linear isomorphism intertwining them.
 Choosing one matrix in each occurring class gives `s`.
+
+The published proof `matrixCharpolyFiniteConjugacy` does not count
+prime-power summands and uses no characteristic-polynomial formula for a direct
+sum. For nonzero `c`, Cayley–Hamilton shows that `c` annihilates every matrix
+in the fiber.
+The published `Langlands.polynomialModuleBoundedCyclicDecomposition` then
+presents each such polynomial module as a product of at most `n` cyclic
+quotients by monic divisors of `c`. Finitely many such tuples occur. One
+matrix is chosen for each tuple realized in the fiber. The published
+`Langlands.matrixAEvalConjugacy` turns the resulting polynomial-module
+equivalence into a conjugating matrix. For `c = 0` the fiber is empty, and the
+empty set is used.

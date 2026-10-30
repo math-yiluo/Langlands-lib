@@ -172,8 +172,16 @@ transparency option is needed.
 
 - No proof of injectivity, surjectivity or bijectivity. Both bijectivity
   facts are taken from the published proof.
-- No formula for the inverse maps and no inverse laws. These remain targets
-  of the parent task `2ff17b0a-7a93-4668-a2e6-b740e4205e6d`.
+- No coordinate formula for the inverse maps. The inverses are the `.symm`
+  of the two equivalences, obtained noncomputably through
+  `LinearEquiv.ofBijective`.
+- No inverse laws. The published Prop
+  `RestrictedProduct.TensorEquivInverseLaws` in
+  `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivStatement` states
+  both inverse identities between each canonical forward map and the `.symm`
+  of the corresponding equivalence. The published theorem
+  `RestrictedProduct.tensorEquivInverseLaws_proof` in
+  `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivProof` proves it.
 - The source declarations `coe_lTensorLeft_eq_lTensor`,
   `tmulEquivRangeLTensor`, `lTensorPrincipalEquiv`,
   `lTensorPrincipalEquiv_tmul`, `lTensor_bijective` and

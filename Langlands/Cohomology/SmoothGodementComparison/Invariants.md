@@ -63,7 +63,10 @@ From here on `T` is also left exact (`[PreservesFiniteLimits T]`).
   `sheafComparisonIso_hom` (`simp`): it is `AcyclicResolution.comparisonNatIso`, taking two
   hypotheses, neither proved here. One is
   `hcomp : AcyclicResolutionComparisonStatement.{u + 1, u, u', v'}`, the published statement
-  that acyclic resolutions compute right derived functors. The other is
+  that acyclic resolutions compute right derived functors. It is proved elsewhere, at all
+  universes, by the theorem `acyclicResolutionComparisonStatement` in
+  `Langlands.Cohomology.AcyclicResolution.ComparisonProof`, which this module does not
+  import. The other is
   `hacyc : ∀ F i n, IsZero ((T.rightDerived (n + 1)).obj
   (((Godement.smoothComplexFunctor R G X).obj F).X i))`, the `T`-acyclicity of every term of
   every smooth Godement complex.
@@ -154,9 +157,9 @@ does not satisfy for general `R` and `H`. The triviality of the `H`-action is no
 
 ## Scope
 
-- No invertibility in positive degrees is proved. `sheafComparisonIso` takes
+- No invertibility in positive degrees is proved in this module. `sheafComparisonIso` takes
   `AcyclicResolutionComparisonStatement` and the acyclicity of the Godement terms as
-  hypotheses. The isomorphism instances for `godementEdge` and `derivedEdge` in positive
-  degrees assume `[Φ.PreservesHomology]`.
+  hypotheses; the first is proved elsewhere, as cited above. The isomorphism instances for
+  `godementEdge` and `derivedEdge` in positive degrees assume `[Φ.PreservesHomology]`.
 - The hypothesis `hK` is kept explicit, as in `Transformation`.
 - Nothing about the topology of `K` or `H`, and no condition on `R`, is used.

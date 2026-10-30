@@ -14,8 +14,9 @@ augmentation is a quasi-isomorphism (hypothesis `hK`, as in
   and `sheafComparisonTrans hK T q : godementCohomology T q ⟶ T.rightDerived q` is the
   comparison transformation of `AcyclicResolution`. For left exact `T` it is the degree-zero
   identification in degree zero (`sheafComparisonTrans_zero`), and it is an isomorphism under
-  the unproved `AcyclicResolutionComparisonStatement` and `T`-acyclicity of the Godement terms
-  (`sheafComparisonIso`). `comparisonTrans` is the case of compact sections.
+  `AcyclicResolutionComparisonStatement` (proved as `acyclicResolutionComparisonStatement` in
+  `AcyclicResolution.ComparisonProof`, not imported here) and `T`-acyclicity of the Godement
+  terms (`sheafComparisonIso`). `comparisonTrans` is the case of compact sections.
 * `invariantComparisonTrans hK q`: the case of invariant compact sections, from
   `smoothGodementInvariantCompactCohomology` to `invariantCompactDerived`.
 * For a left exact functor `Φ` on smooth representations, `godementEdge Φ q` and

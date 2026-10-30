@@ -1,8 +1,9 @@
 # A balanced nondegenerate pairing on a cyclic polynomial quotient
 
-`Langlands.CyclicQuotientPairingStatement.{uK}` is an unproved proposition.
-The module defines this proposition and supplies no proof or chosen bilinear
-form.
+`Langlands.CyclicQuotientPairingStatement.{uK}` is a proposition. This module
+defines it and supplies no proof or chosen bilinear form. The published theorem
+`Langlands.cyclicQuotientPairing.{uK}` in
+`Langlands.LinearAlgebra.CyclicQuotientPairingProof` proves it.
 
 ## Statement
 
@@ -43,14 +44,24 @@ formalized the statement and its documentation. The concrete quotient and
 bilinear-form predicates come from `Mathlib.RingTheory.AdjoinRoot` and
 `Mathlib.LinearAlgebra.BilinearForm.Properties`.
 
-The intended construction, which remains a separate proof obligation, is as
-follows. If `d = q.natDegree > 0`, let a linear functional on the quotient take
-the coefficient of `X^(d-1)` in the unique representative of degree less than
-`d`, and apply it to the product `u * v`. Commutativity and associativity give
+The construction plan for the proof was as follows. If `d = q.natDegree > 0`,
+let a linear functional on the quotient take the coefficient of `X^(d-1)` in
+the unique representative of degree less than `d`, and apply it to the product
+`u * v`. Commutativity and associativity give
 the proposed symmetry and balancedness. To separate a nonzero representative
 of degree `e < d`, pair it with the class of `X^(d-1-e)`: the product has degree
 `d-1`, so its coefficient in that degree is the nonzero leading coefficient of
 the representative. Nonzero constant polynomials require the zero quotient
-case. This paragraph is a construction plan, not a Lean proof supplied by this
-module. Transport to finite direct sums and assembly of a matrix conjugator
-belong to the downstream matrix proof.
+case. This paragraph is a plan, not a Lean proof supplied by this module.
+
+The published proof `cyclicQuotientPairing` implements this plan for monic
+`q`. Its functional takes the coefficient of `X^(d-1)` of the remainder
+representative chosen by `AdjoinRoot.modByMonicHom`. Because `d - 1` is
+natural-number subtraction, the same definition covers the zero quotient of a
+monic constant. An arbitrary nonzero `q` is then reduced to its monic
+normalization. The form is pulled back along the `K`-algebra equivalence
+`AdjoinRoot.algEquivOfAssociated` between the two quotients.
+Transport to finite direct sums and assembly of a matrix conjugator are done
+downstream, in the published proof `Langlands.matrixTransposeConjugate` of
+`Langlands.MatrixTransposeConjugateStatement`, which uses
+`cyclicQuotientPairing`.

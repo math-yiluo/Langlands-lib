@@ -67,5 +67,33 @@ Original PDF SHA-256:
 The block-preserving subgroup and its closure proofs, subgroup preimages,
 finite subtype, and conjugation equivalence are internal constructions.
 Uniqueness of minimal representatives, Bruhat bijectivity, and standardness
-of the intersection triples remain separate proposition definitions and
-unproved obligations. No geometric-lemma or cuspidal-support proof is supplied.
+of the intersection triples are not fields of these data. They are separate
+proposition definitions in `WeylUniquenessStatement` and `WeylStatement`,
+and this module proves none of them. Each has an exact proof in a separate
+Library module:
+
+- `Langlands.Geometric.weylMinimalRepresentativeUniqueness`
+  (`WeylUniquenessProof`) proves `WeylMinimalRepresentativeUniquenessTheorem`:
+  `weylDoubleCoset B C` is injective for every rank, including zero.
+- `Langlands.Geometric.weylMinimalRepresentativeTheorem`
+  (`WeylMinimalRepresentativeProof`) proves `WeylMinimalRepresentativeTheorem`:
+  `weylDoubleCoset B C` is bijective for every positive rank. The underlying
+  lemma `weylDoubleCoset_bijective` there has no positivity hypothesis.
+- `Langlands.Geometric.padicParabolicBruhat` (`PadicParabolicBruhatProof`)
+  proves `PadicParabolicBruhatTheorem`: for every prime `p`, every
+  `F : PadicField p` and every positive rank, `parabolicDoubleCoset F.Carrier B C`
+  is bijective. The map is the one above, sending `w` to the double coset of
+  the inverse permutation matrix.
+- `Langlands.Geometric.padicStandardIntersectionsTheorem`
+  (`StandardIntersectionsProof`) proves `PadicStandardIntersectionsTheorem`.
+  For every minimal representative `w` it gives a refinement `S` of `B` with
+  the three source equalities for `(B, C, w)`, and a refinement `T` of `C`
+  with the three equalities for `(C, B, w^-1)`. Its lemma
+  `exists_standardIntersections` holds over every commutative ring.
+
+No Library declaration proves the conjunction `PadicGeometricWeylTheorems`
+as one theorem, although each conjunct is proved above. This module supplies
+no geometric-lemma or cuspidal-support proof. The normalized geometric lemma
+`GeometricLemmaTheorem` of `GeometricLemmaStatement` is a separate target. Its
+consumers take it as a hypothesis, and `ConditionalAssembly` derives it only
+from supplied filtration hypotheses.

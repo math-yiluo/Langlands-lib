@@ -409,7 +409,8 @@ theorem measurable_rankOneExtensionCellExchange [MeasurableSpace X] (hxrow : Mea
     (measurable_rankOneExtensionCellScaling H)
 
 /-- The open-cell exchange sends `(dx × dy) × (μQ × ρ)` to the same measure with density
-`w(h)`, when `μQ` is right-invariant, `ρ` is right Haar, and `a • ·` scales `dy` by `w a`. -/
+`w(h)`, when `dy`, `μQ` and `ρ` are s-finite, `μQ` and `ρ` are right-invariant, and `a • ·`
+scales `dy` by `w a`. -/
 theorem map_cellExchange [MeasurableSpace X] (hxrow : Measurable xrow)
     [MeasurableSpace (Langlands.GeneralLinear (t + 1) K)]
     [BorelSpace (Langlands.GeneralLinear (t + 1) K)]
@@ -471,8 +472,8 @@ private theorem measurable_cellScalar' {t : ℕ} {X : Type*} [MeasurableSpace X]
   (continuous_const.add (continuous_fst.dotProduct continuous_snd)).measurable.comp
     ((hxrow.comp measurable_fst).prodMk measurable_snd)
 
-/-- The exchange hyperplane `{y | 1 + x · y = 0}` is null for a finite power of an atomless
-measure. -/
+/-- The exchange hyperplane `{y | 1 + x · y = 0}` is null for a finite power of a σ-finite
+atomless measure. -/
 theorem productMeasure_cellScalar_eq_zero [NullSingletonClass ν] {t : ℕ} (x : Fin (t + 1) → K) :
     (Measure.pi fun _ : Fin (t + 1) => ν) {y | 1 + x ⬝ᵥ y = 0} = 0 := by
   classical
@@ -509,7 +510,7 @@ theorem productMeasure_cellScalar_eq_zero [NullSingletonClass ν] {t : ℕ} (x :
   exact (lintegral_congr fun z => hsec z).trans lintegral_zero
 
 /-- The exchange hyperplane `{1 + x · y = 0}` is null for `(dx × dy) × μ'`, `dy` a finite
-power of an atomless measure. -/
+power of a σ-finite atomless measure and `dx`, `μ'` s-finite. -/
 theorem prod_cellScalar_eq_zero [NullSingletonClass ν] {t : ℕ} {X B : Type*} [MeasurableSpace X]
     [MeasurableSpace B] (xrow : X → Fin (t + 1) → K) (hxrow : Measurable xrow)
     (dx : Measure X) [SFinite dx] (μ' : Measure B) [SFinite μ'] :

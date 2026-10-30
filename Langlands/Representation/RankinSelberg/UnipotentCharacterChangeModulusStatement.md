@@ -2,7 +2,10 @@
 
 Author: Worker 234.
 
-This module states a proposition. It does not prove it. The proposition
+This module states a proposition. It does not prove it; the proof
+`unipotentCharacterChangeModulus` is in
+[UnipotentCharacterChangeModulusProof](UnipotentCharacterChangeModulusProof.md)
+and is described in the final section. The proposition
 `Langlands.RankinSelberg.UnipotentCharacterChangeModulusStatement` says how
 the actual integral-normalized Haar measure on the upper-unipotent subgroup
 `N = N_(n+1)(F)` changes under conjugation by the character-change diagonal.
@@ -46,6 +49,8 @@ prerequisite for the published quotient target
 (`RankinSelberg/CharacterChangeMeasureStatement`). That statement's
 Markdown already names the identity `(C_a)_* ν_N = c⁻¹ ν_N` as a separate
 proof obligation. This module states that obligation as its own target.
+That history is unchanged; both this proposition and the quotient law have
+since been proved, as recorded in the final section.
 
 ## Exact scope
 
@@ -115,10 +120,11 @@ times that measure. For example, when `n = 1`, the map is `x ↦ a x` on
 This coordinate computation explains the proposed factor only. The Lean
 statement makes no reference to coordinates on `N` or to product measures.
 `Measures` explicitly leaves compatibility of `unipotentHaar` with product
-coordinates separate. Establishing the identity for the actual normalized
-measure is the content of a future proof. The identity is linear in the
-measure, so the mass-one normalization does not affect it. Its statement for
-the actual measure is still the target here.
+coordinates separate. The identity is linear in the measure, so the mass-one
+normalization does not affect it. Its statement for the actual measure is the
+target here. The published proof establishes it for the actual measure
+through the block-modulus Haar law described in the final section, not
+through product coordinates on `N`.
 
 ## Why the quotient factor is `c`
 
@@ -159,10 +165,11 @@ has factor `c`, not `c⁻¹`. The Markdown of
   (`Group/GL/BlockModulusHaarStatement`). That proposition concerns Levi
   conjugation on the block unipotent radical `B.unipotentRadical`, a
   subgroup of the block parabolic, with the explicit `T.leviModulus B`. It
-  is itself an unproved statement. This module neither uses nor assumes it.
-  A future proof that specializes it to the shape of `n + 1` blocks of
-  size one would still have to identify the subgroup, the map, the measure
-  and the modulus with the ones used here.
+  is proved by `Langlands.glBlockModulusHaar`. This statement module neither
+  uses nor assumes it. Specializing it to the shape of `n + 1` blocks of
+  size one requires identifying the subgroup, the map, the measure and the
+  modulus with the ones used here; the published proof described in the
+  final section carries out exactly this identification.
 - It changes no published topology, normalization, Haar measure, quotient
   or compatibility definition.
 
@@ -188,3 +195,34 @@ applies here. With `ν = unipotentHaar F.Carrier n`, Mathlib's
 `Measure.map_apply` then gives `(Measure.map C_a ν)(S) = ν(C_a⁻¹(S))` for
 every measurable set `S`. Neither helper is a hypothesis of the
 proposition.
+
+## Proofs in the Library
+
+Three published theorems concern this proposition. They are distinct
+results and are listed separately.
+
+- `Langlands.glBlockModulusHaar : GLBlockModulusHaarStatement.{uF}` is the
+  inverse-modulus law for an arbitrary block shape. For every prime `p`,
+  `F : PadicField.{uF} p`, supplied `T : F.TopologicalData`, natural `n` and
+  block shape `B`, with the topology of `T`, every Borel measurable
+  structure on `B.unipotentRadical F.Carrier`, every Haar measure `μ` on it
+  and every Levi element `m`, it proves
+  `μ.map (B.leviAction F.Carrier m) = ((T.leviModulus B m : ℝ≥0)⁻¹) • μ`.
+  It does not mention `characterChangeConj`, `unipotentHaar` or
+  `characterChangeModulus`.
+- `Langlands.RankinSelberg.unipotentCharacterChangeModulus :
+  UnipotentCharacterChangeModulusStatement.{uF}` proves this proposition with
+  no added hypothesis, for every `p`, `F`, `T`, `n` including `n = 0`, and
+  unit `a`, with the conclusion displayed above. It is the singleton-block
+  specialization: it applies `glBlockModulusHaar` to the shape
+  `singletons (n + 1)`, to the pushforward of `unipotentHaar F.Carrier n`
+  along the continuous group equivalence onto that shape's unipotent radical,
+  and to the character-change Levi element. It then identifies the Levi
+  modulus with `c` and transports the identity back to the upper-unipotent
+  subgroup. The scalar remains the reciprocal `c⁻¹`.
+- `Langlands.RankinSelberg.characterChangeCompatibleMeasure :
+  CharacterChangeCompatibleMeasureStatement.{uF}` proves the quotient law
+  with factor `c`. It is obtained by applying
+  `characterChangeCompatibleMeasure_of_unipotentModulus` to
+  `unipotentCharacterChangeModulus`, the direction explained in the section
+  on the quotient factor.
