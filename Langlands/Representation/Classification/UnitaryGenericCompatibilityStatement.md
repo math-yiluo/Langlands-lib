@@ -1,9 +1,13 @@
 # Compatibility of unitary generic inducing parameters
 
 Worker 17 authored the Lean installment and this account. Workers 192 and 69
-contributed the original-source and convention audit incorporated below. These
-are nine proposition definitions, not proofs or assumptions supplying
-classification results.
+contributed the original-source and convention audit incorporated below.
+Worker 1058 updated the proof status for the 2026-10-29 documentation audit;
+the Lean file is unchanged. These are nine proposition definitions, not proofs
+or assumptions supplying classification results. Separate published proof
+modules prove three of the clauses by theorems of exactly those types, and a
+published construction supplies the content of a fourth; see
+[Proof status](#proof-status).
 
 `Langlands.Classification.UnitaryGenericCompatibilityStatement F T` conjoins
 the nine clauses below.
@@ -98,26 +102,35 @@ cross-reference as a substitute for the actual duality formulas above.
 
 The exact evaluation-prescribed semilinear equivalence is a concrete
 refinement of Tadić §2.1, including arbitrary admissible smooth carriers rather
-than a restriction to finite length. Its prospective proof uses compact-open
-averaging, finite-dimensional fixed-vector spaces and positivity to show
-surjectivity onto the smooth dual. An infinite-dimensional Hilbert-space
-Riesz theorem is not assumed on these algebraic carriers. The second clause
+than a restriction to finite length. Its published proof uses the generic
+equivalence `InvariantPositiveForm.smoothDualEquiv`, `v ↦ b(v, -)`, for
+admissible representations of groups whose compact open subgroups are cofinal,
+and `GeneralLinear.compactOpen_cofinal` for `GL_n(F)`. An infinite-dimensional
+Hilbert-space Riesz theorem is not assumed on these algebraic carriers. The second clause
 additionally needs smoothness under the real determinant twist and the
 cancellation of its positive real factors.
 
-Ordinary real-twist duality specializes BZ77 §1.5. The product dual clause
+Ordinary real-twist duality specializes BZ77 §1.5; the published
+`segmentFactorSmoothDualEquiv` implements it (see
+[Proof status](#proof-status)). The product dual clause
 combines it with same-parabolic normalized induction duality and the
 external tensor smooth-dual comparison. BZ77 §1.6 prints the tensor
 comparison in the irreducible admissible setting. Our version for arbitrary
 admissible blocks is a derived extension using finite-dimensional compact-open
-fixed spaces; this comparison remains a proof obligation. Smooth admissible
+fixed spaces. The Library proves this comparison:
+`FiniteTensor.smoothDualTensorInjectivity` shows that the canonical map
+`⨂ i, SmoothDual (τ i) → SmoothDual (external τ)` is injective for every
+finite family, and `FiniteTensor.smoothDualTensorMap_surjective` shows that it
+is surjective for admissible factors whose groups have cofinal compact open
+subgroups. The proof of the product dual clause uses both. Smooth admissible
 biduality and irreducibility preservation, together with the Hermitian
 identification and equality of absolute coefficient values under conjugation,
 are needed for ordinary-dual preservation of unitary square-integrable blocks.
 
 Common determinant twisting specializes BZ77 1.9(f), with the restriction to
 the product Levi expressed as the product of the block determinant
-characters. Unit-modulus twisting preserves invariant forms by the published
+characters; that clause is proved (see [Proof status](#proof-status)).
+Unit-modulus twisting preserves invariant forms by the published
 `Langlands.isUnitarizable_twist_iff`. Preservation and reflection of invariant
 submodules, smooth admissibility and the absolute coefficient functions on
 the central quotient give the other block conditions. Those analytic and
@@ -182,5 +195,111 @@ a definition with `statement_returns_prop: true`. Its inspected statement
 fingerprint is
 `c059e300f68eb80ad37c42cccd63fd79b98321f51947324b6140698687d6cc91`.
 This establishes elaboration and proposition shape, not proof acceptance or
-independent semantic acceptance. All nine mathematical assertions remain
-proof obligations.
+independent semantic acceptance.
+
+## Proof status
+
+Three of the nine clauses are proved by published theorems whose types are
+exactly those clauses, for every prime `p`, `F : PadicField.{uF} p` and
+`T : F.TopologicalData`, with independent universes `uF` and `uV` and no
+further hypotheses:
+
+- `Langlands.Classification.unitaryAdmissibleHermitianClause`, in
+  `Langlands.Representation.Classification.UnitaryAdmissibleHermitianProof`,
+  proves `UnitaryAdmissibleHermitianClause.{uF, uV} F T`. Like the clause, it
+  requires neither irreducibility nor square-integrability.
+- `Langlands.Classification.twistedProductOrdinaryDual`, in
+  `Langlands.Representation.Classification.TwistedProductOrdinaryDualProof`,
+  proves `TwistedProductOrdinaryDualClause.{uF, uV} F T`.
+- `Langlands.Classification.twistedProductCharacterTwist`, in
+  `Langlands.Representation.Classification.TwistedProductCharacterTwistProof`,
+  proves `TwistedProductCharacterTwistClause.{uF, uV} F T`.
+
+A fourth clause, `RealTwistOrdinaryDualClause`, has no separately named
+theorem of its type. Its mathematical content is nevertheless already
+implemented. The public definition
+`Langlands.Classification.segmentFactorSmoothDualEquiv`, in the same module
+`Langlands.Representation.Classification.TwistedProductOrdinaryDualProof`,
+constructs an actual equivariant linear equivalence from
+`smoothContragredient (T.segmentFactor A s).representation` to the twist of
+`smoothContragredient A.representation` by `T.determinantPowerCharacter r (-s)`.
+It does this for every rank `r`, every smooth block `A` and every real `s`, and
+the equivalence keeps every underlying functional. It assumes neither positive
+rank, admissibility, irreducibility nor unitarity, and its universes `uF` and
+`uV` are independent. Introducing the clause's variables and wrapping this
+equivalence in `Nonempty` gives the clause exactly. A private development check
+(`lean_check` diagnostic `125b5be2-bca6-4f9e-b740-226cc8b79f9b`) confirmed this
+with zero errors and zero warnings. That check is not a published theorem. The
+proof of `twistedProductOrdinaryDual` uses the same equivalence for each block.
+
+For each of the remaining five clauses there is neither a published theorem of
+that type nor a published declaration supplying its full content. Published
+results cover some components, as listed below. Combining them into the
+clauses would be new proof work; this account does not claim that work is done.
+
+- `UnitaryBlockRealTwistHermitianClause`. The proved
+  `unitaryAdmissibleHermitianClause` applies to a square-integrable block,
+  because `Langlands.PadicField.TopologicalData.IsSquareIntegrable.isAdmissible`
+  makes the block admissible. `segmentFactorSmoothDualEquiv` identifies the
+  smooth dual of `ν^s δ` with a twist of that of `δ`. No published declaration composes them
+  into the required conjugate-linear equivalence with source action
+  `ν^(-s) δ`.
+- `UnitaryBlockOrdinaryDualClause`. For irreducible admissible
+  representations, irreducibility of the smooth contragredient is published as
+  `Langlands.CompactSplitting.isIrreducible_smoothContragredient`, assuming
+  cofinal compact open subgroups. For admissible unitarizable representations,
+  unitarizability of the smooth contragredient is published as
+  `Langlands.PadicField.TopologicalData.isUnitarizable_smoothContragredient`,
+  which takes the proved Hermitian clause as input. No published theorem shows
+  that the smooth contragredient of a square-integrable representation is
+  square-integrable. The corresponding equivalence for
+  `IsSquareIntegrableModCenter` and admissible representations occurs only as
+  one component of the unproved proposition
+  `Langlands.GLSquareIntegrabilityPrerequisitesStatement`.
+- `UnitaryBlockCharacterTwistClause`. `Langlands.isIrreducible_twist_iff`
+  covers irreducibility under any character twist, and
+  `Langlands.isUnitarizable_twist_iff` covers unitarizability under unit-modulus
+  twists. `Langlands.unitaryTwistModCenter` covers square-integrability modulo
+  the center under open-kernel unit-modulus twists, for each Haar measure. No
+  published declaration combines them for `χ ∘ det`.
+- `TwistedProductCentralCharacterClause`.
+  `Langlands.PadicField.TopologicalData.hasScalarCharacter_normalizedProductInduced`
+  and `Langlands.PadicField.TopologicalData.hasScalarCharacter_segmentFactor`
+  give scalar characters of normalized products and of the twisted blocks
+  `ν^(s_i) δ_i`. No published declaration identifies the resulting character
+  with `Ω` or proves the clause's two pointwise formulas.
+- `ScalarCharacterTwistDualClause`. Its first conjunct, the
+  determinant-twist formula, is supplied by a published theorem. The theorem
+  `Langlands.Classification.glConstituentCentralCharacterFor`, in
+  `Langlands.Representation.Classification.ConstituentCompatibilityAlgebraicProof`,
+  proves `GLConstituentCentralCharacterFor F n` for every field `F` and every
+  natural number `n`. Its third conjunct says that if scalar matrices act on a
+  representation `ρ` by `ω`, then they act on
+  `twist (χ.comp Matrix.GeneralLinearGroup.det) ρ` by `ω * χ ^ n`, for every
+  `χ : Fˣ →* ℂˣ`. The predicate `HasGLCentralCharacter` used there is an
+  abbreviation for `HasScalarCharacter` at the scalar matrices. Taking
+  `χ.toMonoidHom` and the representation of `π` gives the clause's first
+  conjunct, `ω * χ.toMonoidHom ^ n`, exactly. That conjunct needs no
+  admissibility, unitarity or irreducibility. A private development check
+  (`lean_check` diagnostic `ee67e681-1923-4dcc-ae81-8fbc7856dc97`) confirmed
+  this instantiation with zero errors; that check is not a published theorem.
+  `Langlands.Classification.hasScalarCharacter_twist` gives the same
+  character in the form
+  `ω * (χ.toMonoidHom.comp determinant).comp GeneralLinear.scalar`.
+  The second conjunct is not proved at the clause's scope. It says that
+  whenever scalar matrices act on a smooth `π` by `ω`, they act on its smooth
+  dual by `ω⁻¹`; `ω` is arbitrary and `π` need not be admissible. The
+  published construction
+  `Langlands.UnitaryCentralCharacter.contragredient`, in
+  `Langlands.Representation.Classification.TemperedSmoothDualityProof`, inverts
+  a central character on the smooth contragredient only for supplied unitary
+  central-character data with open kernel. Otherwise the inverse character of
+  the smooth dual is stated only in unproved propositions: as one component of
+  `Langlands.Classification.AllPadicGLContragredientConstituentCompatibility`,
+  for admissible representations, and as
+  `Langlands.CentralCharacterContragredientStatement`, for central characters
+  with open kernel. So the whole clause is not supplied.
+
+Because no published declaration supplies these five clauses, none proves
+`UnitaryGenericCompatibilityStatement F T` or
+`AllPadicUnitaryGenericCompatibilityStatement`.
