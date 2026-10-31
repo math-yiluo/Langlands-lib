@@ -1,5 +1,6 @@
 import Langlands.Group.GL.Padic
 import Langlands.LocalField.Normalization.Proof
+import Langlands.Topology.CompactNormCharacter
 import Mathlib.Topology.Algebra.ValuativeRel.ValuativeTopology
 
 /-!
@@ -127,6 +128,18 @@ def determinantNormContinuous (n : ℕ) :
     { toMonoidHom := T.determinantNorm n
       continuous_toFun :=
         T.continuous_normalizedAbsUnits.comp (T.generalLinearDeterminant n).continuous }
+
+/-- The existing continuous positive-character theorem applies to the actual
+determinant norm on every compact matrix subgroup. -/
+theorem determinantNorm_eq_one_of_mem_compact (r : ℕ) :
+    letI := T.topology
+    ∀ (J : Subgroup (GeneralLinear r F.Carrier)),
+      IsCompact (J : Set (GeneralLinear r F.Carrier)) →
+      ∀ g ∈ J, T.determinantNorm r g = 1 := by
+  let := T.topology
+  intro J hJ g hg
+  exact RankinSelberg.LastRowReduction.eq_one_of_isCompact
+    (T.determinantNorm r) (T.determinantNormContinuous r).continuous J hJ hg
 
 /-- The norm character has open kernel; this is proved for every supplied realization. -/
 theorem isOpen_ker_determinantNorm (n : ℕ) :

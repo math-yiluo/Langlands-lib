@@ -17,7 +17,7 @@ products of block test functions.
   the composite `y ↦ f (g y)`. Its support is contained in `π '' tsupport f`, which
   is compact; this is how test functions are restricted to closed linear subspaces
   such as upper block-triangular matrices.
-- `SchwartzBruhat.slice f x : SchwartzBruhat Y` is `y ↦ f (x, y)` (an instance of
+- `SchwartzBruhat.sliceSnd f x : SchwartzBruhat Y` is `y ↦ f (x, y)` (an instance of
   `compLeftInverse` with `π = Prod.snd`).
 - `SchwartzBruhat.partialIntegral f ν : SchwartzBruhat X` is
   `x ↦ ∫ y, f (x, y) dν` for a measure `ν` finite on compact sets (Borel-type
@@ -40,9 +40,13 @@ products of block test functions.
   `α j ∈ SchwartzBruhat X`, `β j ∈ SchwartzBruhat Y`, chosen before `x` and `y`.
   Proof: the Library's `exists_finite_schwartz_expansion` applied to the curried
   family gives `f (x, y) = ∑ j, φ j x * f (r j, y)`; take `α j = φ j` and
-  `β j = slice f (r j)`.
+  `β j = sliceSnd f (r j)`.
 - `SchwartzBruhat.integrable`: Schwartz–Bruhat functions are integrable for every
   measure finite on compact sets (continuous with compact support).
+
+The slice is named `sliceSnd` because `Langlands.HarmonicAnalysis.SchwartzBruhat.slice`
+is already the middle-coordinate slice of `Distribution.CharacterAverage`; the
+two modules can be imported together.
 
 ## Scope
 

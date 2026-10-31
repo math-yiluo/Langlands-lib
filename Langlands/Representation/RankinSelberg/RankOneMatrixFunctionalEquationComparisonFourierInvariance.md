@@ -10,8 +10,9 @@ membership theorem is the pointwise formula `Φ(gY) = Φ(Y)`.
 
 The determinant-norm lemmas use the published residue-normalized character:
 
-- `determinantNorm_eq_one_of_mem_compact` specializes the existing theorem that
-  a continuous positive character is trivial on a compact subgroup.
+- The imported `Group.GL.NormalizedCharacter` theorem
+  `determinantNorm_eq_one_of_mem_compact` specializes the theorem that a
+  continuous positive character is trivial on a compact subgroup.
 - `determinantNorm_eq_one_of_pow_eq_one` applies the norm character to a
   supplied finite-order relation and uses the absence of nontrivial finite
   order in the positive reals.

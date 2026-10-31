@@ -46,6 +46,11 @@ theorem rationalFunction_eq_of_infinite_eval_eq {K : Type*} [Field K]
 /-- The local spectral variable, with residue cardinality `q` in applications. -/
 def spectralPoint (q : ℕ) (s : ℂ) : ℂ := (q : ℂ) ^ (-s)
 
+/-- The spectral point never vanishes for positive `q`. -/
+theorem spectralPoint_ne_zero_of_pos {q : ℕ} (hq : 0 < q) (s : ℂ) : spectralPoint q s ≠ 0 := by
+  have hq0 : (q : ℂ) ≠ 0 := by exact_mod_cast hq.ne'
+  exact fun h => hq0 ((Complex.cpow_eq_zero_iff _ _).mp h).1
+
 /-- Agreement with a rational function on an actual right half-plane.
 Denominator nonvanishing is required there, so totalized evaluation at a pole
 cannot supply an unintended equality. -/

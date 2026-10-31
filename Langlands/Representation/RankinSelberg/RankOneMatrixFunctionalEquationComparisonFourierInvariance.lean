@@ -44,18 +44,6 @@ universe uF
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} (T : F.TopologicalData)
 
-/-- The existing continuous positive-character theorem applies to the actual
-determinant norm on every compact matrix subgroup. -/
-theorem determinantNorm_eq_one_of_mem_compact (r : ℕ) :
-    letI := T.topology
-    ∀ (J : Subgroup (GeneralLinear r F.Carrier)),
-      IsCompact (J : Set (GeneralLinear r F.Carrier)) →
-      ∀ g ∈ J, T.determinantNorm r g = 1 := by
-  let := T.topology
-  intro J hJ g hg
-  exact RankinSelberg.LastRowReduction.eq_one_of_isCompact
-    (T.determinantNorm r) (T.determinantNormContinuous r).continuous J hJ hg
-
 /-- A finite-order matrix has determinant norm one. -/
 theorem determinantNorm_eq_one_of_pow_eq_one {r m : ℕ}
     (g : GeneralLinear r F.Carrier) (hm : m ≠ 0) (hg : g ^ m = 1) :

@@ -16,6 +16,9 @@ are equal; their equality then gives equality of the two fractions in the
 fraction field. The theorem does not need an algebraically closed field.
 
 For a natural number `q`, `spectralPoint q s` is the complex power `q^(-s)`.
+The theorem `spectralPoint_ne_zero_of_pos` proves that it is nonzero for `q > 0`,
+using `Complex.cpow_eq_zero_iff`. This unchanged theorem was moved here from
+`UnequalRankBlockZeroContinuedFormsProof` so both continuation families can reuse it.
 `HasRationalContinuation q f R` means that there is a real bound beyond which
 `f(s)` agrees with evaluation of the actual rational function `R` at that
 spectral point, and that the reduced denominator of `R` is nonzero throughout

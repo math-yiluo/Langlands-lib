@@ -55,13 +55,13 @@ def compLeftInverse [T2Space Y] (f : SchwartzBruhat X) (g : Y → X) (π : X →
     (hg : Continuous g) (hπ : Continuous π) (hπg : ∀ y, π (g y) = y) (y : Y) :
     compLeftInverse f g π hg hπ hπg y = f (g y) := rfl
 
-/-- The slice `y ↦ f (x, y)` of a Schwartz–Bruhat function. -/
-def slice [T2Space Y] (f : SchwartzBruhat (X × Y)) (x : X) : SchwartzBruhat Y :=
+/-- The slice `y ↦ f (x, y)` of a Schwartz–Bruhat function at a fixed first coordinate. -/
+def sliceSnd [T2Space Y] (f : SchwartzBruhat (X × Y)) (x : X) : SchwartzBruhat Y :=
   compLeftInverse f (fun y => (x, y)) Prod.snd (continuous_const.prodMk continuous_id)
     continuous_snd (fun _ => rfl)
 
-@[simp] theorem slice_apply [T2Space Y] (f : SchwartzBruhat (X × Y)) (x : X) (y : Y) :
-    slice f x y = f (x, y) := rfl
+@[simp] theorem sliceSnd_apply [T2Space Y] (f : SchwartzBruhat (X × Y)) (x : X) (y : Y) :
+    sliceSnd f x y = f (x, y) := rfl
 
 /-- The curried family of slices is locally constant as a function-valued map. -/
 theorem isLocallyConstant_curry (f : SchwartzBruhat (X × Y)) :
@@ -109,7 +109,7 @@ theorem exists_tensor_expansion [T2Space X] [T2Space Y] (f : SchwartzBruhat (X �
       ∀ x y, f (x, y) = ∑ j, α j x * β j y := by
   obtain ⟨N, φ, r, hr⟩ := exists_finite_schwartz_expansion (fun x : X => fun y : Y => f (x, y))
     (isLocallyConstant_curry f) (hasCompactSupport_curry f)
-  exact ⟨N, φ, fun j => slice f (r j), fun x y => hr y x⟩
+  exact ⟨N, φ, fun j => sliceSnd f (r j), fun x y => hr y x⟩
 
 /-- Schwartz–Bruhat functions are integrable for measures finite on compact sets. -/
 theorem integrable [MeasurableSpace X] [OpensMeasurableSpace X] (f : SchwartzBruhat X)

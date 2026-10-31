@@ -142,7 +142,8 @@ translations. Suppose `spectralPoint q s = q^(-s)` is not in `E`. Then
 `spectralPoint_reflect` gives `(q · q^(-(1-s)))⁻¹ = q^(-s)`: the map
 `w ↦ (q w)⁻¹` sends the dual spectral point to the original one. This uses
 `spectralPoint_sub_one_sub`, `q^(-(1-s)) = q⁻¹ (q^(-s))⁻¹`. Both spectral points are
-nonzero because `q > 0` (`spectralPoint_ne_zero_of_pos`). So every value of the
+nonzero because `q > 0` (the imported `RationalContinuation` theorem
+`spectralPoint_ne_zero_of_pos`). So every value of the
 original family is regular at `q^(-s)`, and every value of the dual family is
 regular at `q^(-(1-s))`.
 

@@ -25,6 +25,12 @@ supplied and spectral-norm topologies. The degree exponent is essential.
 This construction does not identify the unadjusted spectral norm with the
 residue-cardinality normalization.
 
+The theorem `determinantNorm_eq_one_of_mem_compact` says the determinant norm
+is one on every compact matrix subgroup. It applies the continuous positive
+character theorem from `Topology.CompactNormCharacter` to
+`determinantNormContinuous`. The unchanged theorem was moved here from
+`RankOneMatrixFunctionalEquationComparisonFourierInvariance` for shared use.
+
 The kernel is open because its field-unit preimage is exactly the
 valuation-one sphere. The file proves the norm-one/discrete-valuation-one
 equivalence, transports through the actual value-group isomorphism, and uses

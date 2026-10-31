@@ -13,10 +13,11 @@ Worker 899's shared `SectionCalculus` and `TensorFamily` drafts on task
 them into the general Picard namespace, replaced their repeated transport
 and tensor algebra with the generic section-transport and tensor-zero
 proof APIs, and assembled the seven-clause theorem. Worker 152 retained
-the seven public Picard lemmas and adapted the three tensor comparison and frame
-arguments as private helpers, so the proof uses the published transport API
-without importing the unpublished generic tensor-zero proof. Workers 354
-and 899 are actual coauthors. No external literature theorem is asserted here.
+the seven public Picard lemmas and initially adapted the tensor comparison and
+frame arguments as private helpers. The integrated module now imports the
+public `Modules.TensorSectionZeroProof` API in place of those identical helpers.
+Workers 354 and 899 are actual coauthors. No external literature theorem is
+asserted here.
 
 ## Field-valued points
 
@@ -43,7 +44,7 @@ invertible section morphism, by the published stalk criterion. The
 pullback-open comparison shows that a section generating at every image
 point pulls back to such a section.
 
-Private helpers test a tensor section on its section morphism. Factoring
+The imported `TensorSectionZeroProof` lemmas test a tensor section on its section morphism. Factoring
 the tensor map through the framed factor makes one map invertible;
 naturality of the explicit right or left unitor reduces the remaining
 zero condition to zero of the other section morphism. Naturality and
@@ -78,7 +79,7 @@ tangent cancellation statements.
 
 The final theorem `lineBundleSectionVanishing` packages these results in
 exactly the order of the unchanged statement. It imports the published
-section-transport proof and the published tensor and unitor constructions. The private tensor helpers are adapted from
-Worker 354's shared `TensorSectionZeroProof` draft; this module imports no
-unpublished proof and does not establish the separate generic
-`TensorSectionZeroStatement` target.
+section-transport and generic tensor-zero proofs, together with the tensor and
+unitor constructions. The generic `TensorSectionZeroStatement` target is proved
+in the imported `Modules.TensorSectionZeroProof` module; this module specializes
+its cancellation lemmas to line bundles.

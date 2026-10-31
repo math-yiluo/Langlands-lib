@@ -83,10 +83,6 @@ theorem spectralPoint_reflect {q : ℕ} (hq : 0 < q) (s : ℂ) :
   have hq0 : (q : ℂ) ≠ 0 := by exact_mod_cast hq.ne'
   rw [spectralPoint_sub_one_sub hq, ← mul_assoc, mul_inv_cancel₀ hq0, one_mul, inv_inv]
 
-theorem spectralPoint_ne_zero_of_pos {q : ℕ} (hq : 0 < q) (s : ℂ) : spectralPoint q s ≠ 0 := by
-  have hq0 : (q : ℂ) ≠ 0 := by exact_mod_cast hq.ne'
-  exact fun h => hq0 ((Complex.cpow_eq_zero_iff _ _).mp h).1
-
 end Spectral
 
 section Assembly
