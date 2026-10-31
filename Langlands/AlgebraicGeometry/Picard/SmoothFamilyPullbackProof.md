@@ -16,8 +16,11 @@ The product map is constructed by `pullback.lift`; its first projection is
 the old parameter projection, and its second is the abelian-scheme
 projection followed by the given morphism over the base. Equality of the
 two composites from an endpoint follows by `pullback.hom_ext`. These
-constructions and the fixed-field pullback lemma are private helpers in
-this module.
+constructions remain private helpers in this module. The fixed-field lemma
+`isAlgebraicallyTrivialViaSmoothFamily_pullback_hom` is public and is also
+reused by [`SmoothFamilyUniversalBaseChangeProof`](SmoothFamilyUniversalBaseChangeProof.md).
+It was exported under that name during integration, with its statement and
+proof unchanged.
 
 For each algebraically closed field and each point of the new test scheme,
 the hypothesis supplies the original witness at the composite point of the

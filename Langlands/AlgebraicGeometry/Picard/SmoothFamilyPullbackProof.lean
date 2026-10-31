@@ -53,7 +53,7 @@ private def smoothFamilyEndpointPullbackIso (f : A.X ⟶ B.X) (C : Over S)
     ((LineBundle.pullbackComp _ _).app N).symm
 
 /-- The same parameter and marked points witness triviality after pullback. -/
-private lemma smoothFamilyTriviality_pullback
+lemma isAlgebraicallyTrivialViaSmoothFamily_pullback_hom
     {K : Type u} [Field K] [IsAlgClosed K]
     (A B : AbelianScheme (Spec (CommRingCat.of K))) (f : A.X ⟶ B.X)
     {L : LineBundle B.X.left}
@@ -72,7 +72,7 @@ set_option maxHeartbeats 800000 in
 theorem smoothFamilyPullback : SmoothFamilyPullbackStatement.{u} := by
   intro S A T U h L hL K _ _ s
   let m := GroupScheme.fibreComparison A.toGrp h s
-  have hp := smoothFamilyTriviality_pullback
+  have hp := isAlgebraicallyTrivialViaSmoothFamily_pullback_hom
     ((baseChange s).obj ((baseChange T.hom).obj A))
     ((baseChange (s ≫ h.left)).obj ((baseChange U.hom).obj A))
     m.hom.hom (hL K (s ≫ h.left))

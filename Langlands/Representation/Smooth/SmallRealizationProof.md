@@ -28,13 +28,10 @@ group is only a monoid here, and `k` is any commutative ring.
 
 ## Orbits of smooth vectors
 
-`span_range_orbit_eq_top` works for a group `G`, a field `k`, and an
-irreducible representation `ρ`. It shows that the `k`-span of the orbit
-`{ρ g v | g ∈ G}` of a nonzero vector `v` is the whole space. The span is
-packaged as a `Subrepresentation`. Its invariance follows from
-`ρ g (ρ h v) = ρ (g * h) v` and `Submodule.span_le`. The span contains
-`v = ρ 1 v`, so it is not `⊥`, and irreducibility (`eq_bot_or_eq_top`) forces
-it to be `⊤`.
+The algebraic lemma `span_range_orbit_eq_top` is imported from
+[`OrbitSpan`](../OrbitSpan.md). It states that the orbit of a nonzero vector
+spans an irreducible representation. The declaration and proof were moved
+there unchanged so other algebraic arguments can reuse them.
 
 `countable_range_orbit` assumes `G` is a separable topological group. It
 shows that the orbit of a smooth vector `v` is countable. Smoothness gives an
