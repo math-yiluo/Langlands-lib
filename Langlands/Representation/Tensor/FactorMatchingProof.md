@@ -19,7 +19,9 @@ The shared helper `Langlands.haveSameJordanHolderFactors_transport` in
 uses `jordanHolderSeriesTransport` on each side and composes the resulting
 graded equivalences with the supplied factor permutation. This is the former
 private `matching_transport` helper, relocated without changing its hypotheses
-or proof. `filtrationComp` pulls each actual invariant subspace
+or proof. The pullback helpers are shared in
+[`FactorMatchingPullback`](../Filtration/FactorMatchingPullback.md).
+`filtrationComp` pulls each actual invariant subspace
 back along a surjective group homomorphism, using
 `subrepresentationCompOrderIso`. Its graded quotient is equivariantly
 identified by `gradedComp` with the pulled-back original quotient.
