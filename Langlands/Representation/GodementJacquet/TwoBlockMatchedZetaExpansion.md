@@ -61,14 +61,16 @@ hexp Φ` has the hypotheses of the published `exists_zeta_expansion_of_kernel`, 
   with `φ j` Schwartz–Bruhat on `K × K` and continuous `c₀ j`, `c₁ j`;
 - `Φ` is a full-matrix test.
 
-Write `f g = ∫ k, Γ k (k g) dμK`. The conclusion: there are a finite type `ι`, weights
+Write `f g = ∫ k, Γ k (k g) dμK`. The conclusion: there are a finite type `J`, weights
 `w`, block tests `Ψ₀ i`, `Ψ₁ i` and indices `jj i` such that
 
-1. for every `s` at which every block test converges against every `c₀ j` at
-   `s + m₀/2` and against every `c₁ j` at `s + m₁/2`,
+1. for every `s` at which every test function on `n₀ × n₀` matrices converges against
+   every `c₀ j` at `s + m₀/2` and every test function on `n₁ × n₁` matrices converges
+   against every `c₁ j` at `s + m₁/2`,
    `Z(Φ, s + t/2, f) = ∑ i, w i · Z(Ψ₀ i, s + m₀/2, c₀ (jj i)) · Z(Ψ₁ i, s + m₁/2, c₁ (jj i))`;
-2. for every `s` at which every block test converges against every `ι c₀ j` at
-   `s + m₀/2` and against every `ι c₁ j` at `s + m₁/2`,
+2. for every `s` at which every test function on `n₀ × n₀` matrices converges against
+   every `ι c₀ j` at `s + m₀/2` and every test function on `n₁ × n₁` matrices converges
+   against every `ι c₁ j` at `s + m₁/2`,
    `Z(F̂ Φ, s + t/2, ι f) =
    ∑ i, w i · Z(F̂ Ψ₀ i, s + m₀/2, ι c₀ (jj i)) · Z(F̂ Ψ₁ i, s + m₁/2, ι c₁ (jj i))`,
 
@@ -85,7 +87,7 @@ Proof. The shared data are chosen first.
   `Φl l = matrixTranslate Φ …`.
 - `exists_upperBlockIntegral_expansion` (with `dx`) gives, for each `l`,
   `∫ B, Φl l [[A, B], [0, D]] dx = ∑ r, Ψ₀ l r A · Ψ₁ l r D`.
-- `ι = Σ l, Fin (R l) × Fin N`, `w (l, r, j) = C⁻¹ · W l j`, `Ψ₀ (l, r, j) = Ψ₀ l r`,
+- `J = Σ l, Fin (R l) × Fin N`, `w (l, r, j) = C⁻¹ · W l j`, `Ψ₀ (l, r, j) = Ψ₀ l r`,
   `Ψ₁ (l, r, j) = Ψ₁ l r`, `jj (l, r, j) = j`, where
   `W l j = ∫ χ l · φ j d(μK × ν')` and `C = ρ (parabolicPoint⁻¹ K)`.
 
@@ -128,7 +130,7 @@ Transformed integral.
   the blocks, the result is
   `∫ Q' (l, j) dρ = ∑ r, Z(F̂ Ψ₀ l r, s + m₀/2, ι c₀ j) Z(F̂ Ψ₁ l r, s + m₁/2, ι c₁ j)`.
 
-Both identities are then regrouped over `ι` with `Fintype.sum_sigma` and
+Both identities are then regrouped over `J` with `Fintype.sum_sigma` and
 `Fintype.sum_prod_type`.
 
 ## The forward form and the interface
@@ -136,12 +138,14 @@ Both identities are then regrouped over `ι` with `Fintype.sum_sigma` and
 - `exists_twoBlock_matched_zeta_expansion F h σ hσs hσa ψ ν hsd Φ ℓ v`: for smooth
   admissible blocks `σ`, `ℓ : SmoothDual I` and `v : smoothVectors I` of
   `I = F.canonicalNormalizedProductInduced (succBlockShape m h) σ`, there are a finite
-  type `ι`, weights `w`, block tests `Ψ₀`, `Ψ₁` and actual block bi-smooth
+  type `J`, weights `w`, block tests `Ψ₀`, `Ψ₁` and actual block bi-smooth
   coefficients `f₀ i ∈ biSmoothMatrixCoefficients (σ 0)`,
   `f₁ i ∈ biSmoothMatrixCoefficients (σ 1)`, such that the two identities above hold
-  for `f = biSmoothCoefficient I ℓ v`. The first holds whenever every block test
-  converges against every bi-smooth coefficient of `σ 0` at `s + m₀/2` and of `σ 1` at
-  `s + m₁/2`; the second whenever the same holds for their `ι`-transforms. The kernel
+  for `f = biSmoothCoefficient I ℓ v`. The first holds whenever every test function
+  on `n₀ × n₀` matrices converges against every bi-smooth coefficient of `σ 0` at
+  `s + m₀/2` and every test function on `n₁ × n₁` matrices converges against every
+  bi-smooth coefficient of `σ 1` at `s + m₁/2`; the second whenever the same holds for
+  their `ι`-transforms. The kernel
   data are those of the published `exists_twoBlock_zeta_expansion`:
   `exists_compactProductCoefficientFormula` writes `f g = ∫ k, Γ k (k g) dμK` with the
   compact coefficient kernel `Γ`, and `exists_compactProductPairing_expansion` together
@@ -151,12 +155,17 @@ Both identities are then regrouped over `ι` with `Fintype.sum_sigma` and
 - `padic_matrixIntegral_smul`: `Z(Ψ, s, c • f) = c · Z(Ψ, s, f)` (`matrixIntegral_smul`).
 - `Langlands.GodementJacquet.twoBlockMatchedZetaExpansion :
   TwoBlockMatchedZetaExpansionStatement.{uF,uV}`. Proof: apply the forward form.
-  Reindex `ι` by `Fintype.equivFin`. Absorb the weight into the first coefficient,
+  Reindex `J` by `Fintype.equivFin`. Absorb the weight into the first coefficient,
   `f0 i = w i • f₀ i`, using `padic_matrixIntegral_smul` and
   `coefficientIota (w • c) = w • coefficientIota c` (definitional). The half-planes
   are `max a₀ a₁` and `max b₀ b₁`, where `a i` comes from the block convergence
   assertion `(hdata i).1.1` (`MatrixConvergesOnRight` of `σ i`) and `b i` from
   `(hdata i).2.1.1` (`IotaMatrixConvergesOnRight` of `σ i`).
+
+The local instances of the p-adic section are named
+(`matchedExpansionTopology`, …, `matchedExpansionGLBorel`), so that this module can be
+imported together with other modules declaring anonymous local instances in the
+namespace `Langlands.GodementJacquet.TwoBlock`, such as `TwoBlockReverseRealization`.
 
 Compiled with 0 errors and 0 warnings. Axioms of `twoBlockMatchedZetaExpansion`:
 `propext`, `Classical.choice`, `Quot.sound`.

@@ -6,7 +6,7 @@ import Langlands.Representation.GodementJacquet.TwoBlockFunctionalEquationAssemb
 /-!
 # Matched expansion of two-block induced zeta integrals and their transforms
 
-Godement–Jacquet 1972, proof of Theorem 3.4 (printed pages 36–45), for two blocks:
+Godement–Jacquet 1972, proof of Theorem 3.4 (printed pages 37–42), for two blocks:
 the shifted matrix zeta integral of a bi-smooth coefficient `f` of the normalized
 induced representation is a finite sum of products of block zeta integrals, and,
 with the same finite data, the zeta integral of the full Fourier transform of the
@@ -69,21 +69,28 @@ section Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : SecondCountableTopology F.Carrier :=
+-- Named, so that the auto-generated names cannot clash with the anonymous local
+-- instances of other modules in this namespace (e.g. `TwoBlockReverseRealization`).
+local instance matchedExpansionTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance matchedExpansionValuativeRel : ValuativeRel F.Carrier :=
+  F.canonicalTopologicalData.valuativeRel
+local instance matchedExpansionLocalField : IsNonarchimedeanLocalField F.Carrier :=
+  F.canonicalTopologicalData.localField
+local instance matchedExpansionT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance matchedExpansionSecondCountable : SecondCountableTopology F.Carrier :=
   F.canonicalTopologicalData.secondCountableTopology
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance matchedExpansionMeasurableSpace : MeasurableSpace F.Carrier := borel _
+local instance matchedExpansionBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance matchedExpansionTotallyDisconnected : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance matchedExpansionGLMeasurableSpace (n : ℕ) :
+    MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
+local instance matchedExpansionGLBorel (n : ℕ) :
+    BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
 
 attribute [local instance] glSecondCountable matrixLocallyCompact matrixSecondCountable
   glLocallyCompact
