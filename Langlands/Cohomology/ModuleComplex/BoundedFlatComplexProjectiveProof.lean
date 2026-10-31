@@ -1,0 +1,13 @@
+import Langlands.Cohomology.ModuleComplex.BoundedFlatComplexProjectiveStatement
+import Langlands.AnthropicFLT.Theorems.Thm_Module_exists_projective_complex_quasiIso_of_flat_complex
+
+set_option autoImplicit false
+
+universe u
+
+namespace Langlands.Cohomology.ModuleComplex
+
+theorem boundedFlatComplexProjective : BoundedFlatComplexProjectiveStatement.{u} := by
+  exact Module.exists_projective_complex_quasiIso_of_flat_complex
+
+end Langlands.Cohomology.ModuleComplex
