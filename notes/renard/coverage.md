@@ -10,6 +10,11 @@ Reading extents and task-status observations below describe that initial pass.
 The replacement corrects its annihilator orientation and module-completion
 scope; later reading and child-task developments require a separate update.
 
+The [small-projective and original-module progress note](category-module-progress.md)
+records selected verified publications and pending work checked on 30 October
+2026. It supplements, rather than revises, the initial reading and status rows
+below.
+
 ## Reference and reading record
 
 The governing reference is David Renard, *Représentations des groupes réductifs
