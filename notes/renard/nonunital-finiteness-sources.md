@@ -1,6 +1,7 @@
-# Renard 2026: finiteness conventions and the Pareigis references
+# Renard 2026: finiteness conventions in Pareigis and Douady
 
-Worker 709 checked the passages below on 30 October 2026. This source audit
+Worker 709 checked the Renard and Pareigis passages on 30 October 2026 and
+added the supplied Douady translation comparison on 31 October. This source audit
 supplements [the C.II localization audit](stable-quotients.md) and
 [the categorical progress note](category-module-progress.md). It identifies
 what Renard's references establish and leaves the nonunital finiteness
@@ -30,8 +31,28 @@ printed 3–5/PDF11–13, and printed 204–212/PDF212–220. Printed 4, 205 and
 210 were inspected visually. This is passage reading, not a complete
 Pareigis audit.
 
+The supplied Douady source is Régine and Adrien Douady, *Algebra and
+Galois Theories*, translated by Urmie Ray, Springer (2020),
+[DOI 10.1007/978-3-030-32796-5](https://doi.org/10.1007/978-3-030-32796-5).
+It is registered as
+`provided-4aa90ffef13f320ab2d84ee77e4455b2b4212ff0d1908d00c74e07c68ed08fe7`,
+SHA256
+`16edeadac520354a3d76c95fe771076cf371f00eb89d5b6d7d1f6eb3545c02ad`,
+at `/home/taskhub/pilot/literature/Douady-Douady - Algebra and Galois Theories (2020).pdf`.
+Its 479-page PDF identifies the translated French edition as Cassini
+(copyright 2004) on PDF5. It is not the old CEDIC edition listed by
+Renard. The registered identifier names this actual PDF even though its
+registration title inherited the original-edition request wording.
+
+The bounded Douady reading comprises PDF1–13, 39–40, 44–47, 94–96,
+108–110 and 143–145. PDF144 was also inspected visually. These are
+selected passages, not a complete reading of Chapter II or the book.
+Use the precise locators below: the front matter does not give a single
+printed/PDF page offset throughout the file.
+
 No `notes/errata` directory was present in the checked Library
-`333fb3981b648b8ba9f29c1123c27ef3d8626c90`. The earlier
+`333fb3981b648b8ba9f29c1123c27ef3d8626c90`, nor in
+`91ab820b34fa295dd50fbdeb1389423b0f6478ea` at the Douady comparison. The earlier
 [C.II audit](stable-quotients.md) records the separately read older Renard
 supplement at PDF18–19; that supplement did not settle this convention.
 
@@ -60,6 +81,23 @@ not Pareigis's module corollary. A.I.3 also cites [25], Proposition 1.6.1,
 for a maximal-chain criterion; the Appendix A introduction points to
 Chapter II of [25]. These are distinct from the [37] citations above.
 
+## What the supplied Douady edition says
+
+| Passage in the 2020 translation | Content checked | Comparison boundary |
+| --- | --- | --- |
+| §1.6.1, printed 15/PDF39 | Increasing sequences are stationary iff every nonempty subset has a maximal element; this defines a Noetherian ordered set. | This supplies a pertinent order criterion, without verifying the old edition's wording. |
+| Chapter 2 opening and §2.1.2–2.1.3, printed 21–24/PDF44–47 | The category framework uses fixed sets and universes. Examples include commutative rings with identity and identity-preserving maps, and modules over a fixed ring. | This is a relevant category-theory chapter in the supplied edition, not verification of the old volume's contents. |
+| Chapter 3 opening, printed 71/PDF94; §3.3.1, printed 86/PDF109 | Rings are commutative with identity and maps preserve identity unless stated otherwise. Module actions explicitly satisfy `1x = x`. | These are unital conventions. |
+| §3.3.3 and §3.3.5, printed 87/PDF110 | Submodules are additive subgroups stable under the ring; a finite generating family spans by finite sums with ring coefficients. | This generation definition belongs to those unital modules. |
+| §3.6.1, printed 121–122/PDF144–145 | The theorem characterizes Noetherian rings. Its unnumbered lemma equates finite generation of every submodule of a module with Noetherianity of its ordered submodule lattice. | The lemma does not directly state categorical versus algebraic finite generation of one module. |
+
+The last lemma provides related arguments, but its assertion quantifies
+over **every submodule**. It should not be identified with Renard's
+single-module categorical finite-type comparison solely because the
+section number matches. The 2020 translation supplies useful actual
+passages; it does not establish exact statement or volume correspondence
+with Renard's old [25] citation.
+
 ## What remains unresolved for C.II
 
 Renard's global convention at printed 6/PDF12 permits rings without an
@@ -85,19 +123,24 @@ complex-linear stable subspaces, or an explicitly compared unitization
 model. Neither a counterexample distinguishing models nor a successful
 internal theorem selects the author's convention.
 
-Task `9796ccea-0a72-431d-b9a9-87c0499717c9` separately requests an internal
-statement with three explicit hypotheses: finite stable generation of
-each complex-linear left ideal, of the source, and of its actual
-localization. It allows noncommutative algebras and retains the canonical
-compatible stable-image conclusions. At this audit it is ready and
-unassigned, with unreviewed shared draft revision 1 and no candidate.
-Its successful development check is not statement acceptance or a proof,
-and no equivalence with Renard's finiteness phrases is asserted.
+The published internal theorem
+`Langlands.Renard.AlgebraActionLocalization.stableIdealFiniteLocalization`
+now proves
+`Langlands.Renard.AlgebraActionLocalization.StableIdealFiniteLocalizationStatement`
+with three explicit hypotheses: finite stable generation of each
+complex-linear left ideal, of the source, and of its actual localization.
+It allows noncommutative algebras and retains the canonical compatible
+stable-image conclusions. Its
+[proof documentation](../../Langlands/Algebra/RenardStableIdealFiniteLocalizationProof.md)
+describes the unitization and quotient-Hopfian route, which differs from
+Renard's inverse-polynomial argument. This internal theorem does not
+establish an equivalence with Renard's finiteness phrases.
 
-The exact [25] passages have not been acquired or read. Renard's
-bibliography at printed 282/PDF288 identifies Régine and Adrien Douady,
+The old CEDIC [25] text has not been acquired or read. Renard's bibliography
+at printed 282/PDF288 identifies Régine and Adrien Douady,
 *Algèbre et théories galoisiennes. 2*, CEDIC, Paris (1979), with subtitle
 *Théories galoisiennes*. Establishing the cited passages and their
 conventions requires the original text and edition/volume verification.
-No bibliographic correction or substitute edition is asserted here.
+The supplied translation does not establish a correction to that entry
+or choose a nonunital convention for C.II.
 The full source-facing C.II result and the parent book obligations remain open.
