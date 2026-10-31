@@ -2,6 +2,7 @@ import Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffStatement
 import Langlands.Representation.RankinSelberg.LastRowCompactOrbitProof
 import Langlands.HarmonicAnalysis.PadicAdditiveConductorProof
 import Langlands.HarmonicAnalysis.PadicScalarHaarScalingProof
+import Langlands.HarmonicAnalysis.PadicLatticeTopology
 
 /-!
 # Proof of the compact last-row cutoff for zero-row Whittaker coefficients
@@ -22,39 +23,6 @@ variable {p : ℕ} [Fact p.Prime] {F : PadicField.{u} p} (T : F.TopologicalData)
 
 local notation "AdditiveCharacter" =>
   @HarmonicAnalysis.UnitaryAdditiveCharacter F.Carrier _ T.topology
-
-/-- Every additive lattice `π^(-n) O` is compact for the supplied topology. -/
-theorem isCompact_additiveLattice (n : ℤ) :
-    letI := T.topology
-    IsCompact (T.additiveLattice n : Set F.Carrier) := by
-  let := T.topology
-  let := T.valuativeRel
-  let := T.localField
-  have hset : (T.additiveLattice n : Set F.Carrier) =
-      (fun t => T.uniformizer ^ (-n) * t) '' (T.Integers : Set F.Carrier) := by
-    ext x
-    rw [SetLike.mem_coe, T.mem_additiveLattice_iff_exists_integer]
-    constructor
-    · rintro ⟨t, rfl⟩
-      exact ⟨t, t.property, rfl⟩
-    · rintro ⟨t, ht, rfl⟩
-      exact ⟨⟨t, ht⟩, rfl⟩
-  rw [hset]
-  exact T.isCompact_integers.image (continuous_const.mul continuous_id)
-
-/-- Every additive lattice `π^(-n) O` is open for the supplied topology. -/
-theorem isOpen_additiveLattice (n : ℤ) :
-    letI := T.topology
-    IsOpen (T.additiveLattice n : Set F.Carrier) := by
-  let := T.topology
-  let := T.valuativeRel
-  let := T.localField
-  have hset : (T.additiveLattice n : Set F.Carrier) =
-      (fun x => x / T.uniformizer ^ (-n)) ⁻¹' (T.Integers : Set F.Carrier) := by
-    ext x
-    exact T.mem_additiveLattice_iff_div_mem_integers n x
-  rw [hset]
-  exact T.isOpen_integers.preimage (continuous_id.div_const _)
 
 /-- If `x ↦ ψ(a x)` is trivial on `π^(-m) O`, then `a` lies in `π^(m - n(ψ)) O`. -/
 theorem mem_additiveLattice_of_forall_mul_eq_one (ψ : AdditiveCharacter)

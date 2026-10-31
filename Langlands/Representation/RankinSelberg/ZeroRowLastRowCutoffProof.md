@@ -25,12 +25,11 @@ functionals and zero coefficients.
 These lemmas are in namespace `Langlands.PadicField.TopologicalData`. They use
 the published convention `additiveLattice m = π^(-m) O`.
 
-- `isCompact_additiveLattice`: every `additiveLattice m` is compact. It is the
-  image of the compact ring of integers (`isCompact_integers`) under
-  multiplication by `π^(-m)`, by `mem_additiveLattice_iff_exists_integer`.
-- `isOpen_additiveLattice`: every `additiveLattice m` is open. It is the
-  preimage of the open ring of integers (`isOpen_integers`) under division by
-  `π^(-m)`, by `mem_additiveLattice_iff_div_mem_integers`.
+The compactness and openness lemmas are imported from
+[PadicLatticeTopology](../../HarmonicAnalysis/PadicLatticeTopology.md), where
+their original names, statements and proofs are preserved. The conductor
+lemma below remains in this module.
+
 - `mem_additiveLattice_of_forall_mul_eq_one`: suppose `ψ (a * x) = 1` for every
   `x ∈ additiveLattice m`. Then `a ∈ additiveLattice (additiveConductor ψ - m)`.
   The hypothesis implies `ψ(t · π^(-m) a) = 1` for every integer `t`. By
