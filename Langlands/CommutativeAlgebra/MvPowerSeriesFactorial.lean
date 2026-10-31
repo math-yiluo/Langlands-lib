@@ -1,0 +1,205 @@
+import Langlands.Geometry.Analytic.TateFactorial
+import Mathlib.RingTheory.MvPowerSeries.Equiv
+import Mathlib.RingTheory.MvPowerSeries.Inverse
+import Mathlib.RingTheory.MvPowerSeries.NoZeroDivisors
+import Mathlib.RingTheory.Noetherian.UniqueFactorizationDomain
+import Mathlib.RingTheory.PowerSeries.WeierstrassPreparation
+import Mathlib.RingTheory.AdicCompletion.LocalRing
+import Mathlib.RingTheory.AdicCompletion.Completeness
+import Mathlib.RingTheory.MvPolynomial.Ideal
+
+/-!
+# Factoriality of power series rings over a field
+
+Induction on the number of variables with the Weierstrass preparation theorem. The
+coordinate change is passed as a hypothesis.
+-/
+
+namespace Langlands.CommutativeAlgebra.MvPowerSeriesFactorial
+
+open IsLocalRing Polynomial
+
+section Distinguished
+
+variable {A : Type*} [CommRing A] [IsLocalRing A]
+
+/-- A monic factor of a distinguished polynomial over a local ring is distinguished. -/
+theorem isDistinguishedAt_of_monic_dvd {w p q : A[X]}
+    (hw : w.IsDistinguishedAt (maximalIdeal A)) (hp : p.Monic) (hpq : w = p * q) :
+    p.IsDistinguishedAt (maximalIdeal A) := by
+  have hmap : w.map (residue A) = X ^ w.natDegree := hw.map_eq_X_pow
+  have hdvd : p.map (residue A) ∣ X ^ w.natDegree := by
+    rw [← hmap, hpq, Polynomial.map_mul]
+    exact dvd_mul_right _ _
+  obtain ⟨i, -, hi⟩ := (dvd_prime_pow (Polynomial.prime_X) _).mp hdvd
+  have hpX : p.map (residue A) = X ^ i :=
+    eq_of_monic_of_associated (hp.map _) (monic_X_pow i) hi
+  have hdeg : p.natDegree = i := by
+    rw [← (hp.natDegree_map (residue A)), hpX, natDegree_X_pow]
+  refine ⟨⟨fun {n} hn => ?_⟩, hp⟩
+  have h := congrArg (coeff · n) hpX
+  simp only [coeff_map, coeff_X_pow] at h
+  rw [ite_eq_right_iff.mpr (fun h' => absurd h' (by omega))] at h
+  exact (residue_eq_zero_iff _).mp h
+
+end Distinguished
+
+section Prime
+
+variable {A : Type*} [CommRing A] [IsLocalRing A] [IsAdicComplete (maximalIdeal A) A]
+
+/-- A distinguished polynomial that is prime in `A[X]` stays prime in `A⟦X⟧`. -/
+theorem prime_coe_of_isDistinguishedAt {p : A[X]} (hd : p.IsDistinguishedAt (maximalIdeal A))
+    (hp : Prime p) : Prime (p : PowerSeries A) := by
+  have hp0 : (p : PowerSeries A) ≠ 0 := by
+    rw [Ne, Polynomial.coe_eq_zero_iff]
+    exact hp.ne_zero
+  rw [← Ideal.span_singleton_prime hp0, ← Ideal.Quotient.isDomain_iff_prime]
+  have : (Ideal.span {p}).IsPrime := (Ideal.span_singleton_prime hp.ne_zero).mpr hp
+  exact hd.algEquivQuotient.symm.toMulEquiv.isDomain _
+
+variable [IsDomain A] [UniqueFactorizationMonoid A]
+
+/-- Over a complete local factorial domain `A`, an irreducible power series whose reduction
+modulo the maximal ideal is nonzero is prime. -/
+theorem prime_of_irreducible_of_map_ne_zero {g : PowerSeries A} (hg : Irreducible g)
+    (hmap : g.map (residue A) ≠ 0) : Prime g := by
+  obtain ⟨w, h, hW⟩ := g.exists_isWeierstrassFactorization hmap
+  have hassoc : Associated g (w : PowerSeries A) := by
+    rw [hW.eq_mul]
+    exact associated_mul_unit_left _ _ hW.isUnit
+  have hw_irred : Irreducible (w : PowerSeries A) := hassoc.irreducible_iff.mp hg
+  have hwunit : ¬ IsUnit w := fun hu =>
+    hw_irred.not_isUnit (hu.map Polynomial.coeToPowerSeries.ringHom)
+  obtain ⟨p, q, hp, -, hprime, hfactor⟩ :=
+    Langlands.Analytic.exists_monic_prime_factor w hW.isDistinguishedAt.monic hwunit
+  have hpd := isDistinguishedAt_of_monic_dvd hW.isDistinguishedAt hp hfactor
+  have hpprime := prime_coe_of_isDistinguishedAt hpd hprime
+  have hpdvd : (p : PowerSeries A) ∣ (w : PowerSeries A) :=
+    map_dvd Polynomial.coeToPowerSeries.ringHom ⟨q, hfactor⟩
+  have hpw : Associated (p : PowerSeries A) (w : PowerSeries A) :=
+    (hpprime.irreducible.dvd_irreducible_iff_associated hw_irred).mp hpdvd
+  exact hassoc.prime_iff.mpr (hpw.prime_iff.mp hpprime)
+
+end Prime
+
+section Complete
+
+/-- The image of `I ^ n • ⊤` under a linear map lies in `I ^ n • ⊤`. -/
+theorem map_pow_smul_top_le {R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M]
+    [AddCommGroup N] [Module R N] (I : Ideal R) (f : M →ₗ[R] N) (n : ℕ) :
+    (I ^ n • ⊤ : Submodule R M).map f ≤ I ^ n • ⊤ := by
+  rw [Submodule.map_smul'']
+  exact Submodule.smul_mono le_rfl le_top
+
+/-- Adic completeness transfers along a linear equivalence. -/
+theorem isAdicComplete_of_linearEquiv {R M N : Type*} [CommRing R] [AddCommGroup M]
+    [Module R M] [AddCommGroup N] [Module R N] (I : Ideal R) (e : M ≃ₗ[R] N)
+    [IsAdicComplete I N] : IsAdicComplete I M := by
+  refine { haus' := fun x hx => ?_, prec' := fun f hf => ?_ }
+  · have h : e x = 0 := IsHausdorff.haus' (I := I) (e x) fun n => by
+      simpa using ((hx n).map (e : M →ₗ[R] N)).mono (map_pow_smul_top_le I _ n)
+    simpa using congrArg e.symm h
+  · obtain ⟨L, hL⟩ := IsPrecomplete.prec' (I := I) (fun n => e (f n)) fun {m n} hmn => by
+      simpa using ((hf hmn).map (e : M →ₗ[R] N)).mono (map_pow_smul_top_le I _ m)
+    refine ⟨e.symm L, fun n => ?_⟩
+    simpa using ((hL n).map (e.symm : N →ₗ[R] M)).mono (map_pow_smul_top_le I _ n)
+
+/-- Over a field, the ideal generated by the variables is maximal. -/
+theorem isMaximal_idealOfVars (K : Type*) [Field K] (σ : Type*) :
+    (MvPolynomial.idealOfVars σ K).IsMaximal := by
+  have h : MvPolynomial.idealOfVars σ K =
+      RingHom.ker (MvPolynomial.constantCoeff (σ := σ) (R := K)) := by
+    ext p
+    rw [← pow_one (MvPolynomial.idealOfVars σ K), MvPolynomial.mem_pow_idealOfVars_iff',
+      RingHom.mem_ker]
+    constructor
+    · intro hp
+      rw [MvPolynomial.constantCoeff_eq]
+      exact hp 0 (by simp)
+    · intro hp x hx
+      have : x = 0 := by simpa [Nat.lt_one_iff, Finsupp.degree_eq_zero_iff] using hx
+      subst this
+      rwa [MvPolynomial.constantCoeff_eq] at hp
+  rw [h]
+  exact RingHom.ker_isMaximal_of_surjective _ fun r => ⟨MvPolynomial.C r, by simp⟩
+
+/-- Power series in finitely many variables over a field are complete for the adic topology of
+their maximal ideal. -/
+theorem isAdicComplete_maximalIdeal (K : Type*) [Field K] (σ : Type*) [Finite σ] :
+    IsAdicComplete (maximalIdeal (MvPowerSeries σ K)) (MvPowerSeries σ K) := by
+  let P := MvPolynomial σ K
+  let I := MvPolynomial.idealOfVars σ K
+  let C := AdicCompletion I P
+  let e := MvPowerSeries.toAdicCompletionAlgEquiv σ K
+  have hfg : I.FG := MvPolynomial.idealOfVars_fg σ K
+  have : IsAdicComplete I C := AdicCompletion.isAdicComplete hfg
+  have : IsAdicComplete I (MvPowerSeries σ K) := isAdicComplete_of_linearEquiv I e.toLinearEquiv
+  have : I.IsMaximal := isMaximal_idealOfVars K σ
+  have : (I.map (algebraMap P C)).IsMaximal := AdicCompletion.isMaximal_map_of_le I I le_rfl hfg
+  let g : C →+* MvPowerSeries σ K := e.symm.toAlgHom.toRingHom
+  have h1 : I.map (algebraMap P (MvPowerSeries σ K)) = (I.map (algebraMap P C)).map g := by
+    rw [Ideal.map_map]
+    congr 1
+    exact RingHom.ext fun x => (e.symm.commutes x).symm
+  have : (I.map (algebraMap P (MvPowerSeries σ K))).IsMaximal := by
+    rw [h1]
+    exact Ideal.IsMaximal.map_bijective g e.symm.bijective ‹_›
+  rw [← IsLocalRing.eq_maximalIdeal this]
+  exact (IsAdicComplete.map_algebraMap_iff I (MvPowerSeries σ K)).mpr ‹_›
+
+end Complete
+
+section Induction
+
+variable (K : Type*) [Field K]
+
+/-- Power series in finitely many variables over a field form a domain. -/
+theorem isDomain_mvPowerSeries (σ : Type*) : IsDomain (MvPowerSeries σ K) :=
+  NoZeroDivisors.to_isDomain _
+
+/-- The coefficient ring `K⟦X_1, ..., X_n⟧`: a power series is in the maximal ideal exactly
+when its constant coefficient vanishes. -/
+theorem mem_maximalIdeal_iff {n : ℕ} (f : MvPowerSeries (Fin n) K) :
+    f ∈ maximalIdeal (MvPowerSeries (Fin n) K) ↔ MvPowerSeries.constantCoeff f = 0 := by
+  rw [mem_maximalIdeal, mem_nonunits_iff, MvPowerSeries.isUnit_iff_constantCoeff,
+    isUnit_iff_ne_zero, not_not]
+
+/-- **Factoriality of power series rings**, assuming the coordinate change making a nonzero
+series general in the first variable (`hcoord`). -/
+theorem uniqueFactorizationMonoid_of_coord
+    (hcoord : ∀ (n : ℕ) (f : MvPowerSeries (Fin (n + 1)) K), f ≠ 0 →
+      ∃ φ : MvPowerSeries (Fin (n + 1)) K ≃ₐ[K] MvPowerSeries (Fin (n + 1)) K,
+        ∃ k : ℕ, MvPowerSeries.coeff (Finsupp.single 0 k) (φ f) ≠ 0)
+    (n : ℕ) : UniqueFactorizationMonoid (MvPowerSeries (Fin n) K) := by
+  induction n with
+  | zero =>
+    exact (MvPowerSeries.isEmptyEquiv (Fin 0) K).toMulEquiv.symm.uniqueFactorizationMonoid
+      inferInstance
+  | succ n ih =>
+    have := isAdicComplete_maximalIdeal K (Fin n)
+    have := isDomain_mvPowerSeries K (Fin n)
+    have := isDomain_mvPowerSeries K (Fin (n + 1))
+    refine
+      { toIsCancelMulZero := inferInstance
+        toWellFounded := inferInstance
+        irreducible_iff_prime := ?_ }
+    intro f
+    refine ⟨fun hf => ?_, Prime.irreducible⟩
+    obtain ⟨φ, k, hk⟩ := hcoord n f hf.ne_zero
+    let e := φ.toRingEquiv.trans (MvPowerSeries.finSuccEquiv K n).toRingEquiv
+    have he : Irreducible (e f) := (MulEquiv.irreducible_iff e.toMulEquiv).mpr hf
+    have hmap : (e f).map (residue (MvPowerSeries (Fin n) K)) ≠ 0 := by
+      intro h0
+      have h := congrArg (PowerSeries.coeff k) h0
+      rw [PowerSeries.coeff_map, map_zero, residue_eq_zero_iff, mem_maximalIdeal_iff,
+        ← MvPowerSeries.coeff_zero_eq_constantCoeff_apply] at h
+      apply hk
+      change MvPowerSeries.coeff 0 (PowerSeries.coeff k
+        (MvPowerSeries.finSuccEquiv K n (φ f))) = 0 at h
+      rwa [MvPowerSeries.coeff_coeff_finSuccEquiv, Finsupp.cons_zero_eq_single_zero] at h
+    exact (MulEquiv.prime_iff e.toMulEquiv).mp (prime_of_irreducible_of_map_ne_zero he hmap)
+
+end Induction
+
+end Langlands.CommutativeAlgebra.MvPowerSeriesFactorial

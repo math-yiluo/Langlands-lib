@@ -74,27 +74,39 @@ measurable set `S` with `S = ι(X) K` (hypotheses `hSfac` and `hSK`).
 
 ## Integrals of compact coefficient formulas
 
-Let `ν` be a measure on a parameter space `κ` with a measurable map `j : κ → G`
-(in applications `κ` is a compact open subgroup and `ν` its Haar probability
-measure). For `H : G → ℂ` and `Γ : κ → G → ℂ`, consider the function
+Shared hypotheses of this section: `G` carries a measurable multiplication
+(`MeasurableMul₂ G`) and `μ` is an s-finite left-invariant measure on `G`;
+`κ` and `κ'` are measurable spaces; `ν` is an **s-finite** measure on `κ` and
+`j : κ → G` is a **measurable** map (in applications `κ` is a compact open
+subgroup and `ν` its Haar probability measure). Where a second parameter space
+is used, `ν'` is an **s-finite** measure on `κ'` and `j' : κ' → G` is a
+**measurable** map with `ν'.map j' = μ|_K`. The s-finiteness of `ν` and `ν'`
+cannot be dropped: the product measure and the Fubini exchanges below require
+it (for counting measure `ν` on the circle, the diagonal indicator is a
+counterexample to the substitution identity). In the translate lemma `ν` is
+moreover finite. For `H : G → ℂ` and `Γ : κ → G → ℂ`, consider the function
 `g ↦ H g * ∫ k, Γ k (j k * g) dν`, i.e. a zeta integrand times a coefficient
 given by a compact integral formula, and the function
 `Ψ (k, y) = H ((j k)⁻¹ * y) * Γ k y` on `κ × G`.
 
-- `integrable_integral_coefficient_of_integrable`: if `Ψ` is integrable for
+- `integrable_integral_coefficient_of_integrable`: for s-finite `ν` and
+  measurable `j`, if `Ψ` is integrable for
   `ν × μ`, then `g ↦ H g * ∫ k, Γ k (j k * g) dν` is `μ`-integrable and its
   integral equals `∫ Ψ d(ν × μ)`. Proof: the skew map `(k, g) ↦ (k, j k * g)`
   preserves `ν × μ` (`MeasurePreserving.skew_product` with left invariance of
   `μ`), and it carries `Ψ` to `(k, g) ↦ H g * Γ k (j k * g)`; then Fubini
   (`Integrable.integral_prod_right`, `integral_prod_symm`) and pulling the
   constant `H g` out of the `k`-integral.
-- `map_prod_prod_factorization`: if `j' : κ' → G` pushes a measure `ν'` forward
-  to `μ|_K`, the map `(k, (k', x)) ↦ (k, ι x * j' k')` pushes `ν × (ν' × ρ)`
+- `map_prod_prod_factorization`: under the factorization hypotheses `hfac`,
+  `hσ` (with `K` measurable, `ρ` s-finite, `ι` measurable), for s-finite `ν`,
+  s-finite `ν'` and measurable `j' : κ' → G` pushing `ν'` forward to `μ|_K`,
+  the map `(k, (k', x)) ↦ (k, ι x * j' k')` pushes `ν × (ν' × ρ)`
   forward to `ρ (ι ⁻¹' K) • (ν × μ)` (`map_prod_map`, `map_restrict_prod_mul`,
   `Measure.prod_smul_right`).
 - `integrable_integral_coefficient_of_expansion`: assume
-  `0 < ρ (ι ⁻¹' K) < ∞`, the factorization hypotheses, a.e.-strong
-  measurability of `Ψ`, and a finite expansion
+  `0 < ρ (ι ⁻¹' K) < ∞`, the factorization hypotheses, s-finite `ν` and `ν'`,
+  measurable `j` and `j'` with `ν'.map j' = μ|_K`, a.e.-strong measurability of
+  `Ψ` for `ν × μ` (hypothesis `hm`), and a finite expansion
   `H ((j k)⁻¹ * (ι x * j' k')) * Γ k (ι x * j' k') = ∑ r ∈ s, ψ r k k' * Q r x`
   for all `k, k', x`, where each `(k, k') ↦ ψ r k k'` is `ν × ν'`-integrable and
   each `Q r` is `ρ`-integrable. Then `g ↦ H g * ∫ k, Γ k (j k * g) dν` is
@@ -108,10 +120,14 @@ given by a compact integral formula, and the function
   back to `ν × μ` (`integrable_map_measure`, `integrable_smul_measure`,
   `integral_map`, `integral_smul_measure`), and `integral_prod_mul` splits
   each product. The previous substitution lemma finishes.
-- `integrable_integral_coefficient_of_translate`: for finite `ν`, if
+- `integrable_integral_coefficient_of_translate`: for finite `ν`, assume that
+  `Ψ` is a.e.-strongly measurable for `ν × μ` (hypothesis `hm`), that
   `y ↦ Ψ (k, y)` is a left translate `y ↦ Ψ₀ (g₀ * y)` of one integrable `Ψ₀`
-  for `k` in a measurable `S` and vanishes for `k ∉ S`, then the coefficient
-  integral is integrable with integral `(ν S).toReal • ∫ Ψ₀ dμ`. Proof:
+  for `k` in a measurable `S`, and that it vanishes for `k ∉ S`. Then the
+  coefficient integral is integrable with integral `(ν S).toReal • ∫ Ψ₀ dμ`.
+  The joint measurability hypothesis cannot be dropped: without it the slices
+  `k ↦ Ψ (k, y)` need not be a.e.-strongly measurable, and their Bochner
+  integrals are then zero. Proof:
   `integrable_prod_iff` with left invariance of `μ` for each slice
   (`Integrable.comp_mul_left`, `integral_mul_left_eq_self`), Fubini, and the
   integral of an indicator of a constant.

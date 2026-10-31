@@ -19,14 +19,14 @@ variable (K : Type u) [NormedField K] [IsUltrametricDist K]
   (g g' : A) (f f' : Fin m → A) (hg : g = g') (hf : f = f')
 
 /-- Equality of actual rational data identifies the two intrinsic quotients. -/
-private def dataEquiv :
+def dataEquiv :
     BoundedAlgEquiv K (RelativeRationalPresentation.Algebra K A s g f)
       (RelativeRationalPresentation.Algebra K A s g' f') := by
   cases hg
   cases hf
   exact BoundedAlgEquiv.refl K _
 
-private theorem dataEquiv_baseMap (a : A) :
+theorem dataEquiv_baseMap (a : A) :
     dataEquiv K A s g g' f f' hg hf
       (RelativeRationalPresentation.baseMap K A s g f a) =
         RelativeRationalPresentation.baseMap K A s g' f' a := by
@@ -34,7 +34,7 @@ private theorem dataEquiv_baseMap (a : A) :
   cases hf
   rfl
 
-private theorem dataEquiv_fraction (j : Fin m) :
+theorem dataEquiv_fraction (j : Fin m) :
     dataEquiv K A s g g' f f' hg hf
       (RelativeRationalPresentation.fraction K A s g f j) =
         RelativeRationalPresentation.fraction K A s g' f' j := by

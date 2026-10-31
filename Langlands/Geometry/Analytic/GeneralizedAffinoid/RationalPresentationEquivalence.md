@@ -27,7 +27,7 @@ the published modules by their Lean names.
 `presentationEquiv` composes the published scalar-to-intrinsic comparison,
 intrinsic coefficient equivalence, identity identification along the matching
 data equalities, and inverse scalar-to-intrinsic comparison for `B`. The
-private identity identification and its formulas are proved by equality
+identity identification and its formulas are proved by equality
 induction. All maps act on the concrete closed-ideal quotient algebras with
 their actual quotient norms. The displayed inverse maps come from the
 proved inverse identities of the constituent equivalences.
@@ -36,9 +36,10 @@ More explicitly, if `α_A : Q_A ≃ R_A` and `α_B : Q_B ≃ R_B` are
 `relativeEquiv` and `E` is `RelativeRationalPresentation.coefficientEquiv`
 for `e`, the constructed map is `α_B.symm ∘ δ ∘ E ∘ α_A`. Here `δ`
 identifies the intrinsic quotient for data `e(q_A(g)),e(q_A(f(j)))`
-with `R_B`. The private `dataEquiv` implements `δ`; equality induction
-proves its coefficient, fraction and quotient-projection formulas and
-exact norm preservation in both directions. It assumes no quotient map
+with `R_B`. The public `dataEquiv` implements `δ`; its public coefficient and fraction
+formulas are reused by `RationalLocalization/RelativeComparison`. Equality
+induction also proves its private quotient-projection formula and exact norm
+preservation in both directions. It assumes no quotient map
 or inverse law as additional input.
 
 `relativeEquiv_presentationEquiv` states this comparison formula after
