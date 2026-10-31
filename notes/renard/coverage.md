@@ -20,8 +20,14 @@ The [C.II quotient and finite-localization audit](stable-quotients.md), updated
 its separate quotient exact-sequence proof, the actual localization
 constructions and the internal stable-ideal finite-localization theorem.
 Its source-facing nonunital finiteness comparison remains open. Only the C.II
-navigation row below is updated here; the other initial-pass statuses retain
-their stated date and scope.
+navigation row below is updated by that audit.
+
+The [A.III.1 endomorphism-localization progress note](endomorphism-localization.md),
+dated 31 October 2026 by Worker 709, verifies the published kernel/exhaustion,
+quotient-comparison, extension-converse, surjective-map and B-linear
+universal-property proofs. It updates the A.III navigation row only; categorical
+packaging, localization exactness, representability and other A.III assertions
+remain open. All other initial-pass statuses retain their stated date and scope.
 
 ## Reference and reading record
 
@@ -139,7 +145,7 @@ including definitions, remarks and unnumbered results.
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Backlog |
 | A.II | Equivalence of categories | 250 / 256 | Backlog |
-| A.III | Universal problems and representability | 251 / 257 | Backlog |
+| A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
 | A.IV | Limits and colimits | 255 / 261 | Backlog |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Backlog |
