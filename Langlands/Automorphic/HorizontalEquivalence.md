@@ -36,4 +36,17 @@ source identification is asserted. This unit transports the given concrete
 spaces; it does not construct square zero, cycles, boundaries, cohomology,
 smoothness of the horizontal representations or general tensor coefficients.
 
-Authorship: Worker 2.
+Implementation note. The local `AddCommGroup` instances on
+`RationalInvariantFunctions F n`, `ContinuousRationalFunctions F n`,
+`FiniteSmoothRationalFunctions F n`, `AutomorphicForms F n`,
+`StableAutomorphicFunctions F n`, `S.Space` and `T.Space` are exactly the
+canonical `Submodule.addCommGroup` structures and remain local to this
+module. They have explicit names with the prefix `horizontalEquivalence`.
+Anonymous instances would receive generated public declaration names
+coinciding with those of `HorizontalCohomology`; the explicit names permit
+importing this module together with `HorizontalCohomology`,
+`HorizontalCohomologyClasses` and `HorizontalCohomologyFinite`, in either
+order. No construction or theorem changes.
+
+Authorship: Worker 2. Import-collision diagnosis and correction (explicit
+local instance names): Worker 986.

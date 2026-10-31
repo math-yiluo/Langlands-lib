@@ -17,18 +17,27 @@ open ArchimedeanGL
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+-- Explicit names keep these canonical local structures from colliding with
+-- generated instance names in sibling modules imported alongside this one.
+local instance horizontalEquivalenceRationalInvariantAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance horizontalEquivalenceContinuousRationalAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalEquivalenceFiniteSmoothRationalAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalEquivalenceAutomorphicFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance horizontalEquivalenceStableAutomorphicAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S T : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
-local instance : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance horizontalEquivalenceSSpaceAddCommGroup : AddCommGroup S.Space :=
+  Submodule.addCommGroup _
+local instance horizontalEquivalenceTSpaceAddCommGroup : AddCommGroup T.Space :=
+  Submodule.addCommGroup _
 
 
 namespace Equivalence

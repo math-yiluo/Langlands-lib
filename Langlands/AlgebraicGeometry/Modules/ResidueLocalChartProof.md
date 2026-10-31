@@ -29,16 +29,19 @@ the only trivialization assumption is the specified chart on `U`.
 ## Implemented proof
 
 The proof compares zero morphisms and then negates the resulting equivalence.
-All supporting lemmas in this module are private.
+The four general zero-test helpers are imported from
+`Modules.MorphismVanishing`; the residue-specific helpers in this module remain
+private. The shared module preserves the statements and proofs of the original
+private helpers, with names shared by the section-vanishing API.
 
-First, `unit_hom_eq_zero_iff` shows that a morphism from the structure module
+First, `structureModule_hom_eq_zero_iff` shows that a morphism from the structure module
 is zero precisely when its value at one on the whole scheme is zero.
 Naturality restricts that value to every open, and linearity determines the
 morphism on every section. Consequently, nonvanishing of the actual
 residue section is equivalent to the pulled-back `sectionHom` being nonzero:
 the inverse unit comparison can be cancelled because it is an isomorphism.
 
-Next, `natIso_map_eq_zero_iff` transports vanishing through a natural
+Next, `map_eq_zero_iff_of_natIso` transports vanishing through a natural
 isomorphism by its naturality square and cancellation. Applied to
 `Scheme.Modules.pullbackComp`, it compares iterated and composite pullback.
 Pullback along a scheme isomorphism reflects zero: pull back once more
@@ -81,7 +84,7 @@ nonvanishing equivalence.
 
 This is an internal derived proof of the Library's local-coordinate
 interface, not a transcription of an external theorem. It imports
-`ResidueLocalChartStatement` and `PullbackUnitProofs` by their Lean module
+`ResidueLocalChartStatement`, `PullbackUnitProofs` and `MorphismVanishing` by their Lean module
 names and uses the actual scheme-module, adjunction, and residue-field
 constructions in pinned Mathlib. The proof establishes only the specified
 local comparison; the final global line-bundle composition belongs to its
