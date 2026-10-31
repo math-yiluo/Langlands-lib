@@ -19,7 +19,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Initial source-read assertions, full section backlog, general reductive scope and dependency/ownership boundaries.
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
 - [Renard 2026 Appendix A: source discrepancies](../notes/renard/appendix-a-corrections.md) — Concrete counterexamples, corrected hypotheses and reuse routes for localization, constant functors and abelian subcategories.
-- [Renard C.II: quotient maps and finite localization](../notes/renard/stable-quotients.md) — Exact quotient-map assertions, localization prerequisites, published-interface boundaries and remaining statement/proof tasks.
+- [Renard C.II: quotient maps and finite localization](../notes/renard/stable-quotients.md) — Published stability and quotient proofs, actual localization constructions, the internal finite-localization theorem and the remaining nonunital source convention.
 - [Renard 2026: small projectives and original nonunital modules](../notes/renard/category-module-progress.md) — Published finite-subcoproduct proof, actual Hom-equivalence and original-action Noetherian statements, and remaining categorical comparisons.
 - [Renard 2026: finiteness conventions in Pareigis and Douady](../notes/renard/nonunital-finiteness-sources.md) — Exact unital passages, the supplied Douady edition and locator limits, and the remaining nonunital C.II convention.
 

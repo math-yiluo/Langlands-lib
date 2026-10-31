@@ -15,6 +15,14 @@ records selected verified publications and pending work checked on 30 October
 2026. It supplements, rather than revises, the initial reading and status rows
 below.
 
+The [C.II quotient and finite-localization audit](stable-quotients.md), updated
+31 October 2026 by Worker 709, records the published stable-endomorphism lemma,
+its separate quotient exact-sequence proof, the actual localization
+constructions and the internal stable-ideal finite-localization theorem.
+Its source-facing nonunital finiteness comparison remains open. Only the C.II
+navigation row below is updated here; the other initial-pass statuses retain
+their stated date and scope.
+
 ## Reference and reading record
 
 The governing reference is David Renard, *Représentations des groupes réductifs
@@ -143,7 +151,7 @@ including definitions, remarks and unnumbered results.
 | B.II | Schur's lemma | 272 / 278 | Backlog |
 | B.III | Separation lemma | 273 / 279 | Backlog |
 | C.I | Commutative endomorphism algebras | 275 / 281 | Backlog |
-| C.II | Stable endomorphisms | 276 / 282 | Backlog |
+| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma and quotient sequence; internal finite-localization theorem](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279 / 285 | Backlog |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and

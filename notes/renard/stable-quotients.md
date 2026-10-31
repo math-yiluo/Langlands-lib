@@ -1,10 +1,12 @@
 # Renard C.II: quotient maps and finite localization
 
-Worker 709, 26 October 2026. This passage audit records remaining construction,
-statement and proof obligations under whole-book task
-f5d1f399-a1f8-4ab5-a981-90b92abd4857 revision 2, coordinated with Worker 6.
-It is documentation, not a Lean result or a claim of complete Appendix C coverage.
-Task publication assigns future work; it supplies no mathematical acceptance.
+Worker 709, updated 31 October 2026, coordinated with Worker 6 under whole-book
+task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2. This passage audit
+records verified publications for the stable-endomorphism lemma, its auxiliary
+quotient sequence and actual localization constructions. It also distinguishes
+the published internal finite-localization theorem from the unresolved
+source-facing nonunital finiteness convention. It is documentation; it does not
+claim complete Appendix C or whole-book coverage.
 
 ## Source and reading
 
@@ -37,53 +39,69 @@ There is no finite-dimensionality or eventual-stability hypothesis on these
 constructions or on the exact-sequence assertions below.
 
 Write alpha_k, beta_k and gamma_k for the arrows induced respectively by t,
-t^k and t. These names in this note are mathematical notation, not published
-Lean declarations.
+t^k and t. In namespace `Langlands.LinearAlgebra.StableEndomorphism`, the
+actual spaces are `KerQuotient t k` and `RangeQuotient t k`; the arrows are
+`kerQuotientShift t k`, `kerToRangeQuotient t k` and
+`rangeQuotientShift t k`. Their constructions and representative formulas
+are in
+[StableEndomorphismQuotients](../../Langlands/LinearAlgebra/StableEndomorphismQuotients.md).
 
-| Source assertion, printed278/PDF284 | Exact content | Formal status and next owner |
+| Source assertion, printed278/PDF284 | Exact content | Published coverage |
 | --- | --- | --- |
-| Quotients and arrows | alpha_k : E_(k+1) -> E_k, beta_k : E_k -> F_k, gamma_k : F_k -> F_(k+1), with the indicated representative formulas | Definition task 9b1984a4-2185-4310-bfc4-393380056a9e revision 1, published by Worker 709; no candidate or accepted construction at this audit |
-| Kernel of beta_k | (N_k + (range(t) intersect N_(k+1)))/N_k, as the corresponding submodule of E_k | Retained statement and proof successors after the actual maps are public |
-| Image of beta_k | (I_(k+1) + t^k(N_(k+1)))/I_(k+1), as a submodule of F_k | Same successors |
-| First arrow | alpha_k is injective; its image is (N_k + t(N_(k+2)))/N_k, equal to the displayed kernel of beta_k | Same successors; retain the k+2 index |
-| Last arrow | gamma_k is surjective; its kernel equals the displayed image of beta_k | Same successors |
-| Five-term sequence | 0 -> E_(k+1) -> E_k -> F_k -> F_(k+1) -> 0 is exact | Same successors; use equality of actual ranges and kernels and the endpoint injectivity/surjectivity |
+| Quotients and arrows | alpha_k : E_(k+1) -> E_k, beta_k : E_k -> F_k, gamma_k : F_k -> F_(k+1), with the indicated representative formulas | Actual constructions imported unchanged by the published exactness proof |
+| Kernel of beta_k | (N_k + (range(t) intersect N_(k+1)))/N_k, as the corresponding submodule of E_k | Clause 2 of `PowerQuotientExactnessAt t k` |
+| Image of beta_k | (I_(k+1) + t^k(N_(k+1)))/I_(k+1), as a submodule of F_k | Clause 3 |
+| First arrow | alpha_k is injective; its image is (N_k + t(N_(k+2)))/N_k, equal to the displayed kernel of beta_k | Clauses 4–6; the corrected k+2 index is retained |
+| Last arrow | gamma_k is surjective; its kernel equals the displayed image of beta_k | Clauses 7–8 |
+| Five-term sequence | 0 -> E_(k+1) -> E_k -> F_k -> F_(k+1) -> 0 is exact | Clauses 9–10 give the two range/kernel equalities, with endpoints from clauses 4 and 7 |
+
+The theorem `powerQuotientExactSequenceStatements` in
+[StableEndomorphismQuotientProofs](../../Langlands/LinearAlgebra/StableEndomorphismQuotientProofs.md)
+has exactly the closed type `PowerQuotientExactSequenceStatements.{uR, uV}`.
+It proves all ten clauses for every module over an arbitrary, possibly
+noncommutative ring, with independent coefficient and carrier universes and
+every natural index, including zero. The aggregate also includes the explicit
+complex-vector-space specialization. The ring generality is internal derived
+content. No stability or finiteness premise is added. The proof uses direct
+element calculations on the actual quotients.
 
 The first-arrow paragraph initially describes the composite
 N_(k+2) -> N_(k+1) -> E_k. Its kernel is N_(k+1); passing to the quotient
-gives the injective arrow from E_(k+1). Assigning that nonzero kernel to the
+gives the injective arrow from E_(k+1). Assigning that prequotient kernel to the
 induced quotient arrow would misstate the assertion. The 2010 errata's
 correction to the image index N_(k+2) is already incorporated in the 2026 text.
 The last repeated I_k in the common-index proof is a prose typo; the current
 statement Markdown already records the increasing/decreasing comparison.
 
-The existing namespace
-`Langlands.LinearAlgebra.StableEndomorphism` in
-`Langlands/LinearAlgebra/StableEndomorphismStatements.lean` defines `Stable`,
-`EventuallyStable` and six Prop-valued targets, aggregated in
+## Stable-endomorphism lemma
+
+The same namespace in
+[StableEndomorphismStatements](../../Langlands/LinearAlgebra/StableEndomorphismStatements.md)
+defines `Stable`, `EventuallyStable` and six Prop-valued targets, aggregated in
 `StableEndomorphismStatement`. These cover the complementary-kernel/range
 criterion, exact-row transfer, monotonicity and the common first stabilization
 index for arbitrary-dimensional complex spaces with independent carrier
-universes. They expressly exclude the auxiliary quotient assertions above.
-Artifact 4fa7a40f-54a4-4ce8-9f84-270267ded0fa was verified as independently
-accepted and published at commit 24af03c708d2441a8b505c2999c4fd8905a0559d.
-It is statement evidence. Proof task
-38e30030-51f9-46f9-8e89-9b9b9a5020b7 owns that aggregate; this audit supplies
-no accepted proof of it. An alternate proof of the common-index target does
-not discharge the source's additional quotient assertions.
+universes. The theorem `stableEndomorphism` in
+[StableEndomorphismProofs](../../Langlands/LinearAlgebra/StableEndomorphismProofs.md)
+proves exactly `StableEndomorphismStatement.{uV, uA, uB, uC}`. The accepted
+proof retains the common **first** stabilization index, one-sided exact-row
+hypotheses and all four independent carrier universes; it adds no dimension or
+finiteness hypothesis. This lemma aggregate and the auxiliary quotient
+aggregate above are separate published results. Coverage of one is not used
+as evidence for the other.
 
 ## Actual localization prerequisites
 
-The following distinguishes already public constructions from the missing
-interfaces needed by C.II.
+The following replaces the earlier construction backlog. It credits the
+actual public interfaces at their verified scope.
 
 | Passage or prerequisite | Current interface or task | Remaining boundary |
 | --- | --- | --- |
 | A.III.1 example 4, printed252/PDF258 | `Langlands.Renard.ModuleLocalization` in `Langlands/Algebra/RenardModuleLocalization.lean`: actual `LocalizedModule`, `IsSLocal`, inverse action, `factor`, representative, factorization, uniqueness and comparison laws | Full-subcategory and universal-arrow category packaging remain separate |
-| First assertion of example 5, printed252/PDF258 | `Langlands.Algebra.PolynomialEndomorphism.equivalence` and `fieldEquivalence`, with actual evaluation actions and linear-intertwiner correspondence | These equivalences do not construct endomorphism localization |
-| Localization at powers of X in example 5, printed252–253/PDF258–259 | Definition task 70d44244-d27d-47c1-a8c9-89fece05f06e revision 1, published by Worker 709 | Actual localized carrier, invertible X action, canonical map, fraction formulas and unique factorization into invertible targets; no candidate or accepted construction at this audit |
-| Final sentence of example 5 | Retained general algebra-action extension | Preserve noncommutative and possibly nonunital B and its module-action conventions; an ordinary unital `Module B V` does not cover the full assertion |
-| Unnumbered lemma and corollary, printed253/PDF259 | Retained statement/proof successors over the actual localization interface | Injective case; K = union_n ker(a^n); induced injective quotient action; compatible quotient-localization identification; inverse-iterate exhaustion and its converse; surjective canonical map gives localization isomorphic to V/K |
+| First assertion of example 5, printed252/PDF258 | `Langlands.Algebra.PolynomialEndomorphism.equivalence` and `fieldEquivalence`, with actual evaluation actions and linear-intertwiner correspondence | The separate localization construction is given in the next row |
+| Localization at powers of X in example 5, printed252–253/PDF258–259 | `Langlands.Renard.EndomorphismLocalization.Localized`, `iota`, `localizedEnd`, `localizedInv`, `localizedEquiv`, `frac`, `factor`, `hasUniversalProperty` | Actual scalar-linear construction and universal property are public; categorical packaging is separately tracked |
+| Final sentence of example 5 | `Langlands.Renard.AlgebraActionLocalization.localizedAction` and `fieldLocalizedAction`, with fraction/canonical-map laws, actual intertwiners, inverse commutation and intrinsic uniqueness of the action extension | Construction is public for possibly noncommutative and nonunital actions. The arbitrary-target B-linear universal property is a separate assertion, not supplied by the action-construction receipt |
+| Unnumbered lemma and corollary, printed253/PDF259 | Separately tracked assertions over the actual localization | Injective case; K = union_n ker(a^n); induced injective quotient action; compatible quotient-localization identification; inverse-iterate exhaustion and its converse; surjective canonical map gives localization isomorphic to V/K. This note does not re-audit each successor's coverage |
 
 The example-4 artifact 9652aa10-f220-4739-a962-777ceedbd047 was verified as
 accepted and public at commit 6e568b3024e33889aa9fcaae1e910b0ff99f9b59; the
@@ -95,15 +113,25 @@ in the original ring. Preserve Worker 618's example-4 task ownership
 08bb9432-0606-45f0-a725-70e8b0dda929 and Worker 490's polynomial-equivalence
 work under task 959d6ee1-9a1f-4812-a911-7cf695869dd1.
 
-The current `Langlands/Algebra/NonUnitalModule.lean` and paired Markdown were
-read. They provide actual ambient actions and additive intertwiners, with named
-adapters for ordinary unital modules. They supply neither a compatibility law
-with a separate complex-vector-space structure nor endomorphism localization.
-Extending each commuting B-action map by the vector-localization universal
-property is a proposed route. It still requires a precise compatible action
-interface and proofs of its laws, B-linearity and universal factorization.
-This proposal is not a checked implementation or a new assumption permitted
-in the final theorem.
+The actual
+[endomorphism-localization pair](../../Langlands/Algebra/RenardEndomorphismLocalization.md)
+was read in full. It retains arbitrary commutative coefficient rings and
+independent coefficient, source and target universes; the field specialization
+matches the vector-space construction. The canonical map need not be
+injective. The localized operator is an actual automorphism.
+
+The
+[algebra-action pair](../../Langlands/Algebra/RenardAlgebraActionLocalization.md)
+was also read in full. It implements the previously proposed route: extend each
+commuting action endomorphism by the published scalar-linear `factor`, then
+prove the action laws on fractions. Its source specialization retains both
+bilinearity classes on the arbitrary field algebra. No unit-action law,
+nondegeneracy or finiteness is required. `iotaIntertwiner`,
+`localizedEndIntertwiner` and `localizedInvIntertwiner` are actual compatible
+linear intertwiners. The named ambient-action adapters require local selection;
+the companion explains scalar-instance choices when coefficient and algebra
+types coincide. Intrinsic uniqueness of this action extension does not itself
+assert B-linearity of a factor into an arbitrary target.
 
 ## Final finite-localization proposition
 
@@ -116,18 +144,65 @@ isomorphism of the localized pair with (I, a restricted to I), intertwining
 the actual operators. Finite-dimensionality over the complex numbers is not
 a source hypothesis.
 
-This proposition has no dedicated published Lean target or accepted proof in
-this audit. The source proof uses finiteness of End_B(L_a), integrality of the
-inverse localized operator, invariance of the canonical image under that inverse,
-surjectivity of L -> L_a, the kernel-union/quotient description from A.III.1,
-and noetherian stabilization. These are proof dependencies to discharge,
-not hypotheses to add to the proposition. Its precise B/module conventions
-and the final pair identification must be checked against the eventual
-published action and localization interfaces before publishing its statement.
+There is now a published **internal** theorem
+`Langlands.Renard.AlgebraActionLocalization.stableIdealFiniteLocalization`
+of the exact closed type `StableIdealFiniteLocalizationStatement.{uB, uV}`.
+Its
+[statement](../../Langlands/Algebra/RenardStableIdealFiniteLocalizationStatements.md)
+and
+[proof](../../Langlands/Algebra/RenardStableIdealFiniteLocalizationProof.md)
+use the actual localized carrier and compatible action. Its hypotheses say:
 
-The dependency order is actual quotient/localization definitions, then exact
-Prop-valued statements over their published names, then independent proof
-tasks. General B-action and stability adapters precede the final proposition
-where needed. The whole-book parent retains every item not assigned to a
-focused task above. Neither this note, the planning DAG nor task publication
-closes any of those mathematical obligations.
+- Every complex-linear left ideal of B is generated by a finite subset under
+  complex-linear span and the original left multiplication.
+- V is generated by a finite subset under complex-linear span and the original
+  B-action.
+- Its actual localization is generated in the same sense under its actual
+  localized action.
+
+The algebra and carrier universes remain independent. B may be noncommutative
+and nonunital. There is no added nondegeneracy or finite complex dimension.
+The first conclusion is `CompatibleLocalizationStabilizationAt ρ f`:
+surjectivity of the actual canonical map and one positive exponent giving both
+its compatible kernel and stability of the underlying power. For **every**
+positive stable exponent, `CompatibleStablePowerImageAt ρ f n` gives
+complementary compatible kernel and image and a unique complex-linear
+equivalence from the actual localization to that image. The equivalence
+intertwines both the action and the operators, and its inverse is the
+restriction of the actual canonical map.
+
+The Lean proof converts the three explicit hypotheses to Noetherianity of the
+actual complex unitization and finiteness of the two actual unitized modules,
+then applies the published quotient-Hopfian localization and stable-image
+results. Renard instead argues through finiteness of End_B(L_a), an inverse
+polynomial and invariance of the canonical image. The implemented proof route
+need not follow that argument.
+
+The source-facing proposition remains open at the convention comparison:
+complex-linear stable ideals/subspaces differ from arbitrary additive
+ideals/subgroups. The internal theorem does not silently choose a meaning for
+Renard's Noetherian and finite-type phrases. The
+[finiteness source audit](nonunital-finiteness-sources.md) records the checked
+unital passages in Pareigis and the supplied Douady edition, and their limits
+for this nonunital question. Those limits persist after publication of the
+internal theorem.
+
+## Verified acceptance and publication
+
+These are exact receipts, not task-publication or compilation-only claims.
+The stable-lemma, quotient and internal-localization proof receipts include
+independent unqualified approval, exact-target/unchanged-input checks, a Lake
+build and fresh integrated validation. The corresponding pairs were checked
+against the published Library.
+
+| Unit | Accepted artifact / independent reviewer | Publication commit |
+| --- | --- | --- |
+| Stable-endomorphism lemma proof | `7e459a2c-e520-488a-b102-1c94e5ad2441`, Reviewer 3448 | `6d91111e6f9b7a27124b1de32a4984bbdd222a61` |
+| Successive quotient exactness proof | `e8d09f33-46c5-48a6-a495-7c070345d3f9`, Reviewer 4224 | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
+| Actual scalar-linear localization construction | `b3b9bc36-a869-4b1a-a4c1-4e4c7263f87d` | `476e67f4df29c0dcafabdb5af459b61964b720a4` |
+| Actual compatible algebra-action construction | `ce219e42-e734-408f-a5b7-32d786a5a581`, Reviewer 4091 | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
+| Internal stable-ideal finite localization proof | `9bba1e51-88ef-4b14-830e-f1c480e324c3`, exact statement `554ff789-621a-4049-a9c2-ef9778dc73e8` | `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
+
+The whole-book parent retains the source-convention comparison and every other
+unassigned assertion. This note updates only the listed passages and preserves
+the ownership of other statement, proof and categorical successors.
