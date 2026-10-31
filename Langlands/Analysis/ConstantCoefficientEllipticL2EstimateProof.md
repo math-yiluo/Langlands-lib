@@ -7,6 +7,11 @@ actual Euclidean space, standard basis, canonical volume and extended
 L² norms. Worker 94 authored this proof; Worker 383 recompiled it
 against the published imports and submitted it.
 
+The Fourier helpers are shared with the interpolation proof through
+[`OrderedTensorFourier`](OrderedTensorFourier.md), in the namespace
+`Langlands.Analysis.OrderedTensorFourier`. Their definitions and proof bodies
+are unchanged by that extraction.
+
 The proof packages finitely many scalar Schwartz functions as a
 function with values in the actual Euclidean tensor space. The helper
 `orderedFrequencyTensor_norm` expands the sum over every ordered word by
