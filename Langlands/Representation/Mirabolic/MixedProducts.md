@@ -304,7 +304,7 @@ above. `MixedProductTensor.pullbackMap φ f` is `BinaryTensor.compMap f φ`,
 normalized product `binaryNormalizedProductFunctor` is not used.
 
 The complete transitive project import closure, excluding this module, consists
-of 40 modules:
+of 41 modules:
 
 - `Langlands.Group.GL.{Basic, BlockModulus, Blocks, Mirabolic,
   MirabolicMixedProductSubgroups, MirabolicOppositeIntersection,
@@ -320,21 +320,24 @@ of 40 modules:
   SmoothPart.BasicStatement, SmoothPart.BasicProof, Transfer.PullbackStatement,
   Transfer.PullbackProof, Transfer.SubquotientStatement,
   Transfer.SubquotientProof}`;
-- `Langlands.Representation.Tensor.Finite`;
+- `Langlands.Representation.Tensor.{Finite, OneFactor}`;
 - `Langlands.Representation.Twist.{Definitions, SmoothStatement, SmoothProof,
   RealPower}`.
 
-The other six direct imports account for 27 of these modules. The remaining 13
+The other six direct imports account for 27 of these modules. The remaining 14
 come only through `BinaryProduct`: `BinaryProduct` itself,
 `Langlands.Group.GL.{BlockModulus, Blocks, MirabolicOppositeIntersection,
 OppositeBlocks, PadicBlocks, RankReindex}`,
 `Langlands.Representation.Induction.{BlockFactors, Parabolic}`,
 `Langlands.Representation.Jacquet.PositiveCharacter`,
 `Langlands.Representation.Smooth.Transfer.{SubquotientStatement,
-SubquotientProof}` and `Langlands.Representation.Tensor.Finite`. Thus
-`Tensor.Finite` is a transitive import, through `Induction.BlockFactors`. This
-module uses none of its declarations. In particular it does not use
+SubquotientProof}` and `Langlands.Representation.Tensor.{Finite, OneFactor}`.
+Thus `Tensor.Finite` is a transitive import, through `Induction.BlockFactors`.
+This module uses none of its declarations. In particular it does not use
 `FiniteTensor.externalFunctor`; the binary tensor model above takes its place.
+`Tensor.OneFactor` holds the one-factor tensor actions `BinaryTensor.secondFactor`
+and `BinaryTensor.firstFactor`, their maps and smoothness lemmas, extracted from
+`BinaryProduct`, which imports it directly. This module uses none of them.
 
 These are matrix, block-parabolic, local-field, smooth-category, tensor, twist,
 positive-character and induction infrastructure only, including the binary

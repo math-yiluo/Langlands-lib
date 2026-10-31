@@ -82,7 +82,8 @@ where `b = flatScalars C D c` are the flattened coordinates and
 `FundIndex C` consists of pairs of an outer block `j` and `t < C.size j - 1`;
 the corresponding `k = t + 1` satisfies `0 < k < C.size j`. Two auxiliary shapes
 are used. `fundRefinement` refines block `j` as `twoBlock (C.size j) k` with
-sizes `(k, C.size j - k)` and leaves every other block whole using
+sizes `(k, C.size j - k)`, imported with its coordinate lemma from
+[`TwoBlockShape`](../../Group/GL/TwoBlockShape.md), and leaves every other block whole using
 `CuspidalSupport.LeviAdmissibility.oneBlock`, imported from
 [`OneBlockShape`](../../Group/GL/OneBlockShape.md).
 `fundScalars` takes `(ϖ, 1)` in block `j` and `1` elsewhere. Then:
