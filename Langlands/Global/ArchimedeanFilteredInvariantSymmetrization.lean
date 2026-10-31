@@ -112,15 +112,15 @@ theorem envelopingCompact_hasFiniteContinuousOrbits :
   exact (envelopingConjugation_hasFiniteContinuousSpan K n a).comp
     (fun k : standardInfiniteCompact K n => k.val) continuous_subtype_val
 
-local instance : MeasurableSpace (standardInfiniteCompact K n) :=
+local instance symmetrizationMeasurableSpace : MeasurableSpace (standardInfiniteCompact K n) :=
   borel (standardInfiniteCompact K n)
-local instance : BorelSpace (standardInfiniteCompact K n) := ⟨rfl⟩
+local instance symmetrizationBorelSpace : BorelSpace (standardInfiniteCompact K n) := ⟨rfl⟩
 
 private def symmetrizationAveragingMeasure : Measure (standardInfiniteCompact K n) :=
   Measure.haarMeasure ⟨⟨Set.univ, isCompact_univ⟩, by simp⟩
-local instance : IsProbabilityMeasure (symmetrizationAveragingMeasure K n) :=
+local instance symmetrizationProbabilityMeasure : IsProbabilityMeasure (symmetrizationAveragingMeasure K n) :=
   ⟨Measure.haarMeasure_self⟩
-local instance : (symmetrizationAveragingMeasure K n).IsMulLeftInvariant := by
+local instance symmetrizationLeftInvariant : (symmetrizationAveragingMeasure K n).IsMulLeftInvariant := by
   dsimp only [symmetrizationAveragingMeasure]
   infer_instance
 
