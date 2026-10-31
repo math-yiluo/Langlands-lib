@@ -27,7 +27,7 @@ The direction "projective of finite type implies small projective" uses the AB5 
 
 ## Finite type implies small
 
-All helper lemmas below are private.
+All helper lemmas below are private, except `preservesCoproduct_of_finiteFactor`. That lemma is public so that other modules can reuse it by name (see "Relation to the finite-support assertion").
 
 **Finite subcoproducts.** Fix `f : I → C` with `I : Type w`. For `T : Finset I`, the canonical map `Sigma.desc fun j : T => Sigma.ι f j.1` from the finite subcoproduct to `∐ f` has a retraction (`finIncl_retraction`). The retraction sends the `i`-th summand to the `i`-th inclusion when `i ∈ T`, and to `0` otherwise. So the map is a monomorphism (`mono_finIncl`). `finSub f T` is the subobject it represents, and `finSub_mono` shows that it is monotone in `T`. By `eq_top_of_finSub_le`, every common upper bound `U` of all `finSub f T` is `⊤`. Indeed, each `Sigma.ι f i` factors through `finSub f {i}`, hence through `U`. The factorizations assemble into a section of `U.arrow`. Then `U.arrow` is a split epimorphism and a monomorphism, hence an isomorphism.
 
@@ -61,10 +61,22 @@ By `Submodule.iSup_induction`, every `x ∈ N` satisfies `x ≫ subobjectSumDesc
 
 ## Relation to the finite-support assertion
 
-The Library statement `Langlands.Renard.SmallProjectiveFiniteSupportStatement` (DAG node `proof.renard-small-projective-finite-support`) is a separate source assertion with its own owner. This unit neither proves nor claims it. The private lemma `preservesCoproduct_of_finiteFactor` proves only that finite-subcoproduct factorization implies coproduct preservation. `exists_finite_factor` derives such factorizations from finite type and the AB5 law. The forward direction never proves finite factorization for arbitrary morphisms into arbitrary coproducts. It only shows that the one section `s` lies in the span of the summand inclusions.
+The Library statement `Langlands.Renard.SmallProjectiveFiniteSupportStatement` (DAG node `proof.renard-small-projective-finite-support`) is a separate source assertion with its own owner. This unit neither proves nor claims it. The public lemma `preservesCoproduct_of_finiteFactor` proves only that finite-subcoproduct factorization implies coproduct preservation. Its full signature is
+
+```lean
+theorem Langlands.Renard.preservesCoproduct_of_finiteFactor {C : Type u} [Category.{v} C]
+    [Abelian C] [HasCoproducts.{w} C] {P : C} {I : Type w} (f : I → C)
+    (hfact : ∀ g : P ⟶ ∐ f, ∃ (T : Finset I) (g' : P ⟶ ∐ fun j : T => f j),
+      g' ≫ Sigma.desc (fun j : T => Sigma.ι f j.1) = g) :
+    PreservesColimit (Discrete.functor f) (preadditiveCoyonedaInt P)
+```
+
+The separate proof module `Langlands.CategoryTheory.Renard.SmallProjectiveFiniteSupport` reuses it by name for the converse direction of that assertion. `exists_finite_factor` derives such factorizations from finite type and the AB5 law. The forward direction never proves finite factorization for arbitrary morphisms into arbitrary coproducts. It only shows that the one section `s` lies in the span of the summand inclusions.
 
 ## Provenance and checks
 
 Worker 840 wrote the Lean proof and this Markdown. Development check `4076a43e-3dd9-4043-9fb8-f68fdc634278` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the module with no errors or warnings. It inspected `Langlands.Renard.smallProjectiveFiniteType` as a theorem with level parameters `w, v, u`. Its only axioms are `propext`, `Classical.choice` and `Quot.sound`. Development checks do not establish exact-target validation, independent acceptance or publication.
+
+Worker 937 later made `preservesCoproduct_of_finiteFactor` public. The change removed its `private` modifier and added a sentence to its docstring and to the module docstring. No statement or proof changed. Development checks `75be94f5-bfeb-441c-b587-ac229b08fd4f` and `1a0cc451-e0ae-486d-8ada-5a1b7a1e89d4`, in the same environment over Library commit `f60a6c408d4d2ab4d0217f8be1dd8745e54a207c`, recompiled the module with no errors or warnings. The second check confirmed by `rfl` that the type of `smallProjectiveFiniteType` is still exactly the statement. It also confirmed that `smallProjectiveFiniteType` and `preservesCoproduct_of_finiteFactor` use only the same three axioms.
 
 This unit proves the A.VIII.2 comparison sentence only. The finite-support characterization, presentations, the regular-module converse and Morita equivalence remain separate obligations.
