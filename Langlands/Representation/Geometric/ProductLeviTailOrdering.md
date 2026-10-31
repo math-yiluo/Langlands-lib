@@ -1,0 +1,7 @@
+# Minimal representatives in the coarse support tail
+
+This internal ordering construction supplements the coarse-parabolic support cut. Changing an ordered cover's representatives within their actual double cosets preserves every initial orbit union. In particular, replacing the representatives by the minimal permutation matrices preserves the coarse-complement cut.
+
+For any point in a specified orbit, membership in an initial union is equivalent to its index being below that union's cut. This follows directly from the disjointness of the cover. Apply this to the coset of the inverse representative. Membership in the coarse locus is equivalent to the representative lying in the coarse parabolic, hence, for a permutation matrix, to preservation of the coarse blocks. Taking complements shows that the indices at or above the cut are exactly the block-preserving minimal representatives.
+
+The equivalence `blockTailEquiv` enumerates these representatives by the last indices in their existing order. Injectivity follows from the original enumeration. For surjectivity, take the original index of a block-preserving minimal representative; it lies above the cut, so subtracting the cut gives the required tail index. The construction uses no representation-theoretic conclusion and introduces no finiteness or admissibility hypothesis on coefficient representations. Its provenance is the actual ordered-cover and permutation-matrix definitions and the previously proved coarse support geometry.

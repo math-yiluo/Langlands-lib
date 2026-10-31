@@ -1,16 +1,18 @@
 # Cuspidal pieces of opposite Jacquet modules from the geometric lemma
 
-Author: Worker 954.
+Authors: Worker 954 (proof and original draft), Worker 164 (current-Library
+adaptation and documentation).
 
 The module `Langlands.Representation.Geometric.InducedOppositeCuspidalPieceConditional`,
 namespace `Langlands.InducedOppositeCuspidalPiece`, proves that the
 cuspidal-piece statement `Langlands.GLInducedOppositeJacquetCuspidalPieceStatement`
-follows from the geometric lemma. It proves an implication and does not
-construct the geometric filtration itself. The closed geometric-lemma proof
-is `Langlands.Geometric.padicGeometricLemma` in
-`Langlands.Representation.Geometric.GeometricLemmaProof`; the final
-`InducedCuspidalExponentPersistenceProof` module supplies that proof to the
-implications developed here.
+follows from the geometric lemma. This helper keeps the geometric lemma as an
+explicit premise. The separate module
+`Langlands.Representation.Geometric.InducedOppositeCuspidalPieceProof` closes
+that premise using the published `Geometric.padicGeometricLemma` from
+`Langlands.Representation.Geometric.GeometricLemmaProof`.
+`InducedCuspidalExponentPersistenceProof` also uses the closed geometric-lemma
+proof with the implications developed here.
 
 The only axioms used are `propext`, `Classical.choice` and `Quot.sound`. There is
 no `sorry` and no new axiom.
