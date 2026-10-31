@@ -36,8 +36,9 @@ The definition splits into three cases.
 A rank-zero carrier is never dropped or replaced by `ℂ`. It stays a tensor
 factor, on which the trivial group `GL_0(F)` necessarily acts trivially. When
 both ranks are zero the `a = 0` branch applies; the result is `A ⊗ B` with
-trivial action (`binaryZeroZeroTensorEquiv`). The module modifies no existing
-Library module. Its only new hypotheses are the case hypotheses on the ranks
+trivial action (`binaryZeroZeroTensorEquiv`). The generic one-factor tensor
+constructions are shared through `Tensor/OneFactor`. The only new hypotheses of the binary-product constructions
+are the case hypotheses on the ranks
 (`a = 0`, `0 < a`, and so on), which are arguments of the case declarations.
 
 ## Rank-zero general linear groups
@@ -58,24 +59,11 @@ to a pure tensor with a zero coordinate.
 
 ## Tensor products with one acting factor
 
-These declarations are in the namespace `Langlands.BinaryTensor`. Here `G` is a
-group and all modules are complex vector spaces.
-
-- `secondFactor V σ` is the representation `1 ⊗ σ` of `G` on `V ⊗ W`:
-  `g (v ⊗ w) = v ⊗ σ(g) w` (`secondFactor_apply`, `secondFactor_tmul`). It is
-  `Representation.tprod` of the trivial representation on `V` and `σ`.
-- `firstFactor ρ W` is the representation `ρ ⊗ 1` of `G` on `V ⊗ W`:
-  `g (v ⊗ w) = ρ(g) v ⊗ w` (`firstFactor_apply`, `firstFactor_tmul`).
-- `secondFactorMap f g`, for a linear map `f : V → V'` and an intertwiner
-  `g : σ → σ'`, is the intertwiner `f ⊗ g` from `secondFactor V σ` to
-  `secondFactor V' σ'`. `secondFactorMap_tmul` and
-  `secondFactorMap_toLinearMap` give its values. `secondFactorMap_id` and
-  `secondFactorMap_comp` are the functor laws. `secondFactorMap_zero_left` and
-  `secondFactorMap_zero_right` say that `f ⊗ g` is zero if `f = 0` or `g = 0`.
-- `firstFactorMap f g`, for an intertwiner `f : ρ → ρ'` and a linear map
-  `g : W → W'`, is the intertwiner `f ⊗ g` from `firstFactor ρ W` to
-  `firstFactor ρ' W'`, with the corresponding lemmas `firstFactorMap_tmul`,
-  `_toLinearMap`, `_id`, `_comp`, `_zero_left` and `_zero_right`.
+The generic declarations in namespace `Langlands.BinaryTensor` are imported
+from [Tensor representations with one acting factor](../Tensor/OneFactor.md).
+That module contains `firstFactor`, `secondFactor`, their intertwiner maps,
+the action and functor laws, and the smoothness results. Their names and
+mathematical definitions are unchanged.
 
 ### Pullbacks and universe lifts
 

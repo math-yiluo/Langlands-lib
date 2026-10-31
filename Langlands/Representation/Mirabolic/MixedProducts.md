@@ -288,35 +288,66 @@ the main declarations are `propext`, `Classical.choice` and `Quot.sound`.
 
 Direct project imports: `Langlands.Group.GL.MirabolicMixedProductSubgroups`,
 `Langlands.Group.GL.NormalizedCharacter`,
+`Langlands.Representation.Induction.BinaryProduct`,
 `Langlands.Representation.Induction.Definitions`,
 `Langlands.Representation.Twist.RealPower`,
 `Langlands.Representation.Smooth.SmoothPart.BasicProof` and
 `Langlands.Representation.Smooth.Transfer.PullbackProof`. The other imports are
-`Mathlib.Algebra.Module.ULift` and `Mathlib.CategoryTheory.Products.Basic`. The
-complete transitive project import closure, excluding this module, consists of
-27 modules:
+`Mathlib.Algebra.Module.ULift` and `Mathlib.CategoryTheory.Products.Basic`.
 
-- `Langlands.Group.GL.{MirabolicMixedProductSubgroups, MirabolicProjection,
-  MirabolicRadical, Mirabolic, UpperUnipotent, RankMaps, Basic, Padic,
-  NormalizedCharacter}`;
+`BinaryProduct` is imported for the five compatibility abbreviations described
+above. `MixedProductTensor.pullbackMap φ f` is `BinaryTensor.compMap f φ`,
+`MixedProductTensor.compEquiv φ e` is `BinaryTensor.compEquiv e φ`, and
+`MixedProductTensor.lift`, `liftEquiv` and `liftMap` are `BinaryTensor.lift`,
+`BinaryTensor.liftEquiv` and `BinaryTensor.liftMap`. These five are the only
+`BinaryProduct` declarations used by this module. In particular the binary
+normalized product `binaryNormalizedProductFunctor` is not used.
+
+The complete transitive project import closure, excluding this module, consists
+of 40 modules:
+
+- `Langlands.Group.GL.{Basic, BlockModulus, Blocks, Mirabolic,
+  MirabolicMixedProductSubgroups, MirabolicOppositeIntersection,
+  MirabolicProjection, MirabolicRadical, NormalizedCharacter, OppositeBlocks,
+  Padic, PadicBlocks, RankMaps, RankReindex, UpperUnipotent}`;
 - `Langlands.LocalField.{Definitions, Canonical, Topology}` and
   `Langlands.LocalField.Normalization.{Definitions, Statement, Proof}`;
-- `Langlands.Representation.Category.Basic`,
-  `Langlands.Representation.Induction.Definitions`;
+- `Langlands.Representation.Category.Basic`;
+- `Langlands.Representation.Induction.{BinaryProduct, BlockFactors, Definitions,
+  Parabolic}`;
+- `Langlands.Representation.Jacquet.PositiveCharacter`;
 - `Langlands.Representation.Smooth.{Definitions, SmoothPart.Definitions,
   SmoothPart.BasicStatement, SmoothPart.BasicProof, Transfer.PullbackStatement,
-  Transfer.PullbackProof}`;
+  Transfer.PullbackProof, Transfer.SubquotientStatement,
+  Transfer.SubquotientProof}`;
+- `Langlands.Representation.Tensor.Finite`;
 - `Langlands.Representation.Twist.{Definitions, SmoothStatement, SmoothProof,
   RealPower}`.
 
-These are matrix, local-field, smooth-category, twist and induction
-infrastructure only. The closure contains no derivative, segment, socle,
+The other six direct imports account for 27 of these modules. The remaining 13
+come only through `BinaryProduct`: `BinaryProduct` itself,
+`Langlands.Group.GL.{BlockModulus, Blocks, MirabolicOppositeIntersection,
+OppositeBlocks, PadicBlocks, RankReindex}`,
+`Langlands.Representation.Induction.{BlockFactors, Parabolic}`,
+`Langlands.Representation.Jacquet.PositiveCharacter`,
+`Langlands.Representation.Smooth.Transfer.{SubquotientStatement,
+SubquotientProof}` and `Langlands.Representation.Tensor.Finite`. Thus
+`Tensor.Finite` is a transitive import, through `Induction.BlockFactors`. This
+module uses none of its declarations. In particular it does not use
+`FiniteTensor.externalFunctor`; the binary tensor model above takes its place.
+
+These are matrix, block-parabolic, local-field, smooth-category, tensor, twist,
+positive-character and induction infrastructure only, including the binary
+normalized product. `Jacquet.PositiveCharacter` provides only the positive
+square root of a positive real character and its inverse in `ℂˣ`
+(`positiveHalfCharacter`, `inverseHalfCharacter`); it is used by
+`Group.GL.BlockModulus`, and no Jacquet module is imported. The
+closure contains no Haar-modulus identification, derivative, segment, socle,
 classification, adjunction, duality or pairing module. In particular it avoids
 the modules `SegmentHeadProductIrreducibility`, `GenericSegmentProductUniqueness`,
 `SquareIntegrableLanglandsClassification`,
 `UnlinkedSegmentSocleProductIrreducible`,
 `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`
 and `SegmentSocleProductIrreducibility`, and every result owned by the tasks
-excluded in task `f5488c8d-59a8-4de8-8649-4511bbaea5d9`. The published
-`Tensor.Finite` and the separate binary GL product are not imported. All
-imported pairs are used unchanged.
+excluded in task `f5488c8d-59a8-4de8-8649-4511bbaea5d9`. All imported pairs are
+used unchanged.

@@ -8,6 +8,11 @@ matrices, universal determinant polynomial, and every coefficient along the
 actual structure-sheaf ring maps. It does not claim to translate a separate
 result of Harris.
 
+The local decidable-equality instance has the explicit name
+`localChartDeterminantDecidableEq`, so this module may be imported together with
+`LocalSectionIso` without colliding with that module's generated instance name.
+This naming choice leaves the constructions and mathematical assertions unchanged.
+
 Fix a morphism `f : X ⟶ Y` of Mathlib schemes, an open `U` of `Y`, a module
 sheaf `M` on `Y`, a finite type `I : Type u`, and a supplied chart
 

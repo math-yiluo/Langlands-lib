@@ -77,7 +77,7 @@ lemma localHomPullback_sum (f : X ⟶ Y) (U : Y.Opens) {M N : Y.Modules}
 
 variable {I : Type u} [Fintype I] {M : Y.Modules} {U : Y.Opens}
 
-local instance : DecidableEq I := Classical.decEq I
+local instance localChartDeterminantDecidableEq : DecidableEq I := Classical.decEq I
 
 /-- The chart generators, evaluated on the unit, are exactly its section basis. -/
 lemma localUnitSection_generator
