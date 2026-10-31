@@ -18,20 +18,14 @@ multiplicative and a homeomorphism. No admissibility or finite dimension is used
 
 ## Algebraic dual, smoothness, coefficients, and irreducibility
 
-The declarations in this paragraph are in namespace `Langlands`.
-`dual_comp_monoidHom` identifies the actual algebraic dual of a pulled-back action
-with the pullback of its algebraic dual. It evaluates a functional on a vector
-and uses preservation of inverse by the group homomorphism. Thus the identity is
-valid even for infinite-dimensional carriers, without replacing the algebraic
-dual by a finite-dimensional model.
-
-`isSmoothVector_comp_continuousMulEquiv_iff` proves equivalence of smooth-vector
-conditions by applying the published `isSmoothVector_comp` in both directions.
-For the reverse implication, the pullback by `e.symm` has exactly the original
-action because `e (e.symm g) = g`.
-`isSmoothVector_dual_comp_continuousMulEquiv_iff` applies this equivalence after
-rewriting by `dual_comp_monoidHom`. In particular, a functional that is smooth
-for the pulled-back dual is smooth for the original dual, and conversely.
+The shared algebraic-dual and smoothness identities are imported from
+[`Smooth.Transfer.GroupEquivalence`](../Smooth/Transfer/GroupEquivalence.md).
+In namespace `Langlands`, `dual_comp_monoidHom` identifies the actual dual of a
+pullback with the pullback of the dual, and
+`isSmoothVector_comp_continuousMulEquiv_iff` and
+`isSmoothVector_dual_comp_continuousMulEquiv_iff` identify the respective
+smooth-vector conditions. They retain arbitrary carriers and independent group
+universes.
 
 `matrixCoefficient_comp_monoidHom` is the identity
 
@@ -171,6 +165,7 @@ All mathematics is imported by Lean names from the current Library. Besides
 `Classes`, the module imports `CuspidalSupport.GroupTransport` for smooth
 pullback and subgroup transport, and `CuspidalTensorAssociationProof` to reuse
 its general algebraic irreducibility and representation-equivalence pullback
-lemmas. Existing published pairs are unchanged. This unit constructs no
+lemmas. The shared dual and smoothness identities retain their original
+statements and proofs in `Smooth.Transfer.GroupEquivalence`. This unit constructs no
 isotypic projector, transports no intrinsic isotypic or annihilator subspace,
 and proves no product-Levi decomposition or induction theorem from §2.27.
