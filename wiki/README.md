@@ -16,7 +16,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 ## Reference notes
 
 - [Relative Picard representability: source and construction boundaries](../notes/abelian-schemes/relative-picard-source-map.md) — Faltings–Chai's unrestricted algebraic-space route, Lan and EVM conventions, and the remaining actual-family comparisons.
-- [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Initial source-read assertions, full section backlog, general reductive scope and dependency/ownership boundaries.
+- [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Source-read assertions including the I.5.1 candidate and draft status, full section backlog, general reductive scope and dependency/ownership boundaries.
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
 - [Renard I.4.2: duality coefficient conventions](../notes/renard/duality-coefficient-conventions.md) — A conjugation test for recovered coefficients, the compatible-input evaluation route, and the remaining full-source convention obligation.
 - [Renard 2026 Appendix A: source discrepancies](../notes/renard/appendix-a-corrections.md) — Concrete counterexamples, corrected hypotheses and reuse routes for localization, constant functors and abelian subcategories.

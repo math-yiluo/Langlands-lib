@@ -8,7 +8,8 @@ completed formalization. The detailed first-pass rows are in
 [the initial passage audit](initial-passages.md).
 Reading extents and task-status observations below describe that initial pass.
 The replacement corrects its annihilator orientation and module-completion
-scope; later reading and child-task developments require a separate update.
+scope. The dated updates below record selected later reading and child-task
+developments; the remaining initial-pass rows retain their original scope.
 
 The [small-projective and original-module progress note](category-module-progress.md)
 records selected verified publications and pending work checked on 30 October
@@ -58,8 +59,16 @@ The [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md),
 dated 1 November 2026 by Worker 6, records the source passages, a conjugation
 example separating commuting actions from equality of recovered coefficients,
 and the remaining sufficient-input comparison and full-source obligations.
-It updates only the I.4 navigation row. It supplies no Lean result and does
-not close either duality comparison or decide the intended convention.
+It updates only the I.4 navigation row. The audit itself supplies no Lean result
+and does not close either duality comparison or decide the intended convention.
+A later direct check on 1 November 2026 verified regular-factor statement
+`b860ee57-1ca6-4a9a-812d-dbe23320fcf4` as accepted and public. Its declaration is
+`Langlands.Algebra.RenardRegularCoefficientStatements.RegularCoefficientComparisons`;
+it states sufficient-input coefficient equalities and compatibility for the actual
+regular actions. The separate proof task
+`b5c77a5a-3a42-4403-a140-2cebcd49de63` was ready without an executor or artifact.
+These statements leave the tensor-dual equivalences and full-source coefficient
+convention open.
 
 ## Reference and reading record
 
@@ -83,7 +92,37 @@ proof of (VI.5.1.3). Its current proof must be audited directly; an earlier
 edition's argument is not evidence for this item. No project Renard errata file
 was found in the initial local search. The author-site address in the preface
 returned HTTP 404 during that search; this does not establish that no errata
-exist. Review `b2ff6d20-2c13-4811-8514-46ae8eee3e2a` subsequently reports a working author page at `perso.pages.math.cnrs.fr/users/david.renard/`, a matching 2026 PDF hash, and separately labeled 2010 errata. That review is a navigation lead; the parent has not independently read those errata. Further errata discovery remains open.
+exist. Review `b2ff6d20-2c13-4811-8514-46ae8eee3e2a` subsequently reports a working author page at `perso.pages.math.cnrs.fr/users/david.renard/`, a matching 2026 PDF hash, and separately labeled 2010 errata. Worker 6 subsequently read the registered 2010 correction relevant to I.5.1, as recorded below. This does not close the audit of other corrections or further errata discovery.
+
+## I.5.1 assertion update, 1 November 2026
+
+Worker 6 read the original I.5.1 on printed p.26 / PDF32, including both proofs.
+The algebra is complex and idempotented, and the module is nondegenerate for its
+original, possibly nonunital action. Each actual fixed space `eM` has exactly the
+complex coefficients recovered from that action. No global finite dimension or
+separately supplied complex structure on the original carrier is assumed.
+
+| Source assertion, all at printed p.26 / PDF32 | Lean declaration or design | Checked status and obligation |
+| --- | --- | --- |
+| Unnumbered definition: every `eM` is finite-dimensional | `Langlands.Algebra.NonUnitalModuleAdmissible.IsAdmissible` | Candidate `72e9e547-d03b-4bea-982a-30a3e55205ad` passed machine validation and independent review `cb965063-f768-4b0e-81c6-1687e47d1842` by Reviewer 7124. Direct fetch still reported staged and nonpublic. It uses actual `FixedPart` and exactly `NonUnitalModuleCorner.complexModule`, with independent algebra/carrier universes. Publication remains required. |
+| Unnumbered proposition: admissibility iff the canonical inclusion into the nondegenerate bidual is an isomorphism | Draft `Langlands.Algebra.NonUnitalModuleAdmissibilityStatements.AdmissibleIffEvaluationBijective` | Specifies bijectivity of exactly `NonUnitalModuleDual.evaluation hA hM`. Statement task `f37fd8da-fde3-44fc-b66b-632fc07dfd1d` revision 1 was ready with no executor or artifact and is gated on the definition. Shared draft revision 1 is unreviewed. No statement publication or proof is claimed. |
+| Unnumbered corollary, first conclusion: the nondegenerate dual of an admissible module is admissible | Draft `Langlands.Algebra.NonUnitalModuleAdmissibilityStatements.AdmissibleDual` | Same task/draft. Selects exactly the actual `dualAction hA hM`, the opposite algebra and the published dual nondegeneracy witness. Proof remains open. |
+| Unnumbered corollary, second conclusion: an admissible module is simple iff its nondegenerate dual is simple | Draft `Langlands.Algebra.NonUnitalModuleAdmissibilityStatements.AdmissibleSimpleIffDualSimple` | Same task/draft. Uses `CategoryTheory.Simple` on the actual `NondegenerateModuleCat` objects and `dualObject`. The source annihilator argument and the categorical correspondence remain proof obligations. |
+
+The shared draft also supplies aggregate `AdmissibilityDuality`. Recovery check
+`53a184f9-ef0b-4a5a-8559-a6d62a4f3625` compiled the definition and private statement
+draft with zero errors/warnings and confirmed that aggregate returns `Prop`.
+This is private development evidence, not independent acceptance.
+
+Worker 6 also read the registered `renard-2010-corrections-complements`, SHA-256
+`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, PDF1–2,
+especially its correction to the printed 2010 p.29 reflexivity proof. The 2026
+text incorporates the converse through the ordinary algebraic bidual of each
+`eM`. Implementing the exact fixed-space comparison and canonical evaluation
+argument remains necessary. The original proof of the corollary uses the fixed
+spaces for dual admissibility and annihilators for simplicity. These proof
+routes are recorded for provenance and are not themselves verified proofs.
+I.5.2 and the rest of I.5 retain their audit and implementation obligations.
 
 ## Scope and evidence rules
 
@@ -137,7 +176,7 @@ including definitions, remarks and unnumbered results.
 | I.2 | Forgetful functors and adjoints | 14 / 20 | Backlog |
 | I.3 | Idempotent corner functor | 19 / 25 | Backlog |
 | I.4 | Duality | 22 / 28 | Partial: [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md); actual comparisons and full-source convention remain open |
-| I.5 | Classes of modules | 26 / 32 | Backlog |
+| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 definition candidate and shared statement draft, recorded above; proofs and the remainder of I.5 remain open |
 | I.6 | Properties of the nondegenerate module category | 27 / 33 | Backlog |
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
