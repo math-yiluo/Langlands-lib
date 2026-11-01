@@ -3,9 +3,15 @@
 Worker 709 checked this progress record on 1 November 2026 for whole-book task
 `f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 2. The exact final bound in
 Appendix C.I now has published statements and proofs in both its generated-algebra
-and arbitrary-subalgebra forms. Renard's intermediate assertions remain
-obligations of the whole-book program. This note records those two different
-coverage facts; it supplies no new Lean result.
+and arbitrary-subalgebra forms. The actual nilpotent maximum, carrier transport,
+numerical base cases and ideal-power filtration also have published coverage.
+Four further intermediate statements are published with separate proof tasks.
+The remaining source assertions stay with the whole-book program. This note
+records the precise boundaries and supplies no new Lean result.
+
+Publication and outstanding-work statuses below describe the audited Library
+`f731c98e996e50a63c6431bd18cbbe3298a87530`. Later publications are outside
+this audit's coverage.
 
 ## Source and conventions
 
@@ -153,23 +159,159 @@ publication records and independent-review bindings match the candidate
 IDs and hashes. Thus these are verified publications, beyond reports that a
 task or development check succeeded.
 
-## Intermediate source assertions still owed
+## Actual nilpotent maximum, transport and base cases
 
-The parent retains the following assertions from PDF281–282. Existing generic
-lemmas are reuse leads; this note does not certify exact source-facing
-declarations or proofs for these rows.
+The published
+[`RenardNilpotentDimensionMaximum`](../../Langlands/Algebra/RenardNilpotentDimensionMaximum.lean)
+defines `nilpotentGeneratedDimensions l V` as the dimensions of actual unital
+adjoins of commuting nilpotent `Fin l` tuples on `V`. It defines
+`nilpotentGeneratedMaxDimension l V` as the natural supremum of that set and
+`nilpotentGeneratedPhi l k` by specialization to `Fin k → ℂ`. The zero tuple
+shows nonemptiness, and inclusion in `End(V)` bounds the set by `(dim V)^2`.
+`nilpotentGeneratedMaxDimension_isGreatest` and
+`nilpotentGeneratedMaxDimension_attained` prove that the supremum is a greatest
+element with an actual attaining tuple. This discharges the maximum
+construction and witness obligation.
+
+The theorem
+[`nilpotentDimensionTransport`](../../Langlands/Algebra/RenardNilpotentDimensionTransportProof.lean)
+proves `NilpotentDimensionTransportStatement.{u,v}`. A complex linear
+equivalence between carriers in independent universes preserves the entire
+dimension set and its maximum; on every finite-dimensional carrier the maximum
+equals `nilpotentGeneratedPhi l (Module.finrank ℂ V)`.
+The implemented proof conjugates the original endomorphisms, preserves their
+commutation and nilpotence, and uses the published injective-adjoin dimension
+law. It obtains both set inclusions using the equivalence and its inverse.
+Transport is an internal justification of the dimension-only notation.
+
+The theorem
+[`nilpotentDimensionBaseCases`](../../Langlands/Algebra/RenardNilpotentDimensionBaseCasesProof.lean)
+proves `NilpotentDimensionBaseCasesStatement.{u}`. For the actual maximum on
+every carrier it proves dimension zero gives zero, dimension one gives one,
+the one-generator upper bound is `dim V`, and the empty-tuple maximum is zero
+on the zero space and one otherwise. The corresponding four formulas for
+`nilpotentGeneratedPhi` hold for every natural index. The source explicitly
+uses the one-generator bound and `φ_l(1) = 1`; the zero-space, empty-tuple and
+arbitrary-carrier clauses are derived extensions.
+Worker 16's proof uses attainment, the ambient bound and the published
+`Langlands.CommutingDimension.singleton_dimension` theorem. It evaluates the
+empty adjoin as the scalar algebra and obtains the canonical formulas by
+direct specialization. Nontriviality is derived locally when required.
+
+These results include all natural generator counts, zero spaces, empty
+tuples, and zero, repeated or redundant entries. The identity and scalars
+are included without increasing the generator count.
+
+## Actual filtration and published intermediate statements
+
+The published
+[`RenardNilpotentIdealFiltration`](../../Langlands/Algebra/RenardNilpotentIdealFiltration.lean)
+constructs, in namespace `Langlands.Renard.NilpotentFiltration`,
+`generatedAlgebra a`, `generatorIdeal a`, `idealPowerModule a n` and
+`idealPowerSubspace a n`. They are the original unital algebra `R`, its
+tuple-generated ideal `I`, and `I^n V` with its original evaluation action
+and restricted complex scalars. Construction does not require finite
+dimensionality, commutation or nilpotence. Its ideal is a left ideal for an
+arbitrary tuple; tuple commutation makes `R` commutative and gives the
+source's two-sided ideal.
+
+The construction proves the zeroth-level, successor-action, descending-family
+and stability laws, and that each generator maps `V` into `V_1`.
+The source endpoint `V_(dim V) = 0` is a separate statement and proof obligation.
+
+The following four closed Prop-valued statements are independently accepted
+and published. Their proof tasks remain separate; this audit does not certify
+a published proof of any row.
+All carrier quantifiers have explicit `AddCommGroup`, complex `Module` and
+`FiniteDimensional` instances, with arbitrary carrier universes and all
+natural tuple lengths.
+
+| Published statement in `Langlands.Renard` | Exact conclusion and hypotheses | Separate proof task |
+| --- | --- | --- |
+| [`NilpotentFiltrationVanishingStatement.{u}`](../../Langlands/Algebra/RenardNilpotentFiltrationVanishingStatement.lean) | Commuting nilpotent tuple implies its actual `idealPowerSubspace a (finrank ℂ V) = ⊥` | `36a1c2b6-0467-4c20-a4b3-dcd4621a31f5` |
+| [`NilpotentComplementGenerationStatement.{u}`](../../Langlands/Algebra/RenardNilpotentComplementGenerationStatement.lean) | For every complex complement `W` to `V_1`, every `n` satisfies `V_n = span_ℂ {r(w) : r ∈ I^n, w ∈ W} + V_(n+1)`, and `span_R W = V`, under the original commutation and nilpotence hypotheses | `feaf7e5c-a5fc-43e6-afcf-c31ca1e20acb` |
+| [`NilpotentComplementRestrictionStatement.{u}`](../../Langlands/Algebra/RenardNilpotentComplementRestrictionStatement.lean) | Under the same tuple and complement hypotheses, `r ↦ r.domRestrict W` is injective and `dim R ≤ (dim W)(dim V)` | `cce00747-d18c-4494-8413-901e6dc8f1ae` |
+| [`NilpotentDimensionMonotonicityStatement.{u,v}`](../../Langlands/Algebra/RenardNilpotentDimensionMonotonicityStatement.lean) | For every fixed `l`, `dim V ≤ dim W` implies the maximum on `V` is at most the maximum on `W`; also `Monotone (nilpotentGeneratedPhi l)` | `99b0a402-dca5-4c72-b0b3-d46a3de7f7ec` |
+
+A complement need not be invariant; restriction to it takes values in
+`W →ₗ[ℂ] V`. The generation and restriction statements assume neither their
+own conclusions nor filtration vanishing. The monotonicity statement
+retains independent universes, zero dimensions and empty tuples. It compares
+maxima; it makes no assertion that attainable dimension sets are included
+under a dimension inequality.
+
+## Publication evidence for the intermediate coverage
+
+The following definitions and exact proofs were directly verified as
+accepted and public, with unqualified independent approvals and successful
+fresh integration builds.
+
+| Published result | Accepted artifact | Independent reviewer | Publication integration |
+| --- | --- | --- | --- |
+| Actual maximum and attainment | `43ac537f-a7db-4355-b85f-630c244e70ec` | Reviewer 6408 | `130d6ea705ab48208985345f58cc059e` |
+| Carrier-transport proof | `e2c956d8-772e-4406-99db-cdd159ac8e3a` | Reviewer 6530 | `3efb8801adce41ecb98088948528651f` |
+| Numerical-base-case proof | `a2197b71-e778-48ab-9fb5-2272009457a4` | Reviewer 6631 | `a043259d901e4503bf27cf54479da137` |
+| Actual ideal-power filtration | `a0e3a479-0f7a-43c8-b8c5-a1c22f7a38ac` | Reviewer 6574 | `90c5392122f24de5b70ed3926806b572` |
+
+The exact proof receipts are
+`74b94c8f-a3df-46fd-8601-d2c4baab4e5b` for transport and
+`18b6a81f-34ec-41d5-862c-79b68954ece7` for the base cases.
+Both accept Lake build, exact target, unchanged statement and frozen inputs.
+The transport statement artifact is
+`5ff6ef8b-e038-45fb-9f14-a7da15bdf0da`, published by integration
+`9ee2d7e2a3e34fccadc7bcc6feb39a4a`; the base-case statement artifact is
+`882c07d4-d110-4086-aa1c-9a82315a092c`, published by integration
+`838386f3c9d74d43bf197590e50a5076`.
+
+| Published statement | Accepted artifact | Independent reviewer | Publication integration |
+| --- | --- | --- | --- |
+| Filtration vanishing | `2dd4c51f-0553-4b8d-80fb-a61ebe7e8905` | Reviewer 6680 | `af1e0a7c21ad4611a5c3fe8cffa48d24` |
+| Complement generation | `8671471e-427a-4d44-946f-1f4e6dafdc54` | Reviewer 6699 | `9ea63ef06f1e4101a62e9f1f074aa24e` |
+| Complement restriction | `e11acfba-65a2-491d-b715-ef6f881461b6` | Reviewer 6710 | `3b4fd0b38211423a8997d690ecc38cd0` |
+| Maximum monotonicity | `67da2cc7-a9cf-4500-8661-3bca0daf50c7` | Reviewer 6731 | `226f7d7bbf5f439d8f3318fb3619d6be` |
+
+All these pairs are present in the inspected Library
+`f731c98e996e50a63c6431bd18cbbe3298a87530`; the audited paired bytes agree
+with their frozen candidates and the workspace. The newest three statements
+were published at that commit. Earlier publication commits are
+`8f53f05bb76983088fd64f190658c6ac4c3edc1b` for the maximum,
+`7ad6e7323f2d14f5ccf8d30daa428878acda72c4` for its transport statement,
+`4c821aa88a155b2bb027aa516770ffd74d5635aa` for the transport proof and
+base-case statement, `a8934c89b9ba4ec0a4ce1a27cee0290064384404` for the
+filtration, and `b222ad9033fe539984cca2d240ff2c1ba76dee21` for the
+base-case proof and vanishing statement.
+
+Worker 1200 authored the maximum construction; Worker 16 authored the
+transport and base-case proofs.
+Worker 709 authored the reused intermediate statement drafts and filtration
+draft; Workers 1200, 1201, 1194 and 16 checked and prepared the respective
+contributions. Importing or documenting their published mathematics does not
+assign those proofs to this note's authors.
+
+## Remaining source assertions
+
+The parent retains the following obligations from PDF281–282 in addition to
+the four separate proof targets above.
 
 | Source passage | Remaining assertion or construction |
 | --- | --- |
 | PDF281, opening proof | The successive characteristic-subspace reduction, its stability under the whole algebra, the dimension comparison by `f_l`, and replacement by nilpotent parts |
-| PDF281, definition of `φ_l(k)` | The maximum dimension among algebras generated by `l` commuting nilpotents and the identity, including existence of a maximizing witness and the required domain conventions |
-| PDF281, ideal `I` and `V_i` | The actual ideal-power filtration `V_i = I^i V` and its vanishing by `i = k` |
-| PDF281, complement `W` | Generation of the successive quotients by `I^j W`, `R·W = V`, injectivity of restriction to `W`, and the resulting bound `dim R ≤ (dim W)·k` |
 | PDF281, `R'` and `R''` | The actual algebra/ideal splitting `R = R' + R''` and its restriction-dimension estimates |
-| PDF281, last lines | Monotonicity of `φ_l` and, for the positive-dimension domain used there, `φ_l(k) ≤ φ_l(⌊k - φ_l(k)/k⌋) + φ_(l-1)(k)` |
+| PDF281, complement and last lines | Apply restriction to an actual maximizing tuple to obtain `φ_l(k) ≤ s k`, then establish the floor recurrence on the positive-dimension domain used in the source |
 | PDF282, conclusion | The induction and strict-counterexample numerical contradiction in the source's variables |
 
-These obligations need focused definitions, exact statements and then proofs
-or checked reuse bridges. Their retention follows the whole-book scope,
-which includes substantive unnumbered assertions inside proofs. Publication
-of the final dimension bound does not close C.I or the parent task.
+The head/tail and first-level construction task
+`12a613fe-9176-41b3-907b-cbd2a60ec69f` had staged candidate
+`3664369f-4744-494c-b033-6ed391729176` with independent approval, but the
+direct fetch recorded for this audit reported `accepted=false`, `public=false`.
+It proposes the actual tail algebra, principal head ideal and restriction of
+the original algebra to `V_1`, including its restricted tuple and generated
+algebra. It supplied no published import at that snapshot. Splitting and first-level
+dimension statements must follow its actual publication.
+
+Focused definition, statement and proof work retains the current owners:
+Worker 189 for vanishing, Worker 88 for complement generation and Worker 308
+for complement restriction. The monotonicity proof task is published
+separately. The parent shared draft revision 4 and its broader mathematical
+obligations are preserved. Publication of the final bound and these
+intermediate results does not close C.I or the parent task.
