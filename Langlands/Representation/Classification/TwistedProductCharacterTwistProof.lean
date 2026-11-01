@@ -1,3 +1,4 @@
+import Langlands.Group.GL.BlockDeterminant
 import Langlands.Representation.Classification.UnitaryGenericCompatibilityStatement
 import Langlands.Representation.Induction.BlockCharacterAbsorption
 import Langlands.Representation.Induction.CharacterTwistProof
@@ -12,34 +13,11 @@ open GeneralLinear
 
 universe uF uV
 
-private theorem determinant_parabolic {R : Type uF} [CommRing R]
-    {n : ℕ} (B : BlockShape n) (g : B.parabolic R) :
-    determinant g.val = ∏ i, determinant (B.leviProjection R g i) := by
-  let M : Matrix B.Index B.Index R := g.val.val.submatrix B.indexEquiv B.indexEquiv
-  have hM : M.BlockTriangular Sigma.fst := g.property
-  apply Units.ext
-  rw [Matrix.GeneralLinearGroup.val_det_apply, ← Matrix.det_submatrix_equiv_self B.indexEquiv]
-  change M.det = _
-  rw [hM.det_fintype, Units.coe_prod]
-  apply Finset.prod_congr rfl
-  intro i _
-  let e : Fin (B.size i) ≃ {a : B.Index // a.1 = i} :=
-    Equiv.ofBijective (fun a => ⟨⟨i, a⟩, rfl⟩) (by
-      constructor
-      · intro a b h
-        exact Sigma.mk.inj_iff.mp (congrArg Subtype.val h) |>.2 |> eq_of_heq
-      · rintro ⟨⟨j, a⟩, h⟩
-        dsimp only at h
-        subst j
-        exact ⟨a, rfl⟩)
-  rw [← Matrix.det_submatrix_equiv_self e]
-  rfl
-
 private theorem determinant_leviEmbedding {R : Type uF} [CommRing R]
     {n : ℕ} (B : BlockShape n) (m : B.Levi R) :
     determinant (B.leviEmbedding R m) = ∏ i, determinant (m i) := by
   simpa only [BlockShape.leviInParabolic_val, BlockShape.leviProjection_section] using
-    determinant_parabolic B (B.leviInParabolic R m)
+    determinant_blockParabolic B (B.leviInParabolic R m)
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)
 
@@ -123,7 +101,7 @@ theorem twistedProductCharacterTwist :
         ((χ.toMonoidHom (determinant
           (B.leviEmbedding F.Carrier (B.leviProjection F.Carrier g))) : ℂ) •
             B.blockTensor σ (B.leviProjection F.Carrier g) v)
-    rw [determinant_parabolic, determinant_leviEmbedding]
+    rw [determinant_blockParabolic, determinant_leviEmbedding]
     exact smul_comm _ _ _
   exact ⟨e.trans (Induction.smoothInducedEquiv _ (equivOfRepresentationEq hτ))⟩
 

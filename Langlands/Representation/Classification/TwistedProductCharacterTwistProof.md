@@ -10,6 +10,9 @@ character, smooth block family and real block exponents, it constructs the
 actual representation equivalence between twisting the normalized product and
 the normalized product of the twisted blocks. The exponents remain unchanged.
 
+The imported `Langlands.GeneralLinear.determinant_blockParabolic` in
+`Langlands.Group.GL.BlockDeterminant` supplies the determinant identity.
+Its proof was extracted unchanged from this module during integration.
 The determinant of an upper block triangular matrix is computed after
 reindexing by the block-coordinate equivalence. Mathlib's block-triangular
 determinant formula gives one determinant for each fiber of the block index.

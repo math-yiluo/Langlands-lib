@@ -13,7 +13,9 @@ correction subgroup `V ∩ w P w⁻¹`. Composing with the published restricted
 retraction equivalences gives the corresponding maps for the actual nested
 kernel and intersection. Every map keeps the underlying matrix unchanged.
 
-`haarChar_eq_of_conjugacy` proves that any continuous group isomorphism
+The imported `haarChar_eq_of_conjugacy`, moved unchanged to
+`Langlands.HarmonicAnalysis.HaarConjugacy` with its public name preserved,
+proves that any continuous group isomorphism
 intertwining two group automorphisms identifies their actual Haar scaling
 characters. Its proof pushes a regular Haar measure across the isomorphism,
 transports the source scaling identity, and uses Haar scalar-factor uniqueness
