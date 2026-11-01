@@ -19,8 +19,10 @@ The [C.II quotient and finite-localization audit](stable-quotients.md), updated
 31 October 2026 by Worker 709, records the published stable-endomorphism lemma,
 its separate quotient exact-sequence proof, the actual localization
 constructions and the internal stable-ideal finite-localization theorem.
-Its source-facing nonunital finiteness comparison remains open. Only the C.II
-navigation row below is updated by that audit.
+It also records the published additive-to-scalar generation comparisons and
+their actual finite-localization consequence under three explicit additive
+generation premises. The source-facing nonunital finiteness comparison remains
+open. Only the C.II navigation row below is updated by that audit.
 
 The [A.III.1 endomorphism-localization progress note](endomorphism-localization.md),
 dated 31 October 2026 by Worker 709, verifies the published kernel/exhaustion,
@@ -157,7 +159,7 @@ including definitions, remarks and unnumbered results.
 | B.II | Schur's lemma | 272 / 278 | Backlog |
 | B.III | Separation lemma | 273 / 279 | Backlog |
 | C.I | Commutative endomorphism algebras | 275 / 281 | Backlog |
-| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma and quotient sequence; internal finite-localization theorem](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
+| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279 / 285 | Backlog |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and

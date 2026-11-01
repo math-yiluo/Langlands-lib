@@ -20,7 +20,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
 - [Renard 2026 Appendix A: source discrepancies](../notes/renard/appendix-a-corrections.md) — Concrete counterexamples, corrected hypotheses and reuse routes for localization, constant functors and abelian subcategories.
 - [Renard A.III.1: endomorphism-localization proofs](../notes/renard/endomorphism-localization.md) — Published kernel, quotient, converse, surjective-map and B-linear universal-property proofs, their exact scope and remaining categorical obligations.
-- [Renard C.II: quotient maps and finite localization](../notes/renard/stable-quotients.md) — Published stability and quotient proofs, actual localization constructions, the internal finite-localization theorem and the remaining nonunital source convention.
+- [Renard C.II: quotient maps and finite localization](../notes/renard/stable-quotients.md) — Published stability and quotient proofs, actual localization, scalar-linear and additive-to-scalar finite-localization theorems, and the remaining nonunital source convention.
 - [Renard 2026: small projectives and original nonunital modules](../notes/renard/category-module-progress.md) — Published finite-subcoproduct proof, actual Hom-equivalence and original-action Noetherian statements, and remaining categorical comparisons.
 - [Renard 2026: finiteness conventions in Pareigis and Douady](../notes/renard/nonunital-finiteness-sources.md) — Exact unital passages, the supplied Douady edition and locator limits, and the remaining nonunital C.II convention.
 
