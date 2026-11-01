@@ -38,3 +38,7 @@ motivated by the tensor and partial Fourier steps of JPSS,
 They neither construct induced sections nor assert their spanning, convergence
 of the Jacquet double integral, existence of an induced Whittaker functional,
 or the adjacent-rank image-equality theorem.
+
+The canonical p-adic helper instances have explicit module-specific names so
+this module can be imported with `AdjacentRankStarData`. Their types, bodies
+and local instance scope are unchanged.

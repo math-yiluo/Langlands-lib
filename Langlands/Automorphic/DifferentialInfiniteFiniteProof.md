@@ -128,3 +128,9 @@ needed for this component. Rank zero is covered uniformly by the same
 finite-dimensional and algebraic constructions. The proof uses default
 heartbeats and only the standard axioms `propext`, `Classical.choice`, and
 `Quot.sound`.
+
+The three local additive-group helper instances have explicit module-specific
+names, allowing this proof to be imported together with the actual cuspidal
+and operator-core constructions without collisions between generated
+declaration names. Their types and bodies remain the standard submodule
+additive-group structures.

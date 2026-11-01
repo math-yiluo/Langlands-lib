@@ -70,19 +70,19 @@ namespace Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance adjacentRankModelMapTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance adjacentRankModelMapValuative : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance adjacentRankModelMapLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance adjacentRankModelMapT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance adjacentRankModelMapDisconnected : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance adjacentRankModelMapMeasurable : MeasurableSpace F.Carrier := borel _
+local instance adjacentRankModelMapBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance adjacentRankModelMapGLMeasurable (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) := borel _
+local instance adjacentRankModelMapGLBorel (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
 
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
   (ψ : UnitaryAdditiveCharacter F.Carrier) (ν : AdditiveHaarMeasure F.Carrier)

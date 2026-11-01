@@ -48,11 +48,14 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions K n) :=
+local instance differentialInfiniteFiniteRationalGroup :
+    AddCommGroup (RationalInvariantFunctions K n) :=
   Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions K n) :=
+local instance differentialInfiniteFiniteContinuousGroup :
+    AddCommGroup (ContinuousRationalFunctions K n) :=
   Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions K n) :=
+local instance differentialInfiniteFiniteSmoothGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions K n) :=
   Submodule.addCommGroup _
 
 /-- Actual infinite-subgroup translation on the finite-smooth ambient space. -/
