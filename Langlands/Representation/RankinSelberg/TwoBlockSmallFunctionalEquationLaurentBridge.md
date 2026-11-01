@@ -1,14 +1,17 @@
-# Conditional small functional-equation Laurent bridge
+# Small functional-equation Laurent bridge
 
 This module implements the passage from separately convergent original
 and dual small-block spectral expansions to the required cleared coefficient
-identity. It takes `BilateralSpectralCoefficientUniquenessStatement` as an
-explicit proposition hypothesis. It does not prove that scalar uniqueness
-statement and does not supply the unconditional `smallFE_coefficient_identity`
-consumer interface until the independent scalar proof is available.
+identity. The consumer theorem `smallFE_coefficient_identity` uses the published
+`bilateralSpectralCoefficientUniqueness` proof, so it requires no scalar
+uniqueness hypothesis. It retains the actual normalized generators, rational
+continuations, normalized functional equation, weighted absolute convergence
+and `HasSum` expansions. The earlier lemmas with an explicit
+`BilateralSpectralCoefficientUniquenessStatement` input remain available.
 
 It imports the published `BilateralSpectralEvaluation`,
-`BilateralSpectralCoefficientUniquenessStatement`, and
+`BilateralSpectralCoefficientUniquenessStatement`,
+`BilateralSpectralCoefficientUniquenessProof`, and
 `TwoBlockFirstBlockLaurentReflection` modules by their Lean names. The new
 construction and bridge are authored by Worker 1191.
 
@@ -41,6 +44,13 @@ to that evaluation. Applying the explicit scalar uniqueness hypothesis gives
 chosen lift just defined and the preceding spectral lemma.
 It does not replace a normalized generator by an arbitrary denominator.
 
+`cleared_series_eq` applies `cleared_series_eq_of_spectral_uniqueness` to
+the published `bilateralSpectralCoefficientUniqueness` theorem. It therefore
+gives the same coefficient equality from the supplied finite rational lift,
+rational continuation and convergent spectral expansion, with no scalar
+uniqueness hypothesis and no normalized-generator premise. The latter premise
+is needed only to construct a lift when none is supplied.
+
 `smallFE_coefficient_identity_of_spectral_uniqueness` applies that argument
 separately to the original and dual series, each on its own right half-plane.
 It then invokes the already implemented
@@ -58,8 +68,15 @@ The integer exponent and sign agree with
 No overlap between the reflected and original convergence half-planes is
 assumed, and no polynomial is cancelled on the bilateral module.
 
+`smallFE_coefficient_identity` applies the preceding conditional theorem to
+the published `bilateralSpectralCoefficientUniqueness` proof. Its remaining
+arguments and conclusion are the same, including the separate existential
+half-plane bounds and `HasSum` interfaces for both original coefficient
+functions. The named `reflectSeries q a'` in the Lean conclusion is exactly
+`n ↦ (q : ℂ)^n * a'(-n)`, with integer powers.
+
 This is internal proof packaging derived from the named imported definitions,
-finite-action evaluation theorems, and the explicitly hypothesized scalar
-uniqueness proposition. It adds no source theorem or representation-theoretic
+finite-action evaluation theorems, and the published scalar uniqueness proof.
+It adds no source theorem or representation-theoretic
 assumption. It does not prove determinant-slice convergence, the upper or lower
 geometric comparison, measure disintegration, or the full first-block target.

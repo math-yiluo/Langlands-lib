@@ -1,3 +1,4 @@
+import Langlands.Representation.Filtration.SmoothGradedObject
 import Langlands.Representation.Smooth.IrreducibleRealization
 import Langlands.Representation.Category.Subquotients
 import Langlands.Representation.Filtration.MultiplicityAdditivityProof
@@ -16,14 +17,6 @@ namespace Langlands.SmoothRep.IrreducibleGrothendieckProof
 
 variable {k : Type uR} [Field k] {G : Type uG} [Group G] [TopologicalSpace G]
   {A B : SmoothRep.{uR, uG, uV} k G} {n m : ℕ}
-
-/-- Bundle the existing actual graded representation with inherited smoothness. -/
-def gradedSmooth (s : ObjectRepFiltration A.obj n) (i : Fin n) :
-    SmoothRep.{uR, uG, uV} k G :=
-  ⟨s.gradedRepresentation i,
-    Langlands.isSmooth_of_surjective (s.gradedProjection i).hom
-      (s.gradedProjection_surjective i)
-      (subrepresentation A (s.subrepresentation i.succ)).isSmooth⟩
 
 /-- The finite integral sum of genuine labels of a supplied composition series. -/
 def seriesClass (s : ObjectRepFiltration A.obj n) (hs : s.HasSimpleFactors) :

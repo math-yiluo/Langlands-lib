@@ -8,9 +8,12 @@ and `uV`. The group has an arbitrary topological space structure. There
 is no admissibility, finite-dimensionality, resizing, or
 topological-group compatibility premise.
 
-`gradedSmooth` equips each actual graded representation of an object filtration
-with inherited smoothness, using subrepresentation smoothness and surjective
-transfer along the actual quotient projection. The carrier universe is fixed.
+The imported `gradedSmooth` construction now resides in
+[`Filtration/SmoothGradedObject`](../Filtration/SmoothGradedObject.md), with
+its original name and definition unchanged. It equips each actual graded
+representation of an object filtration with inherited smoothness, using
+subrepresentation smoothness and surjective transfer along the actual
+quotient projection. The carrier universe is fixed.
 `seriesClass` sums the genuine irreducible labels of a supplied composition
 series. Its coordinate formula is the existing factor multiplicity cast from
 the naturals to the integers. The published generic Jordan–Hölder independence

@@ -1,11 +1,13 @@
 import Langlands.Representation.RankinSelberg.TwoBlockFirstBlockLaurentReflection
 import Langlands.Representation.RankinSelberg.BilateralSpectralEvaluation
 import Langlands.Representation.RankinSelberg.BilateralSpectralCoefficientUniquenessStatement
+import Langlands.Representation.RankinSelberg.BilateralSpectralCoefficientUniquenessProof
 
 /-!
 # From convergent small-block equations to cleared Laurent coefficients
 
-The spectral uniqueness proposition remains an explicit input.
+The consumer lemmas use the published spectral uniqueness proof.
+The earlier lemmas with an explicit uniqueness input remain available.
 Each series is cleared on its own right half-plane before finite reflection.
 -/
 
@@ -120,5 +122,43 @@ theorem smallFE_coefficient_identity_of_spectral_uniqueness
   obtain ⟨Ld, hLd, hcleard⟩ :=
     normalizedGenerator_cleared_series hunique hq hPd hRdm hRd ha'
   exact normalizedFE_coefficient_identity_of_cleared hq hL hLd hFE a a' hclear hcleard
+
+/-- A rationally cleared spectral series is the embedded finite Laurent lift,
+using the published scalar spectral uniqueness theorem. -/
+theorem cleared_series_eq
+    {q : ℕ} (hq : 1 < q) {P : Polynomial ℂ}
+    {I : ℂ → ℂ} {R : RationalFunctions} {L : LaurentPolynomial ℂ}
+    (hL : laurentToRatFunc L = algebraMap (Polynomial ℂ) RationalFunctions P * R)
+    (hR : HasRationalContinuation q I R)
+    {a : BilateralLaurentSeries}
+    (ha : ∃ C : ℝ, ∀ s : ℂ, C < s.re →
+      Summable (fun k : ℤ => ‖a k * spectralPoint q s ^ k‖) ∧
+      HasSum (fun k : ℤ => a k * spectralPoint q s ^ k) (I s)) :
+    P.toLaurent • a = ofLaurentPolynomial L :=
+  cleared_series_eq_of_spectral_uniqueness
+    bilateralSpectralCoefficientUniqueness hq hL hR ha
+
+/-- Analytic-to-coefficient bridge with the exact small functional equation,
+actual normalized generators, and separate convergent expansions. -/
+theorem smallFE_coefficient_identity
+    {q : ℕ} (hq : 1 < q) {P Pdual : Polynomial ℂ}
+    {ζ c : ℂˣ} {e : ℕ} {d : ℤ} {vals valsD : Set RationalFunctions}
+    (hP : IsNormalizedGenerator vals P) (hPd : IsNormalizedGenerator valsD Pdual)
+    {I Id : ℂ → ℂ} {R Rd : RationalFunctions}
+    (hRm : R ∈ vals) (hRdm : Rd ∈ valsD)
+    (hR : HasRationalContinuation q I R) (hRd : HasRationalContinuation q Id Rd)
+    (hFE : NormalizedFunctionalEquation q P Pdual ζ c e d R Rd)
+    {a a' : BilateralLaurentSeries}
+    (ha : ∃ C : ℝ, ∀ s : ℂ, C < s.re →
+      Summable (fun k : ℤ => ‖a k * spectralPoint q s ^ k‖) ∧
+      HasSum (fun k : ℤ => a k * spectralPoint q s ^ k) (I s))
+    (ha' : ∃ C : ℝ, ∀ s : ℂ, C < s.re →
+      Summable (fun k : ℤ => ‖a' k * spectralPoint q s ^ k‖) ∧
+      HasSum (fun k : ℤ => a' k * spectralPoint q s ^ k) (Id s)) :
+    reflectedPolynomial q Pdual • reflectSeries q a' =
+      (LaurentPolynomial.C ((ζ : ℂ) ^ e * (c : ℂ)) *
+        LaurentPolynomial.T d * P.toLaurent) • a :=
+  smallFE_coefficient_identity_of_spectral_uniqueness
+    bilateralSpectralCoefficientUniqueness hq hP hPd hRm hRdm hR hRd hFE ha ha'
 
 end Langlands.RankinSelberg.TwoBlockFirstBlockLaurent
