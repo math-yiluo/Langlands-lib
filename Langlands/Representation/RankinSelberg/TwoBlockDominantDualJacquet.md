@@ -66,3 +66,8 @@ No parameter continuation, Fourier coefficient identity, analytic block
 functional equation, rational comparison or final dominant-rank gamma/L
 proposition is asserted. No uniform support bound or convergence of the
 outer series is asserted.
+
+The canonical local instances have explicit `dualJacquet` names, so this module
+can be imported together with the ordinary coefficient-model realization module
+without a generated-declaration-name collision. Their values and the mathematical
+declarations are unchanged.

@@ -76,13 +76,13 @@ variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
   [hmod : ∀ i, Module ℂ (W i)]
   (σ : ∀ i, Representation ℂ (GeneralLinear (m i + 1) F.Carrier) (W i))
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : SecondCountableTopology F.Carrier :=
+local instance dualJacquetTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance dualJacquetValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance dualJacquetLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance dualJacquetSecondCountable : SecondCountableTopology F.Carrier :=
   F.canonicalTopologicalData.secondCountableTopology
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
+local instance dualJacquetMeasurable : MeasurableSpace F.Carrier := borel F.Carrier
+local instance dualJacquetBorel : BorelSpace F.Carrier := ⟨rfl⟩
 
 /-- Full type of every reversed inverse-transpose block at the negated
 character. The entire dependent block family is reversed. -/

@@ -4,7 +4,7 @@ This internal unit proves that the binary normalized product of a supplied
 quotient of \(A\times B\) with \(C\) is an actual quotient of the literal
 three-block normalized induction of \(A,B,C\). All three ranks are positive
 and may differ. Its total rank is `(a+b)+c`; its source shape is
-`Shahidi.threeBlocksRight a b c ha hb hc`, with the original factor family
+`Langlands.Parabolic.threeBlocksRight a b c ha hb hc`, with the original factor family
 `threeBlockSmoothFamily A B C`. No transport between bracketings of addition
 is needed in this interface. The topological data \(T\) is supplied, and
 the input carriers lie in `max uF uV`.

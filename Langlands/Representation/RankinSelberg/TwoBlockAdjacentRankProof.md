@@ -1,8 +1,12 @@
 # The adjacent-rank two-block analytic base
 
-Worker 486. This module implements the exact adjacent-rank L theorem.
-The gamma theorem remains a separate obligation; this contribution is the
-L proof record only.
+Worker 486. This module implements both exact adjacent-rank gamma and L
+theorems, with the original complete upper-family conclusions.
+
+`Langlands.RankinSelberg.twoBlockGammaAdjacentRank` has exactly the published
+type `TwoBlockGammaAdjacentRankStatement.{uF,uV,uW}`. It applies
+`twoBlockGammaAdjacentRank_of_transport` to the published proof
+`unramifiedTwistGamma`, discharging the remaining transport premise.
 
 `Langlands.RankinSelberg.twoBlockLAdjacentRank` has exactly the published type
 `TwoBlockLAdjacentRankStatement.{uF,uV,uW}`. Its proof applies the complete
@@ -24,7 +28,8 @@ The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 (1983), 367–464, registered as `jpss-1983-rankin-selberg`.
 The retained original PDF has SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Theorem (3.1), printed pages 404–405, gives the L-factor inclusion.
+Theorem (3.1), printed pages 404–405, gives gamma multiplicativity and the
+L-factor inclusion.
 Section 6, printed pages 427–438, treats the lower ranks `(r+1,1)`;
 §7.1, printed pages 438–439, lists this adjacent case among the three
 two-block bases. These required passages were read during this task.
@@ -54,7 +59,42 @@ The published `corankOneEntireSlice` supplies actual slice integrability
 and entire dependence. Formal bilateral polynomial cancellation is not
 used.
 
-## Actual ordered-family reversal and the exact conclusion
+## Gamma continuation and the closed target
+
+The published `unramifiedTwistGamma` proves the complete symmetric spectral
+transport statement in both twist positions, at all positive ranks and
+independent universes. Its actual forward integral shifts by `+u`, and its
+translated-dual integral shifts by `-u`. Rational rescaling and the spectral
+reflection preserve the gamma equation, the model minus-one scalar,
+nonzero rational witnesses, every equal-rank Fourier datum and every
+unequal-rank rectangle. Its certificate assembly keeps all compatible-measure
+and nonzero-functional existence witnesses and universal clauses.
+
+The conditional consumer uses this transport to choose fixed block gamma
+certificates on a sufficiently large real second-twist ray. The shared
+fixed L certificates give nonzero clearing polynomials. The actual original
+and translated-dual entire coefficient families, together with the
+published retained-kernel Laurent bridge and spectral continuation,
+specialize the real-ray gamma equation to zero. The clearing kernel is
+retained until cancellation in the rational-function field; no cancellation
+of a bilateral sequence is assumed.
+
+`adjacentRankLowerCharacterGamma_of_transport` obtains an ambient complete
+gamma certificate from the derived full induced Whittaker type. It extracts
+an actual nonzero rational integral witness. Uniqueness of the original and
+dual rational continuations then compares the specialized product equation
+with the ambient equation. Scalar gamma uniqueness identifies their factors,
+and this equality rewrites the entire ambient certificate. The actual
+zero-deformation representation equivalence transports that certificate to
+the original ordered lower induction for every quasicharacter.
+
+`twoBlockGammaAdjacentRank_of_transport` supplies this arbitrary-character
+lower theorem to `adjacentRankUpperGamma_of_lowerCharacter`. The actual
+ordered-family reversal described below yields the unchanged upper-family
+gamma conclusion. Applying the published `unramifiedTwistGamma` closes this
+implication; no transport or analytic premise remains in the final theorem.
+
+## Actual ordered-family reversal and the exact conclusions
 
 The upper-family consumer first derives `m 1 = r` from the rank sum,
 `t = r+1`, and `m 0 = 0`. It retains the original dependent carriers and
@@ -80,7 +120,19 @@ The block polynomial family is placed in upper order `(P₁,P₀)`.
 Only after constructing the representation comparison does commutativity
 identify its finite product with the lower-order product.
 
-The resulting conclusion is exactly
+For gamma, `IsPadicSymmetricGammaFactor.congr_equiv` transports each complete
+block certificate and the induced product certificate through the same actual
+ordered-family equivalences. The resulting gamma conclusion is exactly
+
+```
+∃ gamma : Fin 2 → RationalFunctions,
+  (∀ i, IsPadicSymmetricGammaFactor F ψ ν.val π (σ i) (gamma i)) ∧
+  IsPadicSymmetricGammaFactor F ψ ν.val π
+    (F.canonicalNormalizedProductInduced (succBlockShape m h) σ) (∏ i, gamma i).
+```
+
+Its complete measure and functional clauses, including nonzero witnesses,
+are retained. The L conclusion is exactly
 
 ```
 ∃ P Pi,
@@ -97,4 +149,6 @@ finite-block multiplicativity parent, or later rank descent.
 
 Worker 1191 is credited for the included spectral-clearing bridge, and
 Workers 831 and 15 for the included actual zero-comparison construction.
-The exact gamma theorem is not asserted by this L contribution.
+The gamma proof imports its independently published prerequisites by Lean
+name. Both final theorems preserve the original full Whittaker-type inputs
+and use no unrestricted multiplicativity or later rank descent.

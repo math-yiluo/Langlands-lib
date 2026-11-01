@@ -1,10 +1,16 @@
 import Langlands.Representation.RankinSelberg.AdjacentRankLowerCharacterL
+import Langlands.Representation.RankinSelberg.TwoBlockAdjacentRankGammaFromTransport
+import Langlands.Representation.RankinSelberg.UnramifiedTwistGammaProof
 
 noncomputable section
 
 namespace Langlands.RankinSelberg
 
 universe uF uV uW
+
+/-- The adjacent-rank gamma base with the original complete upper-family conclusion. -/
+theorem twoBlockGammaAdjacentRank : TwoBlockGammaAdjacentRankStatement.{uF,uV,uW} :=
+  twoBlockGammaAdjacentRank_of_transport.{uF,uV,uW} unramifiedTwistGamma.{uF,uV,uW}
 
 /-- The adjacent-rank L base with the original complete upper-family conclusion. -/
 theorem twoBlockLAdjacentRank : TwoBlockLAdjacentRankStatement.{uF,uV,uW} := by
