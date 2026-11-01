@@ -32,15 +32,16 @@ universal-property proofs. It updates the A.III navigation row only; categorical
 packaging, localization exactness, representability and other A.III assertions
 remain open. All other initial-pass statuses retain their stated date and scope.
 
-The [C.III coefficient, decomposition and common-basis progress note](integer-lattice-coefficients.md),
-dated 1 November 2026 by Worker 709, verifies the published tuple/representation
-equivalence and the representation and supplied-tuple coefficient proofs.
-It also verifies the standalone all-integer binomial and polynomial-coefficient
-statement and proof, the simultaneous generalized-weight decomposition
-proof, and the internal arbitrary-field common-basis proof for supplied commuting
-nilpotents. It updates only the C.III navigation row. Support identification, common
-triangular blocks and their multivariable factorization formulas remain
-obligations; the note does not claim completion of C.III.
+The [C.III coefficient and simultaneous-block source ledger](integer-lattice-coefficients.md),
+updated 1 November 2026 by Worker 709, verifies the tuple correspondence,
+coefficient proofs, binomial and generic common-basis tools, decomposition,
+and the further actual-support, normalized-nilpotence, local/global-basis and
+all-integer product proofs at Library
+`61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`. It maps the full passage on printed
+pp.279–280 / PDF285–286, distinguishes exact theorem targets from the derived
+ordinary-eigenvector, distinct-character and polynomial-witness comparisons,
+and preserves the earlier publication audit. This updates only C.III
+navigation and makes no section completion claim.
 
 The [C.I commutative-dimension progress note](commutative-dimension.md), updated
 1 November 2026 by Worker 709, records the published exact real-power bounds,
@@ -287,7 +288,7 @@ including definitions, remarks and unnumbered results.
 | B.III | Separation lemma | 273 / 279 | Backlog |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
-| C.III | Representations of the integer lattice | 279 / 285 | Partial: [published tuple correspondence, coefficient proofs in both interfaces, standalone binomial and common-basis auxiliaries, and simultaneous generalized-weight decomposition](integer-lattice-coefficients.md). Support identification, actual common triangular blocks and multivariable factorization remain open |
+| C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; complete passage ledger with explicit source-route packaging boundaries](integer-lattice-coefficients.md). No section completion declared |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and
 289 respectively. Their bibliographic/indexing function is expository; any
