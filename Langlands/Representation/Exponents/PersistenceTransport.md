@@ -4,16 +4,9 @@ This internal module proves unconditional transport identities needed for the
 persistence proof. It does not assert the geometric lemma, a constituent
 classification theorem, or persistence itself.
 
-`isLeviQuasicuspidal_transport_of_conjugatesLevi` removes the minimality
-restriction from the published whole-Levi transport theorem. The published
-`minimalConjugatingCosets` theorem writes the given permutation as a minimal
-conjugating permutation followed on the right by an element of the source
-block Weyl group. The latter transport is inner and is intertwined with the
-original representation by `transportWeylEquiv`. Quasicuspidality passes through
-this equivalence and the minimal transport theorem. The transport composition
-identity then returns the original permutation. Over a topological field,
-`isLeviCuspidal_transport_of_conjugatesLevi` adds the existing admissibility
-transport theorem. No irreducibility or positive rank assumption is needed.
+The cuspidality transport theorems are imported from
+[`CuspidalSupport.WholeLeviTransport`](../CuspidalSupport/WholeLeviTransport.md).
+They retain their original `Langlands.CuspidalSupport` names and statements.
 
 For any two refinements `S, R` of one coarse shape `B`, and a permutation `h`
 in `blockWeyl B` conjugating `B.flatten S` onto `B.flatten R`,

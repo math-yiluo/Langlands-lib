@@ -139,7 +139,7 @@ The direct project imports of this module are
 `Induction.CompactQuotientProof`, `Parabolic.QuotientCompactProof`,
 `Twist.SmoothProof` and `Smooth.Transfer.PullbackProof` (all under
 `Langlands.Representation`). The complete recursively read project import
-closure, excluding this module and Mathlib, has 133 modules:
+closure, excluding this module and Mathlib, has 159 modules:
 
 New helper modules of this proof (6):
 
@@ -289,6 +289,40 @@ Langlands.Topology.CompactOpen.NeighborhoodBasis
 Langlands.Topology.CompactOpen.NeighborhoodBasisStatement
 ```
 
+Published project modules reached only through the helper imports
+`Derivative.MinusVanishing` (from `MirabolicProductRestrictionOrbits`) and
+`Group.GL.MirabolicModularCharacterProof` (from
+`MirabolicProductRestrictionFactors`), including these two modules (26):
+
+```text
+Langlands.Analysis.Local.ModularCompactAverage
+Langlands.Group.GL.MirabolicModularCharacterProof
+Langlands.Group.GL.MirabolicModularCharacterStatement
+Langlands.Group.GL.MirabolicModulusProof
+Langlands.Group.GL.MirabolicModulusStatement
+Langlands.Group.HaarModulus
+Langlands.HarmonicAnalysis.Conductor
+Langlands.HarmonicAnalysis.PadicAdditiveConductorProof
+Langlands.HarmonicAnalysis.PadicLatticeTopology
+Langlands.HarmonicAnalysis.PadicRectangularHaarScalingProof
+Langlands.LocalFactor.Harmonic.Statement
+Langlands.Representation.Compact.OrbitMeanTranslation
+Langlands.Representation.Compact.ProjectionProof
+Langlands.Representation.Compact.ProjectionStatement
+Langlands.Representation.Derivative.MinusVanishing
+Langlands.Representation.Derivative.MirabolicLatticeBox
+Langlands.Representation.Jacquet.CharacterAveraging
+Langlands.Representation.RankinSelberg.GeneralLinearUnimodularity
+Langlands.Representation.RankinSelberg.LastRowCompactOrbitProof
+Langlands.Representation.RankinSelberg.LastRowCompactOrbitStatement
+Langlands.Representation.RankinSelberg.Measures
+Langlands.Representation.RankinSelberg.QuotientIntegrals
+Langlands.Representation.RankinSelberg.UnimodularityStatement
+Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffProof
+Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffStatement
+Langlands.Topology.CompactOpen.ConjugationStabilizer
+```
+
 ## Mathematical proof dependencies
 
 The published results used as proved inputs, with their modules, are:
@@ -322,12 +356,18 @@ The published results used as proved inputs, with their modules, are:
   (`Mirabolic.MixedProducts`), the tensor splitting
   `FiniteTensor.headTailLinearEquiv` (`Tensor.FiniteEquivalences`) and the
   filtration API (`Filtration.Definitions`, `Filtration.QuotientFirstIso`).
+- Two elementary matrix lemmas: `Langlands.Derivative.Mirabolic.exists_lastRow_eq_of_ne_zero`
+  (`Derivative.MinusVanishing`), used in `MirabolicProductRestrictionOrbits`,
+  and `Langlands.GeneralLinear.Mirabolic.determinant_projection`
+  (`Group.GL.MirabolicModularCharacterProof`), used in
+  `MirabolicProductRestrictionFactors`. Their own proofs use only Mathlib
+  linear algebra: the first replaces a row of the identity matrix and permutes
+  rows (`Matrix.det_updateRow_sum`, `Matrix.det_permute`); the second is a
+  Laplace expansion along the last row through the private `det_lastRow`
+  (`Matrix.det_succ_row`). No other declaration of these two modules, and none
+  of the further modules they import, is used.
 
-Two short elementary proofs are repeated in the helper modules instead of
-importing their modules: the private `det_lastRow` of
-`Group.GL.MirabolicModularCharacterProof` and
-`Derivative.exists_lastRow_eq_of_ne_zero` of `Derivative.MinusVanishing`. No
-published proposition definition is used as a hypothesis, and no pending
+No published proposition definition is used as a hypothesis, and no pending
 statement, draft or task is used.
 
 ## Independence audit
@@ -351,9 +391,10 @@ module against each restriction of the task.
   `SegmentSpecialJacquetExponentNormFormula`. The strings `Segment`, `Socle`,
   `Multisegment`, `SquareIntegrable`, `Tempered`, `TwoSupercuspidal`,
   `CoinvariantFiniteness` and `Leibniz` occur in no source of the closure; the
-  only occurrence of `Exhaustion` is `UnipotentExhaustionClause` of
-  `Parabolic.GeometricPrerequisitesStatement` (a compact-open exhaustion of a
-  unipotent radical, not a classification exhaustion, and not used). Hence the proof is independent of the tasks
+  only occurrences of `Exhaustion` are `UnipotentExhaustionClause` of
+  `Parabolic.GeometricPrerequisitesStatement` and the section `Exhaustion` of
+  `Jacquet.CharacterAveraging` (compact-open exhaustions of a unipotent group,
+  not classification exhaustions, and not used). Hence the proof is independent of the tasks
   23e98d90-6055-4e35-91a9-b0f5d8a84961, a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9,
   8fa9f68b-fa1b-431a-97f6-5b163964d1fc, 7ff2a1e9-89dc-439e-a861-a567b3db92bf,
   2ae5cbe5-0701-4509-88a0-db8cbeb35be4, e3634665-571b-4852-9f4c-bab8a1053434,
@@ -380,13 +421,22 @@ module against each restriction of the task.
   `Derivative.MirabolicCharacter`, `Derivative.Iteration` and
   `Derivative.Homogeneity` from the statement's closure, and of these only the
   definitions `generalLinearRestriction`, `generalLinearRankCast` and
-  `mirabolicRankCast` are used. The closure contains no module stating or
-  proving a derivative exactness, Leibniz filtration, minus compatibility,
-  4.13(b–d) or 4.14 result (the only exactness proposition in the closure is the
-  unused induction clause `InductionExactnessClause` of
-  `Induction.StructuralStatement`); in particular the mirabolic minus exactness of
-  Worker 127's task b65bc667-6951-4bd5-82af-10fb7046df7f is not used, and
-  Worker 127 was not contacted.
+  `mirabolicRankCast` are used. The closure also contains the published
+  `Derivative.MinusVanishing` and its elementary helper
+  `Derivative.MirabolicLatticeBox`. `MinusVanishing` proves
+  `subsingleton_of_psiMinus_phiMinus`, the vanishing consequence of BZ77
+  Proposition 3.2(e) (a representation of a mirabolic group with `Ψ⁻ = 0` and
+  `Φ⁻ = 0` is zero). It is an accepted and published proof, not a 4.13 or 4.14
+  result, and it does not import this proof's statement. This proof uses
+  neither that theorem nor any other declaration of `MinusVanishing` except the
+  elementary matrix lemma `exists_lastRow_eq_of_ne_zero`. The closure contains
+  no module stating or proving a derivative exactness, Leibniz filtration,
+  minus compatibility, 4.13(b–d) or 4.14 result (the only exactness
+  proposition in the closure is the unused induction clause
+  `InductionExactnessClause` of `Induction.StructuralStatement`); in
+  particular the mirabolic minus exactness of Worker 127's task
+  b65bc667-6951-4bd5-82af-10fb7046df7f is not used, and Worker 127 was not
+  contacted.
 - **Ze80.** No segment derivative formula (Ze80 §3.5, §9.6), segment
   irreducibility criterion (Ze80 4.2, 9.7), square-integrability result
   (Ze80 9.3), classification or exhaustion theorem occurs in the closure.
@@ -400,7 +450,13 @@ module against each restriction of the task.
   Whittaker modules in the closure are `Whittaker.Algebraic` and
   `Whittaker.GeneralLinear` (algebraic character infrastructure, already in the
   statement's closure) and `Whittaker.Iwasawa` (the Iwasawa decomposition used
-  for compactness of `P \ GL_N`).
+  for compactness of `P \ GL_N`). The Rankin–Selberg modules reached through
+  `Derivative.MinusVanishing` and `Group.GL.MirabolicModularCharacterProof`
+  concern Haar measures, quotient integrals, the compact orbit of the last
+  row and a compact last-row cutoff for Whittaker coefficients
+  (`RankinSelberg.ZeroRowLastRowCutoffProof`). They state or prove no
+  coinvariant finiteness, finite-length or classification result, and none of
+  their declarations is used by this proof.
 - **Classification modules.** The only `Classification` modules in the closure
   are `Classification.Supercuspidal` (the definition of supercuspidality),
   `Classification.SupercuspidalContragredientStatement` and
@@ -412,9 +468,16 @@ module against each restriction of the task.
   whose truth enters, directly or inside the cited published proofs, are proved
   by published theorems (`ClosedSubgroupMackeyFiltration`,
   `ClosedOrbitSectionExtension`, `ParabolicQuotientCompactClause`); the
-  target `MirabolicProductRestrictionStatement` is only the conclusion. No
-  pending statement, draft, citation or conditional assembly is used as an
-  input.
+  target `MirabolicProductRestrictionStatement` is only the conclusion. The
+  further proposition definitions reached through the two elementary lemma
+  modules (`MirabolicModularCharacterStatement`,
+  `MirabolicRadicalHaarModulusStatement`, `LastRowCompactOrbitStatement`,
+  `ZeroRowLastRowCutoffStatement`, `GeneralLinearHaarRightInvariantStatement`,
+  `UnipotentHaarRightInvariantStatement`, `ProjectionAndNaturality` and the
+  p-adic Fourier and conductor statements of `LocalFactor.Harmonic.Statement`)
+  do not enter: the proofs of the two lemmas used are the Mathlib computations
+  described above. No pending statement, draft,
+  citation or conditional assembly is used as an input.
 - **Inherited conventions.** The supplied `T` and `T.topology` are used
   throughout, with the published explicit normalizations: the binary product's
   `δ_P^(1/2)`, and the mixed products' characters, including the case (III)
