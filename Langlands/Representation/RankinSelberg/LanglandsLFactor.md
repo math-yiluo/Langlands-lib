@@ -23,8 +23,10 @@ This is a derived construction from published Library interfaces:
   `twistedProductInducedIso`.
 - `RankinSelberg/PadicPairFactors` supplies invariance of the integral-based
   L-polynomial under representation equivalence.
-- `RankinSelberg/PairLFactor` supplies constant-term normalization of the
-  polynomial generator. Mathlib supplies finite order-isomorphism rigidity
+- `RankinSelberg/PadicPairLPolynomialNormalization` supplies constant-term
+  normalization of the p-adic pair and symmetric polynomial certificates,
+  using the generator normalization from `RankinSelberg/PairLFactor`.
+  Mathlib supplies finite order-isomorphism rigidity
   and the polynomial embedding into rational functions.
 
 The inherited definition is JPSS, *Rankin-Selberg convolutions* (1983),
@@ -85,10 +87,11 @@ is treated as an equality or an isomorphism.
 
 The remaining names are in `Langlands.RankinSelberg`:
 
-- `IsPadicPairLPolynomial.coeff_zero` extracts an actual compatible quotient
-  measure from the relation and invokes the underlying pair-polynomial
-  normalization. `IsPadicSymmetricLPolynomial.coeff_zero` follows by the
-  two rank-order branches.
+- The imported `IsPadicPairLPolynomial.coeff_zero` extracts an actual
+  compatible quotient measure from the relation and invokes the underlying
+  pair-polynomial normalization. The imported
+  `IsPadicSymmetricLPolynomial.coeff_zero` follows by the two rank-order
+  branches. These lemmas are in `PadicPairLPolynomialNormalization`.
 - `IsLanglandsPairLPolynomial.coeff_zero` uses the relation's presenting
   witnesses and its universal standard-module certificate.
   `IsLanglandsPairLPolynomial.ne_zero` follows because the constant
