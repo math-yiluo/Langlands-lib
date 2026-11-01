@@ -52,12 +52,12 @@ section Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance weightedSynthesisTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance weightedSynthesisValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance weightedSynthesisLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance weightedSynthesisT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance weightedSynthesisNMeasurable (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
+local instance weightedSynthesisNBorel (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
 
 local notation "abv" => normalizedAbsoluteValue F.canonicalTopologicalData
 

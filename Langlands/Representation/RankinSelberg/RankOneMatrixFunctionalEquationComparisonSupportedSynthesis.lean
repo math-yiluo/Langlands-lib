@@ -54,26 +54,26 @@ section CanonicalPadic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance (n : ℕ) :
+local instance supportedSynthesisTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supportedSynthesisValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance supportedSynthesisLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance supportedSynthesisT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance supportedSynthesisGLSecondCountable (n : ℕ) :
     SecondCountableTopology (Langlands.GeneralLinear (n + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSecondCountableTopology (n + 1)
-local instance (n : ℕ) :
+local instance supportedSynthesisGLLocallyCompact (n : ℕ) :
     LocallyCompactSpace (Langlands.GeneralLinear (n + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearLocallyCompactSpace (n + 1)
-local instance (n : ℕ) :
+local instance supportedSynthesisNSecondCountable (n : ℕ) :
     SecondCountableTopology (upperUnipotent (n + 1) F.Carrier) :=
   Topology.IsEmbedding.subtypeVal.secondCountableTopology
-local instance (n : ℕ) :
+local instance supportedSynthesisNLocallyCompact (n : ℕ) :
     LocallyCompactSpace (upperUnipotent (n + 1) F.Carrier) :=
   F.canonicalTopologicalData.upperUnipotentLocallyCompactSpace (n + 1)
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supportedSynthesisGLMeasurable (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
+local instance supportedSynthesisGLBorel (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supportedSynthesisNMeasurable (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
+local instance supportedSynthesisNBorel (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
 
 local notation "abv" => normalizedAbsoluteValue F.canonicalTopologicalData
 

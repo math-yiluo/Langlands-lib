@@ -5,7 +5,7 @@ Authors: Worker 818 (this pair and the helper pair
 `HighestDerivativeSupportShiftBoundary`).
 
 This module proves the theorem `Langlands.Classification.highestDerivativeSupportShift`
-(line 744). Its type is exactly the published proposition
+(line 733). Its type is exactly the published proposition
 `Langlands.Classification.HighestDerivativeSupportShift.{uF,uV} F T` from
 `Langlands.Representation.Classification.SegmentSocleDerivativesStatement`:
 
@@ -131,23 +131,24 @@ It is a composite of these equivalences:
 - `twistedDualShapeIso := Iso.refl _`. This is a definitional isomorphism, used so
   that the kernel compares objects rather than carrier types.
 
-**Quotient (lines 426–524).** Let `γ` be an invariant form on `ρ × π` with trivial
+**Quotient (lines 426–513).** Let `γ` be an invariant form on `ρ × π` with trivial
 covariance, and let `j : σ → ρ` be an intertwiner. Then `pairingMap` is the
 intertwiner `π → σ̃` given by `w ↦ (u ↦ γ (j u) w)`. Its values are smooth because
 `π` is smooth. `pairingMap_ne_zero` shows it is nonzero when:
 
 - `γ` is nondegenerate in its first argument,
 - `j` is injective, and
-- `σ` is irreducible, so it has a nonzero vector.
+- `σ` is irreducible, so it has a nonzero vector (the published
+  `CuspidalSupport.LeviAdmissibility.exists_ne_zero_of_isIrreducible`).
 
-**Pairing (lines 526–581).** `exists_restricted_pairing`: let `ι : ω → P` be injective
+**Pairing (lines 515–570).** `exists_restricted_pairing`: let `ι : ω → P` be injective
 and let `e : P' ≃ twist (|det|^1) P̃`. Then `β v w = (e w)(ι v)` is a form on the
 mirabolic restrictions of `ω` and `P'`. Its covariance is
 `g ↦ T.determinantNorm (N+1) g`, and it is nondegenerate in `ω`. Nondegeneracy uses
 the published `smoothBidual_injective_of_compact_cofinal`, which says that a smooth
 representation embeds into its smooth bidual, together with the injectivity of `ι`.
 
-**Support (lines 583–620).**
+**Support (lines 572–609).**
 
 - `ofFn_twistedDualData` rewrites the support of `twistedDualData t ρ` as
   `(List.ofFn ρ).map (fun x => (dualDatum x).twist t)`.
@@ -156,7 +157,7 @@ representation embeds into its smooth bidual, together with the injectivity of `
   and uses `dualDatum_twist`, involutivity, `CuspidalDatum.twist_twist` and
   `CuspidalDatum.twist_zero`.
 
-**DualSupport (lines 622–670).** `isCuspidalConstituent_contragredient`: let
+**DualSupport (lines 611–659).** `isCuspidalConstituent_contragredient`: let
 `σ ↪ ρ_1 × ⋯ × ρ_r` be an injective intertwiner into a cuspidal product of positive
 rank `m`, and suppose `σ̃` is irreducible. Then `σ̃` is a cuspidal constituent of
 `twistedDualData 0 ρ`, the family `ν^0 ρ̃_i`. The dual map of the embedding is
@@ -164,7 +165,7 @@ surjective by the published `contragredientMap_surjective_of_injective_of_compac
 (exactness of the smooth dual). Composing it with `twistedDualEquiv` at `t = 0` and
 with `|det|^0 = id` gives a quotient map from `ν^0 ρ̃_1 × ⋯ × ν^0 ρ̃_r` onto `σ̃`.
 
-**Main (lines 672–732).** `exists_derivative_map` implements BZ77 4.8(b). Let `ω` on
+**Main (lines 661–721).** `exists_derivative_map` implements BZ77 4.8(b). Let `ω` on
 `GL_(N+1)` have nontrivial order-`k` derivative, `0 < k`, and vanishing higher
 derivatives. Let `ι : ω ↪ Π`, and let `σ` be irreducible with `j : σ ↪ ω^(k)`.
 
@@ -178,7 +179,7 @@ derivatives. Let `ι : ω ↪ Π`, and let `σ` be irreducible with `j : σ ↪ 
    `Π̄^(k)`, with trivial covariance and nondegenerate in `ω^(k)`.
 3. `pairingMap` then gives a nonzero intertwiner `χ : Π̄^(k) → σ̃`.
 
-**Final theorem (lines 744–782).**
+**Final theorem (lines 733–771).**
 
 - If `k ≥ n`, then `k = n` and `σ` lives on `GL_0`. Worker 128's
   `IsSupercuspidalSupport.twist_le_of_rank_zero` shows that `s' = 0`, which gives the
@@ -232,7 +233,7 @@ derivative `ω^(k)`, and an irreducible submodule `σ ⊆ ω^(k)`. It asserts
   c g * β v w`. So a source `χ`-pairing is a Library form with covariance `χ⁻¹`, and
   the source `ν⁻¹`-pairing is a Library form with covariance `|det|`. This is the
   covariance `T.determinantNorm (N+1)` of the form built by `exists_restricted_pairing`
-  (lines 534–579). It is also the covariance in the hypothesis of the published 3.8
+  (lines 523–568). It is also the covariance in the hypothesis of the published 3.8
   statement, whose Markdown explains why the source `Δ_P = |det|⁻¹` gives this sign.
   The positive twist `ν` in `π̄ = ν π̃` is not changed by this bookkeeping.
 - By 3.8 the induced pairing of `ω^(k)` and `π̄^(k)` is nondegenerate with respect to
@@ -312,9 +313,9 @@ never used as premises.
 ## Published inputs
 
 Every theorem used below has an independently accepted and published proof, or is a
-reviewed lemma inside a published `lean.definition` artifact. Rows give the module
-(prefix `Langlands.Representation.`), the publication artifact, its task, reviewer
-and commit, and the declarations used.
+reviewed lemma inside a published `lean.definition` or `lean.proof` artifact. Rows
+give the module (prefix `Langlands.Representation.`), the publication artifact, its
+task, reviewer and commit, and the declarations used.
 
 | Module | Publication | Used |
 | --- | --- | --- |
@@ -328,6 +329,7 @@ and commit, and the declarations used.
 | `Derivative.MirabolicHighestDerivativePairingProof` | proof `f957ae76-3779-4436-bdcb-98bc63561e07`, task `a925b519-9bb9-4927-873e-ad322d41328e`, Reviewer 4988, commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | `Derivative.mirabolicHighestDerivativePairing` (BZ77 3.8). Statement `73c253bc-3209-4800-bcc4-6a357f6c66c1`, task `e254f435-4bd3-404d-9af3-85e737a8d876`, Reviewer 4378, commit `84ad0affe3e3e8feae73b57da624fc1f16a6923b` |
 | `Smooth.Contragredient.ExactProof` | proof `ed74312b-8337-47ed-a498-dfd50dcc5a6c`, task `41755c34-9780-45df-88a4-3a7ccd32727e`, Reviewer 415, commit `196ceda926c7cfe1fdbe5ae57c08133d83bbf940` | `contragredientMap_surjective_of_injective_of_compact_cofinal` |
 | `Smooth.Contragredient.AdmissibleDualityProof` | proof `81c91e2f-1a4d-45f0-98f2-0710f820d150`, task `a7dd454e-3648-46fd-99db-2029b21d38bb`, Reviewer 420, commit `196ceda926c7cfe1fdbe5ae57c08133d83bbf940` | `smoothBidual_injective_of_compact_cofinal` |
+| `CuspidalSupport.QuasicuspidalLeviAdmissibilityProof` | proof `c862f739-656d-4705-89a9-0db3bfc7d716`, task `e1237fc1-de75-4a4d-924b-d509dc475361`, Reviewer 1360, commit `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` | `CuspidalSupport.LeviAdmissibility.exists_ne_zero_of_isIrreducible` (an irreducible representation has a nonzero vector) |
 | `Category.Contragredient` | definition `ea215466-b640-4254-8915-bded05fc574b`, task `a7a453ca-879b-4dd7-a07e-bfe49c8e791c`, Reviewer 560, commit `7c81d0a237386f36202562546586b28c306f0121` | `SmoothRep.contragredient`, `SmoothRep.isIrreducible_contragredient_iff`, `GeneralLinear.compactOpen_cofinal` |
 | `Filtration.InvariantBilinear` | definition `45614bc5-3bfe-4a3f-b9c6-9d8229556ac9`, task `61e4dc9c-f1c3-4819-852e-211a1d6b0ccd`, Reviewer 2457, commit `efd2d4ad29b604323d377709077ba4b253e1c0f8` | `InvariantBilinear.forms` |
 | `Induction.BlockEquivalence` | definition `f9b2bd9b-6179-4db9-8a7f-1d8169475c5d`, task `9ca9174f-3d3d-49ab-8341-916373cf5659`, Reviewer 1862, commit `39cbb4efb23ddd4f60b5e4f4663b2cf82258e2bf` | `normalizedProductInducedEquiv` |
@@ -366,6 +368,15 @@ The audit was made at Library base `368b3cec32d30129c07825e0ce549058b99762f4`, w
 contains both published helper pairs. It was repeated at the later base
 `5e4a58e8c8d5cb559e3acb76c4fab01382a95b91`: the closure is the same, every module in
 it is byte-identical to its version at `368b3cec`, and the counts below are unchanged.
+After this proof was published at commit
+`8bffffb6e1e30ef5b726720a880dc9509ef3b320`, the closure was computed again there. It
+is the same 626 modules, and every module other than this one is byte-identical to its
+version at `5e4a58e8`. At that integration a local copy of the nonzero-vector lemma
+was replaced by the published
+`CuspidalSupport.LeviAdmissibility.exists_ne_zero_of_isIrreducible`. Its module
+`CuspidalSupport.QuasicuspidalLeviAdmissibilityProof` was already in the non-target
+closure, so the closure and the counts below do not change.
+
 The recursive project import closure of this module has 626 modules, this module
 included. It splits into two parts.
 
@@ -705,7 +716,3 @@ Langlands.Weil.Representation (6): Basic, Continuity, ContinuityProof, Determina
 
 The 13 target-only modules are listed in the import closure audit above. Together
 with this module they complete the closure of 626 modules.
-
-The nonzero-vector step reuses
-`Langlands.CuspidalSupport.LeviAdmissibility.exists_ne_zero_of_isIrreducible`
-from `QuasicuspidalLeviAdmissibilityProof`, already in the non-target import closure.

@@ -61,3 +61,8 @@ inherited independently from matrix synthesis.
 The provenance is internal derivation from the imported multiplier, determinant
 characters, compact-open geometry and actual matrix synthesis. No external
 Fourier identity or unproved matrix-to-rank-one comparison enters the proof.
+
+The six canonical local instances have explicit `weightedSynthesis` names.
+This prevents generated declaration-name collisions when the module is
+imported together with ProductIntegrability. Their types and values, and
+all mathematical definitions and theorems, are unchanged.

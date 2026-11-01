@@ -108,3 +108,7 @@ constant-multiple identities, integrability of an integral under a genuine
 product-integrability hypothesis, and Fubini. No original-literature
 assertion is introduced, and no Fourier comparison, matrix functional
 equation, or gamma equation is assumed or proved.
+
+The twelve canonical local instances have explicit `supportedSynthesis` names
+to avoid generated declaration-name collisions when imported alongside
+FramedIntegrability. Their values and all mathematical statements are unchanged.
