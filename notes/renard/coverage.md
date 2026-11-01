@@ -73,12 +73,13 @@ convention open.
 The [I.5.2–I.6 module-class and category-property ledger](module-classes-category-properties.md),
 dated 1 November 2026 by Worker 6, maps the projective, injective, free-module
 and category-property assertions on printed pp.26–28 / PDF32–34. Its update
-at Library `125fca1a70e8f89af98a36c8565617cd68f73be5` verifies the further
-free-module, injectivity and source AB5 proof publications, and the public
-completeness, local finite-type and filtered-colimit statements. Those three
-I.6 statements have complete shared proof drafts in separate proof tasks;
-no public proof of them is counted. The derived negative I.5.3 example
-remains private behind its approved construction's publication gate.
+verifies the free-module, injectivity and source AB5 proof publications
+and the three published exact I.6 proofs of completeness, local finite
+type and filtered-colimit exactness. It records their exact machine,
+independent-review and publication evidence. The derived negative I.5.3
+example now has a public construction and exact statement; its proof
+candidate is independently approved but remains unpublished at the
+checked fetch.
 This updates only I.5 and I.6
 navigation; the earlier I.5.1 and categorical-progress observations retain
 their original date and scope.
@@ -248,8 +249,8 @@ including definitions, remarks and unnumbered results.
 | I.2 | Forgetful functors and adjoints | 14 / 20 | Backlog |
 | I.3 | Idempotent corner functor | 19 / 25 | Backlog |
 | I.4 | Duality | 22 / 28 | Partial: [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md); actual comparisons and full-source convention remain open |
-| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 update above retains its date and scope; [I.5.2–3 ledger](module-classes-category-properties.md) records public projectivity, injectivity and positive free-module proofs, and the private negative example with its publication gates |
-| I.6 | Properties of the nondegenerate module category | 27 / 33 | Partial: [assertion ledger](module-classes-category-properties.md) records published abelianness, source AB5 and actual sums/products; completeness, local finite-type and filtered-exactness statements are public with complete shared drafts in separate proof tasks |
+| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 update above retains its date and scope; [I.5.2–3 ledger](module-classes-category-properties.md) records public projectivity, injectivity and positive free-module proofs, and the public negative-example construction and statement with an approved unpublished proof |
+| I.6 | Properties of the nondegenerate module category | 27 / 33 | [Assertion ledger](module-classes-category-properties.md) records published abelianness, source AB5, actual sums/products and exact proofs of completeness, local finite type and filtered-colimit exactness; no section-completion declaration |
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial assertion audit |

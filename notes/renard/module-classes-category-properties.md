@@ -52,7 +52,7 @@ Lean names below have prefix `Langlands.Algebra`, except the explicit
 | Corollary, PDF33: enough injectives | `NonUnitalModuleEnoughInjectives.EnoughInjectivesStatement`, `InjectiveEmbeddingStatement`; proof `NonUnitalModuleInjectivityProof.injectivityAssertions` | Public proof dualizes actual projective presentations of the actual dual and composes canonical bidual evaluation. Embeddings expose source-Hom injectivity, monomorphy and injectivity of the entire original additive map. |
 | I.5.3 definition, PDF33: free means isomorphic to a direct sum of regular copies of `A` | `NonUnitalModuleFree.IsFree`, `regularObject`, `object`, `fromFamily`, in [the free construction](../../Langlands/Algebra/NonUnitalModuleFree.md) | Published construction uses lifted original regular modules, finite-support sums, actual singleton inclusions and orbit-map descent. Explicit down/up intertwiners identify the lifted regular carriers with the original one. |
 | I.5.3 positive assertions: every module is a free quotient; every projective is a free summand | `NonUnitalModuleFreeStatements.FreeQuotientStatement`, `ProjectiveFreeSummandStatement`; proof `NonUnitalModuleFreeProof.freeModuleAssertions` | Public proof constructs a carrier-surjective orbit-map quotient and an actual isomorphism from a free sum to `P ⊞ Q`, assuming source-Hom projectivity of `P`. |
-| I.5.3 warning: the regular module need not be projective, so a free summand need not be projective | Derived countable-support construction candidate `952b2947-95c7-4fc3-b101-250c7f9554af`, task `cb2592a0-49d5-4a53-a820-b5ddd5f71912` | No public counterexample statement or proof yet. The prerequisite construction is independently approved but still nonpublic. A complete private proof gives a free, nonprojective regular module and a direct-factor witness, including complex coefficients; its statement and proof publication gates remain open. |
+| I.5.3 warning: the regular module need not be projective, so a free summand need not be projective | Published `CountableSupportAlgebra` construction and `NonUnitalModuleFreeCounterexampleStatements.FreeCounterexampleAssertions` | The derived construction and exact statement are public. Proof candidate `b22bba07-2c02-43eb-8b3f-093c95f28fa2` passed machine validation and independent review but remains nonpublic at the checked fetch. It is not counted as a public proof. |
 
 The [projectivity proof explanation](../../Langlands/Algebra/NonUnitalModuleProjectivityProof.md)
 describes the implemented lifting route for `Ae`; the source instead
@@ -63,15 +63,20 @@ free quotient, without assuming projectivity of the regular algebra.
 The [published injectivity proof](../../Langlands/Algebra/NonUnitalModuleInjectivityProof.md)
 preserves the source's actual duals and bidual embedding route.
 
-The private negative example uses the actual algebra of countably supported
+The derived negative example uses the actual algebra of countably supported
 functions `X → R`, for nontrivial commutative `R` and uncountable `X`, with
 pointwise multiplication. Its complex instance takes `R = X = ℂ`.
-Countable families have common idempotent local units, but there is no
-global identity. The private argument shows that a section of the actual
-free orbit-map quotient would force such an identity. A singleton-sum
-isomorphism proves regular freeness; the direct-factor witness allows
-the zero complement. Renard gives the warning without this example;
-the example is derived and is not attributed to the book.
+The [published construction](../../Langlands/Algebra/CountableSupportAlgebra.md)
+proves common idempotent local units for countable families and absence
+of a global identity. The
+[published statement](../../Langlands/Algebra/NonUnitalModuleFreeCounterexampleStatements.md)
+asserts regular freeness, failure of exact-Hom projectivity and an actual
+direct-factor witness, universally in these coefficients and base sets,
+with an explicit complex instance. The approved unpublished proof argues
+that a section of the actual free orbit-map quotient would force a
+global identity. A singleton-sum isomorphism proves regular freeness;
+the direct-factor witness allows the zero complement. Renard gives the
+warning without this example; the example is not attributed to the book.
 
 Coefficient and residual module universes `uA,uM` are independent.
 Projective presentations, free quotients, free summands and enough
@@ -90,10 +95,10 @@ not read [36] for this audit.
 | Opening: the actual nondegenerate category is abelian | `NondegenerateModuleAbelianStatement`; proof `nondegenerateModuleAbelianStatement`; named data `NondegenerateModuleCat.abelian` | Public proof preserves inherited Hom addition by `abelian_toPreadditive`. It uses proved zero, subobject, quotient and finite-product closure and Mathlib's sufficient theorem. See [the proof explanation](../../Langlands/Algebra/NondegenerateModuleAbelianProof.md) and [the Appendix A correction audit](appendix-a-corrections.md). |
 | Proposition proof: direct sums are ambient finite-support sums and nondegenerate | `NonUnitalModuleDirectSum.cofanIsColimit` | Published actual construction and full universal property with original coordinate action. A common upper idempotent for the finite support proves nondegeneracy. See [the explanation](../../Langlands/Algebra/NonUnitalModuleDirectSum.md). |
 | Same proof: products are the nondegenerate part of the ambient product | `NondegenerateModuleProducts.object`, `mem_part_iff`, `fanIsLimit` | Published actual construction. Membership means one idempotent fixes all coordinates simultaneously. See [the explanation](../../Langlands/Algebra/NondegenerateModuleProducts.md). |
-| Proposition: completeness and cocompleteness, including all limits and colimits | `NondegenerateModuleCompletenessStatements.CompletenessAssertions`, including `AllLimitsStatement`, `AllColimitsStatement` | Public statement `a74ff626-68bf-4f49-b331-e9728bf0aae4`. Complete shared proof draft in task `7e79a63b-11ce-462d-bd80-adf9e4d1d806` combines actual products/sums with abelian equalizers/coequalizers. No submitted proof candidate yet at inspection. |
+| Proposition: completeness and cocompleteness, including all limits and colimits | `NondegenerateModuleCompletenessStatements.CompletenessAssertions`; proof `NondegenerateModuleCompletenessProof.completenessAssertions` | Public exact proof `6b958c65-e7a1-460a-9736-dd22f73c597c` establishes all four conjuncts, including `AllLimitsStatement` and `AllColimitsStatement`, from actual products/sums and abelian equalizers/coequalizers. See [the proof explanation](../../Langlands/Algebra/NondegenerateModuleCompletenessProof.md). |
 | PDF34: source AB5, intersection distributes over directed sums of subobjects | `NondegenerateModuleAB5Statements.DirectedSubobjectDistributivity`, `SourceAB5Statement`; proof `NondegenerateModuleAB5Proof.ab5Assertions` | Public proof transfers the actual subobject order through original stable subgroups to integer-unitized submodules and proves the directed least-upper-bound law. The source coproduct clause uses the actual finite-support sum. |
-| PDF34: source AB6, increasing sums of finite-type subobjects | `NondegenerateModuleLocallyFiniteTypeStatements.DirectedFiniteTypeCoverStatement`, `SourceAB6Statement`, aggregate `LocallyFiniteTypeAssertions` | Public statement `d572554e-1bed-4eb7-bb32-135d5f9f6cfa`. Complete shared proof draft in task `cde74747-3a3f-4089-8596-001066abbdb6` uses finite subsets of the actual carrier, canonical integer-unitized spans and the finite-type comparison. No submitted proof candidate yet at inspection. |
-| Final assertion: filtered colimits preserve pointwise short exact systems | `NondegenerateModuleFilteredColimitsStatements.MathlibAB5Statement`, `ShortExactColimitsStatement`, aggregate `FilteredColimitAssertions` | Public statement `6524c211-dc4c-4c91-872c-d3f7195b3782`. Complete shared proof draft in task `8716ba9b-b53a-496b-a915-604486872d14` transfers exact filtered colimits from abelian groups through integer unitization and the original exact inclusion. No submitted proof candidate yet at inspection. |
+| PDF34: source AB6, increasing sums of finite-type subobjects | `NondegenerateModuleLocallyFiniteTypeStatements.DirectedFiniteTypeCoverStatement`, `SourceAB6Statement`; proof `NondegenerateModuleLocallyFiniteTypeProof.locallyFiniteTypeAssertions` | Public exact proof `d46dfc9e-87e9-45e7-bd12-a35d995d8e91` establishes both conjuncts of `LocallyFiniteTypeAssertions` using finite subsets of the actual carrier, canonical integer-unitized spans and the source finite-type comparison. See [the proof explanation](../../Langlands/Algebra/NondegenerateModuleLocallyFiniteTypeProof.md). |
+| Final assertion: filtered colimits preserve pointwise short exact systems | `NondegenerateModuleFilteredColimitsStatements.MathlibAB5Statement`, `ShortExactColimitsStatement`; proof `NondegenerateModuleFilteredColimitsProof.filteredColimitAssertions` | Public exact proof `6a6fcd63-b135-41f5-ba4f-ba776a1ae195` establishes both conjuncts of `FilteredColimitAssertions`. It constructs the colimits and transfers exactness from abelian groups through integer unitization and the original exact inclusion. See [the proof explanation](../../Langlands/Algebra/NondegenerateModuleFilteredColimitsProof.md). |
 
 Published `NondegenerateModuleCat.subobjectOrderIso` identifies categorical
 subobjects with original stable additive subgroups, with actual range,
@@ -119,7 +124,7 @@ and the actual short-exact-colimit conclusion. These interfaces claim no
 generic equivalence of the two AB5 formulations.
 
 Renard cites [13], §6, Proposition 3 for ambient module exactness.
-Worker 6 has not read that reference for this audit. The private filtered
+Worker 6 has not read that reference for this audit. The published filtered
 proof follows the stated ambient-module route using the published
 original inclusion and Mathlib's exactness results. It constructs the
 required colimits rather than assuming their desired exactness.
@@ -165,22 +170,44 @@ All six were published in commit
 | Local finite-type statements | `d572554e-1bed-4eb7-bb32-135d5f9f6cfa` | `b5b8a9b7-574e-43aa-8338-d78c4329f2b0` | `44c93ea1-fe48-4987-b2ee-a1e57f1c67b6`, Reviewer 7353 |
 | Filtered-colimit statements | `6524c211-dc4c-4c91-872c-d3f7195b3782` | `af0ab55a-953b-4f6a-9076-be03b38dbb04` | `b5b616e8-42b2-4f16-87e6-5d9d1af8067b`, Reviewer 7378 |
 
-The three I.6 proof tasks above are ready, each with complete shared draft
-revision 1 and no artifacts at inspection. Recovery compilation of all
-three proof-only drafts, using public imports, reports zero errors and
-warnings and only Lean's standard axioms; their independent universe
-parameters are retained. This is development evidence, not proof acceptance.
-Worker 6 authored those shared proof drafts. The earlier free, injectivity
-and source AB5 proofs were submitted respectively by Workers 1210, 490
-and 1213, retaining the shared-draft authorship.
+A subsequent audit checked all three I.6 proof publications. Each fetch
+reports `accepted = true`, `public = true` and integration state
+`published`, with unqualified independent approval. Each machine receipt
+passes `lake-build`, `exact-target`, `unchanged-statement` and
+`frozen-inputs`. All three were published in commit
+`e058cb4d3adbd71764731d87c4cbfcb5805696e8`. The six Lean/Markdown
+hashes match their frozen records, the workspace and the checked Library
+`da0312e3777850c14b211f6245ff5b08af56f616`.
 
-The negative prerequisite's machine receipt is
-`98a56fa2-fc88-4d3f-ab75-a277afe9b20e`; independent review
-`371eeb84-7729-4e91-a46a-b1a96a13e04e`, Reviewer 7413, approves it
-without qualifications. Its fresh fetch still reports staged,
-`accepted = false`, `public = false`. The complete private negative
-proof also recompiles without errors or warnings, but does not supply
-accepted evidence. Construction publication must precede its focused
-statement unit, and exact statement publication must precede its proof
-unit. The negative I.5.3 example, remaining Chapter I assertions and rest
-of the book remain obligations of the parent program.
+| Unit | Exact proof candidate | Machine receipt | Independent review |
+| --- | --- | --- | --- |
+| Completeness and cocompleteness | `6b958c65-e7a1-460a-9736-dd22f73c597c` | `ebda80ab-a927-4e49-90db-29124315c1f8` | `f36195f7-fb53-4858-98e6-3d3ecf38b4a0`, Reviewer 7446 |
+| Local finite type and source AB6 | `d46dfc9e-87e9-45e7-bd12-a35d995d8e91` | `c9449e22-6bc6-4511-bb6e-07a640288598` | `e104a470-9274-429c-ac61-dd26e9b2e47f`, Reviewer 7449 |
+| Exact filtered colimits | `6a6fcd63-b135-41f5-ba4f-ba776a1ae195` | `b80eaa79-6829-4ac6-a2b9-3bbc3e7a675d` | `957f4550-8ab8-4679-a1f9-90a79f03e2c3`, Reviewer 7443 |
+
+Worker 6 authored the shared proof drafts; Workers 695, 633 and 1215
+respectively prepared these exact submissions. The earlier free,
+injectivity and source AB5 proofs were submitted respectively by
+Workers 1210, 490 and 1213, retaining the shared-draft authorship.
+
+The derived negative construction and statement are now public. Their
+four paired-file hashes match their frozen records, the workspace and
+checked Library `04247de81e81d501f4b57b138c70ba2d5b16e793`.
+Both publication records have unqualified machine validation and
+independent approval.
+
+| Unit | Candidate | Machine receipt | Independent review | Published commit |
+| --- | --- | --- | --- | --- |
+| Countable-support algebra | `952b2947-95c7-4fc3-b101-250c7f9554af` | `98a56fa2-fc88-4d3f-ab75-a277afe9b20e` | `371eeb84-7729-4e91-a46a-b1a96a13e04e`, Reviewer 7413 | `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
+| Exact counterexample statement | `763a4ece-2dc6-4f80-abc8-e62fcc4db424` | `98cd810d-ef1d-405a-a181-b4559d935c3a` | `bb9b610f-bac5-4724-ad9e-45140041c77d`, Reviewer 7514 | `da0312e3777850c14b211f6245ff5b08af56f616` |
+
+The proof candidate `b22bba07-2c02-43eb-8b3f-093c95f28fa2`, submitted
+by Worker 345 with Worker 6's shared-draft authorship, proves exactly
+`NonUnitalModuleFreeCounterexampleStatements.FreeCounterexampleAssertions`.
+Machine receipt `e107136a-5032-4a59-b6d2-0e7dc6cab4cc` passes the
+Lake build, exact-target, unchanged-statement and frozen-input checks.
+Independent review `04ee84d6-634a-40f0-ad33-c2e44ae70483`,
+Reviewer 7593, approves without qualifications. The checked fetch
+nevertheless reports staged, `accepted = false`, `public = false`;
+its publication remains an obligation. This ledger does not declare
+I.5, I.6, Chapter I or the whole book complete.
