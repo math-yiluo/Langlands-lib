@@ -15,6 +15,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Valued-field amalgamation: tensor sources and proof route](../notes/analytic/valued-field-amalgamation-sources.md) — Original tensor estimates covering trivial valuations, the derived common-field route, and the remaining full-universe Lean obligations.
 - [Relative Picard representability: source and construction boundaries](../notes/abelian-schemes/relative-picard-source-map.md) — Faltings–Chai's unrestricted algebraic-space route, Lan and EVM conventions, and the remaining actual-family comparisons.
 - [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Source-read assertions, the privately compiled I.5.1 proofs and their publication gates, full section backlog, general reductive scope and ownership boundaries.
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
