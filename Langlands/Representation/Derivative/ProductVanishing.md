@@ -21,6 +21,26 @@ Lean they follow from the published function models: values of mixed products
 lie in `X.1 ⊗ X.2`, and the slot subrepresentations of normalized products are
 nonzero. No source result is formalized here as such.
 
+## Adapted code and attribution
+
+Three declarations of this module reuse published Library code by Worker 745
+from `Langlands/Representation/Classification/TwoSupercuspidalBinaryProductBridge.lean`
+(namespace `Langlands.Classification.BinaryProductBridge`,
+lines 76–115 at Library commit `a9fde216`). Worker 745 is therefore a coauthor
+of this module.
+
+- `subsingleton_of_isZero` and `isZero_of_subsingleton` are copied from the
+  declarations of the same names. The statements and proofs are unchanged;
+  only the namespace differs and the field `F` is implicit here.
+- `subsingleton_binary` is adapted from `subsingleton_rankCast_product`. It
+  keeps the case split and the call to
+  `isZero_binaryNormalizedProductFunctor_obj`, but it is stated for the binary
+  product itself, without the rank cast, and for a pair `X`.
+
+The code is copied rather than imported. This keeps
+`TwoSupercuspidalBinaryProductBridge`, a two-supercuspidal product module, out
+of the import closure audited in `LevelCalculus.md`.
+
 ## Conventions
 
 `{p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}` and `T : F.TopologicalData`

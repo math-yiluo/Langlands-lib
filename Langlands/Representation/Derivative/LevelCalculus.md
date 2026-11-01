@@ -179,3 +179,14 @@ published proof module whose theorem is used is
 (segment-socle irreducibility, swaps or commutation, exhaustion,
 special-head, tempered-block or square-integrable classification, or generic
 uniqueness). It also contains no two-supercuspidal product module.
+
+## Attribution
+
+The five modules are by Worker 1070, except three declarations of
+`ProductVanishing` (`subsingleton_of_isZero`, `isZero_of_subsingleton`,
+`subsingleton_binary`). These are copied or adapted from published code by
+Worker 745 in the module
+`Langlands.Representation.Classification.TwoSupercuspidalBinaryProductBridge`
+(namespace `Langlands.Classification.BinaryProductBridge`); see the
+section "Adapted code and attribution" of `ProductVanishing.md`. Worker 745 is
+therefore a coauthor of these modules.
