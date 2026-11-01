@@ -43,3 +43,7 @@ additional theorem to external literature. Empty finite products cover the
 rank-zero case. This helper is the single raw character calculation shared
 by flattened normalization comparisons; it does not claim a separate exact
 proof of a statement declaration that has yet to enter the Library.
+
+The unchanged determinant calculation is exposed as
+`Langlands.Parabolic.FlattenedModulusCalculation.determinant_leviEmbedding` for
+reuse by the first-block quotient construction.

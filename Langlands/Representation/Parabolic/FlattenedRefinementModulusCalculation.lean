@@ -94,7 +94,7 @@ open GeneralLinear Geometric
 
 universe uF
 
-private theorem determinant_leviEmbedding {R : Type*} [CommRing R]
+theorem determinant_leviEmbedding {R : Type*} [CommRing R]
     {n : ℕ} (B : BlockShape n) (m : B.Levi R) :
     determinant (B.leviEmbedding R m) = ∏ i, determinant (m i) := by
   classical

@@ -16,9 +16,10 @@ induction to `GL_n(F)` is completely reducible and tempered. The second componen
 retains an arbitrary representation of the actual Levi. It neither assumes a
 tensor-product factorization nor needs such a factorization to state the result.
 
-These definitions do not prove these assertions. The accompanying Haar-existence
-helper is proved. The proof status of each component is recorded under
-[Implemented helper, proof status and retained obligations](#implemented-helper-proof-status-and-retained-obligations).
+These definitions do not prove these assertions. The only proof in this pair is
+the accompanying Haar-existence helper. The representation-theoretic assertions
+are proved by separately published proof companions, recorded under
+[Implemented helper and published proofs](#implemented-helper-and-published-proofs).
 This contribution does not assert irreducibility of induction,
 existence or uniqueness of a Langlands quotient, or exhaustion by such quotients.
 Silberger's discrete-series support and summand assertions (Corollary 4.5.11 and
@@ -204,8 +205,9 @@ supplies that character on `M`, and the covariance calculation above supplies
 it on `G`. Accordingly Silberger's two conclusions translate into exactly the
 analytic conclusions stated here. This paragraph and the preceding argument
 document a mathematical derivation; they are not formal proofs of the bridge.
-The separately published exponent-criterion proposition is not assumed as an
-already proved implication.
+The statement pair does not assume the separately published exponent-criterion
+proposition. Its published proof `glTemperedExponentCriterion` is used by the
+analytic preservation proof described in the final section, not by this pair.
 
 ## Original sources and declaration correspondence
 
@@ -224,7 +226,7 @@ For Silberger the one-based PDF page is the printed page plus six. For
 Waldspurger it is the printed page minus 234. The formulas in Silberger's
 pp.190–191 were checked visually because the text layer omits symbols.
 
-## Implemented helper, proof status and retained obligations
+## Implemented helper and published proofs
 
 `PadicField.TopologicalData.exists_isHaarMeasure_leviCentralQuotient` supplies a
 Borel Haar measure on the actual quotient of `B.Levi F.Carrier` by its center.
@@ -235,30 +237,81 @@ instances are inferred from the actual topological group. This is an internal
 measure-existence construction following the existing ambient-group helper;
 it proves that the analytic measure quantification is nonvacuous.
 
-This pair proves none of the representation-theoretic implications. Their
-status in the Library is as follows.
+This pair proves none of the representation-theoretic implications. They are
+proved in separately published proof companions. Each theorem below has
+exactly the type of the named proposition at the independent universes `uF`
+and `uV`, with no additional parameters or hypotheses.
 
 - `Langlands.glTemperedUnitarity`, in
-  `Langlands.Representation.Classification.TemperedUnitarityProof`, proves
-  `GLTemperedUnitarityStatement.{uF, uV}` exactly.
-- The first conclusion of `GLTemperedInductionStatement`, unitarizability of
-  `σ`, is isolated with exactly the same inputs and hypotheses as
-  `GLLeviTemperedUnitarityStatement`. `Langlands.glLeviTemperedUnitarity`
-  proves it.
-- The second conclusion, semisimplicity of the normalized induction, follows
-  from that theorem, the admissibility contained in `IsTemperedModCenter`, and
-  `isSemisimple_normalizedParabolicInduced_of_admissible_unitarizable`. The
-  Library has no separately named theorem for this conclusion.
-- The final conclusion, temperedness of the normalized induction, is isolated
-  as `GLTemperedInductionPreservationStatement`. It has no proof in the
-  Library.
+  `Langlands.Representation.Classification.TemperedUnitarityProof`
+  ([TemperedUnitarityProof](TemperedUnitarityProof.md)), proves
+  `GLTemperedUnitarityStatement.{uF, uV}`. Its proof applies the published
+  discrete-series support theorem, square-integrable unitarity, and
+  unitarity of normalized induction.
+- `Langlands.glTemperedInduction`, in
+  `Langlands.Representation.Classification.TemperedInductionProof`
+  ([TemperedInductionProof](TemperedInductionProof.md)), proves
+  `GLTemperedInductionStatement.{uF, uV}`. It uses only the statement's own
+  hypotheses: irreducibility of `σ` and `IsTemperedModCenter σ μ` at the one
+  supplied Haar measure `μ`. The three conclusions are obtained as follows.
+  - Unitarizability of `σ`: `Langlands.glLeviTemperedUnitarity`, in
+    `Langlands.Representation.Classification.LeviTemperedUnitarityProof`
+    ([LeviTemperedUnitarityProof](LeviTemperedUnitarityProof.md)), proves
+    `GLLeviTemperedUnitarityStatement.{uF, uV}`. That proposition isolates
+    this conclusion with exactly the same inputs and hypotheses.
+  - Semisimplicity of the normalized induction: smoothness from the analytic
+    hypothesis, the positive form on `σ` and
+    `glNormalizedParabolicInductionUnitarity` give a positive form on the
+    induced representation. Independently,
+    `Parabolic.normalizedInductionAdmissibility` gives admissibility of the
+    induced representation. Then `admissibleUnitarySemisimplicity` gives
+    complete reducibility. The main proof composes these theorems directly.
+    Apart from `glTemperedInduction` itself, no published theorem isolates
+    this conclusion under the statement's hypotheses.
+  - Temperedness of the normalized induction:
+    `Langlands.glTemperedInductionPreservation`, in
+    `Langlands.Representation.Classification.TemperedInductionPreservationProof`
+    ([TemperedInductionPreservationProof](TemperedInductionPreservationProof.md)),
+    proves `GLTemperedInductionPreservationStatement.{uF, uV}`
+    ([TemperedInductionPreservationStatement](TemperedInductionPreservationStatement.md)).
+    That proposition isolates this conclusion with exactly the same inputs and
+    hypotheses. Its proof derives upper refined Jacquet bounds from the
+    supplied `μ` by `glProductLeviTemperedExponentNecessity`. It carries them
+    to the induced representation by `glInductionWeakJacquetBounds`, which uses
+    the normalized geometric lemma. It then applies the reverse implication of
+    `glTemperedExponentCriterion` at carrier universe `max uF uV`. The formal
+    analytic comparisons are supplied by those published proofs, not by the
+    derivation documented above.
 
-Hence `GLTemperedInductionStatement` and the conjunction
-`GLTemperedInductionPrerequisitesStatement` are unproved. Silberger's p.190
-proof invokes Corollaries 1.7.9 and 4.5.11; his p.191 proof invokes the
-character criterion and continuity of constant terms. Their transitive proofs
-are not reimplemented or certified by this contribution.
-No Langlands-classification conclusion is an input field or an assumed axiom.
+By definition, `GLTemperedInductionPrerequisitesStatement.{uF, uV}` is the
+conjunction of `GLTemperedUnitarityStatement.{uF, uV}` and
+`GLTemperedInductionStatement.{uF, uV}`. The two exact proofs
+`glTemperedUnitarity` and `glTemperedInduction` therefore supply its two
+conjuncts, and the anonymous pair of them proves the conjunction at every pair
+of universes. This is only a consequence of the two theorems: the Library has
+no separately named theorem whose type is
+`GLTemperedInductionPrerequisitesStatement`.
+
+Declarations elsewhere that take `GLTemperedInductionStatement` or
+`GLTemperedInductionPreservationStatement` as an explicit hypothesis, such as
+`isSemisimple_normalizedOppositeParabolicInduced_of_temperedInduction`,
+`glTemperedDiscreteSeriesOppositeToUpper_of` and
+`SupportedRegularWeylCone.reduction`, still state that hypothesis. The
+published proofs can be supplied as arguments; they do not change those
+declarations.
+
+These proofs establish only the stated conclusions. They prove no
+irreducibility of the induced representation, no particular decomposition of
+it, and no Langlands-classification statement. Silberger's p.190 proof invokes
+Corollaries 1.7.9 and 4.5.11; his p.191 proof invokes the character criterion
+and continuity of constant terms. The Library proofs are not formalizations of
+those printed proofs. Ambient unitarity does use the published discrete-series
+support theorem `glTemperedDiscreteSeriesSupport`, the Library's
+specialization of the support assertion of Corollary 4.5.11. Analytic
+preservation replaces the character criterion by Waldspurger's exponent
+argument, III.2.2–III.2.3, as documented in its proof companion. No
+Langlands-classification conclusion is an input field or an assumed axiom.
 
 Worker 1058 updated the proof status in this file for the 2026-10-29
-documentation audit; the Lean file is unchanged.
+documentation audit, and again on 2026-10-31 after publication of the tempered
+induction proofs; the Lean file is unchanged.

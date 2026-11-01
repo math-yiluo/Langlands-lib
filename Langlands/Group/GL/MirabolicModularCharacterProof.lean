@@ -77,7 +77,7 @@ private theorem det_lastRow (A : Matrix (Fin (n + 1)) (Fin (n + 1)) K)
   rw [Finset.sum_ite_eq']
   simp [Fin.succAbove_last, ← two_mul, pow_mul]
 
-private theorem determinant_projection (g : mirabolic n K) :
+theorem determinant_projection (g : mirabolic n K) :
     GeneralLinear.determinant g.val = GeneralLinear.determinant (projection g) :=
   Units.ext (det_lastRow g.val.val g.property)
 

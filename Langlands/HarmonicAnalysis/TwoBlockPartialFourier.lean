@@ -173,7 +173,7 @@ variable {K : Type uK} [Field K] [TopologicalSpace K] [IsTopologicalRing K]
   (ψ : UnitaryAdditiveCharacter K) (μ : AdditiveHaarMeasure K) {r s : ℕ}
 
 omit [IsTopologicalRing K] [MeasurableSpace K] [BorelSpace K] in
-private theorem complex_finsetSum {ι : Type*} (S : Finset ι) (a : ι → K) :
+theorem complex_finsetSum {ι : Type*} (S : Finset ι) (a : ι → K) :
     ψ.complex (∑ i ∈ S, a i) = ∏ i ∈ S, ψ.complex (a i) := by
   classical
   induction S using Finset.induction_on with

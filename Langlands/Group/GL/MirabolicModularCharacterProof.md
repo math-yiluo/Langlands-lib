@@ -118,7 +118,8 @@ Write `P = GeneralLinear.mirabolic n K`, `V = radical n K`,
    the image of `E × C`. Separately, `det_lastRow` applies
    `Matrix.det_succ_row` to the last row. Only the last cofactor survives;
    its sign is `(-1)^(2n) = 1`, and its minor is the upper-left block.
-   `determinant_projection` lifts this equality to determinant units.
+   The public `determinant_projection` lifts this equality to determinant units
+    and is reused by the mirabolic restriction factors.
 
 2. **Triviality on the radical.** `character_radical` proves this for every
    homomorphism `χ : P →* ℝ≥0`, without topology. Conjugation by the Levi scalar

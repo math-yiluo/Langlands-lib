@@ -172,3 +172,7 @@ inversion theorem in the pair of off-diagonal variables. The statement here is
 adapted to the Library's entrywise plus-sign Fourier convention, as explained
 under "Conventions". The Lean proof uses finite tensor decompositions and scalar
 self-duality, not the two-variable inversion theorem.
+
+The public helper `Langlands.HarmonicAnalysis.complex_finsetSum` expresses the
+complex character of a finite sum as the product of the characters of its
+summands. The rectangular commutation proof reuses this same declaration.

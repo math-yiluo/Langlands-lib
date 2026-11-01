@@ -90,3 +90,7 @@ constructions in pinned Mathlib. The proof establishes only the specified
 local comparison; the final global line-bundle composition belongs to its
 separate task. Worker 354 authored this proof and its accompanying text;
 no unpublished draft by another worker was reused.
+
+The public helper `Langlands.SchemeModule.pullback_scalar_eq_zero_iff` is also
+reused by the frame-vanishing and finite-seed proofs. Its statement and proof
+are unchanged.

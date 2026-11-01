@@ -19,7 +19,7 @@ private lemma nonvanishing_iff_pullback_ne_zero {X : Scheme.{u}}
       (not_congr (comp_eq_zero_iff_of_epi
         (Langlands.Scheme.Modules.pullbackUnitIso (X.fromSpecResidueField x)).inv))
 
-private lemma pullback_scalar_eq_zero_iff {X Y : Scheme.{u}} (f : Y ⟶ X)
+lemma pullback_scalar_eq_zero_iff {X Y : Scheme.{u}} (f : Y ⟶ X)
     (φ : structureModule X ⟶ structureModule X) :
     (Scheme.Modules.pullback f).map φ = 0 ↔
       f.appTop (φ.app ⊤ (1 : Γ(X, ⊤))) = 0 := by

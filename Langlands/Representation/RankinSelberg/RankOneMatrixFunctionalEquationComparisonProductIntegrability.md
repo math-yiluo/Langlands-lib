@@ -84,9 +84,11 @@ integrability and exchanges the iterated `u` and `g` integrals of precisely
 the same weighted function, with the same two Haar measures and no scalar
 factor.
 
-These specializations include `n = 0`. They impose no nontriviality or
-conductor normalization on `ψ`, no restriction on `s`, and no additive Haar
-measure or self-duality assumption.
+These specializations include `n = 0`. Their parameter
+`ψ : UnitaryAdditiveCharacter F.Carrier` already bundles continuity and
+nontriviality. The proofs use continuity without using the nontriviality
+field. They impose no additional conductor normalization on `ψ`, no restriction
+on `s`, and no additive Haar measure or self-duality assumption.
 
 ## Provenance and scope
 
