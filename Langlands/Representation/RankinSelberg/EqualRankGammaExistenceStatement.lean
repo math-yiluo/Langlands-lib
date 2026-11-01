@@ -12,7 +12,7 @@ universe uF uV uW
 
 /-- The valuation topology has a basis of open additive subgroups. This
 bridges existing Mathlib classes without adding a hypothesis to the targets. -/
-private theorem valuative_nonarchimedean {K : Type uF} [Field K]
+theorem equalRankGamma_valuative_nonarchimedean {K : Type uF} [Field K]
     [TopologicalSpace K] [ValuativeRel K] [IsValuativeTopology K] :
     NonarchimedeanAddGroup K where
   is_nonarchimedean U hU := by
@@ -31,7 +31,7 @@ def EqualRankGammaExistenceStatement (n : ℕ) : Prop :=
   letI := T.localField
   letI := IsTopologicalAddGroup.rightUniformSpace F.Carrier
   letI := isUniformAddGroup_of_addCommGroup (G := F.Carrier)
-  letI := valuative_nonarchimedean (K := F.Carrier)
+  letI := equalRankGamma_valuative_nonarchimedean (K := F.Carrier)
   letI := borel F.Carrier
   letI : BorelSpace F.Carrier := ⟨rfl⟩
   letI := borel (Langlands.GeneralLinear (n + 1) F.Carrier)

@@ -36,7 +36,7 @@ variable {F : Type uF} [Field F] [TopologicalSpace F]
   (ψ : UnitaryAdditiveCharacter F) (abv : AbsoluteValue F ℝ) {n : ℕ}
 
 /-- Zero-row convergence is exactly integrability of the diagonal quotient function. -/
-private theorem zero_row_converges_iff (k : ℕ) [MeasurableSpace F]
+theorem zero_row_converges_iff (k : ℕ) [MeasurableSpace F]
     [MeasurableSpace (LeftUnipotentQuotient n F)]
     (μ : Measure (LeftUnipotentQuotient n F)) (ν : AdditiveHaarMeasure F)
     (W : WhittakerFunctions ψ (n + (0 + k + 1)))
@@ -56,7 +56,7 @@ private theorem zero_row_converges_iff (k : ℕ) [MeasurableSpace F]
     rw [mul_one, Subsingleton.elim qx.2 0]
 
 /-- The actual zero-row nested integral is the diagonal quotient integral. -/
-private theorem zero_row_integral_eq (k : ℕ) [MeasurableSpace F]
+theorem zero_row_integral_eq (k : ℕ) [MeasurableSpace F]
     [MeasurableSpace (LeftUnipotentQuotient n F)]
     (μ : Measure (LeftUnipotentQuotient n F)) (ν : AdditiveHaarMeasure F)
     (W : WhittakerFunctions ψ (n + (0 + k + 1)))

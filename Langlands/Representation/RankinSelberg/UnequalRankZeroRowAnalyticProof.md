@@ -112,7 +112,8 @@ proof use the complex Iwasawa integral identity to identify the quotient
 integral with its compact root average. The equality uses the actual Haar
 normalizations and every compatible quotient measure, with scalar one.
 
-The two private lemmas `zero_row_converges_iff` and `zero_row_integral_eq`
+The two shared lemmas `UnequalRankZeroRowAssembly.zero_row_converges_iff`
+and `UnequalRankZeroRowAssembly.zero_row_integral_eq`
 use `rectangularMeasure_zero_rows`: the actual zero-row rectangular product
 measure is the Dirac measure at the unique matrix. Integrating out this
 probability factor gives one direction of the integrability equivalence.

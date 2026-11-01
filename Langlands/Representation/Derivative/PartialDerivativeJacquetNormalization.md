@@ -7,7 +7,8 @@ Jacquet-to-derivative comparison. It constructs composite quotient maps into
 the existing derivative objects and proves their surjectivity, naturality
 and normalized action formulas. It then identifies the accumulated scalar
 with the inverse-half of the existing two-block modulus on the first factor.
-All current imported Lean/Markdown pairs remain unchanged.
+The three basic determinant lemmas are shared through the paired
+`MirabolicDeterminant` module, with their original names and proofs preserved.
 
 The namespace is `Langlands.Derivative.JacquetNormalization`. The principal
 construction is `generalLinearDerivativePositiveMk.{uF,uV}`; the final action
@@ -45,8 +46,9 @@ the actual block matrix and uses Mathlib's `det_reindex_self` and
 `determinant_levi` proves that the actual `Mirabolic.levi g = diag(g,1)`
 preserves determinant. `determinant_successor` applies the same fact to
 `Mirabolic.successor`, which is `levi` after the actual subgroup inclusion.
-These are elementary matrix identities, proved here without importing a
-representation-theoretic determinant lemma.
+These elementary matrix identities now reside in the imported
+`MirabolicDeterminant` pair; their proofs use only the actual matrix
+constructions and Mathlib determinant identities.
 
 `successorIterate n j` is the actual homomorphism
 

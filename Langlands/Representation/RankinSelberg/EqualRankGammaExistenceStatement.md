@@ -1,6 +1,6 @@
 # Equal-rank JPSS gamma-factor existence
 
-Author: Worker 358. The binder scope and private valuative-topology proof are
+Author: Worker 358. The binder scope and valuative-topology proof are
 adapted from Worker 11's published `FunctionalEquationStatement` module.
 
 The paired Lean file defines, but does not prove,
@@ -24,11 +24,13 @@ In the same order as that target, the definition installs `T.topology`,
 `isUniformAddGroup_of_addCommGroup`, the derived `NonarchimedeanAddGroup`
 instance, and the Borel measurable structures and `BorelSpace` instances
 on `F.Carrier`, `GL_(n+1)(F)`, its upper unipotent subgroup, and
-`LeftUnipotentQuotient n F.Carrier`. The private theorem
-`valuative_nonarchimedean` supplies the same Prop-valued instance as in the
+`LeftUnipotentQuotient n F.Carrier`. The shared theorem
+`equalRankGamma_valuative_nonarchimedean` supplies the same Prop-valued instance as in the
 published target: the valuative topology's basis of open submodules yields
 open additive subgroups inside each neighborhood of zero. Its proof uses
-`IsLinearTopology.hasBasis_open_submodule`; it adds no hypothesis.
+`IsLinearTopology.hasBasis_open_submodule`; it adds no hypothesis. The
+existing proof is exposed under this name for reuse in the gamma-existence
+proof, preserving the proposition and its instances.
 
 With those instances, the proposition quantifies over:
 
