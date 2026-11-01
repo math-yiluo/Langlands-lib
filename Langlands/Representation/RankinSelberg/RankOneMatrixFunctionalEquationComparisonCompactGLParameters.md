@@ -3,7 +3,9 @@
 This internal derived module retains the compact parameter outside the actual
 unipotent orbit integral. For a continuous translate map `U`, a
 Schwartz–Bruhat parameter kernel `κ`, and an ambient matrix test `Φ`, the two
-integrands are
+integrands are given below. The parameter space `X` is a topological measurable
+space whose open sets are measurable. Its measure `μ` is s-finite and finite
+on compact sets; both measure hypotheses are required.
 
 ```text
 κ(x) |det g| ∫_N χ(u)⁻¹ Fourier(Φ)(iota(u) W⁻¹ diag(g,1,...) U(x)) du,
@@ -23,7 +25,9 @@ a family of functions. Applying the unipotent integral and the scalar
 weight preserves this property. Multiplication by `κ` gives compact support
 in the parameter. The finite sampled-value Schwartz expansion from
 CompactOrbitIntegration then turns section convergence into joint
-convergence. Each section uses WeylOrbitBlocks and ScalarHaar. Only after
+convergence. Finiteness of `μ` on compact sets makes the parameter
+Schwartz–Bruhat factors in that finite expansion integrable. Each section
+uses WeylOrbitBlocks and ScalarHaar. Only after
 joint convergence is proved does Fubini integrate the section identities.
 The additive-to-GL₁ scalar is identical on both sides and cancels.
 

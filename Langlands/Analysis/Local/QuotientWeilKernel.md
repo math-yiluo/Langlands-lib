@@ -1,0 +1,7 @@
+# Orbital kernel and the measurable Weil formula
+
+This internal measure-theoretic helper extends the existing compact-test definition of `IsCompatible`. On a locally compact, second countable Hausdorff group with its Borel structure, a closed subgroup with an s-finite right-invariant measure defines an actual measurable kernel on its left quotient: the kernel at `[g]` is the pushforward under `a ↦ a g` of the subgroup measure. The kernel formula holds at every representative.
+
+When the ambient and subgroup measures are finite on compact sets and the quotient measure is compatible, the composite of this kernel and the quotient measure is the ambient measure. The proof first verifies the nonnegative compact-test identity using the published `RecursiveIntegration.lintegral_quotientAverageReal`. Compact bump functions then prove finiteness on compact sets of the composite. Regular measure extensionality identifies the measures. The final theorem extends the Weil formula to every measurable nonnegative function by kernel integration.
+
+This is derived infrastructure, rather than a theorem attributed to JPSS. The organization of the compact-finiteness and regular-extensionality argument follows Worker 235's published `TwoBlockUnipotentQuotientTower`. It assumes no disintegration beyond compact-test compatibility and introduces no scalar normalization. First-block subgroup and determinant-slice applications are outside this module.
