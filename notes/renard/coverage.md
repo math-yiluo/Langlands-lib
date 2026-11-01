@@ -70,6 +70,16 @@ regular actions. The separate proof task
 These statements leave the tensor-dual equivalences and full-source coefficient
 convention open.
 
+The [I.5.2–I.6 module-class and category-property ledger](module-classes-category-properties.md),
+dated 1 November 2026 by Worker 6, maps the projective, injective, free-module
+and category-property assertions on printed pp.26–28 / PDF32–34. At Library
+`0acb0c6492f21de608601e6283ccd1944725452a` it distinguishes published
+projectivity and abelianness proofs, actual sums/products and public statements
+from approved unpublished candidates and complete private proofs. The negative
+I.5.3 projectivity assertion remains open. This updates only I.5 and I.6
+navigation; the earlier I.5.1 and categorical-progress observations retain
+their original date and scope.
+
 ## Reference and reading record
 
 The governing reference is David Renard, *Représentations des groupes réductifs
@@ -235,8 +245,8 @@ including definitions, remarks and unnumbered results.
 | I.2 | Forgetful functors and adjoints | 14 / 20 | Backlog |
 | I.3 | Idempotent corner functor | 19 / 25 | Backlog |
 | I.4 | Duality | 22 / 28 | Partial: [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md); actual comparisons and full-source convention remain open |
-| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 definition/comparison candidates and shared statement drafts; all three consequences privately proved and compiled, pending prerequisite publication and exact proof review. I.5.2 and the remainder remain open |
-| I.6 | Properties of the nondegenerate module category | 27 / 33 | Backlog |
+| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 update above retains its date and scope; [I.5.2–3 ledger](module-classes-category-properties.md) records public projectivity proofs and free/injective statements, pending proof publications, and the open negative projectivity example |
+| I.6 | Properties of the nondegenerate module category | 27 / 33 | Partial: [assertion ledger](module-classes-category-properties.md) records published abelianness and actual sums/products, public source-AB5 statements, and remaining completeness, local finite-type and filtered-exactness publication gates |
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial assertion audit |
