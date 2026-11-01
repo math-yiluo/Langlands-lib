@@ -29,8 +29,9 @@ these two steps in the already constructed directed-composition setting.
 The directedness hypotheses restrict the scope relative to the original
 general category, whose composition uses extended atlases and finite descent.
 
-`PresentedAffinoidAlgebra.Represents.hom_ext` is the algebraic step, derived
-directly from the imported full `Represents K i U` definition. For actual
+`PresentedAffinoidAlgebra.Represents.hom_ext` is the algebraic step, imported
+from the shared `GeneralizedAffinoid.DomainCancellation` module. Its unchanged
+proof derives directly from the full `Represents K i U` definition. For actual
 presented algebras `D`, `E`, `R`, a representing bounded structural map
 `i : D → E`, and bounded maps `ψ χ : E → R`, it proves
 `ψ.comp i = χ.comp i → ψ = χ`. The spectrum map of `ψ.comp i` lands in `U`

@@ -68,3 +68,8 @@ matrix comparison with `reversedMatrix`, the right factor `diag(I_N,w_c)`,
 the determinant weights, lower-quotient geometry, scalar kernels and
 determinant-slice transport remain separate obligations. It asserts no
 convergence for arbitrary inputs and neither final dominant gamma/L target.
+
+The canonical local instances have module-specific names so that this module
+can be imported together with the other dominant scalar, rectangle and slice
+helpers. This naming correction changes no instance value or mathematical
+definition, statement or proof.

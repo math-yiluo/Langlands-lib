@@ -83,3 +83,8 @@ a separate algebraic obligation. It supplies no rectangle or quotient
 integration, convergence, determinant-coefficient reflection, Laurent
 functional equation, gamma product or L-polynomial divisibility. Both final
 dominant-rank propositions remain open.
+
+The canonical local instances have module-specific names so that this module
+can be imported together with the other dominant scalar, rectangle and slice
+helpers. This naming correction changes no instance value or mathematical
+definition, statement or proof.

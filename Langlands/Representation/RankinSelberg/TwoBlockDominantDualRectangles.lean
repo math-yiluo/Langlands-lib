@@ -169,20 +169,20 @@ section PadicMeasure
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : SecondCountableTopology F.Carrier :=
+local instance dualRectangleTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance dualRectangleValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance dualRectangleLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance dualRectangleSecondCountable : SecondCountableTopology F.Carrier :=
   F.canonicalTopologicalData.secondCountableTopology
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (a b : ℕ) :
+local instance dualRectangleMeasurable : MeasurableSpace F.Carrier := borel F.Carrier
+local instance dualRectangleBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance dualRectangleMatrixSecondCountable (a b : ℕ) :
     SecondCountableTopology (Matrix (Fin a) (Fin b) F.Carrier) :=
   inferInstanceAs (SecondCountableTopology (Fin a → Fin b → F.Carrier))
-local instance (a b : ℕ) :
+local instance dualRectangleMatrixBorel (a b : ℕ) :
     BorelSpace (Matrix (Fin a) (Fin b) F.Carrier) :=
   inferInstanceAs (BorelSpace (Fin a → Fin b → F.Carrier))
-local instance (m : Fin 2 → ℕ) (j k : ℕ) :
+local instance dualRectangleProductBorel (m : Fin 2 → ℕ) (j k : ℕ) :
     BorelSpace (Rectangles m j k F.Carrier) :=
   inferInstanceAs (BorelSpace
     (Matrix (Fin (m 0 + 1)) (Fin k) F.Carrier ×
