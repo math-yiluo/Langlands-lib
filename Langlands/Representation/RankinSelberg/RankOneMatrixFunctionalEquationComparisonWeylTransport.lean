@@ -191,12 +191,12 @@ namespace Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance matrixComparisonWeylTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance matrixComparisonWeylValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance matrixComparisonWeylLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonWeylGLMeasurable (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) := borel _
+local instance matrixComparisonWeylGLBorel (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
 
 variable {n : ℕ}
 

@@ -43,19 +43,19 @@ section Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance matrixComparisonZeroTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance matrixComparisonZeroValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance matrixComparisonZeroLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : MeasurableSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := borel _
-local instance : BorelSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (upperUnipotent (0 + 1) F.Carrier) := borel _
-local instance : BorelSpace (upperUnipotent (0 + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (LeftUnipotentQuotient 0 F.Carrier) := borel _
-local instance : BorelSpace (LeftUnipotentQuotient 0 F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonZeroMeasurable : MeasurableSpace F.Carrier := borel _
+local instance matrixComparisonZeroBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance matrixComparisonZeroT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance matrixComparisonZeroGLMeasurable : MeasurableSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := borel _
+local instance matrixComparisonZeroGLBorel : BorelSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonZeroUnipotentMeasurable : MeasurableSpace (upperUnipotent (0 + 1) F.Carrier) := borel _
+local instance matrixComparisonZeroUnipotentBorel : BorelSpace (upperUnipotent (0 + 1) F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonZeroQuotientMeasurable : MeasurableSpace (LeftUnipotentQuotient 0 F.Carrier) := borel _
+local instance matrixComparisonZeroQuotientBorel : BorelSpace (LeftUnipotentQuotient 0 F.Carrier) := ⟨rfl⟩
 
 /-- Actual normalized matrix data for the supplied rank-one model imply the
 full symmetric p-adic gamma-factor relation, uniformly in nonzero functionals

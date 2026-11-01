@@ -49,3 +49,8 @@ construction, nonzero evaluation, subquotient coefficient inclusion, ambient
 matrix comparison, and comparison of existing gamma certificates are composed
 as described above.
 There is no new literal literature assertion.
+
+The local coefficient-group and canonical p-adic instances have explicit
+`submodelComparison` names. Their types, terms, order and locality remain
+unchanged. The names prevent generated instance-name collisions when this
+comparison is imported together with the two-block L comparison.

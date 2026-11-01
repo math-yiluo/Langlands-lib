@@ -104,7 +104,7 @@ theorem determinantOperatorConjugation_mul_apply
   rw [FiniteSmoothRationalFunctions.finiteOrderDeterminantMultiplier_mul_apply χ ψ hχ hψ,
     ContinuousLinearEquiv.apply_symm_apply, ContinuousLinearEquiv.apply_symm_apply]
 
-private theorem composedConjugationQuotientCovariance
+theorem composedConjugationQuotientCovariance
     {A V W X : Type*} [Monoid A]
     [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]
     [AddCommGroup X] [Module ℂ X]
@@ -118,7 +118,7 @@ private theorem composedConjugationQuotientCovariance
   change υ a (f (e v)) = f (e (ρ (γ a) v))
   rw [hf, he, ← hcomp]
 
-private def sameConjugationQuotientEquiv
+def sameConjugationQuotientEquiv
     {A V W X : Type*} [Monoid A]
     [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]
     [AddCommGroup X] [Module ℂ X]

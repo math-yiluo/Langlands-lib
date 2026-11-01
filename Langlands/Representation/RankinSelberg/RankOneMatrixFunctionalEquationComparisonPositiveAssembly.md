@@ -57,3 +57,8 @@ carrier universes remain independent. The analytic block-zero
 continuations and equations remain explicit hypotheses. No matrix-to-block
 extraction, unconditional convergence, or all-rank matrix comparison theorem
 is asserted.
+
+The canonical p-adic local instances have explicit
+`matrixComparisonPositive` names. Their types, terms, order and locality are
+unchanged. These names allow this assembly and the two-block L comparison
+to be imported together without generated instance-name collisions.

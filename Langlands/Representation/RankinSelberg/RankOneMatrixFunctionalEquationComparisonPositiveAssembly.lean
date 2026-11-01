@@ -171,24 +171,24 @@ section Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance matrixComparisonPositiveTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance matrixComparisonPositiveValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance matrixComparisonPositiveLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance matrixComparisonPositiveMeasurable : MeasurableSpace F.Carrier := borel _
+local instance matrixComparisonPositiveBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance matrixComparisonPositiveT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance matrixComparisonPositiveDisconnected : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
-local instance : MeasurableSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := borel _
-local instance : BorelSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (upperUnipotent (0 + 1) F.Carrier) := borel _
-local instance : BorelSpace (upperUnipotent (0 + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (LeftUnipotentQuotient 0 F.Carrier) := borel _
-local instance : BorelSpace (LeftUnipotentQuotient 0 F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonPositiveGLMeasurable : MeasurableSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := borel _
+local instance matrixComparisonPositiveGLBorel : BorelSpace (Langlands.GeneralLinear (0 + 1) F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonPositiveUnipotentMeasurable : MeasurableSpace (upperUnipotent (0 + 1) F.Carrier) := borel _
+local instance matrixComparisonPositiveUnipotentBorel : BorelSpace (upperUnipotent (0 + 1) F.Carrier) := ⟨rfl⟩
+local instance matrixComparisonPositiveQuotientMeasurable : MeasurableSpace (LeftUnipotentQuotient 0 F.Carrier) := borel _
+local instance matrixComparisonPositiveQuotientBorel : BorelSpace (LeftUnipotentQuotient 0 F.Carrier) := ⟨rfl⟩
 
 variable {r : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
   (ψ : UnitaryAdditiveCharacter F.Carrier) (ν : AdditiveHaarMeasure F.Carrier)

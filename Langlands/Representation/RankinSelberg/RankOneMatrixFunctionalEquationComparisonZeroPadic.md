@@ -44,3 +44,7 @@ The provenance is internal composition of the actual Tate-passage and
 gamma-uniformity lemmas, with the published canonical normalization and
 trivial-quotient comparison. The positive-rank block argument remains a
 separate obligation of the parent task.
+
+The local canonical instances have explicit `matrixComparisonZero` names,
+with unchanged terms and locality. This prevents generated-name collisions
+when the L divisibility and gamma comparison modules share one entry module.

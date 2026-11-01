@@ -42,6 +42,10 @@ application formula holds on every vector of the product quotient; on
 The construction compares the dependent quotient presentations by actual
 maps.
 
+The generic helpers `composedConjugationQuotientCovariance` and
+`sameConjugationQuotientEquiv` are public so that the mixed CM/determinant
+comparison can reuse these exact constructions.
+
 Quotient induction and these genuine whole-action equivalences prove
 `IsoClass.determinantTwist_one` and `IsoClass.determinantTwist_mul` for the
 existing whole-action classes. The product law says that twisting by `χ`

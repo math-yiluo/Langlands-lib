@@ -22,7 +22,7 @@ variable {G : Type uG} [Group G] {N : Subgroup G} {θ : N →* ℂˣ}
   {V : Type uV} [AddCommGroup V] [Module ℂ V]
   (π : Representation ℂ G V) (ℓ : functionals N θ π)
 
-local instance : AddCommGroup (coefficientModel π ℓ).toSubmodule :=
+local instance submodelComparisonCoefficientGroup : AddCommGroup (coefficientModel π ℓ).toSubmodule :=
   (coefficientModel π ℓ).toSubmodule.addCommGroup
 
 variable (S : Subrepresentation (modelRepresentation π ℓ))
@@ -85,19 +85,19 @@ section PadicComparison
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance submodelComparisonTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance submodelComparisonValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance submodelComparisonLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance submodelComparisonMeasurable : MeasurableSpace F.Carrier := borel F.Carrier
+local instance submodelComparisonBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance submodelComparisonT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance submodelComparisonDisconnected : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
 
-local instance {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
+local instance submodelComparisonGLCoefficientGroup {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
     (ψ : UnitaryAdditiveCharacter F.Carrier)
     (π : Representation ℂ (Langlands.GeneralLinear (n + 1) F.Carrier) V)
     (ℓ : glFunctionals ψ n π) : AddCommGroup (glCoefficientModel ψ n π ℓ).toSubmodule :=

@@ -44,3 +44,8 @@ weight multiplicativity, the Library's unsigned Weyl identities, and
 Mathlib's measure-preserving change-of-variables theorems. No irreducibility,
 smoothness, coefficient-model membership, Fourier normalization or analytic
 existence premise is used.
+
+The local canonical topology, valuation, local-field and group measurable
+instances use explicit `matrixComparisonWeyl` names. Their mathematical terms
+and locality are unchanged. This permits importing the Weyl comparison with
+the actual model normalized-generator module without generated-name collisions.
