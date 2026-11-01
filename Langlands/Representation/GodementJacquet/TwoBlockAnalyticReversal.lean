@@ -85,12 +85,12 @@ namespace Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) :=
+local instance twoBlockReversalTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockReversalValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance twoBlockReversalLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance twoBlockReversalGLMeasurable (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) :=
   borel _
-local instance (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance twoBlockReversalGLBorel (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
 
 /-- Each block's actual transformed analytic assertion is precisely the
 ordinary assertion for the corresponding reversed pullback block. -/

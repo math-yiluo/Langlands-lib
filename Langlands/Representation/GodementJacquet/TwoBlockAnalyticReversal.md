@@ -50,3 +50,8 @@ noncompact ordinary analytic-induction theorem is still required to obtain the
 induced analytic conclusion. All provenance is internal, from the published
 actual matrix maps, coefficient transport, normalized induction transport,
 admissibility transport and finite reindexing identities.
+
+The local canonical topology, valuation, local-field and group measurable
+instances have explicit `twoBlockReversal` names. This preserves their terms
+and locality while avoiding generated-declaration name collisions when this
+module is imported together with the rank-one matrix Weyl comparison.

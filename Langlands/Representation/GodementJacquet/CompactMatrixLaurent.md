@@ -34,3 +34,7 @@ This proof is a finite discrete-order partition, rather than the source's
 finite compact-open coset partition. The compact-support premise is explicit
 in this helper and must be discharged before applying it in the closed
 supercuspidal functional-equation proof.
+
+The canonical local instances have explicit module-specific names so this helper
+can be imported together with the matrix analytic-data interfaces. Their
+definitions, all mathematical declarations, and all hypotheses are unchanged.
