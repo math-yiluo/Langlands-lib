@@ -1,3 +1,4 @@
+import Langlands.Group.GL.ReindexCongr
 import Langlands.Representation.RankinSelberg.EqualRankRankOneExtensionSpanComparisonStatement
 import Langlands.Representation.RankinSelberg.EqualRankLastRowReductionProof
 import Langlands.Representation.Whittaker.TwoBlockExtensionAssemblyProof
@@ -145,12 +146,6 @@ theorem half_mul_determinantWeight {n : ℕ} (g : Langlands.GeneralLinear (n + 1
 end Weight
 
 section Transport
-
-/-- Reindexing along `finCongr` of a reflexive equation is the identity. -/
-@[simp] theorem reindex_finCongr_self {R : Type*} [CommRing R] {k : ℕ} (h : k = k)
-    (g : Langlands.GeneralLinear k R) : GeneralLinear.reindex (finCongr h) g = g := by
-  ext i j
-  simp [GeneralLinear.reindex]
 
 /-- Replacing the second member of a pair family by an equivalent representation,
 blockwise. -/

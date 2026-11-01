@@ -73,7 +73,9 @@ representations with carriers in `Type uV`.
 
 - `mapsShortExact_id`, `mapsShortExact_comp`: the identity functor, and a
   composite of two functors that both satisfy `MapsShortExactIntertwiners`,
-  satisfy it.
+  satisfy it. These unchanged declarations are now imported from
+  `Langlands.Representation.Derivative.ShortExactFunctorLaws`, with their original
+  `Langlands.Derivative.LevelCalculus` names.
 - `isShortExact_map`: such a functor maps `IsShortExact` pairs to
   `IsShortExact` pairs.
 - `map_injective_of_exact`, `map_surjective_of_exact`: such a functor

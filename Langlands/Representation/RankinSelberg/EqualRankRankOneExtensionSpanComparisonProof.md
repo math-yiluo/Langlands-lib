@@ -96,7 +96,8 @@ because `g` is invertible, so complex powers add (`Complex.cpow_add`).
 ## Transport of the induced representation
 
 - `reindex_finCongr_self`: reindexing along `finCongr` of `k = k` is the
-  identity (simp lemma).
+  identity (simp lemma), imported from `Langlands.Group.GL.ReindexCongr` under
+  the unchanged `Langlands.RankinSelberg` name.
 - `pairFamilyEquivRight ρ₁ e`: from an equivalence `e : ρ₂ ≃ ρ₂'`, the
   blockwise equivalences `pairFamily ρ₁ ρ₂ i ≃ pairFamily ρ₁ ρ₂' i`
   (identity on block `0`, `e` on block `1`).
