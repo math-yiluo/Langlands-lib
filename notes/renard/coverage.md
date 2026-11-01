@@ -54,6 +54,13 @@ Those four proofs, the source reduction, algebra splitting and restriction
 estimates, floor recurrence and source contradiction remained obligations of
 the whole-book program at that snapshot.
 
+The [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md),
+dated 1 November 2026 by Worker 6, records the source passages, a conjugation
+example separating commuting actions from equality of recovered coefficients,
+and the remaining sufficient-input comparison and full-source obligations.
+It updates only the I.4 navigation row. It supplies no Lean result and does
+not close either duality comparison or decide the intended convention.
+
 ## Reference and reading record
 
 The governing reference is David Renard, *Représentations des groupes réductifs
@@ -129,7 +136,7 @@ including definitions, remarks and unnumbered results.
 | I.1 | Idempotented rings | 6 / 12 | Partial through part of I.1.5 |
 | I.2 | Forgetful functors and adjoints | 14 / 20 | Backlog |
 | I.3 | Idempotent corner functor | 19 / 25 | Backlog |
-| I.4 | Duality | 22 / 28 | Backlog |
+| I.4 | Duality | 22 / 28 | Partial: [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md); actual comparisons and full-source convention remain open |
 | I.5 | Classes of modules | 26 / 32 | Backlog |
 | I.6 | Properties of the nondegenerate module category | 27 / 33 | Backlog |
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
