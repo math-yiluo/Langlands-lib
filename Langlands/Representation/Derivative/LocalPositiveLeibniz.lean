@@ -1,4 +1,5 @@
 import Langlands.Representation.Derivative.LeftMixedProductDerivativeProof
+import Langlands.Representation.Derivative.RightMixedProductDerivativeFiltrationProof
 import Langlands.Representation.Derivative.MirabolicProductMinusCompatibility
 import Langlands.Representation.Derivative.LeftMixedProductFirstDerivative
 import Langlands.Representation.Derivative.RightMixedProductDerivativePositive
@@ -192,29 +193,14 @@ theorem leftVanishPos (k : ℕ) :
       rw [generalLinearRankCast_symm_comp] at hz'
       exact hz'
 
-/-- The right mixed-product filtration follows from the actual minus sequence,
-the derived left formulas and proved minus exactness. -/
-theorem rightFiltration :
-    RightMixedProductDerivativeFiltrationStatement.{uF,uV} F T := by
-  let := T.topology
-  intro χ k r i hi
-  cases k with
-  | zero =>
-      exact rightMixedProductDerivativeFiltration_zero.{uF,uV} T χ r i hi
-  | succ k =>
-      exact RightMixedDerivative.filtration_pos.{uF,uV} T χ
-        (MirabolicProductMinus.rightPsiCompatibility.{uF,uV} T)
-        (MirabolicProductMinus.rightPhiShortExact.{uF,uV} T)
-        (leftMixedProductDerivativeIso.{uF,uV} F T) (leftMixedProductDerivativeVanishing.{uF,uV} F T)
-        (Mirabolic.minusExactness.{uF,max uF uV} F T) k r i hi
-
 /-- Positive-rank and positive-order Leibniz gluing with every actual
 mixed-product premise discharged. -/
 theorem positiveGlued (m n i : ℕ) (hi : 0 < i ∧ i ≤ (m + 1) + (n + 1)) :
     IsGluedFromFamily (leibnizSource.{uF,uV} T ψ (m + 1) (n + 1) i hi.2)
       (leibnizPiece T ψ (m + 1) (n + 1) i) :=
   leibnizSource_glued_pos.{uF,uV} T (leftMixedProductDerivativeIso.{uF,uV} F T)
-    (leftMixedProductDerivativeVanishing.{uF,uV} F T) (rightFiltration.{uF,uV} T) ψ m n i hi
+    (leftMixedProductDerivativeVanishing.{uF,uV} F T)
+    (rightMixedProductDerivativeFiltration.{uF,uV} F T) ψ m n i hi
 
 end Langlands.Derivative.LocalPositiveLeibniz
 

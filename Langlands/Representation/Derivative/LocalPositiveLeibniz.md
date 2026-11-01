@@ -74,7 +74,7 @@ vanishing uses the published `leftMixedProductDerivativeVanishing`; in
 GL rank zero the inequalities are incompatible. Thus neither half
 of the left mixed-product derivative formula is an assumed premise.
 
-`rightFiltration` uses the existing conditional
+The imported `rightMixedProductDerivativeFiltration` uses the existing conditional
 `RightMixedDerivative.filtration_pos`, supplying the proved actual
 `rightPsiCompatibility`, `rightPhiShortExact`, the published `leftMixedProductDerivativeIso` and
 `leftMixedProductDerivativeVanishing`, and `Mirabolic.minusExactness` at carrier universe
@@ -85,7 +85,7 @@ filtration proposition, without a remaining formula or exactness premise.
 Finally `positiveGlued` applies the existing
 `leibnizSource_glued_pos`, supplying `leftMixedProductDerivativeIso`,
 `leftMixedProductDerivativeVanishing`, and
-`rightFiltration`. That construction differentiates the actual mirabolic
+`rightMixedProductDerivativeFiltration`. That construction differentiates the actual mirabolic
 restriction short exact sequence, glues its subobject from the
 positive-first derivative pieces, glues its quotient from the feasible
 zero-first piece or the empty family, then splices and reindexes these
@@ -100,8 +100,12 @@ Library base `e058cb4d3adbd71764731d87c4cbfcb5805696e8` byte for byte, and
 had paired Markdown. Integration additionally imports
 `LeftMixedProductDerivativeProof` and reuses its two exact all-rank results
 in place of the duplicate `leftIso` and `leftVanish` declarations. The
-positive-rank induction helpers remain available. The integrated closure has
-320 project modules, each with a nonempty Markdown companion. External imports
+positive-rank induction helpers remain available. Integration also imports
+`RightMixedProductDerivativeFiltrationProof` and uses its identical all-rank
+filtration conclusion in place of the duplicate local `rightFiltration`
+declaration. This keeps the mixed-product proof upstream of Leibniz gluing.
+Every project module in the integrated closure has a nonempty Markdown
+companion. External imports
 are from Mathlib and Lean. The only Classification modules in this closure are `Supercuspidal`,
 `SupercuspidalContragredientAux`, and
 `SupercuspidalContragredientStatement`. These enter lower induction,

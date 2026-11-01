@@ -43,3 +43,7 @@ Whittaker functions are arbitrary, including zero, with no representation
 irreducibility, full-type, nontrivial-character, or factor-certificate premise.
 No lower support, outer convergence for arbitrary input, rational continuation,
 functional equation, or dominant-rank gamma/L comparison is asserted.
+
+The canonical local instances have module-specific names so this module can be
+imported together with `AdjacentRankModelConvergenceProof`. Their values, the
+definitions, and the proofs above are unchanged by this naming correction.

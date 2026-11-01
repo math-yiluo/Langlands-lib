@@ -21,16 +21,22 @@ universe uF
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
   {n : ℕ} (j k : ℕ)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance unequalSliceTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance unequalSliceValuation : ValuativeRel F.Carrier :=
+  F.canonicalTopologicalData.valuativeRel
+local instance unequalSliceLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) :=
+local instance unequalSliceQuotientMeasurable :
+    MeasurableSpace (LeftUnipotentQuotient n F.Carrier) :=
   borel (LeftUnipotentQuotient n F.Carrier)
-local instance : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (Matrix (Fin j) (Fin (n + 1)) F.Carrier) :=
+local instance unequalSliceQuotientBorel :
+    BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
+local instance unequalSliceMatrixMeasurable :
+    MeasurableSpace (Matrix (Fin j) (Fin (n + 1)) F.Carrier) :=
   borel (Matrix (Fin j) (Fin (n + 1)) F.Carrier)
-local instance : BorelSpace (Matrix (Fin j) (Fin (n + 1)) F.Carrier) := ⟨rfl⟩
+local instance unequalSliceMatrixBorel :
+    BorelSpace (Matrix (Fin j) (Fin (n + 1)) F.Carrier) := ⟨rfl⟩
 
 local notation "abv" => normalizedAbsoluteValue F.canonicalTopologicalData
 local notation "qF" => F.canonicalTopologicalData.residueCardinality
