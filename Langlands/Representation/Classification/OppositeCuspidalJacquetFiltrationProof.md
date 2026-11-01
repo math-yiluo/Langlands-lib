@@ -21,7 +21,9 @@ semisimplicity, splitting and an opposite filtration are not inputs. The
 quasicuspidality conjunct in the upper conclusion is not used.
 
 All auxiliary declarations live in the namespace
-`Langlands.OppositeCuspidalJacquetFiltration` and are internal to this pair.
+`Langlands.OppositeCuspidalJacquetFiltration`. The coarse Levi reversal
+declarations are imported unchanged from the shared
+[`Geometric.CoarseLeviReversal`](../Geometric/CoarseLeviReversal.md) pair.
 The checked axioms of the main theorem are `propext`, `Classical.choice` and
 `Quot.sound`.
 
