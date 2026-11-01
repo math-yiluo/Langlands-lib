@@ -21,17 +21,23 @@ universe uF uE
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : SecondCountableTopology F.Carrier :=
+local instance measureTransportFieldTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance measureTransportFieldValuation : ValuativeRel F.Carrier :=
+  F.canonicalTopologicalData.valuativeRel
+local instance measureTransportLocalField : IsNonarchimedeanLocalField F.Carrier :=
+  F.canonicalTopologicalData.localField
+local instance measureTransportFieldT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance measureTransportFieldSecondCountable : SecondCountableTopology F.Carrier :=
   F.canonicalTopologicalData.secondCountableTopology
-local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
+local instance measureTransportGeneralLinearGroup (n : ℕ) :
+    IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearTopologicalGroup n
-local instance (n : ℕ) : LocallyCompactSpace (GeneralLinear n F.Carrier) :=
+local instance measureTransportGeneralLinearLocallyCompact (n : ℕ) :
+    LocallyCompactSpace (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearLocallyCompactSpace n
-local instance (n : ℕ) : SecondCountableTopology (GeneralLinear n F.Carrier) :=
+local instance measureTransportGeneralLinearSecondCountable (n : ℕ) :
+    SecondCountableTopology (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSecondCountableTopology n
 
 variable {t : ℕ} {m : Fin 2 → ℕ} (h : ∑ i, (m i + 1) = t + 1)

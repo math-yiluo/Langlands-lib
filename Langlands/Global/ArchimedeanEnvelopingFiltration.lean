@@ -59,7 +59,8 @@ section NumberField
 
 variable [NumberField K]
 
-local instance : FiniteDimensional ℝ (RealLieAlgebra K n) :=
+local instance envelopingFiltration_realLieAlgebra_finiteDimensional :
+    FiniteDimensional ℝ (RealLieAlgebra K n) :=
   FiniteDimensional.of_injective (realLieAlgebraToMatrix K n).toLinearMap
     (realLieAlgebraToMatrix K n).injective
 

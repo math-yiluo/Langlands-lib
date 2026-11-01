@@ -80,3 +80,7 @@ toward the invariant-finiteness argument. It does not prove finite generation,
 integrality over characteristic coefficients, surjectivity of invariant
 restriction, PBW, enveloping central generation, or automorphic differential
 growth.
+
+The local real finite-dimensionality instance is explicitly named for this
+module, so separate prerequisite branches can be imported together without
+colliding generated declaration names. Its type and proof are unchanged.

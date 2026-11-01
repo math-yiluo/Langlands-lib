@@ -33,3 +33,7 @@ This establishes finite degree pieces of the actual enveloping algebra.
 PBW, symmetrization, generation over its center, admissibility, analytic
 regularity and the final automorphic differential-growth theorem remain
 separate obligations.
+
+The local real finite-dimensionality instance is explicitly named for this
+module, so separate prerequisite branches can be imported together without
+colliding generated declaration names. Its type and proof are unchanged.

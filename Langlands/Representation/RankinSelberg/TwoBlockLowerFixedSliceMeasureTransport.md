@@ -26,3 +26,5 @@ sigma-finiteness, proving it for the prescribed lower transport.
 These are derived measure facts, rather than the analytic growth argument of JPSS
 Section 4.7. This module assumes no representation data and proves no outer integrability.
 It leaves the existing target statement and its entire import closure unchanged.
+The local canonical-field and general-linear instances have explicit names so
+that this helper can be imported together with the independent growth modules.

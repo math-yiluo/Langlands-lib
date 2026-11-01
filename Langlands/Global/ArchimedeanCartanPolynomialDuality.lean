@@ -89,7 +89,8 @@ private theorem dual_symmetric_ext {V : Type v} [AddCommGroup V] [Module ℂ V]
 
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
-local instance : FiniteDimensional ℝ (RealLieAlgebra K n) :=
+local instance cartanPolynomial_realLieAlgebra_finiteDimensional :
+    FiniteDimensional ℝ (RealLieAlgebra K n) :=
   FiniteDimensional.of_injective (realLieAlgebraToMatrix K n).toLinearMap
     (realLieAlgebraToMatrix K n).injective
 

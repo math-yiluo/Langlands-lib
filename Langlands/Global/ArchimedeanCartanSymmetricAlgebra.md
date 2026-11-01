@@ -58,3 +58,8 @@ on the original spaces through trace duality remains a separate construction.
 This module supplies no invariant projection, continuity theorem, PBW
 comparison, invariant restriction finiteness, covariant finite generation,
 central covering, admissibility or automorphic growth theorem.
+
+The local real finite-dimensionality instance has an explicit module-specific
+name, so this module can be imported together with `ArchimedeanCasimirCartan`,
+which supplies its own local instance for the same space. Both constructions
+and their mathematical conclusions are unchanged.

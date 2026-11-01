@@ -69,3 +69,7 @@ This unit establishes vector-space trace duality and its equivariant
 projection comparison. Symmetric-algebra comparison, polynomial evaluation
 injectivity, invariant restriction finiteness, PBW, central generation and
 the final automorphic growth theorem remain separate obligations.
+
+The local real finite-dimensionality instance is explicitly named for this
+module, so separate prerequisite branches can be imported together without
+colliding generated declaration names. Its type and proof are unchanged.

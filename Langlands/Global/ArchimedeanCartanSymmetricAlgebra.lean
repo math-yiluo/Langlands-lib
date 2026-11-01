@@ -348,7 +348,8 @@ section Noetherian
 
 variable [NumberField K]
 
-local instance : FiniteDimensional ℝ (RealLieAlgebra K n) :=
+local instance cartanSymmetric_realLieAlgebra_finiteDimensional :
+    FiniteDimensional ℝ (RealLieAlgebra K n) :=
   FiniteDimensional.of_injective (realLieAlgebraToMatrix K n).toLinearMap
     (realLieAlgebraToMatrix K n).injective
 

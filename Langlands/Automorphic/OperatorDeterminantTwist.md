@@ -52,3 +52,7 @@ The construction asserts neither existence of nonzero cuspidal input
 objects nor equality of the stable core with all automorphic forms.
 Descent to isomorphism classes, character action laws, and central-character
 transport remain separate.
+
+The common image/preimage order equivalence is exposed in
+`Langlands.Representation.SubrepresentationConjugation` and reused here.
+Its type and construction are unchanged from the original private helper.

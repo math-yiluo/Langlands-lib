@@ -44,7 +44,8 @@ private theorem complexBaseChange_nondegenerate {V : Type v}
 
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
-local instance : FiniteDimensional ℝ (RealLieAlgebra K n) :=
+local instance cartanTraceDuality_realLieAlgebra_finiteDimensional :
+    FiniteDimensional ℝ (RealLieAlgebra K n) :=
   FiniteDimensional.of_injective (realLieAlgebraToMatrix K n).toLinearMap
     (realLieAlgebraToMatrix K n).injective
 

@@ -50,7 +50,8 @@ private theorem complexified_dual_symmetric_ext_real
 
 variable (K : Type u) [Field K] (n : ℕ)
 
-local instance [NumberField K] : FiniteDimensional ℝ (RealLieAlgebra K n) :=
+local instance cartanDiagonal_realLieAlgebra_finiteDimensional [NumberField K] :
+    FiniteDimensional ℝ (RealLieAlgebra K n) :=
   FiniteDimensional.of_injective (realLieAlgebraToMatrix K n).toLinearMap
     (realLieAlgebraToMatrix K n).injective
 
