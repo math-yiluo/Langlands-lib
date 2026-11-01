@@ -36,34 +36,34 @@ namespace Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance modelZetaFieldTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance modelZetaValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance modelZetaLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance modelZetaFieldT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance modelZetaFieldTotallyDisconnected : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (r : ℕ) : MeasurableSpace
+local instance modelZetaFieldMeasurable : MeasurableSpace F.Carrier := borel _
+local instance modelZetaFieldBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance modelZetaGroupMeasurable (r : ℕ) : MeasurableSpace
     (Langlands.GeneralLinear (r + 1) F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace
+local instance modelZetaGroupBorel (r : ℕ) : BorelSpace
     (Langlands.GeneralLinear (r + 1) F.Carrier) := ⟨rfl⟩
-local instance (r : ℕ) : SecondCountableTopology
+local instance modelZetaGroupSecondCountable (r : ℕ) : SecondCountableTopology
     (Langlands.GeneralLinear (r + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSecondCountableTopology (r + 1)
-local instance (r : ℕ) : SigmaCompactSpace
+local instance modelZetaGroupSigmaCompact (r : ℕ) : SigmaCompactSpace
     (Langlands.GeneralLinear (r + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSigmaCompactSpace (r + 1)
-local instance (r : ℕ) : MeasurableSpace
+local instance modelZetaUnipotentMeasurable (r : ℕ) : MeasurableSpace
     (GeneralLinear.upperUnipotent (r + 1) F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace
+local instance modelZetaUnipotentBorel (r : ℕ) : BorelSpace
     (GeneralLinear.upperUnipotent (r + 1) F.Carrier) := ⟨rfl⟩
-local instance (r : ℕ) : MeasurableSpace
+local instance modelZetaQuotientMeasurable (r : ℕ) : MeasurableSpace
     (LeftUnipotentQuotient r F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace
+local instance modelZetaQuotientBorel (r : ℕ) : BorelSpace
     (LeftUnipotentQuotient r F.Carrier) := ⟨rfl⟩
 
 local notation "abv" => normalizedAbsoluteValue F.canonicalTopologicalData

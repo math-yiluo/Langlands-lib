@@ -41,19 +41,19 @@ universe uF uV
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance innerSliceFieldTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance innerSliceValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance innerSliceLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance (r : ℕ) :
+local instance innerSliceFieldT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance innerSliceGroupMeasurable (r : ℕ) :
     MeasurableSpace (Langlands.GeneralLinear (r + 1) F.Carrier) := borel _
-local instance (r : ℕ) :
+local instance innerSliceGroupBorel (r : ℕ) :
     BorelSpace (Langlands.GeneralLinear (r + 1) F.Carrier) := ⟨rfl⟩
-local instance (r : ℕ) :
+local instance innerSliceGroupSecondCountable (r : ℕ) :
     SecondCountableTopology (Langlands.GeneralLinear (r + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSecondCountableTopology (r + 1)
-local instance (r : ℕ) :
+local instance innerSliceGroupSigmaCompact (r : ℕ) :
     SigmaCompactSpace (Langlands.GeneralLinear (r + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSigmaCompactSpace (r + 1)
 

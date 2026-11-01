@@ -124,3 +124,8 @@ no unchecked identification with the original arbitrary representation is made.
 The initial model substitution, global series and factor assembly remain
 separate obligations. The imported joint-shell and quotient-shear helpers retain
 their separate independent review and publication requirements.
+
+Local instances in this module have explicit module-specific names so that its
+canonical field structures can be imported together with the model-star modules.
+The instance bodies and all mathematical definitions and theorem statements are
+unchanged by this compatibility correction.

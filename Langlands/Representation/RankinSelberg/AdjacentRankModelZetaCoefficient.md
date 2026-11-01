@@ -101,3 +101,8 @@ gamma/L factor certificates remain separate obligations. In particular the
 explicit realization equality is not a premise added to either parent theorem.
 The finite convolution dependency and its joint-shell and quotient-shear helpers
 retain their own separate review and publication steps.
+
+Local instances in this module have explicit module-specific names so that its
+canonical field structures can be imported together with the model-star modules.
+The instance bodies and all mathematical definitions and theorem statements are
+unchanged by this compatibility correction.

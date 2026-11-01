@@ -1,7 +1,7 @@
 # Finite separation of inner determinant-slice integrals
 
 This derived helper implements JPSS (1983), Section 6.3, printed pages
-433–434, formulas (6)–(9).
+433–435, formulas (6)–(9).
 
 For every canonical p-adic field, square Schwartz–Bruhat test `Phi`, and
 continuous complex quasicharacter `chi`, a compact open subgroup fixes
@@ -57,3 +57,8 @@ integrability of the outer quotient variable with the inner group
 variable, the initial outer shear and Fubini step, subsequent Laurent
 series calculations, functional equations and both parent factor
 conclusions remain separate obligations.
+
+Local instances in this module have explicit module-specific names so that its
+canonical field structures can be imported together with the model-star modules.
+The instance bodies and all mathematical definitions and theorem statements are
+unchanged by this compatibility correction.

@@ -15,36 +15,36 @@ universe uF uV uW
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance (r : ℕ) : MeasurableSpace
+local instance shellConvolutionFieldTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance shellConvolutionValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance shellConvolutionLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance shellConvolutionFieldT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance shellConvolutionGroupMeasurable (r : ℕ) : MeasurableSpace
     (Langlands.GeneralLinear (r + 1) F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace
+local instance shellConvolutionGroupBorel (r : ℕ) : BorelSpace
     (Langlands.GeneralLinear (r + 1) F.Carrier) := ⟨rfl⟩
-local instance (r : ℕ) : MeasurableSpace
+local instance shellConvolutionUnipotentMeasurable (r : ℕ) : MeasurableSpace
     (GeneralLinear.upperUnipotent (r + 1) F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace
+local instance shellConvolutionUnipotentBorel (r : ℕ) : BorelSpace
     (GeneralLinear.upperUnipotent (r + 1) F.Carrier) := ⟨rfl⟩
-local instance (r : ℕ) : MeasurableSpace
+local instance shellConvolutionQuotientMeasurable (r : ℕ) : MeasurableSpace
     (LeftUnipotentQuotient r F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace
+local instance shellConvolutionQuotientBorel (r : ℕ) : BorelSpace
     (LeftUnipotentQuotient r F.Carrier) := ⟨rfl⟩
-local instance (r : ℕ) : T2Space (LeftUnipotentQuotient r F.Carrier) :=
+local instance shellConvolutionQuotientT2 (r : ℕ) : T2Space (LeftUnipotentQuotient r F.Carrier) :=
   leftQuotient_t2Space _ (GeneralLinear.UpperUnipotent.isClosed (R := F.Carrier))
-local instance (r : ℕ) : SecondCountableTopology
+local instance shellConvolutionGroupSecondCountable (r : ℕ) : SecondCountableTopology
     (Langlands.GeneralLinear (r + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSecondCountableTopology (r + 1)
-local instance (r : ℕ) : SigmaCompactSpace
+local instance shellConvolutionGroupSigmaCompact (r : ℕ) : SigmaCompactSpace
     (Langlands.GeneralLinear (r + 1) F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSigmaCompactSpace (r + 1)
-local instance (r : ℕ) : SecondCountableTopology
+local instance shellConvolutionQuotientSecondCountable (r : ℕ) : SecondCountableTopology
     (LeftUnipotentQuotient r F.Carrier) :=
   TopologicalSpace.Quotient.secondCountableTopology
     (leftQuotient_isOpenQuotientMap
       (GeneralLinear.upperUnipotent (r + 1) F.Carrier)).isOpenMap
-local instance (r : ℕ) : LocallyCompactSpace
+local instance shellConvolutionQuotientLocallyCompact (r : ℕ) : LocallyCompactSpace
     (LeftUnipotentQuotient r F.Carrier) :=
   leftQuotient_locallyCompactSpace _
 
