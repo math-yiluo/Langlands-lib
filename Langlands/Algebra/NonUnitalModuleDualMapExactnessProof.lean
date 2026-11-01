@@ -21,8 +21,10 @@ variable {A : Type uA} [NonUnitalRing A] [Module ℂ A]
   {N : Type uN} [AddCommGroup N] [NonUnitalModule A N]
   (hA : IsIdempotented A) (hM : IsNondegenerate A M) (hN : IsNondegenerate A N)
 
-local instance : NonUnitalModule Aᵐᵒᵖ (FullDual hA hM) := fullAction hA hM
-local instance : NonUnitalModule Aᵐᵒᵖ (FullDual hA hN) := fullAction hA hN
+local instance mapExactnessFullActionM :
+    NonUnitalModule Aᵐᵒᵖ (FullDual hA hM) := fullAction hA hM
+local instance mapExactnessFullActionN :
+    NonUnitalModule Aᵐᵒᵖ (FullDual hA hN) := fullAction hA hN
 
 /-- A lift in the full dual can be projected to an actual nondegenerate lift. -/
 theorem pullback_lift_of_full (f : NonUnitalModuleHom A M N)
@@ -66,7 +68,8 @@ theorem pullback_injective_of_surjective (f : NonUnitalModuleHom A M N)
 variable {P : Type uP} [AddCommGroup P] [NonUnitalModule A P]
   (hP : IsNondegenerate A P)
 
-local instance : NonUnitalModule Aᵐᵒᵖ (FullDual hA hP) := fullAction hA hP
+local instance mapExactnessFullActionP :
+    NonUnitalModule Aᵐᵒᵖ (FullDual hA hP) := fullAction hA hP
 
 /-- Exact original pairs give exact actual dual pairs, with independent universes. -/
 theorem pullback_exact (f : NonUnitalModuleHom A M N) (g : NonUnitalModuleHom A N P)

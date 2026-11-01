@@ -74,3 +74,12 @@ algebras and zero modules remain in scope. Specialization to the opposite
 algebra supplies the right-module original-map versions; the separate
 categorical proof accounts for the actual right-to-left functor's
 published double-opposite transport.
+
+The proof and explanation originate with Worker 702. Worker 6's import
+compatibility correction gives the three local `fullAction` instances
+the explicit names `mapExactnessFullActionM`, `mapExactnessFullActionN`
+and `mapExactnessFullActionP`. Previously their generated names collided
+with those in the separately published `NonUnitalModuleBidualEvaluation`
+when both import closures were loaded. Each named instance still has
+exactly the same type and definition, and the argument above is unchanged.
+The original-map target and every imported statement remain unchanged.
