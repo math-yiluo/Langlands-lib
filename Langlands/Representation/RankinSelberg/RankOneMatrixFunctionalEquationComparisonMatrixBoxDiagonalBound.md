@@ -1,0 +1,11 @@
+# Genuine weighted diagonal bounds from full-matrix boxes
+
+This internal derived module uses actual compact open boxes in the full square-matrix space, including singular matrices, as Schwartz tests. `matrixNormBoxTest` is their characteristic function and is one at every diagonal whose entries satisfy the corresponding normalized absolute-value bound.
+
+`diagonalSliceWeight` is the inverse product of the positive-root ratios times the inverse-coordinate monomial with natural exponents. `boundedDiagonalNormIntegrand` multiplies that positive weight by the norm of the unchanged coefficient times its spectral determinant weight, and sets the result to zero outside the bounded diagonal box. This is an extended nonnegative norm integrand for the actual full torus and the existing product multiplicative Haar measure.
+
+`boundedDiagonalNormIntegrand_le_matrixDiagonal` gives a pointwise bound by a finite constant times the norm of a genuine matrix-box diagonal integrand, lowering the exponent by the fixed natural number `diagonalWeightDegree n e`. The real-variable determinant absorption lemma bounds the geometric weight after multiplication by that determinant power. The exact complex-power addition identity restores the original spectral weight; no estimate on its imaginary part is needed.
+
+`boundedDiagonalNormIntegrand_convergesOnRight` applies the actual full diagonal restriction bound to the supplied common matrix convergence hypothesis. For each fixed positive box radius and exponent vector, it obtains one common unshifted half-plane for every actual bi-smooth coefficient. Its bound is the supplied shifted matrix bound plus the determinant degree plus the real part of `jpssShift n`. Genuine finiteness of the weighted torus norm integral follows by pointwise domination and lower Lebesgue integration. It retains arbitrary canonical p-adic fields, independent representation-carrier universes, and the scalar boundary rank.
+
+Provenance is source-free composition of compact norm balls, the characteristic Schwartz constructor, the proved determinant absorption bound, and SmoothDiagonalBound. This module supplies the torus estimate used with a separate unipotent slice bound; it asserts no raw Whittaker convergence or gamma comparison.
