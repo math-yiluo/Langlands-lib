@@ -76,7 +76,7 @@ analytic spaces* (Trieste lectures, 2009), registered as
 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`,
 printed/PDF p.4, Example 1.2.2(v), Definitions 1.2.3 and 1.2.5; pp.7–8,
 Definitions 2.1.2 and 2.1.11; pp.9–10, Definition 2.2.1,
-Exercise 2.2.2(ii), Definition 2.2.3 and Fact 2.2.7.
+Exercise 2.2.2(ii), Fact 2.2.3 and Definition 2.2.7.
 The continuous-group-action motivation is Berkovich's unfinished
 1995–1996 manuscript *Étale equivariant sheaves on p-adic analytic spaces*,
 registered as
