@@ -44,16 +44,15 @@ obligations; the note does not claim completion of C.III.
 
 The [C.I commutative-dimension progress note](commutative-dimension.md), updated
 1 November 2026 by Worker 709, records the published exact real-power bounds,
-actual nilpotent maximum, transport, base cases and filtration. It now verifies
-nine further intermediate proofs: endpoint, complement generation and
-restriction, monotonicity, head/tail estimates, maximizing complement, actual
-joint decomposition, finite-sum power assembly and the normalized numerical
-contradiction. Nineteen newer construction, statement and proof pairs match
-the supplied Library `1741653e5f4f861282ff64d062269adbcc65c686`; older audits
-retain their recorded commits. The floor recurrence, maximum power bound by
-the source induction, and actual nilpotent-block reduction have published
-statements and separate open proof tasks. This refresh updates only the C.I
-navigation row below and does not close C.I or the whole-book program.
+actual nilpotent constructions and intermediate proofs. Its current update at
+Library `00315d47b3cf847fb5aa4184c78df11887f7fe20` verifies the further floor-recurrence,
+maximum-induction and actual-block-reduction proof publications, maps the source
+assertions on printed pp.275–276 / PDF281–282 to exact declarations, and explains
+their composition to the existing final target, including zero and empty cases.
+The earlier nineteen-pair audit at `1741653e5f4f861282ff64d062269adbcc65c686` and
+its then-open task observations are preserved as historical. This update changes
+only the C.I navigation row below and makes no C.I or whole-book completion
+declaration.
 
 The [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md),
 dated 1 November 2026 by Worker 6, records the source passages, a conjugation
@@ -286,7 +285,7 @@ including definitions, remarks and unnumbered results.
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |
 | B.II | Schur's lemma | 272 / 278 | Backlog |
 | B.III | Separation lemma | 273 / 279 | Backlog |
-| C.I | Commutative endomorphism algebras | 275 / 281 | Partial: [published final bounds, actual maximum and filtration, transport/base cases, and nine further intermediate proofs including head/tail estimates, joint decomposition and numerical comparisons](commutative-dimension.md). Exact floor-recurrence, maximum-induction and nilpotent-block-reduction proofs and the source assertion audit remain open at the recorded snapshot |
+| C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279 / 285 | Partial: [published tuple correspondence, coefficient proofs in both interfaces, standalone binomial and common-basis auxiliaries, and simultaneous generalized-weight decomposition](integer-lattice-coefficients.md). Support identification, actual common triangular blocks and multivariable factorization remain open |
 

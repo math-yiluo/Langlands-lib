@@ -3,18 +3,19 @@
 Worker 709 checked this progress record on 1 November 2026 for whole-book task
 `f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 2. The exact final bound in
 Appendix C.I has published statements and proofs in both its generated-algebra
-and arbitrary-subalgebra forms. The actual nilpotent maximum, transport, base
-cases and filtration are published. Nine further intermediate proofs now cover
-the filtration endpoint, complement generation and restriction, monotonicity,
-head/tail estimates, a maximizing tuple's complement, actual joint blocks, and
-the two numerical comparisons. The floor recurrence, the maximum power bound
-by the source induction, and the nilpotent-block reduction remain separate proof
-obligations. This note records coverage and supplies no new Lean result.
+and arbitrary-subalgebra forms. Its source-route components now also have
+published proofs: the actual nilpotent maximum floor recurrence, the maximum
+power bound by induction, and the reduction through the original joint blocks.
+The [current assertion audit](#current-source-assertion-audit-at-library-00315d47)
+maps the lemma and the substantive assertions of its proof on PDF281–282 to
+these results and their published prerequisites. This note supplies no new Lean
+result or declaration of section or whole-book completion.
 
-The nineteen newer construction, statement and proof pairs described below
-were reconciled against Library `1741653e5f4f861282ff64d062269adbcc65c686`.
-Outstanding-work observations refer to that supplied snapshot; the older audits
-retain their explicitly recorded commits and scope.
+The earlier audit below reconciled nineteen construction, statement and proof
+pairs against Library `1741653e5f4f861282ff64d062269adbcc65c686`. Its remaining-task
+section is retained explicitly as historical. The current audit uses Library
+`00315d47b3cf847fb5aa4184c78df11887f7fe20`; older audits retain their recorded
+commits and scope.
 
 ## Source and conventions
 
@@ -481,7 +482,11 @@ Worker 709, with the respective contributors credited in their published
 pairs. Documenting these results does not assign their proofs to this note's
 authors.
 
-## Remaining source assertions and exact proof tasks
+## Historical remaining assertions at Library 1741653e5f4f861282ff64d062269adbcc65c686
+
+This section preserves the earlier audit before the three proof publications
+recorded in the current update below. Its open-task and pending-candidate
+observations apply only to that historical snapshot.
 
 The three published statements below still lack accepted, published exact
 proofs in the recorded snapshot. Their existing focused successors preserve ownership;
@@ -531,3 +536,144 @@ independent acceptance or publication. The parent retains the source-route
 assembly and assertion-level coverage audit for PDF281–282 and the rest of
 the book. Parent shared draft revision 4 and the wider program are preserved.
 These publications do not close C.I or the whole-book task.
+
+
+## Current source assertion audit at Library 00315d47
+
+This update concerns the whole of C.I, from its heading on printed p.275 /
+PDF281 through the proof's closing square on printed p.276 / PDF282. It stops
+before C.II. Worker 709 reread both governing pages and visually checked their
+formulas on 1 November 2026, then checked the declarations and implementations
+below. The source fingerprint and edition are those in “Source and conventions”.
+There is one unnumbered lemma, its definition of `f_l`, the auxiliary maximum
+`φ_l`, and the proof assertions inventoried below. The introductory sentence
+announces the lemma and adds no separate mathematical claim. C.I has no local
+bibliographic citation or further mathematical remark after its proof. The
+Cayley–Hamilton appeal is implemented by the existing characteristic/minimal
+polynomial infrastructure; the different Bernstein–Zelevinsky provenance of the
+already published final-bound proof remains recorded above.
+
+### Three further exact proof publications
+
+The following results are accepted and public, with unqualified independent
+semantic approvals. Their candidate-bound proof receipts each accept Lake build,
+exact target, unchanged statement and frozen inputs, with `proof_accepted = true`.
+Their separate integration builds also succeeded. All names are in
+`Langlands.Renard`.
+
+| Exact proof and existing focused task | Accepted artifact | Independent reviewer | Exact proof-validation receipt | Publication integration |
+| --- | --- | --- | --- | --- |
+| [`nilpotentDimensionFloorRecurrence`](../../Langlands/Algebra/RenardNilpotentDimensionFloorRecurrenceProof.lean), task `9cf9b93e-536c-434c-b462-f09f2a9c0749` | `02b8edde-ec30-4821-bd61-76526d92d0d8` | Reviewer 7180 | `5083f83a-e397-4bb7-933e-88a7a8de8bda` | `7c93b75c8a204341aa4f72eef69ad0a1` |
+| [`nilpotentDimensionPowerBound`](../../Langlands/Algebra/RenardNilpotentDimensionPowerBoundProof.lean), task `c073b1fd-5036-4faa-a26f-44ae5b20159f` | `aaa95722-764f-4a94-82b3-f4e13bba7cc9` | Reviewer 7273 | `1e6b4a47-e3ba-424b-9d22-76355b0b8992` | `ff1a2f20297249349c15aaebbf2dcf4f` |
+| [`commutativeDimensionNilpotentReduction.{u}`](../../Langlands/Algebra/RenardCommutativeDimensionNilpotentReductionProof.lean), task `2c55c266-da3d-44d2-8358-d3ab643bc7d6` | `fb262f0c-13a1-48fd-9e7e-e3d638d83baa` | Reviewer 7185 | `f93200c6-ebb2-4c39-9ee2-6263bc42e8a8` | `fcf3eeeb1a8b48b8aab391721369cfb8` |
+
+The floor and reduction proofs were published at
+`2927ec07fc7e178bab9e51306772905c3dc33579`; the maximum proof at
+`00315d47b3cf847fb5aa4184c78df11887f7fe20`. Direct record checks verify these
+statuses and independent bindings. The following SHA256 fingerprints match both
+the frozen accepted bundles and the corresponding files in the current Library
+and workspace. The filenames are the proof modules linked in the table and
+their same-stem Markdown.
+
+| Proof pair | Lean SHA256 | Markdown SHA256 |
+| --- | --- | --- |
+| Floor recurrence | `a0387e1fddb924e5c2190ed99a8c0e69c51ca1fb19b8d22959fdb54d682494b0` | `a6413265bcf78d702a3a39fbda3aea205bcd6b08d983d73c2000e4b9c8525c33` |
+| Maximum power bound | `fcc2ee1137de932160012c1e5b1035796dcbc7b911107cb933f0f6c30fb24d46` | `e00d3d3d781cec4d46987cb36272a4edf0ab4f4fdc07a38a83b7a0c12c5d7cab` |
+| Actual-block reduction | `b7cd9795f72b031d49041627ee1f519cc898561243b8dd83cb753d4632e6f2ad` | `42c67ba068b3d0c5c26c77537586953273f3ca661a7c407a4a24c3572940e70e` |
+
+Workers 709 and 1200 contributed the floor and maximum proofs: Worker 709's
+blueprints were checked and prepared against published inputs by Worker 1200.
+Workers 709 and 16 contributed the reduction: Worker 709's assembly blueprint
+was checked and prepared by Worker 16 using the published decomposition.
+Those proofs and their prerequisites retain the attribution in their pairs.
+The historical nineteen-pair audit above is preserved; this update checks the
+three further pairs and their direct composition, without claiming a new audit
+of every file in the older final-proof closure.
+
+### Assertion-to-declaration inventory
+
+In this table `R` is the actual unital adjoin, `k = dim V`,
+`Phi_l(k) = nilpotentGeneratedPhi l k`, and
+`f_l(x) = Real.rpow x (2 - Real.rpow 2 (1 - (l : ℝ)))` on nonnegative reals.
+The source hypotheses are finite-dimensional complex `V`, a commuting `Fin l`
+tuple, and nilpotence only after the block reduction. The filtration and
+head/tail rows assume that nilpotent tuple; the complement rows use any complex
+complement of its own `V_1`. On each actual joint block, nilpotence of the shifted
+tuple is proved by the construction; the original tuple is only assumed to
+commute. All constructions and proofs named here are published. Their ownership, exact targets and publication evidence appear
+above; the three new proof tasks are identified in the preceding table.
+Names without a namespace prefix are in `Langlands.Renard`.
+
+| 2026 source locator and assertion | Exact declaration or checked reuse | Scope and implemented route |
+| --- | --- | --- |
+| p.275 / PDF281, boxed lemma and definition of `f_l(k)` | `CommutativeEndomorphismDimensionStatement.{uV}`, `CommutativeSubalgebraDimensionStatement.{uV}`; proofs `commutativeEndomorphismDimension` and `commutativeSubalgebraDimension` | Actual adjoin and arbitrary generated subalgebra, with the exact real exponent. The published final proofs use the alternate general-field route described above. |
+| p.275 / PDF281, first proof sentence: the one-generator bound follows from Cayley–Hamilton | [`Langlands.CommutingDimension.singleton_dimension`](../../Langlands/Algebra/CommutingDimensionHelpers.lean); `nilpotentDimensionBaseCases` for the maximum specialization | For an arbitrary single endomorphism, powers below the minimal-polynomial degree span its adjoin; divisibility by the characteristic polynomial bounds that degree by `dim V`. Nilpotence is unnecessary for this reuse. |
+| p.275 / PDF281, first proof paragraph: characteristic spaces and their successive refinements are `R`-stable | `CommutingReduction.jointSpace`, `CommutingReduction.jointSpace_stable` in [`RenardCommutingGeneralizedEigenspaceBlocks`](../../Langlands/Algebra/RenardCommutingGeneralizedEigenspaceBlocks.lean) | Actual intersections of the original generalized eigenspaces and their original evaluation actions. The implementation uses the intersections directly rather than recording the successive construction as an algorithm. |
+| Same paragraph: the resulting blocks form a finite direct decomposition, with dimensions summing to `k` | `commutingGeneralizedEigenspaceDecomposition` | Its first four clauses give finite nonzero support, independence, spanning and the dimension sum for every enumeration. Together these give the source direct decomposition. |
+| Same paragraph: every restricted `a_i` is scalar plus nilpotent | `CommutingReduction.blockTuple`, `CommutingReduction.shiftedBlockTuple`, `CommutingReduction.shiftedBlockTuple_isNilpotent`, `CommutingReduction.shiftedBlockTuple_commute` | Subtracts the actual eigenvalue on each joint space. Eigenvalue zero and noninvertible original operators are included. |
+| Same paragraph: `2 - 2^(1-l) ≥ 1`, convexity, and `f_l(k) ≥ ∑ f_l(k_i)` | `commutativeDimensionPowerAssembly` | Its three clauses prove the exponent comparison, convexity and the finite-sum inequality for `l ≥ 1`. The implemented sum estimate uses the published two-term power inequality by induction; it does not infer superadditivity from convexity alone. |
+| Same paragraph: it suffices to bound each block | Last two clauses of `commutingGeneralizedEigenspaceDecomposition`; second and third clauses of `commutativeDimensionNilpotentReduction` | Simultaneous restriction is faithful and bounds `dim R` by dimensions of the actual restriction images. Their sum and the actual block-dimension identity give the reduction. |
+| Same paragraph, final sentences: scalar parts may be removed without changing the generated algebra | `CommutingReduction.shiftedBlockTuple_adjoin_eq`; first clause of `commutativeDimensionNilpotentReduction` | The identity and scalars are already in each unital adjoin. The shifted tuple's dimension is bounded by its actual nilpotent maximum and then transported to `Phi_l`. |
+| p.275 / PDF281, paragraph defining the largest possible nilpotent dimension `φ_l(k)` | `nilpotentGeneratedDimensions`, `nilpotentGeneratedMaxDimension`, `nilpotentGeneratedPhi`, `nilpotentGeneratedMaxDimension_isGreatest`, `nilpotentGeneratedMaxDimension_attained`; `nilpotentDimensionTransport` | A nonempty bounded set of actual dimensions has an attained natural maximum. Conjugation by a linear equivalence justifies dependence only on dimension, including between independent universes. |
+| p.275 / PDF281, last paragraph: `I = (a_i)` and `V_i = I^i V` | `NilpotentFiltration.generatedAlgebra`, `NilpotentFiltration.generatorIdeal`, `NilpotentFiltration.idealPowerModule`, `NilpotentFiltration.idealPowerSubspace` | The ideal lies in the original generated algebra, acting by evaluation. Intrinsic action laws are proved in the construction. |
+| Same paragraph, displayed filtration: `V_0 = V`, descending levels and `V_k = 0` | `NilpotentFiltration.idealPowerSubspace_zero`, `NilpotentFiltration.idealPowerSubspace_antitone`, `NilpotentFiltration.idealPowerSubspace_stable`; `nilpotentFiltrationVanishing` | The endpoint proof uses the radical, Nakayama and strict dimension descent. Invariance is proved for the original action at every level. |
+| Same paragraph: choose `W` complementary to `V_1`, of dimension `s` | `nilpotentMaximizingComplement`; the complement binders of `nilpotentComplementGeneration`, `nilpotentComplementRestriction` and `nilpotentHeadTailDimension` | A complement exists for the chosen attaining tuple. No invariance of `W` is assumed. The dimension formula gives `dim V_1 = k-s`. |
+| Same paragraph: `I^j W` spans `V_j` modulo `V_(j+1)`, and `R W = V` | `nilpotentComplementGeneration` | The first clause is the exact subspace equality at every natural `j`; the second is generation by `W` as an `R`-module. Its proof uses ideal-action induction and Nakayama. |
+| Same paragraph: restriction to `W` determines each element of `R`, so `dim R ≤ sk` | `nilpotentComplementRestriction` | Commutation extends equality on `W` to its generated vectors. The injection lands in `W →ₗ[ℂ] V`, whose dimension is `sk`. |
+| Same paragraph: pass from that inequality to `φ_l(k) ≤ sk` | `nilpotentMaximizingComplement` and its application in `nilpotentDimensionFloorRecurrence` | The tuple attains the actual maximum, and `W` complements that same tuple's own ideal image. The passage is not made for an unrelated tuple or complement. |
+| Same paragraph: tail algebra `R'`, principal head ideal `R''`, and `R = R' + R''` | Actual `NilpotentFiltration.tailAlgebra`, `NilpotentFiltration.headIdeal`, `NilpotentFiltration.headIdealSubspace`; first clause of `nilpotentHeadTailDimension` | The sum is the top complex subspace of `R`. It is not asserted to be direct. |
+| Same paragraph: `dim R' ≤ φ_(l-1)(k)` and `dim R'' ≤ dim(R restricted to V_1) ≤ φ_l(k-s)` | Second through fifth clauses of `nilpotentHeadTailDimension`, with `NilpotentFiltration.generator_apply_mem_one` | The theorem uses a tuple of length `n+1` and a tail of length `n`; for `l≥1`, take `n=l-1`. Multiplication by the head is compared by kernels with the actual first-level restriction image, not the whole endomorphism algebra of `V_1`. |
+| Same paragraph, last lines: monotonicity of `φ_l`, the floor-index comparison and the weak recurrence | `nilpotentDimensionMonotonicity`; `nilpotentDimensionFloorRecurrence` | The complement estimate gives `k-s ≤ floor(k-Phi_l(k)/k)`. Dimension monotonicity gives the source recurrence. The theorem also proves nonnegativity of the real floor argument and strict descent of its natural floor. |
+| p.276 / PDF282, opening line: `φ_l(1)=1` | `nilpotentDimensionBaseCases` | Holds for every natural `l`; zero dimensions and empty tuples are also made explicit. |
+| p.276 / PDF282, opening paragraph and first two displays: induction on `l,k`, strict counterexample and use of the recurrence | `nilpotentDimensionPowerBound` | Strong induction on generator count, then dimension. Strict floor descent justifies the same-`l` hypothesis; `l-1<l` justifies the other. The natural predecessor is cast using `1≤l`. |
+| p.276 / PDF282, paragraph before setting `ε`: monotonicity of `f_l` compares the floor argument with `k-f_l(k)/k` | `nilpotentDimensionPowerBound`, using `Real.rpow_lt_rpow` | The implementation compares the natural floor directly with that larger real argument. Its nonnegativity and the positive exponent justify the strict power inequality. This supplies the source comparison without an added monotonicity assumption. |
+| p.276 / PDF282, from `ε=1-l` through the normalized display | `commutativeDimensionNumericalContradiction` | With `D=k^r`, `P=k^(2-2^(ε+1))`, `x=k^(-2^ε)`, the fourth clause proves `((k-D/k)^r+P)/D=(1-x)^r+x`. Its proof derives the real-power identities and positivity needed for normalization. |
+| p.276 / PDF282, final lines: `0<1-x<1`, `r≥1`, and impossibility of `1-x<(1-x)^r` | First, second, third and fifth clauses of `commutativeDimensionNumericalContradiction`, and its last clause as applied in `nilpotentDimensionPowerBound` | The numerical theorem gives `(1-x)^r≤1-x` and hence `(k-D/k)^r+P≤D`. The induction's strict counterexample gives the incompatible inequality. At `l=1` the numerical comparison is equality, so its weak direction is essential. |
+
+No assertion in the inventory is discharged by treating a development check or
+conditional blueprint as an accepted proof. The source's existential choices,
+maximum and dimension-only notation have actual constructions and proofs. The
+zero-space and empty-tuple clauses extend the source's positive-index argument;
+they are retained rather than used to narrow the statement. The exposed
+conditional estimates in the reduction are discharged by the published maximum
+theorem as follows.
+
+### Composition and the existing final target
+
+For `l ≥ 1`, apply the third clause of
+`commutativeDimensionNilpotentReduction.{u} V l a hcomm`. For every supported
+`χ`, supply
+
+```text
+nilpotentDimensionPowerBound l
+  (Module.finrank ℂ (CommutingReduction.jointSpace a χ.val)).
+```
+
+This is exactly the premise for that actual block's canonical maximum. The
+reduction already supplies finite support, faithful restriction and the dimension
+sum; these are not hypotheses left for the caller. Its conclusion is the
+original generated-algebra power bound with the same carrier universe and
+exponent as `CommutativeEndomorphismDimensionStatement.{u}`.
+
+For `l = 0`, nilpotence is vacuous. Apply
+`finrank_adjoin_le_nilpotentGeneratedMaxDimension 0 V a hcomm` with that vacuous
+proof, rewrite the carrier maximum using `nilpotentDimensionTransport.{u,0}.2`,
+and apply `nilpotentDimensionPowerBound 0 (Module.finrank ℂ V)`. This gives the
+same target without applying the positive-generator finite-sum theorem at
+exponent zero. The argument includes the zero space; its final bound is `0≤1`.
+For a named source subalgebra, substitute its generation equality and use this
+generated-algebra bound, exactly as in the already published subalgebra adapter.
+
+A private development adapter implementing these two branches, without importing
+the existing final-bound proof, compiled together with the published floor,
+maximum, reduction and final-bound modules with zero errors or warnings
+(diagnostic `1f201871-a350-4b16-8590-396decf56eaa`). Declaration inspection retained
+universe `u` and only `propext`, `Classical.choice` and `Quot.sound`. This is
+composition evidence, not a new accepted proof or an exact-target receipt; the
+independently accepted final bounds remain those identified above. No duplicate
+final-proof task is needed for this route comparison.
+
+The current source-to-declaration inventory and composition explanation are a
+public-note review unit. They preserve the historical evidence, current theorem
+attribution and the wider whole-book obligations. This update makes no C.I or
+parent-task completion declaration.
