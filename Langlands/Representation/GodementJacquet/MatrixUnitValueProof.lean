@@ -21,13 +21,13 @@ namespace Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) :=
+local instance matrixUnitValueTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance matrixUnitValueValuation : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance matrixUnitValueLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance matrixUnitValueT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance matrixUnitValueGLMeasurable (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) :=
   borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance matrixUnitValueGLBorel (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
 
 variable {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V] [Nontrivial V]
   (σ : Representation ℂ (Langlands.GeneralLinear (n + 1) F.Carrier) V)

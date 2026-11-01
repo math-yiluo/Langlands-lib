@@ -47,3 +47,6 @@ packages the two memberships into the exact closed target.
 The result supplies a unit value for normalized-generator arguments. It does
 not assert a common denominator, rationality for arbitrary tests, or a
 functional equation.
+
+The canonical local instances have explicit module-specific names so this
+proof imports jointly with the two-block analytic induction modules.

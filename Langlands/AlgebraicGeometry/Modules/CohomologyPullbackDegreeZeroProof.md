@@ -22,7 +22,9 @@ The first part of the Lean file works for an additive functor `F` between
 abelian categories, with enough injectives in its source and the indicated
 derived categories.
 
-1. `singlePlus`, `singlePlusIso`, and `singleImageIso` record the
+1. The shared `singlePlus` from
+   [`DerivedPlusZero`](../../Cohomology/DerivedPlusZero.md), together with
+   `singlePlusIso` and `singleImageIso`, records the
    single-complex and termwise-functor comparisons. `augmentationPlus`
    is the chosen resolution augmentation viewed in bounded below complexes.
    Naturality of the localization comparison proves

@@ -1,5 +1,6 @@
 import Langlands.AlgebraicGeometry.Modules.CohomologyPullbackLawsStatement
 import Langlands.Cohomology.DerivedPlusNaturality
+import Langlands.Cohomology.DerivedPlusZero
 
 /-!
 # Degree-zero normalization of canonical relative-cohomology pullback
@@ -17,9 +18,6 @@ variable {C : Type u} [Category.{v} C] [Abelian C] [HasDerivedCategory.{w} C]
   [EnoughInjectives C]
 variable {D : Type u'} [Category.{v'} D] [Abelian D] [HasDerivedCategory.{w'} D]
 variable (F : C ⥤ D) [F.Additive]
-
-def singlePlus (X : C) : CochainComplex.Plus C :=
-  ⟨(CochainComplex.singleFunctor C 0).obj X, ⟨0, inferInstance⟩⟩
 
 def singlePlusIso (X : C) :
     (DerivedCategory.Plus.singleFunctor C 0).obj X ≅
