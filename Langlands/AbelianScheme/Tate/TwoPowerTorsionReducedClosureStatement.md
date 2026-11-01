@@ -1,0 +1,7 @@
+# Reduced scheme structure on the actual torsion closure
+
+`TwoPowerTorsionReducedClosureStatement` asserts that the Zariski closure of the existing actual two-power torsion locus in an abelian scheme over any field is the image of a reduced closed subscheme. The unit section factors through that subscheme. Scheme inversion restricts to an automorphism, as does translation by every actual rational section whose image lies in the closure. Each restriction is specified by its commuting equation with the closed immersion.
+
+This is an internal prerequisite for torsion density. The reduced induced structure is the subscheme defined by the vanishing ideal sheaf of the closed set. Inversion and translation preserve the closed set by the section-group closure argument, and this preservation restricts the actual scheme automorphisms. This statement does not construct a multiplication morphism on the reduced closure or a group scheme structure. It asserts neither smoothness, dimension, a torsion count, nor density.
+
+The motivating original is Edixhoven, van der Geer and Moonen, *Abelian Varieties*, preliminary version, Chapter V, §3, Theorem (5.30), printed page 84 / PDF page 88, registered as `edixhoven-vandergeer-moonen-abelian-varieties-draft`. The proof there takes the reduced closure of prime-power torsion and analyzes inversion and translation before proving the stronger closed subgroup assertion. The assertion here isolates the reduced-scheme restrictions and derives them over any field.

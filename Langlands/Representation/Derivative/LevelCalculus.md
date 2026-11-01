@@ -79,8 +79,10 @@ representations with carriers in `Type uV`.
 - `isShortExact_map`: such a functor maps `IsShortExact` pairs to
   `IsShortExact` pairs.
 - `map_injective_of_exact`, `map_surjective_of_exact`: such a functor
-  preserves injective and surjective intertwiners. Proof: apply it to the
-  short exact pairs of `isShortExact_mkQ` and `isShortExact_kernelι`.
+  preserves injective and surjective intertwiners by the actual quotient and
+  kernel short exact sequences. The surjectivity theorem is imported from
+  [`ShortExactFunctorLaws`](ShortExactFunctorLaws.md), with its original name
+  and statement, so generic filtration consumers can reuse it directly.
 
 ## Exactness of derivative functors (section `DerivativeExact`)
 

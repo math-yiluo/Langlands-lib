@@ -40,3 +40,10 @@ so `EqualRankGammaEquation.congr_model` or
 The scalar additive measure and the rational gamma function are unchanged.
 The continuation, nonvanishing, Fourier-test, block, and reduced-denominator
 requirements are inherited from the supplied gamma equation.
+
+Worker 486 named the local canonical topology instance
+`matrixComparisonModelsTopology` to permit combined imports with the adjacent
+model convergence and star-integrability proofs. Anonymous local instances
+also create global declaration names; the former generated name collided
+with those modules. This compatibility correction changes no instance body,
+mathematical statement or proof.

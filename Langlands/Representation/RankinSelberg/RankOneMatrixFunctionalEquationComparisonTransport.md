@@ -35,3 +35,9 @@ relation, scalar measure, polynomials, unit and integer exponent are identical.
 `normalizedMatrixData_nonzero_functional_iff` applies this to the actual
 canonical p-adic models of two nonzero standard Whittaker functionals.
 The field and original carrier universes remain independent.
+
+Worker 486 named the two local canonical instances
+`matrixComparisonTransportTopology` and `matrixComparisonTransportMeasurable`
+so this module can be imported with the adjacent model convergence proofs.
+This avoids collisions in the global declaration names created by anonymous
+local instances. Their bodies and all mathematical content are unchanged.

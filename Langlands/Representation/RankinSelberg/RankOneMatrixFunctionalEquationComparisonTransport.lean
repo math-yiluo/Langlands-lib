@@ -134,8 +134,10 @@ section PadicData
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
+local instance matrixComparisonTransportTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance matrixComparisonTransportMeasurable : MeasurableSpace F.Carrier :=
+  borel F.Carrier
 
 /-- The supplied actual normalized matrix equation on a full Whittaker-type
 model is independent of its chosen nonzero standard functional. -/

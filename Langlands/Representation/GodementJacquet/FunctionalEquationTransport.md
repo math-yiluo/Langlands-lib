@@ -37,3 +37,8 @@ one. It assumes an actual equivalence of the representations and establishes
 equivalence of their proposed data. It constructs no analytic data and uses no
 smoothness, admissibility, irreducibility, nontrivial-character or self-duality
 hypothesis.
+
+The canonical local instances have module-specific names. This preserves their
+bodies and every mathematical assertion while avoiding duplicate global
+declaration names when the kernel replays combined matrix and adjacent-rank
+imports.

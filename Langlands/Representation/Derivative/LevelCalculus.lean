@@ -229,11 +229,6 @@ theorem map_injective_of_exact
     (hi : Function.Injective (SmoothRep.hom i)) : Function.Injective (SmoothRep.hom (J.map i)) :=
   (isShortExact_map hJ (isShortExact_mkQ i hi)).injective
 
-theorem map_surjective_of_exact
-    {J : SmoothRep.{0, _, uV} ℂ G ⥤ SmoothRep.{0, _, uV} ℂ H}
-    (hJ : MapsShortExactIntertwiners J) {B C : SmoothRep.{0, _, uV} ℂ G} (q : B ⟶ C)
-    (hq : Function.Surjective (SmoothRep.hom q)) : Function.Surjective (SmoothRep.hom (J.map q)) :=
-  (isShortExact_map hJ (isShortExact_kernelι q hq)).surjective
 
 end Exact
 

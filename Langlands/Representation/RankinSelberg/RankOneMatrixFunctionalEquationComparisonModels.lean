@@ -107,7 +107,8 @@ section PadicModels
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance matrixComparisonModelsTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
 
 /-- The canonical p-adic coefficient model has all three full Whittaker-type
 hypotheses required in the matrix-to-rank-one comparison. -/
