@@ -1,3 +1,4 @@
+import Langlands.Representation.Parabolic.RefinedInnerInductionObjects
 import Langlands.Representation.CuspidalSupport.AdjacentMergedTensor
 import Langlands.Representation.CuspidalSupport.AdjacentTensorReduction
 import Langlands.Representation.CuspidalSupport.AssociationReduction
@@ -53,17 +54,6 @@ theorem adjacentInnerInductions_matching
       ((B.adjacentMerge j hj).positive m) _ _ _ _
       (by change (if m.val = j then 2 else 1) < 2; simp [hm])
       hc.1.1 hc.1.2 hc.2.1 hc.2.2 ha
-
-/-- The actual smooth objects for normalized induction inside each refined
-block of a common outer Levi. -/
-def refinedInnerInductionObjects {r : ℕ} (D : BlockShape r)
-    (S : Langlands.Geometric.BlockRefinement D)
-    (C : RefinedInductionTensor.Factors.{uF,uV} F T D S) :
-    letI := T.topology
-    ∀ m, SmoothRep.{0,uF,max uF uV} ℂ (GeneralLinear (D.size m) F.Carrier) :=
-  letI := T.topology
-  fun m => SmoothRep.of (RefinedInductionTensor.blockRepresentations F T D S C m)
-    (T.isSmooth_normalizedParabolicInduced (S m) (C m).representation)
 
 /-- The actual external tensors of the inner inductions match, with
 admissibility established separately for both families. -/

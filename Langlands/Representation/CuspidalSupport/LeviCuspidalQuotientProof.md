@@ -159,10 +159,13 @@ It uses no tensor factorization. The zero twist is the named statement's
 normalization, with no positivity assertion on real parameters.
 
 The module's complete project import closure was audited for the excluded
-classification and exhaustion inputs. It has 249 project modules, including this proof module, with no missing
-project imports. The classification modules are recorded below. Proposition definitions
-imported by the target, including the relative multiplicity statement,
-remain definitions and supply no proof input to this construction.
+classification and exhaustion inputs. Traversing its `Langlands.*` imports
+recursively, counting each module once and including this proof module,
+gives 271 project modules at Library commit `b22e1857`, with no missing
+project imports. The classification modules are recorded below.
+Proposition definitions imported by the target, including the relative
+multiplicity statement, remain definitions and supply no proof input to
+this construction.
 The unrestricted form of Silberger 1978 Lemma 5.3 is not used.
 
 

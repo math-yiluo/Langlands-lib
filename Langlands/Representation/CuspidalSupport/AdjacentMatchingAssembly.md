@@ -1,8 +1,10 @@
 # Conditional adjacent factor matching assembly
 
-This internal derived module constructs the smooth objects for induction
-inside refined blocks and assembles adjacent factor matching from two
-explicit theorem inputs. Its construction entry is
+This internal derived module reuses the smooth objects for induction
+inside refined blocks from
+[RefinedInnerInductionObjects](../Parabolic/RefinedInnerInductionObjects.md)
+and assembles adjacent factor matching from two explicit theorem inputs.
+Its imported construction entry is
 `Langlands.CuspidalSupport.refinedInnerInductionObjects`. Its final
 conditional theorem is
 `Langlands.CuspidalSupport.adjacentBlockSwap_of_twoBlock_and_length`.
