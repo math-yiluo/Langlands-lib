@@ -1,14 +1,15 @@
-# Renard C.III: tuple correspondence, coefficients and decomposition
+# Renard C.III: coefficients, decomposition and a common-basis tool
 
-Author: Worker 709. Publication and current-file checks: 31 October 2026,
-Library `2003a7a6a41b5e54c3f790e0887743ed616ed614`.
+Author: Worker 709. Publication and current-file checks: 1 November 2026,
+Library `1fb97c8ecc36fe0deebeb4b0f5093c3033532b9c`.
 
 The opening tuple/representation correspondence and the coefficient
 proposition of Appendix C.III have published implementations. Both the
 representation and supplied-tuple formulations of the coefficient proposition
 are proved, as are the standalone all-integer unipotent binomial expansion and
 polynomial-coefficient identities. The simultaneous generalized-weight
-decomposition is also proved. Common triangular blocks, identification of
+decomposition and a generic common-basis auxiliary are also proved.
+Common triangular blocks for the actual tuple, identification of
 nonzero blocks with common eigenvalue tuples, and the multivariable
 scalar-factorization formulas remain obligations of the
 [whole-book program](coverage.md).
@@ -47,6 +48,7 @@ proposition. The 2010 errata supplement the comparison; the 2026 text governs.
 | The same coefficient expansion for a supplied commuting invertible tuple and its actual integer-power product | `Langlands.CommutingTupleMatrixCoefficientExponentialPolynomialStatement` and `Langlands.commutingTupleMatrixCoefficientExponentialPolynomial` in [CommutingTupleStatement.lean](../../Langlands/Representation/MatrixCoefficient/CommutingTupleStatement.lean) and [CommutingTupleProof.lean](../../Langlands/Representation/MatrixCoefficient/CommutingTupleProof.lean) | The supplied entries are actual units of `Module.End ℂ V`. The left side applies the functional to their finite commuting product, with the full integer exponent in every coordinate. See the [statement](../../Langlands/Representation/MatrixCoefficient/CommutingTupleStatement.md) and [adapter proof](../../Langlands/Representation/MatrixCoefficient/CommutingTupleProof.md) explanations. |
 | All-integer unipotent binomial expansion and polynomial coefficients | `Langlands.RenardCIIIUnipotentBinomialStatement` and `Langlands.renardCIIIUnipotentBinomial` in [UnipotentBinomialStatement.lean](../../Langlands/LinearAlgebra/UnipotentBinomialStatement.lean) and [UnipotentBinomialProof.lean](../../Langlands/LinearAlgebra/UnipotentBinomialProof.lean) | The aggregate proves the operator equality for every complex vector space, actual endomorphism unit, natural nilpotence bound and integer exponent, together with the explicit descending-Pochhammer polynomial for every complex input. See the [statement](../../Langlands/LinearAlgebra/UnipotentBinomialStatement.md) and [proof](../../Langlands/LinearAlgebra/UnipotentBinomialProof.md) explanations. |
 | Simultaneous generalized-weight decomposition of the actual commuting tuple | `Langlands.CommutingTupleGeneralizedWeightDecompositionStatement` and `Langlands.commutingTupleGeneralizedWeightDecomposition` in [GeneralizedWeightStatement.lean](../../Langlands/Representation/IntegerLattice/GeneralizedWeightStatement.lean) and [GeneralizedWeightProof.lean](../../Langlands/Representation/IntegerLattice/GeneralizedWeightProof.lean) | The intersections of the actual maximal generalized eigenspaces have finite nonzero support, are independent, span the space, and are mapped bijectively onto themselves by every lattice point. See the [statement](../../Langlands/Representation/IntegerLattice/GeneralizedWeightStatement.md) and [proof](../../Langlands/Representation/IntegerLattice/GeneralizedWeightProof.md) explanations. |
+| Internal common strictly upper triangular basis for commuting nilpotents | `Langlands.CommutingNilpotentStrictUpperBasisStatement` and `Langlands.CommutingNilpotentStrictUpperBasis.commutingNilpotentStrictUpperBasis` in [CommutingNilpotentStrictUpperBasisStatement.lean](../../Langlands/LinearAlgebra/CommutingNilpotentStrictUpperBasisStatement.lean) and [CommutingNilpotentStrictUpperBasisProof.lean](../../Langlands/LinearAlgebra/CommutingNilpotentStrictUpperBasisProof.lean) | An arbitrary field, finite-dimensional vector space and possibly empty or infinite family of supplied commuting nilpotent maps admit one basis with every matrix strictly upper triangular. See the [statement](../../Langlands/LinearAlgebra/CommutingNilpotentStrictUpperBasisStatement.md) and [proof](../../Langlands/LinearAlgebra/CommutingNilpotentStrictUpperBasisProof.md) explanations. |
 
 Here `IntegerLattice.Lattice d` is `Multiplicative (Fin d → ℤ)`: multiplication
 is addition of integer coordinates. Negative exponents use the stored
@@ -106,10 +108,29 @@ point, and the action at the inverse point gives bijectivity on each block.
 This proves the derived basis-free decomposition underlying the source's
 block choice; the proof does not construct its common triangular basis.
 
+The common-basis auxiliary has independent field, carrier and index universes.
+It takes pairwise commutation and individual nilpotence as hypotheses, without
+a uniform exponent. It produces one basis indexed by `Fin (Module.finrank K V)`,
+chosen before every family member and matrix entry, such that
+`b.repr (N t (b j)) i = 0` whenever `j ≤ i`. Here `i` is the row and `j`
+the column, so this is strict upper triangularity. The zero space and empty
+family are included. Worker 846's proof applies the common-kernel lemma to the
+dual family, obtains a nonzero functional annihilating every range, and
+inducts on the dimension of its kernel. Appending a vector outside this
+hyperplane gives the required basis; the span condition yields the vanishing
+coordinates.
+
+This is an internal tool, derived to supply the common-basis step used without
+proof on printed p.280. Its arbitrary-field and arbitrary-family scope is not
+attributed to Renard. Applying it to the actual block's normalized differences
+still requires their nilpotence and commutation to be proved. The theorem
+does not itself construct a basis for those blocks, identify the nonzero
+labels, assemble a global basis, or prove a product formula.
+
 ## Acceptance and publication evidence
 
 These are publication records, separate from the Lean names used for imports.
-All seven results below are accepted and public, with unqualified independent
+All eight results below are accepted and public, with unqualified independent
 semantic approval. Their current pairs were checked against the archived
 bundle fingerprints. The tuple proof's project imports are unchanged from
 its pinned Library base `368b3cec32d30129c07825e0ce549058b99762f4`; the binomial
@@ -117,6 +138,8 @@ proof's project imports are unchanged from
 `00be69b7f127e77ee2fd0511ffe34c48595b64d4`.
 The decomposition proof's project imports are unchanged from its pinned
 Library base `9a8ca758097242bde4147f33304f43fceef22fa4`.
+The generic common-basis proof's project imports are also unchanged from that
+base.
 
 | Unit | Accepted contribution | Independent reviewer | Publication |
 | --- | --- | --- | --- |
@@ -127,6 +150,7 @@ Library base `9a8ca758097242bde4147f33304f43fceef22fa4`.
 | Standalone binomial and polynomial-coefficient statement | `a77729ae-e93f-46ac-9581-3284fc7ada4c` | Reviewer 3546 | Integration `2d8c1268ef4f4805b1a95cbae28550c4`, Library `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
 | Standalone binomial and polynomial-coefficient proof | `ff54af5b-be4c-4795-9744-37edbdb3371b` | Reviewer 3896 | Integration `4db92932a56b41879cd71e065b4ef1a7`, Library `910a6df80701415e9aa68c646393c66ac9bc7512` |
 | Simultaneous generalized-weight decomposition proof | `7479675b-53ff-4925-b9f2-4a18f01adb5f` | Reviewer 6183 | Integration `ce3237a6d7fe44bb87568ded4d970b93`, Library `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
+| Internal commuting-nilpotent common-basis proof | `a1b776dc-ac95-453f-b584-9586763ec182` | Reviewer 6181 | Integration `706af6b1a23441458dd7ef4cefa847b0`, Library `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
 
 Proof machine receipts `48eaef38-390f-4f81-9879-c84fdcc75b84`,
 `6cefc5a7-ea4d-4714-b59c-825e5b4957b8` and
@@ -151,17 +175,26 @@ fingerprints match both current proof files. Its exact published target is
 the proposition in statement contribution
 `769b13a0-1fbe-4050-b5ff-52ba2d69b320`.
 
+The generic common-basis proof's machine receipt
+`efa0f799-dd9f-43f8-a2d9-2f23e07d90a5` accepts its Lake build, exact target,
+unchanged statement and frozen inputs. Its publication has fresh integrated
+validation and unqualified independent semantic approval. The current proof
+pair matches the archived fingerprints; all five manifest files and the
+172 project-import Lean/Markdown files were checked against the archive or
+validation base as appropriate. The exact target is the proposition in
+published statement contribution `aee52bf6-e11f-4437-8f8b-7d0daba51bb3`.
+
 ## Retained assertion-level obligations
 
 | Source content on printed p.280 / PDF286 | Remaining boundary |
 | --- | --- |
 | Identification of nonzero generalized-weight blocks with common eigenvalue tuples | Prove that an actual block is nonzero exactly when the tuple has a nonzero common eigenvector with that label. The decomposition theorem does not assert this equivalence. |
-| Common triangular blocks and scalar-times-unipotent form | Prove the common-basis assertion and the nilpotence and commutation properties of the resulting parts. The coordinate-induction proof does not construct this common basis. |
+| Common triangular blocks and scalar-times-unipotent form | Prove nilpotence and commutation for the actual normalized differences, apply the published generic common-basis theorem on each actual block, and assemble the source's common basis. The generic theorem assumes those two properties and does not discharge this application. |
 | Multivariable scalar factorization and products on the simultaneous blocks | State and prove the source's character-times-product identities for the actual block restrictions and commuting nilpotent parts. Reuse the published standalone all-integer binomial and polynomial-coefficient theorems for each factor; those theorems supply no simultaneous blocks or common basis. |
 
 The coefficient proposition is covered in both interfaces, the separate
-binomial auxiliaries are covered, and the basis-free simultaneous decomposition
-is proved. The remaining intermediate assertions and any
+binomial and common-basis auxiliaries are covered, and the basis-free
+simultaneous decomposition is proved. The remaining intermediate assertions and any
 further assertions identified by the full inventory remain in the whole-book
 scope; this note claims neither completion of Appendix C.III nor completion of
 the book.
