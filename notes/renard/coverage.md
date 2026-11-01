@@ -77,12 +77,94 @@ verifies the free-module, injectivity and source AB5 proof publications
 and the three published exact I.6 proofs of completeness, local finite
 type and filtered-colimit exactness. It records their exact machine,
 independent-review and publication evidence. The derived negative I.5.3
-example now has a public construction and exact statement; its proof
-candidate is independently approved but remains unpublished at the
-checked fetch.
+example now has a public construction, exact statement and exact proof
+`NonUnitalModuleFreeCounterexampleProof.freeCounterexampleAssertions`,
+verified at commit `676ac944440098acb714f6b953083e88bb89c9c2`.
 This updates only I.5 and I.6
 navigation; the earlier I.5.1 and categorical-progress observations retain
 their original date and scope.
+
+## Chapter II publication update, 1 November 2026
+
+Worker 6 reread all of printed pp.30–32 / PDF36–38, II.1.1–II.1.3,
+and printed pp.33–38 / PDF39–44, through II.2.4 and the opening of
+II.2.5. The chapter's later pages remain outside this reading update.
+The original and its fingerprint are identified below. The public
+[II.2.1 audit](basis-sheafification-source.md) records its bounded
+2010-errata search and the exact mathematical defect in the source proof.
+
+The following are dated, directly verified publications, supplementing
+the historical initial-pass rows. Each mathematical candidate reports
+independent approval without qualifications, `accepted = true`,
+`public = true` and integration state `published`. Their entry Lean and
+Markdown hashes agree with the frozen records and Library commit
+`676ac944440098acb714f6b953083e88bb89c9c2`.
+
+| Source assertion or construction | Exact public Lean interface | Coverage and remaining boundary |
+| --- | --- | --- |
+| II.1.2, printed p.31 / PDF37: finite disjoint indicators; (II.1.2.1) and (II.1.2.2) | `Langlands.HarmonicAnalysis.TestFunctionDistributionProof.assertions`, proving `TestFunctionDistributionStatements.Assertions` | Public exact proof of all three conjuncts: scalar indicator decomposition and both complete exact sequences, including endpoint surjectivity in the full algebraic dual. [Implemented proof](../../Langlands/HarmonicAnalysis/TestFunctionDistributionProof.md). |
+| II.1.2, printed p.31 / PDF37: pairing compactly supported distributions with locally constant functions | `Langlands.HarmonicAnalysis.Distribution.compactSupportPairing` and its compatibility/linearity laws | Public construction by descent to the distribution's own compact topological support. This observation claims neither nondegeneracy nor identification with a full algebraic dual. [Construction](../../Langlands/HarmonicAnalysis/Distribution/CompactSupportPairing.md). |
+| II.1.2, printed p.32 / PDF38: vector-valued spaces and maps (II.1.2.3)–(II.1.2.4) | `Langlands.HarmonicAnalysis.VectorTestFunction.Space`, `smoothTensorMap`, `compactTensorMap` | Public actual locally constant compact-support carrier and canonical maps, independent space/value universes, with no topology on the value space. Injectivity and compact-map surjectivity are later obligations. [Construction](../../Langlands/HarmonicAnalysis/VectorTestFunction.md). |
+| II.1.3, printed p.32 / PDF38: scalar external product and distribution tensor product | `Langlands.HarmonicAnalysis.SchwartzBruhat.tensorLinearMap`; `Distribution.partialApplySnd`, `partialApplyFst`, `tensor`, `tensorBilinear` | Public algebraic maps, actual partial tests, pure-product formula and bilinearity. Bijectivity, uniqueness, the second Fubini order, rectangle assertions and support product remain separate. [Construction](../../Langlands/HarmonicAnalysis/Distribution/TensorProduct.md). |
+| II.2.1 opening, printed p.33 / PDF39: chosen-basis normalized presheaves and morphisms | `Langlands.Sheaf.Renard.OpenBasis`, `BasisOpen`, `RawPresheaf`, `Presheaf` | Public arbitrary-basis construction, with the source's zero value on empty basis opens when present and independent space/group universes. This unit supplies no stalk or sheafification. [Construction](../../Langlands/Sheaf/Renard/BasisPresheaf.md). |
+
+In the table, `Distribution`, `SchwartzBruhat` and
+`TestFunctionDistributionStatements` use prefix
+`Langlands.HarmonicAnalysis`; the other shortened names use their row's
+fully qualified namespace. Source t.d. means Hausdorff with a compact-open
+neighborhood basis. The public `Langlands.Topology.isLocallyProfinite_iff_mathlib`
+proves equivalence with the usual Hausdorff, locally compact, totally
+disconnected three-class form. The constructions above document their
+broader hypotheses individually; their existence is not a proof of the
+remaining source conclusions.
+
+| Unit | Candidate | Machine receipt | Independent review |
+| --- | --- | --- | --- |
+| Scalar indicator and exact sequences | `186dab30-472d-4e50-bb35-ee55d9b6f1cd` | `5292e063-9891-485e-bd7c-5f56e44b4067` | `350f345a-348b-4e99-a7ca-6ccaa0345ca1`, Reviewer 7598 |
+| Compact-support pairing | `e495b6a2-8796-449e-855c-4b33979777c4` | `9e97de25-0a22-468e-9ba5-be4e8e142ec2` | `d179ebeb-9790-424a-80cb-80168bb9161f`, Reviewer 7563 |
+| Vector-valued tests and maps | `c1356563-b727-4365-a201-b0dee46eb8ae` | `b5eab0b0-6d9f-4820-86b4-41da448737e2` | `29540a03-2720-484e-8543-67515c588299`, Reviewer 7549 |
+| Scalar tensor maps and distribution product | `7e61902e-38cb-47d2-9556-410bb1218422` | `fe66081b-6ac3-4446-b7c8-fbf18f6f84b0` | `c0729e98-52a2-4c28-8981-61d64f38c046`, Reviewer 7571 |
+| Normalized basis-presheaf foundation | `e452c42e-ec3a-4a27-a6a2-0292f56b4797` | `134f3646-4dae-4b8e-af9a-c546a99b2f90` | `cc9a1d40-0c54-4190-abdd-17784215e6b6`, Reviewer 7612 |
+
+The scalar exact-proof receipt passes Lake build, exact-target,
+unchanged-statement and frozen-input checks. The other four are definition
+receipts with construction review, not proofs of the later statements.
+Workers 1218, 451, 128, 16 and 595 respectively submitted these units;
+Worker 6's draft coauthorship is retained where applicable.
+
+The II.2.1 source-audit note `c1eaf6c4-02a7-4149-98f1-3109ef0759c4`
+is independently accepted by Reviewer 7632 under review
+`a6e926ef-f8e3-4356-b1bf-8652f3d4c890` and published at
+`abc2300bb37d2121fc402c9bbd15b8a9b51f529d`, integration
+`eef29ae2882a4768810017c94ccee55a`. Its note-only validation is
+`84c41870-7be8-4a03-bc9c-4c1e5803a178`; it supplies no Lean theorem.
+The source's inference from equal presheaf germs to equal original
+sections in (II.2.1.3) fails. The note supplies a normalized two-point
+counterexample and repairs the mathematical descent by separation in
+the target sheaf on smaller basis opens. Actual sheafification, its
+adjunction and basis extension remain construction and proof obligations.
+
+After those publication checks, focused statement task
+`a7984773-0d52-453d-aaad-40c6f63b8fda` was published for the vector finite
+indicator expansion, both tensor injections and compact-map surjectivity.
+Task `07a79981-3e36-4f12-8425-0f64b57d1c4b` covers the II.1.3 product
+space, finite rectangle partition/expansion, scalar tensor bijectivity,
+actual-product uniqueness, both Fubini orders, topological support product
+and compact-support consequence. These task publications supply no
+accepted statements or proofs. Their proof successors must wait for exact
+statement publication.
+
+Basis-stalk task `5867d762-4d36-4267-95c0-abd677dafcc1` is assigned to
+Workers 1215 and 633. The separate all-open clopen zero-extension task
+`f0949ea8-6ee5-4fdf-9f55-3010fd466169` is assigned to Worker 1038.
+Worker 6 shared an unreviewed core draft for the latter: its disjoint
+categorical-product construction compiles with independent space/group
+universes; naturality and nested subgroup-image laws remain with the owner.
+It is an internal prerequisite motivated by II.2.4, not a proved
+comparison with normalized basis sheaves or a compact-support exhaustion.
+The literal-sheaf and arbitrary-indexed-gluing branch remains with the
+foundation task; this update verifies only its normalized-presheaf unit.
+No Chapter II or whole-book completion is declared.
 
 ## Reference and reading record
 
@@ -249,12 +331,12 @@ including definitions, remarks and unnumbered results.
 | I.2 | Forgetful functors and adjoints | 14 / 20 | Backlog |
 | I.3 | Idempotent corner functor | 19 / 25 | Backlog |
 | I.4 | Duality | 22 / 28 | Partial: [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md); actual comparisons and full-source convention remain open |
-| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 update above retains its date and scope; [I.5.2–3 ledger](module-classes-category-properties.md) records public projectivity, injectivity and positive free-module proofs, and the public negative-example construction and statement with an approved unpublished proof |
+| I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 update above retains its date and scope; [I.5.2–3 ledger](module-classes-category-properties.md) records public projectivity, injectivity and positive free-module proofs, and the public derived negative-example construction, statement and exact proof |
 | I.6 | Properties of the nondegenerate module category | 27 / 33 | [Assertion ledger](module-classes-category-properties.md) records published abelianness, source AB5, actual sums/products and exact proofs of completeness, local finite type and filtered-colimit exactness; no section-completion declaration |
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
-| II.1 | Topology, functions and distributions | 30 / 36 | Partial assertion audit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Opening definitions read; remainder backlog |
+| II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public normalized basis-presheaf construction and [sheafification source-error audit](basis-sheafification-source.md); stalks, literal-sheaf comparisons, sheafification and later assertions remain separate |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |

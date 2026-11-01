@@ -52,7 +52,7 @@ Lean names below have prefix `Langlands.Algebra`, except the explicit
 | Corollary, PDF33: enough injectives | `NonUnitalModuleEnoughInjectives.EnoughInjectivesStatement`, `InjectiveEmbeddingStatement`; proof `NonUnitalModuleInjectivityProof.injectivityAssertions` | Public proof dualizes actual projective presentations of the actual dual and composes canonical bidual evaluation. Embeddings expose source-Hom injectivity, monomorphy and injectivity of the entire original additive map. |
 | I.5.3 definition, PDF33: free means isomorphic to a direct sum of regular copies of `A` | `NonUnitalModuleFree.IsFree`, `regularObject`, `object`, `fromFamily`, in [the free construction](../../Langlands/Algebra/NonUnitalModuleFree.md) | Published construction uses lifted original regular modules, finite-support sums, actual singleton inclusions and orbit-map descent. Explicit down/up intertwiners identify the lifted regular carriers with the original one. |
 | I.5.3 positive assertions: every module is a free quotient; every projective is a free summand | `NonUnitalModuleFreeStatements.FreeQuotientStatement`, `ProjectiveFreeSummandStatement`; proof `NonUnitalModuleFreeProof.freeModuleAssertions` | Public proof constructs a carrier-surjective orbit-map quotient and an actual isomorphism from a free sum to `P ⊞ Q`, assuming source-Hom projectivity of `P`. |
-| I.5.3 warning: the regular module need not be projective, so a free summand need not be projective | Published `CountableSupportAlgebra` construction and `NonUnitalModuleFreeCounterexampleStatements.FreeCounterexampleAssertions` | The derived construction and exact statement are public. Proof candidate `b22bba07-2c02-43eb-8b3f-093c95f28fa2` passed machine validation and independent review but remains nonpublic at the checked fetch. It is not counted as a public proof. |
+| I.5.3 warning: the regular module need not be projective, so a free summand need not be projective | Published `CountableSupportAlgebra`, target `NonUnitalModuleFreeCounterexampleStatements.FreeCounterexampleAssertions` and proof `NonUnitalModuleFreeCounterexampleProof.freeCounterexampleAssertions` | Public exact proof `b22bba07-2c02-43eb-8b3f-093c95f28fa2` establishes regular freeness, failure of exact-Hom projectivity and an actual free-summand witness, with the explicit complex instance. The example is derived; Renard states the warning without this construction. |
 
 The [projectivity proof explanation](../../Langlands/Algebra/NonUnitalModuleProjectivityProof.md)
 describes the implemented lifting route for `Ae`; the source instead
@@ -72,9 +72,12 @@ of a global identity. The
 [published statement](../../Langlands/Algebra/NonUnitalModuleFreeCounterexampleStatements.md)
 asserts regular freeness, failure of exact-Hom projectivity and an actual
 direct-factor witness, universally in these coefficients and base sets,
-with an explicit complex instance. The approved unpublished proof argues
-that a section of the actual free orbit-map quotient would force a
-global identity. A singleton-sum isomorphism proves regular freeness;
+with an explicit complex instance. The
+[published exact proof](../../Langlands/Algebra/NonUnitalModuleFreeCounterexampleProof.md)
+uses the [finite-coordinate obstruction](../../Langlands/Algebra/CountableLocalUnitsObstruction.md)
+to show that a section of the actual free orbit-map quotient would force a
+global right identity, contradicted by the concrete commutative algebra.
+A singleton-sum isomorphism proves regular freeness;
 the direct-factor witness allows the zero complement. Renard gives the
 warning without this example; the example is not attributed to the book.
 
@@ -207,7 +210,12 @@ by Worker 345 with Worker 6's shared-draft authorship, proves exactly
 Machine receipt `e107136a-5032-4a59-b6d2-0e7dc6cab4cc` passes the
 Lake build, exact-target, unchanged-statement and frozen-input checks.
 Independent review `04ee84d6-634a-40f0-ad33-c2e44ae70483`,
-Reviewer 7593, approves without qualifications. The checked fetch
-nevertheless reports staged, `accepted = false`, `public = false`;
-its publication remains an obligation. This ledger does not declare
-I.5, I.6, Chapter I or the whole book complete.
+Reviewer 7593, approves without qualifications. A later direct fetch
+reports `accepted = true`, `public = true` and integration state
+`published`, at commit `676ac944440098acb714f6b953083e88bb89c9c2`,
+integration `aa4b369754924b8499e91922290d9255`. All four proof/helper
+file hashes match the frozen candidate and that public Library. This
+resolves the earlier publication gate for this derived counterexample.
+The proof retains independent coefficient, base and lift universes,
+all nontrivial commutative coefficient rings and all uncountable base sets.
+This ledger does not declare I.5, I.6, Chapter I or the whole book complete.
