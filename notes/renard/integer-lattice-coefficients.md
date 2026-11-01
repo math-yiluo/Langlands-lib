@@ -1,15 +1,16 @@
-# Renard C.III: tuple correspondence and coefficient expansions
+# Renard C.III: tuple correspondence, coefficients and decomposition
 
 Author: Worker 709. Publication and current-file checks: 31 October 2026,
-Library `b22e185743f7c318f709e14e422801f4360105d5`.
+Library `2003a7a6a41b5e54c3f790e0887743ed616ed614`.
 
 The opening tuple/representation correspondence and the coefficient
 proposition of Appendix C.III have published implementations. Both the
 representation and supplied-tuple formulations of the coefficient proposition
 are proved, as are the standalone all-integer unipotent binomial expansion and
 polynomial-coefficient identities. The simultaneous generalized-weight
-decomposition, common triangular blocks and their multivariable
-scalar-factorization formulas remain distinct obligations of the
+decomposition is also proved. Common triangular blocks, identification of
+nonzero blocks with common eigenvalue tuples, and the multivariable
+scalar-factorization formulas remain obligations of the
 [whole-book program](coverage.md).
 
 ## Governing passage
@@ -45,6 +46,7 @@ proposition. The 2010 errata supplement the comparison; the 2026 text governs.
 | Coefficients of a finite-dimensional lattice representation have a finite character-polynomial expansion | `Langlands.IntegerLatticeMatrixCoefficientExponentialPolynomialStatement` and `Langlands.integerLatticeMatrixCoefficientExponentialPolynomial` in [IntegerLatticeStatement.lean](../../Langlands/Representation/MatrixCoefficient/IntegerLatticeStatement.lean) and [IntegerLatticeProof.lean](../../Langlands/Representation/MatrixCoefficient/IntegerLatticeProof.lean) | Every finite-dimensional complex representation, vector and algebraic functional, at every integer lattice point. See the [statement](../../Langlands/Representation/MatrixCoefficient/IntegerLatticeStatement.md) and [implemented proof](../../Langlands/Representation/MatrixCoefficient/IntegerLatticeProof.md) explanations. |
 | The same coefficient expansion for a supplied commuting invertible tuple and its actual integer-power product | `Langlands.CommutingTupleMatrixCoefficientExponentialPolynomialStatement` and `Langlands.commutingTupleMatrixCoefficientExponentialPolynomial` in [CommutingTupleStatement.lean](../../Langlands/Representation/MatrixCoefficient/CommutingTupleStatement.lean) and [CommutingTupleProof.lean](../../Langlands/Representation/MatrixCoefficient/CommutingTupleProof.lean) | The supplied entries are actual units of `Module.End ℂ V`. The left side applies the functional to their finite commuting product, with the full integer exponent in every coordinate. See the [statement](../../Langlands/Representation/MatrixCoefficient/CommutingTupleStatement.md) and [adapter proof](../../Langlands/Representation/MatrixCoefficient/CommutingTupleProof.md) explanations. |
 | All-integer unipotent binomial expansion and polynomial coefficients | `Langlands.RenardCIIIUnipotentBinomialStatement` and `Langlands.renardCIIIUnipotentBinomial` in [UnipotentBinomialStatement.lean](../../Langlands/LinearAlgebra/UnipotentBinomialStatement.lean) and [UnipotentBinomialProof.lean](../../Langlands/LinearAlgebra/UnipotentBinomialProof.lean) | The aggregate proves the operator equality for every complex vector space, actual endomorphism unit, natural nilpotence bound and integer exponent, together with the explicit descending-Pochhammer polynomial for every complex input. See the [statement](../../Langlands/LinearAlgebra/UnipotentBinomialStatement.md) and [proof](../../Langlands/LinearAlgebra/UnipotentBinomialProof.md) explanations. |
+| Simultaneous generalized-weight decomposition of the actual commuting tuple | `Langlands.CommutingTupleGeneralizedWeightDecompositionStatement` and `Langlands.commutingTupleGeneralizedWeightDecomposition` in [GeneralizedWeightStatement.lean](../../Langlands/Representation/IntegerLattice/GeneralizedWeightStatement.lean) and [GeneralizedWeightProof.lean](../../Langlands/Representation/IntegerLattice/GeneralizedWeightProof.lean) | The intersections of the actual maximal generalized eigenspaces have finite nonzero support, are independent, span the space, and are mapped bijectively onto themselves by every lattice point. See the [statement](../../Langlands/Representation/IntegerLattice/GeneralizedWeightStatement.md) and [proof](../../Langlands/Representation/IntegerLattice/GeneralizedWeightProof.md) explanations. |
 
 Here `IntegerLattice.Lattice d` is `Multiplicative (Fin d → ℤ)`: multiplication
 is addition of integer coordinates. Negative exponents use the stored
@@ -83,17 +85,38 @@ of `(j.factorial : ℂ)⁻¹ • descPochhammer ℂ j`, for every complex `z`.
 Worker 789's proof establishes the polynomial identity from Mathlib and the
 operator identity by a truncated Pascal recurrence and forward/backward integer
 induction. It supplies the source's separate binomial auxiliaries, while the
-simultaneous-block and multivariable assertions below remain open.
+common basis and multivariable assertions below remain open.
+
+The decomposition theorem retains arbitrary carrier universe `u`, every
+natural `d`, and every finite-dimensional complex `V`, including rank zero
+and the zero space. For every unit label `c : Fin d → ℂˣ`, its block is
+`W(c) = ⨅ i, (A.1 i : Module.End ℂ V).maxGenEigenspace (c i : ℂ)`.
+The theorem concludes finite support, `iSupIndep W`, `⨆ c, W(c) = ⊤`,
+and `Set.BijOn` for the actual tuple representation at every integer lattice
+point. It assumes no basis or decomposition. The rank-zero block is the
+whole space; when `V` is zero all blocks are zero.
+
+Worker 277 authored the decomposition proof and its explanation; Worker 1044
+added the scope section and submitted the pair. The proof uses Mathlib's
+simultaneous generalized-eigenspace independence and spanning theorems over
+complex labels. It passes to unit labels because invertibility makes every
+block with a zero coordinate vanish. Independence in a finite-dimensional
+space gives finite support. Commutation gives invariance under every lattice
+point, and the action at the inverse point gives bijectivity on each block.
+This proves the derived basis-free decomposition underlying the source's
+block choice; the proof does not construct its common triangular basis.
 
 ## Acceptance and publication evidence
 
 These are publication records, separate from the Lean names used for imports.
-All six results below are accepted and public, with unqualified independent
+All seven results below are accepted and public, with unqualified independent
 semantic approval. Their current pairs were checked against the archived
 bundle fingerprints. The tuple proof's project imports are unchanged from
 its pinned Library base `368b3cec32d30129c07825e0ce549058b99762f4`; the binomial
 proof's project imports are unchanged from
 `00be69b7f127e77ee2fd0511ffe34c48595b64d4`.
+The decomposition proof's project imports are unchanged from its pinned
+Library base `9a8ca758097242bde4147f33304f43fceef22fa4`.
 
 | Unit | Accepted contribution | Independent reviewer | Publication |
 | --- | --- | --- | --- |
@@ -103,6 +126,7 @@ proof's project imports are unchanged from
 | Supplied-tuple coefficient proof | `be88c328-7940-49a4-b42e-474f7fffe106` | Reviewer 5945 | Integration `91f7a0e476184944ab6966407baeb06c`, Library `b22e185743f7c318f709e14e422801f4360105d5` |
 | Standalone binomial and polynomial-coefficient statement | `a77729ae-e93f-46ac-9581-3284fc7ada4c` | Reviewer 3546 | Integration `2d8c1268ef4f4805b1a95cbae28550c4`, Library `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
 | Standalone binomial and polynomial-coefficient proof | `ff54af5b-be4c-4795-9744-37edbdb3371b` | Reviewer 3896 | Integration `4db92932a56b41879cd71e065b4ef1a7`, Library `910a6df80701415e9aa68c646393c66ac9bc7512` |
+| Simultaneous generalized-weight decomposition proof | `7479675b-53ff-4925-b9f2-4a18f01adb5f` | Reviewer 6183 | Integration `ce3237a6d7fe44bb87568ded4d970b93`, Library `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
 
 Proof machine receipts `48eaef38-390f-4f81-9879-c84fdcc75b84`,
 `6cefc5a7-ea4d-4714-b59c-825e5b4957b8` and
@@ -119,16 +143,25 @@ reusing both cached modules. Its declaration inspection reports only
 `propext`, `Classical.choice` and `Quot.sound` for the theorem. This check
 supplements the independent acceptance and publication records.
 
+The decomposition proof's machine receipt
+`68e0e2f5-9847-4970-9284-03ef4b0bd725` accepts its Lake build, exact target,
+unchanged statement and frozen inputs. Its publication has a fresh integrated
+build and unqualified independent semantic approval. The archived manifest
+fingerprints match both current proof files. Its exact published target is
+the proposition in statement contribution
+`769b13a0-1fbe-4050-b5ff-52ba2d69b320`.
+
 ## Retained assertion-level obligations
 
 | Source content on printed p.280 / PDF286 | Remaining boundary |
 | --- | --- |
-| Simultaneous generalized-weight decomposition for the supplied commuting family | Construct and prove the actual simultaneous invariant summands and their decomposition properties. The coefficient adapter supplies no such objects. |
+| Identification of nonzero generalized-weight blocks with common eigenvalue tuples | Prove that an actual block is nonzero exactly when the tuple has a nonzero common eigenvector with that label. The decomposition theorem does not assert this equivalence. |
 | Common triangular blocks and scalar-times-unipotent form | Prove the common-basis assertion and the nilpotence and commutation properties of the resulting parts. The coordinate-induction proof does not construct this common basis. |
 | Multivariable scalar factorization and products on the simultaneous blocks | State and prove the source's character-times-product identities for the actual block restrictions and commuting nilpotent parts. Reuse the published standalone all-integer binomial and polynomial-coefficient theorems for each factor; those theorems supply no simultaneous blocks or common basis. |
 
-The coefficient proposition is covered in both interfaces, and the separate
-binomial auxiliaries are covered. The remaining intermediate assertions and any
+The coefficient proposition is covered in both interfaces, the separate
+binomial auxiliaries are covered, and the basis-free simultaneous decomposition
+is proved. The remaining intermediate assertions and any
 further assertions identified by the full inventory remain in the whole-book
 scope; this note claims neither completion of Appendix C.III nor completion of
 the book.

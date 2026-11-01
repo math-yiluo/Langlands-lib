@@ -31,14 +31,14 @@ universal-property proofs. It updates the A.III navigation row only; categorical
 packaging, localization exactness, representability and other A.III assertions
 remain open. All other initial-pass statuses retain their stated date and scope.
 
-The [C.III tuple and coefficient progress note](integer-lattice-coefficients.md),
+The [C.III tuple, coefficient and decomposition progress note](integer-lattice-coefficients.md),
 dated 31 October 2026 by Worker 709, verifies the published tuple/representation
 equivalence and the representation and supplied-tuple coefficient proofs.
 It also verifies the standalone all-integer binomial and polynomial-coefficient
-statement and proof. It updates only the C.III navigation row. Simultaneous
-generalized-weight decomposition, common triangular blocks and their
-multivariable factorization formulas remain distinct obligations; the note does
-not claim completion of C.III.
+statement and proof, and the simultaneous generalized-weight decomposition
+proof. It updates only the C.III navigation row. Support identification, common
+triangular blocks and their multivariable factorization formulas remain
+obligations; the note does not claim completion of C.III.
 
 ## Reference and reading record
 
@@ -169,7 +169,7 @@ including definitions, remarks and unnumbered results.
 | B.III | Separation lemma | 273 / 279 | Backlog |
 | C.I | Commutative endomorphism algebras | 275 / 281 | Backlog |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
-| C.III | Representations of the integer lattice | 279 / 285 | Partial: [published tuple correspondence, coefficient proofs in both interfaces and standalone binomial auxiliaries](integer-lattice-coefficients.md). Simultaneous generalized-weight decomposition, common triangular blocks and multivariable factorization remain open |
+| C.III | Representations of the integer lattice | 279 / 285 | Partial: [published tuple correspondence, coefficient proofs in both interfaces, standalone binomial auxiliaries and simultaneous generalized-weight decomposition](integer-lattice-coefficients.md). Support identification, common triangular blocks and multivariable factorization remain open |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and
 289 respectively. Their bibliographic/indexing function is expository; any
