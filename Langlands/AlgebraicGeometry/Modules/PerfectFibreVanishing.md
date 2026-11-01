@@ -24,6 +24,8 @@ def homologyIsoOfIsoDerivedComplex {K : CochainComplex D ℤ} {X : C}
     K.homology n ≅ (F.rightDerived n).obj X
 ```
 
+This comparison is imported from `Langlands.Cohomology.DerivedPlus`, where
+its unchanged declaration is shared with other derived-complex arguments.
 Here `C` and `D` are abelian categories with derived categories, `C` has enough injectives,
 `F : C ⥤ D` is additive, and `derivedComplex F` is the published
 `DerivedPlus.derivedComplex` (`X` placed in degree zero, then the right derived functor on

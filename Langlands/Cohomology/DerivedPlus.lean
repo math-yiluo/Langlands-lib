@@ -142,6 +142,16 @@ def homologyIso {X : C} (R : InjectiveResolution X) (n : ℕ) :
       ComplexShape.embeddingUpNat (j := n) rfl ≪≫
     (R.isoRightDerivedObj F n).symm
 
+/-- Cohomology of a complex representing `derivedComplex F X` in a degree `n : ℕ` is
+`(F.rightDerived n).obj X`. -/
+def homologyIsoOfIsoDerivedComplex {K : CochainComplex D ℤ} {X : C}
+    (e : DerivedCategory.Q.obj K ≅ DerivedCategory.Plus.ι.obj ((derivedComplex F).obj X))
+    (n : ℕ) :
+    K.homology n ≅ (F.rightDerived n).obj X :=
+  ((DerivedCategory.homologyFunctorFactors D n).app K).symm ≪≫
+    (DerivedCategory.homologyFunctor D n).mapIso e ≪≫
+    homologyIso F (injectiveResolution X) n
+
 /-- Cohomology of the derived complex vanishes in negative degrees. -/
 theorem isZero_homology_of_neg (X : C) {n : ℤ} (hn : n < 0) :
     IsZero ((DerivedCategory.Plus.homologyFunctor D n).obj ((derivedComplex F).obj X)) := by

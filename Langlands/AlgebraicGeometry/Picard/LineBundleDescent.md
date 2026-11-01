@@ -11,7 +11,7 @@ along a cofiltered limit (Stacks Project, Limits, Lemma 32.10.3).
 These lemmas are kept in their own namespace so that their generic names cannot collide
 with lemmas of other modules in `Langlands.SchemeModule`.
 
-- `sectionHom_app`: the morphism `sectionHom M s : 𝒪_X ⟶ M` of a global section `s`
+- `sectionHom_app`, imported from `Modules/TensorSections`: the morphism `sectionHom M s : 𝒪_X ⟶ M` of a global section `s`
   sends `a ∈ Γ(X, U)` to `a • s|_U`.
 - `trivializesOn_iff_bijective`: `TrivializesOn M s U` holds exactly when
   `(sectionHom M s).app V` is bijective for every open `V ≤ U`. The proof uses that an

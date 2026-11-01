@@ -130,3 +130,8 @@ residue comparison, rank-one comparison, pullback comparison or ampleness
 transport. The equality of the whole maximal trivialization open of this
 product with the intersection of the two individual opens for line bundles
 remains a separate statement and proof obligation.
+
+The shared formula `Langlands.SchemeModule.LineBundleDescent.sectionHom_app`
+sends `a ∈ Γ(X, U)` to `a • s|_U`. Its unchanged declaration is extracted
+from `Picard/LineBundleDescent` and follows from `sectionHom_app_one` and
+linearity. It applies to every module sheaf and global section.

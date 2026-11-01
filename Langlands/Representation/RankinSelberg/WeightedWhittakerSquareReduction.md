@@ -123,7 +123,8 @@ Here `|·|` is `T.normalizedAbs`, `q` is the residue cardinality and `ord` is
   `N ≤ ord x` whenever `x ≠ 0` and `|x| ≤ R`.
 - `ord_eq_zero_iff_mem_integralUnits_of_units`: a unit has order zero exactly
   when it lies in `integralUnits T.Integers`.
-- `normalizedAbs_det_of_mem_integralSubgroup`: `|det k| = 1` for `k` in the
+- `normalizedAbs_det_of_mem_integralSubgroup`, imported from the shared
+  `IntegralDeterminant` module: `|det k| = 1` for `k` in the
   integral subgroup. Both `det k` and `det k⁻¹` are integral, and their product
   is one.
 - `continuous_normalizedAbs'`: `T.normalizedAbs` is continuous for

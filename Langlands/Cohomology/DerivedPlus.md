@@ -88,3 +88,10 @@ Harris, `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
 The module imports only Mathlib.
+
+`homologyIsoOfIsoDerivedComplex F e n` identifies `K.homology n` with
+`(F.rightDerived n).obj X` when `e` identifies `Q.obj K` with the derived
+complex of `X`. It composes `homologyFunctorFactors` in reverse, homology of
+`e`, and `homologyIso F (injectiveResolution X) n`. This unchanged comparison
+was moved here from `AlgebraicGeometry/Modules/PerfectFibreVanishing` so that
+vanishing and naturality arguments share the same construction.

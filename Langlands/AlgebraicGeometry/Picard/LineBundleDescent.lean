@@ -11,17 +11,6 @@ namespace Langlands.SchemeModule.LineBundleDescent
 
 variable {X : Scheme.{u}} (M : X.Modules)
 
-lemma sectionHom_app (s : GlobalSections M) (U : X.Opens) (a : Γ(X, U)) :
-    (sectionHom M s).app U a =
-      a • M.presheaf.map (homOfLE (show U ≤ ⊤ from le_top)).op s := by
-  have h := Scheme.Modules.Hom.app_smul (sectionHom M s) a
-    (show Γ(structureModule X, U) from (1 : Γ(X, U)))
-  have e : (a • (show Γ(structureModule X, U) from (1 : Γ(X, U))) : Γ(structureModule X, U)) =
-      (show Γ(structureModule X, U) from a) := mul_one a
-  rw [e] at h
-  rw [h]
-  exact congrArg (a • ·) (sectionHom_app_one M s U)
-
 theorem trivializesOn_iff_bijective (s : GlobalSections M) (U : X.Opens) :
     TrivializesOn M s U ↔ ∀ V : X.Opens, V ≤ U → Function.Bijective ((sectionHom M s).app V) := by
   unfold TrivializesOn

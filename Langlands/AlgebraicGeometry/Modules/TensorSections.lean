@@ -57,6 +57,24 @@ lemma sectionHom_app_one (M : X.Modules) (s : GlobalSections M) (U : X.Opens) :
   rw [Equiv.apply_symm_apply]
   rfl
 
+namespace LineBundleDescent
+
+variable (M : X.Modules)
+
+lemma sectionHom_app (s : GlobalSections M) (U : X.Opens) (a : Γ(X, U)) :
+    (sectionHom M s).app U a =
+      a • M.presheaf.map (homOfLE (show U ≤ ⊤ from le_top)).op s := by
+  have h := Scheme.Modules.Hom.app_smul (sectionHom M s) a
+    (show Γ(structureModule X, U) from (1 : Γ(X, U)))
+  have e : (a • (show Γ(structureModule X, U) from (1 : Γ(X, U))) : Γ(structureModule X, U)) =
+      (show Γ(structureModule X, U) from a) := mul_one a
+  rw [e] at h
+  rw [h]
+  exact congrArg (a • ·) (sectionHom_app_one M s U)
+
+end LineBundleDescent
+
+
 /-- Section morphisms commute with maps of module sheaves. -/
 @[simp]
 lemma sectionHom_naturality {M N : X.Modules} (f : M ⟶ N) (s : GlobalSections M) :

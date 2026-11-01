@@ -33,16 +33,6 @@ variable {C : Type u₁} [Category.{v} C] [Abelian C] [HasDerivedCategory.{w} C]
 variable {D : Type u₂} [Category.{v'} D] [Abelian D] [HasDerivedCategory.{w'} D]
 variable (F : C ⥤ D) [F.Additive]
 
-/-- Cohomology of a complex representing `derivedComplex F X` in a degree `n : ℕ` is
-`(F.rightDerived n).obj X`. -/
-def homologyIsoOfIsoDerivedComplex {K : CochainComplex D ℤ} {X : C}
-    (e : DerivedCategory.Q.obj K ≅ DerivedCategory.Plus.ι.obj ((derivedComplex F).obj X))
-    (n : ℕ) :
-    K.homology n ≅ (F.rightDerived n).obj X :=
-  ((DerivedCategory.homologyFunctorFactors D n).app K).symm ≪≫
-    (DerivedCategory.homologyFunctor D n).mapIso e ≪≫
-    homologyIso F (injectiveResolution X) n
-
 /-- A complex representing `derivedComplex F X` is acyclic once every right-derived
 object `(F.rightDerived n).obj X` vanishes. -/
 theorem acyclic_of_iso_derivedComplex {K : CochainComplex D ℤ} {X : C}
