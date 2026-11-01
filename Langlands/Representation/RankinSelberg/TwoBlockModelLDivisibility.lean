@@ -69,8 +69,8 @@ section ModelInclusion
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance {n : ℕ} : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) :=
+local instance twoBlockModelLTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockModelLGLMeasurable {n : ℕ} : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) :=
   borel _
 
 /-- The coefficient model of a full-type source is a genuine quotient of

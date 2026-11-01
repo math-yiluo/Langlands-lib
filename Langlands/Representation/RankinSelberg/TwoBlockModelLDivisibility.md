@@ -16,6 +16,11 @@ does not transfer a lower induced representation by merely commuting factors.
 wrapper in `TwoBlockRankOneProof` supplies the published theorem
 `uniformFiniteFunctionMellinConvergence` to this premise.
 
+The two local canonical instances in `ModelInclusion` have explicit names,
+`twoBlockModelLTopology` and `twoBlockModelLGLMeasurable`, so this helper
+composes with the shared matrix functional-equation imports. Their types,
+values, order and locality are unchanged.
+
 ## Coefficients of a genuine quotient
 
 `GodementJacquet.biSmoothMatrixCoefficients_le_of_surjective` takes a smooth
@@ -114,4 +119,5 @@ dependent positive block ranks and independent universes are retained. Reducible
 originals and rank-one blocks are included. No unrestricted two-block or
 finite-block multiplicativity, Section 7 descent, later multiplicativity result,
 functional equation or gamma-factor existence is used. This file supplies the
-L argument only; the separate closed gamma target remains a distinct obligation.
+L argument; `TwoBlockRankOneProof` also closes the separate gamma target
+through the generic matrix functional-equation theorem.
