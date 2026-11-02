@@ -122,13 +122,9 @@ Comparison with the sources.
   schemes. Its character group is therefore trivial. This is the only form of
   the triviality proved in this module.
 
-## Pending work
+## Character lattices and roots
 
-The task also asks for the anisotropy consequence in terms of the character
-lattice and the roots: in an anisotropic `G`, a split subtorus has
-`characterLattice T = 0` and empty `roots i`. Those definitions are available in
-[`Torus/Lattice`](../Torus/Lattice.md) and
-[`Torus/Weights`](../Torus/Weights.md), but that form is **not** proved here.
-It remains pending; its planned place is a later relative-roots module of
-this task, which will import those definitions and derive it from
-`IsAnisotropic.subsingleton_character`.
+[`RelativeRoots`](RelativeRoots.md) derives the corresponding character-lattice
+and root statements from `IsAnisotropic.subsingleton_character`: every character
+of a split subtorus of an anisotropic group is zero, its whole character lattice
+is the zero subgroup, and its roots and relative roots are empty.

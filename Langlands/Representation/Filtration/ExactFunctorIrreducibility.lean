@@ -58,6 +58,28 @@ theorem obj_subsingleton (A : SmoothRep.{0,uG,uV} ℂ G) [Subsingleton A] :
     exact ha
   exact ⟨fun a b => (hz a).trans (hz b).symm⟩
 
+/-- A short-exact smooth functor preserves zero morphisms. -/
+theorem preservesZero_of_exact
+    {G H : Type*} [Group G] [TopologicalSpace G]
+    [Group H] [TopologicalSpace H]
+    (J : SmoothRep.{0,_,uV} ℂ G ⥤ SmoothRep.{0,_,uV} ℂ H)
+    (hJ : Derivative.Mirabolic.MapsShortExactIntertwiners J) : J.PreservesZeroMorphisms := by
+  constructor
+  intro A B
+  let Z := A.subrepresentation ⊥
+  have : Subsingleton Z := ⟨fun x y => by
+    apply Subtype.ext
+    exact (show x.val = 0 from x.property).trans
+      (show y.val = 0 from y.property).symm⟩
+  let := this
+  let := ExactFunctorIrreducibility.obj_subsingleton J hJ Z
+  have hz : J.map (0 : A ⟶ Z) = 0 := by
+    apply ObjectProperty.hom_ext
+    ext x
+    exact Subsingleton.elim _ _
+  have hf : (0 : A ⟶ B) = (0 : A ⟶ Z) ≫ (0 : Z ⟶ B) := by simp
+  rw [hf, J.map_comp, hz, CategoryTheory.Limits.zero_comp]
+
 include hJ in
 /-- On a finite-length object whose simple subquotients survive, a zero image
 forces the original carrier to be zero. -/

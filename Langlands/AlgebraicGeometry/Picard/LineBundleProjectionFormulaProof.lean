@@ -13,7 +13,8 @@ open CategoryTheory MonoidalCategory AlgebraicGeometry
 
 namespace Langlands.AlgebraicGeometry.Picard
 
-private def tensorInverseEquivalence
+/-- Tensoring with a tensor-invertible object gives an autoequivalence. -/
+def tensorLeftEquivalenceOfInverse
     {C : Type u} [Category.{v} C] [MonoidalCategory C] [BraidedCategory C]
     (L N : C) (e : L ⊗ N ≅ 𝟙_ C) : C ≌ C :=
   CategoryTheory.Equivalence.mk (tensorLeft N) (tensorLeft L)
@@ -22,17 +23,18 @@ private def tensorInverseEquivalence
     ((tensorLeftTensor N L).symm ≪≫
       (tensoringLeft C).mapIso ((β_ N L) ≪≫ e) ≪≫ leftUnitorNatIso C)
 
-private def tensorInverseProjectionIso
+/-- A monoidal left adjoint induces the tensor comparison for its right adjoint. -/
+def tensorLeftRightAdjointCommIso
     {C : Type u} {D : Type u'} [Category.{v} C] [Category.{v'} D]
     [MonoidalCategory C] [MonoidalCategory D] [BraidedCategory C] [BraidedCategory D]
     (F : C ⥤ D) (G : D ⥤ C) [F.Monoidal] (adj : F ⊣ G)
     (L N : C) (e : L ⊗ N ≅ 𝟙_ C) :
     G ⋙ tensorLeft L ≅ tensorLeft (F.obj L) ⋙ G := by
-  let E := tensorInverseEquivalence L N e
+  let E := tensorLeftEquivalenceOfInverse L N e
   let eD : F.obj L ⊗ F.obj N ≅ 𝟙_ D :=
     Functor.Monoidal.μIso F L N ≪≫ F.mapIso e ≪≫
       (Functor.Monoidal.εIso F).symm
-  let E' := tensorInverseEquivalence (F.obj L) (F.obj N) eD
+  let E' := tensorLeftEquivalenceOfInverse (F.obj L) (F.obj N) eD
   let a := E.toAdjunction.comp adj
   let b := adj.comp E'.toAdjunction
   exact (a.ofNatIsoLeft (Functor.Monoidal.commTensorLeft F N).symm).rightAdjointUniq b
@@ -49,7 +51,7 @@ def lineBundleProjectionIso {X Y : Scheme.{u}} (f : X ⟶ Y)
   let N := h.choose
   let e := h.choose_spec.some
   exact (localizedTensorIso Y L.obj ((Scheme.Modules.pushforward f).obj M)).symm ≪≫
-    (tensorInverseProjectionIso (Scheme.Modules.pullback f) (Scheme.Modules.pushforward f)
+    (tensorLeftRightAdjointCommIso (Scheme.Modules.pullback f) (Scheme.Modules.pushforward f)
       (Scheme.Modules.pullbackPushforwardAdjunction f) L.obj N e).app M ≪≫
     (Scheme.Modules.pushforward f).mapIso
       (localizedTensorIso X ((Scheme.Modules.pullback f).obj L.obj) M)

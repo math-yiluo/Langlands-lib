@@ -22,27 +22,6 @@ variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
   (T : F.TopologicalData)
   (ψ : @HarmonicAnalysis.UnitaryAdditiveCharacter F.Carrier _ T.topology)
 
-private theorem preservesZero_of_exact
-    {G H : Type*} [Group G] [TopologicalSpace G]
-    [Group H] [TopologicalSpace H]
-    (J : SmoothRep.{0,_,uV} ℂ G ⥤ SmoothRep.{0,_,uV} ℂ H)
-    (hJ : Mirabolic.MapsShortExactIntertwiners J) : J.PreservesZeroMorphisms := by
-  constructor
-  intro A B
-  let Z := A.subrepresentation ⊥
-  have : Subsingleton Z := ⟨fun x y => by
-    apply Subtype.ext
-    exact (show x.val = 0 from x.property).trans
-      (show y.val = 0 from y.property).symm⟩
-  let := this
-  let := ExactFunctorIrreducibility.obj_subsingleton J hJ Z
-  have hz : J.map (0 : A ⟶ Z) = 0 := by
-    apply ObjectProperty.hom_ext
-    ext x
-    exact Subsingleton.elim _ _
-  have hf : (0 : A ⟶ B) = (0 : A ⟶ Z) ≫ (0 : Z ⟶ B) := by simp
-  rw [hf, J.map_comp, hz, zero_comp]
-
 private def positiveCuspidalTopLine {r : ℕ} (hr : 0 < r)
     (A : letI := T.topology;
       SmoothRep.{0,uF,uV} ℂ (GeneralLinear r F.Carrier))
@@ -122,7 +101,7 @@ def chooseCuspidalProductDetectedConstituent {n : ℕ} (hn : 0 < n)
       (fun i => (C i).obj) (fun i => (C i).property.1)
   have hJ : Mirabolic.MapsShortExactIntertwiners J :=
     generalLinearDerivativeExactness F T ψ n n le_rfl
-  letI := preservesZero_of_exact J hJ
+  letI := ExactFunctorIrreducibility.preservesZero_of_exact J hJ
   have hirr : (J.obj P).IsIrreducible :=
     ExactFunctorIrreducibility.isIrreducible_of_finrank_eq_one (J.obj P)
       (e.finrank_eq.trans (Module.finrank_self ℂ))

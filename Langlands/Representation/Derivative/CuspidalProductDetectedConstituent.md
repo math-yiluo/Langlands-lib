@@ -91,7 +91,7 @@ For the final constructor,
 of `P` from the irreducibility of its original factors.
 `generalLinearDerivativeExactness F T` gives
 `Mirabolic.MapsShortExactIntertwiners J`.
-The private `preservesZero_of_exact` derives preservation of zero
+The shared `ExactFunctorIrreducibility.preservesZero_of_exact` derives preservation of zero
 morphisms from this short-exactness hypothesis. Indeed,
 `ExactFunctorIrreducibility.obj_subsingleton` shows that the image of
 the bottom subrepresentation of any source object is a zero carrier.

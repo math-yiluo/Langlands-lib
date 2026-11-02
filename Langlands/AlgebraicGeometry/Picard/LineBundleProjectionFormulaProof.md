@@ -4,15 +4,15 @@
 `LineBundleProjectionFormulaStatement` for every scheme morphism, line
 bundle, and module sheaf in the stated universe.
 
-The private `tensorInverseEquivalence` starts with an isomorphism
+The shared `tensorLeftEquivalenceOfInverse` starts with an isomorphism
 `e : L ⊗ N ≅ 𝟙_ C` in a braided monoidal category. Left tensoring by `N`
 and by `L` are inverse functors. The unitors, tensoring of `e` and its
 braided version, and `tensorLeftTensor` construct the required two natural
 isomorphisms. `Equivalence.mk` adjusts the unit to satisfy the adjunction
 triangle, retaining the specified functor and inverse.
 
-For a strong monoidal `F : C ⥤ D` with right adjoint `G`, the private
-`tensorInverseProjectionIso` transports `e` through the tensorator and unit
+For a strong monoidal `F : C ⥤ D` with right adjoint `G`, the shared
+`tensorLeftRightAdjointCommIso` transports `e` through the tensorator and unit
 isomorphism of `F`. It obtains tensor-inverse equivalences in `C` and `D`.
 Their adjunctions compose with `F ⊣ G` to give
 

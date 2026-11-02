@@ -11,8 +11,8 @@ how restrictions of inner automorphisms along a homomorphism `i : H ⟶ G` compo
 
 It is a helper for task 6edfb074. There the last three lemmas are meant to show that the
 centralizer points of a maximal split torus form a normal subgroup of its normalizer
-points, so that the relative Weyl group `N(k)/Z(k)` is a quotient group. That
-relative-roots module is not yet written. All declarations are in the namespace
+points, so that the relative Weyl group `N(k)/Z(k)` is a quotient group. The construction appears in
+[`Rational/RelativeRoots`](Rational/RelativeRoots.md). All declarations are in the namespace
 `Langlands.GroupScheme`.
 
 ## Provenance (internal)

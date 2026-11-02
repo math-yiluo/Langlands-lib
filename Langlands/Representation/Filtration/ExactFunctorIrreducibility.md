@@ -28,6 +28,12 @@ carrier, proving that its image also has a zero carrier. Conversely,
 an actual irreducible subquotient, whose mapped subquotient would be both
 nonzero and a subquotient of a zero carrier.
 
+The shared `preservesZero_of_exact` factors a zero map through the actual
+bottom subrepresentation. Its image is a zero carrier by `obj_subsingleton`,
+so functoriality makes the mapped composite zero. This is the unchanged helper
+previously local to `Derivative.CuspidalProductDetectedConstituent`, now reused
+by both cuspidal-product and segment-head-product constructions.
+
 For `isIrreducible_of_obj`, consider an arbitrary actual subrepresentation
 `S` of `A`, with associated smooth objects `K` and `Q = A/S`. Finite length
 and nonvanishing pass to both objects. Apply exactness to `K → A → Q`.
