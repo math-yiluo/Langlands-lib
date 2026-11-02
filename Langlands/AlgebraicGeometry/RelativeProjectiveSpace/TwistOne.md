@@ -32,8 +32,8 @@ concern the sections themselves, including their normalization.
 The coordinate comparison reuses the published
 `LinearSystem.pullbackSection_comp` from `LinearSystem/SectionRatio`.
 This identifies iterated pullback of actual sections with pullback along
-the composite, using the canonical composition isomorphism. The private
-equality-transport helper reduces an equality of scheme maps to reflexivity.
+the composite, using the canonical composition isomorphism. The public
+helper `pullbackSection_comp_eq` reduces an equality of scheme maps to reflexivity. It is also reused by the linear-system twist comparison.
 Applying this helper to the integral projections
 proves the first coordinate identity; applying it to the Cartesian
 projections and then using the first identity proves the second.

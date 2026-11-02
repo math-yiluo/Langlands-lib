@@ -17,7 +17,7 @@ namespace Langlands.AlgebraicGeometry.RelativeProjectiveSpace
 universe u
 
 set_option backward.isDefEq.respectTransparency false in
-private lemma pullbackSection_comp_eq {X Y Z : Scheme.{u}} (f : X ⟶ Y) (g : Y ⟶ Z)
+lemma pullbackSection_comp_eq {X Y Z : Scheme.{u}} (f : X ⟶ Y) (g : Y ⟶ Z)
     {h : X ⟶ Z} (w : f ≫ g = h) (M : Z.Modules) (s : GlobalSections M) :
     ((Scheme.Modules.pullbackComp f g).hom.app M ≫
         (Scheme.Modules.pullbackCongr w).hom.app M).app ⊤

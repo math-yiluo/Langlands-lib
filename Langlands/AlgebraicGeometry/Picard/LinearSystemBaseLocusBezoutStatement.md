@@ -119,7 +119,11 @@ generic points of top-dimensional components), Definition 33.45.3
 (intersection numbers as Euler coefficients) and Lemma 33.45.8 (cutting by an
 effective Cartier divisor). The displayed bound is not a single numbered result
 there. It combines these with the fact that a module of positive dimension at a
-point keeps that point in its support after one cut.
+point keeps that point in its support after one cut. The Euler characteristic
+of a sheaf with finite support, used in step 4 of the route below and in the
+remark after it, is Stacks Lemma 33.33.3 (Section 33.33 Euler
+characteristics, tag 0BEI, source
+`stacks-euler-characteristics-0BEI-2026-11-01`).
 
 The statement serves the proof of
 `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundStatement`
@@ -163,8 +167,13 @@ The statement records no proof. One route, in coherent sheaves:
    `e! * p * q ^ (e - 1)` times the degree-`e` coefficient.
 
 The quotient in step 2 is needed. Without it a cut can have a nonzero kernel
-supported in `B`, coming from embedded points. The kernel's length then adds
-to the final Euler characteristic, which can exceed the right side, and the
-comparison breaks.
+supported in `B`, coming from embedded points. The kernel's Euler
+characteristic then adds to the final Euler characteristic, which can exceed
+the right side, and the comparison breaks. The kernel has finite support, so by
+Stacks Lemma 33.33.3 its global sections are the direct sum of its stalks and
+its Euler characteristic is their `K`-dimension. A composition series of each
+stalk turns this into the sum over its support points `x` of `[κ(x) : K]` times
+the length of the stalk at `x`. When `K` is not algebraically closed this
+weighted sum can differ from the plain length.
 `CoherentIntegralIdealFiltrationStatement` (filtrations with integral pieces)
 is another way to organize the choice of generic members.
