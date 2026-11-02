@@ -1,10 +1,10 @@
-# KP Bundles A–D: source ledger and construction boundaries
+# KP Bundles A–E: source ledger and construction boundaries
 
-This source ledger covers Bundle A, initial Bundle B targets and Bundles C–D of the standing KP program
+This source ledger covers Bundle A, initial Bundle B targets and Bundles C–E of the standing KP program
 `f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. It records mathematical source targets,
 not completed formalization. Every formal-status field below is empty: no
 accepted, published Lean result for these complete targets has been verified in
-this ledger. The remaining Bundle B targets and Bundles E–F still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
+this ledger. The remaining Bundle B targets and Bundle F still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
 
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
@@ -58,6 +58,31 @@ general product in Proposition 8.4.15. This extends the ledger to
 twenty-nine rows. All six added formal-status fields and evidence arrays
 remain empty; the source dependencies below supply no formal construction.
 
+The Bundle E extension adds nine source-only rows for Proposition 13.2.5,
+Sections 13.3.1–4, Theorem 13.5.1, corrected Proposition 13.5.2 and
+the later Propositions 13.6.7 and 13.7.4. Its original-source audit
+covered book PDF pages 97–98, 230, 274–282, 497–515 and corrections PDF
+pages 49–50. Book PDF pages 281 and 500 were visually checked for
+the printed root indices. The discrepancy in Proposition 13.2.5(3)
+remains an explicit independent formal-resolution obligation. The
+optimal-point clauses in Definition 13.4.2, Lemma 13.4.4 and Proposition
+13.6.7 were checked at book PDF pages 503–504 and 512: the empty-root
+case has no literal optimal point, as the G_m/Q_2 zero-coset regression
+below shows. Its separate instability target is retained, and the
+general program scope is unchanged. The 2024 corrections do not supply
+an empty-root extension; none is proved here. Section
+1.6 and Corollary 7.3.14 independently justify restricting openness to
+finite augmented depths; the separated infinite term is recorded
+separately and need not be open. This clarification is absent from the
+2024 corrections. The
+Remark 13.6.6 example at book PDF page 512 was also visually checked;
+the explicit contracting cocharacter below invalidates its claimed
+role as a witness. This is an independent source discrepancy, absent
+from the 2024 corrections, with no Lean proof recorded here. This
+extends the ledger to thirty-eight rows with all new formal-status
+fields and evidence arrays empty. Positive-depth implementation
+and the later instability targets retain their separate release gates.
+
 ## Structured ledger
 
 The JSON block is the structured ledger. Each row has the same fields.
@@ -70,7 +95,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, and Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent. Remaining Bundle B items and Bundles E–F still need public rows.",
+  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, and Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets. Remaining Bundle B items and Bundle F still need public rows.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -985,6 +1010,334 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "publication_commits": [],
       "axiom_reports": [],
       "external_code": []
+    },
+    {
+      "source_item": "Proposition 13.2.5",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.469 / PDF p.500; definitions at PDF pp.497-499; finite-depth clarification from Section 1.6, PDF pp.97-98, and Corollary 7.3.14, PDF p.282"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.49-50; independent boundary check at book PDF pp.97-98,282,498,500; root-index cross-check at book PDF pp.230,278,281,500,506",
+        "change": "No replacement of 13.2.5 is listed. The finite-depth restriction on openness is an independently justified clarification, not an authors' erratum. Preserve the separate confirmed printed root-index discrepancy explicitly; the possible indivisible-root/concave-block formulation is source-derived and requires an independent proof, not attribution as an author correction."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "For the bounded-open and Iwahori-decomposition assertions, depths are finite nonnegative augmented depths: r or r+ with r a nonnegative real number, excluding infinity. The covariance, commutator and Levi assertions below are also stated at finite nonnegative depths r,s; the infinite-depth term is recorded separately. For the Levi assertions, P=MN is a parabolic k-subgroup, x is in B(G)_M as in Section 9.7, and x_M is its image in B(M) under (9.7.1)."
+      ],
+      "conclusion": "At finite nonnegative augmented depths, the actual P_{x,r} form a decreasing family of bounded open subgroups, independent of the apartment used to define them. Its separated extension has P_{x,infinity}=intersection_{t>=0, t real} P_{x,t}={1}; this term need not be open. For g in G(k), g P_{x,r} g^-1=P_{gx,r}; hence P_{x,r} is normal in the full point stabilizer. The commutator is contained in P_{x,r+s}. At finite r>0, P_{x,r} has the Iwahori decomposition of 13.2.4 relative to P, including a homeomorphism of the three factors, rather than a group direct product. At every finite nonnegative augmented depth, its intersection with M(k) is P^M_{x_M,r}. The finite-depth restriction on openness independently clarifies the printed wording; it is not an authors' correction. Printed part (3), at positive finite depth, claims an arbitrarily ordered root/centralizer product bijection with products over all positive and negative roots. This indexing conflicts with its cited 7.3.12(5), which uses indivisible roots and concave-function blocks. The discrepancy is recorded, and that printed clause has an outstanding formal-resolution obligation; no corrected theorem or author erratum is claimed here.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Section 1.6 at PDF pp.97-98 includes infinity in the augmented index set and defines the separated infinite term as the intersection, equal to {1}. Corollary 7.3.14 at PDF p.282 asserts boundedness generally, but openness only if the concave function never takes infinity. Thus openness is retained only at finite r/r+",
+        "Concrete boundary check from (13.1.1), PDF p.498: for G_m over Q_2, the standard and minimal congruent filtrations agree, and P_{x,n}=1+2^n Z_2 for integers n>=1. Their intersection is {1}, which is not open because the distinct elements 1+2^n converge to 1",
+        "Propositions 7.3.17 and 7.6.4 give apartment independence; 7.7.8(1) gives conjugation covariance. Root-valuation Axiom V3, 7.1.2, 7.1.3 and commutator-friendliness give the commutator bound. Corollary 9.7.3 gives the depth-zero Levi intersection",
+        "The original PDF p.500 was visually checked: the all-root indexing is printed, not lost during extraction. PDF p.281 prints indivisible-root indexing in 7.3.12(5). Root-valuation V4 at PDF p.230 makes scalar factors for a and 2a overlap when U_{2a,x,2r} is nontrivial; taking both as independent coordinates cannot then be injective",
+        "Source-derived route to investigate and prove independently: use indivisible roots with the 7.3.3(1) blocks U_{a,x,f}=U_{a,x,f(a)} U_{2a,x,f(2a)}, at constant f=r, together with the full Z(k)_r central factor, 7.3.12(4),(5) and open-cell injectivity. Merely adding indivisible-root indexing to scalar-depth factors need not recover all 2a-depth-r elements in a nonreduced system",
+        "Sections 13.2.2-3 retain facet dependence only for 0 and 0+, and the equality P_{x,r}(k)=P_{x,r}(K)^Gamma from 9.8.3(2)",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Regression: a nonsplit group with a multipliable root must detect overlapping a/2a scalar factors and test the separately proved block formulation. Check finite r/r+ openness separately from the non-open infinite term for G_m(Q_2), point variation inside a facet, full-stabilizer normality and the actual Levi embedding. Boundedness alone is not compactness over general Henselian k.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 13.3.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.470 / PDF p.501"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.49-50, Chapter 13 and Appendix B.10",
+        "change": "No direct replacement of 13.3.1 is listed. If the minimal congruent torus filtration is used, include its corrected Gamma-invariance and descent from Appendix B.10."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction."
+      ],
+      "conclusion": "For r>=0, g_{x,r}=Lie(G_{x,r}) is an o-lattice in g(k). The identity g_{x,r+n}=m^n g_{x,r} for nonnegative integers n extends the definition consistently to every real depth. The resulting open additive subgroups form a separated descending filtration, with g_{x,r+}=union_{s>r} g_{x,s}. The dual lattice is exactly g^*_{x,r}={X in g^* : X(Y) in m for every Y in g_{x,(-r)+}}. The maximal ideal m, the minus sign and the strict plus in this annihilator convention are retained.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Section 8.5 constructs the actual constant-concave-function models; Proposition 8.5.16 proves their Lie-lattice periodicity",
+        "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
+        "Section 1.6 supplies the real-depth-plus convention; well-defined extension to negative depths is a proof obligation, not a separately assumed lattice family",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Check positive and negative integer shifts and the exact dual annihilator pairing in equal and mixed characteristic. The general lattice construction requires no quasi-splitness of G.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 13.3.2",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.470 / PDF p.501"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13",
+        "change": "No direct replacement of 13.3.2 is listed; the corrected Chapter 8-9 constructions remain part of its dependency closure."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
+        "Gred_x is the maximal reductive quotient of H_x, the special fibre of the connected parahoric model. The Lie lattices and their 0+ term are the constructions of 13.3.1."
+      ],
+      "conclusion": "There is an identification of f-Lie algebras Lie(Gred_x)=cok(g_{x,0+} tensor_o f to g_{x,0} tensor_o f)=g_{x,0}/g_{x,0+}. It uses m g_{x,0} contained in g_{x,0+} contained in g_{x,0}; it identifies the maximal reductive quotient's Lie algebra, rather than the Lie algebra of the whole special fibre.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Section 13.2.6 identifies Gred_x with the group-scheme cokernel of the special-fibre morphism G_{x,0+} to G_{x,0}",
+        "Proposition 8.5.18 proves smoothness of that morphism's kernel; Section 2.4(a) then supplies exactness on Lie algebras",
+        "Use the actual descended models and Lie maps, not an arbitrary quotient equipped with an assumed identification",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Depth-zero Lie comparison and graded-action tests. Keep distinct the rational-point quotient of 13.2.6 and this Lie-algebra cokernel calculation; neither alone proves the other.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 13.3.3",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.470-471 / PDF pp.501-502; Section 8.5.20 for the basis formula"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13; corrected Chapter 9 setup at PDF pp.39-41",
+        "change": "No direct replacement of 13.3.3 is listed. Use corrected Chapter 9 descent rather than treating a K-basis calculation as a general formula over k."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
+        "r is real."
+      ],
+      "conclusion": "Let g(K)_{x,r} be the O-Lie lattice of the base-changed actual model. Then g_{x,r}=g(K)_{x,r}^Gamma. The Chevalley-Steinberg basis formula of 8.5.20 describes the O-lattice over K and works over o when G is quasi-split. There is also an intrinsic description over o: choose a maximal k-split S with x in its apartment; let z_r be the Lie lattice of the S-fixed subgroup scheme of G_{x,r}, with generic fibre Z_G(S). For an affine root psi, let u_psi=Lie(U_psi)=g_z intersect u_a(k), for any z on H_psi and a the derivative of psi. Then g_{x,r} is the o-span of z_r and the u_psi for psi(x)>=r. The quasi-split hypothesis belongs to the explicit basis formula over o, not to the general lattice or its intrinsic span description.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Section 8.5.20 gives the explicit Chevalley-Steinberg lattice over O; the actual model descent gives the invariant lattice",
+        "Section 9.4.5 constructs U_psi; Proposition 9.8.3 supplies the standard integral S-model action and its centralizer filtration. Section 13.2.1 defines Psi_{x,r} by psi(x)>=r",
+        "The model construction and the root-space span formula must be proved for the constructed objects; a chosen basis or an assumed Gamma-invariant lattice is insufficient",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Compare split basis calculations with a non-quasi-split descended lattice and a multipliable-root case. Retain the actual maximal split torus, centralizer and affine-root valuation conventions.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 13.3.4",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.471 / PDF p.502"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13",
+        "change": "No direct replacement of 13.3.4 is listed. Keep the action over the residue field f and the special-fibre/reductive-quotient distinction explicit."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
+        "r is real. Gred_x is the actual maximal reductive quotient of the parahoric special fibre; both Lie and dual lattices use Section 13.3.1's conventions."
+      ],
+      "conclusion": "Conjugation by the connected parahoric model induces actions on the Lie and dual lattices. On their strict graded pieces g_{x,r}/g_{x,r+} and g^*_{x,r}/g^*_{x,r+}, these induce genuine f-rational representations of Gred_x. Factorization through the reductive quotient and preservation of the lattices are part of the conclusion, not structure fields to assume.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Proposition 13.2.5 gives normality over K; Corollary 2.10.10 extends the actual conjugation action to integral models",
+        "Apply the Lie functor, dual action and reduction, with periodicity for all real depths, then prove the action factors through Gred_x on both strict graded pieces",
+        "Sections 13.3.1-3 and the actual Chapter 9 model descent",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Graded adjoint/coadjoint action and pairing-equivariance tests; this rational reductive-quotient action is the one used for later algebraic instability, not a valuation-topology orbit action.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Theorem 13.5.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.474-476 / PDF pp.505-507"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.50, Appendix B.10: Definition B.10.8, Corollary B.10.14 and added Remark B.10.15",
+        "change": "No direct replacement of 13.5.1 is listed. Clarify that R in B.10.8(2) is an induced K-torus; add T(k)^mc_r=T(K)^mc_r intersect T(k); repair the recall in B.10.14; add Gamma-stability and smooth O-model descent in Remark B.10.15. These affect the torus dependency boundary."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Equip the category of tori specifically with the minimal congruent filtration. Fix real 0<r<=s and x in B(G). At least one of the following three alternatives holds.",
+        "(1) A maximally split maximal torus of G_K becomes induced after a tame base change (weakly induced, B.6.2), and s<=2r.",
+        "(2) r=r0+n with 0<=r0<1, n a positive integer and s<=r0+2n.",
+        "(3) 0<r<=s<=2r<=r+1."
+      ],
+      "conclusion": "There exists an isomorphism of abstract abelian groups MP_{x,r,s}:P_{x,r}/P_{x,s} to g_{x,r}/g_{x,s}, compatible with unramified algebraic extensions of k. Under alternative (1) or (2), it can be chosen so that, for every k-rational automorphism theta of G, dtheta composed with MP_{x,r,s} composed with theta^-1 equals MP_{theta(x),r,s}. The theorem does not assert this general automorphism equivariance under (3) alone. When (1) and (2) both hold, their constructions coincide. This is not an unconditional exponential map or a k-linear group map.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Alternative (2): Proposition A.5.19 on the actual congruence models and its functoriality for their morphisms",
+        "Alternatives (1)/(3) over K: indivisible-root quotient products, C.5.1 root-model congruence and A.5.19; torus comparison B.6.9 under (1), and possibly nonfunctorial B.10.17 under (3). Resolve 13.2.5's indexing against its cited 7.3.3/7.3.12 construction before relying on it",
+        "Descent: Lemma 8.1.4, smooth connected unipotent special fibres from 8.5.14 and perfect-residue H^1 vanishing from 2.4.2, for both group and Lie lattices",
+        "Agreement under (1)/(2): A.5.19 functoriality and B.10.16 compatibility of the torus comparisons",
+        "Corrected B.10.8 and added B.10.15 establish the minimal congruent torus filtration over k, Gamma-stability and smooth model descent. Functoriality of the filtration does not imply unrestricted functoriality of its Moy-Prasad isomorphisms at every positive depth",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Positive-depth acceptance requires actual finite abelian graded quotients over local fields, character transport through this proved map and a nontrivial calculation. Test each applicable alternative separately and the (1)/(2) overlap; do not impose a global tame or large-residue-characteristic hypothesis.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 13.5.2",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.476-477 / PDF pp.507-508; corrections PDF p.49"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13, Proposition 13.5.2(1)",
+        "change": "Replace G(k) with G(k)^0 in part (1); retain the same ambient group already present in part (2)."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Additionally k is a local field: complete with finite residue field f of characteristic p. Use the actual parahoric subgroups, positive-depth filtrations and the point topology of G(k). Maximality and the normalizer below are taken in G(k)^0."
+      ],
+      "conclusion": "For every x, P_{x,0+} is an open pro-p subgroup of G(k)^0. It is maximal among open pro-p subgroups there exactly when x lies in a chamber, equivalently P_{x,0} is Iwahori. Every maximal open pro-p subgroup of G(k)^0 is P_{x,0+} for an Iwahori P_{x,0}, and its normalizer in G(k)^0 is P_{x,0}. Neither the maximality claim nor the normalizer identity is extended to the full G(k).",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Actual model point topology and local compactness turn bounded open subgroups into compact ones. Realize P_{x,0+} as the inverse limit of its finite p-group filtration quotients, using 13.5.1 for their steps",
+        "Fixed points 4.2.14, type preservation 1.5.13(3), the actual reduction and incident-facet/parabolic correspondence 8.4.19 with Chapter 9 descent; finite-field p-subgroup structure and the Iwahori-Tits system in G(k)^0",
+        "The normalizer argument uses 2.2.16 and 6.3.21",
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+      ],
+      "consumer_or_regression": "Check the exact ambient group in both maximality and normalization, including a case with nontrivial component or length-zero data. An abstract pro-p predicate does not supply the compactness, inverse limit or building fixed-point proof.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 13.6.7",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.481 / PDF p.512; definitions and prerequisites at PDF pp.509-511; optimal-point boundary: Definition 13.4.2 and Lemma 13.4.4, printed pp.472-473 / PDF pp.503-504; torus formula (13.1.2), printed p.467 / PDF p.498"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13, end of Section 13.6.2",
+        "change": "Replace the reference 1.3.35 with 8.4.8(3). No direct replacement of 13.6.7 is listed."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "r is real and Xi is a Lie coset in g_{x,r}/g_{x,r+}. Nilpotent means algebraically contracted to zero by a k-defined cocharacter G_m to G, as in 13.6.5. Degenerate means containing such an element. Instability refers to the algebraic Gred_x-orbit closure in the f-rational graded representation of 13.3.4. This is distinct from valuation-topology closure of a G(k)-orbit in g.",
+        "Xi=X+g_{x,r+} is degenerate, with X nilpotent in the k-cocharacter sense. Definition 13.4.2 requires a nonempty finite subset of the affine-root set Sigma for an optimal point. A target retaining optimality must explicitly assume nonempty relative roots; this is no restriction on the ambient connected-reductive program. No convention extending optimality to empty roots is supplied or proved here."
+      ],
+      "conclusion": "The printed first clause asserts an optimal point y and real s>r with the entire coset Xi contained in g_{y,s}. As a universal connected-reductive assertion this is false: G_m over Q_2 has empty affine roots and no optimal point under 13.4.2, although 0+g_{x,1+} is degenerate. Retain the nonempty-relative-root optimal-point version as a proof target. General whole-coset depth raising without optimality and any separately derived empty-root convention or extension need their own statements and proofs. The separate instability clause remains a target: Xi in g_{x,r}/g_{x,r+} is unstable under Gred_x, meaning zero belongs to its algebraic orbit closure. These are Lie-coset targets; the broader dual-coset degeneracy definition does not extend them to dual cosets.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "13.6.3 constructs a contracting k-cocharacter compatible with x, using Iwasawa 5.3.4, actual models, perfect-residue unipotent H^1 vanishing and 8.4.19/9.3.2",
+        "13.6.4 conjugates it by an element of P_x into the chosen maximal split torus with the chamber inequalities. A small apartment translation raises the finite set of root depths. The subsequent optimal-point reduction 13.4.4 uses a nonempty affine-root subset in its proof and fails for empty roots as stated. Use this reduction only in the nonempty-relative-root target; a general depth-raising proof must handle the empty-root case separately",
+        "For instability the compatible cocharacter extends to the actual integral model and reduces to an f-cocharacter contracting the graded vector; use the action of 13.3.4. This is a separate clause and does not require the existence of a literal optimal point",
+        "Independent empty-root boundary, not an authors' erratum: for G_m/Q_2, the reduced building has one point x (4.1.4(A0), PDF p.189), Sigma is empty, and (13.1.2) gives g_{x,1}=2 Z_2 and g_{x,1+}=4 Z_2. Zero is contracted by the identity cocharacter, so Xi=0+g_{x,1+} is degenerate by 13.6.5. There is no optimal y under 13.4.2, yet Xi is already contained in g_{x,2} and its zero graded vector is unstable. Thus the optimality requirement and 13.4.4 need resolution; this example does not refute depth raising or instability. The 1 November 2024 corrections, PDF pp.49-50, do not repair 13.4.2, 13.4.4 or this clause of 13.6.7",
+        "The printed Remark 13.6.6 example is not a witness separating cocharacter nilpotence from Jordan nilpotence. In characteristic two, for x nonzero, X=[[1,x],[x^(-1),1]], B=[[x,1],[1,0]] and B^(-1)=[[0,1],[1,x]] satisfy det(B)=1, X^2=0 and B^(-1) X B=x^(-1) E_12. The k-defined cocharacter lambda(u)=B diag(u,u^(-1)) B^(-1) has lambda(u) X lambda(u)^(-1)=u^2 X, so it contracts X to zero. Nonconjugacy to E_12 does not imply absence of a contracting cocharacter. This is an independently demonstrated source discrepancy, not an authors' erratum or a Lean result; the 1 November 2024 corrections do not repair 13.6.6. Any broader non-equivalence claim needs a separately checked witness",
+        "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row."
+      ],
+      "consumer_or_regression": "After positive-depth acceptance, test full-coset containment, the strict s>r inequality, the G_m/Q_2 zero coset at r=1 (degenerate, no literal optimal point, contained at depth 2, unstable), and the explicit contraction of the printed characteristic-two matrix. Use the k-cocharacter definition; any comparison with Jordan nilpotence needs a separate proof.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 13.7.4",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.483-484 / PDF pp.514-515; topology comparison at PDF p.513"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13",
+        "change": "No direct replacement of 13.7.4 is listed; apply the corrected 13.6.2 reference in its 13.6.7 dependency."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
+        "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
+        "r is real and Xi is a Lie coset in g_{x,r}/g_{x,r+}. Nilpotent means algebraically contracted to zero by a k-defined cocharacter G_m to G, as in 13.6.5. Degenerate means containing such an element. Instability refers to the algebraic Gred_x-orbit closure in the f-rational graded representation of 13.3.4. This is distinct from valuation-topology closure of a G(k)-orbit in g."
+      ],
+      "conclusion": "If there exist y in B(G) and real s>r with Xi intersect g_{y,s} nonempty, then Xi is degenerate. Also, Xi is unstable under the algebraic Gred_x-action if and only if Xi is degenerate. The first implication needs only an intersection, whereas the depth-raising clause printed in 13.6.7 asks for whole-coset containment and has the separate empty-root optimality obstruction recorded in its row. No local compactness or perfect-k hypothesis is added to this result; the perfect-residue/Henselian Chapter 13 setup is retained.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Lemma 13.7.3 proves g_{y,s} contained in g_{x,s}+N using an apartment displacement and its root-space decomposition, with N the cocharacter-defined nilpotent set",
+        "Use only the separate instability clause of Proposition 13.6.7 for degenerate implies unstable, not its optimal-point assertion or an empty-root use of 13.4.4",
+        "For unstable implies degenerate, Kempf's rational cocharacter theorem over perfect f gives a contracting f-cocharacter. Conjugacy of maximal f-split tori and the actual surjection P_x to Gred_x(f) lift it through a split o-torus. A small apartment translation raises the depth, and part (1) applies",
+        "The additional perfect-k or locally compact hypotheses of nearby 13.7.2 concern the valuation-topology set N' and N=N', not the algebraic instability equivalence of 13.7.4. Register and read Kempf's original before a proof relies on that theorem directly",
+        "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row."
+      ],
+      "consumer_or_regression": "After positive-depth acceptance, test intersection versus containment and distinguish algebraic residue-field orbit closure from valuation-topology G(k)-orbit closure. Preserve the actual reduction surjectivity used in lifting cocharacters.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
     }
   ]
 }
@@ -1203,6 +1556,256 @@ must inflate a representation through this actual reduction map, prove
 factorization through its quotient, and construct compact induction with
 a basic intertwining or double-coset theorem. No irreducibility,
 supercuspidality or positive-depth theorem follows from these source rows.
+
+## Bundle E: filtrations, comparison alternatives and later instability
+
+These nine source-only rows cover Proposition 13.2.5, Sections 13.3.1–4,
+Theorem 13.5.1, corrected Proposition 13.5.2, and the later Propositions
+13.6.7 and 13.7.4. Positive-depth implementation remains behind the depth-zero
+release and its inflation/compact-induction consumer. The two instability
+targets remain behind the separate positive-depth acceptance test.
+
+### Ambient fields and torus filtrations
+
+Chapter 13 starts with a normalized discretely valued Henselian field k,
+integer ring o, maximal ideal m and perfect residue field f. It does not
+assume k perfect or locally compact. Let K be a maximal unramified
+extension, O its integer ring, and Gamma its Galois group over k.
+The source convention is `X_{r+}=union_{s>r} X_s`.
+
+Before Section 13.5, the torus filtration may be any functorial admissible
+one satisfying Section 7.2(1),(2); Lemma 7.2.3 makes it
+commutator-friendly. The standard filtration and the minimal congruent
+filtration remain distinct. The standard filtration on all tori need not
+be connected or congruent and need not have the Moy–Prasad comparison.
+For weakly induced tori, its comparison is supplied by B.6.9. Theorem
+13.5.1 specifically chooses the minimal congruent filtration. Functoriality
+of that filtration does not imply that its comparison isomorphisms are
+functorial at every positive depth.
+
+### The printed root-index discrepancy in Proposition 13.2.5
+
+The original Proposition 13.2.5(3), printed p.469 / PDF p.500, takes
+products over all positive and negative roots, without an indivisible-root
+superscript. Visual inspection confirms that this is printed, rather than
+an extraction omission. Its cited Proposition 7.3.12(5), printed p.250 /
+PDF p.281, instead uses the indivisible-root subsets.
+
+This matters in a nonreduced root system. Root-valuation Axiom V4,
+printed p.199 / PDF p.230, gives
+
+`U_{a,x,r} intersect U_{2a}(k) = U_{2a,x,2r}`.
+
+Whenever the group on the right is nontrivial, scalar-depth coordinates
+for both a and 2a overlap. Multiplication with both as independent
+coordinates cannot then be injective. If the factors are read in the
+concave-function notation of Section 7.3.3(1), printed p.247 / PDF p.278,
+the a-block already incorporates its 2a factor, causing the same overlap.
+The proof of Proposition 13.2.5(5) and the quotient products used in the
+proof of Theorem 13.5.1 also use indivisible-root subsets.
+
+The source-derived route to investigate is the product over indivisible
+roots of the blocks
+
+`U_{a,x,f}=U_{a,x,f(a)} U_{2a,x,f(2a)}`,
+
+with the second factor trivial when 2a is not a root, at constant
+`f=r`, together with the full centralizer factor `Z(k)_r`. Propositions
+7.3.12(4),(5) and algebraic open-cell injectivity provide the intended
+route. Merely changing the index while retaining scalar-depth root groups
+need not recover the missing depth-r elements of a divisible root group.
+This note records a discrepancy and an outstanding independent proof
+obligation. The corrections on PDF p.49 give no replacement of
+Proposition 13.2.5; the proposed route is not an authors' erratum or an
+already proved corrected theorem.
+
+### Finite depths and the infinite term in Proposition 13.2.5
+
+The bounded-open assertion is restricted to finite nonnegative augmented
+depths: `r` or `r+` for a nonnegative real r, excluding infinity.
+Section 1.6, printed pp.66–67 / PDF pp.97–98, includes infinity in the
+augmented index set and defines
+
+`P_{x,infinity}=intersection_{t>=0, t real} P_{x,t}={1}`
+
+for a separated filtration. This term need not be open. Corollary 7.3.14,
+printed p.251 / PDF p.282, gives boundedness generally but asserts
+openness only when the concave function never takes infinity. For a
+concrete check, take `G=G_m` over `Q_2`. Formula (13.1.1), printed p.467 /
+PDF p.498, gives `P_{x,n}=1+2^n Z_2` for integers `n>=1`; the standard
+and minimal congruent filtrations agree for this induced torus. Their
+intersection is `{1}`, which is not open: the distinct elements `1+2^n`
+converge to 1.
+
+The printed wording of Proposition 13.2.5 includes the whole extended
+index set in its bounded-open assertion. The finite-depth restriction
+here is an independently justified clarification of that wording,
+separate from the root-index issue above. The corrections of 1 November
+2024, PDF pp.49–50, do not supply this clarification.
+
+At finite nonnegative augmented depths, the remaining assertions retain
+apartment independence, conjugation covariance, normality in the full
+point stabilizer, and the commutator bound. The Iwahori decomposition is
+asserted at finite positive augmented depths. Its product map is a
+homeomorphism of the three factors as in Definition 13.2.4, rather than
+a group direct product. Levi compatibility at finite nonnegative
+augmented depths requires x in the actual subbuilding `B(G)_M` and the
+point `x_M` from (9.7.1). Over a general Henselian field the finite-depth
+subgroups are bounded and open; compactness needs the local-field
+topology.
+
+### Lie and dual lattices
+
+Section 13.3.1 defines the Lie lattice for nonnegative r from the actual
+smooth congruence model, and uses Proposition 8.5.16's integer-shift
+periodicity to extend it consistently to every real r. The dual convention is
+
+`g^*_{x,r}={X in g^* | X(Y) in m for every Y in g_{x,(-r)+}}`.
+
+The maximal ideal, negative depth and strict plus all belong to the
+pairing convention. Section 13.3.2 identifies
+`Lie(Gred_x)=g_{x,0}/g_{x,0+}` using the actual special-fibre maps and
+the smooth kernel of Proposition 8.5.18. It does not identify the
+maximal reductive quotient with the whole special fibre.
+
+Section 13.3.3 gives the invariant lattice over k from the O-lattice
+over K, and an intrinsic span using the centralizer lattice and affine-root
+lattices with `psi(x)>=r`. Its explicit Chevalley–Steinberg basis formula
+over o requires G quasi-split; the general model/lattice and intrinsic
+span constructions have no such extra hypothesis. Section 13.3.4 obtains
+actual f-rational representations of Gred_x on the Lie and dual strict
+graded pieces from model conjugation. Descent, lattice preservation and
+factorization through Gred_x all remain construction and proof obligations.
+
+### All three alternatives of Theorem 13.5.1
+
+With the minimal congruent torus filtration, x in the constructed building
+and real `0<r<=s`, retain the three alternatives separately:
+
+1. A maximally split maximal torus of G_K becomes induced after a tame
+   base change, and `s<=2r`.
+2. `r=r0+n` with `0<=r0<1`, n a positive integer, and `s<=r0+2n`.
+3. `0<r<=s<=2r<=r+1`.
+
+At least one alternative gives an isomorphism of abstract abelian groups
+`P_{x,r}/P_{x,s}` with `g_{x,r}/g_{x,s}`, compatible with unramified
+algebraic extensions. Automorphism equivariance is asserted under (1) or
+(2). It is not asserted under (3) alone. The constructions from (1) and
+(2) agree when both apply. This is neither an unconditional exponential
+map nor a claim of a k-linear group map.
+
+Alternative (2) uses A.5.19 on the actual congruence models. Over K,
+(1) and (3) use indivisible-root quotient products, root-model congruence,
+A.5.19, and the torus comparisons B.6.9 and B.10.17 respectively.
+Descent uses the smooth connected unipotent special fibres and the
+corresponding group and Lie-lattice cohomology vanishing. Corrections
+PDF p.50 repair B.10.8 and B.10.14 and add B.10.15; Gamma-stability
+and smooth model descent of the minimal congruent filtration belong to
+this dependency boundary.
+
+### The ambient group in corrected Proposition 13.5.2
+
+This proposition additionally assumes that k is a local field with finite
+residue of characteristic p. The authors' correction changes the ambient
+group in part (1) to `G(k)^0`. Each `P_{x,0+}` is an open pro-p subgroup
+there, maximal exactly for chamber points. Every maximal open pro-p
+subgroup of `G(k)^0` is the positive-depth subgroup of an Iwahori, which
+is its normalizer in `G(k)^0`. Neither assertion extends here to the
+full `G(k)`. Actual compactness, finite filtration quotients, fixed points,
+type preservation, reduction and the rational parabolic correspondence
+remain part of its proof boundary.
+
+### Later degeneracy and instability
+
+Propositions 13.6.7 and 13.7.4 concern Lie cosets. The nilpotence notion in
+Definition 13.6.5 is contraction to zero by a k-defined cocharacter.
+The printed example in Remark 13.6.6 over `F_2((t))` does not distinguish
+this notion from Jordan nilpotence. For a nonzero x in characteristic two,
+put
+
+```text
+X = [[1, x], [x^(-1), 1]],
+B = [[x, 1], [1, 0]],
+B^(-1) = [[0, 1], [1, x]].
+```
+
+Then `det(B)=1`, `X^2=0` and `B^(-1) X B=x^(-1) E_12`. Consequently
+the k-defined cocharacter
+`lambda(u)=B diag(u,u^(-1)) B^(-1)` satisfies
+`lambda(u) X lambda(u)^(-1)=u^2 X`. This orbit map extends to u=0
+with value zero, including when x is the nonsquare uniformizer of
+`F_2((t))`. Thus the displayed matrix is nilpotent in Definition 13.6.5's
+sense as well. For nonsquare x, the matrix `x^(-1) E_12` is not
+SL_2(k)-conjugate to E_12: any conjugating matrix preserves their common
+kernel k e_1, so it is upper triangular with determinant one and scales
+E_12 by a square. Thus nonconjugacy to the single matrix E_12 does not
+establish the absence of a contracting cocharacter.
+
+This calculation diagnoses an independent source discrepancy in the
+printed example and its assertion that every contracted element is
+conjugate to E_12. The corrections of 1 November 2024 do not repair
+Remark 13.6.6. No Lean proof of this calculation is recorded here, and
+any broader claim that the two nilpotence notions differ needs a
+separately checked witness. The targets continue to use the
+k-defined contraction convention of Definition 13.6.5.
+
+The perfect residue field does not imply that k is perfect. A degenerate
+coset contains an element nilpotent in this cocharacter sense.
+
+### The empty-root boundary in optimal-point reduction
+
+The first clause printed in Proposition 13.6.7, printed p.481 /
+PDF p.512, asks for an optimal point y and a real s>r such that the
+entire degenerate coset is contained in `g_{y,s}`. Definition 13.4.2,
+printed p.472 / PDF p.503, requires a nonempty finite subset of the
+affine-root set Sigma to define an optimal point. Consequently the
+printed universal assertion fails for groups with empty relative roots.
+Lemma 13.4.4, printed p.473 / PDF p.504, also asserts an optimal-point
+replacement and explicitly uses a nonempty root subset in its proof.
+Its unrestricted formulation has the same boundary.
+
+For a concrete regression, let `G=G_m` over `Q_2` and take `r=1`.
+The reduced building is the singleton x, by the reduced-apartment
+convention of 4.1.4(A0), printed p.158 / PDF p.189. Both the relative
+and affine root sets are empty, so Definition 13.4.2 supplies no optimal
+point. Formula (13.1.2), printed p.467 / PDF p.498, gives
+`g_{x,1}=2 Z_2` and `g_{x,1+}=4 Z_2`; standard and minimal congruent
+filtrations agree for this induced torus. The coset `Xi=0+g_{x,1+}`
+contains zero, which is contracted by the identity cocharacter. It is
+therefore degenerate by Definition 13.6.5. It is already contained in
+`g_{x,2}`, and its graded vector is zero and hence unstable. There is
+nevertheless no literal optimal point. This example isolates the
+optimality defect and does not refute deeper containment or instability.
+
+The general connected-reductive scope of the program remains in force.
+An optimal-point target under a nonempty-relative-root hypothesis must
+be distinguished from a general depth-raising target omitting optimality
+and from any separately derived convention or extension covering empty
+roots. These remain statement and proof obligations; no extension of
+Definition 13.4.2 is adopted or proved here. The corrections of
+1 November 2024, PDF pp.49–50, supply no repair of Definition 13.4.2,
+Lemma 13.4.4 or this clause of Proposition 13.6.7. This is an
+independently identified source boundary, not an authors' erratum.
+
+The separate clause of Proposition 13.6.7 gives the algebraic
+instability target under Gred_x. Its route extends the compatible
+contracting cocharacter to the integral model and reduces it to the
+graded representation; it does not require a literal optimal point.
+Proposition 13.7.4 needs only that the coset meets a lattice at some
+greater depth to imply degeneracy, and its equivalence between degeneracy
+and algebraic instability invokes this separate instability clause,
+without inferring empty-root optimality from Lemma 13.4.4.
+The local compactness or perfect-k
+hypotheses in nearby Lemma 13.7.2 concern comparison with
+valuation-topology orbit closure; they are not added to Proposition
+13.7.4. The relevant instability uses algebraic orbit closure over f.
+Lifting a contracting residue-field cocharacter uses the actual
+surjection `P_x → Gred_x(f)`.
+
+These later rows do not extend the propositions to dual cosets, supply
+minimal K-types, or prove supercuspidality. Their implementation remains
+after the finite abelian graded quotients, character transport and
+nontrivial filtration calculation required for positive-depth acceptance.
 
 ## Initial interfaces and the next mathematical gates
 
