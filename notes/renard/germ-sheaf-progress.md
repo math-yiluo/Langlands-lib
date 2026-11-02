@@ -1,4 +1,4 @@
-# Renard II.2.1–II.2.2: published germ constructions and support closedness
+# Renard II.2.1–II.2.2: published descent and compact germ-section groups
 
 Worker 6, 1 November 2026.
 
@@ -9,7 +9,9 @@ target-compatibility statements. Two units supply constructions with their
 intrinsic laws; two supply proposition definitions. Seven later publications
 add the representative and separation proofs, actual universe lifts and
 canonical units, literal support carriers, and the relative-closedness
-statement and proof. This note records their distinct scopes and updates the
+statement and proof. Two further publications now supply corrected
+original-target descent and compact germ-section groups and morphism maps.
+This note records their distinct scopes and updates the
 [whole-book coverage ledger](coverage.md).
 
 The governing source is David Renard, *Représentations des groupes réductifs
@@ -176,24 +178,72 @@ ambient-closedness assertion for an arbitrary open `U`. The proof needs
 no sheaf or separation premise on the raw source. It preserves independent
 space/value universes and all empty cases.
 
+## Corrected descent and compact groups: verified publication update
+
+The following two candidates now have unqualified independent approval,
+`accepted = true`, `public = true`, and published integrations at
+`6fd0709bd33fa6c33b4d74b4b638cfc51428b8f1`. Their four frozen
+Lean/Markdown hashes match the workspace and current Library
+`45b8890c39a1eaa111f12f5622b8669b0c46b552`. These publications
+supersede the preceding dated observations that descent was pending
+and that the compact task had no candidate.
+
+| Unit and policy | Candidate | Machine receipt | Independent review task and reviewer | Published integration |
+| --- | --- | --- | --- | --- |
+| Corrected original-target descent, `lean.definition@1` | `571ce343-0892-44bb-809b-8b9c321a037c` | `e837dc05-70bb-48ed-8096-22fd2738d3ab` | `4ac2507a-7ca3-424d-b756-23aa1a853366`, Reviewer 8142 | `18f6f55b7f75404dabebad6410f8836d` |
+| Compact germ-section groups/maps, `lean.definition@1` | `14f25ce9-b4ee-4ca8-b0b2-8ba152d7618c` | `d8dca1ec-7c15-4090-9688-c07e43c183e4` | `83910729-f130-485c-86b3-a130dbd9577c`, Reviewer 8180 | `1fcb37e3e82147d09731f71cb3851fb1` |
+
+Both machine receipts pass Lake-build and declaration-kind checks.
+They are definition-policy receipts; they supply no exact-proof
+receipt for a universal-property statement.
+
+Worker 595 implemented [corrected descent](../../Langlands/Sheaf/Renard/GermDescent.md)
+over Worker 6's source diagnosis and universe design. For an arbitrary
+raw source and a target basis sheaf, `rawGermDesc` glues the images of
+local original-section representatives into original target sections.
+Its representative, empty, additive and restriction laws concern
+those actual values. Compatibility uses separation only in the target
+on every smaller basis open. The normalized `liftedGermDesc` targets
+the actual `sheafLiftJoint`; `germDesc` has a direct target when
+original values already lie in `max u v`. Their factorization
+equations use the published units, and their pre/postcomposition and
+up/down relift laws use the actual morphisms. The complete declaration
+probe was recompiled at this update with zero errors and warnings,
+receipt `db7fcc6a-d59f-48e6-9fdd-dc55a53c4419`. These constructions
+do not yet supply universal uniqueness or an adjunction.
+
+Worker 865 implemented [compact germ-section groups and maps](../../Langlands/Sheaf/Renard/CompactGermSections.md)
+from Worker 6's specification and compactness route.
+`compactGermSectionSubgroup` has exactly the existing literal
+`compactGermSectionsSet` carrier; `compactGermSectionsAddCommGroup`
+installs its inherited group on the unchanged `CompactGermSections`
+subtype. The inclusion is the existing function, bundled as an
+injective additive map. `compactGermSectionsMap` restricts the actual
+`germSectionsMap`, with literal original-stalk evaluation, inclusion,
+identity and composition laws. Compactness of a sum or image uses
+both support containment in a compact set and closedness of the
+resulting support in the actual domain. Independent `u` and `v`,
+arbitrary raw inputs, bases, opens and empty cases are retained,
+without Hausdorffness or source sheaf assumptions.
+
 ## Remaining work and ownership
 
-Corrected descent has focused task
-`b98ff0cd-014c-4644-ae88-fc01221729c3` revision 1, Worker 595.
-At this update's direct fetch, candidate
-`571ce343-0892-44bb-809b-8b9c321a037c` has machine acceptance and
-Reviewer 8142's unqualified independent approval but remains staged,
-unaccepted and nonpublic. It is excluded from the published count.
-Universal factorization uniqueness, the actual Hom equivalence and
-adjunction, unit invertibility on sheaves and the basis/all-open
-equivalence retain separate statement and proof obligations.
+Universal-property statement task
+`426f976c-c5ec-45bd-9465-216caebd724e` revision 1 is assigned to
+Worker 1215 and subscribed by the parent. It covers direct/lifted
+factorization uniqueness, explicitly characterized natural Hom
+equivalences, and the direct adjunction at value `max u v`.
+Task publication supplies no accepted statement or proof; the parent
+retains exact-proof routing after actual statement publication.
+Unit invertibility on sheaves and the basis/all-open equivalence
+retain separate statement and proof obligations.
 
-Compact germ-section groups and functors have task
-`e265849a-2e29-40fb-821b-53c7c68cccee` revision 1, Worker 865.
-Its required relative-closedness proof is now published; the task has
-no candidate at the present check. Compactness of a sum or image
-requires both support containment in a compact set and closedness of
-the resulting relative support. Ordinary restriction to an arbitrary
+Compact group/functor task
+`e265849a-2e29-40fb-821b-53c7c68cccee` retains Worker 865/Worker 633.
+The published group/map unit covers its additive structure and actual
+presheaf-morphism maps. Fixed-open raw, normalized and sheaf functors
+with natural inclusion remain a separate unit; this note does not
+assert that task's completion. Ordinary restriction to an arbitrary
 open need not preserve compact support.
 
 The separate all-open clopen zero-extension task

@@ -214,15 +214,43 @@ Support is closed in its actual domain subtype, with no ambient-closedness
 claim for an arbitrary open. Its extension to arbitrary raw presheaves is
 documented; neither the original stalks nor the germ-section carriers change.
 
-Corrected descent task `b98ff0cd-014c-4644-ae88-fc01221729c3`
-has an independently approved but still nonpublic candidate at this update.
-Compact germ-section group/functor task
-`e265849a-2e29-40fb-821b-53c7c68cccee` is assigned to Worker 865;
-its closedness prerequisite is now published. Universal factorization
-uniqueness, the Hom equivalence and adjunction, unit invertibility,
-basis/all-open equivalence, original-section/compact-section comparisons,
-clopen zero extension, exhaustion and scalar-sheaf comparisons remain
-separate obligations. No Chapter II or whole-book completion is declared.
+The progress note's next update verifies corrected original-target descent
+`571ce343-0892-44bb-809b-8b9c321a037c` and compact germ-section groups/maps
+`14f25ce9-b4ee-4ca8-b0b2-8ba152d7618c` as independently accepted and public,
+with integrations `18f6f55b7f75404dabebad6410f8836d` and
+`1fcb37e3e82147d09731f71cb3851fb1`. Their four frozen/current/workspace
+pair hashes match at Library `45b8890c39a1eaa111f12f5622b8669b0c46b552`.
+`rawGermDesc`, `liftedGermDesc` and `germDesc` glue into the actual
+original or lifted target and factor the published units, using separation
+only in the target. `compactGermSectionSubgroup` and
+`compactGermSectionsMap` retain the literal compact-section carrier and
+the actual stalk maps, with additive and composition laws. Relative
+closedness supplies the compactness step.
+
+Universal-property statement task `426f976c-c5ec-45bd-9465-216caebd724e`
+revision 1 is assigned to Worker 1215; its statements and exact proofs
+remain publication obligations. It covers direct/lifted uniqueness,
+specified natural Hom equivalences and the direct adjunction at
+`max u v`. Compact fixed-open functor packaging remains with
+Worker 865/Worker 633 under `e265849a-2e29-40fb-821b-53c7c68cccee`.
+Unit invertibility, basis/all-open equivalence, original-section
+comparisons, clopen zero extension, exhaustion and scalar-sheaf
+comparisons remain separate obligations.
+
+For B.III, the internal proper-principal-left-ideal auxiliary is now
+independently accepted and public:
+[`Langlands.Renard.principalLeftIdealProper`](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md)
+proves the unchanged `PrincipalLeftIdealProperStatement` for any
+unital ring, including noncommutative and zero rings. Candidate
+`66db1f0f-133e-4a96-8a95-63c736ca885b` has exact-target machine receipt
+`2147a000-8932-4594-bda8-1b6f52c233cd`, unqualified Reviewer 8184
+approval in review task `e13f63cd-f520-4942-83fd-f323e1781248`, and
+published integration `e963607d2f814d08810655af55abeee9`.
+Its frozen/current/workspace pair hashes also match at the Library
+above. This is only the properness auxiliary: the simple-quotient,
+unital-separation and original nonunital separation obligations
+remain separate, with Appendix/nonunital routing retained by Worker 709.
+No Chapter II, Appendix B or whole-book completion is declared.
 
 ## Reference and reading record
 
@@ -394,7 +422,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis-presheaf foundation, [germ groups/sheaf functors, lifts/units, representative/separation proofs and relative support closedness](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); descent publication, universal property/adjunction, category equivalence, compact-section structures and later assertions remain separate |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions, lifts/units, representative/separation proofs, support closedness, corrected descent and compact groups/maps](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); universal property/adjunction, category equivalence, fixed-open compact functors and later assertions remain separate |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |
@@ -439,7 +467,7 @@ including definitions, remarks and unnumbered results.
 | A.X | Categorical centres | 269 / 275 | [Source definition and published unital-module identification](category-center-progress.md), with exact scalar-action map and explicit carrier-size bound; nonunital and later Bernstein centers remain separate |
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |
 | B.II | Schur's lemma | 272 / 278 | Backlog |
-| B.III | Separation lemma | 273 / 279 | Backlog |
+| B.III | Separation lemma | 273 / 279 | Partial: [published proper-principal-left-ideal auxiliary](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md); simple-quotient, unital and original nonunital separation remain separate |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; complete passage ledger with explicit source-route packaging boundaries](integer-lattice-coefficients.md). No section completion declared |
