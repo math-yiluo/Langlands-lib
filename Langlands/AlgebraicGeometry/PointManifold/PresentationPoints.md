@@ -1,0 +1,7 @@
+# Presentation solutions and actual algebraic points
+
+This internal helper identifies actual algebra-map points with solutions of the relations of an algebra presentation. The variable index is finite, the relation index is unrestricted, and the value field is `RCLike`. The point topology is the published regular-evaluation topology; the solution space has the topology induced from the finite product of copies of the field.
+
+A solution annihilates the ideal spanned by the relations, which is the kernel of the presentation. Quotient lifting and the presentation's quotient isomorphism therefore give an actual algebra homomorphism to the field. Its evaluation on an element of the algebra is polynomial evaluation on the presentation's chosen representative. Its evaluations on the presentation generators recover the solution coordinates. Conversely, evaluating generators at any actual algebra-map point gives a solution of the relations.
+
+`presentationPointHomeomorph` packages these mutually inverse maps. Continuity towards the solution space follows from continuity of generator evaluations. Continuity towards the actual point space follows from the universal property of the evaluation topology: evaluation of each algebra element is evaluation of its polynomial representative, and is continuous. This is derived internally from the pinned Mathlib presentation and quotient APIs and the published point-topology definitions. It makes no smoothness assertion about the solution space.

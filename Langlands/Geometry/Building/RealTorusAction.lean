@@ -1,4 +1,5 @@
 import Langlands.Geometry.Building.RealTorusSpace
+import Langlands.GroupScheme.Torus.CocharacterAction
 
 /-! # Real torus automorphisms and the normalizer and relative Weyl actions -/
 
@@ -13,18 +14,6 @@ namespace Langlands.GroupScheme.RealTorusSpace
 
 variable {k : Type u} [Field k] {T : CommGroupScheme (Spec (CommRingCat.of k))}
 
-/-- Postcomposition by an actual automorphism on the cocharacter lattice. -/
-def cocharacterAut (σ : T ≅ T) : cocharacterLattice T ≃ₗ[ℤ] cocharacterLattice T :=
-  AddEquiv.toIntLinearEquiv
-    { toFun := fun ν => ν ≫ σ.hom
-      invFun := fun ν => ν ≫ σ.inv
-      left_inv := fun ν => by simp
-      right_inv := fun ν => by simp
-      map_add' := fun ν μ => Preadditive.add_comp _ _ _ _ _ _ }
-
-@[simp] theorem cocharacterAut_apply (σ : T ≅ T) (ν : cocharacterLattice T) :
-    cocharacterAut σ ν = ν ≫ σ.hom := rfl
-
 /-- The real extension of the published inverse-precomposition character automorphism. -/
 def characterRealAut (σ : T ≅ T) : Vstar T ≃ₗ[ℝ] Vstar T :=
   LinearEquiv.baseChange ℤ ℝ _ _ (characterAut σ)
@@ -38,11 +27,6 @@ def cocharacterRealAut (σ : T ≅ T) : V T ≃ₗ[ℝ] V T :=
 
 @[simp] theorem cocharacterRealAut_tmul (σ : T ≅ T) (r : ℝ) (ν : cocharacterLattice T) :
     cocharacterRealAut σ (r ⊗ₜ[ℤ] ν) = r ⊗ₜ[ℤ] (ν ≫ σ.hom) := rfl
-
-/-- The integral pairing is unchanged by the two compatible automorphisms. -/
-theorem latticePairing_aut (σ : T ≅ T) (χ : characterLattice T) (ν : cocharacterLattice T) :
-    latticePairing T (characterAut σ χ) (cocharacterAut σ ν) = latticePairing T χ ν := by
-  simp [latticePairing_apply, Category.assoc]
 
 /-- The scalar-extended pairing is invariant under simultaneous automorphisms. -/
 theorem pair_aut (σ : T ≅ T) (x : Vstar T) (v : V T) :

@@ -4,9 +4,10 @@ Author: Worker 185.
 
 For an arbitrary field `k : Type u` and an actual commutative group scheme `T` over `Spec k`, this module defines automorphisms of the existing tensor spaces in `RealTorusSpace`. No torus, splitness, finite-rank or characteristic assumption is needed for these constructions.
 
-`cocharacterAut σ` is the integer-linear equivalence `ν ↦ ν ≫ σ.hom`, with inverse given by composition with `σ.inv`. `characterRealAut σ` extends the Library's `characterAut σ`, which is `χ ↦ σ.inv ≫ χ`. `cocharacterRealAut σ` extends `cocharacterAut σ`. Both use Mathlib's `LinearEquiv.baseChange`. Their pure-tensor computation rules are `r ⊗ χ ↦ r ⊗ (σ.inv ≫ χ)` and `r ⊗ ν ↦ r ⊗ (ν ≫ σ.hom)`.
+The shared [integral automorphism module](../../GroupScheme/Torus/CocharacterAction.md)
+supplies `cocharacterAut σ`, the integer-linear equivalence `ν ↦ ν ≫ σ.hom`, with inverse given by composition with `σ.inv`. `characterRealAut σ` extends the Library's `characterAut σ`, which is `χ ↦ σ.inv ≫ χ`. `cocharacterRealAut σ` extends `cocharacterAut σ`. Both use Mathlib's `LinearEquiv.baseChange`. Their pure-tensor computation rules are `r ⊗ χ ↦ r ⊗ (σ.inv ≫ χ)` and `r ⊗ ν ↦ r ⊗ (ν ≫ σ.hom)`.
 
-`latticePairing_aut` proves invariance of the integer pairing by associating composition and cancelling `σ.hom ≫ σ.inv`. Tensor induction in both variables, using real bilinearity, proves
+The shared `latticePairing_aut` proves invariance of the integer pairing by associating composition and cancelling `σ.hom ≫ σ.inv`. Tensor induction in both variables, using real bilinearity, proves
 
 `pair T (characterRealAut σ x) (cocharacterRealAut σ v) = pair T x v`.
 
