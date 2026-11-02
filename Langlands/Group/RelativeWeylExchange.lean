@@ -21,10 +21,10 @@ open Classical
 noncomputable section
 
 /-- Pull back by simple conjugation and toggle the value at that simple reflection. -/
-private def signedSimple (i : B) : Function.End (W → ZMod 2) :=
+def signedSimple (i : B) : Function.End (W → ZMod 2) :=
   fun f t => f (cs.simple i * t * cs.simple i) + if t = cs.simple i then 1 else 0
 
-private def signedWord (ω : List B) : Function.End (W → ZMod 2) :=
+def signedWord (ω : List B) : Function.End (W → ZMod 2) :=
   (ω.map (signedSimple cs)).prod
 
 private theorem count_conj (l : List W) (i : B) (t : W) :
@@ -34,7 +34,7 @@ private theorem count_conj (l : List W) (i : B) (t : W) :
     (MulAut.conj (cs.simple i)).injective (cs.simple i * t * cs.simple i)
   simpa [MulAut.conj_apply, mul_assoc] using h
 
-private theorem signedWord_apply (ω : List B) (f : W → ZMod 2) (t : W) :
+theorem signedWord_apply (ω : List B) (f : W → ZMod 2) (t : W) :
     signedWord cs ω f t =
       f ((cs.wordProd ω)⁻¹ * t * cs.wordProd ω) +
         ((cs.leftInvSeq ω).count t : ZMod 2) := by
@@ -113,10 +113,10 @@ private theorem signedSimple_relations : CoxeterMatrix.IsLiftable M (signedSimpl
   change f (1⁻¹ * t * 1) + _ = f t
   simp [← two_mul, show (2 : ZMod 2) = 0 by decide]
 
-private def signedAction : W →* Function.End (W → ZMod 2) :=
+def signedAction : W →* Function.End (W → ZMod 2) :=
   cs.lift ⟨signedSimple cs, signedSimple_relations cs⟩
 
-private theorem signedAction_word (ω : List B) :
+theorem signedAction_word (ω : List B) :
     signedAction cs (cs.wordProd ω) = signedWord cs ω := by
   induction ω with
   | nil => exact map_one _

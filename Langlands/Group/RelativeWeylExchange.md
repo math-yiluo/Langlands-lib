@@ -87,3 +87,8 @@ This module supplies an internal Coxeter prerequisite for the Library's
 minimum criterion. Its proof route is independent of the original-literature
 route recorded in `RelativeWeylIndexingTargets.md`; no direct reading or
 implementation of Carter is claimed here.
+
+The definitions `signedSimple`, `signedWord` and `signedAction`, and the
+identities `signedWord_apply` and `signedAction_word`, are public.
+`RelativeWeylLongestProof` reuses these exact constructions for its reflection
+parity function; the formulas and proofs here are unchanged.
