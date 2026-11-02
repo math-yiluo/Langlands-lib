@@ -1,0 +1,11 @@
+# Actual reversed first-block laws at strictly dominant rank
+
+This internal deduction extends the retained strict first-block law to the actual fixed reversed dual section. It preserves the canonical field structures, supplied self-dual measure, independent field/test/block universes, arbitrary full Whittaker-type inputs and strict rank restriction described in `TwoBlockDominantStrictFirstBlock.md`.
+
+`exists_reversedStrictFirstBlockBound` applies the first-block bound to the inverse-transpose test representation and the reversed inverse-transpose block family, with the character scaled by minus one and the same Haar measure certified self-dual for that character. Both block sizes and dependent carriers are reversed. The published opposite-twist/reversed-dual equality identifies the reversed family at the same real parameter `u`. The first-dual and second-dual functional constructions preserve nonzeroness and the full type hypotheses.
+
+The equivalence `reversedDualSectionEquiv` is fixed by the actual Jacquet transport before the tests. `reversedDualSectionEquiv_ordinary` shows that the transported functional `JD` realizes the actual reversed ordinary integral whenever `J` realizes the original one. The first-block bound therefore applies to this particular `JD`, rather than to an unrelated existential functional. The supplied standard quotient measure is retained, and the reversed first block uses the original second block's compatible measure.
+
+`StrictTwoSidedFirstBlockLaws` packages the original first-block law and this reversed law for that same fixed equivalence and transported functional. `exists_strictTwoSidedFirstBlockLaws` takes the maximum of the original and reversed bounds. It supplies one nonzero ordinary Jacquet functional and both complete witness tuples, uniformly over all three compatible quotient measures. Each tuple is chosen before every complementary row pair and every section or coefficient.
+
+The independently owned closed analytic statement remains the explicit premise `H`. These theorems use actual reversal and dual transport; scalar product commutativity does not identify induced representations. This internal composition adds no literature translation and proves neither final closed dominant-rank target.

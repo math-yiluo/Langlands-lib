@@ -1,0 +1,225 @@
+# Modules on affine étale equivalence relations, in ring form
+
+Authors: Worker 239 and Worker 424. Worker 239 supplied the Lean definitions
+and initial Markdown; Worker 424 checked the ring formulas and original
+sources and clarified the implementation and scope notes.
+
+This module defines, in terms of rings and modules, an étale equivalence
+relation on an affine scheme whose relation scheme is affine and whose map
+`j = (t, s)` is a closed immersion, and the quasi-coherent modules on it. It
+also defines invariant elements, morphisms of such modules, and an acyclicity
+property. The definitions are the vocabulary for the planned proof of the
+published statement `NoetherianEtaleEquivalenceRelationAffineDescentStatement`
+(Stacks Lemma 69.17.3, Tag 07VP, for presentations). In that proof,
+quasi-coherent modules on the quotient algebraic space `U/R` are handled through
+their pullbacks to `U`. The module states and proves no theorem.
+
+It imports the Library module `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation`
+(for the last definition) and the Mathlib modules `RingTheory.RingHom.Etale`
+and `RingTheory.TensorProduct.Basic`. Mathlib is pinned at commit
+`5ed2965256430c3649e86755f9576b54eca72435` by the prepared environment.
+
+## Sources and provenance
+
+- `stacks-groupoid-schemes-chapter-pdf-2026-07-14`: the Groupoid Schemes chapter
+  PDF built on 14 July 2026, Stacks version `ed88ff78`, file SHA-256
+  `4506a39201063afc270cbb68c9c0c1d3c90937c03f98cfee074605b402e7a30f`.
+  - PDF pp.26–27, Section 39.13: groupoid schemes (Definition 39.13.1, Tag
+    0231). The composition `c` is defined on `R ×_{s,U,t} R`, the pairs
+    `(r, r')` with `s(r) = t(r')`, and satisfies `t(c(r, r')) = t(r)` and
+    `s(c(r, r')) = s(r')`. The morphism `e : U → R` is the identity, and
+    `j = (t, s)`. Lemma 39.13.3 (Tag 0233): an equivalence relation extends
+    in exactly one way to a groupoid.
+  - PDF p.28, Section 39.14: Definition 39.14.1 (Tag 03LI). A quasi-coherent
+    module on `(U, R, s, t, c)` is a pair `(F, α)` of a quasi-coherent
+    `O_U`-module `F` and an `O_R`-module map `α : t^*F → s^*F` such that
+    (1) `c^*α = pr_1^*α ∘ pr_0^*α` on `R ×_{s,U,t} R`, and (2) `e^*α` is the
+    identity. Lemma 39.14.2 (Tag 077Q): `α` is then an isomorphism.
+  - PDF p.29, Lemma 39.14.6 (Tag 077S): if `s` and `t` are flat, these
+    modules form an abelian category. Its proof forms kernels and cokernels
+    on the underlying modules on `U`.
+  - PDF p.44, Section 39.23, equation (39.23.0.1) (Tag 03BF): for affine
+    `U = Spec A`, `R = Spec B`, the ring of `R`-invariant functions is the
+    equalizer `{a ∈ A | t♯(a) = s♯(a)}`.
+- `stacks-etale-equivalence-relations-2026-11-01` (directory SHA-256
+  `df1ecbfa63c5e31cf736d9ea79dd262976c3098fd9b36f2dd32668d44bf75420`):
+  Definition 39.3.1 (Tag 022P), equivalence relations `j = (t, s)`, and
+  Definition 65.9.2 (Tag 02WS), étale equivalence relations. These are the
+  definitions behind the Library structure `EtaleEquivalenceRelation`.
+
+**Translation to rings.** Let `U = Spec B` and `R = Spec C`. The source map
+`s` is recorded as the algebra structure `algebraMap B C`, and the target map
+as a separate ring map `t : B →+* C`. All schemes are over `Spec ℤ`, as in the
+Library's `EtaleEquivalenceRelation`. For a commutative ring `T`, a ring map
+`φ : C →+* T` is a `Spec T`-valued point `r` of `R`. Its values are
+`t(r) = φ ∘ t` and `s(r) = φ ∘ algebraMap B C`, written `(x, y)` with
+`x = t(r)` and `y = s(r)`. A quasi-coherent `O_U`-module is a `B`-module `M`.
+Then `s^*F` is `C ⊗[B] M`, with `C` a `B`-algebra through `s`, and `t^*F` is
+`C ⊗_{t, B} M`. An `O_R`-linear map `α : t^*F → s^*F` is the same as the
+additive map `θ : M → C ⊗[B] M`, `θ m = α (1 ⊗ m)`, with
+`θ (b • m) = t b • θ m`; `α` is the `C`-linear extension of `θ`. The pullback
+of `α` along a point `φ = (x, y)` is the `T`-linear map
+`α_φ : T ⊗_x M → T ⊗_y M`, `1 ⊗ m ↦ (φ ⊗ id) (θ m)`. The schemes `R` and
+`R ×_{s,U,t} R = Spec (C ⊗_{s,B,t} C)` are affine, so two maps of
+quasi-coherent modules on them agree when their pullbacks along all points
+`Spec T → R` (respectively `Spec T → R ×_{s,U,t} R`) agree: the identity
+point is one of them. The coordinate rings of these affine schemes are still
+in `Type u`, so the quantification over `T : Type u` includes those identity
+points. The diagonal condition can likewise be tested at the identity point
+of `U = Spec B`, using the ring map of `e`. So the conditions of
+Definition 39.14.1 can be required at all points. This
+pointwise form, and the restriction to affine `U` and `R` with `j` a closed
+immersion, are this module's choices; Stacks states the definition sheaf
+theoretically for all groupoid schemes.
+
+## `RingEtaleEquivalenceRelation`
+
+For commutative rings `B C : Type u` with `[Algebra B C]` and `t : B →+* C`,
+`RingEtaleEquivalenceRelation t : Prop` is a structure with the following fields:
+
+- `adjoin_range_eq_top : Algebra.adjoin B (Set.range t) = ⊤`. The subring of
+  `C` generated by `s(B)` and `t(B)` is `C`, that is, the ring map
+  `B ⊗_ℤ B → C`, `b ⊗ b' ↦ t b · s b'`, is surjective. For affine `U` and `R`
+  this says that `j = (t, s) : R → U × U` is a closed immersion. It also
+  makes `j` a monomorphism: a point `φ` is determined by `(φ ∘ t, φ ∘ s)`.
+- `refl`: for every `T : Type u` with `[CommRing T]` and every `a : B →+* T`,
+  there is `φ : C →+* T` with `φ ∘ t = a` and `φ ∘ s = a`, so `(a, a)` is a point.
+- `symm`: for every point `φ : C →+* T` there is `ψ : C →+* T` with
+  `ψ ∘ t = φ ∘ s` and `ψ ∘ s = φ ∘ t`.
+- `trans`: for points `φ ψ : C →+* T` with `φ ∘ s = ψ ∘ t` there is
+  `χ : C →+* T` with `χ ∘ t = φ ∘ t` and `χ ∘ s = ψ ∘ s`.
+- `etale_algebraMap : (algebraMap B C).Etale` and `etale_t : t.Etale`, with
+  Mathlib's `RingHom.Etale`: `s` and `t` are étale.
+
+So the `Spec T`-points of `R` form an equivalence relation on the
+`Spec T`-points of `U` for every ring `T` in the universe `u`, and `s` and `t`
+are étale. This is the affine case of Definitions 39.3.1(4) and 65.9.2 over
+`Spec ℤ`, for points with values in affine schemes, plus the closed immersion
+condition. It is the condition on `(Γ(U), Γ(R), s, t)` that the planned
+translation statement derives from a Library `EtaleEquivalenceRelation` with
+`U` and `R` affine and `j` a closed immersion. The translation is not part of
+this module.
+
+## `coactionCompose`
+
+For a `t`-semilinear additive map `θ : M →+ C ⊗[B] M` (proof `hθ` of
+`θ (b • m) = t b • θ m`), a ring `T : Type u` with a `B`-algebra structure, a
+ring map `φ₁ : C →+* T`, a `B`-algebra map `φ₂ : C →ₐ[B] T`, and a proof `h`
+of `φ₁ ∘ algebraMap B C = φ₂ ∘ t`, the additive map
+`coactionCompose t M θ hθ φ₁ φ₂ h : C ⊗[B] M →+ T ⊗[B] M` sends `c ⊗ m` to
+`φ₁ c • (φ₂ ⊗ id) (θ m)`. Here `T ⊗[B] M` uses the given `B`-algebra
+structure of `T`. Since `φ₂` is a `B`-algebra map, that structure is `φ₂ ∘ s`.
+The condition `h` makes the formula compatible with the relation
+`c • s(b) ⊗ m = c ⊗ b • m` in `C ⊗[B] M`.
+The implementation uses `TensorProduct.liftAddHom` on this balanced,
+biadditive formula. Its balancing proof first checks that
+`LinearMap.rTensor M φ₂.toLinearMap` respects multiplication by elements
+of `C` through `φ₂`, by tensor induction, then uses `hθ` and `h`.
+
+Meaning: `φ₁ = (x, y)` and `φ₂ = (y, z)` are composable points
+(`s(φ₁) = t(φ₂) = y`), and `z = φ₂ ∘ s` is the `B`-algebra structure of `T`.
+Write `θ m = Σ cᵢ ⊗ mᵢ`. Then `α_{φ₁} (1 ⊗ m) = Σ φ₁(cᵢ) ⊗ mᵢ`, and applying
+the `T`-linear map `α_{φ₂}` gives `Σ φ₁(cᵢ) • (φ₂ ⊗ id) (θ mᵢ)`. So
+`coactionCompose … (θ m) = (α_{φ₂} ∘ α_{φ₁}) (1 ⊗ m)`. The displayed
+additive map is the intermediate tensor formula used for this composite;
+its domain uses the original `s`-action on `C`.
+
+## `GroupoidCoaction`
+
+For `t` as above and an additive group `M : Type v` with `[Module B M]`,
+`GroupoidCoaction t M` is a structure with the following fields:
+
+- `coaction : M →+ C ⊗[B] M`, the map `θ`;
+- `map_smul : ∀ b m, coaction (b • m) = t b • coaction m`;
+- `counit`: for every `T : Type u` with `[CommRing T] [Algebra B T]` and every
+  `B`-algebra map `φ : C →ₐ[B] T` with `φ ∘ t = algebraMap B T`, and every
+  `m`, `(φ ⊗ id) (coaction m) = 1 ⊗ m` in `T ⊗[B] M`;
+- `coassoc`: for every such `T`, every `φ₁ : C →+* T` and `φ₂ φ₃ : C →ₐ[B] T`
+  with `h : φ₁ ∘ algebraMap B C = φ₂ ∘ t` and `φ₃ ∘ t = φ₁ ∘ t`, and every `m`,
+  `(φ₃ ⊗ id) (coaction m) = coactionCompose t M coaction map_smul φ₁ φ₂ h (coaction m)`.
+
+When `RingEtaleEquivalenceRelation t` holds, this is Definition 39.14.1
+(Tag 03LI) for the groupoid of the relation (Lemma 39.13.3, Tag 0233), in the
+translation above:
+
+- `counit`: a `B`-algebra map `φ` with `φ ∘ t = algebraMap B T` is the point
+  `e ∘ a` of the diagonal, `a = algebraMap B T`. The condition says that
+  `α_φ` is the identity, that is, condition (2) (`e^*α = id`) at every point
+  of the diagonal. Taking `T = B` and `φ` the ring map of `e`, which exists by
+  `refl`, gives condition (2) itself.
+- `coassoc`: `φ₁ = (x, y)` and `φ₂ = (y, z)` are composable. A point
+  `φ₃ = (x, z)` with values `φ₃ ∘ t = φ₁ ∘ t` and `φ₃ ∘ s = φ₂ ∘ s` is the
+  composite `c(φ₁, φ₂)`; it exists by `trans` and is unique by
+  `adjoin_range_eq_top`. The
+  condition says `α_{φ₃} = α_{φ₂} ∘ α_{φ₁}` on the generators `1 ⊗ m`, hence
+  on all of `T ⊗_x M` by `T`-linearity. This is condition (1),
+  `c^*α = pr_1^*α ∘ pr_0^*α`, at the point `(φ₁, φ₂)` of `R ×_{s,U,t} R`.
+
+The definition does not ask `α` to be an isomorphism. This is automatic by
+Lemma 39.14.2 (Tag 077Q), whose proof uses only (1) and (2); this is not
+formalized here. The structure uses only the `B`-algebra `C` and the map `t`.
+The equivalence relation conditions are not hypotheses of the definition; the
+consumers assume `RingEtaleEquivalenceRelation t` where they need it.
+
+## `GroupoidCoaction.invariants`
+
+For `θ : GroupoidCoaction t M`, `θ.invariants : AddSubgroup M` has carrier
+`{m | θ.coaction m = 1 ⊗ m}`, the elements with `α (1 ⊗_t m) = 1 ⊗_s m`, that
+is, `t^*m = s^*m` under `α`. For `M = B` with `θ b = t b ⊗ 1` (the structure
+sheaf, with `α` the identity of `C`), the invariants are
+`{b | t b = algebraMap B C b}`. This is the ring of `R`-invariant functions of
+(39.23.0.1), Tag 03BF. For a general module this is the module of sections
+`m` of `F` whose two pullbacks to `R` agree under `α`. Informally, they are
+the global sections on the quotient `U/R` of the module to which `(F, α)`
+descends. This interpretation is context only and is not formalized here.
+The implemented additive subgroup laws follow from additivity of `θ` and
+the zero, addition and negation identities for pure tensors. It is recorded
+as an additive subgroup, without requiring stability under every scalar
+in `B`.
+
+## `GroupoidCoaction.IsHom`
+
+For `θM : GroupoidCoaction t M`, `θN : GroupoidCoaction t N` and a `B`-linear
+map `f : M →ₗ[B] N`, `θM.IsHom θN f : Prop` says
+`θN.coaction (f m) = (C ⊗ f) (θM.coaction m)` for every `m`. This is the
+condition `s^*f ∘ α_M = α_N ∘ t^*f`, checked on the generators `1 ⊗ m`.
+This compatibility of a map of `O_U`-modules with `α` defines the morphisms of
+the category of quasi-coherent modules on the groupoid used in
+Lemmas 39.14.3–39.14.6.
+
+## `GroupoidCoaction.IsAcyclic`
+
+For `θ : GroupoidCoaction t M`, `θ.IsAcyclic : Prop` says the following. Let
+`G Q : Type v` be `B`-modules with coactions `θG`, `θQ`, and let
+`i : M →ₗ[B] G` and `p : G →ₗ[B] Q` be morphisms (`IsHom`) with `i`
+injective, `p` surjective and `range i = ker p`. Then every invariant
+element of `Q` is `p g` for an invariant element `g` of `G`.
+
+So for every short exact sequence `0 → M → G → Q → 0` of modules on the
+groupoid with first term `θ`, the map of invariants `Γ(G) → Γ(Q)` is
+surjective. Both `G` and `Q` range over `Type v`, the universe of `M`;
+the ring universe `u` is independent of `v`. This property is internal to
+the planned proof of Stacks Lemma 69.17.3 (Tag 07VP), where a module
+criterion for affineness is needed. `IsAcyclic` does not occur in Stacks
+under this name. This module defines no cohomology and proves no formal
+comparison with cohomology or a criterion for affineness.
+
+## `EtaleEquivalenceRelation.ComodulesAcyclic`
+
+For `E : EtaleEquivalenceRelation.{u}` (the Library structure),
+`E.ComodulesAcyclic : Prop` takes `B = Γ(E.U, ⊤)` and `C = Γ(E.R, ⊤)`, with the
+algebra structure given by `E.s.appTop` (a local `letI`) and target map
+`E.t.appTop.hom`. It says that every `GroupoidCoaction E.t.appTop.hom M` with
+`M : Type u` is acyclic. The definition makes sense for every `E`. It has the
+intended meaning when `E.U` and `E.R` are affine and `j` is a closed
+immersion, which the consuming statements assume. In that case
+`(Γ(E.U, ⊤), Γ(E.R, ⊤), s, t)` is the ring form of `E` used above.
+
+This predicate is internal to the planned proof of Stacks Lemma 69.17.3
+(Tag 07VP), the Noetherian case. The
+planned statements are that a finite surjective cartesian cover with an
+affine quotient makes all modules acyclic when `E.U` is Noetherian and
+affine, and that acyclicity gives an affine quotient. It does not occur in
+Stacks under this name. Neither this predicate nor `IsAcyclic` asserts the
+existence of a quotient or incorporates the geometric hypotheses of the
+planned consuming statements.

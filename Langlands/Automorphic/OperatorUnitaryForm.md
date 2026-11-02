@@ -64,3 +64,8 @@ the form, Hilbert completion, unitary globalization, invariant integral
 formula, occurrence theorem or universal unitarizability assertion. No
 existence of such a form for an arbitrary actual realization is supplied.
 Subquotient unitarizability is not asserted.
+
+`Langlands.Automorphic.inverse_operator` records inverse covariance for an
+arbitrary complex-linear equivalence intertwining two endomorphisms. Its
+proof uses surjectivity and the inverse identities. The determinant-twist
+and CM-image form constructions share this helper.

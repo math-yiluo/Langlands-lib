@@ -4,10 +4,21 @@ import Langlands.Representation.Unitary.Basic
 /-! # Positive forms on actual finite, compact and differential realizations -/
 
 noncomputable section
-universe uF uV uG uK uX
+universe uF uV uW uG uK uX
 set_option autoImplicit false
 
 namespace Langlands.Automorphic
+
+/-- Inverse covariance of a linear equivalence intertwining two operators. -/
+theorem inverse_operator
+    {V : Type uV} {W : Type uW} [AddCommGroup V] [Module ℂ V]
+    [AddCommGroup W] [Module ℂ W] (e : V ≃ₗ[ℂ] W)
+    (A : Module.End ℂ V) (B : Module.End ℂ W)
+    (he : ∀ v, B (e v) = e (A v)) (w : W) :
+    e.symm (B w) = A (e.symm w) := by
+  obtain ⟨v, rfl⟩ := e.surjective w
+  exact (congrArg e.symm (he v)).trans (e.symm_apply_apply (A v)) |>.trans
+    (congrArg A (e.symm_apply_apply v)).symm
 
 open Langlands.Global
 

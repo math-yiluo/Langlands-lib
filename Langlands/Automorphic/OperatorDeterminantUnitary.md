@@ -24,8 +24,9 @@ and the actual compact twist equivalence. Both have precisely the same
 underlying form and multiplier, so the compact invariance identity applies
 to the finite form already chosen. The published differential covariance
 states that the actual enveloping action commutes with determinant
-multiplication. A private linear-equivalence argument gives the inverse
-covariance equation. Applying it in both arguments of the form reduces
+multiplication. The shared `Langlands.Automorphic.inverse_operator` lemma in
+[OperatorUnitaryForm](OperatorUnitaryForm.md) gives the inverse covariance
+equation. Applying it in both arguments of the form reduces
 the genuine real skew equation to the original `b.real_skew`.
 
 `determinantTwist_inner` identifies the form in inverse multiplier

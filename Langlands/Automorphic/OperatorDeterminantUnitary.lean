@@ -52,16 +52,6 @@ local instance determinantUnitaryGroup5 : AddCommGroup (StableAutomorphicFunctio
 local instance operatorUnitarySpaceGroup (S : OperatorRealization F n) :
     AddCommGroup S.Space := Submodule.addCommGroup _
 
-private theorem inverse_operator
-    {V : Type uV} {W : Type uW} [AddCommGroup V] [Module ℂ V]
-    [AddCommGroup W] [Module ℂ W] (e : V ≃ₗ[ℂ] W)
-    (A : Module.End ℂ V) (B : Module.End ℂ W)
-    (he : ∀ v, B (e v) = e (A v)) (w : W) :
-    e.symm (B w) = A (e.symm w) := by
-  obtain ⟨v, rfl⟩ := e.surjective w
-  exact (congrArg e.symm (he v)).trans (e.symm_apply_apply (A v)) |>.trans
-    (congrArg A (e.symm_apply_apply v)).symm
-
 namespace OperatorRealization.UnitaryForm
 
 variable {S : OperatorRealization F n} (b : S.UnitaryForm)
