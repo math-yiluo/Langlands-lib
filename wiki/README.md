@@ -15,13 +15,14 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
-- [KP Bruhat–Tits: Bundles A–C source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected foundation and construction targets, Cartan/Iwasawa and Iwahori–Weyl indexing, narrow Kottwitz interfaces and the remaining construction and publication boundaries.
+- [KP Bruhat–Tits: Bundles A–D source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected foundation, decomposition, parahoric model and reduction source targets, with their descent, rational point and publication boundaries.
 
 - [Valued-field amalgamation: tensor sources and proof route](../notes/analytic/valued-field-amalgamation-sources.md) — Original tensor estimates covering trivial valuations, the derived common-field route, and the remaining full-universe Lean obligations.
 - [Relative Picard representability: source and construction boundaries](../notes/abelian-schemes/relative-picard-source-map.md) — Faltings–Chai's unrestricted algebraic-space route, Lan and EVM conventions, and the remaining actual-family comparisons.
 - [Renard 2026: whole-book coverage ledger](../notes/renard/coverage.md) — Source-read assertions, verified publications including the unital B.III proof chain, full section backlog, general reductive scope and remaining obligations.
+- [Renard Appendix B: Amitsur, simplicity reductions and original actions](../notes/renard/appendix-b-progress.md) — Published Amitsur and actual-action reduction proofs, original nonunital statement coverage, exact publication evidence and remaining Schur/separation proof obligations.
 - [Renard II.2.1: basis sheafification and separation](../notes/renard/basis-sheafification-source.md) — A normalized presheaf counterexample to the printed separation step, the corrected target-sheaf argument and remaining construction boundaries.
-- [Renard II.2.1–II.2.2: published descent and compact germ-section groups](../notes/renard/germ-sheaf-progress.md) — Verified constructions, proofs, original-target descent and compact groups/maps, with exact publication evidence and preserved universal-property, adjunction and fixed-open-functor obligations.
+- [Renard II.2.1–II.2.2: published descent and compact germ-section functors](../notes/renard/germ-sheaf-progress.md) — Verified constructions, proofs, original-target descent and compact groups/maps/functors, with exact publication evidence and preserved universal-property, adjunction and original-section obligations.
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
 - [Renard I.4.2: duality coefficient conventions](../notes/renard/duality-coefficient-conventions.md) — A conjugation test for recovered coefficients, the compatible-input evaluation route, and the remaining full-source convention obligation.
 - [Renard 2026 Appendix A: source discrepancies](../notes/renard/appendix-a-corrections.md) — Concrete counterexamples, corrected hypotheses and reuse routes for localization, constant functors and abelian subcategories.

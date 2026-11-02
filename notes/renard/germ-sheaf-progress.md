@@ -1,4 +1,4 @@
-# Renard II.2.1–II.2.2: published descent and compact germ-section groups
+# Renard II.2.1–II.2.2: published descent and compact germ-section functors
 
 Worker 6, 1 November 2026.
 
@@ -11,7 +11,8 @@ add the representative and separation proofs, actual universe lifts and
 canonical units, literal support carriers, and the relative-closedness
 statement and proof. Two further publications now supply corrected
 original-target descent and compact germ-section groups and morphism maps.
-This note records their distinct scopes and updates the
+A further publication supplies the fixed-open compact-section functors
+and natural inclusions. This note records their distinct scopes and updates the
 [whole-book coverage ledger](coverage.md).
 
 The governing source is David Renard, *Représentations des groupes réductifs
@@ -226,6 +227,59 @@ resulting support in the actual domain. Independent `u` and `v`,
 arbitrary raw inputs, bases, opens and empty cases are retained,
 without Hausdorffness or source sheaf assumptions.
 
+## Fixed-open compact functors: verified publication update
+
+Candidate `2801770d-7cd1-4db5-b3d6-cfc0e6df9921`, under
+`lean.definition@1`, has unqualified independent approval by Reviewer 8208
+in review task `29597c1b-0312-4373-aaf9-8020d1ef5ecf`, machine receipt
+`10273c40-a446-4422-a471-ddccf8ec12d5`, `accepted = true` and
+`public = true`. Published integration
+`619ba428a4e7492195a3a0d060090c60` is at
+`bcd3de2ace8b14d5d06939a5afe3ca7742cba169`. The machine receipt
+passes Lake-build and declaration-kind checks; it is a definition-policy
+receipt. The full independent review and current implementation pair
+were read. The two frozen functor-file hashes and the two included
+group/map dependency hashes agree with their publication commit, current
+Library `57db2a24f5ca3ef2b6636a0f07dbb2de422e7bf1` and the workspace.
+
+Worker 865 implemented the
+[fixed-open compact germ-section functors](../../Langlands/Sheaf/Renard/CompactGermSectionFunctor.md)
+from Worker 6's source audit and specification. For every fixed actual
+open `U`, `rawCompactGermSectionsFunctor B U` sends the actual raw
+presheaf `F` to `AddCommGrpCat.of (CompactGermSections F U)` and
+an actual morphism `φ` to `compactGermSectionsMap φ U`. The
+unrestricted companion `rawGermSectionsFunctor` uses the same
+`GermSections` and `germSectionsMap` as the preceding construction.
+Identity and composition follow from those maps' published laws.
+`rawCompactGermSectionsNatInclusion` bundles the unchanged injective
+additive inclusion, with naturality and literal section/point formulas.
+At `x : U`, the compact functor's map has value
+`rawStalkMap φ x.val (s.val.val x)`.
+
+`compactGermSectionsFunctor` and `basisSheafCompactGermSectionsFunctor`
+are the restrictions along the actual `presheafInclusion` and
+`sheafForget`; their unrestricted companions and natural inclusions
+use the same composites and whiskering. Their object and map formulas
+expose the existing raw objects and morphisms. The space and original
+value universes remain independent, the codomain is
+`AddCommGrpCat.{max u v}`, and the topology, basis, fixed open and raw
+inputs are arbitrary, including empty cases. These functors retain the
+literal support and the relative-closedness compactness argument.
+
+Fresh inspection of child task
+`e265849a-2e29-40fb-821b-53c7c68cccee` revision 1 confirms `done`
+with closed declaration `fca0fe86-0b29-4d10-a2b4-355ab718a0c4`.
+Its unchanged objective is covered by the group/map and functor
+publications `14f25ce9-b4ee-4ca8-b0b2-8ba152d7618c` and
+`2801770d-7cd1-4db5-b3d6-cfc0e6df9921`; Worker 633's completion
+feedback records no unmet condition. The closure record is task evidence;
+independent mathematical approval comes from the separate reviews.
+This closes the focused germ-model construction child. The original
+PDF pp.43–44 and supplementary errata PDF pp.2–3 were reread for
+this update: the source identifies a sheaf with its germ model before
+defining compact sections. The raw-presheaf functors are derived
+packaging and do not prove that original-section identification.
+
 ## Remaining work and ownership
 
 Universal-property statement task
@@ -238,13 +292,10 @@ retains exact-proof routing after actual statement publication.
 Unit invertibility on sheaves and the basis/all-open equivalence
 retain separate statement and proof obligations.
 
-Compact group/functor task
-`e265849a-2e29-40fb-821b-53c7c68cccee` retains Worker 865/Worker 633.
-The published group/map unit covers its additive structure and actual
-presheaf-morphism maps. Fixed-open raw, normalized and sheaf functors
-with natural inclusion remain a separate unit; this note does not
-assert that task's completion. Ordinary restriction to an arbitrary
-open need not preserve compact support.
+The fixed-open functor publication and child closure supersede the
+preceding pending-functor observation. Ordinary restriction to an
+arbitrary smaller open need not preserve compact support; these
+functors fix the domain open while varying the source object.
 
 The separate all-open clopen zero-extension task
 `f0949ea8-6ee5-4fdf-9f55-3010fd466169` retains Worker 1038's

@@ -227,13 +227,33 @@ only in the target. `compactGermSectionSubgroup` and
 the actual stalk maps, with additive and composition laws. Relative
 closedness supplies the compactness step.
 
+The next verified addition is the fixed-open compact germ-section
+functor unit `2801770d-7cd1-4db5-b3d6-cfc0e6df9921`, independently
+accepted and public under `lean.definition@1`, with machine receipt
+`10273c40-a446-4422-a471-ddccf8ec12d5`, unqualified Reviewer 8208
+approval in `29597c1b-0312-4373-aaf9-8020d1ef5ecf` and published
+integration `619ba428a4e7492195a3a0d060090c60` at
+`bcd3de2ace8b14d5d06939a5afe3ca7742cba169`.
+`Langlands.Sheaf.Renard.rawCompactGermSectionsFunctor`,
+`compactGermSectionsFunctor` and
+`basisSheafCompactGermSectionsFunctor` package the existing compact
+groups and actual morphism maps at every fixed open, with unrestricted
+companions and injective natural inclusions. They retain independent
+universes, arbitrary raw inputs and literal support. All four included
+functor/group Lean/Markdown hashes match the frozen files, publication,
+current Library `57db2a24f5ca3ef2b6636a0f07dbb2de422e7bf1` and
+workspace. The progress note records the full source and declaration
+comparison. Child `e265849a-2e29-40fb-821b-53c7c68cccee` revision 1
+is `done`, with closed declaration
+`fca0fe86-0b29-4d10-a2b4-355ab718a0c4` and no unmet condition
+in Worker 633's completion feedback. This closes that focused
+construction child; original-section comparison remains separate.
+
 Universal-property statement task `426f976c-c5ec-45bd-9465-216caebd724e`
 revision 1 is assigned to Worker 1215; its statements and exact proofs
 remain publication obligations. It covers direct/lifted uniqueness,
 specified natural Hom equivalences and the direct adjunction at
-`max u v`. Compact fixed-open functor packaging remains with
-Worker 865/Worker 633 under `e265849a-2e29-40fb-821b-53c7c68cccee`.
-Unit invertibility, basis/all-open equivalence, original-section
+`max u v`. Unit invertibility, basis/all-open equivalence, original-section
 comparisons, clopen zero extension, exhaustion and scalar-sheaf
 comparisons remain separate obligations.
 
@@ -472,7 +492,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions, lifts/units, representative/separation proofs, support closedness, corrected descent and compact groups/maps](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); universal property/adjunction, category equivalence, fixed-open compact functors and later assertions remain separate |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions, lifts/units, representative/separation proofs, support closedness, corrected descent and compact groups/maps/functors](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); universal property/adjunction, unit invertibility, category equivalence and later assertions remain separate |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |

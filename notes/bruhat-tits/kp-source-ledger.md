@@ -1,10 +1,10 @@
-# KP Bundles A–C: source ledger and construction boundaries
+# KP Bundles A–D: source ledger and construction boundaries
 
-This source ledger covers Bundle A, initial Bundle B targets and Bundle C of the standing KP program
+This source ledger covers Bundle A, initial Bundle B targets and Bundles C–D of the standing KP program
 `f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. It records mathematical source targets,
 not completed formalization. Every formal-status field below is empty: no
 accepted, published Lean result for these complete targets has been verified in
-this ledger. The remaining Bundle B targets and Bundles D–F still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
+this ledger. The remaining Bundle B targets and Bundles E–F still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
 
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
@@ -46,6 +46,18 @@ and 42–46. Book PDF page 465 was visually checked for the placement of
 invariants and the torsion-free quotient notation. This extends the ledger
 to twenty-three rows without assigning a formal status to any new target.
 
+The Bundle D extension adds six source-only rows for Theorems 8.3.2,
+8.3.13 and 8.4.10, Corollary 8.4.12, Theorem 8.4.19 and Section 13.2.6.
+Its original-source audit covered book PDF pages 112–115, 314–316,
+326–331, 333–341, 358–363, 394–395 and 497–502, and corrections PDF
+pages 37–41 and 49–50. A further check of book PDF pages 327–328,
+335 and 337–340, including visual inspection of pages 328, 335, 338 and
+340, establishes the source discrepancy in the restricted kernel index of
+Theorem 8.4.19(1) described below. The kernel target instead uses the
+general product in Proposition 8.4.15. This extends the ledger to
+twenty-nine rows. All six added formal-status fields and evidence arrays
+remain empty; the source dependencies below supply no formal construction.
+
 ## Structured ledger
 
 The JSON block is the structured ledger. Each row has the same fields.
@@ -58,7 +70,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), and Bundle C decompositions and narrow component/Kottwitz interfaces. Remaining Bundle B items and Bundles D–F still need public rows.",
+  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, and Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent. Remaining Bundle B items and Bundles E–F still need public rows.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -763,6 +775,216 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "publication_commits": [],
       "axiom_reports": [],
       "external_code": []
+    },
+    {
+      "source_item": "Theorem 8.3.2",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.296 / PDF p.327; schematic models in Sections 2.8 and 2.10"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.37, Chapter 8 opening, Section 8.3 and Remark 8.3.4",
+        "change": "Replace the opening of Section 8.3 by the perfect-residue hypothesis. Change 'first three sections' to 'first two sections'. In Remark 8.3.4 the full-fixer model is evaluated on O, not K."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
+        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction."
+      ],
+      "conclusion": "G(K)^1_Omega and G(K)^dagger_Omega are schematic: they are the O-points of actual smooth affine O-group schemes with generic fibre G_K. Their models have the same relative identity component. This does not assert connectedness of the entire models or identify either subgroup with the full fixer.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Proposition 8.3.1: faithful representations, stable lattices, schematic closure and smoothening (A.6.5–A.6.6) construct vertex models",
+        "Enlarge Omega to the facets meeting it; Proposition 7.7.1 gives the finite-index inclusions, and A.7.1 propagates schematicity and identifies relative identity components",
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent."
+      ],
+      "consumer_or_regression": "Actual integral-model input for the connected model, its reduction and compact/open integral points. The generally nonaffine full-fixer model of Remark 8.3.4 remains a different object.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Theorem 8.3.13",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.299 / PDF p.330; corrected proof at corrections PDF p.37"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.37, Section 8.3 and Theorem 8.3.13",
+        "change": "Apply perfect residue and replace the proof's final two sentences. Connected fibres first force factorization through G^0_Omega; only then apply the open finite-index argument and A.4.26."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
+        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction."
+      ],
+      "conclusion": "The common relative identity component G^0_Omega of the schematic models in 8.3.2 has G^0_Omega(O)=G(K)^0_Omega. It is the actual smooth affine connected-fibre parahoric model with generic fibre G_K. Its connectedness does not identify the parahoric with a full pointwise or setwise fixer.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Theorem 8.3.2; T is a maximal torus since G_K is quasi-split by 2.3.8. The connected Neron model has T^0(O)=T(K)^0 by B.8.7",
+        "Sections 8.3.7–8.3.12 construct root models with prescribed integral points and connected fibres. Sections 2.10.10 and 2.10.19 extend the genuine generic-fibre inclusions",
+        "Corrected connected-fibre argument: torus and root model maps factor through G^0_Omega; hence the generated G(K)^0_Omega lies in G^0_Omega(O). Proposition 7.7.1 gives openness and finite index there, and Lemma A.4.26 proves equality",
+        "Proposition 8.3.14 gives the actual root-product open immersion",
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent."
+      ],
+      "consumer_or_regression": "Connected parahoric construction for reduction, inflation and compact induction. Proving compactness and openness further uses the actual scheme-point topology from its owning task.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Theorem 8.4.10",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.305 / PDF p.336; notation at Sections 8.4.2–8.4.8"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.37, opening of Section 8.4",
+        "change": "Retain perfect residue from corrected Section 8.3 and replace both occurrences of o by O in the second paragraph."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
+        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction.",
+        "Write H_Omega for the connected special fibre of the connected parahoric model G^0_Omega, and Gred_Omega=H_Omega/R_u(H_Omega) for its maximal reductive quotient. Sbar is the special fibre of the standard O-model of S and is identified with its image in Gred_Omega."
+      ],
+      "conclusion": "For every choice of positive relative roots, open-cell multiplication is an isomorphism of schemes from the negative nondivisible U^+_{a,Omega,0} factors, T^+, and the positive nondivisible factors onto R_u(H_Omega). These plus groups are special-fibre images of the corresponding 0+ model maps. This is not a direct-product group decomposition. The root datum of Gred_Omega relative to Sbar is (X^*(S),Phi_Omega,X_*(S),Phi_Omega^vee), where Phi_Omega consists of gradients of affine roots vanishing identically on Omega. For a in Phi_Omega, Ubar_{a,Omega,0}/U^+_{a,Omega,0} maps isomorphically to its a-root group. Phi_Omega is reduced even when the ambient relative root system has multipliable roots.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Proposition 8.3.14, Corollary 8.4.5 and Proposition 8.4.8; Lemma 8.4.7 keeps the a-versus-2a alternatives",
+        "Dynamic root groups and multiplication, Proposition 2.11.9 and Theorem 2.11.15; torus unipotent radical B.10.12",
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
+        "Section 9.5 uses perfectness to descend the geometric unipotent radical; the displayed split root datum is a geometric description over fbar, not an assertion of splitness over f"
+      ],
+      "consumer_or_regression": "Maximal reductive quotient for depth zero. Preserve the special-fibre distinction; the ramified SU_3 example of Remark 8.4.11 has quotient SO(3)=PGL_2 although the ambient group is simply connected.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Corollary 8.4.12",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.306 / PDF p.337"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.37, corrected Sections 8.3–8.4 ambient setup",
+        "change": "Perfect residue applies throughout; Section 8.4 models are over O. No direct replacement of Corollary 8.4.12 is listed."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
+        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction.",
+        "Write H_Omega for the connected special fibre of the connected parahoric model G^0_Omega, and Gred_Omega=H_Omega/R_u(H_Omega) for its maximal reductive quotient. Sbar is the special fibre of the standard O-model of S and is identified with its image in Gred_Omega."
+      ],
+      "conclusion": "Under the natural surjective reduction G(K)^0_Omega=G^0_Omega(O)→H_Omega(fbar), the inverse image of R_u(H_Omega)(fbar) is G(K)_{Omega,0+}. Thus 0+ is the kernel of the composite to Gred_Omega(fbar); it is generally larger than the kernel of reduction to the whole special fibre.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Smooth Henselian reduction is surjective by 8.1.3; the integral-point identification is Theorem 8.3.13",
+        "Theorem 8.4.10, Corollary 8.4.5(2), Lemma B.10.11 and Proposition 7.3.12 identify the inverse image",
+        "Proposition 2.4.3 makes projection from smooth connected special-fibre rational points to the reductive quotient surjective; Lemma 2.4.2 supplies unipotent H^1 vanishing",
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
+        "Section 9.5 uses G(k)^0=G(K)^0 intersect G(k) from 9.3.24, descends the unipotent radical over perfect f and gives G(k)^0+_F=G(K)^0+_F intersect G(k), hence the kernel over k"
+      ],
+      "consumer_or_regression": "Use the actual reduction composite in the depth-zero quotient and inflation; neither an arbitrary map with an assumed kernel nor reduction to the entire special fibre meets the target.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Theorem 8.4.19",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.308–310 / PDF pp.339–341; valid general kernel product in Proposition 8.4.15, printed pp.306–307 / PDF pp.337–338; counterexample from Example 8.3.5, printed pp.296–297 / PDF pp.327–328, and Section 8.4.6, printed p.304 / PDF p.335"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.37–38, Sections 8.3–8.4 and the setup of Proposition 8.4.15",
+        "change": "Apply perfect residue and O-model conventions. Move the nonempty bounded Omega≺Omega' hypothesis before 8.4.15, define both model and special-fibre morphisms there, and delete that proposition's former first sentence. These authors' corrections contain no repair of the restricted index printed in 8.4.19(1); the source discrepancy recorded here is a separate derived check from 8.3.5 and 8.4.6."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
+        "F and F' are facets in an apartment A with F contained in the closure of F'. The generic-fibre identity induces the actual model morphism G^0_{F'}→G^0_F and its special-fibre morphism rhobar:H_{F'}→H_F. The full bijection ranges over all facets in B(G_K) whose closures contain F, not just those in A."
+      ],
+      "conclusion": "By Proposition 8.4.15 specialized to these facets, the schematic kernel of rhobar is smooth connected unipotent, and open-cell multiplication identifies it as a scheme with the product of ker(Ubar_{a,F',0}→Ubar_{a,F,0}) over all nondivisible roots a in Phi(S,G_K). The restriction to Phi'_{F'} minus Psi_F(F') printed in Theorem 8.4.19(1) is false and is excluded as a formalization target: Example 8.3.5 gives a split SL_2 open chamber F' incident to a hyperspecial vertex F for which Phi'_{F'} is empty by 8.4.6, but ker(rhobar) is G_a. Theorem 8.4.19(2)–(4) supplies the remaining conclusions. The image p_F(F') is the parabolic of H_F associated to Psi_F(F') and contains R_u(H_F). The inverse image of p_F(F')(fbar) in G^0_F(O) is G^0_{F'}(O). The map F'↦p_F(F') is a bijection from all incident facets onto all parabolics of H_F, equivalently of Gred_F. Facets in A alone correspond to parabolics containing the chosen maximal torus. The kernel product is a scheme isomorphism, not a direct-product group decomposition.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Corrected general morphism setup preceding Proposition 8.4.15; that proposition supplies the smooth connected unipotent kernel and the product over all nondivisible ambient roots, without the false restriction in 8.4.19(1)",
+        "Derived source-discrepancy check from Example 8.3.5 and Section 8.4.6: the chamber model maps to the hyperspecial SL_2 model by c=pi*c'; on special fibres its kernel has a=d=1, b=0 and c' free, hence is G_a, whereas Phi'_{F'} and the printed product index are empty",
+        "Root-filtration comparisons 6.3.21; Theorem 8.4.10, Proposition 8.4.8(2), Proposition 1.3.35 and Corollary 8.4.12; independence from the apartment and the use of all apartments through F",
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
+        "Section 9.3.2 descends the facet morphisms and identifies Gamma-facets through F with parabolic f-subgroups; Proposition 2.4.5 transfers these to the maximal reductive quotient",
+        "Proposition 9.3.3 proves the exact inverse-image equality over o, using 8.1.3 smooth Henselian reduction and Lemma 2.4.2 for the smooth connected unipotent kernel. This does not assert that every geometric parabolic descends"
+      ],
+      "consumer_or_regression": "Residue/facet correspondence and change-of-parahoric tests for depth-zero induction and double cosets; retain rational parabolics after Chapter 9 descent. The split SL_2 chamber-to-vertex kernel is a regression against the erroneous printed restricted index.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 13.2.6",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.470 / PDF p.501; Chapter 13 hypotheses at PDF p.497"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.37–41 and 49–50",
+        "change": "Use corrected perfect-residue Chapter 8–9 constructions. The Chapter 13 corrections affect 13.5.2, 13.6.2 and 13.8.5, not 13.2.6; the Appendix B correction on minimal congruent torus filtration does not replace the depth-zero model proof."
+      },
+      "hypotheses": [
+        "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
+        "x is a point of the actual descended building over k, with connected parahoric model G^0_x over o, special fibre H_x and maximal reductive quotient Gred_x. Put P_{x,0}=G^0_x(o). The Chapter 13 torus filtration is functorial and admissible with 7.2(1),(2). No finite-residue assumption is required for this depth-zero assertion."
+      ],
+      "conclusion": "The natural composite P_{x,0}=G^0_x(o)→H_x(f)→Gred_x(f) is surjective with kernel P_{x,0+}, and hence induces P_{x,0}/P_{x,0+}≃Gred_x(f). The analogous assertion holds over K. As an f-group scheme, Gred_x is also the cokernel of the special-fibre map G_{x,0+}→G_{x,0}. The rational-point quotient uses both surjectivity steps and the descended kernel; it does not follow merely from a group-scheme cokernel.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Theorems 8.3.2 and 8.3.13 construct the actual models; Sections 9.2.5–9.2.6 descend them and identify integral points",
+        "The first reduction arrow is surjective by 8.1.3. The second is surjective by Proposition 2.4.3 over perfect f, proved using Lemma 2.4.2 on split unipotent groups and H^1",
+        "Corollary 8.4.12 and Section 9.5 identify the actual kernel over k; apply the group first isomorphism theorem",
+        "The congruence models and their morphism come from Theorem 8.5.2 and Section 8.5.17, with Chapter 9 descent",
+        "Section 13.2.2 separates facet-dependent 0 and 0+ from positive-depth variation, and 13.2.3 uses 9.8.3(2) for the Gamma-invariant group comparison"
+      ],
+      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
     }
   ]
 }
@@ -883,6 +1105,104 @@ using torsion(A^Gamma)=(A_tor)^Gamma. It does not identify it with
 source targets and dependency descriptions; no Kottwitz construction,
 quotient bijection, Hecke distinctness or finite-support theorem is proved
 by this note.
+
+## Bundle D: models, descent and the actual reduction map
+
+The corrected opening of Section 8.3 requires perfect residue, which applies
+to that section and those following it. The Chapter 8 models are over the
+integer ring O of the maximal unramified extension K. Theorems 8.3.2 and
+8.3.13 distinguish the schematic models with a common relative identity
+component from the connected parahoric model itself. The corrected proof of
+8.3.13 first factors the torus and root model maps through that identity
+component, using connected fibres; only then does the open finite-index
+argument apply. The generally nonaffine full-fixer model of Remark 8.3.4
+is a separate object, and the corrected evaluation there is on O.
+
+The special fibre H_Omega of the connected parahoric model and its maximal
+reductive quotient Gred_Omega=H_Omega/R_u(H_Omega) are distinct. Theorem
+8.4.10 identifies the root datum of the latter. Its product description of
+the unipotent radical is an isomorphism of schemes supplied by open-cell
+multiplication; it is not a direct-product decomposition as groups.
+
+For incident facets F contained in the closure of F', the kernel of the
+actual special-fibre map rhobar:H_{F'} → H_F is smooth connected unipotent.
+Proposition 8.4.15 (printed pp. 306–307 / PDF pp. 337–338), specialized to
+these facets with the corrected morphism setup on corrections PDF p. 38,
+gives the valid scheme isomorphism by open-cell multiplication:
+
+`product over all nondivisible a in Phi(S,G_K) of
+ker(Ubar_{a,F',0} → Ubar_{a,F,0}) ≃ ker(rhobar)`.
+
+The smaller index `Phi'_{F'} minus Psi_F(F')` printed in Theorem
+8.4.19(1) (printed p. 309 / PDF p. 340), and repeated in its proof, is
+false. It is recorded as a source discrepancy and excluded from future Lean
+targets. The authors' corrections on PDF pp. 37–38 repair the ambient
+hypotheses and morphism setup but contain no repair of this index.
+
+Here is a derived counterexample using the book's own Example 8.3.5
+(printed pp. 296–297 / PDF pp. 327–328) and Section 8.4.6 (printed p. 304 /
+PDF p. 335). Take k=Q_3, its maximal unramified extension K, and G=SL_2.
+Let F be the hyperspecial vertex x and F' the adjacent open chamber (x,z)
+of that example. The connected models have coordinate rings
+
+`O[G^0_F] = O[a,b,c,d]/(ad-bc-1)`,
+
+`O[G^0_{F'}] = O[a,b,c',d]/(ad-pi*b*c'-1)`.
+
+The generic-identity model morphism sends `(a,b,c',d)` to
+`(a,b,pi*c',d)`. On special fibres it sends these coordinates to
+`(a,b,0,d)`. Its scheme-theoretic kernel is defined by `a=d=1, b=0`,
+leaving `c'` free. Its coordinate ring is therefore `fbar[c']`, and the
+group law displayed in Example 8.3.5 restricts to addition of `c'`.
+Thus the kernel is G_a. But 8.4.6 defines Phi'_{F'} from the affine roots
+vanishing identically on F'. None vanishes on this open chamber, so
+Phi'_{F'} is empty. The printed restricted product would be the one-point
+scheme, contradicting this kernel computation. The general product over
+all nondivisible ambient roots retains the nontrivial negative-root
+kernel and has no such contradiction. This calculation diagnoses the
+source formula; no Lean construction or proof is supplied here.
+
+Theorem 8.4.19(2)–(4) gives the parabolic image, the inverse-image equality
+on integral points and the full facet/parabolic bijection. That bijection
+ranges over all incident facets in the building; restricting to one
+apartment yields only the parabolics containing the chosen maximal torus.
+
+Section 9.2.5 descends the actual smooth affine models to o by invariant
+coordinate rings and relative identity components. Section 9.2.6 identifies
+the parahoric integral points. The geometric unipotent radical descends
+over the perfect residue field f in Section 9.5. The equalities
+G(k)^0=G(K)^0 intersect G(k) and
+G(k)^0+_F=G(K)^0+_F intersect G(k) then give the descended kernel in the
+reduction map. The geometric Chapter 8 construction alone does not prove
+these statements over k.
+
+The homomorphism in Section 13.2.6 is the natural composite
+
+`P_{x,0}=G^0_x(o) → H_x(f) → Gred_x(f)`.
+
+The first arrow is surjective by smooth Henselian reduction, Section 8.1.3.
+The second is surjective by Proposition 2.4.3 over perfect f, whose proof
+uses Lemma 2.4.2 on split unipotent groups and Galois H^1. Corollary 8.4.12
+and Section 9.5 identify the composite's kernel with P_{x,0+}. The first
+isomorphism theorem then gives P_{x,0}/P_{x,0+} isomorphic to Gred_x(f).
+Reduction to the whole special fibre has a generally smaller kernel. A
+scheme-theoretic cokernel by itself does not supply this rational-point
+quotient or its two surjectivity steps.
+
+For the residue correspondence, Section 9.3.2 and Proposition 2.4.5 give
+parabolic f-subgroups after descent. Proposition 9.3.3 proves the exact
+inverse-image equality on o-points, using Section 8.1.3 and Lemma 2.4.2
+for the smooth connected unipotent kernel. This preserves the rational
+parabolic condition; it does not say every geometric parabolic descends.
+
+No finite-residue hypothesis is needed for Section 13.2.6. For the
+local-field consumer, finiteness of Gred_x(f) requires finite residue and
+finite type, and compactness and openness require the actual topology on
+integral points. These remain proof obligations. The representation test
+must inflate a representation through this actual reduction map, prove
+factorization through its quotient, and construct compact induction with
+a basic intertwining or double-coset theorem. No irreducibility,
+supercuspidality or positive-depth theorem follows from these source rows.
 
 ## Initial interfaces and the next mathematical gates
 
