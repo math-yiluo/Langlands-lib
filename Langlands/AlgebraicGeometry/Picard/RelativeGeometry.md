@@ -7,6 +7,12 @@ the map to `X`; its identity and composition laws are inherited from those
 functors. The ordering of the factors is a convention.
 `relativeSpaceSymmetry f T` is the canonical isomorphism with `X ×_S T`.
 
+The instance `relativeSpace_preservesPullbacks` follows from preservation
+of limits by the right adjoint `Over.pullback f` and preservation of
+connected limits by `Over.forget X`. It is shared by `RelativeStack` and
+`RigidifiedClassesZariskiSeparatedProof`; the identical instances from
+those modules are consolidated here with the same name, type and proof.
+
 The natural transformation `relativeProjection f` sends each fibre product
 to `T` by its first projection. Given an actual section `ε : S → X` and the
 equation `ε ≫ f = 𝟙 S`, `relativeSection` constructs the natural transformation

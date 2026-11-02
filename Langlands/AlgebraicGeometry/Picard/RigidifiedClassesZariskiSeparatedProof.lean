@@ -3,6 +3,7 @@ import Langlands.AlgebraicGeometry.Picard.RigidifiedIsoUniquenessProof
 import Langlands.AlgebraicGeometry.Modules.OpenCoverHomGluing
 import Langlands.AlgebraicGeometry.Modules.OpenCoverIsoGluing
 import Langlands.AlgebraicGeometry.Picard.RigidifiedPullbackProofs
+import Langlands.AlgebraicGeometry.Picard.RelativeGeometry
 import Mathlib.CategoryTheory.Limits.Constructions.Over.Connected
 import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Pullbacks
 import Mathlib.CategoryTheory.Adjunction.Limits
@@ -128,16 +129,6 @@ lemma relativePullbackCompTo_hom_val (f : X ⟶ S) (ε : S ⟶ X) (hε : ε ≫ 
 
 end Langlands.AlgebraicGeometry.Picard
 
-
-namespace Langlands.AlgebraicGeometry.Picard
-
-/-- The relative total-space functor preserves pullbacks. -/
-instance relativeSpace_preservesPullbacks {S X : Scheme.{u}} (f : X ⟶ S) :
-    PreservesLimitsOfShape WalkingCospan (relativeSpace f) := by
-  dsimp only [relativeSpace]
-  infer_instance
-
-end Langlands.AlgebraicGeometry.Picard
 
 namespace Langlands.Scheme.Modules
 

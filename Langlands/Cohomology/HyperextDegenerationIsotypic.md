@@ -87,7 +87,7 @@ restricts to representations `ρ.comp (MonoidHom.inl Γ Δ)` of `Γ` and
 
 | Declaration | Statement |
 | --- | --- |
-| `equivComp e φ` | For a group homomorphism `φ : Γ' →* Γ`, an equivalence `e : ρ ≃ σ` of representations of `Γ` as an equivalence of `ρ.comp φ` and `σ.comp φ`. A `def`. |
+| `equivComp e φ` | For a group homomorphism `φ : Γ' →* Γ`, an equivalence `e : ρ ≃ σ` of representations of `Γ` as an equivalence of `ρ.comp φ` and `σ.comp φ`. A `def` imported with its original name from [`EquivalencePullback`](../Representation/EquivalencePullback.md). |
 | `inrIntertwiningMap ρ δ` | For a representation `ρ` of `Γ × Δ` and `δ : Δ`, the map `ρ (1, δ)` as an intertwining map from the restriction of `ρ` to `Γ` to itself. A `def`. |
 | `isotypicProdSubrepresentation τ ρ` | For a representation `τ` of `Γ` and a representation `ρ` of `Γ × Δ`, the `τ`-isotypic part of the restriction of `ρ` to `Γ`, as a subrepresentation of the restriction of `ρ` to `Δ`. A `def`. |
 | `isotypicProdRepresentation τ ρ` | The representation of `Δ` on this `τ`-isotypic part. A `def`; `δ` acts through `ρ (1, δ)` (`coe_isotypicProdRepresentation_apply`, a `simp` lemma). |

@@ -4,7 +4,7 @@ import Langlands.AlgebraicGeometry.ProjectiveSpace
 
 /-! # The morphism to projective space defined by base-point-free sections
 
-Let `X` be a scheme over a field `K`, `L` a line bundle on `X` and `s 0, …, s n` global
+Let `X` be a scheme over a commutative ring `K`, `L` a line bundle on `X` and `s 0, …, s n` global
 sections of `L` with no common zero. On the nonvanishing locus `U_j` of `s j`, the ratios
 `s i / s j` define a morphism `U_j ⟶ D₊(X_j)` into projective space. These morphisms agree
 on overlaps and glue to `linearSystemMap : X ⟶ ProjectiveSpace K n`. For a `T`-point `g`
@@ -34,7 +34,7 @@ lemma eval₂_mul_of_isHomogeneous {R S ι : Type*} [CommSemiring R] [CommSemiri
     ← hφ.degree_eq_sum_deg_support hd]
   ring
 
-variable {K : Type u} [Field K] {X T T' : Scheme.{u}} (p : X ⟶ Spec (CommRingCat.of K))
+variable {K : Type u} [CommRing K] {X T T' : Scheme.{u}} (p : X ⟶ Spec (CommRingCat.of K))
   {L : LineBundle X} {n : ℕ} (s : Fin (n + 1) → GlobalSections L.obj)
 
 section scalars
@@ -53,7 +53,7 @@ lemma toSpecΓ_SpecMap_scalarsFromBase {R : CommRingCat.{u}} (q : T ⟶ Spec R) 
     ← Category.assoc, ← Scheme.toSpecΓ_naturality, Category.assoc,
     toSpecΓ_SpecMap_ΓSpecIso_inv, Category.comp_id]
 
-/-- Every global function on `Spec K` is a scalar of a rational point. -/
+/-- Every global function on `Spec K` is a scalar of a section of the structure map. -/
 lemma exists_scalarsFromBase_eq {x : Spec (CommRingCat.of K) ⟶ X} (hx : x ≫ p = 𝟙 _)
     (r : Γ(Spec (CommRingCat.of K), ⊤)) :
     ∃ α : K, Scheme.Modules.scalarsFromBase (x ≫ p) α = r := by

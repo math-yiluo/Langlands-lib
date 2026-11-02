@@ -39,8 +39,9 @@ uniqueness proposition identifies them. Their common underlying module
 map satisfies both comparison equations.
 
 The relative total-space functor is `Over.pullback` followed by
-`Over.forget`. The instance `relativeSpace_preservesPullbacks` follows
-from the imported preservation results for these functors. Thus
+`Over.forget`. The shared instance `relativeSpace_preservesPullbacks` in
+[`RelativeGeometry`](RelativeGeometry.md) follows from the imported
+preservation results for these functors. Thus
 `PreservesPullback.iso` identifies the relative total space of the base
 overlap with the actual scheme pullback of the two total-space maps.
 `pullback_map_injective_of_iso` shows that pullback along this isomorphism

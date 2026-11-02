@@ -1,6 +1,7 @@
 import Langlands.Cohomology.HyperextDegenerationEquivariance
 import Langlands.Cohomology.HyperextEdgeMapLinear
 import Langlands.Cohomology.HyperextDegeneration.Proof
+import Langlands.Representation.EquivalencePullback
 import Mathlib.RepresentationTheory.Intertwining
 import Mathlib.RepresentationTheory.Invariants
 import Mathlib.RepresentationTheory.Subrepresentation
@@ -236,13 +237,6 @@ section Product
 
 variable {R : Type*} [CommRing R] {Γ Δ : Type*} [Group Γ] [Group Δ] {U V W : Type*}
   [AddCommGroup U] [Module R U] [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W]
-
-/-- An equivalence of representations of `Γ` is an equivalence of the representations of `Γ'`
-obtained by composing with a group homomorphism `φ : Γ' →* Γ`. -/
-def equivComp {Γ' : Type*} [Group Γ'] {ρ : Representation R Γ V} {σ : Representation R Γ W}
-    (e : ρ.Equiv σ) (φ : Γ' →* Γ) : Representation.Equiv (ρ.comp φ) (σ.comp φ) :=
-  Representation.Equiv.mk e.toLinearEquiv fun g => LinearMap.ext fun v =>
-    Representation.IntertwiningMap.isIntertwining _ _ e.toIntertwiningMap (φ g) v
 
 /-- For a representation `ρ` of `Γ × Δ` and `δ : Δ`, the action `ρ (1, δ)` as an intertwining
 map of the restriction of `ρ` to `Γ`. -/

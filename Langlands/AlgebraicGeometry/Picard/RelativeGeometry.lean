@@ -1,5 +1,7 @@
 import Mathlib.AlgebraicGeometry.Pullbacks
 import Mathlib.CategoryTheory.Comma.Over.Pullback
+import Mathlib.CategoryTheory.Limits.Constructions.Over.Connected
+import Mathlib.CategoryTheory.Adjunction.Limits
 
 /-! # The family of base changes of a scheme with a section -/
 
@@ -16,6 +18,12 @@ variable {S X : Scheme.{u}}
 /-- The family `T ↦ T ×_S X`, reusing the slice-category pullback functor. -/
 abbrev relativeSpace (f : X ⟶ S) : Over S ⥤ Scheme.{u} :=
   Over.pullback f ⋙ Over.forget X
+
+/-- The relative total-space functor preserves pullbacks. -/
+instance relativeSpace_preservesPullbacks (f : X ⟶ S) :
+    PreservesLimitsOfShape WalkingCospan (relativeSpace f) := by
+  dsimp only [relativeSpace]
+  infer_instance
 
 @[reassoc]
 lemma relativeSpace_map_snd (f : X ⟶ S) {T U : Over S} (h : T ⟶ U) :

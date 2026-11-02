@@ -3,13 +3,11 @@
 This helper module is used in the proof of
 `Langlands.AlgebraicGeometry.LinearSystemMorphismStatement`. It is internal: it is not a
 Library statement. It formalizes the morphism to projective space defined by base-point-free
-sections, which Milne uses in the proof of Theorem 7.1 (pp.10–11 of
-`milne-abelian-varieties-1986-author-2022`, recalling Hartshorne; Hartshorne is not registered
-and is cited only through Milne). Compare Stacks Project, Constructions of Schemes, Section 27.14 "Invertible sheaves and morphisms into Proj", Lemma 27.14.1, tag 01NJ, in the registered source `stacks-very-ampleness-support-2026-10-29`, applied to the graded ring map `K[X_0, …, X_n] → Γ_*(X, L)` sending `X_i` to `s i`. The formulation through `T`-points
+sections. Compare Stacks Project, Constructions of Schemes, Section 27.14 "Invertible sheaves and morphisms into Proj", Lemma 27.14.1, tag 01NJ, in the registered source `stacks-very-ampleness-support-2026-10-29`, applied to the graded ring map `K[X_0, …, X_n] → Γ_*(X, L)` sending `X_i` to `s i`. The formulation through `T`-points
 and pulled-back ratios is our own. Everything is in the namespace
 `Langlands.AlgebraicGeometry.LinearSystem`.
 
-Throughout, `K` is a field, `p : X ⟶ Spec K`, `L` is a line bundle on `X` and
+Throughout, `K` is a commutative ring, `p : X ⟶ Spec K`, `L` is a line bundle on `X` and
 `s : Fin (n + 1) → GlobalSections L.obj`. `U_j` denotes `trivializationOpen L.obj (s j)`.
 `ProjectiveSpace K n` is `Proj` of `K[X_0, …, X_n]` with its standard grading.
 
@@ -22,7 +20,7 @@ Throughout, `K` is a field, `p : X ⟶ Spec K`, `L` is a line bundle on `X` and
   `R → Γ(Spec R, ⊤) → Γ(T, ⊤)` for `q : T ⟶ Spec R`.
 - `toSpecΓ_SpecMap_scalarsFromBase`: a morphism `q : T ⟶ Spec R` equals
   `T.toSpecΓ ≫ Spec.map (scalarsFromBase q)`.
-- `exists_scalarsFromBase_eq`: for a rational point `x` (`x ≫ p = 𝟙`), every global function
+- `exists_scalarsFromBase_eq`: for a section `x` of `p` (`x ≫ p = 𝟙`), every global function
   on `Spec K` is the image of a scalar `α ∈ K`.
 - `linComb p s c := ∑ i, scalarsFromBase p (c i) • s i`, the section `σ c` of the statement.
 - `sectionRatio_linComb`: the ratio of `linComb p s c` to `s₀` along `g` is
@@ -82,3 +80,17 @@ Assume `hs : ∀ x, ∃ i, x ∈ nonvanishingLocus L.obj (s i)`.
   point lies in `D₊(X_i)`, the point of `X` lies in `U_i`. Otherwise `s i` vanishes along `y`
   (`vanishesAlong_iff_not_mem`), so its ratio is zero and the preimage of `D₊(X_i)` is empty.
 - `comp_mem_coordinateOpen`: a `T`-point landing in `U_j` maps into `D₊(X_j)`.
+
+## Commutative-ring scope
+
+The construction and its scalar, ratio, chart, and gluing identities work over any
+commutative ring `K`, including the zero ring. This generalization is internal:
+the existing proofs use ring homomorphisms, homogeneous localization, line-bundle
+frames and open-cover gluing, without field division or a nonzero scalar
+hypothesis. The polynomial specialization of Stacks Lemma 27.14.1 cited above
+also has no field-base hypothesis. The original field-valued uses remain
+specializations of these declarations.
+
+The test ring `K'` in `mem_trivializationOpen_of_comp_mem` remains a field. Its
+proof uses the unique point of `Spec K'` and vanishing at that field-valued
+point; generalizing the base ring `K` does not change that hypothesis.
