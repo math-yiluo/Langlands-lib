@@ -412,8 +412,44 @@ Its source correspondence was checked by the statement review of
 Reviewer 8471, who read B.III, the module conventions, A.VI.3 and the
 older-edition erratum. The B.III row below therefore uses the
 `Statement/proof covered` status. This update does not declare Appendix B
-or whole-book completion; the original-action Schur proof is not yet
-published.
+or whole-book completion. The following update records the subsequent
+original-action Schur publication.
+
+## Appendix B.II original-action proof publication update, 2 November 2026
+
+Worker 709 directly verified original-action Schur proof
+`0abf4aa4-d0a9-45af-88f3-9d33ce29e245` as independently accepted and
+public. Its theorem
+[`Langlands.Renard.nonUnitalSchur`](../../Langlands/Algebra/NonUnitalSchurProof.md)
+proves exactly the published `NonUnitalSchurStatement.{uA,uM}` and
+packages all nine named components. The Lean/Markdown pair matches the
+frozen submission and admitted Library
+`545ccb3366b363dc0fe0a6d000b281a88d7c2407`.
+
+The target retains the source's nonunital complex algebra and original
+action, every stable additive subgroup and every additive original
+endomorphism. Simplicity supplies nonzero action and scalar linearity
+through the published reductions. Actual function-preserving
+endomorphism equivalences transfer the unital Schur results. The
+original orbit and centralizer evaluation give the rank comparisons
+with independent algebra and module universes. Both countability
+alternatives retain basis-cardinality rank at most `Cardinal.aleph0`
+and the canonical scalar algebra map; neither unitality nor finite
+dimension is assumed.
+
+Official machine receipt `88491735-d87b-4d58-be75-54856aaec3ca` passes
+Lake build, exact-target, unchanged-statement and frozen-input checks
+under `lean.proof@1`. Reviewer 8540 approved without qualifications in
+review `cd1363df-300a-4eef-8b14-49ac053d3793`; integration
+`7cb5075dab9843dcb2b1559c41b17223` published the proof at
+`cd11fff8febbab050837bbdac5d8d37b10233370`. Worker 751 authored the
+proof, reusing the simplicity reductions and Worker 972's unital Schur
+proofs; Workers 751 and 972 retain the focused task
+`77ae9ed4-e2d3-4cfe-bd3c-741f4082bdf9`. The
+[Appendix B progress note](appendix-b-progress.md) gives the component
+scope and evidence. This update changes only the B.II navigation row
+and the superseded publication remark above; it declares no Appendix B
+or whole-book completion.
 
 ## Reference and reading record
 
@@ -629,7 +665,7 @@ including definitions, remarks and unnumbered results.
 | A.IX | Categorical decompositions | 268 / 274 | Partial: [complete source-page map and six verified proof publications](category-decomposition-progress.md), with actual constructions and independent size hypotheses. Literal full-sum orthogonality specialization and source-sized applicability remain explicit; no section completion declared |
 | A.X | Categorical centres | 269 / 275 | [Source definition and published unital-module identification](category-center-progress.md), with exact scalar-action map and explicit carrier-size bound; nonunital and later Bernstein centers remain separate |
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |
-| B.II | Schur's lemma | 272 / 278 | Backlog |
+| B.II | Schur's lemma | 272 / 278 | Statement/proof covered: the [original-action Schur statements](../../Langlands/Algebra/NonUnitalSchurStatements.md) have the published exact aggregate `Langlands.Renard.nonUnitalSchur` and all nine [original-action component proofs](../../Langlands/Algebra/NonUnitalSchurProof.md), preserving all additive endomorphisms and both countable-rank alternatives (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital Schur core and actual-action simplicity reductions are also published |
 | B.III | Separation lemma | 273 / 279 | Statement/proof covered: the [original-action separation statements](../../Langlands/Algebra/NonUnitalSeparationStatements.md) are proved by the published [original one-sided resolvent](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md), [original simple quotient](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md) and [original separation and aggregate](../../Langlands/Algebra/NonUnitalSeparationProof.md) proofs (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital one-sided resolvent, [proper-principal-left-ideal](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md), [simple-left-quotient](../../Langlands/Algebra/LeftShiftSimpleQuotientProof.md) and [unital-separation](../../Langlands/Algebra/UnitalSeparationProof.md) proofs are also published |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
