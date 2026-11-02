@@ -10,7 +10,8 @@ namespace Langlands.Analytic.StrictTestDomain
 
 variable {K : Type u} [NormedField K] [IsUltrametricDist K]
 
-private theorem spectrum_comp {P Q R : PresentedStrictAffinoidAlgebra K}
+/-- Restriction along a composite is the composite of the restrictions. -/
+theorem comap_comp_apply {P Q R : PresentedStrictAffinoidAlgebra K}
     (i : BoundedAlgHom K P Q) (j : BoundedAlgHom K Q R) (x : BanachSpectrum R) :
     BanachSpectrum.comap (j.comp i).toBoundedRingHom x =
       BanachSpectrum.comap i.toBoundedRingHom
@@ -53,10 +54,10 @@ theorem Represents.postcomp_equiv {P Q Q' : PresentedStrictAffinoidAlgebra K}
     ext x
     constructor
     · rintro ⟨y, rfl⟩
-      exact ⟨e.spectrumHomeomorph y, (spectrum_comp i e.toBoundedAlgHom y).symm⟩
+      exact ⟨e.spectrumHomeomorph y, (comap_comp_apply i e.toBoundedAlgHom y).symm⟩
     · rintro ⟨y, rfl⟩
       obtain ⟨z, hz⟩ := e.spectrumHomeomorph.surjective y
-      exact ⟨z, (spectrum_comp i e.toBoundedAlgHom z).trans
+      exact ⟨z, (comap_comp_apply i e.toBoundedAlgHom z).trans
         (congrArg (BanachSpectrum.comap i.toBoundedRingHom) hz)⟩
   · intro R φ hφ
     obtain ⟨ψ, hψ, huniq⟩ := hi.2.2 R φ hφ
@@ -135,7 +136,7 @@ theorem represents_comp_inter (P Q R : PresentedStrictAffinoidAlgebra K)
   · ext x
     constructor
     · rintro ⟨z, rfl⟩
-      rw [spectrum_comp]
+      rw [comap_comp_apply]
       exact ⟨hi.hasImageIn _, hj.hasImageIn z⟩
     · intro hx
       obtain ⟨y, hy⟩ := hi.2.1.symm ▸ hx.1
@@ -144,14 +145,14 @@ theorem represents_comp_inter (P Q R : PresentedStrictAffinoidAlgebra K)
         rw [hy]
         exact hx.2
       obtain ⟨z, hz⟩ := hj.2.1.symm ▸ hyW
-      exact ⟨z, by rw [spectrum_comp, hz, hy]⟩
+      exact ⟨z, by rw [comap_comp_apply, hz, hy]⟩
   · intro S φ hφ
     obtain ⟨ψ, hψ, hψunique⟩ := hi.2.2 S φ (fun x => (hφ x).1)
     have hψimage : HasImageIn K ψ (BanachSpectrum.comap i.toBoundedRingHom ⁻¹' W) := by
       intro x
       change BanachSpectrum.comap i.toBoundedRingHom
         (BanachSpectrum.comap ψ.toBoundedRingHom x) ∈ W
-      rw [← spectrum_comp, hψ]
+      rw [← comap_comp_apply, hψ]
       exact (hφ x).2
     obtain ⟨χ, hχ, hχunique⟩ := hj.2.2 S ψ hψimage
     refine ⟨χ, ?_, ?_⟩

@@ -26,7 +26,7 @@ sheaf on intersections of chart opens, then applies connectedness.
    multiples of `localBasisSection`. The published coordinate Kronecker identity
    proves one inverse identity, and `localBasis_expansion` proves the other.
    Both maps preserve the scalar action of the section ring of `V`.
-2. `freeIsoOfRestrict` transports a free trivialization on the open subscheme
+2. The imported `Langlands.Scheme.Modules.freeOverIsoOfRestrict` transports a free trivialization on the open subscheme
    to the equivalent sheaf category on the over-site. `overlapDimension` applies
    `sectionBasis` to two trivializations on their intersection. A common point
    makes the intersection nonempty and its section ring nontrivial, by Mathlib's
@@ -80,7 +80,7 @@ arguments implemented here; they are not quotations of a Stacks theorem.
 The proof directly reuses the published canonical affine-chart comparison and
 finite coordinate expansion, and Mathlib's submersive-presentation basis,
 finite basis cardinality theorem and locally constant function theorem. The
-trivialization transport and basis reindexing follow the existing constructions
-in `Langlands.AlgebraicGeometry.SmoothDifferentialsFiniteLocalBasisRank`.
+trivialization transport is shared through `Modules.FixedRankLocalBases`; basis
+reindexing follows `Langlands.AlgebraicGeometry.SmoothDifferentialsFiniteLocalBasisRank`.
 It does not depend on a geometric reducedness, Picard, or downstream smoothness
 proof. The published target and its imported dependency closure are unchanged.

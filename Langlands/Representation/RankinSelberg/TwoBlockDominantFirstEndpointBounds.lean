@@ -13,9 +13,11 @@ universe uF uV
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance firstEndpointTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance firstEndpointValuation : ValuativeRel F.Carrier :=
+  F.canonicalTopologicalData.valuativeRel
+local instance firstEndpointLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
 
 variable {t r j k : ℕ} {m : Fin 2 → ℕ}

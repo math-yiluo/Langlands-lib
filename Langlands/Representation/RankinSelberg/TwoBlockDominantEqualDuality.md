@@ -63,8 +63,9 @@ are used throughout the p-adic specialization. The block carriers have an
 independent universe from the field. Only smoothness of the individual
 blocks is required for the fixed section equivalence; no irreducibility,
 nonzero functional, Whittaker-type or coefficient-image premise is needed
-for this Fourier law. The character may be trivial. A supplied self-dual
-additive Haar measure and an actual row Fourier pair are retained.
+for this Fourier law. The supplied character is continuous and nontrivial,
+as required by `UnitaryAdditiveCharacter`. A supplied self-dual additive Haar
+measure and an actual row Fourier pair are retained.
 
 This contribution does not establish ordinary Jacquet convergence,
 finite numerator assembly, parameter continuation, gamma certification or

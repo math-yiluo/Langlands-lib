@@ -13,7 +13,8 @@ actual closure, so their product lies there by the published section-subgroup
 theorem. The inverse image of the closure under the ambient multiplication is
 closed and contains all closed points, hence is the whole fibre square.
 
-A morphism from a reduced scheme whose range lies in a closed subscheme factors
+The public helper `exists_factor_closedImmersion_of_reduced` shows that a
+morphism from a reduced scheme whose range lies in a closed subscheme factors
 through that closed immersion: its base change is a surjective closed immersion
 into the reduced source and is therefore an isomorphism. Applying this
 factorization gives the required multiplication morphism.

@@ -13,7 +13,8 @@ universe u
 
 namespace Langlands.AbelianScheme.Tate
 
-private lemma exists_factor_closedImmersion_of_reduced
+/-- A map from a reduced scheme factors through a closed immersion containing its range. -/
+lemma exists_factor_closedImmersion_of_reduced
     {X Y Z : Scheme.{u}} [IsReduced X]
     (i : Y ⟶ Z) [IsClosedImmersion i] (g : X ⟶ Z)
     (h : Set.range g ⊆ Set.range i) :

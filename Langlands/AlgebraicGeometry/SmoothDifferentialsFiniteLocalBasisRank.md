@@ -13,22 +13,23 @@ universal derivation are unchanged.
 
 ## Implemented neighborhood assembly
 
-`localFreeIsoOfRestrict` converts a free trivialization of `M.restrict U.ι`
+The shared `Langlands.Scheme.Modules.freeOverIsoOfRestrict` from
+`Modules.FixedRankLocalBases` converts a free trivialization of `M.restrict U.ι`
 on the open subscheme into a free trivialization of `M.over U` on the
 site over `U`. It uses `Scheme.Modules.overEquiv`, `overFunctorEquiv`, the
 unit isomorphism of that equivalence, and `SheafOfModules.mapFreeIso`.
 The equivalence preserves coproducts and the structure module, so it preserves
 the free sheaf on the same index type.
 
-`generatorsOfRestrict` transports the free sheaf's generating sections along
-that isomorphism. Its canonical map from the free sheaf is an isomorphism.
-`generatorsOnCover` uses a neighborhood `U x` for each point `x` as a cover;
+The shared `freeNeighborhoodGenerators` transports the free sheaf's generating
+sections along that isomorphism. Its canonical map from the free sheaf is an
+isomorphism. It uses a neighborhood `U x` for each point `x` as a cover;
 `Opens.coversTop_iff` supplies the site covering condition. Its freeness and
 finite-type properties concern this one datum, preserving the identical basis
 index type at each point. `finiteLocalBases_of_neighborhoods` packages these
 facts, allowing the finite basis size to vary with the point.
 
-`fixedRank_of_neighborhoods` uses the same cover construction with index type
+The shared `isLocallyFreeOfRank_of_freeNeighborhoods` uses the same cover construction with index type
 `ULift (Fin n)` on every neighborhood. The equivalence `Equiv.ulift` supplies
 exactly the witness required by `Modules.IsLocallyFreeOfRank`. Empty schemes
 are covered by the empty point-indexed family. No rank uniqueness or global
@@ -73,8 +74,9 @@ quasi-coherence, or differential-rank premise remains in this theorem.
 
 The neighborhood assembly then proves both target clauses using the same
 finite local generating datum for freeness and finite type. The only public
-declaration added by this module is the exact-target theorem; all auxiliary
-constructions and lemmas are private.
+declaration added by this module is the exact-target theorem. The generic
+neighborhood assembly is imported from `Modules.FixedRankLocalBases`; the
+remaining auxiliary constructions and lemmas in this module are private.
 
 ## Source and provenance
 

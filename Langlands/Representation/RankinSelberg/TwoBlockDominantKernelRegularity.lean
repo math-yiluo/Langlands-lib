@@ -70,27 +70,36 @@ end Matrices
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : SecondCountableTopology F.Carrier :=
+local instance kernelRegularityTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance kernelRegularityValuation : ValuativeRel F.Carrier :=
+  F.canonicalTopologicalData.valuativeRel
+local instance kernelRegularityLocalField : IsNonarchimedeanLocalField F.Carrier :=
+  F.canonicalTopologicalData.localField
+local instance kernelRegularityT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance kernelRegularitySecondCountable : SecondCountableTopology F.Carrier :=
   F.canonicalTopologicalData.secondCountableTopology
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (a b : ℕ) : BorelSpace (Matrix (Fin a) (Fin b) F.Carrier) :=
+local instance kernelRegularityMeasurable : MeasurableSpace F.Carrier := borel _
+local instance kernelRegularityBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance kernelRegularityMatrixBorel (a b : ℕ) :
+    BorelSpace (Matrix (Fin a) (Fin b) F.Carrier) :=
   inferInstanceAs (BorelSpace (Fin a → Fin b → F.Carrier))
-local instance (a b : ℕ) : SecondCountableTopology (Matrix (Fin a) (Fin b) F.Carrier) :=
+local instance kernelRegularityMatrixSecondCountable (a b : ℕ) :
+    SecondCountableTopology (Matrix (Fin a) (Fin b) F.Carrier) :=
   inferInstanceAs (SecondCountableTopology (Fin a → Fin b → F.Carrier))
-local instance (m : Fin 2 → ℕ) (j k : ℕ) :
+local instance kernelRegularityRectanglesBorel (m : Fin 2 → ℕ) (j k : ℕ) :
     BorelSpace (Rectangles m j k F.Carrier) :=
   inferInstanceAs (BorelSpace (Matrix (Fin (m 0 + 1)) (Fin k) F.Carrier ×
     Matrix (Fin j) (Fin (m 1 + 1)) F.Carrier))
-local instance (n : ℕ) : MeasurableSpace (GeneralLinear n F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (GeneralLinear n F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : SecondCountableTopology (GeneralLinear n F.Carrier) :=
+local instance kernelRegularityGLMeasurable (n : ℕ) :
+    MeasurableSpace (GeneralLinear n F.Carrier) := borel _
+local instance kernelRegularityGLBorel (n : ℕ) :
+    BorelSpace (GeneralLinear n F.Carrier) := ⟨rfl⟩
+local instance kernelRegularityGLSecondCountable (n : ℕ) :
+    SecondCountableTopology (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearSecondCountableTopology n
-local instance (n : ℕ) : LocallyCompactSpace (GeneralLinear n F.Carrier) :=
+local instance kernelRegularityGLLocallyCompact (n : ℕ) :
+    LocallyCompactSpace (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearLocallyCompactSpace n
 
 variable {t r j k : ℕ} {m : Fin 2 → ℕ} {h : ∑ i, (m i + 1) = t + 1}

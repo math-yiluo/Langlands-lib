@@ -38,8 +38,8 @@ factors through `j`. Applying uniqueness first for `i`, then for `j`, proves
 uniqueness of the composite factor. No spectral injectivity is used.
 
 The helper `Represents.hasImageIn` obtains the image-inclusion condition from
-exact image equality. A private composition lemma verifies contravariance
-pointwise on seminorms. All constructions use actual bounded algebra maps and
+exact image equality. The public helper `comap_comp_apply` verifies
+contravariance pointwise on seminorms and is reused by rational restriction. All constructions use actual bounded algebra maps and
 the actual spectra, rather than abstract surrogate objects.
 
 These are derived universal-property arguments, not separately quoted results

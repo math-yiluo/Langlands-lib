@@ -1,6 +1,7 @@
 import Langlands.AlgebraicGeometry.SmoothConnectedRelativeDimensionStatement
 import Langlands.AlgebraicGeometry.RelativeDifferentialsAffineChart
 import Langlands.AlgebraicGeometry.ModuleDualLocalFree
+import Langlands.AlgebraicGeometry.Modules.FixedRankLocalBases
 import Mathlib.RingTheory.Smooth.StandardSmoothCotangent
 import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
 import Mathlib.Topology.LocallyConstant.Basic
@@ -57,16 +58,6 @@ private def sectionBasis {X : _root_.AlgebraicGeometry.Scheme.{u}}
         funext i
         exact (LocalHom.app (localBasisCoordinate e i) (homOfLE h)).hom.map_smul r x }
 
-private def freeIsoOfRestrict {X : _root_.AlgebraicGeometry.Scheme.{u}}
-    (M : X.Modules) (U : X.Opens) (I : Type u)
-    (e : M.restrict U.ι ≅ SheafOfModules.free (R := U.toScheme.ringCatSheaf) I) :
-    SheafOfModules.free (R := X.ringCatSheaf.over U) I ≅ M.over U :=
-  SheafOfModules.mapFreeIso (overEquiv U).inverse I
-      (U.sheafOfModulesEquivOverInverseUnit X.ringCatSheaf).symm ≪≫
-    (overEquiv U).inverse.mapIso e.symm ≪≫
-    (overEquiv U).inverse.mapIso ((overFunctorEquiv U).app M).symm ≪≫
-    ((overEquiv U).unitIso.app (M.over U)).symm
-
 private lemma overlapDimension {X : _root_.AlgebraicGeometry.Scheme.{u}}
     (M : X.Modules) (U V : X.Opens) (n m : ℕ)
     (eU : M.restrict U.ι ≅
@@ -76,8 +67,8 @@ private lemma overlapDimension {X : _root_.AlgebraicGeometry.Scheme.{u}}
     (x : X) (hxU : x ∈ U) (hxV : x ∈ V) : n = m := by
   let : Nonempty (U ⊓ V : X.Opens) := ⟨⟨x, hxU, hxV⟩⟩
   have h := mk_eq_mk_of_basis'
-    (sectionBasis M U _ (freeIsoOfRestrict M U _ eU) (U ⊓ V) inf_le_left)
-    (sectionBasis M V _ (freeIsoOfRestrict M V _ eV) (U ⊓ V) inf_le_right)
+    (sectionBasis M U _ (freeOverIsoOfRestrict M U _ eU) (U ⊓ V) inf_le_left)
+    (sectionBasis M V _ (freeOverIsoOfRestrict M V _ eV) (U ⊓ V) inf_le_right)
   simpa using h
 
 private lemma standardSmooth_dimension_basis {R A : Type u} [CommRing R] [CommRing A]
