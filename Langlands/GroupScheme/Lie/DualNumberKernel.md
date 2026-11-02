@@ -15,7 +15,9 @@ The arbitrary commutative base ring, arbitrary group scheme, and unrestricted
 commutative test algebras here are derived generalizations for these elementary
 kernel constructions. No affine or finite type hypothesis is needed for them.
 
-`Lie.affineMap` uses the actual contravariant spectrum map. `Lie.reduction`
+`Lie.AffinePoints` and `Lie.affineMap` are re-exported from the shared
+[AffinePoints](../AffinePoints.md) module, retaining the actual contravariant
+spectrum map and all original formulas. `Lie.reduction`
 uses `TrivSqZeroExt.fstHom`, and `Lie.constant` uses
 `TrivSqZeroExt.inlAlgHom`; reduction after the constant inclusion is proved to
 be the identity. `lieKernelMap` uses the published

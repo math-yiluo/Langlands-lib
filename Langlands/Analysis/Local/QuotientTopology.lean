@@ -15,30 +15,7 @@ universe uG
 
 variable {G : Type uG} [Group G]
 
-/-- The existing canonical projection from the group onto its left cosets. -/
-abbrev leftQuotientMap (H : Subgroup G) (g : G) : LeftQuotient H :=
-  Langlands.Induction.quotientMap H g
-
-@[simp] theorem leftQuotientMap_apply (H : Subgroup G) (g : G) :
-    leftQuotientMap H g = Quotient.mk (QuotientGroup.rightRel H) g := rfl
-
 variable [TopologicalSpace G] [IsTopologicalGroup G]
-
-/-- The projection to left cosets is an open quotient map. -/
-theorem leftQuotient_isOpenQuotientMap (H : Subgroup G) :
-    IsOpenQuotientMap (leftQuotientMap H) :=
-  MulAction.isOpenQuotientMap_quotientMk
-
-/-- Left cosets of a closed subgroup form a Hausdorff space. -/
-theorem leftQuotient_t2Space (H : Subgroup G) (hH : IsClosed (H : Set G)) :
-    T2Space (LeftQuotient H) := by
-  let : IsClosed (H : Set G) := hH
-  exact t2Space_quotient_mulAction_of_properSMul
-
-/-- The left quotient of a locally compact group is locally compact. -/
-theorem leftQuotient_locallyCompactSpace [LocallyCompactSpace G] (H : Subgroup G) :
-    LocallyCompactSpace (LeftQuotient H) :=
-  (leftQuotient_isOpenQuotientMap H).locallyCompactSpace
 
 /-- Every compact set of left cosets is the image of a compact set in the group. -/
 theorem leftQuotient_exists_isCompact_image [LocallyCompactSpace G]

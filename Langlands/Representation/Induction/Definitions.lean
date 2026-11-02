@@ -1,3 +1,4 @@
+import Langlands.Group.LeftQuotient
 import Langlands.Representation.Category.Basic
 import Langlands.Representation.Smooth.SmoothPart.Definitions
 import Langlands.Representation.Twist.Definitions
@@ -20,20 +21,6 @@ universe uR uG uV uW
 variable {R : Type uR} {G : Type uG} {V : Type uV} {W : Type uW}
 variable [CommRing R] [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
 variable [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W]
-
-/-- The quotient whose points are right cosets `P * g`, with the quotient topology. -/
-abbrev LeftQuotient (P : Subgroup G) := Quotient (QuotientGroup.rightRel P)
-
-/-- The projection to `P \ G`. -/
-def quotientMap (P : Subgroup G) (g : G) : LeftQuotient P :=
-  Quotient.mk _ g
-
-/-- Right multiplication on `P \ G`. -/
-def quotientRight (P : Subgroup G) (g : G) : LeftQuotient P → LeftQuotient P :=
-  Quotient.map' (fun x => x * g) (by
-    intro x y h
-    rw [QuotientGroup.rightRel_apply] at h ⊢
-    simpa [mul_inv_rev, mul_assoc] using h)
 
 private theorem continuous_quotientRight (P : Subgroup G) (g : G) :
     Continuous (quotientRight P g) :=

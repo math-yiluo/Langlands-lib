@@ -4,11 +4,9 @@ This internal supporting module transfers strong constituent relations to actual
 representations supplied by a caller. It does not prove individual-segment
 constituent existence or the juxtaposed case of Zelevinsky Proposition 4.6.
 
-The algebraic lemmas preserve the common, arbitrary carrier universe and the
-group universe. `IsIrreducibleHead.of_targetEquiv` transports a strong head through
-an actual equivalence of its target. The irreducibility proof is transported by
-the published equivalence-invariance lemma; composition with an injective
-equivalence leaves the quotient map's kernel unchanged.
+The generic target-transport lemma `IsIrreducibleHead.of_targetEquiv` is
+imported from [HeadTargetTransport](HeadTargetTransport.md), preserving its
+arbitrary group and common carrier universes.
 `IsIrreducibleHead.nonempty_equiv_of_quotient` identifies any irreducible
 quotient with the supplied strong head. The proof identifies both targets with
 the canonical head, using equality of their quotient kernels.

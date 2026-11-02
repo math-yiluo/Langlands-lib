@@ -24,6 +24,14 @@ diagonal of `G` as `e.inv`, followed by the diagonal of `F`, followed by
 the product isomorphism from `F × F` to `G × G`. Relative
 representability is invariant under composition with these isomorphisms.
 
+`relative_diag_of_iso` applies the same diagonal conjugation to any
+scheme-morphism property `P` that respects isomorphisms. Its hypothesis and
+conclusion include representability and `P` on every represented projection,
+not just representability of the two diagonals. It requires no composition
+or base-change stability of `P`: cancellation of the two isomorphisms for
+the relative property suffices. In particular it transports representability
+by immersions along the actual group-to-class Picard comparison.
+
 `exists_locallyFiniteType_atlas_of_iso` retains the actual source scheme
 `U` and composes its atlas transformation with `e.hom`. The published
 etale transport lemma and the surjective transport lemma above give the

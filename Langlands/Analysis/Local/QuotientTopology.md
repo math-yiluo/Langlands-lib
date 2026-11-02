@@ -1,33 +1,10 @@
 # Topology of the actual left-coset quotient
 
-Worker 113 proves topological prerequisites for quotient integration on the
-published `Langlands.QuotientIntegration.LeftQuotient H`, whose cosets are `H g`.
-The existing quotient and its topology are unchanged. The abbreviation
-`leftQuotientMap H` reuses `Langlands.Induction.quotientMap H` from
-`Langlands.Representation.Induction.Definitions`: it sends `g` to the class
-of `g` under `QuotientGroup.rightRel H`. This retains the analysis interface
-without a second implementation of the projection. The representative formula
-is definitional. The accompanying lemmas supply the topological API required
-for compactly supported averaging on this actual quotient.
-
-This is an internal derivation from pinned Mathlib. In
-`Mathlib/GroupTheory/Coset/Defs.lean`, `QuotientGroup.rightRel H` is defined as
-`MulAction.orbitRel H G` for the subgroup's left multiplication action. Thus
-`MulAction.isOpenQuotientMap_quotientMk` applies directly to the published
-quotient projection. Its `locallyCompactSpace` consequence proves local
-compactness when the ambient group is locally compact.
-
-For a closed subgroup, Mathlib's proper-action instances first show that the
-ambient group's action on itself is proper, then restrict it along the closed
-subgroup embedding. The theorem
-`t2Space_quotient_mulAction_of_properSMul` consequently proves Hausdorffness
-of the same orbit space. These facts come from
-`Mathlib/Topology/Algebra/ProperAction/Basic.lean`.
-
-No normality, countability, Haar measure or quotient-measure existence is
-assumed. Ambient Hausdorffness is not needed for these topological lemmas;
-they apply in particular under the locally compact Hausdorff hypotheses of
-the compatible-measure existence task. They do not construct a measure.
+The carrier, canonical projection, open quotient map, Hausdorffness and local
+compactness declarations are re-exported from
+[Group/LeftQuotient](../../Group/LeftQuotient.md). They retain the existing
+`Langlands.QuotientIntegration` names, hypotheses and proofs. Worker 113
+supplied these topology results and the compact lifting proof below.
 
 ## Compact lifting
 

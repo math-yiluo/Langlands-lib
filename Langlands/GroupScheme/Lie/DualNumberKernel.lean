@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.AffinePoints
 import Langlands.GroupScheme.GeneralLinearDualNumber
 
 /-! # Actual dual-number identity kernels of group schemes -/
@@ -15,30 +16,9 @@ namespace Lie
 
 variable {R : CommRingCat.{u}}
 
-/-- Points on an actual affine test algebra over the fixed base ring. -/
-abbrev AffinePoints (G : GroupScheme (Spec R))
-    (A : Type u) [CommRing A] [Algebra R A] :=
-  (algSpec R).obj (op (CommAlgCat.of R A)) ⟶ G.X
-
 variable (G : GroupScheme (Spec R))
 variable {A B C : Type u} [CommRing A] [Algebra R A]
   [CommRing B] [Algebra R B] [CommRing C] [Algebra R C]
-
-/-- An algebra map acts on points by precomposing its spectrum map. -/
-def affineMap (f : A →ₐ[R] B) : AffinePoints G A →* AffinePoints G B :=
-  (G.points.map ((algSpec R).map (CommAlgCat.ofHom f).op).op).hom
-
-@[simp] theorem affineMap_apply (f : A →ₐ[R] B) (x : AffinePoints G A) :
-    affineMap G f x = (algSpec R).map (CommAlgCat.ofHom f).op ≫ x := rfl
-
-@[simp] theorem affineMap_id (x : AffinePoints G A) :
-    affineMap G (AlgHom.id R A) x = x := by
-  simp [affineMap_apply]
-
-@[simp] theorem affineMap_comp (f : A →ₐ[R] B) (g : B →ₐ[R] C)
-    (x : AffinePoints G A) :
-    affineMap G (g.comp f) x = affineMap G g (affineMap G f x) := by
-  simp [affineMap_apply, ← Category.assoc, ← Functor.map_comp]
 
 /-- Reduction of actual dual-number points by the canonical projection. -/
 def reduction : AffinePoints G (DualNumber A) →* AffinePoints G A :=

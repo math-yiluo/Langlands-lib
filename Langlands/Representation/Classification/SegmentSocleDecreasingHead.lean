@@ -1,3 +1,4 @@
+import Langlands.Representation.Classification.HeadTargetTransport
 import Langlands.Representation.Classification.SegmentConstituentStatement
 import Langlands.Representation.Classification.CanonicalConstituents
 
@@ -14,19 +15,6 @@ variable {G : Type uG} [Group G]
   [AddCommGroup W] [Module ℂ W] [AddCommGroup W'] [Module ℂ W']
   {ρ : Representation ℂ G V} {π : Representation ℂ G W}
   {π' : Representation ℂ G W'}
-
-/-- A target equivalence preserves a strong irreducible head, including its
-uniqueness as a quotient object. -/
-theorem IsIrreducibleHead.of_targetEquiv (h : IsIrreducibleHead ρ π)
-    (e : π.Equiv π') : IsIrreducibleHead ρ π' := by
-  obtain ⟨hπ, q, hq, hu⟩ := h
-  refine ⟨(Weil.IsomorphismInvariance.irreducible_iff e).mp hπ,
-    e.toIntertwiningMap.comp q, e.surjective.comp hq, ?_⟩
-  intro W'' _ _ σ hσ q' hq'
-  rw [hu W'' σ hσ q' hq']
-  ext v
-  simp only [LinearMap.mem_ker]
-  exact (map_eq_zero_iff e e.injective).symm
 
 /-- Every actual irreducible quotient of a representation with a strong head is
 equivalent to that head. -/

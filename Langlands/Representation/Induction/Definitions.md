@@ -70,7 +70,10 @@ Worker 23's canonical category; the original induction construction remains
 Worker 15's work. The source references below continue to describe the same
 mathematical constructions.
 
-The support condition uses the quotient topology on `P \ G`, implemented by
+The generic `LeftQuotient`, `quotientMap` and `quotientRight` declarations
+are re-exported from [Group/LeftQuotient](../../Group/LeftQuotient.md), with
+their original names and formulas. The support condition uses the quotient
+topology on `P \ G`, implemented by
 `Quotient (QuotientGroup.rightRel P)`. Its equivalence relation is
 `x ~ y` iff `y*x^-1` belongs to `P`. It is not a quotient group unless `P`
 is normal. Compact induction requires the projected actual nonzero support

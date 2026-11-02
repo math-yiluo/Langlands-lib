@@ -1,3 +1,4 @@
+import Langlands.Group.LeftQuotient
 import Mathlib.GroupTheory.Coset.Defs
 import Mathlib.Topology.Algebra.Group.Quotient
 import Mathlib.Topology.Homeomorph.Quotient
@@ -24,45 +25,9 @@ universe uG uA
 
 variable {G : Type uG} [Group G]
 
-/-- Left cosets `H * g`, without any normality hypothesis on `H`. -/
-abbrev LeftQuotient (H : Subgroup G) := Quotient (QuotientGroup.rightRel H)
-
-/-- Descent of an actually left-invariant function. -/
-def descend (H : Subgroup G) {A : Sort uA} (f : G → A)
-    (hf : ∀ h : H, ∀ g, f (h.val * g) = f g) : LeftQuotient H → A :=
-  Quotient.lift f (by
-    intro g k hgk
-    let h : H := ⟨k * g⁻¹, QuotientGroup.rightRel_apply.mp hgk⟩
-    simpa [h, mul_assoc] using (hf h g).symm)
-
-@[simp] theorem descend_mk (H : Subgroup G) {A : Sort uA} (f : G → A)
-    (hf : ∀ h : H, ∀ g, f (h.val * g) = f g) (g : G) :
-    descend H f hf (Quotient.mk _ g) = f g := rfl
-
 section Topology
 
 variable [TopologicalSpace G] [IsTopologicalGroup G]
-
-/-- Right multiplication acts by homeomorphisms on the left coset space. -/
-def rightTranslate (H : Subgroup G) (g : G) : LeftQuotient H ≃ₜ LeftQuotient H :=
-  Homeomorph.Quotient.congr (Homeomorph.mulRight g) (by
-    intro x y
-    rw [QuotientGroup.rightRel_apply, QuotientGroup.rightRel_apply]
-    change y * x⁻¹ ∈ H ↔ (y * g) * (x * g)⁻¹ ∈ H
-    simp only [mul_inv_rev, mul_assoc, mul_inv_cancel_left])
-
-@[simp] theorem rightTranslate_mk (H : Subgroup G) (g x : G) :
-    rightTranslate H g (Quotient.mk _ x) = Quotient.mk _ (x * g) := rfl
-
-@[simp] theorem rightTranslate_one (H : Subgroup G) (q : LeftQuotient H) :
-    rightTranslate H 1 q = q := by
-  induction q using Quotient.inductionOn with
-  | h x => simp
-
-theorem rightTranslate_mul (H : Subgroup G) (g k : G) (q : LeftQuotient H) :
-    rightTranslate H k (rightTranslate H g q) = rightTranslate H (g * k) q := by
-  induction q using Quotient.inductionOn with
-  | h x => simp [mul_assoc]
 
 /-- There are no identifications in the quotient by the trivial subgroup. -/
 def trivialQuotientHomeomorph : LeftQuotient (⊥ : Subgroup G) ≃ₜ G :=

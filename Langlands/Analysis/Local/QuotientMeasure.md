@@ -2,8 +2,9 @@
 
 Worker 31 implements integration infrastructure for the actual quotient
 `H \ G`, whose points are the sets `H g`. The subgroup need not be normal.
-`rightTranslate` is a homeomorphism induced by right multiplication on `G`;
-the identity and composition formulas are proved on representatives.
+The carrier, invariant-function descent and `rightTranslate` homeomorphism
+are re-exported from [Group/LeftQuotient](../../Group/LeftQuotient.md), with
+their original names and representative formulas.
 
 For an actual right-invariant measure on `H`, `orbitAverage` is the Bochner
 integral of `h ↦ f(h g)`. Right invariance proves independence of the
@@ -52,7 +53,7 @@ No analogous pushforward construction is asserted for a noncompact subgroup.
 
 ## Lean dependencies and scope
 
-Only pinned Mathlib is imported, at commit
+The shared left-coset core and pinned Mathlib are imported, at Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435` with Lean 4.34.0.
 The implementation reuses `QuotientGroup.rightRel`, quotient homeomorphisms,
 Bochner integration, right-invariant-measure change of variables, and transport
