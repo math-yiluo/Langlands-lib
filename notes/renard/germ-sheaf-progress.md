@@ -1,6 +1,7 @@
-# Renard II.2.1–II.2.2: published descent and compact germ-section functors
+# Renard II.2.1–II.2.2: published germ universal property and compact-section functors
 
-Worker 6, 1 November 2026.
+Worker 6, 2 November 2026; incorporating Workers 1215 and 1227’s published
+proof and interface explanations.
 
 The initial four focused publications cover the stalk
 representative statements, locally represented germ groups and their maps,
@@ -12,7 +13,10 @@ canonical units, literal support carriers, and the relative-closedness
 statement and proof. Two further publications now supply corrected
 original-target descent and compact germ-section groups and morphism maps.
 A further publication supplies the fixed-open compact-section functors
-and natural inclusions. This note records their distinct scopes and updates the
+and natural inclusions. The latest statement and exact-proof publications
+establish the seven-part germ universal property and actual direct adjunction;
+a separate publication states the five-part canonical-unit identification on
+sheaves without proving it. This note records their distinct scopes and updates the
 [whole-book coverage ledger](coverage.md).
 
 The governing source is David Renard, *Représentations des groupes réductifs
@@ -166,8 +170,9 @@ Its lifted-source version applies `ULift.down` before that map. The direct
 unit has identity source only in `Presheaf.{u,max u v} B`; its relation to
 the lifted version uses the published up/down relift isomorphism.
 The original `v`-valued category and the germ category need not coincide.
-These constructions establish neither an adjunction nor a right adjoint
-to universe lifting.
+This unit construction alone supplies no adjunction. The later exact proof
+below constructs the direct germ adjunction at the joint value universe;
+no right adjoint to universe lifting is asserted.
 
 The support proof follows the printed local argument. At a zero stalk
 value, a local original representative has zero germ. The published
@@ -211,7 +216,8 @@ equations use the published units, and their pre/postcomposition and
 up/down relift laws use the actual morphisms. The complete declaration
 probe was recompiled at this update with zero errors and warnings,
 receipt `db7fcc6a-d59f-48e6-9fdd-dc55a53c4419`. These constructions
-do not yet supply universal uniqueness or an adjunction.
+supply the descent maps used in the later universal uniqueness and
+adjunction proof below.
 
 Worker 865 implemented [compact germ-section groups and maps](../../Langlands/Sheaf/Renard/CompactGermSections.md)
 from Worker 6's specification and compactness route.
@@ -280,17 +286,89 @@ this update: the source identifies a sheaf with its germ model before
 defining compact sections. The raw-presheaf functors are derived
 packaging and do not prove that original-section identification.
 
+## Germ universal property and sheaf-unit statements, 2 November 2026
+
+The following three candidates have unqualified independent approval,
+`accepted = true`, `public = true`, and published integrations. Their six
+frozen Lean/Markdown hashes agree with the workspace, Library
+`facdf46f0abfca9e85d49d3a35285c513a96d886` and the later Library
+`2c43e36f9ac408fcdef45d79d2ac3b56107609c2`. This supersedes the
+preceding publication boundary for the universal-property statements and
+proof. It does not turn the separate sheaf-unit statements into proofs.
+
+| Unit and policy | Candidate | Machine receipt | Independent review task and reviewer | Published integration |
+| --- | --- | --- | --- | --- |
+| Germ universal-property statements, `lean.statement@1` | `19f72959-aba6-4b4b-bd25-6804f388f8b6` | `0c87399c-c1d9-42d0-84cc-27d9a8eaf417` | `e03d7753-b655-40d8-b6b6-9f286d72adab`, Reviewer 8299 | `56e52dbcc5174cc580d313b68e4ecb27` at `e99c4aa2f6dad3b56082dd8d27ac931e2e18f130` |
+| Exact germ universal-property proof, `lean.proof@1` | `27e5b961-ce94-4e03-aaa7-401104ef15dd` | `2802ff33-4d0e-4055-81c4-d2fc3206d8a1` | `bdc2a68b-7014-44a6-83d3-2c26a5becae4`, Reviewer 8393 | `fee85d1e2bca481fb321267aeaf4b110` at `facdf46f0abfca9e85d49d3a35285c513a96d886` |
+| Canonical unit on sheaves, statements only, `lean.statement@1` | `2cb08a18-5821-4522-bb05-c9ce023185b4` | `e9f6e130-7a0d-47f3-bc6a-48867fdd3f25` | `4ce8fca4-9ab0-4411-9316-9517397be346`, Reviewer 8318 | `d6783b645c2f47f2b554e6685af92fb2` at `facdf46f0abfca9e85d49d3a35285c513a96d886` |
+
+The proof receipt passes Lake-build, exact-target, unchanged-statement
+and frozen-input checks. The two statement receipts pass their build
+and declaration-kind checks and prove none of their propositions.
+Worker 1215 authored the universal statement and proof, and Worker 1227
+the sheaf-unit statements, retaining Worker 6’s source audit and interface
+contributions. The complete independent reports were read.
+
+The [universal statements](../../Langlands/Sheaf/Renard/GermUniversalStatements.md)
+and [implemented proof](../../Langlands/Sheaf/Renard/GermUniversalProof.md)
+cover Renard’s proposition and its proof on printed pp.35–37 / PDF41–43.
+`germUniversal : GermUniversalStatement` proves all seven conjuncts:
+direct and lifted factorization with uniqueness, direct and lifted descent
+naturality, direct and lifted natural Hom equivalences, and the actual
+direct adjunction. These are propositions about the published germ
+functors, canonical units and literal descent maps.
+
+`germSheaf_hom_ext` first shows that local original-section germ families
+determine morphisms into a genuine target sheaf. Naturality compares
+restrictions on a contained representing basis neighborhood; equality
+detection in the target then gives equality of sections. This proves
+`germDesc_unique` and `liftedGermDesc_unique`. The actual equivalences
+`germHomEquiv` and `liftedGermHomEquiv` use unit precomposition as the
+forward map and literal descent as the inverse. Only a morphism between
+actual lifted presheaves is lowered in the arbitrary-original-universe
+case. Their two inverse laws and source/target naturality are proved.
+
+`germAdjunction` is constructed from the proved direct Hom equivalence
+by `Adjunction.mkOfHomEquiv`, which establishes both triangle identities.
+The implementation identifies its whole unit with `germSheafUnit`, its
+Hom family with `germHomEquiv`, and its counit with
+`germDesc (𝟙 G.obj)`. The direct adjunction is at original value universe
+`max u v`; the separate lifted Hom equivalence retains arbitrary original
+`v`. All supplied topologies, chosen bases, independent space/value
+universes and empty cases remain included. The source presheaf is
+arbitrary. The proof uses the corrected target-sheaf separation route,
+not the invalid source-section equality (II.2.1.3).
+
+Proof child `20fc5d71-9296-4277-af3a-f0243526b507` revision 1 is
+`done`, with closed declaration `ea6d2365-8a2e-4b80-a918-91c2c69865be`.
+Its six unchanged acceptance conditions are covered by the public exact
+proof and prerequisite statement; feedback was not required. This is
+closure of the focused universal-property child, not of II.2.1 or the
+parent book program.
+
+The first remark on printed p.37 / PDF43 identifies an original sheaf
+with its germ model by the canonical map. The new
+[sheaf-unit statement pair](../../Langlands/Sheaf/Renard/SheafGermUnitIsoStatements.md)
+expresses this separately as
+`RenardSheafGermUnitIsoStatement`. Its five parts assert bijectivity of
+`sectionGerms` on every basis open, invertibility of the lifted unit,
+a lifted natural isomorphism, invertibility of the direct unit, and a
+direct natural isomorphism. The natural isomorphisms’ forward maps are
+required to be the actual canonical units after forgetting, and their
+inverse maps the actual `liftedGermDesc` or `germDesc` of identity.
+These are Prop-valued declarations only. The lifted assertions apply
+at independent original `v`; the direct assertions use `max u v`.
+No proof of this aggregate is supplied by its statement publication or
+by the separate universal-property receipt.
+
 ## Remaining work and ownership
 
-Universal-property statement task
-`426f976c-c5ec-45bd-9465-216caebd724e` revision 1 is assigned to
-Worker 1215 and subscribed by the parent. It covers direct/lifted
-factorization uniqueness, explicitly characterized natural Hom
-equivalences, and the direct adjunction at value `max u v`.
-Task publication supplies no accepted statement or proof; the parent
-retains exact-proof routing after actual statement publication.
-Unit invertibility on sheaves and the basis/all-open equivalence
-retain separate statement and proof obligations.
+Canonical-unit invertibility and the specified natural isomorphisms on
+sheaves now have published statement coverage; their exact proof remains
+an obligation. The following source paragraph’s basis/all-open category
+equivalence retains separate construction, statement and proof obligations.
+The verified universal-property proof supersedes its earlier pending
+status; no duplicate universal-proof successor is needed.
 
 The fixed-open functor publication and child closure supersede the
 preceding pending-functor observation. Ordinary restriction to an

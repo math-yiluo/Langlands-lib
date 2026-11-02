@@ -105,7 +105,7 @@ and statement/proof publication evidence at Library
 navigation row; nonunital centers, A.IX and later Bernstein-center assertions
 retain separate obligations.
 
-## Chapter II publication update, 1 November 2026
+## Chapter II publication updates, 1–2 November 2026
 
 Worker 6 reread all of printed pp.30–32 / PDF36–38, II.1.1–II.1.3,
 and printed pp.33–38 / PDF39–44, through II.2.4 and the opening of
@@ -162,8 +162,11 @@ is independently accepted by Reviewer 7632 under review
 The source's inference from equal presheaf germs to equal original
 sections in (II.2.1.3) fails. The note supplies a normalized two-point
 counterexample and repairs the mathematical descent by separation in
-the target sheaf on smaller basis opens. Actual sheafification, its
-adjunction and basis extension remain construction and proof obligations.
+the target sheaf on smaller basis opens. At the time of that source audit,
+actual sheafification, its adjunction
+and basis extension remained construction and proof obligations. The
+later updates below record the germ construction and exact adjunction
+proof; basis extension as a category equivalence remains separate.
 
 After those publication checks, focused statement task
 `a7984773-0d52-453d-aaad-40c6f63b8fda` was published for the vector finite
@@ -249,13 +252,49 @@ is `done`, with closed declaration
 in Worker 633's completion feedback. This closes that focused
 construction child; original-section comparison remains separate.
 
-Universal-property statement task `426f976c-c5ec-45bd-9465-216caebd724e`
-revision 1 is assigned to Worker 1215; its statements and exact proofs
-remain publication obligations. It covers direct/lifted uniqueness,
-specified natural Hom equivalences and the direct adjunction at
-`max u v`. Unit invertibility, basis/all-open equivalence, original-section
+The 2 November update verifies the published universal-property statement
+`19f72959-aba6-4b4b-bd25-6804f388f8b6` and exact proof
+`27e5b961-ce94-4e03-aaa7-401104ef15dd`.
+`Langlands.Sheaf.Renard.germUniversal : GermUniversalStatement`
+proves all seven parts: direct/lifted uniqueness, direct/lifted descent
+naturality, specified direct/lifted natural Hom equivalences, and the
+actual direct adjunction at `max u v`. The implementation constructs
+`germHomEquiv`, `liftedGermHomEquiv` and `germAdjunction`, identifies the
+whole canonical unit and descent-of-identity counit, and uses separation
+only in the target sheaf. The source remains an arbitrary normalized
+presheaf; universes are independent and empty cases are included.
+
+The proof has machine receipt `2802ff33-4d0e-4055-81c4-d2fc3206d8a1`
+with Lake-build, exact-target, unchanged-statement and frozen-input checks,
+unqualified Reviewer 8393 approval in
+`bdc2a68b-7014-44a6-83d3-2c26a5becae4`, and published integration
+`fee85d1e2bca481fb321267aeaf4b110` at Library
+`facdf46f0abfca9e85d49d3a35285c513a96d886`. The focused proof child
+`20fc5d71-9296-4277-af3a-f0243526b507` revision 1 is `done`, with
+closed declaration `ea6d2365-8a2e-4b80-a918-91c2c69865be`.
+
+A separate accepted/public statement publication
+`2cb08a18-5821-4522-bb05-c9ce023185b4` supplies
+`Langlands.Sheaf.Renard.RenardSheafGermUnitIsoStatement` for the first
+remark on printed p.37 / PDF43. It states original-section bijectivity,
+lifted/direct unit invertibility and lifted/direct natural isomorphisms
+with the actual canonical units and descent-of-identity inverses.
+Its statement-policy receipt `e9f6e130-7a0d-47f3-bc6a-48867fdd3f25`,
+unqualified Reviewer 8318 approval in
+`4ce8fca4-9ab0-4411-9316-9517397be346` and published integration
+`d6783b645c2f47f2b554e6685af92fb2` establish statement coverage only.
+All six universal-statement/proof and unit-statement Lean/Markdown
+hashes match their frozen files, the workspace, that Library and the
+later Library `2c43e36f9ac408fcdef45d79d2ac3b56107609c2`.
+The [germ-sheaf progress note](germ-sheaf-progress.md) gives the complete
+statement evidence and implemented proof route.
+
+The universal-property statement and proof publication obligations are
+therefore discharged for that exact family. The exact sheaf-unit proof,
+basis/all-open category equivalence, remaining original-section
 comparisons, clopen zero extension, exhaustion and scalar-sheaf
-comparisons remain separate obligations.
+comparisons remain separate obligations. No section or parent completion
+is declared.
 
 For B.III, the internal proper-principal-left-ideal auxiliary is now
 independently accepted and public:
@@ -492,7 +531,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions, lifts/units, representative/separation proofs, support closedness, corrected descent and compact groups/maps/functors](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); universal property/adjunction, unit invertibility, category equivalence and later assertions remain separate |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions, representative/separation and support proofs, corrected descent, compact functors and the exact universal-property/adjunction proof](germ-sheaf-progress.md), plus the published sheaf-unit statements and [source-error audit](basis-sheafification-source.md); the exact sheaf-unit proof, basis/all-open category equivalence and later assertions remain separate |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |
