@@ -25,6 +25,17 @@ alone forces equality with the canonical smooth module on the original
 carrier, at independent space and module universes. Functor successors and
 the full categorical comparisons retain the boundaries stated there.
 
+The [Chapter V GL standard-parabolic comparison](standard-parabolic-progress.md),
+dated 2 November 2026, verifies the exact published proof
+`Langlands.GroupScheme.generalLinearStandardParabolic`, candidate
+`641d3523-75c2-41e2-8f87-0b8c2f82d109` at
+`7543113c99690e18b45f3b22d252e8cf77c3964e`. It proves the actual adjacent-root,
+all-test block-subgroup, canonical rational-point comap and unique block-indexing
+target over arbitrary fields and every natural rank. The general reductive
+assertions in source rows S09, S10 and S15, and the topology and representation
+adapters, retain separate obligations. Only the V.3 and V.4 navigation rows
+below are updated by this focused audit.
+
 The [small-projective and original-module progress note](category-module-progress.md)
 records selected verified publications and pending work checked on 30 October
 2026. It supplements, rather than revises, the initial reading and status rows
@@ -673,8 +684,8 @@ including definitions, remarks and unnumbered results.
 | IV.3 | Square-integrable representations | 99 / 105 | Backlog |
 | V opening / V.1 | External structural boundary and local fields | 103 / 109 | Partial assertion audit |
 | V.2 | Reductive groups and characters | 104 / 110 | Partial through opening of V.2.3 |
-| V.3 | Parabolic subgroups | 109 / 115 | Backlog |
-| V.4 | Weyl groups | 118 / 124 | Backlog |
+| V.3 | Parabolic subgroups | 109 / 115 | Partial: [published GL standard-parabolic comparison](standard-parabolic-progress.md) uses the V.3.8 convention and actual shared objects; general unique-Levi and conjugacy assertions remain separate |
+| V.4 | Weyl groups | 118 / 124 | Partial: [published GL simple-root, subgroup and block-indexing comparison](standard-parabolic-progress.md); the general V.4.2 classification, convexity and other Weyl-group assertions remain separate |
 | V.5 | Compact subgroups | 122 / 128 | Backlog |
 | VI opening | Representation theory of p-adic groups | 131 / 137 | Backlog |
 | VI.1 | Normalized parabolic functors | 134 / 140 | Backlog |
