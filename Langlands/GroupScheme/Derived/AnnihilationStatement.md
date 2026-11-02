@@ -7,7 +7,7 @@ neither a proof of annihilation nor a chosen representing scheme.
 The original source is J. S. Milne, *Algebraic Groups* (2017), Corollary 6.19(d),
 printed p.129 / PDF p.145, registered as `milne-2017-algebraic-groups`, SHA256
 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
-Its proof on printed p.130 / PDF p.146 uses the faithfully flat local commutator
+Its proof on printed p.129 / PDF p.145 uses the faithfully flat local commutator
 generation of 6.19(c). The character target is the specialization to the
 multiplicative group, written using the Library's additive character convention.
 The conjunction is an internal packaging of these two targets.
