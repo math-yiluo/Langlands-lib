@@ -113,16 +113,21 @@ and statement/proof publication evidence at Library
 navigation row; nonunital centers, A.IX and later Bernstein-center assertions
 retain separate obligations.
 
-The [A.IX decomposition and simple-support ledger](category-decomposition-progress.md),
-published 2 November 2026 by Worker 709, maps the whole source page,
-printed p.268 / PDF274, to actual constructions and six verified proof
-publications. The note itself is accepted and public as
+The [A.IX decomposition and simple-support ledger](category-decomposition-progress.md)
+maps the whole source page, printed p.268 / PDF274, to actual constructions
+and seven verified proof publications. Its original six-proof audit was
+published 2 November 2026 by Worker 709, accepted and public as
 `a98849b3-e022-460c-8cff-7f91c7ffd9b2`, Reviewer 8584, at Library
 `55dd7a1c2d88653ea7c0392d168c51d57b027190`.
-It records the independent universes, full supported-family smallness
-conditions and alternate subquotient proof route. The literal full-sum
-orthogonality specialization and source-sized applicability boundaries remain
-explicit. This updates only A.IX navigation and declares no section completion.
+The further exact proof `simpleSupportSumOrthogonality`,
+`db4b7a40-9bf9-48fe-a683-a6e44c218726`, is independently accepted by
+Reviewer 9017 and published at `a86e094aea00c92c9ca2ddee7f651cd64c00981d`.
+It proves zero intersection and canonical binary-biproduct monicity for
+the actual full supported sums, retaining both full-family smallness
+premises. The ledger records the independent universes, exact publication
+evidence and alternate subquotient proof route. Source-sized applicability
+and additional functor properties remain separate obligations. This updates
+only A.IX navigation and declares no section completion.
 
 ## Chapter II publication updates, 1–2 November 2026
 
@@ -690,7 +695,7 @@ including definitions, remarks and unnumbered results.
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
 | A.VIII | Specified functors | 265 / 271 | Backlog |
-| A.IX | Categorical decompositions | 268 / 274 | Partial: [complete source-page map and six verified proof publications](category-decomposition-progress.md), with actual constructions and independent size hypotheses. Literal full-sum orthogonality specialization and source-sized applicability remain explicit; no section completion declared |
+| A.IX | Categorical decompositions | 268 / 274 | Partial: [complete source-page map and seven verified proof publications](category-decomposition-progress.md), including literal full-sum zero intersection and canonical binary-biproduct monicity under both full-family smallness premises. Source-sized applicability and additional functor properties remain separate; no section completion declared |
 | A.X | Categorical centres | 269 / 275 | [Source definition and published unital-module identification](category-center-progress.md), with exact scalar-action map and explicit carrier-size bound; nonunital and later Bernstein centers remain separate |
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |
 | B.II | Schur's lemma | 272 / 278 | Statement/proof covered: the [original-action Schur statements](../../Langlands/Algebra/NonUnitalSchurStatements.md) have the published exact aggregate `Langlands.Renard.nonUnitalSchur` and all nine [original-action component proofs](../../Langlands/Algebra/NonUnitalSchurProof.md), preserving all additive endomorphisms and both countable-rank alternatives (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital Schur core and actual-action simplicity reductions are also published |
