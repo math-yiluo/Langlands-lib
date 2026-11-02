@@ -1,0 +1,3 @@
+# Scalar coordinates of unitary matrix entries
+
+This internal coordinate adapter chooses any basis of `E` over `F` and represents `E ⊗[F] R` in the corresponding base-changed basis. The coordinate map is injective, is linear over the right coefficient ring `R`, and commutes with every change of `F`-algebra coefficients. Applied to the unitary matrix coordinates on a test scheme, each coefficient is a global function and restricts naturally. These are derived tensor-product and basis identities used to reduce the dynamic orbit obstruction to ordinary Laurent polynomials; they introduce no extra hypothesis on the coefficient ring.

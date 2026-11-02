@@ -1,0 +1,11 @@
+# Dynamic subgroups and root images for quasi-split U(1,1)
+
+The theorem `Langlands.GroupScheme.QuasiSplitUnitary.dynamicStatement` proves the unchanged Library proposition `DynamicStatement` from `QuasiSplitUnitaryDynamicStatement.lean`. It identifies all six dynamic subgroup functors for the positive and negative hyperbolic cocharacters and both trace-zero root images on every test scheme.
+
+The proof combines two matrix criteria for each orbit condition. The necessary criteria in `QuasiSplitUnitaryOrbitNecessity` express entries of `E ⊗[F] Γ(T, ⊤)` in a basis of `E/F`. On affine test schemes the coefficients become Laurent polynomials: an extension across zero has no negative powers, a constant orbit has no nonzero powers, and identity limit fixes the equal-weight entries. Equality of scalar global sections can be checked on affine opens, giving the criteria for arbitrary test schemes. These arguments work over arbitrary coefficient rings, including rings with nilpotents.
+
+The sufficient criteria in `QuasiSplitUnitaryOrbitExtensions` explicitly multiply entries by nonnegative powers of the affine coordinate. On triangular matrices this scaling preserves the unitary equation and defines a unitary orbit extension. Its value at zero is the weight-block diagonal part. Scaling fixes block diagonal matrices, proving constancy of their orbits. Specializing the integral weight to `1` and `-1` gives the named upper and lower functors. The diagonal subgroup is the same for both signs.
+
+The root-image arguments in `QuasiSplitUnitaryRootImages` extract the surviving off-diagonal entry of a unitriangular unitary matrix. The corresponding entry of the unitary equation says that this entry plus its conjugate is zero. It therefore gives a point of the additive trace-zero module and reconstructs the original matrix by the root map. Conversely, each root map has the required unitriangular entries.
+
+This is an internal proof in the precise conventions and source provenance of the unchanged statement's Markdown and the imported unitary model. It imposes no characteristic restriction, does not divide by two, and includes non-reduced and non-affine test schemes. The helper results hold for every involution supplied by the existing quadratic-extension unitary construction; the final theorem retains exactly the statement's nonidentity hypothesis.

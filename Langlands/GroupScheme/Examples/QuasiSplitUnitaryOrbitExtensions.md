@@ -1,0 +1,7 @@
+# Polynomial extensions of hyperbolic unitary orbits
+
+This internal proof development scales entries by the nonnegative parts of their cocharacter weight differences. Scaling commutes with the antidiagonal adjoint, since that adjoint fixes the off-diagonal positions and swaps the two diagonal positions. On triangular matrices scaling preserves products, so it preserves the unitary equation. This yields explicit unitary polynomial orbit extensions and their zero values. These are direct derived matrix calculations in the source conventions of `QuasiSplitUnitaryDynamicStatement.md`.
+
+`unitaryWeightScale` constructs the scaled matrix as a unitary point. The point equivalence then turns it into `unitaryOrbitExtension` on `T × 𝔸¹`. Naturality of matrix coordinates and the scalar affine coordinate identifies its restriction to `T × 𝔾ₘ` with the conjugation orbit. Pulling back along zero gives `GeneralLinear.blockDiagonalPart`.
+
+The three sufficient criteria apply to arbitrary test schemes and every integer weight `m`: membership of the matrix coordinates in the block parabolic gives dynamic parabolic membership; the block unipotent condition makes the computed zero value the identity; and block diagonal matrices are fixed by scaling, giving centralizer membership. The elementary equality `blockLeviSubgroup_weights_neg_one` records that the two opposite hyperbolic weight lists have the same diagonal subgroup. No argument divides by two or assumes reducedness of global sections.
