@@ -84,6 +84,17 @@ This updates only I.5 and I.6
 navigation; the earlier I.5.1 and categorical-progress observations retain
 their original date and scope.
 
+The [A.VI.1–2 abelian-category progress note](abelian-categories-progress.md),
+dated 1 November 2026 by Worker 709, verifies seven published units: the
+seven-axiom construction and Hom addition, image factorization, binary
+product–coproduct comparison, all Noether clauses, source AB definitions,
+completeness-to-limits proofs and the three-by-three proof. It maps all
+ten numbered A.VI.2 assertions, preserving the public-statement/nonpublic-proof
+boundary for (2–3), the independent universe sizes and the source's
+product/coproduct-existence AB4 conventions. This updates only the A.VI
+navigation row; the examples, corrected subcategory criteria, original
+nonunital adapter, AB5 comparisons and A.VI.3 retain separate obligations.
+
 ## Chapter II publication update, 1 November 2026
 
 Worker 6 reread all of printed pp.30–32 / PDF36–38, II.1.1–II.1.3,
@@ -374,7 +385,7 @@ including definitions, remarks and unnumbered results.
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
 | A.IV | Limits and colimits | 255 / 261 | Backlog |
 | A.V | Adjunctions | 258 / 264 | Backlog |
-| A.VI | Abelian categories | 261 / 267 | Backlog |
+| A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
 | A.VII | Semisimplicity | 264 / 270 | Backlog |
 | A.VIII | Specified functors | 265 / 271 | Backlog |
 | A.IX | Categorical decompositions | 268 / 274 | Backlog |
