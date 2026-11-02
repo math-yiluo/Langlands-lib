@@ -59,23 +59,13 @@ to the reasoning of §4.5).
 
 ## Adapted code and attribution
 
-Two parts of this module reuse published Library code by other workers, who
+Two parts of this development reuse published Library code by other workers, who
 are coauthors of this submission.
 
-- The section "The members of a segment product" (`ofFn_multiset_eq_sum`,
-  `memberRefinement`, `memberFamily`, `memberFamily_sum`,
-  `memberRepresentatives`, `memberRepresentatives_represent`, the private
-  `memberRankIso`, `memberInducedIso` and `memberFamily_content`) is adapted
-  from the private helpers of the same names in
-  `Langlands/Representation/Classification/SegmentHeadProductCuspidalSupportProof.lean`
-  (lines 21–134 at Library commit `a9fde216`). That module is by Worker 328,
-  with a rank-transport pattern adapted from Worker 627 (its Markdown records
-  both). The proofs are unchanged. The changes are: the declarations are
-  public (except `memberRankIso`), `F` and `T` are implicit arguments (except
-  `T` in `memberRankIso`), and the
-  datum is `SegmentProductDatum.{uV, uF}` with representatives
-  `SupercuspidalRep.{uF, uV}`, instead of the carrier universe `max uF uV`.
-  The source helpers are private, so they cannot be imported.
+- The member-helper section is now in
+  [SegmentProductCuspidalMembers](SegmentProductCuspidalMembers.md), together
+  with its attribution to Workers 1070, 328 and 627. This module imports those
+  unchanged declarations.
 - `normalizedProductInducedMap_injective` is copied from the theorem of the
   same name in `Langlands/Representation/Classification/SegmentEdgeMaps.lean`
   (lines 127–137 at `a9fde216`), by Worker 890. The proof is unchanged. In
@@ -84,7 +74,7 @@ are coauthors of this submission.
   `Type uV`. It is copied rather than imported, which keeps `SegmentEdgeMaps`
   and its imports out of the import closure audited below.
 
-The rest of the three modules is by Worker 1070.
+The remaining embedding construction is by Worker 1070.
 
 ## Conventions
 
@@ -100,27 +90,9 @@ is a published segment-product datum: segments `Δ_j = d.segments j` and blocks
 
 ### The members of a segment product
 
-- `ofFn_multiset_eq_sum f`: the multiset of `List.ofFn f` is
-  `∑ i, {f i}`.
-- `memberRefinement d` (definition): the block refinement of `d.shape` that
-  splits block `j` uniformly into `(d.segments j).length` blocks of rank
-  `(d.segments j).rank`.
-- `memberFamily d` (definition): all members of all segments, in order. It is
-  indexed by the blocks of the flattened shape, and entry `(j, i)` is
-  `(d.segments j).member i`. `memberFamily_sum`: their ranks add up to `n`.
-- `memberRepresentatives d A` (definition): given supercuspidal representatives
-  `A j` of the bases of the segments, entry `(j, i)` is the published twist of
-  `A j` by `|det|^i`. `memberRepresentatives_represent`: if each `A j`
-  represents `(d.segments j).base`, then entry `(j, i)` represents
-  `(d.segments j).member i`.
-- `memberInducedIso d A`: the supercuspidal product of all members is
-  isomorphic to the normalized product over `d.shape` of the segment inductions
-  `T.segmentInduced (A j).obj (d.segments j).length _`, i.e. of
-  `A_j × ν A_j × ⋯ × ν^(m_j - 1) A_j` with `m_j = (d.segments j).length`. Proof: the published ordered regrouping
-  isomorphism `Parabolic.orderedProductRegrouping` (induction in stages),
-  followed by blockwise identifications.
-- `memberFamily_content d`: the multiset of `memberFamily d` is
-  `d.multisegment.cuspidalContent`.
+The member refinement, representatives, regrouping isomorphism and multiset
+identity are imported from [SegmentProductCuspidalMembers](SegmentProductCuspidalMembers.md).
+Their existing namespace, signatures and definitions are unchanged.
 
 ### The predicate and its properties
 

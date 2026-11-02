@@ -127,7 +127,7 @@ with the same short name.
 
 | Unit | Original and adapted short name | Source signature | Source proof or value |
 | --- | --- | --- | --- |
-| M304.023 | `mem_lowerRamificationGroup_iff` | 371–381 | 382 |
+| M304.023 | `mem_lowerRamificationGroup_iff` | 371–381 | 381 |
 | M304.024 | `mem_lowerRamificationGroup_nat_iff` | 385–394 | 394–395 |
 | M304.025 | `lowerRamificationGroup_antitone` | 398–402 | 402–404 |
 | M304.026 | `lowerRamificationGroup_normal` | 407–412 | 412–438 |

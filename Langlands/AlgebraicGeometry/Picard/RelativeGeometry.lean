@@ -17,6 +17,11 @@ variable {S X : Scheme.{u}}
 abbrev relativeSpace (f : X ⟶ S) : Over S ⥤ Scheme.{u} :=
   Over.pullback f ⋙ Over.forget X
 
+@[reassoc]
+lemma relativeSpace_map_snd (f : X ⟶ S) {T U : Over S} (h : T ⟶ U) :
+    (relativeSpace f).map h ≫ pullback.snd U.hom f = pullback.snd T.hom f :=
+  pullback.lift_snd _ _ _
+
 /-- The natural projection from `T ×_S X` to `T`. -/
 def relativeProjection (f : X ⟶ S) : relativeSpace f ⟶ Over.forget S where
   app T := pullback.fst T.hom f

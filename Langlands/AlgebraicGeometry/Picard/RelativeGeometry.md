@@ -17,6 +17,13 @@ component is a section of the corresponding base-changed structure morphism.
 Naturality is proved by equality of both projections into the fibre product;
 its equation is exactly the square needed when pulling back rigidifications.
 
+`relativeSpace_map_snd` states that the map induced by a morphism of
+`S`-schemes preserves the projection to `X`, including its `@[reassoc]`
+variant. It is the unchanged general projection identity moved from
+`RigidifiedClassesNoetherianApproximationReductionProof` to this common
+geometry module and renamed into the present namespace. The approximation
+proof and `RelativePointLifts` both reuse it.
+
 ## Provenance and scope
 
 This is derived categorical infrastructure for Edixhoven, van der Geer and

@@ -79,3 +79,7 @@ This unit does not construct local chart comparisons for a sheaf supplied only
 with local trivializations, identify any abelian scheme's Lie module after
 base change, or prove the Harris PEL determinant condition. Those geometric
 specializations remain separate obligations.
+
+The local decidable-equality and additive over-functor instances have explicit
+module-specific names to avoid generated-name collisions in combined imports.
+Their types and values are unchanged.

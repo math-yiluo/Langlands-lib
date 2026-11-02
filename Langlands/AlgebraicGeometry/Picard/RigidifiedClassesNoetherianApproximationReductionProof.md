@@ -105,3 +105,8 @@ and `i₂` identifying the relative pullbacks of `F` and `G` along `h` with the 
   `nonempty_iso_of_pullback` removes that pullback;
 - conversely, an isomorphism of the model families is pulled back along `spaceIso` and
   conjugated by `i₁` and `i₂`.
+
+The general `relativeSpace_map_snd` projection identity is now provided by
+[RelativeGeometry](RelativeGeometry.md) in namespace
+`Langlands.AlgebraicGeometry.Picard`. Its formula and proof are unchanged;
+this module uses the shared declaration.

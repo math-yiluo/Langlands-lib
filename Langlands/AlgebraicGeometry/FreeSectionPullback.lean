@@ -16,9 +16,9 @@ namespace Langlands.Scheme.Modules
 
 variable {X Y : AlgebraicGeometry.Scheme.{u}} {I : Type u} [Fintype I]
 
-local instance : DecidableEq I := Classical.decEq I
+local instance freeSectionPullbackDecidableEq : DecidableEq I := Classical.decEq I
 
-local instance (U : X.Opens) :
+local instance freeSectionPullbackOverFunctorAdditive (U : X.Opens) :
     (SheafOfModules.overFunctor X.ringCatSheaf U).Additive where
   map_add := by intros; rfl
 

@@ -89,23 +89,13 @@ Section `Algebra` restates the isomorphism with Mathlib's algebra tensor product
 `A B : CommRingCat.{u}` carry an instance `[Algebra A B]`, and `M : ModuleCat.{u} A`. Write
 `q := Spec.map (CommRingCat.ofHom (algebraMap A B))`.
 
-For `φ := CommRingCat.ofHom (algebraMap A B)` the scalar extension
-`(ModuleCat.extendScalars φ.hom).obj M` and the algebra tensor product `B ⊗[A] M` are different
-`B`-modules in Lean. The first uses the `A`-module structure on `B` obtained by restricting
-scalars along `φ.hom`. The second uses the `A`-module structure that comes from the `Algebra A B`
-instance. The two structures are equal only propositionally (`Algebra.smul_def`), so the two
-tensor products are not definitionally equal. The section therefore builds an explicit
-`B`-linear equivalence.
+The underlying tensor comparison is imported from
+[ExtendScalarsTensor](../../Algebra/ExtendScalarsTensor.md). Its two additive
+maps, `extendScalarsAlgebraEquiv`, `extendScalarsAlgebraIso` and the pure-tensor
+formula retain their published names and implementations in
+`Langlands.Scheme.Modules`. They identify scalar extension along
+`φ := CommRingCat.ofHom (algebraMap A B)` with `B ⊗[A] M`.
 
-- `extendScalarsToAlgebraTensor A B M` and `algebraTensorToExtendScalars A B M` are the two
-  additive maps `b ⊗ₜ m ↦ b ⊗ₜ m`. Each is built with `TensorProduct.liftAddHom`. The
-  `A`-balancedness condition is checked with `Algebra.smul_def` and `TensorProduct.smul_tmul`.
-- `extendScalarsAlgebraEquiv A B M` is the `B`-linear equivalence
-  `(extendScalars φ.hom).obj M ≃ₗ[B] B ⊗[A] M` with these two maps. `B`-linearity and both
-  inverse laws are proved by `TensorProduct.inductionOn`. On pure tensors they hold by `rfl`.
-- `extendScalarsAlgebraIso A B M` is the same equivalence as an isomorphism
-  `(extendScalars φ.hom).obj M ≅ ModuleCat.of B (B ⊗[A] M)` in `ModuleCat B`.
-  `extendScalarsAlgebraIso_hom_tmul` records `b ⊗ₜ[A, φ.hom] m ↦ b ⊗ₜ[A] m` by `rfl`.
 - `tildePullbackAlgebraIso A B M` is the composite isomorphism
   `tildePullbackIso φ M ≪≫ (tilde.functor B).mapIso (extendScalarsAlgebraIso A B M)`, of type
 
@@ -172,6 +162,7 @@ checked the draft in the approved environment, verified the source correspondenc
 prepared this submission.
 
 The local option `backward.isDefEq.respectTransparency false` permits elaboration across
-Mathlib's scheme-module wrappers. It adds no mathematical assumption. The module imports only
-`Mathlib.AlgebraicGeometry.Modules.Tilde`. It does not use relative differentials or
+Mathlib's scheme-module wrappers. It adds no mathematical assumption. The module imports
+`Mathlib.AlgebraicGeometry.Modules.Tilde` and the extracted pure algebra
+comparison `Langlands.Algebra.ExtendScalarsTensor`. It does not use relative differentials or
 differential base change, and it proves nothing about them.

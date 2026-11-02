@@ -45,7 +45,8 @@ value. Then `‖p_n / p_k‖ = t^(k-n)` with `k - n ≠ 0`, which contradicts `H
 
 `CompletedGaussLaurent K t` is Mathlib's metric completion of
 `GaussLaurent K t`. It inherits a complete `NormedCommRing` structure. The
-instance `completion_isUltrametricDist`, proved by density for every
+instance `completion_isUltrametricDist`, now imported unchanged from
+[UltrametricCompletion](../../../Analysis/UltrametricCompletion.md), proved by density for every
 ultrametric seminormed group, makes it ultrametric. The scalar map `ι` sends
 `a` to the class of `a T^0` and is isometric (`norm_ι`). The class `X` of
 `T^1` has norm `t` (`norm_X`).

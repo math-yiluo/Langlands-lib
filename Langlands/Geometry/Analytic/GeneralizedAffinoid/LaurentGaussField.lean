@@ -1,3 +1,4 @@
+import Langlands.Analysis.UltrametricCompletion
 import Mathlib.Algebra.MonoidAlgebra.Defs
 import Mathlib.Analysis.Normed.Module.Completion
 import Mathlib.Analysis.Normed.Ring.Units
@@ -277,18 +278,6 @@ theorem exists_dominant (H : ∀ (a : K) (n : ℤ), n ≠ 0 → ‖a‖ ≠ t ^ 
 end Norm
 
 end GaussLaurent
-
-/-- The metric completion of an ultrametric seminormed group is ultrametric. -/
-instance completion_isUltrametricDist {E : Type*} [SeminormedAddCommGroup E]
-    [IsUltrametricDist E] : IsUltrametricDist (UniformSpace.Completion E) :=
-  IsUltrametricDist.isUltrametricDist_of_forall_norm_add_le_max_norm fun x y =>
-    UniformSpace.Completion.induction_on₂ x y
-      (isClosed_le (continuous_norm.comp continuous_add)
-        ((continuous_norm.comp continuous_fst).max (continuous_norm.comp continuous_snd)))
-      fun a b => by
-        rw [← UniformSpace.Completion.coe_add, UniformSpace.Completion.norm_coe,
-          UniformSpace.Completion.norm_coe, UniformSpace.Completion.norm_coe]
-        exact IsUltrametricDist.norm_add_le_max a b
 
 /-- Ultrametric bound for a difference. -/
 theorem ultrametric_norm_sub_le_max {E : Type*} [SeminormedAddCommGroup E]

@@ -19,12 +19,14 @@ universe uF uW
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance sliceSpectralTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance sliceSpectralValuation : ValuativeRel F.Carrier :=
+  F.canonicalTopologicalData.valuativeRel
+local instance sliceSpectralLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
+local instance sliceSpectralMeasurable : MeasurableSpace F.Carrier := borel F.Carrier
+local instance sliceSpectralBorel : BorelSpace F.Carrier := ⟨rfl⟩
 
 variable {t r j k : ℕ} {m : Fin 2 → ℕ} {h : ∑ i, (m i+1) = t+1}
   {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]

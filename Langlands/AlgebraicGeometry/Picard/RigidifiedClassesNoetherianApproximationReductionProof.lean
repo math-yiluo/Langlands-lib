@@ -63,11 +63,6 @@ lemma relativeSpace_map_fst {T U : Over S} (h : T ⟶ U) :
   pullback.lift_fst _ _ _
 
 @[reassoc]
-lemma relativeSpace_map_snd {T U : Over S} (h : T ⟶ U) :
-    (relativeSpace f).map h ≫ pullback.snd U.hom f = pullback.snd T.hom f :=
-  pullback.lift_snd _ _ _
-
-@[reassoc]
 lemma relativeSection_fst (ε : S ⟶ X) (section_eq : ε ≫ f = 𝟙 S) (T : Over S) :
     (relativeSection f ε section_eq).app T ≫ pullback.fst T.hom f = 𝟙 T.left :=
   pullback.lift_fst _ _ _
@@ -189,12 +184,12 @@ lemma nonempty_iso_model (T' : Over S) (h : T' ⟶ Over.mk (𝟙 S))
       (relativeSpace A.X.hom).map h := by
     apply pullback.hom_ext
     · rw [Category.assoc, totalSpaceLift_fst, relativeSpace_map_fst, hh, pullback.condition]
-    · rw [Category.assoc, totalSpaceLift_snd, Category.comp_id, relativeSpace_map_snd]
+    · rw [Category.assoc, totalSpaceLift_snd, Category.comp_id, Langlands.AlgebraicGeometry.Picard.relativeSpace_map_snd]
   let h₀ : Over.mk (T'.hom ≫ b) ⟶ Over.mk (𝟙 S₀) := Over.homMk (T'.hom ≫ b)
   have hF₀ : (relativeSpace A₀.X.hom).map h₀ ≫
       pullback.snd (Over.mk (𝟙 S₀)).hom A₀.X.hom =
         pullback.snd (Over.mk (T'.hom ≫ b)).hom A₀.X.hom :=
-    relativeSpace_map_snd _ _
+    Langlands.AlgebraicGeometry.Picard.relativeSpace_map_snd _ _
   have hG₀ : h₀.left ≫ 𝟙 S₀ = T'.hom ≫ b := Category.comp_id _
   refine ⟨(pullbackPullbackIso (totalSpaceLift A) (𝟙 S) (pullback.snd T'.hom A.X.hom) T'.hom
       (totalSpaceLift_comm A) (snd_comm A T') hF (by rw [Category.comp_id, hh]) _ F).symm ≪≫
