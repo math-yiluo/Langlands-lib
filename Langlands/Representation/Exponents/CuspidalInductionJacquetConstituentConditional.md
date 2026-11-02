@@ -97,6 +97,9 @@ be an actual subquotient of the pull-back along `flattenedLeviEquiv F D R'` of
 
 ### Subquotients (section `Subquotient`)
 
+The first lemma retains its original public name and is now imported from
+[WeylBranchPiecesSubquotient](WeylBranchPiecesSubquotient.md); its statement and proof are unchanged.
+
 * `nonempty_equiv_of_isSubquotient hA hY h`: if `A` and `Y` are irreducible and
   `IsSubquotient A Y`, then `Nonempty (A.Equiv Y)`. The subrepresentation `U` is
   `⊥` or `⊤`. It is not `⊥`, since then the surjection onto the nonzero `Y`

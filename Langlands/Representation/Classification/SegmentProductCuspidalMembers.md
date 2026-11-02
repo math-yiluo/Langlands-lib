@@ -53,3 +53,7 @@ retained from their original companion:
   datum is `SegmentProductDatum.{uV, uF}` with representatives
   `SupercuspidalRep.{uF, uV}`, instead of the carrier universe `max uF uV`.
   The source helpers are private, so they cannot be imported.
+
+The generic `ofFn_multiset_eq_sum` declaration is imported from
+[MultisetOfFn](../../Algebra/MultisetOfFn.md), with its original name, statement
+and proof unchanged.

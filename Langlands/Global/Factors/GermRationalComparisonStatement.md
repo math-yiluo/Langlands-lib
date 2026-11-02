@@ -1,0 +1,7 @@
+# Identifying rational continuations from germ equality
+
+This internal derived target connects the finite functional-equation engine's punctured-germ equality to the existing `Langlands.RankinSelberg.HasRationalContinuation` relation. For an integer q greater than one, two supplied rational continuations of germ-equal complex functions are equal as rational functions. It does not assert existence of either continuation or of any local factor.
+
+Each continuation agrees with its function on a right half-plane and requires the reduced denominator to be nonzero there. Germ equality gives a punctured neighborhood at a real point strictly inside both half-planes. A real open interval on one side of that point supplies infinitely many parameters. Injectivity of the existing spectral point on the real axis gives infinitely many distinct evaluation points where both denominators are nonzero and the rational values agree. The Library's algebraic rational-function uniqueness theorem then applies.
+
+The target is an elementary internal consequence of the two existing interfaces, used to implement the passage from Henniart (1986), §4.3, formula (5), to a comparison of supplied rational local gamma certificates. It adds no representation-theoretic or analytic existence assertion. Meromorphy is not needed for this particular implication: the already defined `MeromorphicEq` relation itself is sufficient.

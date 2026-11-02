@@ -33,7 +33,7 @@ theorem affinePointEvaluation_injective [IsAffine G.X.left] (A : CommAlgCat.{u} 
 
 /-- The canonical topology is induced by the values of all global regular functions. -/
 instance affinePointsTopologicalSpace (A : CommAlgCat.{u} R) [TopologicalSpace A] :
-    TopologicalSpace (G.affinePoints A) :=
+    TopologicalSpace ((algSpec R).obj (op A) ⟶ G.X) :=
   TopologicalSpace.induced
     (fun x : G.affinePoints A => (G.affinePointEvaluation A x : _ → A)) inferInstance
 

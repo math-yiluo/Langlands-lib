@@ -87,3 +87,15 @@ proof `Langlands.Representation.Filtration.SimpleSubquotientFactorProof`, but
 here the graded pieces are not assumed simple. The two `IsGluedFrom` results
 then follow from the natural isomorphisms between the graded pieces and the
 permuted pieces.
+
+## Shared irreducible-subquotient lemma
+
+`Langlands.CuspidalInductionJacquetConstituent.nonempty_equiv_of_isSubquotient`
+states that an actual irreducible subquotient of an irreducible complex
+representation is equivalent to it. Its statement, proof and public name are
+relocated unchanged from
+[CuspidalInductionJacquetConstituentConditional](CuspidalInductionJacquetConstituentConditional.md).
+The subrepresentation is either bottom or top; the nonzero target excludes
+bottom, and Schur's lemma makes the resulting nonzero surjection an equivalence.
+This shared location also serves the product-Levi tensor proof without importing
+the conditional Jacquet theorem.

@@ -36,3 +36,7 @@ products, continuity of multiplication, the comparison with existing
 matrix topologies, and the adelic restricted-product description remain
 separate obligations. This unit asserts no reductive reduction or
 finite-volume theorem.
+
+The topology instance is indexed directly by the actual morphism carrier
+`(algSpec R).obj (op A) ⟶ G.X`, definitionally the shared `G.affinePoints A`.
+Its defining coordinate-evaluation map and induced topology are unchanged.

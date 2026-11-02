@@ -1,0 +1,9 @@
+# Scheme geometry of a represented local image
+
+Fix a scheme `S` in any universe `u`, schemes `D`, `B`, `W` over `S`, a presheaf `G`, and an etale transformation `c : h_D → G`. Suppose `p : G → h_B` is a monomorphism, `w : D → B` is locally of finite type, and `c ≫ p = h_w`. Let `A` be the fppf sheafified range of `c`. Given an actual natural isomorphism `e : h_W ≅ A.toFunctor`, `representedLocalImageGeometry` proves the predicate `RepresentedLocalImageGeometry c p w e`.
+
+That predicate records scheme morphisms `q : W → B` and `d : D → W`. Their Yoneda images agree respectively with `e.hom ≫ A.ι ≫ p` and the canonical map into `A` followed by the inverse representation. In particular `d ≫ q = w`. The map `q` is a monomorphism, locally of finite type, and locally quasi-finite. The map `d` is etale and surjective. No sheaf condition on `G`, compactness, affineness, or separatedness hypothesis is required.
+
+The proof uses full faithfulness of scheme Yoneda to construct both maps. The square expressing the canonical map `h_D → A` as the pullback along `e.hom` identifies its etale and surjective projections with `d`. The two canonical image-factorization identities prove `d ≫ q = w`. The image inclusion, representation isomorphism, and `p` make the Yoneda image of `q` monomorphic; faithfulness reflects this to schemes over `S`, and forgetting the slice preserves monomorphisms. Local finite type descends from `d ≫ q` along the surjective etale map `d` by the published source-descent theorem. Finally a scheme monomorphism is universally injective, so local finite type implies local quasi-finiteness by Mathlib.
+
+This is an internal adapter built from the published canonical etale-image atlas, scheme Yoneda, local finite type source descent, and Mathlib's morphism properties. It assumes the displayed image representation explicitly and does not assert its existence or the full schemehood theorem.

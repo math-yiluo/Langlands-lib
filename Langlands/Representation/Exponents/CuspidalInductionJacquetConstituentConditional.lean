@@ -29,37 +29,6 @@ section Subquotient
 variable {G : Type*} [Group G] {H : Type*} [Group H] {V W : Type*}
   [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]
 
-/-- An irreducible actual subquotient of an irreducible representation is
-equivalent to it. -/
-theorem nonempty_equiv_of_isSubquotient {A : Representation ℂ G V}
-    {Y : Representation ℂ G W} (hA : A.IsIrreducible) (hY : Y.IsIrreducible)
-    (h : IsSubquotient A Y) : Nonempty (A.Equiv Y) := by
-  obtain ⟨U, q, hq⟩ := h
-  have : Nontrivial W := IsSimpleModule.nontrivial (MonoidAlgebra ℂ G) Y.asModule
-  obtain ⟨y, hy⟩ := exists_ne (0 : W)
-  rcases eq_bot_or_eq_top U with rfl | rfl
-  · exfalso
-    obtain ⟨u, rfl⟩ := hq y
-    apply hy
-    have hu : u = 0 := Subtype.ext ((Submodule.mem_bot ℂ).1 u.property)
-    rw [hu, map_zero]
-  · let ι : A.IntertwiningMap (⊤ : Subrepresentation A).toRepresentation :=
-      { toLinearMap :=
-          { toFun := fun v => ⟨v, Submodule.mem_top⟩
-            map_add' := fun _ _ => rfl
-            map_smul' := fun _ _ => rfl }
-        isIntertwining' := fun _ => rfl }
-    let f := q.comp ι
-    have hf : Function.Surjective f := fun z => by
-      obtain ⟨u, hu⟩ := hq z
-      exact ⟨u.val, hu⟩
-    have hb : Function.Bijective f := by
-      refine (Representation.IsIrreducible.bijective_or_eq_zero f).resolve_right fun h0 => hy ?_
-      obtain ⟨v, hv⟩ := hf y
-      rw [← hv, h0]
-      rfl
-    exact ⟨f.ofBijective hb⟩
-
 /-- Subquotients may be tested after restriction along a group isomorphism. -/
 theorem isSubquotient_of_comp_equiv {A : Representation ℂ G V}
     {Y : Representation ℂ G W} (e : H ≃* G)

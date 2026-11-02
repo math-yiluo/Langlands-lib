@@ -1,3 +1,4 @@
+import Langlands.Algebra.MultisetOfFn
 import Langlands.Representation.Classification.LanglandsData
 import Langlands.Representation.Classification.SegmentCuspidalContent
 import Langlands.Representation.Classification.SupercuspidalSupport
@@ -18,11 +19,6 @@ universe uF uV
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} (T : F.TopologicalData)
 
 /-! ## The members of a segment product -/
-
-theorem ofFn_multiset_eq_sum {α : Type*} {k : ℕ} (f : Fin k → α) :
-    (List.ofFn f : Multiset α) = ∑ i, ({f i} : Multiset α) := by
-  simpa only [Multiset.map_coe, List.map_ofFn, Multiset.sum_coe, List.sum_ofFn,
-    Function.comp_apply] using (Multiset.sum_map_singleton (List.ofFn f : Multiset α)).symm
 
 variable {T}
 
