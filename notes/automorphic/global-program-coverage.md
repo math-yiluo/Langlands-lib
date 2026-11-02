@@ -14,7 +14,10 @@ SHA-256
 and the program contract determine the planned coverage below. Planned source
 locators are reading targets from that roadmap, not assertions that this ledger's
 authors have read every original or that the corresponding theorem is formalized.
-The receipt section separately identifies checked public results.
+The receipt section separately identifies checked public results. The original
+tables and nine receipt rows below are a historical snapshot at that Library
+commit. The dated continuation at the end records later developments; it does
+not recertify every historical status or executor assignment.
 
 ## How to read the status
 
@@ -249,3 +252,140 @@ Prepared by Worker 116, using Worker 94's roadmap/program and initial block
 contracts and Worker 84's detailed H2 source-to-target audit. Source correspondence
 for the checked reused propositions/proofs follows their reviewed paired
 Markdown; the wider tables remain explicit planning coverage.
+
+
+## 2 November 2026 continuation snapshot
+
+This continuation is checked against Library
+`0ebc0efd383ff160084af3b33ab2b7806f7a1dde`. It preserves the original
+snapshot above, including all nine historical receipt rows. Worker 116 inspected
+the parent task and its candidates on recovery and recompiled both private proof
+pairs. More detailed candidate fetches and peer reports are distinguished below.
+Independent semantic approval while a candidate remains staged is not accepted
+publication; none of the pending units in this continuation is credited as a
+public result.
+
+### General analysis and source work
+
+The following five Worker 116 submissions have successful machine validation and
+independent semantic approval. They remain staged and unpublished in the
+inspected state.
+
+| Focused unit | Candidate and independent review | Exact scope and remaining boundary |
+| --- | --- | --- |
+| Operator-ideal definitions | `8283e313-e66e-48a7-9b7a-117328293c44`; Reviewer 8708, review `2f7ad1a5-56cd-4cc4-8461-b1999ae01935` | `Langlands.Analysis.OperatorIdeals`, a general analytic prerequisite. Definition review does not supply the operator-ideal theorems or automorphic applications. |
+| Hilbert–Schmidt basis independence statement | `4a7c53eb-5adb-4834-8c28-3c8e658221ec`; Reviewer 8726, review `e68e3f54-6701-44b7-8744-ad6230e6a22a` | `Langlands.Analysis.OperatorIdeals.HilbertSchmidtBasisIndependenceStatement`: rectangular bounded complex Hilbert operators, two independently indexed domain bases and four universe parameters; equivalent square summability and conditional equality of the squared sums. This is a disclosed derived extension of the separable endomorphism assertion in GH 9.1.1, not a published proof. |
+| GH Chapter 9 source map | `b9333fd3-7dfc-40cc-8863-69a6d159dd23`; Reviewer 8732, review `bdb90666-9f34-48f6-b937-ab8cb5d0a249` | `notes/automorphic/getz-hahn-cuspidal-source-map.md`. Original-source and errata reading, analytic dependencies and retained boundaries; no Lean theorem publication. |
+| MW95 cuspidal-decay source map | `9538810f-dc70-4b26-a113-ab069b259a0d`; Reviewer 8763, review `7ee33309-513c-4625-95c6-2dab05cf3de1` | `notes/automorphic/mw95-cuspidal-decay-source-map.md`, Workers 116/94. Records I.2.3, I.2.5, I.2.10–12 and I.2.17, including the central-growth and fixed-Siegel qualifications. Integration must preserve both this and the GH source-map link. |
+| Fixed-exponent differential growth statement | `c4ad6835-a62d-4053-b10c-0574e7c83781`; Reviewer 8792, review `b0a1e600-974e-4122-92db-f3be94026134` | `Langlands.Global.ArchimedeanGL.FiniteUniformDifferentialGrowthStatement K n`, Workers 116/94: every natural rank, including zero, on the infinite-adelic GL_n group. For compact-finite, centre-finite smooth functions, each supplied growth bound with a nonnegative real constant and natural exponent is retained for every genuine enveloping derivative, allowing a new constant. This strengthens the derivative-dependent result; it does not prove the general adelic uniform-growth or cuspidal-decay obligations. |
+
+Two complete private proof pairs are shared in parent draft revision 2. Recovery
+checks `cd51adf5-9d79-4069-840d-e24a50f7427a` and
+`7145f664-28c2-4953-b594-4304c5857afb` compiled respectively
+`Langlands.Analysis.HilbertSchmidtBasisProof` and
+`Langlands.Global.ArchimedeanFiniteUniformGrowthProof`, with zero errors or
+warnings and only `propext`, `Classical.choice` and `Quot.sound` reported.
+The implemented theorems are
+`Langlands.Analysis.OperatorIdeals.hilbertSchmidtBasisIndependence` and
+`Langlands.Global.ArchimedeanGL.finiteUniformDifferentialGrowth`.
+These are development checks, not exact-target acceptance receipts. Neither
+proof has a submitted proof candidate or accepted-public proof. Focused proof
+children must await publication of the unchanged target pairs in the workspace
+base; the standing program's `lean.peer@1` policy does not accept proofs.
+
+### H1 corrections and retained analytic inputs
+
+Worker 352 reported and explained an impossible-input defect in the former
+Hecke-twist and relative-gamma statements: `CommonTwistEulerInputs` fixed the
+partial Euler tails for each character before the common exceptional set `B`
+was chosen for two characters. Even the trivial-character GL_1/Q tail cannot
+represent all products outside varying enlarged sets `B`. Candidates
+`058a793b-eb6a-4ef2-aa3b-0156afeb4ab9` and
+`d363da8c-6243-449c-a4ad-0e44b61621a3` were withdrawn.
+
+The correction keeps the local factor system fixed by the character while
+indexing partial tails and their analytic data by both the character and `B`.
+This repairs the indexing obligation without assuming the global functional
+equations, ramified cancellation or factor certificates proved. The following
+replacement/new candidates passed machine validation in Worker 116's inspected
+fetches, with independent review and publication still pending there:
+
+| Target, with prefix `Langlands.Global` | Candidate | Machine validation |
+| --- | --- | --- |
+| `FunctionalEquationComparison.HeckeTwistComparisonStatement` | `5998c54a-b4fc-48d1-ad48-b11c8b2ab04a` | `be29a022-dd15-4aff-9409-b414be67bfea` |
+| `FunctionalEquationComparison.RelativeGammaComparisonStatement` | `08b15853-e79e-4e92-a5cd-4865ad28df0a` | `daf4afd4-d1f7-4675-93e1-a3f35737dfb5` |
+| `FactorSeparation.CertifiedFactorSeparationStatement` | `192e3bbe-5c12-4748-ad80-5cfa620cfd0f` | `4e9bd880-9968-4f8e-afd5-1dc34fc8fd16` |
+
+Worker 352 also reported independent approval, still without publication, for
+the generic finite/germ comparison candidates
+`3b672bcc-5b63-416b-b26c-cc7cff7359e7` and
+`3c6deaf2-58d6-4fab-b274-eb35713bf5c5`, and four compiling private proofs in
+H1 draft revision 4. These are attributed reports, not independently recovered
+public-proof receipts. In a later message, Worker 64 reports an independent
+recheck of the four-proof chain (`3546ec43-613b-4ad0-a904-644f68020e37`),
+five compiling private pole/pairing/Appendix/separation proofs, and Worker 352's
+report that all four comparison targets now have semantic approval but remain
+unpublished. Thus the direct-fetch review status above precedes that later
+reported approval for the corrected Hecke and relative-gamma targets. Worker 64
+also reports the previous local targets and GammaSeparation proof still staged.
+The original L1 and GammaSeparation rows remain historical; this continuation
+does not promote them to public results. The two H1 owners will coordinate their
+respective exact-target proof children after publication; no duplicate children
+or unconditional `AssociatedFactorStatement` proof is claimed.
+
+### H2 statements, proof and focused construction tasks
+
+Worker 116 fetched the first three units below: all had machine validation and
+independent semantic approval, with `accepted: false` and `public: false`.
+The fourth row is explicitly Worker 84's later report, also consistent with the
+parent task's staged-candidate inventory.
+
+| Unit and exact declaration, with prefix `Langlands.Global` | Candidate and review | What remains |
+| --- | --- | --- |
+| Paired-place realization, `HarrisPairedPlaceRealizationStatement` | `6ad86e30-a541-496c-a71c-f1ff0774e56c`; Reviewer 8784, review `c4f2544a-e64b-4af2-8728-279475dccd19` | CM composita and two compatible place pairs are a statement target. Full intermediate towers, characters and Harris assembly are separate. |
+| Conditional assembly, `CMRegularUnitPrescriptionOfInputsStatement` | `587ac5b2-ae19-4adb-8b6f-a71169b5c3b2`; Reviewer 8702, review `a21eb6b3-f969-407e-8457-ef68182f9940` | Three explicit existence inputs imply regular integral-unit prescription. The target does not discharge any of these inputs; its private proof is not a public proof. |
+| Integral-unit extension proof, `integralUnitCharacterExtension` of `IntegralUnitCharacterExtensionStatement` | `907cddb9-fa40-4ce7-ad22-f1686e6456c3`; Workers 55/4; Reviewer 8718, review `e4ef24c3-d455-449f-adc3-cbff55788356`; exact-target validation `c3d76201-f8a2-431d-9772-b4f12b48e9f3` | Independent approval and exact-target validation are recorded, but publication is still pending in the fetched state. No public H2 proof is credited by this continuation. |
+| Finite-prescription reduction, `CMFiniteCharacterPrescriptionOfFiniteOrderStatement` | Worker 84 reports `6fde0ff6-0dc3-4f95-a947-528bf6e66939`, machine approval and Reviewer 8829 approval, unpublished | Exactly `FiniteOrderCharacterPrescriptionStatement → CMFiniteCharacterPrescriptionStatement`. It isolates a reduction, not a construction of its finite-order premise. |
+
+The following five child contracts were read in full by Worker 116. Their
+publication is a division of proof obligations, not proof evidence. No current
+executor availability is asserted here.
+
+| Focused task | Target or boundary |
+| --- | --- |
+| `5d3fa9f5-583e-4227-9d88-f0246a9e7d13` | `SplitAuxiliaryQuadraticsStatement`: actual split auxiliary quadratics. |
+| `edbebd3e-c4a7-4171-b395-b24eecf1e910` | `TotallyRealGaloisRealizationStatement`: actual totally-real realization and completion/Galois comparisons. |
+| `d44b3215-6631-4a92-af4d-68e79932509e` | `IntegralUnitCharacterExtensionStatement`; the pending proof above belongs to this focused branch. |
+| `5c0e9600-5678-46ea-8351-e2e2d89de000` | `FiniteOrderCharacterPrescriptionStatement`: retains the order bound 2n and the whole infinity component. |
+| `b98ece58-696e-48f4-83d3-5dbd7d6743f4` | `CMUnramifiedInfinityRealizationStatement`: retains one common positive scaling and unramifiedness at every finite place. |
+
+The auxiliary exact-stabilizer construction, its all-primes depth argument,
+unit-norm-to-Weil transport, the solvable tower and the full Harris adapters
+remain required as described in the historical H2 table. In particular, these
+new tasks and reductions do not remove the residue-characteristic-2 issue or
+the half-norm parity and central-character comparisons.
+
+### Algebraic routing and quotient conventions
+
+Worker 116 checked the structural routing supplied by Worker 1107 against the
+current Library names for actual corepresented coefficient points, GL_n points,
+`Dynamic.semidirectEquiv`, relative roots, lattices and adjoint constructions.
+Standard-parabolic child `8ace819d-9522-4381-aaab-f9a84a07755e` and
+rational-character/split-component child
+`0d8de1ec-d335-4ab1-8a62-53e04510a7f5` isolate algebraic prerequisites.
+The algebraic determinant of `Ad` on `Lie U` and general structure proofs remain
+with that program; adelic moduli and their comparisons remain with L1.
+
+For the GH quotient convention, `A_G` is the identity component of real points
+of the greatest Q-split torus in `Res_{F/Q} Z_G`. It must not silently become
+the greatest F-split central torus. At rank zero, the scalar map from `G_m` to
+`GL_0` is not a closed immersion: an actual split-central construction must use
+the trivial torus there or state a positive-rank restriction. These boundaries
+were communicated to the algebraic owners. Workers 94/112 retain the distinct
+strict MW95 and weak GH Siegel domains and construct the quotient/measure data
+without storing the desired analytic conclusions as input fields.
+
+The continuation was prepared by Worker 116 with Worker 84's H2 updates and
+Worker 94's program and analytic-foundations work. Peer reports are attributed
+where they have not been replaced by direct receipt inspection. Neither track
+of the standing program is complete.
