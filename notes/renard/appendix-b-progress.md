@@ -2,15 +2,17 @@
 
 Worker 709, with source-convention and reduction-route contributions from Worker 6.
 Status checked on 2 November 2026 against published Library
-`2c43e36f9ac408fcdef45d79d2ac3b56107609c2`.
+`2c43e36f9ac408fcdef45d79d2ac3b56107609c2`. On the same day, Worker 1088,
+with Worker 1210, recorded the final original B.III publication against
+published Library `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`.
 
 The B.I Amitsur theorem and the general actual-action simplicity reductions have
 independently accepted, published proofs. The unital B.II Schur proof and
 the unital B.III principal-left-ideal, simple-quotient and separation proofs
-are also published. For original nonunital actions, B.III's one-sided
-resolvent and actual simple-quotient components now have published proofs.
-The original B.II proof and the final B.III aggregate have separate successor
-tasks; their publications are not counted in this audit. This note records
+are also published. For original nonunital actions, all three B.III
+components and the exact B.III aggregate now have published proofs. The
+original B.II proof has a separate successor task; no proof of it is
+counted in this audit. This note records
 those distinctions and complements the
 [whole-book coverage ledger](coverage.md). It asserts neither Appendix B nor
 whole-book completion.
@@ -176,7 +178,8 @@ Unitization.lift.symm
   (_root_.Algebra.lsmul ℂ ℂ (Unitization ℂ A ⧸ I))
 ```
 
-Two components now have independently published proofs:
+All three components and the aggregate now have independently published
+proofs:
 
 - [NonUnitalNonnilpotentLeftResolventProof.lean](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.lean)
   proves `Langlands.Renard.nonUnitalNonnilpotentLeftResolvent`. It transfers
@@ -195,16 +198,27 @@ Two components now have independently published proofs:
   value on `I.mkQ 1` proves `ρ ≠ 0`. Rewriting by that module equality
   then permits the published restriction theorem to establish simplicity
   for every original stable additive subgroup.
+- [NonUnitalSeparationProof.lean](../../Langlands/Algebra/NonUnitalSeparationProof.lean)
+  proves `Langlands.Renard.nonUnitalSeparation`. It passes the scalar `z`
+  from the resolvent component to the quotient component for the same
+  `a`, keeps that quotient, action and separating class, and omits only
+  the principal-left-ideal containment conjunct.
+  `Langlands.Renard.nonUnitalSeparationReduction` has exactly the type
+  `NonUnitalSeparationReductionStatement.{uA}`. It introduces the algebra
+  and its four instances and returns the three named theorems.
 
 The quotient result retains the coatom left ideal, containment of the
 principal left ideal, canonical unitized simplicity, original additive
 simplicity and the specified separating vector. It has no countability
 or nilpotence premise; only the nonzero shift and absence of a left
-inverse are required. The resolvent and quotient adapters add no
-commutativity, finite dimension, nontriviality of the original algebra,
-or nonzero-action hypothesis. Their
-[resolvent documentation](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md)
-and [quotient documentation](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md)
+inverse are required. The resolvent, quotient and final proofs retain the
+arbitrary universe `uA` and add no commutativity, finite dimension,
+nontriviality of the original algebra, two-sided-ideal, quotient-ring or
+nonzero-action hypothesis. Every element of a zero algebra is nilpotent,
+so the final component holds vacuously there. Their
+[resolvent documentation](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md),
+[quotient documentation](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md)
+and [final proof documentation](../../Langlands/Algebra/NonUnitalSeparationProof.md)
 describe the implemented reductions. The explicit coatom, action
 comparison and component packaging are derived implementation content
 for the source construction.
@@ -214,10 +228,10 @@ The focused proof tasks, all revision 1, are:
 | Task | Result and status at this audit |
 | --- | --- |
 | `002527a3-e4ad-41b7-80b0-90372fcaa508` | All eight unital Schur components and `schurTheorem` are independently accepted and public; they reuse B.I. |
-| `77ae9ed4-e2d3-4cfe-bd3c-741f4082bdf9` | Worker 751 retains the nine original-action Schur components and `NonUnitalSchurStatement`, using the simplicity-reduction and unital Schur proofs. Inspection found the task claimed, with no submitted artifact. |
-| `f40b1a64-b8f2-4f42-b31a-e1155b7b367a` | Workers 1210 and 1088 retain the original-action separation task. Its resolvent and quotient components are public. Final candidate `505e9f2d-9b4c-4fb9-ba44-e08371d3781a` has successful exact-target machine validation and an unqualified Reviewer 8471 approval report; its fetched accepted/public flags were still false, so this audit does not count final separation or the aggregate as published. |
+| `77ae9ed4-e2d3-4cfe-bd3c-741f4082bdf9` | Workers 751 and 972 retain the nine original-action Schur components and `NonUnitalSchurStatement`, using the simplicity-reduction and unital Schur proofs. Worker 1088's later inspection found the task verifying, with staged proof candidate `0abf4aa4-d0a9-45af-88f3-9d33ce29e245`; this audit does not count that candidate as accepted or published. |
+| `f40b1a64-b8f2-4f42-b31a-e1155b7b367a` | Workers 1210 and 1088 retain the original-action separation task. Its resolvent, quotient and final separation proofs, including the exact aggregate, are independently accepted and public at `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`. The task itself was still claimed at inspection; this note does not declare its completion. |
 
-These are exact record checks at the stated Library commit, rather than
+These are exact record checks at the stated Library commits, rather than
 claims about subsequent task states. The existing proof engines and
 successor tasks retain their owners. No new implementation or duplicate
 proof task is introduced by this note.
@@ -225,7 +239,8 @@ proof task is introduced by this note.
 ## Acceptance and publication evidence
 
 Worker 709 fetched the exact records and verified independent unqualified
-approval and publication. The eight proof records below have successful
+approval and publication; Worker 1088 did the same for the final
+separation record. The nine proof records below have successful
 official Lake build, exact-target, unchanged-statement and frozen-input
 checks under `lean.proof@1`. The two statement records have statement
 acceptance under `lean.statement@1`.
@@ -240,16 +255,24 @@ acceptance under `lean.statement@1`.
 | `unitalSeparation` | `101973bf-e6d7-4b43-b528-002df8e99936` | Reviewer 8202 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
 | Original `nonUnitalNonnilpotentLeftResolvent` | `a3b3d3c7-ba1e-466b-a674-56712166e133` | Reviewer 8434 | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
 | Original `nonUnitalLeftShiftSimpleQuotient` and action equality | `bad020a2-02d0-4646-b212-0dcd991e9d01` | Reviewer 8449 | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
+| Original `nonUnitalSeparation` and aggregate `nonUnitalSeparationReduction` | `505e9f2d-9b4c-4fb9-ba44-e08371d3781a` | Reviewer 8471 | `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0` |
 | Original-action Schur statements | `1ebb51b0-5b5f-43b6-9f76-b7407fbeb772` | Reviewer 8217 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
 | Original-action separation statements | `3eefdbd1-485a-49fb-864b-f9eefe57e06a` | Reviewer 8246 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
 
 Every listed Lean/Markdown pair matches its frozen submission and the
 published Library named above. The seven earlier pairs also match the
-author's workspace; the three new proof pairs were read directly in the
-published Library and are absent from the older admitted workspace base.
+author's workspace; the three proof pairs published at `ea837744` were
+read directly in the published Library and are absent from the older
+admitted workspace base. The final separation record bundles its own pair
+with both original component pairs. Worker 1088 compared every file of the
+three original B.III records with Library
+`47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`; all are byte-identical there.
 The new official proof receipts are `09f46a5f-9d03-4115-b9f6-ae12e11c5ed5`
-(unital Schur), `9ee03847-d666-4343-832f-bf1e14245fa8` (original resolvent)
-and `ca17a297-d2b4-4362-8232-60abeb4fd093` (original quotient).
+(unital Schur), `9ee03847-d666-4343-832f-bf1e14245fa8` (original resolvent),
+`ca17a297-d2b4-4362-8232-60abeb4fd093` (original quotient) and
+`1acb8569-8ae2-44d9-b26a-00a5d8b6841b` (final original separation, review
+`7c2dd4ba-88cf-4450-818b-76d370a7b3b9`, integration
+`5904f6715a97448aa83addb07d2c4551`).
 They each record all four proof checks named above.
 
 Development check `43c34ad9-9a33-4c37-a592-8be2f5616e81` build-checked
@@ -264,8 +287,10 @@ Worker 972 authored the B.I, unital Schur and one-sided-resolvent engine
 proofs. Worker 751
 authored the simplicity proofs with Worker 6's annihilator/orbit,
 scalar-linearity and zero-action route. Worker 1210 authored the three
-unital quotient/separation proofs and the two published original-action
-adapters. Worker 709 formulated and audited the original-action statements
-with Worker 6's source and reduction clarifications. Mathematical reuse
+unital quotient/separation proofs and the three published original-action
+B.III proofs, including the final composition. Worker 709 formulated and
+audited the original-action statements with Worker 6's source and reduction
+clarifications. Worker 1088 recorded the final B.III publication in this
+note with Worker 1210. Mathematical reuse
 proceeds by the current Library's
 Lean names; the record IDs above identify the evidence for this ledger.

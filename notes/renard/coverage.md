@@ -361,6 +361,49 @@ nonnilpotence under unitization and restriction of the simple action.
 It remains a parent obligation under Worker 709's existing routing;
 this update does not declare Appendix B or whole-book completion.
 
+## Appendix B.III original-action proof publication update, 2 November 2026
+
+Worker 1088, with Worker 1210, verified three further proof publications
+at Library `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`. They prove the
+unchanged targets of the published
+[original-action separation statements](../../Langlands/Algebra/NonUnitalSeparationStatements.md)
+for an arbitrary nonunital complex algebra `A` in an arbitrary universe.
+This supersedes the two earlier statements that the original nonunital
+separation remains separate, or a parent obligation, under Worker 709's
+routing. The
+[Appendix B progress note](appendix-b-progress.md) records the route,
+scope, focused-task status and authorship.
+
+| Exact public theorem and target | Meaning and scope |
+| --- | --- |
+| [`Langlands.Renard.nonUnitalNonnilpotentLeftResolvent`](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md), proving `NonUnitalNonnilpotentLeftResolventStatement A` | If `Module.rank ℂ A ≤ Cardinal.aleph0` and `a` is not nilpotent for original positive products, some `z ≠ 0` makes `Unitization.inr a - algebraMap ℂ (Unitization ℂ A) z` have no left inverse in the actual unitization. The published rank and nilpotence comparisons transfer both premises before the one-sided resolvent theorem is applied. |
+| [`Langlands.Renard.nonUnitalLeftShiftSimpleQuotient`](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md), proving `NonUnitalLeftShiftSimpleQuotientStatement A` | For such a shift with `z ≠ 0`, an actual coatom left ideal `I` of `Unitization ℂ A` contains its span. The quotient is a simple unitized module and, under the specified restricted action `Unitization.lift.symm (Algebra.lsmul ℂ ℂ _)`, is nontrivial and simple for every stable additive subgroup, with `a • I.mkQ 1 ≠ 0`. No rank or nilpotence premise is used. The adapter `Langlands.Renard.unitizationQuotient_module_eq` identifies the reconstructed module with the canonical quotient action; the proof derives the nonzero action. |
+| [`Langlands.Renard.nonUnitalSeparation`](../../Langlands/Algebra/NonUnitalSeparationProof.md) and `Langlands.Renard.nonUnitalSeparationReduction`, proving `NonUnitalSeparationStatement A` and the closed `NonUnitalSeparationReductionStatement.{uA}` | Under the rank bound, every originally nonnilpotent `a` moves the class of `1` in such a simple quotient. The proof composes the two preceding theorems for the same `a` and `z`, dropping only the span conjunct. The aggregate introduces the algebra and its four instances and returns all three components. |
+
+| Unit | Candidate | Exact-target machine receipt | Independent review | Published integration |
+| --- | --- | --- | --- | --- |
+| Original one-sided resolvent | `a3b3d3c7-ba1e-466b-a674-56712166e133` | `9ee03847-d666-4343-832f-bf1e14245fa8` | `7a4249d0-c526-4224-b8fe-8586deb55098`, Reviewer 8434 | `d76d942404714faea997509c1fd00379` |
+| Original simple quotient | `bad020a2-02d0-4646-b212-0dcd991e9d01` | `ca17a297-d2b4-4362-8232-60abeb4fd093` | `fbb304c1-2ea0-4898-a0ba-66f5b67a1b61`, Reviewer 8449 | `0d969de813cd48ce8f95cecb66c1fe08` |
+| Original separation and aggregate | `505e9f2d-9b4c-4fb9-ba44-e08371d3781a` | `1acb8569-8ae2-44d9-b26a-00a5d8b6841b` | `7c2dd4ba-88cf-4450-818b-76d370a7b3b9`, Reviewer 8471 | `5904f6715a97448aa83addb07d2c4551` |
+
+All three receipts pass Lake build, exact-target, unchanged-statement and
+frozen-input checks, and all three approvals are unqualified. The first
+two units were published at `ea837744ab4d479cb0fa59426ead2c2dec4a2f67`.
+The aggregate candidate bundles both component pairs byte for byte. Worker
+1088 compared every frozen pair with its published copy at the Library
+above. No unitality, nontriviality, commutativity, finite-dimensionality,
+nonzero-action or two-sided-ideal premise is added. The zero algebra is
+allowed; its final component holds vacuously.
+
+B.III, printed p.273 / PDF279, consists of this lemma and its proof.
+Its source correspondence was checked by the statement review of
+`3eefdbd1-485a-49fb-864b-f9eefe57e06a` (Reviewer 8246) and again by
+Reviewer 8471, who read B.III, the module conventions, A.VI.3 and the
+older-edition erratum. The B.III row below therefore uses the
+`Statement/proof covered` status. This update does not declare Appendix B
+or whole-book completion; the original-action Schur proof is not yet
+published.
+
 ## Reference and reading record
 
 The governing reference is David Renard, *Représentations des groupes réductifs
@@ -576,7 +619,7 @@ including definitions, remarks and unnumbered results.
 | A.X | Categorical centres | 269 / 275 | [Source definition and published unital-module identification](category-center-progress.md), with exact scalar-action map and explicit carrier-size bound; nonunital and later Bernstein centers remain separate |
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |
 | B.II | Schur's lemma | 272 / 278 | Backlog |
-| B.III | Separation lemma | 273 / 279 | Partial: published one-sided resolvent, [proper-principal-left-ideal](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md), [simple-left-quotient](../../Langlands/Algebra/LeftShiftSimpleQuotientProof.md) and [unital-separation](../../Langlands/Algebra/UnitalSeparationProof.md) proofs; original nonunital-action reduction remains separate under Worker 709's routing |
+| B.III | Separation lemma | 273 / 279 | Statement/proof covered: the [original-action separation statements](../../Langlands/Algebra/NonUnitalSeparationStatements.md) are proved by the published [original one-sided resolvent](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md), [original simple quotient](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md) and [original separation and aggregate](../../Langlands/Algebra/NonUnitalSeparationProof.md) proofs (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital one-sided resolvent, [proper-principal-left-ideal](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md), [simple-left-quotient](../../Langlands/Algebra/LeftShiftSimpleQuotientProof.md) and [unital-separation](../../Langlands/Algebra/UnitalSeparationProof.md) proofs are also published |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; complete passage ledger with explicit source-route packaging boundaries](integer-lattice-coefficients.md). No section completion declared |
