@@ -15,7 +15,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
-- [KP Bruhat–Tits: Bundles A–B source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected metric, dynamic, quotient and initial construction/descent targets, with the ten-axiom certificate map, Chapter 7 AS5 hypothesis and open publication boundaries.
+- [KP Bruhat–Tits: Bundles A–C source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected foundation and construction targets, Cartan/Iwasawa and Iwahori–Weyl indexing, narrow Kottwitz interfaces and the remaining construction and publication boundaries.
 
 - [Valued-field amalgamation: tensor sources and proof route](../notes/analytic/valued-field-amalgamation-sources.md) — Original tensor estimates covering trivial valuations, the derived common-field route, and the remaining full-universe Lean obligations.
 - [Relative Picard representability: source and construction boundaries](../notes/abelian-schemes/relative-picard-source-map.md) — Faltings–Chai's unrestricted algebraic-space route, Lan and EVM conventions, and the remaining actual-family comparisons.
