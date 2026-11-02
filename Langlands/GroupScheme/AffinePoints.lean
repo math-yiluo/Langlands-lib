@@ -52,7 +52,7 @@ abbrev affinePointFunctor : CommAlgCat.{u} R ⥤ GrpCat.{u} :=
 
 /-- Actual scheme points with coefficients in an algebra over the base. -/
 abbrev affinePoints (A : CommAlgCat.{u} R) :=
-  Lie.AffinePoints G A
+  (algSpec R).obj (op A) ⟶ G.X
 
 /-- Extension of coefficients is pullback along the actual spectrum map. -/
 def affinePointMap {A B : CommAlgCat.{u} R} (f : A ⟶ B) :

@@ -32,7 +32,8 @@ private theorem affineRingPointEquiv_changeRing
   rw [Spec.preimage_comp, Spec.preimage_map, CommRingCat.hom_comp]
   rfl
 
-private theorem affineSchemePointEquiv_changeRing
+/-- The affine coordinate equivalence respects change of coefficient algebra. -/
+theorem affineSchemePointEquiv_changeRing
     (X : Over (Spec (CommRingCat.of C))) [IsAffine X.left]
     (S T : Type u) [CommRing S] [CommRing T] [Algebra C S] [Algebra C T]
     (f : S →ₐ[C] T) (p : RingPoint C X S) :

@@ -15,13 +15,6 @@ open IsLocalRing CategoryTheory
 variable {R : Type u} [CommRing R] [IsLocalRing R]
 variable {ι : Type v} [Fintype ι] [LinearOrder ι]
 
-omit [IsLocalRing R] [Fintype ι] in
-lemma koszulSign_mul_self (s : Finset ι) (i : ι) :
-    koszulSign R s i * koszulSign R s i = 1 := by
-  unfold koszulSign
-  rw [← mul_pow]
-  simp
-
 /-- Cotangent independence makes the Koszul differential detect the maximal
 ideal multiple from membership in its square. -/
 theorem finiteKoszulDifferential_detect

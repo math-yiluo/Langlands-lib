@@ -64,7 +64,8 @@ private lemma core_eqToHom {C : Type*} [Category* C] {A B : Core C} (e : A = B) 
   cases e
   rfl
 
-private def corePseudofunctor {C : Type*} [Category* C]
+/-- Take the core of each category and functor, preserving pseudofunctor coherence. -/
+def corePseudofunctor {C : Type*} [Category* C]
     (F : LocallyDiscrete C ⥤ᵖ Cat) : LocallyDiscrete C ⥤ᵖ Cat :=
   LocallyDiscrete.mkPseudofunctor
     (fun T ↦ Cat.of (Core (F.obj (.mk T))))

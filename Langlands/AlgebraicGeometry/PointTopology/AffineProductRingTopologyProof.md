@@ -24,8 +24,10 @@ ring homomorphisms this is precisely the fully faithful spectrum functor's
 identity `Spec.preimage_comp`, followed by `Spec.preimage_map`. Passing
 through the canonical isomorphism of an affine scheme with the spectrum of
 its actual global-section algebra preserves this naturality, by
-associativity of actual morphisms over `Spec C`. Both lemmas are private
-proof helpers.
+associativity of actual morphisms over `Spec C`. The first lemma is private;
+`affineSchemePointEquiv_changeRing` is shared with
+[AffineSchemeCoefficientProofs](AffineSchemeCoefficientProofs.md), using
+the same proof and mathematical statement.
 
 The private algebra-point homeomorphism sends an algebra map into the
 product to the family of its compositions with the coordinate projections

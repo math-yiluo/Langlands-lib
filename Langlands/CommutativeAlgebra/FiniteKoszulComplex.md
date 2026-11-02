@@ -7,6 +7,11 @@ otherwise is `(-1)` to the number of elements of `s` less than `i`, times `a i`.
 The ambient module has a coordinate for every subset. The differential at `s`
 sums the coefficients times the coordinates of `insert i s`.
 
+`koszulSign_mul_self` is the shared sign-square identity over an arbitrary
+commutative ring and linearly ordered index type. Its declaration and proof
+are moved unchanged from the residue-field projective-dimension lower-bound
+module, so both that proof and the generator homotopies reuse it.
+
 Adjoining two distinct indices in the two possible orders gives opposite
 coefficients, since exactly one insertion changes the parity of the second
 sign. Repeated indices give zero. A finite-sum involution swapping the two

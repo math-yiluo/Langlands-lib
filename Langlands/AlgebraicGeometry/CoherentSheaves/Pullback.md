@@ -41,10 +41,11 @@ composition oriented from iterated pullback to pullback of the composite.
 
 To pass to groupoids, private general helpers first translate the three
 coherence laws of any locally discrete, category-valued pseudofunctor into
-ordinary natural-transformation equations. They use the existing
+ordinary natural-transformation equations. The core construction is also
+reused by [Picard/CoherentFamilyComparison](../Picard/CoherentFamilyComparison.md). They use the existing
 `map₂_associator`, `map₂_left_unitor` and `map₂_right_unitor` laws and identify
 the image of an equality 2-morphism with an equality natural transformation.
-The private `corePseudofunctor` uses the cores of the categories and functors,
+The shared `corePseudofunctor` uses the cores of the categories and functors,
 and the cores of their comparison natural isomorphisms. Its associativity
 and two unit laws follow by extensionality on natural-transformation
 components and core morphisms, applying the three translated equations to

@@ -19,6 +19,12 @@ variable {ι : Type v} [LinearOrder ι]
 def koszulSign (R : Type u) [CommRing R] (s : Finset ι) (i : ι) : R :=
   (-1) ^ (s.filter (· < i)).card
 
+lemma koszulSign_mul_self (s : Finset ι) (i : ι) :
+    koszulSign R s i * koszulSign R s i = 1 := by
+  unfold koszulSign
+  rw [← mul_pow]
+  simp
+
 lemma koszulSign_insert_of_lt (s : Finset ι) {i j : ι}
     (hi : i ∉ s) (hij : i < j) :
     koszulSign R (insert i s) j = -koszulSign R s j := by

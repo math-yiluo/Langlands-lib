@@ -19,8 +19,9 @@ maximal-ideal multiple. Its coordinates are linear combinations of the chosen
 generators. Cotangent independence forces all coefficients into the maximal
 ideal. For each source coordinate, erase one index from its nonempty subset;
 the corresponding coefficient is the source coordinate times a sign. The
-sign's square is one, so the source coordinate itself belongs to the maximal
-ideal. The finite-coordinate ideal-multiple lemma gives the required module
+sign's square is one by `koszulSign_mul_self`, now shared in
+[FiniteKoszulComplex](FiniteKoszulComplex.md), so the source coordinate itself
+belongs to the maximal ideal. The finite-coordinate ideal-multiple lemma gives the required module
 membership.
 
 In degree zero, evaluation at the empty subset followed by residue-field

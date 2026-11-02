@@ -1,0 +1,20 @@
+# Comparisons of cokernel complexes without right exactness
+
+This is an internal categorical construction for spatial Godement maps. It extends the existing iterated-cokernel construction to a comparison whose degree-zero map is a natural transformation. It uses Mathlib's genuine cokernels, functor-category colimits and homological-complex functors. No assertion from Harris or Berkovich is used as an assumed comparison theorem.
+
+Let `A : Type u` and `B : Type u'` be abelian categories with morphisms in independent universes `v` and `v'`. Let `T : A ⥤ A` and `T' : B ⥤ B` have natural coaugmentations `η : 𝟭 A ⟶ T` and `η' : 𝟭 B ⟶ T'`. Neither endofunctor is required to be additive. The functor `Φ : A ⥤ B` must preserve zero morphisms. Supply an actual natural transformation
+
+`e : Φ ⋙ T' ⟶ T ⋙ Φ`
+
+satisfying `η'.app (Φ.obj M) ≫ e.app M = Φ.map (η.app M)` for every `M`. This is compatibility of the supplied coaugmentations, rather than a chain map or higher comparison given as input. No preservation of cokernels by `Φ`, invertibility of `e`, exactness or acyclicity is assumed.
+
+The declarations are in `Langlands.Cohomology.CokernelComplex.Lax`. Write `Rₙ` and `R'ₙ` for the residual functors from `CokernelComplex`: `R₀` is the identity and `Rₙ₊₁` is the cokernel of the coaugmentation of `Rₙ`.
+
+- `termMapOf` sends a residual comparison `ρ : Φ ⋙ R' ⟶ R ⋙ Φ` to the term comparison. At `M` it is `T'.map (ρ.app M) ≫ e.app (R.obj M)`. `termMapOf_comm` and `termMapOf_comm_nat` prove the coaugmentation square by naturality of `η'` and the given equation for `e`.
+- `stepMap` composes that term map with `Φ` of the target quotient. The coaugmentation square and preservation of zero morphisms make the resulting composite zero on the source coaugmentation. It descends using `cokernel.desc`. The isomorphism used to identify the source cokernel is `PreservesCokernel.iso` for **precomposition** with `Φ` in the functor category. This functor preserves the pointwise colimit, even when postcomposition with `Φ` does not. `stepMap_comm` proves the defining quotient equation.
+- `residualMap` starts with `𝟙 Φ` and iterates `stepMap`. `termMap` applies `termMapOf` at every stage. `inclusion_comm` and `quotient_comm` identify their composites with the actual residual coaugmentations and projections. `differential_comm` follows by composing these two equations.
+- `complexMap` is the resulting chain map `complex T' η' (Φ.obj M) ⟶ Φ(complex T η M)`, where `Φ` acts degreewise through `mapHomologicalComplex`. `functorMap` packages these maps as a natural transformation in the original object. `complexMap_f` records the degreewise formula, `termMap_zero` identifies degree zero with `e`, and `augmentation_complexMap` proves compatibility with the original augmentations.
+
+Identity and composition are proved for the constructed maps. `residualMap_id` proves the residual identity by induction and cancellation of each categorical cokernel projection. `complexMap_id` then gives the identity chain map. For another abelian category `C : Type u''` with independent morphism universe `v''`, a zero-preserving functor `Ψ : B ⥤ C` and a compatible transformation `e' : Ψ ⋙ T'' ⟶ T' ⋙ Ψ`, `compose` is `whiskerLeft Φ e' ≫ whiskerRight e Ψ`. `compose_comm` proves its coaugmentation equation. `termMapOf_comp` uses naturality of `e'`; `residualMap_comp` uses induction and the quotient equations, cancelling the source quotient after precomposition. `termMap_comp` and `complexMap_comp` give the induced composition laws in every degree and on whole chain maps.
+
+This constructs comparison maps of the actual cokernel complexes. It proves no comparison isomorphism, quasi-isomorphism, derived-functor realization, acyclicity, smoothness or étale realization. Applying it to the spatial stalk-family transformation, and then to proper compact-section functors, remains a specialization in subsequent modules. The wider Harris framework retains its geometric, derived and arithmetic specialization obligations.
