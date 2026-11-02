@@ -2,8 +2,10 @@
 
 This source ledger covers Bundle A, initial Bundle B targets and Bundles C–F of the standing KP program
 `f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. It records mathematical source targets
-and their verified formal status. Both parts of Theorem 1.1.15 have independently
-accepted, published proofs, recorded below. The other forty-two rows retain
+and their verified formal status. Both parts of Theorem 1.1.15, Corollary
+1.1.19 and Proposition 1.1.20 have independently accepted, published proofs,
+recorded below in three of the
+forty-five rows. The other forty-two rows retain
 empty formal-status and evidence fields. The remaining Bundle B targets still
 require public ledger entries. Private source audits and unsubmitted drafts are
 not publication evidence.
@@ -95,10 +97,12 @@ PDF pages 495–496 and 523 were rechecked for the actual-model
 identity and the simple-factor lift condition. The nearest-point
 dependency was checked at book PDF pages 38–40 and corrections PDF
 pages 1–3, including visual inspection of corrections page 2.
-The proof repairs below are independently derived obligations,
-separate from the authors' corrections. The five Bundle F rows retain
+The proof repairs below are independently derived, separate from the authors'
+corrections, and are implemented in the verified Proposition 1.1.20 proof.
+The five Bundle F rows retain
 null formal status and empty formal-evidence arrays. The later verification of
-Theorem 1.1.15 below leaves the release order and construction gates open.
+Theorem 1.1.15 and its two metric successors below leaves the release order
+and construction gates open.
 
 ## Structured ledger
 
@@ -112,7 +116,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15 have verified published proofs; the other forty-two rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; the other forty-two rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -261,6 +265,88 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "scope": "Successful local declaration inspection; independent proof acceptance and publication are recorded separately."
         }
       ],
+      "external_code": []
+    },
+    {
+      "source_item": "Corollary 1.1.19",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.7 / PDF p.38; Lemma 1.1.17 and Definition 1.1.18 on the same page"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.1–2, Section 1.1",
+        "change": "No change to Corollary 1.1.19. The geodesic premise of Theorem 1.1.15 is not a premise of this corollary; the formal proof constructs geodesics from completeness and the primitive NPC condition."
+      },
+      "hypotheses": [
+        "X is a nonempty complete nonpositively curved metric space; geodesic existence is not an additional hypothesis.",
+        "An arbitrary group acts on X by isometries and has a bounded orbit. The group and metric carrier may belong to independent universes."
+      ],
+      "conclusion": "The given action has a common fixed point in X, chosen before quantifying over group elements.",
+      "lean_declarations": [
+        "Langlands.Geometry.Metric.KP.BoundedActionFixedPointStatement",
+        "Langlands.Geometry.Metric.KP.boundedActionFixedPoint"
+      ],
+      "modules": [
+        "Langlands.Geometry.Metric.KPFixedPointStatement",
+        "Langlands.Geometry.Metric.KPBoundedActionFixedPointProof"
+      ],
+      "dependencies": [
+        "The published completeNPCGeodesic theorem supplies geodesics; boundedSetStabilizerFixedPoint applies to the actual nonempty bounded orbit. Each action map is a preserving isometry equivalence, using its inverse to prove setwise equality."
+      ],
+      "consumer_or_regression": "Fixed-point inputs for the constructed building and the embedding-space argument of Proposition 14.7.2; the needed complete NPC instances and nonempty embedding spaces remain separate obligations.",
+      "formal_status": "proved",
+      "owner_task": "a3eadfc8-c446-402c-a08e-dd4d9edbf042",
+      "acceptance_artifact_ids": [
+        "a67bd9ea-5ff4-4b0f-a38c-46350535ec88"
+      ],
+      "publication_commits": [
+        "7543113c99690e18b45f3b22d252e8cf77c3964e"
+      ],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 1.1.20",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.7–8 / PDF pp.38–39"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.1–2, Section 1.1",
+        "change": "Convexity includes nonemptiness. The printed coefficient-2 minimizing-sequence estimate is false, and the added multiplicative continuity argument misses zero minimum distance. The accepted proof uses the independent squared midpoint deficit and division-free continuity repair described below; the theorem statement is unchanged."
+      },
+      "hypotheses": [
+        "X is a complete nonpositively curved geodesic metric space, with arbitrary carrier universe.",
+        "Y is a closed nonempty geodesically convex subset of X. It need not be bounded, and the distance infimum may be zero or attained."
+      ],
+      "conclusion": "There exists one subtype-valued nearest-point projection X→Y with minimality and uniqueness at every ambient point, continuity for the inherited metric topology, and simultaneous equivariance under every ambient isometry equivalence carrying Y onto itself.",
+      "lean_declarations": [
+        "Langlands.Geometry.Metric.KP.NearestPointProjectionStatement",
+        "Langlands.Geometry.Metric.KP.nearestPointProjection"
+      ],
+      "modules": [
+        "Langlands.Geometry.Metric.KPNearestPointStatement",
+        "Langlands.Geometry.Metric.KPNearestPointProof"
+      ],
+      "dependencies": [
+        "The published geodesic-midpoint NPC inequality gives d(y,z)^2≤2d(x,y)^2+2d(x,z)^2−4r^2 for a nonnegative lower distance bound r. A real-infimum minimizing sequence is Cauchy; completeness and closedness give its minimizing limit. The same deficit proves uniqueness and division-free continuity. Setwise preservation and the inverse isometry give equivariance of the same chosen projection."
+      ],
+      "consumer_or_regression": "The closest-point step in Proposition 14.8.3/14.8.4; actual enlarged base buildings, their closed nonempty convex inclusion and adapted-data existence remain separate obligations.",
+      "formal_status": "proved",
+      "owner_task": "023897fd-dccb-460b-831b-41b55d5622de",
+      "acceptance_artifact_ids": [
+        "c81fc3b9-e90a-4b1a-b55f-605ee138f50f"
+      ],
+      "publication_commits": [
+        "7a2e42fd31831029d34cafb155ffad911920df25"
+      ],
+      "axiom_reports": [],
       "external_code": []
     },
     {
@@ -1554,7 +1640,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Adapted data are Definition 14.5.1 and Remark 14.5.2, not just a single-point stabilizer inclusion: retain the normalizer-fixed orbit, the apartment map taking x to y, and the stabilizer inclusion at every translate. In reduced coordinates this is G(k)^1_{x+v} contained in M(k)^1_{y+v} for every v in V(S/A_G); in enlarged coordinates use the equivalent full-stabilizer condition for every v in V(S).",
         "7.11.4 supplies an absolutely special point staying special over l. Existence of y1 uses boundedness of the full stabilizer and the building fixed-point theorem; it must be proved, not supplied as the entire existence argument",
         "14.8.2 proves the split case using root-group lattices and homogeneous polynomial coordinate maps. Strict Henselianity makes G quasi-split (2.3.8), so Z_G(S) is a maximal torus. 14.8.3 projects the split adapted point using 1.1.20; projection equivariance for group actions and translations gives the all-translate condition",
-        "Proposition 1.1.20 needs a complete NPC geodesic space and a nonempty closed convex base building. Its projection is unique, continuous and equivariant for isometries preserving that subset setwise. Corrections PDF p.2 prints the insufficient minimizing-sequence estimate d(y1,y2)^2<=2 epsilon(2r+epsilon), contradicted already by X=Y=R, x=0, r=0, epsilon=1 and y1,y2=+-3/4. Independently derive the sufficient bound with coefficient4 from the midpoint inequality. The added continuity proof needs the zero-distance case separately; the division-free bound d(pi(x_n),pi(x))^2<=2(q_n^2-r^2), with q_n=d(x,pi(x_n))->r=d(x,pi(x)), covers that case. These are source-derived proof repairs to prove, not author errata or established Lean results.",
+        "Proposition 1.1.20 needs a complete NPC geodesic space and a nonempty closed convex base building. Its projection is unique, continuous and equivariant for isometries preserving that subset setwise. Corrections PDF p.2 prints the insufficient minimizing-sequence estimate d(y1,y2)^2<=2 epsilon(2r+epsilon), contradicted already by X=Y=R, x=0, r=0, epsilon=1 and y1,y2=+-3/4. Independently derive the sufficient bound with coefficient4 from the midpoint inequality. The added continuity proof needs the zero-distance case separately; the division-free bound d(pi(x_n),pi(x))^2<=2(q_n^2-r^2), with q_n=d(x,pi(x_n))->r=d(x,pi(x)), covers that case. These independently derived repairs are implemented in the accepted and published nearestPointProjection proof recorded in the Proposition 1.1.20 row. They are not authors' errata and do not construct the required building instance.",
         "For general k, 14.5.6 proves closedness and segment containment of the adapted-y locus. 14.7.1 makes the space of embeddings complete and NPC with evaluation-independent metric; 14.7.2 obtains an equivariant embedding assuming nonemptiness; 14.7.3 applies this to the maximal unramified extension and Chapter 9 descent. Neither convexity alone nor an assumed fixed point proves the needed nonemptiness",
         "Passing from a subgroup to a general homomorphism requires the 14.0 simple-factor lift condition: on every relevant simple factor the lift from G_sc to the simply connected cover of the image is trivial or an isomorphism onto its image. Use the faithfully flat quotient step of 14.1.1 and then the subgroup embedding. This does not give an injective or canonical map for every homomorphism.",
         "Release 1 constructions and its representation consumer, then positive-depth acceptance, precede Bundle F implementation. A source-only row is no formal or release acceptance."
@@ -2241,9 +2327,11 @@ Applying the midpoint inequality to the two projections gives
 
 This proves continuity also when r=0 without division by r.
 Equivariance follows from uniqueness and the inverse isometry.
-These are independent mathematical proof repairs to implement and
-verify in Lean. They do not change the theorem statement, and this
-source ledger records no formal proof or authors' erratum for them.
+The accepted and published `nearestPointProjection` proof implements these
+repairs using the squared deficit directly and a neighborhood-filter continuity
+argument. They do not change the theorem statement and remain independent
+repairs, separate from the authors' errata. The proof and publication evidence
+are recorded below and in the Proposition 1.1.20 row.
 
 ## Verified Theorem 1.1.15 proofs
 
@@ -2278,11 +2366,54 @@ are separate from independent semantic review and proof acceptance. No external
 Lean code is adopted by these units.
 
 This verifies both parts of the source theorem recorded in the row. The
-separate `BoundedActionFixedPointStatement` for Corollary 1.1.19, which omits
-geodesic existence as a hypothesis, and the aggregate
-`MetricFixedPointFoundationStatement` remain proof obligations. Applying the
-metric theorem to a general reductive-group building still requires that
-building's construction, completeness and NPC proofs.
+separate bounded-action and nearest-point proofs are recorded next. Applying
+these metric theorems to a general reductive-group building still requires
+that building's construction, completeness and NPC proofs.
+
+## Verified bounded-action and nearest-point proofs
+
+Worker 1249 supplied `Langlands.Geometry.Metric.KP.boundedActionFixedPoint`
+in task `a3eadfc8-c446-402c-a08e-dd4d9edbf042`. It proves the exact published
+`BoundedActionFixedPointStatement` for independent universes of the metric
+carrier and acting group. Completeness and the primitive NPC condition yield
+geodesics through the published `completeNPCGeodesic` theorem. The proof
+then applies the bounded-set stabilizer theorem to the actual orbit and
+shows that every group element acts by an isometry preserving that orbit
+setwise. The result is one common fixed point of the original action.
+Its paired explanation is
+[KPBoundedActionFixedPointProof](../../Langlands/Geometry/Metric/KPBoundedActionFixedPointProof.md).
+
+Artifact `a67bd9ea-5ff4-4b0f-a38c-46350535ec88` has an unqualified
+independent approval by Reviewer 9235. Machine receipt
+`15409f3a-dd65-41a6-aed2-6f0f859b443e` accepts the Lake build, exact target,
+unchanged statement and frozen inputs. Integration
+`93f7ad8cdc594b0c8f09f9301559278d` published the exact pair in Library commit
+`7543113c99690e18b45f3b22d252e8cf77c3964e`. The frozen and published pair
+hashes agree. This focused proof establishes Corollary 1.1.19; the same
+child task's aggregate `MetricFixedPointFoundationStatement` remains an
+open deliverable.
+
+Worker 1229 supplied `Langlands.Geometry.Metric.KP.nearestPointProjection`
+in task `023897fd-dccb-460b-831b-41b55d5622de`. It proves the exact
+published `NearestPointProjectionStatement` in arbitrary carrier universe.
+A minimizing sequence for the real distance infimum converges to a point
+in the closed convex subset. The squared midpoint deficit proves minimality,
+uniqueness and division-free continuity, and distance preservation gives
+equivariance of the same chosen projection under every preserving ambient
+isometry equivalence. This includes unbounded subsets, attained infima and
+zero minimum distance. Its paired explanation is
+[KPNearestPointProof](../../Langlands/Geometry/Metric/KPNearestPointProof.md).
+
+Artifact `c81fc3b9-e90a-4b1a-b55f-605ee138f50f` has an unqualified
+independent approval by Reviewer 9173. Machine receipt
+`e1e31c37-f176-4148-a0a1-728008e89583` accepts the Lake build, exact target,
+unchanged statement and frozen inputs. Integration
+`332183b82c0344c5b2ec7d192f1a0387` published the pair in Library commit
+`7a2e42fd31831029d34cafb155ffad911920df25`. The frozen, published and
+workspace pair hashes agree. The focused task is closed by completion
+declaration `c70b6dd9-9f2a-4530-ae97-b5fd413a2bbb`. This proves the
+qualitative Proposition 1.1.20, including the independent proof repairs
+above, while the building and Bundle A obligations remain open.
 
 ## Initial interfaces and the next mathematical gates
 
@@ -2300,9 +2431,10 @@ supplied the interface used by the subsequent Theorem 1.1.15 proofs above.
 The corrected convexity predicate excludes the empty set. The published
 Theorem 1.1.15 proofs establish actual barycenter existence and uniqueness,
 including radius-zero cases, and the common fixed point for bounded-set
-stabilizers. Corollary 1.1.19 still requires an actual fixed point for every
-bounded isometric group action; supplying one as input would not establish
-that conclusion. The building application must prove completeness and
+stabilizers. The published Corollary 1.1.19 proof now supplies an actual
+common fixed point for every bounded isometric group action under its metric
+hypotheses. Proposition 1.1.20 supplies the projection for the same metric
+foundation. The building application must still prove completeness and
 nonpositive curvature of the constructed building.
 
 Derived quotient child `cd3fd695-b511-4653-8f4d-769e99d8aab0` asks for the actual

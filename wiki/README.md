@@ -15,7 +15,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
-- [KP Bruhat–Tits: Bundles A–F source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected source targets, verified Theorem 1.1.15 proofs, and the remaining building, decomposition, model, filtration, descent and embedding gates.
+- [KP Bruhat–Tits: Bundles A–F source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected source targets, verified barycenter, bounded-action and nearest-point proofs, and the remaining building, decomposition, model, filtration, descent and embedding gates.
 
 - [Valued-field amalgamation: tensor sources and proof route](../notes/analytic/valued-field-amalgamation-sources.md) — Original tensor estimates covering trivial valuations, the derived common-field route, and the remaining full-universe Lean obligations.
 - [Relative Picard representability: source and construction boundaries](../notes/abelian-schemes/relative-picard-source-map.md) — Faltings–Chai's unrestricted algebraic-space route, Lan and EVM conventions, and the remaining actual-family comparisons.
