@@ -1,18 +1,20 @@
-# Renard II.2.1: published germ families and statement boundaries
+# Renard II.2.1–II.2.2: published germ constructions and support closedness
 
 Worker 6, 1 November 2026.
 
-Four focused units are independently accepted and published: the stalk
+The initial four focused publications cover the stalk
 representative statements, locally represented germ groups and their maps,
 direct gluing and sheaf functors, and the separation and corrected
 target-compatibility statements. Two units supply constructions with their
-intrinsic laws; two supply proposition definitions whose exact proofs remain
-separate. This note records those distinctions and updates the
+intrinsic laws; two supply proposition definitions. Seven later publications
+add the representative and separation proofs, actual universe lifts and
+canonical units, literal support carriers, and the relative-closedness
+statement and proof. This note records their distinct scopes and updates the
 [whole-book coverage ledger](coverage.md).
 
 The governing source is David Renard, *Représentations des groupes réductifs
-p-adiques*, French version dated 9 July 2026, II.2.1, printed pp.33–37 /
-PDF pp.39–43, registered as
+p-adiques*, French version dated 9 July 2026, II.2.1–II.2.2, printed pp.33–38 /
+PDF pp.39–44, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The original passages were read directly; the formulas on PDF pp.40 and 42
@@ -109,40 +111,94 @@ construction units, and Worker 595 the separation statements. Their
 records retain Worker 6's source-audit and interface contributions.
 This documentation note supplies no additional mathematical receipt.
 
+## Subsequent verified publications
+
+The following seven candidates are independently approved without
+qualifications, accepted and public, with published integrations. Their
+fourteen frozen Lean/Markdown hashes agree with the workspace and Library
+`d08b5767dba1139a70ed7ebfc0438a31c2587868`. The first three were
+published at `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762`, the next
+three at `b1c8a5e809be36100da09da81385a7ca6789ae80`, and the final
+proof at `d08b5767dba1139a70ed7ebfc0438a31c2587868`. These results
+supersede the earlier dated observations that their candidates were pending.
+
+| Source assertion or internal prerequisite | Exact public interface | Coverage |
+| --- | --- | --- |
+| Original stalk representatives and their common-refinement relation, printed p.34 / PDF40 | `basisStalkRepresentatives : BasisStalkRepresentativesStatement` | Exact proof of all four raw/normalized families, with `rawStalk_representative`, `rawGerm_eq_iff`, `stalk_representative`, and `germ_eq_iff`. [Proof](../../Langlands/Sheaf/Renard/BasisStalkRepresentatives.md). |
+| Internal universe transport for the germ construction | `rawLiftJoint`, `presheafLiftJoint`, `sheafLiftJoint`, `presheafReliftJoint`, `sheafReliftJoint` | Actual `ULift` postcomposition, full-faithfulness and the direct up/down relift comparisons; no arbitrary value-lowering functor. [Construction](../../Langlands/Sheaf/Renard/BasisLift.md). |
+| Literal support and compact-section set, printed pp.37–38 / PDF43–44 | `germSupport`, `germSupportAmbient`, `compactGermSectionsSet`, `CompactGermSections`, `compactGermSectionsInclusion` | Actual nonzero-value support, its ambient image, compact-support subtype, inclusion and elementary support laws. This unit alone supplies no additive structure on that subtype. [Construction](../../Langlands/Sheaf/Renard/GermSupport.md). |
+| Canonical map and naturality square, printed p.36 / PDF42 | `sectionGerms`, `rawGermSheafLiftUnit`, `germSheafLiftUnit`, `germSheafUnit`, `germSheafUnit_eq_relift` | Actual original-section germ maps, lifted-source transformations and identity-source unit at joint value universe, with evaluation, restriction, naturality and relift laws. [Construction](../../Langlands/Sheaf/Renard/GermUnit.md). |
+| Zero-germ lemma and corrected image compatibility, printed p.36 / PDF42 | `renardSheafGermSeparation : RenardSheafGermSeparationStatement` | Exact proof of all six raw/normalized zero-separation, equality-detection and target-compatibility families. [Proof](../../Langlands/Sheaf/Renard/SheafGermSeparation.md). |
+| Local zero neighborhood and relative support closedness, printed p.37 / PDF43 | `GermSupportClosednessStatement` | Four Prop-valued raw/normalized local-vanishing and relative-closedness targets. [Statement](../../Langlands/Sheaf/Renard/GermSupportClosednessStatement.md). |
+| Same local-vanishing and relative-closedness target | `germSupportClosedness : GermSupportClosednessStatement` | Exact proof of the unchanged four-part aggregate, using the actual original germ sections. [Proof](../../Langlands/Sheaf/Renard/GermSupportClosedness.md). |
+
+| Unit and policy | Candidate | Machine receipt | Independent review task and reviewer | Published integration |
+| --- | --- | --- | --- | --- |
+| Representatives, `lean.proof@1` | `40688f45-caad-428f-adc4-8ecf8cf46916` | `94401b37-a2e0-4f1e-8b0b-f15472293728` | `f208dae3-3b16-4c7d-99b5-421a5dd626c2`, Reviewer 7902 | `c70b87df6e63408aae8f57b798179f19` |
+| Universe lifts, `lean.definition@1` | `b348b29f-d4aa-4c09-9ba5-58f3b10855ac` | `f82db741-c6c5-4d6e-bf7f-0dbb86a88a03` | `23db7987-47cc-4097-9c8e-6c85490ed367`, Reviewer 7842 | `e7090b7a81d34ac191042040f75b16d2` |
+| Support carriers, `lean.definition@1` | `bf970527-cd04-482c-a129-79c0d6839830` | `58731c8c-bcf1-47f2-aadd-5aa35fccc3dd` | `4a976d69-d004-4d42-9fdb-323453f2205e`, Reviewer 7881 | `9ac11cb40e7b456b9f81c71accc4e2c8` |
+| Canonical units, `lean.definition@1` | `965f3370-28d1-4904-9455-f921aad927ca` | `aa54dd07-3d5b-4c8a-b9d6-5b0cb29ca41b` | `8a9074ac-a190-45ed-ac74-847e560de81f`, Reviewer 8011 | `501138ade01e4a84aa5f04f1c4ecae0c` |
+| Separation/compatibility, `lean.proof@1` | `61d8d31a-6320-4440-bfa4-cf3063786b3c` | `e406caf0-ed03-44bd-9de9-4334fc0d0db4` | `92d6a4ed-c1cc-43e1-8fc7-6136cbd99065`, Reviewer 8024 | `d2fde485141e4784923d0a0fe9452412` |
+| Closedness target, `lean.statement@1` | `d5b49701-e0fe-4e4a-ba1b-774c8640de8a` | `e037c61c-466d-4c86-b159-c222d7af8b4e` | `96496b29-30d2-4404-995f-455a7f83cdb3`, Reviewer 8010 | `6a97fb60bcc04ccd8a1ba263aacc5fee` |
+| Local vanishing/closedness, `lean.proof@1` | `76ecb163-9427-4329-a60a-a43dbb24dd4f` | `b6ad76a3-1c32-49d0-b23e-77e31abc46c1` | `4fa2b159-abad-451d-ba0d-5f00563728c7`, Reviewer 8120 | `4f298988309c41acb0d1ed36a7d541de` |
+
+The three proof receipts pass Lake-build, exact-target, unchanged-statement
+and frozen-input checks. Definition and statement receipts pass their
+respective build/declaration checks; the statement receipt alone proves
+none of its propositions. Workers 595, 947, 865, 1215, 595, 633
+and 633 respectively supplied the seven units, with the recorded
+source-audit, design and coauthor contributions retained.
+
+The representative proof uses preservation of the actual filtered
+abelian-group colimit by the forgetful functor, then Mathlib's concrete
+representative and equality criteria. Returned representatives and
+restriction equalities stay in the original value universe. Separation
+uses that smaller-neighborhood criterion and the literal sheaf uniqueness
+clause. Corrected compatibility separates only the image sections in the
+target sheaf, on every smaller common basis open. It never infers the
+false source equality (II.2.1.3).
+
+The unit sends an original section to its actual family of original germs.
+Its lifted-source version applies `ULift.down` before that map. The direct
+unit has identity source only in `Presheaf.{u,max u v} B`; its relation to
+the lifted version uses the published up/down relift isomorphism.
+The original `v`-valued category and the germ category need not coincide.
+These constructions establish neither an adjunction nor a right adjoint
+to universe lifting.
+
+The support proof follows the printed local argument. At a zero stalk
+value, a local original representative has zero germ. The published
+`rawGerm_eq_iff` gives a smaller contained basis neighborhood where that
+representative restricts to zero. The same germ section vanishes
+throughout that neighborhood, so its zero locus is open in the domain
+subtype. Thus `IsClosed (germSupport s)` concerns `Set U`, with no
+ambient-closedness assertion for an arbitrary open `U`. The proof needs
+no sheaf or separation premise on the raw source. It preserves independent
+space/value universes and all empty cases.
+
 ## Remaining work and ownership
 
-The exact representative proof has task
-`d16ae635-047f-4a69-acaf-fafe7da806ce` revision 1. At Worker 6's
-direct check, candidate `40688f45-caad-428f-adc4-8ecf8cf46916`
-passed machine Lake-build, exact-target, unchanged-statement and
-frozen-input checks, but remained staged, unaccepted and nonpublic.
-That candidate is excluded from the published count. The separate
-separation-proof task
-`a8dd4ece-f292-4ab5-8b2b-f4f5547440e5` revision 1 formally requires
-publication of the representative proof.
+Corrected descent has focused task
+`b98ff0cd-014c-4644-ae88-fc01221729c3` revision 1, Worker 595.
+At this update's direct fetch, candidate
+`571ce343-0892-44bb-809b-8b9c321a037c` has machine acceptance and
+Reviewer 8142's unqualified independent approval but remains staged,
+unaccepted and nonpublic. It is excluded from the published count.
+Universal factorization uniqueness, the actual Hom equivalence and
+adjunction, unit invertibility on sheaves and the basis/all-open
+equivalence retain separate statement and proof obligations.
 
-Actual source-universe lifting belongs to task
-`8f1f081b-0e4e-4bdc-adcf-0edc88c5afea` revision 1, Workers 947
-and 1038. Canonical germ maps and natural units have task
-`397a30ad-c817-468f-9f69-a379cbf3b64e` revision 1, requiring that
-lift's publication. The original `v`-valued category and the germ
-functor's `max u v`-valued category differ. A natural transformation
-from the original object must use an actual lift to a common
-codomain. A same-category adjunction can be formulated separately
-at value universe `max u v`; these four publications establish
-neither that adjunction nor a right adjoint to universe lifting.
+Compact germ-section groups and functors have task
+`e265849a-2e29-40fb-821b-53c7c68cccee` revision 1, Worker 865.
+Its required relative-closedness proof is now published; the task has
+no candidate at the present check. Compactness of a sum or image
+requires both support containment in a compact set and closedness of
+the resulting relative support. Ordinary restriction to an arbitrary
+open need not preserve compact support.
 
-Corrected descent, universal factorization, the actual Hom equivalence
-and adjunction, unit invertibility on sheaves, and the basis/all-open
-equivalence still require their focused constructions, statements and
-proofs. No topology on the disjoint stalk union or comparison with
-Mathlib's all-open stalk/sheaf categories is asserted here.
-
-For II.2.2, Worker 865 retains support task
-`14c42d15-028c-46b7-9243-8ccfa71d0de2`. Relative-closedness statement
-task `60504f8d-38d8-4368-aa23-9f02f76ffe26` revision 1 explicitly
-requires its support construction to be published. Its later exact
-proof will also require the representative proof. Compact-section
-structures, clopen zero extension, II.2.4 exhaustion and scalar-sheaf
-comparisons remain separate. This note declares no II.2.1, Chapter II
-or whole-book completion.
+The separate all-open clopen zero-extension task
+`f0949ea8-6ee5-4fdf-9f55-3010fd466169` retains Worker 1038's
+ownership. Original-section comparison, II.2.4 compact-open exhaustion,
+scalar-sheaf/module comparisons, and comparison with Mathlib's all-open
+stalk/sheaf categories remain separate. This note declares no II.2.1,
+Chapter II or whole-book completion.

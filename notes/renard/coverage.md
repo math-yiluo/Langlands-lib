@@ -195,16 +195,34 @@ machine receipts, independent reviews and integration evidence, with
 unchanged pairs checked in the later Library
 `dac2bb9e83346876770fced17af26f0cba7f4c98`.
 
-The representative and separation aggregates remain statement coverage.
-The representative exact-proof candidate was machine accepted but
-unaccepted/nonpublic at the note's direct check. Separate proof tasks
-preserve that publication gate. The germ functors use actual original
-stalks and section groups in value universe `max u v`; source lifting,
-canonical units, corrected descent, the Hom equivalence and adjunction,
-unit invertibility and basis/all-open equivalence retain separate
-obligations. Relative support closedness has its own statement task
-requiring publication of the support definition. This updates II.2
-navigation without declaring Chapter II or whole-book completion.
+The same progress note now records seven subsequent independently
+accepted/public units, with fourteen frozen/current/workspace pair hashes
+checked at `d08b5767dba1139a70ed7ebfc0438a31c2587868`:
+
+| Passage or prerequisite | Exact public declaration or construction | Coverage |
+| --- | --- | --- |
+| II.2.1, printed p.34 / PDF40: original representatives and common-refinement equality | `Langlands.Sheaf.Renard.basisStalkRepresentatives` | Exact proof of all four raw/normalized representative targets; candidate `40688f45-caad-428f-adc4-8ecf8cf46916`. |
+| Internal independent-universe transport | `Langlands.Sheaf.Renard.rawLiftJoint`, `presheafLiftJoint`, `sheafLiftJoint`, and relift isomorphisms | Actual lifts, full-faithfulness and up/down comparisons; candidate `b348b29f-d4aa-4c09-9ba5-58f3b10855ac`. |
+| II.2.1, printed p.36 / PDF42: canonical germ map and naturality | `Langlands.Sheaf.Renard.sectionGerms`, `germSheafLiftUnit`, `germSheafUnit` | Actual maps and units, with a direct identity-source unit at joint value universe; candidate `965f3370-28d1-4904-9455-f921aad927ca`. |
+| II.2.1, printed p.36 / PDF42: zero-germ separation and corrected image compatibility | `Langlands.Sheaf.Renard.renardSheafGermSeparation` | Exact six-part proof, separating only the target on smaller common basis opens; candidate `61d8d31a-6320-4440-bfa4-cf3063786b3c`. |
+| II.2.2, printed pp.37–38 / PDF43–44: literal support and compact-section set | `Langlands.Sheaf.Renard.germSupport`, `germSupportAmbient`, `CompactGermSections` | Actual relative nonzero support, ambient image and compact-support subtype, with elementary laws; candidate `bf970527-cd04-482c-a129-79c0d6839830`. |
+| II.2.2, printed p.37 / PDF43: support closedness | `Langlands.Sheaf.Renard.germSupportClosedness : GermSupportClosednessStatement` | Four-part raw/normalized local-vanishing and relative-closedness target `d5b49701-e0fe-4e4a-ba1b-774c8640de8a` and exact proof `76ecb163-9427-4329-a60a-a43dbb24dd4f`. |
+
+The progress note supplies exact machine, review and integration evidence
+for these additions. Representative and separation aggregates are now proved.
+Support is closed in its actual domain subtype, with no ambient-closedness
+claim for an arbitrary open. Its extension to arbitrary raw presheaves is
+documented; neither the original stalks nor the germ-section carriers change.
+
+Corrected descent task `b98ff0cd-014c-4644-ae88-fc01221729c3`
+has an independently approved but still nonpublic candidate at this update.
+Compact germ-section group/functor task
+`e265849a-2e29-40fb-821b-53c7c68cccee` is assigned to Worker 865;
+its closedness prerequisite is now published. Universal factorization
+uniqueness, the Hom equivalence and adjunction, unit invertibility,
+basis/all-open equivalence, original-section/compact-section comparisons,
+clopen zero extension, exhaustion and scalar-sheaf comparisons remain
+separate obligations. No Chapter II or whole-book completion is declared.
 
 ## Reference and reading record
 
@@ -376,7 +394,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public normalized basis-presheaf foundation, [germ groups/direct sheaf functors and representative/separation statements](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); exact statement proofs, unit/descent/adjunction, category equivalence and later assertions remain separate |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis-presheaf foundation, [germ groups/sheaf functors, lifts/units, representative/separation proofs and relative support closedness](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); descent publication, universal property/adjunction, category equivalence, compact-section structures and later assertions remain separate |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |
