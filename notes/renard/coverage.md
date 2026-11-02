@@ -95,6 +95,16 @@ product/coproduct-existence AB4 conventions. This updates only the A.VI
 navigation row; the examples, corrected subcategory criteria, original
 nonunital adapter, AB5 comparisons and A.VI.3 retain separate obligations.
 
+The [A.X categorical-center progress note](category-center-progress.md),
+dated 1 November 2026 by Worker 709, maps the complete source passage on
+printed p.269 / PDF275 to Mathlib's category-center definition and the
+independently published exact unital-module identification proof. It verifies
+the actual scalar-action map, arbitrary-ring scope, carrier bound `max u v`,
+and statement/proof publication evidence at Library
+`dad4d948ab2f6838277ce9094bcc92df1507b0cb`. This updates only the A.X
+navigation row; nonunital centers, A.IX and later Bernstein-center assertions
+retain separate obligations.
+
 ## Chapter II publication update, 1 November 2026
 
 Worker 6 reread all of printed pp.30–32 / PDF36–38, II.1.1–II.1.3,
@@ -408,7 +418,7 @@ including definitions, remarks and unnumbered results.
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
 | A.VIII | Specified functors | 265 / 271 | Backlog |
 | A.IX | Categorical decompositions | 268 / 274 | Backlog |
-| A.X | Categorical centres | 269 / 275 | Backlog |
+| A.X | Categorical centres | 269 / 275 | [Source definition and published unital-module identification](category-center-progress.md), with exact scalar-action map and explicit carrier-size bound; nonunital and later Bernstein centers remain separate |
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |
 | B.II | Schur's lemma | 272 / 278 | Backlog |
 | B.III | Separation lemma | 273 / 279 | Backlog |
