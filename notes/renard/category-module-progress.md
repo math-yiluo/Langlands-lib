@@ -1,8 +1,12 @@
 # Renard 2026: small projectives and original nonunital modules
 
-Worker 6 records three published results and the remaining construction and
-proof boundaries, checked on 30 October 2026 against Library
-`6789e5106aba61566887427750f5444a494d5879`. This supplements the
+Workers 6 and 709 record four published units and the remaining construction
+and proof boundaries. Worker 6 checked the finite-subcoproduct proof and
+the two statement units on 30 October 2026 against Library
+`6789e5106aba61566887427750f5444a494d5879`.
+Worker 709 verified the forward small-progenerator proof on 1 November 2026
+against Library `dac2bb9e83346876770fced17af26f0cba7f4c98`; the other status
+observations below retain their 30 October date. This supplements the
 [initial coverage ledger](coverage.md); its historical rows remain unchanged.
 It is a focused update, not a complete inventory of Appendix A or Chapter I.
 
@@ -17,7 +21,8 @@ The retained file is
 Worker 6 read the passages used here: the conventions at printed pages 5–6 /
 PDF pages 11–12; I.2.1–2 at printed pages 14–15 / PDF pages 20–21;
 A.I.2–3 at printed pages 248–249 / PDF pages 254–255; and A.VIII.1–2 at
-printed pages 266–267 / PDF pages 272–273.
+printed pages 266–267 / PDF pages 272–273. Worker 709 also read those
+complete Appendix pages for the forward-proof audit.
 
 The registered supplementary `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -73,7 +78,7 @@ uses no `w`-indexed coproducts in the target `ModuleCat.{v} ℤ`.
 The source gives no proof of this characterization on the consulted page;
 the paired proof Markdown documents this implemented route.
 
-## Published actual Hom-equivalence statement
+## Published actual Hom-equivalence statement and proof
 
 The unnumbered theorem in A.VIII.2, printed page 267 / PDF page 273,
 has a published proposition
@@ -101,12 +106,43 @@ Cocompleteness is read at this Hom size; in an abelian category,
 retain this size convention and the target-carrier restriction; there is
 no claim about modules in larger universes.
 
-Publication of this proposition is statement coverage. The unique proof
-successor is task `fb2642d4-aac4-49ec-bfe7-725a122f9244`, owned by Workers
-923 and 937. At the check for this note, its proof candidate
-`64006278-19ec-4d5b-b1e0-730ec453addc` was staged, with no validation or
-review receipt returned and with `accepted=false`, `public=false`.
-This note therefore counts no public proof of that proposition.
+The exact proposition is now proved by
+`Langlands.Renard.smallProgeneratorEquivalence` in
+`Langlands.CategoryTheory.Renard.SmallProgeneratorEquivalence`, from task
+`fb2642d4-aac4-49ec-bfe7-725a122f9244`. Worker 709 read the complete
+statement and proof pairs and verified proof candidate
+`64006278-19ec-4d5b-b1e0-730ec453addc` as accepted and public on
+1 November 2026. This supersedes this note's earlier staged-proof gate.
+
+The implemented proof first uses the published projectivity and generator
+comparisons to obtain projectivity and faithfulness of the module-valued
+Hom functor. It transfers coproduct preservation from the integer-module
+Hom functor through restriction of scalars. Writing `F` for the
+module-valued Hom functor, a module map `F(∐ P) → F(Y)` is determined by its
+values on the coprojections and lifts to a morphism `∐ P → Y` in `C`.
+Applying this to the generator evaluation epimorphism
+and descending through its kernel proves fullness. For any target module,
+two module covers give a relation map between such coproducts. Its cokernel
+in `C` realizes the module because the Hom functor preserves cokernels.
+These three results assemble the exact `IsEquivalence` target.
+
+The proof retains independent `u` and `v`, with all constructed coproduct
+indices and target module carriers in `Type v`. It adds no Grothendieck,
+AB5, commutativity or nonzero-object assumption. The source gives no proof
+on the consulted page; the paired proof Markdown documents the implemented
+argument without attributing it to the unread Pareigis reference.
+Mathlib's `Functor.asEquivalence` then supplies an equivalence whose forward
+functor is the specified Hom functor. The regular-module assertion, the
+converse for categories already equivalent to module categories, the
+finite-support/finite-type comparisons and the nonunital-module bridges
+remain separate units; this forward proof establishes none of those.
+
+Both proof files match the frozen candidate and the checked Library base:
+
+| File | SHA256 |
+| --- | --- |
+| `Langlands/CategoryTheory/Renard/SmallProgeneratorEquivalence.lean` | `c609fd1352a3abc7b9c7b9af01963b6064602cd911b92811209c41254500727e` |
+| `Langlands/CategoryTheory/Renard/SmallProgeneratorEquivalence.md` | `48fb8b7d15773145aecfa3ad616e28a06dbf08060d8880b13237ccd241dd39af` |
 
 ## Published original-action Noetherian statements
 
@@ -153,13 +189,14 @@ before counting it as a public proof.
 
 ## Acceptance and publication evidence
 
-The following three candidates were verified accepted and public. Their
-independent review qualifications are empty.
+The following four candidates were verified accepted and public at the
+dates specified above. Their independent review qualifications are empty.
 
 | Published unit | Candidate and policy | Independent review | Publication |
 | --- | --- | --- | --- |
 | Finite-subcoproduct proof | `ea9a9a00-0ef2-493f-991d-a2cbf2203a55`, `lean.proof@1`; machine receipt `a9dd5589-e6c9-43bb-a398-c09d4f58444b` passes the proof checks | Reviewer 4924; review `d68e24e4-c324-41b3-b4a5-9b634c7dcb6d` | Integration `878d9de6d21a4f4094be208ca1fdd41d` |
 | Actual Hom-equivalence statement | `bc0373e3-aa42-4297-bb7a-e404b6241cde`, `lean.statement@1` | Reviewer 4927; review `3bf9021a-5bb5-4a0f-a2ba-a9775beb7a6a` | Integration `7a68a8a89bea404c925c7bec22e7dd32` |
+| Actual Hom-equivalence proof | `64006278-19ec-4d5b-b1e0-730ec453addc`, `lean.proof@1`; machine receipt `3b51a2ac-6b7c-4e26-a6f1-d2e0ad7786a5` passes Lake build, exact-target, unchanged-statement and frozen-input checks | Reviewer 4981; review `449650fd-dbe9-4663-8dba-76c684f66e2b` | Integration `4022304bf86d41809897ec16b0ebac18`, published commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
 | Original-action Noetherian statements | `bbfc803d-701c-453d-9b49-3cbd0a392a30`, `lean.statement@1` | Reviewer 4922; review `5907212e-dbc0-4dfd-84d7-ebd338a14224` | Integration `f2d7c5ef68d2411487ce179908f07950` |
 
 These receipts distinguish a published proof from a published statement.

@@ -173,9 +173,28 @@ categorical-product construction compiles with independent space/group
 universes; naturality and nested subgroup-image laws remain with the owner.
 It is an internal prerequisite motivated by II.2.4, not a proved
 comparison with normalized basis sheaves or a compact-support exhaustion.
-The literal-sheaf and arbitrary-indexed-gluing branch remains with the
-foundation task; this update verifies only its normalized-presheaf unit.
-No Chapter II or whole-book completion is declared.
+Those ownership and construction observations belong to the preceding
+publication update, which verified only the foundation's normalized-presheaf
+unit. The later [germ-sheaf progress note](germ-sheaf-progress.md), also
+dated 1 November 2026, verifies four further published units at
+`a5dff2ff93bd3637a67ee8847f67f811efc82f01`: the representative statements,
+actual locally represented germ groups/maps, direct chosen-basis and
+all-open-basis gluing/functors, and the separation/corrected
+target-compatibility statements. It gives exact source locators, names,
+machine receipts, independent reviews and integration evidence, with
+unchanged pairs checked in the later Library
+`dac2bb9e83346876770fced17af26f0cba7f4c98`.
+
+The representative and separation aggregates remain statement coverage.
+The representative exact-proof candidate was machine accepted but
+unaccepted/nonpublic at the note's direct check. Separate proof tasks
+preserve that publication gate. The germ functors use actual original
+stalks and section groups in value universe `max u v`; source lifting,
+canonical units, corrected descent, the Hom equivalence and adjunction,
+unit invertibility and basis/all-open equivalence retain separate
+obligations. Relative support closedness has its own statement task
+requiring publication of the support definition. This updates II.2
+navigation without declaring Chapter II or whole-book completion.
 
 ## Reference and reading record
 
@@ -347,7 +366,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public normalized basis-presheaf construction and [sheafification source-error audit](basis-sheafification-source.md); stalks, literal-sheaf comparisons, sheafification and later assertions remain separate |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public normalized basis-presheaf foundation, [germ groups/direct sheaf functors and representative/separation statements](germ-sheaf-progress.md), and [source-error audit](basis-sheafification-source.md); exact statement proofs, unit/descent/adjunction, category equivalence and later assertions remain separate |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |
@@ -386,7 +405,7 @@ including definitions, remarks and unnumbered results.
 | A.IV | Limits and colimits | 255 / 261 | Backlog |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
-| A.VII | Semisimplicity | 264 / 270 | Backlog |
+| A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
 | A.VIII | Specified functors | 265 / 271 | Backlog |
 | A.IX | Categorical decompositions | 268 / 274 | Backlog |
 | A.X | Categorical centres | 269 / 275 | Backlog |
