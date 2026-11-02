@@ -31,6 +31,9 @@ input to the result. No other relative-Weyl target is used as a premise.
 
 ## One-sided length additivity
 
+The public helpers `wordProd_mem_standard` and `exists_standard_word`
+relate words on `I` to membership in `W_I`, and are shared with the
+[uniqueness proof](RelativeWeylMinimalUniqueProof.md).
 Subgroup closure induction proves that every element of `W_I` has a word
 whose letters lie in `I`: generators are singleton words, multiplication is
 concatenation, and inversion is word reversal. Taking the least natural

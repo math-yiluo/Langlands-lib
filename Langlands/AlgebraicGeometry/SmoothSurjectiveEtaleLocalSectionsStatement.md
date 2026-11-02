@@ -7,7 +7,8 @@ an etale surjective morphism `e : V ⟶ T`, and a morphism `s : V ⟶ W` with
 `s ≫ f = e`. Equivalently, the pullback of `f` along `e` has a section.
 There is no quasi-compactness, separatedness, finite-type, reducedness, or
 field hypothesis. In particular, `e` is not required to be quasi-compact.
-The proposition is defined here; its unconditional proof remains open.
+The proposition is defined here; its unconditional proof is supplied by
+[SmoothSurjectiveEtaleLocalSections](SmoothSurjectiveEtaleLocalSections.md).
 
 The source is the registered original
 `stacks-055U-smooth-etale-local-sections-2026-11-02`, file `055U.html`,
@@ -52,6 +53,6 @@ These conditional consequences use all schemes and morphisms in `Over S`,
 with the Library's actual lifted Yoneda presheaves. They quantify over
 every target section; neither a global family representative nor a
 restriction to geometric points is used. They require no sheaf condition
-on `F` or `G`. The new geometric proof obligation is etale local sections
+on `F` or `G`. The geometric statement concerns etale local sections
 for arbitrary smooth surjections, distinct from etale slicing of an
 equivalence relation and from descent of smoothness along a source map.

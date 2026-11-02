@@ -18,7 +18,7 @@ variable {M : CoxeterMatrix B} (cs : CoxeterSystem M W)
 open Classical
 noncomputable section
 
-private theorem wordProd_mem_standard {I : Finset B} {ω : List B}
+theorem wordProd_mem_standard {I : Finset B} {ω : List B}
     (hω : ∀ i ∈ ω, i ∈ I) : cs.wordProd ω ∈ standardSubgroup cs I := by
   induction ω with
   | nil => simp
@@ -28,7 +28,7 @@ private theorem wordProd_mem_standard {I : Finset B} {ω : List B}
       (simple_mem_standardSubgroup cs (hω i (by simp)))
       (ih (fun j hj => hω j (by simp [hj])))
 
-private theorem exists_standard_word {I : Finset B} {a : W}
+theorem exists_standard_word {I : Finset B} {a : W}
     (ha : a ∈ standardSubgroup cs I) :
     ∃ ω : List B, (∀ i ∈ ω, i ∈ I) ∧ cs.wordProd ω = a := by
   induction ha using Subgroup.closure_induction with

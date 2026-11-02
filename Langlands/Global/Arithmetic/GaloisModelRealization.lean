@@ -1,0 +1,549 @@
+import Langlands.Global.Arithmetic.DenseCompletionComparison
+import Langlands.Global.Arithmetic.FieldRealizationStatement
+import Langlands.LocalField.CanonicalProof
+import Langlands.Global.Arithmetic.NormInvariantPrime
+import Mathlib.Analysis.Normed.Algebra.Ultra
+
+/-!
+# Totally real realization from an embedded global Galois model
+
+Global descent, Galois comparison and canonical completion identifications from a
+totally real rational Galois model.
+-/
+
+namespace Langlands.Global.FieldRealization
+
+universe u v w
+
+open IntermediateField NumberField IsDedekindDomain
+
+section Helpers
+
+/-- Factor a ring homomorphism through an injective ring homomorphism whose range contains
+its range. -/
+noncomputable def factorRingHom {A B C : Type*} [Ring A] [Ring B] [Ring C] (f : A →+* B)
+    (hf : Function.Injective f) (g : C →+* B) (h : ∀ c, ∃ a, f a = g c) : C →+* A where
+  toFun c := (h c).choose
+  map_one' := hf (by rw [(h 1).choose_spec, map_one, map_one])
+  map_mul' x y := hf (by rw [(h _).choose_spec, map_mul, map_mul, (h x).choose_spec,
+    (h y).choose_spec])
+  map_zero' := hf (by rw [(h 0).choose_spec, map_zero, map_zero])
+  map_add' x y := hf (by rw [(h _).choose_spec, map_add, map_add, (h x).choose_spec,
+    (h y).choose_spec])
+
+theorem factorRingHom_spec {A B C : Type*} [Ring A] [Ring B] [Ring C] (f : A →+* B)
+    (hf : Function.Injective f) (g : C →+* B) (h : ∀ c, ∃ a, f a = g c) (c : C) :
+    f (factorRingHom f hf g h c) = g c :=
+  (h c).choose_spec
+
+/-- A multiplicative relation between two groups that is total and functional in both
+directions is the graph of a group isomorphism. -/
+theorem exists_mulEquiv_of_rel {G H : Type*} [Group G] [Group H] (R : G → H → Prop)
+    (hex : ∀ g, ∃ h, R g h) (hex' : ∀ h, ∃ g, R g h)
+    (huniq : ∀ g h h', R g h → R g h' → h = h') (huniq' : ∀ g g' h, R g h → R g' h → g = g')
+    (hmul : ∀ g g' h h', R g h → R g' h' → R (g * g') (h * h')) :
+    ∃ θ : G ≃* H, ∀ g, R g (θ g) := by
+  choose f hf using hex
+  have hmap : ∀ g g', f (g * g') = f g * f g' := fun g g' =>
+    huniq _ _ _ (hf _) (hmul _ _ _ _ (hf g) (hf g'))
+  refine ⟨MulEquiv.ofBijective (MonoidHom.mk' f hmap) ⟨fun g g' he => ?_, fun h => ?_⟩, hf⟩
+  · have he' : f g = f g' := he
+    exact huniq' _ _ _ (hf g) (by rw [he']; exact hf g')
+  · obtain ⟨g, hg⟩ := hex' h
+    exact ⟨g, huniq _ _ _ (hf g) hg⟩
+
+end Helpers
+
+section Model
+
+variable (p : ℕ) [Fact p.Prime] {Ω : Type*} [Field Ω] [Algebra ℚ_[p] Ω] [CharZero Ω]
+  {N : Type*} [Field N] [NumberField N] [IsGalois ℚ N] [Algebra N Ω]
+
+/-- Restriction of a `ℚ_[p]`-automorphism of `Ω` to the normal subfield `N`. -/
+noncomputable def restrictModel : (Ω ≃ₐ[ℚ_[p]] Ω) →* (N ≃ₐ[ℚ] N) :=
+  MonoidHom.mk' (fun σ => (σ.restrictScalars ℚ).restrictNormal N) fun σ τ => by
+    ext y
+    apply (algebraMap N Ω).injective
+    simp only [AlgEquiv.restrictNormal_commutes, AlgEquiv.restrictScalars_apply,
+      AlgEquiv.mul_apply]
+
+theorem algebraMap_restrictModel (σ : Ω ≃ₐ[ℚ_[p]] Ω) (y : N) :
+    algebraMap N Ω (restrictModel p σ y) = σ (algebraMap N Ω y) :=
+  (σ.restrictScalars ℚ).restrictNormal_commutes N y
+
+theorem restrictModel_injective [FiniteDimensional ℚ_[p] Ω]
+    (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    Function.Injective (restrictModel p (Ω := Ω) (N := N)) := by
+  intro σ τ h
+  apply AlgEquiv.coe_toAlgHom_injective
+  refine AlgHom.ext_of_adjoin_eq_top (adjoin_eq_top_iff.mp hι) ?_
+  rintro _ ⟨y, rfl⟩
+  change σ (algebraMap N Ω y) = τ (algebraMap N Ω y)
+  rw [← algebraMap_restrictModel, ← algebraMap_restrictModel, h]
+
+/-- The subfield of `N` sent into an intermediate field of `Ω / ℚ_[p]`. -/
+noncomputable def modelPreimage (X : IntermediateField ℚ_[p] Ω) : IntermediateField ℚ N :=
+  (X.restrictScalars ℚ).comap (IsScalarTower.toAlgHom ℚ N Ω)
+
+omit [IsGalois ℚ N] in
+theorem mem_modelPreimage {X : IntermediateField ℚ_[p] Ω} {y : N} :
+    y ∈ modelPreimage p X ↔ algebraMap N Ω y ∈ X :=
+  Iff.rfl
+
+variable [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+
+/-- Every automorphism of `N` fixing the preimage of `X` is the restriction of an
+automorphism of `Ω` fixing `X`. -/
+theorem exists_restrictModel_eq (X : IntermediateField ℚ_[p] Ω) (ρ : N ≃ₐ[ℚ] N)
+    (hρ : ρ ∈ (modelPreimage p X).fixingSubgroup) :
+    ∃ τ ∈ X.fixingSubgroup, restrictModel p τ = ρ := by
+  let S : Subgroup (N ≃ₐ[ℚ] N) := X.fixingSubgroup.map (restrictModel p)
+  have hS : fixedField S ≤ modelPreimage p X := by
+    intro y hy
+    rw [mem_modelPreimage, ← IsGalois.fixedField_fixingSubgroup X, mem_fixedField_iff]
+    intro τ hτ
+    rw [← algebraMap_restrictModel]
+    exact congrArg _ ((mem_fixedField_iff _ _).mp hy _ (Subgroup.mem_map_of_mem _ hτ))
+  have hρ' : ρ ∈ (fixedField S).fixingSubgroup :=
+    (mem_fixingSubgroup_iff _ _).mpr fun y hy => (mem_fixingSubgroup_iff _ _).mp hρ y (hS hy)
+  rw [fixingSubgroup_fixedField] at hρ'
+  obtain ⟨τ, hτ, he⟩ := Subgroup.mem_map.mp hρ'
+  exact ⟨τ, hτ, he⟩
+
+/-- An intermediate field of `Ω / ℚ_[p]` is generated by the image of its preimage in `N`. -/
+theorem adjoin_image_modelPreimage (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤)
+    (X : IntermediateField ℚ_[p] Ω) :
+    adjoin ℚ_[p] (algebraMap N Ω '' (modelPreimage p (N := N) X : Set N)) = X := by
+  apply le_antisymm
+  · rw [adjoin_le_iff]
+    rintro _ ⟨y, hy, rfl⟩
+    exact hy
+  · set Y := adjoin ℚ_[p] (algebraMap N Ω '' (modelPreimage p (N := N) X : Set N))
+    rw [← IsGalois.fixedField_fixingSubgroup Y, le_iff_le]
+    intro σ hσ
+    have hρ : restrictModel p (N := N) σ ∈ (modelPreimage p X).fixingSubgroup := by
+      rw [IntermediateField.mem_fixingSubgroup_iff]
+      intro y hy
+      apply (algebraMap N Ω).injective
+      rw [algebraMap_restrictModel]
+      exact (mem_fixingSubgroup_iff _ _).mp hσ _ (subset_adjoin _ _ ⟨y, hy, rfl⟩)
+    obtain ⟨τ, hτ, he⟩ := exists_restrictModel_eq p X _ hρ
+    rwa [← restrictModel_injective p hι he]
+
+/-- A set in a finite extension `A` of `ℚ_[p]` whose image under an embedding into `Ω` is the
+image of the corresponding preimage in `N` generates `A` as a `ℚ_[p]`-algebra. -/
+theorem algebraAdjoin_eq_top_of_image_eq (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤)
+    {A : Type*} [Field A] [Algebra ℚ_[p] A] [FiniteDimensional ℚ_[p] A] (a : A →ₐ[ℚ_[p]] Ω)
+    {T : Set A} (hT : a '' T = algebraMap N Ω '' (modelPreimage p (N := N) a.fieldRange : Set N)) :
+    Algebra.adjoin ℚ_[p] T = ⊤ := by
+  rw [← adjoin_eq_top_iff]
+  apply IntermediateField.map_injective a
+  rw [adjoin_map, hT, adjoin_image_modelPreimage p hι, AlgHom.fieldRange_eq_map]
+
+end Model
+
+section Embedding
+
+variable {Ω : Type*} [Field Ω] {N : Type*} [Field N] [Algebra N Ω]
+
+/-- The embedding of an intermediate field `S` of `N` into a field `A` over which `Ω` is an
+extension, when `N → Ω` sends `S` into the image of `A`. -/
+noncomputable def modelEmbedding {k : Type*} [Field k] [Algebra k N] (S : IntermediateField k N)
+    (A : Type*) [Field A] [Algebra A Ω]
+    (hS : ∀ y ∈ S, ∃ a : A, algebraMap A Ω a = algebraMap N Ω y) : S →+* A :=
+  factorRingHom (algebraMap A Ω) (algebraMap A Ω).injective
+    ((algebraMap N Ω).comp S.val.toRingHom) fun y => hS y y.2
+
+theorem algebraMap_modelEmbedding {k : Type*} [Field k] [Algebra k N]
+    (S : IntermediateField k N) (A : Type*) [Field A] [Algebra A Ω]
+    (hS : ∀ y ∈ S, ∃ a : A, algebraMap A Ω a = algebraMap N Ω y) (y : S) :
+    algebraMap A Ω (modelEmbedding S A hS y) = algebraMap N Ω y :=
+  factorRingHom_spec _ _ _ _ y
+
+end Embedding
+
+/-- A ring embedding of a characteristic-zero field into a normed `ℚ_[p]`-algebra whose image
+generates it as a `ℚ_[p]`-algebra has dense image. -/
+theorem denseRange_of_adjoin_eq_top (p : ℕ) [Fact p.Prime] {R : Type*} [Field R] [CharZero R]
+    {A : Type*} [NormedField A] [NormedAlgebra ℚ_[p] A] (j : R →+* A)
+    (h : Algebra.adjoin ℚ_[p] (Set.range j) = ⊤) : DenseRange j := by
+  have hQ : ∀ r : ℚ_[p], algebraMap ℚ_[p] A r ∈ (j.range.topologicalClosure : Set A) := by
+    intro r
+    refine closure_mono ?_ (mem_closure_image (continuous_algebraMap ℚ_[p] A).continuousAt
+      (Padic.denseRange_ratCast p r))
+    rintro _ ⟨_, ⟨q, rfl⟩, rfl⟩
+    exact ⟨q, by simp only [map_ratCast]⟩
+  let T : Subalgebra ℚ_[p] A := { j.range.topologicalClosure with algebraMap_mem' := hQ }
+  have hT : Algebra.adjoin ℚ_[p] (Set.range j) ≤ T :=
+    Algebra.adjoin_le fun x hx => j.range.le_topologicalClosure (by simpa using hx)
+  rw [h] at hT
+  intro x
+  have hx : x ∈ (j.range.topologicalClosure : Set A) := hT Algebra.mem_top
+  exact hx
+
+section Descent
+
+variable (p : ℕ) [Fact p.Prime] (Ω : Type*) [Field Ω] [Algebra ℚ_[p] Ω] [CharZero Ω]
+  (N : Type*) [Field N] [NumberField N] [IsGalois ℚ N] [Algebra N Ω]
+
+/-- The subfield of `N` sent into the image of an intermediate field `A` of `Ω / ℚ_[p]`. -/
+noncomputable def modelField (A : Type*) [Field A] [Algebra ℚ_[p] A] [Algebra A Ω]
+    [IsScalarTower ℚ_[p] A Ω] : IntermediateField ℚ N :=
+  modelPreimage p (IsScalarTower.toAlgHom ℚ_[p] A Ω).fieldRange
+
+omit [IsGalois ℚ N] in
+theorem mem_modelField (A : Type*) [Field A] [Algebra ℚ_[p] A] [Algebra A Ω]
+    [IsScalarTower ℚ_[p] A Ω] {y : N} :
+    y ∈ modelField p Ω N A ↔ ∃ a : A, algebraMap A Ω a = algebraMap N Ω y := by
+  simp only [modelField, mem_modelPreimage, AlgHom.mem_fieldRange, IsScalarTower.coe_toAlgHom']
+
+/-- An intermediate field of `N` with the same elements as `modelField p Ω N A` has generating
+image in `A`. -/
+theorem adjoin_range_modelEmbedding [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+    (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) {k : Type*} [Field k] [Algebra k N]
+    (S : IntermediateField k N) (A : Type*) [Field A] [Algebra ℚ_[p] A]
+    [FiniteDimensional ℚ_[p] A] [Algebra A Ω] [IsScalarTower ℚ_[p] A Ω]
+    (hS : ∀ y, y ∈ S ↔ y ∈ modelField p Ω N A) :
+    Algebra.adjoin ℚ_[p] (Set.range (modelEmbedding S A fun y hy =>
+      (mem_modelField p Ω N A).mp ((hS y).mp hy))) = ⊤ := by
+  refine algebraAdjoin_eq_top_of_image_eq p hι (IsScalarTower.toAlgHom ℚ_[p] A Ω) ?_
+  ext z
+  constructor
+  · rintro ⟨_, ⟨y, rfl⟩, rfl⟩
+    exact ⟨y, (hS y).mp y.2, (algebraMap_modelEmbedding _ _ _ y).symm⟩
+  · rintro ⟨y, hy, rfl⟩
+    exact ⟨_, ⟨⟨y, (hS y).mpr hy⟩, rfl⟩, algebraMap_modelEmbedding _ _ _ ⟨y, (hS y).mpr hy⟩⟩
+
+variable (F E : Type*) [Field F] [Field E] [Algebra ℚ_[p] F] [Algebra ℚ_[p] E] [Algebra F E]
+  [IsScalarTower ℚ_[p] F E] [Algebra F Ω] [Algebra E Ω] [IsScalarTower F E Ω]
+  [IsScalarTower ℚ_[p] F Ω] [IsScalarTower ℚ_[p] E Ω]
+
+omit [IsGalois ℚ N] [IsScalarTower ℚ_[p] F E] in
+theorem modelField_le : modelField p Ω N F ≤ modelField p Ω N E := by
+  intro y hy
+  obtain ⟨a, ha⟩ := (mem_modelField p Ω N F).mp hy
+  exact (mem_modelField p Ω N E).mpr ⟨algebraMap F E a, by
+    rw [← IsScalarTower.algebraMap_apply, ha]⟩
+
+/-- The global model of `E`, as an extension of the global model of `F`. -/
+noncomputable def topModel : IntermediateField (modelField p Ω N F) N :=
+  IntermediateField.extendScalars (modelField_le p Ω N F E)
+
+/-- The embedding of the global model of `F` into `F`. -/
+noncomputable def baseEmbedding : modelField p Ω N F →+* F :=
+  modelEmbedding (Ω := Ω) (modelField p Ω N F) F fun _ hy => (mem_modelField p Ω N F).mp hy
+
+/-- The embedding of the global model of `E` into `E`. -/
+noncomputable def topEmbedding : topModel p Ω N F E →+* E :=
+  modelEmbedding (Ω := Ω) (topModel p Ω N F E) E fun _ hy => (mem_modelField p Ω N E).mp hy
+
+omit [IsGalois ℚ N] [IsScalarTower ℚ_[p] F E] [IsScalarTower F E Ω] [IsScalarTower ℚ_[p] E Ω] in
+theorem algebraMap_baseEmbedding (x : modelField p Ω N F) :
+    algebraMap F Ω (baseEmbedding p Ω N F x) = algebraMap N Ω x :=
+  algebraMap_modelEmbedding _ _ _ x
+
+omit [IsGalois ℚ N] [IsScalarTower ℚ_[p] F E] in
+theorem algebraMap_topEmbedding (y : topModel p Ω N F E) :
+    algebraMap E Ω (topEmbedding p Ω N F E y) = algebraMap N Ω y :=
+  algebraMap_modelEmbedding _ _ _ y
+
+omit [IsGalois ℚ N] [IsScalarTower ℚ_[p] F E] in
+theorem topEmbedding_algebraMap (x : modelField p Ω N F) :
+    topEmbedding p Ω N F E (algebraMap (modelField p Ω N F) (topModel p Ω N F E) x) =
+      algebraMap F E (baseEmbedding p Ω N F x) := by
+  apply (algebraMap E Ω).injective
+  rw [algebraMap_topEmbedding, ← IsScalarTower.algebraMap_apply, algebraMap_baseEmbedding]
+  rfl
+
+theorem adjoin_range_baseEmbedding [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+    [FiniteDimensional ℚ_[p] F] (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    Algebra.adjoin ℚ_[p] (Set.range (baseEmbedding p Ω N F)) = ⊤ :=
+  adjoin_range_modelEmbedding p Ω N hι (modelField p Ω N F) F fun _ => Iff.rfl
+
+omit [IsScalarTower ℚ_[p] F E] in
+theorem adjoin_range_topEmbedding [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+    [FiniteDimensional ℚ_[p] E] (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    Algebra.adjoin ℚ_[p] (Set.range (topEmbedding p Ω N F E)) = ⊤ :=
+  adjoin_range_modelEmbedding p Ω N hι (topModel p Ω N F E) E fun _ => Iff.rfl
+
+omit [IsScalarTower ℚ_[p] F E] in
+/-- Every automorphism of the global model `L / K` is compatible with an automorphism of
+`E / F`. -/
+theorem exists_localCompat [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω] [Normal F E]
+    (σ : topModel p Ω N F E ≃ₐ[modelField p Ω N F] topModel p Ω N F E) :
+    ∃ τ : E ≃ₐ[F] E, ∀ y, τ (topEmbedding p Ω N F E y) = topEmbedding p Ω N F E (σ y) := by
+  let ρ : N ≃ₐ[ℚ] N := (σ.liftNormal N).restrictScalars ℚ
+  have hρ : ρ ∈ (modelPreimage p (IsScalarTower.toAlgHom ℚ_[p] F Ω).fieldRange).fixingSubgroup := by
+    rw [IntermediateField.mem_fixingSubgroup_iff]
+    intro y hy
+    exact (σ.liftNormal N).commutes ⟨y, hy⟩
+  obtain ⟨τ₀, hτ₀, he⟩ := exists_restrictModel_eq p _ ρ hρ
+  have hfix : ∀ a : F, τ₀ (algebraMap F Ω a) = algebraMap F Ω a := fun a =>
+    (IntermediateField.mem_fixingSubgroup_iff _ _).mp hτ₀ _ (AlgHom.mem_fieldRange.mpr ⟨a, rfl⟩)
+  let τ₁ : Ω ≃ₐ[F] Ω := { τ₀ with commutes' := hfix }
+  refine ⟨τ₁.restrictNormal E, fun y => (algebraMap E Ω).injective ?_⟩
+  rw [AlgEquiv.restrictNormal_commutes, algebraMap_topEmbedding, algebraMap_topEmbedding]
+  change τ₀ (algebraMap N Ω y) = _
+  rw [← algebraMap_restrictModel, he]
+  exact congrArg (algebraMap N Ω) (σ.liftNormal_commutes N y)
+
+omit [IsScalarTower ℚ_[p] F E] in
+/-- Every automorphism of `E / F` is compatible with an automorphism of the global model
+`L / K`. -/
+theorem exists_modelCompat [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω] (τ : E ≃ₐ[F] E) :
+    ∃ σ : topModel p Ω N F E ≃ₐ[modelField p Ω N F] topModel p Ω N F E,
+      ∀ y, τ (topEmbedding p Ω N F E y) = topEmbedding p Ω N F E (σ y) := by
+  have : Normal F Ω := Normal.tower_top_of_normal ℚ_[p] F Ω
+  let ρ : N ≃ₐ[ℚ] N := restrictModel p ((τ.liftNormal Ω).restrictScalars ℚ_[p])
+  have hρ : ∀ y : N, algebraMap N Ω (ρ y) = τ.liftNormal Ω (algebraMap N Ω y) := fun y =>
+    algebraMap_restrictModel p _ y
+  have hmem : ∀ y : topModel p Ω N F E, ρ (y : N) ∈ topModel p Ω N F E := by
+    intro y
+    obtain ⟨e, he⟩ := (mem_modelField p Ω N E).mp y.2
+    exact (mem_modelField p Ω N E).mpr ⟨τ e, by rw [hρ, ← he, τ.liftNormal_commutes Ω e]⟩
+  have hfix : ∀ x : modelField p Ω N F, ρ x = x := by
+    intro x
+    obtain ⟨a, ha⟩ := (mem_modelField p Ω N F).mp x.2
+    apply (algebraMap N Ω).injective
+    rw [hρ, ← ha]
+    exact (τ.liftNormal Ω).commutes a
+  let σ₀ : topModel p Ω N F E →ₐ[modelField p Ω N F] topModel p Ω N F E :=
+    { toFun := fun y => ⟨ρ (y : N), hmem y⟩
+      map_one' := Subtype.ext (map_one ρ)
+      map_mul' := fun x y => Subtype.ext (map_mul ρ (x : N) y)
+      map_zero' := Subtype.ext (map_zero ρ)
+      map_add' := fun x y => Subtype.ext (map_add ρ (x : N) y)
+      commutes' := fun x => Subtype.ext (hfix x) }
+  refine ⟨AlgEquiv.ofBijective σ₀ (Algebra.IsAlgebraic.algHom_bijective σ₀), fun y => ?_⟩
+  apply (algebraMap E Ω).injective
+  rw [← τ.liftNormal_commutes Ω (topEmbedding p Ω N F E y), algebraMap_topEmbedding,
+    algebraMap_topEmbedding]
+  exact (hρ (y : N)).symm
+
+/-- The compatibility relation is the graph of a group isomorphism
+`Gal(L / K) ≃* Gal(E / F)`. -/
+theorem exists_galoisEquiv [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+    [FiniteDimensional ℚ_[p] E] [Normal F E]
+    (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    ∃ θ : (topModel p Ω N F E ≃ₐ[modelField p Ω N F] topModel p Ω N F E) ≃* (E ≃ₐ[F] E),
+      ∀ σ y, θ σ (topEmbedding p Ω N F E y) = topEmbedding p Ω N F E (σ y) := by
+  refine exists_mulEquiv_of_rel
+    (fun (σ : topModel p Ω N F E ≃ₐ[modelField p Ω N F] topModel p Ω N F E) (τ : E ≃ₐ[F] E) =>
+      ∀ y, τ (topEmbedding p Ω N F E y) = topEmbedding p Ω N F E (σ y))
+    (exists_localCompat p Ω N F E) (exists_modelCompat p Ω N F E) ?_ ?_ ?_
+  · intro σ τ τ' hτ hτ'
+    have h := AlgHom.ext_of_adjoin_eq_top (adjoin_range_topEmbedding p Ω N F E hι)
+      (φ₁ := (τ.restrictScalars ℚ_[p]).toAlgHom) (φ₂ := (τ'.restrictScalars ℚ_[p]).toAlgHom)
+      (by rintro _ ⟨y, rfl⟩; exact (hτ y).trans (hτ' y).symm)
+    exact AlgEquiv.ext fun x => AlgHom.congr_fun h x
+  · intro σ σ' τ hσ hσ'
+    exact AlgEquiv.ext fun y => (topEmbedding p Ω N F E).injective ((hσ y).symm.trans (hσ' y))
+  · intro σ σ' τ τ' hσ hσ' y
+    rw [AlgEquiv.mul_apply, hσ', hσ]
+    rfl
+
+/-- The global model `L / K` of a finite Galois extension `E / F` is Galois. -/
+theorem isGalois_topModel [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+    [FiniteDimensional ℚ_[p] E] [IsGalois F E] [FiniteDimensional F E]
+    (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    IsGalois (modelField p Ω N F) (topModel p Ω N F E) := by
+  obtain ⟨θ, hθ⟩ := exists_galoisEquiv p Ω N F E hι
+  apply IsGalois.of_fixedField_eq_bot
+  rw [eq_bot_iff]
+  intro y hy
+  have hfix : ∀ τ : E ≃ₐ[F] E, τ (topEmbedding p Ω N F E y) = topEmbedding p Ω N F E y := by
+    intro τ
+    obtain ⟨σ, rfl⟩ := θ.surjective τ
+    rw [hθ, (mem_fixedField_iff _ _).mp hy σ (Subgroup.mem_top σ)]
+  obtain ⟨a, ha⟩ := (IsGalois.mem_range_algebraMap_iff_fixed _).mpr hfix
+  have hyK : (y : N) ∈ modelField p Ω N F := (mem_modelField p Ω N F).mpr ⟨a, by
+    rw [IsScalarTower.algebraMap_apply F E Ω, ha, algebraMap_topEmbedding]⟩
+  exact IntermediateField.mem_bot.mpr ⟨⟨y, hyK⟩, Subtype.ext rfl⟩
+
+/-- The global model `L / K` has the same degree as `E / F`. -/
+theorem finrank_topModel [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+    [FiniteDimensional ℚ_[p] E] [IsGalois F E] [FiniteDimensional F E]
+    (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    Module.finrank (modelField p Ω N F) (topModel p Ω N F E) = Module.finrank F E := by
+  have := isGalois_topModel p Ω N F E hι
+  obtain ⟨θ, -⟩ := exists_galoisEquiv p Ω N F E hι
+  rw [← IsGalois.card_aut_eq_finrank, ← IsGalois.card_aut_eq_finrank]
+  exact Nat.card_congr θ.toEquiv
+
+end Descent
+
+section Realization
+
+variable (p : ℕ) [Fact p.Prime] (Ω : Type*) [Field Ω] [Algebra ℚ_[p] Ω] [CharZero Ω]
+  [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+  (N : Type*) [Field N] [NumberField N] [IsGalois ℚ N] [Algebra N Ω]
+  (F E : Type*) [NontriviallyNormedField F] [NontriviallyNormedField E] [IsUltrametricDist F]
+  [IsUltrametricDist E] [CompleteSpace F] [CompleteSpace E] [NormedAlgebra ℚ_[p] F]
+  [NormedAlgebra ℚ_[p] E] [FiniteDimensional ℚ_[p] F] [FiniteDimensional ℚ_[p] E] [Algebra F E]
+  [IsScalarTower ℚ_[p] F E] [IsGalois F E] [FiniteDimensional F E] [Algebra F Ω] [Algebra E Ω]
+  [IsScalarTower F E Ω] [IsScalarTower ℚ_[p] F Ω] [IsScalarTower ℚ_[p] E Ω]
+
+/-- Completion data for the global model `L / K` of `E / F`, for norms on `F` and `E` that
+are compatible along `F → E` and invariant under `Gal(E / F)`. -/
+theorem exists_completionData (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤)
+    (hnorm : ∀ x : F, ‖algebraMap F E x‖ = ‖x‖)
+    (hinv : ∀ (τ : E ≃ₐ[F] E) (x : E), ‖τ x‖ = ‖x‖) :
+    ∃ (vK : HeightOneSpectrum (𝓞 (modelField p Ω N F)))
+      (wL : HeightOneSpectrum (𝓞 (topModel p Ω N F E)))
+      (φ : vK.adicCompletion (modelField p Ω N F) ≃+* F)
+      (ψ : wL.adicCompletion (topModel p Ω N F E) ≃+* E)
+      (θ : (topModel p Ω N F E ≃ₐ[modelField p Ω N F] topModel p Ω N F E) ≃* (E ≃ₐ[F] E)),
+      wL.asIdeal.LiesOver vK.asIdeal ∧
+      (∀ w : HeightOneSpectrum (𝓞 (topModel p Ω N F E)),
+        w.asIdeal.LiesOver vK.asIdeal → w = wL) ∧
+      Continuous φ ∧ Continuous φ.symm ∧ Continuous ψ ∧ Continuous ψ.symm ∧
+      (∀ x : modelField p Ω N F,
+        ψ (algebraMap _ (wL.adicCompletion _)
+            (algebraMap (modelField p Ω N F) (topModel p Ω N F E) x)) =
+          algebraMap F E (φ (algebraMap _ (vK.adicCompletion _) x))) ∧
+      ∀ (σ : topModel p Ω N F E ≃ₐ[modelField p Ω N F] topModel p Ω N F E)
+        (x : topModel p Ω N F E),
+        θ σ (ψ (algebraMap _ (wL.adicCompletion _) x)) =
+          ψ (algebraMap _ (wL.adicCompletion _) (σ x)) := by
+  obtain ⟨vK, φ, hvK, hφ, hφs, hφK⟩ := exists_adicCompletion_ringEquiv _
+    (denseRange_of_adjoin_eq_top p _ (adjoin_range_baseEmbedding p Ω N F hι))
+  obtain ⟨wL, ψ, hwL, hψ, hψs, hψL⟩ := exists_adicCompletion_ringEquiv _
+    (denseRange_of_adjoin_eq_top p _ (adjoin_range_topEmbedding p Ω N F E hι))
+  obtain ⟨θ, hθ⟩ := exists_galoisEquiv p Ω N F E hι
+  have := isGalois_topModel p Ω N F E hι
+  have hlies : wL.asIdeal.LiesOver vK.asIdeal := ⟨Ideal.ext fun a => by
+    rw [Ideal.mem_under, hvK, hwL]
+    change _ ↔
+      ‖topEmbedding p Ω N F E (algebraMap (modelField p Ω N F) (topModel p Ω N F E) a)‖ < 1
+    rw [topEmbedding_algebraMap, hnorm]⟩
+  refine ⟨vK, wL, φ, ψ, θ, hlies, prime_unique_of_norm_invariant (topEmbedding p Ω N F E) wL
+    hwL (fun σ x => by rw [← hθ, hinv]) vK, hφ, hφs, hψ, hψs, fun x => ?_, fun σ x => ?_⟩
+  · rw [hψL, hφK, topEmbedding_algebraMap]
+  · rw [hψL, hψL, hθ]
+
+end Realization
+
+section Spectral
+
+/-- A finite extension of `ℚ_[p]` carries a nontrivially normed field structure, extending its
+given field structure, whose norm is the spectral norm. -/
+theorem exists_spectralNormedField (p : ℕ) [Fact p.Prime] (F : Type*) [inst : Field F]
+    [Algebra ℚ_[p] F] [FiniteDimensional ℚ_[p] F] :
+    ∃ nF : NontriviallyNormedField F, nF.toField = inst ∧ ∀ x : F, ‖x‖ = spectralNorm ℚ_[p] F x :=
+  ⟨spectralNorm.nontriviallyNormedField ℚ_[p] F, rfl, fun _ => rfl⟩
+
+/-- For the spectral norm, the given algebra structure over `ℚ_[p]` is a normed algebra. -/
+theorem exists_spectralNormedAlgebra (p : ℕ) [Fact p.Prime] (F : Type*)
+    [NontriviallyNormedField F] [inst : Algebra ℚ_[p] F] [FiniteDimensional ℚ_[p] F]
+    (hF : ∀ x : F, ‖x‖ = spectralNorm ℚ_[p] F x) :
+    ∃ nA : NormedAlgebra ℚ_[p] F, nA.toAlgebra = inst :=
+  ⟨{ inst with
+    norm_smul_le := fun r x => by
+      rw [hF (r • x), hF x, spectralNorm_smul r (Algebra.IsAlgebraic.isAlgebraic x), coe_nnnorm] },
+    rfl⟩
+
+variable (p : ℕ) [Fact p.Prime] (Ω : Type*) [Field Ω] [Algebra ℚ_[p] Ω]
+  [FiniteDimensional ℚ_[p] Ω] [IsGalois ℚ_[p] Ω]
+  (N : Type) [Field N] [NumberField N] [IsGalois ℚ N] [IsTotallyReal N] [Algebra N Ω]
+  (F E : Type*) [Field F] [Field E] [Algebra ℚ_[p] F] [Algebra ℚ_[p] E]
+  [FiniteDimensional ℚ_[p] F] [FiniteDimensional ℚ_[p] E] [Algebra F E]
+  [IsScalarTower ℚ_[p] F E] [IsGalois F E] [Algebra E Ω] [IsScalarTower ℚ_[p] E Ω]
+
+/-- The totally real Galois realization of `E / F`, for the module topologies over `ℚ_[p]`,
+given an embedded totally real Galois number field `N` generating `Ω` over `ℚ_[p]`. -/
+theorem exists_realization (hι : adjoin ℚ_[p] (Set.range (algebraMap N Ω)) = ⊤) :
+    letI := moduleTopology ℚ_[p] F
+    letI := moduleTopology ℚ_[p] E
+    ∃ (K L : Type) (_ : Field K) (_ : Field L)
+      (_ : NumberField K) (_ : NumberField L)
+      (_ : Algebra K L) (_ : IsGalois K L),
+      NumberField.IsTotallyReal K ∧ NumberField.IsTotallyReal L ∧
+      Module.finrank K L = Module.finrank F E ∧
+      ∃ (vK : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K))
+        (wL : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L))
+        (φ : vK.adicCompletion K ≃+* F)
+        (ψ : wL.adicCompletion L ≃+* E)
+        (θ : (L ≃ₐ[K] L) ≃* (E ≃ₐ[F] E)),
+        wL.asIdeal.LiesOver vK.asIdeal ∧
+        (∀ w : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L),
+          w.asIdeal.LiesOver vK.asIdeal → w = wL) ∧
+        Continuous φ ∧ Continuous φ.symm ∧ Continuous ψ ∧ Continuous ψ.symm ∧
+        (∀ x : K,
+          ψ (algebraMap L (wL.adicCompletion L) (algebraMap K L x)) =
+            algebraMap F E (φ (algebraMap K (vK.adicCompletion K) x))) ∧
+        (∀ (σ : L ≃ₐ[K] L) (x : L),
+          θ σ (ψ (algebraMap L (wL.adicCompletion L) x)) =
+            ψ (algebraMap L (wL.adicCompletion L) (σ x))) := by
+  -- Replace the field and algebra structures of `F` and `E` by spectral-normed ones.
+  obtain ⟨nF, hF₁, hF⟩ := exists_spectralNormedField p F
+  obtain ⟨nE, hE₁, hE⟩ := exists_spectralNormedField p E
+  subst hF₁ hE₁
+  obtain ⟨nAF, hF₂⟩ := exists_spectralNormedAlgebra p F hF
+  obtain ⟨nAE, hE₂⟩ := exists_spectralNormedAlgebra p E hE
+  subst hF₂ hE₂
+  have : CharZero Ω := charZero_of_injective_algebraMap (algebraMap ℚ_[p] Ω).injective
+  let : Algebra F Ω := ((algebraMap E Ω).comp (algebraMap F E)).toAlgebra
+  have : IsScalarTower F E Ω := IsScalarTower.of_algebraMap_eq fun _ => rfl
+  have : IsScalarTower ℚ_[p] F Ω := IsScalarTower.of_algebraMap_eq fun x => by
+    rw [IsScalarTower.algebraMap_apply ℚ_[p] E Ω, IsScalarTower.algebraMap_apply ℚ_[p] F E]
+    rfl
+  have : FiniteDimensional F E := Module.Finite.of_restrictScalars_finite ℚ_[p] F E
+  have : IsUltrametricDist F := IsUltrametricDist.of_normedAlgebra ℚ_[p]
+  have : IsUltrametricDist E := IsUltrametricDist.of_normedAlgebra ℚ_[p]
+  have : CompleteSpace F := FiniteDimensional.complete ℚ_[p] F
+  have : CompleteSpace E := FiniteDimensional.complete ℚ_[p] E
+  obtain ⟨vK, wL, φ, ψ, θ, hlies, huniq, hφ, hφs, hψ, hψs, hcomp, hgal⟩ :=
+    exists_completionData p Ω N F E hι
+      (fun x => by rw [hE, hF]; exact (spectralNorm.eq_of_tower (K := ℚ_[p]) (L := E) x).symm)
+      (fun τ x => by rw [hE, hE]; exact (spectralNorm_eq_of_equiv (τ.restrictScalars ℚ_[p]) x).symm)
+  have : IsModuleTopology ℚ_[p] F := isModuleTopologyOfFiniteDimensional
+  have : IsModuleTopology ℚ_[p] E := isModuleTopologyOfFiniteDimensional
+  have hτF := eq_moduleTopology ℚ_[p] F
+  have hτE := eq_moduleTopology ℚ_[p] E
+  refine ⟨modelField p Ω N F, topModel p Ω N F E, inferInstance, inferInstance, inferInstance,
+    inferInstance, inferInstance, isGalois_topModel p Ω N F E hι, inferInstance,
+    IsTotallyReal.of_algebra _ N, finrank_topModel p Ω N F E hι, vK, wL, φ, ψ, θ, hlies, huniq,
+    ?_, ?_, ?_, ?_, hcomp, hgal⟩
+  · rw [← hτF]; exact hφ
+  · rw [← hτF]; exact hφs
+  · rw [← hτE]; exact hψ
+  · rw [← hτE]; exact hψs
+
+end Spectral
+
+/-- The totally real Galois realization of `E / F`, given an embedded totally real Galois
+number field `N` generating a finite Galois extension `Ω` of `ℚ_[p]` containing `E`. -/
+theorem totallyRealRealization_of_galoisModel {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p)
+    (E : PadicField.{v} p) [Algebra F.Carrier E.Carrier]
+    [IsScalarTower (Padic p) F.Carrier E.Carrier] [IsGalois F.Carrier E.Carrier]
+    (Ω : Type w) [Field Ω] [Algebra (Padic p) Ω] [Algebra E.Carrier Ω]
+    [IsScalarTower (Padic p) E.Carrier Ω] [FiniteDimensional (Padic p) Ω]
+    [IsGalois (Padic p) Ω] (N : Type) [Field N] [NumberField N] [IsGalois ℚ N]
+    [NumberField.IsTotallyReal N] (ι : N →+* Ω)
+    (hι : IntermediateField.adjoin (Padic p) (Set.range ι) = ⊤) :
+    letI := F.canonicalTopology
+    letI := E.canonicalTopology
+    ∃ (K L : Type) (_ : Field K) (_ : Field L)
+      (_ : NumberField K) (_ : NumberField L)
+      (_ : Algebra K L) (_ : IsGalois K L),
+      NumberField.IsTotallyReal K ∧ NumberField.IsTotallyReal L ∧
+      Module.finrank K L = Module.finrank F.Carrier E.Carrier ∧
+      ∃ (vK : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K))
+        (wL : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L))
+        (φ : vK.adicCompletion K ≃+* F.Carrier)
+        (ψ : wL.adicCompletion L ≃+* E.Carrier)
+        (θ : (L ≃ₐ[K] L) ≃* (E.Carrier ≃ₐ[F.Carrier] E.Carrier)),
+        wL.asIdeal.LiesOver vK.asIdeal ∧
+        (∀ w : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L),
+          w.asIdeal.LiesOver vK.asIdeal → w = wL) ∧
+        Continuous φ ∧ Continuous φ.symm ∧ Continuous ψ ∧ Continuous ψ.symm ∧
+        (∀ x : K,
+          ψ (algebraMap L (wL.adicCompletion L) (algebraMap K L x)) =
+            algebraMap F.Carrier E.Carrier (φ (algebraMap K (vK.adicCompletion K) x))) ∧
+        (∀ (σ : L ≃ₐ[K] L) (x : L),
+          θ σ (ψ (algebraMap L (wL.adicCompletion L) x)) =
+            ψ (algebraMap L (wL.adicCompletion L) (σ x))) := by
+  let : Algebra N Ω := ι.toAlgebra
+  exact exists_realization p Ω N F.Carrier E.Carrier hι
+
+end Langlands.Global.FieldRealization

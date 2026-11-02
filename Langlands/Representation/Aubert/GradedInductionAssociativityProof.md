@@ -21,7 +21,7 @@ The mathematical source is Zelevinsky, *Induced representations of reductive
 p-adic groups II* (Ann. Sci. ENS 13, 1980), §1.7, Proposition, part (a):
 the product on `⊕ R(G_n)` is associative because both bracketings of
 `ρ₁ × ρ₂ × ρ₃` equal the class of the induction from the three-block parabolic,
-by transitivity of induction (Bernstein–Zelevinsky I, 1.1(c), and Zelevinsky
+by transitivity of induction (Bernstein–Zelevinsky I, §2.3(c), and Zelevinsky
 1.5). Zelevinsky leaves the rank-zero factor `G_0 = {e}` implicit. Here a
 rank-zero factor is reduced to the unit class instead, because every
 irreducible representation of the actual group `GL_0` is the unit line.

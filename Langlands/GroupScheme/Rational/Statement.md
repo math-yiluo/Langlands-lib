@@ -1,6 +1,7 @@
 # Statements: the relative root system, the rational Bruhat decomposition and generic centralizers
 
 Author: Worker 1220.
+Source-correction contributions: Workers 176 and 1107.
 
 This module states three theorems about a maximal split torus of a connected
 reductive group over a field, as `Prop`-valued definitions. Nothing is proved
@@ -25,9 +26,11 @@ object.
   - 5.1–5.3 (printed pp.95–96, PDF pp.42–43): the `k`-roots `ₖΦ`, the
     relative Weyl group `ₖW = N(S)/Z(S)` and its action on `X*(S) ⊗ ℚ`;
     5.3: « Chaque composante connexe de N(S) rencontre G_k. »
-  - 5.8 (printed p.98, PDF p.45): « Soient ( , ) un produit scalaire
-    admissible sur X*(S) ⊗ ℚ, a ∈ ₖΦ(G) et c ∈ X*(S). Alors 2.(a, c)/(a, a)
-    est un entier. En particulier, ₖΦ(G) est un système de racines [...] »
+  - 5.8 (printed p.98, PDF p.45): for an admissible scalar product on
+    `X*(S) ⊗ ℝ`, a relative root `a` and a character `c`, the number
+    `2(a, c)/(a, a)` is an integer; in particular the relative roots form a
+    root system in the sense of 2.1. The ensuing argument also considers
+    their span in `X*(S) ⊗ ℚ`.
   - 5.15 (printed p.100, PDF p.47): « Le groupe G_k est réunion disjointe des
     doubles classes P_k.n.P_k (n ∈ ₖW). » Here `P = G_{ₖΦ⁺}` is a minimal
     `k`-parabolic containing the maximal split torus `S`.
@@ -57,14 +60,25 @@ object.
     finite spanning subset `R` not containing `0` such that for each `α ∈ R`
     there is a reflection `s_α` with vector `α` and `s_α(R) ⊂ R`, and
     `s_α(β) − β` is an integer multiple of `α` for all `α, β ∈ R`.
-  - 25.27 (printed p.551, PDF p.567): "Let P be a parabolic subgroup of G with
-    unipotent radical U, and let S be a split torus such that P = U ⋊ C_G(S).
-    Then G(k) = ⊔_{w ∈ ₖW} U(k) w P(k) (Bruhat decomposition)." Here `P` is a
-    minimal parabolic and `S` a maximal split torus.
-  - 25.6 (printed pp.545–546, PDF pp.561–562): for a parabolic `P` and a
-    maximal split torus `S` of `P`, `P ≃ R_u P ⋊ C_G(S)`; in the proof the
-    cocharacter `λ` of `S` with `P = P(λ)` is chosen so that
-    `C_G(S) = C_G(λ(𝔾ₘ))`.
+  - 25.27 (printed p.551, PDF p.567), with the official errata below: for a
+    minimal parabolic `P` with unipotent radical `U` and a maximal split torus
+    `S` of `P`, one has `P = U ⋊ C_G(S)` and the disjoint decomposition
+    `G(k) = ⊔_{w ∈ ₖW} U(k) w P(k)`.
+  - 25.6(b) (printed pp.545–546, PDF pp.561–562), with the official errata
+    below: for a minimal parabolic `P` and a maximal split torus `S` of `P`,
+    `P ≃ R_u P ⋊ C_G(S)`; in the proof the cocharacter `λ` of `S` with
+    `P = P(λ)` is chosen so that `C_G(S) = C_G(λ(𝔾ₘ))`.
+- Milne, [*Errata for Algebraic Groups (2017)*](https://jmilne.org/math/Books/iag2errata.html),
+  official HTML snapshot of 2026-11-02, source ID
+  `milne-2017-algebraic-groups-errata-2026-11-02`, SHA-256
+  `a0c3a10dc376e1c9bd1de05b33beaf7d54e5f1ea7b408d594cfd70231a7ba0cf`.
+  - Chapter 25, entry “p.545 et seq.”: the parabolic in 25.6(b) and 25.27
+    must be minimal, and `S` in 25.27 must be maximal split in `P`.
+  - Chapter 25, entry “p.549”: the root-system assertion of 25.16 remains
+    correct, but its proofs in Borel–Tits (1965), Borel (1991) and Springer
+    (1998) are incomplete. The errata directs readers to Conrad–Gabber–Prasad
+    (2015), C.2.15 for a complete proof. That proof has not been verified in
+    this module; this is a source-routing citation to the errata.
 
 In all these sources `G` is a connected reductive group over `k` and `S` is a
 maximal split torus.
@@ -153,6 +167,12 @@ Each statement quantifies over every field `k : Type u`, every
 
 ### The relative root system
 
+The following comparison concerns the statement. The official Milne errata's
+p.549 warning applies to the classical proof sources cited above. A future
+general proof must resolve that warning, for example by checking the indicated
+CGP C.2.15 route; neither the source citations nor this module supply such a
+proof.
+
 - **Root systems in Mathlib.** This Mathlib has no separate `RootSystem`
   structure. A root system is a `RootPairing` together with the class
   `RootPairing.IsRootSystem` (the roots span the weight space and the coroots
@@ -166,14 +186,17 @@ Each statement quantifies over every field `k : Type u`, every
   crystallographic. The integrality condition is part of Milne's definition
   C.12 (condition RS3) and is the first assertion of Borel–Tits 5.8, so it is
   stated explicitly as `P.IsCrystallographic`.
-- **The `ℚ`-form.** The sources take `ₖV ⊂ X(S) ⊗ ℚ` (Milne) or
-  `X*(S) ⊗ ℚ` with an admissible scalar product (Borel–Tits). Here the
-  ambient space is `ℚ ⊗[ℤ] characterLattice T`, the subspace is
+- **The `ℚ`-form.** Milne 25.16 explicitly uses
+  `ₖV ⊂ X(S) ⊗ ℚ`. Borel–Tits 5.8 takes an admissible scalar product on
+  the real space `X*(S) ⊗ ℝ`; its ensuing argument also considers the
+  rational span of the relative roots in `X*(S) ⊗ ℚ`. Here the ambient
+  space is `ℚ ⊗[ℤ] characterLattice T`, the subspace is
   `relativeRootSpan i`, and the root system is formulated on that subspace
   with its algebraic dual and the evaluation pairing. Given a finite spanning
   set, the coroots of a root system are determined by the roots (Milne C.13,
   C.14), so fixing the pairing to be evaluation loses nothing. This
-  formulation over `ℚ` is a derived reformulation of the sources.
+  evaluation-dual formulation over `ℚ` is derived from Milne's rational
+  root-system statement.
 - **Indexing.** The roots are indexed by a finite type `J`; since `P.root` is
   injective, condition 4 identifies `J` with the set of images `1 ⊗ α` of
   the relative roots.
@@ -200,9 +223,10 @@ Each statement quantifies over every field `k : Type u`, every
   minimal by Borel–Tits 4.16.
 - **Double cosets.** The sources state that `G(k)` is the disjoint union of
   the double cosets `P(k) n P(k)` over `ₖW` (Borel–Tits 5.15) or of
-  `U(k) w P(k)` over `ₖW` (Milne 25.27). Since `P = U ⋊ C_G(S)` (Milne 25.6)
-  and `n` normalizes `C_G(S)`, `P(k) n P(k) = U(k) n P(k)`, so the two forms
-  agree. The statement here records the decomposition as covering (every `g`
+  `U(k) w P(k)` over `ₖW` (Milne 25.27, with the corrected hypotheses).
+  Since `P` is minimal, `P = U ⋊ C_G(S)` by the corrected Milne 25.6(b);
+  since `n` normalizes `C_G(S)`, `P(k) n P(k) = U(k) n P(k)`, so the two
+  forms agree. The statement here records the decomposition as covering (every `g`
   is in some `P(k) n P(k)`) and disjointness with indexing (two normalizing
   points give the same double coset exactly when they have the same class in
   `N(k)/Z(k)`). The identification of `N(k)/Z(k)` with `ₖW` is Borel–Tits 5.3
@@ -212,8 +236,9 @@ Each statement quantifies over every field `k : Type u`, every
 ### Generic centralizers
 
 Borel–Tits 4.15 a) says that `Z(S)` is a Levi subgroup of the parabolic
-`G_{Φ⁺}`, and the proof of Milne 25.6(b) chooses a cocharacter `λ` of `S`
-with `C_G(S) = C_G(λ(𝔾ₘ))`. The statement here is the form of this for every
+`G_{Φ⁺}`, and the proof of Milne 25.6(b), for a minimal parabolic as required
+by the errata, chooses a cocharacter `λ` of `S` with
+`C_G(S) = C_G(λ(𝔾ₘ))`. The statement here is the form of this for every
 generic `ν`: the dynamic Levi subgroup functor
 `Dynamic.centralizer (ν ≫ i)`, the centralizer of `ν(𝔾ₘ)`, equals the
 subgroup functor `torusCentralizer i` of points centralizing the whole torus.

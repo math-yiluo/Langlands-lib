@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.Morphisms.OpenCoverLift
 import Langlands.GroupScheme.Dynamic.Uniqueness
 import Langlands.GroupScheme.Dynamic.Functoriality
 import Langlands.GroupScheme.Reductive.Basic
@@ -42,18 +43,6 @@ theorem exists_lift_of_isSchemeTheoreticallyDominant {W X Y Y' : Scheme.{u}} (i 
   exact ⟨inv (pullback.fst f i) ≫ pullback.snd f i, by
     rw [Category.assoc, ← pullback.condition, IsIso.inv_hom_id_assoc]⟩
 
-/-- A morphism factors through a monomorphism `i` if it does so on every member of an open
-cover of its source. -/
-theorem exists_lift_of_openCover {X Y Y' : Scheme.{u}} (i : Y' ⟶ Y) [Mono i] (f : X ⟶ Y)
-    (𝒰 : X.OpenCover) (h : ∀ k, ∃ g : 𝒰.X k ⟶ Y', g ≫ i = 𝒰.f k ≫ f) :
-    ∃ f' : X ⟶ Y', f' ≫ i = f := by
-  choose g hg using h
-  refine ⟨Scheme.Cover.glueMorphisms 𝒰 g fun k l => ?_,
-    Scheme.Cover.hom_ext 𝒰 _ _ fun k => ?_⟩
-  · rw [← cancel_mono i, Category.assoc, Category.assoc, hg, hg, ← Category.assoc,
-      pullback.condition, Category.assoc]
-  · rw [Scheme.Cover.ι_glueMorphisms_assoc, hg]
-
 namespace AffineLine
 
 /-- Over an affine `Spec A ⟶ S`: a morphism `e : Spec A ×_S 𝔸¹_S ⟶ Y` factors through a closed
@@ -84,7 +73,7 @@ theorem exists_lift_of_unitInclusion {T Y Y' : Over S} (i : Y' ⟶ Y) [IsClosedI
     (e : T ⊗ scheme S ⟶ Y) (k : T ⊗ (Gm S).X ⟶ Y') (hk : k ≫ i = T ◁ unitInclusion S ≫ e) :
     ∃ e' : T ⊗ scheme S ⟶ Y', e' ≫ i = e := by
   obtain ⟨e', he'⟩ : ∃ e' : (T ⊗ scheme S).left ⟶ Y'.left, e' ≫ i.left = e.left := by
-    refine exists_lift_of_openCover i.left e.left
+    refine Langlands.AlgebraicGeometry.exists_lift_of_openCover i.left e.left
       (T.left.affineOpenCover.openCover.pullback₁ (fst T (scheme S)).left)
       fun (j : T.left.affineOpenCover.I₀) => ?_
     let a : Over.mk (T.left.affineOpenCover.f j ≫ T.hom) ⟶ T :=

@@ -51,7 +51,8 @@ The key input is that a morphism from `T ×_S 𝔸¹_S` that lands in a closed s
   kernel of `j`, which is `⊥` (`Scheme.Hom.le_ker_comp`). A closed immersion with zero kernel is
   an isomorphism (`IsClosedImmersion.isIso_iff_ker_eq_bot`), and its inverse followed by
   `pullback.snd f i` is the factorization.
-- `exists_lift_of_openCover`: a morphism `f : X ⟶ Y` factors through a monomorphism `i` if it
+- `Langlands.AlgebraicGeometry.exists_lift_of_openCover`, imported from
+  [the generic gluing module](../../AlgebraicGeometry/Morphisms/OpenCoverLift.md): a morphism `f : X ⟶ Y` factors through a monomorphism `i` if it
   does on each member of an open cover of `X`. The local factorizations agree on overlaps
   after composing with `i`, hence agree, and glue (`Scheme.Cover.glueMorphisms`).
 - `AffineLine.exists_lift_of_unitInclusion_affine`: let `Spec A ⟶ S` be a morphism and

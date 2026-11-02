@@ -1,0 +1,13 @@
+# Plot-smooth functions on actual affine group-scheme points
+
+This is derived infrastructure for the general-reductive adelic function spaces. It uses the actual relative point carrier and the existing `CoordinateSmooth` tests on all global regular functions. It is not a construction of the analytic manifold of a smooth algebraic group.
+
+Fix a commutative base ring object R, a group scheme G over Spec R, a bundled coefficient R-algebra A, a real normed commutative algebra B, and a ring homomorphism c : A → B. `IsPlotSmooth` tests a complex function on the actual group G(A) on every `CoordinateSmooth` family. The sources range over real normed spaces E and spaces M charted on E, in the same universe as the coefficient data. Smoothness means real `ContMDiff` of order ∞, with the full-space model on E. No completeness, finite-dimensionality or smooth-manifold instance on these sources is required for the definition or the proved closure properties.
+
+`plotSmoothFunctions` is the resulting complex submodule of all actual point functions. Constants belong to it. Evaluating an actual global regular function, applying c, and then applying any real continuous linear map B → ℂ gives a member. Pullback along a morphism of the underlying schemes over the base preserves the condition.
+
+If G is affine, multiplication of actual points preserves coordinate-smooth families by the already constructed Hopf-algebra tensor argument. This proves closure under fixed left and right translations. `plotSmoothRightAction` is the resulting complex representation with the positive convention R(g)f(x) = f(xg). Its identity and multiplication laws follow from the actual group laws.
+
+No topology or manifold on G(A) is assigned here, and no continuity of these functions in the evaluation topology is asserted. The coefficient map need not be injective, continuous or surjective. For such general coefficients the definition may impose conditions quite different from those of functions on a finite-dimensional manifold. Agreement with ordinary manifold smoothness requires a separate comparison theorem; the actual GL comparison and the general algebraic-smooth-to-manifold bridge are distinct obligations. In adelic applications continuity remains a separate ambient condition.
+
+The implementation is an internal, derived choice of a family-testing function space. Its provenance is the published actual point/evaluation constructions and `CoordinateSmooth`, followed by real smooth-map composition, addition and scalar multiplication. No external source theorem or analytic-manifold existence result is invoked by this unit.
