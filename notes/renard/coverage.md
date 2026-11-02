@@ -1,7 +1,7 @@
 # Renard 2026: coverage ledger and execution boundaries
 
 This is the initial ledger for the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 2, maintained by Worker 6.
+`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 3, maintained by Worker 6.
 It records inspected passages and preserves every other section as an explicit
 audit backlog. It does **not** claim complete assertion-level inventory or
 completed formalization. The detailed first-pass rows are in
@@ -10,6 +10,14 @@ Reading extents and task-status observations below describe that initial pass.
 The replacement corrects its annihilator orientation and module-completion
 scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
+
+The [II.2.4–II.2.5 scalar and projector update](scalar-projector-progress.md),
+dated 2 November 2026, verifies five independently published constructions at
+`11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`: actual scalar presheaf and sheaf,
+the smooth multiplier action, and original-action projector presheaf and
+intrinsic sheaf gluing. Its source reading covers PDF36 and PDF44–46.
+Uniqueness, functor successors and the full categorical comparisons retain
+the boundaries stated there.
 
 The [small-projective and original-module progress note](category-module-progress.md)
 records selected verified publications and pending work checked on 30 October
@@ -572,12 +580,32 @@ Existing owners, suspended work and user controls remain unchanged.
 
 For Chapters VI–VII, the chosen generality is an explicit framework over actual
 groups, topologies, subgroups, decompositions, lattices, roots, Weyl actions and
-maps. Chapter V external structural results may be named, itemized hypotheses
-where the source imports them without proof. In-book structural derivations
-remain proof obligations. Representation-theoretic conclusions such as
-admissibility, Bernstein decomposition, second adjointness and classification
-cannot be inserted into that structural hypothesis list. A general
-algebraic-group/Bruhat–Tits realization is a separately tracked extension.
+maps. Under revision 3, Chapter V uses and helps build the common framework of
+the algebraic-groups program `2b5e4a00-9d44-49a4-9c89-979fb5b6233e` and the
+Kaletha–Prasad program `f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. Its
+structural assertions are precise Prop-valued declarations about those
+programs' actual groups, rational-point topologies, parabolics, Levi and
+unipotent subgroups, lattices, roots, Weyl actions, compact subgroups and maps.
+Underlying data, intrinsic construction laws and external structural theorem
+hypotheses remain distinct; parallel Renard definitions are not the target.
+
+The finite Chapter V structural ledger is a temporary bridge while the shared
+programs prove the external results. An assertion imported without proof in
+the book may remain a named, itemized hypothesis, with its exact source
+locator, external reference, actual declaration, consumer and discharge
+status recorded. Chapters VI–VII may proceed conditionally with every such
+hypothesis visible. In-book structural derivations remain proof obligations.
+Representation-theoretic conclusions such as admissibility, Bernstein
+decomposition, second adjointness and classification cannot be inserted into
+that structural hypothesis list.
+
+The completion target is the common general algebraic-group/Bruhat–Tits
+framework and its independently verified construction, comparison and
+representation-theoretic adapters, including the checked GL specialization
+bridges. This replaces the former optional-realization scope rule. An
+undischarged structural hypothesis is not a theorem, and a conditional
+framework theorem is not an unconditional theorem for every rational-point
+group.
 
 The framework must retain positive-characteristic local fields wherever the
 source permits them. GL-specific implementations are specialization candidates,
@@ -621,7 +649,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions, representative/separation and support proofs, corrected descent, compact functors and the exact universal-property/adjunction proof](germ-sheaf-progress.md), plus the published sheaf-unit statements and [source-error audit](basis-sheafification-source.md); the exact sheaf-unit proof, basis/all-open category equivalence and later assertions remain separate |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions and their dated proof ledger](germ-sheaf-progress.md), [scalar, smooth-action and original-action projector constructions with intrinsic gluing](scalar-projector-progress.md), and [source-error audit](basis-sheafification-source.md); the original-value-universe basis/all-open equivalence and full sheaf/module categorical comparisons retain separate obligations |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |
