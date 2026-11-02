@@ -116,6 +116,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Silberger's continuation parameters and varying inductions](../notes/jacquet/silberger-continuation-parameters.md) — Original unitary parameter formulas on pp.101–102, their determinant-coordinate signs, and the remaining selected-branch continuation obligations.
 - [Rankin-Selberg local factors of pairs: statement coverage](../notes/local-factors/coverage.md) — Find the published statements on Whittaker models, JPSS integrals, epsilon, gamma and L factors of pairs, conductors and the local converse theorem, with their original sources, retained source gaps, the delegated Shahidi comparison and the open proof obligations.
 - [Shahidi local coefficients for GL_m × GL_n: declaration coverage](../notes/local-factors/shahidi-coverage.md) — Find the published induced representations, intertwining operators, Jacquet functionals, local-coefficient relations, measure normalizations and the Theorem 5.1 comparison with JPSS gamma factors, over p-adic and general non-archimedean local fields, with their retained source gaps and open proof obligations.
+- [Waldspurger 2003 Plancherel formula: source map](../notes/plancherel/waldspurger-source-map.md) — Every numbered item of the article with pages, in-source dependencies, cited external results, input classes, source misprints and the Library declarations that cover parts of it.
 
 The links above are relative to the Library root (`paths.library`); the published
 notes themselves are in `paths.public_notes`.
