@@ -1,10 +1,12 @@
 # KP Bundles A–F: source ledger and construction boundaries
 
 This source ledger covers Bundle A, initial Bundle B targets and Bundles C–F of the standing KP program
-`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. It records mathematical source targets,
-not completed formalization. Every formal-status field below is empty: no
-accepted, published Lean result for these complete targets has been verified in
-this ledger. The remaining Bundle B targets still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
+`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. It records mathematical source targets
+and their verified formal status. Both parts of Theorem 1.1.15 have independently
+accepted, published proofs, recorded below. The other forty-two rows retain
+empty formal-status and evidence fields. The remaining Bundle B targets still
+require public ledger entries. Private source audits and unsubmitted drafts are
+not publication evidence.
 
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
@@ -94,9 +96,9 @@ identity and the simple-factor lift condition. The nearest-point
 dependency was checked at book PDF pages 38–40 and corrections PDF
 pages 1–3, including visual inspection of corrections page 2.
 The proof repairs below are independently derived obligations,
-separate from the authors' corrections. All forty-three rows retain
-null formal status and empty formal-evidence arrays. This source
-extension leaves the release order and construction gates open.
+separate from the authors' corrections. The five Bundle F rows retain
+null formal status and empty formal-evidence arrays. The later verification of
+Theorem 1.1.15 below leaves the release order and construction gates open.
 
 ## Structured ledger
 
@@ -110,7 +112,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. All rows are source-only; every formal construction, proof and release gate remains separate.",
+  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15 have verified published proofs; the other forty-two rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -219,17 +221,46 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Part (2): M⊆X is nonempty and bounded; it need not itself be closed or convex."
       ],
       "conclusion": "Part (1): M has a unique barycenter, fixed by every isometry carrying M onto itself. Part (2): the setwise stabilizer of M in the isometry group has a fixed point in X.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Metric.KP.BarycenterStatement",
+        "Langlands.Geometry.Metric.KP.barycenter",
+        "Langlands.Geometry.Metric.KP.BoundedSetStabilizerFixedPointStatement",
+        "Langlands.Geometry.Metric.KP.boundedSetStabilizerFixedPoint"
+      ],
+      "modules": [
+        "Langlands.Geometry.Metric.KPFixedPointStatement",
+        "Langlands.Geometry.Metric.KPBarycenterProof",
+        "Langlands.Geometry.Metric.KPBoundedSetStabilizerProof"
+      ],
       "dependencies": [
         "Definitions 1.1.2, 1.1.4, 1.1.8, corrected 1.1.12, and 1.1.14; Lemmas 1.1.11 and 1.1.13; completeness"
       ],
       "consumer_or_regression": "Bounded isometric actions (Corollary 1.1.19), then the constructed-building instance and Corollary 4.2.14.",
-      "formal_status": null,
+      "formal_status": "proved",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "0af16116-fa33-42dd-9681-06303b9efce9",
+        "52258019-2d1f-40af-9214-6243cad21009"
+      ],
+      "publication_commits": [
+        "11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Metric.KP.barycenter",
+          "environment_artifact": "3b864ddf-f0af-4c18-8903-c6f813a0ce0f",
+          "inspection_id": "844de534-f7cd-4803-bc90-ac4d44a481c7",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection; independent proof acceptance and publication are recorded separately."
+        },
+        {
+          "declaration": "Langlands.Geometry.Metric.KP.boundedSetStabilizerFixedPoint",
+          "environment_artifact": "3b864ddf-f0af-4c18-8903-c6f813a0ce0f",
+          "inspection_id": "abf204b5-dc18-491a-944b-d03b1ab28f22",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection; independent proof acceptance and publication are recorded separately."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2214,6 +2245,45 @@ These are independent mathematical proof repairs to implement and
 verify in Lean. They do not change the theorem statement, and this
 source ledger records no formal proof or authors' erratum for them.
 
+## Verified Theorem 1.1.15 proofs
+
+Worker 1229 supplied both proof units in task
+`e52b85eb-0f5c-46a9-ab48-c8798f0abdc0`. The theorem
+`Langlands.Geometry.Metric.KP.barycenter` proves the exact published
+`BarycenterStatement`: existence, uniqueness and invariance of the barycenter
+of a bounded closed nonempty geodesically convex set. The theorem
+`Langlands.Geometry.Metric.KP.boundedSetStabilizerFixedPoint` proves
+`BoundedSetStabilizerFixedPointStatement`: one point is fixed simultaneously
+by every isometry preserving a given nonempty bounded set. Both targets
+quantify over arbitrary carrier universes and complete NPC geodesic metric
+spaces. Part (2) imposes no closedness or convexity on the original set and
+does not require the fixed point to belong to it.
+
+The barycenter proof uses a squared midpoint estimate and a Cauchy minimizing
+sequence, including radius zero and attained minima. The second proof
+establishes covariance of the actual closed convex hull under isometries and
+applies the first theorem to that hull. The paired proof explanations are
+[KPBarycenterProof](../../Langlands/Geometry/Metric/KPBarycenterProof.md) and
+[KPBoundedSetStabilizerProof](../../Langlands/Geometry/Metric/KPBoundedSetStabilizerProof.md).
+
+The two acceptance artifacts in the row have unqualified independent approvals
+by Reviewer 8669 and Reviewer 8673, respectively. Their machine receipts
+`22830777-ddb7-4575-af67-e0781922b6b0` and
+`266ae01b-eb72-4600-9a03-e77efef063dc` accept the Lake build, exact target,
+unchanged statement and frozen inputs. Both artifacts are accepted and public,
+with published integrations in the recorded Library commit. Their frozen,
+published and workspace Lean/Markdown hashes agree. Local declaration inspections
+also report only `propext`, `Classical.choice` and `Quot.sound`; those inspections
+are separate from independent semantic review and proof acceptance. No external
+Lean code is adopted by these units.
+
+This verifies both parts of the source theorem recorded in the row. The
+separate `BoundedActionFixedPointStatement` for Corollary 1.1.19, which omits
+geodesic existence as a hypothesis, and the aggregate
+`MetricFixedPointFoundationStatement` remain proof obligations. Applying the
+metric theorem to a general reductive-group building still requires that
+building's construction, completeness and NPC proofs.
+
 ## Initial interfaces and the next mathematical gates
 
 Metric definition child `bd4b31f8-44f8-447c-b747-e26d93a271d1` supplied the
@@ -2224,16 +2294,16 @@ and published in Library commit `6fd0709bd33fa6c33b4d74b4b638cfc51428b8f1`.
 The module uses a primitive midpoint inequality and separates geodesic
 existence, completeness, convexity and barycenters. Its radius and joint
 diameter take values in the extended nonnegative reals; finite real readings
-require explicit boundedness and nonemptiness. It does not prove the
-fixed-point theorem. This definition publication therefore leaves the
-formal status of the complete Theorem 1.1.15 target empty.
+require explicit boundedness and nonemptiness. This definition publication
+supplied the interface used by the subsequent Theorem 1.1.15 proofs above.
 
-The corrected convexity predicate must exclude the empty set. Theorem 1.1.15
-requires actual existence and uniqueness of a barycenter, including radius-zero
-cases, and a fixed point of every bounded isometric group action (Corollary
-1.1.19). Supplying a fixed point as input would not establish those conclusions.
-The building application must then prove completeness and nonpositive curvature
-of the constructed building.
+The corrected convexity predicate excludes the empty set. The published
+Theorem 1.1.15 proofs establish actual barycenter existence and uniqueness,
+including radius-zero cases, and the common fixed point for bounded-set
+stabilizers. Corollary 1.1.19 still requires an actual fixed point for every
+bounded isometric group action; supplying one as input would not establish
+that conclusion. The building application must prove completeness and
+nonpositive curvature of the constructed building.
 
 Derived quotient child `cd3fd695-b511-4653-8f4d-769e99d8aab0` asks for the actual
 algebraic quotient, its group action, apartment embedding criterion and exact
@@ -2270,8 +2340,9 @@ The host environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. No external project is
 adopted by this note. The roadmap's external pins remain survey leads. Any
 adoption still requires a focused host compile, a mathematical and dependency
-audit, and its exact pin and licence. No theorem-level axiom report is asserted
-for an unproved target.
+audit, and its exact pin and licence. The two theorem-level axiom inspections
+recorded here concern only the published Theorem 1.1.15 proofs; no such report
+is asserted for an unproved target.
 
 Bundle A is open. Bundles B–F, the general constructed instance, the depth-zero
 and positive-depth consumers, regression examples, GL comparisons and Renard
