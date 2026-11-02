@@ -119,7 +119,7 @@ published generic-filtration module.
 and `Mathlib.Algebra.Order.Archimedean.Real.Basic` are retained.
 `Mathlib.Algebra.BigOperators.Group.Finset.Basic` and an explicit
 `open scoped BigOperators` provide the finite-sum notation.
-The three source topology imports are omitted because these definitions
+The two source topology imports are omitted because these definitions
 need no analytic theorem.
 
 The unused ambient `[Finite G]` is omitted. It was present in the

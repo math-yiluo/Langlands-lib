@@ -35,10 +35,10 @@ need no further theory. All declarations are in the namespace
 In both sources `G` is a connected reductive group over `k`. The definitions
 below are stated for every group scheme over `S`. This generality is derived:
 the predicates make sense without reductivity. The theorems that need
-reductivity, such as the conjugacy of maximal split tori, are not stated in this
-module. They are planned deliverables of the same task, to be stated later with
-the published `IsConnectedReductive` in a separate statement module; no such
-module exists yet.
+reductivity, such as the conjugacy of maximal split tori, are stated separately
+with `IsConnectedReductive` in
+[`ConjugacyStatement`](ConjugacyStatement.md). That module provides an unproved
+proposition; this module supplies the definitions it uses.
 
 ## Split subtori and maximal split tori
 
@@ -75,10 +75,9 @@ Comparison with the sources.
   dimension of the maximal `k`-split tori, which is well defined by the
   conjugacy theorem 4.21. Here the rank is the supremum over all closed split
   subtori, which makes sense for every group scheme. For connected reductive
-  `G` the two should agree by conjugacy. That agreement is neither stated nor
-  proved here: it is planned as part of a later conjugacy statement of this
-  task, which is not yet written. The value `⊤` is allowed by the type; it does
-  not occur for algebraic groups, which is not proved here either.
+  `G` the rank equality is included in the unproved
+  [`MaximalSplitTorusConjugacyStatement`](ConjugacyStatement.md). The value `⊤`
+  is allowed by the type; its exclusion for algebraic groups is not proved here.
 - **Anisotropy convention.** Milne 25.3 calls a reductive `G` anisotropic when
   it has no *noncentral* split torus. Here, following Borel–Tits 4.23, `G` is
   anisotropic when it has no nontrivial split torus at all. So `𝔾ₘ` is
@@ -127,8 +126,9 @@ Comparison with the sources.
 
 The task also asks for the anisotropy consequence in terms of the character
 lattice and the roots: in an anisotropic `G`, a split subtorus has
-`characterLattice T = 0` and empty `roots i`. Those two names are definitions
-of a sibling task that are not yet published, so that form is **not** proved
-here. It remains pending; its planned place is a later relative-roots module of
+`characterLattice T = 0` and empty `roots i`. Those definitions are available in
+[`Torus/Lattice`](../Torus/Lattice.md) and
+[`Torus/Weights`](../Torus/Weights.md), but that form is **not** proved here.
+It remains pending; its planned place is a later relative-roots module of
 this task, which will import those definitions and derive it from
 `IsAnisotropic.subsingleton_character`.
