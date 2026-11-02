@@ -1,10 +1,10 @@
-# KP Bundles A–E: source ledger and construction boundaries
+# KP Bundles A–F: source ledger and construction boundaries
 
-This source ledger covers Bundle A, initial Bundle B targets and Bundles C–E of the standing KP program
+This source ledger covers Bundle A, initial Bundle B targets and Bundles C–F of the standing KP program
 `f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`. It records mathematical source targets,
 not completed formalization. Every formal-status field below is empty: no
 accepted, published Lean result for these complete targets has been verified in
-this ledger. The remaining Bundle B targets and Bundle F still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
+this ledger. The remaining Bundle B targets still require public ledger entries. Private source audits and unsubmitted drafts are not publication evidence.
 
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
@@ -83,6 +83,21 @@ extends the ledger to thirty-eight rows with all new formal-status
 fields and evidence arrays empty. Positive-depth implementation
 and the later instability targets retain their separate release gates.
 
+The Bundle F extension adds five source-only rows for corrected
+Proposition 12.4.1, Theorem 12.9.2, Proposition 12.9.4 and
+Propositions 14.6.1 and 14.8.4. Its original-source audit covered
+book PDF pages 467–473, 476–479, 488–496 and 521–540, together
+with corrections PDF pages 47–50. Book PDF page 539 was visually
+checked for the enlarged-building and full-stabilizer notation;
+PDF pages 495–496 and 523 were rechecked for the actual-model
+identity and the simple-factor lift condition. The nearest-point
+dependency was checked at book PDF pages 38–40 and corrections PDF
+pages 1–3, including visual inspection of corrections page 2.
+The proof repairs below are independently derived obligations,
+separate from the authors' corrections. All forty-three rows retain
+null formal status and empty formal-evidence arrays. This source
+extension leaves the release order and construction gates open.
+
 ## Structured ledger
 
 The JSON block is the structured ledger. Each row has the same fields.
@@ -95,7 +110,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, and Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets. Remaining Bundle B items and Bundle F still need public rows.",
+  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. All rows are source-only; every formal construction, proof and release gate remains separate.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -1338,6 +1353,188 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "publication_commits": [],
       "axiom_reports": [],
       "external_code": []
+    },
+    {
+      "source_item": "Proposition 12.4.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.446 / PDF p.477; replaced in corrections PDF p.47"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.47-48, Section 12.4 and proof of 12.7.1",
+        "change": "Replace Proposition 12.4.1 and its proof in full. Delete the Corollary 4.4.5 citation in the first paragraph of 12.4 and the last sentence of its second paragraph; use the corrected intersection and boundedness in 12.4.2 and the corrected facet argument in 12.7.1."
+      },
+      "hypotheses": [
+        "O is a Henselian discrete valuation ring with fraction field K and algebraically closed residue field. H is connected reductive over K; Theta is a finite group of K-automorphisms whose order is prime to the residue characteristic, with no restriction when it is zero. G=(H^Theta)^0 and the enlarged buildings retain their central translation factors.",
+        "Use the Section 12.4 reduction in which the maximal K-split central torus of G is central in H. Put H'=H_der and G'=(H'^Theta)^0. Let S be a maximal K-split torus of G and S' its maximal subtorus contained in G'.",
+        "x is a Theta-fixed point of enlargedB(Z_{H'}(S)). A is any apartment of that building containing x."
+      ],
+      "conclusion": "For every such apartment A, its Theta-fixed locus is A^Theta=V(S')+x=enlargedB(Z_{H'}(S))^Theta. This describes the entire fixed locus as an affine translation space and retains the specified fixed point and the universal apartment quantifier. It does not replace an enlarged building by a reduced one.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Corrected Section 12.4 setup and 12.3.2; retain the distinction between S and S'. For the apartment argument choose a maximal split torus of Z_{H'}(S), containing S'; the correction's proof phrase about a torus of H' containing S needs interpretation against this distinction",
+        "The maximal split central torus Z of Z_{H'}(S) and its derived group are Theta-stable, with (Z^Theta)^0=S'. Parahoric transitivity on apartments through x glues their V(Z) translation actions; use V(Z)^Theta=V(S') and the union of apartments through x",
+        "The adjacent corrected 12.4.2 uses a nonempty bounded subset of the intersection of the two fixed loci; 12.7.1 also needs the corrected vertex-to-facet argument",
+        "Release 1 constructions and its representation consumer, then positive-depth acceptance, precede Bundle F implementation. A source-only row is no formal or release acceptance."
+      ],
+      "consumer_or_regression": "Compare reduced and enlarged buildings for tori and groups with a central split factor; test two apartments through x. This fixed-locus calculation is an input to tame descent, not a general unramified-descent certificate.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Theorem 12.9.2",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.463-464 / PDF pp.494-495; metric convention at PDF p.490"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.47-48, corrected Chapter 12 dependencies",
+        "change": "No direct replacement of 12.9.2 is listed. Apply the replaced 12.4.1, corrected 12.4.2 and corrected 12.7.1 facet argument in its finite-action dependency."
+      },
+      "hypotheses": [
+        "k is discretely valued and Henselian with perfect residue field. The valuation omega extends uniquely to algebraic extensions and the same extension is used throughout; do not renormalize the extension field independently. Connected reductive groups and their actual buildings are used, without a global split, quasi-split, tame, finite-residue or large-residue-characteristic hypothesis.",
+        "G is connected reductive over k and l/k is a finite tamely ramified Galois extension. Tameness means that the residue characteristic does not divide the ramification index, not necessarily [l:k].",
+        "Use the reduced building of the theorem and compatible invariant Euclidean metrics: 12.7.2 permits rescaling on simple factors to agree with the fixed-locus metric."
+      ],
+      "conclusion": "The constructed reduced building B(G) has a natural identification with B(G_l)^Gal(l/k) as a metric space, using the inherited valuation and compatible metrics. No assumption that G/k itself is quasi-split or split is added.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Let k' be the maximal unramified subextension of l/k, and K,L the maximal unramified extensions of k,l in one separable closure. Then L=K tensor_{k'} l and Gal(L/k')=Gamma times Theta, where Gamma=Gal(K/k') and Theta=Gal(l/k')=Gal(L/K)",
+        "Apply 12.7.1 to H=Res_{l/k'}(G_l), whose base change is Res_{L/K}(G_L), using the corrected 12.4.1 and 12.7.1 arguments. The totally ramified Theta part has order prime to the residue characteristic; the unramified degree can be divisible by it",
+        "Apply actual Chapter 9 unramified descent in both orders to Gamma and Theta, and then to k'/k; the corrected 9.2.7 certificate remains required. The enlarged finite-automorphism construction is an intermediate step rather than a change of target",
+        "Release 1 constructions and its representation consumer, then positive-depth acceptance, precede Bundle F implementation. A source-only row is no formal or release acceptance."
+      ],
+      "consumer_or_regression": "Test a tame ramified extension together with an unramified degree divisible by the residue characteristic, inherited valuation scales, and anisotropic or nonsplit groups. No arbitrary wild-extension fixed-locus identity follows.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 12.9.4",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.464-465 / PDF pp.495-496; 12.8.5 at PDF pp.493-494"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.48, Proposition 12.8.5",
+        "change": "Move the last sentence of the first paragraph after the first sentence of the second paragraph: the separate torus-filtration assumption at r=f(0) is placed after the sentence defining f and its pullback F. No direct replacement of 12.9.4 is listed; retain f(0)>0 and all torus-filtration hypotheses of its dependency."
+      },
+      "hypotheses": [
+        "Use the Section 12.9 maximal-unramified K setting: K is Henselian discretely valued with algebraically closed residue field, and G is connected reductive over K, hence quasi-split there. Let L/K be finite tamely ramified Galois with Theta=Gal(L/K).",
+        "S is a maximal K-split torus of G. T is the K-torus containing S for which T_L is a maximal L-split torus of G_L. Use the same extended valuation on L.",
+        "f on the roots plus zero of (S,G) is concave with f(0)>0 in the source extended-depth convention. F is its pullback by restriction from (T,G). The point x lies in A(S) inside A(T_L). Use the actual admissible torus/root filtrations and smooth concave-function models."
+      ],
+      "conclusion": "G(L)_{x,F} is Theta-stable, G(K)_{x,f}=(G(L)_{x,F})^Theta, and G_{x,f}=(H_{x,F})^Theta for H=Res_{L/K}(G_L). The last identity is for actual smooth integral group schemes, not merely their integral points. No extension to arbitrary depth-zero concave functions is asserted.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Proposition 12.8.5 requires a cyclic prime-to-residue-characteristic action, surjective root restriction with each fibre one Theta-orbit, and the separate torus equality (Z_H(T_H)(K)_r)^Theta=Z_G(S)(K)_r at r=f(0). In the Weil-restriction application use the corresponding maximal split torus T_H of H; do not confuse it with the K-torus T of G",
+        "The 12.9.4 proof checks the root fibres using Z_G(S), a maximal torus over K, and the successive Galois orbits of its absolute roots. A future proof must also discharge the torus-filtration equality for restriction of scalars rather than silently assuming it",
+        "The 12.8.5 proof uses ordered root products, root-orbit cases, translation to depth zero, the 12.7.1 parahoric comparison and 2.10.11 uniqueness of smooth models. Audit multipliable-root indexing against 7.3.3/7.3.12 before using product coordinates",
+        "Release 1 constructions and its representation consumer, then positive-depth acceptance, precede Bundle F implementation. A source-only row is no formal or release acceptance."
+      ],
+      "consumer_or_regression": "Test a nontrivial tame ramified extension, the torus comparison, a multipliable-root case and equality of actual models. Keep the f(0)>0 boundary visible in every downstream filtration statement.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 14.6.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.502-504 / PDF pp.533-535; definitions at PDF pp.529-532"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.1-2,27-29,47-50; Chapter 14 has no listed correction",
+        "change": "No direct replacement of 14.6.1 is listed. Preserve the corrected Chapter 4 geometric/quotient dependencies. In any use of 14.5.6 and 14.7 retain corrected nonempty convexity and prove nonemptiness independently."
+      },
+      "hypotheses": [
+        "k is discretely valued and Henselian with perfect residue field. The valuation omega extends uniquely to algebraic extensions and the same extension is used throughout; do not renormalize the extension field independently. Connected reductive groups and their actual buildings are used, without a global split, quasi-split, tame, finite-residue or large-residue-characteristic hypothesis.",
+        "G is a connected reductive k-subgroup of the connected reductive k-group H. For a maximal split torus S of G, A_G is the maximal split central torus of G and M=Z_H(A_G). Enlarged and reduced buildings, full point stabilizers, G(k)^1 and parahorics remain distinct.",
+        "Choose an adapted pair (x_tilde,y_tilde) in the enlarged buildings of G and H.",
+        "Adapted data are Definition 14.5.1 and Remark 14.5.2, not just a single-point stabilizer inclusion: retain the normalizer-fixed orbit, the apartment map taking x to y, and the stabilizer inclusion at every translate. In reduced coordinates this is G(k)^1_{x+v} contained in M(k)^1_{y+v} for every v in V(S/A_G); in enlarged coordinates use the equivalent full-stabilizer condition for every v in V(S).",
+        "Admissible means equivariant on k-points and affine on apartments with the induced cocharacter translation map (14.0.1). For a closed immersion, the metric is induced from H on the cocharacter spaces before claiming isometry (14.2.2). No isometry between unrelated simple-factor metric normalizations is asserted."
+      ],
+      "conclusion": "There is a unique admissible embedding of enlargedB(G) into enlargedB(H) taking the chosen x_tilde to the chosen y_tilde. For the pair (phi,psi) of 14.3.1, the reduced map phi:B(G)->B(M) restricts on A(S,G) to the normalizer-fixed-orbit apartment map phi_{S,y_bar} of 14.4.1. Uniqueness is relative to the adapted pair, not a canonical embedding independent of choices. Equivariance, affine apartment behaviour and all-translate point-stabilizer inclusion do not assert a general positive-depth filtration identity.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Descend (g,z) mapped to g phi_{S,y_bar}(z) through the 4.4.4 quotient using normalizer equivariance and G(k)^1_z contained in M(k)^1_{phi(z)} for every apartment point z. Keep both the normalizer and stabilizer terms of that quotient relation",
+        "Point-stabilizer conjugacy of maximal split tori through x gives independence of S. The central translation coordinates and the Levi embeddings of 9.7.5 determine psi. Uniqueness uses the 14.3.1 factorization and 14.4.1 affine uniqueness",
+        "14.6.2 describes when different adapted pairs give the same embedding. 14.0.3 gives a reduced map obstruction for a split torus in SL2; 14.0.5 gives enlarged-map nonuniqueness by central translations",
+        "Passing from a subgroup to a general homomorphism requires the 14.0 simple-factor lift condition: on every relevant simple factor the lift from G_sc to the simply connected cover of the image is trivial or an isomorphism onto its image. Use the faithfully flat quotient step of 14.1.1 and then the subgroup embedding. This does not give an injective or canonical map for every homomorphism.",
+        "Release 1 constructions and its representation consumer, then positive-depth acceptance, precede Bundle F implementation. A source-only row is no formal or release acceptance."
+      ],
+      "consumer_or_regression": "Test choice dependence and central translations, the split torus/SL2 reduced-building obstruction, equivariance, apartment derivatives and all-translate stabilizers. A separate source and proof are required for any later positive-depth or integral-model morphism compatibility.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 14.8.4",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.505-508 / PDF pp.536-539; descent at PDF pp.535-536"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.1-2, Section 1.1; no Chapter 14 correction is listed",
+        "change": "Apply nonempty convexity and the corrected nearest-point proof. The printed corrected coefficient2 and zero-distance continuity case need the explicitly recorded independent repairs in the dependencies and private audit. No change to the 1.1.20 theorem statement is needed."
+      },
+      "hypotheses": [
+        "The section assumes strictly Henselian k. Retain the Chapter 14 discretely valued perfect-residue context and the actual enlarged buildings.",
+        "G is a connected reductive k-subgroup of the connected reductive k-group H. For a maximal split torus S of G, A_G is the maximal split central torus of G and M=Z_H(A_G). Enlarged and reduced buildings, full point stabilizers, G(k)^1 and parahorics remain distinct.",
+        "l/k is a finite Galois extension splitting G and H; no tame hypothesis is imposed. x_tilde in enlargedB(G) is absolutely special. Choose y1_tilde in enlargedB(H_l) with the full stabilizer inclusion G(l)_{x_tilde} contained in H(l)_{y1_tilde}. Let y_tilde be its unique closest point in the embedded enlargedB(H).",
+        "Admissible means equivariant on k-points and affine on apartments with the induced cocharacter translation map (14.0.1). For a closed immersion, the metric is induced from H on the cocharacter spaces before claiming isometry (14.2.2). No isometry between unrelated simple-factor metric normalizations is asserted."
+      ],
+      "conclusion": "The pair (x_tilde,y_tilde) is adapted in the full sense of 14.5.1/14.5.2. In particular adapted pairs exist under the section hypotheses. The target of the closest-point projection is the enlarged base building, confirmed visually at PDF p.539; it is not identified with the entire Galois fixed locus for an arbitrary ramified splitting extension. General-k existence uses the separate 14.7 descent step.",
+      "lean_declarations": [],
+      "modules": [],
+      "dependencies": [
+        "Adapted data are Definition 14.5.1 and Remark 14.5.2, not just a single-point stabilizer inclusion: retain the normalizer-fixed orbit, the apartment map taking x to y, and the stabilizer inclusion at every translate. In reduced coordinates this is G(k)^1_{x+v} contained in M(k)^1_{y+v} for every v in V(S/A_G); in enlarged coordinates use the equivalent full-stabilizer condition for every v in V(S).",
+        "7.11.4 supplies an absolutely special point staying special over l. Existence of y1 uses boundedness of the full stabilizer and the building fixed-point theorem; it must be proved, not supplied as the entire existence argument",
+        "14.8.2 proves the split case using root-group lattices and homogeneous polynomial coordinate maps. Strict Henselianity makes G quasi-split (2.3.8), so Z_G(S) is a maximal torus. 14.8.3 projects the split adapted point using 1.1.20; projection equivariance for group actions and translations gives the all-translate condition",
+        "Proposition 1.1.20 needs a complete NPC geodesic space and a nonempty closed convex base building. Its projection is unique, continuous and equivariant for isometries preserving that subset setwise. Corrections PDF p.2 prints the insufficient minimizing-sequence estimate d(y1,y2)^2<=2 epsilon(2r+epsilon), contradicted already by X=Y=R, x=0, r=0, epsilon=1 and y1,y2=+-3/4. Independently derive the sufficient bound with coefficient4 from the midpoint inequality. The added continuity proof needs the zero-distance case separately; the division-free bound d(pi(x_n),pi(x))^2<=2(q_n^2-r^2), with q_n=d(x,pi(x_n))->r=d(x,pi(x)), covers that case. These are source-derived proof repairs to prove, not author errata or established Lean results.",
+        "For general k, 14.5.6 proves closedness and segment containment of the adapted-y locus. 14.7.1 makes the space of embeddings complete and NPC with evaluation-independent metric; 14.7.2 obtains an equivariant embedding assuming nonemptiness; 14.7.3 applies this to the maximal unramified extension and Chapter 9 descent. Neither convexity alone nor an assumed fixed point proves the needed nonemptiness",
+        "Passing from a subgroup to a general homomorphism requires the 14.0 simple-factor lift condition: on every relevant simple factor the lift from G_sc to the simply connected cover of the image is trivial or an isomorphism onto its image. Use the faithfully flat quotient step of 14.1.1 and then the subgroup embedding. This does not give an injective or canonical map for every homomorphism.",
+        "Release 1 constructions and its representation consumer, then positive-depth acceptance, precede Bundle F implementation. A source-only row is no formal or release acceptance."
+      ],
+      "consumer_or_regression": "Test all-translate full stabilizers after projection and after unramified descent, the induced metric choice and central-translation nonuniqueness. No arbitrary positive-depth filtration compatibility or canonical functor on all homomorphisms is claimed.",
+      "formal_status": null,
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [],
+      "publication_commits": [],
+      "axiom_reports": [],
+      "external_code": []
     }
   ]
 }
@@ -1806,6 +2003,216 @@ These later rows do not extend the propositions to dual cosets, supply
 minimal K-types, or prove supercuspidality. Their implementation remains
 after the finite abelian graded quotients, character transport and
 nontrivial filtration calculation required for positive-depth acceptance.
+
+## Bundle F: tame descent and embeddings from adapted data
+
+The five added source rows cover corrected Proposition 12.4.1, Theorem
+12.9.2, Proposition 12.9.4 and Propositions 14.6.1 and 14.8.4. These
+source targets retain the general connected-reductive program. Their
+implementation follows the depth-zero release with its representation
+consumer, and then positive-depth acceptance. No construction, formal
+statement or proof of these targets is recorded by this extension.
+
+### The corrected finite-action fixed locus
+
+Chapter 12 initially works over a Henselian discrete valuation ring O
+with fraction field K and algebraically closed residue field. A finite
+group Theta acts by K-automorphisms on a connected reductive H, and
+`G=(H^Theta)^0`. Its order is prime to the residue characteristic,
+with no restriction in residue characteristic zero.
+
+The replacement of Proposition 12.4.1 on corrections PDF p.47 uses
+the Section 12.4 reduction making the maximal K-split central torus
+of G central in H. Put `H'=H_der`, `G'=(H'^Theta)^0`, take S maximal
+K-split in G, and let S' be its maximal subtorus contained in G'.
+For a Theta-fixed point x in the enlarged building of `Z_{H'}(S)`
+and **every** apartment A of that building containing x, the conclusion is
+
+`A^Theta = V(S') + x = enlargedB(Z_{H'}(S))^Theta`.
+
+The point x, the apartment quantifier and the central translation
+space belong to the statement. The proof glues the central V(Z) actions
+on apartments through x using parahoric transitivity, and identifies
+`V(Z)^Theta=V(S')`. Its torus step needs a maximal split torus of
+`Z_{H'}(S)` containing S'; the correction's phrase about a torus of
+H' containing S must be interpreted with S and S' distinguished.
+This records a proof obligation, without claiming its formal resolution.
+The surrounding corrections also delete the indicated sentences in
+Section 12.4, require a nonempty bounded subset of the **intersection**
+of the two fixed loci in 12.4.2, and replace the vertex-to-facet argument
+in 12.7.1 (corrections PDF pp.47–48).
+
+### Tame descent uses the inherited valuation and compatible metrics
+
+Section 12.9 returns to a discretely valued Henselian k with perfect
+residue field. The uniquely extended valuation omega is used on every
+algebraic extension. Renormalizing an extension valuation independently
+would change the apartment and filtration comparisons.
+
+For connected reductive G/k and a finite tamely ramified Galois
+extension l/k, Theorem 12.9.2 identifies the **reduced** building
+`B(G)` with `B(G_l)^Gal(l/k)` as a metric space (book PDF pp.494–495).
+Tameness concerns the ramification index. The unramified degree can
+be divisible by the residue characteristic. Remark 12.7.2, PDF p.490,
+chooses compatible metrics by allowing rescaling on simple factors.
+The identification uses these metrics.
+
+The proof separates the maximal unramified subextension k' of l/k
+from the totally ramified part. For maximal unramified extensions K
+and L of k and l in one separable closure,
+`L=K tensor_{k'} l` and `Gal(L/k')=Gamma times Theta`, with
+`Gamma=Gal(K/k')` and `Theta=Gal(l/k')=Gal(L/K)`. Apply the corrected
+finite-action theorem to `Res_{l/k'}(G_l)` over K and apply actual
+Chapter 9 unramified descent in both orders, then over k'/k.
+The corrected 9.2.7 certificate remains necessary. The intermediate
+enlarged-building construction does not change the theorem's reduced
+target. The result imposes no split or quasi-split hypothesis on G/k.
+
+### Positive-depth subgroup and integral-model descent
+
+Proposition 12.9.4, book PDF pp.495–496, is in the maximal-unramified
+K context, with algebraically closed residue field. G is quasi-split
+over this K. Let L/K be finite tame Galois, `Theta=Gal(L/K)`, S maximal
+K-split in G, and T the K-torus containing S whose base change T_L
+is maximal L-split in G_L. For concave f on the roots plus zero of
+`(S,G)`, retain **f(0)>0**. Let F be its pullback by root restriction,
+and take `x in A(S) subset A(T_L)`. The conclusions are
+
+`G(L)_{x,F}` is Theta-stable,
+`G(K)_{x,f}=(G(L)_{x,F})^Theta`, and
+`G_{x,f}=(H_{x,F})^Theta`, where `H=Res_{L/K}(G_L)`.
+
+The last equality is an equality of actual smooth integral group
+schemes. Proposition 12.8.5 separately requires the torus-filtration
+equality at `r=f(0)`, along with surjective root restriction and
+Theta-orbit fibres. In the Weil-restriction application its maximal
+split torus T_H must be distinguished from the K-torus T of G.
+The 12.9.4 proof checks root fibres through the quasi-split centralizer
+`Z_G(S)` and its absolute roots. A formal proof must also discharge
+the torus-filtration comparison. The correction on PDF p.48 moves
+the torus-filtration assumption at `r=f(0)` after the sentence
+defining f and its pullback F. Both definitions already occur
+together in that sentence.
+
+The source route uses ordered root products, translation to depth
+zero, the parahoric comparison in 12.7.1 and uniqueness of smooth
+models in 2.10.11. Multipliable-root indexing needs checking against
+7.3.3 and 7.3.12, in light of the Bundle E diagnosis. This note makes
+no new discrepancy claim about 12.8.5 and supplies no extension to
+arbitrary depth-zero concave functions.
+
+### Embeddings depend on adapted data
+
+Chapter 14 uses discretely valued Henselian k with perfect residue
+field. Admissibility means equivariance on k-points and affine
+apartment maps with the induced cocharacter translation map
+(14.0.1). For a closed immersion `G <= H`, isometry uses the metric
+induced from H on cocharacter spaces (14.2.2).
+
+Definition 14.5.1 and Remark 14.5.2 require the normalizer-fixed
+orbit, the apartment map taking x to y, and stabilizer inclusion at
+**every** translate. With `M=Z_H(A_G)`, the reduced condition is
+`G(k)^1_{x+v} <= M(k)^1_{y+v}` for every `v in V(S/A_G)`;
+the enlarged condition uses full point stabilizers for every
+`v in V(S)`. The pointwise and parahoric conditions remain distinct.
+
+Proposition 14.6.1, PDF pp.533–534, constructs a unique admissible
+embedding of the enlarged buildings taking a specified adapted
+pair `(x_tilde,y_tilde)` to one another. Uniqueness is relative to
+that pair. The associated reduced map `phi:B(G)->B(M)` restricts
+to the normalizer-fixed-orbit apartment map of 14.4.1; its partner
+psi is the chosen Levi-building embedding into the enlarged
+H-building. The quotient construction of 4.4.4 uses normalizer
+equivariance and stabilizer compatibility at every apartment point.
+Both terms of its equivalence relation must survive formalization.
+
+Proposition 14.6.2 describes when different adapted pairs give the
+same map. Example 14.0.3 obstructs a reduced admissible map from
+the diagonal split torus into SL_2: its reduced building is a point,
+but the torus fixes no point in the SL_2 tree. Its enlarged apartment
+does embed after choosing an origin. Lemma 14.0.5 also permits
+central translations for enlarged maps of isomorphic groups.
+These remain source-backed regression targets.
+
+For a general homomorphism f, the condition at book PDF p.523
+requires the lift `f':G_sc -> f(G)_sc` on each k_s-simple factor
+(equivalently each k-simple factor) to be trivial or an isomorphism
+onto its image. The source first treats the faithfully flat quotient
+onto f(G), then the closed immersion. Characteristic zero satisfies
+the lift condition automatically; Frobenius in positive characteristic
+need not. The resulting maps need not be injective or canonical.
+These propositions supply equivariance, apartment derivatives and
+stabilizer compatibility. Positive-depth Moy–Prasad comparisons
+or morphisms of integral models require separate sources and proofs.
+
+### Strict-Henselian existence and the separate general-k descent
+
+Section 14.8 explicitly assumes strictly Henselian k. Proposition
+14.8.4, PDF p.539, uses an absolutely special x_tilde in enlargedB(G)
+and a finite Galois splitting extension l/k for both G and H,
+without a tame hypothesis. Choose y1_tilde in enlargedB(H_l) with
+`G(l)_{x_tilde} <= H(l)_{y1_tilde}`. Its closest point y_tilde in the
+embedded **enlargedB(H)** gives an adapted pair. The rendered
+proposition confirms the enlarged notation and full stabilizers.
+This base building is not identified with the full Galois fixed
+locus for an arbitrary ramified splitting extension.
+
+Existence requires the absolutely special point from 7.11.4,
+boundedness of its full stabilizer and the building fixed-point
+theorem to obtain y1_tilde. The split construction in 14.8.2 uses
+root lattices and homogeneous polynomial coordinates. Projection
+in 14.8.3 then uses equivariance under group actions and translations
+to establish the stabilizer condition at every translate.
+
+For general k, 14.5.6 gives closedness and segment containment of
+the adapted-y locus. Proposition 14.7.1 gives the space of embeddings
+an evaluation-independent complete NPC metric. Proposition 14.7.2
+uses nonemptiness to obtain an equivariant embedding by 1.1.19.
+Proposition 14.7.3 applies this over the maximal unramified extension
+and descends by Chapter 9. Corrected nonempty convexity does not
+prove the needed nonemptiness; that comes from the existence
+argument. This descent remains separate from tame descent in 12.9.2.
+
+### Independent repairs in the nearest-point proof
+
+Proposition 1.1.20, book PDF pp.38–40 and corrections PDF pp.1–3,
+uses a complete NPC geodesic space and a nonempty closed convex
+subset Y. Its projection exists uniquely, is continuous, and is
+equivariant under isometries preserving Y setwise. These theorem
+conclusions remain the target.
+
+The corrected proof on corrections PDF p.2 prints the estimate
+`d(y1,y2)^2 <= 2 epsilon (2r+epsilon)`, for points at distance less
+than `r+epsilon` from x, where `r=inf_{y in Y} d(x,y)`.
+This estimate fails for `X=Y=R`, `x=0`, `r=0`, `epsilon=1`,
+`y1=-3/4`, `y2=3/4`: its left side is 9/4 and right side is 2.
+It also fails with positive r: in the Euclidean plane, take Y the
+line of height 1, `x=(0,0)`, `r=1`, `epsilon=1/2`, and
+`y1=(-1,1)`, `y2=(1,1)`. Their distances are `sqrt(2)<3/2`,
+but the squared separation is 4, greater than the proposed 5/2.
+
+For their midpoint m in Y, the NPC inequality instead gives
+
+`2r^2 + (1/2)d(y1,y2)^2 <= d(x,y1)^2+d(x,y2)^2 < 2(r+epsilon)^2`,
+
+hence `d(y1,y2)^2 < 4 epsilon (2r+epsilon)`. This suffices for
+the minimizing-sequence argument. The coefficient 4 is an
+independently derived repair, separate from the authors' printed
+coefficient 2.
+
+The correction's continuity proof also uses a multiplicative error
+relative to `r=d(x,pi(x))`, requiring the case r=0 separately.
+For `x_n -> x`, put `q_n=d(x,pi(x_n))`. The squeeze
+`r<=q_n<=d(x,x_n)+d(x_n,pi(x))` gives `q_n -> r`.
+Applying the midpoint inequality to the two projections gives
+
+`d(pi(x_n),pi(x))^2 <= 2(q_n^2-r^2)`.
+
+This proves continuity also when r=0 without division by r.
+Equivariance follows from uniqueness and the inverse isometry.
+These are independent mathematical proof repairs to implement and
+verify in Lean. They do not change the theorem statement, and this
+source ledger records no formal proof or authors' erratum for them.
 
 ## Initial interfaces and the next mathematical gates
 
