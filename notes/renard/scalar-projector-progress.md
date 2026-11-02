@@ -1,10 +1,12 @@
 # Renard II.2.4–II.2.5: scalar and original-action projector constructions
 
-Worker 6, 2 November 2026. This source-to-declaration update verifies five
-published construction units: the locally constant scalar presheaf and sheaf,
-the smooth multiplier action on an original nondegenerate test module, and
-the original-action projector presheaf and its intrinsic sheaf gluing.
-The later categorical comparisons retain their separate obligations.
+Worker 6, 2 November 2026. This source-to-declaration update records five
+verified published construction units: the locally constant scalar presheaf
+and sheaf, the smooth multiplier action on an original nondegenerate test
+module, and the original-action projector presheaf and its intrinsic sheaf
+gluing. It also verifies the separately published exact statement and proof
+of smooth-action uniqueness. The later categorical comparisons retain their
+separate obligations.
 
 ## Original source and topology
 
@@ -31,7 +33,8 @@ documented arbitrary-topology hypotheses below.
 | --- | --- | --- |
 | Example after II.2.4, printed p.38 / PDF44: locally constant scalar section rings and restrictions | `Langlands.Sheaf.Renard.LocallyConstantScalar.ringPresheaf`, `basisRingPresheaf`, `rawPresheaf`; [presheaf pair](../../Langlands/Sheaf/Renard/LocallyConstantScalarPresheaf.md) | Actual `LocallyConstant U R` pointwise rings; pullback along the inclusion of actual opens; identity and composition; literal basis precomposition and abelian forgetting. Arbitrary supplied topology and arbitrary unital ring, including noncommutative rings, are a derived generalization of the complex t.d. example. |
 | Same example: the scalar sheaf property | `Langlands.Sheaf.Renard.LocallyConstantScalar.familySheafCondition`, `sheafCondition`, `basisSheaf`, `allOpenSheaf`, `allOpenRingPresheafIso`; [sheaf pair](../../Langlands/Sheaf/Renard/LocallyConstantScalarSheaf.md) | Actual unique gluing on every chosen basis, for every independently sized indexed cover; normalization and the canonical all-open specialization. Space, coefficient and index universes are independent; section values live in `max u r`. |
-| II.2.5 lemma, printed p.39 / PDF45: extension of an original nondegenerate test action to smooth multipliers | `Langlands.HarmonicAnalysis.PointwiseTestModule.module`, `smul_eq`, `inclusion_smul`, `isRelativelyNondegenerate`, `constantRestriction_eq`, `toLinearMap`; [action pair](../../Langlands/HarmonicAnalysis/PointwiseTestModule.md) | An actual smooth-function module on the unchanged original additive carrier, its formula for every compact-clopen fixer, agreement with the specified original action, relative indicator nondegeneracy, exact comparison with the published canonical complex action, and full additive-map/identity/composition preservation for original intertwiners. This unit supplies the extension and intrinsic laws; source uniqueness remains a separate assertion. |
+| II.2.5 lemma, printed p.39 / PDF45: extension of an original nondegenerate test action to smooth multipliers | `Langlands.HarmonicAnalysis.PointwiseTestModule.module`, `smul_eq`, `inclusion_smul`, `isRelativelyNondegenerate`, `constantRestriction_eq`, `toLinearMap`; [action pair](../../Langlands/HarmonicAnalysis/PointwiseTestModule.md) | An actual smooth-function module on the unchanged original additive carrier, its formula for every compact-clopen fixer, agreement with the specified original action, relative indicator nondegeneracy, exact comparison with the published canonical complex action, and full additive-map/identity/composition preservation for original intertwiners. This construction supplies the extension and intrinsic laws; the separate uniqueness proof is recorded next. |
+| Same lemma: uniqueness of that extension | `Langlands.HarmonicAnalysis.PointwiseTestModule.SmoothExtensionUniqueStatement`, `smoothExtensionUnique`; [statement](../../Langlands/HarmonicAnalysis/PointwiseTestModuleUniquenessStatement.md), [proof](../../Langlands/HarmonicAnalysis/PointwiseTestModuleUniquenessProof.md) | Every competing `Module (LocallyConstant X ℂ) M` agreeing on included tests with the specified original nondegenerate action equals the actual canonical module on the same additive carrier. The space and module universes are independent; the supplied topology is arbitrary, including empty spaces and zero modules. No scalar-tower, commuting-action or relative-nondegeneracy premise is added. |
 | II.2.5 inverse construction before (II.2.5.1), printed p.39 / PDF45 | `Langlands.Sheaf.Renard.ProjectorBasisSheaf.compactOpenBasis`, `Value`, `restrict`, `rawPresheaf`, `presheaf`; [presheaf pair](../../Langlands/Sheaf/Renard/ProjectorPresheaf.md) | Every actual compact open of the supplied locally profinite topology; the published original-action `NonUnitalModuleCorner.FixedPart`, identified with the characteristic-action image; actual projection/inclusion restrictions and their laws; empty normalization. The original module value universe remains unchanged and independent of the space universe. |
 | II.2.5 sheaf proof, (II.2.5.1)–(II.2.5.2), printed p.40 / PDF46 | `Langlands.Sheaf.Renard.ProjectorBasisSheaf.familySheafCondition`, `sheafCondition`, `basisSheaf`, `unique_gluing`; [gluing pair](../../Langlands/Sheaf/Renard/ProjectorSheaf.md) | Literal intrinsic sheaf gluing, with restriction equations on every member of the original cover, uniqueness, and empty-cover/domain/space cases. The index universe is independent. The additive construction applies to every specified original pointwise-test module; nondegeneracy is unnecessary for these presheaf and gluing laws. |
 
@@ -51,6 +54,16 @@ complex module; no preselected complex action is assumed on the original
 carrier. The relative nondegeneracy condition refers to compact indicators,
 as the 2026 source requires.
 
+The uniqueness proof derives scalar-tower compatibility for the competing
+smooth action from its agreement on included tests, the actual inclusion's
+multiplier identity, and the competing module's multiplication law. It then
+applies `Langlands.Algebra.NondegenerateScalars.module_eq_of_compatible`
+and reverses its equality. Thus the conclusion identifies the actual module
+structures on the original carrier. This algebraic route reuses the generic
+fixing-idempotent argument rather than repeating the source's characteristic
+calculation; it establishes the source uniqueness assertion without a new
+compatibility hypothesis.
+
 The projector gluing proof follows the finite binary recurrence in the source.
 At each insertion its new vector is `s_i + m - P_i m`. It maintains the
 comparison with every member of the original cover, including members outside
@@ -61,7 +74,7 @@ Its empty finite-union case is zero, so no nonemptiness restriction is added.
 
 ## Verified independent publication
 
-All five candidates below have `accepted = true`, `public = true`,
+All five construction candidates below have `accepted = true`, `public = true`,
 unqualified independent approval, and published integrations at
 `11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`. Their ten frozen Lean/Markdown
 hashes match the current workspace files. Exact candidate bindings, review
@@ -81,23 +94,55 @@ declaration-kind validation. Their intrinsic restriction, module and gluing
 laws are implemented in the linked pairs. They do not supply exact-target
 proof receipts for separate categorical-equivalence statements.
 
+The separate uniqueness statement
+`5aa5cac4-fd4a-4ef9-b191-938c3274712e` is accepted under
+`lean.statement@1` and public at
+`a86e094aea00c92c9ca2ddee7f651cd64c00981d`, integration
+`5c515789b96247129422737ea9be5dff`. Its machine receipt is
+`9f632025-50f0-4921-bdc5-ef56aaf3803d`; independent review task
+`55620ac1-8c16-453b-880a-548ec03f406d` was approved without qualifications
+by Reviewer 9055.
+
+Its exact proof `563a4ca5-8505-4127-b366-00a926798985`, authored by
+Worker 345 in task `a31092b3-15b3-478e-8129-397f88f2fde0`, is accepted
+under `lean.proof@1` and public at
+`7a2e42fd31831029d34cafb155ffad911920df25`, integration
+`c9428790f2634c54a66f2264a867dc4c`. Machine receipt
+`0fed2578-e7c5-47c5-b9a2-59da343d569f` accepts Lake build, exact target,
+unchanged statement and frozen inputs. Independent review task
+`a549c79b-57f8-4a26-8e4f-a11cbdd06423` was approved without
+qualifications by Reviewer 9166.
+
+Both exact records, the complete integrated reviews and the published
+statement/proof pairs were read. Their four frozen file hashes match the
+current Library and workspace. Recovery build
+`c6e45bf7-30f3-402d-b035-3dea6ef6ef64` compiled the proof with zero
+errors or warnings; declaration inspection
+`d639969a-fed6-4c20-b6e2-db14f6e69bf3` confirms the statement returns
+`Prop` with independent `uX` and `uM`. These recovery checks are private
+development evidence; independent acceptance and publication come from
+the records above.
+
 ## Remaining assertions and ownership
 
 The actual scalar action on an arbitrary original vector sheaf, its compatible
 restriction laws, constants and the empty-domain injectivity exception,
-module-sheaf categories and their equivalence with vector sheaves remain
-separate units under scalar task `f514a7ea-36cc-41dd-b4c5-0ba6ebeed450`.
+module-sheaf categories and their equivalence with vector sheaves are outside
+the publications audited here. The construction audit assigned these separate
+units to scalar task `f514a7ea-36cc-41dd-b4c5-0ba6ebeed450`; this focused
+uniqueness update does not audit its later publications.
 The original-action multiplier construction task
 `fb4db626-f4c6-48e8-9e45-fadbaeedec64` supplies the action audited here;
-the source uniqueness and restriction/extension categorical equivalence retain
-their separate scope.
+the source uniqueness is now proved by the separate publication above.
+Restriction/extension categorical equivalence retains its separate scope.
 
-Projector task `9773f76d-58c8-4ad7-a35d-1b8610d4a2cf` retains its subsequent
+Projector task `9773f76d-58c8-4ad7-a35d-1b8610d4a2cf` covers the subsequent
 additive-functor and nondegenerate-functor obligations. The full theorem
 identifying compact sections with original modules, both natural inverse
 comparisons, the resulting sheaf/module equivalence, and the original-module
-stalk quotient on printed p.40 / PDF46 still require their actual interfaces
-and proofs. The original-value-universe basis/all-open equivalence is also a
-separate obligation. The earlier [germ-sheaf progress note](germ-sheaf-progress.md)
+stalk quotient on printed p.40 / PDF46 are not established by the five
+constructions and uniqueness proof audited here. The original-value-universe
+basis/all-open equivalence is also a separate obligation.
+The earlier [germ-sheaf progress note](germ-sheaf-progress.md)
 records a different family of constructions and its dated proof boundaries.
 No section or whole-book completion is declared.

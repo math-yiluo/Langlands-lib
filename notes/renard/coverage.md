@@ -16,8 +16,14 @@ dated 2 November 2026, verifies five independently published constructions at
 `11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`: actual scalar presheaf and sheaf,
 the smooth multiplier action, and original-action projector presheaf and
 intrinsic sheaf gluing. Its source reading covers PDF36 and PDF44–46.
-Uniqueness, functor successors and the full categorical comparisons retain
-the boundaries stated there.
+The same progress note now verifies the separately published
+`PointwiseTestModule.SmoothExtensionUniqueStatement` and exact proof
+`PointwiseTestModule.smoothExtensionUnique`, proof candidate
+`563a4ca5-8505-4127-b366-00a926798985` at
+`7a2e42fd31831029d34cafb155ffad911920df25`. Agreement on included tests
+alone forces equality with the canonical smooth module on the original
+carrier, at independent space and module universes. Functor successors and
+the full categorical comparisons retain the boundaries stated there.
 
 The [small-projective and original-module progress note](category-module-progress.md)
 records selected verified publications and pending work checked on 30 October
@@ -654,7 +660,7 @@ including definitions, remarks and unnumbered results.
 | I.7 | Chapter notes | 28 / 34 | Backlog, including mathematical assertions |
 | II opening | Spaces and groups | 29 / 35 | Backlog |
 | II.1 | Topology, functions and distributions | 30 / 36 | Partial: the dated Chapter II update above verifies the scalar indicator/exact-sequence proof and vector, pairing and tensor constructions; their remaining statements/proofs stay explicit |
-| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions and their dated proof ledger](germ-sheaf-progress.md), [scalar, smooth-action and original-action projector constructions with intrinsic gluing](scalar-projector-progress.md), and [source-error audit](basis-sheafification-source.md); the original-value-universe basis/all-open equivalence and full sheaf/module categorical comparisons retain separate obligations |
+| II.2 | Sheaves on t.d. spaces | 33 / 39 | Partial: public basis foundation, [germ/sheaf constructions and their dated proof ledger](germ-sheaf-progress.md), [scalar, smooth-action and original-action projector constructions, intrinsic gluing and exact smooth-action uniqueness proof](scalar-projector-progress.md), and [source-error audit](basis-sheafification-source.md); the original-value-universe basis/all-open equivalence and full sheaf/module categorical comparisons retain separate obligations |
 | II.3 | Topological t.d. groups | 43 / 49 | Backlog |
 | II.4 | Chapter notes | 56 / 62 | Backlog, including mathematical assertions |
 | III opening | Representations of t.d. groups | 57 / 63 | Backlog |
