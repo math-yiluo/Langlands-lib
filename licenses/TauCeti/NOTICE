@@ -1,0 +1,20 @@
+TauCeti — third-party notice
+
+The sixteen Lean files under Langlands/TauCeti/ are ported from the TauCeti
+project, https://github.com/TauCetiProject/TauCeti, at commit
+8428d6217f74afa72531df0bc85d7b57ab72810f (registered source
+tauceti-8428d621-weil-restriction-closure).
+
+Copyright (c) 2026 The Tau Ceti contributors. All rights reserved.
+Released under the Apache License, Version 2.0; the file LICENSE in this folder
+is an unmodified copy of the TauCeti LICENSE at that commit.
+
+The TauCeti repository has no NOTICE file at that commit. Each ported file keeps
+its upstream copyright header. Below it, a port note names the upstream file
+and the commit and lists every edit made in the port: renaming of
+TauCeti-internal imports from TauCeti.* to Langlands.TauCeti.*, and two
+compatibility fixes for the pinned Mathlib (in
+TauCeti/Algebra/Polynomial/Laurent/Basic.lean, MonoidHom.coe_ofClass replaced
+by MonoidHom.coe_coe at lines 396 and 411; in
+TauCeti/Algebra/Coalgebra/Convolution.lean, the theorem
+Module.Basis.convCoordEquiv_convPostcomp_mul at lines 324-337 deleted).

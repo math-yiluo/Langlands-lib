@@ -10,8 +10,8 @@ natural representing scheme.
 
 ## Objects and exact hypotheses
 
-All ring and module carriers, algebra tests and index types are at
-universe zero. Let `R` be any commutative ring, `M` any `R`-module with an
+All ring and module carriers and algebra tests are in one arbitrary universe
+`u`; the index type `ι` of the generating family may lie in any universe. Let `R` be any commutative ring, `M` any `R`-module with an
 additive commutative group, and `k : ℕ`. Mathlib's
 `Module.Grassmannian A (A ⊗[R] M) k` consists of submodules whose
 quotients are finite projective of constant stalk rank `k`. The rank
@@ -133,7 +133,8 @@ uses the identical published `ChartLinear.Chart`, `HomX` and concrete
 `chartEquiv`. Reconstruction and naturality are proved directly from
 that API as described above. A scoped opening of the imported chart type
 also makes it available in the exported proof. No mathematical
-hypothesis, universe, base-change operation or conclusion changes.
+hypothesis, base-change operation or conclusion changes (the universe
+generalization is described below).
 
 The existing Apache 2.0 notices from the distribution are retained in
 [LICENSE](../../../licenses/Anthropic-FLT/LICENSE),
@@ -153,3 +154,17 @@ polarized abelian moduli scheme, its PEL conditions, the natural
 comparison with the normalized Harris CM presheaf, and the
 admissibility, smoothness and projectivity in the host
 `DivisionCMRepresentabilityStatement` remain separate obligations.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- The index type `ι` of the generating family (`variable {ι : Type}` and the binder `(ι : Type)` of `Module.Grassmannian.adjoin_eq_top_of_isOpenImmersion_of_opensRange_eq`) becomes `Type*`.
+- In total 14 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

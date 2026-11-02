@@ -9,7 +9,7 @@ chart open immersions, their compatibility with the structure morphism,
 coverage of every point of the scheme, and the chart formula for each
 represented element. The representing scheme is constructed in the proof.
 
-All rings, algebras, functor values and the chart index are in universe zero.
+All rings, algebras, functor values and the chart index lie in one arbitrary universe `u`.
 The base is any commutative ring. No field, nontriviality, Noetherianity,
 finite generation or finiteness of the chart index is required.
 
@@ -119,7 +119,7 @@ This is an adaptation of the registered source
 The registered distribution has SHA-256
 `a2baece9c13f309f914ac09f2d8342a17d363c8ad27e587b84337ff943ed2e1a`.
 Both files were read in full. The exported theorem signature is
-byte-identical to the original wrapper, including all universes,
+the original wrapper's with its universe-zero types generalized to universe `u` (see below), including all
 localization realizations, chart naturality, field coverage and output
 formulas.
 
@@ -161,3 +161,16 @@ representing CM scheme remain further obligations of
 The scalar map and its compatibility under algebra homomorphisms reuse
 `AlgebraFunctorOpenCharts.strMap` and `AlgebraFunctorOpenCharts.spec_comp_strMap`.
 These are the same scalar maps as in the source construction.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- In total 36 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

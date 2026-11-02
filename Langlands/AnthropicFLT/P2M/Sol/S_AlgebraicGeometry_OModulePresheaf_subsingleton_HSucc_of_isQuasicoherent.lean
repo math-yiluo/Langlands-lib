@@ -1,0 +1,35 @@
+/-
+Ported from `P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_subsingleton_HSucc_of_isQuasicoherent.lean` of the Anthropic Lean formalization of
+Fermat's Last Theorem (commit 6e837e75355538c7f80bab5b956861e86c4eacc2), Copyright 2026
+Anthropic, PBC, licensed under the Apache License, Version 2.0; see
+`licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
+Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options
+are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
+the changes.
+-/
+import Mathlib.AlgebraicGeometry.Morphisms.Separated
+import Mathlib.LinearAlgebra.Quotient.Basic
+import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OrderedAffineCoverCech
+import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_ker_d_succ_le_range_d_of_isQuasicoherent
+set_option maxHeartbeats 4000000
+set_option synthInstance.maxHeartbeats 400000
+set_option backward.isDefEq.respectTransparency.types false
+namespace P2MW.S_AlgebraicGeometry_OModulePresheaf_subsingleton_HSucc_of_isQuasicoherent
+attribute [-instance] AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instDecidableEqIdx AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instFintype AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instLinearOrder AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instFintypeIdx
+attribute [-simp] AlgebraicGeometry.Scheme.OrderedAffineCover.toCoverOf_U AlgebraicGeometry.Scheme.OrderedAffineCoverOf.mk.sizeOf_spec AlgebraicGeometry.Scheme.OrderedAffineCoverOf.mk.injEq AlgebraicGeometry.Scheme.OrderedAffineCover.restrict_U AlgebraicGeometry.OModulePresheaf.Hom.mk.injEq AlgebraicGeometry.OModulePresheaf.Hom.id_app AlgebraicGeometry.OModulePresheaf.AffHom.appSections_apply AlgebraicGeometry.OModulePresheaf.AffHom.comp_app AlgebraicGeometry.OModulePresheaf.AffSES.mk.sizeOf_spec AlgebraicGeometry.OModulePresheaf.AffHom.kerMap_coe AlgebraicGeometry.OModulePresheaf.AffHom.id_app AlgebraicGeometry.OModulePresheaf.Hom.mk.sizeOf_spec AlgebraicGeometry.OModulePresheaf.Hom.toAffHom_app AlgebraicGeometry.OModulePresheaf.SES.mk.sizeOf_spec AlgebraicGeometry.OModulePresheaf.AffHom.mk.sizeOf_spec AlgebraicGeometry.OModulePresheaf.Hom.comp_app AlgebraicGeometry.OModulePresheaf.SES.mk.injEq AlgebraicGeometry.OModulePresheaf.AffHom.mk.injEq AlgebraicGeometry.OModulePresheaf.Hom.appSections_apply AlgebraicGeometry.OModulePresheaf.AffSES.mk.injEq
+
+set_option autoImplicit false
+
+universe u
+
+open CategoryTheory AlgebraicGeometry
+
+theorem solution
+    {R : Type u} [CommRing R] {V : Scheme.{u}} {π : V ⟶ Spec (.of R)} [IsAffine V] [IsSeparated π]
+    (F : OModulePresheaf π) (hF : F.IsQuasicoherent) (K : V.OrderedAffineCover) (i : ℕ) :
+    Subsingleton (F.HSucc K i) := by
+  have h := AlgebraicGeometry.OModulePresheaf.ker_d_succ_le_range_d_of_isQuasicoherent F hF K i
+  refine subsingleton_of_forall_eq 0 (fun y => ?_)
+  obtain ⟨x, rfl⟩ := Submodule.Quotient.mk_surjective _ y
+  simp only [Submodule.Quotient.mk_eq_zero, Submodule.mem_comap, Submodule.subtype_apply]
+  exact h x.2

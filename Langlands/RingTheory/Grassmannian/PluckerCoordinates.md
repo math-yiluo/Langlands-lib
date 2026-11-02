@@ -7,7 +7,7 @@ The coordinates reconstruct quotient vectors, detect other charts by a unit
 condition, commute with arbitrary algebra base change, and satisfy a
 multiplicative change-of-chart formula.
 
-All rings, modules and test algebras have universe zero. The base `R` is
+All rings, modules and test algebras lie in one arbitrary universe `u`. The base `R` is
 any commutative ring, `M` is any `R`-module with an additive commutative
 group, and `k : ℕ`. There is no finiteness, freeness, nontriviality or
 positivity hypothesis. A family `x : Fin k → M` need not be independent
@@ -125,8 +125,8 @@ The complete source files read and compared for this adaptation are:
   lines 1–56, SHA-256
   `67507b9170deafe0be105cb7e0678e7d375a60aca7da2e484a7a9b34f2f9bcb1`.
 
-The exported signature is byte-identical to the original wrapper. It
-preserves the universe-zero quantifiers, quotient convention, arbitrary
+The exported signature is the original wrapper's with its universe-zero
+quantifiers generalized to universe `u` (see below). It preserves the quotient convention, arbitrary
 base ring and module, actual base-change maps, and all six conclusions.
 
 The original `GrassPlucker` namespace becomes the helper namespace above,
@@ -161,3 +161,16 @@ gluing and geometric arguments. Within the host division-CM task, the
 representing CM scheme, its admissibility, smoothness, projectivity and
 the natural comparison with the exact normalized CM presheaf remain
 separate obligations.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- In total 16 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

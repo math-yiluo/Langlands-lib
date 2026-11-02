@@ -4,6 +4,8 @@ import Mathlib.LinearAlgebra.TensorProduct.Pi
 import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
+universe u
+
 /-!
 # Algebraic charts of the quotient Grassmannian
 
@@ -23,14 +25,14 @@ set_option autoImplicit false
 
 namespace Module.Grassmannian.ChartLinear
 
-variable (R : Type) [CommRing R] {M : Type} [AddCommGroup M] [Module R M] {k : ℕ} (x : Fin k → M)
-variable (A : Type) [CommRing A] [Algebra R A]
+variable (R : Type u) [CommRing R] {M : Type u} [AddCommGroup M] [Module R M] {k : ℕ} (x : Fin k → M)
+variable (A : Type u) [CommRing A] [Algebra R A]
 
-abbrev Chart : Type :=
+abbrev Chart : Type u :=
   {N : Module.Grassmannian A (A ⊗[R] M) k //
     Function.Bijective fun v : Fin k → A => ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)}
 
-abbrev HomX : Type :=
+abbrev HomX : Type u :=
   {ψ : M →ₗ[R] (Fin k → A) // ∀ j, ψ (x j) = Pi.single j 1}
 
 variable {R A}
@@ -152,7 +154,7 @@ noncomputable def chartEquiv : Chart R x A ≃ HomX R x A where
   left_inv := ofHomX_toHomX x
   right_inv := toHomX_ofHomX x
 
-variable {B : Type} [CommRing B] [Algebra R B] (φ : A →ₐ[R] B)
+variable {B : Type u} [CommRing B] [Algebra R B] (φ : A →ₐ[R] B)
 
 def pushHomX (ψ : HomX R x A) : HomX R x B :=
   ⟨(φ.toLinearMap.compLeft (Fin k)) ∘ₗ ψ.1, fun j => by
@@ -215,23 +217,23 @@ end Module.Grassmannian.ChartLinear
 
 open Module.Grassmannian.ChartLinear in
 theorem Module.Grassmannian.exists_chart_equiv_linearMap
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ) (x : Fin k → M) :
-    ∃ pt : ∀ (A : Type) [CommRing A] [Algebra R A],
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ) (x : Fin k → M) :
+    ∃ pt : ∀ (A : Type u) [CommRing A] [Algebra R A],
         {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)} ≃
           {ψ : M →ₗ[R] (Fin k → A) // ∀ j, ψ (x j) = Pi.single j 1},
-      (∀ (A : Type) [CommRing A] [Algebra R A]
+      (∀ (A : Type u) [CommRing A] [Algebra R A]
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)})
           (m : M),
           ∑ i, (pt A N).1 m i • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
             N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A]
+      (∀ (A : Type u) [CommRing A] [Algebra R A]
           (ψ : {ψ : M →ₗ[R] (Fin k → A) // ∀ j, ψ (x j) = Pi.single j 1}),
           ((pt A).symm ψ).1.toSubmodule = LinearMap.ker (ψ.1.liftBaseChange A)) ∧
-      (∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+      (∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)}),
@@ -258,15 +260,15 @@ set_option autoImplicit false
 
 namespace Module.Grassmannian.ChartAlgebra
 
-variable (R : Type) [CommRing R] {M : Type} [AddCommGroup M] [Module R M] {k : ℕ} (x : Fin k → M)
-variable (A : Type) [CommRing A] [Algebra R A]
+variable (R : Type u) [CommRing R] {M : Type u} [AddCommGroup M] [Module R M] {k : ℕ} (x : Fin k → M)
+variable (A : Type u) [CommRing A] [Algebra R A]
 
 def rels : Set (SymmetricAlgebra R (Fin k → M)) :=
   {a | ∃ i j : Fin k, a = SymmetricAlgebra.ι R (Fin k → M) (Pi.single i (x j)) - if i = j then 1 else 0}
 
-abbrev S : Type := SymmetricAlgebra R (Fin k → M) ⧸ Ideal.span (rels R x)
+abbrev S : Type u := SymmetricAlgebra R (Fin k → M) ⧸ Ideal.span (rels R x)
 
-abbrev HomX : Type :=
+abbrev HomX : Type u :=
   {ψ : M →ₗ[R] (Fin k → A) // ∀ j, ψ (x j) = Pi.single j 1}
 
 variable {R A}
@@ -348,7 +350,7 @@ noncomputable def homEquivPt : HomX R x A ≃ (S R x →ₐ[R] A) where
   left_inv := ofPt_toPt x
   right_inv := toPt_ofPt x
 
-variable {B : Type} [CommRing B] [Algebra R B] (φ : A →ₐ[R] B)
+variable {B : Type u} [CommRing B] [Algebra R B] (φ : A →ₐ[R] B)
 
 lemma homEquivPt_natural (ψ : HomX R x A) (ψ' : HomX R x B) (h : ∀ m i, ψ'.1 m i = φ (ψ.1 m i)) :
     homEquivPt x ψ' = φ.comp (homEquivPt x ψ) := by
@@ -363,16 +365,16 @@ end Module.Grassmannian.ChartAlgebra
 
 open Module.Grassmannian.ChartAlgebra in
 theorem Module.Grassmannian.exists_chart_equiv_algHom_symmetricAlgebra_quotient
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ) (x : Fin k → M) :
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ) (x : Fin k → M) :
     ∃ (J : Ideal (SymmetricAlgebra R (Fin k → M)))
       (_ : J = Ideal.span {a | ∃ i j : Fin k,
         a = SymmetricAlgebra.ι R (Fin k → M) (Pi.single i (x j)) - if i = j then 1 else 0})
-      (pt : ∀ (A : Type) [CommRing A] [Algebra R A],
+      (pt : ∀ (A : Type u) [CommRing A] [Algebra R A],
         {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)} ≃
           (SymmetricAlgebra R (Fin k → M) ⧸ J →ₐ[R] A)),
-      (∀ (A : Type) [CommRing A] [Algebra R A]
+      (∀ (A : Type u) [CommRing A] [Algebra R A]
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)})
@@ -380,7 +382,7 @@ theorem Module.Grassmannian.exists_chart_equiv_algHom_symmetricAlgebra_quotient
           ∑ i, pt A N (Ideal.Quotient.mk J (SymmetricAlgebra.ι R (Fin k → M) (Pi.single i m))) •
               N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
             N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m)) ∧
-      (∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+      (∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)}),

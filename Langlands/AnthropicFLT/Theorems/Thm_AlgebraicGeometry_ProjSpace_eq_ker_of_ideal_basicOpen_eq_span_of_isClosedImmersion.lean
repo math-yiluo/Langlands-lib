@@ -1,0 +1,47 @@
+/-
+Ported from `Theorems/Thm_AlgebraicGeometry_ProjSpace_eq_ker_of_ideal_basicOpen_eq_span_of_isClosedImmersion.lean` of the Anthropic Lean formalization of
+Fermat's Last Theorem (commit 6e837e75355538c7f80bab5b956861e86c4eacc2), Copyright 2026
+Anthropic, PBC, licensed under the Apache License, Version 2.0; see
+`licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
+Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options
+are set after the imports; the import of `P2M.Util` is dropped; the proof `by
+p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
+explicit arguments; universe levels are generalized. The paired Markdown file lists the changes.
+-/
+import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
+import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_HilbertFunctor
+import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_ProjSpace_eq_ker_of_ideal_basicOpen_eq_span_of_isClosedImmersion
+set_option maxHeartbeats 4000000
+set_option synthInstance.maxHeartbeats 400000
+set_option backward.isDefEq.respectTransparency.types false
+universe uz
+
+set_option autoImplicit false
+open MvPolynomial CategoryTheory CategoryTheory.Limits AlgebraicGeometry AlgebraicGeometry.HilbertFunctor
+attribute [local instance] MvPolynomial.gradedAlgebra
+
+theorem AlgebraicGeometry.ProjSpace.eq_ker_of_ideal_basicOpen_eq_span_of_isClosedImmersion
+    (n : ℕ) (A : Type uz) [CommRing A] (Z : Scheme.{uz})
+    (ι : Z ⟶ Proj (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A)) (hι : IsClosedImmersion ι) (m : ℕ)
+    (𝓘 : (Proj (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A)).IdealSheafData)
+    (h𝓘 : ∀ i : Fin (n + 1),
+        𝓘.ideal ⟨Proj.basicOpen (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A) (X i),
+          Proj.isAffineOpen_basicOpen (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A) (X i) (ProjSpace.X_mem_one A n i) one_pos⟩ =
+        Ideal.span { s | ∃ (d : ℕ) (F : MvPolynomial (Fin (n + 1)) A) (hF : F.IsHomogeneous d),
+          F ∈ Ideal.span { F : MvPolynomial (Fin (n + 1)) A | ∃ (d : ℕ) (hF : F.IsHomogeneous d), m ≤ d ∧
+            ∀ i : Fin (n + 1),
+            ι.app (Proj.basicOpen (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A) (X i))
+              ((Proj.awayToSection (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A) (X i))
+                (HomogeneousLocalization.mk
+                  { deg := d
+                    num := ⟨F, (MvPolynomial.mem_homogeneousSubmodule d F).mpr hF⟩
+                    den := ⟨X i ^ d, (MvPolynomial.mem_homogeneousSubmodule d _).mpr (MvPolynomial.isHomogeneous_X_pow i d)⟩
+                    den_mem := ⟨d, rfl⟩ })) = 0 } ∧
+          s = (Proj.awayToSection (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) A) (X i))
+              (HomogeneousLocalization.mk
+                { deg := d
+                  num := ⟨F, (MvPolynomial.mem_homogeneousSubmodule d F).mpr hF⟩
+                  den := ⟨X i ^ d, (MvPolynomial.mem_homogeneousSubmodule d _).mpr (MvPolynomial.isHomogeneous_X_pow i d)⟩
+                  den_mem := ⟨d, rfl⟩ }) }) :
+    𝓘 = ι.ker :=
+  P2MW.S_AlgebraicGeometry_ProjSpace_eq_ker_of_ideal_basicOpen_eq_span_of_isClosedImmersion.solution n A Z ι hι m 𝓘 h𝓘

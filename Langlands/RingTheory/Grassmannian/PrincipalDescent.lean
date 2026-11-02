@@ -13,6 +13,8 @@ import Mathlib.RingTheory.LocalProperties.FinitePresentation
 import Mathlib.RingTheory.LocalProperties.Submodule
 import Mathlib.RingTheory.Localization.BaseChange
 
+universe u
+
 /-! # Finite principal-open descent for quotient Grassmannians -/
 
 open scoped TensorProduct
@@ -22,11 +24,11 @@ set_option autoImplicit false
 
 namespace Module.Grassmannian.PrincipalDescent
 
-variable (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M]
+variable (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M]
 
 section structureMap
 
-variable (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] [Algebra A B]
+variable (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] [Algebra A B]
   [IsScalarTower R A B]
 
 noncomputable def l : A ⊗[R] M →ₗ[A] B ⊗[R] M :=
@@ -77,7 +79,7 @@ end structureMap
 
 section tower
 
-variable (A B C : Type) [CommRing A] [CommRing B] [CommRing C] [Algebra R A] [Algebra R B]
+variable (A B C : Type u) [CommRing A] [CommRing B] [CommRing C] [Algebra R A] [Algebra R B]
   [Algebra R C] [Algebra A B] [Algebra B C] [Algebra A C] [IsScalarTower A B C]
   [IsScalarTower R A B] [IsScalarTower R B C] [IsScalarTower R A C]
 
@@ -91,13 +93,13 @@ end tower
 section glue
 
 variable {k : ℕ}
-variable (A : Type) [CommRing A] [Algebra R A] {n : ℕ} (f : Fin n → A)
-  (B : Fin n → Type) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
+variable (A : Type u) [CommRing A] [Algebra R A] {n : ℕ} (f : Fin n → A)
+  (B : Fin n → Type u) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
   [∀ i, IsScalarTower R A (B i)] [∀ i, IsLocalization.Away (f i) (B i)]
   (N : ∀ i, Module.Grassmannian (B i) (B i ⊗[R] M) k)
 
 def Cocycle : Prop :=
-  ∀ (i j : Fin n) (C : Type) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
+  ∀ (i j : Fin n) (C : Type u) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
     [IsLocalization.Away (f i * f j) C] (ρ₁ : B i →ₐ[A] C) (ρ₂ : B j →ₐ[A] C),
     Module.Grassmannian.map (ρ₁.restrictScalars R) (N i) =
       Module.Grassmannian.map (ρ₂.restrictScalars R) (N j)
@@ -177,7 +179,7 @@ lemma localized'_glued (hN : Cocycle R M A f B N) (i : Fin n) :
 
 variable (A B N) in
 
-abbrev Q0 : Type := (A ⊗[R] M) ⧸ glued R M A B N
+abbrev Q0 : Type u := (A ⊗[R] M) ⧸ glued R M A B N
 
 noncomputable def gq (hN : Cocycle R M A f B N) (i : Fin n) :
     Q0 R M A B N →ₗ[A] (B i ⊗[R] M) ⧸ (N i).toSubmodule :=
@@ -285,12 +287,12 @@ end Module.Grassmannian.PrincipalDescent
 
 open Module.Grassmannian.PrincipalDescent in
 theorem Module.Grassmannian.existsUnique_forall_map_toAlgHom_eq_of_isLocalization_away
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ)
-    (A : Type) [CommRing A] [Algebra R A] (n : ℕ) (f : Fin n → A) (hf : Ideal.span (Set.range f) = ⊤)
-    (B : Fin n → Type) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ)
+    (A : Type u) [CommRing A] [Algebra R A] (n : ℕ) (f : Fin n → A) (hf : Ideal.span (Set.range f) = ⊤)
+    (B : Fin n → Type u) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
     [∀ i, IsScalarTower R A (B i)] [∀ i, IsLocalization.Away (f i) (B i)]
     (N : ∀ i, Module.Grassmannian (B i) (B i ⊗[R] M) k)
-    (hN : ∀ (i j : Fin n) (C : Type) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
+    (hN : ∀ (i j : Fin n) (C : Type u) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
         [IsLocalization.Away (f i * f j) C] (ρ₁ : B i →ₐ[A] C) (ρ₂ : B j →ₐ[A] C),
         Module.Grassmannian.map (ρ₁.restrictScalars R) (N i) =
           Module.Grassmannian.map (ρ₂.restrictScalars R) (N j)) :

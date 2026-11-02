@@ -1,0 +1,146 @@
+# `Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent`
+
+Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Proof module (FLT `P2M/Sol/`).
+
+## Source and licence
+
+Port of `P2M/Sol/S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
+
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+
+FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
+
+## Changes against the FLT file
+
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`.
+- An attribution header comment is added at the top of the file.
+- The import of the FLT utility module `P2M.Util` (custom tactics and commands) is dropped.
+- 1 `p2m_reactivate "N₁ N₂ …"` command(s) (an FLT command from `P2M.Util` that re-activates the scoped extensions, such as scoped instances and simp lemmas, of the named namespaces) are replaced by `open scoped _root_.N₁ _root_.N₂ …` with the same namespaces, which activates the same scoped extensions.
+- 1 `p2m_export "N" "a b …"` command(s) (an FLT command from `P2M.Util` that adds aliases `a`, `b`, … in the current namespace for `N.a`, `N.b`, …) are replaced by `export _root_.N (a b …)` with the same names. The command `export _root_.P2mIdCompField (finite_irreducibleComponents)` is dropped; see the port edit below.
+- Port edit replacing a `P2M.Util` alias (FLT line 215, line 225 here): `isOpen_connectedComponent_of_finite_irreducibleComponents (finite_irreducibleComponents L) _` is replaced by `isOpen_connectedComponent_of_finite_irreducibleComponents (_root_.P2mIdCompField.finite_irreducibleComponents L) _`. FLT `p2m_export "P2mIdCompField" "finite_irreducibleComponents"` aliases the private declaration(s) `_root_.P2mIdCompField.`, `_root_.finite_irreducibleComponents.` (declared earlier in the file) into the current namespace. Standard `export` cannot do this: `P2mIdCompField` contains only private declarations and is not a registered namespace (`unknown namespace`). The command is dropped, and the uses of the alias are written with the full name of the private declaration, which denotes the same declaration.
+- Port edit replacing a `P2M.Util` alias (FLT line 729, line 739 here): `haveI : Finite (irreducibleComponents G) := (finite_irreducibleComponents L).to_subtype` is replaced by `haveI : Finite (irreducibleComponents G) := (_root_.P2mIdCompField.finite_irreducibleComponents L).to_subtype`. FLT `p2m_export "P2mIdCompField" "finite_irreducibleComponents"` aliases the private declaration(s) `_root_.P2mIdCompField.`, `_root_.finite_irreducibleComponents.` (declared earlier in the file) into the current namespace. Standard `export` cannot do this: `P2mIdCompField` contains only private declarations and is not a registered namespace (`unknown namespace`). The command is dropped, and the uses of the alias are written with the full name of the private declaration, which denotes the same declaration.
+- No other change: apart from the edits listed above, the declarations, statements and proofs are the FLT text.
+
+## Content
+
+The theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.solution` proves the statement of the companion theorem in `Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent`. Statement. `GoodReductionJacobian.RelativeGroupLaw.exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent` (the
+identity component): for a group scheme `G` locally of finite type and quasi-compact over a field `k`, there is an
+open and closed subscheme `G₀ ⊆ G` with a group law making the inclusion a homomorphism (commutative if `G` is), such
+that `G₀` is irreducible, geometrically irreducible and geometrically connected, equals the connected component of
+the unit, its preimage in every base change to a field `K` is the connected component of the unit there, and
+finitely many `k`-points meet all cosets of `G₀(k)` in `G(k)`.
+
+Proof. Sections `Maps`, `Topology`, `IdComp`: translations and inversion are homeomorphisms; `G` has finitely many
+irreducible components, so connected components are open; `idC` is the connected component of the unit, clopen and
+connected. Sections `BaseChange`, `AlgClosure`, `Geometric`: over an algebraic closure the ported
+`RelativeGroupLaw.exists_isOpenImmersion_irreducibleSpace_range_eq_connectedComponent_finiteIndex` shows that the
+identity component is irreducible; the preimage of `idC` in a base change is the identity component there
+(`preimage_idC_eq_idC`), hence `G₀` is geometrically irreducible (ported
+`GeometricallyIrreducible.of_irreducibleSpace_of_isAlgClosed`) and geometrically connected (ported
+`GeometricallyIrreducible.geometricallyConnected`). Sections `Compat`, `Law`: multiplication, unit and inverse
+preserve `idC`, giving the restricted law `law₀` with the inclusion a homomorphism. Section `FiniteIndex`: the
+cosets of `G₀` are connected components, of which there are finitely many (`exists_finite_cosets`).
+
+## Declarations
+
+Names, namespaces and statements are the FLT ones. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
+
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const_coe`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const_pt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const_transition`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const_mul`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const_one`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.inv_natural`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.transl`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.comp_transl`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.transl_one`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.transl_comp`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isIso_transl`
+- abbrev `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.clpt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.transl_clpt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_coe_eq`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.invN`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.comp_invN`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.invN_invN`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isIso_invN`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.invN_clpt`
+- abbrev `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.ePt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.invN_ePt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.transl_ePt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.homeomorph_image_connectedComponent`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.eq_connectedComponent_of_isClopen_of_isPreconnected`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isOpen_connectedComponent_of_finite_irreducibleComponents`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.ePt_mem_idC`
+- private theorem `P2mIdCompField.finite_irreducibleComponents`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isOpen_idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isClosed_idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isClopen_idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isConnected_idC`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.U₀`
+- abbrev `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.G₀`
+- abbrev `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.ι₀`
+- abbrev `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.f₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_ι₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.ι₀_apply_mem`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isClosedImmersion_ι₀`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.connectedSpace_G₀`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.liftPt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.liftPt_coe_ι₀`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.e₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.one_comp_eq`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.fst_ePt_baseChange`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.subsingleton_pullback_one_fst`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.eq_ePt_of_fst_eq`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isClopen_preimage_idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.ePt_baseChange_mem_preimage`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.tb`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isIntegralHom_tb`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.surjective_tb`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.exists_mem_image_connectedComponent`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.preimage_idC_eq_idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isIrreducible_idC_of_isAlgClosed`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.irreducibleSpace_G₀_of_isAlgClosed`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.geometricallyIrreducible_f₀_of_isAlgClosed`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.geometricallyIrreducible_of_snd`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_snd_ι₀_fst`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isoG₀b`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isoG₀b_hom_ι₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.snd_f₀_tb_eq`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.geometricallyIrreducible_snd_f₀_tb`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.geometricallyIrreducible_f₀`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.geometricallyConnected_f₀`
+- scoped instance `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.irreducibleSpace_G₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.preimage_range_ι₀_eq`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_coe`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_injective`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_transition`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_liftPt`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.M`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.lift_M`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_M_subset`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_mul_toG_subset`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_one_subset`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_ι₀_invN_subset`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.range_inv_toG_subset`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.mulPt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_mulPt`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.onePt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_onePt`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.invPt`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_invPt`
+- def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.law₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.toG_law₀_mul`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.hom_ι₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.isCommutative_law₀`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.clpt_mul_inv_mem_idC`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.exists_finite_cosets`
+- theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.solution`
+
+## Dependencies
+
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw` (Library), `Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawKernel` (Library), `Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawBaseChange` (Library), `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelEndomorphismExtension` (Library), `Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_irreducibleSpace_range_eq_connectedComponent_finiteIndex` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_of_irreducibleSpace_of_isAlgClosed` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_geometricallyConnected` (same contribution).
+Other imports: `Mathlib`.

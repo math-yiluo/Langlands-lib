@@ -1,8 +1,8 @@
 # Open chart loci and field-valued coverage of the quotient Grassmannian
 
 Let `R` be any commutative ring, `M` any `R`-module with an additive
-commutative group, and `k : ℕ`. All rings, modules and index types in this
-module have universe zero. The Grassmannian is Mathlib's
+commutative group, and `k : ℕ`. All rings and modules in this
+module lie in one arbitrary universe `u`; index types `ι` may lie in any universe. The Grassmannian is Mathlib's
 `Module.Grassmannian A (A ⊗[R] M) k`: its points are submodules whose
 **quotients** are finite projective of stalk rank `k`.
 
@@ -129,7 +129,8 @@ Both complete exported theorem signatures are identical to the wrappers.
 The solution namespaces become `Module.Grassmannian.FieldCover` and
 `Module.Grassmannian.ChartOpenLocus`, and the `solution` declarations
 receive the original exported names. The port preserves the source's
-universe-zero scope, quotient convention, hypotheses and conclusions.
+quotient convention, hypotheses and conclusions; the source's universe-zero
+scope is generalized as described below.
 
 Focused Mathlib imports replace `import Mathlib` and `P2M.Util`. The
 source's proof of equal-rank surjectivity implying bijectivity is replaced
@@ -159,3 +160,17 @@ The original distribution is Apache 2.0 licensed. The unchanged published
 [ATTRIBUTION](../../../licenses/Anthropic-FLT/ATTRIBUTION.md) apply and
 are byte-identical to the pinned source files. The source attribution
 table has no separate entry for either of these modules.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- The index type `ι` of the spanning family (`variable {ι : Type}` and the binder `(ι : Type)` of `Module.Grassmannian.exists_injective_and_bijective_of_span_eq_top`) becomes `Type*`, so the family may be indexed by a type in any universe (for example `Fin (n + 1)` while `M : Type u`).
+- In total 15 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

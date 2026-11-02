@@ -13,6 +13,8 @@ import Langlands.RingTheory.Grassmannian.ChartOpenCover
 import Langlands.AlgebraicGeometry.ProjectiveSpace.PointComparison
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_ProjSpace_exists_algHom_away_apply_ratio_eq
 
+universe u
+
 /-! # A projective embedding of a represented quotient Grassmannian -/
 
 open scoped TensorProduct
@@ -24,21 +26,21 @@ attribute [local instance] MvPolynomial.gradedAlgebra
 
 namespace Module.Grassmannian.ProjectiveEmbedding
 
-variable (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ)
+variable (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ)
 
 structure Rep where
-  Gr : Scheme.{0}
+  Gr : Scheme.{u}
   p : Gr ⟶ Spec (CommRingCat.of R)
-  pt : ∀ (A : Type) [CommRing A] [Algebra R A],
+  pt : ∀ (A : Type u) [CommRing A] [Algebra R A],
     Module.Grassmannian A (A ⊗[R] M) k ≃
       {g : Spec (CommRingCat.of A) ⟶ Gr // g ≫ p = Spec.map (CommRingCat.ofHom (algebraMap R A))}
-  hpt : ∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+  hpt : ∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
     (N : Module.Grassmannian A (A ⊗[R] M) k),
     (pt B (Module.Grassmannian.map φ N)).1 = Spec.map (CommRingCat.ofHom φ.toRingHom) ≫ (pt A N).1
   V : (Fin k → M) → Gr.Opens
   hV : ⨆ x, V x = ⊤
   hVaff : ∀ x, IsAffineOpen (V x)
-  hVchart : ∀ (x : Fin k → M) (A : Type) [CommRing A] [Algebra R A]
+  hVchart : ∀ (x : Fin k → M) (A : Type u) [CommRing A] [Algebra R A]
     (N : Module.Grassmannian A (A ⊗[R] M) k),
     Set.range (pt A N).1.base ⊆ (V x : Set Gr) ↔
       Function.Bijective fun v : Fin k → A =>
@@ -46,7 +48,7 @@ structure Rep where
 
 variable {R M k}
 
-def InChart (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A]
+def InChart (x : Fin k → M) {A : Type u} [CommRing A] [Algebra R A]
     (N : Module.Grassmannian A (A ⊗[R] M) k) : Prop :=
   Function.Bijective fun v : Fin k → A => ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)
 
@@ -54,30 +56,30 @@ section points
 
 variable (D : Rep R M k)
 
-@[reducible] noncomputable def algOfHom {A : Type} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) : Algebra R A :=
+@[reducible] noncomputable def algOfHom {A : Type u} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) : Algebra R A :=
   (Spec.preimage (h ≫ D.p)).hom.toAlgebra
 
-theorem specMap_algebraMap_algOfHom {A : Type} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) :
+theorem specMap_algebraMap_algOfHom {A : Type u} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) :
     letI := algOfHom D h
     Spec.map (CommRingCat.ofHom (algebraMap R A)) = h ≫ D.p := by
   let := algOfHom D h
   change Spec.map (CommRingCat.ofHom (Spec.preimage (h ≫ D.p)).hom) = _
   rw [CommRingCat.ofHom_hom, Spec.map_preimage]
 
-noncomputable def ptOf {A : Type} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) :
+noncomputable def ptOf {A : Type u} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) :
     letI := algOfHom D h
     Module.Grassmannian A (A ⊗[R] M) k :=
   letI := algOfHom D h
   (D.pt A).symm ⟨h, (specMap_algebraMap_algOfHom D h).symm⟩
 
-theorem pt_ptOf {A : Type} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) :
+theorem pt_ptOf {A : Type u} [CommRing A] (h : Spec (CommRingCat.of A) ⟶ D.Gr) :
     letI := algOfHom D h
     (D.pt A (ptOf D h)).1 = h := by
   let := algOfHom D h
   change (D.pt A ((D.pt A).symm ⟨h, _⟩)).1 = h
   rw [Equiv.apply_symm_apply]
 
-theorem exists_algHom {A B : Type} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
+theorem exists_algHom {A B : Type u} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
     (s : Spec (CommRingCat.of B) ⟶ Spec (CommRingCat.of A))
     (hs : s ≫ Spec.map (CommRingCat.ofHom (algebraMap R A)) =
       Spec.map (CommRingCat.ofHom (algebraMap R B))) :
@@ -95,7 +97,7 @@ theorem exists_algHom {A B : Type} [CommRing A] [CommRing B] [Algebra R A] [Alge
   refine ⟨⟨ρ₀, fun r => ?_⟩, hρ₀⟩
   exact RingHom.congr_fun hcomp r
 
-theorem map_eq_of_pt {A B : Type} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
+theorem map_eq_of_pt {A B : Type u} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
     (ρ : A →ₐ[R] B) (NA : Module.Grassmannian A (A ⊗[R] M) k) (NB : Module.Grassmannian B (B ⊗[R] M) k)
     (h : Spec.map (CommRingCat.ofHom ρ.toRingHom) ≫ (D.pt A NA).1 = (D.pt B NB).1) :
     Module.Grassmannian.map ρ NA = NB := by
@@ -109,7 +111,7 @@ section charts
 
 variable (D : Rep R M k)
 
-def S (x : Fin k → M) : Type := Γ(D.Gr, D.V x)
+def S (x : Fin k → M) : Type u := Γ(D.Gr, D.V x)
 
 noncomputable scoped instance (x : Fin k → M) : CommRing (S D x) := inferInstanceAs (CommRing Γ(D.Gr, D.V x))
 
@@ -143,56 +145,56 @@ section plucker
 variable (R M k)
 
 theorem exists_Pl :
-    ∃ P : ∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M),
+    ∃ P : ∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M),
         {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N} → (Fin k → M) → A,
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (m : M),
           ∑ i, P A x N (Function.update x i m) • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
             N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (y : Fin k → M),
           P A x N y = (Matrix.of fun i j => P A x N (Function.update x i (y j))).det) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}), P A x N x = 1) ∧
-      (∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+      (∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
           (x : Fin k → M) (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}),
           ∃ h : InChart x (Module.Grassmannian.map φ N.1),
             ∀ y : Fin k → M, P B x ⟨Module.Grassmannian.map φ N.1, h⟩ y = φ (P A x N y)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (y : Fin k → M),
           InChart y N.1 ↔ IsUnit (P A x N y)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (y : Fin k → M)
           (hy : InChart y N.1) (z : Fin k → M),
           P A x N z = P A x N y * P A y ⟨N.1, hy⟩ z) :=
   Module.Grassmannian.exists_pluckerCoordinate_eq_det_and_bijective_iff_isUnit R M k
 
-noncomputable def Pl {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+noncomputable def Pl {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (y : Fin k → M) : A :=
   (exists_Pl R M k).choose A x N y
 
-theorem Pl_expand {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+theorem Pl_expand {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (m : M) :
     ∑ i, Pl R M k x N (Function.update x i m) • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
       N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m) :=
   (exists_Pl R M k).choose_spec.1 A x N m
 
-theorem Pl_self {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+theorem Pl_self {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) : Pl R M k x N x = 1 :=
   (exists_Pl R M k).choose_spec.2.2.1 A x N
 
-theorem Pl_natural {A B : Type} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+theorem Pl_natural {A B : Type u} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
     (x : Fin k → M) (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) :
     ∃ h : InChart x (Module.Grassmannian.map φ N.1),
       ∀ y : Fin k → M, Pl R M k x ⟨Module.Grassmannian.map φ N.1, h⟩ y = φ (Pl R M k x N y) :=
   (exists_Pl R M k).choose_spec.2.2.2.1 A B φ x N
 
-theorem inChart_iff_isUnit {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+theorem inChart_iff_isUnit {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (y : Fin k → M) :
     InChart y N.1 ↔ IsUnit (Pl R M k x N y) :=
   (exists_Pl R M k).choose_spec.2.2.2.2.1 A x N y
 
-theorem Pl_mul {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+theorem Pl_mul {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (y : Fin k → M)
     (hy : InChart y N.1) (z : Fin k → M) :
     Pl R M k x N z = Pl R M k x N y * Pl R M k y ⟨N.1, hy⟩ z :=
@@ -200,12 +202,12 @@ theorem Pl_mul {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
 
 variable {R M k}
 
-theorem Pl_congr {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+theorem Pl_congr {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N N' : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (h : N.1 = N'.1) (y : Fin k → M) :
     Pl R M k x N y = Pl R M k x N' y := by
   cases N; cases N'; cases h; rfl
 
-theorem eq_Pl_update {A : Type} [CommRing A] [Algebra R A] (x : Fin k → M)
+theorem eq_Pl_update {A : Type u} [CommRing A] [Algebra R A] (x : Fin k → M)
     (N : {N : Module.Grassmannian A (A ⊗[R] M) k // InChart x N}) (m : M) (c : Fin k → A)
     (hc : ∑ j, c j • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x j) = N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m))
     (i : Fin k) : c i = Pl R M k x N (Function.update x i m) := by
@@ -278,7 +280,7 @@ noncomputable abbrev awayιX (l : Fin (mm k n + 1)) :
 noncomputable def fS (l : Fin (mm k n + 1)) : Spec (CommRingCat.of (S D (τ g l))) ⟶ ℙ :=
   Spec.map (CommRingCat.ofHom (ψ D g l).toRingHom) ≫ awayιX (R := R) l
 
-noncomputable def sV (x : Fin k → M) : (D.V x : Scheme.{0}) ⟶ Spec (CommRingCat.of (S D x)) :=
+noncomputable def sV (x : Fin k → M) : (D.V x : Scheme.{u}) ⟶ Spec (CommRingCat.of (S D x)) :=
   (D.hVaff x).isoSpec.hom
 
 scoped instance (x : Fin k → M) : IsIso (sV D x) := inferInstanceAs (IsIso (D.hVaff x).isoSpec.hom)
@@ -287,7 +289,7 @@ theorem sV_gS (x : Fin k → M) : sV D x ≫ gS D x = (D.V x).ι := by
   change (D.hVaff x).isoSpec.hom ≫ (D.hVaff x).fromSpec = _
   rw [← IsAffineOpen.isoSpec_inv_ι, Iso.hom_inv_id_assoc]
 
-noncomputable def fV (l : Fin (mm k n + 1)) : (D.V (τ g l) : Scheme.{0}) ⟶ ℙ :=
+noncomputable def fV (l : Fin (mm k n + 1)) : (D.V (τ g l) : Scheme.{u}) ⟶ ℙ :=
   sV D (τ g l) ≫ fS D g l
 
 end chartmaps
@@ -296,7 +298,7 @@ section residue
 
 variable (D : Rep R M k)
 
-abbrev κ (x₀ : Fin k → M) (z : PrimeSpectrum (S D x₀)) : Type := z.asIdeal.ResidueField
+abbrev κ (x₀ : Fin k → M) (z : PrimeSpectrum (S D x₀)) : Type u := z.asIdeal.ResidueField
 
 noncomputable def φκ (x₀ : Fin k → M) (z : PrimeSpectrum (S D x₀)) : S D x₀ →ₐ[R] κ D x₀ z :=
   IsScalarTower.toAlgHom R (S D x₀) (κ D x₀ z)
@@ -375,7 +377,7 @@ variable (D : Rep R M k) {n : ℕ} (g : Fin (n + 1) → M) (hg : Submodule.span 
 local notation "𝒜" => MvPolynomial.homogeneousSubmodule (Fin (mm k n + 1)) R
 local notation "ℙ" => Proj (MvPolynomial.homogeneousSubmodule (Fin (mm k n + 1)) R)
 
-theorem fS_indep {B : Type} [CommRing B] [Algebra R B] (NB : Module.Grassmannian B (B ⊗[R] M) k)
+theorem fS_indep {B : Type u} [CommRing B] [Algebra R B] (NB : Module.Grassmannian B (B ⊗[R] M) k)
     (l₁ l₂ : Fin (mm k n + 1))
     (s₁ : Spec (CommRingCat.of B) ⟶ Spec (CommRingCat.of (S D (τ g l₁))))
     (s₂ : Spec (CommRingCat.of B) ⟶ Spec (CommRingCat.of (S D (τ g l₂))))
@@ -437,11 +439,11 @@ theorem fV_compat (l₁ l₂ : Fin (mm k n + 1)) :
       pullback.snd ((𝒰 D g hg).f l₁) ((𝒰 D g hg).f l₂) ≫ fV D g l₂ := by
   set Pb := pullback ((𝒰 D g hg).f l₁) ((𝒰 D g hg).f l₂)
   refine Scheme.Cover.hom_ext (Pb.affineOpenCover.openCover) _ _ fun i => ?_
-  let B : Type := Pb.affineOpenCover.X i
+  let B : Type u := Pb.affineOpenCover.X i
   let w : Spec (CommRingCat.of B) ⟶ Pb := Pb.affineOpenCover.f i
-  let t₁ : Spec (CommRingCat.of B) ⟶ (D.V (τ g l₁) : Scheme.{0}) :=
+  let t₁ : Spec (CommRingCat.of B) ⟶ (D.V (τ g l₁) : Scheme.{u}) :=
     w ≫ pullback.fst ((𝒰 D g hg).f l₁) ((𝒰 D g hg).f l₂)
-  let t₂ : Spec (CommRingCat.of B) ⟶ (D.V (τ g l₂) : Scheme.{0}) :=
+  let t₂ : Spec (CommRingCat.of B) ⟶ (D.V (τ g l₂) : Scheme.{u}) :=
     w ≫ pullback.snd ((𝒰 D g hg).f l₁) ((𝒰 D g hg).f l₂)
   let h : Spec (CommRingCat.of B) ⟶ D.Gr := t₁ ≫ (D.V (τ g l₁)).ι
   let : Algebra R B := algOfHom D h
@@ -470,6 +472,7 @@ theorem gS_ιmap (l : Fin (mm k n + 1)) : gS D (τ g l) ≫ ιmap D g hg = fS D 
   rw [← sV_gS, Category.assoc] at h
   exact (cancel_epi _).mp h
 
+set_option maxHeartbeats 1000000 in
 theorem ιmap_π : ιmap D g hg ≫ ProjSpace.π R (mm k n) = D.p := by
   refine Scheme.Cover.hom_ext (𝒰 D g hg) _ _ fun (l : Fin (mm k n + 1)) => ?_
   change ((D.V (τ g l)).ι ≫ ιmap D g hg) ≫ ProjSpace.π R (mm k n) = (D.V (τ g l)).ι ≫ D.p
@@ -554,16 +557,16 @@ end Module.Grassmannian.ProjectiveEmbedding
 open Module.Grassmannian.ProjectiveEmbedding in
 
 theorem Module.Grassmannian.exists_isClosedImmersion_toProjSpace_of_represents
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] [Module.Finite R M] (k : ℕ)
-    (Gr : Scheme.{0}) (p : Gr ⟶ Spec (CommRingCat.of R))
-    (pt : ∀ (A : Type) [CommRing A] [Algebra R A],
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] [Module.Finite R M] (k : ℕ)
+    (Gr : Scheme.{u}) (p : Gr ⟶ Spec (CommRingCat.of R))
+    (pt : ∀ (A : Type u) [CommRing A] [Algebra R A],
       Module.Grassmannian A (A ⊗[R] M) k ≃
         {g : Spec (CommRingCat.of A) ⟶ Gr // g ≫ p = Spec.map (CommRingCat.ofHom (algebraMap R A))})
-    (hpt : ∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+    (hpt : ∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
       (N : Module.Grassmannian A (A ⊗[R] M) k),
       (pt B (Module.Grassmannian.map φ N)).1 = Spec.map (CommRingCat.ofHom φ.toRingHom) ≫ (pt A N).1)
     (V : (Fin k → M) → Gr.Opens) (hV : ⨆ x, V x = ⊤) (hVaff : ∀ x, IsAffineOpen (V x))
-    (hVchart : ∀ (x : Fin k → M) (A : Type) [CommRing A] [Algebra R A]
+    (hVchart : ∀ (x : Fin k → M) (A : Type u) [CommRing A] [Algebra R A]
       (N : Module.Grassmannian A (A ⊗[R] M) k),
       Set.range (pt A N).1.base ⊆ (V x : Set Gr) ↔
         Function.Bijective fun v : Fin k → A =>

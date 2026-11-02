@@ -1,0 +1,60 @@
+/-
+Ported from `P2M/Sol/S_AlgebraicGeometry_Polarisation_LocIsoOnBase_tensor.lean` of the Anthropic Lean formalization of
+Fermat's Last Theorem (commit 6e837e75355538c7f80bab5b956861e86c4eacc2), Copyright 2026
+Anthropic, PBC, licensed under the Apache License, Version 2.0; see
+`licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
+Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options
+are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
+by standard Lean commands. The paired Markdown file lists the changes.
+-/
+import Mathlib
+import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_PolarisationRosati
+import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesPullbackMonoidalV2
+set_option maxHeartbeats 4000000
+set_option synthInstance.maxHeartbeats 400000
+set_option backward.isDefEq.respectTransparency.types false
+namespace P2MW.S_AlgebraicGeometry_Polarisation_LocIsoOnBase_tensor
+
+set_option autoImplicit false
+
+noncomputable section
+
+open _root_.CategoryTheory _root_.CategoryTheory.MonoidalCategory _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Polarisation
+
+universe u
+
+namespace AlgebraicGeometry
+export _root_.AlgebraicGeometry (Scheme.Modules.pullback Spec Scheme Scheme.Modules.pullbackCongr Scheme.Modules Scheme.Modules.pullbackComp Polarisation.LocIsoOnBase Scheme.Modules.pullbackTensorObjIso)
+namespace Polarisation
+export _root_.AlgebraicGeometry.Polarisation (LocIsoOnBase)
+namespace LocIsoOnBaseTensorSol
+open _root_.AlgebraicGeometry.Polarisation _root_.AlgebraicGeometry
+
+variable {S : Type u} [CommRing S] {X : Scheme.{u}} (g : X ⟶ Spec (CommRingCat.of S))
+
+def restrictIso {M M' : X.Modules} {U V : (Spec (CommRingCat.of S)).Opens} (hVU : V ≤ U)
+    (e : (Scheme.Modules.pullback (g ⁻¹ᵁ U).ι).obj M ≅ (Scheme.Modules.pullback (g ⁻¹ᵁ U).ι).obj M') :
+    (Scheme.Modules.pullback (g ⁻¹ᵁ V).ι).obj M ≅ (Scheme.Modules.pullback (g ⁻¹ᵁ V).ι).obj M' :=
+  have hle : g ⁻¹ᵁ V ≤ g ⁻¹ᵁ U := fun _ hx => hVU hx
+  (Scheme.Modules.pullbackCongr (X.homOfLE_ι hle).symm).app M ≪≫
+    ((Scheme.Modules.pullbackComp (X.homOfLE hle) (g ⁻¹ᵁ U).ι).app M).symm ≪≫
+      (Scheme.Modules.pullback (X.homOfLE hle)).mapIso e ≪≫
+        (Scheme.Modules.pullbackComp (X.homOfLE hle) (g ⁻¹ᵁ U).ι).app M' ≪≫
+          (Scheme.Modules.pullbackCongr (X.homOfLE_ι hle)).app M'
+
+end AlgebraicGeometry.Polarisation.LocIsoOnBaseTensorSol
+
+open AlgebraicGeometry.Polarisation.LocIsoOnBaseTensorSol in
+theorem solution
+    {S : Type u} [CommRing S] {X : Scheme.{u}} {g : X ⟶ Spec (CommRingCat.of S)}
+    {M M' N N' : X.Modules} (hM : LocIsoOnBase g M M') (hN : LocIsoOnBase g N N') :
+    LocIsoOnBase g (M ⊗ N) (M' ⊗ N') := by
+  intro s
+  obtain ⟨U, hs, ⟨e⟩⟩ := hM s
+  obtain ⟨U', hs', ⟨e'⟩⟩ := hN s
+  refine ⟨U ⊓ U', ⟨hs, hs'⟩, ⟨?_⟩⟩
+  exact Scheme.Modules.pullbackTensorObjIso (g ⁻¹ᵁ (U ⊓ U')).ι M N ≪≫
+    (restrictIso g inf_le_left e ⊗ᵢ restrictIso g inf_le_right e') ≪≫
+      (Scheme.Modules.pullbackTensorObjIso (g ⁻¹ᵁ (U ⊓ U')).ι M' N').symm
+
+end

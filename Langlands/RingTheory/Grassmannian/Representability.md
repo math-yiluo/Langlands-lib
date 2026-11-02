@@ -8,8 +8,8 @@ bases drawn from the original module. The primary definition
 `Module.Grassmannian.SchemeRepresentation.scheme` chooses the underlying
 scheme from this proved existence theorem.
 
-The input consists of any universe-zero commutative ring `R`, any
-universe-zero `R`-module `M` with an additive commutative group, and
+The input consists of any commutative ring `R : Type u`, any
+`R`-module `M : Type u` with an additive commutative group, and
 `k : ℕ`. There is no finite generation, projectivity, freeness,
 Noetherianity, positivity or nontriviality hypothesis.
 
@@ -155,3 +155,16 @@ PEL determinant and Rosati conditions, or identify a scheme with the
 normalized Harris CM presheaf. The exact CM representation, its
 componentwise admissibility, smoothness and projectivity remain
 obligations of the host `DivisionCMRepresentabilityStatement`.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- In total 8 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

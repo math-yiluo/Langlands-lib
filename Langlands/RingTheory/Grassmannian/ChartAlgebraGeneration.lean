@@ -10,6 +10,8 @@ coordinate equivalence. See the paired Markdown.
 import Langlands.RingTheory.Grassmannian.Charts
 import Mathlib.AlgebraicGeometry.Morphisms.OpenImmersion
 
+universe u
+
 /-! # Generators of the coordinate algebra of a quotient-Grassmannian chart -/
 
 open scoped TensorProduct
@@ -19,18 +21,18 @@ set_option autoImplicit false
 
 namespace Module.Grassmannian.ChartAlgebraGeneration
 
-variable {R : Type} [CommRing R] {M : Type} [AddCommGroup M] [Module R M] {k : ℕ}
+variable {R : Type u} [CommRing R] {M : Type u} [AddCommGroup M] [Module R M] {k : ℕ}
 
 open Module.Grassmannian.ChartLinear (Chart HomX)
 
 section chart
 
-noncomputable abbrev ptx (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M]
-    (k : ℕ) (x : Fin k → M) (A : Type) [CommRing A] [Algebra R A] :
+noncomputable abbrev ptx (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M]
+    (k : ℕ) (x : Fin k → M) (A : Type u) [CommRing A] [Algebra R A] :
     Chart R x A ≃ HomX R x A :=
   ChartLinear.chartEquiv (R := R) (A := A) x
 
-theorem sum_ptx_smul (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A] (N : Chart R x A) (m : M) :
+theorem sum_ptx_smul (x : Fin k → M) {A : Type u} [CommRing A] [Algebra R A] (N : Chart R x A) (m : M) :
     ∑ i, (ptx R M k x A N).1 m i • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
       N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m) :=
   by
@@ -38,7 +40,7 @@ theorem sum_ptx_smul (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A] (N 
       ((ChartLinear.coordEquiv x N).symm (N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m))) = _
     rw [← ChartLinear.coordEquiv_apply, LinearEquiv.apply_symm_apply]
 
-theorem ptx_natural (x : Fin k → M) {A B : Type} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
+theorem ptx_natural (x : Fin k → M) {A B : Type u} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
     (φ : A →ₐ[R] B) (N : Chart R x A) :
     ∃ h : Function.Bijective fun v : Fin k → B =>
         ∑ i, v i • (Module.Grassmannian.map φ N.1).toSubmodule.mkQ ((1 : B) ⊗ₜ[R] x i),
@@ -52,8 +54,8 @@ end chart
 
 section algebra
 
-variable (x : Fin k → M) {S : Type} [CommRing S] [Algebra R S] (N : Chart R x S)
-  {ι : Type} (g : ι → M)
+variable (x : Fin k → M) {S : Type u} [CommRing S] [Algebra R S] (N : Chart R x S)
+  {ι : Type*} (g : ι → M)
 
 noncomputable def T : Subalgebra R S :=
   Algebra.adjoin R {s : S | ∃ (a : ι) (c : Fin k → S) (i : Fin k),
@@ -118,22 +120,22 @@ end Module.Grassmannian.ChartAlgebraGeneration
 open Module.Grassmannian.ChartLinear (Chart) in
 open Module.Grassmannian.ChartAlgebraGeneration in
 theorem Module.Grassmannian.adjoin_eq_top_of_isOpenImmersion_of_opensRange_eq
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ)
-    (Gr : Scheme.{0}) (p : Gr ⟶ Spec (CommRingCat.of R))
-    (pt : ∀ (A : Type) [CommRing A] [Algebra R A],
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ)
+    (Gr : Scheme.{u}) (p : Gr ⟶ Spec (CommRingCat.of R))
+    (pt : ∀ (A : Type u) [CommRing A] [Algebra R A],
       Module.Grassmannian A (A ⊗[R] M) k ≃
         {g : Spec (CommRingCat.of A) ⟶ Gr // g ≫ p = Spec.map (CommRingCat.ofHom (algebraMap R A))})
-    (hpt : ∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+    (hpt : ∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
       (N : Module.Grassmannian A (A ⊗[R] M) k),
       (pt B (Module.Grassmannian.map φ N)).1 = Spec.map (CommRingCat.ofHom φ.toRingHom) ≫ (pt A N).1)
     (V : (Fin k → M) → Gr.Opens)
-    (hVchart : ∀ (x : Fin k → M) (A : Type) [CommRing A] [Algebra R A]
+    (hVchart : ∀ (x : Fin k → M) (A : Type u) [CommRing A] [Algebra R A]
       (N : Module.Grassmannian A (A ⊗[R] M) k),
       Set.range (pt A N).1.base ⊆ (V x : Set Gr) ↔
         Function.Bijective fun v : Fin k → A =>
           ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i))
-    (ι : Type) (g : ι → M) (hg : Submodule.span R (Set.range g) = ⊤)
-    (x : Fin k → M) (S : Type) [CommRing S] [Algebra R S] (N : Module.Grassmannian S (S ⊗[R] M) k)
+    (ι : Type*) (g : ι → M) (hg : Submodule.span R (Set.range g) = ⊤)
+    (x : Fin k → M) (S : Type u) [CommRing S] [Algebra R S] (N : Module.Grassmannian S (S ⊗[R] M) k)
     [IsOpenImmersion (pt S N).1] (hN : (pt S N).1.opensRange = V x) :
     Algebra.adjoin R {s : S | ∃ (a : ι) (c : Fin k → S) (i : Fin k),
         ∑ j, c j • N.toSubmodule.mkQ ((1 : S) ⊗ₜ[R] x j) = N.toSubmodule.mkQ ((1 : S) ⊗ₜ[R] g a) ∧

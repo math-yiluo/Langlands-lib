@@ -11,6 +11,8 @@ See the paired Markdown.
 import Langlands.RingTheory.Grassmannian.Charts
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
+universe u
+
 /-! # Chartwise Plucker coordinates for quotient Grassmannians -/
 
 open scoped TensorProduct
@@ -20,18 +22,18 @@ set_option autoImplicit false
 
 namespace Module.Grassmannian.PluckerCoordinates
 
-variable {R : Type} [CommRing R] {M : Type} [AddCommGroup M] [Module R M] {k : ℕ}
+variable {R : Type u} [CommRing R] {M : Type u} [AddCommGroup M] [Module R M] {k : ℕ}
 
 open Module.Grassmannian.ChartLinear (Chart HomX)
 
 section chart
 
-noncomputable abbrev ptx (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M]
-    (k : ℕ) (x : Fin k → M) (A : Type) [CommRing A] [Algebra R A] :
+noncomputable abbrev ptx (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M]
+    (k : ℕ) (x : Fin k → M) (A : Type u) [CommRing A] [Algebra R A] :
     Chart R x A ≃ HomX R x A :=
   ChartLinear.chartEquiv (R := R) (A := A) x
 
-theorem sum_ptx_smul (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A] (N : Chart R x A) (m : M) :
+theorem sum_ptx_smul (x : Fin k → M) {A : Type u} [CommRing A] [Algebra R A] (N : Chart R x A) (m : M) :
     ∑ i, (ptx R M k x A N).1 m i • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
       N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m) :=
   by
@@ -39,7 +41,7 @@ theorem sum_ptx_smul (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A] (N 
       ((ChartLinear.coordEquiv x N).symm (N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m))) = _
     rw [← ChartLinear.coordEquiv_apply, LinearEquiv.apply_symm_apply]
 
-theorem ptx_natural (x : Fin k → M) {A B : Type} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
+theorem ptx_natural (x : Fin k → M) {A B : Type u} [CommRing A] [CommRing B] [Algebra R A] [Algebra R B]
     (φ : A →ₐ[R] B) (N : Chart R x A) :
     ∃ h : Function.Bijective fun v : Fin k → B =>
         ∑ i, v i • (Module.Grassmannian.map φ N.1).toSubmodule.mkQ ((1 : B) ⊗ₜ[R] x i),
@@ -49,13 +51,13 @@ theorem ptx_natural (x : Fin k → M) {A B : Type} [CommRing A] [CommRing B] [Al
     refine ⟨ChartLinear.map_mem_chart x φ N, fun m i => ?_⟩
     exact congrArg (fun ψ : HomX R x B => ψ.1 m i) (ChartLinear.chartEquiv_map x φ N)
 
-theorem ptx_x (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A] (N : Chart R x A) (j : Fin k) :
+theorem ptx_x (x : Fin k → M) {A : Type u} [CommRing A] [Algebra R A] (N : Chart R x A) (j : Fin k) :
     (ptx R M k x A N).1 (x j) = Pi.single j 1 :=
   (ptx R M k x A N).2 j
 
 end chart
 
-variable (x : Fin k → M) {A : Type} [CommRing A] [Algebra R A]
+variable (x : Fin k → M) {A : Type u} [CommRing A] [Algebra R A]
 
 theorem coeff_unique (N : Chart R x A) {c d : Fin k → A}
     (h : ∑ i, c i • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
@@ -159,7 +161,7 @@ theorem plucker_mul (N : Chart R x A) (y : Fin k → M)
   unfold plucker
   rw [cmat_mul x N y hy z, Matrix.det_mul]
 
-theorem plucker_natural {B : Type} [CommRing B] [Algebra R B] (φ : A →ₐ[R] B) (N : Chart R x A) :
+theorem plucker_natural {B : Type u} [CommRing B] [Algebra R B] (φ : A →ₐ[R] B) (N : Chart R x A) :
     ∃ h : Function.Bijective fun v : Fin k → B =>
         ∑ i, v i • (Module.Grassmannian.map φ N.1).toSubmodule.mkQ ((1 : B) ⊗ₜ[R] x i),
       ∀ y, plucker x ⟨Module.Grassmannian.map φ N.1, h⟩ y = φ (plucker x N y) := by
@@ -175,30 +177,30 @@ end Module.Grassmannian.PluckerCoordinates
 
 open Module.Grassmannian.PluckerCoordinates in
 theorem Module.Grassmannian.exists_pluckerCoordinate_eq_det_and_bijective_iff_isUnit
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ) :
-    ∃ P : ∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M),
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ) :
+    ∃ P : ∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M),
         {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)} → (Fin k → M) → A,
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)})
           (m : M),
           ∑ i, P A x N (Function.update x i m) • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i) =
             N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] m)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)})
           (y : Fin k → M),
           P A x N y = (Matrix.of fun i j => P A x N (Function.update x i (y j))).det) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)}),
           P A x N x = 1) ∧
-      (∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+      (∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
           (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
@@ -206,14 +208,14 @@ theorem Module.Grassmannian.exists_pluckerCoordinate_eq_det_and_bijective_iff_is
           ∃ h : Function.Bijective fun v : Fin k → B =>
               ∑ i, v i • (Module.Grassmannian.map φ N.1).toSubmodule.mkQ ((1 : B) ⊗ₜ[R] x i),
             ∀ y : Fin k → M, P B x ⟨Module.Grassmannian.map φ N.1, h⟩ y = φ (P A x N y)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)})
           (y : Fin k → M),
           (Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.1.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] y i)) ↔ IsUnit (P A x N y)) ∧
-      (∀ (A : Type) [CommRing A] [Algebra R A] (x : Fin k → M)
+      (∀ (A : Type u) [CommRing A] [Algebra R A] (x : Fin k → M)
           (N : {N : Module.Grassmannian A (A ⊗[R] M) k //
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)})

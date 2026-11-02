@@ -2,7 +2,7 @@
 
 This module constructs coordinates on a chart of Mathlib's quotient
 Grassmannian and gives that chart an explicit coordinate algebra. All rings,
-modules and test algebras in these declarations have universe zero. Let `R`
+modules and test algebras in these declarations lie in one arbitrary universe `u`. Let `R`
 be any commutative ring, `M` any `R`-module with an additive commutative group,
 `k : ℕ`, and `x : Fin k → M`. There is no finiteness, freeness,
 nontriviality or independence hypothesis on `M`, `R` or `x`.
@@ -120,7 +120,8 @@ The complete originals read for this port are:
 - the corresponding `Theorems/Thm_*.lean` files, each lines 1–33, which
   state the two exported theorem types and invoke those solutions.
 
-The port retains the source's universe-zero quantifiers, quotient
+The port generalizes the source's universe-zero quantifiers to universe `u`
+(see below) and retains its quotient
 convention, hypotheses, constructions, reconstruction identities and
 base-change conclusions. The source solution namespaces are renamed to
 `Module.Grassmannian.ChartLinear` and
@@ -147,3 +148,16 @@ The original distribution is Apache 2.0 licensed. Its existing published
 [NOTICE](../../../licenses/Anthropic-FLT/NOTICE), and
 [ATTRIBUTION](../../../licenses/Anthropic-FLT/ATTRIBUTION.md) apply.
 The source attribution table has no separate entry for these two modules.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- In total 19 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

@@ -1,12 +1,12 @@
 # Extending an algebra functor to a Zariski sheaf over an affine base
 
-For every universe-zero commutative ring `R`, this module constructs a
-presheaf `G : (Over (Spec R))ᵒᵖ ⥤ Type` from an algebra functor `F` satisfying
+For every commutative ring `R : Type u`, this module constructs a
+presheaf `G : (Over (Spec R))ᵒᵖ ⥤ Type u` from an algebra functor `F` satisfying
 finite principal-open descent. Its total presheaf `G.overTotal` is a sheaf
 for `Scheme.zariskiTopology`. Evaluation on `Spec A` over `Spec R` is naturally
 equivalent to `F A`. No finiteness, Noetherian, field or nontriviality
 assumption is imposed on `R` or its algebras. The algebra types, value types
-and schemes are in universe zero, as in the cited source.
+and schemes lie in one arbitrary universe `u` (the cited source uses universe zero; see below).
 
 The exported theorem is
 `AlgebraicGeometry.Scheme.exists_presheaf_over_equiv_isSheaf_overTotal_of_isLocalization_away`.
@@ -99,7 +99,7 @@ ones. Three rewrites use `erw` to expose the current bundled morphisms.
 The long rewrite sequence in `base_spec` is replaced by an explicit typed
 calculation using the same affine restrictions and pullback equation;
 this avoids a rewrite elaboration timeout. A local algebra instance uses
-current `let` syntax. The construction, input hypotheses, universe bounds,
+current `let` syntax. The construction, input hypotheses
 and exported conclusion are preserved.
 
 The distribution is licensed under Apache 2.0, copyright 2026 Anthropic,
@@ -107,3 +107,18 @@ PBC. Its retained license and notices are in `licenses/Anthropic-FLT/`.
 The distribution's attribution list has no separate entry for these two
 files. The local project source-errata directories contain no entry for
 this source. Imported Library Lean/Markdown pairs remain unchanged.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- Explicit universe-zero instantiations become universe `u`: `CommRingCat.{0}`, `Scheme.zariskiTopology.{0}` and `Functor.IsOneHypercoverDense.{0}` become `.{u}`, and the sheaf `G₀ : Sheaf J₀ (Type 0)` becomes `Sheaf J₀ (Type u)`.
+- In `generate_std_mem` the standard open cover `(Scheme.affineOpenCoverOfSpanRangeEqTop f hf).openCover`, indexed by `Fin n`, is replaced by its `ulift` (Mathlib's `Cover.ulift`), because a covering in the Zariski topology on `Scheme.{u}` must be indexed by a type in universe `u`; for each index `x` of the lifted cover the proof uses the original index `(…).openCover.idx x`. The sieve membership proved is unchanged.
+- In total 84 lines of the published file are changed (the two-line cover step of `generate_std_mem` becomes three lines) and 2 lines added; no proof step changes otherwise.

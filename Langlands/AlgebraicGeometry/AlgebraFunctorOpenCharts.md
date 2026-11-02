@@ -5,8 +5,8 @@ affine charts into the total presheaf of an algebra functor. It proves that thes
 charts form a locally surjective family when they cover all field-valued
 elements. It does not construct the resulting glued scheme.
 
-All rings, algebra-functor values, chart indices, and chart rings are in
-universe zero. The schemes are `Scheme.{0}`. There is no nontriviality
+All rings, algebra-functor values, chart indices, and chart rings lie in one
+arbitrary universe `u`. The schemes are `Scheme.{u}`. There is no nontriviality
 hypothesis on the base or test rings.
 
 ## Inputs and exported conclusion
@@ -157,8 +157,8 @@ module with the same Lean API.
 Compatibility edits make the underlying identity composition explicit in
 `map_secOf`, use `erw` at three coercion-sensitive rewrites, replace a deprecated
 coproduct lemma by `Sigma.ι_comp_desc`, and use current `let` instance syntax in
-six proof-local declarations. No hypotheses, universes, predicates, chart
-equivalences, or conclusions are changed.
+six proof-local declarations. No hypotheses, predicates, chart
+equivalences, or conclusions are changed (the universe generalization is described below).
 
 The relevant current Mathlib sources are
 `CategoryTheory/MorphismProperty/Representable.lean` (relative representability),
@@ -172,3 +172,18 @@ The retained [license](../../licenses/Anthropic-FLT/LICENSE),
 [notice](../../licenses/Anthropic-FLT/NOTICE), and
 [attribution](../../licenses/Anthropic-FLT/ATTRIBUTION.md) accompany the port.
 The attribution table has no separate entry for this source module.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- The result sort of the structure `Datum` changes from `Type 1` to `Type (u + 1)`, as its fields now quantify over `Type u`.
+- The explicit `CommRingCat.{0}` in the binders of `isOpen_setOf_mem_sec`, `eq_of_map_univSec_eq_affine` and `exists_map_univSec_eq_affine` becomes `CommRingCat.{u}`.
+- In total 83 lines of the published file are changed and 2 lines added; no proof step changes otherwise.

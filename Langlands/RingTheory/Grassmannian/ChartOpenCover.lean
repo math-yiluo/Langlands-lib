@@ -4,6 +4,8 @@ import Mathlib.RingTheory.Flat.FaithfullyFlat.Basic
 import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
+universe u
+
 /-!
 # Open chart loci and field-valued coverage of the quotient Grassmannian
 
@@ -23,9 +25,9 @@ set_option autoImplicit false
 
 namespace Module.Grassmannian.FieldCover
 
-variable {R : Type} [CommRing R] {M : Type} [AddCommGroup M] [Module R M] {k : ℕ}
-variable {ι : Type} (g : ι → M)
-variable {K : Type} [Field K] [Algebra R K]
+variable {R : Type u} [CommRing R] {M : Type u} [AddCommGroup M] [Module R M] {k : ℕ}
+variable {ι : Type*} (g : ι → M)
+variable {K : Type u} [Field K] [Algebra R K]
 
 lemma span_mkQ_tmul_eq_top (hg : Submodule.span R (Set.range g) = ⊤) (N : Submodule K (K ⊗[R] M)) :
     Submodule.span K (Set.range fun t => N.mkQ ((1 : K) ⊗ₜ[R] g t)) = ⊤ := by
@@ -74,9 +76,9 @@ theorem cover (hg : Submodule.span R (Set.range g) = ⊤) (N : Module.Grassmanni
 end Module.Grassmannian.FieldCover
 
 theorem Module.Grassmannian.exists_injective_and_bijective_of_span_eq_top
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ)
-    (ι : Type) (g : ι → M) (hg : Submodule.span R (Set.range g) = ⊤)
-    (K : Type) [Field K] [Algebra R K] (N : Module.Grassmannian K (K ⊗[R] M) k) :
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ)
+    (ι : Type*) (g : ι → M) (hg : Submodule.span R (Set.range g) = ⊤)
+    (K : Type u) [Field K] [Algebra R K] (N : Module.Grassmannian K (K ⊗[R] M) k) :
     ∃ I : Fin k → ι, Function.Injective I ∧
       Function.Bijective fun v : Fin k → K =>
         ∑ i, v i • N.toSubmodule.mkQ ((1 : K) ⊗ₜ[R] g (I i)) :=
@@ -84,7 +86,7 @@ theorem Module.Grassmannian.exists_injective_and_bijective_of_span_eq_top
 
 namespace Module.Grassmannian.ChartOpenLocus
 
-lemma bijective_of_surjective_of_rankAtStalk (B P : Type) [CommRing B] [AddCommGroup P] [Module B P]
+lemma bijective_of_surjective_of_rankAtStalk (B P : Type u) [CommRing B] [AddCommGroup P] [Module B P]
     [Module.Finite B P] [Module.Projective B P] (k : ℕ) (hk : ∀ p, Module.rankAtStalk (R := B) P p = k)
     (g : (Fin k → B) →ₗ[B] P) (hg : Function.Surjective g) : Function.Bijective g := by
   apply Module.bijective_of_surjective_of_rankAtStalk_eq hg
@@ -96,16 +98,16 @@ lemma bijective_of_surjective_of_rankAtStalk (B P : Type) [CommRing B] [AddCommG
   rw [Module.rankAtStalk_eq_finrank_of_free, Module.finrank_fin_fun, hk]
   rfl
 
-variable (R : Type) [CommRing R] {M : Type} [AddCommGroup M] [Module R M] {k : ℕ} (x : Fin k → M)
-variable {A : Type} [CommRing A] [Algebra R A] (N : Module.Grassmannian A (A ⊗[R] M) k)
+variable (R : Type u) [CommRing R] {M : Type u} [AddCommGroup M] [Module R M] {k : ℕ} (x : Fin k → M)
+variable {A : Type u} [CommRing A] [Algebra R A] (N : Module.Grassmannian A (A ⊗[R] M) k)
 
-abbrev Q : Type := (A ⊗[R] M) ⧸ N.toSubmodule
+abbrev Q : Type u := (A ⊗[R] M) ⧸ N.toSubmodule
 
 def q0 (i : Fin k) : Q R N := N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)
 
 def W : Submodule A (Q R N) := Submodule.span A (Set.range (q0 R x N))
 
-abbrev K : Type := Q R N ⧸ W R x N
+abbrev K : Type u := Q R N ⧸ W R x N
 
 def U : Set (PrimeSpectrum A) :=
   (PrimeSpectrum.zeroLocus (Module.annihilator A (K R x N) : Set A))ᶜ
@@ -117,7 +119,7 @@ lemma mem_U {p : PrimeSpectrum A} : p ∈ U R x N ↔ ¬ Module.annihilator A (K
 
 section baseChange
 
-variable (B : Type) [CommRing B] [Algebra R B] [Algebra A B] [IsScalarTower R A B]
+variable (B : Type u) [CommRing B] [Algebra R B] [Algebra A B] [IsScalarTower R A B]
 
 omit [Algebra R B] [IsScalarTower R A B] in
 
@@ -263,10 +265,10 @@ end Module.Grassmannian.ChartOpenLocus
 
 open Module.Grassmannian.ChartOpenLocus in
 theorem Module.Grassmannian.exists_isOpen_forall_bijective_map_iff_range_comap_subset
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ) (x : Fin k → M)
-    (A : Type) [CommRing A] [Algebra R A] (N : Module.Grassmannian A (A ⊗[R] M) k) :
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ) (x : Fin k → M)
+    (A : Type u) [CommRing A] [Algebra R A] (N : Module.Grassmannian A (A ⊗[R] M) k) :
     ∃ U : Set (PrimeSpectrum A), IsOpen U ∧
-      ∀ (B : Type) [CommRing B] [Algebra R B] (φ : A →ₐ[R] B),
+      ∀ (B : Type u) [CommRing B] [Algebra R B] (φ : A →ₐ[R] B),
         (Function.Bijective fun v : Fin k → B =>
             ∑ i, v i • (Module.Grassmannian.map φ N).toSubmodule.mkQ ((1 : B) ⊗ₜ[R] x i)) ↔
           Set.range (PrimeSpectrum.comap φ.toRingHom) ⊆ U := by

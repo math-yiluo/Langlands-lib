@@ -15,6 +15,8 @@ import Mathlib.CategoryTheory.Sites.DenseSubsite.OneHypercoverDense
 import Mathlib.CategoryTheory.Sites.Hypercover.Subcanonical
 import Mathlib.Tactic.Choose
 
+universe u
+
 /-! # Extending an algebra functor satisfying principal-open descent -/
 
 set_option autoImplicit false
@@ -23,78 +25,78 @@ open CategoryTheory AlgebraicGeometry Opposite CategoryTheory.Limits
 
 namespace AlgebraicGeometry.Scheme.AlgebraFunctorSheaf
 
-structure Datum (R : Type) [CommRing R] where
-  F : ∀ (A : Type) [CommRing A] [Algebra R A], Type
-  Fmap : ∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B],
+structure Datum (R : Type u) [CommRing R] where
+  F : ∀ (A : Type u) [CommRing A] [Algebra R A], Type u
+  Fmap : ∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B],
     (A →ₐ[R] B) → F A → F B
-  Fmap_id : ∀ (A : Type) [CommRing A] [Algebra R A] (s : F A), Fmap A A (AlgHom.id R A) s = s
-  Fmap_comp : ∀ (A B C : Type) [CommRing A] [CommRing B] [CommRing C] [Algebra R A] [Algebra R B]
+  Fmap_id : ∀ (A : Type u) [CommRing A] [Algebra R A] (s : F A), Fmap A A (AlgHom.id R A) s = s
+  Fmap_comp : ∀ (A B C : Type u) [CommRing A] [CommRing B] [CommRing C] [Algebra R A] [Algebra R B]
     [Algebra R C] (φ : A →ₐ[R] B) (ψ : B →ₐ[R] C) (s : F A),
     Fmap A C (ψ.comp φ) s = Fmap B C ψ (Fmap A B φ s)
 
 namespace Datum
 
-variable {R : Type} [CommRing R] (D : Datum R)
+variable {R : Type u} [CommRing R] (D : Datum R)
 
 def IsSheaf : Prop :=
-  ∀ (A : Type) [CommRing A] [Algebra R A] (n : ℕ) (f : Fin n → A),
+  ∀ (A : Type u) [CommRing A] [Algebra R A] (n : ℕ) (f : Fin n → A),
     Ideal.span (Set.range f) = ⊤ →
-    ∀ (B : Fin n → Type) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
+    ∀ (B : Fin n → Type u) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
       [∀ i, IsScalarTower R A (B i)] [∀ i, IsLocalization.Away (f i) (B i)] (s : ∀ i, D.F (B i)),
-    (∀ (i j : Fin n) (C : Type) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
+    (∀ (i j : Fin n) (C : Type u) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
         [IsLocalization.Away (f i * f j) C] (ρ₁ : B i →ₐ[A] C) (ρ₂ : B j →ₐ[A] C),
         D.Fmap _ _ (ρ₁.restrictScalars R) (s i) = D.Fmap _ _ (ρ₂.restrictScalars R) (s j)) →
     ∃! s₀ : D.F A, ∀ i, D.Fmap _ _ (IsScalarTower.toAlgHom R A (B i)) s₀ = s i
 
-abbrev F' (A : Type) [CommRing A] (i : Algebra R A) : Type := @Datum.F R _ D A _ i
+abbrev F' (A : Type u) [CommRing A] (i : Algebra R A) : Type u := @Datum.F R _ D A _ i
 
-abbrev am {A : Type} [CommRing A] (i : Algebra R A) (r : R) : A := @algebraMap R A _ _ i r
+abbrev am {A : Type u} [CommRing A] (i : Algebra R A) (r : R) : A := @algebraMap R A _ _ i r
 
-def mkₐ {A B : Type} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B) (g : A →+* B)
+def mkₐ {A B : Type u} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B) (g : A →+* B)
     (hg : ∀ r, g (am iA r) = am iB r) : @AlgHom R A B _ _ _ iA iB :=
   @AlgHom.mk R A B _ _ _ iA iB g hg
 
-@[simp] lemma mkₐ_apply {A B : Type} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B)
+@[simp] lemma mkₐ_apply {A B : Type u} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B)
     (g : A →+* B) (hg : ∀ r, g (am iA r) = am iB r) (a : A) : mkₐ iA iB g hg a = g a := rfl
 
-def T {A B : Type} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B) (g : A →+* B)
+def T {A B : Type u} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B) (g : A →+* B)
     (hg : ∀ r, g (am iA r) = am iB r) : D.F' A iA → D.F' B iB :=
   @Datum.Fmap R _ D A B _ _ iA iB (mkₐ iA iB g hg)
 
-lemma Fmap_eq_T {A B : Type} [CommRing A] [CommRing B] {iA : Algebra R A} {iB : Algebra R B}
+lemma Fmap_eq_T {A B : Type u} [CommRing A] [CommRing B] {iA : Algebra R A} {iB : Algebra R B}
     (f : @AlgHom R A B _ _ _ iA iB) (x : D.F' A iA) :
     @Datum.Fmap R _ D A B _ _ iA iB f x = D.T iA iB f.toRingHom (@AlgHom.commutes R A B _ _ _ iA iB f) x :=
   rfl
 
-lemma T_id {A : Type} [CommRing A] (iA : Algebra R A) (hg : ∀ r, RingHom.id A (am iA r) = am iA r)
+lemma T_id {A : Type u} [CommRing A] (iA : Algebra R A) (hg : ∀ r, RingHom.id A (am iA r) = am iA r)
     (x : D.F' A iA) : D.T iA iA (RingHom.id A) hg x = x :=
   @Datum.Fmap_id R _ D A _ iA x
 
-lemma T_T {A B C : Type} [CommRing A] [CommRing B] [CommRing C] (iA : Algebra R A) (iB : Algebra R B)
+lemma T_T {A B C : Type u} [CommRing A] [CommRing B] [CommRing C] (iA : Algebra R A) (iB : Algebra R B)
     (iC : Algebra R C) (g : A →+* B) (hg : ∀ r, g (am iA r) = am iB r) (g' : B →+* C)
     (hg' : ∀ r, g' (am iB r) = am iC r) (x : D.F' A iA) :
     D.T iB iC g' hg' (D.T iA iB g hg x) =
       D.T iA iC (g'.comp g) (fun r => by rw [RingHom.comp_apply, hg, hg']) x :=
   (@Datum.Fmap_comp R _ D A B C _ _ _ iA iB iC (mkₐ iA iB g hg) (mkₐ iB iC g' hg') x).symm
 
-lemma T_congr {A B : Type} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B)
+lemma T_congr {A B : Type u} [CommRing A] [CommRing B] (iA : Algebra R A) (iB : Algebra R B)
     {g g' : A →+* B} (h : g = g') (hg : ∀ r, g (am iA r) = am iB r)
     (hg' : ∀ r, g' (am iA r) = am iB r) (x : D.F' A iA) : D.T iA iB g hg x = D.T iA iB g' hg' x := by
   subst h; rfl
 
-lemma T_comp_eq {A B C : Type} [CommRing A] [CommRing B] [CommRing C] {iA : Algebra R A}
+lemma T_comp_eq {A B C : Type u} [CommRing A] [CommRing B] [CommRing C] {iA : Algebra R A}
     {iB : Algebra R B} {iC : Algebra R C} {g : A →+* B} {hg : ∀ r, g (am iA r) = am iB r} {g' : B →+* C}
     {hg' : ∀ r, g' (am iB r) = am iC r} {g'' : A →+* C} (h : g'.comp g = g'') (x : D.F' A iA) :
     D.T iB iC g' hg' (D.T iA iB g hg x) =
       D.T iA iC g'' (fun r => by subst h; rw [RingHom.comp_apply, hg, hg']) x := by
   rw [T_T]; exact D.T_congr _ _ h _ _ x
 
-lemma T_eq_self {A : Type} [CommRing A] {iA : Algebra R A} {g : A →+* A} (h : g = RingHom.id A)
+lemma T_eq_self {A : Type u} [CommRing A] {iA : Algebra R A} {g : A →+* A} (h : g = RingHom.id A)
     (hg : ∀ r, g (am iA r) = am iA r) (x : D.F' A iA) : D.T iA iA g hg x = x := by
   subst h; exact D.T_id iA hg x
 
 @[ext (flat := false)]
-structure Tot (A : CommRingCat.{0}) : Type where
+structure Tot (A : CommRingCat.{u}) : Type u where
   φ : CommRingCat.of R ⟶ A
   val : D.F' A φ.hom.toAlgebra
 
@@ -102,18 +104,18 @@ namespace Tot
 
 variable {D}
 
-def out {A : CommRingCat.{0}} (t : D.Tot A) (i : Algebra R A) (h : ∀ r, t.φ.hom r = am i r) : D.F' A i :=
+def out {A : CommRingCat.{u}} (t : D.Tot A) (i : Algebra R A) (h : ∀ r, t.φ.hom r = am i r) : D.F' A i :=
   D.T t.φ.hom.toAlgebra i (RingHom.id A) (fun r => h r) t.val
 
-lemma out_self {A : CommRingCat.{0}} (t : D.Tot A) (h : ∀ r, t.φ.hom r = am t.φ.hom.toAlgebra r) :
+lemma out_self {A : CommRingCat.{u}} (t : D.Tot A) (h : ∀ r, t.φ.hom r = am t.φ.hom.toAlgebra r) :
     t.out _ h = t.val :=
   D.T_id _ _ _
 
-lemma out_congr {A : CommRingCat.{0}} {t t' : D.Tot A} (e : t = t') (i : Algebra R A)
+lemma out_congr {A : CommRingCat.{u}} {t t' : D.Tot A} (e : t = t') (i : Algebra R A)
     (h : ∀ r, t.φ.hom r = am i r) (h' : ∀ r, t'.φ.hom r = am i r) : t.out i h = t'.out i h' := by
   subst e; rfl
 
-lemma ext_of_out {A : CommRingCat.{0}} {t t' : D.Tot A} (h : t.φ = t'.φ)
+lemma ext_of_out {A : CommRingCat.{u}} {t t' : D.Tot A} (h : t.φ = t'.φ)
     (hv : t.out t'.φ.hom.toAlgebra (fun r => by rw [h]; rfl) = t'.val) : t = t' := by
   obtain ⟨φ, v⟩ := t
   obtain ⟨φ', v'⟩ := t'
@@ -124,7 +126,7 @@ lemma ext_of_out {A : CommRingCat.{0}} {t t' : D.Tot A} (h : t.φ = t'.φ)
 
 end Tot
 
-def P₀ : (CommRingCat.{0}ᵒᵖ)ᵒᵖ ⥤ Type where
+def P₀ : (CommRingCat.{u}ᵒᵖ)ᵒᵖ ⥤ Type u where
   obj X := D.Tot X.unop.unop
   map {X Y} g := ↾fun t => ⟨t.φ ≫ g.unop.unop, D.T _ _ g.unop.unop.hom (fun _ => rfl) t.val⟩
   map_id X := by
@@ -142,13 +144,13 @@ def P₀ : (CommRingCat.{0}ᵒᵖ)ᵒᵖ ⥤ Type where
     rw [D.T_comp_eq rfl, D.T_comp_eq rfl]
     rfl
 
-@[simp] lemma P₀_map_φ {X Y : (CommRingCat.{0}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P₀.obj X) :
+@[simp] lemma P₀_map_φ {X Y : (CommRingCat.{u}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P₀.obj X) :
     (D.P₀.map g t).φ = t.φ ≫ g.unop.unop := rfl
 
-lemma P₀_map_val {X Y : (CommRingCat.{0}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P₀.obj X) :
+lemma P₀_map_val {X Y : (CommRingCat.{u}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P₀.obj X) :
     (D.P₀.map g t).val = D.T _ _ g.unop.unop.hom (fun _ => rfl) t.val := rfl
 
-lemma out_P₀_map {X Y : (CommRingCat.{0}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P₀.obj X)
+lemma out_P₀_map {X Y : (CommRingCat.{u}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P₀.obj X)
     (i : Algebra R Y.unop.unop) (h : ∀ r, (t.φ ≫ g.unop.unop).hom r = am i r) :
     (D.P₀.map g t).out i h = D.T _ i g.unop.unop.hom h t.val := by
   simp only [Tot.out, P₀_map_val]
@@ -156,52 +158,53 @@ lemma out_P₀_map {X Y : (CommRingCat.{0}ᵒᵖ)ᵒᵖ} (g : X ⟶ Y) (t : D.P�
 
 end Datum
 
-scoped instance isCoverDense_Spec : Scheme.Spec.IsCoverDense Scheme.zariskiTopology.{0} where
+scoped instance isCoverDense_Spec : Scheme.Spec.IsCoverDense Scheme.zariskiTopology.{u} where
   is_cover X := by
     rw [Scheme.mem_grothendieckTopology_iff]
     refine ⟨X.affineCover, ?_⟩
     rintro Y f ⟨i⟩
     exact ⟨{obj := op _, lift := 𝟙 _, map := X.affineCover.f i, fac := Category.id_comp _}⟩
 
-noncomputable abbrev J₀ : GrothendieckTopology CommRingCat.{0}ᵒᵖ :=
-  Scheme.Spec.inducedTopology Scheme.zariskiTopology.{0}
+noncomputable abbrev J₀ : GrothendieckTopology CommRingCat.{u}ᵒᵖ :=
+  Scheme.Spec.inducedTopology Scheme.zariskiTopology.{u}
 
 scoped instance isOneHypercoverDense_Spec :
-    Functor.IsOneHypercoverDense.{0} Scheme.Spec J₀ Scheme.zariskiTopology.{0} :=
+    Functor.IsOneHypercoverDense.{u} Scheme.Spec J₀ Scheme.zariskiTopology.{u} :=
   Functor.IsOneHypercoverDense.of_hasPullbacks fun X =>
     ⟨X.affineCover.I₀, fun i => op (X.local_affine i).choose_spec.choose, X.affineCover.f,
       X.affineCover.mem_grothendieckTopology⟩
 
-lemma isSheaf_J₀_yoneda (S : Scheme.{0}) :
+lemma isSheaf_J₀_yoneda (S : Scheme.{u}) :
     Presheaf.IsSheaf J₀ (Scheme.Spec.op ⋙ yoneda.obj S) :=
   Scheme.Spec.op_comp_isSheaf J₀ Scheme.zariskiTopology (Scheme.zariskiTopology.yoneda.obj S)
 
-noncomputable def stdObj (A : CommRingCat.{0}) {n : ℕ} (f : Fin n → A) (i : Fin n) : CommRingCat.{0}ᵒᵖ :=
+noncomputable def stdObj (A : CommRingCat.{u}) {n : ℕ} (f : Fin n → A) (i : Fin n) : CommRingCat.{u}ᵒᵖ :=
   op (CommRingCat.of (Localization.Away (f i)))
 
-noncomputable def stdHom (A : CommRingCat.{0}) {n : ℕ} (f : Fin n → A) (i : Fin n) : stdObj A f i ⟶ op A :=
+noncomputable def stdHom (A : CommRingCat.{u}) {n : ℕ} (f : Fin n → A) (i : Fin n) : stdObj A f i ⟶ op A :=
   (CommRingCat.ofHom (algebraMap A (Localization.Away (f i)))).op
 
-lemma range_Spec_map_algebraMap_away (A : CommRingCat.{0}) (r : A) :
+lemma range_Spec_map_algebraMap_away (A : CommRingCat.{u}) (r : A) :
     Set.range (Spec.map (CommRingCat.ofHom (algebraMap A (Localization.Away r)))) =
       (PrimeSpectrum.basicOpen r : Set (PrimeSpectrum A)) :=
   PrimeSpectrum.localization_away_comap_range (Localization.Away r) r
 
-lemma generate_std_mem (A : CommRingCat.{0}) {n : ℕ} (f : Fin n → A)
+lemma generate_std_mem (A : CommRingCat.{u}) {n : ℕ} (f : Fin n → A)
     (hf : Ideal.span (Set.range f) = ⊤) :
     Sieve.ofArrows (stdObj A f) (stdHom A f) ∈ J₀ (op A) := by
   rw [Functor.mem_inducedTopology_iff_of_isCoverDense, Scheme.mem_grothendieckTopology_iff]
-  refine ⟨(Scheme.affineOpenCoverOfSpanRangeEqTop f hf).openCover, ?_⟩
-  rintro _ _ ⟨i⟩
+  refine ⟨(Scheme.affineOpenCoverOfSpanRangeEqTop f hf).openCover.ulift, ?_⟩
+  rintro _ _ ⟨x⟩
+  let i := (Scheme.affineOpenCoverOfSpanRangeEqTop f hf).openCover.idx x
   exact ⟨stdObj A f i, stdHom A f i, 𝟙 _, Sieve.ofArrows_mk _ _ i, (Category.id_comp _).symm⟩
 
-lemma mem_of_functorPushforward_Spec_map {A : CommRingCat.{0}} (S : Sieve (op A)) {B : CommRingCat.{0}}
+lemma mem_of_functorPushforward_Spec_map {A : CommRingCat.{u}} (S : Sieve (op A)) {B : CommRingCat.{u}}
     (g : A ⟶ B) (h : S.functorPushforward Scheme.Spec (Spec.map g)) : S g.op := by
   have e := (Sieve.fullyFaithfulFunctorGaloisCoinsertion Scheme.Spec (op A)).u_l_eq S
   rw [← e]
   exact h
 
-lemma exists_std_of_mem {A : CommRingCat.{0}} {S : Sieve (op A)} (hS : S ∈ J₀ (op A)) :
+lemma exists_std_of_mem {A : CommRingCat.{u}} {S : Sieve (op A)} (hS : S ∈ J₀ (op A)) :
     ∃ (n : ℕ) (f : Fin n → A), Ideal.span (Set.range f) = ⊤ ∧ ∀ i, S (stdHom A f i) := by
   rw [Functor.mem_inducedTopology_iff_of_isCoverDense, Scheme.mem_grothendieckTopology_iff] at hS
   obtain ⟨𝒰, h𝒰⟩ := hS
@@ -240,9 +243,9 @@ lemma isSeparatedFor_of_le {C : Type*} [Category C] {P : Cᵒᵖ ⥤ Type*} {X :
 
 namespace Datum
 
-variable {R : Type} [CommRing R] (D : Datum R)
+variable {R : Type u} [CommRing R] (D : Datum R)
 
-theorem isSheafFor_std (hD : D.IsSheaf) (A : CommRingCat.{0}) {n : ℕ} (f : Fin n → A)
+theorem isSheafFor_std (hD : D.IsSheaf) (A : CommRingCat.{u}) {n : ℕ} (f : Fin n → A)
     (hf : Ideal.span (Set.range f) = ⊤) :
     Presieve.IsSheafFor D.P₀ (Presieve.ofArrows (stdObj A f) (stdHom A f)) := by
   rw [Presieve.isSheafFor_arrows_iff]
@@ -255,7 +258,7 @@ theorem isSheafFor_std (hD : D.IsSheaf) (A : CommRingCat.{0}) {n : ℕ} (f : Fin
     exact (isSheaf_iff_isSheaf_of_type _ _).1 (isSheaf_J₀_yoneda (Spec (.of R))) _
       (generate_std_mem A f hf)
   rw [Presieve.isSheafFor_arrows_iff] at hY
-  have hφx : ∀ (i j : Fin n) (Z : CommRingCat.{0}ᵒᵖ) (gi : Z ⟶ stdObj A f i) (gj : Z ⟶ stdObj A f j),
+  have hφx : ∀ (i j : Fin n) (Z : CommRingCat.{u}ᵒᵖ) (gi : Z ⟶ stdObj A f i) (gj : Z ⟶ stdObj A f j),
       gi ≫ stdHom A f i = gj ≫ stdHom A f j → (x i).φ ≫ gi.unop = (x j).φ ≫ gj.unop := by
     intro i j Z gi gj hg
     exact congrArg Tot.φ (hx i j Z gi gj hg)
@@ -361,10 +364,10 @@ theorem isSheaf_P₀ (hD : D.IsSheaf) : Presheaf.IsSheaf J₀ D.P₀ := by
 
 end Datum
 
-noncomputable abbrev affRing (T : Scheme.{0}) (i : T.affineCover.I₀) : CommRingCat.{0} :=
+noncomputable abbrev affRing (T : Scheme.{u}) (i : T.affineCover.I₀) : CommRingCat.{u} :=
   (T.local_affine i).choose_spec.choose
 
-noncomputable abbrev acov (T : Scheme.{0}) : T.OpenCover where
+noncomputable abbrev acov (T : Scheme.{u}) : T.OpenCover where
   I₀ := T.affineCover.I₀
   X i := Spec (affRing T i)
   f i := T.affineCover.f i
@@ -372,11 +375,11 @@ noncomputable abbrev acov (T : Scheme.{0}) : T.OpenCover where
 
 namespace Datum
 
-variable {R : Type} [CommRing R] (D : Datum R) (hD : D.IsSheaf)
+variable {R : Type u} [CommRing R] (D : Datum R) (hD : D.IsSheaf)
 
-noncomputable def G₀ : Sheaf J₀ (Type 0) := ⟨D.P₀, D.isSheaf_P₀ hD⟩
+noncomputable def G₀ : Sheaf J₀ (Type u) := ⟨D.P₀, D.isSheaf_P₀ hD⟩
 
-noncomputable def H : Scheme.{0}ᵒᵖ ⥤ Type :=
+noncomputable def H : Scheme.{u}ᵒᵖ ⥤ Type u :=
   Functor.OneHypercoverDenseData.essSurj.presheaf
     (Functor.oneHypercoverDenseData Scheme.Spec J₀ Scheme.zariskiTopology) (D.G₀ hD)
 
@@ -386,53 +389,53 @@ lemma H_isSheaf : Presheaf.IsSheaf Scheme.zariskiTopology (D.H hD) :=
 noncomputable def Hiso : Scheme.Spec.op ⋙ D.H hD ≅ D.P₀ :=
   Functor.OneHypercoverDenseData.essSurj.compPresheafIso _ _
 
-noncomputable def toH {A : CommRingCat.{0}} (t : D.Tot A) : (D.H hD).obj (op (Spec A)) :=
+noncomputable def toH {A : CommRingCat.{u}} (t : D.Tot A) : (D.H hD).obj (op (Spec A)) :=
   (D.Hiso hD).inv.app (op (op A)) t
 
-noncomputable def ofH {A : CommRingCat.{0}} (y : (D.H hD).obj (op (Spec A))) : D.Tot A :=
+noncomputable def ofH {A : CommRingCat.{u}} (y : (D.H hD).obj (op (Spec A))) : D.Tot A :=
   (D.Hiso hD).hom.app (op (op A)) y
 
-lemma ofH_toH {A : CommRingCat.{0}} (t : D.Tot A) : D.ofH hD (D.toH hD t) = t := by
+lemma ofH_toH {A : CommRingCat.{u}} (t : D.Tot A) : D.ofH hD (D.toH hD t) = t := by
   have h := ConcreteCategory.congr_hom ((D.Hiso hD).inv_hom_id_app (op (op A))) t
   exact h
 
-lemma toH_ofH {A : CommRingCat.{0}} (y : (D.H hD).obj (op (Spec A))) : D.toH hD (D.ofH hD y) = y := by
+lemma toH_ofH {A : CommRingCat.{u}} (y : (D.H hD).obj (op (Spec A))) : D.toH hD (D.ofH hD y) = y := by
   have h := ConcreteCategory.congr_hom ((D.Hiso hD).hom_inv_id_app (op (op A))) y
   exact h
 
-lemma ofH_map {A B : CommRingCat.{0}} (g : A ⟶ B) (y : (D.H hD).obj (op (Spec A))) :
+lemma ofH_map {A B : CommRingCat.{u}} (g : A ⟶ B) (y : (D.H hD).obj (op (Spec A))) :
     D.ofH hD ((D.H hD).map (Spec.map g).op y) = D.P₀.map g.op.op (D.ofH hD y) :=
   NatTrans.naturality_apply (D.Hiso hD).hom (g.op.op : op (op A) ⟶ op (op B)) y
 
-lemma map_toH {A B : CommRingCat.{0}} (g : A ⟶ B) (t : D.Tot A) :
+lemma map_toH {A B : CommRingCat.{u}} (g : A ⟶ B) (t : D.Tot A) :
     (D.H hD).map (Spec.map g).op (D.toH hD t) = D.toH hD (D.P₀.map g.op.op t) :=
   (NatTrans.naturality_apply (D.Hiso hD).inv (g.op.op : op (op A) ⟶ op (op B)) t).symm
 
-noncomputable def aff {T : Scheme.{0}} (y : (D.H hD).obj (op T)) {A : CommRingCat.{0}} (u : Spec A ⟶ T) :
+noncomputable def aff {T : Scheme.{u}} (y : (D.H hD).obj (op T)) {A : CommRingCat.{u}} (u : Spec A ⟶ T) :
     D.Tot A :=
   D.ofH hD ((D.H hD).map u.op y)
 
-lemma aff_map {T T' : Scheme.{0}} (y : (D.H hD).obj (op T)) (k : T' ⟶ T) {A : CommRingCat.{0}}
+lemma aff_map {T T' : Scheme.{u}} (y : (D.H hD).obj (op T)) (k : T' ⟶ T) {A : CommRingCat.{u}}
     (u : Spec A ⟶ T') : D.aff hD ((D.H hD).map k.op y) u = D.aff hD y (u ≫ k) := by
   simp only [aff, ← Functor.map_comp_apply, ← op_comp]
 
-lemma aff_id {A : CommRingCat.{0}} (y : (D.H hD).obj (op (Spec A))) :
+lemma aff_id {A : CommRingCat.{u}} (y : (D.H hD).obj (op (Spec A))) :
     D.aff hD y (𝟙 _) = D.ofH hD y := by
   simp only [aff, op_id, Functor.map_id_apply]
 
-lemma aff_Spec_map {T : Scheme.{0}} (y : (D.H hD).obj (op T)) {A B : CommRingCat.{0}} (g : A ⟶ B)
+lemma aff_Spec_map {T : Scheme.{u}} (y : (D.H hD).obj (op T)) {A B : CommRingCat.{u}} (g : A ⟶ B)
     (u : Spec A ⟶ T) : D.aff hD y (Spec.map g ≫ u) = D.P₀.map g.op.op (D.aff hD y u) := by
   simp only [aff, op_comp, Functor.map_comp_apply]
   exact D.ofH_map hD g _
 
-lemma Spec_map_aff_φ_comp {T : Scheme.{0}} (y : (D.H hD).obj (op T)) {A B : CommRingCat.{0}}
+lemma Spec_map_aff_φ_comp {T : Scheme.{u}} (y : (D.H hD).obj (op T)) {A B : CommRingCat.{u}}
     (v : Spec B ⟶ Spec A) (u : Spec A ⟶ T) :
     Spec.map (D.aff hD y (v ≫ u)).φ = v ≫ Spec.map (D.aff hD y u).φ := by
   obtain ⟨g, rfl⟩ := Spec.map_surjective v
   erw [aff_Spec_map, P₀_map_φ, Spec.map_comp]
   rfl
 
-noncomputable def base {T : Scheme.{0}} (y : (D.H hD).obj (op T)) : T ⟶ Spec (.of R) :=
+noncomputable def base {T : Scheme.{u}} (y : (D.H hD).obj (op T)) : T ⟶ Spec (.of R) :=
   (acov T).glueMorphisms (fun i => Spec.map (D.aff hD y ((acov T).f i)).φ) (by
     intro i j
     apply (acov (pullback ((acov T).f i) ((acov T).f j))).hom_ext
@@ -441,11 +444,11 @@ noncomputable def base {T : Scheme.{0}} (y : (D.H hD).obj (op T)) : T ⟶ Spec (
     erw [← Category.assoc, ← Category.assoc, ← Spec_map_aff_φ_comp, ← Spec_map_aff_φ_comp,
       Category.assoc, Category.assoc, pullback.condition])
 
-lemma ι_base {T : Scheme.{0}} (y : (D.H hD).obj (op T)) (i : (acov T).I₀) :
+lemma ι_base {T : Scheme.{u}} (y : (D.H hD).obj (op T)) (i : (acov T).I₀) :
     (acov T).f i ≫ D.base hD y = Spec.map (D.aff hD y ((acov T).f i)).φ :=
   (acov T).ι_glueMorphisms _ _ i
 
-lemma base_spec {T : Scheme.{0}} (y : (D.H hD).obj (op T)) {A : CommRingCat.{0}} (u : Spec A ⟶ T) :
+lemma base_spec {T : Scheme.{u}} (y : (D.H hD).obj (op T)) {A : CommRingCat.{u}} (u : Spec A ⟶ T) :
     Spec.map (D.aff hD y u).φ = u ≫ D.base hD y := by
   apply ((acov T).pullback₁ u).hom_ext
   intro i
@@ -481,16 +484,16 @@ lemma base_spec {T : Scheme.{0}} (y : (D.H hD).obj (op T)) {A : CommRingCat.{0}}
       (Category.assoc ((acov _).f k ≫ pullback.fst u ((acov T).f i)) u (D.base hD y)).trans
         (Category.assoc ((acov _).f k) (pullback.fst u ((acov T).f i)) (u ≫ D.base hD y))
 
-lemma base_unique {T : Scheme.{0}} (y : (D.H hD).obj (op T)) (t : T ⟶ Spec (.of R))
-    (ht : ∀ (A : CommRingCat.{0}) (u : Spec A ⟶ T), Spec.map (D.aff hD y u).φ = u ≫ t) :
+lemma base_unique {T : Scheme.{u}} (y : (D.H hD).obj (op T)) (t : T ⟶ Spec (.of R))
+    (ht : ∀ (A : CommRingCat.{u}) (u : Spec A ⟶ T), Spec.map (D.aff hD y u).φ = u ≫ t) :
     t = D.base hD y := by
   apply (acov T).hom_ext
   intro i
   rw [← ht, base_spec]
 
-noncomputable def G : (Over (Spec (CommRingCat.of R)))ᵒᵖ ⥤ Type where
+noncomputable def G : (Over (Spec (CommRingCat.of R)))ᵒᵖ ⥤ Type u where
   obj X := { y : (D.H hD).obj (op X.unop.left) //
-    ∀ (A : CommRingCat.{0}) (u : Spec A ⟶ X.unop.left), Spec.map (D.aff hD y u).φ = u ≫ X.unop.hom }
+    ∀ (A : CommRingCat.{u}) (u : Spec A ⟶ X.unop.left), Spec.map (D.aff hD y u).φ = u ≫ X.unop.hom }
   map {X Y} k := ↾fun y => ⟨(D.H hD).map k.unop.left.op y.1, fun A u => by
     rw [aff_map, y.2, Category.assoc, Over.w k.unop]⟩
   map_id X := by
@@ -500,7 +503,7 @@ noncomputable def G : (Over (Spec (CommRingCat.of R)))ᵒᵖ ⥤ Type where
     refine ConcreteCategory.hom_ext _ _ fun y => Subtype.ext ?_
     simp
 
-noncomputable def totEquiv (T : Scheme.{0}) : (D.G hD).OverTotal T ≃ (D.H hD).obj (op T) where
+noncomputable def totEquiv (T : Scheme.{u}) : (D.G hD).OverTotal T ≃ (D.H hD).obj (op T) where
   toFun a := a.2.1
   invFun y := ⟨D.base hD y, ⟨y, fun A u => D.base_spec hD y u⟩⟩
   left_inv a := by
@@ -519,16 +522,16 @@ noncomputable def totIso : (D.G hD).overTotal ≅ D.H hD :=
 theorem isSheaf_overTotal : Presheaf.IsSheaf Scheme.zariskiTopology (D.G hD).overTotal :=
   (Presheaf.isSheaf_of_iso_iff (D.totIso hD)).2 (D.H_isSheaf hD)
 
-lemma Spec_map_aff_φ {A B : CommRingCat.{0}} (y : (D.H hD).obj (op (Spec A))) (u : Spec B ⟶ Spec A) :
+lemma Spec_map_aff_φ {A B : CommRingCat.{u}} (y : (D.H hD).obj (op (Spec A))) (u : Spec B ⟶ Spec A) :
     Spec.map (D.aff hD y u).φ = u ≫ Spec.map (D.aff hD y (𝟙 _)).φ := by
   rw [← Spec_map_aff_φ_comp, Category.comp_id]
 
-lemma aff_toH_id {A : CommRingCat.{0}} (t : D.Tot A) : D.aff hD (D.toH hD t) (𝟙 (Spec A)) = t := by
+lemma aff_toH_id {A : CommRingCat.{u}} (t : D.Tot A) : D.aff hD (D.toH hD t) (𝟙 (Spec A)) = t := by
   rw [aff_id, ofH_toH]
 
 section ev
 
-variable (A : Type) [CommRing A] [instA : Algebra R A]
+variable (A : Type u) [CommRing A] [instA : Algebra R A]
 
 noncomputable abbrev ovr : Over (Spec (CommRingCat.of R)) :=
   Over.mk (Spec.map (CommRingCat.ofHom (algebraMap R A)))
@@ -585,7 +588,7 @@ lemma ev_apply_val (s : D.F A) :
 
 end ev
 
-theorem ev_natural (A B : Type) [CommRing A] [CommRing B] [instA : Algebra R A] [instB : Algebra R B]
+theorem ev_natural (A B : Type u) [CommRing A] [CommRing B] [instA : Algebra R A] [instB : Algebra R B]
     (φ : A →ₐ[R] B) (s : D.F A)
     (h : Spec.map (CommRingCat.ofHom φ.toRingHom) ≫ Spec.map (CommRingCat.ofHom (algebraMap R A)) =
       Spec.map (CommRingCat.ofHom (algebraMap R B))) :
@@ -612,27 +615,27 @@ end Datum
 end AlgebraicGeometry.Scheme.AlgebraFunctorSheaf
 
 theorem AlgebraicGeometry.Scheme.exists_presheaf_over_equiv_isSheaf_overTotal_of_isLocalization_away
-    (R : Type) [CommRing R]
-    (F : ∀ (A : Type) [CommRing A] [Algebra R A], Type)
-    (Fmap : ∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B],
+    (R : Type u) [CommRing R]
+    (F : ∀ (A : Type u) [CommRing A] [Algebra R A], Type u)
+    (Fmap : ∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B],
       (A →ₐ[R] B) → F A → F B)
-    (Fmap_id : ∀ (A : Type) [CommRing A] [Algebra R A] (s : F A), Fmap A A (AlgHom.id R A) s = s)
-    (Fmap_comp : ∀ (A B C : Type) [CommRing A] [CommRing B] [CommRing C] [Algebra R A] [Algebra R B]
+    (Fmap_id : ∀ (A : Type u) [CommRing A] [Algebra R A] (s : F A), Fmap A A (AlgHom.id R A) s = s)
+    (Fmap_comp : ∀ (A B C : Type u) [CommRing A] [CommRing B] [CommRing C] [Algebra R A] [Algebra R B]
       [Algebra R C] (φ : A →ₐ[R] B) (ψ : B →ₐ[R] C) (s : F A),
       Fmap A C (ψ.comp φ) s = Fmap B C ψ (Fmap A B φ s))
-    (sheaf : ∀ (A : Type) [CommRing A] [Algebra R A] (n : ℕ) (f : Fin n → A),
+    (sheaf : ∀ (A : Type u) [CommRing A] [Algebra R A] (n : ℕ) (f : Fin n → A),
       Ideal.span (Set.range f) = ⊤ →
-      ∀ (B : Fin n → Type) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
+      ∀ (B : Fin n → Type u) [∀ i, CommRing (B i)] [∀ i, Algebra A (B i)] [∀ i, Algebra R (B i)]
         [∀ i, IsScalarTower R A (B i)] [∀ i, IsLocalization.Away (f i) (B i)] (s : ∀ i, F (B i)),
-      (∀ (i j : Fin n) (C : Type) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
+      (∀ (i j : Fin n) (C : Type u) [CommRing C] [Algebra A C] [Algebra R C] [IsScalarTower R A C]
           [IsLocalization.Away (f i * f j) C] (ρ₁ : B i →ₐ[A] C) (ρ₂ : B j →ₐ[A] C),
           Fmap _ _ (ρ₁.restrictScalars R) (s i) = Fmap _ _ (ρ₂.restrictScalars R) (s j)) →
       ∃! s₀ : F A, ∀ i, Fmap _ _ (IsScalarTower.toAlgHom R A (B i)) s₀ = s i) :
-    ∃ (G : (Over (Spec (CommRingCat.of R)))ᵒᵖ ⥤ Type)
-      (ev : ∀ (A : Type) [CommRing A] [Algebra R A],
+    ∃ (G : (Over (Spec (CommRingCat.of R)))ᵒᵖ ⥤ Type u)
+      (ev : ∀ (A : Type u) [CommRing A] [Algebra R A],
         F A ≃ G.obj (op (Over.mk (Spec.map (CommRingCat.ofHom (algebraMap R A)))))),
       Presheaf.IsSheaf Scheme.zariskiTopology G.overTotal ∧
-      ∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B) (s : F A)
+      ∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B) (s : F A)
         (h : Spec.map (CommRingCat.ofHom φ.toRingHom) ≫ Spec.map (CommRingCat.ofHom (algebraMap R A)) =
           Spec.map (CommRingCat.ofHom (algebraMap R B))),
         ev B (Fmap A B φ s) =

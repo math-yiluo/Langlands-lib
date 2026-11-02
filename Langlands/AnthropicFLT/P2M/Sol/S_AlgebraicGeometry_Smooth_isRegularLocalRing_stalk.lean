@@ -1,0 +1,47 @@
+/-
+Ported from `P2M/Sol/S_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk.lean` of the Anthropic Lean formalization of
+Fermat's Last Theorem (commit 6e837e75355538c7f80bab5b956861e86c4eacc2), Copyright 2026
+Anthropic, PBC, licensed under the Apache License, Version 2.0; see
+`licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
+Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options
+are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
+the changes.
+-/
+import Mathlib
+import Langlands.AnthropicFLT.Theorems.Thm_isRegularLocalRing_localization_atPrime_of_isStandardSmooth
+set_option maxHeartbeats 4000000
+set_option synthInstance.maxHeartbeats 400000
+set_option backward.isDefEq.respectTransparency.types false
+namespace P2MW.S_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk
+attribute [-simp] RegularLocalRingQuotientAscent.dualNumberFst_apply
+
+set_option autoImplicit false
+universe u
+open CategoryTheory AlgebraicGeometry IsLocalRing
+
+theorem solution
+    {k : Type u} [Field k] {X : Scheme.{u}} {f : X ⟶ Spec (CommRingCat.of k)}
+    [Smooth f] (x : X) :
+    IsRegularLocalRing (X.presheaf.stalk x) := by
+  classical
+  obtain ⟨U, hU, V, hV, hxV, hle, hstd⟩ :=
+    Smooth.exists_isStandardSmooth (f := f) x
+  have hfxU : f.base x ∈ U := hle hxV
+  obtain rfl : U = ⊤ := top_le_iff.mp fun y _ => by
+    rw [Subsingleton.elim y (f.base x)]; exact hfxU
+  let e : k ≃+* Γ(Spec (CommRingCat.of k), ⊤) :=
+    (Scheme.ΓSpecIso (CommRingCat.of k)).symm.commRingCatIsoToRingEquiv
+  let ψ : k →+* Γ(X, V) := (f.appLE ⊤ V hle).hom.comp e.toRingHom
+  have hψ : ψ.IsStandardSmooth :=
+    RingHom.isStandardSmooth_respectsIso.2 _ e hstd
+  letI : Algebra k Γ(X, V) := ψ.toAlgebra
+  haveI : Algebra.IsStandardSmooth k Γ(X, V) :=
+    (RingHom.isStandardSmooth_algebraMap).mp hψ
+  haveI hreg : IsRegularLocalRing (Localization.AtPrime (hV.primeIdealOf ⟨x, hxV⟩).asIdeal) :=
+    isRegularLocalRing_localization_atPrime_of_isStandardSmooth k Γ(X, V)
+      (hV.primeIdealOf ⟨x, hxV⟩).asIdeal
+  letI : Algebra Γ(X, V) (X.presheaf.stalk x) := (X.presheaf.germ V x hxV).hom.toAlgebra
+  haveI := hV.isLocalization_stalk ⟨x, hxV⟩
+  exact IsRegularLocalRing.of_ringEquiv
+    (IsLocalization.algEquiv (hV.primeIdealOf ⟨x, hxV⟩).asIdeal.primeCompl
+      (Localization.AtPrime (hV.primeIdealOf ⟨x, hxV⟩).asIdeal) (X.presheaf.stalk x)).toRingEquiv

@@ -12,6 +12,8 @@ import Langlands.RingTheory.Grassmannian.ChartOpenCover
 import Langlands.RingTheory.Grassmannian.PrincipalDescent
 import Langlands.AlgebraicGeometry.AlgebraFunctorRepresentability
 
+universe u
+
 /-! # The scheme representing the quotient Grassmannian -/
 
 set_option autoImplicit false
@@ -21,7 +23,7 @@ open CategoryTheory AlgebraicGeometry
 
 namespace Module.Grassmannian.SchemeRepresentation
 
-variable {R : Type} [CommRing R] {S A : Type} [CommRing S] [Algebra R S] [CommRing A] [Algebra R A]
+variable {R : Type u} [CommRing R] {S A : Type u} [CommRing S] [Algebra R S] [CommRing A] [Algebra R A]
 
 lemma preimage_comp_algebraMap
     (g : Spec (CommRingCat.of A) ⟶ Spec (CommRingCat.of S))
@@ -52,17 +54,17 @@ end Module.Grassmannian.SchemeRepresentation
 
 open Module.Grassmannian.SchemeRepresentation in
 theorem Module.Grassmannian.exists_scheme_represents_and_isAffineOpen_chart_cover
-    (R : Type) [CommRing R] (M : Type) [AddCommGroup M] [Module R M] (k : ℕ) :
-    ∃ (Gr : Scheme.{0}) (p : Gr ⟶ Spec (CommRingCat.of R))
-      (pt : ∀ (A : Type) [CommRing A] [Algebra R A],
+    (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] (k : ℕ) :
+    ∃ (Gr : Scheme.{u}) (p : Gr ⟶ Spec (CommRingCat.of R))
+      (pt : ∀ (A : Type u) [CommRing A] [Algebra R A],
         Module.Grassmannian A (A ⊗[R] M) k ≃
           {g : Spec (CommRingCat.of A) ⟶ Gr // g ≫ p = Spec.map (CommRingCat.ofHom (algebraMap R A))})
       (V : (Fin k → M) → Gr.Opens),
-      (∀ (A B : Type) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
+      (∀ (A B : Type u) [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (φ : A →ₐ[R] B)
           (N : Module.Grassmannian A (A ⊗[R] M) k),
         (pt B (Module.Grassmannian.map φ N)).1 = Spec.map (CommRingCat.ofHom φ.toRingHom) ≫ (pt A N).1) ∧
       (⨆ x, V x = ⊤) ∧ (∀ x, IsAffineOpen (V x)) ∧
-      (∀ (x : Fin k → M) (A : Type) [CommRing A] [Algebra R A] (N : Module.Grassmannian A (A ⊗[R] M) k),
+      (∀ (x : Fin k → M) (A : Type u) [CommRing A] [Algebra R A] (N : Module.Grassmannian A (A ⊗[R] M) k),
           Set.range (pt A N).1.base ⊆ (V x : Set Gr) ↔
             Function.Bijective fun v : Fin k → A =>
               ∑ i, v i • N.toSubmodule.mkQ ((1 : A) ⊗ₜ[R] x i)) := by
@@ -127,8 +129,8 @@ namespace Module.Grassmannian.SchemeRepresentation
 
 /-- A scheme representing rank-`k` locally free quotients of base changes of `M`.
 The existence theorem above constructs the representation from open affine charts. -/
-noncomputable def scheme (R : Type) [CommRing R] (M : Type) [AddCommGroup M]
-    [Module R M] (k : ℕ) : Scheme.{0} :=
+noncomputable def scheme (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M]
+    [Module R M] (k : ℕ) : Scheme.{u} :=
   (Module.Grassmannian.exists_scheme_represents_and_isAffineOpen_chart_cover R M k).choose
 
 end Module.Grassmannian.SchemeRepresentation

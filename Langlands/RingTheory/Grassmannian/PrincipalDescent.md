@@ -23,7 +23,8 @@ The complete original files were read:
 
 ## Inputs and conclusion
 
-All ring and module carriers are universe-zero types, as in the original.
+All ring and module carriers lie in one arbitrary universe `u` (the original
+uses universe zero; see below).
 Let `R` be a commutative ring, `M` an arbitrary `R`-module, and `A` a
 commutative `R`-algebra. Fix natural numbers `k` and `n`, and
 `f : Fin n → A` with `Ideal.span (Set.range f) = ⊤`. For each `i`, supply a
@@ -142,7 +143,7 @@ Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`:
 The exported signature is byte-identical to the original wrapper's
 signature. The actual localized kernels, quotient maps, exponent
 argument and local-to-global quotient proofs are retained. These edits
-add no hypotheses and change no universes or conclusions.
+add no hypotheses and change no conclusions.
 
 The original distribution is released under
 [Apache License 2.0](../../../licenses/Anthropic-FLT/LICENSE);
@@ -150,3 +151,16 @@ its [NOTICE](../../../licenses/Anthropic-FLT/NOTICE) and
 [attribution table](../../../licenses/Anthropic-FLT/ATTRIBUTION.md)
 are retained. Those three files are byte-identical to the pinned
 distribution. The table has no separate entry for these two source files.
+
+## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+
+Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+universe-polymorphic port of the FLT Hom-scheme construction (used by
+`Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
+duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
+the previous ones, so existing universe-zero uses still apply.
+
+- A line `universe u` is added after the imports.
+- Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
+  `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
+- In total 11 lines of the published file are changed and 2 lines added; no proof step changes otherwise.
