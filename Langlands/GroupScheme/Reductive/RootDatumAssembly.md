@@ -204,3 +204,7 @@ by the finite index type `relativeRoots i`. The spanning premise, the reflection
 data, the Coxeter-weight reducedness criterion and the split-maximal adapter
 are internal interfaces of the published architecture. Axioms: `propext`,
 `Classical.choice`, `Quot.sound`.
+
+The existing `IsMaximalTorus.isMaximalSplitTorus` declaration is shared from
+`Torus.MaximalSplitComparison`, with its original type and proof.
+`Reductive.RootDatumAssembly` imports this common torus comparison.

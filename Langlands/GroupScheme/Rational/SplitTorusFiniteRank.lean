@@ -1,3 +1,5 @@
+import Langlands.GroupScheme.Lie.FiniteDimensional
+import Langlands.GroupScheme.Lie.KernelTargetMaps
 import Langlands.GroupScheme.Rational.SplitTorus
 import Langlands.GroupScheme.Torus.UniversalPoint
 import Langlands.GroupScheme.Torus.SplitReductiveProof
@@ -18,67 +20,9 @@ set_option backward.isDefEq.respectTransparency false
 
 namespace Lie
 
-section TargetMaps
 
-variable {R : CommRingCat.{u}} {G H : GroupScheme (Spec R)}
-variable (f : G ⟶ H) (A : Type u) [CommRing A] [Algebra R A]
 
-/-- Postcomposition restricts to the actual dual-number identity kernels. -/
-def targetMap : lieKernel G A →* lieKernel H A where
-  toFun x := ⟨x.val ≫ f.hom.hom, by
-    change reduction H (x.val ≫ f.hom.hom) = 1
-    change (affineMap G (TrivSqZeroExt.fstHom R A A) x.val) ≫ f.hom.hom = 1
-    change reduction G x.val ≫ f.hom.hom = 1
-    rw [x.property, MonObj.one_comp]⟩
-  map_one' := Subtype.ext (MonObj.one_comp _)
-  map_mul' x y := Subtype.ext (MonObj.mul_comp _ _ _)
 
-/-- The map of identity kernels is linear for the actual epsilon-scaling actions. -/
-def targetMapLinear [IsAffineHom G.X.hom] [IsAffineHom H.X.hom] :
-    Additive (lieKernel G A) →ₗ[A] Additive (lieKernel H A) where
-  toFun x := Additive.ofMul (targetMap f A x.toMul)
-  map_add' x y := congrArg Additive.ofMul ((targetMap f A).map_mul x.toMul y.toMul)
-  map_smul' c x := by
-    apply Additive.toMul.injective
-    apply Subtype.ext
-    exact Category.assoc _ _ _
-
-/-- A monomorphism on underlying schemes is injective on the actual Lie kernels. -/
-theorem targetMapLinear_injective [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]
-    [Mono f.hom.hom] : Function.Injective (targetMapLinear f A) := by
-  intro x y h
-  apply Additive.toMul.injective
-  apply Subtype.ext
-  exact (cancel_mono f.hom.hom).mp (congrArg (fun z => z.toMul.val) h)
-
-end TargetMaps
-
-section FiniteDimension
-
-attribute [local instance] coordinateOriginAlgebra
-
-variable (k : Type u) [Field k]
-variable (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
-  [LocallyOfFiniteType G.X.hom]
-
-/-- The Lie kernel of an affine finite-type group over a field is finite dimensional. -/
-theorem finiteDimensional_lieKernel : FiniteDimensional k (Additive (lieKernel G k)) := by
-  classical
-  let : Algebra.FiniteType k (coordinateAlgebra G) := coordinateAlgebraFiniteType G
-  obtain ⟨s, hs⟩ := Algebra.FiniteType.out
-    (R := k) (A := coordinateAlgebra G)
-  let ev : Additive (lieKernel G k) →ₗ[k] (s → k) :=
-    { toFun := fun x c => kernelDerivationLinearEquiv G x c
-      map_add' := fun x y => by ext c; simp
-      map_smul' := fun c x => by ext d; simp }
-  apply FiniteDimensional.of_injective ev
-  intro x y h
-  apply (kernelDerivationLinearEquiv G).injective
-  apply Derivation.ext_of_adjoin_eq_top (s : Set (coordinateAlgebra G)) hs
-  intro c hc
-  exact congrFun h ⟨c, hc⟩
-
-end FiniteDimension
 
 end Lie
 
@@ -180,7 +124,7 @@ theorem splitRank_le_finrank_lieKernel
     {k : Type u} [Field k] (G : GroupScheme (Spec (CommRingCat.of k)))
     [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom] :
     splitRank G ≤ (Module.finrank k (Additive (lieKernel G k)) : ℕ∞) := by
-  let := Lie.finiteDimensional_lieKernel k G
+  let := Lie.finiteDimensional_lieKernel G
   refine iSup_le fun I => iSup_le fun _ => iSup_le fun i => iSup_le fun hi => ?_
   exact_mod_cast splitTorus.card_le_finrank_lieKernel I i hi
 

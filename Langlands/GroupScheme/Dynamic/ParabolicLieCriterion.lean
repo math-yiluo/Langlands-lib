@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Lie.KernelTargetMaps
 import Langlands.GroupScheme.Dynamic.LieStatement
 import Langlands.GroupScheme.Dynamic.SmoothConnectedStatement
 import Langlands.GroupScheme.Dynamic.ClosedSubgroup
@@ -20,26 +21,7 @@ namespace Langlands.GroupScheme
 
 /-! ### Dual-number kernels along homomorphisms -/
 
-section LieKernel
 
-variable {R : CommRingCat.{u}} {H G : GroupScheme (Spec R)} {A : Type u} [CommRing A]
-  [Algebra R A]
-
-/-- Reduction of dual-number points commutes with postcomposition by a homomorphism. -/
-theorem Lie.reduction_comp_hom (f : H ⟶ G) (x : Lie.AffinePoints H (DualNumber A)) :
-    Lie.reduction G (x ≫ f.hom.hom) = Lie.reduction H x ≫ f.hom.hom := by
-  rw [Lie.reduction, Lie.reduction, Lie.affineMap_apply, Lie.affineMap_apply, Category.assoc]
-
-/-- A dual-number point whose image under a monomorphic homomorphism lies in the kernel of
-reduction lies itself in the kernel of reduction. -/
-theorem mem_lieKernel_of_comp (f : H ⟶ G) [Mono f.hom.hom]
-    (y : Lie.AffinePoints H (DualNumber A))
-    (hy : Lie.reduction G (y ≫ f.hom.hom) = 1) : y ∈ (Lie.reduction H (A := A)).ker := by
-  change Lie.reduction H y = 1
-  apply (cancel_mono f.hom.hom).1
-  rw [← Lie.reduction_comp_hom, hy, MonObj.one_comp]
-
-end LieKernel
 
 /-! ### Factorization through representing subgroups -/
 

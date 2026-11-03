@@ -79,3 +79,7 @@ space together with the root spaces of the roots positive on `ν`, matching
 `𝔱 ⊕ ⨁_{⟨α,ν⟩>0} 𝔤_α` in Milne's Proposition 21.29. Combining that module with
 `parabolic_comp_eq_iff_iSup_weightSpace_eq` gives clause 2 of the target, still conditional on
 the four inputs above.
+
+The general identity-kernel target maps and their elementary compatibility
+lemmas are reused from `Langlands.GroupScheme.Lie.KernelTargetMaps`. Their
+public names and argument conventions are preserved.

@@ -1,0 +1,11 @@
+# Gluing the topology comparison for actual scheme base change
+
+Proof: Worker 105. Verification and submission: Worker 1363.
+
+The entry theorem `schemeBaseChangeTopology_proof` proves the published `SchemeBaseChangeTopologyProperty C D A`. The rings C, D and A are arbitrary commutative rings in a common universe, with compatible algebra structures C → D → A. Only A has a topology, with exactly the target assumptions `IsTopologicalRing A`, `IsLocalRing A` and `IsOpenUnits A` (including continuous inversion on units). The scheme X over Spec C is arbitrary. `isOpenImmersion_ringBaseChangeMap` identifies the underlying map of the pullback functor with the ordinary pullback map with identity maps on Spec D and Spec C. Mathlib's preservation theorem makes it an open immersion.
+
+Continuity is tested on every affine C-chart by the defining final-topology criterion. On such a chart the existing actual affine base-change comparison is a homeomorphism. Its target is affine. Postcomposition with the base-changed chart map is continuous into the target scheme-point topology. Naturality identifies this composite with the original adjunction equivalence restricted to the source chart.
+
+For openness, locality of A factors a chosen point of an open W through an affine C-chart. Its inverse image V of W is open for the affine evaluation topology. Affine base change takes V to an open set, and the base-changed chart map takes that set to an open set in the target final topology: an open immersion induces an open embedding on actual points, and the affine final topology agrees with its evaluation topology. Naturality shows this open neighborhood lies in the global image of W and contains the chosen image point. The neighborhood criterion gives openness. Finally the original point equivalence is bijective, so continuity and openness give the exact homeomorphism target.
+
+Both final topologies and the point map are imported constructions. This proof imposes no finite-type or separatedness condition. Its source motivation and its generalization beyond Conrad's locally finite-type setting are specified in the target Markdown. It establishes no arithmetic or adelic specialization by itself.

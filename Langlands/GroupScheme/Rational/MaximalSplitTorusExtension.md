@@ -26,3 +26,6 @@ condition.
 
 This establishes maximal extension and does not assert rational conjugacy or
 identify the ambient rank with the rank of an arbitrary maximal split torus.
+
+The finite-dimensional identity-kernel instance is reused from
+`Lie.FiniteDimensional`, with the field argument inferred from the group scheme.

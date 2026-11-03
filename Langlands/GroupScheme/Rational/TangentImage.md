@@ -5,7 +5,7 @@ functors, dual-number identity kernels, and intrinsic action weights. It does
 not invoke a new external structural theorem. All universes are arbitrary.
 
 The module reuses the published `Lie.targetMap` and `Lie.targetMapLinear`
-from `Rational.SplitTorusFiniteRank`. They give postcomposition by an actual
+from `Lie.KernelTargetMaps`. They give postcomposition by an actual
 group-scheme homomorphism on identity-kernel points and its linear map for
 affine source and target. The epsilon-scaling compatibility is recorded as
 an interface lemma. Injectivity for monomorphic scheme maps is the published
@@ -36,3 +36,7 @@ replace the tangent submodule in this description.
 
 These comparisons do not assert smooth representability, a weight
 decomposition, subgroup uniqueness from Lie data, or semigroup realization.
+
+The general identity-kernel target maps and their elementary compatibility
+lemmas are reused from `Langlands.GroupScheme.Lie.KernelTargetMaps`. Their
+public names and argument conventions are preserved.

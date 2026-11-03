@@ -12,14 +12,18 @@ For a split torus, each vector of coefficients gives the actual point whose
 unit coordinates are `1 + ε v_i`; this gives an injective linear map from
 `I → k` into its identity kernel.
 
-For an affine finite-type group over a field, choose finitely many algebra
-generators of its published coordinate algebra. Evaluation of the corresponding
-identity derivations on these generators is injective, since derivations
-agreeing on algebra generators agree everywhere. Thus its actual Lie kernel
-is finite dimensional.
+The finite-dimensional kernel instance is reused from `Lie.FiniteDimensional`.
+Its proof evaluates identity derivations on finitely many generators of the
+affine coordinate algebra; derivations agreeing on those generators agree
+everywhere. The duplicate theorem with an explicit field argument is removed,
+and callers use the existing instance with its implicit field argument.
 
 Composing the split-torus coefficient map with postcomposition gives
 `Nat.card I ≤ Module.finrank k (Additive (lieKernel G k))` for every closed
 split torus. Taking the exact published supremum proves
 `splitRank_le_finrank_lieKernel`. This supplies a finite bound and does not
 assert maximal extensions or equality with the rank of a maximal torus.
+
+The general identity-kernel target maps and their elementary compatibility
+lemmas are reused from `Langlands.GroupScheme.Lie.KernelTargetMaps`. Their
+public names and argument conventions are preserved.

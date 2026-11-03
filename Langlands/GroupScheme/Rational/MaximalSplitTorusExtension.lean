@@ -26,7 +26,7 @@ theorem exists_maximalSplitTorus_extension (hi : IsSplitSubtorus i) :
     ∃ (M : CommGroupScheme S) (j : M.toGrp ⟶ G), IsMaximalSplitTorus j ∧
       ∃ f : T.toGrp ⟶ M.toGrp, f ≫ j = i := by
   classical
-  let := Lie.finiteDimensional_lieKernel k G
+  let := Lie.finiteDimensional_lieKernel G
   let N := Module.finrank k (Additive (lieKernel G k))
   let p : ℕ → Prop := fun n => ∃ (I : Type u) (_ : Finite I)
     (j : splitTorus S I ⟶ G), IsClosedSubgroup j ∧

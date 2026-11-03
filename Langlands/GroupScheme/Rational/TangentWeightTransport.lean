@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Lie.KernelTargetMaps
 import Langlands.GroupScheme.Rational.TangentImage
 
 /-! # Weight transport through actual equivariant subgroup representatives -/
@@ -13,20 +14,7 @@ namespace Langlands.GroupScheme
 
 set_option backward.isDefEq.respectTransparency false
 
-section TargetNaturality
 
-variable {R : CommRingCat.{u}} {H G : GroupScheme (Spec R)}
-    (j : H ⟶ G) {A B : Type u}
-    [CommRing A] [Algebra R A] [CommRing B] [Algebra R B]
-
-/-- Postcomposition of tangent points commutes with coefficient extension. -/
-theorem lieKernelTarget_map (f : A →ₐ[R] B) (X : lieKernel H A) :
-    Lie.targetMap j B (lieKernelMap H f X) =
-      lieKernelMap G f (Lie.targetMap j A X) := by
-  apply Subtype.ext
-  exact Category.assoc _ _ _
-
-end TargetNaturality
 
 namespace RelativeRoot
 

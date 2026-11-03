@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Lie.KernelTargetMaps
 import Langlands.GroupScheme.Rational.ActionWeightTransport
 import Langlands.GroupScheme.Rational.ActionWeightComparisonProof
 import Langlands.GroupScheme.Rational.SplitTorusFiniteRank
@@ -16,24 +17,7 @@ open scoped CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme
 
-section TargetMaps
 
-variable {R : CommRingCat.{u}} {H G : GroupScheme (Spec R)}
-    (j : H ⟶ G) (A : Type u) [CommRing A] [Algebra R A]
-
-/-- Postcomposition commutes with the actual epsilon scaling. -/
-theorem lieKernelTarget_scale (c : A) (x : lieKernel H A) :
-    Lie.targetMap j A (lieKernelScale H c x) =
-      lieKernelScale G c (Lie.targetMap j A x) := by
-  apply Subtype.ext
-  exact Category.assoc _ _ _
-
-variable [IsAffineHom H.X.hom] [IsAffineHom G.X.hom]
-
-@[simp] theorem lieKernelTargetLinear_val (x : Additive (lieKernel H A)) :
-    (Lie.targetMapLinear j A x).toMul.val = x.toMul.val ≫ j.hom.hom := rfl
-
-end TargetMaps
 
 namespace RelativeRoot
 

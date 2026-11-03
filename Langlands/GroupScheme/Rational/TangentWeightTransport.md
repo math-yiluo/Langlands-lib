@@ -28,3 +28,7 @@ forces that intrinsic source weight space to be zero. The character can in
 particular be zero; this transfers the no-zero-weight hypothesis needed for
 structural unipotence and splitness arguments, without proving those structural
 results here.
+
+The general identity-kernel target maps and their elementary compatibility
+lemmas are reused from `Langlands.GroupScheme.Lie.KernelTargetMaps`. Their
+public names and argument conventions are preserved.

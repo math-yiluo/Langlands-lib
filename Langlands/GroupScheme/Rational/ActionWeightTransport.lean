@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Lie.KernelTargetMaps
 import Langlands.GroupScheme.Rational.SplitTorusFiniteRank
 import Langlands.GroupScheme.Rational.ActionWeightComparisonProof
 
@@ -17,30 +18,7 @@ section KernelTargets
 variable {R : CommRingCat.{u}} {G H : GroupScheme (Spec R)}
     (f : G ⟶ H) (A : Type u) [CommRing A] [Algebra R A]
 
-@[simp] theorem lieKernelTarget_val (x : lieKernel G A) :
-    (Lie.targetMap f A x).val = x.val ≫ f.hom.hom := rfl
-
-theorem lieKernelTarget_injective (hf : Mono f.hom.hom) :
-    Function.Injective (Lie.targetMap f A) := by
-  intro x y h
-  apply Subtype.ext
-  exact hf.right_cancellation _ _ (congrArg Subtype.val h)
-
 variable {A} {B : Type u} [CommRing B] [Algebra R B]
-
-/-- Coefficient change commutes with postcomposition on actual kernels. -/
-theorem lieKernelMap_target (a : A →ₐ[R] B) (x : lieKernel G A) :
-    lieKernelMap H a (Lie.targetMap f A x) =
-      Lie.targetMap f B (lieKernelMap G a x) := by
-  apply Subtype.ext
-  simp only [lieKernelMap_val, lieKernelTarget_val, Lie.affineMap_apply, Category.assoc]
-
-/-- Epsilon scaling commutes with postcomposition on actual kernels. -/
-theorem lieKernelScale_target (c : A) (x : lieKernel G A) :
-    lieKernelScale H c (Lie.targetMap f A x) =
-      Lie.targetMap f A (lieKernelScale G c x) := by
-  apply Subtype.ext
-  simp only [lieKernelScale_val, lieKernelTarget_val, Lie.affineMap_apply, Category.assoc]
 
 /-- A tangent vector in an all-test image lifts to a tangent vector when the
 homomorphism is a monomorphism. -/
@@ -64,11 +42,6 @@ theorem mem_map_lieKernel_iff (hf : Mono f.hom.hom) (F : SubgroupFunctor G)
     exact ⟨⟨y, hy0⟩, hy, Subtype.ext hyx⟩
   · rintro ⟨Y, hY, hYX⟩
     exact ⟨Y.val, hY, congrArg Subtype.val hYX⟩
-
-variable [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]
-
-@[simp] theorem lieKernelTargetLinear_toMul (x : Additive (lieKernel G A)) :
-    (Lie.targetMapLinear f A x).toMul = Lie.targetMap f A x.toMul := rfl
 
 end KernelTargets
 

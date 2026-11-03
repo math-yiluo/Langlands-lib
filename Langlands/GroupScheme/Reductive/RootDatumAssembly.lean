@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Torus.MaximalSplitComparison
 import Langlands.GroupScheme.Reductive.RootDatum
 import Langlands.GroupScheme.Rational.RootReflectionAssembly
 import Langlands.GroupScheme.Rational.RootSupportFiniteness
@@ -62,11 +63,6 @@ namespace Langlands.GroupScheme
 variable {k : Type u} [Field k]
   {T : CommGroupScheme (Spec (CommRingCat.of k))}
   {G : GroupScheme (Spec (CommRingCat.of k))}
-
-/-- A maximal torus whose torus is split is a maximal split torus. -/
-theorem IsMaximalTorus.isMaximalSplitTorus {i : T.toGrp ⟶ G} (hi : IsMaximalTorus i)
-    (hT : IsSplitTorus T.toGrp) : IsMaximalSplitTorus i :=
-  ⟨⟨hT, hi.2.1⟩, fun T' i' hi' f hf => hi.2.2 T' i' f hi'.1.isTorus hi'.2 hf⟩
 
 variable (i : T.toGrp ⟶ G) [IsAffineHom G.X.hom] [Mono i.hom.hom.left]
 

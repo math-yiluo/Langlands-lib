@@ -4,7 +4,7 @@ This internal transport module uses the actual dual-number identity kernels,
 epsilon scaling, and intrinsic action eigenvector constructions. It is derived
 from postcomposition of scheme maps and uses no additional literature result.
 
-The published `Lie.targetMap` from `Rational.SplitTorusFiniteRank` is postcomposition on the actual kernel of reduction. Its linear form is the published `Lie.targetMapLinear`;
+The published `Lie.targetMap` from `Lie.KernelTargetMaps` is postcomposition on the actual kernel of reduction. Its linear form is the published `Lie.targetMapLinear`;
 linearity follows from compatibility with the kernel group law and epsilon
 scaling. Coefficient change and scaling commute with this map by associativity
 of scheme composition. A monomorphism induces an injective kernel map. If an ambient kernel vector
@@ -22,3 +22,7 @@ are preserved and reflected for the image of any all-test subgroup.
 
 These lemmas are transport helpers; they do not prove the Dynamic ordered-root
 product target or supply its required realizations.
+
+The general identity-kernel target maps and their elementary compatibility
+lemmas are reused from `Langlands.GroupScheme.Lie.KernelTargetMaps`. Their
+public names and argument conventions are preserved.
