@@ -2,7 +2,7 @@
 
 Author: Worker 249, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
 Lean coverage below was checked against Library commit
-`4103487976e26033768519d7c8e53adf6d10c898`.
+`538f554630aa4cd24a084e698b1768d7143ba586`.
 
 This note maps every numbered item of Waldspurger's article to its page, its
 content, the items of the article it uses, and the external sources it cites.
@@ -107,14 +107,14 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 |---|---|---|---|---|---|
 | II.1 | 250–251 | `Ξ(g) = ⟨π(g)e, e⟩ = ∫_K δ_0(m_0(kg))^{1/2} dk` | I.1, I.3 | Data | `xi` (generic, see below) |
 | Lemme II.1.1 | 251 | `Ξ` bi-`K`-invariant; `C_1 δ_0^{1/2} ≤ Ξ ≤ C_2 δ_0^{1/2}(1+σ)^d` on `M̄_0^+` | I.1, I.3, I.4.3 | Book | bi-invariance only: `xi_mul_mul` |
-| Lemme II.1.2 | 251 | translation bound `Ξ(g_1 g g_2) ≤ C Ξ(g)(1+σ(g))^d` | I.1 (4), I.4.3, II.1.1 | Book | none (a hypothesis of the generic translation results) |
+| Lemme II.1.2 | 251 | translation bound `Ξ(g_1 g g_2) ≤ C Ξ(g)(1+σ(g))^d` | I.1 (4), I.4.3, II.1.1 | Book | `xi_uniformTranslationBound` (generic, with `d = 0`; proof via II.1.3, not the article's) |
 | Lemme II.1.3 | 252 | `∫_K Ξ(g_1 k g_2) dk = Ξ(g_1) Ξ(g_2)` | II.1 | Book | `integral_xi_mul_mul` (generic) |
 | Lemme II.1.4 | 252 | `Ξ(g^{-1}) = Ξ(g)` | II.1 (`π ≅ π̌`) | Book | `xi_inv` (generic; `G` unimodular and `δ` the modular character of `P` as hypotheses, see below) |
 | Lemme II.1.5 | 252 | `∫_G Ξ^2 (1+σ)^{-d} < ∞` for some `d` | I.1 (4)–(6), II.1.1 | Book | `CartanSquareBound.squareIntegrableWeight` (generic; the Cartan, measure, norm and II.1.1 bounds as hypotheses, see below) |
-| Lemme II.1.6 | 252 | `Ξ(g) = ∫_K δ_P(m_P(kg))^{1/2} Ξ^M(m_P(kg)) dk` | II.1 | Book | none |
+| Lemme II.1.6 | 252 | `Ξ(g) = ∫_K δ_P(m_P(kg))^{1/2} Ξ^M(m_P(kg)) dk` | II.1 | Book | `LeviData.xi_eq_integral` (generic; direct Fubini proof, not the article's induction in stages) |
 | II.2 | 253–254 | algebraic representation `τ_P` with properties (1)–(5); (6) `1 + σ(ū) ≍ 1 + log‖τ_P(ū)e_1‖` | [H] | Struct, Book | none |
 | Lemmes II.3.1–II.3.5 | 254–259 | estimates for `δ_P(m_P(ū))`, `σ` on `Ū` | II.2, I.1 | Book | none |
-| Lemmes II.4.1–II.4.4, Prop. II.4.5 | 259–263 | integrals over `Ū`; constant term of functions bounded by `Ξ(1+σ)^{-d'}` | II.1, II.3 | Book | none |
+| Lemmes II.4.1–II.4.4, Prop. II.4.5 | 259–263 | integrals over `Ū`; constant term of functions bounded by `Ξ(1+σ)^{-d'}` | II.1, II.3 | Book | none (II.4.5 is the explicit hypothesis `ConstantTermEstimate` of `ConstantTerm`) |
 
 ## Chapter III. Tempered representations and `C(G)` (pp.263–276)
 
@@ -129,7 +129,7 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Lemmes III.3.1–III.3.3 | 267–268 | weak constant terms `π^w_P` | I.3, III.1.1, III.2.2 | Book | GL_n only (III.3.1) |
 | Prop. III.4.1 | 269 | an irreducible tempered representation embeds in some `I_P^G ω`, `ω ∈ E_2(M)` | III.3.2, III.3.3 | Book | none |
 | Lemme III.5.1 | 269–270 | weak constant term `f^w_P` of `f ∈ A^w(G)` | III.3 | Book | none |
-| III.6 | 271–272 | `C(G)`, seminorms `ν_r`, levels `C_H`, inductive-limit topology, (1), completeness, `C_c^∞(G)` dense, `G × G` acts continuously, constant term `f^{(P)}` via II.4.5 | I.6, II.1, II.1.2, II.4.5, [B] | Data, Book | generic: `C(G)`, `ν_r`, `C_H`, topology, (1), density, `G × G` continuity; **completeness of `C(G)` open**; `f^{(P)}` candidate only (see below) |
+| III.6 | 271–272 | `C(G)`, seminorms `ν_r`, levels `C_H`, inductive-limit topology, (1), completeness, `C_c^∞(G)` dense, `G × G` acts continuously, constant term `f^{(P)}` via II.4.5 | I.6, II.1, II.1.2, II.4.5, [B] | Data, Book | generic: `C(G)`, `ν_r`, `C_H`, topology, (1), density, `G × G` continuity, completeness (`Space.completeSpace`, for a cofinal sequence of compact open subgroups), `f^{(P)}` and `C(G) → C(M)` (`constantTerm`, with II.4.5 as a hypothesis), `f^{(P),Ind}` and the diagram (`constantTermInd`, pointwise; see below) |
 | Lemme III.6.1 | 271 | for `f_1, f_2 ∈ C(G)`: `∫_G f_1(h) f_2(h^{-1}g) dh` converges absolutely, `f_1 * f_2 ∈ C(G)`, and `(f_1, f_2) ↦ f_1 * f_2` is separately continuous | II.1.3–II.1.5 | Book | `Convolution` (generic; II.1.3–II.1.5 as hypotheses) |
 | III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit` |
 
@@ -197,18 +197,38 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 
 ## Library coverage
 
-Only the declarations below formalize parts of the article in the Library at
-commit `41034879`. None proves a theorem of Chapters IV–VIII. Most work over
-explicit abstract data. The modules `RationalCharacterValuation`,
-`LocalFieldUnits`, `RationalImageCharacters`, `RationalImageRealPart`,
+The declarations below formalize parts of the article in the Library at commit
+`538f5546`. The list covers the modules of this task's two executors and other
+modules found by searching the Library for the article and for the reductive
+data of I.1; it is not the declaration-level reuse audit of condition 7. None
+proves a theorem of Chapters IV–VIII. Most work over explicit abstract data.
+The modules `RationalCharacterValuation`, `LocalFieldUnits`,
+`RationalImageCharacters`, `RationalImageRealPart`,
 `RationalCharacterTopology`, `RationalNormKernelTopology` and `PointTopology`
 are specializations to the actual rational points of a group scheme over an
-actual nonarchimedean local field. The Library has the rational-point
-topology on `G(F)` and the existence of a compact open subgroup of `G(F)`
-(`Langlands.BruhatTits.rationalPoint_exists_compactOpenSubgroup`). It does not
-yet construct the remaining reductive data of I.1: `A_0`, `M_0`, `P_0`, the
-special maximal compact subgroup `K`, the decompositions `G = P K` and (4),
-or the finite rank and full rank of the lattice of `H_G`.
+actual nonarchimedean local field. The Library has the rational-point topology
+on `G(F)` and the existence of a compact open subgroup of `G(F)`
+(`Langlands.BruhatTits.rationalPoint_exists_compactOpenSubgroup`). It has
+predicates for maximal split tori and minimal parabolic subgroups
+(`IsMaximalSplitTorus`, `IsMinimalParabolicSubgroup`), Prop-valued product
+predicates for a given subgroup `K` of the rational points
+(`Langlands/BruhatTits/Iwasawa/PointProducts`), and the finite index of the
+restriction of rational characters to a split component
+(`IsSplitComponent.finiteIndex_range_characterRestrict`, Worker 1001: the
+finite-index half of I.1's `Rat(G) ⊗ Q ≅ Rat(A_G) ⊗ Q`; the module
+`CharacterRestrictionInjective` derives injectivity from the Prop
+`CentralSplitTorusCharacterStatement`, taken as a hypothesis). It does not yet
+construct the special maximal compact subgroup `K` of I.1, and it does not
+prove `G = P K`, the Cartan decomposition (4), or the finite rank and full
+rank of the lattice of `H_G`. For the roots and Weyl group of I.1 it has
+`relativeRoots`, `relativeWeylGroup` and `relativeWeylAction` (module
+`Langlands/GroupScheme/Rational/RelativeRoots`), the normalizer and centralizer
+subgroup functors of `Langlands/GroupScheme/Rational/TorusNormalizer`, and the
+Prop target `RelativeWeylCoxeterStatement` (statement only). Representative data for the Cartan decomposition
+(`RenardUniformizerSection`, `RenardRepresentativeData`, Worker 454) and the
+Prop targets `RenardLatticeComparisonStatement` and
+`RenardDominantComparisonStatement` are in
+`Langlands/Representation/Plancherel/`; those targets are statements only.
 
 ### General groups
 
@@ -251,6 +271,13 @@ Namespace `Langlands.Plancherel`, module directory
   valuation image, and the characters of that image are the unramified
   characters; I.1, `H_G` and `X(G)`). Continuity of the last equivalence for
   the compact-open topologies is not claimed.
+- `RationalUnramifiedCharacterTopology`:
+  `rationalCanonicalImageUnramifiedContinuousEquiv`,
+  `rationalCanonicalUnitaryImageUnramifiedContinuousEquiv`,
+  `compactSpace_rationalUnitaryUnramifiedCharacters` (the identification of
+  the unramified characters with the characters of the valuation image is a
+  homeomorphism for the compact-open topologies, and the unitary unramified
+  characters form a compact group; I.1, `X(G)` and `Im X(G)`).
 - `LocalFieldUnits`: `fieldNormUnits`, `fieldOrderUnits` (the normalized
   absolute value and order on `F^×`).
 - `FieldUnitsTopologyStatement` with its proof `fieldUnitsTopology` in
@@ -324,22 +351,34 @@ Namespace `Langlands.HarishChandraSchwartz` (Worker 249), module directory
   `G` with an injective map `H` into a discrete subgroup of a
   finite-dimensional real normed space). Those bounds are hypotheses; they are
   not proved for an actual reductive group.
-
-Completeness of `C(G)` (III.6, via [B]) is not proved in any of these modules;
-`Basic` records it as open.
+- `SphericalLevi`: `leviComponent`, `LeviData`, `LeviData.xi_eq_integral`
+  (Lemma II.1.6 for `xi` and the function `Ξ^M` built in the same way on `M`,
+  from a supplied Levi projection `P → M` and characters `δ_P`, `δ_0^M` with
+  `δ_0 = δ_0^M δ_P` as hypotheses).
+- `SphericalTranslation`: `UniformTranslationBound`,
+  `xi_uniformTranslationBound` (Lemma II.1.2 for `xi` with `d = 0`),
+  `xi_translationWeights`, `xi_convolutionWeights` (the hypotheses of
+  `Translations` and `Convolution` for `xi`, the last one with Lemma II.1.5 as
+  a hypothesis).
+- `ConstantTerm`: `constantTerm` (`f^{(P)}` of III.6), `ConstantTermEstimate`
+  (the estimate of Proposition II.4.5 for `P̄`, as a hypothesis),
+  `ConstantTermData`, `Space.constantTerm` (the continuous linear map
+  `C(G) → C(M)`).
+- `ConstantTermInd`: `constantTermInd` (`f^{(P),Ind}` of III.6), its
+  `G × G`-equivariance and transformation law, `IsConjModulus`,
+  `isConjModulus_restrictCharacter` (the bridge to the Library's Haar modulus
+  `HaarModulus.restrictCharacter`), `TransitivityData` and
+  `TransitivityData.constantTermInd_constantTermInd` (the diagram of III.6,
+  proved pointwise; the induced space `I_{P×P}^{G×G} C(M)` is not constructed).
+- `Completeness`: `Space.completeSpace`, `Space.completeSpace_of_firstCountable`
+  (`C(G)` is complete, III.6 via [B], when `G` has a sequence of compact open
+  subgroups such that every compact open subgroup contains one of them; the
+  second form takes `G` nonarchimedean, weakly locally compact and first
+  countable).
 
 Other generic modules: `Langlands.GroupScheme.Rational.Characters` (rational
 characters, I.1); `Langlands/Representation/Exponents/CentralEigencharacterExtensionStatement`
 (statement only, I.3).
-
-### Candidates not yet in the Library
-
-At the time of writing, one further candidate of this task is accepted but not
-yet in the Library. It is not a Library dependency until published.
-
-- `ConstantTerm` (candidate `29c2f707`): `constantTerm` (`f^{(P)}` of III.6) and
-  the continuous linear map `C(G) → C(M)`, with Proposition II.4.5 (for `P̄`) as
-  the explicit hypothesis `ConstantTermEstimate`.
 
 ### `GL_n`-specific work
 

@@ -5,7 +5,8 @@ This source ledger covers Bundle A, initial Bundle B targets and Bundles C–F o
 and their verified formal status. Both parts of Theorem 1.1.15, Corollary
 1.1.19 and Proposition 1.1.20 have independently accepted, published proofs,
 recorded below in three of the
-forty-five rows. The other forty-two rows retain
+forty-five rows. The separately verified metric fixed-point aggregate assembles
+six published component proofs and adds no source row. The other forty-two rows retain
 empty formal-status and evidence fields. The remaining Bundle B targets still
 require public ledger entries. Private source audits and unsubmitted drafts are
 not publication evidence.
@@ -2389,9 +2390,8 @@ independent approval by Reviewer 9235. Machine receipt
 unchanged statement and frozen inputs. Integration
 `93f7ad8cdc594b0c8f09f9301559278d` published the exact pair in Library commit
 `7543113c99690e18b45f3b22d252e8cf77c3964e`. The frozen and published pair
-hashes agree. This focused proof establishes Corollary 1.1.19; the same
-child task's aggregate `MetricFixedPointFoundationStatement` remains an
-open deliverable.
+hashes agree. This focused proof establishes Corollary 1.1.19. The same
+child task's published aggregate proof is recorded separately below.
 
 Worker 1229 supplied `Langlands.Geometry.Metric.KP.nearestPointProjection`
 in task `023897fd-dccb-460b-831b-41b55d5622de`. It proves the exact
@@ -2414,6 +2414,37 @@ workspace pair hashes agree. The focused task is closed by completion
 declaration `c70b6dd9-9f2a-4530-ae97-b5fd413a2bbb`. This proves the
 qualitative Proposition 1.1.20, including the independent proof repairs
 above, while the building and Bundle A obligations remain open.
+
+## Verified aggregate metric fixed-point interface
+
+Worker 1249 also supplied
+`Langlands.Geometry.Metric.KP.metricFixedPointFoundation` in task
+`a3eadfc8-c446-402c-a08e-dd4d9edbf042`. It proves the exact published
+`MetricFixedPointFoundationStatement.{uX, uG}` by conjunction introduction
+from the six published component proofs: geodesic uniqueness, closed-ball
+convexity, the closed convex hull, barycenters, bounded-set stabilizer fixed
+points and bounded-action fixed points. The first three retain their NPC and
+geodesic premises; the next two additionally require completeness; the last
+requires a nonempty complete NPC space and constructs its geodesics. The
+aggregate assumes none of these statements as an input and preserves the
+independent metric-carrier and group universes. Its implementation is described
+in [KPMetricFixedPointFoundationProof](../../Langlands/Geometry/Metric/KPMetricFixedPointFoundationProof.md).
+
+Artifact `dcb96935-687d-4cac-bc42-f5976f6b6c30` has an unqualified
+independent approval by Reviewer 9329. Machine receipt
+`81bf2fd0-4da6-47c7-8c88-292d0bce0ec7` accepts the Lake build, exact target,
+unchanged statement and frozen inputs. Integration
+`4038c30168bc4a2495d3d43f73aa59bb` published the pair in Library commit
+`286dd3b743f0437d22db0e793222073b9424e3eb`. The frozen, published and
+workspace pair hashes agree. A local declaration inspection reports
+`uX` and `uG` and only `propext`, `Classical.choice` and `Quot.sound`.
+That development check is separate from the independent review and proof
+acceptance. No external Lean implementation is adopted.
+
+This is an internal aggregate of the existing metric statements, not a further
+source theorem or a new structured row. It closes the aggregate proof obligation.
+The actual reductive-group building and the proofs of its completeness and
+nonpositive curvature remain required before applying this interface to it.
 
 ## Initial interfaces and the next mathematical gates
 
@@ -2472,8 +2503,8 @@ The host environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. No external project is
 adopted by this note. The roadmap's external pins remain survey leads. Any
 adoption still requires a focused host compile, a mathematical and dependency
-audit, and its exact pin and licence. The two theorem-level axiom inspections
-recorded here concern only the published Theorem 1.1.15 proofs; no such report
+audit, and its exact pin and licence. The theorem-level axiom inspections
+recorded here concern published metric proofs and their aggregate; no such report
 is asserted for an unproved target.
 
 Bundle A is open. Bundles B–F, the general constructed instance, the depth-zero
