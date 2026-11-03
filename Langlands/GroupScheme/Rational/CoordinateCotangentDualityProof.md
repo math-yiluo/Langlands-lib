@@ -1,0 +1,5 @@
+# Actual kernel and augmentation cotangent duality
+
+This proof supplies `KernelCotangentDualityStatement` using the actual affine coordinates and augmentation quotient. The elementary augmented-algebra argument is derived infrastructure for the identification described in Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015), §3.3, printed p.107 / PDF p.133.
+
+For an augmented algebra, remove the scalar constant part and take its class in the augmentation quotient. Its product formula is the first-order Leibniz rule, since the difference is a product of augmentation elements. A derivation at the augmentation vanishes on these products and descends using `Ideal.Cotangent.lift`. Conversely a functional composed with the universal augmentation class is a derivation. The two operations are mutually inverse and linear over the coefficient algebra. Composing with `Lie.kernelDerivationLinearEquiv` gives the asserted duality on the actual Lie identity kernel, with exactly its specified evaluation on each augmentation class. No finite-type or smoothness assumption is used.

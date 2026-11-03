@@ -1,0 +1,9 @@
+# Finite type module flatness descent
+
+This internal lemma descends flatness of a finite module over a finite type algebra from an arbitrary scalar extension of a noetherian ring to a finitely generated subalgebra of that extension. The subalgebra can be required to contain an arbitrary finite set. No flatness of the ambient finite type algebra is assumed.
+
+Choose a polynomial algebra P over the noetherian starting ring surjecting onto the given finite type algebra B. The given finite B-module M is finite over P. Form the trivial square-zero extension E of P by M. It is finite over P, hence finite type and therefore finitely presented over the noetherian starting ring. Its underlying module is the product of P and M. After the prescribed scalar extension both summands are flat, since P is polynomial and M is flat by hypothesis. The published flat-algebra finite-subalgebra descent theorem applies to E. The scalar extension of M is a retract of that of E, so it is flat at the resulting finite subalgebra.
+
+The proof is a derived reduction using Mathlib's trivial square-zero extension, tensor product and flatness definitions, and the published flat-algebra descent theorem. The binary product flatness lemma uses tensor injectivity and the canonical tensor-product distribution equivalence.
+
+`flat_module_baseChange_of_le` proves that a larger subalgebra preserves the established flatness, using base change followed by the tensor cancellation equivalence. `exists_fg_subalgebra_forall_flat_module` applies the single-module result to each member of a finite family and combines the subalgebras by finite suprema. Induction over the finite index set proves finite generation, retains the prescribed coefficient set and preserves each module's flatness by the preceding base-change lemma.
