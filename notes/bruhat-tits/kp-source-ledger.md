@@ -6,7 +6,9 @@ and their verified formal status. Both parts of Theorem 1.1.15, Corollary
 1.1.19 and Proposition 1.1.20 have independently accepted, published proofs,
 recorded below in three of the
 forty-five rows. The separately verified metric fixed-point aggregate assembles
-six published component proofs and adds no source row. The other forty-two rows retain
+six published component proofs and adds no source row. The separately verified
+finite separable-unramified prerequisite is recorded below without adding a KP
+source row. The other forty-two rows retain
 empty formal-status and evidence fields. The remaining Bundle B targets still
 require public ledger entries. Private source audits and unsubmitted drafts are
 not publication evidence.
@@ -2496,6 +2498,72 @@ supplies no field theorem. Generic topologies and compact/open integral-point
 results remain owned by Conrad program
 `886bf565-95e9-4dc6-8a9d-73284a523668`; the KP program constructs its specific
 models and later proves the comparisons.
+
+## Verified finite separable-unramified prerequisite
+
+Workers 60 and 1199 supplied the finite arithmetic and Galois proof chain in
+task `490c0b7e-eb14-4ac6-847b-0877eeee4c27`; Worker 118 contributed the target
+design and original-source correspondence. The published theorem
+`Langlands.LocalGalois.Separable.separableUnramified` proves the exact
+`Langlands.LocalGalois.Separable.SeparableUnramifiedStatement.{u}`.
+Its implementation and source correspondence are described in
+[SeparableUnramifiedProof](../../Langlands/Galois/Local/SeparableUnramifiedProof.md);
+the full target is explained in
+[SeparableUnramifiedStatement](../../Langlands/Galois/Local/SeparableUnramifiedStatement.md).
+
+The base field has the supplied `Field`, `ValuativeRel`, `TopologicalSpace`
+and `IsNonarchimedeanLocalField` structures. The theorem covers mixed and equal
+characteristic in arbitrary universe `u`, including imperfect base fields. It
+uses the actual `SeparableClosure F`, the kernel of its residue action and
+`inertiaFixedField F`, with the canonical spectral integer rings and residue
+algebras. For every finite intermediate field `E`, containment in that fixed
+field is equivalent to `ArithmeticUnramified F E`: equality of the mapped
+base maximal ideal with the extension maximal ideal, together with
+separability of the canonical residue algebra. The finite field `E/F` need
+not be Galois. Every finite set of fixed-field elements, including the empty
+set, lies in a finite Galois arithmetically unramified intermediate field of
+the same separable closure.
+
+The proof composes the fixed-field containment equivalence, the inertia
+residue-degree criterion and the finite arithmetic criterion. It then
+discharges the maximality premise of the finite Galois exhaustion helper.
+The latter adjoins the actual finite image and takes its normal closure.
+The auxiliary units construct the closed-fiber residue map and spectral
+residue-tower comparisons and prove the criteria used in this composition.
+
+| Published unit | Independent acceptance and machine evidence | Publication |
+| --- | --- | --- |
+| Finite spectral arithmetic, `Langlands.Galois.Local.SeparableUnramifiedFiniteArithmetic`; artifact `028d9e7a-cc8c-4f00-9706-e405e0627aba` | Reviewer 10412; definition-unit receipt `8909b413-e583-47be-8c15-92c868f35f3e` | Integration `ee589f5fa2644991a08a30104e6fb1e6`, commit `428fa7c08e2fd98ecc08fa4e170f793c3c868556` |
+| Spectral residue comparisons and inertia criterion, `Langlands.Galois.Local.SeparableUnramifiedGaloisProof`; artifact `98eb0a98-5a25-4a54-b5ae-d5e22824f993` | Reviewer 10518; definition-unit receipt `49b5153b-3ebb-44f9-91d5-3372c007c190` | Integration `ba2ebc0c2928411fae9ffd43610aad2f`, commit `3c03a45ac21fd6b32cc3c822e5a641caace16a2b` |
+| Exact finite maximality and exhaustion proof, `Langlands.Galois.Local.SeparableUnramifiedProof`; artifact `95eb8dc1-5efe-43fe-adc4-19badf5334cd` | Reviewer 10693, unqualified approval; proof receipt `9d93044d-b751-4a4b-946d-7b9c2a7359bb` accepts the Lake build, exact target, unchanged statement and frozen inputs | Integration `b9748a28d74d43d7b8fa8d9496dbe082`, commit `0bafb17fad89ec0e812a3746bcaf72be623fc7d3` |
+
+All three artifacts are independently accepted and public. Their full
+Lean/Markdown pairs were read and their frozen and published hashes agree.
+The final pair also matches Library
+`690e7bce992fb723bd66806fa2db3acd6dc07d78` and the workspace. Development
+inspection `954d6b74-e233-4e84-9802-fe0233826da7` succeeds with zero diagnostics,
+universe parameter `u`, and only `propext`, `Classical.choice` and `Quot.sound`.
+That development inspection is separate from the proof receipt and review.
+
+The source formulation comes from Serre, *Local Fields* (1979),
+II §2 Proposition 3 and its corollaries (printed pp. 28–29),
+III §5 Theorems 1–3 and Corollary 1 (printed pp. 53–55), and the
+inertia correspondence in I §7 Propositions 20–22 and IV §1
+Proposition 1 and the corollary after Proposition 2 (printed pp. 21–22,
+62–63). The registered source is `serre-1979-local-fields`, SHA-256
+`109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
+read with `serre-book-corrections-2019`. KP §2.5(c), printed p. 88,
+uses the maximal unramified extension inside a separable closure; the
+November 2024 corrections retain that setup. This is a local-field
+prerequisite for the torus norm and descent work.
+
+Residue algebraic closure, value-group discreteness, the DVR structure and
+Henselian arithmetic of the infinite fixed field remain the separate
+`SeparableUnramifiedArithmeticStatement` proof obligation in task
+`991bd3f6-103a-4fbb-9cda-a9df4df94581`. The finite theorem assumes no
+completeness or local compactness of that infinite field. Torus norm-choice
+independence, the actual descended building and the full corrected
+Theorem 9.2.7 certificate remain open.
 
 ## Trust and release accounting
 
