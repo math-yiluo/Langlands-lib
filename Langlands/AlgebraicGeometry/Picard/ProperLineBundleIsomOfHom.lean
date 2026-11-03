@@ -31,6 +31,15 @@ namespace PicardGroupoid
 
 variable {S X : Scheme.{u}} (f : X ⟶ S) [Flat f] {T : Over S}
 
+/-- The presheaf of groupoid arrows between two line bundles in the relative
+Picard pseudofunctor agrees with that of their coherent-family images. -/
+def relativePresheafHomFamilyIso (L M : PicardGroupoid ((relativeSpace f).obj T)) :
+    (relative f).presheafHom L M ≅
+      (FamilyGroupoid.pseudofunctor f).presheafHom
+        ((relativeToFamily f T).obj L) ((relativeToFamily f T).obj M) :=
+  CategoryTheory.PseudofunctorPresheafHomTransport.presheafHomIso
+    (toFamilyStrongTrans f) L M (toFamilyStrongTransFullyFaithful f)
+
 /-- The actual line-bundle Isom presheaf agrees, on the entire test slice and
 with all its restriction maps, with the actual Isom presheaf of the included
 coherent families. -/
@@ -68,5 +77,12 @@ theorem properLineBundleIsomRepresentability_of_hom
     (IsAffineFinitePresentationRepresentable.of_isLimit_fork hPair hEnd
       (FamilyGroupoid.isomPairForkIsLimit f _ _))
     (PicardGroupoid.relativeIsomPresheafFamilyIso f L M).symm
+
+/-- Affine finitely presented representability of actual line-bundle Hom implies
+that of actual line-bundle Isom, on the whole test slice. -/
+theorem properLineBundleIsomRepresentability_of_properLineBundleHomRepresentability
+    (h : ProperLineBundleHomRepresentabilityStatement.{u}) :
+    ProperLineBundleIsomRepresentabilityStatement.{u} :=
+  properLineBundleIsomRepresentability_of_hom h
 
 end Langlands.AlgebraicGeometry.Picard

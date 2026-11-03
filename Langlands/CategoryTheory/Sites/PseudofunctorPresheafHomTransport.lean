@@ -110,4 +110,10 @@ def presheafHomIso (hα : ∀ Z : C, (component α Z).FullyFaithful) :
 lemma presheafHomIso_hom (hα : ∀ Z : C, (component α Z).FullyFaithful) :
     (presheafHomIso α M N hα).hom = presheafHomMap α M N := rfl
 
+/-- Each component of the comparison is the explicit transport of morphisms. -/
+lemma presheafHomIso_hom_app_apply (hα : ∀ Z : C, (component α Z).FullyFaithful)
+    (Z : (Over S)ᵒᵖ) (φ : (F.presheafHom M N).obj Z) :
+    (presheafHomIso α M N hα).hom.app Z φ =
+      transportHom α M N Z.unop.hom Z.unop.hom φ := rfl
+
 end Langlands.CategoryTheory.PseudofunctorPresheafHomTransport

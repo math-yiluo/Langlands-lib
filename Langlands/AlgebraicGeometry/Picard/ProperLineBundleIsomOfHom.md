@@ -69,3 +69,24 @@ the full test slice. Properness and local finite presentation are used only
 through the Hom hypothesis; the comparison isomorphism needs only flatness.
 This module supplies no unconditional Hom or Isom representability proof and no
 Picard atlas.
+
+`PicardGroupoid.relativePresheafHomFamilyIso` exposes the first comparison
+before whiskering, using the existing
+`PseudofunctorPresheafHomTransport.presheafHomIso`. Its component sends a
+groupoid arrow to its image conjugated by the strong transformation's
+comparison isomorphisms. Both the forward and inverse maps agree with the
+comparison used in `relativeIsomPresheafFamilyIso`.
+
+`properLineBundleIsomRepresentability_of_properLineBundleHomRepresentability`
+is an alternate theorem name for the same conditional implication, proved by
+`properLineBundleIsomRepresentability_of_hom`.
+
+## Source correspondence
+
+The equalizer argument is the proof of Stacks Project Proposition 99.4.3
+(Section 99.4, Tag 08K7), which obtains the Isom functor from Hom functors and
+the two inverse equations. The retained original is `08K7.html` in registered
+source `stacks-isom-functor-08k7-2026-11-02` (folder SHA-256
+`a05b61ba562e7e65dd2b64446e779a6bb67af1846c0a00f4a656d64a2b2c27b5`).
+The line-bundle/coherent-family comparison is an internal application of the
+published fully faithful strong transformation `toFamilyStrongTrans`.

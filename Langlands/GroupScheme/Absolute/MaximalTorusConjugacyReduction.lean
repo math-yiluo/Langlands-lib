@@ -1,5 +1,7 @@
 import Langlands.GroupScheme.Absolute.BorelStatement
 import Langlands.GroupScheme.Torus.MaximalTransport
+import Langlands.GroupScheme.Absolute.SolvableSubgroupBorelContainmentStatement
+import Langlands.GroupScheme.Torus.Geometry
 
 /-! # Reduction of maximal-torus conjugacy to Borel subgroups -/
 
@@ -115,5 +117,32 @@ theorem maximalTorusConjugacyStatement_of_borel_inputs
       rw [← Over.w i.hom.hom]
       infer_instance
     exact hsolvable k B hi.isSolvableGroupScheme
+
+/-- Containment of each given solvable subgroup places each given maximal torus in a Borel. -/
+theorem maximalToriLieInBorels_of_solvableSubgroupBorelContainment
+    (hcontain : SolvableSubgroupBorelContainmentStatement.{u})
+    (k : Type u) [Field k] [IsAlgClosed k]
+    (G : GroupScheme (Spec (CommRingCat.of k)))
+    [Smooth G.X.hom] [IsAffineHom G.X.hom] [ConnectedSpace G.X.left] :
+    MaximalToriLieInBorels G := by
+  intro T j hj
+  let : Smooth T.toGrp.X.hom := hj.1.smooth
+  let : ConnectedSpace T.toGrp.X.left := hj.1.connectedSpace
+  obtain ⟨B, i, f, hi, hf⟩ := hcontain k G T.toGrp j hj.2.1
+    (isSolvableGroupScheme_of_isCommMonObj T.toGrp)
+  exact ⟨B, i, hi, hj, f, hf⟩
+
+/-- The general solvable containment input can be used in the existing conjugacy reduction. -/
+theorem maximalTorusConjugacyStatement_of_solvableSubgroupBorelContainment
+    (hBorel : BorelConjugacyStatement.{u})
+    (hcontain : SolvableSubgroupBorelContainmentStatement.{u})
+    (hsolvable : ∀ (k : Type u) [Field k] [IsAlgClosed k]
+      (B : GroupScheme (Spec (CommRingCat.of k)))
+      [Smooth B.X.hom] [IsAffineHom B.X.hom] [ConnectedSpace B.X.left],
+      IsSolvableGroupScheme B → MaximalToriAreConjugate B) :
+    MaximalTorusConjugacyStatement.{u} :=
+  maximalTorusConjugacyStatement_of_borel_inputs hBorel
+    (maximalToriLieInBorels_of_solvableSubgroupBorelContainment hcontain) hsolvable
+
 
 end Langlands.GroupScheme

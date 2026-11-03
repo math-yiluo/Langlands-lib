@@ -37,7 +37,7 @@ Neither overgroup is required to be a Borel in this lemma.
 pairs supplied by `MaximalToriLieInBorels G`. It explicitly assumes
 conjugacy of Borel embeddings and conjugacy of maximal tori in each Borel.
 
-Finally, `maximalTorusConjugacyStatement_of_borel_inputs` assembles the
+The theorem `maximalTorusConjugacyStatement_of_borel_inputs` assembles the
 unchanged target from three universal hypotheses: `BorelConjugacyStatement`,
 containment of every maximal torus in a Borel, and conjugacy of maximal
 tori in smooth affine connected solvable groups over algebraically closed
@@ -63,3 +63,31 @@ stated containment property, and solvable-group conjugacy remain proof
 obligations. In particular, assuming these propositions is not a proof of
 the unconditional target, and no parabolic maximal-torus result is used
 to discharge them.
+
+`maximalToriLieInBorels_of_solvableSubgroupBorelContainment` assumes the general
+solvable subgroup containment proposition. Over an algebraically closed field
+`k : Type u`, let `G` be smooth, affine, and connected. For each given maximal
+torus embedding `j : T.toGrp ⟶ G`, the torus condition in its maximality
+hypothesis supplies smoothness and connectedness through `IsTorus.smooth`
+and `IsTorus.connectedSpace`. Commutativity supplies
+`IsSolvableGroupScheme T.toGrp` through the published geometric-points
+solvability lemma. The closed subgroup condition is also part of maximality.
+
+Applying the assumed containment proposition to this same `T.toGrp` and `j`
+produces an actual Borel embedding `i : B ⟶ G` and a factor
+`f : T.toGrp ⟶ B` with `f ≫ i = j`. Together with the original maximality
+hypothesis these give `IsBorelPair i j`. Thus the conclusion is
+`MaximalToriLieInBorels G`, including containment of every given maximal torus.
+The proof does not select a different torus or require a splitting field.
+
+`maximalTorusConjugacyStatement_of_solvableSubgroupBorelContainment` passes this
+adapter to the published conjugacy reduction. It concludes exactly the
+existing `MaximalTorusConjugacyStatement.{u}` under three explicit structural
+inputs: `BorelConjugacyStatement.{u}`, the general solvable subgroup
+containment statement, and maximal-torus conjugacy in every smooth affine
+connected solvable group over an algebraically closed field.
+
+Both results are conditional. This module proves none of these three
+structural inputs and does not by itself prove the unconditional maximal-torus
+conjugacy theorem. Its full scope retains arbitrary universe and
+characteristic, with no reductivity or splitness assumption.

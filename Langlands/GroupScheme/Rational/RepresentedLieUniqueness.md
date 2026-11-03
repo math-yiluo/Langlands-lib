@@ -1,9 +1,12 @@
-# Included represented subgroups with the same Lie image
+# Included represented subgroups and semigroup Lie uniqueness
 
 This internal helper constructs the actual morphism between representatives
 of two subgroup functors included on every test scheme. It also reduces a
-subgroup-equality step to the existing `LieSubgroupEqualityStatement`, which
-remains an explicit proof premise.
+subgroup-equality step to `LieSubgroupEqualityStatement`. The original
+`eq_of_le_of_hasLieImage` retains that explicit premise.
+`IsSmoothConnectedClosed.eq_of_le_of_hasLieImage` now instantiates it with
+the published proof `Langlands.GroupScheme.lieSubgroupEquality`, imported
+from `Lie.SubgroupEqualityProof`.
 
 `SubgroupFunctor.IsRepresentedBy.homOfLe` uses the published fully faithful
 group-valued Yoneda lift, with the inclusion of the two subgroup point groups
@@ -32,10 +35,35 @@ Affineness of `H'` is inherited from the closed immersion into affine `G`.
 Smoothness and connectedness are taken from the supplied representative
 witnesses; no ambient smoothness or torus action is needed.
 
-The provenance is internal: the construction and proof use the existing
-Yoneda lift, all-test subgroup and Lie-image definitions, elementary
-closed-immersion cancellation, and the explicitly assumed published
-proposition. The unit supplies no proof of that proposition and no
-unconditional uniqueness theorem for semigroup subgroups. Its role is to
-make the remaining geometric input to the semigroup uniqueness argument
-precise.
+The semigroup reductions assume an affine ambient group locally of finite
+type over any field and an actual action of a split torus. Ambient
+smoothness is not required here. By the published
+`RelativeRoot.actionWeightSupport_subset_of_tangentSubmodule_le`
+lemma from `Rational.SemigroupWeightSupport`, tangent containment in the selected
+semigroup weight span implies support containment. Thus a smooth connected
+stable closed subgroup with that tangent bound is an admissible generator,
+so it lies in the actual generated functor on every test scheme.
+`le_semigroupSubgroup_of_hasLieImage` specializes this result to the exact
+Lie image. It needs no representative of the generated functor.
+
+`semigroupSubgroup_maximality_of_hasLieImage` applies the same support
+bound to the generated subgroup and then uses the published closure
+maximality lemma. Exact Lie image of the generated functor suffices; this
+step does not assume its smooth representability.
+
+Finally, `eq_semigroupSubgroup_of_hasLieImage` assumes that the actual
+generated functor has a smooth connected closed realization and the exact
+selected Lie image. Every smooth connected stable closed subgroup with
+that Lie image lies in the generated functor by the preceding generator
+inclusion. Applying the proved included-subgroup equality theorem gives
+equality. The smooth realization and exact Lie image of the generated
+functor remain explicit geometric premises. No separate common envelope
+or arbitrary comparison of subgroups from Lie images alone is asserted.
+
+The provenance is internal: the construction and proofs use the published
+Yoneda lift, actual all-test subgroup and Lie-image definitions,
+closed-immersion cancellation, the full-Lie theorem, the intrinsic
+split-torus support bound, and the closure universal property. This unit
+does not prove smooth realization, exact Lie image, unipotence or
+split unipotence of the generated semigroup subgroup, and hence does not
+prove the full `SemigroupRealizationStatement`.

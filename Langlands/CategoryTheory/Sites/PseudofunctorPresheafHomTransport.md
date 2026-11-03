@@ -51,3 +51,8 @@ assumed: the comparison concerns objects in the image of the transformation.
 
 This module constructs comparisons of presheaves only. It asserts no
 representability, no stack property and no atlas existence.
+
+`presheafHomIso_hom_app_apply` records that the forward component at a slice
+object is exactly `transportHom` applied to its structure map twice. It is the
+componentwise form of `presheafHomIso_hom`. The comparison and its component
+formula share the `PseudofunctorPresheafHomTransport` namespace.

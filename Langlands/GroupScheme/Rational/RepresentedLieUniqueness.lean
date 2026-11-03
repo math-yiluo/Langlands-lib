@@ -2,6 +2,9 @@ import Langlands.GroupScheme.RepresentedSubgroup
 import Langlands.GroupScheme.Rational.WeightSemigroup
 import Langlands.GroupScheme.Rational.RootSubgroupStructureStatement
 import Langlands.GroupScheme.Lie.SubgroupEqualityStatement
+import Langlands.GroupScheme.Lie.SubgroupEqualityProof
+import Langlands.GroupScheme.Rational.SemigroupClosure
+import Langlands.GroupScheme.Rational.SemigroupWeightSupport
 
 /-! # Included represented subgroups with the same actual Lie image -/
 
@@ -119,6 +122,72 @@ theorem eq_of_le_of_hasLieImage
   obtain ⟨y, hy⟩ := SubgroupFunctor.mem_range.mp hz
   rw [← hy, Category.assoc, ← Grp.comp_hom_hom, hf, ← hj.2]
   exact SubgroupFunctor.mem_range.mpr ⟨y, rfl⟩
+
+/-- Included smooth connected closed subgroup functors with the same actual Lie
+image are equal, by the published full-Lie closed-subgroup theorem. -/
+theorem IsSmoothConnectedClosed.eq_of_le_of_hasLieImage
+    {F F' : SubgroupFunctor G}
+    (hF : IsSmoothConnectedClosed F) (hF' : IsSmoothConnectedClosed F')
+    (h : F ≤ F') {W : Submodule k (Additive (lieKernel G k))}
+    (hLie : HasLieImage F W) (hLie' : HasLieImage F' W) : F = F' :=
+  _root_.Langlands.GroupScheme.RelativeRoot.eq_of_le_of_hasLieImage
+    lieSubgroupEquality hF hF' h hLie hLie'
+
+section Semigroup
+
+variable [LocallyOfFiniteType G.X.hom]
+    {S : CommGroupScheme (Spec (CommRingCat.of k))}
+    (b : AutomorphicAction S.toGrp G) (hS : IsSplitTorus S.toGrp)
+    (A : AddSubsemigroup (characterLattice S))
+
+include hS
+
+/-- A smooth connected invariant closed subgroup whose tangent lies in the
+selected weight span is an admissible generator, hence lies in the actual
+generated semigroup subgroup on every test. -/
+theorem le_semigroupSubgroup_of_tangentSubmodule_le
+    {F : SubgroupFunctor G} (hF : IsSmoothConnectedClosed F)
+    (hstable : b.IsStable F)
+    (hLie : tangentSubmodule F ≤ semigroupWeightSpan b A) :
+    F ≤ semigroupSubgroup b A :=
+  generator_le_semigroupSubgroup b A F
+    ⟨hF, hstable, actionWeightSupport_subset_of_tangentSubmodule_le b hS A F hLie⟩
+
+/-- Exact Lie image supplies the support bound needed for the generator
+inclusion; no realization of the generated functor is assumed. -/
+theorem le_semigroupSubgroup_of_hasLieImage
+    {F : SubgroupFunctor G} (hF : IsSmoothConnectedClosed F)
+    (hstable : b.IsStable F)
+    (hLie : HasLieImage F (semigroupWeightSpan b A)) :
+    F ≤ semigroupSubgroup b A :=
+  le_semigroupSubgroup_of_tangentSubmodule_le b hS A hF hstable
+    (le_of_eq ((hasLieImage_iff_tangentSubmodule_eq F _).mp hLie))
+
+/-- Exact Lie image of the generated subgroup suffices for its full maximality
+equivalence. Its own smooth representability is not needed for this step. -/
+theorem semigroupSubgroup_maximality_of_hasLieImage
+    (hLie : HasLieImage (semigroupSubgroup b A) (semigroupWeightSpan b A))
+    (F : SubgroupFunctor G) (hF : IsSmoothConnectedClosed F) (hstable : b.IsStable F) :
+    actionWeightSupport b F ⊆ A ↔ F ≤ semigroupSubgroup b A :=
+  semigroupSubgroup_maximality_of_support b A
+    (actionWeightSupport_subset_of_tangentSubmodule_le b hS A _
+      (le_of_eq ((hasLieImage_iff_tangentSubmodule_eq _ _).mp hLie)))
+    F hF hstable
+
+/-- Once the generated subgroup has a smooth connected closed realization and
+the exact Lie image, any smooth connected invariant closed subgroup with that
+Lie image equals it. The two geometric properties of the generated subgroup
+remain explicit premises. -/
+theorem eq_semigroupSubgroup_of_hasLieImage
+    (hgenerated : IsSmoothConnectedClosed (semigroupSubgroup b A))
+    (hgeneratedLie : HasLieImage (semigroupSubgroup b A) (semigroupWeightSpan b A))
+    {F : SubgroupFunctor G} (hF : IsSmoothConnectedClosed F)
+    (hstable : b.IsStable F) (hLie : HasLieImage F (semigroupWeightSpan b A)) :
+    F = semigroupSubgroup b A :=
+  hF.eq_of_le_of_hasLieImage hgenerated
+    (le_semigroupSubgroup_of_hasLieImage b hS A hF hstable hLie) hLie hgeneratedLie
+
+end Semigroup
 
 end RelativeRoot
 end Langlands.GroupScheme
