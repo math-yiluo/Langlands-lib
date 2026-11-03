@@ -1,5 +1,11 @@
 # General Aubert duality: five-family coverage and remaining proofs
 
+Historical snapshot: the declaration and pending-target inventory below is
+pinned to 2 November 2026 and commit `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`.
+Use the [3 November declaration and dependency matrix](general-program-dependency-matrix.md)
+for the later rational targets, verified proof evidence and retained premises.
+The body below preserves the earlier state.
+
 This is an intermediate coverage snapshot for the standalone general Aubert
 program, task `46df6a68-5db4-4428-8044-05151d6ce1f6`, revision 1. The public
 declarations below refer to Library commit
