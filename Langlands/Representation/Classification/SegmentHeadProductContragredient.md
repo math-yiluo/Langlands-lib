@@ -1,0 +1,1202 @@
+# Optional truncations and supplied head products under smooth duality
+
+Author: Worker 357.
+
+This internal construction supplies the optional-truncation conversion and the
+actual dual product datum needed by the independent special-head product task
+`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`. It combines published individual-head
+endpoint reversal and general normalized-product smooth duality. The full
+product irreducibility criterion remains unproved.
+
+## Parameters and constructions
+
+Let `p` be any prime, `F : PadicField.{uF} p` an actual p-adic field and
+`T : F.TopologicalData` the supplied compatible topology. The universes `uF`
+and `uV` are independent. All cuspidal data and segments remain at the original
+`uV`; supplied heads and induced products have actual smooth complex carriers
+in `Type (max uF uV)`. Every group topology is the one supplied by `T`.
+
+Write `D` for `CuspidalProductContragredient.dualDatum`. The published
+`Segment.dual` reverses endpoints: the base of `Delta.dual` is `D Delta.last`,
+its last member is `D Delta.base`, and its length and degree are unchanged.
+
+For an optional segment `A`, `A.map Segment.dual` represents its possibly
+empty dual. The paired Lean proves:
+
+- `Segment.optionalSupport_dual`: its support set is the `D` image of the
+  original optional support set, including the empty case.
+- `Segment.IsTerminalTruncation.dual`: a terminal truncation of `Delta`
+  becomes an initial truncation of `Delta.dual`.
+- `Segment.IsInitialTruncation.dual`: an initial truncation becomes a terminal
+  truncation of the dual segment.
+- `Segment.optional_dual_dual`: the operation is involutive on optional
+  segments. The two `isInitialTruncation_dual_iff` and
+  `isTerminalTruncation_dual_iff` lemmas consequently give both converse
+  implications.
+- `Segment.iUnion_optionalSupport_dual`: the `D` image commutes with the
+  support union for any indexed family, including an empty family. These
+  are set statements; they do not assert support multiplicities.
+
+For every `d : T.SegmentProductDatum.{uV,uF} n`,
+`SegmentProductDatum.dual d` retains exactly its length and factor labels,
+replaces segment `i` by `(d.segments i).dual`, and replaces its actual block
+by `(d.blocks i).contragredient`. Degree preservation makes the original
+`degree_sum` applicable without a rank cast. The simp lemmas `dual_length`,
+`dual_segments`, and `dual_shape` record preservation of the labels and the
+ordered block shape.
+
+`SegmentProductDatum.HasSegmentHeads.dual` proves that the dual datum has
+supplied special heads whenever the original datum does. Finally,
+`SegmentProductDatum.contragredientInducedIso d hd` constructs an actual
+categorical isomorphism
+
+`d.induced.contragredient ≅ d.dual.induced`.
+
+The induction uses the same upper block parabolic and the same factor order.
+Repeated labels are retained. The constructions and product comparison allow
+all natural total ranks, including zero, where positivity of segment degrees
+forces an empty factor family. No precedence or nonlinkage assumption is made.
+
+## Implemented proof
+
+For the optional support identity, split into `none` and `some E`. The first
+case is the empty-image identity and the second is the published
+`Segment.dual_support` equality. In the nonempty truncation cases, the
+published equality rewrites both support sets to their `D` images.
+`Set.image_mono` transports support containment. The retained terminal endpoint
+becomes the base of the dual segment by the definition of `Segment.dual`.
+Conversely the retained initial endpoint becomes the last member by the
+published `Segment.dual_last`. Each endpoint membership is the image of the
+original actual endpoint membership. The empty cases are true by definition.
+
+Optional involution follows by splitting the option and using
+`Segment.dual_dual`. Applying the other truncation conversion and then this
+involution proves each reverse implication. Rewriting with
+`optionalSupport_dual` and `Set.image_iUnion` proves the indexed-union equality.
+This route uses the exact existing support-containment-and-endpoint definitions
+of the two truncation predicates.
+
+The actual datum constructor installs the supplied topology and all supplied
+`GeneralLinear` topological group structures, then forms the same-label
+family of actual smooth duals. The segment degrees are definitionally unchanged.
+The supplied-head theorem applies the independently published
+`IsSegmentHead.contragredient` separately at each original label.
+
+For the product comparison, `IsSegmentHead.isAdmissible` provides
+admissibility of every original supplied block. The independently published
+`CuspidalProductContragredient.nonempty_contragredient_productEquiv` then
+supplies an actual representation equivalence between the smooth dual of the
+original normalized product and the normalized product of the smooth duals.
+That general theorem uses normalized-induction duality and the smooth-dual
+finite-tensor equivalence for admissible blocks. Classical choice selects
+one of these proved equivalences; `SmoothRep.mkIso` bundles it as a categorical
+isomorphism. The definitional lemma `dual_induced` first rewrites the dual
+datum's induced object to the original block shape. It avoids elaborating
+large induction definitions while comparing two definitionally equal shapes;
+it introduces no new mathematical assumption or product equivalence.
+
+## Published inputs and provenance
+
+This is internal composition of published constructions, with no new external
+source assertion. The three direct imports have the following roles:
+
+- [SegmentHeadContragredient](SegmentHeadContragredient.md) supplies endpoint
+  reversal, its support and involution identities, and smooth duality of every
+  supplied individual special head. Its individual-head route uses the
+  permitted special-head existence and decreasing-induction characterization,
+  actual dualized quotient maps and general smooth-dual irreducibility.
+- [SegmentHeadProductFiniteness](SegmentHeadProductFiniteness.md) supplies the
+  already proved admissibility of each supplied head. Its other finite-length
+  and composition-series declarations are not invoked in this proof.
+- [SegmentTruncationObstructionStatement](SegmentTruncationObstructionStatement.md)
+  supplies the existing definitions of optional support, initial truncation
+  and terminal truncation. Its Prop-valued obstruction statement is not used
+  as a theorem, and the obstruction proof is not imported.
+
+The general product duality is reached through the first import's published
+[CuspidalProductContragredient](CuspidalProductContragredient.md). No pending
+support aggregation candidate or private support-bound specialization is an
+input. All inherited Lean and paired Markdown files are unchanged from
+Library `4103487976e26033768519d7c8e53adf6d10c898`.
+
+## Independence audit
+
+A recursive native import traversal at that Library base found 732 project
+modules including this entry and 244 directly named external import roots.
+All 731 inherited Lean/Markdown pairs match that Library byte for byte.
+Every project import and nonempty paired Markdown is present. The complete
+project inventory and external roots are reproduced below. The scan found
+no proof holes, new axioms, prohibited execution syntax or host-excluded
+identifier occurrence. No derivative or mirabolic module is in this closure.
+
+For continuity with the already completed semantic audits, 729 inherited pairs
+also match both fingerprints in the individual-dual-head, head-product
+finiteness or final-support closure audit inventories. The two other inherited
+pairs are `HeadTargetTransport` and `SegmentHeadContragredient`, the former
+moved during meaning-preserving publication of the latter. Both current Lean
+implementations and the former's complete explanation and latter's substantive
+explanation were read again. Target transport composes an actual quotient map
+with an invertible target map and preserves its kernel. Individual-head duality
+uses only the permitted individual-head constructions and general induction,
+tensor and smooth-dual theory. No new lower proof route is introduced by this
+same-label assembly.
+
+The inherited `SegmentHeadDecreasingSocle` concerns the permitted special head
+as the socle of decreasing induction. It is distinct from segment-socle
+existence for increasing induction. Lower cuspidal Jacquet multiplicity and
+individual-head detection are not the excluded full segment Jacquet formula.
+Inherited tempered or other broad statement interfaces are not assumed as
+classification theorems. The only invoked proof routes are the elementary
+support-image identities, individual-head smooth duality, individual-head
+admissibility, and general actual normalized-product duality described above.
+
+In particular, the closure and proof do not use the host criterion or either
+direction of it; parent generic-product uniqueness; multisegment exhaustion;
+ordered strong-head existence; quotient coverage; ordered conversion; tempered
+uniqueness; square-integrable classification or exhaustion; or regular
+exhaustion. The host and excluded task identifiers are
+`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`,
+`30341ae4-65f2-4a0e-9283-763db01a409e`,
+`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
+`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
+`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
+`8252833d-c269-41a9-824c-5879e531b23b`,
+`52e97845-36bb-457d-b76f-70753334b88c`,
+`1cb45da2-7007-4351-a694-594fb148b8d1`,
+`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and
+`bf433f0a-921a-428c-b0c0-6475438125ac`.
+
+All additional host exclusions remain, including tasks with prefixes
+`ed48ae06`, `b95105c6`, `55ad1e10`, `92aea10f`, `2ae5cbe5`, and the
+segment-socle part of `8e5b4563`. No Ze80 3.5/9.6 result or proof successor,
+segment derivative formula, derivative irreducibility, truncated-head
+identification, full segment Jacquet equivalence or linked segment product
+conclusion occurs. This preserves operator decisions
+`bd71b9185aab5d6eafffb7891bd3a3ca`,
+`0edda6122ce65ed7ac51603c37473920`,
+`30144f6f9b59540b88b6d4c1517892d9`, and
+`ed80148e21e7523abfc048f455e98eb0`, read in full. The restricted `core_mid`
+step of the separate support proof is not imported or invoked.
+
+This unit proves no relation between differentiating a dual and dualizing a
+derivative, no highest-derivative shift equality, no support multiplicity
+formula, and no irreducibility criterion. Those remain separate obligations.
+
+## Complete recursive project inventory
+
+The following names include the new entry and all 731 inherited project modules.
+
+```text
+Langlands.Algebra.CommutingDimensionHelpers
+Langlands.Algebra.CommutingDimensionNilpotent
+Langlands.Algebra.CommutingDimensionNumerics
+Langlands.Algebra.CommutingDimensionPrimary
+Langlands.Algebra.CommutingDimensionRecurrence
+Langlands.Algebra.SandwichDimensionBoundProof
+Langlands.Algebra.SandwichDimensionBoundStatement
+Langlands.Algebra.SeparatedMatrixRepresentations
+Langlands.Analysis.Local.CompactOpenCoverUnimodularityProof
+Langlands.Analysis.Local.CompactOpenCoverUnimodularityStatement
+Langlands.Analysis.Local.ModularCompactAverage
+Langlands.Analysis.Local.QuotientAutomorphismProof
+Langlands.Analysis.Local.QuotientAutomorphismStatement
+Langlands.Analysis.Local.QuotientAverageReal
+Langlands.Analysis.Local.QuotientAveragingKernel
+Langlands.Analysis.Local.QuotientComplex
+Langlands.Analysis.Local.QuotientFunctional
+Langlands.Analysis.Local.QuotientMass
+Langlands.Analysis.Local.QuotientMeasure
+Langlands.Analysis.Local.QuotientMeasureExistence
+Langlands.Analysis.Local.QuotientMeasureExistenceStatement
+Langlands.Analysis.Local.QuotientMeasurePrerequisites
+Langlands.Analysis.Local.QuotientPositiveLifting
+Langlands.Analysis.Local.QuotientTopology
+Langlands.Analysis.Local.QuotientTranslation
+Langlands.Analysis.Local.SplitKernelQuotient
+Langlands.ClassFieldTheory.Local.Completion
+Langlands.ClassFieldTheory.Local.FiniteArtin
+Langlands.ClassFieldTheory.Local.Galois
+Langlands.ClassFieldTheory.Local.Norms
+Langlands.ClassFieldTheory.Local.ProfiniteReciprocityStatement
+Langlands.ClassFieldTheory.Local.ReciprocityRelations
+Langlands.ClassFieldTheory.Local.Transfer
+Langlands.ClassFieldTheory.Local.Units
+Langlands.ClassFieldTheory.Local.WeilAbelianization
+Langlands.ClassFieldTheory.Local.WeilReciprocityStatement
+Langlands.Correspondence.AutomorphicRelations
+Langlands.Correspondence.Domains
+Langlands.Correspondence.LocalConventions
+Langlands.Correspondence.OperationCompatibility
+Langlands.Correspondence.SupercuspidalRelations
+Langlands.Correspondence.UnramifiedNormalization
+Langlands.Galois.FiniteField.Comparison
+Langlands.Galois.FiniteField.ComparisonProof
+Langlands.Galois.FiniteField.Frobenius
+Langlands.Galois.Local.AbsoluteDefinitions
+Langlands.Galois.Local.AbsoluteProof
+Langlands.Galois.Local.AbsoluteStatement
+Langlands.Galois.Local.SpectralDefinitions
+Langlands.Galois.Local.SpectralProof
+Langlands.Galois.Local.SpectralStatement
+Langlands.Group.GL.Basic
+Langlands.Group.GL.BlockContractionProof
+Langlands.Group.GL.BlockContractionStatement
+Langlands.Group.GL.BlockIwahoriBasis
+Langlands.Group.GL.BlockIwahoriBasisStatement
+Langlands.Group.GL.BlockIwahoriDefinitions
+Langlands.Group.GL.BlockModulus
+Langlands.Group.GL.BlockModulusHaarProof
+Langlands.Group.GL.BlockModulusHaarStatement
+Langlands.Group.GL.BlockUnipotentCoordinates
+Langlands.Group.GL.BlockUnipotentHaarProof
+Langlands.Group.GL.BlockUnipotentHaarStatement
+Langlands.Group.GL.Blocks
+Langlands.Group.GL.CartanProof
+Langlands.Group.GL.CartanStatement
+Langlands.Group.GL.CompactOpen
+Langlands.Group.GL.CountabilityProof
+Langlands.Group.GL.CountabilityStatement
+Langlands.Group.GL.DominantExponentGeneration
+Langlands.Group.GL.IntegralSubgroup
+Langlands.Group.GL.InverseTransposeIwahoriProof
+Langlands.Group.GL.InverseTransposeIwahoriStatement
+Langlands.Group.GL.Maps
+Langlands.Group.GL.Nonarchimedean
+Langlands.Group.GL.NonarchimedeanStatement
+Langlands.Group.GL.NormalizedCharacter
+Langlands.Group.GL.OneBlockShape
+Langlands.Group.GL.OppositeBlocks
+Langlands.Group.GL.Padic
+Langlands.Group.GL.PadicBlocks
+Langlands.Group.GL.PadicOppositeBlocks
+Langlands.Group.GL.PadicUpperUnipotent
+Langlands.Group.GL.ParabolicModularCharacter
+Langlands.Group.GL.PrincipalBlockFactorizationProof
+Langlands.Group.GL.PrincipalBlockFactorizationStatement
+Langlands.Group.GL.PrincipalLevelDominance
+Langlands.Group.GL.RankMaps
+Langlands.Group.GL.RefinementCoordinates
+Langlands.Group.GL.ReverseBlocks
+```
+
+```text
+Langlands.Group.GL.SingleBlock
+Langlands.Group.GL.SingletonBlocks
+Langlands.Group.GL.Transvection
+Langlands.Group.GL.TriangularParabolic
+Langlands.Group.GL.UnramifiedCharacter
+Langlands.Group.GL.UpperBruhatEmbedding
+Langlands.Group.GL.UpperBruhatPivotProof
+Langlands.Group.GL.UpperBruhatPivotStatement
+Langlands.Group.GL.UpperBruhatProof
+Langlands.Group.GL.UpperBruhatStatement
+Langlands.Group.GL.UpperUnipotent
+Langlands.Group.HaarModulus
+Langlands.Group.LeftQuotient
+Langlands.HarmonicAnalysis.AlgebraicIntegral
+Langlands.HarmonicAnalysis.AlgebraicIntegrand
+Langlands.HarmonicAnalysis.Basic
+Langlands.HarmonicAnalysis.Conductor
+Langlands.HarmonicAnalysis.FiniteProductMeasureScaling
+Langlands.HarmonicAnalysis.HaarConjugacy
+Langlands.HarmonicAnalysis.PadicHaarScalingStatement
+Langlands.HarmonicAnalysis.PadicRectangularHaarScalingProof
+Langlands.HarmonicAnalysis.PadicScalarHaarScalingProof
+Langlands.HarmonicAnalysis.TriangularTranslationProof
+Langlands.HarmonicAnalysis.TriangularTranslationStatement
+Langlands.LocalFactor.RankOne
+Langlands.LocalField.Canonical
+Langlands.LocalField.Definitions
+Langlands.LocalField.Normalization.Definitions
+Langlands.LocalField.Normalization.Proof
+Langlands.LocalField.Normalization.Statement
+Langlands.LocalField.Topology
+Langlands.LocalField.Uniformizer
+Langlands.Representation.Category.Abelian
+Langlands.Representation.Category.Basic
+Langlands.Representation.Category.ClassInvariants
+Langlands.Representation.Category.ConstituentDichotomy
+Langlands.Representation.Category.ConstituentDichotomyStatement
+Langlands.Representation.Category.Contragredient
+Langlands.Representation.Category.FiniteIndexRestriction
+Langlands.Representation.Category.FiniteIndexSemisimplicity
+Langlands.Representation.Category.FiniteIndexSemisimplicityStatement
+Langlands.Representation.Category.RestrictionSubquotients
+Langlands.Representation.Category.Subquotients
+Langlands.Representation.Category.Twist
+Langlands.Representation.Classification.CanonicalConstituents
+Langlands.Representation.Classification.CommonImageMultiplicityOneProof
+Langlands.Representation.Classification.CommonImageMultiplicityOneStatement
+Langlands.Representation.Classification.ConstituentRelations
+Langlands.Representation.Classification.Cosocle
+Langlands.Representation.Classification.CuspidalIntegralTwistFreenessProof
+Langlands.Representation.Classification.CuspidalIntegralTwistFreenessStatement
+Langlands.Representation.Classification.CuspidalJacquetFunctorExactnessProof
+Langlands.Representation.Classification.CuspidalJacquetFunctorExactnessStatement
+Langlands.Representation.Classification.CuspidalJacquetFunctors
+Langlands.Representation.Classification.CuspidalJacquetMultiplicityProof
+Langlands.Representation.Classification.CuspidalJacquetMultiplicityStatement
+Langlands.Representation.Classification.CuspidalProductContragredient
+Langlands.Representation.Classification.Essential
+Langlands.Representation.Classification.HeadQuotientCriterionProof
+Langlands.Representation.Classification.HeadQuotientCriterionStatement
+Langlands.Representation.Classification.HeadTargetTransport
+Langlands.Representation.Classification.IrreducibleProductEmbedding
+Langlands.Representation.Classification.IrreducibleProductEmbeddingStatement
+Langlands.Representation.Classification.IrreducibleProductFiniteLengthProof
+Langlands.Representation.Classification.LanglandsData
+Langlands.Representation.Classification.MultiplicityOneConstituentProof
+Langlands.Representation.Classification.MultiplicityOneConstituentStatement
+Langlands.Representation.Classification.NormalizedProductFiniteLengthStatement
+Langlands.Representation.Classification.OppositeCuspidalJacquetFiltrationProof
+Langlands.Representation.Classification.OppositeCuspidalJacquetFiltrationStatement
+Langlands.Representation.Classification.OppositeJacquetQuotientDetectionProof
+Langlands.Representation.Classification.OppositeJacquetQuotientDetectionStatement
+Langlands.Representation.Classification.OppositeJacquetReciprocity
+Langlands.Representation.Classification.OppositeSupportJacquetAdapter
+Langlands.Representation.Classification.SegmentConstituentStatement
+Langlands.Representation.Classification.SegmentHeadContragredient
+Langlands.Representation.Classification.SegmentHeadDecreasingSocle
+Langlands.Representation.Classification.SegmentHeadProductContragredient
+Langlands.Representation.Classification.SegmentHeadProductFiniteness
+Langlands.Representation.Classification.SegmentInductionAdmissibilityProof
+Langlands.Representation.Classification.SegmentInductionAdmissibilityStatement
+Langlands.Representation.Classification.SegmentJacquetMultiplicityProof
+Langlands.Representation.Classification.SegmentJacquetMultiplicityStatement
+Langlands.Representation.Classification.SegmentJacquetReversal
+Langlands.Representation.Classification.SegmentSpecialConstituentExistenceProof
+Langlands.Representation.Classification.SegmentTensorReversalProof
+Langlands.Representation.Classification.SegmentTensorReversalStatement
+Langlands.Representation.Classification.SegmentTensorStabilizerProof
+Langlands.Representation.Classification.SegmentTensorStabilizerStatement
+Langlands.Representation.Classification.SegmentTruncationObstructionStatement
+```
+
+```text
+Langlands.Representation.Classification.Segments
+Langlands.Representation.Classification.Supercuspidal
+Langlands.Representation.Classification.SupercuspidalContragredient
+Langlands.Representation.Classification.SupercuspidalContragredientAux
+Langlands.Representation.Classification.SupercuspidalContragredientProof
+Langlands.Representation.Classification.SupercuspidalContragredientStatement
+Langlands.Representation.Classification.SupercuspidalSupport
+Langlands.Representation.Classification.SupercuspidalTwist
+Langlands.Representation.Classification.Tempered
+Langlands.Representation.Classification.TemperedInductionStatement
+Langlands.Representation.Classification.TemperedSupportStatement
+Langlands.Representation.Classification.UpperCuspidalJacquetMultiplicityProof
+Langlands.Representation.Classification.UpperCuspidalJacquetMultiplicityStatement
+Langlands.Representation.Classification.UpperJacquetSubrepresentationDetectionProof
+Langlands.Representation.Classification.UpperJacquetSubrepresentationDetectionStatement
+Langlands.Representation.Compact.Definitions
+Langlands.Representation.Compact.FiniteMean
+Langlands.Representation.Compact.OrbitMeanTranslation
+Langlands.Representation.Compact.ProjectionProof
+Langlands.Representation.Compact.ProjectionStatement
+Langlands.Representation.Compact.SurjectivityProof
+Langlands.Representation.Compact.SurjectivityStatement
+Langlands.Representation.CompactCoefficient.AdmissibleComplement
+Langlands.Representation.CompactCoefficient.AdmissibleLifting
+Langlands.Representation.CompactCoefficient.AdmissibleRetraction
+Langlands.Representation.CompactCoefficient.AmbientProjector
+Langlands.Representation.CompactCoefficient.Classes
+Langlands.Representation.CompactCoefficient.ConditionalProjection
+Langlands.Representation.CompactCoefficient.FixedLevelFiniteness
+Langlands.Representation.CompactCoefficient.FixedVectorsFiniteDimensional
+Langlands.Representation.CompactCoefficient.GroupTransport
+Langlands.Representation.CompactCoefficient.Isotypic
+Langlands.Representation.CompactCoefficient.IsotypicTransport
+Langlands.Representation.CompactCoefficient.NormalSubgroupDecomposition
+Langlands.Representation.CompactCoefficient.OrthogonalProjectorFamily
+Langlands.Representation.CompactCoefficient.SelectedAssembly
+Langlands.Representation.CompactCoefficient.SelectedBlock
+Langlands.Representation.CompactCoefficient.SelectedConjugation
+Langlands.Representation.CompactCoefficient.SelectedCoverage
+Langlands.Representation.CompactCoefficient.SelectedProjector
+Langlands.Representation.CompactCoefficient.SemisimplicityProof
+Langlands.Representation.CompactCoefficient.SemisimplicityStatement
+Langlands.Representation.CompactCoefficient.TotalCompactness
+Langlands.Representation.CompactCoefficient.TotalProjector
+Langlands.Representation.Conductor.Congruence
+Langlands.Representation.Conductor.Definitions
+Langlands.Representation.Conductor.PrincipalCongruence
+Langlands.Representation.Conductor.PrincipalCongruenceBasisProof
+Langlands.Representation.Conductor.PrincipalCongruenceBasisStatement
+Langlands.Representation.CuspidalSupport.AssociatedAssembly
+Langlands.Representation.CuspidalSupport.AssociatedConditional
+Langlands.Representation.CuspidalSupport.AssociatedGeometricPieceVanishingProof
+Langlands.Representation.CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof
+Langlands.Representation.CuspidalSupport.AssociatedGeometricPiecesProof
+Langlands.Representation.CuspidalSupport.AssociatedGeometricPiecesStatement
+Langlands.Representation.CuspidalSupport.AssociatedProof
+Langlands.Representation.CuspidalSupport.AssociatedRankZero
+Langlands.Representation.CuspidalSupport.AssociationForwardHomProof
+Langlands.Representation.CuspidalSupport.AssociationForwardHomSupport
+Langlands.Representation.CuspidalSupport.AssociationForwardStatement
+Langlands.Representation.CuspidalSupport.AssociationLawsProof
+Langlands.Representation.CuspidalSupport.AssociationLawsStatement
+Langlands.Representation.CuspidalSupport.AssociationReduction
+Langlands.Representation.CuspidalSupport.BlockMap
+Langlands.Representation.CuspidalSupport.BlockPermutation
+Langlands.Representation.CuspidalSupport.BlockWeylTransport
+Langlands.Representation.CuspidalSupport.CentralShift
+Langlands.Representation.CuspidalSupport.CompactCoefficientFinitenessProof
+Langlands.Representation.CuspidalSupport.CompactCoefficientFinitenessReduction
+Langlands.Representation.CuspidalSupport.CompactCoefficientFinitenessStatement
+Langlands.Representation.CuspidalSupport.ConstituentComplement
+Langlands.Representation.CuspidalSupport.ConstituentComplementStatement
+Langlands.Representation.CuspidalSupport.ConstituentFiniteTypes
+Langlands.Representation.CuspidalSupport.ConstituentInduction
+Langlands.Representation.CuspidalSupport.ConstituentInductionStatement
+Langlands.Representation.CuspidalSupport.ConstituentProof
+Langlands.Representation.CuspidalSupport.ConstituentRankZero
+Langlands.Representation.CuspidalSupport.ConstituentSemisimple
+Langlands.Representation.CuspidalSupport.ConstituentSemisimpleStatement
+Langlands.Representation.CuspidalSupport.CuspidalBlockIsolationProof
+Langlands.Representation.CuspidalSupport.CuspidalBlockIsolationStatement
+Langlands.Representation.CuspidalSupport.CuspidalEmbeddingProof
+Langlands.Representation.CuspidalSupport.CuspidalTensorAssociationProof
+Langlands.Representation.CuspidalSupport.CuspidalTensorProof
+Langlands.Representation.CuspidalSupport.CuspidalTensorStatement
+Langlands.Representation.CuspidalSupport.CuspidalityComparisonProof
+Langlands.Representation.CuspidalSupport.CuspidalityComparisonStatement
+Langlands.Representation.CuspidalSupport.DeterminantUnit
+Langlands.Representation.CuspidalSupport.DeterminantUnitCartanSupport
+Langlands.Representation.CuspidalSupport.DeterminantUnitCentralCompactnessProof
+```
+
+```text
+Langlands.Representation.CuspidalSupport.DeterminantUnitCentralCompactnessStatement
+Langlands.Representation.CuspidalSupport.DeterminantUnitCornerStructureProof
+Langlands.Representation.CuspidalSupport.DeterminantUnitCornerStructureStatement
+Langlands.Representation.CuspidalSupport.DeterminantUnitFiniteRestriction
+Langlands.Representation.CuspidalSupport.DeterminantUnitStructureProof
+Langlands.Representation.CuspidalSupport.DeterminantUnitStructureStatement
+Langlands.Representation.CuspidalSupport.DistinctTensorStabilizerProof
+Langlands.Representation.CuspidalSupport.DistinctTensorStabilizerStatement
+Langlands.Representation.CuspidalSupport.DualAveraging
+Langlands.Representation.CuspidalSupport.FiltrationQuasicuspidality
+Langlands.Representation.CuspidalSupport.FiniteBlockShapes
+Langlands.Representation.CuspidalSupport.GroupTransport
+Langlands.Representation.CuspidalSupport.HarishChandraAssembly
+Langlands.Representation.CuspidalSupport.HarishChandraBoundaryProof
+Langlands.Representation.CuspidalSupport.HarishChandraBoundaryStatement
+Langlands.Representation.CuspidalSupport.HarishChandraConverseProof
+Langlands.Representation.CuspidalSupport.HarishChandraConverseStatement
+Langlands.Representation.CuspidalSupport.HarishChandraForwardProof
+Langlands.Representation.CuspidalSupport.HarishChandraStatement
+Langlands.Representation.CuspidalSupport.InducedJacquetCount
+Langlands.Representation.CuspidalSupport.InducedJacquetEvaluation
+Langlands.Representation.CuspidalSupport.JacquetDetectingFamilyLengthProof
+Langlands.Representation.CuspidalSupport.JacquetDetectingFamilyLengthStatement
+Langlands.Representation.CuspidalSupport.JacquetInductionStatement
+Langlands.Representation.CuspidalSupport.JacquetLengthDetector
+Langlands.Representation.CuspidalSupport.JacquetSubquotientProof
+Langlands.Representation.CuspidalSupport.JacquetSubquotientStatement
+Langlands.Representation.CuspidalSupport.JacquetVanishingHelpers
+Langlands.Representation.CuspidalSupport.JacquetVanishingSmoothPieces
+Langlands.Representation.CuspidalSupport.JacquetVanishingSubgroups
+Langlands.Representation.CuspidalSupport.LeviAdmissibleFactorizationProof
+Langlands.Representation.CuspidalSupport.LeviAdmissibleFactorizationStatement
+Langlands.Representation.CuspidalSupport.LeviAssociation
+Langlands.Representation.CuspidalSupport.LeviCompactPart
+Langlands.Representation.CuspidalSupport.LeviDecompositionAssembly
+Langlands.Representation.CuspidalSupport.LeviDefinitions
+Langlands.Representation.CuspidalSupport.LeviGapVanishing
+Langlands.Representation.CuspidalSupport.LeviQuasicuspidalDecompositionProof
+Langlands.Representation.CuspidalSupport.LeviSplitContraction
+Langlands.Representation.CuspidalSupport.LeviTensorFactorizationProof
+Langlands.Representation.CuspidalSupport.LeviTensorFactorizationStatement
+Langlands.Representation.CuspidalSupport.LeviTensorReflectionProof
+Langlands.Representation.CuspidalSupport.LeviTensorReflectionStatement
+Langlands.Representation.CuspidalSupport.MinimalConjugatingCosetsProof
+Langlands.Representation.CuspidalSupport.MinimalJacquetProof
+Langlands.Representation.CuspidalSupport.MinimalJacquetStatement
+Langlands.Representation.CuspidalSupport.MinimalWeylTransportProof
+Langlands.Representation.CuspidalSupport.NaturalProjectorDecomposition
+Langlands.Representation.CuspidalSupport.NonassociatedJacquetSubquotientsProof
+Langlands.Representation.CuspidalSupport.NormalizedCuspidalInductionLengthProof
+Langlands.Representation.CuspidalSupport.NormalizedCuspidalInductionStatement
+Langlands.Representation.CuspidalSupport.PointwiseProjectorSum
+Langlands.Representation.CuspidalSupport.ProperInductionMaps
+Langlands.Representation.CuspidalSupport.ProperInductionProof
+Langlands.Representation.CuspidalSupport.ProperInductionStatement
+Langlands.Representation.CuspidalSupport.QuasicuspidalEmbeddingProof
+Langlands.Representation.CuspidalSupport.QuasicuspidalLeviAdmissibilityProof
+Langlands.Representation.CuspidalSupport.QuasicuspidalPrerequisitesStatement
+Langlands.Representation.CuspidalSupport.QuasicuspidalStructureStatement
+Langlands.Representation.CuspidalSupport.StandardJacquetComparisonProof
+Langlands.Representation.CuspidalSupport.TotalConjugatingCountProof
+Langlands.Representation.CuspidalSupport.TotalConjugatingCountStatement
+Langlands.Representation.CuspidalSupport.ZeroRankEmbeddingProof
+Langlands.Representation.Dual.Definitions
+Langlands.Representation.Exponents.Central
+Langlands.Representation.Exponents.DualJacquet
+Langlands.Representation.Exponents.DualJacquetStatement
+Langlands.Representation.Exponents.Jacquet
+Langlands.Representation.Exponents.NilpotenceIndex
+Langlands.Representation.Exponents.ParabolicPair
+Langlands.Representation.Exponents.UnitaryDualJacquetSupportAdapters
+Langlands.Representation.Filtration.CoinvariantVanishingStatement
+Langlands.Representation.Filtration.Definitions
+Langlands.Representation.Filtration.FiniteFamilyMultiplicityProof
+Langlands.Representation.Filtration.FiniteFamilyMultiplicityStatement
+Langlands.Representation.Filtration.GradedRefinementProof
+Langlands.Representation.Filtration.GradedRefinementStatement
+Langlands.Representation.Filtration.IntervalLiftProof
+Langlands.Representation.Filtration.IntervalLiftStatement
+Langlands.Representation.Filtration.IrreducibleMultiplicityProof
+Langlands.Representation.Filtration.IrreducibleMultiplicityStatement
+Langlands.Representation.Filtration.IsoTransport
+Langlands.Representation.Filtration.JordanHolderComparisonProof
+Langlands.Representation.Filtration.JordanHolderStatement
+Langlands.Representation.Filtration.JordanHolderTransportProof
+Langlands.Representation.Filtration.LengthCriterionProof
+Langlands.Representation.Filtration.LengthCriterionStatement
+Langlands.Representation.Filtration.LengthTwoMatching
+Langlands.Representation.Filtration.LengthTwoMatchingStatement
+Langlands.Representation.Filtration.MultiplicityAdditivityProof
+```
+
+```text
+Langlands.Representation.Filtration.MultiplicityAdditivityStatement
+Langlands.Representation.Filtration.MultiplicityIndependenceProof
+Langlands.Representation.Filtration.MultiplicityStatement
+Langlands.Representation.Filtration.MultiplicityTransportProof
+Langlands.Representation.Filtration.MultiplicityTransportStatement
+Langlands.Representation.Filtration.ObjectDefinitions
+Langlands.Representation.Filtration.ObjectTransport
+Langlands.Representation.Filtration.QuasicuspidalVanishingProof
+Langlands.Representation.Filtration.QuotientFirstIso
+Langlands.Representation.Filtration.RepresentationLength
+Langlands.Representation.Filtration.SimpleMapMultiplicityDetectionProof
+Langlands.Representation.Filtration.SimpleMapMultiplicityDetectionStatement
+Langlands.Representation.Filtration.SubquotientAlgebraProof
+Langlands.Representation.Filtration.SubquotientAlgebraStatement
+Langlands.Representation.Filtration.Transport
+Langlands.Representation.Filtration.VanishingStatement
+Langlands.Representation.Filtration.ZeroFactorDeletionProof
+Langlands.Representation.Filtration.ZeroFactorDeletionStatement
+Langlands.Representation.Geometric.BlockIntersectionSplitting
+Langlands.Representation.Geometric.BlockSixDecomposableProof
+Langlands.Representation.Geometric.BlockSixDecomposableStatement
+Langlands.Representation.Geometric.BruhatDescent
+Langlands.Representation.Geometric.BruhatMatrixExistenceProof
+Langlands.Representation.Geometric.BruhatMatrixStatement
+Langlands.Representation.Geometric.BruhatWeylReflectionProof
+Langlands.Representation.Geometric.ClosedSubgroupAssembly
+Langlands.Representation.Geometric.ClosedSubgroupDefinitions
+Langlands.Representation.Geometric.ClosedSubgroupMackeyProof
+Langlands.Representation.Geometric.ClosedSubgroupStatement
+Langlands.Representation.Geometric.CoarseLeviReversal
+Langlands.Representation.Geometric.CompactOrbitRestriction
+Langlands.Representation.Geometric.CompactSmoothComparison
+Langlands.Representation.Geometric.ConditionalAssembly
+Langlands.Representation.Geometric.CorrectionSubgroupCoordinates
+Langlands.Representation.Geometric.CorrectionSubgroupDiagonalHaarProof
+Langlands.Representation.Geometric.CorrectionSubgroupDiagonalHaarStatement
+Langlands.Representation.Geometric.CosetAction
+Langlands.Representation.Geometric.CosetOrbitHomeomorph
+Langlands.Representation.Geometric.CosetOrbitOrdering
+Langlands.Representation.Geometric.FlattenedLevi
+Langlands.Representation.Geometric.GeneralCorrectionCharacters
+Langlands.Representation.Geometric.GeneralIntersectionNormalizers
+Langlands.Representation.Geometric.GeneralIntersections
+Langlands.Representation.Geometric.GeometricLemmaProof
+Langlands.Representation.Geometric.GeometricLemmaStatement
+Langlands.Representation.Geometric.IntersectionLeviDiagonalCharacterProof
+Langlands.Representation.Geometric.IntersectionLeviDiagonalCharacterStatement
+Langlands.Representation.Geometric.IntersectionLeviModulusBalance
+Langlands.Representation.Geometric.IntersectionTransport
+Langlands.Representation.Geometric.MonotoneBlocksProof
+Langlands.Representation.Geometric.MonotoneBlocksStatement
+Langlands.Representation.Geometric.OrbitRepresentatives
+Langlands.Representation.Geometric.OrbitRestriction
+Langlands.Representation.Geometric.OrbitSectionExtensionProof
+Langlands.Representation.Geometric.OrbitSectionExtensionStatement
+Langlands.Representation.Geometric.PadicCorrectionCancellationProof
+Langlands.Representation.Geometric.PadicCorrectionCancellationStatement
+Langlands.Representation.Geometric.PadicParabolicBruhatProof
+Langlands.Representation.Geometric.ParabolicOrbitCoefficientComparison
+Langlands.Representation.Geometric.ParabolicOrbitCompactComparison
+Langlands.Representation.Geometric.ParabolicOrbitComparisonData
+Langlands.Representation.Geometric.ParabolicOrbitHaarComparison
+Langlands.Representation.Geometric.ParabolicOrbitHaarRatio
+Langlands.Representation.Geometric.ParabolicOrbitHaarTransport
+Langlands.Representation.Geometric.ParabolicOrbitInductionTransport
+Langlands.Representation.Geometric.ParabolicOrbitJacquet
+Langlands.Representation.Geometric.ParabolicOrbitJacquetProof
+Langlands.Representation.Geometric.ParabolicOrbitJacquetStatement
+Langlands.Representation.Geometric.ParabolicOrbitMeasureData
+Langlands.Representation.Geometric.ParabolicOrbitNestedAction
+Langlands.Representation.Geometric.ParabolicOrbitNormalization
+Langlands.Representation.Geometric.ParabolicOrbitNormalizedCoefficient
+Langlands.Representation.Geometric.ParabolicOrbitSectionComparison
+Langlands.Representation.Geometric.ParabolicOrbitStagesCoefficient
+Langlands.Representation.Geometric.ParabolicSupportFiltration
+Langlands.Representation.Geometric.ParabolicSupportGradedProof
+Langlands.Representation.Geometric.ParabolicSupportGradedStatement
+Langlands.Representation.Geometric.ParabolicSupportJacquetProof
+Langlands.Representation.Geometric.ParabolicSupportJacquetStatement
+Langlands.Representation.Geometric.ParabolicSupportTransport
+Langlands.Representation.Geometric.RefinedPositiveCharacter
+Langlands.Representation.Geometric.RefinementDefinitions
+Langlands.Representation.Geometric.RefinementFunctors
+Langlands.Representation.Geometric.RefinementUniqueness
+Langlands.Representation.Geometric.SmoothSupportFiltration
+Langlands.Representation.Geometric.StandardIntersectionsProof
+Langlands.Representation.Geometric.WeylDefinitions
+Langlands.Representation.Geometric.WeylMinimalRepresentativeProof
+Langlands.Representation.Geometric.WeylStatement
+Langlands.Representation.Geometric.WeylUniquenessProof
+```
+
+```text
+Langlands.Representation.Geometric.WeylUniquenessStatement
+Langlands.Representation.Hecke.ActionIntegrand
+Langlands.Representation.Hecke.ActionProjection
+Langlands.Representation.Hecke.CommonInvarianceProof
+Langlands.Representation.Hecke.CommonInvarianceStatement
+Langlands.Representation.Hecke.Convolution
+Langlands.Representation.Hecke.Corner
+Langlands.Representation.Hecke.CornerAction
+Langlands.Representation.Hecke.DoubleCoset
+Langlands.Representation.Hecke.DoubleCosetSandwich
+Langlands.Representation.Hecke.IntegratedAction
+Langlands.Representation.Hecke.IntegratedConvolution
+Langlands.Representation.Hecke.NormalizedIndicator
+Langlands.Representation.Hecke.TestFunction
+Langlands.Representation.Induction.BlockCharacterAbsorption
+Langlands.Representation.Induction.BlockEquivalence
+Langlands.Representation.Induction.BlockFactors
+Langlands.Representation.Induction.CharacterTwistProof
+Langlands.Representation.Induction.CompactAutomorphism
+Langlands.Representation.Induction.CompactAutomorphismIntegralProof
+Langlands.Representation.Induction.CompactAutomorphismIntegralStatement
+Langlands.Representation.Induction.CompactBilinearPairing
+Langlands.Representation.Induction.CompactCoinvariantBijectivityProof
+Langlands.Representation.Induction.CompactCoinvariantBijectivityStatement
+Langlands.Representation.Induction.CompactCoinvariantIntegral
+Langlands.Representation.Induction.CompactCoinvariantLocalInverseProof
+Langlands.Representation.Induction.CompactCoinvariantLocalInverseStatement
+Langlands.Representation.Induction.CompactLocalSection
+Langlands.Representation.Induction.CompactLocalSectionSpanningProof
+Langlands.Representation.Induction.CompactLocalSectionSpanningStatement
+Langlands.Representation.Induction.CompactLocallyConstant
+Langlands.Representation.Induction.CompactPairingDuality
+Langlands.Representation.Induction.CompactQuotientCutoff
+Langlands.Representation.Induction.CompactQuotientProof
+Langlands.Representation.Induction.CompactScalarProof
+Langlands.Representation.Induction.CompactScalarStatement
+Langlands.Representation.Induction.CompactSurjectivityProof
+Langlands.Representation.Induction.CompactSurjectivityStatement
+Langlands.Representation.Induction.CompactTransitivityProof
+Langlands.Representation.Induction.CompactTransitivityStatement
+Langlands.Representation.Induction.ConjugateParabolic
+Langlands.Representation.Induction.Definitions
+Langlands.Representation.Induction.Equivalences
+Langlands.Representation.Induction.FiniteProductTensor
+Langlands.Representation.Induction.FiniteProductTensorBijectiveProof
+Langlands.Representation.Induction.FiniteProductTensorBijectiveStatement
+Langlands.Representation.Induction.InverseTranspose
+Langlands.Representation.Induction.NormalCoinvariantKernelProof
+Langlands.Representation.Induction.NormalCoinvariantKernelStatement
+Langlands.Representation.Induction.NormalCoinvariantMap
+Langlands.Representation.Induction.NormalCoinvariantProof
+Langlands.Representation.Induction.NormalCoinvariantStatement
+Langlands.Representation.Induction.NormalSplitComparison
+Langlands.Representation.Induction.OppositeParabolic
+Langlands.Representation.Induction.OppositeProductReversalProof
+Langlands.Representation.Induction.OppositeProductReversalStatement
+Langlands.Representation.Induction.Parabolic
+Langlands.Representation.Induction.PiScalarIntegral
+Langlands.Representation.Induction.SplitKernelCompact
+Langlands.Representation.Induction.SplitKernelCovariance
+Langlands.Representation.Induction.SplitKernelEquivariant
+Langlands.Representation.Induction.SplitKernelIntegral
+Langlands.Representation.Induction.SplitQuotientProof
+Langlands.Representation.Induction.SplitQuotientStatement
+Langlands.Representation.Induction.SplitStagesComparison
+Langlands.Representation.Induction.SplitStagesRetraction
+Langlands.Representation.Induction.StructuralStatement
+Langlands.Representation.Induction.SurjectivityProof
+Langlands.Representation.Induction.SurjectivityStatement
+Langlands.Representation.Jacquet.BlockCompressionProof
+Langlands.Representation.Jacquet.BlockCompressionStatement
+Langlands.Representation.Jacquet.BlockPowerKernelProof
+Langlands.Representation.Jacquet.CanonicalLiftBijectivityProof
+Langlands.Representation.Jacquet.CanonicalLiftDefinitions
+Langlands.Representation.Jacquet.CanonicalLiftGroupTransportProof
+Langlands.Representation.Jacquet.CanonicalLiftGroupTransportStatement
+Langlands.Representation.Jacquet.CanonicalLiftIntertwinerNaturalityProof
+Langlands.Representation.Jacquet.CanonicalLiftIntertwinerNaturalityStatement
+Langlands.Representation.Jacquet.CanonicalLiftStatement
+Langlands.Representation.Jacquet.CharacterTwistEquiv
+Langlands.Representation.Jacquet.Coinvariants
+Langlands.Representation.Jacquet.CompactCompressionStableDualityProof
+Langlands.Representation.Jacquet.CompactCompressionStableDualityStatement
+Langlands.Representation.Jacquet.CompressionStabilizationProof
+Langlands.Representation.Jacquet.CompressionStabilizationStatement
+Langlands.Representation.Jacquet.ExactProof
+Langlands.Representation.Jacquet.ExactStatement
+Langlands.Representation.Jacquet.Normalized
+Langlands.Representation.Jacquet.OppositeCanonicalLiftProof
+Langlands.Representation.Jacquet.OppositeCanonicalLiftStatement
+```
+
+```text
+Langlands.Representation.Jacquet.Parabolic
+Langlands.Representation.Jacquet.PositiveCharacter
+Langlands.Representation.Jacquet.ReciprocityProof
+Langlands.Representation.Jacquet.ReciprocityStatement
+Langlands.Representation.Jacquet.RefinedOppositeCanonicalLiftProof
+Langlands.Representation.Jacquet.RefinedOppositeCanonicalLiftStatement
+Langlands.Representation.Jacquet.RefinedOppositeCompressionProof
+Langlands.Representation.Jacquet.RefinedOppositeCompressionStatement
+Langlands.Representation.Jacquet.RefinedOppositePowerKernelProof
+Langlands.Representation.Jacquet.RefinedOppositeStableImageProof
+Langlands.Representation.Jacquet.RefinedUpperCanonicalLiftProof
+Langlands.Representation.Jacquet.SmoothTwist
+Langlands.Representation.Jacquet.StablePairingProof
+Langlands.Representation.MatrixCoefficient.Definitions
+Langlands.Representation.MatrixCoefficient.LawsProof
+Langlands.Representation.MatrixCoefficient.LawsStatement
+Langlands.Representation.MatrixCoefficient.ModuloCenter
+Langlands.Representation.OrbitSpan
+Langlands.Representation.Parabolic.AdmissibilityStatement
+Langlands.Representation.Parabolic.ComposedFunctors
+Langlands.Representation.Parabolic.FlattenedRefinementModulusCalculation
+Langlands.Representation.Parabolic.GeometricPrerequisitesStatement
+Langlands.Representation.Parabolic.LeviBridges
+Langlands.Representation.Parabolic.LeviInflationAdmissibilityProof
+Langlands.Representation.Parabolic.NaturalFirstAdjointness
+Langlands.Representation.Parabolic.NaturalInductionDualityFromScalar
+Langlands.Representation.Parabolic.NaturalInductionDualityProof
+Langlands.Representation.Parabolic.NaturalInductionDualityStatement
+Langlands.Representation.Parabolic.NaturalJacquetDualityProof
+Langlands.Representation.Parabolic.NaturalJacquetDualityStatement
+Langlands.Representation.Parabolic.NormalizedAdmissibilityProof
+Langlands.Representation.Parabolic.NormalizedInductionStatement
+Langlands.Representation.Parabolic.NormalizedJacquetAdmissibilityProof
+Langlands.Representation.Parabolic.NormalizedJacquetExactnessProof
+Langlands.Representation.Parabolic.NormalizedJacquetStatement
+Langlands.Representation.Parabolic.OppositeJacquetAdmissibilityProof
+Langlands.Representation.Parabolic.OppositeJacquetAdmissibilityStatement
+Langlands.Representation.Parabolic.OppositeRefinementDefinitions
+Langlands.Representation.Parabolic.OppositeRefinementFunctors
+Langlands.Representation.Parabolic.OppositeRefinementTransitivityProof
+Langlands.Representation.Parabolic.OppositeRefinementTransitivityStatement
+Langlands.Representation.Parabolic.OrderedProductRegroupingProof
+Langlands.Representation.Parabolic.OrderedProductRegroupingStatement
+Langlands.Representation.Parabolic.QuotientCompactProof
+Langlands.Representation.Parabolic.RefinedInductionAdmissibility
+Langlands.Representation.Parabolic.RefinedInductionTensorMap
+Langlands.Representation.Parabolic.RefinedInductionTensorNormalization
+Langlands.Representation.Parabolic.RefinedInductionTensorProof
+Langlands.Representation.Parabolic.RefinedInductionTensorStatement
+Langlands.Representation.Parabolic.RefinementCharacter
+Langlands.Representation.Parabolic.RefinementComposition
+Langlands.Representation.Parabolic.RefinementCoordinatesNormalizationProof
+Langlands.Representation.Parabolic.RefinementCoordinatesNormalizationStatement
+Langlands.Representation.Parabolic.RefinementInductionTransitivityProof
+Langlands.Representation.Parabolic.RefinementPreimage
+Langlands.Representation.Parabolic.RefinementTransitivityStatement
+Langlands.Representation.Parabolic.SecondAdjointnessAssembly
+Langlands.Representation.Parabolic.SecondAdjointnessProof
+Langlands.Representation.Parabolic.SecondAdjointnessStatement
+Langlands.Representation.Parabolic.StandardOppositeJacquetAdmissibilityProof
+Langlands.Representation.Parabolic.UnipotentFiniteContainment
+Langlands.Representation.RankinSelberg.GeneralLinearUnimodularity
+Langlands.Representation.RankinSelberg.Measures
+Langlands.Representation.RankinSelberg.UnimodularityStatement
+Langlands.Representation.RankinSelberg.UnipotentUnimodularity
+Langlands.Representation.Schur.CountableDimensionProof
+Langlands.Representation.Schur.CountableDimensionStatement
+Langlands.Representation.Smooth.Admissibility.CofinalProof
+Langlands.Representation.Smooth.Admissibility.CofinalStatement
+Langlands.Representation.Smooth.Admissibility.EmbeddingProof
+Langlands.Representation.Smooth.Admissibility.EmbeddingStatement
+Langlands.Representation.Smooth.Admissibility.EquivalenceProof
+Langlands.Representation.Smooth.Admissibility.EquivalenceStatement
+Langlands.Representation.Smooth.Admissibility.Extension
+Langlands.Representation.Smooth.Contragredient.AdmissibleDualityProof
+Langlands.Representation.Smooth.Contragredient.AdmissibleDualityStatement
+Langlands.Representation.Smooth.Contragredient.CompactDualityProof
+Langlands.Representation.Smooth.Contragredient.CompactDualityStatement
+Langlands.Representation.Smooth.Contragredient.Definitions
+Langlands.Representation.Smooth.Contragredient.ExactProof
+Langlands.Representation.Smooth.Contragredient.ExactStatement
+Langlands.Representation.Smooth.Contragredient.FixedVectorsDefinitions
+Langlands.Representation.Smooth.Contragredient.HomDualityProof
+Langlands.Representation.Smooth.Contragredient.HomDualityStatement
+Langlands.Representation.Smooth.Contragredient.InvariantPairingProof
+Langlands.Representation.Smooth.Contragredient.InvariantPairingStatement
+Langlands.Representation.Smooth.Contragredient.LawsProof
+Langlands.Representation.Smooth.Contragredient.LawsStatement
+Langlands.Representation.Smooth.Definitions
+Langlands.Representation.Smooth.Factorization.MultiplicityDefinitions
+```
+
+```text
+Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof
+Langlands.Representation.Smooth.Factorization.TwoFactorStatement
+Langlands.Representation.Smooth.FixedVectors.Definitions
+Langlands.Representation.Smooth.FixedVectors.Detection
+Langlands.Representation.Smooth.FixedVectors.FiniteTypes
+Langlands.Representation.Smooth.FixedVectors.FiniteTypesStatement
+Langlands.Representation.Smooth.FixedVectors.GenerationInheritance
+Langlands.Representation.Smooth.FixedVectors.GenerationInheritanceStatement
+Langlands.Representation.Smooth.FixedVectors.LawsProof
+Langlands.Representation.Smooth.FixedVectors.LawsStatement
+Langlands.Representation.Smooth.FixedVectors.OrderProof
+Langlands.Representation.Smooth.FixedVectors.OrderStatement
+Langlands.Representation.Smooth.Schur.Proof
+Langlands.Representation.Smooth.Schur.Statement
+Langlands.Representation.Smooth.SmallRealizationProof
+Langlands.Representation.Smooth.SmallRealizationStatement
+Langlands.Representation.Smooth.SmoothPart.BasicProof
+Langlands.Representation.Smooth.SmoothPart.BasicStatement
+Langlands.Representation.Smooth.SmoothPart.Definitions
+Langlands.Representation.Smooth.SmoothPart.FixedVectorsDefinitions
+Langlands.Representation.Smooth.Transfer.GroupEquivalence
+Langlands.Representation.Smooth.Transfer.PullbackProof
+Langlands.Representation.Smooth.Transfer.PullbackStatement
+Langlands.Representation.Smooth.Transfer.SubquotientProof
+Langlands.Representation.Smooth.Transfer.SubquotientStatement
+Langlands.Representation.SubrepresentationLattice
+Langlands.Representation.Tensor.CoinvariantReflection
+Langlands.Representation.Tensor.Filtration
+Langlands.Representation.Tensor.Finite
+Langlands.Representation.Tensor.FiniteEquivalences
+Langlands.Representation.Tensor.FiniteProperties
+Langlands.Representation.Tensor.FiniteRegrouping
+Langlands.Representation.Tensor.GLRefinement
+Langlands.Representation.Tensor.ProductFiltration
+Langlands.Representation.Tensor.SmoothDual
+Langlands.Representation.Tensor.SmoothDualInjectivityProof
+Langlands.Representation.Tensor.SmoothDualInjectivityStatement
+Langlands.Representation.Tensor.SmoothDualSurjectivityProof
+Langlands.Representation.Tensor.SmoothDualSurjectivityStatement
+Langlands.Representation.Twist.AdmissibilityProof
+Langlands.Representation.Twist.AdmissibilityStatement
+Langlands.Representation.Twist.AlgebraProof
+Langlands.Representation.Twist.AlgebraStatement
+Langlands.Representation.Twist.ContinuousCharacterProof
+Langlands.Representation.Twist.ContinuousCharacterStatement
+Langlands.Representation.Twist.Definitions
+Langlands.Representation.Twist.DualProof
+Langlands.Representation.Twist.DualStatement
+Langlands.Representation.Twist.RealPower
+Langlands.Representation.Twist.SmoothPartDefinitions
+Langlands.Representation.Twist.SmoothProof
+Langlands.Representation.Twist.SmoothStatement
+Langlands.Representation.Twist.SubquotientDefinitions
+Langlands.Representation.Twist.SubquotientProof
+Langlands.Representation.Twist.SubquotientStatement
+Langlands.Representation.Unitary.Basic
+Langlands.Representation.Unramified.Eigenvalues
+Langlands.Representation.Unramified.HeckeOperators
+Langlands.Representation.Unramified.PrincipalSeries
+Langlands.Representation.Unramified.SphericalClassificationStatement
+Langlands.Representation.Unramified.SphericalConstituentExistenceProof
+Langlands.Representation.Whittaker.Iwasawa
+Langlands.Topology.CompactNormCharacter
+Langlands.Topology.CompactOpen.ConjugationStabilizer
+Langlands.Topology.CompactOpen.NeighborhoodBasis
+Langlands.Topology.CompactOpen.NeighborhoodBasisStatement
+Langlands.Topology.GroupAction.FiniteOrbitProof
+Langlands.Topology.GroupAction.FiniteOrbitStatement
+Langlands.Topology.Nonarchimedean.Subgroup
+Langlands.VirtualRepresentation.Exact
+Langlands.VirtualRepresentation.ExactTwist
+Langlands.VirtualRepresentation.Integral
+Langlands.Weil.Algebraic
+Langlands.Weil.AlgebraicProof
+Langlands.Weil.Local.Assembly
+Langlands.Weil.Local.DegreeCharacters
+Langlands.Weil.Local.Parameters
+Langlands.Weil.Local.ResidueCharacters
+Langlands.Weil.Pullback
+Langlands.Weil.Representation.Basic
+Langlands.Weil.Representation.CharacterLine
+Langlands.Weil.Representation.Continuity
+Langlands.Weil.Representation.ContinuityProof
+Langlands.Weil.Representation.Determinant
+Langlands.Weil.Representation.DirectSum
+Langlands.Weil.Representation.Dual
+Langlands.Weil.Representation.DualClasses
+Langlands.Weil.Representation.IsomorphismInvarianceProof
+Langlands.Weil.Representation.OperationClosureProof
+Langlands.Weil.Representation.Operations
+```
+
+```text
+Langlands.Weil.Representation.Predicates
+Langlands.Weil.Representation.Twist
+Langlands.Weil.Representation.TwistClasses
+Langlands.Weil.Representation.TwistProperties
+Langlands.Weil.Topology
+Langlands.Weil.TopologyProof
+Langlands.WeilDeligne.Basic
+Langlands.WeilDeligne.DirectSum
+Langlands.WeilDeligne.Dual
+Langlands.WeilDeligne.ParameterRelations
+Langlands.WeilDeligne.Parameters
+Langlands.WeilDeligne.Twist
+```
+
+## External import roots
+
+```text
+Lean.Elab.Tactic.Omega
+Mathlib.Algebra.Algebra.NonUnitalHom
+Mathlib.Algebra.Algebra.NonUnitalSubalgebra
+Mathlib.Algebra.Algebra.Subalgebra.Lattice
+Mathlib.Algebra.BigOperators.Fin
+Mathlib.Algebra.BigOperators.Finprod
+Mathlib.Algebra.BigOperators.Group.Finset.Basic
+Mathlib.Algebra.BigOperators.GroupWithZero.Action
+Mathlib.Algebra.BigOperators.Pi
+Mathlib.Algebra.Category.ModuleCat.Basic
+Mathlib.Algebra.CharP.Basic
+Mathlib.Algebra.DirectSum.Module
+Mathlib.Algebra.Exact.Basic
+Mathlib.Algebra.Field.Subfield.Basic
+Mathlib.Algebra.Group.Hom.Instances
+Mathlib.Algebra.Group.Pi.Lemmas
+Mathlib.Algebra.Group.Subgroup.Ker
+Mathlib.Algebra.Group.Subgroup.Pointwise
+Mathlib.Algebra.Group.Submonoid.Basic
+Mathlib.Algebra.Group.TypeTags.Finite
+Mathlib.Algebra.Group.TypeTags.Hom
+Mathlib.Algebra.Module.Projective
+Mathlib.Algebra.Module.Submodule.Map
+Mathlib.Algebra.Order.Archimedean.Basic
+Mathlib.Algebra.Order.BigOperators.Group.Finset
+Mathlib.Algebra.Polynomial.Lifts
+Mathlib.Algebra.Ring.GeomSum
+Mathlib.Analysis.Complex.Basic
+Mathlib.Analysis.Complex.Cardinality
+Mathlib.Analysis.Complex.Circle
+Mathlib.Analysis.Complex.Polynomial.Basic
+Mathlib.Analysis.InnerProductSpace.Defs
+Mathlib.Analysis.Matrix.MeasurableSpace
+Mathlib.Analysis.Matrix.Normed
+Mathlib.Analysis.MeanInequalitiesPow
+Mathlib.Analysis.Normed.Module.FiniteDimension
+Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
+Mathlib.Analysis.Normed.Unbundled.SpectralNorm
+Mathlib.Analysis.Real.Sqrt
+Mathlib.Analysis.SpecialFunctions.Complex.Circle
+Mathlib.Analysis.SpecialFunctions.Pow.NNReal
+Mathlib.Analysis.SpecialFunctions.Pow.Real
+Mathlib.Analysis.SpecialFunctions.Sqrt
+Mathlib.Analysis.SpecificLimits.Basic
+Mathlib.Basic.Complex.Basic
+Mathlib.CategoryTheory.Abelian.Subcategory
+Mathlib.CategoryTheory.Discrete.Basic
+Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
+Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
+Mathlib.CategoryTheory.Pi.Basic
+Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+Mathlib.CategoryTheory.Skeletal
+Mathlib.CategoryTheory.Whiskering
+Mathlib.Combinatorics.Enumerative.Composition
+Mathlib.Data.ENat.Basic
+Mathlib.Data.Fin.Rev
+Mathlib.Data.Fin.Tuple.Sort
+Mathlib.Data.Fintype.EquivFin
+Mathlib.Data.Fintype.Quotient
+Mathlib.Data.Fintype.Sort
+Mathlib.Data.Int.Cast.Lemmas
+Mathlib.Data.Int.Interval
+Mathlib.Data.Int.LeastGreatest
+Mathlib.Data.Matrix.Basic
+Mathlib.Data.Matrix.Block
+Mathlib.Data.Nat.Find
+Mathlib.Data.PNat.Basic
+Mathlib.Data.Set.Card
+Mathlib.Data.Set.Finite.Basic
+Mathlib.Data.Sym.Basic
+Mathlib.Data.ZMod.Basic
+Mathlib.FieldTheory.AbsoluteGaloisGroup
+Mathlib.FieldTheory.Finite.Basic
+Mathlib.FieldTheory.Finite.Extension
+Mathlib.FieldTheory.Galois.Profinite
+Mathlib.FieldTheory.PrimitiveElement
+Mathlib.GroupTheory.Abelianization.Defs
+Mathlib.GroupTheory.Coset.Defs
+Mathlib.GroupTheory.DoubleCoset
+Mathlib.GroupTheory.FiniteIndexNormalSubgroup
+Mathlib.GroupTheory.GroupAction.Basic
+Mathlib.GroupTheory.GroupAction.ConjAct
+Mathlib.GroupTheory.GroupAction.Defs
+Mathlib.GroupTheory.GroupAction.Quotient
+Mathlib.GroupTheory.Index
+Mathlib.GroupTheory.OrderOfElement
+Mathlib.GroupTheory.QuotientGroup.Defs
+Mathlib.GroupTheory.Subgroup.Center
+Mathlib.GroupTheory.Subgroup.Centralizer
+Mathlib.GroupTheory.Transfer
+```
+
+```text
+Mathlib.LinearAlgebra.Basis.VectorSpace
+Mathlib.LinearAlgebra.Charpoly.Basic
+Mathlib.LinearAlgebra.Determinant
+Mathlib.LinearAlgebra.Dimension.Basic
+Mathlib.LinearAlgebra.Dimension.Constructions
+Mathlib.LinearAlgebra.DirectSum.Finite
+Mathlib.LinearAlgebra.Dual.Lemmas
+Mathlib.LinearAlgebra.Eigenspace.Basic
+Mathlib.LinearAlgebra.Eigenspace.Pi
+Mathlib.LinearAlgebra.Eigenspace.Triangularizable
+Mathlib.LinearAlgebra.FiniteDimensional.Basic
+Mathlib.LinearAlgebra.FiniteDimensional.Defs
+Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+Mathlib.LinearAlgebra.Finsupp.LinearCombination
+Mathlib.LinearAlgebra.Finsupp.VectorSpace
+Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
+Mathlib.LinearAlgebra.Isomorphisms
+Mathlib.LinearAlgebra.Matrix.Block
+Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
+Mathlib.LinearAlgebra.Matrix.Diagonal
+Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Basic
+Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Defs
+Mathlib.LinearAlgebra.Matrix.Kronecker
+Mathlib.LinearAlgebra.Matrix.Permutation
+Mathlib.LinearAlgebra.Matrix.Reindex
+Mathlib.LinearAlgebra.Matrix.SchurComplement
+Mathlib.LinearAlgebra.Matrix.Transvection
+Mathlib.LinearAlgebra.PiTensorProduct.Basic
+Mathlib.LinearAlgebra.PiTensorProduct.Basis
+Mathlib.LinearAlgebra.PiTensorProduct.Dual
+Mathlib.LinearAlgebra.PiTensorProduct.Finite
+Mathlib.LinearAlgebra.PiTensorProduct.Generators
+Mathlib.LinearAlgebra.Projection
+Mathlib.LinearAlgebra.Quotient.Basic
+Mathlib.LinearAlgebra.Semisimple
+Mathlib.LinearAlgebra.TensorProduct.Basis
+Mathlib.LinearAlgebra.TensorProduct.RightExactness
+Mathlib.Logic.Equiv.Fin.Basic
+Mathlib.MeasureTheory.Constructions.Pi
+Mathlib.MeasureTheory.Function.LocallyIntegrable
+Mathlib.MeasureTheory.Function.LpSeminorm.Defs
+Mathlib.MeasureTheory.Function.SimpleFunc
+Mathlib.MeasureTheory.Group.Integral
+Mathlib.MeasureTheory.Group.LIntegral
+Mathlib.MeasureTheory.Group.Measure
+Mathlib.MeasureTheory.Group.ModularCharacter
+Mathlib.MeasureTheory.Integral.Bochner.Basic
+Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+Mathlib.MeasureTheory.Integral.Bochner.Set
+Mathlib.MeasureTheory.Integral.Marginal
+Mathlib.MeasureTheory.Integral.Prod
+Mathlib.MeasureTheory.Integral.RieszMarkovKakutani.Real
+Mathlib.MeasureTheory.Measure.Haar.Basic
+Mathlib.MeasureTheory.Measure.Haar.DistribChar
+Mathlib.MeasureTheory.Measure.Haar.MulEquivHaarChar
+Mathlib.MeasureTheory.Measure.Haar.Unique
+Mathlib.MeasureTheory.Measure.OpenPos
+Mathlib.MeasureTheory.Measure.Regular
+Mathlib.MeasureTheory.Measure.Typeclasses.Finite
+Mathlib.NumberTheory.LocalField.Basic
+Mathlib.NumberTheory.Padics.LocalField
+Mathlib.NumberTheory.Padics.RingHoms
+Mathlib.Order.Atoms
+Mathlib.Order.CompactlyGenerated.Basic
+Mathlib.Order.Hom.Set
+Mathlib.Order.Interval.Finset.Fin
+Mathlib.Order.WithBot
+Mathlib.RepresentationTheory.Basic
+Mathlib.RepresentationTheory.Coinduced
+Mathlib.RepresentationTheory.Coinvariants
+Mathlib.RepresentationTheory.Equiv
+Mathlib.RepresentationTheory.Intertwining
+Mathlib.RepresentationTheory.Invariants
+Mathlib.RepresentationTheory.Irreducible
+Mathlib.RepresentationTheory.Rep.Basic
+Mathlib.RepresentationTheory.Rep.Res
+Mathlib.RepresentationTheory.Semisimple
+Mathlib.RepresentationTheory.Subrepresentation
+Mathlib.RingTheory.Adjoin.Basic
+Mathlib.RingTheory.Adjoin.Polynomial.Basic
+Mathlib.RingTheory.Algebraic.LinearIndependent
+Mathlib.RingTheory.Artinian.Module
+Mathlib.RingTheory.DedekindDomain.IntegralClosure
+Mathlib.RingTheory.FiniteLength
+Mathlib.RingTheory.Finiteness.Basic
+Mathlib.RingTheory.Flat.Basic
+Mathlib.RingTheory.Ideal.Quotient.Operations
+Mathlib.RingTheory.Jacobson.Semiprimary
+Mathlib.RingTheory.Length
+Mathlib.RingTheory.Nakayama
+```
+
+```text
+Mathlib.RingTheory.Nilpotent.Basic
+Mathlib.RingTheory.Noetherian.Basic
+Mathlib.RingTheory.Noetherian.Defs
+Mathlib.RingTheory.Norm.Transitivity
+Mathlib.RingTheory.Polynomial.Basic
+Mathlib.RingTheory.PowerBasis
+Mathlib.RingTheory.PrincipalIdealDomain
+Mathlib.RingTheory.RamificationInertia.Basic
+Mathlib.RingTheory.SimpleModule.Basic
+Mathlib.RingTheory.Valuation.Extension
+Mathlib.RingTheory.Valuation.Integral
+Mathlib.RingTheory.Valuation.LocalSubring
+Mathlib.RingTheory.Valuation.RamificationGroup
+Mathlib.Tactic
+Mathlib.Tactic.Group
+Mathlib.Tactic.Linarith
+Mathlib.Tactic.NoncommRing
+Mathlib.Tactic.NormNum
+Mathlib.Topology.Algebra.Category.ProfiniteGrp.Basic
+Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion
+Mathlib.Topology.Algebra.ConstMulAction
+Mathlib.Topology.Algebra.ContinuousMonoidHom
+Mathlib.Topology.Algebra.Group.Basic
+Mathlib.Topology.Algebra.Group.ClosedSubgroup
+Mathlib.Topology.Algebra.Group.Matrix
+Mathlib.Topology.Algebra.Group.Neighborhood
+Mathlib.Topology.Algebra.Group.OpenMapping
+Mathlib.Topology.Algebra.Group.Pointwise
+Mathlib.Topology.Algebra.Group.Quotient
+Mathlib.Topology.Algebra.Group.Subgroup
+Mathlib.Topology.Algebra.Group.Units
+Mathlib.Topology.Algebra.GroupWithZero
+Mathlib.Topology.Algebra.Module.FiniteDimension
+Mathlib.Topology.Algebra.Module.ModuleTopology
+Mathlib.Topology.Algebra.MulAction
+Mathlib.Topology.Algebra.Nonarchimedean.Basic
+Mathlib.Topology.Algebra.Nonarchimedean.TotallyDisconnected
+Mathlib.Topology.Algebra.OpenSubgroup
+Mathlib.Topology.Algebra.ProperAction.Basic
+Mathlib.Topology.Algebra.Ring.Compact
+Mathlib.Topology.Algebra.Ring.Ideal
+Mathlib.Topology.Algebra.Support
+Mathlib.Topology.Algebra.ValuativeRel.ValuativeTopology
+Mathlib.Topology.Algebra.Valued.NormedValued
+Mathlib.Topology.Baire.Lemmas
+Mathlib.Topology.Baire.LocallyCompactRegular
+Mathlib.Topology.Bases
+Mathlib.Topology.Compactness.Compact
+Mathlib.Topology.Compactness.LocallyCompact
+Mathlib.Topology.Compactness.SigmaCompact
+Mathlib.Topology.Connected.TotallyDisconnected
+Mathlib.Topology.ContinuousMap.CompactlySupported
+Mathlib.Topology.Homeomorph.Lemmas
+Mathlib.Topology.Homeomorph.Quotient
+Mathlib.Topology.Instances.Int
+Mathlib.Topology.Instances.Matrix
+Mathlib.Topology.Instances.NNReal.Lemmas
+Mathlib.Topology.LocallyClosed
+Mathlib.Topology.LocallyConstant.Algebra
+Mathlib.Topology.LocallyConstant.Basic
+Mathlib.Topology.MetricSpace.Ultra.TotallySeparated
+Mathlib.Topology.Order.Compact
+Mathlib.Topology.Separation.Profinite
+Mathlib.Topology.UrysohnsLemma
+```
+
