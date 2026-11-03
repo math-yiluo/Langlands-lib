@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Dynamic.OppositeIntersection
 import Langlands.GroupScheme.Rational.LeviFactorization
 import Langlands.GroupScheme.Rational.Statement
 import Langlands.GroupScheme.Rational.PointDecomposition
@@ -84,6 +85,13 @@ theorem hasInjectiveOppositeCellMultiplication_of_inf_eq_bot
       Dynamic.parabolic (CommGroupScheme.groupHom ν ≫ i)).carrier X) := ⟨hu, hp⟩
   rw [hinter] at hg
   exact Subgroup.mem_bot.mp hg
+
+/-- Opposite-cell multiplication is injective on all tests for an affine
+ambient group, by the actual opposite dynamic intersection theorem. -/
+theorem hasInjectiveOppositeCellMultiplication_of_isAffine [IsAffine G.X.left] :
+    HasInjectiveOppositeCellMultiplication i ν :=
+  hasInjectiveOppositeCellMultiplication_of_inf_eq_bot i ν
+    (Dynamic.opposite_unipotent_inf_parabolic (CommGroupScheme.groupHom ν ≫ i))
 
 /-- A monomorphic represented opposite-cell multiplication is injective on
 the subgroup-functor points of every test scheme. -/
@@ -280,5 +288,18 @@ theorem normalizer_eq_one_of_injectiveOppositeCell
   apply Subtype.ext
   change (n : Over.mk (𝟙 _) ⟶ G.X) = 1
   rw [hn, hvone, huone, one_mul]
+
+/-- In an affine ambient group, every normalizing point that is a product
+of opposite and original unipotent points is the identity. -/
+theorem normalizer_eq_one_of_unipotent_product [IsAffine G.X.left]
+    (n : normalizerPoints i)
+    (v : RationalPoint.unipotent
+      (CommGroupScheme.groupHom (Gm.powerHom (Spec (CommRingCat.of k)) (-1)) ≫
+        (CommGroupScheme.groupHom ν ≫ i)))
+    (u : RationalPoint.unipotent (CommGroupScheme.groupHom ν ≫ i))
+    (hn : (n : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ G.X) = v * u) :
+    n = 1 :=
+  normalizer_eq_one_of_injectiveOppositeCell i ν
+    (hasInjectiveOppositeCellMultiplication_of_isAffine i ν) n v u hn
 
 end Langlands.GroupScheme

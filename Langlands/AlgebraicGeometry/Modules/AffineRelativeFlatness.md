@@ -35,5 +35,17 @@ ordinary `moduleSpecΓFunctor` restricted from the full subcategory of
 quasi-coherent sheaves relatively flat along `Spec.map φ` to the full
 subcategory defined by `affineFlatModules φ`. On objects and arrows it uses
 the existing affine section functor; its new property proof is exactly the
-section-flatness theorem above. The module proves this implication only;
-it does not assert the converse, a deformation existence theorem, or an atlas.
+section-flatness theorem above. These declarations provide the forward implication; the comparison below also
+proves the converse. No deformation existence theorem or atlas is asserted.
+
+## Affine comparison and open restrictions
+
+This internal comparison is used in the noetherian approximation argument. For a ring map R → B and a B-module M, the associated actual sheaf on Spec B is flat over Spec R exactly when M is flat over R through the given ring map. No flatness of B over R is assumed.
+
+The proof uses the canonical localization maps from M to its associated-sheaf stalks. Localization over B preserves R-flatness. At a point x, the scalar action from the base local ring agrees with the R-action through B by compatibility of spectrum stalk maps with the canonical localization maps. Flatness over that base local ring is equivalent to flatness over R. Conversely, flatness of all stalks over R reflects to M by the maximal-ideal localization criterion.
+
+The file also compares relative flatness with flatness of global sections for an arbitrary quasicoherent module on a spectrum. The comparison transports along the canonical isomorphism from the associated sheaf of sections to the original module. A second version treats an arbitrary scheme morphism between spectra by its unique underlying ring map.
+
+For an open immersion, `relativeRestrictStalkLinearEquiv` restricts scalars in the existing linear equivalence between a restriction stalk and the original stalk, using compatibility of scheme stalk maps with composition. `isFlatOver_iff_openCover` then detects relative flatness on any jointly surjective family of open charts. The proof chooses a chart above each point and transfers flatness along this equivalence.
+
+The comparison with `DerivedSections.relativeGlobalSections` first treats a spectrum via the published pushforward-section isomorphism. For any affine source it transports sections through the canonical isomorphism with the spectrum of global functions, using the scalar sections base-change isomorphism for that scheme isomorphism. A surjective open restriction preserves and reflects relative flatness by the same stalk comparison.

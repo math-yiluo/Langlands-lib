@@ -43,3 +43,7 @@ The representation-theoretic dependencies are only the definitions of
 the named compact-subgroup condition and of semidirect decompositions.
 The proof uses no classification, character independence, geometric
 lemma, adjointness, cuspidal-support theorem, or Aubert Proposition 3.2.
+
+The local instance `restrictedLeviPointTopology` uses the canonical
+`pointTopology` on rational points. Its explicit name allows this module to be
+imported together with the rational alternating-operator modules.
