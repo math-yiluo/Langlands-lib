@@ -58,3 +58,7 @@ corrected Theorem 3.6, terminal Jacquet comparisons and finite-length,
 irreducibility and involution results remain separate representation-theoretic
 targets. Proposition 3.2 remains unresolved. No classification-independence
 claim follows from these intrinsic substitutions.
+
+The local topology instance is named `rationalStandardComplexPointTopology` to avoid
+generated-name collisions when rational-family modules are imported together.
+Its defining value remains `pointTopology`.

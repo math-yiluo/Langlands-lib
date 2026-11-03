@@ -17,6 +17,13 @@ every linear order on that actual subtype is quantified for the exterior
 coordinates. No split-group, quasisplit-group, characteristic-zero or
 positive-rank restriction is imposed.
 
+The intrinsic normalization section names its local topology instance
+`rationalTerminalJacquetPointTopology`. This internal naming correction allows
+this module and `RationalCorrectedTheorem36` to be imported together: their
+anonymous instances previously generated the same declaration name. The
+instance still reduces to `pointTopology`, and the proposition definitions
+and normalization argument retain their existing mathematical content.
+
 The subgroups are precisely `parabolic i ν`, `levi i ν` and `unipotent i ν`.
 The named standard-cocharacter and Levi-intersection assertions supply their
 ambient and inside-Levi semidirect decompositions. Where needed, the named

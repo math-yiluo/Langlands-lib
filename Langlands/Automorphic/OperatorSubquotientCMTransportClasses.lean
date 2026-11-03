@@ -1,3 +1,4 @@
+import Langlands.Automorphic.OperatorLocalRestriction
 import Langlands.Automorphic.OperatorSubquotientCMTransport
 
 /-! # CM transport of actual quotient intertwiners and classes -/
@@ -27,10 +28,6 @@ local instance quotientCMClassesRealizationGroup (S : OperatorRealization K n) :
     AddCommGroup S.Space := Submodule.addCommGroup _
 
 namespace OperatorSubquotient
-
-/-- A linear map intertwining every concrete operator on the actual quotients. -/
-abbrev Intertwiner (Q T : OperatorSubquotient K n) :=
-  Q.representation.IntertwiningMap T.representation
 
 theorem complexConjEquiv_symm_operatorAction (Q : OperatorSubquotient K n)
     (a : automorphicOperatorAlgebra K n) (f : Q.complexConj.Space) :

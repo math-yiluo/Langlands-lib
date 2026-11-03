@@ -11,3 +11,7 @@ The zero cocharacter is standard at the full simple-root set by `isStandardCocha
 If the simple-root type is empty, `rationalAlternatingOperator_of_isEmpty` reduces the same actual operator to its empty-index term. That index is also the full index, so the endpoint identity proves `rationalAlternatingOperator_eq_id_of_isEmpty`. Rewriting by this equality proves `rationalAlternatingOperator_sq_eq_id_of_isEmpty`. These results do not prove involutivity when simple roots are present.
 
 The route uses no Langlands classification, character independence, geometric lemma, adjointness, cuspidal-support theorem, or Aubert Proposition 3.2. Its prerequisites are the displayed structural comparison and the actual normalized constructions and exact-K0 formulas, with the elementary endpoint argument implemented in the imported endpoint module.
+
+The local topology instance is named `rationalEndpointPointTopology` to avoid
+generated-name collisions when rational-family modules are imported together.
+Its defining value remains `pointTopology`.

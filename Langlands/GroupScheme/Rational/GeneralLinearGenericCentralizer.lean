@@ -20,7 +20,7 @@ variable (k : Type u) [Field k]
 local notation "𝔻" => splitTorus.commGroupScheme (Spec (CommRingCat.of k)) (ULift n)
 
 /-- Pairing the root of `(i, j)` with a cocharacter subtracts its two weights. -/
-theorem latticePairing_rootDatum_root (ν : cocharacterLattice 𝔻)
+theorem latticePairing_rootDatum_root_fintype (ν : cocharacterLattice 𝔻)
     (p : {p : n × n // p.1 ≠ p.2}) :
     latticePairing 𝔻 ((rootDatum n k).root p) ν =
       cocharacterCoordEquiv n k ν p.1.1 - cocharacterCoordEquiv n k ν p.1.2 := by
@@ -40,7 +40,7 @@ theorem isGenericCocharacter_diagonalTorus_iff (ν : cocharacterLattice 𝔻) :
       rw [roots_diagonalTorus]
       exact ⟨i, j, hne, characterLatticeEquiv_rootDatum_root p⟩
     apply hν _ hp
-    rw [latticePairing_rootDatum_root]
+    rw [latticePairing_rootDatum_root_fintype]
     exact sub_eq_zero.mpr hij
   · intro hν χ hχ
     change χ ∈ roots (diagonalTorus n (CommRingCat.of k)) at hχ
@@ -50,7 +50,7 @@ theorem isGenericCocharacter_diagonalTorus_iff (ν : cocharacterLattice 𝔻) :
     have hχp : χ = (rootDatum n k).root p := by
       apply (splitTorus.characterLatticeEquiv k (ULift.{u} n)).injective
       exact hχ.trans (characterLatticeEquiv_rootDatum_root p).symm
-    rw [hχp, latticePairing_rootDatum_root]
+    rw [hχp, latticePairing_rootDatum_root_fintype]
     exact sub_ne_zero.mpr (fun h => hij (hν h))
 
 /-- The dynamic Levi of a generic cocharacter of the diagonal torus equals

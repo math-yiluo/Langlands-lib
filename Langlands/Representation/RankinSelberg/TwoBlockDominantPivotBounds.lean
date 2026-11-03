@@ -40,9 +40,9 @@ theorem oppositeCone_of_pivot {r L : ℕ} {lam : Fin (r + 1) → ℤ}
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance twoBlockDominantPivotBoundsLocalInstance1 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockDominantPivotBoundsLocalInstance2 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance twoBlockDominantPivotBoundsLocalInstance3 : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
 
 /-- The isolated unit fixes the integer exponent at the pivot in every

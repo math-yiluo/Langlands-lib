@@ -37,3 +37,7 @@ no assertion attributed to external literature. The statements impose no
 splitness or reductivity assumption. Equality with the whole pullback weight
 space, full support descent, and unconditional relative-root negation remain
 separate obligations.
+
+Local instances have explicit names prefixed by `weightBaseChangeSupport` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

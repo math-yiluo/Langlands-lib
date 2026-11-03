@@ -67,3 +67,7 @@ quasisplit, nonempty-root, irreducibility or finite-length restriction is
 imposed. This supplementary analytic target does not change
 `RationalRankOneSelfAssociationStatement` or supply any of its missing
 representation-theoretic inputs.
+
+The local topology instance is named `rationalSquareIntegrabilityStatementPointTopology` to avoid
+generated-name collisions when rational-family modules are imported together.
+Its defining value remains `pointTopology`.

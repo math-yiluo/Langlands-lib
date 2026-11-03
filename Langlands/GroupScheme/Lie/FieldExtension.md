@@ -29,3 +29,7 @@ characteristic and imperfect fields, with both fields in universe `u`.
 
 These are transport lemmas. They do not prove exclusion of simultaneous
 opposite-root witnesses, nor any geometric rank-one classification.
+
+Local instances have explicit names prefixed by `fieldExtension` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

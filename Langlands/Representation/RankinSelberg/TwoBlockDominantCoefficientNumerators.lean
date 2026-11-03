@@ -26,18 +26,18 @@ section Coefficients
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
   {n : ℕ}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) :=
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance1 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance2 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance3 : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance4 : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) :=
   borel (GeneralLinear (n + 1) F.Carrier)
-local instance : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) :=
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance5 : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance6 : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) :=
   borel (upperUnipotent (n + 1) F.Carrier)
-local instance : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) :=
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance7 : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance8 : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) :=
   borel (LeftUnipotentQuotient n F.Carrier)
-local instance : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance9 : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
 
 variable (ψ : UnitaryAdditiveCharacter F.Carrier)
   (μ : Measure (LeftUnipotentQuotient n F.Carrier))
@@ -122,18 +122,18 @@ variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
   {t : ℕ} {m : Fin 2 → ℕ} (h : ∑ i, (m i + 1) = t + 1)
   {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : MeasurableSpace (GeneralLinear (t + 1) F.Carrier) :=
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance10 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance11 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance12 : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance13 : MeasurableSpace (GeneralLinear (t + 1) F.Carrier) :=
   borel (GeneralLinear (t + 1) F.Carrier)
-local instance : BorelSpace (GeneralLinear (t + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (upperUnipotent (t + 1) F.Carrier) :=
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance14 : BorelSpace (GeneralLinear (t + 1) F.Carrier) := ⟨rfl⟩
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance15 : MeasurableSpace (upperUnipotent (t + 1) F.Carrier) :=
   borel (upperUnipotent (t + 1) F.Carrier)
-local instance : BorelSpace (upperUnipotent (t + 1) F.Carrier) := ⟨rfl⟩
-local instance : MeasurableSpace (LeftUnipotentQuotient t F.Carrier) :=
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance16 : BorelSpace (upperUnipotent (t + 1) F.Carrier) := ⟨rfl⟩
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance17 : MeasurableSpace (LeftUnipotentQuotient t F.Carrier) :=
   borel (LeftUnipotentQuotient t F.Carrier)
-local instance : BorelSpace (LeftUnipotentQuotient t F.Carrier) := ⟨rfl⟩
+local instance twoBlockDominantCoefficientNumeratorsLocalInstance18 : BorelSpace (LeftUnipotentQuotient t F.Carrier) := ⟨rfl⟩
 
 variable (ψ : UnitaryAdditiveCharacter F.Carrier)
   (σ : ∀ i, Representation ℂ (GeneralLinear (m i + 1) F.Carrier) (W i))

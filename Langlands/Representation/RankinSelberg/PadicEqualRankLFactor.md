@@ -138,3 +138,7 @@ This focused construction covers equal positive ranks. Unequal-rank
 analytic existence, functional equations, epsilon and gamma existence,
 and nongeneric Langlands-classification constructions retain their separate
 owners and proof obligations.
+
+Local instances have explicit names prefixed by `padicEqualRankLFactor` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

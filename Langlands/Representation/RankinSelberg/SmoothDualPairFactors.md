@@ -159,3 +159,7 @@ module, inspected the complete declaration types and the selected
 constructor, and reported only `propext`, `Classical.choice`, and
 `Quot.sound` as axioms. These development checks establish compilation;
 independent semantic review and publication are separate steps.
+
+Local instances have explicit names prefixed by `smoothDualPairFactors` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

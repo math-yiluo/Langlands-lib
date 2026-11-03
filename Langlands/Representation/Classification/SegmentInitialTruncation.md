@@ -92,3 +92,8 @@ particular it does not formalize Theorem 3.5 of the source. Reading deletion of
 the last position as deletion of a unique support element requires
 integral-twist freeness, which this module does not use. No classification,
 existence or exhaustion theorem is imported or assumed.
+
+`Segment.filterMap_eq_dropLastList` identifies the explicit highest-derivative
+filter map with `dropLastList`. The theorem was moved here from
+`Aubert.ZelevinskyHighestDerivative` so the highest-derivative and linked-segment
+arguments reuse one bridge, with the same equality and proof.

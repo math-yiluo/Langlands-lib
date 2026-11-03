@@ -44,3 +44,6 @@ need not be continuous. No quotient evaluation, topology, separate CM
 operation on all finite smooth classes, central-character or cusp condition
 on arbitrary quotients, conjugate self-duality, or irreducible or spectral
 existence is asserted.
+
+`OperatorSubquotient.Intertwiner` is reused from `OperatorLocalRestriction`;
+the alias has the same actual representation-intertwiner definition.

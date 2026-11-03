@@ -74,6 +74,14 @@ Repeated surviving terms remain repeated. -/
 def dropLastList (l : List (Segment.{uV, uF} T)) : List (Segment.{uV, uF} T) :=
   l.filterMap dropLast
 
+/-- The list operation in the highest-derivative theorem is `dropLastList`. -/
+theorem filterMap_eq_dropLastList (l : List (Segment.{uV, uF} T)) :
+    l.filterMap (fun Δ => if h : 2 ≤ Δ.length then
+        some (⟨Δ.base, Δ.length - 1, by omega⟩ : T.Segment.{uV, uF}) else none) =
+      Segment.dropLastList l := by
+  unfold Segment.dropLastList
+  congr 1
+
 @[simp]
 theorem dropLastList_nil : dropLastList ([] : List (Segment.{uV, uF} T)) = [] := rfl
 

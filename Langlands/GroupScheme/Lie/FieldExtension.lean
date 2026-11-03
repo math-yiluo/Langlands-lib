@@ -65,7 +65,7 @@ variable {k K : Type u} [Field k] [Field K] [Algebra k K]
   (G : GroupScheme (Spec (CommRingCat.of k)))
   [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
 
-local instance : IsAffineHom
+local instance fieldExtensionLocalInstance1 : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance
@@ -103,7 +103,7 @@ variable {k K : Type u} [Field k] [Field K] [Algebra k K]
 
 local notation "b" => algebraBaseMap k K
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance fieldExtensionLocalInstance2 : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 

@@ -52,3 +52,7 @@ equivalences and uniqueness from [PadicPairFactors](PadicPairFactors.md).
 The proof supplies no new analytic input. Equal-rank symmetry as a factor
 law, changes of additive character, epsilon and gamma constructions, and
 classification-based nongeneric extensions are separate results.
+
+The canonical normed-field and Borel measurable-space local instances have
+module-specific names to avoid generated-name collisions. Their defining
+values and all L-factor constructions are unchanged.

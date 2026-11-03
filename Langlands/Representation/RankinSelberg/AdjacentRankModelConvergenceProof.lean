@@ -22,10 +22,10 @@ section CanonicalTopology
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance adjacentRankModelConvergenceProofLocalInstance1 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance adjacentRankModelConvergenceProofLocalInstance2 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance adjacentRankModelConvergenceProofLocalInstance3 : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance adjacentRankModelConvergenceProofLocalInstance4 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
 
 /-- The rectangular kernel is continuous, including its inverse-row column. -/
 theorem continuous_adjacentRankKernelMatrix (r : ℕ) :
@@ -155,15 +155,15 @@ theorem continuous_adjacentRank_determinantWeight (m : ℕ) (s : ℂ) :
   rw [Complex.ofReal_mem_slitPlane]
   exact (normalizedAbsoluteValue F.canonicalTopologicalData).pos h.det_ne_zero
 
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance adjacentRankModelConvergenceProofLocalInstance5 : MeasurableSpace F.Carrier := borel _
+local instance adjacentRankModelConvergenceProofLocalInstance6 : BorelSpace F.Carrier := ⟨rfl⟩
+local instance adjacentRankModelConvergenceProofLocalInstance7 : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
-local instance (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance adjacentRankModelConvergenceProofLocalInstance8 (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) F.Carrier) := borel _
+local instance adjacentRankModelConvergenceProofLocalInstance9 (n : ℕ) : BorelSpace (GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
 
 /-- A pure tensor gives an actually integrable formula (8) integrand, for every
 ambient element and every continuous quasicharacter. -/

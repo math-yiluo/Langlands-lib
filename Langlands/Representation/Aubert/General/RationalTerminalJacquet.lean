@@ -28,7 +28,8 @@ variable {k : Type u} [Field k] [TopologicalSpace k]
   {T : CommGroupScheme (Spec (CommRingCat.of k))}
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance rationalTerminalJacquetPointTopology :
+    TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable (i : T.toGrp ⟶ G) (ν : cocharacterLattice T)
   [LocallyCompactSpace (RationalPoint k G.X)]

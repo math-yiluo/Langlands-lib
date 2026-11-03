@@ -61,3 +61,7 @@ intermediate topology, compact-limit, root and structural inputs must be
 discharged or matched to the parent's itemized external structural list before
 final parent closure. No representation-theoretic consequence has been moved
 into that list, and no classification-independence claim is made.
+
+The local topology instance is named `rationalCorrectedTheorem36PointTopology` to avoid
+generated-name collisions when rational-family modules are imported together.
+Its defining value remains `pointTopology`.

@@ -59,7 +59,7 @@ section Topology
 
 variable [TopologicalSpace k]
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance rationalEndpointPointTopology : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable (hStandard : StandardCocharacterStatement.{u})
   (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)

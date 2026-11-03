@@ -40,3 +40,7 @@ It is not a uniform support bound, a holomorphic choice of sections or a
 parameter-continuation assertion. Zero induced functionals and coefficients
 are included; the nonzero hypotheses concern only the block functionals
 needed by the ordinary existence theorem and the reference functional J.
+
+Local instances have explicit names prefixed by `twoBlockDominantModelRealization` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

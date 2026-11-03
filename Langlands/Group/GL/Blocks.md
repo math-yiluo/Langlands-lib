@@ -120,3 +120,8 @@ source correspondence, current dependencies and successful final Lake validation
 The construction does not assert that every totally disconnected locally
 compact group is nonarchimedean. The separate intrinsic GL nonarchimedean
 target remains necessary for the compact-open specialization.
+
+`BlockShape.coordinateBlock B x` is the first component of
+`B.indexEquiv.symm x`. This shared coordinate projection is the former
+`ConjugatePairRefinementRankProof.blk`, with the same defining expression;
+it is also used by the standard-block height comparison in `SigmaProductGL`.

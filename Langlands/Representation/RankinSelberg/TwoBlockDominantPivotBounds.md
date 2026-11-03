@@ -34,3 +34,7 @@ both rectangles and complementary sizes, including zero dimensions.
 Only smoothness is required of the supplied representation. There is no
 irreducibility, nonzero-functional or integrability assumption. For a zero
 coefficient the nonvanishing implications remain valid.
+
+Local instances have explicit names prefixed by `twoBlockDominantPivotBounds` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

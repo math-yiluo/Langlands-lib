@@ -114,3 +114,7 @@ representations, analytic continuation, functional equations, normalized
 polynomial existence, or classification. Those remain their separate
 explicit prerequisites. It constructs the intrinsic model and its proved
 representation structure, rather than selecting an L, epsilon or gamma value.
+
+Local instances have explicit names prefixed by `genericModel` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

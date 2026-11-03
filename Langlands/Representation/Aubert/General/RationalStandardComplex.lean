@@ -81,7 +81,7 @@ section Complex
 
 variable [TopologicalSpace k]
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance rationalStandardComplexPointTopology : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable [LocallyCompactSpace (RationalPoint k G.X)]
   [NonarchimedeanGroup (RationalPoint k G.X)]

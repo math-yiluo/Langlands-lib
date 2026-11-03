@@ -68,7 +68,7 @@ full name, statement and proof.
   by summing `rank_le_degree` and using `d.degree_sum`.
 - `sum_rank_pos`: if `n > 0`, then `0 < ∑ i, (d.segments i).rank`. A datum with
   no segments has total degree `0`, and every segment has positive rank.
-- `filterMap_eq_dropLastList`: the list operation written out in
+- `Segment.filterMap_eq_dropLastList`: the list operation written out in
   `SegmentSocleProductHighestDerivative` (keep `⟨base, length - 1⟩` when
   `2 ≤ length`, drop the segment otherwise) is the Library list truncation
   `Segment.dropLastList`. After unfolding `dropLastList`, `congr 1` closes the
@@ -94,7 +94,7 @@ socle hypothesis `hs`, irreducibility of `π` and an injective intertwiner
    with `k = λ` gives: every derivative of `d.induced` of order `j` with
    `λ < j ≤ N + 1` is zero; a datum `d'` of degree `N + 1 - λ` with segment
    socles whose segment list is the filtered list above, hence
-   `Segment.dropLastList` of the list of `d` (`filterMap_eq_dropLastList`); and
+   `Segment.dropLastList` of the list of `d` (`Segment.filterMap_eq_dropLastList`); and
    an isomorphism `e` from the order-`λ` derivative of `d.induced` to
    `d'.induced`.
 2. Homogeneity. `precedenceOrdered_endpointSeparated`, with
@@ -141,3 +141,5 @@ socle hypothesis `hs`, irreducibility of `π` and an injective intertwiner
 `Aubert/SegmentProductClass` and `Aubert/SegmentPolynomialInjectivity`, on
 Library `0d8048b0`, reported 0 errors and 0 warnings. `exists_label_subquotient`
 depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`.
+
+The list-operation bridge is shared from `Classification.SegmentInitialTruncation`.

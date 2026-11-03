@@ -21,7 +21,7 @@ variable {k : Type u} [Field k] [TopologicalSpace k]
   {T : CommGroupScheme (Spec (CommRingCat.of k))}
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance rationalContragredientReductionPointTopology : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable (i : T.toGrp ⟶ G) [Mono i.hom.hom.left] (ν : cocharacterLattice T)
   (hStandard : StandardCocharacterStatement.{u})

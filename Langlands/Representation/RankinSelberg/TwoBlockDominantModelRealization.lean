@@ -19,9 +19,9 @@ variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
   {t : ℕ} {m : Fin 2 → ℕ} (h : ∑ i, (m i + 1) = t + 1)
   {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
+local instance twoBlockDominantModelRealizationLocalInstance1 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockDominantModelRealizationLocalInstance2 : MeasurableSpace F.Carrier := borel F.Carrier
+local instance twoBlockDominantModelRealizationLocalInstance3 : BorelSpace F.Carrier := ⟨rfl⟩
 
 section Coefficients
 
@@ -106,9 +106,9 @@ end Coefficients
 
 section Family
 
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : SecondCountableTopology F.Carrier := F.canonicalTopologicalData.secondCountableTopology
+local instance twoBlockDominantModelRealizationLocalInstance4 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance twoBlockDominantModelRealizationLocalInstance5 : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance twoBlockDominantModelRealizationLocalInstance6 : SecondCountableTopology F.Carrier := F.canonicalTopologicalData.secondCountableTopology
 
 /-- One ordinary convergence bound realizes every actual inverse-functional
 coefficient model of the deformed lower induction, with no restriction on the

@@ -180,7 +180,7 @@ section PadicGeneric
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : NontriviallyNormedField F.Carrier := F.canonicalNormedField
+local instance genericModelLocalInstance1 : NontriviallyNormedField F.Carrier := F.canonicalNormedField
 
 variable {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
   {ψ : UnitaryAdditiveCharacter F.Carrier}

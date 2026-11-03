@@ -34,6 +34,9 @@ abbrev Index := (i : Fin B.length) × Fin (B.size i)
 def indexEquiv : B.Index ≃ Fin n :=
   finSigmaFinEquiv.trans (finCongr B.sum_eq)
 
+/-- The block containing a standard coordinate. -/
+def coordinateBlock (x : Fin n) : Fin B.length := (B.indexEquiv.symm x).1
+
 /-- Include a coordinate of one block into the total rank. -/
 def index (i : Fin B.length) : Fin (B.size i) ↪ Fin n :=
   ⟨fun j => B.indexEquiv ⟨i, j⟩,

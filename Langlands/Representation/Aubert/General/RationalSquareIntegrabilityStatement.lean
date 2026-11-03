@@ -41,7 +41,7 @@ def IsNoncentralNegativeTorusPoint (t : RationalPoint k T.X) : Prop :=
 
 variable [TopologicalSpace k]
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance rationalSquareIntegrabilityStatementPointTopology : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable [LocallyCompactSpace (RationalPoint k G.X)]
   [NonarchimedeanGroup (RationalPoint k G.X)]

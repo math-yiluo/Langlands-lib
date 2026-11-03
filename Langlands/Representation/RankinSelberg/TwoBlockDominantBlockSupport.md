@@ -33,3 +33,7 @@ other block, and every supplied right integral factor.
 The only representation assumption is smoothness. The supplied functional
 and coefficient may be zero, and all complementary rectangle dimensions
 may be zero. The ambient block sum is required to have two positive ranks.
+
+Local instances have explicit names prefixed by `twoBlockDominantBlockSupport` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

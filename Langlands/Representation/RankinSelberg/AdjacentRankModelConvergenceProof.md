@@ -154,3 +154,7 @@ The source's sufficiently large positive twist is used in its separate
 induced-model spanning argument and double integral (13). Model-image
 equality, star transforms and adjacent-rank gamma/L identities remain
 separate obligations.
+
+Local instances have explicit names prefixed by `adjacentRankModelConvergenceProof` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

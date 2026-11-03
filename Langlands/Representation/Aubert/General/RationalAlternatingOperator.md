@@ -62,3 +62,7 @@ preservation theorem or topological realization theorem is claimed. The
 ultimate local-field specialization includes positive characteristic; this
 construction itself imposes no characteristic restriction and needs no
 local-field predicate beyond the explicit premises above.
+
+The local topology instance is named `rationalAlternatingOperatorPointTopology` to avoid
+generated-name collisions when rational-family modules are imported together.
+Its defining value remains `pointTopology`.

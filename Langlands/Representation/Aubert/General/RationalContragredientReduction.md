@@ -53,3 +53,7 @@ any eventual proof of the new class-comparison statement remain to be
 reported separately. Provenance is internal: this is a reduction of the
 published actual-family constructions, not a new claim attributed to the
 literature.
+
+The local topology instance is named `rationalContragredientReductionPointTopology` to avoid
+generated-name collisions when rational-family modules are imported together.
+Its defining value remains `pointTopology`.

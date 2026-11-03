@@ -17,7 +17,7 @@ interfaces without assuming the general reductive-group centralizer theorem.
 
 ## Implemented proof
 
-`latticePairing_rootDatum_root` evaluates the pairing of the root attached
+`latticePairing_rootDatum_root_fintype` evaluates the pairing of the root attached
 to `(i, j)` with a cocharacter `ν` as the difference between the `i` and `j`
 coordinates of `cocharacterCoordEquiv n k ν`. The proof rewrites the pairing
 as a dot product using `latticePairing_coord`, uses
@@ -64,3 +64,7 @@ Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),
 Example 2.1.1, printed pp.45–47 (PDF pp.71–73). This helper combines those
 interfaces through the implemented matrix argument; it asserts no general
 reductive-group centralizer theorem.
+
+The pairing theorem uses the suffix `_fintype` to distinguish its arbitrary
+finite-index-type interface from the `Fin N` theorem in
+`GeneralLinearSimpleRootsProof`. Both statements retain their original scope.

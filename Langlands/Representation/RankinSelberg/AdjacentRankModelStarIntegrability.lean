@@ -14,10 +14,10 @@ universe uF uV
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance adjacentRankModelStarIntegrabilityLocalInstance1 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance adjacentRankModelStarIntegrabilityLocalInstance2 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance adjacentRankModelStarIntegrabilityLocalInstance3 : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance adjacentRankModelStarIntegrabilityLocalInstance4 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
 
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
 
@@ -55,15 +55,15 @@ theorem adjacentRankTransformedPure_hasCompactSupport
       (inverseTransposePullback σ) (inverseTransposePullback_isSmooth σ hσ)
       ℓ' Φ (modelMap (inverseTransposePullback σ) ℓ' v)
 
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : TotallyDisconnectedSpace F.Carrier := by
+local instance adjacentRankModelStarIntegrabilityLocalInstance5 : MeasurableSpace F.Carrier := borel _
+local instance adjacentRankModelStarIntegrabilityLocalInstance6 : BorelSpace F.Carrier := ⟨rfl⟩
+local instance adjacentRankModelStarIntegrabilityLocalInstance7 : TotallyDisconnectedSpace F.Carrier := by
   let : NonarchimedeanRing F.Carrier := by
     convert! ValuativeRel.nonarchimedeanRing F.Carrier
     exact Valuation.toTopologicalSpace_eq _
   infer_instance
-local instance (r : ℕ) : MeasurableSpace (GeneralLinear (r + 1) F.Carrier) := borel _
-local instance (r : ℕ) : BorelSpace (GeneralLinear (r + 1) F.Carrier) := ⟨rfl⟩
+local instance adjacentRankModelStarIntegrabilityLocalInstance8 (r : ℕ) : MeasurableSpace (GeneralLinear (r + 1) F.Carrier) := borel _
+local instance adjacentRankModelStarIntegrabilityLocalInstance9 (r : ℕ) : BorelSpace (GeneralLinear (r + 1) F.Carrier) := ⟨rfl⟩
 
 /-- The fixed-action integrand with its transformed coefficient argument
 expanded. The input tensor may already have had its Schwartz factor Fourier

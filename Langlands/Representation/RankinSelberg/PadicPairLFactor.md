@@ -132,3 +132,7 @@ This contribution does not assert independence from the supplied additive
 Haar measure, a reversed-rank construction, functional equations, or
 epsilon/gamma and nongeneric classification-based factor constructions.
 Those remain separate obligations of the broader task.
+
+Local instances have explicit names prefixed by `padicPairLFactor` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

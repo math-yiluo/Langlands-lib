@@ -438,8 +438,8 @@ end SuppliedTopology
 
 section Generic
 
-local instance : NontriviallyNormedField F.Carrier := F.canonicalNormedField
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
+local instance padicPairLFactorLocalInstance1 : NontriviallyNormedField F.Carrier := F.canonicalNormedField
+local instance padicPairLFactorLocalInstance2 : MeasurableSpace F.Carrier := borel F.Carrier
 
 variable {n r : ℕ} {V : Type uV} {W : Type uW}
   [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]

@@ -64,9 +64,9 @@ end Algebra
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance twoBlockDominantBlockSupportLocalInstance1 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance twoBlockDominantBlockSupportLocalInstance2 : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance twoBlockDominantBlockSupportLocalInstance3 : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
 
 /-- The actual block sum preserves integrality of both matrices and inverses. -/

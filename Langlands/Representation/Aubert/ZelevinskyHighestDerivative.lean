@@ -61,14 +61,6 @@ theorem sum_rank_pos {n : ℕ} (hn : 0 < n) (d : T.SegmentProductDatum.{uV, uF} 
     omega
   exact Finset.sum_pos (fun i _ => (d.segments i).rank_pos) Finset.univ_nonempty
 
-/-- The list operation in the highest-derivative theorem is `dropLastList`. -/
-theorem filterMap_eq_dropLastList (l : List T.Segment.{uV, uF}) :
-    l.filterMap (fun Δ => if h : 2 ≤ Δ.length then
-        some (⟨Δ.base, Δ.length - 1, by omega⟩ : T.Segment.{uV, uF}) else none) =
-      Segment.dropLastList l := by
-  unfold Segment.dropLastList
-  congr 1
-
 /-- A positive-order derivative of the mirabolic restriction is nonzero exactly
 when the general-linear derivative of the same order is nonzero. -/
 theorem hasNonzeroDerivative_restriction_iff
@@ -116,7 +108,7 @@ theorem exists_label_subquotient
   obtain ⟨hvan, ⟨d', hlist, hs', ⟨e⟩⟩, -⟩ :=
     segmentSocleProductHighestDerivative.{uF, max uF uV} F T ψ (N + 1) d hs _ hk rfl
   have hlist' : List.ofFn d'.segments = Segment.dropLastList (List.ofFn d.segments) :=
-    hlist.trans (filterMap_eq_dropLastList F T _)
+    hlist.trans (Segment.filterMap_eq_dropLastList _)
   -- Homogeneity of the restricted product (Ze80 Thm 6.2).
   have hsep := precedenceOrdered_endpointSeparated.{uF, max uF uV} F T
     (cuspidalIntegralTwistFreeness.{uF, max uF uV} F T) d.segments ho

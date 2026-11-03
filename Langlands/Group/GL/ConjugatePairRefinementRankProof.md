@@ -27,11 +27,11 @@ Auxiliary declarations live in the namespace
 
 ## Standard coordinates
 
-For a block shape `B`, `blk B x` is the block containing the standard
+For a block shape `B`, `B.coordinateBlock x` is the block containing the standard
 coordinate `x`, namely `(B.indexEquiv.symm x).1`. `firstIndex B i` is the
 coordinate `B.index i ⟨0, _⟩`; it exists because block sizes are positive.
 `mem_parabolic_iff_blk` restates `BlockShape.mem_parabolic_iff`: `g` lies
-in the standard parabolic iff `g x y = 0` whenever `blk B y < blk B x`.
+in the standard parabolic iff `g x y = 0` whenever `B.coordinateBlock y < B.coordinateBlock x`.
 
 The shared `BlockShape.length_le` from `Langlands.Group.GL.Blocks` supplies
 the second conjunct. Its proof compares
@@ -40,7 +40,7 @@ the second conjunct. Its proof compares
 ## Split components and their linear spans
 
 `scalarLinear B : (Fin B.length → K) →ₗ[K] Matrix (Fin n) (Fin n) K` sends
-`a` to `diagonal (fun x => a (blk B x))`. It is injective: evaluate at
+`a` to `diagonal (fun x => a (B.coordinateBlock x))`. It is injective: evaluate at
 `firstIndex B i`. For a pair `P` with conjugator `c`, `pairLinear P a` is
 `c * scalarLinear P.shape a * c⁻¹`. It is injective because conjugation by
 `c` cancels. By `coe_scalarMap`, `BlockShape.coe_blockScalar` identifies the
@@ -59,7 +59,7 @@ matrices `P.scalarMap a` and `P.scalarMap 1`. This is where
 `mem_splitComponent_of_mem_range` recovers group elements. Suppose
 `g : GL_n(K)` has matrix `pairLinear P v`. Its determinant is nonzero and
 equals `det c * det D * det c⁻¹` for `D = scalarLinear P.shape v`, so
-`det D ≠ 0`. As `det D` is the product of the `v (blk x)` and block `i`
+`det D ≠ 0`. As `det D` is the product of the `v (B.coordinateBlock x)` and block `i`
 contains `firstIndex P.shape i`, every `v i ≠ 0`. Hence
 `g = P.scalarMap (fun i => Units.mk0 (v i) _)` lies in `P.splitComponent`.
 
@@ -76,17 +76,17 @@ Consequences:
 ## Flags preserved by the parabolics
 
 `flag B m` is the subspace of `Fin n → K` of vectors vanishing at every
-coordinate `x` with `m ≤ blk B x`. Then `flag B 0 = ⊥` and
+coordinate `x` with `m ≤ B.coordinateBlock x`. Then `flag B 0 = ⊥` and
 `flag B B.length = ⊤`. The proved facts for the standard parabolic are:
 
 - `mulVec_mem_flag`: each standard parabolic element maps every `flag B m`
   into itself, because its entries below the block diagonal vanish.
 - `mem_parabolic_of_flag`: a matrix preserving every `flag B m` with
   `m ≤ B.length` lies in the standard parabolic. Its column `y` is the image
-  of `Pi.single y 1 ∈ flag B (blk B y + 1)`.
+  of `Pi.single y 1 ∈ flag B (B.coordinateBlock y + 1)`.
 - `flag_injective`: for `m < m' ≤ B.length`, the coordinate vector at
   `firstIndex B ⟨m, _⟩` lies in `flag B m'` but not in `flag B m`.
-- `exists_parabolic_shift`: suppose `blk B q ≤ blk B x`. Then some `g` in
+- `exists_parabolic_shift`: suppose `B.coordinateBlock q ≤ B.coordinateBlock x`. Then some `g` in
   the standard parabolic and some `s ≠ 0` satisfy
   `g *ᵥ u - u = (s * u x) • Pi.single q 1` for all `u`. For `q ≠ x`, `g` is
   the transvection `1 + single q x 1` (determinant `1`) and `s = 1`. For
@@ -95,9 +95,9 @@ coordinate `x` with `m ≤ blk B x`. Then `flag B 0 = ⊥` and
 - `eq_flag_of_invariant`: every subspace `U` invariant under the standard
   parabolic equals `flag B m` for some `m ≤ B.length`. Take the least `m`
   with `U ≤ flag B m` (`Nat.find`). If `m = 0`, then `U = ⊥`. Otherwise
-  `U ≰ flag B (m - 1)`, which gives `u ∈ U` and `x` with `blk B x = m - 1`
+  `U ≰ flag B (m - 1)`, which gives `u ∈ U` and `x` with `B.coordinateBlock x = m - 1`
   and `u x ≠ 0`. Write `v ∈ flag B m` as `∑ q, v q • Pi.single q 1`. Each
-  `q` with `v q ≠ 0` has `blk B q ≤ blk B x`. Then
+  `q` with `v q ≠ 0` has `B.coordinateBlock q ≤ B.coordinateBlock x`. Then
   `exists_parabolic_shift` puts a nonzero multiple of `Pi.single q 1` into
   `U`, so `v ∈ U`.
 

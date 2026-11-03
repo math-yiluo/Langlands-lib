@@ -24,7 +24,7 @@ variable {k K : Type u} [Field k] [CommRing K] [Algebra k K]
 
 local notation "G_K" => Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) G
 
-local instance : IsAffineHom ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
+local instance weightBaseChangeSupportLocalInstance1 : IsAffineHom ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance
 

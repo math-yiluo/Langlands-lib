@@ -61,3 +61,7 @@ Section 6.2 Proposition (1), printed p.431, and the Section 6.1 conventions.
 The present proof imports only the unchanged target and convergence proof;
 it does not assume a scalar Fourier identity, an image theorem, a growth
 condition, irreducibility, or a factor-existence result.
+
+Local instances have explicit names prefixed by `adjacentRankModelStarIntegrability` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

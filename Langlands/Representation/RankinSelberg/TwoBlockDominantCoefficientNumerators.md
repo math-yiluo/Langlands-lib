@@ -56,3 +56,7 @@ The provenance is internal composition of the named published results.
 No new literature claim, coefficient equation, Fourier identity,
 convergence, uniform support, rational continuation, polynomial
 divisibility or final dominant-rank gamma/L theorem is asserted.
+
+Local instances have explicit names prefixed by `twoBlockDominantCoefficientNumerators` to
+avoid generated-name collisions in combined imports. Their types and defining
+expressions are unchanged.

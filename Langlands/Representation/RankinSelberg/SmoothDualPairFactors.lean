@@ -21,7 +21,7 @@ universe uF uV uW
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : NontriviallyNormedField F.Carrier := F.canonicalNormedField
+local instance smoothDualPairFactorsLocalInstance1 : NontriviallyNormedField F.Carrier := F.canonicalNormedField
 
 section Equivalence
 
@@ -85,7 +85,7 @@ end Equivalence
 
 section Pair
 
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
+local instance smoothDualPairFactorsLocalInstance2 : MeasurableSpace F.Carrier := borel F.Carrier
 
 variable {r n : ℕ} {V : Type uV} {W : Type uW}
   [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]

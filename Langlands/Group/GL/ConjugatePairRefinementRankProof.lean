@@ -24,29 +24,26 @@ section Shape
 
 variable (B : BlockShape n)
 
-/-- The block containing a standard coordinate. -/
-def blk (x : Fin n) : Fin B.length := (B.indexEquiv.symm x).1
-
-theorem blk_index (i : Fin B.length) (r : Fin (B.size i)) : blk B (B.index i r) = i := by
+theorem blk_index (i : Fin B.length) (r : Fin (B.size i)) : B.coordinateBlock (B.index i r) = i := by
   change (B.indexEquiv.symm (B.indexEquiv ⟨i, r⟩)).1 = i
   rw [Equiv.symm_apply_apply]
 
 /-- A chosen coordinate in each block. -/
 def firstIndex (i : Fin B.length) : Fin n := B.index i ⟨0, B.positive i⟩
 
-theorem blk_firstIndex (i : Fin B.length) : blk B (firstIndex B i) = i :=
+theorem blk_firstIndex (i : Fin B.length) : B.coordinateBlock (firstIndex B i) = i :=
   blk_index B i _
 
 /-- Standard parabolic membership: entries vanish below the block diagonal. -/
 theorem mem_parabolic_iff_blk (g : GeneralLinear n K) :
-    g ∈ B.parabolic K ↔ ∀ x y : Fin n, blk B y < blk B x → g x y = 0 := by
+    g ∈ B.parabolic K ↔ ∀ x y : Fin n, B.coordinateBlock y < B.coordinateBlock x → g x y = 0 := by
   rw [B.mem_parabolic_iff]
   constructor
   · intro h x y hxy
     obtain ⟨⟨i, a⟩, rfl⟩ := B.indexEquiv.surjective x
     obtain ⟨⟨j, b⟩, rfl⟩ := B.indexEquiv.surjective y
-    have hb : blk B (B.indexEquiv ⟨j, b⟩) = j := blk_index B j b
-    have ha : blk B (B.indexEquiv ⟨i, a⟩) = i := blk_index B i a
+    have hb : B.coordinateBlock (B.indexEquiv ⟨j, b⟩) = j := blk_index B j b
+    have ha : B.coordinateBlock (B.indexEquiv ⟨i, a⟩) = i := blk_index B i a
     exact h i j a b (by rw [← ha, ← hb]; exact hxy)
   · intro h i j a b hij
     exact h _ _ (by rw [blk_index, blk_index]; exact hij)
@@ -55,12 +52,12 @@ theorem mem_parabolic_iff_blk (g : GeneralLinear n K) :
 
 /-- Block-scalar matrices with arbitrary field coordinates. -/
 def scalarLinear : (Fin B.length → K) →ₗ[K] Matrix (Fin n) (Fin n) K where
-  toFun a := Matrix.diagonal (fun x => a (blk B x))
+  toFun a := Matrix.diagonal (fun x => a (B.coordinateBlock x))
   map_add' a b := by rw [Matrix.diagonal_add]; rfl
   map_smul' c a := by rw [RingHom.id_apply, ← Matrix.diagonal_smul]; rfl
 
 theorem scalarLinear_apply (a : Fin B.length → K) :
-    scalarLinear B a = Matrix.diagonal (fun x => a (blk B x)) := rfl
+    scalarLinear B a = Matrix.diagonal (fun x => a (B.coordinateBlock x)) := rfl
 
 /-- Positive block sizes make the field-coordinate block scalars faithful. -/
 theorem scalarLinear_injective :
@@ -75,7 +72,7 @@ theorem scalarLinear_injective :
 
 /-- Vectors vanishing on all blocks numbered `m` or later. -/
 def flag (m : ℕ) : Submodule K (Fin n → K) where
-  carrier := {v | ∀ x, m ≤ (blk B x : ℕ) → v x = 0}
+  carrier := {v | ∀ x, m ≤ (B.coordinateBlock x : ℕ) → v x = 0}
   add_mem' := by
     intro v w hv hw x hx
     simp [hv x hx, hw x hx]
@@ -87,10 +84,10 @@ def flag (m : ℕ) : Submodule K (Fin n → K) where
     simp [hv x hx]
 
 theorem mem_flag (m : ℕ) (v : Fin n → K) :
-    v ∈ flag (K := K) B m ↔ ∀ x, m ≤ (blk B x : ℕ) → v x = 0 := Iff.rfl
+    v ∈ flag (K := K) B m ↔ ∀ x, m ≤ (B.coordinateBlock x : ℕ) → v x = 0 := Iff.rfl
 
 /-- A coordinate vector lies in every flag subspace beyond its block. -/
-theorem single_mem_flag {m : ℕ} {y : Fin n} (hy : (blk B y : ℕ) < m) :
+theorem single_mem_flag {m : ℕ} {y : Fin n} (hy : (B.coordinateBlock y : ℕ) < m) :
     (Pi.single y 1 : Fin n → K) ∈ flag B m := by
   intro x hx
   have hxy : x ≠ y := by
@@ -102,7 +99,7 @@ theorem single_mem_flag {m : ℕ} {y : Fin n} (hy : (blk B y : ℕ) < m) :
 theorem flag_length : flag (K := K) B B.length = ⊤ := by
   rw [eq_top_iff]
   intro v _ x hx
-  exact absurd (blk B x).isLt (not_lt.mpr hx)
+  exact absurd (B.coordinateBlock x).isLt (not_lt.mpr hx)
 
 /-- The first flag subspace is zero. -/
 theorem flag_zero : flag (K := K) B 0 = ⊥ := by
@@ -121,9 +118,9 @@ theorem mulVec_mem_flag {g : GeneralLinear n K} (hg : g ∈ B.parabolic K) {m : 
   simp only [Matrix.mulVec, dotProduct]
   apply Finset.sum_eq_zero
   intro y _
-  by_cases hy : m ≤ (blk B y : ℕ)
+  by_cases hy : m ≤ (B.coordinateBlock y : ℕ)
   · rw [hv y hy, mul_zero]
-  · have hxy : blk B y < blk B x := by
+  · have hxy : B.coordinateBlock y < B.coordinateBlock x := by
       rw [Fin.lt_def]
       omega
     rw [hg x y hxy, zero_mul]
@@ -135,8 +132,8 @@ theorem mem_parabolic_of_flag (g : GeneralLinear n K)
     g ∈ B.parabolic K := by
   rw [mem_parabolic_iff_blk]
   intro x y hxy
-  have hm : (blk B y : ℕ) + 1 ≤ B.length := (blk B y).isLt
-  have hv := hg _ hm _ (single_mem_flag B (Nat.lt_succ_self (blk B y : ℕ)))
+  have hm : (B.coordinateBlock y : ℕ) + 1 ≤ B.length := (B.coordinateBlock y).isLt
+  have hv := hg _ hm _ (single_mem_flag B (Nat.lt_succ_self (B.coordinateBlock y : ℕ)))
   have hx := hv x (by rw [Fin.lt_def] at hxy; omega)
   simpa [Matrix.mulVec_single] using hx
 
@@ -147,7 +144,7 @@ theorem flag_injective {m m' : ℕ} (hm : m ≤ B.length) (hm' : m' ≤ B.length
   wlog hlt : m < m' generalizing m m'
   · exact this hm' hm h.symm (Ne.symm hne) (by omega)
   let i : Fin B.length := ⟨m, by omega⟩
-  have hx : (blk B (firstIndex B i) : ℕ) = m := by rw [blk_firstIndex]
+  have hx : (B.coordinateBlock (firstIndex B i) : ℕ) = m := by rw [blk_firstIndex]
   have hmem : (Pi.single (firstIndex B i) 1 : Fin n → K) ∈ flag B m' :=
     single_mem_flag B (by omega)
   rw [← h] at hmem
@@ -162,7 +159,7 @@ end Shape
 some standard parabolic element moves every vector by a nonzero multiple of
 its `x` coordinate in the direction of `q`. -/
 theorem exists_parabolic_shift (B : BlockShape n) (ht : ∃ t : K, t ≠ 0 ∧ t ≠ 1)
-    {q x : Fin n} (hqx : blk B q ≤ blk B x) :
+    {q x : Fin n} (hqx : B.coordinateBlock q ≤ B.coordinateBlock x) :
     ∃ g ∈ B.parabolic K, ∃ s : K, s ≠ 0 ∧
       ∀ u : Fin n → K, (g : Matrix (Fin n) (Fin n) K) *ᵥ u - u =
         (s * u x) • Pi.single q 1 := by
@@ -235,7 +232,7 @@ theorem eq_flag_of_invariant (B : BlockShape n) (ht : ∃ t : K, t ≠ 0 ∧ t �
     rw [mem_flag] at hu
     push Not at hu
     obtain ⟨x, hx, hux⟩ := hu
-    have hxm : (blk B x : ℕ) < m := by
+    have hxm : (B.coordinateBlock x : ℕ) < m := by
       by_contra hc
       exact hux (hm huU x (not_lt.mp hc))
     intro v hv
@@ -245,10 +242,10 @@ theorem eq_flag_of_invariant (B : BlockShape n) (ht : ∃ t : K, t ≠ 0 ∧ t �
     by_cases hvq : v q = 0
     · rw [hvq, zero_smul]
       exact U.zero_mem
-    · have hq : (blk B q : ℕ) < m := by
+    · have hq : (B.coordinateBlock q : ℕ) < m := by
         by_contra hc
         exact hvq (hv q (not_lt.mp hc))
-      have hqx : blk B q ≤ blk B x := by
+      have hqx : B.coordinateBlock q ≤ B.coordinateBlock x := by
         rw [Fin.le_def]
         omega
       obtain ⟨g, hg, s, hs, hgu⟩ := exists_parabolic_shift B ht hqx
