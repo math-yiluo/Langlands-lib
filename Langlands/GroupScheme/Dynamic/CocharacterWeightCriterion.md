@@ -1,0 +1,103 @@
+# Torus weights of coordinates and the dynamic unipotent subgroup of a cocharacter
+
+Author: Worker 818.
+
+This module is in the namespace `Langlands.GroupScheme.Dynamic.CocharacterWeights`.
+Let `k` be a field, `G` a group scheme over `Spec k`, `T` a commutative group scheme
+over `Spec k`, `i : T ⟶ G` a homomorphism and `ν` a cocharacter of `T` (an element
+of the published `cocharacterLattice T`). The module describes the dynamic unipotent
+subgroup functor `unipotent (groupHom ν ≫ i)` (written `U(ν)` below) by the
+eigenfunctions of `T` in the coordinate ring of `G`. It then derives a criterion for
+`U(ν) ≤ U(ζ)` as subgroup functors on every test scheme. Here eigenfunctions are taken
+for the conjugation action `AutomorphicAction.conjugation i` of `T` on `G`. A coordinate
+`c` is an eigenfunction of weight `w ∈ characterLattice T` when
+`c(i(t)·g·i(t)⁻¹) = w(t) c(g)` for all `k`-algebras `A`, `t ∈ T(A)` and `g ∈ G(A)`. This is
+the published `CoordinateWeights.weightSpace`; `CoordinateWeights.augmentationWeightSpace`
+is its intersection with the augmentation ideal (functions vanishing at `1`).
+
+## Laurent test schemes (section `Laurent`)
+
+For a `k`-algebra `A`, `testMap A` is the structure morphism of the actual affine test
+scheme `algSpec A` over `Spec k`. `laurentIso A` identifies `algSpec A[T, T⁻¹]` with the
+published Laurent scheme `laurentScheme (testMap A)` of `Dynamic.AffineExtension`;
+both underlying schemes are `Spec A[T, T⁻¹]`, and the isomorphism is the identity on
+it. `constAlg A` is the constant inclusion `A → A[T, T⁻¹]`.
+`laurentIso_hom_comp_fst` says that the first component of the published Laurent point
+is the point induced by `constAlg A`. `laurentGmPoint A` is the second component, a
+`𝔾_m`-point with coefficients in `A[T, T⁻¹]`. `affinePointsEquiv_laurentGmPoint` says
+that it is the unit `T`.
+
+## Orbits on the Laurent test (section `Orbit`)
+
+- `laurentOrbit_eq`: on the Laurent test, the published orbit map of
+  `groupHom ν ≫ i` at a point `x ∈ G(A)` is conjugation of the constant extension of
+  `x` by the torus point `ν(T)`.
+- `characterValue_laurentGmPoint`: a character `w` takes the value
+  `T ^ ⟨w, ν⟩` at `ν(T)`, where `⟨w, ν⟩ = latticePairing T w ν`.
+- `pointCoordinates_laurentOrbit` (assuming `IsAffineHom G.X.hom`): if `c` is an
+  eigenfunction of weight `w`, the orbit point takes the value
+  `T ^ ⟨w, ν⟩ · x(c)` at `c`.
+
+## Membership criterion (section `Coefficients`)
+
+This section also assumes that `G.X.left` is affine.
+`pointRing_coeff_coaction` relates the coefficients of the published coaction
+`AffineChart.coaction χ` of a cocharacter `χ` of `G` to the coefficients of the
+coordinates of the Laurent orbit point. `preimage_testMap_counit` expresses the image
+of the counit in `A` through the chosen Lie coordinates.
+`coeff_pointCoordinates_laurentOrbit` and
+`coeff_pointCoordinates_laurentOrbit_algebraMap` compute the coefficients of the orbit
+coordinates at an eigenfunction (concentrated in degree `⟨w, ν⟩`, where it is `x(c)`)
+and at a constant (concentrated in degree `0`).
+
+`mem_unipotent_iff_weights` is the main result here. Assume `T` is a split torus. Then
+a point `x ∈ G(A)` lies in `U(ν)(A)` if and only if `x(g) = 0` for every weight `w`
+with `⟨w, ν⟩ ≤ 0` and every `g ∈ augmentationWeightSpace (conjugation i) w`.
+
+Proof. The published `AffineChart.mem_unipotent_iff` says that `x ∈ U(ν)` exactly when
+`x` kills the negative-degree coefficients of the coaction and sends its degree-zero
+coefficient to the counit. For the forward direction, write a homogeneous `g` of weight
+`w` as the chart coordinate of a global section (`chartCoordinates_surjective`). Its
+degree-`⟨w, ν⟩` coefficient is `x(g)`. If `⟨w, ν⟩ < 0` this vanishes by the first
+condition. If `⟨w, ν⟩ = 0` it equals the counit value, which is `0` because `g` lies
+in the augmentation ideal. For the converse, the published
+`coordinateWeightDecomposition` (its second conjunct, which needs `T` split) writes
+every augmentation element as a sum of eigenfunctions. Hence the hypothesis kills
+all coefficients of degree `≤ 0` of the orbit coordinates at augmentation elements.
+Writing an arbitrary coordinate `c` as its value at `1` (a constant) plus an
+augmentation element gives both conditions of `mem_unipotent_iff`.
+
+This is the torus-weight form of the description of attracting loci in
+Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, 2nd ed. (2015), §2.1, Lemma 2.1.4
+(printed p. 49, PDF p. 75): the points with a limit are cut out by the functions of
+negative `𝔾_m`-weight. An eigenfunction of `T`-weight `w` has `𝔾_m`-weight `⟨w, ν⟩`
+for the action through `ν`. The Lean proof uses the published affine-chart coaction,
+not that lemma.
+
+## Inclusion criterion (section `Transport`)
+
+`testAlgebra f` is the `k`-algebra structure on `A` defined by an affine test
+`f : Spec A ⟶ Spec k`. `testIso f` identifies that test with `testMap A`.
+`nonpositiveIdeal i ν` is the ideal of the coordinate ring generated by all
+`g ∈ augmentationWeightSpace (conjugation i) w` with `⟨w, ν⟩ ≤ 0`.
+
+`unipotent_le_of_mem_nonpositiveIdeal` assumes that `T` is split and that for every
+weight `w` with `⟨w, ζ⟩ ≤ 0` every element of `augmentationWeightSpace
+(conjugation i) w` lies in `nonpositiveIdeal i ν`. It concludes
+`U(ν) ≤ U(ζ)` as subgroup functors, on every test scheme over `Spec k`.
+
+Proof. The published `Dynamic.unipotent_le_of_affine_tests` (Worker 1280's
+`Dynamic.AffineInclusionCriterion`) reduces the inclusion to affine tests
+`f : Spec A ⟶ Spec k`. Transport a point along `testIso f`. By
+`mem_unipotent_iff_weights` for `ν`, the coordinate map of a point of `U(ν)` kills the
+generators of `nonpositiveIdeal i ν`, so its kernel contains that ideal. By hypothesis
+the kernel then contains every augmentation eigenfunction of weight nonpositive on
+`ζ`, so `mem_unipotent_iff_weights` for `ζ` gives membership in `U(ζ)`. Transport
+back along the inverse isomorphism.
+
+## Provenance
+
+These are internal results written for the nested parabolic decomposition proof task
+`a26bb091-8323-44b3-bb49-79a5f530d4f7`. The membership criterion is motivated by the
+cited Lemma 2.1.4 of Conrad–Gabber–Prasad, and the Lean proof is as described above.
+No published proposition is proved here.

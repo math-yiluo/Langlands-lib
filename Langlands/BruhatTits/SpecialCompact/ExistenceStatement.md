@@ -10,7 +10,9 @@ Scope: this target is supplementary. Its witness data satisfy only the axiom
 predicates listed under "Conditions on the witness data". It does not state,
 and does not discharge, existence for apartment data satisfying the full
 corrected KP Definition 4.1.26 (for `D` and for every Levi `DM`). That
-existence, and the inclusion `P_x ⊆ K_0`, remain open.
+existence remains open. The inclusion `P_x ⊆ K_0` is not part of this
+target; it is the separate target `ParahoricLeCompactStabilizer` (see "Scope
+and distinctions").
 
 ## Statement
 
@@ -170,7 +172,9 @@ They are not the full corrected Definition 4.1.26 (corrections, PDF page
 - AS 6 of Axiom 4.1.6, and Axioms 4.1.1, 4.1.8, 4.1.9, 4.1.16, 4.1.17, 4.1.20
   and 4.1.22. They concern the building's polysimplicial structure, all
   apartments, the groups `G(F)^0`
-  and `Z(F)^0` of KP Definition 2.6.23 (not in the Library), the Tits system
+  and `Z(F)^0` of KP Definition 2.6.23 (now defined from chosen data in
+  `Langlands.Geometry.Building.KPZeroSubgroups`, but these axioms about them
+  are not formalized), the Tits system
   of Axiom 4.1.9, the integral models of Axioms 4.1.20 and 4.1.22, and the
   functoriality of `G ↦ B(G)`. They are not conditions on one class `A(S)`.
 
@@ -188,9 +192,13 @@ not the parahoric `P_x = Z(F)^0 · G(F)^♯_x` (KP Definition 7.4.1(4)). When
 the center of `G` contains a nontrivial split torus, its noncompact group of
 rational points acts trivially on the reduced building and so lies in the
 full fixer but not in `K_0`. `P_x` may be strictly smaller than `K_0`. The inclusion
-`P_x ⊆ K_0` cannot yet be stated, because the actual `Z(F)^0` and `G(F)^0`
-are not available in the Library. The available part `G(F)^♯_x ⊆ K_0` is
-the separate target
+`P_x ⊆ K_0` is the separate target
+`Langlands.BruhatTits.SpecialCompact.ParahoricLeCompactStabilizer` (module
+`Langlands.BruhatTits.SpecialCompact.ParahoricStatement`). It is stated for
+every `P : ParahoricBuildingData G`, a structure that adds a zero-subgroup
+datum for `Z(F)^0` and `G(F)^0` to the building data. The witness data of
+this target carry no such datum, so the two targets are not linked in Lean.
+Its factor `G(F)^♯_x ⊆ K_0` is the separate target
 `Langlands.BruhatTits.SpecialCompact.SharpFixerLeCompactStabilizer`.
 
 The compact and bounded forms are both stated directly. Their comparison is

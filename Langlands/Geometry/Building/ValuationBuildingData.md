@@ -18,6 +18,15 @@ definition or a one-line restatement of a law proved in those modules. The
 exceptions are the predicates `IsFacet`, `IsChamber` and `IsVertex` on the
 building, and the lemma `mono_of_isMaximalSplitTorus`.
 
+Two later modules of the same task build on this one. `KPParahoric` defines
+`ParahoricBuildingData G`, which extends `ValuationBuildingData G` by the
+data of `Z(F)^0` and `G(F)^0` (module `KPZeroSubgroups`) and defines the
+parahoric subgroups. Worker 1045's `ValuationBuildingAxioms` states, as
+conditions on `B : ValuationBuildingData G`, the clauses of KP's axioms that
+are not fields here, among them V 7 and AS 2–AS 5. This Markdown describes
+only this module; the two later modules are cited where they fill a gap
+listed below.
+
 ## Sources
 
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), registered as
@@ -113,9 +122,10 @@ These fields are the standing data of KP Chapter 7, with two differences.
 - The corrected opening of Chapter 7 also assumes AS 5 of Axiom 4.1.6 for
   the affine root system `Ψ`. AS 5 is about the image of `N(k)` in the
   extended affine Weyl group. It is not a field here, and nothing in this
-  module uses it. A predicate that includes AS 5 can be built on top of
-  `ValuationBuildingData` from `B.apartment`, `B.affineRoots` and the
-  published `AffineRootSystem.affineWeylGroup` and
+  module uses it. The later module `ValuationBuildingAxioms` states it on top
+  of `ValuationBuildingData`: the condition `B.SatisfiesApartmentAxioms`
+  includes AS 5, written with `B.affineRoots` and the published
+  `AffineRootSystem.affineWeylGroup` and
   `AffineRootSystem.extendedAffineWeylGroup` (module `AffineWeylGroups`).
 
 KP's Axiom 4.1.4 (A 1) says, among other things, that `z ∈ Z(k)` acts on
@@ -204,20 +214,31 @@ and nothing identifies them.
   `Cartan.CentralizerValuationComparisonStatement` for the `bijective` field
   of `CentralizerDatum`. None of this is proved.
 - Axiom V 7 (compatibility with the topology on `G(F)`) is not a field, and
-  no topology on `G(F)` is used.
+  no topology on `G(F)` is used here. `ValuationBuildingAxioms` states it as
+  the condition `B.IsTopologyCompatible`.
 - That V 6 implies the `S(F)`-part of V 6 stored in `KPApartmentData`. Both
   are fields, so the data carry both.
 - AS 5 of Axiom 4.1.6, which the corrected opening of Chapter 7 assumes. It
-  is neither a field nor proved.
+  is neither a field nor proved. `ValuationBuildingAxioms` states it, with
+  V 6, V 7 and AS 2–AS 4, as the condition `B.SatisfiesApartmentAxioms`.
 - KP's Definition 4.1.26 ("Bruhat–Tits theory is available for `G`",
   printed p. 165, PDF p. 196). In its corrected form (corrections, PDF p. 27)
   it asks for Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6, 4.1.8, 4.1.9, 4.1.16,
   4.1.17, 4.1.20 and 4.1.22, including the affine-root-system conditions
   AS 1–AS 6 of Axiom 4.1.6. Also the uniqueness of the data (Propositions
-  6.2.5 and 6.2.6).
-- `Z(F)^0`, `G(F)^0`, the parahoric subgroups `P_x`, `P_F`, `P_C`
-  (Definitions 7.4.1(4) and 7.4.5), and the enlarged building. They need the
-  Iwahori subgroup `Z(k)^0` of Definition 2.6.23 and `G(k)^0`, which are not
-  in the Library.
+  6.2.5 and 6.2.6). `ValuationBuildingAxioms` states some of these clauses
+  as conditions on `B` and proves those that hold by construction. It
+  defines no combined predicate for Definition 4.1.26.
+- `Z(F)^0`, `G(F)^0` and the parahoric subgroups `P_x`, `P_F`, `P_C`
+  (Definitions 7.4.1(4) and 7.4.5) are not defined here. They need the
+  Iwahori subgroup `Z(k)^0` and the group `G(k)^0` of Definition 2.6.23. Their
+  construction uses objects that are not fields of `ValuationBuildingData`:
+  over the maximal unramified extension `K`, a maximally split maximal torus
+  of `Z_K` with a finite Galois splitting field; and simply connected covers
+  of the derived groups of `G` and of `Z_K`. The later modules
+  `KPZeroSubgroups` and `KPParahoric` define them on
+  `ParahoricBuildingData G`, which extends `ValuationBuildingData G` by these
+  data for the same `S` and `Z`.
+- The enlarged building.
 - The agreement of `IsFacet`, `IsChamber` and `IsVertex` with KP's
   Tits-system structure, and that two facets are equal or disjoint.

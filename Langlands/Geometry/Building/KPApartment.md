@@ -243,10 +243,14 @@ facets, chambers and vertices), which is stated for any real affine space.
   which is not in the Library.
 - The identification of `TranslationSpace i` with `V(S′)` or `V(S_ad)`, and of
   `rootAnnihilator i` with `V(A_G)`. These need `G_der`, `G_ad` and `A_G`.
-- Full V 6 on `Z(k)`, V 7, and the existence of valid data for any `G`. For
-  quasi-split `G` existence is KP Definition 6.1.27 with Lemma 6.1.28; in
-  general it is the descent of Chapter 9. All of these remain obligations of
-  the parent program.
+- Full V 6 on `Z(k)` and V 7 are not conditions of `KPApartmentData`. Later
+  modules state them as predicates on `D`: V 6 is `D.IsOmegaCompatible C`
+  for the actual centralizer `C : CentralizerDatum i` (module
+  `KPCentralizerCompatibility`), and V 7 is `D.IsTopologyCompatible`
+  (Worker 1045's module `KPApartmentAxioms`).
+- The existence of valid data for any `G`. For quasi-split `G` existence is
+  KP Definition 6.1.27 with Lemma 6.1.28; in general it is the descent of
+  Chapter 9. This remains an obligation of the parent program.
 - The apartments `A(S′)` of the other maximal split tori and the maps
   `A(S) → A(gSg⁻¹)` of Axiom 4.1.4. This module fixes one `i`.
 

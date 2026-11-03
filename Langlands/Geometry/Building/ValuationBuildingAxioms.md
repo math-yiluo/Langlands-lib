@@ -178,16 +178,24 @@ The corrected Definition 4.1.26 (corrections PDF p. 27) asks for Axioms 4.1.1, 4
   induces an isomorphism `B(G) → B(G′)`. The second part concerns the construction `G ↦ B(G)`,
   not one `B`.
 - AS 1 and the `m(u)` form of AS 2 (Axiom 4.1.6): they need the elements `m(u) = u′ u u″` of KP
-  Proposition 2.11.17, which are not in the Library.
-- Axiom 4.1.8 (2) and (3): they need `G(k)^0` and `Z(k)^0`, which are not in the Library.
+  Proposition 2.11.17. The later module `ParahoricBuildingAxioms` states them with the published
+  `RelativeRoot.IsOppositeFactorPair`.
+- Axiom 4.1.8 (2) and (3): they need `G(k)^0` and `Z(k)^0`. The later module
+  `ParahoricBuildingAxioms` states them on `ParahoricBuildingData G` (module `KPParahoric`).
 - Axiom 4.1.9 (the Tits system `(G(k)^0_C, N(k) ∩ G(k)^0)` in `G(k)^0`) and Axiom 4.1.16 (the
-  Iwahori decomposition, with `Z(k)^0` and the unipotent radicals `U^±`): they need `G(k)^0`,
-  `Z(k)^0` and `U^±`, which are not in the Library.
+  Iwahori decomposition, with `Z(k)^0` and the unipotent radicals `U^±`). When this module was
+  written they needed `G(k)^0` and `Z(k)^0`, which are now in `KPParahoric`. Axiom 4.1.9 also
+  compares `B(G)` with the building of the Tits system, which is not in the Library. Axiom 4.1.16
+  also needs the unipotent radicals `U^±` of opposite minimal parabolic subgroups of `G`, which
+  are not used here.
 - Axiom 4.1.17 (compatibility with isomorphisms `(k₁, G₁) → (k₂, G₂)`): it concerns the
   construction `G ↦ B(G)`, not one `B`.
 - Axiom 4.1.20 (Bruhat–Tits group schemes `𝒢^1_Ω`) and Axiom 4.1.22 (structure of the reductive
   quotient): they need smooth affine `o`-models of `G`, which are not in the Library.
-- No combined predicate for the corrected Definition 4.1.26 is defined.
+- No combined predicate for the corrected Definition 4.1.26 is defined. The later module
+  `ParahoricBuildingAxioms` bundles the clauses stated so far in
+  `ParahoricBuildingData.SatisfiesPartialBuildingAxioms`, which is weaker than
+  Definition 4.1.26.
 
 ## Sources
 

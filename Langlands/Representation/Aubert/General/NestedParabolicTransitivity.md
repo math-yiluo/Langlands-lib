@@ -1,0 +1,7 @@
+# Actual nested radical normalization and Jacquet comparison
+
+This internal application module combines the actual radical Haar product and inner-subgroup transport with the published induction and Jacquet stages interfaces. It derives the induction half-character product by multiplicativity of the positive square root and constructs the actual normalized Jacquet natural isomorphism. The ambient group and representation carrier universes are independent.
+
+The radical set product identifies the join of the two radical factors with the fine radical. The positive modulus on any subgroup of the outer Levi normalizing the fine radical equals the outer modulus times the literal inner modulus, with transport along the actual subgroup equivalence. Applying this on the literal inner parabolic gives `halfCharacterProduct`. Applying it on the final Levi supplies the positive-character equality required by `normalizedJacquetStagesIso`. The latter acts on the actual coinvariant quotients and already proves naturality. Compact-subgroup containment for the literal inner radical is retained as an explicit intermediate hypothesis.
+
+These are derived applications of existing Haar-coordinate and coinvariant constructions. They retain closedness, second countability, continuity of the outer projection and the actual radical product as hypotheses. The separate dynamic application must derive these from the published target's existing premises.

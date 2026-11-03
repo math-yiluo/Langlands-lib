@@ -153,5 +153,7 @@ subgroup and `s` the inclusion of `S` into it.
   `N(k) ∩ G(k)^1` on `A` is `Z(k)^1`), the existence part of
   Proposition 6.2.3 (a `μ` for every valuation, without V 6), and axiom V 7.
 - `Z(k)^0`, `G(k)^0` and the parahoric subgroups `P_x = Z(k)^0 · G(k)^♯_x` of
-  KP Definition 7.4.1(4). They need the Iwahori subgroup of `Z(k)` and
-  `G(k)^0` (KP Definition 2.6.23), which are not in the Library.
+  KP Definition 7.4.1(4) are not defined here. They need the Iwahori subgroup
+  of `Z(k)` and `G(k)^0` (KP Definition 2.6.23). The later modules
+  `KPZeroSubgroups` and `KPParahoric` of the same task define them, for the
+  centralizer of a `CentralizerDatum`, on `ParahoricBuildingData G`.

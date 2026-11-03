@@ -40,12 +40,17 @@ the `K_0` of the existence target when `x` is a special vertex. The instances
 ## Role and provenance
 
 The task asks for `P_x ⊆ K_0`, where `P_x = G(k)^0_x = Z(k)^0 · G(k)^♯_x` is
-the parahoric subgroup (KP Definition 7.4.1(4)). The actual `Z(F)^0` (KP
-Definition 2.6.23) and `G(F)^0` are not yet available in the Library, so
-`P_x` cannot be formed. This target states the factor of `P_x` that can be
-formed now: `G(F)^♯_x ⊆ K_0`. Once `Z(F)^0` exists, a follow-up target
-`Z(F)^0 ⊆ K_0` together with this one gives `P_x ⊆ K_0`. That follow-up is
-not stated here, and no substitute for `Z(F)^0` is introduced.
+the parahoric subgroup (KP Definition 7.4.1(4)). When this target was
+written, the actual `Z(F)^0` (KP Definition 2.6.23) and `G(F)^0` were not in
+the Library, so `P_x` could not be formed; the module docstring's phrase
+"expressible with the current objects" refers to that time. This target
+states the factor `G(F)^♯_x ⊆ K_0` of `P_x`. No substitute for `Z(F)^0` is
+introduced. The full inclusion `P_x ⊆ K_0` is now the separate target
+`Langlands.BruhatTits.SpecialCompact.ParahoricLeCompactStabilizer` (module
+`Langlands.BruhatTits.SpecialCompact.ParahoricStatement`), stated for every
+`P : ParahoricBuildingData G` with `P_x = P.parahoricAt x`. It does not
+follow from this target alone, since `G(F)^♯_x` can be strictly smaller than
+`P_x` (KP Remark 7.4.2, PDF page 286).
 
 This is a conditional structural statement on supplied valid data, in
 addition to the existence target `SpecialMaximalCompactExistence`; it does

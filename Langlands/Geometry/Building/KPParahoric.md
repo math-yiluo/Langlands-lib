@@ -162,5 +162,7 @@ Proposition 7.6.4.
 - Relations among `P_x`, `K_x` and `G(F)_x`, such as `P_x ⊆ K_x ⊆ G(F)_x`.
   None is asserted.
 - Openness and compactness of `P_Ω`. No topology on `G(F)` is used.
-- Not defined: `N^♯_Ω` and `Z^♯_Ω` (Definition 7.4.1(3)) and the enlarged
-  building.
+- `N^♯_Ω` and `Z^♯_Ω` (Definition 7.4.1(3)) are not restated under
+  `ParahoricBuildingData`. They are `P.apartment.sharpNormalizer Ω` and
+  `P.apartment.sharpCentralizer Ω` of the module `KPBuilding`.
+- Not defined: the enlarged building.

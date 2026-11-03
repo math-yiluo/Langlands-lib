@@ -96,7 +96,8 @@ Let `Ω : Set D.Apartment`.
   `weylAction_mapsTo_relativeRoots`.
 
 Definition 7.4.1(4)–(5), `P_Ω = G(k)^0_Ω = Z(k)^0 · G(k)^♯_Ω` and
-`N^0_Ω = N^♯_Ω · Z(k)^0`, are not defined. See the last section.
+`N^0_Ω = N^♯_Ω · Z(k)^0`, are not defined in this module. See the last
+section.
 
 ## The reduced building (KP (7.6.2))
 
@@ -193,13 +194,17 @@ two vertices.
 
 ## Not formalized and remaining obligations
 
-- The parahoric subgroups. `P_Ω = Z(k)^0 · G(k)^♯_Ω` (KP Definition
-  7.4.1(4)), `P_F`, `P_x` and `P_C` (Definitions 4.1.3 and 7.4.5), and
-  `N^0_Ω`, all need the actual `Z(k)^0` or `G(k)^0` of KP Definition 2.6.23.
-  These in turn need `G_sc`, the maximal unramified extension and the torus
-  subgroups `T(K)^0` of Definition 2.5.13, which are not in the Library.
-  Worker 118 coordinates that chain. We do not substitute an arbitrary subgroup
-  for `Z(k)^0`.
+- The parahoric subgroups in this module. `P_Ω = Z(k)^0 · G(k)^♯_Ω` (KP
+  Definition 7.4.1(4)), `P_F`, `P_x` and `P_C` (Definitions 4.1.3 and 7.4.5),
+  and `N^0_Ω` all need the actual `Z(k)^0` or `G(k)^0` of KP Definition
+  2.6.23. These in turn need `G_sc`, the maximal unramified extension and the
+  torus subgroups `T(K)^0` of Definition 2.5.13. The later modules
+  `KPZeroSubgroups` and `KPParahoric` of the same task define `Z(k)^0`,
+  `G(k)^0`, `P_Ω`, `N^0_Ω` and the parahoric subgroups of Definition 7.4.5,
+  with these inputs as data, on `ParahoricBuildingData G`. This structure
+  extends the adapter `ValuationBuildingData G`, whose apartment class is a
+  `D` of this module. Agreement with Definition 4.1.3 is not proved there. No
+  arbitrary subgroup is substituted for `Z(k)^0`.
 - The groups `G(k)^b_Ω`, `G(k)^1_Ω` and `G(k)^†_Ω` of §7.7, defined by hand.
   KP Proposition 7.6.4, Proposition 7.7.5 and the equality
   `G(k)^1_x = G(k)^†_x` compare such groups with stabilizers in the building.
