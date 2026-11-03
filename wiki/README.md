@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Actual coordinate augmentation weights and remaining proof targets](../notes/group-schemes/coordinate-augmentation-targets.md) — Actual group and pointed-affine coordinate interfaces, precise decomposition and Lie-support targets, seven focused proof successors and retained consumer obligations.
+
 - [KP Bruhat–Tits: Bundles A–F source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected source targets, verified barycenter, bounded-action, nearest-point and aggregate metric proofs, and the remaining building, decomposition, model, filtration, descent and embedding gates.
 
 - [Valued-field amalgamation: tensor sources and proof route](../notes/analytic/valued-field-amalgamation-sources.md) — Original tensor estimates covering trivial valuations, the derived common-field route, and the remaining full-universe Lean obligations.
@@ -26,6 +28,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Renard II.2.4–II.2.5: scalar and original-action projector constructions](../notes/renard/scalar-projector-progress.md) — Five verified constructions and the exact smooth-action uniqueness proof, their intrinsic gluing laws, and the remaining categorical-comparison obligations.
 - [Renard 2026: initial passage audit](../notes/renard/initial-passages.md) — Source locators, conventions and open construction/proof obligations for the first passages read in Chapters I, II and V.
 - [Renard Chapter V: structural inputs and retained proof obligations](../notes/renard/chapter-v-structural-inputs.md) — A finite source ledger separating external structural assertions, actual constructions and in-book proofs, with generic Lean interfaces and consumer boundaries.
+- [Renard S19: the chosen special compact subgroup and actual standard Levis](../notes/renard/special-compact-source-map.md) — Exact actual-object adapters and submitted minimal-parabolic target for S19(2),(3),(5), explicit boundedness/topology hypotheses, publication status and retained corrected-data, existence and parahoric obligations.
 - [Renard Chapter V: the GL standard-parabolic comparison](../notes/renard/standard-parabolic-progress.md) — Verified publication of the actual-root, all-test block-subgroup, canonical point and unique block-indexing proof, with the general reductive and consumer-adapter obligations retained.
 - [Renard I.4.2: duality coefficient conventions](../notes/renard/duality-coefficient-conventions.md) — A conjugation test for recovered coefficients, the compatible-input evaluation route, and the remaining full-source convention obligation.
 - [Renard 2026 Appendix A: source discrepancies](../notes/renard/appendix-a-corrections.md) — Concrete counterexamples, corrected hypotheses and reuse routes for localization, constant functors and abelian subcategories.
