@@ -43,3 +43,6 @@ The ring generality and descent argument are internal consequences of the
 existing coordinate and scheme constructions. No group law on the image,
 integrality, smooth generated subgroup, weight decomposition, or
 semigroup commutator weight bound is asserted here.
+
+The unchanged categorical helpers `whiskerLeft_pullback` and
+`whiskerLeft_schematic` are exported for reuse by `TorusCentralizerImage`.

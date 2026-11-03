@@ -30,14 +30,14 @@ J. S. Milne, *Algebraic Groups: The Theory of Group Schemes of Finite Type
 over a Field* (2017), source `milne-2017-algebraic-groups`, SHA256
 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`:
 
-- Theorem 16.30 (Lie–Kolchin), printed pp.334–335, zero-based PDF pages
+- Theorem 16.30 (Lie–Kolchin), printed pp.334–335, one-based PDF pages
   350–351: a smooth connected solvable algebraic group over an
   algebraically closed field is trigonalizable.
-- Proposition 16.2(a)⇔(c), printed pp.324–325, zero-based PDF pages
+- Proposition 16.2(a)⇔(c), printed pp.324–325, one-based PDF pages
   340–341: trigonalizability is equivalent to being isomorphic to an
   algebraic subgroup of the upper triangular group `T_N` for some `N`.
   Its proof explicitly obtains a closed immersion.
-- Proposition 16.34(c)⇔(d), printed p.336, zero-based PDF page 352:
+- Proposition 16.34(c)⇔(d), printed p.336, one-based PDF page 352:
   for a smooth connected algebraic group over an algebraically closed
   field, solvability of its abstract group of rational points is
   equivalent to solvability of the algebraic group.

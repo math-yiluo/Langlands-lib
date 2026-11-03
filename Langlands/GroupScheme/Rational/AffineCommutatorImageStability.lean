@@ -37,7 +37,7 @@ private theorem closed_lift_of_schematic_precomp
     exact hh
   exact ⟨IsClosedImmersion.lift i g hker, IsClosedImmersion.lift_fac i g hker⟩
 
-private theorem whiskerLeft_pullback {B : Scheme.{u}} (X : Over B)
+theorem whiskerLeft_pullback {B : Scheme.{u}} (X : Over B)
     {V W : Over B} (p : V ⟶ W) :
     IsPullback (snd X V) (X ◁ p) p (snd X W) := by
   have he : snd X V ≫ p = (X ◁ p) ≫ snd X W := by simp
@@ -54,7 +54,7 @@ private theorem whiskerLeft_pullback {B : Scheme.{u}} (X : Over B)
       simpa using hh
     · simpa using hm₁
 
-private theorem whiskerLeft_schematic {B : Scheme.{u}} (X : Over B)
+theorem whiskerLeft_schematic {B : Scheme.{u}} (X : Over B)
     [Flat X.hom] {V W : Over B} (p : V ⟶ W)
     [QuasiCompact p.left] [IsSchemeTheoreticallyDominant p.left] :
     IsSchemeTheoreticallyDominant (X ◁ p).left := by

@@ -27,7 +27,7 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
   (hν : IsGenericCocharacter i ν)
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance rationalOppositeJacquetPointTopology : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 include hStandard hG hi hν
 

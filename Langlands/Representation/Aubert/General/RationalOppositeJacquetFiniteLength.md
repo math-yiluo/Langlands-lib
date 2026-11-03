@@ -82,3 +82,8 @@ The current adapter invokes no classification, character-independence,
 geometric-lemma, adjointness, or cuspidal-support theorem. The actual proof
 dependencies of any future supplied closed duality or admissibility results
 remain separate from these conditional implications.
+
+The local topology instance has the explicit declaration name
+`rationalOppositeJacquetPointTopology` so this module can be imported together with
+the rational alternating-operator and reduction modules. Its value is still
+exactly `pointTopology`; no mathematical declaration changes meaning.

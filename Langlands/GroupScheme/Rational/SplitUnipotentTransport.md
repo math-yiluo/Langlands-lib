@@ -36,8 +36,42 @@ to the existing canonical isomorphism between two representatives of the
 same subgroup functor.
 
 All constructions are universe-polymorphic and retain arbitrary test
-schemes. They do not construct a split series or prove unipotence of a new
-group.
+schemes.
 
 Kernel-image membership is the existing `mem_range_kernelι_iff` theorem
 from `CentralIsogeny.Basic`.
+
+The torus-action adapters retain both
+`TorusActionUnipotenceStatement` and `TorusActionSplitUnipotenceStatement`
+as explicit proof premises. For a smooth connected stable closed subgroup
+functor `F` in an affine ambient group, the first adapter chooses its smooth
+connected closed representative. Its closed inclusion makes that
+representative affine. The actual induced action from `RepresentedAction`
+is used, and
+`actionWeightSpace_onRepresentedSubgroup_eq_bot` from
+`Rational.TangentWeightTransport` transfers the absence of zero in the
+ambient support to vanishing of the induced action's zero weight space.
+The two premises give unipotence and split unipotence of this chosen
+representative in that order. The preceding isomorphism transport then
+gives both properties for any supplied representative of `F`. The supplied
+representative needs no additional smoothness, connectedness, closedness
+or affineness assumptions. The ambient group need not be smooth or locally
+of finite type for this first adapter; the acting torus is split.
+
+For an ambient group locally of finite type, the next adapter assumes that
+the actual tangent submodule of `F` lies in `semigroupWeightSpan b A` and
+that zero does not belong to `A`. The published split-torus support bound
+in `Rational.SemigroupWeightSupport` excludes zero from the support,
+allowing the first adapter to apply. The exact-Lie-image version uses the
+published equivalence between `HasLieImage` and tangent-submodule equality.
+Finally,
+`semigroupSubgroup_unipotent_and_split_of_hasLieImage`
+uses the published stability of the actual generated functor to give its
+all-representatives clause under explicit smooth connected closed
+realization and exact Lie-image hypotheses.
+
+These adapters are internal compositions of the published support,
+induced-action and representative-isomorphism results. They prove the
+conditional reductions just described. They do not prove either
+structural premise, construct the semigroup realization or its exact Lie
+image, or establish the unconditional `SemigroupRealizationStatement`.

@@ -12,6 +12,9 @@ Port note (Langlands Library). This file is the TauCeti file
 `licenses/TauCeti/`. Edits against the upstream file:
 1. TauCeti-internal imports renamed from `TauCeti.*` to
    `Langlands.TauCeti.*`: `TauCeti.RingTheory.IsTensorProduct.Pushout`, `TauCeti.RingTheory.Extension.Presentation.Basic`.
+2. Worker 105 adds the presentation-based public wrapper `WeilRestriction.OfPresentation`
+   and makes the existing presentation import public for its parameter type. The old
+   finite-presentation construction and all its declarations are unchanged.
 -/
 module
 
@@ -19,7 +22,7 @@ public import Langlands.TauCeti.RingTheory.IsTensorProduct.Pushout
 
 import Mathlib.RingTheory.Finiteness.Projective
 import Mathlib.RingTheory.Flat.Basic
-import Langlands.TauCeti.RingTheory.Extension.Presentation.Basic
+public import Langlands.TauCeti.RingTheory.Extension.Presentation.Basic
 
 /-!
 # Weil restriction along a finite projective algebra
@@ -213,6 +216,54 @@ private def homEquivOfPresentation (P : Presentation B C ι σ) (K : Coords A B)
     exact lTensor_aeval_coordsOf_pt K _ i
 
 end Construction
+
+section PresentationConstruction
+
+variable (A B : Type*) [CommRing A] [CommRing B] [Algebra A B]
+  [Module.Finite A B] [Module.Projective A B]
+  {C ι σ : Type*} [CommRing C] [Algebra B C] (P : Presentation B C ι σ)
+
+/-- The representing algebra for Weil restriction from an arbitrary presentation.
+Only the generator type, and not the relation type, needs to be finite for finite type. -/
+def OfPresentation (A B : Type*) [CommRing A] [CommRing B] [Algebra A B]
+    [Module.Finite A B] [Module.Projective A B]
+    {C ι σ : Type*} [CommRing C] [Algebra B C] (P : Presentation B C ι σ) : Type _ :=
+  RepresentingAlgebra P (coords A B)
+deriving CommRing, Algebra A
+
+namespace OfPresentation
+
+/-- The universal point for the presentation-based construction. -/
+def universalPoint : C →ₐ[B] B ⊗[A] OfPresentation A B P :=
+  universalPointOfPresentation P (coords A B)
+
+variable (T : Type*) [CommRing T] [Algebra A T]
+
+/-- The presentation-based algebra represents the actual tensor-valued point functor. -/
+def homEquiv : (OfPresentation A B P →ₐ[A] T) ≃ (C →ₐ[B] B ⊗[A] T) :=
+  homEquivOfPresentation T P (coords A B)
+
+variable {A B P T}
+
+@[simp]
+theorem homEquiv_apply (g : OfPresentation A B P →ₐ[A] T) :
+    homEquiv A B P T g =
+      (Algebra.TensorProduct.lTensor B g).comp (universalPoint A B P) := (rfl)
+
+/-- The universal bijection is natural in the test algebra. -/
+theorem homEquiv_comp {T' : Type*} [CommRing T'] [Algebra A T']
+    (g : OfPresentation A B P →ₐ[A] T) (h : T →ₐ[A] T') :
+    homEquiv A B P T' (h.comp g) =
+      (Algebra.TensorProduct.lTensor B h).comp (homEquiv A B P T g) := by
+  simp [Algebra.TensorProduct.map_id_comp, AlgHom.comp_assoc]
+
+/-- Finite generators suffice; the set of defining relations may be infinite. -/
+instance [Finite ι] : FiniteType A (OfPresentation A B P) :=
+  FiniteType.of_surjective (Ideal.Quotient.mkₐ A _) Ideal.Quotient.mk_surjective
+
+end OfPresentation
+
+end PresentationConstruction
 
 end WeilRestriction
 
