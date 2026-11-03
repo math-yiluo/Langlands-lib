@@ -31,7 +31,7 @@ theorem rootRestriction_val (f : T' ⟶ T) (i : T.toGrp ⟶ G)
 
 end RestrictionMap
 
-private theorem submodule_eq_iSup_of_refinement
+theorem submodule_eq_iSup_of_refinement
     {K V I J : Type*} [Field K] [AddCommGroup V] [Module K V] [DecidableEq J]
     (p : I → Submodule K V) (q : J → Submodule K V)
     (hp : iSup p = ⊤) (hq : DirectSum.IsInternal q)

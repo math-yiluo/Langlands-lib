@@ -83,7 +83,7 @@ assumption is introduced.
 flat and surjective components of `hq`. It needs neither quasi-compactness nor
 smoothness.
 
-The private lemma `relativeDimension_eq` compares two prescribed smooth
+The shared lemma `relativeDimension_eq` compares two prescribed smooth
 relative dimensions of the same nonempty scheme over a field. Smoothness makes
 the scheme locally of finite type over a field, hence Jacobson. A closed point
 exists. Applying `fieldSmoothClosedPointStalkDimension` twice at that point
@@ -102,7 +102,7 @@ all-test action formula for `b`.
 
 The proof first descends smoothness through `q`, transfers connectedness by
 surjectivity, and obtains `m` from the smooth connected relative-dimension
-result. Composition gives relative dimension `n + m` for `G`; the private
+result. Composition gives relative dimension `n + m` for `G`; the shared
 closed-point comparison identifies this with `d`. Positivity of `n` gives the
 strict inequality. Affineness of `G` and `Q` supplies quasi-compactness of `q`,
 so the entry construction supplies `b`. Unipotence descends as above.
@@ -111,3 +111,6 @@ This theorem supplies the consequences of specified quotient geometry. It does
 not construct the quotient, prove its affineness, or derive the projection's
 relative dimension from a central vector subgroup. It therefore does not prove
 `CentralSmoothQuotientStatement` or `SemigroupOrderedProductStatement`.
+
+`relativeDimension_eq` is also reused by `FppfQuotientSmooth`; its statement
+and proof are unchanged.

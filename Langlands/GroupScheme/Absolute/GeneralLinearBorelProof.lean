@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Absolute.AlgebraicClosurePoint
 import Langlands.GroupScheme.Absolute.BorelStatement
 import Langlands.GroupScheme.Absolute.GeneralLinearBorelCoordinates
 import Langlands.GroupScheme.Dynamic.GeneralLinearRepresentability
@@ -149,7 +150,7 @@ theorem isRegularCocharacter_diagonalTorus (he : StrictAnti e) :
 
 /-- The algebraic closure `Spec k̄ ⟶ Spec k` as a test scheme over `Spec k`. -/
 abbrev closurePoint : Over (Spec (CommRingCat.of k)) :=
-  (Over.map (toAlgebraicClosure k)).obj (Over.mk (𝟙 (Spec (CommRingCat.of (AlgebraicClosure k)))))
+  algebraicClosurePoint k
 
 variable {k} {B' : GroupScheme (Spec (CommRingCat.of k))}
   (i' : B' ⟶ groupScheme (Fin N) (CommRingCat.of k))

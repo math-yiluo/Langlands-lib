@@ -86,7 +86,7 @@ theorem IsFppfQuotient.isUnipotent (hG : IsUnipotent G) : IsUnipotent Q := by
   let : Surjective q.hom.hom.left := hq.2.1
   exact hG.of_flat_surjective q
 
-private theorem relativeDimension_eq {X : Scheme.{u}}
+theorem relativeDimension_eq {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of k)) [Nonempty X] {d e : ℕ}
     (hd : SmoothOfRelativeDimension d f) (he : SmoothOfRelativeDimension e f) : d = e := by
   let : SmoothOfRelativeDimension d f := hd

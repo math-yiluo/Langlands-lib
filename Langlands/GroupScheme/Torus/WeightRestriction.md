@@ -49,3 +49,7 @@ the absolute-to-relative root route. They do not prove the existence of
 opposite absolute roots, the existence of a split maximal torus, or compatibility
 of actual weight spaces with scalar extension. In particular, they do not
 prove `RelativeRootNegationStatement`.
+
+The refinement helper `submodule_eq_iSup_of_refinement` is public so that
+`WeightBaseChangeComparison` can reuse the same spanning-family argument. Its
+statement and proof are unchanged.

@@ -716,3 +716,7 @@ Langlands.Weil.Representation (6): Basic, Continuity, ContinuityProof, Determina
 
 The 13 target-only modules are listed in the import closure audit above. Together
 with this module they complete the closure of 626 modules.
+
+The generic `smoothContragredientEquiv` construction is shared through
+`Smooth.Contragredient.Equivalence`. Its existing classification name is an
+abbreviation for the identical construction, preserving its interface.

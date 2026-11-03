@@ -140,3 +140,7 @@ function is injective.
 
 The theorem has the exact target statement as its type, with no additional
 hypotheses.
+
+`closurePoint` reuses the common `algebraicClosurePoint` test object from
+`Absolute.AlgebraicClosurePoint`; its definition unfolds to the same scheme
+and structure map as before.
