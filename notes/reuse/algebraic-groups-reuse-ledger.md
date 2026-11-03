@@ -12,8 +12,15 @@ rows on Weil restriction tori and on the classification of tori by Galois lattic
 Those rows cite TauCeti files present at the pinned commit but absent from the
 audit snapshot.
 
-The ledger establishes no theorem and adds or changes no Lean target. Its Lean
-evidence comes from private `lean_check` runs in environment `3b864ddf`, cited
+Sections 1–8 preserve the initial reuse audit and feasibility decisions. Their
+status phrases (including “awaiting integration”, “done”
+and “not written”) describe that historical audit, not the current Library.
+For subsequently verified transport constructions and dynamic/central proofs, see
+[Published transport, dynamics and fpqc reflection](../group-schemes/transport-dynamic-progress.md).
+That focused progress note is not a complete status ledger for the standing program.
+
+This initial audit establishes no theorem and adds or changes no Lean target.
+Its Lean evidence comes from private `lean_check` runs in environment `3b864ddf`, cited
 by diagnostic ID. None of it is an accepted Library result, and an outside
 declaration that compiles here is not thereby reviewed mathematics.
 
@@ -213,7 +220,7 @@ restriction material for group schemes is involved on this side.
 | T1. Root datum of a split reductive group, with Weyl group and bases | `Mathlib/LinearAlgebra/RootSystem/Defs.lean` line 109: `RootDatum X₁ X₂ := RootPairing ι ℤ X₁ X₂`; `Base.lean` line 70 (`RootPairing.Base`); `WeylGroup.lean` line 56 (`weylGroup`); `Hom.lean` (`RootPairing.Equiv`, `Aut`); `Reduced.lean`; `Finite/*` | **Reuse** as the target structure | Mathlib defines `RootDatum` as a root pairing over ℤ, which is the intended target. The group-to-root-datum construction (character lattice of a split maximal torus, roots, coroots) remains Library work. A Galois action on based root data should take values in `RootPairing.Aut` and preserve a `Base`. Finiteness of the index type is a separate mixin, as the audit notes. |
 | T2. Root system of a semisimple Lie algebra relative to a Cartan subalgebra | `Mathlib/Algebra/Lie/Weights/RootSystem.lean` line 414: `LieAlgebra.IsKilling.rootSystem`. It assumes a field `K` with `CharZero K`, finite dimension, `IsKilling K L` and a splitting Cartan subalgebra `H`. Its value is `RootPairing H.root K (Dual K H) H`, with `IsCrystallographic` and `IsReduced` instances. `Mathlib/Algebra/Lie/CartanSubalgebra.lean` line 50: `LieSubalgebra.IsCartanSubalgebra`. | **Not used for definitions.** A characteristic-zero comparison theorem is possible later. | The construction needs characteristic 0 and a nondegenerate Killing form, so it excludes positive characteristic and every reductive group with a nontrivial central torus. It produces a root system with coefficients in `K`, attached to the Lie algebra rather than to the character lattice of a torus. The Library's `Langlands.AbelianScheme.Lie` has no bracket. `MatrixRepresentationDifferentialLie` gives brackets only for differentials of GL_n representations. Later bridge, for split semisimple `G` over a field of characteristic 0: Lie(T) is a splitting Cartan subalgebra of Lie(G), and the Lie root system is the scalar extension of the group root datum (`RootSystem/BaseChange.lean`). |
 
-## 8. What remains open
+## 8. Open obligations at the initial audit
 
 - The adapters of D2 have not been written. The non-affine-test step (b) is the
   main new argument on the port route.

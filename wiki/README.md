@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Group schemes: published transport, dynamics and fpqc reflection](../notes/group-schemes/transport-dynamic-progress.md) — Eight verified transport constructions and three exact dynamic/central proofs, with their hypotheses, publication receipts and remaining thematic obligations.
+
 - [Actual coordinate augmentation weights and remaining proof targets](../notes/group-schemes/coordinate-augmentation-targets.md) — Actual group and pointed-affine coordinate interfaces, exact proposition targets and seven focused proof successors, with retained consumer obligations.
 
 - [KP Bruhat–Tits: Bundles A–F source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected source targets, verified metric and finite separable-unramified proofs, and the remaining building, decomposition, model, filtration, descent and embedding gates.
@@ -89,7 +91,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [NYLL finite local reciprocity: source audit and port plan](../notes/reuse/nyll-finite-local-reciprocity-audit.md) — Exact pins, closures, full declaration types, attribution, kernel evidence, a declaration-level comparison with the Library's conditional reciprocity constructors, and the adapt verdict for reusing NYLL's actual Artin map, its geometric sign, tower, norm and inertia theorems in our finite reciprocity statements.
 - [NYLL finite local reciprocity: bounded port feasibility](../notes/reuse/nyll-port-feasibility.md) — Verified six-root closure builds, nine compatibility edits, complete diagnostic evidence and the remaining Library adapters and architecture decision.
 - [NYLL public port: declaration partition and dependency routing](../notes/reuse/nyll-public-port-plan.md) — All 422 source modules partitioned at declaration boundaries, with conservative dependencies, initial child tasks, reuse qualifications and explicit remaining semantic and host-bridge obligations.
-- [Algebraic and reductive group schemes: reuse ledger](../notes/reuse/algebraic-groups-reuse-ledger.md) — For each planned unit on dynamic subgroups, unipotent and reductive groups, GL_n, tori, diagonalizable groups, Weil restriction, Galois lattices and root data: whether to port TauCeti or Toric code, adapt its proof route, or rewrite on `Langlands.GroupScheme`, with pins, import-closure sizes, port-test evidence and adapter obligations.
+- [Algebraic and reductive group schemes: initial reuse ledger](../notes/reuse/algebraic-groups-reuse-ledger.md) — Historical port feasibility and adapter decisions for each planned unit on dynamic subgroups, unipotent and reductive groups, GL_n, tori, diagonalizable groups, Weil restriction, Galois lattices and root data: whether to port TauCeti or Toric code, adapt its proof route, or rewrite on `Langlands.GroupScheme`, with pins, import-closure sizes, port-test evidence and adapter obligations.
 
 - [Library module atlas](../notes/library/module-atlas.md) — Reproduce the import graph and find isolated interfaces, existing consumer tasks and integration routes.
 - [Checking complete Lean declaration types](../notes/lean/complete-declaration-checks.md) — Detect parameter-order mismatches that applied theorem examples can hide.
