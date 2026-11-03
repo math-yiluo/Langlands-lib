@@ -58,6 +58,10 @@ such that
 
 ## Helper lemmas
 
+The finite-length injection helper below is imported from
+[FiniteLengthHelpers](../Category/FiniteLengthHelpers.md), with its original
+full name, statement and proof.
+
 - `rank_le_degree`: `Δ.rank ≤ Δ.degree` for every segment, because
   `degree = length * rank` and `length ≥ 1`.
 - `sum_rank_le`: for a datum of total degree `n`, `∑ i, (d.segments i).rank ≤ n`,

@@ -29,6 +29,10 @@ proposition, after the choice of `Δ`.
 
 ## Constituents and heads
 
+The quotient helper below is imported from
+[FiniteLengthHelpers](../Category/FiniteLengthHelpers.md), which preserves its
+original full name, statement and proof.
+
 - `exists_irreducible_subrepresentation`: a nonzero finite-length smooth
   representation has an irreducible subrepresentation. The lattice of
   subrepresentations is Artinian, hence atomic. An atom is irreducible by the

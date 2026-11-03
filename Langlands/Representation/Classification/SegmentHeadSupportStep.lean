@@ -1,3 +1,4 @@
+import Langlands.Representation.Category.FiniteLengthHelpers
 import Langlands.Representation.Classification.SegmentHeadSupportSplit
 import Langlands.Representation.Classification.SegmentHeadDecreasingSocle
 import Langlands.Representation.Classification.SupercuspidalSupportUniquenessProof
@@ -69,33 +70,6 @@ theorem exists_irreducible_subrepresentation {A : SmoothRep.{0, uG, uV} ℂ G}
     FiniteIndexRestriction.isIrreducible_toRepresentation_of_isAtom U hU,
     SmoothRep.subtype A U, SmoothRep.subtype_injective A U⟩
 
-/-- A nonzero finite-length smooth representation has an irreducible quotient
-(the quotient by a coatom of its Noetherian lattice of submodules; the argument
-of `SmoothRep.exists_irreducible_quotient_subquotient_of_nonzero`). -/
-theorem exists_irreducible_quotient {A : SmoothRep.{0, uG, uV} ℂ G}
-    (hA : A.HasFiniteLength) [Nontrivial A] :
-    ∃ C : SmoothRep.{0, uG, uV} ℂ G, C.IsIrreducible ∧
-      ∃ q : A ⟶ C, Function.Surjective (SmoothRep.hom q) := by
-  have : IsNoetherian (MonoidAlgebra ℂ G) A.representation.asModule :=
-    (isFiniteLength_iff_isNoetherian_isArtinian.mp hA).1
-  let : Nontrivial A.representation.asModule := ‹Nontrivial A›
-  obtain ⟨N, hN⟩ :=
-    IsCoatomic.exists_coatom (α := Submodule (MonoidAlgebra ℂ G) A.representation.asModule)
-  let S : Subrepresentation A.representation := Subrepresentation.ofSubmodule' N
-  let C := SmoothRep.quotient A S
-  let r : A ⟶ C := SmoothRep.mkQ A S
-  let rg := Representation.IntertwiningMap.equivLinearMapAsModule _ _ (SmoothRep.hom r)
-  have hrg : Function.Surjective rg := SmoothRep.mkQ_surjective A S
-  have hker : rg.ker = N := by
-    ext v
-    change Submodule.Quotient.mk v = (0 : A ⧸ S.toSubmodule) ↔ v ∈ N
-    exact Submodule.Quotient.mk_eq_zero _
-  have hsimp : IsSimpleModule (MonoidAlgebra ℂ G) (A.representation.asModule ⧸ rg.ker) := by
-    apply isSimpleModule_iff_isCoatom.mpr
-    rwa [hker]
-  have hCsimp : IsSimpleModule (MonoidAlgebra ℂ G) C.representation.asModule :=
-    IsSimpleModule.congr (rg.quotKerEquivOfSurjective hrg).symm
-  exact ⟨C, (Representation.irreducible_iff_isSimpleModule_asModule _).mpr hCsimp, r, hrg⟩
 
 end Constituents
 

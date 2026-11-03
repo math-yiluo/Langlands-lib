@@ -1,3 +1,4 @@
+import Langlands.Representation.Category.FiniteLengthHelpers
 import Langlands.Representation.Aubert.SegmentProductClass
 import Langlands.Representation.Aubert.MultisegmentRankOrder
 import Langlands.Representation.Classification.SegmentSocleProductHomogeneityStatement
@@ -82,14 +83,6 @@ theorem hasNonzeroDerivative_restriction_iff
   exact (hasNonzeroDerivative_iff T ψ hk _).trans
     (LevelCalculus.nontrivial_iff_of_iso
       ((generalLinearRestrictionDerivativeIso T ψ N k hk).app X))
-
-/-- An injective morphism of smooth representations transfers finite length
-from its target to its source. -/
-theorem hasFiniteLength_of_injective {G : Type uG} [Group G] [TopologicalSpace G]
-    {A B : SmoothRep.{0, uG, uW} ℂ G} (f : A ⟶ B) (hf : Function.Injective (SmoothRep.hom f))
-    (hB : B.HasFiniteLength) : A.HasFiniteLength :=
-  IsFiniteLength.of_injective hB
-    (f := Representation.IntertwiningMap.equivLinearMapAsModule _ _ (SmoothRep.hom f)) hf
 
 /-- Weak-label form of Zelevinsky 1980, Theorem 6.6, from the homogeneity
 statement of Theorem 6.2: the order-`λ` derivative of an irreducible
