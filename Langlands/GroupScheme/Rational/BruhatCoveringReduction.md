@@ -6,8 +6,9 @@ This internal reduction constructs actual scheme normalizer witnesses from
 conjugacies of torus embeddings. It does not prove the geometric structural
 statements on minimal parabolics.
 
-`innerIso_hom_comp` proves naturality of inner automorphisms on every test
-scheme by the group-homomorphism laws on points.
+The imported `innerIso_hom_comp` from `ConjugacyBaseChange` proves
+naturality of inner automorphisms on every test scheme by the
+group-homomorphism laws on points.
 
 `normalizerPointOfConjugacySquare` takes two actual torus-source isomorphisms
 and equations saying that conjugation by `p` and by `g*q` takes the original

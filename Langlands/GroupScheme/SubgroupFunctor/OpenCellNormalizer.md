@@ -15,8 +15,9 @@ The test schemes may be non-affine and nonreduced.
 
 ## Implemented argument
 
-`cellMultiplication` is the actual multiplication map built from `iU` and
-`iP`. Its right factor lies in its topological image: use the identity
+`cellMultiplication`, imported from
+[CellMultiplication](CellMultiplication.md), is the actual multiplication
+map built from `iU` and `iP`. Its right factor lies in its topological image: use the identity
 point in `U` and the given point in `P`.
 
 For any test map `g : T → G` in the normalizer, take a point `t` of `T`

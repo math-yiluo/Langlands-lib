@@ -143,4 +143,4 @@ This module does not prove any of the six premises, injectivity of the restricti
 bijectivity target `RelativeWeylGroupRestrictStatement`.
 
 The inner-conjugation compatibility `innerIso_hom_comp` is reused from
-`Rational.BruhatCoveringReduction`.
+`ConjugacyBaseChange`.

@@ -19,16 +19,6 @@ section Scheme
 variable {S : Scheme.{u}} {G H : GroupScheme S}
   {T T' : CommGroupScheme S}
 
-/-- Inner automorphisms commute with group-scheme homomorphisms. -/
-theorem innerIso_hom_comp (j : H ⟶ G) (p : Over.mk (𝟙 S) ⟶ H.X) :
-    (H.innerIso p).hom ≫ j = j ≫ (G.innerIso (p ≫ j.hom.hom)).hom := by
-  apply hom_ext_points
-  intro U x
-  change (x ≫ (H.innerIso p).hom.hom.hom) ≫ j.hom.hom =
-    (x ≫ j.hom.hom) ≫ (G.innerIso (p ≫ j.hom.hom)).hom.hom.hom
-  rw [comp_innerIso_hom, comp_innerIso_hom, MonObj.mul_comp, MonObj.mul_comp,
-    GrpObj.inv_comp, constantPoint_comp]
-
 /-- Two conjugacies from the same torus to a common torus construct a point of
 its actual scheme normalizer, including the source automorphism. -/
 def normalizerPointOfConjugacySquare

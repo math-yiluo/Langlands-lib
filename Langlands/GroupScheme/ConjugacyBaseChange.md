@@ -14,6 +14,11 @@ scheme over the new base, `baseChangePointsEquiv_constantPoint` identifies
 the constant family of the new section with the original constant family
 on that test scheme considered over the old base.
 
+`innerIso_hom_comp` proves that inner automorphisms commute with any
+group-scheme homomorphism. Its proof applies the group-homomorphism laws
+on every test scheme and uses `constantPoint_comp` to identify the
+image of the conjugating point.
+
 `HomConjugate.precomp` retains the original conjugator. For
 `HomConjugate.postcomp`, the conjugator is its image under the target group
 morphism. The proof applies that morphism to the equality on every group of

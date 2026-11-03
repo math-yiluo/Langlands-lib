@@ -23,6 +23,16 @@ theorem constantPoint_comp (f : G ⟶ H) (g : Over.mk (𝟙 S) ⟶ G.X) (T : Ove
     G.constantPoint g T ≫ f.hom.hom = H.constantPoint (g ≫ f.hom.hom) T :=
   Category.assoc _ _ _
 
+/-- Inner automorphisms commute with group-scheme homomorphisms. -/
+theorem innerIso_hom_comp (j : H ⟶ G) (p : Over.mk (𝟙 S) ⟶ H.X) :
+    (H.innerIso p).hom ≫ j = j ≫ (G.innerIso (p ≫ j.hom.hom)).hom := by
+  apply hom_ext_points
+  intro U x
+  change (x ≫ (H.innerIso p).hom.hom.hom) ≫ j.hom.hom =
+    (x ≫ j.hom.hom) ≫ (G.innerIso (p ≫ j.hom.hom)).hom.hom.hom
+  rw [comp_innerIso_hom, comp_innerIso_hom, MonObj.mul_comp, MonObj.mul_comp,
+    GrpObj.inv_comp, constantPoint_comp]
+
 /-- Inner conjugacy is preserved by postcomposition with a group-scheme morphism. -/
 theorem HomConjugate.postcomp {χ ψ : J ⟶ G} (h : HomConjugate χ ψ) (f : G ⟶ H) :
     HomConjugate (χ ≫ f) (ψ ≫ f) := by
