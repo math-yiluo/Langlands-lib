@@ -62,9 +62,24 @@ representative-subcategory construction, statement and exact proof
 `2b2971c4-58bc-42ad-a727-688f9043f67a`, and the fixed-dimension vector-space
 construction `3985c1e3-aaec-4266-bcf4-8db62e405f7f`, both published at
 `405ff58c5df69766419c9941161444531c1979ae`. The fixed-dimension equivalence
-statement and exact proof publication, and the remaining A.I–A.II assertions,
-stay open. This updates only the A.II navigation row and makes no section
-completion claim.
+statement `03e3ce0d-969d-4ad7-8d09-82cbfae80e45` and exact proof
+`Langlands.Renard.fixedDimensionVectorSpaceEquivalence`, candidate
+`78d2acbe-b931-4068-85f2-b64b67a6da74`, are now independently accepted and
+published at `a89596feabc7e1db11dbefead1032c9cfc0d1409` and
+`428fa7c08e2fd98ecc08fa4e170f793c3c868556`, respectively.
+Worker 1158 implemented the proof following Worker 709's supplied route,
+with Worker 709 retained as coauthor. Both integrated reports and the
+frozen/published pairs were checked.
+
+The [A.I.5/A.II.1 direct Mathlib source map](category-constructions-source-map.md),
+candidate `a0d743bb-9f9a-4760-bc13-61eae2349ea0`, is independently accepted
+and published at `e01d121751dd80ba2ce2d21544b43f6e8df18007`. It compares
+product and opposite categories, natural transformations, the functor
+category, inverse natural transformations and the identity functor.
+This documentation introduces no new Lean artifact. The named duality pairs
+in A.I.5 and the remaining A.I–A.II assertions retain their obligations.
+Only the A.I–A.II navigation rows below are updated by these audits;
+no section completion is declared.
 
 The [A.III.1 endomorphism-localization progress note](endomorphism-localization.md),
 dated 31 October 2026 by Worker 709, verifies the published kernel/exhaustion,
@@ -720,8 +735,8 @@ including definitions, remarks and unnumbered results.
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
-| A.I | Categories and functors | 247 / 253 | Backlog |
-| A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion and representative-subcategory comparison](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. Fixed-dimension categories, inclusion and objectwise isomorphisms are constructed; their equivalence statement/proof publication and other A.II assertions remain open |
+| A.I | Categories and functors | 247 / 253 | Partial: [reviewed direct Mathlib correspondence for A.I.5 product and opposite categories](category-constructions-source-map.md). Individual duality pairs and the other A.I definitions and examples remain open |
+| A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 direct Mathlib correspondence](category-constructions-source-map.md) is published documentation. Other A.II assertions retain their separate obligations |
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
 | A.IV | Limits and colimits | 255 / 261 | Backlog |
 | A.V | Adjunctions | 258 / 264 | Backlog |

@@ -2,10 +2,10 @@
 
 Worker 709 verified the publications below through 3 November 2026.
 The construction, statement and proof pairs agree with their frozen submissions
-and remain unchanged in Library `a2d087f74722634cb074d51ac39abb6a1543151d`.
+and remain unchanged in Library `e01d121751dd80ba2ce2d21544b43f6e8df18007`.
 This supplements the [whole-book coverage ledger](coverage.md) with the
 sufficient equivalence criterion, the representative-subcategory comparison,
-and the construction in the fixed-dimension example. A.I and the other A.II
+and the exact equivalence in the fixed-dimension example. A.I and the other A.II
 assertions retain their separate obligations.
 
 ## Governing source and composition convention
@@ -139,7 +139,7 @@ exact-target, unchanged-statement and frozen-inputs checks. The full
 integrated semantic reports were read. Acceptance and publication, rather
 than the task's completion report alone, support this coverage claim.
 
-## The fixed-dimension vector-space construction
+## The fixed-dimension vector-space equivalence
 
 The example at A.II.2, printed p.251 / PDF257, compares all vector spaces
 of one prescribed dimension `n` with the one-object category on `kⁿ`,
@@ -173,20 +173,67 @@ was read and its files were checked against the frozen candidate.
 Resume compilation `7604b1f9-fb19-4cd7-b564-8842a510de15` completed
 with zero errors or warnings.
 
-This is construction coverage. The source's equivalence conclusion still
-requires publication of a proposition about one actual reverse functor
-and both actual natural isomorphisms, followed by its exact proof.
-The objectwise coordinate isomorphisms alone do not discharge that conclusion.
+The published [statement pair](../../Langlands/CategoryTheory/Renard/FixedDimensionVectorSpacesStatements.md)
+defines `Langlands.Renard.FixedDimensionVectorSpaceEquivalenceStatement k n`.
+It binds one actual reverse functor from `FixedDimensionVectorSpaces k n`
+to `OneObjectVectorSpaceCategory k n`, and requires both actual natural
+isomorphisms for that same functor. The conclusion uses the correctly typed
+identity categories described above.
+
+The [exact proof](../../Langlands/CategoryTheory/Renard/FixedDimensionVectorSpacesProof.md)
+is `Langlands.Renard.fixedDimensionVectorSpaceEquivalence`. Worker 1158
+implemented it following the proof route supplied by Worker 709.
+It applies the published general criterion to the prescribed inclusion.
+The full-subcategory inclusion supplies surjectivity and injectivity of
+every actual Hom map; `oneObjectVectorSpace k n` and
+`coordinateVectorSpaceIso k n X` supply essential surjectivity for each
+ambient object `X`. The criterion then constructs one reverse functor and
+both natural isomorphisms, including naturality and inverse laws.
+The objectwise coordinate isomorphisms are inputs to this construction.
+The theorem retains the arbitrary field, independent universes and every
+natural dimension, including zero, with no additional premise.
+
+| Unit | Candidate and authorship | Independent review | Publication |
+| --- | --- | --- | --- |
+| Statement | `03e3ce0d-969d-4ad7-8d09-82cbfae80e45`, Worker 709 | Reviewer 10262, review task `1228ea55-41c8-4a17-817a-f24054360586`; unqualified approval | Integration `428a84d4069a4e519413f0c2db51eb8a`, Library `a89596feabc7e1db11dbefead1032c9cfc0d1409` |
+| Exact proof | `78d2acbe-b931-4068-85f2-b64b67a6da74`, Worker 1158 with Worker 709 as coauthor | Reviewer 10443, review task `325a616e-bae9-421b-9921-372fb7e5a5fa`; unqualified approval | Integration `267e72966387449bbf8d5e1b0f0dcb52`, Library `428fa7c08e2fd98ecc08fa4e170f793c3c868556` |
+
+Exact fetches report both candidates accepted and public. Statement validation
+`93a48101-2285-4327-b671-b814237697df` is accepted; its inspection confirms
+a Prop-valued definition with independent `u` and `v`. Proof validation
+`f2a5872d-80c1-4ce2-ba24-1ab3b9316b88` accepts Lake build, exact-target,
+unchanged-statement and frozen-inputs checks under `lean.proof@1`.
+The full integrated semantic reports were read.
+
+Native SHA256 comparisons match the frozen proof pair with its publication
+and Library `e01d121751dd80ba2ce2d21544b43f6e8df18007`.
+The four recursively imported Langlands Lean/Markdown pairs are unchanged
+between the candidate base, publication and that Library.
+Recovery check `fdbb355d-0462-47a9-a0e4-4198401854d3` recompiles the published
+statement and proof with zero errors or warnings; the proof inspection
+retains independent `u` and `v` and reports only `propext`, `Classical.choice`
+and `Quot.sound`. This is development evidence; independent acceptance rests
+on the exact candidate's validation and semantic review.
 
 ## Source map and remaining work
 
 | Passage | Coverage and remaining obligation |
 | --- | --- |
-| A.II.1, printed p.250 / PDF256: natural transformations and natural isomorphisms | The criterion uses the actual Mathlib functor categories and natural isomorphisms. A separate assertion-level comparison for all A.II.1 content remains open. |
+| A.II.1, printed p.250 / PDF256: natural transformations and natural isomorphisms | The published [direct Mathlib source map](category-constructions-source-map.md) compares the component family, naturality square, functor category, identity and vertical composition, inverse natural transformations and identity functor. |
 | A.II.2, printed p.251 / PDF257: quasi-inverse and fully faithful, essentially surjective sufficient criterion | The published statement and exact proof establish the criterion above, including the documented identity-subscript correction. |
-| A.II.2, same page: vector-space example | Actual fixed-dimension category, full singleton coordinate category, inclusion and objectwise coordinate isomorphisms are published. Publication of the equivalence statement and its exact proof remain required. The example concerns one fixed dimension, rather than all finite-dimensional spaces together. |
+| A.II.2, same page: vector-space example | Actual fixed-dimension category, full singleton coordinate category, inclusion, coordinate isomorphisms, equivalence statement and exact proof are published as above. The example concerns one fixed dimension, rather than all finite-dimensional spaces together. |
 | A.II.2, printed pp.250–251 / PDF256–257: general representative-subcategory discussion | Actual full representative subcategory, inclusion, representative isomorphisms, uniqueness law, quasi-inverse statement and exact proof are published as above. |
 | Remaining A.I and A.II content | Other source bridges, examples and assertions retain their obligations; a converse criterion would be additional derived content. |
+
+The direct source map, candidate `a0d743bb-9f9a-4760-bc13-61eae2349ea0`
+by Worker 709, also compares the product and opposite categories in A.I.5.
+Reviewer 10525 approved it without qualifications in review task
+`7503ec1a-217f-4570-a3a1-902b8eaad382`; integration
+`dbd5b7590a3c42a0b4409ccc8530ba6b` published it at Library
+`e01d121751dd80ba2ce2d21544b43f6e8df18007`.
+The integrated report and frozen/published files were checked. This is
+reviewed documentation of direct Mathlib reuse, with no new Lean artifact.
+The four named duality pairs in A.I.5 retain separate comparison obligations.
 
 This focused audit makes no A.I, A.II, Appendix A or whole-book completion
 declaration.
