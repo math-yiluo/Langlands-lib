@@ -114,3 +114,7 @@ points and the positive scalar adelic subgroup, no unconditional reductive
 positive/norm-one decomposition, and no Haar-measure, height, reduction-theory
 or finite-volume assertion. Those comparisons and structural assertions
 remain separate obligations of the general adelic program.
+
+The local topology instances have explicit names and expose exactly
+`GroupScheme.affinePointsTopologicalSpace` on the actual affine-point
+carriers. Their definitions and local scope are unchanged.

@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Dynamic.GeneralLinearWeightComponents
 import Langlands.GroupScheme.Dynamic.GeneralLinearCellBlock
 import Langlands.GroupScheme.Dynamic.GeneralLinearTranslation
 import Mathlib.Algebra.Polynomial.Laurent
@@ -46,17 +47,6 @@ omit [Fintype ι] [DecidableEq ι] in
 theorem mem_coordinateSubspace {s : Finset ι} {c : ι → K} :
     c ∈ coordinateSubspace K s ↔ ∀ i, i ∉ s → c i = 0 :=
   Iff.rfl
-
-/-- The weight-`w` component of a vector for the weights `a`. -/
-def weightPart (a : ι → ℤ) (w : ℤ) (c : ι → K) : ι → K :=
-  fun i => if a i = w then c i else 0
-
-omit [Fintype ι] [DecidableEq ι] in
-theorem weightPart_add (a : ι → ℤ) (w : ℤ) (c c' : ι → K) :
-    weightPart a w (c + c') = weightPart a w c + weightPart a w c' := by
-  funext i
-  simp only [weightPart, Pi.add_apply]
-  split_ifs <;> simp
 
 /-- **Pivot coordinates for a graded subspace.** If `W` contains the weight components of its
 vectors, there are a set `s` of non-pivot indices and a matrix `N` with entries only from the

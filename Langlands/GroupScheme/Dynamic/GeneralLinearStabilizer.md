@@ -129,3 +129,7 @@ basis to the coordinate subspace of pivot columns. The role of the line-stabiliz
 is taken by the block lemma, and the grading of `W_d` comes from the diagonal cocharacter. The
 reduction to ideals and zero loci, and all intermediate statements, are internal to this
 development.
+
+The unchanged `GeneralLinear.weightPart` and `weightPart_add` declarations
+are imported from `Dynamic/GeneralLinearWeightComponents`, shared with the
+flag-limit construction.

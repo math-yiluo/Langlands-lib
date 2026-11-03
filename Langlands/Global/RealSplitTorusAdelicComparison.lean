@@ -25,7 +25,7 @@ def infiniteRealAlgebraMap : ℝ →ₐ[ℚ] InfiniteAdeles ℚ :=
 
 variable (G : GroupScheme (Spec (CommRingCat.of ℚ))) [IsAffine G.X.left]
 
-local instance (H : GroupScheme (Spec (CommRingCat.of ℚ))) :
+local instance realAdelicComparisonAffinePointsTopology (H : GroupScheme (Spec (CommRingCat.of ℚ))) :
     TopologicalSpace (Lie.AffinePoints H ℝ) :=
   GroupScheme.affinePointsTopologicalSpace H (CommAlgCat.of ℚ ℝ)
 
@@ -78,7 +78,7 @@ variable (T : CommGroupScheme (Spec (CommRingCat.of ℚ))) [IsAffine T.toGrp.X.l
 variable (I : Type) [Fintype I]
 variable (e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of ℚ)) I)
 
-local instance (H : GroupScheme (Spec (CommRingCat.of ℚ))) :
+local instance positiveRealAdelicComparisonAffinePointsTopology (H : GroupScheme (Spec (CommRingCat.of ℚ))) :
     TopologicalSpace (Lie.AffinePoints H ℝ) :=
   GroupScheme.affinePointsTopologicalSpace H (CommAlgCat.of ℚ ℝ)
 

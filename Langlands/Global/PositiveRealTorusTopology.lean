@@ -19,7 +19,7 @@ open Langlands.GroupScheme
 variable (F : Type u) [Field F]
 variable (T : CommGroupScheme (Spec (CommRingCat.of F)))
 
-local instance (G : GroupScheme (Spec (CommRingCat.of F)))
+local instance positiveTorusAffinePointsTopology (G : GroupScheme (Spec (CommRingCat.of F)))
     (A : Type u) [CommRing A] [Algebra F A] [TopologicalSpace A] :
     TopologicalSpace (Lie.AffinePoints G A) :=
   GroupScheme.affinePointsTopologicalSpace G (CommAlgCat.of F A)

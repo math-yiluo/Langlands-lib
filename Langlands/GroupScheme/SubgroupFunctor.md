@@ -60,3 +60,7 @@ regarded over `S` via `b` (`(Over.map b).obj T'`). The Library equivalence
 This is the functorial base change of a subfunctor, `F_{S'}(T') = F(T')` for `S'`-schemes
 `T'`. Conrad (p. 114) uses this when he notes that the formation of `P_G(λ)`, `U_G(λ)` and
 `Z_G(λ)` commutes with base change.
+
+The shared `SubgroupFunctor.range_iso_comp` lemma, moved unchanged from
+`Torus/NormalizerLifting`, states that precomposing a homomorphism with an
+isomorphism leaves its range unchanged on every test scheme.

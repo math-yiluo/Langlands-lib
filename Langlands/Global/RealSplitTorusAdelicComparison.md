@@ -104,3 +104,7 @@ an ambient central inclusion. It supplies the real-to-adelic comparison for a
 supplied rational split torus. Unconditional reductive decomposition, measures,
 reduction theory, finite volume and the remaining automorphic comparisons are
 separate obligations.
+
+The local topology instances have explicit names and expose exactly
+`GroupScheme.affinePointsTopologicalSpace` on the actual affine-point
+carriers. Their definitions and local scope are unchanged.

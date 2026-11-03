@@ -43,3 +43,7 @@ intrinsic splitting-independence statements therefore continue to apply
 without changing their carriers or functions. This file proves no
 existence of a splitting for a nonsplit torus and makes no reduction,
 finite-volume or invariant-measure assertion.
+
+The local topology instances have explicit names and expose exactly
+`GroupScheme.affinePointsTopologicalSpace` on the actual affine-point
+carriers. Their definitions and local scope are unchanged.

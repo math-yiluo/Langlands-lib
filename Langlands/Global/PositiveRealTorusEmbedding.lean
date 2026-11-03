@@ -23,7 +23,7 @@ variable (I : Type u) [Fintype I]
 variable (T : CommGroupScheme (Spec (CommRingCat.of F)))
 variable (e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of F)) I)
 
-local instance (G : GroupScheme (Spec (CommRingCat.of F)))
+local instance positiveTorusEmbeddingAffinePointsTopology (G : GroupScheme (Spec (CommRingCat.of F)))
     (A : Type u) [CommRing A] [Algebra F A] [TopologicalSpace A] :
     TopologicalSpace (Lie.AffinePoints G A) :=
   GroupScheme.affinePointsTopologicalSpace G (CommAlgCat.of F A)

@@ -146,3 +146,7 @@ real coefficient points to positive scalar adelic points. It supplies no
 unconditional reductive decomposition, Haar measure, height, reduction
 theorem or finite-volume result. Those remain separate obligations of the
 general adelic program.
+
+The local topology instances have explicit names and expose exactly
+`GroupScheme.affinePointsTopologicalSpace` on the actual affine-point
+carriers. Their definitions and local scope are unchanged.

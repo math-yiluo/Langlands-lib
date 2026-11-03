@@ -135,7 +135,7 @@ theorem characterValue_orderedCoefficientFull
 
 variable [TopologicalSpace A]
 
-local instance (G : GroupScheme (Spec (CommRingCat.of F))) :
+local instance positiveParametersAffinePointsTopology (G : GroupScheme (Spec (CommRingCat.of F))) :
     TopologicalSpace (Lie.AffinePoints G A) :=
   GroupScheme.affinePointsTopologicalSpace G (CommAlgCat.of F A)
 

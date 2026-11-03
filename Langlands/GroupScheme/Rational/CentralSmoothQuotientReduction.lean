@@ -1,5 +1,5 @@
 import Langlands.GroupScheme.Chevalley.UnipotentQuotientDescent
-import Langlands.GroupScheme.Reductive.UnipotentFieldExtensionStatement
+import Langlands.GroupScheme.Reductive.UnipotentFieldExtensionProof
 import Langlands.GroupScheme.UnipotentClosedSubgroupStatement
 import Langlands.GroupScheme.Rational.CentralVectorQuotientStatement
 import Langlands.GroupScheme.Torus.CentralMaximalBaseChangeReduction
@@ -40,6 +40,20 @@ def unipotentAffineQuotientOfStructuralStatements
     (hbase k (AlgebraicClosure k) G inferInstance inferInstance hG)
     (hbase k (AlgebraicClosure k) H inferInstance inferInstance (hsub k G H i hi hG))
 
+/-- The affine homogeneous quotient with field-extension unipotence supplied by
+the published proof. Closed-orbit and closed-subgroup unipotence remain inputs. -/
+def unipotentAffineQuotientOfClosedOrbitAndSubgroup
+    (hclosed : UnipotentAffineOrbitClosedStatement.{u})
+    (hsub : UnipotentClosedSubgroupStatement.{u})
+    (k : Type u) [Field k]
+    (G : GroupScheme (Spec (CommRingCat.of k)))
+    [IsAffineHom G.X.hom] [Smooth G.X.hom] (hG : IsUnipotent G)
+    (H : GroupScheme (Spec (CommRingCat.of k))) (i : H ⟶ G)
+    (hi : IsClosedSubgroup i) (hsm : Smooth H.X.hom) :
+    HomogeneousQuotientFromEmbedding.AffineHomogeneousQuotient i :=
+  unipotentAffineQuotientOfStructuralStatements
+    hclosed unipotentFieldExtensionStatement hsub k G hG H i hi hsm
+
 end Chevalley
 
 namespace RelativeRoot
@@ -64,6 +78,15 @@ theorem centralSmoothQuotient_of_structuralStatements
       (show bZ.IsEquivariant b z from fun {T} s v => heq T s v)
   exact D.quotient.exists_action_relativeDimension D.affine
     hcentral.range_isNormal hG b hstable hd hn hpos
+
+/-- The exact central smooth quotient target with the field-extension premise
+discharged, retaining the closed-orbit and closed-subgroup propositions. -/
+theorem centralSmoothQuotient_of_closedOrbit_and_subgroup
+    (hclosed : UnipotentAffineOrbitClosedStatement.{u})
+    (hsub : UnipotentClosedSubgroupStatement.{u}) :
+    CentralSmoothQuotientStatement.{u} :=
+  centralSmoothQuotient_of_structuralStatements
+    hclosed unipotentFieldExtensionStatement hsub
 
 end RelativeRoot
 

@@ -48,6 +48,13 @@ theorem subgroupIntersection_isPullback_scheme (j : P ⟶ G) (j' : P' ⟶ G) :
       (subgroupIntersectionSnd j j').hom.hom.left j.hom.hom.left j'.hom.hom.left :=
   (subgroupIntersection_isPullback j j').map (Over.forget S)
 
+/-- The projection of a scheme-theoretic intersection to the first group is
+closed whenever the second embedding is closed. -/
+theorem isClosedSubgroup_subgroupIntersectionFst (j : P ⟶ G) {i : P' ⟶ G}
+    (hi : IsClosedSubgroup i) : IsClosedSubgroup (subgroupIntersectionFst j i) := by
+  change IsClosedImmersion (subgroupIntersectionFst j i).hom.hom.left
+  exact MorphismProperty.of_isPullback (subgroupIntersection_isPullback_scheme j i).flip hi
+
 /-- A point lies in the actual intersection exactly when it lies in both
 subgroup ranges, on every test scheme. -/
 theorem range_subgroupIntersectionHom (j : P ⟶ G) (j' : P' ⟶ G) :

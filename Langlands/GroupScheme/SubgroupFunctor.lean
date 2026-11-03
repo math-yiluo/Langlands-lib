@@ -114,6 +114,19 @@ theorem mem_baseChange {F : SubgroupFunctor G} {T' : Over S'}
 
 end BaseChange
 
+/-- Precomposing with an isomorphism does not change the range. -/
+theorem range_iso_comp {S : Scheme.{u}} {H H' G : GroupScheme S} (e : H' ≅ H)
+    (i : H ⟶ G) : SubgroupFunctor.range (e.hom ≫ i) = SubgroupFunctor.range i := by
+  ext T x
+  rw [SubgroupFunctor.mem_range, SubgroupFunctor.mem_range]
+  constructor
+  · rintro ⟨y, rfl⟩
+    exact ⟨y ≫ e.hom.hom.hom, by rw [Grp.comp_hom_hom, Category.assoc]⟩
+  · rintro ⟨y, rfl⟩
+    refine ⟨y ≫ e.inv.hom.hom, ?_⟩
+    rw [Grp.comp_hom_hom, Category.assoc, ← Category.assoc e.inv.hom.hom, ← Grp.comp_hom_hom,
+      Iso.inv_hom_id, Grp.id_hom_hom, Category.id_comp]
+
 end SubgroupFunctor
 
 end Langlands.GroupScheme

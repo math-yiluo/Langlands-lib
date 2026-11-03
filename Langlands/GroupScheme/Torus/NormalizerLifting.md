@@ -18,7 +18,7 @@ For a homomorphism `j : D(M) ⟶ Spec B` from the published diagonalizable group
 
 - `diagonalizableEmbedding e j` is the character embedding `t ↦ (characterPoint t ≫ j)` in affine coordinates. `characterPoint` is published in `AffineCharacterAction`. Naturality follows from `characterPoint_mapCharacter` and the naturality of `affinePointsEquiv`; injectivity from `j` being a monomorphism.
 - `diagonalizableEmbedding_range`: its range over `A` is the published family `affineSubgroups (range j) A`, the points of `range j` over `Spec A`.
-- `SubgroupFunctor.range_iso_comp`: precomposing a homomorphism with an isomorphism does not change its range.
+- The imported `SubgroupFunctor.range_iso_comp` from `GroupScheme/SubgroupFunctor` states that precomposing a homomorphism with an isomorphism does not change its range.
 
 ## Provenance
 

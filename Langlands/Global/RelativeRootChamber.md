@@ -80,3 +80,7 @@ shared `Rational.StandardParabolic` interface of Worker 1225. It is not a
 complete Siegel set: compact unipotent and Levi factors, a suitable maximal
 compact, actual minimal-parabolic comparisons, reduction/coverage, finite volume
 and the analytic Haar-modulus theorem remain separate obligations.
+
+The local topology instances have explicit names and expose exactly
+`GroupScheme.affinePointsTopologicalSpace` on the actual affine-point
+carriers. Their definitions and local scope are unchanged.

@@ -36,3 +36,7 @@ does not assert continuity of the positive torus parametrization. A
 coordinate homeomorphism, closedness of an image in an arbitrary ambient
 group, a central split-torus selection, and reduction or volume results
 remain separate obligations.
+
+The local topology instances have explicit names and expose exactly
+`GroupScheme.affinePointsTopologicalSpace` on the actual affine-point
+carriers. Their definitions and local scope are unchanged.

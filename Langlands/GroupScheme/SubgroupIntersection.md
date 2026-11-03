@@ -32,3 +32,9 @@ These results require no field or reductivity assumptions. They prove
 representability and closedness, with arbitrary base change. Smoothness,
 connectedness, maximal rank, and existence of a rational maximal torus
 in an intersection of parabolics remain separate geometric obligations.
+
+`isClosedSubgroup_subgroupIntersectionFst` states that the first projection
+is a closed immersion whenever the second map is a closed immersion. This
+shared pullback lemma consolidates the identical results contributed by
+Workers 1296 and 846 in `Cartan/Induction` and
+`Derived/CentralIntersectionPullback`; it requires no field hypotheses.

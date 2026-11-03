@@ -142,7 +142,7 @@ variable (A : Type u) [Field A] [ConditionallyCompleteLinearOrder A]
 variable [IsStrictOrderedRing A] [Algebra F A]
 variable [TopologicalSpace A] [OrderTopology A] [IsTopologicalRing A] [ContinuousInv₀ A]
 
-local instance (G : GroupScheme (Spec (CommRingCat.of F))) :
+local instance identityComponentAffinePointsTopology (G : GroupScheme (Spec (CommRingCat.of F))) :
     TopologicalSpace (Lie.AffinePoints G A) :=
   GroupScheme.affinePointsTopologicalSpace G (CommAlgCat.of F A)
 

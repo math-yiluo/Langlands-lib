@@ -1,10 +1,14 @@
 # Central smooth quotients from explicit structural inputs
 
+Author: Worker 362.
+
 This derived module combines the actual homogeneous quotient and action
-constructions with three explicit proposition hypotheses:
+constructions. Its original adapters have three explicit proposition hypotheses:
 `UnipotentAffineOrbitClosedStatement`, `UnipotentFieldExtensionStatement`,
-and `UnipotentClosedSubgroupStatement`. It does not prove these hypotheses.
-The base field is arbitrary and belongs to any universe `u`.
+and `UnipotentClosedSubgroupStatement`. The two-input adapters described below
+discharge field-extension unipotence using its published proof. Closed-orbit
+and closed-subgroup unipotence remain explicit inputs. The base field is
+arbitrary and belongs to any universe `u`.
 
 `Chevalley.unipotentAffineQuotientOfStructuralStatements` constructs an actual
 `AffineHomogeneousQuotient i` for a smooth closed subgroup `i : H ⟶ G` of
@@ -39,9 +43,28 @@ is smooth of relative dimension `n`; `Q` is smooth of relative dimension
 `m`; `d = n + m` and `m < d`; and the quotient action intertwines with
 the original action on every relative test scheme.
 
+`Chevalley.unipotentAffineQuotientOfClosedOrbitAndSubgroup` takes only
+`UnipotentAffineOrbitClosedStatement` and `UnipotentClosedSubgroupStatement`,
+followed by exactly the same fields, groups, inclusion and geometric
+hypotheses as the original constructor. It supplies
+`Langlands.GroupScheme.unipotentFieldExtensionStatement` from the published
+[`UnipotentFieldExtensionProof`](../Reductive/UnipotentFieldExtensionProof.md)
+to `unipotentAffineQuotientOfStructuralStatements`. Thus it constructs an
+actual `AffineHomogeneousQuotient i` over any field without a field-extension
+premise. In particular, it imposes no perfectness, characteristic or
+separability restriction on the base field.
+
+`RelativeRoot.centralSmoothQuotient_of_closedOrbit_and_subgroup` supplies
+the same published theorem to
+`centralSmoothQuotient_of_structuralStatements`. Its conclusion is the exact
+`CentralSmoothQuotientStatement.{u}` under only the two remaining structural
+propositions. It consequently retains every central quotient property
+listed above, including the actual fppf kernel, the action on all test
+schemes and the strict dimension decrease.
+
 The provenance is internal and derived. No new source assertion is
-introduced: the construction applies the prior field-descent quotient
-and normal quotient adapters, and the final theorem specializes them to
-the exact central target. It leaves all three structural inputs, central
-stable vector-subgroup existence, and the full
-`SemigroupOrderedProductStatement` open.
+introduced: the constructions apply the prior field-descent quotient,
+normal quotient and field-extension unipotence results by their Lean
+names. This module does not discharge either remaining structural input,
+central stable vector-subgroup existence, or the full
+`SemigroupOrderedProductStatement`.
