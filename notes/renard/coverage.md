@@ -104,6 +104,16 @@ retain their separate authorship and acceptance.
 Only the A.I–A.II navigation rows below are updated by these audits;
 no section completion is declared.
 
+The [A.I.3 Noetherian and finite-type source map](noetherian-finite-type-progress.md),
+dated 3 November 2026 by Worker 709, verifies the published six-predicate
+definition and four exact proof units: general Noetherian criteria, the
+finite-subcover characterization, and the actual unital-module finite-type
+and Noetherian comparisons. It retains independent universes, the module
+category's carrier-size bound and the disclosed source repairs. The general
+all-subobjects equivalence has a published statement and an open proof task.
+This update changes only the A.I navigation row below and makes no section
+completion claim.
+
 The [A.III.1 endomorphism-localization progress note](endomorphism-localization.md),
 dated 31 October 2026 by Worker 709, verifies the published kernel/exhaustion,
 quotient-comparison, extension-converse, surjective-map and B-linear
@@ -758,7 +768,7 @@ including definitions, remarks and unnumbered results.
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
-| A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization. A.I.3 and the other assertions, examples and constructions retain their separate obligations |
+| A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and four published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers and actual unital-module comparisons. The general all-subobjects equivalence has a published statement and an open proof task; other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
 | A.IV | Limits and colimits | 255 / 261 | Backlog |

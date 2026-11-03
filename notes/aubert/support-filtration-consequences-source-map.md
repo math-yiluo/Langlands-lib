@@ -9,7 +9,9 @@ proposition targets, and the remaining prerequisites with their owners.
 
 Author: Worker 379, task `0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4` revision 1, with
 first executor Worker 194, for parent `46df6a68-5db4-4428-8044-05151d6ce1f6`
-(Worker 76). Worker 194's companion note
+(Worker 76). Generic-helper reuse update: Worker 76, checked on 3 November 2026
+against Library `6eec947454b4466fab00fb115b09f2dc49fe158b`.
+Worker 194's companion note
 `notes/aubert/smooth-complex-construction-source-map.md` covers the actual
 smooth complex, its terminal cokernel `E#`, the corrected Theorem 3.6 target, the
 p.4690 terminal-Jacquet comparison, the structural ownership table and the
@@ -40,6 +42,8 @@ reflected in this snapshot.
 
 The last two rows were candidates, not accepted Library results, at that
 snapshot. Check the current Library before relying on their names.
+The later generic-helper check below does not update this historical status
+table or establish any general Aubert target.
 
 ## Conventions
 
@@ -208,10 +212,13 @@ of the declarations above. It is guidance, not a claim that any step is proved.
    `I` (erratum p.4687).
 2. Each `r_I(E_J)` carries the finite filtration `step`. It runs from `⊥` to
    `⊤` (`step_zero`, `step_length` under `IsBruhatCover`), and the differentials
-   preserve it (`transition_mem_step`). A finite filtration of a complex whose
-   graded complexes are exact gives an exact complex. That generic lemma is not
-   part of these modules, and reuse of published filtered-complex layers has
-   not been checked.
+   preserve it (`transition_mem_step`). The published
+   `Langlands.FiniteFiltered.range_eq_ker_of_graded_exact` and
+   `Langlands.FiniteFiltered.injective_of_graded_injective` supply the generic
+   lifting step, with the hypotheses detailed below. The general application
+   still needs degreewise filtrations, identification of their actual induced
+   quotient differentials, and graded exactness or injectivity in the required
+   degrees. Termwise filtration preservation alone does not establish these.
 3. In the graded complex at `w`, only minimal `w` contribute (`step_succ_eq`),
    and only targets `J ⊇ w(I)` contribute (`CorrectedGradedVanishingTarget`).
    The surviving pieces are `Ad(w⁻¹)(r_K E)` with identity transitions
@@ -252,14 +259,75 @@ of the declarations above. It is guidance, not a claim that any step is proved.
      `SharpClassFormulaTarget` for `E` and for `E# ∈ Alg({I})` and Theorem
      1.7 (3) give `[(E#)#] = (-1)^{|I|} D_G [E#] = D_G D_G [E] = [E]`. Two
      irreducible representations with the same class in the finite-length
-     Grothendieck group are isomorphic, so `(E#)# ≅ E`. That last
-     Jordan–Hölder fact is generic and is not stated in these modules.
+     Grothendieck group are isomorphic, so `(E#)# ≅ E`. The generic final
+     implication is already published as
+     `Langlands.SmoothRep.ofRepresentation_eq_irreducible_iff`, followed by
+     `Langlands.SmoothRep.mkIso`. Its scope and the remaining double-sharp
+     obligations are detailed below.
+
+## Published generic helpers and remaining applications
+
+The following reuse check concerns declarations in Library
+`6eec947454b4466fab00fb115b09f2dc49fe158b`, separately from the historical
+publication table above. Both Lean/Markdown pairs were read and their complete
+declaration types checked. These are generic algebraic results, not proofs of
+the general Aubert targets.
+
+- [Finite filtered exactness](../../Langlands/Representation/Filtration/FiniteFilteredExactness.md)
+  constructs the actual adjacent quotients `FiniteFiltered.Graded` and the
+  induced maps `FiniteFiltered.gradedMap`. For maps `f : A →ₗ[R] B` and
+  `g : B →ₗ[R] C` preserving submodule families `S,T,U`,
+  `range_eq_ker_of_graded_exact` assumes `Monotone S`, `T 0 = ⊥`,
+  `T n = ⊤`, the actual identity `g (f a) = 0`, and equality of the range
+  and kernel of these induced quotient maps in every grade `i < n`.
+  It concludes `LinearMap.range f = LinearMap.ker g`. It needs no zero or
+  full endpoints for `S` or `U`. The injectivity theorem assumes preservation,
+  `S 0 = ⊥`, `S n = ⊤` and injectivity of the actual graded maps for
+  `i < n`; it needs no monotonicity of either family or endpoints for `T`.
+  Both results work over any commutative ring, with independent module
+  universes and no finite-length premise.
+- [Irreducible class detection](../../Langlands/Representation/Smooth/IrreducibleClassDetection.md)
+  proves `Langlands.SmoothRep.ofRepresentation_eq_irreducible_iff`: for actual
+  smooth representations `A,τ`, with supplied finite-length proofs for both
+  and an irreducibility proof for `τ`, equality of their canonical exact
+  Grothendieck classes is equivalent to
+  `Nonempty (A.representation.Equiv τ.representation)`. The coefficient field,
+  group topology and carrier universe are arbitrary and independent.
+  [The smooth-category constructor](../../Langlands/Representation/Category/Basic.md)
+  `Langlands.SmoothRep.mkIso` converts such an equivariant linear equivalence
+  to an actual categorical isomorphism. This does not assert that equal
+  classes distinguish arbitrary finite-length representations.
+
+For the filtration application, the existing GL adapter
+[`CorrectedJacquetCutFiltration`](../../Langlands/Representation/Aubert/CorrectedJacquetCutFiltration.md)
+shows how `degreeDifferential_exact_of_correctedGraded` and
+`degreeDifferential_injective_of_correctedGraded` use the first helper. Its
+GL-specific degree filtrations and comparisons do not supply the missing
+general ones. The actual general graded identifications, differential
+comparisons and support detection remain obligations of
+`RationalCorrectedTheorem36Statement`, in successor task
+`613611a4-9c0e-43e3-82aa-f91d2044cfe2`. No terminal-vanishing conclusion or
+finite-length restriction on its smooth input follows from this reuse.
+
+For double sharp, one can take `A = (E#)#` and `τ = E` only after proving
+finite length and the exact equality `[(E#)#] = [E]` for the actual cokernels.
+The helper then gives the object isomorphism; it does not construct those
+cokernels, establish that equality or provide a natural isomorphism of
+functors. Those application obligations remain in
+`RationalSharpInvolutionStatement`, successor task
+`9d570c9e-e376-4437-8d15-3cbe9e9a0027`, with the support, class-formula and
+operator-involution inputs of the route above. Neither generic helper uses a
+parabolic, Aubert or representation-classification theorem.
+
+These reuse locations do not change either successor's exact target or its
+hypothesis scope. Any additional Coxeter, Bruhat or structural inputs needed
+by this proof route must be derived, rather than appended to the proposition.
 
 ## Prerequisites and owners
 
 | Prerequisite | Where it enters | Owner |
 | --- | --- | --- |
-| Proofs of all targets in this note, of `CorrectedTheorem36Statement` and of step 2's filtered-complex lemma | the parent task | Worker 76, `46df6a68-5db4-4428-8044-05151d6ce1f6` |
+| Proofs of all targets in this note and of `CorrectedTheorem36Statement`, including the actual general applications of the published generic helpers | the parent task and its focused proof successors | Worker 76, `46df6a68-5db4-4428-8044-05151d6ce1f6` |
 | Theorem 1.7 and the geometric lemma for the general operator (`InvolutivityStatement`, `JacquetCompatibilityStatement`, `InductionCompatibilityStatement`, `CuspidalEigenvalueStatement`) | Corollaire 3.9 (b), (c); graded identification | Workers 165/1186, `e3d69272-2599-4a08-a934-cb11f2493e30` |
 | Normalized functors, exactness on smooth and finite-length sequences, `conjugationFunctor`, `alternatingOperator` | all modules | Workers 23/1180, `593ef603-6672-4424-976c-14e11e920d9c` (published adapters) |
 | Bruhat covering `IsBruhatCover T (P ∅) (P I)`, a Coxeter system on `N_G(T)/Z_G(T)` matching the actual roots, the `W`-association of conjugate standard Levis, and `IsLimitOfCompactSubgroups (U J)` | `step_length`, the targets, `SupportCategoryReductions` | structural rows S08–S10, S13, S15–S18, S20–S22, with owners as in Worker 194's structural table |
