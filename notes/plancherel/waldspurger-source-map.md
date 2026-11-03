@@ -2,7 +2,7 @@
 
 Author: Worker 249, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
 Lean coverage below was checked against Library commit
-`538f554630aa4cd24a084e698b1768d7143ba586`.
+`e9121d2f8e2a84b24a5c3d710d82082ab261845c`.
 
 This note maps every numbered item of Waldspurger's article to its page, its
 content, the items of the article it uses, and the external sources it cites.
@@ -91,8 +91,8 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 
 | Item | Page | Content | Uses | Class | Lean coverage |
 |---|---|---|---|---|---|
-| I.1 | 238–242 | `F`, `G`, `A_0`, `M_0`, `P_0`, `Rat(G)`, `a_G`, `H_M`, roots `Σ`, `W`, special `K`; left Haar measures with `mes(H ∩ K) = 1`, the functional `∫_{H\G}` on `δ_H`-covariant functions and the integration formulas (2) (p.240); `G = P K`, Iwahori factorization, `γ(P)` depends only on `M` (proof on p.241), `c(G\|M)`, Cartan decomposition (4), `mes(KmK) ≍ δ_0(m)^{-1}` (5), the norm `‖·‖` via `τ : G → GL_n` with `τ(K) ⊆ GL_n(O)`, `σ = log‖·‖`, (6) `1 + σ(m) ≍ 1 + \|H_0(m)\|` | — | Data, Struct; `γ(P)` independence and (5) are Book | see below |
-| I.2 | 242–243 | finite-dimensional `ρ(A_M)`-stable spaces `V ⊂ C^∞(A_M)`: expansion `f(a) = Σ_{χ ∈ X} χ(a) P_{χ,f}(H_M(a))` with `deg P_{χ,f} ≤ d`; for minimal `X`, polynomial growth on `A_M` ⇔ `Re χ = 0` for all `χ ∈ X`; if `∏_{χ ∈ Y} (ρ(a) − χ(a))^D` kills `V`, then `X ⊂ Y` and `d ≤ D − 1`; the same for `A_M`-finite `f` | I.1 | Book (stated without proof or citation) | none |
+| I.1 | 238–242 | `F`, `G`, `A_0`, `M_0`, `P_0`, `Rat(G)`, `a_G`, `H_M`, roots `Σ`, `W`, special `K`; left Haar measures with `mes(H ∩ K) = 1`, the functional `∫_{H\G}` on `δ_H`-covariant functions and the integration formulas (2) (p.240); `G = P K`, Iwahori factorization, `γ(P)` depends only on `M` (proof on p.241), `c(G\|M)`, Cartan decomposition (4), `mes(KmK) ≍ δ_0(m)^{-1}` (5), the norm `‖·‖` via `τ : G → GL_n` with `τ(K) ⊆ GL_n(O)`, `σ = log‖·‖`, (6) `1 + σ(m) ≍ 1 + \|H_0(m)\|` | — | Data, Struct; `γ(P)` independence and (5) are Book | (2), first formula: `lintegral_eq_lintegral_unipotent_levi` (generic); (5): `measure_doubleCoset_le_of_doubleCosetIndex` (generic, from bounds on `[H : H ∩ mHm^{-1}]`); see below |
+| I.2 | 242–243 | finite-dimensional `ρ(A_M)`-stable spaces `V ⊂ C^∞(A_M)`: expansion `f(a) = Σ_{χ ∈ X} χ(a) P_{χ,f}(H_M(a))` with `deg P_{χ,f} ≤ d`; for minimal `X`, polynomial growth on `A_M` ⇔ `Re χ = 0` for all `χ ∈ X`; if `∏_{χ ∈ Y} (ρ(a) − χ(a))^D` kills `V`, then `X ⊂ Y` and `d ≤ D − 1`; the same for `A_M`-finite `f` | I.1 | Book (stated without proof or citation) | none for `A_M`; related: Renard App. C.III for `ℤ^d`, `Langlands.IntegerLatticeMatrixCoefficientExponentialPolynomialStatement` (statement and proof in `Langlands/Representation/MatrixCoefficient/IntegerLattice*`), not adapted to I.2 |
 | I.3 | 243–244 | Jacquet functor, normalized induction `I_P^G`, filtration `F_w` of `(I_P^G V)_{P'}` | [BZ] | Data, Ext | GL_n only (see Library coverage) |
 | Thm I.4.1 | 245 | Casselman pairing `⟨·,·⟩_P` on `V_P × V̌_{P̄}` | [C] | Ext | GL_n statements only |
 | Cor. I.4.2 | 245 | `V̌_{P̄}` is the contragredient of `V_P` | I.4.1 | Book | none |
@@ -106,15 +106,15 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Item | Page | Content | Uses | Class | Lean coverage |
 |---|---|---|---|---|---|
 | II.1 | 250–251 | `Ξ(g) = ⟨π(g)e, e⟩ = ∫_K δ_0(m_0(kg))^{1/2} dk` | I.1, I.3 | Data | `xi` (generic, see below) |
-| Lemme II.1.1 | 251 | `Ξ` bi-`K`-invariant; `C_1 δ_0^{1/2} ≤ Ξ ≤ C_2 δ_0^{1/2}(1+σ)^d` on `M̄_0^+` | I.1, I.3, I.4.3 | Book | bi-invariance only: `xi_mul_mul` |
+| Lemme II.1.1 | 251 | `Ξ` bi-`K`-invariant; `C_1 δ_0^{1/2} ≤ Ξ ≤ C_2 δ_0^{1/2}(1+σ)^d` on `M̄_0^+` | I.1, I.3, I.4.3 | Book | bi-invariance `xi_mul_mul`; lower bound `xiLowerBound_of_factorization` (generic, from an Iwahori-type factorization); the upper bound is the hypothesis `XiUpperBound` (open; needs I.4.3) |
 | Lemme II.1.2 | 251 | translation bound `Ξ(g_1 g g_2) ≤ C Ξ(g)(1+σ(g))^d` | I.1 (4), I.4.3, II.1.1 | Book | `xi_uniformTranslationBound` (generic, with `d = 0`; proof via II.1.3, not the article's) |
 | Lemme II.1.3 | 252 | `∫_K Ξ(g_1 k g_2) dk = Ξ(g_1) Ξ(g_2)` | II.1 | Book | `integral_xi_mul_mul` (generic) |
 | Lemme II.1.4 | 252 | `Ξ(g^{-1}) = Ξ(g)` | II.1 (`π ≅ π̌`) | Book | `xi_inv` (generic; `G` unimodular and `δ` the modular character of `P` as hypotheses, see below) |
 | Lemme II.1.5 | 252 | `∫_G Ξ^2 (1+σ)^{-d} < ∞` for some `d` | I.1 (4)–(6), II.1.1 | Book | `CartanSquareBound.squareIntegrableWeight` (generic; the Cartan, measure, norm and II.1.1 bounds as hypotheses, see below) |
 | Lemme II.1.6 | 252 | `Ξ(g) = ∫_K δ_P(m_P(kg))^{1/2} Ξ^M(m_P(kg)) dk` | II.1 | Book | `LeviData.xi_eq_integral` (generic; direct Fubini proof, not the article's induction in stages) |
-| II.2 | 253–254 | algebraic representation `τ_P` with properties (1)–(5); (6) `1 + σ(ū) ≍ 1 + log‖τ_P(ū)e_1‖` | [H] | Struct, Book | none |
-| Lemmes II.3.1–II.3.5 | 254–259 | estimates for `δ_P(m_P(ū))`, `σ` on `Ū` | II.2, I.1 | Book | none |
-| Lemmes II.4.1–II.4.4, Prop. II.4.5 | 259–263 | integrals over `Ū`; constant term of functions bounded by `Ξ(1+σ)^{-d'}` | II.1, II.3 | Book | none (II.4.5 is the explicit hypothesis `ConstantTermEstimate` of `ConstantTerm`) |
+| II.2 | 253–254 | algebraic representation `τ_P` with properties (1)–(5); (6) `1 + σ(ū) ≍ 1 + log‖τ_P(ū)e_1‖` | [H] | Book (the construction is on p.253 and (6) is proved on p.254 from (7), (8) and [H]) | none; the properties used are explicit hypotheses of `TauEstimates` |
+| Lemmes II.3.1–II.3.5 | 254–259 | estimates for `δ_P(m_P(ū))`, `σ` on `Ū` | II.2, I.1 | Book | generic, from properties of `τ_P` as hypotheses: II.3.1 `sigmaProductBound_height` (given the block form), II.3.2 `cartanWeightComparison_of_norm`, II.3.3 `conj_height_le_of_tau`, II.3.4 `modulusHeightBounds_of_tau`; II.3.5 open |
+| Lemmes II.4.1–II.4.4, Prop. II.4.5 | 259–263 | integrals over `Ū`; constant term of functions bounded by `Ξ(1+σ)^{-d'}` | II.1, II.3 | Book | generic: II.4.1 `levelSetMeasureBound_of_torusXiFormula`, II.4.2 `unipotentWeightIntegrable_of_levelSets`, II.4.3 `LeviData.unipotentWeightIntegrable`, II.4.4 `XiUpperBound.unipotentXiBound`, II.4.5 `constantTermEstimate_of_bounds` (it proves the Prop `ConstantTermEstimate` of `ConstantTerm`); the inputs are listed in the modules below |
 
 ## Chapter III. Tempered representations and `C(G)` (pp.263–276)
 
@@ -125,13 +125,13 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Cor. III.1.2 | 263–264 | coefficients bounded by `c Ξ(1+σ)^{-r}` on `G^1`, for every `r` | I.1 (4), I.4.3, II.1.1, III.1.1 | Book | GL_n only |
 | Lemme III.1.3 | 264 | an admissible square-integrable representation is unitary and semisimple | II.1.5, III.1.2 | Book | none |
 | III.1 (2), (3) | 265 | Schur orthogonality, formal degree `d(π) > 0` | [C], III.1.2, II.1.5 | Ext | none |
-| Lemme III.2.1, Prop. III.2.2, Lemme III.2.3 | 265–267 | tempered representations; criteria via exponents; induction | I.2, I.3, I.4.1, I.6.1, II.1.1, II.1.2, III.1.2 | Book | GL_n only |
+| Lemme III.2.1, Prop. III.2.2, Lemme III.2.3 | 265–267 | tempered representations; criteria via exponents; induction | I.2, I.3, I.4.1, I.6.1, II.1.1, II.1.2, III.1.2 | Book | GL_n only; generic growth condition `HasTemperedGrowth` (`TemperedPairing`) |
 | Lemmes III.3.1–III.3.3 | 267–268 | weak constant terms `π^w_P` | I.3, III.1.1, III.2.2 | Book | GL_n only (III.3.1) |
 | Prop. III.4.1 | 269 | an irreducible tempered representation embeds in some `I_P^G ω`, `ω ∈ E_2(M)` | III.3.2, III.3.3 | Book | none |
 | Lemme III.5.1 | 269–270 | weak constant term `f^w_P` of `f ∈ A^w(G)` | III.3 | Book | none |
 | III.6 | 271–272 | `C(G)`, seminorms `ν_r`, levels `C_H`, inductive-limit topology, (1), completeness, `C_c^∞(G)` dense, `G × G` acts continuously, constant term `f^{(P)}` via II.4.5 | I.6, II.1, II.1.2, II.4.5, [B] | Data, Book | generic: `C(G)`, `ν_r`, `C_H`, topology, (1), density, `G × G` continuity, completeness (`Space.completeSpace`, for a cofinal sequence of compact open subgroups), `f^{(P)}` and `C(G) → C(M)` (`constantTerm`, with II.4.5 as a hypothesis), `f^{(P),Ind}` and the diagram (`constantTermInd`, pointwise; see below) |
 | Lemme III.6.1 | 271 | for `f_1, f_2 ∈ C(G)`: `∫_G f_1(h) f_2(h^{-1}g) dh` converges absolutely, `f_1 * f_2 ∈ C(G)`, and `(f_1, f_2) ↦ f_1 * f_2` is separately continuous | II.1.3–II.1.5 | Book | `Convolution` (generic; II.1.3–II.1.5 as hypotheses) |
-| III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit` |
+| III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit`; the pairing of `C(G)` with functions of tempered growth, `Space.temperedPairing` (generic) |
 
 ## Chapter IV. Intertwining operators (pp.276–287)
 
@@ -189,19 +189,21 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Thm VIII.1.2, Rem. VIII.1.3 | 321 | finiteness of `Θ^H_G`; finiteness of `Θ^H` by induction on semisimple rank | VIII.4.1, VIII.4.2 (proof in VIII.5) | Book | none |
 | VIII.2, Lemme VIII.2.1 | 321–322 | `°f = f − κ(ψ)`; `°C(G)` = cuspidal Schwartz functions | VII.1.2, VII.2.5, III.6, VIII.1 (2) for Levis | Data, Book | none |
 | Rem. VIII.2.2, Lemme VIII.2.3 | 322–323 | symmetries of `°`; `f_1 * f_2 = f_1 * °f_2` for cuspidal `f_1` | VII.2, VIII.2.1 | Book | none |
-| Prop. VIII.3.1 | 323–326 | decay of `∫_G f_1(a g a^{-1}) f_2(g) dg` on `A_0^+` | II.3, II.4, II.1, VIII.2.1 | Book | none |
-| Cor. VIII.3.2 | 326 | absolute convergence over `A_G\G` | VIII.3.1, I.1 (4), (5) | Book | none |
-| VIII.4, Prop. VIII.4.1 | 327–330 | `p_χ`, `°C_H`; `p_χ(°C_H)` finite-dimensional | VIII.2, VIII.3.2 | Data, Book | none |
+| Prop. VIII.3.1 | 323–326 | for `f_1 ∈ °C(G)`, `f_2 ∈ C(G)` and every `r ∈ ℝ`, the bound `≤ c δ_0(a)(1+σ(a))^{-r}` on `∫_G f_1(a g a^{-1}) f_2(g) dg` for `a ∈ Ā_0^+ ∩ G^1` (the Lean estimates are stated on an arbitrary supplied set `T`) | II.3, II.4, II.1, VIII.2.1 | Book | generic: `conjugationIntegralBound_of_split` (from the decomposition of the integral, estimate (3) `ConvolutionWeights.lintegral_conj_mul_le` and the cuspidal estimate `lintegral_cuspidal_le`), with the decomposition and inequality (2) as hypotheses |
+| Cor. VIII.3.2 | 326 | absolute convergence over `A_G\G` | VIII.3.1, I.1 (4), (5) | Book | `lintegral_lt_top_of_conjugationIntegralBound` (generic: cover, measure bound and summability as hypotheses) |
+| VIII.4, Prop. VIII.4.1 | 327–330 | `p_χ`, `°C_H`; `p_χ(°C_H)` finite-dimensional | VIII.2, VIII.3.2 | Data, Book | `centralProjection`, `Space.centralProjection` (`p_χ` with absolute convergence, `χ`-covariance and bi-invariance, generic); the estimate on `G^1` in the proof of VIII.4.1, `enorm_centralProjection_le_rpow_neg`; VIII.4.1 itself open |
 | Thm VIII.4.2 | 330 | `p_χ(°C(G)) = A_2(G)_χ` | III.1 (2), VII.2.5, VIII.2.2, VIII.2.3, VIII.4.1 | Book | none |
 | VIII.5 | 331–332 | proofs of VIII.1.2 and VIII.1.1 | VII.2.5, VIII.1.3, VIII.4.1, VIII.4.2 | Book | none |
 
 ## Library coverage
 
 The declarations below formalize parts of the article in the Library at commit
-`538f5546`. The list covers the modules of this task's two executors and other
+`e9121d2f`. The list covers the modules of this task's two executors and other
 modules found by searching the Library for the article and for the reductive
 data of I.1; it is not the declaration-level reuse audit of condition 7. None
-proves a theorem of Chapters IV–VIII. Most work over explicit abstract data.
+proves a theorem of Chapters IV–VII; for VIII.3.1, VIII.3.2 and VIII.4 there are
+generic versions with explicit hypotheses (see below). Most work over explicit
+abstract data.
 The modules `RationalCharacterValuation`, `LocalFieldUnits`,
 `RationalImageCharacters`, `RationalImageRealPart`,
 `RationalCharacterTopology`, `RationalNormKernelTopology` and `PointTopology`
@@ -375,7 +377,52 @@ Namespace `Langlands.HarishChandraSchwartz` (Worker 249), module directory
   subgroups such that every compact open subgroup contains one of them; the
   second form takes `G` nonarchimedean, weakly locally compact and first
   countable).
-
+- `ConstantTermBound`: `constantTermEstimate_of_bounds` (Proposition II.4.5: the
+  Prop `ConstantTermEstimate` from Lemma II.4.4, the second inequality of II.3.1, the
+  lower bound of II.1.1 for `M`, Lemma II.4.2 and the covering `M = K_M S K_M`, all as
+  hypotheses), `IsConjModulus.lintegral_comp`.
+- `SphericalBounds`: `xiLowerBound_of_factorization` (lower bound of Lemma II.1.1 from an
+  Iwahori-type factorization), `XiUpperBound` and `CartanWeightComparison` (Props: the
+  upper bound of II.1.1 on a cone and the comparison of II.3.2), `XiUpperBound.univ_of_cartan`,
+  `XiUpperBound.unipotentXiBound` (Lemma II.4.4), `LevelSetMeasureBound`,
+  `LevelHeightComparison`, `unipotentWeightIntegrable_of_levelSets` (Lemma II.4.2).
+- `TauEstimates`: `cartanWeightComparison_of_norm` (Lemma II.3.2), `conj_height_le_of_tau`
+  (Lemma II.3.3), `ModulusHeightBounds`, `modulusHeightBounds_of_tau` (Lemma II.3.4), from
+  properties of `τ_P` (II.2) as hypotheses.
+- `SigmaProduct`: `IsBlockDiagonal`, `IsBlockUnipotent`, `sigmaProductBound_height`
+  (Lemma II.3.1 for `σ = height τ` when `τ(M)` and `τ(U)` have block form after
+  conjugation).
+- `LevelSetBound`: `TorusXiFormula` (formula (2) of the proof of II.4.1, as a Prop),
+  `levelSetMeasureBound_of_torusXiFormula` (Lemma II.4.1).
+- `LeviWeightIntegrability`: `leviXiWeight`, `LeviData.unipotentWeightIntegrable`
+  (Lemma II.4.3 from Lemma II.4.2).
+- `IwasawaIntegration`: `leviUnipotentShift`, `lintegral_eq_lintegral_levi_unipotent`,
+  `lintegral_eq_lintegral_unipotent_levi` (I.1 (2), first formula, from `G = M U K`, the
+  decomposition of `P ∩ K`, the normalizations and `IsConjModulus`; it applies
+  `CompactFactorization.lintegral_restrict_lintegral_mul` of
+  `Langlands/Analysis/Local/CompactFactorizationIntegral`, Worker 235). The second
+  formula of (2), with `γ(P)`, is open.
+- `TemperedPairing`: `HasTemperedGrowth`, `IsTemperedSmooth`, `Space.temperedPairing`
+  (the continuous functional `f ↦ ∫ f φ` on `C(G)` for `φ` of tempered growth; III.2,
+  III.7).
+- `ConjugationBound`: `ConjugationSigmaBound` (inequality (2) of the proof of VIII.3.1, as a
+  Prop), `ConvolutionWeights.lintegral_conj_mul_le` (inequality (3)).
+- `CuspidalDecay`: `cuspidalFactor`, `unipotentFactor`, `lintegral_cuspidal_le` (the
+  estimate of `J(a)`), `ConjugationIntegralBound` (the conclusion of VIII.3.1, as a Prop, on a supplied set `T`;
+  the source takes `T = Ā_0^+ ∩ G^1`),
+  `conjugationIntegralBound_of_split` (VIII.3.1 from the decomposition of the integral and
+  the two estimates).
+- `CuspidalIntegrability`: `conjFun`, `lintegral_lt_top_of_conjugationIntegralBound`
+  (Corollary VIII.3.2 from a cover of `A_G\G` by cells, finiteness of the conjugates of
+  `f_1`, `f_2`, the measure bound of I.1 (5) and summability, as hypotheses).
+- `CentralProjection`: `CentralWeights`, `IsUnitaryCharacter`, `centralProjection`,
+  `Space.centralProjection` (`p_χ` of VIII.4: absolute convergence, `χ`-covariance,
+  bi-invariance for central `A`), `enorm_centralProjection_le_rpow_neg` (the estimate on
+  `G^1` in the proof of VIII.4.1).
+- `DoubleCosetMeasure`: `doubleCosetIndex`, `measure_doubleCoset`
+  (`μ(HgH) = [H : H ∩ gHg^{-1}] μ(H)`), `measure_doubleCoset_le_of_doubleCosetIndex`
+  (I.1 (5) from bounds on the index), `relIndex_mul_modulus` (the identity
+  `c_{U_0}(m) = δ_0(m)^{-1} c'_{U_0}(m)` of the proof of (5)).
 Other generic modules: `Langlands.GroupScheme.Rational.Characters` (rational
 characters, I.1); `Langlands/Representation/Exponents/CentralEigencharacterExtensionStatement`
 (statement only, I.3).

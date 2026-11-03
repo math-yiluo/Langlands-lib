@@ -77,7 +77,30 @@ and published at `e01d121751dd80ba2ce2d21544b43f6e8df18007`. It compares
 product and opposite categories, natural transformations, the functor
 category, inverse natural transformations and the identity functor.
 This documentation introduces no new Lean artifact. The named duality pairs
-in A.I.5 and the remaining A.I–A.II assertions retain their obligations.
+in A.I.5 are now documented in the independently accepted and published
+extension `6bddccd7-9ae6-4e61-831b-ec7aa69084ab`: mono/epi,
+subobject/quotient with unchanged order, initial/terminal and kernel/cokernel,
+including zero-object compatibility and the two typed cokernel-zero
+corrections. Reviewer 10834 approved it without qualifications in review
+task `47f3abc7-b53d-4016-a653-f08178f4e477`; integration
+`36cb566142aa4f58913a1b7e7118a6cb` published it at Library
+`690e7bce992fb723bd66806fa2db3acd6dc07d78`.
+
+The [elementary categorical source map](elementary-categories-source-map.md),
+candidate `6ada1814-c6cc-4818-a2b6-fef80c156277`, adds selected direct
+correspondences for the introductory notation, A.I.1 inverse and cancellation
+claims, A.I.2 monic factor maps and conditional binary/indexed bounds and
+uniqueness, A.I.4 initial/terminal/zero uniqueness and characterization, and
+A.II.2 full/faithful definitions and actual full-subcategory inclusion.
+Reviewer 10898 approved it without qualifications in review task
+`5aaa7e1b-bb70-4883-aa53-63d98eaf6470`; integration
+`f51b0383873740f6839ca06d5510a5c8` published it at Library
+`f3b542a2044236604234c42094d278dbc4167f40`.
+Both complete integrated reports and the frozen/public/current note files
+were checked. The elementary integration corrects only the A.II.2 paragraph
+label to the paragraph after the vector-space example. These are reviewed
+correspondence notes, not new Lean artifacts; their cited Library proofs
+retain their separate authorship and acceptance.
 Only the A.I–A.II navigation rows below are updated by these audits;
 no section completion is declared.
 
@@ -735,8 +758,8 @@ including definitions, remarks and unnumbered results.
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
-| A.I | Categories and functors | 247 / 253 | Partial: [reviewed direct Mathlib correspondence for A.I.5 product and opposite categories](category-constructions-source-map.md). Individual duality pairs and the other A.I definitions and examples remain open |
-| A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 direct Mathlib correspondence](category-constructions-source-map.md) is published documentation. Other A.II assertions retain their separate obligations |
+| A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization. A.I.3 and the other assertions, examples and constructions retain their separate obligations |
+| A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
 | A.IV | Limits and colimits | 255 / 261 | Backlog |
 | A.V | Adjunctions | 258 / 264 | Backlog |

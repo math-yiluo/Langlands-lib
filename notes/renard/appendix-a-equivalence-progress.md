@@ -7,6 +7,8 @@ This supplements the [whole-book coverage ledger](coverage.md) with the
 sufficient equivalence criterion, the representative-subcategory comparison,
 and the exact equivalence in the fixed-dimension example. A.I and the other A.II
 assertions retain their separate obligations.
+The correspondence maps in the final section are verified at Library
+`f3b542a2044236604234c42094d278dbc4167f40`.
 
 ## Governing source and composition convention
 
@@ -219,6 +221,8 @@ on the exact candidate's validation and semantic review.
 
 | Passage | Coverage and remaining obligation |
 | --- | --- |
+| A.I selected definitions and assertions, printed pp.247–249 / PDF253–255; A.II.2 full/faithful paragraph, printed p.251 / PDF257 | The published [elementary categorical source map](elementary-categories-source-map.md) compares introductory notation, A.I.1 inverses and cancellation, A.I.2 monic factors and conditional binary/indexed GLB/LUB definitions and uniqueness, A.I.4 initial/terminal/zero uniqueness and characterization, and A.II.2 fullness, faithfulness and actual full-subcategory inclusion. This is direct correspondence documentation, including finite and empty family conventions, not a new Lean artifact. |
+| A.I.5, printed p.250 / PDF256: product, opposite and four named duality pairs | The published [category-construction and duality map](category-constructions-source-map.md) compares product/opposite categories, mono/epi, subobject/quotient with unchanged order, initial/terminal and kernel/cokernel, including zero-object compatibility and the two typed cokernel-zero corrections. |
 | A.II.1, printed p.250 / PDF256: natural transformations and natural isomorphisms | The published [direct Mathlib source map](category-constructions-source-map.md) compares the component family, naturality square, functor category, identity and vertical composition, inverse natural transformations and identity functor. |
 | A.II.2, printed p.251 / PDF257: quasi-inverse and fully faithful, essentially surjective sufficient criterion | The published statement and exact proof establish the criterion above, including the documented identity-subscript correction. |
 | A.II.2, same page: vector-space example | Actual fixed-dimension category, full singleton coordinate category, inclusion, coordinate isomorphisms, equivalence statement and exact proof are published as above. The example concerns one fixed dimension, rather than all finite-dimensional spaces together. |
@@ -233,7 +237,29 @@ Reviewer 10525 approved it without qualifications in review task
 `e01d121751dd80ba2ce2d21544b43f6e8df18007`.
 The integrated report and frozen/published files were checked. This is
 reviewed documentation of direct Mathlib reuse, with no new Lean artifact.
-The four named duality pairs in A.I.5 retain separate comparison obligations.
+
+Its duality extension, candidate `6bddccd7-9ae6-4e61-831b-ec7aa69084ab`
+by Worker 709, is also independently accepted and public. Reviewer 10834
+approved it without qualifications in review task
+`47f3abc7-b53d-4016-a653-f08178f4e477`; integration
+`36cb566142aa4f58913a1b7e7118a6cb` published it at Library
+`690e7bce992fb723bd66806fa2db3acd6dc07d78`. It supplies the four
+named duality-pair correspondences listed above. Its complete integrated
+report was read and frozen/public/current note hashes match.
+
+The elementary source map, candidate `6ada1814-c6cc-4818-a2b6-fef80c156277`
+by Worker 709, was independently approved without qualifications by
+Reviewer 10898 in review task `5aaa7e1b-bb70-4883-aa53-63d98eaf6470`.
+Integration `f51b0383873740f6839ca06d5510a5c8` published it at Library
+`f3b542a2044236604234c42094d278dbc4167f40`. The complete integrated
+report was read and the frozen/public/current files compared. The only
+integration change identifies the full/faithful paragraph as the one
+beginning “Le foncteur” after the vector-space example, rather than the
+opening paragraph of A.II.2. The published correction is retained.
+Both maps document direct reuse; their cited Library proofs remain separate
+mathematical contributions with the authorship and acceptance recorded
+above or in their paired Markdown. A.I.3 and the other A.I–A.II assertions,
+examples and constructions retain their separate obligations.
 
 This focused audit makes no A.I, A.II, Appendix A or whole-book completion
 declaration.
