@@ -1,0 +1,295 @@
+import Langlands.GroupScheme.Lie.SubgroupEqualityStatement
+import Langlands.GroupScheme.Lie.AffineCoordinates
+import Langlands.GroupScheme.Lie.GroupAlgebraCoordinates
+import Langlands.GroupScheme.Lie.SubgroupEqualityAlgebra
+import Mathlib.RingTheory.Smooth.Basic
+import Mathlib.RingTheory.TensorProduct.Free
+import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+import Mathlib.AlgebraicGeometry.Morphisms.Smooth
+import Mathlib.AlgebraicGeometry.Morphisms.ClosedImmersion
+
+/-! # Proof: a smooth closed subgroup with the full Lie algebra is everything -/
+
+noncomputable section
+
+universe u
+
+open CategoryTheory Opposite AlgebraicGeometry
+open scoped CategoryTheory.MonObj TensorProduct
+
+namespace Langlands.GroupScheme
+
+namespace Lie
+
+set_option backward.isDefEq.respectTransparency false
+
+section Restriction
+
+variable {R : CommRingCat.{u}} {H K : GroupScheme (Spec R)} [IsAffineHom H.X.hom]
+  [IsAffineHom K.X.hom] (j : K ⟶ H)
+
+/-- The restriction of coordinates along a homomorphism of affine group schemes. -/
+def restrictionMap : coordinateAlgebra H →ₐ[R] coordinateAlgebra K :=
+  pointCoordinates H ((coordinateIso K).hom ≫ j.hom.hom)
+
+theorem restrictionMap_spec :
+    (algSpec R).map (CommAlgCat.ofHom (restrictionMap j)).op ≫ (coordinateIso H).hom =
+      (coordinateIso K).hom ≫ j.hom.hom :=
+  (pointCoordinates H).symm_apply_apply ((coordinateIso K).hom ≫ j.hom.hom)
+
+variable {A : Type u} [CommRing A] [Algebra R A]
+
+theorem pointCoordinates_comp_hom (y : AffinePoints K A) :
+    pointCoordinates H (y ≫ j.hom.hom) = (pointCoordinates K y).comp (restrictionMap j) := by
+  obtain ⟨f, rfl⟩ := (pointCoordinates K).symm.surjective y
+  rw [Equiv.apply_symm_apply, restrictionMap, ← pointCoordinates_naturality, affineMap_apply]
+  congr 1
+
+omit [IsAffineHom H.X.hom] [IsAffineHom K.X.hom] in
+theorem mul_comp_hom (y₁ y₂ : AffinePoints K A) :
+    (y₁ * y₂) ≫ j.hom.hom = (y₁ ≫ j.hom.hom) * (y₂ ≫ j.hom.hom) :=
+  map_mul (K.affinePointsTarget j (CommAlgCat.of R A)) y₁ y₂
+
+omit [IsAffineHom H.X.hom] [IsAffineHom K.X.hom] in
+theorem one_comp_hom : (1 : AffinePoints K A) ≫ j.hom.hom = 1 :=
+  map_one (K.affinePointsTarget j (CommAlgCat.of R A))
+
+theorem coordinateOrigin_comp_restrictionMap :
+    (coordinateOrigin K).comp (restrictionMap j) = coordinateOrigin H := by
+  rw [coordinateOrigin, coordinateOrigin, ← pointCoordinates_comp_hom, one_comp_hom]
+
+end Restriction
+
+theorem affineMap_eq_iff {R : CommRingCat.{u}} (G : GroupScheme (Spec R)) [IsAffineHom G.X.hom]
+    {A B : Type u} [CommRing A] [Algebra R A] [CommRing B] [Algebra R B]
+    (f : A →ₐ[R] B) (x : AffinePoints G A) (y : AffinePoints G B) :
+    affineMap G f x = y ↔ f.comp (pointCoordinates G x) = pointCoordinates G y := by
+  rw [← pointCoordinates_naturality]
+  exact (pointCoordinates G).injective.eq_iff.symm
+
+section Translation
+
+open Algebra.TensorProduct
+
+variable {R : CommRingCat.{u}} {H K : GroupScheme (Spec R)} [IsAffineHom H.X.hom]
+  [IsAffineHom K.X.hom] (j : K ⟶ H)
+
+/-- Translation by the universal point of `K`: an annihilator `f` of the kernel of the
+restriction map gives an element of `A ⊗ B` annihilated by the kernel, whose image under
+`φ ⊗ id` is the constant `ε f`. -/
+theorem exists_tensor_of_annihilator (hφ : Function.Surjective (restrictionMap j))
+    (f : coordinateAlgebra H) (hf : ∀ x ∈ RingHom.ker (restrictionMap j), f * x = 0) :
+    ∃ g : coordinateAlgebra H ⊗[R] coordinateAlgebra K,
+      (∀ x ∈ RingHom.ker (restrictionMap j),
+        (includeLeft : coordinateAlgebra H →ₐ[R] coordinateAlgebra H ⊗[R] coordinateAlgebra K)
+          x * g = 0) ∧
+      productMap (restrictionMap j) (AlgHom.id R (coordinateAlgebra K)) g =
+        algebraMap R (coordinateAlgebra K) (coordinateOrigin H f) := by
+  classical
+  let iL : coordinateAlgebra H →ₐ[R] coordinateAlgebra H ⊗[R] coordinateAlgebra K := includeLeft
+  let iR : coordinateAlgebra K →ₐ[R] coordinateAlgebra H ⊗[R] coordinateAlgebra K :=
+    includeRight
+  let p₁ : AffinePoints H (coordinateAlgebra H ⊗[R] coordinateAlgebra K) :=
+    (pointCoordinates H).symm iL
+  let κ : AffinePoints H (coordinateAlgebra H ⊗[R] coordinateAlgebra K) :=
+    (pointCoordinates K).symm iR ≫ j.hom.hom
+  have hκ : pointCoordinates H κ = iR.comp (restrictionMap j) := by
+    rw [pointCoordinates_comp_hom, Equiv.apply_symm_apply]
+  let ψ := pointCoordinates H (p₁ * κ⁻¹)
+  let ψ' := pointCoordinates H (p₁ * κ)
+  let Ψ := productMap ψ iR
+  -- Step (i): `Ψ` undoes the translation `ψ'`.
+  have h1 : affineMap H Ψ p₁ = p₁ * κ⁻¹ := by
+    rw [affineMap_eq_iff, Equiv.apply_symm_apply]
+    exact productMap_left ψ iR
+  have h2 : affineMap H Ψ κ = κ := by
+    rw [affineMap_eq_iff, hκ, ← AlgHom.comp_assoc, productMap_right]
+  have hΨ : Ψ.comp ψ' = iL := by
+    have h : affineMap H Ψ (p₁ * κ) = p₁ := by
+      rw [map_mul, h1, h2, inv_mul_cancel_right]
+    rw [affineMap_eq_iff, Equiv.apply_symm_apply] at h
+    exact h
+  -- Step (ii): `ψ'` maps the kernel into the ideal generated by the kernel.
+  let m : coordinateAlgebra H ⊗[R] coordinateAlgebra K →ₐ[R]
+      coordinateAlgebra K ⊗[R] coordinateAlgebra K :=
+    map (restrictionMap j) (AlgHom.id R (coordinateAlgebra K))
+  let y₁ : AffinePoints K (coordinateAlgebra K ⊗[R] coordinateAlgebra K) :=
+    (pointCoordinates K).symm includeLeft
+  let y₂ : AffinePoints K (coordinateAlgebra K ⊗[R] coordinateAlgebra K) :=
+    (pointCoordinates K).symm includeRight
+  have h3 : affineMap H m p₁ = y₁ ≫ j.hom.hom := by
+    rw [affineMap_eq_iff, Equiv.apply_symm_apply, pointCoordinates_comp_hom,
+      Equiv.apply_symm_apply]
+    exact map_comp_includeLeft (restrictionMap j) (AlgHom.id R (coordinateAlgebra K))
+  have h4 : affineMap H m κ = y₂ ≫ j.hom.hom := by
+    rw [affineMap_eq_iff, hκ, pointCoordinates_comp_hom, Equiv.apply_symm_apply,
+      ← AlgHom.comp_assoc]
+    exact congrArg (fun F => F.comp (restrictionMap j))
+      (map_comp_includeRight (restrictionMap j) (AlgHom.id R (coordinateAlgebra K)))
+  have hμ : m.comp ψ' = (pointCoordinates K (y₁ * y₂)).comp (restrictionMap j) := by
+    rw [← pointCoordinates_comp_hom, mul_comp_hom, ← h3, ← h4, ← map_mul,
+      pointCoordinates_naturality]
+  have hker : ∀ x ∈ RingHom.ker (restrictionMap j),
+      ψ' x ∈ (RingHom.ker (restrictionMap j)).map iL := by
+    intro x hx
+    rw [← rTensor_ker _ hφ, RingHom.mem_ker]
+    have h := DFunLike.congr_fun hμ x
+    simp only [AlgHom.comp_apply] at h
+    change m (ψ' x) = 0
+    rw [h, RingHom.mem_ker.mp hx, map_zero]
+  refine ⟨ψ f, ?_, ?_⟩
+  -- Step (iii): the kernel annihilates `ψ f`.
+  · intro x hx
+    have hx' : iL x = Ψ (ψ' x) := by rw [← AlgHom.comp_apply, hΨ]
+    have hf' : ψ f = Ψ (iL f) := (DFunLike.congr_fun (productMap_left ψ iR) f).symm
+    change iL x * ψ f = 0
+    rw [hx', hf', ← map_mul]
+    suffices h : ∀ z ∈ (RingHom.ker (restrictionMap j)).map iL, z * iL f = 0 by
+      rw [h _ (hker x hx), map_zero]
+    intro z hz
+    have hz' : z ∈ Ideal.span (iL '' (RingHom.ker (restrictionMap j) : Set _)) := hz
+    clear hz
+    induction hz' using Submodule.span_induction with
+    | mem z hz =>
+      obtain ⟨y, hy, rfl⟩ := hz
+      rw [← map_mul, mul_comm, hf y hy, map_zero]
+    | zero => exact zero_mul _
+    | add a b _ _ ha hb => rw [add_mul, ha, hb, add_zero]
+    | smul c a _ ha => rw [smul_eq_mul, mul_assoc, ha, mul_zero]
+  -- Step (iv): the image of `ψ f` under `φ ⊗ id` is constant.
+  · let π := productMap (restrictionMap j) (AlgHom.id R (coordinateAlgebra K))
+    have h5 : affineMap H π p₁ = affineMap H π κ := by
+      apply (pointCoordinates H).injective
+      rw [pointCoordinates_naturality, pointCoordinates_naturality, Equiv.apply_symm_apply, hκ,
+        ← AlgHom.comp_assoc, productMap_left, productMap_right, AlgHom.id_comp]
+    have h6 : affineMap H π (p₁ * κ⁻¹) = 1 := by
+      rw [map_mul, map_inv, h5, mul_inv_cancel]
+    have h7 : π.comp ψ = (Algebra.ofId R (coordinateAlgebra K)).comp (coordinateOrigin H) := by
+      rw [← pointCoordinates_naturality, h6, pointCoordinates_one]
+    exact DFunLike.congr_fun h7 f
+
+end Translation
+
+section Derivations
+
+attribute [local instance] coordinateOriginAlgebra
+
+/-- If every Lie-algebra element of `H` comes from `K`, then every derivation at the identity
+vanishes on the kernel of the restriction map. -/
+theorem derivation_eq_zero_of_mem_ker {k : Type u} [Field k]
+    {H K : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] [IsAffineHom K.X.hom]
+    (j : K ⟶ H) (hlie : ∀ X : lieKernel H k, ∃ Y : lieKernel K k, Y.val ≫ j.hom.hom = X.val)
+    (δ : coordinateAlgebra H →ₗ[CommRingCat.of k] CommRingCat.of k)
+    (hδ : ∀ a b, δ (a * b) = coordinateOrigin H a * δ b + coordinateOrigin H b * δ a) :
+    ∀ x ∈ RingHom.ker (restrictionMap j), δ x = 0 := by
+  intro x hx
+  let d : IdentityDerivation H (A := k) := Derivation.mk' δ hδ
+  obtain ⟨Y, hY⟩ := hlie ((kernelDerivationEquiv H).symm d)
+  have h : δ x = kernelDerivationEquiv H ((kernelDerivationEquiv H).symm d) x := by
+    rw [Equiv.apply_symm_apply]
+    rfl
+  rw [h, kernelDerivationEquiv_apply, ← hY, pointCoordinates_comp_hom, AlgHom.comp_apply,
+    RingHom.mem_ker.mp hx, map_zero]
+  rfl
+
+end Derivations
+
+end Lie
+
+open Lie Lie.SubgroupEquality
+
+/-- **Subgroups with the full Lie algebra** (Milne, *Algebraic Groups*, Proposition 10.15). -/
+theorem lieSubgroupEquality : LieSubgroupEqualityStatement.{u} := by
+  intro k _ H K _ _ _ _ j hj hlie
+  let : Field (CommRingCat.of k) := inferInstanceAs (Field k)
+  have : IsClosedImmersion j.hom.hom.left := hj
+  have : IsAffineHom K.X.hom := by
+    rw [← Over.w j.hom.hom]
+    infer_instance
+  have : IsIso (coordinateIso H).hom.left :=
+    inferInstanceAs (IsIso ((Over.forget _).map (coordinateIso H).hom))
+  have : IsIso (coordinateIso K).hom.left :=
+    inferInstanceAs (IsIso ((Over.forget _).map (coordinateIso K).hom))
+  -- The restriction map is surjective.
+  have hφ : Function.Surjective (restrictionMap j) := by
+    have e : ((algSpec (CommRingCat.of k)).map
+        (CommAlgCat.ofHom (restrictionMap j)).op).left ≫ (coordinateIso H).hom.left =
+        (coordinateIso K).hom.left ≫ j.hom.hom.left := by
+      rw [← Over.comp_left, ← Over.comp_left, restrictionMap_spec]
+    have hc : IsClosedImmersion ((algSpec (CommRingCat.of k)).map
+        (CommAlgCat.ofHom (restrictionMap j)).op).left := by
+      have h : ((algSpec (CommRingCat.of k)).map (CommAlgCat.ofHom (restrictionMap j)).op).left =
+          ((coordinateIso K).hom.left ≫ j.hom.hom.left) ≫ inv (coordinateIso H).hom.left := by
+        rw [← e, Category.assoc, IsIso.hom_inv_id, Category.comp_id]
+      rw [h]
+      infer_instance
+    change IsClosedImmersion (Spec.map (CommRingCat.ofHom (restrictionMap j).toRingHom)) at hc
+    obtain ⟨-, hs⟩ := IsClosedImmersion.isAffine_surjective_of_isAffine
+      (Spec.map (CommRingCat.ofHom (restrictionMap j).toRingHom))
+    intro y
+    obtain ⟨x, hx⟩ := hs ((Scheme.ΓSpecIso (CommRingCat.of (coordinateAlgebra K))).inv y)
+    refine ⟨(Scheme.ΓSpecIso (CommRingCat.of (coordinateAlgebra H))).hom x, ?_⟩
+    have h := congrArg (fun g => g.hom x)
+      (Scheme.ΓSpecIso_naturality (CommRingCat.ofHom (restrictionMap j).toRingHom))
+    simp only [CommRingCat.hom_comp, RingHom.comp_apply, hx, Iso.inv_hom_id_apply] at h
+    exact h.symm
+  -- The subgroup is smooth and the ambient coordinate algebra is noetherian.
+  have hsm : Smooth ((algSpec (CommRingCat.of k)).obj (op (coordinateAlgebra K))).hom := by
+    have h : Smooth ((coordinateIso K).hom.left ≫ K.X.hom) := inferInstance
+    simpa only [Over.w] using h
+  change Smooth (Spec.map (CommRingCat.ofHom
+    (algebraMap (CommRingCat.of k) (coordinateAlgebra K)))) at hsm
+  rw [HasRingHomProperty.Spec_iff (P := @Smooth)] at hsm
+  have : Algebra.Smooth (CommRingCat.of k) (coordinateAlgebra K) :=
+    RingHom.smooth_algebraMap.mp hsm
+  have : IsNoetherianRing (CommRingCat.of k) := inferInstanceAs (IsNoetherianRing k)
+  have : Algebra.FiniteType (CommRingCat.of k) (coordinateAlgebra H) :=
+    coordinateAlgebraFiniteType H
+  have : IsNoetherianRing (coordinateAlgebra H) :=
+    Algebra.FiniteType.isNoetherianRing (CommRingCat.of k) (coordinateAlgebra H)
+  -- The local step and the translation give `e` with `φ e = 1` annihilating the kernel.
+  obtain ⟨f, hf1, hf⟩ := exists_annihilator_of_derivations (restrictionMap j) hφ
+    (coordinateOrigin H)
+    (fun x hx => by
+      rw [RingHom.mem_ker, ← coordinateOrigin_comp_restrictionMap j, AlgHom.comp_apply,
+        RingHom.mem_ker.mp hx, map_zero])
+    (derivation_eq_zero_of_mem_ker j hlie)
+  obtain ⟨g, hg, hg1⟩ := exists_tensor_of_annihilator j hφ f hf
+  rw [hf1, map_one] at hg1
+  have hmem := productMap_mem_map_annihilator (RingHom.ker (restrictionMap j)) g
+    (fun x hx => hg x hx) (restrictionMap j) (AlgHom.id _ _)
+  rw [hg1, Ideal.mem_map_iff_of_surjective _ hφ] at hmem
+  obtain ⟨e, he, he1⟩ := hmem
+  have : ConnectedSpace (PrimeSpectrum (coordinateAlgebra H)) := by
+    have e' : Spec (CommRingCat.of (coordinateAlgebra H)) ≅ H.X.left :=
+      (Over.forget _).mapIso (coordinateIso H)
+    exact (Scheme.homeoOfIso e').connectedSpace_iff.mpr inferInstance
+  -- By connectedness the kernel of the restriction map vanishes.
+  have hne : RingHom.ker (restrictionMap j) ≠ ⊤ := by
+    intro h
+    have h1 : restrictionMap j 1 = 0 := RingHom.mem_ker.mp (h ▸ Submodule.mem_top)
+    have h2 := congrArg (coordinateOrigin K) h1
+    rw [map_one, map_one, map_zero] at h2
+    exact one_ne_zero h2
+  have hker : RingHom.ker (restrictionMap j) = ⊥ :=
+    eq_bot_of_mul_eq_zero_of_one_sub_mem _ hne e
+      (fun x hx => Submodule.mem_annihilator.mp he x hx)
+      (by rw [RingHom.mem_ker, map_sub, map_one, he1, sub_self])
+  have hinj : Function.Injective (restrictionMap j) :=
+    (RingHom.injective_iff_ker_eq_bot (restrictionMap j)).mpr hker
+  -- Hence `j` is an isomorphism.
+  let eqv := AlgEquiv.ofBijective (restrictionMap j) ⟨hinj, hφ⟩
+  have : IsIso (CommAlgCat.ofHom (restrictionMap j)) := (CommAlgCat.isoMk eqv).isIso_hom
+  have hj' : j.hom.hom = (coordinateIso K).inv ≫
+      (algSpec (CommRingCat.of k)).map (CommAlgCat.ofHom (restrictionMap j)).op ≫
+        (coordinateIso H).hom := by
+    rw [restrictionMap_spec, Iso.inv_hom_id_assoc]
+  have : IsIso j.hom.hom := by
+    rw [hj']
+    infer_instance
+  apply le_antisymm
+  · exact SubgroupFunctor.le_def.mpr fun T x _ => Subgroup.mem_top x
+  · exact SubgroupFunctor.le_def.mpr fun T x _ =>
+      SubgroupFunctor.mem_range.mpr ⟨x ≫ inv j.hom.hom, by simp⟩
+
+end Langlands.GroupScheme

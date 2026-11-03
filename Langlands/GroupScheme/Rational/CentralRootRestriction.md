@@ -15,7 +15,7 @@ the given point and the actual dual-number kernel point. The adjoint formula
 is conjugation by that constant point, so commutativity cancels the conjugating
 factor. `Lie.characterValue_zero` evaluates the zero character as the unit,
 and `weightSpace_zero_eq_top_of_isCentral` then identifies the zero weight
-space with the full Lie algebra. `weightSpace_le_restrict` restricts each
+space with the full Lie algebra. `weightSpace_le_comp` restricts each
 all-test adjoint weight equation along an actual torus homomorphism.
 
 Over an arbitrary field, assume `G` is affine and locally of finite type,
@@ -47,3 +47,8 @@ bijectivity of character restriction from `G`, or the unrestricted complement.
 
 The zero-character evaluation lemma `Lie.characterValue_zero` is reused from
 `Lie.TorusCentralizer`.
+
+
+
+The weight-restriction theorem `weightSpace_le_comp` is reused from
+`Rational.GenericLieWeights`.

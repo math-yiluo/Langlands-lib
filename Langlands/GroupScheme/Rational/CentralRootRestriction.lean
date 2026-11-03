@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Rational.GenericLieWeights
 import Langlands.GroupScheme.Lie.TorusCentralizer
 import Langlands.GroupScheme.Rational.RelativeCentralDirections
 import Langlands.GroupScheme.Torus.WeightDecomposition
@@ -42,17 +43,6 @@ theorem weightSpace_zero_eq_top_of_isCentral (a : A.toGrp ⟶ G) (ha : IsCentral
   intro X _ B _ _ t
   rw [ha.adjoint_eq a, Lie.characterValue_zero, Units.val_one, one_smul]
 
-/-- Restriction along an actual torus homomorphism restricts every adjoint weight. -/
-theorem weightSpace_le_restrict (i : T.toGrp ⟶ G) (f : A ⟶ T)
-    (χ : characterLattice T) :
-    weightSpace i χ ≤ weightSpace (CommGroupScheme.groupHom f ≫ i) (f ≫ χ) := by
-  intro X hX B _ _ t
-  have h := (mem_weightSpace.mp hX) B (t ≫ (CommGroupScheme.groupHom f).hom.hom)
-  change adjoint G B (t ≫ (CommGroupScheme.groupHom f).hom.hom ≫ i.hom.hom) _ =
-    (Lie.characterValue (f ≫ χ) t : B) • _
-  rw [Lie.characterValue_comp]
-  simpa only [Category.assoc] using h
-
 end GeneralBase
 
 section Field
@@ -77,7 +67,7 @@ theorem root_restrict_eq_zero_of_isCentral (i : T.toGrp ⟶ G) (f : A ⟶ T)
     (weightSpace (CommGroupScheme.groupHom f ≫ i) 0) at hd
   rw [weightSpace_zero_eq_top_of_isCentral _ hc, disjoint_top] at hd
   apply (mem_relativeRoots.mp hχ).2
-  exact le_antisymm ((weightSpace_le_restrict i f χ).trans hd.le) bot_le
+  exact le_antisymm ((weightSpace_le_comp f i χ).trans hd.le) bot_le
 
 /-- The rational span of all actual roots lies in the central restriction kernel. -/
 theorem relativeRootSpan_le_centralRestrictionKer (i : T.toGrp ⟶ G) (f : A ⟶ T)

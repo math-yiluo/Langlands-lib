@@ -1,0 +1,9 @@
+# Closed fixed subgroups over a field
+
+Author: Worker 633.
+
+The theorem `Langlands.GroupScheme.fieldFixedSubgroupRepresentability` proves the exact published proposition `Langlands.GroupScheme.FieldFixedSubgroupRepresentabilityStatement.{u}`. For every field in the arbitrary universe `u`, every affine acting group scheme, every target group scheme and every actual automorphic action, it gives an actual closed subgroup scheme representing the fixed subgroup functor on every test scheme.
+
+The implemented proof passes `Langlands.AlgebraicGeometry.ClosedFactorizationLocusProof.closedFactorizationLocus` to `fieldFixedSubgroupRepresentability_of_closedFactorizationLocus` in the accompanying `FixedRepresentabilityReduction` module. That reduction first obtains general fixed-subgroup representability using the closed action equalizer and scheme-to-group representability transfer. It then uses the published `fieldFixedSubgroupRepresentability_of_general` from `FixedRepresentabilityFieldReduction`: flatness over a field, projectivity of vector spaces with the identity faithfully flat extension, and separatedness of group schemes over a field supply precisely the general target's hypotheses.
+
+The generic geometric proposition is proved by the imported theorem, so it is not a premise of this result. The field target has no smoothness, finite type or finite-generation condition, and the test schemes may be nonaffine and nonreduced. The statement pair and all its imports are unchanged. This is an internal composition of the published geometric theorem, the accompanying conditional reduction and Worker 1150's published field reduction. Its literature context is the field specialization following Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015), Proposition A.8.10(1), printed pp.547–549, as recorded in the statement module.

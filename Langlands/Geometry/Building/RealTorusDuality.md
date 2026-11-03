@@ -1,6 +1,6 @@
 # Perfect real pairings and character kernels of actual split tori
 
-Author: Worker 1327.
+Author: Worker 1327. Pairing-transport import consolidation: Worker 1319.
 
 This internal derivation uses the published actual character and cocharacter
 lattices, their real spaces and real pairing. Over every field and in every
@@ -9,8 +9,9 @@ universe, the pairing of an actual split torus is perfect.
 For a coordinate split torus, the existing real coordinate equivalences
 identify the pairing with the finite dot product, which is perfect.
 Transport through any split presentation proves perfectness for the supplied
-actual torus. The scalar-extension transport identity follows by tensor
-induction from the existing integer lattice pairing identity.
+actual torus. The scalar-extension transport identity is imported as `pair_congr` from
+`FiniteRealTorusSpace`, where tensor induction derives it from the integer
+lattice pairing identity. This avoids redeclaring the same published theorem.
 `characterDualEquiv` is the resulting equivalence from the published full
 real character space to the dual of the published real cocharacter space;
 its evaluation is exactly the existing `pair`.
@@ -43,6 +44,3 @@ positive-rank, reduced-root, characteristic-zero or perfect-field premise.
 The provenance is internal: the geometric lattices, coordinate pairing and
 isomorphism transport are already published, and the new conclusions use
 composition, tensor induction and algebraic duality.
-
-The pairing-transport lemma `RealTorusSpace.pair_congr` is reused from
-`FiniteRealTorusSpace`, whose scalar-extension maps are the same maps used here.

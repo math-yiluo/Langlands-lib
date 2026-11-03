@@ -7,6 +7,8 @@ Proposition 3.3.5, printed p.109 (PDF p.135), with the split-torus setting on
 printed p.107; registered source `conrad-gabber-prasad-2015-pseudo-reductive`.
 Stability of the closed envelope is an explicit premise here.
 
+The general action and its forgetful adapter are imported from
+[PointwiseSchemeAction](PointwiseSchemeAction.md).
 `PointwiseSchemeAction H V` is an actual morphism from `H.X ⊗ V` to `V` whose unit and
 associativity laws hold on all test schemes. `V` is an arbitrary scheme over
 the base and carries no required group structure. `act` is evaluation by

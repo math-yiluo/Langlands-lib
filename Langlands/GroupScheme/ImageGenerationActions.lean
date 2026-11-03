@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.PointwiseSchemeAction
 import Langlands.GroupScheme.ImageGenerationProducts
 import Langlands.GroupScheme.RepresentedAction
 
@@ -15,30 +16,9 @@ namespace Langlands.GroupScheme
 
 variable {B : Scheme.{u}} {H G : GroupScheme B} {V W : Over B}
 
-/-- An actual group-scheme action on an arbitrary scheme over the base. -/
-structure PointwiseSchemeAction (H : GroupScheme B) (V : Over B) where
-  hom : H.X ⊗ V ⟶ V
-  one_left : ∀ {T : Over B} (v : T ⟶ V), lift (1 : T ⟶ H.X) v ≫ hom = v
-  mul_left : ∀ {T : Over B} (h h' : T ⟶ H.X) (v : T ⟶ V),
-    lift (h * h') v ≫ hom = lift h (lift h' v ≫ hom) ≫ hom
-
 namespace PointwiseSchemeAction
 
 variable (a : PointwiseSchemeAction H V)
-
-def act {T : Over B} (h : T ⟶ H.X) (v : T ⟶ V) : T ⟶ V :=
-  lift h v ≫ a.hom
-
-@[simp] theorem act_one_left {T : Over B} (v : T ⟶ V) : a.act 1 v = v :=
-  a.one_left v
-
-theorem act_mul_left {T : Over B} (h h' : T ⟶ H.X) (v : T ⟶ V) :
-    a.act (h * h') v = a.act h (a.act h' v) := a.mul_left h h' v
-
-theorem naturality {T T' : Over B} (c : T' ⟶ T) (h : T ⟶ H.X) (v : T ⟶ V) :
-    c ≫ a.act h v = a.act (c ≫ h) (c ≫ v) := by
-  unfold act
-  rw [← Category.assoc, comp_lift]
 
 /-- Equivariance on every test scheme. -/
 def IsEquivariant (b : PointwiseSchemeAction H W) (f : V ⟶ W) : Prop :=
@@ -91,16 +71,6 @@ theorem finitePower_act_π (n : ℕ) {T : Over B} (h : T ⟶ H.X)
 end PointwiseSchemeAction
 
 namespace AutomorphicAction
-
-/-- Forget the compatibility with the multiplication on the target. -/
-def toPointwiseSchemeAction (b : AutomorphicAction H G) : PointwiseSchemeAction H G.X where
-  hom := b.hom
-  one_left := b.one_left
-  mul_left := b.mul_left
-
-@[simp] theorem toPointwiseSchemeAction_act (b : AutomorphicAction H G)
-    {T : Over B} (h : T ⟶ H.X) (g : T ⟶ G.X) :
-    b.toPointwiseSchemeAction.act h g = b.act h g := rfl
 
 theorem act_ofFn_prod (b : AutomorphicAction H G) {T : Over B}
     (h : T ⟶ H.X) {n : ℕ} (g : Fin n → (T ⟶ G.X)) :
