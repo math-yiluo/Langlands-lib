@@ -86,6 +86,19 @@ task `47f3abc7-b53d-4016-a653-f08178f4e477`; integration
 `36cb566142aa4f58913a1b7e7118a6cb` published it at Library
 `690e7bce992fb723bd66806fa2db3acd6dc07d78`.
 
+The [A.IV limits and colimits progress note](limits-colimits-progress.md),
+dated 3 November 2026 by Worker 709 with Worker 6's source diagnosis and
+scope reconciliation, verifies the general cone/cocone bridge and four
+statement/proof pairs: elementary shapes, ordered systems, subobject
+bounds and concrete abelian-group products/direct sums. All nine
+publications and eighteen paired files were checked against the current
+Library and their publication commits. The source's constant-functor and
+arrow corrections, independent universes, supplied-cone scope and actual
+subobject category are explicit. The final quotient/eventual-equality
+and eventual-zero paragraph remains parent backlog, including its
+empty-index boundary. Only the A.IV navigation row below is updated by
+this focused audit; no section completion is declared.
+
 The [elementary categorical source map](elementary-categories-source-map.md),
 candidate `6ada1814-c6cc-4818-a2b6-fef80c156277`, adds selected direct
 correspondences for the introductory notation, A.I.1 inverse and cancellation
@@ -771,7 +784,7 @@ including definitions, remarks and unnumbered results.
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and four published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers and actual unital-module comparisons. The general all-subobjects equivalence has a published statement and an open proof task; other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
-| A.IV | Limits and colimits | 255 / 261 | Backlog |
+| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge and four published statement/proof pairs](limits-colimits-progress.md) for elementary shapes, ordered systems, subobject bounds and concrete abelian-group products/direct sums. The final filtered-colimit quotient, eventual-equality and eventual-zero paragraph remains parent backlog, including the empty-index boundary; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
