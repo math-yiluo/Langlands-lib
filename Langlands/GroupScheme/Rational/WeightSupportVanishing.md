@@ -42,3 +42,5 @@ weight-semigroup definitions, together with the published zero-weight-space,
 conjugation comparison and nonzero-multiple lemmas named above.
 The geometric realization theorem is retained explicitly as
 a hypothesis; this helper neither proves it nor the root-vector target.
+
+The general unit representability and closedness lemmas are imported from [UnitSubgroup](../UnitSubgroup.md), with their public names and statements preserved.

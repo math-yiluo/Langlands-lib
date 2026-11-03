@@ -77,3 +77,9 @@ the geometric lemma, cuspidal support, classification, or non-self-associated
 induction irreducibility. This adapter supplies regularity prerequisites
 for the assigned self-association proof; it does not establish that target,
 opposite-Jacquet duality, or any finite-length preservation assertion.
+
+The local topology instance is explicitly named `rationalUnipotentPointTopology`
+so this module can be imported together with `RationalStandardComplex`, which
+also installs the canonical topology. Its value is still literally
+`pointTopology`; this naming change alters no topology or mathematical premise.
+Worker 64 supplied this import-compatibility correction.

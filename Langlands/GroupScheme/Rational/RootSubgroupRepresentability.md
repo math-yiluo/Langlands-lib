@@ -1,0 +1,15 @@
+# Smooth closed representatives of intrinsic root functors
+
+This internal supporting unit concerns the actual all-test subgroup functor `RelativeRoot.subgroup i a`. It applies over every field in universe `u`, for a smooth affine group scheme `G`, a split torus `S`, any group homomorphism `i : S.toGrp ⟶ G`, and every nonzero character `a`. It requires neither connectedness nor reductivity of `G`, maximality or injectivity of `i`, occurrence of `a` as a relative root, nor primitivity of `a`. The actual character kernel retains its possible nonsmoothness.
+
+`IsSmoothClosed F` is the proposition that an all-test subgroup functor has a smooth closed representative. It is defined over any base scheme and requires no connectedness.
+
+`subgroup_has_smooth_closed_representative` constructs a group scheme `U` and a closed inclusion into `G` representing precisely this intrinsic root functor on every test scheme. This representative is smooth unconditionally under the stated hypotheses. The same existential witness also comes with connectedness conditional on `DynamicConnectedStatement.{u}`.
+
+The proof first applies the published `kernelCentralizerStructure` theorem to obtain a smooth closed representative `j : C ⟶ G` of the centralizer of the actual character kernel. Its closed immersion into affine `G` makes `C` affine. The published `characterFpqc` theorem supplies quasi-compactness, flatness and surjectivity of the nonzero character, even when it is not primitive. These hypotheses make the actual descended action `quotientAction i a j hj` available.
+
+The existing `AutomorphicAction.Affine` construction gives an actual closed representative of the identity-limit functor of this action. Its inclusion into `C`, followed by `j`, is the new representative. `quotientActionComparison` identifies its all-test image with the intrinsic root functor. The general represented-subgroup composition lemma proves representation of that image, and the two closed immersions compose. The published smoothness theorem for arbitrary multiplicative-group actions proves smoothness of this same representative. Its conditional connectedness theorem supplies the final implication.
+
+`subgroup_isSmoothClosed` packages smooth closed representability using the new predicate. `subgroup_isClosedRepresentable` packages the unconditional closed representability. `smooth_of_isRepresentedBy_subgroup` transfers smoothness to every representative using the canonical represented-subgroup isomorphism. `connected_of_isRepresentedBy_subgroup` transfers the conditional connectedness in the same way. `subgroup_isSmoothConnectedClosed` packages a smooth connected closed representative when the dynamic connectedness proposition is supplied.
+
+These are internal consequences of the imported constructions and proved kernel-centralizer and character-descent results. No additional literature assertion is used. This unit does not prove dynamic connectedness, the positive Lie-weight characterization, split unipotence, or the host `CyclicRootFunctorComparisonStatement`. Those remain separate obligations.
