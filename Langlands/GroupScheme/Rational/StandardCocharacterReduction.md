@@ -33,13 +33,16 @@ comes from connected reductivity.
 
 `standardCocharacterStatement_of_relativeRootSystem_of_signs` combines these
 steps. Its conclusion is exactly the published `StandardCocharacterStatement`
-at universe `u`, and its hypotheses explicitly require both the general
-relative-root-system theorem and the sign-to-dynamic comparison for every
+at universe `u`, and its hypotheses are the published propositions
+`RelativeRootSystemStatement.{u}` and
+`RelativeRootSignsDetermineDynamicStatement.{u}`. Both quantify over every
 connected reductive group with maximal split torus. The former constructs a
 standard cocharacter and proves root negation closure; the latter identifies
 all three dynamic subgroups for cocharacters with the same relative-root
-signs. The intersection argument then gives the three required equalities
-for every standard cocharacter.
+signs. The explicit sign formula in the latter is definitionally equal to
+`HaveSameRelativeRootSigns`, so the proof applies it directly without an
+additional comparison premise or an alternate sign statement. The intersection
+argument then gives the three required equalities for every standard cocharacter.
 
 This is an intermediate conditional reduction. It does not prove the general
 relative-root-system theorem, the sign-to-dynamic comparison, or the

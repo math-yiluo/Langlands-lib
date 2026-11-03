@@ -1,5 +1,6 @@
 import Langlands.GroupScheme.Rational.RelativeRootStandardCocharacter
 import Langlands.GroupScheme.Rational.PositiveRootInduction
+import Langlands.GroupScheme.Rational.RelativeRootSignsStatement
 import Langlands.GroupScheme.Rational.StandardCocharacterStatement
 
 noncomputable section
@@ -122,17 +123,7 @@ theorem exists_standardCocharacter_of_relativeRootSystemStatement
 are explicit; this theorem does not prove either of them. -/
 theorem standardCocharacterStatement_of_relativeRootSystem_of_signs
     (hroot : RelativeRootSystemStatement.{u})
-    (hsign : ∀ (k : Type u) [Field k] (G : GroupScheme (Spec (CommRingCat.of k)))
-      (hG : IsConnectedReductive G) (T : CommGroupScheme (Spec (CommRingCat.of k)))
-      (i : T.toGrp ⟶ G) (_hi : IsMaximalSplitTorus i),
-      letI := hG.isAffineHom
-      ∀ zeta eta : cocharacterLattice T, HaveSameRelativeRootSigns i zeta eta →
-        Dynamic.parabolic (CommGroupScheme.groupHom zeta ≫ i) =
-          Dynamic.parabolic (CommGroupScheme.groupHom eta ≫ i) ∧
-        Dynamic.centralizer (CommGroupScheme.groupHom zeta ≫ i) =
-          Dynamic.centralizer (CommGroupScheme.groupHom eta ≫ i) ∧
-        Dynamic.unipotent (CommGroupScheme.groupHom zeta ≫ i) =
-          Dynamic.unipotent (CommGroupScheme.groupHom eta ≫ i)) :
+    (hsign : RelativeRootSignsDetermineDynamicStatement.{u}) :
     StandardCocharacterStatement.{u} := by
   intro k _ G hG T i hi ν
   have := hG.isAffineHom

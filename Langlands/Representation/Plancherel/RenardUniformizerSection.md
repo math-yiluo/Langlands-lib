@@ -13,10 +13,12 @@ characteristic of `F` nor its residue characteristic is restricted.
 `SplitTorusValuation.uniformizerUnit F`. Its source is the multiplicative
 form of the additive cocharacter group. The input point of the multiplicative
 group is obtained from `Gm.affinePointsEquiv`; the output is obtained by
-`rationalPoints.map (CommGroupScheme.groupHom c)`. Multiplicativity follows
-from the Library's point evaluation laws `comp_groupHom_zero` and
-`comp_groupHom_add`. The construction makes sense for any commutative group
-scheme. Calling it a section of a valuation requires the split-torus
+`rationalPoints.map (CommGroupScheme.groupHom c)`. The homomorphism reuses
+`CocharacterUniformizer.latticeSection F T`. Its multiplicativity is the
+published consequence of `comp_groupHom_zero` and `comp_groupHom_add`.
+`uniformizerSection_eq_latticeSection` and `uniformizerSection_apply` are
+reflexivity proofs identifying the two homomorphisms and their evaluations,
+including for a commutative group scheme not assumed split. Calling it a section of a valuation requires the split-torus
 identification, which is not asserted for arbitrary `T`.
 
 For a map `i : T.toGrp ⟶ H` into an actual algebraic group,
@@ -26,6 +28,13 @@ at the uniformizer. In the Cartan application, `T` is the chosen maximal
 split torus `S`, `H` is its actual algebraic centralizer `Z`, and `i` is
 the factorization `S → Z`. These definitions do not construct the centralizer
 scheme or assume a building exists.
+`C0_eq_map_CA` identifies this ambient subgroup with the image of the
+published intrinsic `CocharacterUniformizer.CA F T`; its proof is the
+range-of-a-composite law. `uniformizerSection_naturality` says that mapping
+`c(π)` along any actual morphism `f : T → U` gives `(c ≫ f)(π)` for the
+same field uniformizer. Its proof is the published evaluation-of-composition
+law. This applies in particular to nested split subtori used for standard
+Levis; it does not construct their inclusions or compare any compact subgroups.
 
 For a specified set `positiveRoots` of actual torus characters,
 `nonnegativeCocharacters T positiveRoots` consists of the cocharacters
@@ -57,7 +66,7 @@ cocharacters at a uniformizer; V.3.21 (printed page 116, PDF page 122)
 defines the positive cone by nonnegative root orders; V.3.23 (printed
 page 117, PDF page 123) uses `C_A^+`; V.5.1(4) (printed page 122,
 PDF page 128) specializes to `C_0^+`. The homomorphism packaging and the
-membership lemmas are internal implementations of those definitions.
+membership and naturality lemmas are internal implementations of those definitions.
 
 The positive valuation convention also agrees with Kaletha–Prasad,
 *Bruhat–Tits Theory: A New Approach* (2023), §2.5(b), as corrected by

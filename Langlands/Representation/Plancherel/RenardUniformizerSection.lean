@@ -1,4 +1,4 @@
-import Langlands.Geometry.Building.SplitTorusValuation
+import Langlands.Geometry.Building.CocharacterUniformizer
 import Langlands.GroupScheme.Rational.StandardParabolic
 
 /-! # Renard's uniformizer subgroup and its positive part -/
@@ -19,12 +19,20 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 
 /-- Evaluate actual cocharacters at the existing order-one uniformizer. -/
 def uniformizerSection :
-    Multiplicative (cocharacterLattice T) →* rationalPoints T.toGrp where
-  toFun c := rationalPoints.map (CommGroupScheme.groupHom c.toAdd)
-    ((Gm.affinePointsEquiv (𝟙 (Spec (CommRingCat.of F)))).symm
-      (SplitTorusValuation.uniformizerUnit F))
-  map_one' := comp_groupHom_zero _
-  map_mul' c d := comp_groupHom_add _ c.toAdd d.toAdd
+    Multiplicative (cocharacterLattice T) →* rationalPoints T.toGrp :=
+  CocharacterUniformizer.latticeSection F T
+
+/-- The Cartan and contraction interfaces use exactly the same intrinsic section. -/
+theorem uniformizerSection_eq_latticeSection :
+    uniformizerSection T = CocharacterUniformizer.latticeSection F T :=
+  rfl
+
+/-- Pointwise comparison with intrinsic cocharacter evaluation. -/
+theorem uniformizerSection_apply (c : cocharacterLattice T) :
+    uniformizerSection T (Multiplicative.ofAdd c) =
+      CocharacterUniformizer.cocharacterPoints F T c
+        (SplitTorusValuation.uniformizerUnit F) :=
+  rfl
 
 /-- Renard's subgroup `C_A`, mapped into an actual ambient algebraic group.
 For the minimal Levi, take the map from the chosen maximal split torus into
@@ -32,6 +40,21 @@ its actual algebraic centralizer. -/
 def C0 {H : GroupScheme (Spec (CommRingCat.of F))} (i : T.toGrp ⟶ H) :
     Subgroup (rationalPoints H) :=
   ((rationalPoints.map i).comp (uniformizerSection T)).range
+
+/-- The ambient Cartan subgroup is the image of the intrinsic `C_A`. -/
+theorem C0_eq_map_CA {H : GroupScheme (Spec (CommRingCat.of F))}
+    (i : T.toGrp ⟶ H) :
+    C0 T i = (CocharacterUniformizer.CA F T).map (rationalPoints.map i) := by
+  exact MonoidHom.range_comp _ _
+
+/-- Common uniformizer evaluation commutes with every actual torus morphism. -/
+theorem uniformizerSection_naturality
+    {U : CommGroupScheme (Spec (CommRingCat.of F))} (f : T ⟶ U)
+    (c : cocharacterLattice T) :
+    rationalPoints.map (CommGroupScheme.groupHom f)
+        (uniformizerSection T (Multiplicative.ofAdd c)) =
+      uniformizerSection U (Multiplicative.ofAdd (c ≫ f)) := by
+  exact (comp_groupHom_comp _ c f).symm
 
 /-- Nonnegative cocharacters for the specified set of actual torus characters. -/
 def nonnegativeCocharacters (positiveRoots : Set (characterLattice T)) :
