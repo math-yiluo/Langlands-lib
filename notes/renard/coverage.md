@@ -99,6 +99,19 @@ and eventual-zero paragraph remains parent backlog, including its
 empty-index boundary. Only the A.IV navigation row below is updated by
 this focused audit; no section completion is declared.
 
+The [A.VIII.1 exact-functor progress note](exact-functors-progress.md),
+dated 3 November 2026 by Worker 709 using the specifications, proofs and
+companions of Workers 6, 595, 633, 691, 894, 910, 912 and 1055, verifies
+seven independently accepted and published units: the one-sided sequence
+definitions, actual finite-preservation comparisons, derived short-complex
+and homology comparisons, and faithfulness criteria. It records all seven
+reviews and publication receipts, the three exact-target proof validations,
+four independent universes and the later homology-statement prose correction.
+The source's forward implications are distinguished from derived
+equivalences. Only the A.VIII navigation row below is updated by this
+focused audit; A.VIII.2 and its existing tasks retain their separate scope,
+and no section completion is declared.
+
 The [elementary categorical source map](elementary-categories-source-map.md),
 candidate `6ada1814-c6cc-4818-a2b6-fef80c156277`, adds selected direct
 correspondences for the introductory notation, A.I.1 inverse and cancellation
@@ -788,7 +801,7 @@ including definitions, remarks and unnumbered results.
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
-| A.VIII | Specified functors | 265 / 271 | Backlog |
+| A.VIII | Specified functors | 265 / 271 | Partial: [A.VIII.1 source map and seven verified publications](exact-functors-progress.md) for one-sided sequence exactness, finite preservation, derived short-complex/homology comparisons and faithfulness, with exact universes and proof receipts. A.VIII.2 Hom functors, projectives, generators and smallness retain their separate tasks and [category/module boundaries](category-module-progress.md); no section completion declared |
 | A.IX | Categorical decompositions | 268 / 274 | Partial: [complete source-page map and seven verified proof publications](category-decomposition-progress.md), including literal full-sum zero intersection and canonical binary-biproduct monicity under both full-family smallness premises. Source-sized applicability and additional functor properties remain separate; no section completion declared |
 | A.X | Categorical centres | 269 / 275 | [Source definition and published unital-module identification](category-center-progress.md), with exact scalar-action map and explicit carrier-size bound; nonunital and later Bernstein centers remain separate |
 | B.I | Amitsur's theorem | 271 / 277 | Backlog |

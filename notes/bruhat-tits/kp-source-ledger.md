@@ -8,8 +8,10 @@ recorded below in three of the
 forty-five rows. The separately verified metric fixed-point aggregate assembles
 six published component proofs and adds no source row. The separately verified
 finite separable-unramified prerequisite is recorded below without adding a KP
-source row. The other forty-two rows retain
-empty formal-status and evidence fields. The remaining Bundle B targets still
+source row. Corollary 7.4.9 and corrected Theorem 7.8.1 now have
+independently accepted, published statements on supplied building data, with
+their hypotheses and proof successors recorded below. The other forty rows
+retain empty formal-status and evidence fields. The remaining Bundle B targets still
 require public ledger entries. Private source audits and unsubmitted drafts are
 not publication evidence.
 
@@ -119,7 +121,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; the other forty-two rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Corollary 7.4.9 and corrected Theorem 7.8.1 have verified published statements on supplied building data; the other forty rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -774,20 +776,29 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation omega(k^times)=Z and Henselian valuation ring. G is connected reductive. The Chapter 7 root-datum valuations, equipollent apartments, normalizer actions and Axiom 4.1.4 equivariance are supplied, together with AS5 of Axiom 4.1.6 added by corrections PDF p.33. Perfect residue is not assumed for this conditional Chapter 7 setup.",
         "C⊂A is a chamber, x∈C and Phi^+ is any positive relative-root system. Products use non-divisible roots. For the first product take r=0 or r=0+.",
-        "For the facet form, F lies in the closure of C and Phi^+ contains Phi_F(C)^+ from Proposition 1.3.35."
+        "For the facet form, F lies in the closure of C and Phi^+ contains Phi_F(C)^+ from Proposition 1.3.35.",
+        "Recorded Lean scope: every nonarchimedean local field F of either characteristic and supplied P : ParahoricBuildingData G, with P.apartment.SatisfiesApartmentAxioms P.centralizer, an actual chamber C, x in C and a generic cocharacter nu. The facet clause retains IsFaceOf and FacetChamberPositiveSystem. No existence of P or proof of AS5 is asserted."
       ],
-      "conclusion": "N_x^sharp=Z_x^sharp and G(k)_C^sharp=(product over Phi^-,nd of U_{a,x,r}) Z_x^sharp (product over Phi^+,nd of U_{a,x,r}). In the facet form replace the negative factors by U_{a,F,0+} and positive factors by U_{a,F,0}. This is the sharp subgroup; the full parahoric is Z(k)^0 G(k)_C^sharp by 7.4.1.",
-      "lean_declarations": [],
-      "modules": [],
+      "conclusion": "N_x^sharp=Z_x^sharp and G(k)_C^sharp=(product over Phi^-,nd of U_{a,x,r}) Z_x^sharp (product over Phi^+,nd of U_{a,x,r}). In the facet form replace the negative factors by U_{a,F,0+} and positive factors by U_{a,F,0}. This is the sharp subgroup; the full parahoric is Z(k)^0 G(k)_C^sharp by 7.4.1. The recorded Prop-valued target additionally states the derived full-Iwahori conclusions: I_C=P_x, Z(F) intersection I_C=j(Z(F)^0), equality of full and sharp unipotent intersections, injectivity and exact range of the negative/full-central/positive product, and all fixed-sign ordered chamber and facet products. Sharp and full groups and central factors remain distinct.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ParahoricBuildingData.ChamberIwahoriDecompositionStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.ChamberIwahoriStatement"
+      ],
       "dependencies": [
         "Lemma 7.4.7; triviality of the affine-Weyl stabilizer of an interior chamber point; Proposition 7.3.12 and 6.3.21",
         "Arbitrary-order fixed-sign root-factor bijections are in 7.3.12(3),(5). Full-parahoric ordered bijections additionally use the central Z(k)^0 factor and algebraic open-cell injectivity; the added mixed all-root 7.3.12(6), requiring f(0)>0, is not the depth-zero argument"
       ],
       "consumer_or_regression": "Iwahori factorization with order and intersection laws; compare the Library GL_n factorization and a multipliable-root example.",
-      "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
+      "formal_status": "statement",
+      "owner_task": "0e645cc1-7bb2-467a-9835-9d16f29b985f",
+      "acceptance_artifact_ids": [
+        "4cc5a2e0-c5a0-442f-b6c1-90c92f2a7c6b"
+      ],
+      "publication_commits": [
+        "25b91125ea94e88d741b206d633e82eb0d87c3e5"
+      ],
       "axiom_reports": [],
       "external_code": []
     },
@@ -807,11 +818,19 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation omega(k^times)=Z and Henselian valuation ring. G is connected reductive. The Chapter 7 root-datum valuations, equipollent apartments, normalizer actions and Axiom 4.1.4 equivariance are supplied, together with AS5 of Axiom 4.1.6 added by corrections PDF p.33. Perfect residue is not assumed for this conditional Chapter 7 setup.",
         "S is a maximal k-split torus, N and Z its normalizer and centralizer, Wtilde^0=N(k)/Z(k)^0, and W_aff is the affine Weyl group. C⊂A is a chamber and I=G(k)^0_C. For part (3), F_1,F_2 lie in the closure of a common chamber and W_aff_Fi is the affine-Weyl facet stabilizer.",
-        "For the source route to added part (4), also retain the Chapter 5 perfect-residue building hypotheses used by 5.3.3 and replaced 5.3.5. U is the unipotent radical of a minimal parabolic containing S, with Levi Z. Any broader residue-field version needs a separate proof."
+        "For the source route to added part (4), also retain the Chapter 5 perfect-residue building hypotheses used by 5.3.3 and replaced 5.3.5. U is the unipotent radical of a minimal parabolic containing S, with Levi Z. Any broader residue-field version needs a separate proof.",
+        "Recorded Lean scope: closed Prop-valued targets at universe u quantify over every nonarchimedean local field F, every affine F-group scheme G and supplied P : ParahoricBuildingData G, retaining SatisfiesApartmentAxioms. Part (4) explicitly requires HenselianLocalRing O[F], PerfectField k[F] and a generic cocharacter nu. The actual U(F) is standardUnipotentPoints P.i nu empty; its comparison with the single Dynamic.unipotent group remains a separate proof obligation. No general building existence is asserted."
       ],
-      "conclusion": "(1) Exact sequence 1→W_aff→Wtilde^0→G(k)/G(k)^0→1. (2) Inclusion induces a bijection Wtilde^0→I\\G(k)/I. (3) Inclusion induces a bijection W_aff_F1\\Wtilde^0/W_aff_F2 →G(k)^0_F1\\G(k)/G(k)^0_F2. (4) Inclusion induces a bijection Wtilde^0→U(k)\\G(k)/I=U(k)Z(k)^0\\G(k)/I. These are actual quotient bijections, including the component contribution beyond W_aff.",
-      "lean_declarations": [],
-      "modules": [],
+      "conclusion": "(1) Exact sequence 1→W_aff→Wtilde^0→G(k)/G(k)^0→1. (2) Inclusion induces a bijection Wtilde^0→I\\G(k)/I. (3) Inclusion induces a bijection W_aff_F1\\Wtilde^0/W_aff_F2 →G(k)^0_F1\\G(k)/G(k)^0_F2. (4) Inclusion induces a bijection Wtilde^0→U(k)\\G(k)/I=U(k)Z(k)^0\\G(k)/I. These are actual quotient bijections, including the component contribution beyond W_aff. The exact-sequence target includes the needed normality conclusions and an identification of its kernel with the affine Weyl group through the actual apartment action. Each quotient equivalence is prescribed on every normalizer representative; the added part (4) contains both bijections.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.IwahoriWeylExactSequenceStatement",
+        "Langlands.Geometry.Building.IwahoriDoubleCosetStatement",
+        "Langlands.Geometry.Building.ParahoricDoubleCosetStatement",
+        "Langlands.Geometry.Building.UnipotentIwahoriDoubleCosetStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.IwahoriWeylStatement"
+      ],
       "dependencies": [
         "Fact 4.1.25, corrected Theorem 7.5.3 and Proposition 7.5.5",
         "Corrected (2) injectivity: use 7.8.2 and Lemma 1.3.17 to write w_i rho_i, use (1) and I⊂G(k)^0 to identify the rho_i, cancel their normalizing action, then apply actual affine Bruhat injectivity in G(k)^0 (Proposition 1.4.5). I∩N(k)=Z(k)^0 alone is insufficient",
@@ -819,10 +838,14 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "7.8.2 gives Wtilde^0=W_aff semidirect Stab(C,Wtilde^0) after choosing C; 7.7.12 identifies that stabilizer with the Iwahori normalizer modulo I"
       ],
       "consumer_or_regression": "Distinct Hecke functions and finite-support convolution beyond simply connected split groups. Preserve length-zero data and the chamber dependence of the splitting; no Iwahori–Matsumoto presentation is claimed.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
+      "acceptance_artifact_ids": [
+        "90c646e0-a29a-4a82-8110-f92b10c12ca3"
+      ],
+      "publication_commits": [
+        "25b91125ea94e88d741b206d633e82eb0d87c3e5"
+      ],
       "axiom_reports": [],
       "external_code": []
     },
@@ -2564,6 +2587,73 @@ Henselian arithmetic of the infinite fixed field remain the separate
 completeness or local compactness of that infinite field. Torus norm-choice
 independence, the actual descended building and the full corrected
 Theorem 9.2.7 certificate remain open.
+
+## Verified chamber and Iwahori–Weyl statements
+
+Two source rows now record published **statements**. Worker 118 checked the
+complete Lean/Markdown pairs, their independent semantic approvals and their
+publication records. Each of the four primary files matches its frozen archive,
+the workspace copy and Library commit
+`25b91125ea94e88d741b206d633e82eb0d87c3e5`. The original passages are
+Corollary 7.4.9 and its setup at book PDF pp. 286–288, Theorem 7.8.1 and
+7.8.2 at pp. 303–304, and corrections PDF pp. 33, 35–36. The corrected
+Chapter 7 premise AS5 remains explicit.
+
+| Published statement pair | Independent semantic approval | Publication |
+| --- | --- | --- |
+| `Langlands.Geometry.Building.ChamberIwahoriStatement`; artifact `4cc5a2e0-c5a0-442f-b6c1-90c92f2a7c6b` | Reviewer 10982; receipt `190e7b13-2970-43af-abdd-5c0b883e5973` | Integration `adbff60d5c1e426e920fab17aeab316f`; commit `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `Langlands.Geometry.Building.IwahoriWeylStatement`; artifact `90c646e0-a29a-4a82-8110-f92b10c12ca3` | Reviewer 10949; receipt `4dee2812-a518-445e-9126-8f3b2797c28b` | Integration `4d7e8a3b43e2438c90e3ec6c8e9d5f2c`; same commit |
+
+The first entry is
+`ParahoricBuildingData.ChamberIwahoriDecompositionStatement`, with the
+implicit field and group parameters and the supplied argument
+`P : ParahoricBuildingData G`. It assumes
+`P.apartment.SatisfiesApartmentAxioms P.centralizer`, an actual chamber,
+an interior point and a generic cocharacter. Its facet clause additionally
+assumes the face relation and the geometric sign condition. It retains the
+sharp products and states their derived full-Iwahori consequences with the
+actual full central factor `Z(F)^0`: equality with the point parahoric,
+the centralizer intersection, the full/sharp unipotent intersections, and
+injectivity and exact range of each product. The ordered clauses allow any
+fixed order within each sign and both chamber depths `0` and `0+`; the
+facet form uses negative depth `0+` and positive depth `0`. Its unipotent
+intersections use the actual dynamic groups. Compact openness is a separate
+statement and proof obligation.
+
+The second module contains the four closed targets in the Theorem 7.8.1
+row, at universe `u`, as well as the companion chamber-splitting, Iwasawa
+and replaced-coset targets. All quantify over supplied actual building
+data. The normalities needed to form the component group maps are conclusions
+where required. The equivalences are prescribed on every normalizer
+representative. Corrected part (2) still needs chamber splitting and the
+Iwahori–Tits Bruhat decomposition: the equality `I ∩ N(F) = Z(F)^0`
+alone does not prove double-coset injectivity. The added part (4) retains
+both quotient bijections and the explicit Chapter 5 Henselian and
+perfect-residue hypotheses. Its actual unipotent group is
+`standardUnipotentPoints P.i ν ∅`; comparison with the single dynamic
+unipotent group used by the chamber products remains a separate algebraic
+proof obligation. This update changes only the Corollary 7.4.9 and
+Theorem 7.8.1 rows; the separate Chapter 5 rows await their own verification.
+
+The following focused proof tasks have been published. Their IDs record
+obligations and supply no proof evidence in this note. All unqualified global
+targets below belong to `Langlands.Geometry.Building`; the chamber targets
+belong to its `ParahoricBuildingData` namespace.
+
+| Exact target or targets | Published proof task |
+| --- | --- |
+| `ChamberIwahoriDecompositionStatement` | `0e645cc1-7bb2-467a-9835-9d16f29b985f` |
+| `ChamberIwahoriCompactOpenStatement` (separate target) | `0afe58ab-4d40-41b0-a74d-258400979322` |
+| `IwahoriWeylExactSequenceStatement`, `IwahoriWeylChamberSplittingStatement` | `fc0c8f82-31e8-47dd-ac37-ab6bee878f46` |
+| `IwahoriDoubleCosetStatement`, `ParahoricDoubleCosetStatement` | `3b797835-655c-4a67-b6e7-791615474d75` |
+| `IwasawaDecompositionStatement`, `UnipotentNormalizerCosetStatement` | `0b383eb0-185c-415b-8def-5fcbac419374` |
+| `UnipotentIwahoriDoubleCosetStatement` | `7bfe81b2-233e-47a8-85c1-1fd296f32c05` |
+
+The recovery compile checked both statement modules and their companion
+modules without errors or warnings. Compilation and statement acceptance
+do not prove these targets, construct the supplied data, establish a full
+corrected Definition 4.1.26 certificate, or close the Theorem 9.2.7 descent
+gate. The depth-zero release and its representation consumers remain open.
 
 ## Trust and release accounting
 

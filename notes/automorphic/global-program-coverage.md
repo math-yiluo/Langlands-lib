@@ -496,3 +496,104 @@ Actual automorphic convolution trace class, cuspidal closedness, rapid decay,
 algebraic/Hilbert comparison and the general-reductive spectral decomposition
 remain required L1 obligations. No operator result in this continuation
 establishes those conclusions or changes the conditional H3/H4 boundaries.
+
+
+## 3 November 2026 first-order auxiliary-character continuation
+
+Worker 84 checked this focused H2 continuation against Library
+`622054b9c6b9f07feb1335165348ac66b27b39e5`. It supersedes the older pending
+statuses only for the exact units named here. Other H1/H2 rows and all general
+reductive analytic obligations remain historical snapshots. This continuation
+credits public proposition targets and the existing conditional reduction;
+none of the new auxiliary-construction proofs below is independently public.
+
+The five targets in the next table were fetched as accepted/public, with
+terminal accepted machine validation and unqualified independent semantic
+approval. Their current Lean/Markdown pairs match the frozen pairs. The first
+three were published in `25b91125ea94e88d741b206d633e82eb0d87c3e5`; the last
+two in `071b82c1a715daffe0334ad25311484eaba312b0`. All remain in the named
+current Library. Each is a focused internal prerequisite of the first-order
+route, rather than a theorem attributed verbatim to Harris or Henniart.
+
+| Exact public target | Acceptance evidence | Exact proof child and scope |
+| --- | --- | --- |
+| `Langlands.HarmonicAnalysis.PadicFiniteCoefficientSeparationStatement.{u}` in [PadicFiniteCoefficientSeparationStatement.lean](../../Langlands/HarmonicAnalysis/PadicFiniteCoefficientSeparationStatement.lean) | Statement `a2a18383-76cc-4d4c-a399-a8948e486dca`; Reviewer 11284; publication integration `50a76e5a1dd549aabbfb4522644e7c67`. | Child `96fb825e-83e9-473c-a3cf-2c2ddee9b04e`, revision 1, has Worker 84's complete adoption pair. One inverse-prime-power threshold detects every nonzero coefficient in a finite set on the actual additive integer lattice. Proof acceptance/publication is pending. |
+| `Langlands.LocalClassField.QuadraticNormTraceStatement.{u,v}` in [QuadraticNormTraceStatement.lean](../../Langlands/ClassFieldTheory/Local/QuadraticNormTraceStatement.lean) | Statement `c36f24a4-b0d8-42b8-8cd9-4b5892b76fce`; Reviewer 11346; integration `1f0c10f85e6b4ecba20ffdda93ce10f1`. | Child `6913393c-dd2a-4185-8b5c-bdb7f28db90c`, revision 1, has Workers 84/27's complete adoption pair. For every integral a and y in a finite compatible extension, the actual norm is `1+a*Tr(y)+a^2*r` with integral r. Every prime, independent universe and finite degree is retained. Proof publication is pending. |
+| `Langlands.HarmonicAnalysis.PadicDeepUnitCharacterStatement.{u}` in [PadicDeepUnitCharacterStatement.lean](../../Langlands/HarmonicAnalysis/PadicDeepUnitCharacterStatement.lean) | Statement `27d5bbbf-8ea7-4816-ad3e-a258a7ba8065`; Reviewer 11380; integration `bea03ede39414874a66a155c048cf5dc`. | Child `6e7cdd5e-2510-439f-a502-58183ad32535`, revision 1, has Worker 84's complete adoption pair. The explicit conductor bound kills the multiplication error in the prescribed character `u ↦ psi(c*(u-1))` on actual principal units, with a uniform p-power annihilator. Character extension, nontriviality and stabilizers are separate. |
+| `Langlands.HarmonicAnalysis.PadicPrincipalUnitCharacterExtensionStatement.{u}` in [PadicPrincipalUnitCharacterExtensionStatement.lean](../../Langlands/HarmonicAnalysis/PadicPrincipalUnitCharacterExtensionStatement.lean) | Statement `d6ed3b3f-ab9f-4d22-be4f-0ebde529978f`; Reviewer 11433; integration `0ed04b44ca4e44b3af18890c3a7bd851`. | Child `acba9920-7450-4aff-b276-4ef3ca6ec471`, revision 1, has a complete adoption pair preserving Workers 84/394/55/450. Every continuous complex character of actual principalUnits n extends to finite positive order on field units, with value one at the supplied uniformizer. All supplied compatible topologies, p=2 and n=0 are retained. |
+| `Langlands.HarmonicAnalysis.PadicDeepUnitNormTraceStatement.{u,v}` in [PadicDeepUnitNormTraceStatement.lean](../../Langlands/HarmonicAnalysis/PadicDeepUnitNormTraceStatement.lean) | Statement `d6f2b22f-8e27-44e8-b5bb-4027f526d2b1`; Reviewer 11452; integration `5d3c0966bb27414bb2b05ed7d28c8bb1`. | Child `f2ecd102-7b20-492c-b1b4-3d2c3c4c4404`, revision 1, has Workers 84/27's complete adoption pair and formally requires the quadratic proof child under `lean.proof@1`. Under the prescribed character formula and three valuation bounds it constructs the actual unit z=1+i(a)y, puts its norm in principalUnits n and computes `chi(Nz)=Circle.toUnits(psi(c*a*Tr(y)))`. |
+
+The public algebraic `Langlands.Global.PrimitiveTraceStabilizerStatement` and
+its separate exact proof child `0cd7bcab-0ab1-4373-8276-18db068b787f`,
+revision 1, are preserved. That child has Worker 84's complete proof pair,
+but remains a prerequisite proof obligation. Public theorem imports alone
+confer no authorship on a downstream implementation.
+
+### Complete private assembly and independent proof boundaries
+
+The unchanged public targets are
+[AuxiliaryCharacterStatement.lean](../../Langlands/Global/Arithmetic/AuxiliaryCharacterStatement.lean)
+and [GeneralPositionStatement.lean](../../Langlands/Global/Arithmetic/GeneralPositionStatement.lean).
+Their original-source correspondence remains Henniart 2000 §3.4 condition 3,
+p.449, and §3.6 Lemma 3, p.451; Harris 1998 Definition 4.5 and Lemma 4.7,
+p.201, with (4.12)–(4.13), pp.204–205. This continuation reuses their reviewed
+source correspondence and leaves both target pairs unchanged. The first-order
+implementation below is an internal alternative route. It is not attributed
+to the literal source argument using an embedding of `(Z/2^N Z)^x`.
+
+Worker 84's complete private implementation
+`Langlands.Global.auxiliaryCharacterFirstOrder.{u,v}` compiles at the declared
+`AuxiliaryCharacterStatement.{u,v}` type with zero errors/warnings and only
+propext, Classical.choice and Quot.sound (development diagnostic
+`764abe12-da42-4b69-a7ee-f7b151dc44a8`). The checked development includes
+complete private copies of its six prerequisite proofs. It constructs finite
+order, strict arbitrary-depth nontriviality and the actual exact norm stabilizer
+for every prime, including two, every compatible finite Galois overfield and
+every intermediate field. This is development evidence, with independent
+exact-target validation and semantic acceptance still required.
+
+Exact proof child `de89b95c-fc2c-453c-96ec-5b1b74522c43`, revision 1,
+contains a complete seven-pair adoption bundle: the main proof plus integral
+detection/trace helpers, topology comparison, the first-order family,
+norm coordinates, the conditional exact stabilizer and depth helpers. Its
+formal `lean.proof@1` requirements name all six prerequisite proof children
+above. The adoption bundle contains none of their private proof copies. Those
+results must be independently accepted/public and imported by their current
+Lean names before the final proof is submitted. The audit found 48 other
+project imports already public and paired, seven new own modules and exactly
+those six pending proof modules.
+
+The implemented parameter choice is one common offset C and
+`c=p^(C-2k)`, principal level `k*e`, with the quadratic error uniformly within
+the additive conductor. Total-trace coordinates have value
+`psi_F(p^(C-k)*Tr(b*y))`. Simultaneous integral linear detection separates every
+unwanted automorphism. A separate nonzero weighted trace supplies nontriviality,
+including the case L=F. Taking `k=C+N1+N2+r+1` gives the strict depth bound.
+Module-topology uniqueness and actual inclusion isometry identify the supplied
+intermediate topology and norm with the exact subtype data in the target.
+Fixing automorphisms preserve the actual L norm, and every unwanted one is
+detected on a norm-one coordinate unit. The implementation uses no p-adic
+logarithm/exponential or division by two.
+
+The already public `Langlands.Global.auxiliaryGeneralPositionReduction` proves
+`AuxiliaryCharacterStatement.{u,u} → HarrisGeneralPositionStatement.{u}`.
+Its exact proof `328d43dd-29ec-4ae1-9635-170a2a9933e2` and completed child
+`4ae81b3a-b844-496c-9fe9-9de905f477c0` preserve Workers 20/84 authorship.
+It remains a conditional reduction, rather than an auxiliary existence proof.
+Worker 84's private composition `Langlands.Global.harrisGeneralPosition.{u}`
+now compiles cleanly by applying that reduction to the complete first-order
+construction (diagnostic `4a76aca2-1b78-4f4f-813d-c769260098b1`, universe u,
+standard axioms). Separate child `83445b71-56bc-4dab-b2df-43a956708a18`,
+revision 1, has the complete composition pair and formally requires the
+auxiliary proof child. Its public reduction-import closure contains 100 project
+modules; those pairs are byte-identical in the checked current Library.
+
+This composition retains the explicit normalized-reciprocity hypothesis of the
+last two Harris conjuncts. It constructs no reciprocity family and supplies no
+proof of NormalizedSystemExistence. The current-task, whole-current-Library and
+both-DAG searches preceded each new child; the existing statement task
+`91266440-3276-48dc-ab77-8d1c1fa386e8` and all neighboring proof owners retain
+their scopes. Complete adoption content and task publication are coordination
+evidence. The local construction does not yet supply an independently public
+auxiliary or Harris proof, prescribed global Hecke characters, paired field
+towers, weak automorphic induction or H2 completion.
