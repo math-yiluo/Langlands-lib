@@ -32,6 +32,6 @@ group structure.
 The construction is derived from published universal factorization and
 pullback interfaces; it assumes no new geometric representability theorem.
 It formalizes the closed transporter used for equation (126) in Milne,
-*Algebraic Groups* (2017), Theorem 17.46, printed p.365, zero-based PDF381.
+*Algebraic Groups* (2017), Theorem 17.46, printed p.365, zero-based PDF380 (one-based PDF381).
 It does not prove that the product of the centralizer and a Borel is closed,
 nor that the centralizer intersection is Borel.
