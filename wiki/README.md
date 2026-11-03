@@ -15,7 +15,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
-- [Actual coordinate augmentation weights and remaining proof targets](../notes/group-schemes/coordinate-augmentation-targets.md) — Actual group and pointed-affine coordinate interfaces, precise decomposition and Lie-support targets, seven focused proof successors and retained consumer obligations.
+- [Actual coordinate augmentation weights and remaining proof targets](../notes/group-schemes/coordinate-augmentation-targets.md) — Actual group and pointed-affine coordinate interfaces, exact proposition targets and seven focused proof successors, with retained consumer obligations.
 
 - [KP Bruhat–Tits: Bundles A–F source ledger](../notes/bruhat-tits/kp-source-ledger.md) — Corrected source targets, verified barycenter, bounded-action, nearest-point and aggregate metric proofs, and the remaining building, decomposition, model, filtration, descent and embedding gates.
 
