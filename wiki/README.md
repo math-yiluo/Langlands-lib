@@ -55,7 +55,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [External Library audit: global adeles, norms and Shimura conventions](../notes/audits/external-library-2026-10-22/global-adeles-shimura.md) — Nine historical finding verdicts, original-source and declaration checks, six verified correction publications repairing all ten assigned Markdown files, and the preserved mathematical scope.
 
-- [Global automorphic library and Henniart inputs: coverage and assumptions](../notes/automorphic/global-program-coverage.md) — Maps both program tracks to source targets, current declarations, verified public receipts, retained hypotheses and Task 0 consumers.
+- [Global automorphic library and Henniart inputs: coverage and assumptions](../notes/automorphic/global-program-coverage.md) — Maps both program tracks to source targets, verified public interfaces including operator-trace prerequisites, retained hypotheses and Task 0 consumers.
 - [Getz–Hahn Chapter 9: cuspidal proof dependencies and source boundaries](../notes/automorphic/getz-hahn-cuspidal-source-map.md) — Tracks the operator, closedness, kernel, rapid-decay and comparison proofs, author corrections and remaining source obligations.
 - [MW95 cuspidal decay: uniform derivatives and Siegel-domain estimates](../notes/automorphic/mw95-cuspidal-decay-source-map.md) — Original uniform-growth quantifiers, the noncircular reproduction route, fixed-domain decay and the remaining general-reductive and GL_n comparisons.
 - [Automorphic differential growth: source map](../notes/automorphic/differential-growth-source-map.md) — Original reproduction, admissibility and elliptic analyticity arguments, with their exact hypotheses and remaining formalization obligations.
