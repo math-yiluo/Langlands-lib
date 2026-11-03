@@ -1,10 +1,12 @@
-# Renard A.II.2: equivalence criterion and remaining source obligations
+# Renard A.II.2: equivalence criterion, representatives and vector spaces
 
-Worker 709 checked the published statement, proof and their exact receipts on
-2 November 2026. The current pairs agree with their frozen submissions and
-Library `546440987a08c6f0a563446add611f8ff5c9a372`. This supplements the
-[whole-book coverage ledger](coverage.md) with the sufficient equivalence
-criterion. A.I and the other A.II assertions retain their separate obligations.
+Worker 709 verified the publications below through 3 November 2026.
+The construction, statement and proof pairs agree with their frozen submissions
+and remain unchanged in Library `a2d087f74722634cb074d51ac39abb6a1543151d`.
+This supplements the [whole-book coverage ledger](coverage.md) with the
+sufficient equivalence criterion, the representative-subcategory comparison,
+and the construction in the fixed-dimension example. A.I and the other A.II
+assertions retain their separate obligations.
 
 ## Governing source and composition convention
 
@@ -93,14 +95,97 @@ reported axioms are `propext`, `Classical.choice` and `Quot.sound`.
 This development check supplies no additional mathematical acceptance;
 proof acceptance rests on the exact candidate's machine and review receipts.
 
+## The representative-subcategory comparison
+
+The source discussion at A.II.2, printed pp.250–251 / PDF256–257, chooses
+one representative of each isomorphism class and retains every ambient
+morphism between chosen objects. The original pages were read, including
+a fresh visual inspection on 3 November.
+
+The [construction pair](../../Langlands/CategoryTheory/Renard/RepresentativeSubcategory.md)
+defines `Langlands.Renard.representativeObjects C` as the actual range
+of Mathlib's `fromSkeleton C`, and
+`Langlands.Renard.RepresentativeSubcategory C` as its full subcategory.
+`representativeInclusion C` is the actual inclusion;
+`representativeOf X` and `representativeIso X` supply a selected object
+and its actual isomorphism to each ambient object `X`.
+`representative_eq_of_iso` proves equality of isomorphic selected objects.
+
+The [statement pair](../../Langlands/CategoryTheory/Renard/RepresentativeSubcategoryStatements.md)
+defines `Langlands.Renard.RepresentativeSubcategoryEquivalenceStatement C`.
+Its [exact proof](../../Langlands/CategoryTheory/Renard/RepresentativeSubcategoryProof.md)
+is `Langlands.Renard.representativeSubcategoryEquivalence`.
+The proof applies the published general criterion to
+`representativeInclusion C`. The inclusion's actual Hom maps are surjective
+and injective because the subcategory is full. The witness for each ambient
+object is `representativeOf X`, with `representativeIso X`.
+The criterion then supplies one reverse functor and both actual natural
+isomorphisms, with the identity-subscript correction above.
+
+This comparison retains independent object and Hom universes
+`C : Type u` with `[Category.{v} C]`. It adds no nonemptiness, smallness,
+finiteness, additive or abelian premise, and includes the empty category.
+It does not prescribe the reverse functor's object map or assert a strict
+inverse or uniqueness.
+
+| Unit | Candidate and authorship | Independent review | Publication |
+| --- | --- | --- | --- |
+| Construction | `3c0c8e64-7561-4170-a603-6a322a051dc3`, Worker 709 | Reviewer 9582, review task `fd5440f9-410c-495f-841c-785a9774e4bf`; unqualified approval | Integration `36359437d16e416aa9104983ac53eee7`, Library `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
+| Statement | `4edfbd2a-aee6-44f3-a57a-2495d9d132c7`, Worker 709 | Reviewer 9689, review task `792508b2-0754-4771-b41d-cfb8dc5bee3d`; unqualified approval | Integration `57823dd58c3045749d53fd468519d108`, Library `fe38b3e353a7b1fb30017218b2ee1f7f87f979fd` |
+| Exact proof | `2b2971c4-58bc-42ad-a727-688f9043f67a`, Worker 1158 with Worker 709 as coauthor | Reviewer 9900, review task `28d6a294-cdf6-466b-8c89-3461bbf23ef9`; unqualified approval | Integration `f18665986b0542a6b419db1e15fd294d`, Library `405ff58c5df69766419c9941161444531c1979ae` |
+
+Proof validation `7c58c717-efbe-4611-94e4-8969c2c67acc` accepts Lake build,
+exact-target, unchanged-statement and frozen-inputs checks. The full
+integrated semantic reports were read. Acceptance and publication, rather
+than the task's completion report alone, support this coverage claim.
+
+## The fixed-dimension vector-space construction
+
+The example at A.II.2, printed p.251 / PDF257, compares all vector spaces
+of one prescribed dimension `n` with the one-object category on `kⁿ`,
+retaining all linear maps. The original example and following paragraph
+on choices of bases were reread visually on 3 November.
+
+The published [construction pair](../../Langlands/CategoryTheory/Renard/FixedDimensionVectorSpaces.md)
+defines `Langlands.Renard.FixedDimensionVectorSpaces k n` using actual
+`ModuleCat k` objects with both `FiniteDimensional k X` and
+`Module.finrank k X = n`. Keeping both conditions is necessary at `n = 0`,
+since finrank alone may vanish for an infinite-dimensional space.
+The coordinate object is `ULift.{v} (Fin n → k)`.
+`OneObjectVectorSpaceCategory k n` is the actual full singleton
+subcategory on that object, and `fixedDimensionVectorSpaceInclusion k n`
+is its inclusion. Every linear endomorphism is retained, including
+noninvertible ones. `coordinateVectorSpaceIso k n X` constructs an actual
+isomorphism to each dimension-`n` object using `LinearEquiv.ofFinrankEq`.
+
+The field universe `u` and additional carrier-universe parameter `v`
+are independent, with carriers in `Type (max u v)`. The construction works
+for every field and every natural `n`, including zero, with no
+characteristic, field-size or positivity restriction.
+
+Candidate `3985c1e3-aaec-4266-bcf4-8db62e405f7f`, authored by Worker 709,
+was independently approved without qualifications by Reviewer 9944 in
+review task `364f9b8c-5785-45d9-98ba-affb643d5b96`. Validation
+`51419c4d-7b91-469f-85a7-7202e2be7699` is accepted; integration
+`05e4d685b56d4cc68a7802dc65363e2e` published it at Library
+`405ff58c5df69766419c9941161444531c1979ae`. Its full integrated report
+was read and its files were checked against the frozen candidate.
+Resume compilation `7604b1f9-fb19-4cd7-b564-8842a510de15` completed
+with zero errors or warnings.
+
+This is construction coverage. The source's equivalence conclusion still
+requires publication of a proposition about one actual reverse functor
+and both actual natural isomorphisms, followed by its exact proof.
+The objectwise coordinate isomorphisms alone do not discharge that conclusion.
+
 ## Source map and remaining work
 
 | Passage | Coverage and remaining obligation |
 | --- | --- |
 | A.II.1, printed p.250 / PDF256: natural transformations and natural isomorphisms | The criterion uses the actual Mathlib functor categories and natural isomorphisms. A separate assertion-level comparison for all A.II.1 content remains open. |
 | A.II.2, printed p.251 / PDF257: quasi-inverse and fully faithful, essentially surjective sufficient criterion | The published statement and exact proof establish the criterion above, including the documented identity-subscript correction. |
-| A.II.2, same page: vector-space example | The source compares the one-object category on `kⁿ` with the category of vector spaces of fixed dimension `n`, using choices of bases. Its actual functor and equivalence comparison remain separate. The example does not concern the category of all finite-dimensional vector spaces. |
-| A.II.2, same page: general representative-subcategory discussion | The actual representative subcategory, inclusion and source comparison remain separate from this criterion proof. |
+| A.II.2, same page: vector-space example | Actual fixed-dimension category, full singleton coordinate category, inclusion and objectwise coordinate isomorphisms are published. Publication of the equivalence statement and its exact proof remain required. The example concerns one fixed dimension, rather than all finite-dimensional spaces together. |
+| A.II.2, printed pp.250–251 / PDF256–257: general representative-subcategory discussion | Actual full representative subcategory, inclusion, representative isomorphisms, uniqueness law, quasi-inverse statement and exact proof are published as above. |
 | Remaining A.I and A.II content | Other source bridges, examples and assertions retain their obligations; a converse criterion would be additional derived content. |
 
 This focused audit makes no A.I, A.II, Appendix A or whole-book completion

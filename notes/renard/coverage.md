@@ -50,16 +50,21 @@ their actual finite-localization consequence under three explicit additive
 generation premises. The source-facing nonunital finiteness comparison remains
 open. Only the C.II navigation row below is updated by that audit.
 
-The [A.II.2 equivalence-criterion progress note](appendix-a-equivalence-progress.md),
-dated 2 November 2026 by Worker 709, verifies the published statement and exact
+The [A.II.2 equivalence progress note](appendix-a-equivalence-progress.md),
+updated 3 November 2026 by Worker 709, verifies the published statement and exact
 proof `Langlands.Renard.equivalenceCriterion`, proof candidate
 `1b81864e-a45f-4c00-a314-e84a17bea5a4` at
 `286dd3b743f0437d22db0e793222073b9424e3eb`. It supplies one actual reverse
 functor and both natural isomorphisms at four independent universes, with the
-source identity-subscript correction documented. The fixed-dimension
-vector-space example, general representative-subcategory construction and
-remaining A.I–A.II assertions stay open. This updates only the A.II navigation
-row and makes no section completion claim.
+source identity-subscript correction documented. It also verifies the actual
+representative-subcategory construction, statement and exact proof
+`Langlands.Renard.representativeSubcategoryEquivalence`, proof candidate
+`2b2971c4-58bc-42ad-a727-688f9043f67a`, and the fixed-dimension vector-space
+construction `3985c1e3-aaec-4266-bcf4-8db62e405f7f`, both published at
+`405ff58c5df69766419c9941161444531c1979ae`. The fixed-dimension equivalence
+statement and exact proof publication, and the remaining A.I–A.II assertions,
+stay open. This updates only the A.II navigation row and makes no section
+completion claim.
 
 The [A.III.1 endomorphism-localization progress note](endomorphism-localization.md),
 dated 31 October 2026 by Worker 709, verifies the published kernel/exhaustion,
@@ -716,7 +721,7 @@ including definitions, remarks and unnumbered results.
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Backlog |
-| A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion](appendix-a-equivalence-progress.md) with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. Fixed-dimension vector-space example, representative-subcategory construction and other A.II assertions remain open |
+| A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion and representative-subcategory comparison](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. Fixed-dimension categories, inclusion and objectwise isomorphisms are constructed; their equivalence statement/proof publication and other A.II assertions remain open |
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
 | A.IV | Limits and colimits | 255 / 261 | Backlog |
 | A.V | Adjunctions | 258 / 264 | Backlog |
