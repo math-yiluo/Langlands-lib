@@ -1,0 +1,7 @@
+# Effective finite-Galois descent of affine group-scheme points
+
+This derived implementation constructs the coefficient-automorphism action, base extension and effective fixed-point descent for the Library's actual affine group schemes. All fields have one arbitrary universe. The action and extension require only a field extension; injectivity requires affineness. Effective descent additionally requires a finite-dimensional Galois extension.
+
+The point carriers and maps are the existing `affinePoints` and `affinePointMap`. Affine global-section coordinates are the existing `affineSchemePointEquiv`, identified explicitly with `affinePointEvaluation`. For a point fixed by every coefficient automorphism, the finite-Galois fixed-field theorem puts every coordinate value in the image of the base field. Choosing its unique preimage produces an algebra map: all algebra-map laws follow by injectivity of the field inclusion. The inverse coordinate equivalence reconstructs an actual scheme point. Thus descent is constructed, not supplied as an assumption. `extend_descend`, `mem_range_extend_iff` and `fixedEquiv` record effectivity and uniqueness.
+
+This is internal algebraic infrastructure for the finite-Galois torus norm used by Kaletha–Prasad §2.5.12–2.5.13; the coordinate implementation is derived content, not a claim that KP assumes effective descent. It uses no topology, characteristic restriction, splitting, valuation or local-field hypothesis. Arithmetic independence and unit-norm-surjectivity assertions are outside this module.
