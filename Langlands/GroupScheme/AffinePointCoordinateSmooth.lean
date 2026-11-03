@@ -5,7 +5,7 @@ import Mathlib.Geometry.Manifold.Instances.UnitsOfNormedAlgebra
 
 noncomputable section
 
-universe u v w
+universe u v w z
 
 open CategoryTheory Opposite AlgebraicGeometry
 open scoped CategoryTheory.MonObj Topology TensorProduct Manifold ContDiff
@@ -16,7 +16,7 @@ set_option backward.isDefEq.respectTransparency false
 
 variable {R : CommRingCat.{u}} (G : GroupScheme (Spec R))
   (A : CommAlgCat.{u} R)
-  {B : Type u} [NormedCommRing B] [NormedAlgebra ℝ B]
+  {B : Type z} [NormedCommRing B] [NormedAlgebra ℝ B]
   (c : A →+* B)
   {E : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {H : Type v} [TopologicalSpace H] (I : ModelWithCorners ℝ E H)

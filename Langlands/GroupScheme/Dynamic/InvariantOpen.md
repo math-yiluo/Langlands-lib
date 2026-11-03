@@ -1,0 +1,9 @@
+# Scalar invariant opens of the affine line
+
+This internal geometric construction concerns the actual scheme affine line over an arbitrary field, in every universe. `IsScalarInvariantOpen W` says that multiplication by any nonzero scalar preserves membership in the open `W` for evaluations over every field extension. Evaluations include nonclosed points through their residue fields; invariance of rational points alone is insufficient over finite fields.
+
+`eq_top_of_isScalarInvariantOpen` proves that such an open containing zero is the whole affine line. Every nonempty open of the integral affine line contains its generic point. Evaluate the variable in the fraction field to express that generic point using a nonzero scalar, and apply invariance to obtain the rational point one. A point with residue coordinate zero is the zero point after extension; every nonzero residue coordinate is a scalar multiple of one. This proves membership of every scheme point. The lemmas `fieldPoint_map` and `exists_fieldPoint` implement the extension and residue-field steps.
+
+For an actual open immersion `j : U → X` and a morphism `e : Spec k[X] → X`, `invariantOpenLift` constructs a morphism `Spec k[X] → U` when the pullback of the open is scalar invariant in this sense and `e(0)` lies in the open. Saturation proves that the entire image of `e` is in the image of `j`, and Mathlib's open-immersion lifting construction supplies the lift. `invariantOpenLift_fac` proves that composing this lift with `j` recovers `e`.
+
+This is an internally derived topology and commutative algebra argument using the published Mathlib generic-point and residue-field APIs. It does not assert that a particular group-scheme open is invariant, nor prove a Weyl factorization or a Bruhat decomposition. Connecting an actual orbit extension to this scalar invariance is a separate step.

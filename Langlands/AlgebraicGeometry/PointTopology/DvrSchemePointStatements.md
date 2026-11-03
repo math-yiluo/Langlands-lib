@@ -1,0 +1,11 @@
+# Actual integral points and generic-fiber points over a DVR
+
+Author: Worker 105.
+
+`DvrSchemePointProperties R K` concerns an arbitrary discrete valuation ring R and an actual fraction field K, both in one arbitrary universe. The topology on K is the topology of the maximal-ideal valuation, constructed with `Valued.mk'`. The topology on R is induced by `algebraMap R K`. There is no completeness or residue-field finiteness assumption.
+
+For every actual scheme X locally of finite type over Spec R, the map from X(R) to the K-points of the actual generic fiber X ×[Spec R] Spec K is continuous and open. Separately, if X is separated over Spec R, the same map is an open embedding. It is the composite of the existing actual coefficient precomposition `RingPoint.changeRing (Algebra.ofId R K)` with the existing pullback-adjunction equivalence `ringPointBaseChangeEquiv R K K X`. The source and target have their independently constructed `schemePointTopology`, obtained from their own affine charts and evaluation topologies; neither is defined by transport along this map.
+
+The source is Brian Conrad, *Weil and Grothendieck approaches to adelic points*, December 31, 2011, the last paragraphs of the proof of Theorem 3.6, printed page 8. Registered source: `conrad-2011-weil-grothendieck-adelic-points`, SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`. Conrad separates injectivity for separated schemes from continuity and openness and proves the latter locally on the scheme, reducing to affine space and the open inclusion of the valuation ring.
+
+This statement is a derived generalization of the local step in that proof: Conrad states it for finite-type schemes over a complete DVR. The chart argument needs only local finite type, and the maximal-ideal valuation makes R open in K without completeness. Reducedness of R and dominance of Spec K over Spec R give separated injectivity. The separate coefficient-change and actual base-change comparisons justify the specified composite and its two independently constructed topologies. The result does not assert a closed embedding for nonaffine schemes, and supplies no adelic product comparison or transition topology by itself.

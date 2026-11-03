@@ -5,6 +5,8 @@ and `A` a bundled commutative `R`-algebra. Let `B` be a normed commutative
 real algebra and fix any ring homomorphism `c : A →+* B`. The coefficient
 ring `A` needs no topology, and continuity of `c` is not assumed.
 The parameter space `M` is a charted space with a real model with corners `I`.
+The universe of the smooth test algebra `B` is independent of the universe of
+`R` and `A`; the parameter model and source universes are independent as well.
 
 `CoordinateSmooth` is a proposition about a family `p : M → G.affinePoints A`.
 It requires, for every global regular function `a` on `G`, that

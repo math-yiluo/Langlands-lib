@@ -1,0 +1,11 @@
+# Topology comparison for actual nonaffine base change
+
+Author: Worker 105.
+
+`SchemeBaseChangeTopologyProperty C D A` states that the actual pullback-adjunction equivalence `ringPointBaseChangeEquiv C D A X` is a homeomorphism for every scheme X over Spec C. Its source is the actual relative A-points of X over C; its target is the actual relative A-points over D of the scheme pullback X ×[Spec C] Spec D. Each topology is the independently constructed `schemePointTopology`, the final topology from that scheme's affine open charts and their global-section evaluation topologies. Neither topology is defined by transport along this equivalence.
+
+The rings C, D and A are arbitrary commutative rings in the same universe, with compatible algebra structures C → D → A. Only A has a topology. It is a local topological ring with open units and continuous inversion on the units, expressed by `IsOpenUnits A`. There is no topology or continuity assumption on C or D, and there is no affineness, finite-type, quasi-compactness, separatedness, Hausdorff or completeness assumption on X or A.
+
+This is a derived comparison needed to justify the actual local base changes preceding Theorem 3.6 and the point spaces in (3.6.1), printed page 6 of Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011). Proposition 3.1 and its proof on printed page 4 give the local-ring and open-unit gluing argument. The present comparison extends the existing affine base-change theorem to arbitrary schemes by that chart argument. This generality uses the existing evaluation/final topologies and extends beyond the locally finite-type scope stated in Proposition 3.1. Registered source: `conrad-2011-weil-grothendieck-adelic-points`, SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
+
+The proof route uses the affine comparison on each C-affine chart, base-changes its open inclusion to an open immersion over D, and uses naturality of the original point equivalence. Locality makes those source charts cover every A-point, and open units make the target chart inclusions open embeddings. This file states the comparison. It does not construct arithmetic local rings, integral-point inclusions, adelic rings or adelic transition topologies.
