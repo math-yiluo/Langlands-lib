@@ -3,6 +3,7 @@ import Langlands.GroupScheme.Rational.RootReflectionExistenceStatement
 import Langlands.GroupScheme.Rational.RelativeRootStandardCocharacter
 import Langlands.GroupScheme.Rational.PositiveRootInduction
 import Langlands.GroupScheme.Rational.StandardLeviRootTransport
+import Langlands.GroupScheme.Rational.CocharacterCentralizer
 import Mathlib.GroupTheory.Coxeter.Length
 
 /-! # Transporting a Coxeter system from the actual root pairing to `N(k)/Z(k)` -/
@@ -30,36 +31,14 @@ variable {k : Type u} [Field k]
   {G : GroupScheme (Spec (CommRingCat.of k))} (i : T.toGrp ⟶ G)
 
 /-- A point centralizing the scheme-theoretic kernel of a character `a` centralizes every
-cocharacter `ζ` with `⟨a, ζ⟩ = 0`, since such a cocharacter factors through that kernel. -/
+cocharacter `ζ` with `⟨a, ζ⟩ = 0`, since such a cocharacter factors through that kernel. This is
+the field case, with implicit `a` and `ζ`, of
+`RelativeRoot.kernelCentralizer_le_dynamicCentralizer_of_pairing_eq_zero`. -/
 theorem RelativeRoot.kernelCentralizer_le_dynamicCentralizer {a : characterLattice T}
     {ζ : cocharacterLattice T} (h : latticePairing T a ζ = 0) :
     RelativeRoot.kernelCentralizer i a ≤
-      Dynamic.centralizer (CommGroupScheme.groupHom ζ ≫ i) := by
-  intro U g hg
-  rw [RelativeRoot.mem_kernelCentralizer] at hg
-  rw [Dynamic.mem_centralizer]
-  have hζa : ζ ≫ a = 0 := by
-    apply (gmEndEquiv k).injective
-    rw [map_zero]
-    exact h
-  let t := snd U (Gm (Spec (CommRingCat.of k))).X
-  let x : U ⊗ (Gm (Spec (CommRingCat.of k))).X ⟶ T.X :=
-    t ≫ (CommGroupScheme.groupHom ζ).hom.hom
-  have hx : x ≫ (CommGroupScheme.groupHom a).hom.hom = 1 := by
-    change (t ≫ (CommGroupScheme.groupHom ζ).hom.hom) ≫ (CommGroupScheme.groupHom a).hom.hom = 1
-    rw [← comp_groupHom_comp, hζa, comp_groupHom_zero]
-  let c := (kernelPointsEquiv (CommGroupScheme.groupHom a)
-    (U ⊗ (Gm (Spec (CommRingCat.of k))).X)).symm ⟨x, hx⟩
-  have hc : c ≫ (kernelι (CommGroupScheme.groupHom a)).hom.hom = x :=
-    congrArg Subtype.val ((kernelPointsEquiv _ _).apply_symm_apply ⟨x, hx⟩)
-  have hcomm := hg _ (fst U (Gm (Spec (CommRingCat.of k))).X) c
-  have hci : c ≫ (RelativeRoot.characterKernelι a ≫ i).hom.hom =
-      t ≫ (CommGroupScheme.groupHom ζ ≫ i).hom.hom := by
-    simp only [Grp.comp_hom_hom]
-    rw [← Category.assoc, hc, Category.assoc]
-  rw [hci] at hcomm
-  simp only [Dynamic.orbit]
-  rw [← hcomm.eq, mul_inv_cancel_right]
+      Dynamic.centralizer (CommGroupScheme.groupHom ζ ≫ i) :=
+  RelativeRoot.kernelCentralizer_le_dynamicCentralizer_of_pairing_eq_zero i a ζ h
 
 variable [Mono i.hom.hom.left]
 

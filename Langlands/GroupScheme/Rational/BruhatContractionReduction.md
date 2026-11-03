@@ -29,6 +29,25 @@ actual quotient `N(k)/Z(k)`. It retains four inputs: the centralizer
 identity, unipotent covering, all-test opposite-cell injectivity for each
 cocharacter, and the product-contraction condition.
 
+The additional covering adapter
+`unipotentNormalizerCovering_of_parabolicNormalizerCovering` starts from
+`G(k) = P(k) N(k) P(k)`. The published rational Levi factorizations write
+the left parabolic factor as `u a` and the right one as `b v`, with `u, v`
+in `U(k)` and `a, b` in `Z(χ)(k)`. Under the centralizer identity, both
+Levi factors belong to the actual whole-torus centralizer and hence the
+normalizer. Thus `g = u (a n b) v` supplies `U(k) N(k) U(k)` covering.
+This uses only group factorization and the existing centralizer-to-normalizer
+inclusion, with no surjectivity premise.
+
+`hasRationalBruhatDecomposition_of_parabolicCovering_and_productContractions`
+combines this adapter with the preceding assembly. It supplies all-test
+opposite-cell injectivity for every cocharacter from the proved affine
+intersection corollary in `Rational.BruhatOppositeCellReduction`. It retains
+exactly the centralizer identity, parabolic covering and the
+product-contraction condition as explicit mathematical inputs. The covering
+input has the same form as the covering half of the published Bruhat
+predicate, so the structural covering theorem can be used directly.
+
 The first centralizer-transport lemmas hold over an arbitrary base scheme.
 The factorization theorem uses an arbitrary field in universe `u`, an
 affine ambient group and a commutative source group, with the displayed
@@ -39,4 +58,7 @@ required for the exact rational Bruhat theorem.
 
 The provenance is internal composition of the existing normalizer action,
 all-test torus-centralizer normalization, dynamic functoriality,
-`Dynamic.NormalizedLimits` and `Dynamic.OppositeCellContraction`.
+`Dynamic.NormalizedLimits` and `Dynamic.OppositeCellContraction`. The
+additional assembly uses the published rational Levi decompositions and
+the affine opposite-intersection corollary; it proves no new geometric
+existence assertion.

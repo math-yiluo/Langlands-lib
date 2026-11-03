@@ -42,12 +42,16 @@ assume that `i` is a monomorphism. The reflection-data section also assumes
 
 `RelativeRoot.kernelCentralizer_le_dynamicCentralizer`: if a character `a`
 and a cocharacter `ζ` satisfy `⟨a, ζ⟩ = 0`, then every point centralizing the
-kernel of `a` lies in the dynamic centralizer of `ζ ≫ i`. The proof turns
-the pairing condition into `ζ ≫ a = 0` through the published identification
-of endomorphisms of `𝔾_m` with `ℤ`. The universal `𝔾_m`-point pushed forward
-by `ζ` therefore factors through the kernel of `a`. A kernel-centralizing
-point commutes with this point, and that commutation is exactly the defining
-condition of the dynamic centralizer.
+kernel of `a` lies in the dynamic centralizer of `ζ ≫ i`. It is the case of
+a field `k`, with `a` and `ζ` implicit, of
+`RelativeRoot.kernelCentralizer_le_dynamicCentralizer_of_pairing_eq_zero`
+from the published module `Langlands.GroupScheme.Rational.CocharacterCentralizer`.
+That lemma holds over any integral domain, and the proof here just applies it.
+Its argument: the pairing condition becomes `ζ ≫ a = 0` through the
+identification of endomorphisms of `𝔾_m` with `ℤ`, so the universal
+`𝔾_m`-point pushed forward by `ζ` factors through the kernel of `a`. A
+kernel-centralizing point commutes with this point, and that commutation is
+exactly the defining condition of the dynamic centralizer.
 
 `cocharacterAut_normalizingAut_eq_of_mem_dynamicCentralizer`: a rational
 normalizing point `n` in the dynamic centralizer of `ζ ≫ i` fixes `ζ` under

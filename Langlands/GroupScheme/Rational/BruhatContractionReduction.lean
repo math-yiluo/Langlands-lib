@@ -161,4 +161,47 @@ theorem hasRationalBruhatDecomposition_of_productContractions
   hasRationalBruhatDecomposition_of_unipotent_covering_and_separation i ν hZ hcover
     (hasUnipotentNormalizerSeparation_of_productContractions i ν hZ hcell hcontractions)
 
+/-- The two Levi factorizations absorb the centralizer factors into the
+normalizer and convert parabolic covering into unipotent covering. -/
+theorem unipotentNormalizerCovering_of_parabolicNormalizerCovering
+    (hZ : Dynamic.centralizer (CommGroupScheme.groupHom ν ≫ i) = torusCentralizer i)
+    (hcover : ∀ g : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ G.X,
+      ∃ n ∈ normalizerPoints i,
+        ∃ p ∈ (Dynamic.parabolic (CommGroupScheme.groupHom ν ≫ i)).carrier (Over.mk (𝟙 _)),
+        ∃ q ∈ (Dynamic.parabolic (CommGroupScheme.groupHom ν ≫ i)).carrier (Over.mk (𝟙 _)),
+          g = p * n * q) :
+    ∀ g : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ G.X,
+      ∃ (n : normalizerPoints i)
+        (u v : RationalPoint.unipotent (CommGroupScheme.groupHom ν ≫ i)),
+        g = u * n * v := by
+  let χ := CommGroupScheme.groupHom ν ≫ i
+  intro g
+  obtain ⟨n, hn, p, hp, q, hq, heq⟩ := hcover g
+  obtain ⟨⟨u, a⟩, ⟨hu, ha, hpa⟩, _⟩ :=
+    RationalPoint.existsUnique_unipotent_mul_levi χ hp
+  obtain ⟨⟨b, v⟩, ⟨hb, hv, hqb⟩, _⟩ :=
+    RationalPoint.existsUnique_levi_mul_unipotent χ hq
+  have hZpts := rationalLevi_eq_centralizerPoints_of_eq i ν hZ
+  have haZ : a ∈ centralizerPoints i := hZpts ▸ ha
+  have hbZ : b ∈ centralizerPoints i := hZpts ▸ hb
+  let aN : normalizerPoints i := ⟨a, centralizerPoints_le_normalizerPoints i haZ⟩
+  let bN : normalizerPoints i := ⟨b, centralizerPoints_le_normalizerPoints i hbZ⟩
+  refine ⟨aN * ⟨n, hn⟩ * bN, ⟨u, hu⟩, ⟨v, hv⟩, ?_⟩
+  simpa only [hpa, hqb, aN, bN, Subgroup.coe_mul, mul_assoc] using heq
+
+/-- In an affine ambient group, parabolic covering and genuine opposite-cell
+product contractions give the rational Bruhat decomposition. -/
+theorem hasRationalBruhatDecomposition_of_parabolicCovering_and_productContractions
+    (hZ : Dynamic.centralizer (CommGroupScheme.groupHom ν ≫ i) = torusCentralizer i)
+    (hcover : ∀ g : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ G.X,
+      ∃ n ∈ normalizerPoints i,
+        ∃ p ∈ (Dynamic.parabolic (CommGroupScheme.groupHom ν ≫ i)).carrier (Over.mk (𝟙 _)),
+        ∃ q ∈ (Dynamic.parabolic (CommGroupScheme.groupHom ν ≫ i)).carrier (Over.mk (𝟙 _)),
+          g = p * n * q)
+    (hcontractions : HasNormalizerProductContractions i ν) :
+    HasRationalBruhatDecomposition i ν :=
+  hasRationalBruhatDecomposition_of_productContractions i ν hZ
+    (unipotentNormalizerCovering_of_parabolicNormalizerCovering i ν hZ hcover)
+    (fun ξ => hasInjectiveOppositeCellMultiplication_of_isAffine i ξ) hcontractions
+
 end Langlands.GroupScheme
