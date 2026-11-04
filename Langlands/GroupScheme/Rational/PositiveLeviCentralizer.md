@@ -62,6 +62,12 @@ scheme isomorphism from the original `L` to any supplied representative
 `m` is exactly `l ≫ j`; its inverse followed by `l ≫ j` is exactly `m`.
 These statements retain the original ambient inclusions.
 
+The local instances for affineness over the splitting extension and for
+affineness, smoothness and connectedness over the algebraic closure have explicit
+module-specific names. This prevents generated declaration names from colliding
+with other base-change developments during combined imports and kernel replay.
+Their types, bodies and local scope are unchanged.
+
 No splitness of `A`, reductivity, minimality, or maximal splitness is claimed
 or needed by this adapter. The positive direction and the common-torus
 presentation over the algebraic closure remain explicit obligations.

@@ -1,0 +1,32 @@
+# Complete KP model-morphism and facet clauses
+
+This supplied-data interface assembles all of Axiom 4.1.22 of Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023), printed pp.163–164 / PDF pp.194–195. The authors' 1 November 2024 corrections, PDF p.27, include this axiom in corrected Definition 4.1.26. It asserts no existence or truth of the axiom, and does not supply the other nine axiom groups.
+
+`BuildingModelQuotientFamily B M` supplies a radical and quotient for each actual building facet. Its model is literally `M.facetModels.model F`, the restriction of the same subset-indexed `BuildingModelFamily` used for Axiom 4.1.20. There is no independently chosen facet model. `FacetAxiomClauses.reductive_quotients` requires every supplied radical to satisfy the greatest smooth connected normal unipotent closed-subgroup property and every supplied quotient to represent the fppf quotient and be connected reductive. These properties expand through `SpecialFibreQuotientData.IsReductiveQuotient`. The neutral special fibre and its reductive quotient remain different actual group schemes with a specified projection.
+
+The ambient field is an arbitrary-universe nonarchimedean local field; the model base is a local integral domain with that fraction field, specializing to its valuation ring. The reflection datum `Droot : RelativeRootReflectionData B.i` refers to the actual relative roots and actual normalizer reflections of the original maximal split torus. No additional splitness assumption on the reductive group or reducedness assumption on its relative root system is made.
+
+For a chart `g A(S)`, the family supplies an integral torus with generic inclusion `B.i ≫ Int(g)`. Conjugation parametrizes the translated torus by the same abstract `S`; its character and cocharacter coordinates remain those of `S`. Accordingly, `HasApartmentLieWeightSignFormula` permits this conjugated generic inclusion while using the existing apartment's affine coordinates and the canonical generic-to-special character identification of that same integral torus. On the original inclusion it is definitionally the earlier `HasLieWeightSignFormula`, as `apartmentLieWeightSignFormula_eq` proves. Both formulas use the actual closed schematic image in the target quotient, its actual differential image and all coefficient-extension weight spaces; they do not replace that Lie algebra by the differential image of a possibly inseparable source morphism.
+
+`apartmentDerivativeRootCorootGraph` similarly permits the conjugated torus inclusion. It uses the actual affine roots of `B` vanishing identically on the facet coordinates, their derivative characters in `relativeRoots B.i`, and their corresponding coroots from `Droot`. Conjugation identifies these with the roots and coroots for the translated inclusion. Both lattices are transported through the same integral split torus. On the original inclusion its graph equals `facetDerivativeRootCorootGraph` by reflexivity, as the named graph comparison proves. `HasApartmentDerivativeRootDatum` requires a genuine finite root datum of the actual quotient with its actual pairing and roots, and equality of the whole paired root-coroot graph. It uses the direct map from the facet's own special torus into its quotient, without a chosen self-comparison morphism.
+
+All common-chart clauses quantify over every actual common translated-apartment presentation of the incident facets and use the existing affine-root face relation. Identification of these coordinates and face relations with the full polysimplicial building belongs to the surrounding building validity. Splitting is asserted in `common_tori`; the proof arguments in the lattice formulas therefore cannot make those formulas vacuous. Equality cases are included by the existing reflexivity of `FacetPrecedes`.
+
+The following table gives the complete source map. Field names are in `BuildingModelQuotientFamily.FacetAxiomClauses`.
+
+| Original passage | Elaborated clause |
+| --- | --- |
+| 4.1.22 preamble, printed p.163 / PDF p.194 | `BuildingModelFamily.morphism`, `BuildingModelFamily.SatisfiesGeneralMorphismAxioms`: actual full and neutral morphisms with identity generic fibres, component compatibility, integral-point inclusions and preservation of every torus |
+| 4.1.22(1), same page | The same general predicate requires `RelativeComponentModelHom.HasSmoothConnectedUnipotentKernel` |
+| Maximal reductive quotient used throughout (3)–(7), printed p.164 / PDF p.195 | `reductive_quotients` |
+| 4.1.22(2), same page | `parabolic_images`, using the neutral special-fibre schematic image |
+| 4.1.22(3), first paragraph, same page | `common_tori`, using `HasMaximalSplitTori` for the same torus in both neutral fibres and in the actual quotient |
+| 4.1.22(3), second paragraph, same page | `lie_weight_signs`, using `HasApartmentLieWeightSignFormula`: every point of the target facet, every original real cocharacter vector carrying it into the source facet, and the weak nonnegative inequality |
+| 4.1.22(4), same page | `reduction_preimages`, using `HasParabolicReductionPreimage`; the entire residue-field-point group of the schematic image occurs |
+| 4.1.22(5), same page | `parabolic_order`, using the all-building-facet `HasFacetParabolicOrderBijection` onto all actual parabolic subgroup functors, with opposite inclusion |
+| 4.1.22(6), same page | `derivative_root_data`, using `HasApartmentDerivativeRootDatum` for every facet presentation |
+| 4.1.22(7), same page | `positive_radicals`, using `SatisfiesPositiveRadicalClause` for the same source and target quotients, including reduction surjectivity |
+
+`SatisfiesFacetAxioms` is the Prop-valued definition of the named facet fields. `SatisfiesMorphismAxioms` conjoins it with the general ordered-subset clauses, so it is the complete Axiom 4.1.22 predicate on these supplied models and quotients. Its `general` and `facets` accessors are the two conjunction projections. The four coordinate comparison and projection proofs are intrinsic packaging facts, with provenance in the previously defined raw clauses and the original chart construction.
+
+The full corrected ten-axiom assembly must use `BuildingModelFamily.SatisfiesModelAxioms` and this predicate on the same `M`, together with the remaining building and action clauses. No model, radical, quotient or building existence theorem, fixer/parahoric comparison, unramified descent, or Theorem 9.2.7 certificate is inferred here.

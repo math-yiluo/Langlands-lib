@@ -62,20 +62,22 @@ local notation "omega" => toAlgebraicClosure k
 local notation "B" => GroupScheme.baseChange omega
 local notation "chi" => CommGroupScheme.groupHom nuA ≫ a ≫ l ≫ j
 
-local instance : IsAffineHom
+local instance positiveLeviCentralizerExtensionIsAffineHomU : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj U).X.hom := by
   change IsAffineHom (Limits.pullback.snd U.X.hom (algebraBaseMap k K))
   infer_instance
 
-local instance : IsAffineHom (Functor.obj B G).X.hom := by
+local instance positiveLeviCentralizerClosureIsAffineHomG :
+    IsAffineHom (Functor.obj B G).X.hom := by
   change IsAffineHom (Limits.pullback.snd G.X.hom omega)
   infer_instance
 
-local instance : Smooth (Functor.obj B G).X.hom := by
+local instance positiveLeviCentralizerClosureSmoothG : Smooth (Functor.obj B G).X.hom := by
   change Smooth (Limits.pullback.snd G.X.hom omega)
   infer_instance
 
-local instance : ConnectedSpace (Functor.obj B G).X.left :=
+local instance positiveLeviCentralizerClosureConnectedSpaceG :
+    ConnectedSpace (Functor.obj B G).X.left :=
   G.connectedSpace_baseChange_of_smooth_affine omega
 
 variable (hT : IsSplitTorus

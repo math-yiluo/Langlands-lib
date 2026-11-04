@@ -103,11 +103,13 @@ variable (k K : Type u) [Field k] [Field K] [Algebra k K]
 local notation "b" => algebraBaseMap k K
 local notation "T_K" => Functor.obj (CommGroupScheme.baseChange b) T
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
+local instance normalizedPositiveDescentGaloisRangeIsAffineHomU :
+    IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd U.X.hom b)
   infer_instance
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance normalizedPositiveDescentGaloisRangeIsAffineHomG :
+    IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 
@@ -157,29 +159,32 @@ local notation "j_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) j
 local notation "i_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) i
 local notation "d_K" => d.baseChange b
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
+local instance normalizedPositiveDescentExtensionIsAffineHomU :
+    IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd U.X.hom b)
   infer_instance
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance normalizedPositiveDescentExtensionIsAffineHomG :
+    IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 
-local instance : IsAffineHom (M_K).X.hom := by
+local instance normalizedPositiveDescentExtensionIsAffineHomM : IsAffineHom (M_K).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd M.X.hom b)
   infer_instance
 
-local instance : Smooth (M_K).X.hom := by
+local instance normalizedPositiveDescentExtensionSmoothM : Smooth (M_K).X.hom := by
   change Smooth (CategoryTheory.Limits.pullback.snd M.X.hom b)
   infer_instance
 
-local instance : ConnectedSpace (M_K).X.left :=
+local instance normalizedPositiveDescentExtensionConnectedSpaceM :
+    ConnectedSpace (M_K).X.left :=
   M.connectedSpace_baseChange_of_smooth_affine b
 
-local instance : Mono (i_K).hom.hom :=
+local instance normalizedPositiveDescentExtensionMonoI : Mono (i_K).hom.hom :=
   inferInstanceAs (Mono ((Over.pullback b).map i.hom.hom))
 
-local instance : Mono (t_K).hom.hom.left := by
+local instance normalizedPositiveDescentExtensionMonoT : Mono (t_K).hom.hom.left := by
   let : Mono t.hom.hom := Over.mono_of_mono_left _
   let : Mono (t_K).hom.hom :=
     inferInstanceAs (Mono ((Over.pullback b).map t.hom.hom))

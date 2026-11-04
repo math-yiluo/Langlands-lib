@@ -101,3 +101,10 @@ action and equivariant inclusion, and the specified component and lift. It does
 not infer these from parabolic minimality and does not prove
 `MinimalParabolicLeviCentralizerStatement`, ambient maximal splitness, or the
 radical and centralizer equalities of that target.
+
+All nine local instances for base-changed affineness, smoothness, connectedness
+and monomorphisms have explicit names distinguishing this module, the Galois
+range and positive-descent sections, and the relevant objects. This prevents
+generated declaration names from colliding with other base-change developments
+during combined imports and kernel replay. Their types, bodies and local scope
+are unchanged.

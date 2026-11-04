@@ -74,3 +74,9 @@ adds local finite type of `G` for finiteness of the actual support. It preserves
 the original component and lift. It does not identify their ambient centralizer
 with a supplied Levi, prove ambient maximal splitness, or construct a radical
 factorization, splitting field, root system or initial positive direction.
+
+All six local instances for base-changed affineness, local finite type and
+monomorphisms have explicit names distinguishing this module, its two sections
+and the relevant objects. This prevents generated declaration names from
+colliding with other base-change developments during combined imports and kernel
+replay. Their types, bodies and local scope are unchanged.

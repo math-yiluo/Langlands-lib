@@ -58,19 +58,22 @@ local notation "t_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) t
 local notation "i_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) i
 local notation "d_K" => d.baseChange b
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
+local instance positiveSourceRefinementSourceIsAffineHomU :
+    IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
   change IsAffineHom (Limits.pullback.snd U.X.hom b)
   infer_instance
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance positiveSourceRefinementSourceIsAffineHomG :
+    IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (Limits.pullback.snd G.X.hom b)
   infer_instance
 
-local instance : LocallyOfFiniteType ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance positiveSourceRefinementSourceLocallyOfFiniteTypeG :
+    LocallyOfFiniteType ((GroupScheme.baseChange b).obj G).X.hom := by
   change LocallyOfFiniteType (Limits.pullback.snd G.X.hom b)
   infer_instance
 
-local instance : Mono (i_K).hom.hom :=
+local instance positiveSourceRefinementSourceMonoI : Mono (i_K).hom.hom :=
   inferInstanceAs (Mono ((Over.pullback b).map i.hom.hom))
 
 include hi in
@@ -169,11 +172,12 @@ local notation "T_K" => Functor.obj (CommGroupScheme.baseChange b) T
 local notation "t_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) t
 local notation "d_K" => d.baseChange b
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
+local instance positiveSourceRefinementNormalizedIsAffineHomU :
+    IsAffineHom ((GroupScheme.baseChange b).obj U).X.hom := by
   change IsAffineHom (Limits.pullback.snd U.X.hom b)
   infer_instance
 
-local instance : Mono (t_K).hom.hom.left := by
+local instance positiveSourceRefinementNormalizedMonoT : Mono (t_K).hom.hom.left := by
   let : Mono t.hom.hom := Over.mono_of_mono_left _
   let : Mono (t_K).hom.hom :=
     inferInstanceAs (Mono ((Over.pullback b).map t.hom.hom))
