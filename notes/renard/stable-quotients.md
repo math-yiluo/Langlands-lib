@@ -7,6 +7,8 @@ quotient sequence and actual localization constructions. It also distinguishes
 the published internal finite-localization theorems from the unresolved
 source-facing nonunital finiteness convention. The additive-to-scalar comparison
 below supplies explicit sufficient conditions for the actual localization.
+The separate additive stable-image proof identifies that localization for
+every supplied positive stable power, without finiteness hypotheses.
 This documentation records partial Appendix C coverage; the whole-book
 formalization remains open.
 
@@ -272,9 +274,55 @@ Their Noetherian and finite hypotheses are explicit ordinary hypotheses
 over the specified unitizations. They do not identify those hypotheses
 with Renard's terminology, and neither aggregate contains a stable-image
 identification. The compatible stable-image conclusions in the earlier
-internal finite-localization theorem are separate results. The additive
-stable-image branch is not re-audited here; the complete source-facing
-C.II proposition remains open at the convention comparison.
+internal finite-localization theorem and the additive result below are
+separate results. The complete source-facing C.II proposition remains open
+at the convention comparison.
+
+## Canonical stable image for original additive actions
+
+The published theorem
+`Langlands.Renard.AdditiveActionLocalization.additiveStablePowerImageStatement`
+proves exactly
+`Langlands.Renard.AdditiveActionLocalization.AdditiveStablePowerImageStatement.{uA, uV}`.
+Its [statement](../../Langlands/Algebra/RenardAdditiveStableImageStatements.md),
+authored by Workers 709 and 926, and
+[proof](../../Langlands/Algebra/RenardAdditiveStableImageProof.md),
+authored by Workers 490 and 926, give an internal, finiteness-free refinement
+motivated by the stable-image conclusion on printed279/PDF285.
+
+The data are an arbitrary nonunital ring A, an additive commutative group V
+with its original `NonUnitalModule A V`, and an original additive
+`NonUnitalModuleHom A V V`. Set
+`a = f.toAddMonoidHom.toIntLinearMap`. For every supplied `n > 0`, assume
+exactly `ker(a^n) = ker((a^n)^2)` and
+`range(a^n) = range((a^n)^2)` as integer-submodule equalities.
+The conclusion `AdditiveStablePowerImageAt f n` gives complementary
+compatible kernel and image K and I of the actual unitized power, and a
+unique integer-linear equivalence from the actual `Localized a` to
+`I.toSubmodule`. It intertwines the actual localized action with the
+restricted original action, and the actual localized operator with a.
+Its inverse is the restriction of the actual canonical map `iota a`.
+All three equations occur inside the unique-existence predicate;
+uniqueness uses that inverse normalization.
+
+The proof first establishes coherence of the converted unitized powers
+with the ordinary integer-linear powers. It applies the published ordinary
+stable-image theorem at ℤ, then reflects complementarity through the
+injective compatible-submodule forgetful map. The canonical map on I is
+bijective; its inverse defines the required equivalence. Injectivity of
+that inverse, `localizedAction_iota` and `iota_intertwines` prove the action
+and operator equations. Equality of inverse maps proves uniqueness.
+The proof locally selects the existing scalar module of the actual
+localization and constructs no replacement action or localization.
+
+The acting-ring and carrier universes remain independent. Noncommutative
+rings, degenerate actions and arbitrary carriers are included. Canonical
+integer scalars are separate from the original action, even when A is ℤ
+acting by zero. There is no complex-vector-space, unit-action,
+nondegeneracy, dimension, Noetherian or finiteness premise.
+This theorem assumes stability of the supplied positive power; it does
+not prove eventual stability or interpret Renard's finiteness terminology.
+It therefore leaves the complete source-facing proposition open.
 
 ## Additive-to-scalar sufficient conditions
 
@@ -336,6 +384,8 @@ against the published Library.
 | Actual compatible algebra-action construction | `ce219e42-e734-408f-a5b7-32d786a5a581`, Reviewer 4091 | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
 | Complex-compatible unitized Noetherian proof | `cc923777-9dbd-44e9-9753-6154fc2dd6ca`, Reviewer 4582 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
 | Original-additive unitized Noetherian proof | `ac573fe2-4e6b-41d5-8195-c6b4014a4b32`, Reviewer 4838 | `d3985dbb10c55a703b1ca560439739837d09e8a6` |
+| Original-additive canonical stable-image statement | `0b6b9832-9dcc-4643-a427-94c24dfcb09d`, Reviewer 4816 | `7e64f8e360c8778e04e5da7f9cd382cda7c837f6` |
+| Original-additive canonical stable-image proof | `932a8912-e918-40ae-807a-3d1a542501cd`, Reviewer 4888 | `e4fe0c0f7a3256e25c5a2d255ea294641c141ac5` |
 | Internal stable-ideal finite localization proof | `9bba1e51-88ef-4b14-830e-f1c480e324c3`, exact statement `554ff789-621a-4049-a9c2-ef9778dc73e8` | `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
 | Internal additive-to-scalar statement | `142cecb6-aba9-4fec-ad2f-7cb993888218`, Reviewer 5746 | `26e9adf301abba95f343f5005d9f478af9fc09d4` |
 | Internal additive-to-scalar finite-localization proof | `f4447811-d9db-47ac-8da3-ae255a859613`, Reviewer 5804 | `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` |
@@ -370,6 +420,22 @@ artifact, publication commit, current Library
 closures are unchanged across each proof's Library base, publication,
 current Library and workspace. These checks verify the listed internal
 publications; they do not resolve the source-convention comparison.
+
+For the additive stable-image proof, machine receipt
+`f1ab16ea-bf2d-45c0-b9eb-4cd1913c8f4d` accepts the Lake build, exact
+target, unchanged statement and frozen inputs under `lean.proof@1`.
+Independent Reviewer 4888 approves without qualifications; integration
+`ee57f3bb638d48048e394ac94ee5fc70` publishes the pair with a successful
+fresh integrated build. Worker 709 read the complete independent report
+and both current proof/statement pairs. Their hashes match their frozen
+artifacts, publication commits, current Library
+`66022d3631d55433e7dc5f97f0e78671522d05a3` and workspace. All 22
+Lean/Markdown files in the target statement's project import closure are
+unchanged across the proof's original Library base, integration base,
+publication, current Library and workspace. Focused proof task
+`41265157-23db-48f3-87f6-a116b5c57781` revision 1 is complete; this
+verifies the listed internal result, with the source-facing boundary
+described above.
 
 The whole-book parent retains the source-convention comparison and every other
 unassigned assertion. This note updates only the listed passages and preserves
