@@ -182,7 +182,7 @@ The [A.III.1 endomorphism-localization progress note](endomorphism-localization.
 dated 31 October 2026 by Worker 709, verifies the published kernel/exhaustion,
 quotient-comparison, extension-converse, surjective-map and B-linear
 universal-property proofs. It updates the A.III navigation row only; categorical
-packaging, localization exactness, representability and other A.III assertions
+packaging, representability and other A.III assertions
 were retained as open at that audit date.
 The [A.III universal-arrow and representability source map](universal-representability-progress.md),
 dated 4 November 2026 by Worker 709, verifies four further published proof units:
@@ -193,8 +193,15 @@ polynomial-module/endomorphism equivalence, distinguishing it from the remaining
 categorical transport of the chosen localization universal arrow.
 The final representability remark and
 compatible-uniqueness corollary have a published statement and a waiting exact
-proof task. Ring-denominator constructions, other example comparisons,
-localization exactness and further A.III obligations remain separate.
+proof task. Ring-denominator constructions, other example comparisons
+and further A.III source obligations remain separate.
+The 4 November localization clarification in the same map distinguishes
+these source assertions from the internal functoriality and exactness
+comparisons for chosen models. Pinned Mathlib already supplies an additive
+exact localization functor, with an explicit smallness premise; its
+`Shrink` model and target category still require comparison with the project's
+lifted local-module objects. No general localization-exactness assertion
+occurs in the audited PDF258–259 or A.VIII.1 PDF271–272 passages.
 These updates change only A.III navigation; all other initial-pass statuses
 retain their stated date and scope, and no section completion is declared.
 
@@ -862,7 +869,7 @@ including definitions, remarks and unnumbered results.
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and five published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers, the all-subobjects equivalence under arbitrary unions, and actual unital-module comparisons. Other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
-| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [four further published proof units and the polynomial-module equivalence](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda and the isomorphism principles. The final representability remark/corollary has a published statement with exact proof waiting; ring-denominator constructions, categorical transport of the chosen localization universal arrow, other example comparisons, localization exactness and remaining assertions retain separate obligations |
+| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [four further published proof units and the polynomial-module equivalence](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda and the isomorphism principles. The final representability remark/corollary has a published statement with exact proof waiting; ring-denominator constructions, categorical transport of the chosen localization universal arrow, other example comparisons and remaining source assertions retain separate obligations. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
 | A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four published statement/proof pairs and the concrete filtered-colimit construction and statements](limits-colimits-progress.md). The actual quotient, compatible-family lift, eventual-zero and separate empty-cocone targets await proof acceptance and publication in the focused successor; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. Full-module AB5/AB6 examples, other examples, subcategory criteria, source adapters and other AB5 comparisons remain separate |

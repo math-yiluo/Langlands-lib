@@ -224,6 +224,70 @@ After independent acceptance and actual publication, the chosen lifted
 canonical-arrow comparison, its Prop-valued initiality statement and
 its exact proof remain successive obligations.
 
+## Existing exact localization functor and internal comparisons
+
+The localization assertions on printed pp.252–253 / PDF258–259 are the
+ring and module universal problems, the polynomial-module equivalence,
+the endomorphism and B-module universal properties, and the subsequent
+kernel, quotient, exhaustion, converse and surjective-map results.
+These pages assert no general localization-functor exactness theorem.
+A.VIII.1, printed pp.265–266 / PDF271–272, gives the general definitions
+and results for exact functors; it contains no localization example.
+Its actual source assertions are recorded in the
+[A.VIII.1 source map](exact-functors-progress.md).
+The earlier labels “functorial localization” and “localization exactness”
+in this A.III backlog therefore refer to internal comparisons for the
+chosen constructions, rather than additional literal assertions in
+either passage. This bounded source check says nothing about other
+localization uses elsewhere in the book.
+
+The pinned Mathlib already provides the actual additive exact functor
+
+```text
+ModuleCat.localizedModuleFunctor.{v} S :
+  ModuleCat.{v} R ⥤ ModuleCat.{v} (Localization S).
+```
+
+For `R : Type u`, `[CommRing R]` and `S : Submonoid R`, this construction
+requires `[Small.{v} R]`. The carrier and coefficient universes remain
+independent subject to that explicit premise. Smallness is automatic
+when the module-carrier universe contains the ring universe, as in the
+project's common universe `max u v w`.
+Nailin Guan's
+[Mathlib localization module](https://github.com/leanprover-community/mathlib4/blob/5ed2965256430c3649e86755f9576b54eca72435/Mathlib/Algebra/Category/ModuleCat/Localization.lean)
+defines `ModuleCat.localizedModule` using `Shrink (LocalizedModule S M)`,
+the canonical map `ModuleCat.localizedModuleMkLinearMap`, and the
+morphism map `ModuleCat.localizedModuleMap` using
+`IsLocalizedModule.mapExtendScalars`. It supplies `Additive`,
+`PreservesFiniteLimits` and `PreservesFiniteColimits` instances, and
+`ModuleCat.localizedModuleFunctor_map_exact` for every exact short
+complex.
+
+Composing this functor with
+`ModuleCat.restrictScalars (algebraMap R (Localization S))` gives an
+actual R-module-valued additive exact functor. The pinned
+[change-of-rings exactness module](https://github.com/leanprover-community/mathlib4/blob/5ed2965256430c3649e86755f9576b54eca72435/Mathlib/Algebra/Category/ModuleCat/ChangeOfRingsExact.lean)
+supplies finite-limit and finite-colimit preservation for that
+restriction of scalars. The published
+`Langlands.Renard.sequenceExactFinitePreservation` translates these
+instances to the source sequence-exactness predicate for both functors.
+A private development check on 4 November verified both specializations
+with zero diagnostics; it is not a new independently accepted project
+proof receipt.
+
+Mathlib's functor lands in modules over `Localization S`; the project's
+`ModuleLocalization.LocalModuleCat S` is instead the full category of
+R-modules selected by `IsSLocal S`. Moreover, the project's
+`raisedSource`, `canonicalLocalObject` and `canonicalModuleMap` use the
+explicit ULifts described above, whereas Mathlib uses Shrink.
+An actual comparison must identify these carriers, canonical maps and
+morphism maps and, when needed, the full-subcategory target. Exactness
+of the existing functor alone does not provide those identifications
+or the restricted endomorphism equivalence. Reuse that functor when a
+concrete consumer requires such a comparison. The existing restricted
+equivalence task remains the source-facing transport prerequisite; this
+note introduces no duplicate construction or exactness task.
+
 ## The separate representability proof gate
 
 The published closed proposition is
@@ -323,9 +387,11 @@ parenthesis corrected as in the [Appendix A discrepancy note](appendix-a-correct
 For example 5, the remaining full categorical transport of the chosen
 localization universal arrow is specified above, separately from the
 published polynomial-module/endomorphism equivalence and object-level
-localization formulas. Localization exactness, functorial localization,
-further compatible comparisons for the concrete constructions and their
-adjunctions retain separate obligations. Existing adjunction results can be found in the
+localization formulas. Functorial and exactness comparisons with these
+chosen models are internal backlog, with an existing exact Mathlib
+functor available for reuse as explained above. Further compatible
+comparisons for the concrete constructions and their adjunctions retain
+separate obligations. Existing adjunction results can be found in the
 [A.V source map](adjunctions-progress.md).
 Neither these remaining comparisons nor the waiting representability
 proof may be counted as completed by the four proof publications above.

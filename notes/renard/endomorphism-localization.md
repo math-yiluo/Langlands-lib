@@ -151,9 +151,19 @@ with its proof's public base. No unchanged proof was rebuilt for this note.
 | Surjective-map corollary | `1c68f675-5a9a-4b5f-8f21-eadfd4fccc69`, Reviewer 4284 | `2363ee8b-83d1-4e40-9ef4-91e2775fd71f` | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
 | B-linear universal property | `4dc553b2-1a4a-4dca-b947-606cbc6f77b3`, Reviewer 4353 | `72139ae4-9f3c-4670-b787-65f54dee5424` | `4e6ed28ccc687ea7e0123318bc2516e1f4b79d11` |
 
-This is documentation of those published declarations. It does not establish
-full categorical universal-arrow packaging, general localization exactness,
-representability, the remaining examples or all assertions of A.III. The
+This is documentation of those published declarations. The remaining
+categorical comparison must transport the chosen lifted localization arrow
+through the restricted polynomial-module equivalence and identify its map
+with `E.iota` and its X-action with `E.localizedEnd`.
+The 4 November 2026 clarification under task revision 3 in the
+[A.III source map](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons)
+credits Mathlib's existing exact localization functor and distinguishes
+its Shrink model and target category from the project's chosen objects.
+Functoriality and exactness comparisons for those chosen models are
+internal obligations; the A.III.1 passages covered here contain no general
+localization-functor exactness assertion.
+Representability, the remaining examples and other A.III assertions retain
+their separate obligations. The
 [C.II audit](stable-quotients.md) separately records the internal
 stable-ideal finite-localization theorem; its source-facing nonunital
 Noetherian and finite-type convention comparison remains open. Existing task
