@@ -1,9 +1,9 @@
 # Renard A.I.3: Noetherian objects, finite type and unital modules
 
 Worker 709, 3 November 2026. This note maps the assertions on printed
-pages 248–249 / PDF254–255 to the current Library definitions, four
-independently published proof units and the remaining general
-all-subobjects proof obligation. It supplements the
+pages 248–249 / PDF254–255 to the current Library definitions and five
+independently published proof units, including the general
+all-subobjects equivalence. It supplements the
 [elementary categorical map](elementary-categories-source-map.md) and
 [whole-book ledger](coverage.md). It introduces no Lean declaration and
 does not close A.I.3, Appendix A or the book program.
@@ -56,7 +56,7 @@ use `CategoryTheory.Subobject X`, its existing factorization order and
 | A.I.3 first paragraph, PDF254 | `IsNoetherianObject X` means every nonempty subset has a maximal member. [`NoetherianCriteriaStatement`](../../Langlands/CategoryTheory/Renard/NoetherianCriteriaStatements.md) and proof [`noetherianCriteria`](../../Langlands/CategoryTheory/Renard/NoetherianCriteria.md) give the nonempty-chain and monotone natural-sequence criteria, together with an internal Mathlib comparison. |
 | A.I.3 last paragraph on PDF254 | `IsFiniteTypeObject X` includes `HasSubobjectUnions X` and excludes top as the least upper bound of a nonempty chain of proper subobjects. |
 | A.I.3 opening paragraph on PDF255 | `HasFiniteSubcoverProperty X` includes union existence and gives a finite subset of every subobject cover whose union is top. [`FiniteTypeFiniteSubcoverStatement`](../../Langlands/CategoryTheory/Renard/FiniteTypeFiniteSubcoverStatements.md) is proved by [`finiteTypeFiniteSubcover`](../../Langlands/CategoryTheory/Renard/FiniteTypeFiniteSubcover.md). This is the printed compactness characterization. |
-| A.I.3 next paragraph, PDF255 | [`NoetherianSubobjectFiniteTypeStatement`](../../Langlands/CategoryTheory/Renard/NoetherianSubobjectFiniteTypeStatements.md) states that an object is Noetherian iff every subobject's underlying object is of finite type, under `HasAllSubobjectUnions C`. The statement is published; its general proof remains open. |
+| A.I.3 next paragraph, PDF255 | [`NoetherianSubobjectFiniteTypeStatement`](../../Langlands/CategoryTheory/Renard/NoetherianSubobjectFiniteTypeStatements.md), proved by [`noetherianSubobjectFiniteType`](../../Langlands/CategoryTheory/Renard/NoetherianSubobjectFiniteType.md), says that an object is Noetherian iff every subobject's underlying object is of finite type, under `HasAllSubobjectUnions C`. |
 | A.I.3 category definition, PDF255 | `IsNoetherianCategory C` is `HasAllSubobjectUnions C ∧ ∀ X, IsFiniteTypeObject X → IsNoetherianObject X`. Mathlib's category-wide `CategoryTheory.Noetherian` has a different convention, including essential smallness. |
 | A.I.3 example, first sentence, PDF255 | [`ModuleFiniteType.ModuleFiniteTypeStatement`](../../Langlands/CategoryTheory/RenardModuleFiniteTypeStatements.md), proved by [`ModuleFiniteType.moduleFiniteType`](../../Langlands/CategoryTheory/RenardModuleFiniteTypeProof.md), compares source finite type with `Module.Finite R M`, and separately compares finite subcovers with the same algebraic predicate. |
 | A.I.3 example, second sentence, PDF255 | [`ModuleNoetherian.ModuleNoetherianStatement`](../../Langlands/CategoryTheory/RenardModuleNoetherianStatements.md), proved by [`ModuleNoetherian.moduleNoetherian`](../../Langlands/CategoryTheory/RenardModuleNoetherianProof.md), includes the internal object comparison with `IsNoetherian R M` and the source category comparison with left Noetherianity `IsNoetherianRing R`. |
@@ -97,6 +97,20 @@ a contradiction. Conversely, a finite subset of a nonempty chain has
 an upper bound inside that chain. A finite subcover would force that
 member to equal top. No distributivity or directedness assumption is
 used for arbitrary covers.
+
+`noetherianSubobjectFiniteType` transports Noetherianity to the
+underlying object of each subobject through Mathlib's
+`Subobject.subobjectOrderIso P`, then uses a maximal chain member to
+exclude top as the union of a nonempty chain of proper subobjects.
+For the converse, take the union `U` of a nonempty chain in
+`Subobject X` and pull the chain back into `Subobject (U : C)` through
+that interval order isomorphism. The pulled-back chain has least
+upper bound top. Finite type of `(U : C)` forces `U` to belong to the
+original chain, where it is maximal. The published
+`noetherianChainMaximality` criterion concludes Noetherianity.
+Renard's converse instead uses increasing sequences and finite
+subcovers. This implementation uses the finite-type chain condition
+directly and does not invoke `finiteTypeFiniteSubcover`.
 
 For actual modules, `ModuleFiniteType.hasSubobjectUnions` transports
 suprema along
@@ -149,9 +163,16 @@ no additional proof receipt.
 | Actual unital-module finite type, proof `e0a2ce4f-81e4-44fb-af45-8bc54f853910` | Reviewer 4092, `8182e185-cb51-4a8a-be4b-0c959a8aef24` | `2f68890ca03046909dee35c88882c3fe`; `355c05239d7704a3ed5d72bad864cb1d542b647a` |
 | Actual unital-module Noetherian comparisons, proof `daeef1c9-4062-4e6f-a5d8-9be2d43bed01` | Reviewer 4120, `49e71a02-69b7-4540-ba75-d6f1258945a6` | `1ed9d5ff6b53487e80c9236bca765029`; `9f141aa49982eab63f32f392c4c63dcb83837a19` |
 | All-subobjects equivalence, statement `2363d84e-7cf6-4e2c-8bba-622278171cc8` | Reviewer 4045, `895e2f0e-e38b-4941-98ad-b7f512e82897` | `abf6746c200c4c699d2576378e3b0fc2`; `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
+| All-subobjects equivalence, proof `c99a373c-94e7-41f0-b1c8-9e0b88181dd8` | Reviewer 11957, `42600e66-4f0d-435f-913f-1597f439c76e` | `321a51fc59e148d5908ed55324ac1a58`; `e0b64667d848b7b76f6f20b029ab4105a635091d` |
 
-The ten cited definition, statement and proof Lean/Markdown pairs match
-the admitted Library `6eec947454b4466fab00fb115b09f2dc49fe158b`.
+The ten previously cited definition, statement and proof Lean/Markdown
+pairs were checked against Library
+`6eec947454b4466fab00fb115b09f2dc49fe158b`. The added all-subobjects
+proof pair was checked against its frozen bundle and published Library
+`e0b64667d848b7b76f6f20b029ab4105a635091d`; both files match exactly.
+Its machine validation `04260fb6-8bad-494b-bc69-f0946ae34e9b` records
+successful build, exact-target, unchanged-statement and frozen-input
+checks.
 The current module-Noetherian proof reuses
 `ModuleFiniteType.hasSubobjectUnions`, as its integrated companion
 explains; its frozen candidate contained a duplicate helper.
@@ -165,11 +186,13 @@ Worker 702 and Worker 6 contributed the six-predicate definition.
 Workers 709 and 820 contributed the actual-module finite-type proof;
 Workers 709 and 735 contributed the actual-module Noetherian proof.
 Worker 6 and Worker 951 contributed the all-subobjects statement.
+Worker 937 authored its general proof and companion.
 This source map preserves those attributions.
 
-## Remaining general proof
+## General equivalence and remaining scope
 
-The exact published `NoetherianSubobjectFiniteTypeStatement C` is:
+The published theorem `noetherianSubobjectFiniteType C` proves the
+exact `NoetherianSubobjectFiniteTypeStatement C`:
 
 ```lean
 HasAllSubobjectUnions C →
@@ -179,16 +202,14 @@ HasAllSubobjectUnions C →
 ```
 
 The right side concerns the underlying object of every actual
-categorical subobject, including top. Proof task
-`b0f9eac8-d06f-44db-8205-0baab9f101f1`, revision 1, was checked on
-3 November 2026 as ready, with no executor, active attempt or candidate.
-That is task status, not proof evidence.
+categorical subobject, including top. The proof from task
+`b0f9eac8-d06f-44db-8205-0baab9f101f1`, revision 1, is independently
+accepted and published as recorded above. It retains
+`HasAllSubobjectUnions C` and independent object and Hom universes,
+with no abelian, zero-object, well-poweredness or smallness assumption.
 
-Renard's forward argument treats a chain of subobjects of a subobject
-inside the original object's subobject order. His converse takes the
-union of an increasing sequence and uses its finite type to obtain a
-finite subcover and stabilization. The published criteria and
-finite-subcover theorem provide reusable ingredients, but neither
-proves this exact categorical equivalence by itself. The general proof,
-later A.VI.3 assertions, other categorical constructions and the
-possibly nonunital comparison obligations remain separate.
+Later A.VI.3 assertions, other categorical constructions and the
+possibly nonunital comparison obligations remain separate. The
+general compact-element bridge remains an additional comparison;
+the printed finite-subcover characterization is already covered by
+its own proof.
