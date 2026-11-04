@@ -1,14 +1,17 @@
 # Renard 2026: small projectives and original nonunital modules
 
-Workers 6 and 709 record four published units and the remaining construction
+Workers 6 and 709 record nine published units and the remaining construction
 and proof boundaries. Worker 6 checked the finite-subcoproduct proof and
 the two statement units on 30 October 2026 against Library
 `6789e5106aba61566887427750f5444a494d5879`.
 Worker 709 verified the forward small-progenerator proof on 1 November 2026
-against Library `dac2bb9e83346876770fced17af26f0cba7f4c98`; the other status
-observations below retain their 30 October date. This supplements the
+against Library `dac2bb9e83346876770fced17af26f0cba7f4c98`, and the five
+additional units below on 3 November 2026 against Library
+`3362d2b69c660edc82f22f7158de73cf8d9e3519`. The first four receipt rows
+retain their historical verification dates. This supplements the
 [initial coverage ledger](coverage.md); its historical rows remain unchanged.
-It is a focused update, not a complete inventory of Appendix A or Chapter I.
+The note covers these units; the complete Appendix A and Chapter I objectives
+remain open.
 
 ## Source and conventions
 
@@ -144,7 +147,7 @@ Both proof files match the frozen candidate and the checked Library base:
 | `Langlands/CategoryTheory/Renard/SmallProgeneratorEquivalence.lean` | `c609fd1352a3abc7b9c7b9af01963b6064602cd911b92811209c41254500727e` |
 | `Langlands/CategoryTheory/Renard/SmallProgeneratorEquivalence.md` | `48fb8b7d15773145aecfa3ad616e28a06dbf08060d8880b13237ccd241dd39af` |
 
-## Published original-action Noetherian statements
+## Published original-action Noetherian statements and proof
 
 `Langlands.Algebra.IntegerOriginalSubmoduleNoetherianStatements` publishes
 `Langlands.Algebra.IntegerOriginalSubmoduleNoetherian.IntegerOriginalSubmoduleNoetherianStatement`.
@@ -171,26 +174,175 @@ carrier is `(z, a) • m = z • m + a • m`. Zero actions and zero carriers ar
 included; no original unit law, nondegeneracy, nontriviality or finiteness
 hypothesis is imposed.
 
-This is an internal comparison motivated by the source conventions,
-I.2.1 and A.I.2–3. It does not identify categorical subobjects with these
-subgroups, choose Renard's finite-type convention, or establish a
-nonunital Noetherian-algebra criterion. The public construction
-`NonUnitalSubmodule.intUnitizedOrderIso` supplies the concrete submodule
-comparison used by the separate proof.
-
-That proof is candidate `04d3fe5d-32b1-4ec0-9710-ad43b0b63617`, from task
+The exact aggregate is now proved by
+`Langlands.Algebra.IntegerOriginalSubmoduleNoetherian.integerOriginalSubmoduleNoetherian`
+in
+[`IntegerOriginalSubmoduleNoetherianProof`](../../Langlands/Algebra/IntegerOriginalSubmoduleNoetherianProof.md).
+The proof is candidate `04d3fe5d-32b1-4ec0-9710-ad43b0b63617`, from task
 `13b9973d-0b84-456b-b22e-eb4487070114`, by Workers 1088 and 709.
-Machine receipt `09e6edf9-5fb2-4471-a7ad-426ae8e511a1` passes Lake build,
-exact-target, unchanged-statement and frozen-input checks. Reviewer 4966
-approved without qualifications in review
-`0639faf7-dc7b-45bc-b52b-c5ff812ef4bc`. At this note's check it remained
-staged, `accepted=false`, `public=false`; publication is still required
-before counting it as a public proof.
+It is accepted and public, with the exact receipts below.
+
+The implemented ACC proof rewrites algebraic Noetherianity as well-founded
+strict reverse order on the unitized submodules. The published
+`NonUnitalSubmodule.intUnitizedOrderIso` preserves underlying subsets and
+identifies these with the original stable additive subgroups. The proof
+pulls well-foundedness back through the dual order embedding and, in the
+reverse direction, through the inverse's dual embedding. The maximal-member
+component rewrites the resulting well-foundedness by
+`WellFounded.wellFounded_iff_has_min`; its witness need only be maximal
+in the given subset. The increasing-sequence component uses
+`wellFoundedGT_iff_monotone_chain_condition`.
+
+This is an internal comparison motivated by the source conventions,
+I.2.1 and A.I.2–3. This proof concerns the concrete subgroup poset.
+The categorical subobject and finite-type comparisons are supplied by
+the later units below. A nonunital Noetherian-algebra criterion remains
+a separate source-convention obligation.
+
+## Published integer-unitization equivalence
+
+The actual equivalence
+
+```lean
+NonUnitalModuleCat.{u, v} A ≌ ModuleCat.{v} (Unitization ℤ A)
+```
+
+is now public as
+`Langlands.Algebra.IntegerUnitization.equivalence`, in
+[`IntegerUnitizationCategory`](../../Langlands/Algebra/IntegerUnitizationCategory.md),
+from task `49843f5a-4f6f-47e9-ac82-681aa223c63f`.
+It applies to every `A : Type u` with `[NonUnitalRing A]`, independently
+of the carrier universe `v`.
+
+Its forward functor extends the stored action by
+`(n, a) • m = n • m + a • m`, using the canonical integer action of the
+additive group. Its inverse restricts along `Unitization.inr`.
+Both functors keep the carrier, additive group and underlying additive maps.
+The unit and counit use identity maps on carriers; their naturality and
+the equivalence coherence are proved for these actual functors.
+The selected module structures are local.
+
+Zero original actions are included, even over a unital ring. The published
+example with the zero action of `ℤ` on `ℤ` retains the zero action after
+extension and restriction: the old unit `Unitization.inr (1 : ℤ)` acts
+by zero, while the new unit of `Unitization ℤ ℤ` acts as the identity.
+Thus this equivalence covers the whole additive-action category in the
+source convention. The compatible complex-linear construction requires
+separate data and comparison.
+
+## Published categorical subobject correspondence
+
+`Langlands.Algebra.NonUnitalModuleCat.subobjectOrderIso` in
+[`NonUnitalModuleSubobject`](../../Langlands/Algebra/NonUnitalModuleSubobject.md)
+constructs, for every `M : NonUnitalModuleCat.{u, v} A`,
+
+```lean
+CategoryTheory.Subobject M ≃o NonUnitalSubmodule A M
+```
+
+The left side is the actual categorical subobject type, with its order by
+factorization of monomorphisms. The right side uses exactly the original
+action stored in `M`, ordered by inclusion of underlying subsets.
+The construction transports monomorphisms along the integer-unitization
+equivalence, descends to subobjects, applies Mathlib's
+`ModuleCat.subobjectModule`, then uses the inverse of
+`NonUnitalSubmodule.intUnitizedOrderIso`.
+
+The same unit proves that a morphism is a monomorphism iff its underlying
+additive map is injective. The order isomorphism sends the class of a
+monomorphism to its range; its inverse sends a stable additive subgroup
+to the class of its actual subtype inclusion. The representative and
+round-trip laws identify these maps, and factorization order corresponds
+exactly to range inclusion. Ring and carrier universes remain independent.
+Zero actions and proper nonzero subobjects of zero-action modules are
+included.
+
+## Published object-finiteness comparisons
+
+The statement
+`Langlands.Algebra.NonUnitalModuleFiniteness.NonUnitalModuleFinitenessStatement`
+in
+[`NonUnitalModuleFinitenessStatements`](../../Langlands/Algebra/NonUnitalModuleFinitenessStatements.md)
+and its exact proof
+`Langlands.Algebra.NonUnitalModuleFiniteness.nonUnitalModuleFiniteness` in
+[`NonUnitalModuleFinitenessProof`](../../Langlands/Algebra/NonUnitalModuleFinitenessProof.md)
+are both public. The aggregate contains the following five equivalences,
+in this order. Every component internally binds arbitrary `A : Type uA`,
+`[NonUnitalRing A]` and `M : NonUnitalModuleCat.{uA, uM} A`.
+
+| Component | Left side | Right side |
+| --- | --- | --- |
+| `FiniteTypeStatement` | `Langlands.Renard.IsFiniteTypeObject M` | `Module.Finite (Unitization ℤ A) M` for the selected action |
+| `FiniteSubcoverStatement` | `Langlands.Renard.HasFiniteSubcoverProperty M` | The same `Module.Finite` predicate |
+| `NoetherianStatement` | `Langlands.Renard.IsNoetherianObject M` | `IsNoetherian (Unitization ℤ A) M` for the selected action |
+| `FiniteGenerationStatement` | `Langlands.Renard.IsFiniteTypeObject M` | One `Finset M` generates the whole carrier among the original stable additive subgroups |
+| `NoetherianGenerationStatement` | `Langlands.Renard.IsNoetherianObject M` | Every original stable additive subgroup has a finite set of stable generators |
+
+The first three right sides locally install exactly
+
+```lean
+CompatibleUnitization.module
+  (NonUnitalModule.toIntLinearEndHom (A := A) (V := M))
+```
+
+on the same carrier, as in `IntegerUnitization.extendObj A M`.
+The last two right sides use the original action stored in `M`.
+The whole-carrier generation condition is exactly
+
+```lean
+∃ S : Finset M, ∀ P : NonUnitalSubmodule A M,
+  (↑S : Set M) ⊆ P → ∀ m : M, m ∈ P
+```
+
+The all-subgroups condition is exactly
+
+```lean
+∀ P : NonUnitalSubmodule A M,
+  ∃ S : Finset M, (↑S : Set M) ⊆ P ∧
+    ∀ Q : NonUnitalSubmodule A M, (↑S : Set M) ⊆ Q → P ≤ Q
+```
+
+The finite set may be empty and, in the last condition, depends on `P`.
+Generation includes addition, negation and zero as well as the original
+action. The containment of the generators in `P` is part of the conclusion.
+
+The left sides retain the source-facing predicates from
+[`RenardFiniteType`](../../Langlands/CategoryTheory/RenardFiniteType.md)
+on the actual subobject type. Finite type includes existence of all
+subobject unions and requires that a nonempty chain of proper subobjects
+have a proper union. The finite-subcover predicate also includes union
+existence; a cover of top must have a finite subcover, possibly empty.
+The Noetherian predicate requires a maximal member of every nonempty
+subset of subobjects. Its definition has no union-existence premise.
+No small representative type replaces these subobject quantifiers.
+
+The implemented proof forms `subobjectExtendOrderIso M` by composing the
+categorical subobject correspondence with `intUnitizedOrderIso` and the
+inverse of Mathlib's unitized-module subobject correspondence. Unions
+transfer by taking images of sets under this order isomorphism and pulling
+back their least upper bounds. Finite subcovers transfer by taking the
+finite image under the inverse; maximal members transfer by order
+preservation and injectivity. The published unital-module comparisons then
+give components 2 and 3. The published
+`Langlands.Renard.finiteTypeFiniteSubcover` gives component 1 from
+component 2 in the original category. Components 4 and 5 compose
+components 1 and 3 with the published original-action generation
+comparisons in `IntegerOriginalSubmoduleGenerationProof`.
+
+The proof assembles these five closed propositions in their exact order,
+with independent universe parameters `uA, uM`. It adds no unit law,
+nondegeneracy, commutativity, field, nontriviality, finiteness, Noetherian
+or universe-relation hypothesis. Zero rings, zero carriers and zero
+original actions are included. These are internal derived comparisons
+for arbitrary additive actions; the complex scalar and nonunital-algebra
+conventions remain separate.
 
 ## Acceptance and publication evidence
 
-The following four candidates were verified accepted and public at the
+The following nine candidates were verified accepted and public at the
 dates specified above. Their independent review qualifications are empty.
+The first four rows retain the earlier checks; the final five are the
+3 November refresh.
 
 | Published unit | Candidate and policy | Independent review | Publication |
 | --- | --- | --- | --- |
@@ -198,26 +350,50 @@ dates specified above. Their independent review qualifications are empty.
 | Actual Hom-equivalence statement | `bc0373e3-aa42-4297-bb7a-e404b6241cde`, `lean.statement@1` | Reviewer 4927; review `3bf9021a-5bb5-4a0f-a2ba-a9775beb7a6a` | Integration `7a68a8a89bea404c925c7bec22e7dd32` |
 | Actual Hom-equivalence proof | `64006278-19ec-4d5b-b1e0-730ec453addc`, `lean.proof@1`; machine receipt `3b51a2ac-6b7c-4e26-a6f1-d2e0ad7786a5` passes Lake build, exact-target, unchanged-statement and frozen-input checks | Reviewer 4981; review `449650fd-dbe9-4663-8dba-76c684f66e2b` | Integration `4022304bf86d41809897ec16b0ebac18`, published commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
 | Original-action Noetherian statements | `bbfc803d-701c-453d-9b49-3cbd0a392a30`, `lean.statement@1` | Reviewer 4922; review `5907212e-dbc0-4dfd-84d7-ebd338a14224` | Integration `f2d7c5ef68d2411487ce179908f07950` |
+| Original-action Noetherian proof | `04d3fe5d-32b1-4ec0-9710-ad43b0b63617`, `lean.proof@1`; machine receipt `09e6edf9-5fb2-4471-a7ad-426ae8e511a1` passes Lake build, exact-target, unchanged-statement and frozen-input checks | Reviewer 4966; review `0639faf7-dc7b-45bc-b52b-c5ff812ef4bc` | Integration `734bfe9da6104297a39dd771d782ab66`, published commit `90334e87934f883f85fdf6422ebc84004e805d8b` |
+| Integer-unitization equivalence | `04a6f6b8-4469-4614-a274-c49d1ffc21af`, `lean.definition@1`; machine receipt `be2cb6d2-593e-4163-856f-6ff2d100e23e` accepted | Reviewer 4985; review `3e97b524-7d8c-408f-b488-deb9966b6574` | Integration `3352bc32fc9c4414a01d11eb38e24ae5`, published commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
+| Categorical subobject correspondence | `ac5058a9-7409-40ab-b369-f54220566496`, `lean.definition@1`; machine receipt `2bb01f53-8478-4beb-91c9-857d055f3c2f` accepted | Reviewer 5060; review `491cf71f-46f0-4da7-8eac-76b7a49bcedb` | Integration `efe712b6c4584fda921b214a38e14a22`, published commit `333fb3981b648b8ba9f29c1123c27ef3d8626c90` |
+| Object-finiteness statements | `8737b098-6979-4ecf-9482-ef0b39559072`, `lean.statement@1` | Reviewer 5064; review `4d47fa09-1891-4364-b43e-03a05fa3ccec` | Integration `b32b06d18ed744cd989886cb990b37bf`, published commit `333fb3981b648b8ba9f29c1123c27ef3d8626c90` |
+| Object-finiteness proof | `30711904-632f-41ff-9fce-7916c26ffe9f`, `lean.proof@1`; machine receipt `841fdd10-7aa1-4219-87bc-a23c1ba5520a` passes Lake build, exact-target, unchanged-statement and frozen-input checks | Reviewer 5191; review `d15dffa4-94a9-44b2-aaa1-10552f4d1847` | Integration `96bde90925674a3185eb6dbd2a90c916`, published commit `b1b14ab0a6b31c85e9a1c5fd41cc248c2d4f0dce` |
 
-These receipts distinguish a published proof from a published statement.
-Successful development checks and an approved but unpublished candidate
-are recorded separately above.
+For the five newly checked units, the frozen candidate, workspace and
+checked Library files have the following matching SHA256 fingerprints:
 
-## Remaining categorical comparisons
+| File | SHA256 |
+| --- | --- |
+| `Langlands/Algebra/IntegerOriginalSubmoduleNoetherianProof.lean` | `afebb1c39abb8ac3691adf791a4c4695358e90eb3ecf277b06ec553de9c45824` |
+| `Langlands/Algebra/IntegerOriginalSubmoduleNoetherianProof.md` | `a843363812a82938259af252b9ed36dffe3e6e0fb12f99a11d75f3570400b2ae` |
+| `Langlands/Algebra/IntegerUnitizationCategory.lean` | `9c60d812cabe500d353b7ae0b14d18a61c884ed4fef9c0b3defdcb62716307c1` |
+| `Langlands/Algebra/IntegerUnitizationCategory.md` | `57bf922615043007f7615ae66b05ba9f5f342204667c12dc3a0f5d744a200c3d` |
+| `Langlands/Algebra/NonUnitalModuleSubobject.lean` | `a2d0b712b169d01c4755cb8cfad79b2858368cd2f143c004c4b8b03d48e3a20a` |
+| `Langlands/Algebra/NonUnitalModuleSubobject.md` | `1f4df10e9401e125e63364f8d566bba86d6f372b8b9844f2557dbdf906749acd` |
+| `Langlands/Algebra/NonUnitalModuleFinitenessStatements.lean` | `7073698e2650ffa9763297c7d9021327a15791eaf33fc07831d922c83aa215d3` |
+| `Langlands/Algebra/NonUnitalModuleFinitenessStatements.md` | `5825bee81df1a39c242cef53efbbf8366e7a8b0ea789678e19c509a5a923ece2` |
+| `Langlands/Algebra/NonUnitalModuleFinitenessProof.lean` | `0b1061f465f8c628f255189cfe0a2bd9ccb538dcd05ad4021dbaae5f69eb6225` |
+| `Langlands/Algebra/NonUnitalModuleFinitenessProof.md` | `7646f8b3946d45a7088c0dbed01c468b910eab688827c42a1a3249aa06ed940d` |
 
-Task `49843f5a-4f6f-47e9-ac82-681aa223c63f`, owned by Workers 735 and
-734, covers the actual equivalence
-`NonUnitalModuleCat.{u, v} A ≌ ModuleCat.{v} (Unitization Int A)`.
-Its shared draft revision 1 is unreviewed. Worker 6's saved construction
-and universe/zero-action probes recompiled with zero errors or warnings
-in development diagnostic `55626e8d-3041-4685-98d1-1f8232183fc1`.
-No candidate was listed at inspection. This is construction progress,
-not a public equivalence or evidence of abelianness or exactness.
+These receipts distinguish published statements, constructions and proofs.
+This documentation update supplies no new Lean result and closes no
+section or whole-book objective.
 
-The next comparison must identify actual categorical subobjects with
-`NonUnitalSubmodule` for the given action. Categorical Noetherian and
-finite-type transport, source finiteness conventions, nondegenerate
-complex scalar recovery, and the actual source functors, adjunctions
-and exactness results retain separate obligations and existing owners.
+## Retained source comparisons and separate routing
+
+The published additive equivalence, subobject correspondence and
+object-finiteness proofs replace the earlier construction and proof gates.
+The source's compatible complex scalars, the nondegenerate-module category,
+the convention for a possibly nonunital Noetherian algebra, and the actual
+source functors, adjunctions, exactness and tensor comparisons retain
+separate obligations and existing owners. The source example in A.I.3
+for ordinary unital modules and the integer comparisons here have distinct
+scopes; neither settles that nonunital-algebra convention. The
+[source finiteness note](nonunital-finiteness-sources.md) records the
+additional literature boundaries.
+
+The other A.VIII.2 assertions also have separate routed units: the regular
+module under task `586960bd-474e-460b-8b47-848030a51d46`, the finite-type
+comparison under `945c8f65-08df-493c-8b1b-5ec1d21c36fe`, equivalence
+transport under `3de173df-ffed-460f-b429-65b470aeab38`, and the converse
+under `a866dc8e-9478-45b2-aec4-f0fd18a3eced`. This refresh makes no new
+status or acceptance claim for those separate tasks.
 The remainder of the book and the general reductive framework remain
 within the parent objective.

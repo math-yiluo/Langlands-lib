@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Field tori and rational centers: verified proofs and product target](../notes/group-schemes/field-tori-central-progress.md) — Exact finite-Galois splitting and local-field rational-center proof publications, their hypotheses and proof routes, and the separate derived/central split-product proof obligation.
+
 - [Group schemes: published transport, dynamics and fpqc reflection](../notes/group-schemes/transport-dynamic-progress.md) — Eight verified transport constructions and three exact dynamic/central proofs, with their hypotheses, publication receipts and remaining thematic obligations.
 
 - [Actual coordinate augmentation weights and remaining proof targets](../notes/group-schemes/coordinate-augmentation-targets.md) — Actual group and pointed-affine coordinate interfaces, exact proposition targets and seven focused proof successors, with retained consumer obligations.
@@ -48,7 +50,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Renard C.I: commutative dimension bounds](../notes/renard/commutative-dimension.md) — Source assertions mapped to published constructions and proofs, including the floor recurrence, maximum induction and actual-block reduction, with exact publication evidence and the composition to the final bound.
 - [Renard C.II: quotient maps and finite localization](../notes/renard/stable-quotients.md) — Published stability and quotient proofs, actual localization, scalar-linear and additive-to-scalar finite-localization theorems, and the remaining nonunital source convention.
 - [Renard C.III: coefficients and simultaneous blocks](../notes/renard/integer-lattice-coefficients.md) — Source assertions mapped to the published coefficient, actual-support, nilpotence, local/global-basis and all-integer product proofs, with exact evidence and explicit source-route packaging boundaries.
-- [Renard 2026: small projectives and original nonunital modules](../notes/renard/category-module-progress.md) — Published finite-subcoproduct proof, actual Hom-equivalence and original-action Noetherian statements, and remaining categorical comparisons.
+- [Renard 2026: small projectives and original nonunital modules](../notes/renard/category-module-progress.md) — Nine verified publications, including the integer-unitization equivalence, actual subobject correspondence and object-finiteness proofs, with exact scope and retained source comparisons.
 - [Renard A.X: categorical centers and the unital module example](../notes/renard/category-center-progress.md) — Source definition, published exact scalar-action identification, universe bound and verified statement/proof publication evidence.
 - [Renard I.5.2–I.6: module classes and category properties](../notes/renard/module-classes-category-properties.md) — Published module-class, completeness, source AB5/AB6, filtered-exactness and derived negative-example proofs, with exact publication evidence and preserved source boundaries.
 - [Renard 2026: finiteness conventions in Pareigis and Douady](../notes/renard/nonunital-finiteness-sources.md) — Exact unital passages, the supplied Douady edition and locator limits, and the remaining nonunital C.II convention.
