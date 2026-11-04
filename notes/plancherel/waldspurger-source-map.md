@@ -2,7 +2,7 @@
 
 Author: Worker 249, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
 Lean coverage below was checked against Library commit
-`e9121d2f8e2a84b24a5c3d710d82082ab261845c`.
+`2faf3958c75f10a7bf2ecb9aa2175419e234781a`.
 
 This note maps every numbered item of Waldspurger's article to its page, its
 content, the items of the article it uses, and the external sources it cites.
@@ -91,9 +91,9 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 
 | Item | Page | Content | Uses | Class | Lean coverage |
 |---|---|---|---|---|---|
-| I.1 | 238–242 | `F`, `G`, `A_0`, `M_0`, `P_0`, `Rat(G)`, `a_G`, `H_M`, roots `Σ`, `W`, special `K`; left Haar measures with `mes(H ∩ K) = 1`, the functional `∫_{H\G}` on `δ_H`-covariant functions and the integration formulas (2) (p.240); `G = P K`, Iwahori factorization, `γ(P)` depends only on `M` (proof on p.241), `c(G\|M)`, Cartan decomposition (4), `mes(KmK) ≍ δ_0(m)^{-1}` (5), the norm `‖·‖` via `τ : G → GL_n` with `τ(K) ⊆ GL_n(O)`, `σ = log‖·‖`, (6) `1 + σ(m) ≍ 1 + \|H_0(m)\|` | — | Data, Struct; `γ(P)` independence and (5) are Book | (2), first formula: `lintegral_eq_lintegral_unipotent_levi` (generic); (5): `measure_doubleCoset_le_of_doubleCosetIndex` (generic, from bounds on `[H : H ∩ mHm^{-1}]`); see below |
+| I.1 | 238–242 | `F`, `G`, `A_0`, `M_0`, `P_0`, `Rat(G)`, `a_G`, `H_M`, roots `Σ`, `W`, special `K`; left Haar measures with `mes(H ∩ K) = 1`, the functional `∫_{H\G}` on `δ_H`-covariant functions and the integration formulas (2) (p.240); `G = P K`, Iwahori factorization, `γ(P)` depends only on `M` (proof on p.241), `c(G\|M)`, Cartan decomposition (4), `mes(KmK) ≍ δ_0(m)^{-1}` (5), the norm `‖·‖` via `τ : G → GL_n` with `τ(K) ⊆ GL_n(O)`, `σ = log‖·‖`, (6) `1 + σ(m) ≍ 1 + \|H_0(m)\|` | — | Data, Struct; `γ(P)` independence and (5) are Book | (2), first formula: `lintegral_eq_lintegral_unipotent_levi` (generic); (2), second formula, with `γ(P)` and `0 < γ(P) < ∞`: `lintegral_eq_openCellConstant_inv_mul`, `openCellConstant`, `openCellConstant_eq_lintegral` (generic, in the coordinates `(p, v) ↦ p v^{-1}`) and `lintegral_eq_openCell_levi_unipotent` (generic, in the coordinates `m u v^{-1}`); (3) open (the index expression of `γ(P)` in its proof: `openCellConstant_eq_relIndex_mul`, generic); (5): `measure_doubleCoset_le_of_doubleCosetIndex` (generic, from bounds on `[H : H ∩ mHm^{-1}]`), upper bound for `GL_n`: `exists_measure_doubleCoset_le_delta`; restriction `Im X(G) → Im X(A_G)` surjective with finite kernel and the measures on `Im X(A_G)` and `Im X(G)` (p.239): `rationalUnitaryUnramifiedCharacterRestrict_surjective` (without `hindex`), `finite_rationalUnitaryUnramifiedCharacterRestrict_ker` and `rationalUnitaryUnramifiedCharacterHaar` (given the open finite-index premise `hindex`, Renard V.2.6); see below |
 | I.2 | 242–243 | finite-dimensional `ρ(A_M)`-stable spaces `V ⊂ C^∞(A_M)`: expansion `f(a) = Σ_{χ ∈ X} χ(a) P_{χ,f}(H_M(a))` with `deg P_{χ,f} ≤ d`; for minimal `X`, polynomial growth on `A_M` ⇔ `Re χ = 0` for all `χ ∈ X`; if `∏_{χ ∈ Y} (ρ(a) − χ(a))^D` kills `V`, then `X ⊂ Y` and `d ≤ D − 1`; the same for `A_M`-finite `f` | I.1 | Book (stated without proof or citation) | none for `A_M`; related: Renard App. C.III for `ℤ^d`, `Langlands.IntegerLatticeMatrixCoefficientExponentialPolynomialStatement` (statement and proof in `Langlands/Representation/MatrixCoefficient/IntegerLattice*`), not adapted to I.2 |
-| I.3 | 243–244 | Jacquet functor, normalized induction `I_P^G`, filtration `F_w` of `(I_P^G V)_{P'}` | [BZ] | Data, Ext | GL_n only (see Library coverage) |
+| I.3 | 243–244 | Jacquet functor, normalized induction `I_P^G`, filtration `F_w` of `(I_P^G V)_{P'}` | [BZ] | Data, Ext | Jacquet functor and `F_w`: GL_n only (see Library coverage); the identification of the smooth contragredient of `I_P^G V` with `I_P^G V̌` by the quotient integral: `normalizedInductionIntegralDualEquiv` (actual topological subgroup data) |
 | Thm I.4.1 | 245 | Casselman pairing `⟨·,·⟩_P` on `V_P × V̌_{P̄}` | [C] | Ext | GL_n statements only |
 | Cor. I.4.2 | 245 | `V̌_{P̄}` is the contragredient of `V_P` | I.4.1 | Book | none |
 | Prop. I.4.3 | 245 | coefficients equal Jacquet coefficients on `M_0^+` cones | [C] | Ext | none |
@@ -112,8 +112,8 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Lemme II.1.4 | 252 | `Ξ(g^{-1}) = Ξ(g)` | II.1 (`π ≅ π̌`) | Book | `xi_inv` (generic; `G` unimodular and `δ` the modular character of `P` as hypotheses, see below) |
 | Lemme II.1.5 | 252 | `∫_G Ξ^2 (1+σ)^{-d} < ∞` for some `d` | I.1 (4)–(6), II.1.1 | Book | `CartanSquareBound.squareIntegrableWeight` (generic; the Cartan, measure, norm and II.1.1 bounds as hypotheses, see below) |
 | Lemme II.1.6 | 252 | `Ξ(g) = ∫_K δ_P(m_P(kg))^{1/2} Ξ^M(m_P(kg)) dk` | II.1 | Book | `LeviData.xi_eq_integral` (generic; direct Fubini proof, not the article's induction in stages) |
-| II.2 | 253–254 | algebraic representation `τ_P` with properties (1)–(5); (6) `1 + σ(ū) ≍ 1 + log‖τ_P(ū)e_1‖` | [H] | Book (the construction is on p.253 and (6) is proved on p.254 from (7), (8) and [H]) | none; the properties used are explicit hypotheses of `TauEstimates` |
-| Lemmes II.3.1–II.3.5 | 254–259 | estimates for `δ_P(m_P(ū))`, `σ` on `Ū` | II.2, I.1 | Book | generic, from properties of `τ_P` as hypotheses: II.3.1 `sigmaProductBound_height` (given the block form), II.3.2 `cartanWeightComparison_of_norm`, II.3.3 `conj_height_le_of_tau`, II.3.4 `modulusHeightBounds_of_tau`; II.3.5 open |
+| II.2 | 253–254 | algebraic representation `τ_P` with properties (1)–(5); (6) `1 + σ(ū) ≍ 1 + log‖τ_P(ū)e_1‖` | [H] | Book (the construction is on p.253 and (6) is proved on p.254 from (7), (8) and [H]) | none; the properties used are explicit hypotheses of `TauEstimates` and `OpenCellLemma` |
+| Lemmes II.3.1–II.3.5 | 254–259 | estimates for `δ_P(m_P(ū))`, `σ` on `Ū` | II.2, I.1 | Book | generic, from properties of `τ_P` as hypotheses: II.3.1 `sigmaProductBound_height` (given the block form; for the standard block parabolics of `GL_n` without hypotheses, `sigmaProductBound_glBlock`), II.3.2 `cartanWeightComparison_of_norm`, II.3.3 `conj_height_le_of_tau`, II.3.4 `modulusHeightBounds_of_tau`, II.3.5 `openCellBound_of_mul` |
 | Lemmes II.4.1–II.4.4, Prop. II.4.5 | 259–263 | integrals over `Ū`; constant term of functions bounded by `Ξ(1+σ)^{-d'}` | II.1, II.3 | Book | generic: II.4.1 `levelSetMeasureBound_of_torusXiFormula`, II.4.2 `unipotentWeightIntegrable_of_levelSets`, II.4.3 `LeviData.unipotentWeightIntegrable`, II.4.4 `XiUpperBound.unipotentXiBound`, II.4.5 `constantTermEstimate_of_bounds` (it proves the Prop `ConstantTermEstimate` of `ConstantTerm`); the inputs are listed in the modules below |
 
 ## Chapter III. Tempered representations and `C(G)` (pp.263–276)
@@ -131,7 +131,7 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Lemme III.5.1 | 269–270 | weak constant term `f^w_P` of `f ∈ A^w(G)` | III.3 | Book | none |
 | III.6 | 271–272 | `C(G)`, seminorms `ν_r`, levels `C_H`, inductive-limit topology, (1), completeness, `C_c^∞(G)` dense, `G × G` acts continuously, constant term `f^{(P)}` via II.4.5 | I.6, II.1, II.1.2, II.4.5, [B] | Data, Book | generic: `C(G)`, `ν_r`, `C_H`, topology, (1), density, `G × G` continuity, completeness (`Space.completeSpace`, for a cofinal sequence of compact open subgroups), `f^{(P)}` and `C(G) → C(M)` (`constantTerm`, with II.4.5 as a hypothesis), `f^{(P),Ind}` and the diagram (`constantTermInd`, pointwise; see below) |
 | Lemme III.6.1 | 271 | for `f_1, f_2 ∈ C(G)`: `∫_G f_1(h) f_2(h^{-1}g) dh` converges absolutely, `f_1 * f_2 ∈ C(G)`, and `(f_1, f_2) ↦ f_1 * f_2` is separately continuous | II.1.3–II.1.5 | Book | `Convolution` (generic; II.1.3–II.1.5 as hypotheses) |
-| III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit`; the pairing of `C(G)` with functions of tempered growth, `Space.temperedPairing` (generic) |
+| III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit`, their quotient topology (compact, Hausdorff) `discreteSeriesOrbitHomeomorph`, `compactSpace_discreteSeriesOrbit`, `t2Space_discreteSeriesOrbit`, finiteness of the stabilizer `finite_discreteSeriesStabilizer` (generic), `finite_rationalDiscreteSeriesStabilizer` (given the open finite-index premise `hindex`, see below); the pairing of `C(G)` with functions of tempered growth, `Space.temperedPairing` (generic) |
 
 ## Chapter IV. Intertwining operators (pp.276–287)
 
@@ -149,7 +149,7 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 
 | Item | Page | Content | Uses | Class | Lean coverage |
 |---|---|---|---|---|---|
-| V.1 | 287–289 | `L(ω,P)`, `E_P^G`, `W(M'\|G\|M)`, `c_{P'\|P}(s,ω)` | III.7, IV | Data | none |
+| V.1 | 287–289 | `L(ω,P)`, `E_P^G`, `W(M'\|G\|M)`, `c_{P'\|P}(s,ω)` | III.7, IV | Data | the tensor model of `L(ω,P)` and its coefficient map `ℓ(π(g)v)`: `CoefficientTensor`, `coefficientTensorMap`, `range_coefficientTensorMap`, `NormalizedCoefficientTensor`, `normalizedCoefficientMap`, `normalizedInductionDualTensorEquiv`; product induction `I_P^G(A) ⊠ I_Q^H(B) ≅ I_{P×Q}^{G×H}(A ⊠ B)`: `normalizedProductInductionTensorEquiv`; `E_P^G`, `W(M'\|G\|M)` and `c_{P'\|P}(s,ω)`: none |
 | Prop. V.1.1 | 289 | weak constant terms of `E_P^G ψ` | III.3.3, III.4.1, IV.2.2, III.5.1, IV.1, IV.3 | Book | none |
 | V.2, Lemme V.2.1 | 292 | `μ(ω) = j(ω)^{-1} ∏ γ(M_α\|M)^2`: rational, regular, `≥ 0`, product formula, Weyl invariant | IV.3 | Data, Book | none |
 | Lemme V.2.2, Cor. V.2.3 | 293–294 | norm identity for `c_{P'\|P}(s,ω)`; regularity of `μ^G μ^{M'}(sω)^{-1} c` | V.1.1, V.2.1 | Book | none |
@@ -159,9 +159,9 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 
 | Item | Page | Content | Uses | Class | Lean coverage |
 |---|---|---|---|---|---|
-| VI.1 | 295–296 | identifications of `L(ω,P)` along an orbit; `C^∞(O,P) = [C^∞(Im X(M)) ⊗ L_K(ω,P)]^{Stab}` | V.1 | Data | none |
+| VI.1 | 295–296 | identifications of `L(ω,P)` along an orbit; `C^∞(O,P) = [C^∞(Im X(M)) ⊗ L_K(ω,P)]^{Stab}` | V.1 | Data | transport of coefficient tensors along equivalences, independent of the choice: `normalizedCoefficientTransport`, `normalizedCoefficientTransport_independent`; scalar smooth functions on an orbit: `IsSmoothRationalOrbitFunction`, `rationalSmoothOrbitFunctions`, `isSmoothRationalOrbitFunction_basis_iff`; the coefficient-valued `C^∞(O,P)`: none |
 | Lemmes VI.2.1–VI.2.3 | 296–301 | smoothness in `ω`; `\|E_P^G ψ_ω(g)\| ≤ C Ξ(g)`; exponential decay of the `+` part on `D_{M'}(δ)` | I.5, I.4.3, III.1.2, II.1.6, II.1.1, III.2.2 | Book | none |
-| VI.3 | 301–302 | topology on `C^∞(O,P)`; measure on `O`; wave packet `f_ψ(g) = ∫_O μ(ω) (E_P^G ψ_ω)(g) dω` | VI.1 | Data | none |
+| VI.3 | 301–302 | topology on `C^∞(O,P)`; measure on `O`; wave packet `f_ψ(g) = ∫_O μ(ω) (E_P^G ψ_ω)(g) dω` | VI.1 | Data | measure on `O` locally preserved by the character parametrization: `discreteSeriesOrbitMeasure` (generic), `rationalNormalizedDiscreteSeriesOrbitMeasure`; integration over `O`: `rationalDiscreteSeriesOrbitIntegral` (the last two given the open finite-index premise `hindex`, see below); the topology on `C^∞(O,P)` and the wave packet: none |
 | Prop. VI.3.1 | 302 | `f_ψ ∈ C(G)`, `ψ ↦ f_ψ` continuous | I.1 (4), I.4.3, I.5, VI.2, V.1.1, V.2.3, II.1.1 | Book | none |
 | VI.3 | 305–306 | `Θ`, `C^∞(Θ)`, `κ̃`; invariant subspace `C^∞(Θ)_inv`; `κ`; projector | V.3 | Data | none |
 | Lemme VI.3.2 | 306 | `κ̃` factors through the projector | V.3.1 | Book | none |
@@ -189,16 +189,16 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | Thm VIII.1.2, Rem. VIII.1.3 | 321 | finiteness of `Θ^H_G`; finiteness of `Θ^H` by induction on semisimple rank | VIII.4.1, VIII.4.2 (proof in VIII.5) | Book | none |
 | VIII.2, Lemme VIII.2.1 | 321–322 | `°f = f − κ(ψ)`; `°C(G)` = cuspidal Schwartz functions | VII.1.2, VII.2.5, III.6, VIII.1 (2) for Levis | Data, Book | none |
 | Rem. VIII.2.2, Lemme VIII.2.3 | 322–323 | symmetries of `°`; `f_1 * f_2 = f_1 * °f_2` for cuspidal `f_1` | VII.2, VIII.2.1 | Book | none |
-| Prop. VIII.3.1 | 323–326 | for `f_1 ∈ °C(G)`, `f_2 ∈ C(G)` and every `r ∈ ℝ`, the bound `≤ c δ_0(a)(1+σ(a))^{-r}` on `∫_G f_1(a g a^{-1}) f_2(g) dg` for `a ∈ Ā_0^+ ∩ G^1` (the Lean estimates are stated on an arbitrary supplied set `T`) | II.3, II.4, II.1, VIII.2.1 | Book | generic: `conjugationIntegralBound_of_split` (from the decomposition of the integral, estimate (3) `ConvolutionWeights.lintegral_conj_mul_le` and the cuspidal estimate `lintegral_cuspidal_le`), with the decomposition and inequality (2) as hypotheses |
+| Prop. VIII.3.1 | 323–326 | for `f_1 ∈ °C(G)`, `f_2 ∈ C(G)` and every `r ∈ ℝ`, the bound `≤ c δ_0(a)(1+σ(a))^{-r}` on `∫_G f_1(a g a^{-1}) f_2(g) dg` for `a ∈ Ā_0^+ ∩ G^1` (the Lean estimates are stated on an arbitrary supplied set `T`) | II.3, II.4, II.1, VIII.2.1 | Book | generic: `conjugationIntegralBound_of_split` (from the decomposition of the integral, estimate (3) `ConvolutionWeights.lintegral_conj_mul_le` and the cuspidal estimate `lintegral_cuspidal_le`); the decomposition from open-cell data: `integral_conj_mul_eq_split`, `conjugationIntegralBound_of_openCell`; inequality (2) from II.3.5: `conjugationSigmaBound_of_openCellBound` |
 | Cor. VIII.3.2 | 326 | absolute convergence over `A_G\G` | VIII.3.1, I.1 (4), (5) | Book | `lintegral_lt_top_of_conjugationIntegralBound` (generic: cover, measure bound and summability as hypotheses) |
-| VIII.4, Prop. VIII.4.1 | 327–330 | `p_χ`, `°C_H`; `p_χ(°C_H)` finite-dimensional | VIII.2, VIII.3.2 | Data, Book | `centralProjection`, `Space.centralProjection` (`p_χ` with absolute convergence, `χ`-covariance and bi-invariance, generic); the estimate on `G^1` in the proof of VIII.4.1, `enorm_centralProjection_le_rpow_neg`; VIII.4.1 itself open |
+| VIII.4, Prop. VIII.4.1 | 327–330 | `p_χ`, `°C_H`; `p_χ(°C_H)` finite-dimensional | VIII.2, VIII.3.2 | Data, Book | `centralProjection`, `Space.centralProjection` (`p_χ` with absolute convergence, `χ`-covariance and bi-invariance, generic); the estimate on `G^1` in the proof of VIII.4.1, `enorm_centralProjection_le_rpow_neg`; the reproducing-kernel step of the proof, `IsReproducingKernel.finiteDimensional` (generic); VIII.4.1 itself open |
 | Thm VIII.4.2 | 330 | `p_χ(°C(G)) = A_2(G)_χ` | III.1 (2), VII.2.5, VIII.2.2, VIII.2.3, VIII.4.1 | Book | none |
 | VIII.5 | 331–332 | proofs of VIII.1.2 and VIII.1.1 | VII.2.5, VIII.1.3, VIII.4.1, VIII.4.2 | Book | none |
 
 ## Library coverage
 
 The declarations below formalize parts of the article in the Library at commit
-`e9121d2f`. The list covers the modules of this task's two executors and other
+`2faf3958`. The list covers the modules of this task's two executors and other
 modules found by searching the Library for the article and for the reductive
 data of I.1; it is not the declaration-level reuse audit of condition 7. None
 proves a theorem of Chapters IV–VII; for VIII.3.1, VIII.3.2 and VIII.4 there are
@@ -221,8 +221,14 @@ finite-index half of I.1's `Rat(G) ⊗ Q ≅ Rat(A_G) ⊗ Q`; the module
 `CharacterRestrictionInjective` derives injectivity from the Prop
 `CentralSplitTorusCharacterStatement`, taken as a hypothesis). It does not yet
 construct the special maximal compact subgroup `K` of I.1, and it does not
-prove `G = P K`, the Cartan decomposition (4), or the finite rank and full
-rank of the lattice of `H_G`. For the roots and Weyl group of I.1 it has
+prove `G = P K` or the Cartan decomposition (4). For the lattice of `H_G` it
+proves that the actual valuation image of a connected reductive group is free
+of finite rank (`rationalReductiveImage_free_finite`, see below). Two
+comparisons remain open: the equality of that rank with the rank of the
+rational characters of `G` (equivalently, of its split component), and the
+finite index of the valuation image of the split component in the actual
+valuation image (the premise `hindex` described before the list of rational
+modules below; Renard V.2.6). For the roots and Weyl group of I.1 it has
 `relativeRoots`, `relativeWeylGroup` and `relativeWeylAction` (module
 `Langlands/GroupScheme/Rational/RelativeRoots`), the normalizer and centralizer
 subgroup functors of `Langlands/GroupScheme/Rational/TorusNormalizer`, and the
@@ -301,6 +307,99 @@ Namespace `Langlands.Plancherel`, module directory
   `unramifiedTwistStabilizer`, `discreteSeriesOrbit`,
   `discreteSeriesStabilizer`, `discreteSeriesOrbitEquiv` (III.1, III.7:
   `E_2(G)` and its `Im X(G)`-orbits).
+
+Modules of the same directory published after commit `e9121d2f` (the author is
+named where the module's Markdown names one).
+
+Shared premise `hindex`. Many of the actual rational-point results below take
+the explicit hypothesis
+`hindex : (RenardCartan.splitValuationImage s).FiniteIndex`: the valuation
+image of the central subgroup `s(T(F))` (in the source, the split component
+`A_G`) has finite index in the actual valuation image of `G(F)`. This is a
+remaining proof obligation, not a permitted permanent external structural
+assumption: Renard proves it in V.2.6, and the Library has only the Prop
+target `SplitComponentLatticeStatement` (module
+`RenardLatticeComparisonStatement`), with no proof. Entries marked
+"(given `hindex`)" below hold only under this premise. It is distinct from
+two results that the Library proves without it: the finite index of the
+restriction of algebraic rational characters to a split component
+(`IsSplitComponent.finiteIndex_range_characterRestrict`), and the
+surjectivity of the restriction of unitary unramified characters,
+`rationalUnitaryUnramifiedCharacterRestrict_surjective` (for a connected
+reductive `G` and a split component).
+
+- `RationalUnramifiedRestriction`, `RationalRestrictionKernel`,
+  `RationalRestrictionSurjectivity` (Worker 200 for the first two):
+  `rationalUnramifiedCharacterRestrict`, `rationalUnitaryUnramifiedCharacterRestrict`
+  (I.1, p.239: restriction of unramified characters to `A_G`);
+  `rationalUnitaryUnramifiedCharacterRestrict_surjective` (surjectivity on unitary
+  characters, without `hindex`); `finite_rationalUnramifiedCharacterRestrict_ker`,
+  `finite_rationalUnitaryUnramifiedCharacterRestrict_ker` (finite kernel, given `hindex`).
+- `RestrictionNormalizedHaar`, `RationalCharacterHaar`: `restrictionNormalizedHaar`
+  (generic, for a homomorphism with finite kernel), `rationalUnitaryUnramifiedProbabilityHaar`
+  (the probability Haar measure on the unitary unramified characters of an actual group; for
+  `A_G` this is the mass-one measure of p.239), `rationalUnitaryUnramifiedCharacterHaar`,
+  `isLocallyMeasurePreserving_rationalUnitaryUnramifiedCharacterRestrict` (I.1, p.239: the
+  measure on `Im X(G)` locally preserved by restriction; given `hindex`).
+- `RationalImageLattice`, `RationalUnramifiedCharacterCoordinates` (Worker 200):
+  `rationalImageBasis`, `rationalReductiveImage_free_finite`,
+  `rationalCanonicalUnramifiedCharacterCoordinates`,
+  `rationalCanonicalUnitaryUnramifiedCharacterCoordinates` (I.1: the valuation image of a
+  connected reductive group is free of finite rank, without `hindex`; coordinates
+  `X(G) ≅ (ℂ^×)^r` and `Im X(G) ≅ (S^1)^r`, where `r = rationalImageRank G` is the rank of
+  the valuation image; its equality with the rank of the rational characters is not proved).
+- `RationalCentralQuotient` (Worker 200): `rationalCentralQuotientEquiv`,
+  `finite_rationalCentralQuotient` (finiteness of `G/(G^1 A_G)`, given `hindex`;
+  Renard V.2.6).
+- `TwistStabilizerComparison`, `RationalTwistStabilizer` (Worker 200):
+  `unramifiedTwistStabilizerEmbedding`, `finite_unramifiedTwistStabilizer`,
+  `finite_discreteSeriesStabilizer` (generic, with finiteness of the corresponding central
+  quotient as a hypothesis), `finite_rationalDiscreteSeriesStabilizer` (given `hindex`)
+  (III.7, p.273: the stabilizer of a discrete-series class in `X(G)` is finite and unitary).
+- `DiscreteSeriesOrbitTopology`, `RationalDiscreteSeriesOrbitTopology` (Worker 200 for the
+  second): `discreteSeriesOrbitMap`, `discreteSeriesOrbitHomeomorph`,
+  `compactSpace_discreteSeriesOrbit`, `t2Space_discreteSeriesOrbit`,
+  `discreteSeriesOrbitBaseChange`, `rationalDiscreteSeriesOrbitCoordinateMap` (III.7, VI.1:
+  the quotient topology of an orbit `O`, independent of the base point); for actual rational
+  points, the Hausdorff property `t2Space_rationalDiscreteSeriesOrbit` is given `hindex`.
+- `FiniteCharacterQuotientMeasure`, `DiscreteSeriesOrbitMeasure`,
+  `RationalDiscreteSeriesOrbitMeasure`, `RationalNormalizedOrbitMeasure` (Worker 200 for the
+  last two): `IsLocallyMeasurePreserving`, `finiteCharacterQuotientMeasure`,
+  `discreteSeriesOrbitMeasure` (generic, for a finite stabilizer),
+  `rationalDiscreteSeriesOrbitMeasure`, `rationalNormalizedDiscreteSeriesOrbitMeasure`
+  (given `hindex`) (VI.3, p.302: the measure on `O` locally preserved by the character
+  parametrization, with the I.1 scale).
+- `RationalOrbitIntegration` (Worker 200): `rationalDiscreteSeriesOrbitIntegral`,
+  `integrable_rationalNormalizedDiscreteSeriesOrbitMeasure`,
+  `norm_rationalDiscreteSeriesOrbitIntegral_le` (integration over `O`, VI.3; given `hindex`).
+- `RationalOrbitSmoothFunctions`, `RationalOrbitBasisInvariance` (Worker 200):
+  `finiteTorusExp`, `IsSmoothFiniteTorusFunction`, `IsSmoothRationalOrbitFunction`,
+  `rationalSmoothOrbitFunctions`, `isSmoothRationalOrbitFunction_basis_iff` (VI.1: scalar
+  smooth functions on `O`, tested on the unitary character torus, independent of the basis).
+- `CharacterTorusDensity`, `RationalUnramifiedCharacterDensity`,
+  `UnramifiedCharacterTransport` (Worker 34): `complexTorusPrincipalOpen`,
+  `dense_complexTorusPrincipalOpen`, `rationalUnramifiedPrincipalOpen`,
+  `dense_rationalUnramifiedPrincipalOpen`, `unramifiedCharactersHomeomorph` (density of
+  principal open subsets of the character torus; internal).
+- `CoefficientTensors`, `NormalizedCoefficientTensors`: `CoefficientTensor`,
+  `coefficientTensorMap`, `range_coefficientTensorMap`, `coefficientTensorCongr`,
+  `NormalizedCoefficientTensor`, `normalizedCoefficientMap`,
+  `normalizedCoefficientTransport`, `normalizedCoefficientTransport_independent` (V.1, p.288:
+  the tensor model of `L(ω,P)` and the coefficient `ℓ(π(g)v)` with image `A(π)`; VI.1: the
+  transport along equivalences of inducing representations does not depend on the choice).
+- `NormalizedInductionDualTensor`: `normalizedInductionIntegralDualEquiv`,
+  `normalizedInductionDualTensorEquiv`, `normalizedInductionCoefficient_integrable` (I.3,
+  p.243: the smooth contragredient of normalized induction by the quotient integral; V.1).
+- `NormalizedProductInduction`: `normalizedProductInductionTensorEquiv` (V.1:
+  `I_P^G(A) ⊠ I_Q^H(B) ≅ I_{P×Q}^{G×H}(A ⊠ B)`); see also
+  `Langlands/Representation/Induction/BinaryProductTensor`.
+- `RationalNormKernelSmoothDual` (Worker 6), `SplitTorusCompactKernel`,
+  `SplitTorusCompactUnits`, `SplitTorusPositiveCharacter`, `SplitTorusRealPart`: smooth duals
+  restricted to the norm kernel and characters of split tori (internal prerequisites; several
+  cite Renard V–VI).
+- `RenardSpecialCompactComparison`, `RenardSameCompactLeviComparison` (Worker 454 for the
+  second): conditional comparisons of the compact quotient and of standard Levi subgroups
+  with the valuation chamber (I.1 (4)); their geometric inputs are explicit Props.
 
 Namespace `Langlands.GroupScheme`, module
 `Langlands/GroupScheme/Rational/PointTopology` (Worker 200):
@@ -401,7 +500,7 @@ Namespace `Langlands.HarishChandraSchwartz` (Worker 249), module directory
   decomposition of `P ∩ K`, the normalizations and `IsConjModulus`; it applies
   `CompactFactorization.lintegral_restrict_lintegral_mul` of
   `Langlands/Analysis/Local/CompactFactorizationIntegral`, Worker 235). The second
-  formula of (2), with `γ(P)`, is open.
+  formula of (2) is in `OpenCellIntegration` and `ParabolicHaar`.
 - `TemperedPairing`: `HasTemperedGrowth`, `IsTemperedSmooth`, `Space.temperedPairing`
   (the continuous functional `f ↦ ∫ f φ` on `C(G)` for `φ` of tempered growth; III.2,
   III.7).
@@ -423,6 +522,41 @@ Namespace `Langlands.HarishChandraSchwartz` (Worker 249), module directory
   (`μ(HgH) = [H : H ∩ gHg^{-1}] μ(H)`), `measure_doubleCoset_le_of_doubleCosetIndex`
   (I.1 (5) from bounds on the index), `relIndex_mul_modulus` (the identity
   `c_{U_0}(m) = δ_0(m)^{-1} c'_{U_0}(m)` of the proof of (5)).
+- `OpenCellIntegration`: `openCellMap`, `openCellConstant` (`γ`), `exists_lintegral_openCellMap`,
+  `lintegral_eq_openCellConstant_inv_mul` (I.1 (2), second formula, in the coordinates
+  `(p, v) ↦ p v^{-1}` with a Haar measure of `P`, and `0 < γ < ∞`, by uniqueness of Haar
+  measure on `P × Ū`), `openCellConstant_eq_lintegral` (`γ = ∫_Ū δ_P(m_P(ū)) dū` from the
+  right translation law of the measure of `P`); the open-cell embedding, its conull image
+  and the right invariance of the Haar measure of `G` are hypotheses.
+- `ParabolicHaar`: `leviUnipotentCoord`, `leviUnipotentMeasure` (`dm du` on `P = M U`),
+  `leviUnipotentMeasure_isMulLeftInvariant`, `leviUnipotentMeasure_isHaarMeasure` (a left
+  Haar measure of `P` when `(m, u) ↦ m u` is a homeomorphism onto `P`),
+  `map_mul_right_leviUnipotentMeasure` (right translation by `m_0 u_0` multiplies it by
+  `δ_P(m_0)`), `lintegral_levi_unipotent_eq` (the order `u m` with `δ_P(m)^{-1}`),
+  `lintegral_eq_openCell_levi_unipotent` (I.1 (2), second formula, as
+  `∫_G F = μ(K) γ^{-1} ∫_M ∫_U ∫_V F(m u v^{-1})`), `openCellConstant_leviUnipotentMeasure`,
+  `measure_eq_of_openCell_factor` and `openCellConstant_eq_relIndex_mul` (the index
+  expression of `γ(P)` in the proof of Remark (3), from a factorized compact open subgroup
+  `H`). The decomposition of `P ∩ K`, the modulus relations, the factorization of `H` and the
+  open-cell data are hypotheses; Remark (3) itself is not formalized.
+- `CuspidalSplit`: `integral_eq_smul_integral_openCellCoord` (the Bochner form of the
+  open-cell formula), `integral_conj_mul_eq_split` (the decomposition of
+  `∫_G f_1(a g a^{-1}) f_2(g) dg` into the integral over `S(a)` and `J(a)` in the proof of
+  VIII.3.1, which is the decomposition hypothesis of `conjugationIntegralBound_of_split`),
+  `conjugationIntegralBound_of_openCell` (VIII.3.1 from the open-cell data and the estimates
+  (3) and `J(a)`, as hypotheses).
+- `OpenCellLemma`: `OpenCellBound` (the conclusion of Lemma II.3.5, as a Prop),
+  `mem_of_coordinate_bounds`, `mem_mul_of_dense`, `openCellBound_of_mul` (the three steps
+  of II.3.5), `conjugationSigmaBound_of_openCellBound` (inequality (2) of VIII.3.1). The
+  decomposition `G = K P_0`, Lemma II.3.3, the density of `Ū P` and the closedness of `Γ̄ P`
+  are among its hypotheses.
+- `ReproducingKernel`: `IsReproducingKernel`, `IsReproducingKernel.finiteDimensional`,
+  `IsReproducingKernel.finrank_le`, `IsReproducingKernel.span_kernel_eq_top`,
+  `IsReproducingKernel.kernel_eq_sum` (the functional-analytic step of the proof of
+  VIII.4.1: a space of functions in `L^2` with a reproducing kernel whose diagonal is
+  integrable is finite dimensional and spanned by the kernel), `eq_zero_of_covariant` and
+  `centralProjection_eq_zero_of_ne_one` (the reduction to `χ` trivial on `A_G ∩ H`). The
+  application to `p_χ(°C_H)` with the measure of `A_G\G` is open.
 Other generic modules: `Langlands.GroupScheme.Rational.Characters` (rational
 characters, I.1); `Langlands/Representation/Exponents/CentralEigencharacterExtensionStatement`
 (statement only, I.3).
@@ -434,6 +568,14 @@ nonarchimedean local field. They are not general-group adapters. A
 specialization of the general targets to `GL_n` may reuse them.
 
 - `Langlands/Group/GL/Cartan*`: Cartan cells and the count `mes(KmK)` (I.1 (4), (5)).
+- `Langlands/HarmonicAnalysis/HarishChandraSchwartz/SigmaProductGL` (Worker 249):
+  `sigmaProductBound_glBlock` (Lemma II.3.1 for the standard block upper triangular
+  parabolics `BlockShape.parabolic` of `GL_n` and the identity embedding, without
+  hypotheses).
+- `Langlands/HarmonicAnalysis/HarishChandraSchwartz/DoubleCosetMeasureGL` (Worker 249):
+  `GLDoubleCosetIndexBound`, `glDoubleCosetIndexBound`, `exists_measure_doubleCoset_le_delta`
+  (the upper bound of I.1 (5) for `GL_n(O)` and diagonal `a(λ)`, from Worker 23's
+  `cartanCellCount`, for every left invariant measure).
 - `Langlands/Representation/Classification/`: `SquareIntegrableExponent*`,
   `ProductLeviSquareIntegrable*` (III.1, III.1.1, III.1.2);
   `TemperedExponentStatement`, `TemperedInduction*`, `TemperedSupportStatement`,
