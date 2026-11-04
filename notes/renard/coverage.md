@@ -261,6 +261,21 @@ product/coproduct-existence AB4 conventions. This updates only the A.VI
 navigation row; the examples, corrected subcategory criteria, original
 nonunital adapter, AB5 comparisons and A.VI.3 retain separate obligations.
 
+The [A.VI.3 Jordan–Hölder and simple-subquotient source map](jordan-holder-progress.md),
+dated 4 November 2026 by Worker 709, maps printed pp.263–264 / PDF269–270
+to twelve verified published definition, statement and proof units. It
+records the pure abelian Jordan–Hölder theorem with factor multiplicities,
+witness-dependent numerical length, canonical local-finite-type condition,
+the simple-quotient proposition and all three simple-subquotient identities.
+The source's Grothendieck and AB6 hypotheses, independent universe sizes,
+actual cokernel and sum constructions, proof routes, authors and publication
+receipts remain explicit. Zorn's foundational reminder is classified as
+expository; the possibly nonunital and unital full-module examples retain
+their actual-category AB5/AB6 adapter obligation. The I.6 nondegenerate-module
+proofs do not alone close those examples. This updates A.VI navigation
+without changing the preceding audit's historical scope or claiming section
+completion.
+
 The [A.X categorical-center progress note](category-center-progress.md),
 dated 1 November 2026 by Worker 709, maps the complete source passage on
 printed p.269 / PDF275 to Mathlib's category-center definition and the
@@ -850,7 +865,7 @@ including definitions, remarks and unnumbered results.
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [four further published proof units and the polynomial-module equivalence](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda and the isomorphism principles. The final representability remark/corollary has a published statement with exact proof waiting; ring-denominator constructions, categorical transport of the chosen localization universal arrow, other example comparisons, localization exactness and remaining assertions retain separate obligations |
 | A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four published statement/proof pairs and the concrete filtered-colimit construction and statements](limits-colimits-progress.md). The actual quotient, compatible-family lift, eventual-zero and separate empty-cocone targets await proof acceptance and publication in the focused successor; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
-| A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
+| A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. Full-module AB5/AB6 examples, other examples, subcategory criteria, source adapters and other AB5 comparisons remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
 | A.VIII | Specified functors | 265 / 271 | Partial: [A.VIII.1 source map and seven verified publications](exact-functors-progress.md) for one-sided sequence exactness, finite preservation, derived short-complex/homology comparisons and faithfulness, with exact universes and proof receipts. A.VIII.2 Hom functors, projectives, generators and smallness retain their separate tasks and [category/module boundaries](category-module-progress.md); no section completion declared |
 | A.IX | Categorical decompositions | 268 / 274 | Partial: [complete source-page map and seven verified proof publications](category-decomposition-progress.md), including literal full-sum zero intersection and canonical binary-biproduct monicity under both full-family smallness premises. Source-sized applicability and additional functor properties remain separate; no section completion declared |
