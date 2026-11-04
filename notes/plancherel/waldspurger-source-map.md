@@ -2,7 +2,7 @@
 
 Author: Worker 249, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
 Lean coverage below was checked against Library commit
-`cf45df0608b9136ff545b17eadf8297cd7be81fd`.
+`83a867912d2befca2ebf3e208f7d8fc29ae19ec5`.
 
 This note maps every numbered item of Waldspurger's article to its page, its
 content, the items of the article it uses, and the external sources it cites.
@@ -123,23 +123,23 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 | III.1 | 263 | square integrable modulo `A_G` | I.1 | Data | `IsSquareIntegrableModCentralSubgroup` |
 | Prop. III.1.1 | 263 | square integrability via exponents | [C] | Ext | `GL_n` (see Library coverage); on actual rational points of connected reductive groups, the sufficiency of strict normalized Jacquet exponents for square integrability modulo the full center: the Prop `RationalStrictJacquetSquareIntegrabilityStatement` (with `StandardCocharacterStatement` among its premises), proved from the unproved Prop `JointSpecialCompactBasisExistenceStatement` by `rationalStrictJacquetSquareIntegrabilityReduction` |
 | Cor. III.1.2 | 263–264 | coefficients bounded by `c Ξ(1+σ)^{-r}` on `G^1`, for every `r` | I.1 (4), I.4.3, II.1.1, III.1.1 | Book | GL_n only; the conclusion as a Prop, with a supplied subgroup in place of `G^1`: `HasRapidlyDecreasingCoefficientsOn` (generic, statement only); a related exponential bound for coefficients on lattice rays of actual rational points, from strict normalized Jacquet exponents and a supplied simultaneous standard basis: `rationalLatticeCoefficientDecay` |
-| Lemme III.1.3 | 264 | an admissible square-integrable representation is unitary and semisimple | II.1.5, III.1.2 | Book | for irreducible representations of `GL_n` block Levis: square integrable modulo the center implies tempered, `glLeviDiscreteSeriesTempered`, and tempered implies unitarizable, `glLeviTemperedUnitarity`; generic: admissible unitarizable representations are semisimple, `admissibleUnitarySemisimplicity` (compact open subgroups cofinal); the lemma for general groups: none |
-| III.1 (2), (3) | 265 | Schur orthogonality, formal degree `d(π) > 0` | [C], III.1.2, II.1.5 | Ext | none |
+| Lemme III.1.3 | 264 | an admissible square-integrable representation is unitary and semisimple | II.1.5, III.1.2 | Book | for irreducible representations of `GL_n` block Levis: square integrable modulo the center implies tempered, `glLeviDiscreteSeriesTempered`, and tempered implies unitarizable, `glLeviTemperedUnitarity`; generic: admissible unitarizable representations are semisimple, `admissibleUnitarySemisimplicity` (compact open subgroups cofinal); generic: an irreducible representation that is square integrable modulo a normal central subgroup `A` is unitarizable, `isUnitarizable_of_isSquareIntegrable` (`SchurOrthogonality`; a Haar measure on `G ⧸ A` invariant under inversion and the premise `hcof` that every open subgroup contains a compact open subgroup are hypotheses; the proof uses one smooth functional in place of Waldspurger's sum over generators); the lemma for reducible representations: none |
+| III.1 (2), (3) | 265 | Schur orthogonality, formal degree `d(π) > 0` | [C], III.1.2, II.1.5 | Ext | generic (`SchurOrthogonality`), for representations of a topological group `G` on which a normal central subgroup `A` acts by one character, with a Haar measure on `G ⧸ A` invariant under inversion and the premise `hcof`: (2) for irreducible admissible inequivalent `π₁`, `π₂` whose orthogonality integrands are integrable, `orthogonalityIntegral_eq_zero_of_integrable` (the form needed for tempered `π₂` in the proof of III.7.1; that integrability for tempered `π₂` is not proved), and for square-integrable ones `orthogonalityIntegral_eq_zero`; (3) for irreducible `π` square integrable modulo `A` (`IsSquareIntegrableModCentralSubgroup`): `exists_formalDegree`, `formalDegree`, `formalDegree_pos`, `formalDegree_unique`, `orthogonalityIntegral_eq_formalDegree`. The unimodularity of `G/A_G` and `hcof` for Waldspurger's `G` are not proved there |
 | Lemme III.2.1, Prop. III.2.2, Lemme III.2.3 | 265–267 | tempered representations; criteria via exponents; induction | I.2, I.3, I.4.1, I.6.1, II.1.1, II.1.2, III.1.2 | Book | GL_n only; generic growth condition `HasTemperedGrowth` (`TemperedPairing`) |
 | Lemmes III.3.1–III.3.3 | 267–268 | weak constant terms `π^w_P` | I.3, III.1.1, III.2.2 | Book | GL_n only (III.3.1) |
 | Prop. III.4.1 | 269 | an irreducible tempered representation embeds in some `I_P^G ω`, `ω ∈ E_2(M)` | III.3.2, III.3.3 | Book | `GL_n` only: `glTemperedDiscreteSeriesSupport` (proof of `GLTemperedDiscreteSeriesSupportStatement`: an irreducible admissible tempered representation of `GL_n(F)` embeds in a representation normally induced, from the opposite of a standard block parabolic, by an irreducible representation of its Levi that is square integrable modulo the center) |
 | Lemme III.5.1 | 269–270 | weak constant term `f^w_P` of `f ∈ A^w(G)` | III.3 | Book | none |
 | III.6 | 271–272 | `C(G)`, seminorms `ν_r`, levels `C_H`, inductive-limit topology, (1), completeness, `C_c^∞(G)` dense, `G × G` acts continuously, constant term `f^{(P)}` via II.4.5 | I.6, II.1, II.1.2, II.4.5, [B] | Data, Book | generic: `C(G)`, `ν_r`, `C_H`, topology, (1), density, `G × G` continuity, completeness (`Space.completeSpace`, for a cofinal sequence of compact open subgroups), `f^{(P)}` and `C(G) → C(M)` (`constantTerm`, with II.4.5 as a hypothesis), `f^{(P),Ind}` and the diagram (`constantTermInd`, pointwise; see below) |
 | Lemme III.6.1 | 271 | for `f_1, f_2 ∈ C(G)`: `∫_G f_1(h) f_2(h^{-1}g) dh` converges absolutely, `f_1 * f_2 ∈ C(G)`, and `(f_1, f_2) ↦ f_1 * f_2` is separately continuous | II.1.3–II.1.5 | Book | `Convolution` (generic; II.1.3–II.1.5 as hypotheses) |
-| III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | first paragraph (generic, for an admissible representation with the displayed coefficient-growth hypothesis `HasTemperedCoefficients`): `π(f)` `schwartzAction`, of finite rank `schwartzAction_mem_finiteRankEnd`, `θ_π` as a continuous linear form `schwartzCharacter`, `π(f_1 * f_2) = π(f_1) π(f_2)` `schwartzAction_convolution`; second paragraph, `f φ ∈ C(G)` for `f ∈ A(ω)` and `φ ∈ C_c(G/N)`: `TranslationWeights.mul_mem_schwartzSubmodule` (generic, with an open normal subgroup `N` in place of `G^1` and the conclusion of Cor. III.1.2 as the hypothesis `HasRapidlyDecreasingCoefficientsOn`); proof of Prop. III.7.1, the operator `π[φ]` of a family with properties (1), (2) and its naturality: `IdempotentFamily.operator`, `IdempotentFamily.operator_intertwining` (generic), and the concrete family `φ_H = φ ψ_H` with the first displayed equality for `π[φ]`: `traceFamily`, `traceFamily_operator_eval` (generic, with an open normal subgroup in place of `G^1`); proof of Cor. III.7.2, the Fitting decomposition of an intertwiner of an admissible representation: `isCompl_fittingRange_fittingKernel`, `bijOn_fittingRange` (generic); Prop. III.7.1 and Cor. III.7.2 themselves are open; orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit`, their quotient topology (compact, Hausdorff) `discreteSeriesOrbitHomeomorph`, `compactSpace_discreteSeriesOrbit`, `t2Space_discreteSeriesOrbit`, finiteness of the stabilizer `finite_discreteSeriesStabilizer` (generic), `finite_rationalDiscreteSeriesStabilizer` (given the open finite-index premise `hindex`, see below); the pairing of `C(G)` with functions of tempered growth, `Space.temperedPairing` (generic) |
+| III.7, Prop. III.7.1, Cor. III.7.2, III.7.3 | 273–276 | `π(f)`, `θ_π(f)` continuous on `C(G)`; `E_2(G)`; orbits `O` of `Im X(G)`; polynomials on `O`; `W(G\|M)`; regular `ω`: `(I_P^G ω)^w_{P'}` semisimple | III.1.2, III.3.2, III.3.3, III.6.1 | Data, Book | first paragraph (generic, for an admissible representation with the displayed coefficient-growth hypothesis `HasTemperedCoefficients`): `π(f)` `schwartzAction`, of finite rank `schwartzAction_mem_finiteRankEnd`, `θ_π` as a continuous linear form `schwartzCharacter`, `π(f_1 * f_2) = π(f_1) π(f_2)` `schwartzAction_convolution`; second paragraph, `f φ ∈ C(G)` for `f ∈ A(ω)` and `φ ∈ C_c(G/N)`: `TranslationWeights.mul_mem_schwartzSubmodule` (generic, with an open normal subgroup `N` in place of `G^1` and the conclusion of Cor. III.1.2 as the hypothesis `HasRapidlyDecreasingCoefficientsOn`); proof of Prop. III.7.1, the operator `π[φ]` of a family with properties (1), (2) and its naturality: `IdempotentFamily.operator`, `IdempotentFamily.operator_intertwining` (generic), and the concrete family `φ_H = φ ψ_H` with the first displayed equality for `π[φ]`: `traceFamily`, `traceFamily_operator_eval` (generic, with an open normal subgroup in place of `G^1`); the Schur step of that proof (printed pp.274–275), for `ω` in place of `ω ⊗ χ` and in the setting of `SchurOrthogonality`: `ψ^{ρ̌}_H(g) = ψ^ρ_H(g^{-1})` for admissible `ρ`, `traceCoefficient_smoothContragredient`; the integral over `G ⧸ A` of `ψ_H(g) ℓ(π(g) v)` vanishes for irreducible admissible inequivalent `π`, `ω` with integrable integrands, `integral_traceOrthogonalityIntegrand_eq_zero`, and equals `d(ω)^{-1} ℓ(e_H v)` for `π = ω` irreducible and square integrable modulo `A`, `integral_traceOrthogonalityIntegrand_eq_formalDegree` (and `d(ω)^{-1} ℓ(v)` for `H`-fixed `v`, `integral_traceOrthogonalityIntegrand_eq_formalDegree_of_mem`) (`TraceOrthogonality`, generic; the twist by `χ`, the Fourier inversion on `G^1 A_G \ G` and `d(ω ⊗ χ) = d(ω)` are not formalized); proof of Cor. III.7.2, the Fitting decomposition of an intertwiner of an admissible representation: `isCompl_fittingRange_fittingKernel`, `bijOn_fittingRange` (generic); Prop. III.7.1 and Cor. III.7.2 themselves are open; orbits: `DiscreteSeriesClass`, `discreteSeriesOrbit`, their quotient topology (compact, Hausdorff) `discreteSeriesOrbitHomeomorph`, `compactSpace_discreteSeriesOrbit`, `t2Space_discreteSeriesOrbit`, finiteness of the stabilizer `finite_discreteSeriesStabilizer` (generic), `finite_rationalDiscreteSeriesStabilizer` (given the open finite-index premise `hindex`, see below); the pairing of `C(G)` with functions of tempered growth, `Space.temperedPairing` (generic) |
 
 ## Chapter IV. Intertwining operators (pp.276–287)
 
 | Item | Page | Content | Uses | Class | Lean coverage |
 |---|---|---|---|---|---|
-| IV.1 | 276–278 | compact picture, rational families via `B`-families, `J_{P'\|P}(π)` by integrals over `U ∩ U' \ U'` | I.5 | Data | compact picture: restriction of normalized induction to `K` and its independence of unramified twists, `normalizedInductionCompactEquiv`, `unramifiedNormalizedInductionCompactEquiv` (actual subgroup data, with `G = P K` as a hypothesis; the Library's full-parabolic normalization, see below); the integral `∫_{(U ∩ U') \ U'} f(u' g) du'` on the subspace of the Levi-inflated induced space where it converges weakly: `Langlands.Plancherel.StandardIntertwining.operator`, with `operator_right_action`, `operator_uniformly_smooth`, `operator_unipotent_mul` (generic; target Levi covariance not proved); rational families: none |
-| Thm IV.1.1 | 278 | convergence in a cone and rationality of `J_{P'\|P}(π ⊗ χ)` | II.3.4, II.4.2, I.4.4, I.3 | Book | none |
-| IV.1 (10)–(14) | 283–284 | uniform convergence, nonvanishing, adjoint, composition, transitivity | IV.1.1 | Book | none |
+| IV.1 | 276–278 | compact picture, rational families via `B`-families, `J_{P'\|P}(π)` by integrals over `U ∩ U' \ U'` | I.5 | Data | compact picture: restriction of normalized induction to `K` and its independence of unramified twists, `normalizedInductionCompactEquiv`, `unramifiedNormalizedInductionCompactEquiv` (actual subgroup data, with `G = P K` as a hypothesis; the Library's full-parabolic normalization, see below); and, for the positive Levi-normalized induction of I.3, `unramifiedLeviInductionCompactEquiv` (one compact picture for all unramified twists; the same compact open `K` factorizes both parabolics, and unimodularity of the conjugation moduli of the radicals is a hypothesis; `CompactIntertwiningFamilies`); the integral `∫_{(U ∩ U') \ U'} f(u' g) du'` on the subspace `StandardIntertwining.domain` of the Levi-inflated induced space where it converges weakly with a representing vector: `Langlands.Plancherel.StandardIntertwining.operator`, with `operator_right_action`, `operator_uniformly_smooth`, `operator_unipotent_mul`; its Levi transformation factor, `operator_levi_mul` (`StandardIntertwiningCovariance`); naturality in the inducing representation and the representative square on the domain, `operator_map`, `operator_domainEquiv` (`StandardIntertwiningNaturality`); target Levi covariance and the target-valued intertwiner on the domain, `targetOperator`, `targetIntertwiner`, given the explicit premise `SquaredModulusCompatibility` (`δ_U δ_{U'} = δ_{U ∩ U'}^2` on `M`, not proved for reductive groups; comparisons of its intersection character in `StandardIntertwiningModulus`) (`StandardIntertwiningTarget`); the intertwiner on the whole source when the domain is the whole source, `fullSourceIntertwiner`, and for `U' = U` the total-mass multiple of the identity, `diagonalTargetIntertwiner_eq` (`StandardIntertwiningTargetLaws`, `StandardIntertwiningMeasure`) (all generic, for a locally compact nonarchimedean `G` and semidirect decompositions with a common Levi and closed radicals; the target-valued maps also use regular Haar measures and a compatible quotient measure); rational families: the algebra generated by the evaluations `χ ↦ χ(m)` on the unramified characters of a supplied norm family, `unramifiedRegularFunctions`, and polynomial and rational vector and operator families on a parameter subset, `IsPolynomialOn`, `IsPolynomialOperatorOn`, `IsRationalOperatorOn` in the namespace `UnramifiedOperatorFamily` (`UnramifiedOperatorFamilies`, generic), closed under composition (`IsRationalOperatorOn.comp`, `CompactIntertwiningComposition`) and transported along multiplicative homeomorphisms (`unramifiedRegularFunctionsEquiv`, `UnramifiedOperatorTransport`); for the actual rational norm characters of a connected reductive group, this algebra is identified with the group algebra of the valuation image and with the Laurent polynomial functions in the finite character coordinates, `rationalCanonicalUnramifiedLaurentAlgebraEquiv` (`RationalUnramifiedCoordinateAlgebra`; Waldspurger's `B` and `b_m`); the compact-picture operator of the standard integral and its rationality predicate, `standardCompactOperator`, `StandardCompactRationalOn` (`CompactIntertwiningFamilies`); the universal `B`-family construction of IV.1: none |
+| Thm IV.1.1 | 278 | convergence in a cone and rationality of `J_{P'\|P}(π ⊗ χ)` | II.3.4, II.4.2, I.4.4, I.3 | Book | the conditional Prop `ConditionalParabolicIntertwiningStatement` (statement only, `ParabolicIntertwiningStatement`: for actual rational points of a connected reductive group with compatible `ParabolicRootPresentation`s sharing a Levi and the further structural premises listed there, and admissible `π` of finite length, it asserts unimodularity of the radicals, `SquaredModulusCompatibility`, a nonempty open threshold region on whose orbit saturation the domain is the whole source, rationality `StandardCompactRationalOn` there, and the representative square); parameter regions: `rootThresholdRegion`, `intertwiningRegion`, `rootThresholdRegion_nonempty_of_positivePairing` (`IntertwiningCone`), their realization by unramified characters, `canonicalUnramifiedIntertwiningRegion_nonempty_iff` (`CharacterIntertwiningCone`), the form induced from one ambient Weyl-invariant form, `weylInducedCharacterForm`, and its regions (`AmbientCharacterForm`, `AmbientCharacterFormNaturality`, `AmbientCharacterIntertwiningCone`, `SubtorusIntertwiningCone`), and the regions for actual parabolic data, `parabolicUnramifiedIntertwiningRegion`, `parabolicPointUnramifiedIntertwiningRegion` (`ParabolicIntertwiningRegion`, `ParabolicPointIntertwiningRegion`); the convergence and rationality themselves: none |
+| IV.1 (10)–(14) | 283–284 | uniform convergence, nonvanishing, adjoint, composition, transitivity | IV.1.1 | Book | (12) as a formal identity of the integrals, for supplied ordered quotient coordinates with measure-preserving charts and absolute convergence of the product integral: `HasIntegral.comp_ordered`, `operator_eq_comp_ordered`, `fullSourceIntertwiner_comp_ordered` (`StandardIntertwiningComposition`); the coordinates and their exact measure normalization from literal ordered product homeomorphisms of the radicals, `OrderedSubgroupFactorization`, `quotientCoordinates` (`StandardIntertwiningFactorization`), and from compact-open mass identities (`StandardIntertwiningIntersectionFactorization`, `StandardIntertwiningIntersectionNormalization`, `StandardIntertwiningFirstFactorMass`, `StandardIntertwiningLocallyNormalizedComposition`, `StandardIntertwiningCompactOpenComposition`, `StandardIntertwiningFactorChoice`, `StandardIntertwiningFactorRegularity`; for second countable `G`, `comp_hasIntegral_of_secondCountable` in `StandardIntertwiningCountableComposition`) (generic); the factorizations for actual reductive radicals, the distance condition of (12), convergence and the rational identity: none; (10), (11), (13), (14): none |
 | Cor. IV.1.2 | 284 | pole order at 0; for square integrable `π`, `J` regular unless `P̄` conjugate to `P` | IV.1.1 | Book | none |
 | Prop. IV.2.1 | 284 | tempered: convergence for `⟨Re χ, α^∨⟩ > 0` | II.4.3 | Book | none |
 | Prop. IV.2.2 | 284 | `ω` square integrable and `G`-regular: `I_P^G ω` irreducible, `J` regular and invertible | III.7.3, IV.1 | Book | none |
@@ -198,11 +198,13 @@ The coefficient of `f_{ψ[O,P]}` in `κ̃` (VI.3, p.305) and in VIII.1 (2) is
 ## Library coverage
 
 The declarations below formalize parts of the article in the Library at commit
-`cf45df06`. The list covers the modules of this task's two executors and other
+`83a86791`. The list covers the modules of this task's two executors and other
 modules found by searching the Library for the article and for the reductive
 data of I.1; it is not the declaration-level reuse audit of condition 7. None
-proves a theorem of Chapters IV–VII; for VIII.3.1, VIII.3.2 and VIII.4 there are
-generic versions with explicit hypotheses (see below). Most work over explicit
+proves a numbered theorem of Chapters IV–VII (for IV.1 there are generic formal
+laws of the standard integral and a conditional statement of IV.1.1, see the
+table); for VIII.3.1, VIII.3.2 and VIII.4 there are generic versions with
+explicit hypotheses (see below). Most work over explicit
 abstract data.
 The modules `RationalCharacterValuation`, `LocalFieldUnits`,
 `RationalImageCharacters`, `RationalImageRealPart`,
@@ -253,7 +255,17 @@ Prop target `RelativeWeylCoxeterStatement` (statement only). Representative data
 (`RenardUniformizerSection`, `RenardRepresentativeData`, Worker 454) and the
 Prop targets `RenardLatticeComparisonStatement` and
 `RenardDominantComparisonStatement` are in
-`Langlands/Representation/Plancherel/`; those targets are statements only.
+`Langlands/Representation/Plancherel/`. `RenardDominantComparisonStatement`
+(dominant centralizer sections and finite positive covers, Renard V.3.21–V.3.23
+and V.5.1(4)) is proved by `renardDominantComparison`
+(`RenardDominantComparisonProof`, Worker 1292, with the helper modules
+`RenardActualLattice`, `RenardDominantValuation`, `RenardDominantTransversal`,
+`RenardDominantFiniteCover`, `RenardDominantSections` and
+`RenardIntegralRestriction`). Its conclusions are required for every
+bijectivity argument of the restriction-evaluation map of the centralizer
+valuation; the existence of such an argument is the separate unproved Prop
+`CentralizerValuationComparisonStatement`. `RenardLatticeComparisonStatement`
+is a statement only.
 
 ### General groups
 
@@ -336,7 +348,15 @@ image of the central subgroup `s(T(F))` (in the source, the split component
 remaining proof obligation, not a permitted permanent external structural
 assumption: Renard proves it in V.2.6, and the Library has only the Prop
 target `SplitComponentLatticeStatement` (module
-`RenardLatticeComparisonStatement`), with no proof. Entries marked
+`RenardLatticeComparisonStatement`), with no proof. `SplitComponentLatticeBridge`
+(Worker 1503) proves the finite index from injectivity of the restriction of
+rational characters to the split component
+(`finiteIndex_splitValuationImage_of_injective`), proves the valuation-bijection
+conjunct of `SplitComponentLatticeStatement` (`bijOn_C0_splitValuationImage`), and
+derives that statement from either of the unproved Props
+`CentralSplitTorusCharacterStatement` and `CharacterRestrictionStatement`
+(`splitComponentLatticeStatement_of_centralSplitTorusCharacter`,
+`splitComponentLatticeStatement_of_characterRestriction`). Entries marked
 "(given `hindex`)" below hold only under this premise. It is distinct from
 two results that the Library proves without it: the finite index of the
 restriction of algebraic rational characters to a split component
@@ -424,6 +444,53 @@ reductive `G` and a split component).
   split torus and its factorization as a unitary character times a positive one; internal
   prerequisites). `RationalSmoothRealDescentStatement` (Worker 723):
   the Prop `RationalSmoothRealDescentStatement` (Renard V.3.19, statement only).
+- `RationalImageComplexExponential`, `RationalParameterTopology`,
+  `RationalImaginaryParameters` (Worker 6 for the last),
+  `RationalRealParameterExtension`, `RationalComplexParameterStatement`,
+  `RationalComplexParameterQuotientStatement`: the complex additive parameters
+  of the actual valuation image and their exponential
+  `rationalImageComplexExponential` (`λ ↦ (a ↦ q^{-λ(a)})`), the stated period
+  subgroup `rationalImagePeriodLattice`, a chosen lift
+  `rationalImageComplexLift` with `rationalImageComplexCharacter_lift`, the
+  pointwise parameter topologies with their finite-coordinate comparisons
+  (`rationalImageComplexParameterContinuousCoordinates`), the imaginary
+  parameters `rationalImageImaginaryParameters`, and the extension of positive
+  characters of a split component to the valuation image,
+  `exists_positiveImageCharacter_extension` (I.1, `X(G)`, `Re` and `Im`; the
+  route of Renard V.3.20). The assertions of V.3.20 on lifts, periods, real
+  parts, unitary parameters and surjectivity onto the unramified characters of
+  `G(F)` are the Prop `RationalComplexParameterStatement`, and its quotient
+  topology is the Prop `RationalComplexParameterQuotientStatement`; both are
+  statements only.
+- `TorusSplitNormFactorization` (Worker 1374): `splitNormExponent`,
+  `exists_split_mul_commonNormKernel` (a fixed power of every point of an actual
+  torus is a point of its maximal split subtorus times an element of the common
+  norm kernel; internal).
+- `RationalUnramifiedCoordinateAlgebra` (Worker 200),
+  `UnramifiedOperatorFamilies`, `UnramifiedOperatorTransport` (Worker 200),
+  `CompactIntertwiningFamilies` (Worker 200), `CompactIntertwiningComposition`,
+  and the standard-integral modules `StandardIntertwiningCovariance`,
+  `StandardIntertwiningNaturality`, `StandardIntertwiningMeasure`,
+  `StandardIntertwiningTarget`, `StandardIntertwiningTargetLaws`,
+  `StandardIntertwiningModulus`, `StandardIntertwiningComposition`,
+  `StandardIntertwiningFactorization`, `StandardIntertwiningIntersectionFactorization`,
+  `StandardIntertwiningIntersectionNormalization`, `StandardIntertwiningFirstFactorMass`,
+  `StandardIntertwiningLocallyNormalizedComposition`,
+  `StandardIntertwiningCompactOpenComposition`, `StandardIntertwiningFactorChoice`,
+  `StandardIntertwiningFactorRegularity`, `StandardIntertwiningCountableComposition`:
+  rational operator families and the formal laws of the standard integral; see the
+  rows IV.1 and IV.1 (10)–(14).
+- `IntertwiningCone`, `CharacterIntertwiningCone`, `SubtorusIntertwiningCone`
+  (Worker 200), `AmbientCharacterForm`, `AmbientCharacterFormNaturality`,
+  `AmbientCharacterIntertwiningCone` (Worker 200), `ParabolicIntertwiningRegion`,
+  `ParabolicPointIntertwiningRegion` (Worker 200) and `ParabolicIntertwiningStatement`:
+  the parameter regions of Thm IV.1.1 and its conditional statement; see the row
+  Thm IV.1.1.
+- `RationalAssociatedCentralCharacterSigns` (directory
+  `Langlands/Representation/Aubert/General/`, namespace `Langlands.Plancherel`):
+  scalar characters under associated-Levi conjugation, `scalarCharacter_eq_of_pullback_equiv`,
+  `associatedLeviCenterConjugationEquiv` (internal support for a rank-one
+  self-association argument).
 
 The modules below construct the objects of V.1 and VI.1 on actual normalized induction
 from the literal product parabolic. Unless stated otherwise, their data are: `G` is a locally compact
@@ -701,6 +768,20 @@ Namespace `Langlands.HarishChandraSchwartz` (Worker 249), module directory
   is trivial on `G/N` and every compact open subgroup lies in `N`, Cor. III.1.2 as the
   hypothesis `HasRapidlyDecreasingCoefficientsOn`, and a right invariant Haar measure). The
   rest of Prop. III.7.1 is open.
+- `SchurOrthogonality`: `orthogonalityIntegrand`, `orthogonalityIntegral`,
+  `orthogonalityIntegral_eq_zero_of_integrable`, `orthogonalityIntegral_eq_zero` (III.1 (2)),
+  `invariantForm`, `invariantPositiveForm`, `isUnitarizable_of_isSquareIntegrable` (Lemma III.1.3
+  for irreducible representations), `exists_formalDegree`, `formalDegree`, `formalDegree_pos`,
+  `formalDegree_unique`, `orthogonalityIntegral_eq_formalDegree` (III.1 (3)), for
+  representations on which a normal central subgroup `A` acts by one character, with a Haar
+  measure on `G ⧸ A` invariant under inversion and the premise `hcof` as hypotheses.
+- `TraceOrthogonality`: `traceCoefficient_smoothContragredient`,
+  `traceOrthogonalityIntegrand`, `integral_traceOrthogonalityIntegrand`,
+  `integral_traceOrthogonalityIntegrand_eq_zero`,
+  `integral_traceOrthogonalityIntegrand_eq_formalDegree`,
+  `integral_traceOrthogonalityIntegrand_eq_formalDegree_of_mem` (the Schur step of the proof of
+  Prop. III.7.1, printed pp.274–275, for `ω` in place of `ω ⊗ χ`; the integrability for
+  tempered `π` is a hypothesis of the vanishing case).
 
 Other modules of this directory, whose Markdown names no author:
 `DoubleCosetIndexBoundsStatement` with its proof `doubleCosetIndexBounds`
