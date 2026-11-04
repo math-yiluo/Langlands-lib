@@ -44,6 +44,11 @@ This contribution does not construct a torus quotient, prove splitness,
 or prove maximal-torus conjugacy. The source of the constructed map is
 `D × ker(φ)`; even if `D` is a split torus, `ker(φ)` need not be a torus,
 smooth, or connected. Extracting a split-torus domination of a unipotent
-kernel requires further arguments. Only schematic dominance of the
-constructed parametrization is asserted; no separate topological
-dominance or quasi-compactness theorem for that final map is supplied here.
+kernel requires further arguments. The source group `H` is additionally assumed quasi-compact over `S` for
+`difference_quasiCompact`, `parametrization_quasiCompact`, and
+`parametrization_isDominant`. Under the kernel-pair isomorphism the difference
+is the second projection from `H ×[S] ker(q)`. That projection is a base
+change of `H → S`, hence quasi-compact. Quasi-compactness then passes to the
+full parametrization, provided `p` is quasi-compact. Combining this with its
+schematic dominance proves topological dominance. No reducedness premise on
+either kernel is used in this deduction.

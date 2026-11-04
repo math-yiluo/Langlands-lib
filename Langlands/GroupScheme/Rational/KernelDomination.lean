@@ -155,6 +155,19 @@ theorem difference_isSchemeTheoreticallyDominant (q : H ⟶ Q) :
         congrArg (fun f => f.left) (differenceSection_comp q)]
       simp
 
+/-- The kernel-pair difference is quasi-compact when the source group is
+quasi-compact over the base. -/
+theorem difference_quasiCompact (q : H ⟶ Q) [QuasiCompact H.X.hom] :
+    QuasiCompact (KernelPair.difference q).left := by
+  have : IsIso (KernelPair.inv q) :=
+    (inferInstance : IsIso (KernelPair.iso q).inv)
+  have : QuasiCompact (snd H.X (kernel q).X).left := by
+    change QuasiCompact (pullback.snd H.X.hom (kernel q).X.hom)
+    infer_instance
+  rw [← KernelPair.inv_snd]
+  change QuasiCompact ((KernelPair.inv q).left ≫ (snd H.X (kernel q).X).left)
+  infer_instance
+
 /-- The kernel-valued difference of a parametrization at `d` and `d k`. -/
 def parametrization (φ : D ⟶ Q) (q : H ⟶ Q) (p : D.X ⟶ H.X)
     (h : p ≫ q.hom.hom = φ.hom.hom) : D.X ⊗ (kernel φ).X ⟶ (kernel q).X :=
@@ -201,6 +214,33 @@ theorem parametrization_isSchemeTheoreticallyDominant
   change IsSchemeTheoreticallyDominant
     ((KernelPair.hom φ).left ≫
       (pairMap φ.hom.hom q.hom.hom p h).left ≫ (KernelPair.difference q).left)
+  infer_instance
+
+/-- Quasi-compactness of the full kernel parametrization. -/
+theorem parametrization_quasiCompact
+    (φ : D ⟶ Q) (q : H ⟶ Q) (p : D.X ⟶ H.X)
+    (h : p ≫ q.hom.hom = φ.hom.hom)
+    [QuasiCompact p.left] [QuasiCompact H.X.hom] :
+    QuasiCompact (parametrization φ q p h).left := by
+  have : QuasiCompact (pairMap φ.hom.hom q.hom.hom p h).left :=
+    pairMap_quasiCompact _ _ _ h
+  have : QuasiCompact (KernelPair.difference q).left := difference_quasiCompact q
+  have : IsIso (KernelPair.hom φ) :=
+    (inferInstance : IsIso (KernelPair.iso φ).hom)
+  change QuasiCompact
+    ((KernelPair.hom φ).left ≫
+      (pairMap φ.hom.hom q.hom.hom p h).left ≫ (KernelPair.difference q).left)
+  infer_instance
+
+/-- Topological dominance of the full kernel parametrization. -/
+theorem parametrization_isDominant
+    (φ : D ⟶ Q) (q : H ⟶ Q) (p : D.X ⟶ H.X)
+    (h : p ≫ q.hom.hom = φ.hom.hom)
+    [IsSchemeTheoreticallyDominant p.left] [QuasiCompact p.left]
+    [Flat φ.hom.hom.left] [Flat q.hom.hom.left] [QuasiCompact H.X.hom] :
+    IsDominant (parametrization φ q p h).left := by
+  have := parametrization_isSchemeTheoreticallyDominant φ q p h
+  have := parametrization_quasiCompact φ q p h
   infer_instance
 
 end Groups
