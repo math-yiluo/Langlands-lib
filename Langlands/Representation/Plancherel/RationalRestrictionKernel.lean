@@ -19,9 +19,9 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable {G H : GroupScheme (Spec (CommRingCat.of F))}
   [IsAffine G.X.left] [IsAffine H.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalRestrictionKernel1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
-local instance : TopologicalSpace (GroupScheme.rationalPoints H) :=
+local instance instRationalRestrictionKernel2 : TopologicalSpace (GroupScheme.rationalPoints H) :=
   rationalPointTopology F H.X
 
 /-- A character is in the actual restriction kernel precisely when it is
@@ -75,7 +75,7 @@ section CentralImage
 
 variable {T : CommGroupScheme (Spec (CommRingCat.of F))} [IsAffine T.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints T.toGrp) :=
+local instance instRationalRestrictionKernel3 : TopologicalSpace (GroupScheme.rationalPoints T.toGrp) :=
   rationalPointTopology F T.X
 
 /-- Finite index of the actual central valuation image makes the complex

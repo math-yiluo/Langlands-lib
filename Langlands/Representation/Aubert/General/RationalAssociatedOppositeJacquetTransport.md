@@ -71,3 +71,7 @@ compact-coefficient theorem, admissibility, square integrability, reciprocal
 Haar character identity or reducibility-to-self-association proof. It introduces
 no use of classification, character independence, the geometric lemma,
 adjointness or a cuspidal-support theorem.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

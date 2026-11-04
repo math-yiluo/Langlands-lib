@@ -29,7 +29,7 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
   (hν : IsGenericCocharacter i ν) (hStandard : StandardCocharacterStatement.{u})
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance instRationalStrictFactorUnitarity1 : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable [LocallyCompactSpace (RationalPoint k G.X)]
   [NonarchimedeanGroup (RationalPoint k G.X)] [T2Space (RationalPoint k G.X)]

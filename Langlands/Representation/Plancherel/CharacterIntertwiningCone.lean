@@ -116,7 +116,7 @@ section CanonicalTopology
 
 variable [IsAffine M.X.left] [LocallyOfFiniteType M.X.hom]
 
-local instance : TopologicalSpace (rationalPoints M) :=
+local instance instCharacterIntertwiningCone1 : TopologicalSpace (rationalPoints M) :=
   rationalPointTopology F M.X
 
 /-- The same actual-root inequalities on the existing continuous unramified

@@ -94,3 +94,7 @@ measure, formal degree or spectral transform. It asserts no finiteness of a
 set of representation classes or orbits, and no wave-packet, inversion or
 Plancherel result. All compactness and quotient-map conclusions use actual
 objects in the canonical point and compact-open character topologies.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

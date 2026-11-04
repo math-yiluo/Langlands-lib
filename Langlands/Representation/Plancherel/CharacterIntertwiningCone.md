@@ -75,3 +75,7 @@ threshold regions used in the Plancherel program. They do not prove that a
 specified pair of parabolics has these dynamic radicals, identify a common
 Levi, or prove finite length, intertwining convergence, rational continuation
 or a Plancherel theorem.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

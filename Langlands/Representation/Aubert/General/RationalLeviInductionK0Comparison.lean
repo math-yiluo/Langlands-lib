@@ -22,14 +22,14 @@ variable {F : Type u} [Field F] [TopologicalSpace F]
   {T : CommGroupScheme (Spec (CommRingCat.of F))}
   (i : T.toGrp ⟶ G) (ν : cocharacterLattice T) (I : Finset (SimpleRoot i ν))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance :
+local instance instRationalLeviInductionK0Comparison1 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance instRationalLeviInductionK0Comparison2 :
     IsClosedImmersion (Standard.leviHom i ν (rootSet i ν I)).hom.hom.left :=
   Standard.isClosedSubgroup_leviHom i ν (rootSet i ν I)
-local instance : IsAffine (Standard.leviScheme i ν (rootSet i ν I)).X.left :=
+local instance instRationalLeviInductionK0Comparison3 : IsAffine (Standard.leviScheme i ν (rootSet i ν I)).X.left :=
   isAffine_of_isAffineHom (Standard.leviHom i ν (rootSet i ν I)).hom.hom.left
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
-local instance :
+local instance instRationalLeviInductionK0Comparison4 : TopologicalSpace (rationalPoints G) := pointTopology
+local instance instRationalLeviInductionK0Comparison5 :
     TopologicalSpace (rationalPoints (Standard.leviScheme i ν (rootSet i ν I))) :=
   rationalPointTopology F (Standard.leviScheme i ν (rootSet i ν I)).X
 

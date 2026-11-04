@@ -187,3 +187,7 @@ an open twist-orbit domain, descend operator families to representation
 orbits, construct the same compact subgroup for two parabolics, or prove
 any Plancherel assertion. The original integral and representation-theoretic
 obligations remain separate.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

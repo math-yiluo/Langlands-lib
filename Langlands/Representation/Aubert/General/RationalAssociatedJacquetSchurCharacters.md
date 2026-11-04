@@ -71,3 +71,7 @@ independence, geometric-lemma existence, adjointness or cuspidal-support
 theorem to establish the retained isomorphism. It does not discharge the
 other analytic, structural, coefficient or detection inputs of the local
 irreducibility assembly or the exact self-association target.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

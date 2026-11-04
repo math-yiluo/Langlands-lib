@@ -22,14 +22,14 @@ variable {F : Type u} [Field F] [TopologicalSpace F]
   {T : CommGroupScheme (Spec (CommRingCat.of F))}
   (i : T.toGrp ⟶ G) (ν : cocharacterLattice T) (I J : Finset (SimpleRoot i ν))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance :
+local instance instRationalConjugateInductionK0Comparison1 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance instRationalConjugateInductionK0Comparison2 :
     IsClosedImmersion (Standard.leviHom i ν (rootSet i ν J)).hom.hom.left :=
   Standard.isClosedSubgroup_leviHom i ν (rootSet i ν J)
-local instance : IsAffine (Standard.leviScheme i ν (rootSet i ν J)).X.left :=
+local instance instRationalConjugateInductionK0Comparison3 : IsAffine (Standard.leviScheme i ν (rootSet i ν J)).X.left :=
   isAffine_of_isAffineHom (Standard.leviHom i ν (rootSet i ν J)).hom.hom.left
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
-local instance :
+local instance instRationalConjugateInductionK0Comparison4 : TopologicalSpace (rationalPoints G) := pointTopology
+local instance instRationalConjugateInductionK0Comparison5 :
     TopologicalSpace (rationalPoints (Standard.leviScheme i ν (rootSet i ν J))) :=
   rationalPointTopology F (Standard.leviScheme i ν (rootSet i ν J)).X
 
@@ -49,7 +49,7 @@ variable [LocallyCompactSpace (rationalPoints G)]
   (μG : Measure (rationalPoints G)) [μG.IsHaarMeasure] [μG.Regular]
   [CompactSpace (Induction.LeftQuotient P)] [CompactSpace (Induction.LeftQuotient Q)]
 
-local instance : CompactSpace (Induction.LeftQuotient (conjugateSubgroup g P)) :=
+local instance instRationalConjugateInductionK0Comparison6 : CompactSpace (Induction.LeftQuotient (conjugateSubgroup g P)) :=
   compactSpace_leftQuotient_conjugateSubgroup g P
 
 /-- The actual locus comparing standard induction on the common literal Levi

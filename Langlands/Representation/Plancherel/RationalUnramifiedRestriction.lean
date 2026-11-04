@@ -32,9 +32,9 @@ section CanonicalTopology
 
 variable [IsAffine G.X.left] [IsAffine H.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalUnramifiedRestriction1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
-local instance : TopologicalSpace (GroupScheme.rationalPoints H) :=
+local instance instRationalUnramifiedRestriction2 : TopologicalSpace (GroupScheme.rationalPoints H) :=
   rationalPointTopology F H.X
 
 /-- The existing point homomorphism is continuous in the canonical topologies. -/
@@ -111,7 +111,7 @@ theorem rationalUnramifiedCharacterRestrict_id
 
 variable [IsAffine K.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints K) :=
+local instance instRationalUnramifiedRestriction3 : TopologicalSpace (GroupScheme.rationalPoints K) :=
   rationalPointTopology F K.X
 
 /-- Successive restrictions agree with restriction along the composite. -/

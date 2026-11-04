@@ -66,3 +66,7 @@ and structural hypotheses above are not proved by this assembly; supplying
 them in the non-self-associated rank-one situation remains necessary for
 the host task. The proof route reuses the imported constructions and
 theorems, with no new original-literature assertion.
+
+The 2 local instances have module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

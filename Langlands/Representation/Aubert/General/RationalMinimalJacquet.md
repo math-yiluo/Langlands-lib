@@ -57,3 +57,7 @@ The route is the minimal-Jacquet portion of the embedding argument already
 explained in `RationalCuspidalEmbeddingProof.md`. This module makes no additional
 translation of an original-literature assertion. Worker 379 is a coauthor for
 the reused proof material.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

@@ -1,8 +1,9 @@
 # Proof of the opposite open cell for a smooth affine group over a field
 
 `Langlands.GroupScheme.oppositeCellStatement` proves `OppositeCellStatement.{u}` from
-`Absolute.BorelStatement`. Let `k : Type u` be a field and `G` a group scheme over `Spec k` with
-smooth and affine structure morphism. Let `χ : 𝔾_m ⟶ G` be a cocharacter, and let `iU : U ⟶ G`
+[`Absolute.OppositeCellStatement`](OppositeCellStatement.md). Let `k : Type u`
+be a field and `G` a group scheme over `Spec k` with smooth and affine structure
+morphism. Let `χ : 𝔾_m ⟶ G` be a cocharacter, and let `iU : U ⟶ G`
 and `iP : P ⟶ G` represent `U(χ⁻¹)` and `P(χ)`. Then the morphism of schemes underlying the
 multiplication `(fst ≫ iU) * (snd ≫ iP) : U ×_k P ⟶ G` is an open immersion.
 

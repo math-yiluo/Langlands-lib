@@ -71,3 +71,7 @@ finite-kernel split-center restriction, a normalized Haar measure, second
 countability of rational points, or a Plancherel theorem. The sources'
 remaining algebraic, structural, representation and measure assertions
 remain separate obligations.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

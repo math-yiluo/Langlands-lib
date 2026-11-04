@@ -49,3 +49,7 @@ algebraic-derived-subgroup point containment, split-center compactness,
 measure normalizations and representation-theoretic conclusions remain
 separate obligations. In particular, this conditional topology adapter does
 not establish the topological-group premises for every reductive G(F).
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

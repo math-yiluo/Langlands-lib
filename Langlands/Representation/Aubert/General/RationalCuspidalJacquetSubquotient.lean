@@ -55,7 +55,7 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
   {T : CommGroupScheme (Spec (CommRingCat.of k))}
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance instRationalCuspidalJacquetSubquotient1 : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable [LocallyCompactSpace (RationalPoint k G.X)]
   [NonarchimedeanGroup (RationalPoint k G.X)]

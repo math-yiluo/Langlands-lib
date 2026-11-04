@@ -40,3 +40,7 @@ support-theoretic comparison. The provenance is entirely internal: the
 minimal-Jacquet construction, the unrestricted irreducible-subquotient theorem,
 the exactness/subquotient theorem, and closed-subgroup topology are reused by
 Lean name. No new source translation is asserted.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

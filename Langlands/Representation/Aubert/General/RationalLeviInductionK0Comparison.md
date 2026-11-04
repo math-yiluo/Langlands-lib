@@ -69,3 +69,7 @@ Connected reductivity of the same actual Levi, finite-length admissibility,
 the genuine generic comparison and its nonzero polynomial witness remain
 inputs. The result does not establish unconditional Weyl conjugacy or the
 whole `RationalInducedK0WeylConjugacyStatement`.
+
+The 5 local instances have module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

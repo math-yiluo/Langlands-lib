@@ -27,9 +27,9 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
   (hν : IsGenericCocharacter i ν) (hStandard : StandardCocharacterStatement.{u})
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance instRationalLocalInductionIrreducibility1 : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance instRationalLocalInductionIrreducibility2 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance (J : Finset (SimpleRoot i ν)) :
     IsClosedImmersion (Standard.leviHom i ν (rootSet i ν J)).hom.hom.left :=
   Standard.isClosedSubgroup_leviHom i ν (rootSet i ν J)

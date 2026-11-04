@@ -262,7 +262,7 @@ open Langlands.AlgebraicGeometry.PointTopology
 
 variable [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalUnramifiedCoordinateAlgebra1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- In the canonical rational-point topology the continuity prerequisite is

@@ -57,3 +57,7 @@ restriction identity, common-Levi or radical identification is inferred.
 These threshold regions have not been proved to be convergence domains.
 Finite length, intertwining convergence, rational continuation and
 Plancherel remain separate obligations.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

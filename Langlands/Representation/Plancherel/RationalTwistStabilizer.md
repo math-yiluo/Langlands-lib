@@ -113,3 +113,7 @@ finite-index theorem remains a separate proof obligation.
 No restriction surjectivity, orbit manifold, orbit measure, finiteness of the
 family of discrete-series orbits, finite spectral support, formal-degree
 identity, Fourier inversion, or Plancherel theorem is asserted.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

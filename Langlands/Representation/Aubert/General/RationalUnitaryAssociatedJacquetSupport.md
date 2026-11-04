@@ -65,3 +65,7 @@ conjugation, contraction-basis and unitary-duality constructions; there is
 no new literature assertion. The dependency route uses no classification,
 character independence, geometric lemma, adjointness or cuspidal-support
 theorem. It does not prove `RationalRankOneSelfAssociationStatement`.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

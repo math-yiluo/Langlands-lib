@@ -1,4 +1,4 @@
-import Langlands.GroupScheme.Absolute.BorelStatement
+import Langlands.GroupScheme.Absolute.OppositeCellStatement
 import Langlands.GroupScheme.AffineLinearEmbeddingProof
 import Langlands.GroupScheme.Dynamic.GeneralLinearCocharacterDiagonal
 import Langlands.GroupScheme.Dynamic.OppositeCellMono

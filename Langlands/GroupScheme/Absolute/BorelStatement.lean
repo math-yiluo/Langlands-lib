@@ -2,6 +2,7 @@ import Langlands.GroupScheme.Absolute.Borel
 import Langlands.GroupScheme.CorepresentedClosedSubgroup
 import Langlands.GroupScheme.Reductive.RootDatum
 import Langlands.GroupScheme.Dynamic.Basic
+import Langlands.GroupScheme.Absolute.OppositeCellStatement
 
 /-! # Borel subgroups, maximal tori and parabolic subgroups over a field: statements -/
 
@@ -88,21 +89,6 @@ def RegularCocharacterBorelStatement : Prop :=
         IsBorelSubgroup i → f ≫ i = j →
           ∃ ν : cocharacterLattice T, IsRegularCocharacter j ν ∧
             (Dynamic.parabolic (CommGroupScheme.groupHom ν ≫ j)).IsRepresentedBy i)
-
-/-- **The opposite open cell** (Conrad–Gabber–Prasad, Proposition 2.1.8(3); Conrad, Theorem
-4.1.7(4)). Let `G` be a smooth affine group scheme over a field, `χ : 𝔾_m ⟶ G` a cocharacter and
-`χ⁻¹` the composite of `χ` with the inversion `t ↦ t⁻¹` of `𝔾_m`. If `iU : U ⟶ G` represents
-`U(χ⁻¹)` and `iP : P ⟶ G` represents `P(χ)`, then the multiplication morphism
-`U ×_S P ⟶ G`, `(u, p) ↦ u p`, is an open immersion. -/
-def OppositeCellStatement : Prop :=
-  ∀ (k : Type u) [Field k] (G : GroupScheme (Spec (CommRingCat.of k)))
-    [Smooth G.X.hom] [IsAffineHom G.X.hom] (χ : (Gm (Spec (CommRingCat.of k))).toGrp ⟶ G)
-    (U P : GroupScheme (Spec (CommRingCat.of k))) (iU : U ⟶ G) (iP : P ⟶ G),
-    (Dynamic.unipotent
-        (CommGroupScheme.groupHom (Gm.powerHom (Spec (CommRingCat.of k)) (-1)) ≫ χ)).IsRepresentedBy
-      iU →
-    (Dynamic.parabolic χ).IsRepresentedBy iP →
-      IsOpenImmersion ((fst U.X P.X ≫ iU.hom.hom) * (snd U.X P.X ≫ iP.hom.hom)).left
 
 /-- **The Borel subgroup of `GL_N`** (Milne, Example 17.7 and Proposition 21.29). Over every
 field `k`, for every `N` and every strictly decreasing weight vector `e : Fin N → ℤ`:

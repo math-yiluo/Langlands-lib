@@ -57,7 +57,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (i : T.toGrp ⟶ G) [Mono i.hom.hom.left] [Fintype (relativeWeylGroup i)]
   [IsAffine M.X.left] [LocallyOfFiniteType M.X.hom]
 
-local instance : TopologicalSpace (rationalPoints M) :=
+local instance instAmbientCharacterIntertwiningCone1 : TopologicalSpace (rationalPoints M) :=
   rationalPointTopology F M.X
 
 /-- The existing continuous unramified-character region with its local form

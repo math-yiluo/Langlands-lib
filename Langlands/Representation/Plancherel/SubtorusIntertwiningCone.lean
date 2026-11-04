@@ -81,7 +81,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (i : T.toGrp ⟶ G) [Mono i.hom.hom.left] [Fintype (relativeWeylGroup i)]
   [IsAffine M.X.left] [LocallyOfFiniteType M.X.hom]
 
-local instance : TopologicalSpace (rationalPoints M) :=
+local instance instSubtorusIntertwiningCone1 : TopologicalSpace (rationalPoints M) :=
   rationalPointTopology F M.X
 
 /-- Canonical continuous characters tested on every ambient dynamic root,

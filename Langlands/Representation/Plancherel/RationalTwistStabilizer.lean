@@ -18,7 +18,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable (G : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalTwistStabilizer1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- Actual affine finite-type rational points have an open-subgroup identity
@@ -34,13 +34,13 @@ theorem rationalPoints_nonarchimedeanGroup :
         (Langlands.BruhatTits.rationalPoint_isLocallyProfinite F G)).2 U hU
   exact ⟨K, hKU⟩
 
-local instance : NonarchimedeanGroup (GroupScheme.rationalPoints G) :=
+local instance instRationalTwistStabilizer2 : NonarchimedeanGroup (GroupScheme.rationalPoints G) :=
   rationalPoints_nonarchimedeanGroup G
 
 variable {G}
 variable {T : CommGroupScheme (Spec (CommRingCat.of F))} [IsAffine T.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints T.toGrp) :=
+local instance instRationalTwistStabilizer3 : TopologicalSpace (GroupScheme.rationalPoints T.toGrp) :=
   rationalPointTopology F T.X
 
 /-- The actual full twist stabilizer embeds into the actual central

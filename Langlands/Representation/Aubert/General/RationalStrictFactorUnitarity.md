@@ -42,3 +42,7 @@ the scalar characters or their conjugation relation, whole-induction
 admissibility, or its full unitary central character. They do not eliminate the
 unit-modulus branch or conclude self-association. Their provenance is entirely
 internal composition of the named Library constructions.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.

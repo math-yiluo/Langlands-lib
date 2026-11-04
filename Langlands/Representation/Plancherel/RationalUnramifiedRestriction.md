@@ -84,3 +84,7 @@ In the intended split-center application, take the actual map \(A_G\to G\).
 This unit proves no finite-index image, restriction-kernel finiteness,
 extension of characters, Haar identity, representation-stabilizer or orbit
 finiteness, or Plancherel assertion.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

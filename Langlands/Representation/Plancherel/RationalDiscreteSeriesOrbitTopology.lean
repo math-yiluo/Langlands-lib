@@ -19,9 +19,9 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable {G : GroupScheme (Spec (CommRingCat.of F))}
   [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalDiscreteSeriesOrbitTopology1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
-local instance : NonarchimedeanGroup (GroupScheme.rationalPoints G) :=
+local instance instRationalDiscreteSeriesOrbitTopology2 : NonarchimedeanGroup (GroupScheme.rationalPoints G) :=
   rationalPoints_nonarchimedeanGroup G
 
 variable {T : CommGroupScheme (Spec (CommRingCat.of F))}

@@ -101,7 +101,7 @@ section CanonicalTopology
 
 variable [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalUnramifiedCharacterTopology1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- Actual image characters and continuous unramified characters are isomorphic

@@ -66,3 +66,7 @@ It does not prove second countability, closed-immersion comparisons,
 finite rank or full rank of the valuation image, split-center finite-index
 comparisons, finite-dimensional character tori, stabilizer finiteness,
 measure normalizations or a Plancherel theorem.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

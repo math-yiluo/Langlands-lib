@@ -77,3 +77,7 @@ The adapter identifies no common Levi or opposite parabolic radical,
 and imposes no finite-length representation hypothesis. Convergence,
 rational continuation and the Plancherel theorem remain separate
 obligations.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

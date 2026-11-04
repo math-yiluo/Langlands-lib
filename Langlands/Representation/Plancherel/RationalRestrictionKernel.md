@@ -106,3 +106,7 @@ inclusion, but finite index of that actual valuation image remains explicit.
 The unit supplies no proof of that premise, surjectivity or character extension,
 topological or manifold structure on the kernel, Haar normalization,
 stabilizer or orbit-family finiteness, spectral finiteness or Plancherel identity.
+
+Local instances use explicit module-specific names to prevent generated-name
+collisions under joint imports. Their types, bodies and local scope are
+unchanged.

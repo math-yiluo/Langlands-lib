@@ -112,7 +112,7 @@ section LocalField
 
 variable [ValuativeRel k] [TopologicalSpace k] [IsNonarchimedeanLocalField k]
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance instRationalAssociatedOppositeJacquetTransport1 : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 variable [LocallyCompactSpace (RationalPoint k G.X)]
   [NonarchimedeanGroup (RationalPoint k G.X)]

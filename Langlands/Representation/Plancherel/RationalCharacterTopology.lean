@@ -19,7 +19,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 variable (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalCharacterTopology1 : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- Each actual normalized rational-character norm is locally constant. -/

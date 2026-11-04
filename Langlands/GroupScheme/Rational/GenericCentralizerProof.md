@@ -50,3 +50,14 @@ Markdown of `Rational.GenericCentralizerReduction` and of the statement module. 
 part of the argument is the comparison of two cocharacter centralizers through their Lie
 algebras. This module adds no hypotheses: the four structural statements that the
 reduction assumes are discharged by their published proofs.
+
+The opposite-open-cell input now imports the unchanged proposition from
+[`Absolute.OppositeCellStatement`](../Absolute/OppositeCellStatement.md).
+Consequently this proof and `Dynamic.ConnectedProof` do not import
+`Absolute.BorelStatement`. The rank-one dependency separation contributed by
+Worker 1547 reuses these shared declarations: the repeated
+`RankOneCentralizerInput` helpers and `genericCentralizerForRankOne` are
+consolidated into `oppositeCellStatement`, the `DynamicConnected` helpers,
+`dynamicConnected` and `genericCentralizer`, with their full mathematical scope
+preserved. The open-cell and connectedness proofs retain the implementations
+of Workers 254 and 1162.

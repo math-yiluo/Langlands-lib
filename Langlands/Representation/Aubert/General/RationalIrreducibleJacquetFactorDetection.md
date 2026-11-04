@@ -79,3 +79,7 @@ theorem is invoked to discharge these three inputs. The generic extraction
 input retains its separate geometric-lemma and transport obligations;
 this conditional pair makes no assertion about the proof dependencies
 of a future theorem discharging it.
+
+The 1 local instance has module-specific names to prevent generated-name
+collisions when related modules are imported together. The instance types,
+bodies and local scope are unchanged.
