@@ -4,8 +4,9 @@ Worker 709, 4 November 2026. This source map records four independently
 accepted and published proof units, the published polynomial-module
 equivalence, and separate published statements for binary diagonal arrows,
 separated uniform completion and the final representability remark.
-Their proof successors and the restricted-equivalence construction remain
-open. It complements the five proofs in the
+Their proof successors, the restricted-equivalence construction and the
+chosen local-module functor comparison remain open. It complements the
+five proofs in the
 [endomorphism-localization note](endomorphism-localization.md). It makes no
 section or whole-book completion claim.
 
@@ -285,8 +286,45 @@ morphism maps and, when needed, the full-subcategory target. Exactness
 of the existing functor alone does not provide those identifications
 or the restricted endomorphism equivalence. Reuse that functor when a
 concrete consumer requires such a comparison. The existing restricted
-equivalence task remains the source-facing transport prerequisite; this
-note introduces no duplicate construction or exactness task.
+equivalence task remains the source-facing transport prerequisite.
+
+### Chosen local-module functor comparison task
+
+Focused internal construction task
+`fe93edc1-1343-4f01-b558-43e7dab72c02` revision 1 was published and
+subscribed to on 4 November. It is ready and unassigned, with no submitted
+artifact at that inspection. Its contract requires an actual functor F
+whose objects are exactly `canonicalLocalObject S M` and whose morphisms
+send each lifted denominator representative `m/s` to `f(m)/s`. The source
+functor U is `ModuleCat.uliftFunctor.{max u w,v} R`, with object map
+`raisedSource`. The specified components `canonicalModuleMap S M`
+must form a natural transformation from U to F followed by inclusion.
+
+For κ = max u v w, the comparison target is the full-subcategory lift of
+the exact composite
+
+```text
+U ⋙ ModuleCat.localizedModuleFunctor.{κ} S ⋙
+  ModuleCat.restrictScalars (algebraMap R (Localization S)).
+```
+
+The contract requires the actual canonical Mathlib maps to form a natural
+transformation into that composite, and a natural isomorphism from F to
+its local-object lift identifying both canonical maps and all morphism
+maps. Its representative formula passes from
+`ULift.up (LocalizedModule.mk m s)` to the Shrink representative of
+`LocalizedModule.mk (ULift.up m) s`. The native R-action used by
+`localizedModuleMkLinearMap` and the R-action obtained by restriction of
+scalars require an explicit compatibility proof; they must not simply be
+treated as definitionally identical.
+
+The universes u, v and w remain independent. Smallness at κ must be
+discharged internally; zero rings, zero modules and submonoids containing
+zero are included. This task publishes no construction or exactness
+proof by itself. It packages an internal comparison and preserves task
+`4fd2b964-a92a-4fd0-86d1-b65b792531aa`, its owners and the subsequent
+chosen endomorphism-arrow transport gate. Adjunction and any chosen-model
+sequence-exactness statement and proof remain separate obligations.
 
 ## The separate representability proof gate
 
@@ -387,10 +425,11 @@ parenthesis corrected as in the [Appendix A discrepancy note](appendix-a-correct
 For example 5, the remaining full categorical transport of the chosen
 localization universal arrow is specified above, separately from the
 published polynomial-module/endomorphism equivalence and object-level
-localization formulas. Functorial and exactness comparisons with these
-chosen models are internal backlog, with an existing exact Mathlib
-functor available for reuse as explained above. Further compatible
-comparisons for the concrete constructions and their adjunctions retain
+localization formulas. The chosen functor and natural model comparison
+now have the focused construction task above; they remain unpublished
+mathematics. Exactness comparisons with these chosen models are internal
+backlog, with an existing exact Mathlib functor available for reuse.
+Further compatible comparisons for the concrete constructions and their adjunctions retain
 separate obligations. Existing adjunction results can be found in the
 [A.V source map](adjunctions-progress.md).
 Neither these remaining comparisons nor the waiting representability
