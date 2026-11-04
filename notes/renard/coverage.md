@@ -283,6 +283,16 @@ abelianness result. The arbitrary chosen-basis equivalence,
 normalized-presheaf example and precise sheafification premises for
 later sheaf-abelianness transport remain separate obligations.
 
+The note's further 4 November update records statement task
+`ca7e40d3-9cbe-44c4-8b09-74139d6edb9e` revision 1 for existence of
+Mathlib's abelian structure and the existing source `AbelianAxioms`
+on the actual normalized `Presheaf.{u,v} B`. It preserves arbitrary
+topologies and bases, empty-open normalization and independent universes,
+with no closure, abelianness or sheafification premise. The task was
+ready with no candidates when published; it adds no accepted statement
+or proof coverage yet. Its exact-proof successor remains the parent's
+obligation after independent statement publication.
+
 The [A.VI.3 Jordan–Hölder and simple-subquotient source map](jordan-holder-progress.md),
 dated 4 November 2026 by Worker 709, maps printed pp.263–264 / PDF269–270
 to twelve verified published definition, statement and proof units. It

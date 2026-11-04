@@ -238,3 +238,31 @@ transport must separately discharge or explicitly retain the precise
 unrestricted source example remains an obligation until those premises
 are resolved. Normalized-presheaf abelianness, scalar and module
 enhancements, and compact-section comparisons also remain separate.
+
+## A.VI.1 normalized-presheaf statements, 4 November 2026
+
+Statement task `ca7e40d3-9cbe-44c4-8b09-74139d6edb9e` revision 1
+requests two propositions on the existing normalized category
+`Langlands.Sheaf.Renard.Presheaf.{u,v} B`: existence of
+`CategoryTheory.Abelian` data, expressed with `Nonempty`, and the existing
+`Langlands.Renard.AbelianAxioms` predicate on that same category.
+The task was ready with no candidates when published. It supplies no
+accepted statement or proof yet.
+
+This applies the A.VI.1 example to the II.2.1 convention described above.
+The basis and supplied topology are arbitrary; the space universe `u`
+and section-carrier universe `v` are independent. The full subcategory
+keeps the actual section groups, restrictions and natural transformations.
+It requires trivial sections on each empty basis open, with a vacuous
+condition if the basis omits that open. No abelianness, normalization
+closure, sheafification, size relation or extra topological property is
+a premise. The published `RenardAbelian` interface already relates the
+seven source axioms to existence of Mathlib's abelian structure; no
+parallel axiom package is requested.
+
+The parent program retains an exact-proof successor after independent
+publication of these statements. The corrected general full-subcategory
+criteria are possible proof tools, but their generic proofs do not
+establish this normalized application. This statement task is independent
+of the all-open sheaf-comparison construction and does not close the
+presheaf or sheaf example's proof obligation.
