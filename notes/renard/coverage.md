@@ -11,6 +11,17 @@ The replacement corrects its annihilator orientation and module-completion
 scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
+The [actual-root and exponent source map](root-exponent-tempered-progress.md),
+dated 4 November 2026 by Worker 6, verifies publication of the arbitrary
+actual-parabolic normalized exponent construction, compatible root
+presentations and the root-convention statement. It records the selected
+V.3.4, V.3.12, V.3.14–15, VI.1.2, VII.1.1 and VII.2.1 assertions,
+the distinct normalized and raw-log real-part conventions, and the remaining
+structural and representation-theoretic proofs. The presentation-comparison
+statement and normalized temperedness construction remain pending units at
+this check. Only the V.3, VI.1, VII.1 and VII.2 navigation rows are extended by
+this map; no complete section or temperedness theorem is claimed.
+
 The [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
 dated 3 November 2026 by Worker 6 with Workers 164 and 1510, verifies four
 published units: actual norm-kernel and whole-category factors, and the four
@@ -814,11 +825,11 @@ including definitions, remarks and unnumbered results.
 | IV.3 | Square-integrable representations | 99 / 105 | Backlog |
 | V opening / V.1 | External structural boundary and local fields | 103 / 109 | Partial assertion audit |
 | V.2 | Reductive groups and characters | 104 / 110 | Partial through opening of V.2.3 |
-| V.3 | Parabolic subgroups | 109 / 115 | Partial: [published GL standard-parabolic comparison](standard-parabolic-progress.md) uses the V.3.8 convention and actual shared objects; general unique-Levi and conjugacy assertions remain separate |
+| V.3 | Parabolic subgroups | 109 / 115 | Partial: [published GL standard-parabolic comparison](standard-parabolic-progress.md) and [actual root presentations and root-convention target](root-exponent-tempered-progress.md); general unique-Levi, conjugacy, existence and root/cone comparison proofs remain separate |
 | V.4 | Weyl groups | 118 / 124 | Partial: [published GL simple-root, subgroup and block-indexing comparison](standard-parabolic-progress.md); the general V.4.2 classification, convexity and other Weyl-group assertions remain separate |
 | V.5 | Compact subgroups | 122 / 128 | Backlog |
 | VI opening | Representation theory of p-adic groups | 131 / 137 | Backlog |
-| VI.1 | Normalized parabolic functors | 134 / 140 | Backlog |
+| VI.1 | Normalized parabolic functors | 134 / 140 | Partial: [published actual Jacquet wrapper and normalization](root-exponent-tempered-progress.md) at VI.1.2; other assertions retain their separate correspondence and proof obligations |
 | VI.2 | Supercuspidality and admissibility | 137 / 143 | Backlog |
 | VI.3 | Cuspidal categorical decomposition | 142 / 148 | [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md): published factors and four universal statements; four proof tasks open. Other assertions remain backlog. |
 | VI.4 | Centre of the cuspidal component | 148 / 154 | Backlog |
@@ -829,8 +840,8 @@ including definitions, remarks and unnumbered results.
 | VI.9 | Second adjointness | 195 / 201 | Backlog; general scope retained |
 | VI.10 | Bernstein centre | 206 / 212 | Backlog |
 | VI.11 | Chapter notes | 217 / 223 | Backlog, including mathematical assertions |
-| VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Backlog |
-| VII.2 | Tempered representations | 227 / 233 | Backlog |
+| VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Partial: [published actual normalized exponent construction](root-exponent-tempered-progress.md) at VII.1.1; direct sums, finiteness, Casselman's criterion and the remaining assertions stay open |
+| VII.2 | Tempered representations | 227 / 233 | Partial: [VII.2.1 source reading and pending normalized construction](root-exponent-tempered-progress.md); source normalization correspondence, definition publication, remarks and subsequent theorems remain open |
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
