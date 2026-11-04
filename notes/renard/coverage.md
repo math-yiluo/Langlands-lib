@@ -90,14 +90,18 @@ The [A.IV limits and colimits progress note](limits-colimits-progress.md),
 dated 3 November 2026 by Worker 709 with Worker 6's source diagnosis and
 scope reconciliation, verifies the general cone/cocone bridge and four
 statement/proof pairs: elementary shapes, ordered systems, subobject
-bounds and concrete abelian-group products/direct sums. All nine
-publications and eighteen paired files were checked against the current
-Library and their publication commits. The source's constant-functor and
-arrow corrections, independent universes, supplied-cone scope and actual
-subobject category are explicit. The final quotient/eventual-equality
-and eventual-zero paragraph remains parent backlog, including its
-empty-index boundary. Only the A.IV navigation row below is updated by
-this focused audit; no section completion is declared.
+bounds and concrete abelian-group products/direct sums. Its update
+adds the published literal filtered-colimit quotient, group operations,
+canonical maps, compatible-family lift and separate singleton empty
+cocone, with the five exact proposition targets. All eleven
+publications and twenty-two mathematical files retain their verified
+hashes at the update base. The source's constant-functor and arrow
+corrections, independent universes, supplied-cone scope and actual
+subobject category are explicit. Focused proof successor
+`ce8400b5-29cb-422f-91f5-9cc761af2531` r1 covers the concrete quotient
+universality, lift uniqueness, eventual zero and separate empty case.
+Those proof-publication obligations remain open; no section completion
+is declared.
 
 The [A.VIII.1 exact-functor progress note](exact-functors-progress.md),
 dated 3 November 2026 by Worker 709 using the specifications, proofs and
@@ -799,7 +803,7 @@ including definitions, remarks and unnumbered results.
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and five published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers, the all-subobjects equivalence under arbitrary unions, and actual unital-module comparisons. Other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published A.III.1 endomorphism-localization proofs](endomorphism-localization.md). Categorical packaging, localization exactness, representability and other assertions remain open |
-| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge and four published statement/proof pairs](limits-colimits-progress.md) for elementary shapes, ordered systems, subobject bounds and concrete abelian-group products/direct sums. The final filtered-colimit quotient, eventual-equality and eventual-zero paragraph remains parent backlog, including the empty-index boundary; no section completion declared |
+| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four published statement/proof pairs and the concrete filtered-colimit construction and statements](limits-colimits-progress.md). The actual quotient, compatible-family lift, eventual-zero and separate empty-cocone targets await proof acceptance and publication in the focused successor; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. Examples, subcategory criteria, source adapters, AB5 comparisons and A.VI.3 remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |

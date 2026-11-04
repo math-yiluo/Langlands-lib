@@ -3,10 +3,11 @@
 Worker 709, 3 November 2026, with Worker 6's source diagnosis and
 filtered-colimit scope reconciliation. This note maps printed pages
 256–258 / PDF262–264 to one published general definition unit and four
-published statement/proof pairs. It supplements the [whole-book
+published statement/proof pairs, plus the published concrete
+filtered-colimit construction and its statement targets. It supplements the [whole-book
 ledger](coverage.md) and [Appendix A corrections](appendix-a-corrections.md).
-It introduces no Lean declaration. The final concrete filtered-colimit
-paragraph remains a parent obligation, so this note does not close A.IV,
+It introduces no Lean declaration. The concrete filtered-colimit proof
+remains a focused successor obligation, so this note does not close A.IV,
 Appendix A or the book program.
 
 ## Source and corrections
@@ -17,7 +18,9 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-PDF262–264 were read in full again for this audit. The supplementary
+PDF262–264 were read in full for the original audit; PDF263–264 were
+read again for the concrete quotient units, with PDF264 visually inspected.
+The supplementary
 2010 author errata, registered as `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 were read at PDF18–19. Both source hashes were recomputed. The errata's
@@ -54,6 +57,7 @@ The prefixes in the tables below are:
 | `O` | `Langlands.Renard.OrderedSystemLimit` |
 | `S` | `Langlands.Renard.SubobjectLimit` |
 | `G` | `Langlands.Renard.AbelianGroupLimit` |
+| `F` | `Langlands.Renard.FilteredColimit` |
 
 For example, `E.KernelStatement` means
 `Langlands.Renard.ElementaryLimitColimit.KernelStatement`.
@@ -76,8 +80,10 @@ For example, `E.KernelStatement` means
 | Same example: direct sum | `G.DirectSumCoproductStatement`: the actual `DirectSum` with its single-coordinate inclusions is a coproduct of the lifted factors. |
 | Same example: infinite-family finite-support description, PDF264 | `G.FiniteSupportComparisonStatement` gives an injective additive coordinate map, its exact finite-support range and the inclusion formulas. Its validity for every index type is an internal uniform strengthening. |
 | Same example: finite-family full product, PDF264 | `G.FiniteProductCoproductStatement` states that the full product, with single-coordinate inclusions, is a coproduct under `Finite I`. |
-| A.IV.2 final paragraphs, PDF264: quotient of the disjoint union by eventual equality, its group law, canonical maps and universal property | Parent backlog. None of the nine publications audited here supplies this concrete model or its source-to-Mathlib comparison. |
-| Same final paragraph: a representative vanishing in the colimit vanishes at some later stage | Parent backlog. This elementwise consequence is not supplied by the arbitrary-category ordered-system characterization. |
+| A.IV.2 final paragraphs, PDF264: quotient of the disjoint union by eventual equality, its group law and canonical maps | Published `F.Carrier`, `classOf`, `classOf_eq_iff`, `classOf_transition` and `exists_classOf` expose the literal quotient and relation. Under `Nonempty I`, `of`, `zero_eq_classOf`, `classOf_add`, `neg_classOf` and `of_comp` expose the inherited abelian-group operations and canonical homomorphisms. |
+| Same paragraphs: compatible-family universal property | Published `F.diagram`, `cocone` and `lift` are actual constructions. Published targets `QuotientColimitStatement` and `CompatibleFamilyLiftStatement` require that exact cocone to be colimiting and that exact lift to factor each compatible family uniquely. Their proof remains pending. |
+| Same final paragraph: a representative vanishing in the colimit vanishes at some later stage | Published `F.EventualZeroStatement` is the source implication. `EventualZeroIffStatement` adds the explicitly derived converse. Their proof remains pending. |
+| Internal empty-index completion of the displayed pairwise-directed convention | `F.carrier_isEmpty` proves that the literal quotient is empty. `emptyCocone` supplies the singleton zero-group vertex; `EmptyColimitStatement` requires this actual cocone to be colimiting. This last target is published with its proof pending. |
 
 The four closed statement aggregates, in their exact published order, are
 `E.ElementaryLimitColimitStatements` (eight elementary components),
@@ -89,7 +95,13 @@ respectively, `E.elementaryLimitColimitStatements`,
 `O.orderedSystemLimitStatements_proof`, `S.subobjectLimitStatements` and
 `G.abelianGroupLimitStatements`.
 
-## Hypotheses, universes and implemented proofs
+The fifth published aggregate, `F.FilteredColimitStatements`, conjoins
+the quotient colimit, compatible-family lift, eventual-zero implication,
+derived equivalence and empty-cocone targets, in that order. It is a
+`Prop`-valued definition. The construction's intrinsic laws do not prove
+this aggregate.
+
+## Hypotheses, constructions and implemented proofs
 
 The general bridge retains independent index-object, index-Hom,
 category-object and category-Hom universes. It uses actual Mathlib cone
@@ -155,21 +167,61 @@ enumeration premise. Empty families remain covered. No universal
 properness claim is made for an infinite family's finite-support
 subgroup.
 
+The [concrete filtered-colimit construction](../../Langlands/CategoryTheory/Renard/FilteredColimit.md)
+uses Mathlib's `DirectLimit G f`, literally the quotient of `Σ i, G i`
+by equality at a common later stage. The inputs are a partial order
+with `IsDirectedOrder I`, arbitrary abelian groups and additive
+transitions with the intrinsic identity and composition
+`DirectedSystem` laws. `classOf_eq_iff` is the quotient equality
+criterion; `classOf_transition` and `exists_classOf` expose its native
+representative API. With `Nonempty I`, the inherited group instance
+supplies the well-defined operations. The displayed zero, common-stage
+addition and negation formulas compute those operations. No injectivity,
+finiteness or generation premise is imposed.
+
+The actual diagram has factors `ULift.{uI} (G i)` in
+`AddCommGrpCat.{max uI uG}`; its transitions lower, apply the original
+transition and raise. The quotient cocone's legs lower and apply `of`.
+The actual compatible-family lift uses quotient recursion and
+`lift_classOf` computes it on every representative. Its target is an
+arbitrary abelian group in independent universe `uH`. Thus the
+[published statement](../../Langlands/CategoryTheory/Renard/FilteredColimitStatements.md)
+retains independent `uI`, `uG` and `uH`. It requires categorical
+universality of those exact data, and factorization and uniqueness of
+that exact lift on the original components. These are conclusions to
+prove, not assumed universal properties.
+
+The empty case keeps a separate target. Pairwise directedness permits
+an empty index, while the literal quotient is then empty and has no
+group identity. This internal source diagnosis is recorded by
+`carrier_isEmpty`. Under `IsEmpty I`, `emptyCocone` instead uses `PUnit`
+as the singleton zero-group vertex with vacuous legs.
+`EmptyColimitStatement` has neither a nonemptiness nor a directedness
+premise. No change is made to the unrestricted general ordered-system
+statements.
+
 The general bridge is Worker 610's implementation with Worker 6's
 source diagnosis. The elementary statements are by Workers 709 and 695,
 and their proof by Worker 1158. The ordered statements are by Worker 709
 and proof by Worker 695. The subobject statements are by Worker 709 and
 proof by Worker 840. The abelian-group statements are by Workers 709
-and 937 and proof by Worker 695. These published implementations reuse
+and 937 and proof by Worker 695. Worker 709 authored the concrete
+filtered-colimit construction and statements, with Worker 6's prior
+source-scope reconciliation and retention of the empty-index boundary.
+These published implementations reuse
 Mathlib at pin `5ed2965256430c3649e86755f9576b54eca72435`; their
 implemented proof routes are the ones described above.
 
 ## Verified acceptance, publication and file identity
 
-At Library base `071b82c1a715daffe0334ad25311484eaba312b0`, the workspace,
-current Library and each cited publication commit have identical bytes
-for all eighteen paired mathematical files below. The nine exact
-artifact records were fetched on 3 November 2026. Each is accepted and
+The first nine units were audited at Library base
+`071b82c1a715daffe0334ad25311484eaba312b0`, including equality with each
+cited publication commit. The concrete construction and statement
+receipts were verified on publication, including their frozen pairs.
+At the update base `ea15fd1f153a6590d88aac37532334a1d18f97e2`, all
+twenty-two mathematical files below retain the displayed hashes in both
+the workspace and current Library. All eleven exact records were
+verified on 3 November 2026. Each is accepted and
 public, with an independent approval without qualifications and a
 published integration. The table gives exact archival evidence; reuse
 uses the current Lean names above. The general bridge is a definition
@@ -186,6 +238,8 @@ unit with short intrinsic laws, not a separate aggregate proof record.
 | Subobject proof; task `d6777962-fc47-48f4-9eae-db566e452454` | `db95c802-942f-4c4c-9993-abc85db2fa16` | Reviewer 7735; `361eb673-1e30-4906-9522-81d35d393dff` | `c3b84639be454f1693a6d852a2f8fb95`; `e3944f764d2c00d53ac87227e98601bb667f348f` |
 | Abelian-group statements; task `01fe320c-fced-4500-8bbb-e6a2f9b63681` | `54fab975-e2de-420b-927b-6b4a9d24eb71` | Reviewer 7707; `6b4b58d7-3699-4199-a2b2-3bdad69d5738` | `a3de277e4aab4809bab31f500d48b69e`; `e3944f764d2c00d53ac87227e98601bb667f348f` |
 | Abelian-group proof; task `164894cf-f28c-4353-9bdc-59b3dae749d4` | `29331b94-b957-4e70-8f6d-7da4d651effe` | Reviewer 7794; `1bd42485-e2c7-433a-ad3f-afb9adec08d4` | `4e5249f307274960a8857a645f57a368`; `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
+| Concrete filtered-colimit construction; parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` r3 | `3e406095-fce5-4c7e-912d-f54f789f4672` | Reviewer 11896; `cdfd6721-2fa3-4c52-b448-b9a2be72d5f0` | `0d9d2917356b4fbb98f15a495d3d4879`; `d651c06c32b90676853a4e79f91b86385a8cd650` |
+| Concrete filtered-colimit statements; same parent r3 | `3d90ac79-1633-41dc-ad0e-776f6a3922ea` | Reviewer 12003; `b1783779-696b-4f87-b139-f1e13ad4d999` | `9f54d0209e134fc2ad77b7ff7f10e813`; `b6ea11bf7c883ae0600a98215483c75ebf3c9d25` |
 
 | Paired path stem under `Langlands/CategoryTheory/Renard/` | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- |
@@ -198,34 +252,38 @@ unit with short intrinsic laws, not a separate aggregate proof record.
 | [SubobjectLimitProof](../../Langlands/CategoryTheory/Renard/SubobjectLimitProof.md) | `3faf8fb1e15c11b15bef8109d7be79847d9c6ab98aa1e044cc688c7953a9de77` | `bf243e164e417e0071228feab0097448ebe6c9efbe62fe0ec9ead539decfecd4` |
 | [AbelianGroupLimitStatements](../../Langlands/CategoryTheory/Renard/AbelianGroupLimitStatements.md) | `54a7f3f678eaf341b7a1052cceb229e62c49d7e81b81796fb3b48be99f3a6435` | `f5183596ff4fb4c9313b9ac674083c40fed2cfbe263055c3b58a957bdecc96a3` |
 | [AbelianGroupLimit](../../Langlands/CategoryTheory/Renard/AbelianGroupLimit.md) | `4fc54f65cf2bda9a37e3288958206155db7287139fa15bd649ef8ccd445690c9` | `f3fff1434a05de29232ef5bbacbe9f6f53f4a0cd76e79229d71464e05f9b9273` |
+| [FilteredColimit](../../Langlands/CategoryTheory/Renard/FilteredColimit.md) | `67e7eb9a18268aa1178c338b7409f97c54c551c12d5901bf2364b01e6659baaa` | `4a08faafc3c1a337cc435121da557272fb53a7c9b5802a7fb235517263d7aa09` |
+| [FilteredColimitStatements](../../Langlands/CategoryTheory/Renard/FilteredColimitStatements.md) | `5e04ba0fecd6fde5c6423c2757d45a6b3ceb26ab7eb742f8fd13238c37c8fee3` | `f15ec8b33c8d9fc609317ef2114397ed68883b394656373576f0f214bca56134` |
 
 Approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` also passed
 a recovery check of `ConeBridge`, `ElementaryLimitColimitProofs`,
 `OrderedSystemLimitProof`, `SubobjectLimitProof` and `AbelianGroupLimit`
 with zero errors and warnings. This development check is separate from
 the independent semantic approvals and publication evidence above.
+The update-base check `f9edde4d-12a1-4fb6-9971-6c2e6f0d62ec` also
+passed both concrete filtered-colimit modules with zero diagnostics and
+inspected `F.FilteredColimitStatements` as a proposition with independent
+`uI`, `uG` and `uH`. This is statement compilation, not proof acceptance.
 
 ## Retained obligations
 
-The concrete filtered-colimit paragraph at printed258/PDF264 still
-requires actual representative classes, the group operations, canonical
-homomorphisms, the eventual-equality comparison, a colimit witness and
-the eventual-zero consequence, with their source correspondence.
-Worker 6 and Worker 709 reconciled this as parent backlog after bounded
-task searches; that is not a global absence claim or a new assignment.
-`O.DirectLimitStatement` characterizes the universal property of a
-supplied cocone in any category. It constructs none of this elementwise
-model. The II.2.1 basis-stalk construction is a distinct application and
-does not supply this generic A.IV correspondence.
+The concrete quotient, group operations, canonical maps,
+eventual-equality comparison, compatible-family lift and separate empty
+cocone are now published constructions. Their five exact proposition
+targets are published statements. Focused proof task
+`ce8400b5-29cb-422f-91f5-9cc761af2531` r1 has been published and
+subscribed for the unchanged `F.FilteredColimitStatements`; its proof,
+independent acceptance and publication remain outstanding at this audit.
+In particular, the construction's existence does not supply a colimit
+witness or the eventual-zero implication.
 
-There is also an empty-index boundary to resolve in that future unit.
-The source's displayed pairwise-directedness condition admits the empty
-ordered set. Its literal disjoint union is then empty and has no group
-identity, whereas the empty categorical colimit of abelian groups is
-the zero group. This is an internal diagnosis from the displayed
-construction. A faithful implementation must explain the nonempty
-representative construction and the empty-diagram case; it must not
-silently restrict the already published ordered-system statements.
+The proof successor retains the nonempty quotient's hypotheses,
+independent universes and arbitrary additive directed systems, and the
+separate empty singleton-cocone target. The eventual-zero converse is
+explicitly derived; the empty target is an internal completion of the
+source boundary. `O.DirectLimitStatement` still characterizes an
+arbitrary supplied cocone and cannot substitute for these concrete
+targets. The II.2.1 basis-stalk construction is a distinct application.
 
 The identification of the general definition with the earlier
 universal-arrow terminology, any additional cross-section comparison,
