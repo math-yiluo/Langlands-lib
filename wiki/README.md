@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Adjoint field groups: split images, normalizers and real cocharacters](../notes/group-schemes/adjoint-field-progress.md) — Verified split-image, normalizer and real cocharacter publications, their exact hypotheses and proof routes, and the corrected adjoint-torus convention for Bruhat–Tits consumers.
+
 - [Field tori and rational centers: verified proofs and product target](../notes/group-schemes/field-tori-central-progress.md) — Exact finite-Galois splitting and local-field rational-center proof publications, their hypotheses and proof routes, and the separate derived/central split-product proof obligation.
 
 - [Group schemes: published transport, dynamics and fpqc reflection](../notes/group-schemes/transport-dynamic-progress.md) — Eight verified transport constructions and three exact dynamic/central proofs, with their hypotheses, publication receipts and remaining thematic obligations.
