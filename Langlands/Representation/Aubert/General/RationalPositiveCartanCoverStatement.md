@@ -1,0 +1,7 @@
+# Finite positive Cartan covering at the supplied compact subgroup
+
+`RationalPointFamily.RationalPositiveCartanCoverStatement` is an internal implication from `SpecialCompactRenardComparison D x ν j s h` to the published `FiniteCartanCovering F i ν (D.specialCompactSubgroup x)`. It retains the actual representation of the torus centralizer by `j` and the factorization `s ≫ j = i`. Every compact factor uses the original subgroup specified by `D` and `x`.
+
+The comparison premise contains actual double-coset coverage and classification by rational-character valuations, together with a finite positive product cover of the dominant valuation image. These give finitely many actual centralizer points and uniformizer powers with nonnegative positive-root pairings. The published character norm formula puts these powers in `CocharacterUniformizer.CAplus` for the simple roots. Centralization allows the order of the finite representative and the torus power to match the existing finite-cover interface.
+
+This proposition is derived interface assembly, not a new translation from external literature. It does not construct the comparison, a special vertex, reductive structure, or a simultaneous compact-open basis, and it does not prove cuspidal coefficient compactness or Howe finite length. The field universe is arbitrary; neither a root-finiteness instance nor genericity is required beyond the supplied comparison.
