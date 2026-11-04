@@ -22,6 +22,16 @@ coefficient bound, topology/cuspidality/orbit comparisons and categorical
 assembly retain their obligations. Only the VI.3 navigation row is updated
 by this focused map; the other assertions of VI.3 remain backlog.
 
+The [VI.6.1 canonical-section source map](canonical-section-progress.md),
+dated 4 November 2026 by Worker 6, records the weak Jacquet theorem,
+admissibility corollary, compression identity, uniform kernel assertion,
+single-image decomposition and independence Proposition on PDF182–183.
+The exact actual-standard uniform-section statement is independently
+published at `c5e0296f115eacde9bd491a7ea70fec6983c1c1c`. Its focused proof
+task `6c028770-10bb-48f3-b550-aeca64872a70` has a complete compiled,
+unreviewed draft; proof acceptance and publication remain open. Only the
+VI.6 navigation row is updated by this map.
+
 The [II.2.4–II.2.5 scalar and projector update](scalar-projector-progress.md),
 dated 2 November 2026, verifies five independently published constructions at
 `11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`: actual scalar presheaf and sheaf,
@@ -813,7 +823,7 @@ including definitions, remarks and unnumbered results.
 | VI.3 | Cuspidal categorical decomposition | 142 / 148 | [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md): published factors and four universal statements; four proof tasks open. Other assertions remain backlog. |
 | VI.4 | Centre of the cuspidal component | 148 / 154 | Backlog |
 | VI.5 | Induced representations | 161 / 167 | Backlog; retain 2026 proof correction |
-| VI.6 | Finiteness theorems | 175 / 181 | Backlog |
+| VI.6 | Finiteness theorems | 175 / 181 | Partial: [VI.6.1 source map](canonical-section-progress.md) records the conditional weak Jacquet proofs and published actual-standard uniform-section statement; exact proof publication and the other subsections remain open |
 | VI.7 | Bernstein decomposition | 180 / 186 | Backlog |
 | VI.8 | Algebraic families | 187 / 193 | Backlog |
 | VI.9 | Second adjointness | 195 / 201 | Backlog; general scope retained |
