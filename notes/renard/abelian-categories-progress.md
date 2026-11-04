@@ -232,11 +232,11 @@ This task publication supplies no mathematical equivalence or
 abelianness result. The comparison with Mathlib's all-open category
 is distinct from the arbitrary chosen-basis/all-open equivalence and
 the existing basis-restriction stalk and germ comparisons. Its
-construction requires no sheafification premise. Later abelianness
-transport must separately discharge or explicitly retain the precise
-`HasSheafify` premises of the Mathlib theorem being used; the
-unrestricted source example remains an obligation until those premises
-are resolved. Normalized-presheaf abelianness, scalar and module
+construction requires no sheafification premise. A later proof by
+abelianness transport must discharge the precise `HasSheafify` premises
+at its stated section size. The sufficient-size statement task below
+assumes no such premise; the source-category proof remains separate.
+Normalized-presheaf abelianness, scalar and module
 enhancements, and compact-section comparisons also remain separate.
 
 ## A.VI.1 normalized-presheaf statements, 4 November 2026
@@ -266,3 +266,68 @@ criteria are possible proof tools, but their generic proofs do not
 establish this normalized application. This statement task is independent
 of the all-open sheaf-comparison construction and does not close the
 presheaf or sheaf example's proof obligation.
+
+## A.VI.1 sheaf statements and section size, 4 November 2026
+
+Statement task `1c102f4c-05fd-423b-bb6b-1b58d5bbb28e` revision 1
+requests two propositions on the actual
+`Langlands.Sheaf.Renard.BasisSheaf.{u,max u v} B`: existence of
+`CategoryTheory.Abelian` data, packaged with `Nonempty`, and the existing
+`Langlands.Renard.AbelianAxioms` predicate. The supplied topology and
+basis are arbitrary, including empty spaces and bases omitting the empty
+open. The actual normalized section functors, literal sheaf condition
+and natural transformations are retained. Neither target assumes
+sheafification, abelianness, closure under categorical operations, a
+category comparison or any extra topology or cover-size condition.
+The task was ready with no candidates at this dated check.
+
+The independent parameters are `u` and `v`; section carriers here lie
+explicitly in `Type (max u v)`. This is a sufficient general section
+size, not a claim that this size is necessary for each space or basis.
+It is internal formalization data rather than a printed hypothesis or
+an error attributed to Renard. This task makes no unrestricted claim
+for `BasisSheaf.{u,v} B`.
+
+A private check of the pinned Mathlib interfaces supplies planning
+evidence for this size choice. With
+`Mathlib.Algebra.Category.Grp.FilteredColimits` and the existing
+`Limits.preservesFilteredColimitsOfSize_shrink` for the forgetful functor
+at diagram universes `{u,u}`, both `HasSheafify` for the opens topology
+and `Nonempty (Abelian (TopCat.Sheaf AddCommGrpCat.{max u v} X))`
+synthesize for `X : TopCat.{u}`. The six-example probe recompiled
+without warnings in development receipt
+`c951e10f-186b-4176-ab43-46ca523f953c`. This is neither independent
+review nor a proof for the actual Renard category. The parent retains
+an exact-proof successor after statement publication, including every
+needed comparison and size argument.
+
+## Proposed star-space scope test, 4 November 2026
+
+Construction task `b0105955-9a21-492e-b97d-62fbc7fb4718` revision 1
+requests an actual diagram of sheaves on `Option I`, with opens the
+empty set and all sets containing `none`. It uses the published
+`allOpenBasis` and `BasisSheaf.{u,v}`, retaining independent space and
+section universes. The requested diagram has two sheaves with integer
+sections on nonempty opens, a map that doubles those sections away
+from `{none}`, and `ZMod 2` skyscrapers at `some i`. Its intrinsic
+obligations include restrictions, normalization, arbitrary-cover
+gluing, naturality, pointwise injectivity and the zero composites to
+the skyscrapers. The task was ready with no candidates at this check.
+
+This is Worker 709's proposed internal example, motivated by the
+A.VI.1 sheaf assertion and using the II.2.1 interfaces; it is not a
+construction printed in the book. The intended later argument would
+use a hypothetical cokernel and singleton-supported gluings to inject
+`I` into its whole-space sections, then test a universe obstruction
+with `I = Type v`. No actual diagram, injection, no-cokernel theorem
+or failure of abelianness has been accepted. After construction
+publication, separate statement and exact-proof units must establish
+those claims before they count as results.
+
+The sufficient-size sheaf statement task does not depend on this
+proposal. The normalized-presheaf statement task and the all-open
+source/Mathlib comparison keep their original independent-universe
+scopes. The arbitrary chosen-basis/all-open equivalence and its size
+scope also remain distinct obligations. These task publications add
+no accepted mathematical coverage and close neither the source
+example nor Appendix A.VI.

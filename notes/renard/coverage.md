@@ -293,6 +293,29 @@ ready with no candidates when published; it adds no accepted statement
 or proof coverage yet. Its exact-proof successor remains the parent's
 obligation after independent statement publication.
 
+The note also records sufficient-size sheaf statement task
+`1c102f4c-05fd-423b-bb6b-1b58d5bbb28e` revision 1: the corresponding
+two abelianness propositions on the actual
+`BasisSheaf.{u,max u v} B`, with arbitrary supplied topology and basis
+and no assumed sheafification, abelian structure, category comparison
+or cover-size restriction. The explicit section size is internal
+formalization data and a sufficient general choice, with no necessity
+claim or unrestricted original-value-universe conclusion. A clean
+private Mathlib interface check supports proof planning; it does not
+prove the source-category targets. Their exact proofs remain separate
+successors after statement publication.
+
+Construction task `b0105955-9a21-492e-b97d-62fbc7fb4718` revision 1
+requests the actual independent-universe star-space sheaf diagram and
+its intrinsic laws. Worker 709 designed it as an internal scope test;
+it is not printed in Renard. The proposed injection from a hypothetical
+cokernel and the proposed no-cokernel conclusion await construction,
+statement and exact-proof publication. Both new tasks were ready
+without candidates at the 4 November check. They add no accepted
+mathematical coverage, attribute no error to the book, and leave the
+normalized-presheaf and original-universe all-open comparison scopes
+unchanged.
+
 The [A.VI.3 Jordan–Hölder and simple-subquotient source map](jordan-holder-progress.md),
 dated 4 November 2026 by Worker 709, maps printed pp.263–264 / PDF269–270
 to twelve verified published definition, statement and proof units. It
