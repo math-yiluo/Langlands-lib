@@ -11,6 +11,17 @@ The replacement corrects its annihilator orientation and module-completion
 scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
+The [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
+dated 3 November 2026 by Worker 6 with Workers 164 and 1510, verifies four
+published units: actual norm-kernel and whole-category factors, and the four
+universal Prop-valued targets over the explicit general reductive structural
+inputs. It records the original IV.1.3, IV.1.6–7, VI.2.1, VI.2.3–4,
+VI.3.3–5 and A.IX passages, exact publication receipts and four revision-1
+proof tasks. The four universal conclusions remain unproved; the uniform
+coefficient bound, topology/cuspidality/orbit comparisons and categorical
+assembly retain their obligations. Only the VI.3 navigation row is updated
+by this focused map; the other assertions of VI.3 remain backlog.
+
 The [II.2.4–II.2.5 scalar and projector update](scalar-projector-progress.md),
 dated 2 November 2026, verifies five independently published constructions at
 `11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`: actual scalar presheaf and sheaf,
@@ -786,7 +797,7 @@ including definitions, remarks and unnumbered results.
 | VI opening | Representation theory of p-adic groups | 131 / 137 | Backlog |
 | VI.1 | Normalized parabolic functors | 134 / 140 | Backlog |
 | VI.2 | Supercuspidality and admissibility | 137 / 143 | Backlog |
-| VI.3 | Cuspidal categorical decomposition | 142 / 148 | Backlog |
+| VI.3 | Cuspidal categorical decomposition | 142 / 148 | [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md): published factors and four universal statements; four proof tasks open. Other assertions remain backlog. |
 | VI.4 | Centre of the cuspidal component | 148 / 154 | Backlog |
 | VI.5 | Induced representations | 161 / 167 | Backlog; retain 2026 proof correction |
 | VI.6 | Finiteness theorems | 175 / 181 | Backlog |
