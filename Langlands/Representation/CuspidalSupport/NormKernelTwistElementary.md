@@ -1,0 +1,9 @@
+# Elementary endpoints for Renard VI.3.2(iii)
+
+This derived helper module isolates the elementary implications and the character endpoint of the proof. It does not establish existence of an eigenvector or the final theorem. It retains independent carrier universes.
+
+A character trivial on an open common norm kernel descends to its discrete quotient. The quotient homomorphism is therefore continuous, and its pullback is an element of the published unramified-character subgroup with exactly the original character values. The restriction construction keeps the linear equivalence and uses triviality on the subgroup to remove the scalar twist. An equivalence on a nonzero carrier gives a nonzero intertwiner by injectivity.
+
+Given a nonzero intertwiner from `Langlands.twist χ ρ` to `σ`, the published `Langlands.isIrreducible_twist_iff` preserves source irreducibility. Mathlib's `Representation.IsIrreducible.bijective_or_eq_zero` and `IntertwiningMap.ofBijective` turn it into an equivalence. The last lemma combines these constructions under an explicitly conditional nonzero-intertwiner-to-twist implication. The existence and direction of the eigencharacter belong to the separate algebraic helper; this module receives its intertwiner as input.
+
+These are internal proof tools for the exact Renard VI.3.2(iii) target. The governing source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition 9 July 2026, registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, V.2.3 (printed pp.105–106 / PDF pp.111–112), VI.3.2(iii) and proof (printed pp.143–144 / PDF pp.149–150). The 2010 errata p.10 corrects the conjugation action to precisely the order used in the 2026 source and here. The helpers are derived content, not additional source assertions or a proof of VI.3.2(ii).
