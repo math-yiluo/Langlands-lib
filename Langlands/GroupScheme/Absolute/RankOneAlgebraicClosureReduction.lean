@@ -1,4 +1,6 @@
 import Langlands.GroupScheme.Absolute.RankOneSolvableReduction
+import Langlands.GroupScheme.Absolute.RankOneCentralizerReduction
+import Langlands.GroupScheme.Absolute.CentralizerBorelIntersectionConnected
 import Langlands.GroupScheme.Absolute.AlgebraicClosureBaseChange
 import Langlands.GroupScheme.Absolute.RationalPointClosureSolvable
 import Langlands.GroupScheme.Torus.MaximalBaseChangeForwardReduction
@@ -85,5 +87,48 @@ theorem rankOneSolvableObstruction_of_algClosedBorel
   have hnegc : Lie.MeetsWeightSpace jc ic (characterLattice.baseChange b T (-α)) :=
     weightSpace_lieImage_baseChange (K := AlgebraicClosure k) j (-α) i hneg
   simpa only [map_neg] using hnegc
+
+/-- The three geometric statements imply the algebraically closed Borel
+case, using the actual centralizer intersections supplied by the published adapter.
+All three statements remain explicit premises. -/
+theorem rankOneAlgClosedBorelExclusion_of_geometricStatements
+    (hrank : RankOneBorelDynamicStatement.{u})
+    (hcent : DynamicCentralizerReductiveStatement.{u})
+    (hinter : CentralizerBorelIntersectionStatement.{u}) :
+    RankOneAlgClosedBorelExclusionStatement.{u} := by
+  intro k _ _ G hG T j hT hj B b t hb ht
+  have := hG.isAffineHom
+  have := hG.smooth
+  have := hG.connectedSpace
+  have : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+  apply not_meets_oppositeWeightSpaces_of_borel_centralizers
+    hrank hcent G hG T j hT hj B b t hb ht
+  intro ζ
+  let χ := CommGroupScheme.groupHom ζ ≫ j
+  let m := Dynamic.Affine.centralizerHom χ
+  have hm := Dynamic.Affine.isRepresentedBy_centralizerHom χ
+  have hmc := Dynamic.Affine.isClosedSubgroup_centralizerHom χ
+  have hM := hcent k G hG χ _ m hmc hm
+  have hχ : SubgroupFunctor.range χ ≤ SubgroupFunctor.range b := by
+    change SubgroupFunctor.range (CommGroupScheme.groupHom ζ ≫ j) ≤ _
+    rw [← ht, ← Category.assoc]
+    intro V x hx
+    obtain ⟨y, hy⟩ := SubgroupFunctor.mem_range.mp hx
+    apply SubgroupFunctor.mem_range.mpr
+    refine ⟨y ≫ (CommGroupScheme.groupHom ζ ≫ t).hom.hom, ?_⟩
+    simpa only [Grp.comp_hom_hom, Category.assoc] using hy
+  exact hb.centralizer_intersection_isBorel_of_statement hinter χ hχ m hmc hm
+    hM.smooth hM.connectedSpace
+
+/-- The four still-required geometric statements imply the exact arbitrary-field
+obstruction. This conditional assembly proves none of its premises. -/
+theorem rankOneSolvableObstruction_of_geometricStatements
+    (hrank : RankOneBorelDynamicStatement.{u})
+    (hcent : DynamicCentralizerReductiveStatement.{u})
+    (hinter : CentralizerBorelIntersectionStatement.{u})
+    (hmax : MaximalTorusBaseChangeForwardStatement.{u}) :
+    RankOneSolvableObstructionStatement.{u} :=
+  rankOneSolvableObstruction_of_algClosedBorel hmax
+    (rankOneAlgClosedBorelExclusion_of_geometricStatements hrank hcent hinter)
 
 end Langlands.GroupScheme

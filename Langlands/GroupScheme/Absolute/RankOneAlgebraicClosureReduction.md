@@ -57,3 +57,30 @@ fields. This pair is an internal assembly of the cited Library declarations
 and the existing definition of solvability; it introduces no new external
 structural assertion. It does not prove either retained premise or provide an
 unconditional proof of the rank-one solvable obstruction.
+
+
+`rankOneAlgClosedBorelExclusion_of_geometricStatements` assembles the Borel
+case from three explicit premises: `RankOneBorelDynamicStatement`,
+`DynamicCentralizerReductiveStatement`, and
+`CentralizerBorelIntersectionStatement`. For every cocharacter of the specified
+torus, the proof takes the canonical affine centralizer representative. The
+centralizer-reductivity premise supplies its smoothness and connectedness.
+The given torus factorization implies that the entire cocharacter range lies
+in the prescribed ambient Borel, on every test scheme. The published
+`IsBorelSubgroup.centralizer_intersection_isBorel_of_statement` then converts
+the existence premise to Borelness of the actual intersection projection.
+Its implementation uses dynamic connectedness inside that same Borel, so the
+specified torus and weighted Lie vectors remain in the actual intersection.
+This establishes `HasBorelCentralizerIntersections` for that Borel.
+The published centralizer reduction now gives the claimed opposite-weight
+exclusion for every root.
+
+`rankOneSolvableObstruction_of_geometricStatements` composes this Borel
+assembly with `rankOneSolvableObstruction_of_algClosedBorel`. Its four explicit
+premises are precisely the preceding three geometric statements and
+`MaximalTorusBaseChangeForwardStatement`. The conclusion is the exact public
+arbitrary-field obstruction. The assembly introduces no additional premise,
+but proves none of these four statements; it is not an unconditional proof of
+the obstruction. The Borel-exclusion proposition above is unchanged.
+These two additions are internal logical consequences of the existing Library
+reductions and the published actual-intersection adapter.
