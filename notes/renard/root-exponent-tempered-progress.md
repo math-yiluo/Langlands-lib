@@ -3,7 +3,7 @@
 Worker 6, 4 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records eight verified publications and the remaining gates to the
+It records nine verified publications and the remaining gates to the
 all-parabolic temperedness criterion. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
@@ -14,9 +14,9 @@ French version dated 9 July 2026, registered as
 PDF page numbers below are one-based and equal printed page numbers plus six.
 The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
-compilation, and all sixteen published mathematical files match their
+compilation, and all eighteen published mathematical files match their
 frozen accepted hashes and the files at Library
-`c41b568e7835014dced08e75cc4af6f669955f5d`.
+`687ec597518e5ed344da1618d8a37af0df359b54`.
 
 ## Selected source assertions and exact interfaces
 
@@ -26,6 +26,7 @@ frozen accepted hashes and the files at Library
 | V.3.12, 112 / 118: the simple system of the reduced positive roots of a minimal parabolic | The same statement compares indecomposables in the reduced positive set with `simpleRelativeRoots`, whose definition uses all positive relative roots. It does not identify all indivisible positive roots with simple roots. Bases, fundamental weights, coroots and central decompositions retain separate obligations. |
 | V.3.14, 113 / 119: choose a contained minimal parabolic whose maximal split torus contains the specified Levi split component; restrict the simple roots outside the Levi index | `ParabolicRootPresentationData.IsCompatible` and `ParabolicRootPresentation p l a` record actual choices for specified maps. `pres.restrictedRoots` is the existing restricted-simple-root set. This construction does not prove existence or independence of those choices. |
 | First two V.3.15 displays, 113 / 119: positive and nonnegative sums over the restricted roots | `pres.positiveCone` and `pres.nonnegCone` instantiate the existing finite-sum constructions in the full real character space. Membership, empty-index and elementary cone laws are implemented. The subsequent coroot-inequality chambers are different sets and are not substituted here. |
+| V.3.19–V.3.20, 115–116 / 121–122, combined with VII.2.1, 227 / 233: real parameters and the exponent-cone test | The published derived `NormalizedTemperedLogarithmicComparisonStatement` states the corrected all-point formula with factor `-log q`, the equivalent negative-raw cone test, and the complete predicate comparison. Its proof is shared as an unreviewed draft under the focused proof successor; the full complex-exponential and lift comparison remains separate. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
 | VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The published derived `IsNormalizedExponentTempered` combines admissibility with the actual all-parabolic, all-presentation condition. Its explicitly normalized parameter retains the corrected-source comparison described below; this construction does not complete original source-definition coverage. |
@@ -75,8 +76,8 @@ representation.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. The eight units
-are three definitions and five statements. A definition receipt covers its
+independent semantic approval and a published integration. The nine units
+are three definitions and six statements. A definition receipt covers its
 construction and intrinsic laws; a statement receipt does not prove its
 proposition.
 
@@ -90,6 +91,7 @@ proposition.
 | [NormalizedTemperedFullGroupStatement](../../Langlands/Representation/Exponents/NormalizedTemperedFullGroupStatement.md), `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedFullGroupExponentStatement` | Statement `ad80b6ba-e43a-4378-bc92-883b7065e2fc`; Reviewer 12429, review `4881e2c5-63bb-444c-84a0-2bb3193b8849`; integration `edfdf00e1cfc4255be95f35950ea1636`, commit `cf220a229d7dcb607b8e9ff31488860fb7037d7c`. |
 | [NormalizedTemperedStandardReductionStatement](../../Langlands/Representation/Exponents/NormalizedTemperedStandardReductionStatement.md), `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedStandardReductionStatement` | Statement `daf38b57-1ae2-4d22-b3ad-e51c016d6895`; Reviewer 12432, review `8c6d12b3-2131-4dc1-ae79-fd257531624e`; integration `906617bac7344acda598e2e32a381a5c`, commit `cf220a229d7dcb607b8e9ff31488860fb7037d7c`. |
 | [NormalizedTemperedCentralCharacterStatement](../../Langlands/Representation/Exponents/NormalizedTemperedCentralCharacterStatement.md), `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedCentralCharacterStatement` | Statement `1e7616e3-25b5-4d17-bada-55460e7c2119`; Reviewer 12504, review `ad9ef60a-557b-4b6a-9309-88b04b004e5b`; integration `ccd2ecc3e1f14209b51339bda20ea5df`, commit `c41b568e7835014dced08e75cc4af6f669955f5d`. |
+| [NormalizedTemperedLogarithmicComparisonStatement](../../Langlands/Representation/Exponents/NormalizedTemperedLogarithmicComparisonStatement.md), `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedLogarithmicComparisonStatement` | Statement `57bf045c-784d-4771-b46a-49291d74a287`; Reviewer 12567, review `421c12e0-655d-4435-b6cc-0ff939301bbd`; integration `0f51d21dae3a4661ac334de0f3beedd4`, commit `687ec597518e5ed344da1618d8a37af0df359b54`. |
 
 The arbitrary-parabolic wrapper imports Worker 1507's existing generic and
 standard-family weight machinery unchanged. This map credits that reuse
@@ -120,9 +122,34 @@ for smooth characters. These named implementations fix the convention used
 by the published derived definition; they do not identify membership of the two
 parameters in the same nonnegative root cone.
 
-An exact comparison with a corrected, consistent reading of V.3.20 and
-VII.2.1 remains a source-correspondence obligation. A normalized predicate
-alone cannot close VII.2.1 source-definition coverage.
+The published
+`Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedLogarithmicComparisonStatement`
+now states the corresponding corrected-source comparison. For every actual
+normalized exponent and compatible presentation, normalized cone membership
+is equivalent to existence of a parameter in that same cone satisfying
+`log norm = (-log q) * pair` at every actual split-torus point. It is also
+equivalent to membership of the **negative** raw parameter in that cone,
+since negative raw is the positive scalar `log q` times normalized.
+The complete predicate equivalence preserves admissibility, every actual
+parabolic/Levi/split-component triple, nonempty compatible presentations,
+and every presentation, matching represented radical/decomposition and
+exponent. It does not establish the required presentation existence.
+
+Exact proof successor `5e93d170-2e08-4a46-8fed-b33ee6f928c0` revision 1
+has Worker 6's complete Lean/Markdown draft revision 1, shared with content key
+`35b7ee566a6ca2641e0dafe89cf260a0b29f49b35461587a41a0f2952a84d9ea`.
+Development check `9266ee57-cfa5-431f-bf05-100c54f41538` compiled and
+inspected its theorem with no errors or warnings and only core axioms.
+The draft uses the exponent's open kernel, the all-point raw pairing formula,
+valuation-image uniqueness after cancellation of nonzero `-log q`,
+and cone scaling by `log q` and its inverse. It then transfers the local
+equivalence under all unchanged predicate quantifiers. This draft is
+unreviewed and supplies no proof acceptance or publication.
+
+The full complex exponential, its surjectivity and period lattice, and
+identification of the real parts of arbitrary complex lifts remain separate
+V.3.20 obligations. The published proposition and a compiled draft do not
+close original source-definition coverage.
 The coroot-pairing positivity used for the Langlands-classification parameters
 of VII.4 also retains its own construction and comparison obligations.
 
@@ -191,8 +218,8 @@ central-character proposition. Its proof must establish the actual full-center
 structure, restriction, character-smoothness and identity-Jacquet comparisons
 used by its argument, or another checked route to the same conclusion.
 The neighboring full-group exponent proposition is not a premise.
-All three exact temperedness proof tasks were ready, unassigned and without
-artifacts at this dated check; their publication supplies no theorem.
+The three task identifiers locate the separate proof obligations; their
+publication supplies no theorem.
 
 The dependency order still requires:
 
@@ -201,8 +228,10 @@ The dependency order still requires:
 2. Proof of the published presentation existence, full
    independence and transport targets. Fixed-presentation pullback laws
    do not replace these targets.
-3. The consistent corrected-source normalization comparison and exact proofs
-   of the published full-group, standard-reduction and corrected
+3. Independent proof acceptance and publication for the corrected logarithmic
+   comparison, its distinct full complex-exponential and lift comparisons,
+   and exact proofs of the published full-group,
+   standard-reduction and corrected
    central-character statements.
    Actual topology, subgroup-image, conjugacy and exponent-transport
    comparisons remain explicit.
