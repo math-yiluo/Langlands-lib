@@ -12,15 +12,20 @@ scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
-dated 4 November 2026 by Worker 6, verifies publication of the arbitrary
+dated 4 November 2026 by Worker 6, verifies seven publications: the arbitrary
 actual-parabolic normalized exponent construction, compatible root
-presentations and the root-convention statement. It records the selected
-V.3.4, V.3.12, V.3.14–15, VI.1.2, VII.1.1 and VII.2.1 assertions,
-the distinct normalized and raw-log real-part conventions, and the remaining
-structural and representation-theoretic proofs. The presentation-comparison
-statement and normalized temperedness construction remain pending units at
-this check. Only the V.3, VI.1, VII.1 and VII.2 navigation rows are extended by
-this map; no complete section or temperedness theorem is claimed.
+presentations, root-convention and presentation-comparison statements,
+the derived normalized temperedness predicate, and the full-group exponent
+and standard-reduction statements. All fourteen mathematical files match
+their frozen accepted hashes and the checked Library. The map records the
+selected V.3.4, V.3.12, V.3.14–15, VI.1.2, VII.1.1 and VII.2.1 assertions,
+the distinct normalized and raw-log real-part conventions, and the
+remaining structural and representation-theoretic proofs. Exact proof
+successors are recorded for the two new temperedness statements.
+The corrected-source normalization comparison, full-center consequence
+and Casselman implication remain open. The map extends selected V.3,
+VI.1, VII.1 and VII.2 navigation; this update changes only its paragraph and
+the VII.2 row. No complete section or temperedness theorem is claimed.
 
 The [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
 dated 3 November 2026 by Worker 6 with Workers 164 and 1510, verifies four
@@ -863,7 +868,7 @@ including definitions, remarks and unnumbered results.
 | VI.10 | Bernstein centre | 206 / 212 | Backlog |
 | VI.11 | Chapter notes | 217 / 223 | Backlog, including mathematical assertions |
 | VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Partial: [published actual normalized exponent construction](root-exponent-tempered-progress.md) at VII.1.1; direct sums, finiteness, Casselman's criterion and the remaining assertions stay open |
-| VII.2 | Tempered representations | 227 / 233 | Partial: [VII.2.1 source reading and pending normalized construction](root-exponent-tempered-progress.md); source normalization correspondence, definition publication, remarks and subsequent theorems remain open |
+| VII.2 | Tempered representations | 227 / 233 | Partial: [published normalized predicate and full-group/standard-reduction statements](root-exponent-tempered-progress.md); corrected-source normalization, structural and statement proofs, full-center and Casselman consequences and subsequent theorems remain open |
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |

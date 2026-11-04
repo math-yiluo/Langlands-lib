@@ -3,7 +3,7 @@
 Worker 6, 4 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records three verified publications and the remaining gates to the
+It records seven verified publications and the remaining gates to the
 all-parabolic temperedness criterion. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
@@ -14,8 +14,9 @@ French version dated 9 July 2026, registered as
 PDF page numbers below are one-based and equal printed page numbers plus six.
 The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
-compilation, and the three published pairs match the files at Library
-`6d810cf8b71c5da9cf2722e850d66305665461f5`.
+compilation, and all fourteen published mathematical files match their
+frozen accepted hashes and the files at Library
+`685e43432e91845810990c035f99e276bbac9621`.
 
 ## Selected source assertions and exact interfaces
 
@@ -27,7 +28,9 @@ compilation, and the three published pairs match the files at Library
 | First two V.3.15 displays, 113 / 119: positive and nonnegative sums over the restricted roots | `pres.positiveCone` and `pres.nonnegCone` instantiate the existing finite-sum constructions in the full real character space. Membership, empty-index and elementary cone laws are implemented. The subsequent coroot-inequality chambers are different sets and are not substituted here. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
-| VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The pending explicitly normalized definition described below uses these actual constructions. No publication or complete source correspondence for that predicate is asserted here. The three remarks and the subsequent induction theorem remain open in this map. |
+| VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The published derived `IsNormalizedExponentTempered` combines admissibility with the actual all-parabolic, all-presentation condition. Its explicitly normalized parameter retains the corrected-source comparison described below; this construction does not complete original source-definition coverage. |
+| VII.2.1, Remark 1, first assertion, 227 / 233: full-group exponents are unitary, equivalently have zero real part | The published `NormalizedTemperedFullGroupExponentStatement` tests the identity parabolic and identity Levi and concludes zero normalized real part and norm one at every split-component point. Its proof and the subsequent full-center consequence remain open. |
+| VII.2.1, Remark 3, 227 / 233: reduction to standard parabolics | The published `NormalizedTemperedStandardReductionStatement` fixes one actual maximal split torus and generic cocharacter defining a minimal dynamic parabolic. It states an equivalence with admissibility and the exponent-cone tests on the corresponding actual standard family. Its structural completeness and transport proof remain open. |
 
 The Chapter V construction is over arbitrary fields, visibly extending the
 source's local-field setting. A presentation records actual maps
@@ -68,15 +71,20 @@ are required.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. A definition
-receipt covers its construction and intrinsic laws; the statement receipt
-does not prove its proposition.
+independent semantic approval and a published integration. The seven units
+are three definitions and four statements. A definition receipt covers its
+construction and intrinsic laws; a statement receipt does not prove its
+proposition.
 
 | Pair and exact declaration | Candidate, independent review and publication |
 | --- | --- |
 | [ArbitraryParabolic](../../Langlands/Representation/Exponents/ArbitraryParabolic.md), `Langlands.Aubert.General.RepresentedParabolic.IsNormalizedJacquetExponent` | Definition `678ceb15-602f-4aaf-b1c2-3bc9c4ee24c0`; Reviewer 12310, review `f305b203-8d2e-4735-ad66-1e76371db9d7`; integration `d757143185e04f3c8a8456056ecf2a12`, commit `7596502b4fe9738072198e7f23076fa02293f254`. |
 | [ParabolicRootPresentation](../../Langlands/GroupScheme/Rational/ParabolicRootPresentation.md), `Langlands.GroupScheme.ParabolicRootPresentation.nonnegCone` | Definition `e204b3f2-bd58-49e9-95dc-f9e1888f50bf`; Reviewer 12327, review `c0ce4017-c01f-4c43-86ba-9d04327e46a5`; integration `38571d24640344bfb006ae105b655720`, commit `6d810cf8b71c5da9cf2722e850d66305665461f5`. |
 | [RenardRootConventionStatement](../../Langlands/GroupScheme/Rational/RenardRootConventionStatement.md), `Langlands.GroupScheme.RenardRootConventionStatement` | Statement `3204db6d-d854-4955-bed8-74b6e65a3cf9`; Reviewer 12337, review `c7efa60d-01f4-458c-ae8b-a5953c24a3dd`; integration `1d435d5d66a8493488125f8b84ec2210`, commit `6d810cf8b71c5da9cf2722e850d66305665461f5`. |
+| [ParabolicRootPresentationStatement](../../Langlands/GroupScheme/Rational/ParabolicRootPresentationStatement.md), `Langlands.GroupScheme.ParabolicRootPresentationStatement` | Statement `5fe091ee-4eaf-4aa5-ab1a-0c994c44ec86`; Reviewer 12375, review `b4a378ef-5647-434d-b7e8-6cd9a0392f75`; integration `00244bce2e1044ad98de2f0712b7f0fe`, commit `fd5d309e44e7f2f66516fa1781a0112c4e3a56ac`. |
+| [ArbitraryParabolicTempered](../../Langlands/Representation/Exponents/ArbitraryParabolicTempered.md), `Langlands.Aubert.General.RepresentedParabolic.IsNormalizedExponentTempered` | Definition `9571e30c-ad43-4382-ab43-19ed1aad72c0`; Reviewer 12384, review `a9f9c9b2-dc1e-4579-b239-9620c4d194ed`; integration `aea05d32927b424195375673ace0ccd6`, commit `fd5d309e44e7f2f66516fa1781a0112c4e3a56ac`. |
+| [NormalizedTemperedFullGroupStatement](../../Langlands/Representation/Exponents/NormalizedTemperedFullGroupStatement.md), `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedFullGroupExponentStatement` | Statement `ad80b6ba-e43a-4378-bc92-883b7065e2fc`; Reviewer 12429, review `4881e2c5-63bb-444c-84a0-2bb3193b8849`; integration `edfdf00e1cfc4255be95f35950ea1636`, commit `cf220a229d7dcb607b8e9ff31488860fb7037d7c`. |
+| [NormalizedTemperedStandardReductionStatement](../../Langlands/Representation/Exponents/NormalizedTemperedStandardReductionStatement.md), `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedStandardReductionStatement` | Statement `daf38b57-1ae2-4d22-b3ad-e51c016d6895`; Reviewer 12432, review `8c6d12b3-2131-4dc1-ae79-fd257531624e`; integration `906617bac7344acda598e2e32a381a5c`, commit `cf220a229d7dcb607b8e9ff31488860fb7037d7c`. |
 
 The arbitrary-parabolic wrapper imports Worker 1507's existing generic and
 standard-family weight machinery unchanged. This map credits that reuse
@@ -104,7 +112,7 @@ Since `q > 1`, the scalar is negative. The
 module gives the all-point normalized formula
 `‖χ(a)‖ = q ^ (-pair (normalizedRealPart hA χ) (valuation a))`
 for smooth characters. These named implementations fix the convention used
-by the pending definition; they do not identify membership of the two
+by the published derived definition; they do not identify membership of the two
 parameters in the same nonnegative root cone.
 
 An exact comparison with a corrected, consistent reading of V.3.20 and
@@ -113,50 +121,72 @@ alone cannot close VII.2.1 source-definition coverage.
 The coroot-pairing positivity used for the Langlands-classification parameters
 of VII.4 also retains its own construction and comparison obligations.
 
-## Pending units and proof gates
+## Published normalized formulation and remaining proof gates
 
-At this dated check, statement candidate
-`5fe091ee-4eaf-4aa5-ab1a-0c994c44ec86` has accepted machine validation and
-Reviewer 12375's unqualified semantic approval in review
-`b4a378ef-5647-434d-b7e8-6cd9a0392f75`, but remains staged and nonpublic.
-Its aggregate `Langlands.GroupScheme.ParabolicRootPresentationStatement`
+The published aggregate
+`Langlands.GroupScheme.ParabolicRootPresentationStatement`
 asserts existence for every specified actual `p,l,a`, independence of
 restricted roots and both cones across arbitrary compatible presentations,
 and both-direction pullback transport under compatible component isomorphisms.
 All presentation fields may vary in its comparisons. The focused statement
-task is `324d4a6a-1bb2-4eb5-8cc7-0e8e01fa19ee`.
-Neither its approval nor this map supplies a proof or publication.
+task is `324d4a6a-1bb2-4eb5-8cc7-0e8e01fa19ee`; the proof successor is
+`c6c736b5-f1c4-4203-bb23-f7981c4fc3af`. Publication of this proposition
+supplies no proof of existence, independence or transport.
 
-Definition candidate `9571e30c-ad43-4382-ab43-19ed1aad72c0` has accepted
-machine validation and awaits semantic review
-`a9f9c9b2-dc1e-4579-b239-9620c4d194ed`. The focused construction task is
-`f04b8f7d-2ba7-4d50-b374-4ecb7b1f15a1`.
-Its `Langlands.Aubert.General.RepresentedParabolic.IsNormalizedExponentTempered`
+The published
+`Langlands.Aubert.General.RepresentedParabolic.IsNormalizedExponentTempered`
 requires admissibility and the normalized exponent condition for every
 specified actual parabolic, rational Levi and split component. For each
 triple it requires a nonempty compatible-presentation type and tests
 **every** presentation, matching represented radical and exponent.
 The rational-Levi predicate already supplies existence of a matching
 radical. Missing presentations cannot make this condition true.
-The candidate includes six direct extraction laws, not a structural,
+The construction includes six direct extraction laws, not a structural,
 analytic or representation-theoretic criterion.
+
+The full-group exponent statement uses both identity maps, with every
+actual represented radical and matching multiplication-isomorphism witness.
+It tests every actual normalized exponent and concludes both zero
+`normalizedRealPart` in the full real character space and pointwise norm one.
+The exponent predicate already includes an open character kernel and nonzero
+generalized weight space, so no extra character-smoothness premise is added.
+Exact proof task `e8d2e2ad-434b-412e-abc2-d466a08724f1` requires the
+full-group cone degeneration and both conclusions from these actual inputs.
+
+The standard-reduction statement fixes its actual torus, embedding and
+generic cocharacter before the equivalence. Its standard tests quantify
+over `J,ζ` with `IsStandardCocharacter i ν J ζ`, then all actual
+`p,l,a` and their structural witnesses. Four all-test equalities require
+the parabolic image to equal both `standardParabolic i ν J` and the
+dynamic parabolic of `ζ`, and the composite Levi image to equal both
+`standardLevi i ν J` and the dynamic centralizer of that same `ζ`.
+The right side retains admissibility and the full all-presentation cone
+condition. A single `ζ` must realize both images; an empty
+standard-cocharacter family cannot provide that witness. Conjugacy and
+exponent transport remain obligations for the proof.
+Exact proof task `c9759a7b-aa16-42d4-8f0f-64cdc265e173` must establish
+the completeness and transport needed for the converse.
+Both exact proof tasks were ready, unassigned and without artifacts at
+this dated check; their publication supplies no theorem.
 
 The dependency order still requires:
 
 1. Proof of the published `RenardRootConventionStatement`, with focused
    successor task `90eeb314-6b62-4150-bf19-095a45c0ff33`.
-2. Publication and then proof of the presentation existence, full
+2. Proof of the published presentation existence, full
    independence and transport targets. Fixed-presentation pullback laws
    do not replace these targets.
-3. Acceptance and publication of the normalized temperedness construction,
-   followed by exact source-convention and standard-reduction comparisons.
-   Actual topology and subgroup-image comparisons remain explicit.
+3. The consistent corrected-source normalization comparison and exact proofs
+   of the published full-group and standard-reduction statements.
+   Actual topology, subgroup-image, conjugacy and exponent-transport
+   comparisons remain explicit.
 4. The source's separate representation-theoretic assertions: the VII.1.1
-   direct-sum and finite-exponent results, Casselman's criterion, all three
-   VII.2.1 remarks, induction and restriction behavior, and the later
-   tempered-support and classification results. In particular a scalar
-   central character is relevant only when one exists; it is not a premise
-   of the all-parabolic definition.
+   direct-sum and finite-exponent results, Casselman's criterion, the
+   VII.2.1 Remark 1 full-center consequence, Remark 2's Casselman implication,
+   induction and restriction behavior, and the later tempered-support and
+   classification results. In particular a scalar central character is
+   relevant only when one exists; it is not a premise of the all-parabolic
+   definition or either new statement.
 
 The listed task identifiers locate work. They are not proof receipts,
 ownership changes or authority to resume held tasks. General reductive scope,
