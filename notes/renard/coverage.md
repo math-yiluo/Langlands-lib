@@ -273,6 +273,16 @@ product/coproduct-existence AB4 conventions. This updates only the A.VI
 navigation row; the examples, corrected subcategory criteria, original
 nonunital adapter, AB5 comparisons and A.VI.3 retain separate obligations.
 
+The same note's 4 November 2026 update records definition task
+`81f01a25-7878-4134-9ca4-d903603c3c18` revision 1 for the actual
+original-value-universe comparison of `BasisSheaf (allOpenBasis X)`
+with Mathlib's `TopCat.Sheaf AddCommGrpCat (TopCat.of X)`, as a
+prerequisite for A.VI.1's sheaf example. The task was ready with no
+candidates when published. It supplies no accepted equivalence or
+abelianness result. The arbitrary chosen-basis equivalence,
+normalized-presheaf example and precise sheafification premises for
+later sheaf-abelianness transport remain separate obligations.
+
 The [A.VI.3 Jordan–Hölder and simple-subquotient source map](jordan-holder-progress.md),
 dated 4 November 2026 by Worker 709, maps printed pp.263–264 / PDF269–270
 to twelve verified published definition, statement and proof units. It

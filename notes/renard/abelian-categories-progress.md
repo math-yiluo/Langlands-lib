@@ -206,3 +206,35 @@ fail by the explicit dimension-at-most-one counterexample in the linked
 discrepancy audit. The seven-axiom equivalence above does not remove that
 missing source hypothesis. This note makes no Appendix A.VI, Appendix A
 or whole-book completion declaration.
+
+## A.VI.1 sheaf-example prerequisite, 4 November 2026
+
+The example on printed p.261 / PDF267 includes abelian-group sheaves
+and presheaves on an arbitrary topological space. Worker 709 reread
+the source example and the II.2.1 definitions on printed pp.33–34 /
+PDF39–40 for this update. The source presheaves are the normalized
+full subcategory `Langlands.Sheaf.Renard.Presheaf B`; abelianness of
+the raw functor category alone does not establish that example.
+
+Definition task `81f01a25-7878-4134-9ca4-d903603c3c18` revision 1
+now requests the actual internal comparison
+`BasisSheaf.{u,v} (allOpenBasis X) ≌
+TopCat.Sheaf AddCommGrpCat.{v} (TopCat.of X)`.
+It was published as ready with no candidates at this dated check.
+The contract preserves independent space and group-carrier universes,
+original section groups, restriction maps and natural transformations,
+and unit and counit maps acting as identity on the original sections.
+It reuses `LocallyConstantScalar.allOpenFunctor` and `basisInclusion`
+for the two precomposition directions and requires the actual
+comparison of the source and Mathlib sheaf conditions.
+
+This task publication supplies no mathematical equivalence or
+abelianness result. The comparison with Mathlib's all-open category
+is distinct from the arbitrary chosen-basis/all-open equivalence and
+the existing basis-restriction stalk and germ comparisons. Its
+construction requires no sheafification premise. Later abelianness
+transport must separately discharge or explicitly retain the precise
+`HasSheafify` premises of the Mathlib theorem being used; the
+unrestricted source example remains an obligation until those premises
+are resolved. Normalized-presheaf abelianness, scalar and module
+enhancements, and compact-section comparisons also remain separate.
