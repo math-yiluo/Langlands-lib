@@ -98,15 +98,18 @@ local notation "t_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) t
 local notation "i_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) i
 local notation "U_K" => Functor.obj (GroupScheme.baseChange b) U
 
-local instance : IsAffineHom (U_K).X.hom := by
+local instance positiveSourceContractionBaseChangeIsAffineHom :
+    IsAffineHom (U_K).X.hom := by
   change IsAffineHom (Limits.pullback.snd U.X.hom b)
   infer_instance
 
-local instance : Smooth (U_K).X.hom := by
+local instance positiveSourceContractionBaseChangeSmooth :
+    Smooth (U_K).X.hom := by
   change Smooth (Limits.pullback.snd U.X.hom b)
   infer_instance
 
-local instance : ConnectedSpace (U_K).X.left :=
+local instance positiveSourceContractionBaseChangeConnectedSpace :
+    ConnectedSpace (U_K).X.left :=
   U.connectedSpace_baseChange_of_smooth_affine b
 
 include hi in

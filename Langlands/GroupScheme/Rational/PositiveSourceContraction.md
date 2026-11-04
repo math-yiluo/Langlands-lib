@@ -56,6 +56,12 @@ using the preceding extension criterion. Its theorem
 exactly the original `i`. The construction uses the published represented
 subgroup factorization and does not select a different representative.
 
+The local field-extension instances for affineness, smoothness, and connectedness
+have explicit names prefixed by `positiveSourceContractionBaseChange`. These
+names avoid collisions with generated instance declarations in other modules,
+including `Torus.WeightBaseChange`, when the modules are imported together.
+The instance bodies, mathematical declarations, and proofs are unchanged.
+
 The supplied action, equivariance, splitting extension, and positive cocharacter
 remain inputs. This module does not construct an initial positive direction,
 prove a parabolic presentation, identify a supplied Levi centralizer, or prove
