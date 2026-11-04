@@ -31,14 +31,12 @@ def centralSemigroupKernelFamily
     ∀ r, kernel (p r) ⟶ Z :=
   fun r => factorKernelHom q z hz (j r) (lQ r) (p r) (hp r)
 
-/-- The exact product property passes from an actual central subgroup and its
-smooth fppf quotient to the ambient action, under the stated semigroup inputs. -/
-theorem hasOrderedSemigroupProducts_of_centralExtension
+/-- The exact product property passes through an actual central extension
+using only the semigroup inverse-image equalities for its central inclusion. -/
+theorem hasOrderedSemigroupProducts_of_centralExtension_of_comap
     (hReal : SemigroupRealizationStatement.{u})
     (hSmoothQuotient : SemigroupSmoothQuotientStatement.{u})
-    (hIntersection : SemigroupIntersectionStatement.{u})
-    (hG : Smooth G.X.hom) (hZ : Smooth Z.X.hom) (hQ : Smooth Q.X.hom)
-    (hZconn : ConnectedSpace Z.X.left)
+    (hG : Smooth G.X.hom) (hQ : Smooth Q.X.hom)
     (hS : IsSplitTorus S.toGrp)
     (b : AutomorphicAction S.toGrp G) (bZ : AutomorphicAction S.toGrp Z)
     (bQ : AutomorphicAction S.toGrp Q) (z : Z ⟶ G) (q : G ⟶ Q)
@@ -49,6 +47,8 @@ theorem hasOrderedSemigroupProducts_of_centralExtension
       bZ.act s v ≫ z.hom.hom = b.act s (v ≫ z.hom.hom))
     (hqEq : ∀ (T : Over (Spec (CommRingCat.of k))) (s : T ⟶ S.X) (g : T ⟶ G.X),
       b.act s g ≫ q.hom.hom = bQ.act s (g ≫ q.hom.hom))
+    (hIntersection : ∀ A : AddSubsemigroup (characterLattice S),
+      (semigroupSubgroup b A).comap z = semigroupSubgroup bZ A)
     (hZprod : HasOrderedSemigroupProducts bZ) (hQprod : HasOrderedSemigroupProducts bQ) :
     HasOrderedSemigroupProducts b := by
   classical
@@ -70,7 +70,6 @@ theorem hasOrderedSemigroupProducts_of_centralExtension
     have hbot := actionWeightSpace_eq_bot_of_smooth b bQ hS q hqEq hqSmooth χ
       (actionWeightSpace_eq_bot_of_not_mem_support b hn)
     exact (mem_actionWeightSupport_top_iff bQ χ).mp hχ hbot
-  have hnormal : (SubgroupFunctor.range z).IsNormal := hzCentral.range_isNormal
   intro n Ψ hcover hdis hcross
   let A : Fin n → AddSubsemigroup (characterLattice S) :=
     fun r => AddSubsemigroup.closure (Ψ r)
@@ -95,8 +94,7 @@ theorem hasOrderedSemigroupProducts_of_centralExtension
   have hlrep : ∀ r, (semigroupSubgroup bZ (A r)).IsRepresentedBy (l r) := by
     intro r
     let _ : Mono (lQ r).hom.hom := (hR r).1.1
-    have hinter := hIntersection k G Z hG hZ inferInstance inferInstance hZconn
-      S hS b bZ z hzClosed hzEq (A r) (Or.inr (Or.inr hnormal))
+    have hinter := hIntersection (A r)
     rw [← hinter]
     exact factorKernelHom_isRepresentedBy q z hzker (j r) (lQ r) (p r) (hp r) (hj r)
   have hlprod : IsIso (orderedMultiplication l) :=
@@ -131,5 +129,32 @@ theorem hasOrderedSemigroupProducts_of_centralExtension
   exact isIso_orderedMultiplication_of_centralExtension j lQ q p hp lK hlK
     (fun r => by let _ := hpSmooth r; infer_instance) hpSurj
     (fun r => by let _ := hpSmooth r; infer_instance) hcentral
+
+/-- The exact product property passes from an actual central subgroup and its
+smooth fppf quotient to the ambient action, under the stated semigroup inputs. -/
+theorem hasOrderedSemigroupProducts_of_centralExtension
+    (hReal : SemigroupRealizationStatement.{u})
+    (hSmoothQuotient : SemigroupSmoothQuotientStatement.{u})
+    (hIntersection : SemigroupIntersectionStatement.{u})
+    (hG : Smooth G.X.hom) (hZ : Smooth Z.X.hom) (hQ : Smooth Q.X.hom)
+    (hZconn : ConnectedSpace Z.X.left)
+    (hS : IsSplitTorus S.toGrp)
+    (b : AutomorphicAction S.toGrp G) (bZ : AutomorphicAction S.toGrp Z)
+    (bQ : AutomorphicAction S.toGrp Q) (z : Z ⟶ G) (q : G ⟶ Q)
+    (hzClosed : IsClosedSubgroup z) (hzCentral : IsCentral z)
+    (hq : IsFppfQuotient (SubgroupFunctor.range z) q)
+    (hqSmooth : Smooth q.hom.hom.left)
+    (hzEq : ∀ (T : Over (Spec (CommRingCat.of k))) (s : T ⟶ S.X) (v : T ⟶ Z.X),
+      bZ.act s v ≫ z.hom.hom = b.act s (v ≫ z.hom.hom))
+    (hqEq : ∀ (T : Over (Spec (CommRingCat.of k))) (s : T ⟶ S.X) (g : T ⟶ G.X),
+      b.act s g ≫ q.hom.hom = bQ.act s (g ≫ q.hom.hom))
+    (hZprod : HasOrderedSemigroupProducts bZ) (hQprod : HasOrderedSemigroupProducts bQ) :
+    HasOrderedSemigroupProducts b := by
+  exact hasOrderedSemigroupProducts_of_centralExtension_of_comap
+    hReal hSmoothQuotient hG hQ hS b bZ bQ z q hzClosed hzCentral hq hqSmooth
+    hzEq hqEq
+    (fun A => hIntersection k G Z hG hZ inferInstance inferInstance hZconn
+      S hS b bZ z hzClosed hzEq A (Or.inr (Or.inr hzCentral.range_isNormal)))
+    hZprod hQprod
 
 end Langlands.GroupScheme.RelativeRoot

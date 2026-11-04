@@ -99,17 +99,20 @@ theorem range_semidirectInl_eq_top_of_zero_notMem_support
     exact acting_points_eq_one_of_zero_notMem_semidirect_support a b hcomm hS hzero T _
 
 /-- The exact ordered-product property passes from the normal action to its
-actual semidirect lift. Only global functoriality and intersection remain as
-comparison premises; no inner-stability or zero-weight premise is needed. -/
-theorem hasOrderedSemigroupProducts_semidirect
+actual semidirect lift. Only global functoriality and the local inverse-image equalities along the
+normal inclusion remain as comparison premises. Inner stability and the
+zero-weight alternatives are derived. -/
+theorem hasOrderedSemigroupProducts_semidirect_of_comap
     (hfun : SemigroupFunctorialityStatement.{u})
-    (hinter : SemigroupIntersectionStatement.{u})
+    (hcomap : ∀ A : AddSubsemigroup (characterLattice S),
+      (semigroupSubgroup (a.semidirectLift b hcomm) A).comap a.semidirectInl =
+        semigroupSubgroup b A)
     (hb : HasOrderedSemigroupProducts b) :
     HasOrderedSemigroupProducts (a.semidirectLift b hcomm) := by
   intro n Ψ hcover hdis hcross
   by_cases hzero : 0 ∈ actionWeightSupport (a.semidirectLift b hcomm) ⊤
-  · exact semigroupOrderedSemidirect_of_larger_support a b hcomm hS hfun hinter hb
-      (semigroupSubgroup_isStable_inner a b hcomm hS hinter)
+  · exact semigroupOrderedSemidirect_of_larger_support_of_comap a b hcomm hS hfun hcomap hb
+      (semigroupSubgroup_isStable_inner_of_comap a b hcomm hS hcomap)
       (actionWeightSupport (a.semidirectLift b hcomm) ⊤)
       (actionWeightSupport_normal_subset_semidirect a b hcomm) hzero n Ψ hcover hdis hcross
   · obtain ⟨H, j, hj, hprod⟩ := hb.for_larger_support
@@ -134,5 +137,14 @@ theorem hasOrderedSemigroupProducts_semidirect
         (hj i).2.2.1, (hj i).2.2.2⟩
     · rw [← orderedMultiplication_comp]
       infer_instance
+
+/-- The original full-intersection interface for semidirect products. -/
+theorem hasOrderedSemigroupProducts_semidirect
+    (hfun : SemigroupFunctorialityStatement.{u})
+    (hinter : SemigroupIntersectionStatement.{u})
+    (hb : HasOrderedSemigroupProducts b) :
+    HasOrderedSemigroupProducts (a.semidirectLift b hcomm) := by
+  exact hasOrderedSemigroupProducts_semidirect_of_comap a b hcomm hS hfun
+    (semigroupSubgroup_semidirect_comap_inl a b hcomm hS hinter) hb
 
 end Langlands.GroupScheme.RelativeRoot

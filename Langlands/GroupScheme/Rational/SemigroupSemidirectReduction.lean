@@ -54,11 +54,14 @@ variable {K G : GroupScheme (Spec (CommRingCat.of k))}
 
 include hcomm hS
 
-/-- The published commutator bound and the stated normal intersection
-comparison give inner stability for every semigroup, including those
+omit [ConnectedSpace G.X.left] in
+/-- The published commutator bound and the local inverse-image
+equalities give inner stability for every semigroup, including those
 excluding zero. -/
-theorem semigroupSubgroup_isStable_inner
-    (hinter : SemigroupIntersectionStatement.{u})
+theorem semigroupSubgroup_isStable_inner_of_comap
+    (hcomap : ∀ A : AddSubsemigroup (characterLattice S),
+      (semigroupSubgroup (a.semidirectLift b hcomm) A).comap a.semidirectInl =
+        semigroupSubgroup b A)
     (A : AddSubsemigroup (characterLattice S)) :
     a.IsStable (semigroupSubgroup b A) := by
   intro T q x hx
@@ -84,9 +87,18 @@ theorem semigroupSubgroup_isStable_inner
         (semigroupSubgroup (a.semidirectLift b hcomm) A).carrier T := by
     rw [← a.semidirect_conjugation, AutomorphicAction.conjugation_act]
     simpa only [mul_assoc, inv_mul_cancel, mul_one] using hm
-  have he := semigroupSubgroup_semidirect_comap_inl a b hcomm hS hinter A
+  have he := hcomap A
   rw [← he]
   exact hg
+
+/-- The original full-intersection API supplies the local equalities to
+inner stability. -/
+theorem semigroupSubgroup_isStable_inner
+    (hinter : SemigroupIntersectionStatement.{u})
+    (A : AddSubsemigroup (characterLattice S)) :
+    a.IsStable (semigroupSubgroup b A) := by
+  exact semigroupSubgroup_isStable_inner_of_comap a b hcomm hS
+    (semigroupSubgroup_semidirect_comap_inl a b hcomm hS hinter) A
 
 omit [Smooth K.X.hom] [Smooth G.X.hom]
   [ConnectedSpace K.X.left] [ConnectedSpace G.X.left] hS in

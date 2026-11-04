@@ -47,9 +47,20 @@ cannot cover a support containing zero; no arbitrary index is chosen.
 
 The provenance is internal, combining the exact semidirect factor identities,
 represented actions, original ordered-product absorption, support restriction
-and smooth connected product geometry. Both global comparison statements,
-inner stability, the normal-factor product property, the larger-support
-containment and membership of zero remain explicit premises. This unit
-does not prove these premises, produce a solvable decomposition, perform
-scalar descent, handle the zero-absent case, or prove the host
+and smooth connected product geometry. The original APIs retain both global
+comparison statements. The local variants retain global functoriality and
+the exact inverse-image equalities. Inner stability, the normal-factor
+product property, the larger-support containment and membership of zero remain
+explicit premises where used. This unit does not prove these premises,
+produce a solvable decomposition, perform scalar descent, handle the
+zero-absent case, or prove the host
 `SemigroupOrderedProductStatement`.
+
+The `of_comap` variants assume only the inverse-image equalities along the
+normal inclusion, for the supplied lifted action and every additive
+semigroup. In the zero-containing case, the acting range lies in the ambient
+semigroup; the all-test semidirect reconstruction and the local equality then
+identify the represented semigroup. The equality is proved pointwise, so the
+stability proof does not require dependent transport. The factor-absorption and larger-support
+proofs use only these equalities. The original theorem names and signatures
+remain wrappers obtaining the equalities from the full intersection statement.

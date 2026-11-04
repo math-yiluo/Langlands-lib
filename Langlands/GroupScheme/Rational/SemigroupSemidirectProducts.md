@@ -41,6 +41,14 @@ disjointness of generated closures is assumed. The proof includes arbitrary
 original order and `Fin 0`.
 
 This is a derived assembly from the imported actual constructions. It
-retains the global functoriality and intersection premises. It constructs
-no solvable decomposition or scalar descent and does not prove the full
+retains global functoriality. The original API also retains global
+intersection; the local API retains the inverse-image equalities below.
+It constructs no solvable decomposition or scalar descent and does not prove the full
 `SemigroupOrderedProductStatement`.
+
+The `hasOrderedSemigroupProducts_semidirect_of_comap` version requires only
+local inverse-image equalities along the normal inclusion. These give inner
+stability through the commutator argument and identify the absorbed factor
+in the zero-containing case. The zero-absent argument is unchanged and uses
+no intersection premise. The original theorem signature remains a wrapper
+using the full intersection statement to supply the local equalities.

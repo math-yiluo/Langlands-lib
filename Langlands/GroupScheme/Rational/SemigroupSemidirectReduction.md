@@ -26,5 +26,11 @@ occurring zero characters.
 
 These are derived constructions and proofs using the imported actual
 subgroup functors, actions, lattice, and all-test commutator theorem. The
-global intersection premise remains explicit. This module does not establish
-the full solvable ordered-product statement.
+original API keeps its global intersection premise explicit. The local API
+keeps only the inverse-image equalities described below. This module does
+not establish the full solvable ordered-product statement.
+
+`semigroupSubgroup_isStable_inner_of_comap` uses only the exact inverse-image
+equalities along the normal inclusion for this lifted action. Its commutator
+argument is unchanged. The original `semigroupSubgroup_isStable_inner` theorem
+retains its full-intersection signature and supplies these local equalities.

@@ -1,7 +1,10 @@
 # Exact semigroup products in a central extension
 
-This internal assembly theorem assumes the existing semigroup realization,
-smooth quotient, and intersection statements. It also assumes the exact
+The local assembly theorem
+`hasOrderedSemigroupProducts_of_centralExtension_of_comap` assumes the existing
+semigroup realization and smooth quotient statements and the exact equalities
+`(semigroupSubgroup b A).comap z = semigroupSubgroup bZ A` for every
+additive semigroup `A`. It also assumes the exact
 per-action ordered product property for a supplied central subgroup and its
 actual smooth fppf quotient. It proves that property for the ambient action.
 These inputs remain explicit; this unit does not prove the general geometric
@@ -11,8 +14,12 @@ For the assembly theorem, `k` is an arbitrary field in universe `u`, `S` is a
 split `k`-torus, and `b`, `bZ`, and `bQ` are its supplied actual automorphic
 actions on the group schemes `G`, `Z`, and `Q`. The inclusion `z` is closed and
 central, the quotient map `q` has the represented fppf kernel `range z`, and
-both maps intertwine these actions. The three groups are affine and smooth,
-and the central subgroup is connected.
+both maps intertwine these actions. All three groups are affine, and the
+ambient group and quotient are smooth. The local version does not require
+smoothness or connectedness of the whole central subgroup. The original theorem
+`hasOrderedSemigroupProducts_of_centralExtension` retains its original signature:
+it assumes a smooth connected central subgroup and the full intersection
+statement and supplies the local equalities using its normal-subgroup branch.
 
 `centralSemigroupKernelFamily` assembles the canonical `factorKernelHom` maps
 for a finite family of actual commuting quotient squares. It maps each actual
@@ -31,9 +38,8 @@ ambient factors. The smooth quotient input supplies actual smooth surjective
 maps from each ambient representative to the corresponding quotient factor.
 The canonical `factorKernelHom` maps their actual scheme-theoretic kernels into
 the supplied central subgroup and represents the exact preimage of the ambient
-factor. Centrality implies normality of the central subgroup on every test, so
-the normal branch of the intersection input identifies this preimage with the
-corresponding central semigroup factor, including when zero belongs to its
+factor. The supplied local inverse-image equality identifies this preimage
+with the corresponding central semigroup factor, including when zero belongs to its
 positive semigroup. Invariance under replacing representatives transfers the
 central ordered-product isomorphism to these actual factor kernels.
 
