@@ -2,8 +2,10 @@
 
 Worker 709, 4 November 2026. This source map records four independently
 accepted and published proof units, the published polynomial-module
-equivalence and the separate published statement for the final
-representability remark. It complements the five proofs in the
+equivalence, and separate published statements for binary diagonal arrows,
+separated uniform completion and the final representability remark.
+Their proof successors and the restricted-equivalence construction remain
+open. It complements the five proofs in the
 [endomorphism-localization note](endomorphism-localization.md). It makes no
 section or whole-book completion claim.
 
@@ -38,6 +40,8 @@ route.
 | Passage | Public declarations and exact coverage |
 | --- | --- |
 | A.III.1 definition and comparison remark, PDF257–258 | [UniversalArrowStatements](../../Langlands/CategoryTheory/Renard/UniversalArrowStatements.md) and [UniversalArrowProof](../../Langlands/CategoryTheory/Renard/UniversalArrowProof.md): both factorization/initiality or terminality equivalences, and the unique isomorphism compatible with two chosen right or left solutions |
+| A.III.1 example 1, PDF258; A.IV.1–2 binary comparison, PDF263 | [BinaryDiagonalStatements](../../Langlands/CategoryTheory/Renard/BinaryDiagonalStatements.md): four published statements comparing the supplied diagonal arrows with simultaneous unique factorization and the actual binary limit or colimit witnesses; exact proof pending |
+| A.III.1 example 2, PDF258 | [UniformCompletionStatements](../../Langlands/CategoryTheory/Renard/UniformCompletionStatements.md): four published statements for the derived uniform generalization, using uniformly continuous maps and complete separated targets; exact proof and the continuous-map vector-space comparison remain separate |
 | A.III.1 example 4, PDF258 | [RenardLocalModuleUniversalStatement](../../Langlands/Algebra/RenardLocalModuleUniversalStatement.md) and [RenardLocalModuleUniversalProof](../../Langlands/Algebra/RenardLocalModuleUniversalProof.md): the actual constructed module factor, its uniqueness among all full-subcategory morphisms, and initiality of the actual canonical structured arrow |
 | A.III.1 example 5 and subsequent lemma and corollary, PDF258–259 | [PolynomialEndomorphism](../../Langlands/Algebra/PolynomialEndomorphism.md) supplies the published categorical equivalence in the example's first assertion; the [endomorphism-localization note](endomorphism-localization.md) records the five published algebraic proofs, including the B-linear universal property. The narrower boundary for categorical transport of localization is described below |
 | A.III.2 definition, theorem and proof, PDF259–260 | [YonedaStatements](../../Langlands/CategoryTheory/Renard/YonedaStatements.md) and [YonedaProof](../../Langlands/CategoryTheory/Renard/YonedaProof.md): identity evaluation with its inverse, the actual Yoneda Hom equivalence, the representation dictionary and the equivalence with the full subcategory of representable presheaves |
@@ -103,6 +107,60 @@ the four universes. On PDF261 both displayed Hom subscripts are printed
 C, although their objects lie in M; the accepted statement and proof
 interpret the Hom sets in M, as explained in their paired Markdown.
 
+## Published binary and uniform-completion statements
+
+The closed proposition
+`Langlands.Renard.BinaryDiagonal.BinaryDiagonalStatements.{vC,uC}`
+has four components. For the actual diagonal `Functor.diag C`, a supplied
+left arrow `(p,q)` is universal iff every pair of maps into its two targets
+has a unique simultaneous factor through p and q, and iff
+`BinaryFan.mk p q` is limiting. Dually, a supplied right arrow `(i,j)`
+is universal iff every pair of maps out of its two sources has a unique
+simultaneous factor, and iff `BinaryCofan.mk i j` is colimiting.
+The object and morphism universes are independent. These comparisons
+characterize supplied arrows without assuming that all binary products
+or coproducts exist.
+
+The closed proposition
+`Langlands.Renard.UniformCompletion.UniformCompletionStatements.{u,v}`
+also has four components: properties of the actual canonical completion
+map; the actual `Completion.extension` and its uniqueness for complete
+separated targets; categorical factorization by the actual
+`UniformSpaceCat.extensionHom`; and right universality of the structured
+arrow built from that same `completionHom`.
+Concrete source and target universes u and v are independent; the bundled
+categories share an arbitrary u. General sources need not be separated.
+Only the canonical map's uniform-embedding clause assumes `T0Space` of
+the source.
+
+This completion unit makes the source convention boundary explicit.
+Renard's vector-space example literally describes continuous maps;
+the present derived generalization uses uniformly continuous maps into
+complete separated targets. It constructs no vector-space operations
+and establishes no continuous-map or continuous-linear-map comparison.
+Those obligations remain open even after the uniform statement and its
+future proof. The explanatory rational reciprocal counterexample in the
+paired Markdown is not a published Lean theorem.
+
+Both candidates are accepted under `lean.statement@1` and published,
+with unqualified independent approval. Their machine receipts establish
+statement compilation, not a proof of either aggregate.
+
+| Statement | Candidate / machine receipt | Independent reviewer / review task | Publication commit |
+| --- | --- | --- | --- |
+| Binary diagonal, Worker 709 | `3af98277-5cb1-48a9-966c-4fa7f4f466d9` / `29e5df5c-9089-40b6-8e80-5da9ac3e3f48` | Reviewer 12270 / `bd51404f-efdd-4275-8438-bf4ce9153a16` | `cf45df0608b9136ff545b17eadf8297cd7be81fd` |
+| Separated uniform completion, Worker 709 | `00826874-4b71-4ea1-bcfc-cc7116c76fde` / `e656851d-8de5-4a0b-8718-df35372da9eb` | Reviewer 12306 / `57aa8d73-339d-44c9-8fc2-52bb01d67e93` | `7596502b4fe9738072198e7f23076fa02293f254` |
+
+At the 4 November inspection, exact proof tasks
+`8fca7ed6-d3bc-429c-a7b9-71ca2bb324d7` (binary) and
+`3508c74b-b536-4314-a209-41be4ed7310b` (uniform), each revision 1,
+are ready and unassigned, with no submitted artifacts.
+Their respective targets are the two exact aggregates named above.
+The statement pairs' bundle hashes match the workspace and current
+Library at `7596502b4fe9738072198e7f23076fa02293f254`; both modules
+also passed the startup compilation check with zero diagnostics.
+No exact proof publication is claimed.
+
 ## Published polynomial-module equivalence and transport boundary
 
 The first assertion of example 5 is already implemented by
@@ -147,6 +205,24 @@ maps with `EndomorphismLocalization.iota` and the X-action with
 `EndomorphismLocalization.localizedEnd`, including the carrier
 identifications. This is a narrower packaging obligation; neither the
 equivalence nor these existing object-level formulas are open.
+
+The first missing prerequisite for that transport now has focused
+definition task `4fd2b964-a92a-4fd0-86d1-b65b792531aa` revision 1,
+ready and unassigned with no artifacts at the 4 November inspection.
+It requires the actual full subcategory of pairs selected by
+`IsUnit (PolynomialEndomorphism.endomorphism R A)` and the restriction
+of the existing equivalence to the existing
+`ModuleLocalization.LocalModuleCat (EndomorphismLocalization.powersX R)`.
+Its intrinsic laws must identify powers-of-X locality with invertibility
+of the pair's endomorphism in both directions, retain all intertwiner
+morphisms, provide the inherited unit and counit, and compare both
+inclusion squares and underlying maps. The coefficient and carrier
+universes remain independent, for arbitrary commutative unital rings
+including the zero ring, with the exact field specialization.
+This is a published task, not a published construction.
+After independent acceptance and actual publication, the chosen lifted
+canonical-arrow comparison, its Prop-valued initiality statement and
+its exact proof remain successive obligations.
 
 ## The separate representability proof gate
 
@@ -237,8 +313,10 @@ independent-target-universe transport is asserted. Acceptance and
 publication of these definitions must precede the actual categorical
 statement and its exact proof successor.
 
-The product/coproduct example 1 and completion example 2 retain their
-specific source comparisons; see the [limits and colimits source map](limits-colimits-progress.md)
+The binary example-1 comparisons and the precise uniform generalization
+of example 2 have the published statements and separate pending proofs
+recorded above. The continuous-map vector-space completion comparison
+remains open; see the [limits and colimits source map](limits-colimits-progress.md)
 for related public results. The module example uses invertibility of
 each scalar endomorphism, with the stronger printed scalar-inverse
 parenthesis corrected as in the [Appendix A discrepancy note](appendix-a-corrections.md).
