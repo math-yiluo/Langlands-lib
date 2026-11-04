@@ -60,3 +60,10 @@ algebraically closed geometric dimension argument remains open. Acceptance of
 this helper does not prove properness of a dynamic quotient, a fixed-point
 dimension bound, maximal-torus conjugacy or the exact parent target. It uses
 none of the four theorem families excluded by the parent task.
+
+The two local instances for affineness and local finite type of the pulled-back
+group have explicit names beginning with `rankOnePositiveRootBaseChange`.
+These module-specific names prevent their generated declaration names from
+colliding with local instances in other base-change developments during joint
+kernel replay. The instance types and bodies, the mathematical definitions,
+and all theorem statements and proof scripts are unchanged.

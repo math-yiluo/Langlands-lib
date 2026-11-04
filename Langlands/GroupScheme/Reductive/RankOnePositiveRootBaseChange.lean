@@ -27,11 +27,13 @@ local notation "b" => algebraBaseMap k K
 local notation "T_K" => CategoryTheory.Functor.obj (CommGroupScheme.baseChange b) T
 local notation "i_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) i
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance rankOnePositiveRootBaseChangeIsAffineHom :
+    IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 
-local instance : LocallyOfFiniteType ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance rankOnePositiveRootBaseChangeLocallyOfFiniteType :
+    LocallyOfFiniteType ((GroupScheme.baseChange b).obj G).X.hom := by
   change LocallyOfFiniteType (pullback.snd G.X.hom b)
   infer_instance
 
