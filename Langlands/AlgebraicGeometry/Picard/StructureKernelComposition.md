@@ -14,10 +14,12 @@ closed-immersion, or square-zero hypothesis is needed for this sheaf map.
 ## Sections and the inclusion square
 
 For an open `U` of `X` and a section `a` in the kernel of the composite,
-`compositionMap j h` sends `a` to `h.app U a.val`. The kernel condition
-is the original condition for the composite. Naturality follows from the
-naturality of the structure sheaf map of `h`, and section-ring linearity
-is its multiplicativity. `compositionMap_app` records this formula.
+`compositionMap j h` reuses
+`SquareZeroAmbientObstructionNaturality.kernelModuleMap h j` and sends `a`
+to `h.app U a.val`. The kernel condition is the original condition for the
+composite. The reused map supplies naturality and section-ring linearity
+from the structure sheaf map of `h`. `compositionMap_app` records the same
+section formula.
 
 `compositionMap_ι` proves the square with the actual kernel inclusions:
 

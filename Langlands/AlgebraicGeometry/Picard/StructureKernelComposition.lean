@@ -1,4 +1,5 @@
 import Langlands.AlgebraicGeometry.Picard.StructureKernelModule
+import Langlands.AlgebraicGeometry.Picard.SquareZeroAmbientObstructionNaturality
 import Langlands.AlgebraicGeometry.Modules.AffinePushforwardEulerCharacteristicProof
 import Langlands.AlgebraicGeometry.Modules.CohomologyBaseChange
 
@@ -22,21 +23,8 @@ variable {X Y Z : Scheme.{u}} (j : Z ⟶ Y) (h : Y ⟶ X)
 
 /-- Restrict an actual composite-kernel section through the intermediate structure map. -/
 def compositionMap :
-    kernelModule (j ≫ h) ⟶ (Scheme.Modules.pushforward h).obj (kernelModule j) where
-  val := PresheafOfModules.homMk
-    { app := fun U ↦ AddCommGrpCat.ofHom
-        { toFun := fun a ↦ ⟨h.app U.unop a.val, a.property⟩
-          map_zero' := Subtype.ext (map_zero _)
-          map_add' := fun a b ↦ Subtype.ext (map_add _ a.val b.val) }
-      naturality := by
-        intro U V g
-        ext a
-        apply Subtype.ext
-        exact congrArg (fun m ↦ m a.val) (h.c.naturality g) }
-    (by
-      intro U r a
-      apply Subtype.ext
-      exact map_mul (h.app U.unop).hom r a.val)
+    kernelModule (j ≫ h) ⟶ (Scheme.Modules.pushforward h).obj (kernelModule j) :=
+  SquareZeroAmbientObstructionNaturality.kernelModuleMap h j
 
 @[simp]
 lemma compositionMap_app (U : X.Opens) (a : Γ(kernelModule (j ≫ h), U)) :
