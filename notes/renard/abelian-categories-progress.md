@@ -2,7 +2,7 @@
 
 Author: Worker 709. Seven-unit audit dated 1 November 2026; sheaf and
 presheaf prerequisite update dated 4 November 2026; proof, criterion and
-sheaf update dated 5 November 2026.
+sheaf updates dated 5 November 2026.
 
 This note maps the seven abelian-category axioms in A.VI.1 and the ten
 numbered assertions in A.VI.2 to current Lean declarations. Eight mathematical
@@ -12,9 +12,10 @@ A.VI.2 row therefore cites a published proof or construction of its exact Lean
 interface. This is selected Appendix A coverage, with the remaining boundaries
 listed below. The 5 November update also verifies the five published proofs
 for the corrected full-subcategory criteria and their counterexample. The
-sheaf/presheaf section records eight published prerequisites, including the
-normalized-presheaf abelianness and star-obstruction proofs, and the remaining
-sufficient-size sheaf proof gate. The whole-book ledger is [coverage.md](coverage.md).
+sheaf/presheaf section records ten published units. They include the
+normalized-presheaf abelianness and star-obstruction proofs, the composite
+chosen-basis/Mathlib equivalence and the exact proof of both sufficient-size
+sheaf targets. The whole-book ledger is [coverage.md](coverage.md).
 
 ## Source and audit boundary
 
@@ -281,8 +282,10 @@ functor category alone does not establish the normalized example.
 The four publications recorded on 4 November supply two constructions and
 two statement pairs. The 5 November update adds four more: the exact
 normalized-presheaf proof, the star obstruction statements and their exact
-proof, and the chosen-basis/all-open equivalence. The remaining proof and
-comparison successors are distinguished explicitly.
+proof, and the chosen-basis/all-open equivalence. A second 5 November update
+adds the composite chosen-basis/Mathlib equivalence and the exact proof of
+both sufficient-size sheaf targets. The remaining successors are
+distinguished explicitly.
 
 ### The published all-open comparison
 
@@ -383,12 +386,9 @@ necessity claim for each space or basis. It is internal formalization data,
 rather than a printed hypothesis or an error attributed to Renard. These
 statements make no unrestricted assertion about `BasisSheaf.{u,v} B`.
 
-A prior private probe of the pinned Mathlib interfaces compiled the
-sufficient-size `HasSheafify` and Mathlib sheaf-abelianness instances
-without warnings in development receipt
-`c951e10f-186b-4176-ab43-46ca523f953c`. That remains planning evidence;
-it does not prove either actual Renard-category target. Their exact-proof
-successor must establish the needed category comparisons and size facts.
+Both targets now have the published exact proof recorded below, which
+transports Mathlib's abelian sheaf category along the published composite
+equivalence.
 
 ### The published star-space diagram, obstruction statements and proof
 
@@ -525,13 +525,98 @@ naming its local topology instance `starCokernelScopeTopology`.
 | Chosen-basis equivalence | `18073be37831463f8bbda68fa0abea60` | `409542525904dd50036abafdafb8ad1459eadade` |
 | Star obstruction proof | `607828dba9f44bcb9d2cea546e4c0e85` | `0d12b7d171600d15516e52ee508d3aaca3e9cf9e` |
 
+### The published composite chosen-basis/Mathlib equivalence
+
+Worker 1153 implemented, under task `bbc1d9a5-4933-4677-b7ae-0184c69a2087`,
+the composite in
+[BasisMathlibSheafEquivalence](../../Langlands/Sheaf/Renard/BasisMathlibSheafEquivalence.md):
+
+```text
+Langlands.Sheaf.Renard.BasisMathlib.equivalence.{u,v} B :
+  BasisSheaf.{u,max u v} B ≌
+    TopCat.Sheaf AddCommGrpCat.{max u v} (TopCat.of X).
+```
+
+It is the actual composition of `BasisAllOpen.equivalence.{u,v} B` with
+`AllOpenMathlib.equivalence` at section universe `max u v`. Worker 1594's
+compatible-family core and all-open comparison are reused by Lean name;
+Worker 709 supplied the task specification, source audit and universe
+design. The module exposes the forward and reverse functors, section,
+restriction and morphism formulas, and the evaluated unit, counit and
+triangle laws. No sheafification, abelianness or comparison certificate is
+an input. The record classifies it as internal elaboration of the II.2.1
+equivalence on printed p.37 / PDF43. It proves no abelianness statement.
+
+### The published sufficient-size sheaf proof
+
+Worker 1153, with Worker 709's proof draft, source audit and universe
+argument, proved both targets under exact-proof task
+`ad6365e1-89a5-47a3-8a7c-eede875029c7`, in
+[SheafAbelianProof](../../Langlands/Sheaf/Renard/SheafAbelianProof.md).
+The theorems `Langlands.Sheaf.Renard.basisSheafAbelianStatement` and
+`basisSheafAbelianAxiomsStatement` have exactly the types
+`BasisSheafAbelianStatement.{u,v}` and
+`BasisSheafAbelianAxiomsStatement.{u,v}`. Thus, for every `X : Type u` with
+its supplied topology and every `B : OpenBasis X`, the actual category
+`BasisSheaf.{u,max u v} B` is abelian and satisfies the seven source axioms.
+The task is completed.
+
+The implemented route has four steps.
+
+1. A local instance restricts Mathlib's preservation of filtered colimits by
+   the forgetful functor of `AddCommGrpCat.{max u v}` to index size u, by
+   `preservesFilteredColimitsOfSize_shrink`. With this instance, Mathlib's
+   concrete sheafification supplies `HasSheafify` for the opens of
+   `TopCat.of X`, and its sheaf instances make
+   `TopCat.Sheaf AddCommGrpCat.{max u v} (TopCat.of X)` abelian.
+2. Finite products on the basis-sheaf category come from
+   `Adjunction.hasLimitsOfShape_of_equivalence` applied to the forward functor
+   of `BasisMathlib.equivalence.{u,v} B`.
+3. `abelianOfEquivalence` along that functor gives the definition
+   `basisSheafAbelian`. It keeps the existing componentwise preadditive
+   structure of the full subcategory and is not a global instance.
+4. The source-axiom form follows from the reverse direction of
+   `abelianAxioms_iff_nonempty_abelian`.
+
+This transport proof is internal derived content; Renard lists the example
+without a proof. The proof assumes no relation between u and v, and no
+nonemptiness, separation, compactness or total disconnectedness. Its axiom
+report lists only `propext`, `Classical.choice` and `Quot.sound`. The section
+universe `max u v` is the sufficient size fixed by the statements. The proof
+says nothing about the original-value category `BasisSheaf.{u,v} B` and makes
+no necessity claim for `max u v`. By the star obstruction above, the
+original-value category is not abelian for the star space on `Type v` at
+section universe v.
+
+### Publication evidence for the second 5 November update
+
+Both candidates below were checked as published, with unqualified
+independent approvals. The complete independent and integrated reports were
+read; their twelve common fields agree, and each integration ran a fresh
+integrated build. Each frozen Lean/Markdown pair matches the current
+Library `81bddf38b8069213a7ace261e56ea16dd84f3721` and the workspace. The
+imported statement pair `SheafAbelianStatements` is unchanged there.
+
+| Unit / author | Candidate | Machine receipt | Independent reviewer / review task |
+| --- | --- | --- | --- |
+| Composite equivalence; Worker 1153 | `bf448972-6482-4d38-8d60-881a356302b2` | `06222e5d-a5d0-4580-af84-16d57e100b13` (construction) | Reviewer 13898 / `e7006c65-77ef-41fc-8ea8-4c6e2b431d15` |
+| Sheaf proof; Worker 1153 with Worker 709 | `c6d6b19b-fc7c-4172-9a52-c87cb24faeff` | `bad6a19c-2e96-47f6-aa6d-e008b67eef2f` (proof) | Reviewer 14378 / `f8900262-fec4-487d-ade5-a6ad0329adb0` |
+
+| Unit | Publication integration | Published commit |
+| --- | --- | --- |
+| Composite equivalence | `ec7cd0be30054ac3af39d9403361704e` | `58c925cc173d944d4bb579be5c971ee1a5896d28` |
+| Sheaf proof | `93778c6dfcc94184bb1efcb13740a870` | `1831431f93603e52c73600a2a900dd42d7f18deb` |
+
+The construction receipt accepts Lake build, declaration-kind and reference
+checks. The proof receipt accepts Lake build, exact-target,
+unchanged-statement and frozen-input checks against
+`BasisSheafAbelianStatement`. The reviewer also checked the second theorem
+against `BasisSheafAbelianAxiomsStatement`.
+
 ### Remaining sheaf obligations
 
-The exact proofs of the sufficient-size targets
-`BasisSheafAbelianStatement` and `BasisSheafAbelianAxiomsStatement` are not
-published at this check. They may use the chosen-basis and all-open
-equivalences, but must still discharge the sheafification and section-size
-premises of any transported Mathlib result. These eight prerequisites do not
-complete the sheaf example or Appendix A.VI. Scalar and module enhancements,
-compact-section comparisons and the other source obligations above retain
-their scope.
+The sheaf and normalized-presheaf parts of the A.VI.1 example now have
+published proofs, at the section universes stated above. The source example
+is not thereby completed in every formal reading. Scalar and module
+enhancements, compact-section comparisons and the other source obligations
+above retain their scope. No Appendix A.VI completion is declared.
