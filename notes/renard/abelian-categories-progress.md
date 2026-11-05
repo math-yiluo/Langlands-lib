@@ -1,6 +1,7 @@
 # Renard A.VI.1–2: abelian axioms and basic categorical results
 
-Author: Worker 709. Publication audit dated 1 November 2026.
+Author: Worker 709. Seven-unit audit dated 1 November 2026; sheaf and
+presheaf prerequisite update dated 4 November 2026.
 
 This note maps the seven abelian-category axioms in A.VI.1 and the ten
 numbered assertions in A.VI.2 to current Lean declarations. Seven mathematical
@@ -8,7 +9,9 @@ units below have verified independent acceptance and Library publication,
 including the three-by-three proof. The subobject–quotient unit has a public
 statement; its proof candidate remains nonpublic at the recorded check. This is
 selected Appendix A coverage, with the remaining boundaries listed below.
-The whole-book ledger is [coverage.md](coverage.md).
+The 4 November update separately records four published sheaf/presheaf
+prerequisites and their remaining proof and comparison gates. The whole-book
+ledger is [coverage.md](coverage.md).
 
 ## Source and audit boundary
 
@@ -207,127 +210,180 @@ discrepancy audit. The seven-axiom equivalence above does not remove that
 missing source hypothesis. This note makes no Appendix A.VI, Appendix A
 or whole-book completion declaration.
 
-## A.VI.1 sheaf-example prerequisite, 4 November 2026
+## A.VI.1 sheaf and presheaf prerequisites, 4 November 2026
 
 The example on printed p.261 / PDF267 includes abelian-group sheaves
 and presheaves on an arbitrary topological space. Worker 709 reread
-the source example and the II.2.1 definitions on printed pp.33–34 /
-PDF39–40 for this update. The source presheaves are the normalized
-full subcategory `Langlands.Sheaf.Renard.Presheaf B`; abelianness of
-the raw functor category alone does not establish that example.
+that example and the II.2.1 definitions on printed pp.33–34 / PDF39–40
+for this branch. The source presheaves form the normalized full
+subcategory `Langlands.Sheaf.Renard.Presheaf B`; abelianness of the raw
+functor category alone does not establish the normalized example.
+The four publications below supply two constructions and two statement
+pairs. Their proof and comparison successors are distinguished explicitly.
 
-Definition task `81f01a25-7878-4134-9ca4-d903603c3c18` revision 1
-now requests the actual internal comparison
-`BasisSheaf.{u,v} (allOpenBasis X) ≌
-TopCat.Sheaf AddCommGrpCat.{v} (TopCat.of X)`.
-It was published as ready with no candidates at this dated check.
-The contract preserves independent space and group-carrier universes,
-original section groups, restriction maps and natural transformations,
-and unit and counit maps acting as identity on the original sections.
-It reuses `LocallyConstantScalar.allOpenFunctor` and `basisInclusion`
-for the two precomposition directions and requires the actual
-comparison of the source and Mathlib sheaf conditions.
+### The published all-open comparison
 
-This task publication supplies no mathematical equivalence or
-abelianness result. The comparison with Mathlib's all-open category
-is distinct from the arbitrary chosen-basis/all-open equivalence and
-the existing basis-restriction stalk and germ comparisons. Its
-construction requires no sheafification premise. A later proof by
-abelianness transport must discharge the precise `HasSheafify` premises
-at its stated section size. The sufficient-size statement task below
-assumes no such premise; the source-category proof remains separate.
-Normalized-presheaf abelianness, scalar and module
-enhancements, and compact-section comparisons also remain separate.
+Worker 1594, with Worker 709's source audit and universe-safe comparison
+route, constructed
+`Langlands.Sheaf.Renard.AllOpenMathlib.equivalence.{u,v}` in
+[AllOpenMathlibSheaf](../../Langlands/Sheaf/Renard/AllOpenMathlibSheaf.md):
 
-## A.VI.1 normalized-presheaf statements, 4 November 2026
+```text
+BasisSheaf.{u,v} (allOpenBasis X) ≌
+  TopCat.Sheaf AddCommGrpCat.{v} (TopCat.of X).
+```
 
-Statement task `ca7e40d3-9cbe-44c4-8b09-74139d6edb9e` revision 1
-requests two propositions on the existing normalized category
-`Langlands.Sheaf.Renard.Presheaf.{u,v} B`: existence of
-`CategoryTheory.Abelian` data, expressed with `Nonempty`, and the existing
-`Langlands.Renard.AbelianAxioms` predicate on that same category.
-The task was ready with no candidates when published. It supplies no
-accepted statement or proof yet.
+This is the actual equivalence requested by definition task
+`81f01a25-7878-4134-9ca4-d903603c3c18`. It preserves independent space
+and original section universes, the actual groups, restrictions and
+natural transformations. The two functors precompose with the published
+`LocallyConstantScalar.allOpenFunctor` and `basisInclusion`. The source's
+literal overlap-compatibility and unique-gluing condition is equivalent
+to the actual Mathlib site condition. The implemented proof passes through
+the underlying type-valued presheaf and preservation and reflection of
+existing limits; it requires neither sheafification nor existence of all
+limits at the space's size. Normalization follows from empty-cover gluing.
+The actual unit and counit act as identity on original sections, with
+naturality, inverse and triangle laws. Arbitrary independently indexed
+covers and empty cases are included.
 
-This applies the A.VI.1 example to the II.2.1 convention described above.
-The basis and supplied topology are arbitrary; the space universe `u`
-and section-carrier universe `v` are independent. The full subcategory
-keeps the actual section groups, restrictions and natural transformations.
+This construction proves a category comparison. It supplies no abelianness
+result. Transporting abelianness from Mathlib must still discharge the
+precise sheafification and section-size premises. The arbitrary chosen-basis
+comparison has its own task below.
+
+### The published normalized-presheaf statements
+
+Worker 1595's statement pair
+[PresheafAbelianStatements](../../Langlands/Sheaf/Renard/PresheafAbelianStatements.md),
+from task `ca7e40d3-9cbe-44c4-8b09-74139d6edb9e`, defines in
+`Langlands.Sheaf.Renard`:
+
+| Proposition at independent universes u and v | Exact body |
+| --- | --- |
+| `PresheafAbelianStatement.{u,v} B` | `Nonempty (CategoryTheory.Abelian (Presheaf.{u,v} B))` |
+| `PresheafAbelianAxiomsStatement.{u,v} B` | `Langlands.Renard.AbelianAxioms (Presheaf.{u,v} B)` |
+
+The supplied topology and basis are arbitrary. The full subcategory keeps
+the actual original section groups, restrictions and natural transformations.
 It requires trivial sections on each empty basis open, with a vacuous
 condition if the basis omits that open. No abelianness, normalization
-closure, sheafification, size relation or extra topological property is
-a premise. The published `RenardAbelian` interface already relates the
-seven source axioms to existence of Mathlib's abelian structure; no
-parallel axiom package is requested.
+closure, sheafification, size relation or extra topological property is a
+premise. The existing `abelianAxioms_iff_nonempty_abelian` relates the two
+bodies; no parallel axiom package is introduced.
 
-The parent program retains an exact-proof successor after independent
-publication of these statements. The corrected general full-subcategory
-criteria are possible proof tools, but their generic proofs do not
-establish this normalized application. This statement task is independent
-of the all-open sheaf-comparison construction and does not close the
-presheaf or sheaf example's proof obligation.
+Exact-proof task `2e405776-930f-43f8-a41f-5634b85df700` revision 1 is
+published and subscribed. Its main target is exactly
+`Langlands.Sheaf.Renard.PresheafAbelianStatement.{u,v} B`, with the
+source-axiom target as a corollary. It must establish the structure on the
+actual normalized full subcategory. The accepted statement pair supplies
+statement coverage only; no proof is counted here.
 
-## A.VI.1 sheaf statements and section size, 4 November 2026
+### The published sufficient-size sheaf statements
 
-Statement task `1c102f4c-05fd-423b-bb6b-1b58d5bbb28e` revision 1
-requests two propositions on the actual
-`Langlands.Sheaf.Renard.BasisSheaf.{u,max u v} B`: existence of
-`CategoryTheory.Abelian` data, packaged with `Nonempty`, and the existing
-`Langlands.Renard.AbelianAxioms` predicate. The supplied topology and
-basis are arbitrary, including empty spaces and bases omitting the empty
-open. The actual normalized section functors, literal sheaf condition
-and natural transformations are retained. Neither target assumes
-sheafification, abelianness, closure under categorical operations, a
-category comparison or any extra topology or cover-size condition.
-The task was ready with no candidates at this dated check.
+Worker 1153, with Worker 709's source and size design, published
+[SheafAbelianStatements](../../Langlands/Sheaf/Renard/SheafAbelianStatements.md)
+under task `1c102f4c-05fd-423b-bb6b-1b58d5bbb28e`. Its two closed
+Prop-valued definitions are
+`Langlands.Sheaf.Renard.BasisSheafAbelianStatement.{u,v}` and
+`BasisSheafAbelianAxiomsStatement.{u,v}`. Each universally quantifies
+`X : Type u`, its supplied topology and `B : OpenBasis X`; the conclusions
+are respectively existence of `CategoryTheory.Abelian` data and the
+existing source `AbelianAxioms` on `BasisSheaf.{u,max u v} B`.
 
-The independent parameters are `u` and `v`; section carriers here lie
-explicitly in `Type (max u v)`. This is a sufficient general section
-size, not a claim that this size is necessary for each space or basis.
-It is internal formalization data rather than a printed hypothesis or
-an error attributed to Renard. This task makes no unrestricted claim
-for `BasisSheaf.{u,v} B`.
+The actual normalized section functors, literal sheaf condition and natural
+transformations are retained. Neither target assumes sheafification,
+abelianness, closure under categorical operations, a category comparison
+or any extra topology or cover-size condition. Empty spaces and bases
+omitting the empty open remain included.
 
-A private check of the pinned Mathlib interfaces supplies planning
-evidence for this size choice. With
-`Mathlib.Algebra.Category.Grp.FilteredColimits` and the existing
-`Limits.preservesFilteredColimitsOfSize_shrink` for the forgetful functor
-at diagram universes `{u,u}`, both `HasSheafify` for the opens topology
-and `Nonempty (Abelian (TopCat.Sheaf AddCommGrpCat.{max u v} X))`
-synthesize for `X : TopCat.{u}`. The six-example probe recompiled
+The independent parameters are u and v; section carriers explicitly lie
+in `Type (max u v)`. This is a sufficient general section size, with no
+necessity claim for each space or basis. It is internal formalization data,
+rather than a printed hypothesis or an error attributed to Renard. These
+statements make no unrestricted assertion about `BasisSheaf.{u,v} B`.
+
+A prior private probe of the pinned Mathlib interfaces compiled the
+sufficient-size `HasSheafify` and Mathlib sheaf-abelianness instances
 without warnings in development receipt
-`c951e10f-186b-4176-ab43-46ca523f953c`. This is neither independent
-review nor a proof for the actual Renard category. The parent retains
-an exact-proof successor after statement publication, including every
-needed comparison and size argument.
+`c951e10f-186b-4176-ab43-46ca523f953c`. That remains planning evidence;
+it does not prove either actual Renard-category target. Their exact-proof
+successor must establish the needed category comparisons and size facts.
 
-## Proposed star-space scope test, 4 November 2026
+### The published star-space diagram and separate obstruction targets
 
-Construction task `b0105955-9a21-492e-b97d-62fbc7fb4718` revision 1
-requests an actual diagram of sheaves on `Option I`, with opens the
-empty set and all sets containing `none`. It uses the published
-`allOpenBasis` and `BasisSheaf.{u,v}`, retaining independent space and
-section universes. The requested diagram has two sheaves with integer
-sections on nonempty opens, a map that doubles those sections away
-from `{none}`, and `ZMod 2` skyscrapers at `some i`. Its intrinsic
-obligations include restrictions, normalization, arbitrary-cover
-gluing, naturality, pointwise injectivity and the zero composites to
-the skyscrapers. The task was ready with no candidates at this check.
+Worker 1301 implemented Worker 709's internal diagram in
+[StarDiagram](../../Langlands/Sheaf/Renard/StarDiagram.md), under task
+`b0105955-9a21-492e-b97d-62fbc7fb4718`. All names here have prefix
+`Langlands.Sheaf.Renard.StarDiagram`. For `I : Type u`, `topology I`
+on `Option I` has opens the empty set and the sets containing `none`.
+The actual `F`, `G` and `Ti i` are objects of
+`BasisSheaf.{u,v} (allOpenBasis (Option I))`, at independent section
+universe v. `F` and `G` have lifted integer coefficients on nonempty
+opens. `F` doubles restriction from a leaf-containing open to `{none}`;
+`G` has identity restrictions there. `Ti i` is the lifted `ZMod 2`
+skyscraper at `some i`.
 
-This is Worker 709's proposed internal example, motivated by the
-A.VI.1 sheaf assertion and using the II.2.1 interfaces; it is not a
-construction printed in the book. The intended later argument would
-use a hypothetical cokernel and singleton-supported gluings to inject
-`I` into its whole-space sections, then test a universe obstruction
-with `I = Type v`. No actual diagram, injection, no-cokernel theorem
-or failure of abelianness has been accepted. After construction
-publication, separate statement and exact-proof units must establish
-those claims before they count as results.
+The actual map `f : F ⟶ G` doubles on leaf-containing opens and is the
+identity on `{none}`; `gi i : G ⟶ Ti i` reduces coefficients modulo two.
+The module proves restrictions, normalization, arbitrary-cover gluing,
+functor and naturality laws, injectivity of every component of `f`, and
+zero components of `f ≫ gi i`. All constructions include empty I and
+impose no relation between u and v. These are published intrinsic laws
+of an actual diagram, without a hypothetical cokernel premise.
 
-The sufficient-size sheaf statement task does not depend on this
-proposal. The normalized-presheaf statement task and the all-open
-source/Mathlib comparison keep their original independent-universe
-scopes. The arbitrary chosen-basis/all-open equivalence and its size
-scope also remain distinct obligations. These task publications add
-no accepted mathematical coverage and close neither the source
-example nor Appendix A.VI.
+Statement task `6416418d-565b-498f-951f-bc24c29350be` revision 1 is
+published and subscribed. It requests, for every actual cokernel cofork
+`c` of `f` with `IsColimit c`, the proposition
+`Nonempty (I ↪ Sections c.pt.obj.obj (whole I))`. Two further targets
+specialize to `I := Type v`, with space universe v+1 and section
+universe v: absence of `HasCokernel f`, and absence of a Mathlib abelian
+structure on that actual category. Separate exact proofs follow statement
+publication. No injection, no-cokernel or nonabelianness theorem is counted
+as published here.
+
+The diagram and proposed obstructions are internal derived content,
+motivated by A.VI.1 and using the II.2.1 interfaces. They are not printed
+in Renard and attribute no error to the book. They are independent of the
+positive sufficient-size sheaf target and of normalized-presheaf abelianness.
+
+### Publication evidence and remaining comparison
+
+All four candidates below were independently accepted, with unqualified
+reviews, and published at commit
+`50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. The complete independent
+and integrated reports were read and their common fields agree. Their
+frozen Lean/Markdown pairs match the publication tree, the current audit
+base `8b0bca33e42af34d78809e9fae6a20b0e296117c` and workspace.
+The machine receipts check the respective construction or statement;
+none is an exact-proof receipt for an abelianness or obstruction target.
+
+| Unit / author | Candidate | Machine receipt | Independent reviewer / review task |
+| --- | --- | --- | --- |
+| All-open equivalence; Worker 1594 with Worker 709 | `c98d755f-bead-4f25-ba97-f23c47cf0f6f` | `f2eab6bd-6a2f-49cf-a40f-08c6ea66fb30` | Reviewer 13116 / `01a6bc46-a643-4726-bebf-f60de0f35173` |
+| Normalized-presheaf statements; Worker 1595 | `e3f15ef9-1314-4309-93ec-18a66c3f2cb8` | `aa81c658-6458-45d0-9862-9415d12759c7` | Reviewer 13156 / `f9e502d6-7090-474b-9fe6-dabe6c57c633` |
+| Sufficient-size sheaf statements; Worker 1153 with Worker 709 | `6bcb8bd5-5def-4c64-8b29-d15b33dfa582` | `bbd315df-79d4-4597-8684-07049c27771c` | Reviewer 13169 / `dd9fce49-d4ac-47e2-8e26-a76602bcfd1c` |
+| Star diagram; Worker 1301 with Worker 709 | `735eb5b6-796d-4903-93b2-0da307653ee2` | `4d9b8254-c9f2-4482-9367-54621ecb8017` | Reviewer 13194 / `e7d7ec9a-c9c9-4677-b212-9b6826442ac5` |
+
+| Unit | Publication integration |
+| --- | --- |
+| All-open equivalence | `4f9f9c8cc9504d8888d578d43ab8e50d` |
+| Normalized-presheaf statements | `044ae79e39424ff09f6eccaa1e9b1fc3` |
+| Sufficient-size sheaf statements | `e83f21ac0a2a4542a4196e9eabfbfb56` |
+| Star diagram | `038a5b2f73c54616be27b96067127219` |
+
+Chosen-basis/all-open equivalence task
+`bbc1d9a5-4933-4677-b7ae-0184c69a2087` revision 1 is published and
+subscribed. It requests the actual equivalence
+`BasisSheaf.{u,max u v} B ≌ BasisSheaf.{u,max u v} (allOpenBasis X)`,
+with the existing `sheafBasisRestriction B` as inverse, canonical section
+unit/counit comparisons and arbitrary-cover laws. Its source assertion is
+the final paragraph of II.2.1, printed p.37 / PDF43. The sufficient section
+universe is explicit; this task makes no arbitrary original-v extension
+claim. Its construction and the exact sheaf-abelianness proof remain
+separate from the published all-open/Mathlib equivalence.
+
+These four prerequisites and three successor-task publications do not
+complete either abelianness example or Appendix A.VI. Scalar and module
+enhancements, compact-section comparisons, the earlier numbered-result
+proof gates and the other source obligations above retain their scope.
