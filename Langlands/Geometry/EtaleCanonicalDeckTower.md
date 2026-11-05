@@ -159,10 +159,11 @@ canonical coefficients of this geometry with reindexing the original
 canonical coefficients. It is the inverse of the existing canonical
 coefficient reindexing isomorphism, so it is natural in every base sheaf
 and morphism; both component directions are the identity sheaf map.
-This module constructs these geometric and coefficient comparisons. A
-specialized reindexing comparison for its three cohomological functors
-remains a separate implementation obligation; the generic comparison API
-is already available in `EtaleGeometricActionReindex`.
+This module constructs these geometric and coefficient comparisons.
+[EtaleCanonicalDeckTowerReindex](EtaleCanonicalDeckTowerReindex.md) supplies
+the specialized reindexing comparisons for its three cohomological functors
+and their recovery squares, using the generic comparison API in
+`EtaleGeometricActionReindex`.
 
 ## Provenance and retained scope
 

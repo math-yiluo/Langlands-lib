@@ -17,7 +17,9 @@ open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
 
 namespace Langlands.AlgebraicGeometry
 
-private theorem connectedSpace_of_open_closed_singleton_fiber
+/-- An open and closed map to a connected space with a nonempty singleton fibre
+has connected source. -/
+theorem connectedSpace_of_open_closed_singleton_fiber
     {A : Type u} {B : Type v} [TopologicalSpace A] [TopologicalSpace B]
     [ConnectedSpace B] (p : A → B) (ho : IsOpenMap p) (hc : IsClosedMap p)
     (a₀ : A) (h : ∀ a, p a = p a₀ → a = a₀) : ConnectedSpace A := by

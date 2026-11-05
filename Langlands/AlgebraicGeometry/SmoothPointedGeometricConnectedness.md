@@ -9,7 +9,8 @@ a base-change projection along a section with the new base scheme. It composes
 the iterated-pullback comparison, the section equation, and the pullback
 isomorphism for an identity morphism. It is defined for arbitrary schemes.
 
-The proof first establishes a topological observation: an open and closed map
+The reusable theorem `connectedSpace_of_open_closed_singleton_fiber`
+establishes the topological observation used by the proof: an open and closed map
 to a connected space, with a nonempty singleton fibre, has connected source.
 Indeed, images of a nontrivial clopen partition would both be the whole target
 and would split the singleton fibre.
