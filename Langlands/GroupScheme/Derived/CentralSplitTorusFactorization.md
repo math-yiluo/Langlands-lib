@@ -7,14 +7,11 @@ represented-subgroup interfaces. It supplies auxiliary factorizations for the
 derived and central split-product proof. It does not assert that the product
 map is surjective or is an isogeny.
 
-`IsMaximalSplitTorus.exists_factor_of_commute` works over any field. In an affine
-group scheme `M`, every homomorphism from a split torus whose values commute on
-all test schemes with those of a supplied maximal split torus factors through
-that maximal split torus. The proof forms their product homomorphism and uses
-`IsSplitTorus.exists_factor_isSplitSubtorus'` to construct its closed split image.
-Maximality makes the second factor's map to that image an isomorphism. Composing
-the first factor with its inverse gives the required factorization. No
-reductivity or smoothness premise is used.
+The general commuting factorization
+`IsMaximalSplitTorus.exists_factor_of_commute` is supplied by
+[`Rational/SplitTorusFactorization`](../Rational/SplitTorusFactorization.md).
+It applies to an arbitrary split group scheme over a field and uses only
+affineness of the ambient group, without reductivity or smoothness.
 
 `IsDerivedSubgroup.exists_factor_splitTorusEnd` assumes that `G` has affine structure morphism, an actual derived
 inclusion `d : D → G`, an ambient split-subtorus inclusion `i : S → G`, a maximal

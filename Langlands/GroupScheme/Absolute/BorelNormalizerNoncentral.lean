@@ -1,5 +1,6 @@
 import Langlands.GroupScheme.Absolute.BorelNormalizerCentralizer
 import Langlands.GroupScheme.Absolute.CentralizerBorelIntersectionConnected
+import Langlands.GroupScheme.Absolute.CentralizerBorelIntersectionProof
 import Langlands.GroupScheme.Dynamic.ParabolicLieCriterion
 
 /-! # The noncentral branch with a canonical centralizer -/
@@ -78,9 +79,8 @@ theorem mem_borelRange_of_noncentral_commutatorKernel_of_intersectionStatement
     ((normalizerPoint_mem_dynamicCentralizer_iff_commutator_eq_zero i n ν).mpr hzero)
 
 /-- An actual Borel point mapping to the given normalizing point in the
-noncentral commutator-kernel branch. -/
+noncentral commutator-kernel branch, using the published intersection proof. -/
 def borelPointOfNoncentralKernel
-    (hIntersection : CentralizerBorelIntersectionStatement.{u})
     [Smooth G.X.hom] [IsAffineHom G.X.hom] [ConnectedSpace G.X.left]
     (ih : ∀ (H : GroupScheme (Spec (CommRingCat.of k)))
       [Smooth H.X.hom] [IsAffineHom H.X.hom] [ConnectedSpace H.X.left],
@@ -98,7 +98,7 @@ def borelPointOfNoncentralKernel
       p ≫ b.hom.hom = n.val} := by
   let h := SubgroupFunctor.mem_range.mp
     (mem_borelRange_of_noncentral_commutatorKernel_of_intersectionStatement
-      hIntersection ih b hb i hi n ν hzero hν hn)
+      centralizerBorelIntersection ih b hb i hi n ν hzero hν hn)
   exact ⟨Classical.choose h, Classical.choose_spec h⟩
 
 end Langlands.GroupScheme

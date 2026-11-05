@@ -16,31 +16,6 @@ namespace Langlands.GroupScheme
 
 set_option backward.isDefEq.respectTransparency false
 
-section Maximality
-
-variable {k : Type u} [Field k]
-  {M B : GroupScheme (Spec (CommRingCat.of k))}
-  [IsAffineHom M.X.hom]
-  {T : CommGroupScheme (Spec (CommRingCat.of k))}
-  {j : T.toGrp ⟶ M}
-
-/-- A split-torus map commuting with a maximal split torus factors through it. -/
-theorem IsMaximalSplitTorus.exists_factor_of_commute
-    (hj : IsMaximalSplitTorus j) (hB : IsSplitTorus B) (b : B ⟶ M)
-    (hbj : ∀ (U : Over (Spec (CommRingCat.of k))) (x : U ⟶ B.X) (y : U ⟶ T.X),
-      Commute (x ≫ b.hom.hom) (y ≫ j.hom.hom)) :
-    ∃ f : B ⟶ T.toGrp, f ≫ j = b := by
-  obtain ⟨T', π, i', hi', hπ, -⟩ :=
-    IsSplitTorus.exists_factor_isSplitSubtorus' (hB.tensor hj.1.1)
-      (prodHom b j hbj)
-  have he : (prodInr B T.toGrp ≫ π) ≫ i' = j := by
-    rw [Category.assoc, hπ, prodInr_prodHom]
-  have hiso : IsIso (prodInr B T.toGrp ≫ π) := hj.2 T' i' hi' _ he
-  refine ⟨(prodInl B T.toGrp ≫ π) ≫ inv (prodInr B T.toGrp ≫ π), ?_⟩
-  rw [← he, Category.assoc, IsIso.inv_hom_id_assoc, Category.assoc, hπ, prodInl_prodHom]
-
-end Maximality
-
 section DerivedFactor
 
 variable {k : Type u} [Field k]

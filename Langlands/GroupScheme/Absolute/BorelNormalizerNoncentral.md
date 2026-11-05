@@ -4,9 +4,12 @@ Author: Worker 1446.
 
 This internal deduction combines the published affine dynamic representatives,
 dynamic smoothness and connectedness, the actual-intersection Borel adapter,
-and the proper-centralizer Lie-dimension induction step. It retains
-`CentralizerBorelIntersectionStatement` as an explicit hypothesis and does not
-prove the complete `BorelNormalizerStatement`.
+and the proper-centralizer Lie-dimension induction step. The two membership
+helpers retain `CentralizerBorelIntersectionStatement` as an explicit hypothesis.
+The point-selection entry supplies the published proof
+`centralizerBorelIntersection` internally. The smaller-group induction
+hypothesis remains explicit, so this construction does not prove the complete
+`BorelNormalizerStatement`.
 
 Work over an algebraically closed field in arbitrary universe `u`, with a
 smooth connected affine group scheme `G` and a Borel inclusion `b : B ⟶ G`.
@@ -37,15 +40,18 @@ hence in `b`. If the composite is noncentral and `n.val` also normalizes
 the image of `B(k)`, the first theorem applies. The argument requires no
 torus predicate on `T` and no closedness or nontriviality premise on `ν`.
 
-`borelPointOfNoncentralKernel` uses classical choice on that range membership.
-Its value is an actual ground-field point `p` of `B` with the retained
-equality `p ≫ b.hom.hom = n.val`.
+`borelPointOfNoncentralKernel` applies the commutator-kernel membership helper
+to the published `centralizerBorelIntersection` proof, then uses classical
+choice on the resulting range membership. It has no intersection-statement
+parameter. Its value is an actual ground-field point `p` of `B` with the
+retained equality `p ≫ b.hom.hom = n.val`. The conditional membership helpers
+keep their existing signatures for consumers that supply an intersection
+proof explicitly.
 
 No centralizer representative, connectedness witness or Borel-intersection
-witness is supplied by the consumer. The remaining structural input is the
-exact intersection statement; the smaller-group induction hypothesis,
-containment, normalization, commutator-kernel and noncentrality inputs are
-also explicit. The construction asserts no existence of such a kernel
-cocharacter and does not handle the central-cocharacter or surjective
+witness is supplied by the point-selection consumer. The smaller-group
+induction hypothesis, containment, normalization, commutator-kernel and
+noncentrality inputs remain explicit. The construction asserts no existence
+of such a kernel cocharacter and does not handle the central-cocharacter or surjective
 commutator branches. Its provenance is the stated composition of published
 Library results, with no additional external-source claim.

@@ -2,7 +2,7 @@
 
 Author: Worker 228.
 
-This module derives two factorization results from the split-torus image theorem of
+This module derives three factorization results from the split-torus image theorem of
 [`SplitTorusImage`](SplitTorusImage.md). It also supplies the product homomorphism of two
 homomorphisms with commuting values. All declarations are in `Langlands.GroupScheme`.
 
@@ -27,6 +27,18 @@ schemes. Let `hab` say that their values commute over every test scheme.
 ## Factorizations over a field
 
 Let `k` be a field, with `𝕊 = Spec k`.
+
+`IsMaximalSplitTorus.exists_factor_of_commute` works over any field. In an affine
+group scheme `M`, every homomorphism from a split torus whose values commute on
+all test schemes with those of a supplied maximal split torus factors through
+that maximal split torus. The proof forms their product homomorphism and uses
+`IsSplitTorus.exists_factor_isSplitSubtorus'` to construct its closed split image.
+Maximality makes the second factor's map to that image an isomorphism. Composing
+the first factor with its inverse gives the required factorization. No
+reductivity or smoothness premise is used.
+
+This general commuting factorization was contributed by Worker 1562 and is
+shared by the derived split-torus and central-cover normalizer constructions.
 
 * `IsSplitTorus.exists_factor_isSplitSubtorus'` is the image theorem for a split torus `D` given
   only as a group scheme. It applies `IsSplitTorus.exists_factor_isSplitSubtorus` to the

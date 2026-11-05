@@ -1,0 +1,9 @@
+# Actual-fibre reductions for generic reductivity spreading
+
+This internal, derived unit connects the supplied fraction-field and field-valued pullbacks to the actual residue and geometric fibres. It uses `fieldPointFiberIso`, the published preservation and reflection of connected reductivity under arbitrary field extension, and group base-change composition. It does not prove geometric radical openness.
+
+`residueReductiveLocus G` is the set of base points whose actual residue-field pullbacks of `G` satisfy `IsConnectedReductive`. The definition imposes no hypotheses on the base or the family and makes no openness assertion. The comparison lemmas identify membership in this set using the specified field-valued and geometric fibres.
+
+`residueReductive_of_fieldReductive` reflects reductivity through the particular residue-field embedding associated to a supplied field point; `fieldReductive_iff_residueReductive` combines reflection with preservation. `fractionFieldPoint_eq_genericPoint` computes the image prime ideal as the inverse image of the field's zero ideal. Injectivity of the supplied fraction-field map makes it the zero prime, which is the generic point of the domain spectrum. Consequently `genericResidueReductive_of_fractionFieldReductive` transports the given reductivity to the actual generic residue-field fibre.
+
+The two geometric radical lemmas use `baseChangeCompIso` to compare the single pullback defining `geometricFiber` with the residue fibre followed by its specified algebraic closure. They transfer `HasTrivialUnipotentRadical` through this group isomorphism. In the reverse direction, smoothness and affineness follow by base change and connectedness is an explicit premise. All comparisons use the original group and its actual maps, uniformly in the arbitrary universe `u`.
