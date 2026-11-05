@@ -11,6 +11,8 @@ reduction, not an unconditional proof of
 Worker 1547 additionally supplies the published
 `solvableMaximalTorusConjugacy` in both final reductions, removing their
 global conjugacy premise while preserving the local construction interfaces.
+Worker 1549 also supplies the published `solvableProperFixedPoint` in the
+final reductions, removing their fixed-point premise.
 
 All fields have arbitrary characteristic and live in universe `u`.
 
@@ -59,19 +61,27 @@ nonregular cocharacter. The theorem assumes no normal-solvable-torus
 statement, divides by no integer and restricts no characteristic.
 
 `rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs` assumes
-`SolvableProperFixedPointStatement` and
-`AlgClosedMaximalTorusCentralizerStatement`. It supplies
+only `AlgClosedMaximalTorusCentralizerStatement` as a structural premise.
+It supplies `SolvableProperFixedPointStatement.{u}` using the published
+unconditional theorem `solvableProperFixedPoint` from
+`Langlands.GroupScheme.SolvableProperFixedPointProof`, and supplies
 `ProjectiveTorusFixedPointDimensionStatement.{u}` using the published
 unconditional theorem `projectiveTorusFixedPointDimension` from
-`Langlands.GroupScheme.ProjectiveTorusFixedPointDimension`. Given the first
-root in the uniqueness assertion, it constructs a proper Borel through the specified
-torus with `exists_proper_isBorelPair_of_relativeRoot`. Closedness gives
+`Langlands.GroupScheme.ProjectiveTorusFixedPointDimension`. The fixed-point
+proof applies to every actual action of a smooth connected affine solvable
+group on a nonempty proper scheme over an algebraically closed field and
+gives fixedness on every relative scheme test and refinement. It therefore
+supplies exactly the premise of the existing prescribed-Borel quotient
+construction at universe `u`, with no added orbit or rational-point input.
+Given the first root in the uniqueness assertion, the reduction constructs
+a proper Borel through the specified torus with `exists_proper_isBorelPair_of_relativeRoot`. Closedness gives
 affineness of the Borel. The published theorem
 `solvableMaximalTorusConjugacy` from
 `Langlands.GroupScheme.Rational.SolvableMaximalTorusConjugacyProof` applies
 to this smooth, connected, affine, solvable Borel and supplies its internal
 maximal-torus conjugacy at the same universe `u`. No conjugacy hypothesis
-remains on this final reduction. Self-centralization identifies the
+remains on this final reduction, and its fixed-point premise has also been
+discharged. Self-centralization identifies the
 whole-torus centralizer with the torus range, which the actual
 factorization places inside the Borel range on every test. The preceding
 prescribed-Borel theorem now proves the exact algebraically closed
@@ -90,13 +100,16 @@ The provenance is composition of the named internal Lean constructions.
 The prescribed-Borel construction and its local uniqueness theorem retain
 their explicit projective-dimension argument. The final algebraically closed
 and all-field reductions discharge that argument with the actual published
-proof at the same universe `u`, and now also supply the published proof of
-solvable maximal-torus conjugacy. The implementation supplies the Borel,
-proper exact quotient, projective embedding, dimension bound and nonidentity
-normalizer class from three remaining displayed structural premises:
-solvable proper fixed points, algebraically closed maximal-torus
-self-centralization and forward maximal-torus base change. Those three
-premises remain proof obligations. This module neither
+proof at the same universe `u`, and also supply the published proofs of
+solvable maximal-torus conjugacy and solvable proper fixed points. The
+fixed-point proof internally derives represented split solvability,
+pseudo-completeness and an initial rational section before applying the
+split-solvable fixed-point theorem; the present module reuses that published
+proof unchanged. The implementation supplies the Borel, proper exact
+quotient, projective embedding, dimension bound and nonidentity normalizer
+class from two remaining displayed structural premises: algebraically
+closed maximal-torus self-centralization and forward maximal-torus base
+change. Those two premises remain proof obligations. This module neither
 asserts them unconditionally nor proves the final all-field target without
 them. It does not use the excluded regular-cocharacter Borel, dynamic parabolic or rank-one solvable/Borel
 classification statements.

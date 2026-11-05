@@ -1,0 +1,11 @@
+# Original fraction-field tensor of an integral closure
+
+`Langlands.Global.integralClosureFractionTensorEquiv` constructs the actual algebra equivalence `K ⊗[A] B ≃ₐ[K] L`. The four rings may have independent universes. The inputs are a commutative domain `A`, a commutative ring `B`, fields `K` and `L`, the specified fraction-field structure `IsFractionRing A K`, an algebraic extension `L/K`, and `IsIntegralClosure B A L`. Both original scalar towers `A → K → L` and `A → B → L` are retained. No finiteness, separability, Dedekind or normality assumption on `A` is introduced.
+
+The pure-tensor formula is `a ⊗ b ↦ algebraMap K L a * algebraMap B L b`. In particular `1 ⊗ b` maps to the original inclusion of `B` in `L`. This is an algebra equivalence for the existing `K`-action on `L`, rather than a chosen abstract identification of fraction fields.
+
+This is a derived helper for the integral-model reduction in Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), Example 4.2, printed p.10. That reduction uses a common integral model and its generic fiber before comparing local and adelic point topologies. The general algebraic construction here is an internal prerequisite, not a separately stated theorem of Conrad. The module does not itself construct global models, compare scheme generic fibers, or prove an adelic comparison.
+
+The implementation reuses Mathlib directly. `IsIntegralClosure.isLocalization A K L B` proves that the original `L` is the localization of `B` at the image of the nonzero elements of `A`. `isLocalizedModule_iff_isLocalization` and `IsLocalizedModule.isBaseChange` then prove the base-change universal property for the original linear inclusion `B → L`. This supplies `Algebra.IsPushout A K B L`, and `Algebra.IsPushout.equiv` equips its tensor linear equivalence with the proved multiplicative and scalar compatibility laws. Its existing pure-tensor formula proves the two evaluation lemmas.
+
+The published number-field `IntegralTensorTransportProof` and function-field `CurvePlaceIntegralTensor` already use private linear versions of the localization step. This module imports no private declarations or external Lean repository and exposes the algebra equivalence through Mathlib's proved pushout API for later actual scheme base change.
