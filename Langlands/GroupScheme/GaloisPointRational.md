@@ -24,6 +24,9 @@ multiplicatively with the actual L-coefficient points. It reuses
 `baseChangeBasePointsEquiv`, and `baseChangeCoeffEquiv_left` identifies its
 underlying morphism as projection from the actual scheme pullback. These
 comparisons need no affineness, finite-dimensionality or Galois hypotheses.
+`baseChangeCoeffEquiv_map` proves that the pullback comparison commutes with
+every actual group-scheme morphism. It is shared with the torus-norm and
+integral-model coefficient-point adapters.
 
 `rationalExtend` and `rationalConjugate` transport coefficient extension and
 the actual coefficient-automorphism action to these existing rational-point

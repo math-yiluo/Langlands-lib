@@ -26,13 +26,6 @@ theorem rationalCoeffEquiv_map (f : G ⟶ H) (x : rationalPoints G) :
   apply Over.OverMorphism.ext
   simp only [rationalCoeffEquiv_left, Over.comp_left]
 
-/-- The pullback comparison commutes with the actual base-changed morphism. -/
-theorem baseChangeCoeffEquiv_map (f : G ⟶ H) (x : rationalPoints (baseChanged k L G)) :
-    baseChangeCoeffEquiv k L H
-        (rationalPoints.map ((GroupScheme.baseChange (baseMap k L)).map f) x) =
-      G.affinePointsTarget f (CommAlgCat.of k L) (baseChangeCoeffEquiv k L G x) := by
-  exact baseChangeBasePointsEquiv_comp (baseMap k L) f x
-
 variable [FiniteDimensional k L] [IsGalois k L]
   {T U : CommGroupScheme (Spec (CommRingCat.of k))}
   [IsAffine T.X.left] [IsAffine U.X.left]

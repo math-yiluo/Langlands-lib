@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.IntegralModel
 import Langlands.GroupScheme.GaloisPointNorm
 import Langlands.GroupScheme.AffinePointAutomorphisms
 import Langlands.GroupScheme.CocharacterTransport
@@ -55,6 +56,19 @@ def baseChangeCoeffEquiv : rationalPoints (baseChanged k L G) ≃*
     (baseChangeCoeffEquiv k L G x).left =
       x.left ≫ CategoryTheory.Limits.pullback.fst G.X.hom (baseMap k L) :=
   baseChangeBasePointsEquiv_left (baseMap k L) G x
+
+section Naturality
+
+variable {G} {H : GroupScheme (Spec (CommRingCat.of k))}
+
+/-- The pullback comparison commutes with the actual base-changed morphism. -/
+theorem baseChangeCoeffEquiv_map (f : G ⟶ H) (x : rationalPoints (baseChanged k L G)) :
+    baseChangeCoeffEquiv k L H
+        (rationalPoints.map ((GroupScheme.baseChange (baseMap k L)).map f) x) =
+      G.affinePointsTarget f (CommAlgCat.of k L) (baseChangeCoeffEquiv k L G x) := by
+  exact baseChangeBasePointsEquiv_comp (baseMap k L) f x
+
+end Naturality
 
 /-- Extension on the Library's existing rational-point carriers. -/
 def rationalExtend : rationalPoints G →* rationalPoints (baseChanged k L G) :=

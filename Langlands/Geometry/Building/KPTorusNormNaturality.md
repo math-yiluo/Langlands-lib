@@ -33,8 +33,8 @@ its kernel functoriality. No project errata file for either source was found.
 ## Implemented proof
 
 `rationalCoeffEquiv_map` identifies postcomposition before and after the
-base-field coefficient comparison. `baseChangeCoeffEquiv_map` proves the analogous
-identity for the actual pullback map, using its projection to the original
+base-field coefficient comparison. The imported `baseChangeCoeffEquiv_map` from
+`GroupScheme/GaloisPointRational` supplies the analogous identity for the actual pullback map, using its projection to the original
 group scheme. These lemmas hold for arbitrary group schemes.
 
 `rationalNorm_naturality` applies the two comparisons to the existing
