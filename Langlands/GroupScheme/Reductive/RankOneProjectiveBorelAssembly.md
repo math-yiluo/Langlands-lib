@@ -8,6 +8,9 @@ final reductions using the published proof
 `projectiveTorusFixedPointDimension`. This is an internal conditional
 reduction, not an unconditional proof of
 `RankOnePositiveRootUniquenessStatement`.
+Worker 1547 additionally supplies the published
+`solvableMaximalTorusConjugacy` in both final reductions, removing their
+global conjugacy premise while preserving the local construction interfaces.
 
 All fields have arbitrary characteristic and live in universe `u`.
 
@@ -56,16 +59,19 @@ nonregular cocharacter. The theorem assumes no normal-solvable-torus
 statement, divides by no integer and restricts no characteristic.
 
 `rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs` assumes
-`SolvableProperFixedPointStatement`, the existing
-`SolvableMaximalTorusConjugacyStatement` and
+`SolvableProperFixedPointStatement` and
 `AlgClosedMaximalTorusCentralizerStatement`. It supplies
 `ProjectiveTorusFixedPointDimensionStatement.{u}` using the published
 unconditional theorem `projectiveTorusFixedPointDimension` from
 `Langlands.GroupScheme.ProjectiveTorusFixedPointDimension`. Given the first
 root in the uniqueness assertion, it constructs a proper Borel through the specified
 torus with `exists_proper_isBorelPair_of_relativeRoot`. Closedness gives
-affineness of the Borel; the conjugacy premise applies to its smooth,
-connected, solvable group scheme. Self-centralization identifies the
+affineness of the Borel. The published theorem
+`solvableMaximalTorusConjugacy` from
+`Langlands.GroupScheme.Rational.SolvableMaximalTorusConjugacyProof` applies
+to this smooth, connected, affine, solvable Borel and supplies its internal
+maximal-torus conjugacy at the same universe `u`. No conjugacy hypothesis
+remains on this final reduction. Self-centralization identifies the
 whole-torus centralizer with the torus range, which the actual
 factorization places inside the Borel range on every test. The preceding
 prescribed-Borel theorem now proves the exact algebraically closed
@@ -84,12 +90,13 @@ The provenance is composition of the named internal Lean constructions.
 The prescribed-Borel construction and its local uniqueness theorem retain
 their explicit projective-dimension argument. The final algebraically closed
 and all-field reductions discharge that argument with the actual published
-proof at the same universe `u`. The implementation supplies the Borel,
+proof at the same universe `u`, and now also supply the published proof of
+solvable maximal-torus conjugacy. The implementation supplies the Borel,
 proper exact quotient, projective embedding, dimension bound and nonidentity
-normalizer class from four remaining displayed structural premises:
-solvable proper fixed points, solvable maximal-torus conjugacy, algebraically
-closed maximal-torus self-centralization and forward maximal-torus base
-change. Those four premises remain proof obligations. This module neither
+normalizer class from three remaining displayed structural premises:
+solvable proper fixed points, algebraically closed maximal-torus
+self-centralization and forward maximal-torus base change. Those three
+premises remain proof obligations. This module neither
 asserts them unconditionally nor proves the final all-field target without
 them. It does not use the excluded regular-cocharacter Borel, dynamic parabolic or rank-one solvable/Borel
 classification statements.
