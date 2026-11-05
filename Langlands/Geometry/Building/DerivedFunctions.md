@@ -64,3 +64,10 @@ root-point bijections, original real translations, and their central-factor
 decomposition. The full valuation axioms, split-torus and full-centralizer
 compatibility, source-apartment construction, and final normalizer-image
 theorem are separate obligations.
+
+`IsNormalized.vadd_eq_self_of_mem_rootAnnihilator` additionally states
+triviality of translation by every vector in the common root kernel,
+without restricting that vector to the central-factor image. Its proof
+uses vanishing of root evaluations and normalization away from roots.
+The central-factor helper and the existing pullback construction remain
+available with their original meanings.

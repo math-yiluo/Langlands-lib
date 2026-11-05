@@ -89,6 +89,63 @@ theorem image_derivedPullback_root (φ : RootFunctionFamily S G)
     rw [derivedPullback_apply_root e c j i d hd h hT hS hA hc φ a g'.val g'.property,
       ← derivedRootGroupPointsEquiv_coe e c j i d hd h hT hS hA hc a g', hg']
 
+
+open RootFunctionFamily
+
+omit [IsAffineHom D.X.hom] [LocallyOfFiniteType D.X.hom] in
+private theorem torusPoint_mem_centralizer (s : rationalPoints T.toGrp) :
+    rationalPoints.map j s ∈ centralizerPoints j := by
+  rw [← torusCentralizer_carrier_base]
+  intro U b x
+  change ((b ≫ s) ≫ j.hom.hom) * (x ≫ j.hom.hom) =
+    (x ≫ j.hom.hom) * ((b ≫ s) ≫ j.hom.hom)
+  rw [← MonObj.mul_comp, ← MonObj.mul_comp, mul_comm]
+
+omit [IsAffineHom D.X.hom] [LocallyOfFiniteType D.X.hom] in
+private theorem torus_conj_mem_rootGroupPoints (a : characterLattice T)
+    (s : rationalPoints T.toGrp) (g : rationalPoints D)
+    (hg : g ∈ rootGroupPoints j a) :
+    (rationalPoints.map j s)⁻¹ * g * rationalPoints.map j s ∈ rootGroupPoints j a := by
+  have hs := (centralizerPoints j).inv_mem (torusPoint_mem_centralizer j s)
+  have hcg := RelativeRoot.comp_mem_subgroup j a
+    (D.innerIso ((rationalPoints.map j s)⁻¹)).hom hg
+  rw [(mem_centralizerPoints j).mp hs] at hcg
+  simpa only [rootGroupPoints, comp_innerIso_hom, GroupScheme.constantPoint_self,
+    inv_inv] using hcg
+
+/-- Split-torus compatibility pulls back with the original scalar valuation
+and the original retained-torus point map. -/
+theorem IsSplitTorusCompatible.derivedPullback
+    {ω : kˣ → ℝ} {φ : RootFunctionFamily S G}
+    (hφ : IsSplitTorusCompatible i ω φ) :
+    IsSplitTorusCompatible j ω (derivedPullback e c j i d hd h hT hS hA hc φ) := by
+  intro a ha s g hg
+  obtain ⟨a', he⟩ :=
+    (RelativeRoot.derivedRelativeRootEquiv e c j i d hd h hT hS hA hc).surjective ⟨a, ha⟩
+  have he' : e ≫ a'.val = a := congrArg Subtype.val he
+  subst a
+  have hcg := torus_conj_mem_rootGroupPoints j (e ≫ a'.val) s g hg
+  have hs : rationalPoints.map d (rationalPoints.map j s) =
+      rationalPoints.map i (rationalPoints.map (CommGroupScheme.groupHom e) s) := by
+    simpa only [rationalPoints.map_apply, Category.assoc, Grp.comp_hom_hom] using
+      congrArg (fun m : T.toGrp ⟶ G => s ≫ m.hom.hom) h
+  have hχ : characterRestrict (CommGroupScheme.groupHom e)
+      ((rationalCharacters.equivCharacterLattice S).symm a'.val) =
+      (rationalCharacters.equivCharacterLattice T).symm (e ≫ a'.val) := by
+    apply (rationalCharacters.equivCharacterLattice T).injective
+    rfl
+  have heval :
+      rationalCharacterEval ((rationalCharacters.equivCharacterLattice S).symm a'.val)
+          (rationalPoints.map (CommGroupScheme.groupHom e) s) =
+        rationalCharacterEval
+          ((rationalCharacters.equivCharacterLattice T).symm (e ≫ a'.val)) s := by
+    rw [← rationalCharacterEval_characterRestrict, hχ]
+  rw [derivedPullback_apply_root e c j i d hd h hT hS hA hc φ a' _ hcg,
+    derivedPullback_apply_root e c j i d hd h hT hS hA hc φ a' g hg,
+    map_mul, map_mul, map_inv, hs, ← heval]
+  exact hφ a'.val a'.property _ _
+    (derivedRootGroupPointsEquiv e c j i d hd h hT hS hA hc a' ⟨g, hg⟩).property
+
 variable [Mono i.hom.hom.left]
 
 namespace IsRootDatumValuation

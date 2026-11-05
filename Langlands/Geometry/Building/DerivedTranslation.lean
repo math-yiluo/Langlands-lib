@@ -70,6 +70,48 @@ theorem exists_eq_cocharacterMapReal_add_of_centralComplement (v : V S) :
         (fun _ _ _ => Commute.all _ _) U (x ≫ ν.toMul.hom.hom)
   | add u v hu hv => simp only [map_add, hu, hv]; abel
 
+include hT hA hS hpflat hpsurj in
+/-- A supplied flat-surjective product of split tori spans the actual target
+real cocharacter space by the images of its two factors. -/
+theorem cocharacterRange_sup_eq_top_of_centralComplement :
+    (cocharacterMapReal e).range ⊔ (cocharacterMapReal c).range = ⊤ := by
+  let P : CommGroupScheme (Spec (CommRingCat.of k)) :=
+    { toGrp := T.toGrp ⊗ A.toGrp
+      comm := (inferInstance : IsCommMonObj (T.X ⊗ A.X)) }
+  let : GrpObj P.X := P.toGrp.grp
+  let p : P ⟶ S := Additive.ofMul (RelativeRoot.centralComplementProduct e c)
+  have : Flat (CommGroupScheme.groupHom p).hom.hom.left := hpflat
+  have : Surjective (CommGroupScheme.groupHom p).hom.hom.left := hpsurj
+  have : Epi (CommGroupScheme.groupHom p).hom.hom.left :=
+    Flat.epi_of_flat_of_surjective _
+  have hp : Function.Surjective (cocharacterMapReal p) :=
+    cocharacterMapReal_surjective_of_epi (hT.tensor hA) hS p
+  apply top_unique
+  intro v hv
+  obtain ⟨w, rfl⟩ := hp v
+  clear hv
+  induction w using TensorProduct.inductionOn with
+  | tmul r ν =>
+    have : IsMonHom ν.toMul.hom.hom := inferInstance
+    have : IsMonHom (fst T.X A.X) := inferInstance
+    have : IsMonHom (snd T.X A.X) := inferInstance
+    let νT : cocharacterLattice T :=
+      Additive.ofMul (Grp.homMk (ν.toMul.hom.hom ≫ fst T.X A.X))
+    let νA : cocharacterLattice A :=
+      Additive.ofMul (Grp.homMk (ν.toMul.hom.hom ≫ snd T.X A.X))
+    have hν : ν ≫ p = (νT ≫ e) + (νA ≫ c) := by
+      apply Additive.toMul.injective
+      apply Grp.hom_ext
+      change ν.toMul.hom.hom ≫ (RelativeRoot.centralComplementProduct e c).hom.hom =
+        (ν.toMul.hom.hom ≫ fst T.X A.X ≫ (CommGroupScheme.groupHom e).hom.hom) *
+          (ν.toMul.hom.hom ≫ snd T.X A.X ≫ (CommGroupScheme.groupHom c).hom.hom)
+      exact comp_prodHom _ _ _ _ _
+    rw [cocharacterMapReal_tmul, hν, TensorProduct.tmul_add]
+    exact Submodule.add_mem_sup ⟨r ⊗ₜ[ℤ] νT, rfl⟩ ⟨r ⊗ₜ[ℤ] νA, rfl⟩
+  | add x y hx hy =>
+    rw [map_add]
+    exact Submodule.add_mem _ hx hy
+
 end Product
 
 variable {D G : GroupScheme (Spec (CommRingCat.of k))}
@@ -100,6 +142,36 @@ theorem cocharacterMapReal_mem_rootAnnihilator_derived_iff (v : V T) :
     rw [eval_cocharacterMapReal]
     exact hv (e ≫ a)
       (RelativeRoot.mem_relativeRoots_precomp_derived e c j i d hd h hT hS hA hc ha)
+
+include hd h hT hS hA hc in
+/-- Actual root restriction identifies exactly the preimage of the ambient
+common root kernel under the retained torus's real cocharacter map. -/
+theorem comap_rootAnnihilator_derived :
+    (rootAnnihilator i).comap (cocharacterMapReal e) = rootAnnihilator j := by
+  ext v
+  change cocharacterMapReal e v ∈ rootAnnihilator i ↔ v ∈ rootAnnihilator j
+  rw [mem_rootAnnihilator, mem_rootAnnihilator]
+  let E := RelativeRoot.derivedRelativeRootEquiv e c j i d hd h hT hS hA hc
+  constructor
+  · intro hv b hb
+    obtain ⟨a, ha⟩ := E.surjective ⟨b, hb⟩
+    have hab : e ≫ a.val = b := congrArg Subtype.val ha
+    rw [← hab, ← eval_cocharacterMapReal]
+    exact hv a.val a.property
+  · intro hv a ha
+    rw [eval_cocharacterMapReal]
+    exact hv (e ≫ a) (E ⟨a, ha⟩).property
+
+include hA hc in
+/-- The central factor contributes only directions annihilated by every
+actual ambient root. -/
+theorem centralComplement_cocharacterRange_le_rootAnnihilator :
+    (cocharacterMapReal c).range ≤ rootAnnihilator i := by
+  rintro _ ⟨v, rfl⟩
+  rw [mem_rootAnnihilator]
+  intro a ha
+  rw [eval_cocharacterMapReal, root_restrict_eq_zero_of_isCentral i c hA hc ha]
+  simp only [eval_eq_pair, TensorProduct.tmul_zero, map_zero, LinearMap.zero_apply]
 
 /-- The quotient map induced by the literal retained-torus morphism. -/
 def derivedTranslationMap : TranslationSpace j →ₗ[ℝ] TranslationSpace i :=

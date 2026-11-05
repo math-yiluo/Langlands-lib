@@ -115,6 +115,16 @@ theorem IsNormalized.centralComplement_vadd {φ : RootFunctionFamily S G}
       WithTop.coe_zero, add_zero]
   · rw [hφ.1 a ha g, WithTop.top_add]
 
+omit [LocallyOfFiniteType D.X.hom] [Smooth G.X.hom] in
+/-- The common root kernel acts trivially on every normalized family. -/
+theorem IsNormalized.vadd_eq_self_of_mem_rootAnnihilator
+    {φ : RootFunctionFamily S G} (hφ : IsNormalized i φ)
+    {v : V S} (hv : v ∈ rootAnnihilator i) : v +ᵥ φ = φ := by
+  ext a g
+  by_cases ha : a ∈ relativeRoots i
+  · rw [vadd_apply, (mem_rootAnnihilator.mp hv) a ha, WithTop.coe_zero, add_zero]
+  · rw [vadd_apply, hφ.1 a ha g, WithTop.top_add]
+
 /-- A normalized ambient family is determined by its derived pullback. -/
 theorem derivedPullback_injective {φ ψ : RootFunctionFamily S G}
     (hφ : IsNormalized i φ) (hψ : IsNormalized i ψ)

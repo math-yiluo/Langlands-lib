@@ -78,7 +78,21 @@ No additional valuation axiom is assumed for the source.
 
 This is an internal transfer of the published valuation predicate,
 adapting the earlier central-isogeny construction to the actual monic
-derived inclusion. The original tori and product, split-torus and
-full-centralizer V6 compatibility, a source apartment, opposite-pair
+derived inclusion. The original tori and product, full-centralizer V6
+compatibility, a source apartment, opposite-pair
 existence, and the final simply connected normalizer theorem remain
 separate obligations.
+
+`IsSplitTorusCompatible.derivedPullback` transfers the split-torus part of
+V6 with the same scalar function `ω : kˣ → ℝ`. It needs the supplied
+derived diagram and split central-complement product; the two acting maps
+need not be monic for this lemma. The proof preserves source root-group
+membership under torus conjugation, maps conjugation through the commuting
+square, and uses naturality of the actual character evaluation.
+`DerivedApartment` imports this result for its apartment construction.
+
+The integrated valuation map and V0–V5 helpers retain the published
+implementations and signatures. The accepted alternative character helpers
+are represented by the existing `derivedRoot_mem_iff_of_central_vanishing`
+and `RootFunctionFamily.derivedPullback_apply_character`; their central
+vanishing hypotheses and conclusions coincide.

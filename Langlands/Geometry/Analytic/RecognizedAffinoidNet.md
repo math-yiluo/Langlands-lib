@@ -1,0 +1,13 @@
+# The constructed net of recognized affinoid subsets
+
+This module proves the topological net condition for the existing recognized literal subsets. It does not assume that net condition or the special-set intersection theorem.
+
+The elementary finite-cover lemma proves that a finite closed covering of a space is a quasinet. At a point, retain exactly the cover members that contain it. Their union contains the complement of the finite closed union of the other members, hence is a neighborhood of the point. Every retained member contains the point, including all empty-cover edge cases.
+
+For the literal Hausdorff union of a `FiniteChartGluingData` family, each original component is compact and is contained in that union. Its inverse image under the subspace inclusion is compact by the inducing-map compactness theorem, and is closed in the Hausdorff union. The components form a finite closed covering. Thus original chart members contained in the union form a quasinet of that subspace. Every special subset inherits this property from its actual finite special cover.
+
+The source is Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Proposition 1.2.13(i), printed p.21 / PDF p.18, its initial intersection argument. The registered original is `berkovich-1993-etale-cohomology`, SHA256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`. This page was read and visually checked. The implemented proof makes the finite relative-cover argument explicit through the existing `IsNet.isQuasinet_restrictedFamily_inter`: relative finite refinements of two special unions intersect, and the original net refines their memberwise intersections.
+
+`RecognizedSubset.family` consists of the actual literal recognized subsets. It contains every original chart by the previously proved three-condition recognition result, so it is a quasinet. The preceding refinement argument proves its pairwise intersection condition. Its chart family is exactly this literal family by the already proved exact ranges. Applying the result to `saturatedAtlas` proves that the full recognized affinoid family, using finite special covers from the enlarged full local-domain net, is a net.
+
+The ambient space need not be Hausdorff. Hausdorffness is used only on each finite special union, where it is already part of specialness. The proof does not claim that arbitrary pairwise intersections are compact or single affinoid domains. Coefficient, ambient and original-index universes are independent; trivial valuations and empty domains remain allowed. Full representation of every recognized inclusion, the maximal-atlas package and its invariance remain further construction obligations.

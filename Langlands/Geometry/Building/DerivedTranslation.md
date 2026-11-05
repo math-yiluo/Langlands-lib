@@ -62,3 +62,13 @@ split-torus surjection results, the actual root bijection, and central-root
 vanishing. It does not construct the supplied tori or product, a source
 apartment, its full omega compatibility, or the final normalizer-image
 theorem.
+
+The integrated module also exposes
+`cocharacterRange_sup_eq_top_of_centralComplement`, expressing the product
+spanning result as a supremum of linear ranges;
+`comap_rootAnnihilator_derived`, expressing the same root-kernel comparison
+as a submodule equality; and
+`centralComplement_cocharacterRange_le_rootAnnihilator`, isolating the
+central factor's vanishing. These are the additional reviewed interfaces
+used by the normalizer-action comparison. The existing decomposition,
+quotient maps and representative formulas are retained.
