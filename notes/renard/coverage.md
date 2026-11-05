@@ -127,21 +127,25 @@ task `47f3abc7-b53d-4016-a653-f08178f4e477`; integration
 `690e7bce992fb723bd66806fa2db3acd6dc07d78`.
 
 The [A.IV limits and colimits progress note](limits-colimits-progress.md),
-dated 3 November 2026 by Worker 709 with Worker 6's source diagnosis and
-scope reconciliation, verifies the general cone/cocone bridge and four
+updated 4 November 2026 by Worker 709 with Worker 6's source diagnosis and
+scope reconciliation and Worker 1153's concrete proof and evidence,
+verifies the general cone/cocone bridge and four
 statement/proof pairs: elementary shapes, ordered systems, subobject
 bounds and concrete abelian-group products/direct sums. Its update
 adds the published literal filtered-colimit quotient, group operations,
 canonical maps, compatible-family lift and separate singleton empty
-cocone, with the five exact proposition targets. All eleven
-publications and twenty-two mathematical files retain their verified
+cocone, with the five exact proposition targets and their proof.
+All twelve publications and twenty-four mathematical files retain their verified
 hashes at the update base. The source's constant-functor and arrow
 corrections, independent universes, supplied-cone scope and actual
-subobject category are explicit. Focused proof successor
-`ce8400b5-29cb-422f-91f5-9cc761af2531` r1 covers the concrete quotient
-universality, lift uniqueness, eventual zero and separate empty case.
-Those proof-publication obligations remain open; no section completion
-is declared.
+subobject category are explicit. Concrete proof
+`5bd3407c-e5f4-401d-a136-1070af0b2b4d`, task
+`ce8400b5-29cb-422f-91f5-9cc761af2531` r1, proves quotient universality,
+lift uniqueness, eventual zero, its derived converse and the separate empty
+case. Reviewer 12926 approved it without qualifications in review
+`6467768b-8298-4828-b133-03e3756576c3`; integration
+`ed76a1a7cc24433e9ffc73674cec3db6` published it at Library
+`442ff746325df5b6d721fee75d430a65c33d09f0`. No section completion is declared.
 
 The [A.VIII.1 exact-functor progress note](exact-functors-progress.md),
 dated 3 November 2026 by Worker 709 using the specifications, proofs and
@@ -193,16 +197,20 @@ universal-property proofs. It updates the A.III navigation row only; categorical
 packaging, representability and other A.III assertions
 were retained as open at that audit date.
 The [A.III universal-arrow and representability source map](universal-representability-progress.md),
-dated 4 November 2026 by Worker 709, verifies four further published proof units:
+dated 4 November 2026 by Worker 709, verifies five further published proof units:
 general universal-arrow characterizations and compatible comparisons, the actual
-module-localization categorical universal property, core Yoneda and the object
-and functor isomorphism principles. It also credits the published
+module-localization categorical universal property, core Yoneda, the object
+and functor isomorphism principles, and the binary-diagonal factorization and
+actual binary limit/colimit comparisons. The ring-denominator construction is
+also independently published, including its actual image submonoid and
+zero-denominator boundary; its separate categorical statement is staged and
+its exact proof remains a subsequent obligation. It also credits the published
 polynomial-module/endomorphism equivalence, distinguishing it from the remaining
 categorical transport of the chosen localization universal arrow.
 The final representability remark and
 compatible-uniqueness corollary have a published statement and a waiting exact
-proof task. Ring-denominator constructions, other example comparisons
-and further A.III source obligations remain separate.
+proof task. The ring categorical proof, uniform-completion and other example
+comparisons, and further A.III source obligations remain separate.
 The 4 November localization clarification in the same map distinguishes
 these source assertions from the internal functoriality and exactness
 comparisons for chosen models. Pinned Mathlib already supplies an additive
@@ -920,8 +928,8 @@ including definitions, remarks and unnumbered results.
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and five published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers, the all-subobjects equivalence under arbitrary unions, and actual unital-module comparisons. Other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
-| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [four further published proof units and the polynomial-module equivalence](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda and the isomorphism principles. The final representability remark/corollary has a published statement with exact proof waiting; ring-denominator constructions, categorical transport of the chosen localization universal arrow, other example comparisons and remaining source assertions retain separate obligations. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
-| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four published statement/proof pairs and the concrete filtered-colimit construction and statements](limits-colimits-progress.md). The actual quotient, compatible-family lift, eventual-zero and separate empty-cocone targets await proof acceptance and publication in the focused successor; no section completion declared |
+| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [five further published proof units, ring-denominator construction and polynomial-module equivalence](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda, the isomorphism principles and binary-diagonal comparisons. The final representability remark/corollary has a published statement with exact proof waiting; ring categorical universality, categorical transport of the chosen localization universal arrow, uniform-completion and other example comparisons, and remaining source assertions retain separate obligations. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
+| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four general statement/proof pairs and the concrete filtered-colimit construction, statements and proof](limits-colimits-progress.md). Quotient universality, compatible-family lift uniqueness, eventual zero and the separate empty-cocone target have published proofs; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. Full-module AB5/AB6 examples, other examples, subcategory criteria, source adapters and other AB5 comparisons remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
