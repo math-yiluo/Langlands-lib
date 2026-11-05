@@ -30,16 +30,19 @@ open. The map extends selected V.3, VI.1, VII.1 and VII.2 navigation; this
 update changes only its paragraph and
 the VII.2 row. No complete section or temperedness theorem is claimed.
 
-The [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
-dated 3 November 2026 by Worker 6 with Workers 164 and 1510, verifies four
-published units: actual norm-kernel and whole-category factors, and the four
-universal Prop-valued targets over the explicit general reductive structural
-inputs. It records the original IV.1.3, IV.1.6–7, VI.2.1, VI.2.3–4,
-VI.3.3–5 and A.IX passages, exact publication receipts and four revision-1
-proof tasks. The four universal conclusions remain unproved; the uniform
-coefficient bound, topology/cuspidality/orbit comparisons and categorical
-assembly retain their obligations. Only the VI.3 navigation row is updated
-by this focused map; the other assertions of VI.3 remain backlog.
+The [VI.2.1 and VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
+updated 4 November 2026 by Worker 6 with Workers 164, 1510 and 491,
+records the published norm-kernel and whole-category factors and four
+universal Prop-valued targets, together with the independently published
+forward compact-restriction proof and converse statement. The forward
+theorem retains the chosen special compact, simultaneous basis and finite
+Cartan cover; the converse has a separate exact proof successor at the
+whole-category telescope. It records the original IV.1.3, IV.1.6–7,
+VI.2.1, VI.2.3–4, VI.3.3–5 and A.IX passages and exact publication receipts.
+All four universal finiteness/decomposition conclusions remain open, with
+their revision-1 proof tasks and owners preserved. The geometric existence,
+converse proof, uniform support, orbit and categorical assembly obligations
+remain explicit. The VI.2 and VI.3 rows reflect only these selected assertions.
 
 The [VI.6.1 canonical-section source map](canonical-section-progress.md),
 dated 4 November 2026 by Worker 6, records the weak Jacquet theorem,
@@ -911,8 +914,8 @@ including definitions, remarks and unnumbered results.
 | V.5 | Compact subgroups | 122 / 128 | Backlog |
 | VI opening | Representation theory of p-adic groups | 131 / 137 | Backlog |
 | VI.1 | Normalized parabolic functors | 134 / 140 | Partial: [published actual Jacquet wrapper and normalization](root-exponent-tempered-progress.md) at VI.1.2; other assertions retain their separate correspondence and proof obligations |
-| VI.2 | Supercuspidality and admissibility | 137 / 143 | Backlog |
-| VI.3 | Cuspidal categorical decomposition | 142 / 148 | [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md): published factors and four universal statements; four proof tasks open. Other assertions remain backlog. |
+| VI.2 | Supercuspidality and admissibility | 137 / 143 | Partial: [VI.2.1 compact-restriction map](cuspidal-decomposition-source-map.md) records the published forward proof with retained geometric premises and the converse statement with its separate proof task. The full equivalence and other assertions remain open. |
+| VI.3 | Cuspidal categorical decomposition | 142 / 148 | [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md): published factors, four universal statements and their VI.2.1 dependencies; all four exact proof conclusions remain open. Other assertions remain backlog. |
 | VI.4 | Centre of the cuspidal component | 148 / 154 | Backlog |
 | VI.5 | Induced representations | 161 / 167 | Backlog; retain 2026 proof correction |
 | VI.6 | Finiteness theorems | 175 / 181 | Partial: [VI.6.1 source map](canonical-section-progress.md) records the conditional weak Jacquet proofs and published actual-standard uniform-section statement; exact proof publication and the other subsections remain open |

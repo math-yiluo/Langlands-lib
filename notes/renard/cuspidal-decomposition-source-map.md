@@ -1,10 +1,13 @@
-# Renard VI.3.4–VI.3.5: norm-kernel and whole-category decompositions
+# Renard VI.2.1 and VI.3.4–VI.3.5: compact restriction and decompositions
 
-Worker 6, with Workers 164 and 1510, records the source correspondence and
-publication checks made on 3 November 2026. The four units below publish
-factor constructions and four proposition declarations. None of the four
-universal propositions has a published proof in this update. This is a
-focused source map for VI.3.4–VI.3.5, not an inventory of all of VI.3.
+Worker 6, with Workers 164, 1510 and 491, records the source correspondence
+and publication checks made on 3–4 November 2026. The original four units
+publish factor constructions and four proposition declarations. The
+4 November update adds the published forward compact-restriction proof,
+its retained geometric premises, and the published converse statement
+with its separate proof successor. None of the four universal decomposition
+and finiteness propositions has a published proof in this update. This map
+covers selected assertions of VI.2.1 and VI.3.4–VI.3.5.
 
 The original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French edition dated 9 July 2026, registered as
@@ -20,7 +23,7 @@ this update were reread from that original.
 | IV.1.3, definition and coefficient criterion | 89–90 / 95–96 | Compactness via averaged vector-valued functions, and its equivalence with compact support of all smooth-dual scalar coefficients; the section assumes unimodularity. |
 | IV.1.6, notations | 94 / 100 | The factor of actual direct sums of one irreducible compact type. Its other notations test irreducible subquotients; VI.3.4's remaining factor below retains that theorem's arbitrary-subquotient wording. |
 | IV.1.7, proposition and beginning of proof | 95 / 101 | Condition (KF), counting compact irreducible isomorphism classes with nonzero fixed vectors, and the locally finite sum of compact-type projectors. |
-| VI.2.1, definition and first remark | 137 / 143 | Cuspidality by vanishing of proper Jacquet modules, and the proper-standard formulation used by the current Lean factors. |
+| VI.2.1, definition, first remark, theorem and proof | 137–139 / 143–145 | Cuspidality by vanishing of proper Jacquet modules, its proper-standard formulation, and the compact-restriction criterion used in VI.3.5. The forward proof below retains chosen geometric premises; the converse is a separate statement and proof task. |
 | VI.2.3, theorem and following remark; VI.2.4, proposition | 140–141 / 146–147 | Uniform admissibility, embedding an irreducible norm-kernel representation in a restriction, and a support bound uniform over irreducible supercuspidal representations at fixed level. |
 | VI.3.3, concluding orbit remark | 145 / 151 | The source identifies supercuspidal inertia classes with conjugation orbits of compact irreducible norm-kernel types. |
 | VI.3.4, theorem and proof | 145–146 / 151–152 | Decomposition of the entire norm-kernel category, proved through (KF); the concluding inertia-class finiteness remark is a separate target. |
@@ -122,12 +125,15 @@ also absent from the premises.
 | `RationalWholeCuspidalCategoryDecompositionStatement` | `IsRationalWholeCuspidalCategoryDecomposition` of the entire smooth category into its two factors. | `4bee987a-093b-4054-bd65-7360168351d2`, revision 1 |
 | `RationalCuspidalInertiaProductDecompositionStatement` | `IsRationalCuspidalInertiaProductDecomposition` of that entire category into all cuspidal inertia factors and the remaining factor. | `b1a82b53-e942-41b3-9f25-dec52736e712`, revision 1 |
 
-The direct task checks on 3 November 2026 found all four proof tasks at
-revision 1, ready, without an executor or submitted artifacts. The norm-kernel
-decomposition task requires the exact fixed-level proof task's revision 1
-under `lean.proof@1`; the refined inertia-product task similarly requires
-the exact whole-category splitting proof task's revision 1. These task
-contracts are a dependency plan, not proof evidence.
+Direct checks on 4 November 2026 found all four proof tasks at revision 1.
+Worker 485 owns the fixed-level task and Worker 491 owns the two-factor
+whole-category task; both have supporting submissions, without a published
+proof of their exact universal conclusion. The norm-kernel decomposition
+and refined inertia-product tasks remain ready without submitted artifacts.
+The norm-kernel decomposition task requires the exact fixed-level proof
+task's revision 1 under `lean.proof@1`; the refined inertia-product task
+similarly requires the exact whole-category splitting proof task's
+revision 1. These contracts preserve the dependency order.
 
 ## Verified publications
 
@@ -151,6 +157,78 @@ also inspected `RationalNormKernelFixedLevelFinitenessStatement` as
 Prop-valued with independent `uF` and `uV`. Compilation and statement
 acceptance do not prove any of the four propositions.
 
+## VI.2.1: forward proof and converse target
+
+On 4 November 2026, exact record checks verified the following two units
+as independently accepted and public. Both were published at commit
+`d2a3dab5880b35349069e39d96304f678174efff` and remain unchanged in the
+checked Library `287810195716cc1b54418e03760ba867de3f695e`. Their four
+entry Lean/Markdown hashes match the frozen accepted records, workspace
+and checked Library.
+
+| Unit | Candidate and policy | Independent reviewer | Accepted machine receipt |
+| --- | --- | --- | --- |
+| [Cuspidality implies compact restriction](../../Langlands/Representation/Aubert/General/RationalCuspidalCompactRestrictionProof.md) | `cad2db8e-5206-4d1f-b72e-4c768c5a29c6`, `lean.proof@1` | Reviewer 13074, no qualifications | `a1ced486-a3f3-400c-8358-a4d407ca69e7` |
+| [Compact restriction implies cuspidality: statement](../../Langlands/Representation/Aubert/General/RationalCompactRestrictionCuspidalStatement.md) | `ca1a3b4e-8b05-40fc-b12c-265f2fb4dde4`, `lean.statement@1` | Reviewer 13011, no qualifications | `6bfd66c5-90c0-4bd9-b0f6-31183f26f1a2` |
+
+The respective published integrations are
+`601737d06aad4713865498e689e149d0` and
+`be0758e3ed8b4a36a4f3836c2e335f03`.
+
+The forward theorem
+`Langlands.Aubert.General.rationalCuspidalCompactRestriction.{u,v}`
+proves the exact published
+`RationalPointFamily.RationalCuspidalCompactRestrictionStatement`.
+In addition to the general structural inputs described above, that
+statement retains a `KPApartmentData`, a special apartment vertex, and
+`SpecialCompactProperties`, `SimultaneousStandardBasisAt` and
+`FiniteCartanCovering` for the same geometric subgroup `K0`. The theorem
+does not establish existence of these witnesses under the broader
+whole-category VI.3.5 telescope.
+
+The implemented proof goes directly to compact support in the actual norm
+kernel. Vanishing Jacquet quotients give finite witnesses in the actual
+unipotent relation span. Contraction, finite wall representatives and finite
+compact orbits give uniform bounds on the simple-root pairings of a
+nonzero coefficient. Actual relative roots and restrictions of rational
+characters jointly detect integral cocharacters; a bounded root box in a
+fixed ambient valuation fiber is therefore finite. The given Cartan cover
+then bounds the support by finitely many compact products inside the closed
+norm kernel. Openness of that kernel transfers the entire restricted smooth
+dual to the ambient smooth dual. The final theorem proves and discharges
+the internal joint-detection premise. It retains independent field and
+carrier universes and requires no admissibility, irreducibility, finite
+dimension, nonzero representation or positive relative rank.
+
+The converse proposition is
+`Langlands.Aubert.General.RationalPointFamily.RationalCompactRestrictionCuspidalStatement.{uF,uV}`.
+It states VI.2.1(c) implies (a) at precisely the complete structural
+telescope of the whole-category VI.3.5 target. Its compact-coefficient
+antecedent tests the entire smooth dual of the actual restricted action;
+its conclusion is vanishing of every proper-standard normalized Jacquet
+module. It adds no chosen special compact, basis, Cartan or compact-escape
+premise, and no admissibility, irreducibility, length or dimension
+restriction.
+
+The exact converse proof successor is
+`bf6a4dc2-104a-4496-8025-757fefc3b847`, revision 1, under `lean.proof@1`;
+the current check found it ready without submitted artifacts. The source
+proof on printed p.138 / PDF p.144 chooses an Iwahori fixing subgroup
+(V.5.2) and a strictly contracting element in the norm kernel (V.3.25).
+Its powers escape compact sets; compactness and averaging give an
+eventual zero, and III.2.9 puts the vector in the Jacquet relation space.
+The successor must supply these existence and comparison steps under the
+unchanged telescope. The product-general-linear result
+`Langlands.CuspidalSupport.LeviHarishChandraConverseTheorem` has different
+field, group, subgroup and cuspidality predicates and does not prove this
+general proposition.
+
+Neither the forward theorem with its retained premises nor the accepted
+converse statement supplies the full VI.2.1 equivalence or any of the four
+universal conclusions above. In particular, the chosen geometric
+witnesses, the converse proof, the fixed-level finiteness proof and the
+categorical assembly remain distinct obligations.
+
 ## Remaining source arguments
 
 For VI.3.4, the source extends a compact irreducible norm-kernel type to an
@@ -160,9 +238,11 @@ norm kernel. Coefficient orthogonality then gives finiteness inside a
 common finite-dimensional space of compactly supported bi-invariant
 functions. The compact support set, and hence that coefficient space, must
 be common to all relevant classes for the fixed level. Separate compact
-support for each class would not establish (KF). The actual embeddings,
-smooth-dual/fixed-vector comparisons, uniform support transport and
-orthogonality argument remain to be proved. The source writes `K` as a
+support for each class would not establish (KF). The full proof must
+assemble the actual embeddings, smooth-dual/fixed-vector comparisons,
+uniform support transport and orthogonality argument. Supporting
+constructions or individual helper proofs do not establish this uniform
+conclusion. The source writes `K` as a
 compact open subgroup of `G`; the target quantifies over compact open
 subgroups of the norm kernel, as required by IV.1.7. Openness of the norm
 kernel supports this route, but the actual inclusion, compactness,
@@ -181,16 +261,23 @@ norm kernel. Uniqueness of the compact/remaining splitting makes its
 summands `G`-stable, and VI.2.1's compact-restriction criterion identifies
 the two factors. Regrouping compact types by conjugation orbits then
 produces the inertia factors, using VI.3.2 and VI.3.3's orbit comparison.
-The proof must supply this stability, the compact-restriction comparison,
-cuspidality under actual unramified twists, the orbit/class identification
-and the full categorical assembly. The proper-standard/all-proper-parabolic
+The proof must supply this stability, apply the compact-restriction
+comparison in both directions under the unchanged telescope, establish
+cuspidality under actual unramified twists and the orbit/class
+identification, and assemble the full categorical conclusion. The forward
+proof above discharges one implication when its geometric data are
+available; its existence premises and the converse proof remain separate.
+The proper-standard/all-proper-parabolic
 comparison and the shared literal-Levi, topology and standard-family
 comparisons also remain program obligations. A.IX's existing constructions
 can be reused only with their actual hypotheses and universe conventions;
 they do not establish these representation-theoretic inputs.
 
 Workers 164 and 1510 identified the universal norm-kernel and whole-category
-prerequisites in their dependency audit. Worker 6 read the original
-passages, implemented the four published units, verified their receipts
-and prepared this map. The four proof conclusions and the rest of VI.3
-remain open obligations of the whole-book program.
+prerequisites in their dependency audit. Worker 491 contributed the
+converse formulation and whole-category consumer audit. Worker 6 read the
+original passages, implemented the original four published units, verified
+the publication records and prepared this map and its VI.2.1 update.
+Existing owners and operator-directed holds remain unchanged. The four
+universal proof conclusions and the other assertions of VI.2 and VI.3
+remain obligations of the whole-book program.
