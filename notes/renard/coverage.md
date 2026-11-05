@@ -226,13 +226,24 @@ separate exact proof task `dd07e94c-b543-487f-8120-e6037cb9c974` revision 1.
 It also credits the published polynomial-module/endomorphism equivalence and
 its actual restriction to local modules and invertible pairs, distinguishing
 them from the remaining categorical transport of the chosen localization
-universal arrow. The actual topological-module completion and fixed-real
-sequence test constructions are public. Their respective statement tasks
-`7b7701fc-0cac-4d27-b1e2-b997920afa55` and
-`a7b67918-772d-4ae0-b2b8-d106d0c4235e`, both revision 1, retain separate exact
-proof successors. The continuous-linear convention and the test of the
-printed all-continuous-maps claim remain distinct; no source counterexample
-is established by those constructions.
+universal arrow. Worker 1570's chosen local-module functor and natural
+Mathlib comparison are now published, with Worker 1603's alternative
+preserved under `ModuleLocalization.UniversalComparison`. Their actual
+ULift/Shrink carriers, scalar actions, canonical arrows and all morphisms
+are compared. The chosen endomorphism canonical-arrow comparison has
+focused construction task `e340435d-c0ce-453f-9f1b-31629e02bc52` revision 1;
+its initiality statements and exact proof remain subsequent obligations.
+The actual topological-module completion and fixed-real sequence test
+constructions now have independently published statement pairs. The former's
+`UniversalStatements.{u,v,w}` has exact proof task
+`ce7f40bb-e686-41b7-a4cd-1b249bc07b6d` revision 1; it fixes the canonical
+unit and both Hom formulas, with source separation only for embedding.
+The fixed-real `CompletionCounterexampleStatements` has eleven unproved
+conclusions, including nonextension among all continuous real-valued
+competitors along the named canonical arrows. Its exact proof remains
+separate. The continuous-linear convention and the test of the printed
+all-continuous-maps claim remain distinct; statement publication establishes
+no source counterexample.
 The final representability remark and
 compatible-uniqueness corollary have a published statement and a waiting exact
 proof task. The ring categorical proof, the printed completion claim and other example
@@ -241,8 +252,9 @@ The 4 November localization clarification in the same map distinguishes
 these source assertions from the internal functoriality and exactness
 comparisons for chosen models. Pinned Mathlib already supplies an additive
 exact localization functor, with an explicit smallness premise; its
-`Shrink` model and target category still require comparison with the project's
-lifted local-module objects. No general localization-exactness assertion
+`Shrink` model and target category are now compared with the project's
+lifted local-module objects, while chosen-model sequence exactness remains
+a separate internal obligation. No general localization-exactness assertion
 occurs in the audited PDF258–259 or A.VIII.1 PDF271–272 passages.
 These updates change only A.III navigation; all other initial-pass statuses
 retain their stated date and scope, and no section completion is declared.
@@ -936,7 +948,7 @@ including definitions, remarks and unnumbered results.
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and five published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers, the all-subobjects equivalence under arbitrary unions, and actual unital-module comparisons. Other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
-| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [six further published proof units, ring construction/statement and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons and separated uniform completion. Actual continuous-linear completion and fixed-real test constructions have separate statement/proof gates. The final representability remark/corollary has a published statement with exact proof waiting; ring categorical proof, chosen-arrow transport, the printed all-continuous-maps completion claim and other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
+| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [six further published proof units, ring construction/statement and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons and separated uniform completion. Actual continuous-linear completion and fixed-real test constructions and statements are public, with separate exact-proof obligations. The chosen local-module functor and natural Mathlib comparison are published; its endomorphism canonical-arrow comparison has a separate construction task. The final representability remark/corollary has a published statement with exact proof waiting; ring categorical proof, chosen-arrow initiality, the printed all-continuous-maps completion claim and other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
 | A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four general statement/proof pairs and the concrete filtered-colimit construction, statements and proof](limits-colimits-progress.md). Quotient universality, compatible-family lift uniqueness, eventual zero and the separate empty-cocone target have published proofs; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. The A.VI.1–2 note also verifies the all-open/Mathlib equivalence, normalized-presheaf and sufficient-size sheaf statements, and the actual star diagram; their separate proof/comparison tasks remain. Full-module AB5/AB6 examples, other examples, subcategory criteria, source adapters and other AB5 comparisons remain separate |

@@ -4,9 +4,10 @@ Worker 709, 4 November 2026. This source map records six independently
 accepted and published proof units, including the binary-diagonal comparisons,
 separated uniform completion, the published ring-denominator construction and
 categorical statement, and the polynomial-module and restricted equivalences.
-Actual continuous-linear completion and real-sequence test constructions are
-also public. The ring and representability proofs, completion statement/proof
-successors and chosen local-module functor comparison remain open.
+The chosen local-module functor and its natural Mathlib comparison are now
+public, as are the actual continuous-linear completion and real-sequence
+statement pairs. The ring and representability proofs, both completion proofs
+and the chosen endomorphism-arrow comparison remain open.
 It complements the five proofs in the
 [endomorphism-localization note](endomorphism-localization.md). It makes no
 section or whole-book completion claim.
@@ -43,9 +44,9 @@ route.
 | --- | --- |
 | A.III.1 definition and comparison remark, PDF257–258 | [UniversalArrowStatements](../../Langlands/CategoryTheory/Renard/UniversalArrowStatements.md) and [UniversalArrowProof](../../Langlands/CategoryTheory/Renard/UniversalArrowProof.md): both factorization/initiality or terminality equivalences, and the unique isomorphism compatible with two chosen right or left solutions |
 | A.III.1 example 1, PDF258; A.IV.1–2 binary comparison, PDF263 | [BinaryDiagonalStatements](../../Langlands/CategoryTheory/Renard/BinaryDiagonalStatements.md) and [BinaryDiagonalProof](../../Langlands/CategoryTheory/Renard/BinaryDiagonalProof.md): four proved comparisons of the supplied diagonal arrows with simultaneous unique factorization and the actual binary limit or colimit witnesses |
-| A.III.1 example 2, PDF258 | [UniformCompletionStatements](../../Langlands/CategoryTheory/Renard/UniformCompletionStatements.md) and [UniformCompletionProof](../../Langlands/CategoryTheory/Renard/UniformCompletionProof.md): four proved components for the derived uniform generalization, using uniformly continuous maps and complete separated targets. [Actual continuous-linear completion](../../Langlands/Topology/RenardTopModuleCompletion.md) and [real-sequence test objects](../../Langlands/Topology/RenardRealSequenceCompletion.md) are published constructions with separate statement/proof successors; the printed all-continuous-maps claim remains unresolved |
+| A.III.1 example 2, PDF258 | [UniformCompletionStatements](../../Langlands/CategoryTheory/Renard/UniformCompletionStatements.md) and [UniformCompletionProof](../../Langlands/CategoryTheory/Renard/UniformCompletionProof.md): four proved components for the derived uniform generalization, using uniformly continuous maps and complete separated targets. [Actual continuous-linear completion](../../Langlands/Topology/RenardTopModuleCompletion.md) and [real-sequence test objects](../../Langlands/Topology/RenardRealSequenceCompletion.md) now have published [linear-universal statements](../../Langlands/Topology/RenardTopModuleCompletionStatements.md) and [concrete test statements](../../Langlands/Topology/RenardRealSequenceCompletionStatements.md), with separate exact-proof obligations; the printed all-continuous-maps claim remains unresolved |
 | A.III.1 example 3, PDF258 | [RenardLocalRingCategory](../../Langlands/Algebra/RenardLocalRingCategory.md): actual ring-denominator category, local full subcategory, localization with designated image submonoid, canonical structured arrow and factor, their evaluation laws and the zero-denominator boundary. [RenardLocalRingUniversalStatement](../../Langlands/Algebra/RenardLocalRingUniversalStatement.md) supplies the published three-clause categorical target; its exact proof remains separate |
-| A.III.1 example 4, PDF258 | [RenardLocalModuleUniversalStatement](../../Langlands/Algebra/RenardLocalModuleUniversalStatement.md) and [RenardLocalModuleUniversalProof](../../Langlands/Algebra/RenardLocalModuleUniversalProof.md): the actual constructed module factor, its uniqueness among all full-subcategory morphisms, and initiality of the actual canonical structured arrow |
+| A.III.1 example 4, PDF258 | [RenardLocalModuleUniversalStatement](../../Langlands/Algebra/RenardLocalModuleUniversalStatement.md) and [RenardLocalModuleUniversalProof](../../Langlands/Algebra/RenardLocalModuleUniversalProof.md): the actual constructed module factor, its uniqueness among all full-subcategory morphisms, and initiality of the actual canonical structured arrow. [RenardLocalModuleFunctor](../../Langlands/Algebra/RenardLocalModuleFunctor.md) supplies the published chosen functor, canonical natural transformation and comparison with the specified Mathlib model |
 | A.III.1 example 5 and subsequent lemma and corollary, PDF258–259 | [PolynomialEndomorphism](../../Langlands/Algebra/PolynomialEndomorphism.md) supplies the published categorical equivalence in the example's first assertion; [RenardInvertibleEndomorphismCategory](../../Langlands/Algebra/RenardInvertibleEndomorphismCategory.md) supplies its actual restriction to local modules and invertible pairs. The [endomorphism-localization note](endomorphism-localization.md) records the five published algebraic proofs, including the B-linear universal property. The narrower boundary for chosen-arrow transport is described below |
 | A.III.2 definition, theorem and proof, PDF259–260 | [YonedaStatements](../../Langlands/CategoryTheory/Renard/YonedaStatements.md) and [YonedaProof](../../Langlands/CategoryTheory/Renard/YonedaProof.md): identity evaluation with its inverse, the actual Yoneda Hom equivalence, the representation dictionary and the equivalence with the full subcategory of representable presheaves |
 | A.III.2 final remark, proof and corollary, PDF260–261 | [RepresentabilityUniversalStatements](../../Langlands/CategoryTheory/Renard/RepresentabilityUniversalStatements.md): three published statements for universality iff the chosen transformation is an isomorphism, the represented Hom-presheaf sufficient condition, and unique compatible comparison; their exact proof successor remains waiting |
@@ -218,15 +219,32 @@ field. Coefficient and categorical carrier universes are independent;
 source separation nor scalar completeness, commutativity, nontriviality or
 finite dimension is imposed.
 
-This is construction coverage. Statement task
-`7b7701fc-0cac-4d27-b1e2-b997920afa55` revision 1 requires the chosen factor's
-triangle equation, uniqueness among all continuous linear competitors,
-initiality, and an adjunction of the existing functors whose unit is exactly
-`canonicalNatTrans`. It also requires density, embedding only for separated
-sources, and the independent-universe concrete extension property.
-Its statement publication and subsequent exact proof remain gates.
-These continuous-linear assertions use a corrected convention; the printed
-example specifies continuous maps without linearity or a fixed scalar field.
+Statement task `7b7701fc-0cac-4d27-b1e2-b997920afa55` revision 1 now has
+the independently published pair
+[RenardTopModuleCompletionStatements](../../Langlands/Topology/RenardTopModuleCompletionStatements.md).
+Its closed aggregate
+`Langlands.Renard.TopModuleCompletion.UniversalStatements.{u,v,w}`
+conjoins six ring clauses and their exact field specialization:
+the chosen extension's triangle equation; uniqueness among all actual
+continuous linear competitors; initiality of the actual canonical structured
+arrow; an adjunction of the existing functors; density and separated
+embedding of the actual canonical map; and concrete chosen extension,
+uniqueness and explicit existence-and-uniqueness with independent source
+and target universes. The adjunction's unit is exactly `canonicalNatTrans`.
+Its inverse Hom map is exactly `extensionHom`, and its forward Hom map
+sends g to `canonicalMap R M ≫ (inclusion R).map g`.
+
+These statements keep arbitrary topological unital rings, independent
+coefficient/source/target universes u, v and w, and the canonical additive
+uniformities. Only targets require completeness and `T0Space`; source
+`T0Space` occurs solely in the embedding implication. Zero rings and zero
+modules remain included. No adjunction or universal-property certificate
+is a premise. Exact proof task
+`ce7f40bb-e686-41b7-a4cd-1b249bc07b6d` revision 1 is published and
+subscribed, with precisely that unchanged aggregate as its target.
+Statement publication and clean declaration inspection supply no proof.
+The corrected continuous-linear convention remains distinct from the printed
+example's continuous maps without linearity or a fixed scalar field.
 
 Worker 1276 constructed
 [RenardRealSequenceCompletion](../../Langlands/Topology/RenardRealSequenceCompletion.md).
@@ -240,14 +258,25 @@ All carriers are in `Type 0`. Density, nonmembership of the chosen point,
 incompleteness, reciprocal continuity and nonextension are not conclusions
 of this construction.
 
-Statement task `a7b67918-772d-4ae0-b2b8-d106d0c4235e` revision 1 requires
-those assertions, the exact continuous-linear comparison of the named
-completion map with the product, joint scalar continuity, and nonextension
-to either the product or the usual completion among all continuous real-valued
-functions. Independent statement publication and an exact proof are still
-required. This is an internal fixed-real test of the usual canonical arrow,
-not a published counterexample, a source correction, or a claim that every
-possible reflection fails.
+Statement task `a7b67918-772d-4ae0-b2b8-d106d0c4235e` revision 1 now has
+the independently published pair
+[RenardRealSequenceCompletionStatements](../../Langlands/Topology/RenardRealSequenceCompletionStatements.md).
+Its closed aggregate
+`Langlands.Renard.RealSequenceCompletion.CompletionCounterexampleStatements`
+conjoins eleven conclusions over these unchanged `Type 0` objects:
+truncation convergence, density, both missing-point assertions,
+incompleteness, positive distance, reciprocal continuity, the exact
+continuous-linear comparison with the product, joint scalar continuity of
+the existing completion action, and both continuous nonextension assertions.
+The comparison equivalence's underlying function is exactly
+`completionToProduct`. Nonextension ranges over every continuous
+real-valued function on the product or actual usual completion agreeing
+with `reciprocalDistance` along the specified canonical arrow.
+No linearity, boundedness or uniform-continuity condition restricts competitors.
+All eleven components remain exact proof obligations; a separate proof
+successor is required. This is an internal fixed-real test, with no published
+counterexample, source correction, or claim that every possible reflection
+fails.
 
 The following three construction publications are independently accepted
 and public under `lean.definition@1`, with unqualified approvals. Their
@@ -265,6 +294,32 @@ fields agree. Each integration records a fresh successful build. All three
 frozen Lean/Markdown pairs match their publication tree, audit base
 `5511f7a53d16d5b6af64ff2175ef6c6ecea5347a` and workspace. The restricted
 equivalence's scope is described next.
+
+Both new completion statement pairs are accepted and public under
+`lean.statement@1`, with unqualified independent approval:
+
+| Statement and author | Candidate / machine receipt | Independent reviewer / review task | Publication commit |
+| --- | --- | --- | --- |
+| Actual topological-module universal property, Worker 1582 with Worker 709 | `88d78a41-0f15-485d-a91e-fbd250875c9b` / `bae4e0dd-5094-4c23-b3d5-418a0097c023` | Reviewer 13424 / `9642262b-fcbf-4fb6-b9af-1773dd1bc31b` | `4dd5f7c45ce9b800a0caffa94e2e790953bf7c96` |
+| Actual real-sequence completion test, Worker 1276 | `4677cf0e-fb45-4a7b-b1fc-6ece663fa96b` / `1d98bd43-34ef-4052-b97c-e3ee15e83253` | Reviewer 13421 / `45f9ccee-b6d4-4e17-860f-336d76e72016` | `4dd5f7c45ce9b800a0caffa94e2e790953bf7c96` |
+
+Their integrations are respectively
+`3fd0ecd496864e349ed62da4f6938853` and
+`ba4f3c6113e045d992bf34a823143e31`, each with a fresh successful
+integrated build. The full independent reports were read and agree with
+the integrated reports in every common field. Both frozen pairs match
+their publication trees, Library `18de63ed841e31dca10a26ef417aea7050cf443f`
+and the workspace. The topological-module pair's Lean/Markdown SHA256 values
+are respectively
+`28413c45eebbdf6385c07c2574283fb6aa51ae47e635cae375a7ab7cda97b427` and
+`79284a0ae20c351b98dc9784d1fdf2094e80f8cb13edf2772ad6944c40ddffde`;
+the real-sequence pair's are
+`31b89cce9e09ccecea2eb32fe1a6a55f0f61d67f734ff5d4118d2acceaeb230a` and
+`8190c66dd18e8e80ac2b437106f3717b83f16153102dbec8a0b362317a4d6c85`.
+Recovery check `e903355e-306b-43e0-9b83-e171c922e9f9` also compiles
+the topological-module construction and statement with zero diagnostics
+and inspects `UniversalStatements` as Prop with independent u, v and w.
+These are statement and development receipts; neither proves an aggregate.
 
 ## Published polynomial-module equivalence and transport boundary
 
@@ -331,10 +386,9 @@ commutative unital rings including the zero ring, without dimension or
 smallness assumptions.
 
 This construction does not compare chosen lifted localization arrows or
-prove their initiality. The chosen-model functor construction below remains
-the next prerequisite for that comparison; the restricted equivalence alone
-does not discharge it. The chosen canonical-arrow comparison, its Prop-valued
-initiality statement and exact proof remain successive obligations.
+prove their initiality. The chosen-model functor prerequisite below is now
+published. The canonical-arrow comparison, its Prop-valued initiality
+statement and exact proof remain successive obligations.
 
 ## Existing exact localization functor and internal comparisons
 
@@ -392,50 +446,132 @@ Mathlib's functor lands in modules over `Localization S`; the project's
 R-modules selected by `IsSLocal S`. Moreover, the project's
 `raisedSource`, `canonicalLocalObject` and `canonicalModuleMap` use the
 explicit ULifts described above, whereas Mathlib uses Shrink.
-An actual comparison must identify these carriers, canonical maps and
-morphism maps and, when needed, the full-subcategory target. Exactness
-of the existing functor alone does not provide those identifications.
-Reuse that functor when a concrete consumer requires such a
-comparison. The published restricted equivalence is now available for the
-source-facing transport.
+The published comparison below identifies these carriers, canonical maps,
+morphism maps and full-subcategory target for the chosen functor.
+Exactness of Mathlib's functor alone did not supply those identifications.
+Chosen-model sequence exactness and its source-facing transport retain
+separate statement/proof obligations for a concrete consumer.
 
-### Chosen local-module functor comparison task
+### Published chosen local-module functor and natural comparison
 
 Focused internal construction task
-`fe93edc1-1343-4f01-b558-43e7dab72c02` revision 1 was published and
-subscribed to on 4 November. It is ready and unassigned, with no submitted
-artifact at that inspection. Its contract requires an actual functor F
-whose objects are exactly `canonicalLocalObject S M` and whose morphisms
-send each lifted denominator representative `m/s` to `f(m)/s`. The source
-functor U is `ModuleCat.uliftFunctor.{max u w,v} R`, with object map
-`raisedSource`. The specified components `canonicalModuleMap S M`
-must form a natural transformation from U to F followed by inclusion.
+`fe93edc1-1343-4f01-b558-43e7dab72c02` revision 1 has two independently
+accepted and published implementations. The current
+[RenardLocalModuleFunctor](../../Langlands/Algebra/RenardLocalModuleFunctor.md)
+pair is Worker 1570's construction in
+`Langlands.Renard.ModuleLocalization`. Its actual `chosenLocalFunctor S`
+has objects exactly `canonicalLocalObject S M`. Its `chosenLocalMap S f`
+conjugates `IsLocalizedModule.map S` by the two ULift linear equivalences,
+and `chosenLocalMap_up_mk` gives the formula
+`ULift.up (LocalizedModule.mk m s) ↦ ULift.up (LocalizedModule.mk (f m) s)`.
+Representative induction proves identity and composition.
+`sourceRaisingFunctor` is exactly
+`ModuleCat.uliftFunctor.{max u w,v} R`, with object map `raisedSource`.
+`chosenLocalizationUnit` has exactly `canonicalModuleMap S M` as its
+components; its naturality holds for every actual R-linear morphism.
 
-For κ = max u v w, the comparison target is the full-subcategory lift of
-the exact composite
+For κ = max u v w, `mathlibLocalizationFunctor` is the exact composite
 
 ```text
 U ⋙ ModuleCat.localizedModuleFunctor.{κ} S ⋙
   ModuleCat.restrictScalars (algebraMap R (Localization S)).
 ```
 
-The contract requires the actual canonical Mathlib maps to form a natural
-transformation into that composite, and a natural isomorphism from F to
-its local-object lift identifying both canonical maps and all morphism
-maps. Its representative formula passes from
-`ULift.up (LocalizedModule.mk m s)` to the Shrink representative of
-`LocalizedModule.mk (ULift.up m) s`. The native R-action used by
-`localizedModuleMkLinearMap` and the R-action obtained by restriction of
-scalars require an explicit compatibility proof; they must not simply be
-treated as definitionally identical.
+`mathlibActionEquiv` identifies the native R-action with the restricted
+action by `IsScalarTower.algebraMap_smul`, using identity functions.
+`mathlibCanonicalMap` and `mathlibLocalizationUnit` therefore land in the
+actual restricted-action objects. Proved locality supplies the actual
+full-subcategory lift `mathlibLocalFunctor`.
 
-The universes u, v and w remain independent. Smallness at κ must be
-discharged internally; zero rings, zero modules and submonoids containing
-zero are included. This task publishes no construction or exactness
-proof by itself. It packages an internal comparison and reuses the now-public
-restricted equivalence while preserving the subsequent chosen
-endomorphism-arrow transport gate. Adjunction and any chosen-model
-sequence-exactness statement and proof remain separate obligations.
+`chosenMathlibLinearEquiv` removes the chosen outer ULift, localizes the
+source-raising linear equivalence, passes through the actual Shrink
+equivalence and compares the scalar actions. `chosenMathlibIso` bundles
+these equivalences naturally into the local full subcategory. Its
+`chosenMathlibIso_hom_up_mk` formula sends
+`ULift.up (LocalizedModule.mk m s)` to the Shrink representative of
+`LocalizedModule.mk (ULift.up m) s`. The exact canonical-arrow law is
+
+```text
+canonicalModuleMap S M ≫
+  (localModuleInclusion S).map ((chosenMathlibIso S).hom.app M) =
+  (mathlibLocalizationUnit S).app M.
+```
+
+Naturality for every morphism and both component inverse laws are proved.
+The comparison uses `IsLocalizedModule.ext` on the actual raised canonical
+arrow, whose localization instance is established by the existing ULift
+equivalences. It assumes no universal-property certificate.
+Independent u, v and w are retained, with Smallness at κ discharged
+internally. Zero rings, zero modules and submonoids containing zero are
+included, without dimension, faithfulness or nontriviality restrictions.
+
+Worker 1603's alternative is preserved in
+[RenardLocalModuleFunctorUniversalComparison](../../Langlands/Algebra/RenardLocalModuleFunctorUniversalComparison.md),
+namespace `Langlands.Renard.ModuleLocalization.UniversalComparison`.
+It constructs the same specified chosen-object functor and comparison
+through the universal properties of the two verified localization maps.
+Its source and canonical transformations are named `sourceRaiseFunctor`,
+`chosenLocalizationNatTrans` and `mathlibLocalizationNatTrans`.
+Use Worker 1570's names for the successor composite below.
+
+Both are accepted and public under `lean.definition@1`, with unqualified
+independent reviews and fresh successful integrated builds:
+
+| Construction | Candidate / machine receipt | Independent reviewer / review task | Integration / publication commit |
+| --- | --- | --- | --- |
+| Worker 1570, current main pair | `96d4c3a1-4c2b-4390-b521-6262dfe22174` / `882301a1-0d47-4ae3-a2b3-ac8ad6df1bb5` | Reviewer 13207 / `6f70ccbf-ea37-4d5e-b39c-15a2f01996f3` | `3e2f53aa038b4ecf9f17abecf9624ac7` / `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817` |
+| Worker 1603, relocated alternative | `442a17e3-6f93-49ff-a266-703d8935941b` / `f1f8e51c-332c-4821-b839-7fcedc1c792a` | Reviewer 13215 / `2bf89aa3-5938-4fe1-a45a-792146211c2d` | `dedb752c270b4956a7f2afd745c508cc` / `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817` |
+
+The full independent reports were read. Worker 1570's frozen pair equals
+the main pair in the publication, audit Library and workspace.
+Worker 1603's integration changes the Lean namespace and the companion's
+title, namespace and alternative-construction link; its relocated pair
+equals the published and local alternative. It is not a same-path
+byte-identical copy of the frozen submission. The relocation preserves
+its construction and intrinsic laws. Neither unit publishes an adjunction
+or chosen-model sequence-exactness theorem.
+
+### Chosen endomorphism canonical-arrow comparison task
+
+Focused construction task `e340435d-c0ce-453f-9f1b-31629e02bc52`
+revision 1 is published and subscribed. With PE =
+`Langlands.Algebra.PolynomialEndomorphism`, ML =
+`Langlands.Renard.ModuleLocalization`, EL =
+`Langlands.Renard.EndomorphismLocalization`, and κ = max u v w,
+it requires the actual composite
+
+```text
+F = PE.toPolynomial R ⋙ ML.chosenLocalFunctor.{u,v,w} (EL.powersX R) ⋙
+      EL.localFromPolynomial.{u,κ} R.
+```
+
+The required source comparison β identifies the explicitly raised pair
+`(ULift A.a, x ↦ ULift.up (A.str x.down))` with
+`PE.toPolynomial ⋙ ML.sourceRaisingFunctor ⋙ PE.fromPolynomial`,
+including the actual `Module.AEval'.of` carrier and action identifications.
+The transported chosen map θ comes from the actual
+`ML.canonicalModuleMap`. The explicit target functor E uses
+`ULift.{w} (EL.Localized a)`, the lifted `EL.localizedEnd a`, and the
+localized map of every original intertwiner. The required α : F ≅ E
+must compare the native and restricted constant-polynomial actions
+explicitly, using `EL.smul_eq_C_smul`, and retain the X-action.
+With J the actual invertible-pair inclusion and ι the natural map
+`ULift.up x ↦ ULift.up (EL.iota a x)`, the required equation is
+
+```text
+β_A.hom ≫ θ_A ≫ J.map (α.hom.app A) = ι.app A.
+```
+
+The task also requires the actual structured-arrow isomorphism with
+target component α. This identifies both chosen arrows, including their
+raised sources, rather than only their targets. It retains arbitrary
+commutative rings and independent u, v and w, all intertwiners, zero rings
+and modules, and zero or nilpotent source endomorphisms. The exact field
+specialization has no dimension restriction.
+This published contract supplies no comparison mathematics. After its
+construction publishes, Prop-valued initiality/factorization statements
+and their exact proof remain successors. Chosen-model exactness and
+adjunctions retain their separate obligations.
 
 ## The separate representability proof gate
 
@@ -615,7 +751,8 @@ The ring example's actual construction and categorical statement are published;
 its exact proof task remains open. The binary example-1 comparisons and the
 precise uniform generalization of example 2 are proved.
 The actual continuous-linear completion and fixed-real test constructions
-are published, with their distinct statement and exact-proof gates above.
+and statement pairs are published. The former has the exact proof task
+above; all eleven fixed-real conclusions still require a separate exact proof.
 The printed all-continuous-maps vector-space completion claim
 remains unresolved; see the [limits and colimits source map](limits-colimits-progress.md)
 for related public results. The module example uses invertibility of
@@ -625,9 +762,9 @@ For example 5, the remaining full categorical transport of the chosen
 localization universal arrow is specified above, separately from the
 published polynomial-module/endomorphism equivalence, its actual local
 restriction and object-level localization formulas.
-The chosen functor and natural model comparison
-now have the focused construction task above; they remain unpublished
-mathematics. Exactness comparisons with these chosen models are internal
+The chosen functor and natural model comparison are now published;
+their endomorphism canonical-arrow transport has the focused construction
+task above. Exactness comparisons with these chosen models are internal
 backlog, with an existing exact Mathlib functor available for reuse.
 Further compatible comparisons for the concrete constructions and their adjunctions retain
 separate obligations. Existing adjunction results can be found in the
