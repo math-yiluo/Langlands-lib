@@ -7,7 +7,12 @@ import Langlands.Geometry.Building.IwahoriWeyl
 import Langlands.GroupScheme.Rational.GenericCocharacter
 import Mathlib.Data.Set.Finite.Lemmas
 
-/-! # Intersections over the affine Weyl orbit of a chamber -/
+/-! # Intersections over the affine Weyl orbit of a chamber
+
+The saturation argument uses only ordered-root injectivity on rational points
+for the supplied torus embedding. Compatibility wrappers retain the original
+global Dynamic product interface.
+-/
 
 noncomputable section
 
@@ -16,6 +21,36 @@ universe u
 open CategoryTheory AlgebraicGeometry
 open scoped CategoryTheory.MonObj Pointwise
 open Langlands.GroupScheme
+
+namespace Langlands.GroupScheme.RelativeRoot
+
+/-- Ordered multiplication of the actual positive root groups is injective on
+rational points, for every cocharacter and injective root enumeration of this
+one torus embedding. -/
+def OrderedRootPointInjectivity
+    {k : Type u} [Field k]
+    {S : CommGroupScheme (Spec (CommRingCat.of k))}
+    {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
+    (i : S.toGrp ⟶ G) : Prop :=
+  ∀ (ν : cocharacterLattice S) (n : ℕ) (a : Fin n → characterLattice S),
+    Function.Injective a → Set.range a = indivisiblePositiveRoots i ν →
+      Function.Injective (fun x : ∀ r, (subgroup i (a r)).carrier (Over.mk (𝟙 _)) =>
+        (List.ofFn fun r => (x r : rationalPoints G)).prod)
+
+/-- The published global Dynamic statement supplies the local rational-point
+injectivity used in chamber saturation. -/
+theorem orderedRootPointInjectivity_of_dynamicRootOrderedProduct
+    (hprod : DynamicRootOrderedProductStatement.{u})
+    {k : Type u} [Field k]
+    {S : CommGroupScheme (Spec (CommRingCat.of k))}
+    {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
+    (hG : IsConnectedReductive G) {i : S.toGrp ⟶ G}
+    (hi : IsMaximalSplitTorus i) : OrderedRootPointInjectivity i := by
+  intro ν n a ha hrange
+  exact orderedRootSubgroupPoints_injective_of_statement
+    hprod hG hi ν a ha hrange (Over.mk (𝟙 _))
+
+end Langlands.GroupScheme.RelativeRoot
 
 namespace Langlands.Geometry.Building
 
@@ -64,9 +99,8 @@ theorem eq_one_of_forall_mem_filtration_affineWeylOrbit
 
 /-- Ordered-root uniqueness identifies coordinates across chamber points.
 The affine Weyl orbit then forces every coordinate to be the identity. -/
-theorem eq_one_of_forall_mem_range_orderedChamberBlockProduct
-    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
-    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+theorem eq_one_of_forall_mem_range_orderedChamberBlockProduct_of_orderedRootInjectivity
+    (hinj : RelativeRoot.OrderedRootPointInjectivity i)
     (hsys : AffineRootSystem.IsAffineRootSystemWithRankZero D.affineRoots)
     (hAS4 : ∀ ψ ∈ D.extendedAffineRoots,
       ψ ∈ D.affineRoots ∨ (2 : ℝ) • ψ ∈ D.affineRoots)
@@ -94,8 +128,7 @@ theorem eq_one_of_forall_mem_range_orderedChamberBlockProduct
     let s' : ∀ r, rootGroupPoints i (a r) := fun r =>
       ⟨s r, D.chamberRootBlock_subset_rootGroupPoints _ false (hroot r) (s r).property⟩
     have hcoords : t' = s' :=
-      RelativeRoot.orderedRootSubgroupPoints_injective_of_statement
-        hprod hG hi ν a ha hrange (Over.mk (𝟙 _)) (ht.trans hs.symm)
+      hinj ν n a ha hrange (ht.trans hs.symm)
     have heq : (t r : rationalPoints G) = (s r : rationalPoints G) :=
       congrArg (fun z => (z r : rationalPoints G)) hcoords
     rw [heq]
@@ -104,6 +137,26 @@ theorem eq_one_of_forall_mem_range_orderedChamberBlockProduct
     D.eq_one_of_forall_mem_filtration_affineWeylOrbit hsys hAS4 hC hx (hroot r) (hmem r)
   rw [← ht]
   simp [orderedChamberBlockProduct, htone]
+
+/-- Compatibility form with the published global Dynamic product premise. -/
+theorem eq_one_of_forall_mem_range_orderedChamberBlockProduct
+    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+    (hsys : AffineRootSystem.IsAffineRootSystemWithRankZero D.affineRoots)
+    (hAS4 : ∀ ψ ∈ D.extendedAffineRoots,
+      ψ ∈ D.affineRoots ∨ (2 : ℝ) • ψ ∈ D.affineRoots)
+    {C : Set D.Apartment} (hC : AffineRootSystem.IsChamber D.affineRoots C)
+    {x : D.Apartment} (hx : x ∈ C)
+    (ν : cocharacterLattice S) {n : ℕ} (a : Fin n → characterLattice S)
+    (ha : Function.Injective a)
+    (hrange : Set.range a = RelativeRoot.indivisiblePositiveRoots i ν)
+    {g : rationalPoints G}
+    (hg : ∀ w : AffineRootSystem.affineWeylGroup D.affineRoots,
+      g ∈ Set.range (D.orderedChamberBlockProduct
+        ((w : D.Apartment ≃ᵃ[ℝ] D.Apartment) x) false a)) : g = 1 :=
+  D.eq_one_of_forall_mem_range_orderedChamberBlockProduct_of_orderedRootInjectivity
+    (RelativeRoot.orderedRootPointInjectivity_of_dynamicRootOrderedProduct hprod hG hi)
+    hsys hAS4 hC hx ν a ha hrange hg
 
 end KPApartmentData
 
@@ -143,9 +196,9 @@ private theorem iwahoriUnipotentFactors_eq {C E : Set P.Apartment}
 
 /-- Full chamber decompositions have the same ambient factors at all orbit
 chambers. Ordered-root uniqueness and reflection remove both unipotent factors. -/
-theorem mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit
+theorem mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit_of_orderedRootInjectivity
     (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
-    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hinj : RelativeRoot.OrderedRootPointInjectivity P.i)
     (hdec : P.ChamberIwahoriDecompositionStatement)
     {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C)
     {g : rationalPoints G}
@@ -186,15 +239,15 @@ theorem mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit
   have hblocks (w : AffineRootSystem.affineWeylGroup P.affineRoots) :=
     (hIw w).2.2.2.2.2.2 false nneg npos aneg apos haneg hrneg hapos hrpos
   have hminus : (p.1 : rationalPoints G) = 1 :=
-    P.apartment.eq_one_of_forall_mem_range_orderedChamberBlockProduct
-      hprod P.isConnectedReductive P.isMaximalSplitTorus
+    P.apartment.eq_one_of_forall_mem_range_orderedChamberBlockProduct_of_orderedRootInjectivity
+      hinj
       hP.isAffineRootSystem_affineRoots hP.mem_or_two_smul_mem hC hx
       (-ν) aneg haneg hrneg (fun w => by
         rw [(hblocks w).2.1]
         exact (hU w).1)
   have hplus : (p.2.2 : rationalPoints G) = 1 :=
-    P.apartment.eq_one_of_forall_mem_range_orderedChamberBlockProduct
-      hprod P.isConnectedReductive P.isMaximalSplitTorus
+    P.apartment.eq_one_of_forall_mem_range_orderedChamberBlockProduct_of_orderedRootInjectivity
+      hinj
       hP.isAffineRootSystem_affineRoots hP.mem_or_two_smul_mem hC hx
       ν apos hapos hrpos (fun w => by
         rw [(hblocks w).2.2.2.1]
@@ -204,9 +257,9 @@ theorem mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit
 
 /-- The affine Weyl orbit of one chamber has full-parahoric intersection
 exactly the actual centralizer-zero image, under the retained product inputs. -/
-theorem iInf_parahoric_affineWeylOrbit_eq_centralizerZeroImage
+theorem iInf_parahoric_affineWeylOrbit_eq_centralizerZeroImage_of_orderedRootInjectivity
     (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
-    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hinj : RelativeRoot.OrderedRootPointInjectivity P.i)
     (hdec : P.ChamberIwahoriDecompositionStatement)
     {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C) :
     (⨅ w : AffineRootSystem.affineWeylGroup P.affineRoots,
@@ -214,8 +267,8 @@ theorem iInf_parahoric_affineWeylOrbit_eq_centralizerZeroImage
         P.centralizerZero.map (rationalPoints.map P.centralizer.j) := by
   apply le_antisymm
   · intro g hg
-    exact P.mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit
-      hP hprod hdec hC (Subgroup.mem_iInf.1 hg)
+    exact P.mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit_of_orderedRootInjectivity
+      hP hinj hdec hC (Subgroup.mem_iInf.1 hg)
   · exact le_iInf fun w => P.map_centralizerZero_le_parahoric _
 
 /-- Rank-one factorization lifts every affine Weyl transformation to the actual
@@ -233,10 +286,10 @@ theorem exists_normalizerZeroComponent_lift_affineWeyl_of_rankOneFactorization
 
 /-- The parahorics of the actual restricted-normalizer translates of a chamber
 intersect in exactly the actual centralizer-zero image. -/
-theorem iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage
+theorem iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage_of_orderedRootInjectivity
     (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
     (hrank : RelativeRoot.HasRankOneFactorization P.i)
-    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hinj : RelativeRoot.OrderedRootPointInjectivity P.i)
     (hdec : P.ChamberIwahoriDecompositionStatement)
     {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C) :
     (⨅ n : P.normalizerZeroComponent,
@@ -244,7 +297,8 @@ theorem iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage
         P.centralizerZero.map (rationalPoints.map P.centralizer.j) := by
   apply le_antisymm
   · intro g hg
-    apply P.mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit hP hprod hdec hC
+    apply P.mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit_of_orderedRootInjectivity
+      hP hinj hdec hC
     intro w
     obtain ⟨n, hnw⟩ :=
       P.exists_normalizerZeroComponent_lift_affineWeyl_of_rankOneFactorization hP hrank w
@@ -256,6 +310,91 @@ theorem iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage
 
 /-- The conditional saturation implication uses actual normalizer points and
 the original zero-subgroup premise, as in the published saturation input. -/
+theorem mem_centralizerZero_of_forall_mem_parahoric_normalizerZeroComponent_of_orderedRootInjectivity
+    (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (hrank : RelativeRoot.HasRankOneFactorization P.i)
+    (hinj : RelativeRoot.OrderedRootPointInjectivity P.i)
+    (hdec : P.ChamberIwahoriDecompositionStatement)
+    {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C)
+    {g : rationalPoints G}
+    (hg : ∀ n : normalizerPoints P.i, (n : rationalPoints G) ∈ P.zeroSubgroup →
+      g ∈ P.parahoric (n • C)) :
+    g ∈ P.centralizerZero.map (rationalPoints.map P.centralizer.j) := by
+  rw [← P.iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage_of_orderedRootInjectivity
+    hP hrank hinj hdec hC]
+  exact Subgroup.mem_iInf.2 fun n => hg n n.property
+
+/-- The identity on ambient rational points identifies the intersection of
+actual chamber translates with the actual centralizer-zero image. -/
+def chamberConjugateParahoricEquivCentralizerZeroImage_of_orderedRootInjectivity
+    (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (hrank : RelativeRoot.HasRankOneFactorization P.i)
+    (hinj : RelativeRoot.OrderedRootPointInjectivity P.i)
+    (hdec : P.ChamberIwahoriDecompositionStatement)
+    {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C) :
+    ↥(⨅ n : P.normalizerZeroComponent,
+      P.parahoric ((n : normalizerPoints P.i) • C)) ≃*
+        P.centralizerZero.map (rationalPoints.map P.centralizer.j) :=
+  MulEquiv.subgroupCongr
+    (P.iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage_of_orderedRootInjectivity
+      hP hrank hinj hdec hC)
+
+/-- The chamber-intersection equivalence preserves the ambient rational point. -/
+@[simp] theorem chamberConjugateParahoricEquivCentralizerZeroImage_of_orderedRootInjectivity_apply_coe
+    (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (hrank : RelativeRoot.HasRankOneFactorization P.i)
+    (hinj : RelativeRoot.OrderedRootPointInjectivity P.i)
+    (hdec : P.ChamberIwahoriDecompositionStatement)
+    {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C)
+    (g : ↥(⨅ n : P.normalizerZeroComponent,
+      P.parahoric ((n : normalizerPoints P.i) • C))) :
+    ((P.chamberConjugateParahoricEquivCentralizerZeroImage_of_orderedRootInjectivity
+      hP hrank hinj hdec hC g :
+      P.centralizerZero.map (rationalPoints.map P.centralizer.j)) : rationalPoints G) = g :=
+  rfl
+
+/-- Compatibility form with the published global Dynamic product premise. -/
+theorem mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit
+    (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hdec : P.ChamberIwahoriDecompositionStatement)
+    {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C)
+    {g : rationalPoints G}
+    (hg : ∀ w : AffineRootSystem.affineWeylGroup P.affineRoots,
+      g ∈ P.parahoric ((w : P.Apartment ≃ᵃ[ℝ] P.Apartment) '' C)) :
+    g ∈ P.centralizerZero.map (rationalPoints.map P.centralizer.j) :=
+  P.mem_centralizerZero_of_forall_mem_parahoric_affineWeylOrbit_of_orderedRootInjectivity hP
+    (RelativeRoot.orderedRootPointInjectivity_of_dynamicRootOrderedProduct
+      hprod P.isConnectedReductive P.isMaximalSplitTorus) hdec hC hg
+
+/-- Compatibility form with the published global Dynamic product premise. -/
+theorem iInf_parahoric_affineWeylOrbit_eq_centralizerZeroImage
+    (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hdec : P.ChamberIwahoriDecompositionStatement)
+    {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C) :
+    (⨅ w : AffineRootSystem.affineWeylGroup P.affineRoots,
+      P.parahoric ((w : P.Apartment ≃ᵃ[ℝ] P.Apartment) '' C)) =
+        P.centralizerZero.map (rationalPoints.map P.centralizer.j) :=
+  P.iInf_parahoric_affineWeylOrbit_eq_centralizerZeroImage_of_orderedRootInjectivity hP
+    (RelativeRoot.orderedRootPointInjectivity_of_dynamicRootOrderedProduct
+      hprod P.isConnectedReductive P.isMaximalSplitTorus) hdec hC
+
+/-- Compatibility form with the published global Dynamic product premise. -/
+theorem iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage
+    (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (hrank : RelativeRoot.HasRankOneFactorization P.i)
+    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hdec : P.ChamberIwahoriDecompositionStatement)
+    {C : Set P.Apartment} (hC : AffineRootSystem.IsChamber P.affineRoots C) :
+    (⨅ n : P.normalizerZeroComponent,
+      P.parahoric ((n : normalizerPoints P.i) • C)) =
+        P.centralizerZero.map (rationalPoints.map P.centralizer.j) :=
+  P.iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage_of_orderedRootInjectivity hP hrank
+    (RelativeRoot.orderedRootPointInjectivity_of_dynamicRootOrderedProduct
+      hprod P.isConnectedReductive P.isMaximalSplitTorus) hdec hC
+
+/-- Compatibility form with the published global Dynamic product premise. -/
 theorem mem_centralizerZero_of_forall_mem_parahoric_normalizerZeroComponent
     (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
     (hrank : RelativeRoot.HasRankOneFactorization P.i)
@@ -265,13 +404,12 @@ theorem mem_centralizerZero_of_forall_mem_parahoric_normalizerZeroComponent
     {g : rationalPoints G}
     (hg : ∀ n : normalizerPoints P.i, (n : rationalPoints G) ∈ P.zeroSubgroup →
       g ∈ P.parahoric (n • C)) :
-    g ∈ P.centralizerZero.map (rationalPoints.map P.centralizer.j) := by
-  rw [← P.iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage
-    hP hrank hprod hdec hC]
-  exact Subgroup.mem_iInf.2 fun n => hg n n.property
+    g ∈ P.centralizerZero.map (rationalPoints.map P.centralizer.j) :=
+  P.mem_centralizerZero_of_forall_mem_parahoric_normalizerZeroComponent_of_orderedRootInjectivity hP hrank
+    (RelativeRoot.orderedRootPointInjectivity_of_dynamicRootOrderedProduct
+      hprod P.isConnectedReductive P.isMaximalSplitTorus) hdec hC hg
 
-/-- The identity on ambient rational points identifies the intersection of
-actual chamber translates with the actual centralizer-zero image. -/
+/-- Compatibility form with the published global Dynamic product premise. -/
 def chamberConjugateParahoricEquivCentralizerZeroImage
     (hP : P.apartment.SatisfiesApartmentAxioms P.centralizer)
     (hrank : RelativeRoot.HasRankOneFactorization P.i)
@@ -281,8 +419,9 @@ def chamberConjugateParahoricEquivCentralizerZeroImage
     ↥(⨅ n : P.normalizerZeroComponent,
       P.parahoric ((n : normalizerPoints P.i) • C)) ≃*
         P.centralizerZero.map (rationalPoints.map P.centralizer.j) :=
-  MulEquiv.subgroupCongr
-    (P.iInf_parahoric_normalizerZeroComponent_eq_centralizerZeroImage hP hrank hprod hdec hC)
+  P.chamberConjugateParahoricEquivCentralizerZeroImage_of_orderedRootInjectivity hP hrank
+    (RelativeRoot.orderedRootPointInjectivity_of_dynamicRootOrderedProduct
+      hprod P.isConnectedReductive P.isMaximalSplitTorus) hdec hC
 
 /-- The chamber-intersection equivalence preserves the ambient rational point. -/
 @[simp] theorem chamberConjugateParahoricEquivCentralizerZeroImage_apply_coe

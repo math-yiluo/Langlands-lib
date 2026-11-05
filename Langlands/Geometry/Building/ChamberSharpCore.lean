@@ -211,17 +211,25 @@ theorem chamberRootGroup_eq_zero_of_mem_chamber
   | false => rfl
   | true => exact (D.filtration_eq_filtrationPlus_of_mem_chamber hAS4 hC hx ha).symm
 
-/-- The exact sharp chamber conclusion follows from the right-central core
-inclusion, with the Dynamic premise supplying ordered-coordinate injectivity. -/
-theorem chamberSharpConclusion_of_core
-    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
-    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+/-- Injectivity of each actual ordered positive-root block map at the one
+apartment point, for either depth and every cocharacter and injective order. -/
+def OrderedChamberBlockInjectivity (x : D.Apartment) : Prop :=
+  ∀ (strict : Bool) (ν : cocharacterLattice S) (n : ℕ)
+    (a : Fin n → characterLattice S),
+    Function.Injective a →
+    Set.range a = RelativeRoot.indivisiblePositiveRoots i ν →
+      Function.Injective (D.orderedChamberBlockProduct x strict a)
+
+/-- The exact sharp chamber conclusion uses only local ordered-block
+injectivity in addition to the right-central core and geometric comparisons. -/
+theorem chamberSharpConclusion_of_core_of_blockInjectivity
     (hsys : AffineRootSystem.IsAffineRootSystemWithRankZero D.extendedAffineRoots)
     (hderiv : AffineRootSystem.derivativeRoots D.extendedAffineRoots = Set.range (rootForm i))
     (hAS4 : ∀ ψ ∈ D.extendedAffineRoots,
       ψ ∈ D.affineRoots ∨ (2 : ℝ) • ψ ∈ D.affineRoots)
     {C : Set D.Apartment} (hC : AffineRootSystem.IsChamber D.affineRoots C)
     {x : D.Apartment} (hx : x ∈ C)
+    (hinj : D.OrderedChamberBlockInjectivity x)
     (hcore : ∀ mu : cocharacterLattice S, IsGenericCocharacter i mu →
       (D.sharpFixer {x} : Set (rationalPoints G)) ⊆
       ((⨆ b : positiveRelativeRoots i (-mu), D.chamberRootGroup x false b :
@@ -257,13 +265,50 @@ theorem chamberSharpConclusion_of_core
   intro strict nneg npos aneg apos haneg hrneg hapos hrpos
   have hn := hblock (-ν) hνneg strict aneg hrneg
   have hp := hblock ν hν strict apos hrpos
-  exact ⟨D.orderedChamberBlockProduct_injective_of_dynamicRootOrderedProduct
-      hprod hG hi x strict (-ν) aneg haneg hrneg, hn,
-    D.orderedChamberBlockProduct_injective_of_dynamicRootOrderedProduct
-      hprod hG hi x strict ν apos hapos hrpos, hp,
-    D.orderedSharpChamberProduct_injective_of_dynamicRootOrderedProduct
-      hprod hG hi x strict ν aneg apos haneg hrneg hapos hrpos,
+  have hnI := hinj strict (-ν) nneg aneg haneg hrneg
+  have hpI := hinj strict ν npos apos hapos hrpos
+  have htI : Function.Injective (D.orderedSharpChamberProduct x strict aneg apos) := by
+    have hnroot r : aneg r ∈ RelativeRoot.indivisiblePositiveRoots i (-ν) :=
+      hrneg ▸ Set.mem_range_self r
+    have hproot r : apos r ∈ RelativeRoot.indivisiblePositiveRoots i ν :=
+      hrpos ▸ Set.mem_range_self r
+    exact unipotentTripleProduct_injective_of_maps i ν
+      (D.orderedChamberBlockProduct x strict aneg)
+      (fun z : D.sharpCentralizer {x} => (z : rationalPoints G))
+      (D.orderedChamberBlockProduct x strict apos)
+      hnI Subtype.val_injective hpI
+      (D.orderedChamberBlockProduct_mem_dynamicUnipotent x strict (-ν) aneg
+        (fun r => (hnroot r).1.1) (fun r => (hnroot r).2))
+      (D.orderedChamberBlockProduct_mem_dynamicUnipotent x strict ν apos
+        (fun r => (hproot r).1.1) (fun r => (hproot r).2))
+      (fun z => z.property.1)
+  exact ⟨hnI, hn, hpI, hp, htI,
     (D.range_orderedSharpChamberProduct_of_block_ranges C x strict ν aneg apos hn hp).trans
       hrange⟩
+
+/-- Compatibility form retaining the original global Dynamic product premise. -/
+theorem chamberSharpConclusion_of_core
+    (hprod : RelativeRoot.DynamicRootOrderedProductStatement.{u})
+    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+    (hsys : AffineRootSystem.IsAffineRootSystemWithRankZero D.extendedAffineRoots)
+    (hderiv : AffineRootSystem.derivativeRoots D.extendedAffineRoots = Set.range (rootForm i))
+    (hAS4 : ∀ ψ ∈ D.extendedAffineRoots,
+      ψ ∈ D.affineRoots ∨ (2 : ℝ) • ψ ∈ D.affineRoots)
+    {C : Set D.Apartment} (hC : AffineRootSystem.IsChamber D.affineRoots C)
+    {x : D.Apartment} (hx : x ∈ C)
+    (hcore : ∀ mu : cocharacterLattice S, IsGenericCocharacter i mu →
+      (D.sharpFixer {x} : Set (rationalPoints G)) ⊆
+      ((⨆ b : positiveRelativeRoots i (-mu), D.chamberRootGroup x false b :
+        Subgroup (rationalPoints G)) : Set (rationalPoints G)) *
+      ((⨆ b : positiveRelativeRoots i mu, D.chamberRootGroup x false b :
+        Subgroup (rationalPoints G)) : Set (rationalPoints G)) *
+      (D.sharpCentralizer {x} : Set (rationalPoints G)))
+    (ν : cocharacterLattice S) (hν : IsGenericCocharacter i ν) :
+    D.ChamberSharpConclusion C x ν  := by
+  apply D.chamberSharpConclusion_of_core_of_blockInjectivity
+    hsys hderiv hAS4 hC hx _ hcore ν hν
+  intro strict mu n a ha hrange
+  exact D.orderedChamberBlockProduct_injective_of_dynamicRootOrderedProduct
+    hprod hG hi x strict mu a ha hrange
 
 end Langlands.Geometry.Building.KPApartmentData
