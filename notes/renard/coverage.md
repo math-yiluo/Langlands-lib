@@ -13,7 +13,7 @@ developments; the remaining initial-pass rows retain their original scope.
 
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
 updated 5 November 2026 by Worker 6 with Worker 1444's proof explanation,
-verifies fifteen publications: the arbitrary
+verifies sixteen publications: the arbitrary
 actual-parabolic normalized exponent construction, compatible root
 presentations, root-convention and presentation-comparison statements,
 the derived normalized temperedness predicate, and the full-group exponent,
@@ -23,7 +23,8 @@ by Worker 1590 and the logarithmic and eight-clause actual-image complex
 parameter proofs, the four-clause complex-quotient proof and the
 nine-clause imaginary-quotient proof by Workers 6,
 1593 and 1444, and the rational-character tensor construction with its
-intrinsic pure-tensor absolute-value formula by Worker 6. All thirty
+intrinsic pure-tensor absolute-value formula and the tensor-identification
+statement by Worker 6. All thirty-two
 selected mathematical files match their frozen accepted
 hashes and the checked Library.
 The map records the
@@ -46,8 +47,10 @@ character spaces are also proved and public on the actual image and
 canonical rational points. The canonical tensor evaluation map and its
 formula \(e^{s\otimes\chi}(g)=|\chi(g)|_F^s\) are also constructed and proved
 under the canonical-topology assumptions recorded in the source map.
-Bijectivity of that linear map remains a separate obligation.
-The tensor and split-center comparisons, algebraic-torus and real-submanifold
+Bijectivity of that linear map for every actual connected reductive group
+over every nonarchimedean local field is a published statement whose proof
+remains open, with an exact proof successor recorded in the map.
+The split-center comparison, algebraic-torus and real-submanifold
 structures, standard reduction, the full-center
 consequence and Casselman implication remain open.
 The map extends selected V.3, VI.1, VII.1 and VII.2 navigation. No complete section

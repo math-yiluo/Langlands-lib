@@ -4,7 +4,7 @@ Worker 6, with Worker 1444's published proof explanation, updated
 5 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records fifteen verified publications and the remaining gates to the
+It records sixteen verified publications and the remaining gates to the
 all-parabolic temperedness criterion. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
@@ -15,9 +15,9 @@ French version dated 9 July 2026, registered as
 PDF page numbers below are one-based and equal printed page numbers plus six.
 The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
-compilation, and all thirty selected mathematical files match their
-frozen accepted hashes and the files at Library
-`9caf47cacd8f25d9a56aa0737b4256267bf62d16`.
+compilation, and all thirty-two selected mathematical files match their
+frozen accepted hashes, their publication commits and the files at Library
+`a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee`.
 
 ## Selected source assertions and exact interfaces
 
@@ -30,7 +30,8 @@ frozen accepted hashes and the files at Library
 | V.3.19–V.3.20, 115–116 / 121–122, combined with VII.2.1, 227 / 233: real parameters and the exponent-cone test | The published theorem `normalizedTemperedLogarithmicComparison` proves the corrected all-point formula with factor `-log q`, the equivalent negative-raw cone test, and the complete predicate comparison. It preserves every compatible-presentation quantifier and does not prove presentation existence. |
 | V.3.20, 116 / 122: complex exponential, periods, lifts and unitary image | The published theorem `Langlands.Plancherel.rationalComplexParameter` proves the eight algebraic actual-image and canonical-point assertions: surjectivity, period kernel and difference criterion, normalized real part of every lift, unitarity and imaginary image, and the two canonical-point transfers. The separately published `rationalComplexParameterQuotient` proves the two complex open quotient maps and their prescribed-value quotient homeomorphisms. |
 | V.3.20, 116 / 122: period lattice and compact imaginary quotient | The published theorem `Langlands.Plancherel.rationalImaginaryParameterQuotient` proves discreteness and closedness of the original and restricted periods, compactness of the imaginary quotient, and the two imaginary open quotient maps and prescribed-value quotient homeomorphisms on the actual image and canonical rational points. The source's tensor, algebraic-torus and real-submanifold identifications remain separate. |
-| V.3.20, 116 / 122: rational-character tensors and the pure-tensor absolute-value formula | The published construction `Langlands.Plancherel.rationalCharacterTensorParameter` extends actual integer evaluation to a complex-linear map. For affine groups locally of finite type, its composition with the existing canonical exponential satisfies `rationalCanonicalCharacterTensorExponential_tmul_val`, the formula \(e^{s\otimes\chi}(g)=\lvert\chi(g)\rvert_F^s\) on every actual rational point. Bijectivity of the tensor map and the split-center comparison remain separate. |
+| V.3.20, 116 / 122: rational-character tensors and the pure-tensor absolute-value formula | The published construction `Langlands.Plancherel.rationalCharacterTensorParameter` extends actual integer evaluation to a complex-linear map. For affine groups locally of finite type, its composition with the existing canonical exponential satisfies `rationalCanonicalCharacterTensorExponential_tmul_val`, the formula \(e^{s\otimes\chi}(g)=\lvert\chi(g)\rvert_F^s\) on every actual rational point. The split-center comparison remains separate. |
+| V.3.19–V.3.20, 115–116 / 121–122: the equal-rank lattices and \(\mathfrak a^*_{\mathbb C}=\operatorname{Hom}_{\mathbb Z}(\Lambda(M),\mathbb C)\), written \(X^*(M)\otimes_{\mathbb Z}\mathbb C\) on printed p.116 | The published `Langlands.Plancherel.RationalCharacterTensorParameterStatement` asserts bijectivity of `rationalCharacterTensorParameter G` for every actual connected reductive `G` over every nonarchimedean local field, taking the Levi to be the group itself. This is a published **statement**; its proof is open. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
 | VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The published derived `IsNormalizedExponentTempered` combines admissibility with the actual all-parabolic, all-presentation condition. Its explicitly normalized parameter retains the corrected-source comparison described below; this construction does not complete original source-definition coverage. |
@@ -80,8 +81,8 @@ representation.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. The fifteen units
-are four definitions, six statements and five exact proofs. A definition
+independent semantic approval and a published integration. The sixteen units
+are four definitions, seven statements and five exact proofs. A definition
 receipt covers its construction and intrinsic laws; a statement receipt
 does not prove its proposition.
 
@@ -102,6 +103,7 @@ does not prove its proposition.
 | [RationalComplexParameterQuotient](../../Langlands/Representation/Plancherel/RationalComplexParameterQuotient.md), `Langlands.Plancherel.rationalComplexParameterQuotient` | Proof `a58e2446-72fb-4062-bcac-b87da5b45f60`; Reviewer 13393, review `ee719a12-f6dc-42e7-87a6-283296241bab`; machine `16a2d280-f771-43e9-b4df-b244157d1347`; integration `1af3227263864292abdd7c8aab4006c5`, commit `4dd5f7c45ce9b800a0caffa94e2e790953bf7c96`. |
 | [RationalCharacterTensorParameter](../../Langlands/Representation/Plancherel/RationalCharacterTensorParameter.md), `Langlands.Plancherel.rationalCharacterTensorParameter` | Definition `26067a47-60dc-42c6-b970-0b48d6dd0418`; Reviewer 13447, review `82e0e7f1-8ba4-4c75-855e-6d84cc7a8e42`; machine `820db56f-6140-40be-842a-e10723cc6549`; integration `21dce902fd0a4fd986346142cee3f988`, commit `a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a`. |
 | [RationalImaginaryParameterQuotient](../../Langlands/Representation/Plancherel/RationalImaginaryParameterQuotient.md), `Langlands.Plancherel.rationalImaginaryParameterQuotient` | Proof `0042d3d0-a5de-43a4-b591-57f448440d61`; Reviewer 13591, review `9432d9b0-fd9f-45fd-a23d-ee372f95697c`; machine `d0230032-5aac-4d1c-aa54-ffe0d6d4fe14`; integration `c39f56b6be424d78a59f7539b2545335`, commit `476a152fd90d846bcb20b9897f53829a768b822c`. |
+| [RationalCharacterTensorParameterStatement](../../Langlands/Representation/Plancherel/RationalCharacterTensorParameterStatement.md), `Langlands.Plancherel.RationalCharacterTensorParameterStatement` | Statement `f7204678-3ab1-4e53-9259-4d1e150443a4`; Reviewer 13675, review `f264fbab-ae9e-4c7d-8bcc-1c917767f113`; machine `0c42ded1-b040-4b46-9991-9900e0764d8f`; integration `c41ffb6de8da431d9f052d0bf1673cbe`, commit `409542525904dd50036abafdafb8ad1459eadade`. |
 
 The logarithmic, algebraic complex-parameter, complex-quotient and
 imaginary-quotient machine receipts each accept
@@ -268,8 +270,27 @@ commutation.
 The construction and its intrinsic laws do not prove that the canonical
 linear map is bijective. Finite freeness of the actual valuation image
 alone supplies no rank comparison with the rational-character group.
-That identification, the split-center comparison, algebraic-torus
-representability and manifold structure retain separate proof obligations.
+
+The separately published `RationalCharacterTensorParameterStatement`
+states that identification. It quantifies over every field universe,
+every nonarchimedean local field with its field, valuation and topology
+instances, and every actual connected reductive group scheme over it. Its
+conclusion is bijectivity of the existing `rationalCharacterTensorParameter G`
+from `ℂ ⊗[ℤ] GroupScheme.rationalCharacters G` to the existing
+`rationalImageComplexFunctionals G`, the additive complex functionals on
+the actual `rationalDiscreteValuationImage G`. It chooses no replacement
+lattice, pairing or map, and adds no splitting, rank-equality,
+character-restriction, supplied-bijectivity or characteristic-zero premise.
+The Markdown paired with the statement relates it to V.3.19's equal-rank
+lattices and V.3.20's two descriptions of \(\mathfrak a^*_{\mathbb C}\), taking the
+group itself as the Levi.
+
+Exact proof successor `a34dad15-286e-41e2-95c7-2ef8c2110901` revision 1
+targets this proposition under `lean.proof@1`, with the structural
+owners listed in its contract unchanged. Neither the statement receipt
+nor the proof task proves bijectivity. The split-center comparison,
+algebraic-torus representability and manifold structure retain separate
+proof obligations.
 The coroot-pairing positivity used for the Langlands-classification parameters
 of VII.4 also retains its own construction and comparison obligations.
 
@@ -374,9 +395,10 @@ The dependency order still requires:
 2. Proof of the published presentation existence, full
    independence and transport targets. Fixed-presentation pullback laws
    do not replace these targets.
-3. The tensor and split-center comparisons, algebraic-torus and
-   real-submanifold structures, and exact proofs of the published
-   standard-reduction and corrected central-character statements. The
+3. Proof of the published tensor-identification statement, the
+   split-center comparison, algebraic-torus and real-submanifold
+   structures, and exact proofs of the published standard-reduction and
+   corrected central-character statements. The
    corrected logarithmic comparison, eight algebraic complex-parameter
    clauses, four complex-quotient clauses and nine imaginary-quotient clauses
    above are already proved and public.
