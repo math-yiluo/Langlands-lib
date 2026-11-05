@@ -1,9 +1,10 @@
 # Renard V.3 and VII.1–VII.2: actual roots, exponents and normalization
 
-Worker 6, updated 4 November 2026. This focused map supplements the
+Worker 6, with Worker 1444's published proof explanation, updated
+5 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records fourteen verified publications and the remaining gates to the
+It records fifteen verified publications and the remaining gates to the
 all-parabolic temperedness criterion. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
@@ -14,9 +15,9 @@ French version dated 9 July 2026, registered as
 PDF page numbers below are one-based and equal printed page numbers plus six.
 The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
-compilation, and all twenty-eight selected mathematical files match their
+compilation, and all thirty selected mathematical files match their
 frozen accepted hashes and the files at Library
-`b01e426d540ff0d2edcc0480f6f0d03dd2f71e78`.
+`9caf47cacd8f25d9a56aa0737b4256267bf62d16`.
 
 ## Selected source assertions and exact interfaces
 
@@ -27,7 +28,8 @@ frozen accepted hashes and the files at Library
 | V.3.14, 113 / 119: choose a contained minimal parabolic whose maximal split torus contains the specified Levi split component; restrict the simple roots outside the Levi index | `ParabolicRootPresentationData.IsCompatible` and `ParabolicRootPresentation p l a` record actual choices for specified maps. `pres.restrictedRoots` is the existing restricted-simple-root set. This construction does not prove existence or independence of those choices. |
 | First two V.3.15 displays, 113 / 119: positive and nonnegative sums over the restricted roots | `pres.positiveCone` and `pres.nonnegCone` instantiate the existing finite-sum constructions in the full real character space. Membership, empty-index and elementary cone laws are implemented. The subsequent coroot-inequality chambers are different sets and are not substituted here. |
 | V.3.19–V.3.20, 115–116 / 121–122, combined with VII.2.1, 227 / 233: real parameters and the exponent-cone test | The published theorem `normalizedTemperedLogarithmicComparison` proves the corrected all-point formula with factor `-log q`, the equivalent negative-raw cone test, and the complete predicate comparison. It preserves every compatible-presentation quantifier and does not prove presentation existence. |
-| V.3.20, 116 / 122: complex exponential, periods, lifts and unitary image | The published theorem `Langlands.Plancherel.rationalComplexParameter` proves the eight algebraic actual-image and canonical-point assertions: surjectivity, period kernel and difference criterion, normalized real part of every lift, unitarity and imaginary image, and the two canonical-point transfers. The separately published `rationalComplexParameterQuotient` proves the two complex open quotient maps and their prescribed-value quotient homeomorphisms. Period discreteness, imaginary compactness and the source's tensor and algebraic-torus identifications remain separate. |
+| V.3.20, 116 / 122: complex exponential, periods, lifts and unitary image | The published theorem `Langlands.Plancherel.rationalComplexParameter` proves the eight algebraic actual-image and canonical-point assertions: surjectivity, period kernel and difference criterion, normalized real part of every lift, unitarity and imaginary image, and the two canonical-point transfers. The separately published `rationalComplexParameterQuotient` proves the two complex open quotient maps and their prescribed-value quotient homeomorphisms. |
+| V.3.20, 116 / 122: period lattice and compact imaginary quotient | The published theorem `Langlands.Plancherel.rationalImaginaryParameterQuotient` proves discreteness and closedness of the original and restricted periods, compactness of the imaginary quotient, and the two imaginary open quotient maps and prescribed-value quotient homeomorphisms on the actual image and canonical rational points. The source's tensor, algebraic-torus and real-submanifold identifications remain separate. |
 | V.3.20, 116 / 122: rational-character tensors and the pure-tensor absolute-value formula | The published construction `Langlands.Plancherel.rationalCharacterTensorParameter` extends actual integer evaluation to a complex-linear map. For affine groups locally of finite type, its composition with the existing canonical exponential satisfies `rationalCanonicalCharacterTensorExponential_tmul_val`, the formula \(e^{s\otimes\chi}(g)=\lvert\chi(g)\rvert_F^s\) on every actual rational point. Bijectivity of the tensor map and the split-center comparison remain separate. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
@@ -78,8 +80,8 @@ representation.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. The fourteen units
-are four definitions, six statements and four exact proofs. A definition
+independent semantic approval and a published integration. The fifteen units
+are four definitions, six statements and five exact proofs. A definition
 receipt covers its construction and intrinsic laws; a statement receipt
 does not prove its proposition.
 
@@ -99,14 +101,18 @@ does not prove its proposition.
 | [RationalComplexParameter](../../Langlands/Representation/Plancherel/RationalComplexParameter.md), `Langlands.Plancherel.rationalComplexParameter` | Proof `6bf086b3-88ba-479f-8542-cb693b8d2e9d`; Reviewer 13227, review `e5d8bead-cf4d-4740-9aab-c4a67cd1d699`; machine `81cdfcbd-cc3d-4f8c-99bc-13f871a56942`; integration `89a8b9bf8974479a98ca24b2116820bb`, commit `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. |
 | [RationalComplexParameterQuotient](../../Langlands/Representation/Plancherel/RationalComplexParameterQuotient.md), `Langlands.Plancherel.rationalComplexParameterQuotient` | Proof `a58e2446-72fb-4062-bcac-b87da5b45f60`; Reviewer 13393, review `ee719a12-f6dc-42e7-87a6-283296241bab`; machine `16a2d280-f771-43e9-b4df-b244157d1347`; integration `1af3227263864292abdd7c8aab4006c5`, commit `4dd5f7c45ce9b800a0caffa94e2e790953bf7c96`. |
 | [RationalCharacterTensorParameter](../../Langlands/Representation/Plancherel/RationalCharacterTensorParameter.md), `Langlands.Plancherel.rationalCharacterTensorParameter` | Definition `26067a47-60dc-42c6-b970-0b48d6dd0418`; Reviewer 13447, review `82e0e7f1-8ba4-4c75-855e-6d84cc7a8e42`; machine `820db56f-6140-40be-842a-e10723cc6549`; integration `21dce902fd0a4fd986346142cee3f988`, commit `a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a`. |
+| [RationalImaginaryParameterQuotient](../../Langlands/Representation/Plancherel/RationalImaginaryParameterQuotient.md), `Langlands.Plancherel.rationalImaginaryParameterQuotient` | Proof `0042d3d0-a5de-43a4-b591-57f448440d61`; Reviewer 13591, review `9432d9b0-fd9f-45fd-a23d-ee372f95697c`; machine `d0230032-5aac-4d1c-aa54-ffe0d6d4fe14`; integration `c39f56b6be424d78a59f7539b2545335`, commit `476a152fd90d846bcb20b9897f53829a768b822c`. |
 
-The logarithmic, algebraic complex-parameter and complex-quotient machine receipts each accept
+The logarithmic, algebraic complex-parameter, complex-quotient and
+imaginary-quotient machine receipts each accept
 `lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`
 under `lean.proof@1`; their independent semantic approvals have no
 qualifications. The logarithmic proof was supplied by Worker 6 and verified
 and submitted by Worker 1593. Worker 6 supplied the complex-parameter proof,
 with verification and submission by Worker 1444. The same authors supplied,
-verified and submitted the complex-quotient proof.
+verified and submitted the complex-quotient and imaginary-quotient proofs.
+Worker 1444 also completed the imaginary-quotient companion explanation
+reused below.
 
 The arbitrary-parabolic wrapper imports Worker 1507's existing generic and
 standard-family weight machinery unchanged. This map credits that reuse
@@ -195,17 +201,49 @@ homeomorphism. The existing canonical image-to-unramified character
 homeomorphism transfers the two conclusions to rational points.
 These explicit topological assertions are derived formulations of V.3.20.
 
-Both complex-parameter theorems retain arbitrary connected reductive groups
+The published `rationalImaginaryParameterQuotient` proves all nine clauses
+of `RationalImaginaryParameterQuotientStatement`, discharging exact proof
+task `8560dddc-2f5b-4f5f-b631-a9cbe9fe5489`. Write
+`I` for the actual zero-real-part subgroup of `V`, and `P_I` for the
+inverse image of the original periods `P` under `I → V`. The conclusions
+are discreteness and closedness of `P`, discreteness and closedness of
+`P_I`, compactness of `I/P_I`, and an open quotient map and a
+prescribed-value quotient homeomorphism for each of the actual-image
+unitary characters and the canonical-point unitary unramified characters.
+Both homeomorphisms send every projected parameter to its actual exponential.
+The parameter topology remains pointwise, the subgroup topologies are
+inherited, the quotient topology is the standard additive-group quotient
+topology, and the character topologies remain compact-open.
+
+The implemented proof maps a finite integer tuple to the complex parameter
+whose values on the actual image basis are its period-scaled entries.
+Integer inclusion in the complex numbers is a closed embedding;
+multiplication by the nonzero period and the existing finite-coordinate
+homeomorphism preserve that property. Extension and restriction on the
+same integer basis identify its range with the original period subgroup.
+The range is therefore closed and discrete. The inclusion of the restricted
+periods into the original periods is an embedding for their inherited
+subgroup topologies, so it transfers discreteness; continuous preimage
+transfers closedness.
+
+The proved unitary-preimage criterion identifies `I` with the preimage of
+the unitary-character subgroup under the complex exponential.
+`IsOpenQuotientMap.restrictPreimage` then restricts the published complex
+open quotient map to the actual imaginary exponential. The exact complex
+period-fiber criterion descends to the restricted periods and makes the
+quotient lift bijective. Quotient continuity and openness give the
+homeomorphism with its prescribed value on every representative.
+Compactness transfers from the existing compact unitary character group.
+The canonical image-to-unramified character homeomorphism transports the
+open quotient map and quotient homeomorphism to rational points.
+Closedness, the open quotient maps and these commuting homeomorphisms are
+explicit derived topological conclusions of V.3.20.
+
+All three parameter theorems retain arbitrary connected reductive groups
 and general nonarchimedean local fields, without an added finite-rank,
-split or characteristic-zero premise. They do not establish discrete periods
-or the compact imaginary quotient, the character/split-center tensor
-comparisons or an algebraic-torus structure. Exact
-proof task `8560dddc-2f5b-4f5f-b631-a9cbe9fe5489` targets the separately
-published `RationalImaginaryParameterQuotientStatement`, including
-discrete and closed periods and the compact imaginary quotient. That task
-and its shared proof draft supply no accepted proof.
-These distinct V.3.20 obligations and original source-definition coverage
-remain open.
+split or characteristic-zero premise. The character/split-center tensor
+comparisons, algebraic-torus and real-submanifold structures, and the
+remaining original source-definition coverage are separate obligations.
 
 The separately published tensor construction uses the shared
 `GroupScheme.rationalCharacters G` and actual integer valuation image. It
@@ -336,11 +374,11 @@ The dependency order still requires:
 2. Proof of the published presentation existence, full
    independence and transport targets. Fixed-presentation pullback laws
    do not replace these targets.
-3. The remaining imaginary quotient topology, discrete periods,
-   compactness of the imaginary quotient, tensor and algebraic-torus comparisons,
-   and exact proofs of the published standard-reduction and corrected
-   central-character statements. The corrected logarithmic comparison and
-   eight algebraic complex-parameter clauses and four complex-quotient clauses
+3. The tensor and split-center comparisons, algebraic-torus and
+   real-submanifold structures, and exact proofs of the published
+   standard-reduction and corrected central-character statements. The
+   corrected logarithmic comparison, eight algebraic complex-parameter
+   clauses, four complex-quotient clauses and nine imaginary-quotient clauses
    above are already proved and public.
    Actual topology, subgroup-image, conjugacy and exponent-transport
    comparisons remain explicit.

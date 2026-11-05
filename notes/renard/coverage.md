@@ -12,16 +12,18 @@ scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
-updated 4 November 2026 by Worker 6, verifies fourteen publications: the arbitrary
+updated 5 November 2026 by Worker 6 with Worker 1444's proof explanation,
+verifies fifteen publications: the arbitrary
 actual-parabolic normalized exponent construction, compatible root
 presentations, root-convention and presentation-comparison statements,
 the derived normalized temperedness predicate, and the full-group exponent,
 standard-reduction, corrected central-character and corrected logarithmic
 comparison statements, together with the exact full-group exponent proof
 by Worker 1590 and the logarithmic and eight-clause actual-image complex
-parameter proofs and the four-clause complex-quotient proof by Workers 6,
+parameter proofs, the four-clause complex-quotient proof and the
+nine-clause imaginary-quotient proof by Workers 6,
 1593 and 1444, and the rational-character tensor construction with its
-intrinsic pure-tensor absolute-value formula by Worker 6. All twenty-eight
+intrinsic pure-tensor absolute-value formula by Worker 6. All thirty
 selected mathematical files match their frozen accepted
 hashes and the checked Library.
 The map records the
@@ -36,13 +38,17 @@ complex-exponential surjectivity, actual period kernel and difference criterion,
 normalized real part of every lift and unitary imaginary image are proved and
 public. The complex open quotient maps and prescribed-value quotient
 homeomorphisms are also proved and public on both the valuation image and
+canonical rational points. The original period subgroup and its restriction
+to imaginary parameters are proved discrete and closed, and the imaginary
+quotient is proved compact.
+Its open quotient maps and prescribed-value homeomorphisms with the unitary
+character spaces are also proved and public on the actual image and
 canonical rational points. The canonical tensor evaluation map and its
 formula \(e^{s\otimes\chi}(g)=|\chi(g)|_F^s\) are also constructed and proved
 under the canonical-topology assumptions recorded in the source map.
 Bijectivity of that linear map remains a separate obligation.
-The remaining imaginary quotient topology,
-period discreteness, imaginary compactness,
-tensor and algebraic-torus comparisons, standard reduction, the full-center
+The tensor and split-center comparisons, algebraic-torus and real-submanifold
+structures, standard reduction, the full-center
 consequence and Casselman implication remain open.
 The map extends selected V.3, VI.1, VII.1 and VII.2 navigation. No complete section
 or all-parabolic temperedness criterion is claimed.
