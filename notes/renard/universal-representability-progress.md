@@ -1,12 +1,13 @@
 # Renard A.III: universal arrows, representability and isomorphism principles
 
-Worker 709, 4 November 2026. This source map records six independently
+Worker 709, 4 November 2026. This source map records seven independently
 accepted and published proof units, including the binary-diagonal comparisons,
-separated uniform completion, the published ring-denominator construction and
-categorical statement, and the polynomial-module and restricted equivalences.
+separated uniform completion and the actual ring-localization categorical
+universal property. It also records the published ring-denominator construction
+and statement, and the polynomial-module and restricted equivalences.
 The chosen local-module functor and its natural Mathlib comparison are now
 public, as are the actual continuous-linear completion and real-sequence
-statement pairs. The ring and representability proofs, both completion proofs
+statement pairs. The representability proof, both completion proofs
 and the chosen endomorphism-arrow comparison remain open.
 It complements the five proofs in the
 [endomorphism-localization note](endomorphism-localization.md). It makes no
@@ -45,7 +46,7 @@ route.
 | A.III.1 definition and comparison remark, PDF257–258 | [UniversalArrowStatements](../../Langlands/CategoryTheory/Renard/UniversalArrowStatements.md) and [UniversalArrowProof](../../Langlands/CategoryTheory/Renard/UniversalArrowProof.md): both factorization/initiality or terminality equivalences, and the unique isomorphism compatible with two chosen right or left solutions |
 | A.III.1 example 1, PDF258; A.IV.1–2 binary comparison, PDF263 | [BinaryDiagonalStatements](../../Langlands/CategoryTheory/Renard/BinaryDiagonalStatements.md) and [BinaryDiagonalProof](../../Langlands/CategoryTheory/Renard/BinaryDiagonalProof.md): four proved comparisons of the supplied diagonal arrows with simultaneous unique factorization and the actual binary limit or colimit witnesses |
 | A.III.1 example 2, PDF258 | [UniformCompletionStatements](../../Langlands/CategoryTheory/Renard/UniformCompletionStatements.md) and [UniformCompletionProof](../../Langlands/CategoryTheory/Renard/UniformCompletionProof.md): four proved components for the derived uniform generalization, using uniformly continuous maps and complete separated targets. [Actual continuous-linear completion](../../Langlands/Topology/RenardTopModuleCompletion.md) and [real-sequence test objects](../../Langlands/Topology/RenardRealSequenceCompletion.md) now have published [linear-universal statements](../../Langlands/Topology/RenardTopModuleCompletionStatements.md) and [concrete test statements](../../Langlands/Topology/RenardRealSequenceCompletionStatements.md), with separate exact-proof obligations; the printed all-continuous-maps claim remains unresolved |
-| A.III.1 example 3, PDF258 | [RenardLocalRingCategory](../../Langlands/Algebra/RenardLocalRingCategory.md): actual ring-denominator category, local full subcategory, localization with designated image submonoid, canonical structured arrow and factor, their evaluation laws and the zero-denominator boundary. [RenardLocalRingUniversalStatement](../../Langlands/Algebra/RenardLocalRingUniversalStatement.md) supplies the published three-clause categorical target; its exact proof remains separate |
+| A.III.1 example 3, PDF258 | [RenardLocalRingCategory](../../Langlands/Algebra/RenardLocalRingCategory.md): actual ring-denominator category, local full subcategory, localization with designated image submonoid, canonical structured arrow and factor, their evaluation laws and the zero-denominator boundary. [RenardLocalRingUniversalStatement](../../Langlands/Algebra/RenardLocalRingUniversalStatement.md) and [RenardLocalRingUniversalProof](../../Langlands/Algebra/RenardLocalRingUniversalProof.md): the chosen factor's triangle equation, uniqueness among all commuting local-category maps, and initiality of the actual canonical structured arrow are proved |
 | A.III.1 example 4, PDF258 | [RenardLocalModuleUniversalStatement](../../Langlands/Algebra/RenardLocalModuleUniversalStatement.md) and [RenardLocalModuleUniversalProof](../../Langlands/Algebra/RenardLocalModuleUniversalProof.md): the actual constructed module factor, its uniqueness among all full-subcategory morphisms, and initiality of the actual canonical structured arrow. [RenardLocalModuleFunctor](../../Langlands/Algebra/RenardLocalModuleFunctor.md) supplies the published chosen functor, canonical natural transformation and comparison with the specified Mathlib model |
 | A.III.1 example 5 and subsequent lemma and corollary, PDF258–259 | [PolynomialEndomorphism](../../Langlands/Algebra/PolynomialEndomorphism.md) supplies the published categorical equivalence in the example's first assertion; [RenardInvertibleEndomorphismCategory](../../Langlands/Algebra/RenardInvertibleEndomorphismCategory.md) supplies its actual restriction to local modules and invertible pairs. The [endomorphism-localization note](endomorphism-localization.md) records the five published algebraic proofs, including the B-linear universal property. The narrower boundary for chosen-arrow transport is described below |
 | A.III.2 definition, theorem and proof, PDF259–260 | [YonedaStatements](../../Langlands/CategoryTheory/Renard/YonedaStatements.md) and [YonedaProof](../../Langlands/CategoryTheory/Renard/YonedaProof.md): identity evaluation with its inverse, the actual Yoneda Hom equivalence, the representation dictionary and the equivalence with the full subcategory of representable presheaves |
@@ -628,7 +629,7 @@ older-edition evidence, not an exhaustive errata claim.
 
 ## Verified proof publications
 
-All six rows are accepted and public with unqualified independent
+All seven rows are accepted and public with unqualified independent
 approval. Each listed machine receipt accepts the exact candidate under
 `lean.proof@1`, recording Lake build, exact target, unchanged statement
 and frozen-input checks. Publication was separately verified.
@@ -641,6 +642,7 @@ and frozen-input checks. Publication was separately verified.
 | Isomorphism principles, Worker 1187 | `943837d5-fb5f-483c-a15b-d50ffeda1a24` / `3fc55e17-5478-4be5-9e0b-d8e0731dab8a` | Reviewer 7518 / `ff8ec1d4-b1df-451a-ad5e-805f6138a681` | `da0312e3777850c14b211f6245ff5b08af56f616` |
 | Binary diagonal, Worker 1570 | `195cc426-9e99-4fb4-89b8-b048df85033f` / `76115644-7eed-4ecb-b462-b9f0adcc77d3` | Reviewer 13002 / `0030caaa-3ff8-4392-a7e5-7af1541fa988` | `442ff746325df5b6d721fee75d430a65c33d09f0` |
 | Separated uniform completion, Worker 1580 | `ab87f47d-9cdd-4caa-b11f-5d6392984aba` / `688960c5-1091-4771-851c-8f9f44242b5e` | Reviewer 13064 / `e6592340-9bf7-4d57-826c-3a8f8854cfb5` | `d2a3dab5880b35349069e39d96304f678174efff` |
+| Actual ring localization, Worker 1301 with Worker 709 | `2e8ebe7c-2a86-4c78-b263-7e6a635fb705` / `14e12de7-0fa3-4ff4-bdab-c7493c4a26f4` | Reviewer 13467 / `59072e33-b9a6-4ba0-9b3d-277d3ba5a6da` | `a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a` |
 
 At audit base `b3c3e9d6d2583790775c36d7a1ac7db8baaf9e48`,
 the four frozen proof pairs and the representability statement pair
@@ -681,7 +683,7 @@ The unchanged target pair has Lean SHA256
 and Markdown SHA256
 `a7bf3f4081f9a74071c8911233f762071cbd852476b1471c308e0cec695ee366`.
 
-## Published ring-denominator construction and its proof gate
+## Published ring-denominator construction and categorical proof
 
 Worker 1301, with Worker 709, constructed
 [RenardLocalRingCategory](../../Langlands/Algebra/RenardLocalRingCategory.md).
@@ -739,16 +741,52 @@ workspace: Lean SHA256
 Markdown SHA256
 `08bec4b9b8c3009bff8c889b4df147e941520c5bd4763fcea5fba1f348a34c67`.
 
-Exact proof task `dd07e94c-b543-487f-8120-e6037cb9c974` revision 1 is now
-published and subscribed. It requires a theorem of that unchanged aggregate,
-with the actual chosen factor and all local-category competitors.
-The statement's publication and the clean recovery declaration inspection
-establish no categorical proof.
+Exact proof task `dd07e94c-b543-487f-8120-e6037cb9c974` revision 1 now has
+the accepted and published
+[RenardLocalRingUniversalProof](../../Langlands/Algebra/RenardLocalRingUniversalProof.md).
+Worker 1301's theorem
+`Langlands.Renard.RingLocalization.categoricalUniversalStatements`
+proves exactly the unchanged closed `CategoricalUniversalStatements.{u}`,
+with Worker 709's source correspondence, statement design and factorization
+route.
+
+Extensionality reduces the chosen factor's triangle equation to evaluation
+on each original ring element, where `canonicalFactor_algebraMap` applies.
+For every commuting local-category map, extensionality removes the
+full-subcategory and denominator-preservation wrappers.
+`IsLocalization.ringHom_ext` reduces equality of its underlying ring map
+with the chosen factor to agreement after the algebra map. Evaluating the
+assumed triangle gives that agreement; competitors need not be presented
+as localization lifts. `Limits.IsInitial.ofUniqueHom` then uses
+`StructuredArrow.homMk` of the chosen factor to construct initiality.
+`StructuredArrow.w`, the proved factor uniqueness and
+`StructuredArrow.hom_ext` identify every competing structured-arrow map.
+The proof retains the designated image, arbitrary common u, zero rings
+and zero denominators, without further mathematical premises.
+
+The proof candidate and exact machine receipt appear in the table above.
+Reviewer 13467's full unqualified independent report was read and agrees
+with the integrated report in every common field. Integration
+`fce23df03a7f464294913df1bc5fcff0` published the proof at
+`a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a`, with a fresh successful
+integrated build. The frozen proof pair matches its publication tree,
+Library `b01e426d540ff0d2edcc0480f6f0d03dd2f71e78` and the workspace:
+Lean SHA256
+`713604c936253dc02b615242cf8e4dbccc4124c8ec1622133eea2466bda931dd`,
+Markdown SHA256
+`9903008248140a079c87e063cf9b0602dab64f672bf43fa0ac7b5c229ec21d9c`.
+The construction and statement pairs also match the proof base,
+publication tree, checked Library and workspace, with the unchanged
+hashes recorded above. The exact proof receipt passes Lake build,
+exact-target, unchanged-statement and frozen-input checks.
+This proves the three categorical assertions for example 3. Localization
+functors, reflection and adjunctions, independent-target-universe transport
+and further comparisons retain separate obligations.
 
 ## Remaining A.III obligations
 
-The ring example's actual construction and categorical statement are published;
-its exact proof task remains open. The binary example-1 comparisons and the
+The ring example's actual construction, categorical statement and exact
+three-clause proof are published. The binary example-1 comparisons and the
 precise uniform generalization of example 2 are proved.
 The actual continuous-linear completion and fixed-real test constructions
 and statement pairs are published. The former has the exact proof task
@@ -770,4 +808,4 @@ Further compatible comparisons for the concrete constructions and their adjuncti
 separate obligations. Existing adjunction results can be found in the
 [A.V source map](adjunctions-progress.md).
 Neither these remaining comparisons nor the waiting representability
-proof may be counted as completed by the six proof publications above.
+proof may be counted as completed by the seven proof publications above.

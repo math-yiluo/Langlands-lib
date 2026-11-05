@@ -3,7 +3,7 @@
 Worker 6, updated 4 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records thirteen verified publications and the remaining gates to the
+It records fourteen verified publications and the remaining gates to the
 all-parabolic temperedness criterion. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
@@ -14,9 +14,9 @@ French version dated 9 July 2026, registered as
 PDF page numbers below are one-based and equal printed page numbers plus six.
 The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
-compilation, and all twenty-six selected mathematical files match their
+compilation, and all twenty-eight selected mathematical files match their
 frozen accepted hashes and the files at Library
-`4dd5f7c45ce9b800a0caffa94e2e790953bf7c96`.
+`b01e426d540ff0d2edcc0480f6f0d03dd2f71e78`.
 
 ## Selected source assertions and exact interfaces
 
@@ -28,6 +28,7 @@ frozen accepted hashes and the files at Library
 | First two V.3.15 displays, 113 / 119: positive and nonnegative sums over the restricted roots | `pres.positiveCone` and `pres.nonnegCone` instantiate the existing finite-sum constructions in the full real character space. Membership, empty-index and elementary cone laws are implemented. The subsequent coroot-inequality chambers are different sets and are not substituted here. |
 | V.3.19–V.3.20, 115–116 / 121–122, combined with VII.2.1, 227 / 233: real parameters and the exponent-cone test | The published theorem `normalizedTemperedLogarithmicComparison` proves the corrected all-point formula with factor `-log q`, the equivalent negative-raw cone test, and the complete predicate comparison. It preserves every compatible-presentation quantifier and does not prove presentation existence. |
 | V.3.20, 116 / 122: complex exponential, periods, lifts and unitary image | The published theorem `Langlands.Plancherel.rationalComplexParameter` proves the eight algebraic actual-image and canonical-point assertions: surjectivity, period kernel and difference criterion, normalized real part of every lift, unitarity and imaginary image, and the two canonical-point transfers. The separately published `rationalComplexParameterQuotient` proves the two complex open quotient maps and their prescribed-value quotient homeomorphisms. Period discreteness, imaginary compactness and the source's tensor and algebraic-torus identifications remain separate. |
+| V.3.20, 116 / 122: rational-character tensors and the pure-tensor absolute-value formula | The published construction `Langlands.Plancherel.rationalCharacterTensorParameter` extends actual integer evaluation to a complex-linear map. For affine groups locally of finite type, its composition with the existing canonical exponential satisfies `rationalCanonicalCharacterTensorExponential_tmul_val`, the formula \(e^{s\otimes\chi}(g)=\lvert\chi(g)\rvert_F^s\) on every actual rational point. Bijectivity of the tensor map and the split-center comparison remain separate. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
 | VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The published derived `IsNormalizedExponentTempered` combines admissibility with the actual all-parabolic, all-presentation condition. Its explicitly normalized parameter retains the corrected-source comparison described below; this construction does not complete original source-definition coverage. |
@@ -77,8 +78,8 @@ representation.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. The thirteen units
-are three definitions, six statements and four exact proofs. A definition
+independent semantic approval and a published integration. The fourteen units
+are four definitions, six statements and four exact proofs. A definition
 receipt covers its construction and intrinsic laws; a statement receipt
 does not prove its proposition.
 
@@ -97,6 +98,7 @@ does not prove its proposition.
 | [NormalizedTemperedLogarithmicComparison](../../Langlands/Representation/Exponents/NormalizedTemperedLogarithmicComparison.md), `Langlands.Aubert.General.RepresentedParabolic.normalizedTemperedLogarithmicComparison` | Proof `a9190a54-90e8-40f0-8b72-607383ca08bb`; Reviewer 13198, review `20105ad0-bbb4-4e17-bf5e-725e4973a61d`; machine `d3ac77ed-f0b6-4bff-9adc-f96cf6d2657a`; integration `65312fa4ce6f4b40a0e52b06c2ae1e33`, commit `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. |
 | [RationalComplexParameter](../../Langlands/Representation/Plancherel/RationalComplexParameter.md), `Langlands.Plancherel.rationalComplexParameter` | Proof `6bf086b3-88ba-479f-8542-cb693b8d2e9d`; Reviewer 13227, review `e5d8bead-cf4d-4740-9aab-c4a67cd1d699`; machine `81cdfcbd-cc3d-4f8c-99bc-13f871a56942`; integration `89a8b9bf8974479a98ca24b2116820bb`, commit `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. |
 | [RationalComplexParameterQuotient](../../Langlands/Representation/Plancherel/RationalComplexParameterQuotient.md), `Langlands.Plancherel.rationalComplexParameterQuotient` | Proof `a58e2446-72fb-4062-bcac-b87da5b45f60`; Reviewer 13393, review `ee719a12-f6dc-42e7-87a6-283296241bab`; machine `16a2d280-f771-43e9-b4df-b244157d1347`; integration `1af3227263864292abdd7c8aab4006c5`, commit `4dd5f7c45ce9b800a0caffa94e2e790953bf7c96`. |
+| [RationalCharacterTensorParameter](../../Langlands/Representation/Plancherel/RationalCharacterTensorParameter.md), `Langlands.Plancherel.rationalCharacterTensorParameter` | Definition `26067a47-60dc-42c6-b970-0b48d6dd0418`; Reviewer 13447, review `82e0e7f1-8ba4-4c75-855e-6d84cc7a8e42`; machine `820db56f-6140-40be-842a-e10723cc6549`; integration `21dce902fd0a4fd986346142cee3f988`, commit `a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a`. |
 
 The logarithmic, algebraic complex-parameter and complex-quotient machine receipts each accept
 `lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`
@@ -197,13 +199,39 @@ Both complex-parameter theorems retain arbitrary connected reductive groups
 and general nonarchimedean local fields, without an added finite-rank,
 split or characteristic-zero premise. They do not establish discrete periods
 or the compact imaginary quotient, the character/split-center tensor
-comparisons, the pure-tensor formula or an algebraic-torus structure. Exact
+comparisons or an algebraic-torus structure. Exact
 proof task `8560dddc-2f5b-4f5f-b631-a9cbe9fe5489` targets the separately
 published `RationalImaginaryParameterQuotientStatement`, including
 discrete and closed periods and the compact imaginary quotient. That task
 and its shared proof draft supply no accepted proof.
 These distinct V.3.20 obligations and original source-definition coverage
 remain open.
+
+The separately published tensor construction uses the shared
+`GroupScheme.rationalCharacters G` and actual integer valuation image. It
+evaluates a character at an image element and includes that integer in
+complex numbers, then uses `AlgebraTensorModule.lift` to obtain
+`rationalCharacterTensorParameter`. Thus
+\((s\otimes\chi)(a)=s\,a(\chi)\). Composing with the existing exponential
+gives \(\exp(-s\,a(\chi)\log q)\).
+
+On canonical rational points,
+`rationalCanonicalCharacterTensorExponential_tmul_val` proves the source's
+pure-tensor absolute-value formula. The proof writes the positive
+residue-normalized absolute value as \(q^{-v_F(\chi(g))}\), takes its real
+logarithm, identifies the complex logarithm of that positive real number
+and rewrites complex power. The construction works for any actual group
+scheme over the given local field; its canonical-point formula adds only
+affineness and local finite type. It assumes no reductivity, splitting,
+characteristic-zero or rank condition. Mathlib's scalar-first tensor
+convention is related to the source's character-first notation by tensor
+commutation.
+
+The construction and its intrinsic laws do not prove that the canonical
+linear map is bijective. Finite freeness of the actual valuation image
+alone supplies no rank comparison with the rational-character group.
+That identification, the split-center comparison, algebraic-torus
+representability and manifold structure retain separate proof obligations.
 The coroot-pairing positivity used for the Langlands-classification parameters
 of VII.4 also retains its own construction and comparison obligations.
 

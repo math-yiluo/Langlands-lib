@@ -12,7 +12,7 @@ scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
-updated 4 November 2026 by Worker 6, verifies thirteen publications: the arbitrary
+updated 4 November 2026 by Worker 6, verifies fourteen publications: the arbitrary
 actual-parabolic normalized exponent construction, compatible root
 presentations, root-convention and presentation-comparison statements,
 the derived normalized temperedness predicate, and the full-group exponent,
@@ -20,8 +20,9 @@ standard-reduction, corrected central-character and corrected logarithmic
 comparison statements, together with the exact full-group exponent proof
 by Worker 1590 and the logarithmic and eight-clause actual-image complex
 parameter proofs and the four-clause complex-quotient proof by Workers 6,
-1593 and 1444. All twenty-six selected
-mathematical files match their frozen accepted
+1593 and 1444, and the rational-character tensor construction with its
+intrinsic pure-tensor absolute-value formula by Worker 6. All twenty-eight
+selected mathematical files match their frozen accepted
 hashes and the checked Library.
 The map records the
 selected V.3.4, V.3.12, V.3.14–15, V.3.19–20, VI.1.2, VII.1.1 and VII.2.1 assertions,
@@ -35,7 +36,11 @@ complex-exponential surjectivity, actual period kernel and difference criterion,
 normalized real part of every lift and unitary imaginary image are proved and
 public. The complex open quotient maps and prescribed-value quotient
 homeomorphisms are also proved and public on both the valuation image and
-canonical rational points. The remaining imaginary quotient topology,
+canonical rational points. The canonical tensor evaluation map and its
+formula \(e^{s\otimes\chi}(g)=|\chi(g)|_F^s\) are also constructed and proved
+under the canonical-topology assumptions recorded in the source map.
+Bijectivity of that linear map remains a separate obligation.
+The remaining imaginary quotient topology,
 period discreteness, imaginary compactness,
 tensor and algebraic-torus comparisons, standard reduction, the full-center
 consequence and Casselman implication remain open.
@@ -212,17 +217,25 @@ universal-property proofs. It updates the A.III navigation row only; categorical
 packaging, representability and other A.III assertions
 were retained as open at that audit date.
 The [A.III universal-arrow and representability source map](universal-representability-progress.md),
-dated 4 November 2026 by Worker 709, verifies six further published proof units:
+dated 4 November 2026 by Worker 709, verifies seven further published proof units:
 general universal-arrow characterizations and compatible comparisons, the actual
 module-localization categorical universal property, core Yoneda, the object
 and functor isomorphism principles, the binary-diagonal factorization and
-actual binary limit/colimit comparisons, and separated uniform completion.
-The latter uses uniformly continuous maps and complete separated targets,
+actual binary limit/colimit comparisons, separated uniform completion,
+and actual ring-localization categorical universality.
+The uniform-completion proof uses uniformly continuous maps and complete separated targets,
 with source separation required only for the embedding clause.
 The ring-denominator construction is
 also independently published, including its actual image submonoid and
-zero-denominator boundary; its categorical statement is now public, with
-separate exact proof task `dd07e94c-b543-487f-8120-e6037cb9c974` revision 1.
+zero-denominator boundary. Its categorical statement and exact proof from
+task `dd07e94c-b543-487f-8120-e6037cb9c974` revision 1 are public.
+Worker 1301 with Worker 709 proves the actual chosen-factor equation,
+uniqueness among all commuting local-category maps and canonical-arrow
+initiality, retaining the designated image, arbitrary common universe and
+zero boundary. Proof `2e8ebe7c-2a86-4c78-b263-7e6a635fb705` has exact
+machine receipt `14e12de7-0fa3-4ff4-bdab-c7493c4a26f4`, unqualified
+Reviewer 13467 approval and publication at
+`a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a`.
 It also credits the published polynomial-module/endomorphism equivalence and
 its actual restriction to local modules and invertible pairs, distinguishing
 them from the remaining categorical transport of the chosen localization
@@ -246,7 +259,7 @@ all-continuous-maps claim remain distinct; statement publication establishes
 no source counterexample.
 The final representability remark and
 compatible-uniqueness corollary have a published statement and a waiting exact
-proof task. The ring categorical proof, the printed completion claim and other example
+proof task. The printed completion claim and other example
 comparisons, and further A.III source obligations remain separate.
 The 4 November localization clarification in the same map distinguishes
 these source assertions from the internal functoriality and exactness
@@ -948,7 +961,7 @@ including definitions, remarks and unnumbered results.
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and five published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers, the all-subobjects equivalence under arbitrary unions, and actual unital-module comparisons. Other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
-| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [six further published proof units, ring construction/statement and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons and separated uniform completion. Actual continuous-linear completion and fixed-real test constructions and statements are public, with separate exact-proof obligations. The chosen local-module functor and natural Mathlib comparison are published; its endomorphism canonical-arrow comparison has a separate construction task. The final representability remark/corollary has a published statement with exact proof waiting; ring categorical proof, chosen-arrow initiality, the printed all-continuous-maps completion claim and other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
+| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [seven further published proof units and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module and ring categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons and separated uniform completion. The ring proof retains the actual chosen factor, every commuting local-category competitor and canonical-arrow initiality. Actual continuous-linear completion and fixed-real test constructions and statements are public, with separate exact-proof obligations. The chosen local-module functor and natural Mathlib comparison are published; its endomorphism canonical-arrow comparison has a separate construction task. The final representability remark/corollary has a published statement with exact proof waiting; chosen-arrow initiality, the printed all-continuous-maps completion claim and other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
 | A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four general statement/proof pairs and the concrete filtered-colimit construction, statements and proof](limits-colimits-progress.md). Quotient universality, compatible-family lift uniqueness, eventual zero and the separate empty-cocone target have published proofs; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. The A.VI.1–2 note also verifies the all-open/Mathlib equivalence, normalized-presheaf and sufficient-size sheaf statements, and the actual star diagram; their separate proof/comparison tasks remain. Full-module AB5/AB6 examples, other examples, subcategory criteria, source adapters and other AB5 comparisons remain separate |
