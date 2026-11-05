@@ -6,6 +6,7 @@ import Langlands.GroupScheme.Reductive.RankOneCurveCentralizerProof
 import Langlands.GroupScheme.Reductive.RankOnePositiveRootBaseChange
 import Langlands.GroupScheme.Absolute.MaximalTorusCentralizerReduction
 import Langlands.GroupScheme.Rational.SolvableMaximalTorusStatement
+import Langlands.GroupScheme.ProjectiveTorusFixedPointDimension
 
 /-! # The rank-one projective Borel route from its remaining structural inputs -/
 
@@ -95,12 +96,11 @@ theorem positive_roots_eq_of_prescribedBorel_of_projectiveFixedPoints
 
 end PrescribedBorel
 
-/-- The four remaining algebraically closed structural inputs imply the
+/-- The three remaining algebraically closed structural inputs imply the
 algebraically closed positive-root uniqueness target. The Borel, its proper
 quotient, the projective embedding and the normalizer class are constructed. -/
 theorem rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs
     (hFix : SolvableProperFixedPointStatement.{u})
-    (hProj : ProjectiveTorusFixedPointDimensionStatement.{u})
     (hConj : SolvableMaximalTorusConjugacyStatement.{u})
     (hCent : AlgClosedMaximalTorusCentralizerStatement.{u}) :
     RankOneAlgClosedPositiveRootUniquenessStatement.{u} := by
@@ -121,19 +121,20 @@ theorem rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs
     refine SubgroupFunctor.mem_range.mpr ⟨x ≫ t.hom.hom, ?_⟩
     rw [Category.assoc, ← Grp.comp_hom_hom, ht]
   exact positive_roots_eq_of_prescribedBorel_of_projectiveFixedPoints
-    hFix hProj hG i hi hT hdep b hpair.1 hproper t ht hconj hc ν hα hβ hαν hβν
+    hFix projectiveTorusFixedPointDimension hG i hi hT hdep
+    b hpair.1 hproper t ht hconj hc ν hα hβ hαν hβν
 
 /-- The projective Borel route gives the unchanged all-field target once
-its four structural inputs and forward maximal-torus base change are proved.
-All five inputs remain explicit; this is a conditional reduction. -/
+its three remaining algebraically closed structural inputs and forward
+maximal-torus base change are proved. The projective fixed-point dimension
+input is supplied by its published proof; four inputs remain explicit. -/
 theorem rankOnePositiveRootUniqueness_of_projectiveBorelInputs
     (hFix : SolvableProperFixedPointStatement.{u})
-    (hProj : ProjectiveTorusFixedPointDimensionStatement.{u})
     (hConj : SolvableMaximalTorusConjugacyStatement.{u})
     (hCent : AlgClosedMaximalTorusCentralizerStatement.{u})
     (hMax : MaximalTorusBaseChangeForwardStatement.{u}) :
     RankOnePositiveRootUniquenessStatement.{u} :=
   rankOnePositiveRootUniqueness_of_algClosed hMax
-    (rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs hFix hProj hConj hCent)
+    (rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs hFix hConj hCent)
 
 end Langlands.GroupScheme

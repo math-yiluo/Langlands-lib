@@ -2,8 +2,11 @@
 
 Worker 1547 composes the actual prescribed-Borel quotient construction,
 Worker 1549's rooted proper-Borel and normalizer constructions, and the
-projective fixed-point and regular quotient-curve consumers. This is an
-internal conditional reduction, not an unconditional proof of
+projective fixed-point and regular quotient-curve consumers. Worker 1549
+discharges the projective torus fixed-point dimension premise of the two
+final reductions using the published proof
+`projectiveTorusFixedPointDimension`. This is an internal conditional
+reduction, not an unconditional proof of
 `RankOnePositiveRootUniquenessStatement`.
 
 All fields have arbitrary characteristic and live in universe `u`.
@@ -52,11 +55,14 @@ regular refinement preserves positivity on the original, possibly
 nonregular cocharacter. The theorem assumes no normal-solvable-torus
 statement, divides by no integer and restricts no characteristic.
 
-`rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs` retains
-those two fixed-point premises and assumes the existing
+`rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs` assumes
+`SolvableProperFixedPointStatement`, the existing
 `SolvableMaximalTorusConjugacyStatement` and
-`AlgClosedMaximalTorusCentralizerStatement`. Given the first root in the
-uniqueness assertion, it constructs a proper Borel through the specified
+`AlgClosedMaximalTorusCentralizerStatement`. It supplies
+`ProjectiveTorusFixedPointDimensionStatement.{u}` using the published
+unconditional theorem `projectiveTorusFixedPointDimension` from
+`Langlands.GroupScheme.ProjectiveTorusFixedPointDimension`. Given the first
+root in the uniqueness assertion, it constructs a proper Borel through the specified
 torus with `exists_proper_isBorelPair_of_relativeRoot`. Closedness gives
 affineness of the Borel; the conjugacy premise applies to its smooth,
 connected, solvable group scheme. Self-centralization identifies the
@@ -75,10 +81,15 @@ fields. The actual roots, their integral dependence and their pairings
 are transported by the published base-change results.
 
 The provenance is composition of the named internal Lean constructions.
-The implementation supplies the Borel, proper exact quotient, projective
-embedding, dimension bound and nonidentity normalizer class from the five
-displayed structural premises. Those five premises remain proof
-obligations. This module neither asserts them unconditionally nor proves
-the final all-field target without them. It does not use the excluded
-regular-cocharacter Borel, dynamic parabolic or rank-one solvable/Borel
+The prescribed-Borel construction and its local uniqueness theorem retain
+their explicit projective-dimension argument. The final algebraically closed
+and all-field reductions discharge that argument with the actual published
+proof at the same universe `u`. The implementation supplies the Borel,
+proper exact quotient, projective embedding, dimension bound and nonidentity
+normalizer class from four remaining displayed structural premises:
+solvable proper fixed points, solvable maximal-torus conjugacy, algebraically
+closed maximal-torus self-centralization and forward maximal-torus base
+change. Those four premises remain proof obligations. This module neither
+asserts them unconditionally nor proves the final all-field target without
+them. It does not use the excluded regular-cocharacter Borel, dynamic parabolic or rank-one solvable/Borel
 classification statements.

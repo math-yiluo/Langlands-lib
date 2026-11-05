@@ -81,17 +81,17 @@ open ArchimedeanGL
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ} [NeZero n]
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance reducedCochainCompactDifferentiationRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance reducedCochainCompactDifferentiationContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance reducedCochainCompactDifferentiationFiniteSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance reducedCochainCompactDifferentiationFormsAddCommGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance reducedCochainCompactDifferentiationStableAddCommGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance reducedCochainCompactDifferentiationSSpaceAddCommGroup : AddCommGroup S.Space := Submodule.addCommGroup _
 
 /-- Differentiate actual full compact equivariance on the reduced complex algebra. -/
 theorem reducedCochain_compact_complex (q : ℕ)

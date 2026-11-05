@@ -1,5 +1,5 @@
 import Langlands.Automorphic.OperatorCompactDifferentiation
-import Langlands.Global.ArchimedeanAdjointDifferentiation
+import Langlands.Global.ArchimedeanCochainInsertion
 import Langlands.Representation.HorizontalAlternating
 import Mathlib.LinearAlgebra.Multilinear.Curry
 
@@ -35,72 +35,6 @@ theorem complexCompactRepresentation_apply (k : standardInfiniteCompact F n)
     (X : ComplexLieAlgebra F n) :
     complexCompactRepresentation F n k X = complexLieConjugation F n k.val X := rfl
 
-private theorem complexMultilinear_ext
-    {V : Type v} [AddCommGroup V] [Module ℂ V] (q : ℕ)
-    (f g : MultilinearMap ℂ (fun _ : Fin q => ComplexLieAlgebra F n) V)
-    (h : ∀ X : Fin q → RealLieAlgebra F n,
-      f (fun i => complexify F n (X i)) = g (fun i => complexify F n (X i))) :
-    f = g := by
-  induction q with
-  | zero =>
-    ext X
-    have hx : X = (fun i : Fin 0 => complexify F n (Fin.elim0 i)) :=
-      Subsingleton.elim _ _
-    rw [hx]
-    exact h (fun i => Fin.elim0 i)
-  | succ q ih =>
-    have hc : f.curryLeft = g.curryLeft := by
-      apply LinearMap.ext
-      intro Z
-      induction Z using TensorProduct.inductionOn with
-      | tmul z X =>
-        have hr : f.curryLeft (complexify F n X) = g.curryLeft (complexify F n X) := by
-          apply ih
-          intro xs
-          have he : (fun i : Fin (q + 1) => complexify F n
-              (Fin.cons (α := fun _ => RealLieAlgebra F n) X xs i)) =
-              Fin.cons (α := fun _ => ComplexLieAlgebra F n)
-                (complexify F n X) (fun i => complexify F n (xs i)) := by
-            funext i
-            cases i using Fin.cases <;> rfl
-          simpa only [MultilinearMap.curryLeft_apply, he] using h (Fin.cons X xs)
-        have ht : z ⊗ₜ[ℝ] X = z • complexify F n X := by
-          simp only [complexify_apply, TensorProduct.smul_tmul', smul_eq_mul, mul_one]
-        rw [ht, map_smul, map_smul, hr]
-      | add X Y hX hY =>
-        rw [map_add, map_add, hX, hY]
-    apply MultilinearMap.ext
-    intro X
-    have hx := congrArg (fun L : ComplexLieAlgebra F n →ₗ[ℂ]
-      MultilinearMap ℂ (fun _ : Fin q => ComplexLieAlgebra F n) V =>
-        L (X 0) (Fin.tail X)) hc
-    simpa only [MultilinearMap.curryLeft_apply, Fin.cons_self_tail] using hx
-
-private def cochainInsertion
-    {V : Type v} [AddCommGroup V] [Module ℂ V] (q : ℕ)
-    (f : (ComplexLieAlgebra F n) [⋀^Fin q]→ₗ[ℂ] V)
-    (D : Module.End ℂ (ComplexLieAlgebra F n)) :
-    MultilinearMap ℂ (fun _ : Fin q => ComplexLieAlgebra F n) V :=
-  ∑ i : Fin q, f.toMultilinearMap.compLinearMap
-    (Function.update (fun _ => LinearMap.id) i D)
-
-private theorem cochainInsertion_apply
-    {V : Type v} [AddCommGroup V] [Module ℂ V] (q : ℕ)
-    (f : (ComplexLieAlgebra F n) [⋀^Fin q]→ₗ[ℂ] V)
-    (D : Module.End ℂ (ComplexLieAlgebra F n)) (X : Fin q → ComplexLieAlgebra F n) :
-    cochainInsertion F n q f D X = ∑ i, f (Function.update X i (D (X i))) := by
-  simp only [cochainInsertion, sum_apply, MultilinearMap.compLinearMap_apply]
-  apply Finset.sum_congr rfl
-  intro i _
-  change f (fun j => Function.update (fun _ => LinearMap.id) i D j (X j)) =
-    f (Function.update X i (D (X i)))
-  apply congrArg f
-  funext j
-  by_cases hj : j = i
-  · subst j
-    simp only [Function.update_self]
-  · simp only [Function.update_of_ne hj, LinearMap.id_apply]
-
 end Langlands.Global.ArchimedeanGL
 
 namespace Langlands.Automorphic
@@ -110,17 +44,17 @@ open ArchimedeanGL
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance cochainCompactDifferentiationRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance cochainCompactDifferentiationContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance cochainCompactDifferentiationFiniteSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance cochainCompactDifferentiationFormsAddCommGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance cochainCompactDifferentiationStableAddCommGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance cochainCompactDifferentiationSpaceAddCommGroup : AddCommGroup S.Space := Submodule.addCommGroup _
 
 private def scalarEvaluation (a : InfiniteAdelicGL F n) (b : FiniteAdelicGL F n) :
     S.Space →ₗ[ℂ] ℂ where
@@ -198,10 +132,10 @@ theorem cochain_compact_real_complex (q : ℕ)
   let D := LieAlgebra.ad ℂ (ComplexLieAlgebra F n) (complexify F n Y.val)
   have hm :
       (S.complexLieAction (complexify F n Y.val)).compMultilinearMap f.toMultilinearMap =
-        cochainInsertion F n q f D := by
-    apply complexMultilinear_ext F n q
+        complexCochainInsertion F n q f D := by
+    apply complexMultilinear_ext_on_real F n q
     intro xs
-    rw [LinearMap.compMultilinearMap_apply, cochainInsertion_apply]
+    rw [LinearMap.compMultilinearMap_apply, complexCochainInsertion_apply]
     change S.complexLieAction (complexify F n Y.val)
       (f (fun i => complexify F n (xs i))) =
         ∑ i, f (Function.update (fun j => complexify F n (xs j)) i
@@ -210,7 +144,7 @@ theorem cochain_compact_real_complex (q : ℕ)
     exact S.cochain_compact_real q f hf Y xs
   have h := congrArg (fun A : MultilinearMap ℂ
     (fun _ : Fin q => ComplexLieAlgebra F n) S.Space => A X) hm
-  simpa only [LinearMap.compMultilinearMap_apply, cochainInsertion_apply,
+  simpa only [LinearMap.compMultilinearMap_apply, complexCochainInsertion_apply,
     D, LieAlgebra.ad_apply, AlternatingMap.coe_multilinearMap] using h
 
 /-- Full compact equivariance implies actual complex infinitesimal equivariance

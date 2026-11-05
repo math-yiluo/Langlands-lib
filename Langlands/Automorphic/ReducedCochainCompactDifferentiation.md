@@ -93,3 +93,8 @@ from `ArchimedeanReducedProjection`, equivariance uses the existing actual
 adjoint representations, and the differentiated identity follows from
 `CochainCompactDifferentiation`. This module asserts no additional
 identification with an external cohomology theory.
+
+The inherited additive group instances have explicit names specific to this
+module. Their definitions and local scope are unchanged; the names avoid
+duplicate generated declarations when the entire import closure is replayed
+through the kernel.

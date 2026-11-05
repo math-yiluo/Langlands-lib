@@ -19,18 +19,18 @@ open ArchimedeanGL
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance horizontalDifferentialRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance horizontalDifferentialContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalDifferentialFiniteSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalDifferentialFormsAddCommGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance horizontalDifferentialStableAddCommGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S T : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
-local instance : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance horizontalDifferentialSSpaceAddCommGroup : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance horizontalDifferentialTSpaceAddCommGroup : AddCommGroup T.Space := Submodule.addCommGroup _
 
 attribute [local instance 100] LieRing.ofAssociativeRing
 

@@ -11,7 +11,7 @@ defined for any field `F : Type u` and rank `n : ℕ`. The cochain constructions
 add `[NumberField F]` and use an actual `OperatorRealization F n`, denoted `S`.
 The rank and degree may be zero. The coefficient space is the existing complex
 module `S.Space`; no topology on this space or on the tensor complexification is
-introduced. The private multilinear arguments allow an independent coefficient
+introduced. The imported multilinear arguments allow an independent coefficient
 universe `v`.
 
 Write
@@ -84,10 +84,11 @@ function extensionality and the actual adelic pair projections then prove the
 vector equality `cochain_compact_real`. There is no derivative in the abstract
 coefficient space.
 
-To pass to arbitrary complex tuples, a private helper bundles the insertion sum
+To pass to arbitrary complex tuples, the imported `complexCochainInsertion`
+from `Global/ArchimedeanCochainInsertion` bundles the insertion sum
 as a complex multilinear map by summing precompositions with a linear operator
 in one position at a time. The output-action side is also a multilinear map.
-A second private helper proves that such maps agree everywhere if they agree on
+The imported `complexMultilinear_ext_on_real` proves that such maps agree if they agree on
 all complexified real tuples: induction on the degree uses left currying, and
 tensor-product induction in the first input uses
 `z ⊗ X = z • complexify X`. The degree-zero case uses uniqueness of the empty
@@ -102,3 +103,8 @@ uses ambient Lie input cochains with coefficients in `S.Space`; it does not
 construct algebraic tensor coefficients, reduced horizontal restriction, a
 relative differential, square-zero, or relative cohomology. Those remain
 separate obligations.
+
+The local inherited additive-group instances have explicit module-specific names.
+This preserves their existing definitions and local scope while allowing this
+module to be imported together with the cuspidal operator realization chain,
+whose anonymous local instances otherwise generate colliding declaration names.

@@ -18,17 +18,17 @@ open Langlands.Cohomology.Lie
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ} [NeZero n]
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance horizontalCohomologyClassesRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance horizontalCohomologyClassesContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalCohomologyClassesFiniteSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance horizontalCohomologyClassesFormsAddCommGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance horizontalCohomologyClassesStableAddCommGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance horizontalCohomologyClassesSSpaceAddCommGroup : AddCommGroup S.Space := Submodule.addCommGroup _
 local instance (q : ℕ) :
     AddCommGroup (horizontalEquivariantSubmodule F n S.compactRepresentation q) :=
   Submodule.addCommGroup _

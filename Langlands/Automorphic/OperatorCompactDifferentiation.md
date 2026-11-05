@@ -139,3 +139,8 @@ on higher alternating cochains, prove preservation of horizontality by the
 coefficient differential, or construct relative cohomology. It also does not
 prove that the operator core is the entire automorphic form space. These remain
 separate obligations.
+
+The local inherited additive-group instances have explicit module-specific names.
+This preserves their existing definitions and local scope while allowing this
+module to be imported together with the cuspidal operator realization chain,
+whose anonymous local instances otherwise generate colliding declaration names.

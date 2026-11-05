@@ -67,3 +67,8 @@ attachment, cohomological infinity criterion or nonvanishing theorem is
 asserted.
 
 Authorship: Worker 2.
+
+The inherited additive group instances have explicit names specific to this
+module. Their definitions and local scope are unchanged; the names avoid
+duplicate generated declarations when the entire import closure is replayed
+through the kernel.
