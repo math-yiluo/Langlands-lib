@@ -2,13 +2,14 @@ import Langlands.GroupScheme.Rational.FiniteFieldCentralCocharacterSolvableState
 import Langlands.GroupScheme.Rational.FiniteFieldQuasiSplitStatement
 import Langlands.GroupScheme.Rational.CentralCocharacterReduction
 import Langlands.GroupScheme.Rational.SplitUnipotentQuotientHomLift
+import Langlands.GroupScheme.Rational.SplitUnipotentStableVectorProof
 import Langlands.GroupScheme.Dynamic.CentralQuotient
 import Langlands.GroupScheme.Absolute.SolvableQuotientExtension
 import Langlands.GroupScheme.Reductive.UnipotentRadicalExistenceProof
 import Langlands.GroupScheme.Reductive.UnipotentRadicalQuotientProof
 import Langlands.GroupScheme.Reductive.PerfectFieldProof
 
-/-! # Reduction of finite-field solvability to three structural inputs -/
+/-! # Reduction of finite-field solvability to parabolic comparison and quasi-splitness -/
 
 noncomputable section
 
@@ -44,7 +45,6 @@ variable [PerfectField k]
 /-- Lifting cocharacters through the radical quotient and descending centrality
 produce a reductive quotient with only central ground-field cocharacters. -/
 theorem nonempty_centralCocharacterReductiveQuotientData
-    (hstable : RelativeRoot.SplitUnipotentStableVectorSubgroupStatement.{u})
     (hcentral : ∀ χ : (Gm (Spec (CommRingCat.of k))).toGrp ⟶ G,
       Dynamic.centralizer χ = ⊤) :
     Nonempty (CentralCocharacterReductiveQuotientData G) := by
@@ -68,18 +68,16 @@ theorem nonempty_centralCocharacterReductiveQuotientData
         Dynamic.centralizer χ = ⊤ :=
     Dynamic.central_cocharacters_of_fpqc_of_lifts q
       (exists_cocharacter_lift_of_perfectField_unipotent_kernel
-        i q hq hi.isUnipotent hstable) hcentral
+        i q hq hi.isUnipotent RelativeRoot.splitUnipotentStableVectorSubgroup) hcentral
   exact ⟨⟨U, i, hi, Q, q, hq,
     (perfectFieldPseudoReductive k Q).mp hQ, hcentralQ⟩⟩
 
-/-- A chosen actual reductive radical quotient with central cocharacters.
-Stable-vector existence remains an explicit input to the construction. -/
+/-- A chosen actual reductive radical quotient with central cocharacters. -/
 def centralCocharacterReductiveQuotient
-    (hstable : RelativeRoot.SplitUnipotentStableVectorSubgroupStatement.{u})
     (hcentral : ∀ χ : (Gm (Spec (CommRingCat.of k))).toGrp ⟶ G,
       Dynamic.centralizer χ = ⊤) :
     CentralCocharacterReductiveQuotientData G :=
-  Classical.choice (nonempty_centralCocharacterReductiveQuotientData G hstable hcentral)
+  Classical.choice (nonempty_centralCocharacterReductiveQuotientData G hcentral)
 
 namespace CentralCocharacterReductiveQuotientData
 
@@ -102,15 +100,14 @@ theorem isSolvableGroupScheme
 
 end CentralCocharacterReductiveQuotientData
 
-/-- The finite-field target follows from stable-vector existence, the dynamic
-description of parabolics, and finite-field quasi-splitness. -/
+/-- The finite-field target follows from the dynamic description of parabolics
+and finite-field quasi-splitness. -/
 theorem finiteFieldCentralCocharacterSolvable_of
-    (hstable : RelativeRoot.SplitUnipotentStableVectorSubgroupStatement.{u})
     (hdynamic : ParabolicDynamicStatement.{u})
     (hquasi : FiniteFieldQuasiSplitStatement.{u}) :
     FiniteFieldCentralCocharacterSolvableStatement.{u} := by
   intro k _ _ G _ _ _ hcentral
-  let D := centralCocharacterReductiveQuotient G hstable hcentral
+  let D := centralCocharacterReductiveQuotient G hcentral
   exact D.isSolvableGroupScheme G hdynamic (hquasi k D.quotient D.isConnectedReductive)
 
 end Langlands.GroupScheme

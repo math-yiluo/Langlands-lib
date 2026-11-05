@@ -1,30 +1,36 @@
-# Reduction of finite-field solvability to three structural inputs
+# Reduction of finite-field solvability to parabolic comparison and quasi-splitness
 
-This is a derived assembly of the existing group-scheme interfaces. It retains
-`RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`,
-`ParabolicDynamicStatement`, and `FiniteFieldQuasiSplitStatement` as explicit
-premises. It does not prove the unconditional
-`FiniteFieldCentralCocharacterSolvableStatement`.
+Worker 1576, Worker 1611 and Worker 1459.
+
+This derived assembly constructs an actual reductive quotient with central
+cocharacters over every perfect field. The stable-vector theorem used to lift
+cocharacters is supplied by the published proof
+`RelativeRoot.splitUnipotentStableVectorSubgroup` in
+`Rational.SplitUnipotentStableVectorProof`.
+The finite-field consequence retains precisely `ParabolicDynamicStatement`
+and `FiniteFieldQuasiSplitStatement` as explicit premises. The unconditional
+`FiniteFieldCentralCocharacterSolvableStatement` remains open.
 
 `CentralCocharacterReductiveQuotientData G` records an actual ground-field
 unipotent radical, its inclusion into `G`, an actual represented fppf quotient,
 connected reductivity of that quotient, and centrality of every cocharacter of
 the quotient over the original field. The data include the full all-test kernel
-identity in `RelativeRoot.IsFppfQuotient`; they do not assert surjectivity of
-the quotient map on every original test scheme.
+identity in `RelativeRoot.IsFppfQuotient`.
 
 Over a perfect field, `nonempty_centralCocharacterReductiveQuotientData` first
 uses `unipotentRadicalExistence` and `unipotentRadicalQuotient`. The theorem
 `perfectFieldPseudoReductive` makes the quotient connected reductive.
 The radical is smooth, connected, affine, and unipotent. Therefore
-`exists_cocharacter_lift_of_perfectField_unipotent_kernel` lifts every actual
-cocharacter through the quotient, subject to the retained stable-vector premise.
-Affineness of the source and quotient makes the quotient map quasi-compact;
-its fppf quotient structure supplies flatness and scheme surjectivity.
+`exists_cocharacter_lift_of_perfectField_unipotent_kernel`, supplied with the
+published stable-vector proof, lifts every actual cocharacter through the
+quotient. Affineness of the source and quotient makes the quotient map
+quasi-compact; its fppf quotient structure supplies flatness and scheme
+surjectivity. This argument requires no surjectivity on every test scheme.
 `Dynamic.central_cocharacters_of_fpqc_of_lifts` then descends centrality to every
 ground-field cocharacter of the quotient. The construction
 `centralCocharacterReductiveQuotient` chooses one such package using classical
-choice.
+choice. Both declarations assume only the stated geometry, perfectness and
+centrality, with no additional structural proposition as a premise.
 
 For any such package with a quasi-split quotient,
 `CentralCocharacterReductiveQuotientData.isSolvableGroupScheme` applies
@@ -43,8 +49,10 @@ conclusion is the existing geometric `IsSolvableGroupScheme` predicate.
 
 The proof imports the radical existence and quotient proofs and the perfect-field
 comparison from `Reductive`, the homomorphism lift from
-`Rational.SplitUnipotentQuotientHomLift`, centrality descent from
+`Rational.SplitUnipotentQuotientHomLift`, the stable-vector proof from
+`Rational.SplitUnipotentStableVectorProof`, centrality descent from
 `Dynamic.CentralQuotient`, the quasi-split reduction from
 `Rational.CentralCocharacterReduction`, and solvability of extensions from
-`Absolute.SolvableQuotientExtension`. No new literature assertion is introduced;
-the three named structural propositions remain obligations.
+`Absolute.SolvableQuotientExtension`. This is an internal combination of these
+published results; it introduces no new literature assertion. The two named
+structural propositions remain obligations.

@@ -1,0 +1,5 @@
+# Full endomorphism span for an irreducible representation
+
+`Langlands.LinearAlgebra.IrreducibleRepresentationSpanStatement` says that the operators of a finite-dimensional irreducible representation of a monoid over an algebraically closed field span the full endomorphism vector space. The field, monoid and representation space have independent arbitrary universes. Irreducibility has Mathlib's meaning: the lattice of subrepresentations is a nontrivial simple order. In particular the zero space is excluded by irreducibility itself.
+
+This is an internal auxiliary statement for the rational-point compactness argument. Its provenance is the already published algebraic Burnside surjectivity theorem `Langlands.SandwichDimensionBound.action_surjective`, applied to the monoid-algebra module of a representation. The intended proof expands elements of that algebra as finite linear combinations of the representation operators. No reductivity, group-scheme or density assertion is part of this statement, and this auxiliary statement does not prove the host compactness equivalence.
