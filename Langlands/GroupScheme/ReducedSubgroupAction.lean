@@ -15,7 +15,7 @@ namespace Langlands.GroupScheme
 
 namespace AutomorphicAction
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
     {H G : GroupScheme (Spec (CommRingCat.of k))}
     [Smooth H.X.hom] [LocallyOfFiniteType G.X.hom]
     (a : AutomorphicAction H G)
@@ -78,7 +78,7 @@ end AutomorphicAction
 
 namespace ReducedSubgroup
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
     (N : GroupScheme (Spec (CommRingCat.of k)))
     [LocallyOfFiniteType N.X.hom] [IsAffineHom N.X.hom]
 

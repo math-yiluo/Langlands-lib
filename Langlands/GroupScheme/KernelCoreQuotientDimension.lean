@@ -3,7 +3,7 @@ import Langlands.GroupScheme.FactoredKernel
 import Langlands.AlgebraicGeometry.FieldGroupSchemeHomogeneity
 import Langlands.AlgebraicGeometry.QuasiFiniteAtStalkDimensionProof
 import Langlands.AlgebraicGeometry.SmoothConnectedRelativeDimensionProof
-import Langlands.AlgebraicGeometry.SmoothProperConnectedZeroDimensionalRankProof
+import Langlands.GroupScheme.SmoothConnectedZeroDimensional
 import Mathlib.AlgebraicGeometry.Morphisms.QuasiFinite
 
 /-! # Dimension of quotients by smooth connected kernel cores -/
@@ -20,7 +20,7 @@ namespace Langlands.GroupScheme
 
 namespace ReducedSubgroup
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
     (N : GroupScheme (Spec (CommRingCat.of k)))
     [LocallyOfFiniteType N.X.hom] [IsAffineHom N.X.hom]
 
@@ -70,24 +70,12 @@ theorem isClosed_singleton_identityPoint {k : Type u} [Field k]
   rw [← hr]
   exact η[G.X].left.isClosedEmbedding.isClosed_range
 
-/-- A connected separated smooth group of dimension zero over a separably
-closed field has only the zero homomorphism to any group scheme. -/
+/-- A connected smooth group of dimension zero over any field has only the zero homomorphism to any group scheme. -/
 theorem eq_zero_of_smoothOfRelativeDimension_zero {k : Type u} [Field k]
-    [IsSepClosed k] {G H : GroupScheme (Spec (CommRingCat.of k))}
-    [IsSeparated G.X.hom] [ConnectedSpace G.X.left]
-    (f : G ⟶ H) (h0 : SmoothOfRelativeDimension 0 G.X.hom) : f = 0 := by
-  have : Etale G.X.hom := (Etale.iff_smoothOfRelativeDimension_zero _).mpr h0
-  have : IsIso G.X.hom :=
-    Langlands.AlgebraicGeometry.isIso_of_connected_separated_etale G.X.hom
-  have hid : (𝟙 G.X : G.X ⟶ G.X) = 1 := by
-    apply Over.OverMorphism.ext
-    apply (cancel_mono G.X.hom).mp
-    exact (Over.w (𝟙 G.X)).trans (Over.w (1 : G.X ⟶ G.X)).symm
-  apply (Grp.forget _).map_injective
-  change f.hom.hom = 1
-  calc
-    f.hom.hom = (𝟙 G.X) ≫ f.hom.hom := (Category.id_comp _).symm
-    _ = 1 := by rw [hid, MonObj.one_comp]
+    {G H : GroupScheme (Spec (CommRingCat.of k))}
+    [ConnectedSpace G.X.left]
+    (f : G ⟶ H) (h0 : SmoothOfRelativeDimension 0 G.X.hom) : f = 0 :=
+  eq_zero_of_smoothOfRelativeDimension_zero_over_field f h0
 
 /-- The underlying full kernel is the inverse image of the identity point. -/
 theorem range_kernelι {k : Type u} [Field k]
@@ -136,7 +124,7 @@ theorem quasiFiniteAt_identity_of_isOpen_kernel_identity {k : Type u} [Field k]
 
 namespace KernelCoreQuotient
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
     {G A : GroupScheme (Spec (CommRingCat.of k))}
     [Smooth G.X.hom] [IsAffineHom G.X.hom] [IsSeparated A.X.hom]
     (f : G ⟶ A)

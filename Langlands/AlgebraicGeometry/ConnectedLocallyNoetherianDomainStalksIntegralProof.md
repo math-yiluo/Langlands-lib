@@ -11,7 +11,8 @@ nonemptiness.
 
 ## Implemented proof
 
-The proof uses three private helpers in this module.
+The proof uses three helpers in this module. The neighborhood lemma
+`exists_irreducible_open` is public for reuse; the other two remain private.
 
 `exists_domain_away` is an algebraic neighborhood argument. Let `R` be a
 Noetherian commutative ring, let `p` be a prime ideal, and suppose `R_p` is a

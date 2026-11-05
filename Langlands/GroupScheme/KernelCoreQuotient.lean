@@ -17,7 +17,7 @@ namespace Langlands.GroupScheme
 
 namespace ReducedSubgroup
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
     {N K : GroupScheme (Spec (CommRingCat.of k))}
     [LocallyOfFiniteType N.X.hom] [IsAffineHom N.X.hom]
     [Smooth K.X.hom] [ConnectedSpace K.X.left]
@@ -42,7 +42,7 @@ end ReducedSubgroup
 
 namespace KernelCoreQuotient
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
     {G A : GroupScheme (Spec (CommRingCat.of k))}
     [Smooth G.X.hom] [IsAffineHom G.X.hom] [IsSeparated A.X.hom]
     (f : G ⟶ A)

@@ -1,17 +1,20 @@
 # The reduced subgroup and its identity component
 
-Author: Worker 1399. This is a helper module for the proof of
+Original author: Worker 1399; perfect-field generalization: Worker 1561.
+This began as a helper module for the proof of
 `Langlands.GroupScheme.SomeBorelQuotientProperStatement` (task
 `26c798aa-c7cc-4a23-94b9-235cc57dc70c`). It is step (D) of Worker 1396's plan:
-inside a closed subgroup `S` of an affine group `G` over an algebraically closed
+inside a closed subgroup `S` of an affine group `G` over a perfect
 field `k`, find a smooth connected closed subgroup `H`, open in `S`, that contains
 every smooth connected closed subgroup of `G` lying in `S`. Classically
 `H = (S_red)⁰`. Over a perfect field, `S_red` is an algebraic subgroup of `S`
 (Milne, *Algebraic Groups*, 2017, Proposition 1.38 and Corollary 1.39). It is smooth
 because it is reduced over a perfect field (Proposition 1.26). Milne gets reducedness of
 `S_red × S_red` from geometric reducedness. Mathlib lacks "reduced over a perfect field
-implies geometrically reduced", so the Lean proof first proves `S_red` smooth, from
-homogeneity, and gets reducedness of the product from that.
+implies geometrically reduced", so the Lean proof first proves `S_red` smooth:
+it uses homogeneity over an algebraic closure, compares reductions after that
+separable base change, and descends smoothness. It gets reducedness of the product
+from smoothness.
 
 ## The reduced closed subscheme of a scheme
 
@@ -35,7 +38,8 @@ Let `S` be a group scheme over `Spec k`. `redOver S` is `red S.X.left`, viewed o
 `k`, and `redOverι S : redOver S ⟶ S.X` is its inclusion. `liftOver` factors a
 morphism over `k` from a scheme with reduced underlying scheme through `redOverι`.
 
-From now on `k` is algebraically closed and `S` is locally of finite type.
+Assume `S` is locally of finite type. The translation and homogeneity arguments
+below first assume that `k` is algebraically closed.
 
 - `point_comp_mulRight` holds for any group object `A` in a cartesian monoidal
   category: for points `x, y : 𝟙 ⟶ A`, right translation by `x⁻¹ y` sends `x` to `y`.
@@ -43,12 +47,26 @@ From now on `k` is algebraically closed and `S` is locally of finite type.
 - `exists_translation`: for closed points `x, y` of `S`, some automorphism of
   `S.X.left` over `k` sends `x` to `y`. Mathlib's `pointEquivClosedPoint` turns `x`
   and `y` into `k`-points. The automorphism is right translation by `x⁻¹ y`.
-- `smooth_redOver`: `S_red` is smooth over `k`. It is reduced and locally of finite
+- `smooth_redOver_algClosed`: `S_red` is smooth over `k`. It is reduced and locally of finite
   type over `k`. Each translation from `exists_translation` restricts to an
   automorphism of `S_red` through `redIso`. Closed points of `S_red` map to closed
   points of `S`, because `redι` is a closed embedding, and `redι` is injective. So
   the automorphisms of `S_red` over `k` act transitively on its closed points. The
   Library's `closedPointHomogeneousSmooth` then gives smoothness.
+
+Now assume only that `k` is perfect.
+
+- `smooth_redOver`: base change to `L = AlgebraicClosure k`. The extension is
+  algebraic and separable. The helper
+  `SeparableReducedBaseChange.isReduced_pullback` makes the base change of
+  `S_red` reduced, since `S_red` is locally Noetherian. Its inclusion in `S_L`
+  factors through `(S_L)_red`; the resulting map is a surjective closed immersion
+  into a reduced scheme and hence an isomorphism. Thus the base change of
+  `S_red` is smooth over `L`, by `smooth_redOver_algClosed`. The map
+  `Spec L ⟶ Spec k` is surjective, flat and quasi-compact, so Mathlib's fpqc
+  descent of smoothness gives smoothness over `k`. This proof does not use a group
+  structure on `S_red` before constructing that structure.
+
 - `S_red ×_k S_red` is smooth over `k`, so it is reduced
   (`SmoothReducedProof.isReduced_of_smooth_over_field`). `Spec k` is reduced too. So the
   unit, the multiplication and the inverse of `S`, restricted to `S_red`, factor
@@ -68,7 +86,7 @@ From now on `k` is algebraically closed and `S` is locally of finite type.
 ## The identity component
 
 `exists_reducedIdentityComponent`: let `G` be a group scheme over `Spec k` with `k`
-algebraically closed. Assume `G` is locally of finite type and affine over `k`. Let
+perfect. Assume `G` is locally of finite type and affine over `k`. Let
 `iS : S ⟶ G` be a closed subgroup. Then there are a group scheme `H` and
 `f : H ⟶ S` such that:
 

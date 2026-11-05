@@ -37,3 +37,7 @@ closure and does not assume perfectness or infinitude of the original field.
 
 This does not establish a decrease of torus weights, termination of iterated
 quotients, lifting of target tori, or the parent no-torus theorem.
+
+The local base-change instances have explicit names so their compiled
+declarations remain distinct when the complete Library is imported together.
+Their types, proofs, and local instance scope are unchanged.

@@ -37,3 +37,7 @@ The provenance is an internal derivation from the published conjugacy,
 character-lattice, Lie-weight, and root-datum transport interfaces. This unit
 assumes a supplied root datum; it does not construct one or prove the host
 simple-connectedness field-extension theorem.
+
+The local base-change instances have explicit names so their compiled
+declarations remain distinct when the complete Library is imported together.
+Their types, proofs, and local instance scope are unchanged.

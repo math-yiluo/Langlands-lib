@@ -28,11 +28,11 @@ local notation "b" => algebraBaseMap k K
 local notation "G_K" => Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) G
 local notation "Q_K" => Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) Q
 
-local instance : IsAffineHom (G_K).X.hom := by
+local instance geometricSemisimpleKernel_ringSource_isAffineHom : IsAffineHom (G_K).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 
-local instance : IsAffineHom (Q_K).X.hom := by
+local instance geometricSemisimpleKernel_ringTarget_isAffineHom : IsAffineHom (Q_K).X.hom := by
   change IsAffineHom (pullback.snd Q.X.hom b)
   infer_instance
 
@@ -89,19 +89,19 @@ local notation "b" => algebraBaseMap k K
 local notation "G_K" => Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) G
 local notation "Q_K" => Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) Q
 
-local instance : IsAffineHom (G_K).X.hom := by
+local instance geometricSemisimpleKernel_fieldSource_isAffineHom : IsAffineHom (G_K).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 
-local instance : IsAffineHom (Q_K).X.hom := by
+local instance geometricSemisimpleKernel_fieldTarget_isAffineHom : IsAffineHom (Q_K).X.hom := by
   change IsAffineHom (pullback.snd Q.X.hom b)
   infer_instance
 
-local instance : Smooth (G_K).X.hom := by
+local instance geometricSemisimpleKernel_fieldSource_smooth : Smooth (G_K).X.hom := by
   change Smooth (pullback.snd G.X.hom b)
   infer_instance
 
-local instance : ConnectedSpace (G_K).X.left :=
+local instance geometricSemisimpleKernel_fieldSource_connectedSpace : ConnectedSpace (G_K).X.left :=
   G.connectedSpace_baseChange_of_smooth_affine b
 
 /-- The same base-field quotient detects full Lie centralizers of semisimple

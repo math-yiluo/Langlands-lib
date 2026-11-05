@@ -5,7 +5,7 @@ smooth normal quotient and fpqc homomorphism descent already in the Library.
 It supplies an intermediate quotient for constructing represented split series.
 There is no additional literature assertion in this module.
 
-Let `k` be an algebraically closed field in an arbitrary universe. For a
+Let `k` be a perfect field in an arbitrary universe. For a
 homomorphism `f : G ⟶ A`, assume that `G` is smooth and affine over `k`, and
 that `A` is separated over `k`. The scheme kernel is then affine and locally
 of finite type, because its inclusion into `G` is a closed immersion.
@@ -51,3 +51,7 @@ Quotient affineness, finiteness of the descended kernel, identification with
 the additive group, and a finite represented split series remain further
 obligations. The results here impose no characteristic restriction and no
 smoothness or connectedness assumption on the full scheme kernel.
+
+Worker 1561 generalized this construction to perfect fields using the smooth
+reduction in `Langlands.GroupScheme.ReducedSubgroup`. The action, normality and
+quotient constructions and all-test identities use the same proofs.

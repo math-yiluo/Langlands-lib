@@ -3,7 +3,7 @@
 Worker 1448. Internal derived construction from the published reduced-subgroup,
 identity-component and represented-action results.
 
-Over an algebraically closed field, an action by automorphisms of a smooth
+Over a perfect field, an action by automorphisms of a smooth
 acting group on an affine finite-type group restricts to its reduced subgroup
 and then its identity component. The resulting action and inclusion are actual
 scheme morphisms, and the equivariance statements hold on every test scheme,
@@ -26,3 +26,7 @@ action of `G` on `N` and the preceding equivariant restriction.
 
 No smoothness or connectedness of `N` is assumed. No quotient by this core,
 identification with Ga, or finite split series is asserted here.
+
+Worker 1561 generalized this construction to perfect fields using the smooth
+reduction in `Langlands.GroupScheme.ReducedSubgroup`. The action, normality and
+quotient constructions and all-test identities use the same proofs.

@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.SeparableReducedBaseChange
 import Langlands.GroupScheme.IdentityComponent
 import Langlands.GroupScheme.Absolute.ParabolicTransport
 import Langlands.AlgebraicGeometry.ClosedPointHomogeneousSmoothProof
@@ -6,7 +7,7 @@ import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_IdealSheafDa
 
 /-! # The reduced subgroup and its identity component
 
-For a group scheme `S` locally of finite type over an algebraically closed field `k`, the
+For a group scheme `S` locally of finite type over a perfect field `k`, the
 reduced closed subscheme `S_red` is a smooth closed subgroup of `S`, and its identity component
 `(S_red)⁰` is a smooth connected closed subgroup, open in `S`, through which every smooth
 connected closed subgroup contained in `S` factors.
@@ -139,6 +140,12 @@ theorem point_comp_mulRight
   rw [← Category.assoc, ← Iso.eq_comp_inv]
   simp [GrpObj.mulRight, comp_lift_assoc]
 
+instance [LocallyOfFiniteType S.X.hom] : LocallyOfFiniteType (redOver S).hom :=
+  inferInstanceAs (LocallyOfFiniteType (redι S.X.left ≫ S.X.hom))
+
+instance : IsReduced (redOver S).left :=
+  inferInstanceAs (IsReduced (red S.X.left))
+
 section AlgClosed
 
 variable [IsAlgClosed k] [LocallyOfFiniteType S.X.hom]
@@ -163,15 +170,9 @@ theorem exists_translation (x y : S.X.left) (hx : IsClosed ({x} : Set S.X.left))
   rw [← hx', ← hy']
   exact h
 
-instance : LocallyOfFiniteType (redOver S).hom :=
-  inferInstanceAs (LocallyOfFiniteType (redι S.X.left ≫ S.X.hom))
-
-instance : IsReduced (redOver S).left :=
-  inferInstanceAs (IsReduced (red S.X.left))
-
 /-- `S_red` is smooth over `k`: right translations by `k`-points of `S` restrict to
 automorphisms of `S_red` acting transitively on closed points. -/
-instance smooth_redOver : Smooth (redOver S).hom := by
+theorem smooth_redOver_algClosed : Smooth (redOver S).hom := by
   refine Langlands.AlgebraicGeometry.closedPointHomogeneousSmooth k (red S.X.left)
     (redOver S).hom ?_
   intro x y hx hy
@@ -189,6 +190,64 @@ instance smooth_redOver : Smooth (redOver S).hom := by
     rw [← Scheme.Hom.comp_apply, redIso_hom_redι, Scheme.Hom.comp_apply]
     exact hβxy
 
+end AlgClosed
+
+section Perfect
+
+variable [PerfectField k] [LocallyOfFiniteType S.X.hom]
+
+set_option backward.isDefEq.respectTransparency false in
+/-- The reduction of a group scheme locally of finite type over a perfect field is smooth. -/
+instance smooth_redOver : Smooth (redOver S).hom := by
+  let L := AlgebraicClosure k
+  let q : Spec (CommRingCat.of L) ⟶ Spec (CommRingCat.of k) :=
+    Spec.map (CommRingCat.ofHom (algebraMap k L))
+  let S' := (GroupScheme.baseChange q).obj S
+  have : LocallyOfFiniteType S'.X.hom :=
+    inferInstanceAs (LocallyOfFiniteType (pullback.snd S.X.hom q))
+  have : IsLocallyNoetherian (redOver S).left :=
+    LocallyOfFiniteType.isLocallyNoetherian (redOver S).hom
+  have : IsReduced (pullback (redOver S).hom q) :=
+    Langlands.AlgebraicGeometry.SeparableReducedBaseChange.isReduced_pullback k L
+      (redOver S).hom
+  have : Surjective (redι S.X.left) := ⟨redι_surjective S.X.left⟩
+  let e := pullbackRightPullbackFstIso S.X.hom q (redι S.X.left)
+  let j : pullback (redOver S).hom q ⟶ S'.X.left :=
+    e.inv ≫ pullback.snd (redι S.X.left) (pullback.fst S.X.hom q)
+  have : IsClosedImmersion j := by dsimp only [j]; infer_instance
+  have : Surjective j := by dsimp only [j]; infer_instance
+  let l : pullback (redOver S).hom q ⟶ red S'.X.left := redLift j
+  have : IsClosedImmersion (l ≫ redι S'.X.left) := by
+    change IsClosedImmersion (redLift j ≫ redι S'.X.left)
+    rw [redLift_fac]
+    infer_instance
+  have : IsClosedImmersion l :=
+    IsClosedImmersion.of_comp_isClosedImmersion l (redι S'.X.left)
+  have : Surjective l := by
+    constructor
+    intro x
+    obtain ⟨y, hy⟩ := j.surjective (redι S'.X.left x)
+    refine ⟨y, redι_injective S'.X.left ?_⟩
+    simpa only [← Scheme.Hom.comp_apply, show l ≫ redι S'.X.left = j from redLift_fac j]
+      using hy
+  have : IsIso l := isIso_of_isClosedImmersion_of_surjective l
+  have : Smooth (redOver S').hom := smooth_redOver_algClosed S'
+  have h : l ≫ (redOver S').hom = pullback.snd (redOver S).hom q := by
+    change l ≫ redι S'.X.left ≫ pullback.snd S.X.hom q = _
+    rw [← Category.assoc, show l ≫ redι S'.X.left = j from redLift_fac j]
+    exact pullbackRightPullbackFstIso_inv_snd_snd S.X.hom q (redι S.X.left)
+  have : Smooth (pullback.snd (redOver S).hom q) := by
+    rw [← h]
+    infer_instance
+  have : Surjective q := by
+    constructor
+    intro x
+    exact ⟨IsLocalRing.closedPoint L, Subsingleton.elim _ _⟩
+  exact MorphismProperty.of_pullback_snd_of_descendsAlong
+    (P := @Smooth) (Q := @Surjective ⊓ @Flat ⊓ @QuasiCompact)
+    (f := (redOver S).hom) (g := q) ⟨⟨inferInstance, inferInstance⟩, inferInstance⟩
+    inferInstance
+
 instance : IsReduced (redOver S ⊗ redOver S).left := by
   have : Smooth (redOver S ⊗ redOver S).hom := by
     change Smooth (pullback.fst (redOver S).hom (redOver S).hom ≫ (redOver S).hom)
@@ -203,7 +262,7 @@ instance : IsReduced (𝟙_ (Over (Spec (CommRingCat.of k)))).left :=
 def redOne : 𝟙_ (Over (Spec (CommRingCat.of k))) ⟶ redOver S :=
   liftOver η[S.X]
 
-omit [IsAlgClosed k] [LocallyOfFiniteType S.X.hom] in
+omit [PerfectField k] [LocallyOfFiniteType S.X.hom] in
 @[reassoc (attr := simp)]
 theorem redOne_fac : redOne S ≫ redOverι S = η[S.X] :=
   liftOver_fac _
@@ -220,7 +279,7 @@ theorem redMul_fac : redMul S ≫ redOverι S = (redOverι S ⊗ₘ redOverι S)
 def redInv : redOver S ⟶ redOver S :=
   liftOver (redOverι S ≫ ι[S.X])
 
-omit [IsAlgClosed k] [LocallyOfFiniteType S.X.hom] in
+omit [PerfectField k] [LocallyOfFiniteType S.X.hom] in
 @[reassoc (attr := simp)]
 theorem redInv_fac : redInv S ≫ redOverι S = redOverι S ≫ ι[S.X] :=
   liftOver_fac _
@@ -265,7 +324,7 @@ reduced underlying scheme. -/
 def liftHomOver : K.X ⟶ redOver S :=
   liftOver g.hom.hom
 
-omit [IsAlgClosed k] [LocallyOfFiniteType S.X.hom] in
+omit [PerfectField k] [LocallyOfFiniteType S.X.hom] in
 @[reassoc (attr := simp)]
 theorem liftHomOver_fac : liftHomOver g ≫ redOverι S = g.hom.hom :=
   liftOver_fac _
@@ -290,7 +349,7 @@ theorem liftHom_fac : liftHom g ≫ reducedSubgroupι S = g :=
 
 end Lift
 
-end AlgClosed
+end Perfect
 
 end Over
 
@@ -298,10 +357,10 @@ end Over
 
 section IdentityComponent
 
-variable {k : Type u} [Field k] [IsAlgClosed k]
+variable {k : Type u} [Field k] [PerfectField k]
 
-/-- Every closed subgroup `S` of an affine group scheme `G` locally of finite type over an
-algebraically closed field contains a smooth connected closed subgroup `H = (S_red)⁰`, open in
+/-- Every closed subgroup `S` of an affine group scheme `G` locally of finite type over a
+perfect field contains a smooth connected closed subgroup `H = (S_red)⁰`, open in
 `S`, through which every smooth connected closed subgroup of `G` contained in `S` factors. -/
 theorem exists_reducedIdentityComponent {G S : GroupScheme (Spec (CommRingCat.of k))}
     [LocallyOfFiniteType G.X.hom] [IsAffineHom G.X.hom] (iS : S ⟶ G)

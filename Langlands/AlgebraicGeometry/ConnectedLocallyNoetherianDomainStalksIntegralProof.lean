@@ -52,7 +52,7 @@ private lemma exists_domain_away
     (Localization.Away f) b).mp h
   exact ⟨m, hm⟩
 
-private lemma exists_irreducible_open :
+lemma exists_irreducible_open :
     ∀ (X : Scheme.{u}) (x : X), IsLocallyNoetherian X →
       IsDomain (X.presheaf.stalk x) →
       ∃ U : X.Opens, x ∈ U ∧ IsIrreducible (U : Set X) := by
