@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Dynamic quotient properness: torsor extension and structural sources](../notes/group-schemes/dynamic-quotient-source-map.md) — Original-source locations for the affine-quotient route through geometric reductivity, its concrete rank-one inputs and the remaining independence and supplied-quotient obligations.
+
 - [Nilpotent field groups: central maximal tori and unipotent quotients](../notes/group-schemes/nilpotent-central-progress.md) — Verified arbitrary-field central-torus statement and exact proof, their geometric nilpotence and fppf quotient meanings, original-source comparison and remaining factorization obligations.
 
 - [Norm-one tori: rational lattices and split rank zero](../notes/group-schemes/norm-one-rational-progress.md) — Two verified norm-one proof publications, their actual-group hypotheses and proof routes, the anisotropy convention difference and remaining descent obligations.
