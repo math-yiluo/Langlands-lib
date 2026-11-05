@@ -216,4 +216,24 @@ theorem zeroSubgroup_le_chamber_sup_of_dynamicRadicals
     (fun xi => (hU xi).trans hK) hU
   exact hgen.trans (sup_le le_rfl le_sup_right)
 
+/-- Identity inclusion of the actual zero subgroup into the chamber and
+zero-normalizer join, given containment of every complete dynamic radical. -/
+def chamberGenerationInclusion
+    (hA : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (C : Set P.Apartment)
+    (hU : ∀ ν : cocharacterLattice P.S,
+      (Dynamic.unipotent (CommGroupScheme.groupHom ν ≫ P.i)).carrier (Over.mk (𝟙 _)) ≤
+        P.parahoric C ⊔ (normalizerPoints P.i ⊓ P.zeroSubgroup)) :
+    P.zeroSubgroup →* ↥(P.parahoric C ⊔ (normalizerPoints P.i ⊓ P.zeroSubgroup)) :=
+  Subgroup.inclusion (P.zeroSubgroup_le_chamber_sup_of_dynamicRadicals hA C hU)
+
+@[simp] theorem chamberGenerationInclusion_coe
+    (hA : P.apartment.SatisfiesApartmentAxioms P.centralizer)
+    (C : Set P.Apartment)
+    (hU : ∀ ν : cocharacterLattice P.S,
+      (Dynamic.unipotent (CommGroupScheme.groupHom ν ≫ P.i)).carrier (Over.mk (𝟙 _)) ≤
+        P.parahoric C ⊔ (normalizerPoints P.i ⊓ P.zeroSubgroup))
+    (g : P.zeroSubgroup) :
+    (P.chamberGenerationInclusion hA C hU g : rationalPoints G) = g := rfl
+
 end Langlands.Geometry.Building.ParahoricBuildingData

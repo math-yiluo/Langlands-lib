@@ -49,6 +49,13 @@ it then lies in `R` as well. The extra normalizer join is absorbed into `B`.
 The local assembly works for every subset `C`; the separate radical-containment
 proof is where the chamber condition is used.
 
+`ParahoricBuildingData.chamberGenerationInclusion` packages this containment
+as a monoid homomorphism from `P.zeroSubgroup` into
+`P.parahoric C ⊔ (normalizerPoints P.i ⊓ P.zeroSubgroup)`, under the same
+apartment-axiom and dynamic-radical premises. It is `Subgroup.inclusion`
+applied to the preceding theorem. Its underlying rational point is unchanged,
+as the reflexive theorem `chamberGenerationInclusion_coe` records.
+
 The provenance is internal. This is a deduction from the Library's proved
 density, opposite-cell, generic-centralizer, and dynamic Levi results. It
 introduces no external source assertion. The radical-containment premise
