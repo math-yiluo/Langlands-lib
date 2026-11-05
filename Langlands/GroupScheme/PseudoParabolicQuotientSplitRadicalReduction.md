@@ -22,6 +22,10 @@ instance then permits the existing factorization construction to give
 `fac_quotientMap` states `f.hom.hom ≫ quotientMap = q`, and
 `quotientMap_unique` proves uniqueness from this equation.
 
+The public helper `quasiCompact_of_surjective_comp` proves descent of
+quasi-compactness along a surjective first map and is also used by
+`PseudoParabolicQuotientReductionProof`.
+
 `quotientMap_surjective` reflects surjectivity of the original `q` through the
 factorization. `quotientMap_quasiCompact` does the same for quasi-compactness:
 for a compact open subset of `Q`, its preimage under the reduced projection

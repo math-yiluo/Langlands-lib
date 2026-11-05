@@ -67,6 +67,13 @@ them in the non-self-associated rank-one situation remains necessary for
 the host task. The proof route reuses the imported constructions and
 theorems, with no new original-literature assertion.
 
-The 2 local instances have module-specific names to prevent generated-name
-collisions when related modules are imported together. The instance types,
-bodies and local scope are unchanged.
+The 5 local instances have module-specific names to prevent generated-name
+collisions when related modules are imported or replayed together. These are
+the point-topology and affineness instances for `G` and, for each standard
+index `J`, the Levi closed-immersion, affineness and point-topology instances
+(`instRationalLocalInductionIrreducibility3` to `5`). As an anonymous instance,
+the Levi point topology generated
+`Langlands.Aubert.General.RationalPointFamily.instTopologicalSpaceRationalPointsLeviSchemeRootSet`.
+`RationalLeviCuspidalRemainderTransport` generates the same name with a
+different argument list. The instance types, bodies and local scope are
+unchanged.

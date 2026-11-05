@@ -28,3 +28,7 @@ exterior map and this coordinate proves that the scalar is a unit.
 Conversely, the exterior algebra map preserves products; the unit scalar
 can be cancelled in the annihilator equation, recovering subspace
 preservation from the proved annihilator characterization.
+
+The public helper `alternatingMap_eq_det_smul` expresses any top-degree
+alternating map as the basis determinant times its value on the basis. It is
+also reused by `Dynamic/AdjointDeterminantLine`.

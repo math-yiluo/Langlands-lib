@@ -37,7 +37,7 @@ theorem IsPseudoParabolicSubgroup.splitRadical_le {i : P ⟶ G}
 
 namespace PseudoParabolicQuotientSplitRadicalReduction
 
-private theorem quasiCompact_of_surjective_comp
+theorem quasiCompact_of_surjective_comp
     {X Y Z : Scheme.{u}} (p : X ⟶ Y) (r : Y ⟶ Z)
     [Surjective p] [QuasiCompact (p ≫ r)] : QuasiCompact r := by
   constructor

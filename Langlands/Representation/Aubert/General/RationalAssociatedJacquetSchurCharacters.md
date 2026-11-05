@@ -72,6 +72,11 @@ theorem to establish the retained isomorphism. It does not discharge the
 other analytic, structural, coefficient or detection inputs of the local
 irreducibility assembly or the exact self-association target.
 
-The 1 local instance has module-specific names to prevent generated-name
-collisions when related modules are imported together. The instance types,
-bodies and local scope are unchanged.
+The local point-topology instance has the module-specific name
+`instRationalAssociatedJacquetSchurCharacters1`. As an anonymous instance it
+generated `Langlands.Aubert.General.RationalPointFamily.instTopologicalSpaceRationalPointXOverSchemeSpecOf`.
+Another module in the same namespace generated that name with a different
+argument order, so whole-workspace kernel replay rejected
+`associatedJacquetScalarCharactersOfIso`. The explicit name prevents this
+collision when related modules are imported or replayed together. The instance
+type, body and local scope are unchanged.

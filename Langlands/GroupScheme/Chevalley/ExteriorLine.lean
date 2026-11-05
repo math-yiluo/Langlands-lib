@@ -107,7 +107,7 @@ omit [Fintype I] in
     simp [Basis.coord_apply, Finsupp.single_apply, Matrix.one_apply, s.injective.eq_iff]
   rw [hm, Matrix.det_one]
 
-private theorem alternatingMap_eq_det_smul
+theorem alternatingMap_eq_det_smul
     {U P : Type*} [AddCommGroup U] [Module R U] [AddCommGroup P] [Module R P]
     (c : Basis (Fin d) R U) (f : U [⋀^Fin d]→ₗ[R] P) :
     f = c.det.smulRight (f c) := by

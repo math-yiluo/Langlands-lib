@@ -30,13 +30,13 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
 local instance instRationalLocalInductionIrreducibility1 : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
 local instance instRationalLocalInductionIrreducibility2 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance (J : Finset (SimpleRoot i ν)) :
+local instance instRationalLocalInductionIrreducibility3 (J : Finset (SimpleRoot i ν)) :
     IsClosedImmersion (Standard.leviHom i ν (rootSet i ν J)).hom.hom.left :=
   Standard.isClosedSubgroup_leviHom i ν (rootSet i ν J)
-local instance (J : Finset (SimpleRoot i ν)) :
+local instance instRationalLocalInductionIrreducibility4 (J : Finset (SimpleRoot i ν)) :
     IsAffine (Standard.leviScheme i ν (rootSet i ν J)).X.left :=
   isAffine_of_isAffineHom (Standard.leviHom i ν (rootSet i ν J)).hom.hom.left
-local instance (J : Finset (SimpleRoot i ν)) :
+local instance instRationalLocalInductionIrreducibility5 (J : Finset (SimpleRoot i ν)) :
     TopologicalSpace (rationalPoints (Standard.leviScheme i ν (rootSet i ν J))) :=
   rationalPointTopology k (Standard.leviScheme i ν (rootSet i ν J)).X
 
