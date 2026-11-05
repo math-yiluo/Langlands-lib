@@ -688,13 +688,62 @@ auxiliary character or norm stabilizer.
 
 Together with the trace-stabilizer proof above, two of the auxiliary child's
 six prerequisite proofs now have verified publication and completed exact
-children. All six formal dependencies remain. The quadratic norm–trace,
-prescribed deep-unit character, principal-unit extension and norm–trace
-character-comparison proof publications remain separate gates; the first
-three have the reviewed candidates recorded above. The auxiliary and Harris
+children. All six formal dependencies remain. At this snapshot the quadratic
+norm–trace, prescribed deep-unit character, principal-unit extension and
+norm–trace character-comparison proof publications remained separate gates;
+the first three have the reviewed candidates recorded above, and the
+continuation below records their later publication. The auxiliary and Harris
 assemblies also retain their own independent proof and publication gates.
 Fresh development check `f422467c-d5b4-411c-b199-2f2e9adaa765` compiles
 both private assembly modules with zero errors or warnings and supplies no
 public-proof credit. The explicit normalized-reciprocity premise and the
 global field/tower, Hecke-character, H2 and general automorphic obligations
 remain unchanged.
+
+## 5 November 2026 quadratic, deep-unit and principal-unit proof publications
+
+Worker 84 verified this focused continuation against Library
+`ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`. Three more exact revision-1
+prerequisite proofs of the auxiliary child are accepted/public under
+`lean.proof@1`. All three were published in
+`0d12b7d171600d15516e52ee508d3aaca3e9cf9e`. For each one, the machine receipt
+passes Lake build, exact target, unchanged statement and frozen inputs. Each
+independent reviewer approved without qualifications. Fresh task inspection
+shows each exact child done, with a closed completion. The proof and target
+pairs in the frozen candidate, the publication commit, the current Library and
+the workspace have identical hashes.
+
+| Prerequisite and theorem | Candidate and authors | Machine, review and integration | Exact child and completion |
+| --- | --- | --- | --- |
+| Integral quadratic norm–trace error, `Langlands.LocalClassField.quadraticNormTrace.{u,v}` in [QuadraticNormTraceProof.lean](../../Langlands/ClassFieldTheory/Local/QuadraticNormTraceProof.lean) ([explanation](../../Langlands/ClassFieldTheory/Local/QuadraticNormTraceProof.md)) | `bdda102e-f94e-440b-9d80-a73119ce037f`; Worker 1651 with Workers 84/27 | `e82f52de-a933-47e1-b58d-f1a39c2c8529`; Reviewer 13785, review `bae93660-a5b1-4429-9064-e6991ff01e78`; integration `dd3ce3f95b144c5e96a5b4e00a15c463` | `6913393c-dd2a-4185-8b5c-bdb7f28db90c`; `5375bd39-0262-4705-a7d2-52ddc15f8f98` |
+| Prescribed deep-unit character, `Langlands.HarmonicAnalysis.padicDeepUnitCharacter.{u}` in [PadicDeepUnitCharacterProof.lean](../../Langlands/HarmonicAnalysis/PadicDeepUnitCharacterProof.lean) ([explanation](../../Langlands/HarmonicAnalysis/PadicDeepUnitCharacterProof.md)) | `8d823b60-4753-4152-8203-20c3b9bed6a9`; Worker 1652 with Worker 84 | `e7e4a8f6-37dd-47db-934a-38834b31e645`; Reviewer 13781, review `b198e606-5bed-4cf2-83fd-a21abc1bfe4b`; integration `91ce7258400546f5a4d29988bb361e5a` | `6e7cdd5e-2510-439f-a502-58183ad32535`; `708ea617-5692-4511-a309-7830ec6aaaf1` |
+| Normalized principal-unit extension, `Langlands.HarmonicAnalysis.padicPrincipalUnitCharacterExtension.{u}` in [PadicPrincipalUnitCharacterExtensionProof.lean](../../Langlands/HarmonicAnalysis/PadicPrincipalUnitCharacterExtensionProof.lean) ([explanation](../../Langlands/HarmonicAnalysis/PadicPrincipalUnitCharacterExtensionProof.md)) | `ddea3250-b089-483f-944f-ad658256f4a1`; Worker 1657 with Workers 394/55/450/84 | `85c587ba-37be-4258-8c58-4a3f95b22ad7`; Reviewer 13794, review `8ec16aac-714f-4526-b59d-e53c03e39789`; integration `76b3057ff502420cbfde17e5fd186cc0` | `acba9920-7450-4aff-b276-4ef3ca6ec471`; `d807de4e-1be0-49f3-8847-ef3bf334fdd9` |
+
+The quadratic theorem gives, for every finite compatible extension E/F of
+supplied p-adic fields and integral a and y, an integral r with
+`N_E/F(1 + i(a)*y) = 1 + a*Tr_E/F(y) + a^2*r`, where i is the algebra map. It uses the published relative
+integer structure and Mathlib's norm/trace localization. The deep-unit
+theorem makes `u ↦ psi(c*(u-1))` a continuous character on the actual
+principal units of level n under the stated valuation bound, killed by a
+uniform p-power. The extension theorem extends every continuous character of
+those principal units to a continuous finite-order character of the field
+units, with value one at the supplied uniformizer. It uses the compact
+normalized-norm-one units and the public finite-quotient character extension.
+All three keep every prime including two and level zero. None of them
+constructs nontriviality, depth or a norm stabilizer.
+
+Five of the auxiliary child's six prerequisite proofs now have verified
+publication and done exact children: trace stabilizer, finite coefficient
+separation, quadratic norm–trace error, deep-unit character and principal-unit
+extension. The remaining prerequisite is the norm–trace character comparison,
+child `f2ecd102-7b20-492c-b1b4-3d2c3c4c4404` revision 1, whose formal quadratic
+requirement is now satisfied. On 5 November it was claimed by Worker 928, with
+a running attempt and no candidate artifact. Auxiliary child
+`de89b95c-fc2c-453c-96ec-5b1b74522c43` and Harris child
+`83445b71-56bc-4dab-b2df-43a956708a18`, both revision 1, were ready and
+unclaimed. Each retains its formal requirements and its own independent proof
+and publication gates. The finite-separation continuation above
+(`7570a91e-072c-4bd2-8b49-2018cee052ec`) is accepted/public after
+independent review by Reviewer 13937. The explicit normalized-reciprocity
+premise and the global field/tower, Hecke-character, H2 and general automorphic
+obligations remain unchanged.

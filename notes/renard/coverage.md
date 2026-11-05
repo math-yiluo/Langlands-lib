@@ -364,19 +364,27 @@ independent review, machine and publication receipts, and frozen/public/
 current pair identity. These comprise two constructions and two statement
 pairs; no abelianness or obstruction proof is counted.
 
-Separate published tasks are the exact normalized-presheaf proof
-`2e405776-930f-43f8-a41f-5634b85df700`, chosen-basis/all-open equivalence
-`bbc1d9a5-4933-4677-b7ae-0184c69a2087` at section size max u v, and
-star-cokernel obstruction statements
-`6416418d-565b-498f-951f-bc24c29350be`. The last requests an injection
-from I into an actual cokernel's whole-space sections, then no cokernel
-and no abelian structure when `I = Type v` and sections remain in Type v.
-Those obstruction claims await statements and exact proofs. The star
-example is internal derived content, with no error attributed to Renard.
-The all-open equivalence preserves independent original universes; the
-positive arbitrary-basis sheaf statements use a sufficient section size
-and retain separate comparison, sheafification and exact-proof obligations.
-No source example or section completion is declared.
+The note's 5 November update verifies the published (2–3) proof
+`subobjectQuotientAndLatticeStatement` (Worker 840), so every numbered
+A.VI.2 row now cites a published proof or construction of its exact
+interface. It also verifies Worker 894's five exact proofs of the two
+strengthened full-subcategory criteria and the dimension-at-most-one
+counterexample: closure under subobjects and quotients, no binary product
+of the line, and no abelian structure. Four further sheaf/presheaf
+publications are verified. The exact normalized-presheaf proof
+`presheafAbelianStatement` (Worker 1595) holds at the original independent
+section universe. The chosen-basis/all-open equivalence
+`BasisAllOpen.equivalence` (Worker 1594) uses section size max u v. The star
+obstruction statements (Worker 1599) and their exact proof
+`cokernelScopeStatements` (Worker 1038) give an injection from I into an
+actual cokernel's whole-space sections. They also give no cokernel and no
+abelian structure when `I = Type v` and sections remain in Type v. The star
+example and the counterexample are internal derived content; the criteria
+are sufficient corrections, not source assertions. The exact proofs of the
+positive arbitrary-basis sufficient-size sheaf statements remain open, with
+their sheafification and size obligations. The criteria's adapter to the
+source's possibly-nonunital module category also remains open. No source
+example or section completion is declared.
 
 The [A.VI.3 Jordan–Hölder and simple-subquotient source map](jordan-holder-progress.md),
 dated 4 November 2026 by Worker 709, maps printed pp.263–264 / PDF269–270
@@ -982,7 +990,7 @@ including definitions, remarks and unnumbered results.
 | A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [eight further published proof units and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module and ring categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons, separated uniform completion and actual continuous-linear completion. The ring proof retains the actual chosen factor, every commuting local-category competitor and canonical-arrow initiality. The continuous-linear proof gives extension uniqueness, actual initiality and the canonical adjunction with its unit and both Hom formulas. Fixed-real test constructions and statements remain public with an exact-proof obligation. The chosen local-module functor and natural Mathlib comparison are published; its endomorphism canonical-arrow comparison has a separate construction task. The final representability remark/corollary has a published statement with exact proof waiting; chosen-arrow initiality, the printed all-continuous-maps completion claim and other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
 | A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four general statement/proof pairs and the concrete filtered-colimit construction, statements and proof](limits-colimits-progress.md). Quotient universality, compatible-family lift uniqueness, eventual zero and the separate empty-cocone target have published proofs; no section completion declared |
 | A.V | Adjunctions | 258 / 264 | Backlog |
-| A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies seven published units, including (8); (2–3) has a public statement with proof publication pending. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. The A.VI.1–2 note also verifies the all-open/Mathlib equivalence, normalized-presheaf and sufficient-size sheaf statements, and the actual star diagram; their separate proof/comparison tasks remain. Full-module AB5/AB6 examples, other examples, subcategory criteria, source adapters and other AB5 comparisons remain separate |
+| A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies eight published units, including the (8) and (2–3) proofs, so every numbered A.VI.2 row cites a published proof or construction. The same note verifies the five published proofs of the two corrected full-subcategory criteria and the dimension-at-most-one counterexample. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. The A.VI.1–2 note also verifies the all-open/Mathlib and chosen-basis/all-open equivalences, the normalized-presheaf abelianness proof, the sufficient-size sheaf statements, and the star diagram with its proved obstructions. The sufficient-size sheaf exact proof remains open. Full-module AB5/AB6 examples, other examples, source adapters and other AB5 comparisons remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
 | A.VIII | Specified functors | 265 / 271 | Partial: [A.VIII.1 source map and seven verified publications](exact-functors-progress.md) for one-sided sequence exactness, finite preservation, derived short-complex/homology comparisons and faithfulness; [A.VIII.2 basic Hom source map and six verified publications](hom-functors-progress.md) for actual Hom functors, five object properties, left exactness, derived comparisons and the projective nonzero-Hom criterion. Both maps retain exact universes and proof receipts. Later smallness, finite-support, presentation and equivalence assertions retain their separate tasks and [category/module boundaries](category-module-progress.md); no section completion declared |
 | A.IX | Categorical decompositions | 268 / 274 | Partial: [complete source-page map and seven verified proof publications](category-decomposition-progress.md), including literal full-sum zero intersection and canonical binary-biproduct monicity under both full-family smallness premises. Source-sized applicability and additional functor properties remain separate; no section completion declared |
