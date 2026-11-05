@@ -14,7 +14,7 @@ contains every such subgroup on every relative test scheme.
 
 The pullback comparison along a section is natural in actual group-scheme
 homomorphisms (`RadicalFieldTransport.sectionIso_naturality` and its inverse
-version). The helper `range_le_of_section` transports containment through this
+version, imported from `GroupScheme/SectionComparisonNaturality`). The helper `range_le_of_section` transports containment through this
 comparison and reflects it by fpqc descent of containment in a monic represented
 subgroup. Its explicit hypotheses are quasi-compactness, flatness, and
 surjectivity of the inverse base map, together with a section equation and

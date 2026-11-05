@@ -1,0 +1,13 @@
+# Positive characteristic reduction to reduced Hopf subalgebras — theorem interface
+
+Over a perfect field k of prime characteristic p, let H be a finite type commutative Hopf algebra. Assume faithful flatness over every finitely generated reduced subalgebra stable under comultiplication and antipode. Then it holds over every finitely generated stable subalgebra K. Perfectness and positive characteristic are hypotheses of this intermediate result only.
+
+The theorem `HopfAlgebra.faithfullyFlat_subalgebra_of_forall_isReduced_of_perfectField` applies the companion `P2MW.S_HopfAlgebra_faithfullyFlat_subalgebra_of_forall_isReduced_of_perfectField.solution` with the displayed arguments. Its proof is implemented in [the solution module](../P2M/Sol/S_HopfAlgebra_faithfullyFlat_subalgebra_of_forall_isReduced_of_perfectField.md):
+
+Choose a reduced Frobenius-power subalgebra K' of K by the imported Frobenius theorem. The premise gives faithful flatness over K'. Form the Hopf quotient Hb by the augmentation ideal of K'. Every element of the augmentation ideal of the image of K in Hb has a fixed p-power equal to zero. Finite generation makes the image Noetherian, so its entire augmentation ideal is nilpotent. The nilpotent-augmentation theorem makes Hb free over this image. The tensor-square theorem then gives faithful flatness after extending K by the faithfully flat K'-algebra H. A general faithfully flat descent argument, implemented through tensor cancellation and ideal detection, descends it to H over K.
+
+Source: `Theorems/Thm_HopfAlgebra_faithfullyFlat_subalgebra_of_forall_isReduced_of_perfectField.lean` (entire file, including its solution and auxiliary declarations) in the registered source `anthropic-flt-complete-lean-source-6e837e75`, commit `6e837e75355538c7f80bab5b956861e86c4eacc2`. Original file SHA256: `72e6dab864501a9bab3c32abb36d5a7eba075ef184edac76c6aa9b8c140b6e59`.
+
+Copyright 2026 Anthropic, PBC; Apache License 2.0. The retained license, notice and attribution ledger are in `licenses/Anthropic-FLT/`. The source attribution ledger has no entry for this file. This module is supporting mathematics imported for the actual affine homomorphism image proof.
+
+Port changes: imports use the `Langlands.AnthropicFLT` prefix; the utility import and P2M namespace commands are replaced by ordinary Lean commands. The finite heartbeat and transparency settings reproduce the source project configuration. The mathematical hypotheses and conclusions are retained. The source wrapper tactic is replaced by an explicit application of its companion solution.
