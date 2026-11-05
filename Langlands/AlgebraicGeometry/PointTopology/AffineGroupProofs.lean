@@ -23,7 +23,8 @@ namespace Langlands.AlgebraicGeometry.PointTopology
 variable (R S : Type u) [CommRing R] [CommRing S] [Algebra R S]
 variable [TopologicalSpace S]
 
-private theorem tensor_isAffine
+/-- The product of affine schemes over an affine base is affine. -/
+theorem tensor_isAffine
     (X Y : Over (Spec (CommRingCat.of R)))
     [IsAffine X.left] [IsAffine Y.left] :
     IsAffine (X ⊗ Y).left := by

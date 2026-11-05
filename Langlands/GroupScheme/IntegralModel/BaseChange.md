@@ -15,6 +15,17 @@ It first compares the two iterated pullbacks around the commuting square, using
 back the original model's `genericIso`. It uses that specified identification;
 there is no independently chosen generic isomorphism.
 
+`baseChangeGenericIso_hom_fst` proves that the generic comparison also preserves
+projection to the original model for arbitrary points of the extended generic
+fibre. In detail, its underlying scheme map, followed by the projection to `G`,
+the inverse original `genericIso` and the projection to the original model,
+equals the two first projections down through `Spec A`. The proof first checks
+the first-projection formula for a symbolic pullback composition and equality
+transport. This gives the formula for the symbolic square comparison. Naturality
+of the base change of `genericIso` and cancellation with its inverse then give
+the displayed coefficient-square formula. This assertion concerns the scheme
+maps themselves and does not require a point to descend from an `R`-section.
+
 `IntegralModel.baseChange` is the resulting `IntegralModel A L` of the actual
 base-changed group. Its group is precisely the pullback along `Spec A → Spec R`.
 Its affineness, flatness and locally finite-type structure follow by base change

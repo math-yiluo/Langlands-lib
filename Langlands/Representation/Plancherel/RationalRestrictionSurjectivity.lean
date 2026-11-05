@@ -79,7 +79,8 @@ theorem rationalValuationImageMap_injective {T : CommGroupScheme (Spec (CommRing
   rationalValuationImageMap_injective_of_finiteIndex s
     (hs.finiteIndex_range_characterRestrict hG)
 
-private theorem exists_circle_character_extension {A B : Type*} [CommGroup A] [CommGroup B]
+/-- Circle-valued characters extend along injective homomorphisms of commutative groups. -/
+theorem exists_circle_character_extension {A B : Type*} [CommGroup A] [CommGroup B]
     (f : A →* B) (hf : Function.Injective f) (chi : A →* Circle) :
     ∃ psi : B →* Circle, psi.comp f = chi := by
   let : DivisibleBy (Additive Circle) ℤ :=

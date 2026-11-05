@@ -30,6 +30,36 @@ private irreducible_def squareIso :
     eqToIso (congrArg (fun f => (Langlands.GroupScheme.baseChange f).obj G) h) ≪≫
       baseChangeCompIso d e G
 
+private theorem compIso_hom_fst :
+    (baseChangeCompIso b c G).hom.hom.hom.left ≫
+        pullback.fst (pullback.snd G.X.hom b) c ≫ pullback.fst G.X.hom b =
+      pullback.fst G.X.hom (c ≫ b) := by
+  have hi : (baseChangeCompIso b c G).inv.hom.hom.left ≫
+      (baseChangeCompIso b c G).hom.hom.hom.left = 𝟙 _ :=
+    congrArg (fun f => f.hom.hom.left) (baseChangeCompIso b c G).inv_hom_id
+  apply (cancel_epi (baseChangeCompIso b c G).inv.hom.hom.left).mp
+  simp only [← Category.assoc, hi, Category.id_comp]
+  exact (baseChangeCompIso_inv_fst b c G).symm
+
+private theorem eqIso_fst {f g : V ⟶ S} (hfg : f = g) :
+    (eqToIso (congrArg
+      (fun k => (Langlands.GroupScheme.baseChange k).obj G) hfg)).hom.hom.hom.left ≫
+        pullback.fst G.X.hom g = pullback.fst G.X.hom f := by
+  subst g
+  simp
+
+private theorem squareIso_fst_fst :
+    (squareIso b c d e h G).hom.hom.hom.left ≫
+        pullback.fst (pullback.snd G.X.hom d) e ≫ pullback.fst G.X.hom d =
+      pullback.fst (pullback.snd G.X.hom b) c ≫ pullback.fst G.X.hom b := by
+  rw [squareIso_def]
+  change ((baseChangeCompIso b c G).inv.hom.hom.left ≫
+      ((eqToIso (congrArg
+        (fun k => (Langlands.GroupScheme.baseChange k).obj G) h)).hom.hom.hom.left ≫
+          (baseChangeCompIso d e G).hom.hom.hom.left)) ≫ _ = _
+  simp only [Category.assoc]
+  rw [compIso_hom_fst, eqIso_fst G h, baseChangeCompIso_inv_fst]
+
 private theorem section_comp (x : Over.mk (𝟙 S) ⟶ G.X) :
     baseChangeSectionHom c _ (baseChangeSectionHom b G x) ≫
         (baseChangeCompIso b c G).inv.hom.hom =
@@ -158,6 +188,28 @@ private theorem baseChangeGenericIso_hom :
           M.genericIso.hom).hom.hom := by
   simp only [baseChangeGenericIso, Iso.trans_hom, Functor.mapIso_hom,
     Grp.comp_hom_hom]
+
+omit [IsDomain A] [IsFractionRing A L] in
+/-- The specified generic comparison preserves projection to the original model. -/
+theorem baseChangeGenericIso_hom_fst :
+    (M.baseChangeGenericIso A L).hom.hom.hom.left ≫
+        pullback.fst G.X.hom (Spec.algebraMap K L) ≫
+          M.genericIso.inv.hom.hom.left ≫
+            pullback.fst M.group.X.hom (Spec.algebraMap R K) =
+      pullback.fst (pullback.snd M.group.X.hom (Spec.algebraMap R A))
+          (Spec.algebraMap A L) ≫
+        pullback.fst M.group.X.hom (Spec.algebraMap R A) := by
+  have hi : M.genericIso.hom.hom.hom.left ≫ M.genericIso.inv.hom.hom.left = 𝟙 _ :=
+    congrArg (fun f => f.hom.hom.left) M.genericIso.hom_inv_id
+  rw [baseChangeGenericIso_hom]
+  change ((squareIso (Spec.algebraMap R A) (Spec.algebraMap A L)
+      (Spec.algebraMap R K) (Spec.algebraMap K L)
+      (coefficientSquare (R := R) (K := K) A L) M.group).hom.hom.hom.left ≫
+        ((Over.pullback (Spec.algebraMap K L)).map M.genericIso.hom.hom.hom).left) ≫
+      _ = _
+  simp only [Over.pullback_map_left, Category.assoc, pullback.lift_fst_assoc]
+  rw [← Category.assoc M.genericIso.hom.hom.hom.left, hi, Category.id_comp]
+  exact squareIso_fst_fst _ _ _ _ _ _
 
 /-- Smoothness of the original model is preserved by the actual pullback. -/
 theorem isSmooth_baseChange (hM : M.IsSmooth) : (M.baseChange A L).IsSmooth := by

@@ -24,7 +24,8 @@ product. Its underlying scheme cone is the pullback over `Spec R`.
 Affineness follows from affine base change; local finite type follows from
 base change on the second projection and composition with the second
 factor's structure map. These are properties of the actual chosen
-categorical product, established by the two private tensor lemmas.
+categorical product, established by the public `tensor_isAffine` lemma and
+the private local-finite-type tensor lemma.
 
 `continuous_affineSchemePointPair` regards this product as a pullback over
 the explicit terminal relative scheme given by the identity on `Spec R`.

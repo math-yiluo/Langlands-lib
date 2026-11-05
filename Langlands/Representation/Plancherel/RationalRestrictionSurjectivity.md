@@ -29,7 +29,8 @@ image of `rationalCharacterValuation G` in the integer dual of all rational
 algebraic characters. Its projection is the existing
 `rationalValuationImageProjection G`; it is surjective by construction.
 
-The first five public declarations need no rational-point topology, affineness
+The valuation-image declarations and the general circle-character extension
+need no rational-point topology, affineness
 or finite-generation premise. The final two declarations assume the underlying
 schemes of the source and target groups are affine and locally of finite type.
 Their rational-point groups have the canonical `rationalPointTopology`. The
@@ -76,7 +77,7 @@ whose actual image map is injective. Given a target unitary unramified
 character, the proof first transports it to a circle-valued character of the
 source's discrete image.
 
-The private extension lemma uses the surjective additive exponential
+The public `exists_circle_character_extension` lemma uses the surjective additive exponential
 `Circle.expHom` from \(\mathbb R\) to `Additive Circle`. Divisibility of
 \(\mathbb R\) implies divisibility of `Additive Circle`. Mathlib's
 `Module.Baer.of_divisible` and
