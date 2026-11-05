@@ -504,8 +504,11 @@ Worker 84 checked this focused H2 continuation against Library
 `622054b9c6b9f07feb1335165348ac66b27b39e5`. It supersedes the older pending
 statuses only for the exact units named here. Other H1/H2 rows and all general
 reductive analytic obligations remain historical snapshots. This continuation
-credits public proposition targets and the existing conditional reduction;
-none of the new auxiliary-construction proofs below is independently public.
+credits public proposition targets and the existing conditional reduction.
+At that snapshot, none of the new auxiliary-construction proofs below was
+independently public. The 4 November update records the later trace-stabilizer
+proof publication and distinguishes the other reviewed candidates from public
+proofs.
 
 The five targets in the next table were fetched as accepted/public, with
 terminal accepted machine validation and unqualified independent semantic
@@ -523,11 +526,12 @@ route, rather than a theorem attributed verbatim to Harris or Henniart.
 | `Langlands.HarmonicAnalysis.PadicPrincipalUnitCharacterExtensionStatement.{u}` in [PadicPrincipalUnitCharacterExtensionStatement.lean](../../Langlands/HarmonicAnalysis/PadicPrincipalUnitCharacterExtensionStatement.lean) | Statement `d6ed3b3f-ab9f-4d22-be4f-0ebde529978f`; Reviewer 11433; integration `0ed04b44ca4e44b3af18890c3a7bd851`. | Child `acba9920-7450-4aff-b276-4ef3ca6ec471`, revision 1, has a complete adoption pair preserving Workers 84/394/55/450. Every continuous complex character of actual principalUnits n extends to finite positive order on field units, with value one at the supplied uniformizer. All supplied compatible topologies, p=2 and n=0 are retained. |
 | `Langlands.HarmonicAnalysis.PadicDeepUnitNormTraceStatement.{u,v}` in [PadicDeepUnitNormTraceStatement.lean](../../Langlands/HarmonicAnalysis/PadicDeepUnitNormTraceStatement.lean) | Statement `d6f2b22f-8e27-44e8-b5bb-4027f526d2b1`; Reviewer 11452; integration `5d3c0966bb27414bb2b05ed7d28c8bb1`. | Child `f2ecd102-7b20-492c-b1b4-3d2c3c4c4404`, revision 1, has Workers 84/27's complete adoption pair and formally requires the quadratic proof child under `lean.proof@1`. Under the prescribed character formula and three valuation bounds it constructs the actual unit z=1+i(a)y, puts its norm in principalUnits n and computes `chi(Nz)=Circle.toUnits(psi(c*a*Tr(y)))`. |
 
-The public algebraic `Langlands.Global.PrimitiveTraceStabilizerStatement` and
-its separate exact proof child `0cd7bcab-0ab1-4373-8276-18db068b787f`,
-revision 1, are preserved. That child has Worker 84's complete proof pair,
-but remains a prerequisite proof obligation. Public theorem imports alone
-confer no authorship on a downstream implementation.
+The public algebraic `Langlands.Global.PrimitiveTraceStabilizerStatement` has
+separate exact proof child `0cd7bcab-0ab1-4373-8276-18db068b787f`, revision 1.
+At the 3 November snapshot it had Worker 84's complete adoption pair and
+remained a prerequisite proof obligation; its later publication is verified
+below. Public theorem imports alone confer no authorship on a downstream
+implementation.
 
 ### Complete private assembly and independent proof boundaries
 
@@ -597,3 +601,55 @@ their scopes. Complete adoption content and task publication are coordination
 evidence. The local construction does not yet supply an independently public
 auxiliary or Harris proof, prescribed global Hecke characters, paired field
 towers, weak automorphic induction or H2 completion.
+
+## 4 November 2026 trace-stabilizer proof publication
+
+Worker 84 verified this update against Library
+`9caf47cacd8f25d9a56aa0737b4256267bf62d16`. The exact proof
+`cdaf4899-ba07-4084-9784-51a6d625c5e8`, bound to child
+`0cd7bcab-0ab1-4373-8276-18db068b787f` revision 1, is accepted/public.
+Its theorem is `Langlands.Global.primitiveTraceStabilizer.{u,v}` in
+[PrimitiveTraceStabilizerProof.lean](../../Langlands/Global/Arithmetic/PrimitiveTraceStabilizerProof.lean),
+with its [paired proof explanation](../../Langlands/Global/Arithmetic/PrimitiveTraceStabilizerProof.md).
+The candidate retains Workers 1604/84 as actual coauthors. Machine receipt
+`8b4fa3b2-5bcc-4e4b-92ca-cf4c26b78b61` passes Lake build, exact target,
+unchanged statement and frozen inputs. Reviewer 13649 independently approved
+the exact candidate without qualifications; review
+`deaab63f-5c77-400c-b246-7cb18fe3626c` and integration
+`e884f6c2c1274b768b1ec4b80fff6b85` record its publication in
+`476a152fd90d846bcb20b9897f53829a768b822c`. The current proof pair matches
+the frozen pair, and the target pair remains unchanged.
+
+For any finite separable extension M/F and actual intermediate field L, the
+theorem produces a nonzero primitive coefficient a in L such that preserving
+`x ↦ Tr_M/F(a*x)` by precomposition is equivalent to pointwise fixation of L.
+It retains independent field universes, arbitrary characteristic and no
+normality hypothesis. The implemented proof combines trace invariance and
+nondegeneracy with primitive-element generation and the actual inclusion of L.
+It proves the algebraic prerequisite; multiplicative character existence,
+continuity, finite order, norm compatibility and arbitrary depth remain
+separate conclusions of the auxiliary construction.
+
+Four other exact revision-1 proof candidates have accepted machine validation
+and unqualified independent semantic approval, but each fresh fetch still
+reports `accepted=false` and `public=false`. They receive no public-proof
+credit in this update:
+
+| Prerequisite | Candidate | Machine receipt | Independent reviewer |
+| --- | --- | --- | --- |
+| Finite coefficient separation | `a0a31834-071d-45e0-bee5-789d6adb821d` | `69776751-b4e5-47f3-8dba-961cf5509c53` | Reviewer 13782 |
+| Integral quadratic norm–trace error | `bdda102e-f94e-440b-9d80-a73119ce037f` | `e82f52de-a933-47e1-b58d-f1a39c2c8529` | Reviewer 13785 |
+| Prescribed deep-unit character | `8d823b60-4753-4152-8203-20c3b9bed6a9` | `e7e4a8f6-37dd-47db-934a-38834b31e645` | Reviewer 13781 |
+| Normalized principal-unit extension | `ddea3250-b089-483f-944f-ad658256f4a1` | `85c587ba-37be-4258-8c58-4a3f95b22ad7` | Reviewer 13794 |
+
+The auxiliary child's six formal prerequisite requirements are preserved:
+the trace-stabilizer proof now has verified publication, while the other five
+proof publications remain required, including the norm–trace character
+comparison. The auxiliary and Harris assemblies themselves also retain their
+separate independent proof and publication gates. Fresh private recompilations
+`7080a225-e164-4e6d-8a63-547b11f69d25` and
+`ae3d1cb1-7c5d-4d31-ba28-5ecfa69445be` have zero errors and warnings, full
+declared universes and only propext, Classical.choice and Quot.sound. They remain
+development diagnostics. The explicit normalized-reciprocity premise, global
+field/tower and Hecke-character obligations, and all H2 and general automorphic
+completion conditions remain in force.
