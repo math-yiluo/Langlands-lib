@@ -13,7 +13,7 @@ developments; the remaining initial-pass rows retain their original scope.
 
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
 updated 5 November 2026 by Worker 6 with Worker 1444's proof explanation,
-verifies sixteen publications: the arbitrary
+verifies twenty-one publications, among them the arbitrary
 actual-parabolic normalized exponent construction, compatible root
 presentations, root-convention and presentation-comparison statements,
 the derived normalized temperedness predicate, and the full-group exponent,
@@ -26,9 +26,13 @@ nine-clause imaginary-quotient proof by Workers 6,
 intrinsic pure-tensor absolute-value formula and the tensor-identification
 statement by Worker 6. All thirty-two
 selected mathematical files match their frozen accepted
-hashes and the checked Library.
+hashes and the checked Library. It also verifies five later Worker 6
+publications: the represented-parabolic induction construction, the VII.1.1
+exponent statement, the VII.1.2 Casselman-criterion statement, the VII.2.1
+Remark 2 statement and the Levi-point transport. Their proofs are recorded
+as open tasks, and the Levi-point files carry a recorded integration edit.
 The map records the
-selected V.3.4, V.3.12, V.3.14–15, V.3.19–20, VI.1.2, VII.1.1 and VII.2.1 assertions,
+selected V.3.4, V.3.12, V.3.14–15, V.3.19–20, VI.1.2, VII.1.1, VII.1.2 and VII.2.1 assertions,
 the distinct normalized and raw-log real-part conventions, and the
 remaining structural and representation-theoretic proofs. The full-group
 proof derives the zero cone from centrality and applies the all-point norm
@@ -52,7 +56,8 @@ over every nonarchimedean local field is a published statement whose proof
 remains open, with an exact proof successor recorded in the map.
 The split-center comparison, algebraic-torus and real-submanifold
 structures, standard reduction, the full-center
-consequence and Casselman implication remain open.
+consequence and the proofs of the Casselman criterion and its Remark 2
+implication remain open.
 The map extends selected V.3, VI.1, VII.1 and VII.2 navigation. No complete section
 or all-parabolic temperedness criterion is claimed.
 
@@ -1005,8 +1010,8 @@ including definitions, remarks and unnumbered results.
 | VI.9 | Second adjointness | 195 / 201 | Backlog; general scope retained |
 | VI.10 | Bernstein centre | 206 / 212 | Backlog |
 | VI.11 | Chapter notes | 217 / 223 | Backlog, including mathematical assertions |
-| VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Partial: [published actual normalized exponent construction](root-exponent-tempered-progress.md) at VII.1.1; direct sums, finiteness, Casselman's criterion and the remaining assertions stay open |
-| VII.2 | Tempered representations | 227 / 233 | Partial: [published normalized predicate, exact full-group exponent and corrected logarithmic comparison proofs, standard-reduction and corrected central-character statements](root-exponent-tempered-progress.md); structural comparisons, standard reduction, the full-center consequence, Casselman consequences and subsequent theorems remain open |
+| VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Partial: [published actual normalized exponent construction, represented-parabolic induction, and VII.1.1 and Casselman-criterion statements](root-exponent-tempered-progress.md); their proofs (tasks `0bdc392c-4e25-4b6f-a676-0bc49e85e999`, `2e8d370f-f1ed-4ad4-a529-5083212ebae0`) and the VII.1.3 application stay open |
+| VII.2 | Tempered representations | 227 / 233 | Partial: [published normalized predicate, exact full-group exponent and corrected logarithmic comparison proofs, standard-reduction, corrected central-character and Remark 2 statements, and the Levi-point transport](root-exponent-tempered-progress.md); structural comparisons, standard reduction, the full-center consequence, the Remark 2 proof (task `1ebce298-eeeb-4686-ba30-cabcb8e50d4b`) and VII.2.2–VII.2.6 remain open |
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |

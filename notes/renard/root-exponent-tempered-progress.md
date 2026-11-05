@@ -4,8 +4,8 @@ Worker 6, with Worker 1444's published proof explanation, updated
 5 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records sixteen verified publications and the remaining gates to the
-all-parabolic temperedness criterion. It is not a complete inventory of
+It records twenty-one verified publications and the remaining gates to the
+all-parabolic temperedness criterion and its VII.1–VII.2 consequences. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -17,7 +17,16 @@ The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
 compilation, and all thirty-two selected mathematical files match their
 frozen accepted hashes, their publication commits and the files at Library
-`a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee`.
+`a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee`. The five later pairs listed last
+in the publication table were checked at Library
+`b21e71ce008bc85afd0463fb58fb171b22a6e62a`. Eight of their files equal the
+frozen hashes. The Levi-points pair was edited during integration: its
+two local closed-subgroup helpers were replaced by the imported
+`GroupScheme.IsClosedSubgroup.comp` and
+`GroupScheme.IsClosedSubgroup.isRepresentedBy_range`, so its Library files
+(`667bf851…`, `49505cdf…`) differ from the frozen ones (`c51e1703…`,
+`cb40990e…`) already in integration commit
+`1831431f93603e52c73600a2a900dd42d7f18deb`.
 
 ## Selected source assertions and exact interfaces
 
@@ -34,6 +43,10 @@ frozen accepted hashes, their publication commits and the files at Library
 | V.3.19–V.3.20, 115–116 / 121–122: the equal-rank lattices and \(\mathfrak a^*_{\mathbb C}=\operatorname{Hom}_{\mathbb Z}(\Lambda(M),\mathbb C)\), written \(X^*(M)\otimes_{\mathbb Z}\mathbb C\) on printed p.116 | The published `Langlands.Plancherel.RationalCharacterTensorParameterStatement` asserts bijectivity of `rationalCharacterTensorParameter G` for every actual connected reductive `G` over every nonarchimedean local field, taking the Levi to be the group itself. This is a published **statement**; its proof is open. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
+| VII.1.1, 220–221 / 226–227: (VII.1.1.1), finiteness of exponents in finite length, the case `P = G`, and Lemma (i)–(ii) comparing exponents of `W`, `i_P^G W`, `V` and `r_P^G V` | The published `ArbitraryParabolicInduction` proves the point-image semidirect decomposition and defines `inductionFunctor`, `leviWeightSpace`, `IsLeviExponent`, `groupWeightSpace`, `IsGroupExponent` and `groupExponents`. The published **statement** `ArbitraryParabolicExponentStatement` asserts the direct sum for admissible `π`, finiteness in finite length, the `P = G` decomposition, and (i)–(ii) for every point homomorphism `A_G(F) → A_M(F)` compatible with the two inclusions. Its proof is open (task `0bdc392c-4e25-4b6f-a676-0bc49e85e999`). |
+| VII.1.2, 221–224 / 227–230: Casselman's criterion | The published **statement** `ArbitraryParabolicCasselmanCriterionStatement` asserts, for admissible `π` with a unitary central character and every Haar measure on `G(F) ⧸ Z(G(F))`, square-integrability modulo the center if and only if every normalized exponent at every actual parabolic has `q^(-s)` real part in `pres.positiveCone` for every compatible presentation. Its Markdown explains why the strictly positive root cone of the proof replaces the printed coroot chamber, and why Renard's `δ_P` is the inverse of the Library's modulus. Its proof is open (task `2e8d370f-f1ed-4ad4-a529-5083212ebae0`). |
+| VII.2.1, Remark 2, 227 / 233: square-integrable modulo the center implies tempered | The published **statement** `SquareIntegrableNormalizedTemperedStatement` concludes `IsNormalizedExponentTempered` from the published square-integrability predicate. Irreducibility is omitted because it serves only to supply admissibility, which that predicate contains. Its proof is open (task `1ebce298-eeeb-4686-ba30-cabcb8e50d4b`). |
+| VI.1.2 and VII.2.2–VII.2.6, 135–136 / 141–142 and 227–231 / 233–237: induction and restriction between representations of `M` and `G` | The published `ArbitraryParabolicLeviPoints` constructs `leviPointsEquiv : M(F) ≃ₜ* pointImage (l ≫ p)` for the canonical topology on `M(F)`, derives local compactness and the nonarchimedean property of `M(F)`, and defines `leviInductionFunctor` and `leviJacquetFunctor` on representations of `M(F)`. It makes the published temperedness predicate for `M` applicable to Levi representations. It proves no representation-theoretic assertion. |
 | VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The published derived `IsNormalizedExponentTempered` combines admissibility with the actual all-parabolic, all-presentation condition. Its explicitly normalized parameter retains the corrected-source comparison described below; this construction does not complete original source-definition coverage. |
 | VII.2.1, Remark 1, first assertion, 227 / 233: full-group exponents are unitary, equivalently have zero real part | The published theorem `normalizedTemperedFullGroupExponent` proves `NormalizedTemperedFullGroupExponentStatement` for the identity parabolic and identity Levi. Centrality of the supplied split component makes the actual root-combination cone `{0}`, giving zero normalized real part and norm one at every split-component point. The full-center consequence is separate. |
 | VII.2.1, Remark 1, second assertion, 227 / 233: a scalar central character is unitary | The published corrected derived `NormalizedTemperedCentralCharacterStatement` concludes norm one on the full point-group center for every prescribed scalar central character of a nonzero normalized-exponent tempered representation. Nonzeroness repairs the source's zero-representation obstruction; the full-center proof remains open. |
@@ -81,8 +94,8 @@ representation.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. The sixteen units
-are four definitions, seven statements and five exact proofs. A definition
+independent semantic approval and a published integration. The twenty-one units
+are six definitions, ten statements and five exact proofs. A definition
 receipt covers its construction and intrinsic laws; a statement receipt
 does not prove its proposition.
 
@@ -104,6 +117,11 @@ does not prove its proposition.
 | [RationalCharacterTensorParameter](../../Langlands/Representation/Plancherel/RationalCharacterTensorParameter.md), `Langlands.Plancherel.rationalCharacterTensorParameter` | Definition `26067a47-60dc-42c6-b970-0b48d6dd0418`; Reviewer 13447, review `82e0e7f1-8ba4-4c75-855e-6d84cc7a8e42`; machine `820db56f-6140-40be-842a-e10723cc6549`; integration `21dce902fd0a4fd986346142cee3f988`, commit `a4a5fb7b2643f2b9b9a6ac9c41bde7cc387d4a1a`. |
 | [RationalImaginaryParameterQuotient](../../Langlands/Representation/Plancherel/RationalImaginaryParameterQuotient.md), `Langlands.Plancherel.rationalImaginaryParameterQuotient` | Proof `0042d3d0-a5de-43a4-b591-57f448440d61`; Reviewer 13591, review `9432d9b0-fd9f-45fd-a23d-ee372f95697c`; machine `d0230032-5aac-4d1c-aa54-ffe0d6d4fe14`; integration `c39f56b6be424d78a59f7539b2545335`, commit `476a152fd90d846bcb20b9897f53829a768b822c`. |
 | [RationalCharacterTensorParameterStatement](../../Langlands/Representation/Plancherel/RationalCharacterTensorParameterStatement.md), `Langlands.Plancherel.RationalCharacterTensorParameterStatement` | Statement `f7204678-3ab1-4e53-9259-4d1e150443a4`; Reviewer 13675, review `f264fbab-ae9e-4c7d-8bcc-1c917767f113`; machine `0c42ded1-b040-4b46-9991-9900e0764d8f`; integration `c41ffb6de8da431d9f052d0bf1673cbe`, commit `409542525904dd50036abafdafb8ad1459eadade`. |
+| [ArbitraryParabolicInduction](../../Langlands/Representation/Exponents/ArbitraryParabolicInduction.md), `Langlands.Aubert.General.RepresentedParabolic.inductionFunctor` | Definition `307a24ba-8c72-490b-80ad-46302025ca6f`; Reviewer 14052, review `8989731b-87bb-4d14-9fd6-3fdd2ed31300`; machine `585d3c73-5daf-4df9-99e8-f26dae26342f`; integration `31f8940068db4415b091a36abf6cfa6e`, commit `0bd5bf67c3464359bc8da3b3100163d6ee3da352`. |
+| [ArbitraryParabolicExponentStatement](../../Langlands/Representation/Exponents/ArbitraryParabolicExponentStatement.md), `Langlands.Aubert.General.RepresentedParabolic.ArbitraryParabolicExponentStatement` | Statement `ab72c2dd-c9b0-449e-9a22-4119f6cbde4f`; Reviewer 14235, review `725a39a2-38b2-4b80-8a4b-8ac53ecc7bfd`; machine `99bf1dc5-f4db-4fc7-9640-1072de3da644`; integration `63b381f98aae47b6967f605c13a3a49b`, commit `910675f18ad6c3d8b09c12c678a0243795a673b9`. |
+| [ArbitraryParabolicCasselmanStatement](../../Langlands/Representation/Exponents/ArbitraryParabolicCasselmanStatement.md), `Langlands.Aubert.General.RepresentedParabolic.ArbitraryParabolicCasselmanCriterionStatement` | Statement `7dfb5a83-296f-4ccf-a9c6-77519fea9bc1`; Reviewer 14345, review `e2c729b1-81e4-44df-aebc-10551406b96e`; machine `54ce1a8e-f324-4f4d-8a2a-548cd7ba86f4`; integration `6e11a05d88e642ffaa1660fe9f4a0e51`, commit `1831431f93603e52c73600a2a900dd42d7f18deb`. |
+| [SquareIntegrableNormalizedTemperedStatement](../../Langlands/Representation/Exponents/SquareIntegrableNormalizedTemperedStatement.md), `Langlands.Aubert.General.RepresentedParabolic.SquareIntegrableNormalizedTemperedStatement` | Statement `ff5f0119-f42b-42f0-b06b-2e10112d14b9`; Reviewer 14351, review `6ac2cc6b-925e-47ac-ba45-9b92c969cf29`; machine `af885c45-9e9a-479e-895b-3a87b1c154d7`; integration `4520516d901149c0b29bf09f7ffbb307`, commit `1831431f93603e52c73600a2a900dd42d7f18deb`. |
+| [ArbitraryParabolicLeviPoints](../../Langlands/Representation/Exponents/ArbitraryParabolicLeviPoints.md), `Langlands.Aubert.General.RepresentedParabolic.leviPointsEquiv` | Definition `fc28852c-cb51-4125-86ff-09114d607833`; Reviewer 14361, review `69e8df94-a3eb-4e63-86e5-e3e3ecee6d41`; machine `25ef445f-4c7f-41fc-a2c6-0eb458ddafe2`; integration `4f0b597b7e824684ad50890f711f95c3`, commit `1831431f93603e52c73600a2a900dd42d7f18deb`. |
 
 The logarithmic, algebraic complex-parameter, complex-quotient and
 imaginary-quotient machine receipts each accept
@@ -404,10 +422,19 @@ The dependency order still requires:
    above are already proved and public.
    Actual topology, subgroup-image, conjugacy and exponent-transport
    comparisons remain explicit.
-4. The source's separate representation-theoretic assertions: the VII.1.1
-   direct-sum and finite-exponent results, Casselman's criterion, the
-   VII.2.1 Remark 2's Casselman implication, induction and restriction behavior,
-   and the later tempered-support and classification results. A scalar central
+4. The source's separate representation-theoretic assertions. The VII.1.1
+   direct-sum and finite-exponent results, Casselman's criterion and
+   VII.2.1 Remark 2 are published statements whose proofs are open, with
+   proof tasks `0bdc392c-4e25-4b6f-a676-0bc49e85e999`,
+   `2e8d370f-f1ed-4ad4-a529-5083212ebae0` and
+   `1ebce298-eeeb-4686-ba30-cabcb8e50d4b`. The VII.1.1 task's published
+   support reduces its finiteness clause to actual Jacquet spanning and
+   compactness of the literal parabolic quotient. Worker 1670 published
+   statement tasks for represented-parabolic Jacquet admissibility, the input
+   for spanning (`41dd1a77-7dfc-4a55-a2b7-ab60212ed965`), and for quotient
+   compactness (`00501674-4aae-4d1b-b541-a1a1b63032aa`). Induction and restriction behavior (VII.2.2–VII.2.5), the
+   VII.2.6 discrete-series description and the classification results remain
+   unpublished. A scalar central
    character is a premise only of its separate corrected consequence; it is not
    a premise of the all-parabolic definition, full-group exponent statement or
    standard-reduction statement.
