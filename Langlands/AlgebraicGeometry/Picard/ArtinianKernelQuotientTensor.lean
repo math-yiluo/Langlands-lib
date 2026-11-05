@@ -26,7 +26,7 @@ private lemma appLE_congr {T Y : Scheme.{u}} {p p' : Y ⟶ T}
   cases w
   rfl
 
-private lemma baseScalar_naturality {T Y : Scheme.{u}} {R S : CommRingCat.{u}}
+lemma baseScalar_naturality {T Y : Scheme.{u}} {R S : CommRingCat.{u}}
     (h : Y ⟶ T) (p : T ⟶ Spec R) (p' : Y ⟶ Spec S) (φ : R ⟶ S)
     (w : h ≫ p = p' ≫ Spec.map φ) (U : T.Opens) (a : R) :
     h.app U (p.appLE ⊤ U le_top ((Scheme.ΓSpecIso R).inv a)) =

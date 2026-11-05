@@ -20,7 +20,13 @@ First, the product of two finite-type models over the same arithmetic
 integer ring is finite type: its first projection is a base change of the
 second factor's structure map, and composing with the first factor's
 structure map preserves local finite type and quasi-compactness. This
-argument imposes no separatedness on either factor.
+argument imposes no separatedness on either factor. The helper
+`Langlands.AlgebraicGeometry.PointTopology.finiteType_overProd` and the
+product-limit construction `productModelIso` are public for reuse by the
+separatedness and pullback proofs. The generic-fiber composition isomorphisms
+`Langlands.Global.curveProductGenericFiberCompIso` and
+`Langlands.Global.numberProductGenericFiberCompIso` are likewise shared.
+Their definitions and hypotheses are unchanged by this visibility change.
 
 Apply the fixed-model adelic pullback theorem over the terminal object
 `Over.mk (𝟙 _)`. Its structure morphism is the identity, hence is finite

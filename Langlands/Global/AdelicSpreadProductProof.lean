@@ -21,7 +21,7 @@ set_option backward.isDefEq.respectTransparency false
 namespace Langlands.AlgebraicGeometry.PointTopology
 
 /-- A finite-type model product is finite type without a separatedness premise. -/
-private lemma finiteType_overProd {B : Scheme.{u}} (X Y : Over B)
+lemma finiteType_overProd {B : Scheme.{u}} (X Y : Over B)
     [LocallyOfFiniteType X.hom] [QuasiCompact X.hom]
     [LocallyOfFiniteType Y.hom] [QuasiCompact Y.hom] :
     LocallyOfFiniteType (X ⨯ Y).hom ∧ QuasiCompact (X ⨯ Y).hom := by
@@ -105,7 +105,7 @@ private lemma isHomeomorph_pointProduct_transport
   exact heq ▸ ((EP.symm.trans H).trans (EX.prodCongr EY)).isHomeomorph
 
 /-- The product universal property supplies the required generic-fiber iso. -/
-private def productModelIso {C D : Type*} [Category C] [Category D]
+def productModelIso {C D : Type*} [Category C] [Category D]
     (G : C ⥤ D) (MX MY : C) [HasBinaryProduct MX MY]
     [PreservesLimit (pair MX MY) G] {X Y : D}
     (eX : G.obj MX ≅ X) (eY : G.obj MY ≅ Y)
@@ -207,7 +207,7 @@ private lemma curve_spread_product_sameBase
         (IsPullback.of_is_product (prodIsProd MX MY) Over.mkIdTerminal).isLimit)
 
 
-private def curveProductGenericFiberCompIso
+def curveProductGenericFiberCompIso
     (S : Finset (AlgebraicCurve.Place k F))
     (MX : Over (Spec (CommRingCat.of (curvePlaceSIntegers k F S))))
     {V : Finset (AlgebraicCurve.Place k F)} (hSV : S ⊆ V) :
@@ -315,7 +315,7 @@ private lemma number_spread_product_sameBase
         (IsPullback.of_is_product (prodIsProd MX MY) Over.mkIdTerminal).isLimit)
 
 
-private def numberProductGenericFiberCompIso
+def numberProductGenericFiberCompIso
     (S : Finset (FinitePlace K))
     (MX : Over (Spec (CommRingCat.of ((S : Set (FinitePlace K)).integer K))))
     {V : Finset (FinitePlace K)} (hSV : S ⊆ V) :

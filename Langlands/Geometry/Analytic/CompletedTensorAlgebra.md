@@ -1,0 +1,19 @@
+# The actual ultrametric projective completed tensor algebra
+
+This module constructs the Hausdorff completion of the algebraic tensor product with the nonarchimedean projective seminorm. Its carrier is the actual `UniformSpace.Completion` of a specified seminormed algebraic tensor, and its ring, scalar action, norm and completeness are inherited or proved from that construction.
+
+The original source is Berkovich, *Spectral Theory and Analytic Geometry over Non-Archimedean Fields* (1990), §1.1, printed p.12 / PDF p.26, the final paragraph defining the completed tensor product in the nonarchimedean convention. The seminorm is the infimum over finite pure-tensor representations of the maximum of their factor-norm products. The registered source is `provided-a03a0182668f6b92b01deacac09a9992b3edf55e23a0a2194554384ae44bd8d4`, PDF SHA256 `9b543e7ffae8ec6febf154a60c4d11a288f7ecc3795c66f004ba3200a6824e79`.
+
+The construction reuses the already implemented generic `ultrametricTensorSeminorm`, including its finite representations, maximum value, infimum definition, nonarchimedean inequality, submultiplicativity and pure-tensor bound. Its field-only normalization results are not invoked. This module derives the scalar estimate and performs the actual completion. It does not supply a completed object as a hypothesis.
+
+`Representation.scaleLeft` scales the left factors of each finite representation, without changing its finite index type. The normed-algebra scalar formula bounds its maximum value by the scalar norm times the previous value. Taking the infimum gives `seminormFun_smul_le`.
+
+`Algebraic` is a separate type synonym for the ordinary algebraic tensor. This isolates the specified projective seminorm instances. Its commutative ring and coefficient algebra structures are the original algebraic tensor structures. The generic ring seminorm gives the seminormed commutative ring, and the scalar estimate gives its normed-algebra structure. Its distance is ultrametric by the already proved nonarchimedean seminorm inequality.
+
+`Algebra` is the Hausdorff completion of this seminormed tensor. Mathlib's actual completion gives its normed commutative ring, normed-algebra and complete-space structures. The ultrametric inequality is supplied by the existing `Langlands.Analytic.completion_isUltrametricDist` instance, whose proof uses closedness and density on two completion arguments.
+
+`toCompletion` is the actual dense algebra homomorphism. `norm_toCompletion` identifies its norm on every algebraic tensor with precisely the original finite-maximum projective seminorm. The map is not asserted injective: Hausdorff completion kills the seminorm kernel, as required when the projective seminorm is not a norm.
+
+`leftMap` and `rightMap` are bounded algebra maps taking the original elements to their completed pure tensors with the unit of the other factor. Their proved norm estimates retain that other unit's norm, so the construction allows zero algebras and units without a normalization hypothesis. `toCompletion_tmul` identifies every completed pure tensor with the product of these actual legs.
+
+The coefficient, first-algebra and second-algebra universes are independent, and the completed carrier lies in the maximum of the factor universes. No completeness, reducedness, nontrivial valuation or unit-norm normalization is assumed for the factors. The formal finite-maximum construction is defined over any normed coefficient field and normed commutative coefficient algebras; its interpretation here is the cited nonarchimedean convention. No assertion that the resulting seminorm is nonzero, or that either factor embeds isometrically, is made. The bounded universal extension property, comparison with the explicit affinoid coproduct presentation, and source special-cover intersection theorem remain subsequent obligations.

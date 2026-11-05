@@ -18,9 +18,11 @@ the augmentation `A → K` or a `K`-algebra structure on `A`.
 For an open `U` in `X_A`, write `V = h⁻¹(U)`. The lemma
 `quotient_testSectionHom` states that the actual structure map on sections
 carries an element coming from `a ∈ A` to the element coming from `φ(a) ∈ Q`.
-The private proof first establishes this statement for an arbitrary commutative
-square of schemes over spectra, using the naturality of `Γ(Spec R) ≅ R`.
-It then applies the actual quotient projection square.
+The shared lemma `baseScalar_naturality` first establishes this statement for
+an arbitrary commutative square of schemes over spectra, using the naturality
+of `Γ(Spec R) ≅ R`. It then applies the actual quotient projection square.
+The cohomology-coordinate module also reuses this lemma for the residue
+immersion; making the lemma public changes none of its hypotheses or proof.
 
 `FibreSections f C U` abbreviates `K ⊗_C Γ(X_C,U)`, using the specified
 augmentation of the test `C`. `quotientFibreRingHom` is the tensor ring map
