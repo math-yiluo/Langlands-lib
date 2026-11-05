@@ -630,10 +630,11 @@ It proves the algebraic prerequisite; multiplicative character existence,
 continuity, finite order, norm compatibility and arbitrary depth remain
 separate conclusions of the auxiliary construction.
 
-Four other exact revision-1 proof candidates have accepted machine validation
-and unqualified independent semantic approval, but each fresh fetch still
-reports `accepted=false` and `public=false`. They receive no public-proof
-credit in this update:
+At this 4 November snapshot, four other exact revision-1 proof candidates had
+accepted machine validation and unqualified independent semantic approval, but
+each fresh fetch reported `accepted=false` and `public=false`. They receive no
+public-proof credit in this snapshot; the 5 November continuation below records
+the later finite-separation publication:
 
 | Prerequisite | Candidate | Machine receipt | Independent reviewer |
 | --- | --- | --- | --- |
@@ -653,3 +654,47 @@ declared universes and only propext, Classical.choice and Quot.sound. They remai
 development diagnostics. The explicit normalized-reciprocity premise, global
 field/tower and Hecke-character obligations, and all H2 and general automorphic
 completion conditions remain in force.
+
+## 5 November 2026 finite-separation proof publication
+
+Worker 84 verified this focused continuation against Library
+`a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee`. Exact proof
+`a0a31834-071d-45e0-bee5-789d6adb821d` is now accepted/public under
+`lean.proof@1`. Its theorem
+`Langlands.HarmonicAnalysis.padicFiniteCoefficientSeparation.{u}` in
+[PadicFiniteCoefficientSeparationProof.lean](../../Langlands/HarmonicAnalysis/PadicFiniteCoefficientSeparationProof.lean)
+proves the unchanged public proposition
+`Langlands.HarmonicAnalysis.PadicFiniteCoefficientSeparationStatement.{u}`;
+the [paired explanation](../../Langlands/HarmonicAnalysis/PadicFiniteCoefficientSeparationProof.md)
+describes the implemented proof. The candidate preserves Workers 1649/84
+authorship. Machine receipt `69776751-b4e5-47f3-8dba-961cf5509c53`
+passes Lake build, exact target, unchanged statement and frozen inputs.
+Reviewer 13782 approved without qualifications in review task
+`92e14868-e9cf-415e-82a9-54b56c1f1606`. Integration
+`fd63b01119c4496e83893196c237c6c0` published the proof in
+`409542525904dd50036abafdafb8ad1459eadade`. Fresh task inspection confirms
+child `96fb825e-83e9-473c-a3cf-2c2ddee9b04e`, revision 1, is done, with
+closed completion `779090a1-d01a-415a-aa6c-d071961be543`. Current Library
+and workspace proof/target pairs match their original hashes.
+
+The proof chooses a finite maximum of coefficient-order bounds. For every
+later exponent, the published lattice-annihilator implication and positive
+integer order of the actual prime exclude triviality for each nonzero
+coefficient; a zero coefficient gives triviality directly. The exact target
+retains every prime including two, arbitrary carrier universe, supplied
+compatible topology, every integer lattice level and empty coefficient sets.
+This is an internal additive separation result. It constructs no multiplicative
+auxiliary character or norm stabilizer.
+
+Together with the trace-stabilizer proof above, two of the auxiliary child's
+six prerequisite proofs now have verified publication and completed exact
+children. All six formal dependencies remain. The quadratic norm–trace,
+prescribed deep-unit character, principal-unit extension and norm–trace
+character-comparison proof publications remain separate gates; the first
+three have the reviewed candidates recorded above. The auxiliary and Harris
+assemblies also retain their own independent proof and publication gates.
+Fresh development check `f422467c-d5b4-411c-b199-2f2e9adaa765` compiles
+both private assembly modules with zero errors or warnings and supplies no
+public-proof credit. The explicit normalized-reciprocity premise and the
+global field/tower, Hecke-character, H2 and general automorphic obligations
+remain unchanged.
