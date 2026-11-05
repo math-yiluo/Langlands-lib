@@ -3,7 +3,7 @@
 Worker 6, updated 4 November 2026. This focused map supplements the
 [whole-book ledger](coverage.md) and the
 [Chapter V structural-input ledger](chapter-v-structural-inputs.md).
-It records twelve verified publications and the remaining gates to the
+It records thirteen verified publications and the remaining gates to the
 all-parabolic temperedness criterion. It is not a complete inventory of
 V.3, VII.1 or VII.2, and supplies no new Lean proof.
 
@@ -14,9 +14,9 @@ French version dated 9 July 2026, registered as
 PDF page numbers below are one-based and equal printed page numbers plus six.
 The source passages and the current Lean/Markdown pairs were read for the
 claims below. The publication receipts were checked separately from
-compilation, and all twenty-four selected mathematical files match their
+compilation, and all twenty-six selected mathematical files match their
 frozen accepted hashes and the files at Library
-`5511f7a53d16d5b6af64ff2175ef6c6ecea5347a`.
+`4dd5f7c45ce9b800a0caffa94e2e790953bf7c96`.
 
 ## Selected source assertions and exact interfaces
 
@@ -27,7 +27,7 @@ frozen accepted hashes and the files at Library
 | V.3.14, 113 / 119: choose a contained minimal parabolic whose maximal split torus contains the specified Levi split component; restrict the simple roots outside the Levi index | `ParabolicRootPresentationData.IsCompatible` and `ParabolicRootPresentation p l a` record actual choices for specified maps. `pres.restrictedRoots` is the existing restricted-simple-root set. This construction does not prove existence or independence of those choices. |
 | First two V.3.15 displays, 113 / 119: positive and nonnegative sums over the restricted roots | `pres.positiveCone` and `pres.nonnegCone` instantiate the existing finite-sum constructions in the full real character space. Membership, empty-index and elementary cone laws are implemented. The subsequent coroot-inequality chambers are different sets and are not substituted here. |
 | V.3.19–V.3.20, 115–116 / 121–122, combined with VII.2.1, 227 / 233: real parameters and the exponent-cone test | The published theorem `normalizedTemperedLogarithmicComparison` proves the corrected all-point formula with factor `-log q`, the equivalent negative-raw cone test, and the complete predicate comparison. It preserves every compatible-presentation quantifier and does not prove presentation existence. |
-| V.3.20, 116 / 122: complex exponential, periods, lifts and unitary image | The published theorem `Langlands.Plancherel.rationalComplexParameter` proves the eight algebraic actual-image and canonical-point assertions: surjectivity, period kernel and difference criterion, normalized real part of every lift, unitarity and imaginary image, and the two canonical-point transfers. Quotient topology, compactness and the source's tensor and algebraic-torus identifications remain separate. |
+| V.3.20, 116 / 122: complex exponential, periods, lifts and unitary image | The published theorem `Langlands.Plancherel.rationalComplexParameter` proves the eight algebraic actual-image and canonical-point assertions: surjectivity, period kernel and difference criterion, normalized real part of every lift, unitarity and imaginary image, and the two canonical-point transfers. The separately published `rationalComplexParameterQuotient` proves the two complex open quotient maps and their prescribed-value quotient homeomorphisms. Period discreteness, imaginary compactness and the source's tensor and algebraic-torus identifications remain separate. |
 | VI.1.2, 135–136 / 141–142: normalized Jacquet quotient and the inverse modular-function convention | `Langlands.Aubert.General.RepresentedParabolic.jacquetFunctor` uses the actual coinvariant quotient and inverse-half Haar twist on literal point images. Its split-component action formula makes the factor explicit. This focused construction does not establish the section's exactness, adjunction or preservation assertions. |
 | VII.1.1, 220 / 226: compact-open characteristic spaces, normalized exponents and their set | `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent` and `normalizedJacquetExponents` apply the published weight-space machinery to the actual quotient. Membership uses one power uniform over all torus points. Definitions and intrinsic laws extend to smooth inputs; the direct-sum, admissibility and finite-length conclusions are separate. |
 | VII.2.1, 227 / 233: admissibility and the nonnegative root-cone condition for every exponent at every parabolic | The published derived `IsNormalizedExponentTempered` combines admissibility with the actual all-parabolic, all-presentation condition. Its explicitly normalized parameter retains the corrected-source comparison described below; this construction does not complete original source-definition coverage. |
@@ -77,8 +77,8 @@ representation.
 ## Verified publications
 
 Each receipt below has `accepted = true`, `public = true`, an unqualified
-independent semantic approval and a published integration. The twelve units
-are three definitions, six statements and three exact proofs. A definition
+independent semantic approval and a published integration. The thirteen units
+are three definitions, six statements and four exact proofs. A definition
 receipt covers its construction and intrinsic laws; a statement receipt
 does not prove its proposition.
 
@@ -96,13 +96,15 @@ does not prove its proposition.
 | [NormalizedTemperedFullGroupProof](../../Langlands/Representation/Exponents/NormalizedTemperedFullGroupProof.md), `Langlands.Aubert.General.RepresentedParabolic.normalizedTemperedFullGroupExponent` | Proof `f23de670-bc8a-4e8f-8c5f-ac059aed8bda`; Reviewer 13143, review `eb61c208-2cd9-4270-8ecf-7a2856f2ea3c`; machine `25782988-958a-4747-8d8f-914c0d15332b` accepted under `lean.proof@1` with build and exact-target checks; integration `bded81b0119248ce995aa959e331ad6d`, commit `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. |
 | [NormalizedTemperedLogarithmicComparison](../../Langlands/Representation/Exponents/NormalizedTemperedLogarithmicComparison.md), `Langlands.Aubert.General.RepresentedParabolic.normalizedTemperedLogarithmicComparison` | Proof `a9190a54-90e8-40f0-8b72-607383ca08bb`; Reviewer 13198, review `20105ad0-bbb4-4e17-bf5e-725e4973a61d`; machine `d3ac77ed-f0b6-4bff-9adc-f96cf6d2657a`; integration `65312fa4ce6f4b40a0e52b06c2ae1e33`, commit `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. |
 | [RationalComplexParameter](../../Langlands/Representation/Plancherel/RationalComplexParameter.md), `Langlands.Plancherel.rationalComplexParameter` | Proof `6bf086b3-88ba-479f-8542-cb693b8d2e9d`; Reviewer 13227, review `e5d8bead-cf4d-4740-9aab-c4a67cd1d699`; machine `81cdfcbd-cc3d-4f8c-99bc-13f871a56942`; integration `89a8b9bf8974479a98ca24b2116820bb`, commit `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. |
+| [RationalComplexParameterQuotient](../../Langlands/Representation/Plancherel/RationalComplexParameterQuotient.md), `Langlands.Plancherel.rationalComplexParameterQuotient` | Proof `a58e2446-72fb-4062-bcac-b87da5b45f60`; Reviewer 13393, review `ee719a12-f6dc-42e7-87a6-283296241bab`; machine `16a2d280-f771-43e9-b4df-b244157d1347`; integration `1af3227263864292abdd7c8aab4006c5`, commit `4dd5f7c45ce9b800a0caffa94e2e790953bf7c96`. |
 
-The logarithmic and complex-parameter machine receipts each accept
+The logarithmic, algebraic complex-parameter and complex-quotient machine receipts each accept
 `lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`
 under `lean.proof@1`; their independent semantic approvals have no
 qualifications. The logarithmic proof was supplied by Worker 6 and verified
 and submitted by Worker 1593. Worker 6 supplied the complex-parameter proof,
-with verification and submission by Worker 1444.
+with verification and submission by Worker 1444. The same authors supplied,
+verified and submitted the complex-quotient proof.
 
 The arbitrary-parabolic wrapper imports Worker 1507's existing generic and
 standard-family weight machinery unchanged. This map credits that reuse
@@ -171,13 +173,37 @@ The normalized real-part law holds for every lift, and pointwise imaginary
 parts reconstruct a lift of every unitary character. The canonical continuous
 character equivalence supplies the two actual-point transfers.
 
-These eight clauses retain arbitrary connected reductive groups and the
-source's general nonarchimedean local fields, without an added finite-rank,
-split or characteristic-zero premise. They do not establish a quotient
-homeomorphism, discrete periods or a compact imaginary quotient,
-the character/split-center tensor comparisons, the pure-tensor formula or
-an algebraic-torus structure. Those are distinct remaining V.3.20 obligations;
-the two published proofs do not close original source-definition coverage.
+The published `rationalComplexParameterQuotient` proves the four-clause
+`RationalComplexParameterQuotientStatement`. It makes the actual exponential
+an open quotient map, both on the valuation image and on canonical rational
+points, and identifies `V/P` with each existing character space. Here
+`V = Hom_Z(Lambda,C)` has its pointwise topology and
+`P = (2*pi*i/log q) Hom_Z(Lambda,Z)` is the original period subgroup.
+The quotient has its standard group quotient topology; both character spaces
+retain their existing compact-open topologies. Each homeomorphism sends every
+projected parameter to its prescribed exponential value.
+
+The implemented proof first proves openness and surjectivity of
+`z ↦ exp(-z*log q)` into complex units. Finite coordinates evaluating the
+same actual integer basis on parameters and characters identify the actual
+exponential with a product of these scalar maps. The imported algebraic
+period-difference criterion makes the quotient descent well-defined and
+bijective. Quotient continuity and openness give the prescribed
+homeomorphism. The existing canonical image-to-unramified character
+homeomorphism transfers the two conclusions to rational points.
+These explicit topological assertions are derived formulations of V.3.20.
+
+Both complex-parameter theorems retain arbitrary connected reductive groups
+and general nonarchimedean local fields, without an added finite-rank,
+split or characteristic-zero premise. They do not establish discrete periods
+or the compact imaginary quotient, the character/split-center tensor
+comparisons, the pure-tensor formula or an algebraic-torus structure. Exact
+proof task `8560dddc-2f5b-4f5f-b631-a9cbe9fe5489` targets the separately
+published `RationalImaginaryParameterQuotientStatement`, including
+discrete and closed periods and the compact imaginary quotient. That task
+and its shared proof draft supply no accepted proof.
+These distinct V.3.20 obligations and original source-definition coverage
+remain open.
 The coroot-pairing positivity used for the Langlands-classification parameters
 of VII.4 also retains its own construction and comparison obligations.
 
@@ -282,11 +308,12 @@ The dependency order still requires:
 2. Proof of the published presentation existence, full
    independence and transport targets. Fixed-presentation pullback laws
    do not replace these targets.
-3. The remaining complex and imaginary quotient topology, discrete periods,
+3. The remaining imaginary quotient topology, discrete periods,
    compactness of the imaginary quotient, tensor and algebraic-torus comparisons,
    and exact proofs of the published standard-reduction and corrected
    central-character statements. The corrected logarithmic comparison and
-   eight algebraic complex-parameter clauses above are already proved and public.
+   eight algebraic complex-parameter clauses and four complex-quotient clauses
+   above are already proved and public.
    Actual topology, subgroup-image, conjugacy and exponent-transport
    comparisons remain explicit.
 4. The source's separate representation-theoretic assertions: the VII.1.1

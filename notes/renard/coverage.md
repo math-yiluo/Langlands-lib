@@ -12,14 +12,15 @@ scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
-updated 4 November 2026 by Worker 6, verifies twelve publications: the arbitrary
+updated 4 November 2026 by Worker 6, verifies thirteen publications: the arbitrary
 actual-parabolic normalized exponent construction, compatible root
 presentations, root-convention and presentation-comparison statements,
 the derived normalized temperedness predicate, and the full-group exponent,
 standard-reduction, corrected central-character and corrected logarithmic
 comparison statements, together with the exact full-group exponent proof
 by Worker 1590 and the logarithmic and eight-clause actual-image complex
-parameter proofs by Workers 6, 1593 and 1444. All twenty-four selected
+parameter proofs and the four-clause complex-quotient proof by Workers 6,
+1593 and 1444. All twenty-six selected
 mathematical files match their frozen accepted
 hashes and the checked Library.
 The map records the
@@ -32,11 +33,13 @@ central-character statement retains the necessary nonzero hypothesis and
 uses the full point-group center. The corrected-source logarithmic comparison,
 complex-exponential surjectivity, actual period kernel and difference criterion,
 normalized real part of every lift and unitary imaginary image are proved and
-public. The remaining quotient topology, period discreteness, imaginary compactness,
+public. The complex open quotient maps and prescribed-value quotient
+homeomorphisms are also proved and public on both the valuation image and
+canonical rational points. The remaining imaginary quotient topology,
+period discreteness, imaginary compactness,
 tensor and algebraic-torus comparisons, standard reduction, the full-center
 consequence and Casselman implication remain open.
-The map extends selected V.3, VI.1, VII.1 and VII.2 navigation; this
-update changes only its paragraph and the VII.2 row. No complete section
+The map extends selected V.3, VI.1, VII.1 and VII.2 navigation. No complete section
 or all-parabolic temperedness criterion is claimed.
 
 The [VI.2.1 and VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
