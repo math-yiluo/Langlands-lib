@@ -61,6 +61,15 @@ section Naturality
 
 variable {G} {H : GroupScheme (Spec (CommRingCat.of k))}
 
+/-- The rational/coefficient comparison commutes with actual group-scheme maps. -/
+theorem rationalCoeffEquiv_map (f : G ⟶ H) (x : rationalPoints G) :
+    rationalCoeffEquiv k H (rationalPoints.map f x) =
+      G.affinePointsTarget f (CommAlgCat.of k k) (rationalCoeffEquiv k G x) := by
+  rw [rationalPoints.map_apply, affinePointsTarget_apply]
+  apply Over.OverMorphism.ext
+  simp only [rationalCoeffEquiv_left, Over.comp_left]
+
+
 /-- The pullback comparison commutes with the actual base-changed morphism. -/
 theorem baseChangeCoeffEquiv_map (f : G ⟶ H) (x : rationalPoints (baseChanged k L G)) :
     baseChangeCoeffEquiv k L H

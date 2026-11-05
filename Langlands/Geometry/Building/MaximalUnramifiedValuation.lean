@@ -14,13 +14,13 @@ open Langlands.LocalGalois.Separable
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
 
-local instance : ValuativeRel (inertiaFixedField F) :=
+local instance maximalUnramifiedValuationLocalInstance1 : ValuativeRel (inertiaFixedField F) :=
   ValuativeRel.ofValuation (fixedFieldValued F).v
 
-local instance : Valuation.Compatible (fixedFieldValued F).v :=
+local instance maximalUnramifiedValuationLocalInstance2 : Valuation.Compatible (fixedFieldValued F).v :=
   Valuation.Compatible.ofValuation _
 
-local instance : ValuativeExtension F (inertiaFixedField F) :=
+local instance maximalUnramifiedValuationLocalInstance3 : ValuativeExtension F (inertiaFixedField F) :=
   ⟨fun a b => by
     rw [Valuation.vle_iff_le (fixedFieldValued F).v,
       Valuation.vle_iff_le (ValuativeRel.valuation F)]

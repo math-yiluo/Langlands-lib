@@ -1,5 +1,6 @@
 import Langlands.GroupScheme.Rational.ActionWeightSupport
 import Langlands.GroupScheme.Rational.SemigroupTransport
+import Langlands.GroupScheme.Rational.SemigroupProductRestriction
 import Langlands.GroupScheme.Rational.RootRayBlocks
 import Langlands.GroupScheme.Rational.SplitUnipotentSolvable
 import Langlands.GroupScheme.Dynamic.CentralizerReductiveTransport
@@ -32,11 +33,31 @@ def DynamicRootOrderedProductFromSemigroups : Prop :=
           subgroup i a) →
   DynamicRootOrderedProductStatement.{u}
 
-/-- The conditional assembly retains the complete published conclusion.
-All structural premises remain explicit. -/
-theorem dynamicRootOrderedProduct_of_semigroupStatements :
-    DynamicRootOrderedProductFromSemigroups.{u} := by
-  intro hReal hProduct hRays hDynamic hCyclic k _ G hG S i hi
+/-- It suffices to have ordered products only for smooth connected affine
+split-unipotent source groups. The other structural premises remain explicit. -/
+theorem dynamicRootOrderedProduct_of_splitUnipotentSourceProducts
+    (hReal : SemigroupRealizationStatement.{u})
+    (hProduct : ∀ (k : Type u) [Field k]
+      (U : GroupScheme (Spec (CommRingCat.of k)))
+      (_hUs : Smooth U.X.hom) (hAff : IsAffineHom U.X.hom)
+      (_hUc : ConnectedSpace U.X.left) (_hUnip : IsUnipotent U)
+      (_hSplit : IsSplitUnipotent U)
+      (S : CommGroupScheme (Spec (CommRingCat.of k)))
+      (_hS : IsSplitTorus S.toGrp) (c : AutomorphicAction S.toGrp U),
+      letI := hAff
+      HasOrderedSemigroupProducts c)
+    (hRays : RelativeRootRayDecompositionStatement.{u})
+    (hDynamic : DynamicSemigroupComparisonStatement.{u})
+    (hCyclic : ∀ (k : Type u) [Field k]
+      (G : GroupScheme (Spec (CommRingCat.of k))) (hG : IsConnectedReductive G)
+      (S : CommGroupScheme (Spec (CommRingCat.of k))) (i : S.toGrp ⟶ G),
+      IsMaximalSplitTorus i →
+      letI := hG.isAffineHom
+      ∀ a ∈ relativeRoots i,
+        semigroupSubgroup (AutomorphicAction.conjugation i) (cyclicTail a 1) =
+          subgroup i a) :
+    DynamicRootOrderedProductStatement.{u} := by
+  intro k _ G hG S i hi
   let := hG.isAffineHom
   intro ν n a hinj ha
   let b := AutomorphicAction.conjugation i
@@ -62,7 +83,7 @@ theorem dynamicRootOrderedProduct_of_semigroupStatements :
   have hcover' : (⋃ r, rootRayBlock i (a r)) = actionWeightSupport c ⊤ :=
     (iUnion_rootRayBlock i ν a ha hcover).trans hsupport.symm
   obtain ⟨H, jH, hH, hIso⟩ := hProduct k U hUs inferInstance hUc
-    hUsp.isSolvableScheme S hi.1.1 c n (fun r => rootRayBlock i (a r))
+    hUu hUsp S hi.1.1 c n (fun r => rootRayBlock i (a r))
       hcover' hblocks.1 hblocks.2
   have hroot (r : Fin n) : a r ∈ indivisiblePositiveRoots i ν :=
     ha ▸ Set.mem_range_self r
@@ -96,5 +117,15 @@ theorem dynamicRootOrderedProduct_of_semigroupStatements :
   · rw [(hDynamic k G hG.smooth inferInstance hG.connectedSpace S hi.1.1 i ν).2.2]
     exact hjU
   · exact orderedMultiplication_comp jH jU
+
+/-- The original conditional assembly follows by restricting the general
+solvable source product to the realized split-unipotent groups. -/
+theorem dynamicRootOrderedProduct_of_semigroupStatements :
+    DynamicRootOrderedProductFromSemigroups.{u} := by
+  intro hReal hProduct hRays hDynamic hCyclic
+  apply dynamicRootOrderedProduct_of_splitUnipotentSourceProducts
+    hReal ?_ hRays hDynamic hCyclic
+  intro k _ U hUs hAff hUc _ hSplit S hS c
+  exact hProduct k U hUs hAff hUc hSplit.isSolvableScheme S hS c
 
 end Langlands.GroupScheme.RelativeRoot

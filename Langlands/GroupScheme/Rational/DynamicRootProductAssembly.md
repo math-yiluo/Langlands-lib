@@ -10,6 +10,17 @@ and the cyclic-semigroup comparison for actual roots of a connected reductive
 group with a maximal split torus. It proves this implication only. It does not
 prove any of those premises or supply the unconditional target proof.
 
+`dynamicRootOrderedProduct_of_splitUnipotentSourceProducts` factors this
+construction through a smaller source premise: ordered semigroup products
+are required only for smooth connected affine groups which are both
+unipotent and split unipotent, with their supplied split-torus actions.
+The realization, ray-decomposition, Dynamic-comparison and actual-root
+cyclic-comparison premises remain explicit. The original theorem and its
+`DynamicRootOrderedProductFromSemigroups` definition keep their original
+complete types. The original theorem supplies the smaller source premise
+from its general solvable ordered-product premise, using the published
+uniform all-test solvability of split-unipotent groups.
+
 For the given arbitrary cocharacter, semigroup realization represents the
 strictly positive conjugation semigroup by a smooth connected closed subgroup
 `jU : U ⟶ G`. Positivity excludes zero, so the realization premise makes `U`
@@ -21,7 +32,7 @@ Equivariant weight-support transport and the exact positive-support identity
 identify the total support of this action on `U` with the actual positive roots.
 The supplied root-ray cover, reindexed by the given enumeration, partitions that
 support into `rootRayBlock` sets. Their disjointness and cross-exclusion are
-exactly the hypotheses of the ordered semigroup product premise. Applying it
+exactly the hypotheses of the source ordered semigroup product premise. Applying it
 inside `U` gives smooth connected closed factors and an isomorphism for their
 actual ordered multiplication.
 

@@ -102,3 +102,8 @@ openness, unit-norm surjectivity, an Iwahori subgroup, a maximal unramified
 characterization or a construction of `G(k)^0`. The existing WeilGm finite-free
 determinant norm is unchanged. Those later arithmetic constructions and
 compatibilities remain successor obligations.
+
+`rationalCoeffEquiv_map` identifies postcomposition by an actual group-scheme
+morphism before and after the base-field rational/coefficient comparison.
+This generic naturality lemma is shared by the algebraic norm and torus-norm
+subgroup comparisons.

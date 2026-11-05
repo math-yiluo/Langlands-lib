@@ -42,7 +42,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {G : GroupScheme (Spec (CommRingCat.of F))}
   [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance commutingFactorizationIntegralityLocalInstance1 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The image of a point of any closed torus in an anisotropic group has all
 nonnegative powers in one compact set of actual rational points. -/

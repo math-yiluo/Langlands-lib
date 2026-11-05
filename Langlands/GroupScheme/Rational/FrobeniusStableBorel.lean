@@ -23,15 +23,15 @@ variable (k Ω : Type u) [Field k] [Fintype k]
   (G : GroupScheme (Spec (CommRingCat.of k)))
   [Smooth G.X.hom] [IsAffineHom G.X.hom] [ConnectedSpace G.X.left]
 
-local instance : Smooth ((baseChange (algebraBaseMap k Ω)).obj G).X.hom := by
+local instance frobeniusStableBorelLocalInstance1 : Smooth ((baseChange (algebraBaseMap k Ω)).obj G).X.hom := by
   change Smooth (pullback.snd G.X.hom (algebraBaseMap k Ω))
   infer_instance
 
-local instance : IsAffineHom ((baseChange (algebraBaseMap k Ω)).obj G).X.hom := by
+local instance frobeniusStableBorelLocalInstance2 : IsAffineHom ((baseChange (algebraBaseMap k Ω)).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k Ω))
   infer_instance
 
-local instance : ConnectedSpace ((baseChange (algebraBaseMap k Ω)).obj G).X.left :=
+local instance frobeniusStableBorelLocalInstance3 : ConnectedSpace ((baseChange (algebraBaseMap k Ω)).obj G).X.left :=
   G.connectedSpace_baseChange_of_smooth_affine (algebraBaseMap k Ω)
 
 variable {B : GroupScheme (Spec (CommRingCat.of Ω))}

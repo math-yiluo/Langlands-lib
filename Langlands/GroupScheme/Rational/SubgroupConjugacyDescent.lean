@@ -54,7 +54,7 @@ variable (he : (GroupScheme.baseChange b).map i ≫
 
 include he
 
-local instance : Mono (i ≫ (G.innerIso g).hom).hom.hom := by
+local instance subgroupConjugacyDescentLocalInstance1 : Mono (i ≫ (G.innerIso g).hom).hom.hom := by
   change Mono (i.hom.hom ≫ (G.innerIso g).hom.hom.hom)
   infer_instance
 

@@ -18,14 +18,6 @@ namespace Langlands.GroupScheme.GaloisPointComparison
 variable (k L : Type u) [Field k] [Field L] [Algebra k L]
   {G H : GroupScheme (Spec (CommRingCat.of k))}
 
-/-- The rational/coefficient comparison commutes with actual group-scheme maps. -/
-theorem rationalCoeffEquiv_map (f : G ⟶ H) (x : rationalPoints G) :
-    rationalCoeffEquiv k H (rationalPoints.map f x) =
-      G.affinePointsTarget f (CommAlgCat.of k k) (rationalCoeffEquiv k G x) := by
-  rw [rationalPoints.map_apply, affinePointsTarget_apply]
-  apply Over.OverMorphism.ext
-  simp only [rationalCoeffEquiv_left, Over.comp_left]
-
 variable [FiniteDimensional k L] [IsGalois k L]
   {T U : CommGroupScheme (Spec (CommRingCat.of k))}
   [IsAffine T.X.left] [IsAffine U.X.left]
