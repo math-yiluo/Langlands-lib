@@ -157,7 +157,7 @@ restricted polynomial-module equivalence, identifying its map with `E.iota`
 and its X-action with `E.localizedEnd`, is now published together with
 Prop-valued initiality statements; see the
 [A.III canonical-arrow section](universal-representability-progress.md#published-chosen-endomorphism-canonical-arrow-comparison).
-That section also records the status of their exact proof.
+That section also records their published exact proof.
 The 4 November 2026 clarification under task revision 3 in the
 [A.III source map](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons)
 credits Mathlib's existing exact localization functor and distinguishes

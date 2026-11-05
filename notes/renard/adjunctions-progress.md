@@ -169,7 +169,7 @@ separate from the independent proof acceptance above.
 
 This note records the A.V source correspondences and the checked
 composition of its published results. The [whole-book ledger](coverage.md)
-retains its own update process; its A.V backlog row predates these
-publications. Other Appendix A sections, Appendices B/C and the chapters
+retains its own update process; its A.V row links this map.
+Other Appendix A sections, Appendices B/C and the chapters
 retain their respective obligations. No appendix or book completion is
 declared here.
