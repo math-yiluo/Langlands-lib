@@ -747,3 +747,64 @@ and publication gates. The finite-separation continuation above
 independent review by Reviewer 13937. The explicit normalized-reciprocity
 premise and the global field/tower, Hecke-character, H2 and general automorphic
 obligations remain unchanged.
+
+## 5 November 2026 norm–trace character and auxiliary-character proof publications
+
+Worker 84 verified this focused continuation against Library
+`570fefbe5133b1afff1a5914f8de20920d97fda0`. The last prerequisite proof of
+the auxiliary child and the auxiliary assembly itself are now
+accepted/public under `lean.proof@1`. The norm–trace character comparison was
+published in `0bd5bf67c3464359bc8da3b3100163d6ee3da352` and the auxiliary
+assembly in `910675f18ad6c3d8b09c12c678a0243795a673b9`. For each one, the
+machine receipt passes Lake build, exact target, unchanged statement and frozen
+inputs. Each independent reviewer approved without qualifications. Fresh task
+inspection shows each exact child done, with a closed completion declaration.
+Every proof file of each frozen candidate has the same hash in the publication
+commit, the current Library and the workspace. The two target pairs are the
+same at the candidate base commits, in the current Library and in the workspace.
+
+| Theorem | Candidate and authors | Machine, review and integration | Exact child and completion |
+| --- | --- | --- | --- |
+| Norm–trace character comparison, `Langlands.HarmonicAnalysis.padicDeepUnitNormTrace.{u,v}` in [PadicDeepUnitNormTraceProof.lean](../../Langlands/HarmonicAnalysis/PadicDeepUnitNormTraceProof.lean) ([explanation](../../Langlands/HarmonicAnalysis/PadicDeepUnitNormTraceProof.md)) | `6f5fd3ed-a3f5-4efc-bddf-6cce37430bf2`; Worker 928 with Workers 27/84 | `2089c33a-4276-498f-8451-58f40bee0286`; Reviewer 14054, review `d49b9971-844c-4327-9f02-2158bb1b35a6`; integration `3d9efda2ffcb46a78e0245f1b45a2b6c` | `f2ecd102-7b20-492c-b1b4-3d2c3c4c4404`; `df0bc878-e21c-499e-a357-929e1f931e49` |
+| Auxiliary characters with the exact unit-norm stabilizer, `Langlands.Global.auxiliaryCharacterFirstOrder.{u,v}` in [AuxiliaryCharacterFirstOrderProof.lean](../../Langlands/Global/Arithmetic/AuxiliaryCharacterFirstOrderProof.lean) ([explanation](../../Langlands/Global/Arithmetic/AuxiliaryCharacterFirstOrderProof.md)) | `ed482f0d-91a6-4eb2-ab0d-a11eaa5b890b`; Worker 1652 with Worker 84 | `af083fc1-7c7a-4f6b-9cdd-814cf66a9e47`; Reviewer 14253, review `1e4c0b75-d207-42ab-a23a-388ecb36907d`; integration `66d0e6ca6b2f4738add5c040b071cca1` | `de89b95c-fc2c-453c-96ec-5b1b74522c43`; `2bde004f-418f-409e-90da-776067123308` |
+
+The norm–trace theorem proves the unchanged
+`Langlands.HarmonicAnalysis.PadicDeepUnitNormTraceStatement.{u,v}`. Take a finite
+compatible extension E/F of supplied p-adic fields in independent universes,
+with supplied topological data on each, a continuous nontrivial additive
+unitary character psi of F, a scalar c, a level n
+and a continuous character chi of the units of F that agrees with
+`psi(c*(u-1))` on the actual level-n principal units. Let a be an integer of F whose discrete valuation v satisfies
+`v(a) < 1`, `v(a) ≤ exp(-n)` and `v(c)*v(a)^2 ≤ exp(conductor of psi)`.
+Then for every integer y of E, the field unit `z = 1 + i(a)*y` has actual
+determinant norm in the level-n principal units, and
+`chi(N_E/F(z)) = psi(c*a*Tr_E/F(y))`. No finite-order premise on chi is used.
+
+The auxiliary theorem proves the unchanged
+`Langlands.Global.AuxiliaryCharacterStatement.{u,v}` for every prime, including
+two. Take finite p-adic fields F and M in independent universes with M/F a
+compatible finite Galois extension, an actual intermediate field L and a natural
+number r. The theorem gives one continuous character chi of the units of L with a
+positive finite annihilating exponent, a unit x of L with `‖x-1‖ < p^(-r)` in
+the canonical norm of M and `chi(x) ≠ 1`, and the exact predicate
+`HasExactUnitNormStabilizer L chi.toMonoidHom`. Under
+this predicate, an F-automorphism of M fixes chi composed with the actual norm
+to L on all valuation units of M exactly when it fixes L pointwise. The implemented
+route uses first-order principal-unit coordinates, the integral quadratic norm
+error and integral trace detectors. It uses no logarithm or exponential, no
+odd-prime restriction and no reciprocity premise. The published proof Markdown
+documents how this route differs from Harris's logarithmic argument.
+
+All six prerequisite proofs of the auxiliary child and the auxiliary assembly
+now have verified publication and done exact children. Harris child
+`83445b71-56bc-4dab-b2df-43a956708a18` revision 1, whose formal requirement is
+the auxiliary proof task, is in verification. On 5 November Worker 1677 staged candidate
+`c86c27e3-68c2-48e8-a621-c80518ed04af` (review task
+`9b9f5b82-005b-495f-9159-5c1706df7e34`) with Worker 84 as coauthor. Its Lean
+file is byte-identical to the adoption pair named in the child context. Its
+Markdown adds an authorship line and states that both imported proofs are
+public. At this snapshot the candidate had no machine receipt or review,
+and it keeps its own independent proof and publication gates. The composition
+keeps the explicit normalized-reciprocity premise and constructs no
+reciprocity family. The global field/tower, Hecke-character, H2 and general
+automorphic obligations remain unchanged.
