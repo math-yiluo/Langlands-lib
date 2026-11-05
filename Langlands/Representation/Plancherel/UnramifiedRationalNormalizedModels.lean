@@ -57,10 +57,15 @@ theorem isOpen_commonNormKernel :
 local instance tensorAddCommGroup (E : Type*) [AddCommGroup E] [Module ℂ E] :
     AddCommGroup (RegularAlgebra r ⊗[ℂ] E) := TensorProduct.addCommGroup
 
+/-- Smoothness of the actual universal tensor action. -/
+abbrev UniversalSmoothness {E : Type uV} [AddCommGroup E] [Module ℂ E]
+    (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) : Prop :=
+  IsSmooth (universalRepresentation r σ)
+
 /-- Smoothness of the actual universal tensor for the full rational norm family. -/
 theorem isSmooth_universalRepresentation {E : Type uV} [AddCommGroup E] [Module ℂ E]
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) (hσ : IsSmooth σ) :
-    IsSmooth (universalRepresentation r σ) :=
+    UniversalSmoothness r σ :=
   isSmooth_universalUnramifiedRepresentation _ σ hσ (isOpen_commonNormKernel r)
 
 /-- The universal inducing tensor as a smooth representation of the actual Levi. -/
@@ -100,11 +105,49 @@ abbrev jacquetRepresentation (σ : Representation ℂ (parabolicLeviPointSubgrou
   UnramifiedNormalized.universalJacquetRepresentation
     (parabolicLeviRationalNormCharacters r) h hU σ
 
+/-- Smoothness of the actual normalized inducing action. -/
+abbrev InducingSmoothness (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) : Prop :=
+  IsSmooth (inducingRepresentation r h hU σ)
+
+/-- Smoothness of right translation on the actual full induced model. -/
+abbrev InducedSmoothness (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) : Prop :=
+  IsSmooth (inducedRepresentation r h hU σ)
+
+/-- Smoothness of the normalized action on the actual Jacquet quotient. -/
+abbrev JacquetSmoothness (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) : Prop :=
+  IsSmooth (jacquetRepresentation r h hU σ)
+
+/-- Positive half-modulus covariance of an actual induced function on the full parabolic. -/
+abbrev InducedCovariance (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E)
+    (f : Induced r h hU σ) (q : ParabolicPoints p) (g : rationalPoints G) : Prop :=
+  Induction.eval _ (inducingRepresentation r h hU σ) f ((q : rationalPoints G) * g) =
+    (UnramifiedNormalized.inductionCharacter (parabolicLeviRationalNormCharacters r)
+      _ _ hU h.le_normalizer).toMonoidHom q •
+      universalRepresentation r σ (h.projection q)
+        (Induction.eval _ (inducingRepresentation r h hU σ) f g)
+
+/-- Right translation formula for the actual induced action. -/
+abbrev InducedTranslation (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E)
+    (f : Induced r h hU σ) (g x : rationalPoints G) : Prop :=
+  Induction.eval _ (inducingRepresentation r h hU σ)
+    (inducedRepresentation r h hU σ g f) x =
+      Induction.eval _ (inducingRepresentation r h hU σ) f (x * g)
+
+/-- Inverse Levi half-modulus formula on an actual Jacquet class. -/
+abbrev JacquetClassAction (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E)
+    (m : parabolicLeviPointSubgroup p l) (f : Induced r h hU σ) : Prop :=
+  jacquetRepresentation r h hU σ m
+    (Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ) _ 1 f) =
+      (UnramifiedNormalized.jacquetCharacter (parabolicLeviRationalNormCharacters r)
+        _ _ hU h.levi_le_normalizer).toMonoidHom m •
+        Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ) _ 1
+          (inducedRepresentation r h hU σ m f)
+
 /-- Continuity of the supplied projection gives a smooth normalized inducing action. -/
 theorem isSmooth_inducingRepresentation
     (hr : Continuous h.projection)
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) (hσ : IsSmooth σ) :
-    IsSmooth (inducingRepresentation r h hU σ) :=
+    InducingSmoothness r h hU σ :=
   (isSmooth_twist_iff _ _
     (UnramifiedNormalized.inductionCharacter (parabolicLeviRationalNormCharacters r)
       _ _ hU h.le_normalizer).isOpen_ker).mpr
@@ -112,42 +155,31 @@ theorem isSmooth_inducingRepresentation
 
 theorem isSmooth_inducedRepresentation
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) :
-    IsSmooth (inducedRepresentation r h hU σ) :=
+    InducedSmoothness r h hU σ :=
   UnramifiedNormalized.isSmooth_universalInducedRepresentation _ h hU σ
 
 theorem isSmooth_jacquetRepresentation
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E) :
-    IsSmooth (jacquetRepresentation r h hU σ) :=
+    JacquetSmoothness r h hU σ :=
   UnramifiedNormalized.isSmooth_universalJacquetRepresentation _ h hU σ
 
 /-- The exact positive normalization on the literal full parabolic. -/
 theorem induced_covariant
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E)
     (f : Induced r h hU σ) (q : ParabolicPoints p) (g : rationalPoints G) :
-    Induction.eval _ (inducingRepresentation r h hU σ) f ((q : rationalPoints G) * g) =
-      (UnramifiedNormalized.inductionCharacter (parabolicLeviRationalNormCharacters r)
-        _ _ hU h.le_normalizer).toMonoidHom q •
-        universalRepresentation r σ (h.projection q)
-          (Induction.eval _ (inducingRepresentation r h hU σ) f g) :=
+    InducedCovariance r h hU σ f q g :=
   UnramifiedNormalized.induced_covariant _ h hU _ f q g
 
-@[simp] theorem induced_action
+theorem induced_action
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E)
     (f : Induced r h hU σ) (g x : rationalPoints G) :
-    Induction.eval _ (inducingRepresentation r h hU σ)
-      (inducedRepresentation r h hU σ g f) x =
-        Induction.eval _ (inducingRepresentation r h hU σ) f (x * g) := rfl
+    InducedTranslation r h hU σ f g x := rfl
 
 /-- Inverse-half normalized action on an actual quotient representative. -/
-@[simp] theorem jacquet_action_mk
+theorem jacquet_action_mk
     (σ : Representation ℂ (parabolicLeviPointSubgroup p l) E)
     (m : parabolicLeviPointSubgroup p l) (f : Induced r h hU σ) :
-    jacquetRepresentation r h hU σ m
-      (Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ) _ 1 f) =
-        (UnramifiedNormalized.jacquetCharacter (parabolicLeviRationalNormCharacters r)
-          _ _ hU h.levi_le_normalizer).toMonoidHom m •
-          Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ) _ 1
-            (inducedRepresentation r h hU σ m f) := rfl
+    JacquetClassAction r h hU σ m f := rfl
 
 end Models
 

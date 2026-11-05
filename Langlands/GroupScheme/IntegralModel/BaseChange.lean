@@ -60,6 +60,39 @@ private theorem squareIso_fst_fst :
   simp only [Category.assoc]
   rw [compIso_hom_fst, eqIso_fst G h, baseChangeCompIso_inv_fst]
 
+private theorem squareIso_naturality {H : GroupScheme S} (f : G ⟶ H) :
+    (Langlands.GroupScheme.baseChange c).map
+        ((Langlands.GroupScheme.baseChange b).map f) ≫ (squareIso b c d e h H).hom =
+      (squareIso b c d e h G).hom ≫
+        (Langlands.GroupScheme.baseChange e).map
+          ((Langlands.GroupScheme.baseChange d).map f) := by
+  have heq {q q' : V ⟶ S} (hq : q = q') :
+      (Langlands.GroupScheme.baseChange q).map f ≫
+          (eqToIso (congrArg (fun k => (Langlands.GroupScheme.baseChange k).obj H) hq)).hom =
+        (eqToIso (congrArg (fun k => (Langlands.GroupScheme.baseChange k).obj G) hq)).hom ≫
+          (Langlands.GroupScheme.baseChange q').map f := by
+    subst q'
+    simp
+  have hinv : (Langlands.GroupScheme.baseChange c).map
+        ((Langlands.GroupScheme.baseChange b).map f) ≫ (baseChangeCompIso b c H).inv =
+      (baseChangeCompIso b c G).inv ≫
+        (Langlands.GroupScheme.baseChange (c ≫ b)).map f :=
+    ((Functor.mapGrpNatIso (Over.pullbackComp c b)) ≪≫
+      Functor.mapGrpCompIso).inv.naturality f
+  have hhom : (Langlands.GroupScheme.baseChange (e ≫ d)).map f ≫
+        (baseChangeCompIso d e H).hom =
+      (baseChangeCompIso d e G).hom ≫ (Langlands.GroupScheme.baseChange e).map
+        ((Langlands.GroupScheme.baseChange d).map f) :=
+    ((Functor.mapGrpNatIso (Over.pullbackComp e d)) ≪≫
+      Functor.mapGrpCompIso).hom.naturality f
+  rw [squareIso_def, squareIso_def]
+  change _ ≫ ((baseChangeCompIso b c H).inv ≫ _ ≫ (baseChangeCompIso d e H).hom) =
+    ((baseChangeCompIso b c G).inv ≫ _ ≫ (baseChangeCompIso d e G).hom) ≫ _
+  simp only [← Category.assoc]
+  rw [hinv]
+  simp only [Category.assoc]
+  rw [← Category.assoc _ _ (baseChangeCompIso d e H).hom, heq h, Category.assoc, hhom]
+
 private theorem section_comp (x : Over.mk (𝟙 S) ⟶ G.X) :
     baseChangeSectionHom c _ (baseChangeSectionHom b G x) ≫
         (baseChangeCompIso b c G).inv.hom.hom =
@@ -210,6 +243,21 @@ theorem baseChangeGenericIso_hom_fst :
   simp only [Over.pullback_map_left, Category.assoc, pullback.lift_fst_assoc]
   rw [← Category.assoc M.genericIso.hom.hom.hom.left, hi, Category.id_comp]
   exact squareIso_fst_fst _ _ _ _ _ _
+
+omit [IsDomain A] [IsFractionRing A L] in
+/-- The coefficient-square generic comparisons commute with every model homomorphism. -/
+theorem baseChangeGenericIso_naturality
+    {H : GroupScheme (Spec (CommRingCat.of K))} (N : IntegralModel R K H)
+    {f : G ⟶ H} (φ : M.Hom N f) :
+    (Langlands.GroupScheme.baseChange (Spec.algebraMap A L)).map
+        ((Langlands.GroupScheme.baseChange (Spec.algebraMap R A)).map φ.hom) ≫
+        (N.baseChangeGenericIso A L).hom =
+      (M.baseChangeGenericIso A L).hom ≫
+        (Langlands.GroupScheme.baseChange (Spec.algebraMap K L)).map f := by
+  unfold baseChangeGenericIso
+  simp only [Iso.trans_hom, Functor.mapIso_hom]
+  rw [← Category.assoc, squareIso_naturality, Category.assoc, ← Functor.map_comp,
+    φ.generic_comm, Functor.map_comp, Category.assoc]
 
 /-- Smoothness of the original model is preserved by the actual pullback. -/
 theorem isSmooth_baseChange (hM : M.IsSmooth) : (M.baseChange A L).IsSmooth := by

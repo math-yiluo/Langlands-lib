@@ -18,7 +18,9 @@ its proved closedness in the locally compact ambient point group.
 It then applies `commonNormKernelTopology` to the entire continuous rational
 norm family. `isSmooth_universalRepresentation` applies this openness and
 smoothness of the complex coefficient action to the actual tensor action on
-`RegularAlgebra r ⊗[ℂ] E`. `universalSmoothRep` bundles that same action.
+`RegularAlgebra r ⊗[ℂ] E`; its statement `UniversalSmoothness r σ` is
+`IsSmooth (universalRepresentation r σ)`. `universalSmoothRep` bundles that
+same action.
 The coefficient carrier universe is independent of the field and point-group
 universe; no finite-dimensionality is imposed on E.
 
@@ -39,6 +41,20 @@ uniform open right stabilizer of each function. `Jacquet` is the actual
 and its smoothness follows from smoothness of the induced model and quotient
 descent. No comparison of the full half-modulus with an inflated Levi character
 is used.
+
+Each law is stated through a reducible `Prop` abbreviation whose body is the
+displayed statement. `InducingSmoothness`, `InducedSmoothness` and
+`JacquetSmoothness` are `IsSmooth` of the inducing, induced and Jacquet
+actions. `InducedCovariance`, `InducedTranslation` and `JacquetClassAction`
+are the covariance, translation and class-action equations. The theorem types
+unfold by reducible delta to exactly these statements, so each theorem is
+accepted wherever its displayed statement is expected. This internal
+formulation keeps the theorem types small. Otherwise Lean 4.34's export-time
+premise-selection traversal (`Expr.relevantConstants`) expands their heavy
+instance arguments without sharing. With the wrapping, the module's Lake build
+takes seconds instead of about 52 minutes. Both `induced_action` and
+`jacquet_action_mk` hold by `rfl`. They carry no `@[simp]` attribute, which
+would export very large simp-index keys.
 
 These constructions apply to the point data in
 `ConditionalParabolicIntertwiningStatement`, without splitness,

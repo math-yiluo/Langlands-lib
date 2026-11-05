@@ -62,3 +62,11 @@ published pullback composition comparison in
 is asserted. The results require a supplied model and a compatible coefficient
 square. They do not construct good arithmetic models, prove local maximality or
 parabolic covering, or prove the integral Iwasawa family existence statement.
+
+`baseChangeGenericIso_naturality` retains an actual supplied model homomorphism
+and its specified generic compatibility square through the coefficient square.
+The symbolic square comparison is natural: naturality of each pullback
+composition isomorphism and equality transport give its naturality. Applying
+this to the model homomorphism and then mapping its original generic square
+proves the stated comparison equation. The target generic homomorphism is
+exactly the base change of the supplied one.
