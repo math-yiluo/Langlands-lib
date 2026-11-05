@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicSpreadModelMorphisms
 import Langlands.Global.AdelicSpreadTopologyIndependenceStatement
 import Langlands.Global.AdelicSIntegersColimitProof
 import Langlands.Global.AdelicSIntegersNoetherianProof
@@ -18,6 +19,7 @@ set_option backward.isDefEq.respectTransparency false
 
 open CategoryTheory CategoryTheory.Limits Topology Opposite
 open _root_.AlgebraicGeometry
+open Langlands.AlgebraicGeometry.PointTopology.SpreadModelMorphisms
 
 namespace Langlands.AlgebraicGeometry.PointTopology
 
@@ -45,12 +47,6 @@ private def equivHomeomorph {A B : Type*} [TopologicalSpace A] [TopologicalSpace
   continuous_toFun := he.continuous
   continuous_invFun := e.continuous_symm_iff.2 he.isOpenMap
 
-@[reassoc (attr := simp)]
-private lemma pullbackSymmetry_hom_hom {C : Type*} [Category C]
-    {A B D : C} (f : A ⟶ D) (g : B ⟶ D) [HasPullback f g] [HasPullback g f] :
-    (pullbackSymmetry f g).hom ≫ (pullbackSymmetry g f).hom = 𝟙 _ := by
-  apply pullback.hom_ext <;> simp
-
 open EtaleEquivalenceRelation.Action.TargetLimit AffineLimit
 open SchemeLimitModel
 
@@ -60,24 +56,6 @@ variable {I : Type u} [Category.{u} I]
   (c : Cone D) (p : c.pt ⟶ B)
   (hp : ∀ i, c.π.app i ≫ t.app i = p)
   (X : Over B)
-
-/-- The actual cone projection, with the standard order of model pullbacks. -/
-private def modelConeLeg (i : I) :
-    ((Over.pullback p).obj X).left ⟶ ((Over.pullback (t.app i)).obj X).left :=
-  (pullbackSymmetry X.hom p).hom ≫
-    (cone D t X.hom c p hp).π.app i ≫ (pullbackSymmetry (t.app i) X.hom).hom
-
-@[reassoc (attr := simp)]
-private lemma modelConeLeg_fst (i : I) :
-    modelConeLeg D t c p hp X i ≫ pullback.fst X.hom (t.app i) =
-      pullback.fst X.hom p := by
-  simp [modelConeLeg]
-
-@[reassoc (attr := simp)]
-private lemma modelConeLeg_snd (i : I) :
-    modelConeLeg D t c p hp X i ≫ pullback.snd X.hom (t.app i) =
-      pullback.snd X.hom p ≫ c.π.app i := by
-  simp [modelConeLeg]
 
 variable [IsCofiltered I] [∀ i, IsAffine (D.obj i)]
   (hc : IsLimit c) (Z : Over B)

@@ -78,3 +78,8 @@ This proof establishes spread independence. Existence of arithmetic
 spreads for all finite-type field-schemes, agreement with other point
 topology constructions, and the remaining conclusions of the paper are
 separate results.
+
+The model-cone projection and its projection identities are shared with the
+related spread proofs through
+[`AdelicSpreadModelMorphisms`](AdelicSpreadModelMorphisms.md). Isomorphism descent
+remains the construction described above, with unchanged hypotheses.

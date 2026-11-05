@@ -45,3 +45,8 @@ possibly inseparable rational-function extensions and empty initial sets,
 as explained in the unchanged target Markdown. This proof supplies the model choice at the
 start of Conrad's Proposition 4.4; intrinsic adelic properness, compactness,
 eventual stabilization and the remaining whole-paper obligations are separate.
+
+The model-cone projection, morphism-descent and pullback-composition helpers are
+shared with the related spread proofs through
+[`AdelicSpreadModelMorphisms`](AdelicSpreadModelMorphisms.md). This integration
+consolidation preserves their definitions, hypotheses and conclusions.
