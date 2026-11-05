@@ -10,7 +10,8 @@ only an abbreviation of the explicit coordinate-one point in the existing
 `PositivePowerTorusAdditiveFactorizationStatement`.
 
 This is internal derived data for assembling that statement. The small lemmas
-`rationalPoints.map_comp_apply` and `map_zero_apply` express postcomposition and
+`Langlands.Aubert.General.RationalPointFamily.rationalPoints_map_comp_apply`
+and `rationalPoints.map_zero_apply` express postcomposition and
 the identity value of the zero group homomorphism in the existing actual-point
 convention.
 

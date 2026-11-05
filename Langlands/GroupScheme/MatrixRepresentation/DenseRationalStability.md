@@ -1,0 +1,11 @@
+# Invariant subspaces detected by a dense rational-point family
+
+For an actual reduced group scheme, invariance of split matrix coordinates can be detected on any specified family of rational points whose images have dense union. Each column of the existing coordinate-stability defect defines a morphism into affine coefficient space. The dense-family morphism equality criterion makes that column vanish at the universal point. Naturality then makes it vanish on every scheme test. The ground-field version transports the defect through the canonical global-sections isomorphism for the field spectrum.
+
+`IsIrreducible` requires a nontrivial coordinate vector space and says that each subspace stable in the existing all-affine-test sense is zero or the whole space. This is an algebraic representation condition; it does not assert irreducibility of only the rational-point action.
+
+`isStableSubspace_of_denseRationalFamily` constructs finite split coordinates for a subspace invariant under the specified point matrices. The projection onto the subspace gives the coordinate identity on that family. The detection result supplies the actual restricted representation. Its intertwining inclusion has image equal to the original subspace, so the existing image-stability theorem proves stability on every affine test, including nonreduced test algebras.
+
+`rationalAction` constructs the natural linear representation on actual rational points. For a monoid homomorphism into those points whose images have dense union, `irreducible_rationalAction_comp` transports all-test irreducibility to Mathlib irreducibility of the resulting monoid action: each invariant subrepresentation becomes an all-test stable subspace by the preceding construction, and nontriviality distinguishes the bottom and top subrepresentations.
+
+This is an internal extension of the published `RationalStableCoordinates`, `NormalFixedRepresentation` and `StableSubrepresentation` interfaces, using `DenseRationalFamily` for equality detection. No algebraic closure, finite-type, reductivity or affine-source assumption is needed for these lemmas once reducedness and density are supplied. Density and the host compactness equivalence remain separate obligations.

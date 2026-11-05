@@ -1,0 +1,153 @@
+import Langlands.Global.AdelicLocalInclusion
+import Mathlib.Order.Filter.AtTopBot.Finset
+
+/-! # Finite local truncations of actual adelic group points -/
+
+noncomputable section
+
+universe u v
+
+open CategoryTheory AlgebraicGeometry NumberField IsDedekindDomain Filter Topology
+open scoped CategoryTheory.MonObj RestrictedProduct
+
+namespace Langlands.Global.AdelicGroupPoints
+
+set_option backward.isDefEq.respectTransparency false
+
+variable (F : Type u) [Field F] [NumberField F]
+  (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
+
+local instance : DecidableEq (Place F) := Classical.decEq _
+
+omit [IsAffine G.X.left] in
+private theorem truncationFamily_isAdelic (s : Finset (Place F))
+    (g : AdelicGroupPoints F G) :
+    IsAdelicFamily F G (fun i => if i ∈ s then atPlace F G i g else 1) := by
+  intro a
+  filter_upwards [eventually_atPlace_evaluation_mem F G g a,
+    eventually_atPlace_evaluation_mem F G 1 a] with v hg h1
+  split_ifs
+  · exact hg
+  · simpa only [map_one] using h1
+
+/-- Keep the local coordinates in a finite set and replace the rest by the identity. -/
+def truncate (s : Finset (Place F)) (g : AdelicGroupPoints F G) :
+    AdelicGroupPoints F G :=
+  glue F G (fun i => if i ∈ s then atPlace F G i g else 1)
+    (truncationFamily_isAdelic F G s g)
+
+@[simp] theorem atPlace_truncate (s : Finset (Place F)) (g : AdelicGroupPoints F G)
+    (i : Place F) :
+    atPlace F G i (truncate F G s g) = if i ∈ s then atPlace F G i g else 1 :=
+  atPlace_glue F G _ (truncationFamily_isAdelic F G s g) i
+
+@[simp] theorem truncate_empty (g : AdelicGroupPoints F G) :
+    truncate F G ∅ g = 1 := by
+  apply ext_atPlace F G
+  intro i
+  simp
+
+/-- Adding a new place multiplies the truncation by its local insertion. -/
+theorem truncate_insert (s : Finset (Place F)) (g : AdelicGroupPoints F G)
+    (i : Place F) (hi : i ∉ s) :
+    truncate F G (insert i s) g = ofPlace F G i (atPlace F G i g) * truncate F G s g := by
+  apply ext_atPlace F G
+  intro j
+  by_cases hji : j = i
+  · subst j
+    simp [hi]
+  · simp [hji]
+
+/-- The finite local truncations converge in the existing adelic evaluation topology. -/
+theorem tendsto_truncate (g : AdelicGroupPoints F G) :
+    Tendsto (fun s : Finset (Place F) => truncate F G s g) atTop (𝓝 g) := by
+  apply (G.isEmbedding_affinePointEvaluation
+    (CommAlgCat.of F (AdeleRing (𝓞 F) F))).tendsto_nhds_iff.mpr
+  apply tendsto_pi_nhds.mpr
+  intro a
+  let x : AdeleRing (𝓞 F) F :=
+    G.affinePointEvaluation (CommAlgCat.of F (AdeleRing (𝓞 F) F)) g a
+  let f : Finset (Place F) → AdeleRing (𝓞 F) F := fun s =>
+    G.affinePointEvaluation (CommAlgCat.of F (AdeleRing (𝓞 F) F))
+      (truncate F G s g) a
+  have he (s : Finset (Place F)) (i : Place F) :
+      adeleProjection F i (f s) = G.affinePointEvaluation (placeCompletion F i)
+        (if i ∈ s then atPlace F G i g else 1) a :=
+    glue_evaluation F G _ (truncationFamily_isAdelic F G s g) a i
+  have hloc (i : Place F) :
+      Tendsto (fun s => adeleProjection F i (f s)) atTop (𝓝 (adeleProjection F i x)) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ge_atTop ({i} : Finset (Place F))] with s hs
+    have his : i ∈ s := hs (Finset.mem_singleton_self i)
+    rw [he, ite_eq_left his, atPlace_evaluation]
+  have hfst : Tendsto (fun s => (f s).1) atTop (𝓝 x.1) :=
+    tendsto_pi_nhds.mpr fun w => hloc (.inl w)
+  let S : Set (FinitePlace F) := {v |
+    G.affinePointEvaluation (placeCompletion F (.inr v)) (atPlace F G (.inr v) g) a ∈
+      v.adicCompletionIntegers F ∧
+    G.affinePointEvaluation (placeCompletion F (.inr v))
+      (1 : PlaceGroupPoints F G (.inr v)) a ∈ v.adicCompletionIntegers F}
+  have hS : cofinite ≤ 𝓟 S := by
+    apply le_principal_iff.mpr
+    filter_upwards [eventually_atPlace_evaluation_mem F G g a,
+      eventually_atPlace_evaluation_mem F G 1 a] with v hg h1
+    exact ⟨hg, by simpa only [map_one] using h1⟩
+  have hfmem (s : Finset (Place F)) (v : FinitePlace F) (hv : v ∈ S) :
+      (f s).2 v ∈ v.adicCompletionIntegers F := by
+    change adeleProjection F (.inr v) (f s) ∈ _
+    rw [he]
+    split_ifs
+    · exact hv.1
+    · exact hv.2
+  let f' : Finset (Place F) →
+      Πʳ v : FinitePlace F, [v.adicCompletion F, v.adicCompletionIntegers F]_[𝓟 S] :=
+    fun s => ⟨fun v => (f s).2 v, eventually_principal.mpr (hfmem s)⟩
+  let x' : Πʳ v : FinitePlace F,
+      [v.adicCompletion F, v.adicCompletionIntegers F]_[𝓟 S] :=
+    ⟨fun v => x.2 v, eventually_principal.mpr fun v hv => by
+      change adeleProjection F (.inr v) x ∈ _
+      rw [← atPlace_evaluation]
+      exact hv.1⟩
+  have hf' : Tendsto f' atTop (𝓝 x') := by
+    apply RestrictedProduct.isEmbedding_coe_of_principal.tendsto_nhds_iff.mpr
+    exact tendsto_pi_nhds.mpr fun v => hloc (.inr v)
+  have hsnd : Tendsto (fun s => (f s).2) atTop (𝓝 x.2) :=
+    ((RestrictedProduct.continuous_inclusion hS).tendsto x').comp hf'
+  exact hfst.prodMk_nhds hsnd
+
+/-- Every finite local truncation belongs to the subgroup generated by the local factors. -/
+theorem truncate_mem_iSup_range_ofPlace (s : Finset (Place F)) (g : AdelicGroupPoints F G) :
+    truncate F G s g ∈ ⨆ i : Place F, (ofPlace F G i).range := by
+  induction s using Finset.induction_on with
+  | empty => simpa only [truncate_empty] using (⨆ i : Place F, (ofPlace F G i).range).one_mem
+  | @insert i s hi hs =>
+    rw [truncate_insert F G s g i hi]
+    exact Subgroup.mul_mem _ ((le_iSup (fun j => (ofPlace F G j).range) i)
+      (show ofPlace F G i (atPlace F G i g) ∈ (ofPlace F G i).range from ⟨_, rfl⟩)) hs
+
+/-- The subgroup generated by all actual local factors is dense in the actual adelic group. -/
+theorem dense_iSup_range_ofPlace :
+    Dense ((⨆ i : Place F, (ofPlace F G i).range : Subgroup (AdelicGroupPoints F G)) :
+      Set (AdelicGroupPoints F G)) := by
+  intro g
+  exact mem_closure_of_tendsto (tendsto_truncate F G g)
+    (Eventually.of_forall fun s => truncate_mem_iSup_range_ofPlace F G s g)
+
+/-- Continuous homomorphisms to a Hausdorff monoid agree if they agree on every local factor. -/
+theorem continuousMonoidHom_ext_ofPlace {M : Type v} [Monoid M]
+    [TopologicalSpace M] [T2Space M] (f h : AdelicGroupPoints F G →ₜ* M)
+    (heq : ∀ (i : Place F) (g : PlaceGroupPoints F G i),
+      f (ofPlace F G i g) = h (ofPlace F G i g)) : f = h := by
+  have ht (s : Finset (Place F)) (g : AdelicGroupPoints F G) :
+      f (truncate F G s g) = h (truncate F G s g) := by
+    induction s using Finset.induction_on with
+    | empty => simp
+    | @insert i s hi hs =>
+      simp only [truncate_insert F G s g i hi, map_mul, heq, hs]
+  ext g
+  have hf := (f.continuous.tendsto g).comp (tendsto_truncate F G g)
+  have hh := (h.continuous.tendsto g).comp (tendsto_truncate F G g)
+  exact tendsto_nhds_unique hf
+    (hh.congr' (Eventually.of_forall fun s => (ht s g).symm))
+
+end Langlands.Global.AdelicGroupPoints

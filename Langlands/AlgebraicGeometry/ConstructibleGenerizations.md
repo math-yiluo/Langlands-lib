@@ -1,0 +1,7 @@
+# Interior of constructible sets via generalizations
+
+This internal topological unit defines `generalizationInterior S` as the points all of whose generalizations lie in `S`. It proves that this set equals the usual topological interior when `S` is constructible in a Noetherian quasi-sober space. The pointwise corollary `mem_interior_of_isConstructible_of_generizations` gives interior membership directly from this condition. The source need not be a scheme or affine, and no finiteness, field or algebraic hypotheses occur.
+
+The proof decomposes the closure of a constructible subset into a finite irredundant closed irreducible cover. Each cover member has a generic point. Constructible membership is constant on a relative open neighbourhood of that generic point. Removing all the other cover members gives an open region where density forces membership of the generic point itself. Thus every closure point is a specialization of a point of the constructible set. Applying this to the complement gives the interior criterion.
+
+The proof uses the published irredundant Noetherian closed-cover lemma from `Langlands.Algebra.NagataOpennessCriterion`, constructs the relative generic membership comparison by induction on constructible sets, and uses elementary specialization and closure identities. It requires quasi-sobriety, which supplies the generic points; the Hausdorff or T₀ separation axioms are not assumed. This unit supplies only the topological step of the section-component argument and asserts no scheme openness theorem.
