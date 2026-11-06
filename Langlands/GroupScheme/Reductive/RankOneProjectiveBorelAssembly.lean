@@ -8,6 +8,7 @@ import Langlands.GroupScheme.Absolute.MaximalTorusCentralizerReduction
 import Langlands.GroupScheme.Rational.SolvableMaximalTorusConjugacyProof
 import Langlands.GroupScheme.ProjectiveTorusFixedPointDimension
 import Langlands.GroupScheme.SolvableProperFixedPointProof
+import Langlands.GroupScheme.Torus.MaximalBaseChangeProof
 
 /-! # The rank-one projective Borel route from its remaining structural inputs -/
 
@@ -127,15 +128,16 @@ theorem rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs
     b hpair.1 hproper t ht hconj hc ν hα hβ hαν hβν
 
 /-- The projective Borel route gives the unchanged all-field target from
-algebraically closed maximal-torus self-centralization and forward
-maximal-torus base change. Solvable proper fixed points, projective fixed-point
-dimension and solvable maximal-torus conjugacy are supplied by their published
-proofs; two inputs remain explicit. -/
+algebraically closed maximal-torus self-centralization. Forward maximal-torus
+base change, solvable proper fixed points, projective fixed-point dimension
+and solvable maximal-torus conjugacy are supplied by their published proofs;
+only self-centralization remains explicit. -/
 theorem rankOnePositiveRootUniqueness_of_projectiveBorelInputs
-    (hCent : AlgClosedMaximalTorusCentralizerStatement.{u})
-    (hMax : MaximalTorusBaseChangeForwardStatement.{u}) :
-    RankOnePositiveRootUniquenessStatement.{u} :=
-  rankOnePositiveRootUniqueness_of_algClosed hMax
-    (rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs hCent)
+    (hCent : AlgClosedMaximalTorusCentralizerStatement.{u}) :
+    RankOnePositiveRootUniquenessStatement.{u} := by
+  apply rankOnePositiveRootUniqueness_of_algClosed
+  · intro k K _ _ _ G _ _ T i hi
+    exact (maximalTorusBaseChange k K G T i hi.1 hi.2.1).mp hi
+  · exact rankOneAlgClosedPositiveRootUniqueness_of_projectiveBorelInputs hCent
 
 end Langlands.GroupScheme
