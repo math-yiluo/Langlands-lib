@@ -6,8 +6,8 @@ Worker 709 checked this passage and the twelve publications below on
 Jordan–Hölder theorem, numerical length, simple-quotient proposition and
 three simple-subquotient identities have published implementations.
 On 5 November 2026 Worker 709 added the published statement targets for
-the module-category examples. Their proof remains open.
-This note does not declare A.VI or the whole-book task complete.
+the module-category examples and, later that day, their published exact
+proof. This note does not declare A.VI or the whole-book task complete.
 
 ## Source and assertion map
 
@@ -31,7 +31,7 @@ Module links point to the paired Markdown; each has a same-stem Lean file.
 | Jordan–Hölder theorem, printed263/PDF269 | `JordanHolderStatement` in [JordanHolderStatements](../../Langlands/CategoryTheory/Renard/JordanHolderStatements.md), proved by `jordanHolder` in [JordanHolder](../../Langlands/CategoryTheory/Renard/JordanHolder.md) | Equal chain lengths and an equivalence of factor indices giving actual factor isomorphisms; multiplicities are retained |
 | Finite length and length of an object, printed263/PDF269 | `HasCompositionChainOfLength`, `IsFiniteLength` in CompositionChains; `compositionLength` in [FiniteLength](../../Langlands/CategoryTheory/Renard/FiniteLength.md) | Numerical length requires an explicit finite-length witness and equals the length of every composition chain |
 | Additional Grothendieck and AB6 assumptions and footnote, printed263/PDF269 | `IsSourceGrothendieck` in [RenardGrothendieckAxioms](../../Langlands/CategoryTheory/RenardGrothendieckAxioms.md); `IsLocallyFiniteTypeObject`, `IsLocallyFiniteTypeCategory`, `SourceAB6` in [LocallyFiniteType](../../Langlands/CategoryTheory/Renard/LocallyFiniteType.md) | Separate assumptions: source-sized coproducts and directed distribution; every object is a sum of finite-type subobjects. AB6 means local finite type, as the footnote specifies |
-| Module-category examples, printed264/PDF270 | Six targets and their conjunction `FullModuleAxiomsStatement` in namespace `Langlands.Algebra.RenardFullModuleAxiomStatements`, module [RenardFullModuleAxiomStatements](../../Langlands/Algebra/RenardFullModuleAxiomStatements.md) | Statement only: directed distributivity, source AB5 and canonical AB6 for the full `NonUnitalModuleCat` and Mathlib's `ModuleCat`; no published proof. Reusing the I.6 nondegenerate-module proofs does not discharge them; see below |
+| Module-category examples, printed264/PDF270 | Six targets and their conjunction `FullModuleAxiomsStatement` in namespace `Langlands.Algebra.RenardFullModuleAxiomStatements`, module [RenardFullModuleAxiomStatements](../../Langlands/Algebra/RenardFullModuleAxiomStatements.md), proved by `fullModuleAxioms` in namespace `Langlands.Algebra.RenardFullModuleAxiomProof`, module [RenardFullModuleAxiomProof](../../Langlands/Algebra/RenardFullModuleAxiomProof.md) | Directed distributivity, source AB5 and canonical AB6 for the full `NonUnitalModuleCat` and Mathlib's `ModuleCat`, with no added hypothesis. Products are not among the targets. The proof does not use the I.6 nondegenerate-module proofs; see below |
 | Zorn reminder, choice equivalence and bibliography references, printed264/PDF270 | Foundational reuse of `Mathlib.Order.Zorn` in the proposition proof | Expository foundations; no separate formalization of the set-theoretic equivalence with choice is claimed |
 | Proposition (i): nonzero finite type implies simple quotient; (ii): non-finite type implies a simple subquotient, printed264/PDF270 | `SimpleQuotientPropositionStatement` and its two components in [SimpleQuotientStatements](../../Langlands/CategoryTheory/Renard/SimpleQuotientStatements.md), proved by `simpleQuotientProposition`, `finiteTypeSimpleQuotient`, `nonFiniteTypeSimpleSubquotient` in [SimpleQuotient](../../Langlands/CategoryTheory/Renard/SimpleQuotient.md) | Both source antecedents remain in the targets; quotients are actual cokernels of proper or strictly nested subobjects |
 | `JH(X)`, printed264/PDF270 | `simpleSubquotientClasses` in CompositionChains | A set of isomorphism classes of simple actual `B/A`, using nested subobjects and their cokernels; no finite-length premise |
@@ -226,11 +226,14 @@ aggregate reuses the component authors' proofs. This note's compilation
 checks and source audit do not substitute for those independent
 reviews or create additional proof publications.
 
-## Module examples and retained obligations
+## Module examples
 
 On printed264/PDF270 the source asserts all these axioms for `A-mod`
 with a possibly nonunital ring `A`, and for `M(A)` with a unital ring
-`A`. The original-action convention and the category selected in each
+`A`. In context, "tous ces axiomes" are the assumptions A.VI.3 has
+just imposed on PDF269: a Grothendieck category, hence `AB4∗` and
+`AB5`, and in addition `AB6`.
+The original-action convention and the category selected in each
 case must be preserved in any comparison.
 
 The [I.5.2–I.6 module-category note](module-classes-category-properties.md)
@@ -300,16 +303,63 @@ published. That contract leaves the proofs to separate successor tasks.
 The frozen Lean/Markdown hashes `7f096c35…` and `931e0c82…` match
 Library `83773f62c5adf54634640cbfaf89822a74b44700`.
 
-### Remaining example obligation
+### The example proof
 
-Worker 709 published proof task
-`88e0f0a9-32bc-4e2b-a867-bb1aef836387` on 5 November 2026. It targets
-the unchanged aggregate `FullModuleAxiomsStatement`. Worker 709 shared a
-draft proof there, which has had no independent review. The source examples
-remain open until an exact proof is independently accepted and
-published. This gap does not alter the already proved abstract results
-or imply a counterexample to Renard's examples. The other A.VI examples,
-corrected subcategory criteria and AB5 comparisons retain their separate
-entries in the
+The theorem `fullModuleAxioms` in namespace
+`Langlands.Algebra.RenardFullModuleAxiomProof`, module
+[RenardFullModuleAxiomProof](../../Langlands/Algebra/RenardFullModuleAxiomProof.md),
+proves the unchanged aggregate `FullModuleAxiomsStatement.{uA, uI, uM}`
+at the same level parameters. It adds no hypothesis to any of the six
+components. Like the statement, it makes no claim about products (AB4)
+or Mathlib's `AB5OfSize`.
+
+The source gives no proof of the examples; the implemented proof uses the
+standard module argument. Its generic transport lemmas need only an order
+isomorphism from the subobjects of an object to the submodule lattice of
+a module. Directed distributivity is transported from Mathlib's
+`Directed.inf_iSup_eq`, which holds in the compactly generated lattice of
+submodules. A subobject whose submodule is finitely generated is source
+finite type: Mathlib's `Subobject.subobjectOrderIso`, `Submodule.mapIic`
+and `ModuleCat.subobjectModule` identify its own subobjects with those of
+a finite module. The published `ModuleFiniteType.finiteType_iff_finite`
+and `finiteTypeFiniteSubcover`, in `Langlands.Renard`, and
+`Langlands.Algebra.NonUnitalModuleFiniteness.hasFiniteSubcoverProperty_of_orderIso`
+then transfer finite type. Local finite type follows because every cyclic
+span `Submodule.span R {x}` is finitely generated.
+
+For the full `NonUnitalModuleCat A`, the order isomorphism composes the
+published `Langlands.Algebra.NonUnitalModuleFiniteness.subobjectExtendOrderIso`
+with `ModuleCat.subobjectModule` over `Unitization ℤ A`. The `uI`-indexed
+coproducts at carrier `max uI uM` are pulled back from
+`ModuleCat (Unitization ℤ A)` along the published equivalence
+`Langlands.Algebra.IntegerUnitization.extendFunctor A`, using Mathlib's
+`Adjunction.hasColimitsOfShape_of_equivalence`. For Mathlib's
+`ModuleCat A`, `ModuleCat.subobjectModule` supplies the isomorphism and
+Mathlib supplies the coproducts. Neither case uses the I.6
+nondegenerate-module proofs.
+
+| Proof and authors | Candidate; machine receipt | Independent review task / reviewer | Published commit |
+| --- | --- | --- | --- |
+| `fullModuleAxioms` — Worker 937 with Worker 709 | `ea4778f4-ca1a-49f1-adc6-87967a9e5ac2`; `e2e06a1e-bd5c-45e0-8d78-7005efb9101f` | `428439c2-d5fb-4679-af43-9c701eff0733` / Reviewer 15180 | `819ea8d4de6f7dde4b0d7f879f58af405e135acf` |
+
+The machine receipt passed `lake-build`, `exact-target`,
+`unchanged-statement` and `frozen-inputs`, with `proof_accepted: true`
+under `lean.proof@1`. Reviewer 15180 approved without qualifications,
+and integration `0183c8c03a3a4fd7aa36d32496c3e9fa` published the pair.
+Worker 709 wrote the Lean proof. Worker 937 rechecked it, edited its
+Markdown and submitted it under proof task
+`88e0f0a9-32bc-4e2b-a867-bb1aef836387`, which Worker 709 had published.
+Worker 937's completion declaration
+`c0aee20f-d606-43c0-9e8b-73fb7b0824c3` closed that task. Because Worker
+709 coauthored the proof, this note is documentation, not independent
+review.
+On 5 November 2026 Worker 709 checked that the proof hashes
+`dbd03997…` and `faeb02b5…` and the unchanged statement hashes
+`7f096c35…` and `931e0c82…` match Library
+`ffddfca241fd480a4fb3b8c9215b48c488d7f97b`.
+
+Under the published reading of the examples, they now have an exact
+proof. The other A.VI examples, corrected subcategory criteria and AB5
+comparisons retain their separate entries in the
 [A.VI.1–2 note](abelian-categories-progress.md) and
 [whole-book ledger](coverage.md).
