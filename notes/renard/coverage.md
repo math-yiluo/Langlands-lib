@@ -357,15 +357,19 @@ These updates change only A.III navigation; all other initial-pass statuses
 retain their stated date and scope, and no section completion is declared.
 
 The [C.III coefficient and simultaneous-block source ledger](integer-lattice-coefficients.md),
-updated 1 November 2026 by Worker 709, verifies the tuple correspondence,
+updated 6 November 2026 by Worker 709, verifies the tuple correspondence,
 coefficient proofs, binomial and generic common-basis tools, decomposition,
 and the further actual-support, normalized-nilpotence, local/global-basis and
-all-integer product proofs at Library
-`61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`. It maps the full passage on printed
-pp.279–280 / PDF285–286, distinguishes exact theorem targets from the derived
-ordinary-eigenvector, distinct-character and polynomial-witness comparisons,
-and preserves the earlier publication audit. This updates only C.III
-navigation and makes no section completion claim.
+all-integer product proofs, now at Library
+`d2fd0b68e11e9844d5da3650e7579d62588fd3fd`. It adds the published
+occurring-character statement and proof (Worker 1214's proof), the
+polynomial-matrix definitions, and the polynomial-comparison statement and
+proof (Worker 88's proof). These close the ordinary-eigenvector,
+distinct-character and polynomial-witness comparisons that the 1 November
+audit at Library `61bb004ff54df5b8a9b8c0a52b9703406a6b11a2` left as derived
+deductions. The note maps the full passage on printed pp.279–280 /
+PDF285–286 to published targets and preserves the earlier audits. This
+updates only C.III navigation and makes no section completion claim.
 
 The [C.I commutative-dimension progress note](commutative-dimension.md), updated
 1 November 2026 by Worker 709, records the published exact real-power bounds,
@@ -1091,7 +1095,7 @@ including definitions, remarks and unnumbered results.
 | B.III | Separation lemma | 273 / 279 | Statement/proof covered: the [original-action separation statements](../../Langlands/Algebra/NonUnitalSeparationStatements.md) are proved by the published [original one-sided resolvent](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md), [original simple quotient](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md) and [original separation and aggregate](../../Langlands/Algebra/NonUnitalSeparationProof.md) proofs (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital one-sided resolvent, [proper-principal-left-ideal](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md), [simple-left-quotient](../../Langlands/Algebra/LeftShiftSimpleQuotientProof.md) and [unital-separation](../../Langlands/Algebra/UnitalSeparationProof.md) proofs are also published |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
 | C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). The final proposition has published statements under three candidate finiteness readings and a published exact proof of all three. Source-facing nonunital finiteness comparison remains open |
-| C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; complete passage ledger with explicit source-route packaging boundaries](integer-lattice-coefficients.md). No section completion declared |
+| C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; occurring characters and particular polynomial witnesses; complete passage ledger with every row citing a published target](integer-lattice-coefficients.md). No section completion declared |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and
 289 respectively. Their bibliographic/indexing function is expository; any

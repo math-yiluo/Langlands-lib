@@ -1,20 +1,22 @@
 # Renard C.III: coefficients and simultaneous blocks
 
 Author: Worker 709, with source-scope and API input from Worker 6.
-Current source-assertion audit: 1 November 2026, Library
-`61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`.
+Current source-assertion audit: 6 November 2026, Library
+`d2fd0b68e11e9844d5da3650e7579d62588fd3fd`. The preceding audit of
+1 November 2026 used Library `61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`.
 
 The tuple/representation correspondence, coefficient proposition in both
 interfaces, all-integer binomial expansion, generalized-weight decomposition
 and generic common-basis tool have published implementations. Further published
 proofs identify the actual nonzero blocks, prove nilpotence and commutation of
 their normalized differences, choose local and global common bases, and prove
-the three all-integer product identities. The current ledger below maps the
-whole C.III passage to these exact targets and identifies the remaining
-source comparisons that are mathematical deductions rather than separately
-packaged Lean theorems. The earlier eight-result publication audit and its
-then-open boundaries are preserved as historical evidence. This note is a
-coverage update within the [whole-book program](coverage.md).
+the three all-integer product identities. Two later published proofs supply
+the scalar action on common eigenvectors with the finite list of distinct
+occurring characters, and the particular polynomial witnesses assembled from
+the actual block bases. The current ledger below maps the whole C.III passage
+to these exact targets. The earlier eight-result publication audit and the
+boundaries open at the earlier snapshots are preserved as historical evidence.
+This note is a coverage update within the [whole-book program](coverage.md).
 
 ## Governing passage
 
@@ -297,9 +299,11 @@ proof does not choose or use the local basis to establish this product.
 These are derived intrinsic formulations of Renard's actual matrix blocks.
 Their routes and the generic theorem's stronger arbitrary-field scope are
 explained by the paired Markdown; they are not extra source claims. The
-coefficient proposition itself remains proved by the coordinate-induction
-route described above. This note does not attribute that proof to the later
-global-basis or product developments.
+coefficient propositions themselves remain proved by the coordinate-induction
+route described above. This note does not attribute those proofs to the later
+global-basis or product developments. The source-route assembly is a separate,
+later published target, described in the section on particular polynomial
+witnesses below.
 
 ## Source-assertion ledger for the complete C.III passage
 
@@ -308,8 +312,10 @@ unnumbered proposition and its proof, from the section heading on PDF285 to
 the closing square on PDF286. The preceding stable-endomorphism proposition
 on PDF285 belongs to C.II. There is no local bibliographic appeal in C.III.
 The table includes the substantive assertions in the proof, even when they
-are not numbered. “Derived comparison” means the deduction described below
-has no separately located named aggregate theorem in this audit.
+are not numbered. The ledger of the 1 November audit marked the scalar action,
+the distinct-character list and the polynomial-witness assembly as derived
+comparisons without a located named theorem; the rows below now cite the
+published targets that close them.
 
 | 2026 locator | Source assertion | Published correspondence and status |
 | --- | --- | --- |
@@ -317,40 +323,27 @@ has no separately located named aggregate theorem in this audit.
 | Printed p.279 / PDF285, coefficient display | `F(n) = λ(U(n)v)` for a vector and algebraic functional. | `Langlands.matrixCoefficient` in [Definitions.lean](../../Langlands/Representation/MatrixCoefficient/Definitions.lean), with [convention explanation](../../Langlands/Representation/MatrixCoefficient/Definitions.md); the representation and tuple statement left sides use this convention. Definition coverage. |
 | Printed p.279 / PDF285, unnumbered proposition | A single finite family of characters and complex polynomials gives `F(n) = ∑ χ_j(n) Q_j(n)` at every integer point. | The representation and supplied-tuple coefficient propositions and their published exact proofs. Proved in both interfaces; neither proposition requires distinct characters. |
 | Printed p.279 / PDF285, first proof paragraph | Common eigenvalue tuples occur, and their coordinates are nonzero. | The support equivalence above, together with the decomposition's spanning/nonzero support and unit labels, identifies the occurring tuples. The zero space has no nonzero common eigenvector. No separate nontrivial-space assumption is imposed globally. |
-| Printed p.279 / PDF285, scalar-action display | On a common eigenspace `U(n)` acts by `χ_c(n) = ∏ c_i^n_i`. | The character definition and generator values are proved construction equations. The full scalar-action assertion on ordinary common eigenvectors is a derived comparison using the tuple product and stored inverses, as detailed below; it is not the support target's conclusion. |
-| Printed p.279 / PDF285, last paragraph | List all distinct characters obtained from the common eigenvalue tuples. | Finite actual support is proved by the decomposition; support/eigenvector equivalence is proved by the support theorem. Distinct labels give distinct coordinate characters by their generator values. Finite enumeration and this injectivity comparison are described below, rather than claimed as a new named aggregate theorem. |
+| Printed p.279 / PDF285, scalar-action display | On a common eigenspace `U(n)` acts by `χ_c(n) = ∏ c_i^n_i`. | `CommutingTupleCommonEigenvectorCharacterStatement` / `commutingTupleCommonEigenvectorCharacter`: for the same vector `v`, the generator eigen-equations hold if and only if `U(n)v = χ_c(n) • v` at every integer lattice point. Proved, without finite-dimensionality. |
+| Printed p.279 / PDF285, last paragraph | List all distinct characters obtained from the common eigenvalue tuples. | `IntegerLatticeCoordinateCharacterReconstructionStatement` / `integerLatticeCoordinateCharacterReconstruction` proves that `coordinateCharacter` is injective and reconstructs every lattice character from its generator values. `CommutingTupleOccurringCharacterEnumerationStatement` / `commutingTupleOccurringCharacterEnumeration` proves one finite injective list enumerating exactly the nonzero blocks and exactly the characters realized on nonzero vectors. Proved. |
 | Printed p.280 / PDF286, opening paragraph | Choose one common block triangular basis for every lattice point, with constant character diagonals. | The global-basis theorem's actual ambient basis, off-block and below-diagonal vanishing, and diagonal clauses prove this coordinate formulation. The all-label sigma index is an internal alternative to the source's finite enumeration. |
-| Printed p.280 / PDF286, reduction to entries and blocks | It suffices to prove the desired form for matrix entries, then for each block. | Linearity of the coefficient and the global-basis coordinate comparisons explain this reduction. The coefficient theorem already proves the final target by a different route. A separate theorem packaging this exact reduction and its finite polynomial witnesses was not located in the audit. |
+| Printed p.280 / PDF286, reduction to entries and blocks | It suffices to prove the desired form for matrix entries, then for each block. | `CommutingTupleGeneralizedWeightPolynomialCoefficientStatement` / `commutingTupleGeneralizedWeightPolynomialCoefficient` performs this reduction for every compatible pair of local and ambient bases: it expands the coefficient over exactly the nonzero blocks, with block-entry polynomials. Proved. The earlier coefficient theorem proves the existential target by a different route. |
 | Printed p.280 / PDF286, first display | `A_j(e_k) = z_k^(j) (Id + N_k^(j))`, with strictly upper triangular, nilpotent, commuting `N_k^(j)`. | Intrinsic normalization, the five local-basis clauses and normalized nilpotence/commutation prove the actual-block formulation. Strict upper triangularity uses row `i`, column `j`, with zero entries for `j ≤ i`. |
 | Printed p.280 / PDF286, second display, first line | The block action is the product of the whole scalar-times-unipotent generator factors raised to integer powers. | First clause of the product theorem, with the intrinsic identity for each `G_i`. Actual unit powers preserve the errata's grouping. |
 | Printed p.280 / PDF286, second display, second line | Extract the scalar character and leave a product of unipotent integer powers. | Second clause of the product theorem, with `U_i = 1 + N_i` as underlying endomorphisms. Proved for all integer coordinates. |
 | Printed p.280 / PDF286, second display, third line and following sentence | Each unipotent power has a finite binomial expansion because the difference is nilpotent. | Third clause of the product theorem, normalized nilpotence's ambient bound, and the standalone operator binomial theorem. Proved with an explicit finite range. |
-| Printed p.280 / PDF286, final sentence | The binomial coefficients are polynomials in the coordinates, yielding the coefficient proposition. | The standalone polynomial component identifies `Ring.choose z k` with `(k!)⁻¹ • descPochhammer ℂ k` evaluated at `z`, for every complex `z`. The coefficient theorem supplies the final finite multivariate expansion. Combining the block entry formulas into those particular polynomial witnesses is a derived source-route comparison, not an additional accepted assembly theorem. |
+| Printed p.280 / PDF286, final sentence | The binomial coefficients are polynomials in the coordinates, yielding the coefficient proposition. | The standalone polynomial component identifies `Ring.choose z k` with `(k!)⁻¹ • descPochhammer ℂ k` evaluated at `z`, for every complex `z`. `CommutingTupleGeneralizedWeightPolynomialActionStatement` / `commutingTupleGeneralizedWeightPolynomialAction` shows that every block-action matrix entry is `χ_c(n)` times the evaluated entry of the particular polynomial matrix of the published definitions, and `CommutingTupleGeneralizedWeightPolynomialAssemblyStatement` / `commutingTupleGeneralizedWeightPolynomialAssembly` chooses the compatible bases and exact support once and yields the coefficient proposition with those particular witnesses. Proved. |
 
-The common-eigenvector scalar action is a mathematical deduction: if
-`A_i v = c_i • v`, applying the actual inverse gives
-`A_i⁻¹ v = c_i⁻¹ • v`. Integer-power induction and the tuple product equation
-then give `U(n)v = χ_c(n) • v`. The support theorem itself quantifies only
-over the generator equations. Similarly, if `coordinateCharacter c` and
-`coordinateCharacter c'` agree, evaluating at `generator d i` gives
-`c i = c' i` for every coordinate; hence `c = c'`. Together with finite support
-this permits the source's finite list of distinct occurring characters.
-These explanations identify the source correspondence without asserting
-publication of unlocated Lean declarations.
+At the 1 November audit (Library `61bb004f`), the scalar action on ordinary
+common eigenvectors, the injectivity of labels into characters with the
+resulting finite list, and the assembly of the particular polynomial witnesses
+from the block bases were explained only as mathematical deductions. That
+audit kept them as explicit verification boundaries for any claim that the
+source-route assembly is formally implemented. The published occurring-character
+and polynomial-comparison proofs, described in the next section, now prove
+exact targets for all three. The older support, triangular-basis and product
+targets remain the proved inputs.
 
-For the final matrix-entry reduction, the third product formula and the
-polynomial identity make every block entry `χ_c` times a polynomial; finite
-basis coordinates and linearity combine them into the coefficient. The
-published coefficient proof establishes that existential conclusion directly.
-This comparison does not supply a new exact-target receipt for a Lean proof
-that assembles the particular witnesses from the global block basis. Such
-packaging and the two ordinary-eigenvector/character comparisons remain
-explicit verification boundaries for any later claim that the source-route
-assembly itself is formally implemented. They do not reinstate the old
-support, triangular-basis or product obligations, whose exact targets are
-now proved.
-
-All constructions and five newer propositions retain arbitrary carrier
+All constructions and the five actual-block propositions retain arbitrary carrier
 universe `u`, every natural rank, every unit label, the zero space and zero
 blocks. At rank zero the intersection is `⊤`, the lattice action is identity,
 and products are empty. The support equivalence then means exactly that the
@@ -361,19 +354,128 @@ has been added. The finite-dimensional assumption is the original C.III
 hypothesis; the construction and several intermediate identities also work
 without it.
 
+## Occurring characters and particular polynomial witnesses
+
+All names in this section are current Library declarations. The occurring-character
+[statement](../../Langlands/Representation/IntegerLattice/OccurringCharactersStatement.lean)
+and its [explanation](../../Langlands/Representation/IntegerLattice/OccurringCharactersStatement.md)
+define three propositions in the namespace `Langlands`:
+
+| Proposition | Exact content |
+| --- | --- |
+| `IntegerLatticeCoordinateCharacterReconstructionStatement` | For every `d`, every monoid homomorphism `χ : Lattice d →* ℂˣ` equals `coordinateCharacter (fun i => χ (generator d i))`, and `coordinateCharacter` is injective. No representation or occurrence premise is involved. |
+| `CommutingTupleCommonEigenvectorCharacterStatement` | For every complex vector space `V : Type u`, tuple `A`, unit label `c` and the same vector `v`, the generator equations `A_i v = c_i • v` hold for every `i` if and only if `U(n)v = χ_c(n) • v` for every lattice point `n`. There is no finite-dimensional premise, and `v = 0` is included. |
+| `CommutingTupleOccurringCharacterEnumerationStatement` | For finite-dimensional `V`, there are `l : ℕ` and `c : Fin l → Fin d → ℂˣ` such that the characters `χ_{c j}` are pairwise distinct, `W(b) ≠ ⊥` exactly when `b = c j` for some `j`, and a character `χ : Lattice d →* ℂˣ` acts on some nonzero vector by `U(n)v = χ(n) • v` exactly when `χ = χ_{c j}` for some `j`. |
+
+`RenardCIIIOccurringCharactersStatement.{u}` is their conjunction. The
+enumeration quantifies over all lattice characters, so the occurring characters
+are not assumed in advance to be coordinate characters. For the zero space the
+list is empty. At rank zero the single label has block `⊤`, so the list has one
+entry exactly when `V` is nonzero.
+
+Worker 1214's [proof](../../Langlands/Representation/IntegerLattice/OccurringCharactersProof.lean),
+with its [explanation](../../Langlands/Representation/IntegerLattice/OccurringCharactersProof.md),
+closes `renardCIIIOccurringCharacters` from `integerLatticeCoordinateCharacterReconstruction`,
+`commutingTupleCommonEigenvectorCharacter` and `commutingTupleOccurringCharacterEnumeration`.
+It writes every lattice point as a product of integer powers of the
+generators and evaluates characters at the generators. For the eigenvector
+equivalence, the lattice points acting on `v` by the character form a subgroup
+containing the generators; inverses use the representation's inverse and
+cancellation of units. The enumeration reindexes the finite support from
+`commutingTupleGeneralizedWeightDecomposition` by `Fin` and uses
+`commutingTupleGeneralizedWeightSupport` in both occurrence directions. Its
+helpers in `Langlands.IntegerLattice` are `lattice_eq_prod_generators`,
+`coordinateCharacter_reconstruction`, `coordinateCharacter_injective` and
+`commonEigenvector_iff_coordinateCharacter`.
+
+The polynomial-matrix
+[definitions](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomial.lean),
+with their [explanation](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomial.md),
+are in the namespace `Langlands.IntegerLattice`. They take a supplied local
+basis `b` of `W(c)`, indexed by `Fin (finrank ℂ W(c))`, and, for the
+coefficient, an ambient basis `B` indexed by `Σ c, Fin (finrank ℂ W(c))`:
+
+```text
+coordinateBinomialPolynomial i k
+  = X i substituted into (k!)⁻¹ • descPochhammer ℂ k,
+generalizedWeightBinomialMatrixFactor A c b t
+  p q = ∑_{k < finrank ℂ V} coordinateBinomialPolynomial t k
+          * C (b.repr ((N_t ^ k) (b q)) p),
+generalizedWeightPolynomialMatrix A c b
+  = (List.ofFn (generalizedWeightBinomialMatrixFactor A c b)).prod,
+generalizedWeightCoefficientPolynomial A c b B v ell
+  = ∑ p, ∑ q, C (ell (b p) * B.repr v ⟨c, q⟩)
+          * generalizedWeightPolynomialMatrix A c b p q.
+```
+
+The published laws `eval_coordinateBinomialPolynomial`,
+`eval_generalizedWeightBinomialMatrixFactor`,
+`generalizedWeightPolynomialMatrix_rank_zero` and
+`generalizedWeightCoefficientPolynomial_eq_zero_of_finrank_eq_zero` accompany
+them. The definitions have no finite-dimensional premise and do not assume that
+`b` and `B` are compatible.
+
+The polynomial-comparison
+[statement](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonStatement.lean),
+with its [explanation](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonStatement.md),
+defines three propositions in the namespace `Langlands`. Each quantifies over
+every natural `d`, finite-dimensional complex `V : Type u` and actual tuple `A`;
+`x_n` denotes the point `t ↦ (n.toAdd t : ℂ)`.
+
+| Proposition | Exact content |
+| --- | --- |
+| `CommutingTupleGeneralizedWeightPolynomialActionStatement` | For every label `c`, every basis `b` of `W(c)` (no triangularity is assumed), every `n` and all `p, q`: `b.repr (ρ_c(n) (b q)) p = χ_c(n) * eval x_n (generalizedWeightPolynomialMatrix A c b p q)`. |
+| `CommutingTupleGeneralizedWeightPolynomialCoefficientStatement` | For every family of local bases `b` and ambient basis `B` with `B ⟨c, q⟩ = b c q`, there is a finite set `s` of labels with `c ∈ s ↔ W(c) ≠ ⊥`, chosen before every `v`, `ell` and `n`, such that `ell (U(n) v) = ∑_{c ∈ s} χ_c(n) * eval x_n (generalizedWeightCoefficientPolynomial A c (b c) B v ell)`. |
+| `CommutingTupleGeneralizedWeightPolynomialAssemblyStatement` | There exist `b`, `B` and `s` with the same compatibility, exact support and identity. |
+
+`RenardCIIIPolynomialComparisonStatement.{u}` is their conjunction. Its sum
+has one term for each nonzero block; by the injectivity of
+`coordinateCharacter` above, these terms carry pairwise distinct characters.
+The assembly clause is the coefficient proposition with the particular
+polynomial witnesses of the proof on printed p.280.
+
+Worker 88's [proof](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonProof.lean),
+with its [explanation](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonProof.md),
+closes `renardCIIIPolynomialComparison` from
+`commutingTupleGeneralizedWeightPolynomialAction`,
+`commutingTupleGeneralizedWeightPolynomialCoefficient` and
+`commutingTupleGeneralizedWeightPolynomialAssembly`. It transports the third
+clause of `commutingTupleGeneralizedWeightProduct` through
+`LinearMap.toMatrixAlgEquiv b`, takes the support from the decomposition, and
+obtains the compatible witnesses from `commutingTupleGeneralizedWeightGlobalBasis`.
+Its helpers `IntegerLattice.PolynomialComparison.eval_matrix`,
+`sum_block_coordinates` and `functional_block_action` are in the proof
+module. The proof does not use the earlier existential coefficient theorem,
+and it puts no finiteness instance on the type of all labels.
+
+Workers 709 and 1214 prepared the occurring-character statement (statement
+task `fe086a8f-19ce-42eb-a8b0-50d8136e512e`). Workers 709 and 308 wrote the
+polynomial-matrix definitions. Worker 709 prepared the polynomial-comparison
+statement, which Worker 308 checked and submitted (statement task
+`bd8e37d0-6968-4c11-85e5-0fec02620914`). Worker 709 is the author of this note;
+that coauthorship is documented here as authorship, not as review. The
+independent reviews recorded below were made by the named reviewers. The two
+proofs belong to Workers 1214 and 88; this note imports no proof authorship.
+
 ## Current independent acceptance and publication evidence
 
-The current audit compares 22 accepted Lean/Markdown pairs against their
+The 1 November audit compared 22 accepted Lean/Markdown pairs against their
 archived bundle fingerprints, the pinned Library
-`61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`, and the workspace files. All match.
-It checks each publication disposition, independent candidate-hash binding,
-approval without qualifications, and accepted machine validation. For every
-proof, the receipt accepts `lake-build`, `exact-target`, `unchanged-statement`
-and `frozen-inputs` with `proof_accepted = true`. Both registered source PDF
-fingerprints also match. These are publication facts; the note creates no
-new mathematical artifact or proof receipt.
+`61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`, and the workspace files. All
+matched. It checked each publication disposition, independent candidate-hash
+binding, approval without qualifications, and accepted machine validation. For
+every proof, the receipt accepts `lake-build`, `exact-target`,
+`unchanged-statement` and `frozen-inputs` with `proof_accepted = true`.
 
-The five newer exact-target proof publications are:
+The 6 November audit applies the same checks to the five units of the
+previous section. It compares their ten files with the archived bundle
+fingerprints, Library `d2fd0b68e11e9844d5da3650e7579d62588fd3fd` and the
+workspace, and re-checks the ten actual-block proof fingerprints below against
+that Library. All match. Both registered source PDF fingerprints also match.
+These are publication facts; the note creates no new mathematical artifact or
+proof receipt.
+
+The five actual-block exact-target proof publications are:
 
 | Unit; proof author | Accepted proof; independent reviewer | Machine receipt | Integration; publication Library |
 | --- | --- | --- | --- |
@@ -402,8 +504,37 @@ eight-result table, representation coefficient statement
 `769b13a0-1fbe-4050-b5ff-52ba2d69b320`, generic common-basis statement
 `aee52bf6-e11f-4437-8f8b-7d0daba51bb3`, and the actual-block construction.
 
-The following frozen proof-pair fingerprints agree with both the current
-Library and the workspace. Each stem is under
+The five units of the occurring-character and polynomial-witness section are:
+
+| Unit; author | Accepted contribution; independent reviewer | Machine receipt | Integration; publication Library |
+| --- | --- | --- | --- |
+| Occurring-character statement; Workers 709 and 1214 | `c5d11aa0-a042-45aa-a1b2-72f6bcb9eed5`; Reviewer 7376 | `6d9132f2-e135-41fc-86cd-163fc6f2ffa7` | `c754da97f3d4498cabd94fd7298cfb32`; `f6b45fe9b1a2248ff9b7cef7184c330d994e9512` |
+| Occurring-character proof; Worker 1214 | `a4de9556-1637-41c5-9e40-60d904e05ec7`; Reviewer 7435 | `e3b5a8ab-9e0d-438f-93ac-614dbf11c4e6` | `18fd5a62bc2948dfb14defc36b57512a`; `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
+| Polynomial-matrix definitions; Workers 709 and 308 | `4ce90481-60d5-49b5-8318-508ed948889a`; Reviewer 7383 | `19806bb9-078e-4b6e-bacc-532f8ba25452` | `1fc1d2eb64a04a39ac7b1b70736a185e`; `f6b45fe9b1a2248ff9b7cef7184c330d994e9512` |
+| Polynomial-comparison statement; Worker 709, checked and submitted by Worker 308 | `41c543ed-3c86-404c-a523-08bf42e627cf`; Reviewer 7448 | `7fee4a98-d951-456a-84fa-fe012b8e9f01` | `886758fbb6204ad2a3f3e8a3ad3017e3`; `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
+| Polynomial-comparison proof; Worker 88 | `89ceeaee-be5e-4c74-adda-0c6341b0d11e`; Reviewer 7519 | `bea3f37d-c36a-43a7-a530-397da5d6428c` | `8445ae8af906435ba15254d83a777b57`; `da0312e3777850c14b211f6245ff5b08af56f616` |
+
+The two proof receipts accept `lake-build`, `exact-target`,
+`unchanged-statement` and `frozen-inputs` with `proof_accepted = true`; the
+statement and definition receipts accept their `lake-build` and
+`declaration-kind` checks. The focused proof tasks are
+`5ab726c4-0815-4cc6-a89d-32c425e58b32` and
+`3136d318-c821-433b-852e-00149bc6b0db`; both are done.
+
+The ten files of these units, each under
+`Langlands/Representation/IntegerLattice/`, have these fingerprints in the
+frozen bundles, Library `d2fd0b68` and the workspace:
+
+| Stem | Lean SHA256 | Markdown SHA256 |
+| --- | --- | --- |
+| `OccurringCharactersStatement` | `141c0063cfa96e09949ffce4e27b333bceda1198d407a631b04cff8cefe71330` | `ddfa9c35d1ff930742abd6ea7f7cd8ff0565b86683c3d957f8c5fbec025d1935` |
+| `OccurringCharactersProof` | `782b850dd5e75d158a46e4b5c54b816882a3b402d45420e5f2fcb3a9fb6e6d19` | `3b506f3c9317825b81f4f7d78bbfacbcd11aaa7cc97d3abca65aefc06dea4ac3` |
+| `GeneralizedWeightPolynomial` | `4c1109219b3a61cd8275f727aef1edb12429ec42f51052a0e32e449f8ebc0a2e` | `4b2e1f07ffc3d62980b37fe3fde7e849e271edb4e5695e4f4c8bf6c7aa3b3a83` |
+| `GeneralizedWeightPolynomialComparisonStatement` | `e12695dc2a977fcac3a8c0e170473ed93defbd6740ad0601f6fbf83861ba50cf` | `b1217c3241af3f154e0caf7ef14ce464ae32cf20a1140ea674c7dcde2ccd7abb` |
+| `GeneralizedWeightPolynomialComparisonProof` | `2442e41c75f308f434b5d5088a3d2fe1aa9e88140f3cd566203d4a7f1be5409a` | `ad4f2ef61bfc2df1ebed21b032cacaed48ab43968bba9cc6643c537fb9c661af` |
+
+The following frozen actual-block proof-pair fingerprints agree with both
+Library `d2fd0b68` and the workspace. Each stem is under
 `Langlands/Representation/IntegerLattice/` and has the indicated `.lean` and
 `.md` suffixes.
 
@@ -415,13 +546,17 @@ Library and the workspace. Each stem is under
 | `GeneralizedWeightGlobalBasisProof` | `1448bbe9797f2ea566712a80a9995a79cbc5559bff49a49a41bd7f516f7724d1` | `fd82f12cd4f43e88c3b5b7440a3a25336e4339757ec45cf2e91ba1bb03f9171d` |
 | `GeneralizedWeightProductProof` | `30d11cca1c1ceb49d2e751a4e0fe6ee3eb480e9073dc3ff5e957c4a655c24295` | `d3c638fba39cbe9eb2ab4d2265fe4175c53f2128e2b4345965bbd461de7e433d` |
 
-Recovery compilation `53061516-348e-41b5-9e20-9ea0f433ae95` successfully checked
-all five proof modules with zero errors or warnings. Product declaration
+Recovery compilation `53061516-348e-41b5-9e20-9ea0f433ae95`, made for the
+1 November audit, successfully checked all five actual-block proof modules with
+zero errors or warnings. Product declaration
 inspection retained universe `u` and only `propext`, `Classical.choice` and
 `Quot.sound`. This development check supplements the independent official
 receipts; its own `proof_accepted` field is false. No additional compilation
 or semantic acceptance follows from this documentation update.
 
-The old three open families now have the actual-block proofs recorded above.
-The explicitly identified source-route packaging boundaries remain visible.
-This note declares neither Appendix C.III completion nor parent completion.
+The three families open at Library `1fb97c8e` have the actual-block proofs
+recorded above. The three source-route comparisons left as deductions at
+Library `61bb004f` now have the occurring-character and polynomial-comparison
+proofs. Every row of the source-assertion ledger therefore cites a published
+target. This note records that mapping; it declares neither Appendix C.III
+completion nor parent completion.
