@@ -36,3 +36,8 @@ These results retain compact-limit stability and the precise common
 compact normalization. They do not assert a general special-compact
 realization, the source Iwasawa expression for gamma, same-Levi
 independence or the main Plancherel conclusions.
+
+The local topology, measurability and countability instances have explicit
+module-specific names, so sibling integration modules can be imported
+together. Their types and bodies, every mathematical declaration and all
+hypotheses are unchanged by this naming correction.

@@ -255,3 +255,5 @@ condition:
    functor is redefined, here or in the nonadjacent proof.
 5. *Audit recorded.* This section records it. The nonadjacent proof's
    Markdown records the same audit for its own closure in more detail.
+
+The existing zero-twist isomorphism `Langlands.Classification.segmentFactorZeroIso` is public so that other segment-product transports can reuse the same construction.

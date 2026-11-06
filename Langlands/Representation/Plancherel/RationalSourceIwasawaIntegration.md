@@ -70,3 +70,8 @@ formulas, compact-limit stability as visible hypotheses. It does not construct
 the source special compact or prove these structural hypotheses for every
 reductive group. The Bochner extension, source gamma independence, spectral
 normalizations, and Plancherel conclusions remain separate obligations.
+
+The local topology, measurability and countability instances have explicit
+module-specific names, so sibling integration modules can be imported
+together. Their types and bodies, every mathematical declaration and all
+hypotheses are unchanged by this naming correction.

@@ -55,7 +55,7 @@ private def segmentFactorSegmentFactorIso
   rw [twist_twist, ← realPowerCharacter_add, h]
 
 /-- The twist by `ν ^ 0` is the identity. -/
-private def segmentFactorZeroIso
+def segmentFactorZeroIso
     (A : letI := T.topology; SmoothRep.{0, uF, uV} ℂ (GeneralLinear r F.Carrier)) :
     letI := T.topology
     T.segmentFactor A 0 ≅ A := by

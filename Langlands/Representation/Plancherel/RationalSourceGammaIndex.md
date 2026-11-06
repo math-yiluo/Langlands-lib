@@ -37,3 +37,8 @@ structural premises, not asserted realizations. This unit does not prove
 existence of one H for all parabolics, a root-subgroup product formula,
 same-Levi independence, or any Plancherel conclusion. These further steps
 in the source's Remark (3) remain separate obligations.
+
+This module uses ten distinct explicit local instance names with the
+`sourceGammaIndex` prefix so that the Iwasawa and gamma branches can be
+imported together. This internal naming correction leaves every instance
+type and body, mathematical declaration, hypothesis and proof unchanged.

@@ -47,3 +47,9 @@ between arbitrary parabolics sharing a Levi. In particular it does not assert
 that every such pair is conjugate by an element of the chosen compact. The
 root-index factorization, special-compact geometry, analytic convergence and
 Plancherel conclusions remain separate obligations.
+
+This module uses six distinct explicit local instance names with the
+`sourceGammaConjugation` prefix so it can be imported with the integration
+and index branches. This internal naming correction preserves every
+instance type and body, every published definition and theorem, and every
+proof body. The existing gamma API is reused without replacement.

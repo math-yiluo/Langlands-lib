@@ -39,3 +39,8 @@ formula. Identifying the original gamma with the source Iwasawa-modulus
 integral retains the separate existing factorization, compact-limit
 stability and Levi right-invariance premises. Same-Levi independence,
 a Bochner formula and the Plancherel conclusions remain separate.
+
+The local topology, measurability and countability instances have explicit
+module-specific names, so sibling integration modules can be imported
+together. Their types and bodies, every mathematical declaration and all
+hypotheses are unchanged by this naming correction.

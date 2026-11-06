@@ -54,3 +54,8 @@ every reductive group here, and K has not been identified with the source's
 special maximal compact. The source Iwasawa expression for gamma,
 same-Levi independence, spectral normalizations and the main Plancherel
 conclusions remain separate obligations.
+
+This module uses ten distinct explicit local instance names with the
+`sourceIwasawaBochner` prefix so that the Iwasawa and gamma branches can be
+imported together. This internal naming correction leaves every instance
+type and body, mathematical declaration, hypothesis and proof unchanged.

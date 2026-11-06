@@ -116,3 +116,5 @@ These results supply collection and subgroup structure only. They do not
 identify this subgroup with a sharp or full unipotent intersection, prove
 injectivity of its coordinates, introduce a central factor, prove a facet
 factorization, or establish the full chamber Iwahori decomposition.
+
+The adjacent-pair identity `prod_ofFn_pairs` is public for reuse by the positive-depth ray compression module. Its statement and proof are unchanged.

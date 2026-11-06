@@ -52,3 +52,8 @@ with the source Iwasawa-modulus integral additionally retains the existing
 factorization and Levi right-invariance premises. This module does not
 realize a special compact, prove arbitrary same-Levi independence, or
 establish a Bochner formula or any Plancherel conclusion.
+
+The local topology, measurability and countability instances have explicit
+module-specific names, so sibling integration modules can be imported
+together. Their types and bodies, every mathematical declaration and all
+hypotheses are unchanged by this naming correction.

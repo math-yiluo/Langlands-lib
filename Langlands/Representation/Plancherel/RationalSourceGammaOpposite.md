@@ -40,3 +40,8 @@ pair. A single H valid for all parabolics, root-subgroup product indices,
 general same-Levi independence and the main Plancherel conclusions remain
 separate obligations. No special compact realization or removal of the
 K stability premises is claimed.
+
+This module uses ten distinct explicit local instance names with the
+`sourceGammaOpposite` prefix so that the Iwasawa and gamma branches can be
+imported together. This internal naming correction leaves every instance
+type and body, mathematical declaration, hypothesis and proof unchanged.

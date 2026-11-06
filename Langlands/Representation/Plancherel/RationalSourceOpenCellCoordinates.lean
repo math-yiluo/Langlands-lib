@@ -22,19 +22,19 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (RationalPoint F G.X) := rationalPointTopology F G.X
-local instance : MeasurableSpace (RationalPoint F G.X) := borel (RationalPoint F G.X)
-local instance : BorelSpace (RationalPoint F G.X) := ⟨rfl⟩
-local instance : T2Space F := BruhatTits.localField_t2Space F
-local instance : IsTopologicalGroup (RationalPoint F G.X) :=
+local instance sourceCoordinatesPointTopology : TopologicalSpace (RationalPoint F G.X) := rationalPointTopology F G.X
+local instance sourceCoordinatesPointMeasurable : MeasurableSpace (RationalPoint F G.X) := borel (RationalPoint F G.X)
+local instance sourceCoordinatesPointBorel : BorelSpace (RationalPoint F G.X) := ⟨rfl⟩
+local instance sourceCoordinatesFieldT2 : T2Space F := BruhatTits.localField_t2Space F
+local instance sourceCoordinatesPointTopologicalGroup : IsTopologicalGroup (RationalPoint F G.X) :=
   rationalPoint_isTopologicalGroup F G
-local instance : T2Space (RationalPoint F G.X) := rationalPoint_t2Space F G
-local instance : LocallyCompactSpace (RationalPoint F G.X) :=
+local instance sourceCoordinatesPointT2 : T2Space (RationalPoint F G.X) := rationalPoint_t2Space F G
+local instance sourceCoordinatesPointLocallyCompact : LocallyCompactSpace (RationalPoint F G.X) :=
   rationalPoint_locallyCompactSpace F G
-local instance : NonarchimedeanGroup (RationalPoint F G.X) :=
+local instance sourceCoordinatesPointNonarchimedean : NonarchimedeanGroup (RationalPoint F G.X) :=
   RationalPointFamily.affineRationalPoint_nonarchimedeanGroup G
-local instance : SecondCountableTopology F := localField_secondCountableTopology F
-local instance : SecondCountableTopology (RationalPoint F G.X) :=
+local instance sourceCoordinatesFieldSecondCountable : SecondCountableTopology F := localField_secondCountableTopology F
+local instance sourceCoordinatesPointSecondCountable : SecondCountableTopology (RationalPoint F G.X) :=
   Aubert.General.rationalPoint_secondCountableTopology F G
 local instance subgroupSecondCountableSource (H : Subgroup (RationalPoint F G.X)) :
     SecondCountableTopology H :=

@@ -15,7 +15,7 @@ open Langlands.GroupScheme Langlands.GroupScheme.RealTorusSpace
 
 namespace Langlands.Geometry.Building
 
-private theorem prod_ofFn_pairs {M : Type*} [Monoid M] {n : ℕ}
+theorem prod_ofFn_pairs {M : Type*} [Monoid M] {n : ℕ}
     (f : Fin (n * 2) → M) :
     (List.ofFn f).prod = (List.ofFn fun j : Fin n =>
       f (finProdFinEquiv (j, 0)) * f (finProdFinEquiv (j, 1))).prod := by
