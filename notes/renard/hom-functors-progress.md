@@ -6,8 +6,9 @@ bindings and publication records on 4 November 2026. This map covers the
 beginning of A.VIII.2 through the projective nonzero-Hom criterion. The
 [A.VIII.1 source map](exact-functors-progress.md) supplies the general
 sequence-exactness and faithfulness results used here. The later smallness,
-finite-support, presentation and module-equivalence assertions retain their
-separate routing and [category/module source map](category-module-progress.md).
+finite-support, finite-type, module-equivalence, converse and presentation
+assertions have their own published units, mapped in the
+[category/module source map](category-module-progress.md).
 Neither this note nor the six publications declares A.VIII.2 complete.
 
 ## Governing source and assertion map
@@ -230,14 +231,13 @@ separate from the independent acceptance and publication evidence above.
 
 ## Retained obligations
 
-This note does not enlarge the scopes of the six units. Smallness at
-specified coproduct sizes, finite-support factorization, source finite-type
-comparisons, regular-module small progenerators, two-term presentations,
-the forward endomorphism-module equivalence, transport along equivalences
-and the converse retain their existing tasks and publication boundaries.
-The [category/module note](category-module-progress.md) records the
-verified results and routing in that later group, with its explicit audit
-dates. Its original-action/nonunital branches remain distinct from the
+This note does not enlarge the scopes of the six units. The later group
+has separate published units: finite-support factorization, the source
+finite-type comparison, regular-module small progenerators, two-term
+presentations, the forward endomorphism-module equivalence, transport
+along equivalences and the converse. The
+[category/module note](category-module-progress.md) records their
+statements, proof routes and receipts, with its explicit audit dates. Its original-action/nonunital branches remain distinct from the
 unital right-endomorphism-module theorem. Other Appendix A assertions and
 all remaining chapters and appendices remain obligations of the
 whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
