@@ -104,3 +104,5 @@ PDF pp.28–30, especially (4.12). Source
 This proof implements the derived reduction of the Library formulations.
 It does not implement the character-existence construction on pp.205–206
 or its characteristic-two repair, and has no global automorphic output.
+
+The existing helpers `restrictAlgEquiv_continuous`, `restrictAlgEquiv_norm` are public so related modules can reuse their unchanged proofs.

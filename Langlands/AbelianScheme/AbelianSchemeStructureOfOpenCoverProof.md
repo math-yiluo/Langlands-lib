@@ -198,3 +198,6 @@ glued on Hom-sets and turned into a group object with
 `CommGrpObj.ofRepresentableBy`, instead of gluing the multiplication
 morphism on `P ×_S P` and checking diagrams. The comparison on overlaps also
 goes through base change of the abelian schemes to `pullback g₁ g₂`.
+
+`OpenCoverStructure.prop_hom_of_iso` reuses the identical proof in
+`AlgebraicGeometry.OverMorphismPropertyTransport`.

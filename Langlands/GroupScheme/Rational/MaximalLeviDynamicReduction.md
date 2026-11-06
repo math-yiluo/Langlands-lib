@@ -51,3 +51,5 @@ relative-root-system classification, rank formula, root-negation assertion,
 or additional geometric unipotent-radical premise is used. An actual proof of
 `ParabolicDynamicStatement` is still required before this implication can
 yield the task's unconditional theorem.
+
+The existing helpers `isIso_of_full_range`, `full_range_of_isIso` are public so related modules can reuse their unchanged proofs.

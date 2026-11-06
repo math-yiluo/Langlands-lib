@@ -14,7 +14,7 @@ open LocalFactor.CommonClosure GeneralPosition Weil.Local
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p)
 
-private theorem restrictAlgEquiv_continuous
+theorem restrictAlgEquiv_continuous
     (E M : Extension F) (h : E.field ≤ M.field) :
     letI := (fieldData F E).topology
     letI := (M.asPadicField (p := p)).canonicalNormedField
@@ -35,7 +35,7 @@ private theorem restrictAlgEquiv_continuous
       (M.asPadicField (p := p)) f).continuous
   exact hc.subtype_mk _
 
-private theorem restrictAlgEquiv_norm
+theorem restrictAlgEquiv_norm
     (E M : Extension F) (h : E.field ≤ M.field) (x : E.field) :
     (M.asPadicField (p := p)).canonicalNorm
         (IntermediateField.restrictAlgEquiv h x : M.field) =

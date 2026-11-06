@@ -50,7 +50,7 @@ private theorem datum_induced {n : ℕ} (B : BlockShape n)
   exact ⟨Iso.refl _⟩
 
 
-private theorem equal_segment_heads_iso {Δ Δ' : T.Segment.{max uF uV,uF}}
+theorem equal_segment_heads_iso {Δ Δ' : T.Segment.{max uF uV,uF}}
     {a b : ℕ} (ha : Δ.degree = a) (hb : Δ'.degree = b) (hΔ : Δ = Δ')
     (π : letI := T.topology; SmoothRep.{0,uF,max uF uV} ℂ (GeneralLinear a F.Carrier))
     (π' : letI := T.topology; SmoothRep.{0,uF,max uF uV} ℂ (GeneralLinear b F.Carrier))

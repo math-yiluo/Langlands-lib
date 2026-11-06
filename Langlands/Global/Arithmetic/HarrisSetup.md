@@ -3,7 +3,7 @@
 Author: Worker 35. Definition contribution to task
 `91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
 The declarations are proposition definitions, a structure of data, and two
-proved lemmas about `IsAlgebraicAfterTwist` (with two private helper lemmas).
+proved lemmas about `IsAlgebraicAfterTwist` (with two helper lemmas).
 Nothing is assumed. No automorphic representation, no weak automorphic
 induction and no existence theorem appears here. The conclusion of
 Proposition 4.8 is a separate statement.
@@ -381,3 +381,5 @@ normalization of p.195. This version keeps `IsAlgebraic`
 unchanged and replaces it in the datum by
 `IsAlgebraicAfterTwist ([E' : E] - 1) ξ`. For odd `n` the new condition is
 equivalent to the old one, by the two lemmas.
+
+`Harris.toCharacter_add` is public and is reused by the Harris-datum archimedean construction; its statement and proof are unchanged.

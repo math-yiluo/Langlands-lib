@@ -77,7 +77,7 @@ blockwise argument as multiset membership.
 
 Compose the given product isomorphism with the two `datum_induced`
 isomorphisms. The second hypothesis then gives equality of segment multisets.
-The private lemma `ofFn_matching` converts this equality to a permutation of
+The shared lemma `Langlands.Combinatorics.exists_equiv_of_ofFn_multiset_eq` converts this equality to a permutation of
 lists, uses `List.Perm.idxBij` and its inverse, and transports the index sets
 along the lengths of `List.ofFn`. This produces a bijection of block indices
 matching equal segments, retaining all repeated occurrences. Segment equality
@@ -114,3 +114,5 @@ The finite-occurrence matching step reuses
 `Langlands.Combinatorics.exists_equiv_of_ofFn_multiset_eq` in
 `Langlands.Combinatorics.FiniteOccurrenceMatching`. The helper has the same
 statement and proof as the formerly private copy.
+
+The existing helpers `equal_segment_heads_iso` are public so related modules can reuse their unchanged proofs.

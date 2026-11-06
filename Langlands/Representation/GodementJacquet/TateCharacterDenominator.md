@@ -35,7 +35,7 @@ denominator guard. Uniqueness of rational continuation identifies any supplied
 continuation with this one and transfers the Laurent clearing witness.
 
 This is a direct internal consequence of the published shell, conductor and
-recurrence results. The two private spectral proofs specialize the helpers in
+recurrence results. The two spectral helper proofs specialize the helpers in
 Worker 656's `OneVariableMellinProof` and Worker 357's `TateScalarMellin`, which
 in turn attribute the elementary power argument to Worker 235's
 `RamifiedFiniteFunctionMellinProof`. Their attribution is retained. The
@@ -47,3 +47,5 @@ branches, with no condition on the value of the test at zero. This unit does
 not construct a test realizing the reciprocal Euler polynomial, prove that it
 is the normalized generator, identify the JPSS pair L-factor, or establish an
 epsilon comparison or the closed all-field correspondence.
+
+The existing helpers `character_normalizedAbs_cpow`, `character_spectral_threshold` are public so related modules can reuse their unchanged proofs.

@@ -108,3 +108,5 @@ source `harris-1998-local-langlands`, SHA256
 This is a proof of the derived comparison of existing Library conventions.
 It does not implement Harris's character-existence argument, his
 Clifford–Mackey step, or a characteristic-two repair.
+
+Reciprocity surjectivity is reused from `LocalFactor.CommonClosure.reciprocityUnits_surjective`.

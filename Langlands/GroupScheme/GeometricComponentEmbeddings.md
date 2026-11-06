@@ -68,3 +68,33 @@ perfection, connectedness or reductivity restriction. The comparison depends
 on the supplied embedding of the chosen closure. It asserts no independence
 from that embedding, realization as an étale group scheme, or effective
 descent or rational-point surjectivity for Galois-invariant components.
+
+## Identity and further coefficient extension
+
+These are intrinsic specializations of the identity and composition laws of
+`componentFieldEmbeddingEquiv`. They introduce no new external assertion.
+
+For the canonical identity embedding of `AlgebraicClosure k` into itself,
+`geometricComponentEmbeddingEquiv_self` identifies the comparison with the
+identity multiplicative equivalence on `GeometricComponents k H`.
+`geometricComponentEmbeddingHomeomorph_self` proves equality of the
+corresponding homeomorphism with the identity homeomorphism. Its proof applies
+extensionality to the underlying functions and the multiplicative identity law.
+
+For further extension from `L` to an algebraically closed field `M`, supply
+the algebra structures `k → L`, `k → M`, `AlgebraicClosure k → L`,
+`AlgebraicClosure k → M`, and `L → M`, in addition to the canonical
+`k → AlgebraicClosure k`. Assume all four scalar-tower laws for
+`k,AlgebraicClosure k,L`, `k,AlgebraicClosure k,M`, `k,L,M`, and
+`AlgebraicClosure k,L,M`. These explicitly require compatibility of the chosen
+closure embeddings with both coefficient embeddings and with their composite.
+All three fields retain the arbitrary common universe `u`.
+
+`geometricComponentEmbeddingEquiv_trans` proves equality between the comparison
+from the chosen geometric components to components over `L`, followed by
+`componentFieldEmbeddingEquiv k L M H`, and the direct chosen comparison to
+components over `M`. Its Lean proof specializes the full-component composition
+law at `AlgebraicClosure k`. It retains the smooth-affine hypotheses on `H`
+and requires no algebraicity of the coefficient extensions or additional
+restriction on `k`. The statement concerns these specified compatible
+embeddings; it makes no embedding-independence assertion.

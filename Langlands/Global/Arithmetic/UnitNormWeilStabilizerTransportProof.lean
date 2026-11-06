@@ -1,3 +1,4 @@
+import Langlands.LocalFactor.CommonClosureSurjectivity
 import Langlands.Global.Arithmetic.UnitNormWeilStabilizerTransportStatement
 import Mathlib.RingTheory.Norm.Basic
 
@@ -20,17 +21,6 @@ private theorem reciprocityUnits_norm
   let := Algebra.charZero_of_charZero (Padic p) F.Carrier
   have hn := he.1.1 E M h
   exact DFunLike.congr_fun hn (abelianizationProjection _ x)
-
-private theorem reciprocityUnits_surjective
-    (e : ReciprocityFamily F) (E : Extension F) :
-    Function.Surjective (reciprocityUnits F e E) := by
-  let := (fieldData F E).topology
-  intro z
-  obtain ⟨x, hx⟩ := QuotientGroup.mk_surjective ((e E).symm z)
-  refine ⟨x, ?_⟩
-  change e E (QuotientGroup.mk x) = z
-  rw [hx]
-  exact (e E).apply_symm_apply z
 
 private theorem reciprocityUnits_field_eq
     (e : ReciprocityFamily F) (A B : Extension F) (h : A.field = B.field)

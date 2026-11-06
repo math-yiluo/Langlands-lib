@@ -86,13 +86,17 @@ section GeneralLinearGroup
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{0} p)
 
-local instance : TopologicalSpace F.Carrier :=
+-- Module-specific names keep these local instances from clashing with the
+-- auto-generated names of the same instances in sibling modules.
+local instance harishChandraCarrierTopology : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
-local instance (n : ℕ) : TopologicalSpace (GeneralLinear n F.Carrier) :=
+local instance harishChandraGLTopology (n : ℕ) :
+    TopologicalSpace (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopology n
 
-local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
+local instance harishChandraGLTopologicalGroup (n : ℕ) :
+    IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopologicalGroup n
 
 /-- Bernstein–Zelevinsky 1976, 3.21, (1) ⇒ (3): every supercuspidal smooth

@@ -79,3 +79,58 @@ theorem geometricComponentEmbeddingEquiv_naturality (f : H ⟶ H')
   componentFieldEmbeddingEquiv_naturality k (AlgebraicClosure k) L f c
 
 end Langlands.GroupScheme.IdentityComponent
+
+namespace Langlands.GroupScheme.IdentityComponent
+
+open GaloisPointComparison
+
+section Identity
+
+variable (k : Type u) [Field k]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+  [Smooth H.X.hom] [IsAffineHom H.X.hom]
+
+/-- The chosen comparison along the identity closure embedding is the identity. -/
+@[simp]
+theorem geometricComponentEmbeddingEquiv_self :
+    geometricComponentEmbeddingEquiv k (AlgebraicClosure k) H =
+      MulEquiv.refl (GeometricComponents k H) :=
+  componentFieldEmbeddingEquiv_self k (AlgebraicClosure k) H
+
+/-- The corresponding homeomorphism is also the identity. -/
+@[simp]
+theorem geometricComponentEmbeddingHomeomorph_self :
+    geometricComponentEmbeddingHomeomorph k (AlgebraicClosure k) H =
+      Homeomorph.refl (GeometricComponents k H) := by
+  apply Homeomorph.ext
+  intro c
+  change geometricComponentEmbeddingEquiv k (AlgebraicClosure k) H c = c
+  rw [geometricComponentEmbeddingEquiv_self]
+  rfl
+
+end Identity
+
+section Tower
+
+variable (k L M : Type u) [Field k] [Field L] [Field M]
+  [Algebra k L] [Algebra k M]
+  [Algebra (AlgebraicClosure k) L] [Algebra (AlgebraicClosure k) M]
+  [Algebra L M]
+  [IsScalarTower k (AlgebraicClosure k) L]
+  [IsScalarTower k (AlgebraicClosure k) M]
+  [IsScalarTower k L M] [IsScalarTower (AlgebraicClosure k) L M]
+  [IsAlgClosed L] [IsAlgClosed M]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+  [Smooth H.X.hom] [IsAffineHom H.X.hom]
+
+/-- Further coefficient extension agrees with the direct chosen comparison
+when all specified closure and coefficient embeddings are compatible. -/
+theorem geometricComponentEmbeddingEquiv_trans :
+    (geometricComponentEmbeddingEquiv k L H).trans
+        (componentFieldEmbeddingEquiv k L M H) =
+      geometricComponentEmbeddingEquiv k M H :=
+  componentFieldEmbeddingEquiv_trans k (AlgebraicClosure k) L M H
+
+end Tower
+
+end Langlands.GroupScheme.IdentityComponent

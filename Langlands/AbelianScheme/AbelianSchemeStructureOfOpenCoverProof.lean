@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.OverMorphismPropertyTransport
 import Langlands.AbelianScheme.AbelianSchemeStructureOfOpenCoverStatement
 import Langlands.AbelianScheme.PointedMorphismRigidityProof
 
@@ -607,10 +608,8 @@ def Chart.ofIso {V : Scheme.{u}} {g : V ⟶ S} (A : AbelianScheme V)
 
 omit P s in
 theorem prop_hom_of_iso (Q : MorphismProperty Scheme.{u}) [Q.RespectsIso] {V : Scheme.{u}}
-    {X Y : Over V} (e : X ≅ Y) (h : Q Y.hom) : Q X.hom := by
-  have : IsIso e.hom.left := inferInstanceAs (IsIso ((Over.forget V).mapIso e).hom)
-  rw [← Over.w e.hom, Q.cancel_left_of_respectsIso]
-  exact h
+    {X Y : Over V} (e : X ≅ Y) (h : Q Y.hom) : Q X.hom :=
+  Langlands.AlgebraicGeometry.prop_hom_of_overIso Q e h
 
 omit P s in
 theorem smooth_hom_of_iso {V : Scheme.{u}} {X Y : Over V} (e : X ≅ Y) (h : Smooth Y.hom) :

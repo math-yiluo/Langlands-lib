@@ -72,6 +72,35 @@ This lemma replaces the central character in the Library's
 needs irreducibility, by a finite-dimensional space containing the central orbit.
 It follows the coset argument of that lemma.
 
+## Canonical topologies as named local instances
+
+In the section `GeneralLinearGroup`, the file declares three local instances in
+namespace `Langlands.Cohomology.SupercuspidalRestriction`, with the same values
+as the first three of the five unnamed local instances of `Statement.lean`:
+
+- `harishChandraCarrierTopology : TopologicalSpace F.Carrier`, equal to
+  `F.canonicalTopologicalData.topology`;
+- `harishChandraGLTopology n : TopologicalSpace (GeneralLinear n F.Carrier)`,
+  equal to `F.canonicalGeneralLinearTopology n`;
+- `harishChandraGLTopologicalGroup n : IsTopologicalGroup (GeneralLinear n
+  F.Carrier)`, equal to `F.canonicalGeneralLinearTopologicalGroup n`.
+
+They have explicit, module-specific names because Lean names an unnamed instance
+from its type. The unnamed local instances of `Statement.lean` already have the
+names `instTopologicalSpaceCarrier`, `instTopologicalSpaceGeneralLinearCarrier`
+and `instIsTopologicalGroupGeneralLinearCarrier`. Unnamed copies here would get
+the suffix `_1`. `UnitDeterminantProof` declares unnamed copies of the first two,
+named `instTopologicalSpaceCarrier_1` and
+`instTopologicalSpaceGeneralLinearCarrier_1`. So in the earlier version of this
+file, which had unnamed instances, a module importing both proof modules failed
+with a duplicate-declaration error. With the explicit names, this module can be
+imported in one module together with
+`Langlands.Cohomology.SupercuspidalRestriction.UnitDeterminantProof` and
+`Langlands.Cohomology.SupercuspidalRestriction.CompactModCenterProof`. The
+`instance` attribute is local to the section. Importing modules see the three
+declarations only as ordinary definitions, not as instances. The theorem and its
+proof are unchanged from that earlier version.
+
 ## Proof of the theorem
 
 Fix `π`, a supercuspidality proof `hπ`, a smooth dual vector `ℓ` and a vector `v`,

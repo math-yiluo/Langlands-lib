@@ -56,7 +56,7 @@ theorem isAlgebraicAfterTwist_zero_iff [IsTotallyComplex K] (χ : HeckeCharacter
   · rintro ⟨t, ht⟩
     exact ⟨t, fun x ↦ by rw [ht]⟩
 
-private theorem toCharacter_add [IsTotallyComplex K] (t s : InfinityType K)
+theorem toCharacter_add [IsTotallyComplex K] (t s : InfinityType K)
     (x : (InfiniteAdeles K)ˣ) :
     InfinityType.toCharacter (t + s) x =
       InfinityType.toCharacter t x * InfinityType.toCharacter s x := by

@@ -100,7 +100,7 @@ theorem characterShellCoefficient_recurrence (χ : MultiplicativeCharacter)
     simp only [Fin.sum_univ_zero, Nat.add_zero]
     rw [hN _ (by omega), ite_eq_right hχ]
 
-private theorem character_normalizedAbs_cpow (a : F.Carrierˣ) (s : ℂ) :
+theorem character_normalizedAbs_cpow (a : F.Carrierˣ) (s : ℂ) :
     (T.normalizedAbs (a : F.Carrier) : ℂ) ^ s =
       spectralPoint T.residueCardinality s ^ T.ord (a : F.Carrier) := by
   have harg : Complex.arg (T.residueCardinality : ℂ) = 0 := by
@@ -114,7 +114,7 @@ private theorem character_normalizedAbs_cpow (a : F.Carrierˣ) (s : ℂ) :
   push_cast
   ring
 
-private theorem character_spectral_threshold {q : ℕ} (hq : 1 < q) {ρ : ℝ}
+theorem character_spectral_threshold {q : ℕ} (hq : 1 < q) {ρ : ℝ}
     (hρ : 0 < ρ) :
     ∃ c : ℝ, ∀ s : ℂ, c < s.re → ‖spectralPoint q s‖ < ρ := by
   have hq0 : 0 < q := by omega

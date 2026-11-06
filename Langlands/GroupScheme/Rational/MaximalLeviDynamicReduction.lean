@@ -16,7 +16,7 @@ open scoped CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme
 
-private theorem isIso_of_full_range {S : Scheme.{u}} {H G : GroupScheme S}
+theorem isIso_of_full_range {S : Scheme.{u}} {H G : GroupScheme S}
     (f : H ⟶ G) (hm : Mono f.hom.hom)
     (hf : SubgroupFunctor.range f = ⊤) : IsIso f := by
   have hfrep : (⊤ : SubgroupFunctor G).IsRepresentedBy f := ⟨hm, hf⟩
@@ -28,7 +28,7 @@ private theorem isIso_of_full_range {S : Scheme.{u}} {H G : GroupScheme S}
   rw [← he]
   infer_instance
 
-private theorem full_range_of_isIso {S : Scheme.{u}} {H G : GroupScheme S}
+theorem full_range_of_isIso {S : Scheme.{u}} {H G : GroupScheme S}
     (f : H ⟶ G) [IsIso f] : SubgroupFunctor.range f = ⊤ := by
   have h := SubgroupFunctor.range_iso_comp (asIso f) (𝟙 G)
   simpa only [asIso_hom, Category.comp_id, SubgroupFunctor.range_id] using h

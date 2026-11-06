@@ -103,3 +103,5 @@ Their provenance is documented in their own Markdown files. The reduction
 itself uses only the named transport, representability and assembly results
 above. It works over the local field and topology of the target proposition.
 The two inputs are stated over an arbitrary field without topology.
+
+`mono_hom_hom_of_isClosedSubgroup` reuses `GroupScheme.IsClosedSubgroup.mono_overHom` from `GroupScheme.ClosedSubgroupMonomorphism`.

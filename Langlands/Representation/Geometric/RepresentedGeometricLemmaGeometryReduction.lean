@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.ClosedSubgroupMonomorphism
 import Langlands.Representation.Geometric.RepresentedGeometricLemmaGeometryStatement
 import Langlands.GroupScheme.Rational.ParabolicDoubleCosetStatement
 import Langlands.GroupScheme.Rational.ParabolicLeviIntersectionStatement
@@ -75,9 +76,8 @@ theorem subgroupFunctor_le_inf {F F₁ F₂ : SubgroupFunctor G} (h₁ : F ≤ F
 
 /-- A closed subgroup is a monomorphism over the base. -/
 theorem mono_hom_hom_of_isClosedSubgroup {i : H ⟶ G} (hi : IsClosedSubgroup i) :
-    Mono i.hom.hom := by
-  have : IsClosedImmersion i.hom.hom.left := hi
-  exact Over.mono_of_mono_left _
+    Mono i.hom.hom :=
+  hi.mono_overHom
 
 end Helpers
 
