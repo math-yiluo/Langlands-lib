@@ -27,6 +27,12 @@ private def factorizationIdealMap {T Y Z : Scheme.{u}}
     kernelModule i ⟶ (Scheme.Modules.pushforward h).obj (kernelModule j) :=
   eqToHom (congrArg kernelModule w.symm) ≫ compositionMap j h
 
+private lemma factorizationIdealMap_eq_kernelModuleMap {T Y Z : Scheme.{u}}
+    (j : Z ⟶ Y) (h : Y ⟶ T) {i : Z ⟶ T} (w : j ≫ h = i) :
+    factorizationIdealMap j h w =
+      eqToHom (congrArg kernelModule w.symm) ≫
+        SquareZeroAmbientObstructionNaturality.kernelModuleMap h j := rfl
+
 private lemma factorizationIdealMap_app {T Y Z : Scheme.{u}}
     (j : Z ⟶ Y) (h : Y ⟶ T) {i : Z ⟶ T} (w : j ≫ h = i)
     (U : T.Opens) (a : Γ(kernelModule i, U)) :
@@ -72,6 +78,13 @@ lemma factorization :
 def idealMap :
     idealModule f q ⟶ (Scheme.Modules.pushforward h).obj (idealModule f r) :=
   factorizationIdealMap j h (factorization f q W)
+
+/-- The actual ideal map retains the specified factorization transport. -/
+lemma idealMap_eq_kernelModuleMap :
+    idealMap f q W =
+      eqToHom (congrArg kernelModule (factorization f q W).symm) ≫
+        SquareZeroAmbientObstructionNaturality.kernelModuleMap h j :=
+  factorizationIdealMap_eq_kernelModuleMap j h (factorization f q W)
 
 /-- On sections the quotient ideal map is the actual intermediate structure map. -/
 @[simp]

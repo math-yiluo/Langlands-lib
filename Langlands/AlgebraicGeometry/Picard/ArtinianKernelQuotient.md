@@ -34,7 +34,9 @@ J_q → h_* J_r.
 It uses the actual factorization map `compositionMap`, with equality
 transport identifying the composite kernel with `J_q`. A private generic
 helper performs this transport before specializing to the Artinian
-quotient. Its section formula and inclusion square follow by equality
+quotient. The public `idealMap_eq_kernelModuleMap` makes its exact
+equality transport and the existing `kernelModuleMap` explicit, by applying
+a generic reflexive identity before specializing the scheme objects. Its section formula and inclusion square follow by equality
 elimination from those of `compositionMap`.
 
 For every open `U` of `X_A`, `idealMap_app` says that a kernel section

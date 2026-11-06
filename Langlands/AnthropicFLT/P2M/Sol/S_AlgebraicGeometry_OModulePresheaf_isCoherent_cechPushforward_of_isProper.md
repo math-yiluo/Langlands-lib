@@ -1,0 +1,128 @@
+# `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper`
+
+Ported for task `20cb772c-aef4-4734-b435-db22f8ee9032` (proper coherent formal existence over complete local noetherian rings). Proof module (FLT `P2M/Sol/`).
+
+## Source and licence
+
+Port of `P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
+
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+
+FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
+
+## Changes against the FLT file
+
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`.
+- An attribution header comment is added at the top of the file.
+- The import of the FLT utility module `P2M.Util` (custom tactics and commands) is dropped.
+- Each FLT command `p2m_export "N" "a b …"` (from `P2M.Util`; it adds the aliases `a`, `b`, … in the current namespace for `N.a`, `N.b`, …) is replaced by the Lean command `export _root_.N (a b …)`, which adds the same aliases.
+- Each FLT command `p2m_open "N₁ N₂ …"` (from `P2M.Util`; it opens the namespaces with their exact names, `N~x~y` hiding `x` and `y`) is replaced by `open _root_.N₁ _root_.N₂ …`, and `N~x~y` by `open _root_.N hiding x y`.
+- `p2m_open` also opens namespaces of this module before they exist (later commands create them): `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry`. Lean's `open` rejects a namespace that does not exist yet, so each of them is registered by an empty block `namespace N end N` right after the options; the `open` then has the FLT effect.
+- Each FLT command `p2m_reactivate "N₁ N₂ …"` (from `P2M.Util`; it re-activates the scoped declarations of the namespaces) is replaced by `open scoped N₁ N₂ …`.
+- No other change: the declarations, statements and proofs are the FLT text.
+
+## Content
+
+The theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.solution`
+proves the statement of the companion theorem in
+`Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper`.
+
+Proof. Namespace `AlgebraicGeometry.OModulePresheaf.Rebase` (inside the solution namespace) rebases the
+situation over an affine open `W` of `P`: `pW` is the open `p⁻¹(W)` of `V'`, and `qW : p⁻¹(W) ⟶ Spec Γ(P, W)`
+is the restriction of `p` followed by the isomorphism of `W` with its spectrum; `qW` is proper
+(`isProper_qW`) and `Γ(P, W)` is noetherian. Section `Datum`: for an FLT presheaf `G` over `p ≫ q`, `GW` is the
+presheaf over `qW` with sections `G(ι(O))` on opens `O` of `p⁻¹(W)`, with `Γ(P, W)`-module structure through
+`p.appLE` (`modB`, `resW`, `GW_smul_def`); it is coherent and quasi-coherent when `G` is (section `Transfer`,
+`isCoherent_GW`, `isQuasicoherent_GW`). Section `Cover`: `KW` is the ordered affine cover of `p⁻¹(W)` by the
+`K'.U i ∩ p⁻¹(W)` (affine since `q` is separated). Section `Bridge0` identifies Čech `0`-cochains of `GW` on
+`KW` with families of sections of `G` on the `K'.U i ∩ p⁻¹(W)` (`e0`, `e0inv`, `e0_surjective`, compatible with
+the `Γ(P, W)`-action, `e0_smulB`), and the `0`-th Čech cohomology `H0` with the compatible families
+(`d0_eq_zero_iff`, `mem_H0_iff`).
+
+`solution`: for an affine `W`, the ported theorem `OModulePresheaf.cechFinite_of_isProper` (finiteness of
+Čech cohomology for proper morphisms over a noetherian ring) applied to `GW` and `KW` shows that `H0` is a
+finite `Γ(P, W)`-module. The sections of the Čech pushforward of `G` over `W` are the cocycles of the chart
+families (`cechPushforward.mem_cocycles_iff`), which `e0` matches bijectively and `Γ(P, W)`-linearly with
+`H0`; the transfer lemma `C2FIN.finite_of_coord` (a module embedded coordinatewise in a product, whose image
+matches a finite module through an additive map compatible with the actions, is finite) concludes.
+
+## Declarations
+
+Names, namespaces and statements are the FLT ones. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
+
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.pW`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.qW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.qW_def`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.Bch`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.ΓW`
+- instance `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isProper_qW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isNoetherian_of_isProper`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isNoetherianRing_chart`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.ΓSpecIso_inv_qW_app_map`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.algebraMap_qW_eq`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.map_algebraMap_qW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.appLE_algebraMap_chart`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.modSec`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.modB`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.modB_smul_def`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.modB_smul_def'`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isScalarTower_modB`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.res_smul_piece`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.resW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.resW_apply`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.resW_smul`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.resW_refl`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.resW_comp`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.GW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.GW_obj`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.GW_res_apply`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.GW_smul_def`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.modA`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.algebraMap_smul_GW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isScalarTower_GW`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.KW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.KW_ι`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.KW_U`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.image_KW_U`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.presheaf_res_res`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.ι_image_basicOpen_piece`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isCoherent_GW`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.isQuasicoherent_GW`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.σ`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.σ_val`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.inter_σ`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.image_inter_σ`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.image_inter_le`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.image_inf`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.chW_inf_le_image_inter`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.image_inter_le_inf`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_apply`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_add`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_zero`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_neg`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_sub`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0Hom`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0Hom_apply`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_smulB`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_smulA`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0inv`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_e0inv`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.e0_surjective`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.res_congr_idx`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.face_zero_eq`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.face_one_eq`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.d0_apply`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.σ₂`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.σ₂_fst`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.σ₂_snd`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.d0_eq_zero_iff`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.OModulePresheaf.Rebase.mem_H0_iff`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.AlgebraicGeometry.OModulePresheaf.C2FIN.finite_of_coord`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isCoherent_cechPushforward_of_isProper.AlgebraicGeometry.AlgebraicGeometry.OModulePresheaf.solution`
+
+## Dependencies
+
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafCechPushforward` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_cechFinite_of_isProper` (Library).
+Other imports: `Mathlib`.

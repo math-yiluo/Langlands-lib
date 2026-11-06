@@ -1,0 +1,15 @@
+# Actual quadratic local-field valuation and central root coordinates
+
+Worker 1676 derives these statements internally from the actual extension valuation in `Langlands.LocalField.FiniteGaloisExtensionValuation` and the published quadratic conjugation and rational coordinate group in `SU3RootParametersQuadratic` and `SU3RootParametersRational`. The base field and extension have independent universes. There is no characteristic restriction.
+
+`exists_ne_zero_traceZero` needs only an actual separable quadratic field extension. Its nonidentity conjugation moves some element `x`. The nonzero difference `x - conjugation x` belongs to the trace-zero additive subgroup because applying conjugation exchanges the two terms. This works also in characteristic two and uses no division by two.
+
+For a supplied nonarchimedean local field `F`, `quadraticValuation` is the actual spectral extension valuation normalized to the integer order on `F`, with codomain `WithTop Real`. It requires no topology or supplied valuation on `L`. Conjugation preserves it because every `F`-algebra automorphism preserves the normalized extension valuation. The same formula is provided for the bundled ring involution. Its restriction on embedded base units is exactly `Plancherel.fieldOrderUnits`.
+
+The finite Galois norm formula specializes to degree two: the value of the embedded norm is twice the element's value. Every nonzero extension element has value `n / 2` for some integer `n`. This asserts containment in the half-integers, without asserting that all half-integers occur or computing ramification. The embedded actual field trace is `x + conjugation x`; the additive valuation inequality and conjugation invariance show that its value is at least the value of `x`. The trace inequality includes zero and trace-zero elements.
+
+For every nonzero trace-zero element `z` and every integer `n`, `quadraticValuation_traceZero_integer_translate` constructs a nonzero trace-zero element whose value is `n + value(z)`. Choose a nonzero base element of integer order `n` and multiply `z` by its image in `L`. Conjugation fixes that scalar, so the trace-zero equation is preserved. The product valuation and exact base normalization prove the displayed value formula.
+
+Finally, `exists_central_parameter_of_value_ge` constructs, for every real `r`, a parameter `(0,w)` in the central trace-zero subgroup with nonzero second coordinate and second-coordinate value at least `r`. Start with the nonzero trace-zero element, express its value as a finite real number, and choose an integer translate exceeding the requested bound. The parameter satisfies the actual coordinate equation, and its nonzero second coordinate makes it nonidentity.
+
+These are intrinsic field and coordinate computations, with no additional literature claim. They do not construct a valuation on arbitrary relative root groups, prove the generic coordinate filtration axioms, identify the coordinate group with an arbitrary group's root subgroup, carry out descent, or prove the facet-fixing statement.

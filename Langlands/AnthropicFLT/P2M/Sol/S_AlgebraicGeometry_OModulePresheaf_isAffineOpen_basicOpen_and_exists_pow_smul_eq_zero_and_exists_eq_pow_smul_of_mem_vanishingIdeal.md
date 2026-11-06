@@ -1,0 +1,92 @@
+# `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal`
+
+Ported for task `20cb772c-aef4-4734-b435-db22f8ee9032` (proper coherent formal existence over complete local noetherian rings). Proof module (FLT `P2M/Sol/`).
+
+## Source and licence
+
+Port of `P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
+
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+
+FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
+
+## Changes against the FLT file
+
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`.
+- An attribution header comment is added at the top of the file.
+- The import of the FLT utility module `P2M.Util` (custom tactics and commands) is dropped.
+- Each FLT command `p2m_export "N" "a b …"` (from `P2M.Util`; it adds the aliases `a`, `b`, … in the current namespace for `N.a`, `N.b`, …) is replaced by the Lean command `export _root_.N (a b …)`, which adds the same aliases.
+- Each FLT command `p2m_open "N₁ N₂ …"` (from `P2M.Util`; it opens the namespaces with their exact names, `N~x~y` hiding `x` and `y`) is replaced by `open _root_.N₁ _root_.N₂ …`, and `N~x~y` by `open _root_.N hiding x y`.
+- `p2m_open` also opens namespaces of this module before they exist (later commands create them): `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry`. Lean's `open` rejects a namespace that does not exist yet, so each of them is registered by an empty block `namespace N end N` right after the options; the `open` then has the FLT effect.
+- Each FLT command `p2m_reactivate "N₁ N₂ …"` (from `P2M.Util`; it re-activates the scoped declarations of the namespaces) is replaced by `open scoped N₁ N₂ …`.
+- No other change: the declarations, statements and proofs are the FLT text.
+
+## Content
+
+The theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.solution`
+proves the statement of the companion theorem in
+`Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal`.
+
+Proof. Namespace `AlgebraicGeometry.PullbackAffinePushout` (inside the solution namespace): for a pullback
+square `t, sY` of `p` along `Spec R → W`, the rings of sections over an affine `V ≤ p⁻¹ W` and its preimage
+form a pushout square (`isPushout_sections`, `algebra_isPushout`). Namespace `K73W5a`: `loc_transfer` —
+if `β : D ⊗[R] L ≃ G0` is a base change along a pushout `B → C`, `R → D`, then the properties "an element
+killed in `C ⊗[B] L` is killed by a power of `a`" and "every element of `C ⊗[B] L` times a power of `a` comes
+from `L`" transfer to the map `εa : L → G0`; `modAlg` and `h1h2` prove these two properties when `C` is the
+localisation at the image of `a` of a quotient `B'` of `B` that already acts on `L`. Namespace `K72W5a`:
+`basicOpen_fn_top_eq_preimage` identifies the basic open of `a` in `Y` with `t⁻¹ (p⁻¹ D(a))`; section
+`Geometry`: for `a` in the vanishing ideal of `T'` on `W`, `i⁻¹ D(a) ≤ U` (`notMem_of_mem_basicOpen`,
+`preimage_basicOpen_le`), so `g` is an isomorphism over `O := i⁻¹ D(a)` (`isIso_morphismRestrict_of_le`),
+`g⁻¹ O` is affine and `g.app O` is an isomorphism.
+
+`solution`: for such `a`, put `O := D(φ a)` in `Z` (affine, `≤ U`) and `V := g⁻¹ O`, affine in `V'`. Then the
+basic open of `a` in `Y` equals `t⁻¹ V`, affine by `hta`. The ring map `Γ(P, W) → Γ(V', V)` is the
+localisation at `a` of the surjection `φ : Γ(P, W) → Γ(Z, i⁻¹ W)` followed by the isomorphism `g.app O`, and
+`L` is killed by `ker φ` (from `hFZ` and `hpri`), so `h1h2` applies; `loc_transfer` with the isomorphism
+from `hεβ` on `t⁻¹ V` gives the two remaining properties.
+
+## Declarations
+
+Names, namespaces and statements are the FLT ones. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
+
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.bR`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.top_le_preimage`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.iBC`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.iBR'`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.iCD`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.iR'D`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.isPushout_sections`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.iBR'_ΓSpecIso`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.D`
+- instance (anonymous, in namespace `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout`)
+- instance (anonymous, in namespace `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout`)
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.algBC`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.algCD`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.algBD`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.isScalarTower_BCD`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.iCD_eq`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.algebraMap_R_D`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.isScalarTower_BRD`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.algebra_isPushout`
+- def `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.PullbackAffinePushout.sectionsEquiv`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K73W5a.algebraMap_smul_tensor`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K73W5a.cancelBaseChange_symm_smul`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K73W5a.cancelBaseChange_symm_one_tmul`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K73W5a.loc_transfer`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K73W5a.modAlg`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K73W5a.h1h2`
+- abbrev `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.fn`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.basicOpen_fn_top`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.basicOpen_fn_top_eq_preimage`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.notMem_of_mem_basicOpen`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.preimage_basicOpen_le`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.isIso_morphismRestrict_of_le`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.isAffineOpen_preimage_of_isIso`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.K72W5a.isIso_app_of_isIso`
+- theorem `P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.AlgebraicGeometry.P2MW.S_AlgebraicGeometry_OModulePresheaf_isAffineOpen_basicOpen_and_exists_pow_smul_eq_zero_and_exists_eq_pow_smul_of_mem_vanishingIdeal.solution`
+
+## Dependencies
+
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafIdealFiltration` (Library), `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafCechPushforward` (same contribution).
+Other imports: `Mathlib`.
