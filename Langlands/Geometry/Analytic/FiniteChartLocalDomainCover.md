@@ -1,0 +1,11 @@
+# Full local-domain covers subordinate to a Hausdorff finite chart union
+
+This internal construction extends the original-chart subordinate-cover infrastructure to arbitrary full local domains. It uses only compactness, the Hausdorffness of the finite union as a subspace, the original atlas net, actual full-domain intersections and localization. It supplies finite covers for the product-cover step of the special-subset theorem; it does not assert cross-chart affinoid intersection existence or tensor admissibility.
+
+For a local domain `U` contained in a Hausdorff literal finite chart union `d.locus`, `isCompact_localDomain_inter_member` proves compactness of its intersection with every defining original chart. Both compact subsets are pulled into the Hausdorff subspace `d.locus`, intersected there, and mapped back to the ambient space. No Hausdorffness of the ambient space is assumed.
+
+`SubordinateLocalDomainCover d U` records an actual finite full-domain cover of `U.domain`, a choice of defining union member for each covering piece, and literal containment of that piece's ambient image in the chosen member. The constructor `subordinateLocalDomainCover` uses the original net to cover each compact cross intersection by finitely many common original charts. Each covering domain is the actual intersection of `U.domain` with the relative domain of one such common chart. Their finite disjoint family covers `U`, since the defining charts cover the containing union. These full covering domains need not themselves be indices of the smaller original net.
+
+Each `localDomain` retains that unchanged full-domain presentation in U's original chart, and `inclusion` retains the original bounded restriction. `algebraCover` re-expresses the pieces as full domains of the unchanged algebra `U.algebra`. Their structural maps are the same bounded restrictions, and the exact relative inverse-image loci prove coverage of the whole spectrum. The final ambient covering theorem relates this to the literal local-domain loci.
+
+The coefficient, ambient-space and original-index universes are independent. The construction imposes no nontrivial valuation, strict radius, reducedness, nonzero quotient, nonempty spectrum or positive cover-size assumption. All facts are derived from the imported published constructions and topology.
