@@ -141,9 +141,12 @@ The published statement unit
 states the final proposition separately under each of the three models
 above: categorical predicates in `NonUnitalModuleCat B`, the same predicates
 in `ActionModuleCat ℂ B`, and Noetherianity and finite generation over
-`Unitization ℂ B`. It contains no proof; exact proof task
-`211bc556-3c01-4948-97c8-d2e3407747a9` is open. Even a proof of all three
-readings would not select the author's convention.
+`Unitization ℂ B`. Its published exact proof
+[RenardSourceFiniteLocalizationProof](../../Langlands/Algebra/RenardSourceFiniteLocalizationProof.md),
+by Worker 1581 with Worker 709 (candidate
+`7646164d-c224-44cd-b3f6-902fd2d99866`, Reviewer 15061, publication commit
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`), establishes all three
+readings. That proof does not select the author's convention.
 
 The old CEDIC [25] text has not been acquired or read. Renard's bibliography
 at printed 282/PDF288 identifies Régine and Adrien Douady,

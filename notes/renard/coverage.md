@@ -126,8 +126,12 @@ open. Its 5 November update records Worker 709's published statements
 `SourceFiniteLocalizationStatements` (`0b44a67d-ab25-4432-a1c0-9826e8467f30`,
 Reviewer 14742, published at `542eaca02a9f2d14f175497b7bf6459436ac5c6d`).
 They state the final proposition under the additive, compatible and
-unitization readings without choosing among them. Their exact proof task
-`211bc556-3c01-4948-97c8-d2e3407747a9` is open.
+unitization readings without choosing among them. Their exact proof
+`7646164d-c224-44cd-b3f6-902fd2d99866`, by Worker 1581 with Worker 709 under
+task `211bc556-3c01-4948-97c8-d2e3407747a9` revision 1, has unqualified
+Reviewer 15061 approval and was published at
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`. It establishes all three
+readings without choosing the author's convention.
 Only the C.II navigation row below is updated by that audit.
 
 The [A.II.2 equivalence progress note](appendix-a-equivalence-progress.md),
@@ -190,8 +194,11 @@ Worker 709's published statements `LimitUniversalArrowStatements`
 (`645b7e20-09bf-44ca-9e85-46a717cf2df8`, Reviewer 14711, published at
 `542eaca02a9f2d14f175497b7bf6459436ac5c6d`). They identify limits and
 colimits with left and right universal arrows for the diagonal, as in the
-PDF262 remark and the PDF263 colimit sentence. Their exact proof task
-`608eb5b0-75ef-4e8b-9773-25bf7fecf437` is open. No section completion is declared.
+PDF262 remark and the PDF263 colimit sentence. Their exact proof
+`eadc7974-a28c-4d56-8239-4c44c2dc9aa4`, by Worker 1193 with Worker 709 under
+task `608eb5b0-75ef-4e8b-9773-25bf7fecf437` revision 1, has unqualified
+Reviewer 15065 approval and was published at
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`. No section completion is declared.
 
 The [A.VIII.1 exact-functor progress note](exact-functors-progress.md),
 dated 3 November 2026 by Worker 709 using the specifications, proofs and
@@ -243,15 +250,16 @@ universal-property proofs. It updates the A.III navigation row only; categorical
 packaging, representability and other A.III assertions
 were retained as open at that audit date.
 The [A.III universal-arrow and representability source map](universal-representability-progress.md),
-dated 5 November 2026 by Worker 709, verifies eleven further published proof units:
+dated 5 November 2026 by Worker 709, verifies twelve further published proof units:
 general universal-arrow characterizations and compatible comparisons, the actual
 module-localization categorical universal property, core Yoneda, the object
 and functor isomorphism principles, the binary-diagonal factorization and
 actual binary limit/colimit comparisons, separated uniform completion,
 actual ring-localization categorical universality, actual continuous-linear
 completion with its canonical adjunction, the fixed-real completion test,
-initiality of the chosen endomorphism canonical arrows and the A.III.2
-representability remark and corollary.
+initiality of the chosen endomorphism canonical arrows, the categorical
+B-module initiality of example 5 and the A.III.2 representability remark and
+corollary.
 The uniform-completion proof uses uniformly continuous maps and complete separated targets,
 with source separation required only for the embedding clause.
 The ring-denominator construction is
@@ -319,8 +327,11 @@ approval and publication at `542eaca02a9f2d14f175497b7bf6459436ac5c6d`.
 For the B-module sentence of example 5, Worker 709's category of pairs
 with its canonical structured arrow (definition
 `f36a1ffd-c8b4-4bf9-a99c-9a395cd216bd`) and its initiality statements
-(`17343a78-2584-40db-aced-a124277decdb`) are public; their exact proof task
-`7973e016-e501-4153-a0e5-6bec84b8598b` is open. Other example comparisons
+(`17343a78-2584-40db-aced-a124277decdb`) are public. Their exact proof
+`9e7a3fc1-dcc8-4f87-9147-82833e3b3c9e`, by Worker 1570 with Worker 709 under
+task `7973e016-e501-4153-a0e5-6bec84b8598b` revision 1, has unqualified
+Reviewer 15057 approval and was published at
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`. Other example comparisons
 and further A.III source obligations remain separate.
 The 4 November localization clarification in the same map distinguishes
 these source assertions from the internal functoriality and exactness
@@ -1047,8 +1058,8 @@ including definitions, remarks and unnumbered results.
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |
 | A.I | Categories and functors | 247 / 253 | Partial: [published product/opposite and four named duality-pair correspondences](category-constructions-source-map.md), with unchanged quotient order and typed cokernel-zero corrections; [selected elementary correspondences](elementary-categories-source-map.md) for introductory notation, A.I.1, A.I.2 factor maps and conditional bounds, and A.I.4 initial/terminal/zero uniqueness and characterization; [A.I.3 definitions and five published proof units](noetherian-finite-type-progress.md) for general Noetherian criteria, finite subcovers, the all-subobjects equivalence under arbitrary unions, and actual unital-module comparisons. Other assertions, examples and constructions retain their separate obligations |
 | A.II | Equivalence of categories | 250 / 256 | Partial: [published A.II.2 sufficient criterion, representative-subcategory comparison and fixed-dimension vector-space equivalence](appendix-a-equivalence-progress.md), each with one actual quasi-inverse and both natural isomorphisms; typed source correction documented. The [A.II.1 correspondence](category-constructions-source-map.md) and [A.II.2 full/faithful and actual full-subcategory definition correspondence](elementary-categories-source-map.md) are published documentation. Other A.II assertions retain their separate obligations |
-| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [eleven further published proof units and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module and ring categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons, separated uniform completion, actual continuous-linear completion, the fixed-real completion test, endomorphism canonical-arrow initiality and the A.III.2 representability remark and corollary. The ring proof retains the actual chosen factor, every commuting local-category competitor and canonical-arrow initiality. The continuous-linear proof gives extension uniqueness, actual initiality and the canonical adjunction with its unit and both Hom formulas. The fixed-real proof gives continuous nonextension along the usual completion arrow; the source map's [internal diagnosis](universal-representability-progress.md#actual-linear-completion-and-the-printed-continuous-map-convention) shows that this arrow does not solve the literal all-continuous-maps problem for that real space, without deciding whether another solution exists. The chosen local-module functor, natural Mathlib comparison, endomorphism canonical-arrow transport, its initiality statements and their exact proof are published. The B-linear factorization of the final example 5 sentence is published, as are its categorical structured-arrow construction and initiality statements; their exact proof and other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
-| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four general statement/proof pairs and the concrete filtered-colimit construction, statements and proof](limits-colimits-progress.md). Quotient universality, compatible-family lift uniqueness, eventual zero and the separate empty-cocone target have published proofs. The identification of limits and colimits with universal arrows for the diagonal has published statements; its proof is open. No section completion declared |
+| A.III | Universal problems and representability | 251 / 257 | Partial: [published endomorphism-localization proofs](endomorphism-localization.md) and [twelve further published proof units and polynomial-module equivalences](universal-representability-progress.md) for generic universal arrows, actual module and ring categorical localization, core Yoneda, the isomorphism principles, binary-diagonal comparisons, separated uniform completion, actual continuous-linear completion, the fixed-real completion test, endomorphism canonical-arrow initiality, the categorical B-module initiality of example 5 and the A.III.2 representability remark and corollary. The ring proof retains the actual chosen factor, every commuting local-category competitor and canonical-arrow initiality. The continuous-linear proof gives extension uniqueness, actual initiality and the canonical adjunction with its unit and both Hom formulas. The fixed-real proof gives continuous nonextension along the usual completion arrow; the source map's [internal diagnosis](universal-representability-progress.md#actual-linear-completion-and-the-printed-continuous-map-convention) shows that this arrow does not solve the literal all-continuous-maps problem for that real space, without deciding whether another solution exists. The chosen local-module functor, natural Mathlib comparison, endomorphism canonical-arrow transport, its initiality statements and their exact proof are published. The B-linear factorization of the final example 5 sentence is published, as are its categorical structured-arrow construction, initiality statements and their exact proof; other assertions remain open. [Existing exact Mathlib localization and internal chosen-model comparisons](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons) are distinguished from those literal source gaps |
+| A.IV | Limits and colimits | 255 / 261 | Partial: [general cone/cocone bridge, four general statement/proof pairs and the concrete filtered-colimit construction, statements and proof](limits-colimits-progress.md). Quotient universality, compatible-family lift uniqueness, eventual zero and the separate empty-cocone target have published proofs. The identification of limits and colimits with universal arrows for the diagonal has published statements and their published exact proof. No section completion declared |
 | A.V | Adjunctions | 258 / 264 | Partial: [A.V source map](adjunctions-progress.md) verifies twelve published units: the Hom bifunctors, the comparison of the Hom formulation with native unit–counit adjunctions, the representability criterion with uniqueness of both adjoints, unit/counit formulas, naturality and triangles with the converse construction, preservation of limits and colimits, and the scalar-extension example with its adjunction. Independent universes are retained; no section completion declared |
 | A.VI | Abelian categories | 261 / 267 | Partial: [seven axioms and ten-assertion ledger](abelian-categories-progress.md) verifies eight published units, including the (8) and (2–3) proofs, so every numbered A.VI.2 row cites a published proof or construction. The same note verifies the five published proofs of the two corrected full-subcategory criteria and the dimension-at-most-one counterexample. [A.VI.3 source map](jordan-holder-progress.md) verifies the abstract Jordan–Hölder, numerical-length, simple-quotient and three simple-subquotient-identity publications, with explicit source hypotheses and sizes. The A.VI.1–2 note also verifies the all-open/Mathlib, chosen-basis/all-open and composite chosen-basis/Mathlib equivalences, the normalized-presheaf abelianness proof, the sufficient-size sheaf statements with their exact proof at section universe max u v, and the star diagram with its proved obstructions. The full-module AB5/AB6 examples have published statement targets in the A.VI.3 map but no published proof (task `88e0f0a9-32bc-4e2b-a867-bb1aef836387` open). Other examples, source adapters and other AB5 comparisons remain separate |
 | A.VII | Semisimplicity | 264 / 270 | [Source assertion and publication audit](semisimplicity-progress.md): actual predicates and independently published proofs of the three-way equivalence and subobject corollary, with source-sized hypotheses and explicit objectwise smallness |
@@ -1059,7 +1070,7 @@ including definitions, remarks and unnumbered results.
 | B.II | Schur's lemma | 272 / 278 | Statement/proof covered: the [original-action Schur statements](../../Langlands/Algebra/NonUnitalSchurStatements.md) have the published exact aggregate `Langlands.Renard.nonUnitalSchur` and all nine [original-action component proofs](../../Langlands/Algebra/NonUnitalSchurProof.md), preserving all additive endomorphisms and both countable-rank alternatives (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital Schur core and actual-action simplicity reductions are also published |
 | B.III | Separation lemma | 273 / 279 | Statement/proof covered: the [original-action separation statements](../../Langlands/Algebra/NonUnitalSeparationStatements.md) are proved by the published [original one-sided resolvent](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md), [original simple quotient](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md) and [original separation and aggregate](../../Langlands/Algebra/NonUnitalSeparationProof.md) proofs (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital one-sided resolvent, [proper-principal-left-ideal](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md), [simple-left-quotient](../../Langlands/Algebra/LeftShiftSimpleQuotientProof.md) and [unital-separation](../../Langlands/Algebra/UnitalSeparationProof.md) proofs are also published |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
-| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). The final proposition has published statements under three candidate finiteness readings; their proof is open. Source-facing nonunital finiteness comparison remains open |
+| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). The final proposition has published statements under three candidate finiteness readings and a published exact proof of all three. Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; complete passage ledger with explicit source-route packaging boundaries](integer-lattice-coefficients.md). No section completion declared |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and

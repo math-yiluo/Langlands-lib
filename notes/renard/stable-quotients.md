@@ -9,9 +9,10 @@ source-facing nonunital finiteness convention. The additive-to-scalar comparison
 below supplies explicit sufficient conditions for the actual localization.
 The separate additive stable-image proof identifies that localization for
 every supplied positive stable power, without finiteness hypotheses.
-Published statements now pose the final proposition under each of three
-candidate finiteness readings; their proof is open, and they do not choose
-the author's convention.
+Published statements pose the final proposition under each of three
+candidate finiteness readings, and their published exact proof establishes
+all three. Neither the statements nor the proof chooses the author's
+convention.
 This documentation records partial Appendix C coverage; the whole-book
 formalization remains open.
 
@@ -242,9 +243,28 @@ exponent n. The readings differ only in the meaning of the hypotheses:
 order. These are derived formulations. A proof of all three would give the
 proposition whichever of these models is meant, but would not identify the
 author's convention. No unit, unit-action law, nondegeneracy or finite
-complex dimension is assumed. Exact proof task
-`211bc556-3c01-4948-97c8-d2e3407747a9` targets the unchanged aggregate; at
-this audit it is claimed and has no accepted proof.
+complex dimension is assumed.
+
+[RenardSourceFiniteLocalizationProof](../../Langlands/Algebra/RenardSourceFiniteLocalizationProof.md)
+proves the unchanged aggregate as `sourceFiniteLocalizationStatements`,
+with uB and uV independent and no added hypothesis. Worker 709 wrote the
+proof draft. Worker 1581 checked its source correspondence and submitted
+it under exact proof task `211bc556-3c01-4948-97c8-d2e3407747a9`
+revision 1. The proof first builds an order isomorphism between the
+categorical subobjects of an object of `ActionModuleCat` and its stable
+subspaces, and composes it with the published unitized submodule
+comparison. This turns the categorical Noetherian and finite-type
+predicates in `ActionModuleCat ℂ B` into Noetherianity and finiteness of
+the actual unitized modules. The additive reading applies the published
+stable-generator characterizations in `NonUnitalModuleCat B` and then
+`additiveIdealFiniteLocalization`. The compatible reading obtains a
+Noetherian unitization ring from the regular action and applies
+`stabilizationAt_of_finite`, which the unitization reading applies
+directly. The published stable-image proof then supplies the stable-power
+image clause for every positive stable exponent. The implemented route does
+not follow Renard's argument through finiteness of the endomorphism module.
+The proof establishes the conclusion under each of the three models; it
+does not decide which model is the author's.
 
 ## Unitized Noetherian localization adapters
 
@@ -421,9 +441,12 @@ against the published Library.
 | Internal additive-to-scalar statement | `142cecb6-aba9-4fec-ad2f-7cb993888218`, Reviewer 5746 | `26e9adf301abba95f343f5005d9f478af9fc09d4` |
 | Internal additive-to-scalar finite-localization proof | `f4447811-d9db-47ac-8da3-ae255a859613`, Reviewer 5804 | `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` |
 | Three-reading source statements | `0b44a67d-ab25-4432-a1c0-9826e8467f30`, Reviewer 14742 | `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
+| Three-reading source proof | `7646164d-c224-44cd-b3f6-902fd2d99866`, Reviewer 15061 | `50126e1b2b20b62d408b52dc3552f01089dd1d11` |
 
-For the last proof, machine receipt `23ce8c73-c13a-4665-8703-16b70ac268ec`
-accepts the Lake build, exact target, unchanged statement and frozen inputs.
+For the internal additive-to-scalar finite-localization proof
+`f4447811-d9db-47ac-8da3-ae255a859613`, machine receipt
+`23ce8c73-c13a-4665-8703-16b70ac268ec` accepts the Lake build, exact
+target, unchanged statement and frozen inputs.
 Independent Reviewer 5804 approves without qualifications. Integration
 `96de716bca444889b0d086698ced52cc` publishes the pair with a successful fresh
 integrated build. Worker 709 read the complete independent report and
@@ -468,6 +491,25 @@ publication, current Library and workspace. Focused proof task
 `41265157-23db-48f3-87f6-a116b5c57781` revision 1 is complete; this
 verifies the listed internal result, with the source-facing boundary
 described above.
+
+For the three-reading source proof, by Worker 1581 with Worker 709,
+machine receipt `f4c460c1-c7aa-48a5-be85-4636509e5136` accepts the Lake
+build, exact target, unchanged statement and frozen inputs under
+`lean.proof@1`. Independent Reviewer 15061 approves without qualifications
+or suggestions in review task `c86aa372-0d21-4247-b091-54c66800d812`.
+Integration `f63ed287534d40d88be40b717c46c312` publishes the pair at
+`50126e1b2b20b62d408b52dc3552f01089dd1d11` with a successful fresh
+integrated build. The published pair equals its frozen bundle: Lean
+SHA256 `6bc36019b3f2e58a2b751c8d0fbf08f6cb4d1420cda59b1d84d3b381511c9eae`,
+Markdown SHA256
+`7245104f98dc10fd79add97000c09598d8c3d2028b3c2abc75dcc3a3e62f03c6`. At that
+commit the statement pair is unchanged, with Lean SHA256
+`06692eff8d95f2b541707ce27490b58c7ff45a63a762716c7f24ed113a24cadf` and
+Markdown SHA256
+`f6f99dd14ddd2e3b527560e5be896526c5b4ee9c94cf291786478eb16a09ae96`.
+Worker 709 is a coauthor of this proof, so this record is documentation,
+not an independent review. The source-facing convention comparison stays
+open.
 
 The three-reading statements are public under `lean.statement@1` with
 Reviewer 14742's approval without qualifications, in review task

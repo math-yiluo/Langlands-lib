@@ -7,7 +7,7 @@ and publication evidence. This note maps printed pages
 published statement/proof pairs, plus the published concrete
 filtered-colimit construction, statements and proof. It also records the
 published statements identifying limits and colimits with universal arrows
-for the diagonal; their proof is open. It supplements the [whole-book
+for the diagonal and their published exact proof. It supplements the [whole-book
 ledger](coverage.md) and [Appendix A corrections](appendix-a-corrections.md).
 It introduces no Lean declaration and does not declare A.IV, Appendix A
 or the book program complete.
@@ -71,7 +71,7 @@ For example, `E.KernelStatement` means
 | Same opening: auxiliary constant-transformation assertion | Corrected `B.diagonal_faithful` under `Nonempty`, `diagonal_full` and `connectedConstantHomEquiv` under `IsConnected`; `twoPointTransformation_not_diagonal` proves the disconnected obstruction. |
 | A.IV.1 definition, (A.IV.1.2) and subsequent concrete universal property, PDF262; A.IV.2 dual definition, PDF263 | Actual `Cone D` and `Cocone D` retain their vertices and natural legs. `B.ConeUniversal` and `CoconeUniversal` express unique factors into/out of those vertices; `coneUniversal_iff_nonempty_isLimit` and `coconeUniversal_iff_nonempty_isColimit` give direct witness conversions. |
 | A.IV.1 remark and (A.IV.1.1), PDF262; A.IV.2 duality, PDF263 | `B.limitHomEquiv`, `colimitHomEquiv`, their component and naturality laws, and `limitNatIso` / `colimitNatIso` give the actual Hom and representing-functor comparisons, retaining the required universe lift. |
-| A.IV.1 remark after the definition, PDF262: (ΔX, η) solves the left universal problem posed by Δ and D; A.IV.2 sentence after the definition, PDF263: a colimit solves the right problem | Statements only, proof open: `L.LimitUniversalStatement` and `ColimitUniversalStatement` compare `IsLimit`/`IsColimit` of the actual cone/cocone with `CostructuredArrow.IsUniversal`/`StructuredArrow.IsUniversal` for `B.diagonal`; `L.LimitFactorizationStatement` and `ColimitFactorizationStatement` compare them with the A.III.1 unique-factorization property. Each clause is an equivalence; the converse is a derived strengthening. |
+| A.IV.1 remark after the definition, PDF262: (ΔX, η) solves the left universal problem posed by Δ and D; A.IV.2 sentence after the definition, PDF263: a colimit solves the right problem | Statements with published exact proof `L.limitUniversalArrowStatements`: `L.LimitUniversalStatement` and `ColimitUniversalStatement` compare `IsLimit`/`IsColimit` of the actual cone/cocone with `CostructuredArrow.IsUniversal`/`StructuredArrow.IsUniversal` for `B.diagonal`; `L.LimitFactorizationStatement` and `ColimitFactorizationStatement` compare them with the A.III.1 unique-factorization property. Each clause is an equivalence; the converse is a derived strengthening. |
 | A.IV.1 uniqueness remark, PDF262; A.IV.2 duality | `B.limitConeIso`, `colimitCoconeIso`, `limitPointIso` and `colimitPointIso` give canonical isomorphisms; the leg equations and `limitPointIso_eq` / `colimitPointIso_eq` express structure-preserving uniqueness. |
 | A.IV.1 example 1, PDF262; A.IV.2 first dual example, PDF263 | `E.EmptyLimitStatement` and `EmptyColimitStatement`: supplied empty cones/cocones are universal iff their retained vertices are terminal/initial. |
 | A.IV.1 example 2, PDF262–263; A.IV.2 second dual example | `E.KernelStatement` and `CokernelStatement`: the actual fork/cofork of a map and zero is universal iff every zero-composite arrow factors uniquely. |
@@ -112,7 +112,8 @@ factorization clauses, in that order. It quantifies over every index
 category, including empty and disconnected ones, at four independent
 universes. The factorization clauses quantify over morphisms of C, not over
 arbitrary transformations between constant functors, consistently with the
-diagonal-fullness diagnosis above. No proof of this aggregate is public.
+diagonal-fullness diagnosis above. The separately published proof
+`L.limitUniversalArrowStatements` establishes this exact conjunction.
 
 ## Hypotheses, constructions and implemented proofs
 
@@ -250,7 +251,7 @@ The concrete proof record was fetched on 4 November 2026 and is
 accepted and public, with Reviewer 12926's independent approval without
 qualifications and the published integration below. Its complete acceptance
 report agrees with the integrated report in every common field.
-At Library base `442ff746325df5b6d721fee75d430a65c33d09f0`, all
+At Library base `442ff746325df5b6d721fee75d430a65c33d09f0`, the first
 twenty-four mathematical files below retain the displayed hashes in
 the workspace and Library. The new proof pair also matches its frozen
 artifact, and both imported construction and statement pairs are unchanged
@@ -273,6 +274,7 @@ unit with short intrinsic laws, not a separate aggregate proof record.
 | Concrete filtered-colimit statements; same parent r3 | `3d90ac79-1633-41dc-ad0e-776f6a3922ea` | Reviewer 12003; `b1783779-696b-4f87-b139-f1e13ad4d999` | `9f54d0209e134fc2ad77b7ff7f10e813`; `b6ea11bf7c883ae0600a98215483c75ebf3c9d25` |
 | Concrete filtered-colimit proof; task `ce8400b5-29cb-422f-91f5-9cc761af2531` r1 | `5bd3407c-e5f4-401d-a136-1070af0b2b4d` | Reviewer 12926; `6467768b-8298-4828-b133-03e3756576c3` | `ed76a1a7cc24433e9ffc73674cec3db6`; `442ff746325df5b6d721fee75d430a65c33d09f0` |
 | Universal-arrow statements; parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` r3 | `645b7e20-09bf-44ca-9e85-46a717cf2df8` | Reviewer 14711; `04f40e60-5ee9-4d1b-8a78-008108c7e070` | `333cfa8919a5412c98fa077a660e9440`; `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
+| Universal-arrow proof; task `608eb5b0-75ef-4e8b-9773-25bf7fecf437` r1 | `eadc7974-a28c-4d56-8239-4c44c2dc9aa4` | Reviewer 15065; `f80f492b-9962-4410-9930-15bda820361a` | `f0c40fbe208b47c281b11a670b31554c`; `50126e1b2b20b62d408b52dc3552f01089dd1d11` |
 
 | Paired path stem under `Langlands/CategoryTheory/Renard/` | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- |
@@ -289,6 +291,7 @@ unit with short intrinsic laws, not a separate aggregate proof record.
 | [FilteredColimitStatements](../../Langlands/CategoryTheory/Renard/FilteredColimitStatements.md) | `5e04ba0fecd6fde5c6423c2757d45a6b3ceb26ab7eb742f8fd13238c37c8fee3` | `f15ec8b33c8d9fc609317ef2114397ed68883b394656373576f0f214bca56134` |
 | [FilteredColimitProofs](../../Langlands/CategoryTheory/Renard/FilteredColimitProofs.md) | `2b2702043d9d2b0d3c7ba42160509caa6f23db23b6d5145c3f51c34e5c75f466` | `00a10d58644c30a095592ed98278d4aa7a8917613098df2da083411322507e70` |
 | [LimitUniversalArrowStatements](../../Langlands/CategoryTheory/Renard/LimitUniversalArrowStatements.md) | `aab427f9ad66f70a93589b303b335ecf80572c1f9bfa2811a61f7aaff4abfa97` | `0d29b3840f0e5969dab43d0ad1a2adea66556e017b4cbcd0a204389de2e472fa` |
+| [LimitUniversalArrowProof](../../Langlands/CategoryTheory/Renard/LimitUniversalArrowProof.md) | `25dec70bbf3f3fad3c826726fdde9682ae68cd8eb87baa69d670f76e9ab181b1` | `6e1652b1d0d2703a66c2640fe8d5dfba336451eda865ebef0e5418461b0f14e1` |
 
 Approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` also passed
 a recovery check of `ConeBridge`, `ElementaryLimitColimitProofs`,
@@ -314,6 +317,30 @@ compilation and declaration kind; it proves none of the four clauses. On
 5 November 2026 the pair above was equal in Library
 `dd78edadc914cf56ca81c595cee581a3570d415c` and the workspace.
 
+The universal-arrow proof `L.limitUniversalArrowStatements` proves the
+unchanged aggregate at the independent universes `vJ vC uJ uC`. Worker 709
+wrote the shared proof draft. Worker 1193 checked the source
+correspondence and submitted the pair under exact proof task
+`608eb5b0-75ef-4e8b-9773-25bf7fecf437` revision 1. The factorization
+clauses are proved directly. A limit witness supplies the factor
+`h.lift (Cone.mk Y f)`, and `IsLimit.ofExistsUnique` gives the converse;
+the colimit clause is dual. Both use componentwise equations and
+transformation extensionality. The structured-arrow clauses compose these
+with the published `leftCharacterization_proof` and
+`rightCharacterization_proof` at the diagonal functor. No nonemptiness,
+connectedness, size or existence-of-limits premise is added. The unique
+factors remain morphisms of C.
+
+The proof is public under `lean.proof@1`, with Reviewer 15065's approval
+without qualifications or suggestions. Machine receipt
+`f298c6bc-9baa-43e3-82f0-a6d915df8be0` passed `lake-build`,
+`exact-target`, `unchanged-statement` and `frozen-inputs`, and the
+integration records a fresh successful integrated build. At Library
+`50126e1b2b20b62d408b52dc3552f01089dd1d11` the proof pair equals its
+frozen bundle and the statement pair keeps the hashes above. Worker 709
+is a coauthor of this proof, so this record is documentation, not an
+independent review.
+
 ## Retained obligations
 
 The concrete quotient's five exact targets now have an independently
@@ -327,10 +354,10 @@ particular published quotient. The II.2.1 basis-stalk construction remains
 a distinct application.
 
 The identification of the general definition with the earlier
-universal-arrow terminology now has the published statements
-`L.LimitUniversalArrowStatements`. Their exact proof task
-`608eb5b0-75ef-4e8b-9773-25bf7fecf437` is claimed and has no accepted
-proof, so the identification remains open. Any additional cross-section
+universal-arrow terminology is proved: the published statements
+`L.LimitUniversalArrowStatements` have the published exact proof
+`L.limitUniversalArrowStatements`. Its converses and comma-category
+clauses remain the derived formulations recorded in the statement unit. Any additional cross-section
 comparison and the other Appendix assertions retain their own obligations
 unless an exact published correspondence is supplied. No general existence
 theorem for arbitrary-category limits, ambient-category subobject
