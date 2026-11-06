@@ -436,6 +436,14 @@ not follow Renard's argument through finiteness of the endomorphism module.
 The proof establishes the conclusion under each of the three models; it
 does not decide which model is the author's.
 
+The [unitization criteria note](unitization-noetherian-criteria.md) records,
+with receipts, the published units behind these steps and behind the internal
+stable-ideal proof above. They include
+`CompatibleUnitization.submoduleOrderIso`,
+`UnitizationIdealNoetherian.noetherian_iff_scalar_and_regular` and
+`scalarIdealCriterion`, `UnitizationStableGeneration.moduleGeneration`, and
+the original-module generation comparisons used by the additive reading.
+
 ## Unitized Noetherian localization adapters
 
 Two further published internal proof families isolate the Noetherian

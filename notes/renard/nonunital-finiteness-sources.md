@@ -123,6 +123,13 @@ complex-linear stable subspaces, or an explicitly compared unitization
 model. Neither a counterexample distinguishing models nor a successful
 internal theorem selects the author's convention.
 
+The published zero-action pair in the [unitization criteria
+note](unitization-noetherian-criteria.md#4-zero-action-separation) gives such
+a distinction for unitized actions. On the complex line with the zero
+original action, the complex unitization acts finitely and Noetherianly; the
+integer unitization acts neither finitely nor Noetherianly. The pair compares
+these two unitized actions only and selects no convention.
+
 The published internal theorem
 `Langlands.Renard.AlgebraActionLocalization.stableIdealFiniteLocalization`
 now proves

@@ -146,6 +146,15 @@ Reviewer 15061 approval and was published at
 readings without choosing the author's convention.
 Only the C.II navigation row below is updated by that audit.
 
+The [unitization criteria note](unitization-noetherian-criteria.md), added
+6 November 2026 by Worker 709, records fourteen published internal units.
+They comprise the unitized submodule comparison; the scalar, additive and
+original-module stable-generation comparisons; the kernel, regular and
+left-ideal Noetherian criteria; and the zero-action separation of complex and
+integer unitized finiteness. Every unit except the zero-action pair lies in
+the import closure of the two C.II proofs above. The note selects no source
+convention. Only the C.II row below changes with it.
+
 The [A.II.2 equivalence progress note](appendix-a-equivalence-progress.md),
 updated 3 November 2026 by Worker 709, verifies the published statement and exact
 proof `Langlands.Renard.equivalenceCriterion`, proof candidate
@@ -1110,7 +1119,7 @@ including definitions, remarks and unnumbered results.
 | B.II | Schur's lemma | 272 / 278 | Statement/proof covered: the [original-action Schur statements](../../Langlands/Algebra/NonUnitalSchurStatements.md) have the published exact aggregate `Langlands.Renard.nonUnitalSchur` and all nine [original-action component proofs](../../Langlands/Algebra/NonUnitalSchurProof.md), preserving all additive endomorphisms and both countable-rank alternatives (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital Schur core and actual-action simplicity reductions are also published |
 | B.III | Separation lemma | 273 / 279 | Statement/proof covered: the [original-action separation statements](../../Langlands/Algebra/NonUnitalSeparationStatements.md) are proved by the published [original one-sided resolvent](../../Langlands/Algebra/NonUnitalNonnilpotentLeftResolventProof.md), [original simple quotient](../../Langlands/Algebra/NonUnitalLeftShiftSimpleQuotientProof.md) and [original separation and aggregate](../../Langlands/Algebra/NonUnitalSeparationProof.md) proofs (dated 2 November 2026 update above; [Appendix B note](appendix-b-progress.md)). The unital one-sided resolvent, [proper-principal-left-ideal](../../Langlands/Algebra/PrincipalLeftIdealProperProof.md), [simple-left-quotient](../../Langlands/Algebra/LeftShiftSimpleQuotientProof.md) and [unital-separation](../../Langlands/Algebra/UnitalSeparationProof.md) proofs are also published |
 | C.I | Commutative endomorphism algebras | 275–276 / 281–282 | [Published final bounds, actual nilpotent constructions and intermediate proofs, including the floor recurrence, maximum induction and actual-block reduction; current source-assertion inventory and composition audit](commutative-dimension.md). Earlier snapshots are preserved; no section completion declared |
-| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md). The final proposition has published statements under three candidate finiteness readings and a published exact proof of all three. Source-facing nonunital finiteness comparison remains open |
+| C.II | Stable endomorphisms | 276 / 282 | Partial: [published lemma, quotient sequence and internal finite localization, including additive-to-scalar sufficient conditions](stable-quotients.md), and the [unitization Noetherian and stable-generation criteria](unitization-noetherian-criteria.md). The final proposition has published statements under three candidate finiteness readings and a published exact proof of all three. Source-facing nonunital finiteness comparison remains open |
 | C.III | Representations of the integer lattice | 279–280 / 285–286 | [Published tuple correspondence and coefficient proofs; decomposition, binomial and common-basis tools; actual support, normalized nilpotence, local/global bases and all-integer products; occurring characters and particular polynomial witnesses; complete passage ledger with every row citing a published target](integer-lattice-coefficients.md). No section completion declared |
 
 The bibliography, notation list and index begin on printed pages 281, 285 and
