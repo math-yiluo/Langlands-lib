@@ -2,7 +2,8 @@
 
 Author: Worker 709. Seven-unit audit dated 1 November 2026; sheaf and
 presheaf prerequisite update dated 4 November 2026; proof, criterion and
-sheaf updates dated 5 November 2026.
+sheaf updates dated 5 November 2026; module-example update dated
+6 November 2026.
 
 This note maps the seven abelian-category axioms in A.VI.1 and the ten
 numbered assertions in A.VI.2 to current Lean declarations. Eight mathematical
@@ -15,7 +16,10 @@ for the corrected full-subcategory criteria and their counterexample. The
 sheaf/presheaf section records ten published units. They include the
 normalized-presheaf abelianness and star-obstruction proofs, the composite
 chosen-basis/Mathlib equivalence and the exact proof of both sufficient-size
-sheaf targets. The whole-book ledger is [coverage.md](coverage.md).
+sheaf targets. The 6 November update records four published units for the
+module part of the A.VI.1 example list. They prove abelianness of the
+original category A−mod and of the nondegenerate subcategory, which gives
+M(A) at a unital ring. The whole-book ledger is [coverage.md](coverage.md).
 
 ## Source and audit boundary
 
@@ -214,9 +218,12 @@ claim; the obligations below remain.
 
 ## Further source obligations
 
-This audit leaves A.VI.1's module example and the adapter to the source's
-original possibly-nonunital module category separate. The sheaf example
-has the partial coverage recorded in its section below. The exact-sequence
+The 1 November audit left A.VI.1's module example and the adapter to the
+source's original possibly-nonunital module category separate. The module
+example now has the published proofs recorded in the 6 November section
+below. The embedding of the unital counterexample into the original category
+remains separate. The sheaf example has the partial coverage recorded in its
+section below. The exact-sequence
 convention, infinitary subobject-sum consequence, AB5 comparisons and
 A.VI.3/Jordan–Hölder assertions also retain their own coverage and proof
 checks. Their exclusion from this audit says nothing about whether other
@@ -270,6 +277,107 @@ exact-target, unchanged-statement and frozen-input checks.
 | Closure / `e3ddcc90-248a-40f1-a22b-04850a8c8212` | `276b7aaa-8cde-4a88-882a-e3f12fd0e05e` | Reviewer 7969 / `e951ebb0-5963-4da4-8665-07a9fce5e34c` | `fd31216c0d0d424d93f1b3b1b6ad74ca` / `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
 | No product / `44ecd2b1-5bc1-46e0-bf3f-09c99f0631ad` | `70251bff-0466-4ec7-b966-6c1b31f03f01` | Reviewer 7970 / `d526d8e7-1ddd-4484-ae1e-b12de34aa327` | `e842db00a2b6482cb56d6d59e02fa1f7` / `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
 | Not abelian / `62422faf-3a99-4605-988a-8f7a2c0d89d8` | `050878a3-0fe9-483d-91c0-f958439cb56d` | Reviewer 8025 / `544cd493-933b-4c32-bebe-b2fd43153ddb` | `abff13684723447aa9f931542045b597` / `b1c8a5e809be36100da09da81385a7ca6789ae80` |
+
+## A.VI.1 module examples, 6 November 2026
+
+The example list on printed p.261 / PDF267 begins with the category
+A−mod of left modules over a ring A. The next sentence presents M(A), the
+unital left modules over a unital ring A, as a full subcategory of A−mod
+closed under submodules and quotients. The source concludes that it is
+abelian by the unrestricted criterion discussed above. Under the conventions
+on printed pp.5–6 / PDF11–12, rings need not be unital and actions need not
+satisfy a unit law. Worker 709 reread PDF267 for this update. Four published
+units prove abelianness of both module categories; Worker 709 wrote none of
+them. Names in this section have prefix `Langlands.Algebra`.
+
+| Source item | Published statement and proof | Implemented route |
+| --- | --- | --- |
+| A−mod | [`NonUnitalModuleAmbientAbelianStatement`](../../Langlands/Algebra/NonUnitalModuleAmbientAbelianStatements.md), proved by [`nonUnitalModuleAmbientAbelianStatement`](../../Langlands/Algebra/NonUnitalModuleAmbientAbelianProof.md) with the named instance `NonUnitalModuleCat.abelian A` | For every `A : Type uA` with `NonUnitalRing A`, Mathlib's `abelianOfEquivalence` is applied to the published functor `IntegerUnitization.extendFunctor A`, with target `ModuleCat.{uM} (Unitization ℤ A)`. It transfers Mathlib's abelian structure to the original category. `NonUnitalModuleCat.abelian_toPreadditive` proves by `rfl` that the resulting Hom groups are the published pointwise `NonUnitalModuleCat.preadditive A`. |
+| Nondegenerate subcategory | [`NondegenerateModuleAbelianStatement`](../../Langlands/Algebra/NondegenerateModuleAbelianStatements.md), proved by [`nondegenerateModuleAbelianStatement`](../../Langlands/Algebra/NondegenerateModuleAbelianProof.md) with the named data `NondegenerateModuleCat.abelian A hA` | For `hA : IsIdempotented A`, the published `nondegenerateModuleClosureStatement A hA` gives zero containment and closure of `nondegenerateProperty A` under ambient subobjects, quotients and finite products. Mathlib's instance in `Abelian/Subcategory.lean` then builds abelian data on the actual full subcategory, using the ambient instance. `NondegenerateModuleCat.abelian_toPreadditive` proves by `rfl` agreement with `Preadditive.fullSubcategory (nondegenerateProperty A)`. |
+
+In all four units the ring universe uA and carrier universe uM are
+independent. The two proofs and the nondegenerate statement check both
+unequal assignments `(0,1)` and `(1,0)` explicitly. The ambient category
+admits zero rings, zero carriers and zero actions. No unit-action law, field,
+nontriviality or finiteness hypothesis is added, and no abelian structure or
+closure certificate is an input. The equalities of preadditive
+structures matter because Mathlib's `Abelian` is data: existence alone would
+not fix the Hom groups.
+
+For a unital ring, two published lemmas specialise the second row. For every
+`R : Type u` with `Ring R`, `IsIdempotented.of_ring R`, in
+`Langlands/Algebra/IdempotentedRing.lean`, makes `R` idempotented with local
+unit `1`. `isNondegenerate_iff_isUnitalModule`, in
+`Langlands/Algebra/NonUnitalModule.lean`, proves
+`IsNondegenerate R M ↔ IsUnitalModule R M` for every original module `M`.
+The right side is the elementwise unit law `(1 : R) • m = m`. Hence the object
+property of `NondegenerateModuleCat R` is pointwise equivalent to the unit law.
+So `NondegenerateModuleCat.abelian R (IsIdempotented.of_ring R)` is abelian
+data, with the inherited Hom groups, on the full subcategory of R−mod formed
+by the unital modules. This is M(R) as the source describes it. This
+specialisation is assembled here from published lemmas; no separate closed
+theorem for unital rings is published. Mathlib's `ModuleCat R`, whose objects
+carry a `Module R` structure, is a separate model of unital modules. Mathlib
+makes it abelian by `ModuleCat.abelian`, and the A.VI.3 full-module targets
+use that model. It is not literally a full subcategory of
+`NonUnitalModuleCat R`. A search of Library
+`26195cb4483eb6386dd05e2d230e7b8bf67af591` found no published equivalence
+between it and `NondegenerateModuleCat R`.
+
+The published proof does not use the source's unrestricted criterion. It
+also proves zero containment and finite-product closure, the extra
+hypotheses of the corrected criteria in the previous section, and then
+applies Mathlib's instance directly. It does not invoke
+`Langlands.CategoryTheory.abelianOfSubobjectsQuotientsFiniteProducts_proof`.
+Both corrected criteria quantify over every abelian category, so the ambient
+instance makes them applicable to full subcategories of
+`NonUnitalModuleCat A`; no such instantiation is separately published. The
+dimension-at-most-one counterexample remains in unital `ModuleCat K`.
+
+The closure dependency is the published `nondegenerateModuleClosureStatement`
+in `Langlands.Algebra.NondegenerateModuleClosureProof`, candidate
+`e3daa759-434c-43f9-9a20-0333ed9c9cd9` under proof task
+`4fe8906c-c042-480a-999e-45a8dc163970`; this update does not audit its
+receipts. Worker 6's
+[I.5.2–I.6 module-category note](module-classes-category-properties.md)
+records the same nondegenerate abelianness proof in its I.6 assertion map.
+The A.VI.3 AB5 and AB6 assertions for these module examples are mapped in
+the [A.VI.3 source map](jordan-holder-progress.md). Exactness of the inclusion
+and of the nondegenerate-part functor, concrete kernel and cokernel formulas,
+and scalar or tensor comparisons are outside this section.
+
+All four candidates below were checked on 6 November 2026 as accepted and
+published, with unqualified independent approvals and no author
+qualifications. Each `lean.statement@1` receipt passed the schema,
+immutable-content, reference-integrity, exact-reference-policy, Lake-build and
+declaration-kind checks; this is not proof acceptance. Each `lean.proof@1`
+receipt passed `lake-build`, `exact-target`, `unchanged-statement` and
+`frozen-inputs`, with `proof_accepted: true`. The proofs were produced under
+proof tasks `fcd4730b-17d8-4a21-9cb7-c09566d60e66` and
+`e2e9e077-cf22-45ea-be01-c57cbd911882`, both done. This note documents the
+units and is not a review.
+
+| Unit / authors | Candidate | Machine receipt | Independent reviewer / review task | Integration / commit |
+| --- | --- | --- | --- | --- |
+| A−mod statement; Worker 633 with Worker 6 | `49ea0507-f60c-4240-8c3f-a061c0cb9171` | `900d562b-6b90-4b19-bfcd-256cfcf70adf` (statement) | Reviewer 5162 / `3196bfe6-85dd-4f16-a573-45828c8b106d` | `ab3f4b4e8c6d4fde91ab897bc86ff140` / `127ad790e7e947faeb397b6e2634daa0a46e344d` |
+| A−mod proof; Worker 633 with Worker 6 | `970db9c1-987f-4b13-9452-b148cf0b7bf2` | `6f650a60-862a-483b-be42-8778f79ea974` (proof) | Reviewer 5204 / `621d70cf-f97d-4283-86ec-6c2f3f2d6e2e` | `a7ba4075e3d14b59853c977f288c4b77` / `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
+| Nondegenerate statement; Worker 695 with Worker 6 | `bb6340c8-7bd2-414d-9978-624b75c10b48` | `83d5af69-1a49-4810-a6e5-c83bfbf5a414` (statement) | Reviewer 5332 / `a0e74ae1-b383-4b2f-8ec9-3b3a2262ca6d` | `386b941286c74524ba6bd78da59cc152` / `7d8c1355c088b76a992b0af1690748d5ae7147b5` |
+| Nondegenerate proof; Worker 695 with Worker 6 | `fe323f87-21e1-4ebd-96a5-2e2ab7c72787` | `443934ef-df0a-43ba-bd9a-671396cc86d4` (proof) | Reviewer 5413 / `30ec7595-42e1-46b9-bcba-e8e5da09eca9` | `45ce28d8f0c54d63883fadbba9560d96` / `ddf3850e87ef10e9eabe230b50f772e4890d71bd` |
+
+On 6 November 2026 the frozen bundles, Library
+`26195cb4483eb6386dd05e2d230e7b8bf67af591` and the workspace had the same
+SHA256 for each file:
+
+| Path under `Langlands/Algebra/` | SHA256 |
+| --- | --- |
+| `NonUnitalModuleAmbientAbelianStatements.lean` | `632de48a1f6b55a3cd3ca5218047f0bdef46fefde59aa868b8567e87f0931071` |
+| `NonUnitalModuleAmbientAbelianStatements.md` | `c55d608bfc8f5e1e4295d06a3866ad7148452c48ce1f063b01e503cc3fcae71c` |
+| `NonUnitalModuleAmbientAbelianProof.lean` | `dd143fb40b86880f732eb2be9cb8e21bd8070d718f9c43d701137292ac132cf9` |
+| `NonUnitalModuleAmbientAbelianProof.md` | `fc508408259bcb822bf9ecce839478de3fb3820647a8d538c492f49a1738ce5e` |
+| `NondegenerateModuleAbelianStatements.lean` | `3e411c8c8be7ffb6ae9d2512faead2b979535adb7ef32acb2e04f4035c5c53a1` |
+| `NondegenerateModuleAbelianStatements.md` | `d3b29138e52a637624edd2b9f7a2c244d17da9d40dd90247f8dbf6f2ef5eb6ee` |
+| `NondegenerateModuleAbelianProof.lean` | `a6646b07d9c9f0793b29f9522b99ee75a8fed91979df454f62257a7de0c004b9` |
+| `NondegenerateModuleAbelianProof.md` | `1e6f169c99467cc79baffc6062b4755d63b1fbe23019e1f10e7ae4102e709209` |
 
 ## A.VI.1 sheaf and presheaf prerequisites, 4–5 November 2026
 
