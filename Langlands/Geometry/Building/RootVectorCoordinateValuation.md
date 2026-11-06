@@ -1,0 +1,11 @@
+# Minimum valuations in actual finite root-vector coordinates
+
+This internal construction assigns a value to a finite vector by taking the minimum of the coordinate values under an additive field valuation. It proves that only the zero vector has value infinity, addition satisfies the minimum inequality, negation preserves value, scalar multiplication adds the scalar value, and a constant vector in positive dimension has the value of its constant.
+
+Transport through `WeightedRootVectorCoordinates` gives a function on the actual ambient rational points, infinite outside the actual root subgroup. Inside that subgroup, only the identity has value infinity, products satisfy the minimum inequality, and inversion preserves value. Every real threshold together with subgroup membership therefore defines an actual subgroup. The existing torus equivariance of the coordinates and the scalar formula give the exact split-torus conjugation shift.
+
+For a henselian integer-valued field, the construction specializes the published normalized henselian additive valuation to the base field itself. Nonzero constant vectors have the exact integer apartment order. Surjectivity of the base valuation realizes every integer as an actual root value, yielding an infinite image and the local V0 cardinality bound. The torus shift then uses precisely `IntegerValuation.order`.
+
+`TorusCompatibleLocalRootValue` packages these local properties on one actual root subgroup. `henselianLocalRootValueOfNoHigherRoots` constructs this data from the supplied henselian surjective integer valuation, smooth affine group, split torus, actual root and absence of higher positive integral root multiples. It invokes the proved coordinate construction internally, so its premises supply no coordinate equivalence, root value or apartment data. The positive coordinate dimension supplies the nonempty index set used by constant vectors.
+
+These are local V0/V1 and torus compatibility results. They do not supply a field structure on the vector coordinates, a compatible family of bases for different roots, reflection or commutator laws, multipliable-root values, full centralizer equivariance, or apartment existence. The absence of higher positive integral multiples is a local root hypothesis; all global obligations of the apartment task remain explicit.
