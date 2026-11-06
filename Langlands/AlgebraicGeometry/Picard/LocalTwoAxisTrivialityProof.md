@@ -41,7 +41,7 @@ Markdown files.
 
 ## Implemented proof
 
-The private helper `product_geometry` uses the actual categorical product
+The shared helper `product_geometry` uses the actual categorical product
 square in `Over S` to show that the product structure morphism is smooth,
 proper and geometrically connected, by base change and composition.
 `first_axis_closed` and `second_axis_closed` show that the axes are closed

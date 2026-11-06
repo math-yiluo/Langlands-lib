@@ -20,7 +20,7 @@ set_option backward.isDefEq.respectTransparency false
 
 namespace Langlands.AlgebraicGeometry.Picard
 
-private lemma product_geometry {S : Scheme.{u}} (X Y : Over S)
+lemma product_geometry {S : Scheme.{u}} (X Y : Over S)
     [Smooth X.hom] [IsProper X.hom] [GeometricallyConnected X.hom]
     [Smooth Y.hom] [IsProper Y.hom] [GeometricallyConnected Y.hom] :
     Smooth (X ⨯ Y).hom ∧ IsProper (X ⨯ Y).hom ∧

@@ -23,7 +23,8 @@ acyclicity input for computing `R`-module cohomology by the Čech resolution of
 
 ## Declarations
 
-- `rightDerived_additive F n` (an instance): for an additive functor `F : C ⥤ D` between
+- The imported `rightDerived_additive F n` instance from
+  `Langlands/Cohomology/RightDerivedAdditive` retains its published full name: for an additive functor `F : C ⥤ D` between
   abelian categories, `C` with injective resolutions, the right derived functor
   `F.rightDerived n` is additive. Proof: the sum of the chosen lifts
   `InjectiveResolution.desc f` and `InjectiveResolution.desc g` lifts `f + g`, so
