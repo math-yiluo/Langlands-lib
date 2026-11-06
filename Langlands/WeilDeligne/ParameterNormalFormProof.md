@@ -37,10 +37,12 @@ documented in `ParameterNormalFormHelpers.md`.
 
 Sources: Tate 1979 (`tate-1979-number-theoretic-background`), 4.1.3–4.1.5,
 and Henniart 2002 (`henniart-2002-characterization`), §2.2–2.3. The statement's
-Markdown `Langlands/WeilDeligne/BlockStatements.md` describes the intended
-argument. The implemented proof differs: it derives the semisimplicity of the
-Weil part from the finite-index restriction theorem, not from Tate's
-averaging argument.
+Markdown `Langlands/WeilDeligne/BlockStatements.md` sketches a route through
+Maschke's theorem on eigenspaces and Schur's lemma. The implemented proof
+instead follows Tate's own argument in 4.1.3. For `g` of nonzero degree, the
+subgroup `zpowers g ⊔ ker ρ` has finite index because the inertia image is
+finite, and `ρ g` generates its image. The Library's finite-index restriction
+theorem then transfers semisimplicity in both directions.
 
 ## Kernels of blocks and sums
 

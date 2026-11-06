@@ -6,7 +6,10 @@ Author: Worker 105.
 of Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), printed p.15. The claim is that the strongest topology
 on `X(k)` making every chart map `U(k) → X(k)` continuous has all the properties of
-the proposition. The registered source is
+the proposition. As for the proposition itself (see the Markdown of
+`HenselianSpacePointTopologyStatement`), the claim is stated only for spaces that are
+in addition locally separated: Conrad's version for all quasi-separated spaces is
+false by the Stacks Project's Example 02Z1. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`. The module
 only states the claim and contains no proof.
@@ -39,9 +42,9 @@ The statement uses only existing Library definitions.
   (`etaleChartTopology_isOpen_iff`). As a family indexed by all spaces over
   `Spec K`, `etaleChartTopology K` has the type of the families `τ` in Proposition
   5.4.
-- `IsHenselianValuedField K`, `IsQuasiSeparatedLocallyFiniteType K X`,
+- `IsHenselianValuedField K`, `IsLocallySeparatedLocallyFiniteType K X`,
   `IsAdmissibleRationalPointTopology K τ` and
-  `SeparatedRationalPointTopologyProperties K τ` are the predicates of the published
+  `SeparatedRationalPointTopologyProperties K τ` are the predicates of the corrected
   Proposition 5.4 statement in
   `Langlands/AlgebraicGeometry/AlgebraicSpace/HenselianSpacePointTopologyStatement.lean`.
   Its Markdown lists the six admissibility clauses: functoriality, agreement with the
@@ -49,8 +52,11 @@ The statement uses only existing Library definitions.
   immersions and étale morphisms going to open embeddings, closed embeddings and
   local homeomorphisms. It also lists the separated-space properties: Hausdorff,
   totally disconnected over ultrametric `K`, and locally compact over locally
-  compact `K`. As there, all clauses concern only quasi-separated spaces locally of
-  finite type over `Spec K`.
+  compact `K`. As there, all clauses concern only spaces `X` with
+  `IsLocallySeparatedLocallyFiniteType K X`: quasi-separated, locally separated
+  (the diagonal is a representable immersion, Stacks Tag 02X5(2)) and locally of
+  finite type over `Spec K`. The separated-space properties concern separated
+  spaces, which are locally separated.
 
 ## The statement
 
@@ -60,7 +66,7 @@ The statement uses only existing Library definitions.
 1. `IsAdmissibleRationalPointTopology K (etaleChartTopology K)` holds;
 2. every family `τ'` with `IsAdmissibleRationalPointTopology K τ'` satisfies
    `τ' X = etaleChartTopology K X` for every space `X` with
-   `IsQuasiSeparatedLocallyFiniteType K X`;
+   `IsLocallySeparatedLocallyFiniteType K X`;
 3. `SeparatedRationalPointTopologyProperties K (etaleChartTopology K)` holds.
 
 ## Relation to the source and to Proposition 5.4
@@ -70,12 +76,12 @@ the properties of the first paragraph of Proposition 5.4. Clause 2 is his unique
 assertion, with the unique topology now named. Clause 3 is the second paragraph of
 the proposition for this topology.
 
-The statement is Proposition 5.4 with the existing topology made explicit.
-Taking `τ := etaleChartTopology K` shows that it implies the published
+The statement is the corrected Proposition 5.4 with the existing topology made
+explicit. Taking `τ := etaleChartTopology K` shows that it implies
 `HenselianSpacePointTopologyStatement`. Conversely, that statement together with
 clause 1 gives clauses 2 and 3. By uniqueness, every admissible family, in particular
 the family of Proposition 5.4, agrees with `etaleChartTopology K` on the spaces in
-question, and the separated-space properties only concern those spaces. The point of
+question, and the separated-space properties only concern spaces among those. The point of
 the module is the identification. Later statements of Section 5 (base change of the
 ground field in Proposition 5.11, integral points in Corollary 5.7) can then use the
 concrete `etaleChartTopology` instead of an unnamed family.
@@ -98,7 +104,27 @@ over `K` when `X` is locally of finite type.
 
 Also derived here: the name of the statement and the bundling of the three clauses.
 The family `etaleChartTopology K` is defined on all algebraic spaces over `Spec K`,
-but only its values on quasi-separated spaces locally of finite type are constrained.
+but only its values on quasi-separated, locally separated spaces locally of finite
+type are constrained.
+
+## The correction
+
+An earlier published version of this module asserted the three clauses with
+`IsQuasiSeparatedLocallyFiniteType` in place of
+`IsLocallySeparatedLocallyFiniteType`, following Conrad. That version is false.
+For the quotient `X = A^1_K / (x ∼ −x for x ≠ 0)` of the Stacks Project (Algebraic
+Spaces, Example 14.1, Tag 02Z1, registered source
+`stacks-algebraic-spaces-chapter-ed88ff78-2026-11-05`), with `K` henselian of
+characteristic `≠ 2`, the space is quasi-separated and of finite type, the quotient
+map `A^1_K → X` is étale, and it identifies `x` with `−x` on `K`-points. So it is not
+injective on any neighbourhood of `0`, and no topology on `X(K)` makes it a local
+homeomorphism while `A^1_K(K) = K` carries the norm topology. Thus no admissible
+family exists for the uncorrected class, and in particular `etaleChartTopology K` is
+not one. The Markdown of `HenselianSpacePointTopologyStatement` gives the details,
+the gap in Conrad's fibre product step, and why local separatedness repairs it.
+Conrad's construction itself is unchanged: `etaleChartTopology K X` is defined for
+every space, and the corrected claim concerns its values on locally separated
+spaces.
 
 ## Not stated here
 
@@ -106,7 +132,7 @@ but only its values on quasi-separated spaces locally of finite type are constra
   not part of this statement.
 - Conrad's remark that the chart images cover `X(k)` is not stated separately. It
   follows from `RationalPointEtaleLiftStatement` for quasi-separated spaces locally
-  of finite type.
+  of finite type, with no local separatedness needed.
 - The steps of Conrad's existence proof are not stated separately. These are: chart
   maps are open (via Lemma 5.3 applied to `U ×_X U'`), the topology is functorial,
   it is compatible with fibre products, and open and closed immersions give open and

@@ -2,19 +2,23 @@ import Langlands.AlgebraicGeometry.AlgebraicSpace.RingPoints
 import Langlands.AlgebraicGeometry.AlgebraicSpace.SchemeLocalGeometry
 import Langlands.AlgebraicGeometry.AlgebraicSpace.StructuralAtlasGeometry
 import Langlands.AlgebraicGeometry.PointTopology.HenselianEtalePointStatement
+import Mathlib.AlgebraicGeometry.Morphisms.Immersion
 import Mathlib.Topology.IsLocalHomeomorph
 import Mathlib.Topology.MetricSpace.Ultra.Basic
 
 /-!
 # The topology on rational points of algebraic spaces over henselian fields
 
-Conrad's Proposition 5.4: over a henselian valued field there is a unique family
-of topologies on the rational points of quasi-separated locally finite type
-algebraic spaces that is functorial, agrees with the scheme topology, is compatible
-with fibre products, and carries open immersions, closed immersions and étale maps
-to open embeddings, closed embeddings and local homeomorphisms. For separated
-spaces it is Hausdorff, totally disconnected over non-archimedean fields and
-locally compact over locally compact fields.
+Conrad's Proposition 5.4, corrected: over a henselian valued field there is a unique
+family of topologies on the rational points of quasi-separated, locally separated,
+locally finite type algebraic spaces that is functorial, agrees with the scheme
+topology, is compatible with fibre products, and carries open immersions, closed
+immersions and étale maps to open embeddings, closed embeddings and local
+homeomorphisms. For separated spaces it is Hausdorff, totally disconnected over
+non-archimedean fields and locally compact over locally compact fields. Conrad states
+the proposition for all quasi-separated spaces; the Stacks Project's non-locally
+separated quotient of the affine line (Tag 02Z1) shows that the étale and fibre
+product requirements cannot both hold there.
 -/
 
 noncomputable section
@@ -34,49 +38,62 @@ representable over the target. -/
 def IsEtaleMorphism {S : Scheme.{u}} {X Y : AlgebraicSpace S} (f : X ⟶ Y) : Prop :=
   ∀ (U : Over S) (φ : (schemeYoneda S).obj U ⟶ X.presheaf), IsEtale φ → IsEtale (φ ≫ hom f)
 
+/-- Local separatedness (Stacks Project, Tag 02X5(2)): the diagonal is a representable
+immersion. -/
+def IsLocallySeparated {S : Scheme.{u}} (X : AlgebraicSpace S) : Prop :=
+  (MorphismProperty.inverseImage (@_root_.AlgebraicGeometry.IsImmersion.{u})
+    (Over.forget S)).relative (schemeYoneda S) (diag X.presheaf)
+
 variable (K : Type u) [NontriviallyNormedField K]
 
-/-- The spaces of Conrad's Proposition 5.4: quasi-separated and locally of finite
-type over `Spec K`. -/
+/-- The spaces of Conrad's statement of Proposition 5.4: quasi-separated and locally of
+finite type over `Spec K`. -/
 def IsQuasiSeparatedLocallyFiniteType
     (X : AlgebraicSpace (Spec (CommRingCat.of K))) : Prop :=
   IsQuasiSeparated X ∧ LocallyOfFiniteTypeOverBase X
 
+/-- The spaces of the corrected Proposition 5.4: quasi-separated, locally separated and
+locally of finite type over `Spec K`. -/
+def IsLocallySeparatedLocallyFiniteType
+    (X : AlgebraicSpace (Spec (CommRingCat.of K))) : Prop :=
+  IsQuasiSeparatedLocallyFiniteType K X ∧ IsLocallySeparated X
+
 /-- The properties of Conrad's Proposition 5.4 for a family `τ` of topologies on
-rational points, required for all quasi-separated locally finite type spaces. -/
+rational points, required for all quasi-separated, locally separated, locally finite
+type spaces. -/
 def IsAdmissibleRationalPointTopology
     (τ : ∀ X : AlgebraicSpace (Spec (CommRingCat.of K)),
       TopologicalSpace (RingPoints K X K)) : Prop :=
   -- functoriality
   (∀ ⦃X Y : AlgebraicSpace (Spec (CommRingCat.of K))⦄ (f : X ⟶ Y),
-    IsQuasiSeparatedLocallyFiniteType K X → IsQuasiSeparatedLocallyFiniteType K Y →
+    IsLocallySeparatedLocallyFiniteType K X → IsLocallySeparatedLocallyFiniteType K Y →
       @Continuous _ _ (τ X) (τ Y) (RingPoints.map (A := K) f)) ∧
   -- the case of schemes
   (∀ (U : Over (Spec (CommRingCat.of K))),
-    IsQuasiSeparatedLocallyFiniteType K ((schemeToSpace _).obj U) →
+    IsLocallySeparatedLocallyFiniteType K ((schemeToSpace _).obj U) →
       @IsHomeomorph _ _ (τ ((schemeToSpace _).obj U)) (schemePointTopology K U K)
         (schemeRingPointsEquiv K U K)) ∧
   -- fibre products
   (∀ ⦃P X' X'' X : AlgebraicSpace (Spec (CommRingCat.of K))⦄
     (p' : P ⟶ X') (p'' : P ⟶ X'') (f' : X' ⟶ X) (f'' : X'' ⟶ X),
-    IsQuasiSeparatedLocallyFiniteType K P → IsQuasiSeparatedLocallyFiniteType K X' →
-    IsQuasiSeparatedLocallyFiniteType K X'' → IsQuasiSeparatedLocallyFiniteType K X →
+    IsLocallySeparatedLocallyFiniteType K P → IsLocallySeparatedLocallyFiniteType K X' →
+    IsLocallySeparatedLocallyFiniteType K X'' → IsLocallySeparatedLocallyFiniteType K X →
     IsPullback (hom p') (hom p'') (hom f') (hom f'') →
       @Topology.IsEmbedding _ _ (τ P) (@instTopologicalSpaceProd _ _ (τ X') (τ X''))
         (fun w : RingPoints K P K => (RingPoints.map p' w, RingPoints.map p'' w))) ∧
   -- open immersions
   (∀ ⦃X' X : AlgebraicSpace (Spec (CommRingCat.of K))⦄ (f : X' ⟶ X),
-    IsQuasiSeparatedLocallyFiniteType K X' → IsQuasiSeparatedLocallyFiniteType K X →
+    IsLocallySeparatedLocallyFiniteType K X' → IsLocallySeparatedLocallyFiniteType K X →
     IsOpenImmersion (hom f) →
       @Topology.IsOpenEmbedding _ _ (τ X') (τ X) (RingPoints.map (A := K) f)) ∧
   -- closed immersions
   (∀ ⦃X' X : AlgebraicSpace (Spec (CommRingCat.of K))⦄ (f : X' ⟶ X),
-    IsQuasiSeparatedLocallyFiniteType K X' → IsQuasiSeparatedLocallyFiniteType K X →
+    IsLocallySeparatedLocallyFiniteType K X' → IsLocallySeparatedLocallyFiniteType K X →
     IsClosedImmersion (hom f) →
       @Topology.IsClosedEmbedding _ _ (τ X') (τ X) (RingPoints.map (A := K) f)) ∧
   -- étale maps
   (∀ ⦃X' X : AlgebraicSpace (Spec (CommRingCat.of K))⦄ (f : X' ⟶ X),
-    IsQuasiSeparatedLocallyFiniteType K X' → IsQuasiSeparatedLocallyFiniteType K X →
+    IsLocallySeparatedLocallyFiniteType K X' → IsLocallySeparatedLocallyFiniteType K X →
     IsEtaleMorphism f →
       @IsLocalHomeomorph _ _ (τ X') (τ X) (RingPoints.map (A := K) f))
 
@@ -92,11 +109,12 @@ def SeparatedRationalPointTopologyProperties
       (IsUltrametricDist K → @TotallyDisconnectedSpace _ (τ X)) ∧
       (LocallyCompactSpace K → @LocallyCompactSpace _ (τ X))
 
-/-- Conrad's Proposition 5.4 (printed pp.14–15), topological part: over a henselian
-valued field there is a family of topologies on rational points with the stated
-properties, any two such families agree on quasi-separated locally finite type
-spaces, and on separated spaces the topology is Hausdorff, totally disconnected
-over non-archimedean fields and locally compact over locally compact fields. -/
+/-- Conrad's Proposition 5.4 (printed pp.14–15), topological part, restricted to locally
+separated spaces: over a henselian valued field there is a family of topologies on
+rational points with the stated properties, any two such families agree on
+quasi-separated, locally separated, locally finite type spaces, and on separated spaces
+the topology is Hausdorff, totally disconnected over non-archimedean fields and locally
+compact over locally compact fields. -/
 def HenselianSpacePointTopologyStatement : Prop :=
   ∀ (K : Type u) [NontriviallyNormedField K], IsHenselianValuedField K →
     ∃ τ : ∀ X : AlgebraicSpace (Spec (CommRingCat.of K)),
@@ -105,7 +123,7 @@ def HenselianSpacePointTopologyStatement : Prop :=
       (∀ τ' : ∀ X : AlgebraicSpace (Spec (CommRingCat.of K)),
           TopologicalSpace (RingPoints K X K),
         IsAdmissibleRationalPointTopology K τ' →
-          ∀ X, IsQuasiSeparatedLocallyFiniteType K X → τ' X = τ X) ∧
+          ∀ X, IsLocallySeparatedLocallyFiniteType K X → τ' X = τ X) ∧
       SeparatedRationalPointTopologyProperties K τ
 
 end Langlands.AlgebraicGeometry.AlgebraicSpace

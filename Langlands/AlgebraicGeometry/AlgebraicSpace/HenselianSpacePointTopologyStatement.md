@@ -4,10 +4,21 @@ Author: Worker 105.
 
 `HenselianSpacePointTopologyStatement` states the topological part of
 Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic
-points* (December 31, 2011), printed pp.14–15. The registered source is
+points* (December 31, 2011), printed pp.14–15, corrected by an added
+hypothesis. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`. The module
 only states the result and contains no proof.
+
+**Correction.** Conrad states the proposition for all quasi-separated algebraic
+spaces locally of finite type. In that generality it is false: for the
+quasi-separated, non-locally separated quotient of the affine line in the Stacks
+Project (Algebraic Spaces, Example 14.1, Tag 02Z1), no topology on its rational
+points can satisfy the requirements (see "The counterexample" below). The statement
+here therefore requires every clause, and asserts uniqueness, only for spaces that
+are in addition *locally separated* (diagonal an immersion). An earlier published
+version of this module followed Conrad and required the clauses for all
+quasi-separated spaces. The example shows that the earlier version is false.
 
 Conrad's Proposition 5.4 (printed p.14) reads: "Let `k` be a henselian valued
 field, and `X` a (quasi-separated) algebraic space locally of finite type over
@@ -40,6 +51,9 @@ scheme atlas. The following existing Library notions are used.
 - `IsQuasiSeparated X` says that the diagonal of `X` is representable with
   quasi-compact represented projections. `IsSeparated X` says that the diagonal
   is a representable closed immersion. Both are from `RingPoints.lean`.
+- `_root_.AlgebraicGeometry.IsImmersion` is Mathlib's immersion of schemes: a
+  morphism whose underlying map is an embedding with locally closed range and whose
+  stalk maps are surjective.
 - `LocallyOfFiniteTypeOverBase X` (from `StructuralAtlasGeometry.lean`) says that
   `X` has a surjective étale atlas by a scheme locally of finite type over
   `Spec K`.
@@ -75,13 +89,25 @@ scheme atlas. The following existing Library notions are used.
   Algebraic Spaces, Example 14.2 (Tag 03FN, registered source
   `stacks-algebraic-spaces-chapter-ed88ff78-2026-11-05`) gives a quasi-separated
   space of finite type over a field with such an étale map to the affine line.
+- `IsLocallySeparated X`, for an algebraic space `X` over any scheme `S`, says that
+  the diagonal `diag X.presheaf` is representable and every represented projection
+  of it is an immersion of schemes. It is written exactly like the Library's
+  `IsQuasiSeparated`, with `IsImmersion` in place of `QuasiCompact`. This is the
+  Stacks Project definition (registered source
+  `stacks-algebraic-spaces-chapter-ed88ff78-2026-11-05`, Algebraic Spaces,
+  Definition 13.2, Tag 02X5, part (2)): "We say `F` is locally separated over `S`
+  if `∆` is an immersion." Since closed immersions are immersions, every separated
+  space is locally separated.
 - `IsQuasiSeparatedLocallyFiniteType K X` is
   `IsQuasiSeparated X ∧ LocallyOfFiniteTypeOverBase X`. These are the spaces of
-  Proposition 5.4.
+  Conrad's statement of Proposition 5.4.
+- `IsLocallySeparatedLocallyFiniteType K X` is
+  `IsQuasiSeparatedLocallyFiniteType K X ∧ IsLocallySeparated X`. These are the
+  spaces of the corrected statement.
 - `IsAdmissibleRationalPointTopology K τ` is a property of a family `τ` assigning
   a topology `τ X` on `RingPoints K X K` to every algebraic space `X` over
   `Spec K`. It is the conjunction of six clauses, each required only for spaces
-  satisfying `IsQuasiSeparatedLocallyFiniteType K`:
+  satisfying `IsLocallySeparatedLocallyFiniteType K`:
   1. functoriality: for every morphism `f : X ⟶ Y`, the map `RingPoints.map f`
      is continuous from `τ X` to `τ Y`;
   2. the case of schemes: for every actual scheme `U` over `Spec K`, the
@@ -99,7 +125,8 @@ scheme atlas. The following existing Library notions are used.
   6. étale maps: if `IsEtaleMorphism f`, then `RingPoints.map f` is a local
      homeomorphism.
 - `SeparatedRationalPointTopologyProperties K τ` says that for every space `X`
-  with `IsQuasiSeparatedLocallyFiniteType K X` and `IsSeparated X`, the space
+  with `IsQuasiSeparatedLocallyFiniteType K X` and `IsSeparated X` (such a space is
+  locally separated, so it lies in the class of the corrected statement), the space
   `RingPoints K X K` with topology `τ X` is Hausdorff (`T2Space`); it is totally
   disconnected (`TotallyDisconnectedSpace`) if the norm of `K` is ultrametric
   (`IsUltrametricDist K`); and it is locally compact (`LocallyCompactSpace`) if
@@ -109,7 +136,7 @@ scheme atlas. The following existing Library notions are used.
   that
   - `IsAdmissibleRationalPointTopology K τ` holds;
   - every family `τ'` satisfying `IsAdmissibleRationalPointTopology K τ'` agrees
-    with `τ` on every space `X` satisfying `IsQuasiSeparatedLocallyFiniteType K X`;
+    with `τ` on every space `X` satisfying `IsLocallySeparatedLocallyFiniteType K X`;
   - `SeparatedRationalPointTopologyProperties K τ` holds.
 
 ## Relation to the source and derived content
@@ -118,9 +145,9 @@ Conrad's "unique way to topologize `X(k)`" refers to a topology on `X(k)` for
 every space in his class, subject to conditions that relate different spaces
 (functoriality, fibre products, immersions, étale maps). The statement therefore
 quantifies over families `τ` indexed by all algebraic spaces over `Spec K`. Only
-the values on quasi-separated locally finite type spaces are constrained, and
-uniqueness is asserted only for those values. The values of `τ` on other spaces
-are irrelevant.
+the values on quasi-separated, locally separated, locally finite type spaces are
+constrained, and uniqueness is asserted only for those values. The values of `τ` on
+other spaces are irrelevant.
 
 The fibre product clause is equivalent to Conrad's compatibility. In a pullback
 square of presheaves, evaluation at `Spec K` gives a pullback square of sets. So
@@ -129,15 +156,18 @@ product `X'(K) ×_{X(K)} X''(K)`. It is an embedding exactly when it is a
 homeomorphism onto that fibre product with the subspace topology of the product
 topology, which is the fibre product topology. Requiring the square to be a
 pullback, rather than using a chosen fibre product, covers every model of
-`X' ×_X X''`. A fibre product of quasi-separated spaces locally of finite type
-over `Spec K` is again quasi-separated and locally of finite type, so the
-hypothesis on `P` does not restrict Conrad's compatibility.
+`X' ×_X X''`. A fibre product of quasi-separated, locally separated spaces locally
+of finite type over `Spec K` is again of this kind: its diagonal is built from base
+changes of the diagonals of `X'`, `X''` and `X`, and quasi-compact immersions and
+morphisms locally of finite type are stable under base change and composition. So
+the hypothesis on `P` does not restrict the compatibility within the class.
 
 "Compatible with the case of schemes" is read as clause 2: on the space of an
 actual scheme `U`, the topology is the existing scheme point topology, transported
 along the canonical identification of points. The scheme `U` is required to give a
-space in Conrad's class, namely a quasi-separated space locally of finite type
-over `Spec K`.
+space in the class of the statement. Every scheme has an immersion as its diagonal,
+so for schemes the hypothesis amounts to being quasi-separated and locally of finite
+type over `Spec K`.
 
 Quasi-separatedness is Conrad's standing convention for Section 5 (printed p.13):
 "We will work with quasi-separated algebraic spaces (as is the case throughout
@@ -157,8 +187,61 @@ part. By uniqueness, they then hold for every admissible family.
 
 Also derived here: the names of the predicates, the packaging of the six clauses
 into one admissibility predicate, the use of `hom f` with the Library's
-representable open and closed immersion properties, and the formulation of
-`IsEtaleMorphism` through the Library's `IsEtale` for maps out of schemes.
+representable open and closed immersion properties, the formulation of
+`IsEtaleMorphism` through the Library's `IsEtale` for maps out of schemes, and the
+local separatedness hypothesis explained in the next two sections.
+
+## The counterexample
+
+The Stacks Project, Algebraic Spaces, Example 14.1 (Tag 02Z1, registered source
+`stacks-algebraic-spaces-chapter-ed88ff78-2026-11-05`), reads: "Let `k` be a field
+of characteristic `≠ 2`. Let `U = A^1_k`. Set `j : R = ∆ ⨿ Γ → U ×_k U` where
+`∆ = {(x,x) | x ∈ A^1_k}` and `Γ = {(x,−x) | x ∈ A^1_k, x ≠ 0}`. It is clear that
+`s,t : R → U` are étale, and hence `j` is an étale equivalence relation. The
+quotient `X = U/R` is an algebraic space by Theorem 10.5. Since `R` is
+quasi-compact we see that `X` is quasi-separated. On the other hand, `X` is not
+locally separated because the morphism `j` is not an immersion." The section
+introduction notes that some of these examples were suggested by B. Conrad.
+
+Take for `k` a henselian valued field `K` of characteristic `≠ 2`, for instance
+`ℝ` or `ℚ_p`. Then `X` is quasi-separated and locally of finite type over `Spec K`
+(it has the finite type étale atlas `q : U → X`), and `U ×_X U = R`. Suppose a
+family `τ` satisfied the six clauses for all quasi-separated spaces locally of
+finite type, as in Conrad's statement.
+
+- By the scheme clause, `τ` on `U(K) = K` is the norm topology. The quotient map `q`
+  is étale, so by the étale clause `U(K) → X(K)` is a local homeomorphism, hence
+  injective on some neighbourhood `W` of `0`. But for `x ≠ 0` the point `(x,−x)`
+  lies in `Γ(K) ⊆ R(K)`, so `x` and `−x ≠ x` have the same image in `X(K)`, and
+  `W` contains such pairs for small `x`. This is a contradiction.
+- The fibre product clause fails as well, using only the scheme clause. For the
+  pullback square with `P = R` and `X' = X'' = U` over `X`, `R(K)` carries the
+  scheme topology of `∆ ⨿ Γ`, in which `∆(K)` is open. Its image in `K × K` is the
+  union of the diagonal and the punctured antidiagonal, and the image of `∆(K)` is
+  not open there, because the points `(x,−x)` accumulate at `(0,0)`. So
+  `R(K) → U(K) × U(K)` is not an embedding.
+
+Hence no family of topologies has the properties Conrad states for all
+quasi-separated spaces. In Conrad's existence proof (printed pp.15–16) the gap is
+the fibre product step: the map `h : U'(k) ×_{U(k)} U''(k) → X'(k) ×_{X(k)} X''(k)`
+is asserted to be open for the fibre product topology, and the étale step then uses
+the resulting topological identification
+`(U ×_X U)(k) = U(k) ×_{X(k)} U(k)`. In the example, with `U' = U'' = U` mapping
+identically to `X' = X'' = U`, the map `h` is the diagonal map of `K` into
+`U(K) ×_{X(K)} U(K)`, which is not open.
+
+## Why local separatedness is the added hypothesis
+
+If `X` is locally separated, then for schemes `U'`, `U''` over `X` the morphism
+`U' ×_X U'' → U' ×_K U''` is an immersion, being a base change of the diagonal of
+`X`, so it induces a topological embedding on `K`-points. This is exactly what the
+fibre product step and the local injectivity in the étale step need: in the étale
+step, the diagonal `U → U ×_X U` of an étale `U → X` is an open immersion, so a
+neighbourhood of `(u,u)` in `(U ×_X U)(K) ⊆ U(K) × U(K)` meets no off-diagonal
+points. The example above is not locally separated, while the space of Stacks
+Example 14.2 (Tag 03FN), "not separated, but it is locally separated and
+quasi-separated", remains in the class. Proving the corrected statement is not part
+of this module.
 
 ## Not stated here
 

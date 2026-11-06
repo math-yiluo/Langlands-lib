@@ -1,0 +1,5 @@
+# Order reflection for finite abelian norm subgroups
+
+This internal development derives order reflection and uniqueness from the compatible finite abelian norm correspondence. An algebra equivalence preserves the actual norm subgroup by the determinant norm conjugacy formula. Inside one finite abelian extension, the quotient images of intermediate-field norm groups identify with the images of their fixing subgroups under the same Galois/norm equivalence. Taking images reflects inclusion for an injective equivalence. The norm quotient also reflects inclusion between norm subgroups because they contain its kernel. The ordinary finite Galois correspondence therefore identifies field inclusion with reversed norm-subgroup inclusion.
+
+For two finite abelian subfields of a common ambient field, their compositum is finite abelian. Restrict both subfields into the compositum, use the preceding finite theorem, and transport norm subgroups through the canonical restriction algebra equivalences. Equality follows by applying the two order implications. All carriers retain arbitrary common universe; no prescribed-subgroup existence or reciprocity completion is assumed.

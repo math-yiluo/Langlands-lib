@@ -1,4 +1,5 @@
 import Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleChartTopology
+import Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianSpacePointTopologyStatement
 import Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceWeilRestriction
 import Langlands.AlgebraicGeometry.PointTopology.HenselianEtalePointStatement
 import Langlands.GroupScheme.Reductive.Basic
@@ -16,8 +17,11 @@ field `k` of characteristic zero acting on a reduced `k`-scheme `V` of finite ty
 points of `V` whose orbit has dimension `d` form a locally closed set `V_d`. On the
 reduced subscheme `V_d` the action restricts, the stabilizer scheme over `V_d` is flat,
 and the fppf sheaf quotient `V_d/G` is a finitely presented algebraic space receiving a
-faithfully flat map from `V_d`. Its rational points are locally Hausdorff, locally compact
-when `k` is locally compact and locally totally disconnected when `k` is non-archimedean.
+faithfully flat map from `V_d`. When this quotient is locally separated, its rational
+points are locally Hausdorff, locally compact when `k` is locally compact and locally
+totally disconnected when `k` is non-archimedean. Conrad asserts the topological claim
+without local separatedness; it fails for a free action of the additive group on a
+scheme whose quotient is a non-locally separated plane with a doubled half-axis.
 -/
 
 noncomputable section
@@ -111,12 +115,13 @@ def UnipotentOrbitStratumQuotientStatement : Prop :=
           IsFppfActionQuotient b π ∧ IsQuasiSeparated X ∧ FinitePresentationOverRing K X ∧
             IsFlat π.hom ∧ IsSurjective π.hom
 
-/-- Conrad's Example 5.5 (printed p.16), the topology on `(V_d/G)(K)`, with the source's
-local compactness and local total disconnectedness qualified by the corresponding
-properties of `K`: in the setting of `UnipotentOrbitStratumQuotientStatement`, every
-algebraic space `X` that is an fppf sheaf quotient of `Z` by an action `b` making `i`
-equivariant has locally Hausdorff rational points, locally compact when `K` is locally
-compact and locally totally disconnected when `K` is non-archimedean. -/
+/-- Conrad's Example 5.5 (printed p.16), the topology on `(V_d/G)(K)`, corrected by
+assuming that the quotient is locally separated, with the source's local compactness and
+local total disconnectedness qualified by the corresponding properties of `K`: in the
+setting of `UnipotentOrbitStratumQuotientStatement`, every locally separated algebraic
+space `X` that is an fppf sheaf quotient of `Z` by an action `b` making `i` equivariant
+has locally Hausdorff rational points, locally compact when `K` is locally compact and
+locally totally disconnected when `K` is non-archimedean. -/
 def UnipotentOrbitQuotientPointTopologyStatement : Prop :=
   ∀ (K : Type u) [NontriviallyNormedField K], IsHenselianValuedField K → CharZero K →
     ∀ (G : GroupScheme (Spec (CommRingCat.of K))), IsUnipotentAlgebraicGroup K G →
@@ -127,7 +132,7 @@ def UnipotentOrbitQuotientPointTopologyStatement : Prop :=
       ∀ (b : SchemeAction G Z), b.hom ≫ i = (G.X ◁ i) ≫ a.hom →
       ∀ (X : AlgebraicSpace (Spec (CommRingCat.of K)))
         (π : (schemeSheaf _).obj Z ⟶ X.toSheaf), IsFppfActionQuotient b π →
-        HasLocallyHausdorffRationalPoints K X
+        IsLocallySeparated X → HasLocallyHausdorffRationalPoints K X
 
 /-- Conrad's Example 5.5 (printed p.16): the conjunction of
 `UnipotentOrbitStratumLocallyClosedStatement`, `UnipotentOrbitStratumQuotientStatement`

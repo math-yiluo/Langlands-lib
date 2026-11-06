@@ -13,9 +13,10 @@ image, a complex representation is semisimple exactly when an element of
 degree one acts semisimply. Here "semisimple endomorphism" means
 `Module.End.IsSemisimple`. "Semisimple representation" means
 `Representation.IsSemisimpleRepresentation`, that is, every subrepresentation
-has a complementary subrepresentation. The implemented proof does not follow
-Tate's argument; it uses the finite-index restriction theorem from the Library
-instead.
+has a complementary subrepresentation. The implemented proof follows Tate's
+argument: an element of nonzero degree, together with the kernel, generates a
+subgroup of finite index, and the finite-index restriction theorem from the
+Library applies.
 
 ## Semisimple endomorphisms
 

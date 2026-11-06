@@ -215,3 +215,144 @@ theorem componentFieldEmbeddingEquiv_naturality (f : H ⟶ H')
     fieldEmbeddingSectionHom_naturality]
 
 end Langlands.GroupScheme.IdentityComponent
+
+namespace Langlands.GroupScheme.GaloisPoint
+
+section Identity
+
+variable (k L : Type u) [Field k] [Field L] [Algebra k L]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+
+/-- Extending coefficients along the identity field embedding is the identity. -/
+@[simp]
+theorem relativeExtend_self :
+    relativeExtend k L L H = MonoidHom.id (H.affinePoints (CommAlgCat.of k L)) := by
+  have h : CommAlgCat.ofHom (IsScalarTower.toAlgHom k L L) =
+      𝟙 (CommAlgCat.of k L) := by
+    ext a
+    rfl
+  rw [relativeExtend, h, affinePointMap_id]
+
+end Identity
+
+section Tower
+
+variable (k L M N : Type u) [Field k] [Field L] [Field M] [Field N]
+  [Algebra k L] [Algebra k M] [Algebra k N]
+  [Algebra L M] [Algebra L N] [Algebra M N]
+  [IsScalarTower k L M] [IsScalarTower k L N]
+  [IsScalarTower k M N] [IsScalarTower L M N]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+
+/-- Successive specified coefficient extensions equal the direct extension. -/
+theorem relativeExtend_comp :
+    (relativeExtend k M N H).comp (relativeExtend k L M H) =
+      relativeExtend k L N H := by
+  have h : CommAlgCat.ofHom (IsScalarTower.toAlgHom k L M) ≫
+      CommAlgCat.ofHom (IsScalarTower.toAlgHom k M N) =
+      CommAlgCat.ofHom (IsScalarTower.toAlgHom k L N) := by
+    ext a
+    exact (IsScalarTower.algebraMap_apply L M N a).symm
+  rw [relativeExtend, relativeExtend, relativeExtend, ← affinePointMap_comp, h]
+
+end Tower
+
+end Langlands.GroupScheme.GaloisPoint
+
+namespace Langlands.GroupScheme.GaloisPointComparison
+
+open GaloisPoint
+
+section Identity
+
+variable (k L : Type u) [Field k] [Field L] [Algebra k L]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+
+/-- The actual section comparison for the identity embedding is the identity. -/
+@[simp]
+theorem fieldEmbeddingSectionHom_self :
+    fieldEmbeddingSectionHom k L L H =
+      MonoidHom.id (rationalPoints (baseChanged k L H)) := by
+  apply MonoidHom.ext
+  intro x
+  apply (baseChangeCoeffEquiv k L H).injective
+  rw [baseChangeCoeffEquiv_fieldEmbeddingSectionHom, relativeExtend_self]
+  rfl
+
+end Identity
+
+section Tower
+
+variable (k L M N : Type u) [Field k] [Field L] [Field M] [Field N]
+  [Algebra k L] [Algebra k M] [Algebra k N]
+  [Algebra L M] [Algebra L N] [Algebra M N]
+  [IsScalarTower k L M] [IsScalarTower k L N]
+  [IsScalarTower k M N] [IsScalarTower L M N]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+
+/-- Actual section comparisons compose along a compatible field tower. -/
+theorem fieldEmbeddingSectionHom_comp :
+    (fieldEmbeddingSectionHom k M N H).comp (fieldEmbeddingSectionHom k L M H) =
+      fieldEmbeddingSectionHom k L N H := by
+  apply MonoidHom.ext
+  intro x
+  apply (baseChangeCoeffEquiv k N H).injective
+  change baseChangeCoeffEquiv k N H
+      (fieldEmbeddingSectionHom k M N H (fieldEmbeddingSectionHom k L M H x)) = _
+  simp only [baseChangeCoeffEquiv_fieldEmbeddingSectionHom]
+  exact congrArg (fun f => f (baseChangeCoeffEquiv k L H x))
+    (relativeExtend_comp k L M N H)
+
+end Tower
+
+end Langlands.GroupScheme.GaloisPointComparison
+
+namespace Langlands.GroupScheme.IdentityComponent
+
+open GaloisPointComparison
+
+section Identity
+
+variable (k L : Type u) [Field k] [Field L] [Algebra k L] [IsAlgClosed L]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+  [Smooth H.X.hom] [IsAffineHom H.X.hom]
+
+/-- The full component comparison for the identity embedding is the identity. -/
+@[simp]
+theorem componentFieldEmbeddingEquiv_self :
+    componentFieldEmbeddingEquiv k L L H =
+      MulEquiv.refl (AlgebraicallyClosedComponents (baseChanged k L H)) := by
+  apply MulEquiv.ext
+  intro c
+  obtain ⟨x, rfl⟩ := allComponentOfPoint_surjective (baseChanged k L H) c
+  rw [componentFieldEmbeddingEquiv_ofPoint, fieldEmbeddingSectionHom_self]
+  rfl
+
+end Identity
+
+section Tower
+
+variable (k L M N : Type u) [Field k] [Field L] [Field M] [Field N]
+  [Algebra k L] [Algebra k M] [Algebra k N]
+  [Algebra L M] [Algebra L N] [Algebra M N]
+  [IsScalarTower k L M] [IsScalarTower k L N]
+  [IsScalarTower k M N] [IsScalarTower L M N]
+  [IsAlgClosed L] [IsAlgClosed M] [IsAlgClosed N]
+  (H : GroupScheme (Spec (CommRingCat.of k)))
+  [Smooth H.X.hom] [IsAffineHom H.X.hom]
+
+/-- Full component comparisons compose along the specified compatible embeddings. -/
+theorem componentFieldEmbeddingEquiv_trans :
+    (componentFieldEmbeddingEquiv k L M H).trans
+        (componentFieldEmbeddingEquiv k M N H) =
+      componentFieldEmbeddingEquiv k L N H := by
+  apply MulEquiv.ext
+  intro c
+  obtain ⟨x, rfl⟩ := allComponentOfPoint_surjective (baseChanged k L H) c
+  simp only [MulEquiv.trans_apply, componentFieldEmbeddingEquiv_ofPoint]
+  apply congrArg (allComponentOfPoint (baseChanged k N H))
+  exact congrArg (fun f => f x) (fieldEmbeddingSectionHom_comp k L M N H)
+
+end Tower
+
+end Langlands.GroupScheme.IdentityComponent

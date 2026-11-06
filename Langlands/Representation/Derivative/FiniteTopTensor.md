@@ -1,0 +1,13 @@
+# Finite top-derivative tensor equivalence
+
+This derived construction identifies the entire top derivative of an actual finite normalized product with the finite tensor product of the top derivatives of its original factors. It is assembled from the published binary top-product tensor equivalence, actual head/tail induction regrouping, and finite tensor equivalences. It uses no irreducibility, admissibility, dimension, length, or scalar-line hypotheses. Field and representation universes remain independent; factor carriers lie in `Type (max uF uV)`.
+
+The implementation uses strong induction on the number of positive blocks. The empty case forces ambient rank zero, where the zeroth derivative is the identity and evaluation identifies the empty normalized product with its coefficient tensor. Both empty tensor carriers identify with the scalar field. The singleton case uses the actual one-block induction equivalence, removes the equality transport of the rank, and reverses the singleton tensor equivalence. For at least two blocks, actual normalized induction regrouping splits off the original first factor. The binary top-derivative tensor equivalence and the inductively constructed tail equivalence give the result after reversing the finite head/tail tensor splitting.
+
+The strong induction pattern and singleton family transport follow the published `Langlands.Representation.Derivative.FiniteTopLine` construction, but the result retains the entire factor derivative spaces and does not choose scalar-line identifications.
+
+The proved corollary `nontrivial_finiteProductTopDerivative_iff` says that the product's entire top derivative is nontrivial if and only if every factor's entire top derivative is nontrivial. For a binary tensor, either zero factor makes the tensor zero, while two nonzero complex vector spaces have nonzero tensor product by the published `ProductVanishing.nontrivial_tensor`. Induction with the finite head/tail tensor equivalence proves the corresponding finite statement. The empty tensor is the nonzero scalar field, agreeing with the vacuous factor condition.
+
+The contribution has derived provenance: it composes the published constructions in `Derivative.TopProduct`, `Induction.HeadTailBinaryProduct`, `Induction.EmptyProductUnit`, `Induction.SingleBlock`, `Tensor.FiniteEquivalences`, and Mathlib's `PiTensorProduct.Basic`. No additional literature assertion or classification hypothesis is introduced. The scalar-line induction is used as a published implementation model rather than as a theorem premise.
+
+This is an intermediate construction for genericity of unitary products. It does not prove a Speh comparison, higher-Speh nongenericity, Tadic exhaustion, or the final unitary generic exhaustion proposition.

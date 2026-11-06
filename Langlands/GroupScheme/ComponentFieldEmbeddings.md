@@ -91,8 +91,51 @@ This prevents repeated kernel reduction of the concrete pullback isomorphism;
 it adds no axiom or assumed structural theorem.
 
 The comparison depends on the specified embedding `L → M`. The module does
-not assert independence from that embedding, compatibility for three successive
-coefficient extensions, descent of every invariant component to a rational
-point, or a comparison between arbitrary algebraic closures without specified
-embedding data. Those are separate obligations. No chosen-algebraic-closure
-component module is imported here.
+not assert independence from that embedding, descent of every invariant
+component to a rational point, or a comparison between arbitrary algebraic
+closures without specified embedding data. Those are separate obligations.
+No chosen-algebraic-closure component module is imported here.
+
+## Identity and tower composition
+
+These intrinsic laws are derived from the actual coefficient and section maps
+above. They introduce no additional external source assertion.
+
+For fields `k`, `L`, `M`, `N`, choose algebra structures for every arrow
+`k → L`, `k → M`, `k → N`, `L → M`, `L → N`, and `M → N`. Assume the four
+scalar-tower laws for `k,L,M`, `k,L,N`, `k,M,N`, and `L,M,N`. These hypotheses
+express compatibility of the specified embeddings, including equality of
+successive and direct embeddings from `L` to `N`.
+
+In namespace `GaloisPoint`, `relativeExtend_self` proves identity coefficient
+extension is the identity homomorphism. `relativeExtend_comp` proves the
+homomorphism equality from successive to direct coefficient extension. It
+identifies the composite of the two actual algebra maps with the direct one
+using `IsScalarTower.algebraMap_apply`, and applies the existing
+`affinePointMap_comp` law.
+
+In namespace `GaloisPointComparison`, `fieldEmbeddingSectionHom_self` and
+`fieldEmbeddingSectionHom_comp` prove the corresponding equalities for actual
+sections of the direct base changes of `H`. They apply the injective
+coefficient-point comparison and the proved coefficient formula for
+`fieldEmbeddingSectionHom`, then the preceding coefficient laws. These section
+and coefficient laws require no affineness or smoothness of `H`, and no
+algebraic-closedness of any field.
+
+Assume additionally that `L`, `M`, and `N` are algebraically closed and `H`
+is smooth and affine over `k`. In namespace `IdentityComponent`,
+`componentFieldEmbeddingEquiv_self` identifies the comparison for the identity
+embedding with the identity multiplicative equivalence.
+`componentFieldEmbeddingEquiv_trans` identifies the successive comparisons
+from `L` to `M` to `N` with the direct comparison from `L` to `N`, as an
+equality of multiplicative equivalences on the full actual component groups.
+Both proofs use the surjectivity of the section-to-component map over an
+algebraically closed field, the section formula of the component comparison,
+and the preceding section laws.
+
+No algebraic-closedness condition is imposed on `k`; no algebraicity,
+separability, perfection or characteristic restriction is added. All laws
+concern the specified compatible embeddings. They do not assert independence
+from those embeddings or descent of Galois-invariant components to rational
+points. The unit is an internal derivation from the actual map APIs, with no
+new external source assertion.
