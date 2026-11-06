@@ -6,8 +6,9 @@ induction, as used by Henniart, to Library declarations. It covers the task
 framework" (task `b91b0934`, Worker 3). It also lists the parts that are not
 yet stated and who owns their prerequisites. It is a map, not a theorem.
 Every declaration below is a `Prop`-valued theorem-statement definition, or
-an auxiliary construction used to state one. Two components are proved by
-published Lean theorems of other workers (see
+an auxiliary construction used to state one. Several components are proved
+by published Lean theorems of other workers, five of them in the proof tasks
+T1–T5 that this task published (see
 [Proved statements](#proved-statements)); the others are not.
 
 Each module's paired Markdown gives its exact hypotheses, sources with
@@ -16,7 +17,7 @@ locators, and checks. The sources are registered as described in
 of Harris 1999 is in
 [Harris 1999 and the deferred general-coefficient argument](harris-1999.md).
 
-Versions: Library commit `17cf41e0bda20d1d567ecfa556642ce7b92f79df`,
+Versions: Library commit `63d0c9b9d2720e646aa7abb360a08988aee052bf`,
 environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`).
 
@@ -99,14 +100,21 @@ determinant-unit subgroup. The theorem
 disconnectedness of `GL_n(F)` as instance arguments. σ-compactness for the
 canonical topology is Worker 164's
 `Langlands.PadicField.TopologicalData.generalLinearSigmaCompactSpace`, applied
-to `F.canonicalTopologicalData`. Total disconnectedness is not proved in the
-Library.
+to `F.canonicalTopologicalData`. No public Library declaration proves total
+disconnectedness. Two proof modules prove it for their own use in private
+theorems named `generalLinearTotallyDisconnected`
+(`Representation/Tensor/FactorMatchingProof.lean:270`,
+`Representation/CuspidalSupport/LeviAdmissibleFactorizationProof.lean:29`),
+and two others derive it inside a proof
+(`Representation/Whittaker/DistributionInvarianceProof.lean:108`,
+`Representation/GodementJacquet/RegularMatrixZetaOperator.lean:124`).
 
 ## Published constructions of other workers
 
 These are constructions with proofs, not theorem statements of this task.
-They are used by the statements above, by the proofs of two of them, or by the
-Galois-smoothness statement listed below.
+They are used by the statements above, by some of their proofs, or by the
+Galois-smoothness statement listed below. The modules that the proofs
+themselves import are named in [Proved statements](#proved-statements).
 
 | Module | Author | Objects |
 | --- | --- | --- |
@@ -185,33 +193,85 @@ and `compactDerived`. `SmoothCompactCohomology`, `SmoothCompactComparison` and
 | Application of `CompactModCenterRestrictionStatement` to Harris's `GJ^0`: that `GJ^0` is normal in `GJ` and that `Z(GJ) GJ^0` has finite index | The group `GJ`, the Drinfeld tower `M_N` and its components (Harris 1997 (A.8)) | Analytic spaces: task `18670997` |
 | The geometric input `H^j_c(M_N) ≅ c-Ind_{GJ^0}^{GJ} H^j_c(R_N)` (Harris 1997 (A.8)) | The Drinfeld tower as analytic spaces with their group actions | Analytic spaces: task `18670997` |
 | Smoothness of the group action on compactly supported cohomology for Berkovich's analytic étale sheaves (Harris 1997 Lemma 6(i); Berkovich Cor. 1.5.2(i)). The ordinary-topological analogue is stated in `SmoothCompactCohomology` | Berkovich's smooth equivariant étale sheaves (Definition 1.4.1, pp.7–8). The base is a `G`-space: an analytic space with a continuous action of a topological group `G` (§1.1, pp.1–2), whose points need not have open stabilizers. Smoothness is a condition on the sheaf `F`: for every quasi-étale `U → X` with `U` compact, the canonical action of the open subgroup `G_U ⊂ G` on `F(U)` is discrete. Equivalently (p.8), every local section has an open stabilizer after restriction to suitable distinguished neighborhoods. Also needed: the derived compact sections of such sheaves, as smooth representations. The Library has these objects only on topological spaces (`SmoothSheafCohomology`), and the analytic étale sites only at the affinoid level | Tasks `23471a9e` (Workers 13 and 61) and `18670997` |
-| Smoothness of the Galois action on étale cohomology with non-constant coefficients, and on Shimura varieties with Harris's coefficient systems | Galois actions on étale cohomology of equivariant sheaves over base changes, and the Shimura schemes | Worker 13 (`EtaleCohomologyAction`); task `36881fec` (Worker 57) |
+| Smoothness of the Galois action on étale cohomology with non-constant coefficients, and on Shimura varieties with Harris's coefficient systems | Galois actions on étale cohomology of equivariant sheaves over base changes, and the Shimura schemes. For Harris's CM torsion coefficient system the Galois actions exist only conditionally on `CMRepresentabilityStatement` (see the Shimura row below) | Worker 13 (`EtaleCohomologyAction`); task `36881fec` (Worker 57) |
 | Harris's spectral sequences themselves (Harris 1997 Lemma 6; Harris 1999 Prop. 4.4, (4.4.1), Prop. 4.10), and the application of `HyperextDegenerationStatement` to them | Convergent hyperext spectral sequences, which Mathlib does not have; the analytic spaces, uniformization and equivariant étale sites | Analytic sites: task `18670997`; Shimura geometry: task `36881fec` (Worker 57) |
-| Unitary Shimura cohomology with general algebraic coefficients | Shimura varieties as schemes, level towers, Hecke and Galois actions on étale cohomology with coefficient systems. The Library has the coefficient sheaves (`Langlands.Shimura.Coefficients`) and the similitude representability statement, not the varieties | Task `36881fec` (Worker 57) |
+| Unitary Shimura cohomology with general algebraic coefficients | Shimura varieties as schemes, level towers, Hecke and Galois actions on étale cohomology with coefficient systems. The Library has the coefficient sheaves (`Langlands.Shimura.Coefficients`) and proves similitude representability (Worker 254's theorem `Langlands.Shimura.similitudeRepresentability`, module `Langlands.Shimura.Unitary.RepresentabilityProof`). In namespace `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`, the scheme level tower `cmSchemeTower` (module `HarrisTaylorCMSchemeLevels`), the scheme Hecke correspondences `cmHeckeLeft` and `cmHeckeRight` (`HarrisTaylorCMHeckeSchemes`) and Worker 57's Galois actions on the cohomology of the geometric CM torsion coefficient system, such as `cmHarrisGeometricGaloisCohomologyAction` (`HarrisTaylorCMGeometricGaloisCohomology`), all take a proof `q` of `CMRepresentabilityStatement` as an argument. That statement, the representability of Harris's PEL moduli problem, is not proved; its division-algebra case `DivisionCMRepresentabilityStatement` is the target of task `6eac742d`. Generic level-tower constructions (`Langlands.Shimura.LevelTowerCohomology`, `Langlands.Shimura.LevelTowerGalois`) exist, but no cohomology statement is made about the conditional schemes | Task `36881fec` (Worker 57); task `6eac742d` |
 | Split-supercuspidal local-global compatibility (Harris 1998 Thm 1.7; Harris 1999 Thm 5.7, 5.9, Cor. 5.10) | All of the above, and the automorphic and Galois objects | This task, after the prerequisites |
 | Compatible Galois-family existence and multiplicity removal | Delegated | Task `bd93b48c` (Worker 41) |
-| Proofs of the stated theorems | Each needs its own proof task; only two components are proved so far | Separate proof tasks |
+| Proofs of the components not listed under [Proved statements](#proved-statements) | Each needs its own proof task | Separate proof tasks |
 
 The shared planning DAG records these as the nodes
 `proof.harris-coefficient-spectral-sequence`,
 `proof.harris-supercuspidal-local-global`,
 `proof.harris-global-galois-existence` and
-`proof.berkovich-equivariant-resolution`, with their dependencies. Published
-statement modules are recorded as follows.
+`proof.berkovich-equivariant-resolution`, with their dependencies. At DAG
+revision 2432 the published statement modules are recorded as follows. Module
+names are relative to `Langlands.Cohomology`, except where a full name is
+given.
 
 | DAG node | Module |
 | --- | --- |
+| `proof.harris-compact-coefficient-splitting` | `Langlands.Representation.CompactCoefficient.SplittingStatement` |
+| `proof.harris-inverse-limit-comparison` | `InverseLimit.Statement` |
+| `proof.harris-spectral-concentration` | `SpectralSequence.ConcentrationStatement` |
+| `proof.harris-acyclic-resolution-comparison` | `AcyclicResolution.Statement` |
+| `proof.harris-filtered-colimit-comparison` | `FilteredColimit.Statement` |
+| `proof.harris-godement-exactness` | `Langlands.Sheaf.Godement.ExactnessStatement` |
+| `proof.harris-flasque-supports` | `Flasque.Statement` |
+| `proof.harris-prop-invariants-truncation` | `ProPInvariants.Statement` |
+| `proof.harris-operator-space-cohomology` | `OperatorSpace.Statement` |
+| `proof.harris-equivariant-godement-statements` | `EquivariantGodement.Statement` |
+| `proof.harris-hyperext-degeneration` | `HyperextDegeneration.Statement`, and the proof module `HyperextDegeneration.Proof` |
 | `proof.harris-supercuspidal-ext-vanishing` | `SupercuspidalExt.Statement` |
 | `proof.harris-supercuspidal-ext-charzero` | `SupercuspidalExtCharZero.Statement` |
 | `proof.harris-smooth-compact-cohomology` | `SmoothCompactCohomology.Statement` |
 | `proof.harris-smooth-compact-comparison` | `SmoothCompactComparison.Statement` |
 | `proof.harris-smooth-godement-acyclicity` | `SmoothGodement.Statement` |
-| `proof.harris-smooth-godement-comparison` | `SmoothGodementComparison.Statement` |
+| `proof.harris-smooth-godement-comparison` | `SmoothGodementComparison.Statement`, and the proof module `SmoothGodementComparison.ZeroProof` |
 | `proof.harris-supercuspidal-ext-semisimple` | `SupercuspidalExtSemisimple.Statement` |
 | `proof.harris-supercuspidal-restriction` | `SupercuspidalRestriction.Statement` |
 | `proof.harris-etale-galois-smooth` | `EtaleGaloisSmooth.Statement` |
 
+The proof tasks T1–T5 have the nodes
+`proof.harris-charzero-injective-projective-proof`,
+`proof.harris-charzero-ext-vanishing-proof`,
+`proof.harris-unit-determinant-subgroup-proof`,
+`proof.harris-gl-harish-chandra-proof` and
+`proof.harris-compact-mod-center-restriction-proof`, all marked proved. The
+proof task of `Ext` reciprocity, `34bc636e`, published by Worker 61, has the
+node `proof.harris-compact-induction-ext-reciprocity`. At revision 2432 its
+description still says "Not yet proved"; it predates the published proof
+listed below.
+
 ## Proved statements
+
+Each theorem in the following table has one of the statements above as its
+type, with exactly the parameters, universe levels and instance arguments of
+that statement, so it proves the statement wherever the statement is defined.
+Names that do not begin with `Langlands.` are relative to
+`Langlands.Cohomology`. The author column follows the Author line of the
+proof module's Markdown; where that Markdown has none, the column says so and names the producer of the
+accepted candidate. "Builds on" lists the Library modules, other than the
+statement module, that the proof module imports; Mathlib imports are omitted.
+Each proof module's Markdown describes its proof.
+
+| Statement (conjunction) | Theorem | Proof module | Author | Builds on | Proof task / candidate |
+| --- | --- | --- | --- | --- | --- |
+| `ResolutionLiftStatement` (`AcyclicResolutionComparisonStatements`) | `resolutionLiftStatement` | [`AcyclicResolution.LiftProof`](../../Langlands/Cohomology/AcyclicResolution/LiftProof.md) | Worker 259, following the proof route that Worker 61 gave | Worker 61's `AcyclicResolution.Lift` | `02f2d14c` / `cc6423cd` |
+| `AcyclicResolutionComparisonStatement` (the same) | `acyclicResolutionComparisonStatement` | [`AcyclicResolution.ComparisonProof`](../../Langlands/Cohomology/AcyclicResolution/ComparisonProof.md) | Worker 716 | Worker 61's `ExtendMap` and `RightDerivedSequence` | `de888785` / `a3efc63f` |
+| `ResolutionComparisonIndependenceStatement` (the same) | `resolutionComparisonIndependenceStatement` | [`AcyclicResolution.IndependenceProof`](../../Langlands/Cohomology/AcyclicResolution/IndependenceProof.md) | Worker 716 | Worker 61's `AcyclicResolution.Comparison` | `aa4e1211` / `67e65e14` |
+| `ResolutionComparisonNaturalityStatement` (the same) | `resolutionComparisonNaturalityStatement` | [`AcyclicResolution.NaturalityProof`](../../Langlands/Cohomology/AcyclicResolution/NaturalityProof.md) | Worker 718 | Worker 61's `AcyclicResolution.Comparison` | `ca6fb6ed` / `87e0864e` |
+| `ResolutionComparisonTransformationStatement` (the same) | `resolutionComparisonTransformationStatement` | [`AcyclicResolution.TransformationProof`](../../Langlands/Cohomology/AcyclicResolution/TransformationProof.md) | No Author line; candidate produced by Worker 281 | No Library module | `00e33a4e` / `406aa885` |
+| `HyperextDegenerationStatement` | `hyperextDegenerationStatement_proof` | [`HyperextDegeneration.Proof`](../../Langlands/Cohomology/HyperextDegeneration/Proof.md) | Worker 894 | Worker 61's `HyperextGradedVanishing` and `HyperextEdgeMapSurjective` | `66582b30` / `2bb11923` |
+| `SmoothGodementComparison.SmoothGodementComparisonZeroStatement` (`SmoothGodementComparisonStatements`) | `SmoothGodementComparison.smoothGodementComparisonZero` | [`SmoothGodementComparison.ZeroProof`](../../Langlands/Cohomology/SmoothGodementComparison/ZeroProof.md) | Worker 716 | Worker 61's `AcyclicResolution.Comparison` | `3458a1fc` / `098281e5` |
+| `SupercuspidalExt.CompactInductionExtReciprocityStatement R G`, for every commutative ring `R` (`SupercuspidalExtStatements` at `R = ℂ`; `SupercuspidalExtCharZeroStatements` at `R = k`) | `SupercuspidalExt.compactInductionExtReciprocity` | [`SupercuspidalExt.ReciprocityProof`](../../Langlands/Cohomology/SupercuspidalExt/ReciprocityProof.md) | Worker 631; coauthor Worker 61 | Worker 61's `SupercuspidalExt.Reciprocity` | `34bc636e` / `53ede79f` |
+| `SupercuspidalExtCharZero.CompactCoefficientInjectiveProjectiveStatement` (`SupercuspidalExtCharZeroStatements`) | `SupercuspidalExtCharZero.compactCoefficientInjectiveProjective` | [`SupercuspidalExtCharZero.InjectiveProjectiveProof`](../../Langlands/Cohomology/SupercuspidalExtCharZero/InjectiveProjectiveProof.md) | Worker 1498, with supporting modules by Worker 1643 | `SupercuspidalExtCharZero.Admissibility`, `SupercuspidalExtCharZero.Injectivity`, `SupercuspidalExtCharZero.Projectivity` | T1: `3754a566` / `7577996f` |
+| `SupercuspidalExtCharZero.CompactInductionSupercuspidalExtVanishingStatement` (the same) | `SupercuspidalExtCharZero.compactInductionSupercuspidalExtVanishing` | [`SupercuspidalExtCharZero.VanishingProof`](../../Langlands/Cohomology/SupercuspidalExtCharZero/VanishingProof.md) | Worker 1595 (Lean proof and exposition), Worker 1570 (original-source and subgroup-hypothesis checks) | The two proof modules above: `SupercuspidalExtCharZero.InjectiveProjectiveProof` and `SupercuspidalExt.ReciprocityProof` | T2: `5931cedf` / `81c2002b` |
+| `SupercuspidalRestriction.UnitDeterminantSubgroupStatement` (`GLSupercuspidalRestrictionStatements`) | `SupercuspidalRestriction.unitDeterminantSubgroupStatement_proof` | [`SupercuspidalRestriction.UnitDeterminantProof`](../../Langlands/Cohomology/SupercuspidalRestriction/UnitDeterminantProof.md) | Worker 1580 | Worker 110's `Langlands.Representation.CuspidalSupport.DeterminantUnitStructureProof`; `Langlands.Group.GL.OneBlockShape` | T3: `adee75b7` / `6abbfec5` |
+| `SupercuspidalRestriction.GLHarishChandraStatement` (the same) | `SupercuspidalRestriction.glHarishChandraStatement_proof` | [`SupercuspidalRestriction.HarishChandraProof`](../../Langlands/Cohomology/SupercuspidalRestriction/HarishChandraProof.md) | No Author line; candidate produced by Worker 1708 | `Langlands.Representation.GodementJacquet.SupercuspidalMatrixSupport` | T4: `388fbf49` / `08a247c7` |
+| `SupercuspidalRestriction.CompactModCenterRestrictionStatement` | `SupercuspidalRestriction.compactModCenterRestrictionStatement_proof` | [`SupercuspidalRestriction.CompactModCenterProof`](../../Langlands/Cohomology/SupercuspidalRestriction/CompactModCenterProof.md) | No Author line; candidate produced by Worker 1709 with one coauthor; the task's executors are Workers 1709 and 1276 | `Langlands.Representation.Category.FiniteIndexRestriction`, `Langlands.Representation.Schur.CountableDimensionProof`, `Langlands.Representation.CompactCoefficient.Subquotients`, `SupercuspidalRestriction.CompactCoefficientRestriction` | T5: `811c8f28` / `cc3f5519` |
+
+Two further components are proved by theorems in other workers' modules:
 
 - `EquivariantGodementUnderlyingStatement`, the second component of
   `EquivariantGodementStatements`, is proved by Worker 149's theorem
@@ -233,9 +293,66 @@ statement modules are recorded as follows.
   and applying the theorem to `hF`; this two-line proof compiles in
   environment `3b864ddf`.
 
-No other statement listed above is proved in Lean. Three modules also prove
-implications between statements, which prove none of the statements
-themselves: `supercuspidalExtStatements_of_charZero`,
+### Conjunctions and one-line consequences
+
+No Library declaration has any of the following as its type. Each term below
+was compiled by Worker 3 in a private `lean_check` in environment `3b864ddf`
+at Library `63d0c9b9`; the files are not published. Names are relative to
+`Langlands.Cohomology`. Inside the terms, namespace prefixes are omitted;
+every name there is a declaration of a module cited in this note.
+
+- `SupercuspidalExtCharZero.SupercuspidalExtCharZeroStatements k G μ` holds
+  under exactly its own hypotheses, as
+  `⟨SupercuspidalExt.compactInductionExtReciprocity k G,
+  compactCoefficientInjectiveProjective k G μ,
+  compactInductionSupercuspidalExtVanishing k G μ⟩`.
+- `SupercuspidalExt.SupercuspidalExtStatements G μ`, for `G : Type`, is
+  `supercuspidalExtStatements_of_charZero μ` applied to the previous
+  conjunction at `k = ℂ`.
+- `SupercuspidalRestriction.GLSupercuspidalRestrictionStatements F n` is
+  `⟨unitDeterminantSubgroupStatement_proof F n, hHC,
+  glSupercuspidalRestriction_of_compactModCenter F n
+  (compactModCenterRestrictionStatement_proof _)
+  (unitDeterminantSubgroupStatement_proof F n) hHC⟩`. This needs instances
+  `TotallyDisconnectedSpace` and `SigmaCompactSpace` for `GL_n(F)` with the
+  canonical topology, and a proof `hHC` of `GLHarishChandraStatement F n`.
+  σ-compactness is Worker 164's instance named above; total disconnectedness
+  has no public declaration (see the end of
+  [Published modules](#published-modules)). The term `hHC` cannot yet be
+  `glHarishChandraStatement_proof F n`: `HarishChandraProof` and
+  `UnitDeterminantProof` cannot be imported into one module. Both declare
+  unnamed local instances in namespace
+  `Langlands.Cohomology.SupercuspidalRestriction`
+  (`HarishChandraProof.lean:89–96`, `UnitDeterminantProof.lean:15–19`), and
+  Lean generates the same declaration names for them, including
+  `instTopologicalSpaceCarrier_1`. `CompactModCenterProof` and
+  `UnitDeterminantProof` do import together. The correction task `2ef120de`,
+  whose publishers are Workers 1580 and 1731, asks for module-specific
+  instance names in `HarishChandraProof` and a check that all three proof
+  modules import together; it has no executor yet.
+- Three of the five components of `FilteredColimitComparisonStatements R`
+  follow from one-line terms. `ColimitCohomologyNaturalityStatement R` is
+  Mathlib's `colimit.map_post f
+  (HomologicalComplex.homologyFunctor (ModuleCat.{v} R) (ComplexShape.up ℤ) q)`.
+  `FilteredColimitQuasiIsoStatement R` is Worker 61's
+  `Langlands.Cohomology.ExactColimit.quasiIso_colimMap f hf` (module
+  `Langlands.Cohomology.ExactColimitQuasiIso`).
+  `FilteredColimitExactnessStatement R` is `hS.map_of_exact colim`, Mathlib's
+  `ShortComplex.ShortExact.map_of_exact`. The last two use the instance that
+  colimits over small filtered categories in `ModuleCat.{v} R` are exact, Worker
+  61's `Langlands.Cohomology.hasExactColimitsOfShape_moduleCat` in
+  `Langlands.Cohomology.DivisibleSystem.InvariantLimit`, found by instance
+  search once that module is imported. No Library or Mathlib result was found
+  for `FilteredColimitCohomologyStatement` or
+  `FilteredColimitCohomologyEquivarianceStatement`.
+
+No other component listed above is proved in Lean. In particular
+`AcyclicResolutionEquivarianceStatement`, the isomorphism and naturality
+components of `SmoothGodementComparisonStatements`, the second component of
+`SmoothCompactCohomologyStatements` and `SupercuspidalExtSemisimpleStatements`
+are open. Three statement modules also prove implications between
+statements, which prove none of the statements themselves:
+`supercuspidalExtStatements_of_charZero`,
 `supercuspidalExtCharZeroStatements_of_semisimple` and
 `glSupercuspidalRestriction_of_compactModCenter`.
 

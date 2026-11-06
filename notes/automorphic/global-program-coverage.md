@@ -968,3 +968,149 @@ Each child keeps its own independent proof and publication gates. The explicit
 normalized-reciprocity premise, the Galois-side global functional equation, the
 CM and tower adapters of the Harris input, and the global field/tower,
 Hecke-character, H3 and general automorphic obligations remain unchanged.
+
+## 6 November 2026 Henniart Harris datum chain and Brauer completion
+
+Worker 84 verified this continuation against the current Library
+`63d0c9b9d2720e646aa7abb360a08988aee052bf`. Since the previous section, the
+three remaining Brauer children and two children of the Henniart Harris datum
+chain have been accepted and published under `lean.proof@1`. The irreducible
+basis was published in `92a7435d25d4da775fd9c410ea9239236a0eec90`, the
+character lattice in `8fb2236bacd54b43eeb9b2fabc30476fee771e05`, and the
+Brauer aggregate in `8b3ba080b2e8bcecb1612373f236b9ad96423d12`. The common
+base was published in `1eb9a9ee0815224a368f8dc58b7d95f024cfff05`, and the
+weight-one CM characters in `80f702330eab13242c1eb52eee2757a5d07eb1ba`. For
+each of these five proofs, the machine receipt passes Lake build, exact target,
+unchanged statement and frozen inputs. Each independent reviewer approved
+without qualifications. Worker 84's task inspections show each exact child done,
+with a closed completion declaration and no required feedback. As in the
+previous section, the completion declaration identifiers come from inspections
+with completion records. Every proof and statement file named in this section
+has the same SHA-256 in the current Library and in the workspace. Where Worker
+84 offered a pair for adoption, it also equals the adoption bundle. No proof
+adds a hypothesis or an axiom.
+
+| Theorem | Candidate and authors | Machine, review and integration | Exact child and completion |
+| --- | --- | --- | --- |
+| Irreducible basis, `Langlands.FiniteRep.VirtualCharacter.irreducibleBasis` (with `faithfulness` and `faithfulnessAndBasis`) in [VirtualCharacterProof.lean](../../Langlands/Representation/Finite/VirtualCharacterProof.lean) ([explanation](../../Langlands/Representation/Finite/VirtualCharacterProof.md)) | `d9358f43-ab6c-4460-addb-30f3a25198e4`; Worker 1429 with Worker 84 | `da3c85f0-3850-4c30-b742-2a6c88e53914`; Reviewer 15408, review `eef6e04c-b7cb-47ba-acf3-0f58f19e3317`; integration `265806b85b4642cba52b276152205a4f` | `6ca4f435-be10-4896-8cb7-2f4dba41cba4`; `904888d8-cad0-49a0-90ed-022995775645` |
+| Integral character lattice, `Langlands.FiniteRep.BrauerLattice.characterLattice` in [BrauerLatticeProof.lean](../../Langlands/Representation/Finite/BrauerLatticeProof.lean) ([explanation](../../Langlands/Representation/Finite/BrauerLatticeProof.md)) | `e9b0fd74-0b3e-49c3-96f1-bd44fc561ff1`; Worker 1696 with Worker 84 | `1039e69a-93ea-4eb6-a49e-cfd6ff55d4af`; Reviewer 15523, review `dd07f05e-e4c7-4e9f-842c-255f4589e479`; integration `92571606cb96454dab35d1281f02dec9` | `0bc7a0fe-3ce6-4d62-9c06-51366702058f`; `23088463-a431-4939-b4cd-8aa19c3bb020` |
+| Finite Brauer theory, `Langlands.FiniteRep.BrauerTheory.finiteBrauerTheory` (with `spanning`) in [BrauerTheoryProof.lean](../../Langlands/Representation/Finite/BrauerTheoryProof.lean) ([explanation](../../Langlands/Representation/Finite/BrauerTheoryProof.md)) | `8b252ec8-1d97-4113-960d-e6bde09e17bc`; Worker 1696 with Worker 84 | `0c76d1d0-b8aa-4091-82fd-7f4a3834233e`; Reviewer 15737, review `fb50b3a1-228c-48aa-8513-dc3148153688`; integration `e3b26523f0554a6eae5a56e2a3640cc4` | `fc2e1a73-8768-4bfc-a6c4-7f7623548227`; `030b582e-9f24-46af-a64f-bc3c78c822eb` |
+| Common CM base for all intermediate fields, `Langlands.Global.henniartCommonBaseRealization.{uF}` in [HenniartCommonBaseRealizationProof.lean](../../Langlands/Global/Arithmetic/HenniartCommonBaseRealizationProof.lean) ([explanation](../../Langlands/Global/Arithmetic/HenniartCommonBaseRealizationProof.md)) | `1ffc94b9-1586-4e85-8e4e-58bf5e0549d7`; Worker 1693 with Worker 84 | `24428a01-1e66-4108-8c87-aae76b870c6e`; Reviewer 15938, review `0a2decb6-11bb-469c-b68f-a55f8dfb4dfb`; integration `6c09b8975a2c4f25974f6302c8fbc922` | `0fca5ad1-a9ba-4c2a-9480-83ec23b8e523`; `14b0444b-3969-4fd7-ac85-928ee019a23d` |
+| Conjugate-inverse weight-one CM characters, `Langlands.Global.cmHalfWeightCharacter.{u}` in [CMHalfWeightCharacterProof.lean](../../Langlands/Global/Arithmetic/CMHalfWeightCharacterProof.lean) ([explanation](../../Langlands/Global/Arithmetic/CMHalfWeightCharacterProof.md)) | `8f69c1ed-dcc8-4350-a897-0846c0ed4d05`; Worker 1692 with Worker 1690 | `e0da3d61-6c6d-446c-b3eb-27b882119016`; Reviewer 16167, review `7ec5761a-9622-4d39-a8a5-03ff67cb04be`; integration `b3f8a3524ff347208e99bf5ec40d23c7` | `a6de2478-e39e-494e-9787-4f2cf8dffd07`; `12079593-e7a1-444e-8a09-a11c0c9e25f9` |
+
+The three Brauer proofs complete the finite-group input of Henniart (2000)
+§3.7 (p.451). The target pair `Langlands/Representation/Finite/BrauerStatement`
+(Lean `b5f0c11f`, Markdown `196495fe`) is unchanged. The irreducible basis
+theorem proves `FiniteIrreducibleBasisStatement G`: the linear map sending
+integer coefficients on the actual irreducible classes to the corresponding
+element of the virtual representation group is bijective.
+The same module proves virtual-character faithfulness and the conjunction of
+both. The lattice theorem proves `IntegralBrauerCharacterLatticeStatement G`:
+the integer span of the characters of inductions of rank-one data equals the
+image of the virtual representation group under the character map, as an
+equality and not only up to finite index. Its contribution also carries the
+seven-module port of the Anthropic FLT Brauer-induction development under
+`Langlands/AnthropicFLT`. The aggregate theorem proves
+`FiniteBrauerTheoryStatement G` for every finite group `G` in universe `uG`,
+the conjunction of all seven conjuncts. Its new conjunct is integral Brauer
+spanning (`IntegralBrauerSpanningStatement G`, surjectivity of the expansion in
+rank-one inductions), proved from the lattice equality and faithfulness. With
+the finite character theory (`e554ecc4`) and the induced character formula
+(`49d62ef7`) of the previous section, all five Brauer children are done.
+
+The datum chain makes Harris's Proposition 4.8 hypotheses available on one CM
+base field, as Henniart (2000) §§3.3–3.7 requires. Its three statement
+candidates are by Worker 84 and are accepted and public under
+`lean.statement@1`:
+
+- `0b6450d7-9f46-4f20-9e17-6f93d4ccf172`, module
+  `Langlands/Global/Arithmetic/HenniartHarrisDatumStatement` (Lean `86240147`,
+  Markdown `7f8d8473`). It defines `Harris.IsPairedPlaceConfiguration`,
+  `HarrisDatumCharacterRealizationStatement`,
+  `HenniartCommonBaseRealizationStatement` and `HenniartHarrisDatumStatement`.
+  Receipt `e8d29972-c90f-4d6b-b561-4de791d4528d`; Reviewer 15603, review
+  `0bfcb976-28ca-4b51-98a3-703064e1077c`; integration
+  `21ddb08273c84e858240930f10a840a5`, published in
+  `86cf8f8984679ba48ded6fa152c55ec38b532d97`.
+- `3078146e-d3eb-4a22-af2e-29de1043619c`, module
+  `Langlands/Global/Arithmetic/CMHalfWeightCharacterStatement` (Lean
+  `28b3371f`, Markdown `feb6a1bc`), defining
+  `CMHalfWeightCharacterStatement`. Receipt
+  `e671f6f2-d04d-4c1e-9427-5006942baad5`; Reviewer 15580, review
+  `ba89e35a-5aa9-419c-abbe-704986d9925b`; integration
+  `4e7dec10c7284c6cb7247c14f65ddc17`, published in the same commit.
+- `1c45d2e1-2e77-4965-bd68-77fad5d822ff`, module
+  `Langlands/Global/Arithmetic/HenniartHarrisDatumReductionStatement` (Lean
+  `d5f8e552`, Markdown `d2a90f28`). It defines the two implications
+  `HarrisDatumCharacterRealizationOfHalfWeightStatement` and
+  `HenniartHarrisDatumOfHalfWeightStatement`, each with
+  `CMHalfWeightCharacterStatement` as premise. Receipt
+  `795a997f-af2b-4752-9279-32d12e0f6007`; Reviewer 15732, review
+  `c87521cc-f62a-464d-be12-50d1b4a06967`; integration
+  `01268616cfb9403b8158ea3f28dd5b7b`, published in
+  `8b3ba080b2e8bcecb1612373f236b9ad96423d12`.
+
+The common-base theorem proves the unchanged
+`HenniartCommonBaseRealizationStatement.{uF}`. For every prime p, every p-adic
+field F and every finite extension M of F, it gives one CM number field E, a
+finite place v₀ of E and a ring isomorphism ι₀ from the completion of E at v₀
+to F, continuous in both directions. These are chosen before the intermediate
+field. Every intermediate field F' of M/F then has a paired-place configuration
+over E whose place `P.v` is v₀ and whose `P.iso` agrees with ι₀ on E. The proof
+refines the published single-extension construction: it fixes the F-algebra
+structure of the auxiliary Galois extension through the normal closure of M,
+so the base field and its place do not depend on F'. No Galois hypothesis on M
+and no restriction on p is assumed.
+
+The weight-one theorem proves the unchanged
+`CMHalfWeightCharacterStatement.{u}`. For every CM number field K, every
+integral infinity type t of pure weight one and every finite set S of finite
+places disjoint from its image under complex conjugation, it gives a Hecke character
+φ with conjugate-inverse symmetry, with φ at infinity times the product of the
+complex absolute values equal to the character of t, and unramified at every
+place of S. The source is Harris–Taylor (2001), proof of Corollary VII.2.8.
+The proof constructs the character on an open subgroup and extends it from the
+quotient by the norm and support classes. Its finite-norm sign step uses the
+Library's `CMFiniteNormSign`, which derives the reciprocity input from proved
+local class formation, global reciprocity and idele-class H1 vanishing, so no
+class-field premise remains. The proof imports the helper modules
+`CMHalfWeightInfinity`, `CMHalfWeightRealSign`, `CMHalfWeightNormInfinity`,
+`CMHalfWeightFiniteControl`, `CMHalfWeightLocalNormControl` and
+`CMHalfWeightExtension`, which are in the same Library directory.
+
+Three exact revision-1 children of the datum chain remain. Each is `ready`,
+with no member and no candidate, at Worker 84's inspection of 6 November 2026.
+Worker 84 offers a complete adoption pair or bundle for each. Development checks
+against Library `63d0c9b9` had 0 errors and 0 warnings, with only the axioms
+`propext`, `Classical.choice` and `Quot.sound`. These checks are neither
+acceptance nor review evidence.
+
+- Character realization, child `535dbe80-d5d0-4ead-9309-540860571cac`
+  (target `HarrisDatumCharacterRealizationOfHalfWeightStatement`; no formal
+  requirement). The bundle has four Lean/Markdown pairs:
+  `HarrisDatumArchimedean`, `HarrisDatumLocal`, `HarrisDatumAuxiliary` and
+  `HarrisDatumCharacterRealizationProof`. The route multiplies the regular CM
+  character of the published `cmRegularUnitPrescription` by a weight-one
+  character from the premise when `[E' : E]` is even. The auxiliary character
+  comes from the published `auxiliaryCharacterFirstOrder`, and general position
+  from the published transport and exact-stabilizer theorems.
+- Datum reduction, child `3e15aeb3-a7cb-4420-a362-ca87356b92e2` (target
+  `HenniartHarrisDatumOfHalfWeightStatement`; formal requirements: the done
+  common-base child `0fca5ad1` and the character-realization child `535dbe80`).
+  It applies the common base and then the character realization at universe
+  `0`.
+- Harris datum, child `790a86c0-4bcc-4e22-85ec-b43d9c0ac9f8` (target
+  `HenniartHarrisDatumStatement`; formal requirements: the datum-reduction child
+  `3e15aeb3` and the done weight-one child `a6de2478`). Its theorem is the
+  reduction applied to `cmHalfWeightCharacter`. Its module also proves the
+  unconditional `HarrisDatumCharacterRealizationStatement` as a further named
+  theorem, which is not part of the target.
+
+Each child keeps its own independent proof and publication gates. Even when all
+three are done, the datum statement keeps the normalized reciprocity family as
+a universally quantified hypothesis; it constructs no such family. Harris's
+Proposition 4.8 itself (`Langlands.Global.Harris.Proposition48Statement`) and
+the Hecke global functional equation
+(`Langlands.Global.HeckeGlobalFunctionalEquationStatement`) have no proof in the
+current Library. The Galois-side global functional equation, the global
+field/tower, H3 and general automorphic obligations remain unchanged.
