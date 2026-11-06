@@ -109,3 +109,8 @@ Finally, the exported theorem eliminates rank zero using the target's positive
 rank assumption and applies the two implication lemmas at successor ranks.
 Proving the three segment inputs remains necessary for the unconditional
 tempered block uniqueness theorem.
+
+The finite-occurrence matching step reuses
+`Langlands.Combinatorics.exists_equiv_of_ofFn_multiset_eq` in
+`Langlands.Combinatorics.FiniteOccurrenceMatching`. The helper has the same
+statement and proof as the formerly private copy.

@@ -1,0 +1,17 @@
+# Actual simple comparison graphs after field extension
+
+This internal support module assembles a full `SimpleComparisonGraph` after an arbitrary same-universe field extension. Its envelope uses the actual pullback of the original graph group. Both projections and the distinguished torus lift are the actual pulled-back morphisms. Invertibility of the two extended projections gives a torus-compatible ground comparison by fpqc reflection; the module does not establish those invertibility hypotheses.
+
+The generic constructions `GraphEnvelope.reindex` and `GraphEnvelope.congrLocalMaps` retain the group, inclusion and geometric properties of a supplied graph envelope. Reindexing transfers containment and minimality through an equivalence of index types, including the distinguished common-source generator in the `none` case. Replacing the local maps by pointwise equal maps transfers the same full closed-competitor generation property.
+
+Let `k : Type u` and `K : Type u` be fields with `Algebra k K`. Let `G₁` and `G₂` be smooth affine group schemes over `Spec k`, with `G₁` connected. Let `T` be the common commutative group scheme and `D : SimpleComparisonGraph i₁ i₂` the actual supplied graph, containing splitness of `T`, a generic chamber, its indexed kernel directions, the local Levi comparisons and the generated envelope. No reductivity, maximality or root datum is required here.
+
+`SimpleComparisonGraph.baseChangeComparisons K D` transports the actual local comparisons and indexes them by the actual extended simple roots. It uses `simpleRootsBaseChangeEquiv` and the direction transport from the preceding local base-change module. Each local source, centralizer representation, isomorphism and common-torus square is its actual pullback.
+
+`SimpleComparisonGraph.baseChange K D` transports the full graph record. Splitness survives base change. Smoothness, affineness and connectedness of each original local source follow from its representation as a cocharacter centralizer in the smooth connected affine first ambient group. The generic graph base-change construction therefore applies. Reindexing by the inverse simple-root equivalence gives exactly the new local sources; functoriality of composition identifies the second local maps. No new rank-one gluing hypothesis over `K` is assumed.
+
+The results `baseChange_first`, `baseChange_second` and `baseChange_torusLift` identify the actual extended morphisms with pullbacks of the original ones. The first two use the actual product comparison and its projection identities. Joint faithfulness of the extended graph projections and the preserved torus squares prove the last identity.
+
+`isIso_first_of_baseChange` and `isIso_second_of_baseChange` descend invertibility of the respective extended graph projections using the fpqc field extension. `comparisonIsoOfBaseChange` composes the inverse first ground projection with the second ground projection, and `torus_comparisonIsoOfBaseChange` proves the common-torus square. These are conditional constructions: neither graph projection invertibility nor the exact Levi-gluing or common-torus isomorphism theorem is claimed.
+
+The provenance is internal: full family generation under field extension, actual local comparison and lattice transport, actual product base-change comparison, graph faithfulness and fpqc reflection. The arguments concern actual group schemes and subgroup functors on every scheme test; no rational-point replacement or classification theorem is used.

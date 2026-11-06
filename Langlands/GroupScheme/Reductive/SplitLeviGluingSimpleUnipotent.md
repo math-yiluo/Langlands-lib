@@ -76,7 +76,7 @@ connected underlying space.
 
 ## Supporting declarations
 
-- `mem_rationalPointClosure_comp φ hφ hx` (any field): let `φ : K.X ⟶ H.X` be a
+- `postcomp_mem_rationalPointClosure φ hφ hx` (any field): let `φ : K.X ⟶ H.X` be a
   morphism of the underlying schemes of two group schemes, sending every point
   of `S` into `rationalPointClosure H S'`. Then it sends every point of
   `rationalPointClosure K S` into `rationalPointClosure H S'`.
@@ -111,7 +111,7 @@ connected underlying space.
 
 ## Proofs
 
-`mem_rationalPointClosure_comp` is continuity of `φ.left`: it maps the closure
+`postcomp_mem_rationalPointClosure` is continuity of `φ.left`: it maps the closure
 of the locations of `S` into the closure of the image of those locations, which
 lies in the closed set `closure (rationalPointImage H S')`.
 `range_subset_closure_of_rationalPointClosure` applies the Library's
@@ -173,7 +173,7 @@ of `±a` lie in the centralizer of `ζ`
 (`SplitLeviGluingRankOneClosure`), applied in `Z` to the cocharacter `ν ≫ t`,
 puts `x' * y'` in the rational-point closure of the dynamic triple products of
 `Z`. Each such product maps under `z` into the required set of products in `G`,
-by the three containments above. `mem_rationalPointClosure_comp` transports the
+by the three containments above. `postcomp_mem_rationalPointClosure` transports the
 closure along `z`.
 
 `dense_rationalPointImage_simpleRootCell`: by `hZT`, every point of
@@ -241,3 +241,7 @@ generate the unipotent radical of the Borel subgroup as an algebraic group.
 This module proves it from the density step and makes no claim about the
 abstract group of rational points. The official errata snapshot of 2026-11-02
 has no entry for printed p.491 or p.443.
+
+Closure transport reuses `postcomp_mem_rationalPointClosure` from
+`SplitLeviGluingRankOneGraphClosure`, with the same morphism and point-set
+hypotheses.

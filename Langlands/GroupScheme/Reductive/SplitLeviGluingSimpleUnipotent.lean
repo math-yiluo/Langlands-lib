@@ -3,6 +3,7 @@ import Langlands.GroupScheme.Reductive.SplitLeviGluingMixedRoots
 import Langlands.GroupScheme.Reductive.SplitLeviGluingRationalDensity
 import Langlands.GroupScheme.Reductive.SplitLeviGluingGeneratedDensity
 import Langlands.GroupScheme.Reductive.SplitLeviGluingRankOneClosure
+import Langlands.GroupScheme.Reductive.SplitLeviGluingRankOneGraphClosure
 import Langlands.GroupScheme.Rational.RootSubgroupRepresentability
 import Langlands.GroupScheme.Rational.RootSubgroupStability
 import Langlands.GroupScheme.Rational.CocharacterCentralizerPointDetection
@@ -61,21 +62,6 @@ end Points
 section Closure
 
 variable {k : Type u} [Field k]
-
-/-- A morphism between two group schemes sending the points of `S` into the closure of `S'`
-sends the points in the closure of `S` into the closure of `S'`, by continuity. -/
-theorem mem_rationalPointClosure_comp {K H : GroupScheme (Spec (CommRingCat.of k))}
-    {S : Set (Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ K.X)}
-    {S' : Set (Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ H.X)} (φ : K.X ⟶ H.X)
-    (hφ : ∀ s ∈ S, s ≫ φ ∈ rationalPointClosure H S')
-    {x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ K.X} (hx : x ∈ rationalPointClosure K S) :
-    x ≫ φ ∈ rationalPointClosure H S' := by
-  have himage : φ.left '' rationalPointImage K S ⊆ closure (rationalPointImage H S') := by
-    rintro _ ⟨_, ⟨s, hs, rfl⟩, rfl⟩
-    exact hφ s hs
-  have h := image_closure_subset_closure_image φ.left.continuous ⟨_, hx, rfl⟩
-  change φ.left (x.left (IsLocalRing.closedPoint k)) ∈ closure (rationalPointImage H S')
-  exact closure_minimal himage isClosed_closure h
 
 /-- Over an algebraically closed field, a morphism from a scheme locally of finite type lies in
 the closure of the locations of `S` once all its rational points lie in the rational-point
@@ -316,7 +302,7 @@ theorem simple_mul_opposite_subset_rationalPointClosure (hT : IsSplitTorus T.toG
         (Dynamic.Affine.unipotentHom (CommGroupScheme.groupHom ν ≫ t))) := by
     rw [hcell]
     exact Set.mem_univ _
-  apply mem_rationalPointClosure_comp z.hom.hom _ hmem
+  apply postcomp_mem_rationalPointClosure z.hom.hom _ hmem
   intro s hs
   apply subset_rationalPointClosure
   rcases hs with ⟨_, ⟨p, hp, q, hq, rfl⟩, r, hr, rfl⟩
