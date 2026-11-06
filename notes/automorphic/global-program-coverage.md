@@ -808,3 +808,163 @@ and it keeps its own independent proof and publication gates. The composition
 keeps the explicit normalized-reciprocity premise and constructs no
 reciprocity family. The global field/tower, Hecke-character, H2 and general
 automorphic obligations remain unchanged.
+
+## 5 November 2026 Harris general-position and H2 composition proof publications
+
+Worker 84 verified this focused continuation against Library
+`ffddfca241fd480a4fb3b8c9215b48c488d7f97b` and rechecked the file hashes
+against Library `73016647c403b942bebe18fad4e569a83c342b52` and the current
+Library `9d2c31eb3021c9de866cc7f8313284404b3f5ccc`. The
+Harris composition and six H2 aggregate compositions are accepted/public under
+`lean.proof@1`. Harris was published in
+`bc859155612cc8ca34e8e25175ce2f7775c217dc`; ramified twist isolation,
+character prescription and CM-character globalization in
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`; and the CM finite-order
+prescription, regular CM unit prescription and field realization in
+`819ea8d4de6f7dde4b0d7f879f58af405e135acf`. For each one, the machine receipt
+passes Lake build, exact target, unchanged statement and frozen inputs. Each
+independent reviewer approved without qualifications. Fresh task inspection
+shows each exact child done, with a closed completion declaration and no
+required feedback. Any reader can confirm the done state with a task
+inspection. The completion declaration identifiers in the last column come from
+Worker 84's inspections with completion records, which TaskHub shows only to a
+child's publishers and executors. All fourteen proof files have the same hash
+in the frozen candidate, all three Library commits and the workspace. The four
+target statement pairs (`CharacterPrescriptionStatement`,
+`CMCharacterStatement`, `FieldRealizationStatement` and
+`GeneralPositionStatement`) are the same in all three Library commits and the
+workspace. Every composition applies published
+component theorems only; none adds a definition, hypothesis or axiom.
+
+| Theorem | Candidate and authors | Machine, review and integration | Exact child and completion |
+| --- | --- | --- | --- |
+| Full local Harris general position, `Langlands.Global.harrisGeneralPosition.{u}` in [HarrisGeneralPositionProof.lean](../../Langlands/Global/Arithmetic/HarrisGeneralPositionProof.lean) ([explanation](../../Langlands/Global/Arithmetic/HarrisGeneralPositionProof.md)) | `c86c27e3-68c2-48e8-a621-c80518ed04af`; Worker 1677 with Worker 84 | `1d78a22f-4688-43f3-b0b8-6a83227c0c93`; Reviewer 14622, review `9b9f5b82-005b-495f-9159-5c1706df7e34`; integration `abe1f20513564fb58082148c19102b92` | `83445b71-56bc-4dab-b2df-43a956708a18`; `6ba8014e-1874-4f51-a3d1-2398d8454652` |
+| Ramified twist isolation, `Langlands.Global.ramifiedTwistIsolation.{u}` in [RamifiedTwistIsolationProof.lean](../../Langlands/Global/Arithmetic/RamifiedTwistIsolationProof.lean) ([explanation](../../Langlands/Global/Arithmetic/RamifiedTwistIsolationProof.md)) | `7b46bd25-13c6-49cd-96a0-4efa633bcca9`; Worker 1652 with Worker 84 | `859ee68a-f9be-49ea-8533-268b07115023`; Reviewer 15092, review `c4f2f3d2-a939-4686-836d-67a78ac3dbd9`; integration `17f9fc3e50c146a7a727e30ae7402fee` | `bfd40677-931c-48c9-a0fa-268d1964449c`; `dc9e4e2d-6b3f-41b8-95e8-3bc17c3f4f87` |
+| Coherent finite-character prescription, `Langlands.Global.characterPrescription.{u}` in [CharacterPrescriptionAggregateProof.lean](../../Langlands/Global/Arithmetic/CharacterPrescriptionAggregateProof.lean) ([explanation](../../Langlands/Global/Arithmetic/CharacterPrescriptionAggregateProof.md)) | `167eaab1-baee-4d66-a9b5-1d549c7840a0`; Worker 1657 with Worker 84 | `8bafaf59-9a10-4879-aa80-83cb2125fcd2`; Reviewer 15098, review `44034348-7b94-4642-a4de-1424ee15e691`; integration `3ec43ee5601849d6947fc6a184815350` | `a589d250-7cd1-4f6b-9f2e-7236cd2bd64e`; `d6fffc88-f11e-40f1-b89c-701ea81fb1d3` |
+| Conjugate-self-dual finite-order CM prescription, `Langlands.Global.cmFiniteCharacterPrescription.{u}` in [CMFiniteCharacterPrescriptionProof.lean](../../Langlands/Global/Arithmetic/CMFiniteCharacterPrescriptionProof.lean) ([explanation](../../Langlands/Global/Arithmetic/CMFiniteCharacterPrescriptionProof.md)) | `6c927f2c-3c8f-4fcd-9e0f-e0b2f1d88558`; Worker 1690 with Worker 84 | `324493ce-2d0f-419e-9d02-4e5b44c18627`; Reviewer 15121, review `0cee3187-1f2e-4885-a608-02da93eb0844`; integration `f942ea7770bb427baca39d38a9a855f8` | `1d50aaf3-559e-4476-8c30-f7c6bf2abf64`; `714743a7-03df-4dbd-a896-ff33d6bf43a7` |
+| Regular CM infinity type with prescribed unit components, `Langlands.Global.cmRegularUnitPrescription.{u,v}` in [CMRegularUnitPrescriptionProof.lean](../../Langlands/Global/Arithmetic/CMRegularUnitPrescriptionProof.lean) ([explanation](../../Langlands/Global/Arithmetic/CMRegularUnitPrescriptionProof.md)) | `a55e3533-e93c-4571-8b3c-46a6f17d7a65`; Worker 1691 with Worker 84 | `9a09c64d-de8a-4902-baf8-4ee98c5a6c67`; Reviewer 15128, review `c4104b3b-f705-4975-8a55-6e5b5298fb08`; integration `e7c618cc5551466e9fb53f9e1865831d` | `05a6071e-e68e-407c-b639-4e9a267cf16e`; `29709abf-cabb-4dc1-a5fc-f97e58cf4972` |
+| Coherent CM-character globalization, `Langlands.Global.cmCharacterGlobalization.{u,v}` in [CMCharacterGlobalizationProof.lean](../../Langlands/Global/Arithmetic/CMCharacterGlobalizationProof.lean) ([explanation](../../Langlands/Global/Arithmetic/CMCharacterGlobalizationProof.md)) | `6f5c348f-05f8-4902-96a5-84d830e6f179`; Worker 1692 with Worker 84 | `79b29258-c02f-4717-a7cb-6cd61620fb3b`; Reviewer 15117, review `50cca368-d581-4756-bc6a-e73dc4850948`; integration `7e80f2694a944909aadc8b8be620ea26` | `b0a1a07e-7d06-4eea-928a-db2551b76c17`; `104c0c93-8d6e-4a5d-9f4e-237b8dcd7339` |
+| Field realization and split auxiliary quadratics, `Langlands.Global.fieldRealization.{u,v}` in [FieldRealizationAggregateProof.lean](../../Langlands/Global/Arithmetic/FieldRealizationAggregateProof.lean) ([explanation](../../Langlands/Global/Arithmetic/FieldRealizationAggregateProof.md)) | `42edd99b-db77-4f01-926d-0a8f0928cca6`; Worker 1693 with Worker 84 | `9e9ba91f-5a8f-4ea1-9a0c-e0f27ff7c051`; Reviewer 15118, review `dc076a2b-102e-4ec9-bf9e-449b69f7dd57`; integration `758fffea71604440a9e4e6eccfda59b1` | `f2efde1c-a30a-4d4b-823f-5b71a3eebaee`; `4f8b6b62-6b96-4d25-9d76-efb02a004f32` |
+
+The Harris theorem proves the unchanged
+`Langlands.Global.HarrisGeneralPositionStatement.{u}` in one arbitrary field
+universe. It applies the published reduction
+`auxiliaryGeneralPositionReduction` to `auxiliaryCharacterFirstOrder` with equal
+field universes. All three conjuncts are retained, for every p-adic field F
+and every extension F' of F: a Weil-subgroup character with exact stabilizer
+is in general position, which includes its prime-cyclic tower; for every
+supplied normalized reciprocity family and every bound r there is a
+finite-order character of the units of F' of conductor at least r whose Weil
+character has the exact stabilizer; and, under the same hypotheses, there is
+one whose Weil character is in general position. Residue characteristic two is
+included. The reciprocity
+family and its `NormalizedReciprocity` certificate remain explicit hypotheses.
+The theorem constructs no such family and does not discharge the separate
+normalized-system existence statement.
+
+The ramified twist isolation theorem proves the unchanged
+`Langlands.Global.RamifiedTwistIsolationStatement.{u}`. For every number field,
+every pair of disjoint finite sets S and T of finite places (empty sets
+included), every family of finite-order local characters on S and every depth
+function on T, it gives a finite-order Hecke character with exactly the
+prescribed components on S, trivial infinity component, and finite component
+at each place of T nontrivial on the actual principal units of the requested
+depth. The proof applies `ramifiedTwistIsolationOfInputs` to the published
+finite-order prescription and arbitrary-ramification theorems.
+
+The character prescription theorem proves the unchanged
+`Langlands.Global.CharacterPrescriptionStatement.{u}`, the conjunction of
+finite-order prescription (with the order bound 2n and the whole infinity
+component), arbitrarily ramified finite-order local characters, and ramified
+twist isolation. Each conjunct is a published theorem or, for isolation, the
+same application as above. The CM infinity-type and general-position inputs
+are separate statements.
+
+The CM finite-order theorem proves the unchanged
+`Langlands.Global.CMFiniteCharacterPrescriptionStatement.{u}`. For every CM
+field and every finite set S of finite places disjoint from its image under the
+actual complex conjugation, every family of finite-order local characters on S
+is the family of finite components of a finite-order, conjugate-self-dual Hecke
+character with trivial infinity component. The proof applies
+`cmFiniteCharacterPrescriptionOfFiniteOrder` to
+`finiteOrderCharacterPrescription_proof`.
+
+The regular CM theorem proves the unchanged
+`Langlands.Global.CMRegularUnitPrescriptionStatement.{u,v}` with the field
+universe and the imaginary-quadratic universe independent. For an anticyclotomic
+integral infinity type with distinct weights above a fixed imaginary-quadratic
+embedding, and continuous characters of the actual integral units at a finite
+set of places disjoint from its conjugate, it gives one positive scaling m and a
+conjugate-self-dual Hecke character with infinity type m times the given type,
+still with distinct weights, whose finite components restrict to the given unit
+characters. Uniformizer values are not prescribed. The proof discharges the
+three premises of `cmRegularUnitPrescriptionOfInputs` with the published
+unramified-infinity realization, finite-order CM prescription and integral-unit
+extension theorems.
+
+The CM globalization theorem proves the unchanged
+`Langlands.Global.CMCharacterGlobalizationStatement.{u,v}`, the conjunction of
+unramified infinity realization, finite-order CM prescription, integral-unit
+character extension and the regular unit prescription, by the same published
+terms. The auxiliary local norm-stabilizer construction is not part of this
+proposition.
+
+The field realization theorem proves the unchanged
+`Langlands.Global.FieldRealizationStatement.{u,v}`, the conjunction of the
+totally-real Galois realization (`totallyRealGaloisRealization`) and the split
+auxiliary quadratic fields (`splitAuxiliaryQuadratics`) of Henniart (2000)
+§3.3. It does not construct the later CM composita, the intermediate-field
+tower or paired completion data.
+
+With these publications every H2 aggregate composition of the field
+realization, character prescription, CM-character and Harris rows is
+accepted/public. The Brauer route for Henniart (2000) §3.7 (p.451) is the
+remaining finite-group input. It has five exact revision-1 children with two
+different target pairs. The prerequisite finite character theory child targets
+`Langlands.FiniteCharacterTheoryStatement.{uG,uV,uW}` in
+`Langlands/Representation/Finite/CharacterStatement` (Lean `d6772826`,
+Markdown `7a6a6b87`). The four Brauer-specific children target conjuncts of
+`Langlands.FiniteRep.FiniteBrauerTheoryStatement.{uG}`, or that aggregate
+itself, in `Langlands/Representation/Finite/BrauerStatement` (Lean
+`b5f0c11f`, Markdown `196495fe`). Both target pairs are unchanged in all three
+Library commits. Their status at Worker 84's task inspections of 5 November
+2026:
+
+- Finite character theory, child `0a860318-3018-47ed-b02c-3aec86f49f09`
+  (target `Langlands.FiniteCharacterTheoryStatement`, the CharacterStatement
+  pair): candidate `e554ecc4-ccce-4a13-825d-88febc4e4432` by Worker 1273 with
+  Worker 84, approved by Reviewer 15254 and published in
+  `73016647c403b942bebe18fad4e569a83c342b52`. The child is done; completion
+  declaration `842a04ab-b5b1-460c-b592-f6e3ecb382e8` (Worker 1273) is closed
+  with no required feedback.
+- Induced character formula, child `d2cae2f9-cfdf-443c-95cc-cffe37b69fb1`
+  (target `Langlands.FiniteRep.FiniteInducedCharacterFormulaStatement`, the
+  BrauerStatement pair, with the rank-one order and induced degree as named
+  theorems): candidate `49d62ef7-aa26-40b2-aa34-aae7c50e9305` by Worker 1187
+  with Worker 84, approved by Reviewer 15293 and published in the same commit.
+  The child is done; completion declaration
+  `553b7321-ffd2-445c-b3b1-ccd616a449ce` (Worker 1187) is closed with no
+  required feedback.
+- Irreducible basis, child `6ca4f435-be10-4896-8cb7-2f4dba41cba4` (target
+  `Langlands.FiniteRep.FiniteIrreducibleBasisStatement`, with virtual-character
+  faithfulness as a named theorem; formal requirement `e554ecc4`, now
+  satisfied): claimed by Worker 1429. Candidate
+  `d9358f43-ab6c-4460-addb-30f3a25198e4` by Worker 1429 with Worker 84 is
+  staged on base `73016647`; its Lean and Markdown files are byte-identical to
+  the adoption pair named in the task (`01376985`, `5d94674b`). It has no
+  machine receipt or review yet.
+- Character lattice, child `0bc7a0fe-3ce6-4d62-9c06-51366702058f` (target
+  `Langlands.FiniteRep.IntegralBrauerCharacterLatticeStatement`; formal
+  requirement `49d62ef7`, now satisfied; its contribution must include the
+  seven-module Anthropic FLT Brauer-induction port with licence and change
+  records): claimed by Worker 1696, no candidate.
+- Aggregate, child `fc2e1a73-8768-4bfc-a6c4-7f7623548227` (target
+  `Langlands.FiniteRep.FiniteBrauerTheoryStatement`, whose new conjunct is
+  integral Brauer spanning; formal requirements `49d62ef7` and the completion
+  of `6ca4f435` and `0bc7a0fe`): no member; the two task requirements are
+  open.
+
+Each child keeps its own independent proof and publication gates. The explicit
+normalized-reciprocity premise, the Galois-side global functional equation, the
+CM and tower adapters of the Harris input, and the global field/tower,
+Hecke-character, H3 and general automorphic obligations remain unchanged.
