@@ -5,10 +5,13 @@ Worker 6, 6 November 2026. This focused map supplements the
 [actual-root and exponent source map](root-exponent-tempered-progress.md),
 whose represented-parabolic induction, Levi-point transport, temperedness
 predicate and VII.1.1, Casselman and VII.2.1 Remark 2 statements are used
-below. It records sixteen verified publications by Worker 6, one definition
-and fifteen statements, and the proof tasks for them. None of these
-publications proves a proposition. The map is not a complete inventory of
-VI.1, VI.9, VII.1 or VII.2, and supplies no new Lean proof.
+below. It records seventeen verified publications by Worker 6, one
+definition and sixteen statements, and the proof tasks for them. None of
+these publications proves a proposition. It also lists the published proofs
+of four of the statements, by other workers. The map is not a complete
+inventory of VI.1, VI.9, VII.1 or VII.2, and supplies no new Lean proof.
+The [supercuspidal induction and finite-length map](supercuspidal-finite-length-progress.md)
+continues it for VI.5.2–VI.7.1.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -16,10 +19,11 @@ French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 PDF page numbers are one-based and equal printed page numbers plus six.
 The source passages and the paired Lean and Markdown files were read for the
-claims below. By SHA256, all thirty-two primary files equal their frozen
+claims below. By SHA256, all thirty-four primary files equal their frozen
 accepted files, Worker 6's workspace files and the files at Library
-`92a7435d25d4da775fd9c410ea9239236a0eec90`. A fresh Lean check of the two
-VI.9.6 statements at that Library had zero diagnostics.
+`1eb9a9ee0815224a368f8dc58b7d95f024cfff05`. A fresh Lean check of the
+VII.2.5 statement at that Library (check
+`9809af85-16b6-4ac4-a333-3cc9ade5dc05`) had zero diagnostics.
 
 ## Verified publications
 
@@ -44,6 +48,7 @@ laws; a statement receipt does not prove its proposition.
 | [TemperedJacquetUnitaryRestrictionStatement](../../Langlands/Representation/Exponents/TemperedJacquetUnitaryRestrictionStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedJacquetUnitaryRestrictionStatement` | Statement `b22affda-c1af-40c4-b00c-a776c5fe1710`; Reviewer 15049, review `e5098fd8-8a50-4ecb-a5a1-5d91bb5bb44e`; machine `26e4edeb-980b-48e5-a2fe-d3f8c50de121`; integration `4fc78dfc4420488591749a48dbebb216`, commit `50126e1b2b20b62d408b52dc3552f01089dd1d11`. |
 | [TemperedInductionUnitaryReciprocityStatement](../../Langlands/Representation/Exponents/TemperedInductionUnitaryReciprocityStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedInductionUnitaryReciprocityStatement` | Statement `e9e5c8a4-8c5b-4c16-9b2a-d72630d4e154`; Reviewer 15242, review `fe7f6e0b-fdbc-429d-8eb8-9239ee2f5307`; machine `9207390d-7530-4188-a2da-44327fbff9c3`; integration `6bb347763b1044f79cc092c1e1ab1043`, commit `73016647c403b942bebe18fad4e569a83c342b52`. |
 | [TemperedSquareIntegrableUnitaryPartStatement](../../Langlands/Representation/Exponents/TemperedSquareIntegrableUnitaryPartStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedSquareIntegrableUnitaryPartStatement` | Statement `6769d720-7d45-4810-a8e8-6e1f221cc6b1`; Reviewer 15074, review `e96379de-ef61-4fad-b334-c4ad76b205e5`; machine `62cd6b51-2b06-48f0-87a1-93ace23ebc99`; integration `d834ec6b207248d1bede019882ee8440`, commit `50126e1b2b20b62d408b52dc3552f01089dd1d11`. |
+| [TemperedGeometricLemmaStatement](../../Langlands/Representation/Exponents/TemperedGeometricLemmaStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedGeometricLemmaStatement` | Statement `6c787777-0d88-4f2f-8bf0-3a4836fcf750`; Reviewer 15563, review `bf9c195e-0807-4f12-b8d0-94d75f6ed34a`; machine `6a87755c-f96e-42f8-a6ad-977e248f0239`; integration `1837b3dff62f43758bfbebbc80ce4e35`, commit `8fb2236bacd54b43eeb9b2fabc30476fee771e05`. |
 | [TemperedIrreducibleDiscreteSeriesStatement](../../Langlands/Representation/Exponents/TemperedIrreducibleDiscreteSeriesStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleDiscreteSeriesStatement` | Statement `7ec947da-c7f6-4657-83d3-d7d2640d1330`; Reviewer 14652, review `a469d1f8-8e46-4e11-b3bf-b8db74ac311c`; machine `15056576-38bd-4bcc-878b-535391b4ec91`; integration `cdfca6b06b1440f997980e0ad957cb67`, commit `f9c20f3deffa895e672facb4ad0b214541325d76`. |
 | [TemperedIrreducibleDiscreteSeriesUniquenessStatement](../../Langlands/Representation/Exponents/TemperedIrreducibleDiscreteSeriesUniquenessStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleDiscreteSeriesUniquenessStatement` | Statement `f0746b32-8a53-4b31-9532-b9858edb398e`; Reviewer 14656, review `fe9595e8-7142-4df8-b0ce-b7475281338e`; machine `29d5aac6-e4a3-4bc8-b7be-9dc2bff18fef`; integration `7dc3c7419955495cb33098fab0a3b658`, commit `f9c20f3deffa895e672facb4ad0b214541325d76`. |
 | [TemperedIrreducibleUnitarizableStatement](../../Langlands/Representation/Exponents/TemperedIrreducibleUnitarizableStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleUnitarizableStatement` | Statement `4c655cac-7ae3-477d-83cb-6fc0ee7f1666`; Reviewer 14658, review `4d20b6d9-f0bd-4b7c-8142-569af9617766`; machine `d782ccff-3f4d-4257-baed-a7259a4b32a2`; integration `7223cceebed9435d804ec36dec389230`, commit `f9c20f3deffa895e672facb4ad0b214541325d76`. |
@@ -124,8 +129,38 @@ No admissibility, finite length or finite type is assumed. The source
 proves (VI.9.6.2) through the pairing (VI.9.6.4), built from the
 generalized Jacquet lemma VI.9.1–VI.9.3. That lemma uses Iwahori
 decompositions with respect to `P` and `P̄` and contracting elements of the
-split component. None of VI.9.1–VI.9.5, the pairing Proposition or VI.9.7 is
-stated.
+split component.
+
+Workers 937 and 1587 published derived partial statements of the Theorem
+and the Proposition of VI.9.1 (printed pp.195–197 / PDF pp.201–203):
+`GeneralizedJacquetLemmaStatement` and
+`UniformCompressionStabilizationStatement` in the module
+[UniformCompressionStabilizationStatement](../../Langlands/Representation/Exponents/UniformCompressionStabilizationStatement.md)
+(artifact `bb2fbd21-111b-4b02-8f0e-9e2d1a35f3c1`, statement task
+`f0a4d6b4-8a85-4ce9-972d-7e4958be7bb2`). Their paired Markdown records how
+they differ from the source:
+
+- They use dynamic parabolics `P_G(χ)` with the centralizer Levi and the
+  opposite radical. The comparison with arbitrary actual parabolics is the
+  separate target `ParabolicDynamicStatement` and is not part of them.
+- In place of `t ∈ C_A^{++}`, both take an element `g` that is central in
+  `M(F)` and satisfies `Jacquet.IsIwahoriContraction K N M N̄ g`. For the
+  Theorem this hypothesis on `K` is stronger than the source's Iwahori
+  decomposition alone, so the statement covers fewer subgroups `K`.
+- The exponent `b` of the Proposition is chosen after `χ`, `K` and `g`. It
+  is uniform over the smooth representations only once these are fixed. The
+  source's dependence `b = b(G, K)` is not asserted.
+- Three source assertions are not stated: the identification of the
+  localization of `V^K` at `A` with `(V^K_*, A|V^K_*)`, the bound
+  `b ≤ c(G, K)` by the uniform admissibility constant of VI.2.3, and
+  Remarks 1–3 (printed p.197 / PDF p.203, proofs continuing on PDF p.204).
+
+The two proof obligations have separate tasks:
+`47e556e6-6b2a-40dc-ba66-d6a0585f5220` proves only
+`UniformCompressionStabilizationStatement`, and
+`cac6f709-2a1b-4eaa-a16d-63f2e40f3b29` proves
+`GeneralizedJacquetLemmaStatement`. None of VI.9.2–VI.9.5, the pairing
+Proposition or VI.9.7 is stated.
 
 ## VII.1.3: reducibility for maximal Levi subgroups
 
@@ -181,9 +216,23 @@ printed p.229 / PDF p.235; VII.2.4, printed pp.229–230 / PDF pp.235–236.
   parabolic datum and split component. It retains the measure hypotheses of
   the published Casselman statement.
 
-VII.2.5, the tempered geometric lemma, is not stated. Its proof uses the
-geometric lemma VI.5.1, now the published
-`RepresentedGeometricLemmaStatement` of Worker 1585.
+## VII.2.5: the tempered geometric lemma
+
+Source: VII.2.5, Proposition and proof, printed p.230 / PDF p.236.
+
+`TemperedGeometricLemmaStatement` takes two actual rational parabolic data
+`P = MN` and `Q = LU`, a split component of `L` and a tempered `ρ` of
+`M(F)`. It asserts representatives `z i` meeting every double coset of
+`P(F)` and `Q(F)` in `G(F)` exactly once, with intersection data of the
+published `RepresentedGeometricLemmaStatement` of Worker 1585 (VI.5.1). For
+every choice of split components of the Levis `M ∩ zLz⁻¹`, it asserts an
+actual finite filtration of the unitary part `(r_Q^G i_P^G ρ)_0` and a
+permutation of the pieces. The graded pieces are isomorphic to
+`i^L_{L ∩ z⁻¹Pz}` of the transported unitary part
+`(r^M_{M ∩ zQz⁻¹} ρ)_0`. The helper definition
+`GeometricLemmaIntersectionDatum.unitaryPieceRep` forms these pieces. The
+specific set `W_{Q,P}` of V.4.7 is not used. Naturality in `ρ` and
+compatibility with the VI.5.1 filtration are not asserted.
 
 ## VII.2.6: tempered representations and discrete series
 
@@ -216,6 +265,7 @@ quotient by the full center. An embedding is an injective intertwiner into
 | `UnitaryJacquetPartTemperedStatement`, `TemperedJacquetUnitaryRestrictionStatement`, `TemperedSquareIntegrableUnitaryPartStatement` | `f0ff1d42-b2ac-439b-a08d-8e2d120a78fa` |
 | `TemperedInductionUnitaryReciprocityStatement` | `71b5958c-b2a2-4a70-a4f0-537ed8d5a152` |
 | The three VII.2.6 statements | `225f7d3d-bb91-4746-9084-ea6b91241e41` |
+| `TemperedGeometricLemmaStatement` | `65c3d5dc-0e10-442e-93ee-f13854e419bb` |
 
 Worker 6 published these tasks. Worker 1670 published the proof tasks of
 the represented-parabolic Jacquet-admissibility statement
@@ -225,28 +275,64 @@ Worker 1585 published the proof task of the represented geometric lemma
 (`c060fb34-b423-4ac5-8448-788ac7627913`). A task identifier locates work;
 it is not a proof receipt or an ownership change.
 
+## Published proofs
+
+Four of the statements are proved in the Library, by other workers. Each
+theorem has the exact published statement as its type.
+
+| Statement | Theorem and proof module | Authors, task |
+| --- | --- | --- |
+| `LeviFrobeniusReciprocityStatement` | `leviFrobeniusReciprocity`, `LeviFrobeniusReciprocityProof` | Worker 16, `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b` |
+| `LeviParabolicFunctorsExactStatement` | `leviParabolicFunctorsExact`, `LeviParabolicFunctorsExactProof` | Worker 16, `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b` |
+| `TemperedJacquetUnitaryRestrictionStatement` | `temperedJacquetUnitaryRestriction`, `TemperedJacquetUnitaryRestrictionProof` | Workers 1629 and 1593, `f0ff1d42-b2ac-439b-a08d-8e2d120a78fa` |
+| `TemperedInductionUnitaryReciprocityStatement` | `temperedInductionUnitaryReciprocity`, `TemperedInductionUnitaryReciprocityProof` | Worker 837, `71b5958c-b2a2-4a70-a4f0-537ed8d5a152` |
+
+Both VI.1.2 proofs prove, rather than assume, the compact-subgroup property
+of the rational points of the radical; the Frobenius proof also proves
+their unimodularity. The restriction proof derives
+complementarity of the two parts from temperedness, through
+`IsNormalizedExponentTempered.unitaryJacquetPart_isCompl`, and applies the
+restriction bijection of `TemperedJacquetRestriction`. The reciprocity
+proof is a single term: the conditional assembly
+`temperedInductionUnitaryReciprocity_of` of
+`TemperedInductionUnitaryReciprocityReduction`, applied to the Frobenius
+and restriction proofs. Task `71b5958c` is completed. The other two
+targets of each of `27fe1be6` and `f0ff1d42` are not proved.
+
 Several published supporting modules by proof-task workers retain their
-inputs as premises and prove none of the targets. They include
-`TemperedJacquetRestriction`, which proves the restriction bijection given
-complementarity of the two parts; `ArbitraryParabolicUnitarity`,
-`TemperedIrreducibleUnitarityReduction` (Worker 346) and
-`ParabolicPresentationUnitarity`, which build invariant forms toward the
-VII.2.6 Corollary; and `MaximalLeviReducibilityUnitaryInputs` and
+inputs as premises and prove none of the remaining targets. They include
+`ArbitraryParabolicUnitarity`, `TemperedIrreducibleUnitarityReduction`
+(Worker 346) and `ParabolicPresentationUnitarity`, which build invariant
+forms toward the VII.2.6 Corollary; and
+`MaximalLeviReducibilityUnitaryInputs` and
 `MaximalLeviReducibilityReductionStatements` (Worker 1507), which separate
-the VII.1.3 proof into statements.
+the VII.1.3 proof into statements. Worker 1507's
+`MaximalLeviSupercuspidalReducibilityFromInputsStatement` asserts that
+`MaximalLeviSupercuspidalReducibilityStatement` follows from eleven
+published propositions, among them `ParabolicDynamicStatement`,
+admissibility of irreducible representations (VI.2.2) and compactness of
+`P(F)\G(F)`. Worker 1517's `MaximalLeviSupercuspidalReducibilityFromInputsProof`
+proves that implication. VII.1.3 itself follows once those premises are
+proved.
 
 ## Remaining obligations
 
-1. Proofs of all fifteen statements above, through the listed tasks. They
-   need structural facts that are themselves open for arbitrary actual
-   parabolics, among them compactness of `P(F)\G(F)`, Jacquet
-   admissibility, unimodularity of the radical, Iwahori decompositions and
-   contracting elements.
-2. Statements of VII.2.5, VII.3 and VII.4, and of the VII.1.3 Corollary.
+1. Proofs of the twelve statements above that are not proved, through the
+   listed tasks. They need structural facts that are themselves open for
+   arbitrary actual parabolics, among them compactness of `P(F)\G(F)`, Jacquet
+   admissibility, Iwahori decompositions and contracting elements.
+2. Statements of VII.3 and VII.4, and of the VII.1.3 Corollary.
    VII.3 also needs representatives of Weyl double cosets for actual
    parabolics. VII.4 needs Langlands chambers with relative coroots.
    The VII.1.3 Corollary needs Bernstein components.
-3. Statements of VI.9.1–VI.9.5, the VI.9.6 pairing Proposition and VI.9.7.
+3. Statements of VI.9.2–VI.9.5, the VI.9.6 pairing Proposition and VI.9.7.
+   For VI.9.1: the proofs of `UniformCompressionStabilizationStatement`
+   (task `47e556e6-6b2a-40dc-ba66-d6a0585f5220`) and of
+   `GeneralizedJacquetLemmaStatement` (task
+   `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29`); statements of the localization
+   identification, the bound `b ≤ c(G, K)`, the dependence `b = b(G, K)` and
+   Remarks 1–3; the Theorem for every `K` with an Iwahori decomposition; and
+   the transfer from dynamic to arbitrary actual parabolics.
 
 General reductive scope, positive-characteristic local fields, existing
 owners and user run controls remain unchanged.

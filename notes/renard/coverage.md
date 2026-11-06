@@ -62,16 +62,31 @@ The map extends selected V.3, VI.1, VII.1 and VII.2 navigation. No complete sect
 or all-parabolic temperedness criterion is claimed.
 
 The [parabolic-functor and tempered map](parabolic-functors-tempered-progress.md),
-added 6 November 2026 by Worker 6, verifies sixteen further Worker 6
+added 6 November 2026 by Worker 6, verifies seventeen further Worker 6
 publications for arbitrary actual rational parabolics: the VI.1.2
 adjunction, exactness and limit statements, the VI.1.3 finite-type
 statement, the VI.9.6 second-adjointness and contragredient statements, the
 VII.1.3 maximal-Levi reducibility statement, the VII.2.2 induction
 statement, the VII.2.3 unitary Jacquet-part construction and lemma, the
-VII.2.4 restriction, reciprocity and square-integrability statements, and
-the three VII.2.6 statements. All proofs remain open; the map records their
-proof tasks. VII.2.5, VII.3, VII.4, the VII.1.3 Corollary and VI.9.1–VI.9.5
-remain unstated.
+VII.2.4 restriction, reciprocity and square-integrability statements, the
+VII.2.5 tempered geometric lemma and the three VII.2.6 statements. The map
+records their proof tasks. Other workers have published proofs of the
+VI.1.2 adjunction and exactness and of the VII.2.4 restriction and
+reciprocity; the other proofs remain open. VII.3, VII.4, the VII.1.3
+Corollary and VI.9.2–VI.9.5 remain unstated. Workers 937 and 1587 published
+derived partial statements of the VI.9.1 Theorem and Proposition for dynamic
+parabolics; the map lists the source assertions they omit.
+
+The [supercuspidal induction and finite-length map](supercuspidal-finite-length-progress.md),
+added 6 November 2026 by Worker 6, verifies nine further Worker 6 statement
+publications for arbitrary actual rational parabolics: the VI.5.2 Lemma,
+VI.5.3 (i) and (ii), the VI.5.4 Theorem (partial) and Corollary, the VI.6.2
+and VI.6.4 finite-length statements, and the VI.7.1 Lemma and Proposition
+(partial). Their proofs remain open, with proof tasks
+`fc21c11d-1a31-468d-a90e-fdda36098677` and
+`9b0a1303-9208-4f6c-96b8-996d44645bf2`. VI.5.3 (iii), the numerical bounds
+of VI.5.4, the map `Sc` of VI.7.1 and VI.7.2 remain unstated for these
+parabolics.
 
 The [VI.2.1 and VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md),
 updated 4 November 2026 by Worker 6 with Workers 164, 1510 and 491,
@@ -1084,7 +1099,7 @@ including definitions, remarks and unnumbered results.
 | --- | --- | --- | --- |
 | I opening | Motivation and nonunital conventions | 5 / 11 | Partial |
 | I.1 | Idempotented rings | 6 / 12 | Partial through part of I.1.5 |
-| I.2 | Forgetful functors and adjoints | 14 / 20 | Backlog |
+| I.2 | Forgetful functors and adjoints | 14 / 20 | Partial: the [I.2.1 assertion map](unitization-tensor-progress.md) records published canonical scalars, Hom and tensor scalar structures, unitized actions, the Hom over `Ã` and the Hom half of (I.2.1.2); `H = ker q`, the tensor half of (I.2.1.2) and the uniqueness of the algebra structure on `Ã` are not stated. See also the [unitization criteria](unitization-noetherian-criteria.md). I.2.2–I.2.3 backlog |
 | I.3 | Idempotent corner functor | 19 / 25 | Backlog |
 | I.4 | Duality | 22 / 28 | Partial: [I.4.2 coefficient-convention audit](duality-coefficient-conventions.md); actual comparisons and full-source convention remain open |
 | I.5 | Classes of modules | 26 / 32 | Partial: I.5.1 update above retains its date and scope; [I.5.2–3 ledger](module-classes-category-properties.md) records public projectivity, injectivity and positive free-module proofs, and the public derived negative-example construction, statement and exact proof |
@@ -1109,19 +1124,19 @@ including definitions, remarks and unnumbered results.
 | V.4 | Weyl groups | 118 / 124 | Partial: [published GL simple-root, subgroup and block-indexing comparison](standard-parabolic-progress.md); the general V.4.2 classification, convexity and other Weyl-group assertions remain separate |
 | V.5 | Compact subgroups | 122 / 128 | Backlog |
 | VI opening | Representation theory of p-adic groups | 131 / 137 | Backlog |
-| VI.1 | Normalized parabolic functors | 134 / 140 | Partial: [published actual Jacquet wrapper and normalization](root-exponent-tempered-progress.md) at VI.1.2; [published VI.1.2 adjunction, exactness and limit statements and VI.1.3 finite-type statement](parabolic-functors-tempered-progress.md), with proof task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`; VI.1.4 for dynamic parabolics is the published `DynamicNestedParabolicTransitivityStatement` with its proof; other assertions retain their separate correspondence and proof obligations |
+| VI.1 | Normalized parabolic functors | 134 / 140 | Partial: [published actual Jacquet wrapper and normalization](root-exponent-tempered-progress.md) at VI.1.2; [published VI.1.2 adjunction, exactness and limit statements and VI.1.3 finite-type statement](parabolic-functors-tempered-progress.md), with proof task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`, of which the adjunction and exactness are proved (Worker 16); VI.1.4 for dynamic parabolics is the published `DynamicNestedParabolicTransitivityStatement` with its proof; other assertions retain their separate correspondence and proof obligations |
 | VI.2 | Supercuspidality and admissibility | 137 / 143 | Partial: [VI.2.1 compact-restriction map](cuspidal-decomposition-source-map.md) records the published forward proof with retained geometric premises and the converse statement with its separate proof task. The full equivalence and other assertions remain open. |
 | VI.3 | Cuspidal categorical decomposition | 142 / 148 | [VI.3.4–VI.3.5 source map](cuspidal-decomposition-source-map.md): published factors, four universal statements and their VI.2.1 dependencies; all four exact proof conclusions remain open. Other assertions remain backlog. |
-| VI.4 | Centre of the cuspidal component | 148 / 154 | Backlog |
-| VI.5 | Induced representations | 161 / 167 | Backlog; retain 2026 proof correction |
-| VI.6 | Finiteness theorems | 175 / 181 | Partial: [VI.6.1 source map](canonical-section-progress.md) records the conditional weak Jacquet proofs and published actual-standard uniform-section statement; exact proof publication and the other subsections remain open |
-| VI.7 | Bernstein decomposition | 180 / 186 | Backlog |
-| VI.8 | Algebraic families | 187 / 193 | Backlog |
-| VI.9 | Second adjointness | 195 / 201 | Partial: [published VI.9.6 second-adjointness and contragredient statements](parabolic-functors-tempered-progress.md) for actual parabolics with an actual opposite, with proof task `c0fa1878-6cee-4435-8484-2fc15ea04a17`; VI.9.1–VI.9.5, the VI.9.6 pairing Proposition and VI.9.7 remain backlog; general scope retained |
+| VI.4 | Centre of the cuspidal component | 148 / 154 | Backlog; Worker 1751's task `3e43c59a-2f05-433e-a739-54f50fcea0d3` constructs the actual norm-kernel compact-induction model and states the VI.4.1 progenerator comparison |
+| VI.5 | Induced representations | 161 / 167 | Partial: [published VI.5.2, VI.5.3 (i)–(ii) and VI.5.4 statements](supercuspidal-finite-length-progress.md) for actual parabolics, with proof task `fc21c11d-1a31-468d-a90e-fdda36098677`; the represented VI.5.1 geometric lemma is Worker 1585's published statement with proof task `c060fb34-b423-4ac5-8448-788ac7627913`; VI.5.3 (iii), the VI.5.4 bounds and all proofs remain open; retain 2026 proof correction |
+| VI.6 | Finiteness theorems | 175 / 181 | Partial: [VI.6.1 source map](canonical-section-progress.md) records the conditional weak Jacquet proofs and published actual-standard uniform-section statement; exact proof publication and the other subsections remain open; [published VI.6.2 and VI.6.4 finite-length statements](supercuspidal-finite-length-progress.md) for actual parabolics, with proof task `9b0a1303-9208-4f6c-96b8-996d44645bf2` |
+| VI.7 | Bernstein decomposition | 180 / 186 | Partial: [published VI.7.1 Lemma and partial Proposition statements](supercuspidal-finite-length-progress.md) for actual parabolics, with proof task `9b0a1303-9208-4f6c-96b8-996d44645bf2`; Worker 1751's task `b0b200c0-5960-4909-a733-0bcbcc0f0dde` defines actual inertial cuspidal data and Bernstein blocks; the map `Sc`, VI.7.2 and later assertions remain open |
+| VI.8 | Algebraic families | 187 / 193 | Backlog; Worker 1751's task `e2884067-b19a-4685-91d9-e62316299fc3` states VI.8.1–VI.8.2 flatness and admissibility for the actual models |
+| VI.9 | Second adjointness | 195 / 201 | Partial: [published VI.9.6 second-adjointness and contragredient statements](parabolic-functors-tempered-progress.md) for actual parabolics with an actual opposite, with proof task `c0fa1878-6cee-4435-8484-2fc15ea04a17`; derived partial statements of the VI.9.1 Theorem and Proposition (printed pp.195–197 / PDF pp.201–203), [`GeneralizedJacquetLemmaStatement` and `UniformCompressionStabilizationStatement`](../../Langlands/Representation/Exponents/UniformCompressionStabilizationStatement.md), published by Workers 937 and 1587 (statement task `f0a4d6b4-8a85-4ce9-972d-7e4958be7bb2`) for dynamic parabolics and a contracting element `g` central in `M` with `IsIwahoriContraction`, with `b` chosen after `χ`, `K` and `g`; proof tasks `47e556e6-6b2a-40dc-ba66-d6a0585f5220` (`UniformCompressionStabilizationStatement` only) and `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29` (`GeneralizedJacquetLemmaStatement`); the VI.9.1 localization identification, `b = b(G, K)`, `b ≤ c(G, K)`, Remarks 1–3, the Theorem for every `K` with an Iwahori decomposition and the arbitrary-parabolic comparison remain open; also the opposite-parabolic uniqueness task `773fb2e1-0719-4374-b8ea-8da9a3ace5c6`; VI.9.2–VI.9.5, the VI.9.6 pairing Proposition and VI.9.7 remain backlog; general scope retained |
 | VI.10 | Bernstein centre | 206 / 212 | Backlog |
 | VI.11 | Chapter notes | 217 / 223 | Backlog, including mathematical assertions |
-| VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Partial: [published actual normalized exponent construction, represented-parabolic induction, and VII.1.1 and Casselman-criterion statements](root-exponent-tempered-progress.md); their proofs (tasks `0bdc392c-4e25-4b6f-a676-0bc49e85e999`, `2e8d370f-f1ed-4ad4-a529-5083212ebae0`) stay open; [published VII.1.3 Theorem statement](parabolic-functors-tempered-progress.md) with proof task `004e00e1-5995-4dc1-884e-a5f512150d0c`; the VII.1.3 Corollary remains unstated |
-| VII.2 | Tempered representations | 227 / 233 | Partial: [published normalized predicate, exact full-group exponent and corrected logarithmic comparison proofs, standard-reduction, corrected central-character and Remark 2 statements, and the Levi-point transport](root-exponent-tempered-progress.md); [published VII.2.2, VII.2.3, VII.2.4 and VII.2.6 statements and the unitary Jacquet-part construction](parabolic-functors-tempered-progress.md), with their proof tasks; structural comparisons, standard reduction, the full-center consequence, the Remark 2 proof (task `1ebce298-eeeb-4686-ba30-cabcb8e50d4b`), all VII.2.2–VII.2.6 proofs and the VII.2.5 statement remain open |
+| VII opening / VII.1 | Casselman's criterion and applications | 219 / 225 | Partial: [published actual normalized exponent construction, represented-parabolic induction, and VII.1.1 and Casselman-criterion statements](root-exponent-tempered-progress.md); their proofs (tasks `0bdc392c-4e25-4b6f-a676-0bc49e85e999`, `2e8d370f-f1ed-4ad4-a529-5083212ebae0`) stay open; [published VII.1.3 Theorem statement](parabolic-functors-tempered-progress.md) with proof task `004e00e1-5995-4dc1-884e-a5f512150d0c` and a published conditional reduction from eleven premises (Workers 1507 and 1517); the VII.1.3 Corollary remains unstated |
+| VII.2 | Tempered representations | 227 / 233 | Partial: [published normalized predicate, exact full-group exponent and corrected logarithmic comparison proofs, standard-reduction, corrected central-character and Remark 2 statements, and the Levi-point transport](root-exponent-tempered-progress.md); [published VII.2.2–VII.2.6 statements and the unitary Jacquet-part construction](parabolic-functors-tempered-progress.md), with their proof tasks (VII.2.5: `65c3d5dc-0e10-442e-93ee-f13854e419bb`); the VII.2.4 restriction and reciprocity are proved (Workers 1629, 1593 and 837); structural comparisons, standard reduction, the full-center consequence, the Remark 2 proof (task `1ebce298-eeeb-4686-ba30-cabcb8e50d4b`) and the other VII.2.2–VII.2.6 proofs remain open |
 | VII.3 | Self-intertwining of induced representations | 232 / 238 | Backlog |
 | VII.4 | Langlands classification | 240 / 246 | Backlog |
 | VII.5 | Chapter notes | 246 / 252 | Backlog, including mathematical assertions |

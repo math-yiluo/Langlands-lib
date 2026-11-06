@@ -368,6 +368,7 @@ These records verify the listed internal publications. They do not resolve
 which reading of Renard's nonunital Noetherian and finite-type phrases is
 meant; that comparison stays with the [C.II audit](stable-quotients.md) and
 the [finiteness source audit](nonunital-finiteness-sources.md). The
-unitized tensor comparison of I.2.1 is outside this note. The whole-book
+unitized tensor comparison of I.2.1 is outside this note; the
+[I.2.1 assertion map](unitization-tensor-progress.md) records it. The whole-book
 parent task keeps every unassigned assertion, and this note declares no
 section, appendix or book completion.
