@@ -1,0 +1,134 @@
+# Statement: the Isomorphism Theorem in semisimple rank at most one, common torus
+
+Author: Worker 712.
+
+This module contains one `Prop`-valued statement,
+`Langlands.GroupScheme.SplitRankOneCommonTorusIsomorphismStatement`. The Lean
+file only defines the proposition. It contains no proof of it, and it adds no
+other definitions, theorems or axioms. The module imports only
+[`Reductive.RootDatum`](RootDatum.md).
+
+It is the published `SplitCommonTorusIsomorphismStatement`
+([`Reductive.SplitIsomorphismStatement`](SplitIsomorphismStatement.md)) with
+one extra hypothesis: any two roots of the first group are linearly dependent.
+That hypothesis says that the group has semisimple rank at most one. So this
+is the case of semisimple rank at most one of the Isomorphism Theorem (Milne,
+Proposition 23.14 and the remark before it, in the isomorphism case), for two
+groups that share a split maximal torus, with the identity of the character
+lattice as the isomorphism of root data.
+
+## Binders and hypotheses
+
+The universe `u` is arbitrary. The binders are exactly those of
+`SplitCommonTorusIsomorphismStatement`, in the same order:
+
+- every field `k : Type u`, with no condition on perfectness, characteristic
+  or separable closedness;
+- group schemes `G₁ G₂ : GroupScheme (Spec (CommRingCat.of k))` with
+  `hG₁ : IsConnectedReductive G₁` and `hG₂ : IsConnectedReductive G₂`
+  ([`Reductive.Basic`](Basic.md)): smooth, affine and connected over `k`,
+  with trivial unipotent radical after base change to an algebraic closure;
+- one commutative group scheme `T` with `IsSplitTorus T.toGrp`, that is,
+  `T ≅ 𝔾_m^I` for a finite index type `I`
+  ([`Torus.Split`](../Torus/Split.md));
+- `i₁ : T.toGrp ⟶ G₁` and `i₂ : T.toGrp ⟶ G₂` with `IsMaximalTorus i₁` and
+  `IsMaximalTorus i₂` ([`Torus.Maximal`](../Torus/Maximal.md)), so `T` is a
+  split maximal torus of both groups;
+- index types `J₁ J₂ : Type u` and Mathlib root data
+  `P₁ P₂ : RootDatum _ (characterLattice T) (cocharacterLattice T)` with
+  `IsRootDatumOf i₁ P₁` and `IsRootDatumOf i₂ P₂`
+  ([`Reductive.RootDatum`](RootDatum.md)): the pairing of each datum is the
+  actual `latticePairing T`, the range of its roots is `roots i₁`
+  (respectively `roots i₂`), and each of its reflections is realized by a
+  `k`-point of the group normalizing the torus;
+- a bijection `e : J₁ ≃ J₂` with `P₂.root ∘ e = P₁.root` and
+  `P₂.coroot ∘ e = P₁.coroot`: the two groups have the same roots, and each
+  root has the same coroot in both groups.
+
+`IsRootDatumOf` and `roots` require `IsAffineHom G.X.hom`; the statement
+supplies it as `hG₁.isAffineHom` and `hG₂.isAffineHom` by `haveI`, as the
+published target does.
+
+The one added hypothesis is
+
+```text
+∀ α ∈ roots i₁, ∀ β ∈ roots i₁, ¬ LinearIndependent ℤ ![α, β]
+```
+
+Here `roots i₁` ([`Torus.Weights`](../Torus/Weights.md)) is the set of
+nonzero characters of `T` with a nonzero weight space in the Lie algebra of
+`G₁`, and `![α, β]` is the family indexed by `Fin 2`. The hypothesis is
+vacuous when `G₁` has no roots. When `α = β` the family is never linearly
+independent, so the hypothesis only constrains distinct roots. Since the
+character lattice is torsion-free, `ℤ`-linear dependence of two characters is
+the same as `ℚ`-linear dependence. So the hypothesis says that the roots span
+a `ℚ`-subspace of dimension at most one. Because `G₁` and `G₂` have the same
+roots (`roots i₁ = range P₁.root = range P₂.root = roots i₂` by the
+hypothesis on `e`), it holds for `G₂` as well.
+
+## Conclusion
+
+There is an isomorphism `ψ : G₁ ≅ G₂` of group schemes over `Spec k` with
+`i₁ ≫ ψ.hom = i₂`. The conclusion is that of
+`SplitCommonTorusIsomorphismStatement`, unchanged.
+
+## Sources and provenance
+
+The statement is derived from published results; the Lean form is not
+verbatim. Source: J. S. Milne, *Algebraic Groups* (2017), source ID
+`milne-2017-algebraic-groups` (printed page = PDF page − 16).
+
+- Printed p.489 (PDF p.505), the paragraph before Proposition 23.14: "If
+  (G,T) and (G',T') have semisimple rank 0, then G = T and G' = T', and so
+  there is nothing to prove." Proposition 23.14, same page: "The isogeny
+  theorem holds for split reductive groups of semisimple rank 1." Its proof
+  continues on printed p.490.
+- Theorem 23.9 (Isogeny Theorem), printed p.487 (PDF p.503): "An isogeny
+  φ: T → T' of tori extends to an isogeny G → G' if and only if the map
+  X(φ): X(T') → X(T) is an isogeny of root data."
+- Proposition 23.5, printed p.485 (PDF p.501): for an isogeny φ of split
+  reductive groups with `f = X(φ_T)`, "The isogeny φ is central (resp. an
+  isomorphism) if and only if f is central (resp. an isomorphism)."
+- Definition 19.20, printed p.401 (PDF p.417): "the semisimple rank of G is
+  the rank of G_{k^a}/R(G_{k^a})". Proposition 19.21(a), printed p.402
+  (PDF p.418): "The semisimple rank of G is rank(G) − dim Z(G)."
+- Proposition 21.8, printed p.427 (PDF p.443): for a split reductive group
+  `(G, T)`, with `ZΦ` the `ℤ`-submodule of `X^*(T)` generated by the roots,
+  `X^*(Z(G)) = X^*(T)/ZΦ`.
+
+**Translation.**
+
+- *Semisimple rank.* By 19.21(a) and 21.8, the semisimple rank of a split
+  reductive group `(G, T)` is `dim T − dim Z(G) = rank X^*(T) −
+  rank (X^*(T)/ZΦ) = rank ZΦ`, the dimension of the `ℚ`-span of the roots.
+  So `G₁` has semisimple rank at most one exactly when any two of its roots
+  are linearly dependent, which is the added hypothesis.
+- *The rank-one case.* With `f` the identity of `X^*(T)`, the hypothesis on
+  `e` says that `f` is an isomorphism of root data `R(G₂, T) → R(G₁, T)`, as
+  explained in the Markdown of `SplitCommonTorusIsomorphismStatement`. By
+  Proposition 23.14 (semisimple rank one) and the paragraph before it
+  (semisimple rank zero, where `G₁ = T = G₂`), the identity of `T` extends to
+  an isogeny `φ : G₁ → G₂`. By Proposition 23.5 it is an isomorphism, since
+  `f` is an isomorphism of root data. A homomorphism of split tori is
+  determined by its pullback on characters, so `φ` restricts to the identity
+  of `T`, which is `i₁ ≫ φ = i₂`.
+- *What is omitted.* As in the published target, the uniqueness of `φ` and
+  the converse direction are not included.
+
+**Provenance of the formulation.** The statement is an internal step of a
+proof of `SplitCommonTorusIsomorphismStatement`: a reduction module,
+`Reductive.SplitIsomorphismReduction`, to be submitted once this statement
+is published (it compiles in the author's workspace), derives that
+target from this statement, from `DynamicCentralizerRootsStatement`, from
+`SplitCommonTorusLeviGluingStatement`, and from the published
+`RootDatumExistenceStatement` and `DynamicCentralizerReductiveStatement`. It
+plays the role of Milne's step 23.16, which applies 23.14 to the subgroups
+`G_α` of semisimple rank one. The rank condition is stated through linear
+dependence of roots, rather than through a radical quotient, so that it
+transfers directly from the roots of a centralizer of a cocharacter.
+
+**Errata.** The official errata snapshot
+(`milne-2017-algebraic-groups-errata-2026-11-02`), read for chapters 19, 21
+and 23, has no entry for 19.20, 19.21, 21.8, 23.5, 23.9 or 23.14, and none
+for printed pp.401, 402, 427, 485, 487 or 489. Its Chapter 23 entries are for
+p.488 (proof of 23.11) and pp.494 onwards.

@@ -26,7 +26,8 @@ whose direct tensor coordinates all have valuation one.
 
 Now let `L/k` be finite Galois, let `I` be finite with decidable equality,
 and let `E : I → IntermediateField k L`. Put `B = ∏ i, E i`.
-`productEmbeddingDecomposition` splits `L ⊗[k] B` by first distributing the
+The imported `Torus/WeilRestrictionProductDecomposition` pair provides the
+unchanged `productEmbeddingDecomposition`, which splits `L ⊗[k] B` by first distributing the
 tensor product over `i`, then applying the canonical finite-separable
 embedding decomposition to each factor. `productEmbeddingUncurry` combines
 the two coordinate indices into the finite sigma type `Σ i, E i →ₐ[k] L`.

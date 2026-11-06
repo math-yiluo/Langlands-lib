@@ -1,0 +1,164 @@
+# Statement: gluing isomorphisms of the Levi subgroups of semisimple rank at most one
+
+Author: Worker 712.
+
+This module contains one `Prop`-valued statement,
+`Langlands.GroupScheme.SplitCommonTorusLeviGluingStatement`. The Lean file
+only defines the proposition. It contains no proof of it, and it adds no
+other definitions, theorems or axioms. The module imports only
+[`Dynamic.Basic`](../Dynamic/Basic.md) and [`Reductive.RootDatum`](RootDatum.md).
+
+It is the gluing step of the Isomorphism Theorem for two groups with a common
+split maximal torus (Milne 23.16–23.24, Steinberg's graph argument, in the
+isomorphism case with the identity of the character lattice). If the
+centralizers of the cocharacters of `T` in the two groups are isomorphic over
+`T` whenever they have semisimple rank at most one, then the two groups are
+isomorphic over `T`.
+
+## Binders and hypotheses
+
+The universe `u` is arbitrary. The first binders are exactly those of the
+published `SplitCommonTorusIsomorphismStatement`
+([`Reductive.SplitIsomorphismStatement`](SplitIsomorphismStatement.md)), in
+the same order:
+
+- every field `k : Type u`, with no condition on perfectness, characteristic
+  or separable closedness;
+- group schemes `G₁ G₂` over `Spec (CommRingCat.of k)` with
+  `hG₁ : IsConnectedReductive G₁` and `hG₂ : IsConnectedReductive G₂`
+  ([`Reductive.Basic`](Basic.md));
+- one commutative group scheme `T` with `IsSplitTorus T.toGrp`
+  ([`Torus.Split`](../Torus/Split.md));
+- `i₁ : T.toGrp ⟶ G₁` and `i₂ : T.toGrp ⟶ G₂` with `IsMaximalTorus i₁` and
+  `IsMaximalTorus i₂` ([`Torus.Maximal`](../Torus/Maximal.md));
+- index types `J₁ J₂ : Type u` and root data `P₁ P₂` on
+  `(characterLattice T, cocharacterLattice T)` with `IsRootDatumOf i₁ P₁` and
+  `IsRootDatumOf i₂ P₂` ([`Reductive.RootDatum`](RootDatum.md));
+- a bijection `e : J₁ ≃ J₂` with `P₂.root ∘ e = P₁.root` and
+  `P₂.coroot ∘ e = P₁.coroot`, so the two groups have the same roots and the
+  same coroots.
+
+`IsRootDatumOf` and `roots` require `IsAffineHom G.X.hom`; the statement
+supplies it as `hG₁.isAffineHom` and `hG₂.isAffineHom` by `haveI`.
+
+The last hypothesis, the **Levi hypothesis**, says: for every cocharacter
+`ν : cocharacterLattice T`, if
+
+```text
+∀ α ∈ roots i₁, ∀ β ∈ roots i₁,
+  latticePairing T α ν = 0 → latticePairing T β ν = 0 → ¬ LinearIndependent ℤ ![α, β]
+```
+
+(any two roots of `G₁` orthogonal to `ν` are linearly dependent), then for all
+group schemes `Z₁ Z₂` and homomorphisms `z₁ : Z₁ ⟶ G₁`, `z₂ : Z₂ ⟶ G₂` with
+`IsClosedSubgroup z₁`, `IsClosedSubgroup z₂`,
+
+```text
+(Dynamic.centralizer (CommGroupScheme.groupHom ν ≫ i₁)).IsRepresentedBy z₁
+(Dynamic.centralizer (CommGroupScheme.groupHom ν ≫ i₂)).IsRepresentedBy z₂
+```
+
+and for all `t₁ : T.toGrp ⟶ Z₁`, `t₂ : T.toGrp ⟶ Z₂` with `t₁ ≫ z₁ = i₁` and
+`t₂ ≫ z₂ = i₂`, there is an isomorphism `φ : Z₁ ≅ Z₂` with
+`t₁ ≫ φ.hom = t₂`.
+
+Here `Dynamic.centralizer χ` ([`Dynamic.Basic`](../Dynamic/Basic.md)) is the
+subgroup functor of points whose conjugation orbit map under `χ` is
+constant, on all test schemes; `IsRepresentedBy`
+([`SubgroupFunctor`](../SubgroupFunctor.md)) says that `z` is a monomorphism
+whose points are exactly those of the functor; and `IsClosedSubgroup` says
+that `z` is a closed immersion. So `Z₁` and `Z₂` are the centralizers
+`Z_{G₁}(ν)` and `Z_{G₂}(ν)`, given by any closed representatives, and `t₁`,
+`t₂` place `T` inside them. The condition on `ν` says that the roots of `G₁`
+orthogonal to `ν` span a space of dimension at most one; these are the roots
+of `Z_{G₁}(ν)` (the companion `DynamicCentralizerRootsStatement`, submitted
+alongside this statement),
+so it says that `Z_{G₁}(ν)` has semisimple rank at most one. The Levi
+hypothesis asks for an isomorphism of these centralizers over `T` only for
+such `ν`.
+
+## Conclusion
+
+There is an isomorphism `ψ : G₁ ≅ G₂` of group schemes over `Spec k` with
+`i₁ ≫ ψ.hom = i₂`, as in `SplitCommonTorusIsomorphismStatement`.
+
+## Sources and provenance
+
+The statement is derived from published results; the Lean form is not
+verbatim. Source: J. S. Milne, *Algebraic Groups* (2017), source ID
+`milne-2017-algebraic-groups` (printed page = PDF page − 16).
+
+- Printed p.428 (PDF p.444): "For a root α of (G,T), we let
+  T_α = Ker(α)_t (subtorus of T of codimension 1) and G_α = C_G(T_α)."
+  Theorem 21.11(a), same page: "The pair (G_α, T) is a split reductive group
+  of semisimple rank 1."
+- Printed p.490 (PDF p.506): "To pass to the general case from the case of
+  semisimple rank 1, we make use of the subgroups G_α of G attached to each
+  root α of (G,T)." With a base Δ fixed: "23.16. For each α ∈ Δ, the
+  isogeny φ_T extends to an isogeny φ_α: G_α → G'_α." "It remains to prove
+  the following statement. 23.17. The family of homomorphisms
+  (φ_α: G_α → G')_{α∈Δ} extends to a homomorphism φ: G → G'." "We construct
+  φ by constructing its graph. Let G'' denote the algebraic subgroup of
+  G × G' generated by the family of maps x ↦ (x, φ_α(x)): G_α → G × G'".
+- Printed p.491 (PDF p.507): "23.18. The projection p: G × G' → G maps G''
+  isomorphically onto G." Its proof occupies 23.19–23.24 and the paragraph
+  after 23.24, printed pp.491–492 (PDF pp.507–508), ending "Thus 23.18 is
+  proved, and with it the isogeny theorem (23.9)."
+- Theorem 23.25, printed pp.492–493, and Remark 23.26, printed p.493
+  (PDF p.509): the Isomorphism Theorem, as quoted in the Markdown of
+  `SplitCommonTorusIsomorphismStatement`.
+
+**Translation.**
+
+- *The setting.* As in `SplitCommonTorusIsomorphismStatement`, the data are
+  two split reductive groups `(G₁, T)` and `(G₂, T)` with the same torus, and
+  the hypothesis on `e` says that the identity of `X^*(T)` is an isomorphism
+  of root data `R(G₂, T) → R(G₁, T)`.
+- *The subgroups `G_α` are centralizers of cocharacters.* For a root `α`,
+  choose a cocharacter `ν` of `T_α` with `⟨β, ν⟩ ≠ 0` for every root `β`
+  that is not a rational multiple of `α`. This is possible: `X_*(T_α)` is
+  `{ν | ⟨α, ν⟩ = 0}`, for each such `β` the `ν` in it with `⟨β, ν⟩ = 0`
+  form a subgroup of infinite index, and a free abelian group of finite rank
+  is not a finite union of subgroups of infinite index.
+  Then `ν(𝔾_m) ⊂ T_α`, so `G_α = C_G(T_α) ⊂ Z_G(ν)`. Both are connected
+  reductive with maximal torus `T` and roots `±α` (21.11, and the roots of
+  `Z_G(ν)` described in `DynamicCentralizerRootsStatement`), so they are
+  equal. The roots orthogonal to `ν` are `±α`, so `ν` satisfies the condition
+  of the Levi hypothesis. In the isomorphism case, 23.16 is therefore the
+  instance of the Levi hypothesis at such `ν`: an isomorphism
+  `G_α ≅ G'_α` restricting to the identity of `T`.
+- *The conclusion.* 23.17–23.24 build, from the family `(φ_α)_{α∈Δ}`, a
+  homomorphism `φ : G₁ → G₂` extending the identity of `T`; by 23.5 it is an
+  isomorphism since the identity of `X^*(T)` is an isomorphism of root data.
+  That is `ψ` with `i₁ ≫ ψ.hom = i₂`.
+- *Strength.* The Levi hypothesis supplies isomorphisms for every `ν` whose
+  centralizer has semisimple rank at most one, not only for one `ν` per
+  simple root, and for every choice of closed representatives. This is more
+  than 23.17 uses, so the statement is weaker than (implied by) the gluing
+  step 23.17–23.18. Its conclusion is the Isomorphism Theorem itself, so the
+  statement is true by Remark 23.26 alone; its purpose is to isolate the
+  graph argument as a separate proof obligation.
+
+**Provenance of the formulation.** This is an internal step of a proof of
+the published `SplitCommonTorusIsomorphismStatement`. A reduction module,
+`Reductive.SplitIsomorphismReduction`, to be submitted once this statement
+is published (it compiles in the author's workspace), proves that
+target from this statement, `SplitRankOneCommonTorusIsomorphismStatement`,
+`DynamicCentralizerRootsStatement`, and the published
+`RootDatumExistenceStatement` and `DynamicCentralizerReductiveStatement`: it
+discharges the Levi hypothesis with the rank-one statement applied to the
+centralizers. Centralizers of cocharacters are used instead of Milne's
+`C_G(T_α)` because the Library already has the all-test functor
+`Dynamic.centralizer`, its closed representatives
+(`Dynamic.Affine.isRepresentedBy_centralizerHom` in
+[`Dynamic.AffineRepresentability`](../Dynamic/AffineRepresentability.md)) and
+the published `DynamicCentralizerReductiveStatement`.
+
+**Errata.** The official errata snapshot
+(`milne-2017-algebraic-groups-errata-2026-11-02`) has no entry for 21.11's
+statement, 23.16–23.26, or printed pp.428, 490, 491, 492 or 493. Its Chapter
+23 entries are for p.488 (proof of 23.11) and pp.494 onwards. Its Chapter 21
+entry for p.440 says that the proof of Theorem 21.51 (used in the proof of
+23.24) has been rewritten; it does not change the statement. Its p.449 entry
+concerns the proof of 21.77 (as explained in the Markdown of
+`SplitCommonTorusIsomorphismStatement`).

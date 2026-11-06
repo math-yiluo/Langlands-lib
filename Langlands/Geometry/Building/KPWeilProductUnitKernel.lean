@@ -1,5 +1,5 @@
 import Langlands.Geometry.Building.KPWeilRestrictionUnitKernel
-import Langlands.GroupScheme.Torus.WeilRestrictionNormCoordinates
+import Langlands.GroupScheme.Torus.WeilRestrictionProductDecomposition
 
 /-! # Character kernels for products of Weil restrictions -/
 
@@ -177,22 +177,6 @@ section Product
 variable (k L : Type u) [Field k] [Field L] [Algebra k L]
   [FiniteDimensional k L] [IsGalois k L]
   {I : Type u} [Fintype I] [DecidableEq I] (E : I → IntermediateField k L)
-
-/-- Uncurrying a family of coefficient functions as an algebra equivalence. -/
-def productEmbeddingUncurry :
-    (∀ i, (E i →ₐ[k] L) → L) ≃ₐ[L] ((Σ i, E i →ₐ[k] L) → L) where
-  __ := (Equiv.piCurry fun i (_ : E i →ₐ[k] L) => L).symm
-  map_mul' _ _ := rfl
-  map_add' _ _ := rfl
-  commutes' _ := rfl
-
-/-- The product tensor decomposition, with its two indices combined into one. -/
-def productEmbeddingDecomposition :
-    L ⊗[k] (∀ i, E i) ≃ₐ[L] ((Σ i, E i →ₐ[k] L) → L) :=
-  ((Algebra.TensorProduct.piRight k L L (fun i => E i)).trans
-    (AlgEquiv.piCongrRight fun i => separableEmbeddingDecomposition k (E i) L
-      (intermediate_minpoly_splits k L (E i)))).trans
-    (productEmbeddingUncurry k L E)
 
 /-- The generic decomposition coordinates are precisely the shared product
 tensor-embedding coordinates. -/
