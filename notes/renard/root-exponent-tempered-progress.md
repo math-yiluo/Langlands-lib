@@ -432,9 +432,14 @@ The dependency order still requires:
    compactness of the literal parabolic quotient. Worker 1670 published
    statement tasks for represented-parabolic Jacquet admissibility, the input
    for spanning (`41dd1a77-7dfc-4a55-a2b7-ab60212ed965`), and for quotient
-   compactness (`00501674-4aae-4d1b-b541-a1a1b63032aa`). Induction and restriction behavior (VII.2.2–VII.2.5), the
-   VII.2.6 discrete-series description and the classification results remain
-   unpublished. A scalar central
+   compactness (`00501674-4aae-4d1b-b541-a1a1b63032aa`). Both are now
+   published as `ArbitraryParabolicJacquetAdmissibilityStatement` and
+   `ArbitraryParabolicQuotientCompactStatement`, with proof tasks
+   `56206cc7-3e1e-4fae-840d-f5e8ccffd8ed` and
+   `c1ce4629-6768-4eb5-b4ee-0086526913ea`. The VII.1.3, VII.2.2–VII.2.4 and
+   VII.2.6 statements are published, with open proof tasks, in the
+   [parabolic-functor and tempered map](parabolic-functors-tempered-progress.md).
+   VII.2.5 and the classification results remain unstated. A scalar central
    character is a premise only of its separate corrected consequence; it is not
    a premise of the all-parabolic definition, full-group exponent statement or
    standard-reduction statement.
