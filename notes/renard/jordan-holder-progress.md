@@ -7,7 +7,11 @@ Jordan–Hölder theorem, numerical length, simple-quotient proposition and
 three simple-subquotient identities have published implementations.
 On 5 November 2026 Worker 709 added the published statement targets for
 the module-category examples and, later that day, their published exact
-proof. This note does not declare A.VI or the whole-book task complete.
+proof. On 6 November 2026, against Library
+`d2fd0b68e11e9844d5da3650e7579d62588fd3fd`, Worker 709 added the
+published standalone simple-cokernel criterion, a derived internal
+bridge, with its statement and proof receipts. This note does not declare
+A.VI or the whole-book task complete.
 
 ## Source and assertion map
 
@@ -29,6 +33,7 @@ Module links point to the paired Markdown; each has a same-stem Lean file.
 | Simple object and `Irr`, printed263/PDF269 | `IsSimpleObject`, `simpleClasses`, `ObjectClass`, `objectClass` in [CompositionChains](../../Langlands/CategoryTheory/Renard/CompositionChains.md) | Actual object isomorphism classes; simplicity is nonzero with only bottom and top subobjects, proved equivalent to Mathlib `Simple` |
 | Composition chain, factors and chain length, printed263/PDF269 | `CompositionChain`, its `inclusion`, `factor`, `factorClass`, `length` in the same module | A strictly increasing `Fin (n + 1)` family from bottom to top, with simple actual cokernels indexed by `Fin n` |
 | Jordan–Hölder theorem, printed263/PDF269 | `JordanHolderStatement` in [JordanHolderStatements](../../Langlands/CategoryTheory/Renard/JordanHolderStatements.md), proved by `jordanHolder` in [JordanHolder](../../Langlands/CategoryTheory/Renard/JordanHolder.md) | Equal chain lengths and an equivalence of factor indices giving actual factor isomorphisms; multiplicities are retained |
+| Derived internal bridge, not separately printed: a quotient of subobjects is simple iff it is a cover, motivated by A.VI.2(9) and A.VI.3, printed263/PDF269 | `SubobjectSimpleCokernelStatement` in [SubobjectSimpleCokernelStatements](../../Langlands/CategoryTheory/Renard/SubobjectSimpleCokernelStatements.md), proved by `subobjectSimpleCokernelStatement` in [SubobjectSimpleCokernel](../../Langlands/CategoryTheory/Renard/SubobjectSimpleCokernel.md) | Every abelian category and every inclusion `A ≤ B`, including `A = B`; no source assertion is formalized by it. See the standalone-criterion section below |
 | Finite length and length of an object, printed263/PDF269 | `HasCompositionChainOfLength`, `IsFiniteLength` in CompositionChains; `compositionLength` in [FiniteLength](../../Langlands/CategoryTheory/Renard/FiniteLength.md) | Numerical length requires an explicit finite-length witness and equals the length of every composition chain |
 | Additional Grothendieck and AB6 assumptions and footnote, printed263/PDF269 | `IsSourceGrothendieck` in [RenardGrothendieckAxioms](../../Langlands/CategoryTheory/RenardGrothendieckAxioms.md); `IsLocallyFiniteTypeObject`, `IsLocallyFiniteTypeCategory`, `SourceAB6` in [LocallyFiniteType](../../Langlands/CategoryTheory/Renard/LocallyFiniteType.md) | Separate assumptions: source-sized coproducts and directed distribution; every object is a sum of finite-type subobjects. AB6 means local finite type, as the footnote specifies |
 | Module-category examples, printed264/PDF270 | Six targets and their conjunction `FullModuleAxiomsStatement` in namespace `Langlands.Algebra.RenardFullModuleAxiomStatements`, module [RenardFullModuleAxiomStatements](../../Langlands/Algebra/RenardFullModuleAxiomStatements.md), proved by `fullModuleAxioms` in namespace `Langlands.Algebra.RenardFullModuleAxiomProof`, module [RenardFullModuleAxiomProof](../../Langlands/Algebra/RenardFullModuleAxiomProof.md) | Directed distributivity, source AB5 and canonical AB6 for the full `NonUnitalModuleCat` and Mathlib's `ModuleCat`, with no added hypothesis. Products are not among the targets. The proof does not use the I.6 nondegenerate-module proofs; see below |
@@ -100,7 +105,8 @@ its summands.
 ## Implemented proof routes and source references
 
 The Jordan–Hölder proof first identifies simplicity of an actual
-subobject quotient with the cover relation. It constructs the
+subobject quotient with the cover relation, by its own public theorem
+`simple_cokernel_ofLE_iff_covBy` in the JordanHolder module. It constructs the
 `JordanHolderLattice` structure on the actual subobject order using
 the published second-isomorphism theorem, converts composition chains
 to Mathlib composition series, and applies
@@ -114,7 +120,8 @@ internal finite-type result needs only a nonzero finite-type object.
 It applies `zorn_le₀` to proper subobjects: bottom handles the empty
 chain, and finite type ensures that the least upper bound of a
 nonempty chain remains proper. The maximal subobject has simple
-cokernel by the quotient/cover criterion. For the second clause,
+cokernel by the quotient/cover criterion, here the JordanHolder
+module's `simple_cokernel_ofLE_iff_covBy`. For the second clause,
 canonical AB6 yields a nonzero finite-type subobject; the first
 clause supplies its simple quotient, which is transported to a
 quotient of two actual nested subobjects of the original object.
@@ -225,6 +232,101 @@ contributed source and mathematical checking. The final identities
 aggregate reuses the component authors' proofs. This note's compilation
 checks and source audit do not substitute for those independent
 reviews or create additional proof publications.
+
+## Standalone simple-cokernel criterion
+
+The statement module
+[SubobjectSimpleCokernelStatements](../../Langlands/CategoryTheory/Renard/SubobjectSimpleCokernelStatements.md)
+defines
+
+```lean
+def SubobjectSimpleCokernelStatement (C : Type u) [Category.{v} C] [Abelian C] : Prop :=
+  ∀ (X : C) (A B : Subobject X) (h : A ≤ B),
+    Simple (cokernel (Subobject.ofLE A B h)) ↔ A ⋖ B
+```
+
+Here `Subobject.ofLE A B h` is Mathlib's actual monomorphism between the
+underlying objects of `A` and `B`. Its cokernel is the actual quotient
+`B/A`. `Simple` is Mathlib's simplicity, and `A ⋖ B` is Mathlib's
+`CovBy` in the order of subobjects of `X`. The object and Hom universes
+are independent. Every inclusion is quantified, including `A = B`; there
+the quotient is zero and both sides are false. No Grothendieck, AB6,
+well-poweredness, smallness, module, finiteness or `JordanHolderLattice`
+premise is added.
+
+The book does not state this equivalence. On printed263/PDF269 it
+defines simple objects and composition series by simple successive
+quotients, and refers the Jordan–Hölder proof to the Noether
+isomorphisms of A.VI.2(9). The statement Markdown classifies the
+criterion as a derived internal bridge from that categorical formulation
+to order covers. Worker 709 reread the extracted text of PDF269 on
+6 November 2026 and found this reading accurate.
+
+The theorem `subobjectSimpleCokernelStatement` in
+[SubobjectSimpleCokernel](../../Langlands/CategoryTheory/Renard/SubobjectSimpleCokernel.md)
+proves the exact statement at the same universe parameters, with no
+further hypothesis. Its proof is a direct categorical argument with three
+auxiliary theorems:
+
+- `isZero_cokernel_ofLE_iff`: the quotient is zero exactly when `A = B`.
+  A zero cokernel makes the inclusion an epimorphism, hence an
+  isomorphism, so `B ≤ A`. Conversely, the cokernel of the identity is zero.
+- `covBy_of_simple_cokernel`: let `A ≤ D ≤ B`. If the composite
+  `D ⟶ B ⟶ B/A` is zero, then `D` factors through the kernel `A`
+  (`Abelian.monoLift`), so `D = A`. Otherwise it is a nonzero map to a
+  simple object, hence an epimorphism. Then `D ⟶ B` is an epimorphism,
+  and `D = B`.
+- `simple_cokernel_of_covBy`: pull a nonzero monomorphism
+  `m : Y ⟶ B/A` back along the quotient map. This gives an actual
+  subobject `D` with `A ≤ D ≤ B`. If `D = A`, then `m = 0`. If `D = B`, then
+  the quotient map factors through `m`, so `m` is an epimorphism and
+  hence an isomorphism.
+
+The earlier JordanHolder proof already proves the same equivalence as its
+own public theorem `simple_cokernel_ofLE_iff_covBy`, with the category
+and object implicit. As its author note records, this was done
+independently of the then-unpublished statement task. The simple-quotient
+proof uses that JordanHolder theorem. Neither of those publications imports
+the standalone unit, and the standalone unit changes neither.
+
+The standalone direction theorems are used elsewhere. The published
+smooth-representation finiteness proof
+`Langlands.SmoothRep.renardFinitenessStatement`, in
+[RenardFinitenessProof](../../Langlands/Representation/Category/RenardFinitenessProof.md),
+uses `covBy_of_simple_cokernel` and `simple_cokernel_of_covBy` to move
+composition chains to Mathlib composition series. That chapter-level
+result is not audited in this appendix note. The criterion itself does not
+prove Jordan–Hölder or numerical length, and does not translate
+composition chains; the units above supply those.
+
+| Unit and authors | Candidate; machine receipt | Independent review task / reviewer | Integration; published commit |
+| --- | --- | --- | --- |
+| `SubobjectSimpleCokernelStatement` — Workers 695 and 6 | `4561f0f4-5872-481e-944a-7fa7a8cb7084`; `27b37c93-5850-4f95-bd1d-e6d5750459d7` | `ff744d49-a6ee-46f4-b2ab-f8c42fa182aa` / Reviewer 3939 | `86e4bd69755e4756940254ffa9ecd829`; `4021bb1d1ec99e65990e08addda3ade7caa73058` |
+| `subobjectSimpleCokernelStatement` — Worker 994 | `313b179e-b214-4c27-91ce-d3717a517199`; `183d0a6f-1a3d-4f60-ad82-9d2ca26a34a1` | `872dbec7-6397-4d77-b81b-7a906178b925` / Reviewer 4071 | `c77f5d8162b84c569790cae8ac5107f8`; `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
+
+The statement was produced under statement task
+`9b76e64f-e22c-4678-9970-85e180ecbab2`. Its `lean.statement@1` receipt
+passed the schema, immutable-content, reference-integrity,
+exact-reference-policy, Lake-build and declaration-kind checks; this is
+not proof acceptance. The proof was produced under proof task
+`de159c27-9311-41b4-b61e-22acee4e5ac5`. Its `lean.proof@1` receipt passed
+`lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`,
+with `proof_accepted: true`. Both independent reviews approved without
+qualifications, and neither frozen record contains author
+qualifications. Worker 709 authored neither unit; this note documents
+them and is not a review.
+
+On 6 November 2026 the frozen bundles, Libraries
+`d2fd0b68e11e9844d5da3650e7579d62588fd3fd` and
+`87e695f5180726de47820341b89accb81c4e1033`, and the workspace had
+the same SHA256 for each file:
+
+| Path under `Langlands/CategoryTheory/Renard/` | SHA256 |
+| --- | --- |
+| `SubobjectSimpleCokernelStatements.lean` | `0ccd2d4a1ee359c5786818985986646a97ffa37db6d25204c59ef02573439532` |
+| `SubobjectSimpleCokernelStatements.md` | `b64b78e11d7d2324ab0125d1bc8343da0314264186f415481552c7d1fbdbcae7` |
+| `SubobjectSimpleCokernel.lean` | `31d41775d2210ad957dd63f662fb60e1a84be146c4c08512f8cd596f2122ca81` |
+| `SubobjectSimpleCokernel.md` | `ed7c347b6ad3eab74edc097c126fa3e08c4e7074f5ace5ea125af93c245e12e9` |
 
 ## Module examples
 
