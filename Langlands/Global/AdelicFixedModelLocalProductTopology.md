@@ -1,0 +1,26 @@
+# Fixed integral models and enlarged adelic level product topologies
+
+This is derived infrastructure for Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), Theorem 3.6, printed p.8, and Example 4.2, printed pp.9–10. Conrad defines arithmetic-level topologies by local point products and compares adelic Weil points through integral models and these products. The present construction identifies the existing topology of an enlarged arithmetic stage of a fixed integral model with its local product topology over the original integral base. It does not assert the full adelic Weil comparison.
+
+Fix finite supports `S ⊆ T`. In the curve setting, `k` and `F` are arbitrary fields with a `k`-algebra structure on `F`; the coordinates are the original `AlgebraicCurve.Place k F`. In the number-field setting, `K` is a number field and the finite supports contain finite places, while all infinite places are retained in every level. The comparison requires no finiteness, affineness, compactness or separatedness premise on the actual scheme `X` over the fixed S-integer ring. The broader scope of this intermediate comparison does not remove those hypotheses from Conrad's full arithmetic or Weil assertions.
+
+Write `A` for the S-integer ring, `B` for the T-integer ring and `C` for the literal enlarged adelic level ring with its existing `A`-algebra structure. Its local factors `Rᵢ` are the original completed fields at supported places and original completed integer rings at the other places. The number-field factors also include the original infinite completions. In the namespace `Langlands.Global.FixedModelLocalProduct`, the scoped base-algebra instances use the literal S-integer inclusions. The scoped level-algebra instances retain the native `B`-action on `C`; the factor-algebra instances restrict the native `B`-actions along `A → B`. The scalar-tower instances prove that these composites agree with the existing actions. Open units of every local factor are supplied by the previously proved arithmetic factor result. No extra assumption about open units is imposed on the base rings.
+
+`curveFactorAlgEquiv` and `numberFieldFactorAlgEquiv` retain precisely the original level-to-product ring equivalences, now as `A`-algebra equivalences. Their compatibility with scalars follows from the literal diagonal coefficient maps; their underlying ring maps are unchanged. These are comparisons of the actual rings, not replacements for the level rings or their local factors.
+
+The generic theorem `induced_baseChange_productPointTopology` compares the following two topologies on actual `C`-valued points of `X`:
+
+- First change the scheme base from `A` to `B` by the original pullback-adjunction point equivalence, and then change the coefficient ring by a `B`-algebra equivalence `C ≃ ∏ᵢ Rᵢ`; induce from the existing `B`-relative local product point topology.
+- Change the coefficient ring by the same equivalence restricted to `A`, and induce from the existing `A`-relative local product point topology.
+
+Here `A`, `B` and `C` are arbitrary commutative rings in a common arbitrary universe with compatible scalar actions, and each `Rᵢ` is a local topological commutative ring with open units and compatible `A`- and `B`-actions. The existing `localProductPointTopology` uses the independently constructed topology of each actual local model. No topology on `A` or `B` is required.
+
+The proof uses `ringPointBaseChangeEquiv_changeRing` to commute the actual coefficient map with actual scheme base change. It then uses `localProductPointBaseChangeHomeomorph` to identify the two product point topologies. Rewriting the topology induced by a composite, followed by the inducing property of this homeomorphism, gives the equality. This argument uses neither injectivity nor surjectivity of the coordinate map from points over an infinite product to a product of point sets.
+
+`curveStageTopology_eq` and `numberFieldStageTopology_eq` specialize this equality to the independently defined fixed-model arithmetic stage topologies. Those stage topologies were induced from the actual base-changed T-model and its arithmetic-level topology. The existing arithmetic-level topology equality and the generic comparison show that each is exactly the topology induced by its fixed-base coefficient equivalence from `localProductPointTopology A R X`.
+
+`curveStageHomeomorph` and `numberFieldStageHomeomorph` equip those original coefficient point equivalences with the resulting homeomorphism structures. Their `apply` laws are definitional equalities with change of coefficients along `curveFactorAlgEquiv` and `numberFieldFactorAlgEquiv`. Their `coordinate` laws say that the underlying scheme map at every factor is precisely
+
+`Spec.map (original enlarged-level factor projection) ≫ p.left`.
+
+The proof composes the spectra of the product equivalence and evaluation, using contravariant functoriality of `Spec`. The `natural` laws prove compatibility with every morphism of original integral models by associativity of precomposition. Thus the comparison preserves the original local coordinates, including every infinite coordinate in the number-field case. It establishes this stage-topology comparison only; a complete enlarged-level Weil comparison and its adelic colimit comparison require additional work.

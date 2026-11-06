@@ -31,7 +31,7 @@ the claimed equality with the specified base-ring square retained.
 For the obstruction results, additionally assume `j` is a closed
 immersion and `Z` is compact. Given square-zero actual ideal sheaves for
 `j` and `j ≫ b`, `obstructionMap_relative` proves the same naturality
-for the actual Picard obstruction of every `y : Picard.Group Z`.
+for the actual Picard obstruction of every `y : PicardGroupoid.Group Z`.
 The proof rewrites by the published
 `SquareZeroAmbientObstructionNaturality.obstructionMap_naturality`
 and then applies the preceding map identity.
