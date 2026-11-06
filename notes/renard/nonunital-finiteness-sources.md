@@ -136,6 +136,15 @@ describes the unitization and quotient-Hopfian route, which differs from
 Renard's inverse-polynomial argument. This internal theorem does not
 establish an equivalence with Renard's finiteness phrases.
 
+The published statement unit
+[RenardSourceFiniteLocalizationStatements](../../Langlands/Algebra/RenardSourceFiniteLocalizationStatements.md)
+states the final proposition separately under each of the three models
+above: categorical predicates in `NonUnitalModuleCat B`, the same predicates
+in `ActionModuleCat ℂ B`, and Noetherianity and finite generation over
+`Unitization ℂ B`. It contains no proof; exact proof task
+`211bc556-3c01-4948-97c8-d2e3407747a9` is open. Even a proof of all three
+readings would not select the author's convention.
+
 The old CEDIC [25] text has not been acquired or read. Renard's bibliography
 at printed 282/PDF288 identifies Régine and Adrien Douady,
 *Algèbre et théories galoisiennes. 2*, CEDIC, Paris (1979), with subtitle

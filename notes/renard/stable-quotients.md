@@ -1,6 +1,6 @@
 # Renard C.II: quotient maps and finite localization
 
-Worker 709, updated 4 November 2026, coordinated with Worker 6 under whole-book
+Worker 709, updated 5 November 2026, coordinated with Worker 6 under whole-book
 task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 3. This passage audit
 records verified publications for the stable-endomorphism lemma, its auxiliary
 quotient sequence and actual localization constructions. It also distinguishes
@@ -9,6 +9,9 @@ source-facing nonunital finiteness convention. The additive-to-scalar comparison
 below supplies explicit sufficient conditions for the actual localization.
 The separate additive stable-image proof identifies that localization for
 every supplied positive stable power, without finiteness hypotheses.
+Published statements now pose the final proposition under each of three
+candidate finiteness readings; their proof is open, and they do not choose
+the author's convention.
 This documentation records partial Appendix C coverage; the whole-book
 formalization remains open.
 
@@ -215,6 +218,34 @@ unital passages in Pareigis and the supplied Douady edition, and their limits
 for this nonunital question. Those limits persist after publication of the
 internal theorem.
 
+### Statements under the three candidate readings
+
+Worker 709's statement unit
+[RenardSourceFiniteLocalizationStatements](../../Langlands/Algebra/RenardSourceFiniteLocalizationStatements.md)
+states the proposition once for each candidate model named in the
+finiteness source audit. All three take a commutative, possibly nonunital
+complex algebra B, a complex vector space V with an actual compatible
+action and a B-linear endomorphism f, at independent universes uB and uV.
+Each concludes `SourceConclusion ρ f`: `EventuallyStable f.toLinearMap`,
+and `CompatibleStablePowerImageAt ρ f n` for every positive stable
+exponent n. The readings differ only in the meaning of the hypotheses:
+
+1. `AdditiveReadingStatement`: the published categorical Noetherian and
+   finite-type predicates of A.I.3 for actual objects of
+   `NonUnitalModuleCat B`, whose subobjects are stable additive subgroups;
+2. `CompatibleReadingStatement`: the same predicates in `ActionModuleCat ℂ B`,
+   whose morphisms are complex-linear intertwiners;
+3. `UnitizationReadingStatement`: `IsNoetherianRing (Unitization ℂ B)` and
+   `Module.Finite` over that ring for V and its actual localization.
+
+`SourceFiniteLocalizationStatements.{uB,uV}` is their conjunction, in that
+order. These are derived formulations. A proof of all three would give the
+proposition whichever of these models is meant, but would not identify the
+author's convention. No unit, unit-action law, nondegeneracy or finite
+complex dimension is assumed. Exact proof task
+`211bc556-3c01-4948-97c8-d2e3407747a9` targets the unchanged aggregate; at
+this audit it is claimed and has no accepted proof.
+
 ## Unitized Noetherian localization adapters
 
 Two further published internal proof families isolate the Noetherian
@@ -389,6 +420,7 @@ against the published Library.
 | Internal stable-ideal finite localization proof | `9bba1e51-88ef-4b14-830e-f1c480e324c3`, exact statement `554ff789-621a-4049-a9c2-ef9778dc73e8` | `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
 | Internal additive-to-scalar statement | `142cecb6-aba9-4fec-ad2f-7cb993888218`, Reviewer 5746 | `26e9adf301abba95f343f5005d9f478af9fc09d4` |
 | Internal additive-to-scalar finite-localization proof | `f4447811-d9db-47ac-8da3-ae255a859613`, Reviewer 5804 | `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` |
+| Three-reading source statements | `0b44a67d-ab25-4432-a1c0-9826e8467f30`, Reviewer 14742 | `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
 
 For the last proof, machine receipt `23ce8c73-c13a-4665-8703-16b70ac268ec`
 accepts the Lake build, exact target, unchanged statement and frozen inputs.
@@ -436,6 +468,19 @@ publication, current Library and workspace. Focused proof task
 `41265157-23db-48f3-87f6-a116b5c57781` revision 1 is complete; this
 verifies the listed internal result, with the source-facing boundary
 described above.
+
+The three-reading statements are public under `lean.statement@1` with
+Reviewer 14742's approval without qualifications, in review task
+`1d770d85-135c-4d50-b16e-6338fa34b65c`. Machine receipt
+`c4b5fc6f-ed79-494e-b542-b0424543c7f2` checks statement compilation and
+declaration kind; it proves none of the readings. Integration
+`7af7edd3efc24cdfbd93cc385ca8ec2d` publishes the pair. Its Lean/Markdown
+SHA256 values
+`06692eff8d95f2b541707ce27490b58c7ff45a63a762716c7f24ed113a24cadf` /
+`f6f99dd14ddd2e3b527560e5be896526c5b4ee9c94cf291786478eb16a09ae96`
+are equal in Library `dd78edadc914cf56ca81c595cee581a3570d415c` and the
+workspace. The integration keeps the derived, statement-only scope; it does
+not resolve the author's convention.
 
 The whole-book parent retains the source-convention comparison and every other
 unassigned assertion. This note updates only the listed passages and preserves
