@@ -28,8 +28,7 @@ theorem IsStablePairing.flip_injective (hA : D.Admits ρ hρ)
   have htzero : t' = 0 := by
     apply (Module.forall_dual_apply_eq_zero_iff ℂ t').mp
     intro φ
-    obtain ⟨E, hE⟩ := compactCompression_stableEvaluationDuality ρ hρ K
-      (D.isCompact K hK) D.g⁻¹ (hA.finite K hK)
+    obtain ⟨E, hE⟩ := hA.duality K hK
     obtain ⟨ℓ, rfl⟩ := E.surjective φ
     rw [hE]
     change smoothDualPairing ρ

@@ -50,12 +50,23 @@ identity (`exists_good_subset`), are stable under conjugation by `M`, admit an
 `gʳ (K ∩ N) g⁻ʳ ⊆ K` for all `r`, and are *deep*: for good `K₀, K₁` some power
 `gʳ` conjugates `K₀ ∩ N` into `K₁`.
 
-`StablePairingData.Admits ρ hρ` asks, for every good `K`: finite-dimensional
-`K`-fixed vectors; the stable image of compression by `g` on the smooth dual
-surjects onto the `K ∩ M`-fixed upper classes, and the kernel of the upper
-quotient map on `K`-fixed smooth functionals lies in the power kernel of
-compression by `g`; the same for `ρ`, the opposite quotient and `g⁻¹`. These are
-weaker than the Library's canonical-lift bijectivity and power-kernel equalities.
+`StablePairingData.Admits ρ hρ` asks, for every good `K`: the stable-image
+evaluation duality `CompactCompressionStableEvaluationDuality ρ hρ K _ g⁻¹`
+(field `duality`), so evaluation identifies the stable image of compression by
+`g` on the `K`-fixed smooth dual with the full algebraic dual of the stable image
+of compression by `g⁻¹` on `K`-fixed vectors; the stable image of compression by
+`g` on the smooth dual surjects onto the `K ∩ M`-fixed upper classes, and the
+kernel of the upper quotient map on `K`-fixed smooth functionals lies in the
+power kernel of compression by `g`; the same for `ρ`, the opposite quotient and
+`g⁻¹`. These are weaker than the Library's canonical-lift bijectivity and
+power-kernel equalities.
+
+Worker 937 later replaced the original first field, finite-dimensional `K`-fixed
+vectors, by the `duality` field, which was the only use of finiteness. The
+published `compactCompression_stableEvaluationDuality` derives `duality` from
+finite-dimensional fixed vectors, so every earlier constructor still applies;
+`Jacquet.CompressionSplittingDuality` derives it from a Fitting splitting of
+compression by `g⁻¹` on `K`-fixed vectors without finiteness.
 
 ## Class preservation
 
@@ -103,8 +114,7 @@ on common representatives (`exists_common_lift`).
 
 - `IsStablePairing.injective`: if `b x = 0`, lift `x` to a stable functional `ℓ'`
   for some good `K`; it vanishes on the stable image of compression by `g⁻¹`, so it
-  is zero by the Library's compact compression evaluation duality
-  `compactCompression_stableEvaluationDuality`.
+  is zero by the stable evaluation duality in the `duality` field of `Admits`.
 - `IsStablePairing.exists_eq`: a functional `φ` on the opposite quotient invariant
   under `K ∩ M` for a good `K` equals `b x`. The duality gives a stable functional
   `ℓ` with `ℓ(t) = φ[t]` on the stable image; for any class, a stable lift `t₁` for a

@@ -114,3 +114,6 @@ sum is proved, not assumed.
 
 The parameter-forget injectivity result is shared with
 `Correspondence/ZeroMonodromyExtension`; its field argument is implicit.
+
+The generic `directSumCongr` construction is provided by
+`Langlands.WeilDeligne.DirectSum` and is reused here.

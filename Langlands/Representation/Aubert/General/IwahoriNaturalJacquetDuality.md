@@ -1,7 +1,10 @@
 # Coherent normalized Jacquet duality from opposite Iwahori contractions
 
 Author: Worker 1004. Worker 127 contributed the structural interface and the
-full-modulus reciprocity formulation.
+full-modulus reciprocity formulation. Worker 937 generalized the duality family
+from admissible objects to arbitrary object classes satisfying the stable-pairing
+hypotheses and added the two functor-level isomorphism theorems described in
+the section *Beyond admissible objects*.
 
 `Langlands.Aubert.General.NaturalNormalizedJacquetDuality` is a data type
 containing a chosen family of isomorphisms and its bundled naturality law.
@@ -53,6 +56,8 @@ The implemented argument first forms
 `Jacquet.stablePairingDataOfIwahoriContractions`.
 `StablePairingData.admits_of_iwahoriContractions` supplies its stable-image
 and kernel conditions from admissibility and both contraction orientations.
+(Since Worker 937's generalization this step sits in the admissible corollary;
+the general theorem receives these conditions as a hypothesis.)
 `StablePairingData.exists_isStablePairing` then gives a stable pairing `b`.
 Its `IsStablePairing.exists_equiv` gives the equivariant equivalence on
 coinvariants, using the identity continuous equivalence of the literal group
@@ -67,6 +72,60 @@ isomorphisms simultaneously for all admissible objects. It proves the
 naturality equation by bundled-morphism extensionality, surjectivity of
 `Localization.mk`, and `IsStablePairing.natural`.
 
+## Beyond admissible objects
+
+`exists_naturalNormalizedJacquetDuality_of_iwahoriContractions_of_admits` has
+the same structural and inverse-half reciprocity hypotheses, an arbitrary
+predicate `S` on `SmoothRep ℂ G`, and a hypothesis `hAdm` that every `A` with
+`S A` satisfies
+`(Jacquet.stablePairingDataOfIwahoriContractions U M O hMU hMO g hc hBasis).Admits
+A.representation A.isSmooth`. It constructs a family `E A hA` for `hA : S A` with
+the same naturality equation for every actual morphism between members of `S`.
+Its proof is the argument above with admissibility replaced by `hAdm`, which was
+the only use of admissibility. The admissible theorem
+`exists_naturalNormalizedJacquetDuality_of_iwahoriContractions` is now the case
+`S = SmoothRep.IsAdmissible`, with `hAdm` given by
+`admits_of_iwahoriContractions`; its statement is unchanged.
+
+`nonempty_contragredient_normalizedJacquet_iso_of_admits` assumes `Admits` for
+every smooth complex representation (carrier universe `uV`) and concludes
+
+`Nonempty (SmoothRep.contragredientFunctor ⋙ rU ≅ rO.op ⋙
+SmoothRep.contragredientFunctor)`,
+
+a natural isomorphism of functors on `(SmoothRep ℂ G)ᵒᵖ`. It applies the
+previous theorem with the predicate that is always true and assembles the
+components with `NatIso.ofComponents`; the naturality square for an opposite
+morphism `f` is the bundled equation for `f.unop`.
+
+`nonempty_contragredient_normalizedJacquet_iso_of_splits` derives the same
+conclusion from Fitting splittings instead of `Admits`: `hUpperSplit` asks
+`Jacquet.CompactCompressionSplits A.representation A.isSmooth K hK g` for every
+smooth `A` and every compact open `K` with `IsIwahoriContraction K U M O g`, and
+`hLowerSplit` asks the same for `g⁻¹` when `IsIwahoriContraction K O M U g⁻¹`.
+It applies `StablePairingData.admits_of_iwahoriContractions_of_splits` to each
+object, using `hUpperSplit` on the bundled smooth contragredient
+`A.contragredient` and `hLowerSplit` on `A`. No finite-dimensionality or
+admissibility premise appears. In Renard 2026, VI.9.1, the Proposition gives
+such splittings for every smooth representation (via Appendix C.II); that
+proposition is not proved here and both splitting families remain hypotheses.
+
+The noncomputable definition `contragredientNormalizedJacquetIsoOfSplits` has
+exactly the hypotheses of `nonempty_contragredient_normalizedJacquet_iso_of_splits`
+and returns the natural isomorphism
+
+`SmoothRep.contragredientFunctor ⋙ rU ≅ rO.op ⋙ SmoothRep.contragredientFunctor`
+
+itself, chosen with `Classical.choice` from that theorem. It is the
+functor-level form of Renard 2026, VI.9.6, (VI.9.6.2), `r_{P̄}(Ṽ) ≃ (r_P V)~`, for
+the abstract pair `U`, `O` with the displayed structural, reciprocity and
+splitting hypotheses. Renard derives (VI.9.6.2) from second adjointness and
+the Casselman pairing; here it is derived from the stable pairing directly.
+The provenance is derived. The definition proves no splitting, reciprocity or
+contraction-basis result for rational points of a reductive group.
+
+## Full-modulus corollary
+
 For the full-modulus corollary, the composition of the positive square-root
 homomorphism on units and the complex embedding is a monoid homomorphism
 `F : ℝ≥0ˣ →* ℂˣ`. The actual inverse-half characters are the inverses of
@@ -74,20 +133,26 @@ homomorphism on units and the complex embedding is a monoid homomorphism
 and the given full-character product identity imply the required
 inverse-half scalar product identity.
 
-The substantial transitive proof dependencies are
-`stableImageJacquetMap_bijective_of_iwahoriContraction`,
+The substantial transitive proof dependencies of the admissible theorem are
+`powerKernelSup_isCompl_stableImage` (the Fitting splitting of finite-dimensional
+fixed spaces), the splitting consequences
+`compactCompression_stableEvaluationDuality_of_splits` and
+`stableImageJacquetMap_bijective_of_splits` of `Jacquet.CompressionSplittingDuality`,
 `powerKernelSup_eq_ker_of_iwahoriContraction`,
-`compactCompression_stableEvaluationDuality`,
 `isAdmissible_smoothContragredient_of_compact_cofinal`, and the stable-pairing
-existence, equivalence and naturality results just named. They work for the
-abstract group and its given compact open subgroups. The finite-dimensional
-stable images come from admissibility. The proof also uses the actual
+existence, equivalence and naturality results just named. (Before Worker 937's
+change, the route used `stableImageJacquetMap_bijective_of_iwahoriContraction`
+and `compactCompression_stableEvaluationDuality` instead of the two splitting
+consequences.) They work for the abstract group and its given compact open
+subgroups. The finite-dimensional fixed spaces come from admissibility. The proof also uses the actual
 coinvariant, localization, Haar-character, character-twist and bundled smooth
 contragredient definitions.
 
 A recursive inspection of the constructor's type and body, including the
-types and values of project constants they reference, reaches 454 project
-declarations in 44 modules. None is a classification, character-independence,
+types and values of project constants they reference, reached 454 project
+declarations in 44 modules before Worker 937's generalization; the added
+dependencies are the elementary linear-algebra module
+`Jacquet.CompressionSplittingDuality` and its imports. None is a classification, character-independence,
 geometric-lemma, parabolic-adjointness or cuspidal-support result.
 `Jacquet.compressedAction_adjoint` and
 `Jacquet.compressedAction_pow_adjoint` occur in this closure; their
@@ -105,7 +170,7 @@ among their declarations are the abstract compact-cofinal
 `CompactCoefficient.GroupTransport`, whose imports reach
 `CuspidalSupport.glCuspidalTensorAssociation` for p-adic general-linear
 cuspidal tensor factors and `Geometric.weylMinimalRepresentativeUniqueness`
-for block permutations. None of these declarations is used by the two
+for block permutations. None of these declarations is used by the
 theorems here. No character-independence, geometric-lemma or
 parabolic-adjointness module occurs in their project import graph.
 
@@ -125,7 +190,7 @@ The original page images were checked for the opposite-radical overbars.
 No separate source errata file was found in the inspected notes or source
 folder.
 
-Applying this conditional result to the exact rational-point duality target
+Applying these conditional results to the exact rational-point duality targets
 still requires actual proofs of a common fixed-element opposite Iwahori
 contraction basis and full opposite-Haar reciprocity in the canonical
 topology, together with the closedness, centrality and normalizer inputs.

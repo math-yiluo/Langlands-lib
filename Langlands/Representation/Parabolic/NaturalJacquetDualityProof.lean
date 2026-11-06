@@ -253,7 +253,8 @@ theorem standardPairingData_admits (a : Fin B.length → F.Carrierˣ)
     exact ⟨L, hL, hLK⟩
   have hρ' := isAdmissible_smoothContragredient_of_compact_cofinal hcof ρ hρ
   exact
-    { finite := fun K _ => hρ.2 K
+    { duality := fun K _ =>
+        Jacquet.compactCompression_stableEvaluationDuality ρ hρ.1 K _ _ (hρ.2 K)
       upper_surjective := fun K hK =>
         (Jacquet.blockStableImageJacquetBijective F T B (SmoothDual ρ)
           (smoothContragredient ρ) hρ' K hK.1 hK.2 a ha).2
@@ -433,7 +434,8 @@ theorem refinedPairingData_admits (a : ∀ i, Fin (S i).length → F.Carrierˣ)
     exact ⟨L, hL, hLK⟩
   have hρ' := isAdmissible_smoothContragredient_of_compact_cofinal hcof ρ hρ
   exact
-    { finite := fun K _ => hρ.2 K
+    { duality := fun K _ =>
+        Jacquet.compactCompression_stableEvaluationDuality ρ hρ.1 K _ _ (hρ.2 K)
       upper_surjective := fun K hK => by
         obtain ⟨Kf, hc, hf, rfl⟩ := hK
         exact (Jacquet.refinedStableImageJacquetBijective F T B S (SmoothDual ρ)

@@ -59,7 +59,11 @@ For a strictly contracting tuple `a`, `standardPairingData F T B a ha` is the
   satisfy the factorization, conjugation and depth axioms through the lemmas above.
 
 `standardPairingData_admits` shows that every admissible `ρ` satisfies `Admits`.
-Fixed spaces are finite-dimensional by admissibility. The smooth contragredient is
+Fixed spaces are finite-dimensional by admissibility, so the published
+`compactCompression_stableEvaluationDuality` supplies the `duality` field of
+`Admits` (this field replaced an earlier finite-dimensionality field; the change
+by Worker 937 only moves that published theorem to the constructor). The smooth
+contragredient is
 admissible by `isAdmissible_smoothContragredient_of_compact_cofinal`, since compact
 open subgroups are cofinal. The upper surjectivity and kernel conditions for the
 dual come from the Library's `blockStableImageJacquetBijective` and
@@ -129,7 +133,9 @@ For a block refinement `S` of `B`:
   standard lemmas. Depth uses the maximum over blocks of the exponents from
   `eventually_pow_conj_mem`.
 - `refinedPairingData_admits`: every admissible representation of the block Levi
-  satisfies `Admits`. Its smooth contragredient is admissible because compact open
+  satisfies `Admits`. Its `duality` field comes from finite-dimensional fixed
+  spaces through `compactCompression_stableEvaluationDuality`. Its smooth
+  contragredient is admissible because compact open
   subgroups of the Levi are cofinal (`levi_exists_compact_openSubgroup_subset`). The
   upper conditions for the dual come from `refinedStableImageJacquetBijective` and
   `refinedPowerKernelJacquet` of

@@ -37,3 +37,8 @@ literature. The result assumes a common supplied reciprocity candidate
 and the two displayed compatibility predicates. It proves neither
 existence nor uniqueness of reciprocity candidates, existence of
 compatible families, nor the supercuspidal correspondence in higher rank.
+
+The local canonical-topology instance has the explicit name
+`rankOneComparisonTopology`, so this module can be imported together with
+`ArithmeticFactors` without a collision between generated instance names.
+This naming choice changes none of the mathematical declarations above.

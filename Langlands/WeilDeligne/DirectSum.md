@@ -68,3 +68,8 @@ with paired Markdown. It constructs the finite direct sum of actual
 finite-dimensional representations on `⨁ i, A i`, with componentwise
 intertwiners, functor, equivalences, rank formula, class operation and the
 open-inertia certificate used by the parameter version here.
+
+`directSumCongr`, moved unchanged from
+`Langlands.Correspondence.UnramifiedReciprocityBridge`, transports componentwise
+pair equivalences across independent carrier universes using the actual
+`DFinsupp.mapRange.linearEquiv`. Its original authorship is retained.

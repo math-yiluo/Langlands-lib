@@ -17,7 +17,7 @@ universe uF uP uA
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier :=
+local instance rankOneComparisonTopology : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
 /-- Forgetting the rank and the continuity/irreducibility certificates is injective. -/

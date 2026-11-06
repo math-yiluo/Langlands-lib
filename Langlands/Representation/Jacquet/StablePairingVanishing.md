@@ -9,10 +9,12 @@ representation universes are independent. No reductive-group realization of
 `IsStablePairing.flip_injective` proves nondegeneracy of a stable pairing on its
 opposite side. Given an opposite quotient class annihilated by every upper
 class, `exists_open_stable_lift` and `exists_good_le` give a stable representative
-`t` for a good compact open subgroup. The published
-`compactCompression_stableEvaluationDuality`, using `Admits.finite`, identifies
-the full algebraic dual of that stable image with the stable image on the smooth
-contragredient. Every functional therefore evaluates to zero on `t`: its value
+`t` for a good compact open subgroup. The stable evaluation duality in the
+`Admits.duality` field identifies the full algebraic dual of that stable image
+with the stable image on the smooth contragredient. (The module originally
+derived this duality from an `Admits.finite` field through the published
+`compactCompression_stableEvaluationDuality`; Worker 937 replaced that field by
+`duality` itself.) Every functional therefore evaluates to zero on `t`: its value
 is the stable pairing of an upper class with the original opposite class.
 Algebraic dual separation forces `t = 0`, and its quotient class is zero.
 

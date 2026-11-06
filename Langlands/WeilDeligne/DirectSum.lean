@@ -12,7 +12,7 @@ are proved, not assumed. The empty family gives the rank-zero pair.
 
 noncomputable section
 
-universe uK uG uV uι
+universe uK uG uV uW uι
 
 open CategoryTheory
 
@@ -126,6 +126,29 @@ def directSumFunctor :
 def directSumEquiv {A B : ι → WeilDeligneRepresentation.{uK, uG, uV} K G ν}
     (e : ∀ i, Equiv (A i) (B i)) : Equiv (directSum A) (directSum B) :=
   Equiv.ofIso (directSumFunctor.mapIso (Pi.isoMk fun i => (e i).toIso))
+
+/-- Componentwise pair equivalences give an equivalence of the direct sums. The
+two families may have different carrier universes. -/
+def directSumCongr {ι : Type uι} [Fintype ι]
+    {A : ι → WeilDeligneRepresentation.{uK, uG, uV} K G ν}
+    {B : ι → WeilDeligneRepresentation.{uK, uG, uW} K G ν}
+    (e : ∀ i, Equiv (A i) (B i)) : Equiv (directSum A) (directSum B) where
+  representationEquiv := Representation.Equiv.mk
+    (DFinsupp.mapRange.linearEquiv fun i => (e i).representationEquiv.toLinearEquiv)
+    (fun g => by
+      apply LinearMap.ext
+      intro x
+      apply DirectSum.ext
+      intro i
+      exact LinearMap.congr_fun ((e i).representationEquiv.isIntertwining' g)
+        ((show DirectSum ι fun i => (A i : Type uV) from x) i))
+  comm_monodromy := by
+    apply LinearMap.ext
+    intro x
+    apply DirectSum.ext
+    intro i
+    exact LinearMap.congr_fun (e i).comm_monodromy
+      ((show DirectSum ι fun i => (A i : Type uV) from x) i)
 
 /-- The rank of a direct sum of pairs is the sum of the ranks. -/
 theorem rank_directSum (A : ι → WeilDeligneRepresentation.{uK, uG, uV} K G ν) :

@@ -33,22 +33,27 @@ structure NaturalNormalizedJacquetDuality
         ((normalizedJacquetFunctor.{uG, uV} O M hO hMO).map f)
 
 /-- The actual normalized Jacquet functors admit a coherent duality family on
-admissible objects when the same element gives cofinal opposite Iwahori
-contractions and the actual inverse-half Haar characters are reciprocal. -/
-theorem exists_naturalNormalizedJacquetDuality_of_iwahoriContractions
+the objects of any class `S` whose members satisfy the stable-pairing
+hypotheses `Admits` of the data built from cofinal opposite Iwahori
+contractions, when the actual inverse-half Haar characters are reciprocal. -/
+theorem exists_naturalNormalizedJacquetDuality_of_iwahoriContractions_of_admits
     (U M O : Subgroup G) (hU : IsClosed (U : Set G)) (hO : IsClosed (O : Set G))
     (hMU : M ≤ Subgroup.normalizer U) (hMO : M ≤ Subgroup.normalizer O)
     (g : G) (hc : ∀ m ∈ M, m * g = g * m)
     (hBasis : Jacquet.HasOppositeIwahoriContractionBasis U M O g)
     (hχ : ∀ m : M,
       (HaarModulus.closedInverseHalfCharacter U hU M hMU m : ℂ) *
-        (HaarModulus.closedInverseHalfCharacter O hO M hMO m : ℂ) = 1) :
+        (HaarModulus.closedInverseHalfCharacter O hO M hMO m : ℂ) = 1)
+    (S : SmoothRep.{0, uG, uV} ℂ G → Prop)
+    (hAdm : ∀ A, S A →
+      (Jacquet.stablePairingDataOfIwahoriContractions U M O hMU hMO g hc hBasis).Admits
+        A.representation A.isSmooth) :
     let rU := normalizedJacquetFunctor.{uG, uV} U M hU hMU
     let rO := normalizedJacquetFunctor.{uG, uV} O M hO hMO
-    ∃ E : ∀ (A : SmoothRep.{0, uG, uV} ℂ G), A.IsAdmissible →
+    ∃ E : ∀ (A : SmoothRep.{0, uG, uV} ℂ G), S A →
         (rU.obj A.contragredient ≅ (rO.obj A).contragredient),
       ∀ (A B : SmoothRep.{0, uG, uV} ℂ G)
-        (hA : A.IsAdmissible) (hB : B.IsAdmissible) (f : A ⟶ B),
+        (hA : S A) (hB : S B) (f : A ⟶ B),
         rU.map (SmoothRep.contragredientHom f) ≫ (E A hA).hom =
           (E B hB).hom ≫ SmoothRep.contragredientHom (rO.map f) := by
   let rU := normalizedJacquetFunctor.{uG, uV} U M hU hMU
@@ -58,16 +63,12 @@ theorem exists_naturalNormalizedJacquetDuality_of_iwahoriContractions
   have hχO : IsOpen (χO.ker : Set M) :=
     HaarModulus.isOpen_ker_closedInverseHalfCharacter O hO M hMO
   let D := Jacquet.stablePairingDataOfIwahoriContractions U M O hMU hMO g hc hBasis
-  have hAdm (A : SmoothRep.{0, uG, uV} ℂ G) (hA : A.IsAdmissible) :
-      D.Admits A.representation A.isSmooth :=
-    D.admits_of_iwahoriContractions A.representation hA
-      (fun _ hK => hK.2.1) (fun _ hK => hK.2.2)
   let Q (A : SmoothRep.{0, uG, uV} ℂ G) : SmoothRep.{0, uG, uV} ℂ M :=
     SmoothRep.of (Jacquet.characterTwistedAction A.representation O M hMO χO)
       (Jacquet.isSmooth_characterTwistedAction A.representation O M hMO χO hχO A.isSmooth)
   let eO (A : SmoothRep.{0, uG, uV} ℂ G) : rO.obj A ≅ Q A :=
     SmoothRep.mkIso (twistEquiv χO (Jacquet.Localization.trivialEquiv A.representation O M hMO))
-  have key : ∀ (A : SmoothRep.{0, uG, uV} ℂ G) (hA : A.IsAdmissible),
+  have key : ∀ (A : SmoothRep.{0, uG, uV} ℂ G) (hA : S A),
       ∃ b : Jacquet.Coinvariants (smoothContragredient A.representation) U →ₗ[ℂ]
           Jacquet.Coinvariants A.representation O →ₗ[ℂ] ℂ,
         D.IsStablePairing A.representation A.isSmooth b ∧
@@ -120,6 +121,114 @@ theorem exists_naturalNormalizedJacquetDuality_of_iwahoriContractions
   obtain ⟨w, rfl⟩ := Jacquet.Localization.mk_surjective A.representation O 1 y
   exact (hb A hA).natural (hAdm A hA) (hb B hB) (SmoothRep.hom f)
     (Jacquet.mk (smoothContragredient B.representation) U v) (Jacquet.mk A.representation O w)
+
+/-- The actual normalized Jacquet functors admit a coherent duality family on
+admissible objects when the same element gives cofinal opposite Iwahori
+contractions and the actual inverse-half Haar characters are reciprocal. -/
+theorem exists_naturalNormalizedJacquetDuality_of_iwahoriContractions
+    (U M O : Subgroup G) (hU : IsClosed (U : Set G)) (hO : IsClosed (O : Set G))
+    (hMU : M ≤ Subgroup.normalizer U) (hMO : M ≤ Subgroup.normalizer O)
+    (g : G) (hc : ∀ m ∈ M, m * g = g * m)
+    (hBasis : Jacquet.HasOppositeIwahoriContractionBasis U M O g)
+    (hχ : ∀ m : M,
+      (HaarModulus.closedInverseHalfCharacter U hU M hMU m : ℂ) *
+        (HaarModulus.closedInverseHalfCharacter O hO M hMO m : ℂ) = 1) :
+    let rU := normalizedJacquetFunctor.{uG, uV} U M hU hMU
+    let rO := normalizedJacquetFunctor.{uG, uV} O M hO hMO
+    ∃ E : ∀ (A : SmoothRep.{0, uG, uV} ℂ G), A.IsAdmissible →
+        (rU.obj A.contragredient ≅ (rO.obj A).contragredient),
+      ∀ (A B : SmoothRep.{0, uG, uV} ℂ G)
+        (hA : A.IsAdmissible) (hB : B.IsAdmissible) (f : A ⟶ B),
+        rU.map (SmoothRep.contragredientHom f) ≫ (E A hA).hom =
+          (E B hB).hom ≫ SmoothRep.contragredientHom (rO.map f) :=
+  exists_naturalNormalizedJacquetDuality_of_iwahoriContractions_of_admits
+    U M O hU hO hMU hMO g hc hBasis hχ SmoothRep.IsAdmissible
+    (fun A hA =>
+      (Jacquet.stablePairingDataOfIwahoriContractions U M O hMU hMO g hc
+        hBasis).admits_of_iwahoriContractions A.representation hA
+        (fun _ hK => hK.2.1) (fun _ hK => hK.2.2))
+
+/-- If every smooth representation satisfies the stable-pairing hypotheses
+`Admits` of the data built from cofinal opposite Iwahori contractions, and the
+actual inverse-half Haar characters are reciprocal, then the normalized
+`U`-Jacquet functor of the smooth contragredient is naturally isomorphic to the
+smooth contragredient of the normalized `O`-Jacquet functor. -/
+theorem nonempty_contragredient_normalizedJacquet_iso_of_admits
+    (U M O : Subgroup G) (hU : IsClosed (U : Set G)) (hO : IsClosed (O : Set G))
+    (hMU : M ≤ Subgroup.normalizer U) (hMO : M ≤ Subgroup.normalizer O)
+    (g : G) (hc : ∀ m ∈ M, m * g = g * m)
+    (hBasis : Jacquet.HasOppositeIwahoriContractionBasis U M O g)
+    (hχ : ∀ m : M,
+      (HaarModulus.closedInverseHalfCharacter U hU M hMU m : ℂ) *
+        (HaarModulus.closedInverseHalfCharacter O hO M hMO m : ℂ) = 1)
+    (hAdm : ∀ A : SmoothRep.{0, uG, uV} ℂ G,
+      (Jacquet.stablePairingDataOfIwahoriContractions U M O hMU hMO g hc hBasis).Admits
+        A.representation A.isSmooth) :
+    Nonempty (SmoothRep.contragredientFunctor.{0, uG, uV} ⋙
+        normalizedJacquetFunctor.{uG, uV} U M hU hMU ≅
+      (normalizedJacquetFunctor.{uG, uV} O M hO hMO).op ⋙
+        SmoothRep.contragredientFunctor.{0, uG, uV}) := by
+  obtain ⟨E, hE⟩ := exists_naturalNormalizedJacquetDuality_of_iwahoriContractions_of_admits
+    U M O hU hO hMU hMO g hc hBasis hχ (fun _ => True) (fun A _ => hAdm A)
+  exact ⟨NatIso.ofComponents (fun A => E A.unop trivial)
+    (fun f => hE _ _ trivial trivial f.unop)⟩
+
+/-- Fitting splittings of compression by `g` and by `g⁻¹` on the fixed vectors
+of every smooth representation, for every compact open subgroup with the two
+opposite Iwahori contractions, give the natural isomorphism between the
+normalized `U`-Jacquet functor of the smooth contragredient and the smooth
+contragredient of the normalized `O`-Jacquet functor, when the actual
+inverse-half Haar characters are reciprocal. -/
+theorem nonempty_contragredient_normalizedJacquet_iso_of_splits
+    (U M O : Subgroup G) (hU : IsClosed (U : Set G)) (hO : IsClosed (O : Set G))
+    (hMU : M ≤ Subgroup.normalizer U) (hMO : M ≤ Subgroup.normalizer O)
+    (g : G) (hc : ∀ m ∈ M, m * g = g * m)
+    (hBasis : Jacquet.HasOppositeIwahoriContractionBasis U M O g)
+    (hχ : ∀ m : M,
+      (HaarModulus.closedInverseHalfCharacter U hU M hMU m : ℂ) *
+        (HaarModulus.closedInverseHalfCharacter O hO M hMO m : ℂ) = 1)
+    (hUpperSplit : ∀ (A : SmoothRep.{0, uG, uV} ℂ G) (K : OpenSubgroup G)
+      (hK : IsCompact (K : Set G)), Jacquet.IsIwahoriContraction K U M O g →
+        Jacquet.CompactCompressionSplits A.representation A.isSmooth K hK g)
+    (hLowerSplit : ∀ (A : SmoothRep.{0, uG, uV} ℂ G) (K : OpenSubgroup G)
+      (hK : IsCompact (K : Set G)), Jacquet.IsIwahoriContraction K O M U g⁻¹ →
+        Jacquet.CompactCompressionSplits A.representation A.isSmooth K hK g⁻¹) :
+    Nonempty (SmoothRep.contragredientFunctor.{0, uG, uV} ⋙
+        normalizedJacquetFunctor.{uG, uV} U M hU hMU ≅
+      (normalizedJacquetFunctor.{uG, uV} O M hO hMO).op ⋙
+        SmoothRep.contragredientFunctor.{0, uG, uV}) :=
+  nonempty_contragredient_normalizedJacquet_iso_of_admits
+    U M O hU hO hMU hMO g hc hBasis hχ (fun A =>
+      (Jacquet.stablePairingDataOfIwahoriContractions U M O hMU hMO g hc
+        hBasis).admits_of_iwahoriContractions_of_splits A.representation
+        (fun _ hK => hK.2.1) (fun _ hK => hK.2.2) A.isSmooth
+        (fun K hK => hUpperSplit A.contragredient K hK.1 hK.2.1)
+        (fun K hK => hLowerSplit A K hK.1 hK.2.2))
+
+/-- Choose the natural isomorphism between the normalized `U`-Jacquet functor of
+the smooth contragredient and the smooth contragredient of the normalized
+`O`-Jacquet functor furnished by Fitting splittings of compression by `g` and by
+`g⁻¹` and reciprocal inverse-half Haar characters. -/
+def contragredientNormalizedJacquetIsoOfSplits
+    (U M O : Subgroup G) (hU : IsClosed (U : Set G)) (hO : IsClosed (O : Set G))
+    (hMU : M ≤ Subgroup.normalizer U) (hMO : M ≤ Subgroup.normalizer O)
+    (g : G) (hc : ∀ m ∈ M, m * g = g * m)
+    (hBasis : Jacquet.HasOppositeIwahoriContractionBasis U M O g)
+    (hχ : ∀ m : M,
+      (HaarModulus.closedInverseHalfCharacter U hU M hMU m : ℂ) *
+        (HaarModulus.closedInverseHalfCharacter O hO M hMO m : ℂ) = 1)
+    (hUpperSplit : ∀ (A : SmoothRep.{0, uG, uV} ℂ G) (K : OpenSubgroup G)
+      (hK : IsCompact (K : Set G)), Jacquet.IsIwahoriContraction K U M O g →
+        Jacquet.CompactCompressionSplits A.representation A.isSmooth K hK g)
+    (hLowerSplit : ∀ (A : SmoothRep.{0, uG, uV} ℂ G) (K : OpenSubgroup G)
+      (hK : IsCompact (K : Set G)), Jacquet.IsIwahoriContraction K O M U g⁻¹ →
+        Jacquet.CompactCompressionSplits A.representation A.isSmooth K hK g⁻¹) :
+    SmoothRep.contragredientFunctor.{0, uG, uV} ⋙
+        normalizedJacquetFunctor.{uG, uV} U M hU hMU ≅
+      (normalizedJacquetFunctor.{uG, uV} O M hO hMO).op ⋙
+        SmoothRep.contragredientFunctor.{0, uG, uV} :=
+  Classical.choice (nonempty_contragredient_normalizedJacquet_iso_of_splits
+    U M O hU hO hMU hMO g hc hBasis hχ hUpperSplit hLowerSplit)
 
 /-- Full reciprocity of the actual Haar characters implies the inverse-half
 reciprocity required by coherent normalized Jacquet duality. -/

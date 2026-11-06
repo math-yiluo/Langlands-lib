@@ -1,8 +1,10 @@
 import Langlands.Representation.Jacquet.StablePairingProof
 import Langlands.Representation.Jacquet.IwahoriContractionAdmissibility
+import Langlands.Representation.Jacquet.CompressionSplittingDuality
 import Langlands.Representation.Smooth.Contragredient.AdmissibleDualityProof
 
-/-! Admissibility supplies the stable-pairing hypotheses under both Iwahori
+/-! Fitting splittings of the two compressed actions, and in particular
+admissibility, supply the stable-pairing hypotheses under both Iwahori
 contraction orientations on the given good compact open subgroups. -/
 
 noncomputable section
@@ -21,6 +23,35 @@ variable
 
 include hUpper hLower in
 /-- Both contraction orientations on the good family discharge all of `Admits`
+for a smooth representation once compression by `g` on the `K`-fixed smooth
+functionals and compression by `g⁻¹` on the `K`-fixed vectors have the Fitting
+splitting for every good `K`. No finite dimensionality is assumed. -/
+theorem admits_of_iwahoriContractions_of_splits (hs : IsSmooth ρ)
+    (hUpperSplit : ∀ K (hK : D.Good K),
+      CompactCompressionSplits (smoothContragredient ρ) (isSmooth_smoothContragredient ρ) K
+        (D.isCompact K hK) D.g)
+    (hLowerSplit : ∀ K (hK : D.Good K),
+      CompactCompressionSplits ρ hs K (D.isCompact K hK) D.g⁻¹) :
+    D.Admits ρ hs where
+  duality K hK :=
+    compactCompression_stableEvaluationDuality_of_splits ρ hs K _ _ (hLowerSplit K hK)
+  upper_surjective K hK :=
+    (stableImageJacquetMap_bijective_of_splits
+      (smoothContragredient ρ) (isSmooth_smoothContragredient ρ)
+      (D.isCompact K hK) (hUpper K hK) D.hMN (hUpperSplit K hK)).2
+  upper_kernel K hK :=
+    (powerKernelSup_eq_ker_of_iwahoriContraction
+      (smoothContragredient ρ) (isSmooth_smoothContragredient ρ)
+      (D.isCompact K hK) (hUpper K hK) D.hMN).ge
+  lower_surjective K hK :=
+    (stableImageJacquetMap_bijective_of_splits ρ hs
+      (D.isCompact K hK) (hLower K hK) D.hMNbar (hLowerSplit K hK)).2
+  lower_kernel K hK :=
+    (powerKernelSup_eq_ker_of_iwahoriContraction ρ hs
+      (D.isCompact K hK) (hLower K hK) D.hMNbar).ge
+
+include hUpper hLower in
+/-- Both contraction orientations on the good family discharge all of `Admits`
 for an admissible representation. No representation-theoretic lift hypothesis
 is required as an additional input. -/
 theorem admits_of_iwahoriContractions : D.Admits ρ hρ.1 := by
@@ -30,22 +61,11 @@ theorem admits_of_iwahoriContractions : D.Admits ρ hρ.1 := by
     obtain ⟨L, hL, hLK⟩ := D.exists_good_le K
     exact ⟨L, D.isCompact L hL, hLK⟩
   have hdual := isAdmissible_smoothContragredient_of_compact_cofinal hcof ρ hρ
-  exact
-    { finite := fun K _ => hρ.2 K
-      upper_surjective := fun K hK =>
-        (stableImageJacquetMap_bijective_of_iwahoriContraction
-          (smoothContragredient ρ) (isSmooth_smoothContragredient ρ)
-          (D.isCompact K hK) (hUpper K hK) D.hMN (hdual.2 K)).2
-      upper_kernel := fun K hK =>
-        (powerKernelSup_eq_ker_of_iwahoriContraction
-          (smoothContragredient ρ) (isSmooth_smoothContragredient ρ)
-          (D.isCompact K hK) (hUpper K hK) D.hMN).ge
-      lower_surjective := fun K hK =>
-        (stableImageJacquetMap_bijective_of_iwahoriContraction ρ hρ.1
-          (D.isCompact K hK) (hLower K hK) D.hMNbar (hρ.2 K)).2
-      lower_kernel := fun K hK =>
-        (powerKernelSup_eq_ker_of_iwahoriContraction ρ hρ.1
-          (D.isCompact K hK) (hLower K hK) D.hMNbar).ge }
+  exact D.admits_of_iwahoriContractions_of_splits ρ hUpper hLower hρ.1
+    (fun K hK => powerKernelSup_isCompl_stableImage (smoothContragredient ρ)
+      (isSmooth_smoothContragredient ρ) K (D.isCompact K hK) D.g (hdual.2 K))
+    (fun K hK => powerKernelSup_isCompl_stableImage ρ hρ.1 K (D.isCompact K hK) D.g⁻¹
+      (hρ.2 K))
 
 /-- A chosen stable evaluation pairing, with its `Admits` input obtained from
 admissibility and the two Iwahori contraction orientations. -/

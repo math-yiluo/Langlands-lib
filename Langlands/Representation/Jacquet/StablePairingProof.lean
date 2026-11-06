@@ -328,12 +328,17 @@ namespace StablePairingData
 
 variable (D : StablePairingData G)
 
-/-- Finiteness and canonical-lift hypotheses on a smooth representation: the
-upper quotient of the smooth dual is reached from the stable image of
+/-- Stable-duality and canonical-lift hypotheses on a smooth representation:
+on every good `K`, evaluation identifies the stable image of compression by `g`
+on the smooth dual with the dual of the stable image of compression by `g⁻¹`;
+the upper quotient of the smooth dual is reached from the stable image of
 compression by `g`, the opposite quotient from the stable image of compression
-by `g⁻¹`, and in both cases the quotient kernel lies in the power kernel. -/
+by `g⁻¹`, and in both cases the quotient kernel lies in the power kernel.
+Finite-dimensional fixed vectors supply the duality field through
+`compactCompression_stableEvaluationDuality`. -/
 structure Admits (ρ : Representation ℂ G V) (hρ : IsSmooth ρ) : Prop where
-  finite : ∀ K, D.Good K → FiniteDimensional ℂ (fixedVectors ρ K.toSubgroup)
+  duality : ∀ K (hK : D.Good K),
+    CompactCompressionStableEvaluationDuality ρ hρ K (D.isCompact K hK) D.g⁻¹
   upper_surjective : ∀ K (hK : D.Good K),
     Function.Surjective (stableImageJacquetMap (smoothContragredient ρ)
       (isSmooth_smoothContragredient ρ) K (D.isCompact K hK) D.g D.N D.M D.hMN)
@@ -678,8 +683,7 @@ theorem injective (hA : D.Admits ρ hρ) (hb : D.IsStablePairing ρ hρ b) :
   obtain ⟨K, hK, hKU⟩ := D.exists_good_le U
   obtain ⟨ℓ, rfl⟩ := hU K hKU
   obtain ⟨ℓ', hℓ', hmk⟩ := D.exists_dual_stable_mk_eq hA hK ℓ
-  have hd := compactCompression_stableEvaluationDuality ρ hρ K (D.isCompact K hK) D.g⁻¹
-    (hA.finite K hK)
+  have hd := hA.duality K hK
   obtain ⟨E, hE⟩ := hd
   have hℓ'' : ℓ' ∈ stableImage (smoothContragredient ρ) (isSmooth_smoothContragredient ρ) K
       (D.isCompact K hK) D.g⁻¹⁻¹ := by
@@ -700,8 +704,7 @@ theorem exists_eq (hA : D.Admits ρ hρ) (hb : D.IsStablePairing ρ hρ b)
     (hφ : ∀ m : D.M, (m : G) ∈ K → ∀ y,
       φ (action ρ D.Nbar D.M D.hMNbar m y) = φ y) :
     ∃ x, b x = φ := by
-  have hd := compactCompression_stableEvaluationDuality ρ hρ K (D.isCompact K hK) D.g⁻¹
-    (hA.finite K hK)
+  have hd := hA.duality K hK
   obtain ⟨E, hE⟩ := hd
   let ψ : Module.Dual ℂ (stableImage ρ hρ K (D.isCompact K hK) D.g⁻¹) :=
     φ.comp ((Jacquet.mk ρ D.Nbar).comp
