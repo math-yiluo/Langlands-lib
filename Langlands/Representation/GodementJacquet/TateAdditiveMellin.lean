@@ -17,17 +17,17 @@ universe uF
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+private local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+private local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+private local instance : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : MeasurableSpace F.Carrierˣ := borel _
-local instance : BorelSpace F.Carrierˣ := ⟨rfl⟩
-local instance : MeasurableSpace (Langlands.GeneralLinear 1 F.Carrier) := borel _
-local instance : BorelSpace (Langlands.GeneralLinear 1 F.Carrier) := ⟨rfl⟩
+private local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+private local instance : MeasurableSpace F.Carrier := borel _
+private local instance : BorelSpace F.Carrier := ⟨rfl⟩
+private local instance : MeasurableSpace F.Carrierˣ := borel _
+private local instance : BorelSpace F.Carrierˣ := ⟨rfl⟩
+private local instance : MeasurableSpace (Langlands.GeneralLinear 1 F.Carrier) := borel _
+private local instance : BorelSpace (Langlands.GeneralLinear 1 F.Carrier) := ⟨rfl⟩
 
 local notation "T" => F.canonicalTopologicalData
 local notation "abv" => normalizedAbsoluteValue T

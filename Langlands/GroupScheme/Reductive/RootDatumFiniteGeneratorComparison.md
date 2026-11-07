@@ -1,0 +1,13 @@
+# Full root-data comparison from common finite generators
+
+This internal construction compares two supplied integral root pairings `P` and `Q` on the same entire additive groups `M` and `N`. The root index types may differ and have independent universes. Assume that their perfect bilinear pairings and root ranges agree. Supply one finite set `S` in `M` whose additive subgroup closure is all of `M`, and assume every reflection of each root pairing maps `S` into itself.
+
+`Langlands.LinearAlgebra.rootDatumEquivOfCommonGenerators` constructs a full `RootPairing.Equiv P Q`. Both its weight map and its contravariant coweight map are the identity on the entire respective groups. Its root-index equivalence is induced by the common root range. The companion formulas give equality of corresponding roots and coroots and identify both lattice maps exactly. Neither reducedness, finite root-index types, nor generation of `M` by the roots is an additional premise.
+
+The proof first forms the subgroup of integral linear automorphisms that preserve `S` in both directions. The published `FiniteGeneratorAction.finite_linear_subgroup_of_preserves_generating_set` shows that this group is finite: its action on the finite additive generating set is faithful. Any two involutions preserving `S` lie in this subgroup, so their product has finite order. This gives `isOfFinOrder_mul_of_common_generators`.
+
+For two equal roots, their reflections have this finite-order property. The published `eq_functional_of_finiteOrder_reflections` then identifies their defining integral functionals: the product of the two reflections is a unipotent shear, and its finite order forces the difference of the functionals to vanish. The common perfect pairing identifies the two coroots. This is `coroot_eq_of_common_generators`, which needs stability only under the two reflections being compared. Applying it at every root gives the full equivalence.
+
+The result retains all central lattice directions because `S` generates the entire group `M`, the perfect pairing is compared on all of `M × N`, and both maps of the resulting equivalence are the full identity maps. Equality of root support alone supplies no common generating-set premise.
+
+This is an internal algebraic step toward comparing full coordinate root data on field fibres of a local-base group scheme. It constructs neither an integral representation nor a common finite generating weight set, and asserts no constancy of coroots without the stated stability and generation hypotheses. It proves no integral group isomorphism or strict-Henselian generic-fibre determination theorem. The construction and proof use the named published algebraic lemmas; no external structural theorem is invoked.
