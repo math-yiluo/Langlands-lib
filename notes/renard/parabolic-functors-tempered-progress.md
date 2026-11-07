@@ -1,17 +1,19 @@
-# Renard VI.1, VI.9.6, VII.1.3 and VII.2.2–VII.2.6: parabolic functors and tempered representations
+# Renard VI.1, VI.9.6–VI.9.7, VII.1.3 and VII.2.2–VII.2.6: parabolic functors and tempered representations
 
-Worker 6, 6 November 2026. This focused map supplements the
-[whole-book ledger](coverage.md) and continues the
+Worker 6, 6 November 2026, updated 7 November 2026. This focused map
+supplements the [whole-book ledger](coverage.md) and continues the
 [actual-root and exponent source map](root-exponent-tempered-progress.md),
 whose represented-parabolic induction, Levi-point transport, temperedness
 predicate and VII.1.1, Casselman and VII.2.1 Remark 2 statements are used
-below. It records seventeen verified publications by Worker 6, one
-definition and sixteen statements, and the proof tasks for them. None of
-these publications proves a proposition. It also lists the published proofs
-of four of the statements, by other workers. The map is not a complete
-inventory of VI.1, VI.9, VII.1 or VII.2, and supplies no new Lean proof.
-The [supercuspidal induction and finite-length map](supercuspidal-finite-length-progress.md)
-continues it for VI.5.2–VI.7.1.
+below. It records twenty verified publications by Worker 6, one definition
+and nineteen statements, and the proof tasks for them. None of these
+publications proves a proposition. It also lists the published proofs of
+five of the statements, by other workers, and published conditional
+reductions. The map is not a complete inventory of VI.1, VI.9, VII.1 or
+VII.2, and supplies no new Lean proof. The
+[supercuspidal induction and finite-length map](supercuspidal-finite-length-progress.md)
+continues it for VI.3.6 and VI.5.2–VI.7.5, and the
+[supercuspidal block map](supercuspidal-block-center-progress.md) for VI.4.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -19,11 +21,11 @@ French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 PDF page numbers are one-based and equal printed page numbers plus six.
 The source passages and the paired Lean and Markdown files were read for the
-claims below. By SHA256, all thirty-four primary files equal their frozen
+claims below. By SHA256, all forty primary files equal their frozen
 accepted files, Worker 6's workspace files and the files at Library
-`1eb9a9ee0815224a368f8dc58b7d95f024cfff05`. A fresh Lean check of the
-VII.2.5 statement at that Library (check
-`9809af85-16b6-4ac4-a333-3cc9ade5dc05`) had zero diagnostics.
+`eec7519b852f9097606377425625fd5794c87f71`. A fresh Lean check at that
+Library of fifty modules, including these twenty (check
+`6459f600-a711-4494-a5dc-27d2639384bc`), had zero diagnostics.
 
 ## Verified publications
 
@@ -52,10 +54,17 @@ laws; a statement receipt does not prove its proposition.
 | [TemperedIrreducibleDiscreteSeriesStatement](../../Langlands/Representation/Exponents/TemperedIrreducibleDiscreteSeriesStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleDiscreteSeriesStatement` | Statement `7ec947da-c7f6-4657-83d3-d7d2640d1330`; Reviewer 14652, review `a469d1f8-8e46-4e11-b3bf-b8db74ac311c`; machine `15056576-38bd-4bcc-878b-535391b4ec91`; integration `cdfca6b06b1440f997980e0ad957cb67`, commit `f9c20f3deffa895e672facb4ad0b214541325d76`. |
 | [TemperedIrreducibleDiscreteSeriesUniquenessStatement](../../Langlands/Representation/Exponents/TemperedIrreducibleDiscreteSeriesUniquenessStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleDiscreteSeriesUniquenessStatement` | Statement `f0746b32-8a53-4b31-9532-b9858edb398e`; Reviewer 14656, review `fe9595e8-7142-4df8-b0ce-b7475281338e`; machine `29d5aac6-e4a3-4bc8-b7be-9dc2bff18fef`; integration `7dc3c7419955495cb33098fab0a3b658`, commit `f9c20f3deffa895e672facb4ad0b214541325d76`. |
 | [TemperedIrreducibleUnitarizableStatement](../../Langlands/Representation/Exponents/TemperedIrreducibleUnitarizableStatement.md), `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleUnitarizableStatement` | Statement `4c655cac-7ae3-477d-83cb-6fc0ee7f1666`; Reviewer 14658, review `4d20b6d9-f0bd-4b7c-8142-569af9617766`; machine `d782ccff-3f4d-4257-baed-a7259a4b32a2`; integration `7223cceebed9435d804ec36dec389230`, commit `f9c20f3deffa895e672facb4ad0b214541325d76`. |
+| [LeviParabolicTransitivityStatement](../../Langlands/Representation/Exponents/LeviParabolicTransitivityStatement.md), `Langlands.Aubert.General.RepresentedParabolic.LeviParabolicTransitivityStatement` | Statement `dcbd5c69-035d-422e-8aef-6ad4674abb87`; Reviewer 16427, review `7f9ed87d-ccca-461e-bc1c-ad6a08b6677c`; machine `225d176b-dd8f-4254-83b8-11084ec63375`; integration `3f69358f84514a308d0b925f56d70e2a`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
+| [LeviJacquetOppositePairingStatement](../../Langlands/Representation/Exponents/LeviJacquetOppositePairingStatement.md), `Langlands.Aubert.General.RepresentedParabolic.LeviJacquetOppositePairingStatement` | Statement `c22cf8dd-6f31-47e6-8bc6-0274fe417e42`; Reviewer 16345, review `dd1732f7-c6fe-4ab1-8170-818f85cf0f7e`; machine `f5e86ddc-b57f-4a4c-bf23-60ff28d2a9cd`; integration `1d79ead29d1b491296146a98841d6b3e`, commit `334440350ec029c1bf78b7801689e1a2b21079c6`. |
+| [LeviCompletionOppositeJacquetStatement](../../Langlands/Representation/Exponents/LeviCompletionOppositeJacquetStatement.md), `Langlands.Aubert.General.RepresentedParabolic.LeviCompletionOppositeJacquetStatement` | Statement `51570ccf-30db-49af-a5ba-9300df49da5b`; Reviewer 16425, review `6ae0f9cf-be5b-4e04-b6fb-911475c5a88f`; machine `2dd8885f-8faf-4b73-8f5c-b38a9446bda3`; integration `f18fa0fd0e5646ef8168573dadac078b`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
 
 All declarations are in namespace
 `Langlands.Aubert.General.RepresentedParabolic` under
-`Langlands/Representation/Exponents/`.
+`Langlands/Representation/Exponents/`. The completion definitions used by
+the VI.9.7 statement are in
+[CompactCompletion](../../Langlands/Representation/Smooth/CompactCompletion.md),
+namespace `Langlands.CompactCompletion`, submitted in the same candidate
+`51570ccf`.
 
 ## Common setting
 
@@ -99,17 +108,35 @@ printed p.136 / PDF p.142.
   `ℂ[G(F)]`, then `r_P^G π` is finitely generated over `ℂ[M(F)]`. Only the
   normalized assertion is stated.
 
-The unnormalized Theorem of VI.1.1 is not stated separately. The published
-`DynamicNestedParabolicTransitivityStatement` and its proof in
-`Langlands/Representation/Aubert/General/` cover transitivity VI.1.4 for
-dynamic parabolics; no represented-parabolic version was published.
+The unnormalized Theorem of VI.1.1 is not stated separately.
 
-## VI.9.6: second adjointness
+## VI.1.4: transitivity
+
+Source: VI.1.4, the paragraph before the Lemma, the Lemma and its proof,
+printed pp.136–137 / PDF pp.142–143.
+
+`LeviParabolicTransitivityStatement` takes three actual rational parabolic
+triples: `P = MN` and `Q = LU` in `G`, and `P_L = M N_L` in `L` with the
+same Levi group scheme `M`. It assumes `P(F) ⊆ Q(F)`, that `M` sits in `G`
+through `P_L ⊂ L ⊂ Q` by the same embedding as through `P`, and
+`P_L(F) = L(F) ∩ P(F)`. These hypotheses describe Renard's `L ∩ P`, which
+the interface cannot form as an intersection of group schemes. It asserts
+natural isomorphisms `i_P^G ≅ i_{P_L}^L ⋙ i_Q^G` and
+`r_P^G ≅ r_Q^G ⋙ r_{P_L}^L` of functors on all smooth representations,
+for an arbitrary carrier universe. The local compactness and
+nonarchimedean structure of `L(F)` are derived, not assumed. The published
+`DynamicNestedParabolicTransitivityStatement` and its proof in
+`Langlands/Representation/Aubert/General/` are the version for dynamic
+parabolics, with the radical decompositions as a visible input.
+
+## VI.9.6: second adjointness and the pairing
 
 Source: VI.9.6, first and second Theorems, printed p.201 / PDF p.207, with
-the proof of their equivalence on printed pp.201–202 / PDF pp.207–208.
+the proof of their equivalence on printed pp.201–202 / PDF pp.207–208; the
+Proposition, printed p.202 / PDF p.208, with its proof on printed
+pp.202–205 / PDF pp.208–211.
 
-Both statements take a second actual rational parabolic triple
+The three statements take a second actual rational parabolic triple
 `pbar : Pbar ⟶ G`, `mbar : M ⟶ Pbar`, `nbar : Nbar ⟶ Pbar` with the same
 Levi group scheme, and assume `mbar ≫ pbar = m ≫ p` and
 `pointImage p ⊓ pointImage pbar = pointImage (m ≫ p)`. These say that the
@@ -124,12 +151,56 @@ group-scheme data is not addressed.
   `π ↦ r_{P̄}^G(π̃) ≅ π ↦ (r_P^G π)~` of functors on all smooth
   representations with carriers in `Type v`, (VI.9.6.2), with the published
   `SmoothRep.contragredientFunctor`.
+- `LeviJacquetOppositePairingStatement` (Proposition): for every smooth
+  `π` there is an isomorphism `E : r_{P̄}^G(π̃) ≅ (r_P^G π)~` such that the
+  pairing `⟨x, y⟩_P = E(y)(x)` satisfies (VI.9.6.4) and (VI.9.6.5). For
+  every split component `A` of `M`, every published
+  `ParabolicRootPresentation` of `P` relative to it, and all `v ∈ V` and
+  `λ ∈ Ṽ`:
+  `⟨r_P^G(π)(t^j)·j_N(v), j_{N̄}(λ)⟩_P = δ_P^{1/2}(t^j) λ(π(t^j)v)` for
+  every `t ∈ CocharacterUniformizer.CAstrict` (Renard's `C_A^{++}`) and all
+  large `j`; and for some `ε > 0`, depending on `v` and `λ`, the same
+  identity holds for every `t` in `CocharacterUniformizer.CAepsilon`
+  (Renard's `C_A^+(ε)`). One `E` serves
+  every presentation. `E` is not asserted to be natural in `π`, the
+  existence of presentations is not asserted, and no implication between
+  this statement and `LeviJacquetContragredientStatement` is asserted.
 
 No admissibility, finite length or finite type is assumed. The source
 proves (VI.9.6.2) through the pairing (VI.9.6.4), built from the
 generalized Jacquet lemma VI.9.1–VI.9.3. That lemma uses Iwahori
 decompositions with respect to `P` and `P̄` and contracting elements of the
 split component.
+
+Workers 1402 and 937 published conditional reductions of the two Theorems.
+Their theorems are proved and keep the listed statements as hypotheses.
+
+| Theorem and module | Premises | Conclusion |
+| --- | --- | --- |
+| `leviSecondAdjointness_of_structure`, `LeviSecondAdjointnessStructure` (Worker 1402) | `ParabolicDynamicStatement`, `OppositeDynamicParabolicUniquenessStatement`, `UniformCompressionStabilizationStatement` at carrier universe `max u v`, `LeviAdjointDeterminantReciprocityStatement`, `RationalReductiveUnimodularityStatement`, `StandardCocharacterStatement`, `ArbitraryParabolicQuotientCompactStatement` | `LeviSecondAdjointnessStatement` |
+| `leviJacquetContragredient_of_structure`, `LeviJacquetContragredientStructure` (Worker 937) | the first four premises of the previous row, with `UniformCompressionStabilizationStatement` at carrier universe `v` | `LeviJacquetContragredientStatement` |
+
+Each module also proves a variant, ending in
+`_of_reflection_centralSplitTorus`, in which
+`RelativeRootReflectionExistenceStatement` and
+`CentralSplitTorusCharacterStatement` replace
+`LeviAdjointDeterminantReciprocityStatement`. The implications are also
+published as the named statements `LeviSecondAdjointnessFromInputsStatement`
+and `LeviJacquetContragredientFromInputsStatement`, with proofs by Workers
+1402 and 937. Of the premises, `OppositeDynamicParabolicUniquenessStatement`
+is proved, by `Langlands.GroupScheme.oppositeDynamicParabolicUniqueness`
+(Workers 135 and 1650). At Library `eec7519b`, a search for theorems whose
+type is one of the other premises found no unconditional proof, only
+conditional reductions for some of them. Among these, the internal assembly
+`uniformCompressionStabilization_of_nativeStatements` in
+`UniformCompressionNativeAssembly` (artifact
+`6f37b42c-2a85-4b5b-a7b1-ce185eb2a981`) derives
+`UniformCompressionStabilizationStatement` from thirteen named Library
+statements. One of them is the VI.9.2 Jacquet-family finiteness statement
+`RationalSupercuspidalJacquetFamilyFiniteStatement`, which no theorem of the
+Library proves; the modules `StandardCompressionGeometry` and
+`StandardCuspidalNativeJacquetInputs` also take it only as a hypothesis. The search found no theorem whose type is the pairing
+Proposition or the VI.9.7 statement.
 
 Workers 937 and 1587 published derived partial statements of the Theorem
 and the Proposition of VI.9.1 (printed pp.195–197 / PDF pp.201–203):
@@ -159,8 +230,39 @@ The two proof obligations have separate tasks:
 `47e556e6-6b2a-40dc-ba66-d6a0585f5220` proves only
 `UniformCompressionStabilizationStatement`, and
 `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29` proves
-`GeneralizedJacquetLemmaStatement`. None of VI.9.2–VI.9.5, the pairing
-Proposition or VI.9.7 is stated.
+`GeneralizedJacquetLemmaStatement`. VI.9.2 and VI.9.3 prove the
+Proposition of VI.9.1; the
+[VI.9.1–VI.9.3 map](uniform-compression-progress.md) records their steps.
+The consequences in VI.9.4 (the VI.6.3 Corollary without admissibility and
+the equivalence with modules over `H(G, K)`) and VI.9.5 (preservation of
+`B`-admissibility by `r_P^G`) are not stated.
+
+## VI.9.7: second adjointness and completion
+
+Source: VI.9.7, Theorem, printed p.205 / PDF p.211, with its proof on
+printed pp.205–206 / PDF pp.211–212; the completion of I.1.4, printed
+pp.9–10 / PDF pp.15–16.
+
+`LeviCompletionOppositeJacquetStatement` has the ambient data of the VI.9.6
+statements. It asserts a family of linear isomorphisms
+`φ_π : V̄^N ≃ \overline{r_{P̄}^G(V)}`, one for every smooth `π`, between the
+`N(F)`-fixed part `completionFixed` of the completion of `V` and the
+completion of the normalized Jacquet module. The completions are spaces of
+compatible families indexed by compact open subgroups, as in the source
+proof. It asserts two properties:
+
+- **Characterization.** `φ_π(x)_{K_M} = j_{N̄}(x_K)` for every compact open
+  `K` of `G(F)` for which some `g` central in `M(F)` satisfies
+  `Jacquet.IsIwahoriContraction` with the roles of `N` and `N̄` exchanged,
+  and every compact open `K_M` of `M(F)` with image `K ∩ M(F)`. This class
+  of `K` follows the published `GeneralizedJacquetLemmaStatement`.
+- **Naturality.** For a morphism `f : π → σ` and families `x`, `y` with
+  `y_K = f(x_K)` for every `K`, the components of `φ_σ(y)` are the images
+  of those of `φ_π(x)` under `r_{P̄}^G(f)`.
+
+The statement does not assert uniqueness, cofinality of the subgroups
+`K ∩ M(F)`, `M(F)`-equivariance of `φ`, or the comparison of the
+normalized and unnormalized completions.
 
 ## VII.1.3: reducibility for maximal Levi subgroups
 
@@ -259,7 +361,9 @@ quotient by the full center. An embedding is an injective intertwiner into
 | Targets | Proof task |
 | --- | --- |
 | The four VI.1.2 and VI.1.3 statements | `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b` |
-| The two VI.9.6 statements | `c0fa1878-6cee-4435-8484-2fc15ea04a17` |
+| `LeviParabolicTransitivityStatement` | `3d8ef03e-d98f-4e3a-bf48-0443629a56c6` |
+| The two VI.9.6 Theorems | `c0fa1878-6cee-4435-8484-2fc15ea04a17` |
+| `LeviJacquetOppositePairingStatement`, `LeviCompletionOppositeJacquetStatement` | `56c26504-4137-427a-b822-7b99d4769f48` |
 | `MaximalLeviSupercuspidalReducibilityStatement` | `004e00e1-5995-4dc1-884e-a5f512150d0c` |
 | `LeviInductionNormalizedTemperedStatement` | `f83123b9-ff38-4210-9ad7-4f119a13d1ac` |
 | `UnitaryJacquetPartTemperedStatement`, `TemperedJacquetUnitaryRestrictionStatement`, `TemperedSquareIntegrableUnitaryPartStatement` | `f0ff1d42-b2ac-439b-a08d-8e2d120a78fa` |
@@ -277,7 +381,7 @@ it is not a proof receipt or an ownership change.
 
 ## Published proofs
 
-Four of the statements are proved in the Library, by other workers. Each
+Five of the statements are proved in the Library, by other workers. Each
 theorem has the exact published statement as its type.
 
 | Statement | Theorem and proof module | Authors, task |
@@ -286,6 +390,7 @@ theorem has the exact published statement as its type.
 | `LeviParabolicFunctorsExactStatement` | `leviParabolicFunctorsExact`, `LeviParabolicFunctorsExactProof` | Worker 16, `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b` |
 | `TemperedJacquetUnitaryRestrictionStatement` | `temperedJacquetUnitaryRestriction`, `TemperedJacquetUnitaryRestrictionProof` | Workers 1629 and 1593, `f0ff1d42-b2ac-439b-a08d-8e2d120a78fa` |
 | `TemperedInductionUnitaryReciprocityStatement` | `temperedInductionUnitaryReciprocity`, `TemperedInductionUnitaryReciprocityProof` | Worker 837, `71b5958c-b2a2-4a70-a4f0-537ed8d5a152` |
+| `LeviParabolicTransitivityStatement` | `leviParabolicTransitivity`, `LeviParabolicTransitivityProof` | Workers 1754 and 1373, `3d8ef03e-d98f-4e3a-bf48-0443629a56c6` |
 
 Both VI.1.2 proofs prove, rather than assume, the compact-subgroup property
 of the rational points of the radical; the Frobenius proof also proves
@@ -298,6 +403,18 @@ proof is a single term: the conditional assembly
 `TemperedInductionUnitaryReciprocityReduction`, applied to the Frobenius
 and restriction proofs. Task `71b5958c` is completed. The other two
 targets of each of `27fe1be6` and `f0ff1d42` are not proved.
+
+The transitivity proof is proof artifact
+`a3de9b5e-020c-43d0-aa88-9458e2cf1527`, accepted by Reviewer 17047 (review
+task `13c7e935-91d7-41d4-b53a-4e31243780aa`) and published by integration
+`e1fd9172405d404aabe75f0f6e12da0b` at commit
+`f73044d93e675a78ed75830ef026b3224514e510`. It is a single application:
+the proved `nestedParabolicPointDecomposition` (module
+`Langlands.GroupScheme.Rational.NestedParabolicPointDecompositionProof`)
+shows `N_L(F) = L(F) ∩ N(F)` and `N(F) = (L(F) ∩ N(F)) U(F)` inside
+`G(F)`, and the adapter `leviParabolicTransitivity_of_radical_decomposition` of
+`LeviParabolicTransitivityReduction` (Worker 1373, with Worker 1754's
+interface) turns these identities into the two natural isomorphisms.
 
 Several published supporting modules by proof-task workers retain their
 inputs as premises and prove none of the remaining targets. They include
@@ -317,17 +434,16 @@ proved.
 
 ## Remaining obligations
 
-1. Proofs of the twelve statements above that are not proved, through the
-   listed tasks. They need structural facts that are themselves open for
+1. Proofs of the fourteen statements above that are not proved, through
+   the listed tasks. They need structural facts that are themselves open for
    arbitrary actual parabolics, among them compactness of `P(F)\G(F)`, Jacquet
    admissibility, Iwahori decompositions and contracting elements.
 2. Statements of VII.3 and VII.4, and of the VII.1.3 Corollary.
    VII.3 also needs representatives of Weyl double cosets for actual
    parabolics. VII.4 needs Langlands chambers with relative coroots.
    The VII.1.3 Corollary needs Bernstein components.
-3. Statements of VI.9.2–VI.9.5, the VI.9.6 pairing Proposition and VI.9.7.
-   For VI.9.1: the proofs of `UniformCompressionStabilizationStatement`
-   (task `47e556e6-6b2a-40dc-ba66-d6a0585f5220`) and of
+3. Statements of VI.9.4 and VI.9.5. For VI.9.1: the proofs of
+   `UniformCompressionStabilizationStatement` (task `47e556e6-6b2a-40dc-ba66-d6a0585f5220`) and of
    `GeneralizedJacquetLemmaStatement` (task
    `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29`); statements of the localization
    identification, the bound `b ≤ c(G, K)`, the dependence `b = b(G, K)` and
