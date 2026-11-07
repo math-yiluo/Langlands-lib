@@ -6,10 +6,10 @@ of the Galois-side global functional equation (published target
 `Langlands.Global.FunctionalEquationComparison.RelativeWeilTwistFunctionalEquationStatement`).
 
 The module is in the namespace `Langlands.ClassField.Global.RelativeWeilGroup`.
-It has one abbreviation for a subgroup, one short proved openness theorem,
+It has one abbreviation for a subgroup, two short proved openness theorems,
 an abbreviation for the virtual group, one set definition and two proposition
-definitions. The theorem `isOpen_galoisPreimage` proves only that a subgroup is
-open. No generation result is proved here and nothing is assumed.
+definitions. The theorems `isOpen_galoisPreimage` and `isOpen_ker_projection` prove only
+openness of the inverse-image subgroups and the projection kernel. No generation result is proved here and nothing is assumed.
 
 The target is `InducedCharacterGenerationStatement`. Let `C_E` be the idele class
 group of `E`. For every class family `c` and every finite Galois extension `E/F` of
@@ -37,6 +37,9 @@ which is a local instance.
   own image in `Gal(E/F)`.
 - `isOpen_galoisPreimage c F E H` (theorem, proved): `W_H` is open, because the
   published `continuousProjection` is continuous into a discrete group.
+- `isOpen_ker_projection c F E` (theorem, proved): the kernel of the projection
+  is the open inverse image of the trivial subgroup. This shared declaration was
+  moved here from `Global/Factors/RelativeWeilBrauer` without changing its type.
 - `ContinuousVirtual c F E` (abbreviation) is the published
   `ExactGrothendieckGroup` of the predicate `IsContinuous` on
   `FiniteRepresentation.{0, u, max u uV} ℂ W_{E/F}`. This is the free abelian

@@ -19,12 +19,17 @@ open Langlands.Global ContinuousRationalFunctions
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ} (S : OperatorRealization F n)
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance cuspidalL2AddCommGroupRationalInvariant :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalL2AddCommGroupContinuousRational :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalL2AddCommGroupFiniteSmoothRational :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalL2AddCommGroupAutomorphicForms :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance cuspidalL2AddCommGroupStableAutomorphic :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalL2AddCommGroupSpace : AddCommGroup S.Space := Submodule.addCommGroup _
 
 variable (F n) in
 /-- The enveloping-algebra generator of the `k`-th real basis direction `ArchimedeanGL.lieDirection F n k`. -/

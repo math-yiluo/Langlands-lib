@@ -49,7 +49,8 @@ These are in namespace `Langlands.ClassField.Global.RelativeWeilGroup`:
   `Ind_{W_H} ([θ] - [θ'])` in `ContinuousVirtual c F E`, for a subgroup `H` of `Gal(E/F)`
   and continuous characters `θ`, `θ'` of `W_H`. Character lines on `W_H` have carriers in
   universe `max u uV`, as in `inducedCharacterGenerators`.
-- `isOpen_ker_projection`: the kernel `C_E` of the projection `W_{E/F} → Gal(E/F)` is open.
+- The imported `isOpen_ker_projection` from `RelativeWeilInductionGenerationStatement`:
+  the kernel `C_E` of the projection `W_{E/F} → Gal(E/F)` is open.
 - `galoisCharacter c F E S χ`: a character `χ` of a subgroup `S` of `Gal(E/F)`, composed with
   the projection `W_S → S`. It is continuous because `S` is discrete.
 - `inflate_induce_oneDimensional`: inflation along the projection, applied to the induced

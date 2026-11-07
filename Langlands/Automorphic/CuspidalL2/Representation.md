@@ -9,7 +9,10 @@ the classical rapid decay of cusp forms (along one maximal block parabolic at a 
 obtained here only from the Library's definitions of automorphic forms, enveloping
 actions and constant terms. All declarations live in the namespace
 `Langlands.Automorphic.OperatorRealization`; `S : OperatorRealization F n` throughout, and
-`ev` stands for `evaluate F n (S.toContinuous ·)`.
+`ev` stands for `evaluate F n (S.toContinuous ·)`. The module's local `AddCommGroup`
+instances on the Library's function submodules and on `S.Space` carry explicit names
+(`cuspidalL2AddCommGroup…`), so they do not clash with the automatically named local
+instances of other modules in the same namespace, such as `OperatorEquivalence`.
 
 ## Definitions
 

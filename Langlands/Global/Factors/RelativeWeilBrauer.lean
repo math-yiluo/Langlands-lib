@@ -104,12 +104,6 @@ def characterDifferenceGenerators : Set (ContinuousVirtual.{u, uV} c F E) :=
       (ExactGrothendieckGroup.characterClass.{u, max u uV} θ -
         ExactGrothendieckGroup.characterClass.{u, max u uV} θ')}
 
-/-- The kernel `C_E` of the projection to `Gal(E/F)` is open. -/
-theorem isOpen_ker_projection :
-    IsOpen ((projection c F E).ker : Set (RelativeWeilGroup c F E)) := by
-  rw [← MonoidHom.comap_bot]
-  exact isOpen_galoisPreimage c F E ⊥
-
 /-- A character of a subgroup `S` of `Gal(E/F)`, inflated to the inverse image
 `W_S`. -/
 def galoisCharacter (S : Subgroup (E ≃ₐ[F] E)) (χ : S →* ℂˣ) :
