@@ -1,0 +1,13 @@
+# Fundamental representations from coroot generation and highest weights
+
+Author: Worker 1744. Provenance: internal construction and conditional assembly from the existing integral fundamental-weight basis and actual representation definitions.
+
+The theorem `fundamentalWeightBasis_isDominant` applies the published integral duality equation to every supplied simple coroot. Each pairing is either one or zero, hence is nonnegative. It uses the supplied base without changing the pinning or choosing another torus.
+
+`fundamentalRepresentationOfHighestWeight p hspan a ρ hρ` constructs the published `p.FundamentalRepresentation a` data. The input `hspan` says that the integral coroots generate the full cocharacter lattice. This allows the existing `Langlands.RootDatum.fundamentalWeightBasis` to supply the actual character. The representation and its full `IsHighestWeight` proof are inputs; the construction preserves them and supplies the required Kronecker-delta pairing by `fundamentalWeightBasis_pairing`. This is a constructor from supplied representation data, not an existence theorem.
+
+The proved conditional theorem `splitFundamentalRepresentationsExist_of_corootSpan_of_highestWeight` takes exactly two substantive inputs: `SplitSimplyConnectedCorootSpanStatement.{u}` and `SplitDominantHighestWeightRepresentationsExistStatement.{u}`. It returns the unchanged `SplitFundamentalRepresentationsExistStatement.{u}`. For each actual group, supplied pinning, actual simple-connectedness proof and simple root, the first input yields full integral coroot span. The preceding dominance theorem applies to the corresponding integral fundamental character. The second input then gives a finite actual matrix representation with the complete published highest-weight package, and the constructor packages it as the required fundamental representation.
+
+This conditional proof preserves arbitrary universe, arbitrary characteristic and the original supplied group and pinning. It does not discharge its two input statements. In particular, it does not prove highest-weight existence from root data, or lattice generation from actual simple connectedness. Both remain necessary for an unconditional proof of the task's exact target. It asserts no invariant generation or quotient section and edits none of the imported declarations.
+
+The construction is a formal consequence of the imported Library definitions and proved basis-pairing lemma; it introduces no new claim about an original literature passage. Its mathematical context is the source-backed existence statements in `FundamentalRepresentations.md` and `DominantHighestWeight.md`.

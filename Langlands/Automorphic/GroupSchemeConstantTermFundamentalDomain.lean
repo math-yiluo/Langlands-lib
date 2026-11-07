@@ -22,7 +22,7 @@ variable (F : Type u) [Field F] [NumberField F]
 local instance subgroupLocallyCompactSpace : LocallyCompactSpace (adelicPoints F G U) :=
   hclosed.locallyCompactSpace
 
-local instance quotientBorelSpace : BorelSpace (RationalQuotient F G U) :=
+local instance fundamentalDomainQuotientBorelSpace : BorelSpace (RationalQuotient F G U) :=
   rationalQuotientBorelSpace F G U
 
 /-- The actual Haar period on the existing chosen rational lattice transversal. -/

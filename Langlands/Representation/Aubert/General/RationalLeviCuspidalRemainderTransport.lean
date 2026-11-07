@@ -104,14 +104,15 @@ variable {k : Type u} [Field k] [TopologicalSpace k]
   (I : Finset (SimpleRoot i ν))
   (hL : IsConnectedReductive (Standard.leviScheme i ν (rootSet i ν I)))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsClosedImmersion
+local instance rationalLeviRemainderTransportAmbientAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance rationalLeviRemainderTransportLeviClosed : IsClosedImmersion
     (Standard.leviHom i ν (rootSet i ν I)).hom.hom.left :=
   Standard.isClosedSubgroup_leviHom i ν (rootSet i ν I)
-local instance : IsAffine (Standard.leviScheme i ν (rootSet i ν I)).X.left :=
+local instance rationalLeviRemainderTransportLeviAffine : IsAffine (Standard.leviScheme i ν (rootSet i ν I)).X.left :=
   isAffine_of_isAffineHom (Standard.leviHom i ν (rootSet i ν I)).hom.hom.left
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
-local instance : TopologicalSpace
+local instance rationalLeviRemainderTransportAmbientTopology :
+    TopologicalSpace (rationalPoints G) := pointTopology
+local instance rationalLeviRemainderTransportLeviTopology : TopologicalSpace
     (rationalPoints (Standard.leviScheme i ν (rootSet i ν I))) := pointTopology
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]

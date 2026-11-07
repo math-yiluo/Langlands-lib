@@ -77,3 +77,5 @@ French edition dated 9 July 2026, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The separate refined inertia-product obligation, prerequisite owners and
 explicit holds are unaffected.
+
+Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.

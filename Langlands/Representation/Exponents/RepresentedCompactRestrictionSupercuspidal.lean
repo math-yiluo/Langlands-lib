@@ -29,7 +29,8 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   [IsNonarchimedeanLocalField k]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
+local instance representedCompactRestrictionPointTopology :
+    TopologicalSpace (rationalPoints G) := pointTopology
 
 /-- Renard VI.2.1 (c): the restriction of `A` to the common norm kernel
 `⁰G = Plancherel.rationalCommonNormKernel G` is compact, that is, every

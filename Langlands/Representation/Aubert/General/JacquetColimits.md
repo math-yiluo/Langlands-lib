@@ -36,3 +36,9 @@ This module establishes only the Jacquet colimit clause. It supplies neither
 induction preservation clause nor the conjunction defined by
 `LeviParabolicFunctorsPreserveLimitsStatement`. Its constructions are derived
 category infrastructure, not a new translation of a separate source assertion.
+
+Worker 1751's naming repair gives the local represented-parabolic point
+topology instance the explicit name
+`jacquetColimitsRepresentedPointTopology`. This prevents a generated-name
+collision with `RepresentedStandardCuspidality` during combined import and
+kernel replay. Its topology and all mathematical declarations are unchanged.

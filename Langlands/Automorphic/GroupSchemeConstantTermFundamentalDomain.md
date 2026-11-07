@@ -2,6 +2,8 @@
 
 This internal adapter combines the published actual subgroup constant-term construction with its intrinsic Haar quotient measure and the existing fundamental-domain change of variables. It introduces no literature assertion. Its purpose is to connect normalized constant terms with the raw Haar periods used in the semidirect period-reduction theorem.
 
+The local Borel-space instance is named `fundamentalDomainQuotientBorelSpace` so that this module can be imported together with `GeneralLinearConstantTermComparison` and the GL cuspidality comparison target without a duplicate declaration name.
+
 Let `F` be a number field in any universe, `G/F` an affine group scheme locally of finite type, and `U` an actual subgroup functor whose adelic image is closed. The function `f` is an original `ContinuousRationalFunctions F G`, and `g` is an actual ambient adelic point. The subgroup's rational lattice is the existing `rationalSubgroup F G U`, and the domain is its existing chosen `LeftCosetSpace.fundamentalDomain`, using the published discreteness proof.
 
 `fundamentalDomainConstantTerm` is the Haar integral over this domain of `n ↦ evaluate F G f (n*g)`. The theorem `constantTerm_eq_fundamentalDomainIntegral` identifies it with the existing `constantTerm` for `rationalQuotientHaarMeasure F G U`. The proof applies `LeftCosetSpace.integral_quotientMeasure` to the original descended `constantTermIntegrand`. Its continuity and the published Borel structure supply strong measurability, and evaluation on a quotient class is definitionally the displayed integrand.

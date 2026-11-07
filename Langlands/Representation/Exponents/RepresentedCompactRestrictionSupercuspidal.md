@@ -99,3 +99,5 @@ The module proves no structural existence statement. It does not prove the
 fixed-level finiteness on the norm kernel, and it does not construct a
 cuspidal/remainder splitting. The final splitting proof will apply these
 theorems once the structural statements are proved.
+
+Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.

@@ -75,3 +75,5 @@ geometric filtration or proves the full
 `RationalCuspidalJacquetFactorExtractionStatement`. Empty root systems and
 empty selected subsets are included; the proper-induction conclusion
 applies only when the displayed proper subset exists.
+
+Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.

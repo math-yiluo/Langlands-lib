@@ -25,13 +25,15 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance wholeCuspidalComponentsPointTopology :
+    TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 variable [LocallyCompactSpace (GroupScheme.rationalPoints G)]
   [NonarchimedeanGroup (GroupScheme.rationalPoints G)]
 
-local instance : LocallyCompactSpace (Plancherel.rationalCommonNormKernel G) :=
+local instance wholeCuspidalComponentsNormKernelLocallyCompact :
+    LocallyCompactSpace (Plancherel.rationalCommonNormKernel G) :=
   (Plancherel.isOpen_rationalCommonNormKernel G).locallyCompactSpace
 
 variable (hstrata :

@@ -181,7 +181,8 @@ universe uF uV
 variable {F : Type uF} [Field F] [TopologicalSpace F]
   (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance cuspidalInductionExclusionRationalPointTopology :
+    TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 variable [LocallyCompactSpace (GroupScheme.rationalPoints G)]

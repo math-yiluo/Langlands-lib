@@ -34,3 +34,9 @@ finite-dimensionality, finite-type or finite-length hypothesis.
 The geometric, small-progenerator and generator-image stability conditions
 remain explicit. This module does not prove them, construct a whole-category
 inertia decomposition, or prove the dynamic-parabolic stabilization endpoint.
+
+The local rational-point topology and topological-group instances have
+explicit module-specific names. This avoids generated-name collisions when
+the module is imported together with the rational Cartan-support branch,
+including during combined kernel replay. Their values and all mathematical
+statements are unchanged.

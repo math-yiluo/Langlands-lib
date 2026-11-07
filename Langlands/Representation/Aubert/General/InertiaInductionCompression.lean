@@ -49,10 +49,12 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable (L : GroupScheme (Spec (CommRingCat.of F))) [IsAffine L.X.left]
   [LocallyOfFiniteType L.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints L) :=
+local instance inertiaInductionCompressionRationalPointTopology :
+    TopologicalSpace (GroupScheme.rationalPoints L) :=
   rationalPointTopology F L.X
 
-local instance : IsTopologicalGroup (GroupScheme.rationalPoints L) :=
+local instance inertiaInductionCompressionRationalPointTopologicalGroup :
+    IsTopologicalGroup (GroupScheme.rationalPoints L) :=
   rationalPoint_isTopologicalGroup F L
 
 variable {G : Type uG} [Group G] [TopologicalSpace G]

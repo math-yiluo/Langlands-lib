@@ -15,3 +15,7 @@ The ambient category is the existing smooth complex representation category of t
 The implemented intrinsic proofs reduce the `Bool` and `Option` families at their constructors, compute the class of a supplied representative, and transport the all/no-cuspidal properties through subquotient transitivity and ambient isomorphisms. `rationalCuspidalInertiaClassBlockProperty_iff` uses the published quotient-equality/inertia-relation equivalence to identify the block of a supplied representative with the existing `rationalInertiaBlockProperty`. None of these proofs uses a category decomposition.
 
 The remaining source proof route is VI.3.4's whole decomposition on the rational-character norm kernel, uniqueness making its two factors `G`-stable, VI.2.1's compact-restriction equivalence, and the regrouping of compact irreducible types by `G`-orbits and VI.3.2. These results, actual projectors and functor comparisons, preservation and subquotient properties of cuspidality, the literal-Levi realization/topology/standard-family comparisons, and both universal VI.3.5 decomposition statements and proofs remain program obligations. Workers 164 and 1510 identified this additional whole-category prerequisite; Worker 6 read the source and implemented these constructions.
+
+The local rational-point topology instance has a module-specific name so that
+this module can be imported together with the actual norm-kernel progenerator
+constructions. Its topology and all mathematical declarations are unchanged.

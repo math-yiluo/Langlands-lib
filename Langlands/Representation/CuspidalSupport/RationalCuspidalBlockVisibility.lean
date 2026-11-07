@@ -55,7 +55,7 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 variable (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instRationalCuspidalBlockVisibilityTopology : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- A subgroup exhausted by compact subgroups lies in the actual common

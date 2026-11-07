@@ -99,7 +99,8 @@ open GroupScheme
 variable {k : Type u} [Field k] [TopologicalSpace k]
   {G P M U : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
+local instance jacquetColimitsRepresentedPointTopology :
+    TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
 
 variable [T2Space k] [LocallyCompactSpace (rationalPoints G)]
   [NonarchimedeanGroup (rationalPoints G)]

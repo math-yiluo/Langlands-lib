@@ -78,3 +78,5 @@ standard induction inside each Levi. The mathematical inputs are the published
 actual subquotient isomorphism transport, the coproduct universal property and
 the unchanged rational whole-category factors. This is an internal conditional
 consequence of those interfaces; it claims no new external splitting theorem.
+
+Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.

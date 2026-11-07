@@ -55,3 +55,7 @@ not a new assertion attributed to literature. Compact-level inertia
 finiteness remains an explicit premise, as do the structural standard
 family inputs. No decomposition, generator stability or uniform
 compression theorem is established here.
+
+The local rational-point topology instance has a module-specific name so that
+this module can be imported together with the actual norm-kernel progenerator
+constructions. Its topology and all mathematical declarations are unchanged.
