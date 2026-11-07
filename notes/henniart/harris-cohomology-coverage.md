@@ -12,12 +12,15 @@ T1–T5 that this task published (see
 [Proved statements](#proved-statements)); the others are not.
 
 Each module's paired Markdown gives its exact hypotheses, sources with
-locators, and checks. The sources are registered as described in
-[Registered originals and reading record](sources.md). The source analysis
-of Harris 1999 is in
+locators, and checks. The originals of the Henniart audit, among them Harris
+1998, Harris 1999 and Berkovich's manuscript, are described in
+[Registered originals and reading record](sources.md). The other sources
+named below, such as SGA 4 and Harris–Taylor 2001, are identified only in
+the Markdown of the modules that cite them. The source analysis of Harris
+1999 is in
 [Harris 1999 and the deferred general-coefficient argument](harris-1999.md).
 
-Versions: Library commit `f73044d93e675a78ed75830ef026b3224514e510`,
+Versions: Library commit `2816ea5d81e2fb9b0512bd1d8dec2ad7797026fd`,
 environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`).
 
@@ -46,6 +49,9 @@ environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
 | [`Langlands.Cohomology.SupercuspidalRestriction.Statement`](../../Langlands/Cohomology/SupercuspidalRestriction/Statement.md) | `SupercuspidalRestriction.CompactModCenterRestrictionStatement`; `SupercuspidalRestriction.GLSupercuspidalRestrictionStatements` (3 components), with `SupercuspidalRestriction.unitDeterminantSubgroup` | The hypothesis of the vanishing statements. In general: for an open normal subgroup `H` with `H ∩ Z(G)` compact and `Z(G) H` of finite index, an irreducible representation with coefficients compact modulo the center restricts to `H` as a finite sum of irreducible representations with compactly supported coefficients. For `GL_n(F)` and `G° = {g | det g ∈ O_F^×}`: the properties of `G°` (BZ 3.20), Harish-Chandra's theorem in the direction supercuspidal ⇒ compact modulo the center (BZ 3.21), and the finite decomposition of the restriction (BZ 3.21, 3.26). `glSupercuspidalRestriction_of_compactModCenter` proves the last from the others, given total disconnectedness and σ-compactness of `GL_n(F)`. Source of the use: Harris 1997 p.96 (`GJ^0`). |
 | [`Langlands.Cohomology.EtaleGaloisSmooth.Statement`](../../Langlands/Cohomology/EtaleGaloisSmooth/Statement.md) | `EtaleGaloisSmooth.GaloisCohomologySmoothStatement` | For an algebraic extension `L/K` and a quasi-compact quasi-separated `X → Spec K`, Worker 13's action of `L ≃ₐ[K] L` on étale cohomology of `X_L` with constant coefficients is smooth for the Krull topology. Truth argument: SGA 4 VII 5.7–5.8. The Markdown shows that algebraicity and quasi-compactness cannot be dropped. Finite-level input to the continuity of the `λ`-adic representations of Harris 1999 §5. |
 | [`Langlands.Cohomology.HarrisCMCohomology.Statement`](../../Langlands/Cohomology/HarrisCMCohomology/Statement.md) | `HarrisCMCohomology.HarrisCMCohomologyStatements` (2 components: `HarrisCMCohomology.HarrisCMCohomologyFiniteStatement` and `HarrisCMCohomology.HarrisCMGaloisCohomologySmoothStatement`) | For a small CM level `U`, Worker 57's geometric CM scheme `X̄_U = X_U ×_{Spec F} Spec F̄` and the `r`-th stage `B_r` of Worker 57's torsion coefficient system pulled back to `X̄_U`: every `H^d(X̄_U, B_r)` is finite, and Worker 57's action of `F̄ ≃ₐ[F] F̄` on it (`cmHarrisGeometricGaloisCohomologyAction`) is smooth for the Krull topology. All objects take a proof `q` of `CMRepresentabilityStatement` and further premises; `q`, `square`, `existence`, `geometry` and `hRigid` are unproved, and the Markdown lists published proofs of the other thirteen. Truth arguments: SGA 4 IX 2.3–2.4 and XIV Cor. 1.2 (finiteness); SGA 4 VII 5.7–5.8 (smoothness). Analogues, at one level and one torsion stage, of the finiteness used in the proof of Harris 1999 Prop. 4.10 (p.312), and of the continuity of the Galois action that Harris–Taylor 2001 III.2 (p.97) assert and that the `λ`-adic representations of Harris 1999 §5 (p.313) require. |
+| [`Langlands.Cohomology.HarrisCMLevelGaloisSmooth.Statement`](../../Langlands/Cohomology/HarrisCMLevelGaloisSmooth/Statement.md) | `HarrisCMLevelGaloisSmooth.HarrisCMLevelGaloisSmoothStatement` | For a commutative ring `R`, the Library's `cmSmallLevelGaloisCohomologyFunctor` sends a sheaf `M` of `R`-modules on the small étale site of `Spec F` to the colimit, over all sufficiently small CM levels `U`, of `H^d(X̄_U, p_U^* M)`, where `p_U : X̄_U → Spec F` is the structure map. The statement: for every degree `d`, every `M` and every class of this colimit, some open subgroup of `F̄ ≃ₐ[F] F̄` (Krull topology) fixes the class under the Library's Galois action. There is no finiteness, torsion or characteristic hypothesis on `R`. The objects take `q` and eighteen further premises; `q`, `square`, `existence`, `geometry` and `hRigid` are unproved, and the Markdown lists published proofs of the other fourteen. Truth argument: SGA 4 VII 5.1 and Cor. 5.8 at each level. Analogue, for coefficients pulled back from `Spec F` and discrete modules, of the continuity of the Galois action on `H^i(X, L_ξ) = lim_{→U} H^i(X_U ×_F F^ac, L_ξ)` in Harris–Taylor 2001 III.2 (pp.96–97). |
+| [`Langlands.Cohomology.HarrisCMLevelInvariants.Statement`](../../Langlands/Cohomology/HarrisCMLevelInvariants/Statement.md) | `HarrisCMLevelInvariants.HarrisCMLevelInvariantsStatement` | For a commutative ring `R`, a level-trivial coefficient diagram `coeff` of étale `R`-module sheaves on the geometric CM tower `U ↦ X̄_U`, and sufficiently small levels `V ≤ U` with `V` normal in `U`, such that the transition of `coeff` along `V ≤ U` is an isomorphism and the index `[U : V]` is a unit of `R`: in every degree `d`, restriction `H^d(X̄_U, coeff_U) → H^d(X̄_V, coeff_V)` is injective, and its image is the set of classes fixed by the maps of the level arrows `smallCMNormalInverseArrow D U V hVU g : V ⟶ V` (element `g⁻¹`) for all `g ∈ U`. The same premises as `HarrisCMLevelGaloisSmooth`. Truth argument: Worker 57's theorem that `X̄_V → X̄_U` is a finite étale `U/V`-torsor, and the trace of SGA 4 IX 5.1. Analogue of the comparison `H^i(X_U ×_F F^ac, L_ξ) ≅ H^i(X_V ×_F F^ac, L_ξ)^{U/V}` of Harris–Taylor 2001 III.2 (p.96). |
+| [`Langlands.Cohomology.HarrisCMColimitInvariants.Statement`](../../Langlands/Cohomology/HarrisCMColimitInvariants/Statement.md) | `HarrisCMColimitInvariants.HarrisCMColimitInvariantsStatement` | For a `ℚ`-algebra `R` and a level-trivial coefficient diagram on the same tower all of whose transition maps are isomorphisms: at every small level `U` and in every degree `d`, the insertion of `H^d(X̄_U, coeff_U)` into the colimit over all small levels (`RestrictedLevelColimit.ι`) is injective, and its image is the set of classes fixed by `U` under the Library's smooth action of the finite-adelic group (`cmSmallLevelSmoothCohomology`). The same premises. Truth argument: derived from `HarrisCMLevelInvariantsStatement`. This is the step between the comparison of Harris–Taylor 2001 p.96 and the admissibility of `H^i(X, L_ξ)` that they assert on p.97. |
 
 All names in the second column are relative to the namespace
 `Langlands.Cohomology`, except `Langlands.CompactCoefficientSplittingStatement`.
@@ -115,9 +121,13 @@ and two others derive it inside a proof
 ## Published constructions of other workers
 
 These are constructions with proofs, not theorem statements of this task.
-They are used by the statements above, by some of their proofs, or by the
-Galois-smoothness statement listed below. The modules that the proofs
-themselves import are named in [Proved statements](#proved-statements).
+They are used by the statements above or by some of their proofs, except
+the row of `HarrisTaylorCMGeometricNormalActions` and
+`HarrisTaylorCMGeometricNormalTorsor`, which is cited only in a truth
+argument. The modules that the proofs themselves
+import are named in [Proved statements](#proved-statements). The Author
+column follows the module Markdown's Author line; "No Author line" marks a
+module whose Markdown has none.
 
 | Module | Author | Objects |
 | --- | --- | --- |
@@ -140,6 +150,12 @@ themselves import are named in [Proved statements](#proved-statements).
 | [`Langlands.Geometry.EtaleAutomorphism`](../../Langlands/Geometry/EtaleAutomorphism.md), [`Langlands.Cohomology.TranslationAction`](../../Langlands/Cohomology/TranslationAction.md), [`Langlands.Geometry.EtaleCohomologyAction`](../../Langlands/Geometry/EtaleCohomologyAction.md) | Worker 13 | Translation of étale sheaves by scheme automorphisms, and `EtaleCohomologyAction.cohomologyRep`, the representation of a group acting on a scheme by automorphisms on étale cohomology of an equivariant sheaf |
 | [`Langlands.Cohomology.TranslationCoaction`](../../Langlands/Cohomology/TranslationCoaction.md), [`Langlands.Geometry.EtaleConstantCohomology`](../../Langlands/Geometry/EtaleConstantCohomology.md), [`Langlands.Geometry.EtaleGaloisAction`](../../Langlands/Geometry/EtaleGaloisAction.md) | Worker 13 | Actions on derived functors from structure maps into translates; `EtaleCohomologyAction.constantCohomologyRep`, the action on étale cohomology with constant coefficients; `EtaleGaloisAction.galoisCohomologyRep`, the action of `L ≃ₐ[K] L` on étale cohomology of the base change `X ×_{Spec K} Spec L` with constant coefficients |
 | [`Langlands.Shimura.PEL.HarrisTaylorCMGeometricCohomology`](../../Langlands/Shimura/PEL/HarrisTaylorCMGeometricCohomology.md), [`Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology`](../../Langlands/Shimura/PEL/HarrisTaylorCMGeometricGaloisCohomology.md) | Worker 57 | In namespace `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`: `cmHarrisGeometricCoefficientCohomologySystem`, the étale cohomology `H^d(X̄_U, B_r)` as a functor of the coefficient stage `r`; `cmHarrisGeometricGaloisCohomologyAction`, the action of `F̄ ≃ₐ[F] F̄` on it, by pullback along the Galois automorphisms of `X̄_U` followed by the canonical coefficient isomorphisms. Both take a proof `q` of `CMRepresentabilityStatement` |
+| [`Langlands.Geometry.EtaleDerivedSections`](../../Langlands/Geometry/EtaleDerivedSections.md) | Worker 13 | `EtaleDerivedSections.cohomology X R d`, the right derived functors of global sections on sheaves of `R`-modules on the small étale site of a scheme, computed with injective resolutions; the étale cohomology in all four `HarrisCM` statement modules |
+| [`Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelIndex`](../../Langlands/Shimura/PEL/HarrisTaylorCMSmallLevelIndex.md), [`Langlands.Shimura.PEL.HarrisTaylorCMGeometricCoefficients`](../../Langlands/Shimura/PEL/HarrisTaylorCMGeometricCoefficients.md) | Worker 57 | `SmallCMLevel D`, the sufficiently small CM levels with their level arrows, and the preorder `OrderedSmallCMLevel D`; `cmGeometricSchemeTower`, the tower `U ↦ X̄_U` as a functor `SmallCMLevel D ⥤ Scheme`, which takes `q` |
+| [`Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelCohomology`](../../Langlands/Shimura/PEL/HarrisTaylorCMSmallLevelCohomology.md), [`Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelGaloisCoefficients`](../../Langlands/Shimura/PEL/HarrisTaylorCMSmallLevelGaloisCoefficients.md) | No Author line | `cmSmallLevelTowerEtale` (the transition maps of the geometric tower are étale), coefficient diagrams `cmSmallLevelCoefficientDiagram`, level triviality `cmSmallLevelTrivialCoefficients`, the level cohomology `cmSmallLevelCohomology` and its colimit with the smooth finite-adelic action, `cmSmallLevelSmoothCohomology`; `cmSmallLevelGaloisCohomologyFunctor`, the colimit of `H^d(X̄_U, p_U^* M)` with the finite-adelic and Galois actions |
+| [`Langlands.Shimura.PEL.HarrisTaylorCMHeckeSchemes`](../../Langlands/Shimura/PEL/HarrisTaylorCMHeckeSchemes.md), [`Langlands.Shimura.PEL.HarrisTaylorCMNormalActions`](../../Langlands/Shimura/PEL/HarrisTaylorCMNormalActions.md) | No Author line | The inclusion arrow `smallCMInclusion D hVU : V ⟶ U` (element `1`) and, for `V` normal in `U` and `g ∈ U`, the arrow `smallCMNormalInverseArrow D U V hVU g : V ⟶ V` (element `g⁻¹`) |
+| [`Langlands.Geometry.EtaleCohomologyDiagram`](../../Langlands/Geometry/EtaleCohomologyDiagram.md), [`Langlands.Shimura.RestrictedLevelTowerCohomology`](../../Langlands/Shimura/RestrictedLevelTowerCohomology.md), [`Langlands.Shimura.RestrictedLevelColimit`](../../Langlands/Shimura/RestrictedLevelColimit.md) | No Author line | `CoefficientDiagram`, diagrams of étale sheaves over a tower of schemes; `IsLevelTrivialCoefficients`; colimits over levels satisfying a property, their insertions `RestrictedLevelColimit.ι` and the group actions on them |
+| [`Langlands.Shimura.PEL.HarrisTaylorCMGeometricNormalActions`](../../Langlands/Shimura/PEL/HarrisTaylorCMGeometricNormalActions.md), [`Langlands.Shimura.PEL.HarrisTaylorCMGeometricNormalTorsor`](../../Langlands/Shimura/PEL/HarrisTaylorCMGeometricNormalTorsor.md) | Worker 57 | The action `cmGeometricNormalQuotientAction` of `U/V` on `X̄_V` by the tower maps of the arrows `smallCMNormalInverseArrow`, and the theorem `cmGeometricNormalEtaleAction_isFiniteGeometricTorsor_of_dominantCriterion` that it is a finite geometric torsor. No `HarrisCM` statement module imports them; the truth argument of `HarrisCMLevelInvariants` cites them |
 | [`Langlands.Representation.Classification.Supercuspidal`](../../Langlands/Representation/Classification/Supercuspidal.md) | Worker 23 | `GeneralLinear.IsSupercuspidal`: admissibility and vanishing of the Jacquet coinvariants for all proper conjugate block parabolics of `GL_n(F)` |
 | [`Langlands.Representation.Classification.FixedCentralSplittingStatement`](../../Langlands/Representation/Classification/FixedCentralSplittingStatement.md) | Worker 19 | The predicate `HasCompactSmoothCoefficientsModCenter` (the module's splitting proposition is not used) |
 | [`Langlands.Group.GL.Padic`](../../Langlands/Group/GL/Padic.md) | Worker 6 | The canonical topology on `GL_n(F)` with its topological group, Hausdorff and local compactness certificates |
@@ -176,6 +192,8 @@ and `compactDerived`. `SmoothCompactCohomology`, `SmoothCompactComparison` and
 | Harris 1999 §5, p.313: `λ`-adic representations of `Gal(F̄/F)` on étale cohomology; SGA 4 VII 5.7–5.8 | `GaloisCohomologySmoothStatement` (constant coefficients) |
 | Harris 1999, proof of Prop. 4.10, p.312: "the right-hand side of the spectral sequence (4.9) is a finite group for all `m`"; SGA 4 XIV Cor. 1.2 | `HarrisCMCohomologyFiniteStatement` (analogue for Worker 57's geometric CM level `X̄_U` and torsion stage `B_r`; conditional on `q`) |
 | Harris–Taylor 2001 III.2, p.97: the Galois action on Shimura cohomology with coefficient systems is continuous; Harris 1999 §5, p.313: `λ`-adic representations of `Gal(F̄/F)` on such cohomology; SGA 4 VII 5.7–5.8 | `HarrisCMGaloisCohomologySmoothStatement` (the same analogue, at one level and one torsion stage) |
+| Harris–Taylor 2001 III.2, p.96: `H^i(X, L_ξ) = lim_{→U} H^i_et(X_U ×_F F^ac, L_ξ)` over sufficiently small levels; p.97: it is "an admissible/continuous `G(A^∞) × Gal(F^ac/F)`-module"; SGA 4 VII 5.1 and Cor. 5.8 (truth argument) | `HarrisCMLevelGaloisSmoothStatement` (the Galois continuity, for the colimit over all small CM levels, with coefficients pulled back from `Spec F` and discrete modules; conditional on `q`) |
+| Harris–Taylor 2001 III.2, p.96: "If `V ⊂ U` then … `H^i_et(X_U ×_F F^ac, L_ξ) ≅ H^i_et(X_V ×_F F^ac, L_ξ)^{U/V}`"; SGA 4 IX 5.1, the trace (truth argument only) | `HarrisCMLevelInvariantsStatement` (finite level, `V` normal in `U`, `[U : V]` a unit of `R`); `HarrisCMColimitInvariantsStatement` (the colimit over all small levels, `ℚ`-algebra coefficients); both conditional on `q` |
 
 ## Mathlib results used instead of restating them
 
@@ -199,9 +217,9 @@ and `compactDerived`. `SmoothCompactCohomology`, `SmoothCompactComparison` and
 | Application of `CompactModCenterRestrictionStatement` to Harris's `GJ^0`: that `GJ^0` is normal in `GJ` and that `Z(GJ) GJ^0` has finite index | The group `GJ`, the Drinfeld tower `M_N` and its components (Harris 1997 (A.8)) | Analytic spaces: task `18670997` |
 | The geometric input `H^j_c(M_N) ≅ c-Ind_{GJ^0}^{GJ} H^j_c(R_N)` (Harris 1997 (A.8)) | The Drinfeld tower as analytic spaces with their group actions | Analytic spaces: task `18670997` |
 | Smoothness of the group action on compactly supported cohomology for Berkovich's analytic étale sheaves (Harris 1997 Lemma 6(i); Berkovich Cor. 1.5.2(i)). The ordinary-topological analogue is stated in `SmoothCompactCohomology` | Berkovich's smooth equivariant étale sheaves (Definition 1.4.1, pp.7–8). The base is a `G`-space: an analytic space with a continuous action of a topological group `G` (§1.1, pp.1–2), whose points need not have open stabilizers. Smoothness is a condition on the sheaf `F`: for every quasi-étale `U → X` with `U` compact, the canonical action of the open subgroup `G_U ⊂ G` on `F(U)` is discrete. Equivalently (p.8), every local section has an open stabilizer after restriction to suitable distinguished neighborhoods. Also needed: the derived compact sections of such sheaves, as smooth representations. The Library has these objects only on topological spaces (`SmoothSheafCohomology`), and the analytic étale sites only at the affinoid level | Tasks `23471a9e` (Workers 13 and 61) and `18670997` |
-| Smoothness of the Galois action on étale cohomology with non-constant coefficients in general, and on Shimura cohomology after passing to the limit over levels or to `ℓ`-adic coefficients. For Worker 57's CM torsion coefficient system at one level and one stage it is stated, conditionally on `CMRepresentabilityStatement`, in `HarrisCMCohomology` | Galois actions on étale cohomology of equivariant sheaves over base changes, and the Shimura schemes. For Harris's CM torsion coefficient system the Galois actions exist only conditionally on `CMRepresentabilityStatement` (see the Shimura row below) | Worker 13 (`EtaleCohomologyAction`); task `36881fec` (Worker 57) |
+| Smoothness of the Galois action on étale cohomology with non-constant coefficients in general, and on Shimura cohomology with `ℓ`-adic coefficients or with Harris's torsion coefficient systems after passing to the limit over levels. It is stated, conditionally on `CMRepresentabilityStatement`, for Worker 57's CM torsion coefficient system at one level and one stage (`HarrisCMCohomology`), and for the colimit over all small CM levels with coefficients pulled back from `Spec F` (`HarrisCMLevelGaloisSmooth`) | Galois actions on étale cohomology of equivariant sheaves over base changes, and the Shimura schemes. For Harris's CM torsion coefficient system the Galois actions exist only conditionally on `CMRepresentabilityStatement` (see the Shimura row below) | Worker 13 (`EtaleCohomologyAction`); task `36881fec` (Worker 57) |
 | Harris's spectral sequences themselves (Harris 1997 Lemma 6; Harris 1999 Prop. 4.4, (4.4.1), Prop. 4.10), and the application of `HyperextDegenerationStatement` to them | Convergent hyperext spectral sequences, which Mathlib does not have; the analytic spaces, uniformization and equivariant étale sites | Analytic sites: task `18670997`; Shimura geometry: task `36881fec` (Worker 57) |
-| Unitary Shimura cohomology with general algebraic coefficients | Shimura varieties as schemes, level towers, Hecke and Galois actions on étale cohomology with coefficient systems. The Library has the coefficient sheaves (`Langlands.Shimura.Coefficients`) and proves similitude representability (Worker 254's theorem `Langlands.Shimura.similitudeRepresentability`, module `Langlands.Shimura.Unitary.RepresentabilityProof`). In namespace `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`, the scheme level tower `cmSchemeTower` (module `HarrisTaylorCMSchemeLevels`), the scheme Hecke correspondences `cmHeckeLeft` and `cmHeckeRight` (`HarrisTaylorCMHeckeSchemes`) and Worker 57's Galois actions on the cohomology of the geometric CM torsion coefficient system, such as `cmHarrisGeometricGaloisCohomologyAction` (`HarrisTaylorCMGeometricGaloisCohomology`), all take a proof `q` of `CMRepresentabilityStatement` as an argument. That statement, the representability of Harris's PEL moduli problem, is not proved; its division-algebra case `DivisionCMRepresentabilityStatement` is the target of task `6eac742d`. Generic level-tower constructions (`Langlands.Shimura.LevelTowerCohomology`, `Langlands.Shimura.LevelTowerGalois`) exist. The only cohomology statements about the conditional schemes are the two of `HarrisCMCohomology`, at one level and one torsion stage; nothing is stated across levels, about Hecke operators, or for the `ℓ`-adic limit over the torsion stages | Task `36881fec` (Worker 57); task `6eac742d` |
+| Unitary Shimura cohomology with general algebraic coefficients | Shimura varieties as schemes, level towers, Hecke and Galois actions on étale cohomology with coefficient systems. The Library has the coefficient sheaves (`Langlands.Shimura.Coefficients`) and proves similitude representability (Worker 254's theorem `Langlands.Shimura.similitudeRepresentability`, module `Langlands.Shimura.Unitary.RepresentabilityProof`). In namespace `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`, the scheme level tower `cmSchemeTower` (module `HarrisTaylorCMSchemeLevels`), the scheme Hecke correspondences `cmHeckeLeft` and `cmHeckeRight` (`HarrisTaylorCMHeckeSchemes`) and Worker 57's Galois actions on the cohomology of the geometric CM torsion coefficient system, such as `cmHarrisGeometricGaloisCohomologyAction` (`HarrisTaylorCMGeometricGaloisCohomology`), all take a proof `q` of `CMRepresentabilityStatement` as an argument. That statement, the representability of Harris's PEL moduli problem, is not proved; its division-algebra case `DivisionCMRepresentabilityStatement` is the target of task `6eac742d`. Generic level-tower constructions (`Langlands.Shimura.LevelTowerCohomology`, `Langlands.Shimura.LevelTowerGalois`) exist. Library commits after `f73044d9` add the cohomology of level towers of schemes away from a fixed factor of the level (`Langlands.Shimura.SplitLevelTowerCohomology`, `Langlands.Shimura.RestrictedSplitLevelTowerCohomology`; no Author lines), applied there to the splitting of the finite adelic points at the places dividing an integer `m`, with Harris 1999 Prop. 4.10 (p.311) as motivation, and Worker 13's level spaces at such split levels (`Langlands.Shimura.SplitLevelSpace`, `Langlands.Shimura.Unitary.HarrisSplitTower`). No Library module applies them to the conditional CM schemes, and no statement of this task uses them. The cohomology statements about the conditional schemes are the two of `HarrisCMCohomology`, at one level and one torsion stage, and three across levels: Galois smoothness of the colimit (`HarrisCMLevelGaloisSmooth`), and the comparison of level-`U` cohomology with invariants at finite level (`HarrisCMLevelInvariants`) and in the colimit (`HarrisCMColimitInvariants`). Nothing is stated about Hecke operators on cohomology or for the `ℓ`-adic limit over the torsion stages | Task `36881fec` (Worker 57); task `6eac742d` |
 | Split-supercuspidal local-global compatibility (Harris 1998 Thm 1.7; Harris 1999 Thm 5.7, 5.9, Cor. 5.10) | All of the above, and the automorphic and Galois objects | This task, after the prerequisites |
 | Compatible Galois-family existence and multiplicity removal | Delegated | Task `bd93b48c` (Worker 41) |
 | Proofs of the components not listed under [Proved statements](#proved-statements) | Each needs its own proof task | Separate proof tasks |
@@ -211,7 +229,7 @@ The shared planning DAG records these as the nodes
 `proof.harris-supercuspidal-local-global`,
 `proof.harris-global-galois-existence` and
 `proof.berkovich-equivariant-resolution`, with their dependencies. At DAG
-revision 2490 the published statement modules are recorded as follows. Module
+revision 2530 the published statement modules are recorded as follows. Module
 names are relative to `Langlands.Cohomology`, except where a full name is
 given.
 
@@ -238,6 +256,9 @@ given.
 | `proof.harris-supercuspidal-restriction` | `SupercuspidalRestriction.Statement` |
 | `proof.harris-etale-galois-smooth` | `EtaleGaloisSmooth.Statement` |
 | `proof.harris-cm-cohomology-finite-smooth` | `HarrisCMCohomology.Statement` |
+| `proof.harris-cm-level-galois-smooth` | `HarrisCMLevelGaloisSmooth.Statement` |
+| `proof.harris-cm-level-invariants` | `HarrisCMLevelInvariants.Statement` |
+| `proof.harris-cm-colimit-invariants` | `HarrisCMColimitInvariants.Statement` |
 
 The proof tasks T1–T5 have the nodes
 `proof.harris-charzero-injective-projective-proof`,
@@ -251,7 +272,17 @@ published proof listed below. The node
 `proof.harris-cm-cohomology-finite-smooth` depends on Worker 57's
 `def.harris-cm-conditional-scheme-tower` and on
 `proof.harris-cm-exact-representability-target`, and
-`proof.harris-supercuspidal-local-global` depends on it.
+`proof.harris-supercuspidal-local-global` depends on it. The three nodes
+added for the statements across levels also depend on
+`def.harris-cm-conditional-scheme-tower` and
+`proof.harris-cm-exact-representability-target`.
+`proof.harris-cm-level-galois-smooth` further depends on
+`def.restricted-level-colimit` and `def.restricted-level-canonical-galois`;
+`proof.harris-cm-level-invariants` on `def.level-tower-cohomology`,
+`def.harris-cm-normal-actions` and `def.harris-cm-normal-geometric-torsor`;
+and `proof.harris-cm-colimit-invariants` on `def.level-tower-cohomology`,
+`def.restricted-level-colimit` and `proof.harris-cm-level-invariants`. No
+other node depends on any of the three.
 
 ## Proved statements
 
@@ -307,7 +338,7 @@ Two further components are proved by theorems in other workers' modules:
 
 No Library declaration has any of the following as its type. Each term below
 was compiled by Worker 3 in a private `lean_check` in environment `3b864ddf`
-at Library `f73044d9` (check `97da0063`); the files are not published. Names
+at Library `2816ea5d` (check `d57a585d`); the files are not published. Names
 are relative to `Langlands.Cohomology`. Inside the terms, namespace prefixes
 are omitted; every name there is a declaration of a module cited in this note.
 
@@ -360,8 +391,10 @@ are omitted; every name there is a declaration of a module cited in this note.
 No other component listed above is proved in Lean. In particular
 `AcyclicResolutionEquivarianceStatement`, the isomorphism and naturality
 components of `SmoothGodementComparisonStatements`, the second component of
-`SmoothCompactCohomologyStatements`, `SupercuspidalExtSemisimpleStatements`
-and both components of `HarrisCMCohomologyStatements` are open. Three
+`SmoothCompactCohomologyStatements`, `SupercuspidalExtSemisimpleStatements`,
+both components of `HarrisCMCohomologyStatements`,
+`HarrisCMLevelGaloisSmoothStatement`, `HarrisCMLevelInvariantsStatement` and
+`HarrisCMColimitInvariantsStatement` are open. Three
 statement modules also prove implications between statements, which prove
 none of the statements themselves:
 `supercuspidalExtStatements_of_charZero`,
