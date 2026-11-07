@@ -1,0 +1,617 @@
+import Mathlib
+
+/-! # Positively graded algebras over a reduced local ring that are polynomial in one variable -/
+
+noncomputable section
+
+universe u
+
+open Polynomial
+open scoped TensorProduct
+
+namespace Langlands.CommutativeAlgebra.GradedLine
+
+variable (R : Type u) [CommRing R] {A : Type u} [CommRing A] [Algebra R A]
+
+/-- A coaction `c : A → A[T, T⁻¹]` is a `ℤ`-grading of the `R`-algebra `A`: it fixes the scalars,
+the components `c(a)ₙ` of every `a` sum to `a`, and `c(a)ₙ` is homogeneous of degree `n`. -/
+structure IsGrading (c : A →+* LaurentPolynomial A) : Prop where
+  map_algebraMap : ∀ r : R, c (algebraMap R A r) = LaurentPolynomial.C (algebraMap R A r)
+  sum_coeff : ∀ a, ((c a).coeff.sum fun _ b => b) = a
+  coeff_coeff : ∀ a n, c ((c a).coeff n) = AddMonoidAlgebra.single n ((c a).coeff n)
+
+variable {R} {c : A →+* LaurentPolynomial A} (hc : IsGrading R c)
+
+/-- The component of degree `n`, an `R`-linear map. -/
+def comp (n : ℤ) : A →ₗ[R] A where
+  toFun a := (c a).coeff n
+  map_add' a b := by rw [map_add, AddMonoidAlgebra.coeff_add, Finsupp.add_apply]
+  map_smul' r a := by
+    rw [Algebra.smul_def, map_mul, hc.map_algebraMap, ← LaurentPolynomial.single_eq_C,
+      AddMonoidAlgebra.coeff_single_zero_mul, RingHom.id_apply, Algebra.smul_def]
+
+theorem comp_apply (n : ℤ) (a : A) : comp hc n a = (c a).coeff n := rfl
+
+/-- The homogeneous elements of degree `n`. -/
+def homog (n : ℤ) : Submodule R A where
+  carrier := {a | c a = AddMonoidAlgebra.single n a}
+  add_mem' {a b} ha hb := by
+    change c (a + b) = _
+    rw [map_add, ha, hb, AddMonoidAlgebra.single_add]
+  zero_mem' := by
+    change c 0 = _
+    rw [map_zero, AddMonoidAlgebra.single_zero]
+  smul_mem' r a ha := by
+    change c (r • a) = _
+    rw [Algebra.smul_def, map_mul, ha, hc.map_algebraMap, ← LaurentPolynomial.single_eq_C,
+      AddMonoidAlgebra.single_mul_single, zero_add]
+
+theorem mem_homog {n : ℤ} {a : A} : a ∈ homog hc n ↔ c a = AddMonoidAlgebra.single n a :=
+  Iff.rfl
+
+theorem comp_mem_homog (n : ℤ) (a : A) : comp hc n a ∈ homog hc n :=
+  hc.coeff_coeff a n
+
+theorem comp_of_mem {n : ℤ} {a : A} (ha : a ∈ homog hc n) (m : ℤ) :
+    comp hc m a = if m = n then a else 0 := by
+  rw [comp_apply, ha, AddMonoidAlgebra.coeff_single, Finsupp.single_apply]
+  split_ifs with h1 h2 h2
+  · rfl
+  · exact absurd h1.symm h2
+  · exact absurd h2.symm h1
+  · rfl
+
+theorem comp_self {n : ℤ} {a : A} (ha : a ∈ homog hc n) : comp hc n a = a := by
+  rw [comp_of_mem hc ha]
+  simp
+
+theorem mul_mem_homog {m n : ℤ} {a b : A} (ha : a ∈ homog hc m) (hb : b ∈ homog hc n) :
+    a * b ∈ homog hc (m + n) := by
+  change c (a * b) = _
+  rw [map_mul, ha, hb, AddMonoidAlgebra.single_mul_single]
+
+theorem pow_mem_homog {n : ℤ} {a : A} (ha : a ∈ homog hc n) (j : ℕ) :
+    a ^ j ∈ homog hc (j * n) := by
+  induction j with
+  | zero =>
+    rw [pow_zero, Nat.cast_zero, zero_mul, mem_homog, map_one]
+    rfl
+  | succ j ih =>
+    rw [pow_succ, Nat.cast_succ, add_mul, one_mul]
+    exact mul_mem_homog hc ih ha
+
+theorem comp_mul_of_mem {m : ℤ} {a : A} (ha : a ∈ homog hc m) (n : ℤ) (b : A) :
+    comp hc n (a * b) = a * comp hc (n - m) b := by
+  rw [comp_apply, comp_apply, map_mul, ha, AddMonoidAlgebra.coeff_single_mul_apply]
+  congr 2
+  omega
+
+theorem sum_comp (a : A) : ∑ n ∈ (c a).coeff.support, comp hc n a = a :=
+  hc.sum_coeff a
+
+theorem comp_algebraMap (n : ℤ) (r : R) :
+    comp hc n (algebraMap R A r) = if n = 0 then algebraMap R A r else 0 := by
+  rw [comp_apply, hc.map_algebraMap, LaurentPolynomial.C_apply]
+
+/-! ### Finite generation of the homogeneous components -/
+
+section Positive
+
+variable (hneg : ∀ a, ∀ n < 0, (c a).coeff n = 0)
+  (hzero : ∀ a, (c a).coeff 0 ∈ Set.range (algebraMap R A))
+
+include hneg in
+theorem homog_eq_bot {n : ℤ} (hn : n < 0) : homog hc n = ⊥ := by
+  rw [eq_bot_iff]
+  intro a ha
+  rw [Submodule.mem_bot, ← comp_self hc ha]
+  exact hneg a n hn
+
+include hzero in
+theorem homog_zero_le : homog hc 0 ≤ Submodule.span R {1} := by
+  intro a ha
+  obtain ⟨r, hr⟩ := hzero a
+  rw [← comp_self hc ha, comp_apply, ← hr, Algebra.algebraMap_eq_smul_one]
+  exact Submodule.smul_mem _ r (Submodule.subset_span rfl)
+
+variable [DecidableEq A]
+
+variable (c) in
+/-- The pairs `(a, m)` with `a` in a finite set and `m > 0` in the support of `c a`. -/
+def posPairs (s : Finset A) : Finset (A × ℤ) :=
+  s.biUnion fun a => ((c a).coeff.support.filter (0 < ·)).image fun m => (a, m)
+
+theorem mem_posPairs {s : Finset A} {p : A × ℤ} :
+    p ∈ posPairs c s ↔ p.1 ∈ s ∧ p.2 ∈ (c p.1).coeff.support ∧ 0 < p.2 := by
+  simp only [posPairs, Finset.mem_biUnion, Finset.mem_image, Finset.mem_filter]
+  constructor
+  · rintro ⟨a, ha, m, ⟨hm, hm0⟩, rfl⟩
+    exact ⟨ha, hm, hm0⟩
+  · rintro ⟨h1, h2, h3⟩
+    exact ⟨p.1, h1, p.2, ⟨h2, h3⟩, rfl⟩
+
+variable (c) in
+/-- The homogeneous generator attached to a pair. -/
+def gen (p : A × ℤ) : A := (c p.1).coeff p.2
+
+include hc hneg hzero in
+/-- Every element of a finitely generated contracting graded algebra is a scalar plus an element
+of the ideal generated by the homogeneous components of positive degree of the generators. -/
+theorem exists_sub_mem_span {s : Finset A} (hs : Algebra.adjoin R (s : Set A) = ⊤) (a : A) :
+    ∃ r : R, a - algebraMap R A r ∈
+      Ideal.span ((posPairs c s).image (gen c) : Set A) := by
+  set I := Ideal.span ((posPairs c s).image (gen c) : Set A)
+  have ha : a ∈ Algebra.adjoin R (s : Set A) := by
+    rw [hs]
+    exact Algebra.mem_top
+  induction ha using Algebra.adjoin_induction with
+  | mem x hx =>
+    obtain ⟨r, hr⟩ := hzero x
+    refine ⟨r, ?_⟩
+    have hsum := sum_comp hc x
+    have hsplit : x - algebraMap R A r =
+        ∑ n ∈ (c x).coeff.support.filter (0 < ·), comp hc n x := by
+      conv_lhs => rw [← hsum]
+      rw [← Finset.sum_filter_add_sum_filter_not _ (0 < ·)]
+      have hrest : ∑ n ∈ (c x).coeff.support.filter (fun n => ¬ 0 < n), comp hc n x =
+          algebraMap R A r := by
+        rw [Finset.sum_eq_single 0]
+        · rw [comp_apply, hr]
+        · intro n hn hn0
+          rw [Finset.mem_filter] at hn
+          rw [comp_apply, hneg x n (by omega)]
+        · intro h0
+          rw [comp_apply]
+          by_cases h : (c x).coeff 0 = 0
+          · exact h
+          · exact absurd (Finset.mem_filter.2 ⟨Finsupp.mem_support_iff.2 h, lt_irrefl 0⟩) h0
+      rw [hrest, add_sub_cancel_right]
+    rw [hsplit]
+    refine Ideal.sum_mem _ fun n hn => Ideal.subset_span ?_
+    rw [Finset.mem_filter] at hn
+    exact Finset.mem_coe.2 (Finset.mem_image.2
+      ⟨(x, n), mem_posPairs.2 ⟨hx, hn.1, hn.2⟩, rfl⟩)
+  | algebraMap r =>
+    exact ⟨r, by rw [sub_self]; exact I.zero_mem⟩
+  | add x y _ _ hx hy =>
+    obtain ⟨r, hr⟩ := hx
+    obtain ⟨r', hr'⟩ := hy
+    refine ⟨r + r', ?_⟩
+    rw [map_add, add_sub_add_comm]
+    exact I.add_mem hr hr'
+  | mul x y _ _ hx hy =>
+    obtain ⟨r, hr⟩ := hx
+    obtain ⟨r', hr'⟩ := hy
+    refine ⟨r * r', ?_⟩
+    have : x * y - algebraMap R A (r * r') =
+        (x - algebraMap R A r) * y + algebraMap R A r * (y - algebraMap R A r') := by
+      rw [map_mul]
+      ring
+    rw [this]
+    exact I.add_mem (I.mul_mem_right _ hr) (I.mul_mem_left _ hr')
+
+omit [DecidableEq A] in
+theorem one_mem_homog : (1 : A) ∈ homog hc 0 := by
+  rw [mem_homog, map_one]
+  rfl
+
+include hc hneg hzero in
+/-- In positive degree, the homogeneous component is spanned by products of a homogeneous
+generator with components of smaller degree. -/
+theorem homog_eq_sup {s : Finset A} (hs : Algebra.adjoin R (s : Set A) = ⊤) {n : ℤ}
+    (hn : 0 < n) :
+    homog hc n = (posPairs c s).sup fun p =>
+      (homog hc (n - p.2)).map (LinearMap.mulLeft R (gen c p)) := by
+  apply le_antisymm
+  · intro a ha
+    obtain ⟨r, hr⟩ := exists_sub_mem_span hc hneg hzero hs a
+    rw [Finset.coe_image, Set.image_eq_range, Ideal.mem_span_range_iff_exists_fun] at hr
+    obtain ⟨f, hf⟩ := hr
+    have h1 : a = comp hc n (a - algebraMap R A r) := by
+      rw [map_sub, comp_self hc ha, comp_algebraMap]
+      simp [hn.ne']
+    rw [h1, ← hf, map_sum]
+    refine Submodule.sum_mem _ fun p _ => ?_
+    rw [mul_comm]
+    change comp hc n (comp hc p.1.2 p.1.1 * f p) ∈ _
+    rw [comp_mul_of_mem hc (comp_mem_homog hc p.1.2 p.1.1)]
+    exact Finset.le_sup (f := fun p =>
+        (homog hc (n - p.2)).map (LinearMap.mulLeft R (gen c p))) p.2
+      ⟨_, comp_mem_homog hc _ _, rfl⟩
+  · refine Finset.sup_le fun p _ => ?_
+    rintro _ ⟨b, hb, rfl⟩
+    have := mul_mem_homog hc (comp_mem_homog hc p.2 p.1) hb
+    rwa [add_sub_cancel] at this
+
+include hc hneg hzero in
+/-- In a finitely generated contracting connected graded algebra, every homogeneous component
+is a finitely generated module. -/
+theorem homog_fg [Algebra.FiniteType R A] (n : ℤ) : (homog hc n).FG := by
+  obtain ⟨s, hs⟩ := Algebra.FiniteType.out (R := R) (A := A)
+  suffices h : ∀ k : ℕ, ∀ n : ℤ, n < k → (homog hc n).FG from h (n.toNat + 1) n (by omega)
+  intro k
+  induction k with
+  | zero =>
+    intro n hn
+    rw [homog_eq_bot hc hneg (by omega)]
+    exact Submodule.fg_bot
+  | succ k ih =>
+    intro n hn
+    have hn' : n ≤ k := by push_cast at hn; omega
+    rcases lt_or_eq_of_le hn' with h | h
+    · exact ih n h
+    · rcases lt_trichotomy n 0 with h0 | h0 | h0
+      · rw [homog_eq_bot hc hneg h0]
+        exact Submodule.fg_bot
+      · subst h0
+        have : homog hc 0 = Submodule.span R {1} :=
+          le_antisymm (homog_zero_le hc hzero)
+            (Submodule.span_le.2 (Set.singleton_subset_iff.2 (one_mem_homog hc)))
+        rw [this]
+        exact Submodule.fg_span_singleton 1
+      · rw [homog_eq_sup hc hneg hzero hs h0]
+        refine Submodule.fg_finset_sup _ _ fun p hp => (ih _ ?_).map _
+        have := (mem_posPairs.1 hp).2.2
+        omega
+
+end Positive
+
+/-! ### Fibres that are lines -/
+
+section Fibre
+
+variable {K : Type*} [Field K] [Algebra R K] {d : ℕ}
+
+variable (K d) in
+/-- A graded map `ψ : A → K[Y]` to a polynomial ring over a field, with `Y` of degree `d`, whose
+`K`-span contains `Y`. -/
+structure IsFibreLine (ψ : A →ₐ[R] K[X]) : Prop where
+  graded : ∀ (n : ℤ) (a : A), a ∈ homog hc n → ∀ j : ℕ, (j : ℤ) * d ≠ n → (ψ a).coeff j = 0
+  span : (X : K[X]) ∈ Submodule.span K (Set.range ψ)
+
+variable {hc} {ψ : A →ₐ[R] K[X]}
+
+theorem IsFibreLine.coeff_one_comp (hψ : IsFibreLine hc K d ψ) (a : A) :
+    (ψ a).coeff 1 = (ψ (comp hc d a)).coeff 1 := by
+  conv_lhs => rw [← sum_comp hc a]
+  rw [map_sum, Polynomial.finsetSum_coeff, Finset.sum_eq_single (d : ℤ)]
+  · intro n _ hn
+    exact hψ.graded n _ (comp_mem_homog hc n a) 1 (by push_cast; omega)
+  · intro hd
+    rw [comp_apply, Finsupp.notMem_support_iff.1 hd, map_zero, Polynomial.coeff_zero]
+
+theorem IsFibreLine.exists_coeff_one_ne_zero (hψ : IsFibreLine hc K d ψ) :
+    ∃ a, (ψ (comp hc d a)).coeff 1 ≠ 0 := by
+  by_contra h
+  push Not at h
+  have key : ∀ q ∈ Submodule.span K (Set.range ψ), q.coeff 1 = 0 := by
+    intro q hq
+    induction hq using Submodule.span_induction with
+    | mem q hq =>
+      obtain ⟨a, rfl⟩ := hq
+      rw [hψ.coeff_one_comp a]
+      exact h a
+    | zero => exact Polynomial.coeff_zero 1
+    | add q q' _ _ h1 h2 => rw [Polynomial.coeff_add, h1, h2, add_zero]
+    | smul k q _ h1 => rw [Polynomial.coeff_smul, h1, smul_zero]
+  have := key X hψ.span
+  rw [Polynomial.coeff_X_one] at this
+  exact one_ne_zero this
+
+theorem IsFibreLine.eq_C_mul_X_pow (hψ : IsFibreLine hc K d ψ) (hd : 0 < d) {j : ℕ} {a : A}
+    (ha : a ∈ homog hc (j * d)) : ψ a = Polynomial.C ((ψ a).coeff j) * X ^ j := by
+  ext i
+  rw [Polynomial.coeff_C_mul_X_pow]
+  split_ifs with h
+  · rw [h]
+  · refine hψ.graded _ a ha i fun h' => h ?_
+    have : (i : ℤ) = j := by
+      have hd' : (0 : ℤ) < d := by exact_mod_cast hd
+      exact (mul_left_inj' hd'.ne').1 h'
+    exact_mod_cast this
+
+theorem IsFibreLine.eq_zero (hψ : IsFibreLine hc K d ψ) {n : ℤ} {a : A} (ha : a ∈ homog hc n)
+    (hn : ∀ j : ℕ, (j : ℤ) * d ≠ n) : ψ a = 0 := by
+  ext i
+  rw [Polynomial.coeff_zero]
+  exact hψ.graded n a ha i (hn i)
+
+theorem coeff_aeval_C_mul_X (f : R[X]) (u : K) (j : ℕ) :
+    (Polynomial.aeval (Polynomial.C u * X) f).coeff j = algebraMap R K (f.coeff j) * u ^ j := by
+  induction f using Polynomial.induction_on' with
+  | add p q hp hq => rw [map_add, Polynomial.coeff_add, hp, hq, Polynomial.coeff_add, map_add,
+      add_mul]
+  | monomial n r =>
+    rw [Polynomial.aeval_monomial, mul_pow, ← Polynomial.C_pow, ← mul_assoc,
+      Polynomial.algebraMap_apply, ← Polynomial.C_mul, Polynomial.coeff_C_mul_X_pow,
+      Polynomial.coeff_monomial]
+    split_ifs with h1 h2 h2
+    · rw [h1]
+    · exact absurd h1.symm h2
+    · exact absurd h2.symm h1
+    · rw [map_zero, zero_mul]
+
+theorem aeval_monomial_T_mul_C_X (m n : ℕ) (r : K) :
+    Polynomial.aeval (LaurentPolynomial.T (m : ℤ) * LaurentPolynomial.C X : LaurentPolynomial K[X])
+      (Polynomial.monomial n r) =
+      AddMonoidAlgebra.single ((m * n : ℕ) : ℤ) (Polynomial.monomial n r) := by
+  rw [Polynomial.aeval_monomial, mul_pow, LaurentPolynomial.T_pow, ← map_pow,
+    LaurentPolynomial.single_eq_C_mul_T, ← Polynomial.C_mul_X_pow_eq_monomial, map_mul]
+  have h : algebraMap K (LaurentPolynomial K[X]) r = LaurentPolynomial.C (Polynomial.C r) := rfl
+  rw [h]
+  push_cast
+  ring_nf
+
+theorem coeff_aeval_T_mul_C_X {m : ℕ} (hm : 0 < m) (p : K[X]) (j : ℕ) :
+    (Polynomial.aeval (LaurentPolynomial.T (m : ℤ) * LaurentPolynomial.C X : LaurentPolynomial K[X])
+      p).coeff ((m * j : ℕ) : ℤ) = Polynomial.monomial j (p.coeff j) := by
+  induction p using Polynomial.induction_on' with
+  | add p q hp hq => rw [map_add, AddMonoidAlgebra.coeff_add, Finsupp.add_apply, hp, hq,
+      Polynomial.coeff_add, map_add]
+  | monomial n r =>
+    rw [aeval_monomial_T_mul_C_X, AddMonoidAlgebra.coeff_single, Finsupp.single_apply,
+      Polynomial.coeff_monomial]
+    by_cases h : n = j
+    · subst h
+      simp
+    · have h' : ((m * n : ℕ) : ℤ) ≠ ((m * j : ℕ) : ℤ) := by
+        intro h''
+        exact h (Nat.eq_of_mul_eq_mul_left hm (by exact_mod_cast h''))
+      simp [h, hm.ne']
+
+/-- If `ψ` intertwines the grading with the scaling `Y ↦ T^m Y`, then `ψ` maps homogeneous
+elements of degree `n` to multiples of `Y^j` with `j m = n`. -/
+theorem coeff_eq_zero_of_scaling {ψ : A →ₐ[R] K[X]} {m : ℕ} (hm : 0 < m)
+    (h : ∀ a : A, AddMonoidAlgebra.mapRingHom ℤ (ψ : A →+* K[X]) (c a) =
+      Polynomial.aeval (LaurentPolynomial.T (m : ℤ) * LaurentPolynomial.C X :
+        LaurentPolynomial K[X]) (ψ a))
+    (n : ℤ) (a : A) (ha : a ∈ homog hc n) (j : ℕ) (hj : (j : ℤ) * m ≠ n) : (ψ a).coeff j = 0 := by
+  have h1 := congrArg (fun q : LaurentPolynomial K[X] => q.coeff ((m * j : ℕ) : ℤ)) (h a)
+  rw [coeff_aeval_T_mul_C_X hm, ha, AddMonoidAlgebra.mapRingHom_single,
+    AddMonoidAlgebra.coeff_single, Finsupp.single_apply] at h1
+  have hne : ¬ (n = ((m * j : ℕ) : ℤ)) := by
+    push_cast
+    rw [mul_comm]
+    exact fun h' => hj h'.symm
+  simp only [hne, ↓reduceIte] at h1
+  have h2 := congrArg (fun q : K[X] => q.coeff j) h1
+  simpa using h2.symm
+
+end Fibre
+
+/-! ### The main theorem -/
+
+section Main
+
+variable [IsLocalRing R] (hneg : ∀ a, ∀ n < 0, (c a).coeff n = 0)
+  (hzero : ∀ a, (c a).coeff 0 ∈ Set.range (algebraMap R A)) {d : ℕ}
+
+omit [IsLocalRing R] in
+/-- Homogeneous elements in the extension of an ideal lie in its multiple of the component. -/
+theorem mem_smul_homog {I : Ideal R} {n : ℤ} {a : A} (ha : a ∈ homog hc n)
+    (haI : a ∈ I.map (algebraMap R A)) : a ∈ I • homog hc n := by
+  have h1 : a ∈ I • (⊤ : Submodule R A) := by
+    rw [Ideal.smul_top_eq_map]
+    exact haI
+  have h2 : comp hc n a ∈ (I • (⊤ : Submodule R A)).map (comp hc n) :=
+    Submodule.mem_map_of_mem h1
+  rw [comp_self hc ha, Submodule.map_smul'', Submodule.map_top] at h2
+  have h3 : I • LinearMap.range (comp hc n) ≤ I • homog hc n := by
+    apply smul_mono_right
+    rintro _ ⟨b, rfl⟩
+    exact comp_mem_homog hc n b
+  exact h3 h2
+
+/-- The span of the powers of `x` of degree `n`. -/
+def powSpan (x : A) (d : ℕ) (n : ℤ) : Submodule R A :=
+  Submodule.span R {y | ∃ j : ℕ, (j : ℤ) * d = n ∧ y = x ^ j}
+
+theorem le_powSpan_sup {ψ : A →ₐ[R] (IsLocalRing.ResidueField R)[X]}
+    (hψ : IsFibreLine hc (IsLocalRing.ResidueField R) d ψ) (hd : 0 < d)
+    (hker : ∀ a, ψ a = 0 → a ∈ (IsLocalRing.maximalIdeal R).map (algebraMap R A))
+    {x : A} (hx : x ∈ homog hc d) (hu : (ψ x).coeff 1 ≠ 0) (n : ℤ) :
+    homog hc n ≤ powSpan x d n ⊔ IsLocalRing.maximalIdeal R • homog hc n := by
+  intro a ha
+  have hxX : ψ x = Polynomial.C ((ψ x).coeff 1) * X := by
+    have := hψ.eq_C_mul_X_pow hd (j := 1) (by rwa [Nat.cast_one, one_mul])
+    rwa [pow_one] at this
+  by_cases h : ∃ j : ℕ, (j : ℤ) * d = n
+  · obtain ⟨j, rfl⟩ := h
+    obtain ⟨r, hr⟩ := IsLocalRing.residue_surjective
+      ((ψ a).coeff j / (ψ x).coeff 1 ^ j)
+    have hxj : x ^ j ∈ homog hc (j * d) := pow_mem_homog hc hx j
+    have hdiff : a - r • x ^ j ∈ homog hc (j * d) := Submodule.sub_mem _ ha
+      (Submodule.smul_mem _ r hxj)
+    have hψ0 : ψ (a - r • x ^ j) = 0 := by
+      rw [map_sub, map_smul, map_pow, hxX, hψ.eq_C_mul_X_pow hd ha, mul_pow, ← Polynomial.C_pow,
+        Algebra.smul_def, Polynomial.algebraMap_apply, IsLocalRing.ResidueField.algebraMap_eq, hr,
+        ← mul_assoc, ← Polynomial.C_mul, div_mul_cancel₀ _ (pow_ne_zero _ hu), sub_self]
+    have hmem := mem_smul_homog hc hdiff (hker _ hψ0)
+    have : a = r • x ^ j + (a - r • x ^ j) := by abel
+    rw [this]
+    exact Submodule.add_mem_sup (Submodule.smul_mem _ r (Submodule.subset_span ⟨j, rfl, rfl⟩))
+      hmem
+  · push Not at h
+    exact Submodule.mem_sup_right (mem_smul_homog hc ha (hker _ (hψ.eq_zero ha h)))
+
+include hneg hzero in
+theorem homog_le_powSpan [Algebra.FiniteType R A] {ψ : A →ₐ[R] (IsLocalRing.ResidueField R)[X]}
+    (hψ : IsFibreLine hc (IsLocalRing.ResidueField R) d ψ) (hd : 0 < d)
+    (hker : ∀ a, ψ a = 0 → a ∈ (IsLocalRing.maximalIdeal R).map (algebraMap R A))
+    {x : A} (hx : x ∈ homog hc d) (hu : (ψ x).coeff 1 ≠ 0) (n : ℤ) :
+    homog hc n ≤ powSpan x d n := by
+  classical
+  exact Submodule.le_of_le_smul_of_le_jacobson_bot (homog_fg hc hneg hzero n)
+    (IsLocalRing.maximalIdeal_le_jacobson _) (le_powSpan_sup hc hψ hd hker hx hu n)
+
+omit [IsLocalRing R] in
+/-- On a fibre line, the coefficient of `Y` vanishes on `powSpan x d d` once it vanishes at `x`. -/
+theorem coeff_one_eq_zero_of_mem_powSpan {K : Type*} [Field K] [Algebra R K]
+    {ψ : A →ₐ[R] K[X]} {x : A} (hd : 0 < d) (hx0 : (ψ x).coeff 1 = 0) {a : A}
+    (ha : a ∈ powSpan (R := R) x d d) : (ψ a).coeff 1 = 0 := by
+  induction ha using Submodule.span_induction with
+  | mem y hy =>
+    obtain ⟨j, hj, rfl⟩ := hy
+    have : j = 1 := by
+      have hd' : (0 : ℤ) < d := by exact_mod_cast hd
+      have : (j : ℤ) = 1 := by
+        have := (mul_left_inj' hd'.ne').1 (hj.trans (one_mul (d : ℤ)).symm)
+        exact this
+      exact_mod_cast this
+    rw [this, pow_one]
+    exact hx0
+  | zero => rw [map_zero, Polynomial.coeff_zero]
+  | add y y' _ _ h1 h2 => rw [map_add, Polynomial.coeff_add, h1, h2, add_zero]
+  | smul r y _ h1 => rw [map_smul, Polynomial.coeff_smul, h1, smul_zero]
+
+include hneg hzero in
+/-- **Positively graded algebras whose fibres are lines.** Let `R` be a reduced local ring and
+`A` a finitely generated `R`-algebra with a grading `c` that has no components of negative degree
+and whose degree-zero part consists of scalars. Suppose that on the closed fibre there is a graded
+map `ψ : A → κ[Y]`, with `Y` of degree `d > 0`, whose `κ`-span contains `Y` and whose kernel is
+`𝔪A`, and that on every residue field of `R` there is a graded map to a polynomial ring whose
+span contains `Y`. Then `A` is the polynomial algebra over `R` on a homogeneous element of
+degree `d`. -/
+theorem exists_aeval_bijective [IsReduced R] [Algebra.FiniteType R A] (hd : 0 < d)
+    {ψ : A →ₐ[R] (IsLocalRing.ResidueField R)[X]}
+    (hψ : IsFibreLine hc (IsLocalRing.ResidueField R) d ψ)
+    (hker : ∀ a, ψ a = 0 → a ∈ (IsLocalRing.maximalIdeal R).map (algebraMap R A))
+    (hfib : ∀ (p : Ideal R) [p.IsPrime], ∃ ψ' : A →ₐ[R] p.ResidueField[X],
+      IsFibreLine hc p.ResidueField d ψ') :
+    ∃ x ∈ homog hc d, Function.Bijective (Polynomial.aeval x : R[X] →ₐ[R] A) := by
+  obtain ⟨a₀, ha₀⟩ := hψ.exists_coeff_one_ne_zero
+  set x := comp hc d a₀ with hx_def
+  have hx : x ∈ homog hc d := comp_mem_homog hc d a₀
+  have hle := homog_le_powSpan hc hneg hzero hψ hd hker hx ha₀
+  refine ⟨x, hx, ?_, ?_⟩
+  · rw [injective_iff_map_eq_zero]
+    intro f hf
+    ext j
+    rw [Polynomial.coeff_zero]
+    have hnil : f.coeff j ∈ nilradical R := by
+      rw [nilradical_eq_sInf, Ideal.mem_sInf]
+      intro p hp
+      have : p.IsPrime := hp
+      obtain ⟨ψ', hψ'⟩ := hfib p
+      have hu : (ψ' x).coeff 1 ≠ 0 := by
+        intro hu0
+        obtain ⟨a, ha⟩ := hψ'.exists_coeff_one_ne_zero
+        exact ha (coeff_one_eq_zero_of_mem_powSpan hd hu0
+          (hle d (comp_mem_homog hc d a)))
+      have hxX : ψ' x = Polynomial.C ((ψ' x).coeff 1) * X := by
+        have := hψ'.eq_C_mul_X_pow hd (j := 1) (by rwa [Nat.cast_one, one_mul])
+        rwa [pow_one] at this
+      obtain ⟨u, hu', hxu⟩ : ∃ u, u ≠ 0 ∧ ψ' x = Polynomial.C u * X := ⟨_, hu, hxX⟩
+      have h0 : Polynomial.aeval (ψ' x) f = 0 := by
+        rw [Polynomial.aeval_algHom_apply, hf, map_zero]
+      rw [hxu] at h0
+      have hj := congrArg (fun q => q.coeff j) h0
+      simp only [coeff_aeval_C_mul_X, Polynomial.coeff_zero] at hj
+      rw [← Ideal.algebraMap_residueField_eq_zero]
+      exact (mul_eq_zero.1 hj).resolve_right (pow_ne_zero _ hu')
+    rw [nilradical_eq_zero] at hnil
+    exact hnil
+  · intro a
+    have hmem : a ∈ (Polynomial.aeval x : R[X] →ₐ[R] A).range := by
+      rw [← sum_comp hc a]
+      refine Subalgebra.sum_mem _ fun n _ => ?_
+      have hspan : powSpan x d n ≤
+          Subalgebra.toSubmodule (Polynomial.aeval x : R[X] →ₐ[R] A).range := by
+        refine Submodule.span_le.2 ?_
+        rintro _ ⟨j, -, rfl⟩
+        exact ⟨X ^ j, by simp⟩
+      exact hspan (hle n (comp_mem_homog hc n a))
+    obtain ⟨f, hf⟩ := hmem
+    exact ⟨f, hf⟩
+
+end Main
+
+/-! ### Universal fibre lines -/
+
+section Universal
+
+variable (hneg : ∀ a, ∀ n < 0, (c a).coeff n = 0)
+  (hzero : ∀ a, (c a).coeff 0 ∈ Set.range (algebraMap R A))
+
+variable {K : Type u} [Field K] [Algebra R K]
+
+variable (K) in
+/-- `ψ : A → K[Y]` classifies the points of `A` with values in `K`-algebras: every `R`-algebra
+map from `A` to a `K`-algebra `D` is `ψ` followed by evaluation at a unique element of `D`. -/
+def IsUniversalLine (ψ : A →ₐ[R] K[X]) : Prop :=
+  ∀ (D : Type u) [CommRing D] [Algebra K D] [Algebra R D] [IsScalarTower R K D],
+    Function.Bijective fun d : D => ((Polynomial.aeval d).restrictScalars R).comp ψ
+
+variable {ψ : A →ₐ[R] K[X]}
+
+/-- A universal line spans the polynomial ring over `K`. -/
+theorem IsUniversalLine.X_mem_span (h : IsUniversalLine K ψ) :
+    (X : K[X]) ∈ Submodule.span K (Set.range ψ) := by
+  let ψK : K ⊗[R] A →ₐ[K] K[X] :=
+    Algebra.TensorProduct.lift (Algebra.ofId K K[X]) ψ fun _ _ => Commute.all _ _
+  obtain ⟨d, hd⟩ := (h (K ⊗[R] A)).2 (Algebra.TensorProduct.includeRight (R := R) (A := K))
+  have hψK : (ψK.restrictScalars R).comp Algebra.TensorProduct.includeRight = ψ := by
+    ext a
+    simp [ψK]
+  have h1 : ((Polynomial.aeval (ψK d)).restrictScalars R).comp ψ =
+      ((Polynomial.aeval (X : K[X])).restrictScalars R).comp ψ := by
+    have hcomp : (Polynomial.aeval (ψK d) : K[X] →ₐ[K] K[X]) = ψK.comp (Polynomial.aeval d) := by
+      apply Polynomial.algHom_ext
+      simp
+    rw [hcomp, Polynomial.aeval_X_left]
+    calc ((ψK.comp (Polynomial.aeval d)).restrictScalars R).comp ψ
+        = (ψK.restrictScalars R).comp (((Polynomial.aeval d).restrictScalars R).comp ψ) := rfl
+      _ = ψ := by
+        change (ψK.restrictScalars R).comp ((fun d : K ⊗[R] A =>
+          ((Polynomial.aeval d).restrictScalars R).comp ψ) d) = ψ
+        rw [hd, hψK]
+      _ = _ := by ext a; simp
+  have h2 : ψK d = X := (h K[X]).1 h1
+  have hle : Set.range ψK ⊆ Submodule.span K (Set.range ψ) := by
+    rintro _ ⟨t, rfl⟩
+    induction t using TensorProduct.inductionOn with
+    | tmul k a =>
+      have : ψK (k ⊗ₜ a) = k • ψ a := by
+        simp [ψK, Algebra.TensorProduct.lift_tmul, Algebra.smul_def]
+      rw [this]
+      exact Submodule.smul_mem _ k (Submodule.subset_span ⟨a, rfl⟩)
+    | add t t' h1 h2 => rw [map_add]; exact Submodule.add_mem _ h1 h2
+  exact hle ⟨d, h2⟩
+
+/-- At the closed point, the kernel of a universal line is the extension of the maximal ideal. -/
+theorem IsUniversalLine.ker_le [IsLocalRing R] {ψ : A →ₐ[R] (IsLocalRing.ResidueField R)[X]}
+    (h : IsUniversalLine (IsLocalRing.ResidueField R) ψ) (a : A) (ha : ψ a = 0) :
+    a ∈ (IsLocalRing.maximalIdeal R).map (algebraMap R A) := by
+  set I := (IsLocalRing.maximalIdeal R).map (algebraMap R A)
+  let f : IsLocalRing.ResidueField R →+* A ⧸ I :=
+    Ideal.Quotient.lift (IsLocalRing.maximalIdeal R) ((Ideal.Quotient.mk I).comp (algebraMap R A))
+      fun r hr => Ideal.Quotient.eq_zero_iff_mem.2 (Ideal.mem_map_of_mem _ hr)
+  let : Algebra (IsLocalRing.ResidueField R) (A ⧸ I) := f.toAlgebra
+  have : IsScalarTower R (IsLocalRing.ResidueField R) (A ⧸ I) :=
+    IsScalarTower.of_algebraMap_eq fun r => rfl
+  obtain ⟨d, hd⟩ := (h (A ⧸ I)).2 (Ideal.Quotient.mkₐ R I)
+  have := congrArg (fun φ : A →ₐ[R] A ⧸ I => φ a) hd
+  simp only [AlgHom.comp_apply, ha, map_zero] at this
+  exact Ideal.Quotient.eq_zero_iff_mem.1 this.symm
+
+include hneg hzero in
+/-- **Positively graded algebras with universal fibre lines.** Let `R` be a reduced local ring and
+`A` a finitely generated `R`-algebra with a grading `c` that has no components of negative degree
+and whose degree-zero part consists of scalars. Suppose that for every field `K` over `R` there is
+a graded map `ψ : A → K[Y]`, with `Y` of degree `d > 0`, that classifies the points of `A` with
+values in `K`-algebras. Then `A` is the polynomial algebra over `R` on a homogeneous element of
+degree `d`. -/
+theorem exists_aeval_bijective_of_universal [IsLocalRing R] [IsReduced R]
+    [Algebra.FiniteType R A] {d : ℕ} (hd : 0 < d)
+    (huniv : ∀ (K : Type u) [Field K] [Algebra R K], ∃ ψ : A →ₐ[R] K[X],
+      IsUniversalLine K ψ ∧
+        ∀ (n : ℤ) (a : A), a ∈ homog hc n → ∀ j : ℕ, (j : ℤ) * d ≠ n → (ψ a).coeff j = 0) :
+    ∃ x ∈ homog hc d, Function.Bijective (Polynomial.aeval x : R[X] →ₐ[R] A) := by
+  obtain ⟨ψ, hu, hg⟩ := huniv (IsLocalRing.ResidueField R)
+  exact exists_aeval_bijective hc hneg hzero hd ⟨hg, hu.X_mem_span⟩ hu.ker_le fun p _ => by
+    obtain ⟨ψ', hu', hg'⟩ := huniv p.ResidueField
+    exact ⟨ψ', hg', hu'.X_mem_span⟩
+
+end Universal
+
+end Langlands.CommutativeAlgebra.GradedLine
