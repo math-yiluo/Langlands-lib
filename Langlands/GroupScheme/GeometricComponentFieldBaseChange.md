@@ -56,6 +56,23 @@ geometricComponentBaseChangeEquiv k K H
 Thus it computes the comparison on every actual section, with the exported
 section homomorphism naming the actual composite just described.
 
+The coefficient formula
+`geometricComponentBaseChangeSectionHom_coefficient` computes the section
+homomorphism on original coefficient points. It states
+
+```
+coefficientBaseChangeEquiv k K (AlgebraicClosure K) H
+    (baseChangeCoeffEquiv K (AlgebraicClosure K) (baseChanged k K H)
+      (geometricComponentBaseChangeSectionHom k K H x))
+  = GaloisPoint.relativeExtend k (AlgebraicClosure k) (AlgebraicClosure K) H
+      (baseChangeCoeffEquiv k (AlgebraicClosure k) H x).
+```
+
+Here the first coefficient equivalence projects from the iterated pullback
+to the original group over `k`; the right side extends along the specified
+embedding of chosen closures. This law characterizes the actual section map
+through the two coefficient equivalences.
+
 The action comparison retains compatible automorphisms as explicit data.
 For `σ` in the absolute Galois group of `k` and `τ` in that of `K`, assume
 
@@ -87,21 +104,31 @@ each component has an actual section, and the section formula reduces the
 claim to the preceding equality.
 
 The implementation packages the actual inverse section map, component
-equivalence, section law and action law in a private `TowerComponentData`.
+equivalence, section law, inverse coefficient law and action law in a private
+`TowerComponentData`.
 Its verified constructor `towerComponentData` uses the actual tower
 isomorphism while all three fields are abstract. A private helper proves the
 inverse component-isomorphism section formula for an arbitrary actual
-isomorphism by `allComponentMap_ofPoint`. The tower package is opaque to
+isomorphism by `allComponentMap_ofPoint`. Another private helper,
+`inverse_coefficient_of_iso`, works with an arbitrary actual isomorphism between
+the iterated and direct pullbacks and a supplied forward coefficient law.
+It rewrites the inverse coefficient expression using that law and cancels the
+isomorphism inverse followed by its homomorphism on actual sections. This
+helper needs neither algebraic closedness, smoothness nor affineness. It is
+then specialized at `towerBaseChangeIso` and its published forward law.
+The tower package is opaque to
 subsequent elaboration; its body and laws are fully proved.
 
 The second verified package, `fieldBaseChangeComponentData`, specializes the
 tower package at `M = AlgebraicClosure K` and constructs the two composites.
 Its section formula applies the inverse component equivalence to the published
 `geometricComponentEmbeddingEquiv_ofPoint` equality, then uses the stored
-inverse section formula. For the action formula, apply the injective forward
+inverse section formula. Its coefficient formula combines the stored inverse
+coefficient law with `baseChangeCoeffEquiv_fieldEmbeddingSectionHom`.
+For the action formula, apply the injective forward
 tower equivalence, cancel its inverse, and combine the stored tower action law
 with `geometricComponentEmbeddingEquiv_smul`. The exported equivalence,
-section homomorphism and two laws are projections of this package. Naming the
+section homomorphism and three laws are projections of this package. Naming the
 actual maps this way avoids repeatedly unfolding the large pullback-tower
 construction when specializing to chosen closures.
 

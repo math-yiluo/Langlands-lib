@@ -17,13 +17,6 @@ open CommonClosure VirtualRepresentation
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-private def scalingValueHom (ε : Assignment.{uF, uV} F) (hε : AdditiveRelation F ε)
-    (E : Extension F) (ψ : AdditiveCharacter F E) (μ : HaarMeasure F E) :
-    Virtual.{uF, uV} F E →+ Additive ℂˣ where
-  toFun x := Additive.ofMul (ε E ψ μ x)
-  map_zero' := value_zero hε E ψ μ
-  map_add' x y := hε E ψ μ x y
-
 /-- The determinant and integer-degree correction is multiplicative on the
 actual exact virtual group. -/
 def correctedScalingValueHom (ε : Assignment.{uF, uV} F) (hε : AdditiveRelation F ε)
@@ -123,7 +116,7 @@ theorem additiveCharacterScaling_of_commonClosureDegreeZeroGeneration
   let := (fieldData F E).valuativeRel
   let := (fieldData F E).localField
   intro ψ μ a w ha x
-  let A := (scalingValueHom F ε hε.2.1 E (ψ.scale a) μ).toIntLinearMap
+  let A := (valueAddHom F ε hε.2.1 E (ψ.scale a) μ).toIntLinearMap
   let B := (correctedScalingValueHom F ε hε.2.1 E ψ μ
     (absoluteValueUnit F E a) w).toIntLinearMap
   have hchar (χ : weilSubgroup F E →ₜ* ℂˣ) :
@@ -150,7 +143,7 @@ theorem additiveCharacterScaling_of_commonClosureDegreeZeroGeneration
       rw [ha]
       exact hv
     let ψL := traceCharacter F E L h ψ
-    let AL := scalingValueHom F ε hε.2.1 L (ψL.scale aL) μL
+    let AL := valueAddHom F ε hε.2.1 L (ψL.scale aL) μL
     let BL := correctedScalingValueHom F ε hε.2.1 L ψL μL
       (absoluteValueUnit F L aL) v
     have hz : AL z.val = BL z.val := by

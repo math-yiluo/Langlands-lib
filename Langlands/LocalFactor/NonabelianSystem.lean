@@ -79,6 +79,14 @@ theorem value_zero {ε : Assignment.{uF, uV} F} (hε : AdditiveRelation F ε)
   have h := hε E ψ μ 0 0
   simpa only [zero_add, left_eq_mul] using h
 
+/-- A supplied additive assignment as an additive homomorphism into complex units. -/
+def valueAddHom (F : PadicField.{uF} p) (ε : Assignment.{uF, uV} F) (hε : AdditiveRelation F ε)
+    (E : Extension F) (ψ : AdditiveCharacter F E) (μ : HaarMeasure F E) :
+    Virtual.{uF, uV} F E →+ Additive ℂˣ where
+  toFun x := Additive.ofMul (ε E ψ μ x)
+  map_zero' := value_zero hε E ψ μ
+  map_add' x y := hε E ψ μ x y
+
 /-- A negative virtual representation has the inverse local-constant value. -/
 theorem value_neg {ε : Assignment.{uF, uV} F} (hε : AdditiveRelation F ε)
     (E : Extension F) (ψ : AdditiveCharacter F E) (μ : HaarMeasure F E)

@@ -45,3 +45,7 @@ The provenance is internal: the scalar normalized generator, exact canonical
 Haar transport, coefficient-image construction, published Whittaker span
 comparisons and determinant-twist invariance. This module does not establish
 analytic epsilon compatibility or the closed supercuspidal correspondence.
+
+The local canonical topology, measurability and coefficient-model instances
+have explicit names so this module can be imported together with the general
+`ModelMatrixAnalyticData` module. Their types and values are unchanged.

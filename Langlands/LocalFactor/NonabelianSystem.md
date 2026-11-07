@@ -20,6 +20,9 @@ isomorphic representations and imposes all short exact sequence relations.
 `AdditiveRelation` requires the value at `x + y` to be the product of the values.
 The intrinsic lemmas `value_zero` and `value_neg` use cancellation in complex
 units to obtain the value one at zero and inverse at a negative class.
+`valueAddHom F` packages the same assignment as an additive homomorphism
+to `Additive ℂˣ`, using `value_zero` and its existing additivity law. The
+uniqueness, scaling and Deligne--Henniart witness modules reuse this map.
 `value_shortExact` rewrites the published defining relation of the exact quotient
 and applies additivity, giving precisely the multiplicative law for a genuine
 short exact sequence. It uses no semisimplicity or equivariant splitting.

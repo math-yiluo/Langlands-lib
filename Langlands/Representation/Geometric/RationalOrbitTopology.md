@@ -1,0 +1,21 @@
+# Topology and compact-open covers for the actual rational orbit stages
+
+This internal unit supplies the actual topological inputs to native induction in stages for a rational orbit. It retains the source parabolic map `p`, output cocharacter `χ`, representative `w`, and the canonical topology on the original ambient rational-point group. The point subgroups `Q` and `L` are the actual dynamic parabolic and centralizer of `χ`; `d` is their existing semidirect decomposition and `s` is its original Levi inclusion.
+
+`rationalOrbitStagesRetraction` is the restricted original dynamic projection on the previously constructed literal stages subgroup
+
+`Pₛ = rationalOrbitStages p χ w = d.projection⁻¹(orbitStabilizer S L w)`.
+
+Its codomain is the original section preimage `Pₛ.comap s`, exactly as in the generic split-stages construction. Kernel containment was already proved in `RationalOrbitProjection`. The retraction uses that containment and the original projection-section identity; it does not require an independently supplied subgroup decomposition.
+
+`continuous_rationalOrbitStagesRetraction` derives continuity from `continuous_dynamic_projection`, which identifies the dynamic limit with the original semidirect projection and proves its continuity using its represented scheme map. The section is also continuous as the original nested subgroup inclusion. These continuity results need no valuation or local-field assumptions beyond the field and canonical point topology in their types.
+
+When `p` is parabolic, the unit derives closedness of the original source image, the full orbit stabilizer inside `Q`, the target stabilizer intersection inside `L`, and the literal stages subgroup inside `Q`. The source is represented by the original closed parabolic map; the stabilizers are continuous conjugation preimages; the stages subgroup is the preimage of the closed target intersection under the actual continuous dynamic projection. Closedness of the original projection kernel follows from its existing identification with the actual dynamic unipotent radical.
+
+For a finite-type affine ambient group over a nonarchimedean local field, `exists_compactOpenSubgroup_rationalOrbitProjectionKernel` proves that every compact subset of the original `d.projection.ker` lies in a compact open subgroup. The proof uses the existing `CorrectedFiltration.projectionKerEquiv d`, whose ambient value is the same original point. It maps the compact set into the actual dynamic radical, applies the proved `DynamicUnipotentContainment.exists_compactOpenSubgroup`, and pulls the resulting subgroup back through that topological-group isomorphism. The subgroup remains open and compact, and contains the original compact set.
+
+`rationalOrbitProjectionKernel_compactOpenCover` specializes this to each singleton. This is the pointwise compact-open cover used to construct two-sided Haar measures and a compatible quotient measure in the generic split-stages program. `exists_compactOpenSubgroup_rationalOrbitStagesKernel` transfers the same compact-set conclusion to the kernel of the restricted stages retraction, through the original nested-kernel topological isomorphism. Both transfers preserve the actual point carriers and subgroup topologies.
+
+The compact-open cover results do not require separately supplied local compactness or a nonarchimedean group structure on the ambient rational-point group: their dynamic containment theorem already constructs the needed compact open subgroups from the local-field scheme geometry. The ambient scheme is assumed locally of finite type, as holds for the smooth connected reductive group in the host target. All field and group data retain universe `u`.
+
+The provenance is internal: this unit specializes the published dynamic projection continuity, closed rational-point subgroup theorem, generic stages retraction and actual kernel identifications, and proved compact-open containment in the actual dynamic radical. It introduces no coefficient representation, finiteness premise, measure or compatibility assertion. Adapted representative existence, finite orbit geometry, compactness of the output intersection quotient, native compact orbit-Jacquet comparison and the global fixed-module finiteness theorem remain separate obligations.

@@ -89,6 +89,23 @@ variable (k K M : Type u) [Field k] [Field K] [Field M]
   (H : GroupScheme (Spec (CommRingCat.of k)))
   [Smooth H.X.hom] [IsAffineHom H.X.hom]
 
+omit [IsAlgClosed M] [Smooth H.X.hom] [IsAffineHom H.X.hom] in
+private theorem inverse_coefficient_of_iso
+    (i : baseChanged K M (baseChanged k K H) ≅ baseChanged k M H)
+    (hi : ∀ y : rationalPoints (baseChanged K M (baseChanged k K H)),
+      baseChangeCoeffEquiv k M H (rationalPoints.map i.hom y) =
+        coefficientBaseChangeEquiv k K M H
+          (baseChangeCoeffEquiv K M (baseChanged k K H) y))
+    (x : rationalPoints (baseChanged k M H)) :
+    coefficientBaseChangeEquiv k K M H
+        (baseChangeCoeffEquiv K M (baseChanged k K H) (rationalPoints.map i.inv x)) =
+      baseChangeCoeffEquiv k M H x := by
+  rw [← hi]
+  apply congrArg (baseChangeCoeffEquiv k M H)
+  change (x ≫ i.inv.hom.hom) ≫ i.hom.hom.hom = x
+  simp only [Category.assoc, ← Grp.comp_hom_hom, Iso.inv_hom_id,
+    Grp.id_hom_hom, Category.comp_id]
+
 private structure TowerComponentData where
   inverse_section : rationalPoints (baseChanged k M H) →*
     rationalPoints (baseChanged K M (baseChanged k K H))
@@ -97,6 +114,10 @@ private structure TowerComponentData where
   inverse_point (x : rationalPoints (baseChanged k M H)) :
     equiv.symm (allComponentOfPoint _ x) =
       allComponentOfPoint _ (inverse_section x)
+  inverse_coefficient (x : rationalPoints (baseChanged k M H)) :
+    coefficientBaseChangeEquiv k K M H
+        (baseChangeCoeffEquiv K M (baseChanged k K H) (inverse_section x)) =
+      baseChangeCoeffEquiv k M H x
   conjugate (τ : M ≃ₐ[K] M)
     (c : AlgebraicallyClosedComponents (baseChanged K M (baseChanged k K H))) :
     equiv (allComponentConjugate K M (baseChanged k K H) τ c) =
@@ -105,9 +126,11 @@ private structure TowerComponentData where
 -- Name the component equivalence and its laws while all three fields are
 -- abstract. Specialization at an algebraic closure uses only these projections.
 private opaque towerComponentData : TowerComponentData k K M H := by
-  exact ⟨rationalPoints.map (towerBaseChangeIso k K M H).inv,
+  refine ⟨rationalPoints.map (towerBaseChangeIso k K M H).inv,
     allComponentIso (towerBaseChangeIso k K M H),
     componentIso_symm_ofPoint (towerBaseChangeIso k K M H),
+    inverse_coefficient_of_iso k K M H (towerBaseChangeIso k K M H)
+      (baseChangeCoeffEquiv_towerBaseChangeIso k K M H),
     allComponentIso_tower_conjugate k K M H⟩
 
 end TowerComparisonData
@@ -127,6 +150,11 @@ private structure BaseChangeComponentData where
   point_formula (x : rationalPoints (baseChanged k (AlgebraicClosure k) H)) :
     equiv (geometricComponentOfPoint k H x) =
       geometricComponentOfPoint K (baseChanged k K H) (section_hom x)
+  coefficient_formula (x : rationalPoints (baseChanged k (AlgebraicClosure k) H)) :
+    coefficientBaseChangeEquiv k K (AlgebraicClosure K) H
+        (baseChangeCoeffEquiv K (AlgebraicClosure K) (baseChanged k K H) (section_hom x)) =
+      GaloisPoint.relativeExtend k (AlgebraicClosure k) (AlgebraicClosure K) H
+        (baseChangeCoeffEquiv k (AlgebraicClosure k) H x)
   smul_formula
     (σ : Field.absoluteGaloisGroup k) (τ : Field.absoluteGaloisGroup K)
     (h : ∀ a : AlgebraicClosure k,
@@ -140,11 +168,15 @@ private opaque fieldBaseChangeComponentData : BaseChangeComponentData k K H := b
   refine ⟨t.inverse_section.comp
     (fieldEmbeddingSectionHom k (AlgebraicClosure k) (AlgebraicClosure K) H),
     (geometricComponentEmbeddingEquiv k (AlgebraicClosure K) H).trans
-      t.equiv.symm, ?_, ?_⟩
+      t.equiv.symm, ?_, ?_, ?_⟩
   · intro x
     exact (congrArg t.equiv.symm
       (geometricComponentEmbeddingEquiv_ofPoint k (AlgebraicClosure K) H x)).trans
         (t.inverse_point _)
+  · intro x
+    exact (t.inverse_coefficient _).trans
+      (baseChangeCoeffEquiv_fieldEmbeddingSectionHom k (AlgebraicClosure k)
+        (AlgebraicClosure K) H x)
   · intro σ τ h c
     change t.equiv.symm
         (geometricComponentEmbeddingEquiv k (AlgebraicClosure K) H (σ • c)) =
@@ -164,6 +196,17 @@ def geometricComponentBaseChangeSectionHom :
     rationalPoints (baseChanged k (AlgebraicClosure k) H) →*
       rationalPoints (baseChanged K (AlgebraicClosure K) (baseChanged k K H)) :=
   (fieldBaseChangeComponentData k K H).section_hom
+
+/-- On original coefficient points, the actual section comparison is extension
+along the specified embedding of chosen algebraic closures. -/
+theorem geometricComponentBaseChangeSectionHom_coefficient
+    (x : rationalPoints (baseChanged k (AlgebraicClosure k) H)) :
+    coefficientBaseChangeEquiv k K (AlgebraicClosure K) H
+        (baseChangeCoeffEquiv K (AlgebraicClosure K) (baseChanged k K H)
+          (geometricComponentBaseChangeSectionHom k K H x)) =
+      GaloisPoint.relativeExtend k (AlgebraicClosure k) (AlgebraicClosure K) H
+        (baseChangeCoeffEquiv k (AlgebraicClosure k) H x) :=
+  (fieldBaseChangeComponentData k K H).coefficient_formula x
 
 /-- Compare the chosen geometric components before and after base-field
 extension, along the specified compatible embedding of chosen closures. -/

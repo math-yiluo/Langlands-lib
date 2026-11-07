@@ -27,7 +27,7 @@ reciprocity families or closures.
 The proof helper `unique_of_commonClosureDegreeZeroGeneration` retains
 generation as an explicit premise. For each intermediate field and fixed
 additive character and measure, the two assignments give additive maps to
-`Additive ℂˣ`. Genuine topological abelianization descent and transport
+`Additive ℂˣ` through the shared `NonabelianSystem.valueAddHom`. Genuine topological abelianization descent and transport
 along the supplied reciprocity component show that rank-one agreement
 compares every continuous subgroup character. On an induced difference
 of characters, degree-zero induction reduces the comparison to the

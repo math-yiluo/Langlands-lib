@@ -16,19 +16,19 @@ universe uF uV
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : MeasurableSpace F.Carrierˣ := borel _
-local instance : BorelSpace F.Carrierˣ := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
+local instance tateCharacterFieldTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance tateCharacterFieldValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance tateCharacterFieldLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance tateCharacterFieldMeasurable : MeasurableSpace F.Carrier := borel _
+local instance tateCharacterFieldBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance tateCharacterUnitsMeasurable : MeasurableSpace F.Carrierˣ := borel _
+local instance tateCharacterUnitsBorel : BorelSpace F.Carrierˣ := ⟨rfl⟩
+local instance tateCharacterGLMeasurable (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
+local instance tateCharacterGLBorel (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance tateCharacterUnipotentMeasurable (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
+local instance tateCharacterUnipotentBorel (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance tateCharacterQuotientMeasurable (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
+local instance tateCharacterQuotientBorel (n : ℕ) : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
 
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
   (σ : Representation ℂ (Langlands.GeneralLinear 1 F.Carrier) V)
@@ -70,7 +70,7 @@ theorem tateCharacter_iotaMatrixAnalyticAssertions [Nontrivial V]
 
 variable (ψ : UnitaryAdditiveCharacter F.Carrier)
 
-local instance (ℓ : glFunctionals ψ 0 σ) :
+local instance tateCharacterModelAddCommGroup (ℓ : glFunctionals ψ 0 σ) :
     AddCommGroup (glCoefficientModel ψ 0 σ ℓ).toSubmodule :=
   (glCoefficientModel ψ 0 σ ℓ).toSubmodule.addCommGroup
 

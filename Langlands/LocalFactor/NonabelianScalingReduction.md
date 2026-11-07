@@ -8,7 +8,8 @@ unconditional scaling theorem.
 For a fixed intermediate field, additive character, Haar measure, field unit
 and compatible Weil lift, the proof compares two integer-linear maps from the
 actual continuous exact virtual group to the additive synonym of complex units.
-The first evaluates the assignment at the scaled additive character. The second,
+The first uses the shared `NonabelianSystem.valueAddHom` to evaluate the
+assignment at the scaled additive character. The second,
 `correctedScalingValueHom`, multiplies the original value by its exact determinant
 at the Weil lift and by the negative-degree power of a complex unit representing
 the normalized absolute value. Multiplicativity follows from the published exact

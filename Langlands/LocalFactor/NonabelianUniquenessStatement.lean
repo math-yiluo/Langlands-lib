@@ -74,13 +74,6 @@ private theorem haarMeasure_nonempty (E : Extension F) :
   obtain ⟨K⟩ : Nonempty (TopologicalSpace.PositiveCompacts E.field) := inferInstance
   exact ⟨HarmonicAnalysis.normalizedAdditiveHaar E.field K⟩
 
-private def valueHom (ε : Assignment.{uF, uV} F) (hε : AdditiveRelation F ε)
-    (E : Extension F) (ψ : AdditiveCharacter F E) (μ : HaarMeasure F E) :
-    Virtual.{uF, uV} F E →+ Additive ℂˣ where
-  toFun x := Additive.ofMul (ε E ψ μ x)
-  map_zero' := value_zero hε E ψ μ
-  map_add' x y := hε E ψ μ x y
-
 /-- Rank-one agreement compares the two systems on every continuous character
 of the actual Weil subgroup, by genuine abelianization descent. -/
 theorem IsSystem.eq_on_characterClass {e : ReciprocityFamily F}
@@ -111,8 +104,8 @@ theorem unique_of_commonClosureDegreeZeroGeneration
     (e : ReciprocityFamily F) : Unique.{uF, uV} F e := by
   intro ε₁ ε₂ h₁ h₂
   funext E ψ μ x
-  let a := (valueHom F ε₁ h₁.2.1 E ψ μ).toIntLinearMap
-  let b := (valueHom F ε₂ h₂.2.1 E ψ μ).toIntLinearMap
+  let a := (valueAddHom F ε₁ h₁.2.1 E ψ μ).toIntLinearMap
+  let b := (valueAddHom F ε₂ h₂.2.1 E ψ μ).toIntLinearMap
   have hchar (χ : weilSubgroup F E →ₜ* ℂˣ) :
       a (ExactGrothendieckGroup.characterClass χ) =
         b (ExactGrothendieckGroup.characterClass χ) :=
@@ -130,10 +123,10 @@ theorem unique_of_commonClosureDegreeZeroGeneration
     change Additive.ofMul (ε₁ E ψ μ (induce F E L h z.val)) =
       Additive.ofMul (ε₂ E ψ μ (induce F E L h z.val))
     rw [h₁.2.2.2.1 E L h ψ μ μL z, h₂.2.2.2.1 E L h ψ μ μL z]
-    change valueHom F ε₁ h₁.2.1 L (traceCharacter F E L h ψ) μL
+    change valueAddHom F ε₁ h₁.2.1 L (traceCharacter F E L h ψ) μL
         (ExactGrothendieckGroup.characterClass χ -
           ExactGrothendieckGroup.characterClass χ') =
-      valueHom F ε₂ h₂.2.1 L (traceCharacter F E L h ψ) μL
+      valueAddHom F ε₂ h₂.2.1 L (traceCharacter F E L h ψ) μL
         (ExactGrothendieckGroup.characterClass χ -
           ExactGrothendieckGroup.characterClass χ')
     rw [map_sub, map_sub]
