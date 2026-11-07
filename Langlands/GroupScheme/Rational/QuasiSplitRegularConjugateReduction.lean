@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Rational.AlgebraicClosureCover
 import Langlands.GroupScheme.Rational.QuasiSplitRegularConjugateStatement
 import Langlands.GroupScheme.Rational.QuasiSplitRegularClassRationalStatement
 import Langlands.GroupScheme.Rational.RegularConjugateFiniteGaloisStatement
@@ -94,17 +95,6 @@ theorem centralizer_coverPoint
   erw [hj]
   rw [Category.assoc, ← Grp.comp_hom_hom, Iso.hom_inv_id]
   rfl
-
-/-- The algebraic closure of `L`, as a cover of `Spec L` over `K`. -/
-def algebraicClosureCoverPoint (K L : Type u) [Field K] [Field L] [Algebra K L] :
-    Over.mk (Spec.map (CommRingCat.ofHom (algebraMap K (AlgebraicClosure L)))) ⟶
-      Over.mk (Spec.map (CommRingCat.ofHom (algebraMap K L))) :=
-  Over.homMk (Spec.map (CommRingCat.ofHom (algebraMap L (AlgebraicClosure L)))) (by
-    change Spec.map (CommRingCat.ofHom (algebraMap L (AlgebraicClosure L))) ≫
-        Spec.map (CommRingCat.ofHom (algebraMap K L)) =
-      Spec.map (CommRingCat.ofHom (algebraMap K (AlgebraicClosure L)))
-    rw [← Spec.map_comp, ← CommRingCat.ofHom_comp,
-      ← IsScalarTower.algebraMap_eq K L (AlgebraicClosure L)])
 
 /-- Every Galois conjugate of the cover point is conjugate to it over the algebraic closure
 of `L`: the discrepancy at `(𝟙, σ)` acts on `σ ≫ z` to give `z`, and it lifts along the central

@@ -145,6 +145,20 @@ theorem HasSmoothConnectedUnipotentKernel.isGeometricUnipotentRadical_preimage
     rw [heq]
     exact hA'.greatest H j hj hsm hc hu hn
 
+/-- The actual inverse-image scheme, its inclusion, and the proof that it is
+a geometric unipotent radical, packaged as one represented radical. -/
+def HasSmoothConnectedUnipotentKernel.geometricUnipotentRadicalPreimage
+    [IsAffineHom G.X.hom] [Smooth G.X.hom] [ConnectedSpace G.X.left]
+    [IsAffineHom Q.X.hom] [LocallyOfFiniteType Q.X.hom]
+    [Flat q.hom.hom.left] [Surjective q.hom.hom.left]
+    [LocallyOfFinitePresentation q.hom.hom.left] [QuasiCompact q.hom.hom.left]
+    (hq : HasSmoothConnectedUnipotentKernel q)
+    (hs : LeviSubgroup.IsGeometricUnipotentRadical s) :
+    Σ W : GroupScheme (Spec (CommRingCat.of k)),
+      {i : W ⟶ G // LeviSubgroup.IsGeometricUnipotentRadical i} :=
+  ⟨SubgroupPreimage.groupScheme q s, SubgroupPreimage.inclusion q s,
+    HasSmoothConnectedUnipotentKernel.isGeometricUnipotentRadical_preimage q s hq hs⟩
+
 end Field
 
 end Langlands.GroupScheme

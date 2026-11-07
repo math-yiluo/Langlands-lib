@@ -68,6 +68,33 @@ theorem projection_mem_of_closed_stable
   rw [d.projection_eq_dynamicLimit χ hP hM hU p]
   exact hmem
 
+section RestrictedProjection
+
+variable (χ : (Gm (Spec (CommRingCat.of k))).toGrp ⟶ G)
+  (hP : P = (Dynamic.parabolic χ).rationalPoints)
+  (hM : M = (Dynamic.centralizer χ).rationalPoints)
+  (hU : U = (Dynamic.unipotent χ).rationalPoints)
+  {H : GroupScheme (Spec (CommRingCat.of k))}
+  {F : SubgroupFunctor G} {j : H ⟶ G}
+  (hj : F.IsRepresentedBy j) (hjc : IsClosedSubgroup j)
+  (hF : (AutomorphicAction.conjugation χ).IsStable F)
+
+/-- Restrict the original projection to the points of a represented closed
+stable subgroup, with values in its literal Levi intersection. -/
+def closedStableProjection :
+    F.rationalPoints.subgroupOf P →* F.rationalPoints.subgroupOf M where
+  toFun a := ⟨d.projection a.val,
+    d.projection_mem_of_closed_stable χ hP hM hU hj hjc hF a.val a.property⟩
+  map_one' := Subtype.ext (map_one d.projection)
+  map_mul' a b := Subtype.ext (map_mul d.projection a.val b.val)
+
+@[simp]
+theorem closedStableProjection_apply (a : F.rationalPoints.subgroupOf P) :
+    (d.closedStableProjection χ hP hM hU hj hjc hF a : M) =
+      d.projection a.val := rfl
+
+end RestrictedProjection
+
 /-- A second dynamic unipotent subgroup of the same torus is preserved
 by the original projection of the first realized triple. -/
 theorem projection_mem_commonTorusUnipotent

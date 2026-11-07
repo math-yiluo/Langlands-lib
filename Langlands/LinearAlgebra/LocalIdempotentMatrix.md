@@ -1,0 +1,9 @@
+# Zero detection for idempotent matrices over a local ring
+
+This internal algebraic helper is intended for the common-weight-support step in the strict-Henselian generic-fibre argument. Let `R` be a commutative local ring, let `A` be a nontrivial commutative ring, let `f : R →+* A` be any ring homomorphism, and let `P` be a square matrix on a finite index type. If `P * P = P`, then `P.map f = 0` if and only if `P = 0`. There is no injectivity or locality premise on `f`.
+
+For the nontrivial direction, the determinant of `1 - P` maps to one. Thus `1 - det (1 - P)` cannot be a unit, since its image is zero in the nontrivial ring `A`. Locality of `R` makes `det (1 - P)` a unit, and the determinant criterion makes `1 - P` an invertible matrix. Finally `(1 - P) * P = 0` by idempotence, so cancellation gives `P = 0`.
+
+The proof uses the published Mathlib determinant criterion and local-ring unit dichotomy. It is an internal derivation and cites no external structural theorem. It does not construct a representation, a weight decomposition, or a group-scheme isomorphism.
+
+The nonvanishing corollaries compare the same matrix with its scalar extension, and also compare its scalar extensions along two arbitrary maps to nontrivial commutative rings, whose universes may differ. For an arbitrary indexed family of idempotent matrices, `idempotent_matrix_family_support_map` identifies the set of indices with nonzero matrices before and after scalar extension. No finiteness premise is imposed on the indexing family. The definition `idempotentMatrixSupportEquiv` realizes that identification as an equivalence of the two subtypes of occurring indices. Its forward and inverse maps preserve the original index exactly, as the two accompanying formulas state. This gives a support comparison for supplied projectors; obtaining projectors from an integral representation remains a separate obligation.

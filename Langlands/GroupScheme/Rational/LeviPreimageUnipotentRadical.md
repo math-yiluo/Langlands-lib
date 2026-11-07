@@ -37,3 +37,9 @@ inverse image have the same all-test range because both range and inverse image
 commute with base change. Smoothness, connectedness and unipotence of the latter
 follow from the ground-field radical; normality and greatestness transfer
 through the range equality. No choice of a replacement inner Levi is involved.
+
+`HasSmoothConnectedUnipotentKernel.geometricUnipotentRadicalPreimage`
+packages the actual inverse-image group scheme, its exact inclusion and the
+geometric radical proof into one represented radical witness. Its group scheme
+and morphism are the supplied pullback construction; this definition makes no
+new choice of representatives.

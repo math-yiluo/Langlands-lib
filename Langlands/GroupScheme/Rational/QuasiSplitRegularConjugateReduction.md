@@ -94,3 +94,7 @@ The rational-point and descent inputs are the two explicit hypotheses.
 - Arbitrary universe `u` and arbitrary fields `K`, with no perfectness,
   infinitude or splitness hypothesis.
 - The two prerequisite statements remain explicit hypotheses.
+
+The unchanged `algebraicClosureCoverPoint` construction is imported from
+[AlgebraicClosureCover](AlgebraicClosureCover.md), which provides the common
+field-valued cover used by this reduction and canonical-quotient transport.
