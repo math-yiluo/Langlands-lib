@@ -25,18 +25,18 @@ local notation "CP" =>
 local notation "RM" => Matrix (Fin n) (Fin n) ℝ
 local notation "CM" => Matrix (Fin n) (Fin n) ℂ
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance placeEnvelopingRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance placeEnvelopingContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeEnvelopingSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeEnvelopingFormsAddCommGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance placeEnvelopingStableAddCommGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S T : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
-local instance : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance placeEnvelopingSpaceAddCommGroup : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance placeEnvelopingTargetAddCommGroup : AddCommGroup T.Space := Submodule.addCommGroup _
 
 attribute [local instance 100] LieRing.ofAssociativeRing
 

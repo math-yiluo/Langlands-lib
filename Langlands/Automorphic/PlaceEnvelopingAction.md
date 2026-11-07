@@ -39,3 +39,9 @@ intertwiner operations, and pinned Mathlib's universal enveloping
 extensionality. It introduces no original-literature assertion, topology
 or normalization. It does not assert that the action is faithful, extract
 irreducible archimedean factors, or construct a Langlands attachment.
+
+The local additive-group instances have explicit module-specific names.
+This allows the published single-place differential module to be imported
+together with the actual compact-action module, whose anonymous local
+instances otherwise generated overlapping declaration names. The instance
+bodies are the original submodule additive-group structures.
