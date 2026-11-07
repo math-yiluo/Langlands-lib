@@ -1,0 +1,13 @@
+# Native Jacquet comparison for an original represented orbit
+
+This internal unit specializes native coefficient induction in stages to the original represented parabolics, their full orbit stabilizer, and the existing compact-comparison saturation. Its source is literally the kernel coinvariant representation of compact induction of the original stabilizer coefficient, restricted along the original target Levi section. Its target is compact induction of `compactComparisonNativeCoefficient`, on the unchanged native stabilizer-kernel quotient and with the exact original nested Haar character.
+
+The actual projection kernel has a compact-open cover. The proof uses the published represented nested-radical cover with the top stages subgroup, then removes that redundant subgroup by the original stages kernel homeomorphism. This uses the represented radical of the supplied original parabolic triple and does not require a separately supplied cover or new dynamic identifications.
+
+The comparison uses the actual simultaneous dynamic realization only to prove that the full original stabilizer lies in its original projection saturation. Closedness of the saturation and stabilizer, kernel containment and the original section membership are already proved. The represented projection is continuous and its kernel is closed. Canonical Borel structures are used on the restricted kernel, its original stabilizer intersection, and their left quotient. The covered-stages construction derives local compactness, two-sided Haar measures, compatible quotient measure and the needed neighborhood bases. The endpoint character is identified by the published exact nested-Haar equality, without cancellation or replacement.
+
+The implementation transports the coefficient equality explicitly through compact induction and the representation-equivalence type. It preserves the covered-stages linear equivalence and uses the proved exact character equality.
+
+The admissibility theorem transports the proved endpoint admissibility back through this equivalence. It retains admissibility of the actual intersection quotient and compactness of the original output quotient as explicit hypotheses. The coefficient ring and carrier universes are independent of the field/group universe.
+
+This unit does not specialize to the universal family or apply output normalization. Finite adapted orbit geometry, compactness of the output intersection quotient and assembly of the actual finite support filtration remain separate obligations. The unchanged global rational supercuspidal Jacquet finiteness statement is not proved here.
