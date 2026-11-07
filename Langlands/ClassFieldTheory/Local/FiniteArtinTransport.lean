@@ -266,6 +266,40 @@ def pullback (heK : Continuous eK) (a' : FiniteArtinFamily K') :
       (extensionGaloisEquiv eK eC h L).symm
         (a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)) := rfl
 
+/-- Inverse automorphisms in the pullback are evaluated through the same
+restricted field equivalence as the forward conjugacy. -/
+theorem pullback_symm_apply (heK : Continuous eK)
+    (a' : FiniteArtinFamily K') (L : FiniteAbelianExtension K) (b : Kˣ)
+    (x : L.field) :
+    fieldEquiv eK eC h L.field ((pullback eK eC h heK a' L b).symm x) =
+      (a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+        (fieldEquiv eK eC h L.field x) := by
+  change (fieldEquiv eK eC h L.field)
+      ((fieldEquiv eK eC h L.field).symm
+        ((a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+          (fieldEquiv eK eC h L.field x))) = _
+  exact (fieldEquiv eK eC h L.field).apply_symm_apply _
+
+/-- The inverse-action difference used in geometric normalization transports
+with its exponent unchanged, for every supplied family and every natural power. -/
+theorem pullback_symm_sub_pow (heK : Continuous eK)
+    (a' : FiniteArtinFamily K') (L : FiniteAbelianExtension K) (b : Kˣ)
+    (x : L.field) (n : ℕ) :
+    let eL : L.field ≃+* (extension eK eC h L).field :=
+      fieldEquiv eK eC h L.field
+    eL ((pullback eK eC h heK a' L b).symm x - x ^ n) =
+      (a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+        (eL x) - (eL x) ^ n := by
+  let eL : L.field ≃+* (extension eK eC h L).field :=
+    fieldEquiv eK eC h L.field
+  change eL ((pullback eK eC h heK a' L b).symm x - x ^ n) =
+    (a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+      (eL x) - (eL x) ^ n
+  have hi : eL ((pullback eK eC h heK a' L b).symm x) =
+      (a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+        (eL x) := pullback_symm_apply eK eC h heK a' L b x
+  rw [map_sub, map_pow, hi]
+
 /-- The exact finite norm-residue relation is preserved at each image index. -/
 theorem pullback_finiteNormResidueRelation (heK : Continuous eK)
     (a' : FiniteArtinFamily K') (L : FiniteAbelianExtension K)

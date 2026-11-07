@@ -66,6 +66,41 @@ The unit map is continuous by `heK.units_map`; the two other maps are
 continuous by their supplied or constructed continuous structures. There
 is no choice of a different candidate family for different indices.
 
+## Inverse-action evaluation
+
+For the same supplied data, family, index and base unit, and any
+`x : L.field`, `pullback_symm_apply` proves
+
+```lean
+fieldEquiv eK eC h L.field ((pullback eK eC h heK a' L b).symm x) =
+  (a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+    (fieldEquiv eK eC h L.field x)
+```
+
+The inverse of the conjugated automorphism is the conjugate of the
+inverse. Unfolding the construction reduces the equality to cancellation
+of `fieldEquiv` with its inverse. In particular, the inverse in the
+geometric normalization clause requires no new choice of equivalence or
+family.
+
+`pullback_symm_sub_pow` combines this identity with the ring
+equivalence's preservation of subtraction and natural powers. For every
+`n : ℕ`, write
+`eL : L.field ≃+* (extension eK eC h L).field` for the same `fieldEquiv`.
+The image of
+`(pullback eK eC h heK a' L b).symm x - x ^ n` is
+
+```lean
+(a' (extension eK eC h L) (Units.mapEquiv eK.toMulEquiv b)).symm
+    (eL x) - (eL x) ^ n
+```
+
+Both formulas hold for an arbitrary supplied family without a
+norm-residue, restriction, valuation or normalization hypothesis. They
+compare actual field elements. Valuation comparison and identification
+of the residue-cardinality exponent are separate inputs needed to use
+them in a geometric normalization proof.
+
 ## Norm and restriction proofs
 
 `normUnits_map` follows from Mathlib's determinant-norm identity

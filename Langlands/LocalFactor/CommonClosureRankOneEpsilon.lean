@@ -1,4 +1,5 @@
 import Langlands.LocalFactor.CommonClosureGamma
+import Langlands.LocalFactor.CommonClosureRankOneSpectral
 import Langlands.VirtualRepresentation.ExactTensor
 
 /-! # Conditional arithmetic epsilon values of character pairs -/
@@ -9,26 +10,15 @@ universe uF uV
 
 namespace Langlands.LocalFactor.CommonClosure
 
+attribute [simp] CommonClosureSpectralAnalytic.weilCharacter_fieldCharacterEquiv
+
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-/-- Continuous character descent through the supplied reciprocity component. -/
-def characterDescentEquiv (e : ReciprocityFamily F) (E : Extension F) :
-    (weilSubgroup F E →ₜ* ℂˣ) ≃ FieldCharacter F E := by
-  letI := (fieldData F E).topology
-  exact LocalClassField.abelianizationLiftEquiv.trans
-    (LocalClassField.characterTransport (e E))
-
 @[simp]
-theorem weilCharacter_characterDescentEquiv (e : ReciprocityFamily F) (E : Extension F)
-    (χ : weilSubgroup F E →ₜ* ℂˣ) :
-    weilCharacter F e E (characterDescentEquiv F e E χ) = χ :=
-  (characterDescentEquiv F e E).symm_apply_apply χ
-
-@[simp]
-theorem characterDescentEquiv_weilCharacter (e : ReciprocityFamily F) (E : Extension F)
+theorem fieldCharacterEquiv_weilCharacter (e : ReciprocityFamily F) (E : Extension F)
     (χ : FieldCharacter F E) :
-    characterDescentEquiv F e E (weilCharacter F e E χ) = χ :=
-  (characterDescentEquiv F e E).apply_symm_apply χ
+    CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E (weilCharacter F e E χ) = χ :=
+  (CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E).apply_symm_apply χ
 
 end Langlands.LocalFactor.CommonClosure
 
@@ -54,10 +44,10 @@ theorem conditionalDeligneValue_characterClass (e : ReciprocityFamily F)
     (conditionalDeligneValue F e ε hε E ψ μ
       (ExactGrothendieckGroup.characterClass χ) s : ℂ) =
       (fieldData F E).abelianEpsilonExpression
-        (characterDescentEquiv F e E (character F E s * χ)) ψ μ := by
+        (CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E (character F E s * χ)) ψ μ := by
   rw [conditionalDeligneValue, virtualTwist_characterClass]
-  simpa only [CommonClosure.characterClass, weilCharacter_characterDescentEquiv] using
-    hε.2.2.2.2 E (characterDescentEquiv F e E (character F E s * χ)) ψ μ
+  simpa only [CommonClosure.characterClass, CommonClosureSpectralAnalytic.weilCharacter_fieldCharacterEquiv] using
+    hε.2.2.2.2 E (CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E (character F E s * χ)) ψ μ
 
 end Langlands.LocalFactor.CommonClosureSpectral
 
@@ -132,7 +122,7 @@ theorem conditionalEpsilonValue_characterPair (e : ReciprocityFamily F)
     (conditionalEpsilonValue F e ε hε E ψ μ (characterPair F E χ)
       (characterPair_isContinuous F E χ) Φ s : ℂ) =
       (fieldData F E).abelianEpsilonExpression
-        (characterDescentEquiv F e E (character F E s * χ)) ψ μ := by
+        (CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E (character F E s * χ)) ψ μ := by
   rw [conditionalEpsilonValue_of_monodromy_zero F e ε hε E ψ μ _ _
     (characterPair_monodromy F E χ), underlyingClass_characterPair]
   exact conditionalDeligneValue_characterClass F e ε hε E ψ μ χ s
@@ -155,7 +145,7 @@ theorem conditionalPairEpsilonValue_characterPair (e : ReciprocityFamily F)
       (characterPair F E χ) (characterPair F E η)
       (characterPair_isContinuous F E χ) (characterPair_isContinuous F E η) Φ s : ℂ) =
       (fieldData F E).abelianEpsilonExpression
-        (characterDescentEquiv F e E (character F E s * (χ * η))) ψ μ := by
+        (CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E (character F E s * (χ * η))) ψ μ := by
   unfold conditionalPairEpsilonValue
   rw [conditionalEpsilonValue_eq_of_equiv F e ε hε E ψ μ _
     (characterPair_isContinuous F E (χ * η)) (characterPairTensorEquiv F E χ η) Φ s]
@@ -174,7 +164,7 @@ theorem conditionalPairEpsilonValue_of_equiv_characterPair (e : ReciprocityFamil
     (Φ : GeometricFrobenius F E) (s : ℂ) :
     (conditionalPairEpsilonValue F e ε hε E ψ μ A B hA hB Φ s : ℂ) =
       (fieldData F E).abelianEpsilonExpression
-        (characterDescentEquiv F e E (character F E s * (χ * η))) ψ μ := by
+        (CommonClosureSpectralAnalytic.fieldCharacterEquiv F e E (character F E s * (χ * η))) ψ μ := by
   rw [conditionalPairEpsilonValue_eq_of_equiv F e ε hε E ψ μ hA
     (characterPair_isContinuous F E χ) hB (characterPair_isContinuous F E η) f g Φ s]
   exact conditionalPairEpsilonValue_characterPair F e ε hε E ψ μ χ η Φ s

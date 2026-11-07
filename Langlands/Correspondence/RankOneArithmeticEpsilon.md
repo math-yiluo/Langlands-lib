@@ -56,3 +56,5 @@ descended character with a separately transported field character. It
 constructs no reciprocity data, additive character, self-dual measure,
 Frobenius or monomial constants, and proves no analytic epsilon comparison or
 closed local Langlands correspondence.
+
+The character descent uses the existing `CommonClosureSpectralAnalytic.fieldCharacterEquiv` and its inverse identity from `CommonClosureRankOneSpectral`.

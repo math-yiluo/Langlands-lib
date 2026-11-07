@@ -1,0 +1,5 @@
+# Finite Laurent numerators for local zeta integrals
+
+Worker 1786 combines the finite shell prefix with the geometric tail. Each prefix term is a Laurent monomial in the spectral variable. When the multiplicative character is unramified, multiplication by the Euler denominator clears the prefix and the constant tail supplies one further monomial. When it is ramified, the unit-character average vanishes, so the prefix already gives the required finite Laurent expression.
+
+The unit-character average is Worker 1248's internal result in `TateLatticeZeta`. The proof uses the supplied topology and actual additive Haar integral throughout. It then invokes the analytic consequences established in `ZetaContinuation`: convergence, holomorphy, existence and uniqueness of the normalized meromorphic continuation, and existence and uniqueness of finite Laurent coefficients with punctured-germ and regular-point identities. These are derived results for the published local-analysis target; the target itself is not assumed.

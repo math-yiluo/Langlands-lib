@@ -87,7 +87,7 @@ theorem conditionalPairEpsilonValue_of_rankOneBaseRestriction
     (CommonClosureGamma.conditionalPairEpsilonValue F eC ε hε (baseExtension F) ψ' μ
       A B hAc hBc Φ s : ℂ) =
       (fieldData F (baseExtension F)).abelianEpsilonExpression
-        (characterDescentEquiv F eC (baseExtension F)
+        (CommonClosureSpectralAnalytic.fieldCharacterEquiv F eC (baseExtension F)
           (CommonClosureSpectral.character F (baseExtension F) s *
             (baseRestrictedWeilCharacter F (RankOne.weilCharacter F e χ) *
               baseRestrictedWeilCharacter F (RankOne.weilCharacter F e η)))) ψ' μ := by
@@ -113,7 +113,7 @@ theorem isArithmeticPairEpsilonFactor_rankOneWeilCharacterClass_iff
         CommonClosureSpectral.IsSelfDual F (baseExtension F) ψ' μ →
         ∀ s : ℂ,
           (fieldData F (baseExtension F)).abelianEpsilonExpression
-            (characterDescentEquiv F eC (baseExtension F)
+            (CommonClosureSpectralAnalytic.fieldCharacterEquiv F eC (baseExtension F)
               (CommonClosureSpectral.character F (baseExtension F) s *
                 (baseRestrictedWeilCharacter F (RankOne.weilCharacter F e χ) *
                   baseRestrictedWeilCharacter F (RankOne.weilCharacter F e η)))) ψ' μ =

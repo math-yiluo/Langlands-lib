@@ -14,11 +14,14 @@ The definitions and deductions compose published constructions in
 consequences of those constructions; no new original-literature assertion is
 introduced.
 
-`CommonClosure.characterDescentEquiv` descends a continuous character of the
+The existing `CommonClosureSpectralAnalytic.fieldCharacterEquiv` descends a continuous character of the
 actual fixing subgroup to its closed-commutator quotient and transports it along
 the supplied reciprocity component to a continuous field character. Its two
 inverse identities identify descent and the existing `weilCharacter` pullback.
-The equivalence constructs no reciprocity family.
+The equivalence constructs no reciprocity family. This module reuses it and
+`CommonClosureSpectralAnalytic.weilCharacter_fieldCharacterEquiv` from
+`CommonClosureRankOneSpectral`, and adds the other inverse identity
+`CommonClosure.fieldCharacterEquiv_weilCharacter`.
 
 `virtualTwist_characterClass` specializes the existing exact continuous twist
 formula: the spectral twist of a genuine character class is the class of the
