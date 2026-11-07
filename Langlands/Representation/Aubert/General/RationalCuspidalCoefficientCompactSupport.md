@@ -37,3 +37,9 @@ geometry. It does not prove the structural existence statements or compare
 the actual represented-parabolic cuspidality hypothesis with the standard
 family, and does not claim the unrestricted
 `SupercuspidalUnitaryCoefficientCompactSupportStatement`.
+
+The local instance `rationalCuspidalCoefficientCompactSupportPointTopology` supplies that same canonical
+rational-point topology. Its explicit module-specific name avoids collisions
+with anonymous local topology instances when these modules are imported
+together for kernel replay; the topology and mathematical assertions are
+unchanged.

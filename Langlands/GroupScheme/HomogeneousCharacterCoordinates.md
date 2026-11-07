@@ -57,6 +57,11 @@ uses `characterEval_zsmul` with exponent `-1`.
 
 ## Covariance on every test
 
+The reusable tensor identities `productMap_rTensor'` and
+`productMap_comp_include` express compatibility of `Algebra.TensorProduct.productMap`
+with restriction on the first factor and with the two canonical inclusions.
+They hold for commutative semirings and their displayed algebra structures.
+
 In this section `G → Spec k` and `H → Spec k` are affine, and `i : H ⟶ G` is
 any morphism of group schemes. Let `χ` be any coordinate of `H`, not
 necessarily a character. `leftCovariantSubspace i χ` contains the coordinates

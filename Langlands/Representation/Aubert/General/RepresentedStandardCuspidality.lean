@@ -5,6 +5,7 @@ import Langlands.GroupScheme.Rational.StandardRepresentability
 import Langlands.GroupScheme.Rational.RelativeRootStandardCocharacter
 import Langlands.GroupScheme.Rational.RootParabolicProper
 import Langlands.GroupScheme.Absolute.BorelStatement
+import Langlands.GroupScheme.Absolute.DynamicParabolicRecognition
 import Langlands.GroupScheme.Dynamic.GeometricUnipotentRadicalReduction
 import Langlands.GroupScheme.Dynamic.CentralizerReductiveProof
 import Langlands.GroupScheme.Rational.GeometricUnipotentRadicalComparison
@@ -71,9 +72,8 @@ variable {k : Type u} [Field k]
 
 omit [Mono i.hom.hom.left] in
 /-- Geometric recognition of the choice-free standard representatives.
-Parabolic recognition and standard cocharacters remain explicit premises. -/
-theorem standard_representatives_geometric
-    (hPD : ParabolicDynamicStatement.{u})
+The standard-cocharacter statement remains explicit; dynamic parabolicity is proved. -/
+theorem standard_representatives_geometric_of_standardCocharacter
     (hStandard : StandardCocharacterStatement.{u})
     (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
     (hν : IsGenericCocharacter i ν) (I : Finset (SimpleRoot i ν)) :
@@ -121,10 +121,29 @@ theorem standard_representatives_geometric
     (Standard.leviToParabolic i ν (rootSet i ν I))
     (Standard.unipotentToParabolic i ν (rootSet i ν I))
     (Standard.leviToParabolic_comp i ν _) (Standard.unipotentToParabolic_comp i ν _)
-  refine ⟨(hPD k G hG _ _ hpc).mpr ⟨χ, hp.2⟩, ?_, hRad', hMult⟩
+  refine ⟨isParabolicSubgroup_of_range_eq_dynamicParabolic hG _ hpc χ hp.2,
+    ?_, hRad', hMult⟩
   exact ⟨hpc.isAffineHom, IsClosedSubgroup.of_comp hpc (by
     rw [Standard.leviToParabolic_comp]
     exact hmc), hMred, ⟨_, _, hRad', hMult⟩⟩
+
+omit [Mono i.hom.hom.left] in
+/-- Compatibility form of standard geometric recognition with its former
+parabolic-dynamic argument. Only the standard-cocharacter premise is used. -/
+theorem standard_representatives_geometric
+    (hPD : ParabolicDynamicStatement.{u})
+    (hStandard : StandardCocharacterStatement.{u})
+    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+    (hν : IsGenericCocharacter i ν) (I : Finset (SimpleRoot i ν)) :
+    IsParabolicSubgroup (Standard.parabolicHom i ν (rootSet i ν I)) ∧
+      IsRationalLeviSubgroup (Standard.leviToParabolic i ν (rootSet i ν I)) ∧
+      LeviSubgroup.IsGeometricUnipotentRadical
+        (Standard.unipotentToParabolic i ν (rootSet i ν I)) ∧
+      IsIso (subgroupMultiplication
+        (Standard.leviToParabolic i ν (rootSet i ν I))
+        (Standard.unipotentToParabolic i ν (rootSet i ν I))) := by
+  have _ := hPD
+  exact standard_representatives_geometric_of_standardCocharacter i ν hStandard hG hi hν I
 
 omit [Mono i.hom.hom.left] in
 /-- The point image of the represented standard radical is the exact
@@ -168,10 +187,9 @@ variable [LocallyCompactSpace (rationalPoints G)]
   [NonarchimedeanGroup (rationalPoints G)]
 
 /-- Vanishing for all proper represented rational parabolics implies
-cuspidality for the exact actual standard family. Geometric recognition of
-dynamic parabolics and standard cocharacters remain explicit. -/
-theorem isCuspidal_of_all_represented_parabolics
-    (hPD : ParabolicDynamicStatement.{u})
+cuspidality for the exact actual standard family. Only standard cocharacters
+remain an explicit universal structural premise. -/
+theorem isCuspidal_of_all_represented_parabolics_of_standardCocharacter
     (hStandard : StandardCocharacterStatement.{u})
     (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
     (hν : IsGenericCocharacter i ν) (hRoots : HasRelativeRootSystem i)
@@ -190,7 +208,7 @@ theorem isCuspidal_of_all_represented_parabolics
   have := hG.smooth
   intro I
   obtain ⟨hp, hl, hr, hmul⟩ :=
-    standard_representatives_geometric i ν hPD hStandard hG hi hν I.val
+    standard_representatives_geometric_of_standardCocharacter i ν hStandard hG hi hν I.val
   have hproper : ¬ IsIso (Standard.parabolicHom i ν (rootSet i ν I.val)) := by
     intro hiso
     let := hiso
@@ -216,6 +234,29 @@ theorem isCuspidal_of_all_represented_parabolics
       Standard.parabolicHom i ν (rootSet i ν I.val))) 1) at hvanish
   let := hvanish
   exact (standardUnipotentCoinvariantsEquiv i ν I.val A).surjective.subsingleton
+
+/-- Compatibility form of represented-parabolic cuspidality with its former
+parabolic-dynamic argument. Only the standard-cocharacter premise is used. -/
+theorem isCuspidal_of_all_represented_parabolics
+    (hPD : ParabolicDynamicStatement.{u})
+    (hStandard : StandardCocharacterStatement.{u})
+    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+    (hν : IsGenericCocharacter i ν) (hRoots : HasRelativeRootSystem i)
+    [Fintype (SimpleRoot i ν)]
+    (hU : ∀ I, IsClosed (unipotent i ν I : Set (rationalPoints G)))
+    (A : SmoothRep.{0, u, v} ℂ (rationalPoints G))
+    (hA : ∀ (P M U : GroupScheme (Spec (CommRingCat.of k)))
+      (p : P ⟶ G) (l : M ⟶ P) (r : U ⟶ P)
+      (hp : IsParabolicSubgroup p) (hl : IsRationalLeviSubgroup l)
+      (hr : LeviSubgroup.IsGeometricUnipotentRadical r)
+      (hmul : IsIso (subgroupMultiplication l r)),
+      ¬ IsIso p → Subsingleton ((jacquetFunctor p l r hp hr hl hmul).obj A)) :
+    IsCuspidal (parabolic i ν) (levi i ν) (unipotent i ν)
+      (isSemidirectDecomposition_of_standardCocharacterStatement i ν hStandard hG hi hν)
+      hU A := by
+  have _ := hPD
+  exact isCuspidal_of_all_represented_parabolics_of_standardCocharacter
+    i ν hStandard hG hi hν hRoots hU A hA
 
 end Topology
 

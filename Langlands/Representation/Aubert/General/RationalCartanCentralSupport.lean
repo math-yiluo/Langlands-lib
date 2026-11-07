@@ -66,7 +66,8 @@ theorem cartanDetectionModulo_center
 
 variable [IsAffine G.X.left]
 
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance rationalCartanCentralSupportPointTopology : TopologicalSpace (rationalPoints G) :=
+  rationalPointTopology F G.X
 
 /-- A bounded actual Cartan expression gives compact support on the full point
 center quotient. The root-system input is retained explicitly. -/

@@ -37,7 +37,8 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsAffine G.X.left]
   (i : S.toGrp ⟶ G) [Mono i.hom.hom.left] (ν : cocharacterLattice S)
 
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance rationalCuspidalCoefficientCompactSupportPointTopology : TopologicalSpace (rationalPoints G) :=
+  rationalPointTopology F G.X
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
   [T2Space (rationalPoints G)]

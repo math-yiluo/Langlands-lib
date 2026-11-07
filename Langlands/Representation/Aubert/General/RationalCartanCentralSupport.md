@@ -33,3 +33,9 @@ The function's target requires only a zero. No coefficient smoothness or
 Jacquet-module assertion is hidden in this result: its bound and geometric
 cover are explicit premises. All results are derived from the cited Library
 lemmas, rather than new source assertions.
+
+The local instance `rationalCartanCentralSupportPointTopology` supplies that same canonical
+rational-point topology. Its explicit module-specific name avoids collisions
+with anonymous local topology instances when these modules are imported
+together for kernel replay; the topology and mathematical assertions are
+unchanged.

@@ -151,7 +151,7 @@ theorem characterEval_neg {S : Scheme.{u}} {G : GroupScheme S} (χ : rationalCha
     characterEval (-χ) T x = (characterEval χ T x)⁻¹ := by
   rw [← neg_one_zsmul, characterEval_zsmul, zpow_neg_one]
 
-private theorem productMap_rTensor' {K B C A : Type*} [CommSemiring K]
+theorem productMap_rTensor' {K B C A : Type*} [CommSemiring K]
     [CommSemiring B] [CommSemiring C] [CommSemiring A]
     [Algebra K B] [Algebra K C] [Algebra K A]
     (r : B →ₐ[K] C) (f : C →ₐ[K] A) (g : B →ₐ[K] A) (z : B ⊗[K] B) :
@@ -161,7 +161,7 @@ private theorem productMap_rTensor' {K B C A : Type*} [CommSemiring K]
   | tmul x y => rfl
   | add x y hx hy => simp only [map_add, hx, hy]
 
-private theorem productMap_comp_include {K B C A : Type*} [CommSemiring K]
+theorem productMap_comp_include {K B C A : Type*} [CommSemiring K]
     [CommSemiring B] [CommSemiring C] [CommSemiring A]
     [Algebra K B] [Algebra K C] [Algebra K A]
     (ε : B ⊗[K] C →ₐ[K] A) (z : B ⊗[K] C) :
