@@ -10,37 +10,17 @@ an actual continuous homomorphism from the field units to complex units.
 The statement, canonical topology, quasicharacter type, and conductor definition
 are imported without changes.
 
-## Character separation
+## Shared character separation and openness
 
-The private additive homomorphism `rationalCircleMap` sends the class of a
-rational number modulo the integers to its real class modulo the integers.
-Its injectivity proof uses the quotient's zero criterion: if the real image is
-an integer, injectivity of rational-to-real casting shows that the original
-rational number is the same integer.
-
-For an arbitrary discrete abelian group `G` and a nonidentity element `g`,
-Mathlib's
-`CharacterModule.exists_character_apply_ne_zero_of_ne_zero` separates
-`Additive.ofMul g` by a character to `AddCircle (1 : ℚ)`, the rational circle.
-Composing this character with `rationalCircleMap`, `AddCircle.toCircle`, and
-`Circle.toUnits` gives a multiplicative homomorphism to `ℂˣ`. The rational
-circle embedding and `AddCircle.injective_toCircle` prove that its value at
-`g` is not one. Its continuity follows from discreteness of `G`; continuity
-of the rational-circle character with its own topology is unnecessary.
-This is the private helper `exists_discrete_character`.
+The module imports
+[`Langlands.HarmonicAnalysis.CharacterSeparation`](CharacterSeparation.md).
+Its `exists_discrete_character` and `principalUnits_isOpen` are the helpers
+originally implemented here, moved with their proofs unchanged into a shared
+namespace. The rational-circle embedding and its injectivity proof remain
+private in that module. These helpers are also used by the rank-one
+bounded-conductor coset proof.
 
 ## The actual principal-unit filtration
-
-For any specified topological data `T`, the private
-`principalUnits_isOpen` proves openness of every published subgroup
-`T.principalUnits n`. The valuation-one condition is the pullback of an open
-sphere of the actual canonical valuation, transported through
-`IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt`. The second condition
-is the pullback of the open valuation integer ring by
-`u ↦ (u - 1) / T.uniformizer ^ (n : ℤ)`.
-The published `mem_principalUnits_iff_div_mem_integers` identifies the
-intersection with `T.principalUnits n`. This argument also covers level zero
-and adds no topological group hypothesis to the theorem.
 
 The private `exists_strict_principal_unit` treats every positive level `n`.
 Surjectivity of the actual valuation, followed by the ordered value-group

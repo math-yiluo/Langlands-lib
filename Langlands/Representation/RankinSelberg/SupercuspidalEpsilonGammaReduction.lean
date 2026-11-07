@@ -64,16 +64,16 @@ universe uF uV uW
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
+local instance supercuspidalEpsilonGammaTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supercuspidalEpsilonGammaValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance supercuspidalEpsilonGammaLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance supercuspidalEpsilonGammaFieldMeasurable : MeasurableSpace F.Carrier := borel _
+local instance supercuspidalEpsilonGammaFieldBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance supercuspidalEpsilonGammaGLMeasurable (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
+local instance supercuspidalEpsilonGammaGLBorel (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supercuspidalEpsilonGammaUnipotentMeasurable (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
+local instance supercuspidalEpsilonGammaUnipotentBorel (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supercuspidalEpsilonGammaQuotientMeasurable (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
 
 variable {r n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
   {W : Type uW} [AddCommGroup W] [Module ℂ W]

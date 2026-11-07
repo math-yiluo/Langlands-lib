@@ -11,3 +11,5 @@ Both objects come from `RationalUniversalProgenerator`. The source object is lit
 The field/group universe `uF` and the representation-carrier universe `uV` are independent, while the coefficient field is ℂ in universe zero. Both representations in the comparison have carrier universe `max uF uV`; π itself retains carrier universe `uV`. There is no splitness assumption on G, characteristic-zero assumption on F, admissibility premise, or finite-dimensionality premise.
 
 This file defines two Prop-valued declarations and proves neither comparison. Defining the local comparison predicate for every smooth π does not assert it in that generality: the universal statement retains irreducible cuspidality. Only the construction laws in the imported construction module have been proved. Block membership and the small-progenerator assertion have their own statement target.
+
+The local canonical topology instances have explicit module-specific names so this module can be imported with the actual small-progenerator statement and its consumers. This naming choice changes no topology, representation, predicate or proof.

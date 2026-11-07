@@ -278,10 +278,10 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance rationalUniversalProgeneratorComparisonProofPointTopology : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
-local instance : IsTopologicalGroup (GroupScheme.rationalPoints G) :=
+local instance rationalUniversalProgeneratorComparisonProofTopologicalGroup : IsTopologicalGroup (GroupScheme.rationalPoints G) :=
   rationalPoint_isTopologicalGroup F G
 
 theorem isOpen_rationalImageProjectionKernel :

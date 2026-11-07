@@ -128,3 +128,5 @@ are unnecessary for the comparison itself.
 
 This proof establishes the stated comparison. Inertia-block membership and the
 small-progenerator property are separate assertions and are not claimed here.
+
+The local canonical topology instances have explicit module-specific names so this module can be imported with the actual small-progenerator statement and its consumers. This naming choice changes no topology, representation, predicate or proof.

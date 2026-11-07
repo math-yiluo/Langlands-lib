@@ -35,8 +35,9 @@ These declarations are private, in the namespace
   rational `q`. If its real image is zero, then `(q : ℝ)` is an integer `n` by
   `AddCircle.coe_eq_zero_iff`. Injectivity of the cast then gives `q = n`, so
   the class of `q` in `ℚ/ℤ` is zero. This is the argument of the private
-  `rationalCircleMap` in the published `UnboundedConductorProof` module, which
-  cannot be imported.
+  `rationalCircleMap`, originally in `UnboundedConductorProof` and now in
+  `Langlands.HarmonicAnalysis.CharacterSeparation`. That declaration remains
+  private; this module retains its own rational-circle helper.
 - For an abelian group `A` and `c : A →+ AddCircle (1 : ℚ)`, `toCircleAddChar c`
   is the `AddChar A Circle` given by
   `a ↦ AddCircle.toCircle (ratCircleToRealCircle (c a))`. In Mathlib,

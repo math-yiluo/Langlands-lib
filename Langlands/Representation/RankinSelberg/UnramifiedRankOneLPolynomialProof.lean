@@ -17,15 +17,15 @@ universe uF
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+local instance unramifiedRankOneLPolynomialTopology : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance unramifiedRankOneLPolynomialValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance unramifiedRankOneLPolynomialLocalField : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance : MeasurableSpace F.Carrierˣ := borel _
-local instance : BorelSpace F.Carrierˣ := ⟨rfl⟩
+local instance unramifiedRankOneLPolynomialT2 : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance unramifiedRankOneLPolynomialFieldMeasurable : MeasurableSpace F.Carrier := borel _
+local instance unramifiedRankOneLPolynomialFieldBorel : BorelSpace F.Carrier := ⟨rfl⟩
+local instance unramifiedRankOneLPolynomialUnitsMeasurable : MeasurableSpace F.Carrierˣ := borel _
+local instance unramifiedRankOneLPolynomialUnitsBorel : BorelSpace F.Carrierˣ := ⟨rfl⟩
 
 private theorem normalizedAbs_cpow_eq_spectral_zpow (a : F.Carrierˣ) (s : ℂ) :
     (F.canonicalTopologicalData.normalizedAbs (a : F.Carrier) : ℂ) ^ s =

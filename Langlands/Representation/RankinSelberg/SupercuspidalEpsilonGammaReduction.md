@@ -11,3 +11,8 @@ This internal derived unit joins the published coefficient-model and Kirillov in
 `IsPadicPairEpsilonFactor.gammaFactor_of_supercuspidalKirillov` assembles this for an irreducible supercuspidal larger representation and a smooth smaller representation. Its second explicit input is a Laurent theorem for coefficient models whose functions satisfy `IsMirabolicTestFunction`. For the original pair, the first adapter supplies the support premise. For the inverse-transpose pair, published transport theorems give supercuspidality and irreducibility of the larger representation and smoothness of the smaller representation. The same adapter with the character scaled by minus one supplies the second support premise. Only the larger carrier's Kirillov statement is used; the smaller representation need not be supercuspidal. The resulting gamma certificate keeps every block and all quotient measures and functionals required by the original pair relation.
 
 The provenance is composition of the published internal definitions and proved transport theorems. This module introduces no new assertion from external literature. To obtain the unconditional supercuspidal epsilon-to-gamma theorem, the Kirillov statement and the remaining compact-support-to-Laurent input must still be discharged.
+
+The local canonical topology, valuation, field and Borel structures have
+explicit module-specific instance names. Integration assigned these names to
+avoid collisions when independent modules are loaded together; every instance
+type and body and every mathematical declaration remain unchanged.

@@ -96,3 +96,8 @@ irreducibility helper uses the same elementary submodule argument as
 `Classification.OrderedMultisegmentHeadReduction.isIrreducible_of_linearEquiv_complex`,
 specialized to the underlying space `ℂ`. No additional literature claim or
 axiom is introduced.
+
+The local canonical topology, valuation, field and Borel structures have
+explicit module-specific instance names. Integration assigned these names to
+avoid collisions when independent modules are loaded together; every instance
+type and body and every mathematical declaration remain unchanged.
