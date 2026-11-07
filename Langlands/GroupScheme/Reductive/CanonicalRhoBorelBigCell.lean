@@ -69,7 +69,8 @@ local notation "ν₀" =>
   p.rootDatum.Polarization (IntegralWeylVector.rho p.rootDatum p.base hspan)
 local notation "λ₀" => CommGroupScheme.groupHom ν₀ ≫ p.inclusion
 
-local instance : IsAffineHom (Affine.parabolicScheme λ₀).X.hom := by
+local instance canonicalRhoBorelParabolicIsAffineHom :
+    IsAffineHom (Affine.parabolicScheme λ₀).X.hom := by
   let : IsClosedImmersion (Affine.parabolicHom λ₀).hom.hom.left :=
     Affine.isClosedSubgroup_parabolicHom λ₀
   rw [← Over.w (Affine.parabolicHom λ₀).hom.hom]

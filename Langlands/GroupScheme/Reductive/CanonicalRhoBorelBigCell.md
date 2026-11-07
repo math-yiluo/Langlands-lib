@@ -7,6 +7,10 @@ six-law geometric data still take a supplied split pinning, full integral
 coroot span, and a supplied highest-weight representation at integral rho.
 This is not a proof of the exact `SteinbergBigCellStatement`.
 
+The local affine-parabolic instance has an explicit module-specific name so this
+construction can be imported together with the canonical covariant-space
+modules, whose analogous instance previously received the same generated name.
+
 For `IsRootDatumOf.isBorelPair_polarization_rho`, fix an affine connected
 reductive group over any field, its supplied split maximal torus, an actual
 finite root datum on that torus, a base, and full integral coroot span. Write

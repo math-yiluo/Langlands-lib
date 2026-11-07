@@ -28,7 +28,7 @@ theorem prod_ofFn_pairs {M : Type*} [Monoid M] {n : ℕ}
   congr 2 <;> apply Fin.ext <;>
     simp [finProdFinEquiv, Nat.mul_comm, Nat.add_comm]
 
-private theorem range_orderedProduct_pairs {M : Type*} [Group M] {n : ℕ}
+theorem range_orderedProduct_pairs {M : Type*} [Group M] {n : ℕ}
     (H : Fin (n * 2) → Subgroup M) (K : Fin n → Subgroup M)
     (h0 : ∀ j, H (finProdFinEquiv (j, 0)) = K j)
     (h1 : ∀ j, H (finProdFinEquiv (j, 1)) ≤ K j) :

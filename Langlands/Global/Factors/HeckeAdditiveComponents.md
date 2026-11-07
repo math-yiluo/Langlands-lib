@@ -4,7 +4,10 @@ Worker 1692, supporting constructions for the actual global Hecke functional
  equation. These are internal derived constructions on the existing actual
 adele ring and its published topology.
 
-The finite and infinite additive inclusions set every other coordinate to zero.
+The finite and infinite additive inclusions are imported from
+`AdelicCoordinateInclusions`,
+with their original `HeckeFunctionalEquation` names. They set every other
+coordinate to zero.
 The finite inclusion is continuous by factoring through the restricted product
 for the principal filter on the complement of the chosen singleton, then using
 the continuous inclusion into the cofinite restricted product. The infinite

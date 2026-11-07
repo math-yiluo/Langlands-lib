@@ -1,0 +1,9 @@
+# Actual contragredients of witnessed unitary supercuspidal supports
+
+This internal helper transports a supplied unitary supercuspidal-support witness under the actual smooth contragredient. It supports the local-element construction for `Langlands.Global.PoleComparison.RelativeIsometryOperationStatement.{uF, uW, uP}` and asserts no global automorphic construction or local Langlands correspondence. Field and representation-carrier universes remain independent.
+
+`PadicSupercuspidal.unitaryContragredientDatum` transfers the published contragredient of the genuine unitary basis through the actual datum/basis equivalence. `unitaryContragredientDatum_val` checks that forgetting the unitary witness gives precisely `Classification.CuspidalProductContragredient.dualDatum`, which is built from the smooth-dual supercuspidal class. The operation is involutive.
+
+Multiset induction proves `unitarySupportLattice_contragredient`: the integral encoding of the transformed multiset is the genuine unitary lattice contragredient. The proof uses additivity and the published generator computation. Finally `isUnitaryLatticeSupport_contragredient` opens the supplied multiset-support witness, applies the published theorem on actual contragredient supports, and uses the encoding identity to retain exactly the claimed unitary lattice element. No existence or uniqueness theorem for arbitrary supports is assumed.
+
+The public inputs are `PadicField.TopologicalData.unitaryCuspidalDatumBasisEquiv`, `PadicSupercuspidal.unitaryContragredientBasisEquiv`, `PadicSupercuspidal.unitaryContragredientLatticeEquiv_generator`, `PadicField.TopologicalData.unitarySupportLattice_cons`, and `Classification.CuspidalProductContragredient.isSupercuspidalSupport_contragredient`. The last theorem already supplies the actual normalized-induction and smooth-dual subquotient argument; this helper records its precise unitary lattice consequence.

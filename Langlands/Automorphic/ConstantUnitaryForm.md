@@ -38,3 +38,7 @@ complex inner product. No new original-literature identification is made.
 There is no compactness hypothesis on an adele quotient. This algebraic form
 does not assert a Hilbert globalization, continuity of the form for a function
 space topology, an invariant integral formula or a spectral occurrence result.
+
+`scalarFiniteEquiv` is the public scalar-to-constant finite-action
+equivalence used by the positive form and the constant tensor presentation.
+It has the unchanged underlying `scalarEquiv`.

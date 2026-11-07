@@ -1,0 +1,9 @@
+# The Hecke equivalence from the fixed-vector subquotient Corollary
+
+This internal reduction proves that the exact published `StandardFixedVectorSubquotientGenerationStatement` implies the exact published `StandardFixedVectorHeckeEquivalenceStatement`, with independent field and carrier universes and all their original hypotheses. It does not assert an unconditional proof of the Corollary.
+
+`fixedVectorSubquotientClosed` records closure of the actual generation predicate under `SmoothRep.IsSubquotient`. A categorical monomorphism of smooth representations is an injective intertwiner, hence defines an actual subrepresentation up to isomorphism and therefore an actual subquotient. The closure hypothesis consequently supplies the subobject-closure instance required by the compact small-progenerator comparison.
+
+The other retained input of that comparison is discharged: the quotient of a second-countable topological group by an open subgroup is discrete and separable, hence countable. An injection into the natural numbers makes this quotient small in any prescribed carrier universe. For the actual rational points of the connected reductive group, the published finite-coordinate second-countability theorem applies using affineness and local finite type furnished by the original hypotheses. No bound relating the field universe to the carrier universe is introduced.
+
+The proof specializes the supplied exact Corollary to obtain subobject closure, supplies the coset-smallness instance, and applies `fixedVectorHecke_isEquivalence` to the exact published Hecke functor. Renard 2026 VI.9.4, Proposition, printed p.201 / PDF p.207, deduces this equivalence from the immediately preceding Corollary through I.3.2. The implementation uses the actual compact permutation generator and its opposite endomorphism ring rather than a Haar-algebra corner; this is an internal proof route for that deduction.

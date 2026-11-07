@@ -26,7 +26,7 @@ private def scalarPositiveForm (G : Type uG) [Monoid G] :
   toInnerProductCore := InnerProductSpace.toCore
   invariant _ _ _ := rfl
 
-private def scalarFiniteEquiv :
+def scalarFiniteEquiv :
     (Representation.trivial ℂ (FiniteAdelicGL F n) ℂ).Equiv
       (realization F n).finiteRepresentation :=
   Representation.Equiv.mk (scalarEquiv F n) (by

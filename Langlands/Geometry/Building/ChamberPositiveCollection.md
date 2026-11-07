@@ -118,3 +118,8 @@ injectivity of its coordinates, introduce a central factor, prove a facet
 factorization, or establish the full chamber Iwahori decomposition.
 
 The adjacent-pair identity `prod_ofFn_pairs` is public for reuse by the positive-depth ray compression module. Its statement and proof are unchanged.
+
+The public helper `range_orderedProduct_pairs` absorbs each adjacent
+pair of subgroup factors when the first equals the target factor and the
+second is contained in it. Its unchanged argument is also reused for
+selected-root depth collection.

@@ -1,0 +1,5 @@
+# Explicit nonarchimedean local-field data
+
+This internal interface packages only an arbitrary field's topology, valuation relation and `IsNonarchimedeanLocalField` certificate. It imposes no condition on the field characteristic. `ofInstances` packages the ambient instances without changing them. The integer ring, residue field and residue cardinality are the actual valuation objects; the normalized multiplicative valuation is `FML.normalizedMultiplicativeValuation`. The uniformizer is chosen by surjectivity of the canonical valuation at `exp (-1)`.
+
+The integer function `ord` is the negative logarithm of the normalized valuation, with value zero at zero. Statements about finite valuation order must therefore exclude zero. `normalizedAbs` is zero at zero and equals the residue cardinality to the negative integer order elsewhere. These are the same constructions as the published p-adic normalization interface, with the unused base extension data removed. They are internal support for arbitrary-field scalar Tate theory, rather than new assertions attributed to external literature.

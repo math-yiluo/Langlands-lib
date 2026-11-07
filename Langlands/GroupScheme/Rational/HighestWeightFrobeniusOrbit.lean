@@ -27,7 +27,7 @@ variable {k : Type u} [Field k]
     (hspan : p.rootDatum.corootSpan ℤ = ⊤)
     (l : List p.base.support)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance frobeniusOrbitIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 local notation "ν₀" =>
   p.rootDatum.Polarization (Langlands.IntegralWeylVector.rho p.rootDatum p.base hspan)
@@ -37,7 +37,7 @@ local notation "iU" => Dynamic.Affine.unipotentHom λ₋
 local notation "maps" => p.reflectionWordLoweringMaps s p.linkedSimpleLoweringMap l
 local notation "roots" => Langlands.PositiveRootWord.wordRoots p.rootDatum p.base l
 
-local instance : IsAffineHom (U).X.hom :=
+local instance frobeniusOrbitUnipotentIsAffineHom : IsAffineHom (U).X.hom :=
   (Dynamic.Affine.isClosedSubgroup_unipotentHom λ₋).isAffineHom
 
 /-- The successive original root index of a fixed linked word factor. -/
