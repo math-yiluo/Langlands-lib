@@ -1,12 +1,12 @@
-# Renard VI.1, VI.9.6–VI.9.7, VII.1.3 and VII.2.2–VII.2.6: parabolic functors and tempered representations
+# Renard VI.1, VI.9.4, VI.9.6–VI.9.7, VII.1.3 and VII.2.2–VII.2.6: parabolic functors and tempered representations
 
 Worker 6, 6 November 2026, updated 7 November 2026. This focused map
 supplements the [whole-book ledger](coverage.md) and continues the
 [actual-root and exponent source map](root-exponent-tempered-progress.md),
 whose represented-parabolic induction, Levi-point transport, temperedness
 predicate and VII.1.1, Casselman and VII.2.1 Remark 2 statements are used
-below. It records twenty verified publications by Worker 6, one definition
-and nineteen statements, and the proof tasks for them. None of these
+below. It records twenty-two verified publications by Worker 6, one
+definition and twenty-one statements, and the proof tasks for them. None of these
 publications proves a proposition. It also lists the published proofs of
 five of the statements, by other workers, and published conditional
 reductions. The map is not a complete inventory of VI.1, VI.9, VII.1 or
@@ -25,7 +25,13 @@ claims below. By SHA256, all forty primary files equal their frozen
 accepted files, Worker 6's workspace files and the files at Library
 `eec7519b852f9097606377425625fd5794c87f71`. A fresh Lean check at that
 Library of fifty modules, including these twenty (check
-`6459f600-a711-4494-a5dc-27d2639384bc`), had zero diagnostics.
+`6459f600-a711-4494-a5dc-27d2639384bc`), had zero diagnostics. The two
+VI.9.4 statements, added 7 November 2026, were published later: their four
+primary files equal their frozen accepted files, Worker 6's workspace files
+and the files at Libraries `2816ea5d81e2fb9b0512bd1d8dec2ad7797026fd` and
+`8b14de0b5103d5fc1e615f094904129bf8cfe3a3`, and a fresh Lean check of both
+modules at the latter (check `6561d516-6349-465f-a892-72360be91883`) had
+zero diagnostics.
 
 ## Verified publications
 
@@ -57,19 +63,22 @@ laws; a statement receipt does not prove its proposition.
 | [LeviParabolicTransitivityStatement](../../Langlands/Representation/Exponents/LeviParabolicTransitivityStatement.md), `Langlands.Aubert.General.RepresentedParabolic.LeviParabolicTransitivityStatement` | Statement `dcbd5c69-035d-422e-8aef-6ad4674abb87`; Reviewer 16427, review `7f9ed87d-ccca-461e-bc1c-ad6a08b6677c`; machine `225d176b-dd8f-4254-83b8-11084ec63375`; integration `3f69358f84514a308d0b925f56d70e2a`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
 | [LeviJacquetOppositePairingStatement](../../Langlands/Representation/Exponents/LeviJacquetOppositePairingStatement.md), `Langlands.Aubert.General.RepresentedParabolic.LeviJacquetOppositePairingStatement` | Statement `c22cf8dd-6f31-47e6-8bc6-0274fe417e42`; Reviewer 16345, review `dd1732f7-c6fe-4ab1-8170-818f85cf0f7e`; machine `f5e86ddc-b57f-4a4c-bf23-60ff28d2a9cd`; integration `1d79ead29d1b491296146a98841d6b3e`, commit `334440350ec029c1bf78b7801689e1a2b21079c6`. |
 | [LeviCompletionOppositeJacquetStatement](../../Langlands/Representation/Exponents/LeviCompletionOppositeJacquetStatement.md), `Langlands.Aubert.General.RepresentedParabolic.LeviCompletionOppositeJacquetStatement` | Statement `51570ccf-30db-49af-a5ba-9300df49da5b`; Reviewer 16425, review `6ae0f9cf-be5b-4e04-b6fb-911475c5a88f`; machine `2dd8885f-8faf-4b73-8f5c-b38a9446bda3`; integration `f18fa0fd0e5646ef8168573dadac078b`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
+| [StandardFixedVectorSubquotientGenerationStatement](../../Langlands/Representation/Jacquet/StandardFixedVectorSubquotientGenerationStatement.md), `Langlands.Jacquet.StandardFixedVectorSubquotientGenerationStatement` | Statement `e23f2e02-1e67-49c3-920a-9b5e3ea3fe28`; Reviewer 17496, review `96c79db1-a002-4aef-87c3-ce62507cc5a7`; machine `b55d383b-35fd-410b-b946-000d3a0a53bc`; integration `bd2650eac72349b6a93278cfe6ae41c9`, commit `2816ea5d81e2fb9b0512bd1d8dec2ad7797026fd`. |
+| [StandardFixedVectorHeckeEquivalenceStatement](../../Langlands/Representation/Jacquet/StandardFixedVectorHeckeEquivalenceStatement.md), `Langlands.Jacquet.StandardFixedVectorHeckeEquivalenceStatement` | Statement `b1a5415e-9133-4093-a0d9-1cc988541c21`; Reviewer 17497, review `c2298f75-9de6-4688-bf68-b0b28bc6b96a`; machine `6449a803-4127-4763-be3e-6268b5aa160a`; integration `9b8685af86a6490db1e94ed5ec7cbece`, commit `2816ea5d81e2fb9b0512bd1d8dec2ad7797026fd`. |
 
-All declarations are in namespace
+The first twenty declarations are in namespace
 `Langlands.Aubert.General.RepresentedParabolic` under
-`Langlands/Representation/Exponents/`. The completion definitions used by
-the VI.9.7 statement are in
+`Langlands/Representation/Exponents/`. The two VI.9.4 statements are in
+namespace `Langlands.Jacquet` under `Langlands/Representation/Jacquet/`.
+The completion definitions used by the VI.9.7 statement are in
 [CompactCompletion](../../Langlands/Representation/Smooth/CompactCompletion.md),
 namespace `Langlands.CompactCompletion`, submitted in the same candidate
 `51570ccf`.
 
 ## Common setting
 
-Every statement quantifies over a nonarchimedean local field `k : Type u`
-of any characteristic, with `[ValuativeRel k]`, its topology and
+Every statement except the two VI.9.4 statements quantifies over a
+nonarchimedean local field `k : Type u` of any characteristic, with `[ValuativeRel k]`, its topology and
 `[T2Space k]`, and over an actual connected reductive group scheme `G` over
 `Spec k`. The rational points carry the canonical
 `RationalPointFamily.pointTopology`; `[LocallyCompactSpace]` and
@@ -78,7 +87,11 @@ is an actual rational parabolic `p : P ⟶ G`, a rational Levi `l : M ⟶ P`
 and a matching geometric unipotent radical `r : U ⟶ P` with
 `IsIso (subgroupMultiplication l r)`; no standardness is assumed. The Levi
 points carry `leviPointTopology`, and their local compactness and
-nonarchimedean structure are derived from those of `G(F)`.
+nonarchimedean structure are derived from those of `G(F)`. The two VI.9.4
+statements instead quantify over a nonarchimedean local field `F : Type uF`
+with `[ValuativeRel F]` and an actual connected reductive `G` whose rational
+points carry `rationalPointTopology`, with no local-compactness hypothesis;
+their parabolics are the standard ones described in their section.
 
 The functors are the published normalized `leviInductionFunctor`
 (`i_P^G`) and `leviJacquetFunctor` (`r_P^G`) of the represented-parabolic
@@ -233,9 +246,62 @@ The two proof obligations have separate tasks:
 `GeneralizedJacquetLemmaStatement`. VI.9.2 and VI.9.3 prove the
 Proposition of VI.9.1; the
 [VI.9.1–VI.9.3 map](uniform-compression-progress.md) records their steps.
-The consequences in VI.9.4 (the VI.6.3 Corollary without admissibility and
-the equivalence with modules over `H(G, K)`) and VI.9.5 (preservation of
-`B`-admissibility by `r_P^G`) are not stated.
+The consequences in VI.9.4 are stated in the next section. VI.9.5
+(preservation of `B`-admissibility by `r_P^G`) is not stated; it needs the
+category of `(G, B)`-modules of VI.8.3.
+
+## VI.9.4: generation by `K`-fixed vectors
+
+Source: VI.9.4, Corollary and Proposition, printed pp.200–201 / PDF
+pp.206–207. Renard deduces the Corollary as the Corollary of VI.6.3
+(printed p.179 / PDF p.185) without its admissibility hypothesis, by the
+generalized Jacquet lemma, and the Proposition from the Corollary by the
+Theorem of I.3.2 (printed p.22 / PDF p.28).
+
+The two statements share their data and hypotheses, on the standard family
+rather than on a represented parabolic. An actual maximal split torus
+`i : S.toGrp ⟶ G` and a generic cocharacter `ν` fix the standard
+parabolics, indexed by `J ⊆ simpleRelativeRoots i ν`, with points
+`standardLeviPoints i ν J` and `standardUnipotentPoints i ν J`. The
+hypothesis `_hstandard` supplies a standard cocharacter for every `J`. A
+compact subgroup `K₀` satisfies only the Iwasawa factorization `g = m n k`
+with `m ∈ M_∅(F)`, `n ∈ N_∅(F)` and `k ∈ K₀`. The compact open `K` satisfies
+`K ≤ K₀`, `K₀ ≤ Subgroup.normalizer K` and, for every standard `J`,
+`IsCompatibleStandardSplitComponent i ν J A q` and
+`StandardParabolicBasisMember i ν J q K` for some split torus `A` and
+`q : A.toGrp ⟶ S.toGrp`. The last predicate is one member of the V.5.2
+basis, clauses (ii)–(iv). "Generated by its `K`-fixed vectors" means that
+every subrepresentation whose submodule contains the `K`-fixed vectors is
+`⊤`.
+
+- `StandardFixedVectorSubquotientGenerationStatement`: for every smooth
+  `V` generated by its `K`-fixed vectors, every subquotient
+  (`SmoothRep.IsSubquotient`) is generated by its `K`-fixed vectors. No
+  admissibility or finiteness hypothesis is made.
+- `StandardFixedVectorHeckeEquivalenceStatement`: on the full subcategory
+  of representations generated by their `K`-fixed vectors, the functor
+  `P.ι ⋙ Langlands.Shimura.LevelHecke.heckeModuleFunctor ℂ K.toSubgroup`
+  to `ModuleCat (LevelHeckeAlgebra ℂ K.toSubgroup)` is an equivalence.
+
+The statements are derived partial coverage of VI.9.4. The source assumes a
+compact open `K` contained and normal in `K₀` that admits an Iwahori
+decomposition `K = K_N̄ K_M K_N` along every standard parabolic, the
+decomposition named in V.5.2 (ii) (printed p.123 / PDF p.129). It does not
+assume that `K` is an Iwahori subgroup. `StandardParabolicBasisMember`
+conjoins this decomposition (`HasIwahoriIntersectionDecomposition`) with
+`ContractionAndCofinality`, the remaining conditions of V.5.2 (ii)–(iv).
+The published hypothesis may therefore be stronger than the source's, and
+the statements may cover fewer subgroups `K`; they cover every member of the
+V.5.2 neighbourhood basis, hence arbitrarily small `K`. Three points remain
+open besides the proofs: the statements for the source's class of `K`,
+without the additional
+V.5.2 (ii)–(iv) conditions; the comparison of `LevelHeckeAlgebra` with the
+Haar-measure corner `e_K H(G) e_K`; and an explicit inverse functor. Neither
+statement is proved. Their proof task
+routes the Corollary through the proved compact-open detection
+consequences, compact-restriction detection and algebraic VI.6.3 Lemma, and
+lists the unproved inputs: the norm-kernel finite restriction, the VI.2.1
+cuspidal embedding and the generalized Jacquet lemma of VI.9.1.
 
 ## VI.9.7: second adjointness and completion
 
@@ -370,6 +436,7 @@ quotient by the full center. An embedding is an injective intertwiner into
 | `TemperedInductionUnitaryReciprocityStatement` | `71b5958c-b2a2-4a70-a4f0-537ed8d5a152` |
 | The three VII.2.6 statements | `225f7d3d-bb91-4746-9084-ea6b91241e41` |
 | `TemperedGeometricLemmaStatement` | `65c3d5dc-0e10-442e-93ee-f13854e419bb` |
+| The two VI.9.4 statements | `e8bd5ada-24df-4009-8256-ca4317b4190d` |
 
 Worker 6 published these tasks. Worker 1670 published the proof tasks of
 the represented-parabolic Jacquet-admissibility statement
@@ -434,7 +501,7 @@ proved.
 
 ## Remaining obligations
 
-1. Proofs of the fourteen statements above that are not proved, through
+1. Proofs of the sixteen statements above that are not proved, through
    the listed tasks. They need structural facts that are themselves open for
    arbitrary actual parabolics, among them compactness of `P(F)\G(F)`, Jacquet
    admissibility, Iwahori decompositions and contracting elements.
@@ -442,7 +509,12 @@ proved.
    VII.3 also needs representatives of Weyl double cosets for actual
    parabolics. VII.4 needs Langlands chambers with relative coroots.
    The VII.1.3 Corollary needs Bernstein components.
-3. Statements of VI.9.4 and VI.9.5. For VI.9.1: the proofs of
+3. The statement of VI.9.5, which needs the `(G, B)`-modules of VI.8.3.
+   For VI.9.4: the two statements for every compact open `K` contained and
+   normal in `K₀` with Iwahori decompositions along the standard
+   parabolics, without the further conditions of V.5.2 (ii)–(iv); the
+   comparison of `LevelHeckeAlgebra` with `e_K H(G) e_K`; and an explicit
+   inverse functor. For VI.9.1: the proofs of
    `UniformCompressionStabilizationStatement` (task `47e556e6-6b2a-40dc-ba66-d6a0585f5220`) and of
    `GeneralizedJacquetLemmaStatement` (task
    `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29`); statements of the localization
