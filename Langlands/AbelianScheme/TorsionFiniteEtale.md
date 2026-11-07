@@ -41,7 +41,9 @@ Below, `π := (torsion A.toGrp (n : ℤ)).X.hom`, `ι := (torsionι A.toGrp (n :
   factors `(f ≫ g).appLE U W` as `g.appLE U V` followed by `f.appLE V W`
   (`Scheme.Hom.appLE_comp_appLE`) and applies
   `RingHom.FinitePresentation.of_comp_finiteType`.
-- `locallyQuasiFinite_of_etale`: an etale morphism is locally quasi-finite. On
+- `locallyQuasiFinite_of_etale`, imported from
+  `Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleQuasiFinite`: an etale morphism is
+  locally quasi-finite. The declaration retains its original full name and proof. On
   affine opens, `f.appLE U V e` is etale, so the algebra is
   `Algebra.QuasiFinite` by Mathlib's instance for etale algebras
   (`Mathlib.RingTheory.Unramified.LocalStructure`). Then

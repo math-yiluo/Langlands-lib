@@ -1,5 +1,6 @@
 import Langlands.AbelianScheme.TorsionFiniteEtaleStatement
 import Langlands.AlgebraicGeometry.InfinitesimalKernel
+import Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleQuasiFinite
 import Mathlib.AlgebraicGeometry.ZariskisMainTheorem
 import Mathlib.RingTheory.Unramified.LocalStructure
 
@@ -41,16 +42,6 @@ lemma locallyOfFinitePresentation_of_comp {X Y Z : Scheme.{u}} (f : X ⟶ Y) (g 
   have h₂ := HasRingHomProperty.appLE @LocallyOfFiniteType g inferInstance ⟨U, hU⟩ ⟨V, hV⟩ hVU
   rw [← Scheme.Hom.appLE_comp_appLE f g U V W hVU hWV, CommRingCat.hom_comp] at h₁
   exact RingHom.FinitePresentation.of_comp_finiteType _ h₁ h₂
-
-/-- Etale morphisms are locally quasi-finite. -/
-lemma locallyQuasiFinite_of_etale {X Y : Scheme.{u}} (f : X ⟶ Y) [Etale f] :
-    LocallyQuasiFinite f := by
-  rw [HasRingHomProperty.iff_appLE (P := @LocallyQuasiFinite)]
-  intro U V e
-  have h := HasRingHomProperty.appLE @Etale f inferInstance U V e
-  let _ := (f.appLE U V e).hom.toAlgebra
-  have : Algebra.Etale Γ(Y, U) Γ(X, V) := h
-  exact (inferInstance : Algebra.QuasiFinite Γ(Y, U) Γ(X, V))
 
 namespace TorsionChart
 

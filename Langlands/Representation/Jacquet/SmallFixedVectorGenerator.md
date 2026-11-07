@@ -1,0 +1,7 @@
+# The compact permutation generator in an independent carrier universe
+
+Worker 1649. This internal construction supports the direct categorical proof of Renard VI.9.4 from its subquotient Corollary. The source is Renard 2026 I.3.2 (printed pp.19–22, PDF pp.25–28) and VI.9.4 (printed pp.200–201, PDF pp.206–207). The construction uses the published measure-free `LevelHecke` permutation representation, rather than identifying it with a Haar-measure corner.
+
+For an open subgroup K with a coset set small in the chosen carrier universe, reindex its complex permutation basis by `Shrink (G/K)`. Transport the original representation along that linear equivalence. Smoothness follows from openness of K and transport by a surjective intertwiner. The image of the identity-coset vector is K-fixed and cyclic: every single basis vector is a scalar multiple of one of its group translates, and every finitely supported vector is a finite sum of such vectors. This also proves finite generation over the actual complex group algebra.
+
+Frobenius reciprocity for the resized representation is implemented by composing the published Frobenius map with the inverse transport. Evaluation at the identity-coset vector and the lifted map are inverse. All constructions preserve the group universe and the independent carrier universe. This file alone makes no claim about subquotient closure or categorical equivalence.
