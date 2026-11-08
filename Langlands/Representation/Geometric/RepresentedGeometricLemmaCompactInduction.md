@@ -26,6 +26,11 @@ relative integral, scalar multiplication on compact functions, transport
 through a proved subgroup equality, and postcomposition by the original
 coefficient quotient equivalence.
 
+The subgroup-equality and coefficient-postcomposition helpers are shared as
+`CompactNormalizationTransport.subgroupCongr` and `subgroupTransport` in
+`Representation/Induction/CompactNormalizationTransport`. These are the same
+definitions formerly private to this module, with unchanged types and bodies.
+
 Pointwise evaluation and naturality of the assembled equivalence remain
 subsequent work. This unit constructs neither the structural inputs nor the
 closed local orbit-comparison proposition.

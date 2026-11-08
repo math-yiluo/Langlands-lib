@@ -1,5 +1,6 @@
 import Langlands.Representation.Geometric.RepresentedGeometricLemmaCompactNormalization
 import Langlands.Representation.Geometric.RepresentedGeometricLemmaTargetInduction
+import Langlands.Representation.Induction.CompactNormalizationTransport
 
 /-! # Normalized compact induction from the original represented orbit -/
 
@@ -16,36 +17,15 @@ open scoped CategoryTheory.MonObj
 
 namespace Langlands.Induction
 
-private def compactInducedSubgroupCongr
-    {A : Type u} [Group A] [TopologicalSpace A] [IsTopologicalGroup A]
-    {V : Type v} [AddCommGroup V] [Module ℂ V]
-    {H K : Subgroup A} (h : H = K) (σ : Representation ℂ H V) :
-    (compactInduced H σ).Equiv
-      (compactInduced K (σ.comp (MulEquiv.subgroupCongr h).symm.toMonoidHom)) := by
-  subst K
-  exact Representation.Equiv.refl _
-
 private theorem compactInducedSubgroupCongr_eval
     {A : Type u} [Group A] [TopologicalSpace A] [IsTopologicalGroup A]
     {V : Type v} [AddCommGroup V] [Module ℂ V]
     {H K : Subgroup A} (h : H = K) (σ : Representation ℂ H V)
     (F : CompactFunctions H σ) (a : A) :
     eval K (σ.comp (MulEquiv.subgroupCongr h).symm.toMonoidHom)
-      (compactInducedSubgroupCongr h σ F).val a = eval H σ F.val a := by
+      (CompactNormalizationTransport.subgroupCongr h σ F).val a = eval H σ F.val a := by
   subst K
   rfl
-
-/-- Subgroup equality and a coefficient equivalence transport the actual
-compact functions by postcomposition on values. -/
-private def compactInducedSubgroupEquiv
-    {A : Type u} [Group A] [TopologicalSpace A] [IsTopologicalGroup A]
-    {V : Type v} [AddCommGroup V] [Module ℂ V]
-    {W : Type w} [AddCommGroup W] [Module ℂ W]
-    {H K : Subgroup A} (h : H = K)
-    (σ : Representation ℂ H V) (τ : Representation ℂ K W)
-    (e : Representation.Equiv (σ.comp (MulEquiv.subgroupCongr h).symm.toMonoidHom) τ) :
-    (compactInduced H σ).Equiv (compactInduced K τ) :=
-  (compactInducedSubgroupCongr h σ).trans (compactInducedEquiv K e)
 
 private theorem compactInducedSubgroupEquiv_eval
     {A : Type u} [Group A] [TopologicalSpace A] [IsTopologicalGroup A]
@@ -55,7 +35,7 @@ private theorem compactInducedSubgroupEquiv_eval
     (σ : Representation ℂ H V) (τ : Representation ℂ K W)
     (e : Representation.Equiv (σ.comp (MulEquiv.subgroupCongr h).symm.toMonoidHom) τ)
     (F : CompactFunctions H σ) (a : A) :
-    eval K τ (compactInducedSubgroupEquiv h σ τ e F).val a =
+    eval K τ (CompactNormalizationTransport.subgroupTransport h σ τ e F).val a =
       e (eval H σ F.val a) := by
   subst K
   rfl
@@ -168,7 +148,7 @@ def compactInducedNormalizedEquiv :
   let E0 := Langlands.twistEquiv D.compactOuterInverseHalfAmbient.toMonoidHom
     (R.compactOrbitIntegralComponent A)
   let E1 := compactInductionTwistEquiv K0 D.compactOuterInverseHalfAmbient κ
-  let E2 := Induction.compactInducedSubgroupEquiv
+  let E2 := Induction.CompactNormalizationTransport.subgroupTransport
     D.compactComparisonSaturation_comap_section
     (Langlands.twist (D.compactOuterInverseHalfAmbient.toMonoidHom.comp (K0).subtype) κ)
     (D.targetIntersectionCoefficientInLevi A)
