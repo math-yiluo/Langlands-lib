@@ -104,16 +104,16 @@ For `Φ : W ≃ₗ[ℤ] A` as in the setting:
   `LocalWeil.unitaryFieldCharacterTwistLatticeEquiv K e χ hχ`, the twist by
   `weilCharacter e χ`. `Φ` sends the twist of `x` to
   `PadicSupercuspidal.unitaryCharacterTwistLatticeEquiv K χ hχ (Φ x)`, the twist
-  by `χ ∘ det`. Both twist equivalences are published in U4a-ii.
+  by `χ ∘ det`. Both twist equivalences are published in U4a-i.
 - `LatticeMap.CharacterCompatibility K Φ e χ`: some `x` in `W` includes to the
   basis vector of `Correspondence.rankOneWeilCharacterClass K e χ`. Its image
   `Φ x` includes to the basis vector of
   `Correspondence.rankOneSupercuspidalClass K χ`, the `GL_1` class of `χ`.
 - `LatticeMap.DeterminantCompatibility K Φ e`: for every `x` in `W` there is
   `ω : K^× →* ℂ^×` such that `ω` is a central character of `Φ x`
-  (`PadicSupercuspidal.IsUnitaryCentralCharacter`, published in U4a-i), and
+  (`PadicSupercuspidal.IsUnitaryCentralCharacter`, published in U4a-ii), and
   `ω (reciprocityHom K e w) = det x (w)` for every `w` in `W_K`. The virtual
-  determinant is `LocalWeil.unitaryDeterminant` (U4a-i).
+  determinant is `LocalWeil.unitaryDeterminant` (U4a-ii).
 - `LatticeMap.PairFactorCompatibility K Φ ψ`: there is a measure `ν` that is
   self-dual for `ψ`. For every such `ν`, every `x, y` in `W` satisfy two
   conditions. First, `PadicSupercuspidal.IsUnitaryPairLFactor K ψ ν (Φ x) (Φ y)`
@@ -121,7 +121,7 @@ For `Φ : W ≃ₗ[ℤ] A` as in the setting:
   for every local-constant system `(eC, ε, hε)` of `K`, some `(c, m)` is both
   `LocalWeil.IsUnitaryPairEpsilonFactor K eC ε hε ψ x y` and
   `PadicSupercuspidal.IsUnitaryPairEpsilonFactor K ψ ν (Φ x) (Φ y)`. All these
-  virtual factor relations are published in U4a-i.
+  virtual factor relations are published in U4a-ii.
 - `LatticeMap.OperationProperties K Φ` bundles `Isometry`,
   `GeneratorCompatibility` and `DualCompatibility`. It also requires
   `TwistCompatibility` and `CharacterCompatibility` for every candidate `e` with
@@ -131,7 +131,7 @@ For `Φ : W ≃ₗ[ℤ] A` as in the setting:
   additive character `ψ` of `K`.
 - `LatticeMap.HenniartProperties K Φ` is the conjunction of the two bundles.
 
-The K-side predicates are the U4a-ii and U4a-i predicates
+The K-side predicates are the U4a-i and U4a-ii predicates
 (`RelativeIsometryOperations`, `RelativeIsometryFactors`), together with the
 pairing, degree and generator clauses of `RelativeGeneratedPositiveIsometry`. Two
 things change. The base field `padicField v` becomes an arbitrary `K`, and the
@@ -187,12 +187,12 @@ fixed images become arbitrary submodules `W` and `A`.
   `K^×` trivial on `N_{K_E/K}(K_E^×)`, so that the twisted class stays in
   `R_{K_E}(K)`.
   The transported Weil image comes from the relative Weil group at level `E/F`.
-  U4a-ii states closure of the Weil image under twists by every modulus-one
+  U4a-i states closure of the Weil image under twists by every modulus-one
   character. The transport therefore keeps that form, and no norm condition
   appears.
 - **Characters.** Henniart's (c) says `π(ρ)` is given by class field theory if
   `ρ` is a character in `R_{K_E}(K)`. `CharacterCompatibility` also states that the
-  rank-one class lies in `W`, as in U4a-ii.
+  rank-one class lies in `W`, as in U4a-i.
 - **Generators.** Henniart's (c) says `ρ` is irreducible exactly when `π(ρ)` is
   supercuspidal. In the lattices, the irreducible unitary classes are exactly the
   basis vectors.
@@ -243,7 +243,7 @@ the relevant structure. Here `F_v` means `padicField v`, identified with
   vector, and positive degree fixes the sign.
 - **Contragredients.** Restriction along `φ` commutes with the contragredient,
   and the field pullback commutes with the smooth contragredient. Then the dual
-  clause of U4a-ii at `y` gives the K-side dual clause at `L y`.
+  clause of U4a-i at `y` gives the K-side dual clause at `L y`.
 - **Twists and characters.** Let `e` be a geometric candidate of `K` and `χ` a
   modulus-one character of `K^×`. Transport `e` to the candidate `e'` of `F_v`
   determined by `reciprocityUnits e' (φ w) = f (reciprocityUnits e w)`. Choose
@@ -254,7 +254,7 @@ the relevant structure. Here `F_v` means `padicField v`, identified with
   `(e', χ')` to the twist by `(e, χ)` and the rank-one class of `(e', χ')` to the
   rank-one class of `(e, χ)`. Since `det` commutes with `GL_n(f)`, `S` carries the
   twist by `χ' ∘ det` to the twist by `χ ∘ det` and the `GL_1` class of `χ'` to
-  that of `χ`. The twist and character clauses of U4a-ii at `(e', χ')` then give
+  that of `χ`. The twist and character clauses of U4a-i at `(e', χ')` then give
   the K-side clauses at `(e, χ)`.
 - **Determinants.** With `e'` as above, `det (L y) = det y ∘ φ`. If `ω'` is a
   central character of `T y`, then `ω' ∘ f` is a central character of `S (T y)`,
@@ -271,14 +271,16 @@ the relevant structure. Here `F_v` means `padicField v`, identified with
   specified common closures. It carries finite intermediate fields, Weil groups,
   additive characters, Haar measures and exact virtual classes. Through it, a
   local-constant system `(eC, ε, hε)` of `K` transports to a system of `F_v`, and
-  the arithmetic pair ε-certificates correspond. The pair-factor clause of U4a-i
+  the arithmetic pair ε-certificates correspond. The pair-factor clause of U4a-ii
   at `ψ'` then gives the K-side clause at `ψ`. The self-dual measure required at
   `K` is the transport of the one required at `F_v`.
 - **Assembly (3.8).** Under the hypotheses of `HenniartCompositeMapStatement`, the
   published `RelativeIsometryOperationStatement` gives
-  `RelativeIsometryOperations`. Its proof task is `c7b60e52`. The published
+  `RelativeIsometryOperations`. Its proof task is `aa6b0765`. The published
   `RelativeIsometryFactorStatement` gives `RelativeIsometryFactors`. Its proof
-  task is `aa6b0765`. The two transport targets then give the two bundles.
+  task is `c7b60e52`. The two transport targets then give the two bundles.
+  Their proof tasks are `3562e8a2` (operations) and `2a08796a` (factors), and
+  the proof task of the assembly itself is `9e23a040`.
 
 ## Provenance
 
