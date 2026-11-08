@@ -4,8 +4,9 @@ Worker 709 wrote this note on 6 November 2026 against Library
 `f73044d93e675a78ed75830ef026b3224514e510` and updated it on 7 November 2026
 against Libraries `d82893a7de0b168873a15c6c7b0a731deb27aa23`,
 `2816ea5d81e2fb9b0512bd1d8dec2ad7797026fd`,
-`568f1cff4df2c51ba08b932716bf99235d0032c7` and
-`c0c7eab6ed7a8f4f31468b6ad2abf14e21493127`. It maps every printed assertion
+`568f1cff4df2c51ba08b932716bf99235d0032c7`,
+`c0c7eab6ed7a8f4f31468b6ad2abf14e21493127` and
+`ddb0a9c0d562246b405e8f1149220107e7407d1d`. It maps every printed assertion
 of VI.8, and the proof steps the source spells out, to the published Lean
 declarations that state or prove them. Where no declaration does, the note
 says so. It also records six source reading notes. Worker 6 owns the other
@@ -13,14 +14,16 @@ Chapter VI notes, such as the
 [parabolic functors note](parabolic-functors-tempered-progress.md), and this
 note does not change them.
 
-Sixty-six published units carry the material or relate to it. They are
-twenty-two statement units, fifteen proof units and twenty-nine definition
+Seventy-seven published units carry the material or relate to it. They are
+twenty-seven statement units, sixteen proof units and thirty-four definition
 units, listed under Receipts. Worker 709 is the sole author of the statement
 units `51d6b0a6`, `2c2abfbe`, `a852fcc2`, `aa949da3`, `ec9f856f`, `fdf7b191`,
-`da8c4071` and `97c603d2` and of the definition units `20a07cb0` and
-`e21322ee`. Worker 709 is a coauthor of the proof unit `b366b62b`, which
-Worker 1603 submitted. Worker 709 is neither an author nor a coauthor of the
-other fifty-five units. This note documents them and is not a review of them.
+`da8c4071` and `97c603d2` and of the definition units `20a07cb0`, `b4543cde`
+and `e21322ee`. `b4543cde` is the second version of `20a07cb0`; it corrects
+the Markdown and leaves the Lean file unchanged. Worker 709 is a coauthor of
+the proof unit `b366b62b`, which Worker 1603 submitted. Worker 709 is neither
+an author nor a coauthor of the other sixty-five units. This note documents
+them and is not a review of them.
 
 ## Source context
 
@@ -184,7 +187,10 @@ files are under `Langlands/Representation/`, except one module under
   All five statements are proved: `FixedTensorComparisonStatement`,
   `FlatnessCriterionStatement`, `LocalFreeCoverStatement`,
   `AdmissibilityCriterionStatement` and `SpecializationAdmissibilityStatement`.
-  Their conjunction `Statements` has no published proof.
+  Their conjunction `Statements` is proved by
+  `Langlands.Renard.AlgebraicFamily.statements` in
+  [RenardFamilyStatementsAggregateProof](../../Langlands/Representation/Families/RenardFamilyStatementsAggregateProof.md),
+  which combines the five published proofs.
 - The VI.8.6 statement for a general family is in
   [RenardFamilyEndomorphismStatement](../../Langlands/Representation/Families/RenardFamilyEndomorphismStatement.md),
   with the same binders, and is proved. The VI.8.4 and VI.8.5 statements are in
@@ -193,7 +199,8 @@ files are under `Langlands/Representation/`, except one module under
   rational parabolic. A Zariski principal open subset of `X(M)` is
   `Plancherel.rationalUnramifiedPrincipalOpen`, the nonvanishing locus of a
   polynomial in the published canonical coordinates. All three statements of
-  that module are unproved.
+  that module are unproved. Row (P4) describes the published reduction of the
+  VI.8.4 statement to three unproved statements.
 - Three further statements are each in their own module, and all three are
   unproved: the VI.8.5 Lemma in
   [RenardCentralCharacterSplittingStatement](../../Langlands/Representation/Families/RenardCentralCharacterSplittingStatement.md),
@@ -226,11 +233,13 @@ files are under `Langlands/Representation/`, except one module under
   in [LeviRadicalCompactSubgroups](../../Langlands/Representation/Exponents/LeviRadicalCompactSubgroups.md).
   It needs `[ValuativeRel k] [IsNonarchimedeanLocalField k]`, which the
   functors module does not assume; its other instance hypotheses are those
-  of the module. The functors Markdown and author qualification say
-  instead that this unimodularity is not proved in the Library, which is
-  wrong (see the `20a07cb0` qualification below). No Library theorem
-  combines the two results, and none identifies `leviInducedRepresentation`
-  at `B = ℂ` with the published `leviInductionFunctor`.
+  of the module. The Markdown and an author qualification of the first
+  version `20a07cb0` said instead that this unimodularity is not proved in
+  the Library, which was wrong. The second version `b4543cde` corrects both,
+  and its Markdown is the Library's (see the qualifications below). No
+  Library theorem combines the two results, and none identifies
+  `leviInducedRepresentation` at `B = ℂ` with the published
+  `leviInductionFunctor`.
 - The statements on these constructions are in
   [RenardFamilyParabolicStatements](../../Langlands/Representation/Families/RenardFamilyParabolicStatements.md)
   (base change commutes with induction; Jacquet modules preserve finite
@@ -288,7 +297,7 @@ normalized parabolic induction. Normalized induction and Jacquet functors
 exist over every algebra `unramifiedRegularFunctions ν`, and normalized
 induction preserves admissibility there under the hypotheses of row (L2).
 For a general `B`, rows (P1), (P1-iso), (R1), (L1), (T4) and (P6) are
-proved. The category of `(G, B)`-modules is
+proved, and so is the conjunction `Statements` of the first five. The category of `(G, B)`-modules is
 defined, and so are base change, induction and Jacquet modules of families
 as objects. Base change preserves smoothness and flatness, as row (BC)
 records. The flatness, admissibility, base-change and finiteness statements
@@ -320,12 +329,12 @@ defined.
 | (P3) | `JacquetFiniteTypeStatement` (RenardFamilyParabolicStatements); related: `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` in [UnramifiedRationalJacquetFinitenessStatement](../../Langlands/Representation/Plancherel/UnramifiedRationalJacquetFinitenessStatement.md) | Stated, unproved; proof task `4df85a84`. For smooth `ρ` on a flat `B`-module `V` with `ρ.asModule` finite over `MonoidAlgebra B (rationalPoints G)`, the module `(leviJacquetRepresentation … ρ).asModule` is finite over `MonoidAlgebra B (rationalPoints M)`. This is Worker 709's reading of "`B`-modules de type fini", recorded in the statement's Markdown; see reading note 3. The conjunction of (P2) and (P3) is `ParabolicStatements`. Related, not the Proposition: for the universal supercuspidal family, finiteness of the Jacquet module is the separate target `RationalSupercuspidalJacquetFamilyFiniteStatement`, which is unproved; see the [uniform compression note](uniform-compression-progress.md) |
 | (T4) | `LocalFreeCoverStatement` (RenardFamilyStatements), proof `localFreeCover` in [RenardLocalFreeCoverProof](../../Langlands/Representation/Families/RenardLocalFreeCoverProof.md). Mathlib: `Module.free_of_flat_of_isLocalRing`, `Module.FinitePresentation.exists_free_localizedModule_powers`, `Module.Finite.of_localizationSpan`, `Module.freeLocus_eq_univ_iff`, `Module.basicOpen_subset_freeLocus_iff` | Proved, in proof task `f10ce878-b279-4004-8426-7e12cf971e20`, by Worker 1603 with coauthor Worker 709. For `B` as in VI.8 and a `B`-module `M`: `M` is finite and projective if and only if there are `f : Fin r → B` generating the unit ideal such that each localization `LocalizedModule (Submonoid.powers (f i)) M` is finite and free over `Localization.Away (f i)`. The proof uses only Mathlib, not Bourbaki's text. For the forward direction, the set of `t` with finite free localization at `t` spans the unit ideal: otherwise it lies in a maximal ideal `m`, the localization at `m` is free over the local ring, and finite presentation gives such a `t` outside `m`. A finite subset then gives the cover. For the converse, the cover makes `M` finite, `IsNoetherianRing B` makes it finitely presented, and every prime lies in a basic open set of the cover, which is in the free locus. Of the hypotheses on `B` beyond `CommRing`, only `IsNoetherianRing B` is used |
 | (Sp-φ) | none | Not stated |
-| (P4) | `Langlands.Renard.AlgebraicFamily.InducedIrreducibilityOpenStatement` in [RenardGenericIrreducibilityStatements](../../Langlands/Representation/Families/RenardGenericIrreducibilityStatements.md). Related: `Langlands.Plancherel.FiniteMatrixIrreducibilityOpennessStatement` in [FiniteMatrixOpennessStatement](../../Langlands/Representation/Plancherel/FiniteMatrixOpennessStatement.md), proved by `Langlands.Plancherel.finiteMatrixIrreducibilityOpenness` in [FiniteMatrixOpennessProof](../../Langlands/Representation/Plancherel/FiniteMatrixOpennessProof.md); `Langlands.Plancherel.CompactFixedFamilyOpennessStatement` in [CompactFixedFamilyOpennessStatement](../../Langlands/Representation/Plancherel/CompactFixedFamilyOpennessStatement.md), proved by `Langlands.Plancherel.compactFixedFamilyOpenness` in [CompactFixedFamilyOpennessProof](../../Langlands/Representation/Plancherel/CompactFixedFamilyOpennessProof.md); `Langlands.Renard.AlgebraicFamily.MatrixGenerationWitness.wordDeterminant`, `specialize_wordDeterminant`, `exists_principal_neighborhood` in [MatrixGenerationWitness](../../Langlands/Representation/Families/MatrixGenerationWitness.md) | Stated, unproved; proof task `2113598c-9c21-461a-9a44-f46066850c3e`. For an actual rational parabolic of a connected reductive group, an irreducible smooth `ρ` of the Levi points and an unramified character `ψ₀` with `i_P^G(ρ ⊗ ψ₀)` irreducible, the statement asserts a polynomial `f` in the published canonical coordinates of `X(M)` whose principal open set contains `ψ₀` and on which every `i_P^G(ρ ⊗ ψ)` is irreducible. Here `i_P^G` is the published `leviInductionFunctor`. That the open set contains `ψ₀`, which the source proof provides, is a reading recorded in the statement's Markdown. Related, not the Proposition: the statement `FiniteMatrixIrreducibilityOpennessStatement` concerns, for `x` in a topological space, a family of complex square matrices `A x j` on a finite coordinate space, indexed by `j` in any type, with every entry continuous in `x`. It asserts that the set of `x` at which the matrices `A x j` have no common invariant subspace other than zero and the whole space is open. It concerns finite matrices and openness in a given topology, not Zariski openness in `X(M)` or irreducibility of `π_ψ`. It is proved through the openness of generation of the full matrix algebra, `Langlands.Plancherel.FiniteMatrixOpenness.isOpen_adjoin_eq_top`, and Burnside's theorem `Langlands.SandwichDimensionBound.action_surjective`; the source argues through Burnside's theorem and a determinant. `CompactFixedFamilyOpennessStatement`, proved by `compactFixedFamilyOpenness`, transfers this to smooth representations. For a family `A x` of nontrivial smooth complex representations, indexed by a topological space, it takes one compact open `K` such that every irreducible subquotient of every `A x` has a nonzero `K`-fixed vector, bases of the `K`-fixed spaces indexed by one finite type, and continuous entries of the matrices `UnitarizabilityContinuation.fixedMatrix`. It asserts that the set of `x` with `A x` irreducible is open. It again concerns openness in a given topology, and it supplies neither the subgroup `K`, nor the bases, nor an irreducible `π_{ψ_0}`. The definition unit `054b6891`, by Worker 1444 in proof task `2113598c`, implements the determinant step algebraically, over any commutative `ℂ`-algebra `B`. For a family of square matrices `A j` over `B` whose specialization at `χ₀ : B →ₐ[ℂ] ℂ` is irreducible in the sense of `Langlands.UnitarizabilityContinuation.IsIrreducibleFamily`, `exists_principal_neighborhood` gives `f : B` with `χ₀ f = 1` such that the specialization at every `χ` with `χ f ≠ 0` is irreducible. The witness `f` is the determinant `wordDeterminant` of words in a free algebra, which replace the source's Hecke operators. Its Markdown records that it supplies neither a detecting compact open subgroup for induced unramified twists, nor a coefficient matrix model of their fixed vectors, nor the conversion from a regular function to a polynomial in the canonical coordinates, and that it does not prove `InducedIrreducibilityOpenStatement`. Since Library `c0c7eab6`, further helpers from proof tasks `2113598c` and `468db4c1` are published. The unproved statement `Langlands.Renard.AlgebraicFamily.InducedTwistsUniformDetectionStatement` (`3794a38a`, Worker 452), in [InducedTwistsUniformDetectionStatement](../../Langlands/Representation/Families/InducedTwistsUniformDetectionStatement.md), extracts a step of the source proof. With the binders of `InducedIrreducibilityOpenStatement`, it asserts one compact open `K` of `G(k)` such that every irreducible subquotient of every `leviInductionFunctor` of `ρ ⊗ ψ`, for every unramified `ψ`, has a nonzero `K`-fixed vector. The source's paragraph proves more: one `K` detects the whole inertial support. In [InducedIrreducibilityOpenReduction](../../Langlands/Representation/Families/InducedIrreducibilityOpenReduction.md), `exists_principal_neighborhood_of_detection` derives the conclusion of `InducedIrreducibilityOpenStatement` for `ρ` and `ψ₀` from that statement and a family `A` with `IsGlobalCoefficientFamily A M e D`, defined in [GlobalCompressionPrincipalOpen](../../Langlands/Representation/Families/GlobalCompressionPrincipalOpen.md). There `e` identifies `B` with the regular functions on `X(M)`, every compact-open fixed space of `A` is free and finite over `B`, and `A` specializes fully, in the sense of `IsFullSpecialization`, to `D ψ = i_P^G(ρ ⊗ ψ)` at every `ψ`. No Library declaration constructs such a family or proves the detection statement, so `InducedIrreducibilityOpenStatement` remains unproved. The supporting definition units are as follows. `53476945` and `2ea5a23c`, by Worker 452, give the matrices `CompactCompressionMatrices.fixedMatrix` and `coefficientMatrix` of the compact average on a fixed-vector basis, in [CompactCompressionMatrices](../../Langlands/Representation/Families/CompactCompressionMatrices.md) and [CompactCompressionSpecialization](../../Langlands/Representation/Families/CompactCompressionSpecialization.md). `isIrreducible_iff_fixedMatrix` says that a nontrivial representation whose irreducible subquotients are all detected by `K` is irreducible exactly when its matrix family is, and `fixedMatrix_specializedBasis` says that the matrices of a fiber are the evaluated coefficient matrices. `d1330c28` and `14ba7211`, by Worker 1444 with coauthor Worker 1664, give `LocalizedMatrixPrincipalOpen.exists_polynomial_principal_neighborhood` in [LocalizedMatrixPrincipalOpen](../../Langlands/Representation/Families/LocalizedMatrixPrincipalOpen.md) and `UnramifiedPolynomialWitness.rationalRegularPolynomial` in [UnramifiedPolynomialWitness](../../Langlands/Representation/Families/UnramifiedPolynomialWitness.md). They turn the determinant witness of `054b6891`, after one localization, into a polynomial in the canonical coordinates whose principal open set is its nonvanishing locus. `16cce2f4` and `d7259534`, by Worker 452 with coauthors Workers 1664 and 1444, give `IsFullSpecialization`, the localized assembly `CompactCompressionPrincipalOpen.exists_polynomial_principal_neighborhood`, the global assembly and the reduction above. `fc7de660`, by Worker 1444, gives `ActualLevi.parameterEquiv` and `regularAlgebraEquiv` in [ActualLeviUnramifiedParameters](../../Langlands/Representation/Families/ActualLeviUnramifiedParameters.md), which transport unramified characters and regular functions along the Levi point equivalence. `c08a8104` is described in row (C2). The units from proof task `468db4c1` are by Worker 1598. The unproved `Langlands.Plancherel.RationalLeviInductionOpennessStatement` (`c6c03e68`), in [RationalLeviInductionOpennessStatement](../../Langlands/Representation/Plancherel/RationalLeviInductionOpennessStatement.md), concerns an admissible nonzero smooth inducing representation and one given compact open subgroup detecting every irreducible subquotient of every fiber. It asserts that the irreducible locus of `UnramifiedLeviInduction` is open in the continuous-character topology, not that it is Zariski open, and it keeps compactness of the quotient by the parabolic as a hypothesis. The unproved `Langlands.Plancherel.UnramifiedUniformGenerationStatement` (`afd034f2`), in [UnramifiedUniformGenerationStatement](../../Langlands/Representation/Plancherel/UnramifiedUniformGenerationStatement.md), asserts one compact open subgroup whose fixed vectors generate every fiber, for a finite-length inducing representation, given an opposite Iwahori contraction basis and `G = PK`; generation is not detection of subquotients. The definition unit `cc17f613`, `RationalNormalized.inducedLeviNormalizationEquiv` in [RationalLeviFixedMatrices](../../Langlands/Representation/Plancherel/RationalLeviFixedMatrices.md), identifies each fiber normalized on all of `P` (`complexInduced`) with `UnramifiedLeviInduction`, normalized on the Levi, and transports fixed bases and their matrices; radical unimodularity comes from the published `parabolicRadical_isUnimodular` |
-| (T5) | `Langlands.Renard.AlgebraicFamily.GenericInducedIrreducibilityStatement` (RenardGenericIrreducibilityStatements). Related: `Langlands.Plancherel.ConditionalParabolicGenericIrreducibilityStatement` in [ParabolicGenericIrreducibilityStatement](../../Langlands/Representation/Plancherel/ParabolicGenericIrreducibilityStatement.md) | Stated, unproved; proof task `822bbd74-8853-4535-87b2-aede25e9a259`. For an irreducible supercuspidal `ρ`, the statement asserts a nonzero polynomial `f` in the same coordinates such that every `i_P^G(ρ ⊗ ψ)` with `ψ` in its principal open set is irreducible. The statement's Markdown explains why a nonzero `f` gives a nonempty Zariski open set. The conjunction of (P4) and (T5) is `GenericIrreducibilityStatements`. Related, not the Theorem: the unproved statement `ConditionalParabolicGenericIrreducibilityStatement` is adapted from Waldspurger 2003, Proposition IV.2.2(i) and the beginning of IV.3, not from Renard. For an irreducible smooth representation `π` of the Levi points that is square-integrable modulo the image `C` of the split component, it asserts a nonempty set `D` of unramified characters, open in the continuous-character topology, on which the induction `UnramifiedLeviInduction` of `π` twisted by `χ` is irreducible. Its hypothesis is square integrability, not supercuspidality, and its locus is open in that topology, not Zariski open. It does not by itself give a Zariski-open locus, and no Library declaration connects it to (T5). Its proof task is `468db4c1-297b-4d4e-8534-ed8de150ffc5` |
+| (P4) | `Langlands.Renard.AlgebraicFamily.InducedIrreducibilityOpenStatement` in [RenardGenericIrreducibilityStatements](../../Langlands/Representation/Families/RenardGenericIrreducibilityStatements.md). Related: `Langlands.Plancherel.FiniteMatrixIrreducibilityOpennessStatement` in [FiniteMatrixOpennessStatement](../../Langlands/Representation/Plancherel/FiniteMatrixOpennessStatement.md), proved by `Langlands.Plancherel.finiteMatrixIrreducibilityOpenness` in [FiniteMatrixOpennessProof](../../Langlands/Representation/Plancherel/FiniteMatrixOpennessProof.md); `Langlands.Plancherel.CompactFixedFamilyOpennessStatement` in [CompactFixedFamilyOpennessStatement](../../Langlands/Representation/Plancherel/CompactFixedFamilyOpennessStatement.md), proved by `Langlands.Plancherel.compactFixedFamilyOpenness` in [CompactFixedFamilyOpennessProof](../../Langlands/Representation/Plancherel/CompactFixedFamilyOpennessProof.md); `Langlands.Renard.AlgebraicFamily.MatrixGenerationWitness.wordDeterminant`, `specialize_wordDeterminant`, `exists_principal_neighborhood` in [MatrixGenerationWitness](../../Langlands/Representation/Families/MatrixGenerationWitness.md) | Stated, unproved; proof task `2113598c-9c21-461a-9a44-f46066850c3e`. For an actual rational parabolic of a connected reductive group, an irreducible smooth `ρ` of the Levi points and an unramified character `ψ₀` with `i_P^G(ρ ⊗ ψ₀)` irreducible, the statement asserts a polynomial `f` in the published canonical coordinates of `X(M)` whose principal open set contains `ψ₀` and on which every `i_P^G(ρ ⊗ ψ)` is irreducible. Here `i_P^G` is the published `leviInductionFunctor`. That the open set contains `ψ₀`, which the source proof provides, is a reading recorded in the statement's Markdown. Related, not the Proposition: the statement `FiniteMatrixIrreducibilityOpennessStatement` concerns, for `x` in a topological space, a family of complex square matrices `A x j` on a finite coordinate space, indexed by `j` in any type, with every entry continuous in `x`. It asserts that the set of `x` at which the matrices `A x j` have no common invariant subspace other than zero and the whole space is open. It concerns finite matrices and openness in a given topology, not Zariski openness in `X(M)` or irreducibility of `π_ψ`. It is proved through the openness of generation of the full matrix algebra, `Langlands.Plancherel.FiniteMatrixOpenness.isOpen_adjoin_eq_top`, and Burnside's theorem `Langlands.SandwichDimensionBound.action_surjective`; the source argues through Burnside's theorem and a determinant. `CompactFixedFamilyOpennessStatement`, proved by `compactFixedFamilyOpenness`, transfers this to smooth representations. For a family `A x` of nontrivial smooth complex representations, indexed by a topological space, it takes one compact open `K` such that every irreducible subquotient of every `A x` has a nonzero `K`-fixed vector, bases of the `K`-fixed spaces indexed by one finite type, and continuous entries of the matrices `UnitarizabilityContinuation.fixedMatrix`. It asserts that the set of `x` with `A x` irreducible is open. It again concerns openness in a given topology, and it supplies neither the subgroup `K`, nor the bases, nor an irreducible `π_{ψ_0}`. The definition unit `054b6891`, by Worker 1444 in proof task `2113598c`, implements the determinant step algebraically, over any commutative `ℂ`-algebra `B`. For a family of square matrices `A j` over `B` whose specialization at `χ₀ : B →ₐ[ℂ] ℂ` is irreducible in the sense of `Langlands.UnitarizabilityContinuation.IsIrreducibleFamily`, `exists_principal_neighborhood` gives `f : B` with `χ₀ f = 1` such that the specialization at every `χ` with `χ f ≠ 0` is irreducible. The witness `f` is the determinant `wordDeterminant` of words in a free algebra, which replace the source's Hecke operators. Its Markdown records that it supplies neither a detecting compact open subgroup for induced unramified twists, nor a coefficient matrix model of their fixed vectors, nor the conversion from a regular function to a polynomial in the canonical coordinates, and that it does not prove `InducedIrreducibilityOpenStatement`. Since Library `c0c7eab6`, further helpers from proof tasks `2113598c` and `468db4c1` are published. The unproved statement `Langlands.Renard.AlgebraicFamily.InducedTwistsUniformDetectionStatement` (`3794a38a`, Worker 452), in [InducedTwistsUniformDetectionStatement](../../Langlands/Representation/Families/InducedTwistsUniformDetectionStatement.md), extracts a step of the source proof. With the binders of `InducedIrreducibilityOpenStatement`, it asserts one compact open `K` of `G(k)` such that every irreducible subquotient of every `leviInductionFunctor` of `ρ ⊗ ψ`, for every unramified `ψ`, has a nonzero `K`-fixed vector. The source's paragraph proves more: one `K` detects the whole inertial support. In [InducedIrreducibilityOpenReduction](../../Langlands/Representation/Families/InducedIrreducibilityOpenReduction.md), `exists_principal_neighborhood_of_detection` derives the conclusion of `InducedIrreducibilityOpenStatement` for `ρ` and `ψ₀` from that statement and a family `A` with `IsGlobalCoefficientFamily A M e D`, defined in [GlobalCompressionPrincipalOpen](../../Langlands/Representation/Families/GlobalCompressionPrincipalOpen.md). There `e` identifies `B` with the regular functions on `X(M)`, every compact-open fixed space of `A` is free and finite over `B`, and `A` specializes fully, in the sense of `IsFullSpecialization`, to `D ψ = i_P^G(ρ ⊗ ψ)` at every `ψ`. Since Library `ddb0a9c0`, such a family is constructed and the reduction is assembled. The definition unit `347d37f3`, by Worker 1444 with coauthor Worker 1635, works in namespace `Langlands.Renard.AlgebraicFamily.ActualLevi`, in [ActualLeviUnramifiedInducedFamily](../../Langlands/Representation/Families/ActualLeviUnramifiedInducedFamily.md). Over `coefficientAlgebra`, the regular functions on the transported unramified parameters, `universalFamily` is the published universal normalized induction on the literal Levi image, applied to `ρ` pulled back along the Levi-point equivalence, with its action restricted to complex scalars. `fiber` at `ψ` is the published `leviInductionFunctor` of `ρ` twisted by `ψ`. `universalFamily_fixed_finite_free` makes every compact-open fixed space finite and free over the coefficients when `ρ` is admissible and the quotient by the parabolic is compact. `universalFamily_specialization` gives, under compactness of the quotient alone, an intertwiner `specializationEvaluation` to `fiber` with bijective scalar extension. Its Markdown cites the base-change step of VI.8.2, PDF pp.196–197. The definition unit `14b1f89d`, by Worker 452 with coauthors Workers 1664, 1635 and 1444, is in [InducedIrreducibilityOpenAssembly](../../Langlands/Representation/Families/InducedIrreducibilityOpenAssembly.md), namespace `Langlands.Renard.AlgebraicFamily.InducedIrreducibilityOpenAssembly`. `universalFamily_isGlobalCoefficientFamily` shows that this family is a global coefficient family for admissible `ρ` and compact quotient, through `ActualLevi.regularAlgebraEquiv` and `isFullSpecialization_of_toRingHom_eq`. `inducedIrreducibilityOpen_of_statements` derives `InducedIrreducibilityOpenStatement` from three statements: `Langlands.Aubert.General.RationalPointsIrreducibleAdmissibleStatement`, Jacquet's theorem that irreducible smooth representations are admissible (VI.2.2); `Langlands.Aubert.General.RepresentedParabolic.ArbitraryParabolicQuotientCompactStatement`, compactness of the quotient by every parabolic (V.5.1); and `InducedTwistsUniformDetectionStatement`. The structure `Inputs` packages the three, and `inducedIrreducibilityOpen_of_inputs` applies the theorem to it. None of the three has an unconditional proof in the Library. The published `rationalPointsIrreducibleAdmissible_of_jacquetCartanDatum` assumes `RationalPointsJacquetCartanDatumStatement`, which `rationalPointsJacquetCartanDatum_of` derives from the unproved `JointSpecialCompactBasisExistenceStatement`, `StandardCocharacterStatement` and `StandardParabolicOrderStatement`, and no Library theorem concludes either of the other two statements. So `InducedIrreducibilityOpenStatement` remains unproved. The supporting definition units are as follows. `53476945` and `2ea5a23c`, by Worker 452, give the matrices `CompactCompressionMatrices.fixedMatrix` and `coefficientMatrix` of the compact average on a fixed-vector basis, in [CompactCompressionMatrices](../../Langlands/Representation/Families/CompactCompressionMatrices.md) and [CompactCompressionSpecialization](../../Langlands/Representation/Families/CompactCompressionSpecialization.md). `isIrreducible_iff_fixedMatrix` says that a nontrivial representation whose irreducible subquotients are all detected by `K` is irreducible exactly when its matrix family is, and `fixedMatrix_specializedBasis` says that the matrices of a fiber are the evaluated coefficient matrices. `d1330c28` and `14ba7211`, by Worker 1444 with coauthor Worker 1664, give `LocalizedMatrixPrincipalOpen.exists_polynomial_principal_neighborhood` in [LocalizedMatrixPrincipalOpen](../../Langlands/Representation/Families/LocalizedMatrixPrincipalOpen.md) and `UnramifiedPolynomialWitness.rationalRegularPolynomial` in [UnramifiedPolynomialWitness](../../Langlands/Representation/Families/UnramifiedPolynomialWitness.md). They turn the determinant witness of `054b6891`, after one localization, into a polynomial in the canonical coordinates whose principal open set is its nonvanishing locus. `16cce2f4` and `d7259534`, by Worker 452 with coauthors Workers 1664 and 1444, give `IsFullSpecialization`, the localized assembly `CompactCompressionPrincipalOpen.exists_polynomial_principal_neighborhood`, the global assembly and the reduction above. `fc7de660`, by Worker 1444, gives `ActualLevi.parameterEquiv` and `regularAlgebraEquiv` in [ActualLeviUnramifiedParameters](../../Langlands/Representation/Families/ActualLeviUnramifiedParameters.md), which transport unramified characters and regular functions along the Levi point equivalence. `c08a8104` is described in row (C2). The three units `c6c03e68`, `afd034f2` and `cc17f613` below come from proof task `468db4c1` and are by Worker 1598. The unproved `Langlands.Plancherel.RationalLeviInductionOpennessStatement` (`c6c03e68`), in [RationalLeviInductionOpennessStatement](../../Langlands/Representation/Plancherel/RationalLeviInductionOpennessStatement.md), concerns an admissible nonzero smooth inducing representation and one given compact open subgroup detecting every irreducible subquotient of every fiber. It asserts that the irreducible locus of `UnramifiedLeviInduction` is open in the continuous-character topology, not that it is Zariski open, and it keeps compactness of the quotient by the parabolic as a hypothesis. The unproved `Langlands.Plancherel.UnramifiedUniformGenerationStatement` (`afd034f2`), in [UnramifiedUniformGenerationStatement](../../Langlands/Representation/Plancherel/UnramifiedUniformGenerationStatement.md), asserts one compact open subgroup whose fixed vectors generate every fiber, for a finite-length inducing representation, given an opposite Iwahori contraction basis and `G = PK`; generation is not detection of subquotients. The definition unit `cc17f613`, `RationalNormalized.inducedLeviNormalizationEquiv` in [RationalLeviFixedMatrices](../../Langlands/Representation/Plancherel/RationalLeviFixedMatrices.md), identifies each fiber normalized on all of `P` (`complexInduced`) with `UnramifiedLeviInduction`, normalized on the Levi, and transports fixed bases and their matrices; radical unimodularity comes from the published `parabolicRadical_isUnimodular` |
+| (T5) | `Langlands.Renard.AlgebraicFamily.GenericInducedIrreducibilityStatement` (RenardGenericIrreducibilityStatements). Related: `Langlands.Plancherel.ConditionalParabolicGenericIrreducibilityStatement` in [ParabolicGenericIrreducibilityStatement](../../Langlands/Representation/Plancherel/ParabolicGenericIrreducibilityStatement.md) | Stated, unproved; proof task `822bbd74-8853-4535-87b2-aede25e9a259`. For an irreducible supercuspidal `ρ`, the statement asserts a nonzero polynomial `f` in the same coordinates such that every `i_P^G(ρ ⊗ ψ)` with `ψ` in its principal open set is irreducible. The statement's Markdown explains why a nonzero `f` gives a nonempty Zariski open set. The conjunction of (P4) and (T5) is `GenericIrreducibilityStatements`. Related, not the Theorem: the unproved statement `ConditionalParabolicGenericIrreducibilityStatement` is adapted from Waldspurger 2003, Proposition IV.2.2(i) and the beginning of IV.3, not from Renard. For an irreducible smooth representation `π` of the Levi points that is square-integrable modulo the image `C` of the split component, it asserts a nonempty set `D` of unramified characters, open in the continuous-character topology, on which the induction `UnramifiedLeviInduction` of `π` twisted by `χ` is irreducible. Its hypothesis is square integrability, not supercuspidality, and its locus is open in that topology, not Zariski open. It does not by itself give a Zariski-open locus, and no Library declaration connects it to (T5). Its proof task is `468db4c1-297b-4d4e-8534-ed8de150ffc5`. Since Library `ddb0a9c0`, that statement is reduced to (P4). The statement unit `2d4e3a18`, by Worker 1597, defines `Langlands.Plancherel.ParabolicGenericIrreducibilityReductionStatement` in [ParabolicGenericIrreducibilityReduction](../../Langlands/Representation/Plancherel/ParabolicGenericIrreducibilityReduction.md), and `conditionalParabolicGenericIrreducibility_of_statements` there proves it: `UnitaryRegularParabolicIrreducibilityStatement`, of row (T5-c), and the (P4) statement `InducedIrreducibilityOpenStatement` imply `ConditionalParabolicGenericIrreducibilityStatement`. The proof takes a regular unitary twist by `exists_unitary_twist_isNormalizerRegular` of row (T5-b), makes the induction irreducible there, and applies (P4). `Langlands.Plancherel.representedInductionLeviEquiv`, in [RepresentedInductionComparison](../../Langlands/Representation/Plancherel/RepresentedInductionComparison.md) (`4e882873`, by Worker 1598 with coauthor Worker 1597), identifies the literal `UnramifiedLeviInduction` with the `leviInductionFunctor` of an intrinsic twist, and the principal open set is pulled back to an open set of unramified characters. In ParabolicGenericIrreducibilityReduction, `ParabolicGenericIrreducibilityStructuralReductionStatement`, proved by `conditionalParabolicGenericIrreducibility_of_structuralStatements`, derives the same target from eight statements: `RepresentedGeometricLemmaStatement`, `TemperedSquareIntegrableUnitaryPartStatement`, `ArbitraryParabolicQuotientCompactStatement`, `SquareIntegrableNormalizedTemperedStatement`, `ArbitraryParabolicJacquetAdmissibilityStatement`, `RationalReductiveUnimodularityStatement`, `StandardCocharacterStatement` and `InducedIrreducibilityOpenStatement`. None of the eight has an unconditional proof in the Library, so the target remains unproved. Neither reduction concerns `GenericInducedIrreducibilityStatement` |
 | (T5-a) | `Langlands.Aubert.General.RepresentedParabolic.exists_positive_unramifiedCharacter_norm_mul_eq_one`, `twistUnitaryCentralCharacter`, `exists_positive_unramifiedTwist_unitaryCentralCharacter` in [PositiveUnramifiedCentralTwist](../../Langlands/Representation/Exponents/PositiveUnramifiedCentralTwist.md) | Proved for a connected reductive group: an irreducible smooth representation has a positive unramified twist with unitary central character. The module was published with the VII.1.3 proof unit `228c630c`, which uses it. See reading note 5. The second claim, that a supercuspidal representation with unitary central character is unitary, is stated, unproved, as `Langlands.Aubert.General.RepresentedParabolic.SupercuspidalUnitaryCentralCharacterUnitarizableStatement` in [MaximalLeviReducibilityUnitaryInputs](../../Langlands/Representation/Exponents/MaximalLeviReducibilityUnitaryInputs.md). It covers every connected reductive group, with supercuspidality as vanishing of the normalized Jacquet modules of all proper parabolics; its proof task is `df1b860d-7b40-4e1b-9e06-fd01618045ff`. The source's route through VI.2.1 and IV.3.2 is split as follows. `SupercuspidalUnitaryCoefficientCompactSupportStatement`, in [SupercuspidalCoefficientCompactSupportStatement](../../Langlands/Representation/Exponents/SupercuspidalCoefficientCompactSupportStatement.md), states VI.2.1 (a) ⇒ (b) for these representations, when irreducible: for every unitary central character datum, every descended coefficient norm has compact support on the quotient by the full abstract centre. It is unproved. In [SupercuspidalCoefficientCompactSupportReduction](../../Langlands/Representation/Exponents/SupercuspidalCoefficientCompactSupportReduction.md), `supercuspidalUnitaryCoefficientCompactSupportStructuralReduction` derives it from the three unproved statements `StandardCocharacterStatement`, `RelativeRootSystemStatement` and `JointSpecialCompactBasisExistenceStatement`; the earlier `supercuspidalUnitaryCoefficientCompactSupportReduction` also assumes `ParabolicDynamicStatement`. For IV.3.2, `Langlands.UnitaryCentralCharacter.isUnitarizable_of_compact_coefficientNorm_of_nonarchimedean`, in [CompactCoefficientProof](../../Langlands/Representation/Unitary/CompactCoefficientProof.md), proves that a smooth irreducible representation of a nonarchimedean group with a unitary central character datum and compactly supported coefficient norms is unitarizable. No Library declaration composes these into a proof of `SupercuspidalUnitaryCentralCharacterUnitarizableStatement`. Two variants are proved: `Langlands.Aubert.General.RationalPointFamily.isUnitarizable_of_compact_normKernel_restriction`, in [RationalCompactRestrictionUnitarity](../../Langlands/Representation/Aubert/General/RationalCompactRestrictionUnitarity.md), assumes compact coefficients after restriction to the norm kernel, and `Langlands.HarishChandraSchwartz.isUnitarizable_of_irreducible_isSquareIntegrable_leftHaar`, in [LeftHaarSquareIntegrableUnitarity](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/LeftHaarSquareIntegrableUnitarity.md), assumes square integrability modulo a central subgroup. The forward VI.2.1 proof for standard families is in Worker 6's [VI.2.1 map](cuspidal-decomposition-source-map.md) |
-| (T5-b) | `Langlands.Aubert.General.RepresentedParabolic.LeviInductionUnitarizableStatement` (MaximalLeviReducibilityUnitaryInputs); `leviInductionUnitarizable_of_inputs` in [MaximalLeviReducibilityInductionInputs](../../Langlands/Representation/Exponents/MaximalLeviReducibilityInductionInputs.md); `Langlands.Aubert.General.normalizedInductionFunctor_obj_isUnitarizable_of_compactSpace` in [NormalizedInductionUnitarity](../../Langlands/Representation/Aubert/General/NormalizedInductionUnitarity.md); `Langlands.admissibleUnitarySemisimplicity` in [AdmissibleSemisimplicityProof](../../Langlands/Representation/Unitary/AdmissibleSemisimplicityProof.md); `Langlands.Plancherel.rationalUnramifiedRegular_exists_unitary_finset_ne_zero` in [RationalUnitaryNonvanishing](../../Langlands/Representation/Plancherel/RationalUnitaryNonvanishing.md) | Partly stated. The first claim, that normalized induction from an actual rational parabolic preserves unitarizability, is the unproved `LeviInductionUnitarizableStatement` (Renard IV.2.3). `leviInductionUnitarizable_of_inputs` derives it from four unproved structural statements: `RationalReductiveUnimodularityStatement`, `StandardCocharacterStatement`, `ArbitraryParabolicQuotientCompactStatement` and `ParabolicRootPresentationExistenceStatement`. `normalizedInductionFunctor_obj_isUnitarizable_of_compactSpace` proves it for a closed subgroup `P` with compact `P\G`, keeping the triviality of the modular character of `G` and the identity for the modular character of `P` as premises. For "hence completely reducible", `admissibleUnitarySemisimplicity` proves `AdmissibleUnitarySemisimplicityStatement`: when compact open subgroups are cofinal, an admissible unitarizable representation is semisimple. The filtration from VI.5.3(iii) and the pairwise distinctness of the central characters outside a Zariski closed subset are not stated as steps of VI.8.5. Related: `rationalUnramifiedRegular_exists_unitary_finset_ne_zero` gives, for a connected reductive group, one unitary unramified character at which finitely many nonzero regular functions are all nonzero; it proves nothing about central characters. Since Library `c0c7eab6`, the structural inputs of the distinctness step are stated. The unproved `Langlands.Aubert.General.RepresentedParabolic.LeviNormalizerWeylGroupStatements` (`90015773`, Worker 1697), in [LeviNormalizerQuotientStatements](../../Langlands/Representation/Exponents/LeviNormalizerQuotientStatements.md), is the conjunction of two statements for an actual rational Levi `M` of an actual rational parabolic over a nonarchimedean local field. `LeviNormalizerFiniteQuotientStatement` asserts finitely many points `g j` of `G(k)` normalizing `M` such that every point normalizing `M` lies in some `g j · M(k)` (V.4.3.3 with V.3.7). `LeviNormalizerNormFixingStatement` asserts that a point normalizing `M` whose automorphism preserves every rational-character norm on the centre of `M(k)` lies in `M(k)` (V.3.5). The Markdown names a consumer `genericInducedIrreducibility_of_inputs`, which is not in the Library at `c0c7eab6`. Four definition units by Worker 1739 from proof task `822bbd74` prove both conclusions when a cocharacter whose dynamic parabolic is the given `p` is supplied: `IsRationalLeviSubgroup.exists_finite_normalizer_representatives_of_dynamicParabolic` and `mem_pointImage_of_normalizes_of_norm_of_dynamicParabolic` in [DynamicLeviNormalizer](../../Langlands/Representation/Exponents/DynamicLeviNormalizer.md) (`7e5d7c99`), built from `IsSplitComponent.exists_finite_normalizer_representatives` in [FiniteNormalizerRepresentatives](../../Langlands/Representation/Exponents/FiniteNormalizerRepresentatives.md) (`54a4c290`), `IsSplitComponent.mem_range_of_normalizes_of_norm` in [LeviNormalizerBridge](../../Langlands/Representation/Exponents/LeviNormalizerBridge.md) (`c46d1642`) and `IsSplitComponent.comp_automorphism_eq_of_norm` in [SplitComponentNormRigidity](../../Langlands/Representation/Plancherel/SplitComponentNormRigidity.md) (`d5ecc4cf`). Since the dynamic presentation stays an input, no Library theorem derives `LeviNormalizerWeylGroupStatements` from them |
+| (T5-b) | `Langlands.Aubert.General.RepresentedParabolic.LeviInductionUnitarizableStatement` (MaximalLeviReducibilityUnitaryInputs); `leviInductionUnitarizable_of_inputs` in [MaximalLeviReducibilityInductionInputs](../../Langlands/Representation/Exponents/MaximalLeviReducibilityInductionInputs.md); `Langlands.Aubert.General.normalizedInductionFunctor_obj_isUnitarizable_of_compactSpace` in [NormalizedInductionUnitarity](../../Langlands/Representation/Aubert/General/NormalizedInductionUnitarity.md); `Langlands.admissibleUnitarySemisimplicity` in [AdmissibleSemisimplicityProof](../../Langlands/Representation/Unitary/AdmissibleSemisimplicityProof.md); `Langlands.Plancherel.rationalUnramifiedRegular_exists_unitary_finset_ne_zero` in [RationalUnitaryNonvanishing](../../Langlands/Representation/Plancherel/RationalUnitaryNonvanishing.md) | Partly stated. The first claim, that normalized induction from an actual rational parabolic preserves unitarizability, is the unproved `LeviInductionUnitarizableStatement` (Renard IV.2.3). `leviInductionUnitarizable_of_inputs` derives it from four unproved structural statements: `RationalReductiveUnimodularityStatement`, `StandardCocharacterStatement`, `ArbitraryParabolicQuotientCompactStatement` and `ParabolicRootPresentationExistenceStatement`. `normalizedInductionFunctor_obj_isUnitarizable_of_compactSpace` proves it for a closed subgroup `P` with compact `P\G`, keeping the triviality of the modular character of `G` and the identity for the modular character of `P` as premises. For "hence completely reducible", `admissibleUnitarySemisimplicity` proves `AdmissibleUnitarySemisimplicityStatement`: when compact open subgroups are cofinal, an admissible unitarizable representation is semisimple. The filtration from VI.5.3(iii) and the pairwise distinctness of the central characters outside a Zariski closed subset are not stated as steps of VI.8.5. Related: `rationalUnramifiedRegular_exists_unitary_finset_ne_zero` gives, for a connected reductive group, one unitary unramified character at which finitely many nonzero regular functions are all nonzero; it proves nothing about central characters. Since Library `c0c7eab6`, the structural inputs of the distinctness step are stated. The unproved `Langlands.Aubert.General.RepresentedParabolic.LeviNormalizerWeylGroupStatements` (`90015773`, Worker 1697), in [LeviNormalizerQuotientStatements](../../Langlands/Representation/Exponents/LeviNormalizerQuotientStatements.md), is the conjunction of two statements for an actual rational Levi `M` of an actual rational parabolic over a nonarchimedean local field. `LeviNormalizerFiniteQuotientStatement` asserts finitely many points `g j` of `G(k)` normalizing `M` such that every point normalizing `M` lies in some `g j · M(k)` (V.4.3.3 with V.3.7). `LeviNormalizerNormFixingStatement` asserts that a point normalizing `M` whose automorphism preserves every rational-character norm on the centre of `M(k)` lies in `M(k)` (V.3.5). The Markdown names a consumer `genericInducedIrreducibility_of_inputs`, which is not in the Library at `ddb0a9c0`. Four definition units by Worker 1739 from proof task `822bbd74` prove both conclusions when a cocharacter whose dynamic parabolic is the given `p` is supplied: `IsRationalLeviSubgroup.exists_finite_normalizer_representatives_of_dynamicParabolic` and `mem_pointImage_of_normalizes_of_norm_of_dynamicParabolic` in [DynamicLeviNormalizer](../../Langlands/Representation/Exponents/DynamicLeviNormalizer.md) (`7e5d7c99`), built from `IsSplitComponent.exists_finite_normalizer_representatives` in [FiniteNormalizerRepresentatives](../../Langlands/Representation/Exponents/FiniteNormalizerRepresentatives.md) (`54a4c290`), `IsSplitComponent.mem_range_of_normalizes_of_norm` in [LeviNormalizerBridge](../../Langlands/Representation/Exponents/LeviNormalizerBridge.md) (`c46d1642`) and `IsSplitComponent.comp_automorphism_eq_of_norm` in [SplitComponentNormRigidity](../../Langlands/Representation/Plancherel/SplitComponentNormRigidity.md) (`d5ecc4cf`). Since the dynamic presentation stays an input, no Library theorem derives `LeviNormalizerWeylGroupStatements` from them. Since Library `ddb0a9c0`, a weaker form of the distinctness step is proved. The statement unit `54ae9591`, by Worker 1597, defines `Langlands.Plancherel.RegularUnitaryTwistExistenceStatement` in [ParabolicRegularUnitaryTwist](../../Langlands/Representation/Plancherel/ParabolicRegularUnitaryTwist.md), and `regularUnitaryTwistExistence` there proves it. Take a nonarchimedean local field, a connected reductive group whose point group is nonarchimedean, a `ParabolicRootPresentation r` of an actual rational parabolic with Levi, and a nontrivial smooth representation `π` of the literal Levi points with a central character. Then some unramified character `χ` of the full rational-norm family has `‖χ m‖ = 1` for every `m` and makes `π.twist χ` `IsNormalizerRegular`: no point of the normalizer of the Levi points outside them fixes its isomorphism class. This gives one regular unitary point, not the complement of a Zariski closed subset, and regularity rather than pairwise distinct central characters. The Markdown cites the central-character separation in the source proof, printed p.194 / PDF p.200, and the proof separates central characters through finitely many regular functions. Its main lemma `exists_unitary_twist_isNormalizerRegular` uses `exists_finite_normalizer_representatives_of_dynamicParabolic` and `mem_pointImage_of_normalizes_of_norm_of_dynamicParabolic` of `7e5d7c99`, with `r` supplying the dynamic presentation, and `rationalUnramifiedRegular_exists_unitary_finset_ne_zero`. Its Markdown calls `7e5d7c99` approved but unpublished, which is out of date: `7e5d7c99` was published at `a419cc85`. The same submission named the local topology instance of RationalUnitaryNonvanishing.lean `rationalUnitaryNonvanishingPointTopology`; no declaration there changed |
 | (L5) | `Langlands.Renard.AlgebraicFamily.CentralCharacterSplittingStatement` in [RenardCentralCharacterSplittingStatement](../../Langlands/Representation/Families/RenardCentralCharacterSplittingStatement.md). Related: `Langlands.CentralCharacterSplitting.splitting_of_distinct_centralCharacters`, `HasCentralCharacterSplitting`, `iSup_centralCharacterSpace_eq_top` in [CentralCharacterSplitting](../../Langlands/Representation/Filtration/CentralCharacterSplitting.md); `Langlands.CentralEigenspaceSplitting.eigenSubrep`, `eigenEquivGraded`, `iSup_eigenSubrep` in [CentralEigenspaceSplitting](../../Langlands/Representation/Filtration/CentralEigenspaceSplitting.md) | Stated, unproved; proof task `5c0deaf5-6a6f-45df-ba43-e623ce9dcd51`. For any field `k`, any group `G`, any subgroup `Z` of the centre, every `A : Rep k G` with a filtration `s : ObjectRepFiltration A n` and injective `χ : Fin n → Z →* kˣ` such that each `z ∈ Z` acts on graded piece `i` by `χ i z`, the statement asserts `A ≅ ∐ i, s.gradedRepresentation i` in `Rep k G`. Related, not the statement: the definition unit `61300f68`, by Worker 1739 in proof task `822bbd74`, proves `splitting_of_distinct_centralCharacters` under the same hypotheses with `Z` the full centre and `[Infinite k]`. Its conclusion `HasCentralCharacterSplitting s χ` says that each central-character subrepresentation for `χ i` is equivalent to graded piece `i`, that these subrepresentations are independent, and that every subrepresentation is the supremum of its intersections with them; `iSup_centralCharacterSpace_eq_top` adds that they span. No Library theorem converts this into the coproduct isomorphism. The proof finds one element of the group algebra on which the characters take pairwise distinct values, which is where `Infinite k` is used, and applies `CentralEigenspaceSplitting`. That earlier module assumes one central element taking pairwise distinct scalars; see reading note 4 |
-| (T5-c) | `Langlands.Aubert.General.isIrreducible_induction_of_semisimple_jacquetHom_rank_le_one`, `isIrreducible_induction_of_unitary_jacquetHom_rank_le_one` in [JacquetMultiplicityIrreducibility](../../Langlands/Representation/Aubert/General/JacquetMultiplicityIrreducibility.md) | Related, not the step. A nontrivial semisimple normalized induction `I σ` is irreducible if `Hom(r(I σ), σ)` has rank at most one; Frobenius reciprocity is applied inside the proof. The unitary version replaces semisimplicity by admissibility, unitarizability and cofinal compact opens, through `admissibleUnitarySemisimplicity`. The rank bound, which the source obtains from (T5-b) and (L5), is a hypothesis |
+| (T5-c) | `Langlands.Aubert.General.isIrreducible_induction_of_semisimple_jacquetHom_rank_le_one`, `isIrreducible_induction_of_unitary_jacquetHom_rank_le_one` in [JacquetMultiplicityIrreducibility](../../Langlands/Representation/Aubert/General/JacquetMultiplicityIrreducibility.md). Related: `Langlands.Plancherel.UnitaryRegularParabolicIrreducibilityStatement`, `unitaryRegularParabolicIrreducibility_of_statements` in [ParabolicUnitaryPointIrreducibility](../../Langlands/Representation/Plancherel/ParabolicUnitaryPointIrreducibility.md); `Langlands.Plancherel.RegularSquareIntegrableJacquetMultiplicityStatement` in [RegularJacquetMultiplicityStatement](../../Langlands/Representation/Plancherel/RegularJacquetMultiplicityStatement.md); `Langlands.Plancherel.regularSquareIntegrableJacquetMultiplicity_of_statements` in [RegularSquareIntegrableJacquetMultiplicityReduction](../../Langlands/Representation/Plancherel/RegularSquareIntegrableJacquetMultiplicityReduction.md); `Langlands.Plancherel.isSquareIntegrableModCenter_pullback_of_modCentralSubgroup` in [ParabolicSquareIntegrableModCenter](../../Langlands/Representation/Plancherel/ParabolicSquareIntegrableModCenter.md) | Related, not the step. A nontrivial semisimple normalized induction `I σ` is irreducible if `Hom(r(I σ), σ)` has rank at most one; Frobenius reciprocity is applied inside the proof. The unitary version replaces semisimplicity by admissibility, unitarizability and cofinal compact opens, through `admissibleUnitarySemisimplicity`. The rank bound, which the source obtains from (T5-b) and (L5), is a hypothesis. Also related, all by Worker 1597 in proof task `468db4c1`: the unproved statement `UnitaryRegularParabolicIrreducibilityStatement` (unit `c2a0abc1`), adapted from Waldspurger 2003, Proposition IV.2.2(i), asserts for an irreducible `π` of the Levi points that is square-integrable modulo `C`, and a unitary unramified `χ` with `π.twist χ` normalizer-regular, that the induction `UnramifiedLeviInduction` of `π` twisted by `χ` is irreducible. Its hypothesis is square integrability modulo `C`, not supercuspidality, and it concerns `UnramifiedLeviInduction`, not the fibres of the family of (T5). In the same module `UnitaryRegularParabolicIrreducibilityReductionStatement`, proved by `unitaryRegularParabolicIrreducibility_of_statements`, derives it from `RegularSquareIntegrableJacquetMultiplicityStatement`, `RationalReductiveUnimodularityStatement`, `StandardCocharacterStatement` and `ArbitraryParabolicQuotientCompactStatement`; the proof applies `isIrreducible_induction_of_unitary_jacquetHom_rank_le_one`. The first input (unit `1bb2b6f5`, published at commit `a419cc85`) is the rank bound: for such `π` with `IsNormalizerRegular π`, the intertwining maps from the Jacquet module of `leviTwistedInductionFunctor` applied to `π` into `π` have rank at most one. Its docstring calls it the Jacquet multiplicity consequence of Waldspurger 2003, Corollary III.7.3, and its unit records it as a derived target. It is unproved. `RegularSquareIntegrableJacquetMultiplicityReductionStatement` (unit `dbb365af`), proved by `regularSquareIntegrableJacquetMultiplicity_of_statements`, derives it from five unproved statements: `RepresentedGeometricLemmaStatement`, `TemperedSquareIntegrableUnitaryPartStatement`, `ArbitraryParabolicQuotientCompactStatement`, `SquareIntegrableNormalizedTemperedStatement` and `ArbitraryParabolicJacquetAdmissibilityStatement`. Its route bounds Hom spaces along the geometric-lemma filtration instead of decomposing the weak Jacquet module as in Waldspurger III.7.2–III.7.3. Its proof uses `isSquareIntegrableModCenter_pullback_of_modCentralSubgroup` from the definition unit `66e41d30`. None of these units proves the step |
 | (P6) | `Langlands.Renard.AlgebraicFamily.EndomorphismScalarStatement` in [RenardFamilyEndomorphismStatement](../../Langlands/Representation/Families/RenardFamilyEndomorphismStatement.md); proof `endomorphismScalar` and helpers `exists_fixedVectors_retraction`, `projective_fixedVectors`, `eq_zero_of_forall_linearForm`, `exists_fiber_scalar` in [RenardFamilyEndomorphismProof](../../Langlands/Representation/Families/RenardFamilyEndomorphismProof.md) | Proved, by Worker 950 in proof task `69958e59-18ba-448c-be38-d73030086488`. Take a smooth flat `ρ` with every compact-open `V^K` finite, a `G`-equivariant `B`-linear `φ`, and a Zariski-dense `Ξ`, meaning that every `b` vanishing on `Ξ` vanishes at every point. If every fiber `ℂ ⊗[B] V` at a point of `Ξ` is irreducible, then `φ` is the action of some `b : B`. It is stated for every locally profinite `G`. The proof does not follow the source's route through local freeness and does not use the statements of rows (P1) and (L1), which were unproved when it was published. Each compact-open `V^K` is a `B`-linear retract of the flat `V` and finite over the Noetherian `B`, hence projective. Linear forms `V →ₗ[B] B` separate vectors. Schur's lemma on the fibers at the points of `Ξ` and the Nullstellensatz give a linear relation between `φ` and the linear forms. Nakayama's lemma gives an element of the ideal of values of linear forms that acts as the identity on `V`, and writing it through linear forms produces `b`. See reading note 6 |
 | (Ex6) | `Langlands.Renard.AlgebraicFamily.SupercuspidalFamilyEndomorphismStatement` in [RenardSupercuspidalFamilyEndomorphismStatement](../../Langlands/Representation/Families/RenardSupercuspidalFamilyEndomorphismStatement.md) | Stated, unproved; proof task `8ed6fa75-244f-4b83-9093-00ded0bdf73f`. For a nonarchimedean local field, a connected reductive group, an actual rational parabolic with rational Levi `M` and geometric unipotent radical, including `P = G`, and an irreducible supercuspidal smooth `σ` of `M(k)`, let `B` be `Plancherel.unramifiedRegularFunctions` of the rational norm characters of `M` and `ρ_B` the universal family `universalUnramifiedRepresentation` on `B ⊗[ℂ] W`. The statement asserts that every `B`-linear endomorphism of `LeviInduced … ρ_B` commuting with `leviInducedRepresentation` is multiplication by some `b : B`. The induction is the general-family construction of row (I). Only the first paragraph of the Example is stated; the consequence for the centre of `M(G)[ρ]`, which recovers VI.4.5, is not. Row (P6) is proved, but the source's route also needs (T5), which is unproved, and an identification of the fibers of `LeviInduced … ρ_B` with the induced twists |
 
@@ -382,28 +391,21 @@ in Lean.
 
 ## Unpublished assertions
 
-At Library `c0c7eab6` these assertions have no published statement:
+At Library `ddb0a9c0` these assertions have no published statement:
 
 1. (Sp) as a named construction for general families.
 2. The functors on morphisms of (BC), (I) and (J) over a general `B`, and
    base change as a construction from `FamilyModule B G` to
    `FamilyModule C G`. Base change preserves smoothness and flatness, as
    row (BC) records.
-3. (Sp-φ) and (T5-c); (T5-b) apart from its first claim and the normalizer
-   inputs of `90015773`; and the consequence of (Ex6) for the centre of
-   `M(G)[ρ]`.
-
-The definition unit `b4543cde`, a Markdown correction of `20a07cb0` by
-Worker 709, is accepted but is not in the Library at `c0c7eab6`, so this note
-does not describe it.
+3. (Sp-φ); (T5-b) apart from its first claim, the normalizer inputs of
+   `90015773` and the single regular unitary twist of `54ae9591`; (T5-c) as
+   a step about the family of (T5), of which `c2a0abc1` states only a
+   square-integrable analogue; and the consequence of (Ex6) for the centre
+   of `M(G)[ρ]`.
 
 These are stated but unproved:
 
-- The conjunction `Statements` of the five statements of `51d6b0a6`. Each of
-  the five is proved: (P1-iso), (R1), (T4), (P1) and (L1) by `850f515b`,
-  `8f8bfb65`, `b366b62b`, `d6be4520` and `121e7cb2`. The RenardFamilyStatements
-  Markdown refers to this note's earlier numbering, in which the five
-  assertions were unpublished items 2, 3, 4 and 8.
 - (P2) with (VI.8.2.2), and (P3), by `InductionBaseChangeStatement`,
   `JacquetFiniteTypeStatement` and their conjunction `ParabolicStatements`
   of `aa949da3`, with proof task `4df85a84-3852-487f-8906-e6796bdf997f`.
@@ -414,7 +416,8 @@ These are stated but unproved:
 - (P4) and (T5), by `InducedIrreducibilityOpenStatement` and
   `GenericInducedIrreducibilityStatement` of `a852fcc2`, with proof tasks
   `2113598c-9c21-461a-9a44-f46066850c3e` and
-  `822bbd74-8853-4535-87b2-aede25e9a259`.
+  `822bbd74-8853-4535-87b2-aede25e9a259`. The definition unit `14b1f89d`
+  reduces (P4) to three unproved statements (row (P4)).
 - The second claim of (T5-a) and the first claim of (T5-b), by
   `SupercuspidalUnitaryCentralCharacterUnitarizableStatement` and
   `LeviInductionUnitarizableStatement` of `57393553`; and the VI.2.1 input
@@ -428,10 +431,18 @@ These are stated but unproved:
   `5e350f7e-8ef9-47a2-9c4e-db945cc4586e`.
 - The helper statements `InducedTwistsUniformDetectionStatement` of
   `3794a38a`, `RationalLeviInductionOpennessStatement` of `c6c03e68` and
-  `UnramifiedUniformGenerationStatement` of `afd034f2` (row (P4)), and
-  `LeviNormalizerWeylGroupStatements` of `90015773` (row (T5-b)).
+  `UnramifiedUniformGenerationStatement` of `afd034f2` (row (P4)),
+  `LeviNormalizerWeylGroupStatements` of `90015773` (row (T5-b)), and
+  `UnitaryRegularParabolicIrreducibilityStatement` of `c2a0abc1` and
+  `RegularSquareIntegrableJacquetMultiplicityStatement` of `1bb2b6f5`
+  (row (T5-c)).
 
-They remain with the whole-book parent task and these proof tasks. (P6), stated by `2c2abfbe`, is
+They remain with the whole-book parent task and these proof tasks. The
+conjunction `Statements` of the five statements of `51d6b0a6` is proved by
+`356512bd` from the proofs `850f515b`, `8f8bfb65`, `b366b62b`, `d6be4520` and
+`121e7cb2` of (P1-iso), (R1), (T4), (P1) and (L1). The RenardFamilyStatements
+Markdown refers to this note's earlier numbering, in which the five
+assertions were unpublished items 2, 3, 4 and 8. (P6), stated by `2c2abfbe`, is
 proved by `52d9f689`. The three VI.8 statements
 `UniversalInducedCoefficientFinitenessStatement`,
 `RationalUniversalTensorFinitenessStatement` and
@@ -439,18 +450,26 @@ proved by `52d9f689`. The three VI.8 statements
 `e2884067-b19a-4685-91d9-e62316299fc3`, and all three are proved. Of the
 related statements, `4cadcefc` (row (T5)) is unproved, `b933342c` (row (P4))
 is proved by `c3682633`, and `f12ff2f5` (row (P4)) is proved by `3c4b264f`.
-The definition units `20a07cb0` and `e21322ee` carry the constructions of
+The reductions stated by `2d4e3a18` (row (T5)) and by `c2a0abc1` and
+`dbb365af` (row (T5-c)) are proved in their own modules, and
+`RegularUnitaryTwistExistenceStatement` of `54ae9591` (row (T5-b)) is proved.
+The definition units `20a07cb0`, in its second version `b4543cde`, and
+`e21322ee` carry the constructions of
 rows (D), (BC), (I) and (J), and `054b6891` the determinant witnesses of row
 (P4). The fourteen definition units new at `c0c7eab6` are helpers for rows
 (P4), (C2), (L5) and (T5-b); none of them proves a statement of this note.
+Of the definition units new at `ddb0a9c0` other than `b4543cde`, `347d37f3`
+and `14b1f89d` build the family of row (P4) and its reduction, `4e882873`
+serves row (T5) and `66e41d30` row (T5-c); none of them proves a statement
+of this note.
 
 ## Receipts
 
-All sixty-six units are accepted and published. Each independent reviewer
+All seventy-seven units are accepted and published. Each independent reviewer
 approves without qualifications. Submitter and coauthors come from the
-review-task bindings. Several bindings of units new at `c0c7eab6` list the
+review-task bindings. Several bindings of units new at `c0c7eab6` and `ddb0a9c0` list the
 submitter among the coauthors; the table names the submitter once.
-Twenty-one units record author
+Twenty-two units record author
 qualifications, summarized after the tables.
 
 | Unit | Accepted artifact | Submitted by; coauthors | Reviewer | Publication commit |
@@ -521,6 +540,17 @@ qualifications, summarized after the tables.
 | Levi normalizer bridge (`Langlands.GroupScheme.IsSplitComponent.automorphismRestrictionIso`) | `c46d1642-8495-4993-a389-23154b224db5` | Worker 1739 | Reviewer 17805 | `a419cc8566081d901325c46ed3d626b2ebb04395` |
 | Split-component norm rigidity (`Langlands.GroupScheme.IsSplitComponent.automorphismRestriction`) | `d5ecc4cf-69d6-435a-84fa-811f15c56a11` | Worker 1739 | Reviewer 17757 | `a419cc8566081d901325c46ed3d626b2ebb04395` |
 | Levi normalizer statements (`Langlands.Aubert.General.RepresentedParabolic.LeviNormalizerWeylGroupStatements`) | `90015773-9e7c-4965-a995-5336cc21534e` | Worker 1697 | Reviewer 17700 | `a419cc8566081d901325c46ed3d626b2ebb04395` |
+| Proof `Langlands.Renard.AlgebraicFamily.statements` | `356512bd-185a-467c-af14-8dfdae4f227c` | Worker 1789; Worker 1761 | Reviewer 17979 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| VI.8.4 assembly (`Langlands.Renard.AlgebraicFamily.InducedIrreducibilityOpenAssembly.Inputs`) | `14b1f89d-dd3f-4fe2-8436-70ce78df9ecf` | Worker 452; Workers 1664, 1635 and 1444 | Reviewer 17961 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Actual Levi induced family (`Langlands.Renard.AlgebraicFamily.ActualLevi.universalFamily`) | `347d37f3-b56f-4aae-94fd-191ea0290f93` | Worker 1444; Worker 1635 | Reviewer 17936 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Generic irreducibility reduction (`Langlands.Plancherel.ParabolicGenericIrreducibilityReductionStatement`) | `2d4e3a18-64e6-440c-8174-cdafa1ade36e` | Worker 1597 | Reviewer 18263 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Regular unitary twist statement (`Langlands.Plancherel.RegularUnitaryTwistExistenceStatement`) | `54ae9591-152f-4653-beb5-6011b50d5dbd` | Worker 1597 | Reviewer 18211 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Regular unitary point irreducibility reduction (`Langlands.Plancherel.UnitaryRegularParabolicIrreducibilityReductionStatement`) | `c2a0abc1-a3f3-4e5d-81ce-b1d09a85128e` | Worker 1597 | Reviewer 18156 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Jacquet multiplicity reduction (`Langlands.Plancherel.RegularSquareIntegrableJacquetMultiplicityReductionStatement`) | `dbb365af-76f7-412d-8355-ef0c3dbe5c05` | Worker 1597 | Reviewer 18133 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Represented induction comparison (`Langlands.Plancherel.representedInductionLeviEquiv`) | `4e882873-e6dc-414e-9f36-ee8f0e90559a` | Worker 1598; Worker 1597 | Reviewer 18250 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Square integrability modulo the centre (`Langlands.Plancherel.schemeCenterToParabolicCenter`) | `66e41d30-2963-4363-bc4c-c3120bc1ee00` | Worker 1597 | Reviewer 18115 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| VI.8.2 and VI.8.3 family constructions, second version (`Langlands.Renard.AlgebraicFamily.leviInducedRepresentation`) | `b4543cde-3065-40f6-9cbb-340c889b36c1` | Worker 709 | Reviewer 18015 | `3f1412571c4c931abb11fdcd373eaf66fd0c5385` |
+| Jacquet multiplicity statement (`Langlands.Plancherel.RegularSquareIntegrableJacquetMultiplicityStatement`) | `1bb2b6f5-c08c-4a27-82c7-ad123adee40f` | Worker 1597 | Reviewer 17636 | `a419cc8566081d901325c46ed3d626b2ebb04395` |
 
 The VI.4.1 comparison `700fc1f0` is not a VI.8 result. It is listed because
 the prerequisite section of the uniform compression note now cites it. The
@@ -535,7 +565,15 @@ definition unit `054b6891` is a helper for (P4) and does not prove it. Of the
 twenty-three units new at `c0c7eab6`, the three statement units by Worker 709
 and the proofs `d6be4520` and `121e7cb2` carry rows (L5), (Ex6), (Ex-c), (P1)
 and (L1); `121e7cb2` also proves the smoothness claim of row (BC). The other eighteen are helpers for rows (P4), (C2), (L5) and
-(T5-b), as those rows explain; the statements among them are unproved.
+(T5-b), as those rows explain; the statements among them are unproved. Of
+the eleven units added in this update, the proof `356512bd` assembles
+`Statements`; `14b1f89d` and `347d37f3` serve row (P4), `2d4e3a18` and
+`4e882873` row (T5), `54ae9591` row (T5-b), and `c2a0abc1`, `1bb2b6f5`,
+`dbb365af` and `66e41d30` row (T5-c); `b4543cde` is the second version of
+`20a07cb0`. Among their statements, the four reductions and
+`RegularUnitaryTwistExistenceStatement` are proved, while
+`UnitaryRegularParabolicIrreducibilityStatement` and
+`RegularSquareIntegrableJacquetMultiplicityStatement` are not.
 
 | Unit | Host task | Review task | Machine receipt (policy) | Integration |
 | --- | --- | --- | --- | --- |
@@ -605,8 +643,19 @@ and (L1); `121e7cb2` also proves the smoothness claim of row (BC). The other eig
 | `c46d1642` | `822bbd74-8853-4535-87b2-aede25e9a259` | `aa6da2b0-528d-4f3e-a402-8dd7d8551d19` | `fd8cf952-69c1-49dc-af69-4dc2a4a654d8` (`lean.definition@1`) | `fc9e89a438af40888d3e506509f491b9` |
 | `d5ecc4cf` | `822bbd74-8853-4535-87b2-aede25e9a259` | `df37ecd4-d60b-4e2b-bdc6-976bcbb89315` | `d2088875-e43d-45a6-9efa-15649faa21ac` (`lean.definition@1`) | `6e2ac2ca72b44468991a34be46e74e11` |
 | `90015773` | `822bbd74-8853-4535-87b2-aede25e9a259` | `ff1672bb-d725-41fd-8ed0-664e9e20c120` | `9f261c6f-85ff-49c5-a90f-59e6ed415d21` (`lean.statement@1`) | `d271d39948f74b00a02ec722e8fed4be` |
+| `356512bd` | `eb5ee8fa-29f5-4671-9ecd-e6259db108d3` | `1490e15a-8fc2-42a9-a9c6-b5188ec63b16` | `10bff198-5a64-4f2a-9eff-6961003a187e` (`lean.proof@1`) | `1bb5b8e5eb4c45ccb806c7cd40779820` |
+| `14b1f89d` | `2113598c-9c21-461a-9a44-f46066850c3e` | `07d33993-40c7-43b4-b32f-41dad30fb30b` | `b04ee851-22a1-4746-a856-7c645abae999` (`lean.definition@1`) | `8dd73df3e35c4de88f3ef90b6e505034` |
+| `347d37f3` | `2113598c-9c21-461a-9a44-f46066850c3e` | `e0d1035f-d08a-4669-99c3-05cedd792728` | `6f23e79c-431b-4214-8e02-1e1df74c3759` (`lean.definition@1`) | `3fa393daf99e466b98ad0e78d6e8f84b` |
+| `2d4e3a18` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `e60be75c-fc95-4194-a992-873c72822a74` | `63d28e22-3039-42a0-9567-544fb7df2f89` (`lean.statement@1`) | `f5dd815f96c54cbba6fdc084eb5e34c4` |
+| `54ae9591` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `218850a9-ba92-4864-8c90-a091f77b5cc6` | `c2c98630-3464-4359-98b2-49ea75872f52` (`lean.statement@1`) | `5232678913594dfcb7bab6491b6783bb` |
+| `c2a0abc1` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `150470cd-e7bc-4590-a03d-adfc16e1d271` | `4d29d5de-15b4-40ad-9dd0-782fca09c879` (`lean.statement@1`) | `aff886b1d8924e66992cd32db6e29bcb` |
+| `dbb365af` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `a76df86b-f6de-4a1c-9a19-028854ab4bbf` | `a4341f90-3a64-4cf0-829f-6a0ed91278d6` (`lean.statement@1`) | `da48689f074c46458b967828ed11c4fb` |
+| `4e882873` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `0c895913-9143-4ef0-8e2d-4e63f5f1d774` | `cef1f0c7-df22-459b-bf50-f1448569de8f` (`lean.definition@1`) | `01634a04a7744fa09cd8f709020fd2fa` |
+| `66e41d30` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `6ccd77b5-536c-4c17-b84f-dca65a3a486d` | `f6c17526-9a0b-47ae-b540-d7c122f68e6b` (`lean.definition@1`) | `53dd5baa4a2d40be8e0e83aeaa361255` |
+| `b4543cde` | `f5d1f399-a1f8-4ab5-a981-90b92abd4857` | `0bca1df4-04bd-4a62-a6c5-1e4be68c1f36` | `7011630d-415d-4eee-a510-e3ffae76bd9a` (`lean.definition@1`) | `4c22d0eb00934b92b2810b90623be853` |
+| `1bb2b6f5` | `468db4c1-297b-4d4e-8534-ed8de150ffc5` | `c63339b7-a099-4047-b6e4-ed071fa5c259` | `aba32cd3-7a4c-465e-9eb5-d29b2cb68d2f` (`lean.statement@1`) | `0c8a88907e9b416cb007d52b3c4dea16` |
 
-The fifteen `lean.proof@1` receipts record the checks `lake-build`,
+The sixteen `lean.proof@1` receipts record the checks `lake-build`,
 `exact-target`, `unchanged-statement` and `frozen-inputs`. The statement and definition
 receipts record `lake-build` and `declaration-kind` among their checks. No
 machine receipt records a qualification.
@@ -681,9 +730,18 @@ Author qualifications:
   inaccurate. `RepresentedParabolic.isUnimodularModulus_pointImage_radical`
   proves the hypothesis for the image of the unipotent radical of every
   closed subgroup over a nonarchimedean local field. Worker 709, the author, found the error after
-  publication. What remains true is that no Library theorem states the
+  publication and corrected it in the second version `b4543cde`. What remains true is that no Library theorem states the
   agreement. The identification of `c_U` with Renard's `δ_P^{-1}` is a
   documented convention conversion, not a Lean statement.
+- `b4543cde`: the first, second and fourth qualifications repeat those of
+  `20a07cb0`. The third replaces the inaccurate part: for the radical image
+  of a represented parabolic over a nonarchimedean local field, the
+  unimodularity hypothesis is the published
+  `RepresentedParabolic.isUnimodularModulus_pointImage_radical`, which
+  assumes `[ValuativeRel k] [IsNonarchimedeanLocalField k]` beyond the
+  module's instances; no Library theorem applies it to `LeviInduced`, and
+  agreement of `leviInducedRepresentation` at `B = ℂ` with the published
+  complex induction on represented parabolics is not stated in the Library.
 - `e21322ee`: the definitions need only a commutative ring `B`; Renard's
   standing hypotheses on `B` are not imposed. Admissibility quantifies over
   open subgroups with compact carrier, as in RenardFamilyStatements, not over
@@ -725,17 +783,22 @@ Author qualifications:
   `M(F)`.
 
 Worker 709 checked the Lean and Markdown files of the modules below at
-Libraries `d82893a7`, `2816ea5d`, `568f1cff` and `c0c7eab6` and in the
-workspace. The six files of `2c2abfbe`, `a852fcc2` and `3c4b264f` are new at
-`2816ea5d`. The RenardFamilyParabolicFunctors pair of `20a07cb0` is new at
-`8b14de0b`, and the sixteen files of the eight units added after it in the
-previous update are new at `0de01f07`. The forty-eight files of the
-twenty-four modules added in this update are new at `c0c7eab6`; their units
-were published at `a419cc85`. Every other file is unchanged between
-`d82893a7` and `c0c7eab6`. The table gives the hashes at `c0c7eab6`. Each file
-in the workspace equals the Library, except RenardFamilyParabolicFunctors.md,
-which in the workspace is the accepted, unpublished text of `b4543cde`.
-Some frozen bundles differ from the Library:
+Libraries `d82893a7`, `2816ea5d`, `568f1cff`, `c0c7eab6` and `ddb0a9c0` and in
+the workspace. The six files of `2c2abfbe`, `a852fcc2` and `3c4b264f` are new
+at `2816ea5d`. The RenardFamilyParabolicFunctors pair of `20a07cb0` is new at
+`8b14de0b`, and the sixteen files of the eight units added after it in an
+earlier update are new at `0de01f07`. The forty-eight files of the
+twenty-four modules added in the previous update are new at `c0c7eab6`; their
+units were published at `a419cc85`. Of the ten modules added in this update,
+RegularJacquetMultiplicityStatement, the pair of `1bb2b6f5`, is also new at
+`c0c7eab6` and was published at `a419cc85`; the eighteen files of the other
+nine are new at `ddb0a9c0`, and their units were published at `3f141257`.
+Between `d82893a7` and `c0c7eab6` every other file is unchanged. Between
+`c0c7eab6` and `ddb0a9c0` four files of the table changed: the
+ParabolicGenericIrreducibilityStatement pair, RationalUnitaryNonvanishing.lean
+and RenardFamilyParabolicFunctors.md, as described below. The table gives the
+hashes at `ddb0a9c0`. Each file in the workspace equals the Library. Some
+frozen bundles differ from the Library:
 
 - `f1e0aa3d` also froze an earlier RationalUniversalTensorFinitenessStatement
   Markdown file; its own pair equals the Library.
@@ -760,12 +823,24 @@ Some frozen bundles differ from the Library:
   `rationalUniversalProgeneratorComparisonProofTopologicalGroup`, and added
   one Markdown paragraph saying that the naming changes no topology,
   representation, predicate or proof.
-- `23d4a854` and `4cadcefc` froze wide snapshots; their own pairs equal the
-  Library.
+- `23d4a854` and `4cadcefc` froze wide snapshots, many of whose unrelated
+  files changed later. The own pair of `23d4a854` equals the Library. The own
+  pair of `4cadcefc`, ParabolicGenericIrreducibilityStatement, equals the
+  Library at `c0c7eab6` but not at `ddb0a9c0`: integration named its two
+  anonymous local topology instances
+  `parabolicGenericIrreducibilityPointTopology` and
+  `parabolicGenericIrreducibilityStatementTopologicalSpace`, and added one
+  Markdown paragraph saying that their types, values and local scopes are
+  unchanged.
 - `f12ff2f5` also froze the FiniteMatrixOpennessProof pair, `9c0f4b4c` the
   JacquetMultiplicityIrreducibility pair, and `22169551` the
-  RationalUnitaryInductionIrreducibility pair; all equal the Library.
-  `5bbc57bb` also froze four submission JSON files.
+  RationalUnitaryInductionIrreducibility pair; all equal the Library. In the
+  own pair of `9c0f4b4c`, RationalUnitaryNonvanishing.lean equals the Library
+  at `c0c7eab6` but not at `ddb0a9c0`: the bundles of `2d4e3a18` and
+  `54ae9591` name its anonymous local topology instance
+  `rationalUnitaryNonvanishingPointTopology`, with type and value unchanged,
+  and that version is the Library's. `5bbc57bb` also froze four submission
+  JSON files, and `52d9f689` one.
 - `056a29f6` also froze the SemisimpleInductionIrreducibility pair, equal to
   the Library, and the Exponents/SmoothContragredientCentralSpectrum pair,
   which changed later; its own pair equals the Library.
@@ -782,20 +857,22 @@ Some frozen bundles differ from the Library:
 - `a852fcc2` also froze the RenardFamilyEndomorphismStatement pair, equal to
   the Library. The own pairs of `2c2abfbe`, `a852fcc2` and `3c4b264f` equal
   the Library.
-- `e21322ee` also froze the RenardFamilyParabolicFunctors pair, equal to the
-  Library; the previous version of this note, equal to the Library at
-  `568f1cff`; and `notes/renard/coverage.md` and `wiki/README.md`, which
-  differ from the Library. `aa949da3` and `ec9f856f` each froze both of their statement
+- The own pair of `20a07cb0` and the copy frozen by `e21322ee` contain the
+  first version of RenardFamilyParabolicFunctors.md. The Library has the
+  corrected Markdown of `b4543cde`; the Lean file is unchanged.
+- `e21322ee` also froze an earlier version of this note, equal to the
+  Library at `568f1cff`, and `notes/renard/coverage.md` and `wiki/README.md`,
+  which differ from the Library. `aa949da3` and `ec9f856f` each froze both of their statement
   pairs and the RenardFamilyCategory pair, all equal to the Library.
   `8f8bfb65` also froze the RenardFamilyFixedTensorProof pair, equal to the
-  Library. The own pairs of all nine units added in the previous update
-  equal the Library.
+  Library. The own pairs of the eight units new at `0de01f07` equal the
+  Library.
 - `90015773` froze a LeviNormalizerQuotientStatements Markdown file that
   differs from the Library at line 46: the frozen copy writes
   `w = g j * l(p(m))`, the Library copy `w = g j * p(l(m))`. The review of
   `90015773` records the frozen expression as a harmless composition-order
-  typo. Every other file frozen by the twenty-three units added in this
-  update equals the Library. Besides their own pairs, they froze the pairs of
+  typo. Every other file frozen by the twenty-three units added in the
+  previous update equals the Library. Besides their own pairs, they froze the pairs of
   other new units, the RenardFamilyCategory, RenardFamilyParabolicStatements,
   RenardFamilyParabolicFlatnessStatements, RenardFamilyFixedTensorProof,
   RenardFamilyFlatnessProof and MatrixGenerationWitness pairs, and, for
@@ -804,8 +881,25 @@ Some frozen bundles differ from the Library:
   pairs. The InducedIrreducibilityOpenReduction pair is part of the bundle of
   `d7259534`, and the DynamicLeviNormalizer pair is the own pair of
   `7e5d7c99`.
+- The own pairs of the eleven units added in this update equal the Library.
+  `2d4e3a18`, `54ae9591`, `c2a0abc1`, `dbb365af` and `66e41d30` froze the
+  same copies of three supporting pairs, which differ from the Library only
+  by integration naming of local topology instances, each with one added
+  Markdown paragraph saying the naming changes nothing else. In the
+  ParabolicRepresentedComparison and ParabolicJacquetUnitaryRestriction pairs,
+  equal to the Library at `c0c7eab6`, two anonymous instances became
+  `parabolicRepresentedComparisonTopologicalSpace`,
+  `parabolicRepresentedComparisonTopologicalSpace2`,
+  `parabolicJacquetUnitaryRestrictionTopologicalSpace` and
+  `parabolicJacquetUnitaryRestrictionTopologicalSpace2`. In the
+  SelfUnitaryPieceMultiplicity pair, new at `ddb0a9c0`,
+  `selfPieceAmbientPointTopology` became
+  `selfUnitaryPieceAmbientPointTopology`. `b4543cde` also froze the previous
+  version of this note and `notes/renard/coverage.md`, equal to the Library
+  at `c0c7eab6`, and a `wiki/README.md` that differs from the Library. Every
+  other file frozen by these eleven units equals the Library.
 
-| File under `Langlands/` | SHA256 at Library `c0c7eab6` |
+| File under `Langlands/` | SHA256 at Library `ddb0a9c0` |
 | --- | --- |
 | `Representation/Plancherel/UnramifiedRationalNormalizedInducedFiniteness.lean` | `0617ebd573ef22cc943e3658b37fdccb492dd8cf2173d4af48a3510b8719fbd1` |
 | `Representation/Plancherel/UnramifiedRationalNormalizedInducedFiniteness.md` | `ce6725e907e7e2de1ebf249613d312e9fc37f01ba1c3897dd348156b81a3e958` |
@@ -837,8 +931,8 @@ Some frozen bundles differ from the Library:
 | `Representation/CuspidalSupport/RationalUniversalProgeneratorComparisonProof.md` | `4335422884c5de9d218b8ee76ce89fa359091513c9cf4c40ccb90c133b956426` |
 | `Representation/Plancherel/UnramifiedRationalConjugateAdmissibility.lean` | `1d4c183fd7a4bace32a81be8a4d3dfa5dd6ec7dc0fdfc240470d576c21eb8d35` |
 | `Representation/Plancherel/UnramifiedRationalConjugateAdmissibility.md` | `3c7e00a60e7c377c169d9492f4354e843b6f3ec5c346a8c552e3be9781899247` |
-| `Representation/Plancherel/ParabolicGenericIrreducibilityStatement.lean` | `14bd3cd0f0d13e1b056a4d7e2efaf7023c57869feb6d613854b552e1315af8ee` |
-| `Representation/Plancherel/ParabolicGenericIrreducibilityStatement.md` | `d9a2f32519727cf39c910afda46a5e5543181fc4518386c408d9fe13caa0a6ec` |
+| `Representation/Plancherel/ParabolicGenericIrreducibilityStatement.lean` | `baaaba1b7df1943357e2a62c687bb62dfae14228a1f8471168f3b66f46716c5e` |
+| `Representation/Plancherel/ParabolicGenericIrreducibilityStatement.md` | `39b1a8ac71e0c1786a345fd92ab44b7847f4d52819f93a6bce8cf3b20c7c8886` |
 | `Representation/Plancherel/FiniteMatrixOpennessStatement.lean` | `8f176d39dd2583f0352028c8b36d1fc39c8f87ffb5d2eee612c86caf9a23d400` |
 | `Representation/Plancherel/FiniteMatrixOpennessStatement.md` | `d1249f681edf5ccaf0c8390310421ba5ffe44377bb3b555c27955dd3dd41a173` |
 | `Representation/Families/RenardFamilyStatements.lean` | `08b1db42e951221c2f706b1742d6bb08e09255e719fcb3258beebae4364b62c3` |
@@ -847,7 +941,7 @@ Some frozen bundles differ from the Library:
 | `Representation/Plancherel/FiniteMatrixOpennessProof.md` | `505a18ee2aebcdb1b2c23d28785fa461f7bfeef5cf42788606c776f1d1de9a93` |
 | `Representation/Plancherel/CompactFixedFamilyOpennessStatement.lean` | `eddf3aa377151464051fbc7b6dd994f943950bc7ebb219cffc8b2d7e4cbaaa2a` |
 | `Representation/Plancherel/CompactFixedFamilyOpennessStatement.md` | `a7e41eff126b828502f617e87ff7090b9a5238a50c6768240a83ffe13b4b3526` |
-| `Representation/Plancherel/RationalUnitaryNonvanishing.lean` | `67e935d4485e203b90c2b706190b99a4922ed1e52c3b30933afb4d607d8e2f59` |
+| `Representation/Plancherel/RationalUnitaryNonvanishing.lean` | `04b0d62ff7b4a8f1052afad0e677f728703e5b691896b2445f2bdce91e7dc0c0` |
 | `Representation/Plancherel/RationalUnitaryNonvanishing.md` | `3f8f3239da29179c15abd5b08bab6b850f0523d550d57b27407dc4b21e2e1ebc` |
 | `Representation/Aubert/General/JacquetMultiplicityIrreducibility.lean` | `394dbae83693b1489e45cf1084548dc020eb094f0e1249d1dea6ab8f9ded1047` |
 | `Representation/Aubert/General/JacquetMultiplicityIrreducibility.md` | `674f2f4ab0b3d208d5e77931a21068125ba5dacee5f159d5e3d16d4d0443e3ad` |
@@ -876,7 +970,7 @@ Some frozen bundles differ from the Library:
 | `Representation/Plancherel/CompactFixedFamilyOpennessProof.lean` | `695a3814d2dae88a1a2c3e437c64fceefe7779585277321b25d539d40896a905` |
 | `Representation/Plancherel/CompactFixedFamilyOpennessProof.md` | `dca2856a73beb5c7cd0644dca435f89c33316f06684d5fa1ea5698f9619fec2c` |
 | `Representation/Families/RenardFamilyParabolicFunctors.lean` | `f44635a8084d28f69d2a0e66df7e13195839f39c7e6fa5e9a6e3ca33d0cbab29` |
-| `Representation/Families/RenardFamilyParabolicFunctors.md` | `ecf63a858785a66a4736ee9822f0897880ed7b36ec07688cfd7cf8868a95b31f` |
+| `Representation/Families/RenardFamilyParabolicFunctors.md` | `d7e9c0e3923d71af8081ba7b05524d18776436de79980282b126c502aad356c2` |
 | `Representation/Families/RenardFamilyCategory.lean` | `faf7faf3c9681cd171a7b166828d84b3dcc630d6d7dec869b289af97d6caeb32` |
 | `Representation/Families/RenardFamilyCategory.md` | `0dbafcdd43aa717773418c6e988c94a30be19b9506c07fecd85466c006864820` |
 | `Representation/Families/RenardFamilyParabolicStatements.lean` | `5e1af6e065d6e8498d53425bf3fd87f7c8f37cc2dcfd6c1d9b28d09ca5148c3b` |
@@ -941,6 +1035,26 @@ Some frozen bundles differ from the Library:
 | `Representation/Exponents/LeviNormalizerBridge.md` | `1b50d2ee40682d0578759061f95b97ac6001ee66a13edef6115990335a2fe516` |
 | `Representation/Plancherel/SplitComponentNormRigidity.lean` | `1ed12178992a99aa29085adf24be84d88f7023710c7c33749de810e07abc4149` |
 | `Representation/Plancherel/SplitComponentNormRigidity.md` | `42c97f6209f0df1f7f25d190a9680499a2acba0ddc0552a7c2ce436acd1cf9cd` |
+| `Representation/Families/RenardFamilyStatementsAggregateProof.lean` | `1f5799ddf40cace389d6fcd0cb6bdd3a3c7730f7755f084e7ff3daaa6f4a089e` |
+| `Representation/Families/RenardFamilyStatementsAggregateProof.md` | `12e22897b7e8d9b1359f81bafc199c65b4453ac141c661b6a0788dc69de95093` |
+| `Representation/Families/InducedIrreducibilityOpenAssembly.lean` | `754d1d1e0194d8f1672f7cd741bff56b3209475496e4d1b38c116b5968859407` |
+| `Representation/Families/InducedIrreducibilityOpenAssembly.md` | `90e8a2636d91a17250fac80cc525bd51e435f4c9abe77ab3536a1ad4254a392b` |
+| `Representation/Families/ActualLeviUnramifiedInducedFamily.lean` | `99d6e8d283bb4d177bee588a4400b354b4463f3000acbea18baf23d664042e2c` |
+| `Representation/Families/ActualLeviUnramifiedInducedFamily.md` | `08a78e622a1d6414c9e46e167bd2bda3a153956da99abd7cc91ffbe74ef65a19` |
+| `Representation/Plancherel/ParabolicGenericIrreducibilityReduction.lean` | `29b1e7c242eab989573688a601550c8b30404ee6de0d7813561cdcaa4f8b6ca9` |
+| `Representation/Plancherel/ParabolicGenericIrreducibilityReduction.md` | `a52ad45c5d9c22ef2da0576acb2faeb725092b5d07f4756c4d7bbdd5898edc40` |
+| `Representation/Plancherel/ParabolicRegularUnitaryTwist.lean` | `3575e6a44d3cf85b978ba27aba536d2bb1bf3f378f60e2b206f21ddae47836a6` |
+| `Representation/Plancherel/ParabolicRegularUnitaryTwist.md` | `2497923294a901ef94b623812bd09c98b34b6f499a8eb42ca9684d258f6344be` |
+| `Representation/Plancherel/ParabolicUnitaryPointIrreducibility.lean` | `dc310d63b24181146cdd5c3822158e28b6c36ceb1eef31d233acfdd4fb142b2d` |
+| `Representation/Plancherel/ParabolicUnitaryPointIrreducibility.md` | `5851cf6f1da716458ac88ded7a3fec980be5e5f38017d03fa0dc83d3ff2f02db` |
+| `Representation/Plancherel/RegularJacquetMultiplicityStatement.lean` | `ae27dd27dbf29fdcca5cdb1d28a0cb47f04bc80e7fe0b09bcf37cbf26c6d51d0` |
+| `Representation/Plancherel/RegularJacquetMultiplicityStatement.md` | `a9aa4429fe0f0ba42bce8f7b0b867a273a51456bf9581c20fd5335933bdb1383` |
+| `Representation/Plancherel/RegularSquareIntegrableJacquetMultiplicityReduction.lean` | `b70052b9202a3150639ed9e06d98e1c63312a42d722cfae3065dc72d02b54c9f` |
+| `Representation/Plancherel/RegularSquareIntegrableJacquetMultiplicityReduction.md` | `f732c4139f82924d22b591f22a33642619dd7ff9251bd99059e2747869bd972d` |
+| `Representation/Plancherel/RepresentedInductionComparison.lean` | `315c1d8a88804deb2505f3028672855a91271d113db188100c7023f4bd471505` |
+| `Representation/Plancherel/RepresentedInductionComparison.md` | `df22e195b9a11f60e9511064211290388747a2ca3335f6cf0cd241b1d83a4267` |
+| `Representation/Plancherel/ParabolicSquareIntegrableModCenter.lean` | `b6869368390b746ad25d1135f59bcacf3c3a29aa144a0b65246e6b7472dba732` |
+| `Representation/Plancherel/ParabolicSquareIntegrableModCenter.md` | `2290bd0c69d777d9b643ad8986271193ff45dbea11b7635dfc7ef578f1fe4caf` |
 
 ## Scope
 
