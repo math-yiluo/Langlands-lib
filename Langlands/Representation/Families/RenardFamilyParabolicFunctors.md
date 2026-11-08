@@ -192,15 +192,24 @@ The transports are the ones the published `leviInductionFunctor` and
 `leviPointsEquiv` before inducing, and along `leviPointsEquiv` after taking the
 Jacquet module.
 
-The comparison boundary of the published complex functors remains. The published
-`RepresentedParabolic.inductionFunctor` uses the full-`P` half modulus, and the
-published `ArbitraryParabolicInduction` documentation records that
-`IsUnimodularModulus` of the radical image `pointImage (r ≫ p)` is not proved for an
-arbitrary represented radical. Mathematically it follows from Renard V.5.2 (iii)
-(PDF p. 129), through `IsLimitOfCompactSubgroups`, but that is not formalized. So the
-Library does not establish that `leviInducedRepresentation` at `B = ℂ` agrees with
-the published complex induction on represented parabolics, and this module does not
-claim it. The Jacquet side has no such boundary: both use `c_U^{-1/2}` on the Levi.
+The published complex `RepresentedParabolic.inductionFunctor` uses the full-`P` half
+modulus instead. The hypothesis of the comparison lemma above, `IsUnimodularModulus`
+of the radical image `pointImage (r ≫ p)`, is a published theorem over a
+nonarchimedean local field: `RepresentedParabolic.isUnimodularModulus_pointImage_radical`
+(module `Langlands.Representation.Exponents.LeviRadicalCompactSubgroups`), for a closed
+subgroup `p` and an `IsUnipotentRadical r`, such as `hr.1` here. It applies the
+published `isUnimodularModulus_of_isLimitOfCompactSubgroups` to the published
+`isLimitOfCompactSubgroups_pointImage_radical`, which says that every compact subset
+of the radical image lies in a compact subgroup (compare Renard V.5.2 (iii), PDF
+p. 129). That theorem assumes `[ValuativeRel k] [IsNonarchimedeanLocalField k]` in
+addition to the `[T2Space k]`, `[LocallyCompactSpace (rationalPoints G)]` and
+`[NonarchimedeanGroup (rationalPoints G)]` of this section, whereas the definitions
+here allow any topological field `k`. This module does not import it, and no Library
+theorem applies it, together with `inducingRepresentation_eq_twist_of_isUnimodularModulus`,
+to the decomposition and closedness used by `LeviInduced`. Nor does the Library
+identify `leviInducedRepresentation` at `B = ℂ` with the published complex induction
+on represented parabolics, and this module does not claim it. The Jacquet side needs
+no such comparison: both use `c_U^{-1/2}` on the Levi.
 
 ## Scope
 

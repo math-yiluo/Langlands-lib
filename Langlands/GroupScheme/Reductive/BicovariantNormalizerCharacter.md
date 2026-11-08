@@ -39,3 +39,6 @@ decomposition. Those are the next consumer obligations. Its provenance
 is the implemented internal deduction from published actual character
 evaluation, normalizing automorphisms, inner conjugation, and bi-covariant
 unit cancellation.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

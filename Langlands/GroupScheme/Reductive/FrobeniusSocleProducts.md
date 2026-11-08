@@ -78,3 +78,6 @@ basis. Tensor irreducibility and the nonzero product remain supplied premises.
 The result concerns generated regular subspaces; it does not identify them
 with an entire covariance space or construct the geometric data required by
 `SteinbergBigCellStatement`.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

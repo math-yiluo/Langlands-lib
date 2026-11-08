@@ -53,3 +53,6 @@ is used. The pinning and full integral coroot-span hypothesis remain supplied.
 The module proves no induced-space dimension bound or irreducibility, and does
 not construct the pinning or a highest-weight module. The full
 `SteinbergBigCellStatement` remains a separate proof obligation.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

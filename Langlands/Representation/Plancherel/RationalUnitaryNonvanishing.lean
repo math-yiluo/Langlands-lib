@@ -44,7 +44,8 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (G : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance rationalUnitaryNonvanishingPointTopology :
+    TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- Restrict the actual scalar algebra to the unitary unramified subgroup. -/

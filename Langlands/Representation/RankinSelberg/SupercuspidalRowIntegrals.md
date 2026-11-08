@@ -32,3 +32,6 @@ These are internal compositions of the imported support, test-function and
 coefficient constructions. The full Kirillov statement and the weighted
 coefficient package remain explicit premises. No rational continuation, pole,
 root of a normalized generator, or L-factor identity is concluded here.
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

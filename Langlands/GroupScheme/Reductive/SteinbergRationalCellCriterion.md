@@ -38,3 +38,6 @@ is the implemented argument from Mathlib's principal-open pullback,
 stalkwise detection of units, Jacobson spaces and rational realization of
 closed points, together with published coordinate evaluation and actual
 cell multiplication. No external structural theorem is assumed.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

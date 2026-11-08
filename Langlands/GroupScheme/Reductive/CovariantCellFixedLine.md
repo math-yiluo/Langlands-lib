@@ -46,3 +46,6 @@ remain supplied hypotheses. This module proves no existence of
 structural big-cell data, Steinberg representations or cofinal
 irreducibility, and it does not prove orbit spanning for any covariant
 space.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

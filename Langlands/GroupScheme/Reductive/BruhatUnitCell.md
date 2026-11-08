@@ -46,3 +46,6 @@ The provenance is this implemented composition of the published coordinate
 covariance, normalizer group law, dynamic limit, subgroup representation,
 opposite-centralizer, opposite-cell and rational-open results. No Bruhat theorem or representation
 irreducibility is proved by this conditional construction.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

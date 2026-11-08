@@ -1,3 +1,4 @@
+import Langlands.Weil.Local.ExtensionWeilEquiv
 import Langlands.Global.Arithmetic.HenniartGlobalizationStatement
 
 /-!
@@ -18,14 +19,6 @@ namespace Langlands.Weil.Local
 variable {p : ℕ} [Fact p.Prime]
   (F : PadicField.{u} p) (E : PadicField.{v} p)
   (f : F.Carrier ≃ₐ[Padic p] E.Carrier)
-
-/-- A p-adic algebra isomorphism has extension degree one. -/
-@[simp] theorem extensionDegree_algEquiv :
-    extensionDegree F E f.toAlgHom = 1 := by
-  have h := finrank_mul_extensionDegree F E f.toAlgHom
-  rw [← f.toLinearEquiv.finrank_eq] at h
-  exact Nat.eq_of_mul_eq_mul_left (Module.finrank_pos (R := Padic p) (M := F.Carrier))
-    (h.trans (mul_one _).symm)
 
 /-- The actual local Weil map of a p-adic algebra isomorphism is bijective. -/
 theorem extensionWeilMap_algEquiv_bijective :

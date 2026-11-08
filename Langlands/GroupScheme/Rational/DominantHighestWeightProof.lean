@@ -21,7 +21,7 @@ variable {k : Type u} [Field k]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (p : SplitPinning G)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance dominantHighestWeightProofIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Every dominant character has a positive multiple realized by a coordinate. -/
 theorem exists_pos_nsmul_isRealizedWeight (lam : characterLattice p.torus)

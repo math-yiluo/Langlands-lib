@@ -66,3 +66,6 @@ proves the existence of normalized root maps. These existence obligations
 remain, along with orbit orthogonality, cross-section geometry and the
 parent quotient theorem. Finite and imperfect fields are retained, and
 no global section in exceptional even type A is asserted.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

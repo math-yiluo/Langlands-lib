@@ -15,7 +15,7 @@ namespace Langlands.Geometry.Building
 
 /-- Adjacent comparable subgroups can be replaced by their supremum in an
 ordered product. The dominant subgroup may be either member of each pair. -/
-private theorem range_orderedProduct_rayPairs {M : Type*} [Group M] {n : ℕ}
+theorem range_orderedProduct_rayPairs {M : Type*} [Group M] {n : ℕ}
     (H : Fin (n * 2) → Subgroup M) (K : Fin n → Subgroup M)
     (hsup : ∀ j, K j = H (finProdFinEquiv (j, 0)) ⊔
       H (finProdFinEquiv (j, 1)))

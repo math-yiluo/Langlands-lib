@@ -32,3 +32,6 @@ and represented subgroups remain supplied data. The two characters have
 not yet been identified with one another or with negative rho. No
 highest-weight representation existence, nonzerodivisor, big-cell
 decomposition or Steinberg irreducibility theorem is claimed here.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

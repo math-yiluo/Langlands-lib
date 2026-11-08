@@ -51,3 +51,6 @@ under the whole group `U`, restriction injectivity, an induced-space dimension
 bound, highest-weight existence, or `SteinbergBigCellStatement`. Its purpose is
 to supply the actual-object degree and root-invariance inputs to the separate
 whole-space argument.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

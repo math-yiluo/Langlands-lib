@@ -13,16 +13,16 @@ universe uF uV uW
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
+local instance supercuspidalProductGammaTopologicalSpace : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supercuspidalProductGammaValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance supercuspidalProductGammaIsNonarchimedeanLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance supercuspidalProductGammaMeasurableSpace : MeasurableSpace F.Carrier := borel _
+local instance supercuspidalProductGammaBorelSpace : BorelSpace F.Carrier := ⟨rfl⟩
+local instance supercuspidalProductGammaMeasurableSpace2 (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
+local instance supercuspidalProductGammaBorelSpace2 (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supercuspidalProductGammaMeasurableSpace3 (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
+local instance supercuspidalProductGammaBorelSpace3 (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supercuspidalProductGammaMeasurableSpace4 (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
 
 section EpsilonGamma
 

@@ -22,7 +22,7 @@ namespace VectorGroup
 
 variable (k : Type u) [Field k]
 
-local instance : IsAffineHom (groupScheme (CommRingCat.of k) 1).X.hom :=
+local instance normalizedRootVectorGroupAffine : IsAffineHom (groupScheme (CommRingCat.of k) 1).X.hom :=
   isAffineHom_groupScheme (CommRingCat.of k) 1
 
 /-- The actual standard epsilon vector of the additive group is nonzero. -/

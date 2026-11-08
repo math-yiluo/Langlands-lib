@@ -76,3 +76,6 @@ split maximal-torus geometry remain supplied inputs. This module does not
 construct them from quasi-splitness, prove equivariance of the chosen pinning
 vectors, or assert a cross-section or quotient theorem. In particular it makes
 no assertion of a global rational section in even type A.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

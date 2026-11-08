@@ -21,7 +21,7 @@ variable {k : Type u} [Field k]
   (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
   {n : Type} [Fintype n] [DecidableEq n]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantCoefficientExhaustionIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Fixing the covector makes the original matrix coefficient linear in the vector. -/
 def matrixCoefficientLinearMap (ρ : MatrixRepresentation G n) (ξ : n → k) :
@@ -110,7 +110,7 @@ section Covariant
 
 variable {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom]
 
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance covariantCoefficientExhaustionIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 variable (ρ : MatrixRepresentation G n) (ξ : n → k) (i : H ⟶ G) (χ : algebra H)
   (hξ : ∀ (T : Over (Spec (CommRingCat.of k))) (h : T ⟶ H.X),
@@ -174,7 +174,7 @@ open AffineCoordinates AffineLinearEmbedding MatrixRepresentation
 variable {k : Type u} [Field k]
   (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantCoefficientExhaustionIsAffine3 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 variable (V : Submodule k (algebra G)) {d : ℕ} (b : Basis (Fin d) k V)
   (hV : letI := (bialgebra (corepresentation G)).toCoalgebra
@@ -210,8 +210,8 @@ variable {k : Type u} [Field k]
   {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom]
   {n : Type} [Fintype n] [DecidableEq n]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance covariantCoefficientExhaustionIsAffine4 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantCoefficientExhaustionIsAffine5 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 variable (ρ : MatrixRepresentation G n) (ξ : n → k) (i : H ⟶ G) (χ : algebra H)
   (hξ : ∀ (T : Over (Spec (CommRingCat.of k))) (h : T ⟶ H.X),

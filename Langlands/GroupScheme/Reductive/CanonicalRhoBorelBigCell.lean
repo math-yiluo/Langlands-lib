@@ -63,7 +63,7 @@ variable {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (hspan : p.rootDatum.corootSpan ℤ = ⊤)
 
 local instance : p.rootDatum.IsReduced := p.isReduced
-local instance : IsClosedImmersion p.inclusion.hom.hom.left := p.isMaximalTorus.2.1
+local instance canonicalRhoBorelBigCellIsClosedImmersion : IsClosedImmersion p.inclusion.hom.hom.left := p.isMaximalTorus.2.1
 
 local notation "ν₀" =>
   p.rootDatum.Polarization (IntegralWeylVector.rho p.rootDatum p.base hspan)

@@ -22,11 +22,11 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {G : GroupScheme (Spec (CommRingCat.of F))}
   (M : IntegralModel ↥𝒪[F] F G)
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+local instance unramifiedModelClassificationAlgebra : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+local instance unramifiedModelClassificationScalarTower : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 

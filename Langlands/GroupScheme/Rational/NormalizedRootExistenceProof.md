@@ -103,3 +103,6 @@ these reflection witnesses gives the two families in the closing theorem.
 No braid relations, Galois compatibility, pinning existence, cross-section
 geometry, invariant-quotient comparison, or global rational section for
 arbitrary quasi-split groups is asserted.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

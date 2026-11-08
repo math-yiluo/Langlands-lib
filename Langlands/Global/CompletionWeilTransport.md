@@ -45,3 +45,5 @@ of the target. The field universes are independent as well.
 This module proves transport properties only. The existence of global fields,
 witnessed pairs and the image-containment conclusion of Henniart globalization
 remain separate proof obligations.
+
+`extensionDegree_algEquiv` is imported from `Langlands.Weil.Local.ExtensionWeilEquiv`; its full name and statement are unchanged.

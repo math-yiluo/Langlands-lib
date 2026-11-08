@@ -76,7 +76,7 @@ variable (k K : Type u) [Field k] [Field K] [Algebra k K]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (i : T.toGrp ⟶ G)
 
-local instance :
+local instance steinbergCanonicalGaloisTransportIsAffineHom :
     IsAffineHom ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance

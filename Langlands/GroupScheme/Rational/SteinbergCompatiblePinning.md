@@ -100,3 +100,6 @@ from quasi-splitness, classify Galois orbits or prove their orthogonality,
 construct Steinberg's cross-section or its even-type-A substitutes, or prove
 the parent class-quotient theorem. In particular, it asserts no global
 rational section of the quotient map.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

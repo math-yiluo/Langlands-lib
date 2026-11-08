@@ -32,3 +32,6 @@ admissibility assumption. The final theorem assumes only the original
 normalized-exponent temperedness and the connected reductivity of the two
 ambient groups, beyond those topology and field hypotheses. It neither proves
 square-integrability nor the final VII.2.6 classification statements.
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

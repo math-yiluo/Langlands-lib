@@ -87,3 +87,6 @@ The admissibility of the literal induction stays an explicit hypothesis. This
 module proves no bound on the represented unitary Hom space, no geometric
 filtration and no irreducibility. Its purpose is to let a represented-model
 bound on that unitary Hom space be applied to the literal target.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

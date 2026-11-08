@@ -16,10 +16,10 @@ universe uF uV uW
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance supercuspidalEqualRankLaurentTopologicalSpace : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supercuspidalEqualRankLaurentValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance supercuspidalEqualRankLaurentIsNonarchimedeanLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance supercuspidalEqualRankLaurentT2Space : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
 
 variable {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
   {π : Representation ℂ (Langlands.GeneralLinear (n + 1) F.Carrier) V}

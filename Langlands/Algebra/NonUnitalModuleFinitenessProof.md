@@ -127,3 +127,5 @@ no proof of these integer comparisons. This proof follows no literature route.
 It proves only the five stated comparisons and makes no claim about the
 source's complex scalars, the nondegenerate-module category or the
 convention for possibly nonunital Noetherian algebras.
+
+The order-isomorphism transfers for subobject unions and Noetherianity now reuse the general `Langlands.Renard` helpers in `Langlands.CategoryTheory.Renard.SubobjectOrderIsoTransfer`. The application-specific theorem names and statements are unchanged.

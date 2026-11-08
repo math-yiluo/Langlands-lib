@@ -48,3 +48,6 @@ introduced. Neither compatibility of arbitrary supplied normalized maps nor
 existence of compatible choices is inferred. The parent quotient theorem,
 cross-section descent, exceptional even-type-A geometry, and rational lifting
 remain separate obligations.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

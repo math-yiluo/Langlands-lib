@@ -12,7 +12,7 @@ open scoped WithZero
 universe u
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{u} p} (T : F.TopologicalData)
 
-private theorem filtrationValuationIntegers : T.discreteValuation.Integers T.Integers := by
+theorem filtrationValuationIntegers : T.discreteValuation.Integers T.Integers := by
   refine ⟨Subtype.val_injective, ?_, ?_⟩
   · intro x
     exact (T.mem_integers_iff_discreteValuation_le_one x.val).mp x.property

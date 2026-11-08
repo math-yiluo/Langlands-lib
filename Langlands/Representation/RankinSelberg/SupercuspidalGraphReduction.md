@@ -241,3 +241,6 @@ Kirillov theorem at universes `uV` and `uW`. Next it applies
 `nonempty_equiv_of_sameProductGammaFactors` and concludes with `Quotient.sound`.
 The isomorphism of supercuspidal representations is built from the equivalence by
 `SmoothRep.mkIso`.
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

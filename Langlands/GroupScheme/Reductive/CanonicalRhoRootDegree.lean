@@ -19,7 +19,7 @@ variable {k : Type u} [Field k]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (p : SplitPinning G)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance canonicalRhoRootDegreeIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The actual polynomial coordinate along the fixed linked negative
 simple-root curve through the supplied rational point. -/

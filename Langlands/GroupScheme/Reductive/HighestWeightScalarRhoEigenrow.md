@@ -67,3 +67,6 @@ span or highest-weight representation, prove dimension bounds or coefficient
 exhaustion, or prove `SteinbergBigCellStatement`. The general construction and
 its specialization are internal consequences of the named Library interfaces;
 no external literature assertion is used as an additional premise.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

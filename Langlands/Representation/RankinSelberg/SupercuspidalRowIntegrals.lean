@@ -14,10 +14,10 @@ universe uF uV uW
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance supercuspidalRowIntegralsTopologicalSpace : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supercuspidalRowIntegralsValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance supercuspidalRowIntegralsIsNonarchimedeanLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance supercuspidalRowIntegralsT2Space : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
 
 variable {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
   {W : Type uW} [AddCommGroup W] [Module ℂ W]

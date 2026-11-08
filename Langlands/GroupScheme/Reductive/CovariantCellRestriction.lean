@@ -17,9 +17,9 @@ variable {k : Type u} [Field k]
   {G H U : GroupScheme (Spec (CommRingCat.of k))}
   [IsAffineHom G.X.hom] [IsAffineHom H.X.hom] [IsAffineHom U.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
-local instance : IsAffine U.X.left := isAffine_of_isAffineHom U.X.hom
+local instance covariantCellRestrictionIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantCellRestrictionIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance covariantCellRestrictionIsAffine3 : IsAffine U.X.left := isAffine_of_isAffineHom U.X.hom
 
 variable (i : H ⟶ G) (j : U ⟶ G) (χ : algebra H)
 

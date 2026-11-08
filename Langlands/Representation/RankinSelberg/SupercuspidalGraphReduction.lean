@@ -116,7 +116,7 @@ section Kirillov
 
 variable {p : ℕ} [hp : Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supercuspidalGraphReductionTopologicalSpace : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
 
 variable {r : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
   {V' : Type uV} [AddCommGroup V'] [Module ℂ V']
@@ -409,18 +409,18 @@ section Padic
 
 variable {p : ℕ} [hp : Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
-local instance : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
-local instance : MeasurableSpace F.Carrier := borel _
-local instance : BorelSpace F.Carrier := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
-local instance (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
-local instance (n : ℕ) : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
+local instance supercuspidalGraphReductionTopologicalSpace2 : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance supercuspidalGraphReductionValuativeRel : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance supercuspidalGraphReductionIsNonarchimedeanLocalField : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance supercuspidalGraphReductionT2Space : T2Space F.Carrier := F.canonicalTopologicalData.fieldT2
+local instance supercuspidalGraphReductionMeasurableSpace : MeasurableSpace F.Carrier := borel _
+local instance supercuspidalGraphReductionBorelSpace : BorelSpace F.Carrier := ⟨rfl⟩
+local instance supercuspidalGraphReductionMeasurableSpace2 (n : ℕ) : MeasurableSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := borel _
+local instance supercuspidalGraphReductionBorelSpace2 (n : ℕ) : BorelSpace (Langlands.GeneralLinear (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supercuspidalGraphReductionMeasurableSpace3 (n : ℕ) : MeasurableSpace (upperUnipotent (n + 1) F.Carrier) := borel _
+local instance supercuspidalGraphReductionBorelSpace3 (n : ℕ) : BorelSpace (upperUnipotent (n + 1) F.Carrier) := ⟨rfl⟩
+local instance supercuspidalGraphReductionMeasurableSpace4 (n : ℕ) : MeasurableSpace (LeftUnipotentQuotient n F.Carrier) := borel _
+local instance supercuspidalGraphReductionBorelSpace4 (n : ℕ) : BorelSpace (LeftUnipotentQuotient n F.Carrier) := ⟨rfl⟩
 
 local notation "abv" => normalizedAbsoluteValue F.canonicalTopologicalData
 local notation "qF" => F.canonicalTopologicalData.residueCardinality

@@ -66,9 +66,9 @@ variable {k : Type u} [Field k]
     {G H Q : GroupScheme (Spec (CommRingCat.of k))}
     [IsAffineHom G.X.hom] [IsAffineHom H.X.hom] [IsAffineHom Q.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
-local instance : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
+local instance bruhatUnitCellIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance bruhatUnitCellIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance bruhatUnitCellIsAffine3 : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
 
 /-- A unit value of a bi-covariant coordinate on a subgroup-normalizer-subgroup
 product forces a unit value at its middle point. -/

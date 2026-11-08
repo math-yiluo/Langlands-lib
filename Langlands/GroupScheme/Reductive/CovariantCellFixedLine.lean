@@ -16,7 +16,7 @@ variable {k : Type u} [Field k]
   {G H U : GroupScheme (Spec (CommRingCat.of k))}
   [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantCellFixedLineIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The coordinate functions invariant under right multiplication through a
 supplied group-scheme morphism, on every relative scheme test. -/
@@ -75,7 +75,7 @@ theorem eq_of_pointAlgebraHom_eq_on_unit_locus {q f f' : algebra G}
 
 variable [IsAffineHom H.X.hom]
 
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance covariantCellFixedLineIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 /-- On a supplied product cell, a right-invariant covariant function is its
 identity value times the supplied normalized right-invariant covariant. -/

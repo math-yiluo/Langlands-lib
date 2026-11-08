@@ -30,3 +30,6 @@ homomorphism.
 All content is internally derived from the imported Library results. This
 module does not supply a closed proof of Proposition (8.4), grouping, or
 Theorem (9.5).
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

@@ -20,7 +20,7 @@ namespace Langlands.GroupScheme.AffineCoordinates
 variable {k : Type u} [Field k]
     (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance steinbergRationalCellCriterionIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- A coordinate evaluates to a global unit exactly when the entire image of
 the test scheme lies in its principal open. No reducedness or affineness of

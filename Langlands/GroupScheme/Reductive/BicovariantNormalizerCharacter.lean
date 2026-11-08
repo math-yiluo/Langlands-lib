@@ -51,9 +51,9 @@ theorem isIntertwiningPoint_of_normalizer
 
 variable [IsAffineHom G.X.hom] [IsAffineHom H.X.hom] [IsAffineHom Q.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
-local instance : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
+local instance bicovariantNormalizerCharacterIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance bicovariantNormalizerCharacterIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance bicovariantNormalizerCharacterIsAffine3 : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
 
 variable (i : H ⟶ G) (q : Q ⟶ G) (j : T.toGrp ⟶ G)
     (jH : T.toGrp ⟶ H) (jQ : T.toGrp ⟶ Q)

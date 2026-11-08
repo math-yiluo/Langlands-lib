@@ -90,3 +90,6 @@ The module supplies the weight-space conclusions for a realizing
 coordinate already provided as input. Construction of such a coordinate,
 irreducibility of the socle, and the exact unconditional
 fundamental-representation existence theorem are separate obligations.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

@@ -24,8 +24,8 @@ variable {F : Type u} [Field F] [TopologicalSpace F]
   (r : ParabolicRootPresentation p l a)
 
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
-local instance : TopologicalSpace (rationalPoints M) := rationalPointTopology F M.X
+local instance parabolicGenericIrreducibilityPointTopology : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance parabolicGenericIrreducibilityStatementTopologicalSpace : TopologicalSpace (rationalPoints M) := rationalPointTopology F M.X
 
 /-- The actual image of the split component is central in the literal Levi. -/
 theorem parabolicSplitComponentPointHom_range_le_center :

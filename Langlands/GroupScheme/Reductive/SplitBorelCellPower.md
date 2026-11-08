@@ -124,3 +124,6 @@ unfolds membership.
 `n > 0`, `n • lam ∈ p.realizedWeights` if and only if `lam ∈ p.realizedWeights`.
 One direction is `IsRealizedWeight.of_nsmul`, and the other is closure of a
 submonoid under multiples.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

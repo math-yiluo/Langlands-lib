@@ -57,7 +57,7 @@ local notation "T_K" => CategoryTheory.Functor.obj (CommGroupScheme.baseChange (
 local notation "G_K" => CategoryTheory.Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) G
 local notation "i_K" => CategoryTheory.Functor.map (GroupScheme.baseChange (algebraBaseMap k K)) i
 
-local instance : IsAffineHom (G_K).X.hom := by
+local instance regularCocharacterPinningBaseChangeAffine : IsAffineHom (G_K).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 

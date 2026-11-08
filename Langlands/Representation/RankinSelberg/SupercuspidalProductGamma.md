@@ -45,3 +45,6 @@ induced representation has the existing induced carrier universe
 `max uF uW`; no resizing or classification theorem is assumed. The provenance
 is this composition of Library APIs and the block-zero Laurent helper. The
 Kirillov proof and the final converse argument remain separate obligations.
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

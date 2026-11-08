@@ -83,7 +83,7 @@ variable {k : Type u} [Field k]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     {p : SplitPinning G}
 
-local instance : Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
+local instance steinbergCyclicGaugeMono : Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
 local instance : Mono p.inclusion.hom.hom := Over.mono_of_mono_left _
 
 /-- Two actual normalizer points with equal full Weyl action differ by a torus point. -/

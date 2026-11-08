@@ -54,3 +54,6 @@ support bound and socle dimension bound; those bounds are not constructed
 for general Steinberg weights here. Polynomial cell coordinates and the
 geometric factorization also remain supplied. The universal
 `SteinbergBigCellStatement` is not proved by this module.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

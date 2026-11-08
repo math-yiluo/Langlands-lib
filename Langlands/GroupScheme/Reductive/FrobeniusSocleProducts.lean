@@ -74,7 +74,7 @@ section Regular
 variable {k : Type u} [Field k]
   (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance frobeniusSocleProductsIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 variable (V : Submodule k (algebra G)) {d : ℕ} (bV : Basis (Fin d) k V)
   (hV : letI := (bialgebra (corepresentation G)).toCoalgebra
@@ -147,7 +147,7 @@ variable {k : Type u} [Field k] (p : ℕ) [ExpChar k p] [PerfectRing k p]
   (G : GroupScheme (Spec (CommRingCat.of k)))
   [IsAffineHom G.X.hom] [IsReduced G.X.left]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance frobeniusSocleProductsIsAffine2 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 local instance frobeniusSocleProductsReducedAlgebra :
     _root_.IsReduced (algebra G) := by

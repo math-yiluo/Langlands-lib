@@ -154,3 +154,6 @@ Throughout, `c_χ : B ⟶ B[X, X⁻¹]` is the Library coaction
    three inclusions return to `G` by `parabolic_eq_comap_of_iso`,
    `unipotent_eq_comap_of_iso`, `centralizer_eq_comap_of_iso` (applied to
    `E.symm`) and `SubgroupFunctor.comap_mono`.
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

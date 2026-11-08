@@ -25,8 +25,8 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (pres : ParabolicRootPresentation p l a)
 
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
-local instance : TopologicalSpace (rationalPoints M) := rationalPointTopology F M.X
+local instance parabolicJacquetUnitaryRestrictionTopologicalSpace : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance parabolicJacquetUnitaryRestrictionTopologicalSpace2 : TopologicalSpace (rationalPoints M) := rationalPointTopology F M.X
 local instance : T2Space F := BruhatTits.localField_t2Space F
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]

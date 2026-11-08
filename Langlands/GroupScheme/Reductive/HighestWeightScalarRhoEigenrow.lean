@@ -88,12 +88,12 @@ local notation "ν₀" =>
   p.rootDatum.Polarization (IntegralWeylVector.rho p.rootDatum p.base hspan)
 local notation "λ₀" => CommGroupScheme.groupHom ν₀ ≫ p.inclusion
 
-local instance {K : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom K.X.hom] :
+local instance highestWeightScalarRhoEigenrowIsAffine {K : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom K.X.hom] :
     IsAffine K.X.left := isAffine_of_isAffineHom K.X.hom
 
 attribute [local irreducible] RootPairing.Polarization
 
-local instance : IsAffineHom (Dynamic.Affine.parabolicScheme λ₀).X.hom := by
+local instance highestWeightScalarRhoEigenrowIsAffineHom : IsAffineHom (Dynamic.Affine.parabolicScheme λ₀).X.hom := by
   let : IsClosedImmersion (Dynamic.Affine.parabolicHom λ₀).hom.hom.left :=
     Dynamic.Affine.isClosedSubgroup_parabolicHom λ₀
   rw [← Over.w (Dynamic.Affine.parabolicHom λ₀).hom.hom]

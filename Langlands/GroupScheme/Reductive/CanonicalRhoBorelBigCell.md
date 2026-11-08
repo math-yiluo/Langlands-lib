@@ -69,3 +69,6 @@ full integral coroot span for simply connected groups, highest-weight
 existence, and the whole-space seventh law remain obligations for the
 exact host target. The general Borel-pair and covering lemmas do not
 require algebraic closedness until the covering step.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

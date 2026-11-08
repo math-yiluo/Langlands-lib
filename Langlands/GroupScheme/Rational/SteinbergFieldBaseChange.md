@@ -77,3 +77,6 @@ nor the desired quotient-isomorphism result is assumed in this equivalence.
 It reduces the desired property to an algebraic extension of the supplied
 data; proving that property over an algebraic closure remains a separate
 obligation of the main split Steinberg quotient theorem.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

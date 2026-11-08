@@ -68,3 +68,6 @@ derived from cuspidality. This unit therefore does not prove the unconditional
 estimate is supplied as a proved theorem, its hypotheses fit
 `padicUnitaryFormOfCover` directly. No relation between `uF` and `uQ` and no
 replacement of the original component carrier is used.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

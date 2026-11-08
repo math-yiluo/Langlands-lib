@@ -69,9 +69,9 @@ variable {k : Type u} [Field k] [TopologicalSpace k]
   {G G' : GroupScheme (Spec (CommRingCat.of k))}
   [IsAffineHom G.X.hom] [IsAffineHom G'.X.hom]
 
-local instance ambientTransportPointTopology : TopologicalSpace (rationalPoints G) :=
+local instance arbitraryParabolicTemperedAmbientPointTopology : TopologicalSpace (rationalPoints G) :=
   RationalPointFamily.pointTopology
-local instance ambientTransportPointTopology' : TopologicalSpace (rationalPoints G') :=
+local instance arbitraryParabolicTemperedAmbientPointTopology' : TopologicalSpace (rationalPoints G') :=
   RationalPointFamily.pointTopology
 
 /-- The canonical topological group equivalence is the actual rational-point

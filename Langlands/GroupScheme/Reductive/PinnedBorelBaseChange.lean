@@ -24,7 +24,7 @@ variable {k K : Type u} [Field k] [Field K] [Algebra k K]
 
 local notation "b" => algebraBaseMap k K
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+local instance pinnedBorelBaseChangeIsAffineHom : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 

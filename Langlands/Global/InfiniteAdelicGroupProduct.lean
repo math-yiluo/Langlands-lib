@@ -96,7 +96,7 @@ namespace GeneralLinearGroupPoints
 
 variable (n : ℕ)
 
-local instance generalLinearIsAffine :
+local instance infiniteAdelicGeneralLinearIsAffine :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of F)
 

@@ -59,3 +59,6 @@ no external source is cited. Split pinning, integral coroot span, highest-weight
 existence, Bruhat covering and the entire-space seventh law remain separate
 obligations for the exact host target. No characteristic assumption is needed
 for these conditional constructions.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

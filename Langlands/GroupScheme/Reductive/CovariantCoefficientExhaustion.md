@@ -80,3 +80,6 @@ lowest eigen-row, prove a whole-space upper dimension bound, or assert that
 the generic inputs exist for every simply connected group. Those remain
 separate obligations in `SteinbergBigCellStatement`; the host proposition is
 not proved here.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

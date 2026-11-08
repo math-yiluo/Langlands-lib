@@ -50,3 +50,6 @@ the source building and its exact comparison remain explicit inputs.
 This module constructs none of those inputs, no downstairs special point,
 and no metric. It does not prove the unconditional
 `BuildingComparisonStatement`.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

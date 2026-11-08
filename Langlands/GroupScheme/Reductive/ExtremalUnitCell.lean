@@ -18,7 +18,7 @@ namespace AffineCoordinates
 variable {k : Type u} [Field k] {n : Type} [Fintype n] [DecidableEq n]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance extremalUnitCellIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The constructed diagonal coefficient is a nonzerodivisor on a connected
 reductive group, without any weight hypothesis on the representation. -/

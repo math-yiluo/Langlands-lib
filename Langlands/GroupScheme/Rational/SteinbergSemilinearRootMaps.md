@@ -52,3 +52,6 @@ normalization, construct a Galois-compatible pinning or root-map family,
 or deduce `RootMapsGaloisCompatible`. It establishes neither cross-section
 geometry nor the parent quotient theorem, and makes no exceptional
 even-type-A section claim.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

@@ -27,19 +27,19 @@ theorem isDominantWeight_rho :
   rw [IntegralWeylVector.pairing_rho_simple]
   exact zero_le_one
 
-local instance : p.rootDatum.IsReduced := p.isReduced
-local instance : IsClosedImmersion p.inclusion.hom.hom.left := p.isMaximalTorus.2.1
+local instance highestWeightBigCellIsReduced : p.rootDatum.IsReduced := p.isReduced
+local instance highestWeightBigCellIsClosedImmersion : IsClosedImmersion p.inclusion.hom.hom.left := p.isMaximalTorus.2.1
 
 local notation "ν₀" =>
   p.rootDatum.Polarization (IntegralWeylVector.rho p.rootDatum p.base hspan)
 local notation "λ₀" => CommGroupScheme.groupHom ν₀ ≫ p.inclusion
 
-local instance {K : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom K.X.hom] :
+local instance highestWeightBigCellIsAffine {K : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom K.X.hom] :
     IsAffine K.X.left := isAffine_of_isAffineHom K.X.hom
 
 attribute [local irreducible] RootPairing.Polarization
 
-local instance : IsAffineHom (Affine.parabolicScheme λ₀).X.hom := by
+local instance highestWeightBigCellIsAffineHom : IsAffineHom (Affine.parabolicScheme λ₀).X.hom := by
   let : IsClosedImmersion (Affine.parabolicHom λ₀).hom.hom.left :=
     Affine.isClosedSubgroup_parabolicHom λ₀
   rw [← Over.w (Affine.parabolicHom λ₀).hom.hom]

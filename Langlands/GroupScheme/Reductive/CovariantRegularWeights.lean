@@ -103,7 +103,7 @@ namespace AffineCoordinates
 variable {k : Type u} [Field k]
     (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantRegularWeightsIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Comparison of the two chosen affine coordinate presentations of the same group. -/
 def lieCoordinateEquiv : algebra G ≃ₐ[k] CharacterUnits.Coord G :=
@@ -220,7 +220,7 @@ variable {k : Type u} [Field k]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (p : SplitPinning G)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantRegularWeightsIsAffine2 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance : IsAffine p.positiveUnipotent.X.left :=
   isAffine_of_isAffineHom p.positiveUnipotent.X.hom
 local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom

@@ -66,3 +66,6 @@ final root-vector formula, because that assembly uses algebraic-extension ascent
 The module does not construct base-changed normalized root parametrizations or
 reflection representatives, prove their ordered-product comparison, or establish
 the canonical quotient isomorphism. Those are subsequent consumer obligations.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

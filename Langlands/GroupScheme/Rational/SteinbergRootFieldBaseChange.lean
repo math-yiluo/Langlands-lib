@@ -51,7 +51,7 @@ variable {k F : Type u} [Field k] [Field F] [Algebra k F]
 local notation "bc" => algebraBaseMap k F
 local notation "GF" => Functor.obj (GroupScheme.baseChange bc) G
 
-local instance : IsAffineHom (GF).X.hom := by
+local instance steinbergRootFieldBaseChangeIsAffineHom : IsAffineHom (GF).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom bc)
   infer_instance
 

@@ -34,3 +34,6 @@ nonzero scalar c for which the normalized denominator P divides
 X^(n+1) - c. This binomial is separable over the complex numbers; consequently
 P is separable and squarefree as well. Identifying its roots with the
 contragredient twist parameters remains a separate obligation.
+
+Integration uses module-specific names for local instances. Their types, values,
+and local instance scopes are unchanged.

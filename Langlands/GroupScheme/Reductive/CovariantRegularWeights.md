@@ -62,3 +62,6 @@ actual affine presentations, regular representation, and published
 no additional structural or existence hypothesis. It does not construct a
 normalized covariant coordinate or establish that `lam` occurs, its
 multiplicity, or unconditional fundamental-representation existence.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

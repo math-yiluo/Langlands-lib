@@ -1,3 +1,4 @@
+import Langlands.Representation.Classification.InverseTransposeHelpers
 import Langlands.Representation.Classification.IrreducibleTwoFactorProductSwapStatement
 import Langlands.Representation.Smooth.Contragredient.GelfandKazhdanProof
 import Langlands.Representation.Parabolic.InverseTransposeProductProof
@@ -41,22 +42,12 @@ section InverseTranspose
 
 variable {N : ℕ}
 
-/-- The pullback of a smooth representation of `GL_N(F)` along inverse
-transpose, on the same carrier. -/
-private abbrev itPullback
-    (A : letI := T.topology; SmoothRep.{0, uF, uV} ℂ (GeneralLinear N F.Carrier)) :
-    letI := T.topology
-    SmoothRep.{0, uF, uV} ℂ (GeneralLinear N F.Carrier) :=
-  letI := T.topology
-  SmoothRep.of (A.representation.comp (GeneralLinear.inverseTranspose N F.Carrier).toMonoidHom)
-    (isSmooth_comp _ (GeneralLinear.continuous_inverseTranspose N F.Carrier) A.isSmooth)
-
 /-- Inverse-transpose pullback of an isomorphism, with the same linear map. -/
 private def itPullbackIso
     {A A' : letI := T.topology; SmoothRep.{0, uF, uV} ℂ (GeneralLinear N F.Carrier)}
     (f : letI := T.topology; A ≅ A') :
     letI := T.topology
-    itPullback F T A ≅ itPullback F T A' := by
+    hermitianItPullback F T A ≅ hermitianItPullback F T A' := by
   letI := T.topology
   let E := SmoothRep.equivOfIso f
   refine SmoothRep.mkIso (Representation.Equiv.mk E.toLinearEquiv fun g => ?_)
@@ -69,43 +60,13 @@ original representation through the identity map. -/
 private def itPullbackTwiceIso
     (A : letI := T.topology; SmoothRep.{0, uF, uV} ℂ (GeneralLinear N F.Carrier)) :
     letI := T.topology
-    itPullback F T (itPullback F T A) ≅ A := by
+    hermitianItPullback F T (hermitianItPullback F T A) ≅ A := by
   letI := T.topology
   refine SmoothRep.mkIso (Representation.Equiv.mk (LinearEquiv.refl ℂ A) fun g => ?_)
   ext v
   change A.representation (GeneralLinear.inverseTranspose N F.Carrier
     (GeneralLinear.inverseTranspose N F.Carrier g)) v = A.representation g v
   rw [GeneralLinear.inverseTranspose_involutive]
-
-/-- The published Gelfand–Kazhdan theorem under the selected topology `T.topology`
-of `F`, for an arbitrary positive rank `N`: inverse-transpose pullback realizes
-the smooth dual of an irreducible admissible representation. -/
-private theorem gelfandKazhdanEquiv (hN : 0 < N) {V : Type uV} [AddCommGroup V]
-    [Module ℂ V] :
-    letI := T.topology
-    letI := T.generalLinearTopologicalGroup N
-    ∀ ρ : Representation ℂ (GeneralLinear N F.Carrier) V,
-      IsAdmissible ρ → Representation.IsIrreducible ρ →
-      Nonempty (Representation.Equiv
-        (ρ.comp (GeneralLinear.inverseTranspose N F.Carrier).toMonoidHom)
-        (smoothContragredient ρ)) := by
-  obtain ⟨n, rfl⟩ : ∃ n, N = n + 1 := ⟨N - 1, by omega⟩
-  let tc : TopologicalSpace F.Carrier := (letI := F.canonicalNormedField; inferInstance)
-  have key : ∀ t : TopologicalSpace F.Carrier, tc = t →
-      ∀ [IsTopologicalGroup (GeneralLinear (n + 1) F.Carrier)]
-        (ρ : Representation ℂ (GeneralLinear (n + 1) F.Carrier) V),
-        IsAdmissible ρ → Representation.IsIrreducible ρ →
-        Nonempty (Representation.Equiv
-          (ρ.comp (GeneralLinear.inverseTranspose (n + 1) F.Carrier).toMonoidHom)
-          (smoothContragredient ρ)) := by
-    intro t ht
-    subst ht
-    intro _ ρ hadm hirr
-    obtain ⟨E, hE⟩ := gelfandKazhdanContragredient p inferInstance F n V ρ hadm hirr
-    exact ⟨Representation.Equiv.mk E (fun g => LinearMap.ext (hE g))⟩
-  letI := T.topology
-  letI := T.generalLinearTopologicalGroup (n + 1)
-  exact key T.topology T.topology_eq_canonicalNormTopology.symm
 
 /-- Gelfand–Kazhdan for bundled smooth representations: the inverse-transpose
 pullback of an irreducible admissible representation is its smooth dual. -/
@@ -114,11 +75,11 @@ private theorem gelfandKazhdanIso (hN : 0 < N)
     letI := T.topology
     letI := T.generalLinearTopologicalGroup N
     A.IsAdmissible → A.IsIrreducible →
-      Nonempty (itPullback F T A ≅ A.contragredient) := by
+      Nonempty (hermitianItPullback F T A ≅ A.contragredient) := by
   letI := T.topology
   letI := T.generalLinearTopologicalGroup N
   intro hadm hirr
-  obtain ⟨E⟩ := gelfandKazhdanEquiv F T hN A.representation hadm hirr
+  obtain ⟨E⟩ := hermitianGelfandKazhdanEquiv F T hN A.representation hadm hirr
   exact ⟨SmoothRep.mkIso E⟩
 
 end InverseTranspose
@@ -155,43 +116,6 @@ private theorem productSmoothDualEquiv {n : ℕ} (B : BlockShape n)
       (FiniteTensor.smoothDualTensorIntertwiner τ).isIntertwining'
   exact ⟨(EI σ hσ).trans (T.normalizedParabolicInducedEquiv B e2.symm)⟩
 
-/-- Inverse transpose reverses the blocks of a normalized product and pulls
-back each block by its own inverse transpose. -/
-private theorem itPullbackProductIso {n : ℕ} (hn : 0 < n) (B : BlockShape n)
-    (A : letI := T.topology
-      ∀ i, SmoothRep.{0, uF, uV} ℂ (GeneralLinear (B.size i) F.Carrier)) :
-    letI := T.topology
-    Nonempty (itPullback F T ((T.normalizedProductInductionFunctor B).obj A) ≅
-      (T.normalizedProductInductionFunctor B.reverse).obj (fun i => itPullback F T (A i.rev))) := by
-  letI := T.topology
-  letI := T.generalLinearTopologicalGroup n
-  let σ := fun i => (A i).representation
-  let τ := fun i : Fin B.reverse.length => (itPullback F T (A i.rev)).representation
-  have E : Representation.Equiv ((T.normalizedProductInduced B σ).comp
-        (GeneralLinear.inverseTranspose n F.Carrier).toMonoidHom)
-      (T.normalizedProductInduced B.reverse τ) :=
-    Classical.choice (Parabolic.normalizedProductInverseTranspose T n hn B (fun i => A i)
-      σ (fun i => (A i).isSmooth))
-  exact ⟨SmoothRep.mkIso (A := itPullback F T ((T.normalizedProductInductionFunctor B).obj A))
-    (B := (T.normalizedProductInductionFunctor B.reverse).obj
-      (fun i => itPullback F T (A i.rev))) E⟩
-
-/-- Equal block shapes with heterogeneously equal block families give
-isomorphic normalized products. -/
-private theorem productFunctor_obj_congr {n : ℕ} {B C : BlockShape n} (h : B = C)
-    (A : letI := T.topology
-      ∀ i : Fin B.length, SmoothRep.{0, uF, uV} ℂ (GeneralLinear (B.size i) F.Carrier))
-    (A' : letI := T.topology
-      ∀ i : Fin C.length, SmoothRep.{0, uF, uV} ℂ (GeneralLinear (C.size i) F.Carrier))
-    (hA : HEq A A') :
-    letI := T.topology
-    Nonempty ((T.normalizedProductInductionFunctor B).obj A ≅
-      (T.normalizedProductInductionFunctor C).obj A') := by
-  letI := T.topology
-  subst h
-  obtain rfl := eq_of_heq hA
-  exact ⟨Iso.refl _⟩
-
 /-- Reversing the equal-rank two-block shape gives the same shape. -/
 private theorem twoBlocks_reverse {k : ℕ} (hk : 0 < k) :
     (Shahidi.twoBlocks k k hk hk).reverse = Shahidi.twoBlocks k k hk hk := by
@@ -225,18 +149,18 @@ theorem irreducibleTwoFactorProductSwap : IrreducibleTwoFactorProductSwap.{uF, u
     · exact hαa
     · exact hβa
   -- `Y ∘ θ` is the reversed product of the pulled-back blocks.
-  have e1 := (itPullbackProductIso F T hn B fba).some
+  have e1 := (hermitianItPullbackProductIso F T hn B fba).some
   -- The reversed shape is the same shape, and the reversed family is `(α ∘ θ, β ∘ θ)`.
-  have hfam : HEq (fun i : Fin B.reverse.length => itPullback F T (fba i.rev))
-      (fun i : Fin B.length => itPullback F T (fab i)) := by
+  have hfam : HEq (fun i : Fin B.reverse.length => hermitianItPullback F T (fba i.rev))
+      (fun i : Fin B.length => hermitianItPullback F T (fab i)) := by
     refine Function.hfunext rfl fun i i' hi => ?_
     obtain rfl := eq_of_heq hi
     refine Fin.cases ?_ (Fin.cases ?_ (fun j => j.elim0)) i
     · exact HEq.rfl
     · exact HEq.rfl
-  have e2 := (productFunctor_obj_congr F T (twoBlocks_reverse hk) _ _ hfam).some
+  have e2 := (hermitianProductFunctor_obj_congr F T (twoBlocks_reverse hk) _ _ hfam).some
   -- Gelfand–Kazhdan on each block.
-  have e3 : (T.normalizedProductInductionFunctor B).obj (fun i => itPullback F T (fab i)) ≅
+  have e3 : (T.normalizedProductInductionFunctor B).obj (fun i => hermitianItPullback F T (fab i)) ≅
       (T.normalizedProductInductionFunctor B).obj (fun i => (fab i).contragredient) := by
     refine (T.normalizedProductInductionFunctor B).mapIso (Pi.isoMk fun i => ?_)
     refine Fin.cases ?_ (Fin.cases ?_ (fun j => j.elim0)) i
@@ -247,8 +171,8 @@ theorem irreducibleTwoFactorProductSwap : IrreducibleTwoFactorProductSwap.{uF, u
       X.contragredient :=
     (SmoothRep.mkIso (productSmoothDualEquiv F T B fab hfab).some).symm
   -- Gelfand–Kazhdan on the irreducible product `X`.
-  have e5 : itPullback F T X ≅ X.contragredient := (gelfandKazhdanIso F T hn X hXa hX).some
-  have eθ : itPullback F T Y ≅ itPullback F T X := e1 ≪≫ e2 ≪≫ e3 ≪≫ e4 ≪≫ e5.symm
+  have e5 : hermitianItPullback F T X ≅ X.contragredient := (gelfandKazhdanIso F T hn X hXa hX).some
+  have eθ : hermitianItPullback F T Y ≅ hermitianItPullback F T X := e1 ≪≫ e2 ≪≫ e3 ≪≫ e4 ≪≫ e5.symm
   exact ⟨(itPullbackTwiceIso F T X).symm ≪≫ itPullbackIso F T eθ.symm ≪≫
     itPullbackTwiceIso F T Y⟩
 

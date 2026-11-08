@@ -31,7 +31,7 @@ local notation "λ₋" => CommGroupScheme.groupHom (-ν₀) ≫ p.inclusion
 local notation "U" => Dynamic.Affine.unipotentScheme λ₋
 local notation "iU" => Dynamic.Affine.unipotentHom λ₋
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance canonicalRhoUnipotentRestrictionIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 local instance : IsAffineHom (U).X.hom :=
   (Dynamic.Affine.isClosedSubgroup_unipotentHom λ₋).isAffineHom

@@ -204,7 +204,7 @@ local instance :
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance
 
-local instance :
+local instance steinbergGaloisDerivativesVectorGroupAffine :
     IsAffineHom (groupScheme (CommRingCat.of K) 1).X.hom :=
   isAffineHom_groupScheme (CommRingCat.of K) 1
 

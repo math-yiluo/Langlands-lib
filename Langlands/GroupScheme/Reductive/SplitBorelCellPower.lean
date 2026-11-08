@@ -27,7 +27,7 @@ variable {k : Type u} [Field k]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (p : SplitPinning G)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance splitBorelCellPowerIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Evaluation of the extended character of a multiple is the power of the
 evaluation. -/

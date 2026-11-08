@@ -33,19 +33,19 @@ composition factors, and it never dualizes twice.
 
 Write `θ` for `GeneralLinear.inverseTranspose` and `Z ∘ θ` for the pullback of a
 smooth representation `Z` along `θ` on the same carrier. In the module this
-pullback is the private abbreviation `itPullback F T Z`. It is smooth by
+pullback is the shared abbreviation `hermitianItPullback F T Z`. It is smooth by
 `isSmooth_comp`, because inverse transpose is continuous
 (`GeneralLinear.continuous_inverseTranspose`). All topologies on `F` and on
 the groups `GL_r(F)` are the ones selected by `T`
 (`T.topology`, `T.generalLinearTopologicalGroup r`).
 
-Private helpers:
+Shared and private helpers:
 
 - `itPullbackIso`: an isomorphism `Z ≅ Z'` gives `Z ∘ θ ≅ Z' ∘ θ`, with the
   same linear map.
 - `itPullbackTwiceIso`: `(Z ∘ θ) ∘ θ ≅ Z` through the identity map, because
   `θ` is an involution (`GeneralLinear.inverseTranspose_involutive`).
-- `gelfandKazhdanEquiv`, `gelfandKazhdanIso`: for `N > 0`, an irreducible
+- `hermitianGelfandKazhdanEquiv`, `gelfandKazhdanIso`: for `N > 0`, an irreducible
   admissible representation `Z` of `GL_N(F)` satisfies `Z ∘ θ ≅ Z^∨`, where
   `Z^∨` is the smooth contragredient (`SmoothRep.contragredient`). The
   published `Langlands.gelfandKazhdanContragredient` (module
@@ -72,7 +72,7 @@ Private helpers:
   representation, which is transported through
   `T.normalizedParabolicInducedEquiv`. Admissibility of the Levi tensor product
   is `FiniteTensor.isAdmissible_external`.
-- `itPullbackProductIso`: for `n > 0`, a block shape `B` of `n` and blocks
+- `hermitianItPullbackProductIso`: for `n > 0`, a block shape `B` of `n` and blocks
   `A i`,
   `((T.normalizedProductInductionFunctor B).obj A) ∘ θ ≅ (T.normalizedProductInductionFunctor B.reverse).obj (fun i => A i.rev ∘ θ)`.
   This is the published `Langlands.Parabolic.normalizedProductInverseTranspose`
@@ -81,7 +81,7 @@ Private helpers:
   explicit type with the block family `fun i => (A i.rev ∘ θ).representation`,
   and both endpoints of `SmoothRep.mkIso` are named explicitly. Without them
   the definitional unfolding times out.
-- `productFunctor_obj_congr`: equal block shapes with heterogeneously equal
+- `hermitianProductFunctor_obj_congr`: equal block shapes with heterogeneously equal
   block families give isomorphic products (by `subst`).
 - `twoBlocks_reverse`: `(Shahidi.twoBlocks k k hk hk).reverse = Shahidi.twoBlocks k k hk hk`.
   Both block sizes are `k`, so reversing changes nothing. This is checked
@@ -96,11 +96,11 @@ Main theorem. Let `B = Shahidi.twoBlocks k k hk hk`, so `X = B(α, β)` and
 2. `Y ∘ θ` is isomorphic to the product over `B.reverse` of the family
    `i ↦ fba(i.rev) ∘ θ`, where `fba = twoBlockFactors hk hk β α`. Its first
    block is `α ∘ θ` and its second is `β ∘ θ`
-   (`itPullbackProductIso` with `n = k + k > 0`).
+   (`hermitianItPullbackProductIso` with `n = k + k > 0`).
 3. That product is isomorphic to `B(α ∘ θ, β ∘ θ)`: the reversed shape is `B`
    (`twoBlocks_reverse`), and the reversed family is heterogeneously equal to
    `(α ∘ θ, β ∘ θ)` (checked on both indices of `Fin 2`), so
-   `productFunctor_obj_congr` applies.
+   `hermitianProductFunctor_obj_congr` applies.
 4. `B(α ∘ θ, β ∘ θ) ≅ B(α^∨, β^∨)`: Gelfand–Kazhdan on each block
    (`gelfandKazhdanIso` for `α` and `β`), mapped through the functor
    `T.normalizedProductInductionFunctor B` with `Pi.isoMk`.
@@ -120,10 +120,11 @@ admissibility and in step 4.
 - The module sets `linter.style.haveILetI false`, because the proofs of
   propositions use `letI` to install `T.topology` and the group topologies,
   as the statement does.
-- `itPullback` is an `abbrev`, so its representation unfolds reducibly to
+- `hermitianItPullback` is an `abbrev`, so its representation unfolds reducibly to
   `Z.representation.comp θ.toMonoidHom`. This is needed for step 2.
 - No `sorry`, `admit`, new axioms or theorem-valued hypotheses occur.
-  All helpers are private to this module.
+  The four `hermitian` helpers are imported from `InverseTransposeHelpers`;
+  the other helpers are private to this module.
 
 ## Independence audit
 
@@ -199,3 +200,8 @@ product irreducibility criterion (Ze80 4.2, 9.7), an analytic or
 square-integrability result (Ze80 9.3), or a classification or exhaustion
 theorem. The proof does not use the adjacent reducibility task
 `0988a3e0-a086-474d-b2d2-7e53902b43cb` or its target.
+
+The four inverse-transpose helpers are shared through
+`Langlands.Representation.Classification.InverseTransposeHelpers`.
+The original statements and defining terms are preserved; the former private
+helpers of `IrreducibleTwoFactorProductSwapProof` have the public `hermitian` names.

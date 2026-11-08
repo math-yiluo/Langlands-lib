@@ -70,3 +70,6 @@ perfectness, reducedness or group-like premise on the coordinates.
 Tensor irreducibility remains an explicit premise. This unit does not construct
 Steinberg modules, identify an entire induced covariance space with the product,
 or prove the general `SteinbergBigCellStatement`.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

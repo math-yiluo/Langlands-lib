@@ -44,3 +44,5 @@ generated subgroup or establish V3 for a restricted family. It does not
 construct a valuation, an apartment, or the supplied-model building comparison.
 
 The finite-list adjacent-pair product identity reuses `prod_ofFn_pairs` from `ChamberPositiveCollection`.
+
+`range_orderedProduct_rayPairs` is public and is also used by `RootDepthCollectionData`; its statement and proof are unchanged.

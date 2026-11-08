@@ -283,8 +283,8 @@ variable {k : Type u} [Field k]
   {G H : GroupScheme (Spec (CommRingCat.of k))}
   [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance covariantFrobeniusProductsIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance covariantFrobeniusProductsIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 /-- A product with a powered covariant subspace has the expected product weight. -/
 theorem mul_frobeniusCoordinateSpan_le_leftCovariantSubspace

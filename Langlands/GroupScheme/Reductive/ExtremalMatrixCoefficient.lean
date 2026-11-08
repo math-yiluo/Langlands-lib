@@ -76,7 +76,7 @@ theorem scalarMap_single_one (T : Over (Spec (CommRingCat.of k))) (j : n) :
 
 variable [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance extremalMatrixCoefficientIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The coordinate whose value is the diagonal matrix entry at `j`. -/
 def diagonalMatrixCoefficient (ρ : MatrixRepresentation G n) (j : n) : algebra G :=
@@ -106,7 +106,7 @@ variable (ρ : MatrixRepresentation G n)
 
 variable [IsAffineHom H.X.hom]
 
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance extremalMatrixCoefficientIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 /-- A unique smallest coordinate gives a normalized left-covariant coordinate
 for its constructed rational character. -/
@@ -120,7 +120,7 @@ theorem diagonalMatrixCoefficient_mem_leftCovariantSubspace :
 
 variable [IsAffineHom Q.X.hom]
 
-local instance : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
+local instance extremalMatrixCoefficientIsAffine3 : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
 
 /-- The same coefficient satisfies inverse-right covariance on the opposite
 parabolic, with the negative of its constructed maximum-weight character. -/

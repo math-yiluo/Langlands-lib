@@ -101,3 +101,6 @@ blocks, the split immersion and quotient calculations, exceptional even-type-A
 substitutes and rational lifting remain separate obligations. This unit neither
 proves the parent quasi-split quotient statement nor asserts a global rational
 section in exceptional even type A.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

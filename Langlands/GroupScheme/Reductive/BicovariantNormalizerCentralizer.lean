@@ -20,9 +20,9 @@ variable {k : Type u} [Field k]
     {T : CommGroupScheme (Spec (CommRingCat.of k))}
     [IsAffineHom G.X.hom] [IsAffineHom H.X.hom] [IsAffineHom Q.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
-local instance : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
+local instance bicovariantNormalizerCentralizerIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance bicovariantNormalizerCentralizerIsAffine2 : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance bicovariantNormalizerCentralizerIsAffine3 : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
 
 variable (hG : IsConnectedReductive G) (hT : IsSplitTorus T.toGrp)
     (i : H ⟶ G) (q : Q ⟶ G) (j : T.toGrp ⟶ G) (hj : IsMaximalTorus j)

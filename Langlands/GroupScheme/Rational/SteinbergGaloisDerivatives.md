@@ -80,3 +80,6 @@ root homomorphism once root-vector compatibility is established. They do not
 construct compatible root vectors, a compatible pinning, a family of normalized
 root maps, orbit orthogonality, a cross-section or the parent quotient theorem.
 No global section in exceptional even type A is asserted.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

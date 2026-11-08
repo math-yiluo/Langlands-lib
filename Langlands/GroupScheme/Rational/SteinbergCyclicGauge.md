@@ -45,3 +45,6 @@ closedness is retained in the gauge-existence and unconditional transport
 conclusions. This file supplies neither descent to a general base field nor
 fundamental representations, invariant generation or a proof of the canonical
 quotient isomorphism for even one representative family.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

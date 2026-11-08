@@ -78,3 +78,6 @@ character. Here these functions are the realizing coordinates. Existence for eve
 character is proved in two steps: first for a positive multiple, then by saturation, which
 uses normality of the coordinate ring. The highest-weight line and the weight bound come from
 injectivity of restriction to the positive unipotent subgroup.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

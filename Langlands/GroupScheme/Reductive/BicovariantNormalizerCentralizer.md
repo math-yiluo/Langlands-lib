@@ -32,3 +32,6 @@ torus, and supplies no Bruhat factorization or Steinberg irreducibility.
 Its provenance is the implemented internal composition of the companion
 character theorem and the published Weyl-image and regular-weight centralizer
 results.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

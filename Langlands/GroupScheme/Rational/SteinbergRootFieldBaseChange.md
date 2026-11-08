@@ -56,3 +56,6 @@ map and its prescribed derivative, with no arbitrary choice of root maps.
 No characteristic, perfectness, infinitude, or algebraic-closedness restriction
 is made. Reflection representatives, ordered Steinberg products and the
 quotient-isomorphism theorem are separate subsequent work.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

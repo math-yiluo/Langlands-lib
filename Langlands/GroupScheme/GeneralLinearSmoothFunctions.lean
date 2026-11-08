@@ -91,7 +91,7 @@ set_option backward.isDefEq.respectTransparency false
 
 variable (F : Type u) [Field F] [NumberField F] (n : ℕ)
 
-local instance generalLinearIsAffine :
+local instance generalLinearSmoothFunctionsIsAffine :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of F)
 

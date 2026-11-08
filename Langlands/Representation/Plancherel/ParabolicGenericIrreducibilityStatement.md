@@ -125,3 +125,6 @@ III.7.3, unitarity and Frobenius reciprocity remains to be proved and
 connected to these models. This statement and its elementary centrality
 helper do not close IV.2.2, IV.3, standard-integral convergence or
 rationality, global j or mu, or any Plancherel completion condition.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

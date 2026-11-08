@@ -31,3 +31,5 @@ Provenance is internal: these are consequences of the Library definitions and
 of the public arithmetic and graded-unit-coordinate results imported by Lean.
 The mathematical convention is `U^0 = O^×` and `U^n = 1 + m^n` for positive
 `n`. This unit proves neither finite nor absolute reciprocity.
+
+`filtrationValuationIntegers` is public so the unit-filtration comparison and unramified-conductor modules reuse the same integer-ring valuation witness.

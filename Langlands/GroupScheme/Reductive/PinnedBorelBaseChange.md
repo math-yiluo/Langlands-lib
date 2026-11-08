@@ -37,3 +37,6 @@ split maximal torus. The construction uses no perfectness or characteristic
 premise. It supplies a comparison for existing pinnings; it does not construct
 pinnings, a semilinear cocycle, effective descent or an unconditional
 quasi-split inner form.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

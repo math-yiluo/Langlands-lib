@@ -48,3 +48,6 @@ quotient compactness. The Hom bound on its selected unitary part still
 requires a genuine conjugate decomposition or filtration and multiplicity
 argument. This module proves neither of those remaining facts and does not
 prove generic irreducibility.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

@@ -28,3 +28,6 @@ dependent products and the existing actual general-linear comparison.
 It does not use a norm on the infinite adele ring, or require smoothness,
 reductivity or finite type of `G`. It supplies no manifold, Lie group,
 differential, measure or reduction theorem.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

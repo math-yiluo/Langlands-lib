@@ -1,3 +1,4 @@
+import Langlands.CategoryTheory.Renard.SubobjectOrderIsoTransfer
 import Langlands.Algebra.NonUnitalModuleFinitenessStatements
 import Langlands.Algebra.NonUnitalModuleSubobject
 import Langlands.Algebra.IntegerOriginalSubmoduleGenerationProof
@@ -29,10 +30,8 @@ variable {C : Type u₁} [Category.{v₁} C] {D : Type u₂} [Category.{v₂} D]
 
 /-- Subobject unions transfer along an order isomorphism of subobject types. -/
 theorem hasSubobjectUnions_of_orderIso (e : Subobject X ≃o Subobject Y)
-    (h : Langlands.Renard.HasSubobjectUnions Y) : Langlands.Renard.HasSubobjectUnions X := by
-  intro S
-  obtain ⟨U, hU⟩ := h (e '' S)
-  exact ⟨e.symm U, e.isLUB_image.mp hU⟩
+    (h : Langlands.Renard.HasSubobjectUnions Y) : Langlands.Renard.HasSubobjectUnions X :=
+  Langlands.Renard.hasSubobjectUnions_of_orderIso e h
 
 /-- The finite-subcover property transfers along an order isomorphism of subobject types. -/
 theorem hasFiniteSubcoverProperty_of_orderIso (e : Subobject X ≃o Subobject Y)
@@ -54,10 +53,8 @@ theorem hasFiniteSubcoverProperty_of_orderIso (e : Subobject X ≃o Subobject Y)
 /-- Renard's Noetherian-object condition transfers along an order isomorphism of
 subobject types. -/
 theorem isNoetherianObject_of_orderIso (e : Subobject X ≃o Subobject Y)
-    (h : Langlands.Renard.IsNoetherianObject Y) : Langlands.Renard.IsNoetherianObject X := by
-  intro S hS
-  obtain ⟨P, ⟨P', hP', rfl⟩, hmax⟩ := h (e '' S) (hS.image e)
-  exact ⟨P', hP', fun Q hQ hle => e.injective (hmax (e Q) ⟨Q, hQ, rfl⟩ (e.monotone hle))⟩
+    (h : Langlands.Renard.IsNoetherianObject Y) : Langlands.Renard.IsNoetherianObject X :=
+  Langlands.Renard.isNoetherianObject_of_orderIso e h
 
 /-- The finite-subcover property is invariant under an order isomorphism of subobject types. -/
 theorem hasFiniteSubcoverProperty_congr (e : Subobject X ≃o Subobject Y) :

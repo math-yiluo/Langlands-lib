@@ -38,3 +38,6 @@ at arbitrary coefficient-algebra translates is asserted. The pinning and full
 integral coroot-span hypothesis remain supplied. This module proves no
 Frobenius cutoff, entire-space dimension or irreducibility, highest-weight
 existence, or `SteinbergBigCellStatement`.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

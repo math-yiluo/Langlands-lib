@@ -21,7 +21,7 @@ section CommonTwists
 
 variable (F : PadicField.{uF} p)
 
-local instance canonicalTopology : TopologicalSpace F.Carrier :=
+local instance groupedLFactorReductionTopology : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
 variable (ψ : UnitaryAdditiveCharacter F.Carrier)

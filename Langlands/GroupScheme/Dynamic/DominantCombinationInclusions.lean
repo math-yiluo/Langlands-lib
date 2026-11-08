@@ -510,7 +510,7 @@ section Model
 
 variable {χ tau : (Gm (Spec R)).toGrp ⟶ groupScheme F e}
 
-local instance : IsAffine (groupScheme F e).X.left :=
+local instance dominantCombinationInclusionsIsAffine : IsAffine (groupScheme F e).X.left :=
   inferInstanceAs (IsAffine (Spec (CommRingCat.of B)))
 
 /-- The dominant-combination inclusions for a finite-type corepresented group. -/

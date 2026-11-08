@@ -36,3 +36,6 @@ The structural subgroups, root datum, Bruhat covering and representation
 with the prescribed weight remain inputs. This file proves no existence
 of these data and no irreducibility or cofinality statement for the entire
 covariant function spaces, and does not prove `SteinbergBigCellStatement`.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.

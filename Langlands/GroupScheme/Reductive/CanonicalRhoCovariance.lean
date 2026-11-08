@@ -69,8 +69,8 @@ theorem characterEval_extendCentralizerCharacter_eq_one_of_mem_unipotent
 
 variable [IsAffineHom H.X.hom]
 
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance canonicalRhoCovarianceIsAffine : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance canonicalRhoCovarianceIsAffine2 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 variable {J : Type v} (Q : RootDatum J (characterLattice T) (cocharacterLattice T))
     (b : Q.Base) (hspan : Q.corootSpan ℤ = ⊤)

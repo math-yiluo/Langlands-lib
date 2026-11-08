@@ -47,3 +47,6 @@ There is no splitness, characteristic-zero, admissibility, compactness or finite
 ## Scope
 
 This module defines Prop-valued targets and a construction. It also proves the definitional `Iff.rfl` comparison with the Π₁ predicate. It does not prove block membership, projectivity, generation, coproduct existence or smallness. The Theorem of VI.4.1, that F_Π = Hom_G(Π,•) is an equivalence onto right modules over End_G(Π), is the separate statement `RationalSummandHomEquivalenceStatement`.
+
+Integration gives the local instances used here module-specific names to permit
+joint imports. Their types, values, and local scopes are unchanged.
