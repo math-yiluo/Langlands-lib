@@ -19,6 +19,20 @@ open scoped CategoryTheory.MonObj
 
 namespace Langlands.CuspidalSupport
 
+private theorem inductionSubquotientOfStagesIso
+    {C : Type*} [Category C]
+    {H M : Type*} [Group H] [TopologicalSpace H] [Group M] [TopologicalSpace M]
+    (inner : C ⥤ SmoothRep ℂ M)
+    (outer : SmoothRep ℂ M ⥤ SmoothRep ℂ H)
+    (direct : C ⥤ SmoothRep ℂ H)
+    (e : inner ⋙ outer ≅ direct)
+    (houter : ∀ {A B}, SmoothRep.IsSubquotient B A →
+      SmoothRep.IsSubquotient (outer.obj B) (outer.obj A))
+    (σ : C) (τ : SmoothRep ℂ M)
+    (hτ : SmoothRep.IsSubquotient τ (inner.obj σ)) :
+    SmoothRep.IsSubquotient (outer.obj τ) (direct.obj σ) :=
+  SmoothRep.IsSubquotient.of_iso_right (houter hτ) (e.app σ)
+
 universe uF uV
 
 variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
@@ -101,5 +115,34 @@ theorem bernsteinStandardInduction_isSubquotient
     (continuous_standard_projection i ν standardCocharacter family.connectedReductive
       family.maximalSplitTorus family.genericCocharacter J) f g ⟨hf, hg, hfg⟩
   exact ⟨h.1, h.2.2, h.2.1⟩
+
+omit [LocallyOfFiniteType G.X.hom] in
+set_option backward.isDefEq.respectTransparency.types true in
+/-- A Levi subquotient presentation induces to the ambient presentation, at
+exactly the universes of the Bernstein induction-restriction target. -/
+theorem bernsteinStandardInduction_stages_isSubquotient
+    (J : Finset (SimpleRoot i ν)) (I : Finset J)
+    (σ : SmoothRep.{0, uF, max uF uV} ℂ (levi i ν (leviIndex J I)))
+    (τ : SmoothRep.{0, uF, max uF uV} ℂ (levi i ν J))
+    (hτ : SmoothRep.IsSubquotient τ
+      ((leviNormalizedInductionFunctor (family.closedLevi J)
+        (levi_le_of_subset i ν standardLeviIntersection family.connectedReductive
+          family.maximalSplitTorus family.genericCocharacter _ J (leviIndex_subset J I))
+        (family.leviDecomposition J I) (family.closedUnipotent (leviIndex J I))).obj σ)) :
+    SmoothRep.IsSubquotient
+      ((normalizedInductionFunctor (family.decomposition J) (family.closedUnipotent J)).obj τ)
+      ((normalizedInductionFunctor (family.decomposition (leviIndex J I))
+        (family.closedUnipotent (leviIndex J I))).obj σ) := by
+  let inner := leviNormalizedInductionFunctor.{uF, max uF uV} (family.closedLevi J)
+    (levi_le_of_subset i ν standardLeviIntersection family.connectedReductive
+      family.maximalSplitTorus family.genericCocharacter _ J (leviIndex_subset J I))
+    (family.leviDecomposition J I) (family.closedUnipotent (leviIndex J I))
+  let outer := normalizedInductionFunctor.{uF, max uF uV}
+    (family.decomposition J) (family.closedUnipotent J)
+  let direct := normalizedInductionFunctor.{uF, max uF uV}
+    (family.decomposition (leviIndex J I)) (family.closedUnipotent (leviIndex J I))
+  exact inductionSubquotientOfStagesIso inner outer direct
+    (bernsteinStandardInductionStagesIso i ν family J I)
+    (fun {_ _} h => bernsteinStandardInduction_isSubquotient i ν family J h) σ τ hτ
 
 end Langlands.CuspidalSupport

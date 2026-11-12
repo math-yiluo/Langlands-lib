@@ -18,7 +18,12 @@ fine Levi inside the coarse one.
 `bernsteinStandardInduction_isSubquotient` applies exact smooth transport to
 normalized induction. Exactness follows from the published short-exactness
 theorem, closedness of the actual standard parabolic and continuity of its
-projection.
+projection. `bernsteinStandardInduction_stages_isSubquotient` combines this
+transport with the stages isomorphism: a subquotient presentation by inner
+induction induces to a subquotient presentation by direct ambient induction.
+A generic helper applies the component of the functor isomorphism after
+subquotient transport; this keeps the proof independent of the implementation
+of the concrete induction functors.
 
 These are derived adaptations of the proofs in `RationalSupportInduction`
 and `RationalInductionStages`. Those modules state their standard wrappers
