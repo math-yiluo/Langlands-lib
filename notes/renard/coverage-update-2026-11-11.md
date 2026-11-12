@@ -146,7 +146,13 @@ there.
 The ledger's section table still predates the dated updates. Open statement
 items named above or in the previous updates: the algebra form of the V.5.3
 finiteness Lemma; (VI.4.1.4); the
-VI.10.4 intermediate assertions; V.4.6, whose draft is parked (the user
-declined its compilation check on 10 November 2026; it is not retried
-without instruction). All statement units of the table still need proofs;
-their proof tasks are listed.
+VI.10.4 intermediate assertions; V.4.6. All statement units of the table
+still need proofs; their proof tasks are listed.
+
+Correction (12 November 2026): an earlier version of this note said that the
+user had declined the V.4.6 compilation check on 10 November 2026. That was
+wrong. No one declined it: a process shutdown interrupted the turn, and the
+cut-off tool call was misread as a refusal. On the operator's instruction of
+11 November the V.4.6 Lemma was stated as candidate
+`791a1be9-9dfe-438a-9d15-b2a8867d1db5`. The [Chapter VI item
+ledger](item-ledger-vi.md) records the later units.
