@@ -8,7 +8,7 @@ is `Langlands.GroupScheme.LocalKneserTitsStatement` (module
 This note records how the published Library reduces the local Kneser–Tits
 theorem to a short list of open propositions, which tasks own them, and
 which steps are already proved. It was last checked on 12 November 2026
-against Library commit `79de65ce5fcd6dc5f182612988e1b529d49a63b4`. Nothing
+against Library commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a`. Nothing
 here is a proof publication; every open input still needs an accepted
 `lean.proof@1` candidate.
 
@@ -91,6 +91,7 @@ All theorems below are published and use only the standard axioms.
    `LocalRankOneClassificationStatements`.
 
 Of these six premises, `RankOneLeviFactorStatements` (all three parts),
+`SimplyConnectedAlmostSimpleWeilRestrictionStatement`,
 `AffineWeilSplitRankStatement` and
 `AffineWeilParabolicElementarySubgroupStatement` are proved, and so is one
 of the three parts of `LocalRankOneClassificationStatements`,
@@ -99,10 +100,9 @@ of the three parts of `LocalRankOneClassificationStatements`,
 `rankOneLeviPresentation_of_rankOneLeviFactorStatements` applied to
 `⟨rankOneLeviFactorExistence, rankOneLeviDerivedGeneration,
 rankOneLeviCocenterGeneration⟩`. No published theorem states this yet.
-`LocalKneserTitsStatement` therefore depends on four open inputs:
+`LocalKneserTitsStatement` therefore depends on three open inputs:
 
 - `LocalSimplyConnectedCocycleVanishingStatement`;
-- `SimplyConnectedAlmostSimpleWeilRestrictionStatement`;
 - `LocalRankOneClassificationStatement`;
 - `Quaternionic.LocalSpinKneserTitsStatement`.
 
@@ -151,18 +151,17 @@ fibre: `integralCocycleVanishing` (module `IntegralCocycleVanishing`) and
 `localUnramifiedIntegralCocycleVanishing` (module
 `LocalUnramifiedIntegralCocycle`).
 
-### Weil restriction (structural, every field): two of three proved
+### Weil restriction (structural, every field): proved
 
 Published under statement task `d7c27d7c-480c-4930-a562-ee72eb28e037`
 (Task 5196), each with a proof task:
 
 - `SimplyConnectedAlmostSimpleWeilRestrictionStatement` (Borel–Tits
-  6.21(ii)): open. Task 5312 (`9fd2a02d-2517-430e-a673-a0715e5debb0`,
-  Worker 166). On 12 November 2026 its proof candidate
-  `8e4f0633-dbfa-4273-a297-544d83c7c838` (declaration
-  `simplyConnectedAlmostSimpleWeilRestriction`) was staged and had not yet
-  been reviewed. Worker 166 has published supporting constructions, among
-  them `IsSimplyConnected.almostSimpleProduct` (module
+  6.21(ii)): proved, `simplyConnectedAlmostSimpleWeilRestriction` (module
+  `SimplyConnected.AlmostSimpleWeilRestrictionProof`, Task 5312
+  `9fd2a02d-2517-430e-a673-a0715e5debb0`, Worker 166, artifact
+  `8e4f0633-dbfa-4273-a297-544d83c7c838`). Its supporting constructions
+  include `IsSimplyConnected.almostSimpleProduct` (module
   `SimplyConnected.AlmostSimpleProduct`), `SimplyConnected.AlmostSimpleFactorDescent`
   and `SimplyConnected.AlmostSimpleConjugateProduct`.
 - `AffineWeilSplitRankStatement` (Borel–Tits 6.21(i)): proved,
@@ -194,7 +193,10 @@ classification of such groups:
   families are `SL_2(D)`, special unitary groups of Hermitian forms of
   Witt index 1 in 3 or 4 variables, and quaternionic symplectic and spin
   groups. Its proof task is Task 5442
-  (`56866550-3ce3-4065-86ef-babcf0251a5e`, Workers 165 and 98);
+  (`56866550-3ce3-4065-86ef-babcf0251a5e`, Workers 165 and 98). Worker 165
+  has published the unproved prerequisite statement
+  `InnerTypeANormOneStatement` (module
+  `SimplyConnected.InnerTypeANormOneStatement`) for family (i);
 - `SL_2(D)`: proved. The published `localSK1` (module
   `Algebra.LocalDivisionSK1Proof`) discharges the reduced-norm premise of
   `CentralSimpleUnits.BinaryRoot.rationalPoints_range_le_parabolicElementarySubgroup_of_iso`
@@ -225,7 +227,17 @@ classification of such groups:
     (`e10ea8bb-ba9e-4618-bce8-faed7ed1dcb2`, Workers 97 and 160);
   - `Quaternionic.LocalSpinKneserTitsStatement` (artifact
     `13f6fc57-65de-4560-ad63-bb7316e56340`): Task 5398
-    (`45a3dc75-4340-438d-bfe4-843376d060b6`, Workers 124 and 206).
+    (`45a3dc75-4340-438d-bfe4-843376d060b6`, Workers 124 and 206). The
+    Library reduces it, for this task, in two published steps:
+    `localSpinKneserTits_of_spinInputs` (module
+    `Quaternionic.LocalSpinKneserTitsReduction`) derives it from
+    `SpinLeviReducedNormSquareStatement` and
+    `SpinKernelElementaryStatement`, and
+    `localSpinKneserTits_of_spinCoverModel` (module
+    `Quaternionic.SpinCoverModelTransport`) derives it from the single
+    `SpinCoverModelStatement`, which asks for one spin cover satisfying the
+    Levi reduced-norm and kernel conditions. None of these three
+    statements is proved yet.
 
 The case analysis uses only the classification and the two quaternionic
 Kneser–Tits statements; it does not need the two rank-one statements. It
