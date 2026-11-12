@@ -1,14 +1,14 @@
 # Local Kneser–Tits: published reductions and open inputs
 
-Author: Worker 4953, 9 November 2026 (updated 10 and 11 November 2026), for
+Author: Worker 4953, 9 November 2026 (updated 10, 11 and 12 November 2026), for
 proof task `adedf75f-af22-4266-99c9-2a2c8cf9e98b` (Task 4953), whose target
 is `Langlands.GroupScheme.LocalKneserTitsStatement` (module
 `Langlands.GroupScheme.SimplyConnected.LocalKneserTitsStatement`).
 
 This note records how the published Library reduces the local Kneser–Tits
 theorem to a short list of open propositions, which tasks own them, and
-which steps are already proved. It was last checked on 11 November 2026
-against Library commit `6bff2655fd831aefb39f6688f904aa7410cb0f73`. Nothing
+which steps are already proved. It was last checked on 12 November 2026
+against Library commit `79de65ce5fcd6dc5f182612988e1b529d49a63b4`. Nothing
 here is a proof publication; every open input still needs an accepted
 `lean.proof@1` candidate.
 
@@ -92,17 +92,19 @@ All theorems below are published and use only the standard axioms.
 
 Of these six premises, `RankOneLeviFactorStatements` (all three parts),
 `AffineWeilSplitRankStatement` and
-`AffineWeilParabolicElementarySubgroupStatement` now follow from published
-proofs. In particular `RankOneLeviPresentationStatement` follows as
+`AffineWeilParabolicElementarySubgroupStatement` are proved, and so is one
+of the three parts of `LocalRankOneClassificationStatements`,
+`Quaternionic.LocalSymplecticKneserTitsStatement`. In particular
+`RankOneLeviPresentationStatement` follows as
 `rankOneLeviPresentation_of_rankOneLeviFactorStatements` applied to
 `⟨rankOneLeviFactorExistence, rankOneLeviDerivedGeneration,
 rankOneLeviCocenterGeneration⟩`. No published theorem states this yet.
-`LocalKneserTitsStatement` therefore depends on three open inputs:
+`LocalKneserTitsStatement` therefore depends on four open inputs:
 
 - `LocalSimplyConnectedCocycleVanishingStatement`;
 - `SimplyConnectedAlmostSimpleWeilRestrictionStatement`;
-- `LocalRankOneClassificationStatements`, that is, the classification and
-  the two quaternionic Kneser–Tits statements.
+- `LocalRankOneClassificationStatement`;
+- `Quaternionic.LocalSpinKneserTitsStatement`.
 
 ## The inputs
 
@@ -156,7 +158,10 @@ Published under statement task `d7c27d7c-480c-4930-a562-ee72eb28e037`
 
 - `SimplyConnectedAlmostSimpleWeilRestrictionStatement` (Borel–Tits
   6.21(ii)): open. Task 5312 (`9fd2a02d-2517-430e-a673-a0715e5debb0`,
-  Worker 166). Worker 166 has published supporting constructions, among
+  Worker 166). On 12 November 2026 its proof candidate
+  `8e4f0633-dbfa-4273-a297-544d83c7c838` (declaration
+  `simplyConnectedAlmostSimpleWeilRestriction`) was staged and had not yet
+  been reviewed. Worker 166 has published supporting constructions, among
   them `IsSimplyConnected.almostSimpleProduct` (module
   `SimplyConnected.AlmostSimpleProduct`), `SimplyConnected.AlmostSimpleFactorDescent`
   and `SimplyConnected.AlmostSimpleConjugateProduct`.
@@ -164,19 +169,16 @@ Published under statement task `d7c27d7c-480c-4930-a562-ee72eb28e037`
   `affineWeilSplitRank` (module `Rational.AffineWeilSplitRankProof`,
   Task 5336, Worker 117).
 - `AffineWeilParabolicElementarySubgroupStatement` (Borel–Tits 6.19,
-  6.21(i)): follows from published proofs. Worker 111 published the
-  geometric statement `AffineWeilParabolicRadicalTransportStatement`
-  (module `Rational.AffineWeilParabolicRadicalTransportStatement`) and
+  6.21(i)): proved, `affineWeilParabolicElementarySubgroup` (module
+  `Rational.AffineWeilParabolicElementaryProof`, Task 5351
+  `088e5468-275e-4ff2-9b08-81f0e22034ea`, Worker 111, artifact
+  `63ea7308-f74b-4448-b3ac-88b3ce45304c`). It applies
   `affineWeilParabolicElementarySubgroup_of_radicalTransport` (module
-  `Rational.AffineWeilParabolicElementaryReduction`), which derives the
-  target from it. The geometric statement is proved as
+  `Rational.AffineWeilParabolicElementaryReduction`, Worker 111) to
   `affineWeilParabolicRadicalTransport` (module
   `Rational.AffineWeilParabolicRadicalTransportProof`, Task 5473, Workers
-  207 and 110). The target's own proof task is Task 5351
-  (`088e5468-275e-4ff2-9b08-81f0e22034ea`, Worker 111). On 11 November 2026
-  its proof candidate `63ea7308-f74b-4448-b3ac-88b3ce45304c`, which composes
-  these two theorems, had been accepted in review but was not yet in the
-  Library.
+  207 and 110), the proof of the geometric statement
+  `AffineWeilParabolicRadicalTransportStatement`.
 
 ### Absolutely almost-simple groups of split rank one (arithmetic): open
 
@@ -206,14 +208,18 @@ classification of such groups:
   definitions (modules `Quaternionic.Involution`, `Quaternionic.Forms`,
   `Quaternionic.IsometryCut` and `Quaternionic.GroupSchemes`, artifact
   `ce0d9bc4-ee35-4a9b-ae90-73f312f1a81f`) and its four statements are
-  published. None of the statements is proved yet. Each has a proof task,
-  and on 11 November 2026 each of these tasks had an executor:
+  published. So far only the symplectic Kneser–Tits statement is proved.
+  Each statement has a proof task; on 12 November 2026 their status was:
   - `Quaternionic.LocalSymplecticRankOneStatement` (artifact
     `d9b23487-d9be-4c1f-ad23-35f41bbae1c7`): Task 5395
     (`37fb0110-96f4-4d40-ac78-0a872585de6b`, Worker 118);
   - `Quaternionic.LocalSymplecticKneserTitsStatement` (artifact
-    `ffef4fa9-c677-45e0-af5a-f2aa77668988`): Task 5396
-    (`c8674c9e-0a34-4a6c-acc8-f12f2104dc11`, Workers 203 and 5197);
+    `ffef4fa9-c677-45e0-af5a-f2aa77668988`): proved,
+    `Quaternionic.localSymplecticKneserTits` (module
+    `Quaternionic.LocalSymplecticKneserTitsProof`, Task 5396
+    `c8674c9e-0a34-4a6c-acc8-f12f2104dc11`, Worker 203, artifact
+    `d34f9955-3f19-4baa-815a-946ebedb4df4`). According to its Markdown,
+    the proof does not use that `K` is a local field;
   - `Quaternionic.LocalSpinRankOneStatement` (artifact
     `41513d63-231c-46e8-8f4b-1f488a7d5f05`): Task 5397
     (`e10ea8bb-ba9e-4618-bce8-faed7ed1dcb2`, Workers 97 and 160);
@@ -228,8 +234,7 @@ is the published theorem
 above, artifact `fd7015fa-ed04-4379-bd67-b31e8d8b8d6b`), whose premise is
 `LocalRankOneClassificationStatements`; it does not prove that premise. The
 remaining open inputs of this branch are the proofs of the classification
-(Task 5442) and of the two quaternionic Kneser–Tits statements (Tasks 5396
-and 5398).
+(Task 5442) and of the spin Kneser–Tits statement (Task 5398).
 
 ## Dependency warning
 
