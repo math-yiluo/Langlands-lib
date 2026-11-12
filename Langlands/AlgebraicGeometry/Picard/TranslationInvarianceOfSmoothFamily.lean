@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.GeometricallyIntegralConnected
 import Langlands.AlgebraicGeometry.Picard.SmoothFamilyAlgebraicTriviality
 import Langlands.AlgebraicGeometry.Picard.FieldCubeTrivialitySmoothThirdStatement
 import Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroReduction
@@ -26,14 +27,6 @@ namespace Langlands.AbelianScheme.TranslationOfSmoothFamily
 open Langlands.AlgebraicGeometry.Picard Langlands.Scheme.Modules
 open Langlands.AbelianScheme.MumfordPicardZero (pullbackTensorIso pullbackCompIso tensorIsoOf
   constantIso)
-
-/-- A geometrically integral morphism is geometrically connected. -/
-lemma geometricallyConnected_of_geometricallyIntegral {X Y : Scheme.{u}} (f : X ⟶ Y)
-    [GeometricallyIntegral f] : GeometricallyConnected f :=
-  ⟨fun _ _ y _ fst snd h ↦
-    have : IrreducibleSpace _ :=
-      GeometricallyIrreducible.geometrically_irreducibleSpace (f := f) y fst snd h
-    inferInstance⟩
 
 variable {S : Scheme.{u}} (A : AbelianScheme S) (C : Over S)
 

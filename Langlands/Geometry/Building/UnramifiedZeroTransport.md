@@ -9,7 +9,8 @@ independence of the choices, it shows that `M(k)^0` is preserved.
 
 * `Langlands.GroupScheme.rationalPoints.map_comp_apply`: the map on rational points induced by
   `f ≫ g` is the composite of the induced maps.
-* `Langlands.GroupScheme.GaloisPointComparison.rationalExtend_map`: extending scalars
+* `Langlands.GroupScheme.GaloisPointComparison.rationalExtend_map`, imported from
+  `Langlands.GroupScheme.Rational.ScalarExtensionNaturality`: extending scalars
   `G(k) → G(L)` commutes with a homomorphism `f : G ⟶ H`, that is
   `rationalExtend (f x) = f_L (rationalExtend x)`, where `f_L` is the base change of `f`. The
   proof passes to the coefficient-point descriptions through `baseChangeCoeffEquiv` and

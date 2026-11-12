@@ -11,9 +11,10 @@ theorem.
 
 In namespace `Langlands.AbelianScheme.TranslationOfSmoothFamily`:
 
-- `geometricallyConnected_of_geometricallyIntegral f`: a geometrically
-  integral morphism of schemes is geometrically connected, because an
-  irreducible space is connected.
+- `geometricallyConnected_of_geometricallyIntegral f`, imported from
+  [GeometricallyIntegralConnected](../GeometricallyIntegralConnected.md): a
+  geometrically integral morphism of schemes is geometrically connected,
+  because an irreducible space is connected.
 - `pairMap A C c a`: for an abelian scheme `A` over `S`, `C : Over S` and
   morphisms `c : W ⟶ C`, `a : W ⟶ A.X` over `S`, the scheme map
   `W.left ⟶ C ×_S A` with coordinates `c` and `a`. The product is the

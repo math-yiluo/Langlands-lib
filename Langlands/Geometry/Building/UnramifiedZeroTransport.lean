@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Rational.ScalarExtensionNaturality
 import Langlands.Geometry.Building.SimplyConnectedImageNormal
 import Langlands.Geometry.Building.UnramifiedZeroIndependenceStatement
 import Langlands.Geometry.Building.KPTorusNormNaturality
@@ -33,23 +34,6 @@ theorem rationalPoints.map_comp_apply {k : Type u} [Field k]
     (f : G ⟶ H) (g : H ⟶ K) (x : rationalPoints G) :
     rationalPoints.map (f ≫ g) x = rationalPoints.map g (rationalPoints.map f x) := by
   simp only [rationalPoints.map_apply, Grp.comp_hom_hom, Category.assoc]
-
-namespace GaloisPointComparison
-
-variable (k L : Type u) [Field k] [Field L] [Algebra k L]
-
-/-- Extension of scalars on rational points commutes with homomorphisms of group schemes. -/
-theorem rationalExtend_map {G H : GroupScheme (Spec (CommRingCat.of k))} (f : G ⟶ H)
-    (x : rationalPoints G) :
-    rationalExtend k L H (rationalPoints.map f x) =
-      rationalPoints.map ((GroupScheme.baseChange (baseMap k L)).map f)
-        (rationalExtend k L G x) := by
-  apply (baseChangeCoeffEquiv k L H).injective
-  rw [baseChangeCoeffEquiv_map, baseChangeCoeffEquiv_rationalExtend,
-    baseChangeCoeffEquiv_rationalExtend, rationalCoeffEquiv_map]
-  exact DFunLike.congr_fun (G.affinePointsTarget_naturality f _) _
-
-end GaloisPointComparison
 
 end Langlands.GroupScheme
 
