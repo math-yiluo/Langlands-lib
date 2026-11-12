@@ -22,7 +22,7 @@ variable (k K : Type u) [Field k] [Field K] [Algebra k K]
     [LocallyOfFiniteType G.X.hom]
     {T : CommGroupScheme (Spec (CommRingCat.of k))} (i : T.toGrp ⟶ G)
 
-local instance : IsAffineHom
+local instance instIsAffineHomBaseChange_quasiSplitPinningOrbitPairs : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance

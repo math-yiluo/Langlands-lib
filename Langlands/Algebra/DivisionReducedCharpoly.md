@@ -4,7 +4,8 @@ This internal deduction concerns a field `K` and a finite-dimensional
 central division `K`-algebra `D`, in any common universe and any
 characteristic.
 
-`aeval_reducedCharpoly` proves that the canonical reduced characteristic
+`aeval_reducedCharpoly`, imported from
+[ReducedCharpolyDivision](ReducedCharpolyDivision.md), proves that the canonical reduced characteristic
 polynomial annihilates an original element `a : D`. The regular
 characteristic polynomial is its reduced-degree power. Cayley–Hamilton
 for left multiplication, followed by evaluation at `a`, makes that

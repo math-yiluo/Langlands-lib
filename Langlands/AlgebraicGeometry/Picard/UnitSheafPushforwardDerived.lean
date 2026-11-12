@@ -21,11 +21,14 @@ namespace Langlands.AlgebraicGeometry.Picard.UnitSheafPushforward
 variable {X Y : TopCat.{u}} (e : X ≅ Y)
 
 
-local instance : (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.hom).IsEquivalence :=
+local instance instIsEquivalencePushforward_unitSheafPushforwardDerived :
+    (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.hom).IsEquivalence :=
   (sheafPushforwardEquivalence (C := AddCommGrpCat.{u}) e).isEquivalence_functor
 local instance : (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.inv).IsEquivalence :=
   (sheafPushforwardEquivalence (C := AddCommGrpCat.{u}) e).isEquivalence_inverse
-local instance : (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.hom).Additive := Functor.additive_of_preserves_binary_products _
+local instance instAdditivePushforward_unitSheafPushforwardDerived :
+    (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.hom).Additive :=
+  Functor.additive_of_preserves_binary_products _
 local instance : (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.inv).Additive := Functor.additive_of_preserves_binary_products _
 
 private abbrev pushforwardAdjunction : (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.inv) ⊣ (TopCat.Sheaf.pushforward AddCommGrpCat.{u} e.hom) :=

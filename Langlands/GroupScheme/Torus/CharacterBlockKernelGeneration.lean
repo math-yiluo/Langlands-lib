@@ -1,0 +1,135 @@
+import Langlands.GroupScheme.Torus.FiniteGaloisCharacterDescent
+import Langlands.GroupScheme.Rational.LeviCocenterRootModelStatement
+import Langlands.AbelianScheme.RationalBaseChange
+import Langlands.LinearAlgebra.BasisBlockProjection
+
+/-! # Kernel generation from a block decomposition of characters
+
+Let `Q` be a commutative group scheme over `k` split by a finite Galois extension
+`E/k`, and let `π α : Q ⟶ R α` be homomorphisms to commutative group schemes also
+split by `E`. Suppose a basis of the characters of `Q_E` is partitioned into blocks
+`θ i = α` so that the characters pulled back from `R α` are exactly those whose
+coordinates in block `α` vanish. Then the block projections descend to
+endomorphisms `ε α` of `Q` with `∑ ε α = 𝟙` and `ε α ≫ π α = 0`, so every rational
+point of `Q` is a product of rational points of the kernels of the `π α`.
+-/
+
+set_option backward.isDefEq.respectTransparency false
+
+noncomputable section
+
+universe u v w
+
+open CategoryTheory AlgebraicGeometry
+open scoped CategoryTheory.MonObj
+
+namespace Langlands.GroupScheme.CharacterBlockKernelGeneration
+
+open LinearAlgebra.BasisBlockProjection
+
+/-- Rational points of a sum of homomorphisms are the products of the rational
+points of the summands. -/
+theorem rationalPoints_map_sum {k : Type u} [Field k]
+    {Q Q' : CommGroupScheme (Spec (CommRingCat.of k))} {A : Type v}
+    (s : Finset A) (f : A → (Q ⟶ Q')) (x : rationalPoints Q.toGrp) :
+    rationalPoints.map (CommGroupScheme.groupHom (∑ α ∈ s, f α)) x =
+      ∏ α ∈ s, rationalPoints.map (CommGroupScheme.groupHom (f α)) x := by
+  classical
+  induction s using Finset.induction_on with
+  | empty =>
+    rw [Finset.sum_empty, Finset.prod_empty]
+    change x ≫ (1 : Q.toGrp ⟶ Q'.toGrp).hom.hom = (1 : rationalPoints Q'.toGrp)
+    simp
+  | insert a s ha ih =>
+    rw [Finset.sum_insert ha, Finset.prod_insert ha, ← ih]
+    change x ≫ ((f a).toMul * (∑ α ∈ s, f α).toMul).hom.hom =
+      (x ≫ (f a).toMul.hom.hom) * (x ≫ (∑ α ∈ s, f α).toMul.hom.hom)
+    simp [MonObj.comp_mul]
+
+variable (k E : Type u) [Field k] [Field E] [Algebra k E]
+  [FiniteDimensional k E] [IsGalois k E]
+  {Q : CommGroupScheme (Spec (CommRingCat.of k))} {A : Type v} [DecidableEq A]
+  {R : A → CommGroupScheme (Spec (CommRingCat.of k))} (π : ∀ α, Q ⟶ R α)
+  {I : Type w} [Fintype I]
+  (b : Module.Basis I ℤ
+    (characterLattice ((CommGroupScheme.baseChange (algebraBaseMap k E)).obj Q)))
+  (θ : I → A)
+
+/-- **Block endomorphisms.** The block projections of an adapted basis descend to
+endomorphisms of `Q` summing to the identity, the one of block `α` killed by
+`π α`. -/
+theorem exists_blockEndomorphisms
+    (hQ : IsSplitTorus ((CommGroupScheme.baseChange (algebraBaseMap k E)).obj Q).toGrp)
+    (hR : ∀ α, IsSplitTorus
+      ((CommGroupScheme.baseChange (algebraBaseMap k E)).obj (R α)).toGrp)
+    (h : ∀ α x, x ∈ (characterLattice.baseChangePullback k E (π α)).range ↔
+      ∀ i, θ i = α → b.repr x i = 0) :
+    ∃ ε : A → (Q ⟶ Q), (∑ α ∈ Finset.univ.image θ, ε α = 𝟙 Q) ∧
+      ∀ α, ε α ≫ π α = 0 := by
+  classical
+  have hstable : ∀ (σ : E ≃ₐ[k] E) (α : A) (x), (∀ i, θ i = α → b.repr x i = 0) →
+      ∀ i, θ i = α →
+        b.repr (characterLattice.galoisRepresentation k E Q σ x) i = 0 := by
+    intro σ α x hx
+    obtain ⟨y, rfl⟩ := (h α x).mpr hx
+    apply (h α _).mp
+    exact ⟨characterLattice.galoisRepresentation k E (R α) σ y,
+      characterLattice.baseChangePullback_galois k E (π α) σ y⟩
+  have hequiv (α : A) (σ : E ≃ₐ[k] E) (x) :
+      proj b θ α (characterLattice.galoisRepresentation k E Q σ x) =
+        characterLattice.galoisRepresentation k E Q σ (proj b θ α x) :=
+    proj_comm b θ (characterLattice.galoisRepresentation k E Q σ) (hstable σ) α x
+  choose ε hε _ using fun α =>
+    hQ.existsUnique_hom_of_equivariant_characterMap (T := Q)
+      (proj b θ α).toAddMonoidHom (fun σ χ => hequiv α σ χ)
+  refine ⟨ε, ?_, fun α => ?_⟩
+  · obtain ⟨a, -, huniq⟩ := hQ.existsUnique_hom_of_equivariant_characterMap (T := Q)
+      (AddMonoidHom.id _) (fun σ χ => rfl)
+    rw [huniq (∑ α ∈ Finset.univ.image θ, ε α), huniq (𝟙 Q)]
+    · intro χ
+      rw [CategoryTheory.Functor.map_id, Category.id_comp]
+      rfl
+    · intro χ
+      rw [CategoryTheory.Functor.map_sum, Preadditive.sum_comp]
+      simp only [hε]
+      exact sum_proj b θ _ (fun i => Finset.mem_image_of_mem θ (Finset.mem_univ i)) χ
+  · obtain ⟨a, -, huniq⟩ := (hR α).existsUnique_hom_of_equivariant_characterMap (T := Q)
+      0 (fun σ χ => by simp)
+    rw [huniq (ε α ≫ π α), huniq 0]
+    · intro χ
+      rw [CategoryTheory.Functor.map_zero, Limits.zero_comp]
+      rfl
+    · intro χ
+      rw [CategoryTheory.Functor.map_comp, Category.assoc, hε]
+      change proj b θ α (characterLattice.baseChangePullback k E (π α) χ) = 0
+      exact (proj_eq_zero_iff b θ α _).mpr ((h α _).mp ⟨χ, rfl⟩)
+
+/-- **Kernel generation.** Every rational point of `Q` lies in the subgroup
+generated by the rational points of the kernels of the `π α`. -/
+theorem mem_closure_ker
+    (hQ : IsSplitTorus ((CommGroupScheme.baseChange (algebraBaseMap k E)).obj Q).toGrp)
+    (hR : ∀ α, IsSplitTorus
+      ((CommGroupScheme.baseChange (algebraBaseMap k E)).obj (R α)).toGrp)
+    (h : ∀ α x, x ∈ (characterLattice.baseChangePullback k E (π α)).range ↔
+      ∀ i, θ i = α → b.repr x i = 0)
+    (x : rationalPoints Q.toGrp) :
+    x ∈ Subgroup.closure (⋃ α, ((rationalPoints.map (CommGroupScheme.groupHom (π α))).ker :
+      Set (rationalPoints Q.toGrp))) := by
+  classical
+  obtain ⟨ε, hsum, hzero⟩ := exists_blockEndomorphisms k E π b θ hQ hR h
+  have hx : x = ∏ α ∈ Finset.univ.image θ,
+      rationalPoints.map (CommGroupScheme.groupHom (ε α)) x := by
+    rw [← rationalPoints_map_sum, hsum]
+    change x = x ≫ 𝟙 _
+    rw [Category.comp_id]
+  rw [hx]
+  refine Subgroup.prod_mem _ fun α _ => Subgroup.subset_closure (Set.mem_iUnion.mpr ⟨α, ?_⟩)
+  change rationalPoints.map (CommGroupScheme.groupHom (π α))
+    (rationalPoints.map (CommGroupScheme.groupHom (ε α)) x) = 1
+  have h0 : rationalPoints.map (CommGroupScheme.groupHom (ε α ≫ π α)) x = 1 := by
+    rw [hzero α]
+    change x ≫ (1 : Q.toGrp ⟶ (R α).toGrp).hom.hom = (1 : rationalPoints (R α).toGrp)
+    simp
+  exact h0
+
+end Langlands.GroupScheme.CharacterBlockKernelGeneration

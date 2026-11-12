@@ -155,7 +155,8 @@ map of cover objects with restriction along its geometric base change. -/
 
 variable {G : Type u} [Group G] (Y : Action X.Etale G)
 
-local instance : HasLimitsOfShape (SingleObj G) (ModuleCat.{u} R) :=
+local instance instHasLimitsOfShapeSingleObjModuleCat_etaleInverseImageAssociated :
+    HasLimitsOfShape (SingleObj G) (ModuleCat.{u} R) :=
   ModuleCat.hasLimitsOfShape
 
 /-- On diagonal actions, the base-change map is equivariant: the deck action on the base-changed

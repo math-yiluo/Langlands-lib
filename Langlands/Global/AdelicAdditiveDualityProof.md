@@ -18,6 +18,12 @@ internally from Worker 1843's generic plan, with the actual one-place
 approximation constructed by Worker 1786. It assumes neither global nor local
 additive self-duality.
 
+Workers 1843 and 1786 belong to the previous project instance and have no
+identity in the current one; they are credited here only. Worker 5107
+resubmits this pair for current-instance revalidation under Task 5107. The
+Lean file is unchanged; this Markdown adds the provenance note and the
+comparison with Weil's proof in the last section.
+
 ## Actual arithmetic and nondegeneracy
 
 `Langlands.Global.exists_compact_sub_diagonal_mem` supplies a
@@ -98,3 +104,29 @@ evaluation is definitionally `ψ(a*x)`. The second conjunct is the separately
 proved actual diagonal-annihilator identity. Finally,
 `adelicAdditiveDuality_proof` introduces all quantified data of the published
 proposition and applies `adelicDuality`, with no remaining auxiliary premises.
+
+## Comparison with Weil's proof
+
+Weil's proof of Theorem 3 (printed pp.66–69, PDF pp.83–86 of the registered
+source `weil-1973-basic-number-theory`, SHA256
+`32fff78f8ccc5d6378907941e26746c34e20fc3adf5096508844cfe8a301e33b`; no errata
+file for this source exists in the project notes) runs as follows. For
+`k = ℚ` and `k = 𝔽_p(T)` he fixes one explicit character trivial on `k`.
+He writes each local component of an arbitrary character as `x ↦ χ_v(a_v x)`
+by local self-duality (Chapter II-5) and shows that `(a_v)` is an adele. He
+proves the annihilator statement from an explicit compact fundamental set and
+the explicit character. Bicontinuity follows because the bijection induces a
+bijective morphism between compact quotients. He then transfers the theorem to
+every A-field by restriction of scalars along a nonzero linear form, and to
+every qualifying character `χ₁(x) = χ(ax)` with `a ∈ k`, `a ≠ 0`.
+
+The Lean proof uses none of these steps. It works directly with the given
+number field `K` and the given character `ψ`. It never parametrizes local
+characters or reduces to `ℚ`. Injectivity comes from the one-place
+approximation and the small-arc argument above, and the annihilator from the
+finite-cover argument. Surjectivity comes from compact-group character
+theory, applied to the dual of the discrete field and to the compact quotient
+by the field. Bicontinuity comes from the open mapping theorem. Weil's theorem
+covers every A-field and every finite-dimensional vector space `E`. The
+published statement, and hence this proof, covers number fields and `E = K`
+only.

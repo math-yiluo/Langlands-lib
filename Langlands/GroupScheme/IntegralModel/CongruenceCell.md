@@ -1,0 +1,11 @@
+# Actual ordered congruence products from supplied integral open cells
+
+This internal derived construction is at arbitrary universe `u`. Its coefficient ring `R` is a commutative local domain with fraction field `K` and its specified algebra structure. All integral models are the published actual affine flat finite-type models with specified generic-fibre identifications. No smoothness, Henselian, reductivity, local-field or topology assumption is added.
+
+For a supplied ambient model `M`, actual generic groups `V`, `Z`, `U` and specified homomorphisms into the original generic ambient group, `IntegralTripleCellData` records integral models of all three groups, compatible model homomorphisms into `M`, and an open-immersion assertion for the actual ordered three-factor multiplication morphism. It asserts no existence of these data and does not infer an integral open cell from a generic-fibre cell.
+
+`congruenceKernelSectionFiberEquiv` identifies each original positive congruence kernel with the pointed section fibre at its identity, retaining the underlying section in both directions. The three-factor `sourceCongruenceSectionEquiv` combines the three such equivalences and the published pointed product equivalences. Applying the supplied integral open chart and then the target section-kernel equivalence constructs `congruenceProductEquiv`.
+
+The theorem `congruenceProductEquiv_val` proves that the constructed map is exactly the original ordered multiplication of the images of the negative, middle and positive congruence sections. `ordered_congruence_product_bijective` states existence and uniqueness directly for that same product. The source and target all use the same arbitrary positive level `n`; no passage to a deeper level occurs.
+
+The proof composes the actual quotient-restriction equality from `OpenCongruence`, the nonhomomorphic open-chart and product equivalences from `CongruenceChart`, and the actual triple multiplication formula from `Absolute.TripleCell`. It introduces no external-literature assertion. It supplies neither an integral root-product cell nor the closed-factor intersection comparison and weak-chamber endomorphisms needed for a simultaneous normal Iwahori basis.

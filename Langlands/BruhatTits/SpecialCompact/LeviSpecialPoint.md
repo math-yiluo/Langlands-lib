@@ -1,0 +1,13 @@
+# Special points and vertices in the prescribed Levi apartment
+
+This derived unit concerns the actual same-torus cocharacter-Levi apartment and projection of `LeviApartmentRestriction` and `LeviApartmentProjection`. It uses the actual affine-root pullback of `LeviAffineRoots`, retaining ordinary affine roots rather than replacing them with extended roots. The field and universe are arbitrary; splitness is imposed on the prescribed maximal split torus, not on the reductive group.
+
+The root-form lemmas first show that actual characters determine distinct reduced root forms at a split torus and each root form is nonzero. The published `Langlands.Geometry.Building.eq_zero_of_rootForm_eq_zero` supplies separation of the actual quotient by the common root annihilator. For a special point, parallel vanishing affine roots then separate that point from every other point of its facet whenever each root-form direction occurs. This proves vertexhood, including when there are no roots, without assuming the full affine-root-system axioms for the constructed Levi apartment.
+
+To descend an ambient affine root whose derivative is a Levi root, give the Levi affine functional the same value at the projected point. The pullback is the original functional by affine extensionality. Injectivity of root forms identifies its original root, and reflection of the precise doubled-root product-containment test proves membership among ordinary Levi affine roots.
+
+For `isSpecialPoint_leviApartmentProjection`, pull back a Levi affine root to an ambient root. Ambient specialness provides a parallel vanishing root. Equality of derivative kernels, evaluated on the real vector of the defining Levi cocharacter, forces this new root to have zero pairing with that cocharacter. Thus it is an actual Levi root. Descend its functional and transfer the kernel equality through the surjective linear projection to obtain the required parallel vanishing root in the Levi.
+
+The ambient AS3 equality of derivative roots with all actual root forms supplies root-direction coverage for the Levi by the preceding descent. `isSpecialPoint_isVertex_leviApartmentProjection` combines specialness with the separation argument. Over an arbitrary nonarchimedean local field, `leviSpecialApartmentVertex` packages that very projected point, its special-vertex proof and the already proved literal `IsLeviRestriction`; it makes no new choice of point.
+
+This implements the special-point argument of KP Section 6.7.2 from the published definitions and the accompanying root-group comparison. Full centralizer omega compatibility, a Levi building realization, equality of compact preimages and the simultaneous normal basis remain separate obligations.

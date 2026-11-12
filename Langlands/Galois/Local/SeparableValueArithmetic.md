@@ -30,3 +30,7 @@ These are derived comparison results, using the published spectral
 restriction and Mathlib's intrinsic value-group and discrete valuation
 ring results. No completeness or local compactness of the infinite fixed
 field is used.
+
+The local instances have explicit names specific to this module so that
+combined imports retain distinct declarations. Their types, bodies and local
+instance scope are unchanged.

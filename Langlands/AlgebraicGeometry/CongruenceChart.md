@@ -1,0 +1,11 @@
+# Actual pointed congruence fibres of an open chart
+
+This internal derived construction is over any commutative local ring `R` at arbitrary universe `u`. Let `X` and `Y` be actual schemes over `Spec R`, let `c : X → Y` be an open immersion, and fix a section `s` of `X` over `Spec R`. Neither the schemes nor the map need carry a group structure. No affineness, smoothness, finite-type, domain, Henselian, field or topology assumption is added.
+
+`sectionFiber R X n s` is the actual type of sections of `X` whose restrictions along `Spec(R/m^n) → Spec R` equal the restriction of `s`, for a positive integer `n`. `sectionFiberMap` sends a section to its actual composite with `c`. The construction `openSectionFiberEquiv` proves that this same map is an equivalence onto the corresponding congruence fibre at `s ≫ c`.
+
+To prove surjectivity, compose the given level-`n` equality with the actual quotient transition to level one and the canonical residue-field quotient comparison. This gives equality at the closed point of `Spec R`. The target section's closed-point image lies in the open chart because the reference section factors through that chart. Every point of a local spectrum specializes to its closed point, so the whole target section factors through the open chart. Mathlib's actual open-immersion lift supplies the source section. Monomorphism of the open immersion reflects the same level-`n` equality and gives uniqueness.
+
+`productSectionFiberEquiv` identifies the pointed congruence fibre of the actual product `X ×_R Y`, at the product of the specified sections, with the product of the two original congruence fibres. Its maps are the actual projections and product lift. This permits repeated use for a supplied integral multiplication chart, which need not be a group homomorphism.
+
+The proof uses the published actual maximal-ideal-power quotient maps and transitions from `IntegralModel.CongruenceTower`, together with Mathlib's local-spectrum specialization, open-immersion lifting and categorical product laws. This is an internal consequence of those results, with no new external-literature assertion. It supplies no existence of an integral root-product chart, root-model identification or weak-chamber preservation.

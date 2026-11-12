@@ -23,10 +23,10 @@ universe uF uP uA
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance assemblyReductionFieldTopology : TopologicalSpace F.Carrier :=
+local instance assemblyLCharacterizationFieldTopology : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
-local instance assemblyReductionGeneralLinearTopology (n : ℕ) :
+local instance assemblyLCharacterizationGeneralLinearTopology (n : ℕ) :
     TopologicalSpace (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopology n
 

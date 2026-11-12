@@ -21,7 +21,8 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instTopologicalSpaceRationalPoints_rationalNormKernelHeckeStatement :
+    TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- Renard's H(G,ρ) (VI.4.2.1): the functions φ : G(F) → End W with

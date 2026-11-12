@@ -33,6 +33,7 @@ no concentration, density or automorphic comparison result.
 The proof is an internal analytic construction implementing the bump route
 in the published statement. Worker 116 developed the Lean proof in the parent
 manifold-kernel project; Worker 1817 adopted the unchanged proof for this
-focused target and prepared this exposition. The construction normalizes
+focused target and prepared this exposition. Worker 5160 later adopted the
+same unchanged proof and prepared its restored submission. The construction normalizes
 against the original measure and needs only a topological group structure
 on the smooth manifold, with no smoothness assumption on its group operations.

@@ -40,6 +40,9 @@ equal the corresponding inverse classes of `s.representative i`. Equality of
 orbit sets transfers the cover, pairwise disjointness, and openness of every
 initial union. Thus the new structure uses exactly `r` as its representative
 function and retains the same ordered orbit subsets.
+The theorem `initialOrbits_replaceRepresentatives` records equality of every
+initial union as an actual set after this replacement. It is shared by the
+product-Levi tail ordering and the regularity-quotient filtration.
 
 `s.classifiedRepresentatives r h` accepts any type `A`, independently of the
 universe of `G`, and a function `r : A → G` for which the inverse

@@ -109,10 +109,10 @@ open ValuativeRel
 variable (F : Type*) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
 
-local instance : NontriviallyNormedField F := localNormedField F
-local instance : IsUltrametricDist F := localNormedField_ultrametric F
-local instance : CompleteSpace F := localNormedField_complete F
-local instance : Finite (ResidueField (baseIntegers F)) := localResidue_finite F
+local instance separableUnramifiedFiniteArithmeticInstance1 : NontriviallyNormedField F := localNormedField F
+local instance separableUnramifiedFiniteArithmeticInstance2 : IsUltrametricDist F := localNormedField_ultrametric F
+local instance separableUnramifiedFiniteArithmeticInstance3 : CompleteSpace F := localNormedField_complete F
+local instance separableUnramifiedFiniteArithmeticInstance4 : Finite (ResidueField (baseIntegers F)) := localResidue_finite F
 
 instance localBaseIntegers_isDiscreteValuationRing : IsDiscreteValuationRing (baseIntegers F) :=
   IsDiscreteValuationRing.RingEquivClass.isDiscreteValuationRing

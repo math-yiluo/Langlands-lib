@@ -25,9 +25,12 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (M : IntegralModel ↥𝒪[F] F G)
   (L : Type u) [Field L] [Algebra F L] [Algebra.IsAlgebraic F L]
 
-local instance : NontriviallyNormedField F := localNormedField F
-local instance : IsUltrametricDist F := localNormedField_ultrametric F
-local instance : CompleteSpace F := localNormedField_complete F
+local instance instNontriviallyNormedField_spectralIntegralPointAction :
+    NontriviallyNormedField F := localNormedField F
+local instance instIsUltrametricDist_spectralIntegralPointAction :
+    IsUltrametricDist F := localNormedField_ultrametric F
+local instance instCompleteSpace_spectralIntegralPointAction :
+    CompleteSpace F := localNormedField_complete F
 
 private instance spectralExtendsCanonical :
     (ValuativeRel.valuation F).HasExtension (spectralValuation F L) where

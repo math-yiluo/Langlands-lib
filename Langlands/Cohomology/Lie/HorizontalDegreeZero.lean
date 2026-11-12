@@ -36,7 +36,8 @@ local notation "D" => differential H σ ρ hσ hρ hι
 local notation "Z" => cycles H σ ρ hσ hρ hι
 local notation "BZ" => boundariesInCycles H σ ρ hσ hρ hι
 
-local instance (q : ℕ) : AddCommGroup (Z q) := Submodule.addCommGroup _
+local instance instAddCommGroupCycles_lieHorizontalDegreeZero (q : ℕ) :
+    AddCommGroup (Z q) := Submodule.addCommGroup _
 
 /-- Evaluation of the actual restricted differential on a zero cochain. -/
 theorem differential_zero_apply (f : C 0) (x : Fin 1 → L) :

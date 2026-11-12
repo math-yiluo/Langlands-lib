@@ -185,3 +185,7 @@ The additional Mathlib imports supply `IsAlgClosure`,
 The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0
 with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 All five arithmetic targets remain proof obligations for subsequent tasks.
+
+The four local instances have explicit names specific to this module so that
+combined imports retain distinct declarations. Their types, bodies and local
+instance scope are unchanged.

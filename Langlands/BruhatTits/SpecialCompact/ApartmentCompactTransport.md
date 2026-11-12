@@ -1,0 +1,9 @@
+# The compact core in a prescribed compatible valuation apartment
+
+This internal construction transports the original geometric norm-one fixer through simultaneous isomorphisms of the torus and ambient group. Its underlying map is the actual rational-point map of the ambient group isomorphism. The map identifies the original subgroups and gives a multiplicative equivalence between them. Actual affine-root transport preserves special apartment vertices and the equality between derivative roots and the actual root forms.
+
+For the canonical rational-point topologies, an ambient group-scheme isomorphism preserves compact-open maximality. Compactness and openness pass through the continuous point maps in both directions, and maximality is tested after mapping a larger compact subgroup back. The actual normalizer and centralizer quotient comparison also transports Weyl representatives.
+
+For a supplied full datum satisfying its group axioms, full V6 transport and the published uniqueness theorem identify its transported apartment with any prescribed full omega-compatible apartment at the target maximal split torus. The published compact core at the corresponding source special vertex therefore supplies bounded-open maximality, compact-open maximality and Weyl representatives in that prescribed apartment. The derivative-root equality transfers as well.
+
+A globally valid assignment supplies such source data for the group, and the published maximal split torus conjugacy theorem supplies the required based inner isomorphism to any prescribed maximal split torus. Thus the results apply to every prescribed full compatible apartment, without constructing an assignment whose independently chosen torus has changed. They do not establish a full KP datum transport, parabolic factorization, geometric Levi inheritance, or the host simultaneous-basis statement.

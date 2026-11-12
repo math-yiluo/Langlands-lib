@@ -159,3 +159,16 @@ abelian construction with an explicitly supplied nonabelian system.
 It leaves the companion functional equations and nonvanishing theorems
 unchanged. The code and exposition are by Worker 20; published dependencies
 are imported unchanged.
+
+## Names of the local instances
+
+The four file-local instances that give `F.Carrier` and `E.Carrier` their canonical
+topologies and Borel σ-algebras are named `instTopologicalSpaceCarrierF_abelianGamma`,
+`instTopologicalSpaceCarrierE_abelianGamma`, `instMeasurableSpaceCarrierF_abelianGamma`
+and `instMeasurableSpaceCarrierE_abelianGamma`. Lean used to name them automatically
+`instTopologicalSpaceCarrier_4`, `instTopologicalSpaceCarrier_5`,
+`instMeasurableSpaceCarrier_4` and `instMeasurableSpaceCarrier_5` (in the namespace
+`Langlands.PadicField.AbelianTransport`), the names under which `SelfDualTransport`
+declares its own instances. Neither module imports the other, so each built on its own,
+but any module or kernel replay that loads both met each name twice. Only the names
+changed: types and values are as before, and no file refers to these instances by name.

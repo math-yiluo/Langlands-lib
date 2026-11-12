@@ -21,7 +21,8 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : DomainSpectralAction G A)
 
-local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
+local instance instIsTopologicalGroupOpenSubgroup_rationalSpectralLocallyConstantSheaf
+    (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
 
 /-- Forgetting actions and the discrete wrapper recovers all original locus functions. -/

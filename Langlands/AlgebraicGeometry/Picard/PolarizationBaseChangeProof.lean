@@ -22,7 +22,7 @@ variable {S S' S'' S''' : Scheme.{u}}
 
 /-- The underlying map of a base-changed homomorphism lies over the original homomorphism. -/
 @[reassoc]
-lemma hom_baseChange_map_fst (t : S''' ⟶ S'') {Z W : AbelianScheme S''} (φ : Z ⟶ W) :
+lemma hom_baseChange_map_fst' (t : S''' ⟶ S'') {Z W : AbelianScheme S''} (φ : Z ⟶ W) :
     hom ((baseChange t).map φ) ≫ pullback.fst W.X.hom t = pullback.fst Z.X.hom t ≫ hom φ := by
   change ((Over.pullback t).map (groupHom φ).hom.hom).left ≫ _ = _
   simp
@@ -69,10 +69,10 @@ lemma mumfordProductMap_baseChangeComp :
   apply pullback.hom_ext
   · simp only [Category.assoc, baseChangeFamilySpaceMap_self_fst,
       baseChangeFamilySpaceMap_self_fst_assoc, mumfordProductMap_fst_assoc,
-      hom_baseChange_map_fst_assoc, hom_baseChangeCompIso_inv_fst]
+      hom_baseChange_map_fst'_assoc, hom_baseChangeCompIso_inv_fst]
   · simp only [Category.assoc, baseChangeFamilySpaceMap_self_snd,
       baseChangeFamilySpaceMap_self_snd_assoc, mumfordProductMap_snd_assoc,
-      hom_baseChange_map_fst_assoc, hom_baseChangeCompIso_inv_fst]
+      hom_baseChange_map_fst'_assoc, hom_baseChangeCompIso_inv_fst]
 
 /-- The successive base-change comparison is a homomorphism whose underlying map is an
 isomorphism. -/

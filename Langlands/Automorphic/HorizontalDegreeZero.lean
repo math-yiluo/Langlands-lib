@@ -35,7 +35,7 @@ variable (S : OperatorRealization F n)
 
 local instance horizontalZeroSpaceAddCommGroup : AddCommGroup S.Space :=
   Submodule.addCommGroup _
-local instance (q : ℕ) :
+local instance horizontalZeroEquivariantAddCommGroup (q : ℕ) :
     AddCommGroup (horizontalEquivariantSubmodule F n S.compactRepresentation q) :=
   Submodule.addCommGroup (R := ℂ)
     (M := ReducedComplexLieAlgebra F n [⋀^Fin q]→ₗ[ℂ] S.Space) _

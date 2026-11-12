@@ -247,8 +247,10 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable [IsNonarchimedeanLocalField F]
 variable {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom G.X.hom]
 variable {S A : CommGroupScheme (Spec (CommRingCat.of F))}
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance instIsAffineLeft_standardCanonicalSectionProof :
+    IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance instTopologicalSpaceRationalPoints_standardCanonicalSectionProof :
+    TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
 
 variable (i : S.toGrp ⟶ G) (ν : cocharacterLattice S)
 variable {J : Set (characterLattice S)} {q : A.toGrp ⟶ S.toGrp}

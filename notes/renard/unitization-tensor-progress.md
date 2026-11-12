@@ -120,7 +120,16 @@ Notes on the map:
 
 ## Unpublished assertions
 
-Three printed assertions have no published statement:
+**Update, 9 November 2026 (Worker 1222).** The three assertions listed below
+now have a published statement, `Langlands.Algebra.UnitizationTensorComparison.Statements`
+in `Langlands.Algebra.UnitizationTensorComparisonStatements` (candidate
+`e80ce45c-c3e2-46e7-8bc5-cc27c0949975`), which also states the tensor half of
+the unital case (k). It is unproved; its proof task is Task 5279
+(`90d04aab-0598-451d-8547-a3198505043a`). See the
+[9 November coverage update](coverage-update-2026-11-09.md). The text below is
+kept as it stood on 6 November.
+
+Three printed assertions had no published statement:
 
 1. `H = ker q` in (i), equivalently the bijectivity of `qbar`.
 2. The tensor half of (I.2.1.2) in (j) and (k).

@@ -1,6 +1,6 @@
 # Minimal representatives in the coarse support tail
 
-This internal ordering construction supplements the coarse-parabolic support cut. Changing an ordered cover's representatives within their actual double cosets preserves every initial orbit union. In particular, replacing the representatives by the minimal permutation matrices preserves the coarse-complement cut.
+This internal ordering construction supplements the coarse-parabolic support cut. Changing an ordered cover's representatives within their actual double cosets preserves every initial orbit union. This uses `initialOrbits_replaceRepresentatives` from `OrbitRepresentatives`. In particular, replacing the representatives by the minimal permutation matrices preserves the coarse-complement cut.
 
 For any point in a specified orbit, membership in an initial union is equivalent to its index being below that union's cut. This follows directly from the disjointness of the cover. Apply this to the coset of the inverse representative. Membership in the coarse locus is equivalent to the representative lying in the coarse parabolic, hence, for a permutation matrix, to preservation of the coarse blocks. Taking complements shows that the indices at or above the cut are exactly the block-preserving minimal representatives.
 

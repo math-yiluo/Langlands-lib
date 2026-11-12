@@ -17,7 +17,7 @@ variable (F : Type u) (L : Type v) [Field F] [Field L] [Algebra F L]
   (v : Valuation F (WithZero (Multiplicative ℤ)))
   (hH : HenselianLocalRing v.valuationSubring)
 
-local instance : FiniteDimensional F L :=
+local instance instFiniteDimensional_su3RootParametersHenselianValuation : FiniteDimensional F L :=
   .of_finrank_pos (by rw [IsQuadraticExtension.finrank_eq_two F L]; decide)
 
 /-- The invariant extension value with the base integer normalization. -/

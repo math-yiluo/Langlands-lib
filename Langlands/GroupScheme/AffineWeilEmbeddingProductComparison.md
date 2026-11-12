@@ -1,0 +1,7 @@
+# Actual embedding-product splitting of affine Weil restriction
+
+This internal construction uses the original affine Weil group, the actual pullback base-change functor and the categorical finite product. The group need not be commutative. The conjugate coefficient action is the one obtained from the specified embedding followed by the coefficient algebra map.
+
+The factor comparison uses `baseChangePointsEquiv` and the identity of the two spectrum tests given by contravariance of `Spec`. Its underlying scheme map is the first projection of the actual pullback. Naturality in coefficient maps and in homomorphisms follows from associativity and the pullback projection equations. The source point comparison first applies the inverse of the existing multiplicative base-change point equivalence and then the original `AffineWeil.pointsEquiv`; its coefficient naturality follows from the published naturality of those two comparisons.
+
+The definitions and proofs in this module work over arbitrary commutative rings in one universe. The factor comparison imposes no affineness or finite type hypothesis on H. The source comparison assumes that K is finite projective over k and that H is affine and locally of finite type, exactly as required by the existing actual affine Weil restriction. It assumes no splitting, separability or group commutativity. This is a comparison unit; the product splitting is constructed in the subsequent assembly module. Its provenance is entirely internal to the published base-change and affine Weil point comparisons.

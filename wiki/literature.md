@@ -90,3 +90,7 @@ use the Python executable in `TASKBASED_PYTHON` with `urllib.request.urlretrieve
 This uses OpenSSL and preserves HTTPS verification. Do not disable TLS checks.
 Request human assistance only when the source is still inaccessible, for example
 a paywall or missing edition; include the exact citation and attempted locations.
+
+## Errata
+
+- [Springer reduction theory: stabilizer indexing and line weights](../notes/errata/springer-1994-reduction-global-fields.md) — Verified original-source discrepancies, the SL₃ and GL₂ character computations, Godement's preceding-intersection and ambient-character formulations, and remaining chamber-proof obligations.

@@ -35,17 +35,23 @@ local notation "CK" => Matrix.unitaryGroup (Fin n) ℂ
 local notation "RM" => Matrix (Fin n) (Fin n) ℝ
 local notation "CM" => Matrix (Fin n) (Fin n) ℂ
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactCovarianceRationalAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactCovarianceContinuousAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactCovarianceSmoothAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactCovarianceFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance placeCompactCovarianceStableAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance placeCompactCovarianceSpaceAddCommGroup : AddCommGroup S.Space :=
+  Submodule.addCommGroup _
 
 private theorem realPlaceCompactRepresentation_eq (v : RP) (k : RK) :
     S.realPlaceCompactRepresentation v k =

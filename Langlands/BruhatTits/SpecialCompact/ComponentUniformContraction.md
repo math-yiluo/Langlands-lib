@@ -1,0 +1,13 @@
+# Uniform contraction on the prescribed standard component
+
+This internal derived construction is at arbitrary universe `u`. Its algebraic part is over any field `F`, with a connected reductive group scheme `G` over `Spec F`, the prescribed maximal split torus `i : S → G`, a generic cocharacter `ν` of `S`, and a set `J` contained in the simple relative roots determined by `i` and `ν`. The ambient affine structure morphism is the one supplied by connected reductivity.
+
+`componentRootPresentation` takes an actual closed representative `j : M → G` of the standard Levi on every test scheme, a split component `a : A → M`, and an actual map `q : A → S` satisfying `a ≫ j = q ≫ i`. It supplies a compatible root presentation using that same torus, generic cocharacter, face and split-component map. The Levi inclusion into the canonical standard parabolic is the existing represented-subgroup inclusion map.
+
+A published standard cocharacter identifies the three canonical standard subgroup functors with the dynamic ones. Dynamic centralizer reductivity, the geometric unipotent radical and the actual multiplication isomorphism establish the rational-Levi structure. The published generic minimality and root-sign inclusion theorems give the minimal-parabolic fields. All root-presentation data remain the originally supplied data.
+
+The analytic theorem `IsCompatibleStandardSplitComponent.uniform_contraction` is over every nonarchimedean local field `F`, in either characteristic, with connected reductive `G`, maximal split `i`, generic `ν`, and `J` contained in its simple relative roots. Its component hypothesis is the published `IsCompatibleStandardSplitComponent i ν J A q`. All compactness and neighborhoods use the canonical rational-point topology `rationalPointTopology F G.X` on the actual group `G(F)`.
+
+For a compact ambient subset contained in the literal standard radical and any ambient identity neighborhood, the theorem applies the published `presentationConeContraction` to this presentation and its actual dynamic radical. The radical comparison identifies its ambient point image with the original literal standard unipotent subgroup. The component compatibility identifies the point map and character chamber with the original `standardComponentCAepsilon`. The conclusion supplies one positive epsilon before all points of that epsilon chamber and all points of the compact set.
+
+This unit covers the standard radical direction. The opposite direction and the precise uniform containment and compact-open cofinality predicates are separate remaining steps. No simultaneous normal Iwahori basis or full available-data theorem is asserted.

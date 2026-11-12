@@ -1,0 +1,13 @@
+# A single opposite pair of weights
+
+This internal prerequisite concerns an actual matrix representation ρ of a finite split torus T_I over an arbitrary field K. It requires no infinite-field, smoothness, or characteristic assumption. The hypotheses include a single invertible matrix B diagonalizing ρ over every K-algebra, with integral weights w_j. The published `GeneralLinear.CocharacterDiagonal.exists_diagonalizingMatrix` provides this data for any such representation.
+
+`column_ne_zero` proves that every column of B is nonzero by applying its inverse. `column_weight_of_diagonalization` extracts the rational weight-vector identity from the diagonalization equation by multiplying it by B and reading a matrix column. These helpers permit application of weight-space obstructions to actual coefficient vectors.
+
+`weightSign` assigns the integers 0, 1, and -1 to weights known to lie in {0, m, -m}. The all-zero case and coincident cases are included. `weight_eq_sign_smul` verifies that each weight is the indicated integer multiple of m. `exponentValue_zsmul` identifies evaluation of that multiple with the corresponding power of the evaluated unit.
+
+`factor_through_exponentCharacter` states an equality of actual group-scheme homomorphisms. After conjugating ρ by the constant point B inverse, it is the composite of the actual exponent character T_I → G_m associated with m and the diagonal cocharacter whose entries are the signs. To prove equality of underlying relative schemes, the proof precomposes by the chosen affine coordinate isomorphism of T_I and compares invertible matrices at this universal affine test. It uses the full all-algebra diagonalization equation and the published evaluation formulas for exponent characters, diagonal cocharacters, and constant conjugation. Thus this is an equality on the entire scheme, including on nonreduced coefficient tests.
+
+Finally, `card_le_one_of_weight_trichotomy` assumes that the underlying relative-scheme map of ρ is a monomorphism. The conjugate is then a monomorphism as well. The displayed factorization forces its exponent character to be a monomorphism. Composing with G_m's standard one-factor split-torus isomorphism and applying `splitTorus.card_le_card_of_mono` proves Nat.card I ≤ 1. This result only uses monicity of ρ, without requiring its image or the intermediate character to be declared a closed subgroup.
+
+Provenance is internal: elementary matrix computations, the existing all-test diagonalization and evaluation results, categorical cancellation, and the published cocharacter-lattice rank comparison prove these assertions.

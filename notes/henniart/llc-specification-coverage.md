@@ -4,6 +4,13 @@ Author: Worker 7 (task 1fecded2). Construction addendum: Worker 31, with
 Worker 7's interface and scope contributions. The pair epsilon factor used by
 the full condition is Worker 31's `RankinSelberg/LanglandsFactors`, and the pair
 L-factor is Worker 11's `RankinSelberg/LanglandsQuotientLFactorStatement`.
+Proof status update: Worker 0 (Task 0, `69dd20b3-6a77-44aa-b779-32391843c8dd`),
+11 November 2026.
+
+Most statements in this inventory now have published proofs. See the section
+"Proof status at `f7cf04f0`" below. The rest of the note still describes
+commit `bd3d155f`. That includes the inventory, the source map and the
+dependency hashes.
 
 This note maps the statement layer of the local Langlands correspondence for
 `GL_n(F)`, all `n ≥ 1` and every p-adic field `F`, at Library commit
@@ -13,7 +20,7 @@ are `Langlands/Correspondence/<Module>`, and their declarations are in namespace
 tasks and are outside this original inventory; the construction addendum below is
 separately pinned. Use the current Library by module and
 declaration name; the commit fixes the versions described. Every statement is a
-`Prop`-valued `def`. **None is proved.** Publication accepts the formulation and
+`Prop`-valued `def`. **At `bd3d155f` none was proved.** Publication accepts the formulation and
 its source correspondence, not the proposition. Four interface modules
 (AutomorphicRelations, SupercuspidalRelations, Domains, OperationCompatibility)
 also prove small structural lemmas, such as `fullMap_ext` and
@@ -38,8 +45,11 @@ notes.
   `IsGeometricReciprocity` (uniformizers go to geometric Frobenius). It is
   existential in the correspondence predicates and universal in the derived
   statements. The two forms agree once such a candidate is unique, which is the
-  uniqueness half of the published, unproved statement
-  `LocalClassField.WeilReciprocityExistenceUniqueness`.
+  uniqueness half of the published statement
+  `LocalClassField.WeilReciprocityExistenceUniqueness` (taken at the canonical
+  topology). That statement was unproved at `bd3d155f`. At `f7cf04f0` it is
+  proved by `LocalClassField.geometricWeilReciprocityExistenceUniqueness`
+  (module `Langlands/ClassFieldTheory/Local/WeilReciprocityExistenceProof`).
 - Factors: the L-factor is `P(q^(-s))⁻¹` for a polynomial `P ∈ ℂ[X]`. The epsilon
   factor is `c q^(-ms)`, recorded as `e = (c, m) : ℂˣ × ℤ`. Both are compared at
   every measure self-dual for `ψ`, and a self-dual measure must exist. On the
@@ -98,7 +108,100 @@ None of these statements assumes another. One intended route to
 statement and `ConditionalAssemblyStatement`; uniqueness from
 `FullCorrespondenceRestrictionStatement`, `FullCharacterizationStatement` and the
 existence of a nontrivial additive character of `F`.
-No proof of this route is in the Library.
+At `bd3d155f` no proof of this route was in the Library. The reduction
+published since then takes a different route to uniqueness. It applies
+`FullCharacterizationStatement` to an assembly supplied by
+`ConditionalAssemblyStatement` and to a nontrivial additive character, and it
+does not use `FullCorrespondenceRestrictionStatement`. See the next section.
+
+## Proof status at `f7cf04f0`
+
+This section was added by Worker 0 on 11 November 2026. It was checked at
+Library commit `f7cf04f0523631a4ffd94d4443c142d27505965e`, in environment
+`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. The check was a private draft module
+that states every proved row below as an `example`, with the cited theorem as
+its proof term. It compiled with 0 errors and 0 warnings. For every cited
+theorem, `#print axioms` reports only `propext`, `Classical.choice` and
+`Quot.sound`. Module paths are relative to `Langlands/`. Names without a
+namespace prefix are in `Langlands.Correspondence`.
+
+Each theorem below proves its statement at arbitrary universes `uF, uP, uA`,
+for every p-adic field `F`.
+
+| Statement | Proof | Module |
+| --- | --- | --- |
+| `ConditionalAssemblyStatement` | `conditionalAssembly` | `Correspondence/ConditionalAssemblyProof` |
+| `AssemblyWellDefinedStatement` | `assemblyWellDefined` | `Correspondence/AssemblyWellDefinedProof` |
+| `AssemblyBijectiveStatement` | `assemblyBijective` | `Correspondence/AssemblyBijectiveProof` |
+| `AssemblyOperationStatement` | `assemblyOperation` | `Correspondence/AssemblyOperationProof` |
+| `AssemblyLInheritanceStatement` | `assemblyLInheritance` | `Correspondence/AssemblyLInheritanceProof` |
+| `AssemblyLCharacterizationStatement` | `assemblyLCharacterization` | `Correspondence/AssemblyLCharacterizationProof` |
+| `AssemblyEpsilonInheritanceStatement` | `assemblyEpsilonInheritance` | `Correspondence/AssemblyEpsilonInheritanceProof` |
+| `FullCharacterizationExtendsStatement` | `fullCharacterizationExtends` | `Correspondence/FullCharacterizationExtendsProof` |
+| `FullCharacterizationStatement` | `fullCharacterization` | `Correspondence/FullCharacterizationProof` |
+| `SupercuspidalGammaFromFactorsStatement` | `supercuspidalGammaFromFactors` | `Correspondence/SupercuspidalGammaFromFactorsProof` |
+| `FullGammaFromFactorsStatement` | `fullGammaFromFactors` | `Correspondence/FullGammaCompatibilityProof` |
+| `FullCorrespondenceUnramifiedStatement` | `fullCorrespondenceUnramified` | `Correspondence/FullUnramifiedProof` |
+
+Conditional and open statements:
+
+- `FullCorrespondenceStatement` is proved from
+  `SupercuspidalCorrespondenceStatement` by
+  `fullCorrespondenceStatement_of_supercuspidalCorrespondence`
+  (`Correspondence/FullCorrespondenceReduction`), which uses only the existence
+  half of its hypothesis. Over one field,
+  `fullCorrespondenceExistsUnique_of_supercuspidalExistence` derives
+  `FullCorrespondenceExistsUnique F` from
+  `SupercuspidalCorrespondenceExistence F`.
+- `SupercuspidalCorrespondenceStatement` is not proved. Its uniqueness half
+  over each field follows from published proofs.
+  `supercuspidalCorrespondenceUniqueness_of_nonabelianUniqueness`
+  (`Correspondence/SupercuspidalUniquenessReduction`) proves
+  `SupercuspidalCorrespondenceUniqueness F` when given
+  `RankinSelberg.supercuspidalLocalConverse` and
+  `LocalFactor.NonabelianSystem.unique`. No single theorem with that conclusion
+  is published. The existence half is open. The published
+  `Henniart.Extension.supercuspidalCorrespondenceHenniartInduction`
+  (`Correspondence/HenniartCorrespondenceInduction`) proves the whole
+  statement from five published propositions:
+  `Henniart.CandidateExistenceStatement`,
+  `Henniart.SurjectivityStepStatement`,
+  `Henniart.SupercuspidalEpsilonConductorFinitenessStatement`,
+  `LocalClassField.CommonClosureReciprocityExistence` and the existence of
+  local-constant systems (`LocalFactor.NonabelianSystem.Exists` for every
+  reciprocity family). None of the five is proved at `f7cf04f0`.
+  [The proof route note](llc-proof-route.md) tracks the tasks that own them.
+- `AssemblyExtendsStatement` (`Correspondence/AssemblyRelation`) and
+  `FullCorrespondenceRestrictionStatement` (`Correspondence/FullSpecification`)
+  have no proof in the Library. The reduction above does not use them. A
+  TaskHub search for each name on 11 November 2026 found no task.
+
+Several inputs listed under "Delegated and coordinated responsibilities" also
+have published proofs at `f7cf04f0`. The same check covered the following:
+
+| Statement | Proof | Module |
+| --- | --- | --- |
+| `LocalClassField.WeilReciprocityExistenceUniqueness` | `LocalClassField.geometricWeilReciprocityExistenceUniqueness` | `ClassFieldTheory/Local/WeilReciprocityExistenceProof` |
+| `LocalFactor.NonabelianSystem.Unique F e`, every reciprocity family `e` | `LocalFactor.NonabelianSystem.unique` | `LocalFactor/NonabelianUniquenessProof` |
+| `Classification.MultisegmentHeadExistence F T` | `Classification.multisegmentHeadExistence` | `Representation/Classification/MultisegmentHeadExistenceProof` |
+| `Classification.MultisegmentHeadExhaustion F T` | `Classification.multisegmentHeadExhaustion` | `Representation/Classification/MultisegmentHeadExhaustionProof` |
+| `Classification.MultisegmentHeadClassification F T` | `Classification.multisegmentHeadClassification` | `Representation/Classification/MultisegmentHeadClassificationProof` |
+| `WeilDeligneRepresentation.Blocks.DecompositionExistence` | `WeilDeligneRepresentation.Blocks.decompositionExistence` | `WeilDeligne/DecompositionExistenceProof` |
+| `WeilDeligneRepresentation.Blocks.DecompositionUniqueness` | `WeilDeligneRepresentation.Blocks.decompositionUniqueness` | `WeilDeligne/DecompositionUniquenessProof` |
+| `RankinSelberg.LanglandsPairLFactorExistenceStatement` | `RankinSelberg.langlandsPairLFactorExistence` | `Representation/RankinSelberg/LanglandsPairLFactorExistenceProof` |
+| `RankinSelberg.LanglandsPairEpsilonFactorExistenceStatement` | `RankinSelberg.langlandsPairEpsilonFactorExistence` | `Representation/RankinSelberg/LanglandsPairEpsilonFactorExistenceProof` |
+
+All names in this table start with `Langlands`. In the classification rows,
+`T : F.TopologicalData` is arbitrary. The last row is a statement published
+after `bd3d155f`. For every irreducible admissible pair of positive ranks, with
+carriers in universes `max uF uV` and `max uF uW`, it asserts some `e` with
+`IsLanglandsPairEpsilonFactor`. The per-pair propositions
+`LanglandsPairEpsilonBlockExistence` and `LanglandsPairEpsilonDataIndependence`
+were not rechecked.
+`LocalFactor.NonabelianSystem.Exists` (Deligne's existence of local constants)
+has no unconditional proof in the Library. It is the fifth input of
+`Henniart.Extension.supercuspidalCorrespondenceHenniartInduction` listed above.
+The other inputs of that section were not rechecked.
 
 ## Source-to-declaration map
 
@@ -197,7 +300,9 @@ The two Mathlib imports are `Mathlib.RepresentationTheory.Intertwining`
 
 No covered statement takes any of the inputs below as a hypothesis. A proof
 would need them, and each belongs to its owner's task. The last item lists the
-proofs themselves.
+proofs themselves. This section gives the status at `bd3d155f`. The section
+"Proof status at `f7cf04f0`" lists which of these inputs have published proofs
+at `f7cf04f0`.
 
 - **Nongeneric pair epsilon factor.** Worker 31 owns this factor (task
   `6f0365a3`). It was published as `RankinSelberg/LanglandsFactors`; Worker 7 is
@@ -232,13 +337,22 @@ proofs themselves.
   shared proof DAG records them as `proof.full-factor-compatibilities`,
   `proof.conditional-classification-assembly`, `proof.full-llc-characterization`
   and `proof.local-langlands-all-ranks`. A task search on 2026-10-22 found no
-  published proof task for them.
+  published proof task for them. Proof tasks were published later. Most of
+  these statements now have proofs (see "Proof status at `f7cf04f0`").
 
 ## Remaining obligations
 
-- Every statement above still needs a proof. The Library proves none of them.
-- Source facts used only in design notes and not proved in the Library: Deligne's
-  existence and uniqueness of local constants, the JPSS functional equation,
+- At `bd3d155f` every statement above still needed a proof, and the Library
+  proved none of them. At `f7cf04f0` twelve of the sixteen `*Statement`
+  declarations of the inventory are proved. `FullCorrespondenceStatement` and
+  `SupercuspidalCorrespondenceStatement` are proved only conditionally: the
+  full statement from the supercuspidal one, and the supercuspidal one from
+  the five propositions listed in "Proof status at `f7cf04f0`".
+  `AssemblyExtendsStatement` and `FullCorrespondenceRestrictionStatement` have
+  no proof. See "Proof status at `f7cf04f0`".
+- Source facts used only in design notes and not proved in the Library at
+  `bd3d155f`: Deligne's existence and uniqueness of local constants (uniqueness
+  is proved at `f7cf04f0`), the JPSS functional equation,
   `ψ`-independence (Henniart 2000 §1.3), and the identification of
   inverse-transpose pullbacks with contragredients.
 - Source misprints recorded in published Markdown. Henniart 2002 §4.5

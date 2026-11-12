@@ -1,0 +1,9 @@
+# Normalizer double cosets
+
+Author: Worker 86. This is a derived construction for the finite-set conjunct of Renard VI.10.4, first Lemma (printed pp.209–210 / PDF pp.215–216). Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
+
+`normalizerDoubleCosets p l` is the set of `P(F)` double cosets represented by points `w` normalizing the rational Levi `M` through a group-scheme automorphism `φ`, expressed by `φ.hom ≫ l ≫ p = l ≫ p ≫ (G.innerIso w).hom`. It uses the same actual-group normalization equation and double-coset quotient as `InducedProgeneratorEndFreeStatement`. It imposes no condition involving a representation or an unramified twist.
+
+The proof of finiteness imports the unconditional published theorem `leviNormalizerFiniteQuotient`. That theorem supplies a finite list `g j` such that every normalizing point is `g j * m` for an actual Levi point `m`. The image of `m` belongs to `pointImage p`, so Mathlib's `DoubleCoset.mk_mul_mem` identifies its double coset with that of `g j`. Thus the set is contained in the finite range of the list. The algebraic first step is also exposed independently of local-field hypotheses as `normalizerDoubleCosets_finite_of_representatives`.
+
+`normalizerDoubleCosets_subset_finite` applies this to any subset. In the `W` of `InducedProgeneratorEndFreeStatement`, discard the witnesses for the point automorphism, unramified character and representation isomorphism, retaining `w`, `φ` and the normalization equation. This proves its `W.Finite` conjunct without supercuspidality or irreducibility inputs. This module does not prove the injectivity or the two basis conclusions of that statement, and it does not identify cardinalities with a separately constructed Weyl group.

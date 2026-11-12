@@ -16,7 +16,8 @@ variable (J : GrothendieckTopology C)
 variable {R : Type u} [CommRing R]
 variable {G : Type u} [Group G] (Y : Action C G)
 
-local instance : HasLimitsOfShape (SingleObj G) (ModuleCat.{u} R) :=
+local instance instHasLimitsOfShapeSingleObjModuleCat_trivializationFromSplitting :
+    HasLimitsOfShape (SingleObj G) (ModuleCat.{u} R) :=
   ModuleCat.hasLimitsOfShape
 
 /-- Evaluate cover sections at the chosen lift supplied by an object of the slice. -/

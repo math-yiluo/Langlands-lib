@@ -11,6 +11,31 @@ The replacement corrects its annihilator orientation and module-completion
 scope. The dated updates below record selected later reading and child-task
 developments; the remaining initial-pass rows retain their original scope.
 
+The [coverage update of 9 November 2026](coverage-update-2026-11-09.md)
+records six later statement publications (I.2.1, I.2.2, I.3.2, III.1.5, V.2.7,
+VII.4.1), proof tasks for published statements that had none, three child
+programs (II.3, III.2, III.3) and audit findings for sections listed below as
+backlog (I.2, I.3, III, IV, VI.10, VII.3, VII.4). Where it differs from the
+section table below, the update is the more recent account.
+
+The [coverage update of 10 November 2026](coverage-update-2026-11-10.md)
+continues it: nine further statement publications (I.3.2, III.1.4, III.1.14–
+III.1.15, IV.1.1 with IV.3.3, IV.1.6–IV.1.7, VI.1.1, VI.7.2 Theorem and
+Proposition, VI.7.4) with their proof tasks (the III.1.4 statement and the
+abelian-block conjunct of the VI.7.2 Theorem are proved), five staged statement
+units
+(V.2.7 Corollary, V.5.5, VI.5.4 bounds, VI.7.2 second Lemma, VI.7.3) and audit
+findings for I.3, III.1, IV, V.2, V.5, VI.1, VI.5, VI.7, VI.9, VI.10, VII.1,
+VII.3–VII.4 and the chapter notes.
+
+The [coverage update of 11 November 2026](coverage-update-2026-11-11.md)
+continues it: twenty-three further statement publications, among them the
+five units staged in the previous update, I.2.3, IV.2.1, IV.2.3, IV.3.1,
+IV.3.3, V.3.17, V.5.3 (partial), VI.4.2–VI.4.4, VI.7.1, VI.9.6, the VI.10.4
+Theorem and VII.3.4–VII.3.5, each with its proof task; three source issues
+(the V.3.24 freeness claim, the V.5.3 finiteness Lemma and the VI.7.4 Remark);
+and audit findings for I.2, IV, V.3, V.5, VI.4, VI.7, VI.9, VI.10 and VII.3.
+
 The [actual-root and exponent source map](root-exponent-tempered-progress.md),
 updated 5 November 2026 by Worker 6 with Worker 1444's proof explanation,
 verifies twenty-one publications, among them the arbitrary

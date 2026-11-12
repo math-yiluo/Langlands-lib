@@ -36,9 +36,11 @@ Let `b : S' ⟶ S`, `c : S'' ⟶ S'` and `t : S''' ⟶ S''`, and let `A` be an a
 `S`. `baseChangeCompIso b c A : A_{S''} ≅ (A_{S'})_{S''}` is the comparison between direct
 and successive base change (module `Langlands.AbelianScheme.BaseChangeCoherence`).
 
-- `hom_baseChange_map_fst`: for a homomorphism `φ : Z ⟶ W` over `S''`, the underlying map
+- `hom_baseChange_map_fst'`: for a homomorphism `φ : Z ⟶ W` over `S''`, the underlying map
   of `(baseChange t).map φ` followed by the projection `W_{S'''} ⟶ W` equals the projection
-  `Z_{S'''} ⟶ Z` followed by the underlying map of `φ`.
+  `Z_{S'''} ⟶ Z` followed by the underlying map of `φ`. The primed name keeps it apart from
+  the lemma `hom_baseChange_map_fst` with the same statement that
+  `DualAbelianBaseChangeNaturalityProof` declares; neither module imports the other.
 - `baseChangeFamilySpaceMap_self_fst` and `baseChangeFamilySpaceMap_self_snd`: the two
   projection identities of `baseChangeFamilySpaceMap t Z Z.X` from the Library, restated for
   the self-product of `Z`. They exist so that `simp only` can rewrite with them; rewriting

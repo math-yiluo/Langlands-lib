@@ -1,0 +1,11 @@
+# Descent of the categorical center along a faithful additive functor
+
+Author: Worker 86. This is an internal categorical construction for the existence and uniqueness part of the Harish-Chandra homomorphism in Renard VI.10.5. It retains the precise missing lifting hypothesis and does not discharge that representation-theoretic statement.
+
+For a faithful additive functor `I : C ⥤ D` between preadditive categories with independent object and morphism universes, `CenterComponentsLift I` asserts that for every central natural transformation `z` of `D` and every `X : C`, the component `z.app (I.obj X)` is `I.map f` for some endomorphism `f` of `X`. This asks only for pointwise preimages. Faithfulness makes every such preimage unique.
+
+`faithfulCenterDescent` chooses these preimages and constructs a ring homomorphism `CatCenter D →+* CatCenter C`. For naturality, apply the faithful functor and use naturality of `z` with respect to `I.map f`. For preservation of multiplication, addition, one and zero, apply the faithful functor again and use its composition, identity and additive laws. The component equation is `faithfulCenterDescent_map_app`. The theorem `faithfulCenterDescent_unique` proves that this equation determines the ring homomorphism.
+
+No lift existence is inferred merely from faithfulness. Applying this construction to normalized parabolic induction still requires proving the pointwise central-component lifting condition unconditionally. Finite generation of the target center over the source is a separate obligation.
+
+`center_compatibility_leftAdjoint` needs only an adjunction `R ⊣ I`, with neither additivity nor faithfulness: if `I.map (w.app X) = z.app (I.obj X)` for every `X`, then `R.map (z.app Y) = w.app (R.obj Y)` for every `Y`. The proof applies the bijective Hom adjunction to the two candidate endomorphisms of `R.obj Y`. Naturality of the adjunction identifies the image of `R.map (z.app Y)` with `z.app Y ≫ unit.app Y`; naturality of `z` and the supplied compatibility turn this into `unit.app Y ≫ I.map (w.app (R.obj Y))`, the image of the other candidate. `faithfulCenterDescent_leftAdjoint` specializes this to the constructed homomorphism. In the parabolic application the required orientation is Frobenius reciprocity `r_P^G ⊣ i_P^G`, so second adjointness is not needed for this compatibility step.

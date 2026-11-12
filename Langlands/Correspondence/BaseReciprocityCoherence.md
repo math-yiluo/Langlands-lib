@@ -19,3 +19,8 @@ another candidate is exactly proving that the candidates are equal.
 These results supply coherence for a fixed family. They do not prove that
 arbitrary geometrically normalized candidates are equal, nor do they prove
 epsilon-factor inheritance.
+
+The module's local topology on `F.Carrier` (the canonical one) is the named
+local instance `baseReciprocityCoherenceTopology`. A name is needed because
+unnamed local instances of different modules can receive the same automatic
+name, and then no module can import both.

@@ -1,0 +1,19 @@
+# Positive elements and countable compact-open Hecke corners
+
+Author: Worker 138. Namespace `Langlands.Renard.Smooth`.
+
+This construction unit supplies the inversion-conjugation operation on the actual Haar Hecke algebra and its compact-open corners, and proves positivity, nonnilpotence and the corner countability bound needed for Renard III.1.11. It does not prove Hecke completeness or the aggregate `RenardSchurStatements`.
+
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, III.1.11, printed pp.64–65 / PDF pp.70–71; registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The definitions follow the source's operation `f*(g) = conjugate(f(g⁻¹))`. The countability proof below is an internal correction to the route under the target's precise hypotheses.
+
+`heckeAdjoint μ f` is the actual test function `g ↦ conjugate(f(g⁻¹))`. Inversion preserves local constancy and compact support; conjugation preserves both and takes zero to zero. There is no modular-character factor. The name denotes this explicitly specified convolution involution; this unit makes no assertion about an adjoint operator on a Hilbert space or an isometry for a norm.
+
+`heckeAdjoint_involutive` proves that applying the operation twice recovers the function. For `heckeAdjoint_mul`, conjugate the convolution integral and substitute `y = x⁻¹ z` using left Haar invariance. This identifies the result at `x` with the convolution of the two transformed functions in reversed order. No right invariance or unimodularity is needed.
+
+For `heckeAdjoint_mul_self_ne_zero`, the convolution of the transformed `f` with `f`, evaluated at the identity, is the complex integral of `normSq (f(y⁻¹))`. This is the real inclusion of the integral of a continuous compactly supported nonnegative real function. If `f` is nonzero, this real function has nonempty open support. A Haar measure is positive on every nonempty open set; integrability and the positive-integral criterion make the integral strictly positive, so the convolution cannot be zero.
+
+`heckeCornerAdjoint` restricts the same operation to `HeckeAlgebra.Corner μ K hK`. Inversion interchanges left and right invariance, so the same compact-open subgroup works. The corner lemmas transfer involutivity, reversal of products and nonvanishing of positive self-products from the full Hecke algebra using its faithful corner inclusion. `heckeCorner_selfAdjoint_not_isNilpotent` repeatedly squares a nonzero fixed point of the involution: every power with exponent `2^n` remains self-adjoint and nonzero. Any nilpotent power would force one of these powers to vanish, which is impossible.
+
+`heckeCorner_rank_le_aleph0` uses only sigma-compactness of `G`, together with the already explicit topological-group and compact-open data. The coset space `G/K` is discrete and Lindelöf, hence countable. A corner function is determined by its values on the chosen coset representatives because it is right `K`-invariant. Compact support makes only finitely many of these values nonzero. This gives an injective complex-linear map from the corner to `(G/K) →₀ ℂ`; the rank of the latter is at most countable. The finite-support fact is the published `hasFiniteSupport_out_of_hasCompactSupport`, and the final comparison uses Mathlib's rank theorems.
+
+The printed proof counts the whole Hecke algebra by a countable compact-open neighborhood basis. Sigma-compactness alone, which is the published completeness target's hypothesis, does not supply such a basis. This unit proves the needed rank bound for each fixed compact-open corner instead. It asserts no countability bound for the full Hecke algebra. The same-universe group quotient and corner are actual published carriers, with no resizing.

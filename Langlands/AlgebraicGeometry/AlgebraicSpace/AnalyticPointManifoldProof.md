@@ -1,0 +1,7 @@
+# Proof of Conrad's analytic manifold assertion
+
+`analyticPointManifold` proves the exact unchanged published `Langlands.AlgebraicGeometry.AlgebraicSpace.AnalyticPointManifoldStatement`, the analytic-manifold assertion of Conrad's Proposition 5.4 (printed pp.15–16, `conrad-2011-weil-grothendieck-adelic-points`). It ranges over every complete nontrivially normed field in every universe and every relative dimension, for exactly the quasi-separated, locally separated smooth algebraic spaces of pure relative dimension specified by the statement.
+
+For existence, use the published `canonicalAnalyticPointStructure` and its `canonicalAnalyticPointStructure_isAdmissible` theorem. This supplies analytic manifolds for the existing étale-chart topology, analytic maps for all morphisms in the family, analytic local isomorphisms for étale morphisms, and the exact affine-space coordinate normalization.
+
+For uniqueness, use `AnalyticPointStructure.equivalent_of_isAdmissible` from the accompanying `AnalyticPointUniqueness` module. Its proof compares the coordinate diffeomorphisms on affine space, pulls the comparison back through étale polynomial coordinates on standard-smooth affine schemes, and descends the comparison through standard-smooth neighborhoods in affine étale charts at every rational point of an arbitrary space. Reversing the two families proves analyticity of the identity in both directions, as the target requires. The final theorem combines these two results directly, with no additional premises and no changes to the target or its import closure.

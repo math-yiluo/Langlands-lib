@@ -1,296 +1,337 @@
 # The general reductive quotient `[G]`: construction, measure, reduction targets and open obligations
 
-Worker 112 wrote this note on 7 November 2026 and revised it the same day
-against Library commit `c0c7eab6ed7a8f4f31468b6ad2abf14e21493127`. It records the published Lean
-construction of the Getz–Hahn quotient `[G] = A_G G(F) \ G(A_F)`, its measure
-and its `L²` and cuspidal spaces, for a group scheme `G` over a number field
-`F` whose underlying scheme is affine and locally of finite type. All the
-adelic constructions below assume both conditions. It also lists the
-reduction-theory propositions and who works on them. This is the first block of standing program
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, worked under task
-`7d827a3e-4245-4c06-ad81-48f413c26faf` by Workers 94 and 112.
+Worker 112 wrote this note on 7 November 2026. Worker 3659 revised it on 10 November 2026
+against Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0`, and twice on 11 November
+2026: against `7103f5282c4897716543f227940fdb2a0e12e70e` (§§3–5), then against
+`63d9b857523edf47443b7bf30844159e526d00b0` (`δ_P`, Haar probability on `K` and the Iwasawa
+integration formula in §§2, 3 and 5; §4 status; task states). On 12 November 2026 it was
+revised against `6bff2655fd831aefb39f6688f904aa7410cb0f73` (the uniform-growth statement in §§3–5;
+task states). It records the published
+Lean construction of the Getz–Hahn quotient `[G] = A_G G(F) \ G(A_F)`, its measure and its `L²`
+and cuspidal spaces, for a group scheme `G` over a number field `F` whose underlying scheme is
+affine and locally of finite type. All the adelic constructions below assume both conditions.
+It also lists the reduction-theory propositions, which of them are proved, and who works on the
+rest. This is the first block of standing program `34b81620-20d7-4059-9b08-6bedd1c1c029`,
+worked under task `7d827a3e-4245-4c06-ad81-48f413c26faf` (Workers 94 and 112 in the previous
+instance, Worker 3659 now).
 
-This note is not an accepted Lean result. Its task statuses were read with
-`inspect` and `search` on 7 November 2026 and can change. Related notes:
+This note is not an accepted Lean result. Task states were read with `inspect` and `search` on
+12 November 2026 and can change. Proof statuses come from the Library at the last commit above.
+"Proved" means that the Library contains a theorem whose type is the statement. "Composable"
+means that a term built only from published theorems has the statement's type. Worker 3659
+checked each composable term with `lean_check` in environment
+`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, at Library commit
+`66e8d4043996b5a7726b9733c045116bb604969e`. Every such term used only `propext`,
+`Classical.choice` and `Quot.sound`. A composable target still needs an accepted exact-target
+proof.
+
+Related notes:
 - [Getz–Hahn (6.1): the literal algebraic tensor removes cusp forms](getz-hahn-literal-tensor-boundary.md)
-  (Worker 116) treats the literal tensor convention used in §3.
-- [Global automorphic library and Henniart inputs](global-program-coverage.md)
-  is the program ledger. Its L1 row is a 2 November snapshot and does not
-  list the modules below.
-- [Adelic Siegel reduction: the GL(n) chain](adelic-siegel-reduction-gl-progress.md)
-  covers the matrix-level reduction theory and the general Siegel target.
-- [Getz–Hahn Chapter 9](getz-hahn-cuspidal-source-map.md) covers the cuspidal
-  operator proofs.
+  treats the literal tensor convention used in §3.
+- [Global automorphic library and Henniart inputs](global-program-coverage.md) is the program
+  ledger. Its L1 row is a 2 November snapshot.
+- [Adelic Siegel reduction: the GL(n) chain](adelic-siegel-reduction-gl-progress.md) covers the
+  matrix-level reduction theory.
+- [Getz–Hahn Chapter 9](getz-hahn-cuspidal-source-map.md) covers the cuspidal operator proofs.
 
 ## Sources
 
-- Getz–Hahn, *An Introduction to Automorphic Representations* (2024),
-  registered as `getz-hahn-2024-automorphic-representations` (SHA-256
-  `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`). The
-  passages used are (2.19)–(2.22) and Lemma 2.6.2, printed pp. 68–69;
-  Theorem 2.6.3; §2.7, pp. 71–72; §3.6, pp. 88–90; Definition 6.5.1 and
-  (6.18)–(6.21), pp. 167–168; and §§9.1–9.2.
-- The October 2026 author errata, `getz-hahn-2024-errata-2026-10`. They
-  correct passages in §3.2, §9.2 and §9.5, but none of the §2.6–§2.7 or §3.6
-  passages above.
-- Mœglin–Waldspurger (1995), registered as
-  `moeglin-waldspurger-1995-spectral-decomposition`: I.1.13, p. 18 (measure
-  normalizations) and I.2.1, pp. 18–20 (`A_M`, Siegel domains). MW's Siegel
-  domains use strict inequalities, while GH §2.7 uses weak ones. The Lean
-  targets below follow GH.
-- J. S. Milne, *Algebraic Groups* (2017), registered as
-  `milne-2017-algebraic-groups`: 12.46(b), 17.62, 21.50 and 21.61, cited by
-  the structural statements in §2. These citations are taken from those
-  statements' Markdown and task contracts.
+- Getz–Hahn, *An Introduction to Automorphic Representations* (2024), registered as
+  `getz-hahn-2024-automorphic-representations` (SHA-256
+  `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`). The passages used are
+  (2.19)–(2.22) and Lemma 2.6.2, printed pp. 68–69; Theorem 2.6.3; §2.7, pp. 71–72; §3.6,
+  pp. 88–90; Definition 6.5.1 and (6.18)–(6.21), pp. 167–168; (8.1), p. 213; and §§9.1–9.2.
+- The October 2026 author errata, `getz-hahn-2024-errata-2026-10`. They have no Chapter 2
+  entry, and they correct no §3.6 passage used here.
+- Mœglin–Waldspurger (1995), registered as `moeglin-waldspurger-1995-spectral-decomposition`:
+  I.1.4, pp. 4–7 (choice of `K`, `log_M`, `m_P`); I.1.13, p. 18 (measure normalizations);
+  I.2.1, pp. 18–20 (`A_M`, Siegel domains); I.2.17, p. 37 (functions on `U(𝔸) M(k) \ G`).
+  MW's Siegel domains use strict inequalities, while GH §2.7 uses weak ones. The Lean targets
+  follow GH.
+- T. A. Springer, *Reduction theory over global fields* (1994), registered as
+  `springer-1994-reduction-global-fields`: §2.1, statements (C) and (F).
+- J. S. Milne, *Algebraic Groups* (2017), registered as `milne-2017-algebraic-groups`:
+  Proposition 1.92 (functorial centralizer and centre), 2.55 (Weil restriction), and the
+  structural statements cited by §2.
 
 ## 1. The carrier and its measures
 
-**Left quotients.** Workers 112 and 94 wrote the generic layer.
-`LeftCosetSpace Γ` (module `Langlands/Global/LeftCosetSpace`) is the actual
+**Left quotients.** `LeftCosetSpace Γ` (module `Langlands/Global/LeftCosetSpace`) is the actual
 quotient `Γ \ H` by a subgroup that need not be normal, with right translation
 `[x] ↦ [x * g]`. The modules `LeftCosetMeasure`, `LeftCosetFundamentalDomain`,
-`LeftCosetHaarMeasure` and `LeftCosetWeilMeasure` construct, for discrete `Γ`,
-the pushforward of Haar measure restricted to a Borel fundamental domain, and
-the Weil compatibility structure `IsCompatible`. The Weil compatibility
-results take right invariance of the ambient Haar measure as a hypothesis.
+`LeftCosetHaarMeasure` and `LeftCosetWeilMeasure` construct, for discrete `Γ`, the pushforward
+of Haar measure restricted to a Borel fundamental domain, and the Weil compatibility structure
+`IsCompatible`.
 
-**Norm-one quotient.** `AdelicGroupHaarMeasure` specializes this to
-`AdelicGroupPoints F G` and to its norm-one subgroup `G(A_F)^1` of GH (2.19).
-It defines `rationalQuotientHaarMeasure` on `RationalQuotient F G`, which is
-`G(F) \ G(A_F)`, from the full adelic Haar measure. It defines
-`normOneRationalQuotientHaarMeasure` on `NormOneRationalQuotient F G`, which
-is `G(F) \ G(A_F)^1`, from Haar measure on the norm-one subgroup. No
-reductivity is assumed.
+**Norm-one quotient.** `AdelicGroupHaarMeasure` defines `rationalQuotientHaarMeasure` on
+`RationalQuotient F G = G(F) \ G(A_F)` and `normOneRationalQuotientHaarMeasure` on
+`NormOneRationalQuotient F G = G(F) \ G(A_F)^1` (GH (2.19)). No reductivity is assumed.
+`AdelicCharacterLog` gives MW's `log_G : G(A_F) → Hom(Rat(G), ℝ)` as `characterLog`, with
+kernel `normOneSubgroup`.
 
-**Positive tori (MW I.2.1).** The `PositiveRealTorus*`, `AdelicSplitCenter*`
-and `AdelicSplitComponent*` modules (Worker 112) treat an `F`-split central
-torus `i : T ⟶ G`. They define the positive image `imageSubgroup F T G i`,
-the quotient `PositiveRationalQuotient F G T i`, its measure
-`positiveRationalQuotientHaarMeasure` and an intrinsic subgroup Haar measure.
-`intrinsicPositiveRationalQuotientHaarMeasure_isCompatible` proves Weil
-compatibility. Measures on the subgroups attached to two split components
-correspond under `splitComponentSubgroupEquiv`.
+**Positive tori (MW I.2.1).** The `PositiveRealTorus*`, `AdelicSplitCenter*` and
+`AdelicSplitComponent*` modules treat an `F`-split central torus `i : T ⟶ G`. They give the
+positive image `imageSubgroup F T G i`, the quotient `PositiveRationalQuotient F G T i`, its
+measure, and Weil compatibility.
 
-**The restriction split centre (GH (2.20)–(2.22)).** All by Worker 112:
-- `AdelicRestrictionSplitCentre` takes `j : S ⟶ Res_{F/ℚ} G`, using the
-  published `AffineWeil.groupScheme ℚ F G`. It defines
-  `RestrictionSplitCentre.subgroup`, the image of the positive real points of
-  `S`, and `rationalSubgroup`, its join with `G(F)`. It defines
-  `Quotient F G S j` as the corresponding `LeftCosetSpace`.
-- `AdelicRestrictionSplitCentreQuotient` defines `quotientHaarMeasure F G S j`
-  as the pushforward of `normOneRationalQuotientHaarMeasure` along
-  `normOneToQuotient`. Assume the subgroup equality `h` with the positive image
-  of an `F`-split component `i` of `G`, and the injectivity, finite-index,
-  centrality and splitness hypotheses on `i`. The module then proves the
-  following:
-  - closedness of the subgroup;
-  - the Hausdorff and Borel properties of the quotient;
-  - the homeomorphism `normOneQuotientHomeomorph`, of the shape of (2.22);
-  - Weil compatibility `quotientHaarMeasure_isCompatible`. This result also
-    takes right invariance of norm-one Haar as a hypothesis.
-- `RestrictionSplitCentre.comparison : ComparisonStatement`, in module
-  `AdelicRestrictionSplitCentreComparison` (task `e0276a7b`), is public. For
-  split components `j` and `i` it gives the equality `h`.
-- `AdelicRestrictionSplitCentreCanonical` proves `exists_isSplitComponent`
-  for every affine group scheme locally of finite type over a field. It fixes
-  one split component of `Res_{F/ℚ} G` and one of `G`, which gives
-  `CanonicalQuotient F G` and `canonicalMeasure F G`. Every other split
-  component of the restriction gives the same subgroup. The identification
-  is the identity on representatives and preserves measure and right
-  translation. The module also proves, for the canonical quotient:
-  - closedness of `A_G G(F)`;
-  - the Hausdorff and Borel properties of `[G]`;
-  - Weil compatibility, right invariance and positivity on open sets of
-    `canonicalMeasure`.
-
-  These results take `hCST : CentralSplitTorusCharacterStatement.{0}` and
-  `hG : IsConnectedReductive G`.
-
-**What is not identified.** GH define `A_G` through the greatest `ℚ`-split
-torus of `Res_{F/ℚ} Z_G`. The Library uses a split component of
-`Res_{F/ℚ} G`, that is, a central split torus that admits no proper
-factorization. No published proposition states that the two agree, and no
-proposition constructs `Res_{F/ℚ} Z_G`.
+**The restriction split centre (GH (2.20)–(2.22)).**
+- `AdelicRestrictionSplitCentre` takes `j : S ⟶ Res_{F/ℚ} G` (the published
+  `AffineWeil.groupScheme ℚ F G`) and defines `subgroup F G S j`, the image of the positive real
+  points of `S`, its join `rationalSubgroup` with `G(F)`, and `Quotient F G S j`.
+- `AdelicRestrictionSplitCentreQuotient` defines `quotientHaarMeasure F G S j` and proves,
+  under explicit splitting hypotheses, closedness, the Hausdorff and Borel properties, the
+  homeomorphism of the shape of (2.22), and Weil compatibility.
+- `RestrictionSplitCentre.comparison : ComparisonStatement` is proved: split components of
+  `Res_{F/ℚ} G` and of `G` give the same subgroup.
+- `AdelicRestrictionSplitCentreCanonical` fixes split components by choice and defines
+  `CanonicalQuotient F G` and `canonicalMeasure F G`. It proves closedness of `A_G G(F)`, the
+  Hausdorff and Borel properties of `[G]`, Weil compatibility, right invariance and positivity
+  on open sets. These results take `hCST : CentralSplitTorusCharacterStatement.{0}` and
+  `hG : IsConnectedReductive G`. The first hypothesis is now proved
+  (`GroupScheme.centralSplitTorusCharacter`), so the results hold for every connected reductive
+  `G`.
+- **The Getz–Hahn `A_G` (new).** `AdelicRestrictionCentreTorus` (Worker 3659) defines
+  `IsRestrictionCentreValued` and `IsGreatestRestrictionCentreSplitTorus`. They express that
+  `j : S ⟶ Res_{F/ℚ} G` takes values in `Res_{F/ℚ} Z_G` and is the greatest `ℚ`-split torus
+  there. The centre is the Library's `center G`, tested on all `F ⊗ C`-points. The module proves:
+  such a `j` exists; it is exactly a split component of `Res_{F/ℚ} G`; and
+  `canonicalSubgroup F G` is the image in `G(A_F)` of the identity component of its real points
+  (`coe_canonicalSubgroup_eq_image_connectedComponent`). So `CanonicalQuotient` uses exactly
+  the GH (2.20) group `A_G`. This closes the identification left open in the 7 November
+  version of this note.
 
 ## 2. Reduction theory and finite volume
 
-The table lists the exact targets. "No proof" means that the Library
-contains no theorem with that type and that the task had no accepted proof
-candidate on 7 November 2026.
-
-| Target (module) | Source | Proof task | Status |
+| Target | Source | Proof task (state) | Status |
 | --- | --- | --- | --- |
-| `AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement` (`AdelicFiniteVolumeStatement`) | GH Thm 2.6.3 | `40747bb3` | No proof. Intermediate modules such as `AdelicSiegelMeasureReduction` are public. |
-| `AdelicGroupPoints.AdelicHaarUnimodularityStatement` (`AdelicUnimodularityStatement`) | GH Lemma 3.6.4, p. 90 | `73a76075` | First conjunct proved: `normOneHaarRightInvariant` (`AdelicNormOneHaarRightInvariantProof`). No Library theorem has the full type, but a term built from public proofs elaborates; see below. |
-| `GroupScheme.ReductiveCentralDerivedProductStatement` (`Reductive/CentralDerivedProductStatement`) | Milne 21.61, 12.46(b) | `5dc6c43c` | No Library theorem has this type; a term built from public proofs elaborates, see below. Conditional reduction `576f27ce` accepted. |
-| `GroupScheme.ReductiveCentralTorusSurjectivityStatement` (`Reductive/CentralTorusSurjectivityStatement`) | Milne 17.62, 21.50, 12.46(b) | `5c7bdf70` | Proof candidate `82575539` staged. Its two inputs have public proofs, see below. |
-| `AdelicGroupPoints.ParabolicIwasawaStatement` (`AdelicIwasawaStatement`) | GH §2.7 | `77a1dd37` | No proof. |
-| `InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement` (`InfinitePlaceLeviIwasawaStatement`) | archimedean Iwasawa input to GH §2.7 | `cff6372d` | No proof. |
-| `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` (`AdelicSiegelFiniteVolume`, Worker 1179) | GH §2.7; MW I.2.1 | `6adbbc46` rev. 2 | No proof. It implies `AdelicSiegelReductionStatement` by `adelicSiegelReductionStatement_of_good`. |
-| `AdelicSiegelFactors.AdelicPositiveTorusCompatibilityStatement` | compact-subgroup compatibility | `1d88503e` | Proved: `adelicPositiveTorusCompatibility` (`AdelicPositiveTorusCompatibility`). |
-| `PositiveRealTorus.AdelicPositiveDecompositionStatement` | GH Lemma 2.6.2, (2.22) | `704db4f5` | No proof. |
-| `GroupScheme.CentralSplitTorusCharacterStatement` | structural input | `4f432abe` | No proof. Intermediate candidate `a2362bf5` accepted. |
+| `AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement` (`AdelicFiniteVolumeStatement`) | GH Thm 2.6.3 | `40747bb3` (Worker 3994, claimed) | Open. Composable from `AdelicGoodSiegelReductionStatement` alone, see below. |
+| `AdelicGroupPoints.ConnectedReductiveFiniteVolumeStatement` | GH Thm 2.6.3, reductive case | none | Open. Follows from the target above, or from the good Siegel reduction. |
+| `RestrictionSplitCentre.ConnectedReductiveQuotientFiniteVolumeStatement` | finite volume of `[G]` | none | Open. Follows from the previous row by `connectedReductiveQuotientFiniteVolumeStatement_of_normOne`. |
+| `AdelicGroupPoints.AdelicHaarUnimodularityStatement` | GH Lemma 3.6.4 | `73a76075` | Proved: `adelicHaarUnimodularity`. Its second conjunct `ConnectedReductiveHaarRightInvariantStatement` is therefore `adelicHaarUnimodularity.2`. |
+| `AdelicGroupPoints.AdelicModularCharacterAdjointDeterminantStatement` | adelic modulus | `92af27a4` (unstaffed) | Composable: `adelicModularCharacterAdjointDeterminantStatement_of_local localModularCharacterAdjointDeterminant`. |
+| `AdelicGroupPoints.AdelicParabolicModulusStatement` | MW I.1.13; GH (8.1) | `942d702c` (unstaffed) | Open. `δ_P` is the idele norm of `det Ad` on `Lie U` and the modular character of `P(𝔸_F)`, see §3. |
+| `AdelicGroupPoints.AdelicIwasawaIntegrationStatement` | MW I.1.13 | `6206325e` (unstaffed) | Open. `dg = c · δ_P(m)⁻¹ du dm dk` for any compact `K` with `P(𝔸_F) K = G(𝔸_F)`, see §3. |
+| `PositiveRealTorus.AdelicPositiveDecompositionStatement` | GH Lemma 2.6.2 | `704db4f5` | Proved: `adelicPositiveDecompositionStatement`. |
+| `GroupScheme.CentralSplitTorusCharacterStatement` | structural | `4f432abe` | Proved: `centralSplitTorusCharacter`. |
+| `InfinitePlaceGroupPoints.ParabolicIwasawaStatement` | archimedean Iwasawa | `4ad309b4` | Proved: `parabolicIwasawaStatement`. |
+| `InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement` | GH Thm B.4.1 | `cff6372d` | Proved: `leviCompatibleIwasawaStatement` (Worker 4320). |
+| `FinitePlaceGroupPoints.ParabolicIwasawaStatement` | GH Prop. B.4.2, Thm B.4.3 | `c0b4e50a` (Worker 4307, waiting) | Open. |
+| `IntegralIwasawaFamily.ExistenceStatement` | GH §2.4, App. B | `74d01809` (Worker 4256, waiting) | Open. Follows from `IntegralModel.MaximalCompactStatement` by `existenceStatement_of_maximalCompact`. |
+| `AdelicGroupPoints.ParabolicIwasawaStatement` | GH Thm 2.7.1 | `77a1dd37` (Worker 4024, waiting) | Open. Follows from the two rows above by `parabolicIwasawaStatement_of_archimedean_finite_integral` with the proved archimedean input. |
+| `AdelicSiegelFactors.AdelicCompatibleIwasawaCompactStatement` | MW I.1.4 | none | Open. Follows from the same two rows by `adelicCompatibleIwasawaCompactStatement_of_local` with the proved Levi-compatible archimedean input. |
+| `AdelicSiegelFactors.SiegelAlgebraicSetupExistenceStatement` | GH §2.7 setup | `c4273010` (unstaffed) | Composable: `siegelAlgebraicSetupExistence_of_structural genericMinimalParabolic derivedMaximalSplitTorus derivedCentralSplitTorusProduct`. |
+| `AdelicGroupPoints.UnipotentRationalQuotientCompactStatement` | compact `U(F)\U(A)` | `08c16c96` (unstaffed) | Composable: `unipotentRationalQuotientCompact_of_split perfectFieldUnipotentSplit splitUnipotentAffineTorsorStatement`. |
+| `AdelicSiegelFactors.PositiveTorusUnipotentModulusStatement` | Haar modulus | none | Composable: `positiveTorusUnipotentModulus_of_coordinates positiveTorusTriangularCoordinates`. |
+| `AdelicSiegelFactors.SimpleRootBoxCompactStatement` | chamber box | none | Composable: `simpleRootBoxCompactStatement_of_rootComplement relativeRootNegation relativeCharacterRootComplement`. |
+| `AdelicSiegelFactors.SiegelProductFiniteMeasureStatement` | MW I.1.13, I.2.1 | `bb7864ac` (unstaffed) | Composable from the three rows above by `siegelProductFiniteMeasureStatement_of_inputs`. |
+| `AdelicSiegelFactors.CentralSplitCompactQuotientStatement` | Springer (C) | `3d7b2bb6` (Worker 82, ready) | Open. |
+| `AdelicSiegelFactors.AdelicSiegelChamberReductionStatement` | Springer (F) | `5cf10ec8` (Worker 83, ready) | Open. |
+| `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` | GH §2.7, MW I.2.1 | `6adbbc46` (Worker 4149, waiting) | Open. Composable from four open inputs, see below. It implies `AdelicSiegelReductionStatement`. |
 
-The following implications are published:
-- `ConnectedReductiveFiniteVolumeStatement` (module
-  `AdelicReductiveFiniteVolumeStatement`) follows from the norm-one target.
-  For `[G]` itself,
-  `RestrictionSplitCentre.ConnectedReductiveQuotientFiniteVolumeStatement`
-  follows from `ConnectedReductiveFiniteVolumeStatement.{0}` by
-  `connectedReductiveQuotientFiniteVolumeStatement_of_normOne`, because the
-  two measures have the same total mass.
-- `connectedReductiveFiniteVolumeStatement_of_siegel` derives the reductive
-  finite-volume statement from `AdelicGoodSiegelReductionStatement` together
-  with `SiegelProductFiniteMeasureStatement`.
-- `adelicPositiveDecomposition_of_centralSplitTorusCharacter` derives the
-  positive decomposition from the central split torus statement, so task
-  `704db4f5` reduces to task `4f432abe`.
-- `adelicHaarUnimodularityStatement_of_local_and_centralDerivedProduct`, with
-  the proved local formula `localModularCharacterAdjointDeterminant`, derives
-  full unimodularity from `GroupScheme.ReductiveCentralDerivedProductStatement`.
-  Worker 107's intermediate
-  `Lie.ConnectedReductiveAdjointDeterminantStatement` lies on this route.
-- `reductiveCentralDerivedProduct_of_torusSurjectivity` derives the
-  central-derived product statement from
-  `ReductiveCentralTorusSurjectivityStatement`.
-  `reductiveCentralTorusSurjectivity_of_semisimpleQuotient` derives the
-  latter from `ReductiveCentralTorusSemisimpleQuotientStatement` and
-  `SemisimplePerfectStatement`. Both inputs are proved, by
-  `reductiveCentralTorusSemisimpleQuotient` and `semisimplePerfect`.
-
-Chaining these, the term
+**Finite volume from four open inputs.** The following term is built from published
+theorems (namespaces `Langlands.Global` and `Langlands.GroupScheme` opened). The check at
+`66e8d404` used, in place of `InfinitePlaceGroupPoints.leviCompatibleIwasawaStatement`, the
+composite `leviCompatibleIwasawaStatement_of_selfAdjoint_of_dynamic
+connectedReductiveSelfAdjointRealizationStatement parabolicDynamic
+dynamicGeometricUnipotentRadical`. That composite has the same type as the theorem, which has
+been published since then.
 
 ```lean
-AdelicGroupPoints.adelicHaarUnimodularityStatement_of_local_and_centralDerivedProduct
-  PlaceGroupPoints.localModularCharacterAdjointDeterminant
-  (reductiveCentralDerivedProduct_of_torusSurjectivity
-    (reductiveCentralTorusSurjectivity_of_semisimpleQuotient
-      reductiveCentralTorusSemisimpleQuotient semisimplePerfect))
+theorem goodSiegel_of_inputs
+    (hcomp : AdelicSiegelFactors.CentralSplitCompactQuotientStatement.{u})
+    (hchamber : AdelicSiegelFactors.AdelicSiegelChamberReductionStatement.{u})
+    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u})
+    (hintegral : IntegralIwasawaFamily.ExistenceStatement.{u}) :
+    AdelicSiegelFactors.AdelicGoodSiegelReductionStatement.{u} := by
+  intro F _ _ G _ _ hG
+  obtain ⟨T, i, ν, T₀, j, hS⟩ := AdelicSiegelFactors.siegelAlgebraicSetupExistence_of_structural
+    genericMinimalParabolic derivedMaximalSplitTorus derivedCentralSplitTorusProduct F G hG
+  obtain ⟨K, hK, hKc⟩ := AdelicSiegelFactors.adelicCompatibleIwasawaCompactStatement_of_local
+    InfinitePlaceGroupPoints.leviCompatibleIwasawaStatement hfinite hintegral F G hG T i ν T₀ j hS
+  obtain ⟨C, t, hC, hcover⟩ := AdelicSiegelFactors.exists_isSiegelCover_of_chamber
+    hcomp hchamber F G hG T i ν T₀ j hS K hK
+  exact ⟨T, i, ν, T₀, j, hS, C, t, hcover, hC ▸ hKc⟩
 ```
 
-(namespaces `Langlands.Global` and `Langlands.GroupScheme` opened) has type
-`AdelicHaarUnimodularityStatement.{u}`. Its inner argument has type
-`ReductiveCentralDerivedProductStatement.{u}`. Worker 112 checked both as
-Lean `example`s in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` at
-the commit above, with no errors or warnings. No axiom audit or
-exact-target validation was run. The executors of tasks `5dc6c43c` and
-`73a76075` were told on 7 November 2026; submitting the proofs is
-theirs.
+Further, `AdelicGroupPoints.normOneFiniteVolumeInputsStatement` applied to
+`characteristicZeroLeviDecomposition`, `perfectFieldUnipotentSplit`,
+`splitUnipotentAffineTorsorStatement`, a good Siegel reduction, the composable
+`PositiveTorusUnipotentModulusStatement`, `relativeRootNegation` and
+`relativeCharacterRootComplement` gives `NormOneRationalQuotientFiniteVolumeStatement`. So GH
+Theorem 2.6.3 (finite volume of `G(F) \ G(A_F)^1` for every smooth connected `G`) reduces to
+exactly four open propositions: Springer's compactness (C), the chamber reduction (F),
+finite-place Iwasawa existence, and the integral Iwasawa family. The owners of tasks
+`6adbbc46`, `40747bb3` and `cff6372d` were sent these terms on 10 November 2026. The closing
+proofs remain theirs.
 
-## 3. `L²` and cuspidal spaces on `[G]`
+## 3. Heights, parabolic quotients, `L²` and cuspidal spaces
 
-Automorphic forms and constant terms are already published on
-`G(F) \ G(A_F)`, not on `[G]`. The carrier is
-`ContinuousRationalFunctions F G`, with right translation. Three modules
-build on it:
-- `GroupSchemeConstantTerm` defines `constantTerm` along subgroup quotients;
-- `GroupSchemeForms` defines `IsAdelicAutomorphicForm`, combining moderate
-  growth with compact and centre finiteness;
-- `GroupSchemeCuspidalForms` defines `AdelicCuspidalForms`.
+Automorphic forms and constant terms are published on `G(F) \ G(A_F)`, with carrier
+`ContinuousRationalFunctions F G` and right translation. `GroupSchemeConstantTerm` defines
+`constantTerm` along subgroup quotients. `GroupSchemeForms` defines `IsAdelicAutomorphicForm`
+(moderate growth with compact and centre finiteness). `GroupSchemeAdelicUniformGrowth` defines
+uniform moderate growth (one exponent for all derivatives of the actual enveloping action).
+`GroupSchemeAutomorphicUniformGrowthStatement` (Worker 3659, published 12 November) states that
+every form of a connected reductive `G` has uniform moderate growth
+(`AdelicAutomorphicUniformGrowthStatement`; MW I.2.17 with I.2.5, case `P = G`; GH Cor. 6.2.5
+is its archimedean analogue). Its proof task is listed in §5.
+`GroupSchemeCuspidalForms` defines `AdelicCuspidalForms`. The form-space Markdown explains why
+these spaces follow Borel–Jacquet §4.1–4.2 rather than the literal tensor of GH (6.1).
 
-The Markdown of the two form modules states that their spaces are not
-identified with the literal GH form space, because GH (6.1) uses an algebraic
-tensor product. Worker 116's note on the literal tensor convention argues
-that, for a connected reductive group with a proper rational parabolic,
-every literally tensor smooth cusp form is zero. That argument uses the unproved
-`ParabolicDynamicStatement` and is not a Lean theorem. The broader published
-carriers follow Borel–Jacquet §4.1–4.2 instead. The `[G]`
-modules below reach these spaces by pulling continuous functions on `[G]`
-back to `ContinuousRationalFunctions F G` (`quotientContinuousPullback`).
-
-All of these `[G]` modules are by Worker 112 and live under
-`Langlands/Automorphic/GroupSchemeRestriction*`. They keep the actual
-quotient, measure and right action. Most of them transport a published
-positive-torus construction through the measure-preserving identification of
-§1. `FullAEL2FullGroup` and `CanonicalCuspidalL2` instead build on the
-other `[G]` modules.
-- `QuotientL2` and `QuotientL2Continuity` give `L²([G])`, its right regular
-  action and the integrated action. `QuotientL2InfiniteAction` gives the
-  action at the infinite places. `QuotientL2FiniteAverage` gives averaging
-  over compact open subgroups. `QuotientL2SmoothVectors` gives smooth
-  vectors.
-- `ContinuousL2` treats continuous square-integrable functions and the
-  unitary pairing.
-- `CuspidalL2` treats continuous parabolic-vanishing classes and
-  `AdelicCuspidalForms` classes. Parabolic vanishing takes the explicit
-  hypotheses `hPD : ParabolicDynamicStatement` and `hG`.
-  `TensorCuspidalL2` intersects the latter with the literal tensor condition
-  of GH (6.1). By the argument above, that space is expected to be zero when
-  `G` is connected reductive with a proper rational parabolic.
-- `FullAEL2`, `FullAEL2Hilbert`, `FullAEL2Continuity`, `FullAEL2Continuous`
-  and `FullAEL2FiniteAverage` treat a closed subspace of almost-everywhere
-  cuspidal classes. They give its orthogonal projections, its actions and the
-  inclusion of continuous cuspidal classes. The defining condition
-  `IsAEQuotientParabolicCuspidal` is modelled on GH (6.20)–(6.21), but its
-  almost-everywhere quantifier is different. For every proper rational
-  parabolic `P` it requires that the `[N_P]` integral of the representative converge absolutely and
-  vanish for almost every `g` in the norm-one subgroup `G(A_F)^1`, with
-  respect to its Haar measure. The integral uses the published mass-one
-  measure `properParabolicQuotientMeasure`. GH (6.21), p. 168, quantify
-  instead over `A_G \ G(A_F)` with a Haar measure.
-- `FullAEL2FullGroup` states the condition with the quantifier over the full
-  group `G(A_F)` and its Haar measure. It proves that the period is invariant
-  under central points of the split-centre image, so it is a function on
-  `A_G \ G(A_F)`. It also proves that the full-group condition is equivalent
-  to the norm-one condition. The equivalence assumes the subgroup equality
-  `h`, injectivity of `characterRestrict i`, the finite-index condition,
-  centrality and a splitting of `i`. The module constructs no Haar measure
-  on `A_G \ G(A_F)`. It does not identify the null sets of such a measure
-  with the `A_G`-invariant Haar-null sets of `G(A_F)`.
+The `[G]` modules `Langlands/Automorphic/GroupSchemeRestriction*` (Worker 112) keep the actual
+quotient, measure and right action:
+- `QuotientL2`, `QuotientL2Continuity`, `QuotientL2InfiniteAction`, `QuotientL2FiniteAverage`
+  and `QuotientL2SmoothVectors` give `L²([G])`, its right regular and integrated actions,
+  averaging over compact open subgroups and smooth vectors.
+- `ContinuousL2` and `CuspidalL2` treat continuous square-integrable and cuspidal classes.
+  Parabolic vanishing takes the explicit hypotheses `hPD : ParabolicDynamicStatement` and `hG`.
+  `hPD` is now proved (`GroupScheme.parabolicDynamic`).
+- `FullAEL2` and its companions treat the closed subspace of almost-everywhere cuspidal classes.
+  `FullAEL2FullGroup` puts the quantifier over all of `G(A_F)`. `FullAEL2CentreQuotient` builds
+  the quotient group `A_G \ G(A_F)` with its Borel σ-algebra and states the condition with the
+  quantifier for Haar measure there, as GH (6.21) write it. It proves that the three conditions
+  agree under the decomposition hypotheses. This closes the (6.21) quantifier obligation of the
+  7 November version.
 - `CanonicalCuspidalL2` gives the norm-one spaces on `CanonicalQuotient F G`.
 
-Four approximation statements on `[G]` are proved, each in the `...Proof`
-module of the same stem:
-- `QuotientL2HermitianApproximationStatement` by
-  `quotientL2HermitianApproximation` (task `b840a570`);
-- `QuotientFullAEL2HermitianApproximationStatement` by
-  `quotientFullAEL2HermitianApproximation` (task `37ca3e04`);
-- `QuotientL2FiniteApproximationStatement` by `quotientL2FiniteApproximation`
-  (task `dafe4917`);
-- `QuotientFullAEL2FiniteApproximationStatement` by
-  `quotientFullAEL2FiniteApproximation` (task `36d58f11`).
+The four approximation statements on `[G]` (`QuotientL2HermitianApproximationStatement`,
+`QuotientFullAEL2HermitianApproximationStatement`, `QuotientL2FiniteApproximationStatement`,
+`QuotientFullAEL2FiniteApproximationStatement`) are proved. The parabolic `L²` closedness
+statement `GroupSchemeParabolicL2ClosednessStatement` is proved (`groupSchemeParabolicL2Closedness`).
 
-`RestrictionSplitCentre.QuotientL2SmoothDensityStatement` (module
-`GroupSchemeRestrictionQuotientL2SmoothDensityStatement`) has no proof and no
-proof task. Neither does the positive-torus statement
-`GroupSchemeQuotientL2SmoothDensityStatement`. Both are expected to follow
-from Worker 116's generic statement
-`Langlands.Analysis.IntegratedIsometricSmoothDensityStatement`
-(`Representation/Unitary`): for a norm-preserving action of a real Lie group
-with continuous orbits, the smooth vectors are dense. That statement has no
-proof yet, and no proof task on 7 November 2026. Its Markdown names three
-inputs. `integratedIsometricApproximation` and
-`integratedIsometricSmoothVectors` are proved.
-`SmoothInverseKernelSequenceStatement` has proof task `aeb12597`; the
-single-neighbourhood version it is to be derived from is proved by
-`smoothNormalizedInverseKernel`.
+**Heights and parabolic quotients (MW I.1.4, I.2.17).** `AdelicIwasawaHeight` defines the height
+`H_P(g) = log_P(q)` for `g = p(q) k` and a supplied compact `K` with `P(A_F) K = G(A_F)`, with its
+Levi form (`m_P`). The height depends on `K`. `AdelicParabolicQuotient` defines
+`X_P = U(A_F) M(F) \ G(A_F)` and proves that `P_J(A_F)` normalizes `U_J(A_F)` for every standard
+parabolic. `AdelicMaximalCompactFactors` shows that a maximal compact subgroup of `G(A_F)` is
+`K_∞ × K_f` with both factors maximal compact, and transfers `IsParabolicIwasawaCompact` along
+`P₀ → P`.
 
-## 4. Open obligations
+**The modulus `δ_P` and the measure `dk` (MW I.1.13).** `AdelicParabolicModulus` (Worker 3659)
+works with the dynamic parabolic `P = P_G(χ)`, its unipotent radical `U = U_G(χ)` and its Levi
+factor `M = Z_G(χ)` of a cocharacter `χ`, given by representing group schemes. It proves that
+`U(𝔸_F)` is closed in `G(𝔸_F)` and normalized by `P(𝔸_F)`. It defines
+`parabolicModulus F hP hU : P(𝔸_F) →* ℝ≥0ˣ` as the published
+`HaarModulus.closedNormalizerCharacter` of the image of `U(𝔸_F)`, so that
+`μ(p E p⁻¹) = δ_P(p) μ(E)`. It proves the integral form `integral_conj_parabolicModulus`:
+`∫ f(p⁻¹ u p) du = δ_P(p) ∫ f(u) du` on `U(𝔸_F)`. For `m ∈ M(𝔸_F)` this is MW's `m^{2ρ_P}`. For
+a compact subgroup `K` of `G(𝔸_F)`, `compactHaarProbability F G K hK` is the Haar probability
+on `K`, and `eq_compactHaarProbability` shows that it is the only left Haar probability there.
+Two statements are open, with proof tasks listed in §2 and §5:
+- `AdelicParabolicModulusStatement`: `δ_P` is the idele norm (`characterNorm`) of the rational
+  character `det(Ad | Lie U)` of `P`, for every choice of coordinates on `Lie U`, and is Mathlib's
+  modular character of `P(𝔸_F)`;
+- `AdelicIwasawaIntegrationStatement`: for every compact subgroup `K` with `P(𝔸_F) K = G(𝔸_F)`
+  there is `c > 0` with `∫_{G(𝔸_F)} f dg = c ∫_K ∫_{M(𝔸_F)} ∫_{U(𝔸_F)} δ_P(m)⁻¹ f(u m k) du dm dk`
+  for all `f ∈ C_c(G(𝔸_F))`, where `dg`, `dm`, `du` are Mathlib's Haar measures. The constant
+  `c` is not normalized: the Haar measures on `G(𝔸_F)`, `M(𝔸_F)` and `U(𝔸_F)` are fixed
+  independently.
 
-1. The connected reductive finite volume of `[G]`, through task `40747bb3` or
-   the Siegel route of task `6adbbc46`.
-2. The Iwasawa decompositions: tasks `77a1dd37` and `cff6372d`.
-3. Unimodularity, task `73a76075`. The term in §2 shows that it follows from
-   public proofs; an accepted proof is still needed. The `[G]` results above
-   take only norm-one right invariance, which is proved. The published Weil
-   compatibility for the full rational quotient `G(F) \ G(A_F)` still takes
-   right invariance of full Haar measure as a hypothesis. An accepted proof
-   of the task would supply it for connected reductive `G`.
-4. The central split torus statement: task `4f432abe`. It also settles the
-   positive decomposition and the reductive results of
-   `AdelicRestrictionSplitCentreCanonical`.
-5. Identifying the split component of `Res_{F/ℚ} G` with the greatest
-   `ℚ`-split torus of `Res_{F/ℚ} Z_G`. No statement or task exists yet.
-6. The literal GH (6.21) quantifier. Full group against norm-one is done
-   (`FullAEL2FullGroup`). A Haar measure on `A_G \ G(A_F)` and the
-   comparison of its null sets with `A_G`-invariant Haar-null sets of
-   `G(A_F)` remain. No statement or task exists yet.
-7. Smooth-vector density on `[G]`. It waits for a proof of the generic
-   density statement of §3; its proof task will be published afterwards.
-8. Comparing the `[G]` spaces with the existing `Langlands.Automorphic`
-   GL_n realizations. Worker 94 owns the GL_n consumer side, and that
-   comparison is kept separate from the canonical `[G]` modules. An
-   identification of the broader form spaces with the literal GH (6.1)
-   tensor spaces is not an obligation: by Worker 116's note it fails for
-   every connected reductive group with a proper rational parabolic. That
-   note's argument uses the unproved `ParabolicDynamicStatement`.
+Until the first statement is proved, `δ_P` is known to be continuous and trivial on `P(F)` only
+under its hypothesis (`continuous_parabolicModulus_of_eq`, `parabolicModulus_rational_of_eq`).
+The integration statement does not assert that such a `K` exists. For an actual parabolic
+inclusion, that existence is the open adelic Iwasawa decomposition (`77a1dd37`, §2).
+
+**Infinite-place compatibility of the form spaces (GH (6.11)–(6.14)).**
+`Geometry/Manifold/SmoothGroupConjugationLie` proves that `Ad(g)` (the derivative of conjugation)
+preserves the bracket of the identity tangent space of a Lie group. `GroupSchemeInfiniteTranslation`
+uses it for every smooth affine `G`:
+- the adjoint automorphism `adelicEnvelopingConjugationEquiv` of the actual enveloping algebra,
+  which preserves its centre;
+- the covariance `R(g) D_a = D_(Ad(g) a) R(g)` of right translation and the actual enveloping
+  action;
+- preservation of centre finiteness and uniform growth by every infinite translation, and of the
+  form conditions by the specified infinite subgroup `Kinf`;
+- `Kinf`-subrepresentations of the form, uniform form, cusp form and uniform cusp form spaces.
+
+Whether the enveloping action preserves cuspidality is the target statement
+`AdelicConstantTermEnvelopingStatement` (module `GroupSchemeConstantTermEnvelopingStatement`): it
+asserts that enveloping derivatives preserve identically vanishing normalized constant terms along
+a proper rational parabolic. See §5 for its proof task. Its consequences, conditional on the
+statement, are published in `GroupSchemeCuspidalEnvelopingAction`: the uniform cusp forms carry the
+enveloping action compatibly with `Kinf`, and the `GL_n` cusp forms form an operator realization
+(see §4).
+
+## 4. GL_n comparisons
+
+The specializations to Worker 2's `Langlands.Automorphic` GL_n spaces are published in the
+`Langlands/Automorphic/GeneralLinear*` modules. All use the actual general-linear group scheme
+and the unchanged original carriers:
+- forms and growth: `GeneralLinearAdelicForms` (`isAdelicAutomorphicForm_iff_generalLinear_and_adelicGrowth`,
+  `adelicAutomorphicGeneralLinearMap`), `GeneralLinearAdelicUniformForms`,
+  `GeneralLinearGrowthIndependence`;
+- differential, enveloping and centre actions: `GeneralLinearFiniteAdelicDifferential`,
+  `GeneralLinearFiniteAdelicEnveloping`, `GeneralLinearAdelicCenterFinite`;
+- constant terms: `GeneralLinearConstantTermComparison` and `GeneralLinearIntrinsicConstantTerm`
+  (`constantTerm_generalLinearBlock`, with `CompactSpace (AdeleQuotient F)` explicit);
+- cusp forms: `GeneralLinearCuspidalComparison` (`generalLinearCuspidalEquiv`), the proved
+  `GeneralLinearParabolicCuspidalComparisonStatement` (all proper rational parabolics against
+  standard maximal blocks), `GeneralLinearParabolicCuspidalEquivalence` and
+  `GeneralLinearParabolicCuspidalInclusion`.
+
+**Operator realizations (Worker 3659, 11 November 2026).**
+- `GeneralLinearUniformOperatorRealization` makes the matrix-side uniform-growth forms an invariant
+  subspace of `fullAutomorphicAction`, hence an `OperatorRealization`. It proves that the actual
+  uniform forms map onto exactly this subspace, with intertwining of the enveloping and finite
+  actions, and that they are closed under the transported standard maximal compact.
+- `GeneralLinearUniformCuspidalRealization` maps every realization inside the uniform realization
+  injectively into the actual uniform forms, and every cuspidal one into the actual uniform cusp
+  forms. It constructs the largest cuspidal realization inside the uniform realization.
+- `GeneralLinearCanonicalUniformComparison` (published 11 November) instantiates these
+  comparisons with every hypothesis discharged by published results: the standard representation, the reductive atlas
+  `(isConnectedReductive_generalLinear F (Fin n)).smoothDimension_spec`,
+  `adelicDifferentialCommutator_of_smooth` and `parabolicDynamic`. Only `0 < n` remains.
+- Uniform growth of all `GL_n` forms is not proved. So containment in the uniform realization
+  remains an explicit hypothesis of the cuspidal maps.
+- The two carriers have different growth conditions. The original matrix form definition
+  bounds each finite slice separately, with an exponent and constant that may depend on the
+  slice. An actual adelic form has one moderate-growth bound over all adelic points, and
+  `isAdelicAutomorphicForm_iff_generalLinear_and_adelicGrowth` keeps this full adelic bound
+  (`HasAdelicModerateGrowth`) as an extra conjunct on the matrix side. A proof of
+  `AdelicAutomorphicUniformGrowthStatement` (§3, §5) would give uniform growth only to
+  functions that already have the full adelic bound. It would not by itself discharge the
+  containment hypothesis for an arbitrary matrix realization: that also needs the open
+  slice-to-global moderate-growth comparison for matrix forms (§5).
+
+The `GL_n` side has cuspidal rapid-decay and band square-integrability results
+(`Langlands/Automorphic/CuspidalL2/`). No comparison of these with the `[G]` `L²` spaces is
+published. That comparison belongs to the later Chapter 9 blocks of the program.
+
+## 5. Open obligations
+
+1. Finite volume: the four open inputs of §2, owned by tasks `3d7b2bb6`, `5cf10ec8`, `c0b4e50a`
+   and `74d01809`. Then the closing proofs of `6adbbc46` and `40747bb3`. The reductive and `[G]`
+   finite-volume statements then follow by published implications. They have no proof tasks
+   yet.
+2. Exact-target proofs of the composable statements in §2. Worker 3659 published proof tasks
+   for four of them, each with its verified composite term in the task context:
+   - `08c16c96`: `UnipotentRationalQuotientCompactStatement`;
+   - `bb7864ac`: `SiegelProductFiniteMeasureStatement`;
+   - `92af27a4`: `AdelicModularCharacterAdjointDeterminantStatement`;
+   - `c4273010`: `SiegelAlgebraicSetupExistenceStatement`.
+
+   On 11 November 2026 all four were unstaffed.
+3. Adelic Iwasawa (`77a1dd37`) and the compatible compact subgroup: blocked on the same
+   finite-place and integral inputs.
+4. Smooth-vector density on `[G]` (`RestrictionSplitCentre.QuotientL2SmoothDensityStatement`
+   and the positive-torus version). It waits for the generic
+   `Langlands.Analysis.IntegratedIsometricSmoothDensityStatement`, whose remaining input
+   `SmoothInverseKernelSequenceStatement` has proof task `aeb12597` (unstaffed on 10 November).
+5. `AdelicConstantTermEnvelopingStatement` (§3): proof task `cdc6f429` (Task 5489), published
+   on 11 November 2026 and unstaffed then. Its proof would make the cusp form spaces stable
+   under the enveloping action. It would also identify the `GL_n` uniform
+   cuspidal realization with all uniform cuspidal forms.
+6. Uniform growth of all automorphic forms is not proved, either for `GL_n` or for general `G`.
+   It is now the exact target `AdelicAutomorphicUniformGrowthStatement` (§3), with proof task
+   `8bd25244` (Task 5611), published on 12 November 2026 and unstaffed then. Its proof would
+   make the actual uniform form space equal to the whole actual form space. The main missing
+   input is a Harish-Chandra reproducing function that works for all infinite slices of a form
+   at once; the Library's `GL_n` kernel treats one function at a time.
+7. `AdelicParabolicModulusStatement` and `AdelicIwasawaIntegrationStatement` (§3): proof tasks
+   `942d702c` (Task 5573) and `6206325e` (Task 5574), published on 11 November 2026 and
+   unstaffed then. Each contract suggests a route through published results.
+8. The `GL_n` slice-to-global moderate-growth comparison: whether every original matrix
+   automorphic form, whose growth is bounded slice by slice, has the full adelic bound
+   `HasAdelicModerateGrowth` (§4). No Library result or task covers it. Without it, the
+   containment hypothesis of the `GL_n` cuspidal realization maps stays even after a proof of
+   item 6; Task 5611 does not close this comparison.

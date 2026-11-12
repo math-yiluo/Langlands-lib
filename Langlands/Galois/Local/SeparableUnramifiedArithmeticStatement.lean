@@ -17,10 +17,10 @@ section Arithmetic
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
 
-local instance : NontriviallyNormedField F := localNormedField F
-local instance : IsUltrametricDist F := localNormedField_ultrametric F
-local instance : CompleteSpace F := localNormedField_complete F
-local instance : Finite (ResidueField (baseIntegers F)) := localResidue_finite F
+local instance separableUnramifiedArithmeticStatementInstance1 : NontriviallyNormedField F := localNormedField F
+local instance separableUnramifiedArithmeticStatementInstance2 : IsUltrametricDist F := localNormedField_ultrametric F
+local instance separableUnramifiedArithmeticStatementInstance3 : CompleteSpace F := localNormedField_complete F
+local instance separableUnramifiedArithmeticStatementInstance4 : Finite (ResidueField (baseIntegers F)) := localResidue_finite F
 
 /-- The actual residue field is an algebraic closure for the algebra induced by
 the published residue map. -/

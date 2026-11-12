@@ -16,7 +16,7 @@ variable {V : Type u} {A : Type v}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V] [AddTorsor V A]
   {Ψ : Set (A →ᵃ[ℝ] ℝ)}
 
-local instance : DecidableEq A := Classical.decEq _
+local instance instDecidableEq_affineFacetIntersections : DecidableEq A := Classical.decEq _
 
 /-- Two original closed facets meet exactly when they share an actual vertex. -/
 theorem facetClosure_inter_nonempty_iff_vertexFinset_inter_nonempty

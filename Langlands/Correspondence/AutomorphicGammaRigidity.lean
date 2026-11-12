@@ -65,7 +65,8 @@ universe uF uA uW
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance instTopologicalSpaceCarrier_automorphicGammaRigidity :
+    TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
 local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
 local instance : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField

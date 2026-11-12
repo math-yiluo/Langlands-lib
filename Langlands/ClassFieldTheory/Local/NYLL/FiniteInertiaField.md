@@ -198,3 +198,7 @@ There is no reciprocity map, reciprocity theorem, class-formation certificate,
 or comparison with the cohomological route in this unit. Its environment is
 Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
+
+The local instances have explicit names specific to this module so that
+combined imports retain distinct declarations. Their types, bodies and local
+instance scope are unchanged.

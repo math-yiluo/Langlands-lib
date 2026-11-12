@@ -17,7 +17,7 @@ variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p) (E : PadicField.{v} p)
     [Algebra F.Carrier E.Carrier] [IsScalarTower (Padic p) F.Carrier E.Carrier]
     (TF : F.TopologicalData)
 
-local instance : FiniteDimensional F.Carrier E.Carrier :=
+local instance finiteInertiaFieldInstance1 : FiniteDimensional F.Carrier E.Carrier :=
   FiniteDimensional.right (Padic p) F.Carrier E.Carrier
 
 /-- The actual finite residue-action kernel for the norm constructed from the

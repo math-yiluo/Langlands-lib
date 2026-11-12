@@ -71,7 +71,8 @@ def etaleProductSheafPullback (V : X.Etale) :
 
 variable {G : Type u} [Group G] (Y : Action X.Etale G)
 
-local instance : HasLimitsOfShape (SingleObj G) (ModuleCat.{u} R) :=
+local instance instHasLimitsOfShapeSingleObjModuleCat_etaleAssociatedPullback :
+    HasLimitsOfShape (SingleObj G) (ModuleCat.{u} R) :=
   ModuleCat.hasLimitsOfShape
 
 local instance : PreservesLimitsOfShape (SingleObj G)

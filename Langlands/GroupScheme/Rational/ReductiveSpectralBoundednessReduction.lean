@@ -1,3 +1,4 @@
+import Langlands.LocalField.ValuativeInfinite
 import Langlands.GroupScheme.Rational.DenseSpectralBoundedness
 import Langlands.GroupScheme.IntegralModel
 import Langlands.AlgebraicGeometry.PointTopology.GeometricRationalDensityExtension
@@ -14,16 +15,6 @@ open scoped CategoryTheory.MonObj Matrix
 
 namespace Langlands.GroupScheme
 
-private theorem infinite_of_nontrivialValuativeRel
-    (F : Type u) [Field F] [ValuativeRel F] [ValuativeRel.IsNontrivial F] :
-    Infinite F := by
-  obtain ⟨c, hc0, hc1⟩ := ValuativeRel.IsNontrivial.exists_lt_one (R := F)
-  obtain ⟨a, ha⟩ := ValuativeRel.valuation_surjective c
-  apply Infinite.of_injective (fun n : ℕ => a ^ n)
-  intro m n h
-  apply pow_right_injective₀ hc0 (ne_of_lt hc1)
-  simpa only [map_pow, ha] using congrArg (ValuativeRel.valuation F) h
-
 /-- The unchanged exact reductive rational-density statement supplies the last
 input to the unchanged exact local-field spectral boundedness statement. -/
 def ReductiveSpectralBoundednessReductionStatement : Prop :=
@@ -36,7 +27,7 @@ theorem reductiveSpectralBoundednessReduction :
   intro hdensity F _ _ _ _ G hG
   let : IsAffineHom G.X.hom := hG.isAffineHom
   let : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-  let : Infinite F := infinite_of_nontrivialValuativeRel F
+  let : Infinite F := Langlands.LocalField.infinite_of_nontrivialValuativeRel F
   intro N ρ hc hint
   let α := baseChangeSectionHom (toAlgebraicClosure F) G
   have hα : ∀ g : rationalPoints G,

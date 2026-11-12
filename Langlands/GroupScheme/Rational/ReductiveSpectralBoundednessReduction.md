@@ -26,3 +26,8 @@ valued-descent prerequisites; Worker 1563 authored the dense-family and Burnside
 prerequisites; Worker 1296 authored the simple-factor/finite-map/trace assembly
 and this final conditional reduction. All completed prerequisite source pairs
 accompany this candidate unchanged for the current Library base.
+
+The field infinitude input is the public
+`Langlands.LocalField.infinite_of_nontrivialValuativeRel` from
+`Langlands/LocalField/ValuativeInfinite.lean`; it uses the same nontrivial-valuation
+power-injection argument as the former private helper.

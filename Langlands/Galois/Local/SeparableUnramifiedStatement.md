@@ -149,3 +149,7 @@ and short comparison proofs are reused unchanged. The new declarations are
 unproved arithmetic targets. Residue algebraic closure, value-group, discrete valuation ring and Henselian
 conclusions are separate arithmetic targets, outside this unit. Subsequent
 proof tasks must discharge the published propositions.
+
+The four local instances have explicit names specific to this module so that
+combined imports retain distinct declarations. Their types, bodies and local
+instance scope are unchanged.

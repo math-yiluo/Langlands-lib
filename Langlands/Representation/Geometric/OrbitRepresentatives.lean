@@ -92,6 +92,18 @@ def replaceRepresentatives (s : OrderedDoubleCosets P Q m) (r : Fin m → G)
     simpa only [(fun i => (cosetOrbit_eq_iff_doubleCoset_eq P Q _ _).mpr (h i))]
       using s.initial_open k
 
+omit [IsTopologicalGroup G] in
+/-- Representative replacement preserves each initial union as an actual set. -/
+theorem initialOrbits_replaceRepresentatives (s : OrderedDoubleCosets P Q m)
+    (r : Fin m → G)
+    (h : ∀ i, DoubleCoset.mk P Q (r i)⁻¹ =
+      DoubleCoset.mk P Q (s.representative i)⁻¹) (k : Fin (m + 1)) :
+    (s.replaceRepresentatives r h).initialOrbits k = s.initialOrbits k := by
+  ext x
+  change (∃ i, i.val < k.val ∧ x ∈ cosetOrbit P Q (r i)) ↔
+    ∃ i, i.val < k.val ∧ x ∈ cosetOrbit P Q (s.representative i)
+  simp only [(fun i => (cosetOrbit_eq_iff_doubleCoset_eq P Q _ _).mpr (h i))]
+
 /-- Align an ordered cover with any complete, unique classification by representatives. -/
 def classifiedRepresentatives {A : Type uA} (s : OrderedDoubleCosets P Q m)
     (r : A → G)

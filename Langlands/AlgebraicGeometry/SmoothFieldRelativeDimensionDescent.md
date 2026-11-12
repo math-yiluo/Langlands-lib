@@ -1,0 +1,13 @@
+# Relative dimension and etale source descent over a field
+
+This internal helper is developed for the analytic manifold construction in Conrad's Proposition 5.4 (printed pp.15–16). It proves constant relative-dimension descent over a field, using the published smooth source-descent theorem and Mathlib's standard-smooth presentations and Kahler differentials. It is an internally derived proof tool, not a separate assertion transcribed from Conrad.
+
+`standardSmooth_dimension_eq_of_formallyEtale` compares two standard-smooth algebras over a common commutative base ring. A standard-smooth presentation gives a basis of Kahler differentials indexed by the complement of its equation variables; reindexing gives a basis indexed by `Fin n`. Formally etale extension identifies the scalar extension of these differential modules. Equality of the cardinalities of their bases over the nontrivial target ring proves equality of the two dimensions.
+
+`exists_standardSmooth_dimension` extracts the finite relative dimension of a standard-smooth presentation. `smooth_field_affine_neighborhood` applies this to affine neighborhoods of an actual smooth scheme over a field, retaining the actual coordinate algebra. The nonempty open neighborhood in the spectrum of the field is the whole spectrum, so the base algebra becomes the field itself through the canonical affine comparison.
+
+`affine_standardSmooth_dimension_eq_of_etale` specializes the algebraic comparison to the actual coordinate pullback of an etale morphism between affine schemes. The source is assumed nonempty so that its ring of global sections is nontrivial. `standardSmooth_dimension_eq_of_etale_source` then restricts a point of a smooth, pure-dimensional etale source to an affine open and a standard-smooth principal neighborhood. Composition of the open immersions with the etale map gives the affine comparison.
+
+Finally, `smooth_field_relativeDimension_etale_source_descent` proves that a surjective etale map `W → X` over a field descends `SmoothOfRelativeDimension n` from `W` to `X`. Published smooth source descent first makes `X` smooth. At each point, choose standard-smooth affine neighborhoods, lift the point to `W`, and restrict the etale map over that neighborhood. The preceding comparison forces its local presentation dimension to be `n`, giving exactly the witnesses required by `SmoothOfRelativeDimension n X.hom`.
+
+The field and its universe are unrestricted, the dimension may be zero, and no nonemptiness of the whole scheme is imposed in the descent theorem. Its pointwise argument handles the empty case. This file does not construct analytic structures on algebraic spaces.

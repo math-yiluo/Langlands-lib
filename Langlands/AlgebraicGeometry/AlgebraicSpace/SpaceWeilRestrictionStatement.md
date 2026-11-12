@@ -1,6 +1,8 @@
 # Weil restriction of algebraic spaces and rational points
 
 Author: Worker 105.
+Markdown correction: Worker 172, following Worker 111's source diagnosis and
+published counterexample.
 
 `SpaceWeilRestrictionStatement` states Lemma 5.10, and
 `HenselianWeilRestrictionPointHomeomorphStatement` states Proposition 5.11(1), of Brian
@@ -8,6 +10,55 @@ Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 pp.17–18. The registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`. The module only states
 these results and contains no proofs.
+
+## Correction to the literal Proposition 5.11(1)
+
+Conrad's literal Proposition 5.11(1), and the faithfully transcribed
+`HenselianWeilRestrictionPointHomeomorphStatement`, are false for some finite
+purely inseparable extensions of incomplete henselian valued fields. The
+proof on printed p.18 invokes the affine comparison of Example 2.4 (printed
+p.3), which assumes the module topology on the finite extension. Henselianity
+alone does not provide that hypothesis.
+
+The corrected successor is
+[`HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement`](HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement.md).
+It adds exactly `IsModuleTopology K K'` to the original hypotheses and retains
+the existence of the algebraic-space Weil restriction and the homeomorphism
+of its canonical rational-point equivalence for the independently defined
+étale-chart topologies. It allows arbitrary finite extensions, archimedean
+and nonarchimedean fields, and incomplete fields satisfying that topology
+hypothesis. It adds no separability, completeness, local separatedness,
+separatedness, smoothness or scheme assumption. Complete `K` supplies
+`IsModuleTopology K K'` for finite-dimensional normed extensions, by Mathlib's
+`isModuleTopologyOfFiniteDimensional`.
+
+For a concrete obstruction, choose `s ∈ F_p((t))` transcendental over `F_p(t)`,
+let `K` be the henselization of `F_p(t,s^p)` inside `F_p((t))`, and put
+`L = K(s)`, with restricted `t`-adic norms. Then `[L:K] = p`, both fields
+are henselian, and `K` is dense proper in `L`. For `Y' = A¹_L`, the canonical
+bijection `Res(Y')(K) = K^p → L` sends `(x_i)` to `Σ_i x_i s^i`. If
+Laurent-polynomial truncations `a_n ∈ K` tend to `s`, the vectors
+`(-a_n,1,0,...)` do not tend to zero, while their images `s-a_n` do.
+The inverse is therefore discontinuous.
+
+The valued-field ingredients are from Michael Temkin, *Valued Fields*
+(course notes), Exercise 1.8.11(i)–(ii), printed p.22, and Remark 1.9.6,
+printed p.25, together with Lemma 1.9.3(ii), p.24, and Theorem 1.9.5 and
+Section 1.9.7, p.25. Registered source:
+`temkin-valued-fields-2018-course-notes`, SHA-256
+`60cbfd7681abcb39ee111aff005434bd6b11054089cf48a78068c97e3d53abe3`.
+The year in the source ID is a registration label; the PDF gives no date.
+The counterexample to Weil restriction is a derived application of those
+examples, explained in the corrected statement's Markdown and
+[Worker 111's obstruction note](../../../notes/conrad-adelic/finite-weil-inseparable-obstruction.md).
+It is not a Lean refutation in this module.
+
+This is a Markdown-only correction. `SpaceWeilRestrictionStatement.lean`,
+including both proposition definitions, is unchanged. Lemma 5.10's finite
+projective ring-map scope and its separate exact-proof obligation in Task 5255
+are unaffected. No proof of the false unrestricted proposition is claimed.
+
+## Original source statements
 
 Conrad's Lemma 5.10 (printed p.17) reads: "Let `R → R′` be a finite locally free ring
 extension, and `X′` a (quasi-separated) algebraic space of finite type over `R′`. The Weil
@@ -72,6 +123,8 @@ algebraic space `ringWeilRestrictionSpace R R' X' h`
 - satisfies `FinitePresentationOverRing R` if `X'` satisfies
   `FinitePresentationOverRing R'`.
 
+The following describes the false literal proposition recorded by the unchanged Lean
+definition, rather than a proved result.
 `HenselianWeilRestrictionPointHomeomorphStatement` says the following. Let `K`, `K'` be
 nontrivially normed fields with `NormedAlgebra K K'`, `FiniteDimensional K K'`,
 `IsHenselianValuedField K` and `IsHenselianValuedField K'`. Let `Y'` be an algebraic space
@@ -84,11 +137,12 @@ over `Spec K'` with `IsQuasiSeparated Y'` and `FiniteTypeOverRing K' Y'`. Then t
 
 Conrad's Proposition 5.11(1) presupposes Lemma 5.10, which makes `Res_{k′/k}(Y′)` an
 algebraic space carrying the topology of Proposition 5.4. A field extension of finite
-degree is finite free, so Lemma 5.10 applies. The statement asserts the algebraic-space
-property together with the homeomorphism, so it does not depend on Lemma 5.10 being proved
-first. Any two proofs of a proposition are equal, so there is only one such space. The
-existential form therefore says exactly that the restriction is an algebraic space and that
-its point identification is a homeomorphism.
+degree is finite free, so Lemma 5.10 applies to its representability. Both the literal and
+corrected point propositions include existence of the algebraic-space structure in their
+conclusion; that conclusion is not an assumed input. A proof of the corrected proposition
+can obtain it from the separate proof of Lemma 5.10. Proof irrelevance makes the resulting
+algebraic space independent of the choice of proof `h`. The topological conclusion needs
+the module-topology correction explained above.
 
 Conrad's topologies are those of his Proposition 5.4 over `k` and over `k′`. The
 statement uses the étale-chart topology instead, as the published statements of

@@ -1,0 +1,7 @@
+# Actual group points in embedding-product coordinates
+
+Work in an arbitrary universe over commutative rings k, K and Ω, with k-algebra structures on K and Ω. Assume the family of embeddings K →ₐ[k] Ω is finite and the canonical embedding evaluation on Ω ⊗[k] K is bijective. These are explicit splitting data; the finite-separable field specialization will discharge them using the published separable tensor theorem.
+
+This internal construction extends the published `AffineWeil.tensorEmbeddingEquiv` to actual affine group points, using the original conjugate scalar structures and the published `GroupScheme.affinePointsPiEquiv`. In particular the group is arbitrary and may be noncommutative.
+
+`embeddingCoefficientAlgebra` bundles the Ω-algebra R as a K-algebra through τ followed by its Ω-algebra structure. `tensorEmbeddingAlgEquiv` uses the published ring decomposition and checks the K-action by its pure-tensor formula. Transport along this algebra isomorphism, followed by the existing product-coefficient point equivalence, defines `tensorEmbeddingPointsEquiv` as a multiplicative equivalence. Each component is the actual coefficient-point map of `tensorEmbeddingEvaluationMap`, whose ring map is precisely the published `tensorEmbeddingEvaluation`. The coordinate theorem follows from `coordinatePoint_changeRing` for the original affine group. Coefficient naturality follows from the published tensor evaluation naturality and functoriality of actual point pullbacks.

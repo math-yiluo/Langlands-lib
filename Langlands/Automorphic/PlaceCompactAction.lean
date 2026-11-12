@@ -25,18 +25,23 @@ local notation "CP" =>
 local notation "RK" => Matrix.unitaryGroup (Fin n) ℝ
 local notation "CK" => Matrix.unitaryGroup (Fin n) ℂ
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactRationalAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactContinuousAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactSmoothAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeCompactFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance placeCompactStableAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 namespace OperatorRealization
 
 variable (S T : OperatorRealization F n)
 
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
-local instance : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance placeCompactSpaceAddCommGroup : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance placeCompactTargetAddCommGroup : AddCommGroup T.Space := Submodule.addCommGroup _
 
 /-- Restrict the actual compact action to the orthogonal factor at a real place. -/
 def realPlaceCompactRepresentation (v : RP) : Representation ℂ RK S.Space :=

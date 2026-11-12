@@ -13,9 +13,9 @@ universe u
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
 
-local instance : NontriviallyNormedField F := localNormedField F
-local instance : IsUltrametricDist F := localNormedField_ultrametric F
-local instance : CompleteSpace F := localNormedField_complete F
+local instance separableValueArithmeticInstance1 : NontriviallyNormedField F := localNormedField F
+local instance separableValueArithmeticInstance2 : IsUltrametricDist F := localNormedField_ultrametric F
+local instance separableValueArithmeticInstance3 : CompleteSpace F := localNormedField_complete F
 
 theorem fixedFieldValuation_base (a : F) :
     fixedFieldValuation F (algebraMap F (inertiaFixedField F) a) = ‖a‖₊ := by

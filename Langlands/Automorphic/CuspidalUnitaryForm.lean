@@ -120,7 +120,8 @@ local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.add
 local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
 local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
 local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance instAddCommGroupSpace_cuspidalUnitaryForm :
+    AddCommGroup S.Space := Submodule.addCommGroup _
 
 /-- The differential operator of a real Lie direction. -/
 abbrev lieOperator (X : ArchimedeanGL.RealLieAlgebra F n) : Module.End ℂ S.Space :=

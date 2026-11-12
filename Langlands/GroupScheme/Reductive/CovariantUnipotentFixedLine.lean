@@ -17,8 +17,10 @@ variable {k : Type u} [Field k]
   {G H U : GroupScheme (Spec (CommRingCat.of k))}
   [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+local instance instIsAffineLeftG_covariantUnipotentFixedLine :
+    IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance instIsAffineLeftH_covariantUnipotentFixedLine :
+    IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 namespace AffineCoordinates
 

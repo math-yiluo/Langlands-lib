@@ -62,7 +62,8 @@ def spectralInvariantStabilizerInclusion (H : OpenSubgroup G)
     (d : SpectralInvariantChart ρ H) : H →ₜ* ρ.locusOpenSubgroup d.obj.toDomain :=
   ρ.invariantStabilizerInclusion H ((spectralInvariantDomainFunctor ρ H).obj d)
 
-local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
+local instance instIsTopologicalGroupOpenSubgroup_rationalSpectralInvariantActions
+    (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
 
 /-- Restrict the proved rational spectral action to the common open subgroup. -/

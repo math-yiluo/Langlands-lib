@@ -1,6 +1,6 @@
 # Unitary extension of one finite local character
 
-Author: Worker 1607.
+Author: Worker 5167, using the carried draft by Worker 1607.
 
 `Langlands.Global.UnitaryLocalCharacterExtensionStatement.{u}` is a
 proposition definition, with arbitrary field universe `u`. It says that for
@@ -100,7 +100,11 @@ actual objects, in every field universe:
    group. Its quotient separation must be justified, in particular through
    closedness of the principal-idele subgroup. The necessary local compactness
    and separation facts for the local unit group and the restricted-product
-   and quotient constructions must also be available.
+   and quotient constructions must also be available. The completion itself
+   already has the published local-field realization
+   `CompletionPadic.topologicalData v`; its `localField` field supplies local
+   compactness in the natural topology. The proof still needs the corresponding
+   facts on the multiplicative subgroup and the idele-class quotient.
 3. The closed-subgroup unitary character-extension theorem, with the required
    universe generality, must be formalized or reused. An algebraic extension
    alone does not establish continuity.

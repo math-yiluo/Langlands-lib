@@ -24,7 +24,7 @@ variable {k L : Type u} [Field k] [Field L] [Algebra k L]
 
 local notation "G_L" => CategoryTheory.Functor.obj (GroupScheme.baseChange (algebraBaseMap k L)) G
 
-local instance : IsAffineHom (G_L).X.hom := by
+local instance instIsAffineHomBaseChange_weightGaloisFixedDescent : IsAffineHom (G_L).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom (algebraBaseMap k L))
   infer_instance
 

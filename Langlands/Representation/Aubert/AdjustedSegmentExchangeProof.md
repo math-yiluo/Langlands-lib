@@ -1,0 +1,837 @@
+# Support-adjusted Aubert exchange on actual segment classes
+
+Author: Worker 103.
+
+`Langlands.Aubert.adjustedSegmentExchange` proves exactly
+`Langlands.Aubert.AdjustedSegmentExchangeStatement.{uF, uV} F T` from
+`Langlands.Representation.Aubert.ZelevinskyComparison`. The prime `p`,
+`F : PadicField.{uF} p` and `T : F.TopologicalData` are arbitrary, and `uF`
+and `uV` are independent. Every actual segment
+`Δ : T.Segment.{max uF uV, uF}` is included. There are no additional theorem
+hypotheses. The classes live in the actual exact finite-length Grothendieck
+groups and their direct sum, with all actual short exact sequence relations.
+The existing normalized upper-parabolic, right-translation conventions and
+actual segment objects are retained.
+
+## Implemented proof
+
+Write `n = Δ.degree`, `k = Δ.length`, and `s = (-1 : ℤ)^(n-k)`.
+The published `Langlands.Aubert.alternatingOperator_segmentSocleClass` gives
+
+```text
+alternatingOperator n (segmentSocleClass Δ) = s • segmentSpecialClass Δ.
+```
+
+The first helper, `Langlands.Aubert.supportSign_segmentSocleObject`, proves
+that the support sign of the actual chosen segment socle is `s`. It accepts
+any proof of that object's irreducibility. Apply the published uniqueness
+criterion `Langlands.Aubert.supportSign_eq_of_effective` with `s`; the
+integer fact `neg_one_pow_eq_or` supplies `s = 1 ∨ s = -1`. Unfolding
+`Langlands.SmoothRep.IrreducibleOperator.onIrreducibles` and using
+`Langlands.SmoothRep.realizeIrreducibles_generator_irreducibleIsoClass`
+identifies the lattice image with the factor-count vector of the actual
+unadjusted exact class. The signed segment formula and linearity of
+`Langlands.SmoothRep.IrreducibleGrothendieckProof.factorMap` then give
+
+```text
+s • factorMap (alternatingOperator n (segmentSocleClass Δ))
+  = (s * s) • factorMap (segmentSpecialClass Δ)
+  = factorMap (segmentSpecialClass Δ).
+```
+
+Here `s*s = ((-1)*(-1))^(n-k) = 1`, implemented with `smul_smul`,
+`← mul_pow` and simplification. The last vector is effective because it is
+the actual composition-factor vector of the finite-length
+`segmentSpecialObject`. The precise final inputs are
+`Langlands.SmoothRep.IrreducibleGrothendieckProof.factorMap_ofRepresentation`
+and
+`Langlands.SmoothRep.IrreducibleOperator.compositionFactors_effective`.
+Thus effectivity uniqueness determines the support sign; no new support
+presentation or tensor-factor theorem is assumed.
+
+The second helper, `Langlands.Aubert.adjustedOperator_segmentSocleClass`,
+extracts irreducibility from `Langlands.Aubert.segmentSocleObject_spec`.
+It applies `Langlands.Aubert.adjustedOperator_irreducible`, replaces the
+support sign by the first helper, and uses the same signed segment formula
+and cancellation to obtain
+
+```text
+adjustedOperator n (segmentSocleClass Δ) = segmentSpecialClass Δ.
+```
+
+Finally `Langlands.Aubert.adjustedSegmentExchange` unfolds the actual graded
+segment classes and applies `Langlands.Aubert.gradedOperator_homogeneous`.
+The second helper proves the remaining homogeneous identity. This is the
+whole segment-exchange proposition; multiplicativity, the polynomial basis,
+whole-ring equality and involutivity are separate targets.
+
+## Original-source correspondence
+
+The registered source `aubert-1995-duality`, SHA-256
+`57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693`,
+Definition 2.1 and Remark 2.2, printed p.2184, supplies the support-sign
+adjustment and its exponent `n-k` for the segment socle. Theorem 2.3 and
+its segment computation, printed p.2185, supply the comparison with the
+special quotient. The increasing-product socle and increasing-product
+special quotient agree with the two actual classes used here. The
+registered source `zelevinsky-1980-induced-ii`, SHA-256
+`663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`,
+§9.12, printed p.201, specifies the segment-to-special map extended to the
+representation ring. This proof establishes that map on each segment;
+it does not assemble the full ring comparison.
+
+The implementation is a derived argument using the Library's proved
+effectivity characterization of the support sign, rather than a repetition
+of Aubert's printed multisegment calculation. The original passages and the
+retained Aubert audit/citation guide were read. No appeal is made to the
+withdrawn proof of Proposition 3.2 or the original defective proof of
+Theorem 3.6. The imported sign construction already uses the published
+corrected signed-effectivity and involutivity chains.
+
+## Declaration dependencies and classification account
+
+All dependencies were read from Library base
+`04a311a4c16d58815bdcde73a66a203a2edb06dc`. The target pair and all its imported
+pairs are preserved. Published results are imported by Lean name.
+
+The two canonical objects transitively use exactly
+`Langlands.Classification.segmentZelevinskyConstituentExistence` and
+`Langlands.Classification.segmentSpecialConstituentExistence`. The signed
+class formula uses `Langlands.Aubert.segmentSocleHead`, which passes through
+`Langlands.Aubert.segmentInductionAubertImage`,
+`Langlands.Aubert.segmentSocleHead_of_signedIrreducibleImage`, actual
+segment Jacquet multiplicity and reversal, and signed Jacquet head
+identification. The support sign uses
+`Langlands.Aubert.exists_effectiveSupportSign`,
+`Langlands.Aubert.signedEffectivity`,
+`Langlands.Aubert.irreducibleAubertVector_ne_zero`,
+`Langlands.Aubert.alternatingOperator_injective` and
+`Langlands.Aubert.involutivity`. The existence branch reaches
+`Langlands.CuspidalSupport.normalizedQuasicuspidalEmbedding`,
+`Langlands.CuspidalSupport.normalizedRefinedQuasicuspidalEmbedding`,
+`Langlands.CuspidalSupport.cuspidalEmbedding` and
+`Langlands.CuspidalSupport.cuspidalInductionLength`.
+
+The normalized finite-length chains reach
+`Langlands.Classification.normalizedInductionFiniteLength`,
+`Langlands.Parabolic.normalizedJacquetFiniteLength`,
+`Langlands.Classification.irreducibleProductEmbedding` and
+`Langlands.Classification.irreducibleProductFiniteLength`. The actual
+segment-existence and exchange chains also reach
+`Langlands.Classification.commonImageMultiplicityOne`,
+`Langlands.Classification.segmentJacquetMultiplicityReduction`,
+`Langlands.Classification.segmentInductionAdmissibility`,
+`Langlands.Classification.segmentFactors_isIrreducible_isLeviCuspidal`,
+`Langlands.Classification.segmentFactors_associated_segmentFactorsDown`,
+`Langlands.Classification.cuspidalIntegralTwistFreeness` and
+`Langlands.Classification.twoFactorProductConstituentCommutativity`.
+These are reused proved results, not additional assumptions, and this
+contribution makes no claim of classification independence.
+
+The complete inventory below conservatively records every reached constant
+whose defining module is under `Langlands.Representation.Classification`,
+including definitions, statement predicates and private helpers as well as
+theorems. Such module membership alone does not classify a result as a
+classification theorem. A private development diagnostic recursively visited
+the final theorem's type and proof value, then the types and values of its
+project dependencies, including opaque values and inductive constructors.
+Nonproject modules were pruned because they cannot depend on project results.
+The traversal reached 9,854 project constants, of which 417 belong to these
+52 modules; 167 are public theorem constants. This records the precise
+classification-module dependency set rather than inferring independence
+from the final theorem's type or from its imports. The existing
+[GL specialization dependency map](../../../notes/aubert/gl-specialization-source-map.md)
+provides the broader source context. The corresponding
+`Langlands.CuspidalSupport` roots outside these modules are named above.
+
+Compilation and declaration inspection in the task's prepared environment
+succeeded. The final theorem has independent level parameters `uF`, `uV`
+and axiom closure exactly `propext`, `Classical.choice`, `Quot.sound`.
+These development checks do not replace independent review and publication.
+
+<details>
+<summary>Complete transitive classification-module constant inventory</summary>
+
+Each group starts with its exact defining module, followed by the exact
+constant names, at the Library base identified above. The SHA-256 of the
+sorted UTF-8 `module<TAB>constant<LF>` inventory is
+`211277ab3b4c8f6a8e83a9669a626a0440da4eb0c0d6cdf6fa2701b996e25257`.
+
+`Langlands.Representation.Classification.CanonicalConstituents`
+
+```text
+Langlands.Classification.HasIrreducibleHead
+Langlands.Classification.HasIrreducibleSocle
+Langlands.Classification.IsIrreducibleHead.headKernel_eq
+Langlands.Classification.IsIrreducibleHead.nonempty_headEquiv
+Langlands.Classification.IsIrreducibleSocle.nonempty_socleEquiv
+Langlands.Classification.IsIrreducibleSocle.socle_eq
+Langlands.Classification.head
+Langlands.Classification.headEquivOfSurjective
+Langlands.Classification.headEquivOfSurjective._proof_1
+Langlands.Classification.headEquivOfSurjective._proof_2
+Langlands.Classification.headEquivOfSurjective._proof_3
+Langlands.Classification.headEquivOfSurjective._proof_4
+Langlands.Classification.headEquivOfSurjective._proof_5
+Langlands.Classification.headKernel
+Langlands.Classification.headKernel._proof_1
+Langlands.Classification.headKernel._proof_2
+Langlands.Classification.headKernel._proof_3
+Langlands.Classification.headKernel._proof_4
+Langlands.Classification.headKernel_le_ker
+Langlands.Classification.headKernel_stable
+Langlands.Classification.irreducibleImages
+Langlands.Classification.ofSocle._proof_1
+Langlands.Classification.range_le_socle
+Langlands.Classification.socle
+Langlands.Classification.socle._proof_1
+Langlands.Classification.socleEquivOfInjective
+Langlands.Classification.socleEquivOfInjective._proof_1
+Langlands.Classification.socleEquivOfInjective._proof_2
+Langlands.Classification.socleEquivOfInjective._proof_3
+Langlands.Classification.socleRepresentation
+Langlands.Classification.toHead._proof_1
+```
+
+`Langlands.Representation.Classification.CommonImageMultiplicityOneProof`
+
+```text
+Langlands.Classification.commonImageMultiplicityOne
+Langlands.Classification.commonImageMultiplicityOne._proof_1_1
+_private.Langlands.Representation.Classification.CommonImageMultiplicityOneProof.0.Langlands.Classification.irreducible_carrier_nontrivial
+_private.Langlands.Representation.Classification.CommonImageMultiplicityOneProof.0.Langlands.Classification.positive_zero_composite_impossible
+_private.Langlands.Representation.Classification.CommonImageMultiplicityOneProof.0.Langlands.Classification.positive_zero_composite_impossible._proof_1_1
+```
+
+`Langlands.Representation.Classification.CommonImageMultiplicityOneStatement`
+
+```text
+Langlands.Classification.CommonImageMultiplicityOneStatement
+```
+
+`Langlands.Representation.Classification.ConstituentRelations`
+
+```text
+Langlands.Classification.HasScalarCharacter
+Langlands.Classification.IsIrreducibleHead
+Langlands.Classification.IsIrreducibleSocle
+Langlands.Classification.IsIrreducibleSubrepresentation
+```
+
+`Langlands.Representation.Classification.Cosocle`
+
+```text
+Langlands.Classification.isIrreducible_iff_isCoatom_ker
+```
+
+`Langlands.Representation.Classification.CuspidalIntegralTwistFreenessProof`
+
+```text
+Langlands.Classification.IntegralTwistFreeness.character_eq_one_on_center
+Langlands.Classification.IntegralTwistFreeness.exponent_eq_zero_of_equiv
+Langlands.Classification.IntegralTwistFreeness.scalar_uniformizer_value
+Langlands.Classification.cuspidalIntegralTwistFreeness
+```
+
+`Langlands.Representation.Classification.CuspidalIntegralTwistFreenessStatement`
+
+```text
+Langlands.Classification.CuspidalIntegralTwistFreeness
+```
+
+`Langlands.Representation.Classification.CuspidalJacquetFunctorExactnessProof`
+
+```text
+Langlands.CuspidalJacquetMultiplicity.oppositeFunctor_additive
+Langlands.CuspidalJacquetMultiplicity.oppositeFunctor_preservesEpimorphisms
+Langlands.CuspidalJacquetMultiplicity.oppositeFunctor_preservesMonomorphisms
+Langlands.CuspidalJacquetMultiplicity.oppositeUnipotent_finite_containment
+Langlands.CuspidalJacquetMultiplicity.upperFunctor_additive
+Langlands.CuspidalJacquetMultiplicity.upperFunctor_preservesEpimorphisms
+Langlands.CuspidalJacquetMultiplicity.upperFunctor_preservesMonomorphisms
+```
+
+`Langlands.Representation.Classification.CuspidalJacquetFunctors`
+
+```text
+Langlands.CuspidalJacquetMultiplicity.oppositeFunctor
+Langlands.CuspidalJacquetMultiplicity.oppositeFunctor._proof_1
+Langlands.CuspidalJacquetMultiplicity.oppositeFunctor._proof_2
+Langlands.CuspidalJacquetMultiplicity.oppositeMap
+Langlands.CuspidalJacquetMultiplicity.oppositeMap._proof_1
+Langlands.CuspidalJacquetMultiplicity.oppositeMap._proof_2
+Langlands.CuspidalJacquetMultiplicity.oppositeMap._proof_3
+Langlands.CuspidalJacquetMultiplicity.oppositeMap._proof_4
+Langlands.CuspidalJacquetMultiplicity.oppositeMap._proof_5
+Langlands.CuspidalJacquetMultiplicity.upperFunctor
+Langlands.CuspidalJacquetMultiplicity.upperFunctor._proof_1
+Langlands.CuspidalJacquetMultiplicity.upperFunctor._proof_2
+```
+
+`Langlands.Representation.Classification.CuspidalJacquetMultiplicityProof`
+
+```text
+Langlands.glCuspidalJacquetMultiplicityPrerequisites
+```
+
+`Langlands.Representation.Classification.CuspidalJacquetMultiplicityStatement`
+
+```text
+Langlands.CuspidalJacquetMultiplicity.induced
+Langlands.CuspidalJacquetMultiplicity.induced._proof_1
+Langlands.CuspidalJacquetMultiplicity.oppositeJacquet
+Langlands.CuspidalJacquetMultiplicity.oppositeJacquet._proof_1
+Langlands.CuspidalJacquetMultiplicity.oppositeJacquet._proof_2
+Langlands.CuspidalJacquetMultiplicity.upperJacquet
+Langlands.CuspidalJacquetMultiplicity.upperJacquet._proof_1
+Langlands.GLCuspidalJacquetMultiplicityPrerequisitesStatement
+Langlands.GLCuspidalJacquetMultiplicityStatement
+```
+
+`Langlands.Representation.Classification.FiniteLengthProof`
+
+```text
+Langlands.FiniteLengthAssembly.complementaryProjection
+Langlands.FiniteLengthAssembly.complementaryProjection._proof_1
+Langlands.FiniteLengthAssembly.complementaryProjection._proof_2
+Langlands.FiniteLengthAssembly.complementaryProjection_surjective
+Langlands.FiniteLengthAssembly.finiteLength_comp_surjective_iff
+Langlands.FiniteLengthAssembly.finiteLength_normalizedJacquet_of_refinements
+Langlands.FiniteLengthAssembly.finiteLength_of_complement
+Langlands.FiniteLengthAssembly.finiteLength_of_complement._simp_1_2
+Langlands.FiniteLengthAssembly.finiteLength_of_complement._simp_1_3
+Langlands.FiniteLengthAssembly.finiteLength_of_injective
+Langlands.FiniteLengthAssembly.finiteLength_of_refinedJacquet
+Langlands.FiniteLengthAssembly.finiteLength_of_surjective
+Langlands.FiniteLengthAssembly.finite_of_surjective
+Langlands.FiniteLengthAssembly.finite_summand
+Langlands.FiniteLengthAssembly.isAdmissible_levi_subrepresentation
+Langlands.FiniteLengthAssembly.isAdmissible_normalizedJacquet
+Langlands.FiniteLengthAssembly.length_comp_surjective
+Langlands.FiniteLengthAssembly.length_eq_add_of_complement
+Langlands.FiniteLengthAssembly.normalizedJacquet_eq_twist
+Langlands.FiniteLengthAssembly.refinedJacquetMap_surjective
+Langlands.FiniteLengthAssembly.refinement_measure_lt
+Langlands.FiniteLengthAssembly.refinement_measure_lt._proof_1_1
+Langlands.Parabolic.normalizedJacquetFiniteLength
+```
+
+`Langlands.Representation.Classification.HeadQuotientCriterionProof`
+
+```text
+Langlands.Classification.unequalIrreducibleQuotientKernels
+Langlands.Classification.unequalIrreducibleQuotientKernels._abel_1_1
+```
+
+`Langlands.Representation.Classification.HeadQuotientCriterionStatement`
+
+```text
+Langlands.Classification.UnequalIrreducibleQuotientKernelsStatement
+```
+
+`Langlands.Representation.Classification.IrreducibleProductEmbedding`
+
+```text
+Langlands.Classification.irreducibleProductEmbedding
+Langlands.Classification.irreducibleProduct_embedding
+Langlands.Classification.irreducible_supercuspidalProduct_embedding
+Langlands.Classification.normalizedProduct_embedding_of_factor_embeddings
+Langlands.FiniteTensor.externalMap_injective
+```
+
+`Langlands.Representation.Classification.IrreducibleProductEmbeddingStatement`
+
+```text
+Langlands.Classification.IrreducibleProductEmbeddingTheorem
+```
+
+`Langlands.Representation.Classification.IrreducibleProductFiniteLengthProof`
+
+```text
+Langlands.Classification.irreducibleProductFiniteLength
+_private.Langlands.Representation.Classification.IrreducibleProductFiniteLengthProof.0.Langlands.Classification.flattenSupercuspidalFactors
+_private.Langlands.Representation.Classification.IrreducibleProductFiniteLengthProof.0.Langlands.Classification.flattenSupercuspidalFactors_obj
+```
+
+`Langlands.Representation.Classification.MultiplicityOneConstituentProof`
+
+```text
+Langlands.Classification.mappedProductSplitting
+Langlands.Classification.multiplicityOneHeadCore
+Langlands.Classification.multiplicityOneHeadCore._proof_1_1
+Langlands.Classification.multiplicityOneSocleCore
+Langlands.Classification.multiplicityOneSocleCore._proof_1_1
+Langlands.Classification.smoothProduct
+Langlands.Classification.smoothProduct._proof_1
+_private.Langlands.Representation.Classification.MultiplicityOneConstituentProof.0.Langlands.Classification.isAtom_embedding_range
+```
+
+`Langlands.Representation.Classification.NormalizedProductFiniteLengthProof`
+
+```text
+Langlands.Classification.ProductLengthProof.finiteLength_of_injective
+Langlands.Classification.ProductLengthProof.finiteLength_of_range_eq_ker
+Langlands.Classification.ProductLengthProof.finiteLength_of_surjective
+Langlands.Classification.ProductLengthProof.irreducibleLevi
+Langlands.Classification.ProductLengthProof.leviPreservation
+Langlands.Classification.ProductLengthProof.step
+Langlands.Classification.normalizedInductionFiniteLength
+```
+
+`Langlands.Representation.Classification.NormalizedProductFiniteLengthStatement`
+
+```text
+Langlands.Classification.IrreducibleProductFiniteLength
+```
+
+`Langlands.Representation.Classification.OppositeCuspidalJacquetFiltrationProof`
+
+```text
+Langlands.OppositeCuspidalJacquetFiltration.conjugatesLevi_reverse
+Langlands.OppositeCuspidalJacquetFiltration.isMinimalRepresentative_reverse_inv_mul
+Langlands.OppositeCuspidalJacquetFiltration.isMinimalRepresentative_reverse_mul
+Langlands.OppositeCuspidalJacquetFiltration.leviConjugation_symm_leviReverseEquiv
+Langlands.OppositeCuspidalJacquetFiltration.leviConjugation_symm_leviReverseEquiv._simp_1_1
+Langlands.OppositeCuspidalJacquetFiltration.leviConjugation_symm_leviReverseEquiv._simp_1_4
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_1
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_10
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_2
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_3
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_4
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_5
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_6
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_7
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_8
+Langlands.OppositeCuspidalJacquetFiltration.minimalReverseEquiv._proof_9
+Langlands.OppositeCuspidalJacquetFiltration.oppositeJacquetReverseEquiv
+Langlands.OppositeCuspidalJacquetFiltration.oppositeJacquetReverseEquiv._proof_1
+Langlands.OppositeCuspidalJacquetFiltration.oppositeJacquetReverseEquiv._proof_2
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv._proof_1
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv._proof_2
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv._proof_3
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv._proof_4
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv._proof_5
+Langlands.OppositeCuspidalJacquetFiltration.reverseCoinvariantsEquiv._proof_6
+Langlands.OppositeCuspidalJacquetFiltration.reverseJacquetEquiv
+Langlands.OppositeCuspidalJacquetFiltration.reverseJacquetEquiv._proof_1
+Langlands.OppositeCuspidalJacquetFiltration.reverseJacquetEquiv_mk
+Langlands.OppositeCuspidalJacquetFiltration.reversePermutation_lt_of_blockIndex_eq
+Langlands.OppositeCuspidalJacquetFiltration.reversePermutation_symm_index_strictMono
+Langlands.OppositeCuspidalJacquetFiltration.transportReverseEquiv
+Langlands.OppositeCuspidalJacquetFiltration.transportReverseEquiv._proof_1
+Langlands.OppositeCuspidalJacquetFiltration.transportReverseEquiv._proof_2
+Langlands.glOppositeCuspidalJacquetFiltrationFromUpper
+```
+
+`Langlands.Representation.Classification.OppositeCuspidalJacquetFiltrationStatement`
+
+```text
+Langlands.GLOppositeCuspidalJacquetFiltrationFromUpperStatement
+Langlands.GLOppositeCuspidalJacquetFiltrationFromUpperStatement._proof_1
+```
+
+`Langlands.Representation.Classification.OppositeJacquetQuotientDetectionProof`
+
+```text
+Langlands.oppositeJacquetQuotientDetection
+```
+
+`Langlands.Representation.Classification.OppositeJacquetQuotientDetectionStatement`
+
+```text
+Langlands.OppositeJacquetQuotientDetectionStatement
+```
+
+`Langlands.Representation.Classification.ProductLeviMinimalIndex`
+
+```text
+Langlands.ProductLeviMinimalIndex.blockIndex_eq_flatten
+Langlands.ProductLeviMinimalIndex.blockIndex_flatten_index
+Langlands.ProductLeviMinimalIndex.blockIndex_flatten_index_eq_iff
+Langlands.ProductLeviMinimalIndex.blockIndex_flatten_index_ne
+Langlands.ProductLeviMinimalIndex.blockIndex_flatten_index_ne._simp_1_1
+Langlands.ProductLeviMinimalIndex.blockWeyl_flatten_le
+```
+
+`Langlands.Representation.Classification.SegmentConstituentCentralCharacterProof`
+
+```text
+Langlands.Classification.hasScalarCharacter_twist
+Langlands.PadicField.TopologicalData.coe_determinantPowerCharacter_scalar
+Langlands.PadicField.TopologicalData.hasScalarCharacter_segmentFactor
+```
+
+`Langlands.Representation.Classification.SegmentConstituentStatement`
+
+```text
+Langlands.Classification.SegmentSpecialConstituentExistence
+Langlands.Classification.SegmentZelevinskyConstituentExistence
+```
+
+`Langlands.Representation.Classification.SegmentFullJacquetAdjunction`
+
+```text
+Langlands.SegmentFullJacquet.exists_jacquet_to_tensor_ne_zero
+```
+
+`Langlands.Representation.Classification.SegmentFullJacquetCentral`
+
+```text
+Langlands.SegmentFullJacquet.blockTensor_blockScalarLevi
+Langlands.SegmentFullJacquet.digits_sum_injective
+Langlands.SegmentFullJacquet.digits_sum_injective._f
+Langlands.SegmentFullJacquet.digits_sum_injective.match_1_1
+Langlands.SegmentFullJacquet.leviConjugation_symm_blockScalarLevi
+Langlands.SegmentFullJacquet.perm_eq_of_weightedSum_eq
+Langlands.SegmentFullJacquet.segmentScalar
+Langlands.SegmentFullJacquet.segmentScalar_eq
+Langlands.SegmentFullJacquet.segmentScalar_injective
+Langlands.SegmentFullJacquet.separatingEntries
+Langlands.SegmentFullJacquet.transport_blockTensor_blockScalarLevi
+Langlands.SegmentFullJacquet.uniformizerAbs
+Langlands.SegmentFullJacquet.uniformizerAbs_lt_one
+Langlands.SegmentFullJacquet.uniformizerAbs_pos
+```
+
+`Langlands.Representation.Classification.SegmentFullJacquetSplitting`
+
+```text
+Langlands.SegmentFullJacquet.blockPerm
+Langlands.SegmentFullJacquet.blockPerm._proof_1
+Langlands.SegmentFullJacquet.blockPerm_injective
+Langlands.SegmentFullJacquet.exists_segmentJacquetFiltration
+Langlands.SegmentFullJacquet.separatingScalar
+Langlands.SegmentFullJacquet.separatingScalar_comm
+Langlands.SegmentFullJacquet.transport_segment_separatingScalar
+```
+
+`Langlands.Representation.Classification.SegmentHeadDecreasingSocle`
+
+```text
+Langlands.Classification.IsIrreducibleSocle.nonempty_equiv_of_subrepresentation
+Langlands.Classification.IsIrreducibleSocle.of_targetEquiv
+Langlands.PadicField.TopologicalData.IsSegmentHead.isIrreducibleSocle_down
+Langlands.PadicField.TopologicalData.IsSegmentHead.nonempty_equiv_of_down_jacquet_hom
+Langlands.PadicField.TopologicalData.IsSegmentHead.nonempty_equiv_of_down_subrepresentation
+```
+
+`Langlands.Representation.Classification.SegmentInductionAdmissibilityProof`
+
+```text
+Langlands.Classification.segmentInductionAdmissibility
+```
+
+`Langlands.Representation.Classification.SegmentInductionAdmissibilityStatement`
+
+```text
+Langlands.Classification.SegmentInductionAdmissibilityStatement
+```
+
+`Langlands.Representation.Classification.SegmentJacquetMultiplicityProof`
+
+```text
+Langlands.Classification.segmentJacquetMultiplicityReduction
+```
+
+`Langlands.Representation.Classification.SegmentJacquetMultiplicityStatement`
+
+```text
+Langlands.Classification.SegmentJacquetMultiplicityReductionStatement
+Langlands.Classification.SegmentJacquetMultiplicityReductionStatement._proof_1
+```
+
+`Langlands.Representation.Classification.SegmentJacquetReversal`
+
+```text
+Langlands.Classification.segmentTensorDownReverseEquiv
+Langlands.Classification.segmentTensorDownReverseEquiv._proof_1
+Langlands.Classification.segmentTensorDownReverseEquiv._proof_2
+Langlands.Classification.segmentTensorDownReverseEquiv._proof_3
+Langlands.Classification.segmentTensorReverseEquiv
+Langlands.Classification.segmentTensorReverseEquiv._proof_1
+Langlands.Classification.segmentTensorReverseEquiv._proof_2
+Langlands.Classification.segmentTensorReverseEquiv._proof_3
+Langlands.Classification.segmentTensorReverseEquiv._proof_4
+Langlands.Classification.segmentTensorReverseEquiv._proof_5
+Langlands.Classification.segmentTensorReverseEquiv._proof_6
+Langlands.Classification.segment_opposite_upper_multiplicity_iff
+Langlands.Classification.segment_upper_opposite_multiplicity_iff
+```
+
+`Langlands.Representation.Classification.SegmentJacquetSubobject`
+
+```text
+Langlands.SegmentFullJacquet.exists_subrepresentationJacquetSeries
+Langlands.SegmentFullJacquet.subrepresentationJacquet_isLeviQuasicuspidal
+_private.Langlands.Representation.Classification.SegmentJacquetSubobject.0.Langlands.SegmentFullJacquet.subobjectJacquet_injective
+_private.Langlands.Representation.Classification.SegmentJacquetSubobject.0.Langlands.SegmentFullJacquet.supercuspidalScalarCharacter
+```
+
+`Langlands.Representation.Classification.SegmentSpecialConstituentExistenceProof`
+
+```text
+Langlands.Classification.segmentSpecialConstituentExistence
+_private.Langlands.Representation.Classification.SegmentSpecialConstituentExistenceProof.0.Langlands.Classification.segmentSpecialConstituentExistence_of_pointwise
+_private.Langlands.Representation.Classification.SegmentSpecialConstituentExistenceProof.0.Langlands.Classification.specialSegmentQuotient_admissible
+```
+
+`Langlands.Representation.Classification.SegmentTensorReversalProof`
+
+```text
+Langlands.Classification.segmentFactors_associated_segmentFactorsDown
+Langlands.Classification.segmentFactors_associated_segmentFactorsDown._proof_1_1
+_private.Langlands.Representation.Classification.SegmentTensorReversalProof.0.Langlands.Classification.blockPermutationTensorEquiv
+_private.Langlands.Representation.Classification.SegmentTensorReversalProof.0.Langlands.Classification.blockPermutationTensorEquiv._proof_1
+_private.Langlands.Representation.Classification.SegmentTensorReversalProof.0.Langlands.Classification.blockPermutationTensorEquiv._proof_2
+_private.Langlands.Representation.Classification.SegmentTensorReversalProof.0.Langlands.Classification.blockPermutationTensorEquiv._proof_3
+```
+
+`Langlands.Representation.Classification.SegmentTensorStabilizerProof`
+
+```text
+Langlands.Classification.cuspidalDatum_integralTwist_injective
+Langlands.Classification.segmentFactorsDown_isIrreducible_isLeviCuspidal
+Langlands.Classification.segmentFactorsDown_tensorStabilizer_count
+Langlands.Classification.segmentFactorsDown_tensorStabilizer_count._proof_1_1
+Langlands.Classification.segmentFactors_isIrreducible_isLeviCuspidal
+Langlands.Classification.segmentFactors_tensorStabilizer_count
+Langlands.Classification.segmentSupercuspidalFactor
+Langlands.Classification.segmentSupercuspidalFactor_datum_injective_nat
+```
+
+`Langlands.Representation.Classification.SegmentZelevinskyConstituentExistenceProof`
+
+```text
+Langlands.Classification.segmentZelevinskyConstituentExistence
+_private.Langlands.Representation.Classification.SegmentZelevinskyConstituentExistenceProof.0.Langlands.Classification.segmentQuotient_admissible
+_private.Langlands.Representation.Classification.SegmentZelevinskyConstituentExistenceProof.0.Langlands.Classification.segmentZelevinskyConstituentExistence_of_pointwise
+```
+
+`Langlands.Representation.Classification.Segments`
+
+```text
+Langlands.Classification.IsIrreducibleHead.of_equiv
+Langlands.Classification.IsIrreducibleSocle.of_equiv
+Langlands.Classification.IsIrreducibleSocle.of_equiv._simp_1_1
+Langlands.Classification.IsIrreducibleSubrepresentation.of_equiv
+Langlands.GeneralLinear.BlockShape.uniform
+Langlands.GeneralLinear.BlockShape.uniform._proof_1
+Langlands.GeneralLinear.SupercuspidalClass.twist_congr
+Langlands.PadicField.TopologicalData.CuspidalDatum
+Langlands.PadicField.TopologicalData.CuspidalDatum.IsRepresentedBy
+Langlands.PadicField.TopologicalData.CuspidalDatum.casesOn
+Langlands.PadicField.TopologicalData.CuspidalDatum.cls
+Langlands.PadicField.TopologicalData.CuspidalDatum.mk
+Langlands.PadicField.TopologicalData.CuspidalDatum.mk.inj
+Langlands.PadicField.TopologicalData.CuspidalDatum.mk.injEq
+Langlands.PadicField.TopologicalData.CuspidalDatum.mk.noConfusion
+Langlands.PadicField.TopologicalData.CuspidalDatum.noConfusion
+Langlands.PadicField.TopologicalData.CuspidalDatum.noConfusionType
+Langlands.PadicField.TopologicalData.CuspidalDatum.rank
+Langlands.PadicField.TopologicalData.CuspidalDatum.rank_pos
+Langlands.PadicField.TopologicalData.CuspidalDatum.rec
+Langlands.PadicField.TopologicalData.CuspidalDatum.twist
+Langlands.PadicField.TopologicalData.CuspidalDatum.twist_twist
+Langlands.PadicField.TopologicalData.CuspidalDatum.twist_zero
+Langlands.PadicField.TopologicalData.IsSegmentHead
+Langlands.PadicField.TopologicalData.IsSegmentSocle
+Langlands.PadicField.TopologicalData.IsSegmentSocle.isSegmentSubrepresentation
+Langlands.PadicField.TopologicalData.IsSegmentSubrepresentation
+Langlands.PadicField.TopologicalData.Segment
+Langlands.PadicField.TopologicalData.Segment.base
+Langlands.PadicField.TopologicalData.Segment.degree
+Langlands.PadicField.TopologicalData.Segment.length
+Langlands.PadicField.TopologicalData.Segment.length_pos
+Langlands.PadicField.TopologicalData.Segment.mk
+Langlands.PadicField.TopologicalData.Segment.rank
+Langlands.PadicField.TopologicalData.Segment.rank_pos
+Langlands.PadicField.TopologicalData.isSegmentHead_iff
+Langlands.PadicField.TopologicalData.isSegmentSubrepresentation_iff
+Langlands.PadicField.TopologicalData.segmentFactor
+Langlands.PadicField.TopologicalData.segmentFactors
+Langlands.PadicField.TopologicalData.segmentFactorsDown
+Langlands.PadicField.TopologicalData.segmentInduced
+Langlands.PadicField.TopologicalData.segmentInducedDown
+Langlands.PadicField.TopologicalData.segmentInducedDownIso
+Langlands.PadicField.TopologicalData.segmentInducedDownIso._proof_1
+Langlands.PadicField.TopologicalData.segmentInducedDownIsoOfRepresented
+Langlands.PadicField.TopologicalData.segmentInducedIso
+Langlands.PadicField.TopologicalData.segmentInducedIso._proof_1
+Langlands.PadicField.TopologicalData.segmentInducedIsoOfRepresented
+Langlands.PadicField.TopologicalData.segmentInducedIsoOfRepresented._proof_1
+Langlands.PadicField.TopologicalData.supercuspidalClassRealPowerTwist_add
+Langlands.PadicField.TopologicalData.supercuspidalClassRealPowerTwist_zero
+```
+
+`Langlands.Representation.Classification.Supercuspidal`
+
+```text
+Langlands.GeneralLinear.BlockShape.conjugateUnipotent
+Langlands.GeneralLinear.IsSupercuspidal
+Langlands.GeneralLinear.SupercuspidalClass
+Langlands.GeneralLinear.SupercuspidalRep
+Langlands.GeneralLinear.SupercuspidalRep.isoClass
+Langlands.GeneralLinear.SupercuspidalRep.isoClass_eq_iff
+Langlands.GeneralLinear.isSupercuspidal_of_equiv
+Langlands.GeneralLinear.supercuspidalProperty
+Langlands.Jacquet.coinvariantsEquiv
+Langlands.Jacquet.coinvariantsEquiv._proof_1
+Langlands.Jacquet.coinvariantsEquiv._proof_2
+Langlands.Jacquet.coinvariantsEquiv._proof_3
+Langlands.Jacquet.coinvariantsEquiv._proof_4
+Langlands.Jacquet.coinvariants_subsingleton_iff
+```
+
+`Langlands.Representation.Classification.SupercuspidalContragredientAux`
+
+```text
+Langlands.GeneralLinear.isSupercuspidal_iff_standard
+Langlands.Jacquet.coinvariantsConjEquiv
+Langlands.Jacquet.coinvariantsConjEquiv._proof_1
+Langlands.Jacquet.coinvariantsConjEquiv._proof_2
+Langlands.Jacquet.coinvariantsConjEquiv._proof_3
+Langlands.Jacquet.coinvariantsConjEquiv._proof_4
+Langlands.Jacquet.coinvariantsConjEquiv._proof_5
+Langlands.Jacquet.coinvariantsConjEquiv._proof_6
+Langlands.Jacquet.coinvariants_conj_subsingleton_iff
+Langlands.eq_zero_of_smoothDual_annihilates
+Langlands.isIrreducible_iff_of_equiv
+Langlands.isIrreducible_of_smoothContragredient
+Langlands.isIrreducible_smoothContragredient_iff_of_bidual
+```
+
+`Langlands.Representation.Classification.SupercuspidalSupport`
+
+```text
+Langlands.SmoothRep.IsQuotient.isSubquotient
+Langlands.SmoothRep.IsSubquotient.of_iso_right
+Langlands.SmoothRep.IsSubrepresentation.isSubquotient
+Langlands.SmoothRep.hom_hom_injective
+Langlands.SmoothRep.hom_hom_surjective
+Langlands.SmoothRep.isSubquotient_iff_exists
+Langlands.SmoothRep.isSubquotient_iff_exists.match_1_1
+```
+
+`Langlands.Representation.Classification.SupercuspidalTwist`
+
+```text
+Langlands.GeneralLinear.BlockShape.conjugateUnipotent_le_ker_determinant
+Langlands.GeneralLinear.BlockShape.determinant_eq_one_of_mem_unipotentSubgroup
+Langlands.GeneralLinear.SupercuspidalClass.twist
+Langlands.GeneralLinear.SupercuspidalClass.twist._proof_1
+Langlands.GeneralLinear.SupercuspidalClass.twist.match_1
+Langlands.GeneralLinear.SupercuspidalClass.twist_one
+Langlands.GeneralLinear.SupercuspidalClass.twist_twist
+Langlands.GeneralLinear.SupercuspidalRep.isoMk
+Langlands.GeneralLinear.SupercuspidalRep.twist
+Langlands.GeneralLinear.SupercuspidalRep.twist._proof_1
+Langlands.GeneralLinear.SupercuspidalRep.twistFunctor
+Langlands.GeneralLinear.SupercuspidalRep.twistFunctor._proof_1
+Langlands.GeneralLinear.isSupercuspidal_twist_iff
+Langlands.GeneralLinear.isSupercuspidal_twist_iff_of_le_ker
+Langlands.GeneralLinear.ker_determinant_le_ker_comp
+Langlands.GeneralLinear.ker_determinant_le_ker_mul
+Langlands.GeneralLinear.ker_determinant_le_ker_one
+Langlands.Jacquet.subsingleton_coinvariants_twist_iff
+Langlands.PadicField.TopologicalData.determinantPowerCharacter
+Langlands.PadicField.TopologicalData.isOpen_ker_determinantPowerCharacter
+Langlands.PadicField.TopologicalData.ker_determinant_le_ker_determinantPowerCharacter
+Langlands.PadicField.TopologicalData.supercuspidalClassRealPowerTwist
+```
+
+`Langlands.Representation.Classification.TwoFactorProductConstituentCommutativityProof`
+
+```text
+Langlands.Classification.TwoFactorCommutativity.annihilator
+Langlands.Classification.TwoFactorCommutativity.annihilator._proof_1
+Langlands.Classification.TwoFactorCommutativity.annihilator._proof_2
+Langlands.Classification.TwoFactorCommutativity.annihilator._proof_3
+Langlands.Classification.TwoFactorCommutativity.annihilator._proof_4
+Langlands.Classification.TwoFactorCommutativity.annihilatorQuotientEquiv
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_1
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_10
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_11
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_2
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_3
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_4
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_5
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_6
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_7
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_8
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict._proof_9
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict_eq_zero_iff
+Langlands.Classification.TwoFactorCommutativity.annihilatorRestrict_surjective
+Langlands.Classification.TwoFactorCommutativity.annihilator_antitone
+Langlands.Classification.TwoFactorCommutativity.annihilator_bot
+Langlands.Classification.TwoFactorCommutativity.annihilator_top
+Langlands.Classification.TwoFactorCommutativity.canonicalTopology
+Langlands.Classification.TwoFactorCommutativity.dualSeries
+Langlands.Classification.TwoFactorCommutativity.dualSeries._proof_1
+Langlands.Classification.TwoFactorCommutativity.dualSeries._proof_2
+Langlands.Classification.TwoFactorCommutativity.dualSeries._proof_3
+Langlands.Classification.TwoFactorCommutativity.dualSeries._proof_4
+Langlands.Classification.TwoFactorCommutativity.dualSeries_graded
+Langlands.Classification.TwoFactorCommutativity.gelfandKazhdan_inverseTranspose
+Langlands.Classification.TwoFactorCommutativity.gelfandKazhdan_inverseTranspose._proof_1_1
+Langlands.Classification.TwoFactorCommutativity.haveSameJordanHolderFactors_dual_comp
+Langlands.Classification.TwoFactorCommutativity.haveSameJordanHolderFactors_of_comp
+Langlands.Classification.TwoFactorCommutativity.isAdmissible_of_isIrreducible
+Langlands.Classification.TwoFactorCommutativity.isSmooth_quotientRep
+Langlands.Classification.TwoFactorCommutativity.isSmooth_toRepresentation
+Langlands.Classification.TwoFactorCommutativity.productSmoothDual
+Langlands.Classification.TwoFactorCommutativity.quotientProjection
+Langlands.Classification.TwoFactorCommutativity.quotientProjection._proof_1
+Langlands.Classification.TwoFactorCommutativity.quotientRepEquiv
+Langlands.Classification.TwoFactorCommutativity.quotientRepEquiv._proof_1
+Langlands.Classification.TwoFactorCommutativity.quotientRepEquiv._proof_2
+Langlands.Classification.TwoFactorCommutativity.quotientRepEquiv._proof_3
+Langlands.Classification.TwoFactorCommutativity.quotientRepEquiv._proof_4
+Langlands.Classification.TwoFactorCommutativity.quotientRepEquiv._proof_5
+Langlands.Classification.TwoFactorCommutativity.subrepInclusion
+Langlands.Classification.TwoFactorCommutativity.subrepInclusion._proof_1
+Langlands.Classification.TwoFactorCommutativity.subrepInclusion._proof_2
+Langlands.Classification.adjacentSwap_zero_eq_revPerm
+Langlands.Classification.adjacentSwap_zero_eq_revPerm._proof_1
+Langlands.Classification.adjacentSwap_zero_eq_revPerm._proof_1_1
+Langlands.Classification.twoFactorProductConstituentCommutativity
+Langlands.Classification.twoFactorProductConstituentCommutativity_of_finiteLength
+Langlands.Classification.twoFactorProductConstituentCommutativity_of_finiteLength._proof_1_1
+_private.Langlands.Representation.Classification.TwoFactorProductConstituentCommutativityProof.0.Langlands.Classification.TwoFactorCommutativity.gelfandKazhdanOfTopology
+```
+
+`Langlands.Representation.Classification.TwoFactorProductConstituentCommutativityStatement`
+
+```text
+Langlands.Classification.TwoFactorProductConstituentCommutativity
+Langlands.Classification.TwoFactorProductConstituentCommutativity._proof_1
+Langlands.Classification.TwoFactorProductConstituentCommutativity._proof_2
+```
+
+`Langlands.Representation.Classification.UpperCuspidalJacquetMultiplicityProof`
+
+```text
+Langlands.glUpperCuspidalJacquetMultiplicityFromFiltration
+```
+
+`Langlands.Representation.Classification.UpperCuspidalJacquetMultiplicityStatement`
+
+```text
+Langlands.GLUpperCuspidalJacquetMultiplicityFromFiltrationStatement
+```
+
+`Langlands.Representation.Classification.UpperJacquetSubrepresentationDetectionProof`
+
+```text
+Langlands.upperJacquetSubrepresentationDetection
+```
+
+`Langlands.Representation.Classification.UpperJacquetSubrepresentationDetectionStatement`
+
+```text
+Langlands.UpperJacquetSubrepresentationDetectionStatement
+```
+
+</details>

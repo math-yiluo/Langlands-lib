@@ -10,7 +10,7 @@ open LocalClassField LocalFactor LocalFactor.CommonClosure
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier :=
+local instance baseReciprocityCoherenceTopology : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
 /-- The bottom intermediate field imposes no condition on a base Weil element. -/

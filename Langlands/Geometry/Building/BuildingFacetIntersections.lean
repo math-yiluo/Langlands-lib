@@ -115,7 +115,8 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 
 local notation "B" => P.toValuationBuildingData
 
-local instance : DecidableEq P.ReducedBuilding := Classical.decEq _
+local instance instDecidableEqReducedBuilding_buildingFacetIntersections :
+    DecidableEq P.ReducedBuilding := Classical.decEq _
 
 include hT hD hinj
 

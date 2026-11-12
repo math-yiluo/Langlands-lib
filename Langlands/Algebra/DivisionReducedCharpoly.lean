@@ -1,6 +1,4 @@
-import Mathlib.LinearAlgebra.Charpoly.Basic
-import Mathlib.LinearAlgebra.Charpoly.ToMatrix
-import Langlands.Algebra.ReducedCharpoly
+import Langlands.Algebra.ReducedCharpolyDivision
 import Langlands.Algebra.LocalDivisionUnramifiedSubfield
 
 /-! Minimal-polynomial degree bounds in central division algebras. -/
@@ -17,15 +15,6 @@ universe u
 
 variable (K D : Type u) [Field K] [DivisionRing D] [Algebra K D]
   [FiniteDimensional K D] [Algebra.IsCentral K D]
-
-/-- The actual reduced characteristic polynomial annihilates an original division element. -/
-theorem aeval_reducedCharpoly (a : D) :
-    Polynomial.aeval a (reducedCharpoly K D a) = 0 := by
-  have h := Algebra.aeval_self_charpoly_lmul (R := K) a
-  rw [← LinearMap.charpoly_toMatrix _ (Module.finBasis K D)] at h
-  change Polynomial.aeval a (Algebra.leftMulMatrix (Module.finBasis K D) a).charpoly = 0 at h
-  rw [charpoly_leftMulMatrix_eq_reducedCharpoly_pow, map_pow] at h
-  exact eq_zero_of_pow_eq_zero h
 
 /-- The original minimal polynomial divides the canonical reduced characteristic polynomial. -/
 theorem minpoly_dvd_reducedCharpoly (a : D) :

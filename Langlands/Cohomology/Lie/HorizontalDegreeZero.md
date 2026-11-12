@@ -45,3 +45,13 @@ implemented differential and existing fixed-vector and quotient constructions.
 No external comparison theorem, geometric realization, automorphic occurrence,
 or existence of a nonzero invariant is asserted here. Concrete coefficient
 modules must discharge the displayed original differential premises.
+
+## Name of the local instance
+
+The file-local instance `AddCommGroup (Z q)` on the cycle submodules is named
+`instAddCommGroupCycles_lieHorizontalDegreeZero`. Lean used to name it automatically
+`instAddCommGroupSubtypeAlternatingMapFinMemSubmoduleSubmoduleCycles_1`, the name under
+which `HorizontalCohomologyAction` declares its own instance of this kind. Neither module
+imports the other, so each built on its own, but any module or kernel replay that loads
+both met the name twice. Only the name changed: the instance is still
+`Submodule.addCommGroup _`, and no file refers to it by name.

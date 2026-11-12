@@ -1,6 +1,7 @@
 # Tempered Langlands data refined into ordered special segments
 
-Author: Worker 627.
+Authors: Worker 627 in the previous project instance (proof); Worker 1530
+(current dependency verification and documentation).
 
 `Langlands.Classification.temperedSpecialSegmentRefinement` proves exactly
 `Langlands.Classification.TemperedSpecialSegmentRefinement.{uF,uV} F T`.
@@ -53,3 +54,27 @@ literature reading or source theorem is claimed here. The proof remains
 upstream of ordered special-segment quotient coverage, multisegment exhaustion,
 square-integrable exhaustion, and regular exhaustion; none is used as a proof
 input. The target pair and its imported pairs are unchanged.
+
+
+Worker 1530 reused the public proof text unchanged from Library base
+`b4c35c9db27aa6126c3b5650ad78d364f77ef238` for the restored Task 1530
+(`39db484c-8283-490b-88be-272c757a8723`). The historical authorship above
+refers to the previous project instance. No unreviewed draft is a proof input.
+This task's submission requests its own machine validation and independent
+semantic review of the inherited result.
+
+At that base, a development check assigned the complete unapplied constant
+`@temperedSpecialSegmentRefinement.{uF,uV}` to the exact telescope displayed
+above. A separate Lean-environment traversal followed the types and values of
+all transitive constant dependencies, explicitly including theorem and opaque
+values. It visited 98,811 constants, of which 18,011 have names beginning with
+`Langlands.`. None matched the four excluded exhaustion declarations
+`OrderedMultisegmentQuotientExhaustion`, `MultisegmentHeadExhaustion`,
+`SquareIntegrableLanglandsExhaustion`, or
+`GLRegularLanglandsExhaustionStatement`, or their corresponding proof-name
+stems. The project import closure contains 1,640 modules. It includes some of
+those proposition definitions through shared statement modules; the traversal
+confirms that they supply no proof dependency. Inspection of the closing
+theorem reports only `propext`, `Classical.choice`, and `Quot.sound` as axioms.
+These development checks establish the recorded telescope and dependency
+facts; acceptance and publication remain separate checks.

@@ -20,7 +20,8 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : DomainSpectralAction G A)
 
-local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
+local instance instIsTopologicalGroupOpenSubgroup_rationalSpectralLocallyConstantPresheaf
+    (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
 
 /-- The original invariant locus diagram has compact actual subspace topologies. -/

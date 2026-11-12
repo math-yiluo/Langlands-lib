@@ -185,16 +185,20 @@ section Coordinates
 
 variable (k : Type u) [Field k]
 
-local instance : IsAffine (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of k)).X.left :=
+local instance instIsAffineSpecialLinearLeft_specialLinearBinaryBigCell :
+    IsAffine (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of k)).X.left :=
   SpecialLinear.isAffine_groupScheme _ _
 
-local instance : IsAffine (groupScheme (CommRingCat.of k)).X.left :=
+local instance instIsAffineBinaryUpperLeft_specialLinearBinaryBigCell :
+    IsAffine (groupScheme (CommRingCat.of k)).X.left :=
   isAffine_groupScheme _
 
-local instance : IsAffineHom (groupScheme (CommRingCat.of k)).X.hom :=
+local instance instIsAffineHomBinaryUpper_specialLinearBinaryBigCell :
+    IsAffineHom (groupScheme (CommRingCat.of k)).X.hom :=
   isAffineHom_groupScheme _
 
-local instance : IsAffineHom (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of k)).X.hom :=
+local instance instIsAffineHomSpecialLinear_specialLinearBinaryBigCell :
+    IsAffineHom (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of k)).X.hom :=
   SpecialLinear.isAffineHom_groupScheme _ _
 
 /-- The bottom-right entry as an element of the actual affine coordinate algebra. -/

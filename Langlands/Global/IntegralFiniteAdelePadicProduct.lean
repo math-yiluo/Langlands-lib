@@ -37,7 +37,8 @@ theorem continuous_integralFiniteAdelesProductEquiv_symm
   exact continuous_induced_rng.mpr
     ((RestrictedProduct.continuous_eval v).comp continuous_subtype_val)
 
-local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
+local instance instFactPrimeVal_integralFiniteAdelePadicProduct (p : Nat.Primes) :
+    Fact p.val.Prime := ⟨p.property⟩
 
 /-- The explicit prime-index and completed-integer identifications into integral rational adeles. -/
 def rationalPadicProductIntegralEquiv :

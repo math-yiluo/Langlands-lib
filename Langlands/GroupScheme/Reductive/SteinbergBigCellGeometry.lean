@@ -22,7 +22,8 @@ namespace AffineCoordinates
 variable {k : Type u} [Field k]
     (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance instIsAffineLeft_steinbergBigCellGeometry :
+    IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- If a coordinate evaluates to a global unit, the entire test-scheme image
 lies in its principal open, including for nonaffine and nonreduced tests. -/

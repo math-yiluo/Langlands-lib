@@ -10,7 +10,8 @@ namespace Langlands.Global
 
 open NumberField
 
-local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
+local instance instFactPrimeVal_primeToIntegralProfiniteIntegerComparisonProof (p : Nat.Primes) :
+    Fact p.val.Prime := ⟨p.property⟩
 
 private theorem away_place_iff (m : ℕ) (v : FinitePlace ℚ) :
     (m : 𝓞 ℚ) ∉ v.asIdeal ↔ Nat.Coprime (Rat.HeightOneSpectrum.primesEquiv v).val m := by

@@ -20,6 +20,25 @@ Each individual statement quantifies over every `F : Type uF`, with `Field F`,
 characteristic is included, and there is no p-adic-field or characteristic-zero
 specialization.
 
+The conjunction is a closed proposition at each universe: its definition takes
+no field or representation argument. A future proof
+`h : Langlands.Conductor.OrderedUnramifiedWhittakerStatement.{uF}` supplies
+the cyclicity assertion as `h.1` and the realization assertion as `h.2`.
+After opening `Langlands.Conductor.UnramifiedPrincipalSeries`, their applications
+have the following explicit argument order, with the field instances inferred:
+
+```lean
+h.1 F ϖ hϖ n q hq z hz S hf₀
+h.2 F ϖ hϖ n q hq z hz ψ hψ
+```
+
+Here `hz : Monotone (fun i => ‖(z i : ℂ)‖)`,
+`hf₀ : sphericalSection hϖ n hq z ∈ S`, and
+`hψ : Langlands.Conductor.HasIntegerConductor ψ`. The first expression concludes
+`S = ⊤`; the second supplies the existential functional and all its properties.
+These expressions describe how to use a future proof. Importing this statement
+module supplies no term `h`.
+
 The remaining explicit arguments, in order, are `ϖ : Fˣ`,
 `hϖ : Iwasawa.IsUniformizingElement (ValuativeRel.valuation F) ϖ`, `n q : ℕ`,
 `hq : UnramifiedPrincipalSeries.IsResidueCardinality (F := F) q`, and

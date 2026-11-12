@@ -11,18 +11,6 @@ variable {G : Type uG} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   {P Q : Subgroup G} {m : ℕ}
 
 omit [IsTopologicalGroup G] in
-/-- Representative replacement preserves each initial union as an actual set. -/
-theorem initialOrbits_replaceRepresentatives (s : OrderedDoubleCosets P Q m)
-    (r : Fin m → G)
-    (h : ∀ i, DoubleCoset.mk P Q (r i)⁻¹ =
-      DoubleCoset.mk P Q (s.representative i)⁻¹) (k : Fin (m + 1)) :
-    (s.replaceRepresentatives r h).initialOrbits k = s.initialOrbits k := by
-  ext x
-  change (∃ i, i.val < k.val ∧ x ∈ cosetOrbit P Q (r i)) ↔
-    ∃ i, i.val < k.val ∧ x ∈ cosetOrbit P Q (s.representative i)
-  simp only [(fun i => (cosetOrbit_eq_iff_doubleCoset_eq P Q _ _).mpr (h i))]
-
-omit [IsTopologicalGroup G] in
 /-- Disjointness identifies the index of an orbit inside any initial union. -/
 theorem mem_initialOrbits_iff (s : OrderedDoubleCosets P Q m) (i : Fin m)
     (k : Fin (m + 1)) {x : Induction.LeftQuotient P}

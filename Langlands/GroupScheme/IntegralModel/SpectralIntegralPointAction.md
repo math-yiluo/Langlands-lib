@@ -56,3 +56,16 @@ additionally requires that the extension be Galois. No result imposes
 a finite-degree, reductivity or smoothness condition. The construction
 applies in equal and mixed characteristic and in every universe `u`.
 It supplies neither a special point nor a building embedding or comparison.
+
+## Names of the local instances
+
+The three file-local instances built from `localNormedField F` are named
+`instNontriviallyNormedField_spectralIntegralPointAction`,
+`instIsUltrametricDist_spectralIntegralPointAction` and
+`instCompleteSpace_spectralIntegralPointAction`. Lean used to name them automatically
+`instNontriviallyNormedField`, `instIsUltrametricDist` and `instCompleteSpace` (in the
+namespace `Langlands.GroupScheme.IntegralModel`), the names under which
+`UnramifiedIntegralPointAction` declares its own copies. Neither module imports the
+other, so each built on its own, but any module or kernel replay that loads both met each
+name twice. Only the names changed: types and values are as before, and no file refers
+to these instances by name.

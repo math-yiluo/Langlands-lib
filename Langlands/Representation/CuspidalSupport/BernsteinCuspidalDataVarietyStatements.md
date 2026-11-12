@@ -1,0 +1,251 @@
+# The cuspidal support map and the variety of cuspidal data: statements
+
+Module `Langlands.Representation.CuspidalSupport.BernsteinCuspidalDataVarietyStatements`.
+Namespace `Langlands.CuspidalSupport`. Universe parameters `uF, uV`.
+The module contains three **statements**, all `Prop`-valued definitions; it
+proves nothing:
+
+- `BernsteinCuspidalSupportFiniteFibreStatement`: the Proposition of VI.7.1;
+- `BernsteinComponentVarietyStatement`: the Theorem of VI.7.1;
+- `BernsteinCuspidalDataVarietyStatements`: their conjunction.
+
+Worker 1222 wrote this statement unit under the whole-book task
+`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
+
+## Source and provenance
+
+The source is David Renard, *Représentations des groupes réductifs p-adiques*,
+French edition dated 9 July 2026, registered as
+`renard-2026-representations-groupes-reductifs-padiques`, SHA256
+`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
+Worker 1222 read VI.7.1, printed pp.180–181 / PDF pp.186–187.
+
+After the Lemma (two cuspidal data occurring in Jacquet modules of one
+irreducible `π` are associated), Renard defines
+
+> `(VI.7.1.1)  Sc : Irr(G) → Ω(G), (π, V) ↦ (M, (ρ, W))_G`
+>
+> où `(M, (ρ, W))` est une donnée cuspidale pour laquelle il existe
+> `P ∈ P(M)`, de sorte que `(ρ, W)` soit facteur de composition de
+> `r_P^G(π, V)`.
+>
+> **Proposition.** L'application `Sc` est une surjection à fibres finies.
+
+The proof takes an irreducible subrepresentation of `i_P^G(ρ)` for
+surjectivity, and for finiteness uses Lemma VI.3.6, Frobenius reciprocity and
+the finite length of `i_P^G(ρ)` (Lemma VI.6.2). Renard then defines inertial
+supports `[M, (ρ, W)]_G` (conjugation by `g ∈ G` and an unramified twist) and
+their set `B(G)`, and states:
+
+> **Théorème.** L'ensemble des données cuspidales `Ω(G)` est muni d'une
+> structure de variété algébrique, dont les composantes connexes, indexées par
+> `B(G)`, sont des quotients de tores complexes par l'action de groupes finis.
+
+Proof (printed p.181): `Irr(M)_sc` is the disjoint union of its inertia
+classes `D`, each a variety (VI.4.5); `W(A) = N_G(M)/M` acts on it; the
+component of `Ω(G)` containing `(M, ρ)_G` is the quotient of the torus `D` by
+the stabilizer `W(D)` of `D` in `W(A)`; "le choix de `D` n'est pas unique";
+`Ω(G) = ⨆ᵢ Irr(Mᵢ)_sc / Wᵢ` over representatives `Mᵢ` of the conjugacy
+classes of Levi subgroups; the connected components are the fibres of the
+projection `Ω(G) → B(G)`.
+
+The provenance is source: the two statements are the Proposition and the
+Theorem, in the formal reading described below. The Library notes
+`notes/renard/coverage-update-2026-11-10.md` and
+`notes/renard/supercuspidal-finite-length-progress.md` record the Theorem and
+the map `Sc` as not stated before this unit.
+
+## Framework and published objects
+
+All objects are published; this file constructs nothing. The setting is the
+standard-family framework of Worker 1153 (modules `BernsteinData`,
+`BernsteinBlock`, `BernsteinSupportComparison`), as in the published VI.7.2
+statements `BernsteinDecompositionStatements` and
+`BernsteinBlockCharacterizationStatement`.
+
+- `F`, `G`, `T`, `i`, `ν`, `family : BernsteinStandardFamily i ν`: a
+  nonarchimedean local field, a group scheme with locally compact
+  nonarchimedean `G(F)` in the canonical topology, a maximal split torus with
+  a generic cocharacter, and the structural hypotheses on the standard
+  subgroups (connected reductive `G`, finitely many simple roots, Levi
+  decompositions).
+- A cuspidal datum `a : BernsteinCuspidalDatum i ν family` is a standard Levi
+  `M = bernsteinLeviScheme i ν a.roots` with an irreducible cuspidal smooth
+  representation `ρ = a.representation` of `M(F)`. Every Levi subgroup is
+  conjugate to a standard one, so every cuspidal datum of Renard is
+  associated to such an `a`, and `Ω(G)` is the set of these data modulo
+  association.
+- Association (the relation defining `Ω(G)`) is the published
+  `AreBernsteinCuspidalDataAssociated a b`: an actual `RationalLeviConjugacy`
+  `c` of the Levi subgroups (an ambient rational point and an algebraic
+  isomorphism of the Levi schemes compatible with the inner automorphism)
+  and an isomorphism `a.representation ≅ rationalIsoPullback c.iso
+  b.representation`.
+- Inertial equivalence (the relation defining `B(G)`) is the published
+  `IsBernsteinInertiaRelated a b`: such a conjugacy and an unramified twist,
+  `rationalIsoPullback c.iso b.representation ≅ ρ_a ⊗ χ`.
+- The support relation is the published `IsBernsteinCuspidalSupport a π`:
+  `π` is irreducible and a subquotient of the normalized induction
+  `bernsteinInduction a = i_P^G(ρ)` along the standard parabolic of
+  `a.roots`.
+- `X(M) = unramifiedCharacters (fun χ => (rationalNormCharacters M χ).toMul)`:
+  the continuous characters of `M(F)` trivial on the common kernel `⁰M` of the
+  normalized absolute values of rational characters.
+  `rationalUnramifiedTwist M ω ρ` is `ρ ⊗ ω`.
+- `ℂ[X(M)] = unramifiedRegularFunctions …`: the subalgebra of `X(M) → ℂ`
+  generated by the evaluations `ω ↦ ω(m)`. By the published
+  `rationalUnramifiedLaurentAlgebraEquiv` (Worker 200) it is a Laurent
+  polynomial algebra in finitely many variables when `M` is connected
+  reductive; this is the coordinate algebra of the complex torus `X(M)`
+  (Renard V.2.4).
+
+## How `Sc` is read
+
+`Sc` is not formed as a function. Its graph is read through
+`IsBernsteinCuspidalSupport`: `Sc(π)` is the class of `a` exactly when `π`
+occurs in `i_P^G(ρ_a)`. This is Renard's definition: if `ρ` is a composition
+factor of `r_P^G(π)`, then by Lemma VI.3.6 and Frobenius reciprocity `π`
+embeds in `i_P^G(ρ)`; conversely, if `π` is a subquotient of `i_P^G(ρ)`,
+then by the geometric lemma some associated datum occurs in a Jacquet module
+of `π`, and by the Lemma all such data are associated (VI.5.4). The Library
+records these comparisons as the published statements
+`BernsteinCuspidalSupportExistenceStatement`,
+`BernsteinCuspidalSupportAssociationStatement`,
+`BernsteinAssociatedSupportInvarianceStatement` and
+`BernsteinInductionJacquetSupportComparisonStatement`; this unit does not
+assume them.
+
+## `BernsteinCuspidalSupportFiniteFibreStatement` (Proposition)
+
+For every datum `a` (at the saturated carrier universe `max uF uV`, which is
+the universe of the induced representations):
+
+1. **Surjectivity.** Some `π` satisfies `IsBernsteinCuspidalSupport a π`.
+2. **Finite fibres.** There are `n` and `π₀ : Fin n → SmoothRep` such that
+   every `π` with `IsBernsteinCuspidalSupport b π` for some datum `b`
+   associated to `a` is isomorphic to some `π₀ k`.
+
+Item 2 is the finiteness of the fibre of `Sc` over the class of `a` in
+`Ω(G)`: that fibre consists of the `π` whose support is some datum associated
+to `a`, up to isomorphism. Renard's proof gives it from the finite length of
+`i_P^G(ρ)`, since associated data have inductions with the same irreducible
+subquotients (VI.5.4). The published `LeviCuspidalSupportSurjectiveStatement`
+(represented-parabolic interface) states the finiteness for one fixed
+parabolic and one `ρ` only; its Markdown records that the whole fibre also
+needs conjugation of associated data. Item 2 covers the whole fibre.
+
+## `BernsteinComponentVarietyStatement` (Theorem)
+
+Fix a datum `a = (M, ρ)`. Write `X = X(M)`, `twist ω = ρ ⊗ ω`, and
+
+- `Assoc ω ω'`: there is a `RationalLeviConjugacy` `c` of `M` with itself and
+  an isomorphism `ρ ⊗ ω ≅ (ρ ⊗ ω')^c` (`rationalIsoPullback c.iso`). This says
+  that the data `(M, ρ ⊗ ω)` and `(M, ρ ⊗ ω')` are associated, i.e. have the
+  same image in `Ω(G)`. Hence the map `ω ↦ (M, ρ ⊗ ω)_G` identifies
+  `X / Assoc` with the subset of `Ω(G)` of data inertially equivalent to `a`.
+- `invariant`: the elements of `ℂ[X]` constant on the classes of `Assoc`.
+  These are the polynomial functions on that subset of `Ω(G)`.
+
+The statement asserts:
+
+1. **Finite group.** There is a subgroup `W` of `Equiv.Perm X`, finite, each of
+   whose elements preserves `ℂ[X]` under precomposition, whose orbits are
+   exactly the classes of `Assoc` (`Assoc ω ω' ↔ ∃ w ∈ W, w ω' = ω`).
+2. **Variety.** `invariant` is a subalgebra `O` of `X → ℂ` that is a finitely
+   generated `ℂ`-algebra and a domain; every `ℂ`-algebra homomorphism
+   `O → ℂ` is evaluation at some `ω ∈ X`; and `Assoc ω ω'` holds exactly when
+   every element of `O` takes the same value at `ω` and `ω'`. So the
+   component is the irreducible affine variety with coordinate algebra `O`,
+   its points are the classes of `Assoc`, and it is the quotient `X/W` of a
+   complex torus by a finite group.
+3. **Components and independence of the representative.** For every other
+   datum `a' = (M', ρ')`, with `X' = X(M')` and the relation
+   `Assoc' ω ω'` (a conjugacy `c : M → M'` and `ρ ⊗ ω ≅ (ρ' ⊗ ω')^c`):
+   - some twist of `a` is associated to some twist of `a'` exactly when `a`
+     and `a'` are inertially equivalent (`IsBernsteinInertiaRelated a a'`).
+     So the images of `X` and `X'` in `Ω(G)` are disjoint unless `a` and `a'`
+     define the same point of `B(G)`;
+   - if they are inertially equivalent, every twist of `a'` is associated to
+     a twist of `a` (the two images coincide), and every `f ∈ O` is read
+     through `a'` by some `f' ∈ ℂ[X']` (`f'(ω') = f(ω)` whenever
+     `Assoc' ω ω'`), so the coordinate algebra does not depend on the
+     representative.
+
+Together: `Ω(G)` is the disjoint union, indexed by `B(G)`, of the images
+`X(M_a)/W`, each an irreducible affine variety whose coordinate algebra is
+independent of the chosen datum. Irreducible varieties are connected, so
+these are the connected components of the resulting variety structure.
+
+### Relation with Renard's `D/W(D)`
+
+Renard writes the component as `D/W(D)`, where `D = {ρ ⊗ ω}` is the inertia
+class of `ρ` in `Irr(M)` and `W(D)` its stabilizer in `N_G(M)/M`. The group
+`W` of item 1 can be taken to be the set of maps `ω ↦ χ · ω^c` for
+self-conjugacies `c` of `M` (elements of `N_G(M)(F)`) and unramified `χ` with
+`ρ^c ≅ ρ ⊗ χ`; such a `c` exists exactly for the classes in `W(D)`. It
+contains the translations by the finite stabilizer `X(M)(ρ)` (take `c`
+trivial), and `D = X/X(M)(ρ)` through `ω ↦ ρ ⊗ ω` (VI.4.5). So `W` is an
+extension of `W(D)` by `X(M)(ρ)`, and `X/W = D/W(D)`. Stating the quotient on
+`X(M)` avoids forming `D` as a variety separately; the published
+`RationalInertiaOrbitTorusStatement` (V.2.7 Corollary) states the variety
+structure of `D` itself.
+
+## Why the statements are true
+
+- `W` is finite because `N_G(M)(F)/M(F)` is finite and acts on `X(M)` through
+  its action on rational characters, and `X(M)(ρ)` is finite for irreducible
+  `ρ` (published `RationalTwistStabilizerFiniteStatement`, proved). Each
+  `ω ↦ χ ω^c` sends an evaluation `ω ↦ ω(m)` to the function
+  `ω ↦ χ(m) ω(c·m)`, so it preserves `ℂ[X]`. If `ρ ⊗ ω ≅ (ρ ⊗ ω')^c`, then
+  `ρ^c` is an unramified twist of `ρ`, and `ω = χ ω'^c` for some admissible
+  `χ`; the converse is direct.
+- `O = ℂ[X]^W`. As `ℂ[X]` is a finitely generated domain (a Laurent
+  polynomial algebra; standard Levi subgroups of connected reductive groups
+  are connected reductive), Noether's theorem gives finite generation, `O` is
+  a domain, `ℂ[X]` is integral over `O`, so every maximal ideal of `O` lies
+  under one of `ℂ[X]`, which is evaluation at a point of the torus; invariants
+  of a finite group separate its orbits.
+- The component clause uses `rationalIsoPullbackTwistIso` (pullback of a twist
+  is the twist by the transported character) to move twists across a
+  conjugacy. Given `c : M → M'` with `ρ'^c ≅ ρ ⊗ χ`, the map `ω' ↦ χ ω'^c`
+  sends `X'` into `X` compatibly with `Assoc'`, and `f' = f ∘ (ω' ↦ χ ω'^c)`
+  lies in `ℂ[X']`.
+- The Proposition: surjectivity because `i_P^G(ρ)` is nonzero of finite
+  length; finiteness because associated data have inductions with the same
+  irreducible subquotients (VI.5.4) and `i_P^G(ρ)` has finite length (VI.6.2).
+
+## Formal choices and scope
+
+- **Cuspidal data.** Standard Levi subgroups only, as in the framework; every
+  datum is associated to a standard one.
+- **`Sc` as a relation.** Through the induction-occurrence support relation,
+  as explained above; the map on isomorphism classes is not formed.
+- **Variety structure.** Stated per component through its coordinate algebra
+  inside the functions on `X(M)`: the algebra, its finite generation and
+  integrality, its `ℂ`-points, and the finite group. No scheme or complex
+  variety object for `Ω(G)` is constructed, and connectedness is not stated
+  separately (it follows from irreducibility). This follows the Library's
+  convention for `X(G)` and for inertia classes (V.2.4, V.2.7 Corollary).
+- **Finite group.** Stated as a finite group of permutations of `X(M)` whose
+  orbits are the association classes. That it is generated by
+  `N_G(M)/M`-conjugation and `X(M)(ρ)`-translation is recorded above but not
+  part of the statement.
+- **Index set `B(G)`.** Read through `IsBernsteinInertiaRelated` (the
+  published quotient `BernsteinInertialClass` is its quotient), via clause 3.
+
+## Remaining obligations
+
+The proofs are separate obligations. The Proposition needs the finite length
+of normalized induction from cuspidal data (VI.6.2) and the association
+invariance of supports (VI.5.4), both stated in the Library. The Theorem needs
+the finiteness of `N_G(M)/M` for standard `M`, the finiteness of `X(M)(ρ)`
+(proved), connected reductivity of standard Levi subgroups, the Laurent
+algebra identification of `ℂ[X(M)]` (constructed for connected reductive
+groups), Noether's finiteness theorem and the orbit separation by invariants.
+
+## Imports
+
+| Module | Used for |
+| --- | --- |
+| `Langlands.Representation.CuspidalSupport.BernsteinSupportComparison` | `AreBernsteinCuspidalDataAssociated`, and through it the framework: `BernsteinStandardFamily`, `BernsteinCuspidalDatum`, `bernsteinLeviScheme`, `IsBernsteinCuspidalSupport`, `IsBernsteinInertiaRelated`, `RationalLeviConjugacy`, `rationalIsoPullback`, `rationalUnramifiedTwist`, `unramifiedCharacters`, `rationalNormCharacters` |
+| `Langlands.Representation.Plancherel.UnramifiedOperatorFamilies` | `unramifiedRegularFunctions` |

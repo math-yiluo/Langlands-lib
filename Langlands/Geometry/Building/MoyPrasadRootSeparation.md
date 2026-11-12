@@ -1,0 +1,13 @@
+# Separation of the original constant-depth root blocks
+
+This internal construction retains both factors of the original constant-depth block. V4 places the doubled-root filtration at depth `r` in the original root filtration at depth `r / 2`. When `r` is nonnegative, the first factor also belongs to that half-depth filtration. Multiplication therefore gives an embedding of the same block, with its original value in the ambient rational-point group, into the half-depth root filtration.
+
+An element of every nonnegative-depth root filtration must have infinite root valuation: a finite valuation would be smaller than some nonnegative depth. The valuation axiom identifies infinite root valuation with the identity. Applying the half-depth inclusion at twice each depth proves that the original constant-depth blocks are separated.
+
+The block is antitone in its constant depth because both original filtration factors are antitone. This gives the coordinate restrictions needed to compare covering products at different depths.
+
+For a supplied parahoric datum and centralizer filtration, `iInf_moyPrasad_eq_bot_of_ordered_cover` assumes one fixed finite list of actual roots on each side, injectivity of their original block/centralizer/block product at depth one, and equality of its range with the original Moy–Prasad group at every positive depth. These lists need not separately be assumed injective, complete or of the indicated signs: the injectivity and covering hypotheses are the precise properties used.
+
+For an element in all original Moy–Prasad groups, choose its coordinates at depth one. At depth `r + 1`, choose covering coordinates and restrict them to depth one. Injectivity there identifies them with the chosen coordinates. Antitonicity puts those same coordinates in every depth `r`. Root-block separation makes all root coordinates the identity. The separatedness field of the supplied centralizer filtration makes its central coordinate the identity. The original multiplication therefore makes the element itself the identity, proving that the infimum of the original Moy–Prasad groups is the bottom subgroup.
+
+These are internal consequences of the published root valuation, filtration and Moy–Prasad definitions and elementary ordered products. The last result retains its actual product-injectivity and covering hypotheses. It proves neither those hypotheses nor the unconditional global `MoyPrasadSeparatedStatement`, and constructs no centralizer filtration, covariance, compact parabolic factorization, geometric Levi inheritance or host `AvailableSimultaneousStandardBasisStatement` proof.

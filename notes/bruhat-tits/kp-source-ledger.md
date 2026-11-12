@@ -5,15 +5,265 @@ This source ledger covers Bundle A, initial Bundle B targets and Bundles C–F o
 and their verified formal status. Both parts of Theorem 1.1.15, Corollary
 1.1.19 and Proposition 1.1.20 have independently accepted, published proofs,
 recorded below in three of the
-forty-five rows. The separately verified metric fixed-point aggregate assembles
+fifty-two rows. The separately verified metric fixed-point aggregate assembles
 six published component proofs and adds no source row. The separately verified
 finite separable-unramified prerequisite is recorded below without adding a KP
-source row. Corollary 7.4.9 and corrected Theorem 7.8.1 now have
-independently accepted, published statements on supplied building data, with
-their hypotheses and proof successors recorded below. The other forty rows
-retain empty formal-status and evidence fields. The remaining Bundle B targets still
-require public ledger entries. Private source audits and unsubmitted drafts are
-not publication evidence.
+source row. Propositions 4.2.7 and 4.4.4, both assertions of Theorem
+4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3 and
+Corollary 7.4.9 have published conditional formalizations: they are proved
+on supplied building data, whose general construction is open. Theorem
+5.2.1 with corrected (5.2.2) and Theorem 5.3.4 are proved on available
+Bruhat–Tits data in the sense of corrected Definition 4.1.26, which is
+equally conditional. Section 13.2.6 is proved for supplied integral models
+and reductive quotients, together with its inflation and compact-induction
+consumer. Corrected Theorem 7.8.1
+and the `G(F)^0` branch of Theorem 7.5.3 have independently accepted,
+published statements on supplied building data, and part (4) of Theorem
+7.8.1 is proved. Replaced Lemma 5.3.5, Proposition 4.2.24, Lemma 6.7.1
+and Section 6.7.2 have published statements. Proposition 13.2.5 has a
+published statement of its opening sentence at finite depths and of parts
+(1)–(4) on supplied data, part (3) with indivisible-root blocks.
+Section 9.2.1 (a Galois-fixed point
+of a stable apartment), Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1
+have published statements, and Theorem 9.6.5 also a proved reduction to
+five statements. Corrected Definition 4.1.26 has a
+published definition, the corrected Definition 4.1.26 part of Theorem 9.2.7
+a published existence statement, and Definition 6.6.1 a partial published
+definition. The other twenty-five rows retain empty formal-status and
+evidence fields. The remaining Bundle B
+targets still require public ledger entries. Private source audits and
+unsubmitted drafts are not publication evidence.
+
+## Refresh of 8 November 2026
+
+The task was carried over to a new TaskHub instance on 8 November 2026. The
+Library base of that instance is commit
+`c4a16df784376405a45b60df82583e8c26d8a4e3`. Acceptance artifact IDs of the
+previous instance cannot be fetched in the new one. The six rows updated in
+this refresh (Propositions 4.2.7 and 4.4.4, Theorem 4.2.10, Corollary 4.4.5,
+Definition 4.1.26 and Theorem 7.5.3) therefore cite that commit as their
+publication evidence and leave `acceptance_artifact_ids` empty. Each
+declaration was located in the modules listed in its row and inspected with
+`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. The
+inspection IDs are in the `axiom_reports`; every reported axiom set is
+`propext`, `Classical.choice`, `Quot.sound`. Each row's last `hypotheses`
+entry, beginning "Recorded Lean scope", states the Lean hypotheses and their
+differences from the source.
+
+`conditional` means the following here. The theorem is proved on supplied
+`ValuationBuildingData` or `ParahoricBuildingData` with the listed axiom
+predicates as hypotheses, or (for Proposition 4.4.4) for abstract
+group-action data. It stays conditional until the data and witnesses are
+constructed. For the Section 4.2 rows that construction is the published
+target `RootValuationBuildingConstructionStatement`, whose proof task is
+`00b6788c-23c3-4b22-88f5-41fdbc6d3654`. The source and correction fields
+of the updated rows are unchanged; they were compared with the originals
+afterwards, as described below.
+
+A second pass on the same day recorded five Bundle C rows on the same
+terms. Theorem 5.2.1, Theorem 5.3.3, Theorem 5.3.4 and replaced Lemma 5.3.5
+are recorded as `statement`. Their Lean targets are unproved Prop-valued
+statements. Those for 5.2.1 and 5.3.4 assume the full corrected Definition
+4.1.26 through `KPBuildingAssignment.IsAvailableFor`. Those for 5.3.3 and
+5.3.5 assume only the Chapter 7 apartment axioms on supplied
+`ParahoricBuildingData`, together with the Chapter 5 Henselian and
+perfect-residue hypotheses. Definition 6.6.1 is recorded as a partial
+`definition`: `Wtilde^0` and `W_aff` are formalized, `Wtilde^1` is not.
+The inspection IDs are in the `axiom_reports`, with the same axiom set
+as above.
+
+Both passes were first prepared while the original PDFs could not be
+opened in this instance. On 9 November 2026 they were readable again, with
+the SHA-256 fingerprints recorded in the rows, and the source and correction
+fields of all eleven updated rows were compared with the originals: book
+PDF pages 196, 199–204, 213–215, 217–222, 261–262, 266–267 and 291–292,
+and corrections PDF pages 1–2, 24–25, 27–30, 33 and 35. They agree with
+the originals. The only change is that the Theorem 5.3.4 locator was
+narrowed to the page carrying the theorem and its proof. The same day the
+Theorem 7.5.3 row was corrected: three of the eight fields of
+`AffineIwahoriTitsInputs` have published proofs and are no longer
+described as unproved.
+
+A third pass on 9 November 2026 records Corollary 4.2.14 as `statement`.
+Its target `BoundedSubgroupFixedPointStatement` was accepted in this
+instance as artifact `32a5231a-64e5-47b2-abb5-08c7ee214f7c` and published
+in Library commit `3f0bcbd4638c9c42befdc9f7e1578d62fde2c959`, so the row
+cites both. It assumes the same seven axiom predicates as the Proposition
+4.2.7 row and covers both assertions of the corollary. The row's source and
+correction fields are unchanged and agree with the originals, compared on
+9 November 2026 at book PDF pages 101 (Definition 2.2.1) and 204 and
+corrections PDF pages 1–2 and 28–29. Its unproved target has the
+published proof task
+`a20a7c6a-18e6-430e-9ebd-f4e7046e075d`.
+
+A fourth pass on 9 November 2026 records Theorem 5.3.3 as `conditional`.
+The theorem `iwasawaDecomposition` proves `IwasawaDecompositionStatement`
+on supplied `ParahoricBuildingData` satisfying the Chapter 7 apartment
+axioms. It was accepted as artifact
+`937be117-c6a0-42d8-be70-cd5c630935ac` and first appears in Library commit
+`0646cc6120e56febaf6f88f723f3b147d0e23d59`. The same pass records the
+proof task `5e9b97bd-7a9c-43fb-bb8f-b017b7028adc` for the Theorem 5.3.4
+target and the conditional assemblies now available for replaced Lemma
+5.3.5. It also replaces the remarks in the Theorem 5.3.3 and Theorem 7.8.1 rows that
+`standardUnipotentPoints` had not been compared with `Dynamic.unipotent`.
+The Library now proves this equality for every cocharacter of a maximal split
+torus of a connected reductive group; no genericity hypothesis is needed.
+
+The fourth pass, completed on 10 November 2026, also records two statements
+accepted in this instance and first published in Library commit
+`230ec08a058832bd6941fa887c30897e4826429b`. Their rows cite both.
+`FacetClosureUnionClosedStatement` (artifact
+`7c30292c-a01f-472c-b967-5859043e2755`) is the second assertion of Theorem
+4.2.10, under the hypotheses of the published completeness theorem. Its
+proof task is `cd045e44-eb03-481f-aabf-0e086965dd25`. The Theorem 4.2.10
+row stays `conditional`, a status that refers to its first assertion.
+`BruhatTitsAvailabilityStatement` (artifact
+`f81d0fe7-8c61-4e05-bfcc-e7d6b14a3f04`) states the corrected Definition
+4.1.26 part of Theorem 9.2.7: some `KPBuildingAssignment` satisfies
+`IsValid`. The Theorem 9.2.7 row therefore becomes `statement`. That
+statement omits Axiom 4.1.27 and asserts the existence of some data
+rather than the source's descended construction, so it is not the full
+certificate. Its proof belongs to this program and has no proof task yet.
+The same day the proof task `14dc145a-14d4-47d6-97a6-d89ea0c558ab` was
+published for the Theorem 5.2.1 target `AvailableCartanStatement`.
+The source and correction fields of both rows are unchanged. On 10
+November 2026 their statement locators were compared again with book PDF
+pages 202 and 360 and corrections PDF page 27; they agree. The statements'
+independent reviewers read the originals at book PDF pages 196–197, 199,
+202–203, 230, 354 and 360 and corrections PDF pages 1 and 27–29.
+
+A fifth pass on 10 November 2026 records proofs first published in Library
+commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`; each row cites its
+acceptance artifact and that commit. Corollary 4.2.14 becomes
+`conditional`: `boundedSubgroupFixedPoint` (artifact
+`48dd155d-28ec-4a80-9278-241f507a6013`) proves its statement. The second
+assertion of Theorem 4.2.10 is proved by `facetClosureUnionClosed`
+(artifact `b4a3ec65-43a1-4685-b99b-38916a8ba603`), so both assertions of
+that row are now proved on supplied data. Theorem 5.3.4 becomes
+`conditional`: `availableIwasawa` (artifact
+`42bb1c08-a7ac-49f5-a197-dc1d5707a42e`) proves `AvailableIwasawaStatement`
+under `IsAvailableFor`, while `IwasawaExistenceStatement` stays unproved.
+Corollary 7.4.9 becomes `conditional`:
+`ParahoricBuildingData.chamberIwahoriDecomposition` (artifact
+`4493a3f5-fe76-417d-8239-cbb2e5149465`) proves its statement for every
+supplied datum. `unipotentIwahoriDoubleCoset` (artifact
+`dce35461-bb3e-429c-9068-cf0465a14731`) proves part (4) of Theorem 7.8.1.
+That row stays `statement`, because parts (1)–(3) are unproved. The same
+commit proves that `Z(F)^0` is normal in `N(F)` for every supplied datum
+(`ParahoricBuildingData.normal_normalizerZero`). This updates the Definition
+6.6.1 row and supplies both inputs of the published reduction for replaced
+Lemma 5.3.5. That row stays `statement`, because no theorem of its exact type
+is published. The Theorem 9.2.7 row also lists three statements of task
+`7dc04fe2-f965-4f59-b63c-75f5012b3f64` that assume availability or validity,
+with their proof tasks. Each new declaration was inspected with `lean_check`
+at commit `e449cde9`; every reported axiom set is `propext`,
+`Classical.choice`, `Quot.sound`. The source and correction fields of these
+rows are unchanged.
+
+A sixth pass on 10 November 2026 adds three rows, so the ledger now has
+forty-eight. Proposition 4.2.24, Lemma 6.7.1 and Section 6.7.2 are
+recorded as `statement`. Their targets
+`ApartmentConjugacyFixingIntersectionStatement`,
+`LeviApartmentRestrictionStatement` and
+`LeviSpecialPointRestrictionStatement` were accepted in this instance as
+artifacts `8a396dca-5fc1-4680-94bb-f07abc3a4749`,
+`851e3550-d582-4076-a891-8d9b00badf3e` and
+`d664e902-3b89-4fdd-b136-5b2f070a1844` and first published in Library
+commit `d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8`. Their proof tasks are
+Tasks 5413, 5414 and 5415. The source and correction fields of the new
+rows were compared on 10 November 2026 with book PDF pages 60–61,
+207–208, 226, 230–232, 249 and 264–265 and corrections PDF pages 28–30
+and 32. Theorem 5.2.1 becomes `conditional`: `availableCartan` (artifact
+`c3a16a8e-fad7-484f-9e90-64f897f020eb`, first published in the same
+commit) proves `AvailableCartanStatement` under `IsAvailableFor`; its
+proof does not use the unproved Proposition 4.2.24. The Theorem 9.2.7
+row now records how `BruhatTitsAvailabilityStatement` is split into six
+statements first published in Library commit
+`58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af`, with their proof tasks. It
+also records Task 4749's published reduction of
+`RootValuationBuildingConstructionStatement` and
+`ChapterSevenBuildingAxiomsStatement`, first published in Library commit
+`8c11c93f98b439395e0e7da779c98bb27e24bd6d`. The Lemma 6.7.1 row names
+`LeviApartmentAxiomsInheritanceStatement` from the same commit as a
+consumer. The four declarations added to the rows' `lean_declarations`
+were inspected with `lean_check` at commit `e7487341`; every reported
+axiom set is `propext`, `Classical.choice`, `Quot.sound`. The source and
+correction fields of the Theorem 5.2.1 and 9.2.7 rows are unchanged.
+
+A seventh pass on 11 November 2026 updates two Bundle D and E rows.
+Section 13.2.6 becomes `conditional`. The depth-zero reduction
+`depthZeroQuotientEquiv` (artifact
+`f3a39f0a-0b63-4218-a72a-b3958c3b3740`, first published in Library
+commit `7047367a78583edbe335517824e30403414aa3f0`) and its inflation and
+compact-induction consumer (artifact
+`a6b89c9a-222a-4977-b85b-1983338fa594`, first published in Library
+commit `7103f5282c4897716543f227940fdb2a0e12e70e`) are proved on
+supplied `RelativeComponentModelData` and `SpecialFibreQuotientData`
+whose projection is the represented fppf quotient by the unipotent
+radical. Here `conditional` means that the row stays conditional until
+the actual parahoric model, its radical and reductive quotient are
+constructed and Corollary 8.4.12 identifies the radical-preimage kernel
+with the Moy–Prasad group `P_{x,0+}`. The local-field corollary
+additionally assumes the unproved
+`CongruenceNeighborhoodBasisStatement`. The five declarations added to
+the row were inspected with `lean_check` at commit `389dbc16`.
+
+Proposition 13.2.5 becomes `statement`. Its target
+`MoyPrasadFiltrationStatement` (artifact
+`cdc002e4-4628-4026-91c9-c4add6280308`, first published in Library
+commit `642008d6b3b837d8bd76de0cabcaff3db00088c0`) states separatedness,
+bounded openness at finite real depths, and parts (1), (2) and (4) for
+supplied `ParahoricBuildingData` and a supplied centralizer filtration
+with explicit axioms; the Section 9.8 filtration is not constructed.
+Parts (3), (5) and (6) remain unformalized, and the printed root-index
+discrepancy of part (3) recorded below is unchanged. Each of its four
+conjuncts has a proof task, listed in the row. Its six declarations were
+inspected on a workspace at commit `389dbc16` holding the published
+pair, byte-identical to commit `642008d6`. Every reported axiom set of
+this pass is `propext`, `Classical.choice`, `Quot.sound`. The source and
+correction fields of both rows are unchanged.
+
+An eighth pass on 11 November 2026 adds four Bundle B rows for the
+unramified descent of Chapter 9, so the ledger now has fifty-two rows.
+All four are `statement`. Section 9.2.1 (a Galois-fixed point of a
+stable apartment) and Proposition 9.3.4 record
+`UnramifiedGaloisFixedApartmentStatement` and
+`SpecialTorusExistenceStatement` (artifact
+`528e1be2-9d8b-452b-ad68-e956bf9179ee`, first published in Library
+commit `9bc92c384fa84da7ce5811a5979d408fb69d40b0`). Theorem 9.6.5
+records Task 4749's `ValuationApartmentAxiomsExistenceStatement`
+(artifact `e0b14a71-bc99-4ac1-b5b5-041d9f4ca3e6`, first published in
+Library commit `58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af`) and this
+program's descent module (artifact
+`cab86217-ea50-409b-9d4d-3440ee3e3a43`, first published in Library
+commit `3c9b0579a8f2d36d16294ce48b465d1ec5aee273`). That module adds two
+statements and their conjunction and proves
+`valuationApartmentAxiomsExistenceReduction`, which derives
+`ValuationApartmentAxiomsExistenceStatement` from five statements. None
+of the five is proved yet, so the row stays `statement`. Lemma 9.8.1
+records `CentralizerFiltrationExistenceStatement` (artifact
+`fb1bc376-7e9b-41dd-b6e1-efa863d4f68b`, first published in Library
+commit `3c9b0579a8f2d36d16294ce48b465d1ec5aee273`). The Section 9.2.1
+row records the zero-section embedding into the enlarged building as
+G(k)^1-equivariant, not G(k)-equivariant as printed; the Bundle B notes
+explain the discrepancy. Each row lists its
+proof tasks, and the Theorem 9.2.7 row points to the new rows. The pass
+also adds part (3) of Proposition 13.2.5, with indivisible-root blocks,
+to that row: `MoyPrasadProductStatement` and its product map (artifact
+`38dd6045-a386-43d6-a804-1de56fa51d14`, first published in Library
+commit `63d9b857523edf47443b7bf30844159e526d00b0`), with its proof task.
+The row stays `statement`. The seventh pass's remark that parts (3), (5)
+and (6) remain unformalized now applies to parts (5) and (6) only.
+
+The source and correction fields of the new rows and of the part (3)
+update were compared on 11 November 2026 with book PDF pages 162,
+209–211, 278, 281, 283, 354, 356–357, 363–365, 394–398, 405–406 and 500 and
+corrections PDF pages 33, 39–41 and 50. Eleven declarations were
+inspected with `lean_check`: `SpecialTorusExistenceStatement` at commit
+`3c9b0579`, the two part (3) declarations at commit `8964b41f`, the
+others at commit `529b851c`. The inspected Lean files are byte-identical
+to their first publications. Every reported axiom set is `propext`,
+`Classical.choice`, `Quot.sound`.
 
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
@@ -121,7 +371,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, initial Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3 and Theorem 9.2.7), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Corollary 7.4.9 and corrected Theorem 7.8.1 have verified published statements on supplied building data; the other forty rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3 have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; replaced Lemma 5.3.5, Proposition 4.2.24, Lemma 6.7.1, Section 6.7.2, Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 (with a proved reduction to five statements) and Lemma 9.8.1 have published statements, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(4) on supplied data, part (3) with indivisible-root blocks, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement and Definition 6.6.1 a partial published definition; the other twenty-five rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -369,20 +619,48 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k has a discrete valuation, its valuation ring is Henselian and its residue field is perfect; G is connected reductive over k.",
-        "B is the Chapter 4 building satisfying Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6 and 4.1.9, with the compatible Weyl-invariant Euclidean apartment metrics of Section 4.2."
+        "B is the Chapter 4 building satisfying Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6 and 4.1.9, with the compatible Weyl-invariant Euclidean apartment metrics of Section 4.2.",
+        "Recorded Lean scope: for every nonarchimedean local field F of either characteristic, connected reductive G/F and supplied P : ParahoricBuildingData G with realization R and splitting T satisfying the Library predicates SatisfiesBuildingAxiom R (one-group 4.1.1), HasBoundedOpenStabilizers (4.1.2), SatisfiesAffineApartmentAxiom T (4.1.4), HasRootReflections, SatisfiesApartmentAxioms and HasCompatibleApartmentFacets (4.1.6) and HasTitsSystem (4.1.9), metricRealization gives Nonempty P.toValuationBuildingData.MetricRealization: a complete metric on the existing quotient satisfying the Library NPC predicate, with isometric G(F)-action and orbit maps continuous for rationalPointTopology F G.X. The metric is existential and its normalization is not fixed. The Henselian discretely valued generality of the source is not covered, and no existence of the supplied data or witnesses is asserted."
       ],
       "conclusion": "The apartment metric on B satisfies the midpoint nonpositive-curvature inequality of Definition 1.1.8.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Metric.KP.IsRetractionGluedDistance.isNonpositivelyCurved",
+        "Langlands.Geometry.Building.ValuationBuildingData.nonempty_metricRealization_of_isRetractionBuildingDistance",
+        "Langlands.Geometry.Building.metricRealization"
+      ],
+      "modules": [
+        "Langlands.Geometry.Metric.RetractionGluing",
+        "Langlands.Geometry.Building.ValuationBuildingMetricAssembly",
+        "Langlands.Geometry.Building.MetricRealizationStatement",
+        "Langlands.Geometry.Building.MetricRealizationProof"
+      ],
       "dependencies": [
-        "Section 4.2 metric; apartment midpoints; retractions and their nonexpansion/distance laws; Euclidean parallelogram identity"
+        "Section 4.2 metric; apartment midpoints; retractions and their nonexpansion/distance laws; Euclidean parallelogram identity",
+        "Formal route: the abstract predicate IsRetractionGluedDistance (common members, NPC metric on each member, distance-nonincreasing retractions preserving the distance from a centre) gives the NPC inequality by retracting onto a common apartment centred at an NPC midpoint; only the inequality form of the midpoint law is used. metricRealization supplies the distance buildingDist of Proposition 4.2.1 and the retractions on the existing quotient P.ReducedBuilding."
       ],
       "consumer_or_regression": "Theorem 1.1.15 applied to the actual constructed building after Theorem 4.2.10.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Metric.KP.IsRetractionGluedDistance.isNonpositivelyCurved",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "a3b24b7e-96fe-45fe-b7fd-dbc07565ca24",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.metricRealization",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "99f5d6d1-6a78-4e22-8054-ec9414595c00",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        }
+      ],
       "external_code": []
     },
     {
@@ -400,20 +678,67 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k has a discrete valuation, its valuation ring is Henselian and its residue field is perfect; G is connected reductive over k.",
-        "B is the Chapter 4 building satisfying Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6 and 4.1.9, with the compatible Weyl-invariant Euclidean apartment metrics of Section 4.2."
+        "B is the Chapter 4 building satisfying Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6 and 4.1.9, with the compatible Weyl-invariant Euclidean apartment metrics of Section 4.2.",
+        "Recorded Lean scope (first assertion only): completeSpace_of_isometry_apartmentMap_of_satisfiesApartmentAxioms takes supplied B : ValuationBuildingData G over a nonarchimedean local field, an arbitrary metric on B.ReducedBuilding with isometric G(F)-action, common apartments for every point (HasCommonApartmentWith), B.SatisfiesApartmentAxioms, and an isometric apartment map for the Euclidean root metric on A(S), and concludes CompleteSpace. metricRealization applies it on supplied P : ParahoricBuildingData G under the seven Library predicates for the five axioms, listed in the Proposition 4.2.7 row. Here B.SatisfiesApartmentAxioms covers V 6, V 7 (KP Definition 6.1.2) and AS 2–AS 5 (KP Axiom 4.1.6); V 6 is part of the data B, and V 7 (compatibility of the root filtrations with the topology of G(F)) is an additional premise.",
+        "Recorded Lean scope (second assertion): the published FacetClosureUnionClosedStatement quantifies over every nonarchimedean local field F in universe u, group scheme G over Spec F and supplied B : ValuationBuildingData G, with the same metric, isometric-action, common-apartment, SatisfiesApartmentAxioms and isometric-apartment-map premises as the completeness theorem. For every X : Set (Set B.ReducedBuilding) with B.IsFacet Y for all Y ∈ X it concludes IsClosed (⋃ Y ∈ X, closure Y), with the topological closure of each facet. Neither the data nor the premises are asserted to exist. The theorem facetClosureUnionClosed (module FacetClosureUnionClosedProof) proves this statement; it was accepted as artifact b4a3ec65-43a1-4685-b99b-38916a8ba603 and first published in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0. Both assertions are therefore proved on supplied data, and the row stays conditional until the data and premises are constructed."
       ],
       "conclusion": "B is complete; for every collection of facets, the union of their CLOSED facets (the closures of those facets) is closed. Local finiteness is not a hypothesis of the theorem.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ValuationBuildingData.completeSpace_of_isometry_apartmentMap",
+        "Langlands.Geometry.Building.ValuationBuildingData.completeSpace_of_isometry_apartmentMap_of_satisfiesApartmentAxioms",
+        "Langlands.Geometry.Building.ValuationBuildingData.exists_forall_dist_smul_lt_imp_eq",
+        "Langlands.Geometry.Building.metricRealization",
+        "Langlands.Geometry.Building.FacetClosureUnionClosedStatement",
+        "Langlands.Geometry.Building.facetClosureUnionClosed"
+      ],
+      "modules": [
+        "Langlands.Geometry.Metric.DiscreteOrbitCompleteness",
+        "Langlands.Geometry.Building.AffineRootOrbitDiscreteness",
+        "Langlands.Geometry.Building.ValuationBuildingCompleteness",
+        "Langlands.Geometry.Building.MetricRealizationProof",
+        "Langlands.Geometry.Building.FacetClosureUnionClosedStatement",
+        "Langlands.Geometry.Building.FacetClosureUnionClosedProof"
+      ],
       "dependencies": [
-        "Section 4.2 metric; Lemma 4.2.11 and discrete affine-root hyperplane spacing; compact closed chamber"
+        "Section 4.2 metric; Lemma 4.2.11 and discrete affine-root hyperplane spacing; compact closed chamber",
+        "Formal route, differing from the source: discreteness of N(F)-orbits in A(S) (AS 3 local finiteness and AS 5 via the stabilizer of a locally finite arrangement) gives discreteness of G(F)-orbits in B(G) for the full group G(F); completeness then follows from the abstract discrete-orbit completeness criterion with closed balls of the proper apartment, instead of chambers and Proposition 1.5.13.",
+        "Proof of FacetClosureUnionClosedStatement: facetClosureUnionClosed, from lean.proof@1 task cd045e44-eb03-481f-aabf-0e086965dd25 (artifact b4a3ec65-43a1-4685-b99b-38916a8ba603). It follows the first part of Lemma 4.2.11: local finiteness at an apartment coordinate of x gives a ball meeting only facets whose closures contain x, after moving each facet into a common apartment chart with x; a combinatorial closed facet lies in the topological closure of its facet. Both assertions are conditional on the data and premises, whose construction is RootValuationBuildingConstructionStatement (task 00b6788c-23c3-4b22-88f5-41fdbc6d3654)."
       ],
       "consumer_or_regression": "Fixed-point theorem on the constructed building; finite-residue and non-locally-finite cases must not be conflated.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "7c30292c-a01f-472c-b967-5859043e2755",
+        "b4a3ec65-43a1-4685-b99b-38916a8ba603"
+      ],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3",
+        "230ec08a058832bd6941fa887c30897e4826429b",
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingData.completeSpace_of_isometry_apartmentMap_of_satisfiesApartmentAxioms",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "19c58ff8-7223-425b-bc1f-6d855f29bbff",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.FacetClosureUnionClosedStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "89896ed1-e9f6-4245-9941-e43989a63e76",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit 230ec08a; statement_returns_prop true. The acceptance artifact 7c30292c covers this statement only; the 2026-11-08 declarations were published in the previous instance."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.facetClosureUnionClosed",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "af281650-cd6f-40cc-96e3-eb3da4b2fa21",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem, acceptance artifact b4a3ec65."
+        }
+      ],
       "external_code": []
     },
     {
@@ -433,20 +758,101 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "k has a discrete valuation, its valuation ring is Henselian and its residue field is perfect; G is connected reductive over k.",
         "B is the Chapter 4 building satisfying Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6 and 4.1.9, with the compatible Weyl-invariant Euclidean apartment metrics of Section 4.2.",
         "H is a bounded subgroup of G(k), with boundedness in the algebraic sense of Definition 2.2.1.",
-        "For the second assertion, H preserves a nonempty closed convex subset Y of B; Y need not be bounded."
+        "For the second assertion, H preserves a nonempty closed convex subset Y of B; Y need not be bounded.",
+        "Recorded Lean scope: BoundedSubgroupFixedPointStatement quantifies over every nonarchimedean local field F of either characteristic in universe u, every group scheme G over Spec F with hG : IsConnectedReductive G, and supplied P : ParahoricBuildingData G with a polysimplicial realization R and an apartment splitting T of P.toValuationBuildingData. Its premises are the seven Library predicates of MetricRealizationStatement expressing the five axioms: SatisfiesBuildingAxiom R (4.1.1), HasBoundedOpenStabilizers (4.1.2), SatisfiesAffineApartmentAxiom T (4.1.4), HasRootReflections, SatisfiesApartmentAxioms and HasCompatibleApartmentFacets (4.1.6) and HasTitsSystem (4.1.9). For every subgroup H of rationalPoints G with IsAlgebraicallyBounded F G.X H (Definition 2.2.1) it concludes (1) some x : ReducedBuilding has h • x = x for all h ∈ H, and (2) for every MetricRealization M, with M.metric installed, every closed Y with IsGeodesicallyConvex Y (which includes nonemptiness) and h • y ∈ Y for h ∈ H, y ∈ Y contains such a fixed x. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields; the specific metric of Proposition 4.2.1 is replaced by an arbitrary complete NPC realization with isometric action and continuous orbit maps, which includes the source metric through metricRealization. Existence of the data, of the axiom witnesses or of a realization is not asserted. The theorem boundedSubgroupFixedPoint (module BoundedSubgroupFixedPointProof) proves this statement; it was accepted as artifact 48dd155d-28ec-4a80-9278-241f507a6013 and first published in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0."
       ],
       "conclusion": "H fixes a point of B, and fixes a point in Y when such a preserved Y is specified.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.BoundedSubgroupFixedPointStatement",
+        "Langlands.Geometry.Building.boundedSubgroupFixedPoint"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.BoundedSubgroupFixedPointStatement",
+        "Langlands.Geometry.Building.BoundedSubgroupFixedPointProof",
+        "Langlands.Geometry.Building.MetricRealizationStatement",
+        "Langlands.AlgebraicGeometry.PointTopology.AffineBoundedness"
+      ],
       "dependencies": [
-        "Theorem 1.1.15; Proposition 4.2.7; Theorem 4.2.10; Proposition 4.2.13 relating algebraic boundedness and bounded action"
+        "Theorem 1.1.15; Proposition 4.2.7; Theorem 4.2.10; Proposition 4.2.13 relating algebraic boundedness and bounded action",
+        "Proof: boundedSubgroupFixedPoint, from lean.proof@1 task a20a7c6a-18e6-430e-9ebd-f4e7046e075d (artifact 48dd155d-28ec-4a80-9278-241f507a6013). Its route differs from the source: compactness of the closure of an algebraically bounded set and continuity of orbit maps give bounded orbits, then Theorem 1.1.15(2) and the equivariant nearest-point projection of Proposition 1.1.20 give the fixed points; Proposition 4.2.13 is not used. The statement is conditional on the data and witnesses, whose construction is RootValuationBuildingConstructionStatement (task 00b6788c-23c3-4b22-88f5-41fdbc6d3654)."
       ],
       "consumer_or_regression": "Actual parahoric/fixer and compact-subgroup consumers, retaining the reduced/enlarged and G(k)^0/G(k)^1 distinctions.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "32a5231a-64e5-47b2-abb5-08c7ee214f7c",
+        "48dd155d-28ec-4a80-9278-241f507a6013"
+      ],
+      "publication_commits": [
+        "3f0bcbd4638c9c42befdc9f7e1578d62fde2c959",
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.BoundedSubgroupFixedPointStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "160d94bb-4f5d-45b2-8eaf-27c9d7e5e2a0",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-09 at Library commit 3f0bcbd4; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.boundedSubgroupFixedPoint",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "d676ac8b-f41d-4802-a5fb-f18018a93f4d",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem, acceptance artifact 48dd155d."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 4.2.24",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.176–177 / PDF pp.207–208; opening of Section 4.2 at printed p.168 / PDF p.199"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.28–30, Sections 4.2 and 5.2",
+        "change": "Add Axiom 4.1.6 to the opening hypotheses of Section 4.2. The statement of Proposition 4.2.24 is unchanged; the corrected proofs of Proposition 4.2.1 (PDF p.29) and Theorem 5.2.1 (PDF p.30) cite it."
+      },
+      "hypotheses": [
+        "k has a discrete valuation, its valuation ring is Henselian and its residue field is perfect; G is connected reductive over k.",
+        "B is the Chapter 4 building satisfying Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6 and 4.1.9, with the metric of Section 4.2. A1 and A2 are any two apartments of B.",
+        "Recorded Lean scope: ApartmentConjugacyFixingIntersectionStatement quantifies over every nonarchimedean local field F of either characteristic in universe u, every group scheme G over Spec F with [IsAffineHom G.X.hom], and supplied P : ParahoricBuildingData G with a polysimplicial realization R and an apartment splitting T. Its premises are the seven Library predicates of the Corollary 4.2.14 row: SatisfiesBuildingAxiom R (Axiom 4.1.1 for G alone), HasBoundedOpenStabilizers (4.1.2), SatisfiesAffineApartmentAxiom T (4.1.4), HasRootReflections, SatisfiesApartmentAxioms and HasCompatibleApartmentFacets (4.1.6, including V 7) and HasTitsSystem (4.1.9). For all A1 A2 : Set P.toValuationBuildingData.ReducedBuilding with P.IsApartment A1 and P.IsApartment A2 (G(F)-translates of the image of A(S)) it concludes ∃ g ∈ P.zeroSubgroup, g • A1 = A2 ∧ ∀ y ∈ A1 ∩ A2, g • y = y, where P.zeroSubgroup is G(F)^0. The comparisons of Axiom 4.1.1 between groups are not premises. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields. KPBuildingAssignment.IsAvailableFor supplies all seven premises. Existence of the data or of the axiom witnesses is not asserted."
+      ],
+      "conclusion": "There is g ∈ G(k)^0 with gA1 = A2 and gx = x for every x ∈ A1 ∩ A2.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ApartmentConjugacyFixingIntersectionStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.ApartmentConjugacyFixingIntersectionStatement"
+      ],
+      "dependencies": [
+        "Proposition 1.5.13(1) for the Tits system of Axiom 4.1.9; the Section 4.2 metric and segments (Propositions 4.2.1 and 4.2.3, Definition 4.2.4); A1 ∩ A2 is closed, convex and a union of facets.",
+        "The source proof does not treat an empty intersection; that case is the transitivity of G(k)^0 on apartments, used in the corrected proof of Proposition 4.2.1.",
+        "Proof successor: lean.proof@1 Task 5413 (4e839bbd-8290-40d8-9add-333c46e63847)."
+      ],
+      "consumer_or_regression": "Corollaries 4.2.25 and 4.2.26, and the corrected source proof of Theorem 5.2.1. The published formal proof availableCartan (task 14dc145a-14d4-47d6-97a6-d89ea0c558ab) uses the sharp fixer and a two-facet Tits transport instead.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "8a396dca-5fc1-4680-94bb-f07abc3a4749"
+      ],
+      "publication_commits": [
+        "d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ApartmentConjugacyFixingIntersectionStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "0bcd437a-6578-4912-bcb4-baef39b1dc03",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e7487341; statement_returns_prop true."
+        }
+      ],
       "external_code": []
     },
     {
@@ -459,20 +865,41 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "erratum": null,
       "hypotheses": [
         "k has a discrete valuation, Henselian valuation ring and perfect residue field; G is connected reductive over k.",
-        "B satisfies Axioms 4.1.1, 4.1.4 and 4.1.9. S is a maximal k-split torus, N its normalizer, and A its associated affine apartment."
+        "B satisfies Axioms 4.1.1, 4.1.4 and 4.1.9. S is a maximal k-split torus, N its normalizer, and A its associated affine apartment.",
+        "Recorded Lean scope: only the group-action algebra of the presentation is formalized, for an arbitrary group H, subgroup N, N-set A and conjugation-covariant subgroup family P. ApartmentQuotient.mk_eq_mk_iff gives exactly the fibres (g,x)~(h,y) iff some n∈N has n·x=y and g⁻¹hn∈P x; stabilizer_apartment_eq_sup identifies the stabilizer of [(1,x)] with P x ⊔ N_x; map_id_bijective_iff_le_sup is the replacement criterion for an intermediate family. ApartmentQuotient.liftEquiv identifies the quotient H-equivariantly with any H-set carrying an injective N-equivariant apartment map whose point stabilizers contain P x, under common translated apartments and orbit coverage, all as explicit hypotheses. The Library's constructed quotient ValuationBuildingData.ReducedBuilding is by definition ApartmentQuotient of the sharp point-fixer family (the Chapter 7 quotient of Remark 7.6.5), so the presentation holds for it by construction. The source statement for an arbitrary building satisfying 4.1.1, 4.1.4 and 4.1.9 has no separate Lean declaration."
       ],
       "conclusion": "The G(k)-equivariant map (g,x)↦g·x from G(k)×A onto B has fibres given by (g,x)~(h,y) iff some n∈N(k) has n·x=y and g^(-1)hn∈G(k)_x. The full stabilizer can be replaced by G(k)^natural_x or an intermediate subgroup, subject to the source comparison.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ApartmentQuotient.mk_eq_mk_iff",
+        "Langlands.Geometry.Building.ApartmentQuotient.stabilizer_apartment_eq_sup",
+        "Langlands.Geometry.Building.ApartmentQuotient.map_id_bijective_iff_le_sup",
+        "Langlands.Geometry.Building.ApartmentQuotient.liftEquiv",
+        "Langlands.Geometry.Building.ApartmentQuotient.liftEquiv_smul"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.ApartmentQuotient",
+        "Langlands.Geometry.Building.ApartmentQuotientComparison",
+        "Langlands.Geometry.Building.KPBuilding"
+      ],
       "dependencies": [
         "Apartment conjugacy; transporter to the normalizer; point stabilizers; Proposition 4.4.3 for the affine apartment conventions"
       ],
       "consumer_or_regression": "Actual building quotient presentation; conditional algebraic quotient child cd3fd695-b511-4653-8f4d-769e99d8aab0 supplies only a reusable prerequisite.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ApartmentQuotient.liftEquiv_smul",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "cd5b34df-3104-4c43-beb8-052a9b5adf18",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        }
+      ],
       "external_code": []
     },
     {
@@ -491,20 +918,41 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "B1 and B2 are buildings for the same G satisfying Axioms 4.1.1, 4.1.4 and 4.1.9; A1 and A2 correspond to the same maximal k-split torus.",
         "For EVERY pair x1∈A1 and x2∈A2 corresponding under the canonical affine isomorphism of Proposition 4.4.3, G(k)^0_(x1) is a subgroup of G(k)^0_(x2).",
-        "The field and reductive-group conventions are those of Chapter 4 (discrete valuation, Henselian valuation ring, perfect residue field, connected reductive G)."
+        "The field and reductive-group conventions are those of Chapter 4 (discrete valuation, Henselian valuation ring, perfect residue field, connected reductive G).",
+        "Recorded Lean scope: for two supplied B1, B2 : ValuationBuildingData G over the same nonarchimedean local field, an affine equivalence e : A1 ≃ᵃ[ℝ] A2 with the normalizer-equivariance hypothesis hN, and the fixer inclusion hfix : ∀ x, B1.sharpFixer {x} ≤ B2.fixer (B2.apartmentMap (e x)) quantified over EVERY source apartment point, quotientComparison is the unique equivariant extension; it is bijective under common source apartments (supplied by SatisfiesBuildingAxiom.hasCommonApartments from a 4.1.1 witness) and injectivity of the target apartment map, and with equality of the transported affine-root sets (hroots) quotientComparisonEquiv satisfies IsEquivariantBuildingIso with the identity on G(F). The Lean hypothesis compares source sharp fixers with full target point fixers, not G(k)^0_(x1) with G(k)^0_(x2); the comparison of these subgroup families, the canonical isomorphism of Proposition 4.4.3 and the agreement of facet subgroups are not formalized."
       ],
       "conclusion": "The canonical apartment isomorphism extends uniquely to a G(k)-equivariant building isomorphism B1→B2; corresponding facet subgroups G(k)^0_F agree.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ApartmentQuotient.map_bijective_of_common_translated_apartment",
+        "Langlands.Geometry.Building.ApartmentQuotient.lift_unique",
+        "Langlands.Geometry.Building.ValuationBuildingData.quotientComparison",
+        "Langlands.Geometry.Building.ValuationBuildingData.quotientComparisonEquiv",
+        "Langlands.Geometry.Building.ValuationBuildingData.quotientComparisonEquiv_isEquivariantBuildingIso"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.ApartmentQuotient",
+        "Langlands.Geometry.Building.ApartmentQuotientComparison",
+        "Langlands.Geometry.Building.ValuationBuildingQuotientComparison"
+      ],
       "dependencies": [
         "Propositions 4.4.3 and 4.4.4; apartments containing point pairs; facet recovery from stabilizers"
       ],
       "consumer_or_regression": "Regression must reject a single-pair replacement for the universal hypothesis; quotient surjectivity alone does not establish the building isomorphism.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingData.quotientComparisonEquiv_isEquivariantBuildingIso",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "3da4920a-c96f-4ec6-bd42-dedb0926b0a5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        }
+      ],
       "external_code": []
     },
     {
@@ -522,21 +970,45 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "The Chapter 4 ambient conventions are a discretely valued field k with Henselian valuation ring and perfect residue field, and a connected reductive k-group G. Finiteness of the residue field is not required.",
-        "Building, apartment, action, root-group and integral-model data must satisfy all ten listed axioms. This is a definition of availability, not an existence assertion or permission to assume these data at the general endpoint."
+        "Building, apartment, action, root-group and integral-model data must satisfy all ten listed axioms. This is a definition of availability, not an existence assertion or permission to assume these data at the general endpoint.",
+        "Recorded Lean scope: KPBuildingAssignment.IsAvailableFor 𝔅 F G hG is a Prop-valued structure with exactly one field for each of the ten corrected axioms, on supplied data KPBuildingDatum G (base ParahoricBuildingData, polysimplicial realization, apartment splitting, integral-model family over 𝒪[F], special-fibre quotient family and relative root reflection data) chosen by an assignment 𝔅 for every nonarchimedean local field F in universe u and every connected reductive G/F. KPBuildingAssignment.IsValid quantifies it over all (F, G). Axiom 4.1.27 is not a field. The Henselian discretely valued fields of the source are replaced by nonarchimedean local fields of either characteristic, also in the cross-field Axiom 4.1.17. The comparison clauses of 4.1.1 and 4.1.17 ask for existence of equivariant building isomorphisms and do not formalize canonicity. No predicate is asserted to hold for any data."
       ],
       "conclusion": "Bruhat–Tits theory is available precisely when every axiom in the corrected ten-item list holds. In the program, the general constructed instance must also satisfy unramified descent Axiom 4.1.27; a conditional package of axioms alone does not meet that requirement.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.KPBuildingDatum",
+        "Langlands.Geometry.Building.KPBuildingDatum.SatisfiesGroupAxioms",
+        "Langlands.Geometry.Building.KPBuildingAssignment",
+        "Langlands.Geometry.Building.KPBuildingAssignment.IsAvailableFor",
+        "Langlands.Geometry.Building.KPBuildingAssignment.IsValid"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.FullValidity.Realization",
+        "Langlands.Geometry.Building.FullValidity.AffineApartment",
+        "Langlands.Geometry.Building.FullValidity.ChamberAxioms",
+        "Langlands.Geometry.Building.FullValidity.Assignment",
+        "Langlands.BruhatTits.IntegralModels.ModelFamily",
+        "Langlands.BruhatTits.IntegralModels.FacetAxioms"
+      ],
       "dependencies": [
         "Axioms 4.1.1, 4.1.2, 4.1.4, 4.1.6, 4.1.8, 4.1.9, 4.1.16, 4.1.17, 4.1.20 and 4.1.22, with the corrections applied",
         "Source construction map 4.1.28 and Chapter 9; see the certificate map below for the separately derived 4.1.16 route and the full isomorphism scope of 4.1.17"
       ],
       "consumer_or_regression": "Theorem 9.2.7 certificate on the descended instance; tests must retain parahoric/full-fixer, reduced/enlarged and special-fibre/reductive-quotient distinctions.",
-      "formal_status": null,
+      "formal_status": "definition",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.KPBuildingAssignment.IsAvailableFor",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "570b2f45-35c5-44da-b480-eb7300e4ec92",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        }
+      ],
       "external_code": []
     },
     {
@@ -556,22 +1028,74 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "k has a discrete valuation omega with Henselian valuation ring and omega(k^times)=Z, as stipulated outside Section 7.10. The residue field need not be perfect.",
         "G is connected reductive. To each maximal k-split torus S is assigned an affine apartment A(S), an equipollence class of root-datum valuations in the sense of 6.1.2 and 6.1.7, with the normalizer action of 6.1.8 and the equivariance required by Axiom 4.1.4.",
         "AS5 of Axiom 4.1.6 is assumed in addition. For general G, valuations and AS5 are not constructed merely by stating the Chapter 7 hypotheses; in the perfect-residue setting Chapter 9 supplies them.",
-        "Write N=N_G(S) and Z=Z_G(S). Fix a chamber C in A(S), I=G(k)^0_C and the wall reflections R. The two ambient groups are G(k)^0 and G(k)^natural, with N intersected with the respective group. As in Section 7.5, I^natural=I^sharp Z^natural, where Z^natural is the image of Z'(k)^0 and Z' is the inverse image of Z in G_sc."
+        "Write N=N_G(S) and Z=Z_G(S). Fix a chamber C in A(S), I=G(k)^0_C and the wall reflections R. The two ambient groups are G(k)^0 and G(k)^natural, with N intersected with the respective group. As in Section 7.5, I^natural=I^sharp Z^natural, where Z^natural is the image of Z'(k)^0 and Z' is the inverse image of Z in G_sc.",
+        "Recorded Lean scope: AffineIwahoriTitsStatement states only the G(F)^0 branch of 7.5.3(1),(2), for every nonarchimedean local field F, affine F-group scheme G and supplied P : ParahoricBuildingData G with P.apartment.SatisfiesApartmentAxioms P.centralizer and every chamber C of A(S): normality of P.normalizerZero and P.zeroSubgroup, and P.AffineIwahoriTits C (a multiplicative equivalence of the affine part of N(F) ∩ G(F)^0 with the affine Weyl group W(Ψ) realizing the actual apartment action, the published IsTitsSystem for G(F)^0, the generated parahoric of C, N(F) ∩ G(F)^0 and the chamber-simple reflections, and the corrected saturation as an intersection of conjugates). The G(F)^natural branch and the conjugacy of choices are not stated. affineIwahoriTits_of_inputs derives P.AffineIwahoriTits C from normality of P.normalizerZero, an action comparison and the eight fields of AffineIwahoriTitsInputs C, which are explicit hypotheses of that lemma. At c4a16df7 three fields are proved under the apartment axioms: closure_chamberSimpleReflections (closure_chamberSimpleReflections_affineRoots, KP Proposition 1.3.22(1)), parahoric_le_zeroSubgroup (from ApartmentRootCover) and zeroSubgroup_le_sup (chamberParahoricGeneration : ChamberParahoricGenerationStatement). affineIwahoriTitsStatement_of_inputStatements derives AffineIwahoriTitsStatement from IwahoriWeylExactSequenceStatement (KP 7.8.1(1), which supplies both normalities and the comparison), AffineRankOneTwoCellStatement (KP Lemma 7.1.5(3)) and the five statements of AffineIwahoriTitsInputStatements. Of these seven, only ChamberParahoricGenerationStatement has a published proof; ChamberParahoricNormalizerStatement, RootGroupParahoricFiltrationStatement, ChamberConjugateIntersectionStatement and AffineRankOneTwoCellStatement have none, and ChamberSimpleFactorizationStatement and IwahoriWeylExactSequenceStatement have only conditional reductions (chamberSimpleFactorizationPrerequisiteReduction and iwahoriWeylExactSequenceStatement_of_prerequisites)."
       ],
       "conclusion": "The two tuples (G(k)^0,I,N(k) intersect G(k)^0,R) and (G(k)^natural,I^natural,N(k) intersect G(k)^natural,R) are saturated Tits systems. Their Weyl groups identify with the affine Weyl group of Psi through the apartment action. Choices of torus and chamber give systems conjugate under G(k)^natural. This statement does not replace either ambient group by full G(k).",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.AffineIwahoriTitsStatement",
+        "Langlands.Geometry.Building.ParahoricBuildingData.affineIwahoriTits_of_inputs",
+        "Langlands.Geometry.Building.ParahoricBuildingData.affineIwahoriTitsInputs_of_statements",
+        "Langlands.Geometry.Building.affineIwahoriTitsStatement_of_inputStatements",
+        "Langlands.Geometry.Building.chamberParahoricGeneration"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.AffineIwahoriTits",
+        "Langlands.Geometry.Building.AffineIwahoriTitsStatement",
+        "Langlands.Geometry.Building.AffineIwahoriTitsInputStatements",
+        "Langlands.Geometry.Building.AffineIwahoriTitsAssembly",
+        "Langlands.Geometry.Building.ChamberParahoricGenerationProof"
+      ],
       "dependencies": [
         "Chapter 6 affine roots, valuation and normalizer action; corrected AS5 assumption",
         "Theorem 7.5.1, Lemma 7.5.2 and Lemma 1.4.12; Section 7.4 parahoric construction and Corollary 7.4.9",
-        "For the general perfect-residue construction: Proposition 9.4.35, Theorem 9.6.5 and the every-point comparison in 9.6.6"
+        "For the general perfect-residue construction: Proposition 9.4.35, Theorem 9.6.5 and the every-point comparison in 9.6.6",
+        "Open proof tasks: 20fbe465-f4ae-4fe9-9846-2201f1c31d28 (AffineIwahoriTitsStatement) and 5210ae85-2886-4b9f-af36-d57d6dba2607 (range part of 7.5.3(2))"
       ],
       "consumer_or_regression": "Restricted building construction 7.6.1 and the affine part of later double-coset decompositions. A nontrivial length-zero/component example must retain the full Iwahori–Weyl data separately.",
-      "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "formal_status": "statement",
+      "owner_task": "20fbe465-f4ae-4fe9-9846-2201f1c31d28",
       "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.AffineIwahoriTitsStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "31806803-3dfd-4221-80b8-655c4a2b3201",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.affineIwahoriTits_of_inputs",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "1108a1a2-4e0e-4e08-a273-ad69165fc7ed",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.affineIwahoriTitsInputs_of_statements",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "b2562934-5c25-4838-84db-14f12b92c520",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-09 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.affineIwahoriTitsStatement_of_inputStatements",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "8a6e9492-784f-4730-b714-7b43639240e6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-09 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.chamberParahoricGeneration",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "945f41b4-347c-413e-8dd7-7a88471248df",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-09 at Library commit c4a16df7."
+        }
+      ],
       "external_code": []
     },
     {
@@ -590,24 +1114,287 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k is discretely valued with omega(k^times)=Z and Henselian valuation ring o; its residue field is perfect. G is any connected reductive k-group. No global splitness, quasi-splitness, tame splitting or finite-residue hypothesis is imposed.",
         "K is the maximal unramified extension in a fixed separable closure, O its valuation ring, and Gamma=Gal(K/k). Corollary 2.3.8 makes G_K quasi-split; its building and models are the actual Chapter 6–8 constructions, not assumed general existence data.",
-        "B is B(G_K)^Gamma with the restricted metric. Apartments are Gamma-fixed apartments attached to special k-tori of 9.2.2. Facets are intersections with Gamma-stable K-facets as in 9.2.4. Models are the smooth affine o-models descended in 9.2.5, with their relative identity components."
+        "B is B(G_K)^Gamma with the restricted metric. Apartments are Gamma-fixed apartments attached to special k-tori of 9.2.2. Facets are intersections with Gamma-stable K-facets as in 9.2.4. Models are the smooth affine o-models descended in 9.2.5, with their relative identity components.",
+        "Recorded Lean scope (corrected Definition 4.1.26 part only): the published, unproved BruhatTitsAvailabilityStatement is ∃ 𝔅 : KPBuildingAssignment.{u}, 𝔅.IsValid. It asserts that one assignment of KPBuildingDatum to every connected reductive G over every nonarchimedean local field F in universe u satisfies all ten corrected axioms of the Definition 4.1.26 row, including the comparisons of 4.1.1 and 4.1.17 between the data assigned to different groups and fields. It differs from the source in four ways: it uses the corrected ten-axiom list rather than the seven printed in the theorem; Axiom 4.1.27 is not part of it; it asserts existence of some data rather than availability for the descended construction B(G_K)^Gamma, its apartments, facets and models; and the source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields. The building, apartment, chamber and facet assertions of the theorem have no separate Lean declaration. The status statement of this row covers only this part, which is not the program's certificate."
       ],
       "conclusion": "B with these apartments and polysimplices is a building whose apartments correspond bijectively to maximal k-split tori. Chambers and facets are fixed parts of Gamma-chambers and Gamma-facets, and G(k) acts by polysimplicial isometries. For the program's certificate, the constructed geometry and descended models must satisfy every axiom of corrected Definition 4.1.26 and Axiom 4.1.27, using the source assembly and the explicitly derived completion routes below.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement",
+        "Langlands.Geometry.Building.FullValidity.Assignment"
+      ],
       "dependencies": [
         "Quasi-split Chapter 6–8 building and actual integral models; Corollary 2.3.8; descent Fact 2.10.16; special k-tori Proposition 9.3.4",
         "Complete NPC fixed-point theory (Theorem 1.1.15), corrected 9.2.1; geometry and restricted-building arguments of Sections 9.3–9.4, including corrected 9.3.25 and AS5 Proposition 9.4.35",
         "Axiom-by-axiom source map in Section 9.5, expanded below; for 4.1.16 use Sections 9.6 and 7.3–7.4 with corrected every-point Corollary 4.4.5",
         "For 4.1.17, Proposition 7.9.5 and transport of the descended construction under all covering field/group isomorphisms; a Gamma action alone is not the full axiom",
-        "G(k)^0=G(K)^0 intersect G(k) (9.3.24) and the G(k)^1 intersection identity; model base change and root compatibility for Axiom 4.1.27"
+        "G(k)^0=G(K)^0 intersect G(k) (9.3.24) and the G(k)^1 intersection identity; model base change and root compatibility for Axiom 4.1.27",
+        "Published partial target, not the certificate: Langlands.Geometry.Building.RootValuationBuildingConstructionStatement (module of the same name) asks, for every nonarchimedean local field F and connected reductive G/F, for constructed P : ParahoricBuildingData G, realization and splitting with only the five Section 4.2 axiom witnesses (one-group 4.1.1, 4.1.2, 4.1.4, 4.1.6, 4.1.9) on the existing valuation quotient. Its proof task is 00b6788c-23c3-4b22-88f5-41fdbc6d3654. Together with metricRealization it would make the Proposition 4.2.7 and Theorem 4.2.10 rows unconditional; it does not supply 4.1.8, 4.1.16, 4.1.17, 4.1.20, 4.1.22, 4.1.27 or the 4.1.1 comparison clauses.",
+        "Open proof obligation: BruhatTitsAvailabilityStatement has no proof task. Its proof belongs to this program and is split into the focused statements of the next entry; task 00b6788c-23c3-4b22-88f5-41fdbc6d3654 covers only the five Section 4.2 axioms above. Published statements with the hypothesis 𝔅.IsAvailableFor F G hG or 𝔅.IsValid are conditional on it. Among them are AvailableCartanStatement (Theorem 5.2.1 row, proved by availableCartan, artifact c3a16a8e-fad7-484f-9e90-64f897f020eb) and AvailableIwasawaStatement (Theorem 5.3.4 row, proved by availableIwasawa, artifact 42bb1c08-a7ac-49f5-a197-dc1d5707a42e), and two Renard-sourced statements whose proof tasks belong to proof task 8c39faa0-2a70-4fc4-a027-914987aba924: Langlands.Plancherel.RenardCartan.AvailableRenardCartanStatement (task be989fac-448d-4a56-ad1b-663853caf8cd) and Langlands.BruhatTits.SpecialCompact.AvailableSimultaneousStandardBasisStatement (task 8d4643b8-dcf9-476e-a86f-04b62b8d738f). Task 7dc04fe2-f965-4f59-b63c-75f5012b3f64 published three more statements in Langlands.BruhatTits.SpecialCompact, first in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0: ValidAssignmentTorusRebasingStatement and AvailableSpecialLeviCompactStatement assume 𝔅.IsValid, and AvailableSpecialVertexExistenceStatement assumes 𝔅.IsAvailableFor F G hG. Their proof tasks are 9ec91e66-99df-4afa-be5c-3e5c59207196, bbd398f5-8ddc-4b82-85ab-bf3f0ef59d81 and 8ecbd7c3-bf60-4c93-a0ef-afa198caf8b3. None of these tasks proves that available data exist.",
+        "Decomposition (KP 4.1.28 assigns the axioms to Chapters 6–8). Six published statements of this program, first in Library commit 58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af, split availability. KPBuildingAssignment.isAvailableFor_iff separates IsAvailableFor into KPBuildingDatum.SatisfiesGroupAxioms, the comparison clauses of Axiom 4.1.1 and Axiom 4.1.17. Accordingly GroupAxiomsExistenceStatement (every connected reductive G over every nonarchimedean local field has some KPBuildingDatum satisfying the clauses of the ten axioms that concern G alone), BuildingComparisonAxiomStatement (the comparison clauses of Axiom 4.1.1 for all supplied valuation-building data; proof task Task 5427, 45fca8a2-fdf4-4530-98eb-a6307a31f6cf) and IsomorphismCompatibilityAxiomStatement (Axiom 4.1.17 for all supplied data; proof task Task 5428, fa830bf4-4cc7-4e50-9b79-c65dfb6110c4) are intended to give BruhatTitsAvailabilityStatement. GroupAxiomsExistenceStatement is in turn intended to follow from RootValuationBuildingConstructionStatement together with RootGroupActionAxiomStatement (Axiom 4.1.8(2),(3); Task 5425, 7aba1f84-72ba-4b7d-b839-5e1bb849fcf2), IwahoriDecompositionAxiomStatement (Axiom 4.1.16; Task 5426, 96685786-b196-4cbf-83bc-4bdee7ffb004) and IntegralModelAxiomsStatement (Axioms 4.1.20 and 4.1.22; Task 5429, cd2ad671-3edf-4905-a0e2-e7aa2b160b91). These two implications are not published; the assembly proof tasks will be published once their inputs are proved. The published reduction rootValuationBuildingConstructionReduction (module RootValuationBuildingConstructionReduction, Task 4749) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement (KP Theorem 9.6.5; proof task 17c6d83c-1e02-4345-b9d6-0a8f711e778b), ActualApartmentSplittingStatement (Task 5439, 4d8b4782-7726-4ab3-bb88-fc3df18693fc), AffineIwahoriTitsStatement (task 20fbe465-f4ae-4fe9-9846-2201f1c31d28) and AffineIwahoriTitsBuildingStatement (Task 5440, 81a85d8b-3e8d-454c-97f4-d9b0a3c7e748). Through ParahoricBuildingData.fiveAxioms_of_statements the last three also give ChapterSevenBuildingAxiomsStatement (published by this program, first in Library commit 8c11c93f98b439395e0e7da779c98bb27e24bd6d; proof task Task 5470, 4aa6902d-5c5f-4ca6-9502-061842714858): for supplied ParahoricBuildingData satisfying V 7 and AS 2–AS 5, a polysimplicial realization and a splitting with the other six predicates of the corrected opening of Section 4.2.",
+        "Chapter 9 descent rows: Section 9.2.1, Proposition 9.3.4 and Theorem 9.6.5 record the published statements of the unramified-descent route to ValuationApartmentAxiomsExistenceStatement, including the proved reduction valuationApartmentAxiomsExistenceReduction; Lemma 9.8.1 records the existence statement for the §9.8 filtration of Z(k)."
       ],
       "consumer_or_regression": "Release 1 general-instance certificate, then actual parahoric reduction, inflation and compact induction. Check anisotropic and torus reduced/enlarged factors, a multipliable root and a nontrivial component example. A Gamma-chamber or Gamma-vertex need not be a K-chamber or K-vertex.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "f81d0fe7-8c61-4e05-bfcc-e7d6b14a3f04"
+      ],
+      "publication_commits": [
+        "230ec08a058832bd6941fa887c30897e4826429b"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "f84d7d5e-94fd-4deb-b771-14d57bcf1815",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit 230ec08a; statement_returns_prop true."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 9.2.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.325–326 / PDF pp.356–357; special k-tori and special k-apartments in §9.2.2 at printed p.326 / PDF p.357; a Γ-fixed point in a special k-apartment in the proof of Proposition 9.3.6 at printed pp.333–334 / PDF pp.364–365"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.39 (Section 9.2)",
+        "change": "The second full paragraph on printed p.326 is replaced: for x in an apartment A with maximal K-split torus T, choose a finite Galois k' ⊂ K over which T is defined and split; Gal(K/k') fixes A pointwise, so the Γ-orbit of x factors through Gal(k'/k) and is finite. A paragraph is added at the end of 9.2.1: a bounded Γ-stable subgroup of G(K) has a Γ-fixed fixed point in B(G_K), by Corollary 4.2.14, Proposition 4.2.18, Proposition 4.2.7 with Lemma 1.1.11, and Theorem 1.1.15 applied to the closed convex hull of a Γ-orbit."
+      },
+      "hypotheses": [
+        "Chapter 9 standing hypotheses (printed p.323 / PDF p.354): k is discretely valued with Henselian valuation ring o and perfect residue field f; K is the maximal unramified extension in a fixed separable closure, with valuation ring O, and Γ = Gal(K/k). G is a connected reductive k-group; no quasi-splitness or tameness is assumed.",
+        "B(G_K) is the Chapter 7 building of the quasi-split group G_K, with the Γ-action of Proposition 7.9.5 satisfying γ(g·x) = γ(g)·γ(x). T is a maximal K-split torus of G_K with apartment A_T; its Γ-stability uses that T is defined over k, as for the special k-tori of §9.2.2.",
+        "Recorded Lean scope: UnramifiedGaloisFixedApartmentStatement (module Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement) quantifies over every nonarchimedean local field F, every connected reductive G over Spec F and every commutative group scheme T with i : T.toGrp ⟶ G whose scalar extension i_K is a maximal split torus of G_K. K is the Library's maximal unramified extension inertiaFixedField F (definitionally UnramifiedClosure F) with its F-algebra structure, and scalar extension is base change along algebraBaseMap F K. For every D : KPApartmentData i_K ω, with ω the order of the normalized integer valuation MaximalUnramified.valuation F, an N(K)-stable equipollence class of valuations of the root datum of (G_K, T_K) that stands for A_T by §6.1, it assumes KPApartmentData.GaloisStable F K i D (each σ : K ≃ₐ[F] K maps members of D into D under the coefficient transport RootFunctionFamily.galoisAction) and asserts a point x : D.Apartment with galoisAction σ x = x for every σ. The Γ-stability that KP derive from the action on B(G_K) is a premise; the published IntegerValuation.IsOmegaCompatible.galoisStable proves it for every class satisfying V 6 for a scalar-extended centralizer datum. T need not contain a maximal F-split torus. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u. The Γ-action on B(G_K), the finiteness of all Γ-orbits, the embedding into the enlarged building and the added bounded-subgroup assertion have no declaration in this row."
+      ],
+      "conclusion": "If T is defined and split over a finite unramified k'/k, Gal(K/k') fixes A_T pointwise. If T is defined over k, then A_T is Γ-stable and Γ acts on it by affine maps through a finite quotient Gal(k'/k). Every Γ-orbit on B(G_K) is finite, so B(G_K) has a Γ-fixed point (Corollary 4.2.12). The zero section x ↦ (0, x) of the enlarged building V(Z^0_{G,K}) × B(G_K) is Γ-equivariant and G(K)^1-equivariant, so it restricts to a G(k)^1-equivariant embedding of B(G_K)^Γ into the Γ-fixed enlarged building, where G(k)^1 = G(K)^1 ∩ G(k) (§9.5, printed p.364 / PDF p.395); the projection of the enlarged building onto B(G_K) is Γ- and G(K)-equivariant. The printed text calls the zero section equivariant under ΓG(K) and its restriction G(k)-equivariant; this fails whenever the center of G contains a nontrivial k-split torus (see the regression), and the 2024 corrections do not address it. As corrected, a bounded Γ-stable subgroup of G(K) has a Γ-fixed fixed point. In the proof of Proposition 9.3.6 this gives a Γ-fixed point in every special k-apartment.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.UnramifiedGaloisFixedApartmentStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement"
+      ],
+      "dependencies": [
+        "Proposition 7.9.5; Proposition 4.4.3 and H^1(Gal(K/k'), V) = 0 for the pointwise fixation; Corollary 4.2.12; for the equivariance of the zero section, the central action of Section 4.3 (printed pp.178–180 / PDF pp.209–211), whose kernel is G(K)^1 by Lemma 4.3.1; for the corrected addition, Corollary 4.2.14, Proposition 4.2.18, Proposition 4.2.7, Lemma 1.1.11 and Theorem 1.1.15.",
+        "Library inputs named by the statement's Markdown: KPApartmentData.exists_galoisFixed (the analogue for finite extensions K/k), the affine subspace galoisFixedApartment with mem_galoisFixedApartment_iff, under which the conclusion says that galoisFixedApartment is nonempty, and IntegerValuation.IsOmegaCompatible.galoisStable.",
+        "Proof successor: lean.proof@1 Task 5513 (a23aef86-8894-44b0-b1c9-b76314d0865f)."
+      ],
+      "consumer_or_regression": "The apartments A^Γ of §9.2.3 and Construction 9.6.1. The fixed-point set of UnramifiedValuationDescentStatement (Theorem 9.6.5 row) is nonempty only by this statement. Regression: for the norm-one torus T of the unramified quadratic extension in SL_2, T_K is a maximal K-split torus, Frobenius acts on V(T_K) by −1 and the Γ-fixed part of A_T is a single point; T is not special, which the Lean statement allows. Regression for the zero section: for k = Q_2 and G = G_m, B(G_K)^Γ is a single point and the Γ-fixed enlarged building is R, on which 2 ∈ G(k) (normalized valuation 1) acts by t ↦ t − 1; no G(k)-equivariant map from the point exists, while G(k)^1 = Z_2^× acts trivially on R.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "528e1be2-9d8b-452b-ad68-e956bf9179ee"
+      ],
+      "publication_commits": [
+        "9bc92c384fa84da7ce5811a5979d408fb69d40b0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.UnramifiedGaloisFixedApartmentStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "d1da49d0-bde2-4462-b14a-ec1c5c1f8046",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 9bc92c38."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition 9.3.4",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.332 / PDF p.363; special k-tori in §9.2.2 at printed p.326 / PDF p.357"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.39–41 (Sections 9.2 and 9.3)",
+        "change": "No entry changes Proposition 9.3.4 or its proof. The proof cites the finite-quotient action of 9.2.1, whose paragraph on printed p.326 is replaced (PDF p.39). The Section 9.3 entries concern Propositions 9.3.11, 9.3.12, 9.3.13, 9.3.24 and 9.3.25."
+      },
+      "hypotheses": [
+        "Chapter 9 standing hypotheses (printed p.323 / PDF p.354): k is discretely valued with Henselian valuation ring o and perfect residue field f; K is the maximal unramified extension in a fixed separable closure, with valuation ring O, and Γ = Gal(K/k). G is a connected reductive k-group; no quasi-splitness or tameness is assumed.",
+        "A special k-torus (§9.2.2) is a k-torus T ⊂ G that contains a maximal k-split torus of G and such that T_K is a maximal K-split torus of G_K.",
+        "Recorded Lean scope: SpecialTorusExistenceStatement (module Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement) quantifies over every nonarchimedean local field F, every connected reductive G over Spec F and every maximal split torus iS : S.toGrp ⟶ G (IsMaximalSplitTorus). K is the Library's maximal unramified extension inertiaFixedField F (definitionally UnramifiedClosure F) with its F-algebra structure, and scalar extension is base change along algebraBaseMap F K. It asserts a commutative group scheme T with iT : T.toGrp ⟶ G and f : S ⟶ T such that CommGroupScheme.groupHom f ≫ iT = iS, iT is a closed subgroup (IsClosedSubgroup), and the scalar extension iT_K is a maximal split torus of G_K. That T is an F-torus follows from the last condition and is not stated separately. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u."
+      ],
+      "conclusion": "Every maximal k-split torus S of G is contained in a special k-torus.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.SpecialTorusExistenceStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement"
+      ],
+      "dependencies": [
+        "Source proof: S(K)^1 is Γ-stable and acts boundedly on B(G_K) (Proposition 4.2.13); with the finite-quotient action of corrected 9.2.1, Theorem 1.1.15 gives a point x fixed by Γ and S(K)^1. The schematic closure of S in the descended model G^1_x of 9.2.5 is a torus (Proposition B.2.4); Proposition 8.2.1(1) gives a closed o-torus containing it whose special fibre is a maximal f-torus of the special fibre, and its generic fibre is the special torus.",
+        "Proof successor: lean.proof@1 Task 5514 (632bdfae-d1a6-4680-acf6-e5c1d32a17d8)."
+      ],
+      "consumer_or_regression": "Special k-apartments (§9.2.2–9.2.3); Axiom 4.1.27 in §9.5; the proof of Lemma 9.8.1; the published reduction valuationApartmentAxiomsExistenceReduction (Theorem 9.6.5 row), which takes SpecialTorusExistenceStatement as an input. Regression: for anisotropic G the maximal split torus is trivial, and the statement asserts a k-torus that is maximally split over K.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "528e1be2-9d8b-452b-ad68-e956bf9179ee"
+      ],
+      "publication_commits": [
+        "9bc92c384fa84da7ce5811a5979d408fb69d40b0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.SpecialTorusExistenceStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "8ffb183d-c0ab-46a7-9a9f-4234b0c5f135",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 3c9b0579; kind definition; statement_returns_prop true; the module is byte-identical to commit 9bc92c38."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Theorem 9.6.5",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.366–367 / PDF pp.397–398; §9.6 opening, Construction 9.6.1 and Remark 9.6.2 at printed pp.364–365 / PDF pp.395–396; Lemma 9.6.3 at printed p.366 / PDF p.397; §9.6.6 at printed p.367 / PDF p.398; §9.5 at printed pp.363–364 / PDF pp.394–395"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF pp.39–41 (Chapter 9)",
+        "change": "No entry concerns Section 9.6. The corrections replace the first lines of the proof of Proposition 9.3.24 and delete the word \"non-divisible\" in the proof of Proposition 9.4.8; neither statement, both of which the proofs of Lemma 9.6.3 and Theorem 9.6.5 use, changes. The depth reading of Lemma 9.6.3 recorded in Bundle B below is not an authors' correction."
+      },
+      "hypotheses": [
+        "Chapter 9 standing hypotheses (printed p.323 / PDF p.354): k is discretely valued with Henselian valuation ring o and perfect residue field f; K is the maximal unramified extension in a fixed separable closure, with valuation ring O, and Γ = Gal(K/k). G is a connected reductive k-group; no quasi-splitness or tameness is assumed.",
+        "S is a maximal k-split torus with apartment A in B(G) = B(G_K)^Γ, N and Z its normalizer and centralizer. A point x ∈ A is, by Remark 9.6.2, a Γ-invariant valuation of the root datum of (G_K, T_K) for a special k-torus T ⊇ S, and ϕ^x_a(u) = ψ^a_u(x) by Construction 9.6.1.",
+        "Recorded Lean scope: ValuationApartmentAxiomsExistenceStatement (module of the same name, Task 4749) asserts, for every nonarchimedean local field F and connected reductive G over Spec F, some B : ValuationBuildingData G (a maximal split torus, an N(F)-stable equipollence class of localFieldOrder F-compatible valuations of its root datum, the actual centralizer and V 6) with B.SatisfiesApartmentAxioms (V 7 and AS 2–AS 5). It asks for some torus and some class, whereas KP's class is canonical for every torus, and it includes the §9.5 apartment axioms transported by §9.6.6. This program's module Langlands.Geometry.Building.UnramifiedValuationDescentStatement splits it. K is the Library's maximal unramified extension inertiaFixedField F (definitionally UnramifiedClosure F) with its F-algebra structure, and scalar extension is base change along algebraBaseMap F K. UnramifiedValuationDescentStatement takes a maximal split torus iS, a torus T with iT and f : S ⟶ T, groupHom f ≫ iT = iS and iT_K a maximal split torus of G_K, opposite factor pairs hE for iT_K (a Prop that the published rootRankOneFactorization proves), a class D : KPApartmentData iT_K ω for the order ω of MaximalUnramified.valuation F, and a centralizer datum C with full V 6 (IntegerValuation.IsOmegaCompatible). Call x fixed when galoisAction σ x = x for every σ : K ≃ₐ[F] K, and let φ x be the published torus-then-field restriction torusFieldRestrictedRootFunctionFamily of x along f_K. The statement asserts DS : KPApartmentData iS (localFieldOrder F) and CS : CentralizerDatum iS with DS.IsOmegaCompatible CS (V 6 over F), such that ψ ∈ DS.carrier iff ψ = φ x for a fixed x, φ is injective on fixed points, and for every n ∈ N(F) and fixed x some fixed y has φ y = n • φ x and D.apartmentMap y = n • D.apartmentMap x in D.ReducedBuilding. ValuationBuildingApartmentAxiomsStatement asserts B.SatisfiesApartmentAxioms for every B : ValuationBuildingData G with [IsAffineHom G.X.hom]; quantifying over every class instead of the constructed one relies on the uniqueness of Proposition 6.2.6. UnramifiedValuationDescentPackageStatement is their conjunction. The theorem valuationApartmentAxiomsExistenceReduction proves ValuationApartmentAxiomsExistenceReductionStatement: UnramifiedQuasiSplitStatement, QuasiSplitIntegerApartmentExistenceStatement, SpecialTorusExistenceStatement and the two statements above imply ValuationApartmentAxiomsExistenceStatement. KP construct ϕ^x from the descended building; the Lean statement uses the restriction, which agrees with ϕ^x by Lemma 9.6.3 read with depth m·r for upstairs roots restricting to m·a. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u."
+      ],
+      "conclusion": "For x ∈ A, ϕ^x = (ϕ^x_a)_{a∈Φ} is a valuation of the root datum (U_a(k))_{a∈Φ} compatible with ω in the sense of Definition 6.1.2. The map x ↦ ϕ^x is equivariant under V(S) ⋊ N(k), and its image is an equipollence class. By §9.6.6, z ↦ ϕ^z is an isomorphism of affine spaces that identifies the affine root systems and the G(k)^0 stabilizers, and it extends to a G(k)-equivariant bijection between the descended building and the Chapter 7 building of this class.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceStatement",
+        "Langlands.Geometry.Building.UnramifiedValuationDescentStatement",
+        "Langlands.Geometry.Building.ValuationBuildingApartmentAxiomsStatement",
+        "Langlands.Geometry.Building.UnramifiedValuationDescentPackageStatement",
+        "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceReductionStatement",
+        "Langlands.Geometry.Building.valuationApartmentAxiomsExistenceReduction"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceStatement",
+        "Langlands.Geometry.Building.UnramifiedValuationDescentStatement"
+      ],
+      "dependencies": [
+        "Source proof: V 0 and V 1 from Construction 9.6.1 and Proposition 9.4.3; equivariance from Lemma 9.4.15; V 2 from the same computation; V 6 from Proposition 9.3.16; V 3 from Proposition 9.4.8 and Remark 9.6.4; V 4 and V 5 from Corollary 9.4.10. Lemma 9.6.3 (Lemma 9.4.21, Propositions 7.3.12 and 9.3.24) compares U_{a,x,r} with the upstairs filtrations.",
+        "Recorded Lean route: valuationApartmentAxiomsExistenceReduction takes a maximal split torus from exists_maximalSplitTorus and a special torus T ⊇ S from SpecialTorusExistenceStatement (Proposition 9.3.4 row). It makes G_K connected reductive by connectedReductiveFieldExtensionStatement and quasi-split by UnramifiedQuasiSplitStatement. QuasiSplitIntegerApartmentExistenceStatement, applied to K with MaximalUnramified.valuation_surjective and valuationSubring_isHenselian, gives the upstairs class with V 6. rootRankOneFactorization gives hE. UnramifiedValuationDescentStatement descends the class, and ValuationBuildingApartmentAxiomsStatement supplies the apartment axioms.",
+        "Proof obligations: ValuationApartmentAxiomsExistenceStatement has proof task Task 5441 (17c6d83c-1e02-4345-b9d6-0a8f711e778b), which the reduction reduces to its five inputs. UnramifiedValuationDescentStatement has proof task Task 5553 (4401e3df-51b5-4132-892c-74e02328d7ee), and ValuationBuildingApartmentAxiomsStatement Task 5554 (265c7ec0-42c1-44ad-9e4f-06f38c5e51d3). SpecialTorusExistenceStatement is in the Proposition 9.3.4 row. UnramifiedQuasiSplitStatement follows from HenselianDiscreteQuasiSplitStatement by the published unramifiedQuasiSplit_of_henselianDiscrete; that statement has proof task 7568ebe8-7b19-4e71-8918-de7d3492bacc and the published conditional reduction henselianDiscreteQuasiSplitReduction from QuasiSplitRegularClassRationalStatement. QuasiSplitIntegerApartmentExistenceStatement has proof task 8ffe0456-3bbd-46c6-9fe1-91be8c433458 and the published conditional reduction quasiSplitIntegerApartmentExistence_of_coordinates from CentralSplitTorusCharacterStatement and QuasiSplitCoordinateApartmentStatement. A proof of the descent statement also needs the Γ-fixed point of the Section 9.2.1 row."
+      ],
+      "consumer_or_regression": "The published rootValuationBuildingConstructionReduction (Theorem 9.2.7 row) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement and three further statements. The §9.6.6 comparison feeds the derived route for Axiom 4.1.16, and the §9.8 concave function groups use this class. Regression: for the unramified quasi-split SU_3, the relative root system is BC_1, and the upstairs root restricting to 2a must be filtered at depth 2r by V 4; the uniform depth of the printed Lemma 9.6.3 display fails there.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "e0b14a71-bc99-4ac1-b5b5-041d9f4ca3e6",
+        "cab86217-ea50-409b-9d4d-3440ee3e3a43"
+      ],
+      "publication_commits": [
+        "58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af",
+        "3c9b0579a8f2d36d16294ce48b465d1ec5aee273"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "05c65b4b-4943-4f53-9e8e-f8017a57feb6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to its artifact."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.UnramifiedValuationDescentStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "086644d8-0e80-4d12-aa2b-eb0e93d3ebc9",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 3c9b0579."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingApartmentAxiomsStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "195737d3-0fed-4a30-9357-63f705ababa0",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 3c9b0579."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.UnramifiedValuationDescentPackageStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "88267b7d-250a-4c5d-905f-f25f49e3dd15",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 3c9b0579."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceReductionStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "03f5a25d-7645-4ed3-bec8-c100c8950cf4",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 3c9b0579."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.valuationApartmentAxiomsExistenceReduction",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "140ce8b9-1e69-457b-be94-4bc51e6d2ff4",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind theorem; the module is byte-identical to commit 3c9b0579."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Lemma 9.8.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.374–375 / PDF pp.405–406 (construction of Z(k)_r in §9.8 and Lemma 9.8.1); Definition 7.2.1 at printed p.245 / PDF p.276; Definition 7.1.3 at printed p.242 / PDF p.273; Proposition 13.2.5(4) at printed p.469 / PDF p.500"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.41 (Section 9.8); PDF p.50 (Appendix B)",
+        "change": "In the second paragraph of the proof of Lemma 9.8.1 the projection B(G) → B(Z) is replaced by B(G)^M → B(Z). The Appendix B entries concern the minimal congruent filtration of tori. Neither changes the filtration or the lemma."
+      },
+      "hypotheses": [
+        "Chapter 9 standing hypotheses (printed p.323 / PDF p.354): k is discretely valued with Henselian valuation ring o and perfect residue field f; K is the maximal unramified extension in a fixed separable closure, with valuation ring O, and Γ = Gal(K/k). G is a connected reductive k-group; no quasi-splitness or tameness is assumed.",
+        "S is a maximal k-split torus and Z = Z_G(S). A functorial filtration of tori satisfying (1) and (2) of §7.2 is fixed (Appendix B). B(Z) is a single point x (Proposition 9.3.9), and Z(k)_r = Z(K)_{x,r} ∩ Z(k), where Z(K)_{x,r} is the §7.3 group of the quasi-split group Z_K for the constant concave function r.",
+        "Recorded Lean scope: CentralizerFiltrationExistenceStatement (module of the same name) quantifies over every nonarchimedean local field F, every G over Spec F with [IsAffineHom G.X.hom] and every P : ParahoricBuildingData G with P.SatisfiesApartmentAxioms (V 6 in the data, V 7 and AS 2–AS 5). It asserts some Zf : P.CentralizerFiltration (subgroups Z(F)_r of Z(F) for r : ℝ≥0, decreasing, with trivial intersection and Z(F)_0 = P.centralizerZero) with Zf.SatisfiesFiltrationAxioms and Zf.IsOpenFiltration. SatisfiesFiltrationAxioms is IsCommutatorFriendly (the commutator clause of Definition 7.2.1 with the Z-component of Definition 7.1.3), IsNormalizerStable (N(F)-stability), IsCommutatorFiltered ([Z(F)_r, Z(F)_s] ⊆ Z(F)_{r+s}) and IsRootCompatible ([Z(F)_r, U_{a,x,s}] ⊆ U_{a,x,r+s} U_{2a,x,r+s}); IsOpenFiltration makes each Z(F)_r open in Z(F). The last three axioms are not clauses of Definition 7.2.1: they are derived properties of the §9.8 filtration, from its independence of S with functoriality and from Proposition 13.2.5(4). Only existence is asserted, so KP's filtration for a chosen filtration of tori is one witness; no filtration of tori is constructed. By Proposition 6.2.6 the class of P is the canonical one. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u."
+      ],
+      "conclusion": "Z(k)_0 = Z(k)^0, and the filtration Z(k)_r is commutator friendly in the sense of Definition 7.2.1: for u ∈ U_{a,x,i} and u' ∈ U_{-a,x,j} with i + j > 0, the Z-component of (u, u') lies in Z(k)_{i+j}. By Propositions 7.3.17 and 7.6.4, Z(k)_r does not depend on S, and §9.8.2 applies §7.3 to G and every concave function.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.CentralizerFiltrationExistenceStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.CentralizerFiltrationExistenceStatement"
+      ],
+      "dependencies": [
+        "Source proof: Z(k)_0 = Z(k)^0 from Z(K)_{x,0} ⊆ Z(K)^0 and the action of Z(k) on B(Z) = {x}. Commutator friendliness uses a special k-torus of Z containing S (Proposition 9.3.4), Lemma 9.6.3, Lemma 7.1.2 and V 3 for Z_K, Lemma 7.2.3 and Lemma 8.5.19, with the corrected projection B(G)^M → B(Z) of (9.7.1) and Corollary 9.7.3.",
+        "Proof successor: lean.proof@1 Task 5552 (6f2a4efa-b6d0-4494-a8f4-d65632c460d4)."
+      ],
+      "consumer_or_regression": "Supplies the Zf premise of the published MoyPrasadFiltrationStatement and its four conjuncts (Proposition 13.2.5 row): with proofs of these, the Moy–Prasad results would hold for every P satisfying the apartment axioms without a supplied filtration. The concave function groups G(k)_{x,f} of §9.8.2. Regression: the conclusion fixes only the listed axioms, so different admissible filtrations of tori give different witnesses; a consumer must not assume KP's particular filtration.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "fb1bc376-7e9b-41dd-b6e1-efa863d4f68b"
+      ],
+      "publication_commits": [
+        "3c9b0579a8f2d36d16294ce48b465d1ec5aee273"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.CentralizerFiltrationExistenceStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "50331a4c-5ce4-43eb-af0a-907db1c5e07f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 3c9b0579."
+        }
+      ],
       "external_code": []
     },
     {
@@ -620,21 +1407,154 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "erratum": null,
       "hypotheses": [
         "G is a connected reductive group over the discretely valued Henselian field k. S is a maximal k-split torus, N=N_G(S), Z=Z_G(S); Z(k)^0 and Z(k)^1 are the source subgroups, not arbitrary choices.",
-        "For comparisons with affine actions, use the Chapter 6 root-valuation apartment and affine root system. Constructing this data for general G is a separate obligation."
+        "For comparisons with affine actions, use the Chapter 6 root-valuation apartment and affine root system. Constructing this data for general G is a separate obligation.",
+        "Recorded Lean scope (partial definition): for supplied P : ParahoricBuildingData G over a nonarchimedean local field, P.normalizerZero is the image of P.centralizerZero (the actual Z(F)^0) in normalizerPoints P.i = N(F), and P.IwahoriWeylGroup := normalizerPoints P.i ⧸ P.normalizerZero is Wtilde^0 as a coset type. Its group structure is used under the instance argument [P.normalizerZero.Normal]. Since Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0 that normality is proved for every supplied P: ParahoricBuildingData.normal_normalizerZero (module ZeroSubgroupCommutatorNormality, published with artifact dce35461-bb3e-429c-9068-cf0465a14731) proves that P.zeroSubgroup = G(F)^0 is normal in G(F), because commutators of G(F) lie in G(F)^♮, and concludes through normalizerZero_normal_of_zeroSubgroup_normal and the published cover comparison. The earlier conditional routes (normalizerZero_normal from UnramifiedZeroPointsIndependenceStatement, normalizerZero_normal_of_unipotentNormalizerCoset) remain. The Theorem 7.8.1 statements also assert it as a conclusion. AffineRootSystem.affineWeylGroup P.affineRoots is W_aff, the subgroup of affine automorphisms of the apartment generated by the affine root reflections. P.affinePart is the separate image of N(F) ∩ G(F)^0 in Wtilde^0. Its identification with W_aff is part of IwahoriWeylExactSequence, not of a definition. P.toComponents is the map Wtilde^0 → G(F)/G(F)^0. Wtilde^1=N(k)/Z(k)^1, the adjoint group Wtilde_ad and the maps Wtilde^0→Wtilde^1→Wtilde_ad are not formalized. The definition status of this row covers only Wtilde^0, W_aff and the affine part."
       ],
       "conclusion": "The Iwahori–Weyl group is Wtilde^0=N(k)/Z(k)^0. Keep the distinct quotient Wtilde^1=N(k)/Z(k)^1 and the affine Weyl group W_aff generated by affine root reflections. The maps Wtilde^0→Wtilde^1→Wtilde_ad need not be injective; the affine action can lose component or central data.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.ParahoricBuildingData.normalizerZero",
+        "Langlands.Geometry.Building.ParahoricBuildingData.IwahoriWeylGroup",
+        "Langlands.Geometry.Building.ParahoricBuildingData.affinePart",
+        "Langlands.Geometry.Building.ParahoricBuildingData.toComponents",
+        "Langlands.Geometry.Building.AffineRootSystem.affineWeylGroup",
+        "Langlands.Geometry.Building.ParahoricBuildingData.normal_normalizerZero"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.IwahoriWeyl",
+        "Langlands.Geometry.Building.AffineRootSystem",
+        "Langlands.Geometry.Building.ZeroSubgroupCommutatorNormality"
+      ],
       "dependencies": [
         "Definitions 2.6.15 and 2.6.23 and the torus/centralizer subgroup comparisons",
-        "Chapter 6 affine roots and normalizer action for the comparison maps; 6.6.2 in the quasi-split case and corrected 7.5.1 with AS5 for the general Wtilde_sc≃W_aff comparison"
+        "Chapter 6 affine roots and normalizer action for the comparison maps; 6.6.2 in the quasi-split case and corrected 7.5.1 with AS5 for the general Wtilde_sc≃W_aff comparison",
+        "Missing for this row: a Z(F)^1 quotient Wtilde^1 of N(F) and the adjoint comparison. The normality of Z(F)^0 in N(F) is proved for every supplied datum since Library commit e449cde9 (normal_normalizerZero)."
       ],
       "consumer_or_regression": "Theorem 7.8.1 and Hecke indexing beyond simply connected split groups. Regression must distinguish the actual quotient from its affine image.",
-      "formal_status": null,
+      "formal_status": "definition",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "dce35461-bb3e-429c-9068-cf0465a14731"
+      ],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3",
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.IwahoriWeylGroup",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "7e21bb8d-01ee-4632-a37b-b10c52678fb4",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.affinePart",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "d2867306-5414-4f79-9334-618dfd426112",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.normal_normalizerZero",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "0159d9aa-3b8b-4d0f-ad23-481b23653132",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem from a supporting module of artifact dce35461, which is listed for this theorem only."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Lemma 6.7.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.233 / PDF p.264; Chapter 6 standing hypotheses at printed p.195 / PDF p.226; Lemma 6.1.6 and Definitions 6.1.2, 6.1.7 at printed pp.199–201 / PDF pp.230–232"
+      },
+      "erratum": null,
+      "hypotheses": [
+        "k has a discrete valuation normalized by ω(k^×)=Z and a Henselian valuation ring; G is connected reductive over k (Chapter 6 standing hypotheses). M is a Levi subgroup with maximal split torus S, and A(S,G) is an equipollence class of valuations of the root datum of (G,S). The corrections of 1 November 2024 contain no entry for §6.7 (PDF p.32).",
+        "Recorded Lean scope: LeviApartmentRestrictionStatement quantifies over every nonarchimedean local field F of either characteristic in universe u with ω = localFieldOrder F, every G with hG : IsConnectedReductive G, every maximal split torus i : S → G, every generic cocharacter ν and every J ⊆ simpleRelativeRoots i ν, with the actual standard Levi M_J = Standard.leviScheme i ν J, j = Standard.leviHom i ν J and iM = Standard.leviTorusHom i ν J. For every D : KPApartmentData i (localFieldOrder F) it asserts ∃ DM : KPApartmentData iM (localFieldOrder F) such that every point of D has a restriction in DM (IsLeviRestriction j), every point of DM is such a restriction, and restrictions xM, xM' of x, x' are equal iff x'.val = v +ᵥ x.val for some v ∈ V(S) on which every relative root of (M_J, S) vanishes. Only standard Levi subgroups at the same torus are covered. Compatibility with ω is the S(F) part recorded by KPApartmentData, whose normalizer stability for M_J is part of the conclusion. Part (4) is expressed by surjectivity and this fibre description, and part (5) (Chevalley valuations of quasi-split G) is not formalized. Existence of D is not asserted."
+      ],
+      "conclusion": "Each φ_M is a valuation of the root datum of (M,S), compatible with ω if φ is; A(M,S) = {φ_M} is an equipollence class; φ ↦ φ_M descends to an isomorphism A(S,G)/V(A) → A(M,S) of affine spaces over V(S'_M), where A is the maximal torus in S'_G ∩ Z(M); for quasi-split G, Chevalley valuations restrict to Chevalley valuations.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.LeviApartmentRestrictionStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.LeviApartmentRestrictionStatement"
+      ],
+      "dependencies": [
+        "Definitions 6.1.2 and 6.1.7 and Lemma 6.1.6; restriction of the root groups of M to those of G.",
+        "Suggested proof route: the published construction leviRestrictedApartmentData with leviApartmentProjection (module Langlands.BruhatTits.SpecialCompact.LeviApartmentRestriction, artifact 81fa76f0-f8d0-49cb-a920-8453d82a3523, Worker 164) gives the restricted class and the surjective projection for a Levi presented as one cocharacter centralizer; the fibre clause is additional.",
+        "Proof successor: lean.proof@1 Task 5414 (4413f5d7-43ca-46d6-a3f8-d4799eba2603)."
+      ],
+      "consumer_or_regression": "Section 6.7.2 special points; Levi inheritance of special compact subgroups (Langlands.BruhatTits.SpecialCompact.AvailableSpecialLeviCompactStatement, proof task bbd398f5-8ddc-4b82-85ab-bf3f0ef59d81) for Renard V.5.1(5). The published theorem Langlands.BruhatTits.SpecialCompact.exists_leviRestriction_of_omegaCompatible (module LeviApartmentComparison, Worker 123) takes LeviApartmentRestrictionStatement as a premise and gives every point of an ω-compatible class a restriction in any supplied ω-compatible standard-Levi class at the same torus. The published statement Langlands.Geometry.Building.LeviApartmentAxiomsInheritanceStatement of this program (first in Library commit 8c11c93f98b439395e0e7da779c98bb27e24bd6d; proof task Task 5471, 48fef6af-65b7-4623-bb54-9305ae84fcf6) asserts that V 7 and AS 2–AS 5 pass from D to a standard-Levi class DM related to D by some restriction pair.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "851e3550-d582-4076-a891-8d9b00badf3e"
+      ],
+      "publication_commits": [
+        "d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.LeviApartmentRestrictionStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "43b9ea6e-ac3f-4609-819c-182735779ab3",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e7487341; statement_returns_prop true."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Section 6.7.2",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.233–234 / PDF pp.264–265; Definition 1.3.39 and Proposition 1.3.43(3) at printed pp.29–30 / PDF pp.60–61; Definition 6.3.4 at printed p.218 / PDF p.249"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.32, Chapter 6",
+        "change": "Above Remark 6.3.5 read a = ψ̇: the root in the defining condition of Ψ and Ψ′ is the derivative of ψ. No entry concerns §6.7."
+      },
+      "hypotheses": [
+        "The Chapter 6 standing hypotheses of the Lemma 6.7.1 row; M is a Levi subgroup containing the maximal split torus S, and A(S,G) → A(M,S) is the projection of Lemma 6.7.1.",
+        "Recorded Lean scope: LeviSpecialPointRestrictionStatement has the quantifiers of the Lemma 6.7.1 row and quantifies over D : KPApartmentData i (localFieldOrder F) and DM : KPApartmentData (Standard.leviTorusHom i ν J) (localFieldOrder F). Its premise is that IsLeviRestriction j x xM holds for some pair. It concludes that every ψM ∈ DM.affineRoots has some ψ ∈ D.affineRoots with ψ x = ψM xM for all restriction pairs, the same for extendedAffineRoots (Ψ′), and that for every restriction pair with x special for D.affineRoots, xM is special for DM.affineRoots (AffineRootSystem.IsSpecialPoint) and a vertex (AffineRootSystem.IsVertex). IsLeviRestriction replaces the projection of Lemma 6.7.1; the hyperplane-preimage sentence is left implicit and the extra-special sentence is not formalized. Only standard Levi subgroups at the same torus over nonarchimedean local fields are covered."
+      ],
+      "conclusion": "Under the dual of the projection, Ψ(M,S) ⊂ Ψ(S,G) and Ψ′(M,S) ⊂ Ψ′(S,G); affine root hyperplanes of M pull back to affine root hyperplanes; the image of a special point is special, in particular a vertex, and the same holds for extra special points. The image of a vertex need not be a vertex.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.LeviSpecialPointRestrictionStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.LeviSpecialPointRestrictionStatement"
+      ],
+      "dependencies": [
+        "Lemma 6.7.1; Definition 6.3.4; Definition 1.3.39 and Proposition 1.3.43(3).",
+        "Suggested proof route: root-group transport (modules LeviRootTransport and LeviValuationRestriction of Langlands.BruhatTits.SpecialCompact) for the affine roots; the vertex clause from axiom V 0, because AffineRootSystem.isVertex_of_isSpecialPoint needs IsAffineRootSystemWithRankZero, which is not a premise.",
+        "Proof successor: lean.proof@1 Task 5415 (bd8b3443-747f-4eec-bc01-3311650f8e95)."
+      ],
+      "consumer_or_regression": "Special vertices of Levi data for AvailableSpecialLeviCompactStatement and Renard V.5.1(5). Regression: the image of a non-special vertex need not be a vertex.",
+      "formal_status": "statement",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "d664e902-3b89-4fdd-b136-5b2f070a1844"
+      ],
+      "publication_commits": [
+        "d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.LeviSpecialPointRestrictionStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "f70e9f89-d3b3-498b-8ca0-5059f1782a9b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e7487341; statement_returns_prop true."
+        }
+      ],
       "external_code": []
     },
     {
@@ -652,21 +1572,52 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k is discretely valued with Henselian valuation ring and perfect residue field; G is connected reductive over k. S is a maximal k-split torus, A its apartment in the actual Bruhat–Tits building, N=N_G(S) and Z=Z_G(S). These are the Chapter 5 ambient hypotheses.",
-        "Fix a positive system Phi^+ and a special vertex x∈A, with parahoric P_x. Define Z_dom⊆Z(k) by a(omega_Z(z))≥0 for every a∈Phi^+. Use the corrected positive valuation homomorphism of Sections 2.5–2.6."
+        "Fix a positive system Phi^+ and a special vertex x∈A, with parahoric P_x. Define Z_dom⊆Z(k) by a(omega_Z(z))≥0 for every a∈Phi^+. Use the corrected positive valuation homomorphism of Sections 2.5–2.6.",
+        "Recorded Lean scope: AvailableCartanStatement quantifies over every nonarchimedean local field F of either characteristic in universe u, every group scheme G over Spec F with hG : IsConnectedReductive G, and every KPBuildingAssignment 𝔅 with 𝔅.IsAvailableFor F G hG (the full corrected Definition 4.1.26 at this F and G; global IsValid is not assumed). With B := (𝔅.datum F G hG).base it takes every cocharacter nu generic for B.i, whose positive relative roots are Phi^+, and every x : B.Apartment with B.apartment.IsSpecialApartmentVertex x. It concludes ParahoricCartanConclusions B nu x for P_x = B.parahoricAt x, j the point map of the centralizer B.centralizer.j and D = parahoricDominantSet B nu = {z ∈ Z(F) | 0 ≤ a(omega_Z(z)) for every a ∈ positiveRelativeRoots B.i nu}. The three conclusions are Set.univ = P_x · j(D) · P_x as pointwise set products; for z, z' ∈ D, equality of the double cosets of j(z) and j(z') iff z' z^(-1) ∈ B.centralizerZero; and bijectivity of parahoricDominantDoubleCosetMap B nu x from ParahoricDominantQuotient B nu (D modulo the restricted right relation by Z(F)^0) onto P_x\\G(F)/P_x. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields. Existence of an available assignment is not asserted. The theorem availableCartan (module Langlands.BruhatTits.Cartan.AvailableCartanProof) proves AvailableCartanStatement; it was accepted as artifact c3a16a8e-fad7-484f-9e90-64f897f020eb and first published in Library commit d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8. The row's conditional status refers to AvailableCartanStatement, proved under IsAvailableFor."
       ],
       "conclusion": "G(k)=P_x Z_dom P_x, and for all z,z'∈Z_dom, P_x z P_x=P_x z' P_x if and only if z' z^(-1)∈Z(k)^0. Corrected (5.2.2) expresses dominance as omega(a(z))≥0. This indexes dominant centralizer elements modulo Z(k)^0; a universal dominant-cocharacter parametrization is not asserted.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.Cartan.AvailableCartanStatement",
+        "Langlands.BruhatTits.Cartan.ParahoricCartanConclusions",
+        "Langlands.BruhatTits.Cartan.availableCartan"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.Cartan.AvailableCartanStatement",
+        "Langlands.BruhatTits.Cartan.ParahoricDominantQuotient",
+        "Langlands.BruhatTits.Cartan.CentralizerValuation",
+        "Langlands.BruhatTits.Cartan.AvailableCartanProof"
+      ],
       "dependencies": [
         "Special-vertex geometry, affine Bruhat decomposition, Axiom 4.1.2, Proposition 4.2.24 and Corollary 2.6.28",
-        "Corrected valuation signs in Sections 2.5–2.6; for a relative character a, evaluate a(z) by extending a positive multiple to Z and dividing its valuation by that multiple"
+        "Corrected valuation signs in Sections 2.5–2.6; for a relative character a, evaluate a(z) by extending a positive multiple to Z and dividing its valuation by that multiple",
+        "Proof of AvailableCartanStatement: availableCartan, from lean.proof@1 task 14dc145a-14d4-47d6-97a6-d89ea0c558ab (Task 5331, artifact c3a16a8e-fad7-484f-9e90-64f897f020eb; the task was closed as complete on 2026-11-10). Its only building premise is IsAvailableFor. It applies parahoricCartanConclusions_of_satisfiesGroupAxioms, which needs only KPBuildingDatum.SatisfiesGroupAxioms for the datum of F and G. At commit e7487341 that theorem in turn applies parahoricCartanConclusions_of_buildingGeometry, whose premises on supplied ParahoricBuildingData are SatisfiesApartmentAxioms, HasZeroFixerGenerators, HasNormalizerApartmentStabilizer, injectivity of the apartment map, HasTitsSystem, and that every point of the quotient shares an apartment with the image of x. Proposition 4.2.24 is not among these premises. The general use of the theorem also requires the existence of available data, the Theorem 9.2.7 obligation stated as BruhatTitsAvailabilityStatement (see that row)."
       ],
       "consumer_or_regression": "General special-parahoric Hecke double cosets, with a proved GL_n Cartan comparison and distinctness of the associated compactly supported functions.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "c3a16a8e-fad7-484f-9e90-64f897f020eb"
+      ],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3",
+        "d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.Cartan.AvailableCartanStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "f5369bf1-52a4-4a6a-8c9f-d027667823fa",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.Cartan.availableCartan",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "66603178-cd94-4fbc-af59-bb2d011e66b0",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e7487341; a theorem, acceptance artifact c3a16a8e."
+        }
+      ],
       "external_code": []
     },
     {
@@ -684,21 +1635,51 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k is discretely valued with Henselian valuation ring and perfect residue field; G is connected reductive over k. S is a maximal k-split torus, A its apartment in the actual Bruhat–Tits building, N=N_G(S) and Z=Z_G(S). These are the Chapter 5 ambient hypotheses.",
-        "Choose positive relative roots and let U be the unipotent radical of the corresponding minimal parabolic, with Levi Z. C is any chamber of A and P_C its Iwahori subgroup."
+        "Choose positive relative roots and let U be the unipotent radical of the corresponding minimal parabolic, with Levi Z. C is any chamber of A and P_C its Iwahori subgroup.",
+        "Recorded Lean scope: IwasawaDecompositionStatement quantifies over every nonarchimedean local field F of either characteristic in universe u, every affine F-group scheme G and supplied P : ParahoricBuildingData G, under the explicit hypotheses HenselianLocalRing 𝒪[F], PerfectField 𝓀[F] and P.apartment.SatisfiesApartmentAxioms P.centralizer (V6, V7, AS2–AS4 and AS5). For every chamber C of the apartment and every generic cocharacter nu of S it concludes P.IwasawaDecomposition C nu: every g ∈ G(F) is u·n·p with u ∈ standardUnipotentPoints P.i nu ∅, n ∈ normalizerPoints P.i and p ∈ P.parahoric C. The positive system is the one selected by nu. U(F) is the published standardUnipotentPoints, the rational points of standardUnipotent P.i nu ∅. For connected reductive G and a maximal split torus, the Library proves standardUnipotent i nu ∅ = Dynamic.unipotent for every cocharacter nu, with no genericity hypothesis (standardUnipotent_empty_eq_dynamic, module Langlands.GroupScheme.Rational.MinimalStandardDynamicComparison). The source proves the result for a building satisfying the Chapter 4 axioms, including Axiom 4.1.16; the Lean statement assumes only the Chapter 7 apartment axioms on the same valuation data, relying on 4.1.28 (4.1.16 is Corollary 7.4.9 for this data). No existence of P is asserted."
       ],
       "conclusion": "G(k)=U(k) N(k) P_C. No special-vertex condition is imposed on C. This product equality supplies the surjectivity part of the later U\\G/I indexing theorem; injectivity uses replaced Lemma 5.3.5.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.IwasawaDecompositionStatement",
+        "Langlands.Geometry.Building.ParahoricBuildingData.IwasawaDecomposition",
+        "Langlands.Geometry.Building.iwasawaDecomposition"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.IwahoriWeylStatement",
+        "Langlands.Geometry.Building.IwasawaDecompositionProof"
+      ],
       "dependencies": [
         "Rank-one groups M_a and Lemmas 5.3.1–5.3.2; Iwahori decomposition Axiom 4.1.16; algebraic Bruhat decomposition",
-        "Corrected cocharacter-centralizer and stable open-cell argument, rather than the printed closed-subgroup compatibility shortcut"
+        "Corrected cocharacter-centralizer and stable open-cell argument, rather than the printed closed-subgroup compatibility shortcut",
+        "Published proof: Langlands.Geometry.Building.iwasawaDecomposition has type exactly IwasawaDecompositionStatement.{u}. It was accepted as lean.proof artifact 937be117-c6a0-42d8-be70-cd5c630935ac of task 0b383eb0-185c-415b-8def-5fcbac419374 and first appears in Library commit 0646cc6120e56febaf6f88f723f3b147d0e23d59. Its route differs from the source: it applies the published conditional theorem iwasawaDecompositionStatement_of_structuralStatements (module Langlands.Geometry.Building.IwasawaDecompositionReduction) to seven published structural proofs. The reduction builds the relative Tits system (G(F), P_∅(F), N(F), S) and shows that P(nu)(F)·N(F)·P_C contains 1 and is stable under left multiplication by the Borel subgroup and by the simple-reflection representatives, using a chamber form of Lemma 5.3.1. A dynamic-limit argument then absorbs the centralizer factor into N(F). The Henselian and perfect-residue hypotheses are retained in the target but unused by this route.",
+        "The replaced Lemma 5.3.5 is not proved by this unit; it remains with task 0b383eb0-185c-415b-8def-5fcbac419374 (see that row). That task's context names the previous-instance acceptance artifact 90c646e0-a29a-4a82-8110-f92b10c12ca3 of the statements, the one cited by the Theorem 7.8.1 row."
       ],
       "consumer_or_regression": "Corrected Theorem 7.8.1(4), followed by actual double-coset and compact induction computations.",
-      "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "formal_status": "conditional",
+      "owner_task": "0b383eb0-185c-415b-8def-5fcbac419374",
+      "acceptance_artifact_ids": [
+        "937be117-c6a0-42d8-be70-cd5c630935ac"
+      ],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3",
+        "0646cc6120e56febaf6f88f723f3b147d0e23d59"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.iwasawaDecomposition",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "e0b84c70-b3b7-4b5f-9adf-4753663a13d3",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-09 at Library commit eb36be01; independent proof acceptance and publication are recorded separately."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IwasawaDecompositionStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "ce25cec1-caa8-4246-89d2-611d6855d59b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7; statement_returns_prop true."
+        }
+      ],
       "external_code": []
     },
     {
@@ -706,26 +1687,66 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "source": {
         "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
         "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
-        "locator": "printed pp.190–191 / PDF pp.221–222"
+        "locator": "printed p.190 / PDF p.221"
       },
       "erratum": null,
       "hypotheses": [
         "k is discretely valued with Henselian valuation ring and perfect residue field; G is connected reductive over k. S is a maximal k-split torus, A its apartment in the actual Bruhat–Tits building, N=N_G(S) and Z=Z_G(S). These are the Chapter 5 ambient hypotheses.",
-        "x is any special vertex in B(G), P_x its parahoric, and P is any parabolic k-subgroup of G. P and P_x denote different kinds of objects."
+        "x is any special vertex in B(G), P_x its parahoric, and P is any parabolic k-subgroup of G. P and P_x denote different kinds of objects.",
+        "Recorded Lean scope: AvailableIwasawaStatement quantifies over every nonarchimedean local field F of either characteristic in universe u, every group scheme G over Spec F with hG : IsConnectedReductive G, every KPBuildingAssignment 𝔅 with 𝔅.IsAvailableFor F G hG, and every cocharacter nu generic for B.i, where B := (𝔅.datum F G hG).base. Its first clause takes every x : B.Apartment with B.apartment.IsSpecialApartmentVertex x. Its second takes every y : B.ReducedBuilding with B.IsSpecialPoint y and B.IsVertex y and every Q with B.IsParahoricAt y Q (a G(F)-conjugate of an apartment parahoric at the translated point). For P_x = B.parahoricAt x, respectively Q, it concludes ParabolicPointProductFamily B.i nu: Set.univ = H·K and Set.univ = K·H as pointwise set products, for H ranging over the rational points of every algebraic parabolic subgroup, every Dynamic.parabolic, every standard P_J and their rational conjugates. It also adds three conclusions beyond the source theorem: the inclusion of P_x (or Q) in the compact stabilizer K_0 = B.apartment.specialCompactSubgroup x = G(F)^1 ∩ Stab(B.apartmentMap x) (or B.compactStabilizer y), the same product family for K_0, and IsCompactOpenMaximal F K_0 for the canonical rational-point topology. IwasawaExistenceStatement adds existence: for every maximal split torus i : S → G and generic nu it asserts an available assignment whose base torus and apartment are identified with i and given apartment data D, a special vertex x of D whose compact subgroup satisfies SpecialCompactProperties, the same product conclusions for G and the whole-building clause, and the corresponding data and product conclusions for every standard Levi M_J. Existence of available data is asserted only by IwasawaExistenceStatement, which is unproved. The theorem availableIwasawa (module Langlands.BruhatTits.Iwasawa.AvailableProof) proves AvailableIwasawaStatement, including the three added conclusions; it was accepted as artifact 42bb1c08-a7ac-49f5-a197-dc1d5707a42e and first published in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0. The row's conditional status refers to AvailableIwasawaStatement, proved under IsAvailableFor; IwasawaExistenceStatement remains a statement."
       ],
       "conclusion": "G(k)=P(k) P_x=P_x P(k). The vertex must be special; the parabolic need not be the initially chosen minimal one.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.Iwasawa.AvailableIwasawaStatement",
+        "Langlands.BruhatTits.Iwasawa.IwasawaExistenceStatement",
+        "Langlands.BruhatTits.Iwasawa.ParabolicPointProductFamily",
+        "Langlands.BruhatTits.Iwasawa.availableIwasawa"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.Iwasawa.AvailableStatement",
+        "Langlands.BruhatTits.Iwasawa.AvailableProof",
+        "Langlands.BruhatTits.Iwasawa.ExistenceStatement",
+        "Langlands.BruhatTits.Iwasawa.PointProducts"
+      ],
       "dependencies": [
         "Theorem 5.3.3 with its corrected proof",
-        "Specialness and the normalizer-to-finite-Weyl surjection; conjugacy of minimal parabolics; inversion for the second product equality"
+        "Specialness and the normalizer-to-finite-Weyl surjection; conjugacy of minimal parabolics; inversion for the second product equality",
+        "The added compact-stabilizer conclusions use Theorem 4.2.15(1) and Fact 2.2.3, as cited by the statement Markdown.",
+        "Proof of AvailableIwasawaStatement: availableIwasawa, from lean.proof@1 task 5e9b97bd-7a9c-43fb-bb8f-b017b7028adc (artifact 42bb1c08-a7ac-49f5-a197-dc1d5707a42e; the task was closed as complete on 2026-11-10). Its only building premise is IsAvailableFor, and it proves the inclusion P_x ≤ K_0 for available data. The Library states that inclusion for all supplied data as Langlands.BruhatTits.SpecialCompact.ParahoricLeCompactStabilizer, which is still unproved and has no proof task. The chamber form 5.3.3 has a published proof (see that row). TaskHub searches on 2026-11-08 found no proof task for IwasawaExistenceStatement. It also requires the existence of available data, the Theorem 9.2.7 obligation stated as BruhatTitsAvailabilityStatement (see that row)."
       ],
       "consumer_or_regression": "Parabolic induction and Jacquet structural bridges, retaining the special-parahoric and parabolic hypotheses.",
-      "formal_status": null,
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "42bb1c08-a7ac-49f5-a197-dc1d5707a42e"
+      ],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3",
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.Iwasawa.AvailableIwasawaStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "90ac7a25-e581-4491-8b58-2b6fb57ccba5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.Iwasawa.IwasawaExistenceStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "525da1b1-80d2-44c4-ac1a-551af953a0aa",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.Iwasawa.availableIwasawa",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "c5a5bacb-5fd3-4201-8316-4a91110aa01a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem, acceptance artifact 42bb1c08."
+        }
+      ],
       "external_code": []
     },
     {
@@ -743,21 +1764,38 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k is discretely valued with Henselian valuation ring and perfect residue field; G is connected reductive over k. S is a maximal k-split torus, A its apartment in the actual Bruhat–Tits building, N=N_G(S) and Z=Z_G(S). These are the Chapter 5 ambient hypotheses.",
-        "Use the notation of Theorem 5.3.3: U is the chosen minimal-parabolic unipotent radical, C is any chamber of A and P_C its Iwahori. n,n' range over all elements of N(k)."
+        "Use the notation of Theorem 5.3.3: U is the chosen minimal-parabolic unipotent radical, C is any chamber of A and P_C its Iwahori. n,n' range over all elements of N(k).",
+        "Recorded Lean scope: UnipotentNormalizerCosetStatement has the same quantifiers and hypotheses as the Theorem 5.3.3 row's IwasawaDecompositionStatement (HenselianLocalRing 𝒪[F], PerfectField 𝓀[F], P.apartment.SatisfiesApartmentAxioms P.centralizer, every chamber C and every generic cocharacter nu). It concludes P.UnipotentNormalizerCoset C nu: for all n, n' ∈ normalizerPoints P.i, there exist u ∈ standardUnipotentPoints P.i nu ∅ and p ∈ P.parahoric C with n = u·n'·p if and only if n'·n^(-1) ∈ P.normalizerZero, the image of Z(F)^0 in N(F). Only the replaced lemma is stated; the printed version is not. The standardUnipotentPoints convention and the Chapter 4 versus Chapter 7 hypothesis difference of the Theorem 5.3.3 row apply unchanged. No existence of P is asserted."
       ],
       "conclusion": "n∈U(k) n' P_C if and only if n' n^(-1)∈Z(k)^0. The printed statement with an arbitrary bounded subgroup P is replaced and is not the target.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.UnipotentNormalizerCosetStatement",
+        "Langlands.Geometry.Building.ParahoricBuildingData.UnipotentNormalizerCoset"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.IwahoriWeylStatement"
+      ],
       "dependencies": [
         "Iwahori decomposition for the translated chamber C'=nC",
-        "Algebraic Bruhat/open-cell uniqueness forces n' n^(-1) into Z(k), then the Iwahori intersection identifies Z(k)^0"
+        "Algebraic Bruhat/open-cell uniqueness forces n' n^(-1) into Z(k), then the Iwahori intersection identifies Z(k)^0",
+        "Open proof task: 0b383eb0-185c-415b-8def-5fcbac419374, whose Theorem 5.3.3 unit is published. The Library has only conditional assemblies (module Langlands.Geometry.Building.UnipotentNormalizerCosetReduction). unipotentNormalizerCosetReduction proves the conclusion for supplied P from normality of P.normalizerZero, P.ChamberIwahoriDecompositionStatement and the apartment axioms. unipotentNormalizerCosetStatement_of_chamberIwahori_and_exactSequence derives the global statement from the chamber products for all supplied data and IwahoriWeylExactSequenceStatement. On 2026-11-09 the Library had no unconditional proof of either input. Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0 proves both inputs of unipotentNormalizerCosetReduction for every supplied P: the normality of P.normalizerZero by ParahoricBuildingData.normal_normalizerZero (module ZeroSubgroupCommutatorNormality) and the chamber products by ParahoricBuildingData.chamberIwahoriDecomposition (Corollary 7.4.9 row). The published proof of Theorem 7.8.1(4), unipotentIwahoriDoubleCoset, applies unipotentNormalizerCoset_of_chamberIwahori with normal_normalizerZero and a proved chamber Iwahori decomposition. No theorem of type UnipotentNormalizerCosetStatement is published yet, so the row stays statement. No theorem has type IwahoriWeylExactSequenceStatement."
       ],
       "consumer_or_regression": "Actual injectivity of the map in corrected Theorem 7.8.1(4); a surjective Iwasawa product alone cannot establish this conclusion.",
-      "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "formal_status": "statement",
+      "owner_task": "0b383eb0-185c-415b-8def-5fcbac419374",
       "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "publication_commits": [
+        "c4a16df784376405a45b60df82583e8c26d8a4e3"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.UnipotentNormalizerCosetStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "73e1c9df-449b-437b-a777-b5a80c824b09",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-08 at Library commit c4a16df7; statement_returns_prop true."
+        }
+      ],
       "external_code": []
     },
     {
@@ -777,29 +1815,41 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "k has a normalized discrete valuation omega(k^times)=Z and Henselian valuation ring. G is connected reductive. The Chapter 7 root-datum valuations, equipollent apartments, normalizer actions and Axiom 4.1.4 equivariance are supplied, together with AS5 of Axiom 4.1.6 added by corrections PDF p.33. Perfect residue is not assumed for this conditional Chapter 7 setup.",
         "C⊂A is a chamber, x∈C and Phi^+ is any positive relative-root system. Products use non-divisible roots. For the first product take r=0 or r=0+.",
         "For the facet form, F lies in the closure of C and Phi^+ contains Phi_F(C)^+ from Proposition 1.3.35.",
-        "Recorded Lean scope: every nonarchimedean local field F of either characteristic and supplied P : ParahoricBuildingData G, with P.apartment.SatisfiesApartmentAxioms P.centralizer, an actual chamber C, x in C and a generic cocharacter nu. The facet clause retains IsFaceOf and FacetChamberPositiveSystem. No existence of P or proof of AS5 is asserted."
+        "Recorded Lean scope: every nonarchimedean local field F of either characteristic and supplied P : ParahoricBuildingData G, with P.apartment.SatisfiesApartmentAxioms P.centralizer, an actual chamber C, x in C and a generic cocharacter nu. The facet clause retains IsFaceOf and FacetChamberPositiveSystem. No existence of P or proof of AS5 is asserted. The theorem ParahoricBuildingData.chamberIwahoriDecomposition (module ChamberIwahoriProof) proves the statement for every supplied P, from the published factor-pair reduction with the rank-one factorization (KP 2.11.17) and Corollary 2.6.28. It was accepted as artifact 4493a3f5-fe76-417d-8239-cbb2e5149465 (proof task 0e645cc1-7bb2-467a-9835-9d16f29b985f) and first published in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0. The row is conditional on the construction of P."
       ],
       "conclusion": "N_x^sharp=Z_x^sharp and G(k)_C^sharp=(product over Phi^-,nd of U_{a,x,r}) Z_x^sharp (product over Phi^+,nd of U_{a,x,r}). In the facet form replace the negative factors by U_{a,F,0+} and positive factors by U_{a,F,0}. This is the sharp subgroup; the full parahoric is Z(k)^0 G(k)_C^sharp by 7.4.1. The recorded Prop-valued target additionally states the derived full-Iwahori conclusions: I_C=P_x, Z(F) intersection I_C=j(Z(F)^0), equality of full and sharp unipotent intersections, injectivity and exact range of the negative/full-central/positive product, and all fixed-sign ordered chamber and facet products. Sharp and full groups and central factors remain distinct.",
       "lean_declarations": [
-        "Langlands.Geometry.Building.ParahoricBuildingData.ChamberIwahoriDecompositionStatement"
+        "Langlands.Geometry.Building.ParahoricBuildingData.ChamberIwahoriDecompositionStatement",
+        "Langlands.Geometry.Building.ParahoricBuildingData.chamberIwahoriDecomposition"
       ],
       "modules": [
-        "Langlands.Geometry.Building.ChamberIwahoriStatement"
+        "Langlands.Geometry.Building.ChamberIwahoriStatement",
+        "Langlands.Geometry.Building.ChamberIwahoriProof"
       ],
       "dependencies": [
         "Lemma 7.4.7; triviality of the affine-Weyl stabilizer of an interior chamber point; Proposition 7.3.12 and 6.3.21",
         "Arbitrary-order fixed-sign root-factor bijections are in 7.3.12(3),(5). Full-parahoric ordered bijections additionally use the central Z(k)^0 factor and algebraic open-cell injectivity; the added mixed all-root 7.3.12(6), requiring f(0)>0, is not the depth-zero argument"
       ],
       "consumer_or_regression": "Iwahori factorization with order and intersection laws; compare the Library GL_n factorization and a multipliable-root example.",
-      "formal_status": "statement",
+      "formal_status": "conditional",
       "owner_task": "0e645cc1-7bb2-467a-9835-9d16f29b985f",
       "acceptance_artifact_ids": [
-        "4cc5a2e0-c5a0-442f-b6c1-90c92f2a7c6b"
+        "4cc5a2e0-c5a0-442f-b6c1-90c92f2a7c6b",
+        "4493a3f5-fe76-417d-8239-cbb2e5149465"
       ],
       "publication_commits": [
-        "25b91125ea94e88d741b206d633e82eb0d87c3e5"
+        "25b91125ea94e88d741b206d633e82eb0d87c3e5",
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
       ],
-      "axiom_reports": [],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.chamberIwahoriDecomposition",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "d72c9cc5-53bf-4593-af44-e993e7bd369b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem, acceptance artifact 4493a3f5."
+        }
+      ],
       "external_code": []
     },
     {
@@ -819,17 +1869,19 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "k has a normalized discrete valuation omega(k^times)=Z and Henselian valuation ring. G is connected reductive. The Chapter 7 root-datum valuations, equipollent apartments, normalizer actions and Axiom 4.1.4 equivariance are supplied, together with AS5 of Axiom 4.1.6 added by corrections PDF p.33. Perfect residue is not assumed for this conditional Chapter 7 setup.",
         "S is a maximal k-split torus, N and Z its normalizer and centralizer, Wtilde^0=N(k)/Z(k)^0, and W_aff is the affine Weyl group. C⊂A is a chamber and I=G(k)^0_C. For part (3), F_1,F_2 lie in the closure of a common chamber and W_aff_Fi is the affine-Weyl facet stabilizer.",
         "For the source route to added part (4), also retain the Chapter 5 perfect-residue building hypotheses used by 5.3.3 and replaced 5.3.5. U is the unipotent radical of a minimal parabolic containing S, with Levi Z. Any broader residue-field version needs a separate proof.",
-        "Recorded Lean scope: closed Prop-valued targets at universe u quantify over every nonarchimedean local field F, every affine F-group scheme G and supplied P : ParahoricBuildingData G, retaining SatisfiesApartmentAxioms. Part (4) explicitly requires HenselianLocalRing O[F], PerfectField k[F] and a generic cocharacter nu. The actual U(F) is standardUnipotentPoints P.i nu empty; its comparison with the single Dynamic.unipotent group remains a separate proof obligation. No general building existence is asserted."
+        "Recorded Lean scope: closed Prop-valued targets at universe u quantify over every nonarchimedean local field F, every affine F-group scheme G and supplied P : ParahoricBuildingData G, retaining SatisfiesApartmentAxioms. Part (4) explicitly requires HenselianLocalRing O[F], PerfectField k[F] and a generic cocharacter nu. The actual U(F) is standardUnipotentPoints P.i nu empty. Its comparison with the single Dynamic.unipotent group is proved: standardUnipotent_empty_eq_dynamic (module Langlands.GroupScheme.Rational.MinimalStandardDynamicComparison) gives standardUnipotent i nu ∅ = Dynamic.unipotent for connected reductive G and a maximal split torus, without a genericity hypothesis, and IwasawaDecompositionReduction specializes it to the rational points of the same supplied P (see the Theorem 5.3.3 row). This comparison alone does not prove part (4). Part (4) is now proved on supplied data: the theorem unipotentIwahoriDoubleCoset (module UnipotentIwahoriDoubleCosetProof) proves UnipotentIwahoriDoubleCosetStatement from iwasawaDecomposition (Theorem 5.3.3 row), unipotentNormalizerCoset_of_chamberIwahori, normal_normalizerZero and a proved chamber Iwahori decomposition. It was accepted as artifact dce35461-bb3e-429c-9068-cf0465a14731 (proof task 7bfe81b2-233e-47a8-85c1-1fd296f32c05) and first published in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0. Parts (1)–(3) remain unproved, so the row stays statement. No general building existence is asserted."
       ],
       "conclusion": "(1) Exact sequence 1→W_aff→Wtilde^0→G(k)/G(k)^0→1. (2) Inclusion induces a bijection Wtilde^0→I\\G(k)/I. (3) Inclusion induces a bijection W_aff_F1\\Wtilde^0/W_aff_F2 →G(k)^0_F1\\G(k)/G(k)^0_F2. (4) Inclusion induces a bijection Wtilde^0→U(k)\\G(k)/I=U(k)Z(k)^0\\G(k)/I. These are actual quotient bijections, including the component contribution beyond W_aff. The exact-sequence target includes the needed normality conclusions and an identification of its kernel with the affine Weyl group through the actual apartment action. Each quotient equivalence is prescribed on every normalizer representative; the added part (4) contains both bijections.",
       "lean_declarations": [
         "Langlands.Geometry.Building.IwahoriWeylExactSequenceStatement",
         "Langlands.Geometry.Building.IwahoriDoubleCosetStatement",
         "Langlands.Geometry.Building.ParahoricDoubleCosetStatement",
-        "Langlands.Geometry.Building.UnipotentIwahoriDoubleCosetStatement"
+        "Langlands.Geometry.Building.UnipotentIwahoriDoubleCosetStatement",
+        "Langlands.Geometry.Building.unipotentIwahoriDoubleCoset"
       ],
       "modules": [
-        "Langlands.Geometry.Building.IwahoriWeylStatement"
+        "Langlands.Geometry.Building.IwahoriWeylStatement",
+        "Langlands.Geometry.Building.UnipotentIwahoriDoubleCosetProof"
       ],
       "dependencies": [
         "Fact 4.1.25, corrected Theorem 7.5.3 and Proposition 7.5.5",
@@ -841,12 +1893,22 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
-        "90c646e0-a29a-4a82-8110-f92b10c12ca3"
+        "90c646e0-a29a-4a82-8110-f92b10c12ca3",
+        "dce35461-bb3e-429c-9068-cf0465a14731"
       ],
       "publication_commits": [
-        "25b91125ea94e88d741b206d633e82eb0d87c3e5"
+        "25b91125ea94e88d741b206d633e82eb0d87c3e5",
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
       ],
-      "axiom_reports": [],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.unipotentIwahoriDoubleCoset",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "2da48600-4de7-421f-b0da-ff2c84bafbfb",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem proving part (4), acceptance artifact dce35461."
+        }
+      ],
       "external_code": []
     },
     {
@@ -1149,24 +2211,78 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
-        "x is a point of the actual descended building over k, with connected parahoric model G^0_x over o, special fibre H_x and maximal reductive quotient Gred_x. Put P_{x,0}=G^0_x(o). The Chapter 13 torus filtration is functorial and admissible with 7.2(1),(2). No finite-residue assumption is required for this depth-zero assertion."
+        "x is a point of the actual descended building over k, with connected parahoric model G^0_x over o, special fibre H_x and maximal reductive quotient Gred_x. Put P_{x,0}=G^0_x(o). The Chapter 13 torus filtration is functorial and admissible with 7.2(1),(2). No finite-residue assumption is required for this depth-zero assertion.",
+        "Recorded Lean scope: the published modules Langlands.BruhatTits.IntegralModels.DepthZeroReduction (artifact f3a39f0a-0b63-4218-a72a-b3958c3b3740, first in Library commit 7047367a78583edbe335517824e30403414aa3f0) and Langlands.BruhatTits.IntegralModels.DepthZeroInduction (artifact a6b89c9a-222a-4977-b85b-1983338fa594, first in Library commit 7103f5282c4897716543f227940fdb2a0e12e70e) work over a domain R in universe u with fraction field K and a group scheme G over Spec K, with supplied D : RelativeComponentModelData R K G and Q : SpecialFibreQuotientData D. The smooth model D.neutral with connected fibres plays the role of G^0_x, Q.quotient that of Gred_x and Q.projection that of the quotient map; nothing identifies D.neutral with the actual parahoric model or D.neutral.integralPoints with P_{x,0}. The premises hrad : IsUnipotentRadical Q.radicalInclusion and hQ (Q.projection is the represented fppf quotient by that radical) are the first two conjuncts of Q.IsReductiveQuotient; reductivity of the quotient is not used. For a local domain R, ker_parahoricReduction hQ identifies the kernel of parahoricReduction : G^0(R) → Q.quotient(f) with Q.positivePoints.subgroupOf D.neutral.integralPoints, the radical preimage G(K)^{0+} of Axiom 4.1.22(7) inside G^0(R). For a Henselian local domain R with perfect residue field, parahoricReduction_surjective hrad hQ gives surjectivity and depthZeroQuotientEquiv hrad hQ is the induced group isomorphism from G^0(R) modulo that kernel onto Q.quotient(f). The integer rings of k and of K in the source are both such bases, so the source's assertion over K is the same declaration at another base; no instance is supplied. DepthZeroInduction adds the consumer test: inflation of a representation of Q.quotient(f) to G^0(R), the bijection between G^0(R)-maps from an inflation and Q.quotient(f)-maps into kernel invariants, and, for a topological-group structure on G(K) in which G^0(R) and its level-one congruence subgroup are open, compact induction from G^0(R) with Frobenius reciprocity (depthZeroInductionHomEquiv). For a nonarchimedean local field F, R = 𝒪[F] is proved Henselian and localFieldDepthZeroInductionHomEquiv, for affine G locally of finite type with rationalPointTopology, takes those openness premises from the unproved LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement. The cokernel description of Gred_x is not formalized."
       ],
       "conclusion": "The natural composite P_{x,0}=G^0_x(o)→H_x(f)→Gred_x(f) is surjective with kernel P_{x,0+}, and hence induces P_{x,0}/P_{x,0+}≃Gred_x(f). The analogous assertion holds over K. As an f-group scheme, Gred_x is also the cokernel of the special-fibre map G_{x,0+}→G_{x,0}. The rational-point quotient uses both surjectivity steps and the descended kernel; it does not follow merely from a group-scheme cokernel.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroQuotientEquiv",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.parahoricReduction_surjective",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.ker_parahoricReduction",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionHomEquiv",
+        "Langlands.BruhatTits.IntegralModels.localFieldDepthZeroInductionHomEquiv"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.IntegralModels.DepthZeroReduction",
+        "Langlands.BruhatTits.IntegralModels.DepthZeroInduction"
+      ],
       "dependencies": [
         "Theorems 8.3.2 and 8.3.13 construct the actual models; Sections 9.2.5–9.2.6 descend them and identify integral points",
         "The first reduction arrow is surjective by 8.1.3. The second is surjective by Proposition 2.4.3 over perfect f, proved using Lemma 2.4.2 on split unipotent groups and H^1",
         "Corollary 8.4.12 and Section 9.5 identify the actual kernel over k; apply the group first isomorphism theorem",
         "The congruence models and their morphism come from Theorem 8.5.2 and Section 8.5.17, with Chapter 9 descent",
-        "Section 13.2.2 separates facet-dependent 0 and 0+ from positive-depth variation, and 13.2.3 uses 9.8.3(2) for the Gamma-invariant group comparison"
+        "Section 13.2.2 separates facet-dependent 0 and 0+ from positive-depth variation, and 13.2.3 uses 9.8.3(2) for the Gamma-invariant group comparison",
+        "Recorded Lean route: surjectivity composes the Henselian lifting theorem IntegralModel.reduction_surjective for the smooth model (the role of 8.1.3) with projectionPoints_surjective. Over a perfect residue field the latter uses a scheme section of the projection, obtained from the published perfectFieldUnipotentSplit and splitUnipotentAffineTorsorStatement, instead of the Galois cohomology of Lemma 2.4.2 and Proposition 2.4.3 (printed p.84 / PDF p.115). The kernel is the radical preimage by construction. Its identification with the Moy–Prasad group P_{x,0+} (Corollary 8.4.12, printed p.306 / PDF p.337, and Section 9.5) and the construction of the actual models, radical and quotient (Theorems 8.3.2 and 8.3.13, Sections 9.2.5–9.2.6) are not formalized.",
+        "Open obligations before unconditional use: construct D and Q with hrad and hQ for the actual parahoric model of a point of the actual descended building; prove Corollary 8.4.12; for the local-field corollary, prove CongruenceNeighborhoodBasisStatement (proof task fc268342-28e9-4dd8-a855-9ae5c09db273)."
       ],
-      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance.",
-      "formal_status": null,
+      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance. Recorded progress: inflation, its factorization through kernel invariants, compact induction and Frobenius reciprocity are formalized on supplied data in DepthZeroInduction (see the Recorded Lean scope). Finiteness of Gred_x(f), compactness of P_{x,0} and a double-coset or intertwining theorem for the induced representation remain open.",
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "f3a39f0a-0b63-4218-a72a-b3958c3b3740",
+        "a6b89c9a-222a-4977-b85b-1983338fa594"
+      ],
+      "publication_commits": [
+        "7047367a78583edbe335517824e30403414aa3f0",
+        "7103f5282c4897716543f227940fdb2a0e12e70e"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroQuotientEquiv",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "53188d24-a433-48be-97a3-09daa3eed9b3",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; a definition."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.parahoricReduction_surjective",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "7b678253-77dd-4a91-8615-7cc51b110672",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.ker_parahoricReduction",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "88746c51-1ff7-436c-a69b-4edebfcd6aba",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionHomEquiv",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "afb645e1-447f-49be-b118-a5666fecdec3",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; a definition."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.localFieldDepthZeroInductionHomEquiv",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "2d398beb-702b-4645-8ca5-de7224c60c27",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; a definition."
+        }
+      ],
       "external_code": []
     },
     {
@@ -1174,22 +2290,36 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "source": {
         "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
         "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
-        "locator": "printed p.469 / PDF p.500; definitions at PDF pp.497-499; finite-depth clarification from Section 1.6, PDF pp.97-98, and Corollary 7.3.14, PDF p.282"
+        "locator": "printed p.469 / PDF p.500; definitions at PDF pp.497-499; finite-depth clarification from Section 1.6, PDF pp.97-98, and Corollary 7.3.14, PDF p.282; for part (3), Definition 7.3.3 at PDF p.278, Proposition 7.3.12 at PDF p.281, Lemma 7.3.16 at PDF p.283 and Proposition 2.11.3(2) at PDF p.162"
       },
       "erratum": {
         "literature_id": "kaletha-prasad-2024-corrections",
         "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
-        "locator": "PDF pp.49-50; independent boundary check at book PDF pp.97-98,282,498,500; root-index cross-check at book PDF pp.230,278,281,500,506",
-        "change": "No replacement of 13.2.5 is listed. The finite-depth restriction on openness is an independently justified clarification, not an authors' erratum. Preserve the separate confirmed printed root-index discrepancy explicitly; the possible indivisible-root/concave-block formulation is source-derived and requires an independent proof, not attribution as an author correction."
+        "locator": "PDF pp.49-50; independent boundary check at book PDF pp.97-98,282,498,500; root-index cross-check at book PDF pp.230,278,281,500,506; PDF p.33 (added Proposition 7.3.12(6))",
+        "change": "No replacement of 13.2.5 is listed. The finite-depth restriction on openness is an independently justified clarification, not an authors' erratum. Preserve the separate confirmed printed root-index discrepancy explicitly; the possible indivisible-root/concave-block formulation is source-derived and requires an independent proof, not attribution as an author correction. PDF p.33 adds Proposition 7.3.12(6): for f(0) > 0 and an arbitrary ordering of the roots, the product of the U_{a,x,f} with Z♯_{x,f} is an isomorphism onto G(k)♯_{x,f}. It concerns the root-generated group, not P_{x,r}, and the part (3) statement does not use it."
       },
       "hypotheses": [
         "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
         "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
-        "For the bounded-open and Iwahori-decomposition assertions, depths are finite nonnegative augmented depths: r or r+ with r a nonnegative real number, excluding infinity. The covariance, commutator and Levi assertions below are also stated at finite nonnegative depths r,s; the infinite-depth term is recorded separately. For the Levi assertions, P=MN is a parabolic k-subgroup, x is in B(G)_M as in Section 9.7, and x_M is its image in B(M) under (9.7.1)."
+        "For the bounded-open and Iwahori-decomposition assertions, depths are finite nonnegative augmented depths: r or r+ with r a nonnegative real number, excluding infinity. The covariance, commutator and Levi assertions below are also stated at finite nonnegative depths r,s; the infinite-depth term is recorded separately. For the Levi assertions, P=MN is a parabolic k-subgroup, x is in B(G)_M as in Section 9.7, and x_M is its image in B(M) under (9.7.1).",
+        "Recorded Lean scope: MoyPrasadFiltrationStatement (module Langlands.Geometry.Building.KPMoyPrasadFiltrationStatement) is the conjunction of MoyPrasadSeparatedStatement, MoyPrasadBoundedOpenStatement, MoyPrasadCovarianceStatement and MoyPrasadCommutatorStatement. Each quantifies over every nonarchimedean local field F of either characteristic in universe u, every G with [IsAffineHom G.X.hom], supplied P : ParahoricBuildingData G with P.SatisfiesApartmentAxioms (V 6 in the data, V 7 and AS 2–AS 5) and a supplied Zf : P.CentralizerFiltration: subgroups Z(F)_r of Z(F) for real r ≥ 0, decreasing and separated, with Z(F)_0 = Z(F)^0. The premise Zf.SatisfiesFiltrationAxioms requires the commutator clause of Definition 7.2.1 (with the Z-component of Definition 7.1.3), N(F)-stability, [Z(F)_r, Z(F)_s] ⊆ Z(F)_{r+s} and [Z(F)_r, U_{a,x,s}] ⊆ U_{a,x,r+s} U_{2a,x,r+s}. The last three are derived properties of the Section 9.8 filtration, which the Library does not construct. P_{x,r} = Zf.moyPrasad x r, for x in the apartment A(S), is generated by the image of Z(F)_r and the blocks U_{a,x,r} U_{2a,x,r} (Definitions 13.2.1 and 7.3.3); at depth 0 it is the published parahoricAt. The targets are: the infimum over real r ≥ 0 of P_{x,r} is trivial; under the extra premise Zf.IsOpenFiltration (each Z(F)_r open in Z(F)), P_{x,r} is open and algebraically bounded in rationalPointTopology F G.X for every real r ≥ 0; parts (1) and (2) as uniqueness of g P_{x,r} g⁻¹ over all presentations g·x = y of a point y of the reduced building (IsMoyPrasadAt), which gives apartment independence, covariance and normality in the point stabilizer; and part (4) for all real r, s ≥ 0. The strict-depth groups P_{x,r+} are defined (moyPrasadPlus) but appear in no target. MoyPrasadProductStatement (module Langlands.Geometry.Building.KPMoyPrasadProductStatement) states part (3) with indivisible-root blocks under the same premises. For r > 0, a cocharacter ν with IsGenericCocharacter P.i ν, and injective lists aneg and apos whose ranges are RelativeRoot.indivisiblePositiveRoots P.i (-ν) and RelativeRoot.indivisiblePositiveRoots P.i ν, it asserts that Zf.orderedMoyPrasadProduct x r aneg apos is injective with range P_{x,r}. That map multiplies, in the listed orders, one element of each block U_{a,x,r} U_{2a,x,r} for aneg, then the image under j of an element of Z(F)_r, then one element of each block for apos. Its middle factor is the full Z(F)_r, not the Z♯_{x,r} of Proposition 7.3.12(5). Parts (5) and (6) and the source's Henselian discretely valued generality are not formalized; existence of the data is not asserted."
       ],
-      "conclusion": "At finite nonnegative augmented depths, the actual P_{x,r} form a decreasing family of bounded open subgroups, independent of the apartment used to define them. Its separated extension has P_{x,infinity}=intersection_{t>=0, t real} P_{x,t}={1}; this term need not be open. For g in G(k), g P_{x,r} g^-1=P_{gx,r}; hence P_{x,r} is normal in the full point stabilizer. The commutator is contained in P_{x,r+s}. At finite r>0, P_{x,r} has the Iwahori decomposition of 13.2.4 relative to P, including a homeomorphism of the three factors, rather than a group direct product. At every finite nonnegative augmented depth, its intersection with M(k) is P^M_{x_M,r}. The finite-depth restriction on openness independently clarifies the printed wording; it is not an authors' correction. Printed part (3), at positive finite depth, claims an arbitrarily ordered root/centralizer product bijection with products over all positive and negative roots. This indexing conflicts with its cited 7.3.12(5), which uses indivisible roots and concave-function blocks. The discrepancy is recorded, and that printed clause has an outstanding formal-resolution obligation; no corrected theorem or author erratum is claimed here.",
-      "lean_declarations": [],
-      "modules": [],
+      "conclusion": "At finite nonnegative augmented depths, the actual P_{x,r} form a decreasing family of bounded open subgroups, independent of the apartment used to define them. Its separated extension has P_{x,infinity}=intersection_{t>=0, t real} P_{x,t}={1}; this term need not be open. For g in G(k), g P_{x,r} g^-1=P_{gx,r}; hence P_{x,r} is normal in the full point stabilizer. The commutator is contained in P_{x,r+s}. At finite r>0, P_{x,r} has the Iwahori decomposition of 13.2.4 relative to P, including a homeomorphism of the three factors, rather than a group direct product. At every finite nonnegative augmented depth, its intersection with M(k) is P^M_{x_M,r}. The finite-depth restriction on openness independently clarifies the printed wording; it is not an authors' correction. Printed part (3), at positive finite depth, claims an arbitrarily ordered root/centralizer product bijection with products over all positive and negative roots. This indexing conflicts with its cited 7.3.12(5), which uses indivisible roots and concave-function blocks. The discrepancy is recorded. The published MoyPrasadProductStatement states the derived indivisible-root block form on supplied data; its proof is outstanding, and no corrected theorem or author erratum is claimed here.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.MoyPrasadFiltrationStatement",
+        "Langlands.Geometry.Building.MoyPrasadSeparatedStatement",
+        "Langlands.Geometry.Building.MoyPrasadBoundedOpenStatement",
+        "Langlands.Geometry.Building.MoyPrasadCovarianceStatement",
+        "Langlands.Geometry.Building.MoyPrasadCommutatorStatement",
+        "Langlands.Geometry.Building.ParahoricBuildingData.CentralizerFiltration.moyPrasad",
+        "Langlands.Geometry.Building.MoyPrasadProductStatement",
+        "Langlands.Geometry.Building.ParahoricBuildingData.CentralizerFiltration.orderedMoyPrasadProduct"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.KPMoyPrasadFiltrationStatement",
+        "Langlands.Geometry.Building.KPMoyPrasadFiltration",
+        "Langlands.Geometry.Building.KPMoyPrasadProductStatement"
+      ],
       "dependencies": [
         "Section 1.6 at PDF pp.97-98 includes infinity in the augmented index set and defines the separated infinite term as the intersection, equal to {1}. Corollary 7.3.14 at PDF p.282 asserts boundedness generally, but openness only if the concave function never takes infinity. Thus openness is retained only at finite r/r+",
         "Concrete boundary check from (13.1.1), PDF p.498: for G_m over Q_2, the standard and minimal congruent filtrations agree, and P_{x,n}=1+2^n Z_2 for integers n>=1. Their intersection is {1}, which is not open because the distinct elements 1+2^n converge to 1",
@@ -1197,14 +2327,79 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "The original PDF p.500 was visually checked: the all-root indexing is printed, not lost during extraction. PDF p.281 prints indivisible-root indexing in 7.3.12(5). Root-valuation V4 at PDF p.230 makes scalar factors for a and 2a overlap when U_{2a,x,2r} is nontrivial; taking both as independent coordinates cannot then be injective",
         "Source-derived route to investigate and prove independently: use indivisible roots with the 7.3.3(1) blocks U_{a,x,f}=U_{a,x,f(a)} U_{2a,x,f(2a)}, at constant f=r, together with the full Z(k)_r central factor, 7.3.12(4),(5) and open-cell injectivity. Merely adding indivisible-root indexing to scalar-depth factors need not recover all 2a-depth-r elements in a nonreduced system",
         "Sections 13.2.2-3 retain facet dependence only for 0 and 0+, and the equality P_{x,r}(k)=P_{x,r}(K)^Gamma from 9.8.3(2)",
-        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance.",
+        "Part (3) statement: its Markdown derives the full-filtration form. Propositions 7.3.12(4),(5) give G(k)♯_{x,r} = X^- Z♯_{x,r} X^+ for the ordered block products X^±; the proof of Lemma 7.3.16 gives Z♯_{x,r} ⊆ Z(k)_r; by V 6, Z(k)_r normalizes every block; Definition 7.3.3(3) gives P_{x,r} = G(k)♯_{x,r} Z(k)_r = X^- Z(k)_r X^+. Injectivity follows from the open cell of Proposition 2.11.3(2) and Proposition 7.3.12(3). KP do not write out this passage.",
+        "Proof successors (lean.proof@1, one per conjunct): MoyPrasadSeparatedStatement Task 5509 (090acae8-2f81-4ccd-bd05-3635b01f3955); MoyPrasadBoundedOpenStatement Task 5510 (c593d9f7-612c-43ae-aa67-342ceb78f1d5); MoyPrasadCovarianceStatement Task 5511 (be16ead9-93f4-432a-a7e0-44077e469d85); MoyPrasadCommutatorStatement Task 5512 (05aa82d6-2f2e-4113-908c-edc4ea226133). The conjunction needs no further mathematics once the four are proved. Part (3), MoyPrasadProductStatement, has proof successor Task 5579 (f97b9951-9063-4099-b8dd-b986fd1f7205)."
       ],
-      "consumer_or_regression": "Regression: a nonsplit group with a multipliable root must detect overlapping a/2a scalar factors and test the separately proved block formulation. Check finite r/r+ openness separately from the non-open infinite term for G_m(Q_2), point variation inside a facet, full-stabilizer normality and the actual Levi embedding. Boundedness alone is not compactness over general Henselian k.",
-      "formal_status": null,
+      "consumer_or_regression": "Regression: a nonsplit group with a multipliable root must detect overlapping a/2a scalar factors and test the separately proved block formulation. Check finite r/r+ openness separately from the non-open infinite term for G_m(Q_2), point variation inside a facet, full-stabilizer normality and the actual Levi embedding. Boundedness alone is not compactness over general Henselian k. For the part (3) central factor: for G = G_m there are no roots, so G(k)♯_{x,r} = Z♯_{x,r} = {1}, while Z(k)_r = P_{x,r} is a nontrivial congruence subgroup; the middle factor must be the full filtration. Consumer: the positive-depth Iwahori factorization of Task 5310; the published regrouping in Langlands.BruhatTits.SpecialCompact.MoyPrasadParabolicProduct takes ordered-root covering as a hypothesis.",
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "cdc002e4-4628-4026-91c9-c4add6280308",
+        "38dd6045-a386-43d6-a804-1de56fa51d14"
+      ],
+      "publication_commits": [
+        "642008d6b3b837d8bd76de0cabcaff3db00088c0",
+        "63d9b857523edf47443b7bf30844159e526d00b0"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadFiltrationStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "9a180d66-df7e-4542-8e21-b30150eefa49",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind definition; statement_returns_prop true; the workspace held the published pair, byte-identical to commit 642008d6."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadSeparatedStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "8e86b600-e51e-47fc-b72c-b94544a64953",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind definition; statement_returns_prop true; the workspace held the published pair, byte-identical to commit 642008d6."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadBoundedOpenStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "abc1e040-ffe6-4ba1-9178-06c6215825a6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind definition; statement_returns_prop true; the workspace held the published pair, byte-identical to commit 642008d6."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadCovarianceStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "8123c1c7-7dea-4741-bbaf-a847c2e7e145",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind definition; statement_returns_prop true; the workspace held the published pair, byte-identical to commit 642008d6."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadCommutatorStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "7fcfefb0-358d-44f2-9203-aa5abf90624e",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; kind definition; statement_returns_prop true; the workspace held the published pair, byte-identical to commit 642008d6."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.CentralizerFiltration.moyPrasad",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "89ea7251-b4db-4244-ab30-50b9de9bfa9b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 389dbc16; a definition; the workspace held the published pair, byte-identical to commit 642008d6."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadProductStatement",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "492a6aaa-a334-4d9d-a277-5f02a15cc85a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 8964b41f; kind definition; statement_returns_prop true; the module is byte-identical to commit 63d9b857."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.CentralizerFiltration.orderedMoyPrasadProduct",
+          "environment_artifact": "bb168ec3-1031-46d9-816b-5c2ed7bbe1a6",
+          "inspection_id": "859f7975-7f9e-40ee-8946-114688418ee1",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 8964b41f; kind definition; statement_returns_prop false; the module is byte-identical to commit 63d9b857."
+        }
+      ],
       "external_code": []
     },
     {
@@ -1753,6 +2948,31 @@ and Theorem 1.1.15. This does not permit a fixed point to be included as
 input in place of constructing it. No formal certificate or general-instance
 acceptance is recorded here.
 
+The printed display of Lemma 9.6.3 (book PDF page 397) uses the same
+depth r for every non-divisible root b of (G_K, T_K) that restricts to a
+or 2a. Its proof replaces x by x − (r/2)a^∨ (Lemma 6.1.6), which lowers
+the value of a root b restricting to m·a by m·r, so roots restricting to
+2a are reached at depth 2r. A uniform depth would also contradict V 4 of
+Definition 6.1.2, U_{a,x,r} ∩ U_{2a}(k) = U_{2a,x,2r}. The published
+torus-then-field restriction used by
+`UnramifiedValuationDescentStatement` therefore filters at depth m·r,
+which is what the proof gives. The 2024 corrections do not mention Lemma
+9.6.3; this reading is independently derived, not an authors' erratum.
+
+Section 9.2.1 (book PDF page 357) calls the embedding x ↦ (0, x) of
+B(G_K) into the enlarged building V(Z^0_{G,K}) × B(G_K) equivariant
+under ΓG(K), and its restriction to Γ-fixed loci G(k)-equivariant. By
+Section 4.3 (book PDF pages 209–211), g in G(K) acts on the vector
+factor by a translation whose kernel is G(K)^1 (Lemma 4.3.1), so the
+zero section is only Γ- and G(K)^1-equivariant, and on fixed loci only
+G(k)^1-equivariant, with G(k)^1 = G(K)^1 ∩ G(k) (§9.5, book PDF page
+395). For G = G_m over Q_2 the reduced fixed locus is a point, the
+fixed enlarged building is R and the uniformizer translates it by −1,
+so no G(k)-equivariant map exists at all. The projection to B(G_K)
+remains G(K)-equivariant. The 2024 corrections, which rewrite other
+paragraphs of 9.2.1, do not mention this; the reading is independently
+derived, not an authors' erratum.
+
 ## Bundle C: indexing, signs and component boundaries
 
 The Cartan row uses the actual dominant subset of the centralizer Z(k),
@@ -1897,12 +3117,22 @@ factorization through its quotient, and construct compact induction with
 a basic intertwining or double-coset theorem. No irreducibility,
 supercuspidality or positive-depth theorem follows from these source rows.
 
+The seventh pass records a conditional implementation on supplied
+models: the Section 13.2.6 row lists the reduction isomorphism, the
+inflation, the kernel-invariant adjunction and compact induction with
+Frobenius reciprocity. The kernel there is the radical preimage, not yet
+compared with `P_{x,0+}`; finiteness, compactness and the intertwining
+theorem remain open.
+
 ## Bundle E: filtrations, comparison alternatives and later instability
 
 These nine source-only rows cover Proposition 13.2.5, Sections 13.3.1–4,
 Theorem 13.5.1, corrected Proposition 13.5.2, and the later Propositions
 13.6.7 and 13.7.4. Positive-depth implementation remains behind the depth-zero
-release and its inflation/compact-induction consumer. The two instability
+release and its inflation/compact-induction consumer. The seventh pass
+records a published statement of Proposition 13.2.5 on supplied data, and
+the eighth pass adds its part (3); the other eight rows remain
+source-only. The two instability
 targets remain behind the separate positive-depth acceptance test.
 
 ### Ambient fields and torus filtrations
@@ -1958,6 +3188,22 @@ This note records a discrepancy and an outstanding independent proof
 obligation. The corrections on PDF p.49 give no replacement of
 Proposition 13.2.5; the proposed route is not an authors' erratum or an
 already proved corrected theorem.
+
+The eighth pass records `MoyPrasadProductStatement` (artifact
+`38dd6045-a386-43d6-a804-1de56fa51d14`, first published in Library
+commit `63d9b857523edf47443b7bf30844159e526d00b0`), which states this
+route on supplied data. For r > 0, a positive system given by a generic
+cocharacter and injective enumerations of the indivisible roots of each
+sign, the ordered product of the negative blocks `U_{a,x,r} U_{2a,x,r}`,
+the full factor `Z(F)_r` and the positive blocks is a bijection onto
+`P_{x,r}`. Proposition 7.3.12(5) has the factor `Z♯_{x,r}` and the
+target `G(k)♯_{x,r}` instead. The statement's Markdown derives the
+full-filtration form from Proposition 7.3.12(3)–(5), the proof of Lemma
+7.3.16 (`Z♯_{x,r} ⊆ Z(k)_r`), V 6, Definition 7.3.3(3) and the open cell
+of Proposition 2.11.3(2). For `G_m`, `Z♯_{x,r}` is trivial while
+`Z(k)_r`, which equals `P_{x,r}`, is not. The proof obligation stays
+open until a proof of the statement is published; its proof task is Task
+5579 (`f97b9951-9063-4099-b8dd-b986fd1f7205`).
 
 ### Finite depths and the infinite term in Proposition 13.2.5
 
@@ -2590,7 +3836,8 @@ Theorem 9.2.7 certificate remain open.
 
 ## Verified chamber and Iwahori–Weyl statements
 
-Two source rows now record published **statements**. Worker 118 checked the
+Two source rows record the published **statements** below; the fifth pass
+adds the proof of the first and of part (4) of the second. Worker 118 checked the
 complete Lean/Markdown pairs, their independent semantic approvals and their
 publication records. Each of the four primary files matches its frozen archive,
 the workspace copy and Library commit
@@ -2630,10 +3877,13 @@ Iwahori–Tits Bruhat decomposition: the equality `I ∩ N(F) = Z(F)^0`
 alone does not prove double-coset injectivity. The added part (4) retains
 both quotient bijections and the explicit Chapter 5 Henselian and
 perfect-residue hypotheses. Its actual unipotent group is
-`standardUnipotentPoints P.i ν ∅`; comparison with the single dynamic
-unipotent group used by the chamber products remains a separate algebraic
-proof obligation. This update changes only the Corollary 7.4.9 and
-Theorem 7.8.1 rows; the separate Chapter 5 rows await their own verification.
+`standardUnipotentPoints P.i ν ∅`. Its comparison with the single dynamic
+unipotent group used by the chamber products was then open. The Library
+has since proved it for every cocharacter, generic or not
+(`standardUnipotent_empty_eq_dynamic`; see the fourth pass). This update changes only the Corollary 7.4.9 and
+Theorem 7.8.1 rows. The Chapter 5 rows (5.3.3 and replaced 5.3.5 from this
+module, 5.2.1 and 5.3.4 from the `Langlands.BruhatTits` statements) are
+recorded by the second pass of the 8 November 2026 refresh.
 
 The following focused proof tasks have been published. Their IDs record
 obligations and supply no proof evidence in this note. All unqualified global
@@ -2648,6 +3898,23 @@ belong to its `ParahoricBuildingData` namespace.
 | `IwahoriDoubleCosetStatement`, `ParahoricDoubleCosetStatement` | `3b797835-655c-4a67-b6e7-791615474d75` |
 | `IwasawaDecompositionStatement`, `UnipotentNormalizerCosetStatement` | `0b383eb0-185c-415b-8def-5fcbac419374` |
 | `UnipotentIwahoriDoubleCosetStatement` | `7bfe81b2-233e-47a8-85c1-1fd296f32c05` |
+| `Langlands.BruhatTits.Iwasawa.AvailableIwasawaStatement` | `5e9b97bd-7a9c-43fb-bb8f-b017b7028adc` |
+| `Langlands.BruhatTits.Cartan.AvailableCartanStatement` | `14dc145a-14d4-47d6-97a6-d89ea0c558ab` |
+
+The `IwasawaDecompositionStatement` unit of task `0b383eb0-185c-415b-8def-5fcbac419374`
+has since been published (Theorem 5.3.3 row). `UnipotentNormalizerCosetStatement`
+remains open in that task, although both inputs of its published reduction are
+now proved (Lemma 5.3.5 row). Proofs of three other targets in the table were
+first published in Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`:
+`ChamberIwahoriDecompositionStatement` (artifact
+`4493a3f5-fe76-417d-8239-cbb2e5149465`),
+`UnipotentIwahoriDoubleCosetStatement` (artifact
+`dce35461-bb3e-429c-9068-cf0465a14731`) and
+`AvailableIwasawaStatement` (artifact `42bb1c08-a7ac-49f5-a197-dc1d5707a42e`).
+The Corollary 7.4.9, Theorem 7.8.1 and Theorem 5.3.4 rows record them.
+The proof `availableCartan` of `AvailableCartanStatement` (artifact
+`c3a16a8e-fad7-484f-9e90-64f897f020eb`) was first published in Library commit
+`d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8`; the Theorem 5.2.1 row records it.
 
 The recovery compile checked both statement modules and their companion
 modules without errors or warnings. Compilation and statement acceptance
@@ -2662,8 +3929,11 @@ Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. No external project is
 adopted by this note. The roadmap's external pins remain survey leads. Any
 adoption still requires a focused host compile, a mathematical and dependency
 audit, and its exact pin and licence. The theorem-level axiom inspections
-recorded here concern published metric proofs and their aggregate; no such report
-is asserted for an unproved target.
+in the verified-proof sections above concern published metric proofs and
+their aggregate. The 8 November 2026 refresh and its later passes add declaration inspections in
+environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` to the rows it updates. For a
+Prop-valued statement or a definition, such a report covers only the elaborated
+declaration; it is not evidence that the target is proved.
 
 Bundle A is open. Bundles B–F, the general constructed instance, the depth-zero
 and positive-depth consumers, regression examples, GL comparisons and Renard

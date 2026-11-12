@@ -1,0 +1,11 @@
+# The restricted standard-Levi data and the original projected special vertex
+
+This internal derived construction supplies `restrictedStandardLeviParahoricData` for the actual standard Levi of an ambient `ParahoricBuildingData B`, with a generic cocharacter and a subset of its simple roots. It constructs the apartment from the ambient valuation class, rather than taking an independently supplied apartment. It retains the ambient centralizer scheme, torus map, character valuation and centralizer zero subgroup.
+
+`standardLeviRestrictionCocharacter` chooses a cocharacter from the published `StandardLeviSplitComponent.exists_standardLevi_eq_dynamicCentralizer`. The accompanying equality and representability theorem identify the actual `Standard.leviHom` with this dynamic centralizer. The choice changes neither the standard Levi representative nor its torus inclusion.
+
+`standardLeviRestrictedApartment` and `standardLeviApartmentProjection` specialize the published `leviRestrictedApartmentData` and `leviApartmentProjection` to these actual standard-Levi maps. Connected reductivity and smoothness come from `standardLeviSplitComponentStatement`; the Levi torus is maximal split by `Standard.isMaximalSplitTorus_leviTorusHom`. The projection is surjective, and its value is a literal `IsLeviRestriction` of the original valuation on each Levi root. Thus every point of the restricted apartment has an ambient antecedent. `restrictedStandardLeviParahoricData` applies the published `standardLeviParahoricData` to this class and its proven restriction property. Its centralizer and centralizer zero subgroup have the recorded reflexive equalities.
+
+`standardLeviSpecialApartmentVertex` specializes `leviSpecialApartmentVertex`. Its only geometric inputs are ambient AS3 root-direction coverage and specialness of the original point. It returns a special apartment vertex in the constructed parahoric data together with the literal restriction property. Its underlying point is definitionally the original `standardLeviApartmentProjection`, as the value theorem records.
+
+This source-free composition does not prove the full Levi apartment or building axioms, a compact-preimage equality, or the Cartan comparison. Those remain separate obligations for the unchanged `AvailableRenardCartanStatement`.

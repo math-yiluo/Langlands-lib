@@ -42,3 +42,7 @@ unit supplies neither inertia fixedness nor the exact closed target proof.
 `arithmeticUnramified_iff_residue_finrank` uses the independent arithmetic
 predicate unchanged. Spectral and integral-closure results are imported by
 Lean name; no characteristic-zero or perfection assumption on F is added.
+
+The local instances have explicit names specific to this module so that
+combined imports retain distinct declarations. Their types, bodies and local
+instance scope are unchanged.

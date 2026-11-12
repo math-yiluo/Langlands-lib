@@ -46,7 +46,7 @@ local notation "b" => algebraBaseMap k K
 local notation "G_K" => CategoryTheory.Functor.obj
   (GroupScheme.baseChange (algebraBaseMap k K)) G
 
-local instance : IsAffineHom (G_K).X.hom := by
+local instance instIsAffineHomBaseChange_quasiSplitCompatiblePinning : IsAffineHom (G_K).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 

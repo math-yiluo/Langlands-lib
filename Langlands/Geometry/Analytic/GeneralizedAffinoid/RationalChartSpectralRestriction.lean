@@ -133,7 +133,8 @@ def spectralStabilizerAction (d : RationalChart K A) :
 
 variable {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
 
-local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
+local instance instIsTopologicalGroupOpenSubgroup_rationalChartSpectralRestriction
+    (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
 
 /-- A given continuous ambient action maps its open rational locus stabilizer

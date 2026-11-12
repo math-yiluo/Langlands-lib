@@ -67,7 +67,8 @@ namespace BinaryUpper
 
 variable (k : Type u) [Field k]
 
-local instance : IsAffine (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of k)).X.left :=
+local instance instIsAffineSpecialLinearLeft_specialLinearBinaryRegular :
+    IsAffine (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of k)).X.left :=
   SpecialLinear.isAffine_groupScheme _ _
 
 /-- The bottom-right affine coordinate is a nonzerodivisor of the entire coordinate algebra. -/

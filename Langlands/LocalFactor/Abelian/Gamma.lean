@@ -122,10 +122,14 @@ universe u v
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p) (E : PadicField.{v} p)
   (e : F.Carrier ≃ₐ[Padic p] E.Carrier)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : TopologicalSpace E.Carrier := E.canonicalTopologicalData.topology
-local instance : MeasurableSpace F.Carrier := borel F.Carrier
-local instance : MeasurableSpace E.Carrier := borel E.Carrier
+local instance instTopologicalSpaceCarrierF_abelianGamma :
+    TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance instTopologicalSpaceCarrierE_abelianGamma :
+    TopologicalSpace E.Carrier := E.canonicalTopologicalData.topology
+local instance instMeasurableSpaceCarrierF_abelianGamma :
+    MeasurableSpace F.Carrier := borel F.Carrier
+local instance instMeasurableSpaceCarrierE_abelianGamma :
+    MeasurableSpace E.Carrier := borel E.Carrier
 
 /-- Inverse pullback commutes with pointwise inversion of quasicharacters. -/
 @[simp] theorem quasicharacter_inv (χ : Quasicharacter F.Carrier) :

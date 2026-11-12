@@ -22,7 +22,8 @@ variable {k : Type u} [Field k]
     {p : SplitPinning G} {r : ℕ} (e : Fin r ≃ p.base.support)
     (x : p.NormalizedSimpleRootParametrizations) (n : p.SimpleReflectionRepresentatives)
 
-local instance : Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
+local instance instMonoInclusion_steinbergIndependentWeightReduction :
+    Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
 
 /-- On every test, moving representatives to the right gives the prefix-conjugated factors. -/
 theorem steinbergProductPoint_eq_independentWeightProduct

@@ -8,7 +8,7 @@ library over number fields, and the global inputs of Henniart's 2000
 local-correspondence construction. Neither track is complete.
 
 The registered roadmap
-[`henniart-global-automorphic-roadmap-2026-11-02`](</home/taskhub/pilot/literature/Global roadmap - Henniart local Langlands correspondence and a modern automorphic library (2 November 2026).md>),
+[`henniart-global-automorphic-roadmap-2026-11-02`](</home/taskhub/pilot/literature/Global roadmap- Henniart's local Langlands correspondence and a modern automorphic library (2 November 2026).md>),
 SHA-256
 `7be7def5b4039086928d7a9844c50fe5cea58513c24108191cef1ff239f4c8e3`,
 and the program contract determine the planned coverage below. Planned source
@@ -1114,3 +1114,224 @@ the Hecke global functional equation
 (`Langlands.Global.HeckeGlobalFunctionalEquationStatement`) have no proof in the
 current Library. The Galois-side global functional equation, the global
 field/tower, H3 and general automorphic obligations remain unchanged.
+
+## 10 November 2026 carry-over and Bernstein–Lapid §§2–3 continuation
+
+Worker 3657 checked this continuation against Library
+`e748734106ab2ee9de1cab1eb18a60e59593aac0`. On 8 November 2026 the project was
+carried into a new instance. The standing program keeps its identifier and
+revision 1 and is now executed by Worker 3657. The parent's shared draft
+(carried as revision 1), the shared DAGs and the carried tasks came along with
+their identifiers. The previous workers, their candidates and their reviews
+stayed behind. In particular, the H1 block child
+`205503d3-82c7-4b1a-a4f0-90d02bbe9a2e` was not carried, so the H1 rows of the
+earlier sections are historical. Worker 116 of the previous instance has no
+identity here and is credited in Markdown only. The earlier sections are not
+recertified by this one.
+
+### New public statements and definitions
+
+Each unit below is by Worker 3657, was independently approved with no
+qualifications, and was published. Its Lean and Markdown files have the same
+SHA-256 in the current Library and in the workspace; the first eight hex
+digits are given.
+
+| Unit | Candidate, review and integration | Exact content and boundary |
+| --- | --- | --- |
+| [QuotientConvolutionKernelStatement](../../Langlands/Analysis/Local/QuotientConvolutionKernelStatement.md) (Lean `fa04d6ef`, Markdown `0afd3790`) | `5e1dcbf1-06d2-4dd3-a8c1-2737266fc7ae`; Reviewer 710, review `9e82f2448d0c47ecb9411e1a30eb9866`; integration `0b52d7ade01b4bdf86dd3c1299027793`, commit `d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8` | `Langlands.QuotientIntegration.QuotientConvolutionKernelStatement`: continuous kernel vectors and the support bound for compactly supported convolutions on a coset space. It restores the target of the lost previous-instance candidate `f33ece2b`. No proof is public. |
+| [ContinuationPrincipleStatement](../../Langlands/Analysis/Meromorphic/ContinuationPrincipleStatement.md) (Lean `f656da08`, Markdown `32166d54`) with helper [AnalyticSystems](../../Langlands/Analysis/Meromorphic/AnalyticSystems.md) (Lean `7755ec49`, Markdown `9fa415ac`) | `6a56c6f8-254b-4313-93b0-f0dd321fa336`; Reviewer 767, review `79cef509a0744cd7a45bf5eb320c7252`; integration `3f91df387255439788ae0621dc842dc7`, commit `58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af` | Bernstein–Lapid (BL) §§3.1–3.3 and Theorem 3.3, pp.192–194: weak holomorphy, local common-denominator meromorphy, analytic systems, local finite type. `MeromorphicContinuationPrincipleStatement` is the conjunction of `MeromorphicContinuationHolomorphicStatement` (openness, holomorphy, meromorphy) and `MeromorphicContinuationAnalyticComplementStatement`. No proof is public. |
+| [FredholmCriterionStatement](../../Langlands/Analysis/Meromorphic/FredholmCriterionStatement.md) (Lean `cc795a43`, Markdown `227f04f6`) | `4f579dbc-b7e2-41fe-b7f8-701b7b5d08fa`; Reviewer 777, review `c87730e9a8044f7dbef67baff0dbd721`; integration `0d8405f0d9394c0ba178bea92d551b58`, commit `58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af` | BL §3.4, pp.194–195: `FredholmCriterionStatement` (Banach spaces, left invertible modulo compact operators) and `HilbertFredholmCriterionStatement` (Corollary 3.4); their conjunction `FredholmFiniteTypeStatement`. No proof is public. |
+| [AdelicComplexParameters](../../Langlands/Global/AdelicComplexParameters.md) (Lean `d7361cb3`, Markdown `39b93e1e`) with helper [LinearCoordinates](../../Langlands/Analysis/Meromorphic/LinearCoordinates.md) (Lean `62b2a9a4`, Markdown `fcc2c206`) | `296a0871-c095-45c6-8e35-d313aa0dcd8c`; Reviewer 935, review `4dc3d6eac1a94d5698c3873b6281774f`; integration `ecc4d1f236a54489bc42741b35d65486`, commit `e748734106ab2ee9de1cab1eb18a60e59593aac0` | BL §2.1, p.190: `ComplexCharacterParameter F G = ℂ ⊗[ℤ] X^*(G)`, its pairing with the existing `RealCharacterDual`, the real part, and `parameterCharacter`, `m ↦ m^λ = exp ⟨λ, characterLog m⟩`. `IsHolomorphicInCoordinatesOn` and `IsMeromorphicInCoordinatesOn` express holomorphy and meromorphy on such parameter spaces in every complex linear coordinate system. Definitions only. |
+
+Candidate `96508769-0050-478d-a756-630855d8bd65` (Worker 3657) is staged and
+unreviewed at this check. It formulates the conditions of Mœglin–Waldspurger
+I.2.17 for functions on `G(𝔸)` left invariant under an arbitrary subgroup `Γ`
+(module `Langlands.Automorphic.GroupSchemeInvariantForms`), for BL's
+`𝒜_P` with `Γ = U(𝔸)M(F)`, and states that for `Γ = G(F)` they coincide with
+the existing `IsAdelicAutomorphicForm`. It is not credited here.
+
+### Exact proof children published by Worker 3657
+
+Each is a `lean.proof@1` task with environment
+`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Each was `ready` with no member and
+no candidate at publication, and Tasks 5376 and 5387 again at Worker 3657's
+inspections of 10 November 2026. Task publication divides proof obligations;
+it is not proof evidence.
+
+| Task | Exact target | Recorded route or obstacle |
+| --- | --- | --- |
+| Task 5376, `6d92e6ea-1d66-4a1b-9ff5-fee9d16c8bbb` | `Langlands.Analysis.IntegratedActionConvolutionStatement` | A complete previous-instance proof pair in the parent's shared draft revision 1 (Worker 116) is offered for adoption; its development check `f81ab7c3` had no errors or warnings. |
+| Task 5387, `536c7862-9de2-47eb-b906-9a717903923e` | `Langlands.QuotientIntegration.QuotientConvolutionKernelStatement` | Draft revision 1 proof pair (Worker 116) offered; development check `4b0394ad`. |
+| Task 5430, `9d78be17-ad9b-4e75-83d9-98e8e7bc7b25` | `Langlands.Analysis.Meromorphic.FredholmFiniteTypeStatement`, with both conjuncts | The pinned Mathlib has Fredholm operators but no lemma that identity minus compact is Fredholm, and no passage from weak to norm holomorphy of operator families. |
+| Task 5431, `d952aa50-53d3-411b-a752-c00588a1a8cf` | `Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` | Holomorphy of compositions needs Hartogs's theorem on separate holomorphy (BL p.193), absent from Mathlib. The identity theorem can replace connectedness of hypersurface complements. |
+| Task 5432, `401025cb-76df-4e21-9b2e-70b21d247174` | `Langlands.Analysis.Meromorphic.MeromorphicContinuationAnalyticComplementStatement` | Reducing a possibly infinite family of determinants to finitely many local equations needs the theorem that an arbitrary intersection of analytic subsets is analytic. The statement's Markdown attributes this to Noetherianity of convergent power series; Noetherianity of the local ring alone does not give one common neighborhood. |
+
+The carried proof children of the earlier sections remain open: pointwise
+representatives `054d4658-5f9f-4a10-8fdc-135cdf78161d`, invariant subspaces
+`21ebd7a6-9d37-4ac3-bf11-95ebfaa3fc9e`, the smooth inverse kernel sequence
+`aeb12597-b4d8-492d-ae26-4a9873ec45f3`, the full almost-everywhere finite
+approximation `816bc6a1-cfcd-46af-9c34-beb91454151c`, Hecke finite ramification
+`9b4e0085-fce3-44d1-9aa8-22d9cf138d51` and Hecke local rigidity
+`c9bdc5d6-36b4-4f38-b483-dc509c57ca82`. Each was `ready` without a member at
+Worker 3657's inspections of 10 November 2026. Further compact-quotient and
+cuspidal proofs in draft revision 1 await these prerequisite proofs before
+their own children are published.
+
+### L1/L2 interface agreement
+
+Worker 3657 and Worker 3659 (L1 block `7d827a3e-4245-4c06-ad81-48f413c26faf`)
+agreed in their peer conversation on the following division. `𝔞_M` and `H_M`
+are the published `RealCharacterDual` and `characterLog`. L1 builds the
+Iwasawa height `H_P` for every standard parabolic relative to one supplied
+compact `K` with `P(𝔸)K = G(𝔸)`, and the quotient `X_P = U(𝔸)M(F) \ G(𝔸)`.
+L2 builds the parameter space and `m ↦ m^λ` (now public), the space `𝒜_P`, the
+Eisenstein series, the intertwining operators and the topology of the space of
+functions of uniform moderate growth of BL §7. Worker 3659's height module is
+staged as candidate `c45ff0d0-8e5e-451d-a14d-a400ad453b0c` and is not
+credited here. This agreement is coordination, not a task revision.
+
+Neither track of the program is complete. No L2 continuation, functional
+equation or Eisenstein-series statement is public yet, and no Bernstein–Lapid
+proof is public.
+
+## 11 November 2026 Bernstein–Lapid §2 statements
+
+Worker 3657 checked this section against Library
+`0ef479821d752edef9ef540203ddfb7f637bbce6`. It supersedes the last paragraph of
+the previous section: the L2 Eisenstein-series statements below are now public.
+
+### Further public units by Worker 3657
+
+Each unit below was independently approved with no qualifications and
+published. Its Lean and Markdown files have the same SHA-256 in the current
+Library and in the workspace; the first eight hex digits are given. Helper
+modules are listed with the unit that introduced them.
+
+| Unit | Candidate, review and integration | Exact content and boundary |
+| --- | --- | --- |
+| [GroupSchemeInvariantFormsComparisonStatement](../../Langlands/Automorphic/GroupSchemeInvariantFormsComparisonStatement.md) (Lean `1a189eff`, Markdown `86950803`) with helper [GroupSchemeInvariantForms](../../Langlands/Automorphic/GroupSchemeInvariantForms.md) (Lean `2b274119`, Markdown `c265bd16`) | `96508769-0050-478d-a756-630855d8bd65`; Reviewer 988, review `6a5016e6c77f40c3b21adc67576b5da6`; integration `84a0ca54286046bd954b8d8c94e3f2b9` | Mœglin–Waldspurger (MW) I.2.17 for functions on `G(𝔸)` left invariant under an arbitrary subgroup `Γ` (`IsAutomorphicFunctionOn`); for `Γ = U(𝔸)M(F)` this is BL's `𝒜_P`. The statement asserts agreement with the existing `IsAdelicAutomorphicForm` for `Γ = G(F)`. No proof is public. |
+| [GroupSchemeUniformGrowthFrechet](../../Langlands/Automorphic/GroupSchemeUniformGrowthFrechet.md) (Lean `9f230e9c`, Markdown `a38c7bad`) | `447f2be3-65e4-4ba7-9cda-a8a41e212cea` (replaces the rejected `89e18743`); Reviewer 1019, review `30197ed6b01c4cbb93549d09d636daa9`; integration `db3ff8c36c584ae6bb293f8c04e6a043` | Derived from BL §7.1, pp.210–211: the Fréchet space `UniformGrowthFrechetSpace … hN hrho R L` of right `L`-invariant smooth functions of uniform moderate growth with exponent `R`, weighted through a closed matrix embedding `rho`. It agrees with BL's space only up to a change of exponent (explained, not proved, in the Markdown). The LF-topology on `𝔉_umg` is not constructed. Definitions only. |
+| [AdelicEisensteinConvergenceStatement](../../Langlands/Global/AdelicEisensteinConvergenceStatement.md) (Lean `2af25eb3`, Markdown `e2c87e54`) with helper [AdelicEisensteinSeries](../../Langlands/Global/AdelicEisensteinSeries.md) (Lean `2d42887f`, Markdown `882ea294`) | `24ad659b-7f19-407e-bff1-b7b45883949f`; Reviewer 1107, review `e2afb5c1e5cb4bcb91f2be2a3427b8d2`; integration `0c582e6c4c4c4b07883e7bfbe263ae35` | BL (2.1), p.191, and MW II.1.5, p.85: `m_P^λ`, `φ_λ`, the series `E(g, φ, λ) = Σ_{P(F)\G(F)} φ_λ(γg)`, the regularity predicate `IsRegularParameter` and `EisensteinAbsoluteConvergenceStatement` (normal convergence for `g` in compacts and `λ` in compacts of a translate of the positive cone). |
+| [AdelicEisensteinContinuationStatement](../../Langlands/Global/AdelicEisensteinContinuationStatement.md) (Lean `4c80d8f1`, Markdown `0cebae37`) | `47f657cb-43e4-4115-a422-722b698eccc8`; Reviewer 1167, review `57d99508933f44829a04cc2ab794196f`; integration `677d9b8a88724bbdbfac1eb2b6b07878` | BL Theorem 2.3 (1) in the Fréchet form of the Corollary in §8.6, p.226: `EisensteinMeromorphicContinuationStatement`. |
+| [AdelicIntertwiningConvergenceStatement](../../Langlands/Global/AdelicIntertwiningConvergenceStatement.md) (Lean `4721b1ae`, Markdown `716f7ff6`) with helper [AdelicIntertwiningOperator](../../Langlands/Global/AdelicIntertwiningOperator.md) (Lean `96d51eac`, Markdown `6a9201a4`) | `ee2c6c5b-fa92-4cb9-97fa-78a06930a05f`; Reviewer 1171, review `e735bee08e9b4dee8d175cf3ed55de1e`; integration `48ed54b373644e7db3305e0afbd670c8` | MW II.1.6, pp.87–88, and BL §2.2: `w λ`, the Weyl presentation `IsWeylConjugation`, the operator `M(w, λ)φ` on actual adelic points, and `IntertwiningAbsoluteConvergenceStatement` (domination by an integrable function on a region smaller than BL's). |
+| [AdelicIntertwiningContinuationStatement](../../Langlands/Global/AdelicIntertwiningContinuationStatement.md) (Lean `aae8f61d`, Markdown `2efc8b0a`) | `98bd46c6-faf3-401f-b69d-cf3bb27d5c07` (replaces the withdrawn `4b5260cd`); Reviewer 1185, review `c23f508f45e049d5aca2ad53765bd95a`; integration `bc12adf0fc3f47cdb275be236c3ec5ff` | BL Theorem 2.3 (3): `M(w, λ)φ` continues meromorphically within a finite-dimensional subspace of `𝒜_Q`. |
+| [AdelicEisensteinFunctionalEquationStatement](../../Langlands/Global/AdelicEisensteinFunctionalEquationStatement.md) (Lean `ed392154`, Markdown `ec1e2499`) | `ad7f0786-88ee-48d9-884a-1f449b24a840`; Reviewer 1190, review `ba26241210214c96a096ae1262cfef75`; integration `e902afce33ff4e57b24486e1f94509b4` | BL Theorem 2.3 (4), universal over continuation data: `E(φ, λ) = E(M(w, λ)φ, wλ)` on the intersection of the domains. |
+| [AdelicIntertwiningCocycleStatement](../../Langlands/Global/AdelicIntertwiningCocycleStatement.md) (Lean `6816d705`, Markdown `7cf7b05b`) | `f9c5c784-aa6a-4485-9a46-3230b640cce0`; Reviewer 1193, review `acc00cf5021a41c0a7675a12fcb7284a`; integration `3bd550fc23394cbfb49306da917f3ba1` | BL Theorem 2.3 (5), universal over continuation data: `M(w'w, λ) = M(w', wλ) M(w, λ)`. |
+| [AdelicRootHyperplaneStatement](../../Langlands/Global/AdelicRootHyperplaneStatement.md) (Lean `93674a47`, Markdown `c3d01c3a`) | `a06fca02-ee20-4b5d-a732-b05b42508026`; Reviewer 1228, review `f1a1b939c9024aa092711cfdf5a2a5aa`; integration `88706ba7ef51470cbfa9b01bb14e470c` | BL Theorem 2.3 (6), first sentence, in the local product form of the Corollary in §8.6: singularities of `M(w, λ)φ` and `E(φ, λ)` lie along root hyperplanes. |
+
+The clause of BL Theorem 2.3 (1) that a regular value of the continuation is
+an automorphic form is a conjunct of the continuation statement. BL Theorem
+2.3 (2) and the rationality clause of 2.3 (3) concern function fields and are
+not formalized; all statements above assume a number field.
+
+### Further proof children published by Worker 3657
+
+Each is a `lean.proof@1` task with environment
+`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, ready with no member and no
+candidate at publication; Tasks 5490 and 5499 were again so at Worker 3657's
+inspection of 11 November 2026. Task publication divides proof obligations; it
+is not proof evidence. The routes are recorded in the task contexts.
+
+| Task | Exact target | Recorded route or obstacle |
+| --- | --- | --- |
+| Task 5466, `53bc6dc5-f87a-41cf-a951-ea16c4a21f5e` | `Langlands.Global.WeilPairPoleRegionStatement` (Henniart 1986, 4.5 (i)) | H1 analytic input. |
+| Task 5467, `a000ce99-f691-4f7e-9a02-15e6fe0eebc0` | `Langlands.Global.GLPairPoleRegionStatement` (Henniart 1986, 4.5 (ii)) | Needs Jacquet–Piatetski-Shapiro–Shalika L-factor computations that the Library lacks. |
+| Task 5490, `1832dcb1-0d24-4d4b-b194-f272613d96c9` | `Langlands.Global.EisensteinAbsoluteConvergenceStatement` | Moderate growth, comparison of heights on Siegel sets, Godement's convergence of `Σ m_P(γg)^ν`. |
+| Task 5499, `1b5b4ce6-41e1-412f-a47c-c378bf0f4bb7` | `Langlands.Global.EisensteinMeromorphicContinuationStatement` | BL §§4–8: the system `Ξ_fnl(λ)`, uniqueness through leading cuspidal components (§6), finite type (§7), and the continuation principle (Tasks 5430–5432). |
+| Task 5500, `ab6ff27b-8e0d-4c78-8146-0b971d98acda` | `Langlands.Global.IntertwiningAbsoluteConvergenceStatement` | Unfolding against the normal convergence of the Eisenstein series (MW II.1.6). |
+| Task 5501, `c1648848-1e63-45a5-8590-3e61a11b64f1` | `Langlands.Global.IntertwiningMeromorphicContinuationStatement` | Constant terms of the continued Eisenstein series (BL Lemma 6.10, Corollary in §8.6). |
+| Task 5502, `f93514cd-a5e8-4481-97e0-5c645b0dd5de` | `Langlands.Global.EisensteinFunctionalEquationStatement` | The `P`-regular and `wλ`-regular regions are in general disjoint, so the identity needs BL's uniqueness through leading terms (§6), not only convergent series. |
+| Task 5503, `5f78828a-eded-4b7e-ad4f-722c1648a944` | `Langlands.Global.IntertwiningCocycleStatement` | BL deduce it from 2.3 (4) and injectivity (8.4); a direct Fubini argument covers only pairs whose lengths add. |
+| Task 5504, `4edc456b-6a8e-4d8e-aa41-e8c0f1cbf41b` | `Langlands.Global.RootHyperplaneSingularitiesStatement` | BL Corollary in §8.6. |
+
+The shared DAG (revision 186) records these tasks on the nodes
+`proof.eisenstein-absolute-convergence` through
+`proof.root-hyperplane-singularities`.
+
+Neither track of the program is complete. No Bernstein–Lapid proof is public.
+The constant term of Eisenstein series (MW II.1.7, BL Lemma 6.10), the
+`W(P, Q)` double-coset bookkeeping beyond single presentations, and the
+LF-topology on `𝔉_umg` remain unstated.
+
+## 11 November 2026 constant term of Eisenstein series and the L3 block
+
+Worker 3657 checked this section against Library
+`63d9b857523edf47443b7bf30844159e526d00b0`. It supersedes the last paragraph of
+the previous section: the constant term of Eisenstein series is now stated.
+
+| Unit | Candidate, review and integration | Exact content and boundary |
+| --- | --- | --- |
+| [AdelicEisensteinConstantTermStatement](../../Langlands/Global/AdelicEisensteinConstantTermStatement.md) (Lean `a4138f87`, Markdown `add4c81f`) | `b8a2cf26-b09c-497f-a45e-2e47da6c5ba9` (replaces the rejected `4f07fc96`); Reviewer 1444, review `d18c42f42b5b42b6ac84007123ff8b0f`, no qualifications; integration `ec3bc15416e44cb18d5c4240ddedeb62` | BL Lemma 6.10, formula (6.17), pp.208–209, and MW II.1.7, pp.91–93, without cuspidality: `EisensteinConstantTermStatement`. For arbitrary rational double-coset representatives `w_i` of `Q(F)\G(F)/P(F)` and parabolics `P'_i`, `Q'_i` described by their rational points, the constant term of `E(φ, λ)` along `Q` is the sum of the intertwining integrals of the constant terms of `φ` along `P'_i`, with integrability and summability conjuncts. Helpers: `rationalImage`, `RelativeRationalCosets`, `subgroupConstantTerm` (the measure divides by the total mass and is zero at infinite mass), `parameterRestrict`, `IsDoubleCosetRepresentatives`, `IsGeometricLemmaDatum`. Formula (6.18) for the cuspidal projection is not stated. |
+
+Worker 3657 also published two ready tasks with no member:
+
+- Task 5571, `cc4564a0-9a9b-4b0d-a1be-3c4b2bd10509` (`lean.proof@1`, environment
+  `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`): prove exactly
+  `Langlands.Global.EisensteinConstantTermStatement`. The route is BL's unfolding
+  over the given representatives; it needs the absolute convergence of Task 5490.
+- Task 5536, `e079aef9-b46a-468b-a373-87322d41b934` (`lean.peer@1`): the L3
+  block of parabolic combinatorics (`τ_P`, `τ̂_P`, `σ`, Langlands' `φ_P(Λ, H)`,
+  Arthur 1978 Proposition 1.1 and Lemmas 6.1 and 6.3), `(G, M)`-families
+  (Arthur 2005, Lemmas 17.1 and 17.4–17.6) and Arthur truncation (Lemma 8.2,
+  Propositions 13.1–13.3). The Library had none of these when the task was
+  published.
+
+The shared DAG (revision 207) records Task 5571 on the node
+`proof.eisenstein-constant-term` and Task 5536 on
+`def.arthur-parabolic-combinatorics-truncation`.
+
+Neither track of the program is complete. No Bernstein–Lapid proof is public.
+The `W(P, Q)` bookkeeping beyond single presentations, the LF-topology on
+`𝔉_umg` and the Lapid 2011 spectral statements remain unstated.
+
+## 11 November 2026 Lapid 2011 Propositions 2 and 6
+
+Worker 3657 checked this section against Library
+`4ed6d9794db38a5178b5c7ab6b048b42eff9d907`. It supersedes the last paragraph of
+the previous section in one respect: two of the Lapid 2011 spectral statements
+are now public. The source is E. Lapid, *On Arthur's asymptotic inner product
+formula of truncated Eisenstein series*, Clay Math. Proc. 13 (2011),
+pp. 309–331, registered as
+`lapid-2011-asymptotic-inner-product-truncated-eisenstein`.
+
+Both units below were independently approved with no qualifications and
+published. Their Lean and Markdown files have the same SHA-256 in the current
+Library and in the workspace; the first eight hex digits are given. Both are
+stated for number fields `F : Type` (universe zero), because the canonical
+split-centre interface they use is stated in that universe.
+
+| Unit | Candidate, review and integration | Exact content and boundary |
+| --- | --- | --- |
+| [AdelicEisensteinImaginaryHolomorphyStatement](../../Langlands/Global/AdelicEisensteinImaginaryHolomorphyStatement.md) (Lean `efcedca0`, Markdown `569743bb`) with helper [AdelicSquareIntegrableInducedForms](../../Langlands/Global/AdelicSquareIntegrableInducedForms.md) (Lean `6550e9c2`, Markdown `c37517a9`) | `14e81d1e-5c1e-4346-ba65-62066df15d85`; Reviewer 1632, review task `ed3b21b6-5765-40bc-9f6b-8ce2cd381abe`; integration `baca339d77ae461d8756569e78bd8a39` | Lapid Proposition 6, pp.329–330, in scalar form: `EisensteinImaginaryAxisHolomorphyStatement`. For every continuation `(E, D)` of the Eisenstein series of a vector of `A^2_P` there is a continuation `(E', D')` with `i𝔞_P^* ⊆ D'`, meromorphic in every `g` on the one domain `D'`, that agrees with `E` on `D ∩ D'`. Helpers: `imaginaryParameter`, `modulusParameter`, `halfModulusParameter` (`ρ_P`), `IsSplitComponentEquivariant` (`A^n_P`) and `IsSquareIntegrableInducedForm` (`A^2_P`). Fréchet-valued holomorphy is not asserted. |
+| [AdelicWavePacketInnerProductStatement](../../Langlands/Global/AdelicWavePacketInnerProductStatement.md) (Lean `2e4f68cb`, Markdown `766b310b`) with helper [AdelicInducedInnerProduct](../../Langlands/Global/AdelicInducedInnerProduct.md) (Lean `150e3f0b`, Markdown `ca9be0ab`) | `ca9e63c9-6735-4e6e-b9b5-6347147f0c7d`; Reviewer 1659, review task `b9d33898-4388-4706-8f25-006512430264`; integration `39b19bf6fa554853929b8e4da9633082` | Lapid Proposition 2, pp.313–314: `WavePacketInnerProductStatement`. Wave packets `Θ` of square-integrable inducing data are in `L²(G(F) \ G(𝔸))`, and their inner product is `∫ Σ_{w ∈ Ω(P, P')} (M(w, λ)φ(λ), φ'(wλ))_{P'} dλ`. The data are globally regular: every generating Eisenstein continuation and every intertwining coefficient must be meromorphic on a domain containing all of `i𝔞_P^*`. Helpers: `parameterCoordinates`, `spectralMeasure`, `IsIwasawaCompatibleMeasure`, the `β`-weighted inner product `inducedInnerProduct`, `realWeylParameter` and `weylParameterSet` (`W(𝔞_M, 𝔞_{M'})`). The Hilbert space `L`, the isometry of Lapid Theorem 2 and surjectivity are not stated. |
+
+The integrator recorded a boundary on the second unit. Because it requires
+regularity on all of `i𝔞_P^*`, it cannot serve as the input to Lapid's own proof
+of Proposition 6. That proof uses Lemma 10: wave packets of bounded measurable
+data supported in a compact set on which the Eisenstein series are regular,
+with the bound `‖Θ_φ‖² ≤ |Ω| ‖φ‖²_*`. Lemma 10 is not stated yet.
+
+Worker 3657 published two `lean.proof@1` tasks with environment
+`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Each was ready with no member and no
+candidate at Worker 3657's inspection of 11 November 2026. Task publication
+divides proof obligations; it is not proof evidence.
+
+| Task | Exact target | Recorded route or obstacle |
+| --- | --- | --- |
+| Task 5612, `711e48e1-89b5-4fc8-a272-904a2f4e4040` | `Langlands.Global.WavePacketInnerProductStatement` | Lapid §8, p.328: Lemma 9 (square integrability through `Λ^T`), Proposition 1 (the asymptotic formula (2) and its ingredients in §§4–7), Lemma 8 on `(G, M)`-families, the constant term of Task 5571, MW I.4.11, and the adjointness of `M(w, λ)`. Truncation belongs to the block of Task 5536. |
+| Task 5613, `ccfc4843-fa56-468c-bf2f-811151ff64c8` | `Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement` | Lapid §8, pp.329–330: Lemma 10, then a contradiction at a pole of order `k ≥ 1` along a root hyperplane through a point of `i𝔞_P^*`, comparing the growth of `Θ_φ(x_0)` with the bound (19). Bernstein–Lapid Theorem 2.3 supplies Lapid's Working hypothesis. |
+
+The shared DAG (revision 236) records the definitions on
+`def.lapid-square-integrable-induced-forms` and
+`def.lapid-induced-inner-product`, and the proof tasks on
+`proof.lapid-wave-packet-inner-product` and
+`proof.lapid-imaginary-axis-holomorphy`. It plans
+`proof.lapid-truncated-asymptotic-inner-product` (Proposition 1),
+`proof.lapid-local-wave-packet-bound` (Lemma 10) and
+`proof.intertwining-imaginary-unitarity` (unitarity of `M(w, λ)` on
+`i𝔞_P^*`, Lapid p.312 and MW IV.3.12). None of these three is stated.
+
+Neither track of the program is complete. No Bernstein–Lapid or Lapid proof is
+public. Lapid Proposition 1, Lemma 10 and Theorem 2, the unitarity of
+`M(w, λ)` on `i𝔞_P^*`, the `W(P, Q)` bookkeeping beyond single presentations
+and the LF-topology on `𝔉_umg` remain unstated.

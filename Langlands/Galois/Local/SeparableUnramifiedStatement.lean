@@ -14,10 +14,10 @@ section Arithmetic
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
 
-local instance : NontriviallyNormedField F := localNormedField F
-local instance : IsUltrametricDist F := localNormedField_ultrametric F
-local instance : CompleteSpace F := localNormedField_complete F
-local instance : Finite (ResidueField (baseIntegers F)) := localResidue_finite F
+local instance separableUnramifiedStatementInstance1 : NontriviallyNormedField F := localNormedField F
+local instance separableUnramifiedStatementInstance2 : IsUltrametricDist F := localNormedField_ultrametric F
+local instance separableUnramifiedStatementInstance3 : CompleteSpace F := localNormedField_complete F
+local instance separableUnramifiedStatementInstance4 : Finite (ResidueField (baseIntegers F)) := localResidue_finite F
 
 /-- Arithmetic unramifiedness in the actual spectral integer and residue rings.
 This predicate makes no reference to inertia or its fixed field. -/

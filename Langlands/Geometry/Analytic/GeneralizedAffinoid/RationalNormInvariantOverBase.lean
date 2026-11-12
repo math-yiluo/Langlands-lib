@@ -21,7 +21,8 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
   (ρ : G →* Aut A)
   (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
 
-local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
+local instance instIsTopologicalGroupOpenSubgroup_rationalNormInvariantOverBase
+    (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
 
 /-- The original norm-continuous base action restricted to the common subgroup. -/

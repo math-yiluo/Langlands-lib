@@ -1,0 +1,13 @@
+# The retained doubled-root factor in local depth exchange
+
+This internal derivation refines the ordinary rank-one factorization when its positive input lies in the actual doubled-root subgroup. For finite input valuations `t,t'` with positive sum, its positive output differs from that original input by an element of ordinary root depth at least `2t+t'`.
+
+The local estimate follows the factorization argument of Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Proposition 7.1.1(2), printed pp.237–239 / PDF pp.268–270, registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`. The Lean construction derives the needed estimate from the published actual factorization and opposite-cell results; it does not assert all parts of that proposition.
+
+The affine-root-system assumptions exclude positive root multiples beyond the double. The published actual doubled-root centrality theorem then makes the doubled negative root subgroup commute with the negative ordinary root subgroup. Actual opposite-cell multiplication gives uniqueness of the negative-root, centralizer and positive-root factors.
+
+Choose an opposite pair for the positive doubled-root input. Its normalizer element also acts as the reflection of the ordinary root; V5 gives the negative pair factor valuation `-t`, and the actual normalizer action shifts the valuation of its conjugate of the negative input to `2t+t'`. Centrality cancels the other doubled-root factor in conjugation. Applying ordinary rank-one factorization to that conjugate and the negative pair factor gives a second decomposition of the conjugated product. Actual triple-product uniqueness identifies its positive output with the difference of the original output and input, giving the depth bound.
+
+`doublePositiveMoyPrasadCoordinates` combines the estimate with the original ordinary-root depth exchange. A doubled-root input at depth `r` lies in its ordinary-root subgroup at depth `r/2`. Exchanging it with an opposite ordinary-root element at depth `s`, where `r/2+s > 0`, gives a central coordinate in the supplied filtration at `r/2+s` and an opposite coordinate at depth `s`. The estimate puts the difference of the positive output and the original doubled-root input in the ordinary-root subgroup at depth at least `r`. Thus the positive output lies in the original block `U_{a,x,r} U_{2a,x,r}`. Identity inputs are treated directly.
+
+This is a derived mixed local exchange retaining the actual original block. It supplies no full exchange of both blocks, full Moy–Prasad covering, covariance, centralizer-filtration existence or host simultaneous-basis theorem.

@@ -22,7 +22,8 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   (ρ : DomainSpectralAction G A)
   {R : Type r} [CommRing R]
 
-local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
+local instance instIsTopologicalGroupOpenSubgroup_rationalSpectralLocallyConstantSmoothSheaf
+    (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
 
 /-- All locally constant functions on the original invariant loci, with the
