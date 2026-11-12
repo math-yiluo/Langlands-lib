@@ -17,10 +17,12 @@ connectedness is assumed. Rational
 points are `rationalPoints G = (Over.mk (𝟙 (Spec k)) ⟶ G.X)` with their
 actual group law.
 
-`SplitPinning.middleDistance m i` is `m - 1 - i` if `i + 1 < m`, and `i - m`
-otherwise, with natural subtraction. For `m > 0` and `i < 2*m` it gives
-distance from the middle pair `{m-1,m}`; both middle positions have distance
-zero. It is also defined outside these bounds.
+`SplitPinning.middleDistance` is imported from
+[`LinearAlgebra/EvenPathDistance`](../../LinearAlgebra/EvenPathDistance.md).
+Its unchanged formula is `m - 1 - i` if `i + 1 < m`, and `i - m` otherwise,
+with natural subtraction. For `m > 0` and `i < 2*m` it gives distance from
+the middle pair `{m-1,m}`; both middle positions have distance zero.
+It is also defined outside these bounds.
 
 `SplitPinning.corootRationalPoint p α t` evaluates the actual coroot
 cocharacter `p.corootHom α` at `t : kˣ`, using the inverse of

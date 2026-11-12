@@ -287,9 +287,11 @@ characteristic zero:
   (Cartier §4.4);
 - two parameters of the same representation are Weyl equivalent (Cartier Corollary 4.2
   with §4.4(b), the Satake isomorphism);
-- an unramified character of `T` is determined by its values at the points `λ(p)`,
-  which needs `T = λ(p) · (T ∩ K_p)`;
 - the relation is invariant under a change of standard chart.
+
+The determination of an unramified character of `T` by its values at the points
+`λ(p)` is proved in [`KottwitzTorusLattice`](KottwitzTorusLattice.md), using the
+decomposition `T = λ(p) · (T ∩ K_p)`.
 
 Descent from `Ω = L̄` to `L` concerns the polynomials built from parameters (item 3), not
 the parameters themselves. The module defines no Hecke algebra action and assumes no

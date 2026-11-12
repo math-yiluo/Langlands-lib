@@ -1,4 +1,5 @@
 import Langlands.GroupScheme.Rational.SteinbergCanonicalRepresentatives
+import Langlands.LinearAlgebra.EvenPathDistance
 import Langlands.LinearAlgebra.RootDatumPathWeights
 
 /-! # Pattern products for even path components (Steinberg's `N''` and `N'''`) -/
@@ -14,11 +15,6 @@ open scoped CategoryTheory.MonObj
 namespace Langlands.GroupScheme
 
 namespace SplitPinning
-
-/-- The distance of the path position `i` from the middle pair `{m - 1, m}` of a path with
-`2 m` vertices: `m - 1 - i` on the left half and `i - m` on the right half. Both middle
-positions have distance `0`. -/
-def middleDistance (m i : ℕ) : ℕ := if i + 1 < m then m - 1 - i else i - m
 
 variable {k : Type u} [Field k] {G : GroupScheme (Spec (CommRingCat.of k))}
     [IsAffineHom G.X.hom]
