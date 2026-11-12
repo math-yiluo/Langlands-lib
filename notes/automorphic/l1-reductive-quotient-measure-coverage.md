@@ -6,7 +6,8 @@ against Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0`, and twice on 
 `63d9b857523edf47443b7bf30844159e526d00b0` (`δ_P`, Haar probability on `K` and the Iwasawa
 integration formula in §§2, 3 and 5; §4 status; task states). On 12 November 2026 it was
 revised against `6bff2655fd831aefb39f6688f904aa7410cb0f73` (the uniform-growth statement in §§3–5;
-task states). It records the published
+task states), and later that day against `16c60abdc019c1181a2734d3052305ec3d6e7b85` (the
+slice-to-global growth statement in §§3–5). It records the published
 Lean construction of the Getz–Hahn quotient `[G] = A_G G(F) \ G(A_F)`, its measure and its `L²`
 and cuspidal spaces, for a group scheme `G` over a number field `F` whose underlying scheme is
 affine and locally of finite type. All the adelic constructions below assume both conditions.
@@ -175,6 +176,14 @@ uniform moderate growth (one exponent for all derivatives of the actual envelopi
 every form of a connected reductive `G` has uniform moderate growth
 (`AdelicAutomorphicUniformGrowthStatement`; MW I.2.17 with I.2.5, case `P = G`; GH Cor. 6.2.5
 is its archimedean analogue). Its proof task is listed in §5.
+`GroupSchemeSliceAdelicGrowthStatement` (Worker 3659, published 12 November) states the
+slice-to-global growth comparison (`AdelicSliceModerateGrowthStatement`). Take a connected
+reductive `G`, a closed matrix embedding `rho` of positive size, and a function with an open
+finite-level stabilizer whose infinite slices each have polynomial growth
+(`GroupSchemeFunctions.HasPolynomialGrowth`). The statement asserts that such a function has one
+moderate-growth bound `HasAdelicModerateGrowth` on all of `G(A_F)`. The converse is proved
+(`HasAdelicModerateGrowth.polynomialGrowth`, module `GroupSchemeAdelicSliceGrowth`). The
+statement is derived from MW I.2.1–I.2.3 and GH (6.17); its proof task is listed in §5.
 `GroupSchemeCuspidalForms` defines `AdelicCuspidalForms`. The form-space Markdown explains why
 these spaces follow Borel–Jacquet §4.1–4.2 rather than the literal tensor of GH (6.1).
 
@@ -290,8 +299,9 @@ and the unchanged original carriers:
   (`HasAdelicModerateGrowth`) as an extra conjunct on the matrix side. A proof of
   `AdelicAutomorphicUniformGrowthStatement` (§3, §5) would give uniform growth only to
   functions that already have the full adelic bound. It would not by itself discharge the
-  containment hypothesis for an arbitrary matrix realization: that also needs the open
-  slice-to-global moderate-growth comparison for matrix forms (§5).
+  containment hypothesis for an arbitrary matrix realization: that also needs the
+  slice-to-global moderate-growth comparison. That comparison is now the open target
+  `AdelicSliceModerateGrowthStatement` (§3, §5), which applies to `GL_n` for `0 < n`.
 
 The `GL_n` side has cuspidal rapid-decay and band square-integrability results
 (`Langlands/Automorphic/CuspidalL2/`). No comparison of these with the `[G]` `L²` spaces is
@@ -330,8 +340,15 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
 7. `AdelicParabolicModulusStatement` and `AdelicIwasawaIntegrationStatement` (§3): proof tasks
    `942d702c` (Task 5573) and `6206325e` (Task 5574), published on 11 November 2026 and
    unstaffed then. Each contract suggests a route through published results.
-8. The `GL_n` slice-to-global moderate-growth comparison: whether every original matrix
-   automorphic form, whose growth is bounded slice by slice, has the full adelic bound
-   `HasAdelicModerateGrowth` (§4). No Library result or task covers it. Without it, the
-   containment hypothesis of the `GL_n` cuspidal realization maps stays even after a proof of
-   item 6; Task 5611 does not close this comparison.
+8. The slice-to-global moderate-growth comparison: whether a function with an open
+   finite-level stabilizer, whose growth is bounded slice by slice, has the full adelic bound
+   `HasAdelicModerateGrowth` (§4). It is now the exact target `AdelicSliceModerateGrowthStatement`
+   (§3), for connected reductive `G` and a closed embedding, with proof task `a2fea0a3`
+   (Task 5644), published on 12 November 2026 and unstaffed then. Its contract suggests a route:
+   the published norm-one factorization, the Siegel covering of `6adbbc46`, finitely many slices,
+   a comparison of heights and MW I.2.2 (vii) for `adelicSourceNorm`. The last two have no Library
+   statement yet. For `GL_n`, the original matrix slice growth transfers to the slice-growth
+   hypothesis of the statement
+   (`continuousGeneralLinearEquiv_mem_polynomialGrowth_of_closedImmersion`, module
+   `GeneralLinearGrowthIndependence`). Removing the containment hypothesis of the `GL_n` cuspidal
+   realization maps needs proofs of this item and of item 6, and a separate derivation from them.
