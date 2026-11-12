@@ -40,13 +40,25 @@ constant may depend on `a`.
 
 The Library defines the uniform form space
 `uniformAdelicAutomorphicSubrepresentation` as the intersection of the form space
-`adelicAutomorphicSubrepresentation` with the uniform-growth subrepresentation.
-`mem_uniformAdelicAutomorphicSubrepresentation_iff` and the published `GL_n`
-realizations (`GeneralLinearUniformOperatorRealization`,
-`GeneralLinearUniformCuspidalRealization`) are stated for this intersection. A proof
-of this statement shows that the intersection is the whole form space, for every
-connected reductive `G`. The uniform-growth hypothesis can then be dropped from those
-results.
+`adelicAutomorphicSubrepresentation` with the uniform-growth subrepresentation;
+`mem_uniformAdelicAutomorphicSubrepresentation_iff` describes its members. Under the
+hypotheses above, a proof of this statement shows that the intersection is the whole
+form space. Results stated for the actual uniform forms then hold for all actual forms.
+
+A proof does not by itself remove the containment hypothesis of the published `GL_n`
+realization maps (modules `GeneralLinearUniformCuspidalRealization` and
+`GeneralLinearCanonicalUniformComparison`). These maps start from a realization `S`
+of the original matrix automorphic forms (an `OperatorRealization F n`) and assume
+`S ≤ uniformGeneralLinearOperatorRealization F n rho hN`, the uniform realization
+defined in `GeneralLinearUniformOperatorRealization`. An original matrix form is
+bounded on each finite slice separately, and the exponent and constant may depend on
+the slice. An actual form has one moderate-growth bound over all adelic points. The
+comparison `isAdelicAutomorphicForm_iff_generalLinear_and_adelicGrowth` therefore keeps
+this bound (`HasAdelicModerateGrowth`) as an extra condition on the matrix side. This
+statement gives uniform growth only to functions that already have the full adelic
+bound. To drop the containment hypothesis, one also needs a slice-to-global
+comparison: every original matrix automorphic form has the full adelic bound. No
+Library result states that comparison.
 
 The Library also has the archimedean `GL_n` target
 `Langlands.Global.ArchimedeanGL.FiniteUniformDifferentialGrowthStatement`. That
