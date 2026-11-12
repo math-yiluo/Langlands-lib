@@ -9,7 +9,7 @@ Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*, Decem
 page numbers. Every status was rechecked for this revision against the Library commit below.
 
 This ledger maps every substantive construction and assertion of Sections 1–5 to Lean
-declarations of Library commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a`. For each row it
+declarations of Library commit `75808a50289c3a75a12ef2aa639d2c5c181a0a36`. For each row it
 records the declarations, the hypotheses under which the Lean statements assert the source
 claim, the proof status found by searching that commit, and the responsible task for each open
 item. The hypothesis column lists every hypothesis of the cited statements that restricts or
@@ -88,7 +88,9 @@ of the operator's Tasks 5213
 `9f9d8a9b-464e-4a31-b507-58561fb14b22` (`spaceLimitMorphismDescent`), 5215
 `0a409da3-f564-4bb8-8773-8abec4c946f4` (`spaceLimitModelExistence`) and 5235
 `480077be-fc27-4c4a-b859-04fdc4c030b0` (`spaceLimitMorphismDescentQuasiSeparated`) are also in
-the Library, and these tasks are closed. Task 5257
+the Library, and these tasks are closed. The proofs of Tasks 5258
+(`henselianExtensionPointEmbedding`), 5278 (`spaceLimitPropertyDescent`) and 5405
+(`familyPointUpperBound`) are in the Library; these tasks were not closed when inspected. Task 5257
 received a context-only revision 2 on 2026-11-10 that points to the published corrected statement. The
 other task IDs in the rows are carried proof tasks of the parent.
 
@@ -268,7 +270,7 @@ of `u_0`; this local form is what the openness argument uses.
 | p.13 | Thm 3.4 for spaces: points over filtered colimits | `SpaceFilteredRingPointComparison` | eventual equality for `X` locally of finite type over the base; descent of points for `X` locally of finite presentation | proved (`spaceFilteredRingPointComparison`) |
 | p.13 | Thm 3.4(1) for spaces: models, morphism descent | `SpaceLimitModelExistence`, `SpaceLimitModelExistenceQuasiSeparated`, `SpaceLimitMorphismDescent`, `SpaceLimitMorphismDescentQuasiSeparated` | cofiltered limits of affine schemes; models of separated (resp. quasi-separated) spaces with an `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; morphism descent over an affine base from a separated (resp. quasi-separated) source with a quasi-compact atlas to a target locally of finite presentation | `SpaceLimitMorphismDescent` proved (`spaceLimitMorphismDescent`, module `SpaceLimitMorphismDescentProof`; Task 5213 `9f9d8a9b-464e-4a31-b507-58561fb14b22`, closed); `SpaceLimitModelExistence` proved (`spaceLimitModelExistence`, module `SpaceLimitModelExistenceProof`; Task 5215 `0a409da3-f564-4bb8-8773-8abec4c946f4`, closed); `SpaceLimitMorphismDescentQuasiSeparated` proved (`spaceLimitMorphismDescentQuasiSeparated`, module `SpaceLimitMorphismDescentQuasiSeparatedProof`; Task 5235 `480077be-fc27-4c4a-b859-04fdc4c030b0`, closed); `SpaceLimitModelExistenceQuasiSeparated` proved (`spaceLimitModelExistenceQuasiSeparated`, module `SpaceLimitModelExistenceQuasiSeparatedProof`; Task 5260, closed, from the intermediate statements below) |
 | p.13 | Thm 3.4(1) for spaces: eventual equality of morphisms; Thm 3.4(3): uniqueness of models | `SpaceLimitUniquenessStatement` | cofiltered limits of affine schemes; both spaces finitely presented | proved (`spaceLimitUniquenessStatement`, with the clauses `spaceLimitMorphismEventualEquality` and `spaceLimitModelUniqueness`, module `SpaceLimitUniquenessProof`; Task 5277, closed) |
-| p.13 | Thm 3.4(2) for spaces: closed immersion, separated, proper, smooth, affine, open immersion, finite, fibres nonempty and geometrically connected | `SpaceLimitPropertyDescentStatement` | cofiltered limits of affine schemes; source and target finitely presented | open (Task 5278); the separated, smooth and geometrically-connected-fibres conjuncts are proved (`spaceLimitSeparatedDescent`, `spaceLimitSmoothDescent`, `spaceLimitGeometricallyConnectedFibresDescent`); the closed immersion, affine, open immersion and finite conjuncts follow from Library theorems: `spaceLimitClosedImmersionDescent_of_modelUniqueness spaceLimitModelUniqueness representedAtlasEffectivity.1` has the type of the closed immersion conjunct, and likewise for the other three with `spaceLimitAffineDescent_of_modelUniqueness`, `spaceLimitOpenImmersionDescent_of_modelUniqueness`, `spaceLimitFiniteDescent_of_modelUniqueness` and the remaining components of `representedAtlasEffectivity`, but no theorem of exactly these types is published; the proper conjunct follows from `spaceLimitProperDescent_of_schemeCovers properSchemeCover`, since `ProperSchemeCoverStatement` is proved (`properSchemeCover`); the whole statement follows from Library theorems: `spaceLimitPropertyDescent_of_foundations representedAtlasEffectivity properSchemeCover` has the type `SpaceLimitPropertyDescentStatement`, but no theorem of this type is published (intermediate statements below) |
+| p.13 | Thm 3.4(2) for spaces: closed immersion, separated, proper, smooth, affine, open immersion, finite, fibres nonempty and geometrically connected | `SpaceLimitPropertyDescentStatement` | cofiltered limits of affine schemes; source and target finitely presented | proved (`spaceLimitPropertyDescent`, module `SpaceLimitPropertyDescentProof`: `spaceLimitPropertyDescent_of_foundations representedAtlasEffectivity properSchemeCover`; Task 5278, executor Worker 131, not closed when inspected; the separated, smooth and geometrically-connected-fibres conjuncts are also proved separately; intermediate statements below) |
 | p.13 | Thm 3.4(2) for spaces: flat; fibres nonempty, geometrically connected and of pure dimension `d` | `SpaceLimitFlatnessDimensionDescentStatement` with `IsFlatMorphism`, `HasPureFibreDimension` | flatness and pure fibre dimension defined through a commutative square with an étale surjective chart of the source and an étale chart of the target; cofiltered limits of affine schemes; source and target finitely presented | proved (`spaceLimitFlatnessDimensionDescent`, module `SpaceLimitFlatnessDimensionDescentProof`; Task 5302, closed): it is `spaceLimitFlatnessDimensionReduction spaceLimitGeometricallyConnectedFibresDescent`; the flatness conjunct is also proved on its own (`spaceLimitFlatnessDescends`), and so is descent of pure fibre dimension alone (`spaceLimitPureFibreDimensionDescends`) (intermediate statements below) |
 | Lem 5.1 | geometric-component-count locus constructible | `GeometricFibreComponentsConstructibleStatement`; scheme input `GeometricallyConnectedFiberLocalConstructibility` (proved); scheme specialization `SchemeGeometricComponentCountConstructibleStatement` (intermediate statements below) | quasi-separated, finitely presented over an arbitrary ring `B`; `n` a natural number | proved (`geometricFibreComponentsConstructible`, module `GeometricFibreComponentsProof`; Task 5252, closed; it applies `geometricFibreComponentsConstructible_of_limitModels` (module `GeometricComponentApproximation`) to the model existence of row "Thm 3.4(1) for spaces: models, morphism descent") |
 | Prop 5.2 | (3.6.1) bijective for separated finite type spaces | `AdelicSpaceLevelPointsStatement`, `SeparatedProductPointsInjectiveStatement` | separated, finite type over the `S`-integers, curves need finite `k` and nonempty `S`; injectivity for separated spaces over any ring and any product | proved (`adelicSpaceLevelPoints`, `separatedProductPointsInjective`) |
@@ -319,7 +321,7 @@ Source corrections, first part:
 | Prop 5.11(1) | finite extension: `Res(Y')(k) = Y'(k')` homeomorphism | `HenselianWeilRestrictionPointHomeomorphStatement` | henselian `K` and `K'`, `K'` a finite-dimensional normed `K`-algebra; `Y'` quasi-separated of finite type; no module-topology hypothesis (correction below) | false as stated (note `finite-weil-inseparable-obstruction.md`; its proof Task 5256 is retired; the section "Correction to the literal Proposition 5.11(1)" of `SpaceWeilRestrictionStatement.md`, by Worker 172 for Task 5320, records the correction) |
 | Prop 5.11(1), corrected | the same homeomorphism when `K'` carries the `K`-module topology, as in Conrad's proof through Example 2.4 | `HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement` (module of the same name) | as above plus `IsModuleTopology K K'`, which holds for complete `K`; the conclusion includes that the Weil restriction is an algebraic space | proved (`henselianWeilRestrictionPointHomeomorphOfModuleTopology`, module `HenselianWeilRestrictionPointHomeomorphOfModuleTopologyProof`; Task 5320; it applies `isHomeomorph_ringWeilRestrictionBasePointsEquiv` (intermediate statements below) to the algebraic space, quasi-separated and of finite type, given by `spaceWeilRestriction` (Lemma 5.10)) |
 | Prop 5.11(2) | `X(k) → X(k̂)` topological embedding | `HenselianCompletionPointEmbeddingStatement` | henselian `K`; `X` quasi-separated, locally of finite type | proved (`henselianCompletionPointEmbedding`) |
-| Prop 5.11(3) | `X(k) → X(k')` embedding, closed if `k` closed in `k'`, for spaces covered by separated opens | `HenselianExtensionPointEmbeddingStatement`, `IsCoveredBySeparatedOpenSubspaces` | henselian `K`, `K'`, `K'` a normed `K`-algebra of any degree; `X` quasi-separated, locally of finite type, covered by separated open subspaces | open (Task 5258); the embedding conjunct is proved for extensions of every degree (`ExtensionLocalReduction.isEmbedding_of_covered`), the closed-embedding conjunct is reduced to separated open subspaces, and closed embedding is proved for separated `X` and finite Galois `K'/K`; the whole statement follows from Library theorems: `CompleteExtensionPointClosedRangeStatement`, closedness for complete fields and separated `X`, is proved (`CompleteExtensionClosedRange.completeExtensionPointClosedRange`), and `ExtensionClosedReduction.henselianExtensionPointEmbedding_of_complete CompleteExtensionClosedRange.completeExtensionPointClosedRange` has the type `HenselianExtensionPointEmbeddingStatement`, but no theorem of this type is published (intermediate statements below) |
+| Prop 5.11(3) | `X(k) → X(k')` embedding, closed if `k` closed in `k'`, for spaces covered by separated opens | `HenselianExtensionPointEmbeddingStatement`, `IsCoveredBySeparatedOpenSubspaces` | henselian `K`, `K'`, `K'` a normed `K`-algebra of any degree; `X` quasi-separated, locally of finite type, covered by separated open subspaces | proved (`henselianExtensionPointEmbedding`, module `HenselianExtensionPointEmbeddingProof`: `ExtensionClosedReduction.henselianExtensionPointEmbedding_of_complete CompleteExtensionClosedRange.completeExtensionPointClosedRange`; Task 5258, executor Worker 114, not closed when inspected; the embedding conjunct is also proved directly by `ExtensionLocalReduction.isEmbedding_of_covered`; intermediate statements below) |
 | Prop 5.11, proof (p.19) | finite extensions: `X(k) → X(k')` is an embedding when `Δ_{X/k}` is a quasi-compact immersion, without completeness | `HenselianFiniteExtensionPointEmbeddingStatement` | henselian nontrivially normed fields `K`, `K'`, `K'` a finite-dimensional normed `K`-algebra; `X` quasi-separated, locally of finite type and locally separated (immersive diagonal); no separated open cover, no completeness; embedding only, no closedness | proved (`henselianFiniteExtensionPointEmbedding`, a direct argument with étale charts and finite Galois descent that uses neither Proposition 5.11(1) nor completeness) |
 | Cor 5.12 | finite maps proper on points if `k` algebraically closed in `k̂`; characteristic-zero case | `HenselianFinitePointProperStatement`, `HenselianCharZeroAlgebraicallyClosedInCompletionStatement` | henselian `K` algebraically closed in its completion; `X`, `Y` separated, locally of finite type; `f` finite | proved (`henselianFinitePointProper`, `HenselianCharZeroCompletionProof`) |
 | Ex 5.13 | quasi-compact immersive diagonal does not suffice for closedness | `HenselianExtensionPointNotClosedStatement` (`HenselianExtensionPointCounterexampleStatement`) | complete ultrametric `K`, separable quadratic `K'`; a quasi-separated space locally of finite type with affine immersive diagonal | proved (`henselianExtensionPointNotClosed`; the space is the Galois-twisted line of the `GaloisTwistedLine…` modules) |
@@ -351,7 +353,7 @@ that finite-degree assertion (`henselianFiniteExtensionPointEmbedding`, row "Pro
 (p.19)") does not take this step: it argues with étale charts and finite Galois descent and uses
 neither Proposition 5.11(1) nor completeness.
 
-## Derived intermediate statements and reductions for open rows
+## Derived intermediate statements and reductions
 
 Workers on the proof tasks, on the Lang–Weil program `e5531847-70bc-4569-b880-2f90d5815c6a` and
 on the Example 5.5 program Task 5217, published the following statements and proved
@@ -363,15 +365,15 @@ executors as inspected on 2026-11-12.
 
 | Serves | Lean declarations | Hypotheses and scope in Lean | Status |
 | --- | --- | --- | --- |
-| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilInDimension`, `FamilyLangWeilStatement` (`LangWeil/FamilyLangWeilStatement`) | `S` of finite type over `Z`; `f : X → S` of finite type, geometrically irreducible, with all fibres of pure dimension `d`; a constant `C > 0` with `\|#X_s(κ) − q^d\| ≤ C·q^(d−1/2)` for every finite field `κ` with `q` elements and every `κ`-point `s` of `S`; the second statement asserts this for every `d` | open (published for `e5531847-70bc-4569-b880-2f90d5815c6a`; no separate proof task; by induction on `d` it follows from the dimension-0, curve and slicing statements below and their inputs; the dimension-0 statement, the curve and slicing implications and their inputs `BertiniGenericHyperplaneStatement` and `FamilyPointUpperBoundStatement` (the latter by `familyPointUpperBound_of_finiteNormalizationCover finiteNormalizationCover`) are proved or follow from Library theorems, so it follows from Schmidt's bound `PlaneCurveHasseWeilStatement` (Task 5406) alone; no Library theorem states this implication) |
-| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyPointUpperBoundStatement` (`LangWeil/`) | `S` of finite type over `Z`; `f : X → S` of finite type; a constant `C > 0` with `#X_s(κ) ≤ C·q^e` for every finite field `κ`, every `κ`-point `s` and every `e` bounding the dimension of the fibre over the image of `s` | open (Task 5405 `d6315fa9-e6a8-41f6-ae31-b7253872c91c`, executor Worker 90); it follows from Library theorems: `familyPointUpperBound_of_finiteNormalizationCover finiteNormalizationCover` has its type, but no theorem of this type is published (rows below) |
+| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilInDimension`, `FamilyLangWeilStatement` (`LangWeil/FamilyLangWeilStatement`) | `S` of finite type over `Z`; `f : X → S` of finite type, geometrically irreducible, with all fibres of pure dimension `d`; a constant `C > 0` with `\|#X_s(κ) − q^d\| ≤ C·q^(d−1/2)` for every finite field `κ` with `q` elements and every `κ`-point `s` of `S`; the second statement asserts this for every `d` | open (published for `e5531847-70bc-4569-b880-2f90d5815c6a`; no separate proof task; by induction on `d` it follows from the dimension-0, curve and slicing statements below and their inputs; the dimension-0 statement, the curve and slicing implications and their inputs `BertiniGenericHyperplaneStatement` and `FamilyPointUpperBoundStatement` (the latter by `familyPointUpperBound`) are proved, so it follows from Schmidt's bound `PlaneCurveHasseWeilStatement` (Task 5406) alone; no Library theorem states this implication) |
+| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyPointUpperBoundStatement` (`LangWeil/`) | `S` of finite type over `Z`; `f : X → S` of finite type; a constant `C > 0` with `#X_s(κ) ≤ C·q^e` for every finite field `κ`, every `κ`-point `s` and every `e` bounding the dimension of the fibre over the image of `s` | proved (`familyPointUpperBound`, module `LangWeil/FamilyPointUpperBoundProof`: `familyPointUpperBound_of_finiteNormalizationCover finiteNormalizationCover`; Task 5405 `d6315fa9-e6a8-41f6-ae31-b7253872c91c`, executor Worker 90, not closed when inspected; rows below) |
 | Lem 4.6 (Task 5405) | `FiniteNormalizationCoverStatement`, with the structure `FiniteNormalizationCover` (`LangWeil/`) | `S` Noetherian; `f : X → S` locally of finite type and quasi-compact (no separatedness, reducedness or equidimensionality); conclusion: finitely many pieces, each an affine scheme `T_i` with an immersion `T_i → S`, an immersion `U_i → X`, a natural number `d_i` and a finite surjective map `U_i → A^{d_i}_{T_i}` compatible with `f`, such that every `Spec K → X` with `K` a field (same universe) factors through some `U_i`, and `d_i` is at most the topological Krull dimension of the fibre of `f` over the image of every point of `T_i`; derived from the Stacks Project, Lemma 10.115.4 (Tag 00OY) and Section 33.18 with Lemma 33.18.2 (Tags 0CBG, 0CBI) | proved (`finiteNormalizationCover`, module `LangWeil/FiniteNormalizationCoverProof`, with `LangWeil/FiniteNormalizationCoverAlgebra`, `LangWeil/FiniteNormalizationCoverPieces` and `LangWeil/FiniteNormalizationCoverAffine`, declarations prefixed `LangWeil.NormalizationCoverConstruction.`; published for Task 5405; proof Task 5604 `bd611de6-07f4-4aac-a4f1-d1c8be5c2bed`, closed) |
-| Lem 4.6 (Task 5405) | `familyPointUpperBound_of_finiteNormalizationCover` (`LangWeil/NormalizationCoverPointBound`) | `FiniteNormalizationCoverStatement` implies `FamilyPointUpperBoundStatement`, in the same universe | proved (conditional on `FiniteNormalizationCoverStatement`, which is proved by `finiteNormalizationCover`) |
+| Lem 4.6 (Task 5405) | `familyPointUpperBound_of_finiteNormalizationCover` (`LangWeil/NormalizationCoverPointBound`) | `FiniteNormalizationCoverStatement` implies `FamilyPointUpperBoundStatement`, in the same universe | proved (conditional on `FiniteNormalizationCoverStatement`, which is proved by `finiteNormalizationCover`; `familyPointUpperBound` applies it to that theorem) |
 | Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `PlaneCurveHasseWeilStatement`, `BertiniGenericHyperplaneStatement` (`LangWeil/`) | Schmidt's bound: a finite field `F` with `q` elements; `f ∈ F[X,Y]` absolutely irreducible with `a = deg_X f > 0`, `b = deg_Y f > 0` and `9(a+1)²(b+1)² < q`; the number `N` of affine zeros satisfies `\|N − q\| < 2·min(a²b, ab²)·√q`. Bertini: any field `k`; a `k`-algebra `A` generated by `g_1, …, g_n`, geometrically irreducible over `k` of Krull dimension at least 2; the generic hyperplane section `u_0 + Σ u_i g_i = 0` over the fraction field of `k[u_0, …, u_n]` is geometrically irreducible | Schmidt's bound open (Task 5406 `f0851881-2bc7-45e6-a745-32e02733564e`, executors Workers 2969 and 96; the intermediate statements `StepanovCountingStatement` and `PlaneCurveElementaryReductionsStatement`, published for that task (rows below), are proved, and no Library theorem derives Schmidt's bound from them); Bertini proved (`BertiniGenericHyperplane.bertiniGenericHyperplaneStatement`, module `LangWeil/BertiniGenericHyperplaneProof`, with `LangWeil/BertiniHyperplaneSeparable`, `LangWeil/BertiniHyperplaneKernel`, `LangWeil/BertiniHyperplaneCore` and `LangWeil/BertiniHyperplaneDimension`, declarations prefixed `BertiniGenericHyperplane.`; Task 5407, closed; finite `k` included, by reduction to an algebraically closed field) |
 | Lem 4.6 (Task 5406) | `StepanovCountingStatement` (`LangWeil/`) | a finite field `F` with `q` elements; any `r : F → ℕ`; `2 ≤ n ≤ m` and `9(m+1)²(n+1)² < q`; hypothesis: for every `M > 0` with `M²(n²+1) + (M+m)n² < q` and `Mn ≤ q` there are `s ⊆ F` and `h_1, h_2 ∈ F[X]` with `q < \|s\| + 2mn`, `r(x) ≤ n` for every `x`, `deg h_1 < q(M+E)` and `deg h_2 < q((n−1)M+E)` for `E = 2m(n−1)+1`, and root multiplicities at least `M·r(x)` and `M·(n−r(x))` at every `x ∈ s`; conclusion: `\|Σ_x r(x) − q\| < 2mn²·√q`; a derived abstraction of Schmidt, *Zur Methode von Stepanov* (1973), Section 7, pp.359–360 (equation (40)), and Section 9, p.367 | proved (`stepanovCounting`, module `LangWeil/StepanovCountingProof`; published for Task 5406) |
 | Lem 4.6 (Task 5406) | `PlaneCurveElementaryReductionsStatement` (`LangWeil/`) | two clauses over any finite field `F`, for `f ∈ F[X,Y]` absolutely irreducible: (1) if both partial degrees of `f` are positive, some absolutely irreducible `g` with both partial derivatives nonzero, `0 < deg_Y g ≤ deg_X g`, `deg_X g ≤ max(deg_X f, deg_Y f)` and `deg_Y g ≤ min(deg_X f, deg_Y f)` has the same number of affine `F`-zeros as `f`; (2) if `deg_Y f = 1`, the number of affine `F`-zeros of `f` differs from `#F` by at most `deg_X f`; derived from Schmidt (1973), Section 2, p.349 | proved (`planeCurveElementaryReductions`, module `LangWeil/PlaneCurveElementaryReductionsProof`, with `LangWeil/PlaneCurveLinearFibres`, `LangWeil/PlaneCurveSeparableModel` and `LangWeil/PlaneCurveCoordinateOperations`; published for Task 5406) |
 | Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilZeroStatement` (`LangWeil/`) | the family estimate in dimension 0, with the hypotheses of `FamilyLangWeilInDimension 0` | proved (`familyLangWeilZero`, module `LangWeil/FamilyLangWeilZeroProof`, Task 5404 `d108969a-c371-4c06-9403-4d8d7846d52c`; the proof shows that every fibre has exactly one `κ`-point and does not use quasi-compactness or the base over `Z`) |
-| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilCurveStatement`, `FamilyLangWeilSlicingStatement` (`LangWeil/`) | implications: Schmidt's bound and the upper bound give dimension 1; Bertini, the upper bound and dimension `d + 1` give dimension `d + 2` | curve proved (`familyLangWeilCurve`, module `LangWeil/FamilyLangWeilCurveProof`: it applies `familyLangWeilCurve_of_planeComparison` (module `LangWeil/FamilyLangWeilCurvePlaneReduction`) to the proved plane-model comparison of the row below; Task 5408 `bc74c0bd-bddc-4c19-835a-46cd2f533740`, closed); slicing proved (`familyLangWeilSlicing`, module `LangWeil/FamilyLangWeilSlicingProof`, with the helper modules `LangWeil/Slicing/Bridges`, `Core`, `Counting`, `Dimension`, `GenericImage`, `GenericSlice`, `Hyperplane` and `Reduction`, declarations prefixed `Slicing.`; Task 5409 `2795fee1-d876-4010-86ed-ccd7f8e687c7`, closed); the premises `BertiniGenericHyperplaneStatement` and `FamilyPointUpperBoundStatement` are proved or follow from Library theorems (rows above), and the curve implication also assumes Schmidt's bound |
+| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilCurveStatement`, `FamilyLangWeilSlicingStatement` (`LangWeil/`) | implications: Schmidt's bound and the upper bound give dimension 1; Bertini, the upper bound and dimension `d + 1` give dimension `d + 2` | curve proved (`familyLangWeilCurve`, module `LangWeil/FamilyLangWeilCurveProof`: it applies `familyLangWeilCurve_of_planeComparison` (module `LangWeil/FamilyLangWeilCurvePlaneReduction`) to the proved plane-model comparison of the row below; Task 5408 `bc74c0bd-bddc-4c19-835a-46cd2f533740`, closed); slicing proved (`familyLangWeilSlicing`, module `LangWeil/FamilyLangWeilSlicingProof`, with the helper modules `LangWeil/Slicing/Bridges`, `Core`, `Counting`, `Dimension`, `GenericImage`, `GenericSlice`, `Hyperplane` and `Reduction`, declarations prefixed `Slicing.`; Task 5409 `2795fee1-d876-4010-86ed-ccd7f8e687c7`, closed); the premises `BertiniGenericHyperplaneStatement` and `FamilyPointUpperBoundStatement` are proved (rows above), and the curve implication also assumes Schmidt's bound |
 | Lem 4.6 (Task 5408) | `FamilyCurvePlaneComparisonStatement` (`LangWeil/`) | assumes `FamilyPointUpperBoundStatement`; `S` quasi-compact and locally of finite type over `Z`; `f : X → S` locally of finite type, quasi-compact, geometrically irreducible, all fibres of pure dimension 1; there is `B > 0` such that for every finite field `κ` with more than `B` elements and every `κ`-point `s` of `S` some `p ∈ κ[X,Y]`, irreducible over an algebraic closure of `κ`, with degrees in `X` and in `Y` in `[1, B]`, has affine zero count within `B` of `#X_s(κ)`; a plane-model comparison derived from Lang–Weil (1954), printed p.819, and Tao, *The Lang–Weil bound*, Section 2 | proved (`familyCurvePlaneComparison`, module `LangWeil/FamilyCurvePlaneComparisonProof`, with the helper modules `LangWeil/FamilyCurvePlaneReduction`, `AffineCurvePlaneComparison`, `CurvePlaneCharts`, `CurvePlaneFibrePoints`, `CurvePlaneNoetherianInduction`, `CurvePlanePolynomial`, `CurvePlaneRadicialPoints` and `CurvePlaneZeroDimensional`, declarations prefixed `CurvePlane.`; published for Task 5408 as an input to `FamilyLangWeilCurveStatement`; proof Task 5581 `b589cd1b-1a7b-41c8-afcf-506ab674e1e2`, closed; the proof does not use the premise `FamilyPointUpperBoundStatement`) |
 | Lem 4.6 and Thm 5.9 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `UniformLangWeilOfFamilyStatement`, `SpaceUniformLangWeilOfFamilyStatement` (`LangWeil/`) | implications: `FamilyLangWeilStatement` implies `UniformLangWeilStatement`; `FamilyLangWeilStatement` and `FamilyPointUpperBoundStatement` imply `SpaceUniformLangWeilStatement` | first proved (`uniformLangWeilOfFamily`, module `LangWeil/UniformLangWeilOfFamilyProof`; Task 5410 `acab9a1a-0a8e-4bd8-a84b-dc3f7aed3074`, closed); second proved (`spaceUniformLangWeilOfFamily`, module `LangWeil/SpaceUniformLangWeilOfFamilyProof`, with the helper modules `LangWeil/SpaceFamily/Counting`, `DegreePoints`, `FibreCharts`, `FibreProductBase`, `FieldPoints`, `FiniteFieldCharts`, `RingPointCharts`, `SchemeBase`, `SeparatedChart` and `Strata`, declarations prefixed `LangWeil.SpaceFamily.`; Task 5411 `25f82ff3-eaee-49c3-b113-d27d596fe177`, closed); so both forms of Lemma 4.6 follow from `FamilyLangWeilStatement` |
 | Thm 3.4(1) for spaces (Task 5260) | `EtaleEquivalenceRelation.LimitModelExistence` (`EtaleEquivalenceRelationLimitModelStatement`) | cofiltered limits of affine schemes; an étale equivalence relation of schemes over the limit with affine object scheme, object structure map locally of finite presentation and quasi-compact relation structure map; conclusion: an étale equivalence relation at one stage, with the same finiteness properties, whose object and relation schemes give the original ones by base change (cartesian comparisons) | proved (`EtaleEquivalenceRelation.limitModelExistence`, modules `EtaleEquivalenceRelationLimitModelProof` and `EtaleEquivalenceRelationLimitModelLevels`; Task 5367 `2a912398-eb7f-4d09-8707-ce9f5bf718d1`) |
@@ -379,11 +381,11 @@ executors as inspected on 2026-11-12.
 | Thm 3.4(2) for spaces (Task 5278) | `spaceLimitSeparatedDescent` (`RelativeDiagonalLimitDescent`), `spaceLimitSmoothDescent` (`SmoothChartLimitDescent`) | the separated and the smooth conjuncts `SpaceLimitPropertyDescends` of `SpaceLimitPropertyDescentStatement`, with its full hypotheses: cofiltered limits of affine schemes; source and target quasi-separated with an `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas | proved |
 | Thm 3.4(2) for spaces (Task 5278) | `RepresentedMorphismAtlas.closedImmersion_limit_iff`, `RepresentedMorphismAtlas.affine_limit_iff`, `RepresentedMorphismAtlas.openImmersion_limit_iff`, `RepresentedMorphismAtlas.finite_limit_iff` (`RepresentedChartLimitDescent`) | cofiltered limits of affine schemes; `f : X → Y` over a stage, given with a represented atlas pullback (a proof that `f` is representable, a surjective étale scheme atlas of `Y`, and the scheme pullback of `f` along it), both chart schemes finitely presented over the stage; the base change of `f` to the limit is a closed immersion, affine, an open immersion or finite iff its base change to some stage is | proved (conditional on the represented atlas pullback, which this module does not construct; the general case follows from the `_of_modelUniqueness` row below) |
 | Thm 3.4(2) for spaces (Task 5278) | `RepresentedAtlasEffectivityStatement` (`EtaleAtlasPropertyEffectivity`) | Stacks Project, *Morphisms of Algebraic Spaces*, Tags 03M4, 03WG and 03ZQ: any base scheme; `f : X → Y` with a cartesian square over a surjective étale scheme atlas `V → Y` whose scheme side is `q : U → V`; if `q` is a closed immersion, affine, an open immersion or finite, then `f` is representable and every scheme base change of `f` has the same property | proved (`representedAtlasEffectivity`, module `RepresentedAtlasEffectivityProof`, with the helper module `RepresentedAtlasEffectivityDescent`, declarations prefixed `AtlasEffectivity.`; published for Task 5278; proof Task 5472 `073bf3b4-2349-40b4-b0c7-ace048377261`, closed): representability of `f` from the Library's quotients of étale equivalence relations and open-chart gluing, then descent of each property along the atlas by `AtlasEffectivity.etaleAtlasPropertyEffectivity_of_represented` |
-| Thm 3.4(2) for spaces (Task 5278) | `spaceLimitClosedImmersionDescent_of_modelUniqueness`, `spaceLimitAffineDescent_of_modelUniqueness`, `spaceLimitOpenImmersionDescent_of_modelUniqueness`, `spaceLimitFiniteDescent_of_modelUniqueness` (`EventualTargetAtlasDescent`) | `SpaceLimitModelUniqueness` (the model-uniqueness half of `SpaceLimitUniquenessStatement`) and the corresponding conjunct `EtaleAtlasPropertyEffectivity` of `RepresentedAtlasEffectivityStatement` as hypotheses; the full hypotheses of `SpaceLimitPropertyDescends`, with no representability of `f` at the original stage: cofiltered limits of affine schemes; source and target quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; conclusions: the closed immersion, affine, open immersion and finite conjuncts of `SpaceLimitPropertyDescentStatement` | proved (reductions; both premises are proved, by `spaceLimitModelUniqueness` and the four components of `representedAtlasEffectivity`, but no theorem of the resulting conjunct types is published) |
+| Thm 3.4(2) for spaces (Task 5278) | `spaceLimitClosedImmersionDescent_of_modelUniqueness`, `spaceLimitAffineDescent_of_modelUniqueness`, `spaceLimitOpenImmersionDescent_of_modelUniqueness`, `spaceLimitFiniteDescent_of_modelUniqueness` (`EventualTargetAtlasDescent`) | `SpaceLimitModelUniqueness` (the model-uniqueness half of `SpaceLimitUniquenessStatement`) and the corresponding conjunct `EtaleAtlasPropertyEffectivity` of `RepresentedAtlasEffectivityStatement` as hypotheses; the full hypotheses of `SpaceLimitPropertyDescends`, with no representability of `f` at the original stage: cofiltered limits of affine schemes; source and target quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; conclusions: the closed immersion, affine, open immersion and finite conjuncts of `SpaceLimitPropertyDescentStatement` | proved (reductions; both premises are proved, by `spaceLimitModelUniqueness` and the four components of `representedAtlasEffectivity`; `spaceLimitPropertyDescent` proves the whole statement) |
 | Thm 3.4(2) for spaces (Task 5278) | `isProperMorphism_iff_separated_universallyClosed`, `isProperMorphism_baseChangeMap_iff_separated_universallyClosed` (`FiniteTypeMorphismAtlas`) | source and target with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas, target quasi-separated; over an affine base, and after base change along any map from an affine scheme, `f` is proper iff it is separated and universally closed | proved |
 | Thm 3.4(2) for spaces (Task 5278) | `spaceLimitGeometricallyConnectedFibresDescent` (`SpaceLimitConnectedFibresDescent`) | the geometrically-connected-fibres conjunct `SpaceLimitPropertyDescends (fun f => HasGeometricallyConnectedFibres f)` of `SpaceLimitPropertyDescentStatement`, with its full hypotheses: cofiltered limits of affine schemes; source and target quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; `HasGeometricallyConnectedFibres` asks for nonempty connected fibres over every field point | proved |
-| Thm 3.4(2) for spaces (Task 5278) | `ProperSchemeCoverStatement` (`AlgebraicSpace/`) | Stacks Project, Lemma 69.18.1 (Tag 089I, weak Chow lemma), with Lemmas 76.40.3 (Tag 088S) and 76.41.1 (Tag 089L), refined to finite presentation: affine `S`; `X` over `S` quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas and proper structure morphism; there are a scheme `U` over `S`, proper and locally of finite presentation over `S`, and a surjective morphism from the space represented by `U` to `X` (not assumed étale); published as an input to the universal-closedness part of the proper conjunct | proved (`properSchemeCover`, module `ProperSchemeCoverProof`: `properSchemeCover_of_chowCover` (module `ProperCoverFPReduction`, with `ProperCoverFPApprox` and `ProperCoverFPComposite`: a Noetherian model of the space, a cover of the model, and its pullback to the original base) applied to `ProperSchemeCover.chowCover`, which proves `ProperSchemeCover.ChowCoverStatement`: a separated space over affine `S` with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas receives a surjective morphism, proper after every base change to a scheme, from a scheme locally of finite type and quasi-compact over `S` (modules `ProperSchemeCover/ChowCoverStatement` and `ProperSchemeCover/ChowCoverProof`, with `ProperSchemeCover/AffineEmbedding`, `Closedness`, `CompleteTuples`, `Construction`, `OpenGluing`, `PointAgreement`, `RelativeProper` and `SpacePullback`); published for Task 5278; proof Task 5586 `99c0be8e-a359-4e9c-bec3-ee1a7255ed09`, closed); with it the proper conjunct and the whole statement follow (row below) |
-| Thm 3.4(2) for spaces (Task 5278) | `spaceLimitProperDescent_of_schemeCovers`, `spaceLimitPropertyDescent_of_foundations` (`SpaceLimitProperDescentOfSchemeCovers`) | the first: `ProperSchemeCoverStatement` as a hypothesis, in the same universe; conclusion: the proper conjunct `SpaceLimitPropertyDescends (fun f => IsProperMorphism f)` of `SpaceLimitPropertyDescentStatement`, with its full hypotheses: cofiltered limits of affine schemes; source and target quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; the second: `RepresentedAtlasEffectivityStatement` and `ProperSchemeCoverStatement` as hypotheses, in the same universe; conclusion: `SpaceLimitPropertyDescentStatement`, assembled from the first, the four `_of_modelUniqueness` conjuncts above with `spaceLimitModelUniqueness`, and the three proved conjuncts | proved (conditional on `ProperSchemeCoverStatement`, resp. on it and `RepresentedAtlasEffectivityStatement`; both are proved, by `properSchemeCover` and `representedAtlasEffectivity`, so `spaceLimitPropertyDescent_of_foundations representedAtlasEffectivity properSchemeCover` has the type `SpaceLimitPropertyDescentStatement`; supporting modules in the constructions paragraph below) |
+| Thm 3.4(2) for spaces (Task 5278) | `ProperSchemeCoverStatement` (`AlgebraicSpace/`) | Stacks Project, Lemma 69.18.1 (Tag 089I, weak Chow lemma), with Lemmas 76.40.3 (Tag 088S) and 76.41.1 (Tag 089L), refined to finite presentation: affine `S`; `X` over `S` quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas and proper structure morphism; there are a scheme `U` over `S`, proper and locally of finite presentation over `S`, and a surjective morphism from the space represented by `U` to `X` (not assumed étale); published as an input to the universal-closedness part of the proper conjunct | proved (`properSchemeCover`, module `ProperSchemeCoverProof`: `properSchemeCover_of_chowCover` (module `ProperCoverFPReduction`, with `ProperCoverFPApprox` and `ProperCoverFPComposite`: a Noetherian model of the space, a cover of the model, and its pullback to the original base) applied to `ProperSchemeCover.chowCover`, which proves `ProperSchemeCover.ChowCoverStatement`: a separated space over affine `S` with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas receives a surjective morphism, proper after every base change to a scheme, from a scheme locally of finite type and quasi-compact over `S` (modules `ProperSchemeCover/ChowCoverStatement` and `ProperSchemeCover/ChowCoverProof`, with `ProperSchemeCover/AffineEmbedding`, `Closedness`, `CompleteTuples`, `Construction`, `OpenGluing`, `PointAgreement`, `RelativeProper` and `SpacePullback`); published for Task 5278; proof Task 5586 `99c0be8e-a359-4e9c-bec3-ee1a7255ed09`, closed); with it the proper conjunct follows, and `spaceLimitPropertyDescent` proves the whole statement (row below) |
+| Thm 3.4(2) for spaces (Task 5278) | `spaceLimitProperDescent_of_schemeCovers`, `spaceLimitPropertyDescent_of_foundations` (`SpaceLimitProperDescentOfSchemeCovers`) | the first: `ProperSchemeCoverStatement` as a hypothesis, in the same universe; conclusion: the proper conjunct `SpaceLimitPropertyDescends (fun f => IsProperMorphism f)` of `SpaceLimitPropertyDescentStatement`, with its full hypotheses: cofiltered limits of affine schemes; source and target quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; the second: `RepresentedAtlasEffectivityStatement` and `ProperSchemeCoverStatement` as hypotheses, in the same universe; conclusion: `SpaceLimitPropertyDescentStatement`, assembled from the first, the four `_of_modelUniqueness` conjuncts above with `spaceLimitModelUniqueness`, and the three proved conjuncts | proved (conditional on `ProperSchemeCoverStatement`, resp. on it and `RepresentedAtlasEffectivityStatement`; both are proved, by `properSchemeCover` and `representedAtlasEffectivity`, and `spaceLimitPropertyDescent` (module `SpaceLimitPropertyDescentProof`) is `spaceLimitPropertyDescent_of_foundations representedAtlasEffectivity properSchemeCover`; supporting modules in the constructions paragraph below) |
 | Thm 3.4(2) for spaces, flat and dimension (Task 5302) | `RelativePureFibreDimensionDescentStatement` (`SchemePureFibreDimensionDescent`) | scheme form of the pure-dimension condition alone: every `d`; cofiltered limits of affine schemes mapping compatibly to a fixed scheme `S`; `f : X → Y` over `S` locally of finite presentation, quasi-compact and quasi-separated, `Y` quasi-compact and quasi-separated over `S`; every fibre over the limit has pure dimension `d` iff every fibre over some stage has; no nonemptiness or connectedness of fibres | proved (`relativePureFibreDimensionDescent`) |
 | Thm 3.4(2) for spaces, flat and dimension (Task 5302) | `spaceLimitFlatnessDescends` (`SpaceLimitFlatnessDescentStatement`, module `SpaceLimitFlatnessDescent`); `spaceLimitPureFibreDimensionDescends` (`SpaceLimitPureFibreDimensionDescentStatement`, module `SpaceLimitPureFibreDimensionDescent`) | the hypotheses of `SpaceLimitPropertyDescends`: cofiltered limits of affine schemes; source and target quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; the first is the flatness conjunct of `SpaceLimitFlatnessDimensionDescentStatement`; the second descends `HasPureFibreDimension d` for every `d`, with no nonemptiness or connectedness of fibres | proved |
 | Thm 3.4(2) for spaces, flat and dimension (Task 5302) | `etalePureFibreDimensionComparison` (`EtalePureFibreDimensionComparisonStatement`, module `SchemeEtalePureFibreDimension`) | arbitrary schemes and every `d`; local finite type together with pure fibre dimension `d` holds for `p ≫ f` iff it holds for `f` when `p` is étale and surjective, and for `f ≫ g` iff for `f` when `g` is étale | proved |
@@ -429,7 +431,7 @@ executors as inspected on 2026-11-12.
 | Prop 5.11(3) (Task 5258) | `ExtensionLocalReduction.isEmbedding_of_covered`, `ExtensionLocalReduction.isClosed_range_of_separated_open`, `ExtensionLocalReduction.coveredHenselianExtensionPointHomeomorphRange` (`HenselianExtensionLocalReduction`) | the hypotheses of `HenselianExtensionPointEmbeddingStatement`; the first is its embedding conjunct; the second shows that the image of `X(K)` is closed if the image is closed for every separated open subspace | proved (the embedding conjunct, and a reduction of the closedness conjunct) |
 | Prop 5.11(3) (Task 5258) | `ExtensionClosedRange.isClosedEmbedding_of_finite_galois`, `ExtensionClosedRange.isClosed_range_of_finite_galois` (`FiniteGaloisExtensionPointTopology`) | henselian nontrivially normed `K` and `L`, `L` a normed `K`-algebra, finite-dimensional and Galois over `K`; `X` separated, quasi-separated and locally of finite type; `X(K) → X_L(L)` is a closed embedding for the étale-chart topologies | proved (closed embedding for separated `X` and finite Galois `L/K`) |
 | Prop 5.11(3) (Task 5258) | `CompleteExtensionPointClosedRangeStatement` | complete nontrivially normed `K` and `L`, `L` a normed `K`-algebra of any degree and transcendence degree; `X` quasi-separated, locally of finite type and separated; the image of `X(K)` in `X_L(L)` is closed for the étale-chart topology | proved (`CompleteExtensionClosedRange.completeExtensionPointClosedRange`, module `CompleteExtensionPointClosedRangeProof`, helpers prefixed `CompleteExtensionClosedRange.`; published for Task 5258; proof Task 5487 `621e8df6-800c-49a9-98b6-26561c38ce54`, closed) |
-| Prop 5.11(3) (Task 5258) | `ExtensionClosedReduction.isClosed_range_of_complete`, `ExtensionClosedReduction.henselianExtensionPointEmbedding_of_complete` (`HenselianExtensionClosedReduction`) | `CompleteExtensionPointClosedRangeStatement` as a hypothesis; the first: any nontrivially normed `K`, a henselian nontrivially normed `L`, `L` a normed `K`-algebra with the image of `K` closed in `L`, `X` quasi-separated, locally of finite type and separated; the image of `X(K)` in `X_L(L)` is closed; the second: `HenselianExtensionPointEmbeddingStatement` with all its hypotheses | proved (conditional on `CompleteExtensionPointClosedRangeStatement`, which is proved, so the second applied to `CompleteExtensionClosedRange.completeExtensionPointClosedRange` has the type `HenselianExtensionPointEmbeddingStatement`) |
+| Prop 5.11(3) (Task 5258) | `ExtensionClosedReduction.isClosed_range_of_complete`, `ExtensionClosedReduction.henselianExtensionPointEmbedding_of_complete` (`HenselianExtensionClosedReduction`) | `CompleteExtensionPointClosedRangeStatement` as a hypothesis; the first: any nontrivially normed `K`, a henselian nontrivially normed `L`, `L` a normed `K`-algebra with the image of `K` closed in `L`, `X` quasi-separated, locally of finite type and separated; the image of `X(K)` in `X_L(L)` is closed; the second: `HenselianExtensionPointEmbeddingStatement` with all its hypotheses | proved (conditional on `CompleteExtensionPointClosedRangeStatement`, which is proved; `henselianExtensionPointEmbedding` applies the second to `CompleteExtensionClosedRange.completeExtensionPointClosedRange`) |
 | Prop 5.11(3) (Task 5258) | `UniformEtaleChartInjectivityStatement` | any nontrivially normed `K`; `X` separated; an étale map to `X` from an affine scheme locally of finite type; finitely many regular functions give uniform injectivity on bounded coordinates over every normed extension `L/K`, of any degree | proved (`uniformEtaleChartInjectivity`, module `UniformEtaleChartInjectivityProof`) |
 | Prop 5.11, proof (p.19) | `CompleteFiniteExtensionPointEmbeddingStatement`, `henselianFiniteExtensionPointEmbedding_of_complete` (`FiniteExtensionPointEmbeddingReduction`) | complete `K` and `L`, `L` finite-dimensional over `K`; `X` quasi-separated, locally separated, locally of finite type; the reduction derives the henselian statement from the complete one | reduction proved; the complete statement is open without a task, and the row it served is proved directly |
 
@@ -447,10 +449,20 @@ prefixed `BaseComposition.`; Worker 109), and `Langlands/Global/AdelicSpaceInteg
 for the `S`-integers `C` of a principal level containing any given finite set of places, the
 integer-base premise of the Theorem 5.9 row of the `_of_uniformLangWeil` theorems),
 `SmoothRelativePointDimension`, `SmoothDimensionOpenSubspaces`, `SmoothDimensionRestrictions` and
-`SmoothDimensionFinitePresentation` (declarations prefixed `EtaleMorphismChart.` and
-`PointOpenSubspace.SmoothTargetPointDimensions.`; the relative dimension of a smooth morphism as a
-locally constant function with finitely many values on the target points, the open subspaces of
-source and target over each value, and atlases of finite presentation on them), and
+`SmoothDimensionFinitePresentation` (declarations prefixed `EtaleMorphismChart.`,
+`PointOpenSubspace.` or `SmoothTargetPointDimensions.`, with the structure
+`SmoothTargetPointDimensions` and its construction `smoothTargetPointDimensions`; the relative
+dimension of a smooth morphism as a locally constant function with finitely many values on the
+target points, the open subspaces of source and target over each value, and atlases of finite
+presentation on them), `SmoothDimensionModelGeometry` (declarations prefixed
+`SmoothTargetPointDimensions.`; the restricted map over each value has nonempty geometrically
+connected fibres and is surjective when the original map has such fibres, is separated when the
+source is, and, over affine `S`, is quasi-compact when the source has a
+`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas and the target is quasi-separated;
+`restrictedMap_fixedDimensionChart`: for a smooth map of spaces with such atlases over an affine
+locally Noetherian base, with quasi-separated target, a commuting chart square of affine schemes
+locally of finite presentation, with surjective étale chart maps, whose scheme map is smooth of
+relative dimension equal to that value), and
 `Langlands/Global/AdelicSpaceSmoothModelGeometry` and `Langlands/Global/AdelicSpaceSmoothModelProperties`
 (declarations prefixed `AdelicSpaceSmoothModelGeometry.`; smooth models with nonempty
 geometrically connected fibres over a ring of integers of a smooth morphism with such fibres over
@@ -460,109 +472,8 @@ Proposition 5.8 (Task 5253),
 `Langlands/Global/AdelicSpacePreimageAssembly` (namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.AdelicSpacePreimageAssembly`), and
 `FibreRestrictionTopology` and `CommonAtlasPointTopology`, on which `TopologicalMorphismBaseChange`
-(row of `ProperSchemeBaseChangeStatement`) builds; for
-Proposition 5.11(3), `ExtensionPointMap`, `PointTopology/FiniteExtensionCompletion` and
-`HenselianExtensionCompletionReduction` (declarations prefixed `ExtensionCompletionReduction.`;
-descent of points through the completions when the image of `K` in `L` is closed); for Theorem
-3.4(2) for spaces, `ConnectedStructuralFibres` (whose
-`hasGeometricallyConnectedFibres_structural_iff_componentCount` shows that, for `X` with a
-`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas over `Spec B`, the structure morphism has
-nonempty geometrically connected fibres iff the geometric fibre component count of Lemma 5.1 is
-`1` at every point), `SchemeTargetRebase` (declarations prefixed `SchemeTargetRebase.`; a space
-with a morphism to a scheme `V` viewed as a space over `V`, with its atlas and finiteness),
-`SchemeTargetConnectedFibres` (whose `SchemeTargetRebase.hasGeometricallyConnectedFibres_iff`
-shows that a morphism to the space represented by `V` has nonempty geometrically connected fibres
-iff the structural morphism of its rebase over `V` has), `AffineTargetFamily` (declarations
-prefixed `AffineTargetFamily.`; the space over a target chart `V` obtained by pulling `f` back
-along the chart and rebasing over `V`; over affine `S` and `V` it is quasi-separated if `X` is,
-and has a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas if `X` and `Y` have one, `Y` is
-quasi-separated and `V` is locally of finite presentation over `S`; for a surjective étale
-chart, `f` has nonempty geometrically connected fibres iff the family's structure morphism has,
-and, under these finiteness hypotheses with `V = Spec B`, iff the geometric fibre component
-count of the family is `1` at every point), `ConnectedFibreLocus` (`connectedFibreLocus X`, the set of points
-of the base at which the geometric fibre component count of Lemma 5.1 is `1`; for `X` with a
-`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas, the structure morphism after any base change
-`g` has nonempty geometrically connected fibres iff the count is `1` at every point of the image
-of `g`; over an affine base, with `X` moreover quasi-separated, every level set of the count is
-constructible; `structuralConnectedFibres_iff_eventually`: along a cofiltered limit of affine
-schemes, the structure morphism of `X` base-changed to the limit has nonempty geometrically
-connected fibres iff it has at some stage), `AffineTargetFamilyBaseChange`
-(`structuralBaseChangeFibreHomeomorph` and `AffineTargetFamily.testFibreHomeomorph`:
-homeomorphisms of the fibres of a base-changed structure morphism and of the family over a target
-chart with the original fibres), `AffineTargetFamilyConnectedBaseChange`
-(`AffineTargetFamily.hasGeometricallyConnectedFibres_baseChange_iff`: for a surjective étale
-target chart, the base change of `f` along any scheme map has nonempty geometrically connected
-fibres iff the structure morphism of the base-changed family has), the lemmas
-`AffineTargetFamily.connectedFibreLocusOver`, `AffineTargetFamily.isConstructible_connectedFibreLocusOver`
-and `AffineTargetFamily.hasGeometricallyConnectedFibres_iff_locus_eq_univ` of
-`SpaceLimitConnectedFibresDescent` (the module of the proved geometrically-connected-fibres
-conjunct), `SpaceMorphismPointMap`,
-`GeometricFibreFieldTests` and `ConnectedFibreTargetAtlas` (nonempty geometrically connected
-fibres tested on algebraically closed fields and on a surjective étale target chart),
-`TopologicalMorphismBaseChange` (whose `HasGeometricallyConnectedFibres.baseChangeMap` preserves
-nonempty geometrically connected fibres under any change of base scheme), `RelativeDiagonalCharts`,
-`RepresentedSchemeFiniteness`, `LimitSchemeRepresentation` (whose eventual scheme
-representation at a stage assumes `SpaceLimitModelUniqueness`, the model-uniqueness half of
-`SpaceLimitUniquenessStatement`, now proved by `spaceLimitModelUniqueness`),
-`LimitRepresentedPullback` and `TargetAtlasLimitDescent`
-(declarations prefixed `SchemeTargetAtlas.`), `UniversallyClosedSourceCover`
-(`IsUniversallyClosedMorphism.of_surjective_comp`: for maps `a : W → X` and `f : X → Y` of
-algebraic spaces with `a` surjective on represented scheme pullbacks, universal closedness of
-`a ≫ f` implies that of `f`; `isUniversallyClosed_structural_of_scheme_cover`: the structure
-morphism of `X` is universally closed if a surjective map onto `X` from a scheme with
-universally closed structure morphism is given, whose existence it does not assert;
-`isUniversallyClosedMorphism_of_relative`: a morphism whose represented scheme pullbacks are
-universally closed satisfies the point-topology predicate), `UniversallyClosedTargetAtlas`
-(`IsUniversallyClosedMorphism.of_isPullback`: universal closedness is preserved in cartesian
-squares of algebraic spaces; `isUniversallyClosedMorphism_iff_targetAtlas`: it can be tested
-after pulling back along a surjective étale map from a scheme to the target) and
-`RepresentedSurjectivityLimitDescent` (`isSurjective_limit_iff_of_representable`: along a
-cofiltered limit of affine schemes, for quasi-separated spaces with a
-`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas over a stage and a morphism `f` between them
-assumed representable at that stage, `f` is surjective on represented scheme pullbacks after
-base change to the limit iff it is after base change to some stage mapping to the given one;
-`spaceLimitRelativePropertyDescent_of_representable`: the same for any scheme property stable under base change, descending along étale surjections and satisfying
-scheme structural limit descent; the representability hypothesis is not removed),
-`ProperSchemeStageModel` (`exists_properSchemeStageModel`: a scheme proper over the limit of a
-cofiltered diagram of affine schemes, with structure morphism locally of finite presentation,
-quasi-compact and quasi-separated, has a model at some stage that is proved proper and locally of
-finite presentation, with a cartesian square; the structure `ProperSchemeStageModel` records
-these data), `ProperSchemeCoverDescent` (`ProperSchemeCoverAtStage`: a scheme over a stage that
-is proper and locally of finite presentation, with a surjective map to the base change of `X` to
-that stage; `exists_properSchemeCoverAtStage_of_limit_cover`: for affine `S` and `X`
-quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas, a given cover of this
-kind over the limit descends to some stage; `exists_structuralUniversallyClosed_of_properSchemeCover`:
-assuming `ProperSchemeCoverStatement`, if the structure morphism of the base change of `X` to the
-limit is proper, then the structure morphism of its base change to some stage is universally
-closed), `SchemeTargetUniversallyClosed` (`SchemeTargetRebase.isUniversallyClosedMorphism_iff`:
-a morphism to the space represented by a scheme `V` is universally closed iff the structure
-morphism of its rebase over `V` is; `SchemeTargetRebase.isProperMorphism`: properness passes to
-the rebase for affine `S` and `V`, `V` locally of finite type over `S`, and `X` with a
-`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; `AffineTargetFamily.isUniversallyClosedMorphism_iff`:
-for a surjective étale target chart, `f` is universally closed iff the structure morphism of the
-family over the chart is; `AffineTargetFamily.isProperMorphism_structural`: a proper `f` gives a
-proper structure morphism of the family over an affine chart `V` locally of finite presentation
-over affine `S`, for `X` and `Y` with such atlases and `Y` quasi-separated) and
-`AffineTargetFamilyUniversallyClosedBaseChange`
-(`AffineTargetFamily.isUniversallyClosedMorphism_baseChange_iff`: for a surjective étale target
-chart, the base change of `f` along any scheme map is universally closed iff the structure
-morphism of the base-changed family is), on which `SpaceLimitProperDescentOfSchemeCovers` (row
-of its conditional theorems) builds; and for
-`FamilyPointUpperBoundStatement` (Task 5405),
-`LangWeil/FiniteAlgebraPointBound` (`exists_uniform_card_algHom_le`: a module-finite algebra over
-a commutative ring has a uniformly bounded finite number of algebra maps to every field) and
-`LangWeil/FiniteMorphismPointBound` (`exists_uniform_card_finiteMorphism_le`: a finite morphism to
-an affine scheme has finite field-valued fibres of uniformly bounded size;
-`affineSpacePointEquiv` and `card_affineSpace_fibrePoints`: relative affine `d`-space has exactly
-`q^d` points over each point with values in a field with `q` elements), and the counting lemmas
-of `LangWeil/NormalizationCoverPointBound` (`affineNormalizationPointEquiv`;
-`exists_uniform_card_affineNormalization_le`: for a finite map to relative affine `d`-space over
-an affine base there is one `N` such that at most `N·q^d` points lie over each point of the base
-with values in a finite field with `q` elements;
-`FiniteNormalizationCover.exists_uniform_nat_card_fibrePoints_le`: a given
-`FiniteNormalizationCover` of `f` yields the bound `N·q^e` of `FamilyPointUpperBoundStatement`
-for `f`; the conditional reduction in the same module has its own row above). Their Markdown
-states what each provides; none proves an open row.
+(row of `ProperSchemeBaseChangeStatement`) builds. Their Markdown states what each provides;
+none proves an open row.
 
 Further published constructions and supporting lemmas support rows that are now proved. For
 Proposition 5.14 (Task 5257): `AdelicSpaceWeilRestrictionPoints`,
@@ -688,6 +599,107 @@ to `D b₀` along it and `D` maps neighbourhoods of `b₀` to neighbourhoods of 
 `exists_stage_ringPoint`: for a field `K`, an ultrafilter `𝒰` on `I` and an `(I → K)`-algebra `L` whose algebra map is surjective with kernel
 the families that vanish `𝒰`-eventually, every `L`-point of a scheme locally of finite
 presentation over `Spec (I → K)` comes from a stage `(I → K) ⧸ vanishing K A` with `A ∈ 𝒰`).
+For Proposition 5.11(3) (Task 5258): `ExtensionPointMap`, `PointTopology/FiniteExtensionCompletion` and
+`HenselianExtensionCompletionReduction` (declarations prefixed `ExtensionCompletionReduction.`;
+descent of points through the completions when the image of `K` in `L` is closed). For Theorem
+3.4(2) for spaces (Task 5278): `ConnectedStructuralFibres` (whose
+`hasGeometricallyConnectedFibres_structural_iff_componentCount` shows that, for `X` with a
+`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas over `Spec B`, the structure morphism has
+nonempty geometrically connected fibres iff the geometric fibre component count of Lemma 5.1 is
+`1` at every point), `SchemeTargetRebase` (declarations prefixed `SchemeTargetRebase.`; a space
+with a morphism to a scheme `V` viewed as a space over `V`, with its atlas and finiteness),
+`SchemeTargetConnectedFibres` (whose `SchemeTargetRebase.hasGeometricallyConnectedFibres_iff`
+shows that a morphism to the space represented by `V` has nonempty geometrically connected fibres
+iff the structural morphism of its rebase over `V` has), `AffineTargetFamily` (declarations
+prefixed `AffineTargetFamily.`; the space over a target chart `V` obtained by pulling `f` back
+along the chart and rebasing over `V`; over affine `S` and `V` it is quasi-separated if `X` is,
+and has a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas if `X` and `Y` have one, `Y` is
+quasi-separated and `V` is locally of finite presentation over `S`; for a surjective étale
+chart, `f` has nonempty geometrically connected fibres iff the family's structure morphism has,
+and, under these finiteness hypotheses with `V = Spec B`, iff the geometric fibre component
+count of the family is `1` at every point), `ConnectedFibreLocus` (`connectedFibreLocus X`, the set of points
+of the base at which the geometric fibre component count of Lemma 5.1 is `1`; for `X` with a
+`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas, the structure morphism after any base change
+`g` has nonempty geometrically connected fibres iff the count is `1` at every point of the image
+of `g`; over an affine base, with `X` moreover quasi-separated, every level set of the count is
+constructible; `structuralConnectedFibres_iff_eventually`: along a cofiltered limit of affine
+schemes, the structure morphism of `X` base-changed to the limit has nonempty geometrically
+connected fibres iff it has at some stage), `AffineTargetFamilyBaseChange`
+(`structuralBaseChangeFibreHomeomorph` and `AffineTargetFamily.testFibreHomeomorph`:
+homeomorphisms of the fibres of a base-changed structure morphism and of the family over a target
+chart with the original fibres), `AffineTargetFamilyConnectedBaseChange`
+(`AffineTargetFamily.hasGeometricallyConnectedFibres_baseChange_iff`: for a surjective étale
+target chart, the base change of `f` along any scheme map has nonempty geometrically connected
+fibres iff the structure morphism of the base-changed family has), the lemmas
+`AffineTargetFamily.connectedFibreLocusOver`, `AffineTargetFamily.isConstructible_connectedFibreLocusOver`
+and `AffineTargetFamily.hasGeometricallyConnectedFibres_iff_locus_eq_univ` of
+`SpaceLimitConnectedFibresDescent` (the module of the proved geometrically-connected-fibres
+conjunct), `SpaceMorphismPointMap`,
+`GeometricFibreFieldTests` and `ConnectedFibreTargetAtlas` (nonempty geometrically connected
+fibres tested on algebraically closed fields and on a surjective étale target chart),
+`TopologicalMorphismBaseChange` (whose `HasGeometricallyConnectedFibres.baseChangeMap` preserves
+nonempty geometrically connected fibres under any change of base scheme), `RelativeDiagonalCharts`,
+`RepresentedSchemeFiniteness`, `LimitSchemeRepresentation` (whose eventual scheme
+representation at a stage assumes `SpaceLimitModelUniqueness`, the model-uniqueness half of
+`SpaceLimitUniquenessStatement`, now proved by `spaceLimitModelUniqueness`),
+`LimitRepresentedPullback` and `TargetAtlasLimitDescent`
+(declarations prefixed `SchemeTargetAtlas.`), `UniversallyClosedSourceCover`
+(`IsUniversallyClosedMorphism.of_surjective_comp`: for maps `a : W → X` and `f : X → Y` of
+algebraic spaces with `a` surjective on represented scheme pullbacks, universal closedness of
+`a ≫ f` implies that of `f`; `isUniversallyClosed_structural_of_scheme_cover`: the structure
+morphism of `X` is universally closed if a surjective map onto `X` from a scheme with
+universally closed structure morphism is given, whose existence it does not assert;
+`isUniversallyClosedMorphism_of_relative`: a morphism whose represented scheme pullbacks are
+universally closed satisfies the point-topology predicate), `UniversallyClosedTargetAtlas`
+(`IsUniversallyClosedMorphism.of_isPullback`: universal closedness is preserved in cartesian
+squares of algebraic spaces; `isUniversallyClosedMorphism_iff_targetAtlas`: it can be tested
+after pulling back along a surjective étale map from a scheme to the target) and
+`RepresentedSurjectivityLimitDescent` (`isSurjective_limit_iff_of_representable`: along a
+cofiltered limit of affine schemes, for quasi-separated spaces with a
+`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas over a stage and a morphism `f` between them
+assumed representable at that stage, `f` is surjective on represented scheme pullbacks after
+base change to the limit iff it is after base change to some stage mapping to the given one;
+`spaceLimitRelativePropertyDescent_of_representable`: the same for any scheme property stable under base change, descending along étale surjections and satisfying
+scheme structural limit descent; the representability hypothesis is not removed),
+`ProperSchemeStageModel` (`exists_properSchemeStageModel`: a scheme proper over the limit of a
+cofiltered diagram of affine schemes, with structure morphism locally of finite presentation,
+quasi-compact and quasi-separated, has a model at some stage that is proved proper and locally of
+finite presentation, with a cartesian square; the structure `ProperSchemeStageModel` records
+these data), `ProperSchemeCoverDescent` (`ProperSchemeCoverAtStage`: a scheme over a stage that
+is proper and locally of finite presentation, with a surjective map to the base change of `X` to
+that stage; `exists_properSchemeCoverAtStage_of_limit_cover`: for affine `S` and `X`
+quasi-separated with a `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas, a given cover of this
+kind over the limit descends to some stage; `exists_structuralUniversallyClosed_of_properSchemeCover`:
+assuming `ProperSchemeCoverStatement`, if the structure morphism of the base change of `X` to the
+limit is proper, then the structure morphism of its base change to some stage is universally
+closed), `SchemeTargetUniversallyClosed` (`SchemeTargetRebase.isUniversallyClosedMorphism_iff`:
+a morphism to the space represented by a scheme `V` is universally closed iff the structure
+morphism of its rebase over `V` is; `SchemeTargetRebase.isProperMorphism`: properness passes to
+the rebase for affine `S` and `V`, `V` locally of finite type over `S`, and `X` with a
+`LocallyOfFinitePresentation ⊓ QuasiCompact` atlas; `AffineTargetFamily.isUniversallyClosedMorphism_iff`:
+for a surjective étale target chart, `f` is universally closed iff the structure morphism of the
+family over the chart is; `AffineTargetFamily.isProperMorphism_structural`: a proper `f` gives a
+proper structure morphism of the family over an affine chart `V` locally of finite presentation
+over affine `S`, for `X` and `Y` with such atlases and `Y` quasi-separated) and
+`AffineTargetFamilyUniversallyClosedBaseChange`
+(`AffineTargetFamily.isUniversallyClosedMorphism_baseChange_iff`: for a surjective étale target
+chart, the base change of `f` along any scheme map is universally closed iff the structure
+morphism of the base-changed family is), on which `SpaceLimitProperDescentOfSchemeCovers` (row
+of its conditional theorems) builds. For
+`FamilyPointUpperBoundStatement` (Task 5405):
+`LangWeil/FiniteAlgebraPointBound` (`exists_uniform_card_algHom_le`: a module-finite algebra over
+a commutative ring has a uniformly bounded finite number of algebra maps to every field) and
+`LangWeil/FiniteMorphismPointBound` (`exists_uniform_card_finiteMorphism_le`: a finite morphism to
+an affine scheme has finite field-valued fibres of uniformly bounded size;
+`affineSpacePointEquiv` and `card_affineSpace_fibrePoints`: relative affine `d`-space has exactly
+`q^d` points over each point with values in a field with `q` elements), and the counting lemmas
+of `LangWeil/NormalizationCoverPointBound` (`affineNormalizationPointEquiv`;
+`exists_uniform_card_affineNormalization_le`: for a finite map to relative affine `d`-space over
+an affine base there is one `N` such that at most `N·q^d` points lie over each point of the base
+with values in a finite field with `q` elements;
+`FiniteNormalizationCover.exists_uniform_nat_card_fibrePoints_le`: a given
+`FiniteNormalizationCover` of `f` yields the bound `N·q^e` of `FamilyPointUpperBoundStatement`
+for `f`; the conditional reduction in the same module has its own row above).
 Their Markdown states what each provides.
 
 ## Remarks, proof steps and cited facts without separate statements
@@ -716,7 +728,13 @@ None has its own Lean declaration; each is listed with the reason.
   corresponding clauses are proved in `AdelicSpacePointTopologyProof` and its supporting modules,
   row p.17); [LMB, Prop. 1.3], Zariski's Main Theorem and [EGA IV, 18.8.10] in Lemma 5.10;
   Chow's lemma for algebraic spaces in the proof of Corollary 5.6 (the Lean proof uses the
-  valuative criterion and an ultrafilter limit instead, row Cor 5.6). The results are proved in
+  valuative criterion and an ultrafilter limit instead, row Cor 5.6); on p.19, the reduction of
+  Proposition 5.11(3) to complete fields through part (2), the closed immersion
+  `j : X → Res_{k'/k}(X_{k'})` for separated `X` in the finite-degree case, and the [CT]
+  analytification in the infinite-degree case (the Lean proof takes another route: the embedding
+  through the separable closure of `K` in `K'` and Galois descent along Galois extensions of any
+  degree, and closedness by reduction to complete fields through the completions of `K` and `K'`
+  and the separately proved complete case; rows Prop 5.11(3)). The results are proved in
   the Library, by Lean routes that need not follow these steps.
 - **Proofs of open results.** The étale cohomology of
   noetherian algebraic spaces, the trace formula and Deligne's Riemann hypothesis for
@@ -726,16 +744,7 @@ None has its own Lean declaration; each is listed with the reason.
   argument and [Del2, Prop. 3.11] in Example 5.5, the route to the quotient clause of
   `UnipotentOrbitQuotientStatement` (Task 5217 `b7321f08-34a4-4479-b6a5-fc099d504d2d`; its
   intermediate statements above use Cartier's theorem and quotients by actions with smooth
-  stabilizers instead); on p.19, the reduction of Proposition 5.11(3) to complete fields through
-  part (2), the closed immersion `j : X → Res_{k'/k}(X_{k'})` for separated `X` in the
-  finite-degree case, and the [CT] analytification in the infinite-degree case (Task 5258). The
-  embedding of Proposition 5.11(3) is proved in every degree by another route, through the
-  separable closure of `K` in `K'` and Galois descent along Galois extensions of any degree (row
-  "Prop 5.11, proof (p.19)" and the intermediate rows above). The closedness of the image is
-  reduced to complete fields through the completions of `K` and `K'`
-  (`ExtensionClosedReduction.henselianExtensionPointEmbedding_of_complete`), and the complete case
-  is proved (`CompleteExtensionClosedRange.completeExtensionPointClosedRange`). These steps belong
-  to the named proof tasks.
+  stabilizers instead). These steps belong to the named proof tasks.
 - **Cited facts outside the paper's line of argument.** Preservation of quasi-projectivity by
   Weil restriction along finite locally free maps ([CGP, Prop. A.5.8], Example 4.2) and the
   more general Weil restriction of algebraic spaces ([Ols, Thm. 1.5], after Lemma 5.10). The
@@ -770,19 +779,17 @@ These carried proof tasks are stale: their targets are proved in the Library com
    `SpaceValuativeExtensionDescentStatement` (published for Task 5368) have proof Tasks 5519 and
    5520 without executors; together they would give `SpaceValuativeExistenceStatement`, which
    `spaceValuativeExistence` proves by another route, so no open row depends on them.
-   Several open targets follow from Library theorems, although no theorem of exactly their type
-   is published (each row gives the term): the targets of Task 5278
-   (`SpaceLimitPropertyDescentStatement`), Task 5258 (`HenselianExtensionPointEmbeddingStatement`)
-   and Task 5405 (`FamilyPointUpperBoundStatement`), and `AdelicSpaceProperModelStatement` (Task
-   5358). With `adelicSpaceProperStages`, both inputs of Proposition 5.8 are therefore available,
-   but no Library theorem derives `AdelicSpaceSpreadProperMapStatement` from them, so its final
+   `AdelicSpaceProperModelStatement` (Task 5358) follows from Library theorems, although no
+   theorem of exactly its type is published (its row gives the term). With
+   `adelicSpaceProperStages`, both inputs of Proposition 5.8 are therefore available, but no
+   Library theorem derives `AdelicSpaceSpreadProperMapStatement` from them, so its final
    assembly remains with Task 5253. Lemma 4.6 in both forms (`UniformLangWeilStatement` and
    `SpaceUniformLangWeilStatement`) follows from `FamilyLangWeilStatement` by
    `uniformLangWeilOfFamily` and `spaceUniformLangWeilOfFamily`, and `FamilyLangWeilStatement`
    follows by induction on the dimension from Schmidt's bound `PlaneCurveHasseWeilStatement` (Task
-   5406) and results that are proved or follow from Library theorems (`familyLangWeilZero`,
-   `familyLangWeilCurve`, `familyLangWeilSlicing`, the Bertini statement and the upper bound); so Schmidt's bound is the only open input of Lemma
-   4.6 and of the Lang–Weil input of Theorem 5.9, whose assembly remains with Task 5254. In Example
+   5406) and proved results (`familyLangWeilZero`, `familyLangWeilCurve`, `familyLangWeilSlicing`,
+   `BertiniGenericHyperplane.bertiniGenericHyperplaneStatement` and `familyPointUpperBound`); so
+   Schmidt's bound is the only open input of Lemma 4.6 and of the Lang–Weil input of Theorem 5.9, whose assembly remains with Task 5254. In Example
    5.5, five of the six intermediate statements are proved, and `UnipotentOrbitStabilizerSmoothStatement`
    (Task 5434) follows from `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (Task
    5706, no executor); no Library theorem derives the example from them (Task 5217). Both inputs
