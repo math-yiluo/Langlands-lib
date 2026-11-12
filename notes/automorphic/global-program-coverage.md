@@ -1335,3 +1335,71 @@ Neither track of the program is complete. No Bernstein–Lapid or Lapid proof is
 public. Lapid Proposition 1, Lemma 10 and Theorem 2, the unitarity of
 `M(w, λ)` on `i𝔞_P^*`, the `W(P, Q)` bookkeeping beyond single presentations
 and the LF-topology on `𝔉_umg` remain unstated.
+
+## 12 November 2026 Lapid Lemma 10 and Theorem 2, unitarity, Delorme completeness, Getz–Hahn 10.5.1 and the spectral transform
+
+Worker 3657 checked this section against Library
+`440a690b5471ae33c2209a6ebc4d5b21e3923b60`. It supersedes the last
+paragraph of the previous section: Lapid's Lemma 10 and Theorem 2 and the
+unitarity of `M(w, λ)` on `i𝔞_P^*` are now public statements. So are
+Delorme's completeness theorem, Getz–Hahn Theorem 10.5.1 and the unitary
+spectral transform of Arthur's Theorem 7.2 (b).
+
+Every unit below was independently approved with no qualifications and
+published. Its Lean and Markdown files have the same SHA-256 in the current
+Library and in the workspace; the first eight hex digits are given. All are
+stated for number fields `F : Type` and are statements only: no proof is
+public.
+
+| Unit | Candidate, review and integration | Exact content and boundary |
+| --- | --- | --- |
+| [AdelicBoundedWavePacketStatement](../../Langlands/Global/AdelicBoundedWavePacketStatement.md) (Lean `ca1a7ce5`, Markdown `4aea27f4`) | `d8716e75-f49d-4acf-820a-ca7b462466e0`; Reviewer 1876, review task `76871ece`; integration `cab81dd3` | Lapid Lemma 10, §8, p.329: `BoundedWavePacketStatement`, the conjunction of the inner-product formula of Proposition 2 for bounded measurable data supported in a compact set where the Eisenstein series and intertwining coefficients are regular, and the bound `‖Θ_φ‖² ≤ |Ω(P, P)| ∫ (φ(λ), φ(λ))_P dλ`. Lapid's `|Ω|` is replaced by the smaller `|Ω(P, P)|` that his proof gives. |
+| [AdelicIntertwiningImaginaryUnitarityStatement](../../Langlands/Global/AdelicIntertwiningImaginaryUnitarityStatement.md) (Lean `fd9a5051`, Markdown `97f0943c`) | `34417b88-c93a-4cb3-b120-2c0dc1a1c601` (replacing the withdrawn `cd204ca2` and the rejected `d9658d5e`); Reviewer 1941, review task `c2e41781`; integration `61ce95b0` | Lapid p.312, Mœglin–Waldspurger IV.1.11 (b), VI.2.1 (i): `IntertwiningImaginaryUnitarityStatement`. If `M(w, λ)v_j = ∑ coeff_{ji}(λ) ψ_{ji}` with `v_j ∈ A^2_P`, `ψ_{ji} ∈ A^2_{P'}` and meromorphic coefficients, there are coefficients holomorphic near `i𝔞_P^*`, giving the same functions, that preserve the inner products `(·,·)_P → (·,·)_{P'}` at imaginary `λ`. The availability of the expansions is a hypothesis. Surjectivity of the Hilbert-space extension is not stated. |
+| [AdelicWavePacketIsometryStatement](../../Langlands/Global/AdelicWavePacketIsometryStatement.md) (Lean `b3c50d9a`, Markdown `bc1db1ab`) | `69412587-c213-4d0a-b108-4f56c8d2753e`; Reviewer 1912, review task `367a36fa`; integration `5db55983` | Lapid Theorem 2, p.314; Arthur Theorem 7.2 (b): `WavePacketIsometryStatement`. For a finite family of presented parabolics with Weyl-compatible wave packet data, `‖∑_i n_i⁻¹ Θ_i‖² = ∑_i n_i⁻¹ ∫ (F_i, F_i)_{P_i} dλ` with `n_i = ∑_{i'} |Ω(P_i, P_{i'})|`. The coordinate changes are assumed measure preserving. The Hilbert space `L` and the extension are not stated here (see the transform below). |
+| [AdelicWavePacketCompletenessStatement](../../Langlands/Global/AdelicWavePacketCompletenessStatement.md) (Lean `8636846a`, Markdown `e82cdb88`) | `38462cf2-a338-423a-8942-60ceb864e60c`; Reviewer 1928, review task `21c4bfd1`; integration `bb92f45c` | Delorme 2023 Theorem 7.9: `WavePacketCompletenessStatement`. A function in `L²(G(F) \ G(𝔸))` orthogonal to the wave packets of every presented parabolic `P` with `P(𝔸)K = G(𝔸)` vanishes almost everywhere, for `K` with an Iwasawa decomposition for some minimal parabolic. |
+| [AdelicSpectralDecompositionStatement](../../Langlands/Global/AdelicSpectralDecompositionStatement.md) (Lean `15723fb2`, Markdown `a109f436`) with helpers [AdelicParabolicSpectrum](../../Langlands/Global/AdelicParabolicSpectrum.md) (Lean `1fd80b54`, Markdown `0623b49b`) and [DiscretePart](../../Langlands/Representation/Unitary/DiscretePart.md) (Lean `ea82f030`, Markdown `90f92d7a`) | `a5d9d92f-0898-4560-9a2b-36615f2ccbf8`; Reviewer 2033, review task `6d5ebe8b`; integration `e3ae2a7b` | Getz–Hahn Theorem 10.5.1 on `[G]`: `SpectralDecompositionStatement`. For each minimal `P₀` with `P₀(𝔸)K = G(𝔸)` and the presented standard parabolics `P ⊇ P₀`, the spaces `L²_P([G])` (`parabolicSpectrum`, the closed span of the wave packets over `i(𝔞_M^G)^*`) are finitely many with dense sum, `L²_G([G])` is the discrete spectrum (`discreteSpectrum`, via `Langlands.Analysis.discretePart`), associate parabolics give equal spaces and non-associate ones orthogonal spaces. The unitary transform itself is the next unit. |
+| [AdelicSpectralTransformStatement](../../Langlands/Global/AdelicSpectralTransformStatement.md) (Lean `3cad3b70`, Markdown `91b23aaf`) with helper [AdelicSpectralTransformSpaces](../../Langlands/Global/AdelicSpectralTransformSpaces.md) (Lean `5cd47750`, Markdown `464f192c`) | `ace31339-14a7-42ca-a205-b7c609c08210`; Reviewer 2100, review task `681db1f1`; integration `7bfd3fbe` | Arthur 2005 Theorem 7.2 (b), Getz–Hahn (10.22)–(10.24), on `L²(G(F) \ G(𝔸))`: `SpectralTransformStatement`. With `H_P` the closure of the restrictions of `A^2_P` (`inducedHilbertSpace`), operators `M(w, i e(x))` on `H_P` characterized by the meromorphic expansions (`IsImaginaryIntertwiningOperator`) exist. For every such choice there is a linear isometry from Arthur's space `L̂` of Weyl-compatible families (`symmetricFamilySpace`) that extends `∑_P n_P⁻¹ ∫ E(F_P(λ), λ) dλ` from the dense smooth compactly supported families and has closed, `G(𝔸)`-invariant range. It does not state that the transform intertwines the right regular representation with `I_P(λ, y)`, nor the identification of its range with Getz–Hahn's `L²_𝒫([G])`. |
+
+The reviewers recorded boundaries that remain open. The two decomposition
+statements live on different quotients: the transform and Delorme's
+completeness on `G(F) \ G(𝔸)` with parameters in `i𝔞_P^*`, and Getz–Hahn
+10.5.1 on `[G]` with parameters in `i(𝔞_M^G)^*`. No comparison between them
+is stated. Completeness is stated for the packets of all presented
+parabolics, including non-standard ones, while 10.5.1 uses standard ones;
+the proof of 10.5.1 must bridge this (the contract of Task 5696 records two
+routes). The comparison of `inducedHilbertSpace` with Arthur's `H_P` and of
+`parabolicSpectrum` with the range of the transform are explanatory, not
+proved.
+
+Worker 3657 published six `lean.proof@1` tasks with environment
+`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Each was ready with no member and no
+candidate at Worker 3657's inspection of 12 November 2026. Task publication
+divides proof obligations; it is not proof evidence.
+
+| Task | Exact target | Recorded route or obstacle |
+| --- | --- | --- |
+| Task 5654, `35951340-68d5-4bb0-93c6-daa893cfdad5` | `Langlands.Global.BoundedWavePacketStatement` | Lapid p.329: approximate the data by smooth compactly supported data `φ_n` supported near the regular set, use Proposition 2 under local regularity and the unitarity of `M(w, λ)` to show that `Θ_{φ_n}` is Cauchy, and pass to the limit; the bound follows by Cauchy–Schwarz, unitarity and the invariance of `dλ` under `Ω(P, P)`. |
+| Task 5682, `6b05d7a3-a870-4561-be7e-fc588195e1be` | `Langlands.Global.IntertwiningImaginaryUnitarityStatement` | Mœglin–Waldspurger IV.3.12: adjunction II.1.8, the functional equation `M(w⁻¹, wλ)M(w, λ) = 1`, and root-hyperplane singularities for holomorphy. |
+| Task 5683, `898a3612-c34a-45e1-a18d-0f266392ff6f` | `Langlands.Global.WavePacketIsometryStatement` | Proposition 2 for each pair, the Weyl compatibility and the counting `∑_i n_i⁻¹ |Ω(P_i, P_{i'})| = 1`. |
+| Task 5684, `4d90c143-14a3-4b66-9001-8fc5738508a9` | `Langlands.Global.WavePacketCompletenessStatement` | Delorme §§3–7: Franke temperedness, uniform temperedness of Eisenstein series, Schwartz-space wave packets (Lapid 2013), Bernstein's temperedness of the spectrum, truncated inner products. Separate statement and proof tasks for these ingredients are expected. |
+| Task 5696, `5453d037-1d90-4f14-a068-e04f492be43e` | `Langlands.Global.SpectralDecompositionStatement` | Orthogonality from Proposition 2, equality from the functional equation and unitarity, density from Delorme 7.9 transferred to `[G]`, `L²_G = L²_disc` classically. |
+| Task 5697, `1e96fe4f-7f1a-4a3d-a8e6-e1f52b01f56a` | `Langlands.Global.SpectralTransformStatement` | Unitarity for the operators, Theorem 2 for the isometry, Delorme Lemma 6.2 symmetrization for density, closedness of isometric images, and right translation through `I_P(λ, y)`. |
+
+The shared DAG (revision 271) records these on
+`proof.lapid-local-wave-packet-bound`, `proof.intertwining-imaginary-unitarity`,
+`proof.lapid-wave-packet-isometry`, `proof.delorme-wave-packet-completeness`,
+`proof.gh-spectral-decomposition` and `proof.gh-unitary-spectral-transform`.
+
+Two L4 statements by Worker 3657 are staged, not public, and receive no
+credit here: Getz–Hahn Theorem 11.3.6, the Whittaker expansion of smooth
+cuspidal functions of uniform moderate growth on `GL_{r+1}` (candidate
+`bf71922d-bb05-4857-8023-f91bf7747c94`), and Getz–Hahn Theorem 11.4.3,
+cuspidal multiplicity one for `GL_n` on the full almost-everywhere cuspidal
+`L²` space (candidate `6d7791c7-4842-41f3-ad71-0b3f69e3003a`). The L4 table
+row "Whittaker and multiplicity" recorded Cogdell 2007 as missing; these
+candidates cite Cogdell's 2004 chapter `cogdell-2004-analytic-theory-gln`,
+Theorem 1.1, which states the expansion and sketches the same induction.
+
+Neither track of the program is complete. Lapid's Proposition 1 remains
+unstated; it waits for the truncation block of Task 5536, which was ready and
+unstaffed at this inspection. No L3 proof is public.
