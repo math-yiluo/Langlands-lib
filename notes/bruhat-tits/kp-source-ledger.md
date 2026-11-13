@@ -39,9 +39,15 @@ counterexample shows that the supplied-filtration statements of parts (1),
 (2) and (4) without that premise are false. Corrected Proposition 13.5.2
 has a published statement on available Bruhat–Tits data.
 Section 9.2.1 (a Galois-fixed point
-of a stable apartment), Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1
+of a stable apartment) is proved for supplied Galois-stable apartment
+data. Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1
 have published statements, and Theorem 9.6.5 also a proved reduction to
-five statements, one of which is proved. Corrected Definition 4.1.26 has a
+five statements, one of which is proved; published implications reduce
+its descent input to two unproved statements. Lemma 11.5.2, Proposition
+11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for
+the rational Kottwitz map selected by its characterizing property, the
+chamber clause of Corollary 11.7.5 on supplied building data. Corrected
+Definition 4.1.26 has a
 published definition, the corrected Definition 4.1.26 part of Theorem 9.2.7
 a published existence statement, reduced by two proved implications to
 four focused statements, and Definition 6.6.1 a partial published
@@ -50,7 +56,7 @@ definition. Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary
 models over the integers of the maximal unramified extension or, for
 facets, over the integers of a nonarchimedean local field; the full
 model of Theorem 8.3.2 also has a proved construction from five
-unproved statements. The other nineteen rows retain empty formal-status
+unproved statements. The other fifteen rows retain empty formal-status
 and evidence fields. The remaining Bundle B
 targets still require public ledger entries. Private source audits and
 unsubmitted drafts are not publication evidence.
@@ -509,6 +515,36 @@ module is byte-identical to the commit cited for it and to commit
 `Quot.sound`. The source and correction fields of every row are
 unchanged.
 
+A fifteenth pass on 13 November 2026 updates seven rows and adds none.
+The Section 9.2.1 row changes from `statement` to `conditional`: the
+theorem `unramifiedGaloisFixedApartment` (proof Task 5513, artifact
+`fdd6f633-f0f7-4d1b-8a1c-0437cb2ef450`, Library commit
+`b128d289028bf75629e9e364ecf151c484b27a85`) proves
+`UnramifiedGaloisFixedApartmentStatement` for every supplied Γ-stable
+class of valuations. Lemma 11.5.2, Proposition 11.5.4 and Corollaries
+11.7.5 and 11.7.6 change from an empty status to `statement`: Task 5912
+published `CharacterKernelStatement`, `ZeroKernelStatement`,
+`ChamberStatement` and `QuotientStatement` (Library commit
+`0c3f30c24701c74d5474fca3fbb5324a99aa1d58`) for the rational Kottwitz map
+`reductiveKottwitzRational`, which is selected by its characterizing
+property. The unproved `ReductiveKottwitzExistenceStatement` and
+`ReductiveKottwitzDescentStatement` assert that the selections have
+those properties. The chamber clause of Corollary 11.7.5 is stated on
+supplied building data. Worker 304 published proof tasks for the four
+targets (Tasks 6366, 6367, 6368 and 6376) and for the two map statements
+(Tasks 6363 and 6365). The Theorem 9.6.5 row records that four published
+theorems reduce `UnramifiedValuationDescentStatement` to
+`UnramifiedTorusUnitFixedApartmentStatement` and
+`UnramifiedFixedOppositeStatement`, whose proof tasks are Tasks 6010 and
+6012; no published declaration states this composite. The Proposition
+13.5.2 row lists the five intermediate statements of Task 5903. Thirteen
+declarations were inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit `6948120d`;
+each inspected module is byte-identical to the commit that first
+published it. Every reported axiom set is `propext`, `Classical.choice`,
+`Quot.sound`. The source and correction fields of every row are
+unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -615,7 +651,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the full model of Theorem 8.3.2 with a proved construction from five unproved statements; the other nineteen rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data; Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved, and its descent input reduced by published implications to two unproved statements) and Lemma 9.8.1 have published statements, Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 published statements for the selected rational Kottwitz map, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the full model of Theorem 8.3.2 with a proved construction from five unproved statements; the other fifteen rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -1551,24 +1587,28 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       ],
       "conclusion": "If T is defined and split over a finite unramified k'/k, Gal(K/k') fixes A_T pointwise. If T is defined over k, then A_T is Γ-stable and Γ acts on it by affine maps through a finite quotient Gal(k'/k). Every Γ-orbit on B(G_K) is finite, so B(G_K) has a Γ-fixed point (Corollary 4.2.12). The zero section x ↦ (0, x) of the enlarged building V(Z^0_{G,K}) × B(G_K) is Γ-equivariant and G(K)^1-equivariant, so it restricts to a G(k)^1-equivariant embedding of B(G_K)^Γ into the Γ-fixed enlarged building, where G(k)^1 = G(K)^1 ∩ G(k) (§9.5, printed p.364 / PDF p.395); the projection of the enlarged building onto B(G_K) is Γ- and G(K)-equivariant. The printed text calls the zero section equivariant under ΓG(K) and its restriction G(k)-equivariant; this fails whenever the center of G contains a nontrivial k-split torus (see the regression), and the 2024 corrections do not address it. As corrected, a bounded Γ-stable subgroup of G(K) has a Γ-fixed fixed point. In the proof of Proposition 9.3.6 this gives a Γ-fixed point in every special k-apartment.",
       "lean_declarations": [
-        "Langlands.Geometry.Building.UnramifiedGaloisFixedApartmentStatement"
+        "Langlands.Geometry.Building.UnramifiedGaloisFixedApartmentStatement",
+        "Langlands.Geometry.Building.unramifiedGaloisFixedApartment"
       ],
       "modules": [
-        "Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement"
+        "Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement",
+        "Langlands.Geometry.Building.UnramifiedGaloisFixedApartmentProof"
       ],
       "dependencies": [
         "Proposition 7.9.5; Proposition 4.4.3 and H^1(Gal(K/k'), V) = 0 for the pointwise fixation; Corollary 4.2.12; for the equivariance of the zero section, the central action of Section 4.3 (printed pp.178–180 / PDF pp.209–211), whose kernel is G(K)^1 by Lemma 4.3.1; for the corrected addition, Corollary 4.2.14, Proposition 4.2.18, Proposition 4.2.7, Lemma 1.1.11 and Theorem 1.1.15.",
         "Library inputs named by the statement's Markdown: KPApartmentData.exists_galoisFixed (the analogue for finite extensions K/k), the affine subspace galoisFixedApartment with mem_galoisFixedApartment_iff, under which the conclusion says that galoisFixedApartment is nonempty, and IntegerValuation.IsOmegaCompatible.galoisStable.",
-        "Proof successor: lean.proof@1 Task 5513 (a23aef86-8894-44b0-b1c9-b76314d0865f)."
+        "Proof: the theorem unramifiedGaloisFixedApartment (module UnramifiedGaloisFixedApartmentProof; proof Task 5513, a23aef86-8894-44b0-b1c9-b76314d0865f; artifact fdd6f633-f0f7-4d1b-8a1c-0437cb2ef450; first in Library commit b128d289028bf75629e9e364ecf151c484b27a85) proves UnramifiedGaloisFixedApartmentStatement. The status is conditional: the class D and its Γ-stability are supplied, and the Γ-action on B(G_K), the finiteness of Γ-orbits, the enlarged-building embedding and the added bounded-subgroup assertion still have no declaration (see the Recorded Lean scope). The published reduction unramifiedValuationDescent_of_fixedLocus (Theorem 9.6.5 row) takes this statement as its first input."
       ],
       "consumer_or_regression": "The apartments A^Γ of §9.2.3 and Construction 9.6.1. The fixed-point set of UnramifiedValuationDescentStatement (Theorem 9.6.5 row) is nonempty only by this statement. Regression: for the norm-one torus T of the unramified quadratic extension in SL_2, T_K is a maximal K-split torus, Frobenius acts on V(T_K) by −1 and the Γ-fixed part of A_T is a single point; T is not special, which the Lean statement allows. Regression for the zero section: for k = Q_2 and G = G_m, B(G_K)^Γ is a single point and the Γ-fixed enlarged building is R, on which 2 ∈ G(k) (normalized valuation 1) acts by t ↦ t − 1; no G(k)-equivariant map from the point exists, while G(k)^1 = Z_2^× acts trivially on R.",
-      "formal_status": "statement",
+      "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
-        "528e1be2-9d8b-452b-ad68-e956bf9179ee"
+        "528e1be2-9d8b-452b-ad68-e956bf9179ee",
+        "fdd6f633-f0f7-4d1b-8a1c-0437cb2ef450"
       ],
       "publication_commits": [
-        "9bc92c384fa84da7ce5811a5979d408fb69d40b0"
+        "9bc92c384fa84da7ce5811a5979d408fb69d40b0",
+        "b128d289028bf75629e9e364ecf151c484b27a85"
       ],
       "axiom_reports": [
         {
@@ -1577,6 +1617,13 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "d1da49d0-bde2-4462-b14a-ec1c5c1f8046",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-11 at Library commit 529b851c; kind definition; statement_returns_prop true; the module is byte-identical to commit 9bc92c38."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.unramifiedGaloisFixedApartment",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3336b98c-d2bd-4903-ad9a-544f2365a720",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind theorem, proving UnramifiedGaloisFixedApartmentStatement; the module is byte-identical to commit b128d289."
         }
       ],
       "external_code": []
@@ -1673,7 +1720,13 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityStatement",
         "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity",
         "Langlands.Geometry.Building.quasiSplitAdjointSimpleRootTransitivity",
-        "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation"
+        "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation",
+        "Langlands.Geometry.Building.unramifiedValuationDescent_of_fixedLocus",
+        "Langlands.Geometry.Building.unramifiedFixedCentralizerCompatibility_of_leviTransport",
+        "Langlands.Geometry.Building.unramifiedFixedLeviTransport_of_fixedApartment_and_leviSharp",
+        "Langlands.Geometry.Building.unramifiedLeviSharpApartmentTransport",
+        "Langlands.Geometry.Building.UnramifiedTorusUnitFixedApartmentStatement",
+        "Langlands.Geometry.Building.UnramifiedFixedOppositeStatement"
       ],
       "modules": [
         "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceStatement",
@@ -1683,13 +1736,20 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityStatement",
         "Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslationReduction",
         "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityProof",
-        "Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslationProof"
+        "Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslationProof",
+        "Langlands.Geometry.Building.UnramifiedValuationDescentReduction",
+        "Langlands.Geometry.Building.UnramifiedFixedCentralizerReduction",
+        "Langlands.Geometry.Building.UnramifiedFixedLeviTransportReduction",
+        "Langlands.Geometry.Building.UnramifiedLeviSharpApartmentTransportProof",
+        "Langlands.Geometry.Building.UnramifiedTorusUnitFixedApartmentStatement",
+        "Langlands.Geometry.Building.UnramifiedFixedLocusStatement"
       ],
       "dependencies": [
         "Source proof: V 0 and V 1 from Construction 9.6.1 and Proposition 9.4.3; equivariance from Lemma 9.4.15; V 2 from the same computation; V 6 from Proposition 9.3.16; V 3 from Proposition 9.4.8 and Remark 9.6.4; V 4 and V 5 from Corollary 9.4.10. Lemma 9.6.3 (Lemma 9.4.21, Propositions 7.3.12 and 9.3.24) compares U_{a,x,r} with the upstairs filtrations.",
         "Recorded Lean route: valuationApartmentAxiomsExistenceReduction takes a maximal split torus from exists_maximalSplitTorus and a special torus T ⊇ S from SpecialTorusExistenceStatement (Proposition 9.3.4 row). It makes G_K connected reductive by connectedReductiveFieldExtensionStatement and quasi-split by UnramifiedQuasiSplitStatement. QuasiSplitIntegerApartmentExistenceStatement, applied to K with MaximalUnramified.valuation_surjective and valuationSubring_isHenselian, gives the upstairs class with V 6. rootRankOneFactorization gives hE. UnramifiedValuationDescentStatement descends the class, and ValuationBuildingApartmentAxiomsStatement supplies the apartment axioms.",
-        "Proof obligations: ValuationApartmentAxiomsExistenceStatement has proof task Task 5441 (17c6d83c-1e02-4345-b9d6-0a8f711e778b), which the reduction reduces to its five inputs. UnramifiedValuationDescentStatement has proof task Task 5553 (4401e3df-51b5-4132-892c-74e02328d7ee), and ValuationBuildingApartmentAxiomsStatement Task 5554 (265c7ec0-42c1-44ad-9e4f-06f38c5e51d3). SpecialTorusExistenceStatement is in the Proposition 9.3.4 row. UnramifiedQuasiSplitStatement follows from HenselianDiscreteQuasiSplitStatement by the published unramifiedQuasiSplit_of_henselianDiscrete; that statement has proof task 7568ebe8-7b19-4e71-8918-de7d3492bacc and the published conditional reduction henselianDiscreteQuasiSplitReduction from QuasiSplitRegularClassRationalStatement. QuasiSplitIntegerApartmentExistenceStatement (proof task 8ffe0456-3bbd-46c6-9fe1-91be8c433458) is proved: the theorem quasiSplitIntegerApartmentExistence (module QuasiSplitIntegerApartmentExistenceProof) is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd, and its acceptance artifact cannot be identified in this instance. On 13 November 2026 the other four inputs of the reduction (UnramifiedQuasiSplitStatement, SpecialTorusExistenceStatement, UnramifiedValuationDescentStatement and ValuationBuildingApartmentAxiomsStatement) have no published proof. A proof of the descent statement also needs the Γ-fixed point of the Section 9.2.1 row.",
-        "Partial route inside ValuationBuildingApartmentAxiomsStatement (Task 5554): the last sentence of AS 5 (KP Axiom 4.1.6, Proposition 6.6.2), that for quasi-split adjoint G the image of N(F) in the affine automorphisms of the apartment is W(Ψ)^ext. The module Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslation, present in Library commit 17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e, states its translation part ValuationBuildingQuasiSplitAdjointTranslationStatement: for every B : ValuationBuildingData G of a quasi-split adjoint G over a nonarchimedean local field, every translation of the apartment that preserves the affine roots Ψ is the translation by ν(z) for some z ∈ Z(F). Its theorem range_eq_extendedAffineWeylGroup_of_quasiSplitAdjointTranslation derives the last sentence of AS 5 for B from this statement and the first sentence. Task 5784 (6e16b5de-eb88-4e8a-a1b4-c9efd76595ff; artifact f396351f-ca57-4ef9-99dc-472193bf573d, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) published QuasiSplitAdjointSimpleRootTransitivityStatement, the group-theoretic content behind KP Lemma 6.4.10: for every field k, quasi-split adjoint G over k, maximal split torus S and representative Z of its centralizer, some finite family Δ of relative roots generates every relative root, and for each a ∈ Δ and all u, u' ∈ U_a(k) outside U_{2a}(k) some z ∈ Z(k) commutes with U_b(k) for every other b ∈ Δ and conjugates u into u' U_{2a}(k). The theorem valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity (module ValuationQuasiSplitAdjointTranslationReduction, same commit) proves the translation statement from it. The theorem quasiSplitAdjointSimpleRootTransitivity (module QuasiSplitAdjointSimpleRootTransitivityProof; proof Task 5933, a4943c55-06f3-4473-a909-0c252cccd77b; artifact 91a862bd-07ef-429f-be2c-f70578275244; first in Library commit 51e4d8972659f1ffcf0ca89e8eee9540a30b52d3) proves QuasiSplitAdjointSimpleRootTransitivityStatement. Its unit also proves the Galois descent of torus points with prescribed character values as exists_rationalPoint_characterValue_eq_of_equivariant (module Langlands.GroupScheme.Torus.EquivariantCharacterValueDescent): for a Galois extension L/k and a commutative k-group scheme T whose base change to L is a split torus, every Galois-equivariant homomorphism X^*(T_L) → L^× is the evaluation of characters at some k-point of T. The theorem valuationBuildingQuasiSplitAdjointTranslation (module ValuationQuasiSplitAdjointTranslationProof; proof Task 5708, e58f3c1c-4630-432d-8c9a-534ac43a04d7; artifact 4eaffc20-122d-4482-a0d2-03117bddcdc6; first in Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5) applies the reduction to it and proves ValuationBuildingQuasiSplitAdjointTranslationStatement. So, by range_eq_extendedAffineWeylGroup_of_quasiSplitAdjointTranslation, the last sentence of AS 5 holds for every such B that satisfies the first sentence. A second proof task of the transitivity statement, Task 5936 (a6552027-c8a5-424b-8dd6-fd36b65b5f05), was retired on 13 November 2026 without candidates. Its executor published Task 5959 (7ae47441-6ced-4cc8-8cdc-75761494ea55), whose statement Langlands.GroupScheme.TorusEquivariantCharacterValueDescentStatement (module Langlands.GroupScheme.Torus.EquivariantCharacterValueDescentStatement) is present in Library commit 451cce4ca176c34856be86a36801b7a3b585ae77. It has the hypotheses and conclusion of the descent theorem above, but no published theorem yet has it as its type. No published reduction yet expresses ValuationBuildingApartmentAxiomsStatement through these statements."
+        "Proof obligations: ValuationApartmentAxiomsExistenceStatement has proof task Task 5441 (17c6d83c-1e02-4345-b9d6-0a8f711e778b), which the reduction reduces to its five inputs. UnramifiedValuationDescentStatement has proof task Task 5553 (4401e3df-51b5-4132-892c-74e02328d7ee), and ValuationBuildingApartmentAxiomsStatement Task 5554 (265c7ec0-42c1-44ad-9e4f-06f38c5e51d3). SpecialTorusExistenceStatement is in the Proposition 9.3.4 row. UnramifiedQuasiSplitStatement follows from HenselianDiscreteQuasiSplitStatement by the published unramifiedQuasiSplit_of_henselianDiscrete; that statement has proof task 7568ebe8-7b19-4e71-8918-de7d3492bacc and the published conditional reduction henselianDiscreteQuasiSplitReduction from QuasiSplitRegularClassRationalStatement. QuasiSplitIntegerApartmentExistenceStatement (proof task 8ffe0456-3bbd-46c6-9fe1-91be8c433458) is proved: the theorem quasiSplitIntegerApartmentExistence (module QuasiSplitIntegerApartmentExistenceProof) is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd, and its acceptance artifact cannot be identified in this instance. On 13 November 2026 the other four inputs of the reduction (UnramifiedQuasiSplitStatement, SpecialTorusExistenceStatement, UnramifiedValuationDescentStatement and ValuationBuildingApartmentAxiomsStatement) have no published proof. The entry \"Partial route inside UnramifiedValuationDescentStatement\" below reduces the descent statement to two unproved statements.",
+        "Partial route inside ValuationBuildingApartmentAxiomsStatement (Task 5554): the last sentence of AS 5 (KP Axiom 4.1.6, Proposition 6.6.2), that for quasi-split adjoint G the image of N(F) in the affine automorphisms of the apartment is W(Ψ)^ext. The module Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslation, present in Library commit 17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e, states its translation part ValuationBuildingQuasiSplitAdjointTranslationStatement: for every B : ValuationBuildingData G of a quasi-split adjoint G over a nonarchimedean local field, every translation of the apartment that preserves the affine roots Ψ is the translation by ν(z) for some z ∈ Z(F). Its theorem range_eq_extendedAffineWeylGroup_of_quasiSplitAdjointTranslation derives the last sentence of AS 5 for B from this statement and the first sentence. Task 5784 (6e16b5de-eb88-4e8a-a1b4-c9efd76595ff; artifact f396351f-ca57-4ef9-99dc-472193bf573d, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) published QuasiSplitAdjointSimpleRootTransitivityStatement, the group-theoretic content behind KP Lemma 6.4.10: for every field k, quasi-split adjoint G over k, maximal split torus S and representative Z of its centralizer, some finite family Δ of relative roots generates every relative root, and for each a ∈ Δ and all u, u' ∈ U_a(k) outside U_{2a}(k) some z ∈ Z(k) commutes with U_b(k) for every other b ∈ Δ and conjugates u into u' U_{2a}(k). The theorem valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity (module ValuationQuasiSplitAdjointTranslationReduction, same commit) proves the translation statement from it. The theorem quasiSplitAdjointSimpleRootTransitivity (module QuasiSplitAdjointSimpleRootTransitivityProof; proof Task 5933, a4943c55-06f3-4473-a909-0c252cccd77b; artifact 91a862bd-07ef-429f-be2c-f70578275244; first in Library commit 51e4d8972659f1ffcf0ca89e8eee9540a30b52d3) proves QuasiSplitAdjointSimpleRootTransitivityStatement. Its unit also proves the Galois descent of torus points with prescribed character values as exists_rationalPoint_characterValue_eq_of_equivariant (module Langlands.GroupScheme.Torus.EquivariantCharacterValueDescent): for a Galois extension L/k and a commutative k-group scheme T whose base change to L is a split torus, every Galois-equivariant homomorphism X^*(T_L) → L^× is the evaluation of characters at some k-point of T. The theorem valuationBuildingQuasiSplitAdjointTranslation (module ValuationQuasiSplitAdjointTranslationProof; proof Task 5708, e58f3c1c-4630-432d-8c9a-534ac43a04d7; artifact 4eaffc20-122d-4482-a0d2-03117bddcdc6; first in Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5) applies the reduction to it and proves ValuationBuildingQuasiSplitAdjointTranslationStatement. So, by range_eq_extendedAffineWeylGroup_of_quasiSplitAdjointTranslation, the last sentence of AS 5 holds for every such B that satisfies the first sentence. A second proof task of the transitivity statement, Task 5936 (a6552027-c8a5-424b-8dd6-fd36b65b5f05), was retired on 13 November 2026 without candidates. Its executor published Task 5959 (7ae47441-6ced-4cc8-8cdc-75761494ea55), whose statement Langlands.GroupScheme.TorusEquivariantCharacterValueDescentStatement (module Langlands.GroupScheme.Torus.EquivariantCharacterValueDescentStatement) is present in Library commit 451cce4ca176c34856be86a36801b7a3b585ae77. It has the hypotheses and conclusion of the descent theorem above, but no published theorem yet has it as its type. No published reduction yet expresses ValuationBuildingApartmentAxiomsStatement through these statements.",
+        "Partial route inside UnramifiedValuationDescentStatement (Task 5553): the theorem unramifiedValuationDescent_of_fixedLocus (module UnramifiedValuationDescentReduction; artifact 011ef4db-d42c-4ad2-ad2f-34a3e04c6824, first in Library commit cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e) proves that UnramifiedGaloisFixedApartmentStatement, UnramifiedFixedLeviTransportStatement, UnramifiedFixedCentralizerCompatibilityStatement (V 6 on Z(F) at the Γ-fixed points) and UnramifiedFixedOppositeStatement (V 5 at the Γ-fixed points, as KP derive it from Corollary 9.4.10) imply UnramifiedValuationDescentStatement. The first input is proved (Section 9.2.1 row). The theorem unramifiedFixedCentralizerCompatibility_of_leviTransport (module UnramifiedFixedCentralizerReduction; artifact 2b1154b1-3535-4eda-a884-5147c81d8f93, first in Library commit 0c3f30c24701c74d5474fca3fbb5324a99aa1d58) derives the third input from the second. The theorem unramifiedFixedLeviTransport_of_fixedApartment_and_leviSharp (module UnramifiedFixedLeviTransportReduction; artifact f1104929-517a-47db-a542-811d7d431233, first in Library commit 73b1430a339b037d27e9096762b0400adb4fbd19) derives the second input from UnramifiedTorusUnitFixedApartmentStatement and UnramifiedLeviSharpApartmentTransportStatement, and the theorem unramifiedLeviSharpApartmentTransport (module UnramifiedLeviSharpApartmentTransportProof; proof Task 6158, d9548cf8-c41a-4238-97b0-13ec9e71edc6; artifact cf4355b3-9dbc-484e-bb65-136c9197ef43, first in Library commit 0c3f30c24701c74d5474fca3fbb5324a99aa1d58) proves the latter. UnramifiedTorusUnitFixedApartmentStatement (artifact 1e7097c9-689a-43b5-960d-e8d57dfc4764) states the fixed-locus part of KP Proposition 9.3.13 in this setting: every point of the reduced building of D that is fixed by the coefficient action of Aut(K/F) and by the character-valuation kernel of S(K) is the image of an Aut(K/F)-fixed point of the T-apartment. UnramifiedFixedOppositeStatement is in module UnramifiedFixedLocusStatement (artifact 5597998e-1fcb-4439-ae3a-0edac203e533, whose entry declaration is UnramifiedFixedCentralizerCompatibilityStatement); both are first in Library commit cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e. Composing the four published theorems shows that UnramifiedTorusUnitFixedApartmentStatement and UnramifiedFixedOppositeStatement together imply UnramifiedValuationDescentStatement; no published declaration states this composite. On 13 November 2026 neither of the two is proved; their proof tasks are Task 6010 (fb63f839-f945-48c6-839b-5bb7bba29088) and Task 6012 (ebd4b228-9d35-4728-9c61-f2f6e6b5a901)."
       ],
       "consumer_or_regression": "The published rootValuationBuildingConstructionReduction (Theorem 9.2.7 row) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement and three further statements. The §9.6.6 comparison feeds the derived route for Axiom 4.1.16, and the §9.8 concave function groups use this class. Regression: for the unramified quasi-split SU_3, the relative root system is BC_1, and the upstairs root restricting to 2a must be filtered at depth 2r by V 4; the uniform depth of the printed Lemma 9.6.3 display fails there.",
       "formal_status": "statement",
@@ -1697,14 +1757,17 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "acceptance_artifact_ids": [
         "e0b14a71-bc99-4ac1-b5b5-041d9f4ca3e6",
         "cab86217-ea50-409b-9d4d-3440ee3e3a43",
-        "f396351f-ca57-4ef9-99dc-472193bf573d"
+        "f396351f-ca57-4ef9-99dc-472193bf573d",
+        "1e7097c9-689a-43b5-960d-e8d57dfc4764",
+        "5597998e-1fcb-4439-ae3a-0edac203e533"
       ],
       "publication_commits": [
         "58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af",
         "3c9b0579a8f2d36d16294ce48b465d1ec5aee273",
         "ed924aef420de137b4cbaa3b063a3618afcd73fd",
         "17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e",
-        "cfedefb680f317b0ea5d351023e1c9dd886b2547"
+        "cfedefb680f317b0ea5d351023e1c9dd886b2547",
+        "cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e"
       ],
       "axiom_reports": [
         {
@@ -1790,6 +1853,48 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "1a865aa5-84a6-4e99-a06f-87481040aaa7",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as first published in Library commit 7f43c3c9; kind theorem, proving ValuationBuildingQuasiSplitAdjointTranslationStatement."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.unramifiedValuationDescent_of_fixedLocus",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "8aefe302-5950-4f77-981f-36b08e24be65",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind theorem, whose type is the implication from the four fixed-locus statements to UnramifiedValuationDescentStatement; the module is byte-identical to commit cc5aa77f."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.unramifiedFixedCentralizerCompatibility_of_leviTransport",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "247604e5-267e-40c0-a2c8-56a38fde6b8e",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind theorem, whose type is the implication from UnramifiedFixedLeviTransportStatement to UnramifiedFixedCentralizerCompatibilityStatement; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.unramifiedFixedLeviTransport_of_fixedApartment_and_leviSharp",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "44f85228-6247-4ff2-96fe-a6d32ff16da8",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind theorem, proving UnramifiedFixedLeviTransportReductionStatement; the module is byte-identical to commit 73b1430a."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.unramifiedLeviSharpApartmentTransport",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "4374f1ac-313f-4939-aa45-71eb2fb2a473",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind theorem, proving UnramifiedLeviSharpApartmentTransportStatement; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.UnramifiedTorusUnitFixedApartmentStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "53f6acf9-dd8d-4223-8c02-e215f6d104f5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit cc5aa77f."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.UnramifiedFixedOppositeStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "c8c0745b-744f-4b28-a61c-f711ed36909a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit cc5aa77f."
         }
       ],
       "external_code": []
@@ -2430,22 +2535,57 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "erratum": null,
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian valuation ring and perfect residue field f; G is connected reductive. In a fixed separable closure k_s let K be the maximal unramified extension, I=Gal(k_s/K) and Gamma=Gal(K/k). Put A=pi_1(G)_I. kappa_G:G(k)→A^Gamma is the restriction of the actual Kottwitz homomorphism constructed over K in 11.5.1.",
-        "G(k)^1 is the subgroup of Definition 2.6.15, and A_tor is the torsion subgroup of A. No dim(f)≤1 assumption is imposed."
+        "G(k)^1 is the subgroup of Definition 2.6.15, and A_tor is the torsion subgroup of A. No dim(f)≤1 assumption is imposed.",
+        "Recorded Lean scope: CharacterKernelStatement (module Langlands.Geometry.Building.Kottwitz.CharacterKernelStatement) quantifies over every nonarchimedean local field F and connected reductive G over Spec F and asserts characterValuationKernel (ValuativeRel.valuation F) G = (fundamentalInvariantTorsion F (UnramifiedClosure F) (SeparableClosure F) G hG).comap κ_G. characterValuationKernel is the Library's G(F)^1, the common kernel of the valuations of the F-rational characters (Definition 2.6.15). K is the Library's maximal unramified extension UnramifiedClosure F inside the separable closure SeparableClosure F. ReductiveInvariantTarget F G hG is A^Γ for A = π_1(G)_I, the integral inertia coinvariants of the actual algebraic fundamental group, with the actual residual action of Γ = Gal(K/F); fundamentalInvariantTorsion is (A_tor)^Γ as a subgroup of A^Γ. κ_G is reductiveKottwitzRational F G hG (module Langlands.Geometry.Building.Kottwitz.ReductiveMap), selected by classical epsilon among the homomorphisms G(F) → A^Γ whose composite with A^Γ → A is the K-point map reductiveKottwitz on the image of G(F) in G(K). reductiveKottwitz is in turn selected by its squares with every z-extension, over the simply-connected-derived construction through every cocenter. That both selections have their characterizing properties is asserted by ReductiveKottwitzExistenceStatement (existence of z-extensions and unique existence, surjectivity and independence of the K-point map) and ReductiveKottwitzDescentStatement (residual Galois equivariance and unique existence of the restriction to G(F)), both in module Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement; neither is proved. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u; their residue fields are finite."
       ],
       "conclusion": "G(k)^1=kappa_G^(-1)((A_tor)^Gamma). This is the preimage of invariant torsion, distinct from the zero kernel identifying G(k)^0.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.Kottwitz.CharacterKernelStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.Kottwitz.CharacterKernelStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement"
+      ],
       "dependencies": [
         "Actual Kottwitz construction and functoriality, Lemma 11.5.1",
         "Abelianization G→G_ab, its finite-kernel map on fundamental groups and inertia coinvariants; Lemma 11.1.3 and Definition 2.6.15",
-        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. Worker 304 published the statement CharacterKernelStatement (artifact 65072446-cd08-452c-9014-68db65b2f4d7, first in Library commit 0c3f30c24701c74d5474fca3fbb5324a99aa1d58) together with the selected maps and ReductiveKottwitzExistenceStatement and ReductiveKottwitzDescentStatement (module ReductiveMapStatement, artifact c1bd5944-3a96-416a-b0c0-e535426f71c4, same commit). The proof task of CharacterKernelStatement is Task 6366 (6b141b60-f676-46c0-8920-be18d248eb6d), and those of the two map statements are Task 6363 (d6a79d52-b54d-4005-8fb3-92fef9976f3c) and Task 6365 (94352cf7-fa7c-4f47-94ae-f2cbc00cf7c3); Worker 304 published all of them as lean.proof@1 tasks on 13 November 2026. On that date none of these statements is proved."
       ],
       "consumer_or_regression": "The second and third quotient identifications of 11.7.6 and retention of the G(k)^0/G(k)^1 distinction in Hecke and stabilizer interfaces.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "65072446-cd08-452c-9014-68db65b2f4d7",
+        "c1bd5944-3a96-416a-b0c0-e535426f71c4"
+      ],
+      "publication_commits": [
+        "0c3f30c24701c74d5474fca3fbb5324a99aa1d58"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.CharacterKernelStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "f2783f38-c6f0-4ded-98e1-72088f739300",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3372d93d-b800-4cd2-bf1f-3a811f0d1a53",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7dc62cc5-d466-4905-9fa5-900602e2a17a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2458,22 +2598,57 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "erratum": null,
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian valuation ring and perfect residue field f; G is connected reductive. In a fixed separable closure k_s let K be the maximal unramified extension, I=Gal(k_s/K) and Gamma=Gal(K/k). Put A=pi_1(G)_I. kappa_G:G(k)→A^Gamma is the restriction of the actual Kottwitz homomorphism constructed over K in 11.5.1.",
-        "G(k)^0 is the subgroup of Definition 2.6.23. Neither finiteness of f nor dim(f)≤1 is assumed in this kernel identity."
+        "G(k)^0 is the subgroup of Definition 2.6.23. Neither finiteness of f nor dim(f)≤1 is assumed in this kernel identity.",
+        "Recorded Lean scope: ZeroKernelStatement (module Langlands.Geometry.Building.Kottwitz.ZeroKernelStatement) quantifies over every nonarchimedean local field F, connected reductive G over Spec F and every ZeroSubgroupDatum d for a maximal split torus i : S → G and a representative j : Z → G of its centralizer, which carries data of Definition 2.6.23(1) for Z_K and a simply connected cover of the derived subgroup; d.zeroSubgroup is the Library's G(F)^0 = G(F)^♮ · Z(F)^0 of Definition 2.6.23(3). It asserts d.zeroSubgroup = ker κ_G, so it also says that G(F)^0 does not depend on the datum. K is the Library's maximal unramified extension UnramifiedClosure F inside the separable closure SeparableClosure F. ReductiveInvariantTarget F G hG is A^Γ for A = π_1(G)_I, the integral inertia coinvariants of the actual algebraic fundamental group, with the actual residual action of Γ = Gal(K/F); fundamentalInvariantTorsion is (A_tor)^Γ as a subgroup of A^Γ. κ_G is reductiveKottwitzRational F G hG (module Langlands.Geometry.Building.Kottwitz.ReductiveMap), selected by classical epsilon among the homomorphisms G(F) → A^Γ whose composite with A^Γ → A is the K-point map reductiveKottwitz on the image of G(F) in G(K). reductiveKottwitz is in turn selected by its squares with every z-extension, over the simply-connected-derived construction through every cocenter. That both selections have their characterizing properties is asserted by ReductiveKottwitzExistenceStatement (existence of z-extensions and unique existence, surjectivity and independence of the K-point map) and ReductiveKottwitzDescentStatement (residual Galois equivariance and unique existence of the restriction to G(F)), both in module Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement; neither is proved. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u; their residue fields are finite."
       ],
       "conclusion": "G(k)^0=ker(kappa_G). The homomorphism is the actual Kottwitz map, not an arbitrary map postulated to have this kernel.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.Kottwitz.ZeroKernelStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.Kottwitz.ZeroKernelStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement"
+      ],
       "dependencies": [
         "Proposition 9.3.24, G(k)^0=G(K)^0 intersect G(k), reduces to k=K",
         "Quasi-splitness Corollary 2.3.8, torus kernel Proposition 11.1.5, induced-torus lifting Lemma 2.5.20 and z-extension surjectivity Proposition 11.5.3",
-        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. Worker 304 published the statement ZeroKernelStatement (artifact f286ecc6-8d4d-4b3c-b60b-6985b2940693, first in Library commit 0c3f30c24701c74d5474fca3fbb5324a99aa1d58) together with the selected maps and ReductiveKottwitzExistenceStatement and ReductiveKottwitzDescentStatement (module ReductiveMapStatement, artifact c1bd5944-3a96-416a-b0c0-e535426f71c4, same commit). The proof task of ZeroKernelStatement is Task 6367 (413a8493-8a98-4ae7-885c-bcadb6507b81), and those of the two map statements are Task 6363 (d6a79d52-b54d-4005-8fb3-92fef9976f3c) and Task 6365 (94352cf7-fa7c-4f47-94ae-f2cbc00cf7c3); Worker 304 published all of them as lean.proof@1 tasks on 13 November 2026. On that date none of these statements is proved."
       ],
       "consumer_or_regression": "Identify the component quotient in Theorem 7.8.1(1), while keeping surjectivity and the Section 11.7 residue hypothesis separate.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "f286ecc6-8d4d-4b3c-b60b-6985b2940693",
+        "c1bd5944-3a96-416a-b0c0-e535426f71c4"
+      ],
+      "publication_commits": [
+        "0c3f30c24701c74d5474fca3fbb5324a99aa1d58"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ZeroKernelStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "61d09f64-02bf-4938-bb4b-6cbe2b2045f5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3372d93d-b800-4cd2-bf1f-3a811f0d1a53",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7dc62cc5-d466-4905-9fa5-900602e2a17a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2487,22 +2662,57 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian valuation ring and perfect residue field f; G is connected reductive. In a fixed separable closure k_s let K be the maximal unramified extension, I=Gal(k_s/K) and Gamma=Gal(K/k). Put A=pi_1(G)_I. kappa_G:G(k)→A^Gamma is the restriction of the actual Kottwitz homomorphism constructed over K in 11.5.1.",
         "In addition, dim(f)≤1 in the field-dimension sense of Section 11.7; this holds for finite residue fields. This is not a Krull-dimension condition.",
-        "For the chamber quotient choose a Gamma-stable K-chamber C in B(G_K), as in the source proof. G(k)_C is its stabilizer and G(k)^0_C=G(k)_C intersect G(k)^0."
+        "For the chamber quotient choose a Gamma-stable K-chamber C in B(G_K), as in the source proof. G(k)_C is its stabilizer and G(k)^0_C=G(k)_C intersect G(k)^0.",
+        "Recorded Lean scope: ChamberStatement (module Langlands.Geometry.Building.Kottwitz.ChamberStatement) asserts, for every nonarchimedean local field F and connected reductive G over Spec F, that κ_G is surjective, together with a chamber clause on supplied building data. For a commutative group scheme T with iT : T → G whose scalar extension to K is a maximal split torus of G_K, a class D : KPApartmentData of valuations of the root datum of (G_K, T_K) with centralizer datum C satisfying V 6 (IntegerValuation.IsOmegaCompatible) and Galois stability (KPApartmentData.GaloisStable), let B be the building data UnramifiedBuildingDescent.buildingData built from them. For every chamber C' of B that the coefficient Galois action of UnramifiedBuildingDescent.semilinearData maps onto itself and for every ZeroSubgroupDatum d of G, whose d.zeroSubgroup is the Library's G(F)^0 (see the Proposition 11.5.4 row), let P be the preimage in G(F) of the stabilizer of C' in G(K) and N = G(F)^0 ∩ P. Then N is normal in P and some isomorphism P/N ≃ A^Γ sends the class of x to κ_G(x). Surjectivity is unconditional; the chamber clause concerns the supplied building data, and the existence of a Γ-stable chamber (Proposition 9.10.4) is not asserted. K is the Library's maximal unramified extension UnramifiedClosure F inside the separable closure SeparableClosure F. ReductiveInvariantTarget F G hG is A^Γ for A = π_1(G)_I, the integral inertia coinvariants of the actual algebraic fundamental group, with the actual residual action of Γ = Gal(K/F); fundamentalInvariantTorsion is (A_tor)^Γ as a subgroup of A^Γ. κ_G is reductiveKottwitzRational F G hG (module Langlands.Geometry.Building.Kottwitz.ReductiveMap), selected by classical epsilon among the homomorphisms G(F) → A^Γ whose composite with A^Γ → A is the K-point map reductiveKottwitz on the image of G(F) in G(K). reductiveKottwitz is in turn selected by its squares with every z-extension, over the simply-connected-derived construction through every cocenter. That both selections have their characterizing properties is asserted by ReductiveKottwitzExistenceStatement (existence of z-extensions and unique existence, surjectivity and independence of the K-point map) and ReductiveKottwitzDescentStatement (residual Galois equivariance and unique existence of the restriction to G(F)), both in module Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement; neither is proved. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u; their residue fields are finite."
       ],
       "conclusion": "kappa_G:G(k)→A^Gamma is surjective and induces an isomorphism G(k)_C/G(k)^0_C≃A^Gamma. The chosen chamber is over K; do not silently replace it by an arbitrary k-chamber.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.Kottwitz.ChamberStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.Kottwitz.ChamberStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement"
+      ],
       "dependencies": [
         "Existence of a Gamma-stable K-chamber, Proposition 9.10.4",
         "Proposition 11.6.1 exact sequence over K, Theorem 8.3.13 smooth connected-fibre chamber model, and Lemma 8.1.4 cohomology vanishing",
-        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. Worker 304 published the statement ChamberStatement (artifact b737aa32-a0d4-44e6-ad28-5cf5508ef26f, first in Library commit 0c3f30c24701c74d5474fca3fbb5324a99aa1d58) together with the selected maps and ReductiveKottwitzExistenceStatement and ReductiveKottwitzDescentStatement (module ReductiveMapStatement, artifact c1bd5944-3a96-416a-b0c0-e535426f71c4, same commit). The proof task of ChamberStatement is Task 6368 (b1c19c85-1bc5-482b-9d1d-244a35669005), and those of the two map statements are Task 6363 (d6a79d52-b54d-4005-8fb3-92fef9976f3c) and Task 6365 (94352cf7-fa7c-4f47-94ae-f2cbc00cf7c3); Worker 304 published all of them as lean.proof@1 tasks on 13 November 2026. On that date none of these statements is proved."
       ],
       "consumer_or_regression": "Length-zero/component representatives for the Iwahori–Weyl and Hecke interfaces over local fields.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "b737aa32-a0d4-44e6-ad28-5cf5508ef26f",
+        "c1bd5944-3a96-416a-b0c0-e535426f71c4"
+      ],
+      "publication_commits": [
+        "0c3f30c24701c74d5474fca3fbb5324a99aa1d58"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ChamberStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "c8d82a07-855c-4549-b768-5ccdcca33b0b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3372d93d-b800-4cd2-bf1f-3a811f0d1a53",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7dc62cc5-d466-4905-9fa5-900602e2a17a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2516,22 +2726,57 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian valuation ring and perfect residue field f; G is connected reductive. In a fixed separable closure k_s let K be the maximal unramified extension, I=Gal(k_s/K) and Gamma=Gal(K/k). Put A=pi_1(G)_I. kappa_G:G(k)→A^Gamma is the restriction of the actual Kottwitz homomorphism constructed over K in 11.5.1.",
         "In addition, dim(f)≤1 in the field-dimension sense of Section 11.7; this holds for finite residue fields. This is not a Krull-dimension condition.",
-        "A_tor is the torsion subgroup of A=pi_1(G)_I. Form invariants before the torsion-free quotient in the third identification."
+        "A_tor is the torsion subgroup of A=pi_1(G)_I. Form invariants before the torsion-free quotient in the third identification.",
+        "Recorded Lean scope: QuotientStatement (module Langlands.Geometry.Building.Kottwitz.QuotientStatement) quantifies over every nonarchimedean local field F, connected reductive G over Spec F and every ZeroSubgroupDatum d for a maximal split torus i : S → G and a representative j : Z → G of its centralizer, which carries data of Definition 2.6.23(1) for Z_K and a simply connected cover of the derived subgroup; d.zeroSubgroup is the Library's G(F)^0 = G(F)^♮ · Z(F)^0 of Definition 2.6.23(3). With N = d.zeroSubgroup and H = characterValuationKernel (ValuativeRel.valuation F) G, the Library's G(F)^1, it asserts that N is normal, N ≤ H, and that there are isomorphisms G(F)/N ≃ A^Γ, H/N ≃ (A_tor)^Γ and G(F)/H ≃ A^Γ/(A_tor)^Γ, each sending the class of g to κ_G(g) or its image. The third quotient is formed as A^Γ/(A_tor)^Γ. K is the Library's maximal unramified extension UnramifiedClosure F inside the separable closure SeparableClosure F. ReductiveInvariantTarget F G hG is A^Γ for A = π_1(G)_I, the integral inertia coinvariants of the actual algebraic fundamental group, with the actual residual action of Γ = Gal(K/F); fundamentalInvariantTorsion is (A_tor)^Γ as a subgroup of A^Γ. κ_G is reductiveKottwitzRational F G hG (module Langlands.Geometry.Building.Kottwitz.ReductiveMap), selected by classical epsilon among the homomorphisms G(F) → A^Γ whose composite with A^Γ → A is the K-point map reductiveKottwitz on the image of G(F) in G(K). reductiveKottwitz is in turn selected by its squares with every z-extension, over the simply-connected-derived construction through every cocenter. That both selections have their characterizing properties is asserted by ReductiveKottwitzExistenceStatement (existence of z-extensions and unique existence, surjectivity and independence of the K-point map) and ReductiveKottwitzDescentStatement (residual Galois equivariance and unique existence of the restriction to G(F)), both in module Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement; neither is proved. The source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields of either characteristic in universe u; their residue fields are finite."
       ],
       "conclusion": "Kottwitz induces G(k)/G(k)^0≃A^Gamma, G(k)^1/G(k)^0≃(A_tor)^Gamma, and G(k)/G(k)^1≃A^Gamma/(A_tor)^Gamma=(A^Gamma)_free. The explicit third quotient unpacks the source notation using torsion(A^Gamma)=(A_tor)^Gamma; no identification with (A/A_tor)^Gamma is asserted.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.Kottwitz.QuotientStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.Kottwitz.QuotientStatement",
+        "Langlands.Geometry.Building.Kottwitz.ReductiveMapStatement"
+      ],
       "dependencies": [
         "Lemma 11.5.2, Proposition 11.5.4 and Corollary 11.7.5",
         "First isomorphism theorem and the elementary fact that the torsion subgroup of an invariant subgroup is the invariant torsion subgroup",
-        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. Worker 304 published the statement QuotientStatement (artifact 78329540-30cf-4d88-8f4e-5d0d839c26a0, first in Library commit 0c3f30c24701c74d5474fca3fbb5324a99aa1d58) together with the selected maps and ReductiveKottwitzExistenceStatement and ReductiveKottwitzDescentStatement (module ReductiveMapStatement, artifact c1bd5944-3a96-416a-b0c0-e535426f71c4, same commit). The proof task of QuotientStatement is Task 6376 (03aeec1f-4da2-46a9-956e-13e7841bf977), and those of the two map statements are Task 6363 (d6a79d52-b54d-4005-8fb3-92fef9976f3c) and Task 6365 (94352cf7-fa7c-4f47-94ae-f2cbc00cf7c3); Worker 304 published all of them as lean.proof@1 tasks on 13 November 2026. On that date none of these statements is proved."
       ],
       "consumer_or_regression": "Combine with Theorem 7.8.1(1) and its chamber-dependent splitting without discarding invariant torsion or length-zero representatives.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "78329540-30cf-4d88-8f4e-5d0d839c26a0",
+        "c1bd5944-3a96-416a-b0c0-e535426f71c4"
+      ],
+      "publication_commits": [
+        "0c3f30c24701c74d5474fca3fbb5324a99aa1d58"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.QuotientStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "f1d2c990-0aa3-49d1-b5bd-45777e3d4274",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzExistenceStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3372d93d-b800-4cd2-bf1f-3a811f0d1a53",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.Kottwitz.ReductiveKottwitzDescentStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7dc62cc5-d466-4905-9fa5-900602e2a17a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit 6948120d; kind definition; statement_returns_prop true; the module is byte-identical to commit 0c3f30c2."
+        }
+      ],
       "external_code": []
     },
     {
@@ -3655,6 +3900,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       ],
       "dependencies": [
         "Open proof obligation: the proof task of AvailableMaximalProPStatement is Task 5903 (f12ddb04-e390-4e3c-a455-59e5d5684a11, lean.proof@1), published by Worker 3557 on 13 November 2026. On that date Workers 302 and 317 were executing it and had published intermediate definitions and statements; AvailableMaximalProPStatement had no proof. The statement is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; its acceptance artifact cannot be identified in this instance. Since its premise is 𝔅.IsAvailableFor F G hG, a proof yields corrected 13.5.2 for every G only together with BruhatTitsAvailabilityStatement.",
+        "Intermediate statements of Task 5903, none proved on 13 November 2026: FacetReductiveComparisonStatement (module Langlands.BruhatTits.MaximalProP.FacetReductiveComparisonStatement; artifact db960514-53a1-45a3-9327-0110c52a9c40, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), the chamber, Borel and radical-preimage comparisons under the single-group Bruhat–Tits axioms; LocalFieldPositiveProPStatement (module Langlands.BruhatTits.IntegralModels.PositiveProPStatement; artifact e0d41185-3f73-4fde-8306-6f0b2520f851, Library commit 73b1430a339b037d27e9096762b0400adb4fbd19), that the radical preimage of a supplied smooth neutral model with connected fibres is pro-p; FiniteFieldSylowBorelStatement and FiniteFieldNormalSylowTorusStatement (modules Langlands.GroupScheme.Rational.FiniteFieldSylowBorelStatement and Langlands.GroupScheme.Rational.FiniteFieldNormalSylowStatement; artifacts e29c5be2-2548-4b55-99ce-1ed6174767e7 and f91a6aed-61ac-4323-b27f-920decfa1a2f, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), on maximal p-subgroups of the rational points of a connected reductive group over a finite field; and BoundedOpenNormalizerStatement (module Langlands.BruhatTits.RationalPoints.BoundedOpenNormalizerStatement; artifact 85934e00-489c-45e0-855c-48fedda739d2, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), the local-field case of KP Proposition 2.2.16. The modules Langlands.BruhatTits.MaximalProP.AvailableFacetInputs and Langlands.BruhatTits.MaximalProP.AvailableNormalizerQuotient prove consequences that take some of these statements as hypotheses; no published theorem yet derives AvailableMaximalProPStatement from them. These declarations were not inspected in this pass.",
         "Actual model point topology and local compactness turn bounded open subgroups into compact ones. Realize P_{x,0+} as the inverse limit of its finite p-group filtration quotients, using 13.5.1 for their steps",
         "Fixed points 4.2.14, type preservation 1.5.13(3), the actual reduction and incident-facet/parabolic correspondence 8.4.19 with Chapter 9 descent; finite-field p-subgroup structure and the Iwahori-Tits system in G(k)^0",
         "The normalizer argument uses 2.2.16 and 6.3.21",
@@ -4077,9 +4323,10 @@ using torsion(A^Gamma)=(A_tor)^Gamma. It does not identify it with
 (A/A_tor)^Gamma without a separate exactness argument. All of these are
 source targets and dependency descriptions; no Kottwitz construction,
 quotient bijection, Hecke distinctness or finite-support theorem is proved
-by this note. Task 5912 (`13897846-41bc-48ee-ac17-46b6ca3eebfe`) owns the
-construction of the actual Kottwitz homomorphism and the statements of
-these four targets.
+by this note. Task 5912 (`13897846-41bc-48ee-ac17-46b6ca3eebfe`) published the
+Kottwitz homomorphism, selected by its characterizing property, and Lean
+statements of these four targets (Library commit `0c3f30c2`); none of them
+is proved, and their proof tasks are Tasks 6366, 6367, 6368 and 6376.
 
 ## Bundle D: models, descent and the actual reduction map
 
