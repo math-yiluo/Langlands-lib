@@ -42,7 +42,8 @@ of a stable apartment), Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1
 have published statements, and Theorem 9.6.5 also a proved reduction to
 five statements, one of which is proved. Corrected Definition 4.1.26 has a
 published definition, the corrected Definition 4.1.26 part of Theorem 9.2.7
-a published existence statement, and Definition 6.6.1 a partial published
+a published existence statement, reduced by two proved implications to
+four focused statements, and Definition 6.6.1 a partial published
 definition. The other twenty-four rows retain empty formal-status and
 evidence fields. The remaining Bundle B
 targets still require public ledger entries. Private source audits and
@@ -418,6 +419,43 @@ declarations were inspected with `lean_check` in environment
 reported axiom set is `propext`, `Classical.choice`, `Quot.sound`. The
 source and correction fields of the row are unchanged.
 
+A thirteenth pass on 13 November 2026 updates eight rows and adds none;
+no formal status changes. The Theorem 9.2.7 row records the two
+implication statements that this program published in Library commit
+`cfedefb680f317b0ea5d351023e1c9dd886b2547` to split
+`BruhatTitsAvailabilityStatement`:
+`BruhatTitsAvailabilityReductionStatement` (artifact
+`f147f7c0-08ca-4572-a5b9-d27efde033b8`) derives it from
+`GroupAxiomsExistenceStatement`, and
+`GroupAxiomsExistenceReductionStatement` (artifact
+`432145f3-166b-4c77-af14-c477854c91bc`) derives that from four focused
+statements. Both implications are proved, by Task 5926 and Task 5927,
+in Library commit `730bd1f25b056b8106a2697e003c1ef1733a6b30`, so
+`BruhatTitsAvailabilityStatement` now follows from those four statements.
+The Theorem 9.6.5 row records a proved part of
+`ValuationBuildingApartmentAxiomsStatement`:
+`ValuationBuildingQuasiSplitAdjointTranslationStatement`, the translation
+part of the quasi-split adjoint sentence of AS 5, is proved by Task 5708
+(Library commit `7f43c3c930ff92f76dae6589da1678ad729017e5`) from
+`QuasiSplitAdjointSimpleRootTransitivityStatement` (Task 5784, artifact
+`f396351f-ca57-4ef9-99dc-472193bf573d`), which Task 5933 proves (Library
+commit `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`). The
+Proposition 13.5.2 row records its proof task, Task 5903, now executing.
+The Proposition 13.2.5 row records that Worker 46's counterexample note
+is public and that the Markdown of the affected statements now reports
+it. Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5
+and 11.7.6 stay source-only; their owner task is now Task 5912
+(`13897846-41bc-48ee-ac17-46b6ca3eebfe`), which is to construct the
+actual Kottwitz homomorphism and state them; it is executing. Nine
+declarations were inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096`: four in modules first published
+in commit `cfedefb6`, the two assembly proofs (commit `730bd1f2`),
+`quasiSplitAdjointSimpleRootTransitivity` (commit `51e4d897`),
+`valuationBuildingQuasiSplitAdjointTranslation` (commit `7f43c3c9`) and
+`ValuationBuildingQuasiSplitAdjointTranslationStatement`. Every reported
+axiom set is `propext`, `Classical.choice`, `Quot.sound`. The source
+and correction fields of every row are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -524,7 +562,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a published intertwining statement for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement and Definition 6.6.1 a partial published definition; the other twenty-four rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a published intertwining statement for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; the other twenty-four rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -1364,11 +1402,19 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       ],
       "conclusion": "B with these apartments and polysimplices is a building whose apartments correspond bijectively to maximal k-split tori. Chambers and facets are fixed parts of Gamma-chambers and Gamma-facets, and G(k) acts by polysimplicial isometries. For the program's certificate, the constructed geometry and descended models must satisfy every axiom of corrected Definition 4.1.26 and Axiom 4.1.27, using the source assembly and the explicitly derived completion routes below.",
       "lean_declarations": [
-        "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement"
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement",
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionStatement",
+        "Langlands.Geometry.Building.GroupAxiomsExistenceReductionStatement",
+        "Langlands.Geometry.Building.bruhatTitsAvailabilityReduction",
+        "Langlands.Geometry.Building.groupAxiomsExistenceReduction"
       ],
       "modules": [
         "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement",
-        "Langlands.Geometry.Building.FullValidity.Assignment"
+        "Langlands.Geometry.Building.FullValidity.Assignment",
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionStatement",
+        "Langlands.Geometry.Building.GroupAxiomsExistenceReductionStatement",
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionProof",
+        "Langlands.Geometry.Building.GroupAxiomsExistenceReduction"
       ],
       "dependencies": [
         "Quasi-split Chapter 6–8 building and actual integral models; Corollary 2.3.8; descent Fact 2.10.16; special k-tori Proposition 9.3.4",
@@ -1378,17 +1424,20 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "G(k)^0=G(K)^0 intersect G(k) (9.3.24) and the G(k)^1 intersection identity; model base change and root compatibility for Axiom 4.1.27",
         "Published partial target, not the certificate: Langlands.Geometry.Building.RootValuationBuildingConstructionStatement (module of the same name) asks, for every nonarchimedean local field F and connected reductive G/F, for constructed P : ParahoricBuildingData G, realization and splitting with only the five Section 4.2 axiom witnesses (one-group 4.1.1, 4.1.2, 4.1.4, 4.1.6, 4.1.9) on the existing valuation quotient. Its proof task is 00b6788c-23c3-4b22-88f5-41fdbc6d3654. Together with metricRealization it would make the Proposition 4.2.7 and Theorem 4.2.10 rows unconditional; it does not supply 4.1.8, 4.1.16, 4.1.17, 4.1.20, 4.1.22, 4.1.27 or the 4.1.1 comparison clauses.",
         "Open proof obligation: BruhatTitsAvailabilityStatement has no proof task. Its proof belongs to this program and is split into the focused statements of the next entry; task 00b6788c-23c3-4b22-88f5-41fdbc6d3654 covers only the five Section 4.2 axioms above. Published statements with the hypothesis 𝔅.IsAvailableFor F G hG or 𝔅.IsValid are conditional on it. Among them are AvailableCartanStatement (Theorem 5.2.1 row, proved by availableCartan, artifact c3a16a8e-fad7-484f-9e90-64f897f020eb) and AvailableIwasawaStatement (Theorem 5.3.4 row, proved by availableIwasawa, artifact 42bb1c08-a7ac-49f5-a197-dc1d5707a42e), and two Renard-sourced statements whose proof tasks belong to proof task 8c39faa0-2a70-4fc4-a027-914987aba924: Langlands.Plancherel.RenardCartan.AvailableRenardCartanStatement (task be989fac-448d-4a56-ad1b-663853caf8cd) and Langlands.BruhatTits.SpecialCompact.AvailableSimultaneousStandardBasisStatement (task 8d4643b8-dcf9-476e-a86f-04b62b8d738f). Task 7dc04fe2-f965-4f59-b63c-75f5012b3f64 published three more statements in Langlands.BruhatTits.SpecialCompact, first in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0: ValidAssignmentTorusRebasingStatement and AvailableSpecialLeviCompactStatement assume 𝔅.IsValid, and AvailableSpecialVertexExistenceStatement assumes 𝔅.IsAvailableFor F G hG. Their proof tasks are Task 5348 (9ec91e66-99df-4afa-be5c-3e5c59207196), Task 5350 (bbd398f5-8ddc-4b82-85ab-bf3f0ef59d81) and Task 5349 (8ecbd7c3-bf60-4c93-a0ef-afa198caf8b3); none of the three tasks is present in the current TaskHub instance. All three are proved. validAssignmentTorusRebasing (module Langlands.BruhatTits.SpecialCompact.ValidTorusRebasingProof, artifact 1ad050ff-f388-4c2e-9276-97aa6080b19d, first published in Library commit 47820896f9935b0f378578d8609dc6e7ee353c79) proves ValidAssignmentTorusRebasingStatement by applying rebaseAssignmentFromDatumTransport to the proved kpBuildingDatumTransportStatement; its official lean.proof@1 validation 7ee53f31-2d37-4969-b19f-2d3ed178fe5f (lake-build, exact-target, unchanged-statement, frozen-inputs) is accepted, and a declaration inspection by Worker 3557 did not complete. availableSpecialVertexExistence (module Langlands.BruhatTits.SpecialCompact.AvailableSpecialVertexProof, artifact 8fbf039f-0ede-4921-9405-d9aaf3119ad1, present in Library commit 529b851ca9671cd9807187e571a5ea50ea7dd328; official validation a8a82aa9-0674-4117-8f1e-eda2d41a15f6) proves AvailableSpecialVertexExistenceStatement: Axiom 4.1.6 (AS 3) of available data makes the apartment roots an affine root system, IsAffineRootSystemWithRankZero.exists_isSpecialPoint (module Langlands.Geometry.Building.SpecialPointExistence) gives a special point and AffineRootSystem.isVertex_of_isSpecialPoint shows that it is a vertex; lean_check inspection 836b932f-d272-4e20-8231-3dd8aafeaa59 by Worker 3557 on 2026-11-12 at Library commit 24a49431 reports kind theorem and only propext, Classical.choice and Quot.sound. availableSpecialLeviCompact (module Langlands.BruhatTits.SpecialCompact.AvailableSpecialLeviCompactProof, present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; acceptance artifact not identifiable in this instance) proves AvailableSpecialLeviCompactStatement; lean_check inspection bc9c3cd0-0aa9-42c7-b7b0-2d4ec8efd3dc by Worker 3557 on 2026-11-13 at Library commit ed924aef reports kind theorem and only propext, Classical.choice and Quot.sound. All three proved theorems keep the premise 𝔅.IsValid or 𝔅.IsAvailableFor F G hG, and none of these tasks proves that available data exist. The published reduction jointBasisReduction (module Langlands.BruhatTits.SpecialCompact.JointBasisReductionProof, present in Library commit ed924aef; inspection f0afa0c2-2d10-48e2-a6b5-635c061dd7ed on 2026-11-13, same axioms) proves JointBasisReductionStatement: the existence of a valid assignment together with six conditional statements implies JointSpecialCompactBasisExistenceStatement, which places the special compact properties, standard-Levi inheritance, the ambient and Levi Iwasawa products, the Cartan comparisons and the simultaneous Renard basis at one apartment class and one point. Four of the six are proved (ValidAssignmentTorusRebasingStatement, AvailableSpecialVertexExistenceStatement, AvailableIwasawaStatement and AvailableSpecialLeviCompactStatement); AvailableSimultaneousStandardBasisStatement and AvailableRenardCartanStatement are not.",
-        "Decomposition (KP 4.1.28 assigns the axioms to Chapters 6–8). Six published statements of this program, first in Library commit 58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af, split availability. KPBuildingAssignment.isAvailableFor_iff separates IsAvailableFor into KPBuildingDatum.SatisfiesGroupAxioms, the comparison clauses of Axiom 4.1.1 and Axiom 4.1.17. Accordingly GroupAxiomsExistenceStatement (every connected reductive G over every nonarchimedean local field has some KPBuildingDatum satisfying the clauses of the ten axioms that concern G alone), BuildingComparisonAxiomStatement (the comparison clauses of Axiom 4.1.1 for all supplied valuation-building data; proof task Task 5427, 45fca8a2-fdf4-4530-98eb-a6307a31f6cf) and IsomorphismCompatibilityAxiomStatement (Axiom 4.1.17 for all supplied data; proof task Task 5428, fa830bf4-4cc7-4e50-9b79-c65dfb6110c4) are intended to give BruhatTitsAvailabilityStatement. The two comparison statements are proved: buildingComparisonAxiom (module BuildingComparisonAxiomProof) and isomorphismCompatibilityAxiom (module IsomorphismCompatibilityAxiomProof), both present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; lean_check inspections a47f35ec-2d5b-484f-98e1-0bc4442035be and 3197efea-91c5-4d27-9b4c-31f9f382d385 by Worker 3557 on 2026-11-13 report kind theorem and only propext, Classical.choice and Quot.sound. Their acceptance artifacts cannot be identified in this instance; Task 5427 is absent from it, and Task 5428 was carried into it with a resubmitted candidate under verification on 13 November 2026. BruhatTitsAvailabilityStatement therefore waits only on GroupAxiomsExistenceStatement and the unpublished assembly. GroupAxiomsExistenceStatement is in turn intended to follow from RootValuationBuildingConstructionStatement together with RootGroupActionAxiomStatement (Axiom 4.1.8(2),(3); Task 5425, 7aba1f84-72ba-4b7d-b839-5e1bb849fcf2), IwahoriDecompositionAxiomStatement (Axiom 4.1.16; Task 5426, 96685786-b196-4cbf-83bc-4bdee7ffb004) and IntegralModelAxiomsStatement (Axioms 4.1.20 and 4.1.22; Task 5429, cd2ad671-3edf-4905-a0e2-e7aa2b160b91). These two implications are not published; the assembly proof tasks will be published once their inputs are proved. On 13 November 2026 the proof tasks of the four open inputs (00b6788c, 7aba1f84, 96685786 and cd2ad671) were all ready with no executor. The published reduction rootValuationBuildingConstructionReduction (module RootValuationBuildingConstructionReduction, Task 4749) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement (KP Theorem 9.6.5; proof task 17c6d83c-1e02-4345-b9d6-0a8f711e778b), ActualApartmentSplittingStatement (Task 5439, 4d8b4782-7726-4ab3-bb88-fc3df18693fc), AffineIwahoriTitsStatement (task 20fbe465-f4ae-4fe9-9846-2201f1c31d28) and AffineIwahoriTitsBuildingStatement (Task 5440, 81a85d8b-3e8d-454c-97f4-d9b0a3c7e748). Through ParahoricBuildingData.fiveAxioms_of_statements the last three also give ChapterSevenBuildingAxiomsStatement (published by this program, first in Library commit 8c11c93f98b439395e0e7da779c98bb27e24bd6d; proof task Task 5470, 4aa6902d-5c5f-4ca6-9502-061842714858): for supplied ParahoricBuildingData satisfying V 7 and AS 2–AS 5, a polysimplicial realization and a splitting with the other six predicates of the corrected opening of Section 4.2. Two of the four inputs of rootValuationBuildingConstructionReduction are proved: actualApartmentSplitting (module Langlands.Geometry.Building.ActualApartmentSplittingProof, artifact 94af3c4e-b313-44ad-adce-6b6383233dc9, first published in Library commit 8401ccd1f8b9caa18ded91cbfb9c1a31f423ecfd) proves ActualApartmentSplittingStatement (Task 5439), and affineIwahoriTitsBuilding (module Langlands.Geometry.Building.AffineIwahoriTitsBuildingProof, artifact 75baba4f-16d0-4518-87d3-e7e88493aaa9, first published in Library commit cd03c1042f631409e39a0b2a833ed70c0ad78d55) proves AffineIwahoriTitsBuildingStatement (Task 5440). lean_check inspections 3edd4041-7f28-44e5-b70b-7a648f7aeb04 and f2116893-5218-4bcf-9fe1-b6edbb684aa2 by Worker 3557 on 2026-11-12 at Library commit 14c08c22 report kind theorem and only propext, Classical.choice and Quot.sound. ValuationApartmentAxiomsExistenceStatement and AffineIwahoriTitsStatement remain unproved, so RootValuationBuildingConstructionStatement and ChapterSevenBuildingAxiomsStatement remain open.",
+        "Decomposition (KP 4.1.28 assigns the axioms to Chapters 6–8). Six published statements of this program, first in Library commit 58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af, split availability. KPBuildingAssignment.isAvailableFor_iff separates IsAvailableFor into KPBuildingDatum.SatisfiesGroupAxioms, the comparison clauses of Axiom 4.1.1 and Axiom 4.1.17. Accordingly GroupAxiomsExistenceStatement (every connected reductive G over every nonarchimedean local field has some KPBuildingDatum satisfying the clauses of the ten axioms that concern G alone), BuildingComparisonAxiomStatement (the comparison clauses of Axiom 4.1.1 for all supplied valuation-building data; proof task Task 5427, 45fca8a2-fdf4-4530-98eb-a6307a31f6cf) and IsomorphismCompatibilityAxiomStatement (Axiom 4.1.17 for all supplied data; proof task Task 5428, fa830bf4-4cc7-4e50-9b79-c65dfb6110c4) are intended to give BruhatTitsAvailabilityStatement. The two comparison statements are proved: buildingComparisonAxiom (module BuildingComparisonAxiomProof) and isomorphismCompatibilityAxiom (module IsomorphismCompatibilityAxiomProof), both present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; lean_check inspections a47f35ec-2d5b-484f-98e1-0bc4442035be and 3197efea-91c5-4d27-9b4c-31f9f382d385 by Worker 3557 on 2026-11-13 report kind theorem and only propext, Classical.choice and Quot.sound. Their acceptance artifacts cannot be identified in this instance; Task 5427 is absent from it, and Task 5428 was carried into it with a resubmitted candidate under verification on 13 November 2026. BruhatTitsAvailabilityStatement therefore waits only on GroupAxiomsExistenceStatement, by the proved implication BruhatTitsAvailabilityReductionStatement described below. GroupAxiomsExistenceStatement is in turn intended to follow from RootValuationBuildingConstructionStatement together with RootGroupActionAxiomStatement (Axiom 4.1.8(2),(3); Task 5425, 7aba1f84-72ba-4b7d-b839-5e1bb849fcf2), IwahoriDecompositionAxiomStatement (Axiom 4.1.16; Task 5426, 96685786-b196-4cbf-83bc-4bdee7ffb004) and IntegralModelAxiomsStatement (Axioms 4.1.20 and 4.1.22; Task 5429, cd2ad671-3edf-4905-a0e2-e7aa2b160b91). Both implications are published statements of this program, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547. BruhatTitsAvailabilityReductionStatement (module of the same name, artifact f147f7c0-08ca-4572-a5b9-d27efde033b8) is GroupAxiomsExistenceStatement → BruhatTitsAvailabilityStatement. GroupAxiomsExistenceReductionStatement (module of the same name, artifact 432145f3-166b-4c77-af14-c477854c91bc) is RootValuationBuildingConstructionStatement → RootGroupActionAxiomStatement → IwahoriDecompositionAxiomStatement → IntegralModelAxiomsStatement → GroupAxiomsExistenceStatement. Both implications are proved, and both proofs are present in Library commit 730bd1f25b056b8106a2697e003c1ef1733a6b30. The theorem bruhatTitsAvailabilityReduction (module Langlands.Geometry.Building.BruhatTitsAvailabilityReductionProof; proof Task 5926, 47b47ccd-a059-40f4-bbc1-169685c862ea; artifact e160a237-a0d7-4683-9ba1-68a4ec9777fa) proves BruhatTitsAvailabilityReductionStatement. It chooses a datum for each group with Classical.choose and takes the comparison clauses from buildingComparisonAxiom and isomorphismCompatibilityAxiom through KPBuildingAssignment.isAvailableFor_iff. The theorem groupAxiomsExistenceReduction (module Langlands.Geometry.Building.GroupAxiomsExistenceReduction; proof Task 5927, 0d9b0a78-1f62-4c8e-bab7-78a4445383ce; artifact 48a1463c-593b-41f7-b7ea-9a02b0df2adf) proves GroupAxiomsExistenceReductionStatement. It builds SatisfiesGroupAxioms field by field and obtains Axiom 4.1.8 from KPBuildingDatum.satisfiesRootGroupActionAxiom_iff. So BruhatTitsAvailabilityStatement follows from RootValuationBuildingConstructionStatement, RootGroupActionAxiomStatement, IwahoriDecompositionAxiomStatement and IntegralModelAxiomsStatement, none of which is proved. On the same date each proof task of the four open inputs had an executor: Task 4749 (00b6788c), Task 5425 (7aba1f84) and Task 5426 (96685786) were waiting, and Task 5429 (cd2ad671) had two active executors. The published reduction rootValuationBuildingConstructionReduction (module RootValuationBuildingConstructionReduction, Task 4749) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement (KP Theorem 9.6.5; proof task 17c6d83c-1e02-4345-b9d6-0a8f711e778b), ActualApartmentSplittingStatement (Task 5439, 4d8b4782-7726-4ab3-bb88-fc3df18693fc), AffineIwahoriTitsStatement (task 20fbe465-f4ae-4fe9-9846-2201f1c31d28) and AffineIwahoriTitsBuildingStatement (Task 5440, 81a85d8b-3e8d-454c-97f4-d9b0a3c7e748). Through ParahoricBuildingData.fiveAxioms_of_statements the last three also give ChapterSevenBuildingAxiomsStatement (published by this program, first in Library commit 8c11c93f98b439395e0e7da779c98bb27e24bd6d; proof task Task 5470, 4aa6902d-5c5f-4ca6-9502-061842714858): for supplied ParahoricBuildingData satisfying V 7 and AS 2–AS 5, a polysimplicial realization and a splitting with the other six predicates of the corrected opening of Section 4.2. Two of the four inputs of rootValuationBuildingConstructionReduction are proved: actualApartmentSplitting (module Langlands.Geometry.Building.ActualApartmentSplittingProof, artifact 94af3c4e-b313-44ad-adce-6b6383233dc9, first published in Library commit 8401ccd1f8b9caa18ded91cbfb9c1a31f423ecfd) proves ActualApartmentSplittingStatement (Task 5439), and affineIwahoriTitsBuilding (module Langlands.Geometry.Building.AffineIwahoriTitsBuildingProof, artifact 75baba4f-16d0-4518-87d3-e7e88493aaa9, first published in Library commit cd03c1042f631409e39a0b2a833ed70c0ad78d55) proves AffineIwahoriTitsBuildingStatement (Task 5440). lean_check inspections 3edd4041-7f28-44e5-b70b-7a648f7aeb04 and f2116893-5218-4bcf-9fe1-b6edbb684aa2 by Worker 3557 on 2026-11-12 at Library commit 14c08c22 report kind theorem and only propext, Classical.choice and Quot.sound. ValuationApartmentAxiomsExistenceStatement and AffineIwahoriTitsStatement remain unproved, so RootValuationBuildingConstructionStatement and ChapterSevenBuildingAxiomsStatement remain open.",
         "Chapter 9 descent rows: Section 9.2.1, Proposition 9.3.4 and Theorem 9.6.5 record the published statements of the unramified-descent route to ValuationApartmentAxiomsExistenceStatement, including the proved reduction valuationApartmentAxiomsExistenceReduction; Lemma 9.8.1 records the existence statement for the §9.8 filtration of Z(k)."
       ],
       "consumer_or_regression": "Release 1 general-instance certificate, then actual parahoric reduction, inflation and compact induction. Check anisotropic and torus reduced/enlarged factors, a multipliable root and a nontrivial component example. A Gamma-chamber or Gamma-vertex need not be a K-chamber or K-vertex.",
       "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
-        "f81d0fe7-8c61-4e05-bfcc-e7d6b14a3f04"
+        "f81d0fe7-8c61-4e05-bfcc-e7d6b14a3f04",
+        "f147f7c0-08ca-4572-a5b9-d27efde033b8",
+        "432145f3-166b-4c77-af14-c477854c91bc"
       ],
       "publication_commits": [
-        "230ec08a058832bd6941fa887c30897e4826429b"
+        "230ec08a058832bd6941fa887c30897e4826429b",
+        "cfedefb680f317b0ea5d351023e1c9dd886b2547"
       ],
       "axiom_reports": [
         {
@@ -1397,6 +1446,34 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "f84d7d5e-94fd-4deb-b771-14d57bcf1815",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit 230ec08a; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7bfcbb0d-6581-466e-92a5-7003a75ac5be",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as published in Library commit cfedefb6; kind definition; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.GroupAxiomsExistenceReductionStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "1bc98bb0-b21c-4d31-bae8-d64d785cfd89",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as published in Library commit cfedefb6; kind definition; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.bruhatTitsAvailabilityReduction",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "75f0eabc-5824-4f8a-9bce-ee9e712b03e2",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as first published in Library commit 730bd1f2; kind theorem, proving BruhatTitsAvailabilityReductionStatement."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.groupAxiomsExistenceReduction",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "59655099-69b2-4fa3-8d80-cd1bde021020",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as first published in Library commit 730bd1f2; kind theorem, proving GroupAxiomsExistenceReductionStatement."
         }
       ],
       "external_code": []
@@ -1538,29 +1615,43 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Geometry.Building.UnramifiedValuationDescentPackageStatement",
         "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceReductionStatement",
         "Langlands.Geometry.Building.valuationApartmentAxiomsExistenceReduction",
-        "Langlands.Geometry.Building.quasiSplitIntegerApartmentExistence"
+        "Langlands.Geometry.Building.quasiSplitIntegerApartmentExistence",
+        "Langlands.Geometry.Building.ValuationBuildingQuasiSplitAdjointTranslationStatement",
+        "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityStatement",
+        "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity",
+        "Langlands.Geometry.Building.quasiSplitAdjointSimpleRootTransitivity",
+        "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation"
       ],
       "modules": [
         "Langlands.Geometry.Building.ValuationApartmentAxiomsExistenceStatement",
         "Langlands.Geometry.Building.UnramifiedValuationDescentStatement",
-        "Langlands.Geometry.Building.QuasiSplitIntegerApartmentExistenceProof"
+        "Langlands.Geometry.Building.QuasiSplitIntegerApartmentExistenceProof",
+        "Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslation",
+        "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityStatement",
+        "Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslationReduction",
+        "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityProof",
+        "Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslationProof"
       ],
       "dependencies": [
         "Source proof: V 0 and V 1 from Construction 9.6.1 and Proposition 9.4.3; equivariance from Lemma 9.4.15; V 2 from the same computation; V 6 from Proposition 9.3.16; V 3 from Proposition 9.4.8 and Remark 9.6.4; V 4 and V 5 from Corollary 9.4.10. Lemma 9.6.3 (Lemma 9.4.21, Propositions 7.3.12 and 9.3.24) compares U_{a,x,r} with the upstairs filtrations.",
         "Recorded Lean route: valuationApartmentAxiomsExistenceReduction takes a maximal split torus from exists_maximalSplitTorus and a special torus T ⊇ S from SpecialTorusExistenceStatement (Proposition 9.3.4 row). It makes G_K connected reductive by connectedReductiveFieldExtensionStatement and quasi-split by UnramifiedQuasiSplitStatement. QuasiSplitIntegerApartmentExistenceStatement, applied to K with MaximalUnramified.valuation_surjective and valuationSubring_isHenselian, gives the upstairs class with V 6. rootRankOneFactorization gives hE. UnramifiedValuationDescentStatement descends the class, and ValuationBuildingApartmentAxiomsStatement supplies the apartment axioms.",
-        "Proof obligations: ValuationApartmentAxiomsExistenceStatement has proof task Task 5441 (17c6d83c-1e02-4345-b9d6-0a8f711e778b), which the reduction reduces to its five inputs. UnramifiedValuationDescentStatement has proof task Task 5553 (4401e3df-51b5-4132-892c-74e02328d7ee), and ValuationBuildingApartmentAxiomsStatement Task 5554 (265c7ec0-42c1-44ad-9e4f-06f38c5e51d3). SpecialTorusExistenceStatement is in the Proposition 9.3.4 row. UnramifiedQuasiSplitStatement follows from HenselianDiscreteQuasiSplitStatement by the published unramifiedQuasiSplit_of_henselianDiscrete; that statement has proof task 7568ebe8-7b19-4e71-8918-de7d3492bacc and the published conditional reduction henselianDiscreteQuasiSplitReduction from QuasiSplitRegularClassRationalStatement. QuasiSplitIntegerApartmentExistenceStatement (proof task 8ffe0456-3bbd-46c6-9fe1-91be8c433458) is proved: the theorem quasiSplitIntegerApartmentExistence (module QuasiSplitIntegerApartmentExistenceProof) is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd, and its acceptance artifact cannot be identified in this instance. On 13 November 2026 the other four inputs of the reduction (UnramifiedQuasiSplitStatement, SpecialTorusExistenceStatement, UnramifiedValuationDescentStatement and ValuationBuildingApartmentAxiomsStatement) have no published proof. A proof of the descent statement also needs the Γ-fixed point of the Section 9.2.1 row."
+        "Proof obligations: ValuationApartmentAxiomsExistenceStatement has proof task Task 5441 (17c6d83c-1e02-4345-b9d6-0a8f711e778b), which the reduction reduces to its five inputs. UnramifiedValuationDescentStatement has proof task Task 5553 (4401e3df-51b5-4132-892c-74e02328d7ee), and ValuationBuildingApartmentAxiomsStatement Task 5554 (265c7ec0-42c1-44ad-9e4f-06f38c5e51d3). SpecialTorusExistenceStatement is in the Proposition 9.3.4 row. UnramifiedQuasiSplitStatement follows from HenselianDiscreteQuasiSplitStatement by the published unramifiedQuasiSplit_of_henselianDiscrete; that statement has proof task 7568ebe8-7b19-4e71-8918-de7d3492bacc and the published conditional reduction henselianDiscreteQuasiSplitReduction from QuasiSplitRegularClassRationalStatement. QuasiSplitIntegerApartmentExistenceStatement (proof task 8ffe0456-3bbd-46c6-9fe1-91be8c433458) is proved: the theorem quasiSplitIntegerApartmentExistence (module QuasiSplitIntegerApartmentExistenceProof) is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd, and its acceptance artifact cannot be identified in this instance. On 13 November 2026 the other four inputs of the reduction (UnramifiedQuasiSplitStatement, SpecialTorusExistenceStatement, UnramifiedValuationDescentStatement and ValuationBuildingApartmentAxiomsStatement) have no published proof. A proof of the descent statement also needs the Γ-fixed point of the Section 9.2.1 row.",
+        "Partial route inside ValuationBuildingApartmentAxiomsStatement (Task 5554): the last sentence of AS 5 (KP Axiom 4.1.6, Proposition 6.6.2), that for quasi-split adjoint G the image of N(F) in the affine automorphisms of the apartment is W(Ψ)^ext. The module Langlands.Geometry.Building.ValuationQuasiSplitAdjointTranslation, present in Library commit 17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e, states its translation part ValuationBuildingQuasiSplitAdjointTranslationStatement: for every B : ValuationBuildingData G of a quasi-split adjoint G over a nonarchimedean local field, every translation of the apartment that preserves the affine roots Ψ is the translation by ν(z) for some z ∈ Z(F). Its theorem range_eq_extendedAffineWeylGroup_of_quasiSplitAdjointTranslation derives the last sentence of AS 5 for B from this statement and the first sentence. Task 5784 (6e16b5de-eb88-4e8a-a1b4-c9efd76595ff; artifact f396351f-ca57-4ef9-99dc-472193bf573d, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) published QuasiSplitAdjointSimpleRootTransitivityStatement, the group-theoretic content behind KP Lemma 6.4.10: for every field k, quasi-split adjoint G over k, maximal split torus S and representative Z of its centralizer, some finite family Δ of relative roots generates every relative root, and for each a ∈ Δ and all u, u' ∈ U_a(k) outside U_{2a}(k) some z ∈ Z(k) commutes with U_b(k) for every other b ∈ Δ and conjugates u into u' U_{2a}(k). The theorem valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity (module ValuationQuasiSplitAdjointTranslationReduction, same commit) proves the translation statement from it. The theorem quasiSplitAdjointSimpleRootTransitivity (module QuasiSplitAdjointSimpleRootTransitivityProof; proof Task 5933, a4943c55-06f3-4473-a909-0c252cccd77b; artifact 91a862bd-07ef-429f-be2c-f70578275244; first in Library commit 51e4d8972659f1ffcf0ca89e8eee9540a30b52d3) proves QuasiSplitAdjointSimpleRootTransitivityStatement. Its unit also proves the Galois descent of torus points with prescribed character values as exists_rationalPoint_characterValue_eq_of_equivariant (module Langlands.GroupScheme.Torus.EquivariantCharacterValueDescent): for a Galois extension L/k and a commutative k-group scheme T whose base change to L is a split torus, every Galois-equivariant homomorphism X^*(T_L) → L^× is the evaluation of characters at some k-point of T. The theorem valuationBuildingQuasiSplitAdjointTranslation (module ValuationQuasiSplitAdjointTranslationProof; proof Task 5708, e58f3c1c-4630-432d-8c9a-534ac43a04d7; artifact 4eaffc20-122d-4482-a0d2-03117bddcdc6; first in Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5) applies the reduction to it and proves ValuationBuildingQuasiSplitAdjointTranslationStatement. So, by range_eq_extendedAffineWeylGroup_of_quasiSplitAdjointTranslation, the last sentence of AS 5 holds for every such B that satisfies the first sentence. A second proof task of the transitivity statement, Task 5936 (a6552027-c8a5-424b-8dd6-fd36b65b5f05), was retired on 13 November 2026 without candidates. Its executor published Task 5959 (7ae47441-6ced-4cc8-8cdc-75761494ea55), whose statement Langlands.GroupScheme.TorusEquivariantCharacterValueDescentStatement (module Langlands.GroupScheme.Torus.EquivariantCharacterValueDescentStatement) is present in Library commit 451cce4ca176c34856be86a36801b7a3b585ae77. It has the hypotheses and conclusion of the descent theorem above, but no published theorem yet has it as its type. No published reduction yet expresses ValuationBuildingApartmentAxiomsStatement through these statements."
       ],
       "consumer_or_regression": "The published rootValuationBuildingConstructionReduction (Theorem 9.2.7 row) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement and three further statements. The §9.6.6 comparison feeds the derived route for Axiom 4.1.16, and the §9.8 concave function groups use this class. Regression: for the unramified quasi-split SU_3, the relative root system is BC_1, and the upstairs root restricting to 2a must be filtered at depth 2r by V 4; the uniform depth of the printed Lemma 9.6.3 display fails there.",
       "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
         "e0b14a71-bc99-4ac1-b5b5-041d9f4ca3e6",
-        "cab86217-ea50-409b-9d4d-3440ee3e3a43"
+        "cab86217-ea50-409b-9d4d-3440ee3e3a43",
+        "f396351f-ca57-4ef9-99dc-472193bf573d"
       ],
       "publication_commits": [
         "58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af",
         "3c9b0579a8f2d36d16294ce48b465d1ec5aee273",
-        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd",
+        "17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e",
+        "cfedefb680f317b0ea5d351023e1c9dd886b2547"
       ],
       "axiom_reports": [
         {
@@ -1611,6 +1702,41 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "f3c37e97-b1f0-4294-a12d-542c6781f48d",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit ed924aef; a theorem proving QuasiSplitIntegerApartmentExistenceStatement. Its acceptance artifact cannot be identified in this instance."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingQuasiSplitAdjointTranslationStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "f194ea1c-ac22-4a1d-9d67-d0d165c28603",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true. The module is present in Library commit 17dd94ea; its acceptance artifact cannot be identified in this instance."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.QuasiSplitAdjointSimpleRootTransitivityStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "fac0114c-5304-422e-bd66-d9fe5be74d93",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as published in Library commit cfedefb6; kind definition; statement_returns_prop true."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "9d61aae3-eaa0-4eaf-8ece-9a80bf927f89",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as published in Library commit cfedefb6; kind theorem, proving QuasiSplitAdjointSimpleRootTransitivityStatement → ValuationBuildingQuasiSplitAdjointTranslationStatement."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.quasiSplitAdjointSimpleRootTransitivity",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "2178d455-71f0-483c-8d47-67f0d81a2ac0",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as first published in Library commit 51e4d897; kind theorem, proving QuasiSplitAdjointSimpleRootTransitivityStatement."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.valuationBuildingQuasiSplitAdjointTranslation",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "1a865aa5-84a6-4e99-a06f-87481040aaa7",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-13 of the module as first published in Library commit 7f43c3c9; kind theorem, proving ValuationBuildingQuasiSplitAdjointTranslationStatement."
         }
       ],
       "external_code": []
@@ -2258,11 +2384,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "modules": [],
       "dependencies": [
         "Actual Kottwitz construction and functoriality, Lemma 11.5.1",
-        "Abelianization G→G_ab, its finite-kernel map on fundamental groups and inertia coinvariants; Lemma 11.1.3 and Definition 2.6.15"
+        "Abelianization G→G_ab, its finite-kernel map on fundamental groups and inertia coinvariants; Lemma 11.1.3 and Definition 2.6.15",
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
       ],
       "consumer_or_regression": "The second and third quotient identifications of 11.7.6 and retention of the G(k)^0/G(k)^1 distinction in Hecke and stabilizer interfaces.",
       "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
       "acceptance_artifact_ids": [],
       "publication_commits": [],
       "axiom_reports": [],
@@ -2285,11 +2412,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "modules": [],
       "dependencies": [
         "Proposition 9.3.24, G(k)^0=G(K)^0 intersect G(k), reduces to k=K",
-        "Quasi-splitness Corollary 2.3.8, torus kernel Proposition 11.1.5, induced-torus lifting Lemma 2.5.20 and z-extension surjectivity Proposition 11.5.3"
+        "Quasi-splitness Corollary 2.3.8, torus kernel Proposition 11.1.5, induced-torus lifting Lemma 2.5.20 and z-extension surjectivity Proposition 11.5.3",
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
       ],
       "consumer_or_regression": "Identify the component quotient in Theorem 7.8.1(1), while keeping surjectivity and the Section 11.7 residue hypothesis separate.",
       "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
       "acceptance_artifact_ids": [],
       "publication_commits": [],
       "axiom_reports": [],
@@ -2313,11 +2441,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "modules": [],
       "dependencies": [
         "Existence of a Gamma-stable K-chamber, Proposition 9.10.4",
-        "Proposition 11.6.1 exact sequence over K, Theorem 8.3.13 smooth connected-fibre chamber model, and Lemma 8.1.4 cohomology vanishing"
+        "Proposition 11.6.1 exact sequence over K, Theorem 8.3.13 smooth connected-fibre chamber model, and Lemma 8.1.4 cohomology vanishing",
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
       ],
       "consumer_or_regression": "Length-zero/component representatives for the Iwahori–Weyl and Hecke interfaces over local fields.",
       "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
       "acceptance_artifact_ids": [],
       "publication_commits": [],
       "axiom_reports": [],
@@ -2341,11 +2470,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "modules": [],
       "dependencies": [
         "Lemma 11.5.2, Proposition 11.5.4 and Corollary 11.7.5",
-        "First isomorphism theorem and the elementary fact that the torsion subgroup of an invariant subgroup is the invariant torsion subgroup"
+        "First isomorphism theorem and the elementary fact that the torsion subgroup of an invariant subgroup is the invariant torsion subgroup",
+        "Owner task: Task 5912 (13897846-41bc-48ee-ac17-46b6ca3eebfe, lean.peer@1), published by Worker 3557 on 13 November 2026, is to construct the actual Kottwitz homomorphism (KP Proposition 11.1.1, Definition 11.3.2, Lemma 11.5.1) over every nonarchimedean local field, state this target over it with the Library's G(F)^0 and G(F)^1, and publish lean.proof@1 tasks for the statements. On 13 November 2026 Worker 304 was executing it and had published intermediate definitions and statements; no Lean declaration of this target exists yet."
       ],
       "consumer_or_regression": "Combine with Theorem 7.8.1(1) and its chamber-dependent splitting without discarding invariant torsion or length-zero representatives.",
       "formal_status": null,
-      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "owner_task": "13897846-41bc-48ee-ac17-46b6ca3eebfe",
       "acceptance_artifact_ids": [],
       "publication_commits": [],
       "axiom_reports": [],
@@ -2805,7 +2935,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Double-root premise: for u ∈ U_{2a,x,r} and u' ∈ U_{-a,x,s}, Lemma 7.1.2(2) places the root factors of the commutator in P_{x,r+s}, but Definition 7.2.1 places its Z-component only in Z(k)_{r/2+s}, while P_{x,r+s} ∩ Z(k) = Z(k)_{r+s} (Lemma 7.3.16). In the proof of Proposition 7.3.17, V 3 excludes the pair u ∈ U_{a,x,0}, v ∈ U_{-2a,x,r}, where Definition 7.2.1 gives Z(k)_{r/2} and Z(k)_r is needed. The SU_3 formula in the proof of Proposition 7.1.1 gives γ − 1 = ββ' when u ∈ U_{2a}(k), of valuation 2(φ_a(u) + φ_{-a}(u')), which closes both gaps. The statement's Markdown derives the bound for the actual Section 9.8 filtration (Lemma 9.8.1 row).",
         "Proof successors (lean.proof@1, one per conjunct): MoyPrasadSeparatedStatement Task 5509 (090acae8-2f81-4ccd-bd05-3635b01f3955); MoyPrasadBoundedOpenStatement Task 5510 (c593d9f7-612c-43ae-aa67-342ceb78f1d5); MoyPrasadCovarianceStatement Task 5511 (be16ead9-93f4-432a-a7e0-44077e469d85); MoyPrasadCommutatorStatement Task 5512 (05aa82d6-2f2e-4113-908c-edc4ea226133). The conjunction needs no further mathematics once the four are proved. Part (3), MoyPrasadProductStatement, has proof successor Task 5579 (f97b9951-9063-4099-b8dd-b986fd1f7205). Parts (5) and (6), MoyPrasadLeviStatement, have proof successor Task 5620 (435ee887-a640-423a-bc30-8ad182e6ba9e). The double-root statements have proof successors Task 5645 (03d53828-0d05-4e3f-960c-dd74256072e0) (MoyPrasadDoubleRootCovarianceStatement) and Task 5646 (a5f35e49-1e6a-4f03-8986-d7b2db8ac2b0) (MoyPrasadDoubleRootCommutatorStatement); Tasks 5511 and 5512 keep their original targets. Worker 164's published iInf_moyPrasad_eq_bot, orderedMoyPrasadProduct_injective and range_orderedMoyPrasadProduct_eq (Library commit cd03c104) take only the apartment axioms and IsCommutatorFriendly; the contexts of Task 5509 (090acae8-2f81-4ccd-bd05-3635b01f3955) and Task 5579 (f97b9951-9063-4099-b8dd-b986fd1f7205) name them. Worker 164's published isMoyPrasadAt_unique_of_double_opposite_bound (module Langlands.Geometry.Building.MoyPrasadCovarianceReduction, Library commit 297a8ef0) derives the conclusion of MoyPrasadCovarianceStatement from the apartment axioms, SatisfiesFiltrationAxioms and one further hypothesis: conjugation of U_{-2a,x,r} by U_{a,x,0} stays in P_{x,r}. conjugate_double_opposite_mem_moyPrasad_of_central_bound (module Langlands.Geometry.Building.MoyPrasadMixedConjugation, same commit) reduces that hypothesis to a bound on the Z-component, the bound that IsDoubleRootCommutatorFriendly supplies. The revision-2 contexts of Tasks 5511, 5512 and 5552 record the gap and name these reductions.",
         "Proved conjuncts (13 November 2026): moyPrasadSeparated (module KPMoyPrasadSeparatedProof) proves MoyPrasadSeparatedStatement by applying iInf_moyPrasad_eq_bot to the first clause IsCommutatorFriendly of SatisfiesFiltrationAxioms; moyPrasadBoundedOpen (module MoyPrasadBoundedOpenProof) proves MoyPrasadBoundedOpenStatement from isOpen_moyPrasad (V 7 and IsOpenFiltration, through the proved Corollary 8.2.6) and the published boundedness lemma of MoyPrasadTopology. Both are present in Library commit 17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e; lean_check inspections 54e0e341-0770-4111-9de1-127db8463b78 and 89bac559-e4ff-4298-8592-d29da6b62a02 by Worker 3557 at Library commit 8ff9abe9 report kind theorem and only propext, Classical.choice and Quot.sound. Their acceptance artifacts cannot be identified in this instance.",
-        "Supplied-filtration counterexample (unformalized paper argument by Worker 46, Task 5512, accepted by Worker 3557 as publisher of the targets): take ramified quasi-split SU(3) over Q_2 split by E = Q_2(√2), assume its actual building data realized as P with P.SatisfiesApartmentAxioms, and let Z' be the smallest centralizer filtration (decreasing, separated, Z'_0 = Z(F)^0) satisfying the four clauses of SatisfiesFiltrationAxioms. Then u(0,√2) ∈ U_{2a,x,1/2} and u⁻(2,−2) ∈ U_{−a,x,1/2} have a commutator whose Z-component t(1−2√2) is not in Z'_1, refuting MoyPrasadCommutatorStatement. With u'' = u⁻(√2,1) ∈ U_{−a,x,0}, which fixes x, the conjugate u''⁻¹ u(0,√2) u'' has Z-component t(1+√2) ∉ Z'_{1/2}, so it is not in P'_{x,1/2}; then P'_{x,1/2} and u'' P'_{x,1/2} u''⁻¹ are distinct subgroups that are both Moy–Prasad at x of depth 1/2, refuting MoyPrasadCovarianceStatement and hence MoyPrasadFiltrationStatement. The same pair violates the hypothesis hmixed of sharpFixer_le_normalizer_moyPrasad_of_double_opposite_bound (module MoyPrasadCovarianceReduction) at the root −a with r = 1/2. Z' violates IsDoubleRootCommutatorFriendly, so MoyPrasadDoubleRootCovarianceStatement and MoyPrasadDoubleRootCommutatorStatement are unaffected, and KP's chosen filtration is not refuted (for odd p the forced filtration agrees with the actual one). Worker 46 submitted the argument as the public note notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md; its first candidate, 447c3e46-de0d-4ae6-be23-9028bf810439, was returned on 13 November 2026 for two local valuation corrections, with the reviewer finding the central witnesses and axiom checks sound. Consequently Tasks 5511 and 5512 retire without proofs, the two refuted statements stay published as recorded targets, and the double-root variants (Tasks 5645 and 5646) carry the covariance and commutator content."
+        "Supplied-filtration counterexample (unformalized paper argument by Worker 46, Task 5512, accepted by Worker 3557 as publisher of the targets): take ramified quasi-split SU(3) over Q_2 split by E = Q_2(√2), assume its actual building data realized as P with P.SatisfiesApartmentAxioms, and let Z' be the smallest centralizer filtration (decreasing, separated, Z'_0 = Z(F)^0) satisfying the four clauses of SatisfiesFiltrationAxioms. Then u(0,√2) ∈ U_{2a,x,1/2} and u⁻(2,−2) ∈ U_{−a,x,1/2} have a commutator whose Z-component t(1−2√2) is not in Z'_1, refuting MoyPrasadCommutatorStatement. With u'' = u⁻(√2,1) ∈ U_{−a,x,0}, which fixes x, the conjugate u''⁻¹ u(0,√2) u'' has Z-component t(1+√2) ∉ Z'_{1/2}, so it is not in P'_{x,1/2}; then P'_{x,1/2} and u'' P'_{x,1/2} u''⁻¹ are distinct subgroups that are both Moy–Prasad at x of depth 1/2, refuting MoyPrasadCovarianceStatement and hence MoyPrasadFiltrationStatement. The same pair violates the hypothesis hmixed of sharpFixer_le_normalizer_moyPrasad_of_double_opposite_bound (module MoyPrasadCovarianceReduction) at the root −a with r = 1/2. Z' violates IsDoubleRootCommutatorFriendly, so MoyPrasadDoubleRootCovarianceStatement and MoyPrasadDoubleRootCommutatorStatement are unaffected, and KP's chosen filtration is not refuted (for odd p the forced filtration agrees with the actual one). The argument is Worker 46's public note notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md, accepted as candidate 43e8ac40-28a7-4c42-b8e3-cabf65c0f775 (a revision of 447c3e46-de0d-4ae6-be23-9028bf810439, which was returned for two local valuation corrections) and present in Library commit 4b619cdd61c537ff5ee2587fda415e0adb66e5ef. It is an unformalized paper argument; no Lean declaration refutes either statement. The Markdown of KPMoyPrasadFiltrationStatement, KPMoyPrasadDoubleRootStatement, CentralizerFiltrationExistenceStatement and KPMoyPrasadFiltration records this status (Markdown-only candidate 594d4499-20f8-4efd-bd83-79c7e62a2057, present in Library commit cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e; the Lean files are unchanged). Consequently Tasks 5511 and 5512 retire without proofs, the two refuted statements stay published as recorded targets, and the double-root variants (Tasks 5645 and 5646) carry the covariance and commutator content."
       ],
       "consumer_or_regression": "Regression: a nonsplit group with a multipliable root must detect overlapping a/2a scalar factors and test the separately proved block formulation. Check finite r/r+ openness separately from the non-open infinite term for G_m(Q_2), point variation inside a facet, full-stabilizer normality and the actual Levi embedding. Boundedness alone is not compactness over general Henselian k. For the part (3) central factor: for G = G_m there are no roots, so G(k)♯_{x,r} = Z♯_{x,r} = {1}, while Z(k)_r = P_{x,r} is a nontrivial congruence subgroup; the middle factor must be the full filtration. Consumer: the positive-depth Iwahori factorization of Task 5310; the published regrouping in Langlands.BruhatTits.SpecialCompact.MoyPrasadParabolicProduct takes ordered-root covering as a hypothesis. Parts (5) and (6): consumer is the positive-depth Iwahori decomposition (HasIwahoriIntersectionDecomposition and WeakChamberContraction) of Task 5310. Double-root regression: for the unramified quasi-split SU_3 (relative root system BC_1) and u ∈ U_{2a}(k), the Z-component of (u, u') has depth 2(φ_a(u) + φ_{-a}(u')), twice the bound of Definition 7.2.1; for a reduced root system the premise IsDoubleRootCommutatorFriendly is implied by IsCommutatorFriendly.",
       "formal_status": "statement",
@@ -3158,7 +3288,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.BruhatTits.MaximalProP.AvailableStatement"
       ],
       "dependencies": [
-        "Open proof obligation: on 13 November 2026 a TaskHub search for AvailableMaximalProPStatement found no proof task. The statement is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; its acceptance artifact cannot be identified in this instance. Since its premise is 𝔅.IsAvailableFor F G hG, a proof yields corrected 13.5.2 for every G only together with BruhatTitsAvailabilityStatement.",
+        "Open proof obligation: the proof task of AvailableMaximalProPStatement is Task 5903 (f12ddb04-e390-4e3c-a455-59e5d5684a11, lean.proof@1), published by Worker 3557 on 13 November 2026. On that date Workers 302 and 317 were executing it and had published intermediate definitions and statements; AvailableMaximalProPStatement had no proof. The statement is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; its acceptance artifact cannot be identified in this instance. Since its premise is 𝔅.IsAvailableFor F G hG, a proof yields corrected 13.5.2 for every G only together with BruhatTitsAvailabilityStatement.",
         "Actual model point topology and local compactness turn bounded open subgroups into compact ones. Realize P_{x,0+} as the inverse limit of its finite p-group filtration quotients, using 13.5.1 for their steps",
         "Fixed points 4.2.14, type preservation 1.5.13(3), the actual reduction and incident-facet/parabolic correspondence 8.4.19 with Chapter 9 descent; finite-field p-subgroup structure and the Iwahori-Tits system in G(k)^0",
         "The normalizer argument uses 2.2.16 and 6.3.21",
@@ -3581,7 +3711,9 @@ using torsion(A^Gamma)=(A_tor)^Gamma. It does not identify it with
 (A/A_tor)^Gamma without a separate exactness argument. All of these are
 source targets and dependency descriptions; no Kottwitz construction,
 quotient bijection, Hecke distinctness or finite-support theorem is proved
-by this note.
+by this note. Task 5912 (`13897846-41bc-48ee-ac17-46b6ca3eebfe`) owns the
+construction of the actual Kottwitz homomorphism and the statements of
+these four targets.
 
 ## Bundle D: models, descent and the actual reduction map
 
@@ -3860,8 +3992,9 @@ affected, and KP's own filtration of `T(k)` is not refuted (for odd `p`
 the smallest filtration equals it). The original statements remain
 published as recorded targets; Tasks 5511 and 5512 retire without
 proofs, and Tasks 5645 and 5646 carry the covariance and commutator
-content. Worker 46 submitted the argument as the public note
-`notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md`.
+content. The argument is Worker 46's public note
+`notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md`,
+present in Library commit `4b619cdd`.
 
 ### Finite depths and the infinite term in Proposition 13.2.5
 
@@ -3961,7 +4094,8 @@ remain part of its proof boundary. The published
 `Langlands.BruhatTits.MaximalProP.AvailableMaximalProPStatement` states
 the four conclusions over facets of `B(G)`, with `G(F)^0` as ambient group
 throughout, for every available `KPBuildingAssignment` (Proposition 13.5.2
-row); it has no proof task.
+row); its proof task is Task 5903
+(`f12ddb04-e390-4e3c-a455-59e5d5684a11`).
 
 ### Later degeneracy and instability
 

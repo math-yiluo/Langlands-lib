@@ -12,11 +12,13 @@ commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a`; statements published later, a
 marked as such in their rows. The note declares no section complete. A
 published statement is not a proof; every row keeps the proof status explicit.
 
-Focused update, 13 November 2026: the I.2.2 coefficient-linear statements and their
-companions were checked at Library `9a75d622ee70596d92921acba312846004be3e2f`, with
-proof Task 5935. Other rows retain their earlier audit dates. The corrected
-common-coefficient Corollary is distinguished below from the false bare-bimodule
-coefficient-linearity assertion.
+Focused update, 13 November 2026: the exact I.2.2 coefficient-linear proof is
+published at Library `7f43c3c930ff92f76dae6589da1678ad729017e5`; both exact
+common-coefficient I.4.2 proofs are published at
+`73b1430a339b037d27e9096762b0400adb4fbd19`. The actual-functor counterexample
+to the first bare-additive I.4.2 comparison is also published at
+`7f43c3c930ff92f76dae6589da1678ad729017e5`. The focused rows and evidence
+below distinguish those scopes. Other rows retain their earlier audit dates.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -117,8 +119,8 @@ The I.2.1 rows follow the labels (a)–(k) of the [I.2.1 assertion map](unitizat
 | I.2.1 (j)–(k): (I.2.1.2), Hom half and tensor half, and its unital case | 14 / 20 | `NondegenerateModuleHomScalars.unitizedHomEquiv` (Hom half); `NondegenerateUnitizedTensorStatement`, `UnitalUnitizedTensorStatement` (tensor half) | D; P (`nondegenerateUnitizedTensor`, `unitalUnitizedTensor`) |
 | I.2.2 functors `• ⊗_A X`, `Hom_A(•, X)`, `Hom_A(X, •)` | 15 / 21 | the published balanced tensor `NonUnitalModuleTensor` and original Hom groups | D |
 | I.2.2 Proposition: `• ⊗_A X` right exact, `Hom_A(•, X)` and `Hom_A(X, •)` left exact | 15 / 21 | `NondegenerateTensorHomExactness.TensorRightExactStatement`, `ContravariantHomLeftExactStatement`, `CovariantHomLeftExactStatement` | P (`tensorRightExact`); S: task `aa66676c` (the two Hom statements) |
-| I.2.2 Theorem (I.2.2.1)–(I.2.2.4) over the unitizations `R̃`, `S̃` | 15 / 21 | Additive forms: `NonUnitalTensorHomAdjunctionTheorem` and `NonUnitalTensorAssociativityTheorem`. Coefficient-linear forms: `UnitizedTensorHomLinearTheorem` in [TensorHomLinearStatements](../../Langlands/Algebra/TensorHomLinearStatements.md), with given coefficients compatible with both actions | C/P: additive forms proved (`nonUnitalTensorHomAdjunction`, `nonUnitalTensorAssociativity`); S: coefficient-linear forms, Task 5935 |
-| I.2.2 Corollary (I.2.2.5)–(I.2.2.7) for nondegenerate modules over idempotented algebras | 15 / 21 | Additive refined clauses of the same theorems; `NondegenerateTensorHomLinearTheorem` for the recovered coefficients, with added `RightSourceCompatible` or `SourceCompatible` on the bimodule `Y` | C/P: additive isomorphisms proved; S: corrected common-coefficient forms, Task 5935. The unrestricted coefficient-linearity reading is false (source issue S1) |
+| I.2.2 Theorem (I.2.2.1)–(I.2.2.4) over the unitizations `R̃`, `S̃` | 15 / 21 | Additive forms: `NonUnitalTensorHomAdjunctionTheorem` and `NonUnitalTensorAssociativityTheorem`. Coefficient-linear forms: `UnitizedTensorHomLinearTheorem` in [TensorHomLinearStatements](../../Langlands/Algebra/TensorHomLinearStatements.md), with given coefficients compatible with both actions | C/P: additive forms proved (`nonUnitalTensorHomAdjunction`, `nonUnitalTensorAssociativity`); P: coefficient-linear forms by `unitizedTensorHomLinear`, and as part of exact aggregate `tensorHomLinear` (Task 5935; evidence below) |
+| I.2.2 Corollary (I.2.2.5)–(I.2.2.7) for nondegenerate modules over idempotented algebras | 15 / 21 | Additive refined clauses of the same theorems; `NondegenerateTensorHomLinearTheorem` for the recovered coefficients, with added `RightSourceCompatible` or `SourceCompatible` on the bimodule `Y` | C/P: additive isomorphisms proved; P: corrected common-coefficient forms by `nondegenerateTensorHomLinear`, and as part of exact aggregate `tensorHomLinear` (Task 5935). The unrestricted coefficient-linearity reading is false (source issue S1) |
 | I.2.2 Remark: naturality in `X`, `Y`, `Z` | 16 / 22 | the naturality clauses of the same theorems | P |
 | I.2.3 unital case: `ϕ_*`, its left adjoint `B ⊗_A •` | 16 / 22 | `UnitalScalarExtensionAdjunction.ScalarExtensionAdjunctionStatements` (A.V.2) | P (`scalarExtensionAdjunctionStatements`) |
 | I.2.3 unital case: the right adjoint `Hom_A(B, •)`; `N ≅ Hom_B(B, N) ≅ B ⊗_B N` | 16 / 22 | `RenardForgetfulFunctor.UnitalCoextensionAdjunctionStatement`; the isomorphisms are the unital case of (I.2.3.3)–(I.2.3.4) below | S: task `a2cfae06`; C |
@@ -155,7 +157,8 @@ The I.2.1 rows follow the labels (a)–(k) of the [I.2.1 assertion map](unitizat
 | I.4.1 an anti-involution identifies right and left modules | 22 / 28 | — | X ("dans la pratique"; used for groups in III.1.6) |
 | I.4.1 Lemma: `M̃·e ≅ (e·M)^*`; duality is exact | 23 / 29 | `NonUnitalModuleDualFixedPart.FixedPartDuality`; `NonUnitalModuleDualCategoricalExactnessStatement`, `NonUnitalModuleDualMapExactnessStatement` | P (`fixedPartDuality`, `nonUnitalModuleDualCategoricalExactnessStatement`, `nonUnitalModuleDualMapExactnessStatement`) |
 | I.4.1 Corollary: `M ↪ M̃̃` | 23 / 29 | `NonUnitalModuleBidualInjectionStatements.BidualInjection` | P (`bidualInjection`) |
-| I.4.2 Theorem: `ˇF_AB(Ñ) ≅ F_AB(N)~` and `I_AB(M̃) ≅ P_AB(M)~` | 23–24 / 29–30 | `DualityForgetfulStatement`, `DualityInductionStatement`, under the reading of `B` as a bimodule of complex algebras (`IsScalarTower ℂ A B`, `IsScalarTower ℂ Aᵐᵒᵖ B`). The bare additive reading does not make the complex structures recovered from `A` and `B` agree, which Renard's evaluation formula needs ([duality-coefficient-conventions](duality-coefficient-conventions.md)) | S: Task 5778 (candidate `b72ce820`, published at Library `a54dda0d`); the bare additive reading remains open (gap 1) |
+| I.4.2 Theorem, first comparison: `ˇF_AB(Ñ) ≅ F_AB(N)~` | 23–24 / 29–30 | `DualityForgetfulStatement`, assuming the supplied nondegenerate left A-action on B commutes with regular right multiplication and satisfies `IsScalarTower ℂ A B` | P (`dualityForgetful`, Task 5778; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S2) |
+| I.4.2 Theorem, second comparison: `I_AB(M̃) ≅ P_AB(M)~` | 24 / 30 | `DualityInductionStatement`, assuming the supplied nondegenerate right A-action on B commutes with regular left multiplication and satisfies `IsScalarTower ℂ Aᵐᵒᵖ B` | P (`dualityInduction`, Task 5778; exact proof evidence below). Its bare additive interpretation is not settled by the first-comparison counterexample (gap 1) |
 | I.4.2 Lemma (I.4.2.1): `Hom_A(V, W̃) ≅ Hom_A(W, Ṽ)`, natural in `V`, `W` | 24 / 30 | `NonUnitalModuleDualHomTransposeStatements.DualHomTranspose` | P (`dualHomTranspose`) |
 | I.4.3 the completion of `M̃` is `M^*` | 25 / 31 | `NonUnitalModuleDualCompletion.DualCompletionStatement` | S: Task 5759 (candidate `faf3a73f`, published at Library `24a49431`) |
 | I.4.3 the step `ι : N_A ⊗_A M ≅ N ⊗_A M` | 25 / 31 | `NonUnitalTensorSmoothingStatements.TensorSmoothing` | P (`tensorSmoothing`) |
@@ -182,7 +185,7 @@ The I.2.1 rows follow the labels (a)–(k) of the [I.2.1 assertion map](unitizat
 | I.6 Proposition: filtered colimits are exact | 28 / 34 | `NondegenerateModuleFilteredColimitsStatements.FilteredColimitAssertions` | P (`filteredColimitAssertions`) |
 | I.7 Notes | 28 / 34 | — | X |
 
-## Source issue and correction
+## Source issues and corrections
 
 **S1 (I.2.2 Corollary, printed p.15 / PDF p.21).** The p.6 convention defines a
 bimodule by commuting actions alone. Two such actions need not recover the same
@@ -201,22 +204,70 @@ gives the full computation. The corrected Corollary adds
 not consequences of commuting actions. The unitized Theorem uses one given
 coefficient structure compatible with both actions. The conjunction
 `TensorHomLinearTheorem`, with six independent universe levels and arbitrary
-commutative coefficient ring, is published and has proof Task 5935
-(`02c5f194-6ebe-408e-a01a-b599de938b32`). Its coefficient-linearity conclusions
-remain unproved.
+commutative coefficient ring, is proved by `tensorHomLinear` in
+[TensorHomLinearProof](../../Langlands/Algebra/TensorHomLinearProof.md),
+Task 5935 (`02c5f194-6ebe-408e-a01a-b599de938b32`). This proves the corrected
+coefficient-linearity assertions; it does not remove their compatibility
+hypotheses.
+
+**S2 (I.4.2 Theorem, first comparison, printed pp.23–24 / PDF pp.29–30).**
+The [coefficient audit](duality-coefficient-conventions.md) now distinguishes
+the conjugation example, which obstructs the literal evaluation map, from an
+actual counterexample to every natural isomorphism under the bare additive
+interpretation. In
+`Langlands.Algebra.RenardDualitySourceObstruction`, take `A σ = ULift ℂ`
+with its ordinary complex algebra structure and `B = ℂ`, with commuting
+unital A-actions induced by a nonsurjective complex field endomorphism σ.
+The actual regular B-object is sent by `D_B ⋙ rightPseudoF_AB` to a module
+complex-linearly equivalent, for its right-A-recovered coefficients, to
+`Carrier σ`. The other composite `(regularF_AB).op ⋙ D_A` is equivalent
+to its full algebraic complex dual. The restriction module is
+infinite-dimensional and has strictly smaller dimension than that dual.
+Every original intertwiner is linear for the recovered coefficients, so
+no original module isomorphism exists at this object.
+`no_naturalIso` excludes a natural isomorphism, and
+`exists_counterexample` supplies an unconditional witness using the
+published proper-endomorphism construction.
+
+This is derived source-audit mathematics, not a counterexample stated by
+Renard. It refutes the first comparison only under the bare additive
+interpretation. The common-coefficient theorem below is proved. The
+second comparison and the separately proved transposition Lemma
+(I.4.2.1) are not refuted by this construction.
+
+## Verified publications for the focused update
+
+Worker 1222 checked the following accepted records, their independent
+semantic reports and exact entry-pair hashes against the workspace and
+published files. All listed reviews have no qualifications.
+
+| Result | Accepted artifact, reviewer and publication |
+| --- | --- |
+| Exact `Langlands.Algebra.tensorHomLinear : TensorHomLinearTheorem.{uK,uR,uS,uX,uY,uZ}`; all six unitized and corrected nondegenerate clauses | `b261ea98-3628-4e06-a2f9-b4a5d99b1f6c`, Reviewer 1167; Library `7f43c3c930ff92f76dae6589da1678ad729017e5` |
+| Exact `Langlands.Algebra.dualityForgetful : DualityForgetfulStatement.{uA,uB,v}` | `13e8e448-d99e-4965-8821-ddc63b7f1753`, Reviewer 1015; Library `73b1430a339b037d27e9096762b0400adb4fbd19` |
+| Exact `Langlands.Algebra.dualityInduction : DualityInductionStatement.{uA,uB,v}` | `55e353e4-2c8c-4cf2-8f3d-3673de01a50b`, Reviewer 1023; Library `73b1430a339b037d27e9096762b0400adb4fbd19` |
+| Actual-functor construction and intrinsic obstruction laws in [RenardDualitySourceObstruction](../../Langlands/Algebra/RenardDualitySourceObstruction.md) | `1022b930-eab9-4e5e-b0b6-67ee276389e7`, Reviewer 1178; Library `7f43c3c930ff92f76dae6589da1678ad729017e5` |
+
+Each of the three proof artifacts has accepted `lake-build`, `exact-target`,
+`unchanged-statement` and `frozen-inputs` checks. The counterexample is a
+reviewed construction with intrinsic laws, not an exact-target proof record.
+The two I.4.2 proofs implement the same evaluation construction through
+`NonUnitalTensorDuality.naturalIso`, specializing to the actual functors
+and deriving coefficient compatibility from the appropriate tower law.
+Task 5778 (`205cb4c3-e4f6-40c5-8f90-540e5a4bedf9`) is done.
 
 ## Genuine gaps of Chapter I
 
-1. I.4.2 Theorem under the bare additive reading of "`B` muni d'une structure de
-   `A`-bimodule", without compatibility of the `A`-actions with the complex scalars. The
-   published statements of `b72ce820` state the Theorem for bimodules of complex algebras.
-   Whether a natural isomorphism exists in the additive setting is not decided
+1. The bare additive interpretation of the **second** I.4.2 comparison is
+   not settled here. Its common-coefficient statement is proved. The
+   first comparison's bare additive interpretation is false by source
+   issue S2, rather than an outstanding proof target
    ([duality-coefficient-conventions](duality-coefficient-conventions.md)).
 
 The former I.2.2 statement gap is closed under the corrected common-coefficient
 reading by `TensorHomLinearTheorem`. Source issue S1 records why the bare
-recovered-coefficient reading cannot be claimed. The corrected statements still
-require proof.
+recovered-coefficient reading cannot be claimed. The corrected statements are
+now proved by the exact aggregate `tensorHomLinear`.
 
 The I.1.2 direct-limit reformulations, I.1.2 Remark 2 and the I.1.4 degenerate completion
 are stated by the published candidate `9158d4aa` (Library `24a49431`), with proof Task 5772.
@@ -225,5 +276,7 @@ are stated by the published candidate `9158d4aa` (Library `24a49431`), with proo
 
 Statements with open proof tasks: I.1.7 (Task 5709), I.1.8 (Task 5710), I.4.3 (Task 5759),
 the I.2.2 Hom exactness statements (task `aa66676c`), the I.2.3 unital right adjoint and
-remarks (task `a2cfae06`), I.1.2 and I.1.4 (Task 5772), the I.4.2 Theorem (Task 5778)
-and the corrected I.2.2 coefficient-linear forms (Task 5935).
+remarks (task `a2cfae06`), I.1.2 and I.1.4 (Task 5772). These are the
+unresolved statuses from the earlier audit, not newly reverified task states.
+The I.4.2 common-coefficient Theorem (Task 5778) and corrected I.2.2
+coefficient-linear forms (Task 5935) have published exact proofs.
