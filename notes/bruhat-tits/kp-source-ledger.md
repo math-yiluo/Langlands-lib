@@ -19,7 +19,11 @@ equally conditional. Section 13.2.6 is proved for supplied integral models
 and reductive quotients, together with its inflation and compact-induction
 consumer; the congruence-basis premise of its local-field corollary is
 proved, and an intertwining theorem for compact induction has a
-published statement. Corrected Theorem 7.8.1
+published statement. On the same supplied data with finite residue
+field, the reductive quotient has finitely many points; over a Henselian
+base their number is the index of the radical preimage in the integral
+points, and over a local field the radical preimage is a compact open
+subgroup of the rational points. Corrected Theorem 7.8.1
 and the `G(F)^0` branch of Theorem 7.5.3 have independently accepted,
 published statements on supplied building data, and part (4) of Theorem
 7.8.1 is proved; six of the seven inputs of the published reduction to the
@@ -384,6 +388,36 @@ in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: nineteen at commit
 `8ff9abe9`. Every reported axiom set is `propext`, `Classical.choice`,
 `Quot.sound`.
 
+A twelfth pass on 13 November 2026 updates the Section 13.2.6 row and
+adds none. The row stays `conditional` and gains two modules, both first
+published in Library commit `cfedefb680f317b0ea5d351023e1c9dd886b2547`.
+`Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient` (artifact
+`b52c4590-0a68-4f37-a097-c66650f5d9ab`) proves that an affine group
+scheme locally of finite type over a finite commutative ring has finitely
+many points. It obtains this from the published
+`LangWeil.CurvePlane.finite_algHom_of_finiteType`. For supplied data over
+a local domain with finite residue field and a quotient locally of finite
+type, the module packages the residue-field points of the quotient as a
+finite group (`finiteQuotientGroup`) and shows that the radical preimage
+has finite index in the integral points of the neutral model. Over a
+Henselian base, `index_positivePoints_subgroupOf` computes that index as
+the number of residue-field points of the quotient; a separate theorem
+specializes it to the integer ring of a nonarchimedean local field.
+`Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen` (artifact
+`f228edd9-7de3-41af-b12a-6be4746af741`) shows that the level-one
+congruence subgroup lies in the radical preimage. Over a nonarchimedean
+local field, for `G` affine and locally of finite type with the canonical
+topology on `G(F)`, it shows that the radical preimage is open and compact
+in `G(F)`, bundled as `localFieldPositiveOpenSubgroup`.
+These results discharge, on supplied data, the finiteness, compactness
+and openness parts of the row's consumer test. The identification of the
+radical preimage with `P_{x,0+}`, the construction of the actual models
+and the proofs of the intertwining statements remain open. Eleven
+declarations were inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` at commit `cfedefb6`. Every
+reported axiom set is `propext`, `Classical.choice`, `Quot.sound`. The
+source and correction fields of the row are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -490,7 +524,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a published intertwining statement for its compact-induction consumer; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement and Definition 6.6.1 a partial published definition; the other twenty-four rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a published intertwining statement for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement and Definition 6.6.1 a partial published definition; the other twenty-four rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -2508,7 +2542,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
         "x is a point of the actual descended building over k, with connected parahoric model G^0_x over o, special fibre H_x and maximal reductive quotient Gred_x. Put P_{x,0}=G^0_x(o). The Chapter 13 torus filtration is functorial and admissible with 7.2(1),(2). No finite-residue assumption is required for this depth-zero assertion.",
-        "Recorded Lean scope: the published modules Langlands.BruhatTits.IntegralModels.DepthZeroReduction (artifact f3a39f0a-0b63-4218-a72a-b3958c3b3740, first in Library commit 7047367a78583edbe335517824e30403414aa3f0) and Langlands.BruhatTits.IntegralModels.DepthZeroInduction (artifact a6b89c9a-222a-4977-b85b-1983338fa594, first in Library commit 7103f5282c4897716543f227940fdb2a0e12e70e) work over a domain R in universe u with fraction field K and a group scheme G over Spec K, with supplied D : RelativeComponentModelData R K G and Q : SpecialFibreQuotientData D. The smooth model D.neutral with connected fibres plays the role of G^0_x, Q.quotient that of Gred_x and Q.projection that of the quotient map; nothing identifies D.neutral with the actual parahoric model or D.neutral.integralPoints with P_{x,0}. The premises hrad : IsUnipotentRadical Q.radicalInclusion and hQ (Q.projection is the represented fppf quotient by that radical) are the first two conjuncts of Q.IsReductiveQuotient; reductivity of the quotient is not used. For a local domain R, ker_parahoricReduction hQ identifies the kernel of parahoricReduction : G^0(R) → Q.quotient(f) with Q.positivePoints.subgroupOf D.neutral.integralPoints, the radical preimage G(K)^{0+} of Axiom 4.1.22(7) inside G^0(R). For a Henselian local domain R with perfect residue field, parahoricReduction_surjective hrad hQ gives surjectivity and depthZeroQuotientEquiv hrad hQ is the induced group isomorphism from G^0(R) modulo that kernel onto Q.quotient(f). The integer rings of k and of K in the source are both such bases, so the source's assertion over K is the same declaration at another base; no instance is supplied. DepthZeroInduction adds the consumer test: inflation of a representation of Q.quotient(f) to G^0(R), the bijection between G^0(R)-maps from an inflation and Q.quotient(f)-maps into kernel invariants, and, for a topological-group structure on G(K) in which G^0(R) and its level-one congruence subgroup are open, compact induction from G^0(R) with Frobenius reciprocity (depthZeroInductionHomEquiv). For a nonarchimedean local field F, R = 𝒪[F] is proved Henselian and localFieldDepthZeroInductionHomEquiv, for affine G locally of finite type with rationalPointTopology, takes those openness premises from LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement. That statement is proved: congruenceNeighborhoodBasis_proof (module Langlands.GroupScheme.IntegralModel.CongruenceNeighborhoodBasisProof, Task 5447, artifact 69074fc3-6f69-402f-a73b-084d3e30c551, first published in Library commit ba77b83f98d4cbe92842b4645577633e0541fdab) applies to every integral model over 𝒪[F] of an affine G, so localFieldDepthZeroInductionHomEquiv congruenceNeighborhoodBasis_proof needs only the supplied D, Q, hrad and hQ, and the first conjunct of congruenceNeighborhoodBasis_proof F G D.neutral says that D.neutral.integralPoints is compact in rationalPointTopology. The cokernel description of Gred_x is not formalized. The module Langlands.Representation.Induction.OpenIntertwiningStatement (artifact 14c308d9-57df-4b0b-9b87-e08f078a61ae, first published in Library commit 79de65ce5fcd6dc5f182612988e1b529d49a63b4) states, for a subgroup H of a topological group G and representations of H over a commutative ring, CompactInductionIntertwiningStatement, the conjunction of three propositions. CompactInductionKernelStatement: for open H, the maps c-Ind_H^G A → c-Ind_H^G B between smooth representations correspond bijectively to intertwining kernels Φ : G → Hom(A, B) (IsIntertwiningKernel: Φ(hgh') = τ(h) ∘ Φ(g) ∘ σ(h'), and for each vector v only finitely many right cosets Hg have Φ(g)v ≠ 0), via Φ(g)v = T(unitFunction v)(g). CompactInductionDoubleCosetStatement: for compact open H, smooth σ and double-coset representatives s, restriction to the representatives is a bijection from intertwining kernels onto local intertwiner families (IsLocalIntertwinerFamily: φ(q) intertwines σ with h ↦ τ(s(q) h s(q)⁻¹) on H ∩ s(q)⁻¹ H s(q), and for each v only finitely many q have φ(q)v ≠ 0). CompactInductionFiniteTypeKernelStatement: for compact open H and finitely generated σ, the intertwining kernels are the covariant functions whose support meets finitely many double cosets HgH. With H = D.neutral.integralPoints and A, B two inflations Q.inflationSmoothRep, these describe the maps between the depth-zero compact inductions of DepthZeroInduction. No depth-zero specialization is a Lean declaration, and nothing about irreducibility or supercuspidality is stated."
+        "Recorded Lean scope: the published modules Langlands.BruhatTits.IntegralModels.DepthZeroReduction (artifact f3a39f0a-0b63-4218-a72a-b3958c3b3740, first in Library commit 7047367a78583edbe335517824e30403414aa3f0) and Langlands.BruhatTits.IntegralModels.DepthZeroInduction (artifact a6b89c9a-222a-4977-b85b-1983338fa594, first in Library commit 7103f5282c4897716543f227940fdb2a0e12e70e) work over a domain R in universe u with fraction field K and a group scheme G over Spec K, with supplied D : RelativeComponentModelData R K G and Q : SpecialFibreQuotientData D. The smooth model D.neutral with connected fibres plays the role of G^0_x, Q.quotient that of Gred_x and Q.projection that of the quotient map; nothing identifies D.neutral with the actual parahoric model or D.neutral.integralPoints with P_{x,0}. The premises hrad : IsUnipotentRadical Q.radicalInclusion and hQ (Q.projection is the represented fppf quotient by that radical) are the first two conjuncts of Q.IsReductiveQuotient; reductivity of the quotient is not used. For a local domain R, ker_parahoricReduction hQ identifies the kernel of parahoricReduction : G^0(R) → Q.quotient(f) with Q.positivePoints.subgroupOf D.neutral.integralPoints, the radical preimage G(K)^{0+} of Axiom 4.1.22(7) inside G^0(R). For a Henselian local domain R with perfect residue field, parahoricReduction_surjective hrad hQ gives surjectivity and depthZeroQuotientEquiv hrad hQ is the induced group isomorphism from G^0(R) modulo that kernel onto Q.quotient(f). The integer rings of k and of K in the source are both such bases, so the source's assertion over K is the same declaration at another base; no instance is supplied. DepthZeroInduction adds the consumer test: inflation of a representation of Q.quotient(f) to G^0(R), the bijection between G^0(R)-maps from an inflation and Q.quotient(f)-maps into kernel invariants, and, for a topological-group structure on G(K) in which G^0(R) and its level-one congruence subgroup are open, compact induction from G^0(R) with Frobenius reciprocity (depthZeroInductionHomEquiv). For a nonarchimedean local field F, R = 𝒪[F] is proved Henselian and localFieldDepthZeroInductionHomEquiv, for affine G locally of finite type with rationalPointTopology, takes those openness premises from LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement. That statement is proved: congruenceNeighborhoodBasis_proof (module Langlands.GroupScheme.IntegralModel.CongruenceNeighborhoodBasisProof, Task 5447, artifact 69074fc3-6f69-402f-a73b-084d3e30c551, first published in Library commit ba77b83f98d4cbe92842b4645577633e0541fdab) applies to every integral model over 𝒪[F] of an affine G, so localFieldDepthZeroInductionHomEquiv congruenceNeighborhoodBasis_proof needs only the supplied D, Q, hrad and hQ, and the first conjunct of congruenceNeighborhoodBasis_proof F G D.neutral says that D.neutral.integralPoints is compact in rationalPointTopology. The module Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient (artifact b52c4590-0a68-4f37-a097-c66650f5d9ab, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) assumes a finite residue field. GroupScheme.finite_rationalPoints says that an affine group scheme locally of finite type over a finite commutative ring has finitely many points. For a local domain R and Q.quotient locally of finite type, finite_quotientPoints gives Finite (rationalPoints Q.quotient), as does IsConnectedReductive Q.quotient alone (finite_quotientPoints_of_isConnectedReductive); finiteQuotientGroup packages these points as a FiniteGrp, and positivePoints_subgroupOf_finiteIndex hQ says that Q.positivePoints.subgroupOf D.neutral.integralPoints has finite index. For a Henselian local domain, index_positivePoints_subgroupOf hrad hQ says that this index equals Nat.card (rationalPoints Q.quotient), and localField_index_positivePoints_subgroupOf is the case R = 𝒪[F]. For affine G locally of finite type with rationalPointTopology, localField_isOpen_ker_parahoricReduction says that the kernel of parahoricReduction is open in D.neutral.integralPoints. The module Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen (artifact f228edd9-7de3-41af-b12a-6be4746af741, first in the same commit) proves, over a local domain, congruenceSubgroup_le_positivePoints (D.neutral.congruenceSubgroup ≤ Q.positivePoints) and positivePoints_subgroupOf_normal hQ. Over 𝒪[F], with G affine and locally of finite type and rationalPointTopology, localField_isOpen_positivePoints and localField_isCompact_positivePoints say that Q.positivePoints is open and compact in G(F) without hrad or hQ, localFieldPositiveOpenSubgroup bundles it as an OpenSubgroup, and RelativeComponentModelData.localFieldIntegralOpenSubgroup bundles D.neutral.integralPoints for affine G. The cokernel description of Gred_x is not formalized. The module Langlands.Representation.Induction.OpenIntertwiningStatement (artifact 14c308d9-57df-4b0b-9b87-e08f078a61ae, first published in Library commit 79de65ce5fcd6dc5f182612988e1b529d49a63b4) states, for a subgroup H of a topological group G and representations of H over a commutative ring, CompactInductionIntertwiningStatement, the conjunction of three propositions. CompactInductionKernelStatement: for open H, the maps c-Ind_H^G A → c-Ind_H^G B between smooth representations correspond bijectively to intertwining kernels Φ : G → Hom(A, B) (IsIntertwiningKernel: Φ(hgh') = τ(h) ∘ Φ(g) ∘ σ(h'), and for each vector v only finitely many right cosets Hg have Φ(g)v ≠ 0), via Φ(g)v = T(unitFunction v)(g). CompactInductionDoubleCosetStatement: for compact open H, smooth σ and double-coset representatives s, restriction to the representatives is a bijection from intertwining kernels onto local intertwiner families (IsLocalIntertwinerFamily: φ(q) intertwines σ with h ↦ τ(s(q) h s(q)⁻¹) on H ∩ s(q)⁻¹ H s(q), and for each v only finitely many q have φ(q)v ≠ 0). CompactInductionFiniteTypeKernelStatement: for compact open H and finitely generated σ, the intertwining kernels are the covariant functions whose support meets finitely many double cosets HgH. With H = D.neutral.integralPoints and A, B two inflations Q.inflationSmoothRep, these describe the maps between the depth-zero compact inductions of DepthZeroInduction. No depth-zero specialization is a Lean declaration, and nothing about irreducibility or supercuspidality is stated."
       ],
       "conclusion": "The natural composite P_{x,0}=G^0_x(o)→H_x(f)→Gred_x(f) is surjective with kernel P_{x,0+}, and hence induces P_{x,0}/P_{x,0+}≃Gred_x(f). The analogous assertion holds over K. As an f-group scheme, Gred_x is also the cokernel of the special-fibre map G_{x,0+}→G_{x,0}. The rational-point quotient uses both surjectivity steps and the descended kernel; it does not follow merely from a group-scheme cokernel.",
       "lean_declarations": [
@@ -2517,6 +2551,17 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.ker_parahoricReduction",
         "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionHomEquiv",
         "Langlands.BruhatTits.IntegralModels.localFieldDepthZeroInductionHomEquiv",
+        "Langlands.GroupScheme.finite_rationalPoints",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.finite_quotientPoints_of_isConnectedReductive",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.finiteQuotientGroup",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.index_positivePoints_subgroupOf",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_index_positivePoints_subgroupOf",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_isOpen_ker_parahoricReduction",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.positivePoints_subgroupOf_normal",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_isOpen_positivePoints",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_isCompact_positivePoints",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localFieldPositiveOpenSubgroup",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelData.localFieldIntegralOpenSubgroup",
         "Langlands.Induction.CompactInductionIntertwiningStatement",
         "Langlands.Induction.CompactInductionKernelStatement",
         "Langlands.Induction.CompactInductionDoubleCosetStatement",
@@ -2525,6 +2570,8 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "modules": [
         "Langlands.BruhatTits.IntegralModels.DepthZeroReduction",
         "Langlands.BruhatTits.IntegralModels.DepthZeroInduction",
+        "Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient",
+        "Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen",
         "Langlands.Representation.Induction.OpenIntertwiningStatement"
       ],
       "dependencies": [
@@ -2537,18 +2584,21 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Intertwining source (outside KP): M.-F. Vignéras, Représentations ℓ-modulaires d'un groupe réductif p-adique avec ℓ ≠ p (1996), literature ID provided-74667a7cddb3bdafff85f01c658605ce7d929f6da73950d79457c46bcd761dd4, SHA-256 4d2daeee16515f994dfb04157915179b55b30d5bf2f874a16f13e7cb6fa7d657, I.8.5 at printed pp.67–68 / PDF pp.85–86, with I.8.1–I.8.2 at printed pp.64–65 / PDF pp.82–83 and the proof of I.8.3 at printed p.66 / PDF p.84. I.8.5 identifies Hom(ind_{G,K} σ, ind_{G,H} π), for open K and σ of finite type, with the covariant functions supported on finitely many double cosets HgK. The kernel statement drops finite type and compactness and uses the per-vector support condition of the source's proof; the double-coset statement parametrizes kernels by their values at double-coset representatives, as in the proof of I.8.3, with per-vector finiteness, a form derived for this unit; the finite-type statement recovers I.8.5 a) for compact open H. Only the case K = H is stated; compactness of H replaces compactness modulo the centre.",
         "Open obligations before unconditional use: construct D and Q with hrad and hQ for the actual parahoric model of a point of the actual descended building; prove Corollary 8.4.12. The premise CongruenceNeighborhoodBasisStatement of the local-field corollary is proved (congruenceNeighborhoodBasis_proof, proof Task 5447, fc268342-28e9-4dd8-a855-9ae5c09db273); lean_check inspection 98fdf5d1-8dd3-4e68-a8cd-41e4e60802db by Worker 3557 on 2026-11-12 at Library commit c5b9c2cf, where the module is byte-identical to commit ba77b83f, reports kind theorem and only propext, Classical.choice and Quot.sound. The intertwining statements have lean.proof@1 successors Task 5700 (abd8a5ce-2cfa-4a01-ab20-d73169188e3b) for CompactInductionKernelStatement, Task 5701 (c805d554-3b06-4d41-af89-396402e6bd7c) for CompactInductionDoubleCosetStatement and Task 5702 (a599b653-388c-412d-acbf-e8226e2f6494) for CompactInductionFiniteTypeKernelStatement; CompactInductionIntertwiningStatement is their conjunction."
       ],
-      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance. Recorded progress: inflation, its factorization through kernel invariants, compact induction and Frobenius reciprocity are formalized on supplied data in DepthZeroInduction (see the Recorded Lean scope). For a nonarchimedean local field, compactness and openness of D.neutral.integralPoints and of its congruence subgroups are proved for every supplied model of an affine G (congruenceNeighborhoodBasis_proof), and the intertwining and double-coset description of maps between compact inductions is stated (CompactInductionIntertwiningStatement) with three proof tasks. Finiteness of Gred_x(f), the proofs of the intertwining statements and the identification of D.neutral.integralPoints with the actual P_{x,0} remain open.",
+      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance. Recorded progress: inflation, its factorization through kernel invariants, compact induction and Frobenius reciprocity are formalized on supplied data in DepthZeroInduction (see the Recorded Lean scope). For a nonarchimedean local field, compactness and openness of D.neutral.integralPoints and of its congruence subgroups are proved for every supplied model of an affine G (congruenceNeighborhoodBasis_proof), and the intertwining and double-coset description of maps between compact inductions is stated (CompactInductionIntertwiningStatement) with three proof tasks. For a finite residue field, finiteness of the supplied quotient's residue-field points and the index formula [D.neutral.integralPoints : radical preimage] = |Q.quotient(f)| over a Henselian base are proved (FiniteReductiveQuotient), and over a nonarchimedean local field the radical preimage is proved compact and open in G(F) (DepthZeroCompactOpen). The proofs of the intertwining statements and the identification of D.neutral.integralPoints and of the radical preimage with the actual P_{x,0} and P_{x,0+} remain open.",
       "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
         "f3a39f0a-0b63-4218-a72a-b3958c3b3740",
         "a6b89c9a-222a-4977-b85b-1983338fa594",
-        "14c308d9-57df-4b0b-9b87-e08f078a61ae"
+        "14c308d9-57df-4b0b-9b87-e08f078a61ae",
+        "b52c4590-0a68-4f37-a097-c66650f5d9ab",
+        "f228edd9-7de3-41af-b12a-6be4746af741"
       ],
       "publication_commits": [
         "7047367a78583edbe335517824e30403414aa3f0",
         "7103f5282c4897716543f227940fdb2a0e12e70e",
-        "79de65ce5fcd6dc5f182612988e1b529d49a63b4"
+        "79de65ce5fcd6dc5f182612988e1b529d49a63b4",
+        "cfedefb680f317b0ea5d351023e1c9dd886b2547"
       ],
       "axiom_reports": [
         {
@@ -2613,6 +2663,83 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "5ddbd250-3e08-40b9-9d94-d189f87a1c10",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-12 at Library commit 9951a27f; kind definition; statement_returns_prop true; the module is byte-identical to commit 79de65ce."
+        },
+        {
+          "declaration": "Langlands.GroupScheme.finite_rationalPoints",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "6c2b238e-0d3b-4193-a723-112eef8d4bd4",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.finite_quotientPoints_of_isConnectedReductive",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "412a993e-deb0-4e79-a36b-d5246edb8072",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.finiteQuotientGroup",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "23853a2b-429f-4028-86fb-b9b94d3b47c2",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind definition."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.index_positivePoints_subgroupOf",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "d22c4461-d52e-44f0-92e9-5930bba453ea",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_index_positivePoints_subgroupOf",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "15a70f3c-933f-4adf-8b11-3fa3c3e61946",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_isOpen_ker_parahoricReduction",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "4172b54a-3af4-4e68-8673-ff7fe810029f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.positivePoints_subgroupOf_normal",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "e73183a1-ef20-45c1-acc0-4b418710c766",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_isOpen_positivePoints",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "c4573478-0459-4650-bf41-018dd62458d5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_isCompact_positivePoints",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "01d008d1-90ea-40de-a6bb-5e60f5272053",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind theorem."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localFieldPositiveOpenSubgroup",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ad2fa0d0-0746-4726-987d-03fc6b4f8d1b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind definition."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelData.localFieldIntegralOpenSubgroup",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "eecf4e21-4859-46bb-93a1-c74122187f4f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind definition."
         }
       ],
       "external_code": []
@@ -3568,6 +3695,17 @@ intertwining theorem for compact induction from an open subgroup, with a
 double-coset form for compact open subgroups; its proofs are open.
 Finiteness of `Gred_x(f)` and the comparison with the actual `P_{x,0}`
 remain open.
+
+The twelfth pass records the finiteness and topological parts of the
+local-field consumer on supplied models. With a finite residue field,
+the supplied quotient has finitely many residue-field points, which form
+a finite group. Over a Henselian base the radical preimage has index
+equal to their number, the supplied form of
+`[P_{x,0} : P_{x,0+}] = |Gred_x(f)|`. Over a nonarchimedean local field
+the radical preimage contains the level-one congruence subgroup and is a
+compact open subgroup of `G(F)`. The tenth pass's remark that finiteness
+of `Gred_x(f)` is open no longer applies to supplied data; the comparison
+with the actual `P_{x,0}` and `P_{x,0+}` remains open.
 
 ## Bundle E: filtrations, comparison alternatives and later instability
 
