@@ -1,7 +1,9 @@
 # Split rank from an actual all-test Hermitian matrix presentation
 
-`Langlands.GroupScheme.HermitianMatrixSplitRankStatement` is an unproved
-proposition. It identifies the split rank of a group scheme already
+`Langlands.GroupScheme.HermitianMatrixSplitRankStatement.{u}` is proved by
+`Langlands.GroupScheme.hermitianMatrixSplitRank.{u}` in
+[the paired proof](HermitianMatrixSplitRankProof.md). It identifies the split
+rank of a group scheme already
 presented as a special unitary matrix functor with the attained maximum
 dimension of its actual totally isotropic submodules. It does not
 construct such a presentation from a Tits index.
