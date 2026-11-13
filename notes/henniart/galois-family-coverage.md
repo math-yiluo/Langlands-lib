@@ -200,12 +200,16 @@ unramified, the normalized local Artin factor (5.6) of `ρ(π)` at `w` is
 - the isotypic part for `Π = JL(π_f)` at level `K(N)` as a Galois
   representation (Task 5484);
 - Harris's transfer `JL(π_f)` from `GJ` to `GG`. Task 5443
-  (`2452aeb3-01a4-4693-943a-4c52760dc26d`, Worker 5443) has staged it as
+  (`2452aeb3-01a4-4693-943a-4c52760dc26d`, Worker 5443) published it as
   `Langlands.JacquetLanglands.IsHarrisJacquetLanglandsTransfer`
-  (`JacquetLanglands/HarrisTransfer`, candidate
-  `9d44fe23-bc34-40b3-82a0-91235cccb8f4`, under review). It is a relation
-  between irreducible admissible representations of `GJ(A_f)` and `GG(A_f)`.
-  Supercuspidality at `v` is a separate hypothesis;
+  (`JacquetLanglands/HarrisTransfer`, Library commit
+  `b128d289028bf75629e9e364ecf151c484b27a85`; SHA256 in section 4). It is a
+  relation between irreducible admissible complex representations of
+  `GJ(A_f)` and `GG(A_f)`. It is not a function: existence and uniqueness of
+  `JL(π_f)` are not part of it. Supercuspidality at `v` is a separate
+  hypothesis. The cohomology is over a field `M` extending `K_λ`, so stating
+  Theorem 5.7 also needs `JL(π_f)` over `M`. This means a model of it over
+  `M`, or a chosen field isomorphism to `ℂ`. That step is not yet formalized;
 - `ν̄(π)` and its `λ`-adic realization (section 1.4);
 - the unramified base-change parameters (Task 5424 item 4; the Library's
   `Shimura/Unitary/KottwitzBaseChange` has `baseChangeParameter`,
@@ -223,8 +227,22 @@ Not stated. The intended statement: at every place of `F` above `ℓ`, the
 twists required by `HasHodgeTateDecompositionAt`. The statement needs the
 Galois-representation packaging of the cohomology and its isotypic parts
 (Task 5484 item 4). Harris 1999 pp.313–314 cites only the geometric origin of
-`W` for this input. Faltings' `p`-adic Hodge theory, the original source of
-the Hodge–Tate decomposition, is not in the project literature.
+`W` for this input. The original source of the Hodge–Tate decomposition is
+Faltings, *p-adic Hodge theory*, J. Amer. Math. Soc. 1 (1988), Chapter III,
+Theorem 4.1, printed p.298 (registered as
+`provided-1991b7d5032d5fe94ca932ccbeccf293bafd80aa29a350ed2fda545cf46b9440`,
+SHA256 `2eb8b02f9e3e7662e1e79229488ee7e98240e23f221f1c9aaa7bec79cf329024`;
+PDF page = printed page − 253). Let `K` be complete for a discrete valuation,
+of characteristic `0`, with perfect residue field of characteristic `p`
+(Introduction, 1(b), printed p.255). For a smooth proper `K`-scheme `X` and a
+divisor `D` with normal crossings, the theorem gives
+`Gal(K̄/K)`-equivariant isomorphisms
+`H^n_et((X − D) ⊗ K̄, ℚ_p) ⊗ Ĉ ≅ ⊕_{a+b=n} H^a(X, Ω^b(dlog ∞)) ⊗ Ĉ(−b)`,
+with `Ĉ` the completion of `K̄`. It concerns constant `ℚ_p` coefficients.
+Harris says only that the systems `W` "come from tensor powers of the
+cohomology of the universal abelian scheme". Deducing the decomposition for
+the cohomology with coefficients in `W` from Faltings' theorem for schemes
+built from that abelian scheme is part of the unstated input.
 
 ### 3.4 Proofs
 
@@ -266,6 +284,14 @@ SHA256 of the files at Library commit `ed924aef420de137b4cbaa3b063a3618afcd73fd`
 | `Langlands/Shimura/PEL/HarrisTaylorCMLambdaCohomology.lean` | `ce85f2ac077fb408870f33d578c93d62783b2dcd4f2ee4b9f2fb2bbc70a89ca3` |
 | `Langlands/Shimura/PEL/HarrisTaylorCMLambdaCohomology.md` | `f0b230b9c1f0bee4313228b39f19c4c8032c7dc8b41f29e83cd9993319740eca` |
 
+SHA256 at Library commit `b128d289028bf75629e9e364ecf151c484b27a85` (prerequisite
+published after the commit above):
+
+| File | SHA256 |
+| --- | --- |
+| `Langlands/JacquetLanglands/HarrisTransfer.lean` | `6808eca4905f6cc9fa5b64c49a1a88e5cbb72bdea68e16dbec1761e7eb1f0c8a` |
+| `Langlands/JacquetLanglands/HarrisTransfer.md` | `0c88ef2693dc66d69904737bfc13783e319d21ced131da7241435f75691fe4f9` |
+
 Registered originals cited: `clozel-1991-selfdual-galois` (SHA256
 `9de7c13c9ae108e481de170327a06e44845cf87a6aabc1d5600176ee695e91ac`),
 `clozel-1993-kottwitz-cohomology` (`cfc3a238c923958759ad6d5b0deedffe47b34c3749630463730b066b9402491b`),
@@ -274,4 +300,6 @@ Registered originals cited: `clozel-1991-selfdual-galois` (SHA256
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`
 (`525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`),
 `kottwitz-1992-lambda-adic-simple-shimura`
-(`749af5541a59187e6f9d1089dec9a0e591a2059173da739c7384ff3a7d0dd799`).
+(`749af5541a59187e6f9d1089dec9a0e591a2059173da739c7384ff3a7d0dd799`),
+Faltings 1988 `provided-1991b7d5032d5fe94ca932ccbeccf293bafd80aa29a350ed2fda545cf46b9440`
+(`2eb8b02f9e3e7662e1e79229488ee7e98240e23f221f1c9aaa7bec79cf329024`).
