@@ -11,6 +11,14 @@ of Chapter II and the unheaded assertions found, with printed / PDF pages
 `a54dda0d7c7c0fd4f76308fad8525ba13d9b4ce8`, are marked as such in their rows. The note
 declares no section complete. A published statement is not a proof; every row keeps the proof status explicit.
 
+Focused update, 13 November 2026: the closed-restriction exact-sequence target
+and compact-section stalk proof were checked at Library
+`9a75d622ee70596d92921acba312846004be3e2f`. The homeomorphism construction is
+published at Library `9b849caba7c63ede041b7fec49c90ceaafb08568`; the original-module
+stalk statement, regular-module Example and all-open module-sheaf equivalence
+have passed semantic review and await publication. Other rows retain their
+earlier audit dates.
+
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -72,17 +80,17 @@ expository, **Rec** recalled, **A** candidate accepted and waiting for integrati
 | II.2.4 `T_c` is a basis; Proposition: `F ≅ F₁` with `F₁(U) ⊂ F_c(X)` increasing, union `F_c(X)`, restriction to `U` fixing and to `V ∖ U` killing `F₁(U)` | 38 / 44 | `ProjectorBasisSheaf.compactOpenBasis`; `CompactOpenSheafCharacterizationStatement` | D; S: Task 5779 (candidate `65079fee`, published at Library `a54dda0d`) |
 | II.2.4 Example: `𝒞^∞_X` is a sheaf of rings with `F_c(X) = 𝒟(X)`; `𝒟(X)` unital iff `X` compact; `𝒟(X)` an algebra with idempotents, `χ_U` filtering | 38 / 44 | `LocallyConstantScalar.basisSheaf`; `LocallyConstantCompactSectionsStatement`, `PointwiseTestAlgebraUnitalIffCompactStatement`; `PointwiseTestAlgebra.isIdempotented`, `exists_characteristic_local_unit` | D; S: Task 5779 (`65079fee`); P (the last two) |
 | II.2.5 Proposition: a sheaf of vector spaces is a sheaf of `𝒞^∞_X`-modules | 38 / 44 | [VectorSheafScalars](../../Langlands/Sheaf/Renard/VectorSheafScalars.md) (`module`, `germ_lc_smul`, `restrictSemilinear`, `appLinear`) | D (the action and its laws are proved in the module) |
-| II.2.5 Remark: the two notions are equivalent categories, also for base `T` | 39 / 45 | `VectorSheafScalars` gives the action and linearity of morphisms; no statement packages the equivalence of categories | G (small) |
+| II.2.5 Remark: the two notions are equivalent categories, also for base `T` | 39 / 45 | `VectorSheafModuleEquivalence.equivalence X : VectorSheaf X ≌ ModuleSheaf X`, where `ModuleSheaf X = RingedBasis.ModuleSheaf (scalarRingedBasis X)` on all opens; the action, inverse functor and both natural isomorphisms are proved | A: Worker 4's candidate `e27ff568-7198-4e8d-a2c7-bd765d5e150a`, for any topological `X`. The module-sheaf basis-change comparison needed for the base-`T_c` formulation remains a gap |
 | II.2.5 Lemma: the action of `𝒟(X)` on a nondegenerate module extends uniquely to `𝒞^∞(X)` | 39 / 45 | [PointwiseTestModule](../../Langlands/HarmonicAnalysis/PointwiseTestModule.md) (the extension); `PointwiseTestModule.SmoothExtensionUniqueStatement` | D; P (`smoothExtensionUnique`) |
 | II.2.5 Theorem: `M_c(X)` is a nondegenerate `𝒟(X)`-module and `M ↦ M_c(X)` is an equivalence; the inverse `M ↦ (U ↦ χ_U·M)`, (II.2.5.1)–(II.2.5.2) | 39–40 / 45–46 | `CompactSectionTestModule`, `ProjectorVectorSheaf`, `SheafProjectorComparison`, `ModuleProjectorComparison` (constructions); `CompactSectionEquivalence.SheafComparisonIsIso`, `ModuleProjectorComparison.ModuleComparisonIsIso`, `CompactSectionEquivalence.CompactSectionFunctorIsEquivalence`, `CompactSectionEquivalence.ProjectorFunctorIsEquivalence` | D; S: Tasks 5508, 5533, 5534, 5535 |
-| II.2.5 stalk of the sheaf of a module: `M_x = M / M(x)`, `M(x) = {m | ∃ f, f(x) ≠ 0, f·m = 0}` | 40–41 / 46–47 | none for this description; the Remark's form below is stated | G (small) |
-| II.2.5 Example: `M = 𝒟(X)` gives `𝒞^∞_X` | 41 / 47 | none | G (small) |
+| II.2.5 stalk of the sheaf of a module: `M_x = M / M(x)`, `M(x) = {m \| ∃ f, f(x) ≠ 0, f·m = 0}` | 40–41 / 46–47 | `ProjectorStalk.ProjectorStalkDescription`: literal annihilator submodule; additive quotient comparison with the actual basis stalk at independent universes, and canonical complex-linear all-open stalk comparison at a common space/carrier universe | A: candidate `9cc76587-21dc-4142-b7a1-44d6ba0b7e18`; comparison statements await publication and proof |
+| II.2.5 Example: `M = 𝒟(X)` gives `𝒞^∞_X` | 41 / 47 | `RegularProjectorSheaf.regularSheafIso`, with scalar compatibility | A: Worker 4's candidate `741c323b-249d-4ed0-ac4c-6728574d5b16`; proved construction awaiting publication |
 | II.2.5 Example: for continuous `q : X → Y`, nondegenerate `𝒟(X)`-modules are nondegenerate `𝒟(Y)`-modules; `𝒟(X)` is a nondegenerate `𝒟(Y)`-bimodule; forgetful and pseudo-forgetful functors (`q_!`, `q_*`) and their adjoints (`q^!`, `q^{-1}`) | 41 / 47 | the module structure through `q`: [CoinvariantTestModule](../../Langlands/Sheaf/Renard/CoinvariantTestModule.md) `pullbackModule q M` (`g · m = (g ∘ q) · m`, through the published extension of the action to `𝒞^∞(X)`, which agrees with `(g ∘ q) χ_U · m`) and its proved nondegeneracy `pullback_nondegenerate` for t.d. `Y`; they are stated for compatible test actions of an arbitrary group, and the trivial group gives the plain module. The bimodule `𝒟(X)` is the case `M = 𝒟(X)` (the algebras are commutative). The functors are I.2.3's `F_AB`, `ˇF_AB`, `I_AB`, `P_AB` for this bimodule, whose final Remark is `RenardForgetfulFunctor.ForgetfulFunctorRemarkStatement` (task `a2cfae06`) | D; P (nondegeneracy); C (the bimodule); X for the sheaf-theoretic names |
-| II.2.5 restriction `F|_Y` to a locally closed subset | 42 / 48 | none | G (small, definition) |
+| II.2.5 restriction `F\|_Y` to a locally closed subset | 42 / 48 | `ClosedRestriction.closedCompactSections` constructs only compact sections over closed `Z` as locally representable families of germs | G: the full restriction sheaf, its stalk comparison and functoriality remain; Worker 4 owns this construction |
 | II.2.5 Definition: distributions `F_c(X)^*` on `F` and their `𝒞^∞(X)`-module structure | 42 / 48 | none | G (small, definition) |
-| II.2.5 Proposition: `0 → F_c(U) → F_c(X) → F_c(Z) → 0` and its dual, for `Z = X ∖ U` | 42 / 48 | none (the scalar case is (II.1.2.1)–(II.1.2.2), proved above) | G |
-| II.2.5 Remark: `F_x = F_c(X)/⟨f·φ, f(x) = 0⟩` | 42 / 48 | `CompactSectionStalks.StalkQuotientComparison` (with the map `stalkQuotientMap`) | S: Task 5507 |
-| II.2.5 isomorphisms of sheaves over a homeomorphism; induced isomorphisms of stalks and transposes | 42–43 / 48–49 | none | X/G (small): a definition and an immediate consequence |
+| II.2.5 Proposition: `0 → F_c(U) → F_c(X) → F_c(Z) → 0` and its dual, for `Z = X ∖ U` | 42 / 48 | `ClosedRestriction.ClosedRestrictionExactStatement` in [ClosedRestrictionExactStatements](../../Langlands/Sheaf/Renard/ClosedRestrictionExactStatements.md); actual compact sections over closed `Z`, restriction map and extension-by-zero relation | S: Task 5960 (`431f0c07-049e-4cf4-86ea-239e2eaa4ef4`); space `X : Type`, as in the published compact-section Theorem modules. The full restriction sheaf remains separate |
+| II.2.5 Remark: `F_x = F_c(X)/⟨f·φ, f(x) = 0⟩` | 42 / 48 | `CompactSectionStalks.StalkQuotientComparison` (with the map `stalkQuotientMap`) | P: `CompactSectionStalks.stalkQuotientComparison` in [CompactSectionStalksProof](../../Langlands/Sheaf/Renard/CompactSectionStalksProof.md), former Task 5507 |
+| II.2.5 isomorphisms of sheaves over a homeomorphism; induced isomorphisms of stalks and transposes | 42–43 / 48–49 | [HomeomorphSheafIso](../../Langlands/Sheaf/Renard/HomeomorphSheafIso.md): test-ring equivalence, original-module transport, compact-section and stalk equivalences, and dual transpose | D: Worker 4's proved construction, published candidate `398672d7-3e11-4bc4-ac69-15af120fd356`. The locally constant scalar action on distributions is not part of this unit |
 
 ## II.3 t.d. topological groups (43–56 / 49–62)
 
@@ -131,16 +139,25 @@ map.
 
 ## Genuine gaps of Chapter II
 
-1. II.2.5 Proposition: the exact sequences `0 → F_c(U) → F_c(X) → F_c(Z) → 0` and their duals
-   for sheaves of `𝒞^∞_X`-modules, with the restriction `F|_Z` to a closed subset.
-2. II.2.5 smaller assertions: the equivalence of sheaves of vector spaces and of
-   `𝒞^∞_X`-modules (Remark), the stalk description `M_x = M/M(x)`, the Example `M = 𝒟(X)`, and
-   the definitions of `F|_Y` and of distributions on `F`.
+1. The full restriction sheaf `F|_Y` on every locally closed subset, its stalk
+   comparison and functoriality. `ClosedRestrictionExactStatement` only needs
+   the constructed compact sections over closed `Z`. Worker 4 owns the full
+   restriction construction.
+2. Distributions `F_c(X)^*` with their `𝒞^∞(X)`-module structure. Worker 1222 has
+   a compiling private draft, which gives no published coverage yet.
+3. The module-sheaf basis-change comparison for the base-`T_c` form of the
+   II.2.5 Remark. The all-open equivalence is accepted but unpublished.
+
+The former exact-sequence gap is now a published statement with proof Task
+5960. The original-module stalk description and regular-module Example are
+accepted candidates, still awaiting publication; the former will then need
+its comparison proof. The compact-section stalk Remark is proved.
 
 The II.2.4 Proposition and Example are stated by the published candidate `65079fee` (Library
 `a54dda0d`), with proof Task 5779.
 
 ## Pending
 
-Open proof tasks: `7d487b2c` (II.1.2 vector-valued), 5751 (II.1.3), 5779 (II.2.4), 5507,
-5508, 5533–5535 (II.2.5), 5392, 5394, 5524–5531, 5538, 5539 (II.3).
+Open proof tasks: `7d487b2c` (II.1.2 vector-valued), 5751 (II.1.3), 5779 (II.2.4),
+5508, 5533–5535 and 5960 (II.2.5), 5392, 5394, 5524–5531, 5538, 5539 (II.3).
+The original-module stalk comparison proof task is gated on statement publication.

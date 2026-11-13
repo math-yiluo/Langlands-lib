@@ -2,22 +2,23 @@
 
 Author: Worker 0, for Task 0 (`69dd20b3-6a77-44aa-b779-32391843c8dd`). First
 version 10 November 2026, second version 11 November 2026, third, fourth and
-fifth versions 12 November 2026, sixth version 13 November 2026. This seventh
-version, also of 13 November 2026, was checked against Library commit
-`f2b3d7dcdd52af1923cd0bf5c4d90beda3118720`.
+fifth versions 12 November 2026, sixth and seventh versions 13 November 2026.
+This eighth version, also of 13 November 2026, was checked against Library
+commit `9b849caba7c63ede041b7fec49c90ceaafb08568`.
 
 This note records how the published Library reduces the full local Langlands
-correspondence for GL_n to five propositions, and names the task that owns
+correspondence for GL_n to three propositions, and names the task that owns
 each of them. The newest published reduction,
-`Henniart.Extension.supercuspidalCorrespondenceHenniartFiveInputs`, applies
-the reduction of the sixth version,
-`supercuspidalCorrespondenceHenniartRankOneInputs`, and discharges one of its
-six premises, refinement invariance of presentation conductors, with the
-Library's proof `Ramification.Padic.finiteInertiaConductorRefinement`. Five
-premises therefore remain open. The composite Lean module below assembles the
-published theorems. It has been compiled as a development check but is not
-published. Each of the five open propositions still needs an accepted
-`lean.proof@1` candidate. For statement meanings and sources see
+`Henniart.Extension.supercuspidalCorrespondenceHenniartFiveInputs`, has five
+premises. The seventh version listed all five as open. Since then the Library
+has proved two of them: the existence of local constants, by
+`LocalFactor.NonabelianSystem.exists_system`, and rank-one conductor transport
+in the common closure, by
+`LocalFactor.SpectralConductor.commonClosureRankOneConductor`. Three premises
+therefore remain open. The composite Lean module below assembles the published
+theorems. It has been compiled as a development check but is not published.
+Each of the three open propositions still needs an accepted `lean.proof@1`
+candidate. For statement meanings and sources see
 [the specification coverage note](llc-specification-coverage.md); this note
 does not restate them.
 
@@ -101,7 +102,7 @@ The theorems are:
 - `Henniart.Extension.supercuspidalCorrespondenceHenniartRankOneInputs`, the
   fifth theorem, applies the fourth, and
   `Henniart.Extension.supercuspidalCorrespondenceHenniartFiveInputs`, the
-  sixth, applies the fifth; see the next two sections.
+  sixth, applies the fifth; see the next three sections.
 
 The second to fourth theorems use five published reductions:
 
@@ -172,8 +173,8 @@ Worker 4803 (Task 4803) published the sixth theorem as candidate
 
 - `Henniart.Extension.supercuspidalCorrespondenceHenniartFiveInputs` (module
   `Correspondence/HenniartCorrespondenceFiveInputs`) proves
-  `SupercuspidalCorrespondenceStatement.{uK, uW, uV}` from the five
-  propositions in the table below. It applies
+  `SupercuspidalCorrespondenceStatement.{uK, uW, uV}` from five
+  propositions, listed in the next two sections. It applies
   `supercuspidalCorrespondenceHenniartRankOneInputs` and supplies refinement
   invariance, that theorem's fourth premise, as
   `fun p _ K A => Ramification.Padic.finiteInertiaConductorRefinement K A`.
@@ -189,12 +190,50 @@ Worker 4803 (Task 4803) published the sixth theorem as candidate
   `HerbrandBridge.presentationUpperFixedComparison` identifies those fixed
   spaces for any two presentations of the same representation.
 
-## The five open premises
+## Published: proofs of two premises
 
-The table lists the five premises of
-`supercuspidalCorrespondenceHenniartFiveInputs` in its order, at the
-universes of the full correspondence (`uK = uF`, `uW = uP`, `uV = uA`). None
-has a Library proof at commit `f2b3d7dc`.
+Two of the five premises of `supercuspidalCorrespondenceHenniartFiveInputs`
+have Library proofs. The note numbers premises by their position in that
+theorem.
+
+- Premise 2, `∀ p K eC, LocalFactor.NonabelianSystem.Exists.{uF, uP} K eC`
+  (module `LocalFactor/NonabelianSystem`), is proved by
+  `LocalFactor.NonabelianSystem.exists_system` (module
+  `LocalFactor/NonabelianSystemExistsProof`; Task 4913,
+  `2ee1672e-11b3-4c27-8959-d9b1957ab12d`, done). For every p-adic field `F`
+  and reciprocity family `e`, at independent field and representation
+  universes, it applies the published specialization
+  `NonabelianBrauer.exists_of_kernelCompatibilityStatement` (module
+  `LocalFactor/NonabelianBrauerSystem`) to the published proof
+  `NonabelianBrauer.kernelCompatibilityStatement` of Deligne's Brauer kernel
+  compatibility (module `LocalFactor/NonabelianBrauerKernelProof`, Worker 5093,
+  Task 5093 `92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, done). That proof applies
+  the published `ClassField.Global.RelativeWeilGroup.localTransferReciprocity`
+  (module `ClassField/Global/LocalRelativeWeilTransferProof`, Task 5086, done).
+- Premise 4,
+  `∀ p K, LocalFactor.SpectralConductor.CommonClosureRankOneConductorStatement.{uF} K`
+  (module `LocalFactor/SpectralConductorRankOneStatement`; Serre 1979, XV §2,
+  Thm 1 and Cor. 2–3; VI §2, Prop. 5), is proved by
+  `LocalFactor.SpectralConductor.commonClosureRankOneConductor` (module
+  `LocalFactor/SpectralConductorRankOneProof`; Task 5815,
+  `cbf11cf8-6abd-4db5-a59b-7b47c5b26585`, done; Worker 96 with Workers 4803
+  and 4918). The premise says that, at an intermediate field `L` of the common
+  closure, the Artin sum of an inertia character of a finite Galois `M/L`
+  equals the multiplicative conductor of the character of `L^×` attached by
+  the supplied normalized reciprocity family to an agreeing character of
+  `W_L`. The proof's Markdown records that it uses no unproved Library
+  proposition; in particular it does not assume
+  `LocalClassField.FiniteCharacterConductorTheorems` (Task 5738) or
+  `Ramification.Padic.FiniteGaloisConductorInflationStatement` (Task 5739).
+  Its Galois-side input is Worker 4918's module
+  `LocalFactor/Ramification/RankOneArtinSum`.
+
+## The three open premises
+
+The table lists the three premises of
+`supercuspidalCorrespondenceHenniartFiveInputs` that have no Library proof at
+commit `9b849cab`, numbered by their position in that theorem, at the
+universes of the full correspondence (`uK = uF`, `uW = uP`, `uV = uA`).
 
 The owners and states below are TaskHub task records as inspected on
 13 November 2026; they are not part of the Library commit. A candidate that is
@@ -203,9 +242,7 @@ staged or under review is not a proof until it is accepted and published.
 | # | Premise (universes of the full correspondence) | Module | Owner and state on 13 November 2026 |
 | --- | --- | --- | --- |
 | 1 | `Henniart.CandidateExistenceStatement.{uF, uP, uA, uP, uF}` (Henniart 2000, Thm 3.1 with §§3.7–3.8) | `Correspondence/HenniartStableMapStatement` | Task 5583 `54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, waiting; executor Worker 5732. See below. |
-| 2 | `∀ p K eC, LocalFactor.NonabelianSystem.Exists.{uF, uP} K eC` | `LocalFactor/NonabelianSystem` | Task 4913 `2ee1672e-11b3-4c27-8959-d9b1957ab12d`, verifying; executor Worker 4913, proof candidate `3736020b-6f41-4190-8f21-9ffc109200ba` staged. |
-| 3 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, executor Worker 5733. It has no proof candidate; its route-study note is published. See below. |
-| 4 | `∀ p K, LocalFactor.SpectralConductor.CommonClosureRankOneConductorStatement.{uF} K` (Serre 1979, XV §2, Thm 1 and Cor. 2–3; VI §2, Prop. 5) | `LocalFactor/SpectralConductorRankOneStatement` | Task 5815 `cbf11cf8-6abd-4db5-a59b-7b47c5b26585`, verifying; executor Worker 96. Its first proof candidate, `c8965cbe-bcb4-4c83-9aff-45f8cc9ff2bf`, was rejected for an error in its Markdown. The corrected candidate `6ec7ccc6-9546-4e2c-817a-2723c8091154` passed machine validation and awaits peer review. |
+| 3 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, waiting; executor Worker 5733. It has no proof candidate; its route-study note is published. See below. |
 | 5 | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. |
 
 Premise 1. The operator decided on 13 November 2026 that Task 5583 keeps its
@@ -226,54 +263,39 @@ conditional assembly). The transport of supercuspidal unitary lattices between
 carrier universes, which the globalization in universe 0 makes necessary, is a
 helper in Task 5583's draft.
 
-Premise 2. Its prerequisite, Deligne's Brauer kernel compatibility
-`LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`, is proved by
-`NonabelianBrauer.kernelCompatibilityStatement` (module
-`LocalFactor/NonabelianBrauerKernelProof`, Worker 5093, Task 5093
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, done). That proof applies the published
-`ClassField.Global.RelativeWeilGroup.localTransferReciprocity` (module
-`ClassField/Global/LocalRelativeWeilTransferProof`, Task 5086, done).
-
-Premise 3. The operator decided on 13 November 2026 that Task 5584 stays open
-and that its executor does not prove conductor finiteness of supercuspidal
-classes: that is owned through Task 5585
+Premise 3. Task 5891 (`e69d09d4-6da8-4810-886b-664574e533f8`, done) proved
+the counting reduction of Henniart 1988, §2.8, in orbit form:
+`Henniart.numericalOrbitReduction` (module
+`Correspondence/HenniartNumericalReductionProof`; Lean proof by Worker 5733,
+checked by Worker 5428) proves `Henniart.NumericalOrbitReductionStatement`. That
+statement says that `NumericalSurjectivityStatement` follows from two
+hypotheses: `NumericalOrbitCountStatement` (for every p-adic field, rank and
+conductor, the unramified-twist orbit strata on the Weil and supercuspidal
+sides are finite and have equal cardinality), and finiteness of the conductor
+`Numerical.conductor K π` of every supercuspidal class `π`. A search of the
+Lean sources at commit `9b849cab` found no proof of either hypothesis. The
+operator decided on 13 November 2026 that Task 5584 stays open and that its executor does not prove conductor
+finiteness of supercuspidal classes: that is owned through Task 5585
 (`5da7d945-39ed-4dcb-ace6-030fa18e4f24`, Bernstein–Zelevinsky 1976,
-Cor. 4.15) and Task 5032. The executor wrote a route-study note,
+Cor. 4.15; ready, with no executor on 13 November 2026) and Task 5032. The
+executor of Task 5584 wrote a route-study note,
 [Henniart's numerical correspondence: route study for the orbit counts](numerical-count-route-study.md),
-which compares Henniart's 1988 route with a route through explicit counts; it
-is published at commit `f2b3d7dc`. The executor waits on Task 5891
-(`e69d09d4-6da8-4810-886b-664574e533f8`), which proves the counting reduction
-`NumericalOrbitReductionStatement`.
+which compares Henniart's 1988 route to the orbit counts with a route through
+explicit counts. A TaskHub search on 13 November 2026 found no separate proof
+task for `NumericalOrbitCountStatement`.
 
-Premise 4 says that, at an intermediate field `L` of the common closure, the
-Artin sum of an inertia character of a finite Galois `M/L` equals the
-multiplicative conductor of the character of `L^×` attached by the supplied
-normalized reciprocity family to an agreeing character of `W_L`. Task 5815's
-contract forbids unproved Library propositions as premises. Its suggested route
-uses only proved Library results:
+## Tasks that left the route
 
-- `LocalClassField.absoluteUpperReciprocityTheorems` (module
-  `ClassFieldTheory/Local/AbsoluteReciprocityProof`, by Worker 5168) proves
-  `AbsoluteUpperReciprocityTheorems.{u}`, the absolute upper-numbering form of
-  local reciprocity with the conductor levels of quasicharacters (Serre 1979,
-  XV §2);
-- `LocalClassField.finiteUpperReciprocityTheorems` (module
-  `ClassFieldTheory/Local/UpperReciprocityProof`) proves the finite version;
-- `Ramification.HerbrandBridge.absoluteUpperFiniteImage` (module
-  `LocalFactor/Ramification/Herbrand/AbsoluteProof`) proves that absolute upper
-  ramification groups map onto those of every finite Galois subfield;
-- `LocalClassField.commonClosureGeometricProof` (module
-  `ClassFieldTheory/Local/CommonClosureGeometricProof`) compares a normalized
-  family with standalone geometric reciprocity.
-
-The alternative route through finite abelian conductor transport
+The seventh version listed premise 2, owned by Task 4913, and premise 4, owned
+by Task 5815, as open. Both are now proved, as described above, and both tasks
+are done. The seventh version also named an alternative route to premise 4,
+through finite abelian conductor transport
 (`LocalClassField.FiniteCharacterConductorTheorems`, Task 5738,
 `cbe92f65-9440-440c-93e1-9817d4aa300f`) and inflation of conductors
 (`Ramification.Padic.FiniteGaloisConductorInflationStatement`, Task 5739,
-`1e35eaa4-0bf9-4e1f-b16f-cc202c9d3b3a`) can be used only after those proofs are
-published.
-
-## Tasks that left the route
+`1e35eaa4-0bf9-4e1f-b16f-cc202c9d3b3a`). The published proof does not use these
+statements, so the route no longer needs Tasks 5738 and 5739. These statements
+remain the targets of their tasks.
 
 The sixth version listed refinement invariance of presentation conductors,
 `∀ p K A, Ramification.Padic.FiniteInertiaConductorRefinementStatement.{uF, max uF uP} K A`,
@@ -283,10 +305,9 @@ as its fourth premise, owned by Task 5737. The published
 The fifth version of this note listed `∀ p K,
 ConductorExponent.SpectralConductorStatement.{uF, uP} K` as its fifth premise,
 owned by Task 5626 (`24b84ed8-5c32-460b-b50b-30a1c08fb408`). The published
-`spectralConductorRankOneReduction` derives it from refinement invariance,
-now proved, and premise 4, so the
-route no longer needs Task 5626 on its own. The same holds for the conductor
-laws that Task 5626's suggested route needed: Task 5651
+`spectralConductorRankOneReduction` derives it from refinement invariance
+and premise 4, both now proved, so the route no longer needs Task 5626. The
+same holds for the conductor laws that Task 5626's suggested route needed: Task 5651
 (`62ccf2f8-9d7b-4b62-bb2f-231ce16e1916`, additivity in short exact sequences)
 and Task 5661 (`32abafa4-2d05-4dab-9a1f-d0b58dcdc86e`, conductors of induced
 representations). Of the conductor clauses of the target of Task 5676
@@ -315,45 +336,49 @@ target.
 ## The composite
 
 The module below compiles at commit
-`f2b3d7dcdd52af1923cd0bf5c4d90beda3118720` in environment
+`9b849caba7c63ede041b7fec49c90ceaafb08568` in environment
 `5c94c648-e8dc-4002-a50a-071ebf3f6096`, with 0 errors and 0 warnings. The
 check compiled the block verbatim as a private draft module in the Lean
-service; its diagnostics are private records. To reproduce it, save the block
-as a draft module and compile it with `lean_check`. A second draft module that
-imports it and runs `#print axioms` on
-`fullCorrespondence_of_henniartFiveInputs` reports only the axioms
-`propext`, `Classical.choice` and `Quot.sound`. Both theorems it applies are
-published: `fullCorrespondenceStatement_of_supercuspidalCorrespondence` and
-`supercuspidalCorrespondenceHenniartFiveInputs`. Its hypotheses are the five
-open premises, in the order of the table. The sixth version's composite,
-`fullCorrespondence_of_henniartRankOneInputs`, also assumed refinement
-invariance. The fifth version's composite had the same name as this one but
-assumed Tate's spectral conductor formula in place of refinement invariance
-and premise 4.
+service; its diagnostics are private records (`497dc066-d224-44d4-9624-0837d81ad14a`
+for the build, `ebc3eabc-21af-4ea2-8dd7-4446ba736e63` for the declaration
+inspection). To reproduce it, save the block as a draft module and compile it
+with `lean_check`. The declaration inspection of
+`fullCorrespondence_of_henniartThreeInputs` reports only the axioms `propext`,
+`Classical.choice` and `Quot.sound`. All four theorems it applies are
+published: `fullCorrespondenceStatement_of_supercuspidalCorrespondence`,
+`supercuspidalCorrespondenceHenniartFiveInputs`,
+`NonabelianSystem.exists_system` and
+`SpectralConductor.commonClosureRankOneConductor`. Its hypotheses are the three
+open premises, in the order of the table. The seventh version's composite,
+`fullCorrespondence_of_henniartFiveInputs`, also assumed premises 2 and 4. The
+sixth version's composite, `fullCorrespondence_of_henniartRankOneInputs`,
+assumed refinement invariance as well.
 
 ```lean
 import Langlands.Correspondence.FullCorrespondenceReduction
 import Langlands.Correspondence.HenniartCorrespondenceFiveInputs
+import Langlands.LocalFactor.NonabelianSystemExistsProof
+import Langlands.LocalFactor.SpectralConductorRankOneProof
 
 namespace Langlands.Correspondence
 
 universe uF uP uA
 
 open Langlands.Henniart LocalFactor LocalFactor.CommonClosure in
-/-- The full correspondence from the five open premises of
-`supercuspidalCorrespondenceHenniartFiveInputs`. -/
-theorem fullCorrespondence_of_henniartFiveInputs
+/-- The full correspondence from the three premises of
+`supercuspidalCorrespondenceHenniartFiveInputs` that the Library does not prove:
+candidate existence, numerical surjectivity and the JPSS conductor exponent. The
+local-constant systems and rank-one conductor transport are supplied by the published
+`NonabelianSystem.exists_system` and `SpectralConductor.commonClosureRankOneConductor`. -/
+theorem fullCorrespondence_of_henniartThreeInputs
     (hCE : CandidateExistenceStatement.{uF, uP, uA, uP, uF})
-    (hsys : ∀ (p : ℕ) [Fact p.Prime] (K : PadicField.{uF} p) (eC : ReciprocityFamily K),
-      NonabelianSystem.Exists.{uF, uP} K eC)
     (hnum : NumericalSurjectivityStatement.{uF, uP, uA})
-    (hR : ∀ (p : ℕ) [Fact p.Prime] (K : PadicField.{uF} p),
-      SpectralConductor.CommonClosureRankOneConductorStatement K)
     (hJPSS : Conductor.ConductorExponentStatement.{uF, uA}) :
     FullCorrespondenceStatement.{uF, uP, uA} :=
   fullCorrespondenceStatement_of_supercuspidalCorrespondence
     (Extension.supercuspidalCorrespondenceHenniartFiveInputs.{uF, uP, uA}
-      hCE hsys hnum hR hJPSS)
+      hCE (fun _ _ K eC => NonabelianSystem.exists_system.{uF, uP} K eC) hnum
+      SpectralConductor.commonClosureRankOneConductor.{uF} hJPSS)
 
 end Langlands.Correspondence
 ```

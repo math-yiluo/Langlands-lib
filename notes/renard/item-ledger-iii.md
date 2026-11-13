@@ -12,6 +12,12 @@ commit `a54dda0d7c7c0fd4f76308fad8525ba13d9b4ce8`. The review state of Worker 12
 `ccc573af3771ecd25c84c65c2d366ae1333f156b`, where none of them is yet integrated. A published
 statement is not a proof; every row keeps the proof status explicit.
 
+Focused update, 13 November 2026: the III.1.6 compact-distribution/non-open
+compact-subgroup Lemma and III.1.14 algebra Scholium are published statements,
+checked at Library `9a75d622ee70596d92921acba312846004be3e2f`, with proof Tasks
+5961 and 5801 respectively. Those rows and the gap summary below supersede the
+earlier snapshot; other candidate statuses retain the 12 November audit date.
+
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -65,7 +71,7 @@ Status codes, as in the other ledgers:
 | III.1.5 Proposition (i)–(iv) and Theorem (i)–(iii): `K`-fixed vectors and `H(G, K)`-modules | 60–61 / 66–67 | `HK.FixedVectorCornerStatements` (five statements) | P: `fixedVectorCorner` and the five component proofs |
 | III.1.6 the dual action `π*`, the contragredient `(π̃, Ṽ)` | 61 / 67 | `Representation.dual`, `smoothContragredient`, `SmoothDual`, `smoothDualPairing` | D |
 | III.1.6 under III.1.4 the contragredient corresponds to the I.4.1 dual module, with right and left modules identified through `T ↦ Ť` | 61 / 67 | `HK.ContragredientHeckeDualStatement` (for every t.d. group, with the weighted inversion `haarInversion`) | A: candidate `a5167755` |
-| III.1.6 Lemma: `(π̃(Ť) λ)(v) = λ(π(T) v)` for `T ∈ ℰ′(G)`; the case `e_K` for compact `K`; `(V*)^K ≃ (V^K)*`; `Ṽ^K = (V*)^K ≃ (V^K)*` for compact open `K` | 61 / 67 | for test functions and an inversion-invariant measure (unimodular `G`): `HK.integratedAction_smoothDualPairing` ([SmoothTranspose](../../Langlands/Representation/Hecke/SmoothTranspose.md)); for compact open `K`: `smoothDualFixedEquiv` and `SmoothDualCompactFixedDualityStatement` | P (`smoothDualCompactFixedDuality`) for compact open `K`; for `T ∈ H(G)` and every t.d. group, the identity follows from clause 2 of `HK.ContragredientHeckeDualStatement` (A: `a5167755`); G (small) for `T ∈ ℰ′(G)` and for compact `K` that is not open |
+| III.1.6 Lemma: `(π̃(Ť) λ)(v) = λ(π(T) v)` for `T ∈ ℰ′(G)`; the case `e_K` for compact `K`; `(V*)^K ≃ (V^K)*`; `Ṽ^K = (V*)^K ≃ (V^K)*` for compact open `K` | 61 / 67 | `ContragredientDistributionLemmaStatement` in [CompactDistributionTransposeStatements](../../Langlands/Representation/Smooth/Contragredient/CompactDistributionTransposeStatements.md): transpose for actions characterized by scalar pairings, compact-subgroup Haar formulas and bijectivity of restriction `(V*)^K → (V^K)*`, with no openness assumption on compact `K` | S: Task 5961 (`e57418a0-4be3-4766-96de-c20d6ca8cfc3`), independent group/carrier universes. P (`smoothDualCompactFixedDuality`) for compact open `K`; test-function special case also proved by `HK.integratedAction_smoothDualPairing` under an inversion-invariant measure. Existence of the full distribution action remains the separate III.1.3 obligation |
 | III.1.6 Corollary: canonical injection `V ↪ Ṽ̃` | 62 / 68 | `SmoothAdmissibleDualityStatement`, first clause (under compact-open cofinality, which holds for t.d. groups) | P: `smoothAdmissibleDuality` |
 | III.1.7 Definition: admissible representations | 62 / 68 | `IsAdmissible` (all open subgroups, as in the source) | D |
 | III.1.7 compact open subgroups suffice; `V` admissible iff the `H(G)`-module is admissible in the sense of I.5.1 | 62 / 68 | `HK.AdmissibleIffHeckeAdmissibleStatement` | A: candidate `ce923198` |
@@ -86,7 +92,7 @@ Status codes, as in the other ledgers:
 | III.1.14 `⊠_i π_i` and the diagonal `⊗_i π_i` | 66 / 72 | `Representation.tprod` with the projections; `RS.TensorProductSmoothStatement` (smoothness of the diagonal tensor) | D; P (`tensorProductSmooth`) |
 | III.1.14 Proposition: `⊠` of admissibles is admissible, irreducible if the factors are; every irreducible admissible of `∏ G_i` is such a product, uniquely | 66 / 72 | `FlathTwoFactorStatement` (two factors, as in the source's proof) | S: Task 5771 |
 | III.1.14 Proposition, second assertion: `(⊠_i π_i)^∼ = ⊠_i π̃_i` | 66 / 72 | `AdmissibleExternalTensorContragredientStatement` (two factors) | A: candidate `b47b8223` |
-| III.1.14 Scholium (cited from [16]): for unital algebras `A₁`, `A₂` and finite-dimensional irreducible representations `τ₁`, `τ₂`, the representation `τ₁ ⊠ τ₂` on `V₁ ⊗ V₂` is irreducible; conversely every finite-dimensional irreducible representation is of this form, uniquely up to isomorphism | 66–67 / 72–73 | none. The source writes `A₁ × A₂`; the action on `V₁ ⊗ V₂` is one of the algebra tensor product `A₁ ⊗ A₂` (source issue S2) | G: not stated (gap 2) |
+| III.1.14 Scholium (cited from [16]): for unital algebras `A₁`, `A₂` and finite-dimensional irreducible representations `τ₁`, `τ₂`, the representation `τ₁ ⊠ τ₂` on `V₁ ⊗ V₂` is irreducible; conversely every finite-dimensional irreducible representation is of this form, uniquely up to isomorphism | 66–67 / 72–73 | `AlgebraTensorScholiumStatement` in [AlgebraTensorSimpleModuleStatements](../../Langlands/Algebra/AlgebraTensorSimpleModuleStatements.md): external simplicity, existence of factors and uniqueness, over `A₁ ⊗[ℂ] A₂` (source issue S2) | S: Task 5801 (`90a88978-c4f7-4a8b-9e7f-4523134a54e8`), seven independent universe parameters; the Scholium remains unproved |
 | III.1.14 Lemma: `πω` admissible for admissible `π` and a smooth character `ω` | 67 / 73 | `isAdmissible_twist_iff` ([Twist/AdmissibilityProof](../../Langlands/Representation/Twist/AdmissibilityProof.md)) | P |
 | III.1.15 the functors `• ⊗ V`, `Hom(W, •)₀`, `Hom(•, V)₀` | 67 / 73 | the smooth tensor and smooth Hom objects of [RenardTensorHomStatements](../../Langlands/Representation/Smooth/RenardTensorHomStatements.md) | D |
 | III.1.15 Example: `Hom(•, ℂ)₀` is the contragredient | 67 / 73 | `smoothContragredient` is by definition the smooth part of the dual action, which is `π_ρ` for trivial `π` | C (definitional; no separate comparison declaration) |
@@ -125,7 +131,7 @@ Rows follow the published [III.2 map](iii2-hecke-induction.md); "map" below refe
 | III.2.9 Remarks 1–2: action of a normalizing subgroup; the functor `j_H` | 78–79 / 84–85 | `J.action`, `J.map`, `J.isSmooth_action`; `JL.smoothFunctor` | D |
 | III.2.9 Lemma (i)–(ii): coinvariants in stages | 79 / 85 | the general `JL.TowerDatum.equiv` and `JL.TowerDatum.smoothIso` (map) | C (specialization to `H = H₁H₂` not packaged) |
 | III.2.9 Definition (filtered increasing union) and Remark (compact subsets lie in compact subgroups) | 79 / 85 | `J.CompactSubgroupFilteredUnionStatement` (the Definition is written out in its hypotheses) | A: candidate `05269380` |
-| III.2.9 Proposition: `E(H, τ) = {v | τ(e_K) v = 0 for some compact subgroup K}` | 79 / 85 | `J.CompactAveragingRelationStatement`; the relation detection `JL.mem_relations_iff_compact` is proved | A: candidate `05269380` |
+| III.2.9 Proposition: `E(H, τ) = {v \| τ(e_K) v = 0 for some compact subgroup K}` | 79 / 85 | `J.CompactAveragingRelationStatement`; the relation detection `JL.mem_relations_iff_compact` is proved | A: candidate `05269380` |
 | III.2.9 Corollary: `E′(H) = E(H) ∩ E′` | 80 / 86 | `J.CoinvariantSubrepresentationRelationsStatement` | A: candidate `05269380` |
 | III.2.9 Corollary: exactness of coinvariants and of `j_H` | 80 / 86 | `JL.CharacterLocalizationExactnessStatement` at the trivial character, under `JL.IsLimitOfCompactSubgroups` | P: `characterLocalizationExactness`. Clarification C1 |
 | III.2.10 the quotient by a closed normal `N`, the action on coinvariants, (III.2.10.1), pseudo-`F = F`, the Proposition with (III.2.10.2) and its inverse, the adjunction and the Corollary | 80–82 / 86–88 | `HH.NormalQuotientStatements` (`NormalQuotientHeckeStatement`, `NormalQuotientAdjunctionStatement`, `NormalQuotientInductionAdjunctionStatement`) and the models of [NormalQuotientModels](../../Langlands/Representation/Hecke/NormalQuotientModels.md) | P: `normalQuotientStatements` |
@@ -184,25 +190,33 @@ The accepted and staged candidates of Worker 1222 (`576e9e04`, `755a1381`, `db30
 III.2 gaps of the map, the III.1.3 action of `ℰ′(G)`, the III.1.14 contragredient, the
 finite-length case of the III.1.10 Proposition, the non-unimodular III.1.12 Lemma and
 Example, the III.1.7 admissibility translation and the III.1.6 comparison of the
-contragredient with the I.4.1 dual. Two gaps remain:
+contragredient with the I.4.1 dual. These candidate statuses retain their
+12 November snapshot.
 
-1. III.1.6: the Lemma for `T ∈ ℰ′(G)` (the action itself is stated by `614c7482`) and the
-   identity `(V*)^K ≃ (V^K)*` for compact subgroups that are not open.
-2. III.1.14 Scholium: irreducibility of `τ₁ ⊠ τ₂` for finite-dimensional irreducible
-   representations of unital algebras `A₁`, `A₂`, and the classification of the
-   finite-dimensional irreducible representations of `A₁ ⊗ A₂` (existence and uniqueness of the
-   factors). It is recalled from [16] and used in the source's proof of the III.1.14
-   Proposition; no published statement covers it.
+Both previously listed statement gaps are now covered:
+
+1. III.1.6: `ContragredientDistributionLemmaStatement` states the full
+   compact-distribution transpose and compact, possibly non-open, subgroup
+   conclusions. Proof Task 5961 remains open; distribution-action existence is
+   a separate III.1.3 assertion.
+2. III.1.14: `AlgebraTensorScholiumStatement` states irreducibility,
+   factorization and uniqueness for finite-dimensional simple modules over
+   `A₁ ⊗[ℂ] A₂`. Proof Task 5801 remains open. The tensor-product correction of
+   source issue S2 is retained.
+
+No genuine statement gap remains in the audited inventory. This does not
+claim proofs, publication of the other pending candidates, or chapter completion.
 
 ## Summary
 
 Every headed item of Chapter III and every unheaded assertion found is stated, under review,
-or listed in the two gaps above. III.1 is proved except the
+or covered by the two newly published statements above. III.1 is proved except the
 `FlathTwoFactorStatement` (Task 5771), the III.1.14 contragredient (candidate `b47b8223`), the
 finite-length III.1.10 decomposition (candidate `532e02d1`), the non-unimodular III.1.12
 identities (candidate `71f85af7`), the III.1.7 translation (candidate `ce923198`), the
 III.1.6 dual comparison (candidate `a5167755`), the III.1.3 `ℰ′(G)` action (candidate
-`614c7482`), the III.1.14 Scholium (gap 2) and the III.1.6 gap. III.2 is proved except `I.StructuralStatement` (Task 5753,
+`614c7482`), the III.1.14 Scholium (Task 5801) and the full III.1.6 Lemma
+(Task 5961). III.2 is proved except `I.StructuralStatement` (Task 5753,
 covering exactness, Frobenius reciprocity and the transitivity clause), `HH.ClosedInductionHomStatement`
 (Task 5402) and Worker 1222's four III.2 candidates. The III.3 main assertions are
 statements with open proof tasks; the transitive-quotient statement is proved.

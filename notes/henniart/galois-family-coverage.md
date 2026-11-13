@@ -179,12 +179,42 @@ relation `IsKottwitzPolynomial` ("`P` is attached to `π_p`"). They do not
 prove the existence of a parameter, the uniqueness of `P` given `π_p`, or the
 descent of `P` to `L[X]`.
 
-Owners: Task 5484 (`a88c0cf4-5010-4c43-921a-d9f53bcf6acb`, Worker 5484)
-builds the cohomology with level and finite-adelic actions, isotypic parts and
-multiplicity spaces (items 2–4). Task 5424
-(`90fec325-2a43-439a-b699-ee0d8dcfd52c`, Worker 5424) builds the good primes,
-the unramified parameters, `P(π_p, E_v)` and the unramified base change.
-Task 34 states Theorem 1 after both publish. `a(π_f)` needs automorphic
+Later prerequisites, at Library commit
+`cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e` (SHA256 in section 4):
+
+- Task 5484 published three supporting units. The first is
+  `cmHarrisScaledLambdaCohomology` (`Shimura/PEL/HarrisTaylorCMScaledGaloisCohomology`).
+  It is the `λ`-adic cohomology as a functor of the scaled level
+  (`CMScaledLevel`), with values in `K_λ`-linear `Gal(F̄/F)`-actions. Its
+  value at a scaled level with level `U` is `K_λ ⊗_R lim_k H^d(X̄_U, W_k)`.
+  The second is the transport laws of `Shimura/PEL/HarrisTaylorCMLevelTransportLaws`.
+  The third is the generic descent `cmScaledDescent`
+  (`Shimura/PEL/HarrisTaylorCMScaledDescent`) from scaled to small levels,
+  which divides by powers of `ℓ`. The descent takes the target objects `O U`,
+  isomorphisms `ψ` and the Props `CMScaledTransportRaise` and
+  `CMScaledTransportShift` as inputs. The published modules neither compare
+  `cmHarrisScaledLambdaCohomology` with `cmHarrisLambdaCohomology` nor prove
+  these Props for it. So the finite-adelic and Hecke actions, the isotypic
+  parts and the multiplicity spaces are still missing.
+- Task 5424 published two units on Frobenius orbits. Under the Library's
+  `KottwitzUnramified.IsUnramifiedAt (rationalPrimePlace p) K`,
+  `frobeniusOrbitsArePlaces_of_isUnramifiedAt` (`Shimura/Unitary/KottwitzFrobeniusOrbits`)
+  and `frobeniusInvariantsRational_of_isUnramifiedAt` prove the rationality
+  hypothesis of `KottwitzLiftIndependence`, and `embeddingCochar_injective`
+  (`Shimura/Unitary/KottwitzFrobeniusPlaces`) proves its injectivity
+  hypothesis. Over an algebraically closed field and for a fixed `√p`, the
+  polynomial of a principal-series parameter `ξ` therefore does not depend on
+  the lift `t̂`, and a lift exists. Two things are still not proved: that
+  `π_p` has a parameter `ξ` that is unique up to the Weyl group (a Satake
+  statement), and that `P` descends to `L[X]`.
+
+Owners: Task 5484 (`a88c0cf4-5010-4c43-921a-d9f53bcf6acb`, Workers 5484 and
+5454) builds the cohomology with level and finite-adelic actions, isotypic
+parts and multiplicity spaces (items 2–4). Task 5424
+(`90fec325-2a43-439a-b699-ee0d8dcfd52c`, Worker 5424) is complete. Its five
+items are the good primes, the unramified parameters, `P(π_p, E_v)`, the
+unramified base change and the comparison of section 3.2. Task 34 states
+Theorem 1 after Task 5484 publishes. `a(π_f)` needs automorphic
 multiplicities on `G` and pseudo-coefficients at infinity. If these are not
 available, any weaker existential form must be documented as weaker.
 
@@ -213,7 +243,29 @@ unramified, the normalized local Artin factor (5.6) of `ρ(π)` at `w` is
 - `ν̄(π)` and its `λ`-adic realization (section 1.4);
 - the unramified base-change parameters (Task 5424 item 4; the Library's
   `Shimura/Unitary/KottwitzBaseChange` has `baseChangeParameter`,
-  `clozelParameter` and `IsBaseChangeParameterOf` for a chart).
+  `clozelParameter` and `IsBaseChangeParameterOf` for a chart). Task 5424
+  item 5, `Shimura/Unitary/KottwitzHarrisComparison` (Library commit
+  `cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`), relates them to Kottwitz's
+  polynomial. For Harris's signature it proves
+  `kottwitzPolynomialOf_harris_baseChangeParameter`: for every normalized lift
+  of a principal-series character `ξ`,
+  `P(π_p, E_v) = ∏_{β ∈ BC(π)_w} (X − α · β^{f/f_w})`. Here `w` is the place
+  of the CM field (`K` in that module) defined by `θ ∘ Φ τ₀`, where
+  `θ : ℂ →+* Q̄_p`, `Φ` is the CM type and `τ₀` the real place of signature
+  `(n − 1, 1)`. `f` is `localDegree`, `f_w` is the inertia
+  degree of `w`, and `α` is one explicit scalar for all `β`. The hypotheses
+  are `n ≥ 3` and the two conjuncts of `FrobeniusOrbitsArePlaces` at `Φ τ₀`.
+  These conjuncts follow from unramifiedness at `p` by
+  `frobeniusOrbitsArePlaces_of_isUnramifiedAt` (section 3.1).
+  `kottwitzPolynomialOf_harris_baseChangeParameter_of_preserves` gives
+  exponent `1` under a further hypothesis `hR`. Its Markdown explains `hR` as
+  the Frobenius form of Clozel's condition that the reflex field of the CM
+  type lie in `ι₀ F_c`, and does not formalize that explanation. The scalar
+  `α` is not identified with Clozel's `q_w^{(n−1)/2} α_{E,w}(ϖ_w)`, and its
+  independence of the lift is not proved. So the identity gives the
+  eigenvalues of Frobenius on Kottwitz's `V` up to one common scalar.
+  Theorem 5.7(ii) asserts an exact equality of normalized local factors, so
+  a statement or proof built on this identity must still determine `α`.
 
 Part (iii) belongs to the Harris–Berkovich branch (task
 `b91b0934-0122-4c05-b359-4e7ed64bbe3d`); see
@@ -238,7 +290,16 @@ of characteristic `0`, with perfect residue field of characteristic `p`
 divisor `D` with normal crossings, the theorem gives
 `Gal(K̄/K)`-equivariant isomorphisms
 `H^n_et((X − D) ⊗ K̄, ℚ_p) ⊗ Ĉ ≅ ⊕_{a+b=n} H^a(X, Ω^b(dlog ∞)) ⊗ Ĉ(−b)`,
-with `Ĉ` the completion of `K̄`. It concerns constant `ℚ_p` coefficients.
+with `Ĉ` the completion of `K̄`. This display corrects the source in one
+place. Theorem 4.1 on printed p.298 prints the twist as `Ĉ(−a)`, with the same
+indices `H^a` and `Ω^b`; the two displays for the proper case earlier on that
+page also print `(−a)`. The Introduction, 1(b), printed p.255, states the
+proper case of the same theorem (citing Chapter III, Theorem 4.1) with
+`Ĉ(−b)` and says that `(−b)` denotes the Tate twist. It adds that a version
+holds for complements of normal-crossings divisors. This note follows the
+Introduction and reads `(−a)` on p.298 as a misprint: for `n = 1` the printed
+`(−a)` would twist `H^1(X, O_X)` instead of the differentials `H^0(X, Ω^1)`.
+The theorem concerns constant `ℚ_p` coefficients.
 Harris says only that the systems `W` "come from tensor powers of the
 cohomology of the universal abelian scheme". Deducing the decomposition for
 the cohomology with coefficients in `W` from Faltings' theorem for schemes
@@ -291,6 +352,24 @@ published after the commit above):
 | --- | --- |
 | `Langlands/JacquetLanglands/HarrisTransfer.lean` | `6808eca4905f6cc9fa5b64c49a1a88e5cbb72bdea68e16dbec1761e7eb1f0c8a` |
 | `Langlands/JacquetLanglands/HarrisTransfer.md` | `0c88ef2693dc66d69904737bfc13783e319d21ced131da7241435f75691fe4f9` |
+
+SHA256 at Library commit `cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`
+(prerequisites from Tasks 5424 and 5484):
+
+| File | SHA256 |
+| --- | --- |
+| `Langlands/Shimura/Unitary/KottwitzHarrisComparison.lean` | `ef642015df4045d6c891522659bf8e4f4fa1801c0827dd81ec7aad05174ce07b` |
+| `Langlands/Shimura/Unitary/KottwitzHarrisComparison.md` | `29217ced07c32cb689adea7e09ddcf061e7cd707395621f261654a6479020169` |
+| `Langlands/Shimura/Unitary/KottwitzFrobeniusPlaces.lean` | `e56e015030e1f3cc73376f975bc46af7679ca63e382463fb41b630363cbbb40b` |
+| `Langlands/Shimura/Unitary/KottwitzFrobeniusPlaces.md` | `cce1040a795af9f111e3d3c280fc7182e6c37fc0023f122471b9f7badbd8872e` |
+| `Langlands/Shimura/Unitary/KottwitzFrobeniusOrbits.lean` | `babf579c0e1382e2c777626c291065a7cf5704eb7110ede5f96b9fdd46935a1d` |
+| `Langlands/Shimura/Unitary/KottwitzFrobeniusOrbits.md` | `35203ae0a8af915b4ef9233f9bff08898cf0f43b3f244d80b06d9a8e8df2f211` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMScaledGaloisCohomology.lean` | `ce2895b9f7b96cb798e2917e4cf41f91c499bc517dbc2a63e0d779245144d30b` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMScaledGaloisCohomology.md` | `2e5296e793a6ee5b29412aa470e5cd83d39248a6ea6d831595d08c2e0ba730ba` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLevelTransportLaws.lean` | `1d57197d93dc754246e8cfe411f8b0ba08058d712a054d74404a25816d26cff7` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLevelTransportLaws.md` | `c033041254c2a79ea6c812244e1c60e9e46c9a28d3e8123b3df5c218dd2ad535` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMScaledDescent.lean` | `9340a4f10c5dfa3fd088e38b69f945ab81fa7f08222c37861e0b39483a716cf0` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMScaledDescent.md` | `a47784dee244ca3c806cd343ca23f45ef3c866c36afb11b7d1cc0732eb90f7d0` |
 
 Registered originals cited: `clozel-1991-selfdual-galois` (SHA256
 `9de7c13c9ae108e481de170327a06e44845cf87a6aabc1d5600176ee695e91ac`),
