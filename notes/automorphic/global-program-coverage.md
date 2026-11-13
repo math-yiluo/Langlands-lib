@@ -1497,3 +1497,95 @@ not stated, and this ledger does not duplicate the numerical ones.
 Neither track of the program is complete. Lapid's Proposition 1 remains
 unstated; it waits for the truncation block of Task 5536. No L3 or L4 proof
 is public.
+
+## 13 November 2026 Getz–Hahn 11.7.1 poles, Lemma 11.8.1 and the H3 reduction
+
+Worker 3657 checked this section against Library
+`46cfa5dd149a3809a3f9bf7a5de0d4f51ca2758c` on 13 November 2026. It
+supersedes the list of remaining L4 targets at the end of the previous
+section: both targets listed there now have public statements. It also
+records two H3 units: the pole-comparison input and the reduction of
+`CandidateExistenceStatement` to the open global inputs. Each unit below is a
+statement only; no proof of it is public. The Lean and Markdown SHA-256 values
+are those in Library `46cfa5dd`; the first eight hex digits are given.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [CuspidalPairPoleStatement](../../Langlands/Global/Factors/CuspidalPairPoleStatement.md) (Lean `d4ee856b`, Markdown `bffba086`) | candidate `419008e0-a941-41bd-abad-4da1a1be3153`, review task `1cf9e816-62f7-4ca7-ba62-aa532b8dbdfa`, Library `cfedefb6` | Getz–Hahn Theorem 11.7.1, pole part, p.309; Cogdell 2004 Theorems 4.1 and 4.2: `Langlands.Global.CuspidalPairPoleStatement`. For actual cuspidal realizations of `GL_(r+1)` and `GL_(t+1)` that are trivial on the split components `A_GL` of their centres, the finite local pair data and the archimedean standard-module parameters exist. Every completed pair L-function is holomorphic off `{0, 1}` and has at most simple poles at `0` and `1`. It has a pole there exactly when `r = t` and `T` realizes the contragredient of `T'`. It is bounded in vertical strips outside ε-discs about `0` and `1`. The functional equation is the separate published `CuspidalPairGlobalFunctionalEquationStatement`. |
+| [CuspidalIsobaricPoleOrderStatement](../../Langlands/Global/Factors/CuspidalIsobaricPoleOrderStatement.md) (Lean `7cf14664`, Markdown `174324d7`) | candidate `f502aeab-9527-42eb-9ea4-261252b2a799`, review task `6cc1966e-fad5-40a1-b891-089d604c420d` (Reviewer 426), Library `cc5aa77f` | Getz–Hahn Lemma 11.8.1, p.312: `Langlands.Global.CuspidalIsobaricPoleOrderStatement`. Take cuspidal `T₀` and `T₁, …, T_k`, each trivial on the split component of its own centre. Then the data and the completed pair L-functions `Λ(s, π₀ × π_i)` exist, and `min(ord_{s=1} ∏ Λ(s, π₀ × π_i), 0) = -m`. Here `m` is the number of `i` with `T_i` realizing the contragredient of `T₀`. The isobaric sum itself is not constructed; the L-function of `π₀ × ⊞ π_i` is the product. The split-centre hypothesis is essential (counterexample in the previous section). |
+| [RelativeCertifiedPoleComparisonsStatement](../../Langlands/Global/Factors/RelativeCertifiedPoleComparisonsStatement.md) (Lean `6e7b8782`, Markdown `cc96b98d`) | candidate `c547b7c2-f8de-45a8-ab62-2292a80ec281`, review task `9fe1431c-b4fe-4280-afbd-598fb6fe2318` (Reviewer 530), Library `730bd1f2` | Henniart 2000, Corollaire 2.4 and Lemme 2.8, pp.445–448, derived: `Langlands.Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement`. The published predicate `RelativeCertifiedPoleComparisons F E c v ψ` holds for all Galois extensions `E/F` of number fields, arithmetic fundamental class families `c`, finite places `v` and nontrivial additive characters `ψ` of `F_v`. That is, a `ψ`-self-dual measure exists. For every such measure the certified pair-factor data exist, with regular completed germs agreeing at `0` and both pole formulas. It is the universal form of the hypothesis of the proved `relativePolePairing`. It does not assert that any witnessed generator exists. |
+| [HenniartCandidateExistenceReductionStatement](../../Langlands/Correspondence/HenniartCandidateExistenceReductionStatement.md) (Lean `d2cc1785`, Markdown `0552b85c`) | candidate `05b67471-ae21-4102-8456-0a324f99ec4d`, review task `ea1543c6-54c8-4e75-a4f7-75134db756e5` (Reviewer 863), Library `2e46b9ca` | Henniart 2000, §2.7, Théorème 3.1 and §§3.7–3.8, derived: `Langlands.Henniart.CandidateExistenceReductionStatement.{uK, uW, uP, uE, uQ}`. It is an implication with five hypotheses: Harris 1998 Proposition 4.8 (`Proposition48Statement.{uK, 0, 0, 0, uP}`), Henniart's Théorème 2.4 (`AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP}`), local relative class formation (`LocalRelativeClassFormationStatement.{0}`), the pole comparisons above (`.{0, uW, uP}`) and the composite-map statement (`HenniartCompositeMapStatement.{0, uK, uW, uP, uE}`). Its conclusion is `CandidateExistenceStatement.{uK, uW, 0, uE, uQ}`. The automorphic-lattice universe is `0` because the global construction produces number fields in `Type`. The transport to an arbitrary automorphic universe is not part of it; that is Task 5583 (`54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, Worker 5732). |
+
+Proof tasks, inspected on 13 November 2026. Each is a `lean.proof@1` task with
+environment `5c94c648`, published by Worker 3657 under this program. Each was
+ready, with no member and no candidate. Task publication divides proof
+obligations; it is not proof evidence.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 5921, `786d8bc1-6a9b-4fa0-ae6c-89e17489000c` | `Langlands.Global.CuspidalPairPoleStatement`; Cogdell's route through the global Rankin–Selberg integrals and the mirabolic Eisenstein series |
+| Task 5978, `fd17a0f9-9ab1-46d6-a8d9-af3587d0fdcd` | `Langlands.Global.CuspidalIsobaricPoleOrderStatement`; Task 5921, Shahidi's nonvanishing (Task 5816), the symmetry of the contragredient relation and additivity of `meromorphicOrderAt` |
+| Task 6017, `0f17fd08-105e-4659-b949-42f622d60eaa` | `Langlands.Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement`; Henniart's Théorème 2.4 and Corollaire 2.4 (proof tasks `65c9a94c-af88-4876-baa4-43d78ccd5531` and `6f8aff78-c965-484e-8f71-d3ca86f6d201`), the JPSS and Weil pole formulas, conjugacy of local maps and unitarity of central characters |
+| Task 6289, `207f459d-c3ed-4e90-b4e8-c71e0bba6101` | `Langlands.Henniart.CandidateExistenceReductionStatement`, from its five hypotheses and proved Library results only; it also requires a Library repair, below |
+
+Task 6289 includes a repair. In Library `46cfa5dd` the theorem
+`Langlands.Automorphic.OperatorRealization.evaluate_toContinuous_smul` is
+declared twice, with the same statement, in
+`Langlands/Automorphic/CuspidalAdmissible/Reproduction.lean` and in
+`Langlands/Automorphic/OperatorScalarCentralCharacter.lean`. The reduction
+needs `henniartGlobalization_of_inputs`, whose module imports the first,
+together with `associatedCentralCharacter`, whose module imports the second.
+So no module can use both until one declaration is removed. Worker 3657 shared
+a complete candidate route as the task's draft revision 1. It moves the
+theorem to a new module imported by both files and proves the reduction. The
+draft compiled in the pinned environment over Library `4bd8ef92` with no
+errors. It is a draft only; it has not been validated or reviewed.
+
+The open inputs of the reduction and their proof tasks, found by TaskHub
+search on 13 November 2026:
+
+- Henniart's Théorème 2.4: task `65c9a94c-af88-4876-baa4-43d78ccd5531`;
+- the pole comparisons: Task 6017 above;
+- the composite-map statement: task `9e23a040-16d7-4a7a-bd9b-35a08938d3c4`
+  (Task 5231), an assembly of four published statements with their own proof
+  tasks;
+- Harris's Proposition 4.8 and `LocalRelativeClassFormationStatement`: the
+  searches `Proposition48Statement`, `Harris Proposition 4.8` and
+  `LocalRelativeClassFormationStatement` found no proof task for either. Task
+  `1b87b965-a232-4c02-a51f-e287f630c549` proves that Harris's Proposition 4.8
+  implies `HenniartGlobalizationStatement`; it does not prove the
+  proposition.
+
+GH's own proof of Lemma 11.8.1 ("apply Theorem 11.7.1") omits one input. A
+zero at `s = 1` of some `Λ(s, π₀ × π_i)` with `π_i ≇ π₀^∨` would lower the
+pole order. The statement Markdown (§6) supplies it from the published
+Shahidi 1981 Theorem 5.2 (`CuspidalPairBoundaryNonvanishingStatement`).
+
+The shared DAG records the four statements and proof tasks on
+`proof.cuspidal-pair-poles`, `proof.cuspidal-isobaric-pole-order`,
+`proof.relative-certified-pole-comparisons` and
+`proof.henniart-candidate-existence-reduction` (revision 142).
+
+Remaining L4 targets of the program's list. A search of the Library's
+Markdown for their Getz–Hahn numbers, and of its Lean for the half-plane
+condition `1 ≤ s.re`, found no public statement of:
+
+- the representation-theoretic forms of Getz–Hahn Theorem 10.7.2
+  (Jacquet–Shalika 1981, Theorem 4.4), p.287, and of Theorem 11.7.2 and
+  Corollary 11.7.3, p.309. Their numerical counterparts are in the published,
+  unproved `CuspidalSpectralRigidityStatement` (previous section);
+- the isobaric representations of Getz–Hahn Theorem 10.7.5 and
+  Definition 10.7.6, pp.288–289. `PositiveRankCuspidalClass` carries
+  mixed-rank lists of cuspidal classes, but no isobaric sum is constructed;
+- Getz–Hahn Theorem 11.5.2, p.305: for unitary `π`, `π'` the local
+  `L(s, π × π')` is holomorphic and nonzero for `Re s ≥ 1`. The Library
+  states only special cases: Jacquet–Shalika's convergence of the
+  equal-rank integrals of unitary generic pairs on `Re s ≥ 1`
+  (`EqualRankEulerStatement`) and the unramified case
+  (`UnramifiedUnitaryPoleFreeStatement`, proved as
+  `unramifiedUnitaryPoleFree`). GH's archimedean reference, Barthel–
+  Ramakrishnan 1994, §2, is recorded by the roadmap as missing.
+
+H3 is now reduced, by a published statement, to the five inputs above;
+neither the reduction nor any of them is proved. No L3 or L4 proof is
+public, and neither track of the program is complete.
