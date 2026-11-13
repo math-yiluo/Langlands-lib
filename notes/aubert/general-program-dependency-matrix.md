@@ -1,5 +1,12 @@
 # General Aubert duality: declaration and dependency matrix
 
+The [13 November publication and dependency update](general-program-publication-update-2026-11-13.md)
+records the subsequent publication of the canonical smooth complex, endpoints
+and bridge statements, the new canonical Family 3/4 and whole-graded GL
+targets, and their unreviewed proof successors. That bounded addendum
+supersedes the pending-integration statuses for those units below; the other
+rows retain this matrix's historical commit.
+
 This matrix covers all five families of the standalone program
 `46df6a68-5db4-4428-8044-05151d6ce1f6` (Task 3640), revision 1. Declaration
 names, proof status and premise boundaries are pinned to Library commit
