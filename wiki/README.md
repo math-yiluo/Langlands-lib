@@ -49,6 +49,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Local Kneser–Tits: published reductions and open inputs](../notes/group-schemes/local-kneser-tits-route.md) — How `LocalKneserTitsStatement` reduces by published theorems to rank-one Levi factors, local cocycle vanishing, three Weil-restriction statements and the absolutely almost-simple rank-one case, which of these are proved, the case analysis over the rank-one classification, the owning tasks and a dependency-cycle warning.
 
+- [Actual Tits indices: existence, anisotropic kernel and open targets](../notes/group-schemes/tits-index-progress.md) — Status of the Tits §§2.1–2.3 index interface over arbitrary fields: the published existence and anisotropic-kernel proofs, how to use `titsIndexExistence`, the unproved independence, relative-structure and kernel-index statements with their tasks, and the first input of the local rank-one reduction that it now supplies.
+
 - [Group-scheme ledger, family 6: Galois and central structure](../notes/group-schemes/ledger-family-6-galois-central.md) — Source-to-declaration rows for Galois actions on torus lattices and the star action, quasi-split groups and inner forms, centres and adjoint groups, derived groups and cocentres, central isogenies and simply connected covers, with exact hypotheses, status, evidence and owner tasks.
 
 - [Group-scheme ledger, family 7: split realization and classification](../notes/group-schemes/ledger-family-7-split-classification.md) — Source-to-declaration rows for existence, isomorphism and central isogeny theorems over fields, the semisimplicity criterion, rank-one inputs, pinnings, Steinberg data and integral models, with exact hypotheses, status, evidence and owner tasks.

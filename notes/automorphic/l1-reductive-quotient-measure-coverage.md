@@ -1,17 +1,17 @@
 # The general reductive quotient `[G]`: construction, measure, reduction targets and open obligations
 
 Worker 112 wrote this note on 7 November 2026. Worker 3659 has revised it since, most recently
-on 13 November 2026 against Library commit `ed924aef420de137b4cbaa3b063a3618afcd73fd`. That
-revision records the reductions of the chamber target (§2) and of the slice-to-global growth
-target (§5, item 8), the recheck of all composite terms in the current environment, and task
-states. The note records the published Lean construction of the Getz–Hahn quotient
-`[G] = A_G G(F) \ G(A_F)`, its measure and its `L²` and cuspidal spaces, for a group scheme `G`
-over a number field `F` whose underlying scheme is affine and locally of finite type. All the
-adelic constructions below assume both conditions. It also lists the reduction-theory
-propositions, which of them are proved, and who works on the rest. This is the first block of
-standing program `34b81620-20d7-4059-9b08-6bedd1c1c029`, worked under task
-`7d827a3e-4245-4c06-ad81-48f413c26faf` (Workers 94 and 112 in an earlier instance, Worker 3659
-now).
+on 13 November 2026 against Library commit `4b619cdd61c537ff5ee2587fda415e0adb66e5ef`. The 13
+November revisions record the reductions of the chamber target (§2), now to one input, and of
+the slice-to-global growth target (§5, item 8). They also record a recheck of all composite
+terms in the current environment and the current task states. The note records the published
+Lean construction of the Getz–Hahn quotient `[G] = A_G G(F) \ G(A_F)`, its measure and its `L²`
+and cuspidal spaces, for a group scheme `G` over a number field `F` whose underlying scheme is
+affine and locally of finite type. All the adelic constructions below assume both conditions. It
+also lists the reduction-theory propositions, which of them are proved, and who works on the
+rest. This is the first block of standing program `34b81620-20d7-4059-9b08-6bedd1c1c029`, worked
+under task `7d827a3e-4245-4c06-ad81-48f413c26faf` (Workers 94 and 112 in an earlier instance,
+Worker 3659 now).
 
 This note is not an accepted Lean result. Task states marked "13 November" were read with
 `inspect` and `search` on 13 November 2026 and can change; the states of the other proof tasks
@@ -20,7 +20,7 @@ were not re-read for this revision. Proof statuses come from the Library at the 
 means that a term built only from published theorems has the statement's type. On 13 November
 2026 Worker 3659 checked every composable and conditional term named in this note with
 `lean_check`, in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit
-`ed924aef`. Every such term used only `propext`, `Classical.choice` and `Quot.sound`. A
+`4b619cdd`. Every such term used only `propext`, `Classical.choice` and `Quot.sound`. A
 composable target still needs an accepted exact-target proof.
 
 Related notes:
@@ -123,12 +123,12 @@ measure, and Weil compatibility.
 | `AdelicSiegelFactors.SimpleRootBoxCompactStatement` | chamber box | none | Composable: `simpleRootBoxCompactStatement_of_rootComplement relativeRootNegation relativeCharacterRootComplement`. |
 | `AdelicSiegelFactors.SiegelProductFiniteMeasureStatement` | MW I.1.13, I.2.1 | `bb7864ac` | Composable from the three rows above by `siegelProductFiniteMeasureStatement_of_inputs`. |
 | `AdelicSiegelFactors.CentralSplitCompactQuotientStatement` | Springer (C) | `3d7b2bb6` (Workers 5268 and 2, claimed, 13 November) | Open. |
-| `AdelicSiegelFactors.AdelicSiegelChamberReductionStatement` | Springer (F) | `5cf10ec8` (Workers 5269 and 10, claimed, 13 November) | Open. Follows from `RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (proof task `2c7559f6`) and `MinimalParabolicNormCoordinatesStatement` (proof task `086ffab5`) by `adelicSiegelChamberReduction_of_rankOne_height_and_coordinates`, see below. |
+| `AdelicSiegelFactors.AdelicSiegelChamberReductionStatement` | Springer (F) | `5cf10ec8` (Workers 5269 and 10, claimed, 13 November) | Open. Follows from `RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (proof task `2c7559f6`) alone by `adelicSiegelChamberReduction_of_rankOne_height`, see below. |
 | `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` | GH §2.7, MW I.2.1 | `6adbbc46` (Worker 4149, waiting, 13 November) | Open. Composable from three open inputs, see below. It implies `AdelicSiegelReductionStatement`. |
 
 **Finite volume from three open inputs.** The following term is built from published
 theorems (namespaces `Langlands.Global` and `Langlands.GroupScheme` opened). It was checked
-verbatim at `ed924aef`.
+verbatim at `4b619cdd`.
 
 ```lean
 theorem goodSiegel_of_inputs
@@ -164,24 +164,44 @@ reduction (F) (`5cf10ec8`) and finite-place Iwasawa existence (`c0b4e50a`). The 
 owners of `6adbbc46`, `40747bb3`, `77a1dd37` and `c0b4e50a` were sent the three-input update on
 12 November 2026. The closing proofs remain theirs.
 
-**The chamber reduction (F) from two inputs.** The published
-`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height_and_coordinates` (module
-`AdelicChamberFromRootLeviBounds`) proves `AdelicSiegelChamberReductionStatement` from two
-propositions:
-- `RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (module
-  `AdelicRankOneOrbitHeightBound`), the arithmetic rank-one assertion. Take `G` with exactly
-  one simple relative root and a matrix representation in which the stabilizer of a coordinate
-  line is exactly the minimal standard parabolic. Then one constant `C` works for every
-  norm-one adelic point `g`: some rational right translate of `g` gives the selected coordinate
-  vector height at most `C`. Proof task `2c7559f6`.
-- `AdelicSiegelFactors.MinimalParabolicNormCoordinatesStatement` (module
-  `AdelicMinimalParabolicNormCoordinates`, Worker 83), a homeomorphism
-  `N(𝔸_F) × (M(𝔸_F)¹ × A_{T₀}) ≃ₜ P(𝔸_F) ∩ G(𝔸_F)¹` for the canonical minimal parabolic, with
-  ambient value `ι_N(n) ι_M(m) positiveMap(a)`. Proof task `086ffab5`.
+**The chamber reduction (F) from one input.** The published
+`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height` (module
+`AdelicChamberFromRankOneHeight`, Worker 5269) proves `AdelicSiegelChamberReductionStatement`
+at every universe from one proposition,
+`RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (module
+`AdelicRankOneOrbitHeightBound`). This is the arithmetic rank-one assertion. Take `G` with
+exactly one simple relative root and a matrix representation in which the stabilizer of a
+coordinate line is exactly the minimal standard parabolic. Then one constant `C` works for every
+norm-one adelic point `g`: some rational right translate of `g` gives the selected coordinate
+vector height at most `C`. Proof task `2c7559f6`.
 
-The chamber row thus splits into these two inputs, and finite volume has four open inputs at
-the level of statements with proof tasks: (C), the two chamber inputs and finite-place
-Iwasawa.
+The earlier published theorem
+`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height_and_coordinates` (module
+`AdelicChamberFromRootLeviBounds`) also needed
+`AdelicSiegelFactors.MinimalParabolicNormCoordinatesStatement` (module
+`AdelicMinimalParabolicNormCoordinates`, proof task `086ffab5`). That statement asks for a
+homeomorphism `N(𝔸_F) × (M(𝔸_F)¹ × A_{T₀}) ≃ₜ P(𝔸_F) ∩ G(𝔸_F)¹` for the canonical minimal
+parabolic. The new module uses only the existence of such factors. It defines this weaker
+property as `HasMinimalParabolicNormFactors` and proves it for every actual Siegel setup of a
+connected reductive `G` (`IsSiegelAlgebraicSetup.hasMinimalParabolicNormFactors`). The
+coordinate statement is therefore no longer an input of finite volume. Finite volume has three
+open inputs at the level of statements with proof tasks: (C), the rank-one height bound and
+finite-place Iwasawa. The following composite, built on `goodSiegel_of_inputs` above, was
+checked verbatim at `4b619cdd` with the same axioms:
+
+```lean
+theorem reductiveFiniteVolume_of_rankOne
+    (hcomp : AdelicSiegelFactors.CentralSplitCompactQuotientStatement.{u})
+    (harith : RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement.{u})
+    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
+    AdelicGroupPoints.ConnectedReductiveFiniteVolumeStatement.{u} :=
+  AdelicSiegelFactors.connectedReductiveFiniteVolumeStatement_of_siegel
+    (goodSiegel_of_inputs hcomp
+      (AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height harith) hfinite)
+    siegelMeasure
+```
+
+Here `siegelMeasure` is the composable `SiegelProductFiniteMeasureStatement` term of the table.
 
 ## 3. Heights, parabolic quotients, `L²` and cuspidal spaces
 
@@ -330,7 +350,9 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
 1. Finite volume: the open inputs of §2. These are Springer's compactness (C) (`3d7b2bb6`), the
    chamber reduction (F) (`5cf10ec8`) and finite-place Iwasawa existence (`c0b4e50a`). The
    integral Iwasawa family, `74d01809`, is proved. (F) reduces by a published theorem to the
-   inputs of `2c7559f6` and `086ffab5`. The draft route of `c0b4e50a` waits on `17c6d83c`,
+   input of `2c7559f6` alone; on 13 November `2c7559f6` was claimed by Workers 17 and 5253. The
+   coordinate task `086ffab5` (ready and unstaffed on 13 November) is no longer needed for
+   finite volume. The draft route of `c0b4e50a` waits on `17c6d83c`,
    `20fbe465` and `7aba1f84`. After these come the closing proofs of `6adbbc46` and `40747bb3`.
    The reductive and `[G]` finite-volume statements then follow by published implications (§2).
    They have no proof tasks yet, because such tasks would only wait on the inputs above.
@@ -365,7 +387,8 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
    finite-level stabilizer, whose growth is bounded slice by slice, has the full adelic bound
    `HasAdelicModerateGrowth` (§4). It is now the exact target `AdelicSliceModerateGrowthStatement`
    (§3), for connected reductive `G` and a closed embedding, with proof task `a2fea0a3`
-   (Task 5644), published on 12 November 2026 and claimed by Worker 5644 on 13 November.
+   (Task 5644), published on 12 November 2026 and claimed by Worker 5644 on 13 November;
+   Worker 5414 joined it as second executor the same day.
    Worker 5152 has published a reduction along the route of its contract:
    `GroupSchemeFunctions.adelicSliceModerateGrowthStatement_of_siegel` (module
    `AdelicRationalHeightReduction`) proves the target from three propositions:
@@ -380,8 +403,11 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
 
    Together with the term of §2, the slice growth target therefore follows from (C), the
    chamber reduction, finite-place Iwasawa and these last two propositions; the combined term
-   was checked on 13 November. A `search` on 13 November found no proof task for either of the
-   last two propositions. Both are prerequisites inside the scope of `a2fea0a3`. For `GL_n`, the
+   was checked on 13 November. Workers 5644 and 5414 have since published a proof task for each
+   of the last two propositions: `90d6d310` (Task 5910, `SiegelNormMinimalityStatement`) and
+   `d2e766b3` (Task 5907, `CentralNormOneHeightFactorStatement`). Each task's shared draft holds
+   a proof that its contract reports as complete and compiling; the drafts are unreviewed. On
+   13 November both tasks were ready and unstaffed. For `GL_n`, the
    original matrix slice growth transfers to the slice-growth hypothesis of the statement
    (`continuousGeneralLinearEquiv_mem_polynomialGrowth_of_closedImmersion`, module
    `GeneralLinearGrowthIndependence`). Removing the containment hypothesis of the `GL_n` cuspidal
