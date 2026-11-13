@@ -1,5 +1,9 @@
 # Group-scheme ledger, family 8: relative structure over general bases
 
+For the dynamic statement publications and proof owners as of 13 November
+2026, see [the dated dynamic update](dynamic-relative-progress.md).
+It updates rows D2 and F1–F2; the labels below describe the original snapshot.
+
 Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
 `2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
 ledger for family 8 of that program's contract. Family 8 covers:

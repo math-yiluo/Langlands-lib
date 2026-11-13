@@ -3,18 +3,21 @@
 This matrix covers all five families of the standalone program
 `46df6a68-5db4-4428-8044-05151d6ce1f6` (Task 3640), revision 1. Declaration
 names, proof status and premise boundaries are pinned to Library commit
-`b128d289028bf75629e9e364ecf151c484b27a85`, checked on 13 November 2026.
+`7dc9118a3eb340e83e65d6e4174763b7a61e573c`, checked on 13 November 2026.
 This refresh replaces the version pinned to
-`642008d6b3b837d8bd76de0cabcaff3db00088c0`. Published term transitivity
+`b128d289028bf75629e9e364ecf151c484b27a85`. Published term transitivity
 and the top term now reduce involutivity to induced K0 Weyl conjugacy alone.
 Corollary 1.10(a) has the same single-input reduction. Irreducibility of `E#`
 now has a published reduction, while its class formula and the required
 representation-theoretic inputs remain unproved. The canonical operator
 construction supplies its topology, root and subgroup-regularity data from
 published declarations, retaining exactly the dynamic induction and Jacquet
-finite-length inputs. Actual GL simple-root indexing and subgroup comparisons
-are also published; the rational-point/matrix operator comparison is still
-pending.
+finite-length inputs. The canonical standard-Levi operator and actual relative
+Weyl/Coxeter package are now public too. The exact rational-point/matrix GL
+operator comparison is proved, including existence of its per-index
+finite-length premises. Its field scope remains `PadicField`; it does not
+prove the general dynamic finite-length targets. The conditional bridge from
+generic irreducibility to same-Levi generic isomorphism is also now proved.
 
 The preceding refresh recorded the proof of Aubert's Theorem 2.3 in the
 existing matrix GL models (`A.aubertTheorem23`) and the alternate
@@ -91,11 +94,26 @@ checked for the 11 November refresh against environment
 `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` with zero errors and the same three
 axioms. Those older composites were not recompiled for this refresh.
 
+After context recovery, Worker 3640 recompiled
+`GeneralLinearRationalIndexing`, `CanonicalRationalOperator` and the private
+composite audit in the same approved environment, with zero errors or
+warnings, including the new two-input generic-isomorphism composite.
+The new GL dependency diagnostic also compiled successfully. Its
+[separate inventory](gl-rational-comparison-dependencies.md) records the
+method, exact declarations and limits of that development evidence.
+
 Proof status was checked by a scripted scan for theorems whose stated type
 is a target proposition, followed by reading signatures and the paired
 Markdown, including implication aliases that such a scan can miss. The
-13 November scan and follow-up covered the tabulated declarations through
-the pinned commit. This refresh adds no complete transitive dependency traversal.
+earlier 13 November scan and follow-up covered the tabulated declarations
+through `b128d289`. A file comparison with the current pinned Library found
+no changes to those existing Aubert target/proof pairs. The added published
+canonical structure, GL statement/proof/transport and generic-isomorphism
+bridge pairs were read for this refresh. The six prerequisite statements
+were also searched for exact proofs; their status below is unchanged.
+The new complete project-declaration traversal covers the exact GL comparison
+and its statement only; earlier main-theorem dependency accounts retain
+their stated scope.
 Staged, reviewed or approved candidates that are not yet integrated are
 mentioned separately and are never counted as proofs.
 
@@ -141,13 +159,14 @@ binder groups.
 | Standard family and roots | `GS.StandardCocharacterStatement`, `HasRelativeRootSystem`, connected reductivity, maximal split torus and generic cocharacter | Constructs the actual standard parabolic, Levi and radical family and finite simple-root indexing. The statement-level inputs are proved (table above). |
 | Ambient topology | Local compactness, nonarchimedean group structure and Hausdorffness of canonical rational points; closed standard `P` and `U`; continuity of the derived Levi projections; `IsLimitOfCompactSubgroups` for each `U` | Supplied by published declarations in `canonicalRationalAlternatingOperator`, as detailed below. Compact-limit means every compact subset lies in a compact subgroup. |
 | Ambient finite length | Separate `hiFl` and `hrFl`: actual normalized induction and Jacquet functors preserve finite length | Representation-theoretic obligations, carried by `DynamicInductionFiniteLengthStatement` and `DynamicJacquetFiniteLengthStatement`. |
-| Restricted Levi family | `StandardLeviIntersectionStatement`, closed `M`, continuous inside-Levi projections, compact-limit restricted radicals, separate `hiLFl` and `hrLFl` | Constructs Levi-in-Levi terms. `R.rationalLeviFiniteLengthStatement` proves `RationalLeviFiniteLengthStatement`. |
-| Actual Weyl transport | `StandardLeviConjugationStatement`, point normalizer and centralizer comparisons, an actual finite Coxeter system, `RootLengthComparison`, `PositiveSimpleReflectionComparison`, `minimalityLengthCriterion`, `associatedSubsetLaws` | Identifies longest representatives and associated Levis. The conjugation statement and the comparisons are proved. |
+| Restricted Levi family | `StandardLeviIntersectionStatement`, closed `M`, continuous inside-Levi projections, compact-limit restricted radicals, separate `hiLFl` and `hrLFl` | `canonicalRationalLeviAlternatingOperator` supplies these from published structure and the same two global dynamic finite-length inputs. `R.rationalLeviFiniteLengthStatement` proves `RationalLeviFiniteLengthStatement`. |
+| Actual Weyl transport | `StandardLeviConjugationStatement`, point normalizer and centralizer comparisons, an actual finite Coxeter system, `RootLengthComparison`, `PositiveSimpleReflectionComparison`, `minimalityLengthCriterion`, `associatedSubsetLaws` | `CanonicalRationalStructure` assembles the actual canonical Coxeter system and these comparisons, with no representation input. |
 | Smooth dual | Actual `ContragredientPreservesFiniteLength` and the exactness/cofinality inputs to `contragredientK0` | Representation-theoretic finiteness for the smooth dual. |
 
 The six representation prerequisites in
 [PrerequisiteStatements](../../Langlands/Representation/Aubert/General/PrerequisiteStatements.lean)
-are all **open**, each with a focused proof task:
+are all **open**, each with a focused proof task. Their namespace is
+`Langlands.Aubert.General`:
 
 | Proposition | Proof task |
 | --- | --- |
@@ -162,6 +181,18 @@ The six statements are representation-theoretic obligations, not structural
 inputs. Admissibility, Howe finite length, adjunctions, geometric
 filtrations, cuspidal support and induced-class Weyl invariance must be
 proved wherever they are used.
+
+The new conditional Jacquet–Cartan construction
+`Langlands.Aubert.General.rationalPointsJacquetCartanDatum_of_availability_of_renardCartan`
+in
+[RationalJacquetCartanAvailability](../../Langlands/Representation/Aubert/General/RationalJacquetCartanAvailability.lean)
+needs `BruhatTitsAvailabilityStatement` and `AvailableRenardCartanStatement`.
+Its wall contraction is supplied by the published
+`uniformizerPowers_conj_mem_of_standard` and
+`isCartanLatticeModel_rational_of_standard` in
+[RationalUniformizerContraction](../../Langlands/Representation/Aubert/General/RationalUniformizerContraction.lean).
+This reduces a structural construction's inputs; it is not a proof of any
+of the six representation prerequisites.
 
 ## Families 1 and 2: actual operator and formal identities
 
@@ -195,7 +226,38 @@ coefficient `(-1)^|I|`, including the empty-root case. This construction
 neither proves those two targets nor changes the premises of the existing
 rational proposition targets.
 
-| Main target | Status at `b128d289` | Remaining inputs and evidence | Proof task |
+The published companion
+[CanonicalRationalStructure](../../Langlands/Representation/Aubert/General/CanonicalRationalStructure.lean)
+adds `canonicalRationalLeviAlternatingOperator` on every actual standard
+Levi `M_J`, with roots indexed by `J`. It supplies closedness, continuity of
+the restricted projections, compact-limit restricted radicals and their
+finite-length packages, retaining the same two dynamic finite-length
+inputs at carrier universe `max (u + 1) v`. The adapters
+`rationalLeviAlternatingOperator_eq_canonical` and
+`rationalAlternatingOperator_eq_canonical` are `rfl` by proof irrelevance.
+They rewrite operators when the global dynamic inputs are given; they do
+not infer those global inputs from the old per-index premises.
+
+The same module constructs `canonicalPointCoxeterData`,
+`canonicalCoxeterMatrix` and `canonicalCoxeterSystem` on the actual quotient
+`N_G(T₀)/Z_G(T₀)`. It supplies point normalizer/centralizer comparisons,
+finiteness, root-length and simple-reflection comparisons, the actual Levi
+Weyl identifications, minimality and associated-subset laws, and
+`canonicalAssociatedLeviConjugation` for every prescribed normalizer lift.
+This Weyl section takes no representation input. It also covers empty roots.
+
+A separate statement candidate, `CanonicalRationalTheorem17Targets`, has
+machine validation and independent statement-review approval but is **not
+published** at this check. It declares eight canonical targets: the five
+Theorem 1.7 identities, both parts of Corollary 1.10, and induced-K0 Weyl
+conjugacy. They retain both global dynamic finite-length inputs; smooth-dual
+commutation additionally retains per-group contragredient finite length.
+The canonical Jacquet target fixes the canonical Coxeter system. These are
+statements only; forward adapters and separate exact proofs are still
+required under Worker 29's scope. No reverse implication to the existing
+premise-taking targets is claimed, and existing proof owners are unchanged.
+
+| Main target | Status at `7dc9118a` | Remaining inputs and evidence | Proof task |
 | --- | --- | --- | --- |
 | `RationalCuspidalEigenvalueStatement` | Proved: `rationalCuspidalEigenvalue` | None. | — |
 | `RationalGeometricK0ExpansionStatement` | Proved: `rationalGeometricK0Expansion` | None. The proof applies `rationalGeometricK0Expansion_of_standardParabolicPoints` to `GS.standardParabolicPointsStatement_proof`. | `f722f1c6-147e-453e-8664-02b7822b7bce` (completed) |
@@ -232,11 +294,14 @@ It needs both
 (Renard VI.8.4, proof task `2113598c-9c21-461a-9a44-f46066850c3e`)
 and `Langlands.Renard.AlgebraicFamily.IrreducibleInducedTwistExistenceStatement`
 (the existence consequence of Konno, Theorem 4.2); neither is proved at this
-commit. The separate
-`RationalSameLeviGenericInductionIsoFromIrreducibilityStatement` is only a
-published implication proposition, with no proof. Thus the generic
-isomorphism branch still needs its bridge proof as well as the
-irreducibility inputs. These declarations are in
+commit. The conditional bridge
+`RationalSameLeviGenericInductionIsoFromIrreducibilityStatement` is now
+proved by `rationalSameLeviGenericInductionIso_of_irreducibility` in
+[RationalSameLeviGenericIsoFromIrreducibilityProof](../../Langlands/Representation/Aubert/General/RationalSameLeviGenericIsoFromIrreducibilityProof.lean).
+It intersects the two principal opens by multiplying their nonzero
+polynomials, then applies Schur's lemma to the published nonzero intertwiner.
+Thus the generic isomorphism branch retains the two irreducibility inputs;
+the bridge proof itself is no longer an open obligation. These declarations are in
 [RationalSameLeviGenericIntertwinerProof](../../Langlands/Representation/Aubert/General/RationalSameLeviGenericIntertwinerProof.lean),
 [RationalSameLeviGenericIrreducibilityReduction](../../Langlands/Representation/Aubert/General/RationalSameLeviGenericIrreducibilityReduction.lean)
 and
@@ -256,7 +321,7 @@ in
 and
 [RationalCorrectedTheorem36](../../Langlands/Representation/Aubert/General/RationalCorrectedTheorem36.lean).
 
-| Main target | Status at `b128d289` | Remaining inputs and evidence | Proof task |
+| Main target | Status at `7dc9118a` | Remaining inputs and evidence | Proof task |
 | --- | --- | --- | --- |
 | `RationalCorrectedTheorem36Statement` | Reduced | `rationalCorrectedTheorem36_of_inputs` needs `RationalCorrectedExactnessInputs`: Bruhat (proved), graded vanishing, graded transition (proved), support induction-Jacquet stability (reduced to VI.3.5 alone, below) and exactness detection. | `613611a4-9c0e-43e3-82aa-f91d2044cfe2` |
 | `RationalCorrectedGradedVanishingStatement` | Open | No published reduction. | `277860be-2aeb-4a85-8ccb-f1e2e5c573b9` |
@@ -268,7 +333,7 @@ and
 The nine support-category targets are in
 [RationalSupportCategoryTargets](../../Langlands/Representation/Aubert/General/RationalSupportCategoryTargets.lean).
 
-| Support target | Status at `b128d289` | Remaining inputs | Proof task |
+| Support target | Status at `7dc9118a` | Remaining inputs | Proof task |
 | --- | --- | --- | --- |
 | `RationalCuspidalSeriesExistenceStatement` | Proved: `rationalCuspidalSeriesExistence` | None. | — |
 | `RationalSupportCategoryAssociationInvarianceStatement` | Proved: `rationalSupportCategoryAssociationInvariance` | None. | — |
@@ -374,7 +439,7 @@ Source: Corollary 3.9, printed p.2189, with the corrected complex and erratum
 p.4690. All six targets are in
 [RationalSharpConsequenceTargets](../../Langlands/Representation/Aubert/General/RationalSharpConsequenceTargets.lean).
 
-| Main target | Status at `b128d289` | Remaining inputs | Proof task |
+| Main target | Status at `7dc9118a` | Remaining inputs | Proof task |
 | --- | --- | --- | --- |
 | `RationalSharpFiniteLengthStatement` | Open | No published reduction. | `0da1c37e-a39a-42e1-b90d-135db6c6e5c3` |
 | `RationalSharpClassFormulaStatement` | Open | No published reduction. | `13e2abdc-2be7-4191-b74b-9eae99a56fcc` |
@@ -411,11 +476,12 @@ pp.2184–2185. The [GL target map](gl-specialization-source-map.md),
 [point-topology comparison](gl-algebraic-point-specialization.md) give the
 model and dependency boundaries.
 
-| Target | Status at `b128d289` | Evidence or remaining inputs |
+| Target | Status at `7dc9118a` | Evidence or remaining inputs |
 | --- | --- | --- |
 | `R.GL.blockRootSubsetEquiv` and its comparisons | Published construction and proofs | Equivalence of GL block shapes with finite subsets of the actual simple relative roots; `blockRootSubsetEquiv_card`, `blockRootSubsetEquiv_sign`, `rootSet_blockRootSubsetEquiv`, and the parabolic, Levi and unipotent comap comparisons. These hold over any field, in every natural rank. |
 | `Langlands.Parabolic.GeneralLinearModulusCompatibility` | Proved: `Langlands.Parabolic.generalLinearModulusCompatibility` | Full Haar-to-block modulus comparison in every rank, including rank zero. |
 | `A.generalAlternatingOperator_eq` with its modulus premise discharged | Closes by composition | `A.generalAlternatingOperator_eq F T n (fun B => Parabolic.generalLinearModulusCompatibility F T B)` identifies the general unadjusted operator on the GL block families with `A.alternatingOperator` in every rank. The comparison is for `PadicField` models. |
+| `R.GL.RationalAlternatingOperatorComparisonStatement` | Proved: `R.GL.rationalAlternatingOperatorComparison` | No extra premises. For `PadicField` models and every natural rank, including zero, supplies the actual rational-point topology and per-index premises and intertwines the two operators by exact-K0 pullback. It quantifies every strictly decreasing diagonal cocharacter. |
 | `A.BinaryProductExactnessStatement` | Proved: `A.binaryProductExactness` | — |
 | `A.GradedInductionRingLawsStatement` | Proved: `A.gradedInductionRingLaws` | — |
 | `A.SegmentPolynomialComparisonStatement` | Proved: `A.segmentPolynomialComparison` | — |
@@ -437,21 +503,50 @@ For a strictly decreasing diagonal cocharacter, it identifies the general
 sign with `(-1)^(N-B.length)` and all three literal subgroups with the
 canonical inverse images of the existing matrix subgroups. The explicit
 `upperCocharacter` supplies that chamber in every rank, including zero.
-These algebraic comparisons do not transport the normalized functors or
-the exact-K0 operator. In particular, the row for
-`A.generalAlternatingOperator_eq` compares generic block families, rather
-than the actual rational-point family.
+The algebraic indexing comparisons alone do not transport the normalized
+functors or exact-K0 operator. That transport is now supplied by the exact
+theorem in
+[GeneralLinearRationalComparisonProof](../../Langlands/Representation/Aubert/General/GeneralLinearRationalComparisonProof.lean),
+proving the published
+[comparison statement](../../Langlands/Representation/Aubert/General/GeneralLinearRationalComparisonStatement.lean).
 
-Worker 29 retains the Family 5 actual-functor/K0/operator comparison scope.
-Their statement candidate `bed4aa8f-5e14-464e-8254-c5f493436cfa`, defining
-`R.GL.RationalAlternatingOperatorComparisonStatement`, has accepted machine
-validation and independent statement-review approval but is not yet public
-at this check. It compares `rationalAlternatingOperator` specialized to the
-general linear group scheme over `F : PadicField p` with
-`A.alternatingOperator`, using exact-K0 pullback along the canonical continuous
-rational-point/matrix group isomorphism. It also asserts existence of the
-required topology and finite-length premises. A separate exact proof
-successor is still required. A reported private proof is not counted here.
+For every `F : PadicField p`, compatible topological data `T`, natural rank
+`N` and diagonal cocharacter with strictly decreasing weights, the theorem
+proves all three parts of that statement:
+
+1. The actual rational-point group with canonical evaluation topology is
+   locally compact, Hausdorff and nonarchimedean.
+2. All operator premises exist, including closed subgroups, continuous Levi
+   projections, compact-limit radicals and finite-length preservation of
+   both normalized functors at carrier universe `max (u + 1) v`.
+3. For arbitrary proofs of those premises, exact-K0 pullback along
+   `GroupScheme.GeneralLinear.rationalPointsContinuousMulEquiv` intertwines
+   `A.alternatingOperator` and the actual `rationalAlternatingOperator`.
+
+The proof uses the published full modulus comparison and the generic
+transport helpers in
+[OperatorTransport](../../Langlands/Representation/Aubert/General/OperatorTransport.lean):
+`GroupTransport.continuous_projection_transport`,
+`GroupTransport.inductionPreservesFiniteLength_transport`,
+`GroupTransport.jacquetPreservesFiniteLength_transport` and
+`GroupTransport.alternatingOperator_transport` (in namespace
+`Langlands.Aubert.General`).
+The last helper transports the complete finite signed sum, including its
+index equivalence. The endpoint is the actual exact Grothendieck group,
+with all short-exact-sequence relations. No rational operator premise is
+left as an additional hypothesis of this GL target. Its per-instance
+finite-length proofs are GL-specific, and do not prove either global
+dynamic finite-length target for arbitrary local fields and reductive groups.
+The row for `A.generalAlternatingOperator_eq` remains a distinct block-family
+comparison.
+
+Worker 97, with Worker 29, published this exact proof in Task 5922. It is
+accepted and public, as is the comparison statement. Its transitive GL
+representation-theory dependencies are recorded below and in the
+[exact dependency inventory](gl-rational-comparison-dependencies.md).
+This closes the actual rational-point/matrix operator bridge in the stated
+`PadicField` scope. It does not replace the whole-graded-ring theorem,
+monomial comparison or support-sign adjustment by a generator calculation.
 
 ## Bottlenecks
 
@@ -480,7 +575,9 @@ Several open inputs each block many main targets.
    Corollary 1.10(b), Sharp irreducibility and Sharp involution.
    Generic irreducibility itself reduces to Renard VI.8.4 and the existence
    of an irreducible induced twist; the implication from generic
-   irreducibility to generic isomorphism is stated but not yet proved.
+   irreducibility to generic isomorphism is now proved by
+   `rationalSameLeviGenericInductionIso_of_irreducibility`; it retains that
+   irreducibility premise.
 4. **Corrected graded vanishing** (`277860be-2aeb-4a85-8ccb-f1e2e5c573b9`).
    It is the only remaining input of the associated-Levi comparison, and an
    input of Theorem 3.6.
@@ -489,7 +586,8 @@ Several open inputs each block many main targets.
 6. **Dynamic induction and Jacquet finite length**
    (`174d2de0-fa21-41b4-b091-f1b86481790b`,
    `73e60be8-481a-4cea-b464-eed3bd89be7f`). These are exactly the retained
-   inputs of the canonical operator construction. They also enter the
+   inputs of both the canonical ambient and standard-Levi operator
+   constructions. The GL comparison supplies only its GL instances. They also enter the
    published reductions for Sharp irreducibility and involution. A proof of
    a rational proposition with these facts inside its binders does not
    discharge them for the canonical operator.
@@ -553,6 +651,24 @@ values and identify each classification declaration by exact name.
   classification, representation-character independence, second
   adjointness, VI.3.5 splitting or fixed-level cuspidal finiteness.
   The special-vertex or joint-basis premise remains unproved.
+- The new exact `R.GL.rationalAlternatingOperatorComparison` and its
+  statement were separately traversed by declaration type and value,
+  including opaque values. The theorem reaches 31,418 project constants in
+  2,529 project modules; the statement reaches 30,841 in 2,480. Both closures
+  reach the same 67 constants (56 theorems) defined in ten
+  `Langlands.Representation.Classification` modules. They include
+  `Langlands.Classification.normalizedInductionFiniteLength`,
+  `Langlands.Parabolic.normalizedJacquetFiniteLength`,
+  `Langlands.Classification.irreducibleProductEmbedding` and
+  `Langlands.Classification.irreducibleProductFiniteLength`. These are GL
+  finite-length, Jacquet-length and supercuspidal-embedding dependencies;
+  module names alone do not identify a use of the Langlands quotient
+  classification theorem. The
+  [inventory](gl-rational-comparison-dependencies.md) lists every reached
+  classification-module declaration and distinguishes the four additional
+  classification modules that are only imported. No segment-classification
+  declaration is reached. This exact inventory, rather than a blanket
+  classification-independence claim, supplies the GL comparison's account.
 - Family 5: the published proofs of the segment exchange, adjusted
   involutivity and homogeneous multiplicativity each list, in their paired
   Markdown, the declarations they reach in `Langlands.Classification` and
@@ -577,15 +693,23 @@ values and identify each classification declaration by exact name.
 
 ## Remaining assembly
 
-Families 1–4 remain open. In Family 5, the existing matrix-model targets are
-proved or close by composition, and the actual rational-point indexing and
-subgroup comparisons are public. The actual rational-point/matrix
-functor/K0/operator bridge remains pending under Worker 29. The remaining
-work is to close the bottlenecks above, publish the composites through their
-owning tasks, publish and prove that GL comparison, and discharge the
-per-instance premises of the rational targets. Every proof task listed here
-belongs to its existing owner. Supporting helper publications and
-conditional reductions do not close their parent targets.
+Families 1–4 remain open. Their actual canonical ambient, standard-Levi
+and Weyl constructions are public, but the global representation inputs
+and the remaining main proofs above still need to be supplied. The eight
+canonical theorem targets remain an unpublished statement unit, with
+forward adapters and exact-proof successors retained under Worker 29.
+In Family 5, the existing matrix-model targets are proved or close by
+composition, and the actual rational-point/matrix operator bridge is now
+proved in the stated `PadicField` scope, including rank zero. The full
+graded-ring comparison and its monomial basis/spanning content remain part
+of the program; their matrix-model evidence is the published Theorem 2.3
+and the exact composites listed above. No arbitrary-local-field GL
+comparison is asserted by the `PadicField` theorem. Remaining work includes
+closing the bottlenecks, publishing the needed composites through their
+owning tasks and discharging each per-instance representation premise.
+Every listed proof task retains its existing owner. Supporting helper
+publications, conditional reductions and a reviewed status note do not
+complete their parent targets.
 
 Worker 76 assembled the 3 November matrix, reusing Worker 164's structural
 boundary, Worker 320's correction guidance, Workers 165/1186's rational
@@ -596,6 +720,9 @@ and Workers 585/34's GL construction and dependency accounts. Worker 3640
 2026 at `642008d6`, and on 13 November at `b128d289` with the published
 term/top, Corollary 1.10(a), Sharp irreducibility and direct special-vertex
 reductions of Workers 3940/3941, 4220/36 and 3915, alongside Worker 3640's
-operator and GL indexing constructions. These
-attributions do not extend any original-source reading record or supply proof
+operator and GL indexing constructions. This refresh at `7dc9118a` adds
+Worker 29's canonical Levi/Weyl assembly, Worker 97's exact GL comparison
+with Worker 29, Worker 5266's generic-isomorphism bridge and the conditional
+Jacquet–Cartan/contraction construction. Worker 3640 performed the new GL
+dependency traversal. These attributions do not extend any original-source reading record or supply proof
 acceptance.
