@@ -1,4 +1,4 @@
-# Tempered coefficients on the Levi scheme and the actual Levi subgroup
+# Coefficient growth on the Levi scheme and the actual Levi subgroup
 
 Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`, revision 1.
 
@@ -22,20 +22,36 @@ smooth-dual coefficients. The present module makes that compatibility explicit f
 rational-point objects; the comparison theorem is derived here rather than attributed to a
 separately numbered result in the article.
 
+The pure Xi comparison extends this same pullback construction using the existing
+`HasXiBoundedCoefficients` predicate from `OrbitCoefficientBound`. Waldspurger's proof of
+Lemma VI.2.2, printed pages 298–299 (PDF pages 64–65, read in the original), uses coefficient
+bounds by `c Ξ^M` on a Levi in estimating unitary twists of induced representations. The
+transport result here is an internal compatibility lemma for that predicate. It asserts no
+new analytic coefficient estimate.
+
 ## Generic coefficient transport
 
 For groups `G` and `H` with topologies, an arbitrary complex representation `ρ` of `G` on `V`,
-a topological group isomorphism `e : H ≃ₜ* G`, and arbitrary real weights `Ξ, σ` on `G`,
+a topological group isomorphism `e : H ≃ₜ* G`, and an arbitrary real weight `Ξ` on `G`,
+`hasXiBoundedCoefficients_comp_continuousMulEquiv_iff` proves
+
+`HasXiBoundedCoefficients (Ξ ∘ e) (ρ.comp e.toMonoidHom)` if and only if
+`HasXiBoundedCoefficients Ξ ρ`.
+
+Here the bound is `‖ℓ(ρ(g)v)‖ ≤ c Ξ(g)`, for all `g`, with a positive real `c` for each pair
+`(v, ℓ)` and `ℓ` in the smooth algebraic dual. The constant is unchanged by transport.
+
+With an additional arbitrary real weight `σ` on `G`,
 `hasTemperedCoefficients_comp_continuousMulEquiv_iff` proves
 
 `HasTemperedCoefficients (Ξ ∘ e) (σ ∘ e) (ρ.comp e.toMonoidHom)` if and only if
 `HasTemperedCoefficients Ξ σ ρ`.
 
 There are no smoothness, admissibility, positivity, local compactness or measure hypotheses for
-this generic theorem. The group and vector-space universes are independent. The proof uses
+these generic theorems. The group and vector-space universes are independent. Each proof uses
 `isSmoothVector_dual_comp_continuousMulEquiv_iff` to identify the same algebraic functionals as
 smooth in both actions. In one direction it evaluates the coefficient bound at `e.symm g`;
-in the other it evaluates at `e h`. The same constants and exponents work.
+in the other it evaluates at `e h`. For temperedness the same constants and exponents work.
 
 ## Levi construction and comparison
 
@@ -48,23 +64,30 @@ Rational points have the canonical topology from `RationalWeights`.
   for a smooth complex representation `A` of `standardLeviPoints i ν J`. Its vector-space carrier
   and linear maps are unchanged. `leviSchemeRepresentation_apply` gives the action explicitly:
   `x` acts as `A(j(x))`.
+- `hasXiBoundedCoefficients_leviSchemeRepresentation_iff` proves that the pure Xi bound for this
+  representation on `L(F)`, with the Xi function defined using the compact `j⁻¹(K)` and the
+  transported minimal parabolic, holds if and only if the pure
+  `rationalLeviXi hKc hM` bound holds for `A` on the actual subgroup. No matrix representation or
+  height enters this comparison.
 - `isRationalTempered_leviSchemeRepresentation_iff` proves that this representation is
   `IsRationalTempered` for the compact subgroup `j⁻¹(K)` and the restricted matrix representation
   `ρ.restrict j` if and only if `A` is `IsRationalLeviTempered` for `K ∩ M_J(F)` and `σ_ρ|_M`.
 
-The comparison assumes connected reductivity of `G`, maximal splitness of `i`, genericity of `ν`,
+Both comparisons assume connected reductivity of `G`, maximal splitness of `i`, genericity of `ν`,
 `J ⊆ simpleRelativeRoots i ν`, a compact open subgroup `K` of `G(F)`, and the displayed Levi
 Iwasawa decomposition
 
 `hM : M_J(F) = (P₀(F) ∩ M_J(F)) (K ∩ M_J(F))`.
 
-It accepts any matrix representation `ρ : MatrixRepresentation G (Fin N)` with nonempty index
-set. Closedness of `ρ` and admissibility of `A` are unnecessary for this coefficient comparison.
-For admissible `A`, the coefficient predicate is the Library's reading of Waldspurger's
+The temperedness comparison accepts any matrix representation
+`ρ : MatrixRepresentation G (Fin N)` with nonempty index set. Closedness of `ρ` and
+admissibility of `A` are unnecessary for these coefficient comparisons.
+For admissible `A`, the tempered coefficient predicate is the Library's reading of Waldspurger's
 `A(π) ⊆ A_w(G)`.
 
-The proof rewrites the weights by the published `rationalXi_leviScheme` and
-`rationalHeight_restrict_leviHom` and applies the generic transport theorem. The Levi Iwasawa pair
+The pure Xi comparison rewrites the weight by the published `rationalXi_leviScheme` and applies
+its generic transport theorem. The temperedness proof also rewrites the height by
+`rationalHeight_restrict_leviHom` and applies the generic temperedness theorem. The Levi Iwasawa pair
 is the published `isIwasawaPair_leviSchemeCompact hG hi hν hJ hM`; openness and compactness of its
 compact subgroup come from `isOpen_leviSchemeCompact` and `isCompact_leviSchemeCompact`.
 The needed affine and finite-type instances for `L` come from `leviScheme_isAffineHom` and
@@ -72,8 +95,12 @@ The needed affine and finite-type instances for `L` come from `leviScheme_isAffi
 
 ## Scope and remaining obligations
 
-The result transports a temperedness bound that holds on either realization. It proves no new
-representation tempered, and it assumes the explicit Levi Iwasawa decomposition `hM`; its
+The results transport a coefficient bound that holds on either realization. They prove no new
+representation tempered or Xi bounded, and assume the explicit Levi Iwasawa decomposition `hM`; its
 existence is a separate structural obligation. No Xi upper bound, square-weight integrability,
 discrete-series estimate, measure comparison or Plancherel conclusion is assumed or proved here.
-The representation carrier may live in any universe, independently of the local field.
+The representation carrier may live in any universe, independently of the local field. In
+particular the pure Xi result can supply the `hcoeff` premise used by the actual Levi
+coefficient and unitary-orbit constructions when the corresponding bound on `L(F)` is supplied.
+The discrete-series decay theorem and the passage from decay on the source's `G¹` to the
+whole-group bound remain separate obligations.

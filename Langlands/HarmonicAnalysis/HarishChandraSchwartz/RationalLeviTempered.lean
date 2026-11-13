@@ -1,11 +1,14 @@
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviScheme
+import Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitCoefficientBound
 import Langlands.Representation.CompactCoefficient.GroupTransport
 
-/-! # Tempered coefficients on the Levi scheme and the actual Levi subgroup
+/-! # Coefficient growth on the Levi scheme and the actual Levi subgroup
 
 Pullback along a topological group isomorphism preserves tempered coefficient bounds for
 pulled-back weights. For the standard Levi scheme, the canonical pullback identifies
 `IsRationalTempered` with `IsRationalLeviTempered`, using the published Xi and height comparisons.
+The same pullback also identifies pure Xi coefficient bounds, without any height or matrix
+representation.
 -/
 
 noncomputable section
@@ -23,6 +26,27 @@ section Transport
 variable {G : Type uG} [Group G] [TopologicalSpace G]
   {H : Type uH} [Group H] [TopologicalSpace H]
   {V : Type uV} [AddCommGroup V] [Module ℂ V]
+
+/-- Pure Xi coefficient bounds are invariant under topological group isomorphisms when the
+weight is pulled back along the same isomorphism. -/
+theorem hasXiBoundedCoefficients_comp_continuousMulEquiv_iff
+    (Ξ : G → ℝ) (ρ : Representation ℂ G V) (e : H ≃ₜ* G) :
+    HasXiBoundedCoefficients (Ξ ∘ e) (ρ.comp e.toMonoidHom) ↔
+      HasXiBoundedCoefficients Ξ ρ := by
+  constructor
+  · intro h v ℓ
+    let ℓ' : SmoothDual (ρ.comp e.toMonoidHom) :=
+      ⟨ℓ.val, (isSmoothVector_dual_comp_continuousMulEquiv_iff ρ e ℓ.val).mpr ℓ.property⟩
+    obtain ⟨c, hc, hb⟩ := h v ℓ'
+    refine ⟨c, hc, fun g => ?_⟩
+    have hg := hb (e.symm g)
+    change ‖ℓ.val (ρ (e (e.symm g)) v)‖ ≤ c * Ξ (e (e.symm g)) at hg
+    simpa only [e.apply_symm_apply] using hg
+  · intro h v ℓ
+    let ℓ' : SmoothDual ρ :=
+      ⟨ℓ.val, (isSmoothVector_dual_comp_continuousMulEquiv_iff ρ e ℓ.val).mp ℓ.property⟩
+    obtain ⟨c, hc, hb⟩ := h v ℓ'
+    exact ⟨c, hc, fun g => hb (e g)⟩
 
 /-- Tempered coefficient bounds are invariant under topological group isomorphisms when the
 weights are pulled back along the same isomorphism. -/
@@ -84,6 +108,29 @@ omit [ValuativeRel F] [IsNonarchimedeanLocalField F] [LocallyOfFiniteType G.X.ho
       A.representation (leviSchemePointsEquiv i ν J x) v := rfl
 
 variable {i ν J}
+
+/-- The pure Xi bound agrees for the Levi scheme and the actual standard Levi subgroup,
+using the canonical representation pullback and the matching compact subgroup. -/
+theorem hasXiBoundedCoefficients_leviSchemeRepresentation_iff
+    (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+    (hν : IsGenericCocharacter i ν) (hJ : J ⊆ simpleRelativeRoots i ν)
+    {K : Subgroup (rationalPoints G)} (hKo : IsOpen (K : Set (rationalPoints G)))
+    (hKc : IsCompact (K : Set (rationalPoints G)))
+    (hM : IsIwasawaPair ((standardParabolicPoints i ν ∅).subgroupOf (standardLeviPoints i ν J))
+      (K.subgroupOf (standardLeviPoints i ν J)))
+    (A : SmoothRep.{0, u, uV} ℂ (standardLeviPoints i ν J)) :
+    HasXiBoundedCoefficients
+      (rationalXi (isCompact_leviSchemeCompact hKc)
+        (isIwasawaPair_leviSchemeCompact hG hi hν hJ hM))
+      (leviSchemeRepresentation i ν J A).representation ↔
+      HasXiBoundedCoefficients (rationalLeviXi hKc hM) A.representation := by
+  have hΞ : rationalXi (isCompact_leviSchemeCompact hKc)
+      (isIwasawaPair_leviSchemeCompact hG hi hν hJ hM) =
+      rationalLeviXi hKc hM ∘ leviSchemePointsEquiv i ν J :=
+    funext (rationalXi_leviScheme hG hi hν hJ hKo hKc hM)
+  rw [hΞ]
+  exact hasXiBoundedCoefficients_comp_continuousMulEquiv_iff _ A.representation
+    (leviSchemePointsEquiv i ν J)
 
 /-- Temperedness agrees for the Levi scheme and the actual standard Levi subgroup, for the
 corresponding compact subgroup and the restricted matrix representation. -/

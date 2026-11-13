@@ -116,7 +116,10 @@ then gains only `r/2` in `x_a`. It does gain `r` in `x_{2a}`, which for
 Library's `IsParahoricAt`. Every point has such a `Q`
 (`exists_isMoyPrasadAt`), and the relation is covariant (`IsMoyPrasadAt.smul`).
 Uniqueness of `Q` is KP Proposition 13.2.5(1), (2). It is the target
-`MoyPrasadCovarianceStatement`, not a theorem here.
+`MoyPrasadCovarianceStatement`, not a theorem here. For an arbitrary supplied
+filtration satisfying `SatisfiesFiltrationAxioms`, uniqueness can fail (paper
+argument in `KPMoyPrasadFiltrationStatement.md`); the double-root variant
+`MoyPrasadDoubleRootCovarianceStatement` adds the missing premise.
 
 ## Scope
 

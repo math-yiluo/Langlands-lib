@@ -34,7 +34,11 @@ of `Langlands.Geometry.Building.KPMoyPrasadFiltration`:
 With these data the published `MoyPrasadFiltrationStatement` and its four conjuncts apply
 to `P` and `Zf`. A proof of this statement together with proofs of those four would make the
 Moy–Prasad results hold for every `P` satisfying the apartment axioms, with no supplied
-filtration.
+filtration. Two of the four conjuncts, `MoyPrasadCovarianceStatement` and
+`MoyPrasadCommutatorStatement`, fail on paper, however (see `KPMoyPrasadFiltrationStatement.md`
+and the public note `notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md`).
+The corrected route uses `CentralizerFiltrationDoubleRootExistenceStatement` and the
+double-root statements of `KPMoyPrasadDoubleRootStatement`.
 
 ## Source correspondence
 

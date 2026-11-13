@@ -21,7 +21,7 @@ proper and geometrically connected, it constructs an actual affine open of
 2. Choose an affine open `U` containing `x`, using
    `exists_isAffineOpen_mem_and_subset` with the ambient open equal to the
    whole scheme.
-3. The private `CommonAffine.translationIso` packages the existing
+3. The imported `CommonAffine.translationIso` packages the existing
    `GroupScheme.translation G z` as an isomorphism in the slice category.
    Its inverse is translation by `z⁻¹`. The two inverse laws follow from
    `points_translation`, compatibility of precomposition with inversion,
@@ -34,7 +34,7 @@ proper and geometrically connected, it constructs an actual affine open of
    two-element family. It supplies a rational section `s` whose underlying
    point belongs to both `V_x'` and `V_y'`. Thus `t_x'(s)` and `t_y'(s)`
    belong to `U`.
-5. On rational sections, `z ≫ t_s = s * z`. The private lemma
+5. On rational sections, `z ≫ t_s = s * z`. The imported lemma
    `CommonAffine.translation_apply_section` uses commutativity of the group
    of sections to identify `t_s(z)` with `t_z(s)`, then evaluates this
    equality at the unique point of `Spec K`. Consequently `t_s(x)` and
@@ -82,3 +82,6 @@ Markdown pairs. Its proof uses neither projectivity nor quasi-projectivity,
 ampleness, a separating line bundle or a downstream consequence of those
 results. The import of `GeometricPicardZero` provides the existing
 translation construction; no Picard-zero assertion enters the proof.
+
+The three `CommonAffine` translation helpers are shared publicly from
+`Langlands.GroupScheme.TranslationLaws`, with their original definitions and proofs.

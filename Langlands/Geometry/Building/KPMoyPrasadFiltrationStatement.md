@@ -70,6 +70,29 @@ Appendix B), neither of which is in the Library.
 The opening sentence's "decreasing" is already a theorem,
 `CentralizerFiltration.moyPrasad_antitone`.
 
+## Two statements fail on paper
+
+The public note
+`notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md` gives an
+unformalized paper argument that `MoyPrasadCovarianceStatement` and
+`MoyPrasadCommutatorStatement` are false, and with them
+`MoyPrasadFiltrationStatement`. Its model is the quasi-split ramified `SU_3` of
+`Q_2(√2)/Q_2` with the smallest filtration of `Z(F)` that satisfies
+`SatisfiesFiltrationAxioms`. Commutator friendliness places the `Z`-component of
+a commutator of `u ∈ U_{2a,x,r}` with `u' ∈ U_{-a,x,s}` only in `Z(F)_{r/2+s}`.
+For this filtration the component can lie outside `Z(F)_{r+s}`, and the note
+gives explicit elements violating both conclusions. The argument assumes that
+this group with its standard valuation of root datum is an instance of
+`ParahoricBuildingData` satisfying `SatisfiesApartmentAxioms`. The Library has no
+such instance, so no Lean counterexample is constructed.
+
+KP's Proposition 13.2.5 itself is not refuted: KP's filtration of `Z(F)` is
+larger than this one. The module `KPMoyPrasadDoubleRootStatement` restates the
+two statements with the extra premise `IsDoubleRootCommutatorFriendly`, which
+this filtration fails. `MoyPrasadSeparatedStatement` and
+`MoyPrasadBoundedOpenStatement` are not affected. The four statements stay
+published unchanged.
+
 ## Not stated
 
 - Part (3), the product bijection at positive depth. The printed indexing

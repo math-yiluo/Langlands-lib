@@ -99,11 +99,20 @@ two depths. The case `u' ∈ U_{-2a}(k)` (`α' = 0`) is symmetric. Lemma 7.2.3 (
 PDF pp. 276–277) concludes from "the element `γ` computed there" only commutator
 friendliness in the sense of Definition 7.2.1.
 
-We know no counterexample to the published `MoyPrasadCovarianceStatement` or
-`MoyPrasadCommutatorStatement`. They are not withdrawn. Their premises do not include the
-double-root bound, however, and the source proofs do not derive them from the four
-published properties, and we found no such derivation. Conjugation by `m(u)` only exchanges
-the two mixed pairs, and translation along the apartment preserves `x_a(u) + x_{-a}(u')`.
+The published `MoyPrasadCovarianceStatement` and `MoyPrasadCommutatorStatement`, whose
+premises do not include the double-root bound, fail on paper. The public note
+`notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md` takes the quasi-split
+ramified `SU_3` of `Q_2(√2)/Q_2` and the smallest filtration of `Z(F)` that satisfies
+`SatisfiesFiltrationAxioms`. For `u ∈ U_{2a,x,r}` and `u' ∈ U_{-a,x,s}` with `r > 0` and
+`s < ω(2)`, the `Z`-component of their commutator can lie in `Z(F)_{r/2+s}` but not in
+`Z(F)_{r+s}`: exactly the mixed pair above. The note gives explicit elements violating both
+conclusions. Its argument is not formalized. It assumes that this group with its standard
+valuation of root datum is an instance of `ParahoricBuildingData` satisfying
+`SatisfiesApartmentAxioms`; the Library has no such instance. The note also shows that this
+filtration fails `IsDoubleRootCommutatorFriendly`, so it is no counterexample to the
+statements of this module, which do not assume the two published ones. KP's own filtration
+is larger and satisfies the bound at that pair. The two published statements stay in the
+Library unchanged.
 
 ## Why the actual filtration satisfies the predicate
 
