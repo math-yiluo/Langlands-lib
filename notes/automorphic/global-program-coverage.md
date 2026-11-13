@@ -1403,3 +1403,97 @@ Theorem 1.1, which states the expansion and sketches the same induction.
 Neither track of the program is complete. Lapid's Proposition 1 remains
 unstated; it waits for the truncation block of Task 5536, which was ready and
 unstaffed at this inspection. No L3 proof is public.
+
+## 13 November 2026 carry-over
+
+Worker 3657 checked this section against Library
+`ed924aef420de137b4cbaa3b063a3618afcd73fd` on 13 November 2026. On that day
+the project was carried into a new TaskHub instance. Tasks, the shared DAGs
+and shared drafts were carried. Candidate, review and conversation records of
+the earlier instance were not. Carried tasks keep their ids, restart at
+revision 1 and now pin environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`.
+This replaces the environment `bb168ec3` named for the six proof tasks of the
+previous section. The shared DAG revision numbers restarted with the new
+instance; revision numbers quoted in earlier sections refer to the earlier
+instance.
+
+This section supersedes the last two paragraphs of the previous section. The
+two L4 statements that were staged there are now public. So are the abstract
+layer of Arthur's combinatorics and Shahidi (1981), Theorem 5.2. Each unit
+below is a statement only; no proof of it is public. The Lean and Markdown
+SHA-256 values are those in Library `ed924aef`; the first eight hex digits are
+given. The candidate, reviewer and publishing commit are copied from the
+shared DAG descriptions written before the carry-over. The earlier records
+themselves are no longer readable.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [GeneralLinearWhittakerExpansionStatement](../../Langlands/Global/GeneralLinearWhittakerExpansionStatement.md) (Lean `848391b5`, Markdown `2c09f07d`) with helper [GeneralLinearGlobalWhittaker](../../Langlands/Global/GeneralLinearGlobalWhittaker.md) (Lean `ad93620e`, Markdown `1833e4de`) | candidate `bf71922d-bb05-4857-8023-f91bf7747c94`, Reviewer 2169, Library `f59009a7` | Getz–Hahn Theorem 11.3.6, Cogdell 2004 Theorem 1.1, Shalika 1974 Theorem 5.9: `Langlands.Global.WhittakerExpansionStatement`. A smooth (finite level, archimedean plot-smooth) cuspidal function of uniform moderate growth on `GL_{r+1}(F) \ GL_{r+1}(𝔸)` is the absolutely convergent sum of its Whittaker function translated over `N_r(F) \ GL_r(F)`, for a nontrivial character `ψ` trivial on `F` and any generic `m`, and the sum of absolute values converges uniformly on compact sets. |
+| [GeneralLinearCuspidalMultiplicityOneStatement](../../Langlands/Automorphic/GeneralLinearCuspidalMultiplicityOneStatement.md) (Lean `4839661c`, Markdown `95e6cc3b`) | candidate `6d7791c7-4842-41f3-ad71-0b3f69e3003a`, Reviewer 2192, Library `47820896` | Getz–Hahn Theorem 11.4.3, Shalika 1974 Theorem 5.5: `Langlands.Automorphic.GroupSchemeFunctions.GeneralLinearCuspidalMultiplicityOneStatement`. On the full almost-everywhere cuspidal subspace of `L²` for `GL_n` (`fullAEL2CuspidalSubmodule`), two irreducible closed invariant subspaces related by an equivariant isometric equivalence are equal. Strong multiplicity one (Getz–Hahn 11.7.2) is not stated here. |
+| [ArthurCombinatoricsStatement](../../Langlands/LinearAlgebra/ArthurCombinatoricsStatement.md) (Lean `962297e1`, Markdown `b9d9c421`) with definitions [ArthurCombinatorics](../../Langlands/LinearAlgebra/ArthurCombinatorics.md) (Lean `ba5d8d70`, Markdown `5a36e041`) | candidate `6b49f1a9-a18c-494c-be97-547fbf4f5193` (replacing the rejected `3a49b70c`), Reviewer 2248, Library `24a49431` | Arthur 1978 Proposition 1.1, the remark after Corollary 6.2 in relative form, Lemmas 6.1 and 6.3; Arthur 2005 (8.2) and Lemma 8.3: `Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement`, for a finite crystallographic root system over `ℝ` with a Mathlib base. It is the abstract layer only. Reduced root systems only: a Mathlib base excludes type `BC`. The specialization to actual reductive groups is item 1 of Task 5536. |
+| [CuspidalPairBoundaryNonvanishingStatement](../../Langlands/Global/Factors/CuspidalPairBoundaryNonvanishingStatement.md) (Lean `c77278fb`, Markdown `0ccee3fb`) | by Worker 3657; its candidate and review records stayed with the earlier instance | Shahidi 1981 Theorem 5.2: `Langlands.Global.CuspidalPairBoundaryNonvanishingStatement`. For actual cuspidal realizations of `GL_(r+1)` and `GL_(t+1)` with unitary central characters and a finite set `S` of finite places containing both exceptional sets, the partial L-function `L^S(s, π × π')` exists as a meromorphic function on `ℂ` given by the unramified Euler product on a right half-plane, and every such function has nonpositive `meromorphicOrderAt` (no zero) at each `1 + iy`. Holomorphy on `Re s = 1`, pole locations and boundedness in vertical strips are not stated. It is the global boundary nonvanishing input that `AppendixPoleCountingStatement.md` and `MeromorphicPoleComparisonStatement.md` assign to this program. |
+
+The public support module
+[AdelicMaximalCompactFactors](../../Langlands/Global/AdelicMaximalCompactFactors.md)
+(Lean `80c3d54d`, Markdown `bbca71f1`), requested by Worker 3657, proves that a
+maximal compact subgroup of `G(𝔸_F)` is the product of maximal compact
+subgroups of `G(𝔸_{F,∞})` and `G(𝔸_{F,f})`, and conversely. It is a proof of
+an internal lemma, not a source theorem.
+
+Proof tasks, inspected on 13 November 2026. Each is a `lean.proof@1` task with
+environment `5c94c648`. Each was ready, with no member and no candidate. Task
+publication divides proof obligations; it is not proof evidence.
+
+| Task | Exact target |
+| --- | --- |
+| Task 5713, `14ffd874-7923-4c8a-8af4-ef3035b3e131` | `Langlands.Global.WhittakerExpansionStatement` |
+| Task 5730, `8056abe3-475e-4af1-b12f-ba5556c2c86e` | `Langlands.Automorphic.GroupSchemeFunctions.GeneralLinearCuspidalMultiplicityOneStatement` |
+| Task 5768, `4e277fc9-6303-4213-bb44-eaea2babfdc1` | `Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (the six conjuncts as separate named theorems) |
+| Task 5816, `c325654f-b8fb-4a43-9caf-c147e4ae95f2` (published 13 November 2026) | `Langlands.Global.CuspidalPairBoundaryNonvanishingStatement` |
+
+The six proof tasks of the previous section (Tasks 5654, 5682–5684, 5696 and
+5697) and the functional-equation proof Task 5493
+(`8e9a5dd6-1b51-4e53-af72-ca2e6d42fe0a`) were carried at revision 1 with
+environment `5c94c648`. The L3 foundations block, Task 5536
+(`e079aef9-b46a-468b-a373-87322d41b934`), was ready with no member.
+
+The shared DAG (revision 39) records the new proof task on
+`proof.shahidi-boundary-nonvanishing`, with planning edges for Shahidi's route
+to `proof.eisenstein-meromorphic-continuation`,
+`proof.lapid-imaginary-axis-holomorphy` and `proof.gl-whittaker-expansion`,
+and from `proof.henniart-local-unitarity`. The other three units are on
+`proof.gl-whittaker-expansion`, `proof.gl-cuspidal-multiplicity-one` and
+`proof.arthur-combinatorial-lemmas`.
+
+Remaining L4 targets with no public statement in Library `ed924aef`, checked
+by searching the Library's Markdown for their Getz–Hahn numbers:
+
+- the pole part of Getz–Hahn Theorem 11.7.1, p.309, for cuspidal `π`, `π'`
+  trivial on `A_GL`: simple poles only at `s = 0, 1`, present exactly when
+  the ranks agree and `π' ≅ π^∨`, and boundedness in vertical strips. The published
+  `CuspidalPairGlobalFunctionalEquationStatement` states the continuation
+  and the functional equation only;
+- Getz–Hahn Lemma 11.8.1, p.312. It assumes that `π_0, π_1, …, π_k` are
+  cuspidal automorphic representations of `A_{GL_{n_i}} \ GL_{n_i}(𝔸_F)`,
+  so each `π_i` is trivial on the split centre `A_{GL_{n_i}}` of its own
+  group. Under that assumption the order of the pole at `s = 1` of
+  `L(s, π_0 × ⊞_{i=1}^k π_i)` is the multiplicity of `π_0^∨` in
+  `⊞_{i=1}^k π_i`, that is, the number of `i ≥ 1` with `π_i ≅ π_0^∨`. The
+  split-centre assumption cannot be dropped: for `F = ℚ`, `π_0 = 1` and the
+  single constituent `π_1 = |·|^{-1}` of `GL_1`, the L-function is
+  `Λ_ℚ(s - 1)`, which has a simple pole at `s = 1`, although `π_1` is not
+  `π_0^∨`.
+
+Getz–Hahn Theorem 11.7.2 and Corollary 11.7.3 (strong multiplicity one,
+cuspidal and isobaric, p.309) have numerical counterparts in the published, unproved
+`CuspidalSpectralRigidityStatement` (Jacquet–Shalika II, Theorems 4.2 and
+4.4), owned by Workers 35 and 44: its constituent recovery recovers lists of
+full cuspidal classes from their Satake spectra outside a finite set, and its
+singleton case recovers one class. Its Markdown records that it does not
+compare local unramified components or construct actual isobaric
+representations. The representation-theoretic forms of 11.7.2 and 11.7.3 are
+not stated, and this ledger does not duplicate the numerical ones.
+
+Neither track of the program is complete. Lapid's Proposition 1 remains
+unstated; it waits for the truncation block of Task 5536. No L3 or L4 proof
+is public.
