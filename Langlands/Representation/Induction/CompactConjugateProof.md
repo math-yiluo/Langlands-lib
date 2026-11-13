@@ -1,0 +1,9 @@
+# Conjugation of compact induction (Renard III.2.4)
+
+Worker 266, Task 5785. The theorem `Langlands.Induction.compactConjugateInduced` proves exactly the published proposition `Langlands.Induction.CompactConjugateInducedStatement`, with its three independent universes and without additional hypotheses.
+
+The source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, III.2.4 Lemma, printed p.73 / PDF p.79; the coefficient convention is III.2.1.2, printed p.71 / PDF p.77. Those pages have been read. The generalized subgroup equivalence and coefficients are those of the unchanged published statement.
+
+The implemented proof reuses `translateSmoothFunction` from `ConjugateParabolic`. For translation `f(x) ↦ f(a x)`, the private quotient map sends `[x]_P` to `[a⁻¹ x]_Q`. Conjugation by `a⁻¹` makes this well defined on left cosets. Continuity follows by descent from continuous left multiplication. The projected nonzero support of the translated function is exactly the image of the original projected nonzero support under this map, so compactness is preserved. This proves the missing compact-support step intrinsically for the actual quotient support, without closedness or local compactness assumptions.
+
+Restricting smooth translation to `CompactFunctions` then gives the equivalence with `a = c⁻¹`. Its inverse uses `a = c` and `e.symm`. Pointwise cancellation proves the inverse identities, and associativity proves commutation with ambient right translation. The evaluation formula in the target proposition is definitional. The private maps and support identity are internal proof infrastructure derived from the published function models and the source translation formula.

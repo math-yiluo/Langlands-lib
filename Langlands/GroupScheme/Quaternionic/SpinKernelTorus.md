@@ -77,3 +77,7 @@ All results hold on arbitrary relative test objects `U` over `Spec k`.
 So, on every test object, `u ↦ u ≫ c` is a bijection from the square roots of
 unity onto the points of `T` that `t` sends to one, and its inverse is
 `x ↦ x ≫ halfChar`. Nothing here assumes the characteristic of `k`.
+
+The half-form helpers reuse `IndexTwoKernel.halfForm` and
+`IndexTwoKernel.two_mul_halfForm`; the compatibility names preserve the
+original interface without duplicating the integer-halving construction.

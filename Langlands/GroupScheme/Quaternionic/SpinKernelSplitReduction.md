@@ -1,0 +1,16 @@
+# Square-root parameters and the original binary diagonal kernel
+
+This internal supporting unit preserves the original binary `μ₂` and the original binary spin diagonal while testing them after a change of base field. It does not construct split quaternionic coordinates or prove `SpinKernelGeneratorStatement`. All universes are arbitrary; no restriction on field characteristic or on test schemes is imposed.
+
+For a morphism `b : Spec L → Spec K` and every `L`-test scheme `U`, `squareRootCoordinates b U` identifies the points `z` of `Gm` with `z * z = 1` with the second roots of unity in `BinaryScheme.coefficients ((Over.map b).obj U)`. Both coefficient rings are the global sections of the same underlying scheme. The multiplicative global-sections equivalence for `Gm` carries the square equation to the square equation for units. Composing with the inverse of `BinaryKernel.rootsPointsEquiv` gives `binaryRootPointsEquiv b U`, an equivalence with the points of the original binary `μ₂` on the same test scheme viewed over `K`.
+
+The general comparison theorem `isIso_baseChange_binaryKernelMap` takes a group homomorphism `f : G → H`, a morphism `d` from the original binary `μ₂` to the actual kernel of `f`, and a morphism `a` from `Gm` over `L` to the base change of `G`. Two hypotheses remain explicit:
+
+- Every point of the kernel of the base change of `f`, on every `L`-test scheme, is uniquely `a(z)` for a square-root parameter `z`.
+- On every such parameter, `a(z)`, transported to a point over `K` by `baseChangePointsEquiv`, equals the corresponding original binary point followed by `d` and the kernel inclusion.
+
+These imply that the base change of `d` is an isomorphism. The proof combines `binaryRootPointsEquiv` with the pullback adjunction to parametrize all points of the base-changed source. The comparison identifies its composite with the base-changed kernel inclusion with `a`. The original kernel point equivalence, together with naturality of the pullback adjunction, shows that every target point lies in the pointwise kernel after base change. Unique square-root parameters give injectivity; existence gives surjectivity, with equality detected by the monomorphic kernel inclusion. The Yoneda bijectivity criterion gives an isomorphism of relative schemes. Reflection through the monoid and group forgetful functors gives an isomorphism of group schemes.
+
+The specialization `isIso_baseChange_diagonalKernel_of_squareRootParametrization` applies this to the original `BinarySpinLift.diagonalKernel`. Its comparison hypothesis uses `BinarySpinLift.diagonalSpin` directly, and the published factorization theorem identifies that map with the kernel inclusion composite. The quaternionic hypotheses, the supplied spin cover, and the degree-two norm-one simple-connectedness statement remain as in the existing binary construction. Producing the map `a`, proving its all-test parametrization, and proving the binary diagonal comparison are separate obligations.
+
+The provenance is internal: the coordinate equivalences use the Library's existing multiplicative-group and binary-root coordinates, and the comparison is a categorical argument from the kernel point equivalence, base-change adjunction and Yoneda criterion. No external-source assertion or new geometric classification is introduced here.

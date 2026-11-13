@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.CentralIsogeny.IndexTwoKernel
 import Langlands.GroupScheme.Rational.ClassFunctionsTorusSeparationReduction
 import Langlands.GroupScheme.Absolute.RegularPerturbation
 import Langlands.GroupScheme.Reductive.RootDatum
@@ -40,18 +41,11 @@ variable {T : CommGroupScheme (Spec (CommRingCat.of k))}
 
 /-- Half of an integral linear form all of whose values are even. -/
 def halfForm {M : Type*} [AddCommGroup M] (f : M →ₗ[ℤ] ℤ) (h : ∀ x, (2 : ℤ) ∣ f x) :
-    M →ₗ[ℤ] ℤ where
-  toFun x := f x / 2
-  map_add' x y := by
-    rw [map_add]
-    exact Int.add_ediv_of_dvd_left (h x)
-  map_smul' c x := by
-    rw [map_zsmul, smul_eq_mul, RingHom.id_apply, smul_eq_mul]
-    exact Int.mul_ediv_assoc c (h x)
+    M →ₗ[ℤ] ℤ := IndexTwoKernel.halfForm f h
 
 theorem two_mul_halfForm {M : Type*} [AddCommGroup M] (f : M →ₗ[ℤ] ℤ)
     (h : ∀ x, (2 : ℤ) ∣ f x) (x : M) : 2 * halfForm f h x = f x :=
-  Int.mul_ediv_cancel' (h x)
+  IndexTwoKernel.two_mul_halfForm f h x
 
 /-- An even-sum integer vector in the basis `eᵢ - e_{i₀}`, `2 e_{i₀}`. -/
 theorem vector_decomp (v : l → ℤ) (s : ℤ) (i₀ : l) (hs : 2 * s = ∑ i, v i) :

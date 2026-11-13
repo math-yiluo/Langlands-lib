@@ -22,16 +22,6 @@ namespace LocalGroupIso
 section General
 variable {S : Scheme.{u}} {G H A B : GroupScheme S} {U : Over S}
 
-/-- Projection of pullback points at a cover point commutes with every group map. -/
-theorem coverPointsEquiv_comp (q : G ⟶ A) {T : Over S} (a : T ⟶ U)
-    (x : coverTest a ⟶ ((baseChange U.hom).obj G).X) :
-    coverPointsEquiv A a (x ≫ ((baseChange U.hom).map q).hom.hom) =
-      coverPointsEquiv G a x ≫ q.hom.hom := by
-  change (coverTestIso a).inv ≫ baseChangePointsEquiv U.hom A (coverTest a)
-      (x ≫ ((baseChange U.hom).map q).hom.hom) =
-    ((coverTestIso a).inv ≫ baseChangePointsEquiv U.hom G (coverTest a) x) ≫ q.hom.hom
-  rw [baseChangePointsEquiv_comp, Category.assoc]
-
 /-- A square of actual base-change isomorphisms gives a square of local values
 on every test scheme and every cover point. -/
 theorem ofBaseChangeIso_square (q : G ⟶ A) (p : H ⟶ B)

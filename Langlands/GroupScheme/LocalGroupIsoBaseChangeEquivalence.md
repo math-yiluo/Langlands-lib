@@ -25,3 +25,9 @@ extensionality, and naturality on all relative tests. This classification does
 not construct a quasi-split model, adjoint quotient, finite field extension,
 initial local isomorphism, or discrepancy cocycle. Those remain obligations of
 the quasi-split inner-form existence theorem.
+
+`LocalGroupIso.coverPointsEquiv_comp` is the shared naturality lemma for
+cover-point projection and an arbitrary group-scheme homomorphism. Its proof
+uses `baseChangePointsEquiv_comp` and associativity. The declaration was moved
+unchanged from `Adjoint/LocalIsomorphism`; both the adjoint and special-linear
+consumers import it from this common module.

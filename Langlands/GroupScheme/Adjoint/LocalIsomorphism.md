@@ -15,8 +15,9 @@ base change preserves the supplied adjoint quotients, so
 over `Spec K`. Applying `LocalGroupIso.ofBaseChangeIso` returns the desired
 natural local family.
 
-The two general lemmas in `LocalGroupIso` describe evaluation on arbitrary
-relative test schemes. `coverPointsEquiv_comp` proves that the equivalence
+The general lemmas in `LocalGroupIso` describe evaluation on arbitrary
+relative test schemes. The shared `coverPointsEquiv_comp`, imported from
+`LocalGroupIsoBaseChangeEquivalence`, proves that the equivalence
 between pullback points and original points over a chosen cover point commutes
 with every group homomorphism. It uses naturality of `baseChangePointsEquiv`
 and associativity of composition. `ofBaseChangeIso_square` then carries a

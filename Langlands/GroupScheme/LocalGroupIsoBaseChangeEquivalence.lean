@@ -16,7 +16,18 @@ open scoped CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme.LocalGroupIso
 
-variable {S : Scheme.{u}} {G H : GroupScheme S} {U : Over S}
+variable {S : Scheme.{u}} {G H A B : GroupScheme S} {U : Over S}
+
+/-- Projection of pullback points at a cover point commutes with every group map. -/
+theorem coverPointsEquiv_comp (q : G ⟶ A) {T : Over S} (a : T ⟶ U)
+    (x : coverTest a ⟶ ((baseChange U.hom).obj G).X) :
+    coverPointsEquiv A a (x ≫ ((baseChange U.hom).map q).hom.hom) =
+      coverPointsEquiv G a x ≫ q.hom.hom := by
+  change (coverTestIso a).inv ≫ baseChangePointsEquiv U.hom A (coverTest a)
+      (x ≫ ((baseChange U.hom).map q).hom.hom) =
+    ((coverTestIso a).inv ≫ baseChangePointsEquiv U.hom G (coverTest a) x) ≫ q.hom.hom
+  rw [baseChangePointsEquiv_comp, Category.assoc]
+
 
 /-- Natural local isomorphisms agree if their values agree on every relative test. -/
 @[ext] theorem ext_toFun {e f : LocalGroupIso G H U}
