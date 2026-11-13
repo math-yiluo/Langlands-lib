@@ -1,7 +1,7 @@
 # Conrad, *Weil and Grothendieck approaches to adelic points*: coverage ledger
 
 Author: Worker 3519 (formerly Worker 16). Parent task `886bf565-95e9-4dc6-8a9d-73284a523668`
-(Task 3519), revision 1.
+(Task 3519), revision 2.
 
 Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*, December 31, 2011,
 21 pages. Registered literature ID `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
@@ -16,8 +16,9 @@ audits below update selected rows against `ed924aef420de137b4cbaa3b063a3618afcd7
 `9b849caba7c63ede041b7fec49c90ceaafb08568`,
 `7dc9118a3eb340e83e65d6e4174763b7a61e573c` and
 `2e5aa9989a9e5567670a14eb7079e3a844641990` and
-`2e46b9cac0230529f50cdf96bbe4713c06701fc2`;
-unchanged rows retain their earlier audit provenance. For each row the ledger
+`2e46b9cac0230529f50cdf96bbe4713c06701fc2`; the revision 2 audit below uses
+`aae8cb822941fac72c628376bd39754a1bc40b74`. Unchanged rows retain their earlier
+audit provenance. For each row the ledger
 records the declarations, the hypotheses under which the Lean statements assert the source
 claim, the proof status found by searching that commit, and the responsible task for each open
 item. The hypothesis column lists every hypothesis of the cited statements that restricts or
@@ -34,6 +35,79 @@ or `Langlands.AlgebraicGeometry.AffineLimit` (paths `Langlands/AlgebraicGeometry
 `FiniteTypeFinitenessDescent` and `FiniteTypeSurjectivityDescent`, which are in
 `Langlands.Algebra.FilteredRing` (path `Langlands/Algebra/`). Names written with a further prefix
 are relative to these namespaces; names beginning with `Langlands.` are absolute.
+
+## Revision 2 scope and retained inputs, 13 November 2026
+
+This focused update reconciles the ledger with Task 3519 revision 2, contract
+`6df270668d0170befd3c0d2ce873c8cb3249b1357a1460b51f30cc7369fd3f2e`, against
+Library `aae8cb822941fac72c628376bd39754a1bc40b74`. It adds no mathematical
+publication. The previous focused note, candidate
+`ca24e01b-f8d1-485a-940c-1228636c5f09`, remains accepted and published at commit
+`53f5f6fa5c9e4c7b43d5bd69352ac077004b4271`; its review accepted the publication-status
+update, without certifying whole-paper completion. The dated audit sections from
+“Final Lang–Weil, openness and Example 5.5 publications” through “Earlier focused
+audit” below are preserved as historical snapshots. Later status changes and
+scope qualifications in this revision take precedence when reading current rows.
+
+Revision 2 makes the following source corrections explicit, preserving the other
+individual hypotheses and the two global-field characteristics:
+
+- Adelic fibre products use a separated base, with arbitrary finite-type factors;
+  binary products, the nonseparated construction and functoriality keep their
+  broader scope. The doubled-origin counterexample remains in the ledger.
+- The simple-root branch stays within any prescribed positive distance after
+  shrinking the coefficient neighbourhood; uniqueness concerns a sufficiently
+  small root neighbourhood, as the polynomial `u(u-1)` shows is necessary.
+- For Proposition 5.4 the actual chart topology, continuity, scheme agreement,
+  immersion embeddings and étale openness retain the quasi-separated locally
+  finite-type scope. The full admissibility package, including fibre products
+  and étale local homeomorphisms, and its uniqueness concern the locally
+  separated subcategory. The Tag 02Z1 obstruction does not invalidate the broader
+  clauses now given separate rows below.
+- The complete-field manifold assertion concerns all smooth spaces in that
+  corrected class, allowing dimension to vary between components. The published
+  pure-dimensional family alone leaves the actual dimension-piece comparison
+  open. Task 6286 `56e7aa6c-1336-4e2d-a66a-59f30689a9f7` constructs the algebraic
+  pieces and section maps; their rational-point homeomorphism and the functorial,
+  unique analytic assembly remain successors owned by this parent.
+- Example 5.5 retains the geometric orbit-stratum and quotient scope. Its topology
+  clause adds local separatedness of the quotient, and qualifies local
+  compactness and total disconnectedness by the field. All three corrected
+  clauses have published proofs, as recorded in the historical publication audit.
+- Corollary 5.7 uses the image of integral points. Injectivity needs separatedness;
+  closedness needs separated finite type. The two closedness counterexamples and
+  the broader open and compact-image scopes remain required and recorded.
+- Proposition 5.8 uses a separated finite-type target and hence finite-type
+  source. The local Corollary 5.6 retains its quasi-separated locally finite-type
+  scope, without a local-separatedness requirement; Theorem 5.9 keeps finite type.
+- Proposition 5.11(1) uses `IsModuleTopology K K'` for arbitrary finite extensions
+  of henselian nontrivially valued fields. It adds no separability, completeness,
+  local separatedness, separatedness or scheme assumption. The mathematical
+  obstruction and the proved correction, rather than an unavailable historical
+  operator message, justify this revision. The reversed inclusion in Example 2.2,
+  the support/factorization distinction in Remark 3.3 and the caveat for (3.6.2)
+  remain in force.
+
+The actual analytification input on Conrad p.19 remains required: scheme
+analytification, the representable analytic étale sheaf quotient for separated
+algebraic spaces, functoriality and the listed geometric compatibilities,
+rational-point and topology comparisons, and arbitrary complete nonarchimedean
+field extension. Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd` constructs the
+actual finite-type affine input. The general scheme, quotient and comparison
+successors remain with the parent. The input table below records them separately
+from the already-proved rational-point extension endpoint. An assumed functor or
+a bare quotient of point sets does not provide this input.
+
+Tasks 6189 `e9e13fd5-ffd0-48b1-b75d-809fa5ca2cce` (unconditional Theorem 4.5),
+6230 and 6286 were inspected for this update: each is ready, without an executor
+or candidate. Recovery checks recompiled the nine relevant Library modules and
+the two saved private compositions with zero errors or warnings; those checks
+are development diagnostics, not accepted proof publications. In particular,
+`adelicSpreadSmoothOpenOfLangWeil Langlands.AlgebraicGeometry.uniformLangWeil`
+checks at arbitrary universe `u`, but its exact-target publication is still
+Task 6189's obligation. Task 5202 `e5531847-70bc-4569-b880-2f90d5815c6a` and
+Task 5217 `b7321f08-34a4-4479-b6a5-fc099d504d2d` retain their explicit pauses
+and ownership. Whole-paper completion remains unclaimed.
 
 ## Final Lang–Weil, openness and Example 5.5 publications, 13 November 2026
 
@@ -498,9 +572,12 @@ Task 5260 `5ded2603-5e05-4bd8-b5eb-521a27ba11f6` (no drafts); and, on 2026-11-09
 `cb7be6d2-3dc1-4692-9617-64965af52cbf`, Task 5302 `de65ae3d-f0af-4d14-9249-497928863844`,
 Task 5303 `93d786be-086b-42e8-8804-7d698cddace8` (no drafts; context revision 2 after the
 Proposition 5.11(1) correction), Task 5304 `ac42557a-f9b5-4a5e-9ed1-6ecdc4779257` and Task 5321
-`b239dfb9-a3d3-4a1c-ba58-6b89501b686d` (each with a complete draft). Worker 111 published Task 5320
-`10fea308-e575-4ca0-80f1-1121cb5ee36c`, the corrected Proposition 5.11(1), under the operator
-ruling recorded in its context; Task 5256 was retired on 2026-11-10 under that ruling. The
+`b239dfb9-a3d3-4a1c-ba58-6b89501b686d` (each with a complete draft). The corrected
+Proposition 5.11(1) publication is historically associated with Task 5320
+`10fea308-e575-4ca0-80f1-1121cb5ee36c`; this carried task is unavailable in the current
+instance. The corrected Lean theorem remains in the Library. Task 5256 is recorded as
+retired; revision 2 requires the module-topology replacement and preserves its obstruction,
+without relying on an unavailable historical ruling. The
 proofs of Tasks 5245, 5246, 5247, 5252 (Lemma 5.1), 5255 (Lemma 5.10), 5259, 5260
 (`spaceLimitModelExistenceQuasiSeparated`), 5275, 5276, 5277 (`SpaceLimitUniquenessStatement`),
 5303, 5304 and 5321, of Task 5222 `360a1cdf-4b68-402e-b087-254b03da61f6`
@@ -683,7 +760,7 @@ statement keeps the injectivity and surjectivity hypotheses separate.
 | Thm 4.5 | geometrically connected models, no common dimension | `AdelicSpreadGeometricallyConnectedStatement` | eventual detection of geometric connectedness and of smooth ⊓ geometrically connected for arbitrary ft models, and existence of separated ft models of a smooth geometrically connected map of separated finite-type schemes; curves need perfect `k` | proved (`adelicSpreadGeometricallyConnected`, module `Langlands/Global/AdelicSpreadGeometricallyConnectedProof`, at the 13 November publication follow-up commit; Task 5149 `4a516d9a-eeda-47b6-92af-8e7b2ff6e16f`). The proof uses constructible geometric-connectedness loci, a common filtered successor for simultaneous smoothness, and compatible actual models; no common fibre dimension or Lang–Weil premise is used |
 | Thm 4.5 | almost-all level surjectivity | `AdelicLevelComponentSurjectivityStatement`; lifting input `UniformLangWeilComponentLiftingStatement` | both conditional on `UniformLangWeilStatement`; `f` smooth, separated, quasi-compact, geometrically connected, with target of finite type over `Z` (quasi-compact); level surjectivity at almost all places, curves need finite `k`; lifting of points over finite fields, over henselian local rings with large finite residue field, and of ring points over such rings | proved, with `UniformLangWeilStatement` retained as a premise: lifting by `uniformLangWeilComponentLifting` (module `Langlands/AlgebraicGeometry/UniformLangWeilComponentLiftingProof`, at the component-lifting audit commit; candidate `74cc4e7b-20eb-472f-b2d6-f3f16f4a8211`, Task 5144 `105de89b-639b-4bbe-9b7b-d6956eecc042`); native level surjectivity by `adelicLevelComponentSurjectivity` (module `Langlands/Global/AdelicLevelComponentSurjectivityProof`, at the native level-surjectivity audit commit; published candidate `a3eb7042-5569-41c3-aa02-db4dd8df46e6`, Task 5154 `8edf7218-d402-4a9f-83de-ef5fd5b2c1be`, done). The latter constructs exact original-base integral lifts outside a finite small-residue set and proves actual cofinite surjectivity at every enlarged level, retaining all infinite factors and using no common dimension premise |
 | Thm 4.5, proof (p.12) | restriction to connected components of the target, with fibres of a common dimension | `SmoothTargetComponentGeometryStatement` | not conditional on Lang–Weil; fibre-geometry clause: `f` smooth and geometrically connected with locally noetherian target, each component restriction has nonempty geometrically connected fibres of pure dimension; preservation clause: arbitrary base scheme, locally noetherian source and target with structure maps locally of finite type, quasi-compact and separated, no hypothesis on `f`, the component restrictions keep these finiteness properties | proved (`smoothTargetComponentGeometry`, module `Langlands/AlgebraicGeometry/SmoothTargetComponentGeometryProof`, at the 13 November publication follow-up commit; Task 5140 `32898b5e-5df2-4520-80ad-856f7be5ac0e`). It applies `smoothPureDimension.2` to each selected component dimension and uses the full fibre-predicate equivalence; the structure-map clause follows from open inclusions and local Noetherianity |
-| Thm 4.5 | Theorem 4.5 from Lemma 4.6; unconditional | `AdelicSpreadSmoothOpenOfLangWeilStatement`, `AdelicSpreadSmoothOpenStatement` | separated generic fibres, arbitrary ft models; `g` smooth, surjective, geometrically connected; curves need finite `k` | conditional target proved (`adelicSpreadSmoothOpenOfLangWeil`, module `Langlands/Global/AdelicSpreadSmoothOpenOfLangWeilProof`, Task 5166, candidate `8eb56617-9f29-4894-a2eb-632585fd3912`) at the final-publication audit commit. The theorem retains `UniformLangWeilStatement` as its sole premise; the published `uniformLangWeil` now supplies it. Separate exact-target proof publication of `AdelicSpreadSmoothOpenStatement` remains to be checked and supplied |
+| Thm 4.5 | Theorem 4.5 from Lemma 4.6; unconditional | `AdelicSpreadSmoothOpenOfLangWeilStatement`, `AdelicSpreadSmoothOpenStatement` | separated generic fibres, arbitrary ft models; `g` smooth, surjective, geometrically connected; curves need finite `k` | conditional target proved (`adelicSpreadSmoothOpenOfLangWeil`, module `Langlands/Global/AdelicSpreadSmoothOpenOfLangWeilProof`, Task 5166, candidate `8eb56617-9f29-4894-a2eb-632585fd3912`) at the final-publication audit commit. The theorem retains `UniformLangWeilStatement` as its sole premise; the published `uniformLangWeil` now supplies it. The exact unconditional composition is compile-checked but unpublished; Task 6189 `e9e13fd5-ffd0-48b1-b75d-809fa5ca2cce` owns its focused proof publication (ready, no candidate at this update) |
 | Lem 4.6 | uniform relative Lang–Weil estimate | `UniformLangWeilStatement` | base of finite type over `Z`; `f` smooth, separated, surjective, of finite type, geometrically connected, fibres of pure dimension `d` | proved (`uniformLangWeil : UniformLangWeilStatement.{u}`, module `Langlands/AlgebraicGeometry/UniformLangWeilProof`, Task 5993 `25778dab-dbed-46c5-bee8-599cc201b015`, candidate `3f1e0645-a1a3-49d2-9197-d67383981e4e`, Worker 7) at the final-publication audit commit. The published proof applies `uniformLangWeilOfFamily` to `familyLangWeilOfPlaneCurve planeCurveHasseWeil`, with no extra premise |
 
 Scope boundary, fibre products on p.9: Conrad says the topology "is compatible with fiber
@@ -722,8 +799,15 @@ of `u_0`; this local form is what the openness argument uses.
 | p.14 | henselian valued fields: definition, separably closed in completion, valuation-ring criterion, tensor with completion, archimedean classification, finite étale equivalence | `IsHenselianValuedField`, `HenselianEtalePointStatement`, `HenselianValuedFieldPropertiesStatement` and its six components, `CompleteHenselianValuedFieldStatement` | nontrivially normed fields; separably closed in the completion: iff henselian; valuation-ring criterion: ultrametric fields; tensor product with the completion: finite separable extensions, a product of completions in general and a field of the same degree for henselian `K`; archimedean classification: non-ultrametric fields; finite étale equivalence: henselian `K`; complete fields are henselian | proved: the conjunction `HenselianValuedFieldPropertiesStatement` (`henselianValuedFieldProperties`), its six components (`henselianIffSeparablyClosed`, `henselianIffValuationRingHenselian`, `tensorCompletionProduct`, `henselianTensorCompletionField`, `archimedeanHenselian`, `henselianFiniteEtaleEquivalence`), `henselianEtalePoint` and `completeHenselianValuedField` |
 | Lem 5.3 | étale maps give local homeomorphisms over henselian fields | `HenselianEtalePointLocalHomeomorphStatement` | henselian `K`; `X`, `Y` locally of finite type | proved (`HenselianEtalePointProof`) |
 | Prop 5.4 | topology on `X(k)`: existence, uniqueness, functoriality, fibre products, immersions, étale maps | `etaleChartTopology`, `HenselianSpacePointTopologyStatement`, `EtaleChartTopologyAdmissibleStatement` | henselian `K`; the axioms and the uniqueness concern quasi-separated, locally separated spaces locally of finite type (correction below) | proved (`henselianSpacePointTopology`, `etaleChartTopologyAdmissible`, uniqueness lemma `eq_etaleChartTopology_of_isAdmissible`), corrected |
+| Prop 5.4 | actual chart-topology construction in the full source class | `etaleChartTopology` (`EtaleChartTopology`) | any field `K` with a topology; every actual algebraic space over `K`, in particular all quasi-separated locally finite-type spaces over a henselian nontrivially normed field; the definition needs no henselianity or local separatedness | construction: the final topology of the actual finite-type étale scheme-chart point maps; the full six-property theorem has the separate scope in the preceding row |
+| Prop 5.4 | functorial continuity in the full source class | `continuous_ringPointsMap` (`EtaleChartTopologyFunctorial`) | henselian nontrivially normed `K`; target `Y` quasi-separated and locally of finite type; source `X` arbitrary; every morphism `X → Y`; no local separatedness | proved for `etaleChartTopology` |
+| Prop 5.4 | agreement with scheme point topology | `isHomeomorph_schemeRingPointsEquiv` (`EtaleChartTopologyFunctorial`) | henselian nontrivially normed `K`; the space of the scheme `U` is quasi-separated and locally of finite type; no local separatedness added | proved: the actual `schemeRingPointsEquiv` is a homeomorphism |
+| Prop 5.4 | open- and closed-immersion embeddings in the full source class | `isOpenEmbedding_ringPointsMap`, `isClosedEmbedding_ringPointsMap` (`EtaleChartTopologyFunctorial`) | henselian nontrivially normed `K`; both spaces quasi-separated and locally of finite type; the actual morphism is respectively an open or closed immersion; no local separatedness | proved |
+| Prop 5.4 | étale openness in the full source class | `isOpenMap_ringPointsMap_of_isEtaleMorphism` (`EtaleChartTopologyFunctorial`, using `EtaleChartOpenMap`) | henselian nontrivially normed `K`; source quasi-separated and locally of finite type; arbitrary target and an étale morphism; no local separatedness | proved: openness only; the full-package local-homeomorphism assertion keeps its locally separated scope |
 | Prop 5.4 | Hausdorff (separated), totally disconnected, locally compact | `SeparatedRationalPointTopologyProperties` (part of the statement above) | `X` quasi-separated, locally of finite type and separated; totally disconnected for ultrametric `K`; locally compact for locally compact `K` | proved (`t2Space_etaleChartTopology`, `totallyDisconnected`, `locallyCompactSpace_etaleChartTopology`) |
-| Prop 5.4 | `k`-analytic manifold structure for smooth `X`, complete `k` | `AnalyticPointStructure` (`AnalyticPointManifold`), `AnalyticPointManifoldStatement` | complete `K`; spaces quasi-separated, locally separated, locally of finite type, with an étale atlas smooth of relative dimension `n`; existence and uniqueness up to equivalence | proved (`analyticPointManifold`, module `AnalyticPointManifoldProof`; Task 5259, closed): existence by the admissible family `canonicalAnalyticPointStructure` (`canonicalAnalyticPointStructure_isAdmissible`, intermediate statements below), uniqueness by `AnalyticPointStructure.equivalent_of_isAdmissible` (module `AnalyticPointUniqueness`) |
+| Prop 5.4 | `k`-analytic manifold structure for smooth `X`, complete `k` | `AnalyticPointStructure` (`AnalyticPointManifold`), `AnalyticPointManifoldStatement` | complete `K`; spaces quasi-separated, locally separated, locally of finite type, with an étale atlas smooth of relative dimension `n`; existence and uniqueness up to equivalence | proved (`analyticPointManifold`, module `AnalyticPointManifoldProof`; Task 5259, closed): existence by the admissible family `canonicalAnalyticPointStructure` (`canonicalAnalyticPointStructure_isAdmissible`, intermediate statements below), uniqueness by `AnalyticPointStructure.equivalent_of_isAdmissible` (module `AnalyticPointUniqueness`); this proves the pure-dimensional family. The varying-dimension conclusion remains open pending Task 6286 and the parent topology/analytic comparison successors |
+| Prop 5.4, manifold bridge | actual open-and-closed dimension pieces and section decomposition | no published general source-piece interface identified; reuse `EtaleMorphismChart.pointDimension`, `PointOpenSubspace.space`, `SmoothDimensionRestrictions` and `SmoothDimensionFieldPoints` | any field `K`, arbitrary `SmoothOverBase X`; all `n : ℕ`, including empty pieces, with no quasi-compactness or finite-range assumption; pure-dimensional analytic specialization adds quasi-separatedness, local separatedness and a norm; section maps over every field extension | not yet constructed: Task 6286 `56e7aa6c-1336-4e2d-a66a-59f30689a9f7`, ready without a candidate; a derived host bridge, not a separate numbered source theorem |
+| Prop 5.4, manifold bridge | rational-point disjoint-union topology and varying-dimension analytic structure | no exact published bridge statement identified; successor to the actual pieces above | smooth, quasi-separated, locally separated `X` over complete nontrivially normed `K`; actual `X(K)` homeomorphic to the dependent sum of the actual piece point spaces for `etaleChartTopology`; analytic maps on intersections with target pieces, étale dimension preservation and local analytic isomorphisms, scheme agreement and uniqueness | not stated: parent Task 3519 retains the definition/statement/proof successors after Task 6286; the existing family and its explanatory Markdown do not discharge them |
 | Prop 5.4, proof (p.15) | every rational point lifts through an étale map from an affine scheme (Knutson II.6.4) | `RationalPointEtaleLiftStatement` | any field `k`; `X` quasi-separated | proved (`RationalPointEtaleLiftProof.rationalPointEtaleLiftStatement`) |
 | Ex 5.5 | unipotent orbit strata locally closed; quotient spaces `V_d/G`; local Hausdorffness of `(V_d/G)(k)` | `UnipotentOrbitQuotientStatement` | henselian `K` of characteristic zero; `G` a unipotent algebraic group (affine, locally of finite type); `V` reduced of finite type with a `G`-action; strata and quotient as in the source (quotient quasi-separated, finitely presented, with flat surjective quotient map); the topology clause adds that the quotient is locally separated (correction below), with local compactness only for locally compact `K` and local total disconnectedness only for ultrametric `K` | all three clauses have separately published exact-target proofs at the final-publication audit commit: `unipotentOrbitStratumLocallyClosed` (Task 5699, candidate `bdc83ccd-a83b-4b88-89d0-3ce0358ed191`), `unipotentOrbitStratumQuotient` (Task 5997, candidate `b2ef5e3e-ad81-4ab0-b742-9bed77e24f90`) and `unipotentOrbitQuotientPointTopology` (Task 5998, candidate `7934b16d-d2fc-438c-a40e-1bacf197bb85`); corresponding proof module names append `Proof` to each statement stem under `AlgebraicSpace/`. Every source correction in this row is retained. All six intermediate targets are also proved, including stabilizer smoothness. No separate conjunction theorem is claimed |
 | Cor 5.6 | proper maps over local fields are proper on points | `LocalFieldProperPointMapStatement` | locally compact nontrivially normed `K`; `X`, `Y` quasi-separated and locally of finite type | proved (`localFieldProperPointMap`, module `LocalFieldProperPointMapProof`; Task 5483, closed, with Task 5216): the proved implication `LocalFieldProperPointValuativeReductionStatement` applied to the proved Stacks valuative criterion `spaceValuativeExistence` (Task 5368). The Lean proof replaces Conrad's Chow-lemma argument by the valuative criterion and an ultrafilter limit over the convergent germs of an ultrapower (`LocalFieldProperPointLimit.localFieldProperPointMap_of_valuative`); archimedean `K` remain included (intermediate statements below) |
@@ -745,9 +829,14 @@ Source corrections, first part:
   `UnipotentOrbitQuotientStatement` therefore assumes the quotient locally separated, and
   qualifies local compactness and total disconnectedness by local compactness and
   ultrametricity of `K`. The strata and quotient clauses keep the source's scope.
-- **Prop 5.4.** False for quasi-separated spaces that are not locally separated (Stacks,
-  Tag 02Z1); `HenselianSpacePointTopologyStatement` and `AnalyticPointManifoldStatement` add
-  local separatedness, explained in their Markdown.
+- **Prop 5.4.** The unrestricted six-property package fails for quasi-separated spaces
+  that are not locally separated (Stacks, Tag 02Z1): the chart at zero is not locally
+  injective, and the relation-point topology is not the fibre-product subspace topology.
+  The aggregate `HenselianSpacePointTopologyStatement` and the manifold family therefore
+  add local separatedness. The chart-topology construction, functoriality, scheme
+  agreement, immersion embeddings and étale openness remain valid in the broader class,
+  by the separately recorded theorems above. The pure-dimensional manifold theorem still
+  requires the actual-piece bridge to cover all smooth spaces promised in revision 2.
 - **Cor 5.7.** The closedness proof's preimage claim fails (`Spec R ⊔ Spec k → Spec R`), and the
   conclusion fails for a quasi-separated finite-type space and for a separated locally finite
   type space; restriction of points need not be injective without separatedness. The published
@@ -782,8 +871,9 @@ whose completion contains a proper finite purely inseparable extension `k'`, `k`
 `k'`. Then `Res_{k'/k}(A^1)(k) = k^{[k':k]}` with the product topology cannot be homeomorphic to
 `k'` by the canonical bijection. The published note
 [`finite-weil-inseparable-obstruction.md`](finite-weil-inseparable-obstruction.md) (Worker 111)
-gives the construction from Temkin's *Valued Fields*, Exercise 1.8.11 and Remark 1.9.6. The
-operator confirmed the counterexample. The literal statement, and the published
+gives the construction from Temkin's *Valued Fields*, Exercise 1.8.11 and Remark 1.9.6.
+Revision 2 adopts this mathematical obstruction and the module-topology correction.
+The literal statement, and the published
 `HenselianWeilRestrictionPointHomeomorphStatement` that transcribes it, are false. The corrected
 statement `HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement`, with
 `IsModuleTopology K K'`, is published and proved
@@ -797,6 +887,35 @@ unaffected. The parenthetical on p.19 applies it without completeness. The Libra
 that finite-degree assertion (`henselianFiniteExtensionPointEmbedding`, row "Prop 5.11, proof
 (p.19)") does not take this step: it argues with étale charts and finite Galois descent and uses
 neither Proposition 5.11(1) nor completeness.
+
+## Retained analytification input (Conrad p.19)
+
+These are substantive inputs retained by revision 2. The extension-point endpoint
+in the preceding table is already proved by another route; that does not supply
+these constructions and comparisons. The analytic host is the existing
+`Langlands.Analytic.SaturatedAtlasPresentation.LocalizedCategory`, reached from
+actual affinoid atlases. A realization there must have a proved comparison with
+the analytic étale sheaf quotient used in the source.
+
+The additional registered original is Conrad–Temkin, *Non-archimedean
+analytification of algebraic spaces*, first-author final preprint, 24 February
+2009, **35 pages**, source `conrad-temkin-2009-nonarchimedean-analytification`,
+SHA-256 `ecfb9dad9c7e27ec36e3a40111ea140fc3bf2589f41b58f97e036e4e2ce6394e`.
+Its §2.2, pp.7–8, defines the intrinsic analytic quotient sheaf and its
+functoriality; Theorem 2.3.1 and Example 2.3.2, pp.11–12, supply the geometric
+and rational-point comparisons; Theorem 2.3.5, p.13, gives arbitrary analytic
+field extension; Theorems 4.2.1–4.2.2, p.20, supply separated-space and analytic
+quotient existence. The rows keep these mathematical conclusions visible;
+existing analytic foundations alone are not an algebraic-to-analytic bridge.
+
+| Source | Assertion | Lean declarations | Hypotheses and scope | Status and responsible task |
+| --- | --- | --- | --- | --- |
+| Conrad p.19, scheme case; CT §2.2 input | actual finite-type affine scheme analytification | no actual `Spec A` analytification construction identified; reuse `GeneralizedAffinoid/ClosedQuotient`, `PolydiscRestriction`, `AffinoidChartGluing`, `AffinoidSpectrumAtlas` and `SaturatedStrongLocalization` in `Langlands/Geometry/Analytic/` | complete nontrivially valued nonarchimedean `K`; every finite-type commutative `K`-algebra, including nonreduced and zero algebras, the empty scheme and zero polynomial variables; actual polynomial-kernel quotient algebras, radius restrictions and atlas laws | not yet constructed: Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd`, ready without a candidate; definitions and short intrinsic laws first |
+| Conrad p.19, scheme agreement | affine independence and general scheme analytification by gluing | no exact scheme analytification comparison interface identified | complete nontrivially valued nonarchimedean `K`; schemes locally of finite type, without a global affineness or finite-type restriction; actual affine constructions, restriction/gluing maps, independence and scheme morphisms | not stated: parent Task 3519 retains the definition, statement and proof successors after Task 6230 |
+| CT Lemma 2.2.1, Definition 2.2.2, Theorems 4.2.1–4.2.2 | actual representable analytic étale sheaf quotient and chart independence | no actual scheme-to-analytic quotient construction identified; the existing analytic category and étale-site infrastructure do not give this bridge | quasi-separated separated algebraic spaces locally of finite type over complete nontrivially valued nonarchimedean `K`; an actual étale chart `R ⇉ U`, analytic quotient sheaf of `Uᵃⁿ` by `Rᵃⁿ`, its representation by an analytic space and canonical chart comparisons | not stated: parent Task 3519 retains the actual construction and its statement/proof successors; a quotient of bare point sets is insufficient |
+| Conrad p.19; CT Theorems 2.2.3 and 2.3.1 | functoriality, fibre products, open and closed immersions and étale maps | no exact algebraic-to-analytic functor/compatibility interface identified | the separated locally finite-type class above, every morphism, the actual scheme/quotient realization and actual analytic comparison maps; no smoothness or fixed-dimension restriction | not stated: parent Task 3519; desired properties supplied as structure fields would leave these obligations unproved |
+| Conrad p.19; CT Example 2.3.2, pp.11–12 | rational points and their topology | `FieldValuedPoints` supplies analytic chart characters, but no actual `X(K)` analytification comparison identified | the same fields and separated locally finite-type spaces; natural equivalence of actual algebraic and analytic rational points and homeomorphism between the affine-chart analytic topology and `etaleChartTopology`; agreement on schemes and descent through actual étale charts | not stated: parent Task 3519; the standalone analytic-character construction and the already-proved extension-point theorem do not supply this comparison |
+| Conrad p.19; CT Theorem 2.3.5 | arbitrary complete nonarchimedean scalar extension | no exact actual-space analytification/base-change comparison identified | every complete nontrivially valued nonarchimedean extension `L/K`, with no finite-degree, separability or algebraicity restriction; canonical analytic isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`, naturality, composition in towers and fibre-product compatibility | not stated: parent Task 3519 after the actual constructions and analytic scalar-extension inputs; a finite-extension-only comparison is insufficient |
 
 ## Derived intermediate statements and reductions
 
@@ -840,7 +959,7 @@ executors as inspected on 2026-11-12.
 | Lem 5.1 (Task 5252) | `SchemeGeometricComponentCountConstructibleStatement` (`SchemeGeometricComponentCountStatement`) | scheme specialization: any commutative ring `B`; a scheme morphism `X → Spec B` locally of finite presentation, quasi-compact and quasi-separated; every `n : ℕ`; the number of connected components of the fibre over an algebraic closure of each residue field, counted in `ℕ∞` | proved (`schemeGeometricComponentCountConstructible`, module `SchemeGeometricComponentCountProof`, with `SchemeGeometricComponentCountBaseChange`) |
 | Lem 5.1 (Task 5252) | `geometricFibreComponentsConstructibleStatement_iff`, `geometricFibreComponentCount_ne_top` (`GeometricFibreComponentGeometry`) | restatement of `GeometricFibreComponentsConstructibleStatement` through the count `geometricFibreComponentCount`; the count is finite for `X` finitely presented over `B` | proved |
 | Lem 5.1 (Task 5252) | `exists_open_geometricComponentsEquiv`, `exists_open_geometricFibreComponentCount` (`GenericGeometricComponents`) | the first: an irreducible Noetherian base scheme `S`; `X` quasi-separated with an étale surjective atlas whose structure morphism is locally of finite type and quasi-compact; there is a nonempty open subset of `S` over which the sets of connected components of the geometric fibres, for the point topology, are pairwise in bijection; the second: the same over `Spec B` for a Noetherian ring `B` with irreducible spectrum, where `geometricFibreComponentCount` is constant on a nonempty open; this is the generic step of the Noetherian induction and does not prove constructibility | proved |
-| Prop 5.4, manifold (Task 5259) | `canonicalAnalyticPointStructure`, `canonicalAnalyticPointStructure_isAnalytic` (`SmoothSpaceAnalyticAtlas`); `canonicalAnalyticPointStructure_isFunctorial`, `canonicalAnalyticPointStructure_isEtaleLocalIso` (`AnalyticPointFunctoriality`); `canonicalAnalyticPointStructure_agreesWithAffineSpace`, `canonicalAnalyticPointStructure_isAdmissible` (`AnalyticAffineNormalization`) | every complete nontrivially normed `K`; the family of charted spaces on `X(K)`, with the étale-chart topology, built from affine étale charts smooth of relative dimension `n`; it satisfies `AnalyticPointStructure.IsAnalytic`, `AnalyticPointStructure.IsFunctorial`, `AnalyticPointStructure.IsEtaleLocalIso` and `AnalyticPointStructure.AgreesWithAffineSpace`, hence `AnalyticPointStructure.IsAdmissible`; this proves the existence conjunct of `AnalyticPointManifoldStatement`; the uniqueness clause is `AnalyticPointStructure.equivalent_of_isAdmissible` (`AnalyticPointUniqueness`), and `analyticPointManifold` combines the two | proved |
+| Prop 5.4, manifold (Task 5259) | `canonicalAnalyticPointStructure`, `canonicalAnalyticPointStructure_isAnalytic` (`SmoothSpaceAnalyticAtlas`); `canonicalAnalyticPointStructure_isFunctorial`, `canonicalAnalyticPointStructure_isEtaleLocalIso` (`AnalyticPointFunctoriality`); `canonicalAnalyticPointStructure_agreesWithAffineSpace`, `canonicalAnalyticPointStructure_isAdmissible` (`AnalyticAffineNormalization`) | every complete nontrivially normed `K`; the family of charted spaces on `X(K)`, with the étale-chart topology, built from affine étale charts smooth of relative dimension `n`; it satisfies `AnalyticPointStructure.IsAnalytic`, `AnalyticPointStructure.IsFunctorial`, `AnalyticPointStructure.IsEtaleLocalIso` and `AnalyticPointStructure.AgreesWithAffineSpace`, hence `AnalyticPointStructure.IsAdmissible`; this proves the existence conjunct of `AnalyticPointManifoldStatement`; the uniqueness clause is `AnalyticPointStructure.equivalent_of_isAdmissible` (`AnalyticPointUniqueness`), and `analyticPointManifold` combines the two | proved for the pure-dimensional family; the actual-piece bridge and varying-dimension assembly remain open as specified above |
 | Ex 5.5 (Task 5217) | `StabilizerFibreLocalDimensionStatement` | any scheme `S`; a group scheme `G` locally of finite type over `S` acting on `V`; at every point of the stabilizer scheme (the base change of the action graph along the diagonal of `V`), the local dimension of its fibre over `V` equals the dimension of the whole fibre, so stabilizer fibres are equidimensional; input to the local closedness of the orbit-dimension strata | proved (`stabilizerFibreLocalDimension`, module `StabilizerFibreLocalDimensionProof`, helpers prefixed `StabilizerFibre.`; published for Task 5217; proof Task 5438 `cd13f7dc-f2dc-404b-bf3d-5885e82f23bf`, closed) |
 | Ex 5.5 (Task 5217) | `OrbitStratumActionRestrictionStatement` | any field `k`; `G` smooth over `k`; `V` locally of finite type with a `G`-action; a reduced scheme `Z` with an immersion onto the points of orbit dimension `d`; the action restricts to `Z`, and every restricted action has orbit dimension `d` at every point | proved (`orbitStratumActionRestriction`, module `OrbitStratumActionRestrictionProof`, helpers prefixed `OrbitStratumActionRestriction.`; published for Task 5217; proof Task 5435 `50f16a97-abde-4fa4-82d0-f13ffe281ff4`, closed) |
 | Ex 5.5 (Task 5217) | `UnipotentOrbitStabilizerSmoothStatement` | field `k` of characteristic zero; `G` affine, locally of finite type and unipotent; `Z` reduced, locally of finite type, with a `G`-action of constant orbit dimension `d`; the stabilizer scheme is smooth over `Z`, which is stronger than the flatness in the source (route through Cartier's theorem instead of Conrad's `exp(ker B)`) | proved (`unipotentOrbitStabilizerSmooth`, module `UnipotentOrbitStabilizerSmoothProof`, candidate `798d3ed4-1863-4029-97a9-bd40aa28a360`, Task 5434 `0e823d86-9f22-48da-b160-eebc1c0160a0`, Worker 5434) at the final-publication audit commit. The exact target is obtained from the published reduction, `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth` and `Langlands.GroupScheme.charZeroUnipotentConnected`, with every hypothesis in this row retained |
@@ -1159,8 +1278,8 @@ Their Markdown states what each provides.
 
 ## Remarks, proof steps and cited facts without separate statements
 
-The following passages are commentary, steps inside proofs, or citations of outside results.
-None has its own Lean declaration; each is listed with the reason.
+The following passages are commentary, source proof routes or citations of outside results.
+Their classification does not remove the retained analytification input in the preceding table.
 
 - **Commentary.** Section 1; the comparison with Milnor (p.2); the explanations on pp.5, 8–9
   and 9 of why the topology is not glued from affine opens and why quotient topologies are hard
@@ -1185,21 +1304,25 @@ None has its own Lean declaration; each is listed with the reason.
   Chow's lemma for algebraic spaces in the proof of Corollary 5.6 (the Lean proof uses the
   valuative criterion and an ultrafilter limit instead, row Cor 5.6); on p.19, the reduction of
   Proposition 5.11(3) to complete fields through part (2), the closed immersion
-  `j : X → Res_{k'/k}(X_{k'})` for separated `X` in the finite-degree case, and the [CT]
-  analytification in the infinite-degree case (the Lean proof takes another route: the embedding
+  `j : X → Res_{k'/k}(X_{k'})` for separated `X` in the finite-degree case (the Lean proof
+  of the endpoint takes another route: the embedding
   through the separable closure of `K` in `K'` and Galois descent along Galois extensions of any
   degree, and closedness by reduction to complete fields through the completions of `K` and `K'`
   and the separately proved complete case; rows Prop 5.11(3)). The results are proved in
   the Library, by Lean routes that need not follow these steps.
-- **Proofs of open results.** The étale cohomology of
-  noetherian algebraic spaces, the trace formula and Deligne's Riemann hypothesis for
-  algebraic spaces in Theorem 5.9, which are the inputs of
-  `SpaceUniformLangWeilStatement` (`e5531847-70bc-4569-b880-2f90d5815c6a`; the route stated
-  there uses Lang–Weil estimates in families instead, intermediate statements above); the flatness
-  argument and [Del2, Prop. 3.11] in Example 5.5, the route to the quotient clause of
-  `UnipotentOrbitQuotientStatement` (Task 5217 `b7321f08-34a4-4479-b6a5-fc099d504d2d`; its
-  intermediate statements above use Cartier's theorem and quotients by actions with smooth
-  stabilizers instead). These steps belong to the named proof tasks.
+- **Other source proof routes.** Étale cohomology of noetherian algebraic spaces, the
+  trace formula and Deligne's Riemann hypothesis for algebraic spaces occur in the source
+  route to Theorem 5.9. The published `SpaceUniformLangWeilStatement` proof instead uses
+  Lang–Weil estimates in families, and the endpoint is proved. The flatness argument and
+  [Del2, Prop. 3.11] occur in the source route to Example 5.5's quotient clause; its published
+  proof uses Cartier's theorem and quotients by actions with smooth stabilizers. These
+  alternative source proof routes are not unresolved inputs to the published endpoint
+  proofs. Task 5202 `e5531847-70bc-4569-b880-2f90d5815c6a` and Task 5217
+  `b7321f08-34a4-4479-b6a5-fc099d504d2d` retain their pauses and ownership.
+- **Retained analytification.** The [CT] construction in the infinite-extension argument
+  on p.19 has its own required rows above. The different proof of Proposition 5.11(3)
+  establishes that endpoint, while revision 2 still requires the actual analytification
+  input, the rational-point topology comparison and arbitrary analytic field extension.
 - **Cited facts outside the paper's line of argument.** Preservation of quasi-projectivity by
   Weil restriction along finite locally free maps ([CGP, Prop. A.5.8], Example 4.2) and the
   more general Weil restriction of algebraic spaces ([Ols, Thm. 1.5], after Lemma 5.10). The
@@ -1222,71 +1345,55 @@ These carried proof tasks are stale: their targets are proved in the Library com
 
 ## Remaining obligations
 
-1. Reconcile the unconditional Theorem 4.5 endpoint with current focused-task
-   publications, then supply its proof or verified reuse bridge if still absent.
-   Other open derived rows retain the tasks named below. The derived
-   `FamilyLangWeilStatement` is now proved by the published composition
-   `familyLangWeilOfPlaneCurve planeCurveHasseWeil`. The derived intermediate
-   `CompleteFiniteExtensionPointEmbeddingStatement` has no proof task; its row is proved
-   by another route. Every other open derived statement has the proof task named in its row; the conjunction
-   `AdelicSpaceProperInputsStatement` has none of its own, and its two conjuncts, with Tasks 5357
-   and 5358, are proved. The rows name the executors of these proof tasks.
-   `SpaceValuativeExtensionExistenceStatement` and
-   `SpaceValuativeExtensionDescentStatement` (published for Task 5368) have proof Tasks 5519 and
-   5520 without executors; together they would give `SpaceValuativeExistenceStatement`, which
-   `spaceValuativeExistence` proves by another route, so no open row depends on them.
-   Proposition 5.8 is proved at the 13 November audit commit by
-   `adelicSpaceSpreadProperMap`, which supplies `adelicSpaceProperStages` and
-   `adelicSpaceProperModel` to its final assembly.
-   Lemma 4.6 in both forms (`UniformLangWeilStatement` and
-   `SpaceUniformLangWeilStatement`) follows from the now-proved family estimate by
-   `uniformLangWeilOfFamily` and `spaceUniformLangWeilOfFamily` (the latter also
-   consumes the published `familyPointUpperBound`). The induction, Schmidt bound
-   and its auxiliary norm-polynomial construction are accepted and published at
-   the induction, Schmidt and reduced-base audit commit; no mathematical input of
-   this route remains open. The two final exact-target uniform estimates are
-   also published as `uniformLangWeil` (Task 5993, candidate
-   `3f1e0645-a1a3-49d2-9197-d67383981e4e`) and `spaceUniformLangWeil`
-   (Task 5995, candidate `8544795f-6c5a-42f0-8f20-59ecc57ca5de`) at the
-   final-publication audit commit. Theorem 4.5's dimension-free
-   arithmetic model step and its componentwise full fibre geometry are proved by
-   `adelicSpreadGeometricallyConnected` and `smoothTargetComponentGeometry` at
-   the earlier 13 November publication follow-up commit. Conditional lifting is
-   proved by `uniformLangWeilComponentLifting` at the component-lifting audit
-   commit; almost-all native level surjectivity is now proved by
-   `adelicLevelComponentSurjectivity`, published for the completed Task 5154 at
-   the native level-surjectivity audit commit. All inputs for the conditional
-   assembly are published, as is its exact-target proof
-   `adelicSpreadSmoothOpenOfLangWeil` (Task 5166, candidate
-   `8eb56617-9f29-4894-a2eb-632585fd3912`) at the final-publication audit
-   commit. It retains only `UniformLangWeilStatement`, now supplied by the
-   published `uniformLangWeil`. Separate exact-target proof publication of
-   the unconditional `AdelicSpreadSmoothOpenStatement` remains to be checked
-   and supplied.
-   Theorem 5.9 is now proved without extra premises by the published
-   `adelicSpaceSpreadSmoothOpen` (Task 5254, candidate
-   `621efe5f-e65a-4718-b4c4-c4d554db5a9d`) at the final-publication
-   audit commit. It supplies the space Lang–Weil estimate directly from the
-   published family, Schmidt and upper-bound proofs and applies
-   `adelicSpaceSpreadSmoothOpen_of_langWeil` to the two original model topologies.
-   In Example 5.5, all six intermediate statements have published exact-target
-   proofs, including `unipotentOrbitStabilizerSmooth` (Task 5434, candidate
-   `798d3ed4-1863-4029-97a9-bd40aa28a360`) at the same audit commit. The three
-   final clauses also have published exact-target proofs: locally closed strata
-   by Task 5699 (`bdc83ccd-a83b-4b88-89d0-3ce0358ed191`), quotient geometry
-   by Task 5997 (`b2ef5e3e-ad81-4ab0-b742-9bed77e24f90`) and corrected
-   quotient point topology by Task 5998
-   (`7934b16d-d2fc-438c-a40e-1bacf197bb85`). No separate conjunction
-   theorem is claimed. Both inputs
-   of the general case of Corollary 5.7 are proved. Its final theorem
-   `henselianIntegralPointsClosed : HenselianIntegralPointsClosedStatement` is
-   published at the 13 November publication follow-up commit (proof Task 5692,
-   for Task 5218), retaining the separatedness and finite-type corrections and
-   requiring no local compactness premise.
-2. The literal Proposition 5.11(1), `HenselianWeilRestrictionPointHomeomorphStatement`, is false
-   and stays in the Library; no task proves it. The corrected statement is proved
-   (`henselianWeilRestrictionPointHomeomorphOfModuleTopology`, Task 5320), and the Markdown
-   correction of `SpaceWeilRestrictionStatement.md` is published.
+1. Publish the exact unconditional Theorem 4.5 proof in Task 6189
+   `e9e13fd5-ffd0-48b1-b75d-809fa5ca2cce`, then verify its independent review and
+   integration. Its target is `Langlands.Global.AdelicSpreadSmoothOpenStatement.{u}`;
+   the complete term is
+   `adelicSpreadSmoothOpenOfLangWeil Langlands.AlgebraicGeometry.uniformLangWeil`.
+   It is compile-checked in the private draft, with the standard axioms and no
+   extra premise. The two inputs are published, but the exact unconditional
+   theorem is not yet a Library publication at this update.
+2. Complete the actual smooth-source dimension decomposition of Task 6286
+   `56e7aa6c-1336-4e2d-a66a-59f30689a9f7`. Then construct, state and prove the
+   rational-point dependent-sum homeomorphism and the varying-dimension analytic
+   assembly, including scheme agreement, functoriality across intersections with
+   target pieces, étale dimension preservation/local analytic isomorphisms and
+   uniqueness. The parent retains these successors; neither a fixed-dimension
+   restriction nor a finite-range assumption meets the full smooth-space scope.
+3. Complete Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd` and the retained
+   analytification pipeline: affine independence, general scheme gluing, the
+   actual representable analytic étale sheaf quotient for separated spaces,
+   functoriality and geometric compatibilities, rational-point/topology comparison,
+   and arbitrary complete nonarchimedean extension. The parent retains all
+   successor constructions, exact statement interfaces, proofs and host
+   comparisons. The existing extension-point endpoint proof does not discharge
+   them.
+4. Obtain a fresh independent whole-paper coverage review after verifying every
+   retained mathematical publication and comparison. The earlier accepted
+   focused notes and the present scope update do not certify whole-paper
+   completion. Task 0 priority and the explicit pauses of Task 5202
+   `e5531847-70bc-4569-b880-2f90d5815c6a` and Task 5217
+   `b7321f08-34a4-4479-b6a5-fc099d504d2d` remain in force.
+
+The published exact scheme and space Lang–Weil estimates, unconditional
+Theorem 5.9, all three corrected Example 5.5 clauses, Proposition 5.8 and the
+general corrected Corollary 5.7 closedness theorem remain proved with the
+hypotheses and publication evidence given above. No extra conjunction theorem
+is required for Example 5.5. The literal Proposition 5.11(1),
+`HenselianWeilRestrictionPointHomeomorphStatement`, remains a known false
+historical interface. Its proved module-topology replacement and the explicit
+obstruction meet the revised scope; proving the false literal statement is not
+an obligation.
+
+Unused alternative reductions remain visible in their rows:
+`CompleteFiniteExtensionPointEmbeddingStatement` has no proof task;
+`SpaceValuativeExtensionExistenceStatement` and
+`SpaceValuativeExtensionDescentStatement` have Tasks 5519 and 5520. Their
+endpoints are proved by other routes, so no required source conclusion depends
+on those alternatives. The conjunction `AdelicSpaceProperInputsStatement` has
+no proof task of its own; its two inputs are proved. Current statuses in this
+section supersede the open-task descriptions in the preserved historical
+audits, without changing their evidence or the hypotheses of existing rows.
 
 Other Library statements cite this paper only for the topology on rational points, inside
 other programs (for example the `Langlands.Representation.Aubert.General` prerequisites); they
