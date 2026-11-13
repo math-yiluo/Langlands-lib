@@ -3,9 +3,16 @@
 This matrix covers all five families of the standalone program
 `46df6a68-5db4-4428-8044-05151d6ce1f6` (Task 3640), revision 1. Declaration
 names, proof status and premise boundaries are pinned to Library commit
-`7dc9118a3eb340e83e65d6e4174763b7a61e573c`, checked on 13 November 2026.
+`4bd8ef92a8f330864b325814d41cb38bf51b7794`, checked on 13 November 2026.
 This refresh replaces the version pinned to
-`b128d289028bf75629e9e364ecf151c484b27a85`. Published term transitivity
+`7dc9118a3eb340e83e65d6e4174763b7a61e573c`. The eight canonical Theorem 1.7,
+Corollary 1.10 and induced-Weyl targets are now published statements.
+Their forward-bridge statement and the canonical smooth-complex and
+full-support endpoint constructions have machine validation and independent
+review approval, but await integration. The bridge proof remains separate.
+None of these statuses discharges a representation-theoretic premise.
+
+Published term transitivity
 and the top term now reduce involutivity to induced K0 Weyl conjugacy alone.
 Corollary 1.10(a) has the same single-input reduction. Irreducibility of `E#`
 now has a published reduction, while its class formula and the required
@@ -19,7 +26,7 @@ finite-length premises. Its field scope remains `PadicField`; it does not
 prove the general dynamic finite-length targets. The conditional bridge from
 generic irreducibility to same-Levi generic isomorphism is also now proved.
 
-The preceding refresh recorded the proof of Aubert's Theorem 2.3 in the
+Earlier refreshes recorded the proof of Aubert's Theorem 2.3 in the
 existing matrix GL models (`A.aubertTheorem23`) and the alternate
 special-vertex route to cuspidal Jacquet-factor extraction. Renard VI.3.5
 remains the only unproved input of the recorded routes to support
@@ -94,11 +101,11 @@ checked for the 11 November refresh against environment
 `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` with zero errors and the same three
 axioms. Those older composites were not recompiled for this refresh.
 
-After context recovery, Worker 3640 recompiled
+For the preceding refresh at `7dc9118a`, Worker 3640 recompiled
 `GeneralLinearRationalIndexing`, `CanonicalRationalOperator` and the private
 composite audit in the same approved environment, with zero errors or
 warnings, including the new two-input generic-isomorphism composite.
-The new GL dependency diagnostic also compiled successfully. Its
+The GL dependency diagnostic also compiled successfully. Its
 [separate inventory](gl-rational-comparison-dependencies.md) records the
 method, exact declarations and limits of that development evidence.
 
@@ -109,13 +116,30 @@ earlier 13 November scan and follow-up covered the tabulated declarations
 through `b128d289`. A file comparison with the current pinned Library found
 no changes to those existing Aubert target/proof pairs. The added published
 canonical structure, GL statement/proof/transport and generic-isomorphism
-bridge pairs were read for this refresh. The six prerequisite statements
+bridge pairs were read for that preceding refresh. The six prerequisite statements
 were also searched for exact proofs; their status below is unchanged.
-The new complete project-declaration traversal covers the exact GL comparison
+That complete project-declaration traversal covers the exact GL comparison
 and its statement only; earlier main-theorem dependency accounts retain
 their stated scope.
 Staged, reviewed or approved candidates that are not yet integrated are
 mentioned separately and are never counted as proofs.
+
+For this refresh, a comparison from `7dc9118a` to `4bd8ef92` found every
+existing Aubert Lean/Markdown pair unchanged. The additions are
+`CanonicalRationalTheorem17Targets` and the generic helper
+`SemidirectIntersection`; neither adds a proof of an existing main target.
+Of all published Lean files naming any of the six representation
+prerequisites, only the new canonical target module was added or changed.
+It assumes the dynamic finite-length propositions rather than proving them.
+The six gates below therefore remain open. The separately published
+cuspidal-support additions do not change the recorded Aubert target/proof
+pairs. The GL dependency inventory remains pinned to `7dc9118a`; no new
+transitive dependency audit is claimed for this refresh.
+
+Worker 3640 also recompiled `CanonicalRationalComplex` and
+`CanonicalRationalComplexEndpoints` in the approved environment above,
+with zero errors or warnings. Their pending construction status is recorded
+in Family 3. Development checks and review approval do not publish them.
 
 Only the itemized external assertions S01–S23 in the
 [Renard Chapter V ledger](../renard/chapter-v-structural-inputs.md) may form the
@@ -246,18 +270,47 @@ Weyl identifications, minimality and associated-subset laws, and
 `canonicalAssociatedLeviConjugation` for every prescribed normalizer lift.
 This Weyl section takes no representation input. It also covers empty roots.
 
-A separate statement candidate, `CanonicalRationalTheorem17Targets`, has
-machine validation and independent statement-review approval but is **not
-published** at this check. It declares eight canonical targets: the five
-Theorem 1.7 identities, both parts of Corollary 1.10, and induced-K0 Weyl
-conjugacy. They retain both global dynamic finite-length inputs; smooth-dual
+The published statement module
+[CanonicalRationalTheorem17Targets](../../Langlands/Representation/Aubert/General/CanonicalRationalTheorem17Targets.lean)
+declares the following eight canonical targets. Each name is in `R`.
+They retain both global dynamic finite-length inputs; smooth-dual
 commutation additionally retains per-group contragredient finite length.
-The canonical Jacquet target fixes the canonical Coxeter system. These are
-statements only; forward adapters and separate exact proofs are still
-required under Worker 29's scope. No reverse implication to the existing
-premise-taking targets is claimed, and existing proof owners are unchanged.
+The canonical Jacquet target fixes the canonical Coxeter system.
 
-| Main target | Status at `7dc9118a` | Remaining inputs and evidence | Proof task |
+| Canonical target | Existing target used by the planned forward bridge |
+| --- | --- |
+| `CanonicalRationalContragredientCommutationStatement` | `RationalContragredientCommutationStatement` |
+| `CanonicalRationalInductionCompatibilityStatement` | `RationalInductionCompatibilityStatement` |
+| `CanonicalRationalJacquetCompatibilityStatement` | `RationalJacquetCompatibilityStatement` |
+| `CanonicalRationalInvolutivityStatement` | `RationalInvolutivityStatement` |
+| `CanonicalRationalCuspidalEigenvalueStatement` | `RationalCuspidalEigenvalueStatement` |
+| `CanonicalRationalCorollary110aStatement` | `RationalCorollary110aStatement` |
+| `CanonicalRationalCorollary110bStatement` | `RationalCorollary110bStatement` |
+| `CanonicalRationalInducedK0WeylConjugacyStatement` | `RationalInducedK0WeylConjugacyStatement` |
+
+These are statements only. The distinct
+`CanonicalRationalTargetBridgesStatement` is the conjunction of the eight
+existing-to-canonical whole-proposition implications in this table.
+Its candidate `756e4d22-f4b1-438b-be63-55c2cf2b7d24` has machine validation
+and independent statement-review approval, but is not integrated or public
+at this check. Worker 29 owns its exact proof successor, to be published
+after the statement is public. His compiled private proof is development
+evidence only.
+
+Once that exact bridge proof is independently accepted and published, its
+projections compose with published proofs of the existing targets. For
+example, the fifth projection can use `rationalCuspidalEigenvalue`, and the
+third can use `rationalJacquetCompatibility`. Open existing targets still
+need their proofs; the bridge supplies none of their representation-theoretic
+inputs. Worker 29's scope is the bridge statement and proof. The agreed
+plan uses this exact reuse rather than adding duplicate canonical proof
+tasks, and preserves every existing proof owner. This updates the planning
+remarks in the published target Markdown without changing any declaration.
+No reverse implication is claimed: old per-index premises do not supply the
+global dynamic finite-length inputs, and the canonical Jacquet target fixes
+one Coxeter system.
+
+| Main target | Status at `4bd8ef92` | Remaining inputs and evidence | Proof task |
 | --- | --- | --- | --- |
 | `RationalCuspidalEigenvalueStatement` | Proved: `rationalCuspidalEigenvalue` | None. | — |
 | `RationalGeometricK0ExpansionStatement` | Proved: `rationalGeometricK0Expansion` | None. The proof applies `rationalGeometricK0Expansion_of_standardParabolicPoints` to `GS.standardParabolicPointsStatement_proof`. | `f722f1c6-147e-453e-8664-02b7822b7bce` (completed) |
@@ -321,7 +374,38 @@ in
 and
 [RationalCorrectedTheorem36](../../Langlands/Representation/Aubert/General/RationalCorrectedTheorem36.lean).
 
-| Main target | Status at `7dc9118a` | Remaining inputs and evidence | Proof task |
+Two additional construction candidates have machine validation and
+independent semantic-review approval but are **not integrated or public**
+at this check:
+
+- `0f6c1e24-4998-4e3a-bbdd-a40500235460`, module
+  `CanonicalRationalComplex`, supplies the published structural, topology
+  and root-finiteness inputs to the actual smooth complex. It assembles ten
+  aliases for the degree objects, signed differential, incoming image,
+  terminal quotient and projection, retained Sharp object and functor,
+  initial map and equivalence, and first differential, with five intrinsic
+  square-zero and quotient laws.
+- `ab63d266-7f7a-413f-beba-b5e4d8aa125f`, module
+  `CanonicalRationalComplexEndpoints`, constructs
+  `canonicalRationalSharpUnivIso`, the natural isomorphism from the retained
+  cokernel functor at the full actual simple-root subset to the identity.
+  It also proves injectivity of the actual degree-zero projection and
+  bijectivity of its literal composite with the initial map:
+  `canonicalRationalTerminalProjection_zero_injective` and
+  `canonicalRationalInitialTerminalMap_bijective`. These specialize the
+  published degree-zero laws in `RationalFixedLeviComparisonProof`.
+
+Both candidates apply to every smooth complex representation, without a
+finite-length or support-category premise, over the same arbitrary local
+fields and actual reductive groups. They retain an arbitrary chosen root
+order, independent universes and empty roots. At the full-root parameter
+the retained degree is `|S| - |S| = 0`; this endpoint makes no positive-degree
+exactness assertion. The endpoint includes the unchanged prerequisite pair
+from the first candidate, to be integrated first or together with it.
+Neither construction proves corrected exactness, the associated-Levi
+comparison or any of the Family 4 consequences.
+
+| Main target | Status at `4bd8ef92` | Remaining inputs and evidence | Proof task |
 | --- | --- | --- | --- |
 | `RationalCorrectedTheorem36Statement` | Reduced | `rationalCorrectedTheorem36_of_inputs` needs `RationalCorrectedExactnessInputs`: Bruhat (proved), graded vanishing, graded transition (proved), support induction-Jacquet stability (reduced to VI.3.5 alone, below) and exactness detection. | `613611a4-9c0e-43e3-82aa-f91d2044cfe2` |
 | `RationalCorrectedGradedVanishingStatement` | Open | No published reduction. | `277860be-2aeb-4a85-8ccb-f1e2e5c573b9` |
@@ -333,7 +417,7 @@ and
 The nine support-category targets are in
 [RationalSupportCategoryTargets](../../Langlands/Representation/Aubert/General/RationalSupportCategoryTargets.lean).
 
-| Support target | Status at `7dc9118a` | Remaining inputs | Proof task |
+| Support target | Status at `4bd8ef92` | Remaining inputs | Proof task |
 | --- | --- | --- | --- |
 | `RationalCuspidalSeriesExistenceStatement` | Proved: `rationalCuspidalSeriesExistence` | None. | — |
 | `RationalSupportCategoryAssociationInvarianceStatement` | Proved: `rationalSupportCategoryAssociationInvariance` | None. | — |
@@ -439,7 +523,7 @@ Source: Corollary 3.9, printed p.2189, with the corrected complex and erratum
 p.4690. All six targets are in
 [RationalSharpConsequenceTargets](../../Langlands/Representation/Aubert/General/RationalSharpConsequenceTargets.lean).
 
-| Main target | Status at `7dc9118a` | Remaining inputs | Proof task |
+| Main target | Status at `4bd8ef92` | Remaining inputs | Proof task |
 | --- | --- | --- | --- |
 | `RationalSharpFiniteLengthStatement` | Open | No published reduction. | `0da1c37e-a39a-42e1-b90d-135db6c6e5c3` |
 | `RationalSharpClassFormulaStatement` | Open | No published reduction. | `13e2abdc-2be7-4191-b74b-9eae99a56fcc` |
@@ -476,7 +560,7 @@ pp.2184–2185. The [GL target map](gl-specialization-source-map.md),
 [point-topology comparison](gl-algebraic-point-specialization.md) give the
 model and dependency boundaries.
 
-| Target | Status at `7dc9118a` | Evidence or remaining inputs |
+| Target | Status at `4bd8ef92` | Evidence or remaining inputs |
 | --- | --- | --- |
 | `R.GL.blockRootSubsetEquiv` and its comparisons | Published construction and proofs | Equivalence of GL block shapes with finite subsets of the actual simple relative roots; `blockRootSubsetEquiv_card`, `blockRootSubsetEquiv_sign`, `rootSet_blockRootSubsetEquiv`, and the parabolic, Levi and unipotent comap comparisons. These hold over any field, in every natural rank. |
 | `Langlands.Parabolic.GeneralLinearModulusCompatibility` | Proved: `Langlands.Parabolic.generalLinearModulusCompatibility` | Full Haar-to-block modulus comparison in every rank, including rank zero. |
@@ -696,8 +780,12 @@ values and identify each classification declaration by exact name.
 Families 1–4 remain open. Their actual canonical ambient, standard-Levi
 and Weyl constructions are public, but the global representation inputs
 and the remaining main proofs above still need to be supplied. The eight
-canonical theorem targets remain an unpublished statement unit, with
-forward adapters and exact-proof successors retained under Worker 29.
+canonical theorem targets are published statements. Their forward-bridge
+statement is reviewed but awaits integration; Worker 29 retains its exact
+proof successor. The planned exact reuse preserves existing target owners
+and leaves their open inputs unchanged. The canonical smooth-complex and
+full-support endpoint candidates are reviewed constructions awaiting
+integration, without closing corrected exactness or Family 4.
 In Family 5, the existing matrix-model targets are proved or close by
 composition, and the actual rational-point/matrix operator bridge is now
 proved in the stated `PadicField` scope, including rank zero. The full
@@ -720,9 +808,12 @@ and Workers 585/34's GL construction and dependency accounts. Worker 3640
 2026 at `642008d6`, and on 13 November at `b128d289` with the published
 term/top, Corollary 1.10(a), Sharp irreducibility and direct special-vertex
 reductions of Workers 3940/3941, 4220/36 and 3915, alongside Worker 3640's
-operator and GL indexing constructions. This refresh at `7dc9118a` adds
+operator and GL indexing constructions. The refresh at `7dc9118a` added
 Worker 29's canonical Levi/Weyl assembly, Worker 97's exact GL comparison
 with Worker 29, Worker 5266's generic-isomorphism bridge and the conditional
-Jacquet–Cartan/contraction construction. Worker 3640 performed the new GL
-dependency traversal. These attributions do not extend any original-source reading record or supply proof
-acceptance.
+Jacquet–Cartan/contraction construction. Worker 3640 performed that GL
+dependency traversal. This refresh at `4bd8ef92` records Worker 29's public
+canonical targets, his reviewed forward-bridge statement and planned exact
+proof, and Worker 3640's reviewed smooth-complex and full-support endpoint
+constructions. These attributions do not extend any original-source reading
+record or supply proof acceptance.
