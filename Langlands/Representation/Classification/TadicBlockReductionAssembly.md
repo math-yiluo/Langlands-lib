@@ -3,8 +3,10 @@
 Author: Worker 5121. Module
 `Langlands.Representation.Classification.TadicBlockReductionAssembly`, namespace
 `Langlands.Classification.TadicBlockReductionAssembly`. It contains the induction proving
-`TadicBlockReductionFromInputs`; the entry theorem is in
-`TadicBlockReductionFromInputsProof`, whose Markdown describes the argument in full.
+`TadicBlockReduction` from its six inputs, of which Tadić's Proposition 2.9 enters only
+through its open-interval clause `ComplementarySeriesOpenIntervalUnitarity`. The entry
+theorems are in `TadicBlockReductionFromInputsProof` (whose Markdown describes the argument
+in full) and `TadicBlockReductionProof` (the unconditional result).
 
 ## Helper results
 
@@ -30,4 +32,15 @@ Author: Worker 5121. Module
 - `not_rect_eq`: under the hypothesis of Lemma 4.8(ii), `a` is not a rectangle `a(n,d)^ρ`
   with `ρ` unitary. `baseUnitary_of_le`: base unitarity from `(U^m)` when the base degree is
   at most `m`. `map_sum_rect_extSeg`.
-- `step`: the induction step; `tadicBlockReductionFromInputs` (strong induction on `m`).
+- `step`: the induction step. It takes the six inputs separately: `hA`
+  (`BernsteinUnitaryProductIrreducibility`), `hB3` (`BernsteinShiftedHighestDerivativeUnitarity`),
+  `hC` (`ComplementarySeriesOpenIntervalUnitarity`, the open-interval clause of
+  Proposition 2.9), `hD` (`UnlinkedSocleProductIrreducibility`), `hE`
+  (`TadicRectangleSoclePrime`) and `hF` (`UnitarizableSocleHermitianSymmetry`).
+- `tadicBlockReduction_of_inputs`: `TadicBlockReduction` from these six hypotheses, by strong
+  induction on `m` using `step` and `tadicBlockReduction_iff`.
+- `complementarySeriesOpenIntervalUnitarity_of`: the first conclusion of
+  `ComplementarySeriesUnitarity` is `ComplementarySeriesOpenIntervalUnitarity`.
+- `tadicBlockReductionFromInputs`: the published `TadicBlockReductionFromInputs`, obtained by
+  destructuring `TadicBlockReductionInputs` and applying `tadicBlockReduction_of_inputs` with
+  `complementarySeriesOpenIntervalUnitarity_of`.

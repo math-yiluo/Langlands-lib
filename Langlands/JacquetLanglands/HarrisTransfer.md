@@ -32,7 +32,9 @@ J. Math. Kyoto Univ. 39 (1999); literature ID
 §4, printed pp. 308–309 (PDF pp. 10–11) fixes the setting: `p` splits in the
 imaginary quadratic field `𝒦₀`, `v = v^(1)` is a prime of `𝒦` of residue
 characteristic `p` with `inv_v(ℬ) = 1/n`, "`𝒟` and `ℬ` are isomorphic away
-from `v` and their complex conjugates", `GJ_p` is identified with
+from `v`, `σ₁`, and their complex conjugates" (`σ₁` is an archimedean place,
+so this exception does not concern the finite-adelic groups `GJ(A_f)` and
+`GG(A_f)` used here), `GJ_p` is identified with
 `∏_j (𝒟_j)ˣ × ℚ_pˣ` in (4.2), and the level of `GG` is defined "via an
 identification `GG(A_f^p) ≅ GJ(A_f^p)`". `GJ` is the group of the algebra `𝒟`,
 which is split at `v`; `GG` is the group of `ℬ`, which is a division algebra at
@@ -194,7 +196,8 @@ ends in `Prop` (validation below).
   is unique up to isomorphism.
 - **The identifications `s`, `t`, `f`, `e` are inputs.** Their existence (from
   Harris's assumptions that `𝒟` is split at `v`, that `inv_v(ℬ) = 1/n`, and that
-  `𝒟` and `ℬ` are isomorphic away from `v`) is not formalized, and the relation
+  `𝒟` and `ℬ` are isomorphic away from `v`, `σ₁`, and their complex
+  conjugates) is not formalized, and the relation
   is stated for the given choices. Independence of the choices (for example by
   Skolem–Noether, which changes `s` and `t` by inner automorphisms) is not
   proved.

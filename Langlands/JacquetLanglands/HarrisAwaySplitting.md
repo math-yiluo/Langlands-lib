@@ -21,7 +21,9 @@ products and composing with given algebra isomorphisms.
 Harris (1999), §4, printed pp. 308–309 (PDF pp. 10–11). `p` splits in the
 imaginary quadratic field `𝒦₀`; `v = v^(1)` is a fixed prime of `𝒦` of
 residue characteristic `p` with `inv_v(ℬ) = 1/n`; and "`𝒟` and `ℬ` are
-isomorphic away from `v` and their complex conjugates". The CM type
+isomorphic away from `v`, `σ₁`, and their complex conjugates", where `σ₁` is
+an archimedean place and so does not enter the finite-adelic groups of this
+module. The CM type
 "corresponds to a set of primes `Φ_p` of `𝒦` above `p`",
 `Φ_p = {v^(j), j = 1, …, t}`, `𝒟_j = 𝒟 ⊗ 𝒦_{v^(j)}`, and Harris
 "implicitly identif[ies]
@@ -145,7 +147,8 @@ over `K`, with involutions `σD` and `σB`:
   is the product of
   1. `factorUnitsEquiv (f w)` for `K_w`-algebra isomorphisms
      `f w : K_w ⊗[K] D ≃ₐ[K_w] K_w ⊗[K] B` at the places `w ≠ w₀` above `𝔭`
-     (Harris: "`𝒟` and `ℬ` are isomorphic away from `v`");
+     (Harris: "`𝒟` and `ℬ` are isomorphic away from `v`, `σ₁`, and their
+     complex conjugates");
   2. the identity of `ℚ_vˣ`; and
   3. the published `σB.innerFormPrimeToEquiv σD p e he : GJ(A_f^p) ≃ₜ*
      GG(A_f^p)`, induced by an `A_f^p`-algebra isomorphism

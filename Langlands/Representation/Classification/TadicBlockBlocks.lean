@@ -3,6 +3,7 @@ import Langlands.Representation.Classification.TadicBlockCombinatorics
 import Langlands.Representation.Classification.TadicBlockSteinberg
 import Langlands.Representation.Classification.MultisegmentConstituentRealTwistCompatibilityProof
 import Langlands.Representation.Classification.TwoSupercuspidalAdjacentReducibilityProof
+import Langlands.Representation.Classification.TadicComplementarySeriesOpenIntervalStatement
 
 /-!
 # Classes of rectangles and unitary blocks
@@ -323,10 +324,11 @@ theorem tadicComplementaryProduct_isIrreducible
           (by rw [abs_neg]; exact hβ) hΔ hΔ''
       · exact absurd rfl hij
 
-/-- `ν^β σ × ν^(-β) σ` is unitarizable for `|β| < 1/2` (Tadić's Proposition 2.9). -/
+/-- `ν^β σ × ν^(-β) σ` is unitarizable for `|β| < 1/2` (the open-interval clause of Tadić's
+Proposition 2.9). -/
 theorem tadicComplementaryProduct_isUnitarizable
     (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
-    (hC : ComplementarySeriesUnitarity.{uF, uV} F T)
+    (hC : ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T)
     (hD : UnlinkedSocleProductIrreducibility.{uF, uV} F T)
     {ρ : T.CuspidalDatum.{max uF uV, uF}} {n d : ℕ} {hd : 0 < d}
     {σ : letI := T.topology; SmoothRep.{0, uF, max uF uV} ℂ (GeneralLinear M F.Carrier)}
@@ -336,10 +338,9 @@ theorem tadicComplementaryProduct_isUnitarizable
     IsUnitarizable (tadicComplementaryProduct hM σ β).representation := by
   let := T.topology
   have hσi := isIrreducible_of_isZelevinskySocle F T hσ
-  have h := (hC M hM σ (1 / 2) hσi hσu (by norm_num) fun α hα =>
+  exact hC M hM σ (1 / 2) hσi hσu (by norm_num) (fun α hα =>
     tadicComplementaryProduct_isIrreducible F T hM hA hD hσ hσu
-      (by rw [abs_lt]; exact ⟨hα.1, hα.2⟩)).1 β (by rw [abs_lt] at hβ; exact ⟨hβ.1, hβ.2⟩)
-  exact h
+      (by rw [abs_lt]; exact ⟨hα.1, hα.2⟩)) β (by rw [abs_lt] at hβ; exact ⟨hβ.1, hβ.2⟩)
 
 end Complementary
 
@@ -459,7 +460,7 @@ theorem pairRep_irr (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
   exact key
 
 theorem pairRep_unit (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
-    (hC : ComplementarySeriesUnitarity.{uF, uV} F T)
+    (hC : ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T)
     (hD : UnlinkedSocleProductIrreducibility.{uF, uV} F T)
     (q : RParam.{uF, max uF uV} T) (hv : q.Valid) (hu : BaseUnitary F T q) :
     letI := T.topology
@@ -471,7 +472,7 @@ theorem pairRep_unit (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
 
 /-- The complementary block `ν^α σ × ν^(-α) σ`, `σ = ⟨a(n,d)^ρ⟩`. -/
 def pairBlk (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
-    (hC : ComplementarySeriesUnitarity.{uF, uV} F T)
+    (hC : ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T)
     (hD : UnlinkedSocleProductIrreducibility.{uF, uV} F T)
     (q : RParam.{uF, max uF uV} T) (hv : q.Valid) (hu : BaseUnitary F T q) :
     UIrr.{uF, uV} F T where
@@ -549,7 +550,7 @@ theorem sum_map_toList {α : Type*} (s : Multiset α) (f : α → ℕ) :
   rw [← Multiset.sum_coe, ← Multiset.map_coe, Multiset.coe_toList]
 
 variable (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
-  (hC : ComplementarySeriesUnitarity.{uF, uV} F T)
+  (hC : ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T)
   (hD : UnlinkedSocleProductIrreducibility.{uF, uV} F T)
 
 /-- The blocks of a family: `⟨a(n,d)^ρ⟩` for `α = 0` and the complementary products for the

@@ -327,12 +327,17 @@ theorem degree_le_of_le {a b : T.Multisegment.{max uF uV, uF}} (h : b ≤ a) :
     simp [Multisegment.degree, Multiset.map_add, Multiset.sum_add]
   omega
 
-/-- **The induction step**: Lemma 4.8(ii) at rank `m + 1` from all smaller ranks. -/
-theorem step (hin : TadicBlockReductionInputs.{uF, uV} F T) (m : ℕ)
+/-- **The induction step**: Lemma 4.8(ii) at rank `m + 1` from all smaller ranks. Of
+Tadić's Proposition 2.9 only the open-interval clause `hC` is used. -/
+theorem step (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
+    (hB3 : BernsteinShiftedHighestDerivativeUnitarity.{uF, uV} F T)
+    (hC : ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T)
+    (hD : UnlinkedSocleProductIrreducibility.{uF, uV} F T)
+    (hE : TadicRectangleSoclePrime.{uF, uV} F T)
+    (hF : UnitarizableSocleHermitianSymmetry.{uF, uV} F T) (m : ℕ)
     (ih : ∀ m' < m, BlockReductionAt.{uF, uV} F T m') : BlockReductionAt.{uF, uV} F T m := by
   classical
   let := T.topology
-  obtain ⟨hA, hB3, hC, hD, hE, hF⟩ := hin
   intro hU π hirr hu hnot
   -- the multisegment of `π`
   obtain ⟨a, hadeg, ha⟩ := multisegmentSocleExhaustion.{uF, uV} F T (m + 1) π hirr
@@ -440,11 +445,30 @@ theorem step (hin : TadicBlockReductionInputs.{uF, uV} F T) (m : ℕ)
   refine ⟨listShape F T lF hN, fun i => lF[i.1].rep, fun i => ?_, ⟨e⟩⟩
   exact famBlocks_isTadicXBlock F T hA hC hD J hJU hb _ (List.getElem_mem _)
 
+/-- **Tadić's Lemma 4.8(ii)** from the inputs, with only the open-interval clause of
+Proposition 2.9: strong induction on `m`. -/
+theorem tadicBlockReduction_of_inputs (hA : BernsteinUnitaryProductIrreducibility.{uF, uV} F T)
+    (hB3 : BernsteinShiftedHighestDerivativeUnitarity.{uF, uV} F T)
+    (hC : ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T)
+    (hD : UnlinkedSocleProductIrreducibility.{uF, uV} F T)
+    (hE : TadicRectangleSoclePrime.{uF, uV} F T)
+    (hF : UnitarizableSocleHermitianSymmetry.{uF, uV} F T) :
+    TadicBlockReduction.{uF, uV} F T := by
+  refine (tadicBlockReduction_iff F T).mpr fun m => ?_
+  induction m using Nat.strong_induction_on with
+  | _ m ih => exact step F T hA hB3 hC hD hE hF m ih
+
+/-- The first conclusion of `ComplementarySeriesUnitarity` is its open-interval clause. -/
+theorem complementarySeriesOpenIntervalUnitarity_of
+    (hC : ComplementarySeriesUnitarity.{uF, uV} F T) :
+    ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T :=
+  fun n hn σ α₀ hσi hσu hα₀ hirr => (hC n hn σ α₀ hσi hσu hα₀ hirr).1
+
 /-- **Tadić's Lemma 4.8(ii) from its inputs.** -/
 theorem tadicBlockReductionFromInputs : TadicBlockReductionFromInputs.{uF, uV} F T := by
   intro hin
-  refine (tadicBlockReduction_iff F T).mpr fun m => ?_
-  induction m using Nat.strong_induction_on with
-  | _ m ih => exact step F T hin m ih
+  obtain ⟨hA, hB3, hC, hD, hE, hF⟩ := hin
+  exact tadicBlockReduction_of_inputs F T hA hB3
+    (complementarySeriesOpenIntervalUnitarity_of F T hC) hD hE hF
 
 end Langlands.Classification.TadicBlockReductionAssembly

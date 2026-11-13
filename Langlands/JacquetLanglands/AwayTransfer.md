@@ -114,8 +114,9 @@ later obligation of the Harris specialization and of Flath's restricted
 tensor statements; the two-factor formulation used here needs neither.
 
 Harris fixes identifications of `GJ` and `GG` away from `v` (§4, printed
-pp.308–309: `𝒟` and `ℬ` are assumed isomorphic away from `v` and its complex
-conjugate, and `K(m)^p` is defined "via an identification
+pp.308–309: `𝒟` and `ℬ` are assumed "isomorphic away from `v`, `σ₁`, and
+their complex conjugates", where `σ₁` is an archimedean place, and `K(m)^p` is
+defined "via an identification
 `GG(A_f^p) ≅ GJ(A_f^p)`"). The parameter `θ` is that identification; the
 module takes it as an explicit input rather than choosing one, and the
 relation is stated for the given `θ`.

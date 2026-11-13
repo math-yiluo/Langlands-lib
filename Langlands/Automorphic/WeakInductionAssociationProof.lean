@@ -23,8 +23,8 @@ namespace Langlands.ClassField.Global.RelativeWeilGroup
 /-- **Weak induction association** (Henniart (2000), §3.4, with Harris (1998),
 Definition 1.3(b)). For every arithmetic class family with the restriction compatibility,
 every tower `F ⊆ E' ⊆ L` of number fields with `L / F` Galois, every cuspidal class `π` of
-`GL_r(𝔸_F)` and every Hecke character `ξ` of `E'`, if `π` is a weak automorphic induction
-of `ξ`, then `π` is weakly associated with `Ind_{W_{L/E'}}^{W_{L/F}} (ξ ∘ τ_{E'})`. -/
+`GL_{r+1}(𝔸_F)` and every Hecke character `ξ` of `E'`, if `π` is a weak automorphic
+induction of `ξ`, then `π` is weakly associated with `Ind_{W_{L/E'}}^{W_{L/F}} (ξ ∘ τ_{E'})`. -/
 theorem weakInductionAssociation : WeakInductionAssociationStatement.{u, uV, uP} :=
   weakInductionAssociation_reduction
     LocalClassField.geometricWeilReciprocityExistenceUniqueness.{u}
