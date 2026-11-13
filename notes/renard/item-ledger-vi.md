@@ -221,7 +221,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | --- | --- | --- | --- |
 | VI.10.1 Lemma, Proposition, Corollary, Theorem | 207–208 / 213–214 | `RP.InducedProgeneratorIndependenceStatement`, `CS.BernsteinInducedProgeneratorStatement` | S: task 2174cd68 |
 | VI.10.2 Theorem, `Hom_G(Π_Ω, ·)` is an equivalence | 208 / 214 | `CS.BernsteinBlockHomEquivalenceStatement` (on the published block, see F1) | S: task 2174cd68 |
-| VI.10.2 Theorem, the quasi-inverse is `M ↦ M ⊗_{R_Ω} Π_Ω` | 208 / 214 | `CS.BernsteinBlockTensorQuasiInverseStatement` (candidate; the VI.4.1 analogue is the published `CS.RationalSummandTensorQuasiInverseStatement`) | R: candidate `a4b157d0` |
+| VI.10.2 Theorem, the quasi-inverse is `M ↦ M ⊗_{R_Ω} Π_Ω` | 208 / 214 | `CS.BernsteinBlockTensorQuasiInverseStatement` (candidate `a4b157d0`, published at Library `79de65ce`; the VI.4.1 analogue is `CS.RationalSummandTensorQuasiInverseStatement`) | S: Task 5686 |
 | VI.10.3 Proposition, Corollary | 209 / 215 | `CS.BernsteinBlockJacquetFaithfulStatement`, `RP.SupercuspidalInductionLengthStatement` | S: task 2174cd68 |
 | VI.10.4 (VI.10.4.1)–(VI.10.4.2): induction of modules corresponds to `i_P^G` | 209–210 / 215–216 | none | St: step of the VI.10.4 Theorem (task c4d4541b) |
 | VI.10.4 first Lemma (`R_Ω` free of rank `|W(D)|` over `R_D`) | 210 / 216 | `RP.InducedProgeneratorEndFreeStatement` | S: task 03c64afa |
@@ -282,8 +282,10 @@ full statements. Each is a genuine gap unless a target is named.
    interface.
 2. VI.2.1, first Remark of the first block: a framework comparison (represented
    versus standard parabolics) that needs conjugacy of parabolics to standard ones.
-3. VI.10.2 Theorem: the quasi-inverse `M ↦ M ⊗_{R_Ω} Π_Ω` is not identified in the
-   pinned Library; the pending candidate `a4b157d0` states it.
+3. VI.10.2 Theorem: the quasi-inverse `M ↦ M ⊗_{R_Ω} Π_Ω` was not identified in the
+   pinned Library. It is now stated by the published
+   `BernsteinBlockTensorQuasiInverseStatement` (candidate `a4b157d0`, Library `79de65ce`),
+   with proof Task 5686.
 4. VI.10.6 Corollary: blocked on Bernstein data for Levi subgroups.
 5. VI.10.7 Variant: needs `ℨ(G)` acting on `(G, B)`-modules.
 6. VI.9.4 Proposition: the comparison of the measure-free level Hecke algebra with

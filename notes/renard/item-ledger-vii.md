@@ -62,20 +62,20 @@ mathematical content.
 | VII.2.5 Proposition | 230 / 236 | `RP.TemperedGeometricLemmaStatement` | P: `temperedGeometricLemma` |
 | VII.2.6 Theorem | 231 / 237 | `RP.TemperedIrreducibleDiscreteSeriesStatement`, `RP.TemperedIrreducibleDiscreteSeriesUniquenessStatement`; step `RP.NormalizedTemperedSubrepresentationStatement` | S: task 225f7d3d; step P: `normalizedTemperedSubrepresentation` |
 | VII.2.6 Corollary | 232 / 238 | `RP.TemperedIrreducibleUnitarizableStatement` | S: task 225f7d3d |
-| VII.2.6 Remark (without irreducibility the Corollary can fail) | 232 / 238 | `RP.TemperedReducibleNotUnitarizableStatement` | R: candidate `9492bbaa` |
+| VII.2.6 Remark (without irreducibility the Corollary can fail) | 232 / 238 | `RP.TemperedReducibleNotUnitarizableStatement` | S: Task 5685 (candidate `9492bbaa`) |
 
 ## VII.3 Intertwining operators of induced representations
 
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
 | VII.3.1 Definition (Bruhat order `≤_{PQ}`) | 232 / 238 | `Langlands.Geometric.BruhatLE` (on actual double cosets), `IsBruhatRefinement` | D |
-| VII.3.1: `1̄` is the least element when `P = Q` and the greatest when `Q = P̄` | 232–233 / 238–239 | `RP.BruhatIdentityExtremesStatement` | R: candidate `9492bbaa` |
+| VII.3.1: `1̄` is the least element when `P = Q` and the greatest when `Q = P̄` | 232–233 / 238–239 | `RP.BruhatIdentityExtremesStatement` | S: Task 5685 |
 | VII.3.2 filtrations and their comparisons | 233–234 / 239–240 | `RP.PQSupportGradedStatement`; support subfunctors in `Intertwining/PQRegularity` | P: `pqSupportGraded` |
 | VII.3.3 Lemma (`PQ`-regularity) | 234 / 240 | `RP.PQRegularityLemmaStatement`; `IsPQRegular` | S: task d935ffb6 |
 | VII.3.4 Proposition | 236 / 242 | `RP.PQIntertwiningOperatorStatement` (derived: the integral replaced by an arbitrary identification); explicit integral form `RP.PQIntegralIntertwiningOperatorStatement` | Derived form P: `pqIntertwiningOperator`; integral form S: task b0dc3705 |
 | VII.3.5 Proposition (i) | 237 / 243 | `RP.PQIntertwiningCompositionStatement` | S: task b0dc3705 |
 | VII.3.5 Proposition (ii)–(iii) | 237 / 243 | `RP.PQIntertwiningInnerLeviStatement`, `RP.PQIntertwiningOuterLeviStatement` | S: task 0f310bac |
-| VII.3.5 opening assertion "`d(P, Q)` is the length of the element `w ∈ W(A_M)` with `w · P = Q`" | 236 / 242 | none | G: unstated mathematical assertion, and a source issue (see I1 below). It is recorded as open in `PQIntegralIntertwiningStatements.md` and in `coverage-update-2026-11-11.md` |
+| VII.3.5 opening assertion "`d(P, Q)` is the length of the element `w ∈ W(A_M)` with `w · P = Q`" | 236 / 242 | `Langlands.GroupScheme.MinimalParabolicDistanceLengthStatement` (minimal `M`, corrected form) | S: Task 5687 (candidate `5d306e19`). For non-minimal `M` the printed assertion is a source issue (I1 below) |
 
 ## VII.4 The Langlands classification
 
@@ -84,7 +84,7 @@ mathematical content.
 | VII.4.1 Definition (Langlands triplet) | 241 / 247 | `IsLanglandsTriplet`, chambers `Langlands.GroupScheme.restrictedCorootChamber` (`LanglandsClassification/LanglandsTriplet`) | D |
 | VII.4.1 Lemma | 241 / 247 | `RP.LanglandsTripletOppositeRegularityStatement`; proved steps `RP.LanglandsTripletOppositePieceSeparationStatement`, `RP.LanglandsTripletOppositeRegularityReductionStatement` | S: task 78bf8d31; steps P |
 | VII.4.2 Theorem (i)–(iii) | 243 / 249 | `RP.LanglandsQuotientUniqueStatement`, `RP.LanglandsQuotientInjectiveStatement`, `RP.LanglandsQuotientExhaustiveStatement`, conjunction `RP.LanglandsClassificationStatement` | S: task 717df3ca |
-| VII.4.2 sentence after (i): `J(P, σ, ψ)` is characterized by `ℜ(ψ) ∈ ℜ(Exp(A_M, r_{P̄}^G(π)))` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | R: candidate `6a38904d` |
+| VII.4.2 sentence after (i): `J(P, σ, ψ)` is characterized by `ℜ(ψ) ∈ ℜ(Exp(A_M, r_{P̄}^G(π)))` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | S: Task 5653 |
 
 ## VII.5 Notes on Chapter VII
 
@@ -147,8 +147,10 @@ mathematical content.
     `w = s_1s_2s_1` has length 3.
 
   The assertion is not used by the Chapter VII statements above. Retained scope: the
-  minimal-`M` assertion in the corrected form `d(uP_∅, vP_∅) = ℓ(u⁻¹v)` is an open gap
-  (gap 3 below); the non-minimal case is a source issue with the counterexample above.
+  minimal-`M` assertion in both corrected forms (`d(P, Q)` is the length of `w` for the
+  simple reflections of `P`, and `d(uP_∅, vP_∅) = ℓ(u⁻¹v)`) is stated by the published
+  `MinimalParabolicDistanceLengthStatement` (candidate `5d306e19`, proof Task 5687); the non-minimal case is
+  a source issue with the counterexample above.
 
 ## Genuine gaps of Chapter VII
 
@@ -157,10 +159,10 @@ mathematical content.
 2. VII.1.3 Corollary: the functor `r_D`, its faithfulness as stated by the source, and the
    unit isomorphism `π → i_P^G r_D(π)`. Stating them needs the projection of `r_P^G`
    onto the component `M(M)_D`, which is not constructed.
-3. VII.3.5, opening assertion: for minimal `M`, `d(uP_∅, vP_∅) = ℓ(u⁻¹v)` (the length of
-   `w` relative to the simple roots of `P`) is unstated; for non-minimal `M`, and for the
-   length relative to `P_∅` when `P ≠ P_∅`, the printed assertion fails as written (I1).
 
-The pending candidates `6a38904d` (VII.4.2 sentence after (i)) and `9492bbaa` (VII.2.6
-Remark and the VII.3.1 extremes of the Bruhat order) state the three other assertions
-this audit found unstated.
+Update at Library `9951a27f`: the former gap 3 (VII.3.5, minimal-`M` form of the opening
+assertion) is stated by the published `MinimalParabolicDistanceLengthStatement` (candidate
+`5d306e19`, proof Task 5687). For non-minimal `M`, and for the length relative to `P_∅` when
+`P ≠ P_∅`, the printed assertion fails as written (I1). `6a38904d` (VII.4.2 sentence after
+(i)) is published, with proof Task 5653. `9492bbaa` (VII.2.6 Remark and the VII.3.1 extremes
+of the Bruhat order) is published, with proof Task 5685.
