@@ -2,14 +2,16 @@
 
 This derived compatibility construction relates measures and integrals on the actual
 standard Levi subgroup and on the rational points of its representing Levi group scheme.
-It uses the existing Schwartz spaces and canonical point equivalence.
+It uses the existing Schwartz spaces and canonical point equivalence. Its final
+consumers apply the group-level II.1.5 statement conditionally to the actual Levi.
 
 ## Source and provenance
 
 The conventions are those of J.-L. Waldspurger, *La formule de Plancherel pour les groupes
 p-adiques (d'après Harish-Chandra)* (2003): I.1, printed p.240 (PDF p.6), fixes the inherited
 compact subgroup and normalizes subgroup Haar measure by its volume one; II.1.5, printed
-p.252 (PDF p.18), gives the square-weight integrability conclusion; III.6, printed
+p.252 (PDF p.18), gives the square-weight integrability conclusion from, in particular,
+the analytic upper bound of II.1.1, printed p.251 (PDF p.17); III.6, printed
 pp.271–272 (PDF pp.37–38), defines the Schwartz space and convolution; VII.1, printed
 p.313 (PDF p.79), defines the integral pairing. The registered source is
 `waldspurger-2003-plancherel`, SHA256
@@ -18,6 +20,10 @@ p.313 (PDF p.79), defines the integral pairing. The registered source is
 The comparisons here are internal consequences of the published
 `leviSchemePointsEquiv`, the Xi and height identities in `RationalLeviScheme`, and
 `rationalLeviSchwartzEquiv`. They do not supply a new estimate from the article.
+The conditional consumers additionally specialize the published
+`RationalXiSquareIntegrableStatement` and its proved reduction
+`rationalXiSquareIntegrable_of_upperBound`; their provenance is this specialization
+and the measure comparisons, rather than a separate analytic argument.
 
 ## Measure and exact normalization
 
@@ -140,7 +146,74 @@ rewrite by the published `rationalXi_leviScheme` and
 preservation identify the two convolution integrands. The Schwartz specializations
 use the published pointwise formula for `rationalLeviSchwartzEquiv`.
 
+## Conditional Levi II.1.5 consumers
+
+The final section supplies the square-weight premise on the actual subgroup
+`M = standardLeviPoints i ν J` from the group-level II.1.5 statement. It keeps
+the following inputs explicit:
+
+- the connected-reductive, torus, cocharacter, simple-root subset, compact-open
+  `K`, and Levi Iwasawa premises listed under Square weights;
+- a closed matrix representation `ρ : MatrixRepresentation G (Fin N)`,
+  with `[Nonempty (Fin N)]` and `hρ : IsClosedSubgroup ρ`;
+- a compact open subgroup `K0L` of the rational points of
+  `L = Standard.leviScheme i ν J`, with
+  `SimultaneousStandardBasisAt (Standard.leviTorusHom i ν J) ν K0L` and
+  `Aubert.General.RationalPointFamily.FiniteCartanCovering F
+    (Standard.leviTorusHom i ν J) ν K0L`;
+- a chosen Haar measure `μM` on `M`.
+
+The last three requirements strengthen the hypotheses of the preceding
+change-of-variables comparisons. In particular, closedness of `ρ` is needed for
+this application of II.1.5, though it is unnecessary for the comparisons.
+`K0L` may differ from `leviSchemeCompact K i ν J`. The basis and covering
+premises are imposed on the Levi scheme itself; this unit does not derive them
+from corresponding data on `G`. No ambient Iwasawa factorization is required
+in addition to the displayed Levi factorization `hM`.
+
+`RationalXiSquareIntegrableStatement.leviSquareIntegrableWeight` takes a proof
+`h : RationalXiSquareIntegrableStatement` as an analytic theorem input. It gives
+
+```text
+SquareIntegrableWeight μM (rationalLeviXi hKc hM)
+  (fun m => rationalHeight ρ m),
+```
+
+so a natural exponent `d` makes the square-weight integral finite on the actual
+Levi subgroup. `RationalXiSquareIntegrableStatement.leviL2Weights` gives
+`L2Weights` for exactly these weights and measure, including positivity and
+nonnegativity. The existing `L2Weights` theory can therefore supply `MemLp`
+at exponent two and the convergence of the conjugate-first pairing for Levi
+Schwartz functions. The square-weight conclusion also has the exact form of
+the `hswM` input in `RationalInducedConstantTermFourier`, when its root index
+and other data match. That Fourier module is not modified here.
+
+For both lemmas, the implemented proof uses
+`standardLevi_isConnectedReductive`,
+`Standard.isMaximalSplitTorus_leviTorusHom`, and
+`isGenericCocharacter_leviTorusHom` to apply the group statement to `L`.
+The restricted matrix representation is closed by
+`isClosedSubgroup_restrict_leviHom`. The compact subgroup and Iwasawa
+factorization are `leviSchemeCompact K i ν J` and its published transport.
+The measure is `leviSchemeMeasure i ν J μM`, which is Haar by the existing
+instance. Applying respectively
+`squareIntegrableWeight_leviSchemeMeasure_iff` and
+`l2Weights_leviSchemeMeasure_iff` then gives the subgroup conclusion. The
+measure and its scale are unchanged.
+
+The two convenience lemmas
+`rationalLeviSquareIntegrableWeight_of_upperBound` and
+`rationalLeviL2Weights_of_upperBound` take instead
+`hupper : RationalXiUpperBoundStatement`, the global analytic upper bound of
+II.1.1. Each composes `rationalXiSquareIntegrable_of_upperBound hupper` with
+the corresponding Levi consumer. They retain all the explicit Levi data
+above and have no additional II.1.5 premise. Neither the global II.1.5 input
+of the first pair nor the upper-bound input of the second pair is designated
+as structural data.
+
 No characteristic-zero, splitness or quasisplitness assumption is imposed.
-The Levi Iwasawa factorization remains explicit. This unit establishes no new
-integrability estimate, convolution closure or continuity theorem, density result,
+The Levi Iwasawa factorization, simultaneous basis and Cartan cover remain
+explicit where used. The conditional consumers do not prove the analytic Xi
+upper bound or an unconditional Levi integrability theorem. This unit
+establishes no convolution closure or continuity theorem, density result,
 formal-degree normalization, spectral transform, or Plancherel inversion.

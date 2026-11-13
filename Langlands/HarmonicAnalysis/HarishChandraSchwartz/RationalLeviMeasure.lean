@@ -1,4 +1,5 @@
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviSchwartz
+import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiSquareIntegrableOfUpperBound
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.SquareIntegrability
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.L2
 import Mathlib.MeasureTheory.Integral.Lebesgue.Map
@@ -8,6 +9,11 @@ import Mathlib.MeasureTheory.Integral.Lebesgue.Map
 Transport a chosen measure on the actual standard Levi subgroup through its canonical
 rational-point equivalence. This preserves Haar measure, compact normalization, square-weight
 integrability, the `L²` pairing and convolution.
+
+The final consumers apply the group-level II.1.5 statement to the representing Levi scheme
+and transport its conclusion to the subgroup. Its simultaneous basis and finite Cartan cover
+remain explicit. Convenience versions use the published reduction to the analytic Xi upper
+bound, without asserting that upper bound.
 -/
 
 noncomputable section
@@ -321,6 +327,76 @@ theorem convolution_rationalLeviSchwartzEquiv (μM : Measure (standardLeviPoints
   convolution_leviSchemeMeasure μM f₁ f₂ x
 
 end Weights
+
+section ConditionalSquareIntegrability
+
+variable (h : RationalXiSquareIntegrableStatement.{u})
+  (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
+  (hν : IsGenericCocharacter i ν) (hJ : J ⊆ simpleRelativeRoots i ν)
+  {K : Subgroup (rationalPoints G)} (hKo : IsOpen (K : Set (rationalPoints G)))
+  (hKc : IsCompact (K : Set (rationalPoints G)))
+  {N : ℕ} [Nonempty (Fin N)] (ρ : MatrixRepresentation G (Fin N))
+  (hρ : IsClosedSubgroup ρ)
+  (hM : IsIwasawaPair ((standardParabolicPoints i ν ∅).subgroupOf (standardLeviPoints i ν J))
+    (K.subgroupOf (standardLeviPoints i ν J)))
+  {K0L : Subgroup (rationalPoints (Standard.leviScheme i ν J))}
+  (hK0Lo : IsOpen (K0L : Set (rationalPoints (Standard.leviScheme i ν J))))
+  (hK0Lc : IsCompact (K0L : Set (rationalPoints (Standard.leviScheme i ν J))))
+  (hbasis : Langlands.BruhatTits.SpecialCompact.SimultaneousStandardBasisAt
+    (Standard.leviTorusHom i ν J) ν K0L)
+  (hcover : Aubert.General.RationalPointFamily.FiniteCartanCovering F
+    (Standard.leviTorusHom i ν J) ν K0L)
+  (μM : Measure (standardLeviPoints i ν J)) [μM.IsHaarMeasure]
+
+include h hG hi hν hJ hKo hρ hK0Lo hK0Lc hbasis hcover
+
+/-- Conditional II.1.5 on the actual standard Levi subgroup, from the group-level statement
+and the simultaneous basis and finite Cartan covering on its representing Levi scheme. -/
+theorem RationalXiSquareIntegrableStatement.leviSquareIntegrableWeight :
+    SquareIntegrableWeight μM (rationalLeviXi hKc hM)
+      (fun m => rationalHeight (F := F) ρ m) := by
+  apply (squareIntegrableWeight_leviSchemeMeasure_iff hG hi hν hJ hKo hKc ρ hM μM).mp
+  exact h F (Standard.leviScheme i ν J)
+    (Langlands.BruhatTits.SpecialCompact.standardLevi_isConnectedReductive hG i hi ν hν J hJ)
+    S (Standard.leviTorusHom i ν J) (Standard.isMaximalSplitTorus_leviTorusHom i ν J hi)
+    ν (isGenericCocharacter_leviTorusHom hν) K0L hK0Lo hK0Lc hbasis hcover
+    (leviSchemeCompact K i ν J) (isOpen_leviSchemeCompact hKo)
+    (isCompact_leviSchemeCompact hKc) (isIwasawaPair_leviSchemeCompact hG hi hν hJ hM)
+    N (ρ.restrict (Standard.leviHom i ν J)) (isClosedSubgroup_restrict_leviHom ρ hρ)
+    (leviSchemeMeasure i ν J μM)
+
+/-- The same conditional application supplies all `L2Weights` fields on the actual Levi
+subgroup, for the chosen Haar measure with its original scale. -/
+theorem RationalXiSquareIntegrableStatement.leviL2Weights :
+    L2Weights μM (rationalLeviXi hKc hM) (fun m => rationalHeight (F := F) ρ m) := by
+  apply (l2Weights_leviSchemeMeasure_iff hG hi hν hJ hKo hKc ρ hM μM).mp
+  exact h.l2Weights
+    (Langlands.BruhatTits.SpecialCompact.standardLevi_isConnectedReductive hG i hi ν hν J hJ)
+    (Standard.isMaximalSplitTorus_leviTorusHom i ν J hi)
+    (isGenericCocharacter_leviTorusHom hν) hK0Lo hK0Lc hbasis hcover
+    (isOpen_leviSchemeCompact hKo) (isCompact_leviSchemeCompact hKc)
+    (isIwasawaPair_leviSchemeCompact hG hi hν hJ hM)
+    (isClosedSubgroup_restrict_leviHom ρ hρ) (leviSchemeMeasure i ν J μM)
+
+omit h in
+/-- Conditional Levi II.1.5 reduced to the analytic Xi upper bound of II.1.1. The Levi basis,
+Cartan cover and Iwasawa factorization are retained as explicit structural premises. -/
+theorem rationalLeviSquareIntegrableWeight_of_upperBound
+    (hupper : RationalXiUpperBoundStatement.{u}) :
+    SquareIntegrableWeight μM (rationalLeviXi hKc hM)
+      (fun m => rationalHeight (F := F) ρ m) :=
+  (rationalXiSquareIntegrable_of_upperBound hupper).leviSquareIntegrableWeight
+    hG hi hν hJ hKo hKc ρ hρ hM hK0Lo hK0Lc hbasis hcover μM
+
+omit h in
+/-- Conditional `L²` weights on the actual Levi subgroup, reduced to the analytic Xi upper
+bound with the same explicit Levi structural premises. -/
+theorem rationalLeviL2Weights_of_upperBound (hupper : RationalXiUpperBoundStatement.{u}) :
+    L2Weights μM (rationalLeviXi hKc hM) (fun m => rationalHeight (F := F) ρ m) :=
+  (rationalXiSquareIntegrable_of_upperBound hupper).leviL2Weights
+    hG hi hν hJ hKo hKc ρ hρ hM hK0Lo hK0Lc hbasis hcover μM
+
+end ConditionalSquareIntegrability
 
 end Levi
 
