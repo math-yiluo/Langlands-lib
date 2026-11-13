@@ -2,9 +2,9 @@
 
 Author: Worker 0, for Task 0 (`69dd20b3-6a77-44aa-b779-32391843c8dd`). First
 version 10 November 2026, second version 11 November 2026, third, fourth and
-fifth versions 12 November 2026, sixth to ninth versions 13 November 2026.
-This tenth version, also of 13 November 2026, was checked against Library
-commit `4bd8ef92a8f330864b325814d41cb38bf51b7794`.
+fifth versions 12 November 2026, sixth to tenth versions 13 November 2026.
+This eleventh version, also of 13 November 2026, was checked against Library
+commit `77763a3ff7dc9abc0457a63c7eda86d83f2b2274`.
 
 This note records how the published Library reduces the full local Langlands
 correspondence for GL_n to three propositions, and names the task that owns
@@ -21,10 +21,11 @@ supercuspidal to the full correspondence. It has been compiled as a
 development check but is not published. Each of the three open propositions
 still needs an accepted `lean.proof@1` candidate. The Library has also
 published a statement that reduces the first of them, candidate existence, to
-five global inputs; it is described with that premise below. Since the ninth
-version, Task 5585 has published its proof of Bernstein–Zelevinsky 1976,
-Cor. 4.15, for every nonarchimedean local field. The route does not use that
-theorem as a premise, and the three open premises are unchanged. For statement
+five global inputs; it is described with that premise below. Since the tenth
+version, the executor of Task 5584 has published a statement task and a proof
+task for one part of the counting hypothesis behind the second premise: the
+finiteness of the supercuspidal orbit strata. Neither has a candidate yet, and
+the three open premises are unchanged. For statement
 meanings and sources see
 [the specification coverage note](llc-specification-coverage.md); this note
 does not restate them.
@@ -260,7 +261,7 @@ at commit `2e46b9ca`:
 
 The table lists the three premises of
 `supercuspidalCorrespondenceHenniartThreeInputs`, which have no Library proof
-at commit `4bd8ef92`. They are numbered by their position in that theorem;
+at commit `77763a3f`. They are numbered by their position in that theorem;
 the third column gives their position among the premises of
 `supercuspidalCorrespondenceHenniartFiveInputs`, which the eighth version
 used. Universes are those of the full correspondence (`uK = uF`, `uW = uP`,
@@ -273,13 +274,13 @@ staged or under review is not a proof until it is accepted and published.
 | # | Premise (universes of the full correspondence) | Five-premise position | Module | Owner and state on 13 November 2026 |
 | --- | --- | --- | --- | --- |
 | 1 | `Henniart.CandidateExistenceStatement.{uF, uP, uA, uP, uF}` (Henniart 2000, Thm 3.1 with §§3.7–3.8) | 1 | `Correspondence/HenniartStableMapStatement` | Task 5583 `54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, waiting; executor Worker 5732. See below. |
-| 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, ready; executor Worker 5733. It has no proof candidate; its route-study note is published. See below. |
+| 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, waiting; executor Worker 5733, waiting on Tasks 6304, 6305 and 5032. It has no proof candidate; its route-study note is published. See below. |
 | 3 | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | 5 | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. |
 
 Premise 1. Task 3657 published the proposition
 `Henniart.CandidateExistenceReductionStatement` (module
 `Correspondence/HenniartCandidateExistenceReductionStatement`). It is a
-statement only; the Library at commit `4bd8ef92` has no proof of it. It says
+statement only; the Library at commit `77763a3f` has no proof of it. It says
 that five global inputs together imply `CandidateExistenceStatement` with the
 automorphic-lattice universe (the third universe argument) equal to `0` and
 the other four universes arbitrary:
@@ -321,7 +322,7 @@ hypotheses: `NumericalOrbitCountStatement` (for every p-adic field, rank and
 conductor, the unramified-twist orbit strata on the Weil and supercuspidal
 sides are finite and have equal cardinality), and finiteness of the conductor
 `Numerical.conductor K π` of every supercuspidal class `π`. A search of the
-Lean sources at commit `4bd8ef92` found no proof of either hypothesis. The
+Lean sources at commit `77763a3f` found no proof of either hypothesis. The
 operator decided on 13 November 2026 that Task 5584 stays open and that its
 executor does not prove conductor finiteness of supercuspidal classes: that is
 owned through Task 5585 (`5da7d945-39ed-4dcb-ace6-030fa18e4f24`,
@@ -339,8 +340,39 @@ finiteness, and Task 5032 remains its other owner. The
 executor of Task 5584 wrote a route-study note,
 [Henniart's numerical correspondence: route study for the orbit counts](numerical-count-route-study.md),
 which compares Henniart's 1988 route to the orbit counts with a route through
-explicit counts. A TaskHub search on 13 November 2026 found no separate proof
-task for `NumericalOrbitCountStatement`.
+explicit counts.
+
+`NumericalOrbitCountStatement` has three conjuncts for each p-adic field `K`,
+rank `k + 1` and conductor `a`: the Weil-side orbit stratum is finite, the
+supercuspidal orbit stratum `Numerical.supercuspidalOrbitStratum K k a` is
+finite, and the two have the same `Set.ncard`. On 13 November 2026 the operator
+approved the first unit proposed in the route-study note: the finiteness of the
+supercuspidal orbit strata, as a statement task followed by a proof task
+(operator message `61fe2f523b935694829f4bc257c86858`, to the executor of Task
+5584). The executor of Task 5584 published both:
+
+- Task 6304 (`4ac43c6c-0bda-415d-b426-54cc423c10b9`, `lean.statement@1`,
+  ready, no executor yet) is to publish
+  `Henniart.SupercuspidalOrbitStratumFinitenessStatement` in a new module
+  `Correspondence/HenniartOrbitStratumFinitenessStatement`. The proposition is
+  the second conjunct above, for every p-adic field, rank and conductor.
+- Task 6305 (`44507d44-e3fd-4b88-a5cf-8efd43844948`, `lean.proof@1`, ready,
+  no executor yet; it requires Task 6304) is to prove it in a module
+  `Correspondence/HenniartOrbitStratumFinitenessProof`.
+
+A Lean draft of both modules is in Task 5584's shared draft (revision 2). Its
+proof reduces to the published
+`Henniart.CompactOpenFiniteness.centralLevelStratum_finite` (Bernstein–Zelevinsky
+1976, Cor. 4.15, for p-adic fields). The draft is not a candidate, and the
+Library at commit `77763a3f` has neither module. The operator did not approve
+the second unit proposed in the note, which would derive the counts from a
+bijective numerical injection in every rank. The operator judged it circular
+for this route: every known source of such an injection is a local Langlands
+correspondence whose proof uses the numerical theorem. A TaskHub search on
+13 November 2026 found no task for the Weil-side finiteness or the equality of
+the counts. The operator will decide later on
+a program for them, such as Henniart's 1988 route (Route A of the route-study
+note).
 
 ## Tasks that left the route
 
@@ -397,13 +429,13 @@ premise 2 above) and is done.
 ## The composite
 
 The module below compiles at commit
-`4bd8ef92a8f330864b325814d41cb38bf51b7794` in environment
+`77763a3ff7dc9abc0457a63c7eda86d83f2b2274` in environment
 `5c94c648-e8dc-4002-a50a-071ebf3f6096`, with 0 errors and 0 warnings. The
 check compiled the block verbatim as a private draft module in the Lean
 service, together with a second draft module that imports it and runs
 `#print axioms Langlands.Correspondence.fullCorrespondence_of_henniartThreeInputs`,
 and inspected that declaration. Its diagnostics are the private record
-`e487502a-ea67-4fba-8262-9b559ef6e88e`. To reproduce it, save the block as a
+`34ac70be-0d13-4877-8fbe-600270b0ef5b`. To reproduce it, save the block as a
 draft module and compile it with `lean_check`. The declaration inspection lists
 only the axioms `propext`, `Classical.choice` and `Quot.sound`. Both theorems it applies are
 published: `fullCorrespondenceStatement_of_supercuspidalCorrespondence` and

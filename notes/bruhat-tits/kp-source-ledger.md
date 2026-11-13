@@ -18,8 +18,9 @@ Bruhat–Tits data in the sense of corrected Definition 4.1.26, which is
 equally conditional. Section 13.2.6 is proved for supplied integral models
 and reductive quotients, together with its inflation and compact-induction
 consumer; the congruence-basis premise of its local-field corollary is
-proved, and an intertwining theorem for compact induction has a
-published statement. On the same supplied data with finite residue
+proved, and an intertwining and double-coset theorem for compact
+induction is proved and specialized to its depth-zero compact
+inductions. On the same supplied data with finite residue
 field, the reductive quotient has finitely many points; over a Henselian
 base their number is the index of the radical preimage in the integral
 points, and over a local field the radical preimage is a compact open
@@ -44,8 +45,13 @@ five statements, one of which is proved. Corrected Definition 4.1.26 has a
 published definition, the corrected Definition 4.1.26 part of Theorem 9.2.7
 a published existence statement, reduced by two proved implications to
 four focused statements, and Definition 6.6.1 a partial published
-definition. The other twenty-four rows retain empty formal-status and
-evidence fields. The remaining Bundle B
+definition. Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary
+8.4.12 have partial published statements on supplied building data, for
+models over the integers of the maximal unramified extension or, for
+facets, over the integers of a nonarchimedean local field; the full
+model of Theorem 8.3.2 also has a proved construction from five
+unproved statements. The other nineteen rows retain empty formal-status
+and evidence fields. The remaining Bundle B
 targets still require public ledger entries. Private source audits and
 unsubmitted drafts are not publication evidence.
 
@@ -456,6 +462,53 @@ in commit `cfedefb6`, the two assembly proofs (commit `730bd1f2`),
 axiom set is `propext`, `Classical.choice`, `Quot.sound`. The source
 and correction fields of every row are unchanged.
 
+A fourteenth pass on 13 November 2026 updates six rows and adds none.
+Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 change
+from an empty status to `statement`, each for the part described in its
+Recorded Lean scope entry. `UnramifiedParahoricModelStatement` (artifact
+`41339d18-6b2c-4c79-a9e1-9ef821fe6038`, Library commit
+`cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`) asks, over the integers of
+the maximal unramified extension `K` of a nonarchimedean local field and
+on supplied building data of `G_K`, for a smooth model with integral
+points `G(K)^1_Ω` and its relative identity component, which has
+connected fibres and integral points `G(K)^0_Ω`. It covers Theorem
+8.3.13 and the `G(K)^1_Ω` part of Theorem 8.3.2; the dagger model is
+absent. Its full-model part is proved from five unproved statements by
+`exists_smoothFullModel_of_vertexInputs` (artifact
+`63d25099-b07d-4806-8ec0-e5b2587c6bf5`, commit
+`7f43c3c930ff92f76dae6589da1678ad729017e5`).
+`UnramifiedModelKernelStatement` (artifact
+`a9987a70-ad07-49f0-adca-afbc31ec89df`, commit
+`51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`) states the smooth connected
+unipotent kernel of Proposition 8.4.15, the valid first assertion of
+Theorem 8.4.19(1), without the product decomposition.
+`UnramifiedFacetRootDatumStatement` and
+`UnramifiedFacetPositiveRadicalStatement` (artifacts
+`adc6a005-db54-4eea-ab15-802f0f62e17f` and
+`bf9958e9-6ff4-49bc-8d10-7c32126dffad`, commit
+`73b1430a339b037d27e9096762b0400adb4fbd19`) state Axiom 4.1.22(6) and
+the inclusion of Axiom 4.1.22(7) for descended facet models over the
+integers of the local field; KP 4.1.28 derives these axioms from Theorem
+8.4.10 and Corollary 8.4.12. Each of the five rows also cites
+`IntegralModelAxiomsStatement`, the descended supplied-data form of
+Axioms 4.1.20 and 4.1.22, which contains the only Lean form of Theorem
+8.4.19(2)–(4). None of these statements is proved; their proof tasks are
+Task 5976, Task 6203, Task 6218, Task 6219 and Task 5429. The Section
+13.2.6 row stays `conditional`. It records the proofs of the three
+intertwining statements by Tasks 5700, 5701 and 5702 (commit
+`730bd1f25b056b8106a2697e003c1ef1733a6b30`) and their depth-zero
+specialization
+`Langlands.BruhatTits.IntegralModels.DepthZeroIntertwining` (artifact
+`8fac015b-ad45-42d1-b1a8-fa15c6755a7c`, commit `73b1430a`), which over a
+local field needs only the supplied model and quotient. Twenty-four
+declarations were inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096`: eight at commit `eded01f2`, five
+at commit `451cce4c` and eleven at commit `aae8cb82`. Each inspected
+module is byte-identical to the commit cited for it and to commit
+`a0627c91`. Every reported axiom set is `propext`, `Classical.choice`,
+`Quot.sound`. The source and correction fields of every row are
+unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -562,7 +615,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a published intertwining statement for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; the other twenty-four rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1, Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, one of them proved) and Lemma 9.8.1 have published statements, corrected Proposition 13.5.2 a published statement on available data, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, with separation and finite-depth bounded openness proved and the supplied-filtration parts (1), (2) and (4) without that premise refuted by an unformalized paper counterexample, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the full model of Theorem 8.3.2 with a proved construction from five unproved statements; the other nineteen rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -2496,22 +2549,70 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
-        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction."
+        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction.",
+        "Recorded Lean scope (the G(K)^1_Omega model only): UnramifiedParahoricModelStatement (module Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement, artifact 41339d18-6b2c-4c79-a9e1-9ef821fe6038, first published in Library commit cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e) quantifies over every nonarchimedean local field F in universe u and every affine group scheme G over F. It takes K = inertiaFixedField F, the maximal unramified extension, with integer ring O = fixedFieldIntegers F; supplied building data C : MaximalUnramified.BuildingData F G_K for the normalized valuation of K, which record that G_K is connected reductive; a datum E : UnramifiedZeroDatum computing G(K)^0; a point g of G(K); and a nonempty bounded subset Omega_a of the apartment of C. It asserts that some D : RelativeComponentModelData O K G_K has D.full.integralPoints = G(K)^1 ⊓ C.pointwiseFixer (g·Omega_a) and D.neutral.integralPoints = E.zeroPoints ⊓ C.pointwiseFixer (g·Omega_a). Here G(K)^1 is characterValuationKernel, the common kernel of the valuations of all rational characters of G_K, and E.zeroPoints is G(K)^0 of KP Definition 2.6.23(1) (module Langlands.Geometry.Building.KPZeroSubgroups). D.full is a smooth affine flat O-model of finite type with generic fibre G_K, and D.neutral is a smooth connected-fibre relative identity component of it; the neutral clause is recorded in the Theorem 8.3.13 row. The statement differs from the source in three ways: G(K)^dagger_Omega and its model are absent, so the common relative identity component of the two models is not stated; k is a nonarchimedean local field rather than a Henselian discretely valued field with perfect residue field; and C is supplied rather than the constructed building of G_K. Secondary, descended form: IntegralModelAxiomsStatement (module Langlands.Geometry.Building.IntegralModelAxiomsStatement; Axioms 4.1.20 and 4.1.22; proof Task 5429, cd2ad671-3edf-4905-a0e2-e7aa2b160b91) asserts, for every nonarchimedean local field F, affine group scheme G over F and supplied P : ParahoricBuildingData G with a polysimplicial realization and an apartment splitting satisfying the seven Section 4.2 building predicates, that some model family M over 𝒪[F], quotient family and relative root reflection data satisfy M.SatisfiesModelAxioms P and the morphism axioms. Its index sets are the nonempty bounded subsets of translated apartments and the facets of the supplied building, so it is the Section 9.2.5 descended form over 𝒪[F], on supplied data. It is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; its acceptance artifact cannot be identified in this instance. Its clause full_points (BuildingModelFamily.ModelAxiomClauses) gives the full model of every index Omega the integral points oneFixer Omega, the pointwise fixer of Omega in G(F)^1. The status statement of this row covers only this part."
       ],
       "conclusion": "G(K)^1_Omega and G(K)^dagger_Omega are schematic: they are the O-points of actual smooth affine O-group schemes with generic fibre G_K. Their models have the same relative identity component. This does not assert connectedness of the entire models or identify either subgroup with the full fixer.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
+        "Langlands.BruhatTits.IntegralModels.exists_smoothFullModel_of_vertexInputs",
+        "Langlands.BruhatTits.IntegralModels.exists_relativeComponentModelData_of_vertexInputs",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
+        "Langlands.BruhatTits.IntegralModels.UnramifiedFullModelConstruction",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
       "dependencies": [
         "Proposition 8.3.1: faithful representations, stable lattices, schematic closure and smoothening (A.6.5–A.6.6) construct vertex models",
         "Enlarge Omega to the facets meeting it; Proposition 7.7.1 gives the finite-index inclusions, and A.7.1 propagates schematicity and identifies relative identity components",
-        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent."
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
+        "Recorded Lean route (the G(K)^1_Omega model only): exists_smoothFullModel_of_vertexInputs and exists_relativeComponentModelData_of_vertexInputs (module Langlands.BruhatTits.IntegralModels.UnramifiedFullModelConstruction, artifact 63d25099-b07d-4806-8ec0-e5b2587c6bf5, a supporting unit of proof Task 5976, first published in Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5) are proved from five unproved statements: Langlands.Geometry.Building.MaximalUnramified.VertexOneStabilizerMaximalBoundedStatement and Langlands.Geometry.Building.MaximalUnramified.FiniteVertexFixerApproximationStatement (module Langlands.Geometry.Building.UnramifiedVertexFixerStatements), Langlands.GroupScheme.MaximalBoundedIntegralModelStatement (module Langlands.GroupScheme.IntegralModel.MaximalBounded), Langlands.GroupScheme.IntegralModel.SmoothIntersectionStatement (module Langlands.GroupScheme.IntegralModel.SmoothIntersection) and Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement (module Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargement). For every affine group scheme G over K with supplied C : MaximalUnramified.BuildingData F G, every g in G(K) and every nonempty bounded Omega_a, the first gives a smooth O-model with integral points G(K)^1 ⊓ C.pointwiseFixer (g·Omega_a), and the second packages it with its relative identity component. The proof chooses finitely many vertices, takes smooth models of their one-stabilizers, intersects them and enlarges the intersection by finite index to the full fixer. It does not compare the neutral integral points with G(K)^0_Omega, so it does not prove UnramifiedParahoricModelStatement.",
+        "Open obligations: UnramifiedParahoricModelStatement has proof Task 5976 (85c28d88-edea-4dd0-99a5-2610566438c0); the five inputs of the recorded route are unproved; IntegralModelAxiomsStatement has proof Task 5429; the dagger model and the common relative identity component have no Lean statement."
       ],
       "consumer_or_regression": "Actual integral-model input for the connected model, its reduction and compact/open integral points. The generally nonaffine full-fixer model of Remark 8.3.4 remains a different object.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "41339d18-6b2c-4c79-a9e1-9ef821fe6038",
+        "63d25099-b07d-4806-8ec0-e5b2587c6bf5"
+      ],
+      "publication_commits": [
+        "cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e",
+        "7f43c3c930ff92f76dae6589da1678ad729017e5",
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "bafa87b4-93ae-464b-878e-aebe8a564767",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit 451cce4c; kind definition; statement_returns_prop true; the module is byte-identical to commit cc5aa77f, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.exists_smoothFullModel_of_vertexInputs",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "f2a68e9e-b2fe-47d9-bf18-4f7722876533",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem; the module is byte-identical to commit 7f43c3c9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.exists_relativeComponentModelData_of_vertexInputs",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "fc09ed0b-b278-490f-89f7-62cf3ef63705",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit 451cce4c; kind theorem; the module is byte-identical to commit 7f43c3c9, its first publication."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ce6ea460-76bf-4c15-ac37-ee6c05951dc6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2529,24 +2630,61 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
-        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction."
+        "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction.",
+        "Recorded Lean scope (without the dagger model): UnramifiedParahoricModelStatement (module, artifact and setting as in the Theorem 8.3.2 row) asserts, for the same D, D.neutral.integralPoints = E.zeroPoints ⊓ C.pointwiseFixer (g·Omega_a), that is G(K)^0_Omega. The fields neutral_smooth, neutral_connectedFibres, inclusion and isRelativeComponent of RelativeComponentModelData make D.neutral a smooth affine O-model with connected fibres and generic fibre G_K that is the relative identity component of D.full. This is the conclusion of the theorem with three differences: D.neutral is stated to be the relative identity component of the G(K)^1_Omega model only, since the dagger model is absent; k is a nonarchimedean local field; and the building data C are supplied. The last sentence of the conclusion is a non-claim. Secondary, descended form: the clauses neutral_points (the neutral model of every index Omega has integral points zeroFixer P Omega, the pointwise fixer of Omega in P.zeroSubgroup) and facet_constancy (Axiom 4.1.20(1): a nonempty subset of a facet has a neutral model isomorphic to that of the facet) of IntegralModelAxiomsStatement, described in the Theorem 8.3.2 row. The status statement of this row covers only this part."
       ],
       "conclusion": "The common relative identity component G^0_Omega of the schematic models in 8.3.2 has G^0_Omega(O)=G(K)^0_Omega. It is the actual smooth affine connected-fibre parahoric model with generic fibre G_K. Its connectedness does not identify the parahoric with a full pointwise or setwise fixer.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelData",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponent",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
       "dependencies": [
         "Theorem 8.3.2; T is a maximal torus since G_K is quasi-split by 2.3.8. The connected Neron model has T^0(O)=T(K)^0 by B.8.7",
         "Sections 8.3.7–8.3.12 construct root models with prescribed integral points and connected fibres. Sections 2.10.10 and 2.10.19 extend the genuine generic-fibre inclusions",
         "Corrected connected-fibre argument: torus and root model maps factor through G^0_Omega; hence the generated G(K)^0_Omega lies in G^0_Omega(O). Proposition 7.7.1 gives openness and finite index there, and Lemma A.4.26 proves equality",
         "Proposition 8.3.14 gives the actual root-product open immersion",
-        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent."
+        "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
+        "Open obligations: UnramifiedParahoricModelStatement has proof Task 5976 (85c28d88-edea-4dd0-99a5-2610566438c0). The conditional full-model construction recorded in the Theorem 8.3.2 row does not compare the neutral integral points with G(K)^0_Omega. IntegralModelAxiomsStatement has proof Task 5429."
       ],
       "consumer_or_regression": "Connected parahoric construction for reduction, inflation and compact induction. Proving compactness and openness further uses the actual scheme-point topology from its owning task.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "41339d18-6b2c-4c79-a9e1-9ef821fe6038"
+      ],
+      "publication_commits": [
+        "cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e",
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "bafa87b4-93ae-464b-878e-aebe8a564767",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit 451cce4c; kind definition; statement_returns_prop true; the module is byte-identical to commit cc5aa77f, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelData",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "6f94931d-9288-4a71-b51e-fad018824c93",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind inductive; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ce6ea460-76bf-4c15-ac37-ee6c05951dc6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2565,23 +2703,60 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
         "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction.",
-        "Write H_Omega for the connected special fibre of the connected parahoric model G^0_Omega, and Gred_Omega=H_Omega/R_u(H_Omega) for its maximal reductive quotient. Sbar is the special fibre of the standard O-model of S and is identified with its image in Gred_Omega."
+        "Write H_Omega for the connected special fibre of the connected parahoric model G^0_Omega, and Gred_Omega=H_Omega/R_u(H_Omega) for its maximal reductive quotient. Sbar is the special fibre of the standard O-model of S and is identified with its image in Gred_Omega.",
+        "Recorded Lean scope (the root-datum assertion for facets only): UnramifiedFacetRootDatumStatement (module Langlands.BruhatTits.IntegralModels.UnramifiedFacetRootDatumStatement, artifact adc6a005-db54-4eea-ab15-802f0f62e17f, first published in Library commit 73b1430a339b037d27e9096762b0400adb4fbd19) is Axiom 4.1.22(6) for the descended building, in the form of Proposition 9.4.23. It quantifies over every nonarchimedean local field F, affine group scheme G over F and supplied P : ParahoricBuildingData G with a polysimplicial realization and an apartment splitting satisfying the seven Section 4.2 building predicates. It also takes supplied building data C of G_K for K = inertiaFixedField F, a semilinear Galois action A on C, a datum E computing G(K)^0, and an injective G(F)-equivariant map e from the building of P to that of C with an affine apartment map a, subject to eight descent premises: e is compatible with the apartment maps through a; it lands in and surjects onto the Galois-fixed points; it reflects special points; a matches the facets; and S(K)^1 fixes the image of the apartment. The models are D : RelativeComponentModelData over 𝒪[F] whose smooth neutral model has base change to the integers of K with integral points E.zeroPoints ⊓ C.pointwiseFixer (e(F)) = G(K)^0 ∩ G(K)_{e(F)} for the facet F concerned, together with any Q : SpecialFibreQuotientData D satisfying Q.IsReductiveQuotient. For a facet presented by an apartment facet Fa translated by g in G(F), an integral split torus 𝒯 of D with generic fibre S satisfying the torus clause of Axiom 4.1.20(3), and any relative root reflection data Droot, it asserts HasApartmentDerivativeRootDatum: the root datum of Q relative to the image of the special fibre of 𝒯 consists of the derivatives of the affine roots vanishing on Fa and their coroots in Droot, transported through 𝒯. It differs from the source in four ways: Omega is a facet; the open-cell product onto R_u(H_Omega), the plus-group images and the isomorphism of Ubar_{a,Omega,0}/U^+_{a,Omega,0} with the root group are not stated, nor is reducedness of Phi_Omega as a separate assertion; the root datum is the descended one over 𝒪[F], relative to an f-split torus, rather than the geometric one over fbar relative to Sbar; and the building data and models are supplied. Secondary: the clause derivative_root_data of IntegralModelAxiomsStatement (described in the Theorem 8.3.2 row) asserts the same predicate for the facets of its supplied model families. The status statement of this row covers only this part."
       ],
       "conclusion": "For every choice of positive relative roots, open-cell multiplication is an isomorphism of schemes from the negative nondivisible U^+_{a,Omega,0} factors, T^+, and the positive nondivisible factors onto R_u(H_Omega). These plus groups are special-fibre images of the corresponding 0+ model maps. This is not a direct-product group decomposition. The root datum of Gred_Omega relative to Sbar is (X^*(S),Phi_Omega,X_*(S),Phi_Omega^vee), where Phi_Omega consists of gradients of affine roots vanishing identically on Omega. For a in Phi_Omega, Ubar_{a,Omega,0}/U^+_{a,Omega,0} maps isomorphically to its a-root group. Phi_Omega is reduced even when the ambient relative root system has multipliable roots.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedFacetRootDatumStatement",
+        "Langlands.BruhatTits.IntegralModels.HasApartmentDerivativeRootDatum",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedFacetRootDatumStatement",
+        "Langlands.BruhatTits.IntegralModels.FacetAxioms",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
       "dependencies": [
         "Proposition 8.3.14, Corollary 8.4.5 and Proposition 8.4.8; Lemma 8.4.7 keeps the a-versus-2a alternatives",
         "Dynamic root groups and multiplication, Proposition 2.11.9 and Theorem 2.11.15; torus unipotent radical B.10.12",
         "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
-        "Section 9.5 uses perfectness to descend the geometric unipotent radical; the displayed split root datum is a geometric description over fbar, not an assertion of splitness over f"
+        "Section 9.5 uses perfectness to descend the geometric unipotent radical; the displayed split root datum is a geometric description over fbar, not an assertion of splitness over f",
+        "Open obligations: UnramifiedFacetRootDatumStatement has proof Task 6218 (fa9500db-0be6-4ede-8713-ebdd29022790), an input to IntegralModelAxiomsStatement's proof Task 5429."
       ],
       "consumer_or_regression": "Maximal reductive quotient for depth zero. Preserve the special-fibre distinction; the ramified SU_3 example of Remark 8.4.11 has quotient SO(3)=PGL_2 although the ambient group is simply connected.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "adc6a005-db54-4eea-ab15-802f0f62e17f"
+      ],
+      "publication_commits": [
+        "73b1430a339b037d27e9096762b0400adb4fbd19",
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.UnramifiedFacetRootDatumStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "f1eb8cdd-f3bc-4128-a8e7-6969acf1e5b6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit 451cce4c; kind definition; statement_returns_prop true; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.HasApartmentDerivativeRootDatum",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "bea54caf-b55a-46da-8990-2ed244ff2af2",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ce6ea460-76bf-4c15-ac37-ee6c05951dc6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2600,24 +2775,70 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
         "S is a maximal K-split torus, T=Z_{G_K}(S), and Omega is a nonempty bounded subset of its apartment in the actual building B(G_K). The models in Chapter 8 are over O; their descent over o is a separate construction.",
-        "Write H_Omega for the connected special fibre of the connected parahoric model G^0_Omega, and Gred_Omega=H_Omega/R_u(H_Omega) for its maximal reductive quotient. Sbar is the special fibre of the standard O-model of S and is identified with its image in Gred_Omega."
+        "Write H_Omega for the connected special fibre of the connected parahoric model G^0_Omega, and Gred_Omega=H_Omega/R_u(H_Omega) for its maximal reductive quotient. Sbar is the special fibre of the standard O-model of S and is identified with its image in Gred_Omega.",
+        "Recorded Lean scope (the Axiom 4.1.22(7) inclusion only, which KP 4.1.28 derives from this corollary): UnramifiedFacetPositiveRadicalStatement (module Langlands.BruhatTits.IntegralModels.UnramifiedFacetPositiveRadicalStatement, artifact bf9958e9-6ff4-49bc-8d10-7c32126dffad, first published in Library commit 73b1430a339b037d27e9096762b0400adb4fbd19) has the setting of the Theorem 8.4.10 row. For facets F ≺ F' of the descended building, with characterized models D and D' and reductive quotients Q and Q', it asserts Q.positivePoints ≤ Q'.positivePoints. Here positivePoints is by definition the subgroup of G(F) of integral sections of the neutral model whose reduction projects into the unipotent radical, the descended analogue of the inverse image named in the corollary. No Lean declaration compares it with the Moy–Prasad group G(K)_{Omega,0+}, so the identification asserted by the corollary is not stated. The surjectivity of reduction used in the corollary is proved in general: Langlands.GroupScheme.IntegralModel.reduction_surjective (module Langlands.GroupScheme.IntegralModel.HenselianReduction, present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd) says that the reduction map of a smooth integral model over a Henselian local ring is surjective, the role of 8.1.3. Secondary: the clause positive_radicals of IntegralModelAxiomsStatement (described in the Theorem 8.3.2 row) asserts SatisfiesPositiveRadicalClause for incident facets of its supplied families: both reductions are surjective and the same inclusion holds. The status statement of this row covers only this part."
       ],
       "conclusion": "Under the natural surjective reduction G(K)^0_Omega=G^0_Omega(O)→H_Omega(fbar), the inverse image of R_u(H_Omega)(fbar) is G(K)_{Omega,0+}. Thus 0+ is the kernel of the composite to Gred_Omega(fbar); it is generally larger than the kernel of reduction to the whole special fibre.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedFacetPositiveRadicalStatement",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.SatisfiesPositiveRadicalClause",
+        "Langlands.GroupScheme.IntegralModel.reduction_surjective",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedFacetPositiveRadicalStatement",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibre",
+        "Langlands.GroupScheme.IntegralModel.HenselianReduction",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
       "dependencies": [
         "Smooth Henselian reduction is surjective by 8.1.3; the integral-point identification is Theorem 8.3.13",
         "Theorem 8.4.10, Corollary 8.4.5(2), Lemma B.10.11 and Proposition 7.3.12 identify the inverse image",
         "Proposition 2.4.3 makes projection from smooth connected special-fibre rational points to the reductive quotient surjective; Lemma 2.4.2 supplies unipotent H^1 vanishing",
         "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
-        "Section 9.5 uses G(k)^0=G(K)^0 intersect G(k) from 9.3.24, descends the unipotent radical over perfect f and gives G(k)^0+_F=G(K)^0+_F intersect G(k), hence the kernel over k"
+        "Section 9.5 uses G(k)^0=G(K)^0 intersect G(k) from 9.3.24, descends the unipotent radical over perfect f and gives G(k)^0+_F=G(K)^0+_F intersect G(k), hence the kernel over k",
+        "Open obligations: UnramifiedFacetPositiveRadicalStatement has proof Task 6219 (ec6e20e8-735d-4944-a683-3828ed1a53ea). The comparison of the radical preimage with G(K)_{Omega,0+} has no Lean statement."
       ],
       "consumer_or_regression": "Use the actual reduction composite in the depth-zero quotient and inflation; neither an arbitrary map with an assumed kernel nor reduction to the entire special fibre meets the target.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "bf9958e9-6ff4-49bc-8d10-7c32126dffad"
+      ],
+      "publication_commits": [
+        "73b1430a339b037d27e9096762b0400adb4fbd19",
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.UnramifiedFacetPositiveRadicalStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "5d74e3d3-e8f7-414c-a735-1a840a1111e8",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit 451cce4c; kind definition; statement_returns_prop true; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.SatisfiesPositiveRadicalClause",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "234590d9-17a4-4588-aa08-59718a363dad",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.GroupScheme.IntegralModel.reduction_surjective",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "32420bdf-ad04-455e-9ddf-d4915de0b845",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ce6ea460-76bf-4c15-ac37-ee6c05951dc6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2635,25 +2856,88 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       },
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
-        "F and F' are facets in an apartment A with F contained in the closure of F'. The generic-fibre identity induces the actual model morphism G^0_{F'}→G^0_F and its special-fibre morphism rhobar:H_{F'}→H_F. The full bijection ranges over all facets in B(G_K) whose closures contain F, not just those in A."
+        "F and F' are facets in an apartment A with F contained in the closure of F'. The generic-fibre identity induces the actual model morphism G^0_{F'}→G^0_F and its special-fibre morphism rhobar:H_{F'}→H_F. The full bijection ranges over all facets in B(G_K) whose closures contain F, not just those in A.",
+        "Recorded Lean scope (the smooth connected unipotent kernel of part (1), in the form of Proposition 8.4.15; parts (2)–(4) only through IntegralModelAxiomsStatement): UnramifiedModelKernelStatement (module Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelStatement, artifact a9987a70-ad07-49f0-adca-afbc31ec89df, first published in Library commit 51e4d8972659f1ffcf0ca89e8eee9540a30b52d3) has the setting of UnramifiedParahoricModelStatement (Theorem 8.3.2 row). For g in G(K) and subsets Omega_a and Omega_a' of the apartment of C with Omega_a nonempty, Omega_a' bounded and Omega_a contained in the closure of Omega_a', and for any smooth O-models N and N' with integral points G(K)^0 ∩ G(K)_{g·Omega_a} and G(K)^0 ∩ G(K)_{g·Omega_a'}, it asserts that every model homomorphism N' → N with identity generic fibre has a smooth, connected and unipotent scheme-theoretic kernel on special fibres. For facets F ≺ F' this is the first assertion of part (1). The product identification over all nondivisible roots is not stated, and neither is the false restricted index. At Library commit a0627c91 parts (2)–(4) have no statement in this unramified setting. IntegralModelAxiomsStatement (described in the Theorem 8.3.2 row) contains them for the descended supplied families over 𝒪[F], for f-rational parabolics rather than over fbar: its facet clauses assert HasParabolicSpecialFibreImage (the schematic image of the special-fibre map is a parabolic subgroup, Axiom 4.1.22(2)), HasParabolicReductionPreimage (the reduction preimage of the rational points of that image is the image of the integral points for F', Axiom 4.1.22(4)) and FacetModelData.HasFacetParabolicOrderBijection (an order-reversing bijection from all incident facets onto the f-parabolic subgroups of the quotient, Axiom 4.1.22(5)), and its general morphism clause asserts HasSmoothConnectedUnipotentKernel for the model map of every closure-ordered pair of subsets of a common apartment and every pair of incident facets (Axiom 4.1.22(1)). Containment of R_u(H_F) and the correspondence between facets in one apartment and parabolics containing the torus are not separate assertions. The status statement of this row covers only this part."
       ],
       "conclusion": "By Proposition 8.4.15 specialized to these facets, the schematic kernel of rhobar is smooth connected unipotent, and open-cell multiplication identifies it as a scheme with the product of ker(Ubar_{a,F',0}→Ubar_{a,F,0}) over all nondivisible roots a in Phi(S,G_K). The restriction to Phi'_{F'} minus Psi_F(F') printed in Theorem 8.4.19(1) is false and is excluded as a formalization target: Example 8.3.5 gives a split SL_2 open chamber F' incident to a hyperspecial vertex F for which Phi'_{F'} is empty by 8.4.6, but ker(rhobar) is G_a. Theorem 8.4.19(2)–(4) supplies the remaining conclusions. The image p_F(F') is the parabolic of H_F associated to Psi_F(F') and contains R_u(H_F). The inverse image of p_F(F')(fbar) in G^0_F(O) is G^0_{F'}(O). The map F'↦p_F(F') is a bijection from all incident facets onto all parabolics of H_F, equivalently of Gred_F. Facets in A alone correspond to parabolics containing the chosen maximal torus. The kernel product is a scheme isomorphism, not a direct-product group decomposition.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelStatement",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.HasSmoothConnectedUnipotentKernel",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.HasParabolicSpecialFibreImage",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.HasParabolicReductionPreimage",
+        "Langlands.BruhatTits.IntegralModels.FacetModelData.HasFacetParabolicOrderBijection",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
+      "modules": [
+        "Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelStatement",
+        "Langlands.BruhatTits.IntegralModels.ModelMorphism",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibre",
+        "Langlands.BruhatTits.IntegralModels.FacetParabolicOrder",
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+      ],
       "dependencies": [
         "Corrected general morphism setup preceding Proposition 8.4.15; that proposition supplies the smooth connected unipotent kernel and the product over all nondivisible ambient roots, without the false restriction in 8.4.19(1)",
         "Derived source-discrepancy check from Example 8.3.5 and Section 8.4.6: the chamber model maps to the hyperspecial SL_2 model by c=pi*c'; on special fibres its kernel has a=d=1, b=0 and c' free, hence is G_a, whereas Phi'_{F'} and the printed product index are empty",
         "Root-filtration comparisons 6.3.21; Theorem 8.4.10, Proposition 8.4.8(2), Proposition 1.3.35 and Corollary 8.4.12; independence from the apartment and the use of all apartments through F",
         "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
         "Section 9.3.2 descends the facet morphisms and identifies Gamma-facets through F with parabolic f-subgroups; Proposition 2.4.5 transfers these to the maximal reductive quotient",
-        "Proposition 9.3.3 proves the exact inverse-image equality over o, using 8.1.3 smooth Henselian reduction and Lemma 2.4.2 for the smooth connected unipotent kernel. This does not assert that every geometric parabolic descends"
+        "Proposition 9.3.3 proves the exact inverse-image equality over o, using 8.1.3 smooth Henselian reduction and Lemma 2.4.2 for the smooth connected unipotent kernel. This does not assert that every geometric parabolic descends",
+        "Open obligations: UnramifiedModelKernelStatement has proof Task 6203 (6cb35eb6-b989-4438-a42a-5fe281a2a64b; statement Task 5901, 5edda489-0dfa-401e-b621-4c2603932be7). IntegralModelAxiomsStatement has proof Task 5429."
       ],
       "consumer_or_regression": "Residue/facet correspondence and change-of-parahoric tests for depth-zero induction and double cosets; retain rational parabolics after Chapter 9 descent. The split SL_2 chamber-to-vertex kernel is a regression against the erroneous printed restricted index.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "a9987a70-ad07-49f0-adca-afbc31ec89df"
+      ],
+      "publication_commits": [
+        "51e4d8972659f1ffcf0ca89e8eee9540a30b52d3",
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3e02d5e7-c9f4-4aa2-89fb-7823df93388a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit 451cce4c; kind definition; statement_returns_prop true; the module is byte-identical to commit 51e4d897, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.HasSmoothConnectedUnipotentKernel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "29f8240e-4d0f-40dd-a255-e385450796c5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.HasParabolicSpecialFibreImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "a7625583-b32f-4092-baad-54b087fd9116",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelHom.HasParabolicReductionPreimage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "da726057-3b12-4715-b54e-b34c2ca0a458",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.FacetModelData.HasFacetParabolicOrderBijection",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7d35aa0b-782b-4721-a64e-9d6b619fb1b4",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; the module is byte-identical to commit ed924aef."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ce6ea460-76bf-4c15-ac37-ee6c05951dc6",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        }
+      ],
       "external_code": []
     },
     {
@@ -2672,7 +2956,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
         "x is a point of the actual descended building over k, with connected parahoric model G^0_x over o, special fibre H_x and maximal reductive quotient Gred_x. Put P_{x,0}=G^0_x(o). The Chapter 13 torus filtration is functorial and admissible with 7.2(1),(2). No finite-residue assumption is required for this depth-zero assertion.",
-        "Recorded Lean scope: the published modules Langlands.BruhatTits.IntegralModels.DepthZeroReduction (artifact f3a39f0a-0b63-4218-a72a-b3958c3b3740, first in Library commit 7047367a78583edbe335517824e30403414aa3f0) and Langlands.BruhatTits.IntegralModels.DepthZeroInduction (artifact a6b89c9a-222a-4977-b85b-1983338fa594, first in Library commit 7103f5282c4897716543f227940fdb2a0e12e70e) work over a domain R in universe u with fraction field K and a group scheme G over Spec K, with supplied D : RelativeComponentModelData R K G and Q : SpecialFibreQuotientData D. The smooth model D.neutral with connected fibres plays the role of G^0_x, Q.quotient that of Gred_x and Q.projection that of the quotient map; nothing identifies D.neutral with the actual parahoric model or D.neutral.integralPoints with P_{x,0}. The premises hrad : IsUnipotentRadical Q.radicalInclusion and hQ (Q.projection is the represented fppf quotient by that radical) are the first two conjuncts of Q.IsReductiveQuotient; reductivity of the quotient is not used. For a local domain R, ker_parahoricReduction hQ identifies the kernel of parahoricReduction : G^0(R) → Q.quotient(f) with Q.positivePoints.subgroupOf D.neutral.integralPoints, the radical preimage G(K)^{0+} of Axiom 4.1.22(7) inside G^0(R). For a Henselian local domain R with perfect residue field, parahoricReduction_surjective hrad hQ gives surjectivity and depthZeroQuotientEquiv hrad hQ is the induced group isomorphism from G^0(R) modulo that kernel onto Q.quotient(f). The integer rings of k and of K in the source are both such bases, so the source's assertion over K is the same declaration at another base; no instance is supplied. DepthZeroInduction adds the consumer test: inflation of a representation of Q.quotient(f) to G^0(R), the bijection between G^0(R)-maps from an inflation and Q.quotient(f)-maps into kernel invariants, and, for a topological-group structure on G(K) in which G^0(R) and its level-one congruence subgroup are open, compact induction from G^0(R) with Frobenius reciprocity (depthZeroInductionHomEquiv). For a nonarchimedean local field F, R = 𝒪[F] is proved Henselian and localFieldDepthZeroInductionHomEquiv, for affine G locally of finite type with rationalPointTopology, takes those openness premises from LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement. That statement is proved: congruenceNeighborhoodBasis_proof (module Langlands.GroupScheme.IntegralModel.CongruenceNeighborhoodBasisProof, Task 5447, artifact 69074fc3-6f69-402f-a73b-084d3e30c551, first published in Library commit ba77b83f98d4cbe92842b4645577633e0541fdab) applies to every integral model over 𝒪[F] of an affine G, so localFieldDepthZeroInductionHomEquiv congruenceNeighborhoodBasis_proof needs only the supplied D, Q, hrad and hQ, and the first conjunct of congruenceNeighborhoodBasis_proof F G D.neutral says that D.neutral.integralPoints is compact in rationalPointTopology. The module Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient (artifact b52c4590-0a68-4f37-a097-c66650f5d9ab, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) assumes a finite residue field. GroupScheme.finite_rationalPoints says that an affine group scheme locally of finite type over a finite commutative ring has finitely many points. For a local domain R and Q.quotient locally of finite type, finite_quotientPoints gives Finite (rationalPoints Q.quotient), as does IsConnectedReductive Q.quotient alone (finite_quotientPoints_of_isConnectedReductive); finiteQuotientGroup packages these points as a FiniteGrp, and positivePoints_subgroupOf_finiteIndex hQ says that Q.positivePoints.subgroupOf D.neutral.integralPoints has finite index. For a Henselian local domain, index_positivePoints_subgroupOf hrad hQ says that this index equals Nat.card (rationalPoints Q.quotient), and localField_index_positivePoints_subgroupOf is the case R = 𝒪[F]. For affine G locally of finite type with rationalPointTopology, localField_isOpen_ker_parahoricReduction says that the kernel of parahoricReduction is open in D.neutral.integralPoints. The module Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen (artifact f228edd9-7de3-41af-b12a-6be4746af741, first in the same commit) proves, over a local domain, congruenceSubgroup_le_positivePoints (D.neutral.congruenceSubgroup ≤ Q.positivePoints) and positivePoints_subgroupOf_normal hQ. Over 𝒪[F], with G affine and locally of finite type and rationalPointTopology, localField_isOpen_positivePoints and localField_isCompact_positivePoints say that Q.positivePoints is open and compact in G(F) without hrad or hQ, localFieldPositiveOpenSubgroup bundles it as an OpenSubgroup, and RelativeComponentModelData.localFieldIntegralOpenSubgroup bundles D.neutral.integralPoints for affine G. The cokernel description of Gred_x is not formalized. The module Langlands.Representation.Induction.OpenIntertwiningStatement (artifact 14c308d9-57df-4b0b-9b87-e08f078a61ae, first published in Library commit 79de65ce5fcd6dc5f182612988e1b529d49a63b4) states, for a subgroup H of a topological group G and representations of H over a commutative ring, CompactInductionIntertwiningStatement, the conjunction of three propositions. CompactInductionKernelStatement: for open H, the maps c-Ind_H^G A → c-Ind_H^G B between smooth representations correspond bijectively to intertwining kernels Φ : G → Hom(A, B) (IsIntertwiningKernel: Φ(hgh') = τ(h) ∘ Φ(g) ∘ σ(h'), and for each vector v only finitely many right cosets Hg have Φ(g)v ≠ 0), via Φ(g)v = T(unitFunction v)(g). CompactInductionDoubleCosetStatement: for compact open H, smooth σ and double-coset representatives s, restriction to the representatives is a bijection from intertwining kernels onto local intertwiner families (IsLocalIntertwinerFamily: φ(q) intertwines σ with h ↦ τ(s(q) h s(q)⁻¹) on H ∩ s(q)⁻¹ H s(q), and for each v only finitely many q have φ(q)v ≠ 0). CompactInductionFiniteTypeKernelStatement: for compact open H and finitely generated σ, the intertwining kernels are the covariant functions whose support meets finitely many double cosets HgH. With H = D.neutral.integralPoints and A, B two inflations Q.inflationSmoothRep, these describe the maps between the depth-zero compact inductions of DepthZeroInduction. No depth-zero specialization is a Lean declaration, and nothing about irreducibility or supercuspidality is stated."
+        "Recorded Lean scope: the published modules Langlands.BruhatTits.IntegralModels.DepthZeroReduction (artifact f3a39f0a-0b63-4218-a72a-b3958c3b3740, first in Library commit 7047367a78583edbe335517824e30403414aa3f0) and Langlands.BruhatTits.IntegralModels.DepthZeroInduction (artifact a6b89c9a-222a-4977-b85b-1983338fa594, first in Library commit 7103f5282c4897716543f227940fdb2a0e12e70e) work over a domain R in universe u with fraction field K and a group scheme G over Spec K, with supplied D : RelativeComponentModelData R K G and Q : SpecialFibreQuotientData D. The smooth model D.neutral with connected fibres plays the role of G^0_x, Q.quotient that of Gred_x and Q.projection that of the quotient map; nothing identifies D.neutral with the actual parahoric model or D.neutral.integralPoints with P_{x,0}. The premises hrad : IsUnipotentRadical Q.radicalInclusion and hQ (Q.projection is the represented fppf quotient by that radical) are the first two conjuncts of Q.IsReductiveQuotient; reductivity of the quotient is not used. For a local domain R, ker_parahoricReduction hQ identifies the kernel of parahoricReduction : G^0(R) → Q.quotient(f) with Q.positivePoints.subgroupOf D.neutral.integralPoints, the radical preimage G(K)^{0+} of Axiom 4.1.22(7) inside G^0(R). For a Henselian local domain R with perfect residue field, parahoricReduction_surjective hrad hQ gives surjectivity and depthZeroQuotientEquiv hrad hQ is the induced group isomorphism from G^0(R) modulo that kernel onto Q.quotient(f). The integer rings of k and of K in the source are both such bases, so the source's assertion over K is the same declaration at another base; no instance is supplied. DepthZeroInduction adds the consumer test: inflation of a representation of Q.quotient(f) to G^0(R), the bijection between G^0(R)-maps from an inflation and Q.quotient(f)-maps into kernel invariants, and, for a topological-group structure on G(K) in which G^0(R) and its level-one congruence subgroup are open, compact induction from G^0(R) with Frobenius reciprocity (depthZeroInductionHomEquiv). For a nonarchimedean local field F, R = 𝒪[F] is proved Henselian and localFieldDepthZeroInductionHomEquiv, for affine G locally of finite type with rationalPointTopology, takes those openness premises from LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement. That statement is proved: congruenceNeighborhoodBasis_proof (module Langlands.GroupScheme.IntegralModel.CongruenceNeighborhoodBasisProof, Task 5447, artifact 69074fc3-6f69-402f-a73b-084d3e30c551, first published in Library commit ba77b83f98d4cbe92842b4645577633e0541fdab) applies to every integral model over 𝒪[F] of an affine G, so localFieldDepthZeroInductionHomEquiv congruenceNeighborhoodBasis_proof needs only the supplied D, Q, hrad and hQ, and the first conjunct of congruenceNeighborhoodBasis_proof F G D.neutral says that D.neutral.integralPoints is compact in rationalPointTopology. The module Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient (artifact b52c4590-0a68-4f37-a097-c66650f5d9ab, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) assumes a finite residue field. GroupScheme.finite_rationalPoints says that an affine group scheme locally of finite type over a finite commutative ring has finitely many points. For a local domain R and Q.quotient locally of finite type, finite_quotientPoints gives Finite (rationalPoints Q.quotient), as does IsConnectedReductive Q.quotient alone (finite_quotientPoints_of_isConnectedReductive); finiteQuotientGroup packages these points as a FiniteGrp, and positivePoints_subgroupOf_finiteIndex hQ says that Q.positivePoints.subgroupOf D.neutral.integralPoints has finite index. For a Henselian local domain, index_positivePoints_subgroupOf hrad hQ says that this index equals Nat.card (rationalPoints Q.quotient), and localField_index_positivePoints_subgroupOf is the case R = 𝒪[F]. For affine G locally of finite type with rationalPointTopology, localField_isOpen_ker_parahoricReduction says that the kernel of parahoricReduction is open in D.neutral.integralPoints. The module Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen (artifact f228edd9-7de3-41af-b12a-6be4746af741, first in the same commit) proves, over a local domain, congruenceSubgroup_le_positivePoints (D.neutral.congruenceSubgroup ≤ Q.positivePoints) and positivePoints_subgroupOf_normal hQ. Over 𝒪[F], with G affine and locally of finite type and rationalPointTopology, localField_isOpen_positivePoints and localField_isCompact_positivePoints say that Q.positivePoints is open and compact in G(F) without hrad or hQ, localFieldPositiveOpenSubgroup bundles it as an OpenSubgroup, and RelativeComponentModelData.localFieldIntegralOpenSubgroup bundles D.neutral.integralPoints for affine G. The cokernel description of Gred_x is not formalized. The module Langlands.Representation.Induction.OpenIntertwiningStatement (artifact 14c308d9-57df-4b0b-9b87-e08f078a61ae, first published in Library commit 79de65ce5fcd6dc5f182612988e1b529d49a63b4) states, for a subgroup H of a topological group G and representations of H over a commutative ring, CompactInductionIntertwiningStatement, the conjunction of three propositions. CompactInductionKernelStatement: for open H, the maps c-Ind_H^G A → c-Ind_H^G B between smooth representations correspond bijectively to intertwining kernels Φ : G → Hom(A, B) (IsIntertwiningKernel: Φ(hgh') = τ(h) ∘ Φ(g) ∘ σ(h'), and for each vector v only finitely many right cosets Hg have Φ(g)v ≠ 0), via Φ(g)v = T(unitFunction v)(g). CompactInductionDoubleCosetStatement: for compact open H, smooth σ and double-coset representatives s, restriction to the representatives is a bijection from intertwining kernels onto local intertwiner families (IsLocalIntertwinerFamily: φ(q) intertwines σ with h ↦ τ(s(q) h s(q)⁻¹) on H ∩ s(q)⁻¹ H s(q), and for each v only finitely many q have φ(q)v ≠ 0). CompactInductionFiniteTypeKernelStatement: for compact open H and finitely generated σ, the intertwining kernels are the covariant functions whose support meets finitely many double cosets HgH. With H = D.neutral.integralPoints and A, B two inflations Q.inflationSmoothRep, these describe the maps between the depth-zero compact inductions of DepthZeroInduction. Each conjunct is proved: Langlands.Induction.compactInductionKernel (module Langlands.Representation.Induction.OpenIntertwiningKernelProof, Task 5700, artifact 3d0aeb2f-0165-45fd-84c2-84524c965b56), compactInductionDoubleCoset (module Langlands.Representation.Induction.OpenIntertwiningDoubleCosetProof, Task 5701, artifact 2c97df7d-ae72-436f-8163-bbf7e3c7a7c5) and compactInductionFiniteTypeKernel (module Langlands.Representation.Induction.OpenIntertwiningFiniteTypeProof, Task 5702, artifact cd045fc8-59a1-4276-b72d-a81744fa882e), all first published in Library commit 730bd1f25b056b8106a2697e003c1ef1733a6b30; no separate theorem proves the conjunction. The module Langlands.BruhatTits.IntegralModels.DepthZeroIntertwining (artifact 8fac015b-ad45-42d1-b1a8-fa15c6755a7c, first published in Library commit 73b1430a339b037d27e9096762b0400adb4fbd19) specializes them to H = D.neutral.integralPoints and two inflations, for a local domain R and a topological-group structure on G(K) in which H and the level-one congruence subgroup are open. depthZeroInductionKernelEquiv identifies the maps between the depth-zero compact inductions of σ and τ with the intertwining kernels of their inflations. For compact H and supplied double-coset representatives s, depthZeroInductionDoubleCosetEquiv identifies them with local intertwiner families on H\\G(K)/H. For σ on a finite k-module, depthZeroInductionKernel_finite_doubleCosetSupport says that the kernel of every such map is supported on finitely many double cosets. Over a nonarchimedean local field with G affine and rationalPointTopology, RelativeComponentModelData.localField_isOpen_congruenceSubgroup proves the congruence premise; for G also locally of finite type, localFieldDepthZeroInductionDoubleCosetEquiv and localField_depthZeroInductionKernel_finite_doubleCosetSupport need only the supplied D and Q. None of these uses hrad, hQ or a Henselian base. The double-coset representatives are supplied: no Bruhat or Iwahori decomposition of H\\G(K)/H, no Hecke-algebra multiplication and nothing about irreducibility or supercuspidality is stated."
       ],
       "conclusion": "The natural composite P_{x,0}=G^0_x(o)→H_x(f)→Gred_x(f) is surjective with kernel P_{x,0+}, and hence induces P_{x,0}/P_{x,0+}≃Gred_x(f). The analogous assertion holds over K. As an f-group scheme, Gred_x is also the cokernel of the special-fibre map G_{x,0+}→G_{x,0}. The rational-point quotient uses both surjectivity steps and the descended kernel; it does not follow merely from a group-scheme cokernel.",
       "lean_declarations": [
@@ -2695,14 +2979,27 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Induction.CompactInductionIntertwiningStatement",
         "Langlands.Induction.CompactInductionKernelStatement",
         "Langlands.Induction.CompactInductionDoubleCosetStatement",
-        "Langlands.Induction.CompactInductionFiniteTypeKernelStatement"
+        "Langlands.Induction.CompactInductionFiniteTypeKernelStatement",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionKernelEquiv",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionDoubleCosetEquiv",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionKernel_finite_doubleCosetSupport",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localFieldDepthZeroInductionDoubleCosetEquiv",
+        "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_depthZeroInductionKernel_finite_doubleCosetSupport",
+        "Langlands.BruhatTits.IntegralModels.RelativeComponentModelData.localField_isOpen_congruenceSubgroup",
+        "Langlands.Induction.compactInductionKernel",
+        "Langlands.Induction.compactInductionDoubleCoset",
+        "Langlands.Induction.compactInductionFiniteTypeKernel"
       ],
       "modules": [
         "Langlands.BruhatTits.IntegralModels.DepthZeroReduction",
         "Langlands.BruhatTits.IntegralModels.DepthZeroInduction",
         "Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient",
         "Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen",
-        "Langlands.Representation.Induction.OpenIntertwiningStatement"
+        "Langlands.Representation.Induction.OpenIntertwiningStatement",
+        "Langlands.Representation.Induction.OpenIntertwiningKernelProof",
+        "Langlands.Representation.Induction.OpenIntertwiningDoubleCosetProof",
+        "Langlands.Representation.Induction.OpenIntertwiningFiniteTypeProof",
+        "Langlands.BruhatTits.IntegralModels.DepthZeroIntertwining"
       ],
       "dependencies": [
         "Theorems 8.3.2 and 8.3.13 construct the actual models; Sections 9.2.5–9.2.6 descend them and identify integral points",
@@ -2712,9 +3009,9 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Section 13.2.2 separates facet-dependent 0 and 0+ from positive-depth variation, and 13.2.3 uses 9.8.3(2) for the Gamma-invariant group comparison",
         "Recorded Lean route: surjectivity composes the Henselian lifting theorem IntegralModel.reduction_surjective for the smooth model (the role of 8.1.3) with projectionPoints_surjective. Over a perfect residue field the latter uses a scheme section of the projection, obtained from the published perfectFieldUnipotentSplit and splitUnipotentAffineTorsorStatement, instead of the Galois cohomology of Lemma 2.4.2 and Proposition 2.4.3 (printed p.84 / PDF p.115). The kernel is the radical preimage by construction. Its identification with the Moy–Prasad group P_{x,0+} (Corollary 8.4.12, printed p.306 / PDF p.337, and Section 9.5) and the construction of the actual models, radical and quotient (Theorems 8.3.2 and 8.3.13, Sections 9.2.5–9.2.6) are not formalized.",
         "Intertwining source (outside KP): M.-F. Vignéras, Représentations ℓ-modulaires d'un groupe réductif p-adique avec ℓ ≠ p (1996), literature ID provided-74667a7cddb3bdafff85f01c658605ce7d929f6da73950d79457c46bcd761dd4, SHA-256 4d2daeee16515f994dfb04157915179b55b30d5bf2f874a16f13e7cb6fa7d657, I.8.5 at printed pp.67–68 / PDF pp.85–86, with I.8.1–I.8.2 at printed pp.64–65 / PDF pp.82–83 and the proof of I.8.3 at printed p.66 / PDF p.84. I.8.5 identifies Hom(ind_{G,K} σ, ind_{G,H} π), for open K and σ of finite type, with the covariant functions supported on finitely many double cosets HgK. The kernel statement drops finite type and compactness and uses the per-vector support condition of the source's proof; the double-coset statement parametrizes kernels by their values at double-coset representatives, as in the proof of I.8.3, with per-vector finiteness, a form derived for this unit; the finite-type statement recovers I.8.5 a) for compact open H. Only the case K = H is stated; compactness of H replaces compactness modulo the centre.",
-        "Open obligations before unconditional use: construct D and Q with hrad and hQ for the actual parahoric model of a point of the actual descended building; prove Corollary 8.4.12. The premise CongruenceNeighborhoodBasisStatement of the local-field corollary is proved (congruenceNeighborhoodBasis_proof, proof Task 5447, fc268342-28e9-4dd8-a855-9ae5c09db273); lean_check inspection 98fdf5d1-8dd3-4e68-a8cd-41e4e60802db by Worker 3557 on 2026-11-12 at Library commit c5b9c2cf, where the module is byte-identical to commit ba77b83f, reports kind theorem and only propext, Classical.choice and Quot.sound. The intertwining statements have lean.proof@1 successors Task 5700 (abd8a5ce-2cfa-4a01-ab20-d73169188e3b) for CompactInductionKernelStatement, Task 5701 (c805d554-3b06-4d41-af89-396402e6bd7c) for CompactInductionDoubleCosetStatement and Task 5702 (a599b653-388c-412d-acbf-e8226e2f6494) for CompactInductionFiniteTypeKernelStatement; CompactInductionIntertwiningStatement is their conjunction."
+        "Open obligations before unconditional use: construct D and Q with hrad and hQ for the actual parahoric model of a point of the actual descended building; prove Corollary 8.4.12. The premise CongruenceNeighborhoodBasisStatement of the local-field corollary is proved (congruenceNeighborhoodBasis_proof, proof Task 5447, fc268342-28e9-4dd8-a855-9ae5c09db273); lean_check inspection 98fdf5d1-8dd3-4e68-a8cd-41e4e60802db by Worker 3557 on 2026-11-12 at Library commit c5b9c2cf, where the module is byte-identical to commit ba77b83f, reports kind theorem and only propext, Classical.choice and Quot.sound. The intertwining statements are proved by their lean.proof@1 successors Task 5700 (abd8a5ce-2cfa-4a01-ab20-d73169188e3b) for CompactInductionKernelStatement, Task 5701 (c805d554-3b06-4d41-af89-396402e6bd7c) for CompactInductionDoubleCosetStatement and Task 5702 (a599b653-388c-412d-acbf-e8226e2f6494) for CompactInductionFiniteTypeKernelStatement; CompactInductionIntertwiningStatement is their conjunction."
       ],
-      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance. Recorded progress: inflation, its factorization through kernel invariants, compact induction and Frobenius reciprocity are formalized on supplied data in DepthZeroInduction (see the Recorded Lean scope). For a nonarchimedean local field, compactness and openness of D.neutral.integralPoints and of its congruence subgroups are proved for every supplied model of an affine G (congruenceNeighborhoodBasis_proof), and the intertwining and double-coset description of maps between compact inductions is stated (CompactInductionIntertwiningStatement) with three proof tasks. For a finite residue field, finiteness of the supplied quotient's residue-field points and the index formula [D.neutral.integralPoints : radical preimage] = |Q.quotient(f)| over a Henselian base are proved (FiniteReductiveQuotient), and over a nonarchimedean local field the radical preimage is proved compact and open in G(F) (DepthZeroCompactOpen). The proofs of the intertwining statements and the identification of D.neutral.integralPoints and of the radical preimage with the actual P_{x,0} and P_{x,0+} remain open.",
+      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance. Recorded progress: inflation, its factorization through kernel invariants, compact induction and Frobenius reciprocity are formalized on supplied data in DepthZeroInduction (see the Recorded Lean scope). For a nonarchimedean local field, compactness and openness of D.neutral.integralPoints and of its congruence subgroups are proved for every supplied model of an affine G (congruenceNeighborhoodBasis_proof), and the intertwining and double-coset description of maps between compact inductions is proved (the three conjuncts of CompactInductionIntertwiningStatement) and specialized to the depth-zero compact inductions (DepthZeroIntertwining); over a nonarchimedean local field the specialization needs only the supplied D and Q. For a finite residue field, finiteness of the supplied quotient's residue-field points and the index formula [D.neutral.integralPoints : radical preimage] = |Q.quotient(f)| over a Henselian base are proved (FiniteReductiveQuotient), and over a nonarchimedean local field the radical preimage is proved compact and open in G(F) (DepthZeroCompactOpen). The identification of D.neutral.integralPoints and of the radical preimage with the actual P_{x,0} and P_{x,0+} remains open.",
       "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
@@ -2722,13 +3019,19 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "a6b89c9a-222a-4977-b85b-1983338fa594",
         "14c308d9-57df-4b0b-9b87-e08f078a61ae",
         "b52c4590-0a68-4f37-a097-c66650f5d9ab",
-        "f228edd9-7de3-41af-b12a-6be4746af741"
+        "f228edd9-7de3-41af-b12a-6be4746af741",
+        "3d0aeb2f-0165-45fd-84c2-84524c965b56",
+        "2c97df7d-ae72-436f-8163-bbf7e3c7a7c5",
+        "cd045fc8-59a1-4276-b72d-a81744fa882e",
+        "8fac015b-ad45-42d1-b1a8-fa15c6755a7c"
       ],
       "publication_commits": [
         "7047367a78583edbe335517824e30403414aa3f0",
         "7103f5282c4897716543f227940fdb2a0e12e70e",
         "79de65ce5fcd6dc5f182612988e1b529d49a63b4",
-        "cfedefb680f317b0ea5d351023e1c9dd886b2547"
+        "cfedefb680f317b0ea5d351023e1c9dd886b2547",
+        "730bd1f25b056b8106a2697e003c1ef1733a6b30",
+        "73b1430a339b037d27e9096762b0400adb4fbd19"
       ],
       "axiom_reports": [
         {
@@ -2870,6 +3173,69 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "eecf4e21-4859-46bb-93a1-c74122187f4f",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit cfedefb6, the commit of first publication; kind definition."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionKernelEquiv",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3c59b693-5b75-42a7-92b4-73150c9e53e7",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind definition; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionDoubleCosetEquiv",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "285cd733-608a-40be-ad4b-bb1f92415498",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind definition; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.depthZeroInductionKernel_finite_doubleCosetSupport",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "512d9f0c-0383-45fb-860d-77ad35bc98ce",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localFieldDepthZeroInductionDoubleCosetEquiv",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "c6a34361-e366-4cb0-b30b-d257c30d95c7",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind definition; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientData.localField_depthZeroInductionKernel_finite_doubleCosetSupport",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "14fd0811-b236-453b-9019-1362aee7b22a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.RelativeComponentModelData.localField_isOpen_congruenceSubgroup",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7b9777af-f610-46c8-98ff-f5aa5e292035",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem; the module is byte-identical to commit 73b1430a, its first publication."
+        },
+        {
+          "declaration": "Langlands.Induction.compactInductionKernel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "e3f69d3c-b197-429d-9d5b-e378816f1317",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem, proving CompactInductionKernelStatement; the module is byte-identical to commit 730bd1f2, its first publication."
+        },
+        {
+          "declaration": "Langlands.Induction.compactInductionDoubleCoset",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "e7daaa03-c581-4016-9d2d-3a1d6f6d8f3b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem, proving CompactInductionDoubleCosetStatement; the module is byte-identical to commit 730bd1f2, its first publication."
+        },
+        {
+          "declaration": "Langlands.Induction.compactInductionFiniteTypeKernel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "08132623-3964-4a1d-b38b-5d00c54c7c5b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit aae8cb82; kind theorem, proving CompactInductionFiniteTypeKernelStatement; the module is byte-identical to commit 730bd1f2, its first publication."
         }
       ],
       "external_code": []
@@ -3838,6 +4204,30 @@ the radical preimage contains the level-one congruence subgroup and is a
 compact open subgroup of `G(F)`. The tenth pass's remark that finiteness
 of `Gred_x(f)` is open no longer applies to supplied data; the comparison
 with the actual `P_{x,0}` and `P_{x,0+}` remains open.
+
+The fourteenth pass records Lean statements of parts of the Chapter 8
+theorems. Over the integer ring O of the maximal unramified extension of
+a nonarchimedean local field, and on supplied building data of G_K,
+`UnramifiedParahoricModelStatement` asks for the model pair of Theorems
+8.3.2 and 8.3.13 without the dagger model, and
+`UnramifiedModelKernelStatement` asks for the smooth connected unipotent
+kernel of Proposition 8.4.15 without its product decomposition. Neither
+statement uses the printed restricted index of Theorem 8.4.19(1). For
+facets of the descended building, the root datum of Theorem 8.4.10 and
+the positive-radical inclusion derived from Corollary 8.4.12 are stated
+for models over the integers of the local field that are characterized
+by their integral points over O, in the form of Proposition 9.4.23 and
+Section 9.5. The radical preimage remains the definition of `G(F)^{0+}`:
+no Lean declaration compares it with the Moy–Prasad group. The
+consumer's intertwining theorem is now proved on supplied models. Maps
+between two depth-zero compact inductions correspond to intertwining
+kernels and, through supplied double-coset representatives, to local
+intertwiner families. Over a local field, when the inducing
+representation is on a finite module over the coefficient ring, each
+kernel is supported on finitely many double cosets. The remarks of the
+seventh and tenth passes that the intertwining theorem is open no longer
+apply; the comparison with the actual `P_{x,0}` and `P_{x,0+}` remains
+open.
 
 ## Bundle E: filtrations, comparison alternatives and later instability
 
