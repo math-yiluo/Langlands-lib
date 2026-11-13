@@ -303,11 +303,6 @@ def closedHeckeEvaluation (x : G) : HeckeAlgebra μG →ₗ[ℂ] ℂ where
   map_add' _ _ := rfl
   map_smul' _ _ := rfl
 
-/-- Integrating the actual left regular representation gives convolution. -/
-theorem integrated_leftTests (T a : HeckeAlgebra μG) :
-    integratedAction μG GroupAction.leftTests isSmooth_leftTests T a = T * a :=
-  integratedAction_leftTests μG T a
-
 /-- The forward map of the inverse formula is right convolution by its indicator. -/
 theorem closedForward_inverseAt (W : Langlands.SmoothRep.{0, uG, v} ℂ H)
     (q : closedHom μG H μH W) (K : OpenSubgroup G) (hK : IsCompact (K : Set G))
@@ -340,7 +335,7 @@ theorem closedForward_inverseAt (W : Langlands.SmoothRep.{0, uG, v} ℂ H)
           (HeckeAlgebra.toTestFunction μG T) (HeckeAlgebra.normalizedIndicator μG K hK)) :=
       hq.symm
     _ = _ := congrArg (L.comp (closedHomLinear μG H μH W q))
-      (integrated_leftTests μG T (HeckeAlgebra.normalizedIndicator μG K hK))
+      (integratedAction_leftTests μG T (HeckeAlgebra.normalizedIndicator μG K hK))
 
 /-- Every actual nondegenerate Hom vector is in the image of the prescribed forward map. -/
 theorem closedForward_surjective (W : Langlands.SmoothRep.{0, uG, v} ℂ H) :

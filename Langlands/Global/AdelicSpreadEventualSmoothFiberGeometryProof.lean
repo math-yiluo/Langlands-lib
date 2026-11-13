@@ -37,7 +37,7 @@ private instance commAlgForget_preservesColimitsOfShape
   infer_instance
 
 /-- Pullback symmetry identifies the two actual base-change conventions. -/
-private theorem property_baseChangeMap_iff
+theorem property_baseChangeMap_iff
     (P : MorphismProperty Scheme.{u}) [P.RespectsIso]
     {S T : Scheme.{u}} (X Y : Over S) (f : X ⟶ Y) (p : T ⟶ S) :
     P (baseChangeMap X.hom Y.hom f.left (Over.w f) p) ↔

@@ -53,9 +53,10 @@ uniform right stabilizer is `K`, because `e_K` is invariant under left
 translation by `K`. Thus this is a vector of the published smooth induction,
 not merely a pointwise locally constant function.
 
-`integrated_leftTests` identifies the integrated left regular representation
-with actual convolution by applying scalar point evaluations and
-`integratedAction_dual`. In `closedForward_inverseAt`, arbitrary algebraic
+The published `integratedAction_leftTests` theorem from
+`CompactInductionComparisonLaws` identifies the integrated left regular
+representation with actual convolution by applying scalar point evaluations
+and `integratedAction_dual`. In `closedForward_inverseAt`, arbitrary algebraic
 complex-linear functionals on `W` compare the forward image of the constructed
 inverse function with `q(T * e_K)`. The two scalar integrals agree pointwise,
 and the regular convolution identity finishes the calculation. Algebraic dual
@@ -80,5 +81,5 @@ published left-translation identity for the integrated restricted regular action
 The final theorem packages this identity with the forward, local-unit and inverse
 formulas for `closedComparisonIso`.
 
-The regular-action helper `integrated_leftTests` reuses the identical
-`integratedAction_leftTests` theorem from `CompactInductionComparisonLaws`.
+The proof uses `integratedAction_leftTests` directly; the former
+`integrated_leftTests` alias has been removed.

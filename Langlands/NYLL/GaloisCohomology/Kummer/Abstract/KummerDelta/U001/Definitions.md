@@ -83,12 +83,27 @@ The declaration docstring, binder names, telescope, construction and
 
 ## Verification
 
-Checks were run in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean
-v4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`; the source pins
-Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`). The focused module compiles
-with no errors or warnings. Declaration inspection reports a definition with
-level parameter `u_1` and axioms `propext` and `Quot.sound`. A private probe ran
-three further checks:
+Worker 5454 reran these checks on 13 November 2026 in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean v4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`). The Lean file is unchanged from
+Worker 232's port. The source pins Mathlib
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`. The two Mathlib files this
+definition depends on, `Mathlib/RepresentationTheory/Rep/Basic.lean` (for
+`Rep`) and `Mathlib/Topology/Algebra/Group/ClosedSubgroup.lean` (for
+`ClosedSubgroup`), are byte-identical at the two pins. The copies at the source
+pin are registered as `mathlib-065356127b1d-rep-closedsubgroup`, content
+fingerprint
+`bc06ec5ba07ad76eb806f0ea929ad642c237c7754924e8067705e84e2b3b21a8`. So the
+telescope and universes elaborate the same way under both pins. In particular,
+Mathlib's `Rep (k : Type u) (G : Type v)` has its own carrier universe `w`
+(field `V : Type w`). The source's remark in
+`Nyll/GaloisCohomology/Cyclic/IntegralRepUniverse.lean` about a shared
+universe concerns the coefficient ring and the acting group, not the carrier
+universe.
+
+The focused module compiles with no errors or warnings. Declaration inspection
+reports a definition with level parameter `u_1` and axioms `propext` and
+`Quot.sound`. A private probe ran three further checks:
 
 - `#print` shows the elaborated type
   `{G : IntegralRepGroupType} → [Group G] → [TopologicalSpace G] →

@@ -21,8 +21,11 @@ published statement's Markdown.
 The implemented smoothness argument uses the noetherianity of the initial
 integer rings to obtain finite presentation and quasi-separatedness from
 the supplied finite-type models. It applies the published spectrum
-smoothness descent theorem. Pullback symmetry identifies that theorem's
-base-change convention with `Over.pullback`.
+smoothness descent theorem. The shared theorem
+`Langlands.Global.property_baseChangeMap_iff` uses pullback symmetry to
+identify that theorem's base-change convention with `Over.pullback`. It
+applies to every isomorphism-invariant morphism property and is also reused
+by `AdelicSpreadGeometricallyConnectedProof`.
 
 For fibre geometry the argument forgets the algebra structure of each
 actual arithmetic diagram, preserving its colimit, and applies the
