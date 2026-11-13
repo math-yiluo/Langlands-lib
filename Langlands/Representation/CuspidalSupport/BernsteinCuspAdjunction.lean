@@ -120,7 +120,8 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {T : CommGroupScheme (Spec (CommRingCat.of F))} (i : T.toGrp ⟶ G)
   (ν : cocharacterLattice T)
 
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
+local instance bernsteinAdjunctionPointTopology :
+    TopologicalSpace (rationalPoints G) := pointTopology
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
   (family : BernsteinStandardFamily i ν)

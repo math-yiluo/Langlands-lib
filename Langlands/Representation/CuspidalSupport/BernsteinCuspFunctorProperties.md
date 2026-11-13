@@ -61,3 +61,9 @@ infrastructure for its faithfulness and exactness clauses; they do not add
 independent assertions to the cited source. This module does not prove
 reflector existence, the remaining properties of `R`, or the entire closed
 target.
+
+The local rational-point topology instance is explicitly named
+`bernsteinFunctorPropertiesPointTopology`. Together with the explicit
+instance name in `BernsteinCuspAdjunction`, this allows the functor-properties
+and `BernsteinLeviCuspidalSplitting` modules to be imported together without
+declaration-name collisions. Its value remains the actual `pointTopology`.

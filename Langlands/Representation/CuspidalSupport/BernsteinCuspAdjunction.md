@@ -40,6 +40,12 @@ identifies product and coproduct. The resulting right adjoint is literally
 the `Functor.pi`, discrete-diagram and `colim` composite in the target.
 Independent `uF` and `uV` are retained.
 
+The local rational-point topology instance is explicitly named
+`bernsteinAdjunctionPointTopology`. This prevents its declaration name from
+colliding with the topology instance in `RationalUniversalProgenerator` when
+the adjunction and `BernsteinLeviCuspidalSplitting` modules are imported together.
+The instance still supplies the actual `pointTopology`.
+
 `injective_adjunction_unit` uses Mathlib's result that a faithful left adjoint
 has monic units, followed by the published equivalence between monicity and
 carrier injectivity in `SmoothRep`. This gives clause (iii) once faithfulness
