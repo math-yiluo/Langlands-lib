@@ -1,7 +1,7 @@
 # Waldspurger on actual rational points: published units and structural ledger
 
 Author: Worker 3642 (formerly Worker 19), task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`
-(revision 1). Checked against Library commit `7dc9118a3eb340e83e65d6e4174763b7a61e573c`.
+(revision 1). Checked against Library commit `2e5aa9989a9e5567670a14eb7079e3a844641990`.
 
 This note lists the published modules of this task that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
@@ -20,8 +20,10 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | Module | Main declarations | Source items | Hypotheses |
 |---|---|---|---|
 | `HarmonicAnalysis/HarishChandraSchwartz/FiniteFunctionUniqueness` | `HasFiniteExpansion`, `finiteCoeff`, `eq_zero_of_exponentialPolynomial_eq_zero`, `expansionCoeff_eq_of_exponentialPolynomial_eq`, `exists_uniform_growth_iff_unitary` | I.2 (pp.242–243): uniqueness of the expansion `Σ χ(a) P_χ(H_M(a))`, the minimal `X`, (1) ⇔ (2) | abstract commutative group `A` with additive `H_M : A → E` and a lattice section (as in the Library's `FiniteFunctionExpansion`) |
-| `Representation/Plancherel/RationalPlancherelConstant` | `cocharacterSubmoduleCentralizer`, `rankOneCocharacterSet`, `leviGamma`, `rankOneGamma`, `rankOneGammaProduct`, `plancherelConstant`, `plancherelConstantReal`, `plancherelConstantReal_pos_of_smooth`, `plancherelConstant_zsmul` | derived encoding of I.1 (pp.240–241): `c = γ⁻¹ ∏ γ_α`, using actual subgroup integrals with common-compact normalized Haar measures; positive-multiple invariance with the compact fixed | affine, locally finite type `G` over arbitrary nonarchimedean local `F`, compact open `K`, commutative group-scheme homomorphism `i` and cocharacter `ζ`. Definitions do not require reductivity. The index set is finite for a split torus; positive real value requires smooth `G` and finiteness of every indexed rank-one factor. Formal source-object comparisons and general same-Levi independence remain open |
+| `Representation/Plancherel/RationalPlancherelConstant` | `cocharacterSubmoduleCentralizer`, `rankOneCocharacterSet`, `leviGamma`, `rankOneGamma`, `rankOneGammaProduct`, `plancherelConstant`, `plancherelConstantReal`, `plancherelConstantReal_pos_of_smooth`, `plancherelConstant_zsmul` | derived encoding of I.1 (pp.240–241): `c = γ⁻¹ ∏ γ_α`, using actual subgroup integrals with common-compact normalized Haar measures; positive-multiple invariance with the compact fixed | affine, locally finite type `G` over arbitrary nonarchimedean local `F`, compact open `K`, commutative group-scheme homomorphism `i` and cocharacter `ζ`. Definitions do not require reductivity. The index set is finite for a split torus; the original positive-real-value lemma assumes smooth `G` and finite indexed factors, discharged under the next row's hypotheses. Formal source-object comparisons and general same-Levi independence remain open |
+| `Representation/Plancherel/RationalPlancherelConstantFinite` | `exists_dynamicCentralizer_eq_cocharacterSubmoduleCentralizer`, `measurePreserving_subgroupEmbeddingEquiv`, `leviGamma_eq_gamma_of_isClosedSubgroup`, `rankOneGamma_ne_top`, `rankOneGammaProduct_ne_top_of_isSplitTorus`, `plancherelConstant_pos_ne_top`, `plancherelConstantReal_pos_of_isSplitTorus` | derived finiteness proof for the I.1 constants (pp.240–241): every integer-submodule centralizer is the centralizer of one generic cocharacter; exact common-compact Haar/integral transport identifies its constant with the published smooth-group `gamma`. Every rank-one factor, its finite product and `c` are finite, and the real `c` is positive | arbitrary nonarchimedean local `F`, affine locally finite type `G` that is smooth with connected underlying scheme, split `T`, homomorphism `i : T → G`, cocharacter `ζ`, compact open `K`. No reductivity, maximality of `T` or specialness of `K` is needed. Source root/Levi identifications, reductivity of these centralizers and fixed-Levi parabolic independence remain separate |
 | `Representation/Plancherel/DynamicOppositeUnitaryScalarStatement` | `ConditionalDynamicOppositeUnitaryScalarStatement` (statement only), `RationalFunctionRegularAt`, `RationalFunctionNonnegAt`; proved predicate lemmas `rationalFunction_value_eq`, `RationalFunctionNonnegAt.regularAt` | derived target from IV.3(6) and its proof (p.287) and the regularity/nonnegativity claims of V.2.1 (pp.292–293): `j_P ≠ 0` in the rational function field and `j_P⁻¹` regular with a nonnegative real value at every unitary unramified character | arbitrary nonarchimedean local `F`, affine locally finite type connected reductive `G`, cocharacter `χ`, explicit `hRefl` and `hCST` (both have published dischargers below); compact open `K` with both `G(F) = P_G(χ)(F) K` and `G(F) = P_G(χ⁻¹)(F) K`; canonical smooth representation `A` of `M(F) = Z_G(χ)(F)`; actual whole-operator continuations `p, q`, two nonempty open subsets of their full convergence domains, a nonempty open generic irreducibility locus for the twisted normalized induction; normal central `C`, Borel quotient Haar measure, finite `M(F)/(M¹ C)` and square integrability of `A` modulo `C`. The convergence, continuation, irreducibility and square-integrability inputs are not structural hypotheses |
+| `Representation/Plancherel/RationalPlancherelDensity` | `plancherelDensityConstant`, `plancherelDensity`, `plancherelDensity_mul_scalar`, `plancherelDensity_eq_zero_iff`, `plancherelDensity_continuation_independent`, `plancherelDensity_irreducibility_locus_independent`, `plancherelDensity_stabilizer_fixed`, `plancherelDensity_spec`, `conditionalContinuedComposite_eq_plancherelDensity_value` | derived V.2 expression (p.292), using the actual conditional IV.3 scalar (pp.285–287): `µ = C j_P⁻¹` on unramified characters, with `C = (rankOneGammaProduct.toReal)²`; independence, self-twist stabilizer invariance and conditional composite identities. No proof of V.2.1 | arbitrary nonarchimedean local `F`, affine locally finite type connected reductive `G`, commutative `T`, `i`, `ζ`, and `χ = ζ ≫ i`; same `K` for the constant and scalar, both compact-parabolic factorizations, canonical `SmoothRep A`, `hRefl`, `hCST`, whole-operator continuations and nonempty convergence subsets and generic irreducibility locus. Continuation independence needs the convergence subsets open; specification, stabilizer and locus-independence results also need the original irreducibility locus open. Constant positivity and the zero equivalence require finite product; `µ j_P = C` requires `j_P ≠ 0`; the pointwise composite formula requires both numerator and denominator of a presentation of `µ` to be nonzero at a point in the common regular region. These analytic inputs are not structural conclusions |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalDiscreteSeriesOrbitFinitenessStatement` | `RationalDiscreteSeriesOrbitFinitenessStatement` (statement), `isConnectedReductive_centralizerScheme` | Thm VIII.1.2 (p.321) | connected reductive `G`, split component `s : T → G`, Haar measure on `G(F)/A_G(F)`; no structural input |
 | `Representation/Jacquet/StandardCasselmanPairing` | `standardCasselmanPairingData`, `exists_standardCasselmanPairing`, `exists_standardCasselmanPairing_splitComponent`, `SimultaneousStandardBasisAt.exists_casselmanPairing` | Thm I.4.1 (p.245) for actual standard `P_J`, on the cones of the whole split component | S1, S2 (as data `hζ`) |
 | `Representation/Jacquet/DynamicCasselmanConstantTerm` | `dynamicCasselmanPairingData`, `exists_dynamicCasselmanPairing`, `dynamicParabolicModulus`, `IsDynamicConstantTerm`, `dynamicConstantTerm`, `existsUnique_dynamicConstantTerm` | Thm I.4.1 and Prop. I.6.2 (pp.245, 249–250) for every dynamic `P(χ)`, along the powers of `χ(t)`; normalized by `δ_U` | smooth affine `G`; no structural input |
@@ -52,7 +54,7 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalInducedFourierTransform` | `rationalInducedFourierTransform` (`f̂(ω, P)`), `compactOpenCofinal_standardLevi`, Lemma VII.1.1 (i)–(iii) on actual points, uniqueness from (ii) | VII.1 (p.313), Lemma VII.1.1 (p.314) | S3, S4, S5 (data); conclusion of Lemma II.1.5 (`hsw`); temperedness of `ω` (`hTA`) |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalInducedOrbitFourierPairing` | `rationalFourierOrbitSection` (`ψ_f[O, P]`), coherence, `pairing_rationalInducedOrbitWavePacket_eq_integral_productPairing` | VII.1 (p.316, `ψ_f[O, P]`), formula (1) of the proof of Prop. VII.2.2 (p.319) for any `f ∈ C(G)` | as in the row `RationalInducedFourierTransform`; for the wave packet, `ρX` finite, `w` bounded and almost everywhere strongly measurable, and `hcoeff` for `π` (no invariance of `ρX`, no smoothness of `w`); `r = ψ_f[O, P]` given |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalFourierOrbitSmoothness` | `rationalLeviXi_inv`, `rationalLeviTranslationWeights`, `laurentExponent_leviRationalUnitaryCoordinates`, `rationalFourierOrbitSmoothSectionLinear` (`f ↦ ψ_f[O, P] ∈ C^∞(O, P)`), `pairing_rationalInducedOrbitWavePacket_eq_integral_fourier` | Prop. VII.1.3 (p.316, without continuity), Lemmas II.1.2 and II.1.4 for `M_J`, formula (1) with `ψ_f[O, P]` from VII.1.3 | as above; Lemma II.1.5 for `M_I` (`hswM`), Prop. II.4.5 (`hE`), S5 (`K ∩ P = (K ∩ M)(K ∩ U)`), measure normalizations, `‖H_{M_I}‖ ≤ C(1 + σ)`, an integrability condition |
-| `HarmonicAnalysis/HarishChandraSchwartz/RationalInducedOrbitWavePacketOrthogonality` | `rationalUnitaryOrbitWeightedProductCore` (+ `_inner`), `rationalFourierOrbitSection_eq_zero_iff_forall_pairing_rationalInducedOrbitWavePacket_eq_zero`, `rationalInducedFourierTransform_eq_zero_of_forall_pairing_rationalInducedOrbitWavePacket_eq_zero` | VII.2 (p.319): the hermitian product on `C^∞(O, P)` for one orbit, with a weight `u` in place of the Plancherel density `µ`; `ψ_f[O, P] = 0` iff `(f_ψ, f)_G = 0` for all wave packets `f_ψ` of weight `u` (the deduction of Cor. VII.2.3 for one orbit) | as in the row above, and `hcoeff` for `π` (Cor. III.1.2); finite stabilizer of the class of `π` and finite quotient `M_I/(M_I¹ C)`; a finite measure `ρX` on `Im X(M_I)` positive on nonempty open sets and a real, bounded, continuous, strictly positive weight `u` on the orbit. This is a conditional substitute for `µ`, which is not constructed; positivity of `u` is essential (for `u = 0` every wave packet vanishes) |
+| `HarmonicAnalysis/HarishChandraSchwartz/RationalInducedOrbitWavePacketOrthogonality` | `rationalUnitaryOrbitWeightedProductCore` (+ `_inner`), `rationalFourierOrbitSection_eq_zero_iff_forall_pairing_rationalInducedOrbitWavePacket_eq_zero`, `rationalInducedFourierTransform_eq_zero_of_forall_pairing_rationalInducedOrbitWavePacket_eq_zero` | VII.2 (p.319): the hermitian product on `C^∞(O, P)` for one orbit, with a weight `u` in place of the Plancherel density `µ`; `ψ_f[O, P] = 0` iff `(f_ψ, f)_G = 0` for all wave packets `f_ψ` of weight `u` (the deduction of Cor. VII.2.3 for one orbit) | as in the row above, and `hcoeff` for `π` (Cor. III.1.2); finite stabilizer of the class of `π` and finite quotient `M_I/(M_I¹ C)`; a finite measure `ρX` on `Im X(M_I)` positive on nonempty open sets and a real, bounded, continuous, strictly positive weight `u` on the orbit. This weighted consumer has not been specialized to the conditional rational density; positivity of `u` is essential (for `u = 0` every wave packet vanishes) |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalInducedConstantTermFourier` | `integrable_rationalCoefficientPairingIntegrand`, `rationalLeviL2Weights`, `rationalConstantTermInducedFourierTransform` (`f̂^{(P),Ind}(ω)`), `rationalInducedFourierTransform_eq_rationalConstantTermInducedFourierTransform`, vanishing of `f̂(ω, P)`, `ψ_f[O, P]` and `(f_ψ, f)_G` when `f^{(P),Ind} = 0` | VII.1 (p.315, `f̂^{(P),Ind}(ω)`), Lemma VII.1.2 and its absolute convergence, first sentence of the proof of Lemma VIII.2.1 (p.321), vanishing in the proof of Lemma VIII.2.3 (p.322), one `(O, P)` | as above; Cor. III.1.2 for `ω` and each orbit representative (`hcoeff`, `hcoeffA`); discharges the integrability condition of the row `RationalFourierOrbitSmoothness` |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalCuspidalConvolution` | `RationalConstantTermIndVanishes` (`f^{(P),Ind} = 0`), `rationalUnipotentHaar_isInvInvariant`, `isUnipotentCuspidal_iff_rationalConstantTermIndVanishes`, `convolution_rationalInducedOrbitWavePacket_eq_zero`, `convolution_rationalInducedOrbitWavePacket_left_eq_zero` | Lemma VIII.2.1 condition for one standard `P`; proof of Lemma VIII.2.3 (p.322): `f₁ ∗ f_ψ = f_ψ ∗ f₁ = 0` | as in the row above; for the wave packet, `ρX` finite, `w` bounded and almost everywhere strongly measurable, and `hcoeff` for `π` (no invariance of `ρX`) |
 | `HarmonicAnalysis/HarishChandraSchwartz/OrbitCoefficientBound` | `HasXiBoundedCoefficients`, `.of_equiv`, `.twist`, `.unitaryOrbitRepresentative`, `rationalLeviXi_coefficientBound_unitaryOrbitRepresentative` | proof of Lemma VI.2.2 (pp.298–299): coefficient bound `cΞ^M` from Cor. III.1.2, transferred to every member of the orbit | the bound for `π` (`hcoeff`) remains a hypothesis (Cor. III.1.2 is open and bounds only on `G¹`); supplies `hcoeffA` of the two rows above |
@@ -63,7 +65,8 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 
 The analysis and Jacquet modules are in namespaces `Langlands.HarishChandraSchwartz`,
 `Langlands.Jacquet` or `Langlands.BruhatTits.SpecialCompact`; the constant construction is in
-`Langlands.Plancherel.RationalDynamicSource`, and the scalar target and its rational-function
+`Langlands.Plancherel.RationalDynamicSource`, the density is in
+`Langlands.Plancherel.RationalPlancherelDensity`, and the scalar target and its rational-function
 predicates are in `Langlands.Plancherel`. Their paired Markdown files give the exact statements.
 
 ## Structural hypotheses consumed
@@ -269,15 +272,28 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   test scheme. `rankOneGammaProduct` and `plancherelConstant` implement `∏ γ_α` and
   `γ⁻¹ ∏ γ_α`. The finite-product rewrite is proved for a split torus, and
   `plancherelConstant_zsmul` preserves `c` under positive integer scaling of `ζ`, with `K`
-  fixed. The generic common-compact bound proves `γ_α ≥ 1`. Smoothness of `G` proves
-  nonvanishing of `c`; finiteness of each indexed rank-one factor is still a premise of its
-  finiteness and positive-real-value results in this Library. The formal identifications of
-  the index set and centralizers with `Σ_red(P)`, `A_α` and `M_α`, and of the intersections
-  with a parabolic and opposite radical inside a representing rank-one Levi, remain open.
-  So does independence from the parabolic with fixed Levi for the fixed special `K`
-  (I.1 Remark (3)). Positive-multiple invariance does not discharge that assertion. These
-  definitions do not prove existence or the factorization properties of a special compact,
-  construct `j` or `µ`, or supply a Plancherel identity.
+  fixed. The generic common-compact bound proves `γ_α ≥ 1`.
+  The published companion `RationalPlancherelConstantFinite` now discharges every rank-one
+  finiteness premise when `T` is split and the affine locally finite type `G` is smooth
+  with connected underlying scheme. Over an arbitrary field, its cocharacter argument shows
+  that every integer-submodule centralizer is `Z_G(ν ≫ i)` for one `ν` generic in that
+  submodule. The affine centralizer scheme is a smooth closed subgroup scheme. On rational
+  points, exact transport of the subgroup Haar measures normalized by the same compact
+  identifies `leviGamma` with `gamma` of that scheme, with no scalar factor.
+  The published smooth-group finiteness theorem then gives `rankOneGamma_ne_top` for every
+  submodule, `rankOneGammaProduct_ne_top_of_isSplitTorus` and
+  `plancherelConstant_ne_top_of_isSplitTorus`. Together with smooth-group nonvanishing this
+  gives `plancherelConstant_pos_ne_top` and `plancherelConstantReal_pos_of_isSplitTorus`.
+  These results hold over arbitrary nonarchimedean local fields and need neither reductivity
+  nor a special compact.
+  The formal identifications of the index set and centralizers with `Σ_red(P)`, `A_α` and
+  Waldspurger's `M_α`, and the comparison with his normalized integrals, remain open.
+  The companion identifies the intersections with dynamic parabolics and opposite radicals
+  in a representing smooth centralizer, but proves no reductivity or Levi property for it.
+  Independence from the parabolic with fixed Levi for the fixed special `K` also remains
+  open (I.1 Remark (3)); positive-multiple invariance does not discharge it. These units
+  do not prove existence or the factorization properties of a special compact, or supply
+  a Plancherel identity.
 - **The unitary scalar target: statement only.**
   `Langlands.Plancherel.ConditionalDynamicOppositeUnitaryScalarStatement` states nonvanishing
   of the actual conditional canonical scalar `j_P` as a rational field element and
@@ -296,8 +312,46 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   reductive groups, with no characteristic-zero, splitness or quasisplitness restriction.
   It omits IV.3(1)–(5), the Weyl and contragredient invariance and the rank-one product
   formula of V.2.1. It establishes no comparison of source normalizations or Plancherel
-  identity. The rank-one finiteness and density candidates remain unpublished at the checked
-  Library commit and close no obligation here.
+  identity. Worker 5 retains ownership of this scalar target and its V.2.1 successors.
+- **The conditional rational density: construction and remaining analysis.**
+  `RationalPlancherelDensity` defines `plancherelDensity = fieldConstant C * j_P⁻¹` in the
+  rational unramified function field of the actual centralizer scheme, with
+  `C = (rankOneGammaProduct i ζ K hK).toReal²`. The constant and scalar use the same
+  compact `K`; this is the derived expression of V.2 (p.292).
+  The density definition retains both compact-parabolic factorizations, the canonical
+  inducing `SmoothRep`, the actual whole-operator continuations and nonempty subsets of
+  their full convergence domains, and a nonempty generic irreducibility locus. The
+  continuation-independence result takes openness of the two convergence subsets;
+  specification, stabilizer and locus-independence results also take openness of the
+  original irreducibility locus. Neither the published dischargers of `hRefl`
+  and `hCST` nor this algebraic assembly supplies those analytic and representation-theoretic
+  inputs.
+  `plancherelDensity_continuation_independent` and
+  `plancherelDensity_irreducibility_locus_independent` remove dependence on those choices;
+  the replacement irreducibility locus need only be nonempty.
+  `plancherelDensity_stabilizer_fixed` proves invariance under unramified self-twists of the
+  inducing representation. This is rational stabilizer invariance; it does not construct
+  an everywhere-defined function on the unitary orbit or prove Weyl invariance.
+  From the imported scalar presentation, `plancherelDensity_spec` supplies regular
+  functions `a, b` with `b` nonzero throughout the common regular region, `µ = C b/a`,
+  and the actual continued opposite composite acting by `a(z)/b(z)` there. The theorem
+  `conditionalContinuedComposite_eq_plancherelDensity_value` gives the scalar
+  `C n(z)/m(z)` for a presentation `µ = m/n` only when `z` lies in that region and
+  both `m(z)` and `n(z)` are nonzero. It supplies no value at a zero or pole through
+  this formula.
+  `plancherelDensity_mul_scalar` assumes `j_P ≠ 0`; `plancherelDensity_eq_zero_iff` and
+  strict positivity of `C` assume the rank-one product is finite. The latter premise
+  can now be discharged by composing with the published
+  `rankOneGammaProduct_ne_top_of_isSplitTorus` under its smooth connected split-torus
+  hypotheses. This is a composition of published results, not a new theorem in this note
+  or a premise removed from the density module. Without finiteness, `toReal ⊤ = 0`;
+  with `j_P = 0`, field inversion gives `µ = 0`.
+  Source root/Levi and integral-normalization comparisons, fixed-Levi parabolic independence
+  and the special compact realization remain open. Neither this density unit nor the scalar
+  statement proves IV.3(1)–(6), nonvanishing of `j_P`, regularity and nonnegativity everywhere
+  on the unitary locus, the product formula, Weyl/contragredient invariance of V.2.1, or the
+  specialization to the weighted wave-packet consumers below. Worker 5 retains ownership
+  of the scalar and V.2.1 work.
 - **Proposition I.6.2: comparison of the two published forms.** The standard form
   (`standardConstantTerm`, source cones of `A(F)`, under S1 and S2) and the dynamic form
   (`dynamicConstantTerm`, tails of the powers of `χ(t)`, no structural input) are not compared in
@@ -326,8 +380,10 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   `K ∩ P = (K ∩ M)(K ∩ U)` (S5) and the bound `‖H_{M_I}(m)‖ ≤ C(1 + σ(m))` (half of I.1 (6) for
   `M_I`); `RationalInducedConstantTermFourier` replaces its integrability condition by the
   coefficient bound of Corollary III.1.2, which `OrbitCoefficientBound` transfers along the orbit.
-  The Plancherel density `µ` of V.2 is not constructed. In its place the wave packets use a
-  complex weight `w` on the orbit and a measure `ρX` on `Im X(M_I)`: the `Ξ` bound, integrability,
+  The conditional rational expression for `µ` is now constructed as above, but its unitary
+  regularity, nonnegativity, source comparisons and evaluation as an orbit weight remain
+  open. These wave packets still use a complex weight `w` on the orbit and a measure
+  `ρX` on `Im X(M_I)`: the `Ξ` bound, integrability,
   linearity, the pairing formula and the cuspidal convolution results need `ρX` finite and `w`
   bounded and almost everywhere strongly measurable, while the rapid-decay bound
   `|f_ψ| ≤ c Ξ (1 + ‖n_G‖)^{-r}` needs `ρX` finite **and left invariant** (as for the normalized
