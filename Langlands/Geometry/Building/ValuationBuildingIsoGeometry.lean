@@ -33,20 +33,6 @@ theorem parallel_map_crossAffineEquiv {s₁ s₂ : AffineSubspace ℝ A}
   ext x
   simp [AffineEquiv.map_vadd]
 
-/-- The full hyperplane of an affine root is the actual affine image. -/
-theorem hyperplane_affineFunctionalTransport (e : A ≃ᵃ[ℝ] C)
-    (ψ : A →ᵃ[ℝ] ℝ) :
-    hyperplane (affineFunctionalTransport e ψ) =
-      (hyperplane ψ).map e.toAffineMap := by
-  ext y
-  constructor
-  · intro hy
-    exact ⟨e.symm y, hy, e.apply_symm_apply y⟩
-  · rintro ⟨x, hx, rfl⟩
-    change ψ x = 0 at hx
-    change ψ (e.symm (e x)) = 0
-    simpa only [AffineEquiv.symm_apply_apply] using hx
-
 /-- A singleton facet is preserved and reflected by full affine-root transport. -/
 theorem isVertex_transportedRoots_iff (e : A ≃ᵃ[ℝ] C)
     (Ψ : Set (A →ᵃ[ℝ] ℝ)) (x : A) :

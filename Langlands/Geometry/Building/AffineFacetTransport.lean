@@ -11,6 +11,20 @@ universe uV uA uW uB
 variable {V : Type uV} {A : Type uA} [AddCommGroup V] [Module ℝ V] [AddTorsor V A]
 variable {W : Type uW} {B : Type uB} [AddCommGroup W] [Module ℝ W] [AddTorsor W B]
 
+/-- The full hyperplane of an affine root is the actual affine image. -/
+theorem hyperplane_affineFunctionalTransport (e : A ≃ᵃ[ℝ] B)
+    (ψ : A →ᵃ[ℝ] ℝ) :
+    hyperplane (affineFunctionalTransport e ψ) =
+      (hyperplane ψ).map e.toAffineMap := by
+  ext y
+  constructor
+  · intro hy
+    exact ⟨e.symm y, hy, e.apply_symm_apply y⟩
+  · rintro ⟨x, hx, rfl⟩
+    change ψ x = 0 at hx
+    change ψ (e.symm (e x)) = 0
+    simpa only [AffineEquiv.symm_apply_apply] using hx
+
 /-- Inverse precomposition of the roots preserves exactly their sign relation. -/
 theorem facetRel_transportedRoots_iff (e : A ≃ᵃ[ℝ] B)
     (Ψ : Set (A →ᵃ[ℝ] ℝ)) (x y : A) :

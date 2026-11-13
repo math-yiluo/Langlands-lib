@@ -19,7 +19,7 @@ The convention is the existing second-variable polarization pullback.
 ## Implemented proof
 
 The proof uses the published prime-coordinate pairings and restricted-product
-comparisons. It adds four private coordinate lemmas for an arbitrary commutative
+comparisons. It adds three private coordinate lemmas for an arbitrary commutative
 group object `G` and test scheme `T`.
 
 The lemmas `full_eq_zero_of_coordinates` and `away_eq_zero_of_coordinates` use
@@ -29,7 +29,8 @@ equivalence whose coordinates are the actual rational extraction maps.
 Extensionality in the restricted product, followed by injectivity of the
 equivalence, shows that vanishing of all coordinates implies that a vector is zero.
 
-The lemmas `full_coordinate_surjective` and `away_coordinate_surjective` use the
+The imported `GroupScheme.Tate.PrimeComparison.rationalFullToPrime_surjective`
+from `RationalPrimeHom` and the private `away_coordinate_surjective` use the
 same comparisons in the other direction. A restricted family supported at one
 prime has any prescribed rational vector at that prime. Applying the inverse
 equivalence lifts it to the actual full or away rational module. In the away

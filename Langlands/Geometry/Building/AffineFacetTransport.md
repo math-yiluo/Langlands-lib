@@ -12,6 +12,12 @@ root's value at `x`. Thus the signs of all roots at two points agree on one
 side exactly when they agree on the other side. This proves
 `facetRel_transportedRoots_iff`.
 
+`hyperplane_affineFunctionalTransport` identifies the zero hyperplane of a
+transported functional with the affine image of its original zero hyperplane.
+This is the existing theorem from `ValuationBuildingIsoGeometry`, relocated
+here with the same name, hypotheses and proof for shared use by that module
+and `AffineChamberCartanMarks`.
+
 `image_facet_transportedRoots` identifies the full equivalence classes. In the
 reverse inclusion the preimage point is `e.symm y`; this ensures equality of
 whole facets, not merely containment. Injectivity of the image operation then

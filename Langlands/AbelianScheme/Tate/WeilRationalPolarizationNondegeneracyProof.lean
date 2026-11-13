@@ -1,6 +1,7 @@
 import Langlands.AbelianScheme.Tate.WeilRationalPolarizationNondegeneracyStatement
 import Langlands.AbelianScheme.Tate.WeilPrimeRationalPolarizationNondegeneracyProof
 import Langlands.AbelianScheme.Tate.RestrictedProductProof
+import Langlands.AbelianScheme.Tate.RationalPrimeHom
 
 /-! # Nondegeneracy through the actual rational prime coordinates -/
 
@@ -40,19 +41,6 @@ private lemma away_eq_zero_of_coordinates (m : ℕ) (x : RationalAway G T m)
   apply RestrictedProduct.ext
   intro p
   rw [he, he, hx p, map_zero]
-
-private lemma full_coordinate_surjective (p : ℕ) [Fact p.Prime] :
-    Function.Surjective (rationalFullToPrime G T p) := by
-  classical
-  obtain ⟨e, he⟩ := rationalRestrictedProductComparison G T
-  intro y
-  let pi : Nat.Primes := ⟨p, Fact.out⟩
-  let z : RationalRestrictedProduct G T :=
-    RestrictedProduct.single
-      (fun q : Nat.Primes => (PrimeAdic.integralImage G T (q : ℕ)).toAddSubgroup) pi y
-  refine ⟨e.symm z, ?_⟩
-  rw [← he _ pi, e.apply_symm_apply]
-  exact RestrictedProduct.single_eq_same _ _ _
 
 private lemma away_coordinate_surjective (p : ℕ) [Fact p.Prime]
     (m : ℕ) (hp : Nat.Coprime p m) :
@@ -110,7 +98,7 @@ private lemma rationalFullWeil_nondegenerate_of_prime (lam : A ⟶ DA)
     apply (hPrime (p : ℕ)).1
     intro y
     obtain ⟨z, rfl⟩ :=
-      GroupScheme.Tate.PrimeComparison.full_coordinate_surjective A.toGrp T (p : ℕ) y
+      GroupScheme.Tate.PrimeComparison.rationalFullToPrime_surjective A.toGrp T (p : ℕ) y
     rw [← rationalFullToPrime_rationalWeilAlongHomBilinearMap preservation composition
       unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA
       compatibility T (p : ℕ) lam, hx z, map_zero]
@@ -121,7 +109,7 @@ private lemma rationalFullWeil_nondegenerate_of_prime (lam : A ⟶ DA)
     apply (hPrime (p : ℕ)).2
     intro x
     obtain ⟨z, rfl⟩ :=
-      GroupScheme.Tate.PrimeComparison.full_coordinate_surjective A.toGrp T (p : ℕ) x
+      GroupScheme.Tate.PrimeComparison.rationalFullToPrime_surjective A.toGrp T (p : ℕ) x
     rw [← rationalFullToPrime_rationalWeilAlongHomBilinearMap preservation composition
       unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA
       compatibility T (p : ℕ) lam, hy z, map_zero]
