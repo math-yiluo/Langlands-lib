@@ -1,0 +1,319 @@
+import Langlands.GroupScheme.SymplecticInnerForm.ConjugationDescent
+import Langlands.GroupScheme.SpecialLinearInnerForm.AdjointMatrix
+import Langlands.GroupScheme.SymplecticMatrix.Basic
+
+/-! # The matrix algebra action of a supplied adjoint quotient of Sp -/
+
+noncomputable section
+
+set_option backward.isDefEq.respectTransparency false
+set_option backward.isDefEq.respectTransparency.types false
+
+universe u
+
+open CategoryTheory CategoryTheory.Limits Opposite AlgebraicGeometry
+open scoped CategoryTheory.MonObj
+
+namespace Langlands.GroupScheme.SymplecticInnerForm
+
+open Langlands.AlgebraicGeometry.PointTopology
+open SpecialLinearInnerForm (matrixTest sectionMap sectionMap_comp
+  sectionMap_ringTestMap_comp liftTest liftBase liftPoint lift_condition
+  liftTestMap liftTestMap_base liftTestMap_point liftBase_epi sectionMap_lift_injective
+  conjugationAlgHom extendMatrix extendMatrix_eq map_extendMatrix)
+
+variable {K : Type u} [Field K] {n : Type} [Fintype n] [DecidableEq n]
+    {M A : GroupScheme (Spec (CommRingCat.of K))}
+
+/-- Matrix coordinates on every test scheme, transported through the supplied
+symplectic presentation. -/
+def pointMatrix (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    (T : Over (Spec (CommRingCat.of K))) :
+    (T ⟶ M.X) ≃* Matrix.symplecticGroup n Γ(T.left, ⊤) :=
+  (((yonedaGrp.mapIso i).app (op T)).groupIsoToMulEquiv).trans
+    (SymplecticMatrix.pointsEquiv n (CommRingCat.of K) T)
+
+@[simp] theorem pointMatrix_apply
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    (T : Over (Spec (CommRingCat.of K))) (g : T ⟶ M.X) :
+    pointMatrix i T g =
+      SymplecticMatrix.pointsEquiv n (CommRingCat.of K) T (g ≫ i.hom.hom.hom) := rfl
+
+theorem pointMatrix_naturality
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {T V : Over (Spec (CommRingCat.of K))} (b : V ⟶ T) (g : T ⟶ M.X) :
+    pointMatrix i V (b ≫ g) =
+      SymplecticMatrix.map n b.left.appTop.hom (pointMatrix i T g) := by
+  simp only [pointMatrix_apply, Category.assoc]
+  exact SymplecticMatrix.pointsEquiv_naturality b _
+
+/-- Affine matrix coordinates with coefficients in the test algebra itself. -/
+def affineMatrix (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    (L : Type u) [CommRing L] [Algebra K L] :
+    (matrixTest (K := K) L ⟶ M.X) ≃* Matrix.symplecticGroup n L :=
+  (((yonedaGrp.mapIso i).app (op (matrixTest (K := K) L))).groupIsoToMulEquiv).trans
+    (Corepresented.affinePointsEquiv (SymplecticMatrix.functor n _)
+      (SymplecticMatrix.corepresentableBy n _)
+      (CommAlgCat.of (CommRingCat.of K) L))
+
+/-- Affine matrix coordinates commute with coefficient change. -/
+theorem affineMatrix_naturality
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L B : Type u} [CommRing L] [CommRing B] [Algebra K L] [Algebra K B]
+    (f : L →ₐ[K] B) (g : matrixTest (K := K) L ⟶ M.X) :
+    affineMatrix i B (ringTestMap K f ≫ g) =
+      SymplecticMatrix.map n f.toRingHom (affineMatrix i L g) := by
+  have hb : ringTestMap K f = (algSpec (CommRingCat.of K)).map
+      (CommAlgCat.ofHom (R := CommRingCat.of K) f).op := by
+    ext1
+    rfl
+  rw [hb]
+  change Corepresented.affinePointsEquiv _ _ _ ((_ ≫ g) ≫ i.hom.hom.hom) = _
+  rw [Category.assoc]
+  exact Corepresented.affinePointsEquiv_naturality _ _
+    (CommAlgCat.ofHom (R := CommRingCat.of K) f) _
+
+theorem pointMatrix_affine
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (g : matrixTest (K := K) L ⟶ M.X) :
+    pointMatrix i (matrixTest (K := K) L) g =
+      SymplecticMatrix.map n (Scheme.ΓSpecIso (CommRingCat.of L)).inv.hom
+        (affineMatrix i L g) := by
+  exact Corepresented.pointsEquiv_eq_affinePointsEquiv (SymplecticMatrix.functor n _)
+    (SymplecticMatrix.corepresentableBy n _) _ _
+
+theorem pointMatrix_comp_affine
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    {V : Over (Spec (CommRingCat.of K))} (s : V ⟶ matrixTest (K := K) L)
+    (g : matrixTest (K := K) L ⟶ M.X) :
+    pointMatrix i V (s ≫ g) =
+      SymplecticMatrix.map n (sectionMap s) (affineMatrix i L g) := by
+  rw [pointMatrix_naturality, pointMatrix_affine]
+  apply Subtype.ext
+  rfl
+
+variable {q : M ⟶ A}
+
+/-- Over the local lift, the given inner action is the usual conjugation of
+symplectic matrices. -/
+theorem pointMatrix_inner_lift (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {T : Over (Spec (CommRingCat.of K))} (c : T ⟶ A.X) (g : T ⟶ M.X) :
+    pointMatrix i (liftTest (q := q) c)
+        (liftBase (q := q) c ≫ hq.innerAction.act c g) =
+      pointMatrix i _ (liftPoint (q := q) c) *
+        pointMatrix i _ (liftBase (q := q) c ≫ g) *
+        (pointMatrix i _ (liftPoint (q := q) c))⁻¹ := by
+  rw [hq.innerAction.naturality, lift_condition, hq.innerAction_act_lift]
+  simp only [map_mul, map_inv]
+
+/-- The local conjugation preserves the coefficient image on all symplectic
+matrices. -/
+theorem conjugation_image_symplectic (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c : matrixTest (K := K) L ⟶ A.X) (g : Matrix.symplecticGroup n L) :
+    ∃ y : Matrix (n ⊕ n) (n ⊕ n) L, y.map (sectionMap (liftBase (q := q) c)) =
+      (pointMatrix i _ (liftPoint (q := q) c) : Matrix (n ⊕ n) (n ⊕ n) _) *
+        (g : Matrix (n ⊕ n) (n ⊕ n) L).map (sectionMap (liftBase (q := q) c)) *
+        (((pointMatrix i _ (liftPoint (q := q) c))⁻¹ :
+          Matrix.symplecticGroup n _) : Matrix (n ⊕ n) (n ⊕ n) _) := by
+  let x := (affineMatrix i L).symm g
+  refine ⟨affineMatrix i L (hq.innerAction.act c x), ?_⟩
+  have he := pointMatrix_inner_lift hq i c x
+  rw [pointMatrix_comp_affine, pointMatrix_comp_affine, MulEquiv.apply_symm_apply] at he
+  exact congrArg Subtype.val he
+
+/-- An adjoint point acts by an algebra endomorphism on the matrix algebra.
+The construction uses its universal fpqc lift and injective coefficient pullback. -/
+def adjointMatrixHom (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c : matrixTest (K := K) L ⟶ A.X) :
+    Matrix (n ⊕ n) (n ⊕ n) L →ₐ[L] Matrix (n ⊕ n) (n ⊕ n) L := by
+  let B := Γ((liftTest (q := q) c).left, ⊤)
+  letI : Algebra L B := (sectionMap (liftBase (q := q) c)).toAlgebra
+  let φ : Matrix (n ⊕ n) (n ⊕ n) L →ₐ[L] Matrix (n ⊕ n) (n ⊕ n) B := (Algebra.ofId L B).mapMatrix
+  let H := SymplecticMatrix.toGL (pointMatrix i _ (liftPoint (q := q) c))
+  let ψ := (conjugationAlgHom (R := L) H).comp φ
+  refine descendMatrixAlgHom φ ψ ?_ ?_
+  · intro g
+    exact conjugation_image_symplectic hq i c g
+  · intro X Y h
+    ext a b
+    exact sectionMap_lift_injective hq c (congrFun (congrFun h a) b)
+
+/-- The matrix action is conjugation after pullback to the universal lift. -/
+theorem adjointMatrixHom_map (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c : matrixTest (K := K) L ⟶ A.X) (X : Matrix (n ⊕ n) (n ⊕ n) L) :
+    (adjointMatrixHom hq i c X).map (sectionMap (liftBase (q := q) c)) =
+      (pointMatrix i _ (liftPoint (q := q) c) : Matrix (n ⊕ n) (n ⊕ n) _) *
+        X.map (sectionMap (liftBase (q := q) c)) *
+        (((pointMatrix i _ (liftPoint (q := q) c))⁻¹ :
+          Matrix.symplecticGroup n _) : Matrix (n ⊕ n) (n ⊕ n) _) := by
+  let B := Γ((liftTest (q := q) c).left, ⊤)
+  let : Algebra L B := (sectionMap (liftBase (q := q) c)).toAlgebra
+  let φ : Matrix (n ⊕ n) (n ⊕ n) L →ₐ[L] Matrix (n ⊕ n) (n ⊕ n) B := (Algebra.ofId L B).mapMatrix
+  let H := SymplecticMatrix.toGL (pointMatrix i _ (liftPoint (q := q) c))
+  let ψ := (conjugationAlgHom (R := L) H).comp φ
+  exact map_descendMatrixAlgHom φ ψ (conjugation_image_symplectic hq i c)
+    (fun X Y h => by
+      ext a b
+      exact sectionMap_lift_injective hq c (congrFun (congrFun h a) b)) X
+
+/-- On symplectic matrices the algebra action is the supplied inner action. -/
+theorem adjointMatrixHom_symplectic (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c : matrixTest (K := K) L ⟶ A.X) (g : matrixTest (K := K) L ⟶ M.X) :
+    adjointMatrixHom hq i c (affineMatrix i L g) =
+      (affineMatrix i L (hq.innerAction.act c g) : Matrix (n ⊕ n) (n ⊕ n) L) := by
+  have hα := adjointMatrixHom_map hq i c (affineMatrix i L g)
+  have he := pointMatrix_inner_lift hq i c g
+  rw [pointMatrix_comp_affine, pointMatrix_comp_affine] at he
+  exact Matrix.map_injective (sectionMap_lift_injective hq c)
+    (hα.trans (congrArg Subtype.val he).symm)
+
+/-- The descended algebra action remains conjugation after any pullback of
+the universal lift. -/
+theorem adjointMatrixHom_map_lift (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c : matrixTest (K := K) L ⟶ A.X)
+    {V : Over (Spec (CommRingCat.of K))} (s : V ⟶ matrixTest (K := K) L)
+    (X : Matrix (n ⊕ n) (n ⊕ n) L) :
+    (adjointMatrixHom hq i c X).map
+        (sectionMap (liftBase (q := q) (s ≫ c) ≫ s)) =
+      (pointMatrix i _ (liftPoint (q := q) (s ≫ c)) : Matrix (n ⊕ n) (n ⊕ n) _) *
+        X.map (sectionMap (liftBase (q := q) (s ≫ c) ≫ s)) *
+        (((pointMatrix i _ (liftPoint (q := q) (s ≫ c)))⁻¹ :
+          Matrix.symplecticGroup n _) : Matrix (n ⊕ n) (n ⊕ n) _) := by
+  let b := liftTestMap (q := q) s c
+  have hf : sectionMap (liftBase (q := q) (s ≫ c) ≫ s) =
+      b.left.appTop.hom.comp (sectionMap (liftBase (q := q) c)) := by
+    rw [← liftTestMap_base s c, sectionMap_comp]
+  have hH := pointMatrix_naturality i b (liftPoint (q := q) c)
+  simp only [b, liftTestMap_point] at hH
+  have hHmat := congrArg Subtype.val hH
+  have hHimat := congrArg (fun z : Matrix.symplecticGroup n
+      Γ((liftTest (q := q) (s ≫ c)).left, ⊤) => (z⁻¹).val) hH
+  have hmapinv := congrArg Subtype.val
+    ((SymplecticMatrix.map n b.left.appTop.hom).map_inv
+      (pointMatrix i _ (liftPoint (q := q) c))).symm
+  have hHimat' := hHimat.trans hmapinv
+  change _ = (pointMatrix i _ (liftPoint (q := q) c) : Matrix (n ⊕ n) (n ⊕ n) _).map
+    b.left.appTop.hom at hHmat
+  change _ = (((pointMatrix i _ (liftPoint (q := q) c))⁻¹ :
+    Matrix.symplecticGroup n _) : Matrix (n ⊕ n) (n ⊕ n) _).map b.left.appTop.hom at hHimat'
+  have he := congrArg (fun Y : Matrix (n ⊕ n) (n ⊕ n) Γ((liftTest (q := q) c).left, ⊤) =>
+    Y.map b.left.appTop.hom) (adjointMatrixHom_map hq i c X)
+  simpa only [Matrix.map_mul, Matrix.map_map, ← RingHom.coe_comp, ← hf,
+    ← hHmat, ← hHimat'] using he
+
+/-- On every test over the affine coefficient scheme, the given inner action is
+the coefficient extension of the descended matrix algebra action. -/
+theorem pointMatrix_innerAction (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c : matrixTest (K := K) L ⟶ A.X)
+    {V : Over (Spec (CommRingCat.of K))} (s : V ⟶ matrixTest (K := K) L)
+    (g : V ⟶ M.X) :
+    (pointMatrix i V (hq.innerAction.act (s ≫ c) g) : Matrix (n ⊕ n) (n ⊕ n) _) =
+      extendMatrix (sectionMap s) (adjointMatrixHom hq i c).toLinearMap
+        (pointMatrix i V g) := by
+  let p := liftBase (q := q) (s ≫ c)
+  let := liftBase_epi hq (s ≫ c)
+  let B := Γ((liftTest (q := q) (s ≫ c)).left, ⊤)
+  let H := SymplecticMatrix.toGL (pointMatrix i _ (liftPoint (q := q) (s ≫ c)))
+  have hC : extendMatrix (sectionMap (p ≫ s)) (adjointMatrixHom hq i c).toLinearMap =
+      (conjugationAlgHom (R := B) H).toLinearMap := by
+    apply extendMatrix_eq
+    intro X
+    exact (adjointMatrixHom_map_lift hq i c s X).symm
+  have hm :
+      (pointMatrix i V (hq.innerAction.act (s ≫ c) g) : Matrix (n ⊕ n) (n ⊕ n) _).map
+          p.left.appTop.hom =
+        conjugationAlgHom (R := B) H
+          ((pointMatrix i V g : Matrix (n ⊕ n) (n ⊕ n) _).map p.left.appTop.hom) := by
+    have he := pointMatrix_inner_lift hq i (s ≫ c) g
+    rw [pointMatrix_naturality, pointMatrix_naturality] at he
+    exact congrArg Subtype.val he
+  have hext :
+      (extendMatrix (sectionMap s) (adjointMatrixHom hq i c).toLinearMap
+        (pointMatrix i V g)).map p.left.appTop.hom =
+        conjugationAlgHom (R := B) H
+          ((pointMatrix i V g : Matrix (n ⊕ n) (n ⊕ n) _).map p.left.appTop.hom) := by
+    rw [map_extendMatrix, ← sectionMap_comp]
+    exact LinearMap.congr_fun hC _
+  exact Matrix.map_injective
+    (Langlands.Scheme.UnitCocycleDescent.appTop_injective_of_epi p.left)
+      (hm.trans hext.symm)
+
+/-- The identity adjoint point acts trivially on matrices. -/
+theorem adjointMatrixHom_one (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    (L : Type u) [CommRing L] [Algebra K L] :
+    adjointMatrixHom hq i (1 : matrixTest (K := K) L ⟶ A.X) = AlgHom.id L _ := by
+  have he : (adjointMatrixHom hq i (1 : matrixTest (K := K) L ⟶ A.X)).toLinearMap =
+      (AlgHom.id L (Matrix (n ⊕ n) (n ⊕ n) L)).toLinearMap := by
+    apply linearMap_ext_symplectic
+    intro x
+    change adjointMatrixHom hq i (1 : matrixTest (K := K) L ⟶ A.X) x =
+      (x : Matrix (n ⊕ n) (n ⊕ n) L)
+    let g := (affineMatrix i L).symm x
+    have h := adjointMatrixHom_symplectic hq i
+      (1 : matrixTest (K := K) L ⟶ A.X) g
+    simpa only [AutomorphicAction.act_one_left, g, MulEquiv.apply_symm_apply] using h
+  exact AlgHom.ext fun X => LinearMap.congr_fun he X
+
+/-- Multiplication of adjoint points corresponds to composition of matrix maps. -/
+theorem adjointMatrixHom_mul (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L : Type u} [CommRing L] [Algebra K L]
+    (c d : matrixTest (K := K) L ⟶ A.X) (X : Matrix (n ⊕ n) (n ⊕ n) L) :
+    adjointMatrixHom hq i (c * d) X =
+      adjointMatrixHom hq i c (adjointMatrixHom hq i d X) := by
+  have he : (adjointMatrixHom hq i (c * d)).toLinearMap =
+      ((adjointMatrixHom hq i c).comp (adjointMatrixHom hq i d)).toLinearMap := by
+    apply linearMap_ext_symplectic
+    intro x
+    let g := (affineMatrix i L).symm x
+    have hx : x = affineMatrix i L g := (MulEquiv.apply_symm_apply _ _).symm
+    change adjointMatrixHom hq i (c * d) x =
+      adjointMatrixHom hq i c (adjointMatrixHom hq i d x)
+    rw [hx, adjointMatrixHom_symplectic, adjointMatrixHom_symplectic,
+      adjointMatrixHom_symplectic, AutomorphicAction.act_mul_left]
+  exact LinearMap.congr_fun he X
+
+/-- The matrix action commutes with every change of coefficient algebra. -/
+theorem adjointMatrixHom_naturality (hq : IsAdjointQuotient q)
+    (i : M ≅ SymplecticMatrix.groupScheme n (CommRingCat.of K))
+    {L B : Type u} [CommRing L] [CommRing B] [Algebra K L] [Algebra K B]
+    (f : L →ₐ[K] B) (c : matrixTest (K := K) L ⟶ A.X) (X : Matrix (n ⊕ n) (n ⊕ n) L) :
+    (adjointMatrixHom hq i c X).map f =
+      adjointMatrixHom hq i (ringTestMap K f ≫ c) (X.map f) := by
+  let : Algebra L B := f.toRingHom.toAlgebra
+  let F : Matrix (n ⊕ n) (n ⊕ n) L →ₗ[L] Matrix (n ⊕ n) (n ⊕ n) B :=
+    ((Algebra.ofId L B).mapMatrix).toLinearMap
+  have he : F.comp (adjointMatrixHom hq i c).toLinearMap =
+      ((adjointMatrixHom hq i (ringTestMap K f ≫ c)).toLinearMap.restrictScalars L).comp F := by
+    apply linearMap_ext_symplectic
+    intro x
+    let g := (affineMatrix i L).symm x
+    have hx : x = affineMatrix i L g := (MulEquiv.apply_symm_apply _ _).symm
+    change (adjointMatrixHom hq i c x).map f =
+      adjointMatrixHom hq i (ringTestMap K f ≫ c) ((x : Matrix (n ⊕ n) (n ⊕ n) L).map f)
+    rw [hx, adjointMatrixHom_symplectic]
+    have hn := congrArg Subtype.val (affineMatrix_naturality i f g)
+    change (affineMatrix i B (ringTestMap K f ≫ g) : Matrix (n ⊕ n) (n ⊕ n) B) =
+      (affineMatrix i L g : Matrix (n ⊕ n) (n ⊕ n) L).map f at hn
+    rw [← hn, adjointMatrixHom_symplectic,
+      ← hq.innerAction.naturality, affineMatrix_naturality]
+    rfl
+  exact LinearMap.congr_fun he X
+
+end Langlands.GroupScheme.SymplecticInnerForm

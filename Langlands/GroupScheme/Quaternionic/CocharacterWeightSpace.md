@@ -4,31 +4,45 @@ Author: Worker 73.
 
 Module `Langlands.GroupScheme.Quaternionic.CocharacterWeightSpace`, namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`. This module contains two
-definitions and no theorem. It supports
-[`SpinCoverVectorWeightsStatement`](../SimplyConnected/SpinCoverVectorWeightsStatement.md)
-and the planned companion `IsometryMaximalSplitTorusWeightsStatement`.
+definitions and no theorem. It supports the statements
+[`IsometryMaximalSplitTorusWeightsStatement`](MaximalSplitTorusWeightsStatement.md) and
+[`SpinCoverVectorWeightsStatement`](../SimplyConnected/SpinCoverVectorWeightsStatement.md).
 
 ## Setting
 
 `K` is a field and `D : Type u` a finite-dimensional division `K`-algebra. `σ` is an
 involution of the first kind of `D` (published module `Quaternionic.Involution`). `n` is a
-finite type of coordinates, and `q : σ.QuadraticForms n` is a `σ`-quadratic form on `D^n`
-in the sense of Tits (published module `Quaternionic.Forms`). `σ.isometryGroup q` is the
-published isometry group scheme `O(q)` over `Spec K` (module `Quaternionic.GroupSchemes`).
-It comes with the closed inclusion `σ.isometryGroupι q` into the unit group scheme of the
-finite `K`-algebra `M_n(D)`. No characteristic, centrality, nondegeneracy or smoothness
-hypothesis is used here.
+finite type of coordinates. `q : σ.QuadraticForms n` is an element of the Library's
+fixed-sign quotient `M_n(D) ⧸ {X - ᵗX^σ}` (published module `Quaternionic.Forms`).
+`σ.isometryGroup q` is the published isometry group scheme `O(q)` over `Spec K` (module
+`Quaternionic.GroupSchemes`). It comes with the closed inclusion `σ.isometryGroupι q` into
+the unit group scheme of the finite `K`-algebra `M_n(D)`. No characteristic, centrality,
+involution-type, nondegeneracy or smoothness hypothesis is used here.
+
+The fixed-sign quotient is not always Tits's space of `σ`-quadratic forms. Tits 1968, §2
+(source `tits-1968-formes-quadratiques-clifford`, printed pp. 20–23, PDF pp. 3–6) divides
+by `{X - ε ᵗX^σ}`, where `ε = ±1` is the type of the involution. The Library quotient is
+Tits's construction only when `D` is central and `σ` has type `1`, that is, when its
+symmetric elements have dimension `d(d + 1)/2` for `D` of degree `d`. In characteristic 2
+this holds for every involution of the first kind, since there `ε = −1 = 1`. For an
+involution of type `−1` in characteristic different from 2, Tits uses the opposite sign,
+and the Library quotient is a different object. The definitions below are internal: they
+are stated for the Library quotient in general. Statements that use them and invoke Tits's
+results, such as `IsometryMaximalSplitTorusWeightsStatement`, add the centrality and type-1
+hypotheses themselves.
 
 ## `isometryAffineUnitsOver`
 
-`σ.isometryAffineUnitsOver q R` is a monoid homomorphism. Its source is the group of points of
-`O(q)` with values in a commutative `K`-algebra `R`, that is, morphisms
+`σ.isometryAffineUnitsOver q R` is a monoid homomorphism. Its source is the group of
+points of `O(q)` with values in a commutative `K`-algebra `R`, that is, morphisms
 `Spec R ⟶ O(q)` over `Spec K` (`GroupScheme.affinePoints`). Its target is the unit group
 `(R ⊗[K] M_n(D))ˣ`. It composes a point with the closed inclusion `σ.isometryGroupι q`,
 then applies the published identification `FiniteAlgebraUnits.affinePointsEquiv` of the
 `R`-points of the unit group scheme with `(R ⊗[K] M_n(D))ˣ`. For `R = K` it agrees with
 the published `isometryAffineUnits`, which this definition generalizes to every
-coefficient algebra.
+coefficient algebra. (It is unrelated to the published `isometryUnits` of module
+`Quaternionic.QuaternionicMoritaIsometryProof`, a subgroup of units defined from a
+representative matrix.)
 
 ## `cocharacterWeightSpace`
 
@@ -36,9 +50,9 @@ Let `f : 𝔾_m ⟶ O(q)` be a homomorphism of group schemes over `Spec K` (a co
 `O(q)`), and let `c ∈ ℤ`. Then `σ.cocharacterWeightSpace q f c` is the subset of row
 vectors `v ∈ D^n` (functions `n → D`) satisfying the following condition. Take any
 commutative `K`-algebra `R` and any point `t ∈ 𝔾_m(R)`. Let `u ∈ (R ⊗[K] M_n(D))ˣ` be the
-unit `σ.isometryAffineUnitsOver q R (f(t))`. Transport `u⁻¹` to a matrix over `R ⊗[K] D` by the
-published algebra isomorphism `TensorMatrix.equiv R n : R ⊗[K] M_n(D) ≅ M_n(R ⊗[K] D)`.
-Then
+unit `σ.isometryAffineUnitsOver q R (f(t))`. Transport `u⁻¹` to a matrix over
+`R ⊗[K] D` by the published algebra isomorphism
+`TensorMatrix.equiv R n : R ⊗[K] M_n(D) ≅ M_n(R ⊗[K] D)`. Then
 
 `(1 ⊗ v) · u⁻¹ = t^c ⊗ v` in `(R ⊗[K] D)^n`.
 
@@ -69,9 +83,12 @@ not detect weights.
 
 This is an internal derived definition. It formalizes the usual weight-space decomposition
 of the natural representation of `O(q)` on `D^n` restricted to a one-parameter subgroup.
-Tits uses this decomposition in his description of the classical indices: see the type
-`D_n` entries of Table II in Tits 1966 (source `tits-1966-classification-algebraic-semisimple`,
-printed pp. 56–57, PDF pp. 61–62). Borel–Tits 1965 4.24 uses it to compare the rank of
-`O(Q)⁰` with the index of `Q` (source `borel-tits-1965-groupes-reductifs`, printed p. 99,
-PDF p. 40). The functor-of-points form is chosen so that it has the intended meaning over
-every field, including finite fields and fields of characteristic 2.
+The literature uses this decomposition only in the settings where the Library quotient
+agrees with the classical forms, as explained above. Tits describes the classical indices
+of type `D_n` through it, for a central division algebra and a type-`1` involution: see the
+type `D_n` entries of Table II in Tits 1966 (source
+`tits-1966-classification-algebraic-semisimple`, printed pp. 56–57, PDF pp. 61–62).
+Borel–Tits 1965 4.24 uses it for an ordinary quadratic form, the case `D = K`, to compare
+the rank of `O(Q)⁰` with the index of `Q` (source `borel-tits-1965-groupes-reductifs`,
+printed p. 99, PDF p. 40). The functor-of-points form is chosen so that it has the
+intended meaning over every field, including finite fields and fields of characteristic 2.

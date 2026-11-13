@@ -47,7 +47,7 @@ the corrections and additions of 1 November 2024. The precise passages are:
 - Proposition 4.2.7 and Theorem 4.2.10 (printed pp.170–172; PDF pp.201–203):
   nonpositive curvature and completeness. The completeness argument covers
   buildings that are not locally finite.
-- Proposition 7.6.3 and Remark 7.6.5:
+- Proposition 7.6.3 and Remark 7.6.5 (printed pp.264–266; PDF pp.295–297):
   the root-valuation quotient construction and its building axioms, applied to
   the supplied integer-valued apartment data over `K`.
 - Proposition 7.9.5 (printed p.276; PDF p.307) and Section 9.2.1

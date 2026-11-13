@@ -93,9 +93,18 @@ This statement is derived from the literature.
 
 * Tits 1966, Table II, entries `¹D_n` and `²D_n` (source
   `tits-1966-classification-algebraic-semisimple`, printed pp. 56–57, PDF pp. 61–62),
-  with the numbering of vertices of Table I. The groups `SO(D, h)` with `D` of degree `d`
-  have distinguished vertices `d, 2d, …, rd`. This is what the weights above give after
-  restriction to a maximal split torus.
+  with the numbering of vertices of Table I: vertices `1, …, n`, fork vertices `n − 1`
+  and `n`. The numbering `e` of this statement is that numbering shifted down by one. The
+  groups `SO(D, h)`, with `D` of degree `d` and `h` of index `r`, have relative rank `r`.
+  For inner type `¹D_n` the distinguished vertices are `d, 2d, …, rd`. For outer type
+  `²D_n` the star action exchanges the two fork vertices, and the table lists
+  distinguished orbits. They are `d, 2d, …, rd`, except that when `n = rd + 1` the last
+  one is replaced by the orbit `(n − 1, n)` of the two fork vertices. In both types the
+  distinguished vertices among the nonfork vertices `1, …, n − 2` are exactly the
+  multiples `jd` with `1 ≤ j ≤ r` and `jd ≤ n − 2`. On nonfork vertices this is what the
+  weights above give after restriction to a maximal split torus, where `rd` of the
+  `ε_i` restrict to `r` characters, each `d` times, and the others to `0`. This statement
+  itself asserts nothing about distinguished vertices.
 * Knus–Merkurjev–Rost–Tignol, §27.B, type `D_n` (source
   `knus-merkurjev-rost-tignol-1998-book-of-involutions`, printed p. 379, PDF p. 402),
   describes the centre of `Spin(A, σ, f)`. Its vector character is the one that factors
