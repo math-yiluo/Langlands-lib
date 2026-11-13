@@ -93,9 +93,10 @@ model and a weight decomposition of its affine ring. The Lean route for split to
   of a bialgebra map into a group algebra is idempotent, hence `0` or `1` over a noetherian
   domain (`HopfPointIntegralClosure.surjective_of_coeff_ne_zero`). This replaces KP's
   argument that `a_x² ∣ a_x` forces `a_x ∈ O^×`.
-* The integral torus is `D_R(ℤ^I)` itself, so it is split by construction. KP's Lemma
-  Proposition B.2.4 gives only an `o`-torus. The Markdown of `SpecialTorusIntegralModelStatement` adds
-  a monodromy argument for its splitness; that argument is not needed here.
+* The integral torus is `D_R(ℤ^I)` itself, so it is split by construction. KP's
+  Proposition B.2.4 gives only an `o`-torus. The Markdown of
+  `SpecialTorusIntegralModelStatement` adds a monodromy argument for its splitness; that
+  argument is not needed here.
 * For `S` over `𝒪[F]`, the hypothesis concerns `O_K`-points. The proof descends the Laurent
   coefficients from `O_K` to `𝒪[F]` with `F ∩ O_K = 𝒪[F]`. KP instead apply B.2.4 directly
   to the descended `o`-model.

@@ -65,16 +65,19 @@ trivial on `ker(Spin → SO)` and the half-spin weights are not (KMRT
 and every spin cover is aligned there (mathematical remark, not used in
 Lean). For `D₄` the star action fixes vertex `0`, but triality can make
 vertex `2` or `3` the vector vertex of a given spin cover. For such a
-cover the vertex-0 comparison can fail. For example, let `q₀ = H ⊥ φ`
-over `K` with `H` a hyperbolic plane and `φ` an anisotropic
-six-dimensional Albert form, and number `Spin(q₀)` so that the vector
-vertex of `q₀` is vertex `0`. That vertex is distinguished. By
-triality (KMRT (44.7)–(44.8)) the same group is also a spin cover of a
-form over a degree-4 division algebra, Brauer-equivalent to a simple
-component of the even Clifford algebra of `q₀`. The vector vertex of
-that cover is a fork tip. For that cover
-the comparison at vertex `0` would assert `1 = 4 j`. The alignment
-hypothesis excludes such covers.
+cover the vertex-0 comparison can fail. For example, let `K` have
+characteristic different from 2, let `q₀ = H ⊥ φ` over `K` with `H` a
+hyperbolic plane and `φ` an anisotropic six-dimensional Albert form, and
+number `Spin(q₀)` so that the vector vertex of `q₀` is vertex `0`. That
+vertex is distinguished. By triality (KMRT (44.7)–(44.8), proved in
+Chapter X under its standing assumption that the characteristic is not
+2) the same group is also a spin cover of a form over a degree-4
+division algebra, Brauer-equivalent to a simple component of the even
+Clifford algebra of `q₀`. The vector vertex of that cover is a fork tip.
+For that cover the comparison at vertex `0` would assert `1 = 4 j`. The
+alignment hypothesis excludes such covers. The example only illustrates
+the need for the hypothesis. The statement itself covers every
+characteristic, and its formulation does not rely on Chapter X.
 
 ## Original sources and derived formulation
 
@@ -99,7 +102,10 @@ hypothesis excludes such covers.
   (the vector character `λ` of the centre factors through `O⁺`);
   (44.7)–(44.8), printed p.562 / PDF p.585 (`Spin(T) ≅ Spin(A)` for
   types `¹D₄`, `²D₄`); §44.A, printed p.563 / PDF p.586 (Tits algebras
-  for `D₄`). Registered
+  for `D₄`). The last two items belong to Chapter X, which assumes
+  characteristic different from 2 (printed p.547 / PDF p.570; Notes,
+  printed p.571 / PDF p.594). They are used only for the `D₄` example
+  above. Registered
   source `knus-merkurjev-rost-tignol-1998-book-of-involutions`, PDF
   SHA-256
   `e21641aeb1425b63bec70032352f0cb33275f7bd1ddf682c3bea62b798654fe0`.

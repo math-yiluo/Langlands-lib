@@ -22,10 +22,13 @@ Let `R` be a domain with fraction field `K`. Let `M : IntegralModel R K G`,
   unfolds `genericTorusMap` (generic fibre of the map, then the model's `genericIso`) and
   applies the compatibility square `φ.generic_comm`.
 * `Hom.genericTorusMap_comp_of_id`: the case `f = 𝟙 G`.
-* `Hom.baseChangeCoefficients φ A L`: under the hypotheses of the Library's `IntegralModel.baseChange`,
-  `φ` gives a model homomorphism `(M.baseChange A L).Hom (N.baseChange A L)` over the base
-  change of `f`. The underlying map is the base change of `φ.hom` (`Hom.baseChangeCoefficients_hom`).
-  The compatibility square is the Library's `baseChangeGenericIso_naturality`.
+* Used here, but defined in the imported module
+  `Langlands.GroupScheme.IntegralModel.BaseChangeCoefficientHom`:
+  `Hom.baseChangeCoefficients φ A L`. Under the hypotheses of the Library's
+  `IntegralModel.baseChange`, `φ` gives a model homomorphism
+  `(M.baseChange A L).Hom (N.baseChange A L)` over the base change of `f`. The underlying
+  map is the base change of `φ.hom` (`Hom.baseChangeCoefficients_hom`). The compatibility
+  square is the Library's `baseChangeGenericIso_naturality`.
 
 For a nonarchimedean local field `F`, `Hom.baseChangeUnramified_genericTorusMap_comp` is the
 corresponding statement for `baseChangeUnramified`, for a homomorphism over `𝟙 G`. It uses

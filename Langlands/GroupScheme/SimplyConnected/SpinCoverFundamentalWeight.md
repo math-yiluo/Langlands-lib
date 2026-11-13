@@ -74,7 +74,11 @@ the functor of points over `K^s` is internal.
   p.379 / PDF p.402 (the characters `λ, λ₊, λ₋` of the centre, with `λ`
   factoring through `O⁺(A, σ, f)`, and the vector representation of
   highest weight `ω_1`). For `D₄`: §44.A, "Tits algebras", printed
-  p.563 / PDF p.586. Registered source
+  p.563 / PDF p.586. §44.A is in Chapter X, which assumes characteristic
+  different from 2 (printed p.547 / PDF p.570). In every characteristic,
+  the three end vertices of `D₄` are interchanged by diagram
+  automorphisms of the split group (Theorem (25.16), printed p.360 /
+  PDF p.383). Registered source
   `knus-merkurjev-rost-tignol-1998-book-of-involutions`, PDF SHA-256
   `e21641aeb1425b63bec70032352f0cb33275f7bd1ddf682c3bea62b798654fe0`.
 

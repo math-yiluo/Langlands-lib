@@ -214,16 +214,21 @@ statement to models built in any way.
 ring `O`. Axiom 4.1.20 itself notes that the condition
 `𝒢^1_Ω(o) = G(k)^1_Ω` determines the model when `k` is strictly Henselian
 (Corollary 2.10.11). Over `𝒪[F]`, the `𝒪[F]`-points do not determine a
-smooth model. Let `π` be a uniformizer and
-`q` the order of the residue field. The dilatation
-`𝒪[F][x, (x^q − x)/π]` of `𝔾_a` along the finite subgroup `𝔽_q` of its
-special fibre is a smooth affine group model of `𝔾_a`. Every element of
-`𝒪[F]` reduces into `𝔽_q`, so this model has the same `𝒪[F]`-points as
-`𝔾_{a,𝒪[F]}`. But its special fibre has `q` components, and its `O`-points
-differ from `O`. The same dilatation, along the finite subgroup of
-residue-field points of the special fibre, works for every
-positive-dimensional `𝒢^0_F`. A condition `D.neutral.integralPoints = G(F)^0_F` would
-therefore admit models other than `𝒢^0_F`, about which the source asserts
+smooth model. This holds even among models with connected fibres, as
+`RelativeComponentModelData` requires of its neutral model
+(`neutral_connectedFibres`). For example, let the residue field be `𝔽_2`
+(as for `F = ℚ_2` or `𝔽_2((t))`), let `π` be a uniformizer, and let
+`G = 𝔾_m`. The dilatation of `𝔾_{m,𝒪[F]}` along its identity section is
+`Spec 𝒪[F][y, (1 + πy)^{-1}]`, with coordinate `x = 1 + πy` and group law
+`y ⊙ y′ = y + y′ + πyy′`. It is a smooth affine group model of `𝔾_m`. Its
+special fibre is `𝔾_a`, which is connected. Its `𝒪[F]`-points are
+`1 + π𝒪[F]`, and this is all of `𝒪[F]^× = 𝔾_m(𝒪[F])` because `𝔽_2^×` is
+trivial. Its `O`-points `1 + πO` form a proper subgroup of `O^×`, however,
+and it is not isomorphic to `𝔾_{m,𝒪[F]}`, whose special fibre is `𝔾_m`.
+Here `G(K)^0 = O^×`, and the source's model for the unique facet is
+`𝒢^0_F = 𝔾_{m,𝒪[F]}`, with `𝒢^0_F(𝒪[F]) = 𝒪[F]^×`. So smoothness,
+connected fibres and a condition `D.neutral.integralPoints = G(F)^0_F`
+would admit the dilatation as well, a model about which the source asserts
 nothing. KP's own characterization uses the `O`-points, in Axiom 4.1.20,
 in §9.2.5 and in Definition 2.10.15. Definition 2.10.15 realizes a subset
 `U ⊂ X(K)` by the necessarily unique smooth model over `o` with
