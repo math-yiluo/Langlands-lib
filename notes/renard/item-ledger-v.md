@@ -15,6 +15,10 @@ French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Printed page
 numbers are given first and PDF page numbers second; PDF = printed + 6. Library facts
 refer to commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a` unless stated otherwise.
+The V.3.6–V.3.13 rows have a focused 13 November 2026 update against Library
+`aae8cb822941fac72c628376bd39754a1bc40b74`; other rows retain their earlier audit
+status. The update distinguishes the published V.3.6 statement, its open proof
+task, and the separate real-coroot candidate awaiting integration.
 
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
@@ -100,19 +104,19 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.4 `Σ'(A)`, `Σ(A)`, `Σ'(P)`, `Σ(P)` | `relativeRoots`, `RelativeRoot.indivisibleRoots`, `positiveRelativeRoots`, `reducedPositiveRelativeRoots`, `RelativeRoot.subgroupRelativeRoots`; `GS.RenardRootConventionStatement` | D; P: `renardRootConvention` |
 | V.3.5 `W(A) = N_G(A)/Z_G(A) = N_G(M)/M`, acting faithfully | `relativeWeylGroup` (minimal case); `RP.LeviNormalizerWeylGroupStatements` (`N_G(M)/M` finite, faithful through the norms on the centre) | D; P: `leviNormalizerWeylGroupStatements`. The equalities `N_G(A_M) = N_G(M)` and `Z_G(A_M) = M` for non-minimal `M` are Rec (S08), not stated separately. Related proved statements: `GS.MinimalParabolicLeviCentralizerStatement` (a Levi of a minimal parabolic is the centralizer of a maximal split torus) and `GS.ParabolicRadicalTorusCentralizerLeviStatement` (a Levi is the centralizer of a maximal torus of the radical of `P`, a torus whose maximal split subtorus is `A_M`) |
 | V.3.6 `𝔞^*_M = 𝔞^*_G ⊕ (𝔞^G_M)^*` and `𝔞_M = 𝔞_G ⊕ 𝔞^G_M`, for the minimal Levi `M_∅` (a maximal split torus `T`) | `GS.RelativeCentralDirectionsStatement` (conjunction of `RelativeCharacterRootComplementStatement` and `RelativeSplitCentralDirectionsStatement`): the root span and the restricted characters of `G` are complementary in `X^*(T) ⊗ ℝ`, and the split component of `G` embeds with image the common root annihilator | P (both conjuncts) |
-| V.3.6 the same decompositions for an arbitrary Levi `M` | none. They follow from the V.2.6 restriction isomorphisms (`GS.CharacterRestrictionStatement`, `RC.SplitComponentLatticeStatement`, both proved), but no statement packages them | G (small) |
-| V.3.7 `Σ(A_∅)` is a root system and `W` its Weyl group | `GS.RelativeRootSystemStatement` (a Mathlib root system on the rational span of the relative roots, Weyl group = the image of `W`), `GS.RelativeWeylCoxeterStatement`, `GS.RelativeTitsSystemStatement` | P. The `W`-invariant inner product that the book fixes is not constructed |
-| V.3.7 coroots `α̌ ∈ 𝔞_M`, the coroot system `Σ^∨(A_M)` in `𝔞_M`, and the spans `(𝔞^G_M)^*`, `𝔞^G_M` | the coroots of the Mathlib root pairing above live in the dual of the rational root span. Their realization in `𝔞_∅ = X_*(A_∅) ⊗ ℝ` and the statement that they span `𝔞^G_∅` are not stated | G (small) |
+| V.3.6 the same decompositions for an arbitrary Levi `M` | `GS.RenardLeviCentralDecompositionStatement` ([statement and scope](../../Langlands/GroupScheme/Rational/RenardLeviCentralDecompositionStatement.md)): over every field, for connected reductive `G`, `M` and actual split components with the compatible morphism diagram, both real restriction bijections, the canonical central-character inclusion, its complement with the literal restriction kernel, and the dual cocharacter complement with the pairing annihilator; both product equivalences have the specified addition formulas | S: published candidate `92aa130e-c278-47d0-8647-615541ba61c5`; exact proof Task 6224 (`423ad442-9268-4104-a37f-3f1d8eb63388`). Realizing the compatible component diagram for every source Levi is separate |
+| V.3.7 `Σ(A_∅)` is a root system and `W` its Weyl group | `GS.RelativeRootSystemStatement` (a Mathlib root system on the rational span of the relative roots, Weyl group = the image of `W`), `GS.RelativeWeylCoxeterStatement`, `GS.RelativeTitsSystemStatement`; pending `GS.RelativeRealCorootStatement` adds existence of invariant scalar products on the actual real character and cocharacter spaces and real root-system realizations | P for the rational system and Weyl identification. A for the real statement in candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616`; no proof of that target is claimed |
+| V.3.7 coroots `α̌ ∈ 𝔞_M`, the coroot system `Σ^∨(A_M)` in `𝔞_M`, and the spans `(𝔞^G_M)^*`, `𝔞^G_M` | pending `GS.RelativeRealCorootStatement`: the real image of each integral coroot from `RelativeRootReflectionData`, independence from those data, the formula and uniqueness for every invariant scalar product, the coroot span as the annihilator of restricted group characters, and crystallographic real root pairings for all roots and for the indivisible roots; minimal Levi only | A: candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616`; not yet published or proved. For the projected generators for non-minimal standard Levis, see its V.3.13 component below |
 | V.3.8 standard and semistandard parabolics; unique Levi factor containing `A_∅` | `GS.standardParabolic`, `GS.standardLevi`; `GS.StandardParabolicEndpointsStatement`, `GS.StandardLeviSplitComponentStatement` | D; P |
 | V.3.9 every parabolic is conjugate to a standard one | `GS.StandardParabolicClassificationStatement` | P |
 | V.3.10 semistandard intersections | `GS.DynamicSemistandardIntersectionStatement`, `GS.RepresentedParabolicLeviIntersectionStatement`, `GS.StandardLeviIntersectionStatement` | P |
 | V.3.11 parabolics of `M` and parabolics of `G` contained in `P` | `GS.DynamicLeviParabolicCorrespondenceStatement`, `GS.DynamicNestedParabolicDecompositionStatement` | P |
 | V.3.12 the simple roots form a basis of the root span; rank identities | `GS.RelativeRankStatement` (conjunction of `RelativeSimpleRootBasisStatement`: the simple relative roots form a basis of the rational span `relativeRootSpan` of the relative roots, and `RelativeRankIdentityStatement`: the rank identities and the rational character restriction) | P (both conjuncts) |
-| V.3.12 the real form: `Δ_∅` is a basis of `(𝔞^G_∅)^*`, the kernel of restriction to `A_G` | the identification of `(𝔞^G_∅)^*` with the real root span is proved: `GS.RelativeSplitCentralDirectionsStatement` gives, for every split component `a : A_G → G`, an embedding `f : A_G → T` with `(rationalCharacterRestrictReal f).ker = relativeRootSpanReal i` (and the rational analogue). The real root span is complementary to the restricted characters of `G` (`GS.RelativeCharacterRootComplementStatement`). That the simple roots form a basis of the real root span, the scalar extension of the rational basis of `GS.RelativeSimpleRootBasisStatement`, is not stated | P (kernel identification: `relativeSplitCentralDirections`); G (small) for the real basis |
-| V.3.12 `Δ_∅^∨` is a basis of `𝔞^G_∅`; fundamental weights and coweights | none | G (small); see also V.3.18 |
+| V.3.12 the real form: `Δ_∅` is a basis of `(𝔞^G_∅)^*`, the kernel of restriction to `A_G` | `GS.RelativeSplitCentralDirectionsStatement` gives, for every split component `a : A_G → G`, an embedding `f : A_G → T` with `(rationalCharacterRestrictReal f).ker = relativeRootSpanReal i` (and the rational analogue). `GS.RelativeCharacterRootComplementStatement` gives the real complement. Pending `GS.RelativeRealSimpleRootBasisStatement` states a real basis of `relativeRootSpanReal i` indexed by the actual simple roots, vector by vector `α ↦ 1 ⊗ α` | P (kernel identification and complement); A for the real basis in candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616` |
+| V.3.12 `Δ_∅^∨` is a basis of `𝔞^G_∅`; fundamental weights and coweights | pending `GS.RelativeFundamentalWeightStatement`: the actual simple real coroot basis, bases dual to the simple coroots and simple roots, and uniqueness of each fundamental weight and coweight in its specified relative subspace | A: candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616`; not yet published or proved |
 | V.3.13 `𝔞_G ⊂ 𝔞_L ⊂ 𝔞_M ⊂ 𝔞_∅`, with `𝔞_M` the annihilator of `Δ^M_∅` | `GS.StandardLeviCentralDirectionsStatement`: for every standard Levi, the split component embeds into `A_∅` with real cocharacter image the annihilator of the selected simple roots, with the ranks | P (`standardLeviCentralDirections`) |
 | V.3.13 `𝔞^*_∅ = 𝔞^*_G ⊕ (𝔞^G_∅)^*`, with `(𝔞^G_∅)^*` the span of `Δ_∅` | the real part of `GS.RelativeCharacterRootComplementStatement` (the real root span and the restricted characters of `G` are complementary) | P |
-| V.3.13 `𝔞^*_M` as the annihilator of the coroots of `M`; `𝔞_∅ = 𝔞_G ⊕ 𝔞^G_∅` with `𝔞^G_∅` the coroot span; `𝔞^*_M = 𝔞^*_L ⊕ (𝔞^L_M)^*` and its dual; orthogonality; projections `p^L_M` | none | G. The display for `(𝔞^L_M)^*` is false as printed: source issue I4 |
+| V.3.13 `𝔞^*_M` as the annihilator of the coroots of `M`; `𝔞_∅ = 𝔞_G ⊕ 𝔞^G_∅` with `𝔞^G_∅` the coroot span; `𝔞^*_M = 𝔞^*_L ⊕ (𝔞^L_M)^*` and its dual; orthogonality; projections `p^L_M` | pending `GS.StandardLeviRealDecompositionStatement`: for `J ⊆ K ⊆ Δ_∅`, root and coroot annihilator models, their perfect restricted pairing, the direct sums and projected spanning sets, and orthogonality for every invariant scalar product. The relative character space is the intersection of the coroot annihilator of `J` with the span of `K`, correcting I4; dually for cocharacters. The direct sums determine the projections | A: candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616`. Proofs and the actual split-component character-space comparison remain separate; no named `p^L_M` map is added by this statement. The printed unprojected span remains false (I4) |
 | V.3.14 `Δ(P)`, `Δ̂(P)`, `Δ^∨(P)`, `β̌` | [RestrictedSimpleRootCones](../../Langlands/GroupScheme/Rational/RestrictedSimpleRootCones.md) (`restrictedSimpleRoots`), `GS.ParabolicRootPresentation` | D. `Δ̂(P)`, `Δ^∨(P)` and `β̌` are not constructed |
 | V.3.15 cones `+[𝔞^*]_P^G`, its closure, chambers `_P^G[𝔞^*]^+` and closure | `restrictedRootPositiveCone`, `restrictedRootNonnegCone`; `restrictedCorootChamber`, `restrictedClosedCorootChamber` ([LanglandsTriplet](../../Langlands/Representation/LanglandsClassification/LanglandsTriplet.md), defined by lifting to `𝔞^*_∅`) | D |
 | V.3.16 cone decompositions and the cellular decomposition over `Q ⊇ P` | none | G (see V.3.18) |
@@ -130,6 +134,38 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.23 `C_A`, `F_M`, `C̃_A = C_A F_M`, `F_M ⊂ M^+`, `C_A^+`, `C_A^{++}`, `C_A^+(ε)` | `CocharacterUniformizer.CA`, `CAplus`, `CAstrict`, `CAepsilon`; `RC.FullLatticeRepresentativeStatement`, `RC.RenardDominantComparisonStatement`, `RC.IsChamberCompatibleTransversal` | D; S: Task 5679 (representatives); P: `renardDominantComparison` |
 | V.3.24 `S = C^+_∅/C_{A_G} ≅ ℕ^d`; `S = ⊔ S^{++}_L` | none | Source issue I2 below |
 | V.3.25 `C_A/C_{A_G}(C_A ∩ ⁰G)` finite; `C^{++}_A ∩ ⁰G ≠ ∅` | not stated separately | St: step of VI.3.5 (`RPF.RationalCompactRestrictionCuspidalStatement`, proved) |
+
+## Evidence for the focused V.3.6–V.3.13 update
+
+Candidate `92aa130e-c278-47d0-8647-615541ba61c5` was independently approved by
+Reviewer 1171 without qualifications and published at Library
+`7f43c3c930ff92f76dae6589da1678ad729017e5`. Its exact Lean/Markdown pair agrees
+with the current Library and this workspace. Recovery check
+`152d5695-5c49-46e5-9551-acde4a9ba2ac` compiles the module and inspects
+`Langlands.GroupScheme.RenardLeviCentralDecompositionStatement` as a
+`Prop`-valued definition with universe parameter `u` and only standard axioms.
+This is statement evidence. Task 6224 has no submitted proof as inspected on
+13 November 2026.
+
+Worker 4's candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616` contains the
+four component statements above and their conjunction
+`Langlands.GroupScheme.RelativeRealCorootLinearAlgebraStatement` in module
+`Langlands.GroupScheme.Rational.RelativeRealCorootStatements`. Its frozen
+Lean and Markdown were read in full. Machine validation passed and Reviewer
+1315 independently approved it without qualifications; TaskHub still reports
+`accepted: false`, `public: false` while integration is pending. The **A** rows
+mean semantic approval awaiting integration, and supply no published or proved
+coverage. Worker 4 retains the proof-successor work after publication.
+
+Its statements are over arbitrary fields, on the shared actual torus spaces,
+and universally quantify over supplied integral reflection data. Existence of
+those data is a separate published statement; no new existence proof is
+claimed here. The standard-Levi spaces are ambient root/coroot annihilators.
+Their identification with the character and cocharacter spaces of actual split
+components needs the existing standard-Levi comparisons and any remaining
+comparison proof. Neither this candidate nor the compatible-diagram V.3.6
+statement settles every geometric realization. The corrected projected-root
+form of V.3.13 preserves source issue I4 below.
 
 ## V.4 Weyl groups (118–122 / 124–128)
 
@@ -220,11 +256,14 @@ The section refers to [14] (Bruhat–Tits).
 1. V.3.16 cone decompositions and V.3.18 Langlands' combinatorial lemma, with the
    constructions they need (fundamental weights and coweights, `Δ̂(P)`, `β̌`, the
    `W`-invariant inner product and the projections `p^L_M`). Task 5474 owns V.3.18.
-2. V.3.6–V.3.13 linear algebra beyond the minimal case: the decompositions of `𝔞_M`, `𝔞^*_M`
-   for an arbitrary Levi, the coroots in `𝔞_∅` and their spans, the real form of the simple-root basis and the coroot
-   basis `Δ^∨_∅` (V.3.12), the
-   coroot-annihilator description of `𝔞^*_M` and the decompositions of V.3.13 (in the corrected
-   form of I4).
+2. V.3.6–V.3.13 linear algebra and its realization: the compatible-diagram
+   decompositions for arbitrary Levis are now stated, with exact proof Task 6224
+   (`423ad442-9268-4104-a37f-3f1d8eb63388`) open. The four real-coroot, real-basis,
+   fundamental-weight and corrected standard-Levi statements in candidate
+   `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616` await integration and proofs. The geometric
+   compatible-component realization and actual split-component/ambient-annihilator
+   comparisons remain distinct obligations; their necessary published inputs do
+   not alone establish every source-Levi instance.
 3. V.5.1 Corollary: `K_0`-conjugacy of every parabolic to a standard one (now stated by the
    candidate `3e44f4be`, under review).
 4. V.5.3, the finiteness Lemma for the generated subalgebra `M`. It is retained as an
@@ -245,3 +284,10 @@ The section refers to [14] (Bruhat–Tits).
 published; its proof task is Task 5711. `4d34998c` (V.4.3.3 and V.4.8) is published; its proof
 task is Task 5688. Task 5679 is the proof task for the published `SplitComponentKernelStatement`
 (V.2.6 Lemma) and `FullLatticeRepresentativeStatement` (V.3.23), which had none.
+
+The compatible-component V.3.6 statement
+`92aa130e-c278-47d0-8647-615541ba61c5` is published and has exact proof Task 6224
+(`423ad442-9268-4104-a37f-3f1d8eb63388`). Its arbitrary-field scope, literal
+restriction kernel and actual pairing annihilator are retained. The pending
+real-coroot unit has no published proof successor yet; Worker 4 will supply
+those tasks after its integration.
