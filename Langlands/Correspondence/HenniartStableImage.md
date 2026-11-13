@@ -55,3 +55,5 @@ supercuspidal class of the rank of the Weil class. Use the candidate supplied by
 
 `IsStableImage.isFiniteFactoring`: a class with a stable image factors through a
 finite quotient. This is part of the definition.
+
+The two generator-degree theorems are imported from `Langlands.VirtualRepresentation.UnitaryDegreeGenerators` with their original public names and statements.

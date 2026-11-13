@@ -297,7 +297,7 @@ theorem compactStagesEquiv_natural {τ : Representation R H W} (T : σ.Intertwin
 
 end Compact
 
-private theorem locallyCompactOfBasis
+theorem locallyCompactSpace_of_compactOpenBasis
     (hBasis : ∀ O : Set G, IsOpen O → (1 : G) ∈ O →
       ∃ K : OpenSubgroup G, IsCompact (K : Set G) ∧ (K : Set G) ⊆ O) :
     LocallyCompactSpace G := by
@@ -307,7 +307,7 @@ private theorem locallyCompactOfBasis
 /-- The exact natural compact-induction-in-stages statement. -/
 theorem compactInductionTransitivity : CompactInductionTransitivityStatement.{uG, uV} := by
   intro G _ _ _ _ hBasis H P hH hP hHP
-  let : LocallyCompactSpace G := locallyCompactOfBasis hBasis
+  let : LocallyCompactSpace G := locallyCompactSpace_of_compactOpenBasis hBasis
   refine ⟨fun A => compactStagesEquiv H P hHP A.representation hH hP, ?_, ?_⟩
   · intro A F x
     exact compactStagesEquiv_eval H P hHP A.representation hH hP F x

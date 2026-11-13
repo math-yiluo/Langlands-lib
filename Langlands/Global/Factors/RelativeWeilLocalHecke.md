@@ -219,3 +219,5 @@ underlying homomorphism.
 No semisimplicity is assumed. These results are supporting lemmas for the global
 assembly. The module does not prove the task's target statement, and its
 conclusions depend on the four hypotheses named above.
+
+The restriction/dual equivalence is imported from `Langlands.Weil.Representation.RestrictionDual`; its definition and public name are unchanged.

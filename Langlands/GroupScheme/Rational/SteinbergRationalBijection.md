@@ -64,3 +64,24 @@ canonical class quotient map is `ClassFunctions.rho G`. A rational point is a mo
   tensors it suffices to treat `a ⊗ f₀`, whose image is `a • fieldExtension f₀`, and
   `classEvaluation_baseChangeBasePoint` reduces this to the equality of the class evaluations
   of `f₀` at `g` and `g'`, which holds by `classEvaluation_eq_of_rho_eq`.
+
+## Rational-product interface
+
+Let `k` be a field, `G` an affine group scheme over `Spec k` with a supplied split pinning `p`, `E : Fin r ≃ p.base.support` an ordering of the simple roots, `x` a family of supplied normalized simple-root maps and `n` a family of supplied simple-reflection representatives (any family, not only the canonical one).
+
+`rationalSteinbergProduct E x n c`, for `c : Fin r → k`, is the rational point
+
+`(x (E 0))(c 0) · n (E 0) · (x (E 1))(c 1) · n (E 1) · ... · (x (E (r-1)))(c (r-1)) · n (E (r-1))`,
+
+the product in increasing `Fin r` order. Here `(x a)(c)` is `(x a).toRootParametrization.rationalPoint c`, the root point with standard additive coordinate `c`, and `n a` is the rational point `(n a).point`. `rationalSteinbergProduct_eq` unfolds it to this `List.ofFn` product, by definition.
+
+With `k`, `G`, `p`, `E`, `x` and `n` as in the definition:
+
+- `steinbergProductPoint_rational E x n c`: the published ordered product `steinbergProductPoint E x n` evaluated at the base test `Over.mk (𝟙 (Spec k))`, at the global functions `(Scheme.ΓSpecIso k).inv (c j)`, is the `List.ofFn` product above.
+- `steinbergProductPoint_eq_rationalSteinbergProduct E x n c`: the same equality with right-hand side `rationalSteinbergProduct E x n c`.
+- `bijective_steinbergProductPoint_rho E x n hG`: if `G` is simply connected, the map `k ^ r → (rational points of the class quotient)` sending `c` to `steinbergProductPoint E x n (Over.mk (𝟙 _)) (fun j => (Scheme.ΓSpecIso k).inv (c j)) ≫ rho G` is bijective.
+- `bijective_rationalSteinbergProduct_rho E x n hG`: if `G` is simply connected, `c ↦ rationalSteinbergProduct E x n c ≫ rho G` is a bijection from `k ^ r` onto the rational points of `ClassFunctions.quotient G`.
+
+`bijective_steinbergProductPoint_rho` uses the published Steinberg cross-section isomorphism `splitSteinbergQuotient` (Steinberg 1965, Theorem 7.9): `steinbergProduct E x n ≫ rho G` is an isomorphism of schemes over `Spec k` from the standard affine `r`-space. The map in question is the composite of three bijections. The first is `c ↦ ((Scheme.ΓSpecIso k).inv (c j))_j`, coordinatewise the inverse of the ring isomorphism `Γ(Spec k, ⊤) ≅ k`. The second is the inverse of the published coordinate equivalence `VectorGroup.coordinates k r (Over.mk (𝟙 _))` between rational points of affine `r`-space and `r`-tuples of global functions, after `Multiplicative.ofAdd`. The third is postcomposition with the isomorphism `steinbergProduct E x n ≫ rho G`. The published `coordinatesPoint_comp_steinbergProduct` identifies the composite of the first two with `steinbergProductPoint`, which gives the stated map.
+
+`bijective_rationalSteinbergProduct_rho` rewrites the previous theorem with `steinbergProductPoint_eq_rationalSteinbergProduct`.

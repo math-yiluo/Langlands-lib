@@ -38,7 +38,19 @@ defines:
 - the comparison maps `H^q_c(X{G}, F) → H^q_c(X, b^*F)`, in each degree and as one map of
   complexes, and their compatibility on cohomology.
 
-That the comparison maps are isomorphisms is not proved.
+That the comparison maps are isomorphisms is not proved. On the Library's quasi-étale model
+they are not isomorphisms in general. Worker 16's example in the coverage note
+`notes/henniart/harris-cohomology-coverage.md` (section "Retained source gaps and scope
+decisions") gives a quasi-étale `G`-sheaf on a noncompact `X`, with `G = ℤ_p`, for which
+the degree-zero inclusion `quasiEtaleCompactInclusion` is not surjective. So, through the
+identification of `H^0` with sections (not formalized here), the degree-zero comparison
+map is not an isomorphism. The reason is that supports are taken in the `L`-valued points,
+and a section whose germs at all `L`-valued points vanish counts as compactly supported.
+These are mathematical remarks. They are not formalized. Whether the maps are isomorphisms
+for compact `X` has not been checked. For compact `X`, Berkovich's Theorem 1.6.1(ii)
+compares the ordinary cohomology instead, `H^q(X{G}, F) → H^q(X, b^*F)`, which involves no
+supports. That map is `quasiEtaleComparison` in the published module
+`AnalyticQuasiEtaleCohomology` (Worker 26). That it is an isomorphism is not stated there.
 
 All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
@@ -197,6 +209,9 @@ SHA-256 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`, memb
   proof, printed p.12: "The case q = 0 in (i) (resp. (ii)) follows from the fact that every
   element of H^0_c(X, b^*F) is fixed by an open subgroup of G (resp. is trivial), and
   therefore the general case follows from Proposition 1.5.1."
+- Theorem 1.6.1(ii), printed p.13 = PDF p.13, cited in Purpose for the contrast with
+  ordinary cohomology: "if X is compact, then for any quasi-étale (resp. étale) abelian
+  sheaf F on X(G) one has H^q(X{G}, F) ⥲ H^q(X, b^*F)".
 
 ## Provenance and correspondence
 
@@ -226,7 +241,8 @@ choices below are ours:
 
 ## Not formalized here
 
-The following are not formalized: that the comparison maps are isomorphisms; the
+The following are not formalized: conditions under which the comparison maps are
+isomorphisms (they are not in general, see Purpose); the
 degree-zero identification of `quasiEtaleCompactComparison` with
 `quasiEtaleCompactInclusion`; the spectral sequence, and the identification of
 `quasiEtaleInvariantEdgeMap` with its edge map; the étale version; and the finite

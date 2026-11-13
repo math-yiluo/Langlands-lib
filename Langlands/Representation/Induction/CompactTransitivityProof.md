@@ -129,3 +129,5 @@ unapplied theorem has level parameters exactly `uG`, `uV` and uses only
 the target pair and all 14 files of its transitive project import closure
 match the supplied Library base exactly. These local checks do not supply
 independent review or publication evidence.
+
+The public helper `Langlands.Induction.locallyCompactSpace_of_compactOpenBasis` extracts a compact identity neighbourhood from the compact-open basis; it is shared with `StructuralProof`.

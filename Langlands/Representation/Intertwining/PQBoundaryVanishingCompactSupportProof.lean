@@ -1,3 +1,4 @@
+import Langlands.Representation.Aubert.General.SemidirectIntersection
 import Langlands.Representation.Intertwining.PQIntertwiningCompositionReduction
 import Langlands.Representation.Intertwining.PQIdentitySupportProof
 import Langlands.Representation.Geometric.CosetOrbitHomeomorph
@@ -38,15 +39,6 @@ theorem isOpen_setOf_mem_of_openSubgroup {X : Type*} {φ : Γ → X} (K₀ : Ope
   change φ y ∈ s
   rw [h]
   exact hx
-
-omit [TopologicalSpace Γ] [IsTopologicalGroup Γ] in
-/-- In a semidirect decomposition the Levi and unipotent subgroups meet trivially. -/
-theorem IsSemidirectDecomposition.eq_one_of_mem_of_mem {P M U : Subgroup Γ}
-    (h : IsSemidirectDecomposition P M U) {x : Γ} (hM : x ∈ M) (hU : x ∈ U) : x = 1 := by
-  have h1 := h.projection_levi ⟨x, hM⟩
-  have h2 := (h.projection_eq_one_iff ⟨x, h.levi_le hM⟩).mpr hU
-  rw [h1] at h2
-  exact congrArg Subtype.val h2
 
 /-- Abstract form of Renard's description of `F̃^{<1̄}_{PQ}`. Let `P` and `V` be closed subgroups
 of a locally compact σ-compact group with `P \ Γ` compact, let `Q` be a subgroup with the orbit

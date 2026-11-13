@@ -62,3 +62,5 @@ restriction. The intersection hypothesis remains explicit. This is only a
 point-descent step: it constructs no canonical model, special point, building,
 metric, or equality with a building stabilizer, and it does not prove the
 unconditional `BuildingComparisonStatement`.
+
+The coordinate-range helpers `affinePointLift` and `affinePointLift_changeRing` are public and also supply the split-torus closure construction.

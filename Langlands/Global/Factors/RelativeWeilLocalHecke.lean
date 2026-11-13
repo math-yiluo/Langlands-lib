@@ -1,3 +1,4 @@
+import Langlands.Weil.Representation.RestrictionDual
 import Langlands.Global.Factors.RelativeWeilAssemblyGlobal
 import Langlands.Global.Factors.RelativeWeilLocalEulerBridge
 import Langlands.Global.Factors.RelativeWeilFunctionalEquationStatement
@@ -34,16 +35,6 @@ def restrictTwistTensorEquiv (φ : H →* G) (χ : G →* ℂˣ)
       TensorProduct.map ((χ (φ g) : ℂ) • A.representation (φ g)) (B.representation (φ g)) v
     rw [TensorProduct.map_smul_left]
     rfl
-
-/-- Restriction commutes with duals; the underlying map is the identity. -/
-def restrictDualEquiv (φ : H →* G) (A : FiniteRepresentation.{0, uG, uA} ℂ G) :
-    Equiv (restrict φ (dual A)) (dual (restrict φ A)) where
-  toLinearEquiv := LinearEquiv.refl ℂ _
-  isIntertwining' h := by
-    apply LinearMap.ext
-    intro ℓ
-    change (A.representation.dual (φ h)) ℓ = Representation.dual (A.representation.comp φ) h ℓ
-    rw [Representation.dual_apply, Representation.dual_apply, MonoidHom.comp_apply, map_inv φ h]
 
 end Langlands.FiniteRepresentation
 

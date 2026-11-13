@@ -17,7 +17,7 @@ namespace Langlands.GroupScheme.IntegralModel
 open Langlands.AlgebraicGeometry.PointTopology
 open GaloisPointComparison
 
-private def affinePointLift
+def affinePointLift
     {R S T : Type u} [CommRing R] [CommRing S] [CommRing T]
     [Algebra R S] [Algebra R T]
     (X : Over (Spec (CommRingCat.of R))) [IsAffine X.left]
@@ -30,7 +30,7 @@ private def affinePointLift
     (AlgPoint.ofAlgHom ((AlgEquiv.ofInjective f hf).symm.toAlgHom.comp
       ((affineSchemePointEquiv R X T p).toAlgHom.codRestrict f.range hp)))
 
-private theorem affinePointLift_changeRing
+theorem affinePointLift_changeRing
     {R S T : Type u} [CommRing R] [CommRing S] [CommRing T]
     [Algebra R S] [Algebra R T]
     (X : Over (Spec (CommRingCat.of R))) [IsAffine X.left]

@@ -94,6 +94,13 @@ These declarations take the hypotheses of `AnalyticQuasiEtale`, which stay hypot
   `[PreservesFiniteColimits (quasiEtaleGodementFunctor L ρ h R)]` (Harris's Fact 3);
 - `hpoints`: joint faithfulness of the fibre functors at the `L`-valued points.
 
+For `R ≠ 0`, `hpoints` is false on most spaces of positive dimension, including every
+nonempty open subspace of `P^d`, `d ≥ 1`, such as Drinfeld's `Ω` and Harris's domains
+`U(f)`. There the results below hold only vacuously. See the section "Caution: `hpoints`
+fails on most spaces" in the Markdown of `AnalyticQuasiEtale` (a mathematical remark, not
+formalized). The published module `AnalyticQuasiEtalePoints` (Worker 26) gives the same
+results for an arbitrary family of points of the quasi-étale site.
+
 The declarations are:
 
 - `quasiEtaleConstantGodementResolutionSystem ρ R hℓ L h hpoints` (an abbreviation):

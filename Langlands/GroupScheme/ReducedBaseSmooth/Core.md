@@ -89,10 +89,11 @@ checked on the two pullback projections using the `fiberSection` simp lemmas, an
 `fiberMap_fiberPoint` evaluates it at the closed point of `Spec κ(t)`.
 
 `isClosed_fiberPoint`. The fibre section `σ : Spec κ(t) → (i ≫ p).fiber t` is a section of
-the projection, so `σ` is locally of finite type (`locallyOfFiniteType_of_comp`). A morphism
-locally of finite type maps closed points to closed points
-(`Scheme.Hom.closePoints_subset_preimage_closedPoints`), and the closed point of `Spec κ(t)`
-is closed.
+the projection, so `σ` is locally of finite type (`locallyOfFiniteType_of_comp`). The fibre is
+a Jacobson space because it is locally of finite type over the field `κ(t)`. A morphism locally
+of finite type into a Jacobson space maps closed points to closed points
+(`Scheme.Hom.closePoints_subset_preimage_closedPoints`). The closed point of `Spec κ(t)` is
+closed, so its image under `σ` is closed.
 
 `componentSet_subset_range`. Take a point of `componentSet`, given by `t : T` and a point `z`
 of `p.fiber t` in the connected component of the section point. The fibre of `p` is smooth of

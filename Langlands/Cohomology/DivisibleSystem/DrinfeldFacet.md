@@ -107,6 +107,17 @@ The next declarations take the hypotheses of `AnalyticQuasiEtaleConstant`:
 - `hpoints`: the fibre functors at the `L`-valued points of `U(f)` are jointly faithful;
 - a natural number `D`.
 
+Caution: if `U(f)` is nonempty and `R ≠ 0`, then `hpoints` is false. So the declarations
+below that assume it, and the Lemma 2.8 declarations, which assume it as well, hold only
+vacuously on `U(f)`. `U(f)` is an open subspace of `Ω`, hence of the projective space
+`P^d`. The Markdown of `AnalyticQuasiEtale` (section "Caution: `hpoints` fails on most
+spaces") and of `AnalyticQuasiEtalePoints` explains why `hpoints` fails on every nonempty
+open subspace of `P^d`, `d ≥ 1`. This is a mathematical remark. It is not formalized. The
+published module `AnalyticQuasiEtalePoints` (Worker 26) builds the same constructions from
+an arbitrary family of points of the quasi-étale site, and it applies to `facetρ K hS ε H hH`
+as it stands. Whether some family of points of the quasi-étale site of `U(f)` has jointly
+faithful fibre functors is not known in the Library.
+
 The declarations are:
 
 - `facetConstantGodementResolutionSystem` (abbreviation): Harris's Lemma 2.2 on `U(f)`, the
@@ -236,8 +247,8 @@ in `DrinfeldFacetSpaces`.
 
 The conditions (A) and (C) on `U(f)`, `QuasiEtaleActionLiftStatement`, continuity of the
 action of `H` on `U(f)`, and all hypotheses inherited from `AnalyticQuasiEtale` and
-`AnalyticQuasiEtaleConstant` (the point axioms, joint faithfulness of the points,
-exactness and acyclicity of the Godement functor, Fact 2 for constant coefficients, the
+`AnalyticQuasiEtaleConstant` (the point axioms, joint faithfulness of the points, which
+fails on a nonempty `U(f)` when `R ≠ 0` as the caution above explains, exactness and acyclicity of the Godement functor, Fact 2 for constant coefficients, the
 subgroup family and its hypotheses, Worker 3's two statements, the trivial action and the
 finiteness of `H^q_c`) remain hypotheses. The tower `ℳ_N`, the domains `U(e, N, δ)`,
 Harris's group `GJ` and its subgroups `S(ẽ)`, and the comparison with étale cohomology are

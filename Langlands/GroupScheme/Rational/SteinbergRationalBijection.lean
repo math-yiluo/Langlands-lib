@@ -112,6 +112,68 @@ theorem FundamentalRepresentation.exists_pathWeightSpace_ne_zero {L : ℕ}
 
 end HighestWeightVector
 
+section Bijection
+
+variable {k : Type u} [Field k] {G : GroupScheme (Spec (CommRingCat.of k))}
+    [IsAffineHom G.X.hom] {p : SplitPinning G} {r : ℕ}
+    (E : Fin r ≃ p.base.support) (x : p.NormalizedSimpleRootParametrizations)
+    (n : p.SimpleReflectionRepresentatives)
+
+/-- The ordered Steinberg product at rational coordinates `c`, as a rational point:
+the product, in increasing `Fin r` order, of the root points `x (E j)` at `c j` followed by
+the supplied reflection representatives `n (E j)`. -/
+def rationalSteinbergProduct (c : Fin r → k) : rationalPoints G :=
+  (List.ofFn fun j => (x (E j)).toRootParametrization.rationalPoint (c j) * (n (E j)).point).prod
+
+theorem rationalSteinbergProduct_eq (c : Fin r → k) :
+    rationalSteinbergProduct E x n c =
+      (List.ofFn fun j =>
+        (x (E j)).toRootParametrization.rationalPoint (c j) * (n (E j)).point).prod :=
+  rfl
+
+theorem steinbergProductPoint_eq_rationalSteinbergProduct (c : Fin r → k) :
+    steinbergProductPoint E x n (Over.mk (𝟙 _))
+        (fun j => (Scheme.ΓSpecIso (CommRingCat.of k)).inv (c j)) =
+      rationalSteinbergProduct E x n c :=
+  steinbergProductPoint_rational E x n c
+
+/-- **Rational Steinberg bijection.** For a simply connected group with split pinning over a
+field `k`, the ordered Steinberg product at rational coordinates followed by the canonical class
+quotient map is a bijection from `k ^ r` onto the rational points of the class quotient. -/
+theorem bijective_steinbergProductPoint_rho (hG : IsSimplyConnected G) :
+    Function.Bijective (fun c : Fin r → k =>
+      steinbergProductPoint E x n (Over.mk (𝟙 _))
+          (fun j => (Scheme.ΓSpecIso (CommRingCat.of k)).inv (c j)) ≫
+        ClassFunctions.rho G) := by
+  have hiso := splitSteinbergQuotient k G p hG r E x n
+  have hpost : Function.Bijective
+      (fun c : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶
+          (VectorGroup.groupScheme (CommRingCat.of k) r).X =>
+        c ≫ (steinbergProduct E x n ≫ ClassFunctions.rho G)) :=
+    (Iso.homCongr (Iso.refl _)
+      (asIso (steinbergProduct E x n ≫ ClassFunctions.rho G))).bijective
+  have hcoord : Function.Bijective (fun c : Fin r → k =>
+      (VectorGroup.coordinates (CommRingCat.of k) r (Over.mk (𝟙 _))).symm
+        (Multiplicative.ofAdd fun j => (Scheme.ΓSpecIso (CommRingCat.of k)).inv (c j))) := by
+    refine (VectorGroup.coordinates (CommRingCat.of k) r (Over.mk (𝟙 _))).symm.bijective.comp
+      (Multiplicative.ofAdd.bijective.comp ?_)
+    exact (Equiv.piCongrRight fun _ =>
+      ((Scheme.ΓSpecIso (CommRingCat.of k)).commRingCatIsoToRingEquiv.symm.toEquiv)).bijective
+  convert hpost.comp hcoord using 1
+  funext c
+  simp only [Function.comp_apply]
+  rw [← Category.assoc, coordinatesPoint_comp_steinbergProduct]
+
+/-- The rational Steinberg bijection in terms of `rationalSteinbergProduct`. -/
+theorem bijective_rationalSteinbergProduct_rho (hG : IsSimplyConnected G) :
+    Function.Bijective (fun c : Fin r → k =>
+      rationalSteinbergProduct E x n c ≫ ClassFunctions.rho G) := by
+  have h := bijective_steinbergProductPoint_rho E x n hG
+  simp only [steinbergProductPoint_eq_rationalSteinbergProduct] at h
+  exact h
+
+end Bijection
+
 end SplitPinning
 
 section Ascent

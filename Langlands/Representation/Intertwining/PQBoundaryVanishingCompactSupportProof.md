@@ -203,3 +203,5 @@ stated on rational points for parabolics given as represented subgroups with a c
 proof identifies the subgroups with dynamic subgroups of cocharacters and applies the Library's
 `MatrixRepresentation.unipotentIntersectionProduct`, which proves the same decomposition for
 dynamic unipotent subgroups (Waldspurger 2003, IV.1, uses it there).
+
+The semidirect-intersection theorem is imported from `Langlands.Representation.Aubert.General.SemidirectIntersection` with its original name and statement.

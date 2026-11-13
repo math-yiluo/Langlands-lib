@@ -54,7 +54,8 @@ conjugating point that centralizes `A`. Every step is a published Library theore
    (`Langlands.GroupScheme.Rational.SplitTorusCentralizerReductiveProof`) shows that
    the centralizer scheme `Dynamic.Affine.centralizerScheme χ` is connected
    reductive.
-4. Each `tᵢ` factors through `a`, so its range lies in the centralizer
+4. `a` factors through each `tᵢ` (as `fᵢ ≫ tᵢ = a`), so the commutative torus `tᵢ`
+   centralizes `a` and its range lies in the centralizer
    (`range_le_torusCentralizer_of_factor`,
    `Langlands.GroupScheme.Rational.MaximalSplitTorusCentralizer`).
    `IsMaximalSplitTorus.lift`

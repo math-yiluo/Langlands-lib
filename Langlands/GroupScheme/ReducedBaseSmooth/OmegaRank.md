@@ -26,7 +26,7 @@ a standard smooth algebra; the precise formulation is internal to this proof.
 
 ## Proofs
 
-`finrank_tensor_kaehler_of_locally`. The locality hypothesis gives a finite family `s ⊆ F`
+`finrank_tensor_kaehler_of_locally`. The locality hypothesis gives a set `s ⊆ F`
 generating the unit ideal such that `k → F[1/t]` is standard smooth of relative dimension `n`
 for every `t ∈ s`. Some `t ∈ s` has nonzero image in `K`; otherwise the unit ideal would lie
 in the kernel of `F → K`. Then `F → K` factors through `F_t = Localization.Away t`

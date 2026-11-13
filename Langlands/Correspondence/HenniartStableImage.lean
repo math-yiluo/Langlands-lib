@@ -1,3 +1,4 @@
+import Langlands.VirtualRepresentation.UnitaryDegreeGenerators
 import Langlands.Correspondence.HenniartStableMapStatement
 
 /-!
@@ -101,24 +102,6 @@ theorem IsStableImage.unique
   simp only [ite_true] at hΦ₁
   simp only [Bool.false_eq_true, ite_false] at hΦ₂
   rw [← hΦ₁, ← hΦ₂, this]
-
-/-- The degree of a unitary Weil generator is its rank. -/
-theorem _root_.Langlands.VirtualRepresentation.LocalWeil.unitaryDegree_generator
-    (b : LocalWeil.UnitaryBasis.{uK, uW} K) :
-    LocalWeil.unitaryDegree K (generator b) = ((b.val.1 : ℕ) : ℤ) := by
-  simp [LocalWeil.unitaryDegree, VirtualRepresentation.Weil.unitaryDegree,
-    VirtualRepresentation.Weil.degree, rankedDegree,
-    VirtualRepresentation.Weil.includeUnitary, includeSubset, VirtualRepresentation.map,
-    generator, degree, extend]
-
-/-- The degree of a unitary supercuspidal generator is its rank. -/
-theorem _root_.Langlands.VirtualRepresentation.PadicSupercuspidal.unitaryDegree_generator
-    (b : PadicSupercuspidal.UnitaryBasis.{uK, uV} K) :
-    PadicSupercuspidal.unitaryDegree K (generator b) = ((b.val.1 : ℕ) : ℤ) := by
-  simp [PadicSupercuspidal.unitaryDegree, PadicSupercuspidal.degree,
-    PadicSupercuspidal.includeUnitary, Supercuspidal.degree, rankedDegree,
-    Supercuspidal.includeUnitary, includeSubset, VirtualRepresentation.map, generator,
-    degree, extend]
 
 /-- A candidate sends a generator in its domain to the generator of a unitary
 supercuspidal class of the same rank. -/
