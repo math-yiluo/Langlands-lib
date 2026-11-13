@@ -13,8 +13,10 @@ Lean declarations of Library commit `a54dda0d7c7c0fd4f76308fad8525ba13d9b4ce8`. 
 audits below update selected rows against `ed924aef420de137b4cbaa3b063a3618afcd73fd`,
 `17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e`,
 `cfedefb680f317b0ea5d351023e1c9dd886b2547`,
-`9b849caba7c63ede041b7fec49c90ceaafb08568` and
-`7dc9118a3eb340e83e65d6e4174763b7a61e573c`;
+`9b849caba7c63ede041b7fec49c90ceaafb08568`,
+`7dc9118a3eb340e83e65d6e4174763b7a61e573c` and
+`2e5aa9989a9e5567670a14eb7079e3a844641990` and
+`2e46b9cac0230529f50cdf96bbe4713c06701fc2`;
 unchanged rows retain their earlier audit provenance. For each row the ledger
 records the declarations, the hypotheses under which the Lean statements assert the source
 claim, the proof status found by searching that commit, and the responsible task for each open
@@ -32,6 +34,174 @@ or `Langlands.AlgebraicGeometry.AffineLimit` (paths `Langlands/AlgebraicGeometry
 `FiniteTypeFinitenessDescent` and `FiniteTypeSurjectivityDescent`, which are in
 `Langlands.Algebra.FilteredRing` (path `Langlands/Algebra/`). Names written with a further prefix
 are relative to these namespaces; names beginning with `Langlands.` are absolute.
+
+## Final Lang–Weil, openness and Example 5.5 publications, 13 November 2026
+
+This focused audit checks Library `2e46b9cac0230529f50cdf96bbe4713c06701fc2`.
+The preceding coverage update, candidate
+`e0872e9f-ef79-4c7f-b3a2-62b458b19932`, was independently accepted by
+Reviewer 874 and published at
+`2e5aa9989a9e5567670a14eb7079e3a844641990` by integration
+`67b9b57d4f944ba7a0fa2c5f8f7a5956`. Earlier audit sections remain historical
+snapshots at their named commits.
+
+The following proof candidates are independently accepted and published at
+`51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`; the current Library retains their
+files. Each validation listed checks the Lake build, exact target, unchanged
+statement and frozen inputs.
+
+| Proof | Candidate | Task | Independent reviewer | Exact-target validation | Published integration |
+| --- | --- | --- | --- | --- | --- |
+| `adelicSpaceSpreadSmoothOpen` | `621efe5f-e65a-4718-b4c4-c4d554db5a9d` | 5254 `7d7f2664-87c8-4e7c-926c-c38d36f325e5` | Reviewer 691 | `8f5a7838-1b2c-405d-8c94-51a840de8017` | `9e859e515fcd4a5f898e6013ffec273d` |
+| `unipotentOrbitStabilizerSmooth` | `798d3ed4-1863-4029-97a9-bd40aa28a360` | 5434 `0e823d86-9f22-48da-b160-eebc1c0160a0` | Reviewer 674 | `1ce0fa8a-863c-4229-81f1-256e96c413f5` | `1d5c587e66a14e5dbf395a0d007c06eb` |
+
+Worker 5254's `Langlands.Global.adelicSpaceSpreadSmoothOpen.{u}` proves the
+unchanged `AdelicSpaceSpreadSmoothOpenStatement.{u}` with no extra premise.
+It applies the published arbitrary-model reduction
+`adelicSpaceSpreadSmoothOpen_of_langWeil` to
+`spaceUniformLangWeilOfFamily (familyLangWeilOfPlaneCurve planeCurveHasseWeil)
+familyPointUpperBound`. Thus every Lang–Weil premise is supplied by a published
+proof. The target retains the two independently supplied separated finite-type
+models and their original spread topologies, smoothness, surjectivity and
+geometrically connected fibres, both global-field characteristics, finite
+constants and nonempty levels for function fields, and all infinite factors for
+number fields. It requires no common fibre dimension. This proves Theorem 5.9
+on Conrad's printed p.17 by an elementary estimate route in place of the
+cohomological route described there. The separately named final scheme and
+space uniform-estimate proofs are also published, under focused Tasks 5993
+and 5995 as recorded below.
+
+Worker 5434's
+`Langlands.AlgebraicGeometry.AlgebraicSpace.unipotentOrbitStabilizerSmooth.{u}`
+proves the unchanged `UnipotentOrbitStabilizerSmoothStatement.{u}`. It applies
+the published reduction to `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth`
+and `Langlands.GroupScheme.charZeroUnipotentConnected`. The field has
+characteristic zero; the group is affine, locally of finite type and unipotent;
+the acted-on scheme is reduced and locally of finite type, with constant orbit
+dimension. The smooth stabilizer conclusion is stronger than the flatness used
+in Conrad's Example 5.5 on printed p.16. The proof uses Cartier's theorem,
+connectedness of characteristic-zero unipotent groups and the reduced-base,
+connected-fibre form of SGA 3 VI_B 4.4, rather than the source's `exp(ker B)`
+description. All six Example 5.5 intermediate statements now have published
+exact-target proofs.
+
+Both proof pairs match their accepted archives, publication commit, current
+Library and workspace byte for byte. Their target statement pairs also agree
+with their respective frozen Library bases and both later published trees.
+
+| Published path | SHA-256 |
+| --- | --- |
+| `Langlands/Global/AdelicSpaceSpreadSmoothOpenProof.lean` | `daef3aba91252583eb3965a59580543f7ddcfd0c1b9aacd0d2dcb6f284e941c4` |
+| `Langlands/Global/AdelicSpaceSpreadSmoothOpenProof.md` | `80105a5b5378bfb0c9fde00a9a463d67737fd5daf4563aad8f9cbef1cc6b2b1a` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitStabilizerSmoothProof.lean` | `700f4b579d24f1b245522c0da3a5eb898a08cb3ca33b3890c15c55b7f9a24180` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitStabilizerSmoothProof.md` | `08e85b129b3573635355648a1e23737fe22cfec5334a2e3f97f49092068e67e2` |
+
+The six further proof candidates below are independently accepted and published.
+The scheme and space uniform estimates and the second and third Example 5.5
+clauses were published at `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`;
+the locally closed stratum proof was published earlier at
+`730bd1f25b056b8106a2697e003c1ef1733a6b30`. The conditional Theorem 4.5
+proof was published later at `73b1430a339b037d27e9096762b0400adb4fbd19`.
+All six are present in this audit's Library. Each validation checks the Lake
+build, exact target, unchanged statement and frozen inputs.
+
+| Proof | Candidate | Focused task and submitter | Independent reviewer | Exact-target validation | Published integration |
+| --- | --- | --- | --- | --- | --- |
+| `uniformLangWeil` | `3f1e0645-a1a3-49d2-9197-d67383981e4e` | Task 5993 `25778dab-dbed-46c5-bee8-599cc201b015`, Worker 7 | Reviewer 732 | `fbc73537-de8e-4841-acdf-0b6cb9c242fd` | `c43ca2dfeec14ccabfb20fe9c78900d7` |
+| `spaceUniformLangWeil` | `8544795f-6c5a-42f0-8f20-59ecc57ca5de` | Task 5995 `991471cd-4b37-4692-a8fd-efb640a9b9b0`, Worker 5406 | Reviewer 725 | `5e004a2c-3fcd-47fd-8a5e-72b83ddbd96e` | `b02f73183702486f9d55d240cc912a4d` |
+| `unipotentOrbitStratumLocallyClosed` | `bdc83ccd-a83b-4b88-89d0-3ce0358ed191` | Task 5699 `504541db-fcca-4043-9da2-275449ff8584`, Worker 169 | Reviewer 499 | `4d2bca80-69bc-4253-a881-0e15ac4c30b2` | `c08567e090c9445d8eb68255c5b688a4` |
+| `unipotentOrbitStratumQuotient` | `b2ef5e3e-ad81-4ab0-b742-9bed77e24f90` | Task 5997 `0e786c59-2592-4f1a-b5c1-79e62cf331ae`, Worker 1410 | Reviewer 719 | `b8b0b863-46ab-438d-900c-6355a33a2a8b` | `26dc91ebca59460eb6f4730afa5ec91c` |
+| `unipotentOrbitQuotientPointTopology` | `7934b16d-d2fc-438c-a40e-1bacf197bb85` | Task 5998 `222f3c40-492e-4127-8a2e-141df9e629e1`, Worker 175 | Reviewer 721 | `d155131d-c656-4e48-9e25-099754ffe47f` | `a671ffe579a445f3916fcf91966e8646` |
+| `adelicSpreadSmoothOpenOfLangWeil` | `8eb56617-9f29-4894-a2eb-632585fd3912` | Task 5166 `bf4f50f3-77b3-4e25-af38-3f25b86c17b1`, Worker 250 | Reviewer 947 | `64ff83ec-030c-4730-836f-2a3e0d77fd9c` | `103801c8ad684bd9b83e249945df3b99` |
+
+`Langlands.AlgebraicGeometry.uniformLangWeil.{u}` proves the unchanged
+`UniformLangWeilStatement.{u}` with no extra premise, by
+`LangWeil.uniformLangWeilOfFamily
+(LangWeil.familyLangWeilOfPlaneCurve LangWeil.planeCurveHasseWeil)`.
+It retains a base of finite type over `ℤ`, a smooth separated surjective
+finite-type map with geometrically connected pure-dimensional fibres, and one
+constant for every closed point of that base. In namespace
+`Langlands.AlgebraicGeometry.AlgebraicSpace`,
+`spaceUniformLangWeil.{u}` proves the unchanged
+`SpaceUniformLangWeilStatement.{u}` by
+`LangWeil.spaceUniformLangWeilOfFamily` applied to that same family estimate
+and `LangWeil.familyPointUpperBound`. Its base is quasi-separated of finite
+type over `ℤ`; the map is separated, quasi-compact, surjective and
+geometrically connected, with relative dimension `d` on an étale chart square.
+The uniform bound holds for every finite field and every point of the base
+over that field. Both final estimates use the published elementary
+Lang–Weil route through Schmidt's Stepanov bound and dimension induction;
+neither retains an estimate as a premise.
+
+The three final Example 5.5 theorems are also in namespace
+`Langlands.AlgebraicGeometry.AlgebraicSpace`. Their targets are, respectively,
+`UnipotentOrbitStratumLocallyClosedStatement`,
+`UnipotentOrbitStratumQuotientStatement` and
+`UnipotentOrbitQuotientPointTopologyStatement`, in arbitrary universe `u`.
+The first uses semicontinuity of stabilizer-fibre dimension and the identity
+section to prove the orbit-dimension strata locally closed. Conrad's printed
+p.16 does give a semicontinuity justification; the published proof Markdown
+records it. The second restricts the action, proves smooth stabilizers using
+the SGA 3 and characteristic-zero connectedness reductions above, constructs
+the fppf quotient, and proves its quasi-separatedness, finite presentation
+and flat surjective quotient map. The third applies the actual étale-chart
+point topology to every such quotient. It retains the necessary local
+separatedness assumption, local compactness only when the field is locally
+compact, and local total disconnectedness only for an ultrametric field.
+Thus all three clauses defining `UnipotentOrbitQuotientStatement` have
+separately published proofs. This audit does not claim a separately published
+theorem for their conjunction.
+
+Task 5166's `Langlands.Global.adelicSpreadSmoothOpenOfLangWeil.{u}` is now
+published. Worker 250 reused Worker 208's shared Lean proof and expanded the
+Markdown. It proves the unchanged
+`AdelicSpreadSmoothOpenOfLangWeilStatement.{u}`, retaining exactly
+`UniformLangWeilStatement.{u}` as its premise. It assembles compatible smooth
+geometrically connected models, local openness, almost-all native level
+surjectivity and the fixed-model reduction in both characteristics. The target
+retains separated generic fibres, arbitrary finite-type models, all infinite
+number-field factors and finite constants in the function-field branch,
+without a common fibre dimension. Both this implication and its Lang–Weil
+input are published. The composition
+`adelicSpreadSmoothOpenOfLangWeil uniformLangWeil` is therefore the proposed
+unconditional endpoint; this audit does not claim its separate exact-target
+proof publication.
+
+The six proof pairs match their accepted archives, respective publication
+trees, this audit's Library and the workspace. Their target statement pairs
+are unchanged from their frozen bases through this audit's Library. The
+fingerprints below identify the six proof pairs; paths are relative to the
+Library root.
+
+| Published path | SHA-256 |
+| --- | --- |
+| `Langlands/AlgebraicGeometry/UniformLangWeilProof.lean` | `8fb7500e380ffcae631c45bc83d5945cc6a1c963872fd5fc2e86eee1d1d918f3` |
+| `Langlands/AlgebraicGeometry/UniformLangWeilProof.md` | `36ffb3f2e4d6095482b6fb24023d9191dc9e0e4b71da8a450246fd26dfbdc2e4` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/SpaceUniformLangWeilProof.lean` | `d5d384d2e3bee6cd4f8d3ae23cfc057afb217e4f44f29d8688fdda5a3800fc5e` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/SpaceUniformLangWeilProof.md` | `e718abdadb480d04e1c3e26fbe8797301020e4e717ee6ac32c167040b0f49aa7` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitStratumLocallyClosedProof.lean` | `6361e78344eef941c4c92e79c97680e1187fddf86d913008e6648ed09d15d4d6` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitStratumLocallyClosedProof.md` | `bff2b0719f995f94a5022a30fa16dd8386a143ee96400dec8fc2e8f973f0acf5` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitStratumQuotientProof.lean` | `d05cedcb707d6ce7bf3e9272316287993954ebb0c0191758649f433eeaaaed91` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitStratumQuotientProof.md` | `be7af2b58c8ec2b6389e5466e8b1ad1d2f2421ac6a6751eb5bc9ca1214b75741` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitQuotientPointTopologyProof.lean` | `7859e22521fe86190957b909824115c7be1e787086e1ad93d6471f2be0c4fc47` |
+| `Langlands/AlgebraicGeometry/AlgebraicSpace/UnipotentOrbitQuotientPointTopologyProof.md` | `c8f0fac560a02b2231f5c4bfadcc6b639b195d35c5cb8321909c17bd1471b863` |
+| `Langlands/Global/AdelicSpreadSmoothOpenOfLangWeilProof.lean` | `dd243400d3f7c059c658542237bc0af32ee655b9ce11018784291db44b1cf5d4` |
+| `Langlands/Global/AdelicSpreadSmoothOpenOfLangWeilProof.md` | `243935f375916b430b4067b00d970899ad968dea759b83ff7773fd96c22cff7d` |
+
+Recovery check `ab6f6d3b-fab2-44f5-a065-668a90d8ba18` compiles all eight
+final proof modules in this audit, using the workspace's published imports
+with no private override, with zero errors or warnings. Inspection of the
+conditional Theorem 4.5 endpoint retains arbitrary universe `u` and only
+`propext`, `Classical.choice` and `Quot.sound`. The earlier draft checks
+remain development history; they establish neither absence nor presence of
+independent publication.
+
+Tasks 5202 `e5531847-70bc-4569-b880-2f90d5815c6a` and
+5217 `b7321f08-34a4-4479-b6a5-fc099d504d2d` retain their administrative
+status and explicit run controls. Their parent artifact lists do not
+determine whether focused proof tasks have published the mathematical
+endpoints. This audit records those publications without resuming either
+task or changing ownership. Whole-paper completion remains open.
 
 ## Native level-surjectivity publication, 13 November 2026
 
@@ -513,8 +683,8 @@ statement keeps the injectivity and surjectivity hypotheses separate.
 | Thm 4.5 | geometrically connected models, no common dimension | `AdelicSpreadGeometricallyConnectedStatement` | eventual detection of geometric connectedness and of smooth ⊓ geometrically connected for arbitrary ft models, and existence of separated ft models of a smooth geometrically connected map of separated finite-type schemes; curves need perfect `k` | proved (`adelicSpreadGeometricallyConnected`, module `Langlands/Global/AdelicSpreadGeometricallyConnectedProof`, at the 13 November publication follow-up commit; Task 5149 `4a516d9a-eeda-47b6-92af-8e7b2ff6e16f`). The proof uses constructible geometric-connectedness loci, a common filtered successor for simultaneous smoothness, and compatible actual models; no common fibre dimension or Lang–Weil premise is used |
 | Thm 4.5 | almost-all level surjectivity | `AdelicLevelComponentSurjectivityStatement`; lifting input `UniformLangWeilComponentLiftingStatement` | both conditional on `UniformLangWeilStatement`; `f` smooth, separated, quasi-compact, geometrically connected, with target of finite type over `Z` (quasi-compact); level surjectivity at almost all places, curves need finite `k`; lifting of points over finite fields, over henselian local rings with large finite residue field, and of ring points over such rings | proved, with `UniformLangWeilStatement` retained as a premise: lifting by `uniformLangWeilComponentLifting` (module `Langlands/AlgebraicGeometry/UniformLangWeilComponentLiftingProof`, at the component-lifting audit commit; candidate `74cc4e7b-20eb-472f-b2d6-f3f16f4a8211`, Task 5144 `105de89b-639b-4bbe-9b7b-d6956eecc042`); native level surjectivity by `adelicLevelComponentSurjectivity` (module `Langlands/Global/AdelicLevelComponentSurjectivityProof`, at the native level-surjectivity audit commit; published candidate `a3eb7042-5569-41c3-aa02-db4dd8df46e6`, Task 5154 `8edf7218-d402-4a9f-83de-ef5fd5b2c1be`, done). The latter constructs exact original-base integral lifts outside a finite small-residue set and proves actual cofinite surjectivity at every enlarged level, retaining all infinite factors and using no common dimension premise |
 | Thm 4.5, proof (p.12) | restriction to connected components of the target, with fibres of a common dimension | `SmoothTargetComponentGeometryStatement` | not conditional on Lang–Weil; fibre-geometry clause: `f` smooth and geometrically connected with locally noetherian target, each component restriction has nonempty geometrically connected fibres of pure dimension; preservation clause: arbitrary base scheme, locally noetherian source and target with structure maps locally of finite type, quasi-compact and separated, no hypothesis on `f`, the component restrictions keep these finiteness properties | proved (`smoothTargetComponentGeometry`, module `Langlands/AlgebraicGeometry/SmoothTargetComponentGeometryProof`, at the 13 November publication follow-up commit; Task 5140 `32898b5e-5df2-4520-80ad-856f7be5ac0e`). It applies `smoothPureDimension.2` to each selected component dimension and uses the full fibre-predicate equivalence; the structure-map clause follows from open inclusions and local Noetherianity |
-| Thm 4.5 | Theorem 4.5 from Lemma 4.6; unconditional | `AdelicSpreadSmoothOpenOfLangWeilStatement`, `AdelicSpreadSmoothOpenStatement` | separated generic fibres, arbitrary ft models; `g` smooth, surjective, geometrically connected; curves need finite `k` | open for focused exact-target proof publication (Task 5166 `bf4f50f3-77b3-4e25-af38-3f25b86c17b1`, ready without an executor). All inputs of the conditional assembly are now published at the native level-surjectivity audit commit. Its unchanged shared proof draft compiles using only published imports, with `UniformLangWeilStatement` as its sole premise; this development check is not a proof publication. The unconditional form also needs the final Lemma 4.6 proof publication owned by Task 5202 |
-| Lem 4.6 | uniform relative Lang–Weil estimate | `UniformLangWeilStatement` | base of finite type over `Z`; `f` smooth, separated, surjective, of finite type, geometrically connected, fibres of pure dimension `d` | open for focused exact-target proof publication (Task 5202 `e5531847-70bc-4569-b880-2f90d5815c6a`); all mathematical inputs are published at the induction, Schmidt and reduced-base audit commit. The published composition `familyLangWeilOfPlaneCurve planeCurveHasseWeil` supplies `FamilyLangWeilStatement`, and the proved `uniformLangWeilOfFamily` (module `LangWeil/UniformLangWeilOfFamilyProof`; Task 5410, closed) consumes it; no open Schmidt or norm-polynomial premise remains |
+| Thm 4.5 | Theorem 4.5 from Lemma 4.6; unconditional | `AdelicSpreadSmoothOpenOfLangWeilStatement`, `AdelicSpreadSmoothOpenStatement` | separated generic fibres, arbitrary ft models; `g` smooth, surjective, geometrically connected; curves need finite `k` | conditional target proved (`adelicSpreadSmoothOpenOfLangWeil`, module `Langlands/Global/AdelicSpreadSmoothOpenOfLangWeilProof`, Task 5166, candidate `8eb56617-9f29-4894-a2eb-632585fd3912`) at the final-publication audit commit. The theorem retains `UniformLangWeilStatement` as its sole premise; the published `uniformLangWeil` now supplies it. Separate exact-target proof publication of `AdelicSpreadSmoothOpenStatement` remains to be checked and supplied |
+| Lem 4.6 | uniform relative Lang–Weil estimate | `UniformLangWeilStatement` | base of finite type over `Z`; `f` smooth, separated, surjective, of finite type, geometrically connected, fibres of pure dimension `d` | proved (`uniformLangWeil : UniformLangWeilStatement.{u}`, module `Langlands/AlgebraicGeometry/UniformLangWeilProof`, Task 5993 `25778dab-dbed-46c5-bee8-599cc201b015`, candidate `3f1e0645-a1a3-49d2-9197-d67383981e4e`, Worker 7) at the final-publication audit commit. The published proof applies `uniformLangWeilOfFamily` to `familyLangWeilOfPlaneCurve planeCurveHasseWeil`, with no extra premise |
 
 Scope boundary, fibre products on p.9: Conrad says the topology "is compatible with fiber
 products for general `X`". The Library proves compatibility over a separated base `Z`, with
@@ -555,7 +725,7 @@ of `u_0`; this local form is what the openness argument uses.
 | Prop 5.4 | Hausdorff (separated), totally disconnected, locally compact | `SeparatedRationalPointTopologyProperties` (part of the statement above) | `X` quasi-separated, locally of finite type and separated; totally disconnected for ultrametric `K`; locally compact for locally compact `K` | proved (`t2Space_etaleChartTopology`, `totallyDisconnected`, `locallyCompactSpace_etaleChartTopology`) |
 | Prop 5.4 | `k`-analytic manifold structure for smooth `X`, complete `k` | `AnalyticPointStructure` (`AnalyticPointManifold`), `AnalyticPointManifoldStatement` | complete `K`; spaces quasi-separated, locally separated, locally of finite type, with an étale atlas smooth of relative dimension `n`; existence and uniqueness up to equivalence | proved (`analyticPointManifold`, module `AnalyticPointManifoldProof`; Task 5259, closed): existence by the admissible family `canonicalAnalyticPointStructure` (`canonicalAnalyticPointStructure_isAdmissible`, intermediate statements below), uniqueness by `AnalyticPointStructure.equivalent_of_isAdmissible` (module `AnalyticPointUniqueness`) |
 | Prop 5.4, proof (p.15) | every rational point lifts through an étale map from an affine scheme (Knutson II.6.4) | `RationalPointEtaleLiftStatement` | any field `k`; `X` quasi-separated | proved (`RationalPointEtaleLiftProof.rationalPointEtaleLiftStatement`) |
-| Ex 5.5 | unipotent orbit strata locally closed; quotient spaces `V_d/G`; local Hausdorffness of `(V_d/G)(k)` | `UnipotentOrbitQuotientStatement` | henselian `K` of characteristic zero; `G` a unipotent algebraic group (affine, locally of finite type); `V` reduced of finite type with a `G`-action; strata and quotient as in the source (quotient quasi-separated, finitely presented, with flat surjective quotient map); the topology clause adds that the quotient is locally separated (correction below), with local compactness only for locally compact `K` and local total disconnectedness only for ultrametric `K` | open (Task 5217 `b7321f08-34a4-4479-b6a5-fc099d504d2d`); five of the six intermediate statements have published exact-target proofs, and the sixth, `UnipotentOrbitStabilizerSmoothStatement`, follows by the published reduction from the now-published reduced-base smoothness and characteristic-zero connectedness proofs. Its focused proof Task 5434 is verifying with candidate `798d3ed4-1863-4029-97a9-bd40aa28a360`; no published exact-target theorem yet derives `UnipotentOrbitQuotientStatement` from these inputs |
+| Ex 5.5 | unipotent orbit strata locally closed; quotient spaces `V_d/G`; local Hausdorffness of `(V_d/G)(k)` | `UnipotentOrbitQuotientStatement` | henselian `K` of characteristic zero; `G` a unipotent algebraic group (affine, locally of finite type); `V` reduced of finite type with a `G`-action; strata and quotient as in the source (quotient quasi-separated, finitely presented, with flat surjective quotient map); the topology clause adds that the quotient is locally separated (correction below), with local compactness only for locally compact `K` and local total disconnectedness only for ultrametric `K` | all three clauses have separately published exact-target proofs at the final-publication audit commit: `unipotentOrbitStratumLocallyClosed` (Task 5699, candidate `bdc83ccd-a83b-4b88-89d0-3ce0358ed191`), `unipotentOrbitStratumQuotient` (Task 5997, candidate `b2ef5e3e-ad81-4ab0-b742-9bed77e24f90`) and `unipotentOrbitQuotientPointTopology` (Task 5998, candidate `7934b16d-d2fc-438c-a40e-1bacf197bb85`); corresponding proof module names append `Proof` to each statement stem under `AlgebraicSpace/`. Every source correction in this row is retained. All six intermediate targets are also proved, including stabilizer smoothness. No separate conjunction theorem is claimed |
 | Cor 5.6 | proper maps over local fields are proper on points | `LocalFieldProperPointMapStatement` | locally compact nontrivially normed `K`; `X`, `Y` quasi-separated and locally of finite type | proved (`localFieldProperPointMap`, module `LocalFieldProperPointMapProof`; Task 5483, closed, with Task 5216): the proved implication `LocalFieldProperPointValuativeReductionStatement` applied to the proved Stacks valuative criterion `spaceValuativeExistence` (Task 5368). The Lean proof replaces Conrad's Chow-lemma argument by the valuative criterion and an ultrafilter limit over the convergent germs of an ultrapower (`LocalFieldProperPointLimit.localFieldProperPointMap_of_valuative`); archimedean `K` remain included (intermediate statements below) |
 | Cor 5.7 | `X(R)` open in `X(k)` | `HenselianIntegralPointsOpenStatement` | `O` the closed unit ball, a henselian local ring; `X` quasi-separated, locally of finite type over `O`; the image of `X(O)` in `X_K(K)` is open | proved (`henselianIntegralPointsOpen`) |
 | Cor 5.7 | `X(R)` quasi-compact for locally compact `k` and `X` of finite type | `HenselianIntegralPointsCompactStatement` | as above, with `K` locally compact and `X` of finite type over `O`; the image of `X(O)` in `X_K(K)` is compact | proved (`henselianIntegralPointsCompact`) |
@@ -564,7 +734,7 @@ of `u_0`; this local form is what the openness argument uses.
 | p.17 | level points locally compact Hausdorff, open level changes | `AdelicSpaceLevelTopologyStatement` | separated, finite type over the `S`-integers, curves need finite `k` and nonempty `S` | proved (`adelicSpaceLevelTopology`) |
 | p.17 | `X(A_F)`: Weil limit bijection, topology, locally compact Hausdorff with countable base, fibre products, closed immersions, scheme agreement, model independence | `AdelicSpacePointTopologyStatement` (`AdelicSpacePointTopology` constructions) | separated finite-type models, curves need finite `k` and nonempty `S`; fibre products of separated finite-type spaces; scheme agreement for separated ft schemes | proved (`adelicSpacePointTopology`, module `Langlands/Global/AdelicSpacePointTopologyTheorem`; Task 5222 `360a1cdf-4b68-402e-b087-254b03da61f6`, closed): `AdelicSpacePointTopologyProof.adelicSpacePointTopology_of_spread` derives the statement from `spaceFilteredRingPointComparison` and the spread clauses `AdelicSpaceSpreadIndependenceProof.curvePlaceSpaceSpread` and `.numberFieldSpaceSpread`; model existence is `AdelicSpaceSpreadExistenceProof` (from `spaceLimitModelExistence`), model independence `AdelicSpaceSpreadIndependenceProof` (from `spaceLimitMorphismDescent`) |
 | Prop 5.8 | proper maps of separated spaces: topologically proper on adelic points | `AdelicSpaceSpreadProperMapStatement`; inputs `AdelicSpaceProperStagesStatement`, `AdelicSpaceProperModelStatement` (intermediate statements below) | arbitrary separated finite-type models of source and target, curves need finite `k` and nonempty `S` (correction below) | proved (`adelicSpaceSpreadProperMap : AdelicSpaceSpreadProperMapStatement.{u}`, module `Langlands/Global/AdelicSpaceSpreadProperMapProof`, at the 13 November audit commit); the final theorem supplies the published topology, proper-stage and proper-model proofs and covers arbitrary independently supplied models in both characteristics. Its internal reductions are `adelicSpaceSpreadProperMap_of_inputs`, `_of_arithmeticInputs` and `_of_properModel` (intermediate statements below) |
-| Thm 5.9 | smooth surjective geometrically connected: open on adelic points | `AdelicSpaceSpreadSmoothOpenStatement`; input `SpaceUniformLangWeilStatement`; local input `CompleteFieldSmoothSpacePointOpenStatement` (intermediate statements below) | arbitrary separated finite-type models, curves need finite `k` and nonempty `S`; `g` smooth, surjective, with geometrically connected fibres; the Lang–Weil input: base quasi-separated of finite type over `Z`, `f` smooth of relative dimension `d` on étale charts, separated, quasi-compact, surjective, with geometrically connected fibres | open for final exact-target proof publication (Task 5254; uniform space estimate in Task 5202 `e5531847-70bc-4569-b880-2f90d5815c6a`); the exact arbitrary-model implication is proved by `adelicSpaceSpreadSmoothOpen_of_langWeil : AdelicSpaceSpreadSmoothOpenOfLangWeilStatement.{u}` (module `Langlands/Global/AdelicSpaceSmoothConnectedSpreadOpen`, at the earlier 13 November audit commit). This proposition is exactly `SpaceUniformLangWeilStatement.{u} → AdelicSpaceSpreadSmoothOpenStatement.{u}`; it assumes no fixed relative dimension and retains the two original model topologies. All inputs for the uniform space estimate are now published: `spaceUniformLangWeilOfFamily` consumes `familyLangWeilOfPlaneCurve planeCurveHasseWeil` and `familyPointUpperBound`; the focused uniform-estimate and final Theorem 5.9 publications remain with their named tasks |
+| Thm 5.9 | smooth surjective geometrically connected: open on adelic points | `AdelicSpaceSpreadSmoothOpenStatement`; input `SpaceUniformLangWeilStatement`; local input `CompleteFieldSmoothSpacePointOpenStatement` (intermediate statements below) | arbitrary separated finite-type models, curves need finite `k` and nonempty `S`; `g` smooth, surjective, with geometrically connected fibres; the Lang–Weil input: base quasi-separated of finite type over `Z`, `f` smooth of relative dimension `d` on étale charts, separated, quasi-compact, surjective, with geometrically connected fibres | proved (`adelicSpaceSpreadSmoothOpen : AdelicSpaceSpreadSmoothOpenStatement.{u}`, module `Langlands/Global/AdelicSpaceSpreadSmoothOpenProof`, candidate `621efe5f-e65a-4718-b4c4-c4d554db5a9d`, Task 5254) at the final-publication audit commit. The theorem supplies the exact space Lang–Weil premise to the arbitrary-model reduction using `spaceUniformLangWeilOfFamily (familyLangWeilOfPlaneCurve planeCurveHasseWeil) familyPointUpperBound`. No extra hypothesis or fixed relative dimension is assumed; both original model topologies are retained. The separately named exact space estimate is also published as `spaceUniformLangWeil` (Task 5995 `991471cd-4b37-4692-a8fd-efb640a9b9b0`, candidate `8544795f-6c5a-42f0-8f20-59ecc57ca5de`, module `AlgebraicSpace/SpaceUniformLangWeilProof`) |
 
 Source corrections, first part:
 
@@ -640,7 +810,7 @@ executors as inspected on 2026-11-12.
 
 | Serves | Lean declarations | Hypotheses and scope in Lean | Status |
 | --- | --- | --- | --- |
-| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilInDimension`, `FamilyLangWeilStatement` (`LangWeil/FamilyLangWeilStatement`) | `S` of finite type over `Z`; `f : X → S` of finite type, geometrically irreducible, with all fibres of pure dimension `d`; a constant `C > 0` with `\|#X_s(κ) − q^d\| ≤ C·q^(d−1/2)` for every finite field `κ` with `q` elements and every `κ`-point `s` of `S`; the second statement asserts this for every `d` | proved by the published composition `familyLangWeilOfPlaneCurve planeCurveHasseWeil` at the induction, Schmidt and reduced-base audit commit; the first theorem supplies the dimension induction and the second discharges its sole premise. This uses the unchanged zero, curve, slicing, generic Bertini and uniform upper-bound proofs. A separate unconditional theorem name is not claimed; the two final uniform-estimate publications remain with Task 5202 `e5531847-70bc-4569-b880-2f90d5815c6a` |
+| Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilInDimension`, `FamilyLangWeilStatement` (`LangWeil/FamilyLangWeilStatement`) | `S` of finite type over `Z`; `f : X → S` of finite type, geometrically irreducible, with all fibres of pure dimension `d`; a constant `C > 0` with `\|#X_s(κ) − q^d\| ≤ C·q^(d−1/2)` for every finite field `κ` with `q` elements and every `κ`-point `s` of `S`; the second statement asserts this for every `d` | proved by the published composition `familyLangWeilOfPlaneCurve planeCurveHasseWeil` at the induction, Schmidt and reduced-base audit commit; the first theorem supplies the dimension induction and the second discharges its sole premise. This uses the unchanged zero, curve, slicing, generic Bertini and uniform upper-bound proofs. A separate unconditional family-estimate theorem name is not claimed. The final scheme and space uniform estimates are published as `uniformLangWeil` and `spaceUniformLangWeil` (Tasks 5993 and 5995, candidates `3f1e0645-a1a3-49d2-9197-d67383981e4e` and `8544795f-6c5a-42f0-8f20-59ecc57ca5de`) at the final-publication audit commit |
 | Lem 4.6 (Task 3519) | `FamilyLangWeilOfPlaneCurveStatement` (`LangWeil/FamilyLangWeilOfPlaneCurveStatement`) | exactly `PlaneCurveHasseWeilStatement.{u} → FamilyLangWeilStatement.{u}`, with the unchanged full scope of both propositions and no further premise | proved (`familyLangWeilOfPlaneCurve`, module `LangWeil/FamilyLangWeilOfPlaneCurveProof`; Task 5840 `ca492bb9-738b-4b98-bf34-39d32a979729`, done; published candidate `1d68f651-cf69-42a4-ae1e-138a52a9156f`, by Worker 1383 with Worker 3519, at the induction, Schmidt and reduced-base audit commit). It performs induction on positive dimensions and uses the zero case separately; the upper-bound and Bertini premises are discharged by their published proofs. The theorem retains the plane-curve premise, now supplied by `planeCurveHasseWeil` |
 | Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyPointUpperBoundStatement` (`LangWeil/`) | `S` of finite type over `Z`; `f : X → S` of finite type; a constant `C > 0` with `#X_s(κ) ≤ C·q^e` for every finite field `κ`, every `κ`-point `s` and every `e` bounding the dimension of the fibre over the image of `s` | proved (`familyPointUpperBound`, module `LangWeil/FamilyPointUpperBoundProof`: `familyPointUpperBound_of_finiteNormalizationCover finiteNormalizationCover`; Task 5405 `d6315fa9-e6a8-41f6-ae31-b7253872c91c`, closed; rows below) |
 | Lem 4.6 (Task 5405) | `FiniteNormalizationCoverStatement`, with the structure `FiniteNormalizationCover` (`LangWeil/`) | `S` Noetherian; `f : X → S` locally of finite type and quasi-compact (no separatedness, reducedness or equidimensionality); conclusion: finitely many pieces, each an affine scheme `T_i` with an immersion `T_i → S`, an immersion `U_i → X`, a natural number `d_i` and a finite surjective map `U_i → A^{d_i}_{T_i}` compatible with `f`, such that every `Spec K → X` with `K` a field (same universe) factors through some `U_i`, and `d_i` is at most the topological Krull dimension of the fibre of `f` over the image of every point of `T_i`; derived from the Stacks Project, Lemma 10.115.4 (Tag 00OY) and Section 33.18 with Lemma 33.18.2 (Tags 0CBG, 0CBI) | proved (`finiteNormalizationCover`, module `LangWeil/FiniteNormalizationCoverProof`, with `LangWeil/FiniteNormalizationCoverAlgebra`, `LangWeil/FiniteNormalizationCoverPieces` and `LangWeil/FiniteNormalizationCoverAffine`, declarations prefixed `LangWeil.NormalizationCoverConstruction.`; published for Task 5405; proof Task 5604 `bd611de6-07f4-4aac-a4f1-d1c8be5c2bed`, closed) |
@@ -652,7 +822,7 @@ executors as inspected on 2026-11-12.
 | Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilZeroStatement` (`LangWeil/`) | the family estimate in dimension 0, with the hypotheses of `FamilyLangWeilInDimension 0` | proved (`familyLangWeilZero`, module `LangWeil/FamilyLangWeilZeroProof`, Task 5404 `d108969a-c371-4c06-9403-4d8d7846d52c`; the proof shows that every fibre has exactly one `κ`-point and does not use quasi-compactness or the base over `Z`) |
 | Lem 4.6 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `FamilyLangWeilCurveStatement`, `FamilyLangWeilSlicingStatement` (`LangWeil/`) | implications: Schmidt's bound and the upper bound give dimension 1; Bertini, the upper bound and dimension `d + 1` give dimension `d + 2` | curve proved (`familyLangWeilCurve`, module `LangWeil/FamilyLangWeilCurveProof`: it applies `familyLangWeilCurve_of_planeComparison` (module `LangWeil/FamilyLangWeilCurvePlaneReduction`) to the proved plane-model comparison of the row below; Task 5408 `bc74c0bd-bddc-4c19-835a-46cd2f533740`, closed); slicing proved (`familyLangWeilSlicing`, module `LangWeil/FamilyLangWeilSlicingProof`, with the helper modules `LangWeil/Slicing/Bridges`, `Core`, `Counting`, `Dimension`, `GenericImage`, `GenericSlice`, `Hyperplane` and `Reduction`, declarations prefixed `Slicing.`; Task 5409 `2795fee1-d876-4010-86ed-ccd7f8e687c7`, closed); the premises `BertiniGenericHyperplaneStatement` and `FamilyPointUpperBoundStatement` are proved (rows above), and the curve implication also assumes Schmidt's bound |
 | Lem 4.6 (Task 5408) | `FamilyCurvePlaneComparisonStatement` (`LangWeil/`) | assumes `FamilyPointUpperBoundStatement`; `S` quasi-compact and locally of finite type over `Z`; `f : X → S` locally of finite type, quasi-compact, geometrically irreducible, all fibres of pure dimension 1; there is `B > 0` such that for every finite field `κ` with more than `B` elements and every `κ`-point `s` of `S` some `p ∈ κ[X,Y]`, irreducible over an algebraic closure of `κ`, with degrees in `X` and in `Y` in `[1, B]`, has affine zero count within `B` of `#X_s(κ)`; a plane-model comparison derived from Lang–Weil (1954), printed p.819, and Tao, *The Lang–Weil bound*, Section 2 | proved (`familyCurvePlaneComparison`, module `LangWeil/FamilyCurvePlaneComparisonProof`, with the helper modules `LangWeil/FamilyCurvePlaneReduction`, `AffineCurvePlaneComparison`, `CurvePlaneCharts`, `CurvePlaneFibrePoints`, `CurvePlaneNoetherianInduction`, `CurvePlanePolynomial`, `CurvePlaneRadicialPoints` and `CurvePlaneZeroDimensional`, declarations prefixed `CurvePlane.`; published for Task 5408 as an input to `FamilyLangWeilCurveStatement`; proof Task 5581 `b589cd1b-1a7b-41c8-afcf-506ab674e1e2`, closed; the proof does not use the premise `FamilyPointUpperBoundStatement`) |
-| Lem 4.6 and Thm 5.9 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `UniformLangWeilOfFamilyStatement`, `SpaceUniformLangWeilOfFamilyStatement` (`LangWeil/`) | implications: `FamilyLangWeilStatement` implies `UniformLangWeilStatement`; `FamilyLangWeilStatement` and `FamilyPointUpperBoundStatement` imply `SpaceUniformLangWeilStatement` | first proved (`uniformLangWeilOfFamily`, module `LangWeil/UniformLangWeilOfFamilyProof`; Task 5410 `acab9a1a-0a8e-4bd8-a84b-dc3f7aed3074`, closed); second proved (`spaceUniformLangWeilOfFamily`, module `LangWeil/SpaceUniformLangWeilOfFamilyProof`, with the helper modules `LangWeil/SpaceFamily/Counting`, `DegreePoints`, `FibreCharts`, `FibreProductBase`, `FieldPoints`, `FiniteFieldCharts`, `RingPointCharts`, `SchemeBase`, `SeparatedChart` and `Strata`, declarations prefixed `LangWeil.SpaceFamily.`; Task 5411 `25f82ff3-eaee-49c3-b113-d27d596fe177`, closed); their premises are now supplied by the published composition `familyLangWeilOfPlaneCurve planeCurveHasseWeil` and the published `familyPointUpperBound`. All mathematical inputs are available; focused exact-target publication of `UniformLangWeilStatement` and `SpaceUniformLangWeilStatement` remains with Task 5202 |
+| Lem 4.6 and Thm 5.9 (`e5531847-70bc-4569-b880-2f90d5815c6a`) | `UniformLangWeilOfFamilyStatement`, `SpaceUniformLangWeilOfFamilyStatement` (`LangWeil/`) | implications: `FamilyLangWeilStatement` implies `UniformLangWeilStatement`; `FamilyLangWeilStatement` and `FamilyPointUpperBoundStatement` imply `SpaceUniformLangWeilStatement` | first proved (`uniformLangWeilOfFamily`, module `LangWeil/UniformLangWeilOfFamilyProof`; Task 5410 `acab9a1a-0a8e-4bd8-a84b-dc3f7aed3074`, closed); second proved (`spaceUniformLangWeilOfFamily`, module `LangWeil/SpaceUniformLangWeilOfFamilyProof`, with the helper modules `LangWeil/SpaceFamily/Counting`, `DegreePoints`, `FibreCharts`, `FibreProductBase`, `FieldPoints`, `FiniteFieldCharts`, `RingPointCharts`, `SchemeBase`, `SeparatedChart` and `Strata`, declarations prefixed `LangWeil.SpaceFamily.`; Task 5411 `25f82ff3-eaee-49c3-b113-d27d596fe177`, closed); their premises are now supplied by the published composition `familyLangWeilOfPlaneCurve planeCurveHasseWeil` and the published `familyPointUpperBound`. Their unconditional exact-target endpoints are also proved by the published `uniformLangWeil` (Task 5993, candidate `3f1e0645-a1a3-49d2-9197-d67383981e4e`) and `spaceUniformLangWeil` (Task 5995, candidate `8544795f-6c5a-42f0-8f20-59ecc57ca5de`) at the final-publication audit commit |
 | Thm 3.4(1) for spaces (Task 5260) | `EtaleEquivalenceRelation.LimitModelExistence` (`EtaleEquivalenceRelationLimitModelStatement`) | cofiltered limits of affine schemes; an étale equivalence relation of schemes over the limit with affine object scheme, object structure map locally of finite presentation and quasi-compact relation structure map; conclusion: an étale equivalence relation at one stage, with the same finiteness properties, whose object and relation schemes give the original ones by base change (cartesian comparisons) | proved (`EtaleEquivalenceRelation.limitModelExistence`, modules `EtaleEquivalenceRelationLimitModelProof` and `EtaleEquivalenceRelationLimitModelLevels`; Task 5367 `2a912398-eb7f-4d09-8707-ce9f5bf718d1`) |
 | Thm 3.4(1) for spaces (Task 5260) | `SpaceLimitModelExistenceQuasiSeparatedReduction.spaceLimitModelExistenceQuasiSeparated_of_relation` (`SpaceLimitModelExistenceQuasiSeparatedReduction`) | the statement above implies `SpaceLimitModelExistenceQuasiSeparated` | proved (reduction) |
 | Thm 3.4(2) for spaces (Task 5278) | `spaceLimitSeparatedDescent` (`RelativeDiagonalLimitDescent`), `spaceLimitSmoothDescent` (`SmoothChartLimitDescent`) | the separated and the smooth conjuncts `SpaceLimitPropertyDescends` of `SpaceLimitPropertyDescentStatement`, with its full hypotheses: cofiltered limits of affine schemes; source and target quasi-separated with an `LocallyOfFinitePresentation ⊓ QuasiCompact` atlas | proved |
@@ -673,10 +843,10 @@ executors as inspected on 2026-11-12.
 | Prop 5.4, manifold (Task 5259) | `canonicalAnalyticPointStructure`, `canonicalAnalyticPointStructure_isAnalytic` (`SmoothSpaceAnalyticAtlas`); `canonicalAnalyticPointStructure_isFunctorial`, `canonicalAnalyticPointStructure_isEtaleLocalIso` (`AnalyticPointFunctoriality`); `canonicalAnalyticPointStructure_agreesWithAffineSpace`, `canonicalAnalyticPointStructure_isAdmissible` (`AnalyticAffineNormalization`) | every complete nontrivially normed `K`; the family of charted spaces on `X(K)`, with the étale-chart topology, built from affine étale charts smooth of relative dimension `n`; it satisfies `AnalyticPointStructure.IsAnalytic`, `AnalyticPointStructure.IsFunctorial`, `AnalyticPointStructure.IsEtaleLocalIso` and `AnalyticPointStructure.AgreesWithAffineSpace`, hence `AnalyticPointStructure.IsAdmissible`; this proves the existence conjunct of `AnalyticPointManifoldStatement`; the uniqueness clause is `AnalyticPointStructure.equivalent_of_isAdmissible` (`AnalyticPointUniqueness`), and `analyticPointManifold` combines the two | proved |
 | Ex 5.5 (Task 5217) | `StabilizerFibreLocalDimensionStatement` | any scheme `S`; a group scheme `G` locally of finite type over `S` acting on `V`; at every point of the stabilizer scheme (the base change of the action graph along the diagonal of `V`), the local dimension of its fibre over `V` equals the dimension of the whole fibre, so stabilizer fibres are equidimensional; input to the local closedness of the orbit-dimension strata | proved (`stabilizerFibreLocalDimension`, module `StabilizerFibreLocalDimensionProof`, helpers prefixed `StabilizerFibre.`; published for Task 5217; proof Task 5438 `cd13f7dc-f2dc-404b-bf3d-5885e82f23bf`, closed) |
 | Ex 5.5 (Task 5217) | `OrbitStratumActionRestrictionStatement` | any field `k`; `G` smooth over `k`; `V` locally of finite type with a `G`-action; a reduced scheme `Z` with an immersion onto the points of orbit dimension `d`; the action restricts to `Z`, and every restricted action has orbit dimension `d` at every point | proved (`orbitStratumActionRestriction`, module `OrbitStratumActionRestrictionProof`, helpers prefixed `OrbitStratumActionRestriction.`; published for Task 5217; proof Task 5435 `50f16a97-abde-4fa4-82d0-f13ffe281ff4`, closed) |
-| Ex 5.5 (Task 5217) | `UnipotentOrbitStabilizerSmoothStatement` | field `k` of characteristic zero; `G` affine, locally of finite type and unipotent; `Z` reduced, locally of finite type, with a `G`-action of constant orbit dimension `d`; the stabilizer scheme is smooth over `Z`, which is stronger than the flatness in the source (route through Cartier's theorem instead of Conrad's `exp(ker B)`) | open for focused exact-target proof publication (proof Task 5434 `0e823d86-9f22-48da-b160-eebc1c0160a0`, verifying with Worker 5434, staged candidate `798d3ed4-1863-4029-97a9-bd40aa28a360`). All mathematical inputs are now published: `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth` (Task 5706), the characteristic-zero connectedness proof, and the reduction in the rows below; this note does not publish the focused stabilizer theorem |
+| Ex 5.5 (Task 5217) | `UnipotentOrbitStabilizerSmoothStatement` | field `k` of characteristic zero; `G` affine, locally of finite type and unipotent; `Z` reduced, locally of finite type, with a `G`-action of constant orbit dimension `d`; the stabilizer scheme is smooth over `Z`, which is stronger than the flatness in the source (route through Cartier's theorem instead of Conrad's `exp(ker B)`) | proved (`unipotentOrbitStabilizerSmooth`, module `UnipotentOrbitStabilizerSmoothProof`, candidate `798d3ed4-1863-4029-97a9-bd40aa28a360`, Task 5434 `0e823d86-9f22-48da-b160-eebc1c0160a0`, Worker 5434) at the final-publication audit commit. The exact target is obtained from the published reduction, `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth` and `Langlands.GroupScheme.charZeroUnipotentConnected`, with every hypothesis in this row retained |
 | Ex 5.5 (Task 5434) | `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (module `Langlands/GroupScheme/ReducedBaseSmoothStatement`) | SGA 3, Exposé VI_B, Corollaire 4.4, over a reduced base with connected fibres: `S` reduced and locally Noetherian; a group scheme `H` over `S`, locally of finite type, whose fibres over the residue fields are smooth and connected, with fibre dimension locally constant on `S`; then `H → S` is smooth | proved (`Langlands.GroupScheme.reducedBaseConnectedFibreSmooth`, module `Langlands/GroupScheme/ReducedBaseSmoothProof`, with `ReducedBaseSmooth/` helpers; published candidate `1d0df2b8-d657-4d37-8a3e-608f9c6006b9` for Task 5706 `0804c1fb-2875-4d0a-90cd-e85198e6e762`, by Workers 50 and 9, at the induction, Schmidt and reduced-base audit commit). Reviewer 321 and exact-target validation establish acceptance; integration `a765b72f4a85465c80fa8c1c12316735` establishes publication. The proof retains every hypothesis in this row |
 | Ex 5.5 (Task 5434) | `Langlands.GroupScheme.CharZeroUnipotentConnectedStatement` (module `Langlands/GroupScheme/Unipotent/CharZeroConnectedStatement`) | Milne, *Algebraic Groups* (2022), Corollary 14.15, in characteristic zero: an affine group scheme locally of finite type over a field of characteristic zero that is unipotent (every nonzero finite-dimensional representation has a nonzero fixed vector) has connected underlying space | proved by the proof-producing `def` `Langlands.GroupScheme.charZeroUnipotentConnected` (module `Langlands/GroupScheme/Unipotent/CharZeroConnectedProof`, with `CharZeroCoordinateConnected`, `CharZeroIdempotents` and `CharZeroPeriodic` in the same folder), whose type is the statement unfolded; published for Task 5434 as a supporting definition, by a route through Cartier's theorem and idempotents of the coordinate ring rather than Milne's component-group argument |
-| Ex 5.5 (Task 5434) | `unipotentOrbitStabilizerSmooth_of_reducedBase_of_charZeroConnected` (`UnipotentOrbitStabilizerSmoothReduction`) | the two statements above as hypotheses, in the same universe; conclusion: `UnipotentOrbitStabilizerSmoothStatement` | proved by this proof-producing `def` (published for Task 5434 as a supporting definition); both premises now have published proofs, namely `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth` and `Langlands.GroupScheme.charZeroUnipotentConnected`. Their composition supplies the stabilizer statement; the focused exact-target proof publication remains with Task 5434 |
+| Ex 5.5 (Task 5434) | `unipotentOrbitStabilizerSmooth_of_reducedBase_of_charZeroConnected` (`UnipotentOrbitStabilizerSmoothReduction`) | the two statements above as hypotheses, in the same universe; conclusion: `UnipotentOrbitStabilizerSmoothStatement` | proved by this proof-producing `def` (published for Task 5434 as a supporting definition); both premises have published proofs, namely `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth` and `Langlands.GroupScheme.charZeroUnipotentConnected`. Their composition now gives the published exact-target theorem `unipotentOrbitStabilizerSmooth` named above |
 | Ex 5.5 (Task 5217) | `SmoothStabilizerActionQuotientStatement` | any scheme `S`; `G` smooth over `S`; `V` locally of finite type with a `G`-action whose stabilizer scheme is smooth over `V`; an fppf quotient algebraic space exists, and every fppf quotient map is smooth and surjective, with quotient locally of finite type over `S` | proved (`smoothStabilizerActionQuotient`, module `SmoothStabilizerActionQuotientProof`, with `SmoothStabilizerActionArrows`, `SmoothStabilizerActionOrbitRelation` and `SmoothStabilizerActionQuotientAssembly`, helpers prefixed `SmoothStabilizerActionQuotient.`; published for Task 5217; proof Task 5433 `f3e32dbc-7b9e-4847-bc34-dcec9466ac74`, closed) |
 | Ex 5.5 (Task 5217) | `ActionQuotientFinitenessStatement` | any field `k`; `G` quasi-compact over `k`; `Z` of finite type over `k` with a `G`-action; an fppf quotient `X`, locally of finite type, with smooth surjective quotient map; `X` is quasi-separated and finitely presented over `k` | proved (`actionQuotientFiniteness`, module `ActionQuotientFinitenessProof`, with `ActionQuotientOrbitRelation`, helpers prefixed `ActionQuotientFiniteness.` and `ActionQuotientOrbitRelation.`; published for Task 5217; proof Task 5436 `a0cdf0af-e3dd-43c0-b07c-dd2bc813c384`, closed) |
 | Ex 5.5 (Task 5217) | `LocallySeparatedRationalPointsStatement` | henselian nontrivially normed `K`; `X` quasi-separated, locally separated and locally of finite type over `K`; `X(K)` is locally Hausdorff, locally compact if `K` is, and locally totally disconnected if the norm is ultrametric: the corrected topology clause, for every such space rather than only orbit quotients | proved (`locallySeparatedRationalPoints`, module `LocallySeparatedRationalPointsProof`; published for Task 5217; proof Task 5437 `eb46b42e-fe09-4333-8d9d-52ee1549e96a`, closed) |
@@ -703,7 +873,7 @@ executors as inspected on 2026-11-12.
 | Thm 5.9 (Task 5254) | `SmoothDimensionUniformLifts.exists_uniform_field_surjectivity`, `SmoothDimensionUniformLifts.exists_uniform_henselian_surjectivity`, with the point lifts `SmoothDimensionUniformLifts.pointLifts` (`AlgebraicSpace/SmoothDimensionUniformLifts`, Worker 109) | `SpaceUniformLangWeilStatement` as a hypothesis; a Noetherian ring `C`, an algebra over `ULift ℤ` with `Spec` map locally of finite type; `X`, `Y` separated algebraic spaces of finite type over `C` (`FiniteTypeOverRing`); `f : X → Y` smooth (`IsSmoothMorphism`) with geometrically connected, hence nonempty, fibres (`HasGeometricallyConnectedFibres`); no fixed relative dimension and no étale chart are assumed; conclusions: one constant `c > 0` such that `f` is surjective on `κ`-points for every finite field `κ` with a `C`-algebra structure and `c² < #κ`, and surjective on `R`-points for every henselian local `C`-algebra `R` with a surjective `C`-algebra map onto such a `κ`; `pointLifts` chooses the lifts | proved (conditional on `SpaceUniformLangWeilStatement`) |
 | Thm 5.9 (Task 5254) | `curvePlaceSmoothConnectedFactor_eventually_surjective`, `numberFieldSmoothConnectedFactor_eventually_surjective`, `curvePlaceSmoothConnectedLevel_isOpenMap`, `numberFieldSmoothConnectedLevel_isOpenMap`, with the point lifts `curvePlaceSmoothConnectedPointLifts`, `numberFieldSmoothConnectedPointLifts` (`Langlands/Global/AdelicSpaceSmoothConnectedModelOpen`, Worker 109) | `SpaceUniformLangWeilStatement` as a hypothesis; the `S`-integers an algebra over `ULift ℤ` with `Spec` map locally of finite type; `X`, `Y` separated algebraic spaces of finite type over the `S`-integers (`FiniteTypeOverRing`); `f : X → Y` smooth (`IsSmoothMorphism`) with geometrically connected, hence nonempty, fibres (`HasGeometricallyConnectedFibres`); no fixed relative dimension, étale chart or surjectivity is assumed; curves need finite `k`, and nonempty `S` for the open-map form; conclusions: `f` is surjective on points at all but finitely many factors of the level ring, and open on level points | proved (conditional on `SpaceUniformLangWeilStatement`) |
 | Thm 5.9 (Task 5254) | `curvePlaceSmoothConnectedAdele_isOpenMap`, `numberFieldSmoothConnectedAdele_isOpenMap`, with `curvePlaceSmoothConnectedPrincipalStage_isOpenMap`, `numberFieldSmoothConnectedPrincipalStage_isOpenMap`, `curvePlaceSpacePrincipalStage_cover`, `numberFieldSpacePrincipalStage_cover` and the topological lemma `AdelicSpaceOpenReduction.isOpenMap_of_continuous_cover` (`Langlands/Global/AdelicSpaceSmoothConnectedAdelicOpen`, Worker 109) | `SpaceUniformLangWeilStatement` as a hypothesis; `X`, `Y` separated algebraic spaces of finite type over the `S`-integers; `f : X → Y` smooth with geometrically connected fibres, of any relative dimension; no integer-base premise on the `S`-integers; curves need finite `k` and nonempty `S`; number fields allow every finite set of finite places; conclusion: `f` is open on the adelic points of the models (`curvePlaceSpaceAdelePointTopology`, `numberFieldSpaceAdelePointTopology`, module `AdelicSpacePointTopology`); the proof applies the level-openness row above at the principal stages above each stage, which cover the adelic points | proved (conditional on `SpaceUniformLangWeilStatement`); this is openness for a map of models, not `AdelicSpaceSpreadSmoothOpenStatement` |
-| Thm 5.9 (Task 5254) | `AdelicSpaceSpreadSmoothOpenOfLangWeilStatement`, `adelicSpaceSpreadSmoothOpen_of_langWeil` (`Langlands/Global/AdelicSpaceSmoothConnectedSpreadOpen`) | exactly `SpaceUniformLangWeilStatement.{u} → AdelicSpaceSpreadSmoothOpenStatement.{u}`; independent separated finite-type source and target models and their original spread topologies, possibly at different levels; no fixed relative dimension; both global-field characteristics, with finite constants and nonempty levels for function fields and every infinite factor for number fields | proved at the 13 November audit commit, conditional only on the exact space Lang–Weil statement. Smooth connected model descent, model adelic openness, natural spread homeomorphisms and topology independence supply the arbitrary-model assembly; unconditional Theorem 5.9 still requires the Lang–Weil proof |
+| Thm 5.9 (Task 5254) | `AdelicSpaceSpreadSmoothOpenOfLangWeilStatement`, `adelicSpaceSpreadSmoothOpen_of_langWeil` (`Langlands/Global/AdelicSpaceSmoothConnectedSpreadOpen`) | exactly `SpaceUniformLangWeilStatement.{u} → AdelicSpaceSpreadSmoothOpenStatement.{u}`; independent separated finite-type source and target models and their original spread topologies, possibly at different levels; no fixed relative dimension; both global-field characteristics, with finite constants and nonempty levels for function fields and every infinite factor for number fields | proved at the earlier 13 November audit commit, conditional only on the exact space Lang–Weil statement. Smooth connected model descent, model adelic openness, natural spread homeomorphisms and topology independence supply the arbitrary-model assembly. The published `adelicSpaceSpreadSmoothOpen` now supplies this premise and proves unconditional Theorem 5.9 at the final-publication audit commit |
 | Lem 5.10 (Task 5255) | `WeilRestrictionDiagonalStatement` (`WeilRestrictionGeometricInputsStatement`) | `R → R'` finite projective over arbitrary rings; `X'` quasi-separated, no finite type; the presheaf diagonal of the restricted sheaf is representable with quasi-compact represented projections, and a representable closed immersion if `X'` is separated | proved (`weilRestrictionDiagonal_proof`, module `WeilRestrictionDiagonalProof`; `b515d810-988d-4ec8-b2a6-e2623027daae`) |
 | Lem 5.10 (Task 5255) | `WeilRestrictionAffineEtaleAtlasStatement` (same module) | as above; an étale surjective map to `X'` from an affine scheme locally of finite type over `R'`; its restriction is étale and geometrically surjective as a map of presheaves over `R` | proved (`weilRestrictionAffineEtaleAtlas`, module `WeilRestrictionAffineEtaleAtlasProof`, from `WeilRestrictionAtlasReduction` and `WeilRestrictionAtlasLocalRepresentation` (declarations prefixed `WeilRestrictionAtlas.`), `TestFibreRepresentation` (prefix `TestFibre.`), `PointTopology/AffineChartWeilRestrictionEtale` and `PointTopology/AffineChartWeilRestrictionSurjective`; Task 5361 `a05a1e93-7568-4b83-9fcd-0dda4caaa068`, closed) |
 | Lem 5.10 (Task 5255) | `spaceWeilRestriction_of_geometricInputs` (`SpaceWeilRestrictionReduction`) | the two statements above imply `SpaceWeilRestrictionStatement` | proved (reduction) |
@@ -1052,8 +1222,9 @@ These carried proof tasks are stale: their targets are proved in the Library com
 
 ## Remaining obligations
 
-1. Proofs of the open rows above, each with the named task. Every published statement of
-   an assertion of this paper without a Library proof has a proof task. The derived
+1. Reconcile the unconditional Theorem 4.5 endpoint with current focused-task
+   publications, then supply its proof or verified reuse bridge if still absent.
+   Other open derived rows retain the tasks named below. The derived
    `FamilyLangWeilStatement` is now proved by the published composition
    `familyLangWeilOfPlaneCurve planeCurveHasseWeil`. The derived intermediate
    `CompleteFiniteExtensionPointEmbeddingStatement` has no proof task; its row is proved
@@ -1073,8 +1244,11 @@ These carried proof tasks are stale: their targets are proved in the Library com
    consumes the published `familyPointUpperBound`). The induction, Schmidt bound
    and its auxiliary norm-polynomial construction are accepted and published at
    the induction, Schmidt and reduced-base audit commit; no mathematical input of
-   this route remains open. Worker 5202 retains the two final exact-target
-   uniform-estimate publications under Task 5202. Theorem 4.5's dimension-free
+   this route remains open. The two final exact-target uniform estimates are
+   also published as `uniformLangWeil` (Task 5993, candidate
+   `3f1e0645-a1a3-49d2-9197-d67383981e4e`) and `spaceUniformLangWeil`
+   (Task 5995, candidate `8544795f-6c5a-42f0-8f20-59ecc57ca5de`) at the
+   final-publication audit commit. Theorem 4.5's dimension-free
    arithmetic model step and its componentwise full fibre geometry are proved by
    `adelicSpreadGeometricallyConnected` and `smoothTargetComponentGeometry` at
    the earlier 13 November publication follow-up commit. Conditional lifting is
@@ -1082,18 +1256,28 @@ These carried proof tasks are stale: their targets are proved in the Library com
    commit; almost-all native level surjectivity is now proved by
    `adelicLevelComponentSurjectivity`, published for the completed Task 5154 at
    the native level-surjectivity audit commit. All inputs for the conditional
-   assembly are published; final exact-target conditional openness remains open
-   in Task 5166. Conditional on `SpaceUniformLangWeilStatement`,
-   the full arbitrary-model conclusion of Theorem 5.9 is proved by
-   `adelicSpaceSpreadSmoothOpen_of_langWeil`; final unconditional exact-target
-   publication remains with Task 5254 after the uniform space estimate is published.
-   In Example 5.5, five of the six intermediate statements have published
-   exact-target proofs. All inputs for `UnipotentOrbitStabilizerSmoothStatement`
-   are now published, including `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth`
-   (Task 5706, candidate `1d0df2b8-d657-4d37-8a3e-608f9c6006b9`); its focused
-   exact-target candidate `798d3ed4-1863-4029-97a9-bd40aa28a360` is verifying in
-   Task 5434 with Worker 5434. The final quotient assembly still needs its owned
-   proof publication in Task 5217. Both inputs
+   assembly are published, as is its exact-target proof
+   `adelicSpreadSmoothOpenOfLangWeil` (Task 5166, candidate
+   `8eb56617-9f29-4894-a2eb-632585fd3912`) at the final-publication audit
+   commit. It retains only `UniformLangWeilStatement`, now supplied by the
+   published `uniformLangWeil`. Separate exact-target proof publication of
+   the unconditional `AdelicSpreadSmoothOpenStatement` remains to be checked
+   and supplied.
+   Theorem 5.9 is now proved without extra premises by the published
+   `adelicSpaceSpreadSmoothOpen` (Task 5254, candidate
+   `621efe5f-e65a-4718-b4c4-c4d554db5a9d`) at the final-publication
+   audit commit. It supplies the space Lang–Weil estimate directly from the
+   published family, Schmidt and upper-bound proofs and applies
+   `adelicSpaceSpreadSmoothOpen_of_langWeil` to the two original model topologies.
+   In Example 5.5, all six intermediate statements have published exact-target
+   proofs, including `unipotentOrbitStabilizerSmooth` (Task 5434, candidate
+   `798d3ed4-1863-4029-97a9-bd40aa28a360`) at the same audit commit. The three
+   final clauses also have published exact-target proofs: locally closed strata
+   by Task 5699 (`bdc83ccd-a83b-4b88-89d0-3ce0358ed191`), quotient geometry
+   by Task 5997 (`b2ef5e3e-ad81-4ab0-b742-9bed77e24f90`) and corrected
+   quotient point topology by Task 5998
+   (`7934b16d-d2fc-438c-a40e-1bacf197bb85`). No separate conjunction
+   theorem is claimed. Both inputs
    of the general case of Corollary 5.7 are proved. Its final theorem
    `henselianIntegralPointsClosed : HenselianIntegralPointsClosedStatement` is
    published at the 13 November publication follow-up commit (proof Task 5692,
