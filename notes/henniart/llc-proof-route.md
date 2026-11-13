@@ -2,9 +2,9 @@
 
 Author: Worker 0, for Task 0 (`69dd20b3-6a77-44aa-b779-32391843c8dd`). First
 version 10 November 2026, second version 11 November 2026, third, fourth and
-fifth versions 12 November 2026, sixth to eleventh versions 13 November 2026.
-This twelfth version, also of 13 November 2026, was checked against Library
-commit `1bd55deac3796a0627d34ab2b1b6e8c36ac8b636`.
+fifth versions 12 November 2026, sixth to twelfth versions 13 November 2026.
+This thirteenth version, also of 13 November 2026, was checked against Library
+commit `c257f7ccf7972d2aea55b65301d4db306861161e`.
 
 This note records how the published Library reduces the full local Langlands
 correspondence for GL_n to three propositions, and names the task that owns
@@ -23,11 +23,14 @@ still needs an accepted `lean.proof@1` candidate. The Library has also
 published a statement that reduces the first of them, candidate existence, to
 five global inputs; it is described with that premise below. One of those
 inputs, Henniart's 3.8 for the composite map at a p-adic field, has a proof
-task that assembles it from four published propositions. Since the eleventh
-version a third of these has been proved, so only one of the four still lacks
-a proof. Premise 1 below also names the proof task of the reduction itself and
-the tasks that own its inputs; for two of the five inputs a task search found
-no proof task. The executor of Task 5584 has published a statement task
+task that assembles it from four published propositions. Three of these have
+been proved, so only one of the four still lacks a proof. Premise 1 below also
+names the proof task of the reduction itself and the tasks that own its
+inputs. One input, local relative class formation,
+follows directly from a published theorem; since the twelfth version it has a
+proof task. Another input, Harris's Prop. 4.8, has no proof task yet; since
+the twelfth version a planning task maps its proof to input statements and
+proof tasks. The executor of Task 5584 has published a statement task
 and a proof task for one part of the counting hypothesis behind the second
 premise: the finiteness of the supercuspidal orbit strata. Neither has a
 candidate yet. The three open premises are unchanged. For statement
@@ -266,7 +269,7 @@ at commit `2e46b9ca`:
 
 The table lists the three premises of
 `supercuspidalCorrespondenceHenniartThreeInputs`, which have no Library proof
-at commit `1bd55dea`. They are numbered by their position in that theorem;
+at commit `c257f7cc`. They are numbered by their position in that theorem;
 the third column gives their position among the premises of
 `supercuspidalCorrespondenceHenniartFiveInputs`, which the eighth version
 used. Universes are those of the full correspondence (`uK = uF`, `uW = uP`,
@@ -285,7 +288,7 @@ staged or under review is not a proof until it is accepted and published.
 Premise 1. Task 3657 published the proposition
 `Henniart.CandidateExistenceReductionStatement` (module
 `Correspondence/HenniartCandidateExistenceReductionStatement`). It is a
-statement only; the Library at commit `1bd55dea` has no proof of it. It says
+statement only; the Library at commit `c257f7cc` has no proof of it. It says
 that five global inputs together imply `CandidateExistenceStatement` with the
 automorphic-lattice universe (the third universe argument) equal to `0` and
 the other four universes arbitrary:
@@ -301,7 +304,7 @@ automorphic universe `uA` arbitrary. The statement's Markdown leaves the
 passage between these universes to Task 5583. The
 operator decided on 13 November 2026 that Task 5583 keeps its
 unconditional target unchanged. Its executor waits on the tasks below, which
-own the reduction and its inputs. A Library search at commit `1bd55dea` found
+own the reduction and its inputs. A Library search at commit `c257f7cc` found
 no proof of any of the five inputs. The states are TaskHub records of
 13 November 2026.
 
@@ -311,12 +314,28 @@ no proof of any of the five inputs. The states are TaskHub records of
   also asks the candidate to remove a duplicate Library declaration,
   `Automorphic.OperatorRealization.evaluate_toContinuous_smul`, which blocks
   that proof.
-- Harris 1998, Prop. 4.8, and the local relative class formation: a TaskHub
-  search on 13 November 2026 found no proof task for either
-  `Global.Harris.Proposition48Statement` or
-  `ClassFieldTheory.Local.LocalRelativeClassFormationStatement`. Task 5134
+- Harris 1998, Prop. 4.8: no task proves
+  `Global.Harris.Proposition48Statement` yet. A TaskHub search on
+  13 November 2026 found only tasks that use it, and Worker 3657 confirmed
+  that their global program does not plan its proof. Task 5134
   (`1b87b965-a232-4c02-a51f-e287f630c549`) proves a different statement: that
-  Harris's Prop. 4.8 implies `HenniartGlobalizationStatement`.
+  Harris's Prop. 4.8 implies `HenniartGlobalizationStatement`. The proof of
+  Prop. 4.8 needs Harris's global existence and local compatibility theorems
+  (Harris 1998, Theorems 1.2 and 1.7). The Harris-branch tasks build the
+  objects these theorems are about; the shared planning graph's node
+  `proof.harris-global-input` records the dependencies. Worker 0 published
+  the planning Task 6413 (`bca10e59-d4e2-40a4-be9b-5d70eaa1acd2`, ready, no
+  executor yet). It is to state the inputs that Harris's proof uses and a
+  reduction of Prop. 4.8 to them, and to publish the proof tasks.
+  `Proposition48Statement` itself stays unchanged.
+- Local relative class formation: Task 6411
+  (`03546f9b-94c7-4620-b762-48c39652bbff`, ready, no executor yet) is to prove
+  `ClassFieldTheory.Local.LocalRelativeClassFormationStatement`. The published
+  theorem `ClassFieldTheory.Local.localAbsoluteCorestrictionCompatibleClassFormation`
+  (module `ClassFieldTheory/Local/ClassFormationAbsoluteCorestrictionProof`)
+  has no hypotheses, and its conclusion contains all nine conjuncts of this
+  statement for the same invariant family. So the proof only drops the extra
+  conjuncts. Worker 0 published the task.
 - Henniart 2000, Thm 2.4: Task 4933 (`65c9a94c-af88-4876-baa4-43d78ccd5531`,
   Henniart's local induction from unitary supercuspidals for associated
   pairs).
@@ -326,7 +345,7 @@ no proof of any of the five inputs. The states are TaskHub records of
 - Henniart 2000, §3.8: Task 5231 (`9e23a040-16d7-4a7a-bd9b-35a08938d3c4`,
   waiting; executor Worker 5093) is to prove `HenniartCompositeMapStatement`
   by combining four published propositions. Three of them have Library proofs
-  at commit `1bd55dea`:
+  at commit `c257f7cc`:
   `Global.PoleComparison.relativeIsometryOperation` proves
   `RelativeIsometryOperationStatement` (module
   `Global/Factors/RelativeIsometryOperationProof`);
@@ -364,7 +383,7 @@ hypotheses: `NumericalOrbitCountStatement` (for every p-adic field, rank and
 conductor, the unramified-twist orbit strata on the Weil and supercuspidal
 sides are finite and have equal cardinality), and finiteness of the conductor
 `Numerical.conductor K π` of every supercuspidal class `π`. A search of the
-Lean sources at commit `1bd55dea` found no proof of either hypothesis. The
+Lean sources at commit `c257f7cc` found no proof of either hypothesis. The
 operator decided on 13 November 2026 that Task 5584 stays open and that its
 executor does not prove conductor finiteness of supercuspidal classes: that is
 owned through Task 5585 (`5da7d945-39ed-4dcb-ace6-030fa18e4f24`,
@@ -406,7 +425,7 @@ A Lean draft of both modules is in Task 5584's shared draft (revision 2). Its
 proof reduces to the published
 `Henniart.CompactOpenFiniteness.centralLevelStratum_finite` (Bernstein–Zelevinsky
 1976, Cor. 4.15, for p-adic fields). The draft is not a candidate, and the
-Library at commit `1bd55dea` has neither module. The operator did not approve
+Library at commit `c257f7cc` has neither module. The operator did not approve
 the second unit proposed in the note, which would derive the counts from a
 bijective numerical injection in every rank. The operator judged it circular
 for this route: every known source of such an injection is a local Langlands
@@ -471,13 +490,13 @@ premise 2 above) and is done.
 ## The composite
 
 The module below compiles at commit
-`1bd55deac3796a0627d34ab2b1b6e8c36ac8b636` in environment
+`c257f7ccf7972d2aea55b65301d4db306861161e` in environment
 `5c94c648-e8dc-4002-a50a-071ebf3f6096`, with 0 errors and 0 warnings. The
 check compiled the block verbatim as a private draft module in the Lean
 service, together with a second draft module that imports it and runs
 `#print axioms Langlands.Correspondence.fullCorrespondence_of_henniartThreeInputs`,
 and inspected that declaration. Its diagnostics are the private record
-`b1f71122-acb7-4a69-aaf7-ecb464ea8011`. To reproduce it, save the block as a
+`672f50b1-b2d0-44c3-ab1b-1a53bf879430`. To reproduce it, save the block as a
 draft module and compile it with `lean_check`. The declaration inspection lists
 only the axioms `propext`, `Classical.choice` and `Quot.sound`. Both theorems it applies are
 published: `fullCorrespondenceStatement_of_supercuspidalCorrespondence` and
