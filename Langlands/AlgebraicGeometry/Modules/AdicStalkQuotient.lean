@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.Modules.AffineBaseSections
 import Langlands.AlgebraicGeometry.Modules.ClosedImmersionStalkQuotient
 import Langlands.AlgebraicGeometry.Modules.StalkPullback
 import Langlands.AlgebraicGeometry.Picard.FormalLineBundleSystem
@@ -22,10 +23,6 @@ open Picard.FormalLineBundle
 
 variable {R : Type u} [CommRing R] {X : Scheme.{u}}
   (f : X ⟶ Spec (CommRingCat.of R))
-
-/-- The base ring action on the sections of an open of the actual scheme. -/
-def baseSectionHom (U : X.Opens) : R →+* Γ(X, U) :=
-  (f.appLE ⊤ U le_top).hom.comp (Scheme.ΓSpecIso (CommRingCat.of R)).inv.hom
 
 /-- The base ring action on an actual stalk. -/
 def baseStalkHom (x : X) : R →+* X.presheaf.stalk x :=

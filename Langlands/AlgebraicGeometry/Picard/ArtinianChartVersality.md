@@ -76,3 +76,6 @@ general test is imposed. This module does not construct a formally
 versal family, a hull, effectivity, algebraization, openness of
 versality, or a smooth scheme atlas. Those existence and geometric
 steps remain separate obligations for the field Picard stack atlas.
+
+The unchanged `augmentationArrow` definition is imported from
+`Deformation/ArtinianAugmentationArrow`; its namespace and interface are preserved.

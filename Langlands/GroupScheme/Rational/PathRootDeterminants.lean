@@ -1,0 +1,139 @@
+import Langlands.GroupScheme.Rational.PathPositiveRootMatrices
+import Mathlib.LinearAlgebra.Matrix.Transvection
+
+/-! # Determinants of the two endpoint root groups -/
+
+noncomputable section
+
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 400000
+
+universe u
+
+open CategoryTheory AlgebraicGeometry
+open scoped Matrix CategoryTheory.MonObj
+
+namespace Langlands.GroupScheme.SplitPinning
+
+open MatrixRepresentation MatrixRepresentation.AdditiveDividedPowers
+open Langlands.LinearAlgebra.RootDatumPathWeights
+
+variable {k : Type u} [Field k] {G : GroupScheme (Spec (CommRingCat.of k))}
+  [IsAffineHom G.X.hom] {p : SplitPinning G}
+  {d : Type} [Fintype d] [DecidableEq d] {ρ : MatrixRepresentation G d}
+  {L : ℕ} {β : Fin L → p.base.support} {lam : characterLattice p.torus}
+  (hρ : p.IsHighestWeight ρ lam) (hβ : IsPathComponent β)
+  (hlam : IsPathFundamental β lam) (x : p.NormalizedSimpleRootParametrizations)
+  (v₀ : p.representationWeightSpace ρ (pathWeight β lam 0)) (hv₀ : v₀ ≠ 0)
+
+/-- The rational points whose matrix in the normalized path basis has determinant one. -/
+def normalizedPathDetOne : Subgroup (rationalPoints G) where
+  carrier := {g | (normalizedPathMatrix hρ hβ hlam x v₀ hv₀ g).det = 1}
+  one_mem' := by simp
+  mul_mem' ha hb := by
+    simp only [Set.mem_ofPred_eq] at ha hb ⊢
+    rw [map_mul, Matrix.det_mul, ha, hb, one_mul]
+  inv_mem' {g} hg := by
+    simp only [Set.mem_ofPred_eq] at hg ⊢
+    have h := congrArg Matrix.det
+      ((normalizedPathMatrix hρ hβ hlam x v₀ hv₀).map_mul g g⁻¹)
+    rw [mul_inv_cancel, map_one, Matrix.det_one, Matrix.det_mul, hg, one_mul] at h
+    exact h.symm
+
+/-- A represented root map of any directed endpoint difference has transvection matrices. -/
+theorem exists_normalizedPathMatrix_transvection_of_isRepresentedBy
+    {F : SubgroupFunctor G}
+    {y : VectorGroup.groupScheme (CommRingCat.of k) 1 ⟶ G}
+    (hy : F.IsRepresentedBy y) (i l : Fin (L + 1)) (hil : i ≠ l)
+    (hx : VectorGroup.IsTorusEquivariant p.inclusion y
+      (pathWeight β lam i - pathWeight β lam l))
+    {g : rationalPoints G} (hg : g ∈ F.carrier (Over.mk (𝟙 _))) :
+    ∃ c : k, normalizedPathMatrix hρ hβ hlam x v₀ hv₀ g = Matrix.transvection i l c := by
+  have hhi : ∀ m, 2 ≤ m → dividedPower (ρ.restrict y) m = 0 := by
+    intro m hm
+    rcases lt_or_gt_of_ne hil with h | h
+    · exact pathRootMap_dividedPower_eq_zero hρ hβ hlam h (by omega) hx hm
+    · exact negPathRootMap_dividedPower_eq_zero hρ hβ hlam h (by omega) hx hm
+  have hmem : dividedPower (ρ.restrict y) 1
+      (normalizedPathVector hρ hβ hlam x v₀ l : d → k) ∈
+      p.representationWeightSpace ρ (pathWeight β lam i) := by
+    rcases lt_or_gt_of_ne hil with h | h
+    · exact pathRootMap_dividedPower_one_mem hβ h (by omega) hx
+        (normalizedPathVector hρ hβ hlam x v₀ l).2
+    · exact negPathRootMap_dividedPower_one_mem hβ h (by omega) hx
+        (normalizedPathVector hρ hβ hlam x v₀ l).2
+  obtain ⟨a, ha⟩ := exists_smul_eq_of_finrank_eq_one
+    (finrank_pathWeightSpace hρ hβ hlam (by omega : (i : ℕ) ≤ L))
+    (x := normalizedPathVector hρ hβ hlam x v₀ i)
+    (fun he => normalizedPathVector_ne_zero hρ hβ hlam x v₀ hv₀
+      (by omega : (i : ℕ) ≤ L) (congrArg Subtype.val he))
+    ⟨_, hmem⟩
+  have ha' := congrArg Subtype.val ha
+  change a • (normalizedPathVector hρ hβ hlam x v₀ i : d → k) =
+    dividedPower (ρ.restrict y) 1
+      (normalizedPathVector hρ hβ hlam x v₀ l : d → k) at ha'
+  have hzero (j : Fin (L + 1)) (hjl : j ≠ l) :
+      dividedPower (ρ.restrict y) 1
+        (normalizedPathVector hρ hβ hlam x v₀ j : d → k) = 0 := by
+    rcases lt_or_gt_of_ne hil with h | h
+    · exact pathRootMap_dividedPower_one_eq_zero hρ hβ hlam h (by omega) hx
+        (by omega) (fun he => hjl (Fin.ext he))
+        (normalizedPathVector hρ hβ hlam x v₀ j).2
+    · exact negPathRootMap_dividedPower_one_eq_zero hρ hβ hlam h (by omega) hx
+        (by omega) (fun he => hjl (Fin.ext he))
+        (normalizedPathVector hρ hβ hlam x v₀ j).2
+  obtain ⟨c, hc⟩ := exists_rationalMatrix_eq_one_add_of_isRepresentedBy ρ hy hhi hg
+  refine ⟨c * a, ?_⟩
+  ext s j
+  rw [normalizedPathMatrix_apply hρ hβ hlam x v₀ hv₀, hc, one_add_smul_mulVec]
+  by_cases hj : j = l
+  · subst j
+    rw [← ha', smul_smul,
+      ← normalizedPathBasis_apply hρ hβ hlam x v₀ hv₀ l,
+      ← normalizedPathBasis_apply hρ hβ hlam x v₀ hv₀ i]
+    simp only [map_add, Finsupp.add_apply, map_smul, Finsupp.smul_apply,
+      Module.Basis.repr_self_apply, smul_eq_mul, Matrix.transvection, Matrix.add_apply,
+      Matrix.one_apply, Matrix.single_apply]
+    by_cases hs : s = i <;> simp [hs, eq_comm]
+  · rw [hzero j hj, smul_zero, add_zero,
+      ← normalizedPathBasis_apply hρ hβ hlam x v₀ hv₀ j]
+    simp only [Module.Basis.repr_self_apply, Matrix.transvection, Matrix.add_apply,
+      Matrix.one_apply, Matrix.single_apply, eq_comm, Ne.symm hj, and_false, ite_false,
+      add_zero]
+
+/-- Every rational point generated by the two endpoint root groups has determinant one. -/
+theorem normalizedPathMatrix_det_eq_one_of_mem_rootSup (r : p.rootIndex)
+    (i l : Fin (L + 1)) (hil : i < l)
+    (hr : p.rootDatum.root r = pathWeight β lam i - pathWeight β lam l)
+    {g : rationalPoints G}
+    (hg : g ∈ (RelativeRoot.subgroup p.inclusion (p.rootDatum.root r)).carrier
+        (Over.mk (𝟙 _)) ⊔
+      (RelativeRoot.subgroup p.inclusion (-p.rootDatum.root r)).carrier (Over.mk (𝟙 _))) :
+    (normalizedPathMatrix hρ hβ hlam x v₀ hv₀ g).det = 1 := by
+  obtain ⟨X⟩ := p.nonempty_linkedRootParametrization r
+  have hle : (RelativeRoot.subgroup p.inclusion (p.rootDatum.root r)).carrier
+        (Over.mk (𝟙 _)) ⊔
+      (RelativeRoot.subgroup p.inclusion (-p.rootDatum.root r)).carrier (Over.mk (𝟙 _)) ≤
+      normalizedPathDetOne hρ hβ hlam x v₀ hv₀ := by
+    refine sup_le ?_ ?_
+    · intro z hz
+      have hx : VectorGroup.IsTorusEquivariant p.inclusion X.positive
+          (pathWeight β lam i - pathWeight β lam l) := by
+        convert X.positive_equivariant using 1
+        exact hr.symm
+      obtain ⟨c, hc⟩ := exists_normalizedPathMatrix_transvection_of_isRepresentedBy
+        hρ hβ hlam x v₀ hv₀ X.positive_represents i l (ne_of_lt hil) hx hz
+      change (normalizedPathMatrix hρ hβ hlam x v₀ hv₀ z).det = 1
+      rw [hc, Matrix.det_transvection_of_ne _ _ (ne_of_lt hil)]
+    · intro z hz
+      have hx : VectorGroup.IsTorusEquivariant p.inclusion X.negative
+          (pathWeight β lam l - pathWeight β lam i) := by
+        convert X.negative_equivariant using 1
+        rw [hr, neg_sub]
+      obtain ⟨c, hc⟩ := exists_normalizedPathMatrix_transvection_of_isRepresentedBy
+        hρ hβ hlam x v₀ hv₀ X.negative_represents l i (ne_of_gt hil) hx hz
+      change (normalizedPathMatrix hρ hβ hlam x v₀ hv₀ z).det = 1
+      rw [hc, Matrix.det_transvection_of_ne _ _ (ne_of_gt hil)]
+  exact hle hg
+
+end Langlands.GroupScheme.SplitPinning

@@ -83,3 +83,26 @@ statement module and its imported pairs are unchanged.
 applies this theorem at `{u, u}` to the published reduction
 `localInducedRestriction_of_extensionSquare`. The theorem is also exactly the
 target of task `2b6541a9-9007-4cc5-9a23-f5785fce6d55`.
+
+## Transport from a supplied normalized family
+
+The additional helper `ExtensionTransferTransport.square_of_family` retains
+the independently accepted identity-double-coset argument from artifact
+`eb3f01a0-0117-474c-bf7a-9da2bdf5071b`. For arbitrary p-adic fields in independent
+universes and a specified field embedding, it assumes a normalized common-closure
+family and proves the transfer/inclusion square for that family's transported
+reciprocity candidates. The published unconditional theorem and the
+`ExtensionWeilTransfer` helpers above are retained.
+
+The transfer comparison uses
+`GroupTheory.Transfer.transfer_comp_eq_prod_of_conj` with one double coset,
+represented by the identity. The ambient group map is the equivalence
+from the standalone base Weil group to the bottom-field fixing subgroup.
+Its inverse image of the nested fixing subgroup is exactly the range of
+the actual `extensionWeilMap`, by `extensionWeilRange_eq_fixing`.
+The subgroup homomorphism becomes reciprocity composed with
+`InductionAlong.rangeInverse`; this inverse is taken only on the image of
+the injective Weil embedding. Postcomposition commutes with the actual
+finite-coset transfer by `GroupTheory.Transfer.transfer_comp`. On the
+field side the bottom-field equivalence and image-field equivalence carry
+the intermediate-field inclusion to the specified embedding.

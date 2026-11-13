@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.Deformation.ArtinianAugmentationArrow
 import Langlands.AlgebraicGeometry.Picard.ArtinianChartLifting
 import Langlands.AlgebraicGeometry.Picard.ArtinianTestDeformations
 import Langlands.AlgebraicGeometry.Deformation.ArtinianDualNumbers
@@ -137,10 +138,6 @@ theorem isFormallySmoothOnTests_iff_forall_versalAt :
 /-- The residue pullback of the actual family at the specified point. -/
 abbrev residueBundle :=
   (LineBundle.pullback ((relativeSpace f).map p)).obj L
-
-/-- The actual augmentation arrow, without a section or coefficient-field choice. -/
-def augmentationArrow (A : ArtinianTest k K) : A ⟶ ArtinianTest.residue k K :=
-  ArtinianTest.homMk A.augmentation (by ext; rfl)
 
 /-- The spectrum map of the augmentation is the prescribed residue inclusion. -/
 lemma augmentationArrow_baseMap (A : ArtinianTest k K) :

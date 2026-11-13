@@ -1,3 +1,5 @@
+import Langlands.GroupTheory.TransferDoubleCoset
+import Langlands.ClassFieldTheory.Local.WeilReciprocityUniquenessProof
 import Langlands.Global.Factors.RelativeWeilLocalEpsilon
 import Langlands.ClassFieldTheory.Local.WeilTransferReciprocityStatement
 import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
@@ -148,5 +150,119 @@ theorem extensionWeilTransferReciprocity : ExtensionWeilTransferReciprocityState
       ((reciprocityUnits F eC (Correspondence.baseExtension F)
         (Correspondence.baseWeilEquiv F y) : (Correspondence.baseExtension F).field) :
           (⊥ : IntermediateField F.Carrier (AlgebraicClosure F.Carrier)))).symm
+
+end Langlands.LocalClassField
+
+namespace Langlands.LocalClassField
+
+open Weil.Local
+
+universe u v
+
+namespace ExtensionTransferTransport
+
+variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p) (E : PadicField.{v} p)
+  (f : F.Carrier →ₐ[Padic p] E.Carrier)
+
+local instance extensionTransferBaseCharZero : CharZero F.Carrier :=
+  Algebra.charZero_of_charZero (Padic p) F.Carrier
+local instance extensionTransferBaseTopology : TopologicalSpace F.Carrier :=
+  F.canonicalTopologicalData.topology
+local instance extensionTransferTargetTopology : TopologicalSpace E.Carrier :=
+  E.canonicalTopologicalData.topology
+
+/-- The common-closure transfer law, transported to separately presented Weil groups. -/
+theorem square_of_family
+    (eC : LocalFactor.CommonClosure.ReciprocityFamily F)
+    (he : LocalFactor.CommonClosure.NormalizedReciprocity F eC) :
+    haveI := extensionWeilMap_range_finiteIndex F E f
+    ∀ y : localWeilGroup F,
+      MonoidHom.transfer
+          ((LocalFactor.RankOne.reciprocityUnits E
+              (extensionReciprocityCandidate F E f eC)).toMonoidHom.comp
+            (InductionAlong.rangeInverse (extensionWeilMap F E f).toMonoidHom
+              (extensionWeilMap_injective F E f))) y =
+        Units.map f.toRingHom.toMonoidHom
+          (LocalFactor.RankOne.reciprocityUnits F
+            (Correspondence.baseReciprocityCandidate F eC) y) := by
+  have := extensionWeilMap_range_finiteIndex F E f
+  intro y
+  let B := Correspondence.baseExtension F
+  let L := extensionFiniteIntermediate F E f
+  let := (CommonClosure.canonicalData F B).topology
+  let := (CommonClosure.canonicalData F L).topology
+  let WB := pullbackFixingSubgroup F.Carrier B.field (localResidueDegree F)
+  let WL := pullbackFixingSubgroup F.Carrier L.field (localResidueDegree F)
+  let hW : WL ≤ WB :=
+    Subgroup.comap_mono (IntermediateField.fixingSubgroup_antitone
+      (show B.field ≤ L.field from bot_le))
+  let N := WL.subgroupOf WB
+  let := pullbackFixingFiniteIndex F.Carrier L.field (localResidueDegree F)
+  let b := Correspondence.baseWeilEquiv F
+  let n : N ≃ₜ* WL := subgroupOfEquiv hW
+  let j := (extensionWeilMap F E f).toMonoidHom
+  let q := InductionAlong.rangeInverse j (extensionWeilMap_injective F E f)
+  let R := (LocalFactor.RankOne.reciprocityUnits E
+    (extensionReciprocityCandidate F E f eC)).toMonoidHom.comp q
+  let U := extensionIntermediateUnitsEquiv F E f
+  let ϕ : N →* L.fieldˣ := (eC L).toMonoidHom.comp
+    ((abelianizationProjection WL).toMonoidHom.comp n.toMonoidHom)
+  let ϕ' : j.range →* L.fieldˣ := U.toMonoidHom.comp R
+  have hK : ∀ (_ : Unit) (w : localWeilGroup F),
+      w ∈ j.range ↔ (1 : WB)⁻¹ * b w * 1 ∈ N := by
+    intro _ w
+    simp only [inv_one, one_mul, mul_one]
+    change w ∈ extensionWeilRange F E f ↔ w ∈ WL
+    rw [extensionWeilRange_eq_fixing F E f]
+  have ht := GroupTheory.Transfer.transfer_comp_eq_prod_of_conj
+    (ψ := b.toMonoidHom) (t := fun _ : Unit => (1 : WB))
+    (K := fun _ : Unit => j.range) (hK := hK) ϕ (fun _ => ϕ') (by
+      rintro _ ⟨_, w, rfl⟩
+      change U (extensionReciprocityCandidate F E f eC
+          (WeilQuotients.projection (localResidueDegree E)
+            (q ⟨j w, ⟨w, rfl⟩⟩))) = _
+      rw [InductionAlong.rangeInverse_apply]
+      rw [extensionReciprocityCandidate_projection,
+        ContinuousMulEquiv.apply_symm_apply]
+      simp only [inv_one, one_mul, mul_one]
+      rfl) (by
+      intro w
+      refine ⟨(), b.symm w, 1, Subgroup.one_mem _, ?_⟩
+      change w = b (b.symm w) * 1 * 1
+      rw [ContinuousMulEquiv.apply_symm_apply, mul_one, mul_one]) (by
+      intro _ _ _ _ _ _
+      rfl) y
+  simp only [Fintype.prod_unique] at ht
+  have hp : MonoidHom.transfer ϕ (b y) =
+      eC L (B.weilAbelianTransfer L bot_le (localResidueDegree F)
+        (abelianizationProjection WB (b y))) := by
+    change MonoidHom.transfer
+      (((eC L).toMonoidHom.comp (abelianizationMap (n : N →ₜ* WL)).toMonoidHom).comp
+        (abelianizationProjection N).toMonoidHom) (b y) = _
+    exact GroupTheory.Transfer.transfer_comp _ _ _
+  apply U.injective
+  calc
+    U (MonoidHom.transfer R y) = MonoidHom.transfer ϕ' y :=
+      (GroupTheory.Transfer.transfer_comp R U.toMonoidHom y).symm
+    _ = MonoidHom.transfer ϕ (b y) := ht.symm
+    _ = eC L (B.weilAbelianTransfer L bot_le (localResidueDegree F)
+        (abelianizationProjection WB (b y))) := hp
+    _ = B.unitsInclusion L bot_le (eC B (abelianizationProjection WB (b y))) :=
+      DFunLike.congr_fun (he.1.2.1 B L bot_le) _
+    _ = U (Units.map f.toRingHom.toMonoidHom
+        (LocalFactor.RankOne.reciprocityUnits F
+          (Correspondence.baseReciprocityCandidate F eC) y)) := by
+      apply Units.ext
+      apply Subtype.ext
+      let z : B.field := eC B (abelianizationProjection WB (b y))
+      change (z : AlgebraicClosure F.Carrier) = extensionFieldEmbedding F E f
+        (f (IntermediateField.botEquiv F.Carrier (AlgebraicClosure F.Carrier) z))
+      rw [extensionFieldEmbedding_comp]
+      have hz := (IntermediateField.botEquiv F.Carrier
+        (AlgebraicClosure F.Carrier)).symm_apply_apply z
+      rw [IntermediateField.botEquiv_symm] at hz
+      exact (congrArg (fun x : B.field => (x : AlgebraicClosure F.Carrier)) hz).symm
+
+end ExtensionTransferTransport
 
 end Langlands.LocalClassField

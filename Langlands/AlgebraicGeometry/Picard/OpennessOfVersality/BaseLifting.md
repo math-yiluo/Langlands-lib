@@ -79,3 +79,6 @@ followed by the identification of the pullback along `𝟙` with the pullback al
 `(relativeSpace f).map 𝟙`. Its restriction is `y` by `restrict_mkPtR_eq`: the base maps
 agree by `affineBaseMap_comp` and `q ∘ χ' = χ`, and the transported isomorphism is
 `modIso f y` by `tr_comp_pullbackCongr` and the conclusion of `exists_lift`.
+
+The unchanged affine-base-map existence lemma is shared through
+`Picard/AffineBaseMaps`, retaining its `OpennessOfVersality` declaration name.
