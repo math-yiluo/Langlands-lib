@@ -94,3 +94,5 @@ a paywall or missing edition; include the exact citation and attempted locations
 ## Errata
 
 - [Springer reduction theory: stabilizer indexing and line weights](../notes/errata/springer-1994-reduction-global-fields.md) — Verified original-source discrepancies, the SL₃ and GL₂ character computations, Godement's preceding-intersection and ambient-character formulations, and remaining chamber-proof obligations.
+
+- [Relative root groups in characteristic two: exact-root generation and positive multiples](../notes/errata/milne-relative-root-groups-characteristic-two.md) — A paper quaternionic type-C₃ counterexample to the standard-group interpretation of Milne's exact-root generators, with maximal tori, all-test matrices, a quadratic-form obstruction and the unchanged positive-multiple Library scope.

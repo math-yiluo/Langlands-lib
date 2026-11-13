@@ -43,6 +43,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Rational and absolute structure: family 5 comparison update](../notes/group-schemes/rational-absolute-coverage-2026-11-13.md) — Three exact published root, Weyl and root-group comparison proofs, their distinct torus and field scopes, the positive-multiple generation convention, and the remaining exact-root source comparison.
 
+- [Relative root groups in characteristic two: exact-root generation and positive multiples](../notes/errata/milne-relative-root-groups-characteristic-two.md) — A paper quaternionic type-C₃ counterexample to the standard-group interpretation of Milne's exact-root generators, with maximal tori, all-test matrices, a quadratic-form obstruction and the unchanged positive-multiple Library scope.
+
 - [Group schemes: published transport, dynamics and fpqc reflection](../notes/group-schemes/transport-dynamic-progress.md) — Eight verified transport constructions and three exact dynamic/central proofs, with their hypotheses, publication receipts and remaining thematic obligations.
 
 - [Group-scheme ledger, family 8: relative structure over general bases](../notes/group-schemes/ledger-family-8-relative.md) — Source-to-declaration rows for reductive group schemes over a base and fibrewise criteria, relative identity components, relative and maximal tori over local bases and Hom schemes, local splitting, root data and the isomorphism theorem over local rings, relative parabolic normalizers and quotients, relative Levi subgroups, descent, central isogenies over a base and the general-base dynamic constructions (smoothness over a ring and the scheme-level Levi decomposition), with exact hypotheses, status, evidence, owner tasks and missing statements.
