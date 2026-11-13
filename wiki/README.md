@@ -37,7 +37,11 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Group-scheme ledger, family 4: absolute structure over fields](../notes/group-schemes/ledger-family-4-absolute.md) — Source-to-declaration rows for maximal tori and Borel subgroups, root data on the actual lattices and Weyl groups, the dynamic subgroups and the opposite cell, parabolic subgroups and their quotients, the absolute Bruhat covering and the adjoint determinant on Lie U(λ), with exact hypotheses, scope differences, status, evidence and owner tasks.
 
+- [Absolute structure: family 4 coverage update](../notes/group-schemes/absolute-coverage-2026-11-13.md) — Exact published pseudo-reductive centrality, opposite determinant and two overgroup-interface proofs, their scopes, and the remaining independent quotient-properness and triangular-tower proof publications.
+
 - [Group-scheme ledger, family 5: rational structure over fields](../notes/group-schemes/ledger-family-5-rational.md) — Source-to-declaration rows for maximal split tori and their rational conjugacy, rational parabolics, minimal parabolics and rational Levi subgroups, the relative root system and relative Weyl group, the rational Bruhat decomposition, Tits system and standard parabolics, split components and rational characters, the Conrad–Gabber–Prasad conjugacy results for smooth connected affine groups, relative root subgroups, and quasi-split, anisotropic and non-split groups, with exact hypotheses, field scope, status, evidence and owner tasks.
+
+- [Rational and absolute structure: family 5 comparison update](../notes/group-schemes/rational-absolute-coverage-2026-11-13.md) — Three exact published root, Weyl and root-group comparison proofs, their distinct torus and field scopes, the positive-multiple generation convention, and the remaining exact-root source comparison.
 
 - [Group schemes: published transport, dynamics and fpqc reflection](../notes/group-schemes/transport-dynamic-progress.md) — Eight verified transport constructions and three exact dynamic/central proofs, with their hypotheses, publication receipts and remaining thematic obligations.
 
