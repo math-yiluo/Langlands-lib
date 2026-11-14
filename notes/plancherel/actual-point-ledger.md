@@ -1,9 +1,9 @@
 # Waldspurger on actual rational points: published units and structural ledger
 
 Author: Worker 3642 (formerly Worker 19), task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`
-(revision 1). Checked against Library commit `2e5aa9989a9e5567670a14eb7079e3a844641990`.
+(revision 1). Checked against Library commit `2e46b9cac0230529f50cdf96bbe4713c06701fc2`.
 
-This note lists the published modules of this task that realize items of Waldspurger's article
+This note lists the published modules used by this task that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
 local field (canonical topology `rationalPointTopology F G.X`), the external structural
 hypotheses they consume, and the open obligations on the chains through them. It complements the
@@ -43,6 +43,7 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalConstantTerm` | `RationalConstantTermEstimateStatement` (statement), `StandardLeviCartanCovering`, `rationalIsConjModulus`, `rationalConstantTermData`, `standardLeviMinimalModulusOf_eq_one`, `rationalLeviXi_pos`, `rationalConstantTerm`, `coe_rationalConstantTerm` | Proposition II.4.5 (p.262, statement) for the opposite `P̄_J` of a standard parabolic, in the form `ConstantTermEstimate`; the constant term `f ↦ f^{(P_J)}`, `C(G) → C(M_J)` of III.6 (p.272), defined from the estimate | the statement: S1, S5 (Cartan covering of `G`) and S6 (Cartan covering of `M_J`) at a compact open `K0`; S3, S4, `hM` as data. `ConstantTermData`, `IsConjModulus`: no structural input |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalCentralProjection` | `RationalSplitCenterHeightStatement` (statement), `range_le_standardLeviPoints`, `range_le_standardParabolicPoints`, `rationalMinimalModulus_eq_one_of_mem_center`, `rationalXi_mul_of_mem_range`, `rationalCentralWeights`, `rationalCentralProjection`, `RationalSplitCenterHeightStatement.enorm_rationalCentralProjection_le` | VIII.4 (p.327): the projections `p_χ` on `C(G)`; the estimate on `G¹` of the proof of Proposition VIII.4.1 (p.328); the statement: two height properties of `A_G(F)` and `G¹` derived from I.1, used implicitly in VIII.4 | the statement: none (connected reductive `G`, split component, closed `ρ`). `A_G(F) ⊆ P_J(F)`, `Ξ(ag) = Ξ(g)`: central `s`, S3. `p_χ`: `CentralWeights` (supplied by the statement) |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalLeviScheme` | `leviSchemeCompact` (`j⁻¹(K)`), `isGenericCocharacter_leviTorusHom`, `standardParabolic_leviTorusHom_empty`, `standardUnipotent_leviTorusHom_empty`, `leviSchemePointsEquiv`, `mem_standardParabolicPoints_leviTorusHom_iff`, `standardLeviMinimalModulus_leviHom`, `isIwasawaPair_leviSchemeCompact`, `rationalXi_leviScheme`, `rationalHeight_restrict_leviHom`, `xi_map` | I.1 (p.240, `M ∩ K` has for `M` the properties of `K` for `G`) and II.1 (p.252, `Ξ^M` is `Ξ` for `M`) for the Levi group scheme `L = Standard.leviScheme i ν J` with `j : L → G`: `P₀^L(F) = P₀(F) ∩ M_J(F)` and `U₀^L(F) = M_J(F) ∩ U₀(F)` through `j`, `δ₀^L = δ₀^{M_J}`, `Ξ` of `L` for `j⁻¹(K)` is `Ξ^{M_J} ∘ j`, `σ_{ρ ∘ j} = σ_ρ ∘ j` | connected reductive `G`, maximal split torus, generic `ν`; S3 (data); S5 (`hM`, data) for the Iwasawa pair and `Ξ`; no structural input for the parabolic, modulus and height comparisons |
+| `Geometry/Building/SpecialCompactLeviMinimalParabolicProof` | `Langlands.GroupScheme.standardLeviMinimalParabolicCompatibility : StandardLeviMinimalParabolicCompatibilityStatement` | algebraic part of Renard V.5.1(5), printed p.122 / PDF p.128, used in Waldspurger I.1 (p.240): connected reductivity of the actual standard Levi, ambient and intrinsic minimal parabolicity, all-test pullback equality, and the literal rational-point image intersection | arbitrary nonarchimedean local `F`, connected reductive `G`, maximal split torus `i`, generic `ν`, `J ⊆ simpleRelativeRoots i ν`, arbitrary universe and characteristic; no extra structural or analytic premise. The same torus and cocharacter are retained. This proves no inherited compact, Iwasawa or Cartan assertion |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalLeviTempered` | `hasXiBoundedCoefficients_comp_continuousMulEquiv_iff`, `hasTemperedCoefficients_comp_continuousMulEquiv_iff`, `leviSchemeRepresentation`, `hasXiBoundedCoefficients_leviSchemeRepresentation_iff`, `isRationalTempered_leviSchemeRepresentation_iff` | derived comparisons for III.2 (p.265) and the pure `cΞ^M` bound in the proof of VI.2.2 (pp.298–299), using I.1 (p.240) and II.1 (p.252): canonical same-carrier `SmoothRep` pullback identifies both the pure Xi bound and temperedness on `M_J(F)` with their counterparts on `L(F)` | generic comparisons: topological group isomorphism and corresponding arbitrary weights, using the same smooth algebraic dual and bound constants. Levi comparisons: connected reductive `G`, maximal split torus, generic `ν`, `J ⊆ Δ`, compact open `K`, S5 (`hM`, data). Only temperedness uses a finite nonempty matrix representation `ρ`; the pure Xi comparison uses no height or matrix representation. Closedness of `ρ` and admissibility are unnecessary |
 | `HarmonicAnalysis/HarishChandraSchwartz/GroupTransport` | `nu_comp_equiv`, `CompactOpenSubgroup.comap`, `Level.comap`, `Space.comapEquiv`, `Space.nu_comapEquiv` | derived compatibility for III.6 (pp.271–272): pullback along a topological group isomorphism preserves every defining seminorm and identifies the existing locally convex inductive-limit Schwartz spaces | arbitrary groups in independent universes with topologies, a topological group isomorphism and corresponding real weights; no positivity, measure or structural hypothesis |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalLeviSchwartz` | `rationalLeviSchwartzEquiv`, `rationalLeviSchwartzEquiv_apply`, `rationalLeviSchwartzEquiv_symm_apply`, `nu_rationalLeviSchwartzEquiv` | derived comparison for III.6 (pp.271–272): `C(M_J)` (the codomain of `rationalConstantTerm`) is continuously complex-linearly equivalent to the Schwartz space of `L(F)`, for `j⁻¹(K)` and `ρ ∘ j`, with equality of every `ν_r` | connected reductive `G`, maximal split torus, generic `ν`, `J ⊆ Δ`, compact open `K`, finite nonempty matrix representation `ρ`, S5 (`hM`, data); closedness or faithfulness of `ρ` is unnecessary |
@@ -114,7 +115,10 @@ generic constant term for a Haar measure on `U_J(F)` and `δ_{U_J}` (`RationalCo
 for the Levi group scheme `L` of `J`, connected reductivity, genericity of `ν` and the equality
 `P₀^L(F) = P₀(F) ∩ M_J(F)` through `j` (`RationalLeviScheme`); a split component of `L` whose
 image is the split centre `A_{M_I}(F)` of `M_I(F)` (`standardLeviSplitComponentStatement`, used in
-`RationalLeviDiscreteSeriesOrbitFiniteness`); the integrability condition `hint` of
+`RationalLeviDiscreteSeriesOrbitFiniteness`); ambient and intrinsic Levi minimal parabolicity,
+with all-test pullback equality and the literal image intersection
+(`Langlands.GroupScheme.standardLeviMinimalParabolicCompatibility`, detailed below); the
+integrability condition `hint` of
 `RationalFourierOrbitSmoothness`, given the coefficient bound `hcoeff` of Corollary III.1.2
 (`integrable_rationalCoefficientPairingIntegrand`, `RationalInducedConstantTermFourier`).
 
@@ -258,11 +262,36 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   closure.
   The structural premises of the group-level statements for `L` (S1 and S5 at a compact open
   subgroup of `L(F)`) remain separate inputs; the conditional proof of II.1.5 does not supply
-  them. The minimality assertions of `StandardLeviMinimalParabolicCompatibilityStatement`
-  remain unproved in the checked Library; focused proof Task 5969
-  `6cd262c7-c9dc-4c29-adf9-d75869e9d1c5` owns this target. Even its proof would leave the
-  inherited apartment, compact/open/maximality, Weyl, compact-parabolic product, Iwasawa and
-  Cartan obligations separate.
+  them. The algebraic target `StandardLeviMinimalParabolicCompatibilityStatement` is now
+  proved by `Langlands.GroupScheme.standardLeviMinimalParabolicCompatibility` in the published
+  [proof pair](../../Langlands/Geometry/Building/SpecialCompactLeviMinimalParabolicProof.md).
+  Write `L = Standard.leviScheme i ν J`, `j = Standard.leviHom i ν J`,
+  `iL = Standard.leviTorusHom i ν J`, and `Q_L = Standard.leviGenericParabolic i ν J`,
+  the dynamic parabolic of `ν ≫ iL`. For connected reductive `G`, maximal split `i`,
+  generic `ν` and `J ⊆ simpleRelativeRoots i ν`, its five clauses prove:
+
+  1. Connected reductivity of this actual `L`.
+  2. Minimal parabolicity of the chosen ambient `standardParabolic i ν ∅`.
+  3. Minimal parabolicity of the intrinsic `Q_L`.
+  4. `Q_L = (standardParabolic i ν ∅).comap j` as subgroup functors on every test scheme.
+  5. `j(Q_L(F)) = P₀(F) ∩ M_J(F)` as literal subgroups of `G(F)`, using
+     `rationalPoints.map j`.
+
+  The same torus factors through `iL ≫ j = i` and the same `ν` remains generic in `L`.
+  Minimality requires actual parabolic representability and comparison with every rational
+  parabolic subgroup functor by inclusion on every test scheme; it is not inferred from
+  rational points. The local-field wrapper has no characteristic, splitness or quasisplitness
+  restriction; the implemented algebraic proof uses only the field structure. The all-test
+  formulation is a derived refinement of Renard V.5.1(5), whose original assertion concerns
+  point groups.
+  Candidate `70063668-f5fc-4e53-9857-aab5b839eb03` (Workers 255 and 3642) passed the Lake
+  build and exact-target checks and independent review by Reviewer 960, and was published at
+  commit `73b1430a339b037d27e9096762b0400adb4fbd19`, retained in the checked Library.
+  Task 5969 `6cd262c7-c9dc-4c29-adf9-d75869e9d1c5` is done, with completion
+  `548b6687-68d7-4fa2-8516-b1923a907906` closed. This publication closes these five
+  algebraic clauses only. The inherited apartment, compact/open/maximality, Weyl,
+  compact-parabolic product, Iwasawa and Cartan obligations remain separate, as do S1 and S5
+  on `L(F)`, the explicit `hM` of the conditional consumers, and all analytic inputs.
 - **Normalization constant `c(G|M)`: construction and remaining comparisons.**
   `RationalPlancherelConstant` defines the actual common-compact integrals `leviGamma` on
   `P(F) ∩ L` and `Ū(F) ∩ L`, each with subgroup Haar measure assigning mass one to its
