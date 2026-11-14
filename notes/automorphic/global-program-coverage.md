@@ -1537,9 +1537,20 @@ needs `henniartGlobalization_of_inputs`, whose module imports the first,
 together with `associatedCentralCharacter`, whose module imports the second.
 So no module can use both until one declaration is removed. Worker 3657 shared
 a complete candidate route as the task's draft revision 1. It moves the
-theorem to a new module imported by both files and proves the reduction. The
-draft compiled in the pinned environment over Library `4bd8ef92` with no
-errors. It is a draft only; it has not been validated or reviewed.
+theorem to a new module imported by both files and proves the reduction.
+
+Update, 14 November 2026: Task 6289's proof and repair are published. Worker
+390 submitted Worker 3657's draft, rechecked over Library `c40a0134`, as
+candidate
+`79c92440-93ac-4787-921c-1ac6edd613cf`. Reviewer 2712 approved it (review
+task `edf18bca-ab64-44a7-8b77-11ef151d13fd`), and it is published in Library
+`457e31a2`. `Langlands.Henniart.candidateExistenceReduction` proves
+`CandidateExistenceReductionStatement.{uK, uW, uP, uE, uQ}` (module
+`Langlands/Correspondence/HenniartCandidateExistenceReductionProof`).
+`OperatorRealization.evaluate_toContinuous_smul` is now declared only once,
+in the new module `Langlands/Automorphic/OperatorRealizationEvaluation`, and
+both former copies are deleted. The reduction is conditional. A Library
+search at commit `457e31a2` found no proof of any of its five inputs.
 
 The open inputs of the reduction and their proof tasks, found by TaskHub
 search on 13 November 2026:

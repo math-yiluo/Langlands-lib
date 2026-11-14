@@ -1,17 +1,18 @@
 # The general reductive quotient `[G]`: construction, measure, reduction targets and open obligations
 
-Worker 112 wrote this note on 7 November 2026. Worker 3659 has revised it since, most recently
-on 13 November 2026 against Library commit `6948120d6f1b811bab3b7ee04997f6fba7aa9908`. The
-earlier 13 November revisions record the reductions of the chamber target (§2), now to one
-input, and of the slice-to-global growth target (§5, item 8). They also record the published
-proofs of unipotent compactness, of the two extra inputs of slice growth and of the split
-rank-one height bound. The latest revision records Worker 2's published proofs of the split
-overlap estimate and of the split fundamental-set theorem (§2, "Split groups") and a recheck of
-all composite terms at the commit above. Worker 3994 revised §2 on 14 November 2026 against
-Library commit `c0debd6f4dd02fdd68d70811cf610906b945a962`. Springer's compactness (C) and the
-three split and Galois inputs of its route are now proved, so finite volume has two open inputs.
-Worker 3994 rechecked the two §2 code blocks at that commit. The other statuses and task states
-are those of the 13 November revision. The note records the published
+Worker 112 wrote this note on 7 November 2026. Worker 3659 revised it several times on
+13 November 2026. Those revisions record the reductions of the chamber target (§2) and of the
+slice-to-global growth target (§5, item 8). They also record the published proofs of unipotent
+compactness, of the two extra inputs of slice growth, of the split rank-one height bound, of the
+split overlap estimate and of the split fundamental-set theorem. Worker 3994 revised §2 on
+14 November 2026 against Library commit `c0debd6f4dd02fdd68d70811cf610906b945a962` to record the
+proof of Springer's compactness (C). Worker 3659 revised the note again on 14 November 2026
+against Library commit `4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86`. This revision records Worker
+17's published proof of the general rank-one height bound (task `2c7559f6`). With it the chamber
+reduction (F) is composable. Finite volume, the good Siegel reduction and slice-to-global growth
+now have one open input: finite-place Iwasawa existence (`c0b4e50a`). Worker 5269's exact proof
+of (F) (candidate `c5f02744`, task `5cf10ec8`) has an approving review, but it is not in the
+Library at that commit. The note records the published
 Lean construction of the Getz–Hahn quotient `[G] = A_G G(F) \ G(A_F)`, its measure and its `L²`
 and cuspidal spaces, for a group scheme `G` over a number field `F` whose underlying scheme is
 affine and locally of finite type. All the adelic constructions below assume both conditions. It
@@ -20,15 +21,16 @@ rest. This is the first block of standing program `34b81620-20d7-4059-9b08-6bedd
 under task `7d827a3e-4245-4c06-ad81-48f413c26faf` (Workers 94 and 112 in an earlier instance,
 Worker 3659 now).
 
-This note is not an accepted Lean result. Task states marked "13 November" were read with
-`inspect` and `search` on 13 November 2026 and can change; the states of the other proof tasks
-were not re-read for this revision. Proof statuses come from the Library at the commit above.
+This note is not an accepted Lean result. A task state given with a date was read with
+`inspect` or `search` on that date and can change; the states of proof tasks given without a date
+were not re-read for this revision. Proof statuses come from the Library at commit `4f4af6ba`.
 "Proved" means that the Library contains a theorem whose type is the statement. "Composable"
-means that a term built only from published theorems has the statement's type. On 13 November
+means that a term built only from published theorems has the statement's type. On 14 November
 2026 Worker 3659 checked every composable and conditional term named in this note with
 `lean_check`, in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit
-`6948120d`. Every such term used only `propext`, `Classical.choice` and `Quot.sound`. A
-composable target still needs an accepted exact-target proof.
+`4f4af6ba` (one build, with no errors or warnings). Every such term used only `propext`,
+`Classical.choice` and `Quot.sound`. A composable target still needs an accepted exact-target
+proof.
 
 Related notes:
 - [Getz–Hahn (6.1): the literal algebraic tensor removes cusp forms](getz-hahn-literal-tensor-boundary.md)
@@ -109,8 +111,8 @@ measure, and Weil compatibility.
 
 | Target | Source | Proof task (state) | Status |
 | --- | --- | --- | --- |
-| `AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement` (`AdelicFiniteVolumeStatement`) | GH Thm 2.6.3 | `40747bb3` (Worker 3994, waiting, 14 November) | Open. Composable from `AdelicGoodSiegelReductionStatement` alone, see below. |
-| `AdelicGroupPoints.ConnectedReductiveFiniteVolumeStatement` | GH Thm 2.6.3, reductive case | none | Open. Follows from the target above, or from the good Siegel reduction. |
+| `AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement` (`AdelicFiniteVolumeStatement`) | GH Thm 2.6.3 | `40747bb3` (Worker 3994, claimed, 14 November) | Open. Follows from finite-place Iwasawa (`c0b4e50a`) alone, see below. |
+| `AdelicGroupPoints.ConnectedReductiveFiniteVolumeStatement` | GH Thm 2.6.3, reductive case | none | Open. Follows from finite-place Iwasawa alone, see below; also from the target above, or from the good Siegel reduction. |
 | `RestrictionSplitCentre.ConnectedReductiveQuotientFiniteVolumeStatement` | finite volume of `[G]` | none | Open. Follows from the previous row by `connectedReductiveQuotientFiniteVolumeStatement_of_normOne`. |
 | `AdelicGroupPoints.AdelicHaarUnimodularityStatement` | GH Lemma 3.6.4 | `73a76075` | Proved: `adelicHaarUnimodularity`. Its second conjunct `ConnectedReductiveHaarRightInvariantStatement` is therefore `adelicHaarUnimodularity.2`. |
 | `AdelicGroupPoints.AdelicModularCharacterAdjointDeterminantStatement` | adelic modulus | `92af27a4` | Composable: `adelicModularCharacterAdjointDeterminantStatement_of_local localModularCharacterAdjointDeterminant`. |
@@ -120,7 +122,7 @@ measure, and Weil compatibility.
 | `GroupScheme.CentralSplitTorusCharacterStatement` | structural | `4f432abe` | Proved: `centralSplitTorusCharacter`. |
 | `InfinitePlaceGroupPoints.ParabolicIwasawaStatement` | archimedean Iwasawa | `4ad309b4` | Proved: `parabolicIwasawaStatement`. |
 | `InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement` | GH Thm B.4.1 | `cff6372d` | Proved: `leviCompatibleIwasawaStatement` (Worker 4320). |
-| `FinitePlaceGroupPoints.ParabolicIwasawaStatement` | GH Prop. B.4.2, Thm B.4.3 | `c0b4e50a` (Worker 4307, waiting, 13 November) | Open. The task's shared draft (revision 3, unpublished and unreviewed) derives it, by `parabolicIwasawaStatement_of_valuationApartmentAxioms`, from three Bruhat–Tits propositions with proof tasks `17c6d83c` (valuation data satisfying the apartment axioms, KP Theorem 9.6.5), `20fbe465` (apartment-only affine Iwahori–Tits) and `7aba1f84` (KP Axiom 4.1.8 (2), (3)). |
+| `FinitePlaceGroupPoints.ParabolicIwasawaStatement` | GH Prop. B.4.2, Thm B.4.3 | `c0b4e50a` (Worker 4307, waiting, 14 November) | Open; the one open input of finite volume. The task's shared draft (revision 3, unpublished and unreviewed) derives it, by `parabolicIwasawaStatement_of_valuationApartmentAxioms`, from three Bruhat–Tits propositions with proof tasks `17c6d83c` (valuation data satisfying the apartment axioms, KP Theorem 9.6.5), `20fbe465` (apartment-only affine Iwahori–Tits) and `7aba1f84` (KP Axiom 4.1.8 (2), (3)). All three were waiting on 14 November. |
 | `IntegralIwasawaFamily.ExistenceStatement` | GH §2.4, App. B | `74d01809` (Worker 4256) | Proved: `IntegralIwasawaFamily.existenceStatement` (module `IntegralIwasawaFamilyProof`), which is `existenceStatement_of_maximalCompact` applied to the proved `IntegralModel.maximalCompactStatement`. |
 | `AdelicGroupPoints.ParabolicIwasawaStatement` | GH Thm 2.7.1 | `77a1dd37` | Open. Follows from the finite-place row alone: `parabolicIwasawaStatement_of_archimedean_finite_integral InfinitePlaceGroupPoints.parabolicIwasawaStatement hfinite IntegralIwasawaFamily.existenceStatement`. |
 | `AdelicSiegelFactors.AdelicCompatibleIwasawaCompactStatement` | MW I.1.4 | none | Open. Follows from the finite-place row alone by `adelicCompatibleIwasawaCompactStatement_of_local`, with the proved Levi-compatible archimedean input and `IntegralIwasawaFamily.existenceStatement`. |
@@ -130,12 +132,13 @@ measure, and Weil compatibility.
 | `AdelicSiegelFactors.SimpleRootBoxCompactStatement` | chamber box | none | Composable: `simpleRootBoxCompactStatement_of_rootComplement relativeRootNegation relativeCharacterRootComplement`. |
 | `AdelicSiegelFactors.SiegelProductFiniteMeasureStatement` | MW I.1.13, I.2.1 | `bb7864ac` (ready, unstaffed, 13 November) | Composable from the three rows above by `siegelProductFiniteMeasureStatement_of_inputs`; the checked term `siegelMeasure` below uses the published `AdelicGroupPoints.unipotentRationalQuotientCompact`. |
 | `AdelicSiegelFactors.CentralSplitCompactQuotientStatement` | Springer (C) | `3d7b2bb6` | Proved: `AdelicSiegelFactors.centralSplitCompactQuotient` (module `AdelicSpringerCentralCompactnessProof`); see "Split groups" below. |
-| `AdelicSiegelFactors.AdelicSiegelChamberReductionStatement` | Springer (F) | `5cf10ec8` (Workers 5269 and 10, waiting, 13 November) | Open. Follows from `RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (proof task `2c7559f6`) alone by `adelicSiegelChamberReduction_of_rankOne_height`, see below. |
-| `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` | GH §2.7, MW I.2.1 | `6adbbc46` (Worker 4149, waiting, 13 November) | Open. Composable from two open inputs, see below. It implies `AdelicSiegelReductionStatement`. |
+| `RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` | Springer §3.6 | `2c7559f6` | Proved: `RepresentationGrowth.rankOneParabolicRationalOrbitHeightBound` (module `AdelicRankOneOrbitHeightBoundProof`, Worker 17), see below. |
+| `AdelicSiegelFactors.AdelicSiegelChamberReductionStatement` | Springer (F) | `5cf10ec8` (Worker 5269, verifying, 14 November) | Composable: `adelicSiegelChamberReduction_of_rankOne_height rankOneParabolicRationalOrbitHeightBound`. Worker 5269's exact proof `adelicSiegelChamberReduction` (module `AdelicSiegelChamberReductionProof`, candidate `c5f02744`) has an approving review; it is not in the Library at `4f4af6ba`. |
+| `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` | GH §2.7, MW I.2.1 | `6adbbc46` (Worker 4149, waiting, 14 November) | Open. Follows from finite-place Iwasawa alone, see below. It implies `AdelicSiegelReductionStatement`. |
 
-**Finite volume from two open inputs.** The following term is built from published
-theorems (namespaces `Langlands.Global` and `Langlands.GroupScheme` opened). It was checked
-verbatim at `c0debd6f`, with axioms `propext`, `Classical.choice` and `Quot.sound` only.
+**Finite volume from one open input.** The following terms are built from published
+theorems (namespaces `Langlands.Global` and `Langlands.GroupScheme` opened). They were checked
+verbatim at `4f4af6ba`, with axioms `propext`, `Classical.choice` and `Quot.sound` only.
 
 ```lean
 theorem goodSiegel_of_inputs
@@ -151,50 +154,22 @@ theorem goodSiegel_of_inputs
   obtain ⟨C, t, hC, hcover⟩ := AdelicSiegelFactors.exists_isSiegelCover_of_chamber
     AdelicSiegelFactors.centralSplitCompactQuotient hchamber F G hG T i ν T₀ j hS K hK
   exact ⟨T, i, ν, T₀, j, hS, C, t, hcover, hC ▸ hKc⟩
+
+theorem chamber_published :
+    AdelicSiegelFactors.AdelicSiegelChamberReductionStatement.{u} :=
+  AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height
+    RepresentationGrowth.rankOneParabolicRationalOrbitHeightBound
+
+theorem goodSiegel_of_finite
+    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
+    AdelicSiegelFactors.AdelicGoodSiegelReductionStatement.{u} :=
+  goodSiegel_of_inputs chamber_published hfinite
 ```
 
-Then `connectedReductiveFiniteVolumeStatement_of_siegel (goodSiegel_of_inputs hchamber
-hfinite)` applied to the composable `SiegelProductFiniteMeasureStatement` gives
-`ConnectedReductiveFiniteVolumeStatement`, and at universe `0`
-`RestrictionSplitCentre.connectedReductiveQuotientFiniteVolumeStatement_of_normOne` turns that
-into finite volume of `[G]`. Further, `AdelicGroupPoints.normOneFiniteVolumeInputsStatement`
-applied to
-`characteristicZeroLeviDecomposition`, `perfectFieldUnipotentSplit`,
-`splitUnipotentAffineTorsorStatement`, a good Siegel reduction, the composable
-`PositiveTorusUnipotentModulusStatement`, `relativeRootNegation` and
-`relativeCharacterRootComplement` gives `NormOneRationalQuotientFiniteVolumeStatement`. So GH
-Theorem 2.6.3 (finite volume of `G(F) \ G(A_F)^1` for every smooth connected `G`) reduces to
-exactly two open propositions: the chamber reduction (F) (`5cf10ec8`) and finite-place
-Iwasawa existence (`c0b4e50a`). Springer's compactness (C), the third input of the
-12 November version, is now proved. The owners of tasks
-`6adbbc46`, `40747bb3` and `cff6372d` were sent the four-input terms on 10 November 2026. The
-owners of `6adbbc46`, `40747bb3`, `77a1dd37` and `c0b4e50a` were sent the three-input update on
-12 November 2026. The closing proofs remain theirs.
-
-**The chamber reduction (F) from one input.** The published
-`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height` (module
-`AdelicChamberFromRankOneHeight`, Worker 5269) proves `AdelicSiegelChamberReductionStatement`
-at every universe from one proposition,
-`RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (module
-`AdelicRankOneOrbitHeightBound`). This is the arithmetic rank-one assertion. Take `G` with
-exactly one simple relative root and a matrix representation in which the stabilizer of a
-coordinate line is exactly the minimal standard parabolic. Then one constant `C` works for every
-norm-one adelic point `g`: some rational right translate of `g` gives the selected coordinate
-vector height at most `C`. Proof task `2c7559f6`.
-
-The earlier published theorem
-`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height_and_coordinates` (module
-`AdelicChamberFromRootLeviBounds`) also needed
-`AdelicSiegelFactors.MinimalParabolicNormCoordinatesStatement` (module
-`AdelicMinimalParabolicNormCoordinates`, proof task `086ffab5`). That statement asks for a
-homeomorphism `N(𝔸_F) × (M(𝔸_F)¹ × A_{T₀}) ≃ₜ P(𝔸_F) ∩ G(𝔸_F)¹` for the canonical minimal
-parabolic. The new module uses only the existence of such factors. It defines this weaker
-property as `HasMinimalParabolicNormFactors` and proves it for every actual Siegel setup of a
-connected reductive `G` (`IsSiegelAlgebraicSetup.hasMinimalParabolicNormFactors`). The
-coordinate statement is therefore no longer an input of finite volume. Finite volume has two
-open inputs at the level of statements with proof tasks: the rank-one height bound and
-finite-place Iwasawa. The following composites, built on `goodSiegel_of_inputs` above, were
-checked verbatim at `c0debd6f` with the same axioms:
+`goodSiegel_of_inputs` fills the compactness premise of `exists_isSiegelCover_of_chamber` with
+the published (C), `centralSplitCompactQuotient`. `chamber_published` is the composable term for
+(F) (see the next paragraph). The finite-measure statement is composable, and the three
+finite-volume statements follow from finite-place Iwasawa alone:
 
 ```lean
 theorem siegelMeasure : AdelicSiegelFactors.SiegelProductFiniteMeasureStatement.{u} :=
@@ -205,25 +180,82 @@ theorem siegelMeasure : AdelicSiegelFactors.SiegelProductFiniteMeasureStatement.
     (AdelicSiegelFactors.simpleRootBoxCompactStatement_of_rootComplement
       relativeRootNegation relativeCharacterRootComplement)
 
-theorem reductiveFiniteVolume_of_rankOne
-    (harith : RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement.{u})
+theorem reductiveFiniteVolume_of_finite
     (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
     AdelicGroupPoints.ConnectedReductiveFiniteVolumeStatement.{u} :=
   AdelicSiegelFactors.connectedReductiveFiniteVolumeStatement_of_siegel
-    (goodSiegel_of_inputs
-      (AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height harith) hfinite)
-    siegelMeasure
+    (goodSiegel_of_finite hfinite) siegelMeasure
+
+theorem quotientFiniteVolume_of_finite
+    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{0}) :
+    RestrictionSplitCentre.ConnectedReductiveQuotientFiniteVolumeStatement :=
+  RestrictionSplitCentre.connectedReductiveQuotientFiniteVolumeStatement_of_normOne
+    (reductiveFiniteVolume_of_finite hfinite)
+
+theorem normOneFiniteVolume_of_finite
+    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
+    AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement.{u} :=
+  AdelicGroupPoints.normOneFiniteVolumeInputsStatement characteristicZeroLeviDecomposition
+    perfectFieldUnipotentSplit splitUnipotentAffineTorsorStatement
+    (goodSiegel_of_finite hfinite)
+    (AdelicSiegelFactors.positiveTorusUnipotentModulus_of_coordinates
+      positiveTorusTriangularCoordinates)
+    relativeRootNegation relativeCharacterRootComplement
 ```
+
+`quotientFiniteVolume_of_finite` is stated at universe `0` because finite volume of `[G]` is a
+statement about number fields in `Type`. So GH Theorem 2.6.3 (finite volume of
+`G(F) \ G(A_F)^1` for every smooth connected `G`) reduces to exactly one open proposition:
+finite-place Iwasawa existence (`c0b4e50a`). Springer's compactness (C) is proved, and the
+chamber reduction (F) is composable. The owners of tasks
+`6adbbc46`, `40747bb3` and `cff6372d` were sent the four-input terms on 10 November 2026. The
+owners of `6adbbc46`, `40747bb3`, `77a1dd37` and `c0b4e50a` were sent the three-input update on
+12 November 2026. The owners of `6adbbc46`, `40747bb3`, `a2fea0a3` and `c0b4e50a` were sent the
+one-input terms on 14 November 2026. The closing proofs remain theirs.
+
+**The chamber reduction (F) from the rank-one bound.** The published
+`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height` (module
+`AdelicChamberFromRankOneHeight`, Worker 5269) proves `AdelicSiegelChamberReductionStatement`
+at every universe from one proposition,
+`RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` (module
+`AdelicRankOneOrbitHeightBound`). This is the arithmetic rank-one assertion. Take `G` with
+exactly one simple relative root and a matrix representation in which the stabilizer of a
+coordinate line is exactly the minimal standard parabolic. Then one constant `C` works for every
+norm-one adelic point `g`: some rational right translate of `g` gives the selected coordinate
+vector height at most `C`. It is proved by
+`RepresentationGrowth.rankOneParabolicRationalOrbitHeightBound` (module
+`AdelicRankOneOrbitHeightBoundProof`, Worker 17, proof task `2c7559f6`). That theorem is
+`rankOneParabolicRationalOrbitHeightBound_of_galoisInputs splitGaloisOverlapMatching
+(galoisBorelTwisting_of galoisTwistNormOne galoisTwistSubgroup)`. The implication
+`rankOneParabolicRationalOrbitHeightBound_of_galoisInputs` fills in the published split
+fundamental set and split overlap estimate (see "Split groups" below), following Springer
+§3.6. So (F) is composable (`chamber_published` above).
+
+The earlier published theorem
+`AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height_and_coordinates` (module
+`AdelicChamberFromRootLeviBounds`) also needed
+`AdelicSiegelFactors.MinimalParabolicNormCoordinatesStatement` (module
+`AdelicMinimalParabolicNormCoordinates`, proof task `086ffab5`). That statement asks for a
+homeomorphism `N(𝔸_F) × (M(𝔸_F)¹ × A_{T₀}) ≃ₜ P(𝔸_F) ∩ G(𝔸_F)¹` for the canonical minimal
+parabolic. The new module uses only the existence of such factors. It defines this weaker
+property as `HasMinimalParabolicNormFactors` and proves it for every actual Siegel setup of a
+connected reductive `G` (`IsSiegelAlgebraicSetup.hasMinimalParabolicNormFactors`). The
+coordinate statement is therefore not an input of finite volume. The previous revision showed a
+term `reductiveFiniteVolume_of_rankOne` with the rank-one bound as a premise; now that the bound
+is proved, `reductiveFiniteVolume_of_finite` above supersedes it.
 
 **Split groups.** Several published results treat split groups: groups whose Siegel setup
 torus `i` is also a maximal torus (`IsMaximalTorus i`). None of them alone proves a general
-(non-split) target of this block; with the Galois twisting below they give (C).
+(non-split) target of this block. With the Galois twisting and matching below they give (C) and
+the general rank-one bound.
 
 `RepresentationGrowth.SplitRankOneParabolicRationalOrbitHeightBoundStatement` (module
 `AdelicSplitRankOneOrbitHeightBound`, Worker 5253) is the rank-one statement above with the
 extra hypothesis `IsMaximalTorus i`. It is proved by
 `RepresentationGrowth.splitRankOneParabolicRationalOrbitHeightBound` (module
-`SplitRankOneAdelic`, Worker 10). The general rank-one statement of `2c7559f6` remains open.
+`SplitRankOneAdelic`, Worker 10). The general rank-one statement of `2c7559f6` is now proved
+too (see above). Its proof uses the split fundamental set, which in turn is derived from the
+split bound (next paragraph).
 
 `AdelicSiegelFactors.SplitAdelicFundamentalSetStatement` (module `AdelicSplitFundamentalSet`,
 Worker 83) is the split case of Springer's fundamental-set theorem. It asserts that every actual
@@ -249,9 +281,10 @@ gives such an `Ω` inside `G(𝔸_F)¹` for the canonical minimal parabolic. The
 not subgroups. The good Siegel reduction (through `IsSiegelCover`) and
 `SiegelProductFiniteMeasureStatement` concern a compact subgroup with
 `IsParabolicIwasawaCompact`. The published route to finite volume obtains that subgroup from
-finite-place Iwasawa, so that statement is still one of its two open inputs. No published
-statement records a version of the Siegel-cover or Siegel-measure steps for a compact set in
-place of the subgroup.
+finite-place Iwasawa, so that statement is its one open input. No published statement records
+a version of the Siegel-cover or Siegel-measure steps for a compact set in place of the
+subgroup. On 14 November 2026 the checkpoint of task `40747bb3` (Worker 3994) described an
+unpublished draft of a route that avoids finite-place Iwasawa this way.
 
 The proof of (C) (`3d7b2bb6`) passes through split groups over a splitting field. Worker 5268
 published three statements for it, all now proved:
@@ -421,18 +454,16 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
 
 ## 5. Open obligations
 
-1. Finite volume: the open inputs of §2. These are the chamber reduction (F) (`5cf10ec8`) and
-   finite-place Iwasawa existence (`c0b4e50a`); Springer's compactness (C) (`3d7b2bb6`) is now
-   proved. The integral Iwasawa family, `74d01809`, is proved. (F) reduces by a published theorem to the
-   input of `2c7559f6` alone. On 13 November `2c7559f6` had Workers 17 and 5253 as members; at
-   the last reading Worker 5253 was active and Worker 17 waiting. Its split case is proved (§2,
-   "Split groups"). On the same day
-   `5cf10ec8` was waiting (Workers 5269 and 10); it was still waiting on 14 November.
-   The coordinate task `086ffab5` is no longer needed for finite volume. The draft route of
-   `c0b4e50a` (waiting, 14 November) waits on `17c6d83c`, `20fbe465` and `7aba1f84`. After
-   these come the closing proofs of `6adbbc46` and `40747bb3`. The reductive and `[G]`
-   finite-volume statements then follow by published implications (§2). They have no proof
-   tasks yet, because such tasks would only wait on the inputs above.
+1. Finite volume: the one open input of §2, finite-place Iwasawa existence (`c0b4e50a`).
+   Springer's compactness (C) (`3d7b2bb6`) and the general rank-one bound (`2c7559f6`) are
+   proved, so the chamber reduction (F) is composable. Worker 5269's exact proof of (F)
+   (candidate `c5f02744`, task `5cf10ec8`, verifying on 14 November) has an approving review
+   and is not in the Library at `4f4af6ba`. The integral Iwasawa family, `74d01809`, is proved.
+   The coordinate task `086ffab5` is not needed for finite volume. The draft route of
+   `c0b4e50a` (waiting, 14 November) waits on `17c6d83c`, `20fbe465` and `7aba1f84`, which were
+   all waiting on 14 November. After `c0b4e50a` come the closing proofs of `6adbbc46` and
+   `40747bb3`. The reductive and `[G]` finite-volume statements then follow by the terms of §2.
+   They have no proof tasks yet, because such tasks would only wait on `c0b4e50a`.
 2. Exact-target proofs of the composable statements in §2. Worker 3659 published proof tasks
    for four of them, each with its verified composite term in the task context:
    - `08c16c96`: `UnipotentRationalQuotientCompactStatement`, now done: Worker 126's proof
@@ -467,7 +498,8 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
    (§3), for connected reductive `G` and a closed embedding, with proof task `a2fea0a3`
    (Task 5644), published on 12 November 2026 and claimed by Worker 5644 on 13 November;
    Worker 5414 joined it as second executor the same day. Later on 13 November the task's state
-   was waiting: both executors were waiting for the good Siegel reduction of `6adbbc46`.
+   was waiting: both executors were waiting for the good Siegel reduction of `6adbbc46`. It was
+   still waiting on 14 November.
    Worker 5152 has published a reduction along the route of its contract:
    `GroupSchemeFunctions.adelicSliceModerateGrowthStatement_of_siegel` (module
    `AdelicRationalHeightReduction`) proves the target from three propositions:
@@ -485,8 +517,9 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
    `AdelicSiegelNormMinimalityProof`, Workers 5414 and 5644, proof task `90d6d310`) and
    `RepresentationGrowth.centralNormOneHeightFactorStatement` (module
    `AdelicCentralPositiveHeightProof`, Worker 5414, proof task `d2e766b3`). So the slice growth
-   target follows from the good Siegel reduction alone. The following term was checked verbatim
-   at `6948120d` with the same axioms as in §2:
+   target follows from the good Siegel reduction alone. With `goodSiegel_of_finite` (§2) it
+   therefore has the same one open input as finite volume, finite-place Iwasawa. The following
+   terms were checked verbatim at `4f4af6ba` with the same axioms as in §2:
 
    ```lean
    theorem sliceGrowth_of_good
@@ -496,11 +529,12 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
        (AdelicSiegelFactors.adelicSiegelReductionStatement_of_good hgood)
        AdelicSiegelFactors.siegelNormMinimalityStatement
        RepresentationGrowth.centralNormOneHeightFactorStatement
-   ```
 
-   With `goodSiegel_of_inputs` and `adelicSiegelChamberReduction_of_rankOne_height` (§2), slice
-   growth therefore has the same open inputs as finite volume. Since (C) is proved, these are
-   the rank-one height bound and finite-place Iwasawa.
+   theorem sliceGrowth_of_finite
+       (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
+       Langlands.Automorphic.GroupSchemeFunctions.AdelicSliceModerateGrowthStatement.{u} :=
+     sliceGrowth_of_good (goodSiegel_of_finite hfinite)
+   ```
 
    For `GL_n`, the original matrix slice growth transfers to the slice-growth hypothesis of the statement
    (`continuousGeneralLinearEquiv_mem_polynomialGrowth_of_closedImmersion`, module
