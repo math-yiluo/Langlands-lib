@@ -16,6 +16,18 @@ numbers are given first and PDF page numbers second; PDF = printed + 6. Library
 facts refer to commit `16c60abdc019c1181a2734d3052305ec3d6e7b85` unless stated
 otherwise.
 
+The F3 update of 14 November 2026 checks the VI.6.1 Proposition, VI.6.3 Corollary
+and VI.9.4 rows against Library `757a67934ac7327ca3de64f9c869f76ea240ec44`.
+Worker 4's
+[`StandardIwahoriDecompositionStatements`](../../Langlands/Representation/Jacquet/StandardIwahoriDecompositionStatements.lean)
+and its [paired Markdown](../../Langlands/Representation/Jacquet/StandardIwahoriDecompositionStatements.md)
+were published as candidate `3c7e8531-2766-4ff7-ae8b-10e9e12b64cb`, independently
+approved by Reviewer 1820 and integrated by receipt
+`b7827ff04f8c493fa12fcd662df919af` at Library
+`410c79471b79f65a02fb0f6070da7f2800793ff3`. Both files at the checked Library commit
+match the frozen candidate hashes. The three statements have open proofs; their
+comparison implications are proved. Other rows retain their earlier dated status.
+
 ## How the rows were checked
 
 Worker 1222 matched each headed item with the declarations whose docstring or
@@ -43,7 +55,7 @@ Namespace abbreviations: `CS` = `Langlands.CuspidalSupport`,
 Status codes:
 
 - **P**: proved; the named theorem has exactly the statement's type.
-- **S**: statement published; a proof task is open.
+- **S**: statement published; its proof is open (a proof task is named when verified).
 - **D**: definition or construction.
 - **C**: covered by a published statement that is stronger or equivalent, or
   derived from published statements; the row says which.
@@ -146,12 +158,12 @@ Status codes:
 | --- | --- | --- | --- |
 | VI.6.1 Theorem (Jacquet lemma, admissible `V`) | 176 / 182 | `RPF.GeneralizedJacquetLemmaStatement` (VI.9.1 form: all smooth `V`, but only dynamic parabolics and compact open `K` admitting an `M`-central `g` with `IsIwahoriContraction`); generic admissible form `Langlands.Jacquet.fixedJacquetMap_surjective_of_iwahoriContraction` (`Jacquet/IwahoriContractionAdmissibility`), given one explicit contraction | Restricted scope: the VI.9.1 statement is S (task cac6f709); the admissible form is P under its explicit contraction hypothesis. G: the source's scope (every `K` with an Iwahori decomposition along an arbitrary parabolic) is not stated; it needs a contracting element for such `K` and transport from dynamic to arbitrary parabolics (framework comparison F2 below) |
 | VI.6.1 Corollary | 176 / 182 | `RP.ArbitraryParabolicJacquetAdmissibilityStatement` | P: `arbitraryParabolicJacquetAdmissibility` |
-| VI.6.1 Proposition and (VI.6.1.2) | 177 / 183 | `J.StandardCanonicalSectionStatement` (standard parabolics; `K` with the V.5.2 (ii)–(iv) basis-member conditions) | P: `standardCanonicalSection`, restricted scope: the basis-member conditions may cover fewer `K` than the source's Iwahori decomposition (framework comparison F3 below) |
+| VI.6.1 Proposition and (VI.6.1.2) | 177 / 183 | `J.StandardIwahoriCanonicalSectionStatement` (standard parabolics; every compact open `K` with the ordered Iwahori decomposition); earlier `J.StandardCanonicalSectionStatement` | S: the Iwahori-only statement has an open proof. The earlier basis-member special case is P: `standardCanonicalSection`. F3 is stated for standard parabolics; the arbitrary-parabolic scope remains separate |
 | VI.6.2 Lemma | 178 / 184 | `AG.DynamicInductionIrreducibleFiniteLengthStatement`; main assertion `RP.LeviInductionFiniteLengthStatement`, `AG.DynamicInductionFiniteLengthStatement` | S: tasks 02257068, 9b0a1303, 174d2de0 |
 | VI.6.3 Theorem (Howe) | 178 / 184 | `AG.RationalPointsFiniteLengthAdmissibleStatement`, `Langlands.SmoothRep.RationalPointsFinitelyGeneratedAdmissibleFiniteLengthStatement` | S: tasks 96949545, 03a0d235; finite length ⇒ finite type is immediate (a finite-length object is Noetherian) |
 | VI.6.3 Lemma | 178 / 184 | `Langlands.Jacquet.FixedVectorsGenerationStatement` (theorem `fixedVectorsGeneration`), `NormalizedJacquetBridge.normalized_generation` | P |
 | VI.6.3 Proposition | 178 / 184 | `CS.SupercuspidalSubquotientFixedVectorsStatement` (every compact open `K`) | S: task e0efe074 |
-| VI.6.3 Corollary | 179 / 185 | the VI.9.4 Corollary statement `J.StandardFixedVectorSubquotientGenerationStatement` (no admissibility, but `K` with the V.5.2 (ii)–(iv) basis-member conditions) | Restricted scope: S (task e8bd5ada) for those `K`. G: the source's `K` (normal in `K₀`, Iwahori decompositions along the standard parabolics) is not covered when the basis-member conditions are stronger (F3) |
+| VI.6.3 Corollary | 179 / 185 | the VI.9.4 Corollary statement `J.StandardIwahoriFixedVectorSubquotientGenerationStatement` (no admissibility; `K` normal in `K₀` with Iwahori decompositions along every standard parabolic) | C: the admissible special case of this published statement, whose proof is open. The earlier basis-member version `J.StandardFixedVectorSubquotientGenerationStatement` remains S: task e8bd5ada |
 | VI.6.4 (finite length of Jacquet modules) | 179 / 185 | `RP.LeviJacquetFiniteLengthStatement`, `AG.DynamicJacquetFiniteLengthStatement` | S: tasks 9b0a1303, 73e60be8 |
 
 ## VI.7 The Bernstein decomposition
@@ -207,8 +219,8 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.9.1 Proposition, `b ≤ c(G, K)`; Remarks 1–3 | 197–198 / 203–204 | `RPF.GeneralizedJacquetRemarksStatement`, `RP.GeneralizedJacquetContractingRangeStatement` | R: candidate `a6dc47dd` |
 | VI.9.2 (VI.9.2.2) stability for the universal induced family | 198–199 / 204–205 | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` and the VI.9.1–VI.9.3 map (`uniform-compression-progress.md`) | St: step of the VI.9.1 Proposition; Jacquet-family finiteness P |
 | VI.9.3 extension to all smooth representations | 200 / 206 | conditional helpers in the VI.9.1–VI.9.3 map | St |
-| VI.9.4 Corollary | 201 / 207 | `J.StandardFixedVectorSubquotientGenerationStatement` | S: task e8bd5ada; the statement assumes the V.5.2 basis conditions on `K`, which may cover fewer `K` than the source |
-| VI.9.4 Proposition | 201 / 207 | `J.StandardFixedVectorHeckeEquivalenceStatement` (same `K` conditions; equivalence with modules over the measure-free `LevelHeckeAlgebra ℂ K`) | Restricted scope: S (task e8bd5ada). G: the comparison of `LevelHeckeAlgebra ℂ K` with the Haar-measure `H(G, K)` (`Hecke.HeckeAlgebra.Corner`), the identification of the inverse functor, and the source's class of `K` (F3) are not stated |
+| VI.9.4 Corollary | 201 / 207 | `J.StandardIwahoriFixedVectorSubquotientGenerationStatement`; earlier `J.StandardFixedVectorSubquotientGenerationStatement` | S: the Iwahori-only statement has an open proof and uses the source's conditions on `K`. Task e8bd5ada concerns the earlier basis-member version |
+| VI.9.4 Proposition | 201 / 207 | `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement`; earlier `J.StandardFixedVectorHeckeEquivalenceStatement` (modules over the measure-free `LevelHeckeAlgebra ℂ K`) | S: the Iwahori-only statement has an open proof; task e8bd5ada concerns the earlier basis-member version. G: the comparison with the Haar-measure `H(G, K)` (`Hecke.HeckeAlgebra.Corner`) and identification of the inverse functor remain unstated |
 | VI.9.5 (`r_P^G` preserves `B`-admissibility) | 201 / 207 | `AF.JacquetAdmissibleStatement`; reduction `AF.JacquetAdmissibleReductionStatement` | S: task 8057266d; reduction P |
 | VI.9.6 first Theorem (second adjointness) | 201 / 207 | `RP.LeviSecondAdjointnessStatement` | S: tasks c0fa1878, eac5190f |
 | VI.9.6 second Theorem (`r_{P̄}^G π̃ ≅ (r_P^G π)~`) and the equivalence of the two | 201–202 / 207–208 | `RP.LeviJacquetContragredientStatement`, `RP.LeviSecondAdjointnessContragredientEquivalenceStatement` | S: tasks c0fa1878, 3ec57776 |
@@ -247,8 +259,9 @@ printed VI.8 assertions to their units; this table gives the headed items.
 
 ## Framework comparisons used above
 
-These comparisons are needed before the restricted-scope rows give the source's
-full statements. Each is a genuine gap unless a target is named.
+These comparisons record the scope and proof obligations of the rows above.
+F3 now has published targets for the source's class of `K` along standard
+parabolics; their proofs remain open.
 
 - **F1. Bernstein blocks.** The published blocks (`BernsteinBlock`,
   `BernsteinSaturatedBlock`) use the induction-occurrence support relation. The
@@ -268,11 +281,24 @@ full statements. Each is a genuine gap unless a target is named.
   with an Iwahori decomposition along an arbitrary parabolic. No statement asserts that
   such `K` admit a contracting element, and the transport to arbitrary parabolics is
   not stated.
-- **F3. V.5.2 basis members.** The VI.6.1 Proposition and the VI.9.4 statements
-  assume the V.5.2 (ii)–(iv) basis-member conditions on `K`
-  (`StandardParabolicBasisMember`). These may be stronger than the source's
-  hypothesis, an Iwahori decomposition along the standard parabolics (V.5.2 (ii)). No
-  comparison is stated.
+- **F3. V.5.2 basis members: statement gap closed for standard parabolics.**
+  The published `J.StandardIwahoriCanonicalSectionStatement`,
+  `J.StandardIwahoriFixedVectorSubquotientGenerationStatement` and
+  `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement` assume only the ordered
+  `HasIwahoriIntersectionDecomposition` on `K`, along one standard parabolic
+  for VI.6.1 and every standard parabolic for VI.6.3 and VI.9.4. They retain the
+  other data and conclusions of the earlier statements: the canonical section uses
+  a supplied compatible split component; the VI.9.4 statements retain `K` contained
+  and normal in a compact `K₀` with its Iwasawa factorization. The theorems
+  `J.standardCanonicalSectionStatement_of_standardIwahori`,
+  `J.standardFixedVectorSubquotientGenerationStatement_of_standardIwahori` and
+  `J.standardFixedVectorHeckeEquivalenceStatement_of_standardIwahori` prove the
+  implications to the earlier basis-member versions by extracting the Iwahori
+  conjunct. These are conditional implications, not proofs of the three new
+  statements, whose proofs are open. No successor task identifiers for these
+  targets were verified for this update. The arbitrary-parabolic version of the
+  VI.6.1 Proposition and the Haar-Hecke and inverse-functor comparisons are
+  separate obligations.
 - **F4. Represented versus standard parabolics.** See gap 2 below.
 
 ## Genuine gaps of Chapter VI
@@ -290,9 +316,10 @@ full statements. Each is a genuine gap unless a target is named.
 5. VI.10.7 Variant: needs `ℨ(G)` acting on `(G, B)`-modules.
 6. VI.9.4 Proposition: the comparison of the measure-free level Hecke algebra with
    `H(G, K)` and the inverse functor.
-7. The full-source scope of the restricted rows (VI.6.1 Theorem and Proposition, VI.6.3
-   Corollary, VI.9.1, VI.9.4), through the comparisons F2 and F3; and the block
-   comparison F1.
+7. The arbitrary-parabolic scope of VI.6.1 (Theorem and Proposition) and VI.9.1
+   through F2, and the block comparison F1. The source's class of `K` for standard
+   parabolics in VI.6.1 Proposition, VI.6.3 Corollary and VI.9.4 is now stated by
+   the F3 targets above; their proofs remain open.
 
 The VI.5.4 Lemma, unstated before this audit, is now the published
 `StandardWeylElementaryChainStatement`. The pending candidate `a6dc47dd` (VI.9.1 bound
