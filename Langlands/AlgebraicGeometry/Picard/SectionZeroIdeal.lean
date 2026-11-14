@@ -1,0 +1,171 @@
+import Langlands.AlgebraicGeometry.Picard.LineBundleEulerPolynomial
+import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_isLocalization_basicOpen_of_locallyTrivial
+
+/-! # The zero ideal sheaf of a section of a line bundle -/
+
+universe u
+
+open CategoryTheory AlgebraicGeometry
+
+namespace Langlands.AlgebraicGeometry.Picard.SectionZeroIdeal
+
+section Colon
+
+variable {A A' P P' : Type u} [CommRing A] [CommRing A'] [Algebra A A'] (f : A)
+  [IsLocalization.Away f A'] [AddCommGroup P] [Module A P] [Module.Finite A P]
+  [AddCommGroup P'] [Module A' P']
+
+/-- **Colon ideals localize.** Let `ι : P → P'` be a localization of a finite module at powers of
+`f`, in the form of the two conditions (every element of `P'` is an image up to a power of `f`,
+and the kernel is killed by powers of `f`). Then the ideal `(σ) : P` localizes to `(ι σ) : P'`. -/
+theorem map_colon_eq (ι : P →ₛₗ[algebraMap A A'] P')
+    (h₁ : ∀ x : P', ∃ (n : ℕ) (y : P), ι y = algebraMap A A' (f ^ n) • x)
+    (h₂ : ∀ y : P, ι y = 0 → ∃ n : ℕ, (f ^ n) • y = 0) (σ : P) :
+    ((Submodule.span A {σ}).colon Set.univ).map (algebraMap A A') =
+      (Submodule.span A' {ι σ}).colon Set.univ := by
+  apply le_antisymm
+  · rw [Ideal.map_le_iff_le_comap]
+    intro a ha
+    rw [Ideal.mem_comap, Submodule.mem_colon]
+    intro x _
+    obtain ⟨n, y, hy⟩ := h₁ x
+    have hu : IsUnit (algebraMap A A' (f ^ n)) :=
+      IsLocalization.map_units A' (⟨f ^ n, n, rfl⟩ : Submonoid.powers f)
+    obtain ⟨c, hc⟩ := Submodule.mem_span_singleton.1
+      ((Submodule.mem_colon.1 ha) y (Set.mem_univ _))
+    rw [Submodule.mem_span_singleton]
+    refine ⟨hu.unit⁻¹ * algebraMap A A' c, ?_⟩
+    have : algebraMap A A' (f ^ n) • (algebraMap A A' a • x) =
+        algebraMap A A' (f ^ n) • ((hu.unit⁻¹ * algebraMap A A' c) • ι σ) := by
+      rw [smul_smul, mul_comm, ← smul_smul, ← hy, ← ι.map_smulₛₗ, smul_smul, ← mul_assoc,
+        IsUnit.mul_val_inv, one_mul, ← ι.map_smulₛₗ, hc]
+    exact (hu.smul_left_cancel.1 this).symm
+  · intro b hb
+    obtain ⟨⟨a, ⟨_, k, rfl⟩⟩, hab⟩ := IsLocalization.surj (Submonoid.powers f) b
+    simp only at hab
+    let J : Ideal A := (Submodule.span A {σ}).colon Set.univ
+    -- each element of `P` is moved into `(σ)` by `f ^ m * a` for some `m`
+    have key : ∀ p : P, ∃ m : ℕ, ((f ^ m * a) • p) ∈ Submodule.span A {σ} := by
+      intro p
+      obtain ⟨c, hc⟩ := Submodule.mem_span_singleton.1
+        ((Submodule.mem_colon.1 hb) (ι p) (Set.mem_univ _))
+      obtain ⟨⟨d, ⟨_, l, rfl⟩⟩, hcd⟩ := IsLocalization.surj (Submonoid.powers f) c
+      simp only at hcd
+      have h0 : ι ((f ^ l * a) • p - (f ^ k * d) • σ) = 0 := by
+        rw [map_sub, ι.map_smulₛₗ, ι.map_smulₛₗ, sub_eq_zero]
+        calc algebraMap A A' (f ^ l * a) • ι p
+            = algebraMap A A' (f ^ l) • (algebraMap A A' a • ι p) := by rw [map_mul, mul_smul]
+          _ = algebraMap A A' (f ^ l) • ((b * algebraMap A A' (f ^ k)) • ι p) := by rw [hab]
+          _ = algebraMap A A' (f ^ k) • (algebraMap A A' (f ^ l) • (b • ι p)) := by
+              rw [smul_smul, smul_smul, smul_smul]; ring_nf
+          _ = algebraMap A A' (f ^ k) • (algebraMap A A' (f ^ l) • (c • ι σ)) := by rw [hc]
+          _ = algebraMap A A' (f ^ k * d) • ι σ := by
+              rw [smul_smul, smul_smul, map_mul, ← hcd]; ring_nf
+      obtain ⟨r, hr⟩ := h₂ _ h0
+      refine ⟨r + l, ?_⟩
+      rw [Submodule.mem_span_singleton]
+      refine ⟨f ^ r * (f ^ k * d), ?_⟩
+      rw [smul_sub, sub_eq_zero, smul_smul, smul_smul] at hr
+      rw [hr.symm, pow_add, mul_assoc]
+    -- a uniform exponent on generators
+    obtain ⟨S, hS⟩ := Module.Finite.fg_top (R := A) (M := P)
+    choose m hm using key
+    let N := ∑ p ∈ S, m p
+    have hN : ∀ p : P, p ∈ S → ((f ^ N * a) • p) ∈ Submodule.span A {σ} := by
+      intro p hp
+      have hle : m p ≤ N := Finset.single_le_sum (fun _ _ => Nat.zero_le _) hp
+      have : f ^ N * a = f ^ (N - m p) * (f ^ m p * a) := by
+        rw [← mul_assoc, ← pow_add, Nat.sub_add_cancel hle]
+      rw [this, mul_smul]
+      exact Submodule.smul_mem _ _ (hm p)
+    have hJ : f ^ N * a ∈ J := by
+      rw [Submodule.mem_colon]
+      intro x hxu
+      clear hxu
+      have hx : x ∈ Submodule.span A (S : Set P) := hS ▸ Submodule.mem_top
+      induction hx using Submodule.span_induction with
+      | mem p hp => exact hN p hp
+      | zero => rw [smul_zero]; exact Submodule.zero_mem _
+      | add x y _ _ hx hy => rw [smul_add]; exact add_mem hx hy
+      | smul c x _ hx => rw [smul_comm]; exact Submodule.smul_mem _ _ hx
+    have hu : IsUnit (algebraMap A A' (f ^ (N + k))) :=
+      IsLocalization.map_units A' (⟨f ^ (N + k), N + k, rfl⟩ : Submonoid.powers f)
+    have hb' : b = hu.unit⁻¹ * algebraMap A A' (f ^ N * a) := by
+      rw [eq_comm, Units.inv_mul_eq_iff_eq_mul, IsUnit.unit_spec, map_mul, ← hab, pow_add, map_mul]
+      ring
+    rw [hb']
+    exact Ideal.mul_mem_left _ _ (Ideal.mem_map_of_mem _ hJ)
+
+/-- For a free module of rank one, the colon ideal `(σ) : P` is the ideal generated by the
+coordinate of `σ`. -/
+theorem colon_span_eq_of_equiv {R M : Type*} [CommRing R] [AddCommGroup M] [Module R M]
+    (e : M ≃ₗ[R] R) (σ : M) :
+    (Submodule.span R {σ}).colon Set.univ = Ideal.span {e σ} := by
+  ext a
+  rw [Submodule.mem_colon, Ideal.mem_span_singleton']
+  constructor
+  · intro h
+    obtain ⟨c, hc⟩ := Submodule.mem_span_singleton.1 (h (e.symm 1) (Set.mem_univ _))
+    refine ⟨c, ?_⟩
+    have := congrArg e hc
+    rw [map_smul, map_smul, LinearEquiv.apply_symm_apply, smul_eq_mul, smul_eq_mul, mul_one] at this
+    exact this
+  · rintro ⟨c, rfl⟩ p _
+    rw [Submodule.mem_span_singleton]
+    refine ⟨c * e p, e.injective ?_⟩
+    rw [map_smul, map_smul, smul_eq_mul, smul_eq_mul]
+    ring
+
+end Colon
+
+section ZeroIdeal
+
+open Langlands.AlgebraicGeometry.Modules
+
+variable {X : Scheme.{u}} (L : Picard.LineBundle X) (σ : Γ(L.obj, ⊤))
+
+/-- The restriction of the global section `σ` to an open `U`. -/
+noncomputable abbrev res (U : X.Opens) : Γ(L.obj, U) :=
+  L.obj.presheaf.map (homOfLE le_top).op σ
+
+/-- The restriction of sections of `L` to a basic open, as a semilinear map. -/
+noncomputable def resBasicOpen (U : X.affineOpens) (f : Γ(X, U.1)) :
+    letI := (X.presheaf.map (homOfLE (X.basicOpen_le f)).op).hom.toAlgebra
+    Γ(L.obj, U.1) →ₛₗ[algebraMap Γ(X, U.1) Γ(X, X.basicOpen f)] Γ(L.obj, X.basicOpen f) :=
+  letI := (X.presheaf.map (homOfLE (X.basicOpen_le f)).op).hom.toAlgebra
+  { toFun := L.obj.presheaf.map (homOfLE (X.basicOpen_le f)).op
+    map_add' := fun x y => map_add _ x y
+    map_smul' := fun r x => Scheme.Modules.map_smul L.obj _ r x }
+
+/-- **The zero ideal sheaf of a section.** On an affine open `U`, its ideal is the colon ideal
+`(σ|_U) : L(U)`, the elements `a` with `a • L(U) ⊆ Γ(X, U) • σ|_U`. -/
+noncomputable def zeroIdeal : X.IdealSheafData where
+  ideal U := (Submodule.span Γ(X, U.1) {res L σ U.1}).colon Set.univ
+  map_ideal_basicOpen U f := by
+    let _ := (X.presheaf.map (homOfLE (X.basicOpen_le f)).op).hom.toAlgebra
+    have := U.2.isLocalization_basicOpen f
+    have : Module.Finite Γ(X, U.1) Γ(L.obj, U.1) := hasFiniteAffineSections_lineBundle L U
+    have htriv : ∀ x : X, ∃ V : X.Opens, x ∈ V ∧
+        Nonempty ((Scheme.Modules.pullback V.ι).obj L.obj ≅
+          SheafOfModules.unit V.toScheme.ringCatSheaf) := fun x => by
+      obtain ⟨V, hx, ⟨e⟩⟩ := L.property x
+      exact ⟨V, hx, ⟨((Scheme.Modules.restrictFunctorIsoPullback V.ι).app L.obj).symm ≪≫ e⟩⟩
+    obtain ⟨h₁, h₂⟩ := Scheme.Modules.isLocalization_basicOpen_of_locallyTrivial L.obj htriv U f
+    have hres : resBasicOpen L U f (res L σ U.1) = res L σ (X.basicOpen f) := by
+      change L.obj.presheaf.map _ (L.obj.presheaf.map _ σ) = _
+      rw [← ConcreteCategory.comp_apply, ← Functor.map_comp]
+      rfl
+    have := map_colon_eq f (resBasicOpen L U f) h₁ h₂ (res L σ U.1)
+    rw [hres] at this
+    exact this
+
+/-- On an affine open over which `L` is trivialized by `e`, the zero ideal of `σ` is generated by
+the coordinate of `σ`. -/
+theorem zeroIdeal_ideal_of_equiv (U : X.affineOpens)
+    (e : Γ(L.obj, U.1) ≃ₗ[Γ(X, U.1)] Γ(X, U.1)) :
+    (zeroIdeal L σ).ideal U = Ideal.span {e (res L σ U.1)} :=
+  colon_span_eq_of_equiv e _
+
+end ZeroIdeal
+
+end Langlands.AlgebraicGeometry.Picard.SectionZeroIdeal

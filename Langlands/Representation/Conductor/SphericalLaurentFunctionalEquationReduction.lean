@@ -1,6 +1,7 @@
 import Langlands.Representation.Conductor.SphericalLaurentFunctionalEquationStatement
 import Langlands.Representation.Conductor.SphericalCorankOneFunctionalEquationStatement
 import Langlands.Representation.Conductor.SphericalLFactorGenerationStatement
+import Langlands.Representation.Conductor.SphericalCorankOneLaurentStatement
 import Langlands.Representation.Conductor.SphericalUnitaryExtension
 import Langlands.Representation.Conductor.SphericalDualParameters
 import Mathlib.Analysis.SpecialFunctions.Log.Base
@@ -10,10 +11,12 @@ import Mathlib.Analysis.SpecialFunctions.Log.Base
 
 The corank-one spherical functional equation for unitary Satake parameters
 (`SphericalCorankOneFunctionalEquationStatement`) and the L-factor facts of JPSS 1983 for
-spherical test vectors (`SphericalLFactorGenerationStatement`: the standard L-polynomial,
+spherical test vectors (`SphericalCorankOneLaurentStatement`: the standard L-polynomial,
 convergence, and the Laurent numerator for every Satake parameter) imply the functional
 equation with Laurent numerator for every Satake parameter
-(`SphericalLaurentFunctionalEquationStatement`).
+(`SphericalLaurentFunctionalEquationStatement`). The same follows from
+`SphericalLFactorGenerationStatement`, whose first three conjuncts are
+`SphericalCorankOneLaurentStatement`.
 -/
 
 noncomputable section
@@ -90,14 +93,23 @@ theorem hasRationalContinuation_laurent_mul_essentialFactor {q : ℕ} (hq : 1 < 
 
 /-! ### The reduction -/
 
+/-- The first three conjuncts of `SphericalLFactorGenerationStatement` are
+`SphericalCorankOneLaurentStatement`. -/
+theorem sphericalCorankOneLaurent_of_generation
+    (hgen : SphericalLFactorGenerationStatement.{uF, uV}) :
+    SphericalCorankOneLaurentStatement.{uF, uV} := by
+  intro F _ _ _ _ n _ _ _ _ _ _ _ _ q ψ abv ϖ μ h V _ _ π hπ ℓ hℓ
+  obtain ⟨P, hP, hconv, hlaur, -⟩ := hgen F n q ψ abv ϖ μ h π hπ ℓ hℓ
+  exact ⟨P, hP, hconv, hlaur⟩
+
 /-- **Reduction.** The corank-one spherical functional equation for unitary Satake
 parameters, together with the spherical L-factor facts of JPSS 1983 (existence of the
 standard L-polynomial, convergence, and the Laurent numerator for every Satake parameter),
 implies the corank-one spherical functional equation with Laurent numerator for every
 Satake parameter. -/
-theorem sphericalLaurentFunctionalEquation_of_corankOne_of_generation
+theorem sphericalLaurentFunctionalEquation_of_corankOne_of_laurent
     (hFE : SphericalCorankOneFunctionalEquationStatement.{uF, uV})
-    (hgen : SphericalLFactorGenerationStatement.{uF, uV}) :
+    (hlaur : SphericalCorankOneLaurentStatement.{uF, uV}) :
     SphericalLaurentFunctionalEquationStatement.{uF, uV} := by
   intro F _ _ _ _ _ _ _ _ n _ _ _ _ _ _ _ _ _ _ q ψ abv ϖ μ h ν hν V _ _ π hπ ℓ hℓ P hP c m hε
   have hq : 1 < q := h.one_lt_q
@@ -109,9 +121,10 @@ theorem sphericalLaurentFunctionalEquation_of_corankOne_of_generation
   have hπd : IsGeneric (ψ.scale (-1)) (n + 1) πd := isGeneric_inverseTransposePullback ψ π hπ
   have hℓd0 : ℓd.val ≠ 0 := scaledDualFunctional_ne_zero ψ π ℓ hℓ
   -- the L-factor facts for `π` and for its inverse-transpose pullback
-  obtain ⟨P₀, hP₀, hconvF, hlaurF, -⟩ := hgen F n q ψ abv ϖ μ h π hπ ℓ hℓ
+  obtain ⟨P₀, hP₀, hconvF, hlaurF⟩ := hlaur F n q ψ abv ϖ μ h π hπ ℓ hℓ
   rw [IsNormalizedGenerator.unique hP₀ hP] at hlaurF
-  obtain ⟨Pdual, hPdual, hconvD, hlaurD, -⟩ := hgen F n q (ψ.scale (-1)) abv ϖ μ h' πd hπd ℓd hℓd0
+  obtain ⟨Pdual, hPdual, hconvD, hlaurD⟩ :=
+    hlaur F n q (ψ.scale (-1)) abv ϖ μ h' πd hπd ℓd hℓd0
   have hPd1 : Pdual.coeff 0 = 1 := hPdual.1
   refine ⟨Pdual, hPd1, fun v x => ?_⟩
   obtain ⟨u, hu⟩ := v.property
@@ -180,5 +193,13 @@ theorem sphericalLaurentFunctionalEquation_of_corankOne_of_generation
     exact hconvd x
   · rw [hdualF, hdualW]
     exact hQdf x
+
+/-- The reduction from the full spherical L-factor generation statement. -/
+theorem sphericalLaurentFunctionalEquation_of_corankOne_of_generation
+    (hFE : SphericalCorankOneFunctionalEquationStatement.{uF, uV})
+    (hgen : SphericalLFactorGenerationStatement.{uF, uV}) :
+    SphericalLaurentFunctionalEquationStatement.{uF, uV} :=
+  sphericalLaurentFunctionalEquation_of_corankOne_of_laurent hFE
+    (sphericalCorankOneLaurent_of_generation hgen)
 
 end Langlands.Conductor

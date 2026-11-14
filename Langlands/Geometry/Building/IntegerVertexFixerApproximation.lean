@@ -23,17 +23,19 @@ variable {k : Type u} [Field k]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
   (B : IntegerValuationBuildingData v G)
 
-local instance : Fintype (relativeRoots B.i) := by
+local instance vertexFixerRelativeRootsFintype : Fintype (relativeRoots B.i) := by
   letI := B.isConnectedReductive.smooth
   exact (B.isMaximalSplitTorus.isSplitSubtorus.1.finite_relativeRoots B.i).fintype
 
-local instance : NormedAddCommGroup (TranslationSpace B.i) :=
+local instance vertexFixerTranslationNormedAddCommGroup :
+    NormedAddCommGroup (TranslationSpace B.i) :=
   RootTranslationMetric.normedAddCommGroup B.i
 
-local instance : NormedSpace ℝ (TranslationSpace B.i) :=
+local instance vertexFixerTranslationNormedSpace : NormedSpace ℝ (TranslationSpace B.i) :=
   RootTranslationMetric.normedSpace B.i
 
-local instance : FiniteDimensional ℝ (TranslationSpace B.i) :=
+local instance vertexFixerTranslationFiniteDimensional :
+    FiniteDimensional ℝ (TranslationSpace B.i) :=
   RootTranslationMetric.finiteDimensional B.i
 
 /-- The exact finite image of all vertices of closed apartment facets meeting

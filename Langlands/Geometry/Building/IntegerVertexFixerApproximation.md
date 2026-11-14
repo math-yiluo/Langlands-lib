@@ -13,7 +13,11 @@ for that finite apartment construction is the published norm pulled back from
 the finite set of actual relative roots. Splitness and connected reductivity
 give root finiteness; the injective root-coordinate map gives finite
 dimensionality. No metric or local-field structure on the base field or the
-quotient building is asserted.
+quotient building is asserted. These local instances (root finiteness, norm,
+normed space and finite dimensionality on `TranslationSpace B.i`) have explicit
+names. With automatically generated names they would clash with the same
+instances in `IntegerValuationBuildingMetricReduction` and
+`IntegerValuationRetractionDistance`, and no module could import both.
 
 `extendedAffineRoot_mem_or_two_smul_mem` derives AS4 from the actual rank-one
 factorization of the maximal split torus in the connected reductive group and

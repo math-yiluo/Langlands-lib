@@ -6,12 +6,16 @@ other published statements, which it takes as hypotheses:
 
 - `SphericalCorankOneFunctionalEquationStatement` (the functional equation for
   unitary Satake parameters, `‖x_i‖ = 1`);
-- `SphericalLFactorGenerationStatement` (the standard L-polynomial, convergence and
+- `SphericalCorankOneLaurentStatement` (the standard L-polynomial, convergence and
   the Laurent numerator for every Satake parameter).
 
 It proves no instance of either hypothesis, so it does not by itself prove the
-target. Once both hypotheses are proved, the target follows by applying the final
-theorem to the two proofs.
+target. The module `SphericalLaurentFunctionalEquationProof` applies the main
+theorem to the Library proofs of the two hypotheses.
+
+It also derives the same conclusion from `SphericalLFactorGenerationStatement`.
+That statement's first three conjuncts are exactly `SphericalCorankOneLaurentStatement`,
+and its fourth conjunct, the generation clause, is not used.
 
 ## Notation
 
@@ -54,23 +58,32 @@ The value is `q^(-Ns) Q(q^(-s)) / D(q^(-s))` (`eval_laurentToRatFunc`,
 `laurentEval_T`, `laurentEval_toLaurent`, `eval_mul`, `eval_inv`), which equals
 `f(s)` by the hypothesis.
 
-## The final theorem
+## From the generation statement to the Laurent statement
 
-`sphericalLaurentFunctionalEquation_of_corankOne_of_generation hFE hgen` proves
+`sphericalCorankOneLaurent_of_generation hgen` proves
+`SphericalCorankOneLaurentStatement.{uF, uV}` from
+`hgen : SphericalLFactorGenerationStatement.{uF, uV}`. The two statements have the same
+binders. For each `π` and `ℓ`, the proof destructures the conclusion of `hgen` as
+`⟨P, hP, hconv, hlaur, -⟩`, drops the generation clause, and returns
+`⟨P, hP, hconv, hlaur⟩`.
+
+## The main theorem
+
+`sphericalLaurentFunctionalEquation_of_corankOne_of_laurent hFE hlaur` proves
 `SphericalLaurentFunctionalEquationStatement.{uF, uV}` from
 `hFE : SphericalCorankOneFunctionalEquationStatement.{uF, uV}` and
-`hgen : SphericalLFactorGenerationStatement.{uF, uV}`.
+`hlaur : SphericalCorankOneLaurentStatement.{uF, uV}`.
 
 Proof, for given `F, n, q, ψ, abv, ϖ, μ, h, ν, π, ℓ, P, c, m` as in the target:
 
-1. **L-factor facts for `π`.** `hgen` for `(ψ, h, π, ℓ)` gives a polynomial `P₀`
+1. **L-factor facts for `π`.** `hlaur` for `(ψ, h, π, ℓ)` gives a polynomial `P₀`
    with `IsCharacterLPolynomial … π P₀`, convergence of `Ψ(s, w, W(x; ψ̄))` for every
    `w` and `x`, and a Laurent numerator
    `Ψ(s, w, W(x; ψ̄)) ∏ P₀(x_i q^(-s)) = q^(-Ns) Q(q^(-s))`. By
    `IsNormalizedGenerator.unique`, `P₀` equals the target's `P`.
 2. **L-factor facts for `π̃`.** `π̃` is generic for `ψ̄`
    (`isGeneric_inverseTransposePullback`) and `ℓ̃ ≠ 0`
-   (`scaledDualFunctional_ne_zero`). `hgen` for `(ψ̄, h', π̃, ℓ̃)` gives `Pdual` with
+   (`scaledDualFunctional_ne_zero`). `hlaur` for `(ψ̄, h', π̃, ℓ̃)` gives `Pdual` with
    `IsCharacterLPolynomial … π̃ Pdual`, convergence and Laurent numerators for every
    vector of the model of `ℓ̃` and every parameter. This `Pdual` is the target's
    witness; its constant term is `1` because it is a normalized generator.
@@ -106,11 +119,18 @@ Proof, for given `F, n, q, ψ, abv, ϖ, μ, h, ν, π, ℓ, P, c, m` as in the t
    `Rdual := Qd x · essentialFactor Pdual x⁻¹` with its continuation (step 4,
    rewritten by step 3), and the functional equation (step 6).
 
+## The corollary from the generation statement
+
+`sphericalLaurentFunctionalEquation_of_corankOne_of_generation hFE hgen` proves the
+same statement from `hFE` and `hgen : SphericalLFactorGenerationStatement.{uF, uV}`.
+It applies the main theorem to `hFE` and `sphericalCorankOneLaurent_of_generation hgen`.
+
 ## Provenance
 
-Internal. The two hypotheses are published Library statements. The first is
-JPSS 1981, (4.2)(3), for unitary Satake parameters. The second is JPSS 1983,
-Theorems (2.7) and (3.1), with Jacquet 2012, Lemma 4. This unit adds only the
+Internal. The hypotheses are published Library statements. The first is
+JPSS 1981, (4.2)(3), for unitary Satake parameters. The second,
+`SphericalCorankOneLaurentStatement`, is JPSS 1983, Theorems (2.7) and (3.1).
+`SphericalLFactorGenerationStatement` adds Jacquet 2012, Lemma 4. This unit adds only the
 bookkeeping that combines them. It identifies the two L-polynomials through
 `IsNormalizedGenerator.unique` and the continuations through
 `HasRationalContinuation.unique`. It identifies the dual integral through the
