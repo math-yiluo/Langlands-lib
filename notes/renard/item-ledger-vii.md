@@ -13,7 +13,10 @@ French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Printed page
 numbers are given first and PDF page numbers second. Library facts refer to commit
-`16c60abdc019c1181a2734d3052305ec3d6e7b85`. The status codes, the abbreviation of
+`16c60abdc019c1181a2734d3052305ec3d6e7b85`, except for the four proof updates for
+VII.3.4–VII.3.5 below, checked on 14 November 2026 at Library
+`179f569bc35e58b829420ce0590c9f4d0ff43c21`. Other statuses retain their historical
+survey scope. The status codes, the abbreviation of
 task identifiers and the method of checking are those of the Chapter VI ledger.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 (abbreviated `RP`) unless another namespace is written. The focused source maps
@@ -72,9 +75,10 @@ mathematical content.
 | VII.3.1: `1̄` is the least element when `P = Q` and the greatest when `Q = P̄` | 232–233 / 238–239 | `RP.BruhatIdentityExtremesStatement` | S: Task 5685 |
 | VII.3.2 filtrations and their comparisons | 233–234 / 239–240 | `RP.PQSupportGradedStatement`; support subfunctors in `Intertwining/PQRegularity` | P: `pqSupportGraded` |
 | VII.3.3 Lemma (`PQ`-regularity) | 234 / 240 | `RP.PQRegularityLemmaStatement`; `IsPQRegular` | S: task d935ffb6 |
-| VII.3.4 Proposition | 236 / 242 | `RP.PQIntertwiningOperatorStatement` (derived: the integral replaced by an arbitrary identification); explicit integral form `RP.PQIntegralIntertwiningOperatorStatement` | Derived form P: `pqIntertwiningOperator`; integral form S: task b0dc3705 |
-| VII.3.5 Proposition (i) | 237 / 243 | `RP.PQIntertwiningCompositionStatement` | S: task b0dc3705 |
-| VII.3.5 Proposition (ii)–(iii) | 237 / 243 | `RP.PQIntertwiningInnerLeviStatement`, `RP.PQIntertwiningOuterLeviStatement` | S: task 0f310bac |
+| VII.3.4 Proposition and preceding integral identification | 235–236 / 241–242 | `RP.PQIntertwiningOperatorStatement` (derived: the integral replaced by an arbitrary identification); explicit integral form `RP.PQIntegralIntertwiningOperatorStatement` | Derived form P: `pqIntertwiningOperator`; integral form P: [`pqIntegralIntertwiningOperator`](../../Langlands/Representation/Intertwining/PQIntegralIntertwiningOperatorProof.md) |
+| VII.3.5 Proposition (i) | 237 / 243 | `RP.PQIntertwiningCompositionStatement` | P: [`pqIntertwiningComposition`](../../Langlands/Representation/Intertwining/PQIntertwiningCompositionProof.md) |
+| VII.3.5 Proposition (ii) | 237 / 243 | `RP.PQIntertwiningInnerLeviStatement` | P: [`pqIntertwiningInnerLevi`](../../Langlands/Representation/Intertwining/PQIntertwiningInnerLeviProof.md) |
+| VII.3.5 Proposition (iii) | 237 / 243 | `RP.PQIntertwiningOuterLeviStatement` | P: [`pqIntertwiningOuterLevi`](../../Langlands/Representation/Intertwining/PQIntertwiningOuterLeviProof.md) |
 | VII.3.5 opening assertion "`d(P, Q)` is the length of the element `w ∈ W(A_M)` with `w · P = Q`" | 236 / 242 | `Langlands.GroupScheme.MinimalParabolicDistanceLengthStatement` (minimal `M`, corrected form) | S: Task 5687 (candidate `5d306e19`). For non-minimal `M` the printed assertion is a source issue (I1 below) |
 
 ## VII.4 The Langlands classification
@@ -91,6 +95,95 @@ mathematical content.
 | Item | Pages | Status |
 | --- | --- | --- |
 | VII.5 notes | 246 / 252 | X: attributions ([2], [20], [22], [23], [45], [40]). The notes also say that VII.1.3 is the point that makes the small progenerators of VI.10.1 generators; that use is in the proofs of the VI.10.1 statements (task 2174cd68). |
+
+## Proof-publication update, 14 November 2026
+
+The four updated targets above have independently accepted, published proofs. This update
+compares their Lean and paired Markdown with the original VII.3.4–VII.3.5 passage, printed
+pp.235–240 / PDF pp.241–246. The following five records cover four theorems: the two composition candidates were reconciled in one
+publication. Each record has accepted `lake-build`, `exact-target`, `unchanged-statement`
+and `frozen-inputs` validation and an independent approval with no unresolved reviewer
+qualifications. A fresh development check of the four proof modules at this update's
+Library base also passed with no errors or warnings; that check supplies no new acceptance.
+
+| Item | Accepted proof record | Independent reviewer | Integration ID | Published Library commit |
+| --- | --- | --- | --- | --- |
+| VII.3.4 integral form | `cfa9bc6a-506a-4d89-8b13-86a0ca905087` | Reviewer 1317 | `39a092dec63b4923808aea884e259cdb` | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| VII.3.5 (i) | `2bd19057-d8bd-4bd1-a40c-54afb1cb3d10` | Reviewer 1532 | `5a98f8dc42274be4b6a78d776fb0ed59` | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| VII.3.5 (i), second record | `0ab62d05-6540-41ef-8778-105294258c9a` | Reviewer 1530 | `0492b024d4c3487d837321a52d1dd747` | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| VII.3.5 (ii) | `64fe3428-fe9d-45d4-a0f7-88ae3b2901b1` | Reviewer 792 | `43753bcc2a7145a199cdbcbd9fa8d858` | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
+| VII.3.5 (iii) | `488670d4-d2a7-4a09-a0d7-802ff94acd9c` | Reviewer 731 | `e661f82017ed4436bde3fc8de137ce89` | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
+
+The integral, inner-Levi and outer-Levi pairs at this update's base equal their frozen
+accepted pairs. For composition, the Lean file equals the first composition record's frozen Lean;
+the Markdown equals the joint publication's file and credits Workers 48 and 102. It
+documents the retained term using `pqCompositionHaar`, whose proof applies
+`pqCompositionHaar_of_product` to `pqCompositionProduct`. It does not equal either
+candidate's frozen Markdown. The published Lean and explanation agree.
+
+### Exact hypotheses and conclusions
+
+These are proofs of the existing Prop-valued statements, at their original universes
+`u, v`. Their common setting is an arbitrary nonarchimedean local field and an actual
+connected reductive group scheme, with the canonical rational-point topology and explicit
+local-compactness and nonarchimedean-group instances. Represented parabolics supply the
+actual Levi and geometric unipotent radical inclusions and the multiplication isomorphism.
+Common Levis have equal embeddings into the ambient group. Opposites have that same
+embedded Levi and the prescribed rational-point intersection. Split components are
+supplied where regularity or root distance is used. Measures are Borel Haar measures on
+the indicated actual intersection subgroups. The representations are smooth complex
+representations, without an added admissibility or finite-length assumption. Further
+statement details are in the paired explanations of
+[PQIntegralIntertwiningStatements](../../Langlands/Representation/Intertwining/PQIntegralIntertwiningStatements.md)
+and [PQIntertwiningLeviStatements](../../Langlands/Representation/Intertwining/PQIntertwiningLeviStatements.md).
+
+- **VII.3.4, printed pp.235–236 / PDF pp.241–242.** For every smooth `σ`, the
+  support-filtration quotient is identified equivariantly with `σ` by integration over
+  `V = N̄(F) ∩ U(F)`. For `PQ`-regular `σ`, there is exactly one intertwiner satisfying
+  `J(f)(1) = ∫_V f(v) dv` on the boundary-vanishing subspace. The formula means both
+  integrability and equality after every algebraic linear form on `σ`; it imposes no
+  norm or topology on the representation space. Worker 48 constructs the integral,
+  descends through the Jacquet relations and lower support, proves surjectivity,
+  naturality and Levi covariance, and uses natural-surjection rigidity to obtain the
+  equivalence. The final published reduction gives the unique operator. This direct
+  route differs from Renard's appeal to (VI.5.1.12).
+- **VII.3.5 (i), statement p.237 / PDF p.243, computation p.239 / PDF p.245.** The
+  assumptions include both `d(P₁,P₂) + d(P₂,P₃) = d(P₁,P₃)` and `d(P₁,P₂) = 1`.
+  The distance counts indivisible relative roots, as in V.3.4. Given Haar measures on
+  `V₁₂ = N̄₁ ∩ N₂` and `V₂₃ = N̄₂ ∩ N₃`, the theorem constructs a compatible measure
+  on `V₁₃ = N̄₁ ∩ N₃`: its integral is the iterated integral of `φ(vu)`, with `v ∈ V₁₂`
+  integrated first. It transfers `P₁P₃`-regularity to both adjacent pairs and proves
+  `J₂₃.comp J₁₂ = J₁₃` for supplied integral-normalized operators and compatible
+  measures. The proof supplies the support, multiplication-homeomorphism, Haar and
+  regularity inputs of the published reduction, then uses the double-integral
+  computation and uniqueness. It does not use the opening length assertion (I1).
+- **VII.3.5 (ii), statement p.237 / PDF p.243, proof pp.238–240 / PDF pp.244–246.**
+  A represented `Q = LU` contains `P₁` and `P₂`; represented parabolics `Pᵢ'` of `L`
+  have images `Pᵢ(F) ∩ L(F)`, with compatible common `M` and opposites. The theorem
+  transports every Haar measure on `N̄₁' ∩ N₂'` to a compatible one on `N̄₁ ∩ N₂`,
+  constructs stage functions `f̃(g)(x) = δ_U(x)^(-1/2) f(emb(x)g)`, transfers
+  `P₁P₂`-regularity to `P₁'P₂'`-regularity, and proves
+  `J'(f̃(g))(x) = δ_U(x)^(-1/2) J(f)(emb(x)g)` for supplied normalized operators.
+  Worker 115's proof uses the actual integration-domain homeomorphism, Haar transport,
+  the stage map and boundary transfer, and uniqueness of integral-normalized maps.
+- **VII.3.5 (iii), statement p.237 / PDF p.243, proof pp.238–240 / PDF pp.244–246.**
+  Represented `Qᵢ = LUᵢ` contain `Pᵢ`, share the same embedded `L`, and have a common
+  represented intersection `P'` in `L`, with the stated opposites and split components
+  of `M` and `L`. For `X = i_{P'}^L(σ)`, `Q₁Q₂`-regularity of `X` implies
+  `P₁P₂`-regularity of `σ`. The theorem transports Haar measures from `Ū₁ ∩ U₂` to
+  `N̄₁ ∩ N₂`, constructs the first stage function with `δ_{U₁}^(-1/2)`, and proves
+  `J_Q(f̃)(g)(x) = δ_{U₂}(x)^(-1/2) J(f)(emb(x)g)` for supplied normalized maps.
+  Worker 86 identifies the integration domains, transports their measures, and proves
+  this identity through the stage maps and integral uniqueness.
+
+Both Levi regularity proofs use surjections of normalized Jacquet quotients and kernel
+comparison, an alternative to the source's Bruhat-cell ideal comparison. The two final
+Levi statements assert existence of the forward stage functions and identities for
+supplied operators; they do not themselves assert that the stage maps are bijective or
+that the operators exist. The integral theorem above supplies operator existence
+separately when its hypotheses in `G` or `L` are instantiated. These four proof updates
+leave the other historical row statuses, V1–V2, source issue I1 and the genuine gaps below
+as recorded.
 
 ## Framework comparisons used above
 
