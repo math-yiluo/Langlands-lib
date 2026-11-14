@@ -118,7 +118,7 @@ open Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1Injectivity
 open scoped TensorProduct
 
 /-- Canonical pullback on actual structure-sheaf cohomology, with the unit comparison. -/
-abbrev unitCohomologyPullback {R : CommRingCat.{u}} {X Y : Over (Spec R)}
+abbrev unitCohomologyPullbackLinear {R : CommRingCat.{u}} {X Y : Over (Spec R)}
     (f : Y ⟶ X) (n : ℕ) :
     (relativeCohomology X.hom n).obj (unitModule X.left) →ₗ[R]
       (relativeCohomology Y.hom n).obj (unitModule Y.left) :=
@@ -152,7 +152,7 @@ def mixedCup :
       (relativeCohomology Y.hom 1).obj (unitModule Y.left) →ₗ[K]
         (relativeCohomology P.hom 2).obj (unitModule P.left) :=
   (cupCanonical P.hom (prodCover p₁.left p₂.left U V) hUVtop hUVa).compl₁₂
-    (unitCohomologyPullback p₁ 1) (unitCohomologyPullback p₂ 1)
+    (unitCohomologyPullbackLinear p₁ 1) (unitCohomologyPullbackLinear p₂ 1)
 
 omit [IsSeparated X.hom] [IsSeparated Y.hom]
   [∀ W : X.left.Opens, Algebra (CommRingCat.of K) Γ(X.left, W)]
@@ -161,7 +161,7 @@ omit [IsSeparated X.hom] [IsSeparated Y.hom]
 lemma mixedCup_apply (x y) :
     mixedCup p₁ p₂ U V hUVtop hUVa x y =
       cupCanonical P.hom (prodCover p₁.left p₂.left U V) hUVtop hUVa
-        (unitCohomologyPullback p₁ 1 x) (unitCohomologyPullback p₂ 1 y) := rfl
+        (unitCohomologyPullbackLinear p₁ 1 x) (unitCohomologyPullbackLinear p₂ 1 y) := rfl
 
 /-- The mixed tensor-to-cohomology map induced by the actual two-axis cup. -/
 def mixedTensor :
@@ -188,7 +188,7 @@ lemma slantByH1Dual_mixedCup
   obtain ⟨z, rfl⟩ := canonicalClass_surjective X.hom U hUtop hUa 0 x
   obtain ⟨w, rfl⟩ := canonicalClass_surjective Y.hom V hVtop hVa 0 y
   rw [mixedCup_apply]
-  dsimp only [unitCohomologyPullback]
+  dsimp only [unitCohomologyPullbackLinear]
   rw [pull_canonicalClass p₁ U (prodCover p₁.left p₂.left U V) Prod.fst
       (fun _ => inf_le_left) hUtop hUVtop hUa hUVa,
     pull_canonicalClass p₂ V (prodCover p₁.left p₂.left U V) Prod.snd

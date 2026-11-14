@@ -52,7 +52,7 @@ For every actual linear functional `ell : H1(X,O_X) → K`, the conclusions are
  \quad (y\in H^2(Y,\mathcal O_Y)).
 \]
 
-These are `slantByH1Dual_pull_left` and `slantByH1Dual_pull_right`, with values in actual `H1(Y,O_Y)`. The pullbacks are precisely `unitCohomologyPullback`, which includes the unit-module comparison. The proof chooses an ordered Cech cocycle representative, replaces it by its normalized representative without changing its class, uses the actual pullback and slant cocycle formulas, and applies the raw vanishing theorem. The chosen cochain extension used in `slantByH1Dual` is the existing one in `AllSeqSlantDual`.
+These are `slantByH1Dual_pull_left` and `slantByH1Dual_pull_right`, with values in actual `H1(Y,O_Y)`. The pullbacks are precisely `unitCohomologyPullbackLinear`, which includes the unit-module comparison. The proof chooses an ordered Cech cocycle representative, replaces it by its normalized representative without changing its class, uses the actual pullback and slant cocycle formulas, and applies the raw vanishing theorem. The chosen cochain extension used in `slantByH1Dual` is the existing one in `AllSeqSlantDual`.
 
 ## Provenance and remaining scope
 

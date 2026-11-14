@@ -309,9 +309,9 @@ lemma slantByH1Dual_bottom_pull_left
     (ell : (relativeCohomology X.hom 1).obj (unitModule X.left) →ₗ[K] K)
     (x : (relativeCohomology X.hom 1).obj (unitModule X.left)) :
     slantByH1Dual hP halgX halgY halgP p₁.w U V hUtop hUa hU hV hVtop hVa hUVtop hUVa ell 0
-      (unitCohomologyPullback p₁ 1 x) = ell x • unitCanonical Y.hom V hVtop hVa := by
+      (unitCohomologyPullbackLinear p₁ 1 x) = ell x • unitCanonical Y.hom V hVtop hVa := by
   obtain ⟨z, rfl⟩ := canonicalClass_surjective X.hom U hUtop hUa 0 x
-  dsimp only [unitCohomologyPullback]
+  dsimp only [unitCohomologyPullbackLinear]
   rw [pull_canonicalClass p₁ U (prodCover p₁.left p₂.left U V) Prod.fst
       (fun _ => inf_le_left) hUtop hUVtop hUa hUVa]
   unfold slantByH1Dual
@@ -342,9 +342,9 @@ lemma slantByH1Dual_bottom_pull_right
     (ell : (relativeCohomology X.hom 1).obj (unitModule X.left) →ₗ[K] K)
     (y : (relativeCohomology Y.hom 1).obj (unitModule Y.left)) :
     slantByH1Dual hP halgX halgY halgP p₁.w U V hUtop hUa hU hV hVtop hVa hUVtop hUVa ell 0
-      (unitCohomologyPullback p₂ 1 y) = 0 := by
+      (unitCohomologyPullbackLinear p₂ 1 y) = 0 := by
   obtain ⟨z, rfl⟩ := canonicalClass_surjective Y.hom V hVtop hVa 0 y
-  dsimp only [unitCohomologyPullback]
+  dsimp only [unitCohomologyPullbackLinear]
   rw [pull_canonicalClass p₂ V (prodCover p₁.left p₂.left U V) Prod.snd
       (fun _ => inf_le_right) hVtop hUVtop hVa hUVa]
   unfold slantByH1Dual

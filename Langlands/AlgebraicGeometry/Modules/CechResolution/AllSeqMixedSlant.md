@@ -26,7 +26,7 @@ Setting selected inputs to zero gives `L_cup_pull_left_right`, which evaluates a
 
 ## Actual cohomology and the mixed tensor map
 
-Now `K` is any field, with no characteristic restriction, and `X`, `Y`, `P` are objects over `Spec K`. The canonical pullback `unitCohomologyPullback f n` composes `relativeCohomologyPullback` with the unit-module pullback isomorphism. Thus its source and target are the actual structure-sheaf cohomology objects.
+Now `K` is any field, with no characteristic restriction, and `X`, `Y`, `P` are objects over `Spec K`. The canonical pullback `unitCohomologyPullbackLinear f n` composes `relativeCohomologyPullback` with the unit-module pullback isomorphism. Thus its source and target are the actual structure-sheaf cohomology objects.
 
 For the mixed cup and tensor map, `P` is separated and its product family is a finite affine open cover. `mixedCup` is the bilinear map
 

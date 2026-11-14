@@ -23,8 +23,8 @@ section PullbackLaws
 variable {R : CommRingCat.{u}}
 
 lemma unitCohomologyPullback_id (X : Over (Spec R)) (n : ℕ) :
-    unitCohomologyPullback (𝟙 X) n = LinearMap.id := by
-  unfold unitCohomologyPullback
+    unitCohomologyPullbackLinear (𝟙 X) n = LinearMap.id := by
+  unfold unitCohomologyPullbackLinear
   rw [← ModuleCat.hom_id]
   congr 1
   rw [show (Langlands.Scheme.Modules.pullbackUnitIso (𝟙 X : X ⟶ X).left).hom =
@@ -33,9 +33,9 @@ lemma unitCohomologyPullback_id (X : Over (Spec R)) (n : ℕ) :
   exact relativeCohomologyPullback_identity _ n
 
 lemma unitCohomologyPullback_comp {X Y Z : Over (Spec R)} (f : Y ⟶ X) (g : Z ⟶ Y)
-    (n : ℕ) : unitCohomologyPullback (g ≫ f) n =
-      (unitCohomologyPullback g n).comp (unitCohomologyPullback f n) := by
-  unfold unitCohomologyPullback
+    (n : ℕ) : unitCohomologyPullbackLinear (g ≫ f) n =
+      (unitCohomologyPullbackLinear g n).comp (unitCohomologyPullbackLinear f n) := by
+  unfold unitCohomologyPullbackLinear
   rw [← ModuleCat.hom_comp]
   congr 1
   have hc : (Scheme.Modules.pullbackComp g.left f.left).hom.app (unitModule X.left) ≫
@@ -50,7 +50,7 @@ lemma unitCohomologyPullback_comp {X Y Z : Over (Spec R)} (f : Y ⟶ X) (g : Z �
 /-- Positive-degree pullback to the affine base is zero. -/
 lemma unitCohomologyPullback_to_base {Y : Over (Spec R)}
     (e : Over.mk (𝟙 (Spec R)) ⟶ Y) (n : ℕ) :
-    unitCohomologyPullback e (n + 1) = 0 := by
+    unitCohomologyPullbackLinear e (n + 1) = 0 := by
   have hzero := (affineQuasicoherentCohomologyVanishing (Spec R) inferInstance
     (unitModule (Spec R)) inferInstance n).2 R (𝟙 (Spec R))
   exact congrArg ModuleCat.Hom.hom (hzero.eq_of_tgt
@@ -61,7 +61,7 @@ lemma unitCohomologyPullback_to_base {Y : Over (Spec R)}
 /-- Pullback through the affine base vanishes in every positive degree. -/
 lemma unitCohomologyPullback_base {X Y : Over (Spec R)}
     (e : Over.mk (𝟙 (Spec R)) ⟶ Y) (n : ℕ) :
-    unitCohomologyPullback (Over.homMk X.hom ≫ e) (n + 1) = 0 := by
+    unitCohomologyPullbackLinear (Over.homMk X.hom ≫ e) (n + 1) = 0 := by
   rw [unitCohomologyPullback_comp, unitCohomologyPullback_to_base, LinearMap.comp_zero]
 
 /-- Axis restrictions distinguish the two positive-degree projection summands. -/
@@ -72,15 +72,15 @@ lemma axisPullbacks_eq_zero {X Y P : Over (Spec R)} (p₁ : P ⟶ X) (p₂ : P �
     (hYX : iY ≫ p₁ = Over.homMk Y.hom ≫ eX) (hYY : iY ≫ p₂ = 𝟙 Y)
     (n : ℕ) (x : (relativeCohomology X.hom (n + 1)).obj (unitModule X.left))
     (y : (relativeCohomology Y.hom (n + 1)).obj (unitModule Y.left))
-    (h : unitCohomologyPullback p₁ (n + 1) x +
-      unitCohomologyPullback p₂ (n + 1) y = 0) : x = 0 ∧ y = 0 := by
+    (h : unitCohomologyPullbackLinear p₁ (n + 1) x +
+      unitCohomologyPullbackLinear p₂ (n + 1) y = 0) : x = 0 ∧ y = 0 := by
   constructor
-  · have hi := congrArg (unitCohomologyPullback iX (n + 1)) h
+  · have hi := congrArg (unitCohomologyPullbackLinear iX (n + 1)) h
     rw [map_add, ← LinearMap.comp_apply, ← LinearMap.comp_apply,
       ← unitCohomologyPullback_comp, ← unitCohomologyPullback_comp, hXX, hXY,
       unitCohomologyPullback_id, unitCohomologyPullback_base] at hi
     simpa only [LinearMap.id_apply, LinearMap.zero_apply, add_zero, map_zero] using hi
-  · have hi := congrArg (unitCohomologyPullback iY (n + 1)) h
+  · have hi := congrArg (unitCohomologyPullbackLinear iY (n + 1)) h
     rw [map_add, ← LinearMap.comp_apply, ← LinearMap.comp_apply,
       ← unitCohomologyPullback_comp, ← unitCohomologyPullback_comp, hYX, hYY,
       unitCohomologyPullback_id, unitCohomologyPullback_base] at hi
@@ -123,15 +123,15 @@ def degreeTwoSum :
         (relativeCohomology Y.hom 1).obj (unitModule Y.left)) ×
       (relativeCohomology Y.hom 2).obj (unitModule Y.left) →ₗ[K]
         (relativeCohomology P.hom 2).obj (unitModule P.left) where
-  toFun s := unitCohomologyPullback p₁ 2 s.1 +
-    mixedTensor p₁ p₂ U V hUVtop hUVa s.2.1 + unitCohomologyPullback p₂ 2 s.2.2
+  toFun s := unitCohomologyPullbackLinear p₁ 2 s.1 +
+    mixedTensor p₁ p₂ U V hUVtop hUVa s.2.1 + unitCohomologyPullbackLinear p₂ 2 s.2.2
   map_add' s t := by
     simp only [Prod.fst_add, Prod.snd_add, map_add]
     abel
   map_smul' c s := by
-    change unitCohomologyPullback p₁ 2 (c • s.1) +
+    change unitCohomologyPullbackLinear p₁ 2 (c • s.1) +
       mixedTensor p₁ p₂ U V hUVtop hUVa (c • s.2.1) +
-        unitCohomologyPullback p₂ 2 (c • s.2.2) = _
+        unitCohomologyPullbackLinear p₂ 2 (c • s.2.2) = _
     simp only [map_smul, smul_add, RingHom.id_apply]
 
 omit [IsSeparated X.hom] [IsSeparated Y.hom]
@@ -140,8 +140,8 @@ omit [IsSeparated X.hom] [IsSeparated Y.hom]
   [∀ W : P.left.Opens, Algebra (CommRingCat.of K) Γ(P.left, W)] in
 lemma degreeTwoSum_apply (x t y) :
     degreeTwoSum p₁ p₂ U V hUVtop hUVa (x, t, y) =
-      unitCohomologyPullback p₁ 2 x + mixedTensor p₁ p₂ U V hUVtop hUVa t +
-        unitCohomologyPullback p₂ 2 y := rfl
+      unitCohomologyPullbackLinear p₁ 2 x + mixedTensor p₁ p₂ U V hUVtop hUVa t +
+        unitCohomologyPullbackLinear p₂ 2 y := rfl
 
 include hP halgX halgY halgP hUtop hUa hU hV hVtop hVa in
 /-- A vanishing degree-two sum has vanishing mixed tensor. -/
