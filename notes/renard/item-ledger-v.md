@@ -110,6 +110,36 @@ Library (diagnostic `0e441105-9b2d-48c5-b124-8955a8dc9216`: 0 errors, 0 warnings
 6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`) for the conjunction; no proof of it is
 accepted yet.
 
+A fourth Worker 4 pass, also on 14 November, checks against Library
+`58ad0f796899b4aa457077d0146815c24758f739`. It updates the V.2.2 Remarks row and the
+anisotropic-part paragraph after the V.2 table, the V.3.1 split-component row, the V.3.2 row,
+gap 6 and two sentences of the proof-task section. The six proofs below were independently
+accepted and first published at Library `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`. They
+are unchanged in the checked Library. Each theorem has exactly the type of its statement, and
+Worker 4 found no `sorry`, `admit` or `axiom` in its file. For each proof, the SHA256 digests
+of the Lean and Markdown files in the checked Library equal those of the accepted artifact.
+
+| Row | Statement | Theorem and proof module | Proof task | Accepted artifact, reviewer | Integration ID |
+| --- | --- | --- | --- | --- | --- |
+| V.2.2 Remarks, maximal anisotropic subtorus and almost direct product | `GS.TorusAnisotropicPartStatement` | `torusAnisotropicPart`, [TorusAnisotropicPartProof](../../Langlands/GroupScheme/Rational/TorusAnisotropicPartProof.md) | Task 6398 (`55194693`) | `c38b65be-a024-465f-938f-25c2dffdfa54`, Reviewer 3835 | `684f66537e264cdcaa68f85188862db7` |
+| V.3.1, `Z(G, A)` is a Levi factor with split component `A` | `GS.ParabolicSplitComponentLeviStatement` | `parabolicSplitComponentLevi`, [ParabolicSplitComponentLeviProof](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentLeviProof.md) | Task 6452 (`d8ff4270`) | `8a5066fc-1a6f-4e01-b96d-5b2ebe084502`, Reviewer 3664 | `8f1b25ca28134ba4b7a6c5fbf14e9d62` |
+| V.3.1, `A_M` is a split component of `P` | `GS.LeviSplitComponentRadicalStatement` | `leviSplitComponentRadical`, [LeviSplitComponentRadicalProof](../../Langlands/GroupScheme/Rational/LeviSplitComponentRadicalProof.md) | Task 6454 (`b2fb4859`) | `e9b76755-211a-4d22-9c7c-e1a7450a838d`, Reviewer 3646 | `cca763761ed14a55826a61a170fac91f` |
+| V.3.1, `N` transitive on split components | `GS.ParabolicSplitComponentConjugacyStatement` | `parabolicSplitComponentConjugacy`, [ParabolicSplitComponentConjugacyProof](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentConjugacyProof.md) | Task 6455 (`e322ff48`) | `654715c6-8ce6-486e-90bc-b288071f0518`, Reviewer 3656 | `169cadac914149928cd025fd75f158a2` |
+| V.3.1, Levi subgroups as centralizers of split tori | `GS.LeviCentralizerCharacterizationStatement` | `leviCentralizerCharacterization`, [LeviCentralizerCharacterizationProof](../../Langlands/GroupScheme/Rational/LeviCentralizerCharacterizationProof.md) | Task 6456 (`da581938`) | `24f1cd16-8966-4bc9-a259-6f116a62ac34`, Reviewer 3639 | `d99c60fa8f9b448283f71d815a970656` |
+| V.3.2, first sentence | `GS.MinimalParabolicSplitComponentStatement` | `minimalParabolicSplitComponent`, [MinimalParabolicSplitComponentProof](../../Langlands/GroupScheme/Rational/MinimalParabolicSplitComponentProof.md) | Task 6457 (`67bcbcad`) | `f6625a0a-8b1a-4ba5-8e9f-35c770af6c73`, Reviewer 3661 | `dad8fc30cb05442e952cab8b1209b8d4` |
+
+The last five statements are the components of Worker 4's published unit
+[ParabolicSplitComponentStatements](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatements.md)
+(candidate `409bc563-b798-41ec-84d8-0aaf06765e52`). Their conjunction,
+`GS.ParabolicSplitComponentStatements`, has no proof in the checked Library. A Worker 4
+scratch file that imports the five Library proof modules and pairs their theorems into the
+conjunction compiles against this Library (diagnostic `a2deb435-d2ee-42cc-a88a-bd1d323df5c5`:
+0 errors, 0 warnings; axioms `propext`, `Classical.choice`, `Quot.sound` only). Worker 4
+published the exact proof Task 6866 (`e5eb891b-fc5e-4885-8241-647a8b70812f`) for the
+conjunction; no proof of it is accepted yet. This pass leaves unchanged the V.3.24 rows, the
+V.3.24 evidence section, gap 7 and the V.3.24 sentences of the proof-task section, which
+Worker 1222 updates separately.
+
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
 [Chapter V structural-inputs ledger](chapter-v-structural-inputs.md) (Worker 164) classifies
@@ -160,7 +190,7 @@ Status codes, as in the Chapter VI ledger:
 | V.2.1 split component and its uniqueness | `GS.IsSplitComponent`; `GS.SplitComponentStatement` (existence, uniqueness up to isomorphism over `G`) | D; P: `splitComponentStatement` |
 | V.2.1 topology independent of the embedding; `G` unimodular | `rationalPointTopology`; unimodularity is V.5.4 below | Rec (S04); D |
 | V.2.2 `X^*(G)`, triviality on `𝒟G`, finite-rank lattice, duals | `GroupScheme.rationalCharacters`; `GS.RationalCharacterLatticeStatement` | D; P: `rationalCharacterLattice` |
-| V.2.2 Remarks (tori): cocharacter pairing `χ(φ(t)) = t^{⟨χ,φ⟩}`, coordinate algebra `F[X^*(T)]`, anisotropic and split tori, maximal split and anisotropic subtori, almost direct product | `latticePairing`, `rationalCharacterEval_cocharacterPoints`; `IsSplitTorus` (isomorphic to `splitTorus S I`); largest split subtorus (`Rational.TorusSplitPart`); `GS.TorusAnisotropicPartStatement` ([statement](../../Langlands/GroupScheme/Rational/TorusAnisotropicPartStatement.md)) | Rec (S05). D for the listed constructions; P for the named pairing laws and largest split subtorus; S for the maximal anisotropic subtorus and finite surjective multiplication `A × T_an → T`, exact proof Task 6398 (`55194693-d01d-4220-9427-fa92990f27d6`) |
+| V.2.2 Remarks (tori): cocharacter pairing `χ(φ(t)) = t^{⟨χ,φ⟩}`, coordinate algebra `F[X^*(T)]`, anisotropic and split tori, maximal split and anisotropic subtori, almost direct product | `latticePairing`, `rationalCharacterEval_cocharacterPoints`; `IsSplitTorus` (isomorphic to `splitTorus S I`); largest split subtorus (`Rational.TorusSplitPart`); `GS.TorusAnisotropicPartStatement` ([statement](../../Langlands/GroupScheme/Rational/TorusAnisotropicPartStatement.md)) | Rec (S05). D for the listed constructions; P for the named pairing laws and largest split subtorus; P for the maximal anisotropic subtorus and finite surjective multiplication `A × T_an → T`: `torusAnisotropicPart` (Task 6398, `55194693-d01d-4220-9427-fa92990f27d6`) |
 | V.2.3 (V.2.3.1) `H_G`, `⁰G`, `Λ(G)`, exact sequence; `⁰G = ⋂ ker \|χ\|_F` | `PL.rationalCharacterValuation`, `PL.rationalCommonNormKernel`, `PL.rationalCharacterValuationImage`, `PL.rationalNormKernelQuotientEquiv`; `rationalCharacterValuation_ker` | D; P |
 | V.2.3 Lemma: `\|χ\|_F` smooth, kernel contains every compact subgroup | `isLocallyConstant_rationalNormCharacter`, `compactSubgroup_le_rationalCommonNormKernel`; generic `PL.CommonNormKernelTopologyStatement` | P (`commonNormKernelTopology`) |
 | V.2.3 Proposition: `⁰G` open, closed, normal; compact subgroups and `𝒟G` in `⁰G` | `isOpen_rationalCommonNormKernel`, `isClosed_rationalCommonNormKernel`, instance `rationalCommonNormKernel_normal`, `derivedPoints_le_rationalCommonNormKernel` | P |
@@ -189,7 +219,9 @@ Check `4a9eab52-4b7d-4d1e-a3a7-edd2383e4719` compiled and inspected the existing
 declaration as `Prop` with zero errors and warnings. No proof was found in the
 public Lean files or focused task records; Task 6398 supplies its exact proof
 obligation. The source was reread at V.2.2 Remark 2 and V.2.5, printed pp.105, 107 /
-PDF pp.111, 113. Compilation of the statement supplies no proof evidence.
+PDF pp.111, 113. Compilation of the statement supplies no proof evidence. At Library
+`58ad0f796899b4aa457077d0146815c24758f739` the statement is proved: Task 6398's
+theorem `torusAnisotropicPart` is published (fourth-pass table at the top of this note).
 
 ## V.3 Parabolic subgroups (109–117 / 115–123)
 
@@ -199,10 +231,10 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | --- | --- | --- |
 | V.3 opening: parabolic subgroups, rational radicals | `IsParabolicSubgroup` | D; Rec |
 | V.3.1 Levi decomposition `P = M ⋉ N`; `N` acts simply transitively on the Levi factors | `GS.ParabolicRadicalTorusLeviStatement` and `GS.ParabolicRadicalTorusCentralizerLeviStatement` (a Levi factor is the centralizer of a maximal torus of the radical of `P`), `GS.RationalLeviConjugacyStatement` (two rational Levis are conjugate by a unique rational point of the unipotent radical), `GS.ParabolicRootPresentationExistenceStatement` | P (each has its proof) |
-| V.3.1 `M = Z(G, A)` for a split component `A` of `P`, `A = A_M`; Levi subgroups are the centralizers of split tori `A` with `A = A_M` | `GS.LeviSplitComponentCentralizerStatement` states `Z_G(A_M) = M` as subgroup functors for every rational Levi of a rational parabolic. Related: `GS.DynamicLeviCocharacterRealizationStatement`, `GS.MinimalParabolicLeviCentralizerStatement`. The full relation with the split component of `P` is Worker 4's separate parabolic split-component unit | Rec (S08); S for the arbitrary-Levi split-component centralizer; P for the related statements; see the V.3.5 row |
+| V.3.1 `M = Z(G, A)` for a split component `A` of `P`, `A = A_M`; Levi subgroups are the centralizers of split tori `A` with `A = A_M` | Worker 4's [ParabolicSplitComponentStatements](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatements.md), for a split component `A` of `P` (a maximal split torus of a supplied radical of `P`, as in V.2.1): `GS.ParabolicSplitComponentLeviStatement` (`Z(G, A)` is represented by a rational Levi factor of `P` whose split component is `A`), `GS.LeviSplitComponentRadicalStatement` (the split component of a rational Levi factor is a split component of `P`), `GS.ParabolicSplitComponentConjugacyStatement` (the unipotent radical acts transitively on the split components of `P`) and `GS.LeviCentralizerCharacterizationStatement` (the rational Levi factors of parabolics are the centralizers of split subtori `A` that are their split components). `GS.LeviSplitComponentCentralizerStatement` states `Z_G(A_M) = M` as subgroup functors for every rational Levi of a rational parabolic. Related: `GS.DynamicLeviCocharacterRealizationStatement`, `GS.MinimalParabolicLeviCentralizerStatement` | Rec (S08); P for the four split-component statements: `parabolicSplitComponentLevi` (Task 6452), `leviSplitComponentRadical` (Task 6454), `parabolicSplitComponentConjugacy` (Task 6455), `leviCentralizerCharacterization` (Task 6456); their conjunction with the V.3.2 statement has exact proof Task 6866; S for the arbitrary-Levi split-component centralizer; P for the related statements; see the V.3.5 row |
 | V.3.1 opposite parabolic: the unique `Q ∈ P(M)` with `P ∩ Q = M` | `GS.OppositeDynamicParabolicUniquenessStatement` | P |
 | V.3.1 `P(M)` is finite | `GS.LeviParabolicFiniteStatement`, in [LeviSplitComponentRecallStatements](../../Langlands/GroupScheme/Rational/LeviSplitComponentRecallStatements.md): a uniform bound on finite families with distinct parabolic images and the same embedded rational Levi | Rec (S07); S. `GS.MaximalLeviParabolicCountStatement` covers maximal `M` (at most two) |
-| V.3.2 minimal parabolics; conjugacy of maximal split tori and of minimal parabolics | `GS.MinimalParabolicLeviCentralizerStatement`, `GS.MaximalSplitTorusConjugacyStatement`, `GS.MinimalParabolicConjugacyStatement` | P |
+| V.3.2 minimal parabolics; conjugacy of maximal split tori and of minimal parabolics | `GS.MinimalParabolicSplitComponentStatement` (first sentence: a parabolic is minimal if and only if its split components are maximal split tori of `G`), `GS.MinimalParabolicLeviCentralizerStatement`, `GS.MaximalSplitTorusConjugacyStatement`, `GS.MinimalParabolicConjugacyStatement` | P (the first sentence by `minimalParabolicSplitComponent`, Task 6457) |
 | V.3.3 `𝔞`, `𝔞^*` | `RealTorusSpace.Vstar` | D |
 | V.3.4 `Σ'(A)`, `Σ(A)`, `Σ'(P)`, `Σ(P)` | `relativeRoots`, `RelativeRoot.indivisibleRoots`, `positiveRelativeRoots`, `reducedPositiveRelativeRoots`, `RelativeRoot.subgroupRelativeRoots`; `GS.RenardRootConventionStatement` | D; P: `renardRootConvention` |
 | V.3.5 `W(A) = N_G(A)/Z_G(A) = N_G(M)/M`, acting faithfully | `relativeWeylGroup` (minimal case); `RP.LeviNormalizerWeylGroupStatements` (`N_G(M)/M` finite, faithful through the norms on the centre); `GS.LeviSplitComponentCentralizerStatement` and `GS.LeviSplitComponentNormalizerStatement` | D; P: `leviNormalizerWeylGroupStatements`; S for `Z_G(A_M) = M` as subgroup functors and `N_G(A_M) = N_G(M)` on rational points for arbitrary rational Levis. The normalizer equality is not asserted as equality of subgroup schemes; see the public pair's Weil-restriction counterexample to that stronger assertion |
@@ -602,13 +634,15 @@ not whole-section or whole-book completion.
 6. Recalled assertions with remaining proofs: `P(M)` finite (V.3.1),
    `N_G(A_M) = N_G(M)` on rational points and `Z_G(A_M) = M` for arbitrary
    rational Levis (V.3.5) are stated in the public
-   `LeviSplitComponentRecallStatements`; the maximal anisotropic subtorus and
-   almost direct product (V.2.2 Remark 2) are stated in the public
-   `TorusAnisotropicPartStatement`, with exact proof Task 6398. The general
+   `LeviSplitComponentRecallStatements`. The general
    closed-subset assertions of V.4.2 are now stated by Worker 4's public
    `ClosedRootSubsetStatements`, with the ambient-root and reduced-test
    distinctions and source correction I5 above. Their nine proof targets
-   remain open obligations.
+   remain open obligations. The maximal anisotropic subtorus and almost
+   direct product (V.2.2 Remark 2), formerly listed here, are proved by
+   `torusAnisotropicPart` (Task 6398). The split-component assertions of
+   V.3.1 and the first sentence of V.3.2 are proved by Tasks 6452 and
+   6454–6457; only their conjunction awaits Task 6866.
 7. V.3.24: proofs of the nonnegative comparison with the actual split-central
    uniformizer quotient, finite generation after its identification and the
    strict-face decomposition with actual standard Levi split components.
@@ -635,10 +669,13 @@ The compatible-component V.3.6 statement
 (`423ad442-9268-4104-a37f-3f1d8eb63388`). Its arbitrary-field scope, literal
 restriction kernel and actual pairing annihilator are retained. The four component
 statements of Worker 4's real-coroot unit are proved by Tasks 6345–6348; their
-conjunction has exact proof Task 6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). For V.3.24, exact proof
+conjunction has exact proof Task 6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). The five
+component statements of Worker 4's parabolic split-component unit (V.3.1–V.3.2) are proved
+by Tasks 6452 and 6454–6457; their conjunction has exact proof Task 6866
+(`e5eb891b-fc5e-4885-8241-647a8b70812f`). For V.3.24, exact proof
 Tasks 6390 and 6391 have complete unreviewed shared drafts at revision 1.
-Task 6398 is the exact proof task for the already public anisotropic-part
-statement. Task 6429 is the exact proof successor for the now-public
+Task 6398, the exact proof task for the public anisotropic-part statement, is
+complete: its theorem `torusAnisotropicPart` is published. Task 6429 is the exact proof successor for the now-public
 finite-generation statement; Task 6472 is the exact successor for the
 now-public strict-image statement. Each has a complete unreviewed shared
 proof-only draft at revision 1, with no proof artifact submitted as inspected
