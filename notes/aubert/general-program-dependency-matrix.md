@@ -1,5 +1,11 @@
 # General Aubert duality: declaration and dependency matrix
 
+The [14 November proof publication update](general-program-proof-update-2026-11-14.md)
+records nine accepted and published exact proofs: the canonical bridges,
+six conditional reductions and the whole rational GL Theorem 2.3 target.
+It supersedes those pending proof statuses in the historical tables below
+and records the seven remaining proof tasks and staged Family 1/2 statements.
+
 The [13 November publication and dependency update](general-program-publication-update-2026-11-13.md)
 records the subsequent publication of the canonical smooth complex, endpoints
 and bridge statements, the new canonical Family 3/4 and whole-graded GL

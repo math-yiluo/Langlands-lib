@@ -11,7 +11,9 @@ item of Chapter IV and the unheaded assertions found, with printed / PDF pages
 Proposition statements at `24a49431a1a304ab4190fc6ef1f7e7d21c2d41be`. On 14 November 2026,
 the six formerly statement-only rows were updated against published proofs in Library
 `e13a307a22881999a6db8ebc753d4d0b6dd359e5`; the evidence, hypotheses and implemented routes
-appear below. Other row statuses retain the original survey date and scope.
+appear below. The further IV.3.2 statement update uses Library
+`457e31a2131a1083c26931d33fec09a71fea54d6` and records the remaining exact proof task.
+Other row statuses retain the original survey date and scope.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -77,7 +79,7 @@ another namespace is written, statements are in
 | IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | `Langlands.Induction.CentralL2` and its form `centralL2Form` | D |
 | IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
 | IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.IsSquareIntegrableModCenter` and the predicates of [UnitarySquareIntegrableStatements](../../Langlands/Representation/Compact/UnitarySquareIntegrableStatements.md) | D |
-| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` | 100 / 106 | `CR.SquareIntegrableCoefficientCriterionStatement`, which also assumes `π` admissible | P (`squareIntegrableCoefficientCriterion`) with the added hypothesis; see clarification C3 |
+| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | S; exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) remains open. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
 | IV.3.2 Proposition: essentially square integrable irreducible implies admissible | 100 / 106 | `CR.EssentiallySquareIntegrableAdmissibleStatement` | P |
 | IV.3.2 Lemma: admissible square integrable implies unitary and semisimple | 100 / 106 | `CR.SquareIntegrableUnitarySemisimpleStatement` | P |
 | IV.3.3 Lemma (i)–(ii): Schur orthogonality and the formal degree | 101 / 107 | `CR.SchurOrthogonalityStatement` | P: `schurOrthogonality` |
@@ -104,14 +106,21 @@ another namespace is written, statements are in
   [HermitianRepresentationStatements](../../Langlands/Representation/Unitary/HermitianRepresentationStatements.md)
   records a complete route through admissibility and the generalized eigenspaces of
   `B₀* = B₀(T ·, ·)`.
-- **C3. IV.3.2 Remark (printed p.100 / PDF p.106).** The source assumes only that `π` is
-  irreducible. The published statement also assumes admissibility, for the reasons given in
-  its Markdown
+- **C3. IV.3.2 Remark (printed p.100 / PDF p.106).** The source assumes an irreducible smooth
+  `π` with a unitary central character, without admissibility. The older published statement
+  assumes admissibility, as explained in its Markdown
   ([SquareIntegrableCoefficientCriterionStatement](../../Langlands/Representation/MatrixCoefficient/SquareIntegrableCoefficientCriterionStatement.md)):
-  the published square-integrability predicate includes admissibility, and the proof uses
-  irreducibility of the smooth dual. For the groups of the book the extra hypothesis is
-  automatic by the VI.2.2 Theorem (`RationalPointsIrreducibleAdmissibleStatement`, proof task
-  `173e44ba`). For a general t.d. group the Remark without admissibility is not stated.
+  its square-integrability predicate includes admissibility, and its proof uses that
+  hypothesis to obtain irreducibility of the smooth dual. That narrower theorem is unchanged.
+  The newly published
+  [SingleCoefficientSquareIntegrabilityStatement](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md)
+  states the general t.d.-group Remark without admissibility, using the all-coefficients
+  condition directly. Its exact proof remains open in Task 6678
+  (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`). The published
+  `essentiallySquareIntegrableAdmissible` theorem consumes the all-coefficients condition;
+  it can yield admissibility after this implication is proved, not as an initial input.
+  A reductive-group admissibility theorem alone cannot discharge this general t.d.-group
+  obligation. C3 is now a proof gap rather than a missing statement.
 
 ## Proof-publication update, 14 November 2026
 
@@ -177,11 +186,35 @@ are:
   transport of the published centre-quotient results. Comparison of the two Haar measures
   on compact-open-invariant coefficient norms proves convergence equivalence.
 
+## IV.3.2 statement publication, 14 November 2026
+
+Statement `71f341e5-5a75-4c1d-86b0-ea5a0b549815` is independently accepted by
+Reviewer 2594 and public, with no qualifications. Integration
+`8b2b359c401f4733aecb8b222ae9db53` first published its pair at Library
+`b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a`. Both frozen file hashes agree with
+the pair at the update's Library commit `457e31a2131a1083c26931d33fec09a71fea54d6`.
+The original IV.3.1–IV.3.2 passage, printed pp.99–100 / PDF pp.105–106, was read
+again for this update.
+
+The proposition retains a Hausdorff locally compact totally disconnected group, the
+actual quotient `G/Z(G)` with a Borel Haar measure that is also right invariant,
+an irreducible smooth complex representation and a specified unitary central
+character. A nonzero smooth coefficient whose quotient norm is in `L²` implies
+the same for every smooth coefficient, using the same character and measure.
+There is no admissibility, reductivity, countability or finite-dimensionality
+hypothesis, and the group and representation-carrier universes remain independent.
+The source leaves the proof to the reader; this publication supplies only its
+Prop-valued statement. Exact proof Task 6678
+(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) targets
+`Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement.{u,v}`.
+Neither the statement publication nor creation of that task closes C3.
+
 ## Summary
 
 The six formerly open proof rows now have proofs of their published propositions.
-The other rows retain their original statuses and scope; this update is a focused
-publication audit of those six rows. In particular, C1–C3 remain in force: the
+The IV.3.2 Remark additionally has a published statement at the general source scope,
+with its exact proof still open. The other rows retain their original statuses and scope.
+C1–C3 remain relevant: the
 IV.1.3 Lemma needs a nonzero representation, the printed argument of IV.2.1 Remark 1 is
-incomplete, and the IV.3.2 Remark is stated with an additional admissibility hypothesis.
+incomplete, and the IV.3.2 Remark without admissibility remains unproved.
 These distinctions remain relevant to exact source coverage and whole-book completion.
