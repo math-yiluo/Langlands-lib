@@ -1,0 +1,287 @@
+import Langlands.Geometry.Building.IntegerRootReflectionWeyl
+
+/-! # Rank-one normalizers for integer-valued building data -/
+
+noncomputable section
+
+universe u
+
+open CategoryTheory AlgebraicGeometry
+open scoped CategoryTheory.MonObj
+open Langlands.GroupScheme Langlands.GroupScheme.RealTorusSpace
+
+namespace Langlands.Geometry.Building.IntegerValuationBuildingData
+
+private theorem opposite_cell_identity {H : Type*} [Group H]
+    (p₁ x p₂ u n v : H) :
+    x * (u * n * v) =
+      p₁⁻¹ * ((p₁ * x * p₂) * n) * ((n⁻¹ * (p₂⁻¹ * u) * n) * v) := by
+  group
+
+private theorem opposite_cell_identity_two {H : Type*} [Group H]
+    (p₁ m n t v q₁ q₂ : H) :
+    p₁⁻¹ * (m * n) * (t * v) =
+      (p₁⁻¹ * ((m * n) * q₁⁻¹ * (m * n)⁻¹)) *
+        ((m * n) * (q₁ * t * q₂)) * (q₂⁻¹ * v) := by
+  group
+
+variable {k : Type u} [Field k]
+    {v : Valuation k (WithZero (Multiplicative ℤ))}
+    {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
+    (B : IntegerValuationBuildingData v G)
+
+/-- The actual normalizer points preserving the two characters `a` and `-a`. -/
+def rootPairNormalizer (a : characterLattice B.S) : Subgroup (normalizerPoints B.i) where
+  carrier := {n | weylAction B.i n a = a ∨ weylAction B.i n a = -a}
+  one_mem' := Or.inl (by rw [map_one]; rfl)
+  mul_mem' := by
+    intro n m hn hm
+    change weylAction B.i n a = a ∨ weylAction B.i n a = -a at hn
+    change weylAction B.i m a = a ∨ weylAction B.i m a = -a at hm
+    change weylAction B.i (n * m) a = a ∨ weylAction B.i (n * m) a = -a
+    rw [map_mul, LinearEquiv.mul_apply]
+    rcases hm with hm | hm
+    · simpa only [hm] using hn
+    · rw [hm, map_neg]
+      rcases hn with hn | hn
+      · exact Or.inr (congrArg Neg.neg hn)
+      · exact Or.inl (by rw [hn, neg_neg])
+  inv_mem' := by
+    intro n hn
+    have h := weylAction_inv_apply_apply n a
+    rcases hn with hn | hn
+    · exact Or.inl (by rwa [hn] at h)
+    · exact Or.inr (by
+        rw [hn, map_neg] at h
+        exact neg_eq_iff_eq_neg.mp h)
+
+/-- Reflection products which preserve the two roots in a fixed rank-one ray. -/
+def rankOneReflectionNormalizer (a : characterLattice B.S) :
+    Subgroup (normalizerPoints B.i) :=
+  B.reflectionNormalizer ⊓ B.rootPairNormalizer a
+
+/-- The cell with two positive root factors and a rank-one reflection product. -/
+def rankOneReflectionCell (a : characterLattice B.S) : Set (rationalPoints G) :=
+  {g | ∃ u ∈ B.rootGroup a, ∃ n ∈ B.rankOneReflectionNormalizer a,
+    ∃ v ∈ B.rootGroup a, g = u * (n : rationalPoints G) * v}
+
+variable {a : characterLattice B.S} {b : relativeRoots B.i}
+    {g : rationalPoints G} {p : rationalPoints G × rationalPoints G}
+
+/-- Representatives for either root of the ray belong to its middle subgroup. -/
+theorem reflectionElement_mem_rankOneReflectionNormalizer
+    (hb : (b : characterLattice B.S) = a ∨ (b : characterLattice B.S) = -a)
+    (hg : g ∈ B.rootGroup b) (hg1 : g ≠ 1)
+    (hp : RelativeRoot.IsOppositeFactorPair B.i (b : characterLattice B.S) g p) :
+    B.reflectionElement hp ∈ B.rankOneReflectionNormalizer a := by
+  refine ⟨B.reflectionElement_mem_reflectionNormalizer hg hg1 hp, ?_⟩
+  let n := B.reflectionElement hp
+  have hf : weylAction B.i n b = -(b : characterLattice B.S) := hp.weylAction_eq_neg B.i
+    B.isMaximalSplitTorus.isSplitSubtorus.1 b.property.1 hg hg1
+  change weylAction B.i (B.reflectionElement hp) a = a ∨
+    weylAction B.i (B.reflectionElement hp) a = -a
+  rcases hb with hb | hb
+  · rw [hb] at hf
+    exact Or.inr hf
+  · rw [hb, map_neg, neg_neg] at hf
+    exact Or.inr (neg_eq_iff_eq_neg.mp hf)
+
+/-- Pair existence implies that the negative of an actual root is an actual root. -/
+theorem neg_mem_relativeRoots_of_hasOppositeFactorPairs
+    (hF : RelativeRoot.HasOppositeFactorPairs B.i) (a : relativeRoots B.i) :
+    -(a : characterLattice B.S) ∈ relativeRoots B.i := by
+  let x : B.Apartment := Classical.arbitrary _
+  obtain ⟨g, hg, hgt⟩ := x.isValuation.exists_ne_top a.property
+  have hg1 : g ≠ 1 := fun h => hgt
+    ((x.isValuation.eq_top_iff a a.property g hg).2 h)
+  obtain ⟨p, hp⟩ := hF a a.property g hg hg1
+  have hf := hp.weylAction_eq_neg B.i
+    B.isMaximalSplitTorus.isSplitSubtorus.1 a.property.1 hg hg1
+  rw [← hf]
+  exact weylAction_mapsTo_relativeRoots B.i _ a.property
+
+/-- Left multiplication by a positive root point preserves the rank-one cell. -/
+theorem mul_mem_rankOneReflectionCell_of_mem_rootGroup
+    {x y : rationalPoints G} (hx : x ∈ B.rootGroup a)
+    (hy : y ∈ B.rankOneReflectionCell a) :
+    x * y ∈ B.rankOneReflectionCell a := by
+  obtain ⟨u, hu, n, hn, v, hv, rfl⟩ := hy
+  exact ⟨x * u, (B.rootGroup a).mul_mem hx hu, n, hn, v, hv, by group⟩
+
+set_option maxHeartbeats 800000 in
+/-- Left multiplication by an opposite root point also preserves the cell.
+This uses pair existence at the opposite root, and at most two such pairs. -/
+theorem mul_mem_rankOneReflectionCell_of_mem_opposite
+    (hF : RelativeRoot.HasOppositeFactorPairs B.i) (a : relativeRoots B.i)
+    {x y : rationalPoints G} (hx : x ∈ B.rootGroup (-(a : characterLattice B.S)))
+    (hy : y ∈ B.rankOneReflectionCell a) :
+    x * y ∈ B.rankOneReflectionCell a := by
+  by_cases hx1 : x = 1
+  · simpa only [hx1, one_mul] using hy
+  let b : relativeRoots B.i :=
+    ⟨-(a : characterLattice B.S), B.neg_mem_relativeRoots_of_hasOppositeFactorPairs hF a⟩
+  obtain ⟨p, hp⟩ := hF b b.property x hx hx1
+  have hp1 : p.1 ∈ B.rootGroup a := by
+    have hp1' : p.1 ∈ rootGroupPoints B.i (-(-(a : characterLattice B.S))) := hp.1
+    simpa only [neg_neg] using hp1'
+  have hp2 : p.2 ∈ B.rootGroup a := by
+    have hp2' : p.2 ∈ rootGroupPoints B.i (-(-(a : characterLattice B.S))) := hp.2.1
+    simpa only [neg_neg] using hp2'
+  let m := B.reflectionElement (α := b) hp
+  have hm : m ∈ B.rankOneReflectionNormalizer a :=
+    B.reflectionElement_mem_rankOneReflectionNormalizer
+      (a := (a : characterLattice B.S)) (b := b) (Or.inr rfl) hx hx1 hp
+  have hmflip : weylAction B.i m a = -(a : characterLattice B.S) := by
+    have hf : weylAction B.i m (-(a : characterLattice B.S)) =
+        -(-(a : characterLattice B.S)) :=
+      hp.weylAction_eq_neg B.i B.isMaximalSplitTorus.isSplitSubtorus.1 b.property.1 hx hx1
+    rw [map_neg (weylAction B.i m) (a : characterLattice B.S), neg_neg] at hf
+    exact neg_eq_iff_eq_neg.mp hf
+  obtain ⟨u, hu, n, hn, v, hv, rfl⟩ := hy
+  let t := p.2⁻¹ * u
+  have ht : t ∈ B.rootGroup a :=
+    (B.rootGroup a).mul_mem ((B.rootGroup a).inv_mem hp2) hu
+  let t' := (n : rationalPoints G)⁻¹ * t * (n : rationalPoints G)
+  have hbase : x * (u * (n : rationalPoints G) * v) =
+      p.1⁻¹ * ((m * n : normalizerPoints B.i) : rationalPoints G) * (t' * v) := by
+    exact opposite_cell_identity p.1 x p.2 u (n : rationalPoints G) v
+  have hmn : m * n ∈ B.rankOneReflectionNormalizer a :=
+    (B.rankOneReflectionNormalizer a).mul_mem hm hn
+  have hinv := ((B.rankOneReflectionNormalizer a).inv_mem hn).2
+  change weylAction B.i n⁻¹ a = a ∨
+    weylAction B.i n⁻¹ a = -(a : characterLattice B.S) at hinv
+  rcases hinv with hinv | hinv
+  · have ht' : t' ∈ B.rootGroup a := by
+      simpa only [hinv, Subgroup.coe_inv, inv_inv] using
+        conj_mem_rootGroupPoints n⁻¹ ht
+    exact ⟨p.1⁻¹, (B.rootGroup a).inv_mem hp1, m * n, hmn,
+      t' * v, (B.rootGroup a).mul_mem ht' hv, hbase⟩
+  · have ht' : t' ∈ B.rootGroup (-(a : characterLattice B.S)) := by
+      simpa only [hinv, Subgroup.coe_inv, inv_inv] using
+        conj_mem_rootGroupPoints n⁻¹ ht
+    by_cases ht'1 : t' = 1
+    · refine ⟨p.1⁻¹, (B.rootGroup a).inv_mem hp1, m * n, hmn, v, hv, ?_⟩
+      simpa only [ht'1, one_mul] using hbase
+    obtain ⟨q, hq⟩ := hF b b.property t' ht' ht'1
+    have hq1 : q.1 ∈ B.rootGroup a := by
+      have hq1' : q.1 ∈ rootGroupPoints B.i (-(-(a : characterLattice B.S))) := hq.1
+      simpa only [neg_neg] using hq1'
+    have hq2 : q.2 ∈ B.rootGroup a := by
+      have hq2' : q.2 ∈ rootGroupPoints B.i (-(-(a : characterLattice B.S))) := hq.2.1
+      simpa only [neg_neg] using hq2'
+    let m' := B.reflectionElement (α := b) hq
+    have hm' : m' ∈ B.rankOneReflectionNormalizer a :=
+      B.reflectionElement_mem_rankOneReflectionNormalizer
+        (a := (a : characterLattice B.S)) (b := b) (Or.inr rfl) ht' ht'1 hq
+    have hnflip : weylAction B.i n a = -(a : characterLattice B.S) := by
+      have h := weylAction_apply_inv_apply n (a : characterLattice B.S)
+      rw [hinv, map_neg (weylAction B.i n) (a : characterLattice B.S)] at h
+      exact neg_eq_iff_eq_neg.mp h
+    have hmnfix : weylAction B.i (m * n) a = a := by
+      rw [map_mul, LinearEquiv.mul_apply, hnflip,
+        map_neg (weylAction B.i m) (a : characterLattice B.S), hmflip, neg_neg]
+    let r := ((m * n : normalizerPoints B.i) : rationalPoints G) *
+      q.1⁻¹ * (((m * n : normalizerPoints B.i) : rationalPoints G))⁻¹
+    have hr : r ∈ B.rootGroup a := by
+      simpa only [hmnfix] using
+        conj_mem_rootGroupPoints (m * n) ((B.rootGroup a).inv_mem hq1)
+    refine ⟨p.1⁻¹ * r, (B.rootGroup a).mul_mem ((B.rootGroup a).inv_mem hp1) hr,
+      (m * n) * m', (B.rankOneReflectionNormalizer a).mul_mem hmn hm',
+      q.2⁻¹ * v, (B.rootGroup a).mul_mem ((B.rootGroup a).inv_mem hq2) hv, ?_⟩
+    rw [hbase]
+    exact opposite_cell_identity_two p.1 (m : rationalPoints G)
+      (n : rationalPoints G) t' v q.1 q.2
+
+/-- Every product of points from the two opposite root groups lies in the cell. -/
+theorem rankOneClosure_subset_rankOneReflectionCell
+    (hF : RelativeRoot.HasOppositeFactorPairs B.i) (a : relativeRoots B.i) :
+    (Subgroup.closure ((B.rootGroup a : Set (rationalPoints G)) ∪
+      (B.rootGroup (-(a : characterLattice B.S)) : Set (rationalPoints G))) :
+        Set (rationalPoints G)) ⊆ B.rankOneReflectionCell a := by
+  intro g hg
+  induction hg using Subgroup.closure_induction_left with
+  | one =>
+    exact ⟨1, (B.rootGroup a).one_mem, 1, (B.rankOneReflectionNormalizer a).one_mem,
+      1, (B.rootGroup a).one_mem, by simp only [Subgroup.coe_one, one_mul]⟩
+  | mul_left x hx y _ ih =>
+    rcases hx with hx | hx
+    · exact B.mul_mem_rankOneReflectionCell_of_mem_rootGroup hx ih
+    · exact B.mul_mem_rankOneReflectionCell_of_mem_opposite hF a hx ih
+  | inv_mul_cancel x hx y _ ih =>
+    rcases hx with hx | hx
+    · exact B.mul_mem_rankOneReflectionCell_of_mem_rootGroup
+        ((B.rootGroup a).inv_mem hx) ih
+    · exact B.mul_mem_rankOneReflectionCell_of_mem_opposite hF a
+        ((B.rootGroup (-(a : characterLattice B.S))).inv_mem hx) ih
+
+/-- A normalizer point in the rank-one cell is one of its middle factors. -/
+theorem normalizer_mem_rankOneReflectionNormalizer_of_mem_cell
+    (a : relativeRoots B.i) (n : normalizerPoints B.i)
+    (hn : (n : rationalPoints G) ∈ B.rankOneReflectionCell a) :
+    n ∈ B.rankOneReflectionNormalizer a := by
+  obtain ⟨u, hu, r, hr, v, hv, hn⟩ := hn
+  let t := (r : rationalPoints G)⁻¹ * u * (r : rationalPoints G)
+  have he : ((r⁻¹ * n : normalizerPoints B.i) : rationalPoints G) = t * v := by
+    simp only [Subgroup.coe_mul, Subgroup.coe_inv]
+    rw [hn]
+    dsimp only [t]
+    group
+  have hq : r⁻¹ * n = 1 := by
+    have hrinv := ((B.rankOneReflectionNormalizer a).inv_mem hr).2
+    change weylAction B.i r⁻¹ a = a ∨
+      weylAction B.i r⁻¹ a = -(a : characterLattice B.S) at hrinv
+    rcases hrinv with hfix | hflip
+    · have ht : t ∈ B.rootGroup a := by
+        simpa only [hfix, Subgroup.coe_inv, inv_inv] using
+          conj_mem_rootGroupPoints r⁻¹ hu
+      apply RelativeRoot.normalizer_eq_one_of_mul_opposite B.i
+        B.isMaximalSplitTorus.isSplitSubtorus.1 a.property.1 (r⁻¹ * n)
+        ((B.rootGroup a).mul_mem ht hv)
+        ((B.rootGroup (-(a : characterLattice B.S))).one_mem)
+      simpa only [mul_one] using he
+    · have ht : t ∈ B.rootGroup (-(a : characterLattice B.S)) := by
+        simpa only [hflip, Subgroup.coe_inv, inv_inv] using
+          conj_mem_rootGroupPoints r⁻¹ hu
+      have hv' : v ∈ B.rootGroup (-(-(a : characterLattice B.S))) := by
+        simpa only [neg_neg] using hv
+      exact RelativeRoot.normalizer_eq_one_of_mul_opposite B.i
+        B.isMaximalSplitTorus.isSplitSubtorus.1 (neg_ne_zero.mpr a.property.1)
+        (r⁻¹ * n) ht hv' he
+  exact (inv_mul_eq_one.mp hq : r = n) ▸ hr
+
+/-- The actual normalizer in a subgroup generated by two opposite root groups
+is contained in the reflection subgroup. -/
+theorem normalizer_mem_reflectionNormalizer_of_mem_rankOneClosure
+    (hF : RelativeRoot.HasOppositeFactorPairs B.i) (a : relativeRoots B.i)
+    (n : normalizerPoints B.i)
+    (hn : (n : rationalPoints G) ∈
+      Subgroup.closure ((B.rootGroup a : Set (rationalPoints G)) ∪
+        (B.rootGroup (-(a : characterLattice B.S)) : Set (rationalPoints G)))) :
+    n ∈ B.reflectionNormalizer :=
+  (B.normalizer_mem_rankOneReflectionNormalizer_of_mem_cell a n
+    (B.rankOneClosure_subset_rankOneReflectionCell hF a hn)).1
+
+/-- Ambient-group form of rank-one normalizer containment. -/
+theorem rankOneNormalizer_le_reflectionNormalizer_map
+    (hF : RelativeRoot.HasOppositeFactorPairs B.i) (a : relativeRoots B.i) :
+    normalizerPoints B.i ⊓
+        Subgroup.closure ((B.rootGroup a : Set (rationalPoints G)) ∪
+          (B.rootGroup (-(a : characterLattice B.S)) : Set (rationalPoints G))) ≤
+      B.reflectionNormalizer.map (normalizerPoints B.i).subtype := by
+  intro g hg
+  exact ⟨⟨g, hg.1⟩,
+    B.normalizer_mem_reflectionNormalizer_of_mem_rankOneClosure hF a ⟨g, hg.1⟩ hg.2, rfl⟩
+
+/-- In particular, centralizer points in a rank-one root-generated subgroup
+are products of actual reflection representatives. -/
+theorem rankOneCentralizer_le_reflectionNormalizer_map
+    (hF : RelativeRoot.HasOppositeFactorPairs B.i) (a : relativeRoots B.i) :
+    centralizerPoints B.i ⊓
+        Subgroup.closure ((B.rootGroup a : Set (rationalPoints G)) ∪
+          (B.rootGroup (-(a : characterLattice B.S)) : Set (rationalPoints G))) ≤
+      B.reflectionNormalizer.map (normalizerPoints B.i).subtype := by
+  intro g hg
+  exact B.rankOneNormalizer_le_reflectionNormalizer_map hF a
+    ⟨centralizerPoints_le_normalizerPoints B.i hg.1, hg.2⟩
+
+end Langlands.Geometry.Building.IntegerValuationBuildingData

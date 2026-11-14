@@ -26,7 +26,10 @@ proposition definitions.
 The module uses two local instances. They make the valuation ring
 `LocalGalois.Separable.fixedFieldIntegers F` of `L₀` an `𝒪[F]`-algebra, with the scalar tower
 `𝒪[F] → fixedFieldIntegers F → L₀`. Both come from Mathlib's `Valuation.HasExtension` instances
-for the valuation of `F` and the published `fixedFieldValuation F`.
+for the valuation of `F` and the published `fixedFieldValuation F`. They have the explicit
+names `unramifiedTwistIntegerAlgebra` and `unramifiedTwistIntegerScalarTower` so that
+this module can be imported together with `IntegralModel.UnramifiedIntegralPointAction`
+without generated declaration-name collisions. Their instance bodies are unchanged.
 
 | Declaration | Content |
 |---|---|
