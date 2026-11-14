@@ -18,9 +18,13 @@ refer to commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a` unless stated otherwi
 The V.2.2 and V.3.1–V.3.24 rows have focused 13 November 2026 updates against Library
 `430cc03fe803c5dbf74bc3baf91e8f7a2c26ea9c`. The V.5.3 module-form row has a
 separate 13 November update against Library
-`a0627c91621a99df78a1079f47cfb76995f077fa`, verified below. Other rows retain
-their earlier audit status. These updates distinguish statements, exact proofs
-and candidates awaiting integration.
+`a0627c91621a99df78a1079f47cfb76995f077fa`, verified below. A further
+13 November update of V.3.24 and V.4.2 uses Library
+`dad81bc65e375153a3adcb2748ee7261d4444dab`: it records the published
+finite-generation statement, actual nonnegative quotient construction, integral
+strict faces, actual strict-image statement and closed-root-subset unit.
+Other rows retain their earlier audit status. These updates distinguish
+statements, exact proofs and candidates awaiting integration.
 
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
@@ -150,8 +154,12 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.24 the nonnegative integral model and quotient by the common annihilator | `GS.CocharacterCone.nonnegative`, `quotient`, `mkQ_mem_quotient_iff`, `latticeSection_mem_CAplus_iff` ([construction](../../Langlands/GroupScheme/Rational/CocharacterCone.md)) | D/P for the construction and intrinsic laws; published candidate `6d296d7f-cdc6-4d8a-bbb7-580fab06a4b9` |
 | V.3.24 the integral kernel of the split-central quotient | `GS.SimpleRootSplitCentralImageStatement`: for every supplied compatible `f : A_G → A_∅`, the simple-root integral annihilator equals the integral cocharacter image of `f` | S: candidate `dc66d64a-3cac-4f23-868b-62c6c8270f89`; exact proof Task 6390 (`ded1c8b7-84b7-4c10-a243-eb0395d509d7`) |
 | V.3.24 the common-uniformizer group quotient and its representative map | `GS.CocharacterUniformizer.QuotientComparisonStatement`: for split `T` and every commutative `A` and `f : A → T`, the integral quotient by `range(cocharacterMapInt f)` is multiplicatively equivalent to the image of `C_T` in `T(F)/f(C_A)`, by evaluation at the common uniformizer | S: candidate `ad918cde-8ea6-485b-a90b-88fdf44dc8c6`; exact proof Task 6391 (`ee278654-01f1-4cf6-a3f5-a11da91904f3`) |
-| V.3.24 finite-generation replacement for the false `S ≅ ℕ^d` assertion | `GS.CocharacterConeFiniteGenerationStatement`: for every field, actual commutative group scheme `T` and finite set `R` of actual characters, `(CocharacterCone.quotient T R).FG` | A: candidate `84ddf0c4-2efe-474c-87de-8461db6189e1`, independently approved, awaiting integration. No public proof or freeness assertion |
-| V.3.24 identification of the nonnegative quotient with the actual `C^+_∅/C_{A_G}`; `S = ⊔ S^{++}_L` | The preceding constructions and statements isolate the integral and group comparisons. Their combination on the nonnegative monoids and the strict-face comparison with actual standard Levi split components remain separate | G; source issue I2 below prevents the printed free-monoid conclusion |
+| V.3.24 finite-generation replacement for the false `S ≅ ℕ^d` assertion | `GS.CocharacterConeFiniteGenerationStatement`: for every field, actual commutative group scheme `T` and finite set `R` of actual characters, `(CocharacterCone.quotient T R).FG` | S: published candidate `84ddf0c4-2efe-474c-87de-8461db6189e1`; exact proof Task 6429 (`7e019df7-e7ba-40e6-ac54-7fbd3d1b0dec`). No public proof or freeness assertion |
+| V.3.24 actual nonnegative quotient `C^+_∅/C_{A_G}` | `GS.CocharacterUniformizer.CAplusMonoid`, `CAplusQuotient`, `mem_CAplusMonoid`, `mem_CAplusQuotient` ([construction](../../Langlands/Geometry/Building/CocharacterUniformizerCone.md)) | D/P for the construction and its representative laws; published candidate `e3a3c275-d6f7-4814-bc70-0a438466c38a` |
+| V.3.24 comparison of the integral nonnegative quotient with that actual quotient | `GS.CocharacterUniformizer.ConeQuotientComparisonStatement`: a monoid equivalence prescribed by common-uniformizer evaluation on every nonnegative representative, for every supplied compatible split-component map | A: candidate `e577f809-f957-4f53-bbdd-fe5bf315fba8`, independently approved, not public at this update; no proof counted |
+| V.3.24 strict faces of the integral quotient | `GS.CocharacterCone.strictFace`, `mkQ_mem_strictFace_iff`, `strictFace_subset_quotient`, `existsUnique_strictFace`, `iUnion_strictFace`, `strictFace_disjoint` ([construction](../../Langlands/GroupScheme/Rational/CocharacterConeFaces.md)) | D/P: published candidate `fd6d0153-2b3d-4684-8b3a-8fd00e1f3822`; these are integral faces, before comparison with actual Levi split components |
+| V.3.24 strict uniformizer image of each actual standard Levi split component | `GS.CocharacterUniformizer.StandardLeviStrictImageStatement`: under every supplied compatible map, the strict section image equals the uniformizer image of `IsStandardCocharacter` | S: published candidate `55bbe167-ba81-42e2-8ce6-ac00610fdfc1`; exact proof Task 6472 (`f221e1b4-bd46-4391-9832-8df952b39f94`) |
+| V.3.24 actual strict quotient pieces and `S = ⊔ S^{++}_L` | `GS.CocharacterUniformizer.standardLeviStrictQuotientFace` takes the quotient images over all actual compatible standard-Levi representatives | A for the piece definition: candidate `ccf31197-027a-486f-9b24-978b709baf46`, independently approved, not public at this update. The actual partition remains an obligation; source issue I2 prevents the printed free-monoid conclusion |
 | V.3.25 `C_A/C_{A_G}(C_A ∩ ⁰G)` finite; `C^{++}_A ∩ ⁰G ≠ ∅` | not stated separately | St: step of VI.3.5 (`RPF.RationalCompactRestrictionCuspidalStatement`, proved) |
 
 ## Evidence for the focused V.3.6–V.3.13 update
@@ -228,23 +236,61 @@ private compilation results supply no independent proof acceptance.
 Finite-generation statement candidate `84ddf0c4-2efe-474c-87de-8461db6189e1`
 passed machine validation `56b81cb6-f4ca-4d43-b9dc-6565d7d43524`. Reviewer 1621
 independently approved it without qualifications in review task
-`e27bda22-25ae-41e3-961f-f02394a22182`; it is still staged and not public at
-this update. The sole finiteness premise is finiteness of the selected actual
+`e27bda22-25ae-41e3-961f-f02394a22182`. It is now published at
+`85c2fe719cf62e96f22aaf4ca03961c5814d086b`, integration
+`1e1aa3dbaa0a4c8aaaa045fe99db1307`. Its frozen, current Library and workspace
+pairs agree exactly. The sole finiteness premise is finiteness of the selected actual
 character set. No finite-generation hypothesis on the full cocharacter lattice
 is added. The complete private proof evaluates into a finite product of
 integers, identifies its nonnegative image with the casts of a subtractive
 submonoid of a finite product of naturals, and applies Mathlib's
 `AddSubmonoid.fg_of_subtractive`. Check
 `af8c8573-398f-427b-a832-7016872e0be0` compiles that private proof and inspects
-the statement as `Prop`, with zero errors and warnings. The candidate and draft
-supply no published finite-generation result.
+the statement as `Prop`, with zero errors and warnings. Exact proof Task 6429
+has the complete proof-only shared draft at revision 1. It is ready with no
+executor or submitted artifact as inspected for this update. The published
+statement and unreviewed draft supply no accepted finite-generation proof.
+
+Three further units are independently accepted and published at commit
+`db8d6b3d466f2fd453a4df4624ce6c90db8eed46`, and their frozen pairs agree
+with the current Library and workspace:
+
+| Candidate | Public unit | Integration |
+| --- | --- | --- |
+| `e3a3c275-d6f7-4814-bc70-0a438466c38a` | `CocharacterUniformizerCone` | `c6310eb1e746456989e79a0f3fa4a65c` |
+| `fd6d0153-2b3d-4684-8b3a-8fd00e1f3822` | `CocharacterConeFaces` | `aba2535876504065bc185d4fce49cdcc` |
+| `55bbe167-ba81-42e2-8ce6-ac00610fdfc1` | `StandardLeviStrictUniformizerStatement` | `3e190bdd6ff6460f9c47d94e64a71c21` |
+
+The first constructs the actual submonoid image in `T(F)/f(C_A)` for arbitrary
+commutative group schemes and character sets, and identifies its representatives
+with the existing `CAplus`. The second partitions the integral nonnegative
+quotient by the existing standard-cocharacter predicate: standardness is
+invariant under the exact common annihilator, and each class has a unique
+vanishing-root index. Neither uses a reductivity, genericity or positive-rank
+premise. The third states the strict image comparison for connected reductive
+groups over all nonarchimedean local fields, with maximal split torus, generic
+cocharacter, actual closed standard-Levi representative, split component and
+every compatible map. It retains integral factorization and allows non-split
+groups, nonreduced relative roots and rank zero.
+
+Task 6472 has a complete proof-only shared draft at revision 1; it is ready
+with no executor or submitted artifact as inspected for this update. Its
+development compilation is not proof acceptance. The nonnegative comparison
+candidate `e577f809-f957-4f53-bbdd-fe5bf315fba8` and actual strict-piece
+definition candidate `ccf31197-027a-486f-9b24-978b709baf46` have successful
+machine validation and independent approvals by Reviewers 1857 and 1873,
+respectively, but remain unpublished. The comparison replaces rejected
+`49565914-009b-4bf1-a02a-98bbf4877a9f`, whose construction dependency was then
+unpublished. No result from either pending candidate is counted as public.
 
 The source was reread at V.3.23–V.3.24, printed p.117 / PDF p.123. The correction
-of the free-monoid assertion remains issue I2 below. A final comparison on the
-nonnegative monoids, its finite-generation consequence for the actual quotient
-and the strict-face decomposition over actual standard Levi split components
-remain explicit obligations. Worker 4 retains the chamber, parabolic
-split-component and closed-root-subset units.
+of the free-monoid assertion remains issue I2 below. Proofs of the integral and
+nonnegative comparisons, finite generation after transport to the actual
+quotient, and the strict-face decomposition over actual standard Levi split
+components remain explicit obligations. Worker 4 retains the chamber,
+parabolic split-component and closed-root-subset units. The nine
+closed-root-subset proofs remain open obligations; this update counts no
+published proof-successor tasks for them.
 
 ## V.4 Weyl groups (118–122 / 124–128)
 
@@ -252,8 +298,8 @@ split-component and closed-root-subset units.
 | --- | --- | --- |
 | V.4 opening: root subgroups `U_γ` | root-subgroup constructions under `Langlands.GroupScheme.Rational` | D |
 | V.4.1 `W_G`, `S_∅`; Proposition ([7]): Tits system and Bruhat decomposition | `relativeWeylGroup`; `GS.RelativeTitsSystemStatement`, `GS.TitsStandardParabolicStatement` | P |
-| V.4.2 closed, convex, symmetric and unipotent subsets; `G(T)`, `U(T)`; Proposition ([7] 3.22) | none in general; the parabolic and Levi instances are V.3.10 above | Rec (S14), not stated in general |
-| V.4.2 Proposition ([7] 5.12–5.18): standard parabolics and subsets `Θ ⊂ Δ_∅` | `GS.StandardParabolicClassificationStatement`, `GS.StandardCocharacterStatement`, `GS.StandardParabolicPointsStatement` | P |
+| V.4.2 closed, convex, symmetric and unipotent subsets; `G(T)`, `U(T)`; Proposition ([7] 3.22) | `GS.ClosedRootSubsetStatements` and its nine components ([statements and scope](../../Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.md)); generated groups use closed minimality on all test schemes, with existence stated separately | Rec (S14); D for the notions and elementary laws, S for the nine targets: published candidate `cf347b48-66a3-4452-b3d4-0cbc3917dca8`. Intersection targets use reduced test schemes, and (ii) uses all relative roots; see I5 |
+| V.4.2 Proposition ([7] 5.12–5.18): standard parabolics and subsets `Θ ⊂ Δ_∅` | `GS.StandardParabolicClassificationStatement`, `GS.StandardCocharacterStatement`, `GS.StandardParabolicPointsStatement`; new `GS.StandardParabolicRootTripleStatement` and `GS.StandardParabolicRootSubsetGroupStatement` give the generated root triples and their groups | P for the existing classification and points statements; S for the new root-triple and generated-group comparisons, in `ClosedRootSubsetStatements` |
 | V.4.3 `W_M ↪ W_G`, `w·M`, `W(L, M)`, `W_M W(L,M) W_L = W(L,M)` | `standardRelativeWeylGroup`, [RelativeWeylConjugation](../../Langlands/Group/RelativeWeylConjugation.md), `GS.StandardLeviConjugationStatement` | D; P |
 | V.4.3 (V.4.3.3) `W(M, M)/W_M ≃ W(A)` | `GS.StandardLeviNormalizerQuotientStatement`; finiteness consequence `RP.LeviNormalizerFiniteQuotientStatement` | S: Task 5688 (candidate `4d34998c`); P (finiteness) |
 | V.4.4 `W(*, M)`, `W(M, *)`, `l(M)` | inline sets in `GS.StandardWeylElementaryChainStatement` and `GS.StandardMaximalLeviWeylStatement` | X/D (no named definition) |
@@ -262,6 +308,20 @@ split-component and closed-root-subset units.
 | V.4.6 Lemma | `GS.StandardWeylMinimalRepresentativesStatement` | S: Task 5649 |
 | V.4.7 representatives `W^{Q,P}` for arbitrary `P`, `Q` | `RP.RepresentedGeometricLemmaGeometryStatement` | P: `representedGeometricLemmaGeometry` |
 | V.4.8 maximal standard Levis and `Δ_∅ ∖ {α}`; `M` maximal iff `l(M) = 2`; `w·P = P̄′` | `GS.StandardMaximalLeviWeylStatement`; related `GS.MaximalLeviParabolicCountStatement`, `GS.MaximalLeviParabolicFamilyStatement`, `GS.MaximalLeviContainmentStatement` | S: Task 5688; P (related). See remark R1 |
+
+Worker 4's closed-root-subset candidate
+`cf347b48-66a3-4452-b3d4-0cbc3917dca8` was independently approved by
+Reviewer 1683 and published at
+`db8d6b3d466f2fd453a4df4624ce6c90db8eed46`, integration
+`1b9ef7e8c26d404e8d16743bf3179597`. Its frozen, current Library and workspace
+pairs match exactly. Its nine proposition targets remain unproved in this unit.
+Their proofs remain open obligations; this update counts no published
+proof-successor tasks for them. The arbitrary-field
+statements distinguish the indivisible and possibly nonreduced ambient root
+sets. They do not identify scheme-theoretic intersections on arbitrary test
+schemes, and the symmetric-subset target gives integral reflections and their
+preservation of the subset rather than constructing a Mathlib root-system
+object. The separate proof obligations and source correction I5 are retained.
 
 ## V.5 Compact subgroups (122–129 / 128–135)
 
@@ -360,6 +420,24 @@ not whole-section or whole-book completion.
   decomposition holds with the roots projected to `𝔞^*_M` (equivalently restricted to `𝔞_M`), as in
   the definition of `Δ(P)` in V.3.14. Reviewer 2262 found this point.
 
+- **I5. V.4.2 (printed p.118 / PDF p.124).** The published
+  [closed-root-subset statement Markdown](../../Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.md)
+  records a counterexample to (ii) when closedness is read in Renard's
+  indivisible root set. For a quasi-split unitary group in five variables with
+  relative system `BC₂`, put `S = {e₁}` and
+  `T = {e₁ − e₂, e₁ + e₂}`. Both are closed among the indivisible roots, and
+  `T` is unipotent. The commutator of its two root groups gives a nontrivial
+  subgroup of `U_{2e₁} ⊆ G(S)`, although `S ∩ T` is empty. Thus
+  `G(S) ∩ U(T) = U(S ∩ T)` fails in that reading. The published target uses
+  all relative roots, as in Borel–Tits 3.22 c); there `T` is not closed.
+  The same example prevents the more general closed-subset intersection
+  assertion with only convex intersection from being transferred to the
+  indivisible ambient set. The convex version (i) has a separate target in
+  that set. All three intersection targets concern reduced test schemes,
+  consistent with the original variety statements; none asserts arbitrary
+  scheme-theoretic intersection equality. This source correction is documented
+  by the published statement unit, not proved as a Lean counterexample here.
+
 ## Genuine gaps of Chapter V
 
 1. V.3.16 cone decompositions and V.3.18 Langlands' combinatorial lemma, with the
@@ -388,14 +466,19 @@ not whole-section or whole-book completion.
    `LeviSplitComponentRecallStatements`; the maximal anisotropic subtorus and
    almost direct product (V.2.2 Remark 2) are stated in the public
    `TorusAnisotropicPartStatement`, with exact proof Task 6398. The general
-   closed-subset intersection Proposition ([7] 3.22) of V.4.2 is Worker 4's
-   active statement unit; no publication of that unit is counted here.
+   closed-subset assertions of V.4.2 are now stated by Worker 4's public
+   `ClosedRootSubsetStatements`, with the ambient-root and reduced-test
+   distinctions and source correction I5 above. Their nine proof targets
+   remain open obligations.
 7. V.3.24: the nonnegative comparison with the actual split-central
    uniformizer quotient, finite generation after its identification and the
    strict-face decomposition with actual standard Levi split components.
-   The public cone construction and two public comparison statements, their
-   exact proof tasks and the approved finite-generation statement are partial
-   progress, as detailed above. They do not establish freeness.
+   The public integral and actual quotient constructions, integral strict-face
+   laws, three public comparison statements and public finite-generation
+   statement are partial progress. Tasks 6390, 6391, 6429 and 6472 retain the
+   exact public proof targets. The nonnegative comparison and actual-piece
+   definition remain approved candidates awaiting publication; no actual
+   quotient partition has been published. None establishes freeness.
 
 ## Proof tasks of Worker 1222's Chapter V statements
 
@@ -411,5 +494,8 @@ restriction kernel and actual pairing annihilator are retained. The real-coroot 
 four focused proof-successor tasks, listed in its rows. For V.3.24, exact proof
 Tasks 6390 and 6391 have complete unreviewed shared drafts at revision 1.
 Task 6398 is the exact proof task for the already public anisotropic-part
-statement. The finite-generation statement still awaits publication before
-its focused proof successor can be submitted against a public target.
+statement. Task 6429 is the exact proof successor for the now-public
+finite-generation statement; Task 6472 is the exact successor for the
+now-public strict-image statement. Each has a complete unreviewed shared
+proof-only draft at revision 1, with no proof artifact submitted as inspected
+for this update. Neither draft supplies accepted proof coverage.
