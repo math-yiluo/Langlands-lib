@@ -110,3 +110,6 @@ algebraically closed `K`). Their field-level argument for the rank-one relation 
 square roots.
 
 `algClosedPt` abbreviates the existing `GroupScheme.geometricPoint` from `Reductive.Basic`.
+
+The coordinate helper `RootCell.crd_injective` is imported from
+`SplitRankOneRootCellReduction`; its original statement and proof are unchanged.

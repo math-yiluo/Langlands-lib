@@ -18,7 +18,8 @@ case `exists_iso_of_roots_eq_empty` of `SplitRankZeroIsomorphism`.
 
 - `Ga k` is the additive group `VectorGroup.groupScheme (CommRingCat.of k) 1`.
   `crd a ∈ Γ(Z.left, ⊤)` is the coordinate of a point `a : Z ⟶ 𝔾ₐ`, and `pt x` is the
-  point with coordinate `x` (`crd_pt`).
+  point with coordinate `x` (`crd_pt`). The shared `crd_injective` theorem, moved
+  unchanged from `SplitRankOneRootCellUniversal`, identifies points with equal coordinates.
 - `Cell T` is `𝔾ₐ ⊗ (T.X ⊗ 𝔾ₐ)`, the source of `Dynamic.tripleCellMultiplication`.
   `eq_lift` writes a point of `Cell T` as `lift m (lift t p)`.
 - `coU χv u : Z ⟶ T.X` is the point `χv(u)` of `T`, for a cocharacter `χv` and a unit `u`.

@@ -1,0 +1,9 @@
+# Constant point Weyl order over a split local base
+
+`localSplitWeylOrder I G i` is the natural cardinality of the actual point Weyl quotient on the closed residue-field fibre of a coordinate split torus map over a local ring. This definition is available for every such map and does not itself assert finiteness.
+
+For a reductive ambient group and a closed, fibrewise maximal coordinate torus map, `natCard_relativeWeylGroup_eq_localSplitWeylOrder` proves that every supplied field-valued fibre has this common order, retaining the original algebra structure of the supplied field. The published `localSplitFibrewiseRootDatumExistence` theorem supplies one full coordinate root datum for all field-valued fibres. The supporting `IsFibrewiseRootDatumOf.natCard_relativeWeylGroup` applies the field-cardinality formula and the invariance under coordinate field realization. Applying the resulting equality to the supplied field and to the closed residue field gives the claim.
+
+`IsSplitTorus.natCard_relativeWeylGroup_pos` uses the published finite full-character Weyl-image theorem for a closed split torus in an affine algebraic group. The character-action kernel is its centralizer, so the first isomorphism theorem identifies the point Weyl quotient with that finite image. Its order is positive since it is a group. `localSplitWeylOrder_pos` applies this result to the closed residue-field fibre of a fibrewise maximal torus in a reductive group. The fibrewise-maximality premise provides the closed inclusion on that fibre.
+
+This is an internal construction derived from the named Library results and the preceding internal full-root-datum cardinality module. It supplies point-quotient cardinality constancy over split local bases; it does not assert quotient-scheme representability or geometric-fibre cardinality comparisons.

@@ -10,8 +10,8 @@ dual-number kernels of a pullback group and its original group.
 `SubgroupFunctor.mem_lie_baseChange_iff` identifies tangent membership in any
 base-changed subgroup functor. Under the affine test-scheme comparison,
 membership is preserved in both directions by restriction along an
-isomorphism. `Lie.kernelBaseChangeLinearEquiv_target` identifies the
-differentials under that comparison. Both lemmas apply over commutative rings,
+isomorphism. The imported `Lie.kernelBaseChangeLinearEquiv_target`, now in
+`Lie.LinearBaseChangeNaturality`, identifies the differentials under that comparison. Both lemmas apply over commutative rings,
 with a compatible tower of coefficient algebras.
 
 `ker_targetMapLinear_baseChange_eq_center_lie` then transports exact equality

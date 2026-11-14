@@ -1,0 +1,9 @@
+# Weyl cardinalities from full coordinate root data
+
+This internal supporting construction for the finite étale Weyl group scheme theorem compares the actual field-point Weyl quotient with a root-datum Weyl group. Its provenance is the imported Library results `weylGroup`, `StarActionIndependence.conjAut_mem_weylGroup`, and `CoordinateRootDatum.fieldRealizationEquiv`.
+
+`natCard_relativeWeylGroup_eq_rootDatum` applies over any field to a connected reductive group, a split maximal torus, and any associated full root datum on the actual character and cocharacter lattices. It proves equality of natural cardinalities of the point quotient `relativeWeylGroup i` and the root-datum Weyl group. The character-action kernel is the point centralizer, and its image is the faithful weight image of the root-datum Weyl group. The first isomorphism theorem and injectivity of the weight action give the claimed equality. The theorem does not assume finiteness of the root index set; natural cardinality has its usual meaning for infinite types.
+
+`rootDatumWeylGroupEquiv` sends an element of one full root-datum Weyl group to its conjugate by a root-pairing equivalence. The published conjugation lemma carries the reflection-generated subgroup into the other Weyl group. Conjugation by the inverse equivalence gives the inverse function; equality of root-data automorphisms is checked on their weight maps. The inverse root-pairing equivalence has weight linear equivalence propositionally equal to the inverse of the original weight equivalence.
+
+`CoordinateRootDatum.natCard_weylGroup_fieldRealization` applies this equivalence to realization of both entire coordinate lattices as the actual lattices of a split torus over a supplied field. It proves that this realization preserves the Weyl order. Quotient-scheme existence and finiteness are outside this supporting unit.

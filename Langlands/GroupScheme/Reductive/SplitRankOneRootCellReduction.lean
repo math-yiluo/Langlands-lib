@@ -33,6 +33,10 @@ def pt {Z : Over (Spec (CommRingCat.of k))} (a : Γ(Z.left, ⊤)) : Z ⟶ (Ga k)
 theorem crd_pt {Z : Over (Spec (CommRingCat.of k))} (a : Γ(Z.left, ⊤)) : crd (pt a) = a := by
   rw [crd, pt, MulEquiv.apply_symm_apply, toAdd_ofAdd]
 
+theorem crd_injective {Z : Over (Spec (CommRingCat.of k))} {a a' : Z ⟶ (Ga k).X}
+    (h : crd a = crd a') : a = a' :=
+  VectorGroup.points_ext fun j => by rw [Fin.fin_one_eq_zero j]; exact h
+
 variable {T : CommGroupScheme (Spec (CommRingCat.of k))}
 
 /-- The source `𝔾ₐ × T × 𝔾ₐ` of the open cell. -/

@@ -40,10 +40,6 @@ def InCell (i : T.toGrp ⟶ G) (xp xm : Ga k ⟶ G) {Z : Over (Spec (CommRingCat
     (a b : Z ⟶ (Ga k).X) : Prop :=
   ∃ c, c ≫ Dynamic.tripleCellMultiplication xm i xp = (a ≫ xp.hom.hom) * (b ≫ xm.hom.hom)
 
-theorem crd_injective {Z : Over (Spec (CommRingCat.of k))} {a a' : Z ⟶ (Ga k).X}
-    (h : crd a = crd a') : a = a' :=
-  VectorGroup.points_ext fun j => by rw [Fin.fin_one_eq_zero j]; exact h
-
 theorem crd_comp {Z Z' : Over (Spec (CommRingCat.of k))} (w : Z' ⟶ Z) (a : Z ⟶ (Ga k).X) :
     crd (w ≫ a) = w.left.appTop (crd a) :=
   congrFun (VectorGroup.coordinates_comp w a) 0

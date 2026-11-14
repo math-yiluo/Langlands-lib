@@ -1,5 +1,5 @@
 import Langlands.GroupScheme.CentralIsogeny.SemisimpleKernel
-import Langlands.GroupScheme.Lie.FieldExtension
+import Langlands.GroupScheme.Lie.LinearBaseChangeNaturality
 import Langlands.GroupScheme.Reductive.CenterBaseChangeProof
 import Langlands.GroupScheme.GeometricConnectedness
 
@@ -52,14 +52,6 @@ theorem SubgroupFunctor.mem_lie_baseChange_iff
   · intro h
     have hh := F.comp_mem (Lie.affineBaseTestIso k K (DualNumber A)).hom h
     simpa only [Iso.hom_inv_id_assoc] using hh
-
-/-- The actual linear scheme-pullback comparison intertwines differentials. -/
-theorem Lie.kernelBaseChangeLinearEquiv_target (q : G ⟶ Q)
-    (X : Additive (lieKernel G_K A)) :
-    Lie.kernelBaseChangeLinearEquiv k K Q A
-        (Lie.targetMapLinear ((GroupScheme.baseChange b).map q) A X) =
-      Lie.targetMapLinear q A (Lie.kernelBaseChangeLinearEquiv k K G A X) :=
-  congrArg Additive.ofMul (Lie.kernelBaseChangeEquiv_target (k := k) (K := K) q X.toMul)
 
 /-- Exact equality with the full-centre tangent kernel survives arbitrary
 commutative extension of the scheme base. -/
