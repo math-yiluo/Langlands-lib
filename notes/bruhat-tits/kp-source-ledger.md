@@ -63,8 +63,8 @@ definition. Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary
 models over the integers of the maximal unramified extension or, for
 facets, over the integers of a nonarchimedean local field; the full
 model of Theorem 8.3.2 also has a proved construction from five
-unproved statements. The other fifteen rows retain empty formal-status
-and evidence fields. The remaining Bundle B
+statements, two of which are proved. The other fifteen rows retain
+empty formal-status and evidence fields. The remaining Bundle B
 targets still require public ledger entries. Private source audits and
 unsubmitted drafts are not publication evidence.
 
@@ -486,10 +486,11 @@ on supplied building data of `G_K`, for a smooth model with integral
 points `G(K)^1_Ω` and its relative identity component, which has
 connected fibres and integral points `G(K)^0_Ω`. It covers Theorem
 8.3.13 and the `G(K)^1_Ω` part of Theorem 8.3.2; the dagger model is
-absent. Its full-model part is proved from five unproved statements by
-`exists_smoothFullModel_of_vertexInputs` (artifact
+absent. Its full-model part is proved from five statements, then all
+unproved, by `exists_smoothFullModel_of_vertexInputs` (artifact
 `63d25099-b07d-4806-8ec0-e5b2587c6bf5`, commit
-`7f43c3c930ff92f76dae6589da1678ad729017e5`).
+`7f43c3c930ff92f76dae6589da1678ad729017e5`); the nineteenth pass records
+two of them as proved.
 `UnramifiedModelKernelStatement` (artifact
 `a9987a70-ad07-49f0-adca-afbc31ec89df`, commit
 `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`) states the smooth connected
@@ -647,6 +648,41 @@ that commit is unknown, to commit `ed924aef`. Every reported axiom set is
 `propext`, `Classical.choice`, `Quot.sound`. The source and correction
 fields of every row are unchanged.
 
+A nineteenth pass on 14 November 2026 updates two rows and adds none.
+The Theorem 8.3.2 row records that two of the five inputs of its
+conditional full-model construction are proved, both first published in
+Library commit `410c79471b79f65a02fb0f6070da7f2800793ff3`:
+`finiteVertexFixerApproximation` (artifact
+`e92ec689-8a24-4193-85a4-cdd1533c0817`) proves
+`FiniteVertexFixerApproximationStatement`, and `finiteIndexEnlargement`
+(artifact `6722356c-5ad2-43dd-bb70-d007825bd50d`) proves
+`FiniteIndexEnlargementStatement`, the finite-index part of KP
+Proposition A.7.1. `VertexOneStabilizerMaximalBoundedStatement`,
+`MaximalBoundedIntegralModelStatement` and `SmoothIntersectionStatement`
+remain unproved, and the row stays `statement`. The proof of
+`finiteIndexEnlargement` uses the helper module
+`Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargement.SubHopf`,
+which artifact `6722356c-5ad2-43dd-bb70-d007825bd50d` adapts from the
+`TakK` section of the Anthropic FLT file
+`P2M/Sol/S_HopfAlgebra_faithfullyFlat_subalgebra_of_isReduced_of_fg_of_isAlgClosed.lean`
+at commit `6e837e75355538c7f80bab5b956861e86c4eacc2` (Copyright 2026
+Anthropic, PBC; Apache License 2.0; licence, notice and attribution
+files under `licenses/Anthropic-FLT/`). The row's `external_code` field
+records this reuse through the accepted artifact, with its pin and
+licence. The Definition 6.6.1 row records that
+`unramifiedZeroPointsIndependence` (artifact
+`4375075b-73b6-48e2-9b4a-f6cddf7e67e3`, Library commit
+`db8d6b3d466f2fd453a4df4624ce6c90db8eed46`) proves
+`UnramifiedZeroPointsIndependenceStatement`, the independence part of KP
+Lemma 2.6.24, so the earlier route `normalizerZero_normal` to the
+normality of `Z(F)^0` in `N(F)` now needs no premise; the row stays
+`definition`. Three declarations were inspected with `lean_check` in
+environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit
+`20f83141`; each inspected module is byte-identical to the commit that
+first published it. Every reported axiom set is `propext`,
+`Classical.choice`, `Quot.sound`. The source and correction fields of
+every row are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -753,7 +789,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data; Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, two of them proved, and its descent input reduced by published implications to two unproved statements) and Lemma 9.8.1 (both existence statements reduced by published theorems to two unproved statements) have published statements, Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 published statements for the selected rational Kottwitz map, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the full model of Theorem 8.3.2 with a proved construction from five unproved statements; the other fifteen rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19 and Proposition 1.1.20 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data; Proposition 9.3.4 (also its integral-model input), Theorem 9.6.5 (with a proved reduction to five statements, two of them proved, and its descent input reduced by published implications to two unproved statements) and Lemma 9.8.1 (both existence statements reduced by published theorems to two unproved statements) have published statements, Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 published statements for the selected rational Kottwitz map, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the full model of Theorem 8.3.2 with a proved construction from five statements, two of them proved; the other fifteen rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -2111,7 +2147,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "G is a connected reductive group over the discretely valued Henselian field k. S is a maximal k-split torus, N=N_G(S), Z=Z_G(S); Z(k)^0 and Z(k)^1 are the source subgroups, not arbitrary choices.",
         "For comparisons with affine actions, use the Chapter 6 root-valuation apartment and affine root system. Constructing this data for general G is a separate obligation.",
-        "Recorded Lean scope (partial definition): for supplied P : ParahoricBuildingData G over a nonarchimedean local field, P.normalizerZero is the image of P.centralizerZero (the actual Z(F)^0) in normalizerPoints P.i = N(F), and P.IwahoriWeylGroup := normalizerPoints P.i ⧸ P.normalizerZero is Wtilde^0 as a coset type. Its group structure is used under the instance argument [P.normalizerZero.Normal]. Since Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0 that normality is proved for every supplied P: ParahoricBuildingData.normal_normalizerZero (module ZeroSubgroupCommutatorNormality, published with artifact dce35461-bb3e-429c-9068-cf0465a14731) proves that P.zeroSubgroup = G(F)^0 is normal in G(F), because commutators of G(F) lie in G(F)^♮, and concludes through normalizerZero_normal_of_zeroSubgroup_normal and the published cover comparison. The earlier conditional routes (normalizerZero_normal from UnramifiedZeroPointsIndependenceStatement, normalizerZero_normal_of_unipotentNormalizerCoset) remain. The Theorem 7.8.1 statements also assert it as a conclusion. AffineRootSystem.affineWeylGroup P.affineRoots is W_aff, the subgroup of affine automorphisms of the apartment generated by the affine root reflections. P.affinePart is the separate image of N(F) ∩ G(F)^0 in Wtilde^0. Its identification with W_aff is part of IwahoriWeylExactSequence, not of a definition. P.toComponents is the map Wtilde^0 → G(F)/G(F)^0. Wtilde^1=N(k)/Z(k)^1, the adjoint group Wtilde_ad and the maps Wtilde^0→Wtilde^1→Wtilde_ad are not formalized. The definition status of this row covers only Wtilde^0, W_aff and the affine part."
+        "Recorded Lean scope (partial definition): for supplied P : ParahoricBuildingData G over a nonarchimedean local field, P.normalizerZero is the image of P.centralizerZero (the actual Z(F)^0) in normalizerPoints P.i = N(F), and P.IwahoriWeylGroup := normalizerPoints P.i ⧸ P.normalizerZero is Wtilde^0 as a coset type. Its group structure is used under the instance argument [P.normalizerZero.Normal]. Since Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0 that normality is proved for every supplied P: ParahoricBuildingData.normal_normalizerZero (module ZeroSubgroupCommutatorNormality, published with artifact dce35461-bb3e-429c-9068-cf0465a14731) proves that P.zeroSubgroup = G(F)^0 is normal in G(F), because commutators of G(F) lie in G(F)^♮, and concludes through normalizerZero_normal_of_zeroSubgroup_normal and the published cover comparison. The earlier conditional routes (normalizerZero_normal from UnramifiedZeroPointsIndependenceStatement, normalizerZero_normal_of_unipotentNormalizerCoset) remain. The premise of the first is proved: Langlands.Geometry.Building.unramifiedZeroPointsIndependence (module Langlands.Geometry.Building.UnramifiedZeroIndependenceProof, artifact 4375075b-73b6-48e2-9b4a-f6cddf7e67e3, first published in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46) proves UnramifiedZeroPointsIndependenceStatement, the independence part of KP Lemma 2.6.24 (printed p.104 / PDF p.135) for Definition 2.6.23(1) over K = UnramifiedClosure F: any two data E, E' : UnramifiedZeroDatum F H for a group scheme H over K, which may differ in the torus, its splitting field and the simply connected cover, give the same subgroup E.zeroPoints = H(K)^♮ · T(K)^0. So normalizerZero_normal also proves the normality without a premise. The Theorem 7.8.1 statements also assert it as a conclusion. AffineRootSystem.affineWeylGroup P.affineRoots is W_aff, the subgroup of affine automorphisms of the apartment generated by the affine root reflections. P.affinePart is the separate image of N(F) ∩ G(F)^0 in Wtilde^0. Its identification with W_aff is part of IwahoriWeylExactSequence, not of a definition. P.toComponents is the map Wtilde^0 → G(F)/G(F)^0. Wtilde^1=N(k)/Z(k)^1, the adjoint group Wtilde_ad and the maps Wtilde^0→Wtilde^1→Wtilde_ad are not formalized. The definition status of this row covers only Wtilde^0, W_aff and the affine part."
       ],
       "conclusion": "The Iwahori–Weyl group is Wtilde^0=N(k)/Z(k)^0. Keep the distinct quotient Wtilde^1=N(k)/Z(k)^1 and the affine Weyl group W_aff generated by affine root reflections. The maps Wtilde^0→Wtilde^1→Wtilde_ad need not be injective; the affine action can lose component or central data.",
       "lean_declarations": [
@@ -2120,12 +2156,14 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Geometry.Building.ParahoricBuildingData.affinePart",
         "Langlands.Geometry.Building.ParahoricBuildingData.toComponents",
         "Langlands.Geometry.Building.AffineRootSystem.affineWeylGroup",
-        "Langlands.Geometry.Building.ParahoricBuildingData.normal_normalizerZero"
+        "Langlands.Geometry.Building.ParahoricBuildingData.normal_normalizerZero",
+        "Langlands.Geometry.Building.unramifiedZeroPointsIndependence"
       ],
       "modules": [
         "Langlands.Geometry.Building.IwahoriWeyl",
         "Langlands.Geometry.Building.AffineRootSystem",
-        "Langlands.Geometry.Building.ZeroSubgroupCommutatorNormality"
+        "Langlands.Geometry.Building.ZeroSubgroupCommutatorNormality",
+        "Langlands.Geometry.Building.UnramifiedZeroIndependenceProof"
       ],
       "dependencies": [
         "Definitions 2.6.15 and 2.6.23 and the torus/centralizer subgroup comparisons",
@@ -2136,11 +2174,13 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "formal_status": "definition",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
-        "dce35461-bb3e-429c-9068-cf0465a14731"
+        "dce35461-bb3e-429c-9068-cf0465a14731",
+        "4375075b-73b6-48e2-9b4a-f6cddf7e67e3"
       ],
       "publication_commits": [
         "c4a16df784376405a45b60df82583e8c26d8a4e3",
-        "e449cde988d4e97ab280b8d4d11262887ccc26e0"
+        "e449cde988d4e97ab280b8d4d11262887ccc26e0",
+        "db8d6b3d466f2fd453a4df4624ce6c90db8eed46"
       ],
       "axiom_reports": [
         {
@@ -2163,6 +2203,13 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "0159d9aa-3b8b-4d0f-ad23-481b23653132",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-10 at Library commit e449cde9; a theorem from a supporting module of artifact dce35461, which is listed for this theorem only."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.unramifiedZeroPointsIndependence",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "43cede85-964f-4a9b-8b40-87aa1de2030b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-14 at Library commit 20f83141; kind theorem; the module is byte-identical to commit db8d6b3d, its first publication."
         }
       ],
       "external_code": []
@@ -2942,31 +2989,38 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
         "Langlands.BruhatTits.IntegralModels.exists_smoothFullModel_of_vertexInputs",
         "Langlands.BruhatTits.IntegralModels.exists_relativeComponentModelData_of_vertexInputs",
-        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+        "Langlands.Geometry.Building.MaximalUnramified.finiteVertexFixerApproximation",
+        "Langlands.GroupScheme.IntegralModel.finiteIndexEnlargement"
       ],
       "modules": [
         "Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelStatement",
         "Langlands.BruhatTits.IntegralModels.UnramifiedFullModelConstruction",
-        "Langlands.Geometry.Building.IntegralModelAxiomsStatement"
+        "Langlands.Geometry.Building.IntegralModelAxiomsStatement",
+        "Langlands.Geometry.Building.UnramifiedFiniteVertexFixerAssembly",
+        "Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementProof"
       ],
       "dependencies": [
         "Proposition 8.3.1: faithful representations, stable lattices, schematic closure and smoothening (A.6.5–A.6.6) construct vertex models",
         "Enlarge Omega to the facets meeting it; Proposition 7.7.1 gives the finite-index inclusions, and A.7.1 propagates schematicity and identifies relative identity components",
         "For nonempty bounded Gamma-stable subsets, Section 9.2.5 constructs the descended smooth affine o-models using invariant coordinate rings and relative identity components; 9.2.6 identifies the parahoric o-points. Chapter 8 models alone do not give this descent.",
-        "Recorded Lean route (the G(K)^1_Omega model only): exists_smoothFullModel_of_vertexInputs and exists_relativeComponentModelData_of_vertexInputs (module Langlands.BruhatTits.IntegralModels.UnramifiedFullModelConstruction, artifact 63d25099-b07d-4806-8ec0-e5b2587c6bf5, a supporting unit of proof Task 5976, first published in Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5) are proved from five unproved statements: Langlands.Geometry.Building.MaximalUnramified.VertexOneStabilizerMaximalBoundedStatement and Langlands.Geometry.Building.MaximalUnramified.FiniteVertexFixerApproximationStatement (module Langlands.Geometry.Building.UnramifiedVertexFixerStatements), Langlands.GroupScheme.MaximalBoundedIntegralModelStatement (module Langlands.GroupScheme.IntegralModel.MaximalBounded), Langlands.GroupScheme.IntegralModel.SmoothIntersectionStatement (module Langlands.GroupScheme.IntegralModel.SmoothIntersection) and Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement (module Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargement). For every affine group scheme G over K with supplied C : MaximalUnramified.BuildingData F G, every g in G(K) and every nonempty bounded Omega_a, the first gives a smooth O-model with integral points G(K)^1 ⊓ C.pointwiseFixer (g·Omega_a), and the second packages it with its relative identity component. The proof chooses finitely many vertices, takes smooth models of their one-stabilizers, intersects them and enlarges the intersection by finite index to the full fixer. It does not compare the neutral integral points with G(K)^0_Omega, so it does not prove UnramifiedParahoricModelStatement.",
-        "Open obligations: UnramifiedParahoricModelStatement has proof Task 5976 (85c28d88-edea-4dd0-99a5-2610566438c0); the five inputs of the recorded route are unproved; IntegralModelAxiomsStatement has proof Task 5429; the dagger model and the common relative identity component have no Lean statement."
+        "Recorded Lean route (the G(K)^1_Omega model only): exists_smoothFullModel_of_vertexInputs and exists_relativeComponentModelData_of_vertexInputs (module Langlands.BruhatTits.IntegralModels.UnramifiedFullModelConstruction, artifact 63d25099-b07d-4806-8ec0-e5b2587c6bf5, a supporting unit of proof Task 5976, first published in Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5) are proved from five statements: Langlands.Geometry.Building.MaximalUnramified.VertexOneStabilizerMaximalBoundedStatement and Langlands.Geometry.Building.MaximalUnramified.FiniteVertexFixerApproximationStatement (module Langlands.Geometry.Building.UnramifiedVertexFixerStatements), Langlands.GroupScheme.MaximalBoundedIntegralModelStatement (module Langlands.GroupScheme.IntegralModel.MaximalBounded), Langlands.GroupScheme.IntegralModel.SmoothIntersectionStatement (module Langlands.GroupScheme.IntegralModel.SmoothIntersection) and Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement (module Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargement). For every affine group scheme G over K with supplied C : MaximalUnramified.BuildingData F G, every g in G(K) and every nonempty bounded Omega_a, the first gives a smooth O-model with integral points G(K)^1 ⊓ C.pointwiseFixer (g·Omega_a), and the second packages it with its relative identity component. The proof chooses finitely many vertices, takes smooth models of their one-stabilizers, intersects them and enlarges the intersection by finite index to the full fixer. It does not compare the neutral integral points with G(K)^0_Omega, so it does not prove UnramifiedParahoricModelStatement. Two of the five inputs are proved. Langlands.Geometry.Building.MaximalUnramified.finiteVertexFixerApproximation (module Langlands.Geometry.Building.UnramifiedFiniteVertexFixerAssembly, artifact e92ec689-8a24-4193-85a4-cdd1533c0817) proves FiniteVertexFixerApproximationStatement: for supplied C, g and nonempty bounded Omega_a, some nonempty finite set of vertices has the intersection of their one-stabilizers contained, normally and with finite index, in G(K)^1 ⊓ C.pointwiseFixer (g·Omega_a). Langlands.GroupScheme.IntegralModel.finiteIndexEnlargement (module Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementProof, artifact 6722356c-5ad2-43dd-bb70-d007825bd50d) proves FiniteIndexEnlargementStatement, the finite-index part of KP Proposition A.7.1: over any Henselian discrete valuation ring with algebraically closed residue field, a smooth model M of a smooth affine group over the fraction field and a subgroup V of its rational points containing M.integralPoints as a normal subgroup of finite index give a smooth model with integral points V and an open immersion of M into it, extending the identity of the generic group and preserving relative identity components. Both were first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3. VertexOneStabilizerMaximalBoundedStatement, MaximalBoundedIntegralModelStatement and SmoothIntersectionStatement remain unproved, so the route stays conditional.",
+        "Open obligations: UnramifiedParahoricModelStatement has proof Task 5976 (85c28d88-edea-4dd0-99a5-2610566438c0); three of the five inputs of the recorded route (VertexOneStabilizerMaximalBoundedStatement, MaximalBoundedIntegralModelStatement and SmoothIntersectionStatement) are unproved; IntegralModelAxiomsStatement has proof Task 5429; the dagger model and the common relative identity component have no Lean statement."
       ],
       "consumer_or_regression": "Actual integral-model input for the connected model, its reduction and compact/open integral points. The generally nonaffine full-fixer model of Remark 8.3.4 remains a different object.",
       "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
         "41339d18-6b2c-4c79-a9e1-9ef821fe6038",
-        "63d25099-b07d-4806-8ec0-e5b2587c6bf5"
+        "63d25099-b07d-4806-8ec0-e5b2587c6bf5",
+        "e92ec689-8a24-4193-85a4-cdd1533c0817",
+        "6722356c-5ad2-43dd-bb70-d007825bd50d"
       ],
       "publication_commits": [
         "cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e",
         "7f43c3c930ff92f76dae6589da1678ad729017e5",
-        "ed924aef420de137b4cbaa3b063a3618afcd73fd"
+        "ed924aef420de137b4cbaa3b063a3618afcd73fd",
+        "410c79471b79f65a02fb0f6070da7f2800793ff3"
       ],
       "axiom_reports": [
         {
@@ -2996,9 +3050,47 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "ce6ea460-76bf-4c15-ac37-ee6c05951dc6",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 13 on 2026-11-13 at Library commit eded01f2; kind definition; statement_returns_prop true; the module is byte-identical to commit ed924aef. Its acceptance artifact cannot be identified in this instance."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MaximalUnramified.finiteVertexFixerApproximation",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "0959a222-c9e8-4397-98bc-b6067449a588",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-14 at Library commit 20f83141; kind theorem; the module is byte-identical to commit 410c7947, its first publication."
+        },
+        {
+          "declaration": "Langlands.GroupScheme.IntegralModel.finiteIndexEnlargement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "bfc3cd3a-54f9-43d5-80b1-ca77132a3561",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-14 at Library commit 20f83141; kind theorem; the module is byte-identical to commit 410c7947, its first publication."
         }
       ],
-      "external_code": []
+      "external_code": [
+        {
+          "local_module": "Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargement.SubHopf",
+          "local_files": [
+            "Langlands/GroupScheme/IntegralModel/FiniteIndexEnlargement/SubHopf.lean",
+            "Langlands/GroupScheme/IntegralModel/FiniteIndexEnlargement/SubHopf.md"
+          ],
+          "used_by": "Langlands.GroupScheme.IntegralModel.finiteIndexEnlargement",
+          "acceptance_artifact_id": "6722356c-5ad2-43dd-bb70-d007825bd50d",
+          "publication_commit": "410c79471b79f65a02fb0f6070da7f2800793ff3",
+          "project": "Anthropic FLT (Fermat's Last Theorem in Lean 4), Copyright 2026 Anthropic, PBC",
+          "upstream_file": "P2M/Sol/S_HopfAlgebra_faithfullyFlat_subalgebra_of_isReduced_of_fg_of_isAlgClosed.lean, section TakK",
+          "upstream_commit": "6e837e75355538c7f80bab5b956861e86c4eacc2",
+          "library_port_of_upstream_file": "Langlands.AnthropicFLT.P2M.Sol.S_HopfAlgebra_faithfullyFlat_subalgebra_of_isReduced_of_fg_of_isAlgClosed",
+          "licence": "Apache License 2.0",
+          "licence_files": [
+            "licenses/Anthropic-FLT/LICENSE",
+            "licenses/Anthropic-FLT/NOTICE",
+            "licenses/Anthropic-FLT/ATTRIBUTION.md"
+          ],
+          "adaptation": "Adapted by Worker 33 from the TakK section of the upstream file, which works over a field. The local module replaces the field by a commutative ring R with A and B flat over R, states the comultiplication hypothesis as membership in the range of the tensor-square inclusion, uses the current tensor-product induction principle and adds the bialgebra inclusion valBialgHom. Its Lean header carries the Anthropic copyright, Apache 2.0 and licenses/Anthropic-FLT references; its paired Markdown lists the changes and asserts no mathematical statement from an external source.",
+          "use": "Implemented dependency of the proof: FiniteIndexEnlargementProof calls FiniteIndexEnlargement.Core.exists_hopf_enlargement, whose Hopf algebra of coordinates integral on V is SubHopf.hopfAlgebra (Enlarged.lean) and whose inclusion into the original coordinate Hopf algebra is SubHopf.valBialgHom (Core.lean).",
+          "scope": "This is reuse through the already accepted and published artifact 6722356c-5ad2-43dd-bb70-d007825bd50d, not the adoption of a new external dependency by this ledger. SubHopf.lean and SubHopf.md are byte-identical at Library commits 410c7947 and 179f569b. The entry records the adapted code among the modules that this artifact adds; it is not a declaration-level audit of the transitive import closure, whose other modules, including earlier Library ports from Anthropic FLT and other projects with licence files under licenses/, are not enumerated here."
+        }
+      ]
     },
     {
       "source_item": "Theorem 8.3.13",
@@ -5878,7 +5970,12 @@ gate. The depth-zero release and its representation consumers remain open.
 
 The host environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. No external project is
-adopted by this note. The roadmap's external pins remain survey leads. Any
+adopted by this note. The nineteenth pass records in the `external_code`
+field of the Theorem 8.3.2 row the `SubHopf` helper used by the proof of
+`finiteIndexEnlargement`, adapted from Anthropic FLT commit
+`6e837e75355538c7f80bab5b956861e86c4eacc2` under the Apache License 2.0;
+it is reused through the accepted Library artifact
+`6722356c-5ad2-43dd-bb70-d007825bd50d`, not adopted by this note. The roadmap's external pins remain survey leads. Any
 adoption still requires a focused host compile, a mathematical and dependency
 audit, and its exact pin and licence. The theorem-level axiom inspections
 in the verified-proof sections above concern published metric proofs and
