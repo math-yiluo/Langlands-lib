@@ -13,6 +13,8 @@ the six formerly statement-only rows were updated against published proofs in Li
 `e13a307a22881999a6db8ebc753d4d0b6dd359e5`; the evidence, hypotheses and implemented routes
 appear below. The further IV.3.2 statement update uses Library
 `457e31a2131a1083c26931d33fec09a71fea54d6` and records the remaining exact proof task.
+The IV.3.2 definition update additionally verifies the published raw predicates and
+their admissibility comparison at Library `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
 Other row statuses retain the original survey date and scope.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -78,7 +80,7 @@ another namespace is written, statements are in
 | --- | --- | --- | --- |
 | IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | `Langlands.Induction.CentralL2` and its form `centralL2Form` | D |
 | IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
-| IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.IsSquareIntegrableModCenter` and the predicates of [UnitarySquareIntegrableStatements](../../Langlands/Representation/Compact/UnitarySquareIntegrableStatements.md) | D |
+| IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.SmoothRep.IsSquareIntegrableModuloCenter` and `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter` in [SmoothSquareIntegrability](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md) | D: neither assumes admissibility or irreducibility. The older `Langlands.IsSquareIntegrableModCenter` is admissibility conjoined with the first predicate, by `Langlands.SmoothRep.isSquareIntegrableModCenter_iff` |
 | IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | S; exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) remains open. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
 | IV.3.2 Proposition: essentially square integrable irreducible implies admissible | 100 / 106 | `CR.EssentiallySquareIntegrableAdmissibleStatement` | P |
 | IV.3.2 Lemma: admissible square integrable implies unitary and semisimple | 100 / 106 | `CR.SquareIntegrableUnitarySemisimpleStatement` | P |
@@ -209,11 +211,59 @@ Prop-valued statement. Exact proof Task 6678
 `Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement.{u,v}`.
 Neither the statement publication nor creation of that task closes C3.
 
+## IV.3.2 definition publication, 14 November 2026
+
+Definition `b9326b4f-014a-4bd7-897b-b0f99847a221` is independently accepted by
+Reviewer 2950 and public, with no qualifications. Integration
+`9c9266a91bce45419ef9e64faaf4642c` first published its
+[SmoothSquareIntegrability pair](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md)
+at Library `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`. The frozen hashes below
+equal both the local files and the files at this update's Library commit
+`af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
+
+| File in `Langlands/Representation/MatrixCoefficient/` | SHA256 |
+| --- | --- |
+| `SmoothSquareIntegrability.lean` | `34dd107c754946cca3a6fb450ce836eedd2ae4871ee9eafc7fd16d963935a76b` |
+| `SmoothSquareIntegrability.md` | `652cfa1d2eb219af32985d48ecc47a70e034a251873985eebd7856f011da5ed5` |
+
+On a bundled smooth complex representation,
+`Langlands.SmoothRep.IsSquareIntegrableModuloCenter` requires a smooth unitary
+scalar central character and `MemLp` with exponent `2` for every descended
+coefficient norm on the actual quotient `G/Z(G)`, for the supplied Borel Haar
+measure. `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter`
+requires this condition after some arbitrary character twist with open kernel,
+using the same measure. Neither predicate assumes admissibility or
+irreducibility; the group and carrier universes are independent, with no
+topology or finite-dimensionality hypothesis on the representation carrier.
+The original Definition, printed p.99 / PDF p.105, was read again for this update.
+
+These definitions can be formed for any topological group with the specified
+quotient measure. Renard IV.3.1–IV.3.2 instead works with a unimodular t.d. group
+and a bi-invariant quotient Haar measure. The broader definitional domain
+asserts no source theorem in that domain; applications must retain their
+theorem hypotheses. The existing admissibility-bearing predicate is unchanged:
+`Langlands.SmoothRep.isSquareIntegrableModCenter_iff` identifies it with
+admissibility conjoined with the new all-coefficients predicate. The pair also
+proves the trivial-twist implication and, for an admissible object, comparison
+with arbitrary smooth twists satisfying the older predicate. It does not
+identify arbitrary twists with the real powers of a specified positive
+character used by the separate
+`Langlands.IsEssentiallySquareIntegrableModCenter` construction.
+
+These intrinsic comparisons supply neither the IV.3.2 admissibility theorem nor
+the single-coefficient implication. The admissibility theorem is already
+published separately as recorded above. The general single-coefficient
+statement and its exact proof Task 6678
+(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) retain their statement-only and open-proof
+statuses, respectively; C3 is unchanged by this definition publication.
+
 ## Summary
 
 The six formerly open proof rows now have proofs of their published propositions.
 The IV.3.2 Remark additionally has a published statement at the general source scope,
-with its exact proof still open. The other rows retain their original statuses and scope.
+with its exact proof still open. The IV.3.2 Definition now has published reusable
+predicates without admissibility and a proved comparison with the older predicate.
+The other rows retain their original statuses and scope.
 C1–C3 remain relevant: the
 IV.1.3 Lemma needs a nonzero representation, the printed argument of IV.2.1 Remark 1 is
 incomplete, and the IV.3.2 Remark without admissibility remains unproved.
