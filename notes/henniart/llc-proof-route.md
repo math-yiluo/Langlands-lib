@@ -3,8 +3,9 @@
 Author: Worker 0, for Task 0 (`69dd20b3-6a77-44aa-b779-32391843c8dd`). First
 version 10 November 2026, second version 11 November 2026, third, fourth and
 fifth versions 12 November 2026, sixth to thirteenth versions 13 November
-2026. This fourteenth version, of 14 November 2026, was checked against
-Library commit `4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86`.
+2026, fourteenth version 14 November 2026. This fifteenth version, also of
+14 November 2026, was checked against Library commit
+`f676fad71e1679d672d3e20560dc814d4e1f8ffd`.
 
 This note records how the published Library reduces the full local Langlands
 correspondence for GL_n to three propositions, and names the task that owns
@@ -21,22 +22,26 @@ passage from the supercuspidal to the full correspondence. The module has
 been compiled as a development check but is not published. Each of the three
 open propositions still needs an accepted `lean.proof@1` candidate.
 
-Since the thirteenth version, the Library has proved a reduction of the
-first premise, candidate existence, to five global inputs:
-`Henniart.candidateExistenceReduction`. It gives candidate existence only
-with the automorphic-lattice universe equal to `0`. One of the five inputs,
-local relative class formation, has also been proved since the thirteenth
-version. So the composite module now has a second theorem. It proves the full
-correspondence with representation universe `0` from the four other global
-inputs and premises 2 and 3. Premise 1 below names the tasks that own those
-four inputs; all four now have proof tasks. The proof task for Harris's
-Prop. 4.8, Task 6702, has no executor yet. It is to assemble the proof from
-a reduction and its inputs, which a planning task with two executors is
-stating. Two of the planning task's candidates, a definition and a
-statement, are published. For the second premise, the
-statement of the finiteness of the supercuspidal orbit strata has been
-published. Its proof task has no executor yet. The three open premises are
-unchanged. For statement meanings and sources see
+The Library also proves a reduction of the first premise, candidate
+existence, to five global inputs: `Henniart.candidateExistenceReduction`. It
+gives candidate existence only with the automorphic-lattice universe equal to
+`0`. One of the five inputs, local relative class formation, is proved. So
+the composite module has a second theorem. It proves the full correspondence
+with representation universe `0` from the four other global inputs and
+premises 2 and 3. Premise 1 below names the tasks that own those four inputs;
+all four have proof tasks.
+
+Since the fourteenth version, the Library has published a reduction
+statement for the first of these inputs, Harris's Prop. 4.8:
+`Global.Harris.Proposition48ReductionStatement` says that fourteen named
+propositions together imply it. Neither the reduction nor any of its
+fourteen inputs has a Library proof. Three of the inputs have their own
+proof tasks, and two planning tasks cover four more. A TaskHub search found
+no proof task for the reduction itself or for the other seven inputs; the
+planning task that stated them is to publish those tasks. For the third
+premise, the two propositions about unramified principal series that its
+owner task published as proof tasks are now proved. The three open premises
+are unchanged. For statement meanings and sources see
 [the specification coverage note](llc-specification-coverage.md); this note
 does not restate them.
 
@@ -271,7 +276,7 @@ at commit `2e46b9ca`:
 
 The table lists the three premises of
 `supercuspidalCorrespondenceHenniartThreeInputs`, which have no Library proof
-at commit `4f4af6ba`. They are numbered by their position in that theorem;
+at commit `f676fad7`. They are numbered by their position in that theorem;
 the third column gives their position among the premises of
 `supercuspidalCorrespondenceHenniartFiveInputs`, which the eighth version
 used. Universes are those of the full correspondence (`uK = uF`, `uW = uP`,
@@ -285,14 +290,12 @@ staged or under review is not a proof until it is accepted and published.
 | --- | --- | --- | --- | --- |
 | 1 | `Henniart.CandidateExistenceStatement.{uF, uP, uA, uP, uF}` (Henniart 2000, Thm 3.1 with §§3.7–3.8) | 1 | `Correspondence/HenniartStableMapStatement` | Task 5583 `54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, waiting; executor Worker 5732. See below. |
 | 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, waiting; executor Worker 5733. It needs Tasks 6305 and 5032; Task 6304, which it also waited on, is done. It has no proof candidate; its route-study note is published. See below. |
-| 3 | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | 5 | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. |
+| 3 | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | 5 | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. Both are done; see below. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. |
 
 Premise 1. Task 3657 published the proposition
 `Henniart.CandidateExistenceReductionStatement.{uK, uW, uP, uE, uQ}` (module
 `Correspondence/HenniartCandidateExistenceReductionStatement`). Task 6289
-(`207f459d-c3ed-4e90-b4e8-c71e0bba6101`; state verifying on 14 November
-2026: its proof is accepted and published, but the task's completion is not
-yet finalized) proved it:
+(`207f459d-c3ed-4e90-b4e8-c71e0bba6101`, done) proved it:
 `Henniart.candidateExistenceReduction` (module
 `Correspondence/HenniartCandidateExistenceReductionProof`; Lean proof by
 Worker 390, candidate `79c92440`). The statement says that five global inputs
@@ -316,9 +319,9 @@ in `Type`. The route needs candidate existence with the automorphic universe
 `uA` arbitrary. The statement's Markdown leaves the passage between these
 universes to Task 5583. The operator decided on 13 November 2026 that Task
 5583 keeps its unconditional target unchanged. Its executor waits on the
-tasks below, which own the inputs. A Library search at commit `4f4af6ba`
-found a proof of input 3 and of none of the others. The states are TaskHub
-records of 14 November 2026.
+tasks below, which own the inputs. A search of the Lean sources at commit
+`f676fad7` found a proof of input 3 and of none of the others. The states are
+TaskHub records of 14 November 2026.
 
 - The reduction itself: proved. Task 6289
   (`207f459d-c3ed-4e90-b4e8-c71e0bba6101`, Worker 390, reusing Worker 3657's
@@ -330,57 +333,34 @@ records of 14 November 2026.
   candidate removed the duplicate declaration
   `Automorphic.OperatorRealization.evaluate_toContinuous_smul` that had blocked
   the proof. That theorem is now declared once, in the new module
-  `Automorphic/OperatorRealizationEvaluation`. The reduction is conditional.
-  A Library search at commit `457e31a2` found no proof of any of its five
-  inputs, which are listed below.
-- Input 1, Harris 1998, Prop. 4.8: no Library proof. Three tasks are
-  involved, with different scopes:
+  `Automorphic/OperatorRealizationEvaluation`. The reduction is conditional:
+  its five inputs are listed below, and only input 3 has a Library proof.
+- Input 1, Harris 1998, Prop. 4.8: no Library proof.
   - Task 6702 (`0aa2189a-e878-4144-9d41-b76799d87cfc`, `lean.proof@1`,
     ready, no executor and no candidate) owns the proof of the unchanged
     `Global.Harris.Proposition48Statement` at `.{uF, 0, 0, 0, uV}` for
     arbitrary `uF` and `uV`; `candidateExistenceReduction` uses it at
-    `.{uK, 0, 0, 0, uP}`.
-    Its contract asks for the final assembly from the reduction statement
-    `Global.Harris.Proposition48ReductionStatement` and the proofs of that
-    statement's inputs. A conditional theorem that leaves any of these inputs
-    as hypotheses does not discharge it. The reduction statement is not in
-    the Library at `4f4af6ba`.
+    `.{uK, 0, 0, 0, uP}`. Its contract asks for the final assembly from the
+    reduction statement `Global.Harris.Proposition48ReductionStatement` and
+    the proofs of that statement's inputs. A conditional theorem that leaves
+    any of these inputs as hypotheses does not discharge it.
+  - The reduction statement is now in the Library (module
+    `Global/Arithmetic/HarrisProposition48ReductionStatement`). It says that
+    the conjunction of fourteen named propositions implies
+    `Proposition48Statement.{uF, 0, 0, 0, uV}`. It has no proof, and a
+    TaskHub search found no proof task for it. The table after this list
+    gives its fourteen inputs and their owners.
   - The planning Task 6413 (`bca10e59-d4e2-40a4-be9b-5d70eaa1acd2`,
     `lean.peer@1`; ready, executors Workers 514 and 619), published by
-    Worker 0, is to state those inputs and the reduction, and to publish
-    their proof tasks. It proves nothing itself. Worker 514 published
-    Task 6702 under it.
+    Worker 0, stated the reduction and its inputs. It proves nothing itself.
+    Requirement 5 of its contract asks it to publish a focused proof task
+    for the reduction statement and, for every input without a proof or a
+    proof task, a proof task or a statement and planning task. Worker 514
+    published Task 6702 and the planning Tasks 6698 and 6699 under it, and
+    Workers 514 and 619 published the proof Tasks 6845 and 6846.
   - Task 5134 (`1b87b965-a232-4c02-a51f-e287f630c549`) is a consumer: its
     target is that Harris's Prop. 4.8 implies
     `HenniartGlobalizationStatement`.
-
-  The proof of Prop. 4.8 needs Harris's global existence and local
-  compatibility theorems (Harris 1998, Theorems 1.2 and 1.7). The
-  Harris-branch tasks build the objects these theorems are about; the shared
-  planning graph's node `proof.harris-global-input` records the dependencies.
-  Worker 514 also published two planning tasks (`lean.peer@1`, both ready
-  with no executor) for inputs of the reduction: Task 6698
-  (`cd19dd55-136e-42e9-b062-5a23b2c7a6b2`) for the cuspidal case of Harris's
-  Theorem 1.2, and Task 6699 (`ca76241a-30bc-46d4-a0b9-5f6c284363a5`) for
-  three Arthur–Clozel cyclic-transfer statements. For cuspidal spectral
-  rigidity, Task 6702's context names the existing proof Task 6446
-  (`c4f0be57-1a49-4a42-b813-4354e297ab3f`, `lean.proof@1`, ready, no
-  executor; published by Worker 3657), which owns
-  `Automorphic.Unramified.CuspidalSpectralRigidityStatement`.
-  `Proposition48Statement` itself stays unchanged. Two of Task 6413's
-  candidates are published. The structure `Global.Harris.Proposition48Problem`
-  (module `Global/Arithmetic/HarrisProposition48InductionData`) bundles the
-  data of one instance of `Proposition48Statement`, with the number fields in
-  `Type`. Its predicates `Proposition48Problem.IsValid` and
-  `Proposition48Problem.HasSolution` are exactly the hypotheses and the
-  conclusion of that instance. The module also defines the Mackey data that
-  Harris's induction uses. The statement
-  `Global.Harris.Proposition48RankOneStatement` (module
-  `Global/Arithmetic/HarrisProposition48RankOneStatement`) says that every
-  valid problem with `[E' : E] = 1` has a solution. This is the degree-one
-  starting case of the induction; it has no proof. The task's other
-  candidates are staged or rejected; none of them is in the Library at
-  `4f4af6ba`.
 - Input 2, Henniart 2000, Thm 2.4: Task 4933
   (`65c9a94c-af88-4876-baa4-43d78ccd5531`, `lean.proof@1`, waiting; executor
   Worker 4933), Henniart's local induction from unitary supercuspidals for
@@ -404,7 +384,7 @@ records of 14 November 2026.
 - Input 5, Henniart 2000, §3.8: Task 5231
   (`9e23a040-16d7-4a7a-bd9b-35a08938d3c4`, waiting; executor Worker 5093) is
   to prove `HenniartCompositeMapStatement` by combining four published
-  propositions. Three of them have Library proofs at commit `4f4af6ba`:
+  propositions. Three of them have Library proofs at commit `f676fad7`:
   `Global.PoleComparison.relativeIsometryOperation` proves
   `RelativeIsometryOperationStatement` (module
   `Global/Factors/RelativeIsometryOperationProof`);
@@ -420,10 +400,56 @@ records of 14 November 2026.
   the generated isometry with determinants and with pair L- and ε-factors),
   has no Library proof. Task 5191 (`c7b60e52-3b3a-45a4-a9f2-595674545493`,
   waiting; executors Workers 5159 and 5121) is to prove it.
-- Task 3657 (`34b81620-20d7-4059-9b08-6bedd1c1c029`, claimed; executor
+- Task 3657 (`34b81620-20d7-4059-9b08-6bedd1c1c029`, ready; executor
   Worker 3657) is the program task for Henniart's global construction (Henniart
-  2000, §3). The reduction statement, the statements of Lemme 2.8 and §3.8,
-  and the proof Tasks 5191, 5231, 6017 and 6289 were published from it.
+  2000, §3). The candidate-existence reduction statement, the statements of
+  Lemme 2.8 and §3.8, and the proof Tasks 5191, 5231, 6017 and 6289 were
+  published from it.
+
+The fourteen inputs of `Global.Harris.Proposition48ReductionStatement`, in
+their Lean order, follow. The universes are those at which the reduction
+uses them. Modules are relative to `Langlands/`. The names are in the
+namespaces `Langlands.Global.Harris` (rows 1–6 and 10),
+`Langlands.GaloisRepresentation` (rows 7 and 8) and
+`Langlands.Automorphic.Unramified` (rows 9 and 11–14). The descriptions
+paraphrase the docstrings and Markdown of the statements. None of the
+fourteen has a Library proof at commit `f676fad7`. The owners are TaskHub
+records of 14 November 2026. "No task found" means that TaskHub searches
+for the statement's name and topic found no proof or planning task for it.
+The three proof tasks named below require their targets at arbitrary
+independent universes, which covers the universes of this table.
+
+| # | Input statement (universes in the reduction) | Module | Content | Owner on 14 November 2026 |
+| --- | --- | --- | --- | --- |
+| 1 | `Proposition48AuxiliaryRankOneStatement.{uF, uV}` | `Global/Arithmetic/HarrisProposition48AuxiliaryInputStatement` | Base case `[E' : E] = 1` of the one-place induction: realization by a Hecke character, using only the auxiliary place | No task found |
+| 2 | `Proposition48AuxiliaryParityNormalizationStatement.{uF}` | same module | Correction of the inherited infinity parity by a conjugate-inverse Hecke character of the base field | No task found |
+| 3 | `Proposition48AuxiliaryParityUntwistStatement.{uF, uV}` | same module | Undoing that correction on a supplied solution of the corrected problem | No task found |
+| 4 | `Proposition48MackeyStepStatement.{uF}` | `Global/Arithmetic/HarrisProposition48MackeyStepStatement` | One prime cyclic Mackey step with all its children, of smaller normal-closure degree and inherited parity | No task found |
+| 5 | `Proposition48PrimeBranchStatement.{uF, uV}` | `Global/Arithmetic/HarrisProposition48PrimeBranchStatement` | Assembly of the Mackey constituents of a prime orbit | No task found |
+| 6 | `Proposition48SingletonBranchStatement.{uF, uV}` | `Global/Arithmetic/HarrisProposition48SingletonBranchStatement` | Cyclic descent of a singleton Mackey constituent (Harris 1998, Lemma 1.6) | No task found |
+| 7 | `Harris1998Theorem12CuspidalStatement.{0, 0, uV, uV}` | `Galois/Harris1998ExistenceStatement` | Cuspidal case of Harris 1998, Thm 1.2 | Planning Task 6698 (`cd19dd55-136e-42e9-b062-5a23b2c7a6b2`, `lean.peer@1`, ready, no executor) |
+| 8 | `HarrisSupercuspidalLocalComparisonStatement.{0, 0, uV, uV}` | `Galois/HarrisSupercuspidalLocalComparisonStatement` | Equal supercuspidal components at a split place give isomorphic local Galois restrictions (derived from Harris 1999, Thm 5.9(ii)) | Proof Task 6846 (`2aa19068-4bd1-4522-8eb4-6d6a159e5e77`, `lean.proof@1`, ready, no executor) |
+| 9 | `CuspidalSpectralRigidityStatement.{0, uV}` | `Automorphic/Unramified/CuspidalSpectralRigidityStatement` | Mixed-rank cuspidal spectral rigidity | Proof Task 6446 (`c4f0be57-1a49-4a42-b813-4354e297ab3f`, `lean.proof@1`, ready, no executor) |
+| 10 | `Proposition48IsobaricInvarianceStatement.{uV}` | `Global/Arithmetic/HarrisProposition48IsobaricInvarianceStatement` | Galois invariance of the isobaric multiset from equal Euler systems | No task found |
+| 11 | `CyclicRegularInductionStatement.{0, 0, uV, uV}` | `Automorphic/Unramified/CyclicTransferStatement` | Arthur–Clozel, Lemma III.6.4 with Thm III.6.2, in weak-induction form | Planning Task 6699 (`ca76241a-30bc-46d4-a0b9-5f6c284363a5`, `lean.peer@1`, ready, no executor) |
+| 12 | `CyclicRegularOrbitLiftStatement.{0, 0, uV, uV}` | `Automorphic/Unramified/IsobaricCyclicTransferStatement` | Arthur–Clozel, Lemma III.6.4, in base-change form | Planning Task 6699 |
+| 13 | `CyclicStableDescentStatement.{0, 0, uV, uV}` | `Automorphic/Unramified/CyclicTransferStatement` | Arthur–Clozel, Lemma III.6.3 | Planning Task 6699 |
+| 14 | `CyclicWeakInductionSupercuspidalStatement.{0, 0, uV, uV}` | `Automorphic/Unramified/CyclicWeakInductionSupercuspidalStatement` | Supercuspidality at a place of a cyclic weak induction (derived from Henniart–Herb 1995, Prop. 5.5) | Proof Task 6845 (`3064d640-8ebf-4ac1-807c-a48f48d653c4`, `lean.proof@1`, ready, no executor) |
+
+So the reduction itself and inputs 1–6 and 10 have no proof task. Requirement
+5 of Task 6413's contract assigns their proof tasks to that task. The
+earlier published statement `Global.Harris.Proposition48RankOneStatement`
+(module `Global/Arithmetic/HarrisProposition48RankOneStatement`; every valid
+problem with `[E' : E] = 1` has a solution) is not one of the fourteen
+inputs. Input 1 is the corresponding base case under the one-place
+hypotheses `IsAuxiliaryValid` of the internal induction, which impose no
+condition at the primary place. The structure
+`Global.Harris.Proposition48Problem` (module
+`Global/Arithmetic/HarrisProposition48InductionData`) bundles the data of one
+instance of `Proposition48Statement`, with the number fields in `Type`; the
+statement's Markdown describes how the induction uses it. The shared planning
+graph's node `proof.harris-global-input` records the Harris-branch
+dependencies.
 
 The transport of supercuspidal unitary lattices between carrier universes,
 which the globalization in universe 0 makes necessary, is a helper in
@@ -441,7 +467,7 @@ hypotheses: `NumericalOrbitCountStatement` (for every p-adic field, rank and
 conductor, the unramified-twist orbit strata on the Weil and supercuspidal
 sides are finite and have equal cardinality), and finiteness of the conductor
 `Numerical.conductor K π` of every supercuspidal class `π`. A search of the
-Lean sources at commit `4f4af6ba` found no proof of either hypothesis. The
+Lean sources at commit `f676fad7` found no proof of either hypothesis. The
 operator decided on 13 November 2026 that Task 5584 stays open and that its
 executor does not prove conductor finiteness of supercuspidal classes: that is
 owned through Task 5585 (`5da7d945-39ed-4dcb-ace6-030fa18e4f24`,
@@ -485,7 +511,7 @@ A Lean draft of the proof is in Task 5584's shared draft (revision 2). It
 reduces to the published
 `Henniart.CompactOpenFiniteness.centralLevelStratum_finite` (Bernstein–Zelevinsky
 1976, Cor. 4.15, for p-adic fields). The draft is not a candidate, and the
-Library at commit `4f4af6ba` has no proof module. The operator did not approve
+Library at commit `f676fad7` has no proof module. The operator did not approve
 the second unit proposed in the note, which would derive the counts from a
 bijective numerical injection in every rank. The operator judged it circular
 for this route: every known source of such an injection is a local Langlands
@@ -494,6 +520,41 @@ correspondence whose proof uses the numerical theorem. TaskHub searches on
 equality of the counts. The operator will decide later on
 a program for them, such as Henniart's 1988 route (Route A of the route-study
 note).
+
+Premise 3. `Conductor.ConductorExponentStatement` has no Library proof at
+commit `f676fad7`. The published `Conductor.conductorExponentStatement_of`
+(module `Representation/Conductor/EssentialConductorReduction`) derives it
+from five hypotheses. Two of them are proved:
+`Whittaker.MirabolicRestrictionInjectivityStatement`, by
+`Whittaker.mirabolicRestrictionInjectivity` (module
+`Representation/Whittaker/MirabolicRestrictionInjectivityProof`), and
+`Conductor.TrivialCharacterEpsilonStatement`, by
+`Conductor.trivialCharacterEpsilon` (module
+`Representation/Conductor/TrivialCharacterEpsilonProof`). A search of the
+Lean sources found no unconditional proof of the other three:
+`Conductor.EssentialVectorExistence`, `Conductor.EssentialDualComparisonStatement`
+and `Conductor.ConductorMinimalityStatement`. Published theorems derive the
+last two from spherical functional-equation statements and mirabolic
+injectivity. Task 5032 owns the premise; this note does not record how its
+executor plans to prove these three.
+
+Since the fourteenth version, the two proof tasks that Worker 5731 published
+from Task 5032 are done. Their targets are the two conjuncts of
+`Conductor.OrderedUnramifiedWhittakerStatement` (module
+`Representation/Conductor/OrderedUnramifiedWhittakerStatement`), the two
+assertions about unramified principal series that the statement's
+docstring attributes to Jacquet's corrected essential-vector argument
+(Jacquet 2012, Lemmas 1 and 2). `Conductor.orderedUnramifiedSphericalCyclicity`
+(module `Representation/Conductor/OrderedUnramifiedSphericalCyclicity`;
+Worker 392, Task 5949) proves `OrderedUnramifiedSphericalCyclicityStatement`:
+the normalized spherical section generates the whole principal series when
+the norms of the parameters are nondecreasing.
+`Conductor.orderedUnramifiedWhittakerRealization` (module
+`Representation/Conductor/OrderedUnramifiedWhittakerProof`; Task 5950)
+proves `OrderedUnramifiedWhittakerRealizationStatement`: there is a nonzero
+inverse-character functional with injective coefficient map that sends the
+spherical section to the explicit spherical Whittaker function. Both
+theorems hold for every nonarchimedean local field, at every field universe.
 
 ## Tasks that left the route
 
@@ -550,20 +611,23 @@ premise 2 above) and is done.
 ## The composite
 
 The module below compiles at commit
-`4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86` in environment
+`f676fad71e1679d672d3e20560dc814d4e1f8ffd` in environment
 `5c94c648-e8dc-4002-a50a-071ebf3f6096`, with 0 errors and 0 warnings. The
 check compiled the block verbatim as a private draft module in the Lean
 service, together with a second draft module that imports it and runs
-`#print axioms` on both theorems. Its diagnostics are the private record
-`7c1bf3c2-4dbb-4ea9-829e-ec611d095790`. To reproduce it, save the block as a
-draft module and compile it with `lean_check`. For each theorem the output
-lists only the axioms `propext`, `Classical.choice` and `Quot.sound`. The
-module is a development check, not a published proof.
+`#print axioms` on both theorems. The service's declaration inspection was
+run once for each theorem; each lists only the axioms `propext`,
+`Classical.choice` and `Quot.sound`. The diagnostics are the private records
+`3dd3953b-d185-4a3c-ad07-e9dda611dc7d` (first theorem) and
+`847876cd-5b29-4206-91c1-91916a01506f` (second theorem). To reproduce them,
+save the block as a draft module and compile it with `lean_check`, naming
+each theorem as the declaration to inspect. The module is a development
+check, not a published proof.
 
 The first theorem, `fullCorrespondence_of_henniartThreeInputs`, applies two
 published theorems: `fullCorrespondenceStatement_of_supercuspidalCorrespondence`
 and `supercuspidalCorrespondenceHenniartThreeInputs`. Its hypotheses are the
-three open premises, in the order of the table. The eighth to thirteenth
+three open premises, in the order of the table. The eighth to fourteenth
 versions had the same theorem. The eighth version's proof applied
 `supercuspidalCorrespondenceHenniartFiveInputs` with
 `NonabelianSystem.exists_system` and
@@ -574,8 +638,8 @@ five-premise theorem. The sixth version's composite,
 `fullCorrespondence_of_henniartRankOneInputs`, assumed refinement invariance as
 well.
 
-The second theorem, `fullCorrespondence_zero_of_henniartGlobalInputs`, is new
-in this version. Its conclusion is `FullCorrespondenceStatement.{uF, uP, 0}`:
+The second theorem, `fullCorrespondence_zero_of_henniartGlobalInputs`, was
+added in the fourteenth version. Its conclusion is `FullCorrespondenceStatement.{uF, uP, 0}`:
 the full correspondence with the representation universe `uA` equal to `0`.
 It applies the first theorem at `uA = 0`. It obtains premise 1 at these
 universes, `CandidateExistenceStatement.{uF, uP, 0, uP, uF}`, from

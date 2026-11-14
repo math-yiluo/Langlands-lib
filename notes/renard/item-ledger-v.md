@@ -27,6 +27,11 @@ A focused 14 November update of V.3.24 uses Library
 `c0debd6f4dd02fdd68d70811cf610906b945a962`: the nonnegative comparison,
 actual strict-piece definition and actual partition statement are now public,
 with exact proof Tasks 6505 and 6605 for the two new statement targets.
+The present V.3.24 proof-status refresh checks Library
+`2309f61083ef231a3ef371f18ab1eff2ae8de56d`: the integral central-image equality,
+common-uniformizer group quotient comparison and integral cone finite generation
+have exact independently accepted and published proofs. The nonnegative
+comparison and actual strict partition remain open.
 Other rows retain their earlier audit status. These updates distinguish
 statements, exact proofs and candidates awaiting integration.
 
@@ -268,9 +273,9 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.22 `A^+(ε)` (all `a ∈ A_M` with `\|α(a)\|_F < ε`) | `componentEpsilon` in [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md), defined for every real `ε`. Proved there: `componentEpsilon_one` (`A^+(1) = A^{++}_M`), `componentEpsilon_mono`, `componentEpsilon_subset_componentStrict` for `ε ≤ 1`, `componentEpsilon_eq_empty` for `ε ≤ 0` and nonempty `Δ(P)`, and `CAepsilon_eq_inter`: `CocharacterUniformizer.CAepsilon` is the lattice cut `C_A^+(ε) = C_A ∩ A^+(ε)` of V.3.23. Earlier inline forms remain: the condition on every `t ∈ A(F)` in `RP.GeneralizedJacquetContractingRangeStatement` (GeneralizedJacquetRemarksStatements.lean) and `standardCone` in `StandardCasselmanConstantTerm.lean` | D; P for the listed theorems |
 | V.3.23 `C_A`, `F_M`, `C̃_A = C_A F_M`, `F_M ⊂ M^+`, `C_A^+`, `C_A^{++}`, `C_A^+(ε)` | `CocharacterUniformizer.CA`, `CAplus`, `CAstrict`, `CAepsilon`; `RC.FullLatticeRepresentativeStatement`, `RC.RenardDominantComparisonStatement`, `RC.IsChamberCompatibleTransversal` | D; P: `fullLatticeRepresentative` (representatives, Task 5679) and `renardDominantComparison` |
 | V.3.24 the nonnegative integral model and quotient by the common annihilator | `GS.CocharacterCone.nonnegative`, `quotient`, `mkQ_mem_quotient_iff`, `latticeSection_mem_CAplus_iff` ([construction](../../Langlands/GroupScheme/Rational/CocharacterCone.md)) | D/P for the construction and intrinsic laws; published candidate `6d296d7f-cdc6-4d8a-bbb7-580fab06a4b9` |
-| V.3.24 the integral kernel of the split-central quotient | `GS.SimpleRootSplitCentralImageStatement`: for every supplied compatible `f : A_G → A_∅`, the simple-root integral annihilator equals the integral cocharacter image of `f` | S: candidate `dc66d64a-3cac-4f23-868b-62c6c8270f89`; exact proof Task 6390 (`ded1c8b7-84b7-4c10-a243-eb0395d509d7`) |
-| V.3.24 the common-uniformizer group quotient and its representative map | `GS.CocharacterUniformizer.QuotientComparisonStatement`: for split `T` and every commutative `A` and `f : A → T`, the integral quotient by `range(cocharacterMapInt f)` is multiplicatively equivalent to the image of `C_T` in `T(F)/f(C_A)`, by evaluation at the common uniformizer | S: candidate `ad918cde-8ea6-485b-a90b-88fdf44dc8c6`; exact proof Task 6391 (`ee278654-01f1-4cf6-a3f5-a11da91904f3`) |
-| V.3.24 finite-generation replacement for the false `S ≅ ℕ^d` assertion | `GS.CocharacterConeFiniteGenerationStatement`: for every field, actual commutative group scheme `T` and finite set `R` of actual characters, `(CocharacterCone.quotient T R).FG` | S: published candidate `84ddf0c4-2efe-474c-87de-8461db6189e1`; exact proof Task 6429 (`7e019df7-e7ba-40e6-ac54-7fbd3d1b0dec`). No public proof or freeness assertion |
+| V.3.24 the integral kernel of the split-central quotient | `GS.SimpleRootSplitCentralImageStatement`: for every supplied compatible `f : A_G → A_∅`, the simple-root integral annihilator equals the integral cocharacter image of `f` | P: `simpleRootSplitCentralImage` ([proof](../../Langlands/GroupScheme/Rational/SimpleRootSplitCentralImageProof.md)), published proof `3fbca376-c49d-4ef5-8f60-6a3a1c2246cd`, exact proof Task 6390 (`ded1c8b7-84b7-4c10-a243-eb0395d509d7`); statement candidate `dc66d64a-3cac-4f23-868b-62c6c8270f89` |
+| V.3.24 the common-uniformizer group quotient and its representative map | `GS.CocharacterUniformizer.QuotientComparisonStatement`: for split `T` and every commutative `A` and `f : A → T`, the integral quotient by `range(cocharacterMapInt f)` is multiplicatively equivalent to the image of `C_T` in `T(F)/f(C_A)`, by evaluation at the common uniformizer | P: `CocharacterUniformizer.quotientComparison` ([proof](../../Langlands/Geometry/Building/CocharacterUniformizerQuotientProof.md)), published proof `0156f811-8882-4ee2-bdb6-5cae2e5f3516`, exact proof Task 6391 (`ee278654-01f1-4cf6-a3f5-a11da91904f3`); statement candidate `ad918cde-8ea6-485b-a90b-88fdf44dc8c6` |
+| V.3.24 finite-generation replacement for the false `S ≅ ℕ^d` assertion | `GS.CocharacterConeFiniteGenerationStatement`: for every field, actual commutative group scheme `T` and finite set `R` of actual characters, `(CocharacterCone.quotient T R).FG` | P: `cocharacterConeFiniteGeneration` ([proof](../../Langlands/GroupScheme/Rational/CocharacterConeFiniteGenerationProof.md)), published proof `74788d10-0cb5-44d0-a507-db1898011da4`, exact proof Task 6429 (`7e019df7-e7ba-40e6-ac54-7fbd3d1b0dec`); statement candidate `84ddf0c4-2efe-474c-87de-8461db6189e1`. No freeness assertion |
 | V.3.24 actual nonnegative quotient `C^+_∅/C_{A_G}` | `GS.CocharacterUniformizer.CAplusMonoid`, `CAplusQuotient`, `mem_CAplusMonoid`, `mem_CAplusQuotient` ([construction](../../Langlands/Geometry/Building/CocharacterUniformizerCone.md)) | D/P for the construction and its representative laws; published candidate `e3a3c275-d6f7-4814-bc70-0a438466c38a` |
 | V.3.24 comparison of the integral nonnegative quotient with that actual quotient | `GS.CocharacterUniformizer.ConeQuotientComparisonStatement`: a monoid equivalence prescribed by common-uniformizer evaluation on every nonnegative representative, for every supplied compatible split-component map | S: published candidate `e577f809-f957-4f53-bbdd-fe5bf315fba8`; exact proof Task 6505 (`93c053ed-559d-4a2b-a441-90c0dc072fb4`) remains open |
 | V.3.24 strict faces of the integral quotient | `GS.CocharacterCone.strictFace`, `mkQ_mem_strictFace_iff`, `strictFace_subset_quotient`, `existsUnique_strictFace`, `iUnion_strictFace`, `strictFace_disjoint` ([construction](../../Langlands/GroupScheme/Rational/CocharacterConeFaces.md)) | D/P: published candidate `fd6d0153-2b3d-4684-8b3a-8fd00e1f3822`; these are integral faces, before comparison with actual Levi split components |
@@ -345,15 +350,35 @@ specifies the equivalence on every cocharacter representative. Both are derived
 prerequisites motivated by V.2.5 and V.3.23–V.3.24, rather than literal statements
 of the book.
 
-Exact proof Tasks 6390 and 6391, respectively, have complete proof-only shared
-drafts at revision 1. Recovery checks
-`729710d5-8bc5-411c-9d98-7b18d65e36c3` and
-`8ff97a1b-440a-4772-b14b-c586da42724d` compiled these drafts with zero errors
-and warnings. The first uses simple-root generation, reductive root negation,
-root-annihilator centrality and integral split-component factorization. The
-second uses common-uniformizer naturality, injectivity of the split target
-section, its exact quotient kernel and the first isomorphism theorem. These
-private compilation results supply no independent proof acceptance.
+Exact proof Tasks 6390, 6391 and 6429 are complete. The three proofs below
+were independently approved without qualifications and first published at
+Library `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`. Each theorem has exactly
+its named statement as its type, including universe parameter `u`. Their
+machine receipts accept the Lake build, exact-target, unchanged-statement
+and frozen-input checks. On 14 November, Worker 1222 compared both files of
+each proof with Library `2309f61083ef231a3ef371f18ab1eff2ae8de56d`; all six
+SHA256 digests equal the frozen accepted bytes.
+
+| Exact proof task | Theorem | Accepted proof | Independent reviewer | Integration ID |
+| --- | --- | --- | --- | --- |
+| Task 6390 (`ded1c8b7-84b7-4c10-a243-eb0395d509d7`) | `Langlands.GroupScheme.simpleRootSplitCentralImage` | `3fbca376-c49d-4ef5-8f60-6a3a1c2246cd` | Reviewer 3621 | `7653c1a82d6146dd8f2b5effb81005c8` |
+| Task 6391 (`ee278654-01f1-4cf6-a3f5-a11da91904f3`) | `Langlands.GroupScheme.CocharacterUniformizer.quotientComparison` | `0156f811-8882-4ee2-bdb6-5cae2e5f3516` | Reviewer 3608 | `fc17bd66d06d48378f33a3189d689266` |
+| Task 6429 (`7e019df7-e7ba-40e6-ac54-7fbd3d1b0dec`) | `Langlands.GroupScheme.cocharacterConeFiniteGeneration` | `74788d10-0cb5-44d0-a507-db1898011da4` | Reviewer 3611 | `e0ff2d68e7574b16ac5112e4e8539c04` |
+
+The central-image proof uses simple-root generation and reductive root
+negation to extend annihilation to every relative root. Root-annihilator
+centrality and integral split-component factorization then give one
+inclusion; central root restriction gives the reverse. It retains the
+arbitrary-field and actual-group hypotheses above and proves the equality
+for every supplied compatible morphism, without constructing that morphism.
+
+The group quotient proof uses common-uniformizer naturality and injectivity
+of the split target section to identify the exact integral kernel of the
+quotient map. Surjectivity onto the section image and the first isomorphism
+theorem give the equivalence, whose prescribed formula on every cocharacter
+representative holds definitionally. No injectivity of the source section
+or of the morphism is required. This proves the group comparison; restriction
+to the nonnegative submonoids remains Task 6505.
 
 Finite-generation statement candidate `84ddf0c4-2efe-474c-87de-8461db6189e1`
 passed machine validation `56b81cb6-f4ca-4d43-b9dc-6565d7d43524`. Reviewer 1621
@@ -363,15 +388,16 @@ independently approved it without qualifications in review task
 `1e1aa3dbaa0a4c8aaaa045fe99db1307`. Its frozen, current Library and workspace
 pairs agree exactly. The sole finiteness premise is finiteness of the selected actual
 character set. No finite-generation hypothesis on the full cocharacter lattice
-is added. The complete private proof evaluates into a finite product of
+is added. The published proof evaluates into a finite product of
 integers, identifies its nonnegative image with the casts of a subtractive
 submonoid of a finite product of naturals, and applies Mathlib's
-`AddSubmonoid.fg_of_subtractive`. Check
-`af8c8573-398f-427b-a832-7016872e0be0` compiles that private proof and inspects
-the statement as `Prop`, with zero errors and warnings. Exact proof Task 6429
-has the complete proof-only shared draft at revision 1. It is ready with no
-executor or submitted artifact as inspected for this update. The published
-statement and unreviewed draft supply no accepted finite-generation proof.
+`AddSubmonoid.fg_of_subtractive`. Finite generation passes to the evaluation
+image and is reflected through the injective map from the annihilator
+quotient. The proof covers the empty character set and arbitrary fields and
+commutative group schemes; no torus, finite-type, splitness or positive-rank
+premise is used. It proves finite generation of the integral quotient, with
+no freeness or generator-count claim. Transport to the actual nonnegative
+uniformizer quotient remains a separate consequence of Task 6505.
 
 Three further units are independently accepted and published at commit
 `db8d6b3d466f2fd453a4df4624ce6c90db8eed46`, and their frozen pairs agree
@@ -428,7 +454,9 @@ sections, not the full rational-point cones of issue I1.
 Exact proof Task 6505 (`93c053ed-559d-4a2b-a441-90c0dc072fb4`) owns the
 nonnegative comparison. Its shared draft at revision 1 is conditional on
 `SimpleRootSplitCentralImageStatement` and `QuotientComparisonStatement`,
-whose exact proof owners remain Tasks 6390 and 6391.
+whose exact proofs from Tasks 6390 and 6391 are now published as above.
+The draft can therefore use these public inputs, but Task 6505 still has no
+independently accepted proof of the nonnegative comparison.
 Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`) owns the actual partition.
 Its shared draft at revision 1 identifies actual pieces with integral strict
 faces, then transfers the published integral partition through the
@@ -446,8 +474,9 @@ shared drafts supply no independent proof acceptance. Both comparison
 premises of the partition reduction remain open.
 
 The source was reread at V.3.23–V.3.24, printed p.117 / PDF p.123. The correction
-of the free-monoid assertion remains issue I2 below. Proofs of the integral and
-nonnegative comparisons, finite generation after transport to the actual
+of the free-monoid assertion remains issue I2 below. The integral central-image
+equality, group quotient comparison and integral finite generation are proved.
+The nonnegative comparison, finite generation after transport to the actual
 quotient, and the strict-face decomposition over actual standard Levi split
 components remain explicit obligations. Worker 4 retains the chamber,
 parabolic split-component and closed-root-subset units. The nine
@@ -649,7 +678,10 @@ not whole-section or whole-book completion.
    The integral and actual quotient constructions, integral strict-face
    laws, four comparison statements, finite-generation statement, actual-piece
    definition and actual partition statement are now public. Tasks 6390,
-   6391, 6429, 6472, 6505 and 6605 retain the exact proof obligations.
+   6391 and 6429 have independently accepted and published exact proofs of
+   the integral central-image equality, group quotient comparison and
+   integral finite generation. Tasks 6472, 6505 and 6605 retain the exact
+   strict-image, nonnegative-comparison and actual-partition obligations.
    In particular, Task 6605's conditional partition draft still requires
    the strict-image and nonnegative-comparison proofs from Tasks 6472 and
    6505. No accepted proof of the actual partition or freeness is counted.
@@ -673,14 +705,18 @@ conjunction has exact proof Task 6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). 
 component statements of Worker 4's parabolic split-component unit (V.3.1–V.3.2) are proved
 by Tasks 6452 and 6454–6457; their conjunction has exact proof Task 6866
 (`e5eb891b-fc5e-4885-8241-647a8b70812f`). For V.3.24, exact proof
-Tasks 6390 and 6391 have complete unreviewed shared drafts at revision 1.
+Tasks 6390, 6391 and 6429 are complete: `simpleRootSplitCentralImage`,
+`CocharacterUniformizer.quotientComparison` and
+`cocharacterConeFiniteGeneration` are independently accepted and published,
+with the proof receipts and exact public pairs verified above.
 Task 6398, the exact proof task for the public anisotropic-part statement, is
-complete: its theorem `torusAnisotropicPart` is published. Task 6429 is the exact proof successor for the now-public
-finite-generation statement; Task 6472 is the exact successor for the
-now-public strict-image statement. Each has a complete unreviewed shared
-proof-only draft at revision 1, with no proof artifact submitted as inspected
-for this update. Neither draft supplies accepted proof coverage.
+complete: its theorem `torusAnisotropicPart` is published. Task 6472 is the
+exact successor for the public strict-image statement. It has a complete
+unreviewed shared proof-only draft at revision 1, with no proof artifact
+submitted as inspected for this update. That draft supplies no accepted proof.
 Task 6505 is the exact successor for the public nonnegative quotient
 comparison, and Task 6605 for the public actual strict-piece partition.
 Their shared revision 1 drafts are conditional reductions, with the
-undischarged premises and existing proof owners recorded above.
+premises and existing proof owners recorded above. Both premises of the
+Task 6505 reduction now have published proofs; the strict-image and
+nonnegative-comparison premises of the Task 6605 reduction remain open.
