@@ -1,0 +1,60 @@
+# Generation by corank-one integrals of `π × I(x)` for norm-ordered `x`
+
+Author: Worker 8. This module defines one proposition,
+`Langlands.Conductor.OrderedUnramifiedCorankOneGenerationStatement`
+(universes `uF`, `uV`). It is a statement only: nothing here proves it.
+
+## Statement
+
+The binders start as those of the published
+`Langlands.Conductor.SphericalLFactorGenerationStatement`
+([`SphericalLFactorGenerationStatement`](SphericalLFactorGenerationStatement.md)),
+in the same order: a nonarchimedean local field `F : Type uF` of any
+characteristic, `n : ℕ`, the measurable and Borel structures, `q`, `ψ`, `abv`,
+`ϖ`, `μ`, `h : IsJacquetNormalization q ψ abv ϖ μ`, `V : Type uV`, a
+representation `π` of `GL_(n+2)(F)` on `V` with `IsGeneric ψ (n + 1) π`, and
+`ℓ : glFunctionals ψ (n + 1) π` with `ℓ.val ≠ 0`. They continue with
+
+- `P : ℂ[X]` with `IsCharacterLPolynomial q ψ abv (rankOneQuotientHaar F) 1 π P`
+  (`L(s, π × 1) = P(q^(-s))⁻¹`, `P(0) = 1`);
+- `x : Fin (n + 1) → ℂˣ` with `Monotone (fun i => ‖(x i : ℂ)‖)`, that is
+  `|x_1| ≤ ⋯ ≤ |x_(n+1)|`;
+- `ℓ' : glInverseFunctionals ψ n ρ` with `ℓ'.val ≠ 0`, where
+  `ρ = principalSeries h.uniformizer n h.residueCardinality x` is the published
+  normalized unramified principal series `I(x)` of `GL_(n+1)(F)`
+  ([`UnramifiedPrincipalSeries`](UnramifiedPrincipalSeries.md)). `ℓ'` is a
+  Whittaker functional for the inverse character `ψ̄`.
+
+Write `Ψ(s, W, W')` for `corankOneIntegral ψ abv μ W W' s`, `X = q^(-s)` for
+`spectralPoint q s`, and `Q_x = ∏ i, P.comp (C (x i) * X)`, the polynomial
+`∏_i P(x_i X)`. The conclusion: there are `k : ℕ`,
+`W : Fin k → coefficientModel π ℓ`, `W' : Fin k → coefficientModel ρ ℓ'` and
+`a : ℝ` with `(∑_j Ψ(s, W_j, W'_j)) · Q_x(q^(-s)) = 1` for every `s` with
+`a < Re s`.
+
+With `x_i = q^(-t_i)`, `P(x_i q^(-s))⁻¹ = L(s + t_i, π)`. So the statement
+says that `∑_j Ψ(s, W_j, W'_j) = ∏_i L(s + t_i, π)` on a right half-plane. It
+does not assert convergence. The identity concerns the published
+`corankOneIntegral` values on the half-plane.
+
+## Source
+
+Jacquet 2012 (*A correction to Conducteur des représentations du groupe
+linéaire*, Pacific J. Math. 260 (2012), 515-525, literature ID
+`jacquet-2012-conductor-correction`), section 1, printed pages 517-519. There
+`t = (t_1, …, t_(r-1))` satisfies `Re(t_1) ≥ ⋯ ≥ Re(t_(r-1))` (printed page
+517). Since `|x_i| = q^(-Re t_i)` and `q > 1`, this is the norm order above.
+Jacquet's Lemma 3 (printed page 519), quoted from JPSS 1983
+(H. Jacquet, I. I. Piatetski-Shapiro, J. A. Shalika, *Rankin-Selberg
+convolutions*, Amer. J. Math. 105 (1983), 367-464, literature ID
+`jpss-1983-rankin-selberg`), states: there are `W_j` in the Whittaker model of
+`π` and `W'_j` in the `ψ̄`-Whittaker model of `I(t)` with
+`∑_j Ψ(s, W_j, W'_j) = ∏_i L(s + t_i, π)`. The statement is the product form
+of this identity (with `r = n + 2`). In JPSS 1983 it is part of the
+computation of `L(s, π × π')` for `π'` induced in Langlands order (Section 9,
+Theorem (9.4), which uses (8.4)). The norm order on `x` is that Langlands
+order.
+
+The Lean statement quantifies over every nonzero `ψ̄`-Whittaker functional
+`ℓ'`. Jacquet uses one such functional (printed page 518). The space of these
+functionals on `I(t)` is one-dimensional, so all choices give the same model.

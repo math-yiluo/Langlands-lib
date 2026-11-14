@@ -81,7 +81,7 @@ private theorem uniformizer_dvd_of_section_values
   rw [hj] at hm
   exact Ideal.mem_span_singleton.mp hm
 
-private theorem tensor_mem_range_of_integral_evaluations
+theorem tensor_mem_range_of_integral_evaluations
     (R K A : Type u) [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
     [HenselianLocalRing R] [IsSepClosed (IsLocalRing.ResidueField R)]
     [Field K] [Algebra R K] [IsFractionRing R K]

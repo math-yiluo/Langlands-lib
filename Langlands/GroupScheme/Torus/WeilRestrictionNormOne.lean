@@ -15,7 +15,7 @@ open scoped CategoryTheory.MonObj TensorProduct
 
 namespace Langlands.GroupScheme.WeilGm
 
-private def kernelModelEquiv {M N M' N' : Type*}
+def kernelModelEquiv {M N M' N' : Type*}
     [Group M] [Group N] [Group M'] [Group N']
     (f : M →* N) (f' : M' →* N') (eM : M ≃* M') (eN : N ≃* N')
     (h : ∀ x, eN (f x) = f' (eM x)) : f.ker ≃* f'.ker where

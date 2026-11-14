@@ -120,3 +120,6 @@ Galois actions, assert descent of points, or construct the general finite-Galois
 point norm of an arbitrary commutative affine group scheme. Those are separate
 extensions. The generic finite-free kernel remains defined without any claim
 that every such kernel is a torus.
+
+The unchanged commuting-square kernel equivalence `kernelModelEquiv` is public
+for reuse by norm-one integral-model constructions.

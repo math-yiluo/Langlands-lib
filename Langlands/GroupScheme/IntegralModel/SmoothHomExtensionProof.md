@@ -109,3 +109,7 @@ The proof covers the strictly Henselian statement only. It does not prove
 `UnramifiedSmoothHomExtensionStatement`; that requires the separate
 coefficient descent argument. The original statement module and all its
 imports are unchanged.
+
+The algebraic lemma `tensor_mem_range_of_integral_evaluations` is public so that
+[IntegralPointIsoCriterion](IntegralPointIsoCriterion.md) can reuse the same
+integral-evaluation argument without repeating its proof or private helpers.

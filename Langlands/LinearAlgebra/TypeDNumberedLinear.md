@@ -1,0 +1,9 @@
+# Independence and Cartan pairing of numbered type-D vectors
+
+This internal coordinate calculation continues `TypeDNumberedVectors`. For n ≥ 2, that module orders the vectors as e_i − e_(i+1) at vertices i < n − 1 and e_(n−2) + e_(n−1) at the last vertex. The new definition `simpleGramMatrix` is their integral Gram matrix for the ordinary coordinate dot product.
+
+`linearIndependent_simple` proves that these n vectors are linearly independent over ℤ. Given a zero integral linear combination, the total coordinate sum is twice the coefficient at the last vertex, so that coefficient is zero. For each proper prefix ending at vertex i, the prefix-sum formula from `TypeDNumberedVectors` then says that the coefficient at i is zero. This works already for n = 2 and asserts independence, not that the simple vectors generate the entire coordinate lattice.
+
+For n ≥ 4, `dotProduct_simple` and `simpleGramMatrix_eq_D` identify the Gram matrix with Mathlib's `CartanMatrix.D n` in exactly the displayed order. The proof separates the chain and last-vertex formulas, evaluates dot products of single-coordinate vectors, and checks the remaining finite-index conditions by arithmetic. Thus each diagonal entry is 2; the off-diagonal entries are −1 along the chain through vertex n−3 and from that branch vertex to vertices n−2 and n−1, and zero elsewhere. In particular, for n = 4 the branch vertex is 1 and vertex 0 retains its specified position.
+
+The provenance is elementary internal algebra from the explicit coordinate vectors and their previously established sum identities, together with Mathlib's explicit Cartan-matrix definition. The module constructs no base on an actual group-scheme root datum, no integral vector-cover map, and no spin cover. Those comparisons remain separate obligations in the aligned type-D existence theorem.

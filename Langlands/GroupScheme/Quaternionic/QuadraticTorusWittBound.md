@@ -54,8 +54,9 @@ published weight decomposition (`universalUnit_inv_eq_sum`) writes
 support generates `ℤ^I` (`closure_weightSupport`).
 
 The published `HermitianWeights.exists_nonopposite_subfamily` chooses a subfamily `S` of the
-support in which no two (possibly equal) weights add up to `0` but which contains every
-weight up to sign; `HermitianWeights.card_le_of_generators_up_to_sign` gives `|I| ≤ |S|`.
+support in which no two (possibly equal) weights add up to `0` and which represents every
+nonzero weight up to sign. Zero contributes nothing to the generated lattice, so
+`HermitianWeights.card_le_of_generators_up_to_sign` gives `|I| ≤ |S|`.
 Taking the constant coefficient of the defect of `u⁻¹` gives
 `∑_{m + p = 0} eₘ Q τ(eₚ) - Q ∈ {x - τ x}`. Sandwiching by `f = ∑_{p ∈ S} eₚ` kills every term
 with `m + p = 0` (one of `m, p` is outside `S`), so `f Q τ(f) ∈ {x - τ x}`, and
