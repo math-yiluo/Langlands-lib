@@ -1,7 +1,8 @@
 # Waldspurger on actual rational points: published units and structural ledger
 
-Author: Worker 3642 (formerly Worker 19), task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`
-(revision 1). Checked against Library commit `2e46b9cac0230529f50cdf96bbe4713c06701fc2`.
+Authors: Worker 3642 (formerly Worker 19) and Worker 5, task
+`1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1). Checked against Library commit
+`7d0469f6b963a3184585874ef8a502809dcbd51b`.
 
 This note lists the published modules used by this task that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
@@ -24,6 +25,10 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `Representation/Plancherel/RationalPlancherelConstantFinite` | `exists_dynamicCentralizer_eq_cocharacterSubmoduleCentralizer`, `measurePreserving_subgroupEmbeddingEquiv`, `leviGamma_eq_gamma_of_isClosedSubgroup`, `rankOneGamma_ne_top`, `rankOneGammaProduct_ne_top_of_isSplitTorus`, `plancherelConstant_pos_ne_top`, `plancherelConstantReal_pos_of_isSplitTorus` | derived finiteness proof for the I.1 constants (pp.240–241): every integer-submodule centralizer is the centralizer of one generic cocharacter; exact common-compact Haar/integral transport identifies its constant with the published smooth-group `gamma`. Every rank-one factor, its finite product and `c` are finite, and the real `c` is positive | arbitrary nonarchimedean local `F`, affine locally finite type `G` that is smooth with connected underlying scheme, split `T`, homomorphism `i : T → G`, cocharacter `ζ`, compact open `K`. No reductivity, maximality of `T` or specialness of `K` is needed. Source root/Levi identifications, reductivity of these centralizers and fixed-Levi parabolic independence remain separate |
 | `Representation/Plancherel/DynamicOppositeUnitaryScalarStatement` | `ConditionalDynamicOppositeUnitaryScalarStatement` (statement only), `RationalFunctionRegularAt`, `RationalFunctionNonnegAt`; proved predicate lemmas `rationalFunction_value_eq`, `RationalFunctionNonnegAt.regularAt` | derived target from IV.3(6) and its proof (p.287) and the regularity/nonnegativity claims of V.2.1 (pp.292–293): `j_P ≠ 0` in the rational function field and `j_P⁻¹` regular with a nonnegative real value at every unitary unramified character | arbitrary nonarchimedean local `F`, affine locally finite type connected reductive `G`, cocharacter `χ`, explicit `hRefl` and `hCST` (both have published dischargers below); compact open `K` with both `G(F) = P_G(χ)(F) K` and `G(F) = P_G(χ⁻¹)(F) K`; canonical smooth representation `A` of `M(F) = Z_G(χ)(F)`; actual whole-operator continuations `p, q`, two nonempty open subsets of their full convergence domains, a nonempty open generic irreducibility locus for the twisted normalized induction; normal central `C`, Borel quotient Haar measure, finite `M(F)/(M¹ C)` and square integrability of `A` modulo `C`. The convergence, continuation, irreducibility and square-integrability inputs are not structural hypotheses |
 | `Representation/Plancherel/RationalPlancherelDensity` | `plancherelDensityConstant`, `plancherelDensity`, `plancherelDensity_mul_scalar`, `plancherelDensity_eq_zero_iff`, `plancherelDensity_continuation_independent`, `plancherelDensity_irreducibility_locus_independent`, `plancherelDensity_stabilizer_fixed`, `plancherelDensity_spec`, `conditionalContinuedComposite_eq_plancherelDensity_value` | derived V.2 expression (p.292), using the actual conditional IV.3 scalar (pp.285–287): `µ = C j_P⁻¹` on unramified characters, with `C = (rankOneGammaProduct.toReal)²`; independence, self-twist stabilizer invariance and conditional composite identities. No proof of V.2.1 | arbitrary nonarchimedean local `F`, affine locally finite type connected reductive `G`, commutative `T`, `i`, `ζ`, and `χ = ζ ≫ i`; same `K` for the constant and scalar, both compact-parabolic factorizations, canonical `SmoothRep A`, `hRefl`, `hCST`, whole-operator continuations and nonempty convergence subsets and generic irreducibility locus. Continuation independence needs the convergence subsets open; specification, stabilizer and locus-independence results also need the original irreducibility locus open. Constant positivity and the zero equivalence require finite product; `µ j_P = C` requires `j_P ≠ 0`; the pointwise composite formula requires both numerator and denominator of a presentation of `µ` to be nonzero at a point in the common regular region. These analytic inputs are not structural conclusions |
+| `Representation/Plancherel/RationalPlancherelDensityPositivity` | `ConditionalPlancherelDensityUnitaryStatement` (target), `RationalFunctionNonnegAt.const_mul`, `conditionalPlancherelDensityUnitaryStatement_of_unitaryScalar` | derived first two claims of V.2.1 (pp.292–293), with the additional rational-field nonvanishing clause: `µ ≠ 0` if the gamma product is finite, and `µ` regular with a nonnegative real value at every unitary character | same data as the density and the square-integrable scalar target above, including central quotient Haar, finite `M(F)/(M¹ C)` and square integrability. The proved reduction assumes the unproved `ConditionalDynamicOppositeUnitaryScalarStatement`; it supplies neither that premise nor a proof of V.2.1 |
+| `Representation/Plancherel/DynamicOppositeHermitianAdjunctionStatement` | `characterConjInv`, `unramifiedConjInv`, `compactPictureHermitianPairing`, `ConditionalDynamicOppositeHermitianAdjunctionStatement` (unproved target) | derived Hermitian form of IV.1 (11) and the proof of IV.3 (6) (pp.283, 287): adjunction of the actual forward integral at `z` with the reverse integral at `z† = conj(z)⁻¹`, on their convergence domains | arbitrary nonarchimedean local `F`, affine locally finite type connected reductive `G`, cocharacter `χ`, `hRefl`, `hCST`, both compact-parabolic factorizations; both Levi projections send the corresponding `P ∩ K` into `K`; canonical `SmoothRep A` with an invariant positive form; `z` in the forward full domain and `z†` in the reverse full domain. The compact pairing uses Haar probability on `K`. The involution and its fixed-point property on unitary characters are proved; adjunction and domain inclusion are not |
+| `Representation/Plancherel/DynamicOppositeUnitaryNonnegativity` | `compactPictureInnerCore`, `compactPictureSesq`, `continuedOperator_adjoint`, `continuedCompositeRationalScalar_nonnegAt`, `ConditionalDynamicOppositeUnitaryNonnegStatement`, `conditionalDynamicOppositeUnitaryNonneg_of_hermitianAdjunction` | derived squared-norm argument in the proof of IV.3 (6) (p.287): compact-pairing positivity, continuation of adjointness, and nonnegative values of `j_P` at unitary common regular points | both compact-parabolic factorizations and projection-stability premises, unitarizable `A`, actual continuations, nonempty open forward/reverse convergence subsets and generic irreducibility locus; additionally `hdag` sends the chosen forward subset into the reverse full domain. The proved reduction assumes the unproved Hermitian adjunction target. Its conclusion is restricted to `p.regularRegion ∩ q.regularRegion` |
+| `Representation/Plancherel/DynamicOppositeUniformNonvanishing` | `compactTestVector`, `exists_forwardCompactFamily_eval_one_eq`, `continuedOperator_map_eq_of_eqOn`, `RationalFunctionPosAt`, `ConditionalDynamicOppositeUnitaryPositiveStatement`, `conditionalDynamicOppositeUnitaryPositive_of_hermitianAdjunction` | derived uniform version of IV.1 (10) (p.283) and strict squared-norm argument of IV.3 (6) (p.287): one compact-picture vector has constant nonzero forward evaluation at `1`; conditionally `j_P ≠ 0` as a rational function and both `j_P` and `j_P⁻¹` have positive values at unitary common regular points | the target retains exactly the preceding nonnegativity target's hypotheses, including unitarizability, compact projection stability and `hdag`; the reduction again assumes the unproved adjunction target. The uniform-vector and continuation lemmas are proved. No square-integrability premise is needed for this common-regular-point argument; regularity of `j_P⁻¹` at every unitary point is not established |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalDiscreteSeriesOrbitFinitenessStatement` | `RationalDiscreteSeriesOrbitFinitenessStatement` (statement), `isConnectedReductive_centralizerScheme` | Thm VIII.1.2 (p.321) | connected reductive `G`, split component `s : T → G`, Haar measure on `G(F)/A_G(F)`; no structural input |
 | `Representation/Jacquet/StandardCasselmanPairing` | `standardCasselmanPairingData`, `exists_standardCasselmanPairing`, `exists_standardCasselmanPairing_splitComponent`, `SimultaneousStandardBasisAt.exists_casselmanPairing` | Thm I.4.1 (p.245) for actual standard `P_J`, on the cones of the whole split component | S1, S2 (as data `hζ`) |
 | `Representation/Jacquet/DynamicCasselmanConstantTerm` | `dynamicCasselmanPairingData`, `exists_dynamicCasselmanPairing`, `dynamicParabolicModulus`, `IsDynamicConstantTerm`, `dynamicConstantTerm`, `existsUnique_dynamicConstantTerm` | Thm I.4.1 and Prop. I.6.2 (pp.245, 249–250) for every dynamic `P(χ)`, along the powers of `χ(t)`; normalized by `δ_U` | smooth affine `G`; no structural input |
@@ -70,6 +75,19 @@ The analysis and Jacquet modules are in namespaces `Langlands.HarishChandraSchwa
 `Langlands.Plancherel.RationalPlancherelDensity`, and the scalar target and its rational-function
 predicates are in `Langlands.Plancherel`. Their paired Markdown files give the exact statements.
 
+The four scalar/density additions in this update are independently accepted and published
+Worker 5 contributions. Their current Lean/Markdown pairs match the frozen published pairs:
+
+| Pair | Candidate | Reviewer | Publication commit |
+|---|---|---|---|
+| [RationalPlancherelDensityPositivity](../../Langlands/Representation/Plancherel/RationalPlancherelDensityPositivity.md) | `a19a58da-5e20-4601-b639-e114d4b45034` | Reviewer 1285 | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [DynamicOppositeHermitianAdjunctionStatement](../../Langlands/Representation/Plancherel/DynamicOppositeHermitianAdjunctionStatement.md) | `96426cd1-e650-4f1d-8c87-75e131d53fee` | Reviewer 1365 | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [DynamicOppositeUnitaryNonnegativity](../../Langlands/Representation/Plancherel/DynamicOppositeUnitaryNonnegativity.md) | `e1b82259-c34d-4220-bdee-5507409de457` | Reviewer 1553 | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| [DynamicOppositeUniformNonvanishing](../../Langlands/Representation/Plancherel/DynamicOppositeUniformNonvanishing.md) | `fec5f1c0-c2cb-48fe-9f5b-0e753f8a0b2b` | Reviewer 1731 | `db8d6b3d466f2fd453a4df4624ce6c90db8eed46` |
+
+These publications accept the targets and implemented reductions at their displayed scope.
+They do not turn the assumed Hermitian adjunction or full-unitary scalar assertion into proofs.
+
 ## Structural hypotheses consumed
 
 Each entry is an explicit hypothesis of the declarations named; none is a representation-theoretic
@@ -92,8 +110,12 @@ hypotheses: `Langlands.GroupScheme.relativeRootReflectionExistence` in
 `GroupScheme/Rational/CentralSplitTorusCharacterProof`. They are not open structural
 obligations. Its two compact-parabolic factorizations, for `P_G(χ)` and `P_G(χ⁻¹)`, remain
 explicit data and are distinct from S3's minimal-parabolic factorization. Its analytic and
-representation-theoretic inputs remain listed in the published-unit row and the obligation
-below.
+representation-theoretic inputs remain listed in the published-unit rows and the obligations
+below. The new Hermitian and positivity targets also retain two compact projection-stability
+premises, the dynamic-parabolic form of the product clause in S5:
+`m_P(P ∩ K) ⊆ K` and `m_P̄(P̄ ∩ K) ⊆ K`. The note supplies no realization of those premises.
+Their `hdag` convergence-domain inclusion and unitarizability premises are analytic and
+representation-theoretic obligations, outside the permitted structural boundary.
 
 Facts that were once expected to be hypotheses and are proved: the inclusions `U_J ⊆ U_∅`,
 `Ū_J ⊆ Ū_∅` for faces with a standard cocharacter (from the Library's
@@ -323,14 +345,14 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   open (I.1 Remark (3)); positive-multiple invariance does not discharge it. These units
   do not prove existence or the factorization properties of a special compact, or supply
   a Plancherel identity.
-- **The unitary scalar target: statement only.**
+- **The square-integrable unitary scalar target: statement only.**
   `Langlands.Plancherel.ConditionalDynamicOppositeUnitaryScalarStatement` states nonvanishing
   of the actual conditional canonical scalar `j_P` as a rational field element and
   `RationalFunctionNonnegAt` for `j_P⁻¹` at every unitary unramified character. The latter
   means a regular presentation `m/n` with `n(z) ≠ 0` and a nonnegative real value; it allows
   the inverse scalar to vanish at a pole of `j_P`. The module proves only the two elementary
-  predicate lemmas named in its row. It proves no nonvanishing or positivity assertion
-  about `j_P`, no adjunction of the intertwining integrals, and no part of V.2.1.
+  predicate lemmas named in its row. That module alone proves no nonvanishing or positivity
+  assertion about `j_P`, no adjunction of the intertwining integrals, and no part of V.2.1.
   The target retains both compact-parabolic factorizations, the actual whole-operator
   continuations `p, q`, two nonempty open convergence subsets, a nonempty open locus of
   irreducibility of the twisted normalized induction, and square integrability modulo a
@@ -342,6 +364,51 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   It omits IV.3(1)–(5), the Weyl and contragredient invariance and the rank-one product
   formula of V.2.1. It establishes no comparison of source normalizations or Plancherel
   identity. Worker 5 retains ownership of this scalar target and its V.2.1 successors.
+- **Hermitian adjunction and the published common-regular-point reductions.**
+  `ConditionalDynamicOppositeHermitianAdjunctionStatement` is an unproved target for the
+  actual standard integrals, not an available adjunction theorem. With the compact-picture
+  pairing conjugate-linear in its first argument, it compares the forward integral at `z`
+  and reverse integral at `z† = conj(z)⁻¹`. It retains both compact-parabolic factorizations,
+  projection stability of `P ∩ K` and `P̄ ∩ K`, an invariant positive form on `A`, and
+  membership in the two full convergence domains. The projection premises are needed for
+  the Haar measures normalized by the supplied `K` to give the adjunction with constant one. The target
+  does not itself provide nonempty convergence subsets or the inclusion `hdag`.
+  Its existing proof owner is Task 6449 `2c792e2f-f6fa-4939-b0a0-0b9ee31b56a1`.
+
+  `DynamicOppositeUnitaryNonnegativity` proves that the compact-picture integral pairing
+  is a positive definite Hermitian form. Its generic `continuedOperator_adjoint` clears
+  the two denominators, applies the regular-function identity theorem on a nonempty open
+  convergence subset and divides at regular points. Its actual-point reduction
+  `conditionalDynamicOppositeUnitaryNonneg_of_hermitianAdjunction` assumes the adjunction
+  target and, with unitarizable `A` and `hdag`, proves nonnegative regular values of `j_P`
+  at unitary points in the common selected regular region.
+
+  `DynamicOppositeUniformNonvanishing` proves
+  `exists_forwardCompactFamily_eval_one_eq`: for every `v` of `A` there are a compact-picture
+  vector `e` independent of the unramified twist and `c ≠ 0` such that the forward integral
+  has value `c • v` at `1` throughout its full convergence domain. The vector comes from
+  a small compact open subgroup with the proved local product factorization; `c` is its
+  positive finite quotient-orbit mass. The generic
+  `continuedOperator_map_eq_of_eqOn` carries this constant evaluation to every selected
+  forward regular point. With a nonzero `v`, the continued image of `e` is nonzero there.
+  The definite Hermitian pairing and assumed adjunction then give
+  `j_P(z) = (J e, J e)/(e,e) > 0` at unitary common regular points. A unitary character
+  avoiding both nonzero denominators exists, so `j_P ≠ 0` in the rational function field.
+  Swapping numerator and denominator gives positive regular values of `j_P⁻¹` at these
+  same points. This is the proved reduction
+  `conditionalDynamicOppositeUnitaryPositive_of_hermitianAdjunction`.
+
+  Both reductions retain the compact projection premises, actual whole-operator
+  continuations, nonempty open convergence subsets and generic irreducibility locus,
+  unitarizability and `hdag`. Neither proves its adjunction premise or the convergence-domain
+  inclusion. Neither controls every unitary point outside the common selected regular
+  region, or establishes the full-unitary regularity of `j_P⁻¹` required by V.2.1.
+  Their unitarizability, compact projection-stability and `hdag` hypothesis package differs
+  from the central-quotient square-integrability package of
+  `ConditionalDynamicOppositeUnitaryScalarStatement`;
+  no implication to that older target is established here. The published uniform-vector
+  argument therefore does not close IV.3 (6), the square-integrable scalar target or the
+  density target. Worker 5 retains the scalar and V.2.1 work; Task 6449 retains adjunction.
 - **The conditional rational density: construction and remaining analysis.**
   `RationalPlancherelDensity` defines `plancherelDensity = fieldConstant C * j_P⁻¹` in the
   rational unramified function field of the actual centralizer scheme, with
@@ -381,6 +448,17 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   on the unitary locus, the product formula, Weyl/contragredient invariance of V.2.1, or the
   specialization to the weighted wave-packet consumers below. Worker 5 retains ownership
   of the scalar and V.2.1 work.
+  The published `RationalPlancherelDensityPositivity` now states
+  `RationalPlancherelDensity.ConditionalPlancherelDensityUnitaryStatement`: the density is
+  nonzero as a rational function when the gamma product is finite, and has regular
+  nonnegative values at every unitary unramified character. Its theorem
+  `conditionalPlancherelDensityUnitaryStatement_of_unitaryScalar` proves this target
+  **from** the still-unproved `ConditionalDynamicOppositeUnitaryScalarStatement`.
+  `RationalFunctionNonnegAt.const_mul` supplies the nonnegative-constant multiplication
+  step. Nonnegative values may be zero; rational-field nonvanishing is a separate clause.
+  This reduction retains the full square-integrable scalar target's hypotheses and
+  proves no new scalar assertion, full-unitary regularity, product formula, Weyl or
+  contragredient invariance, orbit evaluation or wave-packet specialization.
 - **Proposition I.6.2: comparison of the two published forms.** The standard form
   (`standardConstantTerm`, source cones of `A(F)`, under S1 and S2) and the dynamic form
   (`dynamicConstantTerm`, tails of the powers of `χ(t)`, no structural input) are not compared in
