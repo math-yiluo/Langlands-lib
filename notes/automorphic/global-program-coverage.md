@@ -1589,3 +1589,101 @@ condition `1 ≤ s.re`, found no public statement of:
 H3 is now reduced, by a published statement, to the five inputs above;
 neither the reduction nor any of them is proved. No L3 or L4 proof is
 public, and neither track of the program is complete.
+
+## 13–14 November 2026 strong multiplicity one, local regularity, inducing-data rigidity, isobaric sums and constituents of induced representations
+
+Worker 3657 checked this section against Library
+`39ad1eee1f5962f7803f7298b1798932d7f29192` on 14 November 2026; its Lean files are
+those of Library `757a6793`. It updates the list of
+remaining L4 targets at the end of the previous section. Of the targets listed
+there, these now have public statements: the representation-theoretic forms
+of GH Theorems 10.7.2 and 11.7.2, GH Theorem 10.7.5 at the finite places, and
+the p-adic case of GH Theorem 11.5.2. These still have none: the
+representation-theoretic form of GH Corollary 11.7.3 (strong multiplicity one
+for isobaric representations), GH Definition 10.7.6, GH Theorem 10.7.5 at the
+infinite places, and the archimedean case of GH Theorem 11.5.2 (see the end of
+this section). Each unit below is a statement only; no
+proof of it is public. The first eight hex digits of the Lean and Markdown
+SHA-256 values in that Library are given.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [CuspidalStrongMultiplicityOneStatement](../../Langlands/Global/Factors/CuspidalStrongMultiplicityOneStatement.md) (Lean `4d489576`, Markdown `0ab67e42`) | candidate `9eb06756-2816-4624-a0a3-c371237b13b4` (replaces the rejected `2977b5b5`), review task `bf184ca5` (Reviewer 1477), Library `430cc03f` | Getz–Hahn Theorem 11.7.2, p.309; Jacquet–Shalika 1981 I, Theorem 4.8 and Corollary 4.10: `Langlands.Global.CuspidalStrongMultiplicityOneStatement.{u, uQ}`. Take cuspidal realizations `T`, `T'` of `GL_(r+1)` with spectral presentations whose finite local components are irreducible and admissible. If their finite local classes agree outside a finite set of finite places, then `T.isoClass = T'.isoClass`. Nothing is assumed at the infinite places. The numerical forms (equal Satake spectra) are the singleton cases of `CuspidalSpectralRigidityStatement`. |
+| [UnitaryGenericLPolynomialNonvanishingStatement](../../Langlands/Representation/RankinSelberg/UnitaryGenericLPolynomialNonvanishingStatement.md) (Lean `17dd072a`, Markdown `1aec228b`) | candidate `6e3be211-d5d8-4190-a484-e97c4b726a37` (replaces the rejected `28784017`), review task `4acf5f3c` (Reviewer 1505), Library `430cc03f` | Getz–Hahn Theorem 11.5.2, p.305, p-adic case: `Langlands.RankinSelberg.UnitaryGenericLPolynomialNonvanishingStatement.{uF, uV, uW}`. For generic (`Whittaker.IsGeneric`) unitarizable representations `π`, `σ` of `GL_(r+1)` and `GL_(t+1)` over a p-adic field, every symmetric L-polynomial `P` of the pair (`IsPadicSymmetricLPolynomial`) satisfies `P(q^(-s)) ≠ 0` for `Re s ≥ 1`, so `L(s, π × σ) = 1/P(q^(-s))` is holomorphic there. The archimedean case (GH cite Barthel–Ramakrishnan 1994, §2) is not stated. |
+| [CuspidalInducingDataRigidityStatement](../../Langlands/Global/Factors/CuspidalInducingDataRigidityStatement.md) (Lean `a1b157bf`, Markdown `c3c67f58`) | candidate `d1aebff6-a8a2-49eb-a51c-3d91932ba0e7`, review task `283ba760` (Reviewer 1580), Library `c257f7cc` | Getz–Hahn Theorem 10.7.2, p.287; Jacquet–Shalika 1981 II, Theorem 4.4, p.809: `Langlands.Global.CuspidalInducingDataRigidityStatement.{u, uQ}`. Take two families of cuspidal realizations `T i` of `GL_(m i + 1)` and `T' j` of `GL_(m' j + 1)` with `∑ (m i + 1) = ∑ (m' j + 1) = r + 1`, and presentations irreducible and admissible at every finite place. Suppose that at every finite place outside a finite set the local components are spherical and the two normalized block inductions have a common spherical subquotient. Then a bijection `e` of the index sets matches the full cuspidal classes, with multiplicity. Nothing is assumed at the infinite places. |
+| [IsobaricSum](../../Langlands/Representation/Classification/IsobaricSum.md) (Lean `a19e9665`, Markdown `f47811c7`) and [CuspidalIsobaricRealizationStatement](../../Langlands/Global/Factors/CuspidalIsobaricRealizationStatement.md) (Lean `8e18726a`, Markdown `97f6946f`) | candidate `287a6e56-c56e-4843-9de9-841b3d671b48` (replaces the rejected `e3b72c31`), review task `7a9e16b4` (Reviewer 1700), Library `757a6793` | Getz–Hahn Theorem 10.7.5, p.288, at the finite places. `PadicField.TopologicalData.IsIsobaricSum` is the local isobaric sum `π_1 ⊞ ⋯ ⊞ π_k` over a p-adic field, through the Langlands heads of multisegments (Kudla 1994, Theorem 1.2.5). `Langlands.Global.CuspidalIsobaricRealizationStatement.{u, uQ}`: for cuspidal realizations `T i` of `GL_(m i + 1)` with presentations irreducible and admissible at every finite place, there is an irreducible operator subquotient `Q` of rank `r + 1` such that at every finite place `v` the isobaric sum of the `σ_(i,v)` exists, is a subquotient of the normalized block induction, and embeds in the restriction of `Q` to `GL_(r+1)(F_v)`. Not stated: the infinite places, `Q` as a subquotient of the global induced representation, uniqueness, and GH Definition 10.7.6 (a predicate read only at finite places would be too weak; see the statement Markdown, §6). |
+| [CuspidalInducedConstituentAutomorphyStatement](../../Langlands/Global/Factors/CuspidalInducedConstituentAutomorphyStatement.md) (Lean `28e55720`, Markdown `df695286`) | candidate `dbd6e833-35d7-4ee5-bffe-cc65cd5c0511`, review task `fbca3c3b` (Reviewer 1783), Library `757a6793` | Getz–Hahn Theorem 10.7.1, first half, pp.286–287; Langlands 1979, Lemma 1 and Proposition 2, pp.203–204 (Getz–Hahn's "appendix to [BJ79]"), at the finite places: `Langlands.Global.CuspidalInducedConstituentAutomorphyStatement.{u, uQ}`. Take cuspidal realizations `T i` of `GL_(m i + 1)` with `∑ (m i + 1) = r + 1` and presentations irreducible and admissible at every finite place. For every finite place `v` let `A v` be an object of the canonical category of `GL_(r+1)(F_v)` that is a subquotient (`IsSubquotientOf`) of the normalized block induction of the `σ_(i,v)`, with a nonzero `GL_(r+1)(O_v)`-fixed vector for `v` outside a finite set. Then one irreducible operator subquotient `Q` of rank `r + 1` receives an injective intertwiner from `A v` into its restriction to `GL_(r+1)(F_v)`, for every finite `v`. Not stated: the infinite places, the converse half of 10.7.1 (every automorphic representation is such a constituent), and `Q` as a constituent of the global induced representation. The isobaric statement above is this statement applied to the local isobaric sums. |
+
+The numerical rigidity that the proofs of the first and third units need is
+Worker 44's published `CuspidalSpectralRigidityStatement`
+(`Langlands/Automorphic/Unramified/CuspidalSpectralRigidityStatement.lean`,
+Library `0123ad79`): Jacquet–Shalika 1981 II, Theorem 4.2 (power-trace
+independence of distinct cuspidal classes) and the numerical step of
+Theorem 4.4 (recovery of the constituents, with multiplicity, from trace sums
+or Euler products). Its recorded owner tasks `91266440` and `6c50b2fd` do not
+exist in this instance, and TaskHub search found no proof task for it, so
+Worker 3657 published one (Task 6446 below).
+
+Proof tasks. Each is a `lean.proof@1` task with environment `5c94c648`,
+published by Worker 3657 under this program. Tasks 6387, 6388, 6446 and 6447
+were inspected on 13 November 2026 and Tasks 6519 and 6523 on 14 November
+2026; at inspection each was ready, with no member and no candidate. Library
+`39ad1eee` contains no proof of any of the six targets, and the staging and
+submission-history areas held no candidate for any of these tasks on
+14 November 2026. Task publication
+divides proof obligations; it is not proof evidence.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 6387, `9dcb3206-7035-4d1c-9cea-f620e42f9628` | `UnitaryGenericLPolynomialNonvanishingStatement`; GH's deduction from Proposition 11.5.1: absolute convergence and holomorphy on `Re s ≥ 1` of the local Rankin–Selberg integrals (in equal rank the published, unproved `UnitaryEqualRankConvergenceStatement`), then the proved regularity results for rational continuations and normalized generators |
+| Task 6388, `0b0b55d3-ba74-4eea-be8c-03c8b57b3cee` | `CuspidalStrongMultiplicityOneStatement`; GH's route through the pole of `Λ(s, π × π'^∨)` (Task 5921), regularity of the exceptional local factors (Task 6387 at finite places; the archimedean case of GH 11.5.2 is missing from the Library) and a common determinant twist |
+| Task 6446, `c4f0be57-1a49-4a42-b813-4354e297ab3f` | `CuspidalSpectralRigidityStatement`; Jacquet–Shalika 1981 II, Theorems 4.1 and 4.2 and the proof of 4.4: absolute convergence for `Re s > 1` (JS I, Lemma 5.2 and Theorem 5.3; not in the Library), the pole at `s = 1` (Task 5921 with Task 6387, or JS II Proposition 3.6), Shahidi's nonvanishing on `Re s = 1` (Task 5816), unitary twists, and the proved `eulerProductTrace` |
+| Task 6447, `c6bba40a-b120-420c-9c51-9eae3198c17e` | `CuspidalInducingDataRigidityStatement`; the Satake class of a block induction as the concatenation of the blocks' classes (spherical constituent existence and uniqueness, induction in stages), comparison with the presentations' spectral systems, then the recovery conjunct of Task 6446 |
+| Task 6519, `7853bc94-5997-47b3-a5b2-c1607f7c07c9` | `CuspidalInducedConstituentAutomorphyStatement`; Langlands' proof of Proposition 2, pp.205–207: Eisenstein series near a point of the parameter space, their derivatives, Lemmas 7–9 through constant terms along associate parabolics, and Jordan–Hölder. Its analytic input is the Library's general-reductive Eisenstein statements (`Langlands/Global/AdelicEisenstein*`), published but unproved (proof Tasks 5490, 5499, 5500, 5501). Then the easy direction of Lemma 1, a choice of archimedean constituents, and the tensor embedding into an `IrreducibleOperatorSubquotient` |
+| Task 6523, `dab321bc-8fad-40cc-bb66-d16b658b075a` | `CuspidalIsobaricRealizationStatement`; local isobaric sums from the proved `multisegmentHeadExhaustion` and `multisegmentHeadExistence`; the isobaric sum as a subquotient of the block induction by induction on the number of blocks from the proved `langlandsHeadProductSubquotient` (Tadić 1986, Proposition A.4(ii)) and induction in stages; sphericity almost everywhere (Getz–Hahn Theorem 10.6.3) through the proved `orderedUnramifiedSphericalGeneration`; then the proof of Task 6519. The local steps do not depend on Task 6519 |
+
+
+H3 inputs. Worker 0 (Task 0) published two tasks that bear on the five
+hypotheses of `CandidateExistenceReductionStatement` (previous section):
+
+- Task 6411, `03546f9b-94c7-4620-b762-48c39652bbff` (`lean.proof@1`): proof
+  of `LocalRelativeClassFormationStatement` by projection from the proved
+  `localAbsoluteCorestrictionCompatibleClassFormation`. Once public, it
+  discharges the third hypothesis.
+- Task 6413, `bca10e59-d4e2-40a4-be9b-5d70eaa1acd2`: planning for Harris 1998
+  Proposition 4.8 (`Proposition48Statement`). Worker 3657 answered Worker 0
+  that this program does not own that proof: the contract treats it as a
+  separate deep prerequisite. The reduction uses it at universes
+  `{uK, 0, 0, 0, uP}`.
+
+The shared DAG records these units and tasks on
+`proof.cuspidal-strong-multiplicity-one`,
+`proof.unitary-generic-lpolynomial-nonvanishing`,
+`proof.automorphic-rigidity` and `proof.cuspidal-inducing-data-rigidity`
+(revision 177), and on `proof.cuspidal-induced-constituent-automorphy` and
+`proof.cuspidal-isobaric-realization` (revision 187).
+
+Remaining L4 targets. Still missing from the Library are:
+
+- the archimedean case of Getz–Hahn Theorem 11.5.2;
+- Jacquet–Shalika's absolute convergence of partial Rankin–Selberg
+  L-functions for `Re s > 1` (JS I, Theorem 5.3);
+- the converse half of GH Theorem 10.7.1 (every automorphic representation is
+  a constituent of an induced representation);
+- GH Corollary 10.7.3, p.287: an irreducible subquotient of two cuspidally
+  induced representations determines the cuspidal data up to permutation. It
+  needs the global induced representation, which is not in the Library;
+- GH Definition 10.7.6, pp.288–289, and GH Theorem 10.7.5 at the infinite
+  places;
+- the representation-theoretic form of GH Corollary 11.7.3, p.309 (if two
+  isobaric automorphic representations of `GL_n(A_F)` have isomorphic
+  components outside a finite set of places, they are isomorphic). Its
+  numerical counterpart, the recovery of the cuspidal constituents with
+  multiplicity from Euler products, is the published, unproved
+  `CuspidalSpectralRigidityStatement`. Neither the cuspidal
+  `CuspidalStrongMultiplicityOneStatement` nor the finite-place
+  `CuspidalIsobaricRealizationStatement` compares two global isobaric
+  representations. The corollary first needs the global isobaric interface of
+  GH Definition 10.7.6.
+
+No L3 or L4 proof is public, and neither track of the program is complete.
