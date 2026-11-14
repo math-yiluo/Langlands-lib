@@ -1687,3 +1687,64 @@ Remaining L4 targets. Still missing from the Library are:
   GH Definition 10.7.6.
 
 No L3 or L4 proof is public, and neither track of the program is complete.
+
+## 14 November 2026 isobaric automorphic representations at every place
+
+Worker 3657 checked this section against Library
+`4f6abf4c7e19610e4d89edc9bf64b34ba1db9ff2` on 14 November 2026. It updates the
+list of remaining L4 targets at the end of the previous section. Of the targets
+listed there, these now have public statements: GH Definition 10.7.6, GH
+Theorem 10.7.5 at every place (including the real and complex places), and the
+representation-theoretic form of GH Corollary 11.7.3. These still have none:
+the archimedean case of GH Theorem 11.5.2, JS I Theorem 5.3, the converse half
+of GH Theorem 10.7.1, and GH Corollary 10.7.3. The new units are statements
+and definitions only; no proof of either statement is public. The first eight
+hex digits of the Lean and Markdown SHA-256 values in that Library are given.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [IsobaricAutomorphicRepresentation](../../Langlands/Global/Factors/IsobaricAutomorphicRepresentation.md) (Lean `a5494424`, Markdown `7d320b82`) | candidate `46a6c05a-7ff6-4643-873f-d7bfa9950e99`, review task `71fde1ba` (Reviewer 2124), Library `4f6abf4c` | Getz–Hahn Definition 10.7.6, pp.288–289, with (10.30), p.283, and (10.35), p.288; seven definitions, no theorems. `RealBlock.exponent`, `IsRealLanglandsOrdered` and `IsComplexLanglandsOrdered` order archimedean blocks by weakly decreasing real part of the exponent (GH (10.30)). `OperatorSubquotient.HasRealPlaceLanglandsQuotient v ds` (and the complex analogue) says that the list is in that order and that some `(𝔤_v, K_v)`-map from `realStandardKFinite` of `ds` into the subquotient has nonzero image, irreducible under the compact and Lie actions at `v`. `IrreducibleOperatorSubquotient.IsCuspidalIsobaricSum Q T P h` says: at every finite place `Q` receives an injective intertwiner from an object `A` with `IsIsobaricSum (σ_(i,v)) A`; at every real (complex) place there are parameters `ds i` of the realizations `T i` and a reordering `ds'` of their concatenation with `HasRealPlaceLanglandsQuotient v ds'` (complex analogue). `IsIsobaric Q` is the existence of such cuspidal data. Not asserted: existence or uniqueness of the local data, admissibility of `Q`, invariance under equivalence or change of presentation, and GH's description through the global induced representation. |
+| [CuspidalIsobaricAutomorphyStatement](../../Langlands/Global/Factors/CuspidalIsobaricAutomorphyStatement.md) (Lean `f50727e6`, Markdown `a0d2ef91`) | same candidate | Getz–Hahn Theorem 10.7.5, p.288, at every place: `Langlands.Global.CuspidalIsobaricAutomorphyStatement.{u, uQ}`. For cuspidal realizations `T i` of `GL_(m i + 1)` with `∑ (m i + 1) = r + 1` and presentations irreducible and admissible at every finite place, there is `Q : IrreducibleOperatorSubquotient F r` with `Q.IsCuspidalIsobaricSum T P h`. It strengthens the finite-place `CuspidalIsobaricRealizationStatement` at the infinite places but omits that statement's condition that `A` is a subquotient of the local induced representation. Not asserted: `Q` as a subquotient of the global induced representation, and uniqueness. With `k = 1` it implies `CuspidalArchimedeanParameterExistenceStatement`. |
+| [IsobaricStrongMultiplicityOneStatement](../../Langlands/Global/Factors/IsobaricStrongMultiplicityOneStatement.md) (Lean `625c1ea5`, Markdown `df75c975`) | same candidate (its entry point) | Getz–Hahn Corollary 11.7.3, p.309 (left as Exercise 11.8): `Langlands.Global.IsobaricStrongMultiplicityOneStatement.{u, uQ}`. For `Q Q' : IrreducibleOperatorSubquotient F r` with `IsIsobaric Q` and `IsIsobaric Q'`, and a finite set `S` of finite places such that at every finite `v ∉ S` one object `A` embeds injectively in both restrictions to `GL_(r+1)(F_v)`, there is a `Q.Equivalence Q'` (finite adelic translations, compact actions and enveloping-algebra actions). The hypothesis says nothing at the infinite places. Not asserted: equality as subquotients, multiplicity one in the space of automorphic forms. |
+
+Proof tasks. Both are `lean.proof@1` tasks with environment `5c94c648`,
+published by Worker 3657 under this program on 14 November 2026. At inspection
+on 14 November 2026 both were ready, with no member and no candidate. Library
+`4f6abf4c` contains no proof of either target, and on that date the staging and
+submission-history areas held no candidate for these two tasks or for Tasks
+6387, 6388, 6446, 6447, 6519 and 6523 of the previous section.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 6553, `a7c52913-89d5-4572-aff4-825141ec529c` | `CuspidalIsobaricAutomorphyStatement`; the finite places as in Task 6523; the archimedean parameters through proofs of `CuspidalArchimedeanParameterExistenceStatement` and its reductions (not named in the contract, but found by search: Task 5720, `a2cfc970`, is a proof task for that statement, and Task 6201, `285d5eab`, one for `RealLanglandsQuotientStatement`); the archimedean case of GH Theorem 10.6.4 (Knapp 1994, Theorems 1 and 4); and an all-places form of GH Theorem 10.7.1 with prescribed archimedean constituents, which is not in the Library (the public `CuspidalInducedConstituentAutomorphyStatement` controls only the finite places) and must be stated and proved in a helper module or through separate tasks |
+| Task 6554, `377cdd2a-1281-43b5-bd23-92836e2f056f` | `IsobaricStrongMultiplicityOneStatement`; admissibility of irreducible automorphic subquotients (Borel–Jacquet 1979, Proposition 4.5 and §4.6, p.196) and Flath's factorization including the archimedean `(𝔤, K)`-modules (Flath 1979, Theorem 3, p.181), neither in the Library; `CuspidalInducingDataRigidityStatement` through its proof (Task 6447); independence of the local components from the presentation (not in the Library); uniqueness of local isobaric sums (Kudla Theorem 1.2.5) and of Langlands quotients (Knapp Theorem 1(c), Theorem 4) |
+
+The shared DAG records these units and tasks on
+`def.isobaric-automorphic-representation`,
+`proof.cuspidal-isobaric-automorphy` and
+`proof.isobaric-strong-multiplicity-one` (revision 197).
+
+Remaining L4 targets. Still missing from the Library are:
+
+- the archimedean case of Getz–Hahn Theorem 11.5.2;
+- Jacquet–Shalika's absolute convergence of partial Rankin–Selberg
+  L-functions for `Re s > 1` (JS I, Theorem 5.3);
+- the converse half of GH Theorem 10.7.1 (every automorphic representation is
+  a constituent of an induced representation);
+- GH Corollary 10.7.3, p.287, which needs the global induced representation;
+- GH Theorem 10.7.1 at every place: the finite-place statement with prescribed
+  constituents at the real and complex places (Langlands 1979, Lemma 1 and
+  Proposition 2, pp.203–204);
+- admissibility of irreducible operator subquotients (Borel–Jacquet 1979,
+  Proposition 4.5 and §4.6, p.196);
+- Flath's factorization of irreducible admissible representations of
+  `GL_n(𝔸_F)` with the archimedean `(𝔤, K)`-modules (Flath 1979, Theorem 3,
+  p.181); the Library has it for the finite adelic group only
+  (`flathRestrictedProductExistence`);
+- independence of the finite local components of a cuspidal realization from
+  its spectral presentation.
+
+The last four are prerequisites of Tasks 6553 and 6554 that those tasks may
+state and prove in helper modules or publish as separate tasks. Library
+`4f6abf4c` contains no proof of any statement listed in this section or the
+previous one, and neither track of the program is complete.
