@@ -3,9 +3,12 @@
 Author: Worker 0, for Task 0 (`69dd20b3-6a77-44aa-b779-32391843c8dd`). First
 version 10 November 2026, second version 11 November 2026, third, fourth and
 fifth versions 12 November 2026, sixth to thirteenth versions 13 November
-2026, fourteenth version 14 November 2026. This fifteenth version, also of
-14 November 2026, was checked against Library commit
-`f676fad71e1679d672d3e20560dc814d4e1f8ffd`.
+2026, fourteenth and fifteenth versions 14 November 2026. This sixteenth
+version, also of 14 November 2026, was checked against Library commit
+`1ddfc485145c40679728553e8c3a33a5450ce7f9`. The later commit
+`2a2dc17ced526b44249879962e2b26e367c870e6` differs from it only in
+`notes/henniart/harris-cohomology-coverage.md`, so the Lean facts recorded
+here hold there too.
 
 This note records how the published Library reduces the full local Langlands
 correspondence for GL_n to three propositions, and names the task that owns
@@ -31,17 +34,29 @@ with representation universe `0` from the four other global inputs and
 premises 2 and 3. Premise 1 below names the tasks that own those four inputs;
 all four have proof tasks.
 
-Since the fourteenth version, the Library has published a reduction
-statement for the first of these inputs, Harris's Prop. 4.8:
-`Global.Harris.Proposition48ReductionStatement` says that fourteen named
-propositions together imply it. Neither the reduction nor any of its
+For the first of these inputs, Harris's Prop. 4.8, the Library has a
+reduction statement, `Global.Harris.Proposition48ReductionStatement`: fourteen
+named propositions together imply it. Neither the reduction nor any of its
 fourteen inputs has a Library proof. Three of the inputs have their own
 proof tasks, and two planning tasks cover four more. A TaskHub search found
 no proof task for the reduction itself or for the other seven inputs; the
-planning task that stated them is to publish those tasks. For the third
-premise, the two propositions about unramified principal series that its
-owner task published as proof tasks are now proved. The three open premises
-are unchanged. For statement meanings and sources see
+planning task that stated them is to publish those tasks.
+
+Since the fifteenth version, the Library has published an unconditional
+proof of the corank-one spherical functional equation (Task 5680). With it,
+published theorems reduce the third premise to a single statement: the
+generation statement `Conductor.OrderedUnramifiedCorankOneGenerationStatement`
+(Jacquet 2012, Lemma 3, quoted from Jacquet–Piatetski-Shapiro–Shalika 1983,
+the Proposition of §(9.4), printed p. 458, displays (3)–(4), with §(8.4)). A
+private development check composes these theorems; see premise 3 below. On
+13 November 2026 the operator deferred the work on that generation
+statement. This version also records that the route uses
+the third premise only for supercuspidal representations over p-adic fields,
+and that Worker 0 has asked the operator whether to publish a variant of the
+premise restricted to that case. For the hypotheses of the rejected candidate
+for the second input of the candidate-existence reduction, it records which
+published reductions apply. The three open premises are unchanged. For
+statement meanings and sources see
 [the specification coverage note](llc-specification-coverage.md); this note
 does not restate them.
 
@@ -276,7 +291,7 @@ at commit `2e46b9ca`:
 
 The table lists the three premises of
 `supercuspidalCorrespondenceHenniartThreeInputs`, which have no Library proof
-at commit `f676fad7`. They are numbered by their position in that theorem;
+at commit `1ddfc485`. They are numbered by their position in that theorem;
 the third column gives their position among the premises of
 `supercuspidalCorrespondenceHenniartFiveInputs`, which the eighth version
 used. Universes are those of the full correspondence (`uK = uF`, `uW = uP`,
@@ -320,7 +335,7 @@ in `Type`. The route needs candidate existence with the automorphic universe
 universes to Task 5583. The operator decided on 13 November 2026 that Task
 5583 keeps its unconditional target unchanged. Its executor waits on the
 tasks below, which own the inputs. A search of the Lean sources at commit
-`f676fad7` found a proof of input 3 and of none of the others. The states are
+`1ddfc485` found a proof of input 3 and of none of the others. The states are
 TaskHub records of 14 November 2026.
 
 - The reduction itself: proved. Task 6289
@@ -368,7 +383,54 @@ TaskHub records of 14 November 2026.
   because it proved the statement only under three added hypotheses:
   `AssociatedGammaStatement`, the exhaustion of unitary generic
   representations, and `NonabelianSystem.Exists`. The task requires a proof
-  without added hypotheses.
+  without added hypotheses. At commit `1ddfc485` the three hypotheses stand
+  as follows. The states are TaskHub records of 14 November 2026.
+  - `LocalFactor.NonabelianSystem.Exists` is proved by
+    `NonabelianSystem.exists_system`; see premise 2 of the five-premise
+    theorem above.
+  - `ClassField.Global.RelativeWeilGroup.AssociatedGammaStatement` (module
+    `Automorphic/AssociatedFactorStatement`) has no Library proof. The
+    published `RelativeWeilGroup.associatedGamma_of_inputs` (module
+    `Automorphic/AssociatedGammaFinal`) derives
+    `AssociatedGammaStatement.{u, uV, uP, uQ, uE}` from two propositions:
+    `Global.CuspidalPairGlobalFunctionalEquationStatement.{u, u}` (module
+    `Global/Factors/CuspidalPairFunctionalEquationStatement`) and
+    `StableTwistPairGammaMatchStatement.{u, uV, uE}`. The second is proved by
+    `RelativeWeilGroup.stableTwistPairGammaMatchStatement` (module
+    `Automorphic/StableTwistGammaMatchProof`). So the gamma statement follows
+    from the global Rankin–Selberg functional equation for cuspidal pairs
+    alone. A private development check (theorem
+    `associatedGamma_of_globalFE_check`, not published) composes the two
+    published theorems. It compiles at commit `1ddfc485` with 0 errors and 0
+    warnings and uses only the axioms `propext`, `Classical.choice` and
+    `Quot.sound` (private diagnostic `f01fc693-02ba-466c-b5e2-872bcecff6a4`).
+    The functional equation has no Library proof. Task 5493
+    (`8e9a5dd6-1b51-4e53-af72-ca2e6d42fe0a`, `lean.proof@1`, waiting;
+    executor Worker 5493, no candidate) is to prove it. Task 5003
+    (`0fdacf55-4b2d-4416-a0bb-2c98acaa1979`, waiting; executor Worker 5003)
+    is to prove the gamma statement.
+  - The exhaustion of unitary generic representations,
+    `Classification.UnitaryGenericExhaustion F T` (module
+    `Representation/Classification/UnitaryGenericStatement`), has no Library
+    proof. The published
+    `Classification.unitaryGenericExhaustion_of_tadicUnitaryDualExhaustion`
+    (module `Representation/Classification/UnitaryGenericExhaustionReduction`;
+    Task 4941, candidate `ab7333d0`) derives it from Tadić's exhaustion of
+    the unitary dual, `Classification.TadicUnitaryDualExhaustion F T` (module
+    `Representation/Classification/TadicUnitaryStatement`). The published
+    `Classification.tadicUnitaryDualExhaustion_of_ingredients` (module
+    `Representation/Classification/TadicExhaustionAssembly`) derives that
+    statement from three propositions. One of them,
+    `MultisegmentHeadClassification`, is proved by the published
+    `Classification.multisegmentHeadClassification` (module
+    `Representation/Classification/MultisegmentHeadClassificationProof`).
+    The other two, `Classification.TadicExhaustionLemmaStatements` and
+    `Classification.SpehUnitarizability`, have no Library proof, and this note
+    does not record their owners. Task 4941
+    (`31c91f66-6a4d-4571-9898-e0a37589a58b`, waiting; executor Worker 4941)
+    is to prove the generic exhaustion, and Task 4988
+    (`3fcabfac-7cbc-4d66-90b2-40b466df00f2`, waiting; executor Worker 4988, no
+    candidate) is to prove Tadić's exhaustion.
 - Input 3, local relative class formation: proved. Task 6411
   (`03546f9b-94c7-4620-b762-48c39652bbff`, done) published
   `ClassFieldTheory.Local.localRelativeClassFormation` (module
@@ -384,7 +446,7 @@ TaskHub records of 14 November 2026.
 - Input 5, Henniart 2000, §3.8: Task 5231
   (`9e23a040-16d7-4a7a-bd9b-35a08938d3c4`, waiting; executor Worker 5093) is
   to prove `HenniartCompositeMapStatement` by combining four published
-  propositions. Three of them have Library proofs at commit `f676fad7`:
+  propositions. Three of them have Library proofs at commit `1ddfc485`:
   `Global.PoleComparison.relativeIsometryOperation` proves
   `RelativeIsometryOperationStatement` (module
   `Global/Factors/RelativeIsometryOperationProof`);
@@ -400,7 +462,7 @@ TaskHub records of 14 November 2026.
   the generated isometry with determinants and with pair L- and ε-factors),
   has no Library proof. Task 5191 (`c7b60e52-3b3a-45a4-a9f2-595674545493`,
   waiting; executors Workers 5159 and 5121) is to prove it.
-- Task 3657 (`34b81620-20d7-4059-9b08-6bedd1c1c029`, ready; executor
+- Task 3657 (`34b81620-20d7-4059-9b08-6bedd1c1c029`, verifying; executor
   Worker 3657) is the program task for Henniart's global construction (Henniart
   2000, §3). The candidate-existence reduction statement, the statements of
   Lemme 2.8 and §3.8, and the proof Tasks 5191, 5231, 6017 and 6289 were
@@ -413,7 +475,7 @@ namespaces `Langlands.Global.Harris` (rows 1–6 and 10),
 `Langlands.GaloisRepresentation` (rows 7 and 8) and
 `Langlands.Automorphic.Unramified` (rows 9 and 11–14). The descriptions
 paraphrase the docstrings and Markdown of the statements. None of the
-fourteen has a Library proof at commit `f676fad7`. The owners are TaskHub
+fourteen has a Library proof at commit `1ddfc485`. The owners are TaskHub
 records of 14 November 2026. "No task found" means that TaskHub searches
 for the statement's name and topic found no proof or planning task for it.
 The three proof tasks named below require their targets at arbitrary
@@ -467,7 +529,7 @@ hypotheses: `NumericalOrbitCountStatement` (for every p-adic field, rank and
 conductor, the unramified-twist orbit strata on the Weil and supercuspidal
 sides are finite and have equal cardinality), and finiteness of the conductor
 `Numerical.conductor K π` of every supercuspidal class `π`. A search of the
-Lean sources at commit `f676fad7` found no proof of either hypothesis. The
+Lean sources at commit `1ddfc485` found no proof of either hypothesis. The
 operator decided on 13 November 2026 that Task 5584 stays open and that its
 executor does not prove conductor finiteness of supercuspidal classes: that is
 owned through Task 5585 (`5da7d945-39ed-4dcb-ace6-030fa18e4f24`,
@@ -511,7 +573,7 @@ A Lean draft of the proof is in Task 5584's shared draft (revision 2). It
 reduces to the published
 `Henniart.CompactOpenFiniteness.centralLevelStratum_finite` (Bernstein–Zelevinsky
 1976, Cor. 4.15, for p-adic fields). The draft is not a candidate, and the
-Library at commit `f676fad7` has no proof module. The operator did not approve
+Library at commit `1ddfc485` has no proof module. The operator did not approve
 the second unit proposed in the note, which would derive the counts from a
 bijective numerical injection in every rank. The operator judged it circular
 for this route: every known source of such an injection is a local Langlands
@@ -522,24 +584,123 @@ a program for them, such as Henniart's 1988 route (Route A of the route-study
 note).
 
 Premise 3. `Conductor.ConductorExponentStatement` has no Library proof at
-commit `f676fad7`. The published `Conductor.conductorExponentStatement_of`
-(module `Representation/Conductor/EssentialConductorReduction`) derives it
-from five hypotheses. Two of them are proved:
+commit `1ddfc485`; Task 5032 owns it. The published
+`Conductor.conductorExponentStatement_of` (module
+`Representation/Conductor/EssentialConductorReduction`) derives it from five
+hypotheses. Two of them are proved:
 `Whittaker.MirabolicRestrictionInjectivityStatement`, by
 `Whittaker.mirabolicRestrictionInjectivity` (module
 `Representation/Whittaker/MirabolicRestrictionInjectivityProof`), and
 `Conductor.TrivialCharacterEpsilonStatement`, by
 `Conductor.trivialCharacterEpsilon` (module
 `Representation/Conductor/TrivialCharacterEpsilonProof`). A search of the
-Lean sources found no unconditional proof of the other three:
-`Conductor.EssentialVectorExistence`, `Conductor.EssentialDualComparisonStatement`
-and `Conductor.ConductorMinimalityStatement`. Published theorems derive the
-last two from spherical functional-equation statements and mirabolic
-injectivity. Task 5032 owns the premise; this note does not record how its
-executor plans to prove these three.
+Lean sources at commit `1ddfc485` found no unconditional proof of the other
+three: `Conductor.EssentialVectorExistence`,
+`Conductor.EssentialDualComparisonStatement` and
+`Conductor.ConductorMinimalityStatement`.
 
-Since the fourteenth version, the two proof tasks that Worker 5731 published
-from Task 5032 are done. Their targets are the two conjuncts of
+Published theorems reduce all three to one proposition, the generation
+statement `Conductor.OrderedUnramifiedCorankOneGenerationStatement` (module
+`Representation/Conductor/OrderedUnramifiedCorankOneGenerationStatement`,
+Worker 8). Its Markdown attributes it to Jacquet 2012, Lemma 3, which quotes
+Jacquet–Piatetski-Shapiro–Shalika 1983, where it is part of the Proposition
+of §(9.4) (printed p. 458, displays (3)–(4)), which uses §(8.4). For a generic representation π of `GL_(n+2)(F)` with L-polynomial
+`P`, and an unramified principal series `I(x)` of `GL_(n+1)(F)` whose
+parameters have nondecreasing norms, it says that a finite sum of corank-one
+integrals, multiplied by `∏_i P(x_i q^(-s))`, equals 1 on a right half-plane.
+The reductions are:
+
+- `EssentialDualComparisonStatement` follows from published theorems.
+  `Conductor.essentialDualComparison_of_functionalEquation` (module
+  `Representation/Conductor/EssentialDualComparisonBridge`) derives it from
+  the corank-one spherical functional equation and mirabolic injectivity.
+  `Conductor.sphericalCorankOneFunctionalEquation` (module
+  `Representation/Conductor/SphericalCorankOneFunctionalEquationProof`; Task
+  5680, `685d39c3-c280-41e2-bdd5-6012dd1d2339`, done) proves that functional
+  equation for every nonarchimedean local field.
+- `ConductorMinimalityStatement`:
+  `Conductor.conductorMinimalityStatement_of_sphericalFunctionalEquation`
+  (module `Representation/Conductor/ConductorMinimalityReduction`) derives it
+  from `Conductor.SphericalLaurentFunctionalEquationStatement` and mirabolic
+  injectivity. At commit `1ddfc485`,
+  `Conductor.sphericalLaurentFunctionalEquation_of_corankOne_of_generation`
+  (module `Representation/Conductor/SphericalLaurentFunctionalEquationReduction`)
+  derives that statement from the functional equation and
+  `Conductor.SphericalLFactorGenerationStatement`, and
+  `Conductor.sphericalLFactorGeneration_of_generation` (module
+  `Representation/Conductor/SphericalLFactorGenerationAssembly`) derives the
+  latter from the generation statement.
+- `EssentialVectorExistence`: `Conductor.exists_isEssentialVector_of_jpss`
+  (module `Representation/Conductor/EssentialExistenceReduction`) gives an
+  essential vector of one representation from the conclusions of
+  `SphericalLFactorGenerationStatement` for that representation. Applied to
+  every representation, with those conclusions supplied through the generation
+  statement, it gives `EssentialVectorExistence`.
+
+A private development check, not published, composes these published
+theorems. Its theorem `conductorExponent_of_generation_check` proves
+`ConductorExponentStatement.{uF, uV}` from
+`OrderedUnramifiedCorankOneGenerationStatement.{uF, uV}` alone. It compiles at
+commit `1ddfc485` with 0 errors and 0 warnings, and the service's declaration
+inspection lists only the axioms `propext`, `Classical.choice` and
+`Quot.sound` (private diagnostic `c12ce8bf-1c99-4ee1-89ea-e8178878aaa2`).
+
+The tasks on this chain, with their TaskHub records of 14 November 2026:
+
+- Task 5777 (`bfda674c-84d7-46c3-9d07-ad384a19bab3`, `lean.proof@1`,
+  verifying; executor Worker 95) is to prove
+  `SphericalLaurentFunctionalEquationStatement`. Its candidate
+  `0377660e-2370-4784-8811-274ae4be1081` proves the statement with no
+  hypotheses. It revises the reduction module above so that the reduction
+  needs only the Laurent conjuncts of the generation conclusions, which the
+  published `Conductor.sphericalCorankOneLaurent` (module
+  `Representation/Conductor/SphericalCorankOneLaurentProof`) proves. Machine
+  validation and Reviewer 4070 accepted the candidate on 14 November 2026,
+  but it is not in the Library at commit `1ddfc485`. Once it is published,
+  `ConductorMinimalityStatement` follows from published theorems, and the
+  generation statement is needed only for `EssentialVectorExistence`.
+- Task 5549 (`187e708b-4c2c-40b4-9ddd-8ca35e07fdd0`, `lean.proof@1`, waiting;
+  executor Worker 5549, no candidate) is to prove `ConductorMinimalityStatement`.
+- Task 5878 (`d06ea375-9c2e-4a40-9fe4-ae54f3fcec36`, `lean.proof@1`, revision
+  2, waiting; executor Worker 8) is to prove
+  `SphericalLFactorGenerationStatement`. Its executor's question to the
+  operator, `8c5d5099530a5576aa6b411cf94016d8`, names the generation statement
+  as the task's last open input.
+- On 13 November 2026 (23:27 UTC) the operator deferred the generation
+  statement. Item 5 of the operator's answer
+  `092b33b7ccc353ae87e8d7c545221493` to Worker 8
+  defers the ordered-unramified L-product for generic π (JPSS 1983, (9.4)
+  and (8.4)) and says not to publish it yet. The same answer lists the
+  classification batch for (9.4) and (8.4) as out of scope until the operator
+  decides. Worker 8's question
+  `8c5d5099530a5576aa6b411cf94016d8` asks the operator to lift this deferral;
+  it is unanswered.
+
+Use of the premise in the route. A reading of the Lean sources at commit
+`1ddfc485`, not a Lean-checked statement, shows that the route uses premise 3
+only for supercuspidal representations over p-adic fields. In the published
+reductions above, every occurrence of the premise passes it on, except one:
+`Henniart.Extension.exists_newvectorConductor_of_pairEpsilon` (module
+`Correspondence/HenniartConductorFinitenessProof`) applies
+`Conductor.genericConductor_isNewvectorConductor_of_conductorExponentStatement`
+(module `Representation/Conductor/GenericEpsilonConductor`) to a supercuspidal
+representation `A : GeneralLinear.SupercuspidalRep (F := K.Carrier) (n := k + 1)`
+of a p-adic field `K`. The three-premise theorem reaches it through
+`surjectivityStepReduction` (by way of `rankExtension_conductor` and
+`conductor_eq_of_pairEpsilon`, module `Correspondence/HenniartRankConductor`)
+and through `supercuspidalEpsilonConductorFinitenessPadicReduction`.
+
+On 14 November 2026 Worker 0 asked the operator (question
+`8457135d67325c5580f35738976b03b6`) whether to publish, under Task 0, a
+variant of premise 3 restricted to supercuspidal representations over p-adic
+fields, a reduction statement for the three-premise theorem with that variant
+in place of premise 3, and proof tasks for both. The question argues that for
+supercuspidal representations of rank at least 2 the L-factor is 1, so that
+the variant needs only the case of the generation statement in which a
+finite sum of integrals equals 1. That argument has not been formalized or
+reviewed. The question is unanswered, and nothing has been published for it.
+
+The two proof tasks that Worker 5731 published from Task 5032 are done. Their targets are the two conjuncts of
 `Conductor.OrderedUnramifiedWhittakerStatement` (module
 `Representation/Conductor/OrderedUnramifiedWhittakerStatement`), the two
 assertions about unramified principal series that the statement's
@@ -611,15 +772,15 @@ premise 2 above) and is done.
 ## The composite
 
 The module below compiles at commit
-`f676fad71e1679d672d3e20560dc814d4e1f8ffd` in environment
+`1ddfc485145c40679728553e8c3a33a5450ce7f9` in environment
 `5c94c648-e8dc-4002-a50a-071ebf3f6096`, with 0 errors and 0 warnings. The
 check compiled the block verbatim as a private draft module in the Lean
 service, together with a second draft module that imports it and runs
 `#print axioms` on both theorems. The service's declaration inspection was
 run once for each theorem; each lists only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. The diagnostics are the private records
-`3dd3953b-d185-4a3c-ad07-e9dda611dc7d` (first theorem) and
-`847876cd-5b29-4206-91c1-91916a01506f` (second theorem). To reproduce them,
+`90eb5b5c-2fa1-41c8-b742-fdbaa6d8dc59` (first theorem) and
+`24759557-da46-4206-81a0-ed0018cafce4` (second theorem). To reproduce them,
 save the block as a draft module and compile it with `lean_check`, naming
 each theorem as the declaration to inspect. The module is a development
 check, not a published proof.
@@ -627,7 +788,7 @@ check, not a published proof.
 The first theorem, `fullCorrespondence_of_henniartThreeInputs`, applies two
 published theorems: `fullCorrespondenceStatement_of_supercuspidalCorrespondence`
 and `supercuspidalCorrespondenceHenniartThreeInputs`. Its hypotheses are the
-three open premises, in the order of the table. The eighth to fourteenth
+three open premises, in the order of the table. The eighth to fifteenth
 versions had the same theorem. The eighth version's proof applied
 `supercuspidalCorrespondenceHenniartFiveInputs` with
 `NonabelianSystem.exists_system` and
