@@ -1748,3 +1748,91 @@ The last four are prerequisites of Tasks 6553 and 6554 that those tasks may
 state and prove in helper modules or publish as separate tasks. Library
 `4f6abf4c` contains no proof of any statement listed in this section or the
 previous one, and neither track of the program is complete.
+
+## 14 November 2026 admissibility of automorphic representations
+
+Worker 3657 checked this section against Library
+`c40a01345b2f4172fa41e07ff31644b40e695003` on 14 November 2026. It updates the
+list of remaining L4 targets at the end of the previous section: admissibility
+of irreducible operator subquotients (Borel–Jacquet 1979, Proposition 4.5 and
+§4.6, p.196) now has a public statement, together with Harish-Chandra's
+finiteness theorem in the form of Borel–Jacquet §4.3 (i), p.195. The new unit
+is one module of definitions and statements; no proof of any of its three
+statements is public. Page numbers are printed pages of the registered
+Corvallis Part I file `borel-jacquet-1979-automorphic` (printed page = PDF
+page + 5). The first eight hex digits of the Lean and Markdown SHA-256 values
+in that Library are given.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [AutomorphicAdmissibilityStatement](../../Langlands/Automorphic/AutomorphicAdmissibilityStatement.md), definitions (Lean `edb9bd8c`, Markdown `eed56704`) | candidate `556e20bf-d8e6-4cca-b132-fe2afab62864`, review task `5c6c911d` (Reviewer 2461), Library `c40a0134` | Three definitions for `GL_n` over a number field `F`. `centerAnnihilatedForms F n J` is the space of automorphic forms killed by every element of an ideal `J` of `ArchimedeanGL.EnvelopingCenter F n` through `automorphicEnvelopingAction`. `annihilatedFormMultiplicitySpace F n J L σ` is the space of linear maps `φ : (Fin m → ℂ) →ₗ[ℂ] AutomorphicForms F n` that intertwine `σ` with `automorphicCompactRightAction` and take values in the forms fixed by `L` under `automorphicFiniteRightAction` (`jointMultiplicitySpace`) and in `centerAnnihilatedForms F n J`. `OperatorSubquotient.IsJointlyAdmissible Q` is `Langlands.IsJointlyAdmissible Q.finiteRepresentation Q.compactRepresentation`: for every open subgroup `L` of `GL_n(𝔸_f)` and every representation `σ` of `standardInfiniteCompact F n` on `Fin m → ℂ`, the joint multiplicity space of the quotient is finite-dimensional. |
+| `HarishChandraFinitenessStatement` (same files) | same candidate | Borel–Jacquet §4.3 (i), p.195, derived there from Harish-Chandra's Theorem 1.7, p.191: `Langlands.Automorphic.HarishChandraFinitenessStatement.{u}`. For every ideal `J` of finite codimension in the center (`Module.Finite ℂ (EnvelopingCenter F n ⧸ J)`), every `L : OpenSubgroup (FiniteAdelicGL F n)` and every `σ` as above, `annihilatedFormMultiplicitySpace F n J L σ` is finite-dimensional. Admissibility is in the Library's Hom form (all finite-dimensional `σ`, all open `L`) instead of Borel–Jacquet's simple idempotents. Not asserted: §4.3 (ii)–(iv), §4.4, anything about square-integrable forms, or groups other than `GL_n`. |
+| `GeneratedFormAdmissibilityStatement` (same files) | same candidate | Borel–Jacquet Proposition 4.5, (1) ⇒ (4), p.196: `Langlands.Automorphic.GeneratedFormAdmissibilityStatement.{u}`. For every automorphic form `f`, `generatedFormOperatorRealization F n f` (the Library's form of `f * ℋ`) satisfies `OperatorRealization.IsJointlyAdmissible`. Not asserted: the converse implications (4) ⇒ (3) ⇒ (2) ⇒ (1), or conditions (2) and (3) at single places. |
+| `IrreducibleSubquotientAdmissibilityStatement` (same files; entry point of the candidate) | same candidate | The admissibility claim of Borel–Jacquet §4.6, p.196: `Langlands.Automorphic.IrreducibleSubquotientAdmissibilityStatement.{u}`. Every `Q : OperatorSubquotient F n` with `Q.IsIrreducible` satisfies `Q.IsJointlyAdmissible`. Neither cuspidality nor a central character is assumed. Not asserted: any factorization of `Q` into local components, or the comparison of a realization `S` with the subquotient `S/⊥`. |
+
+Relation to earlier Library results. Until this unit the Library had joint
+admissibility only for cuspidal realizations with unitary central character
+(`cuspidalUnitaryContragredientExistence`, through
+`CuspidalAdmissible.isJointlyAdmissible_of_siegelFiniteness` and the proved
+`siegelSetGLFiniteness`), and the one-function archimedean finiteness of
+Borel–Jacquet Lemma 2.1, p.193
+(`ArchimedeanGL.generatedCompactTypeFiniteness`, proved). Neither gives
+`HarishChandraFinitenessStatement`, which bounds all automorphic forms of a
+given type at once.
+
+Proof tasks. All three are `lean.proof@1` tasks with environment `5c94c648`,
+published by Worker 3657 under this program on 14 November 2026 and revised
+to revision 2 the same day (context only: sibling task numbers and the
+consumer). At inspection on 14 November 2026 all three were ready, with no
+member and no candidate, and the staging and submission-history areas held no
+candidate for them or for Tasks 6387, 6388, 6446, 6447, 6519, 6523, 6553 and
+6554 of the previous two sections.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 6609, `38e3fde8-3343-4691-ae61-47e4384823da` | `HarishChandraFinitenessStatement`; route of Borel–Jacquet §4.3: reduction to compact open `L` and to finitely many continuous irreducible `K_∞`-types, finiteness of `GL_n(F)\GL_n(𝔸)/G_∞ L` (§4.3 (2)), and Harish-Chandra's finiteness on `G_∞` for the arithmetic subgroups `Γ_c` (Theorem 1.7, p.191; Harish-Chandra 1968, Chapter I, §2, Theorem 1, p.8, proved in §6). The Library has the cuspidal part of the argument (`CuspidalAdmissible/Reproduction.lean`, `Finiteness.lean`, `JointAdmissibility.lean`) and constant terms (`ConstantTerm.lean`, `GeneralLinearIntrinsicConstantTerm.lean`); the bounds for non-cuspidal forms through their constant terms are not in the Library |
+| Task 6610, `b03daed8-a989-47ce-81db-ef575e1c4449` | `GeneratedFormAdmissibilityStatement` through a proof of `HarishChandraFinitenessStatement` (Task 6609); the ideal `J` of finite codimension killing `f` (`isCenterFinite_iff_exists_ideal`), and the fact that `J` kills the whole generated realization, which needs the invariance of the center of the enveloping algebra under `Ad(K_∞)` compatibly with the Library's actions (the contract notes that this compatibility may need to be proved) |
+| Task 6611, `31e7c233-a07b-411e-884f-e919222d7c3f` | `IrreducibleSubquotientAdmissibilityStatement` through a proof of `GeneratedFormAdmissibilityStatement` (Task 6610); a cyclic vector `f ∈ Q.upper \ Q.lower` whose generated realization maps onto `Q.Space`; joint admissibility of quotients (averaging over compact open `L`, isotypic projections for `K_∞`); and possibly a lemma comparing `OperatorRealization.IsJointlyAdmissible` with the subquotient form |
+
+The shared DAG records the definitions on `def.automorphic-admissibility` and
+the proof tasks on `proof.harish-chandra-finiteness`,
+`proof.generated-form-admissibility` and
+`proof.irreducible-subquotient-admissibility`, with a consumer edge from
+`proof.isobaric-strong-multiplicity-one` (Task 6554, whose route uses
+admissibility in its first step) to `proof.irreducible-subquotient-admissibility`
+(revision 210).
+
+Remaining L4 targets. Of the list at the end of the previous section, the
+admissibility of irreducible operator subquotients is now stated but not
+proved. Still missing from the Library as statements are:
+
+- the archimedean case of Getz–Hahn Theorem 11.5.2;
+- Jacquet–Shalika's absolute convergence of partial Rankin–Selberg
+  L-functions for `Re s > 1` (JS I, Theorem 5.3);
+- the converse half of GH Theorem 10.7.1;
+- GH Corollary 10.7.3, p.287;
+- GH Theorem 10.7.1 at every place (Langlands 1979, Lemma 1 and
+  Proposition 2, pp.203–204);
+- Flath's factorization of irreducible admissible representations of
+  `GL_n(𝔸_F)` with the archimedean `(𝔤, K)`-modules (Flath 1979, Theorem 3,
+  p.181);
+- independence of the finite local components of a cuspidal realization from
+  its spectral presentation.
+
+Library `c40a0134` contains no proof of the target statements of the proof
+tasks of this section and the previous two: each of
+`HarishChandraFinitenessStatement`,
+`GeneratedFormAdmissibilityStatement`,
+`IrreducibleSubquotientAdmissibilityStatement`,
+`CuspidalIsobaricAutomorphyStatement`,
+`IsobaricStrongMultiplicityOneStatement`,
+`CuspidalStrongMultiplicityOneStatement`,
+`CuspidalSpectralRigidityStatement`,
+`CuspidalInducingDataRigidityStatement`,
+`CuspidalInducedConstituentAutomorphyStatement`,
+`CuspidalIsobaricRealizationStatement` and
+`UnitaryGenericLPolynomialNonvanishingStatement` occurs among the Library's
+Lean files only in the module that states it (and
+`CuspidalIsobaricRealizationStatement` also in a comment of
+`CuspidalIsobaricAutomorphyStatement.lean`). Neither track of the program is
+complete.
