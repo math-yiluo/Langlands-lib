@@ -5,8 +5,10 @@ revision 1: compatible Galois-family existence and multiplicity removal from
 unitary Shimura cohomology. The previous instance's Worker 34 authored the
 published units listed in section 1. Each pair's Markdown names its author.
 
-This note maps that task's objective to Lean declarations of Library commit
-`ed924aef420de137b4cbaa3b063a3618afcd73fd`, environment
+This note maps that task's objective to Lean declarations. Sections 1.1–1.4
+describe Library commit `ed924aef420de137b4cbaa3b063a3618afcd73fd`. Section 1.5
+describes the statements on Shimura cohomology, built on Library commit
+`c0debd6f4dd02fdd68d70811cf610906b945a962`. The environment is
 `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`). Modules are given relative to
 `Langlands/`. Use the declarations by their Lean names from the current
@@ -14,10 +16,23 @@ Library. The SHA256 values in section 4 identify the versions described here.
 
 **How to read the status.** Every target below is a `Prop`-valued `def`.
 Publication accepts the formulation and its agreement with the original
-source; it does not prove the proposition. At this commit no Library theorem
-proves, or assumes, any statement in section 1: no other Library file uses the
-statement names. So every statement is an unproved obligation. None is an
-axiom or a structure field. Each pair's Markdown gives the exact quantifiers,
+source; it does not prove the proposition. At Library commit
+`320321b3cd4b5100d54cf785192677d59479e65f`, no Library theorem proves any
+statement in section 1, and no Library theorem takes one as a hypothesis. So
+every statement is an unproved obligation. Outside the modules of section 1,
+the only Lean files that use one of the statement names are three Prop-valued
+reduction statements for Harris's Proposition 4.8, in namespace
+`Langlands.Global.Harris`. Each of them takes
+`Harris1998Theorem12CuspidalStatement` (section 1.3) as a premise:
+`Proposition48PrimeBranchStatement` and `Proposition48SingletonBranchStatement`
+as an implication premise, and `Proposition48ReductionStatement` as a conjunct
+of its antecedent (modules
+`Global/Arithmetic/HarrisProposition48PrimeBranchStatement`,
+`Global/Arithmetic/HarrisProposition48SingletonBranchStatement`,
+`Global/Arithmetic/HarrisProposition48ReductionStatement`). These are
+conditional consumers: they are themselves unproved statements, and they do
+not prove `Harris1998Theorem12CuspidalStatement`. None of the statements of
+section 1 is an axiom or a structure field. Each pair's Markdown gives the exact quantifiers,
 normalizations, page locators, registered fingerprints and source gaps. This
 note summarizes them and does not replace them.
 
@@ -111,6 +126,69 @@ formula of the erratum. `IsNuBarRealization` states only the relation between
 a `λ`-adic character and `ν̄`. Both the existence of such a character and the
 algebraicity of `ν̄` are left unstated.
 
+### 1.5 Statements on the cohomology of the CM Shimura varieties
+
+| Module | Declarations | Original source | Status |
+| --- | --- | --- | --- |
+| `Shimura/PEL/HarrisTaylorCMLambdaHodgeTateStatement` | `Langlands.GaloisRepresentation.HodgeTate.HasUnderlyingHodgeTateDecomposition` and `Langlands.GaloisRepresentation.HasUnderlyingHodgeTateDecompositionAt` (definitions); `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisLambdaCohomologyHodgeTateStatement` | Harris 1999, proof of Thm 5.7, pp.313–314, and Introduction, p.299; Faltings 1988, III, Thm 4.1, p.298, and Introduction 1(b), p.255 | Unproved |
+| `Shimura/PEL/HarrisTaylorCMKottwitzStatement` | `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisKottwitzLambdaAdicStatement` | Kottwitz 1992 (Invent. 108) §1, pp.654–657, Thm 1, p.657; §5, p.661 | Unproved |
+| `Shimura/PEL/HarrisTaylorCMHarrisTheorem57Statement` | `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisTheorem57Statement` | Harris 1999 §4, pp.308–309, (4.2); §5, p.312; (5.6) and Thm 5.7(i)–(ii), p.313; Harris 1997 [H1] §1, (R), pp.79–80, 82; Harris 1998 Erratum (E.1)–(E.2), pp.181–182, and Appendix, p.206 | Unproved |
+
+All three are stated for the Library's CM Shimura varieties `S_U` of Harris's
+signature and the Library's `λ`-adic cohomology with coefficients in a
+general algebraic representation `ρ` of the unitary similitude group `GG`.
+That cohomology, its tower, the Hecke multiplicity spaces and the isotypic
+parts with their Galois representations come from Task 5484
+(`Shimura/PEL/HarrisTaylorCMLambdaCohomologyObjects`,
+`Shimura/PEL/HarrisTaylorCMLambdaTower`). Each statement assumes that `A` is a
+division algebra. `CMHarrisTheorem57Statement` also assumes Harris's
+condition (R) of [H1] (Harris 1997, p.79), to whose framework Harris 1999, §4,
+returns: at every finite place of `F`, `A` is split or a division algebra. It
+also assumes that the algebra `D'` of the inner form is a division algebra
+([H1], p.80). Worker 16's neighbouring statement of Harris 1999 (5.1),
+`CMHarrisVanishingStatement` (`Shimura/PEL/HarrisTaylorCMHarrisVanishingStatement`),
+uses the same form of (R) but does not assume that `D'` is a division algebra.
+
+`CMHarrisLambdaCohomologyHodgeTateStatement` says that `H^d(S_U ×_F F̄, W)_λ`
+has a Hodge–Tate decomposition at every place of `F` above `ℓ` as a
+`ℚ_ℓ`-representation (`HasUnderlyingHodgeTateDecompositionAt`): a
+`C_w`-linear, Galois-equivariant `C_w ⊗_{ℚ_ℓ} V ≅ ⊕_i C_w(k_i)`, not required
+to be `K_λ`-linear. A `K_λ`-linear form with free summands would force equal
+weights at all coefficient embeddings. Its Markdown gives an in-scope example
+where that fails (Reviewer 2555's example: the reduced norm on `GU(2,1)` with
+an inert coefficient prime).
+
+`CMHarrisKottwitzLambdaAdicStatement` is Kottwitz's Theorem 1. It has
+irreducibility over `K̄` of `ρ` and `π_f`, and the weight `w = w(ξ)` given by
+the action `t^{−w}` of the central scalars (the sign comes from Kottwitz's
+purity paragraph, p.661). Kottwitz's `W^i(π_f)_λ` is the Library's Hecke
+multiplicity space, and `P(π_p, E_v)` is the Library's `IsKottwitzPolynomial`.
+Weights use `Cohomology.Weights.{IsWeilNumber, IsPurePolynomial}`. The
+conclusion is the existence of an integer `a` and a finite set `S` of primes
+with two properties. (a) `a ≠ 0` iff some `W^i(π_f)_λ ≠ 0`. (b) Assume
+`a ≠ 0`. Let `p ∉ S` be a prime at which `F` is unramified, with a standard
+unramified chart whose level is the `p`-component of the level `U`, and let
+`π_p` be the component of `π_f` at `p`. Then `π_p` is unramified, and for
+every `P` attached to `π_p` by `IsKottwitzPolynomial` the following hold: the
+parity and weights of the roots of `P`; the unique factorization
+`P = ∏_{i ≤ 2(n−1)} P_i` into pure factors; and
+`HasEulerPolynomialAt W^i(π_f)_λ v (P_i^{|a|})^rev` for every `λ` not above
+`p`. As in Kottwitz's Theorem 1(b), printed p.657, nothing is claimed in (b)
+when `a = 0`.
+
+`CMHarrisTheorem57Statement` is Harris's Theorem 5.7(i)–(ii). It uses
+`ρ' = JL(π_f)` (`IsHarrisJacquetLanglandsTransfer`) with `π_v` supercuspidal
+and the factor `ℚ_p^×` of (4.2) acting trivially. `ξ₀` is the central
+character of `ρ'` on the finite ideles of `𝒦₀`, and `ν̄(π)` is given by a
+realization (`Harris.IsNuBarRealization`) at a place above the cohomology
+prime `ℓ`, carried by a continuous embedding into a topological field
+`M ≅ ℂ` (through `j : M ≃+* ℂ`), over which `JL(π_f)` has a model. `JL(π_f)` is assumed
+to occur in `H^{n−1}`. (i) The characteristic polynomials of
+`[H^{n−1}(S_U, W)[π] ⊗ ν̄(π)]^*` are the `a`-th powers of those of an
+`n`-dimensional `ρ(π)`. (ii) At almost all places, `ρ(π)` is unramified and
+`unitaryEulerPolynomial` of its Euler polynomial is that of the unramified
+base-change eigenvalues `UnramifiedChart.baseChangeEigenvalues`.
+
 ## 2. Dependencies between the statements
 
 No Lean theorem connects the statements; the following is the proof route of
@@ -132,178 +210,92 @@ the sources, recorded for the proof tasks.
   (unpublished) for the remaining bad-parity cases. Clozel 1993 Thm 2.6 does
   not replace that input, because it needs supercuspidal components.
 - `TaylorMultiplicityRemovalStatement` needs two hypotheses: the
-  Frobenius-polynomial identities `P_v^m` from Kottwitz and Clozel, and the
-  Hodge–Tate decomposition `HasHodgeTateDecompositionAt` with `n` distinct
-  twists of multiplicity `m`. Harris 1999 (proof of Thm 5.7, pp.313–314)
-  obtains the second from the geometric origin of the coefficient systems `W`:
-  they come from tensor powers of the cohomology of the universal abelian
-  scheme. Faltings' Hodge–Tate theorem then applies (section 3.3).
-- Harris 1999 Thm 5.7(i) is Taylor's theorem applied to the isotypic part
-  `[H^{n−1}(S_K(N), W)[π] ⊗ ν̄(π)]^*`, with `ν̄` from section 1.4. Thm 5.7(ii)
-  is Kottwitz's and Clozel's unramified identity, expressed through quadratic
-  base change.
+  Frobenius-polynomial identities `P_v^m` from Kottwitz and Clozel
+  (`CMHarrisKottwitzLambdaAdicStatement`), and the Hodge–Tate decomposition
+  `HasHodgeTateDecompositionAt` with `n` distinct twists of multiplicity `m`.
+  Harris 1999 (proof of Thm 5.7, pp.313–314) obtains the second from the
+  geometric origin of the coefficient systems `W`: they come from tensor
+  powers of the cohomology of the universal abelian scheme, so Faltings'
+  theorem applies. `CMHarrisLambdaCohomologyHodgeTateStatement` states what
+  this gives, the decomposition of the underlying `ℚ_ℓ`-representation of the
+  whole cohomology. It does not give Taylor's `K_λ`-linear hypothesis with
+  equal weights at all coefficient embeddings, and that hypothesis can fail
+  for general `W` (section 1.5). Passing to the isotypic part and finding a
+  `K_λ`-linear form suitable for Taylor's argument is an unformalized step of
+  the proof of Thm 5.7(i) (section 3.2).
+- `CMHarrisTheorem57Statement` (i) is Taylor's theorem applied to the
+  isotypic part `[H^{n−1}(S_U, W)[π] ⊗ ν̄(π)]^*`, with `ν̄` from section 1.4.
+  (ii) is Kottwitz's and Clozel's unramified identity, expressed through
+  quadratic base change. For Harris's signature, the published
+  `kottwitzPolynomialOf_harrisCharts` (`Shimura/Unitary/KottwitzHarrisComparison`)
+  relates `P(π_p, E_v)` to the base-change parameter, up to a scalar `α` that is
+  not yet identified (section 3.2).
 
-## 3. Not yet stated, with blockers and owners
+## 3. Remaining source and proof boundaries
 
-### 3.1 Kottwitz 1992, Theorem 1 (printed p.657)
+Every statement of this note is now stated. The following boundaries remain.
+Each is documented in the Markdown of the statement concerned.
 
-The statement needs four ingredients. The first is the unitary similitude
-group `G` of `(D, *)` over `F` with Kottwitz's bad set (conditions (a)–(c),
-printed pp.655–656, including hyperspecial `K_p`). The second is the
-`λ`-adic cohomology `H^i(S_K ×_E Ē, F_λ)` with a general algebraic coefficient
-system, together with its Hecke action and the multiplicity spaces
-`W^i(π_f) = Hom_{H_K}(π_f^K, H^i)` (p.655). The third is the polynomials
-`P(π_p, E_v)` of `V(π_p, E_v) = (r ∘ φ_{E_v}(π_p)) ⊗ Z` with
-`Z(Φ) = (√p)^{[E_v:ℚ_p] dim S_K}` (p.656). The fourth is the integer
-`a(π_f)` (p.657), defined from automorphic multiplicities and
-pseudo-coefficients at infinity. The theorem has two parts. (a) `a(π_f) ≠ 0`
-exactly when some `W^i(π_f) ≠ 0`. (b) Suppose `a(π_f) ≠ 0` and `v` is a place
-of `E` above a good prime `p`. Then `π_p` is unramified. Every root of
-`P(π_p, E_v)` is an algebraic number of weight `i + w(ξ)` for some `i` between
-`0` and `2 dim S_K`; this `i` is even when `a(π_f) > 0` and odd when
-`a(π_f) < 0`. `P(π_p, E_v) = ∏_i P_i(π_p, E_v)` uniquely, with monic factors
-in `L[X]` whose roots have weight `i + w(ξ)`. For a place `λ` of `L` not above
-`p`, `W^i(π_f)_λ` is unramified at `v`, and the characteristic polynomial of
-`Φ` on it is `P_i(π_p, E_v)^{|a(π_f)|}`.
+### 3.1 Kottwitz 1992, Theorem 1 (`CMHarrisKottwitzLambdaAdicStatement`)
 
-At this commit the Library has the fixed-level cohomology
-`Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.cmHarrisLambdaCohomology`
-(`Shimura/PEL/HarrisTaylorCMLambdaCohomology`). It also has the
-propositions `CMHarrisLambdaCohomologyFiniteDimensional`,
-`CMHarrisLambdaCohomologyContinuous` and
-`CMHarrisLambdaCohomologyUnramifiedAt`. It has no level change, no
-finite-adelic or Hecke action on this cohomology, and no isotypic part or
-multiplicity space for `W` coefficients. The Kottwitz modules in
-`Shimura/Unitary/` give `kottwitzCharpoly` for a dual-torus element and the
-relation `IsKottwitzPolynomial` ("`P` is attached to `π_p`"). They do not
-prove the existence of a parameter, the uniqueness of `P` given `π_p`, or the
-descent of `P` to `L[X]`.
+- `a(π_f)` is defined by Kottwitz from automorphic multiplicities and
+  pseudo-coefficients at infinity, which the Library does not have. The
+  statement asserts only that some integer `a` has the properties of the
+  theorem.
+- Kottwitz's condition (c) on the function `f_{π_f}` is replaced by the
+  existence of some finite set `S` of primes. Conditions (a) and (b)
+  (unramified at `p`, level `K_p × K^p` with `K_p` the level of a standard
+  unramified chart) are explicit hypotheses.
+- Only Harris's signature is covered (the Library has no other `λ`-adic
+  cohomology), and the reflex field must be `Φ τ₁(F)` (`3 ≤ n` or a second
+  real place). The identification of the Library's `S_U` with Kottwitz's
+  canonical model, and of the Library's coefficient system with Kottwitz's
+  `F_ξ`, is not formalized.
+- The claims are made for every `P` with `IsKottwitzPolynomial`. The existence
+  of a principal-series parameter, its uniqueness up to the Weyl group and the
+  descent of `P` to `L[X]` are not proved in the Library.
+- The fixed-vector comparison, continuity and finite-dimensionality of the
+  Library's cohomology are hypotheses, not proved.
 
-Later prerequisites, at Library commit
-`cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e` (SHA256 in section 4):
+### 3.2 Harris 1999, Theorem 5.7(i)–(ii) (`CMHarrisTheorem57Statement`)
 
-- Task 5484 published three supporting units. The first is
-  `cmHarrisScaledLambdaCohomology` (`Shimura/PEL/HarrisTaylorCMScaledGaloisCohomology`).
-  It is the `λ`-adic cohomology as a functor of the scaled level
-  (`CMScaledLevel`), with values in `K_λ`-linear `Gal(F̄/F)`-actions. Its
-  value at a scaled level with level `U` is `K_λ ⊗_R lim_k H^d(X̄_U, W_k)`.
-  The second is the transport laws of `Shimura/PEL/HarrisTaylorCMLevelTransportLaws`.
-  The third is the generic descent `cmScaledDescent`
-  (`Shimura/PEL/HarrisTaylorCMScaledDescent`) from scaled to small levels,
-  which divides by powers of `ℓ`. The descent takes the target objects `O U`,
-  isomorphisms `ψ` and the Props `CMScaledTransportRaise` and
-  `CMScaledTransportShift` as inputs. The published modules neither compare
-  `cmHarrisScaledLambdaCohomology` with `cmHarrisLambdaCohomology` nor prove
-  these Props for it. So the finite-adelic and Hecke actions, the isotypic
-  parts and the multiplicity spaces are still missing.
-- Task 5424 published two units on Frobenius orbits. Under the Library's
-  `KottwitzUnramified.IsUnramifiedAt (rationalPrimePlace p) K`,
-  `frobeniusOrbitsArePlaces_of_isUnramifiedAt` (`Shimura/Unitary/KottwitzFrobeniusOrbits`)
-  and `frobeniusInvariantsRational_of_isUnramifiedAt` prove the rationality
-  hypothesis of `KottwitzLiftIndependence`, and `embeddingCochar_injective`
-  (`Shimura/Unitary/KottwitzFrobeniusPlaces`) proves its injectivity
-  hypothesis. Over an algebraically closed field and for a fixed `√p`, the
-  polynomial of a principal-series parameter `ξ` therefore does not depend on
-  the lift `t̂`, and a lift exists. Two things are still not proved: that
-  `π_p` has a parameter `ξ` that is unique up to the Weyl group (a Satake
-  statement), and that `P` descends to `L[X]`.
+- The statement is made at every small level, not only at Harris's `K(N)`.
+- Of the hypotheses of [H1], §1, condition (R) is assumed. The hypothesis
+  that `ℬ` is a division algebra at "a large (unspecified) number" of places
+  is not a precise condition and is not formalized; its consequence used in
+  [H1], p.80, that `D'` is a division algebra, is assumed. The assumption of
+  [H1], §2, that `ℬ` is a division algebra above `p` is dropped, as in Harris
+  1998, Appendix, p.206.
+- `JL(π_f)` is the published relation: its existence and uniqueness are not
+  proved, and the inputs `s`, `t`, `f`, `e` of the transfer are given. The
+  model of `JL(π_f)` over `M` is described relationally through `j`.
+- A `λ`-adic realization of `ν̄(π)` at a place above `ℓ`, with a continuous
+  coefficient embedding into `M`, is quantified over, not constructed. The
+  choice of `ν̄` rather than `ν` follows Harris 1999. Its match with the
+  Library's Shimura datum (Harris 1998 Erratum, (E.2)) is not formalized.
+- Automorphy of `π` is replaced by the occurrence of `JL(π_f)` in
+  `H^{n−1}(S_U, W)_λ`.
+- For a proof of (ii) through `kottwitzPolynomialOf_harrisCharts`, the scalar
+  `α` there must be identified with Clozel's `q_w^{(n−1)/2} α_{E,w}(ϖ_w)`; its
+  independence of the lift is not proved.
+- For a proof of (i), Taylor's hypothesis needs a `K_λ`-linear Hodge–Tate
+  decomposition of the isotypic part with `n` distinct twists of equal
+  multiplicity. The Hodge–Tate statement of section 1.5 does not supply it.
+- Part (iii) belongs to the Harris–Berkovich branch (task
+  `b91b0934-0122-4c05-b359-4e7ed64bbe3d`); see
+  [`harris-cohomology-coverage.md`](harris-cohomology-coverage.md).
 
-Owners: Task 5484 (`a88c0cf4-5010-4c43-921a-d9f53bcf6acb`, Workers 5484 and
-5454) builds the cohomology with level and finite-adelic actions, isotypic
-parts and multiplicity spaces (items 2–4). Task 5424
-(`90fec325-2a43-439a-b699-ee0d8dcfd52c`, Worker 5424) is complete. Its five
-items are the good primes, the unramified parameters, `P(π_p, E_v)`, the
-unramified base change and the comparison of section 3.2. Task 34 states
-Theorem 1 after Task 5484 publishes. `a(π_f)` needs automorphic
-multiplicities on `G` and pseudo-coefficients at infinity. If these are not
-available, any weaker existential form must be documented as weaker.
+### 3.3 Hodge–Tate property (`CMHarrisLambdaCohomologyHodgeTateStatement`)
 
-### 3.2 Harris 1999, Theorem 5.7(i)–(ii) (printed p.313)
-
-Hypothesis: the factor `ℚ_p^×` of `GJ_p` in (4.2) acts trivially on `π`.
-(i) The semisimplification of `Gal(𝒦̄/𝒦)` acting on
-`[H^{n−1}(S_K(N), W)[π] ⊗ ν̄(π)]^*` is `a(π)` copies of an `n`-dimensional
-`ρ(π)`. (ii) For almost all places `w` of `𝒦` above primes `p` at which `π` is
-unramified, the normalized local Artin factor (5.6) of `ρ(π)` at `w` is
-`L(s, BC_{𝒦/E}(π)_w)`. The statement needs:
-
-- the isotypic part for `Π = JL(π_f)` at level `K(N)` as a Galois
-  representation (Task 5484);
-- Harris's transfer `JL(π_f)` from `GJ` to `GG`. Task 5443
-  (`2452aeb3-01a4-4693-943a-4c52760dc26d`, Worker 5443) published it as
-  `Langlands.JacquetLanglands.IsHarrisJacquetLanglandsTransfer`
-  (`JacquetLanglands/HarrisTransfer`, Library commit
-  `b128d289028bf75629e9e364ecf151c484b27a85`; SHA256 in section 4). It is a
-  relation between irreducible admissible complex representations of
-  `GJ(A_f)` and `GG(A_f)`. It is not a function: existence and uniqueness of
-  `JL(π_f)` are not part of it. Supercuspidality at `v` is a separate
-  hypothesis. The cohomology is over a field `M` extending `K_λ`, so stating
-  Theorem 5.7 also needs `JL(π_f)` over `M`. This means a model of it over
-  `M`, or a chosen field isomorphism to `ℂ`. That step is not yet formalized;
-- `ν̄(π)` and its `λ`-adic realization (section 1.4);
-- the unramified base-change parameters (Task 5424 item 4; the Library's
-  `Shimura/Unitary/KottwitzBaseChange` has `baseChangeParameter`,
-  `clozelParameter` and `IsBaseChangeParameterOf` for a chart). Task 5424
-  item 5, `Shimura/Unitary/KottwitzHarrisComparison` (Library commit
-  `cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`), relates them to Kottwitz's
-  polynomial. For Harris's signature it proves
-  `kottwitzPolynomialOf_harris_baseChangeParameter`: for every normalized lift
-  of a principal-series character `ξ`,
-  `P(π_p, E_v) = ∏_{β ∈ BC(π)_w} (X − α · β^{f/f_w})`. Here `w` is the place
-  of the CM field (`K` in that module) defined by `θ ∘ Φ τ₀`, where
-  `θ : ℂ →+* Q̄_p`, `Φ` is the CM type and `τ₀` the real place of signature
-  `(n − 1, 1)`. `f` is `localDegree`, `f_w` is the inertia
-  degree of `w`, and `α` is one explicit scalar for all `β`. The hypotheses
-  are `n ≥ 3` and the two conjuncts of `FrobeniusOrbitsArePlaces` at `Φ τ₀`.
-  These conjuncts follow from unramifiedness at `p` by
-  `frobeniusOrbitsArePlaces_of_isUnramifiedAt` (section 3.1).
-  `kottwitzPolynomialOf_harris_baseChangeParameter_of_preserves` gives
-  exponent `1` under a further hypothesis `hR`. Its Markdown explains `hR` as
-  the Frobenius form of Clozel's condition that the reflex field of the CM
-  type lie in `ι₀ F_c`, and does not formalize that explanation. The scalar
-  `α` is not identified with Clozel's `q_w^{(n−1)/2} α_{E,w}(ϖ_w)`, and its
-  independence of the lift is not proved. So the identity gives the
-  eigenvalues of Frobenius on Kottwitz's `V` up to one common scalar.
-  Theorem 5.7(ii) asserts an exact equality of normalized local factors, so
-  a statement or proof built on this identity must still determine `α`.
-
-Part (iii) belongs to the Harris–Berkovich branch (task
-`b91b0934-0122-4c05-b359-4e7ed64bbe3d`); see
-[`harris-cohomology-coverage.md`](harris-cohomology-coverage.md).
-
-### 3.3 Hodge–Tate property of the cohomology (geometric origin)
-
-Not stated. The intended statement: at every place of `F` above `ℓ`, the
-`λ`-adic cohomology of the CM Shimura variety with Harris's coefficient system
-`W` is Hodge–Tate. Its Hodge–Tate twists on the `π`-isotypic part are the
-twists required by `HasHodgeTateDecompositionAt`. The statement needs the
-Galois-representation packaging of the cohomology and its isotypic parts
-(Task 5484 item 4). Harris 1999 pp.313–314 cites only the geometric origin of
-`W` for this input. The original source of the Hodge–Tate decomposition is
-Faltings, *p-adic Hodge theory*, J. Amer. Math. Soc. 1 (1988), Chapter III,
-Theorem 4.1, printed p.298 (registered as
-`provided-1991b7d5032d5fe94ca932ccbeccf293bafd80aa29a350ed2fda545cf46b9440`,
-SHA256 `2eb8b02f9e3e7662e1e79229488ee7e98240e23f221f1c9aaa7bec79cf329024`;
-PDF page = printed page − 253). Let `K` be complete for a discrete valuation,
-of characteristic `0`, with perfect residue field of characteristic `p`
-(Introduction, 1(b), printed p.255). For a smooth proper `K`-scheme `X` and a
-divisor `D` with normal crossings, the theorem gives
-`Gal(K̄/K)`-equivariant isomorphisms
-`H^n_et((X − D) ⊗ K̄, ℚ_p) ⊗ Ĉ ≅ ⊕_{a+b=n} H^a(X, Ω^b(dlog ∞)) ⊗ Ĉ(−b)`,
-with `Ĉ` the completion of `K̄`. This display corrects the source in one
-place. Theorem 4.1 on printed p.298 prints the twist as `Ĉ(−a)`, with the same
-indices `H^a` and `Ω^b`; the two displays for the proper case earlier on that
-page also print `(−a)`. The Introduction, 1(b), printed p.255, states the
-proper case of the same theorem (citing Chapter III, Theorem 4.1) with
-`Ĉ(−b)` and says that `(−b)` denotes the Tate twist. It adds that a version
-holds for complements of normal-crossings divisors. This note follows the
-Introduction and reads `(−a)` on p.298 as a misprint: for `n = 1` the printed
-`(−a)` would twist `H^1(X, O_X)` instead of the differentials `H^0(X, Ω^1)`.
-The theorem concerns constant `ℚ_p` coefficients.
-Harris says only that the systems `W` "come from tensor powers of the
-cohomology of the universal abelian scheme". Deducing the decomposition for
-the cohomology with coefficients in `W` from Faltings' theorem for schemes
-built from that abelian scheme is part of the unstated input.
+- Faltings's theorem has constant `ℚ_p` coefficients and needs properness
+  (the division-algebra hypothesis gives proper Shimura varieties, which is not
+  formalized). The reduction from `W` to schemes built from the universal
+  abelian scheme, as Harris indicates, is not formalized.
+- Faltings 1988 prints the twist `Ĉ(−a)` in Chapter III, Theorem 4.1
+  (p.298), and `Ĉ(−b)` in the Introduction, 1(b) (p.255). The statement only
+  asserts that some list of twists exists, so the misprint does not affect it.
+  The source is registered as
+  `provided-1991b7d5032d5fe94ca932ccbeccf293bafd80aa29a350ed2fda545cf46b9440`.
 
 ### 3.4 Proofs
 
@@ -370,6 +362,54 @@ SHA256 at Library commit `cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`
 | `Langlands/Shimura/PEL/HarrisTaylorCMLevelTransportLaws.md` | `c033041254c2a79ea6c812244e1c60e9e46c9a28d3e8123b3df5c218dd2ad535` |
 | `Langlands/Shimura/PEL/HarrisTaylorCMScaledDescent.lean` | `9340a4f10c5dfa3fd088e38b69f945ab81fa7f08222c37861e0b39483a716cf0` |
 | `Langlands/Shimura/PEL/HarrisTaylorCMScaledDescent.md` | `a47784dee244ca3c806cd343ca23f45ef3c866c36afb11b7d1cc0732eb90f7d0` |
+
+SHA256 at Library commit `c0debd6f4dd02fdd68d70811cf610906b945a962`
+(prerequisites from Task 5484 and other Library modules used by section 1.5):
+
+| File | SHA256 |
+| --- | --- |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLambdaTower.lean` | `7b69ac691b131dfa62dcda84e5551c1a4fd9d4720a7a852951632a1b4e776648` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLambdaTower.md` | `edae2eba409e6fdf9f1d844b169c867dc311f8ed2385b593cada3b859613d7e7` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLambdaCohomologyObjects.lean` | `eb658a31e9578a9edd859d4823762384f50ac3e8be80466c0e88932bf37e2afb` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLambdaCohomologyObjects.md` | `0cdb5fa7ecd6855dc96351889cee1ebd296a8e61e37c5934da8544e9cbb3dc42` |
+| `Langlands/Shimura/Unitary/KottwitzPolynomial.lean` | `52de96fde27dec9b5de3747ca2d831d11c5e1eecfc6510014bb6aa2219c238e9` |
+| `Langlands/Shimura/Unitary/KottwitzPolynomial.md` | `057f8be3b9892ce333fff20a4d3b13b0e19886de7b13942c1b016788be816acd` |
+| `Langlands/Shimura/Unitary/KottwitzBaseChange.lean` | `0769775bcf1bf8b411cff635b90ee733d0049fb7300e098ea694ea037fc47291` |
+| `Langlands/Shimura/Unitary/KottwitzBaseChange.md` | `777fbc507946ca19449f77f798f31eed7502836276416dd7d1d879164f230fbb` |
+| `Langlands/Cohomology/Weights/Polynomial.lean` | `47a03391e9b60f456f2b30133179940bb3fa75ee2b8c740b03641aaa0742964f` |
+| `Langlands/Cohomology/Weights/Polynomial.md` | `0d2b84fde43d92f8476a81d37d4725c91a7f347a77ae88629704307846513a6b` |
+| `Langlands/Galois/UnitaryNormalization.lean` | `e69517ce8000158f4e8afddd26748a28e56d3a78da51dd0ec1cd77801ebe3b92` |
+| `Langlands/Galois/UnitaryNormalization.md` | `41430f38b33f6ec1d5587363605a91bc0e665b349b289b39fbf8fd2ef0b77568` |
+
+SHA256 of the statements of section 1.5, as published at Library commit
+`70eca2e4ea526de0ce0c41e4a9ea0e7d8087cbe7` (accepted candidates
+`c1bd0a53-41a1-4f40-8562-25d75f6e854f`, `7e99ae3a-f44d-40b6-ab76-e0d4a90c0419`
+and `a921327e-9f7e-4898-aefa-8fa27eefb083`; the last corrects the earlier
+accepted `2f781688-8d28-4585-97b9-7be6062f32ad` by adding condition (R) and
+the division hypothesis on `D'`):
+
+| File | SHA256 |
+| --- | --- |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLambdaHodgeTateStatement.lean` | `e1ffa1a86090c579f41b66ee73fe2d44c3bfa658d4a809d2ef35a7004fca5563` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMLambdaHodgeTateStatement.md` | `c7cf0dde801ad330b5f79381948630f91cbaddd88257536b26cb2846d9a28d1e` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMKottwitzStatement.lean` | `69dec3e99ee274e3ed0131eb822709229c29aaeecb3b6ede2de462939135ab22` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMKottwitzStatement.md` | `238542de8741714d39f5a1ccb611d900cfca06411102ec217581135b0ef5bd9d` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMHarrisTheorem57Statement.lean` | `e385d16dcc38fc085635749954b95eb95137bf2eb807cb9982c4d4697faa1f83` |
+| `Langlands/Shimura/PEL/HarrisTaylorCMHarrisTheorem57Statement.md` | `3dd0960e7de5b018db3a98e0ed1420c304b17e66243a8e576f5466fd0df6946c` |
+
+These six files, and `Langlands/Galois/Harris1998ExistenceStatement.{lean,md}`,
+are unchanged at Library commit `320321b3cd4b5100d54cf785192677d59479e65f`.
+SHA256 at that commit of the conditional consumers of
+`Harris1998Theorem12CuspidalStatement` named under "How to read the status":
+
+| File | SHA256 |
+| --- | --- |
+| `Langlands/Global/Arithmetic/HarrisProposition48PrimeBranchStatement.lean` | `a45f9eafa622b746c4259fa0699b67d67dfdbbe908673e360cbb566482a79670` |
+| `Langlands/Global/Arithmetic/HarrisProposition48PrimeBranchStatement.md` | `549c089de4175700355f1655be52e4c183ac25798bd2f4a5cd93267e1f17e3c9` |
+| `Langlands/Global/Arithmetic/HarrisProposition48SingletonBranchStatement.lean` | `9528780225b44554193ee3ce0b720e1851844cc13bb348dc99f01cf99a4af6f4` |
+| `Langlands/Global/Arithmetic/HarrisProposition48SingletonBranchStatement.md` | `ff09290e0e34cca27ffd4ab397a88034478c7bbe0fce4f50d387abb039e8233a` |
+| `Langlands/Global/Arithmetic/HarrisProposition48ReductionStatement.lean` | `233f6c5b217400289af714f67efdb5ebd9feaf87c9686d0e06936be592b22ca1` |
+| `Langlands/Global/Arithmetic/HarrisProposition48ReductionStatement.md` | `9a9cc4f7fe76913c0f477c71ca38f0725fb0e339d4cf4f1dc5aaa7dd7816a9c0` |
 
 Registered originals cited: `clozel-1991-selfdual-galois` (SHA256
 `9de7c13c9ae108e481de170327a06e44845cf87a6aabc1d5600176ee695e91ac`),
