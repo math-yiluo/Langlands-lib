@@ -32,6 +32,9 @@ The present V.3.24 proof-status refresh checks Library
 common-uniformizer group quotient comparison and integral cone finite generation
 have exact independently accepted and published proofs. The nonnegative
 comparison and actual strict partition remain open.
+The focused V.4.2 ownership audit on 14 November 2026 checks Library
+`1ddfc485145c40679728553e8c3a33a5450ce7f9`: all nine component statements
+have exact proof tasks, listed below; their proofs remain open.
 Other rows retain their earlier audit status. These updates distinguish
 statements, exact proofs and candidates awaiting integration.
 
@@ -522,8 +525,8 @@ The nonnegative comparison, finite generation after transport to the actual
 quotient, and the strict-face decomposition over actual standard Levi split
 components remain explicit obligations. Worker 4 retains the chamber,
 parabolic split-component and closed-root-subset units. The nine
-closed-root-subset proofs remain open obligations; this update counts no
-published proof-successor tasks for them.
+closed-root-subset proofs remain open obligations, owned by exact proof
+Tasks 6508–6516 in the V.4.2 ownership table below.
 
 ## V.4 Weyl groups (118–122 / 124–128)
 
@@ -531,8 +534,8 @@ published proof-successor tasks for them.
 | --- | --- | --- |
 | V.4 opening: root subgroups `U_γ` | root-subgroup constructions under `Langlands.GroupScheme.Rational` | D |
 | V.4.1 `W_G`, `S_∅`; Proposition ([7]): Tits system and Bruhat decomposition | `relativeWeylGroup`; `GS.RelativeTitsSystemStatement`, `GS.TitsStandardParabolicStatement` | P |
-| V.4.2 closed, convex, symmetric and unipotent subsets; `G(T)`, `U(T)`; Proposition ([7] 3.22) | `GS.ClosedRootSubsetStatements` and its nine components ([statements and scope](../../Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.md)); generated groups use closed minimality on all test schemes, with existence stated separately | Rec (S14); D for the notions and elementary laws, S for the nine targets: published candidate `cf347b48-66a3-4452-b3d4-0cbc3917dca8`. Intersection targets use reduced test schemes, and (ii) uses all relative roots; see I5 |
-| V.4.2 Proposition ([7] 5.12–5.18): standard parabolics and subsets `Θ ⊂ Δ_∅` | `GS.StandardParabolicClassificationStatement`, `GS.StandardCocharacterStatement`, `GS.StandardParabolicPointsStatement`; new `GS.StandardParabolicRootTripleStatement` and `GS.StandardParabolicRootSubsetGroupStatement` give the generated root triples and their groups | P for the existing classification and points statements; S for the new root-triple and generated-group comparisons, in `ClosedRootSubsetStatements` |
+| V.4.2 closed, convex, symmetric and unipotent subsets; `G(T)`, `U(T)`; Proposition ([7] 3.22) | `GS.ClosedRootSubsetStatements` and its nine components ([statements and scope](../../Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.md)); generated groups use closed minimality on all test schemes, with existence stated separately | Rec (S14); D for the notions and elementary laws, S for the nine targets: published candidate `cf347b48-66a3-4452-b3d4-0cbc3917dca8`, exact proof Tasks 6508–6516 (ownership table below). Intersection targets use reduced test schemes, and (ii) uses all relative roots; see I5 |
+| V.4.2 Proposition ([7] 5.12–5.18): standard parabolics and subsets `Θ ⊂ Δ_∅` | `GS.StandardParabolicClassificationStatement`, `GS.StandardCocharacterStatement`, `GS.StandardParabolicPointsStatement`; new `GS.StandardParabolicRootTripleStatement` and `GS.StandardParabolicRootSubsetGroupStatement` give the generated root triples and their groups | P for the existing classification and points statements; S for the new root-triple and generated-group comparisons, in `ClosedRootSubsetStatements`, exact proof Tasks 6511 and 6513 respectively |
 | V.4.3 `W_M ↪ W_G`, `w·M`, `W(L, M)`, `W_M W(L,M) W_L = W(L,M)` | `standardRelativeWeylGroup`, [RelativeWeylConjugation](../../Langlands/Group/RelativeWeylConjugation.md), `GS.StandardLeviConjugationStatement` | D; P |
 | V.4.3 (V.4.3.3) `W(M, M)/W_M ≃ W(A)` | `GS.StandardLeviNormalizerQuotientStatement`; finiteness consequence `RP.LeviNormalizerFiniteQuotientStatement` | P: `standardLeviNormalizerQuotient` (Task 5688; statement candidate `4d34998c`); P (finiteness) |
 | V.4.4 `W(*, M)`, `W(M, *)`, `l(M)` | inline sets in `GS.StandardWeylElementaryChainStatement` (the VI.5.4 Lemma) and `GS.StandardMaximalLeviWeylStatement` | X/D (no named definition). Both statements are proved: `standardWeylElementaryChain` and `standardMaximalLeviWeyl` |
@@ -548,13 +551,43 @@ Reviewer 1683 and published at
 `db8d6b3d466f2fd453a4df4624ce6c90db8eed46`, integration
 `1b9ef7e8c26d404e8d16743bf3179597`. Its frozen, current Library and workspace
 pairs match exactly. Its nine proposition targets remain unproved in this unit.
-Their proofs remain open obligations; this update counts no published
-proof-successor tasks for them. The arbitrary-field
+Their proofs remain open obligations, with exact proof Tasks 6508–6516
+listed below. The arbitrary-field
 statements distinguish the indivisible and possibly nonreduced ambient root
 sets. They do not identify scheme-theoretic intersections on arbitrary test
 schemes, and the symmetric-subset target gives integral reflections and their
 preservation of the subset rather than constructing a Mathlib root-system
 object. The separate proof obligations and source correction I5 are retained.
+
+The 14 November ownership audit found all nine tasks at revision 1, ready,
+with no submitted artifacts. A search of the checked Library found the nine
+proposition definitions and their conjunction references, with no exact proof
+theorems. Worker 4 retains responsibility for these proof tasks. Each target
+is in namespace `Langlands.GroupScheme` (`GS` below) at universe `u`, over
+an arbitrary field, an actual connected reductive group and a maximal split
+torus. Where used, the generic cocharacter and simple-root subset remain
+quantified data. “Either ambient set” means the indivisible roots or all
+possibly nonreduced relative roots, as specified by `IsRelativeRootAmbient`.
+
+| Exact target | Scope of the open proof | Proof task |
+| --- | --- | --- |
+| `GS.ConvexRootSubsetHullStatement` | In either ambient set, convexity is equivalent to containing every ambient root in the real cone hull of the subset, with the subset condition retained | Task 6508 (`689b8a55-8c76-4965-b535-6ee283192b4b`) |
+| `GS.UnipotentRootSubsetCocharacterStatement` | In either ambient set, unipotence is equivalent to closedness and existence of a cocharacter positive on every member | Task 6509 (`158f9cfe-e93b-4a0e-af39-c9b1f47a7009`) |
+| `GS.SymmetricRootSubsetWeylStatement` | In either ambient set, integral reflections exist for each member of a symmetric subset; those reflections and their generated Weyl subgroup preserve the subset | Task 6510 (`1ce939a6-171f-45ff-bd20-432b2db9f3ca`) |
+| `GS.StandardParabolicRootTripleStatement` | In either ambient set, the standard triple has the explicit integral-span root descriptions, convexity, symmetry and unipotence properties and recovers `Θ` | Task 6511 (`aa5f19bb-1161-4b7d-b3f3-ade8d8fd5c25`) |
+| `GS.RootSubsetGroupExistenceStatement` | For every subset of all relative roots, smooth affine connected minimal closed groups `G(X)` and `U(X)` exist; `U(X)` is unipotent when `X` is unipotent in either ambient set | Task 6512 (`8ec48a06-a508-4334-ad07-0a603fc7e135`) |
+| `GS.StandardParabolicRootSubsetGroupStatement` | In either ambient set, minimal groups for the standard triple equal the existing parabolic, Levi and radical functors on all tests, and the generated Weyl subgroup equals the standard Levi Weyl subgroup | Task 6513 (`a989109c-457e-46dd-96ce-6e7960c4e93d`) |
+| `GS.ClosedRootSubsetGroupIntersectionStatement` | In all relative roots, closed `S` and `X` with convex overlap satisfy `G(S) ∩ G(X) = G(S ∩ X)` on reduced test schemes ([7] 3.22(b)) | Task 6514 (`7f264fa7-67c6-4b59-88fa-a2499a6a83c1`) |
+| `GS.ConvexRootSubsetGroupIntersectionStatement` | In the indivisible roots, convex `S` and `X` satisfy `G(S) ∩ G(X) = G(S ∩ X)` on reduced test schemes (V.4.2(i)) | Task 6515 (`77b1b105-0195-4b71-a588-ede7dd5a2aa6`) |
+| `GS.UnipotentRootSubsetGroupIntersectionStatement` | In all relative roots, closed `S` and unipotent `X` satisfy `G(S) ∩ U(X) = U(S ∩ X)` on reduced test schemes ([7] 3.22(c), corrected V.4.2(ii); see I5) | Task 6516 (`44b55f5d-dcd6-45f2-9aab-2d61d46b585e`) |
+
+The three intersection targets quantify over supplied minimal closed
+representatives; their existence is the separate Task 6512 obligation.
+These task assignments supply no proof acceptance. Worker 4 also retains
+the planned exact pairing of the nine components into
+`GS.ClosedRootSubsetStatements`. No proof task for that conjunction has yet
+been published: Worker 4 plans to publish it after all nine component proofs
+are public and a scratch pairing compiles.
 
 ## V.5 Compact subgroups (122–129 / 128–135)
 
@@ -714,7 +747,9 @@ not whole-section or whole-book completion.
    closed-subset assertions of V.4.2 are now stated by Worker 4's public
    `ClosedRootSubsetStatements`, with the ambient-root and reduced-test
    distinctions and source correction I5 above. Their nine proof targets
-   remain open obligations. The maximal anisotropic subtorus and almost
+   remain open obligations owned by Tasks 6508–6516 in the V.4.2 ownership
+   table; the conjunction pairing is planned but has no task yet.
+   The maximal anisotropic subtorus and almost
    direct product (V.2.2 Remark 2), formerly listed here, are proved by
    `torusAnisotropicPart` (Task 6398). The split-component assertions of
    V.3.1 and the first sentence of V.3.2 are proved by Tasks 6452 and
