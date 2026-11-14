@@ -1,0 +1,11 @@
+# Right-derived relative sections and pullback compatibility
+
+This is an internal comparison of the existing relative module sections and abelian-sheaf derived-Hom constructions. Fix a commutative ring `R` in universe `u`, schemes `X,Y` over `Spec R`, a morphism `f : Y ⟶ X`, and an integer `n`. No geometric restriction on `f` is imposed.
+
+`relativeDerivedComplexSectionsPullback f n` is the natural transformation obtained by applying underlying additive cohomology (with the prescribed universe lift) to `pushforwardDerivedSectionsComparison f`. Its source at a bounded below module complex `K` is the right-derived relative sections of the actual complex `f_*K`; its target is the right-derived relative sections of `K` on `Y`. The lemma `relativeDerivedComplexSectionsPullback_fac` says that precomposing with the source sections unit gives the ordinary sections-complex pullback followed by the target sections unit. Its proof applies the cohomology functor to the defining factorization of `pushforwardDerivedSectionsComparison`.
+
+`relativeComparisonOnComplex_pullback` proves that this natural transformation commutes with `comparisonOnComplex` and the actual inverse-image/counit map `relativeComplexHomPullback`. Both routes start with the right-derived sections on `X` of `f_*K` and end in derived Hom from the constant integer sheaf on `Y` to the underlying abelian-sheaf complex of `K`, shifted by `n`.
+
+The implemented proof postcomposes with the inverse of `derivedHomFactors`, whose target functor factors through the bounded below derived category. Extensionality on complexes of injective modules then suffices. For such a complex, the sections unit at its pushforward is invertible because each pushed-forward injective module is acyclic for relative global sections. After cancelling this unit, the unit factorization of the right-derived comparison and `unit_comparisonOnComplex_app` reduce the desired equation to `relativeComplexComparison_pullback`. This uses acyclicity of pushed-forward injective modules; it does not assert exactness of module inverse image or direct image.
+
+This supporting unit establishes the square on bounded below complexes. Specialization to singleton coefficients and the final assigned cohomology pullback statement remain separate steps.

@@ -74,7 +74,9 @@ Maximal split torus (`i : T.toGrp ⟶ G`, `[Mono i.hom.hom.left]`):
 - `realSpan_relativeRoots_sup_characters` (`IsConnectedReductive G`, `IsMaximalSplitTorus i`):
   every `x : Vstar T` lies in the real span of the relative roots plus the real span of the
   restricted rational characters.
-- `finrank_biSup_eq_sum`: dimensions add over a finite supremum of independent subspaces.
+- `finrank_biSup_eq_sum`, imported from
+  [SubmoduleFinrank](../../LinearAlgebra/SubmoduleFinrank.md): dimensions add over a
+  finite supremum of independent subspaces.
 - `finrank_weightSpace_comp_eq_sum`: for `f : T' ⟶ T` of split tori and `ψ ≠ 0`, the dimension
   of the `ψ`-weight space of `groupHom f ≫ i` is the sum of the dimensions of the
   `χ`-weight spaces of `i` with `f ≫ χ = ψ`.

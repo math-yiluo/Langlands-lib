@@ -6,7 +6,8 @@ statements as explicit premises: `AffineHomImageStatement` and
 `Diagonalizable.ClosedSubgroupPresentationStatement`. It does not prove either
 premise or construct a section.
 
-`range_kernelι_comp_mono` proves that postcomposing a group-scheme homomorphism
+`range_kernelι_comp_mono`, imported from
+[KernelMonomorphism](../KernelMonomorphism.md), proves that postcomposing a group-scheme homomorphism
 with a monomorphism on the underlying objects over the base leaves its full
 scheme-kernel range unchanged. On every test scheme it uses
 `mem_range_kernelι_iff` and cancellation of that monomorphism.
