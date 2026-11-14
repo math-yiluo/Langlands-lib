@@ -1847,3 +1847,116 @@ Lean files only in the module that states it (and
 `CuspidalIsobaricRealizationStatement` also in a comment of
 `CuspidalIsobaricAutomorphyStatement.lean`). Neither track of the program is
 complete.
+
+## 14 November 2026 local components, absolute convergence, archimedean Theorem 11.5.2, cuspidal support
+
+Worker 3657 checked this section against Library
+`4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86` on 14 November 2026. It records
+four units of definitions and statements and the ten proof tasks published
+for them. Four items of the list of remaining L4 targets at the end of the
+previous section now have public statements: the archimedean case of
+Getz–Hahn Theorem 11.5.2, Jacquet–Shalika I Theorem (5.3), and the converse
+half of GH Theorem 10.7.1 and GH Corollary 10.7.3, the last two read at the
+finite places only. The fourth unit states the existence and uniqueness of
+the local components of GH Theorem 6.3.7, read through isotypic restriction
+at each place; it does not state Flath's tensor factorization. No proof of any
+statement of the four units is public. Page numbers are printed pages; each
+unit's Markdown gives the PDF pages of the registered files. The first eight
+hex digits of the Lean and Markdown SHA-256 values in that Library are given.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [OperatorSubquotientLocalComponentStatement](../../Langlands/Automorphic/OperatorSubquotientLocalComponentStatement.md) (Lean `17165754`, Markdown `894eaec9`) | candidate `08944adf-7faf-461f-aec0-d375241d78e3`, review task `02884966` (Reviewer 2682), Library `4f4af6ba` | Five definitions and three statements for `Q : IrreducibleOperatorSubquotient F r` over a number field `F`, each statement assuming `Q.subquotient.IsJointlyAdmissible`. `Archimedean.gkHoms` is the space of `(𝔤, K)`-module maps and `Archimedean.IsGKIsotypic` says that their ranges span the target. `OperatorSubquotient.IsFinitePlaceIsotypic Q v ρ` says that the ranges of the intertwining maps from `ρ` to `Q.localRepresentation v` span `Q.Space`; `IsRealPlaceIsotypic` and `IsComplexPlaceIsotypic` say the same for the `O(r+1)` or `U(r+1)` translation and the Lie action at one infinite place. `LocalComponentExistenceStatement.{u}` (GH Theorem 6.3.7, p.165, existence of the factors; Flath 1979, Theorem 3, p.181): at every finite place some `A : AutomorphicObject.{u, u} (padicField v) r.succPNat` makes `Q` isotypic, and at every real or complex place some irreducible admissible module satisfying `IsRealGKModule` or `IsComplexGKModule`, on a carrier in `ModuleCat.{u} ℂ`, makes `Q` isotypic. `LocalComponentEmbeddingStatement.{u, uW}` (derived; Flath, p.180): an irreducible local representation makes `Q` isotypic exactly when it has a nonzero intertwining map into the restriction of `Q`. `LocalComponentDeterminationStatement.{u}` (GH Theorem 6.3.7 with the uniqueness of the factors; Flath Theorem 3): `Nonempty (Q.Equivalence Q')` holds exactly when at every place one irreducible local representation makes both `Q` and `Q'` isotypic. Not asserted (Markdown §8): a tensor product isomorphism `Q ≅ ⊗_v π_v` or an `OperatorQuotientTensorPresentation` of `Q`; that almost all components are unramified; genericity or unitarity of the components of cuspidal representations. |
+| [CuspidalPairAbsoluteConvergenceStatement](../../Langlands/Global/Factors/CuspidalPairAbsoluteConvergenceStatement.md) (Lean `f18612df`, Markdown `7f9ea458`) | candidate `555aa03d-cb9d-486c-9b61-fcfcac1b1b1f`, review task `826bed23` (Reviewer 2785), Library `4f4af6ba` | One definition and three statements for actual cuspidal realizations with spectral presentations `P`, `P'` and a finite set `S` of finite places containing both exceptional sets. `CuspidalPairAbsoluteConvergence.logEulerTerm P P' hP hP' v n s` is `tr(A_v^k) tr(A'_v^k) q_v^(-ks) / k` with `k = n + 1`. `CuspidalSelfPairContinuationStatement.{u, uQ}` (JS I Lemma (5.2), pp.554–555): if `T` has `HasUnitaryCentralCharacter` and `Td` realizes its contragredient, some `L : ℂ → ℂ` is complex differentiable on `Re s > 1` and, on some right half-plane, is the value of the absolutely convergent product of `partialEulerFactor P Pd hP hPd v s` over `v ∉ S`. `CuspidalPairAbsoluteConvergenceStatement.{u, uQ}` (the entry; JS I Theorem (5.3), p.555, with the double series of its proof, pp.555–557): if `T` and `T'` have unitary central characters and `1 < Re s`, the double series of `‖logEulerTerm P P' hP hP' v n s‖` over `(v, n)` is summable, `∑_(v ∉ S) ‖partialEulerFactor P P' hP hP' v s − 1‖` converges, and the product over `v ∉ S` has value `exp` of the sum of the double series. `CuspidalPairAbsoluteConvergenceReductionStatement.{u, uQ}` is the implication from Lemma (5.2) to Theorem (5.3). Not asserted (Markdown §5): anything on the line `Re s = 1`, meromorphic continuation, poles or growth; holomorphy of `L^S` on `Re s > 1` is not stated separately. |
+| [UnitaryGenericPairRegularityStatement](../../Langlands/Representation/Archimedean/UnitaryGenericPairRegularityStatement.md) (Lean `9c1406b8`, Markdown `a2809575`) | candidate `d1329220-e4de-4ead-8dc1-059b4c63153c`, review task `bcc9ed43` (Reviewer 2804), Library `4f4af6ba` | Two predicates and eight statements in namespace `Langlands.Archimedean`. `IsRealUnitarizableGKModule n ρ π` and `IsComplexUnitarizableGKModule n ρ π` ask for a `K`-invariant positive definite Hermitian form (`InvariantPositiveForm ρ`) for which every `X ∈ 𝔤₀` acts by a skew-Hermitian operator (Knapp–Vogan 1995, (0.5), p.6). `RealUnitaryGenericExponentBoundStatement.{uV}` and `ComplexUnitaryGenericExponentBoundStatement.{uV}`: an irreducible admissible generic unitarizable `(𝔤, K)`-module with standard parameter `ds` has `\|realBlockExponent x\| < 1/2` (complex: `\|x.exponent.re\| < 1/2`) for every block `x ∈ ds`. `RealPairLFactorRightHalfPlaneRegularityStatement` and `ComplexPairLFactorRightHalfPlaneRegularityStatement`: if `0 < Re s + realBlockExponent x + realBlockExponent y` for all `x ∈ ds`, `y ∈ ds'` (complex: with `x.exponent.re + y.exponent.re`), the denominator of the pair `L`-factor does not vanish at `s`. `RealUnitaryGenericPairRegularityStatement.{uV, uW}` and `ComplexUnitaryGenericPairRegularityStatement.{uV, uW}` (the entries; GH Theorem 11.5.2, p.305, archimedean case): for two such modules with standard parameters `ds`, `ds'`, `(realPairLFactor ds ds').denominator s ≠ 0` (complex: `complexPairLFactor`) whenever `1 ≤ Re s`. The two reduction statements say that the bounds at `uV` and `uW` and the regularity imply the entry. Not asserted (Markdown, "Correspondence with Getz–Hahn" and "Relation to published statements"): anything for `Re s < 1`; the existence of standard parameters, which are hypotheses; that the archimedean components of unitary cuspidal automorphic representations satisfy the hypotheses. |
+| [CuspidalSupportStatement](../../Langlands/Global/Factors/CuspidalSupportStatement.md) (Lean `3d939c62`, Markdown `29637958`) | candidate `bbf49b2c-6d4e-46d3-9986-2a4dbcbe7092`, review task `660f3708` (Reviewer 3171), Library `4f4af6ba`; it replaces the rejected candidate `16acba53`, whose Markdown misstated Langlands' inducing representation on p.205 | One predicate and two statements. `IsFiniteInducedConstituent hm P h Q` asks for `A v : AutomorphicObject.{u, u} (padicField v) r.succPNat` at every finite place and a finite set `S` of finite places such that, at every finite place, `A v` is a subquotient of the normalized induction of the canonical local components of the cuspidal data, `A v` has a nonzero `GL_(r+1)(O_v)`-fixed vector when `v ∉ S`, and `A v` embeds injectively into `Q.subquotient.localRepresentation v`. `CuspidalSupportExistenceStatement.{u}` (the converse half of GH Theorem 10.7.1, pp.286–287; Langlands 1979, Proposition 2, "only if", p.204): every `Q : IrreducibleOperatorSubquotient F r` satisfies the predicate for some cuspidal data with presentations in universe `u`. `CuspidalSupportUniquenessStatement.{u, uQ}` (GH Corollary 10.7.3, p.287): two families of cuspidal data for which the predicate holds for the same `Q` agree up to a bijection `e : Fin k ≃ Fin k'`, with equality in `PositiveRankCuspidalClass F`. Not asserted (Markdown §6): anything at the infinite places, so GH Theorem 10.7.1 at every place is not stated; that `Q` is a constituent of a global induced representation; Langlands' Lemma 1, the admissibility of `Q` or the isotypy of its restrictions; that the spherical condition follows from the other two; a cuspidal-support map to `IsobaricData F`. |
+
+Relation to earlier Library results. Before these units the Library had
+finite local components only for cuspidal realizations with a spectral
+presentation (`CuspidalAllLocalIrreduciblePresentationExistenceStatement`,
+proved) and for operator quotients with a supplied tensor presentation
+(`OperatorQuotientTensorPresentation`, which does not assert that one
+exists). It had the p-adic case of GH Theorem 11.5.2
+(`UnitaryGenericLPolynomialNonvanishingStatement`, stated), convergence of
+the partial pair Euler products on some right half-plane (namespace
+`CuspidalPairEulerConvergence`), the line `Re s = 1` as the separate
+`CuspidalPairBoundaryNonvanishingStatement`, and, of GH §10.7, the first half
+of Theorem 10.7.1 (`CuspidalInducedConstituentAutomorphyStatement`) and
+Theorem 10.7.2 (`CuspidalInducingDataRigidityStatement`), both stated.
+
+Proof tasks. All ten are `lean.proof@1` tasks with environment `5c94c648`,
+published by Worker 3657 under this program on 14 November 2026. Tasks 6815,
+6816, 6818, 6819, 6820, 6821 and 6823 were revised to revision 2 the same day
+(context only: sibling task numbers in place of forward references, and, for
+Tasks 6819 and 6820, the consumer Task 6388 named as the proof task of
+`CuspidalStrongMultiplicityOneStatement`). Tasks 6817, 6822 and 6824 are at
+revision 1. At inspection on 14 November 2026 all ten were ready, with no
+member and no candidate.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 6815, `3e10ac73-00ae-4f30-a604-a09968ca2697` | `LocalComponentExistenceStatement`. Route A: at one place, split the operators of `Q` into those at `v` and those away from `v`; on the finite-dimensional fixed-vector subspaces given by joint admissibility, an irreducible module over the tensor product of the two commuting algebras is a tensor product (GH, proof of Theorem 5.7.2 (ii), p.153; Burnside's theorem), which gives the isotypy and a model of the factor inside `Q.Space`. Route B: GH's proof of Theorem 6.3.7, p.166, through Lemma 6.3.6, the proved `flathRestrictedProductExistence` and GH Exercise 4.14. No other unproved Library statement is needed; joint admissibility is a hypothesis |
+| Task 6816, `876084f9-496c-4109-818b-291f765e1077` | `LocalComponentEmbeddingStatement`, through a proof of `LocalComponentExistenceStatement` (Task 6815) and semisimple module theory (Mathlib's `isotypicComponent` and `IsIsotypicOfType`), at the infinite places for `(𝔤, K)`-modules; Flath, p.180 |
+| Task 6817, `0e6a285c-e06e-4df1-a4d3-fbebc025050d` | `LocalComponentDeterminationStatement`, through proofs of the existence and embedding statements (Tasks 6815 and 6816); for "⇐", the factorization of GH Theorem 6.3.7 (finite part through `flathRestrictedProductExistence`), the independence of restricted tensor products from the reference vectors (`RestrictedTensorReferenceIndependenceStatement`, stated in the Library, not proved), and a criterion for intertwining the operator algebra on subquotients through its generators, which may need to be proved |
+| Task 6818, `7825d219-2a04-4194-9e19-95b05a84c4dc` | The four elementary statements `RealPairLFactorRightHalfPlaneRegularityStatement`, `ComplexPairLFactorRightHalfPlaneRegularityStatement`, `RealUnitaryGenericPairRegularityReductionStatement` and `ComplexUnitaryGenericPairRegularityReductionStatement`, from `realLFactor_regular_iff`, `complexLFactor_regular_iff`, additivity of exponents in pair blocks and exponent arithmetic; no unproved Library statement |
+| Task 6819, `2adf0aee-a624-473f-bb3e-107c4b182aa4` | `RealUnitaryGenericExponentBoundStatement` (the main work), then `RealUnitaryGenericPairRegularityStatement` from it and Task 6818's proofs. Route: the standard module is irreducible; Knapp–Vogan Theorem 0.6(a), p.7; Badulescu–Renard 2010, Theorems 8.1 and 8.2, p.1131, and Proposition 9.4; uniqueness in the Langlands classification (BR Theorem 3.3; Knapp 1994, Theorem 1). None of these classification theorems is in the Library |
+| Task 6820, `7e2316cc-fd6e-4c15-ac95-71edf9e5a50c` | `ComplexUnitaryGenericExponentBoundStatement`, then `ComplexUnitaryGenericPairRegularityStatement` from it and Task 6818's proofs. Route as for Task 6819, with Tadić's classification (BR Theorem 7.2, pp.1129–1131, and Proposition 9.1) and Knapp 1994, Theorem 4; the statement Markdown marks the `GL_n(ℂ)` bound as derived, since BR §8 is written for `GL(n, ℝ)` |
+| Task 6821, `1d8cbc81-142d-47eb-9f4d-8b2b13f0fd52` | `CuspidalSelfPairContinuationStatement`. Route A: the global Rankin–Selberg integral for `GL_r × GL_r` with an Eisenstein series (JS I (1.5), (3.17) and (4.6), p.555). Route B: from the published, unproved `CuspidalPairPoleStatement` (GH Theorem 11.7.1, proof Task 5921), after a twist to trivial split centre and division by finitely many local factors |
+| Task 6822, `a8e36011-2be8-46cc-a440-0da01109d6e6` | `CuspidalPairAbsoluteConvergenceReductionStatement` (the main work), then `CuspidalPairAbsoluteConvergenceStatement` from it and Task 6821's proof. Route of JS I, pp.555–557: local logarithms (5.3.1) with `UnramifiedUnitary.norm_characterValues_lt_sqrt` (JS I Corollary (2.5)); nonnegative coefficients for the self pair (5.3.3) through `eigenvalues_eq_map_inv_of_isContragredientOf`; Landau's theorem on Dirichlet series with nonnegative coefficients, to be proved with a source; Cauchy–Schwarz (5.3.5); `hasProd_of_summable_norm_sub_one` |
+| Task 6823, `63df27ff-5866-4e98-9ae6-650499d82e63` | `CuspidalSupportExistenceStatement`. Route of Langlands 1979, pp.204–205: constant terms along standard block parabolics (Lemma 4), Lemmas 5 and 6 (not in the Library), realization of `Q` in the space of `Ind δ^(-1) σ`, cuspidal blocks with presentations from `cuspidalIrreducibleAdmissibleFiniteSliceExistence`, and Lemma 1, p.203, or `LocalComponentEmbeddingStatement` (once proved) for the embeddings |
+| Task 6824, `5c8e59c5-aa00-4b14-9f2a-3762a62c9314` | `CuspidalSupportUniquenessStatement`, through proofs of `IrreducibleSubquotientAdmissibilityStatement` (Task 6611), `LocalComponentExistenceStatement` and `LocalComponentEmbeddingStatement` (Tasks 6815 and 6816) and `CuspidalInducingDataRigidityStatement` (JS II Theorem (4.4), proof Task 6447); the contract does not accept a conditional reduction as the proof |
+
+The shared DAG records the definitions on
+`def.operator-subquotient-local-components`,
+`def.cuspidal-pair-log-euler-terms`,
+`def.archimedean-unitarizable-gk-modules` and
+`def.cuspidal-finite-induced-constituent`, and the proof tasks on
+`proof.local-component-existence`, `proof.local-component-embedding`,
+`proof.local-component-determination`,
+`proof.archimedean-pair-regularity-elementary`,
+`proof.archimedean-unitary-generic-pair-regularity-real`,
+`proof.archimedean-unitary-generic-pair-regularity-complex`,
+`proof.cuspidal-self-pair-continuation`,
+`proof.cuspidal-pair-absolute-convergence`,
+`proof.cuspidal-support-existence` and `proof.cuspidal-support-uniqueness`
+(added in revision 230 and present in revision 233). Consumer edges run from
+`proof.isobaric-strong-multiplicity-one` (Task 6554) to
+`proof.local-component-determination`, from
+`proof.cuspidal-strong-multiplicity-one` (Task 6388) to the real and complex
+nodes of GH Theorem 11.5.2, and from `proof.automorphic-rigidity` (Task 6446)
+to `proof.cuspidal-pair-absolute-convergence`.
+
+Remaining L4 targets. Of the list at the end of the previous section, the
+first four items are now stated but not proved, the converse half of GH
+Theorem 10.7.1 and GH Corollary 10.7.3 at the finite places only. Still
+missing from the Library as statements are:
+
+- GH Theorem 10.7.1 at every place (Langlands 1979, Lemma 1 and
+  Proposition 2, pp.203–204), that is, the comparison of the archimedean
+  components of `Q` with the archimedean inducing data;
+- Flath's factorization of irreducible admissible representations of
+  `GL_n(𝔸_F)` with the archimedean `(𝔤, K)`-modules (Flath 1979, Theorem 3,
+  p.181), as a tensor product isomorphism; the new local-component statements
+  give only its consequences at one place at a time;
+- independence of the finite local components of a cuspidal realization from
+  its spectral presentation;
+- that the archimedean components of a unitary cuspidal realization satisfy
+  the hypotheses of the archimedean statements above (unitarizability,
+  genericity, a standard parameter), which the route of Task 6388 needs;
+  `IsRealUnitarizableGKModule` and `IsComplexUnitarizableGKModule` occur among
+  the Library's Lean files only in the module that defines them;
+- the cuspidal-support map from irreducible automorphic subquotients to
+  `IsobaricData F`.
+
+Library `4f4af6ba` contains no proof of the 16 target statements of this
+section's proof tasks, nor of the 11 statements listed at the end of the
+previous section: each occurs among the Library's Lean files only in the
+module that states it (and `CuspidalIsobaricRealizationStatement` also in
+`CuspidalIsobaricAutomorphyStatement.lean`). The staging and
+submission-history areas held no proof candidate for any of these 27
+statements on 14 November 2026. Outside the stating modules, the only Lean
+files there that name one of them are statement candidates for Harris's
+Proposition 4.8 (`Langlands/Global/Arithmetic/HarrisProposition48*.lean`,
+staging `0588a5db`, `6c7f666b`, `ba721241`, `ee21cbbc` and submission history
+`c1d61a23`), which take `CuspidalSpectralRigidityStatement` as a hypothesis.
+Neither track of the program is complete.
