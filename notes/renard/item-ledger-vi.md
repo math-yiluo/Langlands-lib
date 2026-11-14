@@ -33,8 +33,8 @@ the other published statements named in the rows, they state the gaps of the ear
 the framework comparisons F2 and F4, and VI.10.6 Proposition (i). The update
 checks them against Library `c0debd6f4dd02fdd68d70811cf610906b945a962`. For each
 published unit, both files at that commit have the SHA256 recorded in the frozen accepted
-candidate. Candidate `45eed456` was accepted by independent review but was not yet
-integrated at that commit (status A). Every proof task named for these units is a
+candidate. Candidate `45eed456` was integrated later; it is checked at Library
+`c40a01345b2f4172fa41e07ff31644b40e695003`, its first Library commit. Every proof task named for these units is a
 `lean.proof@1` task whose contract names the statement; Worker 4 read each contract. The
 rows VI.1.1 Remark, VI.2.1 Remark 1, VI.6.1, VI.6.3 Corollary, VI.9.1, VI.9.4, VI.10.6 and
 VI.10.7 Variant, the framework comparisons and the gap list use this update. Other rows
@@ -48,15 +48,45 @@ retain their earlier dated status. All the statements below have open proofs.
 | `aa6b8d06-0bbe-4b38-82d1-e35150507892` | [`CuspidalSupport/StandardLeviFixedVectorSupportStatements`](../../Langlands/Representation/CuspidalSupport/StandardLeviFixedVectorSupportStatements.md) | Reviewer 2137 | `d8a96d6ca1684994863067355c87cbc8` | `4f6abf4c7e19610e4d89edc9bf64b34ba1db9ff2` |
 | `356c910f-d5d1-4be1-99a1-8073d255fdce` | [`Families/RenardFamilyFiniteTypeStatements`](../../Langlands/Representation/Families/RenardFamilyFiniteTypeStatements.md) | Reviewer 2228 | `e942655c5c534a44b6e12278151a150c` | `4f6abf4c7e19610e4d89edc9bf64b34ba1db9ff2` |
 | `dc8565f1-e14e-450f-9afd-37929a85a691` | [`Jacquet/StandardIwahoriCornerInductionStatement`](../../Langlands/Representation/Jacquet/StandardIwahoriCornerInductionStatement.md) | Reviewer 2280 | `9ffb9d4188de4a49ab5850526300d2b3` | `e5365902d74534dbf1622c06e695dffdc128d723` |
-| `45eed456-ee20-436b-9a93-df8d774b1cc3` | `Jacquet/StandardIwahoriFixedVectorCategoryStatements` | Reviewer 2414 | none yet | not integrated at `c0debd6f` (A) |
+| `45eed456-ee20-436b-9a93-df8d774b1cc3` | [`Jacquet/StandardIwahoriFixedVectorCategoryStatements`](../../Langlands/Representation/Jacquet/StandardIwahoriFixedVectorCategoryStatements.md) | Reviewer 2414 | `41cb7aa5b5e44bb99620962416f0f728` | `c40a01345b2f4172fa41e07ff31644b40e695003` |
 
 The proof tasks of these units are numbered TaskHub tasks. Their identifiers, abbreviated
 to eight hexadecimal digits, are: Task 6533 `78abf4a9`, Task 6534 `8cbd22a6`, Task 6594
 `709f54f5`, Task 6596 `014c664a`, Task 6597 `2f229b34`, Task 6598 `c6988497`, Task 6599
-`0b142d03`, Tasks 6560–6562 `5306e1c1`, `cf4ed536`, `f0a0ac6b`, and Tasks 6565–6567
-`f4a2d17b`, `a074d39f`, `5eefc120`. The F3 statements have the proof tasks Task 6530
+`0b142d03`, Tasks 6560–6562 `5306e1c1`, `cf4ed536`, `f0a0ac6b`, Tasks 6565–6567
+`f4a2d17b`, `a074d39f`, `5eefc120`, and Tasks 6639 `97df9594` and 6640 `ee12132d`. The
+F3 statements have the proof tasks Task 6530
 `16c7f6c2`, Task 6535 `595f5cb5` and Task 6536 `00506a19`, published by Worker 1222. The
-F1 targets have Task 6571 `fcd6981d`, published by Worker 4.
+F1 targets have Task 6571 `fcd6981d`, published by Worker 4. Worker 1222's
+`Langlands.Hecke.LevelHeckeCornerComparisonStatement` (VI.9.4 Proposition row) has the
+proof task Task 6607 `49480f41`, published by Worker 4 at Worker 1222's request.
+
+The proof-status update of 14 November 2026, by Worker 4, checks every row with
+status S against Library `a163f87c7a46874f408deed853c10c83207e9f69`. Every statement
+named in these rows was compared with the Library theorems whose type is exactly that
+statement, with no hypotheses. A statement is marked proved (P) only when such a
+theorem exists. For each one Worker 4 read the theorem line and found no `sorry` or
+`admit` in its file. The table gives the published `lean.proof@1` record for each proof.
+Its Lean and Markdown files at the checked commit have the SHA256 recorded in the
+record; integration IDs and commits come from the publication receipts. Proof modules
+named by bare paths in the rows are under `Langlands/Representation/`. For the
+statements of the other S rows, no such theorem exists at that commit.
+
+| Row | Theorem | Proof module | Proof record | Integration ID | First Library commit |
+| --- | --- | --- | --- | --- | --- |
+| VI.3.1 Lemma | `rationalNormKernelConjugationLemma` | [RationalNormKernelConjugationLemmaProof](../../Langlands/Representation/CuspidalSupport/RationalNormKernelConjugationLemmaProof.md) | `355d9659-82e1-4d56-9346-46e232bfa549` | `b428ab050bc24ab19f528b9d2c08e3e9` | `cfedefb6` |
+| VI.3.3 Remarks 1–2, VI.4.4 Remark | `rationalTwistStabilizerKernel` | [RationalTwistStabilizerKernelProof](../../Langlands/Representation/CuspidalSupport/RationalTwistStabilizerKernelProof.md) | `f44a7ea9-c613-438e-a248-f51d9aeea5ff` | `2494ca7cb0da44bfa1cdd649899966e0` | `cfedefb6` |
+| VI.3.3 Remarks 1–2, VI.7.1 Example | `rationalInertiaOrbitTorus` | [RationalInertiaOrbitTorusProof](../../Langlands/Representation/CuspidalSupport/RationalInertiaOrbitTorusProof.md) | none found | none found | present in `ed924aef`, the oldest available snapshot |
+| VI.4.2 Proposition, right modules | `rationalNormKernelHeckeModule` | [RationalNormKernelHeckeModuleProof](../../Langlands/Representation/CuspidalSupport/RationalNormKernelHeckeModuleProof.md) | `c3e7b89e-c57d-4d12-b3ed-0ba6b11793f7` | `9954f71e4aa448db92a949efb7a354df` | `cfedefb6` |
+| VI.4.3 structure | `rationalNormKernelHecke_structure` | [RationalNormKernelHeckeStructureProof](../../Langlands/Representation/CuspidalSupport/RationalNormKernelHeckeStructureProof.md) | `0e0f27a5-54ef-426b-80c8-5f999c823bfb` | `091580cc12ae4ff5b1d1cf79a9990ca7` | `cfedefb6` |
+| VI.4.4 Lemma | `rationalSummandStabilizerLemma` | [RationalSummandStabilizerLemmaProof](../../Langlands/Representation/CuspidalSupport/RationalSummandStabilizerLemmaProof.md) | `5a385fa6-7659-4677-a2fa-4963d591d191` | `3e028fa3f4264ccf9003c443082b1305` | `cfedefb6` |
+| VI.4.4 Proposition, variety | `rationalSummandCenterVariety` | [RationalSummandCenterVarietyProof](../../Langlands/Representation/CuspidalSupport/RationalSummandCenterVarietyProof.md) | `e2bcc515-4286-4fc6-811e-adca5f3f1430` | `bf8ed6e90465484991fac591556b0205` | `b128d289` |
+| VI.4.5 Corollary | `rationalInertiaBlockIndecomposable` | [RationalInertiaBlockIndecomposableProof](../../Langlands/Representation/CuspidalSupport/RationalInertiaBlockIndecomposableProof.md) | `4c442d9b-0942-4d4b-98fb-3dd31b52aca0` | `4901050802a54b50ba41b6c1ff506ee3` | `cfedefb6` |
+| VI.5.4 Lemma | `standardWeylElementaryChain` | [StandardWeylElementaryChainProof](../../Langlands/GroupScheme/Rational/StandardWeylElementaryChainProof.md) | `a66d0eef-405c-437a-a09e-b40212b1efc0` | `92fa409efe644443ba2e9b53fc1dbfe1` | `cc5aa77f` |
+| VI.7.1 Theorem, component variety | `bernsteinComponentVariety` | [BernsteinComponentVarietyProof](../../Langlands/Representation/CuspidalSupport/BernsteinComponentVarietyProof.md) | `bbeecc60-1577-44b0-9069-8080c8d23a2e` | `2e60d9747f954996affecfd8a571411e` | `cc5aa77f` |
+| VI.9.6, equivalence of the two Theorems | `leviSecondAdjointnessContragredientEquivalence` | [LeviSecondAdjointnessContragredientEquivalenceProof](../../Langlands/Representation/Exponents/LeviSecondAdjointnessContragredientEquivalenceProof.md) | `7cb47525-676a-43c9-a974-3b24a42b13ef` | `a425984c172e44bda1719089cc0a60dc` | `cfedefb6` |
+| VI.10.4 second Lemma | `inducedProgeneratorCenterInclusion` | [InducedProgeneratorCenterInclusionProof](../../Langlands/Representation/CuspidalSupport/InducedProgeneratorCenterInclusionProof.md) | `ac0cb1c2-b9e0-4431-b1ca-bcce3c72f904` | `b3fcf5ccf0734fab80cd4d3aba70bd93` | `51e4d897` |
+| VI.10.4 third Lemma | `renardBimoduleFiltrationCentralizer` | [RenardBimoduleFiltrationCentralizerProof](../../Langlands/Algebra/RenardBimoduleFiltrationCentralizerProof.md) | `05f1eac2-0bf9-4ada-b151-6c724f24e2ed` | `e6993c432cba4b85a48c549ae15d87c2` | `cfedefb6` |
 
 ## How the rows were checked
 
@@ -134,11 +164,11 @@ Status codes:
 
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
-| VI.3.1 Lemma | 142–143 / 148–149 | `CS.RationalNormKernelConjugationLemmaStatement` | S: task 6665e450 |
+| VI.3.1 Lemma | 142–143 / 148–149 | `CS.RationalNormKernelConjugationLemmaStatement` | P: `rationalNormKernelConjugationLemma` (`CuspidalSupport/RationalNormKernelConjugationLemmaProof`; task 6665e450) |
 | VI.3.2 Proposition (i)–(iii) | 143 / 149 | `CS.RationalNormKernelOrbitStatement`, `CS.RationalNormKernelFiniteRestrictionStatement`, `CS.RationalNormKernelTwistEquivalenceStatement` | P: `rationalNormKernelOrbit`, `rationalNormKernelFiniteRestriction`, `rationalNormKernelTwistEquivalence` |
 | VI.3.3 Proposition (`W'` is `G`-invariant; `π(g) ∘ π(e_{σ_i}) = π(e_{σ_i^g}) ∘ π(g)`) | 145 / 151 | VI.3.1 (ii) above, `CompactIsotypicComplementStatement` (IV.1.5), and the covariance lemma `pointwiseFiniteSum_isotypic_covariant` (`CompactCoefficient/AmbientProjector`) | C: derived from these |
 | (VI.3.3.1) decomposition | 145 / 151 | `CS.RationalCuspidalInertiaDecompositionStatement`; compact-restriction form `CS.RationalCompactRestrictionInertiaDecompositionStatement` | S: task 5c59bed4; compact-restriction form P |
-| VI.3.3 Remarks 1–2 | 145 / 151 | `CS.RationalInertiaOrbitTorusStatement`, `CS.RationalTwistStabilizerKernelStatement`; Remark 2 from VI.3.2 (i), (iii) and VI.2.1 | S: tasks f5aebf51, e383bb3b; Remark 2 C |
+| VI.3.3 Remarks 1–2 | 145 / 151 | `CS.RationalInertiaOrbitTorusStatement`, `CS.RationalTwistStabilizerKernelStatement`; Remark 2 from VI.3.2 (i), (iii) and VI.2.1 | P: `rationalInertiaOrbitTorus` (`CuspidalSupport/RationalInertiaOrbitTorusProof`; task f5aebf51) and `rationalTwistStabilizerKernel` (`CuspidalSupport/RationalTwistStabilizerKernelProof`; task e383bb3b); Remark 2 C |
 | VI.3.4 Theorem | 146 / 152 | `CS.RationalNormKernelCategoryDecompositionStatement` (with `CS.RationalNormKernelUniformSupportStatement`, `CS.RationalNormKernelFixedLevelFinitenessStatement`) | S: tasks 29860e9c, b69ca612, f0509729 |
 | VI.3.4 Remark | 146 / 152 | `CS.RationalCuspidalInertiaFinitenessStatement` | S: task 61b5cb94 |
 | VI.3.5 Theorem | 146 / 152 | `CS.RationalWholeCuspidalCategoryDecompositionStatement`, `CS.RationalCuspidalInertiaProductDecompositionStatement`, `RP.RepresentedCuspidalRemainderSplittingStatement` | S: tasks 4bee987a, b1a82b53, 660fd8c7 |
@@ -152,17 +182,17 @@ Status codes:
 | VI.4.1 Proposition | 149 / 155 | `CS.RationalSummandSmallProgeneratorStatement` | S: task ca5fea74 |
 | VI.4.1 Remark | 149–150 / 155–156 | `CS.RationalUniversalSmallProgeneratorStatement`; comparison `CS.RationalUniversalProgeneratorComparisonStatement` | S: task 0ba788d6; comparison P |
 | VI.4.1 Theorem | 150 / 156 | `CS.RationalSummandHomEquivalenceStatement`; quasi-inverse `CS.RationalSummandTensorQuasiInverseStatement` | S: tasks ca5fea74, 23aefeba |
-| VI.4.2 Proposition | 152 / 158 | `CS.RationalNormKernelHeckeStatement`; right-module paragraphs `CS.RationalNormKernelHeckeModuleStatement` | P: `rationalNormKernelHecke_equiv`; modules S: task 31647676 |
-| VI.4.3 structure (VI.4.3.1)–(VI.4.3.3) | 154–155 / 160–161 | `CS.RationalNormKernelHeckeStructureStatement` | S: task 7e3489cf |
+| VI.4.2 Proposition | 152 / 158 | `CS.RationalNormKernelHeckeStatement`; right-module paragraphs `CS.RationalNormKernelHeckeModuleStatement` | P: `rationalNormKernelHecke_equiv`; modules P: `rationalNormKernelHeckeModule` (`CuspidalSupport/RationalNormKernelHeckeModuleProof`; task 31647676) |
+| VI.4.3 structure (VI.4.3.1)–(VI.4.3.3) | 154–155 / 160–161 | `CS.RationalNormKernelHeckeStructureStatement` | P: `rationalNormKernelHecke_structure` (`CuspidalSupport/RationalNormKernelHeckeStructureProof`; task 7e3489cf) |
 | VI.4.3 Lemma | 154 / 160 | `CS.RationalNormKernelEndSeparationStatement` | P: `rationalNormKernelEnd_separation` |
 | VI.4.3 Corollary (i)–(ii) | 155 / 161 | `CS.RationalNormKernelEndDomainStatement`, `CS.RationalSummandEndCommutativeStatement` | P: `rationalNormKernelEnd_isDomain`, `rationalSummandEnd_commutative` |
-| VI.4.4 Remark (the group `T`) | 157 / 163 | `CS.RationalTwistStabilizerKernelStatement` | S: task e383bb3b |
-| VI.4.4 Lemma | 157 / 163 | `CS.RationalSummandStabilizerLemmaStatement` | S: task c6f40f07 |
+| VI.4.4 Remark (the group `T`) | 157 / 163 | `CS.RationalTwistStabilizerKernelStatement` | P: `rationalTwistStabilizerKernel` (`CuspidalSupport/RationalTwistStabilizerKernelProof`; task e383bb3b) |
+| VI.4.4 Lemma | 157 / 163 | `CS.RationalSummandStabilizerLemmaStatement` | P: `rationalSummandStabilizerLemma` (`CuspidalSupport/RationalSummandStabilizerLemmaProof`; task c6f40f07) |
 | VI.4.4 Theorem | 158 / 164 | `CS.RationalSummandEndCenterStatement` | P: `rationalSummandEndCenter` |
 | VI.4.4 Corollary | 159 / 165 | `CS.RationalSummandEndNoetherianStatement`; remark on modules `CS.RationalInertiaBlockNoetherianModulesStatement` | P: `rationalSummandEndNoetherian`; remark S: task cf9475ff |
-| VI.4.4 Proposition | 159 / 165 | `CS.RationalSummandCenterGroupAlgebraStatement`, `CS.RationalSummandCenterVarietyStatement` | P: `rationalSummandCenterGroupAlgebra`; variety S: task 1347deec |
+| VI.4.4 Proposition | 159 / 165 | `CS.RationalSummandCenterGroupAlgebraStatement`, `CS.RationalSummandCenterVarietyStatement` | P: `rationalSummandCenterGroupAlgebra`; variety P: `rationalSummandCenterVariety` (`CuspidalSupport/RationalSummandCenterVarietyProof`; task 1347deec) |
 | VI.4.5 Proposition | 160 / 166 | `CS.RationalInertiaBlockCenterEvaluationStatement`, `CS.RationalSummandBlockCenterStatement` | S: task 6b7a3e50 |
-| VI.4.5 Corollary | 160 / 166 | `CS.RationalInertiaBlockIndecomposableStatement` | S: task 6b7a3e50 |
+| VI.4.5 Corollary | 160 / 166 | `CS.RationalInertiaBlockIndecomposableStatement` | P: `rationalInertiaBlockIndecomposable` (`CuspidalSupport/RationalInertiaBlockIndecomposableProof`; task 6b7a3e50) |
 
 ## VI.5 The geometric lemma and composition series of induced supercuspidals
 
@@ -179,7 +209,7 @@ Status codes:
 | VI.5.3 Proposition (iii) | 173 / 179 | `RP.LeviJacquetInductionSupercuspidalFiltrationStatement` | P: `leviJacquetInductionSupercuspidalFiltration` |
 | VI.5.4 Theorem | 173–175 / 179–181 | `RP.LeviSupercuspidalInductionAssociationStatement`, `CS.BernsteinSupercuspidalInductionBoundsStatement`, `RPF.RationalSupercuspidalInductionFiniteLengthStatement`, `RPF.RationalCuspidalSupportAssociationStatement` | S: tasks fc21c11d, c43511c5, 59ee1ed5, fc414cb1 |
 | VI.5.4 definition of elementary elements | 175 / 181 | inline in `Langlands.GroupScheme.StandardWeylElementaryChainStatement` | D (inline, see next row) |
-| VI.5.4 Lemma (Bernstein–Zelevinsky, Lemma 2.17) | 175 / 181 | `Langlands.GroupScheme.StandardWeylElementaryChainStatement` (hypothesis `L ≠ G` added: the literal lemma fails for `L = M = G`, `w ≠ 1`) | S: task 011068fd. `W(L, M)` and `l_S(M)` are written inline on the actual relative Weyl group; Worker 176, asked on 12 November 2026, has no named version and knows of none planned |
+| VI.5.4 Lemma (Bernstein–Zelevinsky, Lemma 2.17) | 175 / 181 | `Langlands.GroupScheme.StandardWeylElementaryChainStatement` (hypothesis `L ≠ G` added: the literal lemma fails for `L = M = G`, `w ≠ 1`) | P: `standardWeylElementaryChain` (`Langlands/GroupScheme/Rational/StandardWeylElementaryChainProof`; task 011068fd). `W(L, M)` and `l_S(M)` are written inline on the actual relative Weyl group; Worker 176, asked on 12 November 2026, has no named version and knows of none planned |
 | VI.5.4 Corollary (i)–(iii) | 175 / 181 | `RP.LeviSupercuspidalInductionSameLeviStatement` | S: task fc21c11d |
 
 ## VI.6 Finiteness theorems
@@ -202,8 +232,8 @@ Status codes:
 | --- | --- | --- | --- |
 | VI.7.1 Lemma | 180 / 186 | `RP.LeviCuspidalSupportAssociationStatement` | S: task 9b0a1303 |
 | VI.7.1 Proposition | 180 / 186 | `RP.LeviCuspidalSupportSurjectiveStatement`; finite fibres `CS.BernsteinCuspidalSupportFiniteFibreStatement` | S: tasks 9b0a1303, a955226a |
-| VI.7.1 Example | 181 / 187 | variety part is the V.2.7 Corollary `CS.RationalInertiaOrbitTorusStatement` | C; S: task f5aebf51 |
-| VI.7.1 Theorem | 181 / 187 | `CS.BernsteinCuspidalDataVarietyStatements`, `CS.BernsteinComponentVarietyStatement` | S: task a955226a |
+| VI.7.1 Example | 181 / 187 | variety part is the V.2.7 Corollary `CS.RationalInertiaOrbitTorusStatement` | C; P: `rationalInertiaOrbitTorus` (`CuspidalSupport/RationalInertiaOrbitTorusProof`; task f5aebf51) |
+| VI.7.1 Theorem | 181 / 187 | `CS.BernsteinCuspidalDataVarietyStatements`, `CS.BernsteinComponentVarietyStatement` | `CS.BernsteinComponentVarietyStatement` P: `bernsteinComponentVariety` (`CuspidalSupport/BernsteinComponentVarietyProof`; task a955226a). `CS.BernsteinCuspidalDataVarietyStatements` is its conjunction with the open `CS.BernsteinCuspidalSupportFiniteFibreStatement` (VI.7.1 Proposition row), the other target of task a955226a: S |
 | VI.7.2 Theorem | 182 / 188 | `CS.BernsteinDecompositionStatement`; abelian blocks `CS.BernsteinBlockAbelianStatement` | S: tasks 42ad56a2, 03088b22; abelian blocks P: `bernsteinBlockAbelian` |
 | VI.7.2 first Lemma | 182 / 188 | `CS.BernsteinSplitSubrepresentationStatement` | S: tasks 42ad56a2, 03088b22 |
 | VI.7.2 second Lemma | 182–183 / 188–189 | `CS.BernsteinCuspAdjunctionStatement` | S: task 03198d2e |
@@ -250,10 +280,10 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.9.2 (VI.9.2.2) stability for the universal induced family | 198–199 / 204–205 | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` and the VI.9.1–VI.9.3 map (`uniform-compression-progress.md`) | St: step of the VI.9.1 Proposition; Jacquet-family finiteness P |
 | VI.9.3 extension to all smooth representations | 200 / 206 | conditional helpers in the VI.9.1–VI.9.3 map | St |
 | VI.9.4 Corollary | 201 / 207 | `J.StandardIwahoriFixedVectorSubquotientGenerationStatement`; earlier `J.StandardFixedVectorSubquotientGenerationStatement` | S: Task 6535 for the Iwahori-only statement, which uses the source's conditions on `K`. Task e8bd5ada concerns the earlier basis-member version |
-| VI.9.4 Proposition | 201 / 207 | Over the measure-free algebra: `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement`; earlier `J.StandardFixedVectorHeckeEquivalenceStatement` (modules over the measure-free `LevelHeckeAlgebra ℂ K`). Comparison of algebras: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (`Hecke/LevelHeckeCornerComparisonStatement`, Worker 1222: a product-preserving linear bijection `LevelHeckeAlgebra ℂ K ≃ Corner μ K hK` with `e(a)(x) = μ(K)⁻¹ a(xK)`, compatible with the two actions on `V^K`). Over the Haar-measure `H(G, K)` with the inverse functor: `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; see the VI.10.6 Proposition (ii) row) | S: Task 6536 for the Iwahori-only statement; task e8bd5ada concerns the earlier basis-member version. Task 6599 for the corner-induction statement. The comparison statement has an open proof; a TaskHub search on 14 November 2026 found no proof task for it |
+| VI.9.4 Proposition | 201 / 207 | Over the measure-free algebra: `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement`; earlier `J.StandardFixedVectorHeckeEquivalenceStatement` (modules over the measure-free `LevelHeckeAlgebra ℂ K`). Comparison of algebras: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (`Hecke/LevelHeckeCornerComparisonStatement`, Worker 1222: a product-preserving linear bijection `LevelHeckeAlgebra ℂ K ≃ Corner μ K hK` with `e(a)(x) = μ(K)⁻¹ a(xK)`, compatible with the two actions on `V^K`). Over the Haar-measure `H(G, K)` with the inverse functor: `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; see the VI.10.6 Proposition (ii) row) | S: Task 6536 for the Iwahori-only statement; task e8bd5ada concerns the earlier basis-member version. Task 6599 for the corner-induction statement. The comparison statement has an open proof: Task 6607 |
 | VI.9.5 (`r_P^G` preserves `B`-admissibility) | 201 / 207 | `AF.JacquetAdmissibleStatement`; reduction `AF.JacquetAdmissibleReductionStatement` | S: task 8057266d; reduction P |
 | VI.9.6 first Theorem (second adjointness) | 201 / 207 | `RP.LeviSecondAdjointnessStatement` | S: tasks c0fa1878, eac5190f |
-| VI.9.6 second Theorem (`r_{P̄}^G π̃ ≅ (r_P^G π)~`) and the equivalence of the two | 201–202 / 207–208 | `RP.LeviJacquetContragredientStatement`, `RP.LeviSecondAdjointnessContragredientEquivalenceStatement` | S: tasks c0fa1878, 3ec57776 |
+| VI.9.6 second Theorem (`r_{P̄}^G π̃ ≅ (r_P^G π)~`) and the equivalence of the two | 201–202 / 207–208 | `RP.LeviJacquetContragredientStatement`, `RP.LeviSecondAdjointnessContragredientEquivalenceStatement` | `RP.LeviJacquetContragredientStatement` S: task c0fa1878; the equivalence P: `leviSecondAdjointnessContragredientEquivalence` (`Exponents/LeviSecondAdjointnessContragredientEquivalenceProof`; task 3ec57776) |
 | VI.9.6 Proposition (pairing) | 202 / 208 | `RP.LeviJacquetOppositePairingStatement` | S: task 56c26504 |
 | VI.9.7 Theorem | 205 / 211 | `RP.LeviCompletionOppositeJacquetStatement` | S: task 56c26504 |
 
@@ -267,14 +297,14 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.10.3 Proposition, Corollary | 209 / 215 | `CS.BernsteinBlockJacquetFaithfulStatement`, `RP.SupercuspidalInductionLengthStatement` | S: task 2174cd68 |
 | VI.10.4 (VI.10.4.1)–(VI.10.4.2): induction of modules corresponds to `i_P^G` | 209–210 / 215–216 | none | St: step of the VI.10.4 Theorem (task c4d4541b) |
 | VI.10.4 first Lemma (`R_Ω` free of rank `|W(D)|` over `R_D`) | 210 / 216 | `RP.InducedProgeneratorEndFreeStatement` | S: task 03c64afa |
-| VI.10.4 second Lemma (`ℨ_Ω ⊂ ℨ_D`) | 211 / 217 | `RP.InducedProgeneratorCenterInclusionStatement` | S: task 03c64afa |
+| VI.10.4 second Lemma (`ℨ_Ω ⊂ ℨ_D`) | 211 / 217 | `RP.InducedProgeneratorCenterInclusionStatement` | P: `inducedProgeneratorCenterInclusion` (`CuspidalSupport/InducedProgeneratorCenterInclusionProof`; task 03c64afa) |
 | VI.10.4 `ℨ_Ω ⊂ ℨ_D^{W(D)}`, `ℨ_Ω = ℨ_D^{W(D)}` | 211–212 / 217–218 | none | St: steps of the VI.10.4 Theorem |
-| VI.10.4 third Lemma (centralizer for filtered bimodules) | 211–212 / 217–218 | `Langlands.Algebra.RenardBimoduleFiltrationCentralizerStatement` | S: task 74deb29a |
+| VI.10.4 third Lemma (centralizer for filtered bimodules) | 211–212 / 217–218 | `Langlands.Algebra.RenardBimoduleFiltrationCentralizerStatement` | P: `renardBimoduleFiltrationCentralizer` (`Langlands/Algebra/RenardBimoduleFiltrationCentralizerProof`; task 74deb29a) |
 | VI.10.4 Theorem | 212 / 218 | `CS.BernsteinCenterFunctionsStatements` (with `CS.BernsteinBlockCenterFunctionsStatement`, `CS.BernsteinCentralIdempotentFunctionStatement`) | S: task c4d4541b |
 | VI.10.4 Corollary, Remarks 1–3 | 212 / 218 | `CS.BernsteinBlockCenterNoetherianStatement`, `CS.BernsteinBlockIndecomposableStatement`; Remarks 1–2 in `CS.BernsteinCenterFunctionsStatements` | S: tasks 80d07293, c4d4541b |
 | VI.10.5 Proposition | 213 / 219 | `RP.HarishChandraHomomorphismStatement` | S: task 03c64afa; finiteness of `i_{MG}` as a morphism of varieties is stated only through its consequence (finite generation) |
 | VI.10.6 Theorem, Proposition | 213–214 / 219–220 | `CS.CompactOpenInertialFinitenessStatement`, `J.FixedVectorCategoryStatements` | S: tasks f504c0e1, 423c3289 |
-| VI.10.6 Proposition (i), the decomposition `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, and (iii)–(iv) for the source's class of `K` | 214 / 220 | `J.StandardIwahoriFixedVectorBlockDecompositionStatement` (a smooth representation is generated by its `K`-fixed vectors iff it is a coproduct of its components in the Bernstein blocks indexed by `B(G)_K`), `J.StandardIwahoriFixedVectorCategoryStatement` ((iii)–(iv) with only the ordered Iwahori decompositions on `K`), and the proved implication `J.fixedVectorCategoryStatements_of_standardIwahori` to the earlier basis-member conclusion (`Jacquet/StandardIwahoriFixedVectorCategoryStatements`) | A: candidate `45eed456` (Reviewer 2414), not integrated at `c0debd6f` |
+| VI.10.6 Proposition (i), the decomposition `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, and (iii)–(iv) for the source's class of `K` | 214 / 220 | `J.StandardIwahoriFixedVectorBlockDecompositionStatement` (a smooth representation is generated by its `K`-fixed vectors iff it is a coproduct of its components in the Bernstein blocks indexed by `B(G)_K`), `J.StandardIwahoriFixedVectorCategoryStatement` ((iii)–(iv) with only the ordered Iwahori decompositions on `K`), and the proved implication `J.fixedVectorCategoryStatements_of_standardIwahori` to the earlier basis-member conclusion (`Jacquet/StandardIwahoriFixedVectorCategoryStatements`) | S: published candidate `45eed456` (Reviewer 2414); Task 6639 for the block decomposition statement, Task 6640 for (iii)–(iv) |
 | VI.10.6 Proposition (ii) (inverse `M ↦ H(G) ⊗_{H(G,K)} M`) | 214 / 220 | `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; the Haar Hecke algebra `H(G)`, its corner `H(G, K) = e_K H(G) e_K`, the III.1.4 functor, the I.3.1 corner functor and the I.3.2 induction functor) | S: Task 6599 |
 | VI.10.6 Corollary (`B(M)_{K_M} = i_{MG}^{-1}(B(G)_K)`) | 215 / 221 | `CS.StandardLeviCompactInheritanceStatement` (the hypotheses on `K` pass to `K ∩ M`), `CS.StandardRepresentativeFixedVectorCriterionStatement`, `CS.StandardLeviFixedVectorSupportStatement` (`CuspidalSupport/StandardLeviFixedVectorSupportStatements`; standard Levi subgroups `M_J`; `B(M)` and `i_{MG}` through representatives, as in `CS.BernsteinInductionRestrictionStatement`) | S: Tasks 6560, 6561, 6562. `B(M)` as a type and `i_{MG}` as a function are not defined |
 | VI.10.7 Lemma, Theorem | 215 / 221 | `CS.FiniteTypeComponentCharacterizationStatement`, `RP.FiniteTypeCenterAdmissibleStatement` | S: task f504c0e1 |
@@ -367,7 +397,7 @@ claim that Chapter VI has no other gaps. The individual rows remain authoritativ
    `AF.FamilyFiniteTypeComponentCharacterizationStatement` and
    `AF.FamilyLeviInductionFiniteTypeStatement`, Tasks 6565–6567.
 6. VI.9.4 Proposition: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (Worker
-   1222; no proof task found) and `J.StandardIwahoriCornerInductionEquivalenceStatement`
+   1222; Task 6607) and `J.StandardIwahoriCornerInductionEquivalenceStatement`
    (VI.10.6 Proposition (ii)), Task 6599.
 7. The arbitrary-parabolic scope of VI.6.1 (Theorem and Proposition) and VI.9.1: the
    represented statements of F2, Tasks 6533, 6534, 6594 and 6596. The source's class
@@ -376,10 +406,11 @@ claim that Chapter VI has no other gaps. The individual rows remain authoritativ
 
 The update also states VI.10.6 Proposition (i), the decomposition
 `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, which the earlier statement
-`J.FixedVectorCategoryStatements` does not contain. It is candidate `45eed456`,
-accepted by review and not yet integrated at `c0debd6f` (A).
+`J.FixedVectorCategoryStatements` does not contain. It is the published candidate
+`45eed456`, with proof Tasks 6639 and 6640.
 
 The VI.5.4 Lemma, unstated before this audit, is now the published
-`StandardWeylElementaryChainStatement`. The VI.9.1 bound and Remarks, the remaining
+`StandardWeylElementaryChainStatement`, proved by `standardWeylElementaryChain`
+(proof-status update above). The VI.9.1 bound and Remarks, the remaining
 gap found by this audit, are now stated in the published module
 `Exponents/GeneralizedJacquetRemarksStatements`, with proof task 7a03c792.

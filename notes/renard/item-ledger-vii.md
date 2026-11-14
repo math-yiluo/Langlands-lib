@@ -16,7 +16,9 @@ numbers are given first and PDF page numbers second. Library facts refer to comm
 `16c60abdc019c1181a2734d3052305ec3d6e7b85`, except for the four proof updates for
 VII.3.4–VII.3.5 below, checked on 14 November 2026 at Library
 `179f569bc35e58b829420ce0590c9f4d0ff43c21`, and for the VII.1.3 Corollary row and gap 2,
-checked on 14 November 2026 at Library `c0debd6f4dd02fdd68d70811cf610906b945a962`. Other statuses retain their historical
+checked on 14 November 2026 at Library `c0debd6f4dd02fdd68d70811cf610906b945a962`, and
+for the proof-status update described below, checked at Library
+`a163f87c7a46874f408deed853c10c83207e9f69`. Other statuses retain their historical
 survey scope. The status codes, the abbreviation of
 task identifiers and the method of checking are those of the Chapter VI ledger.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
@@ -24,6 +26,26 @@ All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 [root-exponent-tempered-progress](root-exponent-tempered-progress.md) and
 [parabolic-functors-tempered-progress](parabolic-functors-tempered-progress.md) give
 more detail for VII.1–VII.2.
+
+The proof-status update of 14 November 2026, by Worker 4, checks every row with status S
+against Library `a163f87c7a46874f408deed853c10c83207e9f69`, by the method stated in the
+Chapter VI ledger: a statement is marked proved (P) only when a Library theorem with no
+hypotheses has exactly that statement as its type. It changes the rows VII.1.3
+Corollary, VII.2.1 Remark 2, VII.2.6 Theorem and Remark, VII.3.1 extremes, VII.3.5
+opening assertion and VII.4.1 Lemma, gap 2 and the source issue I1. Proof modules named
+by bare paths are under `Langlands/Representation/`. For each new proof Worker 4 read the
+theorem line and found no `sorry` or `admit` in its file. The new proofs and their published
+`lean.proof@1` records, whose Lean and Markdown files at the checked commit have the SHA256
+recorded in the record:
+
+| Row | Theorem | Proof module | Proof record | Integration ID | First Library commit |
+| --- | --- | --- | --- | --- | --- |
+| VII.2.1 Remark 2 | `squareIntegrableNormalizedTempered` | [SquareIntegrableNormalizedTemperedProof](../../Langlands/Representation/Exponents/SquareIntegrableNormalizedTemperedProof.md) | `3b2190cf-d09f-4d95-852a-a4f80d209a58` | `4d4f36cb43134a9480ac6db62c3b882f` | `17dd94ea` |
+| VII.2.6 Theorem, uniqueness | `temperedIrreducibleDiscreteSeriesUniqueness` | [TemperedIrreducibleDiscreteSeriesUniquenessProof](../../Langlands/Representation/Exponents/TemperedIrreducibleDiscreteSeriesUniquenessProof.md) | `083f5bec-6a05-4009-8ff5-a958748085ca` | `d284d7188f164a22a398a341d28938ea` | `cfedefb6` |
+| VII.2.6 Remark | `temperedReducibleNotUnitarizable` | [TemperedReducibleNotUnitarizableProof](../../Langlands/Representation/Exponents/TemperedReducibleNotUnitarizableProof.md) | `10d78506-4824-4658-b3d2-6afe58b10050` | `64b3ccc6cc8349cea1b56367828419ec` | `730bd1f2` |
+| VII.3.1 extremes | `bruhatIdentityExtremes` | [BruhatIdentityExtremesProof](../../Langlands/Representation/Exponents/BruhatIdentityExtremesProof.md) | `0ec4ea93-fabc-48fb-9af2-e1a7ef1f68da` | `86a35b120bfe4abea6228234fde9bbea` | `730bd1f2` |
+| VII.3.5 opening assertion, minimal `M` | `minimalParabolicDistanceLength` | [MinimalParabolicDistanceLengthProof](../../Langlands/GroupScheme/Rational/MinimalParabolicDistanceLengthProof.md) | `c68de2e3-f0ef-4f04-9d6b-2fb94aebee90` | `42fa7a88d0524773b7e00c1054efb59b` | `730bd1f2` |
+| VII.4.1 Lemma | `langlandsTripletOppositeRegularity` | [LanglandsTripletRegularityProof](../../Langlands/Representation/LanglandsClassification/LanglandsTripletRegularityProof.md) | `ae39328b-9b9a-4a08-b89b-96877fa75d12` | `2dffde5df03e4e6fb61057315d0004d1` | `b128d289` |
 
 Most Chapter VII statements are **derived formulations** for the represented-parabolic
 interface. They range over arbitrary actual rational parabolics instead of standard ones,
@@ -48,7 +70,7 @@ mathematical content.
 | VII.1.1 Lemma (i)–(ii) | 220–221 / 226–227 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S: task 2e8d370f; necessity P: `arbitraryParabolicCasselmanNecessity`. Derived: the condition is the strictly positive root cone, which the source proof establishes, not the printed coroot chamber `^G_P[𝔞*_M]^+`; the two differ (for example for `SL_3`). This source discrepancy is documented in the statement's Markdown; the printed chamber form is not stated |
 | VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S: task 004e00e1; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
-| VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. The functor `r_D`, its faithfulness, the unit isomorphism `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`: `RP.MaximalLeviBlockProjectionEquivalenceStatement` (`Exponents/MaximalLeviBlockProjectionStatement`; the projection onto `M(M)_D` is a left adjoint of the inclusion of the block, whose existence is asserted). A: candidate `17566075` (Reviewer 2361), not integrated at Library `c0debd6f` |
+| VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. The functor `r_D`, its faithfulness, the unit isomorphism `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`: `RP.MaximalLeviBlockProjectionEquivalenceStatement` (`Exponents/MaximalLeviBlockProjectionStatement`; the projection onto `M(M)_D` is a left adjoint of the inclusion of the block, whose existence is asserted). S: published candidate `17566075` (Reviewer 2361; integration ID `596546b6faf9495ba266d58426b8d8d3`, first Library commit `c40a0134`); proof Task 6621 `3c3f4d9e` |
 
 ## VII.2 Tempered representations
 
@@ -57,37 +79,37 @@ mathematical content.
 | VII.2.1 Definition | 227 / 233 | `IsNormalizedExponentTempered` | D (normalized parameter; see the progress note for the corrected sign convention) |
 | VII.2.1 Remark 1, first assertion (full-group exponents unitary) | 227 / 233 | `NormalizedTemperedFullGroupExponentStatement` | P: `normalizedTemperedFullGroupExponent` |
 | VII.2.1 Remark 1, second assertion (central character unitary) | 227 / 233 | `NormalizedTemperedCentralCharacterStatement` (nonzero representations) | P: `normalizedTemperedCentralCharacter` |
-| VII.2.1 Remark 2 (square-integrable implies tempered) | 227 / 233 | `RP.SquareIntegrableNormalizedTemperedStatement` | S: task 1ebce298 |
+| VII.2.1 Remark 2 (square-integrable implies tempered) | 227 / 233 | `RP.SquareIntegrableNormalizedTemperedStatement` | P: `squareIntegrableNormalizedTempered` (`Exponents/SquareIntegrableNormalizedTemperedProof`; task 1ebce298) |
 | VII.2.1 Remark 3 (standard parabolics suffice) | 227 / 233 | `NormalizedTemperedStandardReductionStatement` | P: `normalizedTemperedStandardReduction` |
 | VII.2.2 Lemma | 227–228 / 233–234 | `RP.LeviInductionNormalizedTemperedStatement` | P: `leviInductionNormalizedTempered` |
 | VII.2.3 Lemma | 229 / 235 | `RP.UnitaryJacquetPartTemperedStatement` | P: `unitaryJacquetPartTempered` |
 | VII.2.4 Proposition | 229 / 235 | `RP.TemperedInductionUnitaryReciprocityStatement`, `RP.TemperedJacquetUnitaryRestrictionStatement` | P: `temperedInductionUnitaryReciprocity`, `temperedJacquetUnitaryRestriction` |
 | VII.2.4 Lemma | 230 / 236 | `RP.TemperedSquareIntegrableUnitaryPartStatement` | S: task f0ff1d42 |
 | VII.2.5 Proposition | 230 / 236 | `RP.TemperedGeometricLemmaStatement` | P: `temperedGeometricLemma` |
-| VII.2.6 Theorem | 231 / 237 | `RP.TemperedIrreducibleDiscreteSeriesStatement`, `RP.TemperedIrreducibleDiscreteSeriesUniquenessStatement`; step `RP.NormalizedTemperedSubrepresentationStatement` | S: task 225f7d3d; step P: `normalizedTemperedSubrepresentation` |
+| VII.2.6 Theorem | 231 / 237 | `RP.TemperedIrreducibleDiscreteSeriesStatement`, `RP.TemperedIrreducibleDiscreteSeriesUniquenessStatement`; step `RP.NormalizedTemperedSubrepresentationStatement` | `RP.TemperedIrreducibleDiscreteSeriesStatement` S: task 225f7d3d; uniqueness P: `temperedIrreducibleDiscreteSeriesUniqueness` (`Exponents/TemperedIrreducibleDiscreteSeriesUniquenessProof`); step P: `normalizedTemperedSubrepresentation` |
 | VII.2.6 Corollary | 232 / 238 | `RP.TemperedIrreducibleUnitarizableStatement` | S: task 225f7d3d |
-| VII.2.6 Remark (without irreducibility the Corollary can fail) | 232 / 238 | `RP.TemperedReducibleNotUnitarizableStatement` | S: Task 5685 (candidate `9492bbaa`) |
+| VII.2.6 Remark (without irreducibility the Corollary can fail) | 232 / 238 | `RP.TemperedReducibleNotUnitarizableStatement` | P: `temperedReducibleNotUnitarizable` (`Exponents/TemperedReducibleNotUnitarizableProof`; Task 5685, statement candidate `9492bbaa`) |
 
 ## VII.3 Intertwining operators of induced representations
 
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
 | VII.3.1 Definition (Bruhat order `≤_{PQ}`) | 232 / 238 | `Langlands.Geometric.BruhatLE` (on actual double cosets), `IsBruhatRefinement` | D |
-| VII.3.1: `1̄` is the least element when `P = Q` and the greatest when `Q = P̄` | 232–233 / 238–239 | `RP.BruhatIdentityExtremesStatement` | S: Task 5685 |
+| VII.3.1: `1̄` is the least element when `P = Q` and the greatest when `Q = P̄` | 232–233 / 238–239 | `RP.BruhatIdentityExtremesStatement` | P: `bruhatIdentityExtremes` (`Exponents/BruhatIdentityExtremesProof`; Task 5685) |
 | VII.3.2 filtrations and their comparisons | 233–234 / 239–240 | `RP.PQSupportGradedStatement`; support subfunctors in `Intertwining/PQRegularity` | P: `pqSupportGraded` |
 | VII.3.3 Lemma (`PQ`-regularity) | 234 / 240 | `RP.PQRegularityLemmaStatement`; `IsPQRegular` | S: task d935ffb6 |
 | VII.3.4 Proposition and preceding integral identification | 235–236 / 241–242 | `RP.PQIntertwiningOperatorStatement` (derived: the integral replaced by an arbitrary identification); explicit integral form `RP.PQIntegralIntertwiningOperatorStatement` | Derived form P: `pqIntertwiningOperator`; integral form P: [`pqIntegralIntertwiningOperator`](../../Langlands/Representation/Intertwining/PQIntegralIntertwiningOperatorProof.md) |
 | VII.3.5 Proposition (i) | 237 / 243 | `RP.PQIntertwiningCompositionStatement` | P: [`pqIntertwiningComposition`](../../Langlands/Representation/Intertwining/PQIntertwiningCompositionProof.md) |
 | VII.3.5 Proposition (ii) | 237 / 243 | `RP.PQIntertwiningInnerLeviStatement` | P: [`pqIntertwiningInnerLevi`](../../Langlands/Representation/Intertwining/PQIntertwiningInnerLeviProof.md) |
 | VII.3.5 Proposition (iii) | 237 / 243 | `RP.PQIntertwiningOuterLeviStatement` | P: [`pqIntertwiningOuterLevi`](../../Langlands/Representation/Intertwining/PQIntertwiningOuterLeviProof.md) |
-| VII.3.5 opening assertion "`d(P, Q)` is the length of the element `w ∈ W(A_M)` with `w · P = Q`" | 236 / 242 | `Langlands.GroupScheme.MinimalParabolicDistanceLengthStatement` (minimal `M`, corrected form) | S: Task 5687 (candidate `5d306e19`). For non-minimal `M` the printed assertion is a source issue (I1 below) |
+| VII.3.5 opening assertion "`d(P, Q)` is the length of the element `w ∈ W(A_M)` with `w · P = Q`" | 236 / 242 | `Langlands.GroupScheme.MinimalParabolicDistanceLengthStatement` (minimal `M`, corrected form) | P: `minimalParabolicDistanceLength` (`Langlands/GroupScheme/Rational/MinimalParabolicDistanceLengthProof`; Task 5687, statement candidate `5d306e19`). For non-minimal `M` the printed assertion is a source issue (I1 below) |
 
 ## VII.4 The Langlands classification
 
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
 | VII.4.1 Definition (Langlands triplet) | 241 / 247 | `IsLanglandsTriplet`, chambers `Langlands.GroupScheme.restrictedCorootChamber` (`LanglandsClassification/LanglandsTriplet`) | D |
-| VII.4.1 Lemma | 241 / 247 | `RP.LanglandsTripletOppositeRegularityStatement`; proved steps `RP.LanglandsTripletOppositePieceSeparationStatement`, `RP.LanglandsTripletOppositeRegularityReductionStatement` | S: task 78bf8d31; steps P |
+| VII.4.1 Lemma | 241 / 247 | `RP.LanglandsTripletOppositeRegularityStatement`; proved steps `RP.LanglandsTripletOppositePieceSeparationStatement`, `RP.LanglandsTripletOppositeRegularityReductionStatement` | P: `langlandsTripletOppositeRegularity` (`LanglandsClassification/LanglandsTripletRegularityProof`; task 78bf8d31); steps P |
 | VII.4.2 Theorem (i)–(iii) | 243 / 249 | `RP.LanglandsQuotientUniqueStatement`, `RP.LanglandsQuotientInjectiveStatement`, `RP.LanglandsQuotientExhaustiveStatement`, conjunction `RP.LanglandsClassificationStatement` | S: task 717df3ca |
 | VII.4.2 sentence after (i): `J(P, σ, ψ)` is characterized by `ℜ(ψ) ∈ ℜ(Exp(A_M, r_{P̄}^G(π)))` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | S: Task 5653 |
 
@@ -243,7 +265,8 @@ as recorded.
   The assertion is not used by the Chapter VII statements above. Retained scope: the
   minimal-`M` assertion in both corrected forms (`d(P, Q)` is the length of `w` for the
   simple reflections of `P`, and `d(uP_∅, vP_∅) = ℓ(u⁻¹v)`) is stated by the published
-  `MinimalParabolicDistanceLengthStatement` (candidate `5d306e19`, proof Task 5687); the non-minimal case is
+  `MinimalParabolicDistanceLengthStatement` (candidate `5d306e19`), proved by
+  `minimalParabolicDistanceLength` (Task 5687; see the proof-status update in the introduction); the non-minimal case is
   a source issue with the counterexample above.
 
 ## Genuine gaps of Chapter VII
@@ -256,7 +279,10 @@ as recorded.
    checked at Library `c0debd6f`: candidate `17566075` (Worker 4) states them as
    `RP.MaximalLeviBlockProjectionEquivalenceStatement`. It characterizes the projection
    as a left adjoint of the inclusion of `M(M)_D` and asserts that one exists. It was
-   accepted by Reviewer 2361 and was not yet integrated at that commit (A).
+   accepted by Reviewer 2361 and was not yet integrated at that commit (A). Proof-status
+   update of 14 November 2026: the candidate is published, first in Library `c40a0134`,
+   with both files matching the frozen candidate hashes; its proof is Task 6621
+   `3c3f4d9e`, published by Worker 4.
 
 Update at Library `9951a27f`: the former gap 3 (VII.3.5, minimal-`M` form of the opening
 assertion) is stated by the published `MinimalParabolicDistanceLengthStatement` (candidate
