@@ -88,6 +88,31 @@ statements of the other S rows, no such theorem exists at that commit.
 | VI.10.4 second Lemma | `inducedProgeneratorCenterInclusion` | [InducedProgeneratorCenterInclusionProof](../../Langlands/Representation/CuspidalSupport/InducedProgeneratorCenterInclusionProof.md) | `ac0cb1c2-b9e0-4431-b1ca-bcce3c72f904` | `b3fcf5ccf0734fab80cd4d3aba70bd93` | `51e4d897` |
 | VI.10.4 third Lemma | `renardBimoduleFiltrationCentralizer` | [RenardBimoduleFiltrationCentralizerProof](../../Langlands/Algebra/RenardBimoduleFiltrationCentralizerProof.md) | `05f1eac2-0bf9-4ada-b151-6c724f24e2ed` | `e6993c432cba4b85a48c549ae15d87c2` | `cfedefb6` |
 
+The task-citation correction of 14 November 2026, by Worker 4, checks the task
+identifiers of the rows against TaskHub and Library
+`58ad0f796899b4aa457077d0146815c24758f739`. Before this correction the VI.7.2
+Theorem and VI.7.2 first Lemma rows cited task `42ad56a2`, and the VI.10.4 Corollary
+row cited task `80d07293`. Neither task exists in this TaskHub instance: `inspect`
+finds no task with the full identifiers `42ad56a2-0729-42a7-9240-63e953ee2961` and
+`80d07293-3d61-4258-a7ff-60321837a7bf`, which come from earlier coverage notes. The rows
+now cite the existing `lean.proof@1` tasks whose contracts name these statements:
+
+- Task 5313 `03088b22`, for the conjunction `CS.BernsteinDecompositionStatements` of
+  `CS.BernsteinDecompositionStatement`, `CS.BernsteinSplitSubrepresentationStatement`
+  and `CS.BernsteinBlockAbelianStatement`;
+- Task 5226 `03c64afa`, whose target 3 is `CS.BernsteinBlockCenterStatements`, the
+  conjunction of `CS.BernsteinBlockCenterNoetherianStatement` and
+  `CS.BernsteinBlockIndecomposableStatement`.
+
+Both tasks are open. At the checked commit the Library has only conditional
+reductions for these targets: `bernsteinDecompositionStatements_of_inputs` and
+`bernsteinBlockCenterStatements_of_centerFunctions`, the latter from the open
+`CS.BernsteinBlockCenterFunctionsStatement`. No status letter changes. The VI.8 P rows
+cite the proof tasks `eb5ee8fa`, `9631258e`, `4df85a84` and `5c0deaf5`, and the VI.3.3
+Remarks and VI.7.1 Example rows cite `f5aebf51`. These tasks do not exist in this
+instance either. They record where the proofs, which are in the Library, came from,
+and those rows keep their status.
+
 ## How the rows were checked
 
 Worker 1222 matched each headed item with the declarations whose docstring or
@@ -234,8 +259,8 @@ Status codes:
 | VI.7.1 Proposition | 180 / 186 | `RP.LeviCuspidalSupportSurjectiveStatement`; finite fibres `CS.BernsteinCuspidalSupportFiniteFibreStatement` | S: tasks 9b0a1303, a955226a |
 | VI.7.1 Example | 181 / 187 | variety part is the V.2.7 Corollary `CS.RationalInertiaOrbitTorusStatement` | C; P: `rationalInertiaOrbitTorus` (`CuspidalSupport/RationalInertiaOrbitTorusProof`; task f5aebf51) |
 | VI.7.1 Theorem | 181 / 187 | `CS.BernsteinCuspidalDataVarietyStatements`, `CS.BernsteinComponentVarietyStatement` | `CS.BernsteinComponentVarietyStatement` P: `bernsteinComponentVariety` (`CuspidalSupport/BernsteinComponentVarietyProof`; task a955226a). `CS.BernsteinCuspidalDataVarietyStatements` is its conjunction with the open `CS.BernsteinCuspidalSupportFiniteFibreStatement` (VI.7.1 Proposition row), the other target of task a955226a: S |
-| VI.7.2 Theorem | 182 / 188 | `CS.BernsteinDecompositionStatement`; abelian blocks `CS.BernsteinBlockAbelianStatement` | S: tasks 42ad56a2, 03088b22; abelian blocks P: `bernsteinBlockAbelian` |
-| VI.7.2 first Lemma | 182 / 188 | `CS.BernsteinSplitSubrepresentationStatement` | S: tasks 42ad56a2, 03088b22 |
+| VI.7.2 Theorem | 182 / 188 | `CS.BernsteinDecompositionStatement`; abelian blocks `CS.BernsteinBlockAbelianStatement` | S: task 03088b22 (Task 5313; see the task-citation correction above); abelian blocks P: `bernsteinBlockAbelian` |
+| VI.7.2 first Lemma | 182 / 188 | `CS.BernsteinSplitSubrepresentationStatement` | S: task 03088b22 (Task 5313) |
 | VI.7.2 second Lemma | 182–183 / 188–189 | `CS.BernsteinCuspAdjunctionStatement` | S: task 03198d2e |
 | VI.7.2 Proposition | 184 / 190 | `CS.BernsteinBlockCharacterizationStatement` | S: task 2a804ec7 |
 | VI.7.3 Proposition | 185 / 191 | `CS.BernsteinInductionRestrictionStatement`, `RPF.RationalSupportCategoryInductionJacquetStatement` | S: tasks 064bce40, 09268952 |
@@ -301,7 +326,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.10.4 `ℨ_Ω ⊂ ℨ_D^{W(D)}`, `ℨ_Ω = ℨ_D^{W(D)}` | 211–212 / 217–218 | none | St: steps of the VI.10.4 Theorem |
 | VI.10.4 third Lemma (centralizer for filtered bimodules) | 211–212 / 217–218 | `Langlands.Algebra.RenardBimoduleFiltrationCentralizerStatement` | P: `renardBimoduleFiltrationCentralizer` (`Langlands/Algebra/RenardBimoduleFiltrationCentralizerProof`; task 74deb29a) |
 | VI.10.4 Theorem | 212 / 218 | `CS.BernsteinCenterFunctionsStatements` (with `CS.BernsteinBlockCenterFunctionsStatement`, `CS.BernsteinCentralIdempotentFunctionStatement`) | S: task c4d4541b |
-| VI.10.4 Corollary, Remarks 1–3 | 212 / 218 | `CS.BernsteinBlockCenterNoetherianStatement`, `CS.BernsteinBlockIndecomposableStatement`; Remarks 1–2 in `CS.BernsteinCenterFunctionsStatements` | S: tasks 80d07293, c4d4541b |
+| VI.10.4 Corollary, Remarks 1–3 | 212 / 218 | `CS.BernsteinBlockCenterNoetherianStatement`, `CS.BernsteinBlockIndecomposableStatement`; Remarks 1–2 in `CS.BernsteinCenterFunctionsStatements` | S: task 03c64afa (Task 5226, target `CS.BernsteinBlockCenterStatements`, the conjunction of the two Corollary statements) for the Corollary and Remark 3; task c4d4541b for Remarks 1–2 |
 | VI.10.5 Proposition | 213 / 219 | `RP.HarishChandraHomomorphismStatement` | S: task 03c64afa; finiteness of `i_{MG}` as a morphism of varieties is stated only through its consequence (finite generation) |
 | VI.10.6 Theorem, Proposition | 213–214 / 219–220 | `CS.CompactOpenInertialFinitenessStatement`, `J.FixedVectorCategoryStatements` | S: tasks f504c0e1, 423c3289 |
 | VI.10.6 Proposition (i), the decomposition `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, and (iii)–(iv) for the source's class of `K` | 214 / 220 | `J.StandardIwahoriFixedVectorBlockDecompositionStatement` (a smooth representation is generated by its `K`-fixed vectors iff it is a coproduct of its components in the Bernstein blocks indexed by `B(G)_K`), `J.StandardIwahoriFixedVectorCategoryStatement` ((iii)–(iv) with only the ordered Iwahori decompositions on `K`), and the proved implication `J.fixedVectorCategoryStatements_of_standardIwahori` to the earlier basis-member conclusion (`Jacquet/StandardIwahoriFixedVectorCategoryStatements`) | S: published candidate `45eed456` (Reviewer 2414); Task 6639 for the block decomposition statement, Task 6640 for (iii)–(iv) |
