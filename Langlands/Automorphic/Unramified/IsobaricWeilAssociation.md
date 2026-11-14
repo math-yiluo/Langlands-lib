@@ -81,3 +81,5 @@ cuspidal data.
 The module does not prove existence or uniqueness of associated data or representations,
 the Jacquet–Shalika rigidity that makes associated data unique, or any compatibility at
 ramified places.
+
+The Euler-polynomial transport lemma is imported from [RelativeWeilAssociationEuler](RelativeWeilAssociationEuler.md), under its unchanged name.

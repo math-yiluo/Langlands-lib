@@ -4,8 +4,8 @@ This module proves the published proposition
 `Langlands.NYLL.LocalClassFieldTheory.exists_uniformizerPrincipalSubgroup_le_normSubgroupStatement`
 by the theorem
 `Langlands.NYLL.LocalClassFieldTheory.exists_uniformizerPrincipalSubgroup_le_normSubgroup`.
-It also contains one auxiliary lemma,
-`Langlands.NYLL.PortInternal.M402.D004.exists_fieldPrincipalUnits_le_of_isOpen`.
+It reuses the canonical M289.004 theorem
+`Langlands.NYLL.LocalFieldTheory.exists_fieldPrincipalUnits_le_of_isOpen`.
 
 ## Target and exact type
 
@@ -46,51 +46,16 @@ The objects are the published ones: `uniformizerPrincipalSubgroup K ϖ d n` is
 
 ## Implemented proof
 
-### Auxiliary lemma: open subgroups contain principal units
+### Reused principal-unit theorem
 
-```lean
-theorem Langlands.NYLL.PortInternal.M402.D004.exists_fieldPrincipalUnits_le_of_isOpen
-    (K : Type u) [Field K] [ValuativeRel K] [TopologicalSpace K]
-    [IsNonarchimedeanLocalField K]
-    (H : Subgroup Kˣ) (hH : IsOpen (H : Set Kˣ)) :
-    ∃ n : Nat, 1 ≤ n ∧ fieldPrincipalUnits K n ≤ H
-```
-
-Here `Kˣ` carries Mathlib's units topology. The proof (Lean lines 57–80):
-
-1. `Units.isEmbedding_val₀` says `Units.val : Kˣ → K` is a topological
-   embedding (its hypothesis `ContinuousInv₀ K` comes from Mathlib's instance
-   `IsNonarchimedeanLocalField.instIsTopologicalDivisionRing`). Hence
-   `H = Units.val ⁻¹' V` for an open `V ⊆ K`, and `1 ∈ V` since `1 ∈ H`.
-2. The set `{x : K | x + 1 ∈ V}` is the preimage of `V` under the continuous
-   map `x ↦ x + 1`, so it is open and contains `0`; it is a neighbourhood of
-   `0` in `K`.
-3. Mathlib's `IsValuativeTopology.hasBasis_nhds_zero K` (the valuative
-   topology is part of `IsNonarchimedeanLocalField`) gives a unit `γ` of the
-   value group with `{x | valuation K x < γ} ⊆ {x | x + 1 ∈ V}`.
-4. `𝒪[K]` is a discrete valuation ring (Mathlib instance
-   `IsNonarchimedeanLocalField.instIsDiscreteValuationRing…`), so it has an
-   irreducible `ϖ` with `valuation K ϖ < 1`
-   (`Valuation.integer.v_irreducible_lt_one`). The value group with zero is
-   `MulArchimedean` (instance `ValuativeRel.instMulArchimedeanValueGroupWithZeroOfIsRankLeOne`,
-   via Mathlib's rank-at-most-one instance for local fields), so
-   `exists_pow_lt₀` gives `N` with `valuation K ϖ ^ N < γ`.
-5. Take `n = N + 1 ≥ 1`. If `u ∈ principalUnits K (N + 1)`, then
-   `u - 1 ∈ 𝓂[K] ^ (N + 1) ⊆ 𝓂[K] ^ N` (`Ideal.pow_le_pow_right`), and
-   Mathlib's `Irreducible.maximalIdeal_pow_eq_setOfPred_le_v_coe_pow` rewrites
-   this as `valuation K (u - 1) ≤ valuation K ϖ ^ N < γ`. By step 3,
-   `(u - 1) + 1 = u ∈ V` (the `simpa only` normalizes the subring coercions
-   and uses `sub_add_cancel`), so the image unit of `u` in `Kˣ` lies in
-   `Units.val ⁻¹' V = H`.
-
-The index `N + 1` rather than `N` is taken only to obtain `1 ≤ n`.
+The canonical theorem `Langlands.NYLL.LocalFieldTheory.exists_fieldPrincipalUnits_le_of_isOpen` (M289.004) says that every open subgroup of the unit group of a nonarchimedean local field contains `fieldPrincipalUnits K n` for some `n ≥ 1`. It applies the published principal-unit neighborhood theorem at the identity. Integration removes the former internal copy and imports `Langlands.NYLL.ValuedFieldTheory.LocalField.NonarchimedeanLocalField.StandardOpenSubgroups.U004.Proofs`.
 
 ### Main theorem
 
 ```lean
   intro K L _ _ _ _ _ _ _ _ ϖ
   obtain ⟨n, hn, hUn⟩ :=
-    PortInternal.M402.D004.exists_fieldPrincipalUnits_le_of_isOpen K
+    LocalFieldTheory.exists_fieldPrincipalUnits_le_of_isOpen K
       (localNormSubgroup K L) (localNormSubgroup_isOpen K L)
   refine ⟨Module.finrank K L, n, Module.finrank_pos, hn, ?_⟩
   apply sup_le
@@ -212,3 +177,5 @@ separate from acceptance.
 This proof covers only M402.004. The other order-reversal units
 (M402.001–003 and M402.005) and the exact M289.003–004 theorems are separate
 obligations.
+
+Integration consolidates the former internal `PortInternal.M402.D004.exists_fieldPrincipalUnits_le_of_isOpen` helper with the canonical `Langlands.NYLL.LocalFieldTheory.exists_fieldPrincipalUnits_le_of_isOpen` (M289.004). The norm-subgroup theorem now imports and applies that result; its statement is unchanged.

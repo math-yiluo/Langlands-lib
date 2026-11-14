@@ -122,7 +122,10 @@ local notation "splitJ" => JacquetLanglands.harrisAwaySplitGL σJ (algebraMap L 
 
 /-- **Harris (1999), Theorem 5.7(i)–(ii)**, printed p. 313.
 
-Hypotheses: `A` is a division algebra; `ρ' = JL(π_f)` for `π_f` with supercuspidal component at
+Hypotheses: `A` is a division algebra satisfying Harris's condition (R) of [H1] (1997, printed
+p. 79): at every finite place `w` of `F`, `F_w ⊗_F A` is split (isomorphic to `M_n(F_w)`) or a
+division algebra; the algebra `D'` of the inner form `GJ` is a division algebra ([H1], p. 80);
+`ρ' = JL(π_f)` for `π_f` with supercuspidal component at
 `w₀` on which the factor `ℚ_p^×` of (4.2) acts trivially; `ξ₀` is the central character of `ρ'`
 on the ideles of `L`; `τ` is the model of `ρ'` over `M` through `j : M ≃+* ℂ`; `JL(π_f)` occurs
 in `H^{n-1}(S_U, W)_λ` (the isotypic part `Hπ` is nonzero); `ψ` realizes `ν̄(π)` at a place
@@ -134,6 +137,11 @@ prime where `ρ'` is unramified, `ρπ` is unramified and its normalized Euler p
 is that of the base change `BC(π)_w`. See `HarrisTaylorCMHarrisTheorem57Statement.md`. -/
 def CMHarrisTheorem57Statement : Prop :=
   ∀ (_hdiv : ∀ a : A, a ≠ 0 → IsUnit a)
+    (_hR : ∀ w : IsDedekindDomain.HeightOneSpectrum (𝓞 F),
+      Nonempty (w.adicCompletion F ⊗[F] A ≃ₐ[w.adicCompletion F]
+          Matrix (Fin n) (Fin n) (w.adicCompletion F)) ∨
+        ∀ x : w.adicCompletion F ⊗[F] A, x ≠ 0 → IsUnit x)
+    (_hdivJ : ∀ a : D', a ≠ 0 → IsUnit a)
     {V V' : Type} [AddCommGroup V] [Module ℂ V] [AddCommGroup V'] [Module ℂ V']
     (πf : Representation ℂ σJ.rationalInvolution.FiniteAdelicPoints V)
     (ρ' : Representation ℂ D.rationalInvolution.FiniteAdelicPoints V'),

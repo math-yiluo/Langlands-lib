@@ -24,3 +24,5 @@ Worker 5130, Task 5230. Internal derived infrastructure; no external source.
 
 The two fields may lie over different primes `p` and `q`. This is needed because `K`
 lies over `p` and `padicField v` over `residuePrime v`.
+
+The integer Frobenius-degree lemma is imported from [DegreeFrobenius](../../Weil/Local/DegreeFrobenius.md), under its unchanged name.

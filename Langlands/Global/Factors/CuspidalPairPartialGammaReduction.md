@@ -223,3 +223,5 @@ axioms `propext`, `Classical.choice` and `Quot.sound`.
   that one exists. The reduction supplies one from the factor choice `c`.
 * The module proves `CuspidalLocalGenericityStatement` as an auxiliary result, under a
   module-specific name. It makes no other claim about that statement.
+
+The residue-cardinality bound is imported from [CuspidalPairResidueCardinality](CuspidalPairResidueCardinality.md) under its unchanged declaration name.

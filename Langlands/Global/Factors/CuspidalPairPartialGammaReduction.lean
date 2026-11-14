@@ -1,3 +1,4 @@
+import Langlands.Global.Factors.CuspidalPairResidueCardinality
 import Langlands.Global.Factors.CuspidalPairCompletedEquationReduction
 import Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingStatement
 import Langlands.Correspondence.AutomorphicActualGamma
@@ -211,10 +212,6 @@ variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
   {h : HasIrreducibleAdmissibleComponents P} {h' : HasIrreducibleAdmissibleComponents P'}
   {hd : HasIrreducibleAdmissibleComponents Pd} {hd' : HasIrreducibleAdmissibleComponents Pd'}
   (c : FinitePairFactorChoice ψ P P' Pd Pd' h h' hd hd')
-
-omit [CompactSpace (AdeleQuotient F)] in
-theorem one_lt_residueCardinality (v : FinitePlace F) : 1 < residueCardinality v :=
-  (padicField v).canonicalTopologicalData.residueCardinality_gt_one
 
 /-- `s ↦ L(s, Π_v × Π'_v)` is meromorphic on `ℂ`. -/
 theorem meromorphicOn_finiteL (v : FinitePlace F) :

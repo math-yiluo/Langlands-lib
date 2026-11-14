@@ -52,8 +52,11 @@ A `#check` of the elaborated declaration shows exactly
   `Langlands.NYLL.ClassFieldTheory.LocalClassFieldTheory.Finite.LocalReciprocity.ResidueAlgebraicallyClosed.U003.Proofs`,
   which supplies M237.003 and, through its imports, M237.002. No other NYLL
   declaration is used.
-- The source theorems that follow (M237.005, M237.006) are stated in the sibling
-  `U004/Statements.lean`.
+- Of the source theorems that follow, M237.006 is stated in the sibling
+  `U004/Statements.lean`. M237.005 (the value on residues) is not restated: it
+  is Mathlib's `IsLocalRing.ResidueField.map_residue` for
+  `valuationSubringComapMap A`, with `valuationSubringComapMap_isLocalHom` as
+  local instance, as recorded in `U004/Statements.md`.
 
 The original copyright and author header is retained. Apache-2.0 attribution
 and notices are in `licenses/NYLL/LICENSE` and `licenses/NYLL/NOTICE`.

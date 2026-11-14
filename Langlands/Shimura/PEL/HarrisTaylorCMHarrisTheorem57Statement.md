@@ -20,7 +20,10 @@ above a prime `p` split in `𝒦₀`, where `ℬ` is a division algebra. `π` is
 automorphic representation of `GJ` whose component `π_v`, a representation of
 `GL(n, 𝒦_v)`, is supercuspidal, and `JL(π_f)` is the representation of
 `GG(A_f)` with the same local constituents away from `v` and the local
-Jacquet–Langlands transfer of `π_v` at `v` (printed p. 312).
+Jacquet–Langlands transfer of `π_v` at `v` (printed p. 312). Section 4
+begins: "We return to the framework of [H1, H2]" (printed p. 308), where [H1]
+is Harris (1997) and [H2] is Harris (1998). So the hypotheses of [H1], §1, on
+`ℬ` and `𝒟` are in force; they are discussed below.
 `H^{n−1}(S̄_{K(N)}, W̃)[π]` is the `JL(π_f)`-isotypic component of the
 cohomology. `ν̄(π)` is the twisting character of Harris (1998), Erratum,
 (E.1)–(E.2). For a representation `σ` pure of some weight, (5.6) defines the
@@ -71,7 +74,33 @@ hRigid U σJ p hp v 𝔭 h𝔭 w₀ s Δ t f e he : Prop` says the following.
 
 Assume:
 
-* `_hdiv`: `A` is a division algebra, as Harris's `ℬ` is.
+* `_hdiv`: `A` is a division algebra, as Harris's `ℬ` is. This also follows
+  from `t`: `A` embeds in `F_{w₀} ⊗_F A ≃ Δ`, so it has no zero divisors, and
+  a finite-dimensional `ℚ`-algebra without zero divisors is a division
+  algebra. The hypothesis is kept for readability.
+* `_hR`: Harris's condition (R) of [H1] (printed p. 79): for every finite
+  place `w` of `F` (`IsDedekindDomain.HeightOneSpectrum (𝓞 F)`), the
+  completion `F_w ⊗_F A` is split (`F_w`-isomorphic to `M_n(F_w)`) or a
+  division algebra. [H1] states (R) at the places of the totally real field:
+  "At every place w of E, B is either split or a division algebra" (there
+  `E` is totally real and `B` is an algebra over the CM field `K`, the Lean
+  `E` and `F`). The statement reads (R) at the finite places of `F`. At a place
+  of `E` that splits in `F`, the completion of `ℬ` is the product of its
+  completions at the two places of `F` above it, and (R) is read factorwise.
+  At a finite place of `E` that does not split in `F`, a central simple
+  algebra over `F` with an involution of the second kind is split, because
+  its corestriction to `E` is split and the local corestriction map of Brauer
+  groups is injective. At an archimedean place `F_w = ℂ`. So (R) imposes
+  nothing at these places, and the two readings agree. [H1], p. 82, uses (R)
+  for Vignéras's theorem on the transfer of automorphic representations from
+  the multiplicative group of `𝒟^{opp}` to `GL(n)`, which "is proved only under
+  hypothesis (R)".
+* `_hdivJ`: `D'` is a division algebra. [H1], p. 80, constructs `𝒟` (there
+  `B'`) that is split at `w₀` and its complex conjugate (there `v₁, v₂`) and
+  has the invariants of `ℬ` at the other finite places, and notes: "The fact that B is a division algebra at
+  certain places other than v1 and v2 implies that B' is again a division
+  algebra." This consequence of a hypothesis of [H1] is retained as a
+  hypothesis; see "Hypotheses of [H1]" below.
 * `πf : Representation ℂ σJ.rationalInvolution.FiniteAdelicPoints V` (Harris's
   `π_f`) and `ρ' : Representation ℂ D.rationalInvolution.FiniteAdelicPoints V'`
   are related by `IsHarrisJacquetLanglandsTransfer … πf ρ'`, that is,
@@ -194,6 +223,31 @@ component of `ρ'`. At `p` itself no standard unramified chart exists, since
   twisting character for the conjugate datum. The statement uses `ν̄`, as Harris
   (1999) does. Matching this convention with the Library's datum is part of the
   unformalized identification.
+* **Hypotheses of [H1].** Harris (1999), §4, returns to the framework of
+  [H1, H2]. The hypotheses of [H1], §1 (printed pp. 79–80), are treated as
+  follows.
+  * Condition (R) is `_hR`.
+  * [H1] assumes "B to be a division algebra at a large (unspecified) number
+    of finite places of K". Its stated purpose is that all inner twists of the
+    associated unitary groups remain in the class considered by Kottwitz and
+    Clozel, so that the trace formula and quadratic base change are
+    available. This is not a precise condition, and it is not formalized.
+    The statement retains the consequence that [H1], p. 80, draws from it:
+    `𝒟` is again a division algebra (`_hdivJ`).
+  * From §2 on, [H1] also assumes that `ℬ` is a division algebra at every
+    place above `p`. This assumption is dropped, as in Harris (1998),
+    Appendix, printed p. 206: "These assumptions were made exclusively to
+    simplify notation … In any case, this restriction is irrelevant".
+  * Harris (1999), p. 308, assumes `inv_v(ℬ) = 1/n`. The published transfer
+    relation allows any central division algebra `Δ` over `F_{w₀}` with
+    `t : F_{w₀} ⊗_F A ≃ Δ`. This generalizes Harris's invariant.
+  * Harris (1999), p. 309, assumes `v ∈ Φ_p`, where `Φ_p` is the set of
+    places of `𝒦` above `p` that the CM type `Φ` defines through Harris's fixed
+    identification of `ℂ` with `ℚ̄_p`. This identification does not enter
+    Theorem 5.7. The statement lets `w₀` lie above either place `𝔭` of `L`
+    above `p`. Composing the identification with complex conjugation exchanges
+    the two places of `L` above `p`, so for each `𝔭` some identification puts
+    `w₀` in `Φ_p`.
 * **Hypotheses of the Library.** The fixed-vector comparison, finiteness and
   continuity are hypotheses, because the Library's Galois representation
   `cmHarrisLambdaIsotypicFixedVectorsObjects` needs them. They hold for the
@@ -222,8 +276,9 @@ component of `ρ'`. At `p` itself no standard unramified chart exists, since
 ## Provenance
 
 M. Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39 (1999): §4, (4.2), printed p. 309 (PDF p. 11; the factor
-`ℚ_p^×`); §5, printed p. 312 (`π`, `π_v` supercuspidal, `JL(π_f)`, the
+J. Math. Kyoto Univ. 39 (1999): §4, printed p. 308 (PDF p. 10; "We return to
+the framework of [H1, H2]", `inv_v(ℬ) = 1/n`); (4.2), printed p. 309 (PDF
+p. 11; `v ∈ Φ_p`, the factor `ℚ_p^×`); §5, printed p. 312 (`π`, `π_v` supercuspidal, `JL(π_f)`, the
 isotypic component); (5.6) and Theorem 5.7, printed p. 313 (PDF p. 15),
 checked against the page image. The source is
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, PDF SHA-256
@@ -232,8 +287,20 @@ checked against the page image. The source is
 M. Harris, *The local Langlands conjecture for GL(n) over a p-adic field,
 n < p*, Invent. Math. 134 (1998), Erratum to [H1], printed pp. 181–182
 (`ν(Gπ) = ξ^{−1} ∘ r_μ · |·|^{(n−1)/2}` (E.1), with `r_μ(a) = N_{𝒦/𝒦₀}(a)`
-and `r̄_μ = r_μ ∘ c` (E.2)). The source is `harris-1998-local-langlands`,
-SHA-256 `7934239ea37d0b91f741ae70c2ac157fe5d619cda4dd992ac24e39ae460c375b`.
+and `r̄_μ = r_μ ∘ c` (E.2)); Appendix, printed p. 206 (the assumption of [H1],
+§2, that `ℬ` is a division algebra at every place above `p` is irrelevant).
+The source is `harris-1998-local-langlands`, SHA-256
+`7934239ea37d0b91f741ae70c2ac157fe5d619cda4dd992ac24e39ae460c375b`.
+
+M. Harris, *Supercuspidal representations in the cohomology of Drinfel'd upper
+half spaces; elaboration of Carayol's program*, Invent. Math. 129 (1997) [H1],
+§1: condition (R) and the division places of `ℬ`, printed p. 79 (PDF p. 5);
+the construction of `ℬ'` and its division property, printed p. 80 (PDF p. 6);
+Vignéras's transfer under (R), printed p. 82 (PDF p. 8). The source is
+`harris-1997-drinfeld-cohomology`, PDF SHA-256
+`aea284b917442459028b710dbfd9ae537631490504f3bc6d54a1e76ee697e0d9`. The
+erratum to [H1] (Harris 1998, pp. 180–182) concerns the twisting character and
+does not affect these hypotheses.
 
 The Library's ingredients are `IsHarrisJacquetLanglandsTransfer`,
 `harrisAwaySplitGL`, `HarrisAwayComplement` and `splitTensor`

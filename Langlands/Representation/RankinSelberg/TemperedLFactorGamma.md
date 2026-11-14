@@ -58,3 +58,5 @@ elementary field algebra. This module supplies the rational comparison only.
 Normalized residual factorizations, actual dual certificate existence,
 square-integrable genericity, original and dual pole bounds, and the final use
 of reflection rigidity remain obligations of the tempered theorem assembly.
+
+The finite-product identity is imported from [RationalGammaExpressionProduct](RationalGammaExpressionProduct.md), retaining its existing declaration name and mathematical statement.

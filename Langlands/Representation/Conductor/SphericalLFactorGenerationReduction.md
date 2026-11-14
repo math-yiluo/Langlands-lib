@@ -23,10 +23,12 @@ theorem sphericalLFactorGeneration_of_ordered
   ([`UnramifiedCorankOneLaurentStatement`](UnramifiedCorankOneLaurentStatement.md)):
   for every `x`, every integral of `π × I(x)` that converges on a right
   half-plane, times `∏_i P(x_i X)`, is a Laurent polynomial (JPSS 1983,
-  Theorem (3.1)(ii)). A prospective module
-  `UnramifiedCorankOneLaurentFromMultiplicativity` is intended to derive it
-  from the general-field multiplicativity statements of JPSS (3.1); that
-  successor is not part of this contribution or the published Library.
+  Theorem (3.1)(ii)). The module
+  [`UnramifiedCorankOneLaurentFromMultiplicativity`](UnramifiedCorankOneLaurentFromMultiplicativity.md)
+  derives it from the general-field multiplicativity statements of JPSS (3.1),
+  and `unramifiedCorankOneLaurent`
+  ([`SphericalCorankOneLaurentProof`](SphericalCorankOneLaurentProof.md))
+  proves it.
 - `OrderedUnramifiedCorankOneGenerationStatement`
   ([`OrderedUnramifiedCorankOneGenerationStatement`](OrderedUnramifiedCorankOneGenerationStatement.md)):
   for norm-ordered `x`, a finite sum of integrals of `π × I(x)` times

@@ -1,3 +1,4 @@
+import Langlands.Weil.Local.DegreeFrobenius
 import Langlands.Global.Factors.RelativeIsometryFactorStatement
 import Langlands.Global.Factors.RelativeWeilLocalEuler
 import Langlands.VirtualRepresentation.Weil.GroupTransport
@@ -132,12 +133,6 @@ theorem localDegreeInt_inv (F : PadicField.{uF} p) (w : localWeilGroup F) :
     localDegreeInt F w⁻¹ = -localDegreeInt F w := by
   change (localDegree F w⁻¹).toAdd = _
   rw [map_inv, toAdd_inv]
-  rfl
-
-theorem localDegreeInt_localGeometricFrobenius (F : PadicField.{uF} p) :
-    localDegreeInt F (localGeometricFrobenius F) = 1 := by
-  change (localDegree F (localGeometricFrobenius F)).toAdd = 1
-  rw [localGeometricFrobenius_degree]
   rfl
 
 namespace InertiaEuler

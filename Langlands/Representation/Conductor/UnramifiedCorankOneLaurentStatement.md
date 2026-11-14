@@ -2,7 +2,10 @@
 
 Author: Worker 8. This module defines one proposition,
 `Langlands.Conductor.UnramifiedCorankOneLaurentStatement` (universes `uF`,
-`uV`). It is a statement only: nothing here proves it.
+`uV`). It is a statement only: nothing in this module proves it. The theorem
+`Langlands.Conductor.unramifiedCorankOneLaurent`, in the separate module
+[`SphericalCorankOneLaurentProof`](SphericalCorankOneLaurentProof.md), proves
+it.
 
 ## Statement
 

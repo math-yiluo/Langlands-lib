@@ -107,3 +107,5 @@ quantifies over arbitrary building data in the same way.
 
 The statement is an interface: nothing here constructs a valuation, an apartment, a
 building or an integral model, or proves that `BuildingData F G` is inhabited.
+
+The generic pointwise-fixer set-stability lemma is imported from [PointwiseFixerSetStabilizer](PointwiseFixerSetStabilizer.md) under its unchanged name.
