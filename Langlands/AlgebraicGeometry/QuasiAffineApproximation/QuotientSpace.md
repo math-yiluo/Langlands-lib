@@ -82,3 +82,5 @@ that step; their formulation is derived for this route and is not taken from the
    `f₁ ≫ e⁻¹` and `a ≫ e⁻¹`. `ψ` is finite (`isFinite_left_of_isFinite_map`), hence
    affine. The identity `q₁ ≫ ψ = φ₁ ≫ ψV` follows from `q ≫ f₁ = φ ≫ a` by faithfulness
    of Yoneda.
+
+The common helper `exists_fac_of_kernelPair` is imported from [FppfKernelPairDescent](../FppfKernelPairDescent.md), with unchanged namespace and statement.

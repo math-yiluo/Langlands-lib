@@ -49,3 +49,7 @@ The local canonical topology, valuation, local-field and group measurable
 instances use explicit `matrixComparisonWeyl` names. Their mathematical terms
 and locality are unchanged. This permits importing the Weyl comparison with
 the actual model normalized-generator module without generated-name collisions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonWeylTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

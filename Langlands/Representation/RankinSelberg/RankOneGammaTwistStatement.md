@@ -219,3 +219,7 @@ The determinant of `weylLong` is not currently a named Library lemma. The
 later multiplicativity result may be used for this base case. This module
 imports only `PadicPairFactors` and `Twist/Definitions`, and assumes none of
 these proof steps.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneGammaTwistStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

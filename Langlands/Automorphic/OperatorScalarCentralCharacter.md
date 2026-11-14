@@ -50,7 +50,9 @@ Let `S : OperatorRealization F n` and `χ : HeckeCharacter F`.
 - `hasCentralCharacter_of_centralCharacterSubgroup_eq_top`: if the subgroup is `⊤`, then
   `S.HasCentralCharacter χ`. This is the characterization `hasCentralCharacter_iff`, with
   membership in `centralCharacterAutomorphicSubrepresentation`.
-- `evaluate_toContinuous_smul`: evaluation of `c • f` is `c` times evaluation of `f`.
+- Evaluation of `c • f` is `c` times evaluation of `f`. This is
+  `evaluate_toContinuous_smul`, imported from
+  `Langlands.Automorphic.OperatorRealizationEvaluation`.
 - `evaluate_scalar_finiteIdeleInclusion`: left translation by the scalar matrix of a local
   idele `a ∈ F_v^×` equals the local action `S.localRepresentation v (scalar a)`. The scalar
   matrix is central (`AdelicGL.scalar_commute`), so left translation by it equals right

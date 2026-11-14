@@ -1,5 +1,6 @@
 import Langlands.Global.ArchimedeanCompactReproduction
 import Langlands.Automorphic.CuspidalL2.SiegelCover
+import Langlands.Automorphic.OperatorRealizationEvaluation
 
 /-! # One compactly supported kernel reproducing a realized vector at every adelic point -/
 
@@ -129,11 +130,6 @@ theorem evaluate_toContinuous_add (f f' : S.Space) (x : AdelicGL F n) :
     evaluate F n (S.toContinuous (f + f')) x =
       evaluate F n (S.toContinuous f) x + evaluate F n (S.toContinuous f') x := by
   rw [map_add]
-  rfl
-
-theorem evaluate_toContinuous_smul (c : ℂ) (f : S.Space) (x : AdelicGL F n) :
-    evaluate F n (S.toContinuous (c • f)) x = c * evaluate F n (S.toContinuous f) x := by
-  rw [map_smul]
   rfl
 
 variable [MeasurableSpace (InfiniteAdelicGL F n)] (μ : Measure (InfiniteAdelicGL F n))

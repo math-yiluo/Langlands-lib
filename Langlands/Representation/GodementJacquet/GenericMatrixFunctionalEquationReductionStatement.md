@@ -31,3 +31,7 @@ of the embedding. Its image is a genuine subrepresentation and is equivalent
 to the original source. These structural steps explain the implication; their
 proof and the finite-product and descent inputs require their own validation
 and independent review. No additional literature claim is introduced here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.GenericMatrixFunctionalEquationReductionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

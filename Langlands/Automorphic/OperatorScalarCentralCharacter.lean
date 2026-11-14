@@ -3,6 +3,7 @@ import Langlands.Automorphic.LocalDeterminantCharacter
 import Langlands.ClassField.Global.LocalRelativeWeilUnramified
 import Langlands.Global.IdeleClosedSubgroupDensity
 import Langlands.Representation.Unramified.TopHeckeOperator
+import Langlands.Automorphic.OperatorRealizationEvaluation
 
 /-! # Scalar matrices acting through a Hecke character
 
@@ -247,10 +248,6 @@ theorem hasCentralCharacter_of_centralCharacterSubgroup_eq_top (χ : HeckeCharac
     rw [h]
     exact Subgroup.mem_top z
   exact (S.mem_centralCharacterSubgroup χ z).mp hz f x
-
-theorem evaluate_toContinuous_smul (c : ℂ) (f : S.Space) (x : AdelicGL F n) :
-    evaluate F n (S.toContinuous (c • f)) x = c * evaluate F n (S.toContinuous f) x :=
-  (congrArg (fun φ => evaluate F n φ x) (S.toContinuous.map_smul c f)).trans rfl
 
 /-- Left translation by the scalar matrix of a local idele is the local action of the local
 scalar matrix. -/

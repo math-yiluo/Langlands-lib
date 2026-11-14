@@ -65,3 +65,7 @@ The assembled analytic assertions retain it explicitly. This module
 supplies neither inverse-transpose analytic data nor a functional
 equation, and proves neither closed two-block rank-one base proposition.
 No two-block or finite-block multiplicativity theorem is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.ModelMatrixAnalyticData` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

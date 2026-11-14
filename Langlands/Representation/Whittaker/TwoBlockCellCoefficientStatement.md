@@ -26,3 +26,7 @@ Fourier surjectivity assumption or prescribed-value extension result.
 This file states the proposition. It does not prove it or replace the host
 extension formula: Fourier realization, determinant-power simplification,
 and the independently lifted carrier universes remain separate steps.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockCellCoefficientStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -101,3 +101,7 @@ prove analytic continuation, common-generator existence, or that any two
 nontrivial characters are related by such a scaling. It gives no functional
 equation, epsilon or gamma formula, conductor formula, nongeneric
 classification theorem, or completion of the broad local-factor task.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CanonicalPairLFactor` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

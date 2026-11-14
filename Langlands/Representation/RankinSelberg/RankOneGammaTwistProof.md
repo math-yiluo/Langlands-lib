@@ -77,3 +77,7 @@ was present. No Section 7 or later multiplicativity result is used.
 
 The result transports a supplied certificate in either direction. It does
 not assert that a certificate exists and defines no new gamma factor.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneGammaTwistProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

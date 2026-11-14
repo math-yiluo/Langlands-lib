@@ -295,3 +295,7 @@ averages, Tonelli or Fubini statements, convergence, representation
 integrands nor functional equations. The averages are total Bochner
 integrals, which are zero for non-integrable fibers; their invariance and
 descent hold for every scalar function without integrability premises.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockQuotientData` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

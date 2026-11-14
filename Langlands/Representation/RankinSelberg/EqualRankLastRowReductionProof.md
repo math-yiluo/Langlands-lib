@@ -246,3 +246,7 @@ measure to `unipotentHaar F.Carrier (n + 1)`; the theorem asserts only that
 The compact-character lemma `eq_one_of_isCompact` is imported from
 [CompactNormCharacter](../../Topology/CompactNormCharacter.md).
 Its declaration and proof retain their original namespace and meaning.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankLastRowReductionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

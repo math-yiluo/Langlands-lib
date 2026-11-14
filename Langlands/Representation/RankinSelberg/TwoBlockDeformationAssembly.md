@@ -139,3 +139,7 @@ character, rank data and blocks. The full-Whittaker-type premise on the blocks
 is not needed for that step. Once a proof of `H` is published, the target is
 this theorem applied to that proof. Until then, this theorem is conditional on
 `H` and does not discharge the target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDeformationAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

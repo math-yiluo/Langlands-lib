@@ -354,3 +354,7 @@ gamma factors. These belong to later units of the parent task. The
 identification of `V₁ ⊗ V₂` with a two-factor `TensorProduct` and the
 tensor flip `V₁ ⊗ V₂ ≃ V₂ ⊗ V₁` are not constructed here. No analytic
 compatibility statement is assumed.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Shahidi.Induction` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

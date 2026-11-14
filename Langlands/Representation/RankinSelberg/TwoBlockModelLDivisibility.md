@@ -121,3 +121,7 @@ finite-block multiplicativity, Section 7 descent, later multiplicativity result,
 functional equation or gamma-factor existence is used. This file supplies the
 L argument; `TwoBlockRankOneProof` also closes the separate gamma target
 through the generic matrix functional-equation theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockModelLDivisibility` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

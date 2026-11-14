@@ -117,3 +117,7 @@ These lemmas use the casts at the large rank `(1 + (t + 1)) + k`, which is `r` w
 Together these lemmas rewrite both integrands of Lemma (5.5) into the coordinates of
 `RankOneExtensionAnalyticData`. Any comparison of the integrals themselves is left
 to later modules.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionSpanTransfer` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

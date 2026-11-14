@@ -85,3 +85,7 @@ field and representation carrier have independent universes. The provenance is
 internal: all steps specialize the existing concrete tests, Fourier transform,
 Haar-density formula and integrated-action laws; no unproved functional
 equation or scalar comparison is a premise.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.RegularMatrixConvolutionExchange` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

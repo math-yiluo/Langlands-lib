@@ -107,3 +107,7 @@ compactness of the parabolic quotient. The geometric lemma, exactness,
 admissibility preservation, transitivity, and identification of the explicit
 character with Haar scaling remain separate results. The functor definitions
 alone assert none of those conclusions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.RefinementFunctors` and `Langlands.AllField.Representation.Geometric.RefinementFunctorsSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

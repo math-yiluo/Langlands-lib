@@ -30,3 +30,7 @@ All assertions are derived from the existing concrete Laurent and rational
 function rings and normalized determinant weights. No representation-theoretic
 existence result is assumed beyond the displayed inputs, and no original
 literature is cited for this internal specialization.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.MatrixDenominatorCancellation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

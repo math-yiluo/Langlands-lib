@@ -79,3 +79,7 @@ analytic data and the actual original model vector, converting the signed
 block expression into the Library dual integral, and proving the final
 analytic, quotient-measure and functional transports remain separate work.
 This supporting result does not complete the host gamma-comparison task.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonPrincipalModelDual` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -133,3 +133,7 @@ Exact declaration inspection in environment
 `statement_returns_prop: true`, and independent universe parameters `uF` and
 `uW`. Its only reported axioms are `propext`, `Classical.choice`, and
 `Quot.sound`. This compilation and inspection does not prove the proposition.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.NormalizedProductWhittakerTypeStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

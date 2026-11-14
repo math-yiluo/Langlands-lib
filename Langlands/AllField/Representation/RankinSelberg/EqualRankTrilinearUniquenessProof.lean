@@ -1,0 +1,34 @@
+import Langlands.Representation.RankinSelberg.EqualRankTrilinearUniquenessProof
+import Langlands.AllField.Representation.CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof
+import Langlands.AllField.Representation.CuspidalSupport.CuspidalityComparisonProof
+import Langlands.AllField.Representation.CuspidalSupport.TotalConjugatingCountProof
+import Langlands.AllField.Representation.Induction.Equivalences
+import Langlands.AllField.Representation.Parabolic.NormalizedInductionStatementSupplement
+import Langlands.AllField.Representation.RankinSelberg.EqualRankTrilinearMirabolicPrerequisites
+import Langlands.AllField.Representation.Whittaker.MirabolicCompactTwistedPairingProofSupplement
+import Langlands.AllField.Representation.Whittaker.MirabolicFiniteLengthProof
+import Langlands.AllField.Representation.Whittaker.MirabolicTwistedPairingRigidityProof
+/-! JPSS Section 2.10: equal-rank uniqueness on the actual coefficient models. -/
+
+namespace Langlands.AllField.RankinSelberg
+open Langlands.RankinSelberg hiding CentralBilinearVanishingStatement EqualRankAnalyticStatement EqualRankFrobeniusStatement EqualRankFunctionalEquationStatement EqualRankTrilinearMirabolicPrerequisites EqualRankTrilinearPrerequisites EqualRankTrilinearUniquenessStatement LastRowCompactOrbitStatement QuotientHaarExistenceStatement UnequalRankAnalyticStatement UnequalRankCommonGeneratorStatement ZeroRowLastRowCutoffStatement centralBilinearVanishing centralSpectralElement centralSpectralElement_det_abs centralSpectralElement_mem_center determinantWeight_centralSpectralElement equalRankFrobenius equalRankTrilinearPrerequisites_of_mirabolic equalRankTrilinearUniqueness equalRankTrilinearUniqueness_of_mirabolic_prerequisites equalRankTrilinearUniqueness_of_prerequisites inverseUniformizer_normalizedAbsoluteValue isEqualRankLPolynomial_characterChange_normalized lastRowCompactOrbit mirabolic_exists_exception_length_le_one mirabolic_pair_control_of_statements mirabolic_shift_length_bound normalizedAbsoluteValue normalizedAbsoluteValue_apply normalizedDeterminantWeight_eq_spectralPoint_zpow zeroRowLastRowCutoff zetaSpan_equalRank_characterChange_normalized
+open Langlands.AllField.RankinSelberg
+
+open Langlands.Whittaker hiding CompactLocalizationStatement MirabolicCompactTwistedPairingStatement MirabolicFiniteLengthStatement MirabolicFunctionalMultiplicityStatement MirabolicTwistedPairingRigidityStatement UnipotentOrbitStatement compactLocalization functionalsCongr mirabolicCompactTwistedPairing mirabolicFiniteLength mirabolicFunctionalMultiplicity mirabolicTwistedPairingRigidity unipotentOrbit
+open Langlands.AllField.Whittaker
+
+universe uF uV uW
+
+/-- JPSS Section 2.10, Proposition: equal-rank twisted invariant trilinear
+forms are unique up to scalar outside finitely many spectral values. -/
+theorem equalRankTrilinearUniqueness
+    (F : Type uF) [Field F] (T : LocalFieldData F) (n : ℕ) :
+    EqualRankTrilinearUniquenessStatement.{uF,uV,uW} F T n :=
+  equalRankTrilinearUniqueness_of_mirabolic_prerequisites F T n
+    ⟨mirabolicFiniteLength.{uF,uV}, mirabolicFiniteLength.{uF,uW},
+      mirabolicFunctionalMultiplicity.{uF,uV} F T n,
+      mirabolicFunctionalMultiplicity.{uF,uW} F T n,
+      mirabolicTwistedPairingRigidity.{uF,uV,uW} F T n,
+      mirabolicCompactTwistedPairing.{uF} F T n, equalRankFrobenius.{uF,uV,uW} F T n⟩
+
+end Langlands.AllField.RankinSelberg

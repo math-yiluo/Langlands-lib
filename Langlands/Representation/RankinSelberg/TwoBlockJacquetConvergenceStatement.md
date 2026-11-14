@@ -290,3 +290,7 @@ deformation or multiplicativity claim. It does not state the source's claim
 that the resulting function lies in `W(σ_u; ψ̄)`, or that all elements of
 `W(σ_u; ψ̄)` arise this way. It asserts nothing about the Section (4.5)
 deformation, stable integrals or complex parameters.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockJacquetConvergenceStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

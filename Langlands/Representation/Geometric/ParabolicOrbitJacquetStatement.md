@@ -51,3 +51,7 @@ must supply the actual comparison and normalization cancellation; neither is
 part of the definition of the new orbit functor. This proposition does not by
 itself prove the fixed support-filtration theorem, ordering existence, or
 existence of standard intersection refinements.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicOrbitJacquetStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -39,3 +39,7 @@ These lemmas give the vanishing of the actual integrands:
   holds when the test function is zero.
 - `coefficientModel_val_eq_zero`: every vector of the coefficient image of a zero
   test functional is the zero function.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentAdapters` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

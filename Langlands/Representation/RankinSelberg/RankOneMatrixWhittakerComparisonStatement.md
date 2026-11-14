@@ -194,3 +194,7 @@ finite generation through
 `Representation.IntertwiningMap.equivLinearMapAsModule` and
 `Module.Finite.of_surjective`. These are obligations of a separate proof
 task, not premises of this statement.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixWhittakerComparisonStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -69,3 +69,7 @@ obligations for an unconditional proof. In particular, this module supplies
 no compact-induction comparison, localization exactness, orbit quotient
 isomorphism, or character cancellation. It is a conditional assembly unit,
 not a proof submission for the main geometric-lemma target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ConditionalAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

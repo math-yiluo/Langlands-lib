@@ -100,3 +100,7 @@ pp. 446, 448–449). This proof implements item 4 of that Markdown's proof
 outline in the Library's actual product coordinates. The block bijection, the
 order-preserving inner map and the recast refinements are internal
 formalization devices with no separate literature counterpart.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.MinimalWeylTransportProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

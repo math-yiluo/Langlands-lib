@@ -44,3 +44,7 @@ signed matrices; FourierInvariance supplies finite-order and permutation
 determinant norms. This module proves no spectral-weight comparison,
 compact-kernel integration, same-model dual-vector extraction, or final
 gamma equation. Those remain further obligations of the host task.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonWeylOrbitBlocks` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

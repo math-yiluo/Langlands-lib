@@ -204,3 +204,7 @@ two-block splitting of the product measure it can use the slices and tensors of
 `SchwartzBruhatProduct`. Those results are not hypotheses of this statement. Both
 integrands are continuous and compactly supported in the integration variable, so the
 integrability conjuncts are expected to follow directly.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.HarmonicAnalysis.TwoBlockRowFourierCompanionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

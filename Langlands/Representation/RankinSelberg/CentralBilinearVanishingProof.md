@@ -72,3 +72,7 @@ it does not claim to follow the source's twisted-contragredient argument.
 This module proves the central bilinear statement only. Frobenius reciprocity,
 mirabolic finite length, the irreducible pairing bounds, and the full equal-rank
 trilinear uniqueness theorem remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CentralBilinearVanishingProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -93,3 +93,7 @@ with every upper-unipotent element of `K(r₂)` in that kernel. On the level
 functional `L` is `averagedFunctional` for the compact open subgroup
 `principalLevelOpenSubgroup F m r`. The last property follows from
 `averagedFunctional_apply_of_forall` and `apply_inv_torus_eq`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.SquareIntegrableWhittakerTorusSumCoefficient` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

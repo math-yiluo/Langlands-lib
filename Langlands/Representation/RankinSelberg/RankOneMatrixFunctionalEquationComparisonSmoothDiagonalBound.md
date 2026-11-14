@@ -9,3 +9,7 @@ This internal derived module restricts genuine ambient integrability directly to
 `matrixDiagonalIntegrand` evaluates the unchanged full-matrix integrand on `Iwasawa.diagonalUnits a`. For each actual member of `biSmoothMatrixCoefficients σ`, `integrable_biSmooth_matrixDiagonalIntegrand` derives its full torus integrability from its actual ambient matrix convergence. SmoothTorusBound supplies the spectral-independent principal stabilizer and measurability. Finally `biSmooth_matrixDiagonal_convergesOnRight` retains precisely the common bound and complex shift `s + jpssShift n` supplied by the original matrix hypothesis, uniformly over all full square-matrix tests and all actual coefficients.
 
 The statements cover every canonical p-adic field, every rank including zero, and independent arbitrary field and representation-carrier universes. They assert neither raw Whittaker convergence nor a gamma comparison. Provenance is source-free composition of actual principal entry conditions, product Haar normalization, HaarRestriction, and the stabilizer results of SmoothTorusBound.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonSmoothDiagonalBound` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

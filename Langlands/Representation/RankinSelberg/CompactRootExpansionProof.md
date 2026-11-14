@@ -37,3 +37,7 @@ No norm is moved inside an inner sum. No coefficient, test value or functional
 is cancelled or assumed nonzero. The result concerns compact integration;
 the coefficient-expansion assumptions and subsequent torus and quotient
 analytic steps retain their separate roles.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CompactRootExpansionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

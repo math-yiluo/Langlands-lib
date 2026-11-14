@@ -124,3 +124,7 @@ or half-plane convergence is a premise. Slice integrability, summability
 and the expansion are conclusions. The proposition makes no claim of
 unconditional convergence, a lower support bound, rational continuation,
 analytic factor existence, a functional equation or multiplicativity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankSliceExpansionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

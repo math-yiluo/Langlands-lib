@@ -45,3 +45,7 @@ block index is strictly smaller than the test index, including the boundary
 `t = r`. This derived arithmetic fact allows unequal-rank block analytic
 theorems to be used without excluding the equal-rank induced pair. It does not
 prove an analytic statement.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantRankTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

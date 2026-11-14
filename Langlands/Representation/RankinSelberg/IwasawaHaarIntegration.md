@@ -141,3 +141,7 @@ The route differs from the quotient proof `quotientIwasawaIntegration`. It uses
 neither the quotient, nor compatibility of quotient measures, nor the torus-sum
 decomposition. It needs only the group factorization, the measure-preserving
 Borel shifts and the diagonal-conjugation scaling.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.IwasawaHaarIntegration` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

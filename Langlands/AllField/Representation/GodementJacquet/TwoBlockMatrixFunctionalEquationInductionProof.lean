@@ -1,0 +1,28 @@
+import Langlands.Representation.GodementJacquet.TwoBlockMatrixFunctionalEquationInductionProof
+import Langlands.AllField.Representation.GodementJacquet.TwoBlockMatchedZetaExpansion
+import Langlands.AllField.Representation.GodementJacquet.TwoBlockMatrixAnalyticInductionProof
+/-!
+# Conditional two-block Godement–Jacquet normalized functional equation
+
+The closed two-block functional-equation statement follows from the conditional
+reduction `twoBlockMatrixFunctionalEquationInduction_of_expansion`, applied to the
+matched zeta expansion `twoBlockMatchedZetaExpansion` and the two-block analytic
+induction `twoBlockMatrixAnalyticInduction`. See the paired Markdown.
+-/
+
+namespace Langlands.AllField.GodementJacquet
+open Langlands.GodementJacquet hiding TwoBlockMatchedZetaExpansionStatement TwoBlockMatrixAnalyticInductionStatement TwoBlockMatrixFunctionalEquationInductionStatement TwoBlockOrdinaryMatrixAnalyticInductionStatement compactInducedCoefficientKernel compactProductPairingKernel exists_compactInducedCoefficientFormula exists_compactProductCoefficientFormula exists_compactProductPairing_expansion inverseTransposeProductReversalEquiv iotaMatrixAnalyticAssertions_product_iff padicMatrixFourierPair_compact_left_invariant padicMatrixFourierPair_leftRight_invariant twoBlockMatchedZetaExpansion twoBlockMatrixAnalyticInduction twoBlockMatrixAnalyticInduction_of_ordinary twoBlockMatrixFunctionalEquationInduction twoBlockMatrixFunctionalEquationInduction_of_expansion twoBlockOrdinaryMatrixAnalyticInduction
+open Langlands.AllField.GodementJacquet
+
+universe uF uV
+
+/-- **Conditional two-block Godement–Jacquet normalized functional equation.**
+For two smooth admissible blocks carrying normalized matrix functional-equation
+data, the normalized induced representation carries the same data with the
+product polynomials, the product epsilon unit and the summed exponent. -/
+theorem twoBlockMatrixFunctionalEquationInduction :
+    TwoBlockMatrixFunctionalEquationInductionStatement.{uF, uV} :=
+  twoBlockMatrixFunctionalEquationInduction_of_expansion twoBlockMatchedZetaExpansion
+    twoBlockMatrixAnalyticInduction
+
+end Langlands.AllField.GodementJacquet

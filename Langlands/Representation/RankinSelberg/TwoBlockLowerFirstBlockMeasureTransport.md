@@ -34,3 +34,7 @@ through the measurable quotient equivalence to the lower measure.
 The original JPSS lower subgroup and quotient conventions motivate the
 construction (printed pages 413 and 416–418). The compatibility and
 sigma-finiteness arguments here are derived measure-theoretic support.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockMeasureTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

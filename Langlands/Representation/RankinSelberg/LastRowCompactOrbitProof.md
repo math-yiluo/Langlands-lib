@@ -124,3 +124,7 @@ does not prove the source's existence theorem.
 `lastRowCompactOrbit_of_field` are public declarations in the namespace
 `Langlands.RankinSelberg`. The first is imported from `QuotientIntegrals`;
 the others are defined here. Their hypotheses are as stated above.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.LastRowCompactOrbitProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

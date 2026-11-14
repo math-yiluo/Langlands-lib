@@ -75,3 +75,7 @@ Only matrices of normalized determinant one are treated; for general `A`, `B`
 the Haar scaling factor would appear and is not stated here. The results
 concern the raw integral `rectangularFourierIntegral` for any `ψ` and `ν`; the
 Schwartz–Bruhat Fourier equivalence enters only in the downstream module.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.HarmonicAnalysis.RectangularFourierUnimodularTranslate` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

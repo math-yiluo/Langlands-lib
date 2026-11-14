@@ -39,3 +39,7 @@ The results apply to dimension `m + 1` for any `m > 0`, in particular the host's
 dimension `n + 2`. This is a derived helper, proved from the existing matrix,
 Fourier and Jacquet constructions. It establishes no nonzero operator, scalar
 gamma factor, extension to arbitrary matrix tests, or functional equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalCutoffFourierRegularity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

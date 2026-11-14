@@ -288,3 +288,7 @@ continuation, Section 4.10(3) reversed-dual comparison, rectangle Jacobian
 comparison, or final gamma/L conclusion. The separately owned equal-total-rank
 identity with a Schwartz row test is unchanged. This statement has no
 Schwartz row test and uses no later multiplicativity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantFirstBlockLaurentIdentityStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

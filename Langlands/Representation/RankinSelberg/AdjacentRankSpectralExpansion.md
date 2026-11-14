@@ -87,3 +87,7 @@ No induced-model realization, full Whittaker-type assertion, rational factor,
 functional equation, or parent gamma/L certificate is concluded. The actual
 finite coefficient convolution, common right half-plane, finite product
 identity and final factor assembly retain their separate proof obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankSpectralExpansion` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

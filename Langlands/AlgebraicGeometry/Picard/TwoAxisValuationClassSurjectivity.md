@@ -79,3 +79,5 @@ representer is constructed. The provenance is internal composition of published
 Library results. Raynaud, LNM 119, proof of XI 1.5, printed p.162, uses the same
 consequence of extension over traits; this module proves it for the Library's
 presheaf.
+
+`compProductInv_hom` gives the reverse inverse identity `compProductInv A b ≫ compProductHom A b = 𝟙 _`. Together with `compProductHom_inv`, it is shared by the Artinian lifting and valuative separation proofs. Its proof applies pullback extensionality and the inverse identity of the carrier comparison.

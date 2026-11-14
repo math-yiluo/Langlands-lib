@@ -106,3 +106,7 @@ whole-Levi transport pieces for associated Levis. Those two pages were read
 directly for this proof. The implementation gives the full-refinement maps
 explicitly; it proves neither the geometric filtration nor the separate
 quasicuspidality or vanishing components.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

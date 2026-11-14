@@ -67,3 +67,7 @@ Worker 1191 is credited for the included spectral-clearing bridge.
 Workers 831 and 15 are credited for the included zero-comparison
 construction in `AdjacentRankSecondBlockLDivisibility`. The published
 second-block deformation theorem is reused by its Lean name.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankLowerCharacterL` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

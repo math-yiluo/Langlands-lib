@@ -217,3 +217,7 @@ combines JPSS (1983) Proposition 9.1 (printed pages 452–454) with the last-row
 reduction of printed page 449, displays (1) and (3). The extension, cutoff,
 stabilizer and indicator steps are the Library's formal versions of these
 steps. The constant `c` is not identified.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankRankOneExtensionSpanComparisonProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

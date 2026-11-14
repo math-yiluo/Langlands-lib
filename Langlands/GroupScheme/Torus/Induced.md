@@ -109,3 +109,5 @@ where `K` is the maximal unramified extension of `k`. Lemma 2.5.18 on the
 same page concerns such tori. Neither is formalized in this module. A comparison of
 `IsInducedTorus` with products of Weil restrictions `R_{E/F} 𝔾_m` is also
 outside this module.
+
+`IsInducedTorus.isTorus` extracts the splitting field already present in `IsInducedTorus`, proving that an induced torus is a torus. This shared lemma is used by the central-torus exactness and point-surjectivity statements.

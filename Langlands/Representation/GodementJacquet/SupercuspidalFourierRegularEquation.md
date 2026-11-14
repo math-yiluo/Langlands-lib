@@ -51,3 +51,7 @@ The provenance is internal: the proof composes the existing actual convolution
 exchange, direct inverse-transpose transport, nonzero monomial comparison, and
 operator evaluation. This contribution does not extend the equation to arbitrary
 full-matrix tests or assemble the closed normalized functional-equation data.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalFourierRegularEquation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -21,3 +21,7 @@ zero. No determinant-norm-one assumption is imposed on the translations.
 `fourierRegularMatrixTranslate` packages this restricted pullback as a complex
 linear map. This module proves only preservation of the two support conditions;
 it does not assert the matrix functional equation or a gamma factor.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.FourierRegularMatrixTranslates` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

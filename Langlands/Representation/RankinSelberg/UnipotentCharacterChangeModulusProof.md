@@ -70,3 +70,7 @@ identity, and the third supplies the unconditional block Haar theorem.
 The proof assumes no Jacobian, coordinate measure formula, Haar uniqueness law,
 or unproved proposition. It uses the established proofs of the imported results
 and Mathlib's pushforward facts, and asserts no new literature result.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.UnipotentCharacterChangeModulusProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

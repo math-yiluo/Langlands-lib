@@ -170,3 +170,7 @@ conditional `SymmetricGammaExpressionStatement` and
 is proved, the existing `padicSymmetricGammaFactorOfWhittakerType` can consume
 its conclusion; this module neither constructs that factor anew nor proves
 its expression, symmetry, or any analytic theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.WhittakerTypeGammaConstructionInputStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -107,3 +107,7 @@ The imports are the unchanged published `Parabolic.NormalizedJacquetStatement`,
 are referenced by Lean name. Worker 23 wrote the core proof and the stronger consumer exactness consequences.
 Worker 187 independently compiled the consumer identifications and exactness
 transfer, then supplied the named functor-map identification in this combined pair.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Parabolic.NormalizedJacquetExactnessProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

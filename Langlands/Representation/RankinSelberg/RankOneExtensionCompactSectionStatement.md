@@ -185,3 +185,7 @@ scalar-cutoff statement, the Jacquet/integral comparison and the published
 strict span comparison `RankOneExtensionSpanComparisonStatement` are separate
 units; this statement is a prerequisite for the early Lemma (5.5) route and
 does not prove or assume any of them.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionCompactSectionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

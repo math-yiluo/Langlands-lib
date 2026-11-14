@@ -9,3 +9,7 @@ These are derived measure-theoretic helpers for the existing first-block quotien
 The indicator-restriction argument follows the published `TwoBlockUnipotentQuotientTower.comp_restrict_eq_smul` of Worker 235; the groups and normalization here are those of the first-block problem. These lemmas are internal consequences of the existing Library constructions rather than additional source assertions.
 
 `SmallOrbitKernelRestrictionStatement` is a proposition-valued abbreviation for the conditional small-slice measure identity. The immediately following theorem proves that assertion explicitly; the block-unfolding lemma is supporting infrastructure in the same focused unit.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockQuotientUnfolding` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

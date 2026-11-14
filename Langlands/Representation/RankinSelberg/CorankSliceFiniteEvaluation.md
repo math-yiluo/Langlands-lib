@@ -107,3 +107,7 @@ analytic at every point. Compactness of `K` is not needed.
 
 The theorem uses only the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CorankSliceFiniteEvaluation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

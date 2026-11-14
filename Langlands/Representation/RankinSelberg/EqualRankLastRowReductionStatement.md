@@ -100,3 +100,7 @@ This is the analytic comparison needed by the equal-rank endpoint
 (task `82ed7f4d-388e-471f-8c3c-0f52ae4c1b28`). It replaces the strict-rank
 JPSS Lemma 5.5 argument, which does not apply when the test and induced ranks
 coincide.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankLastRowReductionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

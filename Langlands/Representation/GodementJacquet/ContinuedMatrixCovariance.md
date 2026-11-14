@@ -45,3 +45,7 @@ Fourier transform; coefficient precomposition by inverse transpose changes
 this back to `ρ(g⁻¹)` on the vector. Consequently this pairing has the same
 covariance as the original pairing. These equalities are in the rational
 function field and make no claims about evaluation at poles.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.ContinuedMatrixCovariance` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

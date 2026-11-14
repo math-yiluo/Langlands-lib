@@ -148,3 +148,7 @@ This unit asserts no unconditional reducible matrix equation. Matrix
 induction, generic-socle occurrence, coefficient or subquotient transport,
 JPSS comparison certificates and multiplicativity are separate statements
 and proofs.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.GenericMatrixFunctionalEquationStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

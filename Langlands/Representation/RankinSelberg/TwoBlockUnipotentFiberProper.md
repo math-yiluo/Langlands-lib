@@ -44,3 +44,7 @@ block/radical definitions, Worker 235's coordinate homeomorphism, and the
 measurable-kernel support lemmas. No separate literature theorem is claimed.
 The module establishes neither the normalized quotient-measure tower nor the
 final integration statement.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockUnipotentFiberProper` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

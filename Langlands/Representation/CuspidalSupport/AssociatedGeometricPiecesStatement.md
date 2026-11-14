@@ -138,3 +138,7 @@ minimal conjugating representatives with right source-Weyl cosets is a
 separate statement and proof obligation. Passing from these individual
 pieces to the associated Jacquet filtration, including its rank-zero case
 and quasicuspidality under finite extensions, belongs to the consumer.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.AssociatedGeometricPiecesStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

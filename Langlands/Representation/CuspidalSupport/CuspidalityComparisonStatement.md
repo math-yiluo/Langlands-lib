@@ -87,3 +87,7 @@ conjugation-induced coinvariant equivalence, identify the single-block
 embedding as a topological group equivalence, transport admissibility,
 and identify all proper refinement quotient carriers. Compilation checks
 the propositions but establishes none of these mathematical conclusions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.CuspidalityComparisonStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

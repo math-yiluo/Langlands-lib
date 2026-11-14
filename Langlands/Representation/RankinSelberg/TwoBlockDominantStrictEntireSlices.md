@@ -73,3 +73,7 @@ This is an internal deduction from the published diagonal-support, finite
 right-orbit evaluation, compact rectangular support, same-model block
 integration and exact measure-transport results named above. It introduces no
 new literature translation and no premise asserting the desired analytic base.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictEntireSlices` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

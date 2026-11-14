@@ -16,3 +16,7 @@ The final pointwise equality uses the actual canonical normalized induction
 covariance and the Levi-section projection identity. The square-root modulus
 in that law equals the existing positive `leviHalfModulus` in the statement.
 No scalar integral or Fourier argument is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockLeadingTranslationProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

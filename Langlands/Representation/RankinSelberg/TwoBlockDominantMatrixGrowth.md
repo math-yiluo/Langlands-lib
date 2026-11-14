@@ -17,3 +17,7 @@ support the rectangles cost `N + torusSize lam`, and the group argument costs
 original base absorbs the two torus costs. At zero values the inequality is
 immediate. Reducible Whittaker-type representations and zero supplied
 functionals are included. No integrability or Laurent identity is asserted.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantMatrixGrowth` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

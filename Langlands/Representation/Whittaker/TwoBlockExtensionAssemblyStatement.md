@@ -46,3 +46,7 @@ measure and cutoff. The separate published theorem
 implication to that theorem. It proves the unconditional parent target
 `TwoBlockWhittakerExtensionStatement.{uF, uV₁, uV₂}`. Neither theorem changes
 this proposition, whose row-surjectivity premise remains explicit.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockExtensionAssemblyStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

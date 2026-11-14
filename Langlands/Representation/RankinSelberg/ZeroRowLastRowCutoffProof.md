@@ -123,3 +123,7 @@ internal formulation, not a verbatim JPSS theorem. It covers all smooth
 coefficient images, with no irreducibility, unitarity or square-integrability
 assumption, and gives an explicit zero-or-one cutoff that preserves the
 original coefficient.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.ZeroRowLastRowCutoffProof` and `Langlands.AllField.Representation.RankinSelberg.ZeroRowLastRowCutoffProofSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

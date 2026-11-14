@@ -62,3 +62,7 @@ substitution, and the positive-rank block comparison remain separate
 obligations for the final all-rank gamma comparison. Self-duality of the
 scalar measure is unnecessary for these conditional assertions, since the
 Fourier pair is supplied in each use.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonFourierAveraging` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

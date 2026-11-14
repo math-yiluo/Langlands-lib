@@ -25,4 +25,11 @@ def IsInducedTorus (T : CommGroupScheme (Spec (CommRingCat.of k))) : Prop :=
       ∀ (σ : E ≃ₐ[k] E) (i : I), ∃ j : I,
         characterLattice.galoisRepresentation k E T σ (b i) = b j
 
+/-- An induced torus is a torus: its finite Galois splitting field splits it. -/
+theorem IsInducedTorus.isTorus {k : Type u} [Field k]
+    {Z : CommGroupScheme (Spec (CommRingCat.of k))} (h : IsInducedTorus Z) :
+    IsTorus Z.toGrp := by
+  obtain ⟨E, hE, aE, -, -, hs, -⟩ := h
+  exact ⟨E, hE, aE, hs⟩
+
 end Langlands.GroupScheme

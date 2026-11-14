@@ -126,3 +126,7 @@ to permit importing this module together with `GodementJacquet.AnalyticData`;
 their values and mathematical assertions are unchanged. This is a helper for
 the actual coefficient-model comparison; it does not establish convergence of
 Whittaker integrals that have not already been supplied with convergence.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.WhittakerAveraging` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

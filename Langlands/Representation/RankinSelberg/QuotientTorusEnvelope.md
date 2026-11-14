@@ -82,3 +82,7 @@ The field universe is arbitrary; the probability-space lemma has independent
 index, source, and target universes. The representation-dependent threshold,
 concrete norm bounds, endpoint support and summability estimates belong to the
 other units of the host proof.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.QuotientTorusEnvelope` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

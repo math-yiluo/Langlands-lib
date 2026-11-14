@@ -119,3 +119,7 @@ radical vanishes outside `E R`.
    locally constant (`isLocallyConstant_blockZeroNorm`).
 5. Each term is entire by `differentiable_setIntegral_mul_cpow` (from
    `TwoBlockDeformationAnalysis`), so the finite sum is entire.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDeformationAnalytic` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

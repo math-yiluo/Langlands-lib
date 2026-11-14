@@ -33,3 +33,7 @@ This auxiliary definition unit provides smooth representatives for use with
 filtration and induction statements. It asserts neither the geometric lemma
 nor either Jacquet-vanishing target. The conditional proper-induction bridge
 and the incomplete final vanishing assembly are separate private drafts.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.JacquetVanishingSmoothPieces` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -35,3 +35,7 @@ It does not construct a generic socle inside a reducible original, compare
 its gamma factor with the original, assemble the adjacent finite products,
 or continue from a large second twist to an arbitrary character. Those remain
 obligations of the parent gamma argument.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankMatrixFunctionalEquations` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

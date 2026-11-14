@@ -11,3 +11,7 @@ The theorem then applies `twoBlock_strictInducedCoefficient_numerators`. That pr
 `exists_strictTwoBlockFiniteNumerators` applies the preceding module's common-bound theorem and the pointwise extraction theorem. Above one real bound, it returns absolute ordinary Jacquet integrability, a nonzero realizing functional, and the finite-numerator package for every compatible choice of the three quotient measures. Its only analytic premise beyond the full type hypotheses is the explicitly named closed first-block statement `H`. It does not claim that this premise has already been published or proved here.
 
 These results are internal deductions from the first-block statement, actual dual transport, existing support and Fourier proofs, and the Laurent numerator algebra. Rational comparison, complete induced gamma certificates, L divisibility, parameter continuation and lower-to-upper transport remain separate obligations. This module is not an exact-target proof of either final dominant-rank proposition and uses no later unrestricted multiplicativity proof.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictFiniteNumerators` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

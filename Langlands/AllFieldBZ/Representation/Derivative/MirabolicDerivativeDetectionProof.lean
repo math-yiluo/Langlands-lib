@@ -1,0 +1,20 @@
+import Langlands.AllFieldBZ.Representation.Derivative.MirabolicDerivativeVanishing
+import Langlands.Representation.Derivative.MirabolicDerivativeDetectionProof
+
+/-!
+# All-field port of `Langlands.Representation.Derivative.MirabolicDerivativeDetectionProof`
+
+Mechanical port of the field-dependent declarations of the p-adic module
+`Langlands.Representation.Derivative.MirabolicDerivativeDetectionProof` to an arbitrary nonarchimedean local field
+(`Langlands.AllFieldBZ.LocalFieldPackage`). See the paired Markdown.
+-/
+namespace Langlands.AllFieldBZ.Derivative
+open Langlands.Derivative hiding HasNonzeroDerivative IsHomogeneous MirabolicDerivativeDetection generalLinearDerivative generalLinearDerivativePositive generalLinearDerivativePositive_eq generalLinearDerivativePositive_obj generalLinearDerivative_of_pos generalLinearDerivative_succ generalLinearDerivative_succ_obj generalLinearDerivative_top_succ generalLinearDerivative_zero generalLinearRankCast generalLinearRankCast_refl generalLinearRankCast_symm_comp generalLinearRankCast_trans generalLinearRestriction generalLinearRestriction_map_apply generalLinearRestriction_map_toLinearMap hasNonzeroDerivative_iff isHomogeneous_of_subsingleton le_level_of_hasNonzeroDerivative level level_eq_iff level_eq_zero_iff level_eq_zero_of_subsingleton level_le mirabolicDerivative mirabolicDerivativeDetection mirabolicDerivativeOfOrder mirabolicDerivativeOfOrder_eq mirabolicDerivativeOfOrder_obj mirabolicDerivativeOfOrder_obj_subsingleton mirabolicDerivativeOfOrder_one mirabolicDerivativeOfOrder_top mirabolicDerivative_eq mirabolicDerivative_obj_subsingleton mirabolicDerivative_succ mirabolicDerivative_zero mirabolicRankCast mirabolicRankCast_obj_subsingleton mirabolicRankCast_refl phiMinusIterate phiMinusIterate_obj_subsingleton phiMinusIterate_succ phiMinusIterate_zero
+universe uF uV
+
+/-- Every nonzero smooth mirabolic representation has positive derivative level. -/
+theorem mirabolicDerivativeDetection (F : LocalFieldPackage.{uF})
+    (T : F.TopologicalData) : MirabolicDerivativeDetection.{uF, uV} F T :=
+  Mirabolic.derivativeDetection F T
+
+end Langlands.AllFieldBZ.Derivative

@@ -38,3 +38,7 @@ and of `Φ((x, η) g) reflectSeries q a'_x`.
 The finite Laurent action commutes with the scalar `Φ((x, η) g)`. The published
 `integral_laurent_identity_ae` therefore integrates the per-row identity
 coefficient by coefficient. No polynomial factor is cancelled.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentPointwise` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

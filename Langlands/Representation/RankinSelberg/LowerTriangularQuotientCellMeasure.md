@@ -74,3 +74,7 @@ elementary measure theory for an open embedding.
 The compatibility certificate `IsCompatible` of the target proposition
 supplies the right-translation invariance hypothesis (its `right_invariant`
 field). Its `regular` field supplies finiteness on compacts.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.LowerTriangularQuotientCellMeasure` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

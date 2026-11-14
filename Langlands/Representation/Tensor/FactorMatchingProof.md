@@ -116,3 +116,7 @@ supplies the irreducibility context. Registered source:
 These originals were read on 2026-10-24; no source-specific retained errata
 note was found. The implemented proof route is the actual filtration
 construction and two refinements described above.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Tensor.FactorMatchingProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

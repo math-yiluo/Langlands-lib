@@ -87,3 +87,7 @@ claimed. These conditional results do not prove either exact adjacent-rank
 parent proposition, nor do they construct its complete block certificates or
 perform their remaining character/additive-character transports. No later
 multiplicativity or Section9 descent theorem is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankImageLDivisibility` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -21,3 +21,7 @@ This is derived integration infrastructure for JPSS (1983), Section 4.6 equation
 not assert the lower convergence or final Laurent identity. Source:
 `jpss-1983-rankin-selberg`, PDF SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantFirstBlockFibers` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

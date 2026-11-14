@@ -32,3 +32,7 @@ There is no restriction on field or carrier universes. This unit constructs
 neither an induced Whittaker functional nor a pair polynomial; the compact
 section, Fourier smoothing, analytic comparison and final divisibility
 obligations remain separate.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionCharacter` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

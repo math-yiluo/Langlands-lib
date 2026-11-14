@@ -152,3 +152,7 @@ uniqueness of coordinates, existence of sections or stability. It does not
 modify the parent statement module
 `Langlands.Representation.Whittaker.TwoBlockExtensionStatement` or anything
 that module imports.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockOpenCell` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -25,3 +25,7 @@ two pairings satisfying the same translation rule are equal whenever their
 Fourier-regular restrictions are equal. In applications the codomain may be
 complex rational functions, so postcomposition by fixed complex linear maps and
 multiplication by a fixed rational function fit without any convergence exchange.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixPairingExtension` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

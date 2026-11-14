@@ -115,3 +115,7 @@ half-plane, rational continuation, model image and spanning, functional
 equations, lower-to-upper induction comparison, and both parent gamma/L
 certificates remain separate obligations. This conditional integral identity
 does not prove either closed parent target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankFiniteProducts` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

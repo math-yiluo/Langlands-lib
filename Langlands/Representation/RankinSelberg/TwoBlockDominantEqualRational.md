@@ -92,3 +92,7 @@ spectral convergence is not asserted. Identifying the retained block
 polynomials with complete symmetric certificates, identifying the rational
 gamma product, continuing to the undeformed parameter and handling strict
 dominant rank remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantEqualRational` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

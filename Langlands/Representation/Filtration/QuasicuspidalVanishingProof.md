@@ -116,3 +116,7 @@ does not import its proof module; it imports only the statement module and
 
 `lean_check` inspection reports only `propext`, `Classical.choice` and
 `Quot.sound`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Filtration.QuasicuspidalVanishingProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

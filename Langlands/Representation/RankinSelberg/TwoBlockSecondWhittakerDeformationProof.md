@@ -181,3 +181,7 @@ statement's Markdown records its provenance and the Section 6 uses on printed
 pages 427 and 432. The implemented proof follows the transport rationale given
 there, with the direct lower construction of `E_u` rather than the reversal
 route. It does not formalize a printed proof of the second-block assertion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockSecondWhittakerDeformationProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

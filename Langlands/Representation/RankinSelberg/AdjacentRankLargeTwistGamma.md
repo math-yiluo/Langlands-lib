@@ -38,3 +38,7 @@ order. The scalar character is transported to the lifted character by the actual
 No unrestricted or finite-block JPSS multiplicativity theorem is used. This
 result proves the large-twist assertion only; it does not assert continuation
 to zero, the arbitrary upper-family closed base, or completion of its parent task.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankLargeTwistGamma` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

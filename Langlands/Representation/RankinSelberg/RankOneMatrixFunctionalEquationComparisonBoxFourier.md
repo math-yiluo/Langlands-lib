@@ -32,3 +32,7 @@ Provenance is internal: this is an algebraic specialization of the published
 box and scalar-lattice definitions and the rectangular Fourier helper.
 It asserts no convergence of Whittaker or matrix zeta integrals, no
 same-vector block-zero extraction and no gamma functional equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonBoxFourier` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

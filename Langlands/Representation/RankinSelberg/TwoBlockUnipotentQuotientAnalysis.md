@@ -83,3 +83,7 @@ and `c : ℝ≥0∞`, with `κ ∘ₘ ν = c • μ`.
   `radicalAverage` by `radicalAverage_eq_integral_kernel`. The two measures
   are arbitrary here; the restriction and the compatibility of the quotient
   measures do not enter.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockUnipotentQuotientAnalysis` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

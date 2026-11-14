@@ -131,3 +131,7 @@ predicate. The general source motivates it; elementary Lean proofs establish
 the implemented algebraic laws. Cofinal existence, deep-contraction geometry,
 stabilization, canonical lifts and Jacquet duality remain separate statements
 and proofs.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Group.GL.BlockIwahoriDefinitions` and `Langlands.AllField.Group.GL.BlockIwahoriDefinitionsSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -29,9 +29,12 @@ def TorusNormOneBoundedStatement : Prop :=
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 
-local instance : NontriviallyNormedField F := localNormedField F
-local instance : IsUltrametricDist F := localNormedField_ultrametric F
-local instance : CompleteSpace F := localNormedField_complete F
+local instance torusNormOneNormedField : NontriviallyNormedField F :=
+  localNormedField F
+local instance torusNormOneUltrametricDist : IsUltrametricDist F :=
+  localNormedField_ultrametric F
+local instance torusNormOneCompleteSpace : CompleteSpace F :=
+  localNormedField_complete F
 
 /-- Integer normalization and the spectral valuation have exactly the same
 character-unit locus on the actual fixed field. -/

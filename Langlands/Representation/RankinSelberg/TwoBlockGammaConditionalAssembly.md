@@ -38,3 +38,7 @@ section 7, printed pages 438–442, registered source
 The actual lower-to-upper source reversal remains an obligation of the
 separate upper-convention analytic base proofs. No analytic existence or
 semantic acceptance is inferred from this conditional assembly.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockGammaConditionalAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

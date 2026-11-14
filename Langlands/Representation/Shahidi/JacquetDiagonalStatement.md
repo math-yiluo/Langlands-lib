@@ -36,3 +36,7 @@ This statement does not assert convergence for arbitrary `f`, full
 upper-unipotent covariance, existence of cell sections, or the final JPSS
 Whittaker coefficient formula. The field and coefficient universes are
 independent.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Shahidi.JacquetDiagonalStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

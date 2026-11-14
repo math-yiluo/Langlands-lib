@@ -1,0 +1,59 @@
+# All-field port of `Langlands.Representation.Classification.Segments`
+
+Lean module: `Langlands.AllFieldBZ.Representation.Classification.Segments`. Original module: `Langlands.Representation.Classification.Segments` in the Library; its mathematical
+content is described in the Library file `Langlands/Representation/Classification/Segments.md`.
+
+## Content
+
+This module restates and reproves, over an arbitrary nonarchimedean local field, the
+declarations of the original module whose statements or proofs depend on the p-adic field
+package `Langlands.PadicField p`. The field is now `F : Langlands.AllFieldBZ.LocalFieldPackage`
+(a field with no base field and no characteristic hypothesis), and its local-field structure is
+`T : F.TopologicalData`, an abbreviation of the Library structure `Langlands.LocalFieldData F.Carrier`.
+Declarations of the original module that do not depend on the field are not duplicated: the module
+imports the original and uses them directly. Each ported statement is the original statement with the
+replacements listed under "Systematic changes"; each proof is the original proof with the same
+replacements.
+
+## Ported declarations
+
+| Original declaration | All-field declaration |
+| --- | --- |
+| `Langlands.PadicField.TopologicalData.supercuspidalClassRealPowerTwist_zero` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.supercuspidalClassRealPowerTwist_zero` |
+| `Langlands.PadicField.TopologicalData.supercuspidalClassRealPowerTwist_add` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.supercuspidalClassRealPowerTwist_add` |
+| `Langlands.PadicField.TopologicalData.CuspidalDatum` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.CuspidalDatum` |
+| `Langlands.PadicField.TopologicalData.CuspidalDatum.twist` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.CuspidalDatum.twist` |
+| `Langlands.PadicField.TopologicalData.CuspidalDatum.twist_rank` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.CuspidalDatum.twist_rank` |
+| `Langlands.PadicField.TopologicalData.CuspidalDatum.twist_zero` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.CuspidalDatum.twist_zero` |
+| `Langlands.PadicField.TopologicalData.CuspidalDatum.twist_twist` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.CuspidalDatum.twist_twist` |
+| `Langlands.PadicField.TopologicalData.Segment` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment` |
+| `Langlands.PadicField.TopologicalData.Segment.rank` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.rank` |
+| `Langlands.PadicField.TopologicalData.Segment.rank_pos` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.rank_pos` |
+| `Langlands.PadicField.TopologicalData.Segment.member` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.member` |
+| `Langlands.PadicField.TopologicalData.Segment.member_zero` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.member_zero` |
+| `Langlands.PadicField.TopologicalData.Segment.last` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.last` |
+| `Langlands.PadicField.TopologicalData.Segment.twist` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.twist` |
+| `Langlands.PadicField.TopologicalData.Segment.twist_length` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.twist_length` |
+| `Langlands.PadicField.TopologicalData.Segment.twist_rank` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.twist_rank` |
+| `Langlands.PadicField.TopologicalData.Segment.twist_zero` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.twist_zero` |
+| `Langlands.PadicField.TopologicalData.Segment.twist_twist` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.Segment.twist_twist` |
+| `Langlands.PadicField.TopologicalData.CuspidalDatum.IsRepresentedBy` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.CuspidalDatum.IsRepresentedBy` |
+
+## Systematic changes
+
+- `Langlands.PadicField.{u} p` becomes `Langlands.AllFieldBZ.LocalFieldPackage.{u}`; the prime
+  `p` and its `Fact p.Prime` instance are removed from binders, and the corresponding explicit
+  arguments are dropped.
+- Normalization API names on `T` (for example `Integers`, `ord`, `normalizedAbs`, `uniformizer`)
+  resolve to `Langlands.LocalFieldData`; the remaining p-adic foundation facts are replaced by the
+  arbitrary-field versions in `Langlands.AllFieldBZ.LocalField.Definitions`.
+- Every ported declaration `Langlands.X` is renamed `Langlands.AllFieldBZ.X` (with `PadicField`
+  replaced by `LocalFieldPackage` in the name); a declaration in a namespace outside `Langlands`
+  is renamed `<original name>_allFieldBZ`. References to ported declarations are renamed accordingly.
+- The original namespaces are opened, hiding the names that have ported versions, so that unported
+  field-independent declarations are used unchanged.
+
+## Provenance
+
+Generated by the all-field port script of Worker 71 for the BZ77 mirabolic nondegeneracy task
+(Bernstein and Zelevinsky, *Induced representations of reductive p-adic groups I*, 1977, 4.9-4.11).

@@ -184,3 +184,7 @@ The module imports `PadicRowFourierEquivarianceStatement`, `RowSchwartzAction`
 and `PadicRectangularHaarScalingProof`, which provides `padicScalarHaarScaling`
 through its own import. It uses no `sorry`, `admit` or new axiom. Its axioms are
 `propext`, `Classical.choice` and `Quot.sound`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.HarmonicAnalysis.PadicRowFourierEquivarianceProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

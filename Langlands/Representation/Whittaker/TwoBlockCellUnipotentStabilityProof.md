@@ -127,3 +127,7 @@ Let `f ∈ D`, that is, the support of `f` lies in the cell and its restriction
 The proof uses no hypothesis on `π₁` or `π₂`, and none appears in the
 statement. Smoothness of `ξ(u) f` is already part of its type, since `ξ(u)`
 acts on the smooth induced space.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockCellUnipotentStabilityProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

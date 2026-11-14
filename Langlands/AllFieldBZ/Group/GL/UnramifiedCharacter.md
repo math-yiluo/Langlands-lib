@@ -1,0 +1,58 @@
+# All-field port of `Langlands.Group.GL.UnramifiedCharacter`
+
+Lean module: `Langlands.AllFieldBZ.Group.GL.UnramifiedCharacter`. Original module: `Langlands.Group.GL.UnramifiedCharacter` in the Library; its mathematical
+content is described in the Library file `Langlands/Group/GL/UnramifiedCharacter.md`.
+
+## Content
+
+This module restates and reproves, over an arbitrary nonarchimedean local field, the
+declarations of the original module whose statements or proofs depend on the p-adic field
+package `Langlands.PadicField p`. The field is now `F : Langlands.AllFieldBZ.LocalFieldPackage`
+(a field with no base field and no characteristic hypothesis), and its local-field structure is
+`T : F.TopologicalData`, an abbreviation of the Library structure `Langlands.LocalFieldData F.Carrier`.
+Declarations of the original module that do not depend on the field are not duplicated: the module
+imports the original and uses them directly. Each ported statement is the original statement with the
+replacements listed under "Systematic changes"; each proof is the original proof with the same
+replacements.
+
+## Ported declarations
+
+| Original declaration | All-field declaration |
+| --- | --- |
+| `Langlands.PadicField.TopologicalData.ordUnits` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.ordUnits` |
+| `Langlands.PadicField.TopologicalData.ordUnits_apply` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.ordUnits_apply` |
+| `Langlands.PadicField.TopologicalData.ord_eq_zero_iff_normalizedAbs` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.ord_eq_zero_iff_normalizedAbs` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacter` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacter` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacter_apply` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacter_apply` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacterHom` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacterHom` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacter_one` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacter_one` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacter_mul` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacter_mul` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacter_inv` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacter_inv` |
+| `Langlands.PadicField.TopologicalData.uniformizerUnit` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.uniformizerUnit` |
+| `Langlands.PadicField.TopologicalData.uniformizerUnit_val` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.uniformizerUnit_val` |
+| `Langlands.PadicField.TopologicalData.unramifiedCharacter_uniformizer` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.unramifiedCharacter_uniformizer` |
+| `Langlands.PadicField.TopologicalData.determinantUnramifiedCharacter` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.determinantUnramifiedCharacter` |
+| `Langlands.PadicField.TopologicalData.determinantUnramifiedCharacter_apply` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.determinantUnramifiedCharacter_apply` |
+| `Langlands.PadicField.TopologicalData.determinantUnramifiedCharacter_one` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.determinantUnramifiedCharacter_one` |
+| `Langlands.PadicField.TopologicalData.determinantUnramifiedCharacter_mul` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.determinantUnramifiedCharacter_mul` |
+| `Langlands.PadicField.TopologicalData.determinantUnramifiedCharacter_inv` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.determinantUnramifiedCharacter_inv` |
+| `Langlands.PadicField.TopologicalData.determinantUnramifiedCharacter_scalar` | `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData.determinantUnramifiedCharacter_scalar` |
+
+## Systematic changes
+
+- `Langlands.PadicField.{u} p` becomes `Langlands.AllFieldBZ.LocalFieldPackage.{u}`; the prime
+  `p` and its `Fact p.Prime` instance are removed from binders, and the corresponding explicit
+  arguments are dropped.
+- Normalization API names on `T` (for example `Integers`, `ord`, `normalizedAbs`, `uniformizer`)
+  resolve to `Langlands.LocalFieldData`; the remaining p-adic foundation facts are replaced by the
+  arbitrary-field versions in `Langlands.AllFieldBZ.LocalField.Definitions`.
+- Every ported declaration `Langlands.X` is renamed `Langlands.AllFieldBZ.X` (with `PadicField`
+  replaced by `LocalFieldPackage` in the name); a declaration in a namespace outside `Langlands`
+  is renamed `<original name>_allFieldBZ`. References to ported declarations are renamed accordingly.
+- The original namespaces are opened, hiding the names that have ported versions, so that unported
+  field-independent declarations are used unchanged.
+
+## Provenance
+
+Generated by the all-field port script of Worker 71 for the BZ77 mirabolic nondegeneracy task
+(Bernstein and Zelevinsky, *Induced representations of reductive p-adic groups I*, 1977, 4.9-4.11).

@@ -28,3 +28,7 @@ The construction and proof are derived here from existing integrated-action,
 cutoff, matrix-translation, singular-stabilizer, and Jacquet-quotient helpers.
 They do not assert a functional equation, rational continuation, or any spanning
 property of the smoothing outputs.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixSmoothing` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

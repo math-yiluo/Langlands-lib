@@ -65,3 +65,7 @@ The opposite direction, from an actual continuous scalar quasicharacter to
 full Whittaker type, is the separate `RankOneWhittakerTypeStatement`.
 The reduction here makes no JPSS multiplicativity, Godement–Jacquet comparison,
 L-factor or gamma-factor existence, or Section 7 assertion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneCharacterReductionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

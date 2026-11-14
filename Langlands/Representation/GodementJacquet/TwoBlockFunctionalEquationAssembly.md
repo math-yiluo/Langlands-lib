@@ -94,3 +94,7 @@ the assembly needs and is not stated separately in the source.
   products and sum of the target.
 
 Compiled clean (0 errors, 0 warnings). Axioms: `propext`, `Classical.choice`, `Quot.sound`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.TwoBlockFunctionalEquationAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

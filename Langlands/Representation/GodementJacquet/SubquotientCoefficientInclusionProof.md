@@ -81,3 +81,7 @@ of normalized generators or factors. Those are separate analytic obligations.
 
 Worker 55 authored this proof and explanation. The earlier published statement
 pair was authored by Worker 468 and Worker 55; it is imported unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SubquotientCoefficientInclusionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

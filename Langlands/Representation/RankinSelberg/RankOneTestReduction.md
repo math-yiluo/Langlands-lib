@@ -80,3 +80,7 @@ module does not use unrestricted multiplicativity or any Section 7 descendant.
 It does not supply the source lower-to-upper ordered reversal or the Section 5
 analytic argument. Its provenance is the internal composition of the named
 Library constructions, full-type transport, and full certificate equivalences.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneTestReduction` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

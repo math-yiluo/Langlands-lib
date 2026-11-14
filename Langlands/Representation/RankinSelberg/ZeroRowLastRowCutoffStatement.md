@@ -106,3 +106,7 @@ new coefficient and cuts off the final rectangular matrix row. The current
 statement concerns the last row of `g` and the unchanged original
 coefficient at zero rectangular rows. It does not use that other
 statement as a hypothesis.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.ZeroRowLastRowCutoffStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

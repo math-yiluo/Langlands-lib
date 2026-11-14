@@ -64,3 +64,7 @@ The identities are pointwise or measure-theoretic and involve no
 representation theory: `f` is an arbitrary complex function on the group.
 Measurability of `ι` is taken from the measure-preservation hypothesis. Only
 the canonical p-adic case is given for the Haar measure.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.InverseTransposeMatrixIntegral` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

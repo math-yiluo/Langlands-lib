@@ -66,3 +66,7 @@ not state them as numbered results.
   `E R` of `a × b` matrices over `F` such that every compact set lies in
   some `E R` (a compact exhaustion of the locally compact, second countable
   space of matrices).
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDeformationAnalysis` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

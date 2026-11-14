@@ -121,3 +121,7 @@ Declarations of this module (with the canonical local instances of a
      finite. `lintegral_torus_lt_top` makes each of the finitely many terms
      `k ∈ S` finite on a half-plane, and `exists_common_halfPlane` gives a
      common one.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.WhittakerMatrixConvergence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

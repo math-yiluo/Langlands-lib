@@ -60,3 +60,7 @@ rank to its radical-generated case `RadicalGeneratedPairingRigidity`, through
   which every vector is a multiple is isomorphic to `ℂ`.
 - `upperUnipotent_mem_plusSubgroup`, `plusProjection_mem_upperUnipotent`,
   `upperUnipotentBlock`: the upper-left block of an upper unipotent matrix.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.MirabolicPairingRigidityStep` and `Langlands.AllField.Representation.Whittaker.MirabolicPairingRigidityStepSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

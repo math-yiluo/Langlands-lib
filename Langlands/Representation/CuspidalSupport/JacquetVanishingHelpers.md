@@ -32,3 +32,7 @@ and then across the isomorphism in `SmoothRep.IsSubquotient`.
 `objectFiltrationAt` evaluates an actual natural filtration at one object;
 its graded representations are definitionally the original graded functors'
 values. It asserts no existence of a filtration.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.JacquetVanishingHelpers` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

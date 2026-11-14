@@ -81,3 +81,7 @@ step (`BorelSpace.measurable_eq`). By `singleton_modulus_real` the modulus is
 ```
 
 which is the claimed bound with `C = |r|^(m·D)` and `e_k = D`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.UnipotentDiagonalVolume` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

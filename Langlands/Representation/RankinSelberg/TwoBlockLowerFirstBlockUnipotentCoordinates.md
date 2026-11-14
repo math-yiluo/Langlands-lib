@@ -92,3 +92,7 @@ group is specified on printed page 413. The source does not state block
 coordinates for its Haar measure; the coordinate formula above is the routine
 Fubini decomposition used to evaluate the left side of equation (8) in the
 companion module, and it is not claimed to appear in the source.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockUnipotentCoordinates` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

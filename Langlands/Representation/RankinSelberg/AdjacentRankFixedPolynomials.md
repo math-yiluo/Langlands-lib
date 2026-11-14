@@ -54,3 +54,7 @@ the reused real-ray bridge dependency. This module discharges the fixed
 certificate existence condition for the specified lower family. Formal clearing
 and specialization to zero are consumers of this result. Neither exact
 adjacent-rank parent gamma/L proposition is proved in this module.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankFixedPolynomials` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

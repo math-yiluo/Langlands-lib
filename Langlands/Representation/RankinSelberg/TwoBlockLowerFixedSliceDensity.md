@@ -28,3 +28,7 @@ two determinant bounds and taking a square root gives
 These results are elementary consequences of the published explicit
 modulus and canonical uniformizer definitions. They supply pointwise growth
 bases for a later summable majorant and assert no outer integral convergence.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFixedSliceDensity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

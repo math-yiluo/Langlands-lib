@@ -23,3 +23,7 @@ the uniformizer, scalar matrix, normalized absolute value, determinant weight
 and spectral point. It is intended for the residual bilinear term in the
 equal-rank trilinear reduction. It does not assert integrality of a representation
 operator, finite spectral support of bilinear forms, or trilinear uniqueness.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CentralSpectralElement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -27,3 +27,7 @@ independent universes, measure quantifiers, functional quantifiers, and nonzero
 witness clauses are retained through these existing complete relations.
 No irreducibility is assumed. This is a derived composition of the existing
 analytic, deformation, gamma-construction, and transport results.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankLowerCharacterGamma` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

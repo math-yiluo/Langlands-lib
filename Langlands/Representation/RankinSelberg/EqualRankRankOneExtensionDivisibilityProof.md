@@ -97,3 +97,7 @@ JPSS (1983) section 7.2, beyond the rank range of Lemma (5.5); see the
 statement Markdown. This module adds only the formal assembly. The analytic
 content is in the span comparison, whose proof Markdown describes the route
 through Proposition 9.1 and the last-row reduction of printed page 449.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankRankOneExtensionDivisibilityProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -75,3 +75,7 @@ It does not establish the closed multiplicativity proposition required by the
 parent task. Its mathematical provenance is the imported actual induction
 equivalences, closed Whittaker-type and polynomial-existence theorems,
 certificate transport and uniqueness, and elementary polynomial algebra.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.FiniteLFactorMultiplicativity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

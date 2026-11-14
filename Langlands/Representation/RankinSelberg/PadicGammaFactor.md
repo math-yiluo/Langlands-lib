@@ -148,3 +148,7 @@ smooth contragredients, prove change-of-character or twist laws, descend to
 representation classes, or construct nongeneric factors. Those remain separate
 obligations. Rank ordering is implemented by the published convention and does
 not claim a new rank-exchange theorem. There are no proof holes or new axioms.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.PadicGammaFactor` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

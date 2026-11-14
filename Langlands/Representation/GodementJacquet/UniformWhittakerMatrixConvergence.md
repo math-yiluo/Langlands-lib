@@ -127,3 +127,7 @@ convergence assertion. This unit supplies no rational continuation,
 normalized generator, transformed-coefficient assertion or functional
 equation, and proves neither of the host task's closed two-block gamma
 or L propositions. No two-block multiplicativity result is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.UniformWhittakerMatrixConvergence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

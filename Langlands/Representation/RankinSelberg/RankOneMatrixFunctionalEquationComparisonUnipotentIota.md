@@ -44,3 +44,7 @@ norm one is needed, and every size including one is covered.
 This is a Fourier identity on unweighted affine slices. The weighted extraction
 of a common matrix test and coefficient for a given Whittaker vector, and the
 gamma comparison itself, remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonUnipotentIota` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

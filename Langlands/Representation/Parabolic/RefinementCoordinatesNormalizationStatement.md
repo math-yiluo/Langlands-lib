@@ -132,3 +132,7 @@ stabilizers. This module does not supply that proof or prove the Haar-scaling
 interpretation of the determinant modulus. Concrete adjacent and first/tail
 coordinates, tensor regrouping, block-character absorption and induction in
 stages are outside this statement unit.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Parabolic.RefinementCoordinatesNormalizationStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

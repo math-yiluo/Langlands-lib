@@ -34,3 +34,7 @@ Source context: H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `jpss-1983-rankin-selberg`, printed page 412, displays (5) and (6), visually
 read from one-based PDF page 47. The source file has SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockMeasures` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

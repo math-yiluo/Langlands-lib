@@ -68,3 +68,7 @@ applies the block tensor action. The Levi modulus is rewritten with
 factor. The generic tensor lemma is stated in a context with only one family of module
 instances. This avoids a clash between the instances indexed by `Fin 2` and those
 indexed by `Fin (rankOneExtensionLowerShape t).length`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionLowerCovariance` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

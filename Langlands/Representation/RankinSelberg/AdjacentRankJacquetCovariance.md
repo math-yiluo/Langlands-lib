@@ -128,3 +128,7 @@ tensor-integral image remain obligations of the host proof. The current
 construction uses only scalar integration and elementary matrix and character
 identities on the already constructed exact induction; it imports no later
 adjacent-rank analytic base or unrestricted multiplicativity theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankJacquetCovariance` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

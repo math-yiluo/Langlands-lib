@@ -135,3 +135,7 @@ the published `Whittaker.MirabolicUnitTestCompatibility`, with `K = P₀` and
 `J = J₀`. This module does not import that file. It defines no competing
 `IsMirabolicTestFunction` predicate and proves no Kirillov lift,
 last-row test, quotient measure or unit-integral identity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.MirabolicUnitTestProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

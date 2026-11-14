@@ -98,3 +98,7 @@ used. These results identify and prove convergence on pure compact sections.
 Spanning the whole induction, defining a common induced Whittaker functional,
 proving its nonvanishing and proving the whole image equality remain separate
 obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankJacquetEvaluation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

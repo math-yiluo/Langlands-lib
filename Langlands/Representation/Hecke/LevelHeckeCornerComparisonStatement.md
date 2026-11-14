@@ -67,9 +67,11 @@ complex-linear bijection `e : LevelHeckeAlgebra ℂ K ≃ Corner μ K hK` such t
 - **Normalization.** The factor `μ(K)⁻¹` is forced by 1: the unit `δ_K` of the level algebra goes
   to `μ(K)⁻¹ 1_K = e_K`, the unit of the corner (`normalizedIndicator`). Clause 2 determines `e`,
   so the bijection is canonical.
-- **Multiplicativity.** The corner carries only a nonunital ring instance in the Library. So
-  `e` is stated as a linear equivalence that preserves products. It then also preserves units, by
-  2.
+- **Multiplicativity and units.** The Library gives the corner a `Ring` instance
+  (`HeckeAlgebra.Corner.ring`) and an `Algebra ℂ` instance. Its unit is the normalized
+  indicator `e_K`, as `Corner.toHeckeAlgebra_one` records. The statement presents `e` as a
+  linear equivalence that preserves products. Clause 2 sends the level-algebra unit `δ_K`
+  to `e_K`, so `e` also preserves units.
 - **Clause 3.** This identifies the `LevelHeckeAlgebra`-module `V^K` used by the published VI.9.4
   statement with the `H(G, K)`-module `V^K` of III.1.5. It is the comparison needed to read that
   statement in the source's terms.

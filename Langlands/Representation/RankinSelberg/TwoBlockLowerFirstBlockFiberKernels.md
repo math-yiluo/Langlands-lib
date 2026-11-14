@@ -54,3 +54,7 @@ normalization, compatible quotient integration, either disintegration,
 or convergence of any representation-specific integrand. In particular,
 they do not remove the cube factor in equation (2) or the positive density
 in equation (8); those belong to subsequent measure identities.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockFiberKernels` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -23,3 +23,7 @@ This is derived measure-theoretic packaging for JPSS (1983), Section 4.6,
 printed page 412, equation (6), using the already published actual groups,
 quotients and fiber map. This module proves neither s-finiteness of the
 kernel nor a disintegration identity; these are separate proof obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockFiberKernel` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

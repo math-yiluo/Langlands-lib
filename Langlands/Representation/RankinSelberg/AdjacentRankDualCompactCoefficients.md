@@ -51,3 +51,7 @@ On printed p.437 the same compact average transforms the finite vectors by
 the Weyl/inverse-transpose operation and the matrix coefficients by inverse
 transpose. The present proof obtains that identity directly from the proved
 original finite-average identity and the normalized Haar substitution.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankDualCompactCoefficients` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

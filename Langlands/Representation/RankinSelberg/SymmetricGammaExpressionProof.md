@@ -73,3 +73,7 @@ No source-specific errata file was found in the project literature or the
 Library notes. The present arbitrary-certificate iff is derived packaging
 of the conditional constructions and uniqueness, rather than a verbatim
 theorem of the article.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.SymmetricGammaExpressionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -82,3 +82,7 @@ proved upper-convention conclusions and assumes no induction equivalence.
 It uses neither a finite-block multiplicativity theorem nor a later
 result depending on this theorem. The original target pair and its
 imports are unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockGammaMultiplicativityProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

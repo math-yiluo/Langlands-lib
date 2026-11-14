@@ -70,3 +70,7 @@ With a proof that the supplied `ν` is self-dual for `ψ`, `double_integral_eq_m
 at any ambient `g ∈ GL_(r+2)(F)`. Finally `double_integral_eq_modelIntegral` multiplies by exactly `χ_u(det g) |det g|^((r+1)/2)` and identifies the result with `adjacentRankModelIntegral` against actual GL Haar.
 
 The derivation combines the imported square-matrix convergence, Schwartz–Bruhat product and slice constructions, matrix Haar scaling, the existing Fourier and kernel definitions, and Bochner Fubini. Worker 1197 supplied the literal analytic comparison and its role in the image proof; Worker 455 implemented this bridge. No new premise from external literature is introduced. This contribution does not construct the common nonzero induced Whittaker functional, prove section spanning, or establish the final equality of images.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankDoubleIntegral` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

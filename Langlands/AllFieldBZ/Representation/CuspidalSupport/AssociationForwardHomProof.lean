@@ -1,0 +1,50 @@
+import Langlands.AllFieldBZ.Representation.CuspidalSupport.AssociatedProof
+import Langlands.AllFieldBZ.Representation.CuspidalSupport.AssociationForwardHomSupport
+import Langlands.AllFieldBZ.Representation.CuspidalSupport.AssociationReduction
+import Langlands.AllFieldBZ.Representation.CuspidalSupport.ConstituentProof
+import Langlands.Representation.CuspidalSupport.AssociationForwardHomProof
+
+/-!
+# All-field port of `Langlands.Representation.CuspidalSupport.AssociationForwardHomProof`
+
+Mechanical port of the field-dependent declarations of the p-adic module
+`Langlands.Representation.CuspidalSupport.AssociationForwardHomProof` to an arbitrary nonarchimedean local field
+(`Langlands.AllFieldBZ.LocalFieldPackage`). See the paired Markdown.
+-/
+noncomputable section
+namespace Langlands.AllFieldBZ.CuspidalSupport
+open Langlands.CuspidalSupport hiding AssociatedCuspidalInductionFactorsTheorem AssociatedCuspidalInductionHomTheorem AssociatedGeometricPieceEquivalenceTheorem AssociatedGeometricPieceVanishingTheorem AssociatedJacquetFiltrationTheorem CuspidalEmbeddingTheorem CuspidalInductionLengthTheorem DeterminantUnitSmoothDualStatement GLCuspidalTensorAssociationStatement GLCuspidalTensorStatement IrreducibleQuasicuspidalLeviAdmissibilityTheorem LeviCuspidalBlockIsolationTheorem LeviCuspidalConstituentTheorem LeviHarishChandraConverseTheorem LeviHarishChandraRankZeroStatement LeviHarishChandraTheorem LeviQuasicuspidalDecompositionTheorem MinimalNonzeroJacquetTheorem MinimalWeylTransportQuasicuspidalTheorem NonassociatedJacquetSubquotientsTheorem NormalizedQuasicuspidalEmbeddingTheorem PadicAssociatedGeometricPiecesTheorem TotalConjugatingCountTheorem TwoBlockAssociatedCuspidalInductionFactorsTheorem ZeroRankCuspidalEmbeddingTheorem associatedCuspidalInductionFactors_of_adjacent associatedCuspidalInductionFactors_of_length_lt_two associatedCuspidalInductionHomTheorem associatedFiltration_of_geometricPieces associatedGeometricPieceEquivalence associatedGeometricPieceVanishing associatedJacquetFiltration associatedJacquetFiltration_of_geometricPieces associatedJacquetFiltration_of_prerequisites associatedJacquetFiltration_rankZero continuous_determinantUnitInclusion cuspidalDatum_eq_of_equiv determinantUnitInclusion determinantUnitInclusion_apply determinantUnitLocallyCompactSpace determinantUnitNonarchimedean determinantUnitOpenSubgroup determinantUnitRestriction determinantUnitRestrictionMap determinantUnitRestrictionMap_apply determinantUnitRestrictionMap_comp determinantUnitRestrictionMap_id determinantUnitRestriction_apply determinantUnitSmoothDual determinantUnitSubgroup determinantUnitSubgroup_normal determinantUnit_sup_center_finiteIndex exists_leviPiOpenSubgroup_subset exists_ne_zero_of_gradedRepresentation_equiv exists_ne_zero_to_normalizedParabolicInduced factors_of_blockMap factors_step fullRefinedInductionEquiv fullRefinedJacquetEquiv geometricPieceFunctor_subsingleton_of_proper_source glCuspidalTensorAssociation isCompact_leviPiOpenSubgroup isIrreducible_normalizedParabolicInduced_singleBlock isOpen_determinantUnitSubgroup leviCuspidalBlockIsolationTheorem leviCuspidalConstituentTheorem leviCuspidalConstituent_rankZero leviDeterminantNorm leviDeterminantNorm_apply leviHarishChandraConverseTheorem leviHarishChandraRankZero leviHarishChandraTheorem leviPiOpenSubgroup leviQuasicuspidalDecomposition_of_inputs levi_exists_compact_openSubgroup_subset mem_determinantUnitSubgroup mem_determinantUnitSubgroup_iff_normalizedAbs mem_leviPiOpenSubgroup minimalNonzeroJacquet minimalWeylTransportQuasicuspidal nonassociatedJacquetSubquotients_rankZero normalizedRefinedInductionFunctor_subsingleton padicAssociatedGeometricPieces parabolic_le_normalizer_unipotentSubgroup rankZero_jacquetInductionEquiv refinedHalfModulus_eq_one_of_full refinedInverseHalfModulus_eq_one_of_full refinedModulus_eq_one_of_full totalConjugatingCount
+open Langlands.GeneralLinear
+open Langlands.Geometric hiding CorrectionSubgroupDiagonalHaarStatement GeometricLemmaTheorem PadicBruhatMatrixExistenceTheorem PadicBruhatWeylReflectionTheorem PadicGeometricLemmaTheorem PadicParabolicBruhatTheorem PadicParabolicOrbitJacquetComparison PadicParabolicSupportGradedTheorem PadicParabolicSupportJacquetComparison PadicStandardIntersectionsTheorem closedSubgroupOrbitOrdering_of_finiteOrbitOrdering correctionSubgroupDiagonalHaar geometricLemma_of_orderedCosets geometricLemma_of_supportGraded geometricPieceFunctor intersectionLeviHalfModulusBalance_sourceLevi intersectionLeviModulusBalance intersectionLeviModulusBalance_sourceLevi jacquetInductionFunctor leviModulus_of_diagonal padicBruhatMatrixExistence padicBruhatWeylReflection padicGeometricLemma padicParabolicBruhat padicParabolicOrbitJacquetComparison padicParabolicSupportGradedTheorem padicParabolicSupportJacquetComparison padicStandardIntersectionsTheorem parabolicInductionSupportFiltration parabolicJacquetImageSubfunctor parabolicJacquetSupportFiltration parabolicOrbitJacquetFunctor parabolicSupportGradedCompactSmoothIso refinedLeviModulus_of_diagonal supportCoinvariantsImageHom_injective supportCoinvariantsImageIso supportImageNatIso supportImageQuotientHom supportImageQuotientHom_bijective supportImageQuotientIso supportImageToQuotient supportImageToQuotient_ker supportImageToQuotient_on_support supportImageToQuotient_surjective
+open Langlands.AllFieldBZ.Geometric
+universe uF uV uW
+
+/-- BZ77 Theorem 2.9(a), (i) ⇒ (ii): associated irreducible cuspidal inducing
+data have a nonzero intertwiner between their normalized inductions. -/
+theorem associatedCuspidalInductionHomTheorem :
+    AssociatedCuspidalInductionHomTheorem.{uF, uV, uW} := by
+  intro F T n _
+  let := T.topology
+  let := T.generalLinearTopologicalGroup n
+  intro B C σ τ _ hσc hτ hτc hassoc
+  obtain ⟨v, ⟨ev⟩⟩ := exists_minimal_transport_equiv_of_associated B C hassoc
+  have hlev : LevisAssociated (F := F.Carrier) B C := ⟨⟨v.val.val, v.property⟩⟩
+  obtain ⟨_, r, e, s, hs⟩ :=
+    associatedJacquetFiltration.{uF, uV} F T n B C σ hσc.2 hlev
+  let := T.valuativeRel
+  let := T.localField
+  have hA : ((T.normalizedJacquetFunctor C).obj
+      ((T.normalizedParabolicInductionFunctor B).obj σ)).IsAdmissible :=
+    isAdmissible_of_transportFiltration B C s (SmoothRep.isSmooth _)
+      (fun i => ⟨(e i).val.val, (e i).property⟩) hσc.1 hs
+  have htr : ∀ u u' : MinimalConjugatingPermutations (F := F.Carrier) B C, u = u' →
+      (transport B C u.val.val u.property σ.representation).Equiv
+        (transport B C u'.val.val u'.property σ.representation) := by
+    rintro u _ rfl
+    exact Representation.Equiv.refl _
+  obtain ⟨g⟩ := hs (e.symm v)
+  exact exists_ne_zero_of_gradedRepresentation_equiv T B C
+    (leviCuspidalConstituentTheorem.{uF, max uF uV} F T C) σ τ hτ hτc
+    hA r s (e.symm v) ⟨(g.trans (htr _ _ (e.apply_symm_apply v))).trans ev⟩
+
+end Langlands.AllFieldBZ.CuspidalSupport

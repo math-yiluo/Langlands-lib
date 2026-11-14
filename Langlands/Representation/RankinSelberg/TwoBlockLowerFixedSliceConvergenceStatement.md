@@ -262,3 +262,7 @@ identity (4.7.1), Section 4.8 companion identity, Section 4.9 functional
 equation or measure disintegration, induced Whittaker type, local-factor
 existence, or gamma/L multiplicativity is asserted or assumed.
 An independent proof of this proposition remains necessary.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFixedSliceConvergenceStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

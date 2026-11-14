@@ -25,3 +25,7 @@ Whittaker type, or condition on the smaller Whittaker function is used.
 
 This is an internal deduction from existing Library proofs. It neither changes
 the final dominant-rank statements nor establishes a gamma or L comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictCoefficients` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

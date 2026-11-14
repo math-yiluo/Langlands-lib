@@ -108,3 +108,7 @@ The published adapter companion records the contributions of Workers 31, 43,
 proofs and transport arguments used here. This assembly proves the
 construction-input proposition; factor construction and later comparison
 identities are separate declarations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.WhittakerTypeGammaConstructionInputProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -44,3 +44,7 @@ adjacent-rank gamma argument, the parent still must choose a genuine
 irreducible generic submodel, compare factors with the original full-type
 inputs, assemble the matched finite products and continue from large second
 twists. This result alone proves none of those remaining steps.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankMatrixExistence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

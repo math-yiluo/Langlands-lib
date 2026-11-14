@@ -22,3 +22,7 @@ printed page 62 (one-based PDF page 72). The registered source is
 SHA256 `86a8900900504adeb5757a04b5bb8a8754e6ef00b0fff49754096d371f59d568`.
 The present module does not yet assert Fourier regularity, nonzero operators,
 or a functional equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalCoefficientTests` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -1,0 +1,59 @@
+# All-field port of `Langlands.Representation.Derivative.MirabolicProductRestriction`
+
+Lean module: `Langlands.AllFieldBZ.Representation.Derivative.MirabolicProductRestriction`. Original module: `Langlands.Representation.Derivative.MirabolicProductRestriction` in the Library; its mathematical
+content is described in the Library file `Langlands/Representation/Derivative/MirabolicProductRestriction.md`.
+
+## Content
+
+This module restates and reproves, over an arbitrary nonarchimedean local field, the
+declarations of the original module whose statements or proofs depend on the p-adic field
+package `Langlands.PadicField p`. The field is now `F : Langlands.AllFieldBZ.LocalFieldPackage`
+(a field with no base field and no characteristic hypothesis), and its local-field structure is
+`T : F.TopologicalData`, an abbreviation of the Library structure `Langlands.LocalFieldData F.Carrier`.
+Declarations of the original module that do not depend on the field are not duplicated: the module
+imports the original and uses them directly. Each ported statement is the original statement with the
+replacements listed under "Systematic changes"; each proof is the original proof with the same
+replacements.
+
+## Ported declarations
+
+| Original declaration | All-field declaration |
+| --- | --- |
+| `Langlands.Derivative.MirabolicProductRestriction.topologicalRing` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.topologicalRing` |
+| `Langlands.Derivative.MirabolicProductRestriction.leviInducingFunctor` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.leviInducingFunctor` |
+| `Langlands.Derivative.MirabolicProductRestriction.inducingFunctor` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.inducingFunctor` |
+| `Langlands.Derivative.MirabolicProductRestriction.subFunctor` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.subFunctor` |
+| `Langlands.Derivative.MirabolicProductRestriction.midFunctor` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.midFunctor` |
+| `Langlands.Derivative.MirabolicProductRestriction.quotFunctor` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.quotFunctor` |
+| `Langlands.Derivative.MirabolicProductRestriction.midEquiv` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.midEquiv` |
+| `Langlands.Derivative.MirabolicProductRestriction.factors` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.factors` |
+| `Langlands.Derivative.MirabolicProductRestriction.tensorEquiv` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.tensorEquiv` |
+| `Langlands.Derivative.MirabolicProductRestriction.quot_hE` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.quot_hE` |
+| `Langlands.Derivative.MirabolicProductRestriction.quotEquiv` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.quotEquiv` |
+| `Langlands.Derivative.MirabolicProductRestriction.sub_hE` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.sub_hE` |
+| `Langlands.Derivative.MirabolicProductRestriction.subEquiv` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.subEquiv` |
+| `Langlands.Derivative.MirabolicProductRestriction.pair_hT` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.pair_hT` |
+| `Langlands.Derivative.MirabolicProductRestriction.subEquiv_naturality` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.subEquiv_naturality` |
+| `Langlands.Derivative.MirabolicProductRestriction.quotEquiv_naturality` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.quotEquiv_naturality` |
+| `Langlands.Derivative.MirabolicProductRestriction.midEquiv_naturality` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.midEquiv_naturality` |
+| `Langlands.Derivative.MirabolicProductRestriction.core` | `Langlands.AllFieldBZ.Derivative.MirabolicProductRestriction.core` |
+| `Langlands.Derivative.mirabolicProductRestriction` | `Langlands.AllFieldBZ.Derivative.mirabolicProductRestriction` |
+
+## Systematic changes
+
+- `Langlands.PadicField.{u} p` becomes `Langlands.AllFieldBZ.LocalFieldPackage.{u}`; the prime
+  `p` and its `Fact p.Prime` instance are removed from binders, and the corresponding explicit
+  arguments are dropped.
+- Normalization API names on `T` (for example `Integers`, `ord`, `normalizedAbs`, `uniformizer`)
+  resolve to `Langlands.LocalFieldData`; the remaining p-adic foundation facts are replaced by the
+  arbitrary-field versions in `Langlands.AllFieldBZ.LocalField.Definitions`.
+- Every ported declaration `Langlands.X` is renamed `Langlands.AllFieldBZ.X` (with `PadicField`
+  replaced by `LocalFieldPackage` in the name); a declaration in a namespace outside `Langlands`
+  is renamed `<original name>_allFieldBZ`. References to ported declarations are renamed accordingly.
+- The original namespaces are opened, hiding the names that have ported versions, so that unported
+  field-independent declarations are used unchanged.
+
+## Provenance
+
+Generated by the all-field port script of Worker 71 for the BZ77 mirabolic nondegeneracy task
+(Bernstein and Zelevinsky, *Induced representations of reductive p-adic groups I*, 1977, 4.9-4.11).

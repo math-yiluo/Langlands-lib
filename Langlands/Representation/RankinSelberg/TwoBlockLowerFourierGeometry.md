@@ -38,3 +38,7 @@ automorphism. The two canonical order proofs use quotient induction.
 Their field universe is arbitrary and independent of any representation
 carrier; no representation is required. All the results retain block
 sizes one. No new measure or representation hypotheses are introduced.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFourierGeometry` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

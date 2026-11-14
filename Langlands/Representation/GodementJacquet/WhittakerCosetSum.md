@@ -69,3 +69,7 @@ p-adic part (`namespace Padic`, with the canonical local instances of a
   `Φ(M k) = Φ(M)` for all `M` and `W(g k) = W(g)` for all `g`. Proof: apply
   `generalLinearCompactOpen` of the canonical topological data to the
   neighborhood `U ∩ L ∩ GL_(n+1)(O)` of `1`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.WhittakerCosetSum` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

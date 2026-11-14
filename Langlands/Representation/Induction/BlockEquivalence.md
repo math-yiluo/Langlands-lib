@@ -30,3 +30,7 @@ finite length or finite dimensionality of the block representations is
 assumed: both sides are the already constructed smooth induced spaces.
 This module does not supply reordering or association of induction,
 Whittaker-type inheritance, factor existence or gamma multiplicativity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Induction.BlockEquivalence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

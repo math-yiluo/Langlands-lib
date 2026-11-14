@@ -1,0 +1,25 @@
+import Langlands.AllFieldBZ.Representation.CuspidalSupport.CompactCoefficientFinitenessReduction
+import Langlands.AllFieldBZ.Representation.CuspidalSupport.DeterminantUnitCornerStructureProof
+import Langlands.Representation.CuspidalSupport.CompactCoefficientFinitenessProof
+
+/-!
+# All-field port of `Langlands.Representation.CuspidalSupport.CompactCoefficientFinitenessProof`
+
+Mechanical port of the field-dependent declarations of the p-adic module
+`Langlands.Representation.CuspidalSupport.CompactCoefficientFinitenessProof` to an arbitrary nonarchimedean local field
+(`Langlands.AllFieldBZ.LocalFieldPackage`). See the paired Markdown.
+-/
+namespace Langlands.AllFieldBZ
+universe uF uV
+
+namespace CuspidalSupport
+open Langlands.CuspidalSupport hiding CompactCoefficientFixedLevelFinitenessTheorem DeterminantUnitCornerStructureStatement compactCoefficientFixedLevelFiniteness compactCoefficientFixedLevelFiniteness_of_cornerStructure continuous_determinantUnitInclusion determinantUnitCornerStructure determinantUnitInclusion determinantUnitInclusion_apply determinantUnitOpenSubgroup determinantUnitRestriction determinantUnitRestrictionMap determinantUnitRestrictionMap_apply determinantUnitRestrictionMap_comp determinantUnitRestrictionMap_id determinantUnitRestriction_apply determinantUnitSubgroup determinantUnitSubgroup_normal isOpen_determinantUnitSubgroup leviDeterminantNorm leviDeterminantNorm_apply mem_determinantUnitSubgroup mem_determinantUnitSubgroup_iff_normalizedAbs mem_determinantUnitSubgroup_iff_valuation normalizedAbs_eq_one_iff
+/-- Bernstein--Zelevinsky (1976), Theorem 4.14 via 4.16: fixed-level finiteness of
+compact-coefficient classes on the determinant-unit subgroup of a product Levi. -/
+theorem compactCoefficientFixedLevelFiniteness :
+    CompactCoefficientFixedLevelFinitenessTheorem.{uF, uV} :=
+  compactCoefficientFixedLevelFiniteness_of_cornerStructure determinantUnitCornerStructure
+    sandwichSimpleModuleDimensionBound
+
+end CuspidalSupport
+end Langlands.AllFieldBZ

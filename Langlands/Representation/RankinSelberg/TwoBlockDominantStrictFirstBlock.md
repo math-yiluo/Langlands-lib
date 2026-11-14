@@ -9,3 +9,7 @@ This internal assembly works over the canonical topology, valuation and Borel st
 `exists_strictFirstBlockCoefficientLaw` combines this bound with the proved ordinary Jacquet functional existence bound by taking their maximum. Above it, the actual opposite-twisted sections are absolutely integrable, the chosen ordinary functional is nonzero, and its first-block law holds for all compatible measures. Explicit twisted representations and functionals prevent a large elaboration search.
 
 This is a derived packaging result, using the existing closed statement, ordinary Jacquet construction and unequal-rank functional equation. It does not itself prove `H`, either closed dominant-rank target, a complete gamma product certificate, or the L divisibility. No unrestricted multiplicativity theorem is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictFirstBlock` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -112,3 +112,7 @@ equation, or gamma equation is assumed or proved.
 The twelve canonical local instances have explicit `supportedSynthesis` names
 to avoid generated declaration-name collisions when imported alongside
 FramedIntegrability. Their values and all mathematical statements are unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonSupportedSynthesis` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

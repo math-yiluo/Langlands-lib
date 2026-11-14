@@ -49,3 +49,7 @@ parameter identities to a fixed arbitrary inducing character, constructing
 the required complete factor certificates, and the two exact adjacent-rank
 parent propositions remain separate obligations. No full-model matrix
 functional-equation existence or later multiplicativity theorem is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankInducedModelContinuation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

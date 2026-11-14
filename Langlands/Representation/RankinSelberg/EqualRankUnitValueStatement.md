@@ -170,3 +170,7 @@ proposition declaration successfully (`statement_returns_prop: true`). The
 reported universe parameters are `uF`, `uV`, `uW`; its only reported axioms are
 `propext`, `Classical.choice`, and `Quot.sound`. This development check does
 not establish a proof of the proposition or independent semantic acceptance.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankUnitValueStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

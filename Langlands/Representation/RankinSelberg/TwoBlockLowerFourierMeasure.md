@@ -23,3 +23,7 @@ certificate on the exact `unipotentHaar` and every compatible measure for the
 exact `generalLinearHaar` and `unipotentHaar`. It neither chooses another
 normalization nor assumes invariance under duality. It asserts no existence
 of a compatible measure, Fourier identity, coefficient identity or convergence.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFourierMeasure` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

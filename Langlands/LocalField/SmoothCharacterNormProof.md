@@ -155,3 +155,7 @@ uniformizer.
 The checked theorem uses only the axioms `propext`, `Classical.choice` and
 `Quot.sound`. It constructs no invariant positive form and proves no
 downstream analytic or representation-theoretic assertion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.LocalField.SmoothCharacterNormProof` and `Langlands.AllField.LocalField.SmoothCharacterNormProofSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

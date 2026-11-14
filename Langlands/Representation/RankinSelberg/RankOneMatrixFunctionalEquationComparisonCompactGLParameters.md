@@ -39,3 +39,7 @@ supplied self-dual Haar measure, and every `m ≥ 0`. It proves no model
 realization, spectral continuation, or gamma comparison. Its provenance is
 the source-free combination of the cited internal orbit, finite-family,
 matrix-translate and scalar-Haar results.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonCompactGLParameters` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

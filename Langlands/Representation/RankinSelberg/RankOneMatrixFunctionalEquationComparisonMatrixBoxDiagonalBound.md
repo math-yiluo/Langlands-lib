@@ -9,3 +9,7 @@ This internal derived module uses actual compact open boxes in the full square-m
 `boundedDiagonalNormIntegrand_convergesOnRight` applies the actual full diagonal restriction bound to the supplied common matrix convergence hypothesis. For each fixed positive box radius and exponent vector, it obtains one common unshifted half-plane for every actual bi-smooth coefficient. Its bound is the supplied shifted matrix bound plus the determinant degree plus the real part of `jpssShift n`. Genuine finiteness of the weighted torus norm integral follows by pointwise domination and lower Lebesgue integration. It retains arbitrary canonical p-adic fields, independent representation-carrier universes, and the scalar boundary rank.
 
 Provenance is source-free composition of compact norm balls, the characteristic Schwartz constructor, the proved determinant absorption bound, and SmoothDiagonalBound. This module supplies the torus estimate used with a separate unipotent slice bound; it asserts no raw Whittaker convergence or gamma comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonMatrixBoxDiagonalBound` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

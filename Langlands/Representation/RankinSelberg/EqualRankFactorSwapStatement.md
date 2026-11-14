@@ -104,3 +104,7 @@ Any needed existence, character transport, analytic and functional-equation
 results remain proof dependencies, not hypotheses silently added to this
 statement. This module imports only the established factor definitions
 through `PadicPairFactors`; it does not assume any of those proof targets.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankFactorSwapStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

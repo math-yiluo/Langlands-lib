@@ -332,3 +332,7 @@ pages 31, 36, 37, 38, 41 and 42 were also checked in rendered page images.
 JPS 1979 printed pages 173–177 were read in extracted text, and printed
 page 177 also in a rendered page image. No registered errata note for these sources was found in the Library
 notes, project notes or literature locations consulted.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.TwoBlockMatrixFunctionalEquationInductionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

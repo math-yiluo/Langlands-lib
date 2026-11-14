@@ -70,3 +70,7 @@ appears explicitly. The convention for `Φ^P` agrees with the block-matrix
 convention `Matrix.reindex e e (Matrix.fromBlocks A B C D)`,
 `e = finSumFinEquiv.trans (finCongr (blockRanks_add h))`, used by the
 functional-equation task.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.TwoBlockSchwartz` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

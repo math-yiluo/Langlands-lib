@@ -38,3 +38,7 @@ identity. They assert no model-integral equality and require no representation,
 nonzero functional, irreducibility or positive `r` premise. In particular the
 orbit adapters include `r=0`. Their provenance is internal: they specialize
 published change-of-variables, commutation, and actual kernel constructions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankModelStarFourierOrbit` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

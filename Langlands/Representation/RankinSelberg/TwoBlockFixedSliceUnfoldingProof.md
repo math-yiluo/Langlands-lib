@@ -54,3 +54,7 @@ test-carrier and block-carrier universes stay independent, the twists are exactl
 `(-u,+u)`, reducible Whittaker-type blocks and zero functionals are included, and
 the test coefficient is the actual image of any smooth representation. The proof
 does not use Section 7 or any gamma or L factor multiplicativity statement.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFixedSliceUnfoldingProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

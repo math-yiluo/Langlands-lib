@@ -51,3 +51,7 @@ lower density `q^(-k b)` times the inverse half modulus times the Jacobian
 `ae_lintegral_kernel_comp_lt_top` is a generic Tonelli consequence: under two
 composite lintegral laws, the iterated absolute fiber integral of an integrable
 function is almost everywhere finite.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentCoefficients` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

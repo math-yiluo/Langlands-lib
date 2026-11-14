@@ -1,0 +1,30 @@
+# All-field port of `Langlands.Representation.RankinSelberg.CanonicalCharacterChange`
+
+`Langlands.AllField.Representation.RankinSelberg.CanonicalCharacterChange` is the all-field port of the Library module `Langlands.Representation.RankinSelberg.CanonicalCharacterChange`, which belongs to the Library's development over p-adic fields `F : PadicField p` (with bundled topological data `F.TopologicalData` where a topology is needed). In the port, `F` is an arbitrary field with bundled data `T : LocalFieldData F` (a topology, a valuative relation and an `IsNonarchimedeanLocalField` structure, see `Langlands.LocalFieldData`). Nothing about the characteristic of `F` is assumed, so the port covers every nonarchimedean local field, including those of positive characteristic.
+
+The port imports the original module, so the field-independent declarations of the original are available to it unchanged. It re-declares, under the same name with `Langlands.` replaced by `Langlands.AllField.` (declarations of the original namespace `Langlands.PadicField.TopologicalData` move to `Langlands.LocalFieldData`), the declarations that involve the field and that the Library's p-adic proofs of JPSS gamma-factor and L-factor multiplicativity (`Langlands.RankinSelberg.gammaMultiplicativity`, `Langlands.RankinSelberg.lFactorMultiplicativity`) use. Each re-declared declaration keeps the statement, and for a theorem the proof, of its original. Only the field binders change, and the `T`-API (residue cardinality, normalized absolute value, uniformizer and their lemmas) comes from `Langlands.LocalFieldData` and `Langlands.AllField.LocalField.Foundation`.
+
+Source: the original module `Langlands.Representation.RankinSelberg.CanonicalCharacterChange` in the Library. Its Markdown file gives the literature provenance of each statement.
+
+## Contents
+
+The module docstring of the port:
+
+**Canonical character change for actual p-adic zeta modules**
+
+## Imports from the port
+
+- `Langlands.AllField.Representation.RankinSelberg.CharacterChangeMeasure`
+- `Langlands.AllField.Representation.RankinSelberg.EqualRankCharacterChange`
+- `Langlands.AllField.Representation.RankinSelberg.RectangularCharacterChangeMeasureProof`
+
+## Declarations
+
+- `Langlands.AllField.RankinSelberg.unipotentQuotientHaar_characterChange` (theorem): The actual canonical quotient measure satisfies the character-change law.
+- `Langlands.AllField.RankinSelberg.unipotentQuotientHaar_sigmaFinite_normalized` (theorem): The canonical quotient measure is sigma finite for the supplied p-adic realization.
+- `Langlands.AllField.RankinSelberg.zetaSpan_equalRank_characterChange_canonical` (theorem): The actual p-adic equal-rank Laurent zeta span is unchanged by character scaling.
+- `Langlands.AllField.RankinSelberg.isEqualRankLPolynomial_characterChange_canonical` (theorem): Character scaling preserves each normalized polynomial relation for the actual measures.
+- `Langlands.AllField.RankinSelberg.zetaSpan_unequalRank_characterChange_canonical` (theorem): The actual p-adic unequal-rank Laurent zeta span is unchanged by character scaling.
+- `Langlands.AllField.RankinSelberg.isUnequalRankLPolynomial_characterChange_canonical` (theorem): Character scaling preserves each normalized polynomial relation for the actual measures.
+
+Public declarations of the original that are not re-declared here: `Langlands.RankinSelberg.canonicalCharacterChangeLaurentUnit`, `Langlands.RankinSelberg.canonicalUnequalRankCharacterChangeLaurentUnit`, `Langlands.RankinSelberg.normalizedGeneratorExists_equalRank_characterChange_canonical`, `Langlands.RankinSelberg.normalizedGeneratorExists_unequalRank_characterChange_canonical`. Each of them either does not involve the p-adic field, and is then available from the original module, or is not used by the two multiplicativity proofs.

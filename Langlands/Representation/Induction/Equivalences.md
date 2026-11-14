@@ -27,3 +27,7 @@ assumptions. They require neither irreducibility nor admissibility, and do not
 assert existence of a cuspidal embedding or tensor decomposition. Their role in
 the supercuspidal embedding proof is to transport a separately obtained Levi
 embedding to the induction of a separately obtained external tensor product.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Induction.Equivalences` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

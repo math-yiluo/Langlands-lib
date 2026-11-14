@@ -45,3 +45,7 @@ Its conventions come from Jacquet–Piatetski-Shapiro–Shalika,
 pp.390–391, (2.12), p.403, and (3.1), pp.404–405. The proof uses no irreducibility or
 Whittaker-type assumption and no adjacent-rank or other multiplicativity
 result.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.UnramifiedTwistGammaProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -146,3 +146,7 @@ asymptotic expansion, or lower-support premise. It does not prove a Laurent
 expansion, half-plane convergence, rational continuation, or any gamma,
 epsilon or L-factor claim. The determinant-slice, bilateral-series and
 analytic statement pairs are imported without changes.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankSliceSupportStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

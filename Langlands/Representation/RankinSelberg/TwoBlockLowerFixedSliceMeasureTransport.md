@@ -28,3 +28,7 @@ Section 4.7. This module assumes no representation data and proves no outer inte
 It leaves the existing target statement and its entire import closure unchanged.
 The local canonical-field and general-linear instances have explicit names so
 that this helper can be imported together with the independent growth modules.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFixedSliceMeasureTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

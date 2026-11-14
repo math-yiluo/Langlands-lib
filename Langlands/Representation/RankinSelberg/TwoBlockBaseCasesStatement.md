@@ -179,3 +179,7 @@ individually inspected with `lean_check`: every inspection reports
 `uF`, `uV`, and `uW`. The reported transitive axioms are only
 `propext`, `Classical.choice`, and `Quot.sound`. These are statement
 checks; they supply no proof of the analytic propositions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockBaseCasesStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -46,3 +46,7 @@ The provenance is source-free derived content: measurable fiberwise
 left translation proves Haar transport, WeightedSynthesis supplies
 unipotent triviality of the determinant power, and SignedGLFourier
 supplies the original kernel and its absolute convergence.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonHaarShear` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

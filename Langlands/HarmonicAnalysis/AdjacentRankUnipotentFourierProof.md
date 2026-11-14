@@ -82,3 +82,7 @@ This completes all three conjuncts. No representation or model coefficient,
 factorization of `Phi`, growth condition or additional measure compatibility
 is assumed. Worker 1198 implemented the Fourier bridge; Worker 86 contributed
 the actual matrix and convergence helpers used in it.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.HarmonicAnalysis.AdjacentRankUnipotentFourierProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

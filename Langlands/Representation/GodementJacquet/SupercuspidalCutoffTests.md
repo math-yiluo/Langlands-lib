@@ -25,3 +25,7 @@ SHA256 `86a8900900504adeb5757a04b5bb8a8754e6ef00b0fff49754096d371f59d568`.
 The present construction is for arbitrary smooth algebraic-dual coefficients;
 it does not yet establish the singular vanishing of their Fourier transforms,
 a nonzero integral operator, or the functional equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalCutoffTests` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

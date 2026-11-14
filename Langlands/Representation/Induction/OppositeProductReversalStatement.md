@@ -141,3 +141,7 @@ modulus with a Haar modulus. They compare the constructors as actually
 defined. Generic conjugate-induction transport and generic finite-tensor
 regrouping are separate reusable developments; this pair introduces neither.
 It also makes no smooth-contragredient or inverse-transpose assertion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Induction.OppositeProductReversalStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

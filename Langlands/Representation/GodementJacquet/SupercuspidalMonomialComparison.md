@@ -67,3 +67,7 @@ Fourier stability and inverse identities, and standard complex polynomial
 splitting. It does not prove the analytic cross identity, identify `σ` with any
 particular pullback, or extend the comparison to arbitrary full-matrix tests.
 Those obligations remain separate from this contribution.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalMonomialComparison` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

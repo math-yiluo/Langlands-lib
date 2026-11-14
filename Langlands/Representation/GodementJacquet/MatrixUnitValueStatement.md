@@ -31,3 +31,7 @@ pullback gives the second assertion using the published coefficient transport.
 The future proof must carry out these constructions. No common denominator,
 rationality for arbitrary tests, normalized generator or functional equation is
 asserted here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.MatrixUnitValueStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

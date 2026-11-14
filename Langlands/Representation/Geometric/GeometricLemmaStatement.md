@@ -124,3 +124,7 @@ actual smooth induction functors; it does not supply the compactness,
 Haar-modulus identification, standardness, or geometric-lemma proofs. The
 general orbit theorem of BZ 5.2, with arbitrary triples and characters, is
 outside this statement's scope.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.GeometricLemmaStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

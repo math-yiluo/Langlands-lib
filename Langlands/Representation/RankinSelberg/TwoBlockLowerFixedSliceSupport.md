@@ -23,3 +23,7 @@ its signed contribution plus `2 * M`. Summing gives
 `torusSize lam ≤ twistDegree s lam + rank * (2 * M)`, with integer casts.
 This is elementary finite-sequence geometry derived for the convergence proof;
 it asserts no Fourier endpoint bound or integral convergence.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFixedSliceSupport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

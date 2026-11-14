@@ -75,3 +75,7 @@ integer units and the valuation/uniformizer decomposition. Those steps are
 proof obligations, not inputs supplied by this statement or by its motivating
 citation. This statement constructs no invariant positive form and proves
 no downstream analytic assertion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.LocalField.SmoothCharacterNormStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

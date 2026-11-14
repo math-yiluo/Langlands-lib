@@ -162,3 +162,7 @@ other sections, nor any statement about Whittaker models or the uniqueness of
 Whittaker functionals.
 
 The three block-subgroup facts listed above use the existing `Langlands.GeneralLinear.BlockShape` declarations from [OppositeBlockIntersection](../../Group/GL/OppositeBlockIntersection.md); this module defines no copies.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDeformationNonvanishing` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -66,3 +66,7 @@ coefficient injectivity or Whittaker-type premise. Both field and original
 carrier universes remain independent, and `r=0` is included. This module proves
 full section spanning; Jacquet integrability, a common nonzero Whittaker
 functional and whole model-image equality remain further obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankSectionSurjectivity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

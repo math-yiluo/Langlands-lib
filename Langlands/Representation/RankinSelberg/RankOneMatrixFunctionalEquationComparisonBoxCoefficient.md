@@ -23,3 +23,7 @@ These are derived consequences of the published box decomposition and
 actual model equivariance. No original-source transcription is asserted.
 Convergence and the final matrix-to-block functional equation are not yet
 conclusions of this module.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonBoxCoefficient` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

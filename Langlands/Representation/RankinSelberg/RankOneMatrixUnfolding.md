@@ -45,3 +45,7 @@ Section 4: integrate the test function against the character over `N`. The formu
 itself is the Iwasawa integration formula of `RankOneMatrixIwasawa`. The module assumes
 no convergence. The integral form takes absolute convergence of the matrix integral as
 a hypothesis, and the absolute form computes the absolute integral unconditionally.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixUnfolding` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

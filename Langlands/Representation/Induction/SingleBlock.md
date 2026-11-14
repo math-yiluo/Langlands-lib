@@ -172,3 +172,7 @@ formalizing a separately cited external theorem. Existing Library
 Lean/Markdown pairs are unchanged. The result supplies the single-block
 base case; it makes no claim about induction transitivity or the
 classification of representations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Induction.SingleBlock` and `Langlands.AllField.Representation.Induction.SingleBlockSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

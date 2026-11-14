@@ -163,3 +163,7 @@ separate proof obligations.
 
 Worker 611 authored this pair from Worker 394's scalar formulation and
 source locators, using the published ordinary Mellin conventions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RamifiedFiniteFunctionMellinStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

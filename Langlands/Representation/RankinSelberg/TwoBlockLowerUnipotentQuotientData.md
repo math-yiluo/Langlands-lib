@@ -276,3 +276,7 @@ This module asserts none of the following:
   integration or convergence theorem;
 - descent of a representation integrand, Fourier closure or inversion, a
   Mellin identity, a block functional equation or factor multiplicativity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerUnipotentQuotientData` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

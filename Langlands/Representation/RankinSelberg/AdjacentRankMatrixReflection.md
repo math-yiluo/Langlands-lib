@@ -111,3 +111,7 @@ Existence of actual matrix analytic witnesses, the ambient model
 realization, full functional-equation assembly, normalized
 lower-to-upper representation transport and both parent gamma/L
 statements remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankMatrixReflection` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

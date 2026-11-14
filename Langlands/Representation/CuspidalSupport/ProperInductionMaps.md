@@ -71,3 +71,7 @@ PDF p.6. Those original pages were read directly. Registered source:
 `bernstein-zelevinsky-1977-induced-i`, SHA-256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 The final decomposition-dependent proof remains a separate obligation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.ProperInductionMaps` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

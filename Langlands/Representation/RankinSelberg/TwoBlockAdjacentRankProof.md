@@ -152,3 +152,7 @@ Workers 831 and 15 for the included actual zero-comparison construction.
 The gamma proof imports its independently published prerequisites by Lean
 name. Both final theorems preserve the original full Whittaker-type inputs
 and use no unrestricted multiplicativity or later rank descent.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockAdjacentRankProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

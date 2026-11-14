@@ -40,3 +40,7 @@ Registered originals:
   `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 - `casselman-1995-admissible-representations`, draft 1 May 1995, SHA256
   `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Classification.IrreducibleProductEmbeddingStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

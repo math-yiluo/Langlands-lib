@@ -74,3 +74,7 @@ the two first-block premises, absolute integrability of either Jacquet
 realization, rational continuation, factor certificates, the equal-rank
 boundary, or either final dominant gamma/L target. The two block equations
 are the remaining analytic input to this particular numerator result.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictNumerators` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

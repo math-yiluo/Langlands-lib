@@ -34,3 +34,7 @@ model vector may be zero. There is no premise of ordinary Jacquet convergence
 or analyticity of an integral. This is an internal adaptation of the published
 first-block deformation and smooth twist equivalences. It proves neither
 final dominant-rank factor theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantOppositeDeformation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

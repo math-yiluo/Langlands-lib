@@ -1,0 +1,21 @@
+import Langlands.AllFieldBZ.Representation.Induction.CompactScalarProof
+import Langlands.AllFieldBZ.Representation.Parabolic.NaturalInductionDualityFromScalar
+import Langlands.Representation.Parabolic.NaturalInductionDualityProof
+
+/-!
+# All-field port of `Langlands.Representation.Parabolic.NaturalInductionDualityProof`
+
+Mechanical port of the field-dependent declarations of the p-adic module
+`Langlands.Representation.Parabolic.NaturalInductionDualityProof` to an arbitrary nonarchimedean local field
+(`Langlands.AllFieldBZ.LocalFieldPackage`). See the paired Markdown.
+-/
+namespace Langlands.AllFieldBZ.Parabolic
+open Langlands.Parabolic hiding LeviInflationAdmissibilityClause NaturalNormalizedInductionDualityStatement NormalizedInductionAdmissibilityClause ParabolicQuotientCompactClause RefinedInductionTensorTheorem RefinedNaturalInductionDualityClause StandardNaturalInductionDualityClause UnipotentFiniteContainmentClause exists_compactScalarData isAdmissible_refinedInflation_iff isCompact_integralRange isOpenMap_refinedLeviProjection leviInflationAdmissibility naturalNormalizedInductionDuality naturalNormalizedInductionDuality_of_scalar normalizedInductionAdmissibility normalizedRefinedInductionAdmissibility parabolicQuotientCompact quotientMap_image_integralRange refinedLeviModulus_mulSingle refinedLevi_compactOpenCofinal refinedNaturalInductionDuality_of_scalar refinedParabolicQuotientCompact refinedQuotientMap_image_integralRange standardNaturalInductionDuality_of_scalar
+universe uF uV
+
+/-- Natural normalized induction duality, standard and refined. -/
+theorem naturalNormalizedInductionDuality :
+    NaturalNormalizedInductionDualityStatement.{uF, uV} :=
+  naturalNormalizedInductionDuality_of_scalar glParabolicCompactScalarIntegral.{uF}
+
+end Langlands.AllFieldBZ.Parabolic

@@ -23,3 +23,7 @@ case of Folland, *A Course in Abstract Harmonic Analysis*, second edition
 (source `folland-2015-abstract-harmonic-analysis-second`). It retains the
 published `H*g` quotient and right-action convention.
 No claim about JPSS convergence, rationality, or functional equations is made.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.QuotientHaarExistence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

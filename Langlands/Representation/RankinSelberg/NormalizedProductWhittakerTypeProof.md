@@ -88,3 +88,7 @@ Registered original: `jpss-1983-rankin-selberg`, SHA256
 No source-specific erratum affecting these passages was found in the project
 literature and public notes at the original 2026-10-25 source check. The proof
 route follows the published upper unnormalized interfaces described above.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.NormalizedProductWhittakerTypeProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

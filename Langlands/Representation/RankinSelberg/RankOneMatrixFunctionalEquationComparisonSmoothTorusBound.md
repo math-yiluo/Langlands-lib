@@ -9,3 +9,7 @@ The integrand is measurable: the test and coefficient are continuous, and comple
 `biSmooth_matrixTorus_convergesOnRight` preserves the exact common bound supplied by `Padic.MatrixConvergesOnRight`, uniformly over all tests, all actual bi-smooth coefficients, and all actual uniformizers. The spectral exponent remains exactly `s + jpssShift n`. The matrix test includes singular matrices; no test or coefficient family is replaced.
 
 Provenance is source-free composition of the published matrix-coefficient laws, uniform local constancy of matrix-test translations, the actual principal congruence basis, the normalized determinant character on compact subgroups, and the Haar-restriction argument in DiscreteTorus. This is a convergence prerequisite for the gamma comparison, not a proof of that comparison or of raw Whittaker bounds.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonSmoothTorusBound` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

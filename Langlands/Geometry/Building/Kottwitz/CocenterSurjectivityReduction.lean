@@ -1,3 +1,4 @@
+import Langlands.Geometry.Building.Kottwitz.CocenterTorusRestriction
 import Langlands.Geometry.Building.Kottwitz.CocenterCocharacterExactness
 import Langlands.Geometry.Building.Kottwitz.CocenterTargetBijectivityReduction
 import Langlands.Geometry.Building.Kottwitz.SimplyConnectedDerivedConstructionReduction
@@ -43,10 +44,6 @@ section CocenterRestriction
 variable {k : Type u} [Field k]
   {G : GroupScheme (Spec (CommRingCat.of k))}
   (a : Choice k G) (c : Cocenter k G)
-
-/-- The actual cocenter quotient restricted to a chosen maximal torus. -/
-def cocenterTorusRestriction : a.torus ⟶ c.torus :=
-  Additive.ofMul (a.inclusion ≫ c.quotient)
 
 variable (E : Type u) [Field E] [Algebra k E] [IsSepClosure k E]
   (K : Type u) [Field K] [Algebra k K] [Algebra K E]

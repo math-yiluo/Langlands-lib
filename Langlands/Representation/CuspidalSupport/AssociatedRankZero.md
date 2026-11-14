@@ -63,3 +63,7 @@ therefore cannot itself supply this boundary case.
 
 This helper is submitted together with the unconditional theorem in
 `AssociatedProof`; its implementation is specific to rank zero.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.AssociatedRankZero` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

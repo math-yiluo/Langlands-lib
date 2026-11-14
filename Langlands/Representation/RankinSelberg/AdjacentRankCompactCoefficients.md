@@ -112,3 +112,7 @@ This helper supplies the finite middle-average step. It does not choose K
 to fix a square Schwartz test or quasicharacter, impose transpose stability,
 prove joint-integrability or determinant-shell convolution, or assert any
 adjacent-rank zeta, gamma or L-factor identity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankCompactCoefficients` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -200,3 +200,7 @@ Together with `isOpenEmbedding_lowerTriangularQuotientMap` from
 measure on `N_m \ GL_m` be computed on the open cell of lower triangular
 representatives, with nothing lost off that cell. The planned consumer is
 the proof of `LowerBlockQuotientDisintegrationStatement` (task 7b088130).
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Group.GL.LowerTriangularBigCellConull` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

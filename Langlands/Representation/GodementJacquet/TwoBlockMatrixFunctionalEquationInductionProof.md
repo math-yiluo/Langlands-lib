@@ -62,3 +62,7 @@ docstring now cites printed pages 37–42, as its Markdown does.
 Compiled with 0 errors and 0 warnings. Axioms of
 `twoBlockMatrixFunctionalEquationInduction`: `propext`, `Classical.choice`,
 `Quot.sound`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.TwoBlockMatrixFunctionalEquationInductionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

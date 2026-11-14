@@ -26,3 +26,7 @@ Gamma symmetry is derived here directly from the defining equation, rather
 than using the ratio formula of Section 3.1(2). No analytic theorem, factor
 existence, irreducibility or smooth-contragredient identification is assumed.
 The exact closed conjunction is assembled in `EqualRankFactorSwapProof`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankSwapFactors` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

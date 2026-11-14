@@ -1,21 +1,17 @@
 import Langlands.GroupScheme.Rational.SteinbergRationalGaloisTransport
 
-/-! # Galois transport of rational values of compatible root maps -/
+/-! # Galois transport of rational values of compatible root maps
+
+A wrapper, with implicit root maps and action, around the published
+`SplitPinning.RootMapsGaloisCompatible.rationalPoints`. -/
 
 noncomputable section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Opposite
-open CategoryTheory.CartesianMonoidalCategory
-open scoped CategoryTheory.MonObj
+open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
 
 namespace Langlands.GroupScheme
-
-set_option backward.isDefEq.respectTransparency false
-set_option backward.isDefEq.respectTransparency.types false
-set_option maxHeartbeats 800000
-set_option autoImplicit false
 
 namespace SplitPinning
 

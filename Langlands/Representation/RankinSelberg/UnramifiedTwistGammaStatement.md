@@ -22,3 +22,7 @@ so the central-character sign in the gamma equation is preserved. These two
 shifts are the claimed substitution in the scalar gamma factor. The target
 extends the existing L-polynomial spectral-shift interface to the complete
 gamma relation; no proof is claimed by this proposition definition.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.UnramifiedTwistGammaStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

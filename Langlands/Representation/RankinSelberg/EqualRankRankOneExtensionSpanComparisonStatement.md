@@ -113,3 +113,7 @@ For a base value `R`, given by `W` and `W₁`:
 4. by the last-row reduction, the equal-rank integral of `(W, W', Φ)` is
    `c` times the corank-one integral of `(W, W₁)`, with the same convergence,
    so `c · R` is an induced value.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankRankOneExtensionSpanComparisonStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

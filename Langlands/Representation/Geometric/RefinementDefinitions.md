@@ -121,3 +121,7 @@ blocks. No Haar-scaling theorem is assumed in constructing the character;
 identifying this formula with Haar scaling remains a separate theorem.
 No representation functors, geometric-lemma statement, or transitivity theorem
 is claimed here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.RefinementDefinitions` and `Langlands.AllField.Representation.Geometric.RefinementDefinitionsSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

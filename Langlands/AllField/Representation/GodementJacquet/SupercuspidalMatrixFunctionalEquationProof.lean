@@ -1,0 +1,126 @@
+import Langlands.Representation.GodementJacquet.SupercuspidalMatrixFunctionalEquationProof
+import Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixAssembly
+import Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixFunctionalEquationStatement
+import Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixRationalExtension
+/-! # The closed supercuspidal matrix functional equation -/
+
+noncomputable section
+
+namespace Langlands.AllField.GodementJacquet
+open Langlands.GodementJacquet hiding MatrixUnitValueStatement SupercuspidalMatrixFunctionalEquationStatement determinantNorm_eq_one_of_mem_conjugateUnipotent determinantNorm_ker_sup_center_finiteIndex determinantUnitTestToMatrixTest determinantUnitTestToMatrixTest_apply determinantUnitTestToMatrixTest_eq_zero exists_centralCharacter_compactScalarSupport hasCompactSupport_determinantUnit_coefficient inverseTransposeProductReversalEquiv iotaMatrixAnalyticAssertions_product_iff matrixUnitValue oneBlockDeterminantUnitHomeomorph supercuspidalCutoffFourierEvaluation supercuspidalCutoffMatrixTest supercuspidalCutoffMatrixTest_apply supercuspidalCutoffMatrixTest_apply_of_not_mem supercuspidalCutoffMatrixTest_fourier_eq_zero_of_stabilizer supercuspidalCutoffMatrixTest_fourier_right supercuspidalCutoffMatrixTest_fourier_singular supercuspidalCutoffMatrixTest_mem_fourierRegularMatrixTests supercuspidalCutoffMatrixTest_right supercuspidalCutoffMatrixTest_singular supercuspidalDeterminantUnitCoefficient supercuspidalMatrixFunctionalEquation
+open Langlands.AllField.GodementJacquet
+
+open _root_.MeasureTheory
+open Langlands.HarmonicAnalysis hiding PadicRowFourierEquivarianceStatement PadicSelfDualMeasureExistsStatement measurePreserving_rectangular_mul_mul padicLatticeGeometry padicRectangularFourierIntegral_exchange_left padicRectangularFourierIntegral_leftRight padicRectangularHaarScaling padicRectangularLeftRight_measurePreserving padicRowFourierEquivariance padicScalarHaarScaling padicSelfDualMeasureExists padicSquareFourierIntegral_crossExchange padicSquareFourierIntegral_transposeRight rectangularFourierIntegral_comp_mul_mul rectangularFourierIntegral_translate_decomposition rectangularPairing_mul_mul
+open Langlands.AllField.HarmonicAnalysis
+open Langlands.RankinSelberg hiding EqualRankAnalyticStatement EqualRankContinuedFormsStatement EqualRankFrobeniusStatement EqualRankFunctionalEquationStatement EqualRankTrilinearUniquenessStatement GammaMultiplicativityStatement IsPadicPairEpsilonFactor IsPadicPairGammaFactor IsPadicPairLPolynomial IsPadicSymmetricEpsilonFactor IsPadicSymmetricGammaFactor IsPadicSymmetricLPolynomial LFactorMultiplicativityStatement LastRowCompactOrbitStatement QuotientHaarExistenceStatement SliceIntegrable SliceIntegrableAt UnequalRankAnalyticStatement UnequalRankCommonGeneratorStatement ZeroRowLastRowCutoffStatement continuous_determinantOrder continuous_ord_units determinantOrder determinantOrder_mk determinantOrder_rightTranslate determinantSlice diagonalConj_map disjoint_determinantSlice equalRankContinuedForms equalRankFrobenius equalRankIntegrand_eq_mul_spectralPoint_zpow equalRankSliceCoefficient equalRankSliceCoefficient_def exists_rankOneCutoff exists_rankOneEmbedding_support iUnion_determinantSlice isClopen_determinantSlice isClosed_determinantSlice isEqualRankLPolynomial_characterChange_normalized isOpen_determinantSlice isPadicSymmetricEpsilonFactor_of_le isPadicSymmetricGammaFactor_of_le isPadicSymmetricGammaFactor_of_lt isPadicSymmetricLPolynomial_of_le isPadicSymmetricLPolynomial_of_lt lastRowCompactOrbit measurableSet_determinantSlice mem_determinantSlice mk_mem_determinantSlice mk_mem_determinantSlice_iff_normalizedAbs normalizedAbsoluteValue normalizedAbsoluteValue_apply normalizedAbsoluteValue_det_eq_zpow normalizedDeterminantWeight_eq_spectralPoint_zpow padic_rowFourier_equivariance padic_row_instances padic_row_translate_exists pairwise_disjoint_determinantSlice rankOneModelValues_subset_whittakerRationalValues rightTranslate_mem_determinantSlice setIntegral_equalRankIntegrand_determinantSlice singleton_modulus_real sliceCoefficient sliceCoefficient_eq_integral_indicator sliceCoefficient_smul sliceIntegrableAt_equalRankIntegrand_iff sliceIntegrableAt_iff sliceIntegrable_of_integrable zeroRowLastRowCutoff zetaSpan_equalRank_characterChange_normalized
+open Langlands.AllField.RankinSelberg
+
+universe uF uV
+
+namespace Padic
+open Langlands.GodementJacquet.Padic hiding HasMatrixMonomialFunctionalEquation IotaMatrixAnalyticAssertions IotaMatrixConvergesOnRight IsMatrixNormalizedGenerator MatrixAnalyticAssertions MatrixConverges MatrixConvergesOnRight MatrixFourierPair NormalizedMatrixFunctionalEquationData SupercuspidalMatrixRationalityData aestronglyMeasurable_dualParabolicIntegrand centralMatrixRationalityBorelSpace centralMatrixRationalityLocalField centralMatrixRationalityMeasurableSpace centralMatrixRationalityT2Space centralMatrixRationalityTopology centralMatrixRationalityValuativeRel compactMatrixLaurentBorelSpace compactMatrixLaurentLocalField compactMatrixLaurentMeasurableSpace compactMatrixLaurentTopology compactMatrixLaurentValuativeRel compactMatrixSmoothing_pairing comparisonBorel comparisonDisconnected comparisonLocalField comparisonMeasurable comparisonT2 comparisonTopology comparisonValuativeRel conjugateSupercuspidalCutoffGroupTest conjugateSupercuspidalCutoffGroupTest_apply conjugateSupercuspidalCutoffGroupTest_conjugate conjugateSupercuspidalCutoffGroupTest_eq_zero continuedMatrixCovarianceBorel continuedMatrixCovarianceDisconnected continuedMatrixCovarianceGLBorel continuedMatrixCovarianceGLMeasurable continuedMatrixCovarianceLocalField continuedMatrixCovarianceMeasurable continuedMatrixCovarianceT2 continuedMatrixCovarianceTopology continuedMatrixCovarianceValuation convolutionExchangeBorel convolutionExchangeDisconnected convolutionExchangeGLBorel convolutionExchangeGLMeasurable convolutionExchangeLocalField convolutionExchangeMeasurable convolutionExchangeT2 convolutionExchangeTopology convolutionExchangeValuation determinantWeight_inv_inverseTranspose determinantWeight_locallyConstant determinantWeight_neg_dimension determinantWeight_shift_spectral determinantWeight_sub_spectral dualParabolicBorelSpace dualParabolicGLBorelSpace dualParabolicGLMeasurableSpace dualParabolicIntegrand dualParabolicLocalField dualParabolicMatrixSecondCountable dualParabolicMeasurableSpace dualParabolicSecondCountable dualParabolicT2Space dualParabolicTopology dualParabolicTotallyDisconnected dualParabolicValuativeRel dualWeightedRegularMatrixTest dualWeightedRegularMatrixTest_apply dualWeightedRegularMatrixTest_convolution_cross dualWeightedRegularMatrixTest_convolution_left dualWeightedRegularMatrixTest_convolution_right epsilonMonomial_shiftedMatrixMonomialUnit exists_biSmoothCoefficient_ne_zero exists_fourierRegular_constant_output exists_fourierRegular_constant_output_of_pairing exists_integral_regularMatrix_density exists_laurent_integral_of_hasCompactSupport exists_laurent_matrixIntegral_of_hasCompactSupport exists_laurent_matrixIntegral_quotient exists_laurent_of_matrix_geometric_clearings exists_laurent_regularMatrixZetaOperator_dual_sub exists_laurent_scalar_of_fourierRegular_cross exists_matrixIntegral_one exists_monomial_fourierRegular_inverseTranspose exists_monomial_scalar_of_fourierRegular_cross exists_scalar_of_fourierRegularMatrixZetaOperator_cross exists_shiftedRationalValue_of_scalarSaturation exists_smoothFunctional_ne_zero exists_supercuspidalMatrixFunctionalEquationData exists_supercuspidalMatrixMonomialFunctionalEquation exists_supercuspidalMatrixRationalityData extensionBorel extensionDisconnected extensionGLBorel extensionGLMeasurable extensionLocalField extensionMeasurable extensionT2 extensionTopology extensionValuativeRel fourierRegularEquationBorel fourierRegularEquationDisconnected fourierRegularEquationLocalField fourierRegularEquationMeasurable fourierRegularEquationT2 fourierRegularEquationTopology fourierRegularEquationValuation fourierRegularInverseTransposeZetaOperator fourierRegularInverseTransposeZetaOperator_apply fourierRegularMatrixPairingRestriction fourierRegularMatrixPairingRestriction_apply fourierRegularMatrixTranslate fourierRegularMatrixTranslate_apply fourierRegularMatrixZetaOperator fourierRegularMatrixZetaOperator_apply fourierRegularMatrixZetaOperator_output_surjective fourierRegularMatrixZetaOperator_separates fourierRegularMonomialOutputs fourierRegularRationalBorel fourierRegularRationalDisconnected fourierRegularRationalGLBorel fourierRegularRationalGLMeasurable fourierRegularRationalLocalField fourierRegularRationalMeasurable fourierRegularRationalT2 fourierRegularRationalTopology fourierRegularRationalValuation generalLinearHaar_measurePreserving_inverseTranspose instBorelSpaceGeneralLinearHAddNatOfNatCarrier instBorelSpaceGeneralLinearHAddNatOfNatCarrier_1 instIsNonarchimedeanLocalFieldCarrier instIsNonarchimedeanLocalFieldCarrier_1 instMeasurableSpaceCarrier instMeasurableSpaceGeneralLinearHAddNatOfNatCarrier instMeasurableSpaceGeneralLinearHAddNatOfNatCarrier_1 instTopologicalSpaceCarrier instTopologicalSpaceCarrier_1 instValuativeRelCarrier instValuativeRelCarrier_1 integrable_comp_lowerLeft integrable_integral_dualParabolicIntegrand integrable_integral_dualParabolic_levi integral_comp_lowerLeft integratedConjugateSupercuspidalCutoff_conjugate integratedConjugateSupercuspidalCutoff_ne_zero intertwining_of_commutes_fourierRegularMatrixZetaOperator iotaFourierMatrixCoefficientRationalPairing iotaFourierMatrixCoefficientRationalPairing_spec iotaFourierMatrixCoefficientRationalPairing_translate iotaMatrixAnalyticAssertions_succBlocks_iff iotaMatrixRationalValues jpssI2 jpssI3 laurentComparisonBorel laurentComparisonDisconnected laurentComparisonGLBorel laurentComparisonGLMeasurable laurentComparisonLocalField laurentComparisonMeasurable laurentComparisonT2 laurentComparisonTopology laurentComparisonValuativeRel laurentEval_matrixGeometricDenominator leftRightTranslate_mem_fourierRegularMatrixTests map_mulLeftMeasurableEquiv matrixAnalyticAssertions_reversedInverseTransposeBlocks matrixCoefficientRationalPairing matrixCoefficientRationalPairing_spec matrixCoefficientRationalPairing_translate matrixFourierEquiv_translate_of_norm_one matrixGeometricCoefficient matrixGeometricCoefficient_reflected_product matrixGeometricCoefficient_reflected_product_ne_one matrixGeometricDenominator matrixGeometricDenominator_ne_zero matrixIntegral matrixIntegral_eq_of_fourierRegular_inverseTranspose matrixIntegrand matrixPairing_eq_of_fourierRegular matrixPairing_eq_zero_of_fourierRegular matrixRationalPairing_identity_of_fourierRegular_operator matrixRationalPairing_identity_of_supercuspidal_fourierRegular_operator matrixRationalValues matrixUniformizer matrixUniformizer_det_abs_lt_one matrixUnitValueGLBorel matrixUnitValueGLMeasurable matrixUnitValueLocalField matrixUnitValueT2 matrixUnitValueTopology matrixUnitValueValuation measurable_inverseTranspose_val monomialBorel monomialComparisonBorel monomialComparisonDisconnected monomialComparisonLocalField monomialComparisonMeasurable monomialComparisonT2 monomialComparisonTopology monomialComparisonValuativeRel monomialDisconnected monomialGLBorel monomialGLMeasurable monomialLocalField monomialMeasurable monomialT2 monomialTopology monomialValuativeRel mulLeftMeasurableEquiv mulLeftMeasurableEquiv_apply nonzeroZetaLocalField nonzeroZetaTopology nonzeroZetaValuativeRel normalizedFunctionalEquation_of_fourierRegular_operator normalizedFunctionalEquation_of_supercuspidal_fourierRegular_operator normalizedMatrixFunctionalEquationData_of_supercuspidal_of_monomial one_mem_iotaMatrixRationalValues one_mem_matrixRationalValues outputSpanGLBorel outputSpanGLMeasurable outputSpanLocalField outputSpanTopology outputSpanValuativeRel rationalExtensionBorel rationalExtensionDisconnected rationalExtensionGLBorel rationalExtensionGLMeasurable rationalExtensionLocalField rationalExtensionMeasurable rationalExtensionT2 rationalExtensionTopology rationalExtensionValuativeRel rectangularFourierEquiv_inverseTranspose_translate rectangularFourierEquiv_inverseTranspose_translate_of_mem reflectedIotaFourierMatrixCoefficientRationalPairing reflectedIotaFourierMatrixCoefficientRationalPairing_apply reflectedIotaFourierMatrixCoefficientRationalPairing_translate regularDensityBorel regularDensityGLBorel regularDensityGLMeasurable regularDensityLocalField regularDensityMeasurable regularDensitySecondCountable regularDensityT2 regularDensityTopology regularDensityValuation regularMatrixRationalValue_eval regularMatrixZetaGLBorel regularMatrixZetaGLMeasurable regularMatrixZetaLocalField regularMatrixZetaOperator regularMatrixZetaOperator_dual regularMatrixZetaOperator_eq_of_detNorm_support regularMatrixZetaOperator_inverseTranspose regularMatrixZetaOperator_inverseTranspose_cross regularMatrixZetaOperator_leftTranslate regularMatrixZetaTopology regularMatrixZetaValuation representation_mem_fourierRegularMonomialOutputs scalar_ne_zero_of_fourierRegular_comparison shiftedMatrixMonomialUnit smoothingBorel smoothingDisconnected smoothingGLBorel smoothingGLMeasurable smoothingLocalField smoothingMeasurable smoothingT2 smoothingTopology smoothingValuativeRel span_fourierRegularMonomialOutputs_eq_top supercuspidalConjugateMatrixSmoothing supercuspidalConjugateMatrixSmoothing_eq_integratedAction supercuspidalConjugateMatrixSmoothing_mem_fourierRegularMatrixTests supercuspidalConjugateMatrixSmoothing_pairing supercuspidalCutoffGroupTest supercuspidalCutoffGroupTest_apply supercuspidalCutoffOutputSpan supercuspidalCutoffOutputSpan_apply_mem supercuspidalCutoffOutputSpan_eq_top supercuspidalFinalBorel supercuspidalFinalDisconnected supercuspidalFinalGLBorel supercuspidalFinalGLMeasurable supercuspidalFinalLocalField supercuspidalFinalMeasurable supercuspidalFinalT2 supercuspidalFinalTopology supercuspidalFinalValuation supercuspidalMatrixAssemblyBorel supercuspidalMatrixAssemblyGLBorel supercuspidalMatrixAssemblyGLMeasurable supercuspidalMatrixAssemblyLocalField supercuspidalMatrixAssemblyMeasurable supercuspidalMatrixAssemblyT2 supercuspidalMatrixAssemblyTopology supercuspidalMatrixAssemblyTotallyDisconnected supercuspidalMatrixAssemblyValuation supercuspidalMatrixRationalityBorelSpace supercuspidalMatrixRationalityLocalField supercuspidalMatrixRationalityMeasurableSpace supercuspidalMatrixRationalityTopology supercuspidalMatrixRationalityValuativeRel supercuspidalMatrixSmoothing supercuspidalMatrixSmoothing_apply supercuspidalMatrixSmoothing_fourier_right supercuspidalMatrixSmoothing_fourier_singular supercuspidalMatrixSmoothing_mem_fourierRegularMatrixTests supercuspidalMatrixSmoothing_right supercuspidalMatrixSmoothing_singular transferBorel transferDisconnected transferGLBorel transferGLMeasurable transferLocalField transferMeasurable transferT2 transferTopology transferValuativeRel translatesBorel translatesDisconnected translatesLocalField translatesMeasurable translatesT2 translatesTopology translatesValuativeRel twoBlockReversalGLBorel twoBlockReversalGLMeasurable twoBlockReversalLocalField twoBlockReversalTopology twoBlockReversalValuation weightedRegularMatrixTest weightedRegularMatrixTest_apply weightedRegularMatrixTest_leftTranslate whittakerRationalValues
+open Langlands.AllField.GodementJacquet.Padic
+open Langlands.GodementJacquet hiding IotaMatrixAnalyticAssertions IotaMatrixConvergesOnRight IsIotaMatrixNormalizedGenerator IsMatrixNormalizedGenerator MatrixAnalyticAssertions MatrixConverges MatrixConvergesOnRight MatrixFourierPair MatrixUnitValueStatement NormalizedMatrixFunctionalEquationData SupercuspidalMatrixFunctionalEquationStatement determinantNorm_eq_one_of_mem_conjugateUnipotent determinantNorm_ker_sup_center_finiteIndex determinantUnitTestToMatrixTest determinantUnitTestToMatrixTest_apply determinantUnitTestToMatrixTest_eq_zero exists_centralCharacter_compactScalarSupport hasCompactSupport_determinantUnit_coefficient inverseTransposeProductReversalEquiv iotaMatrixAnalyticAssertions_product_iff iotaMatrixRationalValues jpssI2 jpssI3 matrixIntegral matrixIntegrand matrixRationalValues matrixUnitValue oneBlockDeterminantUnitHomeomorph supercuspidalCutoffFourierEvaluation supercuspidalCutoffMatrixTest supercuspidalCutoffMatrixTest_apply supercuspidalCutoffMatrixTest_apply_of_not_mem supercuspidalCutoffMatrixTest_fourier_eq_zero_of_stabilizer supercuspidalCutoffMatrixTest_fourier_right supercuspidalCutoffMatrixTest_fourier_singular supercuspidalCutoffMatrixTest_mem_fourierRegularMatrixTests supercuspidalCutoffMatrixTest_right supercuspidalCutoffMatrixTest_singular supercuspidalDeterminantUnitCoefficient supercuspidalMatrixFunctionalEquation whittakerRationalValues
+open Langlands.AllField.GodementJacquet
+
+variable (F : Type uF) [Field F] [TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F]
+
+local instance supercuspidalFinalT2 : T2Space F :=
+  (⟨⟩ : LocalFieldData F).fieldT2
+local instance supercuspidalFinalDisconnected : TotallyDisconnectedSpace F :=
+  (padicLatticeGeometry F (⟨⟩ : LocalFieldData F)).1
+local instance supercuspidalFinalMeasurable : MeasurableSpace F := borel _
+local instance supercuspidalFinalBorel : BorelSpace F := ⟨rfl⟩
+local instance supercuspidalFinalGLMeasurable (n : ℕ) :
+    MeasurableSpace (Langlands.GeneralLinear (n + 1) F) := borel _
+local instance supercuspidalFinalGLBorel (n : ℕ) :
+    BorelSpace (Langlands.GeneralLinear (n + 1) F) := ⟨rfl⟩
+
+variable {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
+
+/-- Actual supercuspidality gives one Fourier monomial equation on all full
+matrix tests and the whole bi-smooth coefficient span. -/
+theorem exists_supercuspidalMatrixMonomialFunctionalEquation
+    (hn : 0 < n)
+    (ψ : UnitaryAdditiveCharacter F) (ν : AdditiveHaarMeasure F)
+    (hsd : IsSelfDual ψ ν)
+    (ρ : Representation ℂ (Langlands.GeneralLinear (n + 1) F) V)
+    (hρ : GeneralLinear.IsSupercuspidal ρ) (hi : ρ.IsIrreducible) :
+    ∃ (c : ℂˣ) (k : ℤ), HasMatrixMonomialFunctionalEquation F ψ ν ρ c k := by
+  obtain ⟨c, k, hck⟩ :=
+    exists_monomial_fourierRegular_inverseTranspose F hn ρ hρ hi ψ ν hsd
+  have hι := GeneralLinear.isSupercuspidal_comp_inverseTranspose ρ hρ
+  obtain ⟨ω, hRat⟩ := exists_supercuspidalMatrixRationalityData F ρ hρ hi
+  have hR (ℓ : SmoothDual ρ) (Φ : MatrixTestFunction n F) (v : V) :
+      ∃ R, HasShiftedRationalValue (⟨⟩ : LocalFieldData F).residueCardinality
+        (normalizedAbsoluteValue (⟨⟩ : LocalFieldData F))
+        (generalLinearHaar F n) Φ
+        (matrixCoefficient ρ (smoothDualPairing ρ ℓ) v) R := by
+    let w : smoothVectors ρ := ⟨v, hρ.1.1 v⟩
+    let f : biSmoothMatrixCoefficients ρ :=
+      ⟨biSmoothCoefficient ρ ℓ w, Submodule.subset_span ⟨ℓ, w, rfl⟩⟩
+    obtain ⟨R, hR, _⟩ := hRat.2.2.1 Φ f
+    exact ⟨R, hR⟩
+  have hD (ℓ : SmoothDual ρ) (Φ : MatrixTestFunction n F) (v : V) :
+      ∃ R, HasShiftedRationalValue (⟨⟩ : LocalFieldData F).residueCardinality
+        (normalizedAbsoluteValue (⟨⟩ : LocalFieldData F))
+        (generalLinearHaar F n) Φ
+        (coefficientIota (matrixCoefficient ρ (smoothDualPairing ρ ℓ) v)) R := by
+    let w : smoothVectors ρ := ⟨v, hρ.1.1 v⟩
+    let f : biSmoothMatrixCoefficients ρ :=
+      ⟨biSmoothCoefficient ρ ℓ w, Submodule.subset_span ⟨ℓ, w, rfl⟩⟩
+    obtain ⟨R, hR, _⟩ := hRat.2.2.2 Φ f
+    exact ⟨R, hR⟩
+  refine ⟨shiftedMatrixMonomialUnit F n c k, k, ?_⟩
+  intro Φ
+  let ΦHat := rectangularFourierEquiv ψ ν (n + 1) (n + 1) hsd Φ
+  refine ⟨ΦHat, ?_, ?_⟩
+  · intro X
+    exact ⟨rectangularFourierEquiv_integrable ψ ν (n + 1) (n + 1) hsd Φ X,
+      rectangularFourierEquiv_apply ψ ν (n + 1) (n + 1) hsd Φ X⟩
+  · intro f R RDual hRf hDf
+    apply normalizedFunctionalEquation_of_biSmoothGenerators ρ
+      (⟨⟩ : LocalFieldData F).residueCardinality_gt_one
+      (normalizedAbsoluteValue (⟨⟩ : LocalFieldData F))
+      (generalLinearHaar F n) Φ ΦHat
+      (shiftedMatrixMonomialUnit F n c k) k _ f R RDual hRf hDf
+    intro ℓ v
+    obtain ⟨S, hS⟩ := hR ℓ Φ v.val
+    obtain ⟨E, hE⟩ := hD ℓ ΦHat v.val
+    refine ⟨S, E, hS, hE, ?_⟩
+    exact normalizedFunctionalEquation_of_supercuspidal_fourierRegular_operator
+      F hn ρ hρ hi hι ψ ν hsd c k (smoothDualPairing ρ ℓ)
+      (hR ℓ) (hD ℓ) hck Φ v.val S E hS hE
+
+/-- Full normalized data, with both Euler polynomials one, for an actual
+irreducible supercuspidal representation of rank greater than one. -/
+theorem exists_supercuspidalMatrixFunctionalEquationData
+    (hn : 0 < n)
+    (ψ : UnitaryAdditiveCharacter F) (ν : AdditiveHaarMeasure F)
+    (hsd : IsSelfDual ψ ν)
+    (ρ : Representation ℂ (Langlands.GeneralLinear (n + 1) F) V)
+    (hρ : GeneralLinear.IsSupercuspidal ρ) (hi : ρ.IsIrreducible) :
+    ∃ (c : ℂˣ) (k : ℤ),
+      NormalizedMatrixFunctionalEquationData F ψ ν ρ 1 1 c k := by
+  obtain ⟨c, k, hFE⟩ :=
+    exists_supercuspidalMatrixMonomialFunctionalEquation F hn ψ ν hsd ρ hρ hi
+  exact ⟨c, k, normalizedMatrixFunctionalEquationData_of_supercuspidal_of_monomial
+    F ψ ν hsd ρ hρ hi c k hFE⟩
+
+end Padic
+
+/-- The closed supercuspidal matrix functional-equation base, with the
+canonical field structures and the supplied self-dual Fourier measure. -/
+theorem supercuspidalMatrixFunctionalEquation :
+    SupercuspidalMatrixFunctionalEquationStatement.{uF,uV} := by
+  intro F _ _ _ _ ψ ν hsd n V hV hModule ρ hρ hi
+  let : MeasurableSpace F := borel _
+  let : BorelSpace F := ⟨rfl⟩
+  let : T2Space F := (⟨⟩ : LocalFieldData F).fieldT2
+  let : MeasurableSpace (Langlands.GeneralLinear (n + 2) F) := borel _
+  let : BorelSpace (Langlands.GeneralLinear (n + 2) F) := ⟨rfl⟩
+  exact Langlands.AllField.GodementJacquet.Padic.exists_supercuspidalMatrixFunctionalEquationData
+    F (Nat.succ_pos n) ψ ν hsd ρ hρ hi
+
+end Langlands.AllField.GodementJacquet

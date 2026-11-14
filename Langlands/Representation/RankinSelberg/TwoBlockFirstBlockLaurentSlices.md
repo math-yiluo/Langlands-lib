@@ -29,3 +29,7 @@ partition of the quotient into determinant slices then gives two conclusions:
 - the series has sum the actual integral at `s`.
 
 No support bound, continuation or functional equation is used.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentSlices` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

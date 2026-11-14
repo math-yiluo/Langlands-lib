@@ -34,3 +34,7 @@ evaluation, coefficient continuity and the original and transformed pure
 support results. The helper supplies the regularity hypotheses of the
 unipotent-orbit integration adapter. It asserts neither a Fourier equality
 nor the adjacent-rank model-star identity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankModelStarRegularity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

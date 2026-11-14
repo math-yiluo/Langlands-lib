@@ -12,3 +12,7 @@ The proof has four steps.
 4. `fiberKernel_zero_comp_restrict` uses the published determinant-order formula for `fiberPoint`: the small determinant order plus the base determinant order is the target determinant order. On the small zero slice, the target is in slice `k` exactly when the base is. Applying this support identity to indicators and then the full composition proves the same-slice restricted identity.
 
 These are internal consequences of the existing quotient, Haar, and compatibility APIs, supporting the published JPSS Section 4.6 integration target. They do not yet establish the target's formula with the outer measure restricted to zero and the small measure restricted to arbitrary `k`; the separate determinant-shift argument is required for that formula. This module also does not claim the target's Tonelli, absolute-integrability, or Bochner conclusions. Its proof route and restriction normalization are derived infrastructure, rather than an additional assertion attributed to the original paper.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockQuotientTower` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

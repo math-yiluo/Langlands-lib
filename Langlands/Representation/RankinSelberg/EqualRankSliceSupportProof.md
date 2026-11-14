@@ -230,3 +230,7 @@ The theorem proves only the lower-support endpoint. It proves no slice
 integrability, convergence of the zeta integral, Laurent expansion (4.2.2),
 rational continuation, gamma, epsilon or L-factor statement, functional
 equation or multiplicativity.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankSliceSupportProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -30,3 +30,7 @@ Source: H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 The general common-level formulation is derived internal content, not a quotation
 or a separately asserted theorem of the source. The module proves no integral
 formula or factor specialization.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CommonLevelRootSupport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

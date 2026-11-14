@@ -29,3 +29,7 @@ and the definition of the radical character identify the resulting scalar.
 This internal proof uses ordinary scalar integrals under the stated initial
 integrability hypothesis. It constructs no global integral on the entire induced
 representation and does not assert the host extension theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockJacquetCovarianceProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

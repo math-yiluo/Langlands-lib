@@ -1,0 +1,25 @@
+import Langlands.Representation.CuspidalSupport.AssociatedProof
+import Langlands.AllField.Representation.CuspidalSupport.AssociatedConditional
+import Langlands.AllField.Representation.CuspidalSupport.AssociatedGeometricPiecesProof
+import Langlands.AllField.Representation.Geometric.GeometricLemmaProof
+/-! The Weyl-transport filtration of associated cuspidal Jacquet modules. -/
+
+namespace Langlands.AllField.CuspidalSupport
+open Langlands.CuspidalSupport hiding AssociatedGeometricPieceEquivalenceTheorem AssociatedGeometricPieceVanishingTheorem AssociatedJacquetFiltrationTheorem MinimalWeylTransportQuasicuspidalTheorem NonassociatedJacquetSubquotientsTheorem PadicAssociatedGeometricPiecesTheorem TotalConjugatingCountTheorem associatedFiltration_of_geometricPieces associatedGeometricPieceEquivalence associatedGeometricPieceVanishing associatedJacquetFiltration associatedJacquetFiltration_of_geometricPieces associatedJacquetFiltration_of_prerequisites associatedJacquetFiltration_rankZero fullRefinedInductionEquiv fullRefinedJacquetEquiv geometricPieceFunctor_subsingleton_of_proper_source minimalNonzeroJacquet minimalWeylTransportQuasicuspidal nonassociatedJacquetSubquotients_rankZero normalizedRefinedInductionFunctor_subsingleton padicAssociatedGeometricPieces rankZero_jacquetInductionEquiv refinedHalfModulus_eq_one_of_full refinedInverseHalfModulus_eq_one_of_full refinedModulus_eq_one_of_full totalConjugatingCount
+open Langlands.AllField.CuspidalSupport
+
+universe uF uV
+
+/-- The actual normalized Jacquet module of quasicuspidal induction between
+associated Levis is quasicuspidal and has one transport factor for every
+minimal conjugating permutation, in every rank. -/
+theorem associatedJacquetFiltration
+    (F : Type uF) [Field F]
+    (T : LocalFieldData F) (n : ℕ) :
+    AssociatedJacquetFiltrationTheorem.{uF, uV} F T n :=
+  associatedJacquetFiltration_of_prerequisites F T n
+    Langlands.AllField.Geometric.padicGeometricLemma
+    padicAssociatedGeometricPieces
+    ObjectRepFiltration.zeroFactorDeletionTheorem
+
+end Langlands.AllField.CuspidalSupport

@@ -83,3 +83,7 @@ internal assembly implemented in `EqualRankCompactAssembly`,
 It supplies the same unit-value conclusion by this route. The supplied-data
 transport and independent-universe specialization are internal interface
 steps. The target and all its imported Lean/Markdown pairs are unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankUnitValueProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

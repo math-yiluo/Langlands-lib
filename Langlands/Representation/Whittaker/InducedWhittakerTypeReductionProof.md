@@ -35,3 +35,7 @@ it does not identify the full tensor dual with a tensor product of full duals.
 It does not prove geometric heredity, invoke irreducibility, or strengthen the
 admissibility or finite-type hypotheses. The unconditional host theorem still
 requires an independently proved `InducedLocalizationStatement`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.InducedWhittakerTypeReductionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

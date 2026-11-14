@@ -39,3 +39,7 @@ test with its actual plus Fourier transform. The rational-existence premises
 quantify all tests and all vectors for the fixed functional `ℓ`. The unit and
 integer in the operator equation are fixed before tests, vectors or functionals.
 Extension over the span of smooth matrix coefficients remains a separate step.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixRationalExtension` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -125,3 +125,7 @@ The blocks need only be smooth and admissible and satisfy the matrix analytic
 assertions; no irreducibility, central-character or functional-equation hypothesis
 is used. Assembly of the full analytic assertions from these inputs is Worker 704's
 `matrixAnalyticAssertions_twoBlock_of_generators`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.TwoBlockReverseRealization` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

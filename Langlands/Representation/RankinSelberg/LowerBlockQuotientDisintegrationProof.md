@@ -112,3 +112,7 @@ The comparison also uses the published Library modules
 `LowerTriangularQuotientCell` (the open cell) and
 `LowerBlockWeightedProductInvariance` (Worker 113: right invariance of the
 determinant-weighted product measure in block coordinates).
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.LowerBlockQuotientDisintegrationProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

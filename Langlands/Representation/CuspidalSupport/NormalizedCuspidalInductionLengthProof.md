@@ -72,3 +72,7 @@ extra theorem-valued premise, rank positivity assumption, or dimension
 assumption on the ambient representation. The proof does not use induction
 association, general preservation of finite length, or finite-type induction.
 The target's Lean/Markdown pair and all imported pairs are unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.NormalizedCuspidalInductionLengthProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -43,3 +43,7 @@ subgroup, Haar-transport, explicit block-scaling and positive-character
 results. This pair supplies a prerequisite for normalization cancellation.
 It does not assert the full scalar cancellation, integral equivalence or
 natural normalized Jacquet comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicOrbitHaarComparison` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

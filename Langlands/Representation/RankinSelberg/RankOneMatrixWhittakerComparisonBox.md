@@ -166,3 +166,7 @@ The module asserts nothing about the reverse inclusion or about the Laurent modu
 The parameter commutativity proof reuses `rankOne_mul_comm` from
 [RankOneQuotient](RankOneQuotient.md); diagonal conjugation is the shared
 `diagonalConj` from [DiagonalUnipotentHaar](DiagonalUnipotentHaar.md).
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixWhittakerComparisonBox` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

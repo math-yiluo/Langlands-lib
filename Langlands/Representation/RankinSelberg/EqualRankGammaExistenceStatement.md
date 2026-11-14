@@ -155,3 +155,7 @@ Gamma existence, Fourier closure, rational continuation, and the required
 trilinear comparison remain proof obligations. Epsilon existence,
 L-factor normalization, Fourier closure, and trilinear-form uniqueness are
 not added as hypotheses, nor is the gamma-existence conclusion itself.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankGammaExistenceStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

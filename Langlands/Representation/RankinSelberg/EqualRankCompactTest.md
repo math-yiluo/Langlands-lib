@@ -45,3 +45,7 @@ environment. Inspection of `HasEqualRankCompactTest` reports a Prop-valued
 definition with independent `uF`, `uV`, `uW` and only `propext`,
 `Classical.choice`, and `Quot.sound`. Development compilation is not
 independent acceptance or proof of the unconditional parent target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankCompactTest` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

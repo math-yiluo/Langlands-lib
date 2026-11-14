@@ -26,3 +26,7 @@ This internal proof combines finite-function closure, root-coordinate
 identities, compact support assembly and finite-sum algebra. It proves the
 pointwise reduction only; it neither supplies the original coefficient
 expansions nor asserts convergence, rationality or a common denominator.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RootTorusProductProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

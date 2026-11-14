@@ -39,3 +39,7 @@ and continuation uniqueness. The result retains image equality and the
 initial nonzero continuation as explicit premises. It constructs no gamma
 factor by itself; its purpose is to select a nonzero separated integral for
 the subsequent comparison with the matched finite-product equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankSeparatedNonzero` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

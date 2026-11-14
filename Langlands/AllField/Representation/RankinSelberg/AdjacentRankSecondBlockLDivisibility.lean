@@ -1,0 +1,155 @@
+import Langlands.Representation.RankinSelberg.AdjacentRankSecondBlockLDivisibility
+import Langlands.AllField.Representation.RankinSelberg.AdjacentRankClearedContinuation
+import Langlands.AllField.Representation.RankinSelberg.AdjacentRankImageLDivisibility
+import Langlands.AllField.Representation.RankinSelberg.AdjacentRankSecondBlockCorankSpecialization
+import Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantJacquetSeries
+/-! Formal second-block clearing gives the original corank L-divisibility. -/
+
+noncomputable section
+
+namespace Langlands.AllField.RankinSelberg.Padic
+open Langlands.RankinSelberg.Padic hiding AdjacentRankCoefficientConvolution AdjacentRankCorankDenominatorBound AdjacentRankInvariantApproximationData AdjacentRankModelConverges AdjacentRankModelCorankDenominatorBound AdjacentRankProductContinuationData AdjacentRankShellConvolutionAt AdjacentRankShellLowerBounds HasCommonCompactOpenRightLevel SecondBlockCorankRealRayClearing adjacentAdmissibilityLocalField adjacentAdmissibilityTopology adjacentAdmissibilityValuativeRel adjacentRankBeforeShearKernel adjacentRankBeforeShearKernel_mk adjacentRankCoefficientConvolution_of_shell adjacentRankCompact_middleAverage adjacentRankCompact_middleAverage_and_dual adjacentRankDualInnerSliceIntegral adjacentRankDualMiddleAverage adjacentRankDualMiddleAverage_eq adjacentRankFiniteProductValue adjacentRankImage_productDenominatorBound adjacentRankInducedModelBound adjacentRankInnerMultiplier adjacentRankInnerMultiplier_mul adjacentRankInnerSliceWeight adjacentRankInnerSliceWeight_mul adjacentRankInnerSlice_matchedFiniteSeparation adjacentRankInvariantApproximation adjacentRankJointShell adjacentRankJointShellKernel adjacentRankJointShellKernel_mk adjacentRankJointShellKernel_mk_eq_innerSlice adjacentRankLowerCompactRepresentation adjacentRankLowerInducingCoordinates adjacentRankLowerTensorCoordinates_action adjacentRankLowerTensorRepresentation adjacentRankLowerTensorRepresentation_isAdmissible adjacentRankMatrixSliceCoefficient adjacentRankMatrixSliceCoefficient_eq_zero_of_pointwise_bound adjacentRankMatrixSliceExpansion adjacentRankModelBound_polynomialDivisibility adjacentRankModelConverges_of_isSmooth adjacentRankModelIntegral adjacentRankModelIntegral_mul adjacentRankModelIntegral_separated_rankInclusion_raw adjacentRankModelIntegral_separated_rankInclusion_weighted adjacentRankModelMap adjacentRankModelMapBorel adjacentRankModelMapDisconnected adjacentRankModelMapGLMeasurable adjacentRankModelMapLocalField adjacentRankModelMapMeasurable adjacentRankModelMapT2 adjacentRankModelMapTopology adjacentRankModelMapValuative adjacentRankModelMap_apply adjacentRankModelStarScalar adjacentRankModelStar_corankOneSlice_eq_before adjacentRankModelStar_separated_rankInclusion adjacentRankModelStar_separated_rankInclusion_weighted adjacentRankModel_corankOneSlice_eq_before adjacentRankModel_matchedCoefficientConvolution adjacentRankModel_matchedProductContinuation adjacentRankModel_matchedProductContinuation_exists adjacentRankNormalizedInduced_isAdmissible adjacentRankNormalizedOpposite_isOfWhittakerType adjacentRankNormalizedSection adjacentRankNormalizedSectionTensor adjacentRankNormalizedSectionTensor_surjective adjacentRankNormalizedSectionTensor_tmul adjacentRankNormalizedSection_eval adjacentRankNormalizedSection_right adjacentRankProductContinuation_denominatorBound adjacentRankSeparatedTest_rho0_rankInclusion adjacentRankShell_finiteConvolution_of_innerSeparation adjacentRankShell_matchedFiniteConvolution adjacentRankShell_shear_fubini adjacentRankTest_exists_sum_separated adjacentSectionFieldTopology adjacentSectionGLBorel adjacentSectionGLMeasurable adjacentSectionLocalField adjacentSectionT2 adjacentSectionValuativeRel clearedContinuationFieldMeasurable clearedContinuationGroupBorel clearedContinuationGroupMeasurable clearedContinuationLocalField clearedContinuationQuotientMeasurable clearedContinuationTopology clearedContinuationUnipotentBorel clearedContinuationUnipotentMeasurable clearedContinuationValuation clearingKernelTopology compactCoefficientsBorel compactCoefficientsLocalField compactCoefficientsMeasurable compactCoefficientsTopology compactCoefficientsValuativeRel continuationFieldMeasurableSpace continuationFieldTopology continuationFieldValuation continuationGroupBorelSpace continuationGroupMeasurableSpace continuationLocalField continuationQuotientMeasurableSpace continuationUnipotentBorelSpace continuationUnipotentMeasurableSpace continuous_adjacentRankInnerMultiplier continuous_adjacentRankInnerSliceWeight continuous_adjacentRankJointShellKernel corankClearing_denominatorBound corankCoefficientFamily corankCoefficientFamily_integrable_entire corankCoefficientSeries corankOneCoefficient_clearing_denominatorBound corankOneCoefficient_convergesOnRight corankOneCoefficient_productContinuation corankOneCoefficient_scalarProductContinuation corankOneIntegral_eq_finiteProducts_of_coefficients corankOneIntegral_eq_zeroZero corankOneIntegrand_eq_mul_spectralPoint_zpow corankOneSliceExpansion dualCompactFieldTopology dualCompactGroupBorel dualCompactGroupMeasurable dualCompactLocalField dualCompactValuativeRel dualModelFieldBorel dualModelFieldMeasurable dualModelFieldT2 dualModelFieldTopology dualModelFieldTotallyDisconnected dualModelGroupBorel dualModelGroupMeasurable dualModelLocalField dualModelValuativeRel dualRestrictionFieldBorel dualRestrictionFieldMeasurable dualRestrictionFieldT2 dualRestrictionFieldTopology dualRestrictionFieldTotallyDisconnected dualRestrictionGroupBorel dualRestrictionGroupMeasurable dualRestrictionLocalField dualRestrictionValuativeRel entireCoefficientGroupBorel entireCoefficientGroupMeasurable entireCoefficientLocalField entireCoefficientQuotientMeasurable entireCoefficientTopology entireCoefficientUnipotentBorel entireCoefficientUnipotentMeasurable entireCoefficientValuation equalRankSliceCoefficient_eq_zero_of_pointwise_bound exists_adjacentRankInner_subgroup exists_adjacentRankModelMatrixValues exists_adjacentRankTestWeightLevel exists_matrixTest_determinantOrder_lowerBound exists_whittakerRow_determinantOrder_lowerBound hasCompactSupport_adjacentRankInnerSliceWeight hasCompactSupport_adjacentRankJointShellKernel hasCompactSupport_equalRankSlice hasSum_setIntegral_generalLinearDeterminantSlice imageBoundFieldBorel imageBoundFieldMeasurable imageBoundFieldT2 imageBoundFieldTotallyDisconnected imageBoundGroupBorel imageBoundGroupMeasurable imageBoundLocalField imageBoundQuotientMeasurable imageBoundTopology imageBoundUnipotentBorel imageBoundUnipotentMeasurable imageBoundValuativeRel inducedModelFieldBorel inducedModelFieldMeasurable inducedModelFieldT2 inducedModelFieldTotallyDisconnected inducedModelLocalField inducedModelTopology inducedModelValuativeRel innerSliceFieldTopology innerSliceGroupBorel innerSliceGroupMeasurable innerSliceLocalField innerSliceValuativeRel instBorelSpaceCarrier instBorelSpaceGeneralLinearHAddNatOfNatCarrier instIsNonarchimedeanLocalFieldCarrier instMeasurableSpaceCarrier instMeasurableSpaceGeneralLinearHAddNatOfNatCarrier instT2SpaceCarrier instTopologicalSpaceCarrier instTotallyDisconnectedSpaceCarrier instValuativeRelCarrier integrable_adjacentRankInnerSliceWeight_mul integrable_adjacentRankJointShellKernel integrable_equalRankSlice integral_eq_sum_determinantSlices invariantApproximationGLLocallyCompact invariantApproximationGLNonarch invariantApproximationLocalField invariantApproximationNonarchRing invariantApproximationSecondCountable invariantApproximationT2 invariantApproximationTopology invariantApproximationValuativeRel inverseCoefficientAsScaledStandard isClopen_adjacentRankJointShell jointShellFieldT2 jointShellFieldTopology jointShellGroupBorelSpace jointShellGroupMeasurableSpace jointShellGroupSecondCountable jointShellGroupSigmaCompact jointShellLocalField jointShellQuotientBorelSpace jointShellQuotientMeasurableSpace jointShellQuotientT2 jointShellValuativeRel matchedCoefficientFieldBorel matchedCoefficientFieldMeasurable matchedCoefficientFieldT2 matchedCoefficientFieldTopology matchedCoefficientFieldTotallyDisconnected matchedCoefficientGroupBorel matchedCoefficientGroupMeasurable matchedCoefficientGroupSigmaCompact matchedCoefficientLocalField matchedCoefficientQuotientBorel matchedCoefficientQuotientMeasurable matchedCoefficientUnipotentBorel matchedCoefficientUnipotentMeasurable matchedCoefficientValuativeRel matchedContinuationFieldBorel matchedContinuationFieldMeasurable matchedContinuationFieldT2 matchedContinuationFieldTopology matchedContinuationFieldTotallyDisconnected matchedContinuationGroupBorel matchedContinuationGroupMeasurable matchedContinuationLocalField matchedContinuationQuotientMeasurable matchedContinuationUnipotentBorel matchedContinuationUnipotentMeasurable matchedContinuationValuativeRel matchedInnerFieldTopology matchedInnerGroupBorel matchedInnerGroupMeasurable matchedInnerGroupSecondCountable matchedInnerGroupSigmaCompact matchedInnerLocalField matchedInnerValuativeRel matchedShellFieldT2 matchedShellFieldTopology matchedShellGroupBorel matchedShellGroupMeasurable matchedShellGroupSecondCountable matchedShellGroupSigmaCompact matchedShellLocalField matchedShellQuotientLocallyCompact matchedShellQuotientMeasurable matchedShellQuotientSecondCountable matchedShellUnipotentBorel matchedShellUnipotentMeasurable matchedShellValuativeRel matrixWitnessFieldBorel matrixWitnessFieldMeasurable matrixWitnessFieldT2 matrixWitnessFieldTotallyDisconnected matrixWitnessGroupBorel matrixWitnessGroupMeasurable matrixWitnessLocalField matrixWitnessQuotientMeasurable matrixWitnessTopology matrixWitnessUnipotentBorel matrixWitnessUnipotentMeasurable matrixWitnessValuativeRel modelZetaFieldBorel modelZetaFieldMeasurable modelZetaFieldT2 modelZetaFieldTopology modelZetaFieldTotallyDisconnected modelZetaGroupBorel modelZetaGroupMeasurable modelZetaLocalField modelZetaValuativeRel nonempty_adjacentRankInvariantApproximation oppositeParabolicQuotientCompact productBoundFieldMeasurable productBoundGroupBorel productBoundGroupMeasurable productBoundLocalField productBoundModelAddCommGroup productBoundQuotientMeasurable productBoundTopology productBoundUnipotentBorel productBoundUnipotentMeasurable productBoundValuativeRel productsFieldTopology productsQuotientMeasurableSpace quotientShearFieldT2 quotientShearFieldTopology quotientShearGroupBorel quotientShearGroupMeasurable quotientShearGroupSecondCountable quotientShearGroupSigmaCompact quotientShearLocalField quotientShearQuotientBorel quotientShearQuotientLocallyCompact quotientShearQuotientMeasurable quotientShearQuotientSecondCountable quotientShearUnipotentBorel quotientShearUnipotentMeasurable quotientShearValuativeRel scaledStandardCoefficientAsInverse secondBlockLFieldMeasurable secondBlockLGroupBorel secondBlockLGroupMeasurable secondBlockLLocalField secondBlockLQuotientMeasurable secondBlockLTopology secondBlockLUnipotentBorel secondBlockLUnipotentMeasurable secondBlockLValuation secondBlockZeroEquiv secondBlockZero_isOfWhittakerType secondBlock_corankClearing_at_zero secondBlock_entireCorankFamily secondBlock_modelDenominatorBound_at_zero secondBlock_polynomialDivisibility_at_zero secondBlock_whittakerFamily secondCorankGroupBorel secondCorankGroupMeasurable secondCorankLocalField secondCorankQuotientMeasurable secondCorankTopology secondCorankUnipotentBorel secondCorankUnipotentMeasurable secondCorankValuation sectionSurjectivityGLBorel sectionSurjectivityGLMeasurable sectionSurjectivityLocalField sectionSurjectivityT2 sectionSurjectivityTopology sectionSurjectivityValuativeRel setIntegral_matrixIntegrand_determinantSlice shellConvolutionFieldTopology shellConvolutionLocalField shellConvolutionQuotientBorel shellConvolutionQuotientMeasurable shellConvolutionValuativeRel spectralFieldTopology spectralFieldValuation spectralGroupBorelSpace spectralGroupMeasurableSpace spectralLocalField spectralQuotientBorelSpace spectralQuotientMeasurableSpace symmetricLPolynomial_determinantComplexPower
+open Langlands.AllField.RankinSelberg.Padic
+open Langlands.RankinSelberg hiding AdjacentRankBaseModelStarIdentity AdjacentRankModelConvergenceStatement AdjacentRankModelConverges AdjacentRankModelImageStatement AdjacentRankModelStarStatement CharacterChangeCompatibleMeasureStatement CorankOneEntireSliceStatement EqualRankAnalyticStatement EqualRankCompactRootExpansionStatement EqualRankContinuedFormsStatement EqualRankFactorSwapStatement EqualRankFunctionalEquationStatement EqualRankNormalizedCompactIntegrationStatement EqualRankQuotientAnalyticStatement EqualRankRootAverageAnalyticStatement EqualRankRootExpansionStatement EqualRankSliceExpansionStatement EqualRankSliceSupportStatement EqualRankUnitValueStatement FiniteFunctionMellinStatement GammaMultiplicativityStatement IsPadicPairEpsilonFactor IsPadicPairGammaFactor IsPadicPairLPolynomial IsPadicSymmetricEpsilonFactor IsPadicSymmetricGammaFactor IsPadicSymmetricLPolynomial LFactorMultiplicativityStatement LastRowCompactOrbitStatement NormalizedProductWhittakerTypeStatement QuotientHaarExistenceStatement QuotientIwasawaIntegrationStatement RankOneCharacterReductionStatement RankOneGammaTwistStatement RankOneMatrixWhittakerComparisonStatement RankOneWhittakerTypeStatement RootTorusProductStatement SliceIntegrable SliceIntegrableAt SymmetricLPolynomialExistenceStatement TwoBlockGammaAdjacentRankStatement TwoBlockGammaDominantRankStatement TwoBlockGammaRankOneStatement TwoBlockJacquetConvergenceStatement TwoBlockLAdjacentRankStatement TwoBlockLDominantRankStatement TwoBlockLRankOneStatement TwoBlockOrdinaryJacquetFunctionalStatement TwoBlockSecondWhittakerDeformationStatement TwoBlockWhittakerDeformationStatement UnequalRankAnalyticStatement UnequalRankCommonGeneratorStatement UniformFiniteFunctionMellinConvergenceStatement UnipotentCharacterChangeModulusStatement UnramifiedTwistLFactorStatement WhittakerRowSliceCompactSupportStatement ZeroRowLastRowCutoffStatement adjacentRankDeterminantWeight adjacentRankDeterminantWeight_apply adjacentRankDeterminantWeight_locallyConstant adjacentRankFullFourier adjacentRankFullFourier_inverseTranspose adjacentRankFullFourier_tmul adjacentRankLowerScalarProjection adjacentRankLower_determinantComplexPower adjacentRankLower_halfModulus adjacentRankLower_weightRatio adjacentRankModelConvergence adjacentRankModelConvergenceProofLocalInstance1 adjacentRankModelConvergenceProofLocalInstance2 adjacentRankModelConvergenceProofLocalInstance3 adjacentRankModelConvergenceProofLocalInstance4 adjacentRankModelConvergenceProofLocalInstance5 adjacentRankModelConvergenceProofLocalInstance6 adjacentRankModelConvergenceProofLocalInstance7 adjacentRankModelConvergenceProofLocalInstance8 adjacentRankModelConvergenceProofLocalInstance9 adjacentRankModelConverges_tmul_of_isSmooth adjacentRankModelImage adjacentRankModelIntegral adjacentRankModelIntegrand adjacentRankModelStar adjacentRankModelStarBase_of_pure_integrals adjacentRankModelStarIntegrabilityLocalInstance1 adjacentRankModelStarIntegrabilityLocalInstance2 adjacentRankModelStarIntegrabilityLocalInstance3 adjacentRankModelStarIntegrabilityLocalInstance4 adjacentRankModelStarIntegrabilityLocalInstance5 adjacentRankModelStarIntegrabilityLocalInstance6 adjacentRankModelStarIntegrabilityLocalInstance7 adjacentRankModelStarIntegrabilityLocalInstance8 adjacentRankModelStarIntegrabilityLocalInstance9 adjacentRankModelStarSourceFunction_regularity adjacentRankModelStarTargetFunction_regularity adjacentRankModelStar_base adjacentRankModelStar_equality_of_base adjacentRankModelStar_pure_right_averages adjacentRankPure_hasCompactSupport adjacentRankStarEquiv adjacentRankStarEquiv_tmul_evaluation adjacentRankTransformedIntegrand adjacentRankTransformedPure_hasCompactSupport adjacentRankTransformed_integrable_of_isSmooth adjacentRank_distribHaarChar adjacentRank_fullFourier_kernel_reflected_orbit adjacentRank_fullFourier_rowTranslate adjacentRank_inverseTranspose_unipotent_epsilon adjacentRank_kernel_reflected_right_orbit adjacentRank_kernel_right_unipotent adjacentRank_partialFourier_rowTranslate adjacentRank_rho0_kernel_right_orbit characterChangeCompatibleMeasure characterChangeCompatibleMeasure_of_unipotentModulus continuous_adjacentRankKernelMatrix continuous_adjacentRank_determinantWeight continuous_determinantOrder continuous_ord_units corankOneEntireSlice determinantComplexPower_upperUnipotent determinantOrder determinantOrder_mk determinantOrder_rightTranslate determinantSlice diagonalConj_map diagonal_abs_bound diagonal_abs_last disjoint_determinantSlice equalRankAnalytic equalRankCompactRootExpansion equalRankContinuedForms equalRankFactorSwap equalRankIntegrand_eq_mul_spectralPoint_zpow equalRankNormalizedCompactIntegration equalRankQuotientAnalytic equalRankRootAverageAnalytic equalRankRootExpansion equalRankSliceCoefficient equalRankSliceCoefficient_def equalRankSliceExpansion equalRankSliceSupport equalRankUnitValue exists_adjacentRank_lastColumn_bound exists_iwasawa_diagonal_le_of_simpleRoot exists_rankOneCutoff exists_rankOneEmbedding_support exists_schwartzBruhat_row_bound finiteFunctionMellin finiteFunctionShellSeries generalLinearDeterminantSlice hasCompactSupport_matrixSlice hasEqualRankCompactTest_of_kirillov hasSum_setIntegral_determinantSlice iUnion_determinantSlice isClopen_determinantSlice isClopen_generalLinearDeterminantSlice isClosed_determinantSlice isCompact_normalizedAbs_annulus_units isEqualRankLPolynomial_characterChange_normalized isOfWhittakerType_quasicharacter_twist_iff isOpen_determinantSlice isPadicPairEpsilonFactor_swap_equalRank isPadicPairGammaFactor_swap_equalRank isPadicPairLPolynomial_swap_equalRank isPadicPairLPolynomial_twist isPadicPairLPolynomial_unramified_of_transport isPadicSymmetricEpsilonFactor_of_le isPadicSymmetricGammaFactor_of_le isPadicSymmetricGammaFactor_of_lt isPadicSymmetricGammaFactor_rankOne_test_twist isPadicSymmetricLPolynomial_of_le isPadicSymmetricLPolynomial_of_lt isPadicSymmetricLPolynomial_rankOne_test_twist isPadicSymmetricLPolynomial_twist isPadicSymmetricLPolynomial_unramified_of_transport iwasawaTorusSum lastRowCompactOrbit leviModulus_characterChangeLevi leviModulus_characterChangeLevi_eq_pow matrixSliceTest matrixSliceTest_apply measurableSet_determinantSlice mem_determinantSlice mem_generalLinearDeterminantSlice mk_mem_determinantSlice mk_mem_determinantSlice_iff_normalizedAbs modelAsymptoticTransfer modelStarBaseBorel modelStarBaseDisconnected modelStarBaseGLBorel modelStarBaseGLMeasurable modelStarBaseLocalField modelStarBaseMeasurable modelStarBaseT2 modelStarBaseTopology modelStarBaseUnipotentBorel modelStarBaseUnipotentMeasurable modelStarBaseValuative modelStarFourierBorel modelStarFourierDisconnected modelStarFourierLocalField modelStarFourierMeasurable modelStarFourierT2 modelStarFourierTopology modelStarFourierValuative modelStarOrbitFourierBorel modelStarOrbitFourierDisconnected modelStarOrbitFourierLocalField modelStarOrbitFourierMeasurable modelStarOrbitFourierSecondCountable modelStarOrbitFourierT2 modelStarOrbitFourierTopology modelStarOrbitFourierValuative modelStarReductionBorel modelStarReductionDisconnected modelStarReductionGLBorel modelStarReductionGLMeasurable modelStarReductionLocalField modelStarReductionMeasurable modelStarReductionT2 modelStarReductionTopology modelStarReductionValuative modelStarRegularityLocalField modelStarRegularityTopology modelStarRegularityValuative normalizedAbs_det_of_mem_generalLinearDeterminantSlice normalizedAbs_det_of_mem_integralSubgroup normalizedAbs_determinant_le_of_simpleRoot normalizedAbs_finsetSum_le normalizedAbs_prod normalizedAbsoluteValue normalizedAbsoluteValue_apply normalizedAbsoluteValue_det_eq_zpow normalizedDeterminantWeight_eq_spectralPoint_zpow normalizedProductWhittakerType oneVariableMellin padic_rowFourier_equivariance padic_row_instances padic_row_translate_exists pairwise_disjoint_determinantSlice quasicharacterSmoothCharacter quasicharacter_isOpen_ker quotientHaarExistence quotientIwasawaIntegration quotientRootIntegration rankOneCharacterReduction rankOneCharacter_isOfWhittakerType rankOneExtensionCharacter rankOneExtensionCharacter_isOfWhittakerType rankOneExtensionCharacter_isSmooth rankOneGammaTwist rankOneMatrixWhittakerComparison rankOneMatrixWhittakerComparison_of_positive rankOneMatrixWhittakerComparison_zero rankOneModelValues_subset_whittakerRationalValues rankOneWhittakerType rightTranslate_mem_determinantSlice rootCoordinateChange rootCoordinateFiniteFunction rootSpectralWeight rootTorusProduct setIntegral_equalRankIntegrand_determinantSlice singleton_modulus_real sliceCoefficient sliceCoefficient_eq_integral_indicator sliceCoefficient_smul sliceIntegrableAt_equalRankIntegrand_iff sliceIntegrableAt_iff sliceIntegrable_of_integrable summable_norm_setIntegral_determinantSlice symmetricLPolynomialExists twoBlockDeformedBlocks twoBlockDeformedBlocks_zero twoBlockDeformedInduced twoBlockGammaRankOne_of_trivial_test twoBlockJacquetConvergence twoBlockLRankOne_of_trivial_test twoBlockOppositeTwistBlocks twoBlockOppositeTwistBlocks_apply twoBlockOppositeTwistBlocks_isOfWhittakerType_iff twoBlockOppositeTwistFunctional twoBlockOppositeTwistFunctional_val twoBlockOrdinaryJacquetFunctional twoBlockSecondDeformedBlocks twoBlockSecondDeformedBlocks_zero twoBlockSecondDeformedInduced unequalRankAnalytic unequalRankCommonGenerator unequalRankCompactSupport unequalRankFiniteExpansion unequalRankIwasawaSupport unequalRankUnitSpan unequalRankZeroRowNormalizedCompactIntegration unequalRankZeroRowRootExpansion unipotentCharacterChangeModulus unipotentHaar_mul_diagonal_le unipotentVolumeLocalField unipotentVolumeTopology unipotentVolumeValuativeRel unramifiedTwistLFactor unramifiedTwistLFactor_of_transport whittakerRationalValues_eq_rankOneModelValues whittakerRowSliceCompactSupport zeroRowLastRowCutoff zetaSpan_equalRank_characterChange_normalized
+open Langlands.AllField.RankinSelberg
+
+open _root_.MeasureTheory
+open Langlands.HarmonicAnalysis hiding AdjacentRankUnipotentFourierStatement PadicMatrixFourierSliceStatement PadicRowFourierEquivarianceStatement PadicRowFourierSurjectivityStatement PadicSelfDualMeasureExistsStatement adjacentRankUnipotentFourier padicLatticeGeometry padicMatrixFourierSlice padicRectangularFourierIntegral_leftRight padicRectangularHaarScaling padicRectangularLeftRight_measurePreserving padicRowFourierEquivariance padicRowFourierSurjectivity padicScalarHaarScaling padicSelfDualMeasureExists padicUnipotentHaar_iota_fourier_duality_right
+open Langlands.AllField.HarmonicAnalysis
+open Langlands.Whittaker hiding CompactLocalizationStatement MirabolicUnitTestStatement TwoBlockCellUnipotentStabilityStatement TwoBlockInducedCarrier UnipotentOrbitStatement compactLocalization exchangedParabolic exists_compactOpen_glCoefficientRightStabilizer functionalsCongr hasCompactSupport_twoBlockCellRestriction inducedLocalization_of_prerequisites mirabolicUnitTest modelKirillovTransfer mul_upperUnipotent_mem_twoBlockCell smoothSimpleRootSupport swapRank_exchangedParabolic twoBlockCell twoBlockCellInclusion twoBlockCellInclusion_apply twoBlockCellPoint twoBlockCellPoint_mul_upperUnipotent twoBlockCellRestriction twoBlockCellSubmodule twoBlockCellUnipotentStability twoBlockEval twoBlockInduced twoBlockInducingRepresentation twoBlockParabolic twoBlockRestriction unipotentLeviFactor unipotentOrbit unipotentShift
+open Langlands.AllField.Whittaker
+open Langlands.GeneralLinear hiding padic_exists_ne_zero_mem_nhds_zero upperUnipotentCompactContainment upperUnipotent_isLimitOfCompactSubgroups
+open Langlands.AllField.GeneralLinear
+open Langlands.QuotientIntegration
+open scoped BigOperators
+
+universe uF uV uW
+
+variable (F : Type uF) [Field F] [TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F]
+
+local instance secondBlockLFieldMeasurable : MeasurableSpace F := borel _
+local instance secondBlockLFieldBorel : BorelSpace F := ⟨rfl⟩
+local instance secondBlockLGroupMeasurable (r : ℕ) :
+    MeasurableSpace (Langlands.GeneralLinear (r + 1) F) := borel _
+local instance secondBlockLGroupBorel (r : ℕ) :
+    BorelSpace (Langlands.GeneralLinear (r + 1) F) := ⟨rfl⟩
+local instance secondBlockLUnipotentMeasurable (r : ℕ) :
+    MeasurableSpace (upperUnipotent (r + 1) F) := borel _
+local instance secondBlockLUnipotentBorel (r : ℕ) :
+    BorelSpace (upperUnipotent (r + 1) F) := ⟨rfl⟩
+local instance secondBlockLQuotientMeasurable (r : ℕ) :
+    MeasurableSpace (LeftUnipotentQuotient r F) := borel _
+local instance secondBlockLQuotientBorel (r : ℕ) :
+    BorelSpace (LeftUnipotentQuotient r F) := ⟨rfl⟩
+
+section Family
+
+variable {t : ℕ} (m : Fin 2 → ℕ) (h : ∑ i, (m i + 1) = t + 1)
+  {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]
+  (σ : ∀ i, Representation ℂ (Langlands.GeneralLinear (m i + 1) F) (W i))
+
+/-- An actual equivalence, including the section carriers, at parameter zero. -/
+def secondBlockZeroEquiv :
+    (twoBlockSecondDeformedInduced F m h σ 0).Equiv
+      (Langlands.AllField.RankinSelberg.TwoBlockJacquet.inducedRep F h σ) := by
+  haveI := (⟨⟩ : LocalFieldData F).generalLinearTopologicalGroup (t + 1)
+  exact Induction.smoothInducedEquiv ((succBlockShape m h).oppositeParabolic F)
+    (Representation.Equiv.mk (LinearEquiv.refl ℂ _) (fun q => by
+      apply LinearMap.ext
+      intro x
+      change ((⟨⟩ : LocalFieldData F).oppositeParabolicHalfModulus (succBlockShape m h) q :
+            ℂ) •
+          (succBlockShape m h).blockTensor (twoBlockSecondDeformedBlocks F m σ 0)
+            ((succBlockShape m h).oppositeLeviProjection F q) x =
+        ((⟨⟩ : LocalFieldData F).oppositeParabolicHalfModulus (succBlockShape m h) q :
+            ℂ) •
+          (succBlockShape m h).blockTensor σ
+            ((succBlockShape m h).oppositeLeviProjection F q) x
+      rw [twoBlockSecondDeformedBlocks_zero]))
+
+/-- Full standard type at zero follows from published complete block reversal
+and full normalized upper type; no induced-type premise is added. -/
+theorem secondBlockZero_isOfWhittakerType
+    (ψ : UnitaryAdditiveCharacter F)
+    (hσ : ∀ i, IsOfWhittakerType (m i) (standardCharacter ψ (m i)) (σ i)) :
+    IsOfWhittakerType t (standardCharacter ψ t)
+      (twoBlockSecondDeformedInduced F m h σ 0) := by
+  have htype := (isOfWhittakerType_standard_iff_inverse ψ _).mpr
+    (Langlands.AllField.RankinSelberg.DominantRankTransport.lowerInduced_inverseWhittakerType F h ψ σ hσ)
+  exact htype.of_equiv (secondBlockZeroEquiv F m h σ).symm
+
+end Family
+
+/-- Every original coefficient image has the reciprocal product bound once
+each actual deformed coefficient has formal real-ray clearing. -/
+theorem secondBlock_modelDenominatorBound_at_zero
+    (hdeform : TwoBlockSecondWhittakerDeformationStatement.{uF,uW})
+    (ψ : UnitaryAdditiveCharacter F) (μ : AdditiveHaarMeasure F)
+    {r : ℕ} [Measure.IsMulRightInvariant (unipotentHaar F r)]
+    (m : Fin 2 → ℕ) (h : ∑ i, (m i + 1) = (r + 1) + 1)
+    {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]
+    (σ : ∀ i, Representation ℂ (Langlands.GeneralLinear (m i + 1) F) (W i))
+    (hσ : ∀ i, IsOfWhittakerType (m i) (standardCharacter ψ (m i)) (σ i))
+    (J : glFunctionals ψ (r + 1) (twoBlockSecondDeformedInduced F m h σ 0))
+    (hJ : J.val ≠ 0)
+    (ν : Measure (LeftUnipotentQuotient r F))
+    (hν : IsCompatible (upperUnipotent (r + 1) F)
+      (generalLinearHaar F r) (unipotentHaar F r) ν)
+    {V : Type uV} [AddCommGroup V] [Module ℂ V]
+    (τ : Representation ℂ (Langlands.GeneralLinear (r + 1) F) V)
+    (hτ : IsOfWhittakerType r (standardCharacter (ψ.scale (-1)) r) τ)
+    (ℓprime : glFunctionals (ψ.scale (-1)) r τ) (hℓprime : ℓprime.val ≠ 0)
+    (P₀ P₁ : Polynomial ℂ) (hprod : P₀ * P₁ ≠ 0)
+    (hreal : ∀ Wprime : (coefficientModel τ ℓprime).toSubmodule,
+      ∃ C : ℝ, SecondBlockCorankRealRayClearing F ψ m h σ ν
+        (InducedTailIntermediate.scaledStandardAsInverse ψ Wprime.val) P₀ P₁ C) :
+    AdjacentRankModelCorankDenominatorBound F ψ ν
+      (twoBlockSecondDeformedInduced F m h σ 0) J τ ℓprime (P₀ * P₁) := by
+  have hzero := secondBlockZero_isOfWhittakerType F m h σ ψ hσ
+  have hτinv : IsOfWhittakerType r (inverseStandardCharacter ψ r) τ := by
+    simpa only [standardCharacter_scale_neg_one] using hτ
+  let ℓinv := functionalsCongr (standardCharacter_scale_neg_one ψ r) ℓprime
+  intro U Wprime
+  obtain ⟨C, hC⟩ := hreal Wprime
+  let WprimeInv := scaledStandardCoefficientAsInverse F ψ τ ℓprime Wprime
+  have hclear := secondBlock_corankClearing_at_zero F hdeform ψ r m h σ hσ J hJ U
+    ν hν τ hτinv ℓinv WprimeInv P₀ P₁ C hC
+  exact corankOneCoefficient_clearing_denominatorBound F ψ ν hν μ
+    (twoBlockSecondDeformedInduced F m h σ 0) τ hzero hτinv
+    J hJ ℓinv hℓprime U WprimeInv (P₀ * P₁) hprod hclear
+
+/-- The specialized formal clearing has exactly the required L-polynomial
+direction for the actual zero-parameter induced representation. -/
+theorem secondBlock_polynomialDivisibility_at_zero
+    (hdeform : TwoBlockSecondWhittakerDeformationStatement.{uF,uW})
+    (ψ : UnitaryAdditiveCharacter F) (μ : AdditiveHaarMeasure F)
+    {r : ℕ} [Measure.IsMulRightInvariant (unipotentHaar F r)]
+    (m : Fin 2 → ℕ) (h : ∑ i, (m i + 1) = (r + 1) + 1)
+    {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]
+    (σ : ∀ i, Representation ℂ (Langlands.GeneralLinear (m i + 1) F) (W i))
+    (hσ : ∀ i, IsOfWhittakerType (m i) (standardCharacter ψ (m i)) (σ i))
+    (J : glFunctionals ψ (r + 1) (twoBlockSecondDeformedInduced F m h σ 0))
+    (hJ : J.val ≠ 0)
+    (ν : Measure (LeftUnipotentQuotient r F))
+    (hν : IsCompatible (upperUnipotent (r + 1) F)
+      (generalLinearHaar F r) (unipotentHaar F r) ν)
+    {V : Type uV} [AddCommGroup V] [Module ℂ V]
+    (τ : Representation ℂ (Langlands.GeneralLinear (r + 1) F) V)
+    (hτ : IsOfWhittakerType r (standardCharacter (ψ.scale (-1)) r) τ)
+    (ℓprime : glFunctionals (ψ.scale (-1)) r τ) (hℓprime : ℓprime.val ≠ 0)
+    (P P₀ P₁ : Polynomial ℂ) (hprod : P₀ * P₁ ≠ 0)
+    (hP : IsPadicSymmetricLPolynomial F ψ μ
+      (twoBlockSecondDeformedInduced F m h σ 0) τ P)
+    (hreal : ∀ Wprime : (coefficientModel τ ℓprime).toSubmodule,
+      ∃ C : ℝ, SecondBlockCorankRealRayClearing F ψ m h σ ν
+        (InducedTailIntermediate.scaledStandardAsInverse ψ Wprime.val) P₀ P₁ C) :
+    ∃ (Q : Polynomial ℂ) (e : ℕ),
+      Polynomial.X ^ e * (P₀ * P₁) = Q * P := by
+  exact adjacentRankModelBound_polynomialDivisibility F ψ μ ν hν
+    (twoBlockSecondDeformedInduced F m h σ 0)
+    (secondBlockZero_isOfWhittakerType F m h σ ψ hσ) J hJ τ hτ ℓprime hℓprime
+    P (P₀ * P₁) hprod hP
+    (secondBlock_modelDenominatorBound_at_zero F hdeform ψ μ m h σ hσ J hJ
+      ν hν τ hτ ℓprime hℓprime P₀ P₁ hprod hreal)
+
+end Langlands.AllField.RankinSelberg.Padic

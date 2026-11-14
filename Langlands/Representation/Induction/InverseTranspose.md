@@ -144,3 +144,7 @@ This module implements neither opposite-to-upper block reversal nor tensor
 reindexing, determinant twists or finite-order clauses. It supplies the
 inverse-transpose-to-opposite transport that can be composed with those separate
 constructions. It changes no existing Library pair.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Induction.InverseTranspose` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

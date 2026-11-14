@@ -62,3 +62,7 @@ interfaces. Its route implements the finite-filtration and residual-central
 structure of JPSS (1983), Section 2.10, printed pp.396–398, through the
 previously published assembly lemmas. It makes no new source-derived claim
 and leaves all representation-theoretic input proofs as explicit premises.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankTrilinearPrerequisites` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

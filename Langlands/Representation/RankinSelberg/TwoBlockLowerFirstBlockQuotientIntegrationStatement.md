@@ -294,3 +294,7 @@ factor existence or gamma/L multiplicativity. It uses neither Section
 9.3 nor Section 7 assembly nor the dominant analytic base. The two
 analytic disintegrations and their supporting existence/normalization
 claims remain to be proved separately.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockQuotientIntegrationStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

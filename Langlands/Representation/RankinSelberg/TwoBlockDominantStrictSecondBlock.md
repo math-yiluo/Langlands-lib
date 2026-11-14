@@ -9,3 +9,7 @@ The equivalence `reversedDualSectionEquiv` is fixed by the actual Jacquet transp
 `StrictTwoSidedFirstBlockLaws` packages the original first-block law and this reversed law for that same fixed equivalence and transported functional. `exists_strictTwoSidedFirstBlockLaws` takes the maximum of the original and reversed bounds. It supplies one nonzero ordinary Jacquet functional and both complete witness tuples, uniformly over all three compatible quotient measures. Each tuple is chosen before every complementary row pair and every section or coefficient.
 
 The independently owned closed analytic statement remains the explicit premise `H`. These theorems use actual reversal and dual transport; scalar product commutativity does not identify induced representations. This internal composition adds no literature translation and proves neither final closed dominant-rank target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictSecondBlock` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

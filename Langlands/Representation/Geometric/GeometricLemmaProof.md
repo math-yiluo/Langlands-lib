@@ -79,3 +79,7 @@ the local comparison; sections 6.3–6.4 (pp.468–469) specialize the
 intersections and remove the extra normalization character. The Lean proof
 uses the published results implementing these ingredients. Its scope is
 the stated positive-rank p-adic GL specialization.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.GeometricLemmaProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

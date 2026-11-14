@@ -271,3 +271,7 @@ Hence `|det (u g)|^s = |det g|^s`, and the weight is a function on
 A later Mellin unit supplies this weight. This module constructs
 only the unweighted coefficient function. It does not assert the complete
 weighted integral, its convergence or the identity (4.7)(1).
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerUnfoldingIntegrandData` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -44,3 +44,7 @@ These results are derived specializations of the imported constructions. This
 module supplies the unnormalized compact comparison; insertion of the target
 inverse half modulus and identification with the normalized refined induction
 are supplied by the separate induction transport.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicOrbitCompactComparison` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

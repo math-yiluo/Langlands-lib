@@ -58,3 +58,7 @@ formal real-ray clearing proposition remain explicit. Neither a rational
 integral identity nor a denominator-span bound is silently treated as a formal
 coefficient equality. No gamma factor, L-polynomial certificate, block reversal,
 or closed adjacent-rank base proposition is proved here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankSecondBlockCorankSpecialization` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

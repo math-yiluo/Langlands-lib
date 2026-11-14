@@ -65,3 +65,7 @@ explicit input: a denominator bound or rational evaluation equality is
 not treated as coefficient equality. No analytic deformation, gamma factor,
 L-polynomial certificate, block reversal or exact adjacent-rank base target
 is proved here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankClearedContinuation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

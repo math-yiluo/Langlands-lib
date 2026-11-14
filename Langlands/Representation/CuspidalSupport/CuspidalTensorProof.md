@@ -63,3 +63,7 @@ representations. The three required properties are proved as follows.
 
 Only the conjugating element `1` of the supercuspidal condition is used,
 since the refined unipotent subgroups are the standard ones.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.CuspidalTensorProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

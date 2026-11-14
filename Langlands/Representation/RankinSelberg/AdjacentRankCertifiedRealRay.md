@@ -48,3 +48,7 @@ The existence of the fixed-polynomial real-ray certificates remains an explicit
 premise; the large-twist model has not yet been identified with this literal
 deformed family. Neither exact adjacent-rank parent proposition is proved by
 this contribution.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankCertifiedRealRay` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -33,3 +33,7 @@ are meaningful at any rank, so the helper itself needs no positive-rank
 hypothesis; eventual use of the aggregate geometric results is at positive rank.
 The field and input-carrier universes remain independent; the evaluated and
 compressed quotient carriers are in `max uF uV`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.AssociatedAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

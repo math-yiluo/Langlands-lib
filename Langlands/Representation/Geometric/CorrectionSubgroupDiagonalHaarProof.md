@@ -204,3 +204,7 @@ Bernstein–Zelevinsky, *Induced representations of reductive p-adic groups I*
 `bernstein-zelevinsky-1977-induced-i`. This proof follows the coordinate measure
 argument implemented here. It does not assert a separately quoted theorem of
 that source or a correction-cancellation, orbit, or Jacquet-module comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.CorrectionSubgroupDiagonalHaarProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

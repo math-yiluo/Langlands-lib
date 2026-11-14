@@ -81,3 +81,7 @@ neither irreducibility nor finite-dimensionality is assumed. For the
 parent theorem, smoothness follows from the admissibility clause of
 each block's full Whittaker-type hypothesis, while factor existence
 remains a separate analytic obligation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.SingleBlockFactors` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

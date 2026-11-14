@@ -76,3 +76,7 @@ Let `W = f.val.val`. Square-integrability gives admissibility, hence smoothness 
    `W(ϖ^e) = L (π(ϖ^(lam,0)) v')` by steps 3 and 2. Also
    `δ(ϖ^e)⁻¹ = δ(ϖ^σ) δ(ϖ^(lam,0))⁻¹` by `torusModulus_add` and positivity. So the summand
    at `j lam` is the constant `δ(ϖ^σ)` times the summable family of step 4.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.SquareIntegrableWhittakerTorusSumProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

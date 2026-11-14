@@ -129,3 +129,7 @@ function `κ(qk) = |det q_0|`. It comes with the specialized lemmas
 The module does not prove that `u ↦ f_u(g)` is entire, although each value is
 an exponential `κ(g)^u` times a fixed vector. It also does not construct
 Whittaker functions. Both are left to the modules that use this one.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDeformationFlat` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

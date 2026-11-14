@@ -113,3 +113,7 @@ actual compact-test, coefficient, Fourier, quotient-measure and functional
 uniformity theorems, together with the supplied actual inclusion. It adds
 no irreducibility, occurrence, representation-equivalence, factor-existence,
 nonvanishing or analytic-data premise.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneAmbientMatrixFunctionalEquationComparisonZeroPadic` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

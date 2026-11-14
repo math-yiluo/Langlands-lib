@@ -25,3 +25,7 @@ additive measure is exactly the square product of the supplied scalar measure.
 The positive determinant power is identified with the Library's actual complex
 power at the natural integer exponent. The formula uses the total Bochner
 integral convention and does not assert integrability of arbitrary functions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.RegularMatrixHaarDensity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

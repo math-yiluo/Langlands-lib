@@ -85,3 +85,7 @@ theorem 2.5. Those proof sources remain future proof-source obligations.
 The proofs of 2.8 and 2.9 use the normalized geometric lemma, quasicuspidal
 structure, and Jordan–Hölder theory. These are separate obligations;
 compilation of the present proposition definitions establishes none of them.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.NormalizedCuspidalInductionStatement` and `Langlands.AllField.Representation.CuspidalSupport.NormalizedCuspidalInductionStatementSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

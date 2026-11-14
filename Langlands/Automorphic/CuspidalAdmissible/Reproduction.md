@@ -40,7 +40,9 @@ Throughout, `μ` is a Haar measure on the archimedean group `G∞ = InfiniteAdel
 - `ReproducesAt μ κ f g`: for all `h ∈ G∞`,
   `ev f (g · h) = ∫ ev f (g · z) κ(z⁻¹ h) dμ(z)`. Here `κ` is a complex function on `G∞` and
   `g` an adelic point. This is the condition used in `Finiteness.lean`.
-- `evaluate_toContinuous_zero/_add/_smul`: `ev` is linear in `f`.
+- `evaluate_toContinuous_zero/_add`: `ev` is additive in `f`. Homogeneity,
+  `evaluate_toContinuous_smul`, is imported from
+  `Langlands.Automorphic.OperatorRealizationEvaluation`.
 - Propagation lemmas:
   - `ReproducesAt.rational`: from `g` to `γ g` for rational `γ`, since `ev f` is left
     `GL_n(F)`-invariant.

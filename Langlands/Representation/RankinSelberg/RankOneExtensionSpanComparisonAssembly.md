@@ -216,3 +216,7 @@ applies `rankOneExtensionSpanComparison_of_pointwise` with `k = r - t - 2`. The 
 fixes the rank equalities `hrBase` and `hrInd` at this `k`. The premise is the pointwise
 theorem. `IsOfWhittakerType` begins with `IsAdmissible`, which begins with `IsSmooth`, so
 `hπ.1.1` and `hσ.1.1` give smoothness of `π` and `σ₁`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionSpanComparisonAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

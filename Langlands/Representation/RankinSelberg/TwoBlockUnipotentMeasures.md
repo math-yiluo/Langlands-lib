@@ -40,3 +40,7 @@ All the results here are derived directly from the named Library maps,
 measures and closed-subgroup existence theorem and the pinned Mathlib Haar
 APIs. The JPSS passage motivates their use; no separate assertion from that
 passage is being translated into a new definition.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockUnipotentMeasures` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

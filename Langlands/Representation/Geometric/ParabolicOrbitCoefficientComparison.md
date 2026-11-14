@@ -45,3 +45,7 @@ named published quotient constructions and the explicit orbit subgroup maps.
 Bernstein–Zelevinsky (1977), sections 5.16–5.17 and 6.4, motivate this step;
 the integration and normalization assertions in those passages remain
 separate proof obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicOrbitCoefficientComparison` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

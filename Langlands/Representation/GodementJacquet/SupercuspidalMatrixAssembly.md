@@ -42,3 +42,7 @@ The provenance is internal: the proof is an assembly of actual published
 convergence, rational uniqueness, Fourier equivalence, Laurent cancellation
 and matrix unit-value constructions. No new source interpretation or
 representation-theoretic existence premise is hidden in the assembly.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalMatrixAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -109,3 +109,7 @@ versions, the genuine full-modulus identification, transitivity along actual
 block refinements, canonical opposite-parabolic duality and full geometric
 lemma remain obligations. This pair does not establish the broad task's
 completion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Parabolic.ExactnessReciprocityStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

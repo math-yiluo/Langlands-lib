@@ -83,3 +83,7 @@ endpoint's independent analytic proof remains in
 It imports no unrestricted two-block or finite-block L-multiplicativity proof
 and no later Section 9.3 tail theorem. The conditional conclusion does not
 discharge the five remaining hypotheses or complete the parent proof task.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLVerifiedInputAssembly` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

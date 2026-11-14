@@ -108,3 +108,7 @@ radical-generated case is the hypothesis.
   where F is a non-Archimedean local field*, Russian Math. Surveys 31:3 (1976),
   1–68, registered as `bernstein-zelevinsky-1976-representations-gln`;
   §§5.11–5.12, pp.46–47 (the functors `Ψ⁻`, `Φ⁻`).
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.MirabolicPairingRigidityElementary` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

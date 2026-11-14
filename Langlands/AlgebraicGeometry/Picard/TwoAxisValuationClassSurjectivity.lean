@@ -174,6 +174,18 @@ lemma compProductHom_inv :
       cartesianSelfProductMap_snd, cartesianSelfProductMap_snd_assoc, Iso.hom_inv_id,
       Category.comp_id, Category.id_comp]
 
+/-- The two self-product comparisons for the composite test object are mutually inverse:
+the composite in the order not covered by `compProductHom_inv`. -/
+lemma compProductInv_hom :
+    compProductInv A b ≫ compProductHom A b = 𝟙 _ := by
+  apply pullback.hom_ext
+  · simp only [compProductHom, compProductInv, cartesianMumfordProductMap, Category.assoc,
+      cartesianSelfProductMap_fst, cartesianSelfProductMap_fst_assoc, Iso.inv_hom_id,
+      Category.comp_id, Category.id_comp]
+  · simp only [compProductHom, compProductInv, cartesianMumfordProductMap, Category.assoc,
+      cartesianSelfProductMap_snd, cartesianSelfProductMap_snd_assoc, Iso.inv_hom_id,
+      Category.comp_id, Category.id_comp]
+
 /-- An extension property for the iterated base change along `b` gives the extension
 property, with trivial total-space axes, along the test-scheme map `compTestHom b`. -/
 theorem extension_compTestHom

@@ -58,3 +58,7 @@ formal packaging of its change of variables. This helper does not
 identify the initial scalar model coefficient with formula (4), and
 does not prove Laurent convolution, global series convergence,
 functional equations, or either parent gamma/L statement.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankQuotientShear` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

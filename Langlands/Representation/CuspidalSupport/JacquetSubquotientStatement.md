@@ -41,3 +41,7 @@ The relevant existing proof interfaces are
 `Parabolic.NormalizedJacquetExactnessProof`. The statement imports only the
 underlying definitions. It does not assert the main association theorem or any
 minimal-Jacquet or filtration theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.CuspidalSupport.JacquetSubquotientStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -77,3 +77,7 @@ matrix), and scalar smearing uses the supplied scalar Haar `μ.measure`.
 There is no new measure or independent normalization in this module.
 Future comparison statements must retain the source's rank restrictions and
 the common trailing block; these definitions alone do not supply them.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionAnalyticData` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

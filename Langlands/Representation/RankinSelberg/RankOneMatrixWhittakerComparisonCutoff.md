@@ -92,3 +92,7 @@ canonical topology. These are the instances under which the published
 `padicSelfDualMeasureExists` is stated. That theorem gives total
 disconnectedness and a self-dual measure `μ` for `ψ`. The self-dual cutoff then
 applies.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixWhittakerComparisonCutoff` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

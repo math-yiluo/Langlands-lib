@@ -38,3 +38,7 @@ and rank-transport constructions, together with finite dependent case
 analysis. This module supplies no three-block geometry or rank transport of an
 induced representation, and it does not prove common-universe associativity
 or the closed heterogeneous target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Parabolic.RegroupingFactorEquivalences` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

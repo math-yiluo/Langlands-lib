@@ -36,3 +36,7 @@ consequences of `ParabolicOrbitNestedAction` and `ParabolicOrbitNormalization`;
 no new literature theorem is asserted. This pair does not yet assemble the
 compact-induction transport, compact-to-smooth inclusion or the final natural
 isomorphism of the host orbit functors.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicOrbitNormalizedCoefficient` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

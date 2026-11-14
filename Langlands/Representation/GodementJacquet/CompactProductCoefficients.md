@@ -53,3 +53,7 @@ contragredient. The equivalence is chosen before all functionals, sections and
 group elements; their actual matrix coefficient equals the stated compact
 integral, and that integral is integrable. This is a coefficient formula, without
 noncompact matrix-zeta convergence or a product-generator assertion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.CompactProductCoefficients` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

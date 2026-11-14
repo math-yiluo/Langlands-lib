@@ -31,3 +31,7 @@ The proofs adapt the elementary level-transport arguments already used in
 equal-rank slice and rational gamma identities. This module supplies actual
 analytic families; real-ray clearing, rational continuation and gamma
 equations, and both closed dominant-rank targets remain further obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantEqualGammaFamilies` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

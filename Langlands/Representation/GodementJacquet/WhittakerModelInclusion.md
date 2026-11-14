@@ -305,3 +305,7 @@ follows from `Submodule.span_le`, since `I₂` is the Laurent span of
 The equality is `le_antisymm` of `jpssI2_le_jpssI3_of_rationality` and the
 Library theorem `Padic.jpssI3_le_jpssI2` of `WhittakerAveraging`. No other
 premise is added. The proof uses only the standard axioms.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.WhittakerModelInclusion` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

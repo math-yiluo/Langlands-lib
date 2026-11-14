@@ -89,3 +89,7 @@ remain allowed. No small-block epsilon certificate or factor existence premise
 is used. The result does not assert global outer convergence at spectral
 parameter zero and leaves the first-block functional equation and finite
 Laurent convolution identity to separate work.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantAnalyticInputs` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

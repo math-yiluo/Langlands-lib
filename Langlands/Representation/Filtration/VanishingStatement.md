@@ -109,3 +109,7 @@ quasicuspidal. The hypotheses therefore make them zero; the first criterion
 then makes the tested subquotient zero. Hereditary quasicuspidality and these
 filtration/subquotient constructions remain proof obligations, not extra
 assumptions hidden in either proposition.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Filtration.VanishingStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

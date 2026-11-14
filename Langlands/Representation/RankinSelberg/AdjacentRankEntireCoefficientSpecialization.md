@@ -64,3 +64,7 @@ second-block parameter used in Section 6.1, printed page 427. This module
 introduces no new direct claim from the literature. It proves neither closed
 adjacent-rank gamma or L target. The second-block proposition and formal
 real-ray clearing remain inputs to their respective assertions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankEntireCoefficientSpecialization` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

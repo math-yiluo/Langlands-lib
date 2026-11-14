@@ -46,3 +46,7 @@ together with the concrete quotient maps and their naturality. It must also
 identify the two published presentations of the normalized Levi action. These
 are proof obligations; the functor and filtration definitions assert none of
 them.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicSupportJacquetStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

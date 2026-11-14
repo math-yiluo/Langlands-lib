@@ -50,3 +50,7 @@ measure to the Borel presentation. The existing
 `Q` and a natural number `e` with `X ^ e * A = Q * P`. This is the intrinsic
 denominator direction required by the dominant-rank task. There is no new
 factor-existence or analytic premise beyond the hypotheses shown in Lean.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictContinuation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

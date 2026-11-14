@@ -48,3 +48,7 @@ restricted JPSS Lemma 5.5 route, but none of its compact-section, scalar
 Fourier-smoothing or base-to-induced zeta comparisons is asserted here.
 The module does not assume or prove L-factor multiplicativity or the later
 Section 9.3 tail theorem. The parent target and its imports are unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionFactorTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

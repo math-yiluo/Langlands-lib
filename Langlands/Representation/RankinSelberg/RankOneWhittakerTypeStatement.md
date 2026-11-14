@@ -32,3 +32,7 @@ action is a later application of the published representation-equivalence
 transport for full Whittaker type; it is not silently substituted here.
 This module contains only the Prop-valued statement. Its proof requires a
 separate checked and independently reviewed contribution.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneWhittakerTypeStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

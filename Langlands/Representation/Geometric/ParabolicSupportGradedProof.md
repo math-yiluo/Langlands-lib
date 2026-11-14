@@ -77,3 +77,7 @@ inverse permutation representatives.
 The theorem assumes the ordering, enumeration and intersection refinements
 specified by its published target. Their existence and the separate host
 geometric lemma are outside this proof's conclusion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.ParabolicSupportGradedProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

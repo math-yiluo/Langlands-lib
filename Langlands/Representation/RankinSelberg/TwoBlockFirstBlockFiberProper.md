@@ -24,3 +24,7 @@ pushforward formula and this properness result show that every kernel fiber
 is finite on compact sets. The actual block quotient is Hausdorff, locally
 compact and second countable. Its common countable compact cover therefore
 proves `fiberKernel_isSFinite` by the published general kernel criterion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockFiberProper` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

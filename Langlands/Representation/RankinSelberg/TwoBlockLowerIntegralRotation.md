@@ -22,3 +22,7 @@ diagonal matrix with the inverse block rotation. The module introduces no
 measure or convergence assertion. Its provenance is internal, using only the
 published zero-one entry formulas, the coordinate description of the
 canonical integral subgroup and subgroup closure.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerIntegralRotation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

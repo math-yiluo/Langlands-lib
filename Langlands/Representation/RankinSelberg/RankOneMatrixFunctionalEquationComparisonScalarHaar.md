@@ -41,3 +41,7 @@ product of the identity with the scalar measurable equivalence. The
 The integral identities follow the usual Bochner convention for arbitrary
 functions; the separate integrability equivalences provide actual convergence
 whenever an application supplies it.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonScalarHaar` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

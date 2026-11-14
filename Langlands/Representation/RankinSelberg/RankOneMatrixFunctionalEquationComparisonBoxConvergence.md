@@ -65,3 +65,7 @@ literature. The analytic hypotheses are the actual matrix assertions of the
 specified coefficient model; no irreducibility, finite length or extra Whittaker
 convergence premise is used. Inverse-transpose convergence, the paired Fourier
 extraction and the final gamma functional equation remain later obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonBoxConvergence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

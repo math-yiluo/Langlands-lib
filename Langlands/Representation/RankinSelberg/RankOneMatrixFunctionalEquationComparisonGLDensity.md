@@ -123,3 +123,7 @@ residue-normalized rectangular Haar scaling, and normalized GL Haar measure,
 together with Mathlib's comap, density, Bochner integral, and Haar uniqueness
 results. It does not invoke an original-literature analytic comparison or an
 unproved statement about Whittaker functions.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonGLDensity` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

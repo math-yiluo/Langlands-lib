@@ -79,3 +79,7 @@ The parent proof still requires the compact-section construction, scalar
 Fourier smoothing, comparison of actual zeta integrals, and certified factor
 existence. The present module uses neither L-factor multiplicativity nor
 the later Section 9.3 tail result. It imports the parent target unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -69,3 +69,7 @@ published actual coefficient theorem. Genuine convergence follows from
 full-type analytic theorems and the retained matrix witnesses before the
 integral identity is asserted. Theorem 3.1 (printed pp.404–405) and the remaining
 steps of Sections 6–7 are outside this prerequisite's conclusion.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankProductContinuation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

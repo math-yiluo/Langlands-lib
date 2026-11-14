@@ -38,3 +38,7 @@ full-rank cutoff and normalized-section APIs. It asserts no convergence at
 rank-deficient matrices, no convergence of integrals, no finite-dimensionality
 or closedness of any coefficient image, and no whole image equality. Those
 analytic and representation-theoretic steps belong to the host assembly.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankInvariantApproximation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

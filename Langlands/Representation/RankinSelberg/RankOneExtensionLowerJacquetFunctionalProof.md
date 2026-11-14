@@ -140,3 +140,7 @@ resulting functional then equals `∫ I(f, g)` at `ρ(g) f`.
   ("motive is not type correct"). Use `congrArg`, `.trans` and `.mpr` instead.
 - Sums over `Fin (1 + t)` do not unify with `Fin (m + 1)` lemmas; go through
   `Fin.sum_univ_eq_sum_range`, as `rankOneExtension_superdiagonal_sum` does.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionLowerJacquetFunctionalProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

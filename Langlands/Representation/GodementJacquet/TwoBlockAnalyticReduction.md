@@ -49,3 +49,7 @@ predicates, and the proved actual family, scalar-action, admissibility and
 coefficient transports in `TwoBlockAnalyticReversal`. The noncompact ordinary
 convergence and product-integral calculations, and both Laurent-span inclusions
 for ordinary induction, are still required to prove the new ordinary statement.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.TwoBlockAnalyticReduction` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

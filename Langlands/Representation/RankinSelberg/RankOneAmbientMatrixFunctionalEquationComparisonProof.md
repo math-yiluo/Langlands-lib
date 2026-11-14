@@ -95,3 +95,7 @@ helper also includes p.393. No unrestricted or finite-block
 multiplicativity, Section 7 descent, or later analytic-base descendant
 is used. The registered index and available project/Library errata notes
 contained no source-specific correction affecting the cited passages.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneAmbientMatrixFunctionalEquationComparisonProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

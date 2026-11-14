@@ -27,3 +27,7 @@ nonempty open sets. Together with left invariance these give a Haar measure.
 Local compactness and second countability give its regularity. This unit does
 not yet assert the mass of the integral points, a common normalization, quotient
 compatibility or either integration formula.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockMeasures` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -59,3 +59,7 @@ original irreducible representation.
 This proof is internal and derived from the imported Schur, classification,
 finite-product and actual-subquotient theorems. It introduces no new assertion
 from the literature.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.GenericMatrixFunctionalEquationReductionProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

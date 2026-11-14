@@ -34,3 +34,7 @@ same subgroup remain coefficients of a vector fixed by that subgroup. Only the
 function target is given a topology. No continuity of the functional, topology
 on the representation module, or injectivity of its coefficient map is assumed.
 This prerequisite does not yet identify the whole Schwartz model image.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.AdjacentRankAdmissibility` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

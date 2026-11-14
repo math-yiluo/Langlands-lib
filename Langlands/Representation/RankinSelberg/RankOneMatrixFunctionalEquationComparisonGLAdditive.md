@@ -160,3 +160,7 @@ cancellation formula. No assertion about the measure of singular matrices is
 made. This module supplies a measure and convergence prerequisite; it does not
 prove the Fourier endpoint, construct its common coefficient and test, or prove
 the final gamma functional-equation comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonGLAdditive` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

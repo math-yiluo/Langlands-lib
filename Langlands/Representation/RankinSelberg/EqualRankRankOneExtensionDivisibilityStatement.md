@@ -160,3 +160,7 @@ may be used to justify its future proof. Existing proposition definitions and
 pending proof tasks provide no proof evidence. Independent semantic acceptance
 and Library publication of this statement must precede the separate proof
 successor; publication of this pair will establish only the statement target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.EqualRankRankOneExtensionDivisibilityStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

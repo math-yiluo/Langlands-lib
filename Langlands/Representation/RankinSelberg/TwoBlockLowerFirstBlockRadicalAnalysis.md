@@ -46,3 +46,7 @@ The kernel packaging and these analytic statements are internal precision of
 the source's quotient formula. This pair reuses the proved restricted radical
 tower and does not assert the separate first-block disintegration of equation
 (8), which is needed to assemble the full linked target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerFirstBlockRadicalAnalysis` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

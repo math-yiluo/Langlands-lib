@@ -61,3 +61,7 @@ The provenance is internal: these are consequences of
 translates, the existing block-rotation conjugation formulas and canonical
 uniformizer valuation identities. They introduce no new literature assertion,
 choice of measure or convergence premise.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerCompactFourier` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

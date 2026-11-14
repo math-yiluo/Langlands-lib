@@ -273,3 +273,7 @@ of Section 4.10, two-block factor multiplicativity, polynomial-cleared
 deformation specialization, or either dominant-rank base theorem. It imports
 no unrestricted multiplicativity, finite-block parent, Section 7 assembly,
 Section 9.3, or later result depending on these bases.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentIdentityStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

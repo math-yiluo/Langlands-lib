@@ -37,3 +37,7 @@ signed/quotient transports, complementary-block convergence and paired
 normalized-average lemmas. The convergence wrapper retains an explicit raw
 Fourier convergence premise. It does not assert that premise follows from the
 matrix data and does not prove the final gamma functional equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonPrincipalDual` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -113,3 +113,7 @@ The multiplicity-one part of `IsOfWhittakerType` is used only to identify the
 `whittakerSet` on the left with the specified model. The proof does not use
 product commutativity, uniqueness of factors, functional equations, two-block
 multiplicativity, or the matrix-model `I₂ = I₃` comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixWhittakerComparisonProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

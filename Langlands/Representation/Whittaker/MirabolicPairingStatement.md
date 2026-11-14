@@ -225,3 +225,7 @@ are existing implementation infrastructure. The new propositions are
 source-derived p-adic specializations, and do not turn those definitions
 into proofs of the cited representation-theoretic results. All existing
 Library Lean/Markdown pairs are preserved.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.MirabolicPairingStatement` and `Langlands.AllField.Representation.Whittaker.MirabolicPairingStatementSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

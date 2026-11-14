@@ -69,3 +69,7 @@ already proved by the support module. This establishes a uniform bound
 for the original second block's endpoint entry. Propagation to an
 opposite cone, rectangle volumes, convergence and the Laurent identity
 remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantEndpointBounds` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

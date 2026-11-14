@@ -72,3 +72,7 @@ specialization, function carriers, swapped target, and covariance exponents
 remain the enclosing task's construction obligations. No convergence,
 meromorphic continuation, tensor-functional, or local-coefficient assertion is
 made here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Shahidi.TwoBlocks` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

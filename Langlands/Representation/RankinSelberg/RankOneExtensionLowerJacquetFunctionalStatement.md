@@ -108,3 +108,7 @@ through compact-open stabilization. Its extension to the whole space requires th
 hypothesis that every section stabilizes. The present proposition does not use that
 construction. It needs no stabilization hypothesis, because it asks only for agreement
 with the ordinary integral on absolutely integrable data.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionLowerJacquetFunctionalStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

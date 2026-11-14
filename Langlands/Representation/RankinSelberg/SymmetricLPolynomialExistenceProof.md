@@ -82,3 +82,7 @@ new analytic argument. It uses no factor functional equation or L-factor
 multiplicativity premise. The substantive analytic theorems are reused by
 import, and no analytic or factor-existence assumptions remain in the public
 theorem. Only this new proof pair is submitted.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.SymmetricLPolynomialExistenceProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

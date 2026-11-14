@@ -1,0 +1,46 @@
+import Langlands.Representation.RankinSelberg.TwoBlockLowerIntegralRotation
+import Langlands.AllField.Representation.RankinSelberg.TwoBlockDeformationFlat
+import Langlands.AllField.Representation.RankinSelberg.TwoBlockLowerUnipotentQuotientData
+/-! The lower block rotation as an element of the canonical integral subgroup. -/
+
+noncomputable section
+
+open scoped BigOperators
+
+namespace Langlands.AllField.RankinSelberg.TwoBlockLowerUnipotentQuotient
+open Langlands.RankinSelberg.TwoBlockLowerUnipotentQuotient hiding blockRotation_inv_mem_integralOpen blockRotation_inv_mul_mem_integralOpen blockRotation_mem_integralOpen canonicalConjugationHomeomorph canonicalConjugationHomeomorph_toMulEquiv canonicalLowerToStandardHomeomorph continuous_conjugationEquiv_symm_canonical continuous_determinantOrder determinantOrder determinantOrder_apply determinantOrder_mk determinantSlice isClopen_determinantSlice isClosed_lowerBlockUnipotent_canonical isOpen_determinantSlice measurableSet_determinantSlice mem_determinantSlice_iff_determinantOrder mk_mem_determinantSlice ord_determinant_blockRotation preimage_lowerToStandard_symm_determinantSlice t2Space_lowerQuotient_canonical
+open Langlands.AllField.RankinSelberg.TwoBlockLowerUnipotentQuotient
+open Langlands.RankinSelberg hiding EqualRankAnalyticStatement EqualRankFunctionalEquationStatement GammaMultiplicativityStatement IsPadicPairEpsilonFactor IsPadicPairGammaFactor IsPadicPairLPolynomial IsPadicSymmetricEpsilonFactor IsPadicSymmetricGammaFactor IsPadicSymmetricLPolynomial LFactorMultiplicativityStatement QuotientHaarExistenceStatement SliceIntegrable SliceIntegrableAt TwoBlockWhittakerDeformationStatement UnequalRankAnalyticStatement UnequalRankCommonGeneratorStatement continuous_determinantOrder continuous_ord_units determinantOrder determinantOrder_mk determinantOrder_rightTranslate determinantSlice disjoint_determinantSlice equalRankIntegrand_eq_mul_spectralPoint_zpow equalRankSliceCoefficient equalRankSliceCoefficient_def iUnion_determinantSlice isClopen_determinantSlice isClosed_determinantSlice isEqualRankLPolynomial_characterChange_normalized isOpen_determinantSlice isPadicSymmetricEpsilonFactor_of_le isPadicSymmetricGammaFactor_of_le isPadicSymmetricGammaFactor_of_lt isPadicSymmetricLPolynomial_of_le isPadicSymmetricLPolynomial_of_lt measurableSet_determinantSlice mem_determinantSlice mk_mem_determinantSlice mk_mem_determinantSlice_iff_normalizedAbs normalizedAbsoluteValue normalizedAbsoluteValue_apply normalizedDeterminantWeight_eq_spectralPoint_zpow pairwise_disjoint_determinantSlice rightTranslate_mem_determinantSlice setIntegral_equalRankIntegrand_determinantSlice sliceCoefficient sliceCoefficient_eq_integral_indicator sliceCoefficient_smul sliceIntegrableAt_equalRankIntegrand_iff sliceIntegrableAt_iff sliceIntegrable_of_integrable twoBlockDeformedBlocks twoBlockDeformedBlocks_zero twoBlockDeformedInduced zetaSpan_equalRank_characterChange_normalized
+open Langlands.AllField.RankinSelberg hiding continuous_determinantOrder determinantOrder determinantOrder_mk determinantOrder_rightTranslate determinantSlice disjoint_determinantSlice iUnion_determinantSlice isClopen_determinantSlice isClosed_determinantSlice isOpen_determinantSlice measurableSet_determinantSlice mem_determinantSlice mk_mem_determinantSlice pairwise_disjoint_determinantSlice rightTranslate_mem_determinantSlice
+
+open Langlands.GeneralLinear
+open Langlands.RankinSelberg.TwoBlockDeformation hiding blockTensor_twoBlockDeformedBlocks blockZeroNorm blockZeroNorm_mul_integral blockZeroNorm_oppositeParabolic_mul blockZeroNorm_pos compactRadicalJacquet compactRadicalJacquet_inducedRep compactRadicalSubmodule determinantNorm_eq_one_of_mem_upperUnipotent determinantNorm_oppositeLeviProjection_of_mem exists_oppositeParabolic_mul exists_uniform_stabilizer flatFunction flatFunction_covariant flatFunction_mul_flatStabilizer flatSection flatSection_zero flatStabilizer flatStabilizer_le_integralOpen inducedRep_mem_compactRadicalSubmodule integralOpen integral_comp_unipotentShift inverseStandardCharacter_eq_prod inverseTranspose_mem_integralOpen isAbsIntegrableAt_one_of_mem_compactRadicalSubmodule isCompact_integralOpen isLocallyConstant_blockZeroNorm isLocallyConstant_oppositeBlockNorm jacquetFunction_inducedRep_upperUnipotent leviModulus_eq_one mem_compactRadicalSubmodule mem_integralOpen mem_oppositeParabolic_of_lower oppositeBlockNorm oppositeBlockNorm_eq oppositeBlockNorm_mul_integral oppositeBlockNorm_oppositeParabolic_mul oppositeBlockNorm_pos radicalRestriction radicalRestriction_inducedRep sectionEval_leviEmbedding_mul sectionEval_mul_flatStabilizer tensorContraction_blockTensor
+open Langlands.AllField.RankinSelberg.TwoBlockDeformation
+
+universe uF
+
+variable (F : Type uF) [Field F]
+variable {t : ℕ} {m : Fin 2 → ℕ} (h : ∑ i, (m i + 1) = t + 1)
+
+/-- Both the block rotation and its inverse have integral entries. -/
+theorem blockRotation_mem_integralOpen [TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F] :
+    blockRotation h F ∈ integralOpen F t := by
+  rw [mem_integralOpen]
+  constructor <;> intro i j
+  · rw [blockRotation_apply]
+    split <;> simp
+  · rw [blockRotation_inv_apply]
+    split <;> simp
+
+/-- The inverse block rotation belongs to the same integral subgroup. -/
+theorem blockRotation_inv_mem_integralOpen [TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F] :
+    (blockRotation h F)⁻¹ ∈ integralOpen F t :=
+  (integralOpen F t).inv_mem (blockRotation_mem_integralOpen F h)
+
+/-- Moving the inverse rotation into a right integral factor preserves membership. -/
+theorem blockRotation_inv_mul_mem_integralOpen [TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F]
+    {k : GeneralLinear (t + 1) F} (hk : k ∈ integralOpen F t) :
+    (blockRotation h F)⁻¹ * k ∈ integralOpen F t :=
+  (integralOpen F t).mul_mem (blockRotation_inv_mem_integralOpen F h) hk
+
+end Langlands.AllField.RankinSelberg.TwoBlockLowerUnipotentQuotient

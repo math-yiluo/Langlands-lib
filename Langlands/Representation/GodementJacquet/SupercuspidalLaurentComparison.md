@@ -58,3 +58,7 @@ integral theorem, the existing constant-output construction and the conditional
 scalar comparison. It does not prove the cross identity for any particular `σ`.
 It does not assert that `A` is nonzero or a monomial, nor establish a functional
 equation on arbitrary full-matrix tests. Those remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalLaurentComparison` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

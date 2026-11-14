@@ -117,3 +117,7 @@ forms `forms(τ_ψ, τ_ψ⁻, 1)` with the two adapters, bounds their dimension 
 Whittaker uniqueness on `τ_ψ⁻` (the dual form of the "at most one" half of
 `dim E_{U,Θ} = 1` in the proof of BZ76 Proposition 5.15(b), p.50), and
 exhibits the integral pairing for existence.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.MirabolicCompactTwistedPairingProof` and `Langlands.AllField.Representation.Whittaker.MirabolicCompactTwistedPairingProofSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

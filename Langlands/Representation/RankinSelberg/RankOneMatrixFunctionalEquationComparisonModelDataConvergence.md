@@ -11,3 +11,7 @@ The generic theorem `whittakerCoefficientIota_matrixConvergesOnRight_of_iota` fi
 `rawModel_pair_convergence_of_data` extracts the two convergence hypotheses from the exact matrix functional-equation data on the representation appearing in the host target. It requires smoothness of the original representation but no irreducibility, admissibility, finite generation, nonzero functional, or self-duality hypothesis for this convergence-only conclusion. The character, normalized Haar, arbitrary independent field and carrier universes, all ranks, and full test space are retained. The spectral exponents in the two raw conclusions are unshifted; RawConvergence has already accounted for the published matrix shift in the half-plane threshold.
 
 This is source-free composition of the proved raw convergence theorem, actual evaluation on a coefficient image, smooth pullback, first-dual coefficient transport, and the actual measure-preserving Weyl substitution. It supplies convergence only and proves neither rational continuation nor the final gamma comparison.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonModelDataConvergence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

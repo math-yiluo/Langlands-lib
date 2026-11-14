@@ -95,3 +95,7 @@ The Lean statement is derived from that sentence as follows.
   the function produced by
   `HarmonicAnalysis.PadicMatrixFourierSliceStatement` with `a` and `b` as
   here.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockCellSectionStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

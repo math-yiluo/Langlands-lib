@@ -119,3 +119,7 @@ proof obligations, not hypotheses or established results of this module.
 The parent disintegration task retains the right triangular Haar measure,
 compact open volumes, determinant-weighted measure comparison with a positive
 constant, integrability and integral transfer, and final assembly.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Group.GL.LowerBlockQuotientGeometryStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

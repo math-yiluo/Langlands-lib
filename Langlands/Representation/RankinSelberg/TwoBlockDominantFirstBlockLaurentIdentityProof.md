@@ -108,3 +108,7 @@ are retained. The proof performs finite Laurent convolution and
 coefficientwise integration without cancelling a polynomial on arbitrary
 bilateral series or assuming any additional factor or analytic existence
 premise.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantFirstBlockLaurentIdentityProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -100,3 +100,7 @@ The planned disintegration proof for
 `Langlands.RankinSelberg.LowerBlockQuotientDisintegrationStatement` (task
 7b088130) is to use this open embedding to pull a compatible quotient measure on `N_m \ GL_m` back to a
 right Haar measure on `B̄_m`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Group.GL.LowerTriangularQuotientCell` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

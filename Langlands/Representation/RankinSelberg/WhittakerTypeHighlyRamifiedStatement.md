@@ -137,3 +137,7 @@ environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings.
 The inspection reports a definition returning `Prop`, universe parameters
 `uF uV uW`, and only `propext`, `Classical.choice` and `Quot.sound` as
 logical assumptions. This is a statement check, not a proof of the target.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -101,3 +101,7 @@ multiplication `Matrix.toLin'`; transposing the matrix yields the right row
 action. Together with `padicScalarHaarScaling`, they give an available route
 to deriving the modulus, rather than adding it as a hypothesis. This module
 proves none of those steps and uses no gamma, epsilon or uniqueness theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.HarmonicAnalysis.PadicRowFourierEquivarianceStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

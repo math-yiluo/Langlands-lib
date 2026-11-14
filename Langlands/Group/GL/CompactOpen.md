@@ -52,3 +52,7 @@ constructions and their proofs are documented in `Langlands.Group.GL.Blocks`,
 `Langlands.Group.GL.OppositeBlocks`, and `Langlands.Group.GL.UpperUnipotent`.
 These modules are imported by their Lean names; their paired Markdown describes
 the source conventions and implemented proofs.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Group.GL.CompactOpen` and `Langlands.AllField.Group.GL.CompactOpenSupplement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

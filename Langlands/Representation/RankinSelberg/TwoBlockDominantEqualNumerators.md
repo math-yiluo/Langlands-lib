@@ -52,3 +52,7 @@ rank. Ordinary Jacquet convergence does not assert lower-slice or outer
 spectral convergence. Convergence of scalar spectral expansions, rational
 continuation, the undeformed parameter, the strict dominant case, and final
 factor identities remain separate obligations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantEqualNumerators` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

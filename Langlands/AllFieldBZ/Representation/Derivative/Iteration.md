@@ -1,0 +1,63 @@
+# All-field port of `Langlands.Representation.Derivative.Iteration`
+
+Lean module: `Langlands.AllFieldBZ.Representation.Derivative.Iteration`. Original module: `Langlands.Representation.Derivative.Iteration` in the Library; its mathematical
+content is described in the Library file `Langlands/Representation/Derivative/Iteration.md`.
+
+## Content
+
+This module restates and reproves, over an arbitrary nonarchimedean local field, the
+declarations of the original module whose statements or proofs depend on the p-adic field
+package `Langlands.PadicField p`. The field is now `F : Langlands.AllFieldBZ.LocalFieldPackage`
+(a field with no base field and no characteristic hypothesis), and its local-field structure is
+`T : F.TopologicalData`, an abbreviation of the Library structure `Langlands.LocalFieldData F.Carrier`.
+Declarations of the original module that do not depend on the field are not duplicated: the module
+imports the original and uses them directly. Each ported statement is the original statement with the
+replacements listed under "Systematic changes"; each proof is the original proof with the same
+replacements.
+
+## Ported declarations
+
+| Original declaration | All-field declaration |
+| --- | --- |
+| `Langlands.Derivative.phiMinusIterate` | `Langlands.AllFieldBZ.Derivative.phiMinusIterate` |
+| `Langlands.Derivative.phiMinusIterate_zero` | `Langlands.AllFieldBZ.Derivative.phiMinusIterate_zero` |
+| `Langlands.Derivative.phiMinusIterate_succ` | `Langlands.AllFieldBZ.Derivative.phiMinusIterate_succ` |
+| `Langlands.Derivative.mirabolicDerivative` | `Langlands.AllFieldBZ.Derivative.mirabolicDerivative` |
+| `Langlands.Derivative.mirabolicDerivative_eq` | `Langlands.AllFieldBZ.Derivative.mirabolicDerivative_eq` |
+| `Langlands.Derivative.mirabolicDerivative_zero` | `Langlands.AllFieldBZ.Derivative.mirabolicDerivative_zero` |
+| `Langlands.Derivative.mirabolicDerivative_succ` | `Langlands.AllFieldBZ.Derivative.mirabolicDerivative_succ` |
+| `Langlands.Derivative.generalLinearRestriction` | `Langlands.AllFieldBZ.Derivative.generalLinearRestriction` |
+| `Langlands.Derivative.generalLinearRestriction_map_toLinearMap` | `Langlands.AllFieldBZ.Derivative.generalLinearRestriction_map_toLinearMap` |
+| `Langlands.Derivative.generalLinearRestriction_map_apply` | `Langlands.AllFieldBZ.Derivative.generalLinearRestriction_map_apply` |
+| `Langlands.Derivative.generalLinearDerivativePositive` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivativePositive` |
+| `Langlands.Derivative.generalLinearDerivativePositive_eq` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivativePositive_eq` |
+| `Langlands.Derivative.generalLinearDerivativePositive_obj` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivativePositive_obj` |
+| `Langlands.Derivative.generalLinearRankCast` | `Langlands.AllFieldBZ.Derivative.generalLinearRankCast` |
+| `Langlands.Derivative.generalLinearRankCast_refl` | `Langlands.AllFieldBZ.Derivative.generalLinearRankCast_refl` |
+| `Langlands.Derivative.generalLinearRankCast_trans` | `Langlands.AllFieldBZ.Derivative.generalLinearRankCast_trans` |
+| `Langlands.Derivative.generalLinearRankCast_symm_comp` | `Langlands.AllFieldBZ.Derivative.generalLinearRankCast_symm_comp` |
+| `Langlands.Derivative.generalLinearDerivative` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivative` |
+| `Langlands.Derivative.generalLinearDerivative_zero` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivative_zero` |
+| `Langlands.Derivative.generalLinearDerivative_succ` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivative_succ` |
+| `Langlands.Derivative.generalLinearDerivative_of_pos` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivative_of_pos` |
+| `Langlands.Derivative.generalLinearDerivative_succ_obj` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivative_succ_obj` |
+| `Langlands.Derivative.generalLinearDerivative_top_succ` | `Langlands.AllFieldBZ.Derivative.generalLinearDerivative_top_succ` |
+
+## Systematic changes
+
+- `Langlands.PadicField.{u} p` becomes `Langlands.AllFieldBZ.LocalFieldPackage.{u}`; the prime
+  `p` and its `Fact p.Prime` instance are removed from binders, and the corresponding explicit
+  arguments are dropped.
+- Normalization API names on `T` (for example `Integers`, `ord`, `normalizedAbs`, `uniformizer`)
+  resolve to `Langlands.LocalFieldData`; the remaining p-adic foundation facts are replaced by the
+  arbitrary-field versions in `Langlands.AllFieldBZ.LocalField.Definitions`.
+- Every ported declaration `Langlands.X` is renamed `Langlands.AllFieldBZ.X` (with `PadicField`
+  replaced by `LocalFieldPackage` in the name); a declaration in a namespace outside `Langlands`
+  is renamed `<original name>_allFieldBZ`. References to ported declarations are renamed accordingly.
+- The original namespaces are opened, hiding the names that have ported versions, so that unported
+  field-independent declarations are used unchanged.
+
+## Provenance
+
+Generated by the all-field port script of Worker 71 for the BZ77 mirabolic nondegeneracy task
+(Bernstein and Zelevinsky, *Induced representations of reductive p-adic groups I*, 1977, 4.9-4.11).

@@ -31,3 +31,7 @@ Fourier, block determinant, and coinvariant APIs. This module proves a
 stabilizer criterion; it does not assert existence of a suitable proper
 radical for every singular matrix, Fourier regularity of every cutoff,
 nonzero operator realization, or the matrix functional equation.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.SupercuspidalCutoffFourier` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

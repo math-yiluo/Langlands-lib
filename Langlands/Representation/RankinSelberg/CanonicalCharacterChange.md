@@ -111,3 +111,7 @@ and generator transport. It does not prove analytic continuation or generator
 existence, a functional equation, an epsilon or gamma formula, or a conductor
 identity. Selecting factors from existence witnesses and transporting their
 values remain consumers of these interfaces.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.CanonicalCharacterChange` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

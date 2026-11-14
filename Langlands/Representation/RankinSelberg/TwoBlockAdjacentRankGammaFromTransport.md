@@ -33,3 +33,7 @@ measure existence, nonzero functional and rational witnesses, and all
 universal certificate clauses are retained. This is a derived composition
 of the named lower analytic theorem and actual ordered-family transport;
 it uses no unrestricted multiplicativity or later rank descent.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockAdjacentRankGammaFromTransport` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

@@ -135,3 +135,7 @@ tasks are respectively `5998b0b2-e367-4e85-8d4d-47e3b9b4a222`,
 `13326f3a-e77f-4ed1-a44a-b6407f6b7c0a`. This statement neither proves nor
 assumes them. Functional equations, epsilon/gamma-factor existence and
 Langlands classification are not needed for this L-existence bridge.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.SymmetricLPolynomialExistenceStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

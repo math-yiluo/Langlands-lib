@@ -52,3 +52,7 @@ These original normalization passages were read during development. The
 imported proof pairs describe their implemented analytic arguments; this
 composition makes no assertion of unconditional existence on arbitrary
 reducible representations.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.GenericMatrixFunctionalEquationProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

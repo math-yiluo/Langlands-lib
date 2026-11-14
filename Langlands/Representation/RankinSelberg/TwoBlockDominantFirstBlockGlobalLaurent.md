@@ -80,3 +80,7 @@ This result is the conditional analytic and algebraic bridge used to
 assemble the closed strictly dominant target. It does not derive a uniform
 twist bound, construct a Jacquet functional, or produce the common
 normalized-generator witnesses. Those inputs are supplied separately.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantFirstBlockGlobalLaurent` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

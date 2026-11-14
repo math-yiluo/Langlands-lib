@@ -137,3 +137,7 @@ remain obligations of a separate proof.
 The dependency direction is Lemma 5.5 to Section 7 to the later results
 of Section 9. This module does not import or use the later tail divisibility
 statement as a justification, and makes no assertion for other rank orders.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneExtensionDivisibilityStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

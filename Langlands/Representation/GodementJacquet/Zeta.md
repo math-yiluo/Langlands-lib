@@ -108,3 +108,7 @@ selects no rational continuation, normalized generator, L polynomial or gamma
 factor. It asserts no convergence, rationality, bounded denominator,
 `I₁ = I₂ = I₃`, product-ideal generation, functional equation or
 multiplicativity theorem. The module contains definitions only.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.GodementJacquet.Zeta` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

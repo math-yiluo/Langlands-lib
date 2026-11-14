@@ -96,3 +96,7 @@ literature translation. It uses neither unrestricted multiplicativity nor
 later rank descent. This unit proves the strict actual lower conclusion;
 the exact target module combines the equal-rank boundary and actual normalized
 lower-to-upper reversal.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantStrictGammaContinuation` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

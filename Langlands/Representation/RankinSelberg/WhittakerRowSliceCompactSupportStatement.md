@@ -170,3 +170,7 @@ integral slice coefficients vanish for all sufficiently negative indices;
 compact support on each fixed slice is a different conclusion. The determinant
 slice, Whittaker norm and quotient-last-row modules are imported without
 changes.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.WhittakerRowSliceCompactSupportStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

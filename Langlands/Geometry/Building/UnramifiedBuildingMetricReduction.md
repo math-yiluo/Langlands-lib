@@ -5,10 +5,12 @@ the published common-apartment statement and one new, focused proposition about
 the supplied root-valuation building over `K = inertiaFixedField F`. It **proves**
 that these two propositions imply the target. It proves neither of them, and it does
 **not** prove `UnramifiedBuildingMetricStatement`. The remaining analytic input,
-discreteness of normalizer orbits in the apartment, is proved here from published
-results. Everything is stated and proved at an arbitrary universe `u`.
+discreteness of normalizer orbits in the apartment, is supplied by the imported
+`IntegerValuationBuildingMetricReduction`, together with the generic metric
+construction described below. Everything is stated and proved at an arbitrary
+universe `u`.
 
-## New definition
+## Imported root distance
 
 `KPApartmentData.rootDistance D x y`: for a KP apartment datum `D` with apartment
 `D.Apartment` (an affine space over `TranslationSpace i = V(S)/V(S)^Φ`),
@@ -83,14 +85,21 @@ results for the root-valuation building over `K`, not a verbatim source assertio
   the building over `K` as the quotient (7.6.2) and give it the building structure
   used above. The corrected Chapter 7 assumptions are on corrections PDF p.33.
 - Propositions 4.2.3 and 4.2.7 and Theorem 4.2.10 (printed pp.169–172; PDF
-  pp.200–203) are the metric, curvature and completeness conclusions. This module
-  re-proves them in Lean from `RetractionDistanceStatement` and common apartments;
+  pp.200–203) are the metric, curvature and completeness conclusions. The imported generic construction
+  proves them in Lean from the retraction-distance properties and common apartments;
   it does not assume them.
 
 Common apartments (KP Definition 1.5.5 via Remark 7.6.5) is the already published
 `MaximalUnramified.CommonApartmentsStatement`; its proof is a separate open task.
 
 ## The proof of the reduction
+
+The generic apartment metric, discreteness, gluing and completeness declarations
+in the next four paragraphs are imported from
+`IntegerValuationBuildingMetricReduction`. Their public Lean names and proofs
+are unchanged. This separation lets consumers use the generic integer-valued
+metric construction without importing the descent statements used by the final
+maximal-unramified reduction.
 
 **Root metric on the apartment** (namespace `IntegerValuationBuildingData`, for any
 `B : IntegerValuationBuildingData v G`). The actual relative roots are finite

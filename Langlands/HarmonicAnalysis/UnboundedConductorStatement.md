@@ -147,3 +147,7 @@ was published at Library commit `24af03c708d2441a8b505c2999c4fd8905a0559d`.
 It proves only the existence of characters with large conductor stated here.
 It proves no L-factor vanishing, Whittaker-type or factor-multiplicativity
 result.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.HarmonicAnalysis.UnboundedConductorStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

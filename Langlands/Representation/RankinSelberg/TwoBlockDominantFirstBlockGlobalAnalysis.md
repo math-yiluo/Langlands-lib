@@ -62,3 +62,7 @@ last lemma to the original raw norm, identify its average with the radical
 average of the first-block section average, or prove the Laurent identity.
 It adds no analytic premise to that target; those final specialization steps
 remain to be implemented in its consumer.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantFirstBlockGlobalAnalysis` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

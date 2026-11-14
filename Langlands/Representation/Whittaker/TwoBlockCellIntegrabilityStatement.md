@@ -22,3 +22,7 @@ law `Langlands.Induction.eval_isLocallyConstant`. The support-in-the-cell part
 of submodule membership is not needed for this assertion; compact support of
 the restriction suffices. It asserts no right-translation stability, global
 Jacquet convergence, or Whittaker extension theorem.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.TwoBlockCellIntegrabilityStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

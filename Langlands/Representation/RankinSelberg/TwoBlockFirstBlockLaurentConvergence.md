@@ -40,3 +40,7 @@ nonvanishing come from `DualWhittakerType` and `DualModels`.
 `smallIntegrand_integrableOn_slice` and `dualIntegrand_integrableOn_slice` prove
 integrability on every determinant slice of the inner integral at `s = 0`. The proof
 uses one convergent parameter and the constant slice factor `(q^(-s))^m`.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentConvergence` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

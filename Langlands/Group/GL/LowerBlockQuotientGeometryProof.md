@@ -93,3 +93,7 @@ conjuncts are the three results above. The conull one is applied with
 published instances. Right invariance of `μH` is the statement's instance
 hypothesis. The rank `n + 1 + k + 1` of the statement and the rank
 `(n + 1) + (k + 1)` of the general lemmas are definitionally equal.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Group.GL.LowerBlockQuotientGeometryProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

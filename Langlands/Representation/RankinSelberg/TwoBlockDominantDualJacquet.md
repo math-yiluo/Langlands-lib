@@ -71,3 +71,7 @@ The canonical local instances have explicit `dualJacquet` names, so this module
 can be imported together with the ordinary coefficient-model realization module
 without a generated-declaration-name collision. Their values and the mathematical
 declarations are unchanged.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockDominantDualJacquet` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

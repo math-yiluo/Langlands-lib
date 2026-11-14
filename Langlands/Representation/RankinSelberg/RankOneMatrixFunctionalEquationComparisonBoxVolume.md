@@ -52,3 +52,7 @@ integration, matrix convergence and the literal original block identification;
 it is not a new source transcription. It adds no self-duality, irreducibility,
 finite-length, nonzero-functional or separate rank-one analytic premise. The
 genuine dual comparison and the host task's exact all-rank theorem remain open.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.RankOneMatrixFunctionalEquationComparisonBoxVolume` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

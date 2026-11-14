@@ -61,3 +61,7 @@ index or the Bernstein–Zelevinsky equivalence `Φ⁺Φ⁻ ≅ id` (BZ 1976, re
 `bernstein-zelevinsky-1976-representations-gln`, §5). The spectral bookkeeping
 `q^(-(s-1)) = q · q^(-s)` gives the finite exceptional set in `q^(-s)` that JPSS
 state.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Whittaker.MirabolicTwistedPairingRigidityProof` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.

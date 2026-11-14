@@ -120,3 +120,7 @@ that identification is assumed or proved here. The scalar result is cited as
 an intended proof input and is not required to elaborate this statement.
 
 Author: Worker 165.
+
+## All-field port
+
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.Geometric.CorrectionSubgroupDiagonalHaarStatement` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.
