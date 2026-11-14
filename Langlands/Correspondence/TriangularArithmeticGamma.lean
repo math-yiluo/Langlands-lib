@@ -301,7 +301,9 @@ theorem arithmeticPairLFactor_dual_triangular (V W : LocalWeilRepresentation.{u,
 
 /-- The class-level reflected L-ratio of the tensor product of two upper triangular
 zero-monodromy pairs with diagonal characters `χ_i ∘ e`, `η_j ∘ e`, for a geometric
-candidate `e`: the product over `i, j` of `L(χ_i η_j)(X) / L((χ_i η_j)⁻¹)(q⁻¹ / X)`. -/
+candidate `e`: the product over `i, j` of `P_(χ_i η_j)(X) / P_((χ_i η_j)⁻¹)(q⁻¹ / X)` for
+Tate's Euler polynomials `P = lPolynomial`, that is, of
+`L((χ_i η_j)⁻¹)(q⁻¹ / X) / L(χ_i η_j)(X)` with `L = 1 / P`. -/
 theorem rationalLRatioClass_triangular (e : ReciprocityCandidate K)
     (he : IsGeometricReciprocity K e) {r t : ℕ}
     (χ : Fin r → QuasiCharacter K) (η : Fin t → QuasiCharacter K)

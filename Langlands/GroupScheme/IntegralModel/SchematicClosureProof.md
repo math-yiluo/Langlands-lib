@@ -22,7 +22,12 @@ flat. Its group law extends because `𝓗 × 𝓗` is flat, so it is the closure
 its generic fibre. The Lean proof follows this outline geometrically, through
 scheme-theoretic images and schematic dominance rather than explicit coordinate
 rings. All declarations except the final theorem are internal steps of this
-proof. They live in the namespace
+proof. The construction is generalized here to Dedekind domains: its only
+base-ring input beyond being a domain is that torsion-free modules are flat,
+which Mathlib supplies for Dedekind domains. This is an internal extension of
+the published proof, rather than a claim about the precise scope of KP's
+lemma. The final theorem retains the published discrete-valuation-ring
+statement. The internal declarations live in the namespace
 `Langlands.GroupScheme.IntegralModel.SchematicClosureConstruction`.
 
 Throughout, `β = Spec.algebraMap R K : Spec K ⟶ Spec R`, and
@@ -31,7 +36,7 @@ closed subgroup followed by the inverse of the given generic identification.
 
 ## Auxiliary facts
 
-- `flat_of_appTop_injective`. Let `R` be a discrete valuation ring, `X` an
+- `flat_of_appTop_injective`. Let `R` be a Dedekind domain, `X` an
   affine scheme and `g : X ⟶ Spec R`. Suppose some `t : Y ⟶ X` is injective on
   global sections and sends the image of every nonzero `r : R` to a unit. Then
   `g` is flat. Proof: by `HasRingHomProperty.iff_of_isAffine`, flatness of `g`
@@ -39,8 +44,9 @@ closed subgroup followed by the inverse of the given generic identification.
   `Γ(Spec R) ≅ R`). If `r • m = 0` with `r ≠ 0`, applying `t` gives
   `t(r) · t(m) = 0` with `t(r)` a unit, so `t(m) = 0` and `m = 0`. Hence
   `Γ(X)` is a torsion-free `R`-module, and Mathlib's instance for Dedekind
-  domains makes it flat. This is KP's remark that torsion-free modules over a
-  discrete valuation ring are flat.
+  domains makes it flat. For a discrete valuation ring this specializes to KP's remark that
+  torsion-free modules are flat; the implemented argument applies to any
+  Dedekind domain.
 - `mono_specAlgebraMap`, `flat_specAlgebraMap`,
   `isSchemeTheoreticallyDominant_specAlgebraMap` (for any domain `R` with
   fraction field `K`). `β` is a monomorphism, because `R → K` is an epimorphism
@@ -76,7 +82,7 @@ closed subgroup followed by the inverse of the given generic identification.
   projection is quasi-compact and scheme-theoretically dominant
   (`ImageGeneration.isSchemeTheoreticallyDominant_toImage`, using that
   `N.group.X.left` is affine).
-- `flat_closureOver` (for a discrete valuation ring `R`). The closure is
+- `flat_closureOver` (for a Dedekind domain `R`). The closure is
   affine. Apply `flat_of_appTop_injective` with `t` the projection, which is
   injective on global sections by dominance. Its composite with the closure's
   structure morphism is `H.X.hom ≫ β`, so a nonzero `r` maps to the image of the
@@ -146,7 +152,8 @@ inclusion homomorphism.
 
 ## The model, its morphism and the closure clauses
 
-- `closureModel N j : IntegralModel R K H` has group `closureGroup N j`,
+- For a Dedekind domain `R`, `closureModel N j : IntegralModel R K H` has
+  group `closureGroup N j`,
   affine, flat and finite-type instances from the previous sections, and
   `genericIso := (genericToClosureIso N j).symm`.
 - `closureModelHom N j : (closureModel N j).Hom N j` has
@@ -167,10 +174,16 @@ inclusion homomorphism.
 
 ## Scope
 
-The base is an arbitrary discrete valuation ring, as in the statement. The
-Henselian hypothesis of KP Appendix A is not used. The discrete valuation
-ring is used only in `flat_closureOver` (torsion-free modules over a Dedekind
-domain are flat), which the multiplication step and the model need. The
-closure is constructed for this closed subgroup only. The general bijection of
-A.2.1(3), the flat-algebra point formula of A.2.1(2) and the Lie-algebra
-assertion of A.2.3 are not proved here.
+The internal group and integral-model constructions accept any Dedekind domain
+`R` with specified fraction field `K`. The Dedekind-domain hypothesis is used
+only for the torsion-free-to-flat step in `flat_of_appTop_injective` and
+`flat_closureOver`; the multiplication and integral-model constructions use
+that flatness. In particular, the construction applies to the integers as well
+as to discrete valuation rings. The final theorem still proves exactly the
+published discrete-valuation-ring statement, as in KP. The Henselian hypothesis
+of KP Appendix A is not used.
+
+The closure is constructed for the supplied closed subgroup only. This does
+not assert smoothness, reductivity or a comparison of special fibres. The
+general bijection of A.2.1(3), the flat-algebra point formula of A.2.1(2) and the
+Lie-algebra assertion of A.2.3 are not proved here.

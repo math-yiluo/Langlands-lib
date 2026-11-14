@@ -100,3 +100,5 @@ parametrizations of the simple roots instead of Lie pinnings, so that it can be 
 fibres of groups over a ring. It adds the comparison of the points `v_a(-1)`, which follows from
 the uniqueness of opposite factor pairs. The proof combines the Library results named above and
 follows no particular printed source.
+
+The zero-coordinate identity `LocalSplitCell.orderedProduct_zero` is shared from `LocalSplitFieldComparison`; its statement and public name are unchanged.

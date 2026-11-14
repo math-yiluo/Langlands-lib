@@ -50,3 +50,9 @@ It assumes no unproved
 statement as a premise. The geometric kernel hypothesis for `ψ` remains
 explicit: this unit does not establish it, parabolicity of the image or the
 reduction-preimage assertion, and does not prove the host task's exact target.
+
+The local instances for the integer algebra, its fraction-field scalar tower
+and its locality have explicit names. This allows importing this comparison
+together with `UnramifiedIntegralPointAction`, whose local coefficient
+instances would otherwise receive the same generated declaration names.
+The coefficient maps and all mathematical declarations retain their meaning.

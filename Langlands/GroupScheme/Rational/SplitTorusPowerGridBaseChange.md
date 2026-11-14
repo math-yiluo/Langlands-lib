@@ -1,0 +1,3 @@
+# Base change of rational split-torus power grids
+
+This internal helper compares the existing identity-test tuple points with their unit coordinates, proves naturality of rational extension under group-scheme homomorphisms, and identifies a base-changed split-torus power-grid image with the rational extension of its base-field image. The canonical split-torus base-change isomorphism preserves unit coordinates; coefficient extension maps each coordinate by the field inclusion. Integer powers commute with that unit homomorphism. These are derived coordinate and naturality identities and require no external source.

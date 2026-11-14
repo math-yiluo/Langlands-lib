@@ -304,3 +304,15 @@ end Field
 end LocalSplitCell
 
 end Langlands.GroupScheme
+
+namespace Langlands.GroupScheme.LocalSplitCell
+
+variable {R : Type u} [CommRing R] {G : GroupScheme (Spec (CommRingCat.of R))} {J : Type u}
+
+/-- Zero root coordinates give the identity over every test scheme. -/
+theorem orderedProduct_zero (u : J → (Ga R ⟶ G)) {n : ℕ} (pos : Fin n → J)
+    (Z : Over (Spec (CommRingCat.of R))) :
+    orderedProduct u pos Z 0 = 1 := by
+  simp [orderedProduct, rootPoint_zero]
+
+end Langlands.GroupScheme.LocalSplitCell

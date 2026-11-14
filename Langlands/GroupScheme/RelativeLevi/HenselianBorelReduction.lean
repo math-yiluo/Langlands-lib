@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Torus.StrictHenselianMaximalReduction
 import Langlands.GroupScheme.RelativeLevi.BorelTransport
 import Langlands.GroupScheme.RelativeLevi.BorelSchemeStatement
 import Langlands.GroupScheme.Rational.FiniteFieldQuasiSplit

@@ -24,9 +24,9 @@ namespace Langlands.GroupScheme.IntegralModel.SchematicClosureConstruction
 
 section Flatness
 
-variable {R : Type u} [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
+variable {R : Type u} [CommRing R] [IsDedekindDomain R]
 
-/-- Over a discrete valuation ring, a morphism from an affine scheme to `Spec R` is flat when its
+/-- Over a Dedekind domain, a morphism from an affine scheme to `Spec R` is flat when its
 global sections embed into a ring in which every nonzero element of `R` becomes a unit. -/
 theorem flat_of_appTop_injective {X Y : Scheme.{u}} [IsAffine X]
     (g : X ⟶ Spec (CommRingCat.of R)) (t : Y ⟶ X) (ht : Function.Injective t.appTop)
@@ -181,7 +181,16 @@ instance isSchemeTheoreticallyDominant_projectionOver :
   have : IsAffine N.group.X.left := isAffine_of_isAffineHom N.group.X.hom
   exact ImageGeneration.isSchemeTheoreticallyDominant_toImage (genericOver N j).left
 
-instance flat_closureOver [IsDiscreteValuationRing R] : Flat (closureOver N j).hom := by
+end Construction
+
+section Group
+
+variable {R K : Type u} [CommRing R] [IsDedekindDomain R] [Field K]
+  [Algebra R K] [IsFractionRing R K]
+  {G H : GroupScheme (Spec (CommRingCat.of K))} (N : IntegralModel R K G) (j : H ⟶ G)
+  [IsClosedImmersion j.hom.hom.left]
+
+instance flat_closureOver : Flat (closureOver N j).hom := by
   refine flat_of_appTop_injective (closureOver N j).hom (projectionOver N j).left
     ((projectionOver N j).left.app_injective ⊤) fun r hr => ?_
   have hw : (projectionOver N j).left ≫ (closureOver N j).hom =
@@ -189,10 +198,6 @@ instance flat_closureOver [IsDiscreteValuationRing R] : Flat (closureOver N j).h
   rw [hw, Scheme.Hom.comp_appTop, ← Scheme.ΓSpecIso_inv_naturality_assoc, CommRingCat.comp_apply]
   have hK : algebraMap R K r ≠ 0 := (map_ne_zero_iff _ (IsFractionRing.injective R K)).mpr hr
   exact (isUnit_iff_ne_zero.mpr hK).map _
-
-section Group
-
-variable [IsDiscreteValuationRing R]
 
 /-- The terminal morphism out of the generic base; its underlying map is `Spec K → Spec R`. -/
 abbrev genericBaseOver :
@@ -204,7 +209,7 @@ instance isSchemeTheoreticallyDominant_genericBaseOver :
   change IsSchemeTheoreticallyDominant (𝟙 _ ≫ Spec.algebraMap R K)
   infer_instance
 
-omit [IsClosedImmersion j.hom.hom.left] [IsDiscreteValuationRing R] in
+omit [IsClosedImmersion j.hom.hom.left] in
 /-- The unit of the integral model factors through the closure. -/
 theorem exists_closureOne :
     ∃ e : 𝟙_ (Over (Spec (CommRingCat.of R))) ⟶ closureOver N j,
@@ -259,7 +264,6 @@ theorem exists_closureMul :
   rw [projectionOver_fac, map_comp_genericOver, hμ, map_mul, ← map_comp_genericOver, ← map_comp_genericOver, CategoryTheory.Hom.mul_def,
     squareComparison, tensorHom_comp_tensorHom_assoc, projectionOver_fac, lift_map_assoc]
 
-omit [IsDiscreteValuationRing R] in
 /-- The inverse of the integral model restricts to the closure. -/
 theorem exists_closureInv :
     ∃ w : closureOver N j ⟶ closureOver N j,
@@ -277,7 +281,7 @@ theorem exists_closureInv :
 def closureOne : 𝟙_ (Over (Spec (CommRingCat.of R))) ⟶ closureOver N j :=
   Classical.choose (exists_closureOne N j)
 
-omit [IsClosedImmersion j.hom.hom.left] [IsDiscreteValuationRing R] in
+omit [IsClosedImmersion j.hom.hom.left] in
 theorem closureOne_fac : closureOne N j ≫ inclusionOver N j = η[N.group.X] :=
   Classical.choose_spec (exists_closureOne N j)
 
@@ -293,7 +297,6 @@ theorem closureMul_fac : closureMul N j ≫ inclusionOver N j =
 def closureInv : closureOver N j ⟶ closureOver N j :=
   Classical.choose (exists_closureInv N j)
 
-omit [IsDiscreteValuationRing R] in
 theorem closureInv_fac : closureInv N j ≫ inclusionOver N j = inclusionOver N j ≫ ι[N.group.X] :=
   Classical.choose_spec (exists_closureInv N j)
 
@@ -418,8 +421,6 @@ theorem closureModelHom_isSchematicClosure : (closureModelHom N j).IsSchematicCl
   exact Scheme.IdealSheafData.ker_subschemeι _
 
 end Group
-
-end Construction
 
 end Langlands.GroupScheme.IntegralModel.SchematicClosureConstruction
 

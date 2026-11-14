@@ -1,0 +1,17 @@
+# Constant local-base orders on a Weyl quotient's splitting cover
+
+This internal supporting construction combines the actual quotient and point transports with `UniversalSplitWeylFibreOrder` and the Library's definition of a relative torus. All scheme, ring, field and coordinate types lie in the same arbitrary universe. Its provenance is composition of those interfaces and the universal property of scheme pullbacks.
+
+`groupSchemeBaseChangeLiftsEquiv` identifies lifts of any test morphism `a : V ⟶ S'` into the pullback of a group scheme along `b : S' ⟶ S` with lifts of `a ≫ b` into the original total scheme. It sends a lift to its composition with the first projection. The inverse is the pullback lift with second projection `a`; the inverse laws are the projection formulas and pullback uniqueness. No geometric or field hypothesis is needed.
+
+The remaining results assume a reductive group `G`, a closed fibrewise maximal commutative torus map `t`, an actual represented all-test normalizer `n : N ⟶ G`, and a scheme-surjective supplied quotient `q : N ⟶ W`. Both `N` and `W` must be locally of finite type over the base. On every test scheme, the kernel of `q` must be the inverse image of the actual centralizer of `t` under `n`.
+
+Suppose `b : S' ⟶ S` is a base morphism on which the pulled-back torus is split. `exists_natCard_quotientFibre_constant_on_split_base` proves the universal local-base constant-cardinality condition for the actual pulled-back quotient over `S'`. For each commutative local ring `R` and map `Spec R ⟶ S'`, there is one natural number that counts the actual lifts of every supplied algebraically closed `R`-field into this pulled-back quotient. The number is independent of the field and its algebra structure.
+
+The proof chooses a finite coordinate type and a splitting isomorphism for the pulled-back torus. It composes the pulled-back map with the inverse of this isomorphism. Reductivity and fibrewise maximality survive arbitrary base change; maximality and closedness survive this source replacement. Normalizer and centralizer functors are unchanged by the source isomorphism. Their base-change theorems therefore provide the represented normalizer and all-test kernel for this coordinate map. Local finite type and scheme-surjectivity also survive base change. The proof then applies `exists_natCard_quotientFibre_constant_on_local_base`. The coordinate choice is used only to exhibit the common natural number.
+
+`exists_natCard_quotientFibre_constant_after_split_base` transports the same condition to composite field-valued lifts into the original quotient using `groupSchemeBaseChangeLiftsEquiv`.
+
+Finally, if the original commutative source is a relative torus, `exists_splittingCover_natCard_quotientFibre_constant` takes its actual étale splitting cover. Each member meets the split-base hypothesis above, so the pulled-back quotient satisfies the universal local-base condition on every member. The quantifiers are: one cover, then every cover member, every local ring and base map, a common natural number, and every algebraically closed field with its given algebra structure. The number may vary with the member, ring and base map.
+
+This module supplies only the cover and cardinal conditions. It constructs no quotient and proves no finiteness or étaleness. Separatedness, quasi-compactness, an étale finiteness criterion, and descent remain separate inputs for a final finiteness proof.

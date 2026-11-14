@@ -10,8 +10,8 @@ cell construction are an actual morphism `t : T → T′`, a characteristic expo
 - `χv ≫ t = p^e • χv′`.
 
 The additive-line scheme map `gaPower q` is defined by the coordinate `X ↦ X^q`.
-The coordinate lemmas characterize this map on every test scheme, reusing
-`crd_injective` from the shared `SplitRankOneRootCellReduction` module. For
+The coordinate lemmas characterize this map on every test scheme, reusing coordinate
+injectivity from `SplitRankOneRootCellUniversal`. For
 characteristic powers, `gaPower_mul` and `gaPower_one` show that its action on
 points preserves the group operation and identity. To prove additivity on all
 test schemes, `add_pow_sections` treats a subsingleton ring of global sections

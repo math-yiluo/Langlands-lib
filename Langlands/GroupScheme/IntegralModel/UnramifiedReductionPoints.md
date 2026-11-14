@@ -45,3 +45,6 @@ literature and impose no smoothness or reduction-surjectivity assumption.
 They do not assert that any supplied morphism is a reductive quotient or
 identify its kernel with a unipotent radical. Those identifications are
 separate inputs in an application to facet models.
+
+The local integer and residue coefficient instances have explicit module-specific
+names so that this module can be imported with the integral-point action module.

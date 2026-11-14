@@ -26,11 +26,6 @@ def cellUnit (R : Type u) [CommRing R] (I : Type u) [Fintype I] (m n : ℕ) :
     𝟙_ (Over (Spec (CommRingCat.of R))) ⟶ cellObj R I m n :=
   lift (lift 1 1) 1
 
-omit [Fintype I] in
-theorem orderedProduct_zero (u : J → (Ga R ⟶ G)) {r : ℕ} (e : Fin r → J)
-    (Z : Over (Spec (CommRingCat.of R))) : orderedProduct u e Z 0 = 1 := by
-  simp [orderedProduct, rootPoint_zero]
-
 /-- The cell map sends the unit point to the identity. -/
 theorem cellUnit_comp_cellMap (i : splitTorus (Spec (CommRingCat.of R)) I ⟶ G)
     (u : J → (Ga R ⟶ G)) {m n : ℕ} (neg : Fin m → J) (pos : Fin n → J) :

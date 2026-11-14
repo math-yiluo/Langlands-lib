@@ -69,7 +69,7 @@ theorem twoBlockLFactorMultiplicativity_of_remainingInputs
     (hrestricted :
       RankOneExtensionLDivisibilityStatement.{uF, max uF uV uW, max uF uV uW})
     (hram :
-      WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, max uF uV uW}) :
+      WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, max uF uV uW}) :
     TwoBlockLFactorMultiplicativityStatement.{uF, uV, uW} := by
   obtain ⟨hequal, hexists, hswap, htype, hrankOne, hscalarSwap, hcharacters⟩ :=
     availableInputs.{uF, max uV uW}

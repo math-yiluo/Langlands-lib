@@ -6,7 +6,7 @@ import Langlands.AllField.Representation.RankinSelberg.RankOneWhittakerTypeState
 import Langlands.AllField.Representation.RankinSelberg.SymmetricLPolynomialExistenceStatement
 import Langlands.AllField.Representation.RankinSelberg.TwoBlockBaseCasesStatement
 import Langlands.AllField.Representation.RankinSelberg.TwoBlockMultiplicativityStatement
-import Langlands.AllField.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedStatement
+import Langlands.AllField.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedRankOneStatement
 /-!
 # Conditional two-block L-polynomial rank descent
 
@@ -355,7 +355,7 @@ private theorem auxiliaryCharacter_exists
     {m : Fin 2 → ℕ}
     {W : Fin 2 → Type uW} [∀ i, AddCommGroup (W i)] [∀ i, Module ℂ (W i)]
     {σ : ∀ i, Representation ℂ (Langlands.GeneralLinear (m i + 1) F) (W i)}
-    (hram : WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, uW})
+    (hram : WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, uW})
     (hrankOne : RankOneWhittakerTypeStatement.{uF})
     (hswap : EqualRankFactorSwapStatement.{uF, 0, uW})
     (hcharacters : ∀ A : ℕ, ∃ χ :
@@ -374,7 +374,7 @@ private theorem auxiliaryCharacter_exists
         IsPadicSymmetricLPolynomial F ψ ν.val
           (rankOneCharacter (χ : Fˣ →* ℂˣ)) (σ i) 1 := by
     intro i
-    obtain ⟨A, hA⟩ := hram F ψ ν 0 (m i) (rankOneCharacter 1) (σ i) htrivial (hσ i)
+    obtain ⟨A, hA⟩ := hram F ψ ν (m i) (rankOneCharacter 1) (σ i) htrivial (hσ i)
     refine ⟨A, fun χ hχ => ?_⟩
     have hcert := hA χ hχ
     rw [twist_rankOneCharacter_one (χ : Fˣ →* ℂˣ)] at hcert
@@ -450,7 +450,7 @@ private theorem twoBlockL_firstRankOne
     (hexists : SymmetricLPolynomialExistenceStatement.{uF, max uF u, max uF u})
     (hswap : EqualRankFactorSwapStatement.{uF, max uF u, max uF u})
     (htype : NormalizedProductWhittakerTypeStatement.{uF, max uF u})
-    (hram : WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, max uF u})
+    (hram : WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, max uF u})
     (hrankOne : RankOneWhittakerTypeStatement.{uF})
     (hscalarSwap : EqualRankFactorSwapStatement.{uF, 0, max uF u})
     (hcharacters : ∀ A : ℕ, ∃ χ :
@@ -592,7 +592,7 @@ private theorem twoBlockL_allRanks
     (hexists : SymmetricLPolynomialExistenceStatement.{uF, max uF u, max uF u})
     (hswap : EqualRankFactorSwapStatement.{uF, max uF u, max uF u})
     (htype : NormalizedProductWhittakerTypeStatement.{uF, max uF u})
-    (hram : WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, max uF u})
+    (hram : WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, max uF u})
     (hrankOne : RankOneWhittakerTypeStatement.{uF})
     (hscalarSwap : EqualRankFactorSwapStatement.{uF, 0, max uF u})
     (hcharacters : ∀ A : ℕ, ∃ χ :
@@ -663,7 +663,7 @@ theorem twoBlockLMultiplicativity_of_inputs_commonUniverse
     (hexists : SymmetricLPolynomialExistenceStatement.{uF, max uF u, max uF u})
     (hswap : EqualRankFactorSwapStatement.{uF, max uF u, max uF u})
     (htype : NormalizedProductWhittakerTypeStatement.{uF, max uF u})
-    (hram : WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, max uF u})
+    (hram : WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, max uF u})
     (hrankOne : RankOneWhittakerTypeStatement.{uF})
     (hscalarSwap : EqualRankFactorSwapStatement.{uF, 0, max uF u})
     (hcharacters : ∀ (F : Type uF) [Field F] [TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F] (A : ℕ),

@@ -2,7 +2,7 @@
 
 `Langlands.AllField.Representation.RankinSelberg.TwoBlockLVerifiedInputAssembly` is the all-field port of the Library module `Langlands.Representation.RankinSelberg.TwoBlockLVerifiedInputAssembly`, which belongs to the Library's development over p-adic fields `F : PadicField p` (with bundled topological data `F.TopologicalData` where a topology is needed). In the port, `F` is an arbitrary field with instances `[TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F]` (see the next paragraph). Nothing about the characteristic of `F` is assumed, so the port covers every nonarchimedean local field, including those of positive characteristic.
 
-The port imports the original module, so the field-independent declarations of the original are available to it unchanged. It re-declares, under the same name with `Langlands.` replaced by `Langlands.AllField.` (declarations of the original namespace `Langlands.PadicField.TopologicalData` move to `Langlands.LocalFieldData`), the declarations that involve the field and that the Library's p-adic proofs of JPSS gamma-factor and L-factor multiplicativity (`Langlands.RankinSelberg.gammaMultiplicativity`, `Langlands.RankinSelberg.lFactorMultiplicativity`) use. Each re-declared declaration keeps the statement, and for a theorem the proof, of its original. Only the field binders and the canonical data of the original (see the next paragraph) change, and the `T`-API (residue cardinality, normalized absolute value, uniformizer and their lemmas) comes from `Langlands.LocalFieldData` and `Langlands.AllField.LocalField.Foundation`.
+The port imports the original module, so the field-independent declarations of the original are available to it unchanged. It re-declares, under the same name with `Langlands.` replaced by `Langlands.AllField.` (declarations of the original namespace `Langlands.PadicField.TopologicalData` move to `Langlands.LocalFieldData`), the declarations that involve the field and that the Library's p-adic proofs of JPSS gamma-factor and L-factor multiplicativity (`Langlands.RankinSelberg.gammaMultiplicativity`, `Langlands.RankinSelberg.lFactorMultiplicativity`) use. Each re-declared declaration keeps the statement, and for a theorem the proof, of its original, except for the rank-one high-ramification input described below. Only the field binders and the canonical data of the original (see the next paragraph) change, and the `T`-API (residue cardinality, normalized absolute value, uniformizer and their lemmas) comes from `Langlands.LocalFieldData` and `Langlands.AllField.LocalField.Foundation`.
 
 Where the original quantifies over a p-adic field with its canonical data (`∀ (p : ℕ) [Fact p.Prime] (F : PadicField p)` together with `F.canonicalTopologicalData` or the canonical topology), the port quantifies over a field `F` with instances `[TopologicalSpace F] [ValuativeRel F] [IsNonarchimedeanLocalField F]`, and where the original uses the canonical data the port uses the data `(⟨⟩ : LocalFieldData F)` assembled from these instances (definitionally `LocalFieldData.ofInstances F`). Its topology is the ambient topology of `F`.
 
@@ -35,3 +35,19 @@ and high-ramification vanishing as explicit hypotheses.
 - `Langlands.AllField.RankinSelberg.TwoBlockLVerifiedInputAssembly.availableInputs` (theorem): No analytic proposition is assumed in this package of available inputs.
 - `Langlands.AllField.RankinSelberg.TwoBlockLVerifiedInputAssembly.twoBlockLFactorMultiplicativity_of_remainingInputs` (theorem): The remaining five analytic inputs suffice for the original target with
   independent field, test-carrier, and block-carrier universes.
+
+## Deviation from the original: rank-one high-ramification input
+
+This deviation was made by Worker 394 (Task 6539), after Worker 5220's port. The last
+hypothesis of `twoBlockLFactorMultiplicativity_of_remainingInputs` has type
+`Langlands.AllField.RankinSelberg.WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, max uF uV uW}`
+instead of `WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, max uF uV uW}`:
+JPSS 1983, Proposition (2.13), only when the first member is a representation of
+`GL_1` (see
+[WhittakerTypeHighlyRamifiedRankOneStatement](WhittakerTypeHighlyRamifiedRankOneStatement.md)).
+The proof is unchanged: it passes the hypothesis to
+`TwoBlockLConditionalAssembly.twoBlockLMultiplicativity_of_inputs_commonUniverse`, whose
+hypothesis was changed in the same way (see
+[TwoBlockLConditionalAssembly](TwoBlockLConditionalAssembly.md)). Since the full
+proposition implies the rank-one one, the port's hypotheses are weaker than a literal
+port's.

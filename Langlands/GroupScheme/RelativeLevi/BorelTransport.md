@@ -1,3 +1,45 @@
+# Transport of relative Borel subgroups
+
+Author: Worker 693.
+
+This internal helper derives transport from the published relative Borel
+predicate, reductive residue-field geometry, arbitrary-field geometric Borel
+transport and the canonical comparisons for successive pullbacks.
+
+The two `isGeometricBorelSubgroup_*baseChange_comp` lemmas identify Borelness on
+an iterated field-valued pullback with Borelness on the pullback along the
+composite. They use the natural comparison of pullbacks and transport by source
+and ambient isomorphisms.
+
+`IsRelativeBorelSubgroup.comp_iso` and `iso_comp` transport a relative Borel
+through ambient and source isomorphisms. Smoothness, affineness and the
+monomorphism property transport along the actual scheme isomorphisms; the
+residue-field Borel condition transports by the field-level isomorphism lemmas.
+
+`IsRelativeBorelSubgroup.fieldPoint` proves that a relative Borel in a reductive
+group becomes geometric Borel on every supplied field-valued fibre. Factor the
+given field point through its residue-field fibre, apply arbitrary-field Borel
+extension to that connected reductive fibre and compare iterated pullbacks.
+
+`IsRelativeBorelSubgroup.baseChange` preserves the property under arbitrary
+scheme base change when the ambient group is reductive. Smoothness, affineness
+and the monomorphism property persist; each residue-field point upstairs is a
+field-valued point downstairs, so the preceding lemma supplies the geometric
+Borel property. A geometric Borel is parabolic in the existing field interface.
+
+`IsRelativeBorelSubgroup.of_baseChange` reflects the property under any flat,
+surjective, quasi-compact base change for a supplied closed inclusion into an
+affine ambient group. Smoothness descends and source affineness follows from
+the closed inclusion. Each downstairs point has an upstairs preimage; the
+resulting residue-field extension reflects the geometric Borel property after
+the canonical comparisons.
+
+`RelativeBorelData` records an actual Borel presentation and its proof.
+`RelativeBorelData.baseChange` pulls back this presentation and uses the
+preservation theorem. This module does not assert that a Borel exists.
+
+## Retained sigma-valued pullback
+
 # Relative Borel subgroup transport
 
 This module derives transport properties of the existing relative Borel and

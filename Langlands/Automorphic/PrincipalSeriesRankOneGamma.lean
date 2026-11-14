@@ -27,7 +27,9 @@ private local instance : MeasurableSpace F.Carrier := borel _
 private local instance : BorelSpace F.Carrier := ⟨rfl⟩
 
 /-- Tate's rational gamma function of a quasi-character `χ`:
-`ε(0, χ, ψ, ν) X^(a(χ) + n(ψ)) L(χ)(X) / L(χ⁻¹)(q⁻¹ / X)`. -/
+`ε(0, χ, ψ, ν) X^(a(χ) + n(ψ)) P_χ(X) / P_(χ⁻¹)(q⁻¹ / X)`, where `P_χ = lPolynomial χ` is
+Tate's Euler polynomial, so that `L(χ)(X) = 1 / P_χ(X)` and this equals
+`ε(0, χ, ψ, ν) X^(a(χ) + n(ψ)) L(χ⁻¹)(q⁻¹ / X) / L(χ)(X)`. -/
 def tateRationalGamma (ψ : NontrivialAdditiveCharacter F) (ν : LocalAdditiveHaarMeasure F)
     (χ : QuasiCharacter F) : RatFunc ℂ :=
   rationalGammaExpression (LocalFactor.residueReflection F)

@@ -3,7 +3,8 @@ import Langlands.Geometry.Building.CoefficientChartFixing
 import Langlands.GroupScheme.Rational.CocharacterFiniteFixing
 import Langlands.GroupScheme.Torus.SplitCocharacterGeneration
 import Langlands.GroupScheme.Rational.RootSupportFiniteness
-import Langlands.Geometry.Building.UnramifiedTwistedChamberThroughFixedPointReduction
+import Langlands.GroupScheme.ComponentGaloisContinuityProof
+import Langlands.GroupScheme.GaloisPointRational
 
 /-! # Finite orbits of the Galois coefficient action on the unramified building -/
 
@@ -20,6 +21,27 @@ open scoped CategoryTheory.MonObj
 open Langlands.GroupScheme Langlands.GroupScheme.GaloisPointComparison
 
 namespace Langlands.Geometry.Building
+
+/-- Finitely many rational points of a scalar extension of a group of finite type are fixed by
+the fixing subgroup of a finite intermediate field. -/
+private theorem finiteOrbit_exists_finite_fixing_rationalPoints
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [Algebra.IsAlgebraic k K]
+    {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
+    [LocallyOfFiniteType G.X.hom] {J : Type u} [Finite J]
+    (g : J → rationalPoints (baseChanged k K G)) :
+    ∃ E : IntermediateField k K, FiniteDimensional k E ∧
+      ∀ σ ∈ E.fixingSubgroup, ∀ i, rationalConjugate k K G σ (g i) = g i := by
+  have : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+  obtain ⟨E, hE, hfix⟩ := IdentityComponent.exists_finite_fixing_algHoms k K
+    (fun i => GaloisPoint.coordinates k G K (baseChangeCoeffEquiv k K G (g i)))
+  refine ⟨E, hE, fun σ hσ i => ?_⟩
+  apply (baseChangeCoeffEquiv k K G).injective
+  rw [baseChangeCoeffEquiv_rationalConjugate]
+  apply (GaloisPoint.coordinates k G K).injective
+  ext a
+  rw [GaloisPoint.coordinates_conjugate]
+  exact DFunLike.congr_fun (hfix σ hσ i) a
+
 
 /-- An action of `Aut(K/k)` has finite orbit at a point fixed by the fixing subgroup of a
 finite intermediate field. -/
@@ -144,7 +166,7 @@ theorem coefficientAction_finite_orbit [LocallyOfFiniteType G.X.hom] (z : C.Redu
   choose u _ hne using hu
   obtain ⟨E₁, hE₁, hfix₁⟩ := GaloisCocharacterDescent.exists_finite_fixing_cocharacterValues
     F (inertiaFixedField F) G (fun j => CommGroupScheme.groupHom (ν j) ≫ C.i)
-  obtain ⟨E₂, hE₂, hfix₂⟩ := TwistedGeneratorReduction.exists_finite_fixing_rationalPoints
+  obtain ⟨E₂, hE₂, hfix₂⟩ := finiteOrbit_exists_finite_fixing_rationalPoints
     F (inertiaFixedField F) (G := G) (fun o : Option (relativeRoots C.i) => o.elim g u)
   have := hE₁
   have := hE₂

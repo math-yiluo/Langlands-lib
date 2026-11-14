@@ -44,3 +44,56 @@ Provenance is composition of the imported Library pullback comparisons,
 dominant-factorization and parabolicity transport and reflection theorems.
 This unit proves no facet-generation or reduction-preimage assertion and
 does not prove `UnramifiedFacetParabolicImageStatement`.
+
+## Recovery and reverse-oriented squares
+
+# Actual special-fibre images under model recovery
+
+This internal construction transports actual schematic images through
+commutative isomorphism squares and compatible integral-model isomorphisms,
+and descends their parabolicity under coefficient extension. All constructions
+retain arbitrary universe `u`.
+
+For affine groups over one field and a square `e.hom ≫ g = f ≫ d.hom`
+whose vertical maps are group isomorphisms, `SchematicImage.isoOfReverseIsoSquare`
+identifies the actual schematic images. Its inclusion equation is
+`imageIso.hom ≫ inclusion g = inclusion f ≫ d.hom`.
+It follows that parabolicity of the inclusion of the image of `g` implies
+parabolicity for the image of `f`. The proof compares two closed,
+schematically dominant factorizations of the same homomorphism and then
+transports the parabolic subgroup through the source and target isomorphisms.
+
+For integral models over the same local domain with the same fraction field,
+`Iso.specialFibreImageIso` applies this comparison to two extensions of the same
+generic morphism and compatible source and target model isomorphisms inducing
+the generic identities. Generic rigidity makes the model square commute;
+residue base change gives the required special-fibre square.
+`Iso.specialFibreImage_isParabolic` transports parabolicity through this square.
+
+For a local coefficient extension of local domains, with compatible fraction
+fields and an algebraic induced residue-field extension,
+`Hom.specialFibreImage_isParabolic_of_baseChange` descends parabolicity from the
+actual coefficient-extended model map. The special-fibre coefficient comparison
+identifies that map with the residue extension of the original map. Flat-field
+base change for actual schematic images and algebraic-extension descent for
+parabolic subgroups then prove the claim. No finiteness assumption on the
+residue extension is imposed.
+
+For a nonarchimedean local field `F`,
+`Hom.specialFibreImage_isParabolic_of_unramifiedModels` applies the preceding
+results to an identity-generic map and any two supplied smooth models over the
+actual maximal-unramified integers. Each supplied model must have exactly the
+integral-point subgroup of the corresponding coefficient-extended original
+smooth model. Smooth Hom extension constructs compatible model isomorphisms
+from these equalities. The actual unramified residue field is an algebraic
+closure of the original residue field; the induced integral residue algebra
+is checked to equal the published residue map. Thus parabolicity for any
+identity-generic map between the supplied models descends to the original map.
+The final `RelativeComponentModelHom` wrapper applies this result to the actual
+neutral map and yields `HasParabolicSpecialFibreImage`.
+
+The provenance is a derived use of existing schematic-image factorization,
+model rigidity, smooth model recovery and parabolic descent results. This unit
+assumes the specified models and integral-point equalities. It asserts neither
+model existence nor the exact reduction-preimage equality nor the host
+opposite-factor theorem.

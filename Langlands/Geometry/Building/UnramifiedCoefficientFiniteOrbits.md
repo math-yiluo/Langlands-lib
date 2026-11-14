@@ -60,3 +60,10 @@ an unramified group is standard. Every point lies in the apartment of a maximal 
 the torus, a point of `G(K)`, and finitely many root-group elements are defined over a finite
 unramified extension `E`, and `Gal(K/E)` then fixes the point. The Lean proof follows this route
 through cocharacter coordinates and coefficient charts. It assumes no torus defined over `F`.
+
+The finite rational-point fixing step is proved directly through
+`IdentityComponent.exists_finite_fixing_algHoms`, affine coordinates, and
+`baseChangeCoeffEquiv`. Its short private helper preserves the coordinate
+argument previously available in the twisted-chamber reduction, while importing
+only the general Galois continuity and rational-point modules. No downstream
+special-torus or fixed-apartment statement enters this import path.

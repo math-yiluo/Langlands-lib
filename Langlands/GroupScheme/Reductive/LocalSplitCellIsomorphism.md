@@ -73,3 +73,5 @@ These are internal lemmas for the proof of the Isomorphism Theorem over a reduce
 Library's open-cell gluing (`CellGluing`) with the reduction of cell compatibility to field
 points (`CellFieldCompatibility`). Reducedness of the base is what makes field points suffice.
 The proofs follow no particular printed source.
+
+The zero-coordinate identity `LocalSplitCell.orderedProduct_zero` is shared from `LocalSplitFieldComparison`; its statement and public name are unchanged.

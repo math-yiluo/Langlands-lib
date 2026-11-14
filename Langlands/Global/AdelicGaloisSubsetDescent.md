@@ -74,7 +74,8 @@ hypotheses and conclusions move across by inverting both sides.
 
 This module is internal and does not formalize a numbered statement of the
 literature. Springer (1994) §3.6 uses the closed embedding of rational quotients
-`C(G,k) → C(G,l)` (his Lemma 1.3) to pass compactness from the splitting field
-`l` down to `k`. The Library already proves that closed embedding, and this
+`C(G,k) → C(G,l)` (his Lemma 1.5, p. 209, which he derives from the closed
+subgroup embedding `C(H,k) → C(G,k)` of Lemma 1.3, p. 208) to pass compactness
+from the splitting field `l` down to `k`. The Library already proves that closed embedding, and this
 module only adds the general-topology step that turns a compact subset of a
 quotient into compact representatives. No new definitions are introduced.

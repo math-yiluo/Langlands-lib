@@ -1,4 +1,4 @@
-import Langlands.GroupScheme.Reductive.SplitRankOneRootCellReduction
+import Langlands.GroupScheme.Reductive.SplitRankOneRootCellUniversal
 import Mathlib.Algebra.CharP.Frobenius
 
 /-! # Characteristic powers on rank-one open cells -/
