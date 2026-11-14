@@ -165,6 +165,28 @@ conjunction `GS.ParabolicChamberStatement` of candidate
 unchanged the V.3.24 passages and the V.3.1 and V.3.5 rows on Worker 1222's Levi recall
 statements.
 
+A focused Worker 1222 ownership update, also on 14 November, checks the
+published [LeviSplitComponentRecallStatements](../../Langlands/GroupScheme/Rational/LeviSplitComponentRecallStatements.md)
+against Library `be1ec61194b5b92447fe21556e835dcc30c124e2` and the original
+V.3.1 and V.3.5.1, printed pp.109–111 / PDF pp.115–117. The three component
+statements and their conjunction remain unproved. Each now has a focused
+exact proof task, inspected at revision 1, ready, without a proof candidate:
+
+| Statement in `Langlands.GroupScheme` | Exact scope | Proof owner |
+| --- | --- | --- |
+| `LeviSplitComponentCentralizerStatement.{u}` | For an arbitrary rational Levi of a rational parabolic and its supplied split component, `Z_G(A_M) = M` as subgroup functors on every test scheme | Task 6918 (`8b492334-9bd1-4054-a291-744e8651fe5a`) |
+| `LeviSplitComponentNormalizerStatement.{u}` | `N_G(A_M) = N_G(M)` on rational points over `Spec k` | Task 6919 (`d5e7c764-40a4-4219-994d-d206b28a6994`) |
+| `LeviParabolicFiniteStatement.{u}` | A uniform bound on finite families of rational parabolics with pairwise distinct images and the same embedded rational Levi | Task 6920 (`14fb8cb4-1a53-4cf1-9c42-5ce3fb95c65d`) |
+| `LeviSplitComponentRecallStatements.{u}` | The conjunction of the preceding three statements, assembled from their proofs after publication | Task 6921 (`c54cc577-739f-4d0c-bacd-e3e5b45221b9`) |
+
+All four retain the published arbitrary-field universe `u`. Renard's
+source field is nonarchimedean local, and the section recalls the results
+from Borel–Tits [7] and Springer [42]. The centralizer equality concerns
+all test schemes; the normalizer equality concerns rational points only.
+The related maximal-Levi bound of two does not prove the arbitrary-Levi
+finiteness target. These ownership references supply no proof or
+acceptance evidence.
+
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
 [Chapter V structural-inputs ledger](chapter-v-structural-inputs.md) (Worker 164) classifies
@@ -256,13 +278,13 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | --- | --- | --- |
 | V.3 opening: parabolic subgroups, rational radicals | `IsParabolicSubgroup` | D; Rec |
 | V.3.1 Levi decomposition `P = M ⋉ N`; `N` acts simply transitively on the Levi factors | `GS.ParabolicRadicalTorusLeviStatement` and `GS.ParabolicRadicalTorusCentralizerLeviStatement` (a Levi factor is the centralizer of a maximal torus of the radical of `P`), `GS.RationalLeviConjugacyStatement` (two rational Levis are conjugate by a unique rational point of the unipotent radical), `GS.ParabolicRootPresentationExistenceStatement` | P (each has its proof) |
-| V.3.1 `M = Z(G, A)` for a split component `A` of `P`, `A = A_M`; Levi subgroups are the centralizers of split tori `A` with `A = A_M` | Worker 4's [ParabolicSplitComponentStatements](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatements.md), for a split component `A` of `P` (a maximal split torus of a supplied radical of `P`, as in V.2.1): `GS.ParabolicSplitComponentLeviStatement` (`Z(G, A)` is represented by a rational Levi factor of `P` whose split component is `A`), `GS.LeviSplitComponentRadicalStatement` (the split component of a rational Levi factor is a split component of `P`), `GS.ParabolicSplitComponentConjugacyStatement` (the unipotent radical acts transitively on the split components of `P`) and `GS.LeviCentralizerCharacterizationStatement` (the rational Levi factors of parabolics are the centralizers of split subtori `A` that are their split components). `GS.LeviSplitComponentCentralizerStatement` states `Z_G(A_M) = M` as subgroup functors for every rational Levi of a rational parabolic. Related: `GS.DynamicLeviCocharacterRealizationStatement`, `GS.MinimalParabolicLeviCentralizerStatement` | Rec (S08); P for the four split-component statements: `parabolicSplitComponentLevi` (Task 6452), `leviSplitComponentRadical` (Task 6454), `parabolicSplitComponentConjugacy` (Task 6455), `leviCentralizerCharacterization` (Task 6456); their conjunction with the V.3.2 statement has exact proof Task 6866; S for the arbitrary-Levi split-component centralizer; P for the related statements; see the V.3.5 row |
+| V.3.1 `M = Z(G, A)` for a split component `A` of `P`, `A = A_M`; Levi subgroups are the centralizers of split tori `A` with `A = A_M` | Worker 4's [ParabolicSplitComponentStatements](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatements.md), for a split component `A` of `P` (a maximal split torus of a supplied radical of `P`, as in V.2.1): `GS.ParabolicSplitComponentLeviStatement` (`Z(G, A)` is represented by a rational Levi factor of `P` whose split component is `A`), `GS.LeviSplitComponentRadicalStatement` (the split component of a rational Levi factor is a split component of `P`), `GS.ParabolicSplitComponentConjugacyStatement` (the unipotent radical acts transitively on the split components of `P`) and `GS.LeviCentralizerCharacterizationStatement` (the rational Levi factors of parabolics are the centralizers of split subtori `A` that are their split components). `GS.LeviSplitComponentCentralizerStatement` states `Z_G(A_M) = M` as subgroup functors for every rational Levi of a rational parabolic. Related: `GS.DynamicLeviCocharacterRealizationStatement`, `GS.MinimalParabolicLeviCentralizerStatement` | Rec (S08); P for the four split-component statements: `parabolicSplitComponentLevi` (Task 6452), `leviSplitComponentRadical` (Task 6454), `parabolicSplitComponentConjugacy` (Task 6455), `leviCentralizerCharacterization` (Task 6456); their conjunction with the V.3.2 statement has exact proof Task 6866; S for the arbitrary-Levi split-component centralizer, exact proof Task 6918; P for the related statements; see the V.3.5 row |
 | V.3.1 opposite parabolic: the unique `Q ∈ P(M)` with `P ∩ Q = M` | `GS.OppositeDynamicParabolicUniquenessStatement` | P |
-| V.3.1 `P(M)` is finite | `GS.LeviParabolicFiniteStatement`, in [LeviSplitComponentRecallStatements](../../Langlands/GroupScheme/Rational/LeviSplitComponentRecallStatements.md): a uniform bound on finite families with distinct parabolic images and the same embedded rational Levi | Rec (S07); S. `GS.MaximalLeviParabolicCountStatement` covers maximal `M` (at most two) |
+| V.3.1 `P(M)` is finite | `GS.LeviParabolicFiniteStatement`, in [LeviSplitComponentRecallStatements](../../Langlands/GroupScheme/Rational/LeviSplitComponentRecallStatements.md): a uniform bound on finite families with distinct parabolic images and the same embedded rational Levi | Rec (S07); S, exact proof Task 6920. `GS.MaximalLeviParabolicCountStatement` covers maximal `M` (at most two) |
 | V.3.2 minimal parabolics; conjugacy of maximal split tori and of minimal parabolics | `GS.MinimalParabolicSplitComponentStatement` (first sentence: a parabolic is minimal if and only if its split components are maximal split tori of `G`), `GS.MinimalParabolicLeviCentralizerStatement`, `GS.MaximalSplitTorusConjugacyStatement`, `GS.MinimalParabolicConjugacyStatement` | P (the first sentence by `minimalParabolicSplitComponent`, Task 6457) |
 | V.3.3 `𝔞`, `𝔞^*` | `RealTorusSpace.Vstar` | D |
 | V.3.4 `Σ'(A)`, `Σ(A)`, `Σ'(P)`, `Σ(P)` | `relativeRoots`, `RelativeRoot.indivisibleRoots`, `positiveRelativeRoots`, `reducedPositiveRelativeRoots`, `RelativeRoot.subgroupRelativeRoots`; `GS.RenardRootConventionStatement` | D; P: `renardRootConvention` |
-| V.3.5 `W(A) = N_G(A)/Z_G(A) = N_G(M)/M`, acting faithfully | `relativeWeylGroup` (minimal case); `RP.LeviNormalizerWeylGroupStatements` (`N_G(M)/M` finite, faithful through the norms on the centre); `GS.LeviSplitComponentCentralizerStatement` and `GS.LeviSplitComponentNormalizerStatement` | D; P: `leviNormalizerWeylGroupStatements`; S for `Z_G(A_M) = M` as subgroup functors and `N_G(A_M) = N_G(M)` on rational points for arbitrary rational Levis. The normalizer equality is not asserted as equality of subgroup schemes; see the public pair's Weil-restriction counterexample to that stronger assertion |
+| V.3.5 `W(A) = N_G(A)/Z_G(A) = N_G(M)/M`, acting faithfully | `relativeWeylGroup` (minimal case); `RP.LeviNormalizerWeylGroupStatements` (`N_G(M)/M` finite, faithful through the norms on the centre); `GS.LeviSplitComponentCentralizerStatement` and `GS.LeviSplitComponentNormalizerStatement` | D; P: `leviNormalizerWeylGroupStatements`; S for `Z_G(A_M) = M` as subgroup functors (Task 6918) and `N_G(A_M) = N_G(M)` on rational points (Task 6919) for arbitrary rational Levis. The normalizer equality is not asserted as equality of subgroup schemes; see the public pair's Weil-restriction counterexample to that stronger assertion |
 | V.3.6 `𝔞^*_M = 𝔞^*_G ⊕ (𝔞^G_M)^*` and `𝔞_M = 𝔞_G ⊕ 𝔞^G_M`, for the minimal Levi `M_∅` (a maximal split torus `T`) | `GS.RelativeCentralDirectionsStatement` (conjunction of `RelativeCharacterRootComplementStatement` and `RelativeSplitCentralDirectionsStatement`): the root span and the restricted characters of `G` are complementary in `X^*(T) ⊗ ℝ`, and the split component of `G` embeds with image the common root annihilator | P (both conjuncts) |
 | V.3.6 the same decompositions for an arbitrary Levi `M` | `GS.RenardLeviCentralDecompositionStatement` ([statement and scope](../../Langlands/GroupScheme/Rational/RenardLeviCentralDecompositionStatement.md)): over every field, for connected reductive `G`, `M` and actual split components with the compatible morphism diagram, both real restriction bijections, the canonical central-character inclusion, its complement with the literal restriction kernel, and the dual cocharacter complement with the pairing annihilator; both product equivalences have the specified addition formulas | P: `renardLeviCentralDecomposition` ([proof](../../Langlands/GroupScheme/Rational/RenardLeviCentralDecompositionProof.md), Task 6224 `423ad442`); statement from published candidate `92aa130e-c278-47d0-8647-615541ba61c5`. Realizing the compatible component diagram for every source Levi is separate |
 | V.3.7 `Σ(A_∅)` is a root system and `W` its Weyl group | `GS.RelativeRootSystemStatement` (a Mathlib root system on the rational span of the relative roots, Weyl group = the image of `W`), `GS.RelativeWeylCoxeterStatement`, `GS.RelativeTitsSystemStatement`; `GS.RelativeRealCorootStatement` adds existence of invariant scalar products on the actual real character and cocharacter spaces and real root-system realizations | P for the rational system and Weyl identification; P for the real statement: `relativeRealCoroot` ([proof](../../Langlands/GroupScheme/Rational/RelativeRealCorootProof.md), Task 6346 `09d6ceb8`) |
@@ -685,7 +707,10 @@ not whole-section or whole-book completion.
 6. Recalled assertions with remaining proofs: `P(M)` finite (V.3.1),
    `N_G(A_M) = N_G(M)` on rational points and `Z_G(A_M) = M` for arbitrary
    rational Levis (V.3.5) are stated in the public
-   `LeviSplitComponentRecallStatements`. The general
+   `LeviSplitComponentRecallStatements`. Exact proof Tasks 6920, 6919 and
+   6918 respectively own those three statements; their conjunction has
+   exact assembly Task 6921. The ownership table above gives full IDs and
+   scopes. All four proofs remain open. The general
    closed-subset assertions of V.4.2 are now stated by Worker 4's public
    `ClosedRootSubsetStatements`, with the ambient-root and reduced-test
    distinctions and source correction I5 above. Their nine proof targets
@@ -709,6 +734,11 @@ not whole-section or whole-book completion.
    6505. No accepted proof of the actual partition or freeness is counted.
 
 ## Proof tasks of Worker 1222's Chapter V statements
+
+The three public Levi split-component recall statements have exact proof
+Tasks 6918–6920, and their conjunction has assembly Task 6921, as listed in
+the focused ownership table above. Their publication as tasks does not
+discharge any of these recalled structural inputs.
 
 `51acec26` (V.2.3, V.2.5, V.2.6: unimodularity of `⁰G`, `⁰A₁ = A₁ ∩ ⁰A₂`, compact centre) is
 published; its proof task is Task 5711. `4d34998c` (V.4.3.3 and V.4.8) is published; its proof

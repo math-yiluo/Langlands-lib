@@ -12,6 +12,9 @@ of Chapter II and the unheaded assertions found, with printed / PDF pages
 declares no section complete. A published statement is not a proof; every row keeps the proof status explicit.
 The proof-status update of 14 November 2026 below rechecks every S row at Library
 `4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86` and supersedes those statuses.
+The later focused correction below, checked at Library
+`be1ec61194b5b92447fe21556e835dcc30c124e2`, adds the older stalk-kernel
+statement omitted from that pass; its exact proof remains open.
 
 Focused update, 13 November 2026: the II.2.5 rows were checked against Library
 `2e5aa9989a9e5567670a14eb7079e3a844641990`. The original-module stalk
@@ -54,7 +57,8 @@ assembly modules `RenardHaarProof` and `RenardConvolutionProof`, nor for the oth
 in all 36 Library snapshots available locally. The II.3 prefixes (`RQ`, `RH`, …) are those
 of the II.3 map listed below; `Distribution` abbreviates
 `Langlands.HarmonicAnalysis.Distribution`, and the other short names are in
-`Langlands.Sheaf.Renard`. After this update no row of Chapter II has status S.
+`Langlands.Sheaf.Renard`. That pass left no S row among the rows then listed.
+The focused correction below adds a distinct statement with status S.
 
 The explicit base-`T_c` form of the II.2.5 Remark, formerly kept by Worker 4, is the
 published construction
@@ -91,6 +95,38 @@ qualifications, integration ID `910137673abc4a54b29f17fc0472dc4a`, first in Libr
 | II.3.13 Lemma | `EP.statements` | [RenardEssentialProductsProof](../../Langlands/HarmonicAnalysis/Distribution/RenardEssentialProductsProof.md) | `d8c4cb23-efa6-45e8-b416-30ec3fca31a1` | `ef2dbea47c5f4b42b2cf2ec19e76e695` | `cc5aa77f` |
 | II.3.13 Theorem | `CO.statements` | [RenardCompletionProof](../../Langlands/HarmonicAnalysis/Distribution/RenardCompletionProof.md) | `2b226627-05dc-40fd-97d7-f9a4d09cf8c6` | `8f2d164209ab4627ad1a4ce087166af0` | `cc5aa77f` |
 | II.3.13 Corollary | `CZ.statements` | [RenardCenterProof](../../Langlands/HarmonicAnalysis/Distribution/RenardCenterProof.md) | `9a63757c-d353-4e18-8b43-b1e69add99b7` | `751f91df0f2d4df38642babf514b9eba` | `51e4d897` |
+
+## Focused stalk-kernel correction, 14 November 2026
+
+Worker 1222 checked the two original-module stalk statement pairs and the
+published `ProjectorStalkProof` against Library
+`be1ec61194b5b92447fe21556e835dcc30c124e2`, and reread II.2.5, printed
+pp.40–42 / PDF pp.46–48. The exact proof of
+`ProjectorStalk.ProjectorStalkDescription` remains published and proved.
+Its independent-universe `ProjectorStalk.annihilatorDescription` identifies
+the literal test-annihilator condition with vanishing under a compact-open
+neighborhood projector.
+
+The older published statement
+[`Langlands.HarmonicAnalysis.PointwiseTestModule.NondegenerateStalkKernelStatement`](../../Langlands/HarmonicAnalysis/PointwiseTestStalkKernelStatement.md)
+is a separate exact proof obligation. For locally profinite `X : Type uX`
+and an additive `M : Type uM` with a nondegenerate nonunital action of
+`𝒟(X)`, it states both the projector equivalence and equivalence with
+membership in
+`AddSubgroup.closure {y | ∃ f m', f x = 0 ∧ f • m' = y}`.
+The latter is the module-side form of the compact-section stalk Remark on
+printed p.42, derived through the preceding module/sheaf equivalence; it
+is not a clause of `ProjectorStalkDescription`. Both statements retain
+their existing universe scopes, and no supersession is claimed.
+
+Task 6922 (`de99dcc2-45dd-4e05-859b-a50d55157e35`) owns the exact
+`NondegenerateStalkKernelStatement.{uX,uM}` proof, including the
+additive-closure clause at independent space and module universes. At this
+check it is revision 1, ready, with no proof candidate. Searches of the
+current Library and task targets found no exact proof already closing it.
+The earlier claim that every Chapter II statement is proved therefore
+needs this exception. A related published proof supplies a route to the
+first clause, rather than proof evidence for the entire target.
 
 ## How the rows were checked
 
@@ -152,6 +188,7 @@ expository, **Rec** recalled, **A** candidate accepted and waiting for integrati
 | II.2.5 Lemma: the action of `𝒟(X)` on a nondegenerate module extends uniquely to `𝒞^∞(X)` | 39 / 45 | [PointwiseTestModule](../../Langlands/HarmonicAnalysis/PointwiseTestModule.md) (the extension); `PointwiseTestModule.SmoothExtensionUniqueStatement` | D; P (`smoothExtensionUnique`) |
 | II.2.5 Theorem: `M_c(X)` is a nondegenerate `𝒟(X)`-module and `M ↦ M_c(X)` is an equivalence; the inverse `M ↦ (U ↦ χ_U·M)`, (II.2.5.1)–(II.2.5.2) | 39–40 / 45–46 | `CompactSectionTestModule`, `ProjectorVectorSheaf`, `SheafProjectorComparison`, `ModuleProjectorComparison` (constructions); `CompactSectionEquivalence.SheafComparisonIsIso`, `ModuleProjectorComparison.ModuleComparisonIsIso`, `CompactSectionEquivalence.CompactSectionFunctorIsEquivalence`, `CompactSectionEquivalence.ProjectorFunctorIsEquivalence` | D; P (`sheafComparisonIsIso`, `moduleComparisonIsIso`, `compactSectionFunctorIsEquivalence`, `projectorFunctorIsEquivalence`; Tasks 5508, 5533, 5534, 5535) |
 | II.2.5 stalk of the sheaf of a module: `M_x = M / M(x)`, `M(x) = {m \| ∃ f, f(x) ≠ 0, f·m = 0}` | 40–41 / 46–47 | `ProjectorStalk.ProjectorStalkDescription`: literal annihilator submodule; additive quotient comparison with the actual basis stalk at independent universes, and canonical complex-linear all-open stalk comparison at a common space/carrier universe | P (`ProjectorStalk.projectorStalkDescription`, proof record `324b57a7-0088-440d-93c3-217a663a777b`, Task 6024 `a8201ec1-b34c-4d82-92d8-505edbb9d235`); published statement `9cc76587-21dc-4142-b7a1-44d6ba0b7e18`. This concerns the quotient of the original module, distinct from the compact-section stalk quotient below |
+| II.2.5 original-module stalk kernel and its vanishing-test generated subgroup; the second clause is derived from the compact-section Remark | 40–42 / 46–48 | `Langlands.HarmonicAnalysis.PointwiseTestModule.NondegenerateStalkKernelStatement.{uX,uM}`: the literal test-annihilator condition is equivalent both to compact-clopen neighborhood-projector vanishing and to membership in the additive subgroup generated by `f • m'` with `f x = 0`, for a nondegenerate nonunital test action at independent space/module universes | S: exact proof Task 6922 (`de99dcc2-45dd-4e05-859b-a50d55157e35`). The published `ProjectorStalk.annihilatorDescription` supplies the first comparison, but its aggregate does not state the additive-closure clause; see the focused correction above |
 | II.2.5 Example: `M = 𝒟(X)` gives `𝒞^∞_X` | 41 / 47 | [RegularProjectorSheaf](../../Langlands/Sheaf/Renard/RegularProjectorSheaf.md): `regularSheafIso`, `sectionScalarEquiv_smul` | D: published candidate `741c323b-249d-4ed0-ac4c-6728574d5b16`; actual sheaf isomorphism for locally profinite `X : Type u`, with proved compatibility for all locally constant scalars |
 | II.2.5 Example: for continuous `q : X → Y`, nondegenerate `𝒟(X)`-modules are nondegenerate `𝒟(Y)`-modules; `𝒟(X)` is a nondegenerate `𝒟(Y)`-bimodule; forgetful and pseudo-forgetful functors (`q_!`, `q_*`) and their adjoints (`q^!`, `q^{-1}`) | 41 / 47 | the module structure through `q`: [CoinvariantTestModule](../../Langlands/Sheaf/Renard/CoinvariantTestModule.md) `pullbackModule q M` (`g · m = (g ∘ q) · m`, through the published extension of the action to `𝒞^∞(X)`, which agrees with `(g ∘ q) χ_U · m`) and its proved nondegeneracy `pullback_nondegenerate` for t.d. `Y`; they are stated for compatible test actions of an arbitrary group, and the trivial group gives the plain module. The bimodule `𝒟(X)` is the case `M = 𝒟(X)` (the algebras are commutative). The functors are I.2.3's `F_AB`, `ˇF_AB`, `I_AB`, `P_AB` for this bimodule, whose final Remark is `RenardForgetfulFunctor.ForgetfulFunctorRemarkStatement`, proved by `RenardForgetfulFunctor.forgetfulFunctorRemark` (see the [Chapter I ledger](item-ledger-i.md)) | D; P (nondegeneracy); C (the bimodule); X for the sheaf-theoretic names |
 | II.2.5 restriction `F\|_Y` to a locally closed subset | 42 / 48 | [LocallyClosedRestriction](../../Langlands/Sheaf/Renard/LocallyClosedRestriction.md): `restrict F Y`, `restrictSection`, `stalkIso`, `restrictFunctor`; `closedCompactEquiv`, `closedCompactEquiv_restrictToClosed` | D: published candidate `b7a1e0fc-4e82-4893-a657-eef7891098e5`. Locally representable families of actual ambient germs construct the sheaf, its stalk isomorphism and functoriality for every subset of any topological `X : Type u`. The comparison with the existing closed compact sections, support and restriction map uses `X : Type` |
@@ -208,14 +245,16 @@ proof table is in the section "Proof-status update, 14 November 2026".
 
 ## Genuine gaps of Chapter II
 
-No genuine gap is recorded. The previously listed full restriction, distribution and module-sheaf
+The previously listed full restriction, distribution and module-sheaf
 basis-change construction gaps have the published constructions above, and
 the explicit base-`T_c` vector/module equivalence is the published
-`CompactVectorSheafModuleEquivalence` (candidate `b461191a`). Every
-statement named in the rows above is now proved (section "Proof-status update,
-14 November 2026"): the II.2.4 Proposition and Example (Task 5779), the
+`CompactVectorSheafModuleEquivalence` (candidate `b461191a`). The
+II.2.4 Proposition and Example (Task 5779), the
 four II.2.5 Theorem statements (Tasks 5508, 5533–5535), the original-module
-stalk description (Task 6024) and all II.3 aggregates. The former
+`ProjectorStalkDescription` (Task 6024) and all II.3 aggregates are proved.
+The older `NondegenerateStalkKernelStatement` retains an exact proof
+obligation, owned by Task 6922, including its additional additive-closure
+clause; see the focused correction. The former
 exact-sequence gap is closed by the exact proof from Task 5960. The
 regular-module Example is a published construction with its intrinsic laws
 proved. The separate compact-section stalk Remark is proved.
@@ -248,8 +287,11 @@ the status of every other task in this ledger.
 
 ## Pending
 
-No open proof tasks remain for Chapter II. The proof tasks formerly listed
-here (`7d487b2c`, 5751, 5779, 5508, 5533–5535, 6024, 5392, 5394, 5524–5531,
-5538, 5539) all have proved targets; see the proof-status update above. The
+The exact proof of
+`Langlands.HarmonicAnalysis.PointwiseTestModule.NondegenerateStalkKernelStatement`
+remains open under Task 6922 (`de99dcc2-45dd-4e05-859b-a50d55157e35`).
+The proof tasks formerly listed here (`7d487b2c`, 5751, 5779, 5508,
+5533–5535, 6024, 5392, 5394, 5524–5531, 5538, 5539) all have proved
+targets; see the proof-status update and its focused correction above. The
 full locally constant distribution/homeomorphism comparison and the explicit
 base-`T_c` equivalence are public.
