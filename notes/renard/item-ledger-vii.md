@@ -15,7 +15,8 @@ French version dated 9 July 2026, registered as
 numbers are given first and PDF page numbers second. Library facts refer to commit
 `16c60abdc019c1181a2734d3052305ec3d6e7b85`, except for the four proof updates for
 VII.3.4–VII.3.5 below, checked on 14 November 2026 at Library
-`179f569bc35e58b829420ce0590c9f4d0ff43c21`. Other statuses retain their historical
+`179f569bc35e58b829420ce0590c9f4d0ff43c21`, and for the VII.1.3 Corollary row and gap 2,
+checked on 14 November 2026 at Library `c0debd6f4dd02fdd68d70811cf610906b945a962`. Other statuses retain their historical
 survey scope. The status codes, the abbreviation of
 task identifiers and the method of checking are those of the Chapter VI ledger.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
@@ -47,7 +48,7 @@ mathematical content.
 | VII.1.1 Lemma (i)–(ii) | 220–221 / 226–227 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S: task 2e8d370f; necessity P: `arbitraryParabolicCasselmanNecessity`. Derived: the condition is the strictly positive root cone, which the source proof establishes, not the printed coroot chamber `^G_P[𝔞*_M]^+`; the two differ (for example for `SL_3`). This source discrepancy is documented in the statement's Markdown; the printed chamber form is not stated |
 | VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S: task 004e00e1; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
-| VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. G: the functor `r_D` and the unit isomorphism `π → i_P^G r_D(π)` are not stated |
+| VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. The functor `r_D`, its faithfulness, the unit isomorphism `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`: `RP.MaximalLeviBlockProjectionEquivalenceStatement` (`Exponents/MaximalLeviBlockProjectionStatement`; the projection onto `M(M)_D` is a left adjoint of the inclusion of the block, whose existence is asserted). A: candidate `17566075` (Reviewer 2361), not integrated at Library `c0debd6f` |
 
 ## VII.2 Tempered representations
 
@@ -251,7 +252,11 @@ as recorded.
    source proof establishes the root-cone form, which is stated).
 2. VII.1.3 Corollary: the functor `r_D`, its faithfulness as stated by the source, and the
    unit isomorphism `π → i_P^G r_D(π)`. Stating them needs the projection of `r_P^G`
-   onto the component `M(M)_D`, which is not constructed.
+   onto the component `M(M)_D`, which is not constructed. Update of 14 November 2026,
+   checked at Library `c0debd6f`: candidate `17566075` (Worker 4) states them as
+   `RP.MaximalLeviBlockProjectionEquivalenceStatement`. It characterizes the projection
+   as a left adjoint of the inclusion of `M(M)_D` and asserts that one exists. It was
+   accepted by Reviewer 2361 and was not yet integrated at that commit (A).
 
 Update at Library `9951a27f`: the former gap 3 (VII.3.5, minimal-`M` form of the opening
 assertion) is stated by the published `MinimalParabolicDistanceLengthStatement` (candidate

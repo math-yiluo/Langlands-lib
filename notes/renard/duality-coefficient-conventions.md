@@ -1,11 +1,11 @@
 # Renard I.4.2: coefficients in the duality comparisons
 
 Worker 6's source audit of 1 November 2026, updated by Worker 1222 on
-13 November 2026 for the whole-book task
+14 November 2026 for the whole-book task
 `f5d1f399-a1f8-4ab5-a981-90b92abd4857`, current revision 1. This note
 distinguishes the published common-coefficient proofs of both I.4.2
-comparisons from the published counterexample to the first comparison
-under the bare additive ring-bimodule interpretation. It also retains
+comparisons from the two published actual-functor counterexamples under
+the bare additive ring-bimodule interpretation. It also retains
 the separate transposition Lemma. This note is supporting documentation,
 not a mathematical artifact or a claim that Chapter I is complete.
 
@@ -32,7 +32,7 @@ audit's boundary. No Renard entry was found in `notes/errata`.
 | I.2.1, printed p.14 / PDF p.20 | An idempotented complex algebra recovers coefficients on each nondegenerate module by `c m = (c e) m` when `e m = m`. Original intertwiners between such modules are automatically complex-linear. | Recovery is relative to the selected algebra action. Equality of coefficients recovered from different algebras requires justification. |
 | I.2.2, printed pp.15–16 / PDF pp.21–22 | Unitized tensor–Hom formulas and their nondegenerate specializations, with naturality in all variables. | Applying the unitized formulas to a bimodule requires a justified common coefficient structure. The additive formulas alone do not identify coefficients recovered from different actions. |
 | I.2.3, printed pp.16–18 / PDF pp.22–24 | Actual tensor F and P, Hom-part pseudo-F and I, and their adjunctions. The general construction explicitly permits idempotented rings. | Additive constructions and their coefficient comparisons remain distinct obligations. |
-| I.4.2 theorem, printed pp.23–24 / PDF pp.29–30 | Duality intertwines F with right-module pseudo-F and P with right-module I by natural isomorphisms. The first proof uses tensor–Hom evaluation; the second also has an adjunction route. | Both common-coefficient statements are proved. The first comparison is false under the bare additive interpretation, by the actual-functor counterexample below. That counterexample makes no claim about the second comparison. |
+| I.4.2 theorem, printed pp.23–24 / PDF pp.29–30 | Duality intertwines F with right-module pseudo-F and P with right-module I by natural isomorphisms. The first proof uses tensor–Hom evaluation; the second also has an adjunction route. | Both common-coefficient statements are proved. Under the bare additive interpretation, separate actual-functor constructions below exclude every natural isomorphism in each comparison. |
 | I.4.2.1, printed p.24 / PDF p.30 | Transposition between the two original Hom spaces into nondegenerate duals, natural in both variables. | Separately proved by `NonUnitalModuleDualHomTransposeProof.dualHomTranspose` in its namespace; see the Chapter I ledger. It is not refuted by the counterexample. |
 
 I.7 attributes the induction definitions and the induction-duality argument to
@@ -176,6 +176,53 @@ Its intrinsic laws belong to the reviewed construction; this note
 does not recast it as an exact proof of either common-coefficient
 statement.
 
+## A published counterexample for the actual second comparison
+
+The separate module
+[`RenardInductionDualitySourceObstruction`](../../Langlands/Algebra/RenardInductionDualitySourceObstruction.md)
+uses the same algebras and twisted original actions. Its namespace is
+`Langlands.Algebra.RenardInductionDualitySourceObstruction`. This time
+the test object is the actual regular left A-module A.
+`inducedContraction σ` contracts the actual `P_AB(A) = B ⊗_A A` by
+`b ⊗ a ↦ b σ(α(a))`, where `α : A σ ≃+* ℂ` is the ordinary ring
+equivalence. Its inverse inserts `b ⊗ 1`. The residual B-action becomes
+ordinary multiplication, and `inducedEquiv σ` is complex-linear for
+the coefficients recovered from that actual action.
+
+The actual `D_B(P_AB(A))` is consequently identified with ordinary ℂ
+by `dualInducedEquiv σ`; its original right action of b is multiplication
+by b in these coordinates. The other actual functor value is
+`I_AB(D_A(A))`, the B-nondegenerate part of
+`Hom_(A.op)(B,D_A(A))`. Evaluation `h ↦ (b ↦ h(b)(1))` and its explicit
+inverse give `coinducedAddEquiv σ` with the full complex dual of
+`V = ComplexEmbeddingDualityObstruction.Carrier σ`.
+
+That last equivalence is additive. The implemented action identity,
+`coinducedForm_action_sigma`, says that original right multiplication
+by `σ(c)` becomes pointwise multiplication by c on the dual. The
+construction does not identify all B-recovered coefficients on the
+Hom part with pointwise coefficients on that full dual.
+
+For any original right-B intertwiner
+`f : D_B(P_AB(A)) → I_AB(D_A(A))`, `restrictionLinearMap σ f`
+uses those coordinates and the restriction law `c • z = σ(c) z`
+on V to give a complex-linear map `V → Module.Dual ℂ V`.
+Bijectivity of f would make this map a linear equivalence, contradicting
+the same published strict dual-dimension theorem. The module proves
+`no_bijective_intertwiner`, `no_objectIso` and `no_naturalIso`, and
+its `exists_counterexample` supplies the proper embedding without an
+extra hypothesis. Thus every natural isomorphism in the second
+comparison is excluded under the bare additive interpretation.
+
+The construction is accepted and published as
+`770d2f30-aa5c-4dc2-83d2-77b3f215217a`, independently reviewed by
+Reviewer 2258, at Library `e5365902d74534dbf1622c06e695dffdc128d723`. Worker 1222
+checked its paired hashes against the reviewed snapshot and publication.
+As for the first comparison, these are intrinsic laws of an internal
+construction, not an exact-target proof record for a separate statement.
+They concern the bare additive reading and do not determine the author's
+intended algebra-bimodule convention.
+
 ## The proved compatible-input route
 
 Let S and R be idempotented complex algebras, X a left S/right R bimodule
@@ -262,16 +309,15 @@ finite dimension nor a multiplicative identity.
 
 ## Source correction and remaining boundary
 
-The first I.4.2 comparison requires a stronger interpretation than the
-opening bare ring-bimodule convention: in that convention it is false.
-The common-coefficient interpretation supplies both proved comparisons,
-with the additional tower laws stated explicitly. This is a documented
-source correction, not unrestricted additive source coverage.
+Both I.4.2 comparisons require a stronger interpretation than the
+opening bare ring-bimodule convention: the separate actual-functor
+constructions exclude each comparison in that convention. The
+common-coefficient interpretation supplies both proved comparisons,
+with the additional tower laws stated explicitly. These are documented
+source corrections, not unrestricted additive source coverage.
 
-The second common-coefficient comparison is proved independently of the
-counterexample. Its bare additive interpretation is not settled here.
 The separate Lemma (I.4.2.1) is already proved by
 `Langlands.Algebra.NonUnitalModuleDualHomTransposeProof.dualHomTranspose`.
-The counterexample does not alter that lemma. Broader additive
+Neither counterexample alters that lemma. Broader additive
 constructions and other Chapter I proof obligations remain in scope;
 their status is recorded in the [Chapter I ledger](item-ledger-i.md).

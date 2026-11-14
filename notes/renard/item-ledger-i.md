@@ -18,7 +18,11 @@ common-coefficient I.4.2 proofs are published at
 `73b1430a339b037d27e9096762b0400adb4fbd19`. The actual-functor counterexample
 to the first bare-additive I.4.2 comparison is also published at
 `7f43c3c930ff92f76dae6589da1678ad729017e5`. The focused rows and evidence
-below distinguish those scopes. Other rows retain their earlier audit dates.
+below distinguish those scopes. A further focused update on
+14 November 2026 records the separate second-comparison construction,
+published at Library `e5365902d74534dbf1622c06e695dffdc128d723`. Worker 1222
+reread printed pp.6, 14 and 23–24 / PDF pp.12, 20 and 29–30 for that
+update. Other rows retain their earlier audit dates.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -158,7 +162,7 @@ The I.2.1 rows follow the labels (a)–(k) of the [I.2.1 assertion map](unitizat
 | I.4.1 Lemma: `M̃·e ≅ (e·M)^*`; duality is exact | 23 / 29 | `NonUnitalModuleDualFixedPart.FixedPartDuality`; `NonUnitalModuleDualCategoricalExactnessStatement`, `NonUnitalModuleDualMapExactnessStatement` | P (`fixedPartDuality`, `nonUnitalModuleDualCategoricalExactnessStatement`, `nonUnitalModuleDualMapExactnessStatement`) |
 | I.4.1 Corollary: `M ↪ M̃̃` | 23 / 29 | `NonUnitalModuleBidualInjectionStatements.BidualInjection` | P (`bidualInjection`) |
 | I.4.2 Theorem, first comparison: `ˇF_AB(Ñ) ≅ F_AB(N)~` | 23–24 / 29–30 | `DualityForgetfulStatement`, assuming the supplied nondegenerate left A-action on B commutes with regular right multiplication and satisfies `IsScalarTower ℂ A B` | P (`dualityForgetful`, Task 5778; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S2) |
-| I.4.2 Theorem, second comparison: `I_AB(M̃) ≅ P_AB(M)~` | 24 / 30 | `DualityInductionStatement`, assuming the supplied nondegenerate right A-action on B commutes with regular left multiplication and satisfies `IsScalarTower ℂ Aᵐᵒᵖ B` | P (`dualityInduction`, Task 5778; exact proof evidence below). Its bare additive interpretation is not settled by the first-comparison counterexample (gap 1) |
+| I.4.2 Theorem, second comparison: `I_AB(M̃) ≅ P_AB(M)~` | 24 / 30 | `DualityInductionStatement`, assuming the supplied nondegenerate right A-action on B commutes with regular left multiplication and satisfies `IsScalarTower ℂ Aᵐᵒᵖ B` | P (`dualityInduction`, Task 5778; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardInductionDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S3) |
 | I.4.2 Lemma (I.4.2.1): `Hom_A(V, W̃) ≅ Hom_A(W, Ṽ)`, natural in `V`, `W` | 24 / 30 | `NonUnitalModuleDualHomTransposeStatements.DualHomTranspose` | P (`dualHomTranspose`) |
 | I.4.3 the completion of `M̃` is `M^*` | 25 / 31 | `NonUnitalModuleDualCompletion.DualCompletionStatement` | S: Task 5759 (candidate `faf3a73f`, published at Library `24a49431`) |
 | I.4.3 the step `ι : N_A ⊗_A M ≅ N ⊗_A M` | 25 / 31 | `NonUnitalTensorSmoothingStatements.TensorSmoothing` | P (`tensorSmoothing`) |
@@ -235,6 +239,31 @@ interpretation. The common-coefficient theorem below is proved. The
 second comparison and the separately proved transposition Lemma
 (I.4.2.1) are not refuted by this construction.
 
+**S3 (I.4.2 Theorem, second comparison, printed p.24 / PDF p.30).**
+The separate
+[induction-duality construction](../../Langlands/Algebra/RenardInductionDualitySourceObstruction.md)
+tests the same twisted algebras at the actual regular A-object.
+`inducedEquiv` contracts `P_AB(A) = B ⊗_A A` to ordinary ℂ, with the
+coefficients recovered from the original B-action. `dualInducedEquiv`
+identifies its actual nondegenerate dual with ℂ. Evaluation at the
+source unit identifies the actual `I_AB(D_A(A))` additively with the
+full complex dual of `Carrier σ`. Its original right action by `σ(c)`
+corresponds to pointwise multiplication by c on that dual.
+
+An original right-B intertwiner from `D_B(P_AB(A))` to `I_AB(D_A(A))`
+therefore restricts to `restrictionLinearMap : Carrier σ →ₗ[ℂ]
+Module.Dual ℂ (Carrier σ)`. If bijective, it would contradict the
+published strict dual-dimension inequality. The module's
+`no_objectIso` and `no_naturalIso` exclude the corresponding isomorphisms;
+`exists_counterexample` supplies σ unconditionally. No equality of
+the Hom part's full B-recovered coefficients with pointwise dual
+coefficients is asserted or needed.
+
+This is an internal derived audit of the bare additive interpretation.
+It leaves the exact common-coefficient theorem and the separately proved
+transposition Lemma (I.4.2.1) intact. It does not decide Renard's intended
+algebra-bimodule convention or establish completion of Chapter I.
+
 ## Verified publications for the focused update
 
 Worker 1222 checked the following accepted records, their independent
@@ -247,10 +276,11 @@ published files. All listed reviews have no qualifications.
 | Exact `Langlands.Algebra.dualityForgetful : DualityForgetfulStatement.{uA,uB,v}` | `13e8e448-d99e-4965-8821-ddc63b7f1753`, Reviewer 1015; Library `73b1430a339b037d27e9096762b0400adb4fbd19` |
 | Exact `Langlands.Algebra.dualityInduction : DualityInductionStatement.{uA,uB,v}` | `55e353e4-2c8c-4cf2-8f3d-3673de01a50b`, Reviewer 1023; Library `73b1430a339b037d27e9096762b0400adb4fbd19` |
 | Actual-functor construction and intrinsic obstruction laws in [RenardDualitySourceObstruction](../../Langlands/Algebra/RenardDualitySourceObstruction.md) | `1022b930-eab9-4e5e-b0b6-67ee276389e7`, Reviewer 1178; Library `7f43c3c930ff92f76dae6589da1678ad729017e5` |
+| Actual second-comparison functors and intrinsic obstruction laws in [RenardInductionDualitySourceObstruction](../../Langlands/Algebra/RenardInductionDualitySourceObstruction.md) | `770d2f30-aa5c-4dc2-83d2-77b3f215217a`, Reviewer 2258; Library `e5365902d74534dbf1622c06e695dffdc128d723` |
 
 Each of the three proof artifacts has accepted `lake-build`, `exact-target`,
-`unchanged-statement` and `frozen-inputs` checks. The counterexample is a
-reviewed construction with intrinsic laws, not an exact-target proof record.
+`unchanged-statement` and `frozen-inputs` checks. The two counterexamples
+are reviewed constructions with intrinsic laws, not exact-target proof records.
 The two I.4.2 proofs implement the same evaluation construction through
 `NonUnitalTensorDuality.naturalIso`, specializing to the actual functors
 and deriving coefficient compatibility from the appropriate tower law.
@@ -258,11 +288,12 @@ Task 5778 (`205cb4c3-e4f6-40c5-8f90-540e5a4bedf9`) is done.
 
 ## Genuine gaps of Chapter I
 
-1. The bare additive interpretation of the **second** I.4.2 comparison is
-   not settled here. Its common-coefficient statement is proved. The
-   first comparison's bare additive interpretation is false by source
-   issue S2, rather than an outstanding proof target
-   ([duality-coefficient-conventions](duality-coefficient-conventions.md)).
+The previously open bare additive reading of the second I.4.2 comparison
+has a counterexample in source issue S3. Both bare additive comparisons
+are false by S2 and S3; their common-coefficient statements are proved.
+These are resolved source-audit questions, rather than outstanding proof
+targets ([duality-coefficient-conventions](duality-coefficient-conventions.md)).
+The other proof obligations below retain their earlier audit status.
 
 The former I.2.2 statement gap is closed under the corrected common-coefficient
 reading by `TensorHomLinearTheorem`. Source issue S1 records why the bare
