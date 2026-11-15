@@ -22,7 +22,7 @@ variable {k : Type u} [Field k]
     (he : IsNaturalVectorCoordinates e)
     (K : Type u) [Field K] [Algebra k K]
 
-local instance : IsAffineHom
+local instance vectorPointLieBaseChange_isAffineHom : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj V).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd V.X.hom (algebraBaseMap k K))
   infer_instance

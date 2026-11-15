@@ -28,7 +28,7 @@ descent to an actual rational torus point is a separate step.
 ## Implemented proof
 
 1. Restriction is transported from `X*(T_K)` to `X*(S)` using the inverse of
-   split-torus character base change. The private `restrictCharacter` lemmas
+   split-torus character base change. The public `SimpleRootFiber.restrictCharacter` lemmas
    identify its base change, its pairing with cocharacters, and its invariance
    under Galois action. The torus centralizer hypothesis makes the restriction
    of each absolute root nonzero; the splitting-field restriction criterion

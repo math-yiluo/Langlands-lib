@@ -82,23 +82,25 @@ attribute [local instance] rootsGaloisAction
 
 /-- Restriction to the original split torus, transported back through split
 character base change. -/
-private def restrictCharacter (hS : IsSplitTorus S.toGrp) :
+def SimpleRootFiber.restrictCharacter (hS : IsSplitTorus S.toGrp) :
     characterLattice T_K →+ characterLattice S :=
   (characterLattice.baseChangeEquiv b S hS).symm.toAddMonoidHom.comp
     { toFun := fun χ => f_K ≫ χ
       map_zero' := by simp
       map_add' := by intros; simp }
 
+open SimpleRootFiber
+
 omit [FiniteDimensional k K] [IsGalois k K] [IsAffineHom T.toGrp.X.hom]
   [LocallyOfFiniteType T.toGrp.X.hom] in
-private theorem restrictCharacter_baseChange (hS : IsSplitTorus S.toGrp)
+theorem SimpleRootFiber.restrictCharacter_baseChange (hS : IsSplitTorus S.toGrp)
     (χ : characterLattice T_K) :
     characterLattice.baseChange b S (restrictCharacter k K f hS χ) = f_K ≫ χ :=
   (characterLattice.baseChangeEquiv b S hS).apply_symm_apply _
 
 omit [FiniteDimensional k K] [IsGalois k K] [IsAffineHom T.toGrp.X.hom]
   [LocallyOfFiniteType T.toGrp.X.hom] in
-private theorem restrictCharacter_pairing (hS : IsSplitTorus S.toGrp)
+theorem SimpleRootFiber.restrictCharacter_pairing (hS : IsSplitTorus S.toGrp)
     (ν : cocharacterLattice S) (χ : characterLattice T_K) :
     latticePairing T_K χ (cocharacterLattice.baseChange b T (ν ≫ f)) =
       latticePairing S (restrictCharacter k K f hS χ) ν := by
@@ -111,7 +113,7 @@ private theorem restrictCharacter_pairing (hS : IsSplitTorus S.toGrp)
 
 omit [FiniteDimensional k K] [IsGalois k K] [IsAffineHom T.toGrp.X.hom]
   [LocallyOfFiniteType T.toGrp.X.hom] in
-private theorem restrictCharacter_galois (hS : IsSplitTorus S.toGrp)
+theorem SimpleRootFiber.restrictCharacter_galois (hS : IsSplitTorus S.toGrp)
     (σ : K ≃ₐ[k] K) (χ : characterLattice T_K) :
     restrictCharacter k K f hS (characterLattice.galoisRepresentation k K T σ χ) =
       restrictCharacter k K f hS χ := by
@@ -134,7 +136,7 @@ variable {J : Type u} [Finite J]
 
 include hP hcent hT in
 omit [FiniteDimensional k K] [IsGalois k K] [Finite J] in
-private theorem restrictCharacter_root_mem (t : J) :
+theorem SimpleRootFiber.restrictCharacter_root_mem (t : J) :
     restrictCharacter k K f hf.1.1 (P.root t) ∈
       relativeRoots (CommGroupScheme.groupHom f ≫ j) := by
   have ht : P.root t ∈ roots (T := T_K) (G := G_K) j_K := by
@@ -151,7 +153,7 @@ private theorem restrictCharacter_root_mem (t : J) :
 
 include hP hf hcent hT in
 omit [FiniteDimensional k K] [IsGalois k K] [Finite J] in
-private theorem regular_root_pairing (ν : cocharacterLattice S)
+theorem SimpleRootFiber.regular_root_pairing (ν : cocharacterLattice S)
     (hν : IsGenericCocharacter (CommGroupScheme.groupHom f ≫ j) ν) (t : J) :
     P.root' t (cocharacterLattice.baseChange b T (show cocharacterLattice T from ν ≫ f)) ≠ 0 := by
   change P.toLinearMap (P.root t) _ ≠ 0
@@ -163,7 +165,7 @@ variable [P.IsReduced]
   (hν : IsGenericCocharacter (CommGroupScheme.groupHom f ≫ j) ν)
 
 omit [FiniteDimensional k K] [IsGalois k K] in
-private theorem simpleRootFiber_mem_base
+theorem SimpleRootFiber.simpleRootFiber_mem_base
     {a : characterLattice S}
     (ha : a ∈ simpleRelativeRoots (CommGroupScheme.groupHom f ≫ j) ν)
     (t : J) (ht : restrictCharacter k K f hf.1.1 (P.root t) = a) :
@@ -271,6 +273,8 @@ private theorem multipleSimpleRootFiber_coordinate_zero
   exact le_antisymm hle (by simpa only [hone] using hnonneg (1 : K ≃ₐ[k] K))
 
 end Setup
+
+open SimpleRootFiber
 
 attribute [local instance] rootsGaloisAction
 
