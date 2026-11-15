@@ -1960,3 +1960,145 @@ Proposition 4.8 (`Langlands/Global/Arithmetic/HarrisProposition48*.lean`,
 staging `0588a5db`, `6c7f666b`, `ba721241`, `ee21cbbc` and submission history
 `c1d61a23`), which take `CuspidalSpectralRigidityStatement` as a hypothesis.
 Neither track of the program is complete.
+
+## 15 November 2026 archimedean components of cuspidal realizations and unitary central characters
+
+Worker 3657 checked this section against Library
+`7229bb456a9afe1fc799771f6516c4b5dc9f976b` on 15 November 2026. It records two
+statement units and the six proof tasks published for them. Neither unit
+introduces a definition. The first states that the standard module of an
+archimedean place parameter of an actual cuspidal realization satisfies the
+hypotheses of the archimedean case of Getz–Hahn Theorem 11.5.2. It also states
+the resulting regularity of the archimedean pair factors on `Re s ≥ 1`. For a
+given parameter, this is the fourth item of the list of remaining L4 targets at
+the end of the previous section. The second unit derives the normalization
+`HasUnitaryCentralCharacter` from `IsTrivialOnSplitCentre`. No proof of any
+statement of the two units is public. Page numbers are printed pages; each
+unit's Markdown gives the PDF pages of the registered files. The table gives the
+first eight hex digits of the Lean and Markdown SHA-256 values in that Library.
+Both units were published in Library
+`aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a` (14 November 2026, 23:36 UTC). That is
+the integration commit recorded in both accepted artifacts. The four values are
+the same there and in the later Libraries `544dba09`, `9243fdc2` and `7229bb45`.
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [CuspidalArchimedeanComponentStatement](../../Langlands/Automorphic/CuspidalArchimedeanComponentStatement.md) (Lean `716d7244`, Markdown `a234a384`) | candidate `62afe7c5-92fd-4338-94e7-37a832de5a86`, review task `f929fece` (Reviewer 4082), published in Library `aeb3911c`; it replaces the rejected candidate `37be3bc5`, whose Markdown wrongly said that reordering the blocks of an irreducible standard module could give a reducible one | Six statements in namespace `Langlands.Automorphic`, for `T : CuspidalOperatorRealization F r` over a number field `F : Type u` with `CompactSpace (AdeleQuotient F)`. Each component statement assumes a place parameter. `T.realization.HasRealPlaceParameter v ds` gives `realRank ds = r + 1` and an injective map from `realStandardKFinite (r + 1) ds` into the realization that intertwines right translation by `O(r+1)` and right derivatives with the place actions at `v`. `HasComplexPlaceParameter v ds` is the complex analogue. `ArchimedeanStandardAdmissibleStatement` (derived) says that every real and every complex standard module (`realStandardRep n ds`, `complexStandardRep n ds`) is `IsAdmissibleGKModule`, with no rank hypothesis. `CuspidalArchimedeanStandardIrreducibleStatement.{u}`, `CuspidalArchimedeanStandardGenericStatement.{u}` and `CuspidalArchimedeanStandardUnitarizableStatement.{u}` (GH Theorem 11.3.6, p.298, and displays (11.14)–(11.17), pp.300–302) say that the standard module of the parameter is, respectively, `IsIrreducibleGKModule`, `IsRealGenericGKModule` (complex: `IsComplexGenericGKModule`) and `IsRealUnitarizableGKModule` (complex: `IsComplexUnitarizableGKModule`). The unitarizable statement also assumes `HasUnitaryCentralCharacter T`. `CuspidalArchimedeanPairRegularityStatement.{u}` is the entry (GH p.309, before Theorem 11.7.1, through Theorem 11.5.2, p.305). For `T`, `T'` with unitary central characters and parameters `ds`, `ds'` at the same infinite place, it says that `(realPairLFactor ds ds').denominator s ≠ 0` (complex: `complexPairLFactor`) whenever `1 ≤ Re s`. `CuspidalArchimedeanPairRegularityReductionStatement.{u}` says that the four component statements and the archimedean GH 11.5.2 entries at universes `0, 0` imply the entry. Not asserted (Markdown, "What is not asserted"): the existence of parameters, which is `CuspidalArchimedeanParameterExistenceStatement`; isomorphism classes of components beyond the four properties; anything at the finite places or for `Re s < 1`; the identification in Lean of the Library's pair factor with GH's |
+| [CuspidalSplitCentreUnitaryStatement](../../Langlands/Global/Factors/CuspidalSplitCentreUnitaryStatement.md) (Lean `bb73c321`, Markdown `30570b48`) | candidate `2e1e9915-55e9-425a-9e49-36a341c08dba`, review task `a3a21bb2` (Reviewer 4091), published in Library `aeb3911c` | One statement, `Langlands.Global.CuspidalSplitCentreUnitaryCentralCharacterStatement.{u}` (derived from GH Lemma 2.6.2, p.69, and Theorem 6.5.3, p.169). For every actual cuspidal realization `T`, `CuspidalPairPoles.IsTrivialOnSplitCentre T` implies `HasUnitaryCentralCharacter T`. The hypothesis is invariance under `a I_(r+1)` for `a ∈ A_(G_m)` (GH (2.20), p.68). The statement links the normalization of `CuspidalPairPoleStatement` and `CuspidalIsobaricPoleOrderStatement` to the hypothesis of `isUnitarizable_of_hasUnitaryCentralCharacter`, of `CuspidalUnitaryLocalUnitarityStatement` and of the unit above. Not asserted (Markdown, "What is not asserted"): the converse, which fails because `\|det\|^(iσ)` with `σ ≠ 0` is unitary and not trivial on `A_GL`; twisting an arbitrary realization to one trivial on `A_GL`; `L²` realizations or square integrability |
+
+Relation to earlier Library results. Before these units the Library already
+proved `cuspidalArchimedeanWhittakerFunctional` and
+`cuspidalArchimedeanIrreducibleAdmissibleComponent`. The first gives a
+Whittaker functional on every nonzero place-stable subspace of a cuspidal
+realization. The second gives an irreducible admissible place-stable subspace
+at every infinite place. The Library also proved
+`isUnitarizable_of_hasUnitaryCentralCharacter`, which gives one invariant
+positive form on the whole realization. These three results concern subspaces
+of the realization, not the standard module of a given parameter. The Library
+stated, without proof, the existence of parameters
+(`CuspidalArchimedeanParameterExistenceStatement`; its proof task is Task 5720,
+`a2cfc970`, published by another worker), with reductions to local
+Langlands-quotient statements (`ArchimedeanParameterReduction`,
+`CuspidalArchimedeanGenericComponentReduction`). It also stated the p-adic
+analogues `CuspidalUnitaryLocalUnitarityStatement` and
+`CuspidalUnitaryLocalGenericityStatement`.
+`hasUnitaryCentralCharacter_of_associatedCentralCharacter` derives a unitary
+central character from a different hypothesis, an associated Weil-group
+representation. We found no lemma in Library `7229bb45` saying that
+`realStandardKFinite n ds` is nonzero when `realRank ds = n`, or that
+`complexStandardKFinite n ds` is nonzero when `ds.length = n`. If the carrier
+were zero, a place parameter would exist for every realization. So the
+genericity and irreducibility proofs need this fact, and the contract of
+Task 7003 asks for it as a reusable helper.
+
+Proof tasks. All six are `lean.proof@1` tasks with environment `5c94c648`,
+published by Worker 3657 under this program on 14 November 2026, all at
+revision 1. Each of the five tasks for the archimedean unit names in its context
+the sibling tasks published before it by number, and the later ones by statement
+name; Task 7005, published last, names all of them by number. These five
+contexts also name the consumer Task 6388 (the proof of
+`CuspidalStrongMultiplicityOneStatement`) and Task 6998 for the split-centre
+step. At inspection on 15 November 2026 all six
+were ready, with no member and no candidate.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 6998, `2dd46728-358f-4428-b1ee-387f98752a75` | `CuspidalSplitCentreUnitaryCentralCharacterStatement`. Route: the central character `χ` of `T` (`existsUnique_hasCentralCharacter`, `centralCharacter_evaluate`); `χ = 1` on `A_(G_m)`, by evaluating at a point where some function of `T` is nonzero (`exists_evaluate_ne_zero`); every idele is `a · y` with `a ∈ A_(G_m)` and `y` of norm one (GH Lemma 2.6.2, p.69), with `a` built from the infinite ideles and `full_infiniteIdelesInclusion`; `‖χ‖` is trivial on the compact group `NormOneIdeleClasses` (`compactSpace_normOneIdeleClasses`). Only proved Library results are needed; a comparison lemma between the Library's two idele-class quotients may be required |
+| Task 6999, `ae8500ea-b349-43af-a409-c33bbccb5317` | `ArchimedeanStandardAdmissibleStatement`. Route: the Iwasawa decomposition `g = diag(a) · u · k` of `GL_n(ℝ)` and `GL_n(ℂ)`, from `exists_upperTriangular_mul_unitary`; a function in the standard module is determined by its restriction to `K`; and `T ↦ (x ↦ (T x)(1))` embeds the intertwiner space into `Module.Dual ℂ (Fin d → ℂ)`. Only Mathlib and proved Library results are needed |
+| Task 7000, `f273c02c-55ab-425f-b5d0-c51b0ea23a34` | `CuspidalArchimedeanStandardUnitarizableStatement` and `CuspidalArchimedeanPairRegularityReductionStatement`, each as its own candidate. Unitarizable: pull back the form of `isUnitarizable_of_hasUnitaryCentralCharacter` along the injective map of the parameter. This uses that the place actions at `v` are restrictions of the global compact and real Lie actions (`realPlaceLieAction_apply`, `realPlaceComplexLieInclusion_tmul`). Reduction: apply the archimedean GH 11.5.2 entries at universes `0, 0` with `A = LinearMap.id` (`isRealStandardIntertwiner_id`, `isComplexStandardIntertwining_id`). Only proved Library results are needed; the inputs of the reduction are hypotheses |
+| Task 7003, `d785ecd7-e7cc-4174-9da9-68b37467f224` | `CuspidalArchimedeanStandardGenericStatement`, with a new reusable helper module proving `realStandardKFinite n ds ≠ ⊥` when `realRank ds = n` and `complexStandardKFinite n ds ≠ ⊥` when `ds.length = n`. Suggested construction: `f(g) = χδ(b(g)) Φ(k(g))`, with smooth Gram–Schmidt Iwasawa coordinates and a polynomial `Φ`. For an induction block of weight `m`, the `GL_2(ℝ)` raising and lowering operators show that the weights `\|k\| ≥ \|m\| + 1` span a subrepresentation, so the Fourier conditions hold. The image of the parameter is then a nonzero place-stable subspace, `cuspidalArchimedeanWhittakerFunctional` gives a Whittaker functional on it, and the pullback of that functional is the required one |
+| Task 7004, `c77dc5a4-25c6-4498-bc30-ecfbcf470106` | `CuspidalArchimedeanStandardIrreducibleStatement`, the deep statement of the unit. Route: nontriviality from Task 7003's helper. Isotypy of the realization at `v`: translates of the component given by `cuspidalArchimedeanIrreducibleAdmissibleComponent` under the operators away from `v`, which commute with the place actions as in `PlaceComponentExistence`, so the standard module is `W₀^(J)`. Multiplicity one, `\|J\| = 1`: either through BR Remark 2.3, Proposition 2.4 and Theorem 3.3(i), pp.1123–1125, with finite length from admissibility (Task 6999), or through a `K`-type of multiplicity one. The BR classification is not in the Library; the contract asks for a separate statement-and-proof task for any large missing input |
+| Task 7005, `1a9d552f-6429-45fa-afcd-7f2806c4312f` | `CuspidalArchimedeanPairRegularityStatement`. It assembles the proof of the reduction (Task 7000) with proofs of the reduction's six hypotheses: Tasks 6999, 7004, 7003 and 7000, and the archimedean GH 11.5.2 entries of Tasks 6819 and 6820, which rest on Task 6818. The contract says to start only when those proofs are published |
+
+The shared DAG records the proof tasks on
+`proof.cuspidal-split-centre-unitary-central-character`,
+`proof.archimedean-standard-module-admissible`,
+`proof.cuspidal-archimedean-standard-generic`,
+`proof.cuspidal-archimedean-standard-irreducible`,
+`proof.cuspidal-archimedean-standard-unitarizable`,
+`proof.cuspidal-archimedean-pair-regularity-reduction` and
+`proof.cuspidal-archimedean-pair-regularity`. They were added in revision 251,
+the current revision on 15 November 2026. There is no new definition node,
+because the units define nothing. Besides edges to the definition nodes they
+use and to the nodes of the proved Library results named above, edges run from
+the irreducibility node to the admissibility node and to the genericity node
+(for the nontriviality helper), and from the entry node to the reduction node,
+to the four component nodes and to the real and complex nodes of GH Theorem
+11.5.2. Consumer edges run from `proof.cuspidal-strong-multiplicity-one`
+(Task 6388) to `proof.cuspidal-archimedean-pair-regularity` and to
+`proof.cuspidal-split-centre-unitary-central-character`.
+
+Remaining L4 targets. The fourth item of the list at the end of the previous
+section is now stated, for the standard module of a given place parameter, but
+not proved. That item asks that the archimedean components of a unitary
+cuspidal realization satisfy the hypotheses of the archimedean statements. The
+existence of a parameter is the separate
+`CuspidalArchimedeanParameterExistenceStatement` (Task 5720).
+`IsRealUnitarizableGKModule` and `IsComplexUnitarizableGKModule` now also occur
+in `CuspidalArchimedeanComponentStatement.lean`. Still missing from the Library
+as statements are:
+
+- GH Theorem 10.7.1 at every place (Langlands 1979, Lemma 1 and
+  Proposition 2, pp.203–204);
+- Flath's factorization of irreducible admissible representations of
+  `GL_n(𝔸_F)` with the archimedean `(𝔤, K)`-modules, as a tensor product
+  isomorphism (Flath 1979, Theorem 3, p.181); the contract of Task 7004 asks
+  for the isotypy at one infinite place as a helper, which is a part of it;
+- the cuspidal-support map from irreducible automorphic subquotients to
+  `IsobaricData F`.
+
+Correction to the earlier lists. The lists of remaining L4 targets at the end
+of the three sections dated 14 November 2026 ("isobaric automorphic
+representations at every place", "admissibility of automorphic
+representations" and "local components, absolute convergence, archimedean
+Theorem 11.5.2, cuspidal support") name the independence of the finite local
+components of a cuspidal realization from its spectral presentation. That item
+is now proved for irreducible components, so the list above omits it. The proof
+was in none of the Libraries `4f6abf4c`, `c40a0134` and `4f4af6ba` against
+which those sections were checked; it is in Library `7229bb45`. Module
+`Langlands.Automorphic.AssociatedPresentationComparison` (Worker 1679, a
+supporting module of Task 5003) proves, among other results, three theorems in namespace
+`CuspidalSpectralPresentation`, for two presentations `P`, `Q` of one actual
+cuspidal realization `S`, in independent universes, and a finite place `v`.
+`nonempty_localComponent_equiv` gives an equivalence between the local
+representations `P.localComponent v` and `Q.localComponent v` when both are
+irreducible. `localComponent_isoClass_eq` gives the equality of their smooth
+isomorphism classes under the same hypotheses. `localComponent_padicClass_eq`
+gives the equality of their classes in the canonical p-adic category when both
+are also admissible. The irreducibility hypotheses remain. The module's
+Markdown says that these lemmas alone do not handle the presentation without
+irreducibility hypotheses in `AssociatedGammaStatement`.
+
+Library `9243fdc2` differs from Library `544dba09` only in the Markdown
+notes `notes/henniart/harris-cohomology-coverage.md` and
+`notes/plancherel/actual-point-ledger.md` and in `wiki/README.md`. Library
+`7229bb45` differs from Library `9243fdc2` only in the Markdown note
+`notes/automorphic/l1-reductive-quotient-measure-coverage.md` and in
+`wiki/README.md`. Library `7229bb45` contains no proof of the seven target
+statements of this section's proof tasks: each occurs among the Library's Lean
+files only in the module that states it. The staging and submission-history
+areas held no proof candidate for any of these seven statements on 15 November
+2026. The only other Lean
+file there that names one of them is the rejected statement candidate
+`37be3bc5` in submission history.
+Neither track of the program is complete.
