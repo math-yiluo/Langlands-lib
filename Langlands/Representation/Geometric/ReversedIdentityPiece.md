@@ -16,8 +16,8 @@ analytic, support, scalar-action, dimension or minimality premise.
 
 ## Implemented construction
 
-The private whole-conjugation assembly uses only the published
-`AssociatedGeometricPiecesEquivalenceProof` constructions. Whole-Levi
+The shared `Langlands.Geometric.wholeConjugatingPieceEquiv` assembly uses only the
+published `AssociatedGeometricPiecesEquivalenceProof` constructions. Whole-Levi
 conjugation makes both actual intersection Levis full, so the supplied
 Levi equalities make both refined Levis full. The published
 `fullRefinedJacquetEquiv` identifies the actual source normalized refined

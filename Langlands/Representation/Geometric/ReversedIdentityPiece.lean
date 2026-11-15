@@ -31,7 +31,7 @@ set_option maxHeartbeats 1400000 in
 /-- The published full-refinement maps identify any whole-Levi-conjugating
 piece on a smooth source with actual whole-Levi transport, using only the
 actual source and target Levi equalities. -/
-private def wholeConjugatingPieceEquiv (B C : BlockShape n) (w : Equiv.Perm (Fin n))
+def wholeConjugatingPieceEquiv (B C : BlockShape n) (w : Equiv.Perm (Fin n))
     (S : BlockRefinement B) (R : BlockRefinement C)
     (hS : sourceLevi F.Carrier B C w = refinedLevi F.Carrier B S)
     (hR : sourceLevi F.Carrier C B w⁻¹ = refinedLevi F.Carrier C R)
