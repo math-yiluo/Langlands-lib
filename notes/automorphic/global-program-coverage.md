@@ -2204,7 +2204,7 @@ Neither track of the program is complete.
 ## 15 November 2026 shared proof drafts on the program's proof tasks
 
 Worker 3657 checked this section against Library
-`9ed11fc606807fab34c4852a4e88dbabebba69d1` on 15 November 2026. It records the
+`2016a0d994180c702214a75514a08546aa930f07` on 15 November 2026. It records the
 drafts that Worker 3657 shared on proof tasks published by this program, and
 one private draft. A shared draft is a TaskHub draft revision with status
 "unreviewed". It is not a candidate: it has no machine validation and no
@@ -2218,14 +2218,15 @@ run in the pinned environment `5c94c648`; the complete drafts were rechecked
 on 15 November 2026. The check records and the private draft of Task 5768 are
 in Worker 3657's private workspace. They are Worker 3657's own report, not
 public evidence. Every main theorem below uses only
-the axioms `propext`, `Classical.choice` and `Quot.sound`. Library `9ed11fc6`
+the axioms `propext`, `Classical.choice` and `Quot.sound`. Library `2016a0d9`
 contains no proof of any target or input statement named in this section:
 outside statement modules (files named `…Statement.lean` or
 `…Statements.lean`), no Lean file of the Library names any of them, except one
 import of the module of `CuspidalPairBoundaryNonvanishingStatement` in
 `CuspidalPairPartialGammaReduction`, which does not use the statement.
 
-Complete drafts. The main theorem has exactly the target type of the task.
+Complete drafts. The main theorem has exactly the target type of the task (for
+Task 6822, of the first of its two targets).
 
 | Task | Draft | Main theorem and helper modules |
 | --- | --- | --- |
@@ -2234,37 +2235,43 @@ Complete drafts. The main theorem has exactly the target type of the task.
 | Task 6818, `7825d219-2a04-4194-9e19-95b05a84c4dc` | rev 1, `8c813a67` | The four targets `realPairLFactorRightHalfPlaneRegularity`, `complexPairLFactorRightHalfPlaneRegularity`, `realUnitaryGenericPairRegularityReduction`, `complexUnitaryGenericPairRegularityReduction` (namespace `Langlands.Archimedean`), one module each under `Langlands/Representation/Archimedean/`, with the helper `PairBlockExponent`. Check `99ee7241` (all four modules) |
 | Task 7000, `f273c02c-55ab-425f-b5d0-c51b0ea23a34` | rev 2, `d8656841` | `Langlands.Automorphic.cuspidalArchimedeanStandardUnitarizable` (module `CuspidalArchimedeanComponentUnitaryProof`) and `cuspidalArchimedeanPairRegularityReduction` (module `CuspidalArchimedeanPairRegularityReductionProof`). Check `c3577214` |
 | Task 7038, `77a8a491-bc89-4cd8-ad39-99a4c66876f9` | rev 1, `23a8f79c` | `Langlands.Global.cuspidalSupportDataReduction : CuspidalSupportDataReductionStatement.{u}`, module `Langlands.Global.Factors.CuspidalSupportDataReductionProof`. Check `a6992108` |
+| Task 6815, `3e10ac73-00ae-4f30-a604-a09968ca2697` | rev 2, `7c4736e8` | `Langlands.Automorphic.localComponentExistence : LocalComponentExistenceStatement.{u}`, module `Langlands.Automorphic.LocalComponentExistenceProof`. The finite places are handled in `LocalComponentFinitePlace` (with the helper `Langlands.Representation.Smooth.JointIsotypicComponent`), the real and complex places in `OperatorSubquotientPlaceComponent` and `OperatorSubquotientPlaceComponentComplex`. The last two port the Library's place-component results for cuspidal realizations to operator subquotients. Check `3c9f926b` |
+| Task 6822, `a8e36011-2be8-46cc-a440-0da01109d6e6` (JS I Theorem (5.3) from Lemma (5.2); target 1 of the task) | rev 1, `afd2ba56` | `Langlands.Global.cuspidalPairAbsoluteConvergenceReduction : CuspidalPairAbsoluteConvergenceReductionStatement.{u, uQ}`, module `Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof`. The draft adds two helper modules. `Langlands.Analysis.LandauDirichlet` proves Landau's theorem for general Dirichlet series with nonnegative coefficients (Hardy–Riesz 1915, Theorem 10, p.10, registered as `hardy-riesz-1915-dirichlet-series`), also in the exponential form used by JS I, p.556. `Langlands.Representation.Unramified.UnitarySpectrumConjugation` proves that a unitarizable spherical representation with spectrum `s` has `conj s = s⁻¹`. The bound `|α| ≤ q_v^(1/2)` comes from the published `norm_unramifiedClass_le_sqrt`. Check `086a1263`. Target 2 of the task needs a proof of `CuspidalSelfPairContinuationStatement` (Task 6821) |
 | Task 5768, `4e277fc9-6303-4213-bb44-eaea2babfdc1` | private (Worker 3657's report) | `Langlands.ArthurCombinatorics.arthurCombinatoricsStatement : ArthurCombinatoricsStatement.{u}`, module `Langlands.LinearAlgebra.ArthurCombinatoricsProof`, with the six conjuncts as named theorems in five helper modules `ArthurCombinatorics{Alternating,CartanInverse,Sigma,SigmaSupport,LanglandsLemma}`. Check `500d68d7`. The task was created by the operator and has no member, so no draft revision can be shared. Worker 3657 asked to be made its executor (request `7b00d4b50305551181ff81c05877002b`) |
 
 Partial drafts. The main theorem proves the target from the named inputs, or
 proves part of it. Each input is a published statement without a public
-proof, owned by the task named, except the local statement of the Task 6447
-row, which is stated only in that draft.
+proof, owned by the task named.
 
 | Task | Draft | Main theorem, inputs, and what remains |
 | --- | --- | --- |
 | Task 5978, `fd17a0f9-9ab1-46d6-a8d9-af3587d0fdcd` (GH Lemma 11.8.1) | rev 2, `5a7092cb` | `Langlands.Global.cuspidalIsobaricPoleOrder_of_inputs`, from `CuspidalPairPoleStatement` (Task 5921), `CuspidalPairBoundaryNonvanishingStatement` (Task 5816) and `CuspidalSplitCentreUnitaryCentralCharacterStatement` (Task 6998, complete draft above). Proved in the draft: the identity theorem on a half-plane, the splitting of the Euler product at `S` with the unramified comparison of L-polynomials, nonpositive orders of all local factors, Shahidi at `s = 1`, order additivity, and the symmetry of the contragredient relation for cuspidal realizations with unitary central characters (`Langlands.Automorphic.CuspidalOperatorRealization.isContragredientOf_symm`, helper module `Langlands.Automorphic.ContragredientSymmetry`, through the Library's unitary criterion `isContragredientOf_of_unitaryForm`). Check `f74ecc08` |
 | Task 6388, `0b0b55d3-ba74-4eea-be8c-03c8b57b3cee` (GH Theorem 11.7.2) | rev 1, `b40942a9` | `Langlands.Global.cuspidalStrongMultiplicityOne_of_eulerConstituentRecovery`, from `CuspidalEulerConstituentRecoveryStatement` (Task 6446), with one constituent on each side. The bridge of §5 of the statement Markdown is proved: equal finite local classes at unramified places give equal Satake spectra, by the Library's `Unramified.sphericalSpectrumUniqueness`. Check `39b9a347` |
 | Task 6446, `c4f0be57-1a49-4a42-b813-4354e297ab3f` (JS II Theorems 4.2 and 4.4) | rev 1, `f4607cdc` | `Langlands.Automorphic.Unramified.cuspidalSpectralRigidity_of_independence`, from `CuspidalPowerTraceIndependenceStatement` (JS II Theorem 4.2, the first conjunct of the target). Proved: constituent recovery with multiplicities by the multiplicity comparison of the proof of Theorem 4.4, the Euler form, and the comparison of systems attached to one class. Check `bf47aca5` |
-| Task 6815, `3e10ac73-00ae-4f30-a604-a09968ca2697` | rev 1, `c59b8ee0` | `Langlands.Automorphic.localComponentExistence_finitePlace` proves the finite-place conjunct of `LocalComponentExistenceStatement` with no further input. `localComponentExistenceStatement_of_infinitePlaces` gives the target from the real and complex conjuncts, which remain open. Helper `Langlands.Representation.Smooth.JointIsotypicComponent` |
 | Task 6816, `876084f9-496c-4109-818b-291f765e1077` | rev 1, `ce0760f3` | `Langlands.Automorphic.localComponentEmbedding_of_localComponentExistence`, from `LocalComponentExistenceStatement` (Task 6815) |
 | Task 6817, `0e6a285c-e06e-4df1-a4d3-fbebc025050d` | rev 1, `0ead56e4` | `Langlands.Automorphic.localComponentDetermination_forward`, the forward implication of the target, from `LocalComponentExistenceStatement`. The reverse implication (tensor factorization) is open |
 | Task 6824, `5c8e59c5-aa00-4b14-9f2a-3762a62c9314` | rev 1, `045fc62a` | `Langlands.Global.cuspidalSupportUniqueness_of_localComponentExistence`, from `IrreducibleSubquotientAdmissibilityStatement` (Task 6611), `LocalComponentExistenceStatement` (Task 6815) and `CuspidalInducingDataRigidityStatement` (Task 6447) |
 | Task 6610, `b03daed8-a989-47ce-81db-ef575e1c4449` | rev 1, `14ea8f3d` | `Langlands.Automorphic.generatedFormAdmissibility_of_harishChandraFiniteness`, from `HarishChandraFinitenessStatement` (Task 6609) |
-| Task 6447, `c6bba40a-b120-420c-9c51-9eae3198c17e` (GH Theorem 10.7.2) | rev 2, `aa7e7aed` | `Langlands.Global.cuspidalInducingDataRigidity_of_inducedSpectrum`, from `CuspidalEulerConstituentRecoveryStatement` (Task 6446) and from `UnramifiedProductInducedSpectrumStatement`, a local statement stated in the draft and not proved there: at a finite place, a spherical subquotient of `i(σ_1, …, σ_k)` with spherical blocks `σ_i` of spectra `s_i` has the concatenated spectrum (the first step of the proof of JS II Theorem 4.4, p.809). Proved: the supplied spectra are spherical spectra of the local components, the common subquotient has one spectrum, and the two finite sums have the same Euler polynomials outside a finite set. Check `d0a93b47` |
+| Task 6447, `c6bba40a-b120-420c-9c51-9eae3198c17e` (GH Theorem 10.7.2) | rev 3, `f6851b40` | `Langlands.Global.cuspidalInducingDataRigidity_of_constituentRecovery`, from `CuspidalEulerConstituentRecoveryStatement` (Task 6446) alone (module `Langlands.Global.Factors.CuspidalInducingDataRigidityReduction`). The local input of revision 2 is now proved in the draft: `unramifiedProductInducedSpectrum : UnramifiedProductInducedSpectrumStatement` (helper module `Langlands.Representation.Unramified.ProductInducedSpectrum`). It says that at a finite place, a spherical subquotient of `i(σ_1, …, σ_k)` with spherical blocks `σ_i` of spectra `s_i` has the concatenated spectrum (the first step of the proof of JS II Theorem 4.4, p.809). Check `7b4b4ffb` |
+| Task 6611, `31e7c233-a07b-411e-884f-e919222d7c3f` (Borel–Jacquet §4.6) | rev 1, `0aaee6da` | `Langlands.Automorphic.irreducibleSubquotientAdmissibility_of_generatedFormAdmissibility`, from `GeneratedFormAdmissibilityStatement` (Task 6610), module `Langlands.Automorphic.IrreducibleSubquotientAdmissibilityReduction`. An irreducible operator subquotient is the image of the realization generated by one automorphic form, and joint admissibility passes to quotients. The quotient step uses the Library's compact Maschke lifting lemma and averaging over a compact open subgroup. Check `bbf430f2` |
 
 Consequences for the L4 targets. With the drafts of Tasks 6388 and 6446,
 strong multiplicity one for cuspidal realizations (GH Theorem 11.7.2) depends
 only on JS II Theorem 4.2. That theorem rests on the asymptotics of JS II
-Theorem 4.1, which needs JS I Lemma 5.2 and Theorem 5.3 (Tasks 6821 and 6822),
-the pole at `s = 1` (GH Theorem 11.7.1, Task 5921, with local regularity) and
-Shahidi's nonvanishing (Task 5816). With the drafts of Tasks 5978 and 6998, GH
+Theorem 4.1. Those need JS I Theorem 5.3, which by the draft of Task 6822
+depends only on JS I Lemma 5.2 (Task 6821). They also need the pole at `s = 1`
+(GH Theorem 11.7.1, Task 5921, with local regularity) and Shahidi's
+nonvanishing (Task 5816). With the drafts of Tasks 5978 and 6998, GH
 Lemma 11.8.1 depends only on GH Theorem 11.7.1 and Shahidi's theorem. With the
-drafts of Tasks 6447 and 6446, GH Theorem 10.7.2 depends only on the local
-statement above and JS II Theorem 4.2. These
+drafts of Tasks 6447 and 6446, GH Theorem 10.7.2 depends only on JS II Theorem
+4.2. With the drafts of Tasks 6611 and 6610, the admissibility of irreducible
+automorphic subquotients (Borel–Jacquet §4.6) depends only on Harish-Chandra's
+finiteness theorem (Task 6609). The draft of Task 6815 proves the existence of
+local components at every place, which is the input of the drafts of Tasks
+6816, 6817 and 6824. These
 dependencies hold only once the drafts are submitted, reviewed and published.
 
 The shared DAG records each draft on the description of the corresponding
-proof node (revisions 270–291). Revision 287 adds an edge from
+proof node (revisions 270–303). Revision 287 adds an edge from
 `proof.cuspidal-strong-multiplicity-one` to `proof.automorphic-rigidity`.
 Neither track of the program is complete.
