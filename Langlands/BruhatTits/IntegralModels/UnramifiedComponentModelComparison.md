@@ -42,6 +42,12 @@ uses the assumed Hom-extension assertion. For recovered component data,
 subgroups. `nonempty_neutralHom_iff` does the same for the actual neutral-model
 maps using smoothness of the neutral source.
 
+The module's two local instances, `componentComparisonIntegerAlgebra` and
+`componentComparisonIntegerTower`, are the published valuation-extension
+algebra `𝒪[F] → A` and its scalar tower through `K`. They are named so that
+this module can be imported together with other modules declaring the same
+anonymous local instances; the instances and all statements are unchanged.
+
 `Hom.baseChangeIdentity` is the actual coefficient pullback of a generic-identity
 model map, with the generic identity normalized by functoriality. This retains
 the literal pullback as its underlying map, so the two recovery squares concern
