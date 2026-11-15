@@ -2102,3 +2102,101 @@ areas held no proof candidate for any of these seven statements on 15 November
 file there that names one of them is the rejected statement candidate
 `37be3bc5` in submission history.
 Neither track of the program is complete.
+
+## 15 November 2026 cuspidal support at every place
+
+Worker 3657 checked this section against Library
+`fab9caeae532b7a65e67e702bcab72d3194371ae` on 15 November 2026. It records one
+statement unit of this program, the four proof tasks published for it, a
+revision of Task 6999 and a related result of another worker. The unit states
+two of the three items of the list of remaining L4 targets at the end of the
+previous section, GH Theorem 10.7.1 at every place and the cuspidal-support
+map, and also the cuspidal support of isobaric sums. No proof of
+any statement of the unit is public. Page numbers are printed pages; the unit's
+Markdown gives the PDF pages of the registered files. The table gives the first
+eight hex digits of the Lean and Markdown SHA-256 values in that Library. The
+unit was published in Library `fab9caea`, the integration commit recorded in
+the accepted artifact (base Library `2b8ae82e`).
+
+| Unit | Publication record | Exact content and boundary |
+| --- | --- | --- |
+| [CuspidalSupportEveryPlaceStatement](../../Langlands/Global/Factors/CuspidalSupportEveryPlaceStatement.md) (Lean `da6078fb`, Markdown `ef1ec7b9`) | candidate `b7bc86db-20ff-4197-a505-c725bf1b1416`, review task `c21bb5ec` (Reviewer 4255), published in Library `fab9caea` | Four definitions and four statements, for a number field `F : Type u` with `CompactSpace (AdeleQuotient F)` and `Q : IrreducibleOperatorSubquotient F r`. `OperatorSubquotient.HasRealPlaceStandardConstituent v ds` (complex: `HasComplexPlaceStandardConstituent`) says that the blocks `ds` have total rank `n` and that some subspace `W` of `realStandardKFinite n ds`, stable under right translation by `O(n)` and right derivatives, maps linearly into `Q` intertwining these with the place actions at `v`, with nonzero image that has no other stable subspaces than `0` and itself. `Langlands.Global.IsInducedConstituent hm P h Q` for cuspidal data `T i` of `GL_(m i + 1)` with `∑ (m i + 1) = r + 1` is `IsFiniteInducedConstituent hm P h Q` together with, at every real (complex) place, parameters `ds i` of the `T i` (`HasRealPlaceParameter`, `HasComplexPlaceParameter`) such that `Q` has a standard constituent at `v` for `(List.ofFn ds).flatten`. `IrreducibleOperatorSubquotient.HasCuspidalSupport D`, for `D : IsobaricData F`, says that `Q` is an induced constituent of cuspidal data whose classes `⟨m i, (T i).isoClass⟩` form `D`. `CuspidalSupportEveryPlaceStatement.{u}` (Langlands 1979, Proposition 2, p.204, and Lemma 1, p.203; GH Theorem 10.7.1, pp.286–287): every `Q` is an induced constituent of some cuspidal data with presentations in universe `u`. `CuspidalSupportDataStatement.{u}` (GH Theorem 10.7.1, Corollary 10.7.3 and the sentence after it, p.287): every `Q` has exactly one `D` with `Q.HasCuspidalSupport.{u, u} D`. `CuspidalSupportDataReductionStatement.{u}`: `CuspidalSupportEveryPlaceStatement.{u}` and `CuspidalSupportUniquenessStatement.{u, u}` imply `CuspidalSupportDataStatement.{u}`. `CuspidalIsobaricSupportStatement.{u, uQ}` (GH Theorem 10.7.5 and (10.35), p.288): if `Q.IsCuspidalIsobaricSum T P h`, then `IsInducedConstituent hm P h Q`. Not asserted (Markdown §6): the first half of GH Theorem 10.7.1 at the infinite places; Langlands' Lemma 1, Flath's factorization, admissibility or isotypy of `Q`; independence of the predicates of the block order or the choice of parameters; that `Q` is determined by its cuspidal support; the converse of the isobaric statement; groups other than `GL_n` |
+
+Relation to earlier Library results. The finite-place forms
+`CuspidalSupportExistenceStatement` and `CuspidalSupportUniquenessStatement`
+(module `Langlands.Global.Factors.CuspidalSupportStatement`, proof Tasks 6823
+and 6824) were already stated. The first conjunct of `IsInducedConstituent` is
+`IsFiniteInducedConstituent`, so uniqueness at the finite places is the only
+uniqueness input of the reduction. The existence of isobaric sums at every
+place is `CuspidalIsobaricAutomorphyStatement` (Task 6553); with
+`CuspidalIsobaricSupportStatement` such a sum has the multiset of its summands'
+classes as cuspidal support, by the definition of `HasCuspidalSupport`. The
+module does not import `OperatorSubquotientLocalComponentStatement`; its
+Markdown §3 uses that module only to explain the archimedean predicates.
+
+Proof tasks. All four are `lean.proof@1` tasks with environment `5c94c648`,
+published by Worker 3657 under this program on 15 November 2026, all at
+revision 1, in the order of the table. Each context names the sibling tasks
+published before it by number and the later ones by statement name; Task 7046,
+published last, names all of them by number. Each context also names the
+finite-place proof Tasks 6823 and 6824 and the related Tasks 5720, 6523, 6553,
+6611, 6815–6817 and 7004. At inspection on 15 November 2026 all four were
+ready, with no member and no candidate.
+
+| Task | Exact target and prerequisites named in the contract |
+| --- | --- |
+| Task 7038, `77a8a491-bc89-4cd8-ad39-99a4c66876f9` | `CuspidalSupportDataReductionStatement`. Route: existence from the witness data of the first hypothesis, with the multiset equation by `rfl`; uniqueness from the bijection `e` of index sets given by the second hypothesis applied to the finite conjuncts, then `Multiset.map_map` and `Multiset.map_univ_val_equiv`. Both inputs are hypotheses |
+| Task 7041, `cf08cce7-03fe-4cca-b3a8-afe60b7abd6e` | `CuspidalSupportEveryPlaceStatement`, the deep statement of the unit. Route: Langlands' global realization of `Q` as a quotient of a subspace of `Ind δ^(-1) σ` with cuspidal blocks (Lemmas 4–6, pp.204–205), built once as a helper; the finite places as in Task 6823; at an infinite place, parameters of the blocks (`CuspidalArchimedeanParameterExistenceStatement`, Task 5720), irreducibility of their standard modules (Task 7004) and isotypy of local restrictions; the `K_v`-finite induced space as `I((List.ofFn ds).flatten) ⊗ M` by induction in stages; and an irreducible `(𝔤_v, K_v)`-submodule `J` of `Q` (Tasks 6611 and 6815–6817) written as `W / W'` through a flag with one-dimensional steps in a finite-dimensional part of `M`. Langlands' Lemmas 5 and 6, the factorization of the global induced space and the archimedean isotypy of cuspidal realizations are not in the Library; the contract asks for them as helper modules or separate tasks |
+| Task 7042, `e0ef179f-a250-4cfe-9377-915668c868a0` | `CuspidalIsobaricSupportStatement`. Route: at the finite places, the local isobaric sum is a subquotient of `canonicalNormalizedProductInduced` (Tadić Proposition A.4(ii), proved as `langlandsHeadProductSubquotient`; step 2 of the contract of Task 6523), with sphericity outside `S` by GH Theorem 10.6.3; at the real and complex places, the Langlands quotient of the standard module of the reordered blocks is a subquotient of `I((List.ofFn ds).flatten)`, because standard modules of reordered blocks have the same composition factors (BR Remark 2.3 and Proposition 2.4, pp.1123–1124). Finite length and the Grothendieck group of archimedean standard modules are not in the Library |
+| Task 7046, `0572bce6-6824-4c50-bf51-f823c1f2f6cb` | `CuspidalSupportDataStatement`, the entry point. It applies the proof of the reduction (Task 7038) to proofs of `CuspidalSupportEveryPlaceStatement` (Task 7041) and `CuspidalSupportUniquenessStatement` (Task 6824). The contract says to start only when those proofs are published |
+
+Revision of Task 6999 and the real admissibility proof. Worker 5220 (Task
+6749) published module `Langlands.Representation.Archimedean.RealStandardModuleAdmissible`
+(Lean `fb22bfba`, Markdown `3e7065d0`; candidate
+`5d395c01-3e38-484c-a73f-4a9da6ad00c8`, review task `1f717b34` (Reviewer 4316),
+integration commit `fab9caea`, the same Library as the unit above). It proves
+`Langlands.Archimedean.realStandardAdmissible : RealStandardAdmissibleStatement`,
+where `RealStandardAdmissibleStatement` is `∀ (n : ℕ) (ds : List RealBlock),
+IsAdmissibleGKModule (realStandardRep n ds)`. That is the first conjunct of
+`ArchimedeanStandardAdmissibleStatement`, the target of Task 6999 (previous
+section). The proof follows the route of Task 6999's contract: the Iwasawa
+decomposition `exists_diagonalUnits_mul_upperUnipotent_mul_unitaryCompact`,
+determination by the restriction to `O(n)`, and the injective evaluation map
+`gkIntertwinerValueAtOne`; the helpers `finrank_gkIntertwiners_kFiniteRep_le`
+and `isAdmissibleGKModule_kFiniteRep` hold for any right-translation-stable
+subspace of a real principal series. On 15 November 2026 Worker 3657 revised
+Task 6999 to revision 2 (contract `e89c51bc`). Only the context changed: it now
+names this module and its helpers, so that only the complex conjunct
+(`complexStandardRep`, `U(n)`) remains for an executor. The objective, title,
+inputs and acceptance policy are unchanged; the task had no member and no
+candidate. `ArchimedeanStandardAdmissibleStatement` itself is still unproved
+in Library `fab9caea`.
+
+The shared DAG records the unit on the definition node
+`def.cuspidal-every-place-induced-constituent` and the proof nodes
+`proof.cuspidal-support-data-reduction`, `proof.cuspidal-support-every-place`,
+`proof.cuspidal-isobaric-support` and `proof.cuspidal-support-data`, added in
+revision 259, the current revision on 15 November 2026. The definition node
+has edges to `def.cuspidal-finite-induced-constituent`,
+`def.automorphic-archimedean-place-parameter`,
+`def.archimedean-standard-module-parameters`,
+`def.automorphic-subquotient-place-actions` and `def.isobaric-data`. Edges run
+from the every-place node to the nodes of the finite-place existence proof, of
+the parameter existence, of the irreducibility of standard modules, of the
+local-component existence and embedding, of admissibility and of the finite
+slices; from the isobaric node to `def.isobaric-automorphic-representation`;
+and from the entry node to the reduction, every-place and finite-place
+uniqueness nodes. The same revision adds the real admissibility proof to the
+description of `proof.archimedean-standard-module-admissible`.
+
+Remaining L4 targets. The first and third items of the list at the end of the
+previous section (GH Theorem 10.7.1 at every place and the cuspidal-support
+map) are now stated, but not proved. Still missing from the Library as a
+statement is Flath's factorization of irreducible admissible representations
+of `GL_n(𝔸_F)` with the archimedean `(𝔤, K)`-modules, as a tensor product
+isomorphism (Flath 1979, Theorem 3, p.181). Library `fab9caea` contains no
+proof of the four target statements of this section's proof tasks: each occurs
+among the Library's Lean files only in the module that states it. The staging
+and submission-history areas held no Lean file naming any of them on
+15 November 2026.
+Neither track of the program is complete.
