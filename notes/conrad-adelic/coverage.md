@@ -17,7 +17,9 @@ audits below update selected rows against `ed924aef420de137b4cbaa3b063a3618afcd7
 `7dc9118a3eb340e83e65d6e4174763b7a61e573c` and
 `2e5aa9989a9e5567670a14eb7079e3a844641990` and
 `2e46b9cac0230529f50cdf96bbe4713c06701fc2`; the revision 2 audit below uses
-`aae8cb822941fac72c628376bd39754a1bc40b74`. Unchanged rows retain their earlier
+`aae8cb822941fac72c628376bd39754a1bc40b74`, and the 14 and 15 November audits use
+`f676fad71e1679d672d3e20560dc814d4e1f8ffd` and
+`b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`. Unchanged rows retain their earlier
 audit provenance. For each row the ledger
 records the declarations, the hypotheses under which the Lean statements assert the source
 claim, the proof status found by searching that commit, and the responsible task for each open
@@ -35,6 +37,171 @@ or `Langlands.AlgebraicGeometry.AffineLimit` (paths `Langlands/AlgebraicGeometry
 `FiniteTypeFinitenessDescent` and `FiniteTypeSurjectivityDescent`, which are in
 `Langlands.Algebra.FilteredRing` (path `Langlands/Algebra/`). Names written with a further prefix
 are relative to these namespaces; names beginning with `Langlands.` are absolute.
+
+## Smooth-dimension and analytification publications, 15 November 2026
+
+This focused audit checks Library `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`
+under the unchanged revision 2 contract. It records 22 independently reviewed
+publications of parent Task 3519: nine smooth-dimension units and thirteen
+analytification units. Their 44 Lean and Markdown files match this Library and
+the workspace byte for byte. The commit that first contains each pair was found by
+scanning the Library manifests. This Library proves none of the thirteen new
+statements (seven smooth-dimension, six analytification): each statement name occurs only in its own module. Every statement
+has its own proof task, published by the parent, because the parent's
+`lean.peer@1` policy accepts definitions and statements but not proofs. All
+earlier dated sections, assertion and hypothesis cells, and table order are
+retained. This note updates selected declaration and status cells and the
+remaining obligations; it does not certify whole-paper completion. Its statuses
+supersede the 14 November description of candidates
+`80256500-ff18-4319-b460-d3bde9e41e12` and
+`f2d2c6ef-96a6-4993-9ead-a59caccfe218` as unpublished.
+
+**Varying-dimension smooth spaces (Prop 5.4, p.15).** These units are in
+`Langlands/AlgebraicGeometry/AlgebraicSpace/`, namespace
+`Langlands.AlgebraicGeometry.AlgebraicSpace`.
+
+- `SmoothSourceDimensionTopologyStatement`, candidate
+  `80256500-ff18-4319-b460-d3bde9e41e12`, Reviewer 3867, first published at
+  `7f5b5f04a855fc0b4671393213c87415a6ee2aaf`. It states that the actual
+  `SmoothDimensionPieces.fieldPointEquiv` from `X(K)` to the dependent sum of the
+  piece point spaces is a homeomorphism for `etaleChartTopology`. The hypotheses are a
+  henselian nontrivially normed `K` and a quasi-separated smooth `X`; neither
+  completeness nor local separatedness is assumed. Proof: Task 6936
+  `7e14e6f5-9447-4b9a-8f26-96906d761802`.
+- `SmoothSourceAnalyticAtlas` (definition), candidate
+  `f2d2c6ef-96a6-4993-9ead-a59caccfe218`, Reviewer 4007, first published at
+  `aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a`. It defines `DimensionPointAtlas`
+  with `IsAnalytic`, `AnalyticOn`, `AnalyticMap`, `IsLocalAnalyticIso` and
+  `Equivalent`. It also constructs `AnalyticPointStructure.dimensionAtlas` and
+  proves `liftDimensionChart_transition`.
+- `SmoothSourceDimensionAnalyticAssemblyStatement` (candidate
+  `d7a3451f-c52e-4c86-a60d-ab259584d96c`, Reviewer 4191),
+  `SmoothSourceDimensionAnalyticFunctorialityStatement` (candidate
+  `76227c22-af14-4e03-9fd2-6b2a855309c6`, Reviewer 4204),
+  `SmoothSourceDimensionEtaleAnalyticIsoStatement` (candidate
+  `3ad09380-dc16-4159-bca8-f0ad3dd410e6`, Reviewer 4212) and the definition
+  `SmoothSourceAnalyticStructure` (candidate
+  `1d047792-f10b-430f-9cc0-4bbf05ee0960`, Reviewer 4229) were all first published
+  at `4abbe7aabd9c92005d91c9d5bba86b879e928bb3`. The three statements cover a
+  henselian nontrivially normed `K` and a pure-dimensional family `σ`. The
+  assembly statement assumes that `σ` is analytic; the other two assume that `σ` is
+  admissible. They assert that the lifted atlas is analytic, that every morphism of
+  smooth, quasi-separated, locally separated spaces is analytic, and that every
+  étale morphism is a local analytic isomorphism. The definition introduces the
+  family `DimensionAnalyticStructure` with `IsAnalytic`, `IsFunctorial`,
+  `IsEtaleLocalIso`, `AgreesWithAffineSpace`, `IsAdmissible` and `Equivalent`, and
+  `AnalyticPointStructure.dimensionStructure`. Proofs: Task 7025
+  `95b60e1f-6ea1-4ce0-ac6f-1370614addc2`, Task 7026
+  `4743ea4e-667d-45b4-a9da-29300160e0cf` and Task 7027
+  `ee02855b-785f-4e7d-af71-d3b9e32602b1`.
+- `SmoothSourceDimensionAffineAgreementStatement` (candidate
+  `4147868c-ce77-4109-aee2-ec7ac46a69db`, Reviewer 4282),
+  `SmoothSourceDimensionAnalyticUniquenessStatement` (candidate
+  `a2c92d7d-87b8-40d6-9bf4-98268bd406d2`, Reviewer 4284) and
+  `SmoothSourceAnalyticManifoldStatement` (candidate
+  `59862d27-d5ff-4ed5-be9c-73d22dda4519`, Reviewer 4286) were first published at
+  `fab9caeae532b7a65e67e702bcab72d3194371ae`. The agreement statement asserts that
+  the lifted structure agrees with polynomial affine space. The uniqueness statement
+  asserts that any two admissible structures are equivalent, over any nontrivially
+  normed `K`. `SmoothSourceAnalyticManifoldStatement` is the source-level assertion
+  of the varying-dimension analytic manifold for complete nontrivially normed `K`:
+  an admissible structure exists, and it is unique up to equivalence. Proofs:
+  Task 7049 `5df1d791-597c-4b46-929c-4fa2fa6ff30c`, Task 7050
+  `94d3b908-dd01-4622-b41a-6724eab58e82` and Task 7051
+  `685b8c94-5194-4cb7-8b30-4977774ce694`.
+
+**Analytification (p.19).** These units are in `Langlands/Geometry/Analytic/`, with
+namespaces `Langlands.Analytic.AffineAnalytification` and
+`Langlands.Analytic.SchemeAnalytification`. All assume a complete nontrivially
+normed nonarchimedean `K` and a finite polynomial presentation `P` of a commutative
+`K`-algebra `A`, or a scheme `X` locally of finite type over `Spec K`. The
+additional registered original is Berkovich, *Spectral theory and analytic
+geometry over non-Archimedean fields* (1990), source
+`provided-a03a0182668f6b92b01deacac09a9992b3edf55e23a0a2194554384ae44bd8d4`,
+SHA-256 `9b543e7ffae8ec6febf154a60c4d11a288f7ecc3795c66f004ba3200a6824e79`.
+
+- First published at `fab9caeae532b7a65e67e702bcab72d3194371ae`:
+  `AffineAnalytificationRationalPoints` (definition; candidate
+  `1767d8cf-b298-4087-8e9f-961594cc06a1`, Reviewer 4253), which constructs
+  `analyticPoint`, `toFieldPoint` and `toAlgPoint`, and `AffineAnalytificationMap`
+  (definition; candidate `1cc9f0f1-376d-48a1-850a-6ee7c25769f0`, Reviewer 4300),
+  which constructs `baseMap` and the strong atlas map `strongHom` for every
+  `K`-algebra map.
+- First published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`:
+  - `AffineAnalytificationRationalPointsStatement` (candidate
+    `72e33ec6-47ec-4dd5-8942-0cf614440d22`, Reviewer 4359; proof Task 7084
+    `a12135e5-19d0-4b8d-88d1-cf7f0bf4a946`): `toFieldPoint` is bijective;
+    `analyticPoint` is a topological embedding of `X(K)`; there is a bijection with the
+    `K`-points of the saturated atlas.
+  - `SchemeAnalytificationSpace` (definition; candidate
+    `bae177d9-72c8-42f5-a1c1-969413a6cdae`, Reviewer 4362): the topological glue
+    `Space` of the affine analytifications over all affine opens, with `ι`, `localMap`
+    and the universal map `desc`.
+  - `AffineAnalytificationFunctorialityStatement` (candidate
+    `352f61b7-1cd9-4582-8c59-71ad6e5c4b31`, Reviewer 4363; proof Task 7085
+    `6545548c-9d0b-4359-a868-8e52fd060af5`): `strongHom` preserves identities and
+    composites. The identity maps between the atlases of two presentations compose
+    to the identity, which gives presentation independence in the affine case.
+  - `AffineAnalytificationRationalPointNaturalityStatement` (candidate
+    `519d1433-c0bc-4902-b1a8-0f80a309e278`, Reviewer 4366; proof Task 7072
+    `8a49d73c-1180-41f0-8b5c-03f5bdff1d86`, with a complete proof draft shared as
+    draft revision 1): for a `K`-algebra map `f`, `baseMap` sends the analytic point
+    of a rational point `φ` to the analytic point of `φ ∘ f`.
+  - `AffineAnalytificationImmersionStatement` (candidate
+    `27b2aa33-3020-44dc-850c-3a18768412cd`, Reviewer 4375; proof Task 7086
+    `15296f18-5435-4142-bd49-fdaf726f1890`): surjections give closed embeddings,
+    basic localizations give open embeddings, and the two images are complementary.
+  - `AffineAnalytificationSeminorm` (definition; candidate
+    `117c9ba6-e8cc-455d-a645-a4e2d6ff791f`, Reviewer 4387): `pointSeminorm` and
+    `ExtendsNorm`.
+- First published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`:
+  - `AffineAnalytificationSeminormStatement` (candidate
+    `a68225a2-085b-403a-b9df-96f6908019af`, Reviewer 4406; proof Task 7083
+    `72a185e1-3828-4881-b54e-77a117168474`, with a complete proof draft shared as
+    draft revision 1). This is Berkovich's Remark 3.4.2 for `Spec A`: the points are
+    exactly the multiplicative seminorms on `A` that extend the norm of `K`, with the
+    weak topology.
+  - `SchemeAnalytificationGluingStatement` (candidate
+    `2a2bc9e4-067c-428e-9c38-b421c96b84c7`, Reviewer 4412; proof Task 7087
+    `d8f36429-3ce4-491e-9d69-e57ed9b29c76`): the restriction maps and the maps `ι`
+    are open embeddings; images of two affine opens meet in the images of the affine
+    opens they share; the affine case is a homeomorphism; and `X` is separated if
+    and only if `Space` is Hausdorff.
+  - `SchemeAnalytificationRationalPoints` (definition; candidate
+    `aed9a7e3-4948-4161-aea5-85946e98b44d`, Reviewer 4414):
+    `analyticRationalPoint` on actual `K`-points of `X`.
+  - `AnalytificationCenter` (definition; candidate
+    `3eae0b6f-e6ff-47a6-bc75-e2ac33139e68`, Reviewer 4420): the continuous center
+    maps `X^an → Spec A` and `X^an → X` (Berkovich, Theorem 3.4.1).
+  - `AffineAnalytificationScalarExtension` (definition; candidate
+    `0d33d3ef-6034-4014-802f-926ed50b2190`, Reviewer 4436): for every complete
+    nonarchimedean extension `L/K`, the continuous map `extensionMap`, and the
+    base-change presentation `baseChangePresentation` of `L ⊗[K] A` with the map
+    `baseChangeMap : (X_L)^an → X^an`, `X = Spec A`.
+
+Three further parent statements are staged and independently approved, but
+unpublished at this commit; their base is this Library. They are
+`AnalytificationCenterStatement` (candidate `d095a1d9-af2c-480f-a7ea-f0acc4e34810`,
+Reviewer 4446: the center maps are surjective and their fibres over rational points
+are single points), `SchemeAnalytificationRationalPointsStatement` (candidate
+`8c5afff7-58f9-4bb3-8fde-46fbc7bbad04`, Reviewer 4449: `analyticRationalPoint` is
+chart independent and injective, has the expected image, and is an embedding for
+`schemePointTopology`) and `AffineAnalytificationBaseChangeStatement` (candidate
+`868763f3-1de0-4519-aaf0-a148c86adbf7`, Reviewer 4453: `baseChangeMap` is surjective,
+and its fibre over a rational point is one point).
+
+These units do not supply the following. The glued scheme space is only a
+topological space. The Library has no analytic-space structure in
+`Langlands.Analytic.SaturatedAtlasPresentation.LocalizedCategory` for a
+non-affine scheme, no map of glued spaces for a scheme morphism, and no
+analytification universal property (`desc` is only the topological gluing
+property). The scalar-extension unit constructs only the comparison map
+`(X_L)^an → X^an`. The canonical isomorphism `(X^an)_L ≅ (X_L)^an` would need
+analytic ground-field extension in the host; neither is constructed or stated. The
+representable analytic étale sheaf quotient for algebraic spaces is not
+constructed, and the rational-point comparison with `etaleChartTopology` for
+algebraic spaces is not stated. Fibre products and étale maps are not stated
+either.
 
 ## Published prerequisites and pending bridges, 14 November 2026
 
@@ -926,9 +1093,9 @@ of `u_0`; this local form is what the openness argument uses.
 | Prop 5.4 | open- and closed-immersion embeddings in the full source class | `isOpenEmbedding_ringPointsMap`, `isClosedEmbedding_ringPointsMap` (`EtaleChartTopologyFunctorial`) | henselian nontrivially normed `K`; both spaces quasi-separated and locally of finite type; the actual morphism is respectively an open or closed immersion; no local separatedness | proved |
 | Prop 5.4 | étale openness in the full source class | `isOpenMap_ringPointsMap_of_isEtaleMorphism` (`EtaleChartTopologyFunctorial`, using `EtaleChartOpenMap`) | henselian nontrivially normed `K`; source quasi-separated and locally of finite type; arbitrary target and an étale morphism; no local separatedness | proved: openness only; the full-package local-homeomorphism assertion keeps its locally separated scope |
 | Prop 5.4 | Hausdorff (separated), totally disconnected, locally compact | `SeparatedRationalPointTopologyProperties` (part of the statement above) | `X` quasi-separated, locally of finite type and separated; totally disconnected for ultrametric `K`; locally compact for locally compact `K` | proved (`t2Space_etaleChartTopology`, `totallyDisconnected`, `locallyCompactSpace_etaleChartTopology`) |
-| Prop 5.4 | `k`-analytic manifold structure for smooth `X`, complete `k` | `AnalyticPointStructure` (`AnalyticPointManifold`), `AnalyticPointManifoldStatement` | complete `K`; spaces quasi-separated, locally separated, locally of finite type, with an étale atlas smooth of relative dimension `n`; existence and uniqueness up to equivalence | proved (`analyticPointManifold`, module `AnalyticPointManifoldProof`; Task 5259, closed): existence by the admissible family `canonicalAnalyticPointStructure` (`canonicalAnalyticPointStructure_isAdmissible`, intermediate statements below), uniqueness by `AnalyticPointStructure.equivalent_of_isAdmissible` (module `AnalyticPointUniqueness`); this proves the pure-dimensional family. The actual algebraic pieces are now published; the rational-point topology and varying-dimension analytic assembly remain successors with the parent, as detailed in the 14 November audit |
+| Prop 5.4 | `k`-analytic manifold structure for smooth `X`, complete `k` | `AnalyticPointStructure` (`AnalyticPointManifold`), `AnalyticPointManifoldStatement` | complete `K`; spaces quasi-separated, locally separated, locally of finite type, with an étale atlas smooth of relative dimension `n`; existence and uniqueness up to equivalence | proved (`analyticPointManifold`, module `AnalyticPointManifoldProof`; Task 5259, closed): existence by the admissible family `canonicalAnalyticPointStructure` (`canonicalAnalyticPointStructure_isAdmissible`, intermediate statements below), uniqueness by `AnalyticPointStructure.equivalent_of_isAdmissible` (module `AnalyticPointUniqueness`); this proves the pure-dimensional family. The actual algebraic pieces are published. The varying-dimension statements, including the source-level `SmoothSourceAnalyticManifoldStatement` for varying dimension, are published as recorded in the 15 November audit. Their proofs (Tasks 6936, 7025–7027 and 7049–7051) remain open |
 | Prop 5.4, manifold bridge | actual open-and-closed dimension pieces and section decomposition | `SmoothDimensionPieces.pointDimension` (`SmoothSourcePointDimension`); `SmoothDimensionPieces.space`, `inclusion`, `restrictedAtlasMap`, `space_isSmoothPureDimensional` (`SmoothSourceDimensionPieces`); `SmoothDimensionPieces.fieldPointFactor`, `fieldPointEquiv` (`SmoothSourceDimensionFieldPoints`) | any field `K`, arbitrary `SmoothOverBase X`; all `n : ℕ`, including empty pieces, with no quasi-compactness or finite-range assumption; pure-dimensional analytic specialization adds quasi-separatedness, local separatedness and a norm; section maps over every field extension | constructed with intrinsic laws, independently accepted and published at `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`: candidates `dd56bbc9-37e4-4acf-89e3-7e654da5fbf3`, `5b751880-9ae8-4b1a-bc5e-7a35268cb9b4` and `331ba145-f3d7-49d3-bad3-0adf9381a3b4`, Task 6286 `56e7aa6c-1336-4e2d-a66a-59f30689a9f7`. Actual restricted atlases, section factorizations and both equivalence laws are proved; the topological and analytic successors remain open. Derived host content, not a separate numbered source theorem |
-| Prop 5.4, manifold bridge | rational-point disjoint-union topology and varying-dimension analytic structure | published algebraic input `SmoothDimensionPieces.fieldPointEquiv`; unpublished `SmoothSourceDimensionTopologyStatement` and `AnalyticPointStructure.dimensionAtlas` (`SmoothSourceAnalyticAtlas`), with `DimensionPointAtlas.IsAnalytic`, `AnalyticOn`, `AnalyticMap`, `IsLocalAnalyticIso` and `Equivalent` | smooth, quasi-separated, locally separated `X` over complete nontrivially normed `K`; actual `X(K)` homeomorphic to the dependent sum of the actual piece point spaces for `etaleChartTopology`; analytic maps on intersections with target pieces, étale dimension preservation and local analytic isomorphisms, scheme agreement and uniqueness | parent candidates `80256500-ff18-4319-b460-d3bde9e41e12` (statement) and `f2d2c6ef-96a6-4993-9ead-a59caccfe218` (definition) are staged, independently approved and awaiting integration; neither is public. The separate topology statement uses weaker henselian/quasi-separated hypotheses without completeness or local separatedness. The atlas construction takes a supplied pure-dimensional family and proves only its topological/intrinsic laws. The homeomorphism proof and all varying-dimension analytic assertion/proof successors remain open; the existing pure-dimensional family does not discharge them |
+| Prop 5.4, manifold bridge | rational-point disjoint-union topology and varying-dimension analytic structure | published algebraic input `SmoothDimensionPieces.fieldPointEquiv`; published `SmoothSourceDimensionTopologyStatement`; `AnalyticPointStructure.dimensionAtlas` (`SmoothSourceAnalyticAtlas`), with `DimensionPointAtlas.IsAnalytic`, `AnalyticOn`, `AnalyticMap`, `IsLocalAnalyticIso` and `Equivalent`; `DimensionAnalyticStructure`, `IsAdmissible`, `Equivalent` and `AnalyticPointStructure.dimensionStructure` (`SmoothSourceAnalyticStructure`); `SmoothSourceDimensionAnalyticAssemblyStatement`, `SmoothSourceDimensionAnalyticFunctorialityStatement`, `SmoothSourceDimensionEtaleAnalyticIsoStatement`, `SmoothSourceDimensionAffineAgreementStatement`, `SmoothSourceDimensionAnalyticUniquenessStatement` and `SmoothSourceAnalyticManifoldStatement` | smooth, quasi-separated, locally separated `X` over complete nontrivially normed `K`; actual `X(K)` homeomorphic to the dependent sum of the actual piece point spaces for `etaleChartTopology`; analytic maps on intersections with target pieces, étale dimension preservation and local analytic isomorphisms, scheme agreement and uniqueness | stated, not proved: two definitions and seven statements of parent Task 3519 are independently accepted and published at the commits recorded in the 15 November audit. The topology statement uses weaker henselian/quasi-separated hypotheses, without completeness or local separatedness. The intermediate analytic statements assume a henselian `K` and an analytic or admissible pure-dimensional family. The source-level `SmoothSourceAnalyticManifoldStatement` assumes a complete `K`. The proofs are open in Task 6936 `7e14e6f5-9447-4b9a-8f26-96906d761802`, Tasks 7025–7027 and Tasks 7049–7051; the existing pure-dimensional family does not discharge them |
 | Prop 5.4, proof (p.15) | every rational point lifts through an étale map from an affine scheme (Knutson II.6.4) | `RationalPointEtaleLiftStatement` | any field `k`; `X` quasi-separated | proved (`RationalPointEtaleLiftProof.rationalPointEtaleLiftStatement`) |
 | Ex 5.5 | unipotent orbit strata locally closed; quotient spaces `V_d/G`; local Hausdorffness of `(V_d/G)(k)` | `UnipotentOrbitQuotientStatement` | henselian `K` of characteristic zero; `G` a unipotent algebraic group (affine, locally of finite type); `V` reduced of finite type with a `G`-action; strata and quotient as in the source (quotient quasi-separated, finitely presented, with flat surjective quotient map); the topology clause adds that the quotient is locally separated (correction below), with local compactness only for locally compact `K` and local total disconnectedness only for ultrametric `K` | all three clauses have separately published exact-target proofs at the final-publication audit commit: `unipotentOrbitStratumLocallyClosed` (Task 5699, candidate `bdc83ccd-a83b-4b88-89d0-3ce0358ed191`), `unipotentOrbitStratumQuotient` (Task 5997, candidate `b2ef5e3e-ad81-4ab0-b742-9bed77e24f90`) and `unipotentOrbitQuotientPointTopology` (Task 5998, candidate `7934b16d-d2fc-438c-a40e-1bacf197bb85`); corresponding proof module names append `Proof` to each statement stem under `AlgebraicSpace/`. Every source correction in this row is retained. All six intermediate targets are also proved, including stabilizer smoothness. No separate conjunction theorem is claimed |
 | Cor 5.6 | proper maps over local fields are proper on points | `LocalFieldProperPointMapStatement` | locally compact nontrivially normed `K`; `X`, `Y` quasi-separated and locally of finite type | proved (`localFieldProperPointMap`, module `LocalFieldProperPointMapProof`; Task 5483, closed, with Task 5216): the proved implication `LocalFieldProperPointValuativeReductionStatement` applied to the proved Stacks valuative criterion `spaceValuativeExistence` (Task 5368). The Lean proof replaces Conrad's Chow-lemma argument by the valuative criterion and an ultrafilter limit over the convergent germs of an ultrapower (`LocalFieldProperPointLimit.localFieldProperPointMap_of_valuative`); archimedean `K` remain included (intermediate statements below) |
@@ -1031,12 +1198,12 @@ existing analytic foundations alone are not an algebraic-to-analytic bridge.
 
 | Source | Assertion | Lean declarations | Hypotheses and scope | Status and responsible task |
 | --- | --- | --- | --- | --- |
-| Conrad p.19, scheme case; CT §2.2 input | actual finite-type affine scheme analytification | `Langlands.Analytic.AffineAnalytification.Space`, `chartSystem` (`AffineAnalytificationGluing`); `atlas`, `saturated`, `localized` in the same namespace (`AffineAnalytificationAtlas`); `Langlands.Analytic.AffineSchemeAnalytification.spec`, `affineFiniteType`, `CoordinateRing`, `coordinateIso` (`AffineSchemeAnalytification`) | complete nontrivially valued nonarchimedean `K`; every finite-type commutative `K`-algebra, including nonreduced and zero algebras, the empty scheme and zero polynomial variables; actual polynomial-kernel quotient algebras, radius restrictions and atlas laws | constructed with intrinsic chart/algebra laws, independently accepted and published at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`: candidates `80ca43a1-4664-4d0a-b0dd-76e29cf3154e`, `b9fc0541-b432-46ba-aa27-773056f88d21` and `baa423a2-e367-43b8-8e65-accddb38b1bd`, Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd`. The wrapper uses actual global sections and the canonical affine scheme isomorphism in Mathlib's common universe. General presentation independence, functoriality, rational-point/topology comparison, universal property and scalar extension remain successors |
-| Conrad p.19, scheme agreement | affine independence and general scheme analytification by gluing | no exact scheme analytification comparison interface identified | complete nontrivially valued nonarchimedean `K`; schemes locally of finite type, without a global affineness or finite-type restriction; actual affine constructions, restriction/gluing maps, independence and scheme morphisms | not stated: parent Task 3519 retains the definition, statement and proof successors using the now-published Task 6230 affine input; its construction alone does not give independence, functoriality or general scheme gluing |
+| Conrad p.19, scheme case; CT §2.2 input | actual finite-type affine scheme analytification | `Langlands.Analytic.AffineAnalytification.Space`, `chartSystem` (`AffineAnalytificationGluing`); `atlas`, `saturated`, `localized` in the same namespace (`AffineAnalytificationAtlas`); `Langlands.Analytic.AffineSchemeAnalytification.spec`, `affineFiniteType`, `CoordinateRing`, `coordinateIso` (`AffineSchemeAnalytification`) | complete nontrivially valued nonarchimedean `K`; every finite-type commutative `K`-algebra, including nonreduced and zero algebras, the empty scheme and zero polynomial variables; actual polynomial-kernel quotient algebras, radius restrictions and atlas laws | constructed with intrinsic chart/algebra laws, independently accepted and published at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`: candidates `80ca43a1-4664-4d0a-b0dd-76e29cf3154e`, `b9fc0541-b432-46ba-aa27-773056f88d21` and `baa423a2-e367-43b8-8e65-accddb38b1bd`, Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd`. The wrapper uses actual global sections and the canonical affine scheme isomorphism in Mathlib's common universe. Affine maps, rational points, seminorm points, the center map and the scalar-extension comparison map are now constructed. The affine rational-point, functoriality, naturality, immersion and seminorm statements are published; the center and base-change statements are independently approved but unpublished at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22` (15 November audit). Their proofs, the universal property and the scalar-extension isomorphism remain open |
+| Conrad p.19, scheme agreement | affine independence and general scheme analytification by gluing | `Langlands.Analytic.SchemeAnalytification.Space`, `ι`, `localMap`, `desc` (`SchemeAnalytificationSpace`); `SchemeAnalytificationGluingStatement`; affine presentation independence in `AffineAnalytificationFunctorialityStatement` | complete nontrivially valued nonarchimedean `K`; schemes locally of finite type, without a global affineness or finite-type restriction; actual affine constructions, restriction/gluing maps, independence and scheme morphisms | topological gluing constructed (`bae177d9-72c8-42f5-a1c1-969413a6cdae`, published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`). Its gluing properties are stated but not proved: open embeddings, intersections, the affine case, and separated ⇔ Hausdorff. Statement `2a2bc9e4-067c-428e-9c38-b421c96b84c7` is published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`; proof Task 7087 `d8f36429-3ce4-491e-9d69-e57ed9b29c76`. Affine presentation independence is stated (`352f61b7-1cd9-4582-8c59-71ad6e5c4b31`; proof Task 7085). Not constructed: maps of glued spaces for scheme morphisms and an analytic-space structure on the glued space; parent Task 3519 retains them |
 | CT Lemma 2.2.1, Definition 2.2.2, Theorems 4.2.1–4.2.2 | actual representable analytic étale sheaf quotient and chart independence | no actual scheme-to-analytic quotient construction identified; the existing analytic category and étale-site infrastructure do not give this bridge | quasi-separated separated algebraic spaces locally of finite type over complete nontrivially valued nonarchimedean `K`; an actual étale chart `R ⇉ U`, analytic quotient sheaf of `Uᵃⁿ` by `Rᵃⁿ`, its representation by an analytic space and canonical chart comparisons | not stated: parent Task 3519 retains the actual construction and its statement/proof successors; a quotient of bare point sets is insufficient |
-| Conrad p.19; CT Theorems 2.2.3 and 2.3.1 | functoriality, fibre products, open and closed immersions and étale maps | no exact algebraic-to-analytic functor/compatibility interface identified | the separated locally finite-type class above, every morphism, the actual scheme/quotient realization and actual analytic comparison maps; no smoothness or fixed-dimension restriction | not stated: parent Task 3519; desired properties supplied as structure fields would leave these obligations unproved |
-| Conrad p.19; CT Example 2.3.2, pp.11–12 | rational points and their topology | `FieldValuedPoints` supplies analytic chart characters, but no actual `X(K)` analytification comparison identified | the same fields and separated locally finite-type spaces; natural equivalence of actual algebraic and analytic rational points and homeomorphism between the affine-chart analytic topology and `etaleChartTopology`; agreement on schemes and descent through actual étale charts | not stated: parent Task 3519; the standalone analytic-character construction and the already-proved extension-point theorem do not supply this comparison |
-| Conrad p.19; CT Theorem 2.3.5 | arbitrary complete nonarchimedean scalar extension | no exact actual-space analytification/base-change comparison identified | every complete nontrivially valued nonarchimedean extension `L/K`, with no finite-degree, separability or algebraicity restriction; canonical analytic isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`, naturality, composition in towers and fibre-product compatibility | not stated: parent Task 3519 after the actual constructions and analytic scalar-extension inputs; a finite-extension-only comparison is insufficient |
+| Conrad p.19; CT Theorems 2.2.3 and 2.3.1 | functoriality, fibre products, open and closed immersions and étale maps | `Langlands.Analytic.AffineAnalytification.baseMap`, `strongHom` (`AffineAnalytificationMap`); `AffineAnalytificationFunctorialityStatement`, `AffineAnalytificationRationalPointNaturalityStatement`, `AffineAnalytificationImmersionStatement`; no scheme or algebraic-space interface | the separated locally finite-type class above, every morphism, the actual scheme/quotient realization and actual analytic comparison maps; no smoothness or fixed-dimension restriction | affine case stated, not proved; all three statements were published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`. They cover identities, composites and presentation independence (Task 7085 `6545548c-9d0b-4359-a868-8e52fd060af5`), naturality of analytic rational points (Task 7072 `8a49d73c-1180-41f0-8b5c-03f5bdff1d86`), and closed and basic open immersions (Task 7086 `15296f18-5435-4142-bd49-fdaf726f1890`). Not stated: fibre products, étale maps, and maps for general scheme and algebraic-space morphisms; parent Task 3519 |
+| Conrad p.19; CT Example 2.3.2, pp.11–12 | rational points and their topology | `Langlands.Analytic.AffineAnalytification.analyticPoint`, `toFieldPoint`, `toAlgPoint` (`AffineAnalytificationRationalPoints`); `AffineAnalytificationRationalPointsStatement`; `Langlands.Analytic.SchemeAnalytification.analyticRationalPoint` (`SchemeAnalytificationRationalPoints`); `FieldValuedPoints` supplies analytic chart characters | the same fields and separated locally finite-type spaces; natural equivalence of actual algebraic and analytic rational points and homeomorphism between the affine-chart analytic topology and `etaleChartTopology`; agreement on schemes and descent through actual étale charts | affine case stated, not proved: `72e33ec6-47ec-4dd5-8942-0cf614440d22` was published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`, with proof Task 7084 `a12135e5-19d0-4b8d-88d1-cf7f0bf4a946`. It states a bijection with the atlas `K`-points and a topological embedding of `X(K)` into `Xᵃⁿ`. The scheme map is constructed (`aed9a7e3-4948-4161-aea5-85946e98b44d`, published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`). Its statement `8c5afff7-58f9-4bb3-8fde-46fbc7bbad04`, an embedding for `schemePointTopology`, is approved but unpublished. Not stated: the comparison with `etaleChartTopology` for algebraic spaces and descent through étale charts; parent Task 3519. The already-proved extension-point theorem does not supply them |
+| Conrad p.19; CT Theorem 2.3.5 | arbitrary complete nonarchimedean scalar extension | `Langlands.Analytic.AffineAnalytification.extensionMap`, `baseChangePresentation`, `baseChangeMap` (`AffineAnalytificationScalarExtension`); no isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ` | every complete nontrivially valued nonarchimedean extension `L/K`, with no finite-degree, separability or algebraicity restriction; canonical analytic isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`, naturality, composition in towers and fibre-product compatibility | comparison map only. For affine `X` and every complete extension `L/K`, the continuous map `(X_L)ᵃⁿ → Xᵃⁿ` is constructed (`0d33d3ef-6034-4014-802f-926ed50b2190`, published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`). Its surjectivity and rational-fibre statement `868763f3-1de0-4519-aaf0-a148c86adbf7` is approved but unpublished. Not constructed or stated: the analytic ground-field extension `(Xᵃⁿ)_L`, the canonical isomorphism, naturality, towers and fibre products; parent Task 3519. A finite-extension-only comparison is insufficient |
 
 ## Derived intermediate statements and reductions
 
@@ -1080,7 +1247,7 @@ executors as inspected on 2026-11-12.
 | Lem 5.1 (Task 5252) | `SchemeGeometricComponentCountConstructibleStatement` (`SchemeGeometricComponentCountStatement`) | scheme specialization: any commutative ring `B`; a scheme morphism `X → Spec B` locally of finite presentation, quasi-compact and quasi-separated; every `n : ℕ`; the number of connected components of the fibre over an algebraic closure of each residue field, counted in `ℕ∞` | proved (`schemeGeometricComponentCountConstructible`, module `SchemeGeometricComponentCountProof`, with `SchemeGeometricComponentCountBaseChange`) |
 | Lem 5.1 (Task 5252) | `geometricFibreComponentsConstructibleStatement_iff`, `geometricFibreComponentCount_ne_top` (`GeometricFibreComponentGeometry`) | restatement of `GeometricFibreComponentsConstructibleStatement` through the count `geometricFibreComponentCount`; the count is finite for `X` finitely presented over `B` | proved |
 | Lem 5.1 (Task 5252) | `exists_open_geometricComponentsEquiv`, `exists_open_geometricFibreComponentCount` (`GenericGeometricComponents`) | the first: an irreducible Noetherian base scheme `S`; `X` quasi-separated with an étale surjective atlas whose structure morphism is locally of finite type and quasi-compact; there is a nonempty open subset of `S` over which the sets of connected components of the geometric fibres, for the point topology, are pairwise in bijection; the second: the same over `Spec B` for a Noetherian ring `B` with irreducible spectrum, where `geometricFibreComponentCount` is constant on a nonempty open; this is the generic step of the Noetherian induction and does not prove constructibility | proved |
-| Prop 5.4, manifold (Task 5259) | `canonicalAnalyticPointStructure`, `canonicalAnalyticPointStructure_isAnalytic` (`SmoothSpaceAnalyticAtlas`); `canonicalAnalyticPointStructure_isFunctorial`, `canonicalAnalyticPointStructure_isEtaleLocalIso` (`AnalyticPointFunctoriality`); `canonicalAnalyticPointStructure_agreesWithAffineSpace`, `canonicalAnalyticPointStructure_isAdmissible` (`AnalyticAffineNormalization`) | every complete nontrivially normed `K`; the family of charted spaces on `X(K)`, with the étale-chart topology, built from affine étale charts smooth of relative dimension `n`; it satisfies `AnalyticPointStructure.IsAnalytic`, `AnalyticPointStructure.IsFunctorial`, `AnalyticPointStructure.IsEtaleLocalIso` and `AnalyticPointStructure.AgreesWithAffineSpace`, hence `AnalyticPointStructure.IsAdmissible`; this proves the existence conjunct of `AnalyticPointManifoldStatement`; the uniqueness clause is `AnalyticPointStructure.equivalent_of_isAdmissible` (`AnalyticPointUniqueness`), and `analyticPointManifold` combines the two | proved for the pure-dimensional family; actual algebraic dimension pieces and the field-section equivalence are now published. The separate rational-point homeomorphism statement and lifted atlas definition are independently approved but unpublished; the homeomorphism proof and varying-dimension analytic assembly remain open as specified in the 14 November audit |
+| Prop 5.4, manifold (Task 5259) | `canonicalAnalyticPointStructure`, `canonicalAnalyticPointStructure_isAnalytic` (`SmoothSpaceAnalyticAtlas`); `canonicalAnalyticPointStructure_isFunctorial`, `canonicalAnalyticPointStructure_isEtaleLocalIso` (`AnalyticPointFunctoriality`); `canonicalAnalyticPointStructure_agreesWithAffineSpace`, `canonicalAnalyticPointStructure_isAdmissible` (`AnalyticAffineNormalization`) | every complete nontrivially normed `K`; the family of charted spaces on `X(K)`, with the étale-chart topology, built from affine étale charts smooth of relative dimension `n`; it satisfies `AnalyticPointStructure.IsAnalytic`, `AnalyticPointStructure.IsFunctorial`, `AnalyticPointStructure.IsEtaleLocalIso` and `AnalyticPointStructure.AgreesWithAffineSpace`, hence `AnalyticPointStructure.IsAdmissible`; this proves the existence conjunct of `AnalyticPointManifoldStatement`; the uniqueness clause is `AnalyticPointStructure.equivalent_of_isAdmissible` (`AnalyticPointUniqueness`), and `analyticPointManifold` combines the two | proved for the pure-dimensional family; actual algebraic dimension pieces and the field-section equivalence are published. The rational-point homeomorphism statement, the lifted atlas and the varying-dimension statements are published (15 November audit); their proofs remain open in the proof tasks listed there |
 | Ex 5.5 (Task 5217) | `StabilizerFibreLocalDimensionStatement` | any scheme `S`; a group scheme `G` locally of finite type over `S` acting on `V`; at every point of the stabilizer scheme (the base change of the action graph along the diagonal of `V`), the local dimension of its fibre over `V` equals the dimension of the whole fibre, so stabilizer fibres are equidimensional; input to the local closedness of the orbit-dimension strata | proved (`stabilizerFibreLocalDimension`, module `StabilizerFibreLocalDimensionProof`, helpers prefixed `StabilizerFibre.`; published for Task 5217; proof Task 5438 `cd13f7dc-f2dc-404b-bf3d-5885e82f23bf`, closed) |
 | Ex 5.5 (Task 5217) | `OrbitStratumActionRestrictionStatement` | any field `k`; `G` smooth over `k`; `V` locally of finite type with a `G`-action; a reduced scheme `Z` with an immersion onto the points of orbit dimension `d`; the action restricts to `Z`, and every restricted action has orbit dimension `d` at every point | proved (`orbitStratumActionRestriction`, module `OrbitStratumActionRestrictionProof`, helpers prefixed `OrbitStratumActionRestriction.`; published for Task 5217; proof Task 5435 `50f16a97-abde-4fa4-82d0-f13ffe281ff4`, closed) |
 | Ex 5.5 (Task 5217) | `UnipotentOrbitStabilizerSmoothStatement` | field `k` of characteristic zero; `G` affine, locally of finite type and unipotent; `Z` reduced, locally of finite type, with a `G`-action of constant orbit dimension `d`; the stabilizer scheme is smooth over `Z`, which is stronger than the flatness in the source (route through Cartier's theorem instead of Conrad's `exp(ker B)`) | proved (`unipotentOrbitStabilizerSmooth`, module `UnipotentOrbitStabilizerSmoothProof`, candidate `798d3ed4-1863-4029-97a9-bd40aa28a360`, Task 5434 `0e823d86-9f22-48da-b160-eebc1c0160a0`, Worker 5434) at the final-publication audit commit. The exact target is obtained from the published reduction, `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth` and `Langlands.GroupScheme.charZeroUnipotentConnected`, with every hypothesis in this row retained |
@@ -1466,28 +1633,35 @@ These carried proof tasks are stale: their targets are proved in the Library com
 
 ## Remaining obligations
 
-1. Publish and prove the rational-point dependent-sum homeomorphism, using the
-   actual smooth dimension pieces and section equivalence now published by
-   Task 6286 `56e7aa6c-1336-4e2d-a66a-59f30689a9f7`. The parent's exact
-   topology statement is independently approved but unpublished; its proof
-   successor follows publication. The topological assertion keeps its broader
+1. Prove the published varying-dimension statements of Proposition 5.4. These are
+   the rational-point dependent-sum homeomorphism (Task 6936
+   `7e14e6f5-9447-4b9a-8f26-96906d761802`), analytic assembly, functoriality and
+   étale local analytic isomorphisms (Tasks 7025–7027), affine-space agreement and
+   uniqueness (Tasks 7049–7050), and the source-level
+   `SmoothSourceAnalyticManifoldStatement` (Task 7051
+   `685b8c94-5194-4cb7-8b30-4977774ce694`). The parent published each proof task
+   and does not take the proofs. The topological assertion keeps its broader
    henselian/quasi-separated scope, without completeness or local separatedness.
-   Publish the independently approved lifted atlas definition, then state and
-   prove the varying-dimension analytic assembly, including scheme agreement,
-   functoriality across intersections with target pieces, étale dimension
-   preservation/local analytic isomorphisms and uniqueness in the corrected
-   analytic class. The parent retains these successors; neither a
-   fixed-dimension restriction nor a finite-range assumption meets the full
-   smooth-space scope.
+   Neither a fixed-dimension restriction nor a finite-range assumption meets the
+   full smooth-space scope.
 2. Complete the retained analytification pipeline using Task 6230
    `ad8e3e5e-2e0e-4f05-9924-191590422efd`'s published finite-type affine
-   constructions: presentation independence, all-morphism functoriality and the
-   universal property, general scheme gluing, the actual representable analytic
-   étale sheaf quotient for separated spaces, geometric compatibilities,
-   rational-point/topology comparison, and arbitrary complete nonarchimedean
-   extension. The parent retains all successor constructions, exact statement
-   interfaces, proofs and host comparisons. The existing extension-point
-   endpoint proof does not discharge them.
+   constructions. The published affine statements need proofs: rational points
+   (Task 7084), functoriality and presentation independence (Task 7085),
+   immersions (Task 7086), the seminorm description (Task 7083), naturality
+   (Task 7072) and scheme gluing (Task 7087). The three approved statements
+   `d095a1d9-af2c-480f-a7ea-f0acc4e34810`, `8c5afff7-58f9-4bb3-8fde-46fbc7bbad04`
+   and `868763f3-1de0-4519-aaf0-a148c86adbf7` must be published, and their proofs
+   then supplied. The parent still has to construct and state the following: maps
+   of glued spaces for scheme morphisms; an analytic-space structure on the glued
+   space in the host; the analytification universal property; the actual
+   representable analytic étale sheaf quotient for separated spaces; fibre-product
+   and étale compatibilities; the rational-point comparison with
+   `etaleChartTopology` for algebraic spaces; and the canonical isomorphism
+   `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ` for arbitrary complete nonarchimedean extensions. The parent
+   retains all successor constructions, exact statement interfaces, proofs and host
+   comparisons. The existing extension-point endpoint proof does not discharge
+   them.
 3. Obtain a fresh independent whole-paper coverage review after verifying every
    retained mathematical publication and comparison. The earlier accepted
    focused notes and the present publication update do not certify whole-paper
