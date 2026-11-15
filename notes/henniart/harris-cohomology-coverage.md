@@ -160,7 +160,19 @@ which it brings to revision 247. In the row on compatible Galois families it
 also records that Kottwitz 1992 Theorem 1, listed as not yet stated in an
 earlier version of Task 34's note, is now the published, unproved statement
 `CMHarrisKottwitzLambdaAdicStatement`. It does not otherwise survey the
-commits after `58ad0f79`.
+commits after `58ad0f79`. The fifth revision of 2026-11-14, against Library
+commit `544dba099880b57da5fdc3cbc715c01cf2579eb2` with the same
+environment, adds Worker 26's `AnalyticSetInducedSections` and
+`DiscreteGSetFibre` (candidate `c74bc0e0`) to the paragraph on the analytic
+modules after [Published modules](#published-modules) and to
+[Published constructions of other workers](#published-constructions-of-other-workers).
+It adds, after the paragraph on Worker 26's conditional theorems, Worker 26's
+specialization `DrinfeldLevelOneEtale` of the étale ones to the level-one
+Drinfeld space; that module was already in the Library at `320321b3`. It
+checks at `544dba09` that the three analytic statements of Tasks 6200, 6578
+and 6615 and the statement of (5.1) are still unproved: the only other
+Library Lean files that use them take them as hypotheses. It does not
+otherwise survey the commits after `320321b3`.
 
 ## Published modules
 
@@ -254,7 +266,20 @@ adjunctions, `quasiEtaleSheafInverseImageAdjunction` and
 `etaleSheafInverseImageAdjunction`, take the same hypothesis. Neither
 module proves that `b^*E` is a
 smooth `G`-sheaf or that the unit and counit are isomorphisms, so Theorem
-1.4.2 is still open. The two comparisons of Theorem 1.6.1(ii) concern ordinary
+1.4.2 is still open. Worker 26's
+[`Langlands.Sheaf.Equivariant.AnalyticSetInducedSections`](../../Langlands/Sheaf/Equivariant/AnalyticSetInducedSections.md)
+(candidate `c74bc0e0`, in the Library at `544dba09`), built on the generic
+[`Langlands.Topology.GroupAction.DiscreteGSetFibre`](../../Langlands/Topology/GroupAction/DiscreteGSetFibre.md),
+defines Berkovich's `Γ_{X{G}}` (§1.2, printed p.4) directly on sheaves of
+`R`-modules on Worker 21's sites `Qét(X(G))` and `Ét(X(G))`, with values in
+smooth representations: it is the fibre of the presheaf `Σ ↦ F(X_Σ(G))` on
+`P(G)`. The module proves Berkovich's formula
+`Γ_{X{G}}(F) ≅ lim→_N F(X_{G/N}(G))` as an isomorphism of modules. It takes
+as hypotheses Worker 21's statements `SetInducedSpace.ContinuityStatement`
+and `SigmaDescStatement`, which are not proved in the Library. It constructs
+no derived functors, and its relation to Worker 26's `quasiEtaleGSheafSections`
+and `etaleGSheafSections` on `G`-sheaves, with which the statements of this
+task are made, is not formalized. The two comparisons of Theorem 1.6.1(ii) concern ordinary
 cohomology on a compact `X`, which involves no supports and no points. The
 two composites of §1.2 assume neither compactness nor continuity and involve
 no points or supports either. The étale comparison of Corollary 1.5.2(i)
@@ -289,7 +314,15 @@ the Hausdorff property `hT`, the surjectivity `hS` and `hρ`. They give the
 same three conclusions for `H^q_c(X, b^*F)`, and smoothness of the
 restriction of the action to any subgroup. The smoothness is the second
 assertion of Berkovich's Corollary 1.5.2(i). These theorems are conditional:
-they are not proofs of the statements.
+they are not proofs of the statements. Worker 26's
+[`Langlands.Cohomology.DivisibleSystem.DrinfeldLevelOneEtale`](../../Langlands/Cohomology/DivisibleSystem/DrinfeldLevelOneEtale.md)
+specializes the four étale declarations to Worker 21's level-one space
+`ℳ_1 = Ω × Δ` of Harris 1999 §2, with its action of `GL_{d+1}(F)`
+(`levelOneEtaleRestrictionCompactCohomologyAction_isSmooth_of_statement` and
+three others). They again take `hB` as a hypothesis, together with `hS`, the
+continuity `hΩ` of the action on `Ω`, and Worker 21's unproved
+`SetInducedSpace.ContinuityStatement` (`hSI`). The spaces `ℳ_N` for
+`N ≥ 2` are not in the Library at `544dba09`.
 
 The statements of `SupercuspidalExt` have complex coefficients, as Harris 1997
 allows after choosing `Q̄_ℓ ≅ ℂ` (p.95). Harris 1999 works over
@@ -340,7 +373,10 @@ the row of `HarrisTaylorCMGeometricNormalActions` and
 `HarrisTaylorCMGeometricNormalTorsor`, which is cited only in a truth
 argument, and the rows of `AnalyticConstantAdjunction` and
 `AnalyticEtaleRefinements`, which concern the open proofs of the analytic
-statements and the instance hypothesis of the étale ones. The modules that the proofs themselves
+statements and the instance hypothesis of the étale ones, and the row of
+`AnalyticSetInducedSections` and `DiscreteGSetFibre`, which defines
+Berkovich's `Γ_{X{G}}` on his sites `X(G)` themselves and is not used by any
+statement or proof of this task. The modules that the proofs themselves
 import are named in [Proved statements](#proved-statements). The Author
 column follows the module Markdown's Author line; "No Author line" marks a
 module whose Markdown has none.
@@ -385,6 +421,7 @@ module whose Markdown has none.
 | [`Langlands.Sheaf.Equivariant.AnalyticEtaleComparison`](../../Langlands/Sheaf/Equivariant/AnalyticEtaleComparison.md), [`Langlands.Sheaf.Equivariant.AnalyticCompactSupport`](../../Langlands/Sheaf/Equivariant/AnalyticCompactSupport.md), [`Langlands.Sheaf.Equivariant.AnalyticEtaleCompactCohomology`](../../Langlands/Sheaf/Equivariant/AnalyticEtaleCompactCohomology.md) | Worker 26 | In the same namespace: `pointProjection L X`, the underlying point of `L`-valued point, and `pointTopology`, the topology on `L`-valued points induced by it; `etaleGSheafCompactSections` (`Γ_{c,X{G}}` on étale `G`-sheaves, with supports in `L`-valued points); `etaleGSheafCompactCohomology L ρ h R q` (`H^q_c(X{G}, -)`); `etaleCompactCohomology` (`H^q_c(X, -)` on the étale site); `etaleGSheafRestriction ρ` (Berkovich's `b^*`, which forgets the action); `etaleCompactInclusion`, the inclusion `Γ_{c,X{G}}(F) → Γ_c(X, b^*F)`; and `etaleCompactComparison L ρ h R q`, the map `H^q_c(X{G}, F) → H^q_c(X, b^*F)` of Cor. 1.5.2(i) induced by it. Used by `AnalyticEtaleCompactComparisonStatement`, whose surjectivity hypothesis is stated with `pointProjection` |
 | [`Langlands.Sheaf.Equivariant.AnalyticEtaleGlobalComplex`](../../Langlands/Sheaf/Equivariant/AnalyticEtaleGlobalComplex.md), [`Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleGlobalComplex`](../../Langlands/Sheaf/Equivariant/AnalyticQuasiEtaleGlobalComplex.md), [`Langlands.Sheaf.Equivariant.TwistedExactGlobalComplex`](../../Langlands/Sheaf/Equivariant/TwistedExactGlobalComplex.md) | Worker 26 | `etaleGSheafComplex ρ R` and `quasiEtaleGSheafComplex ρ R`, Berkovich's `RΓ(X{G}, F)` in the bounded below derived category of smooth representations, with `etaleGSheafInvariantComplex` and `quasiEtaleGSheafInvariantComplex` for `RΓ(X(G), F)`; `quasiEtaleGSheafInvariantSections` (`Γ_{X(G)}`, the invariants of `Γ_{X{G}}`) and `quasiEtaleGSheafInvariantCohomology ρ R q`; the `…HomologyIso` identifications of the cohomology of these complexes with the derived functors. Built from the generic `exactGlobalComplex` and `exactInvariantGlobalComplex`. Used by the two composites of `AnalyticGlobalComposite.Statement` |
 | [`Langlands.Sheaf.Equivariant.AnalyticConstantAdjunction`](../../Langlands/Sheaf/Equivariant/AnalyticConstantAdjunction.md) | Worker 26 | `etaleGSheafSections_preservesInjectiveObjects` and `quasiEtaleGSheafSections_preservesInjectiveObjects`: `Γ_{X{G}}` sends injective `G`-sheaves to injective smooth representations, through its left adjoint, the constant `G`-sheaf. Berkovich's derivation of the §1.2 spectral sequence uses this property; no statement of this task cites the module |
+| [`Langlands.Sheaf.Equivariant.AnalyticSetInducedSections`](../../Langlands/Sheaf/Equivariant/AnalyticSetInducedSections.md), [`Langlands.Topology.GroupAction.DiscreteGSetFibre`](../../Langlands/Topology/GroupAction/DiscreteGSetFibre.md) | Worker 26 | In namespace `Langlands.Sheaf.Equivariant.Analytic`: `quasiEtaleSetInducedSections hC hD X R` and `etaleSetInducedSections hC hD X R`, Berkovich's `Γ_{X{G}}` (§1.2, printed p.4) from sheaves of `R`-modules on `Qét(X(G))` and `Ét(X(G))` (Worker 21's `EquivariantQuasiEtaleSite X` and `EquivariantEtaleSite X`) to smooth representations. Each is the fibre functor `fibreFunctor G R` (namespace `Langlands.DiscreteGSet`) applied to the presheaf `Σ ↦ F(X_Σ(G))` on `P(G)`. `quasiEtaleSetInducedSectionsIso` and `etaleSetInducedSectionsIso` give Berkovich's formula `lim→_N F(X_{G/N}(G))`, from `colimitOpenSubgroupIsoFibre`. The hypotheses `hC : SetInducedSpace.ContinuityStatement` and `hD : SigmaDescStatement` are unproved statements of Worker 21. No statement of this task cites the modules |
 | [`Langlands.Sheaf.Equivariant.AnalyticEtaleRefinements`](../../Langlands/Sheaf/Equivariant/AnalyticEtaleRefinements.md) | Worker 26 | `hasAdmissibleRefinements_distinguishedLiftSystem`, which derives the instance `HasAdmissibleRefinements` for `distinguishedLiftSystem ρ` and `twistedEtaleTopology ρ` (both in `AnalyticGSheaves`), required by the three étale statements, from three conditions: `HasDistinguishedEtaleNeighbourhoods X`, `HasDistinguishedEtaleLifts ρ` and `HasCompatibleDistinguishedEtaleLifts ρ`. These conditions are not proved in the Library |
 | [`Langlands.Geometry.Analytic.FieldValuedPoints`](../../Langlands/Geometry/Analytic/FieldValuedPoints.md), [`Langlands.Geometry.Analytic.EtaleGeometricPoints`](../../Langlands/Geometry/Analytic/EtaleGeometricPoints.md) | Worker 21 | `localizedFieldPointFunctor L`, the functor of `L`-valued points of analytic spaces; `EtaleSite.PointAxioms L x`, the axioms under which an `L`-valued point gives a point of the étale site (cofiltered category of elements and lifting along covering sieves). The hypothesis `h` of `AnalyticEtaleCompactComparisonStatement` asks them for every `L`-valued point |
 | [`Langlands.Shimura.PEL.HarrisTaylorCMLambdaTower`](../../Langlands/Shimura/PEL/HarrisTaylorCMLambdaTower.md) | No Author line | Task 5484's `λ`-adic cohomology of the CM tower with Harris's coefficient systems `W`, in namespace `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`. `cmHarrisLambdaLevelCohomology`: `U ↦ H^d(S_U ×_F F̄, W)_λ` with the maps induced by the transporters of small levels. `cmHarrisLambdaTowerCohomology`: its colimit `H^d(S, W)_λ`, a smooth representation of `GG(A_f)` over `K_λ` with the commuting action of `Gal(F̄/F)`, and the level Hecke module `cmHarrisLambdaTowerHeckeModule` of its fixed vectors. The fixed-vector comparison is the proposition `CMHarrisLambdaTowerFixedVectorComparison`, which is not proved. For a representation `τ` of `GG(A_f)` over a field `M` extending `K_λ`: the extension of scalars `cmHarrisLambdaTowerExtendScalars`, the isotypic part `cmHarrisLambdaTowerIsotypic`, its fixed vectors at a level `cmHarrisLambdaTowerIsotypicFixedVectors` (the space of `CMHarrisVanishingStatement`), and the multiplicity spaces `cmHarrisLambdaTowerMultiplicity` and `cmHarrisLambdaTowerHeckeMultiplicity`. Under explicit finiteness, continuity and fixed-vector hypotheses these become continuous Galois representations with Euler polynomials at unramified places (`cmHarrisLambdaIsotypicFixedVectorsObjects`, `cmHarrisLambdaMultiplicityObjects`, `cmHarrisLambdaHeckeMultiplicityObjects`). The module is built on `HarrisTaylorCMSmallLevelGaloisTower` and `HarrisTaylorCMSmallLevelGaloisIsotypic` (see the Shimura row of [Not yet stated](#not-yet-stated-and-the-prerequisites-they-wait-for)) |
