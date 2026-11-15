@@ -173,17 +173,24 @@ chamber and its hyperspecial vertex. The Library's source ledger records this
 discrepancy and the computation (`notes/bruhat-tits/kp-source-ledger.md`, row
 8.4.19). Neither product is formalized here.
 
-Here `F'` is the standard alcove, whose Iwahori subgroup consists of the
-matrices that are upper triangular modulo `ϖ`, and `F` is the hyperspecial
-vertex with stabilizer `GL_N(𝒪)`. The map `iwahoriMatrixHom` plays the role of
-`ρ_{F,F'}`. The kernel computed here is `1 + J_-`, with one coordinate for each
-strictly lower position. This is a derived observation for this split case,
-not a statement printed in KP: it is consistent with the product of
-Proposition 8.4.15, where the factor for the root `e_i - e_j` is a copy of
-`G_a` when `i > j` and trivial when `i < j`, as in Example 8.3.5. This
-root-by-root count is not formalized. KP's proof goes through root groups and
-the open cell. The Lean proof is a direct computation in the algebra `𝓀 ⊗ Λ`,
-through the Library's unipotent-part construction for finite free algebras.
+Here `F'` is the standard alcove, whose parahoric subgroup (an Iwahori subgroup)
+consists of the matrices in `GL_N(𝒪)` that are upper triangular modulo `ϖ`, and
+`F` is the hyperspecial vertex whose parahoric subgroup is `GL_N(𝒪)`. By KP
+Definition 4.1.3 (printed p. 158), the parahoric subgroup of a facet is its
+stabilizer in `G(k)^0`, not its full stabilizer in `G(k)`, where `k` is the
+local field. The two differ here: by Axiom 4.1.1 (printed p. 158), the action of
+`GL_N(k)` on the reduced building factors through the adjoint group, so the
+scalar matrix `ϖ · 1` fixes `F` but does not lie in `GL_N(𝒪)`. No building,
+facet stabilizer or parahoric subgroup is formalized here. The map
+`iwahoriMatrixHom` plays the role of `ρ_{F,F'}`. The kernel computed here is
+`1 + J_-`, with one coordinate for each strictly lower position. This is a
+derived observation for this split case, not a statement printed in KP: it is
+consistent with the product of Proposition 8.4.15, where the factor for the root
+`e_i - e_j` is a copy of `G_a` when `i > j` and trivial when `i < j`, as in
+Example 8.3.5. This root-by-root count is not formalized. KP's proof goes through root
+groups and the open cell. The Lean proof is a direct computation in the algebra
+`𝓀 ⊗ Λ`, through the Library's unipotent-part construction for finite free
+algebras.
 
 ## Provenance
 
