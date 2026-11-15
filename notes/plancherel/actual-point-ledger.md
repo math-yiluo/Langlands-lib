@@ -2,12 +2,13 @@
 
 Authors: Worker 3642 (formerly Worker 19) and Worker 5, task
 `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1). Checked against Library commit
-`544dba099880b57da5fdc3cbc715c01cf2579eb2`. The row added in the latest update
-(`DynamicCommonLeviComposition`) was checked there directly. Every other module named in this
-note is byte-identical at that commit to its version at
-`70eca2e4ea526de0ce0c41e4a9ea0e7d8087cbe7`, against which the rows of the previous update were
-checked. The modules named in the still earlier rows are also byte-identical to their versions at
-`7d0469f6b963a3184585874ef8a502809dcbd51b`, against which those rows were checked.
+`c2a69151fc91dc660bd8106a217845dbf5a561c4`. The row added in the latest update
+(`DynamicCommonLeviScalar`) was checked there directly. Every other module named in this note is
+byte-identical at that commit to its version at `544dba099880b57da5fdc3cbc715c01cf2579eb2`,
+against which the row of the previous update (`DynamicCommonLeviComposition`) was checked. The
+modules named in the rows before that are also byte-identical to their versions at
+`70eca2e4ea526de0ce0c41e4a9ea0e7d8087cbe7`, and those in the still earlier rows to their
+versions at `7d0469f6b963a3184585874ef8a502809dcbd51b`, against which those rows were checked.
 
 This note lists the published modules used by this task that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
@@ -47,6 +48,7 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `Representation/Plancherel/RationalPlancherelDensityConjugation` | `conditionalDynamicOppositeConjugationScalar_of_heq`, `fieldConstant_conjugation`, `plancherelDensity_conjugation_of_conjugationScalar`, `PlancherelDensityConjugationStatement` (target), `plancherelDensityConjugation_of_conjugationScalar` | derived transport form of the third item of V.2.1, `µ(sω) = µ(ω)` (p.292), for every rational point `g` | the density's data for `(i, ζ, K, A)` and for `(innerConjugate i g, ζ, K₁, gA)` with `K₁ = gKg⁻¹`. The proof assumes the unproved conjugation scalar target |
 | `Representation/Plancherel/DynamicOppositePairScalar` | `changeLevi_mem_iff`, `leviChange` (with `_apply_coe`), `changeRepresentation`, `parameterChangeIso` (with `_hom_comp`, `_hom_points`), `parameterHomeomorph_parameterChangeIso`, `inverse_oppositeParabolic`, `inverse_oppositeRadical`, `inverse_oppositeParabolic_mul_compact`, `ConditionalDynamicOppositePairScalarStatement` (unproved target), `conditionalDynamicOppositeInverseScalar_of_pair` | derived IV.3 (1) (pp.285–286) for the two parabolics of one opposite pair, in transport form: for a cocharacter `ψ` with `Z_G(ψ) = Z_G(χ)` whose parabolics and radicals are those of `χ` in the same or the exchanged order, the scalar of `ψ` is the transport of the scalar of `χ` along the isomorphism of the actual centralizer schemes. For `P' = P̄` no composition formula is needed; for maximal `M` this is all of IV.3 (1) | connected reductive `G`, `χ`, `ψ`, `hRefl`, `hCST`, equality of the centralizer subgroup functors, the four subgroup equalities on rational points as hypotheses, a compact open `K` with the four compact-parabolic factorizations, `A` on `M(F)`, and independent conditional data for `(χ, K, A)` and for `(ψ, K, A)`, with `A` viewed on `Z_G(ψ)(F) = M(F)` by `changeRepresentation`. The proved corollary derives the case `ψ = χ⁻¹` (exchanged order) from the target, supplying the centralizer, subgroup and factorization premises; it still takes independent conditional data for `χ⁻¹`. Proof task: Task 6924 `9fe80067-873a-442f-b6b5-c3a6191f7655` |
 | `Representation/Plancherel/DynamicCommonLeviComposition` | `commonDecomposition`, `centralizer_inverseCocharacter_eq`, `pairIntersectionHaar`, `pairQuotientMeasure` (with `_isCompatible`), `pairFullDomainRegion`, `pairFamily` (with `_spec`), `forwardFullDomainRegion_eq_pair`, `pairFamily_inverse_eq_conditionalForwardFamily`, `IsDistanceAdditive`, `DistanceAdditiveRadicalFactorizationStatement` (unproved structural target), `ConditionalDynamicCommonLeviCompositionStatement` (unproved target) | derived IV.1 (12) (p.283; `J` defined p.278, distance and product decomposition p.279): `J_{P₂|P₀} = J_{P₂|P₁} J_{P₁|P₀}` when `d(P₂, P₀) = d(P₂, P₁) + d(P₁, P₀)`, for the actual standard integrals `pairFamily` between three dynamic parabolics `P_G(ψᵢ)` with the literal Levi `M = Z_G(χ)(F)`, pointwise on the intersection of the three full domain regions. `pairFamily` is the published `standardInductionIntertwinerFamily` for two such parabolics; for `ψ = χ` and `ψ' = χ⁻¹`, with the published conditional squared-modulus proof, it is the opposite family `conditionalForwardFamily` (`J_{P̄|P}`, by `rfl`). The distance condition is in group form: `U₀ ∩ U₂ ≤ U₁` and `Ū₀ ∩ Ū₂ ≤ Ū₁` | connected reductive `G` with `[Smooth G.X.hom]`, `χ`, `ψ₀`, `ψ₁`, `ψ₂` with `Z_G(ψᵢ) = Z_G(χ)` (equal subgroup functors), a compact open `K` with Worker 200's `SplitsAlong K ψ₀ ψ₁` and `SplitsAlong K ψ₁ ψ₂` instead of a special `K`, the squared-modulus identity `SquaredModulusCompatibility` for each of the three pairs (derived in the Library only for opposite pairs), `A` on `M(F)` and a parameter in the three full domain regions. The main target takes the structural target, the ordered product charts `(U₀ ∩ U₁) × V = U₁`, `(U₁ ∩ U₂) × W = U₂`, `(U₀ ∩ U₂) × (V × W) = U₂` with `V = U₁ ∩ Ū₀` and `W = U₂ ∩ Ū₁`, as a hypothesis. Nonemptiness of the domains, the rational continuation, the existence of `K` splitting along both pairs for a general triple (Worker 200's `exists_isCommonLeviSplitting` treats two cocharacters and their inverses) and the equivalence of the group form with the root count are not established. Proof tasks: Task 7002 `01859916-3d8b-438c-816e-386388809766` (main target) and Task 7001 `7351966c-e13e-40a4-bf1d-6b627cd4da5f` (structural target) |
+| `Representation/Plancherel/DynamicCommonLeviScalar` | `splitsAlong_of_radical_eq`, `splitsAlong_of_radical_eq_opposite`, `isCommonLeviSplitting_of_pair`, `ConditionalDynamicCommonLeviScalarStatement` (unproved target), `conditionalDynamicOppositePairScalar_of_commonLevi` | derived IV.3 (1) (pp.285–286) for an arbitrary `P' = P_G(ψ) ∈ P(M)`, in the transport form of the opposite-pair target: the canonical scalar of `(ψ, K, Aψ)` is the transport of the canonical scalar of `(χ, K, A)` along `parameterChangeIso χ ψ hM`. The source proof uses four instances of IV.1 (12), for the triples `(ψ⁻¹, χ, ψ)`, `(ψ, χ⁻¹, ψ⁻¹)`, `(χ⁻¹, ψ⁻¹, χ)` and `(χ, ψ, χ⁻¹)`; up to `SplitsAlong.inverse` their splitting premises are exactly the four fields of Worker 200's `IsCommonLeviSplitting K χ ψ`. The proved lemmas give `IsCommonLeviSplitting Q χ ψ` for every compact open `Q` when the radicals of `ψ` are those of `χ` in the same or the exchanged order, and derive the opposite-pair target `ConditionalDynamicOppositePairScalarStatement` from this target | connected reductive `G` with `[Smooth G.X.hom]`, `χ`, `ψ`, `hRefl`, `hCST`, `Z_G(ψ) = Z_G(χ)` (equal subgroup functors), a compact open `K` with `IsCommonLeviSplitting K χ ψ` and the four compact-parabolic factorizations `G(F) = Q K` for `Q ∈ {P, P̄, P', P̄'}`, `A` on `M(F)`, and independent conditional data for `(χ, K, A)` and for `(ψ, K, Aψ)` with `Aψ = changeRepresentation χ ψ hM A`. The existence of a `K` with both the splitting and the factorizations is not proved. No proof task: a proof also needs the rational continuation (Théorème IV.1.1) of the four non-opposite operators `J_{P'|P}`, `J_{P|P̄'}`, `J_{P̄'|P̄}`, `J_{P̄|P'}`, which the Library lacks and the target does not take as data, and the squared-modulus identity for non-opposite pairs |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalDiscreteSeriesOrbitFinitenessStatement` | `RationalDiscreteSeriesOrbitFinitenessStatement` (statement), `isConnectedReductive_centralizerScheme` | Thm VIII.1.2 (p.321) | connected reductive `G`, split component `s : T → G`, Haar measure on `G(F)/A_G(F)`; no structural input |
 | `Representation/Jacquet/StandardCasselmanPairing` | `standardCasselmanPairingData`, `exists_standardCasselmanPairing`, `exists_standardCasselmanPairing_splitComponent`, `SimultaneousStandardBasisAt.exists_casselmanPairing` | Thm I.4.1 (p.245) for actual standard `P_J`, on the cones of the whole split component | S1, S2 (as data `hζ`) |
 | `Representation/Jacquet/DynamicCasselmanConstantTerm` | `dynamicCasselmanPairingData`, `exists_dynamicCasselmanPairing`, `dynamicParabolicModulus`, `IsDynamicConstantTerm`, `dynamicConstantTerm`, `existsUnique_dynamicConstantTerm` | Thm I.4.1 and Prop. I.6.2 (pp.245, 249–250) for every dynamic `P(χ)`, along the powers of `χ(t)`; normalized by `δ_U` | smooth affine `G`; no structural input |
@@ -106,9 +108,10 @@ Worker 5 contributions. Their current Lean/Markdown pairs match the frozen publi
 These publications accept the targets and implemented reductions at their displayed scope.
 They do not turn the assumed Hermitian adjunction or full-unitary scalar assertion into proofs.
 
-The fourteen further pairs below are also independently accepted and published Worker 5
-contributions; `DynamicCommonLeviComposition` was added in the latest update, the others in
-the previous one. Their pairs at commit `544dba09…` are those published at the commits listed:
+The fifteen further pairs below are also independently accepted and published Worker 5
+contributions; `DynamicCommonLeviScalar` was added in the latest update,
+`DynamicCommonLeviComposition` in the previous one and the others before. Their pairs at commit
+`c2a69151…` are those published at the commits listed:
 
 | Pair | Candidate | Review task | Publication commit |
 |---|---|---|---|
@@ -125,6 +128,7 @@ the previous one. Their pairs at commit `544dba09…` are those published at the
 | [RationalPlancherelDensityConjugation](../../Langlands/Representation/Plancherel/RationalPlancherelDensityConjugation.md) | `16f64579-e3b6-46eb-9b7c-6206dac8f37c` | `aea5a807-dbba-414e-a126-1bc902d3c5dd` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
 | [DynamicOppositePairScalar](../../Langlands/Representation/Plancherel/DynamicOppositePairScalar.md) | `0e521f39-2ed2-4c45-9ddb-7ee1cf726a76` | `3f503e6f-952b-426f-9844-d99a53f82260` | `7f5b5f04a855fc0b4671393213c87415a6ee2aaf` |
 | [DynamicCommonLeviComposition](../../Langlands/Representation/Plancherel/DynamicCommonLeviComposition.md) | `36a59df1-e66f-4fdc-a7e8-99d12cb4d543` | `69f7eb96-5292-4f08-90fb-6fdf8a245b7a` | `aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a` |
+| [DynamicCommonLeviScalar](../../Langlands/Representation/Plancherel/DynamicCommonLeviScalar.md) | `c43f3b16-d43f-409b-b43a-bf508c51d781` | `5d19fdca-5e1d-49c6-a01e-d88e7acd5911` | `4abbe7aabd9c92005d91c9d5bba86b879e928bb3` |
 
 As above, these publications accept the targets and reductions at their displayed scope; none
 of the unproved targets named in their rows becomes a theorem by publication.
@@ -509,29 +513,35 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   `P̄ = P_G(χ⁻¹)`, with radical measures normalized by an arbitrary compact open `K`
   satisfying both compact-parabolic factorizations. Each item below is a target or a
   reduction at the scope stated in its row; none removes the analytic data of the scalar.
-  - IV.3 (1), independence of `P ∈ P(M)`: only the opposite pair `{P, P̄}` is addressed,
-    by the unproved target `ConditionalDynamicOppositePairScalarStatement`
-    (`DynamicOppositePairScalar`, published at commit `7f5b5f04…`; proof task Task 6924
-    `9fe80067-873a-442f-b6b5-c3a6191f7655`). For maximal `M`, `P(M) = {P, P̄}`.
-    For general `P'` the source proof (pp.285–286) uses four instances of IV.1 (12), the
-    composition formula, for the triples `(P₀, P₁, P₂) = (P̄', P, P')`, `(P', P̄, P̄')`,
-    `(P̄, P̄', P)` and `(P, P', P̄)`. IV.1 (12) for actual dynamic parabolics with a
-    common Levi is now the unproved target `ConditionalDynamicCommonLeviCompositionStatement`
-    (`DynamicCommonLeviComposition`, published at commit `aeb3911c…`; proof tasks Task 7002
+  - IV.3 (1), independence of `P ∈ P(M)`: for an arbitrary `P' = P_G(ψ) ∈ P(M)` it is the
+    unproved target `ConditionalDynamicCommonLeviScalarStatement` (`DynamicCommonLeviScalar`,
+    published at commit `4abbe7aa…`), for one compact open `K` with
+    `IsCommonLeviSplitting K χ ψ` and the four compact-parabolic factorizations
+    `G(F) = Q K`, `Q ∈ {P, P̄, P', P̄'}`, that the scalars `j_P` and `j_{P'}` use. The
+    opposite pair `{P, P̄}` (all of `P(M)` for maximal `M`) is the earlier unproved target
+    `ConditionalDynamicOppositePairScalarStatement` (`DynamicOppositePairScalar`, published at
+    commit `7f5b5f04…`; proof task Task 6924 `9fe80067-873a-442f-b6b5-c3a6191f7655`). It is
+    proved to follow from the general target (`conditionalDynamicOppositePairScalar_of_commonLevi`,
+    which supplies the splitting for every `K` by `isCommonLeviSplitting_of_pair`). The source
+    proof (pp.285–286) uses four instances of IV.1 (12), the composition formula, for the
+    triples `(P₀, P₁, P₂) = (P̄', P, P')`, `(P', P̄, P̄')`, `(P̄, P̄', P)` and `(P, P', P̄)`.
+    IV.1 (12) for actual dynamic parabolics with a common Levi is the unproved target
+    `ConditionalDynamicCommonLeviCompositionStatement` (`DynamicCommonLeviComposition`,
+    published at commit `aeb3911c…`; proof tasks Task 7002
     `01859916-3d8b-438c-816e-386388809766` and, for its structural hypothesis, Task 7001
-    `7351966c-e13e-40a4-bf1d-6b627cd4da5f`). IV.3 (1) for general `P'` is not derived from it.
-    The derivation would need one `K` that splits along the four ordered pairs `(P̄', P)`,
-    `(P, P')`, `(P', P̄)` and `(P̄, P̄')` of consecutive members of these triples and also
-    has the four compact-parabolic factorizations `G(F) = Q K`, `Q ∈ {P, P̄, P', P̄'}`, that
-    the scalars `j_P` and `j_{P'}` use. For `P = P_G(χ)` and `P' = P_G(ψ)`, Worker 200's
-    `CommonLeviSplitting.exists_isCommonLeviSplitting` gives arbitrarily small compact open
-    `K` with `IsCommonLeviSplitting K χ ψ`, which yields the four splittings (with
-    `SplitsAlong.inverse`); such a small `K` need not have the factorizations, and a `K` with
-    both properties, as Waldspurger's special `K` (I.1, p.240), is not constructed. The
-    derivation would also need the squared-modulus identity for the non-opposite pairs and
-    the passage from the pointwise identity on the full domain regions to the rational
-    scalars. How the Library's scalars for different `P'` compare under its normalization by
-    an arbitrary `K` is not established.
+    `7351966c-e13e-40a4-bf1d-6b627cd4da5f`). Up to `SplitsAlong.inverse`, its splitting
+    premises for the four triples are the four fields of `IsCommonLeviSplitting K χ ψ`. The
+    general target has no proof task. A proof also needs: the rational continuation
+    (Théorème IV.1.1) of the four non-opposite operators `J_{P'|P}`, `J_{P|P̄'}`, `J_{P̄'|P̄}`
+    and `J_{P̄|P'}`, which the Library lacks and the target does not take as data; the
+    squared-modulus identity for these non-opposite pairs; nonvanishing of the continued
+    `J_{P'|P}`; and the passage from the pointwise identities on the full domain regions to the
+    rational scalars. Worker 200's `CommonLeviSplitting.exists_isCommonLeviSplitting` gives
+    arbitrarily small compact open `K` with `IsCommonLeviSplitting K χ ψ`. Such a small `K`
+    need not have the factorizations. A `K` with both properties, such as Waldspurger's
+    special `K` (I.1, p.240), is not constructed. So, beyond the opposite-pair case, the Library
+    supplies no `K` satisfying the hypotheses of the general target. How the Library's scalars
+    for different `P'` compare under normalizations by different `K` is not established.
   - IV.3 (2), `j(π̌) = j(π)`: the unproved target
     `ConditionalDynamicOppositeContragredientScalarStatement`, reduced in `DynamicOppositeContragredientScalarReduction` to the bilinear dual
     adjunction target, whose proof task is Task 6641
@@ -559,10 +569,11 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
     `RationalUnitaryRegularValue`, `StandardLeviPlancherelWeight`). Weyl invariance is
     available only in transport form: the density of `(gχg⁻¹, gKg⁻¹, gA)` is the transport
     of the density of `(χ, K, A)`. The comparison on one Levi subgroup, where `gPg⁻¹` is
-    another element of `P(M)`, needs IV.3 (1) for that parabolic and is not formalized.
-    For maximal `M` that parabolic is `P` or `P̄`, but combining the conjugation target
-    with the opposite-pair target, which fixes one `K`, would also need a comparison of
-    the normalizations by `gKg⁻¹` and by `K`; that combination is not formalized either.
+    another element of `P(M)`, is not formalized, even for maximal `M`. It would combine the
+    conjugation target with IV.3 (1) for that parabolic. The IV.3 (1) targets above (general
+    and opposite-pair) fix one `K`, so it would also need a comparison of the normalizations
+    by `gKg⁻¹` and by `K`, and, beyond the opposite pair, a `K` with the splitting and the
+    factorizations.
     The contragredient item is the conditional density form above.
     The product formula `µ_G = ∏_α µ_α` is open with IV.3 (5).
 - **Proposition I.6.2: comparison of the two published forms.** The standard form
