@@ -40,7 +40,7 @@ private theorem faithfullyFlat_of_finite_local
     (IsLocalRing.maximalIdeal S') ⊤ Module.Finite.fg_top hle (by
       rw [IsLocalRing.jacobson_eq_maximalIdeal ⊥ bot_ne_top]))
 
-private theorem baseChange_lTensor_injective
+theorem baseChange_lTensor_injective
     (R : Type u) (S : Type v) (M : Type z)
     [CommRing R] [CommRing S] [Algebra R S]
     [AddCommGroup M] [Module R M] [Module S M] [IsScalarTower R S M]
@@ -73,7 +73,7 @@ private theorem flat_of_faithfullyFlat_module
   exact (Module.FaithfullyFlat.lTensor_injective_iff_injective S M
     (I.subtype.baseChange S)).mp (baseChange_lTensor_injective R S M I)
 
-private theorem extendedIdeal_rTensor_injective
+theorem extendedIdeal_rTensor_injective
     (R : Type u) (S : Type v) (M : Type z)
     [CommRing R] [CommRing S] [Algebra R S]
     [AddCommGroup M] [Module R M] [Module S M] [IsScalarTower R S M]

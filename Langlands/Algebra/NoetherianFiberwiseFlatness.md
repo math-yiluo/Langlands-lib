@@ -63,7 +63,10 @@ The theorem has the complete named proposition as its type, with no
 additional criterion as an argument. An unapplied assignment at the
 end of the Lean module also checks it at the four independent universes.
 The published statement and all of its imported files are unchanged.
-All helper lemmas in this module are private.
+The tensor helpers `Langlands.Algebra.baseChange_lTensor_injective` and
+`Langlands.Algebra.extendedIdeal_rTensor_injective` are public for reuse by
+the regular-parameter extension proof. Their statements and proofs are unchanged;
+the other helper lemmas remain private.
 
 A development Lake build and complete unapplied declaration inspection
 succeeded without errors or warnings in the project environment. The theorem
