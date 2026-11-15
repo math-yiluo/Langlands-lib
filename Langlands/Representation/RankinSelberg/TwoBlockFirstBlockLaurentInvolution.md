@@ -8,8 +8,10 @@ Weyl element and `ι` is the inverse transpose.
 
 ## The automorphism and the quotient map
 
-`mulEquivHaarChar_eq_one_of_involutive` shows that an involutive continuous group
-automorphism has Haar modulus one: its square is the identity.
+`mulEquivHaarChar_eq_one_of_involutive`, imported from
+`Analysis/Local/InvolutiveHaarCharacter` with its original namespace, shows that
+an involutive continuous group automorphism has Haar modulus one: its square is
+the identity.
 
 `reflectionAut n` is the continuous automorphism `g ↦ w g^ι w` of `GL_(n+1)`.
 `reflectionAut_involutive` shows it is an involution, and `reflectionAut_mem_iff`
@@ -40,4 +42,4 @@ variables `∫_{slice k} f = ∫_{slice -k} f ∘ reflection`.
 
 ## All-field port
 
-The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentInvolution` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; its Lean code is unchanged.
+The declarations of this module that involve the p-adic field and that the Library's proofs of JPSS (3.1) multiplicativity use are re-declared over every nonarchimedean local field, of any characteristic, in `Langlands.AllField.Representation.RankinSelberg.TwoBlockFirstBlockLaurentInvolution` (the Markdown there lists them). For those declarations this p-adic module is superseded by the all-field port; the p-adic declarations retain their meanings.
