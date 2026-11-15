@@ -1,0 +1,72 @@
+# Leading terms of the characteristic polynomial coefficients of a generic block
+
+This module proves `charpolyLeading : CharpolyLeadingStatement n` (statement in module
+`Kostant.CharpolyOrder`). Fix a finite index type `ι`, sizes `n : ι → ℕ`, a block `b` with
+`N = n b`, and `k < N`. Then the leading monomial for the order `ord n` of the coefficient
+of `t^k` of the characteristic polynomial of `genericBlock n b` is `antidiag n b k`. Its
+leading coefficient is `(-1)^(N-k) * sign (Fin.revPerm)`, where `Fin.revPerm` is the reversal
+of `Fin (N - k)`. This number is `±1`, so it is a unit.
+
+## Proof as implemented
+
+1. **Minors.** Mathlib's `Matrix.charpoly_coeff_eq_sum_minors` writes the coefficient of
+   `t^k` as `(-1)^(N-k)` times the sum, over the subsets `s ⊆ Fin N` with `N - k` elements,
+   of the principal minors `det (genericBlock n b)|_{s×s}`.
+2. **Generic degree lemmas** (section `Degree`, for any monomial order `m`):
+   - `degree_sum_lt`: a nonempty sum whose summands all have degree `≺ D` has degree `≺ D`.
+   - `degree_sum_eq_of_unique`: if one summand `f x₀` has degree strictly above all the other
+     summands, then the sum has the degree and the leading coefficient of `f x₀`.
+   - `degree_monomial_of_ne`: `degree (monomial d c) = d` for `c ≠ 0`.
+   - `weight_sum_single`: the weight of `∑ⱼ single (h j) 1` is `∑ⱼ w (h j)`.
+3. **Determinants of variables.** `expo n h = ∑ⱼ single (h j) 1` is the exponent of
+   `∏ⱼ X (h j)`. `det_eq_sum_monomial` expands a matrix with entries `X (g p q)` as
+   `∑_τ monomial (expo (j ↦ g (τ j) j)) (sign τ)` (from `Matrix.det_apply'`).
+   `expo_apply_self` and `expo_apply_eq_zero` evaluate `expo` when `h` is injective.
+4. **Combinatorics.**
+   - `sum_lt_sum_of_mem_iff`: among subsets of `Fin N` with as many elements as the final
+     segment `s₀ = {i | k ≤ i}`, the sum of the elements is strictly largest at `s₀`. The
+     elements of `s \ s₀` are `< k` and those of `s₀ \ s` are `≥ k`, and the two differences
+     have equal cardinality.
+   - `exists_lt_rev`: a permutation `τ ≠ Fin.revPerm` of `Fin M` has a largest column `c`
+     with `τ c ≠ rev c`, and there `rev c < τ c`.
+5. **The final segment.** `sh n b k j = k + j` maps `Fin (N - k)` onto the final segment
+   `seg n b k = {k, …, N-1}` (`mem_seg`, `card_seg`, `sum_seg`), and `segEquiv` is the
+   resulting equivalence. `ent n b k p q = ⟨b, k + p, k + q⟩` is the coordinate in row `k + p`
+   and column `k + q`. `permExpo n b k τ` is the exponent of the term of `τ` in the minor of
+   the final segment. `toP` views a coordinate in the variable order `PCoord n`, and
+   `ent_lt_ent_iff` says: a larger column comes first, and in the same column a smaller row
+   comes first.
+6. **Antidiagonal.** `permExpo_rev`: the reversal gives `antidiag n b k`, since
+   `(k + rev j) + (k + j) = N - 1 + k`.
+7. **Lex comparison in the final minor.** `permExpo_lt_rev`: for `τ ≠ Fin.revPerm`,
+   `permExpo τ ≺ permExpo Fin.revPerm`. Both exponents have the same column weight
+   `∑ⱼ (k + j)`. Take `c` from `exists_lt_rev`. At every variable before
+   `v = ent (rev c) c` in the order of `PCoord n`, the two exponents agree, because any
+   variable used there by either permutation lies in a column `j > c`, where `τ j = rev j`.
+   At `v` itself the reversal has exponent `1` and `τ` has exponent `0`, since `τ c ≠ rev c`.
+   `Finsupp.Lex.lt_iff` then gives the strict inequality.
+8. **Other minors.** `minor_degree_lt`: if `|s| = N - k` and `s ≠ seg n b k`, every term of
+   the minor on `s` has column weight `∑_{i ∈ s} i`. This is smaller than the column weight
+   `∑_{i ∈ seg} i` of `antidiag n b k` (step 4), so the minor has degree `≺ antidiag n b k`.
+9. **Final minor.** `seg_minor_leading`: reindex the minor on `seg n b k` by `segEquiv`
+   (`Matrix.det_submatrix_equiv_self`) and expand. By step 7 and `degree_sum_eq_of_unique`,
+   its leading monomial is `permExpo Fin.revPerm = antidiag n b k` and its leading
+   coefficient is `sign (Fin.revPerm)`.
+10. **Assembly.** By steps 8 and 9 and `degree_sum_eq_of_unique`, the sum of minors has
+    leading monomial `antidiag n b k` and leading coefficient `sign (Fin.revPerm)`. Write
+    `(-1)^(N-k)` as the constant `C ((-1)^(N-k))`. The product of the two leading
+    coefficients is nonzero, so
+    `MonomialOrder.degree_mul_of_mul_leadingCoeff_ne_zero` and
+    `leadingCoeff_mul_of_mul_leadingCoeff_ne_zero` give the degree `0 + antidiag n b k` and
+    the nonzero, hence unit, leading coefficient `(-1)^(N-k) * sign (Fin.revPerm)`.
+
+All declarations except `charpolyLeading` are in the namespace
+`Langlands.Archimedean.Kostant.CharpolyLeading`. They are auxiliary lemmas of this proof.
+
+## Provenance
+
+This is internal to the proof of `NilpotentConeIdealStatement` (Kostant, *Lie group
+representations on polynomial rings*, Amer. J. Math. 85 (1963), for `𝔤𝔩_n`). The monomial
+order and this leading-term computation are this project's own route to the radicality of
+the ideal generated by the characteristic polynomial coefficients. They are not taken from
+Kostant's paper.

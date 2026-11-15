@@ -7,7 +7,11 @@ The base field is a nonarchimedean local field, the ambient group is affine,
 and the parahoric building data and special-torus apartment lift are supplied.
 The definition allows every lower character and every real depth.
 
-`rationalConjugate_mem_scaledRootDepth` and its `iff` version prove stability
+The public helper `scaledRootDepth_galois_map_le` proves coefficient-conjugation
+stability of torus-restricted depth for an arbitrary field extension `K/k`,
+a homomorphism `f : S ⟶ T`, a base-field character and a fixed upper valuation.
+
+`rationalConjugate_mem_scaledRootDepth` and its `iff` version specialize it to stability
 under every automorphism of the maximal unramified extension over the base
 field. The proof maps the generator supremum under coefficient conjugation.
 Galois transport preserves actual upper roots and restriction multipliers,

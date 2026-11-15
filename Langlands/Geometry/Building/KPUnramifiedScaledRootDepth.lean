@@ -28,7 +28,8 @@ private instance scaledRootDepthAffineHom {F : Type u} [Field F]
     (CategoryTheory.Limits.pullback.snd G.X.hom (baseMap F K))
   infer_instance
 
-private theorem scaledRootDepth_galois_map_le
+/-- Coefficient conjugation preserves torus-restricted depth at a base-field character. -/
+theorem scaledRootDepth_galois_map_le
     (k K : Type u) [Field k] [Field K] [Algebra k K]
     {S T : CommGroupScheme (Spec (CommRingCat.of k))}
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
