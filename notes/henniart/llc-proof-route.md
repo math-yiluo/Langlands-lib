@@ -4,18 +4,27 @@ Author: Worker 0, for Task 0 (`69dd20b3-6a77-44aa-b779-32391843c8dd`). First
 version 10 November 2026, second version 11 November 2026, third, fourth and
 fifth versions 12 November 2026, sixth to thirteenth versions 13 November
 2026, fourteenth to sixteenth versions 14 November 2026, seventeenth version
-15 November 2026. This eighteenth version, also of 15 November 2026, was
-checked against Library commit `fab9caeae532b7a65e67e702bcab72d3194371ae`.
-The seventeenth version was checked against commit `5764b3a9`, which has the
-same Lean sources as commit `544dba099880b57da5fdc3cbc715c01cf2579eb2`.
-Between commits `5764b3a9` and `fab9caea`, the Library added Lean modules
-and changed three Lean files that this note does not name, all under
-`BruhatTits/` and `GroupScheme/`. Three of the added modules bear on this
-note: the two statements on the chain of premise 3 below and
-`Conductor.ConductorMinimalityProof` (Task 5549). A search of the added Lean
-files for the names of the open propositions of this note found only the
-two statements. So the Lean facts that this note states at commit `544dba09`
-also hold at commit `fab9caea`, except where the text says otherwise.
+15 November 2026, eighteenth version 15 November 2026. This nineteenth
+version, also of 15 November 2026, was checked against Library commit
+`72480b70c88adff84a438bd7029d64ee3977469c`. The eighteenth version was
+checked against commit `fab9caeae532b7a65e67e702bcab72d3194371ae`, and the
+seventeenth against commit `5764b3a9`, which has the same Lean sources as
+commit `544dba099880b57da5fdc3cbc715c01cf2579eb2`. Between commits
+`5764b3a9` and `fab9caea`, the Library added Lean modules and changed three
+Lean files that this note does not name, all under `BruhatTits/` and
+`GroupScheme/`. Three of the added modules bear on this note: the two
+statements on the chain of premise 3 below and
+`Conductor.ConductorMinimalityProof` (Task 5549). Between commits `fab9caea`
+and `2016a0d9`, the Library added Lean modules and changed four Lean files
+that this note does not name. One added module proves a proposition that
+this note names: the proof of Task 6305 under premise 2 below. Between
+commits `2016a0d9` and `72480b70`, the Library added 116 Lean modules and
+changed no Lean file. One added module proves a proposition that this note
+names: the proof of Task 7044 under premise 3 below. A search of the Lean
+files added since commit `5764b3a9` for the names of the open propositions
+of this note found only the two statements and these two proofs. So the
+Lean facts that this note states at commit `544dba09` also hold at commit
+`72480b70`, except where the text says otherwise.
 
 This note records how the published Library reduces the full local Langlands
 correspondence for GL_n to three propositions, and names the task that owns
@@ -67,11 +76,14 @@ below. The route uses the third premise only for supercuspidal
 representations over p-adic fields. On 15 November 2026 the operator
 approved publishing, under Task 0, a variant of the premise restricted to
 that case, and a reduction statement that uses the variant in place of the
-premise. Both statements are now in the Library at commit `fab9caea`, and
+premise. Both statements are in the Library since commit `fab9caea`, and
 their proof tasks are published: Task 7044 for the variant and Task 7045 for
-the reduction. Neither has a proof yet. Task 4803 now waits on Tasks 7044 and
-7045, and Task 5584 on Task 7044, instead of Task 5032. The three open
-premises of the published three-premise theorem are unchanged. For statement
+the reduction. The proof of the variant (Task 7044, Worker 388) is in the
+Library at commit `72480b70`; the reduction has no proof yet. Task 4803 now
+waits on Tasks 7044 and 7045, and Task 5584 on Task 7044, instead of Task
+5032. The three open premises of the published three-premise theorem are
+unchanged. The global inputs of premise 1 are now pursued over totally
+complex number fields; see premise 1 below. For statement
 meanings and sources see [the specification coverage note](llc-specification-coverage.md);
 this note does not restate them.
 
@@ -321,9 +333,9 @@ is accepted and published.
 
 | # | Premise (universes of the full correspondence) | Five-premise position | Module | Owner and state (TaskHub record) |
 | --- | --- | --- | --- | --- |
-| 1 | `Henniart.CandidateExistenceStatement.{uF, uP, uA, uP, uF}` (Henniart 2000, Thm 3.1 with §§3.7–3.8) | 1 | `Correspondence/HenniartStableMapStatement` | Task 5583 `54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, waiting; executor Worker 5732. See below. |
-| 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, waiting; executor Worker 5733. It waits on Tasks 6305 and 7044 (no longer on Task 5032); Task 6304, which it also waited on, is done. It has no proof candidate; its route-study note is published. See below. |
-| 3 | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | 5 | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. Both are done; see below. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. Through the reduction statement of Task 7045, the route needs only a supercuspidal p-adic variant of the premise (Task 7044); see below. |
+| 1 | `Henniart.CandidateExistenceStatement.{uF, uP, uA, uP, uF}` (Henniart 2000, Thm 3.1 with §§3.7–3.8) | 1 | `Correspondence/HenniartStableMapStatement` | Task 5583 `54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, waiting; executor Worker 5732. See below; its global inputs are now pursued over totally complex number fields. |
+| 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, waiting; executor Worker 5733. It waits on Tasks 6305 and 7044 (no longer on Task 5032). Task 6304, which it also waited on, is done, and the proof of Task 6305 is in the Library at commit `2016a0d9`. It has no proof candidate; its route-study note is published. See below. |
+| 3 | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | 5 | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. Both are done; see below. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. Through the reduction statement of Task 7045, the route needs only a supercuspidal p-adic variant of the premise (Task 7044), whose proof is in the Library at commit `72480b70`; see below. |
 
 Premise 1. Task 3657 published the proposition
 `Henniart.CandidateExistenceReductionStatement.{uK, uW, uP, uE, uQ}` (module
@@ -537,6 +549,76 @@ Task 5583's draft. The second theorem of the composite below avoids this
 transport: it fixes the representation universe of the full correspondence
 at `0`.
 
+Premise 1 over totally complex fields. Henniart's globalization (Théorème 2.4
+and §3) works with CM number fields and their finite extensions, which are
+totally complex. So the global inputs of the reduction are needed only over
+totally complex number fields.
+On 15 November 2026 the operator made this the route (answer
+`81ed24709e7050068786116ca6613260`, Option A). It takes the archimedean theory
+of GL_n(R) off the critical path; the tasks on GL_n(R) continue. Worker 0
+staged five statement candidates under Task 0. Each states published
+propositions with `[NumberField.IsTotallyComplex F]` inserted after
+`[NumberField F]`, at the same universes, the rest unchanged, in a new
+module. The names end in `TCStatement`. On 15 November 2026 none of them was
+in the Library: A had passed review, and B, C, D and L were under review.
+Until they are accepted and published they are candidates, not Library
+statements.
+
+| Unit | Candidate | Module | Propositions |
+| --- | --- | --- | --- |
+| A | `aa7d05c9-a7a1-4707-a12c-adfbead2727a` | `Global/Factors/CuspidalPairFunctionalEquationTCStatement` | `Global.CuspidalArchimedeanParameterExistenceTCStatement`, `Global.CuspidalPairCompletedEquationTCStatement`, `Global.CuspidalPairGlobalFunctionalEquationTCStatement` |
+| B | `ba47992f-7508-4b44-95fe-7eeaab3119e6` | `Automorphic/AssociatedFactorTCStatement` | `RelativeWeilGroup.AssociatedGammaTCStatement` (Thm 2.3), `AssociatedTemperedFactorTCStatement` (Cor. 2.3), `AssociatedSupercuspidalInductionTCStatement` (Thm 2.4), `AssociatedCuspidalFactorTCStatement` (Cor. 2.4) |
+| C | `b90abaea-08af-46ad-bb64-445be3165eab` | `Global/Factors/PoleComparisonTCStatement` | `PoleComparison.RelativeCertifiedPoleComparisonsTCStatement` (Lemme 2.8), `RelativeIsometryFactorTCStatement`, `HenniartCompositeMapTCStatement` (§3.8) |
+| D | `a73c39bc-cd9f-4e33-8975-7fe4b668e978` | `Correspondence/HenniartCandidateExistenceTCReductionStatement` | `Henniart.CandidateExistenceTCReductionStatement`: `CandidateExistenceReductionStatement` with inputs 2, 4 and 5 replaced by their totally complex forms; inputs 1 (Harris) and 3 unchanged |
+| L | `a684ebca-ec3b-428d-b84b-62123cd1b0c6` | `Automorphic/AssociatedFactorTCReductionStatement` | the totally complex forms of three published links: `Global.CuspidalPairFunctionalEquationReductionTCStatement` (local data, A1 and A2 give A3), `RelativeWeilGroup.AssociatedGammaReductionTCStatement` (A3 at `.{u, u}` gives B1; the other input of `associatedGamma_of_inputs` is proved), `RelativeWeilGroup.AssociatedCuspidalFactorReductionTCStatement` (B3 and B2 give B4) |
+
+A private development check, not published, proves in Lean that each
+published proposition implies its totally complex form and that D's
+conclusion follows from the published `CandidateExistenceReductionStatement`
+(private diagnostic `d21b401e-f1ba-4319-9868-05d688041e3b`, 0 errors). It also proves links 1 and 3 from
+the published proofs. Each candidate compiled with 0 errors and 0 warnings.
+
+The operator's answer asks the owners of the existing proof tasks to stage
+a proof of the totally complex form as a supporting candidate under their
+current task once the statement is published. Their targets stay unchanged.
+The answers that Worker 0 received on 15 November 2026 are as follows.
+
+| Totally complex form | Owner task | Answer and open input of the planned proof |
+| --- | --- | --- |
+| A1 archimedean parameters | Task 5720 (`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`) | Worker 174: will stage. A draft proof needs only `ComplexGenericStandardParameterStatement` (Task 5977), not the GL_n(R) input (Task 5975). No answer yet from Worker 20. |
+| A2 completed equation | Task 5721 (`5a3b5760-2716-4429-94f5-0ff5bf53aea8`) | Workers 5210 and 5670: will stage. It needs (G'), `Global.CuspidalPairPartialGammaEquationStatement` (Task 6190, `f4660bce-a3cb-416c-89bf-9f0cb2004c8e`). Its published reduction has two semilocal premises that include archimedean functional equations at real places (Tasks 7053 and 7054). Worker 5210 will state the totally complex form of (G') and prove that it implies A2 under Task 5721. Worker 0 asked Worker 382 (Task 6190) to give the semilocal premises totally complex forms. |
+| A3 global functional equation | Task 5493 (`8e9a5dd6-1b51-4e53-af72-ca2e6d42fe0a`) | Worker 5493: will stage, from the proofs of A1 and A2 and `cuspidalPairLocalData`. |
+| B1 Thm 2.3 | Task 5003 (`0fdacf55-4b2d-4416-a0bb-2c98acaa1979`) | no answer yet. |
+| B2 Cor. 2.3 | Task 5175 (`b5a124c7-ff98-4121-bd17-27c291f004d6`) | Worker 5175: will stage; a draft proof from B1 compiles. |
+| B3 Thm 2.4 | Task 4933 (`65c9a94c-af88-4876-baa4-43d78ccd5531`) | Worker 4933: will stage once B1 and `UnitaryGenericExhaustion` (Task 4941) are proved. |
+| B4 Cor. 2.4 | Task 5178 (`6f8aff78-c965-484e-8f71-d3ca86f6d201`) | Worker 5178: will stage. |
+| C1 Lemme 2.8 | Task 6017 (`0f17fd08-105e-4659-b949-42f622d60eaa`) | Worker 406: will stage; a draft reduction from B4 compiles. |
+| C2 isometry factors | Task 5191 (`c7b60e52-3b3a-45a4-a9f2-595674545493`) | Worker 5159: will stage, from B4 and B3. |
+| C3 composite map | Task 5231 (`9e23a040-16d7-4a7a-bd9b-35a08938d3c4`) | no answer yet. |
+
+D and the three links get their own `lean.proof@1` tasks, which Worker 0
+publishes once the statements are in the Library. The proof of D is the
+published proof of `candidateExistenceReduction`. It needs a variant of the
+globalization step that records that the number field is totally complex,
+and totally complex copies of the five lemmas that pass on Théorème 2.4:
+`exists_witnessedGenerator_realizeExact`,
+`exists_witnessedGenerator_inducedReciprocity`,
+`exists_weilImage_realizeExact_continuousInduce`,
+`exists_weilImage_realizeExact_generator` and
+`henniartGlobalization_of_inputs`.
+
+D keeps Harris's Prop. 4.8 unchanged. Its fourteen-input reduction still
+reaches the archimedean parameters at real places through the rigidity
+input, `CuspidalSpectralRigidityStatement` (Task 6446), and the pole
+statement `CuspidalPairPoleStatement` (Task 5921). Worker 3657, who published
+Task 6446, answered that rigidity can also be proved by the route of
+Jacquet–Shalika without archimedean parameters. That route is not stated in
+the Library, and it still uses an archimedean nonvanishing result at real
+places (Jacquet–Shalika I, (3.17)). On 15 November 2026 Worker 0 asked the
+operator (request `99dd5c974ab65af5a036022f960632d5`) to choose between
+totally complex forms of the pole statement, of input 9 and of inputs 11–14
+(recommended), and that route.
+
 Premise 2. Task 5891 (`e69d09d4-6da8-4810-886b-664574e533f8`, done) proved
 the counting reduction of Henniart 1988, §2.8, in orbit form:
 `Henniart.numericalOrbitReduction` (module
@@ -585,20 +667,28 @@ supercuspidal orbit strata, as a statement task followed by a proof task
   `k + 1` and conductor `a`, the set
   `Numerical.supercuspidalOrbitStratum.{uK, uV} K k a` is finite: the second
   conjunct above.
-- Task 6305 (`44507d44-e3fd-4b88-a5cf-8efd43844948`, `lean.proof@1`, ready,
-  no executor yet) is to prove it in a module
-  `Correspondence/HenniartOrbitStratumFinitenessProof`.
+- Task 6305 (`44507d44-e3fd-4b88-a5cf-8efd43844948`, `lean.proof@1`) proved
+  it. `Henniart.supercuspidalOrbitStratumFiniteness` (module
+  `Correspondence/HenniartOrbitStratumFinitenessProof`; Lean proof by Worker
+  408 from a draft by Worker 5733, candidate `ade94fc2`) proves
+  `SupercuspidalOrbitStratumFinitenessStatement.{uK, uV}` at independent
+  universes. It passed independent review and is in the Library at commit
+  `2016a0d9`. On 15 November 2026 the task record still showed the state
+  ready, with Worker 408 as executor.
 
-A Lean draft of the proof is in Task 5584's shared draft (revision 2). It
-reduces to the published
-`Henniart.CompactOpenFiniteness.centralLevelStratum_finite` (Bernstein–Zelevinsky
-1976, Cor. 4.15, for p-adic fields). The draft is not a candidate, and the
-Library at commit `544dba09` has no proof module. The operator did not approve
+The proof twists each orbit by an unramified character to a representative
+whose central character is trivial at the scalar uniformizer and on the
+central elements of the level-`a` subgroup. Only finitely many such central
+characters exist, so each orbit meets one of finitely many sets
+`SupercuspidalClass.centralLevelStratum χ a`. Each of these is finite by the
+published `Henniart.CompactOpenFiniteness.centralLevelStratum_finite`
+(Bernstein–Zelevinsky 1976, Cor. 4.15, for p-adic fields). This proves the
+second conjunct of `NumericalOrbitCountStatement` only. The operator did not approve
 the second unit proposed in the note, which would derive the counts from a
 bijective numerical injection in every rank. The operator judged it circular
 for this route: every known source of such an injection is a local Langlands
 correspondence whose proof uses the numerical theorem. TaskHub searches on
-13 and 14 November 2026 found no task for the Weil-side finiteness or the
+13, 14 and 15 November 2026 found no task for the Weil-side finiteness or the
 equality of the counts. The operator will decide later on
 a program for them, such as Henniart's 1988 route (Route A of the route-study
 note).
@@ -767,25 +857,34 @@ variant gives the conclusion of
 `genericConductor_isNewvectorConductor_of_conductorExponentStatement` for a
 supercuspidal representation, with the instances of
 `GenericEpsilonConductor` (private diagnostic
-`be50c246-626b-41da-bec9-b41b4b1d7d46`, 0 errors). The planned proof of the
-variant is Tate's thesis in rank one (the published
-`GodementJacquet.localTateConductor` with
-`Conductor.conductorExponent_rankOne_of_localTate`). In rank at least 2 it
-uses the fact that a supercuspidal representation has L-factor 1, so that a
-finite sum of integrals equals 1. That argument has not been formalized or
-reviewed. If both statements and both proofs are published, the
-supercuspidal correspondence follows from premises 1 and 2 alone. It then
-needs neither premise 3 in full nor the deferred generation statement.
+`be50c246-626b-41da-bec9-b41b4b1d7d46`, 0 errors).
 
-Worker 0 published the two proof tasks on 15 November 2026. On that day both
-were ready, with no executor yet:
+The variant is proved: `Conductor.supercuspidalPadicConductorExponent`
+(module `Representation/Conductor/SupercuspidalPadicConductorExponentProof`;
+Worker 388, Task 7044; in the Library at commit `72480b70`) proves
+`SupercuspidalPadicConductorExponentStatement.{uF, uV}` at independent
+universes. Its Markdown describes the proof. Rank one is Tate's local theory
+(the published `GodementJacquet.localTateConductor` with
+`Conductor.conductorExponent_rankOne_of_localTate`). In rank at least 2 the
+proof follows the published `Conductor.conductorExponentStatement_of`. The
+existence of essential vectors is supplied for supercuspidal representations
+by the helper `SupercuspidalPadic.exists_isEssentialVector` (module
+`Representation/Conductor/SupercuspidalPadicEssentialExistence`), which uses
+the fact that a supercuspidal representation has L-factor 1. It uses neither
+`Conductor.EssentialVectorExistence` nor the deferred generation statement.
+Once the reduction (Task 7045) is also proved, the supercuspidal
+correspondence follows from premises 1 and 2 alone.
+
+Worker 0 published the two proof tasks on 15 November 2026:
 
 - Task 7044 (`601c1ed8-5f29-4316-a599-67730ec900fd`, `lean.proof@1`) is to
-  prove `Conductor.SupercuspidalPadicConductorExponentStatement`.
+  prove `Conductor.SupercuspidalPadicConductorExponentStatement`. Its proof
+  is published (above).
 - Task 7045 (`91b1a919-c763-40e4-b0e7-3ee049060243`, `lean.proof@1`) is to
   prove
   `Henniart.Extension.SupercuspidalCorrespondenceHenniartSupercuspidalConductorStatement`
-  by adapting the published route theorems in new modules.
+  by adapting the published route theorems in new modules. It has no proof
+  in the Library at commit `72480b70`.
 
 Following the operator's instruction (message
 `3187b6ad4bdc53ae968332d07f4669e3`), Worker 0 asked the executors of Tasks
@@ -794,7 +893,9 @@ confirmed that Task 4803 now waits on Tasks 5583, 5584, 7044 and 7045, and
 no longer on Task 5032. Its final assembly will apply the Task 7045 theorem
 to the theorems of Tasks 5583, 5584 and 7044. Worker 5733 confirmed that
 Task 5584 now waits on Task 7044 instead of Task 5032; its wait on Task 6305
-stays. Its need is a published proof of the variant at arbitrary universes.
+stays, although the proof of Task 6305 is now published (premise 2 above).
+Its need was a published proof of the variant at arbitrary universes, which
+the proof of Task 7044 provides.
 
 Task 5584 also uses the conductor finiteness of supercuspidal classes, the
 second hypothesis of `numericalOrbitReduction` under premise 2 above. A

@@ -40,7 +40,13 @@ torus quotient, and it and the preimage of the upper unipotent group are
 the integral points and radical preimage of actual model and quotient
 data, with the diagonal torus as reductive quotient; the general
 depth-zero theory recovers `I/I^+ ≅ (𝓀ˣ)^N` and the index from these
-data and proves `I` and `I^+` compact open. Corrected Theorem
+data and proves `I` and `I^+` compact open; the model map from the
+Iwahori model to the standard `GL_N` model has a smooth connected
+unipotent special-fibre kernel and a Borel special-fibre image, the
+integral matrices reducing into that image form `I`, and the principal
+congruence subgroup lies in `I^+`, as KP Theorem 8.4.19 and Corollary
+8.4.12 predict for the standard alcove and its hyperspecial vertex.
+Corrected Theorem
 7.8.1
 and the `G(F)^0` branch of Theorem 7.5.3 have independently accepted,
 published statements on supplied building data, and part (4) of Theorem
@@ -86,9 +92,7 @@ proved construction; published theorems reduce the model statement of
 Theorems 8.3.2 and 8.3.13 to connected generation (KP Lemma A.4.26)
 alone, and the kernel and parabolic-image statements of Theorem 8.4.19
 to one and three unproved statements; its root-group kernel lemma (KP
-Lemma C.5.3) is proved for relative roots without higher multiples and
-reduced, for multipliable roots, to the existence of valued unitary
-root-group coordinates.
+Lemma C.5.3) is proved.
 The other fifteen rows retain
 empty formal-status and evidence fields. The remaining Bundle B
 targets still require public ledger entries. Private source audits and
@@ -1143,6 +1147,52 @@ module cited in the two rows changed between Library commits `0b7bb3fd`
 and `7cb8c3d3`. The pass extends to Library head `7cb8c3d3`. The source
 and correction fields of every row are unchanged.
 
+A thirtieth pass on 15 November 2026 updates one row, adds none and
+changes no status. The Theorem 8.4.19 row records a `GL_N` regression
+instance for the standard alcove `F'` and its hyperspecial vertex `F`,
+built on the Iwahori model and quotient data of item (11) of the Section
+13.2.6 row. `GeneralLinearIwahoriKernel` (artifact
+`072319b5-b828-4608-8d89-4031ecb76ef7`, Library commit `9ed11fc6`)
+defines the model map `iwahoriMatrixHom` from the Iwahori model to the
+unit group scheme of `M_N(𝒪)`, induced by the inclusion of orders, and
+proves that its special-fibre kernel, the unit group `1 + J_-` of the
+strictly lower part, is smooth, connected and unipotent.
+`GeneralLinearIwahoriImage` (artifact
+`8c0e9ba5-cf9e-47e4-a540-94813ccf2bed`, Library commit `2016a0d9`)
+identifies the special-fibre image with the upper triangular Borel
+subgroup and proves the Library predicates
+`HasSmoothConnectedUnipotentKernel`, `HasParabolicSpecialFibreImage` and
+`HasParabolicReductionPreimage` for the corresponding map of model data.
+`GeneralLinearIwahoriStandard` (artifact
+`0eec621f-fe71-4fb0-b667-9e6a588dffae`, Library commit `497ef498`)
+identifies that target model with the Library's standard model of
+`GL_N`, transports the three predicates and Borelness to
+`iwahoriStandardModelHom` into `generalLinearModelData`, proves that the
+image in the identity reductive quotient is parabolic, indeed Borel, and
+proves `SatisfiesPositiveRadicalClause` for the hyperspecial and Iwahori
+quotient data: the principal congruence subgroup lies in `I^+`. These
+are the first assertion of part (1), parts (2) and (3), the parabolicity
+of `℘_F(F')` and the Axiom 4.1.22(7) inclusion of Corollary 8.4.12 at
+that pair. Nothing identifies the models with KP's parahoric models. The
+row also records two proofs published by other tasks.
+`multipliableRootGroupCoordinatesExistence` (artifact
+`9b38dbed-a9c6-47c1-9130-1942f3d2dac6`, Library commit `2016a0d9`, Task
+7077) proves that every multipliable relative root group has valued
+unitary coordinates, and `unramifiedRootDepthKernel` (artifact
+`4971879f-64d1-4091-be76-e33718ecfc57`, Library commit `497ef498`, Task
+6392) derives from it `UnramifiedRootDepthKernelStatement`, the Lean
+form of KP Lemma C.5.3, for every relative root through the reduction
+recorded by the twenty-eighth pass. This discharges the root-group
+hypothesis of both chart theorems, and the lemma leaves the open
+obligations. The statements of the row remain unproved. The header,
+coverage and README record the changes. Twenty-two declarations were
+inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit `72480b70`;
+each inspected Lean module is byte-identical to the commit that first
+published it, and every reported axiom set is `propext`,
+`Classical.choice`, `Quot.sound`. The source and correction fields of
+every row are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -1249,7 +1299,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data; Theorem 9.6.5 (with a proved reduction to five statements, three of them proved, and its descent input reduced by published proofs and implications to one unproved statement) and Lemma 9.8.1 (both existence statements reduced by published theorems to two unproved statements, the second of them further to six, four of them proved) have published statements, Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 published statements for the selected rational Kottwitz map, all four reduced by published theorems to five unproved focused statements in total, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, that of Theorem 8.4.10 proved, the full model of Theorem 8.3.2 with a proved construction, the model statement of Theorems 8.3.2 and 8.3.13 reduced by published theorems to connected generation (KP Lemma A.4.26) alone and the kernel and parabolic-image statements of Theorem 8.4.19 to one and three unproved statements, with its root-group kernel lemma (KP Lemma C.5.3) proved for relative roots without higher multiples and reduced, for multipliable roots, to the existence of valued unitary root-group coordinates; the other fifteen rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data; Theorem 9.6.5 (with a proved reduction to five statements, three of them proved, and its descent input reduced by published proofs and implications to one unproved statement) and Lemma 9.8.1 (both existence statements reduced by published theorems to two unproved statements, the second of them further to six, four of them proved) have published statements, Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 published statements for the selected rational Kottwitz map, all four reduced by published theorems to five unproved focused statements in total, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, that of Theorem 8.4.10 proved, the full model of Theorem 8.3.2 with a proved construction, the model statement of Theorems 8.3.2 and 8.3.13 reduced by published theorems to connected generation (KP Lemma A.4.26) alone and the kernel and parabolic-image statements of Theorem 8.4.19 to one and three unproved statements, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the other fifteen rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -4510,7 +4560,29 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.BruhatTits.IntegralModels.TorusRootModelFamilyData.closedPoint_mem_range_orderedChart",
         "Langlands.BruhatTits.IntegralModels.OrderedFixerFactorization",
         "Langlands.BruhatTits.IntegralModels.UnramifiedOrderedFixerFactorizationStatement",
-        "Langlands.BruhatTits.IntegralModels.unramifiedOrderedFixerFactorization"
+        "Langlands.BruhatTits.IntegralModels.unramifiedOrderedFixerFactorization",
+        "Langlands.BruhatTits.IntegralModels.matrixOrderModel",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixHom",
+        "Langlands.BruhatTits.IntegralModels.specialFibreKernelIso",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixHom_specialFibreKernel_properties",
+        "Langlands.BruhatTits.IntegralModels.matrixOrderModelData",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom",
+        "Langlands.BruhatTits.IntegralModels.specialFibreImageIso",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_hasSmoothConnectedUnipotentKernel",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_hasParabolicSpecialFibreImage",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_isBorelSubgroup_specialFibreImage",
+        "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_hasParabolicReductionPreimage",
+        "Langlands.BruhatTits.IntegralModels.matrixOrderModelIso",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasSmoothConnectedUnipotentKernel",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasParabolicSpecialFibreImage",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_isBorelSubgroup_specialFibreImage",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasParabolicReductionPreimage",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasParabolicReductiveImage",
+        "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_isBorelSubgroup_reductiveImage",
+        "Langlands.BruhatTits.IntegralModels.generalLinearIwahori_satisfiesPositiveRadicalClause",
+        "Langlands.Geometry.Building.multipliableRootGroupCoordinatesExistence",
+        "Langlands.BruhatTits.IntegralModels.unramifiedRootDepthKernel"
       ],
       "modules": [
         "Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelStatement",
@@ -4536,7 +4608,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.BruhatTits.IntegralModels.OrderedIntegralOpenCellReduction",
         "Langlands.BruhatTits.IntegralModels.TorusRootKernelCell",
         "Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationStatement",
-        "Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationProof"
+        "Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationProof",
+        "Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriKernel",
+        "Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriImage",
+        "Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriStandard",
+        "Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceProof",
+        "Langlands.BruhatTits.IntegralModels.RootDepthKernel"
       ],
       "dependencies": [
         "Corrected general morphism setup preceding Proposition 8.4.15; that proposition supplies the smooth connected unipotent kernel and the product over all nondivisible ambient roots, without the false restriction in 8.4.19(1)",
@@ -4546,11 +4623,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Section 9.3.2 descends the facet morphisms and identifies Gamma-facets through F with parabolic f-subgroups; Proposition 2.4.5 transfers these to the maximal reductive quotient",
         "Proposition 9.3.3 proves the exact inverse-image equality over o, using 8.1.3 smooth Henselian reduction and Lemma 2.4.2 for the smooth connected unipotent kernel. This does not assert that every geometric parabolic descends",
         "Recorded Lean reductions of the kernel statement: unramifiedModelKernel_of_compatible (module Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelReduction, artifact 3c8c7c2b-ce0b-42ab-83cc-8148fe31d6ca, first published in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46) derives UnramifiedModelKernelStatement from UnramifiedQuasiSplitStatement, UnramifiedZeroPointsIndependenceStatement and UnramifiedCompatibleModelKernelStatement, its special case with g = 1 and a zero datum whose torus represents the centralizer of the maximal split torus C.i. unramifiedModelKernel_of_smoothConnected (module Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelTorus, artifact 005a7561-adcb-46b1-8734-75d1641c6752, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) replaces the last input by UnramifiedCompatibleModelKernelSmoothConnectedStatement, which asks only that the kernel be smooth and connected; unipotence is proved in that module from the bounded split torus. The first two inputs are proved (unramifiedQuasiSplit_of_henselianDiscrete with henselianDiscreteQuasiSplit, Theorem 9.6.5 row; unramifiedZeroPointsIndependence, Definition 6.6.1 row), so UnramifiedModelKernelStatement follows from UnramifiedCompatibleModelKernelSmoothConnectedStatement alone.",
-        "Recorded root-group kernel results (KP Lemma C.5.3, printed p. 705 / PDF p. 736, which KP's proof of Proposition 8.4.15 applies to each factor of the kernel product; the authors' corrections do not amend Appendix C): UnramifiedRootDepthKernelStatement (module Langlands.BruhatTits.IntegralModels.RootDepthKernelStatement, artifact a5aca36b-79c6-4841-9f29-e8d86427c0f7, first published in Library commit 430cc03fe803c5dbf74bc3baf91e8f7a2c26ea9c) states the conclusion of Lemma C.5.3 over O on supplied root models. For x in the apartment of C, a relative root a, depths r ≤ s, RootFiltrationModelData U and V for a at x at depths r and s, and a generic map f of their root groups with f ≫ U.inclusion = V.inclusion, every model homomorphism from V.model to U.model with generic fibre f has a smooth, connected and unipotent kernel on special fibres. unramifiedNoHigherRootDepthKernel (module Langlands.BruhatTits.IntegralModels.RootDepthKernelNoHigher, artifact f3bfbdc4-db9c-4b4a-adc9-2157ac484f7a, first published in Library commit fab9caeae532b7a65e67e702bcab72d3194371ae) proves UnramifiedNoHigherRootDepthKernelStatement, the same assertion for relative roots a with RelativeRoot.HasNoHigherRoots C.i a, that is, no multiple n • a with n ≥ 2 is a relative root. This covers every relative root that is not multipliable, including divisible ones. unramifiedRootDepthKernel_of_multipliableCoordinates (module Langlands.BruhatTits.IntegralModels.RootDepthKernelMultipliable, artifact 393613a6-c5a5-4d61-ab77-78f95599c709, first published in Library commit b3dcc8cc4c93f1140c6b34374f589ccc637a1a22) proves that MultipliableRootGroupCoordinatesExistenceStatement implies UnramifiedRootDepthKernelStatement. The hypothesis (module Langlands.Geometry.Building.MultipliableRootGroupCoordinates, artifact 18aca11b-d556-4d16-95da-9516832d7525, first published in Library commit 0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18) is unproved. It asserts that for supplied building data and every relative root b with 2 • b a relative root, the record ValuedUnitaryRootGroupCoordinates of b is nonempty: a finite separable extension E of the maximal unramified field K, a separable quadratic extension L of E, a homomorphism from R_{E/K} U_{L/E} to G that represents the root group U_b, and an apartment point at which b takes the value ω(v)/2 on the image of each unitary parameter (u, v), where ω is the valuation of L extending that of K with ω(K^×) = ℤ (KP Construction 2.9.16, display (2.9.3), printed p. 117, and Construction 6.1.17, printed pp. 205–206). For a multipliable root the proof follows KP Proposition C.5.1 (printed pp. 703–704): the root models are the canonical restricted lattice models R_{O_E/O} X_{r',2r'} (canonicalWeilLatticeModel), at a depth r' obtained after rescaling the valuation of E to have value group ℤ; their special-fibre transition kernels are smooth, connected and unipotent by canonicalWeilLatticeModel_kernel_properties, the Library form of KP Lemma C.4.4 (printed p. 701); and RootFiltrationModelData.specialFibreKernel_properties_of_presentation transfers this to arbitrary supplied presentations. The other roots have no higher multiples and are the case above. So UnramifiedRootDepthKernelStatement follows from MultipliableRootGroupCoordinatesExistenceStatement alone. TorusRootModelFamilyData.smooth_connected_kernel_of_orderedCharts (module Langlands.BruhatTits.IntegralModels.TorusRootModelKernel, artifact 20a106ef-f23d-43f6-9d96-d1777dd3c337, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) takes UnramifiedRootDepthKernelStatement as a hypothesis and puts the factors together in chart form. Let N and N' be integral models of G over O, let A and B be supplied TorusRootModelFamilyData for N on Ω and N' on Ω' (a smooth torus model with geometrically connected fibres and integral points E.torusIwahori, a root model at each relative root at the root-fixer depth of Ω, resp. Ω', and model maps into N, resp. N'), with each root-fixer depth for Ω at most that for Ω', and let ψ : N' → N be a model homomorphism with identity generic fibre. Given a sequence e of torus and root indices, monomorphic ordered multiplication charts of both families along e, and a lift of the whole special-fibre kernel of ψ into the residue pullback of the source chart's product, that kernel is smooth and connected. The theorem also takes the hypothesis IntegralModel.HasSmoothHomExtension for O, which the Library proves (fixedField_hasSmoothHomExtension applied to smoothHomExtension). TorusRootModelFamilyData.smooth_connected_kernel_of_orderedOpenCharts (module Langlands.BruhatTits.IntegralModels.TorusRootKernelOpenChart, artifact 7fdea9eb-1918-409c-aa69-d5dce50b51d8, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) replaces the lift and the monomorphism of the source chart by three conditions: the source chart, of B, is an open immersion, N' is smooth, and every integral section of N' whose image under ψ reduces to 1 in N has its closed point in the range of the source chart; the target chart, of A, must still be a monomorphism. Published results construct such families and open charts and prove the range condition, under further hypotheses. unramifiedOrderedIntegralOpenCellReduction (module Langlands.BruhatTits.IntegralModels.OrderedIntegralOpenCellReduction, artifact d9e32dd3-4773-430d-b20a-fbb7fe590aa5, first published in Library commit e5365902d74534dbf1622c06e695dffdc128d723) proves UnramifiedOrderedIntegralOpenCellReductionStatement (same module): UnramifiedTorusConnectedBoundStatement and UnramifiedTorusIwahoriConnectedImageStatement together imply UnramifiedOrderedIntegralOpenCellStatement (module Langlands.BruhatTits.IntegralModels.OrderedIntegralOpenCell, artifact b0286d47-0df7-4efc-bfd9-c942621e2ed7, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3), the open-immersion clause of KP Proposition 8.3.14(3) (printed pp. 299–300 / PDF pp. 330–331; the authors' corrections do not amend Proposition 8.3.14) over O. For supplied building data C, a zero datum E whose torus represents the centralizer of the maximal split torus C.i, a point x of the apartment, a nonempty affine-bounded subset Ω of the apartment and a smooth integral model N with N.integralPoints = E.zeroPoints ⊓ C.pointwiseFixer (Ω), that statement asserts that some TorusRootModelFamilyData A for N on Ω exists whose ordered integral multiplication (negative indivisible roots, then the torus, then positive indivisible roots) is an open immersion for every generic cocharacter ν and all injective complete enumerations of the indivisible roots positive on −ν and on ν. Of its two hypotheses, UnramifiedTorusIwahoriConnectedImageStatement is proved (unramifiedTorusIwahoriConnectedImage, Theorem 8.3.13 row) and UnramifiedTorusConnectedBoundStatement is unproved (its reduction is recorded in the Theorem 8.3.13 row), so this construction is conditional. TorusRootModelFamilyData.closedPoint_mem_range_orderedChart (module Langlands.BruhatTits.IntegralModels.TorusRootKernelCell, artifact 0b99e185-5c0f-470b-b962-2458d6743d2e, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) proves the range condition for B's chart along e when A's chart along e is an open immersion, Ω and Ω' are nonempty and affine-bounded, N'.integralPoints ≤ E.zeroPoints ⊓ C.pointwiseFixer (Ω'), and OrderedFixerFactorization C E e Ω Ω' holds. That property (same module) says: whenever elements of the slot subgroups for Ω (the image of T(K)^0 for the torus slot, U_{a,Ω,0} for a root slot a) have their ordered product in E.zeroPoints ⊓ C.pointwiseFixer (Ω'), each lies in the slot subgroup for Ω'. unramifiedOrderedFixerFactorization (module Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationProof, artifact 76f11d1c-cb91-4b8a-a5cc-29ec876abb05, first published in Library commit b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a) proves UnramifiedOrderedFixerFactorizationStatement (module Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationStatement, artifact 5ece22ec-58bd-4a3a-a0f4-11842bf5863d, first published in Library commit e5365902d74534dbf1622c06e695dffdc128d723): for a zero datum as above, a generic cocharacter ν and injective complete enumerations of the indivisible roots positive on −ν and on ν, OrderedFixerFactorization holds for the order negative roots, torus, positive roots, for all Ω and every nonempty affine-bounded Ω'. No published declaration assembles these results and the chart theorems into UnramifiedCompatibleModelKernelSmoothConnectedStatement, which remains unproved. On this route the family and open-chart construction is conditional on UnramifiedTorusConnectedBoundStatement, and both chart theorems take UnramifiedRootDepthKernelStatement as a hypothesis.",
+        "Recorded root-group kernel results (KP Lemma C.5.3, printed p. 705 / PDF p. 736, which KP's proof of Proposition 8.4.15 applies to each factor of the kernel product; the authors' corrections do not amend Appendix C): UnramifiedRootDepthKernelStatement (module Langlands.BruhatTits.IntegralModels.RootDepthKernelStatement, artifact a5aca36b-79c6-4841-9f29-e8d86427c0f7, first published in Library commit 430cc03fe803c5dbf74bc3baf91e8f7a2c26ea9c) states the conclusion of Lemma C.5.3 over O on supplied root models. For x in the apartment of C, a relative root a, depths r ≤ s, RootFiltrationModelData U and V for a at x at depths r and s, and a generic map f of their root groups with f ≫ U.inclusion = V.inclusion, every model homomorphism from V.model to U.model with generic fibre f has a smooth, connected and unipotent kernel on special fibres. unramifiedNoHigherRootDepthKernel (module Langlands.BruhatTits.IntegralModels.RootDepthKernelNoHigher, artifact f3bfbdc4-db9c-4b4a-adc9-2157ac484f7a, first published in Library commit fab9caeae532b7a65e67e702bcab72d3194371ae) proves UnramifiedNoHigherRootDepthKernelStatement, the same assertion for relative roots a with RelativeRoot.HasNoHigherRoots C.i a, that is, no multiple n • a with n ≥ 2 is a relative root. This covers every relative root that is not multipliable, including divisible ones. unramifiedRootDepthKernel_of_multipliableCoordinates (module Langlands.BruhatTits.IntegralModels.RootDepthKernelMultipliable, artifact 393613a6-c5a5-4d61-ab77-78f95599c709, first published in Library commit b3dcc8cc4c93f1140c6b34374f589ccc637a1a22) proves that MultipliableRootGroupCoordinatesExistenceStatement implies UnramifiedRootDepthKernelStatement. The hypothesis (module Langlands.Geometry.Building.MultipliableRootGroupCoordinates, artifact 18aca11b-d556-4d16-95da-9516832d7525, first published in Library commit 0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18) is proved by multipliableRootGroupCoordinatesExistence (module Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceProof, artifact 9b38dbed-a9c6-47c1-9130-1942f3d2dac6, first published in Library commit 2016a0d994180c702214a75514a08546aa930f07), which applies the published reduction multipliableRootGroupCoordinatesExistence_of_algebraicSU3 to the published theorems algebraicSU3RootCoordinatesExistence and Langlands.GroupScheme.RelativeRoot.unitaryChartUpgrade. It asserts that for supplied building data and every relative root b with 2 • b a relative root, the record ValuedUnitaryRootGroupCoordinates of b is nonempty: a finite separable extension E of the maximal unramified field K, a separable quadratic extension L of E, a homomorphism from R_{E/K} U_{L/E} to G that represents the root group U_b, and an apartment point at which b takes the value ω(v)/2 on the image of each unitary parameter (u, v), where ω is the valuation of L extending that of K with ω(K^×) = ℤ (KP Construction 2.9.16, display (2.9.3), printed p. 117, and Construction 6.1.17, printed pp. 205–206). For a multipliable root the proof follows KP Proposition C.5.1 (printed pp. 703–704): the root models are the canonical restricted lattice models R_{O_E/O} X_{r',2r'} (canonicalWeilLatticeModel), at a depth r' obtained after rescaling the valuation of E to have value group ℤ; their special-fibre transition kernels are smooth, connected and unipotent by canonicalWeilLatticeModel_kernel_properties, the Library form of KP Lemma C.4.4 (printed p. 701); and RootFiltrationModelData.specialFibreKernel_properties_of_presentation transfers this to arbitrary supplied presentations. The other roots have no higher multiples and are the case above. So UnramifiedRootDepthKernelStatement follows from MultipliableRootGroupCoordinatesExistenceStatement alone. unramifiedRootDepthKernel (module Langlands.BruhatTits.IntegralModels.RootDepthKernel, artifact 4971879f-64d1-4091-be76-e33718ecfc57, first published in Library commit 497ef49830025d23824f6b2e2b1d5d60b594f51e) proves UnramifiedRootDepthKernelStatement by applying unramifiedRootDepthKernel_of_multipliableCoordinates to multipliableRootGroupCoordinatesExistence, so this Lean form of KP Lemma C.5.3 on supplied root models holds for every relative root and all depths r ≤ s. TorusRootModelFamilyData.smooth_connected_kernel_of_orderedCharts (module Langlands.BruhatTits.IntegralModels.TorusRootModelKernel, artifact 20a106ef-f23d-43f6-9d96-d1777dd3c337, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) takes UnramifiedRootDepthKernelStatement as a hypothesis and puts the factors together in chart form. Let N and N' be integral models of G over O, let A and B be supplied TorusRootModelFamilyData for N on Ω and N' on Ω' (a smooth torus model with geometrically connected fibres and integral points E.torusIwahori, a root model at each relative root at the root-fixer depth of Ω, resp. Ω', and model maps into N, resp. N'), with each root-fixer depth for Ω at most that for Ω', and let ψ : N' → N be a model homomorphism with identity generic fibre. Given a sequence e of torus and root indices, monomorphic ordered multiplication charts of both families along e, and a lift of the whole special-fibre kernel of ψ into the residue pullback of the source chart's product, that kernel is smooth and connected. The theorem also takes the hypothesis IntegralModel.HasSmoothHomExtension for O, which the Library proves (fixedField_hasSmoothHomExtension applied to smoothHomExtension). TorusRootModelFamilyData.smooth_connected_kernel_of_orderedOpenCharts (module Langlands.BruhatTits.IntegralModels.TorusRootKernelOpenChart, artifact 7fdea9eb-1918-409c-aa69-d5dce50b51d8, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) replaces the lift and the monomorphism of the source chart by three conditions: the source chart, of B, is an open immersion, N' is smooth, and every integral section of N' whose image under ψ reduces to 1 in N has its closed point in the range of the source chart; the target chart, of A, must still be a monomorphism. Published results construct such families and open charts and prove the range condition, under further hypotheses. unramifiedOrderedIntegralOpenCellReduction (module Langlands.BruhatTits.IntegralModels.OrderedIntegralOpenCellReduction, artifact d9e32dd3-4773-430d-b20a-fbb7fe590aa5, first published in Library commit e5365902d74534dbf1622c06e695dffdc128d723) proves UnramifiedOrderedIntegralOpenCellReductionStatement (same module): UnramifiedTorusConnectedBoundStatement and UnramifiedTorusIwahoriConnectedImageStatement together imply UnramifiedOrderedIntegralOpenCellStatement (module Langlands.BruhatTits.IntegralModels.OrderedIntegralOpenCell, artifact b0286d47-0df7-4efc-bfd9-c942621e2ed7, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3), the open-immersion clause of KP Proposition 8.3.14(3) (printed pp. 299–300 / PDF pp. 330–331; the authors' corrections do not amend Proposition 8.3.14) over O. For supplied building data C, a zero datum E whose torus represents the centralizer of the maximal split torus C.i, a point x of the apartment, a nonempty affine-bounded subset Ω of the apartment and a smooth integral model N with N.integralPoints = E.zeroPoints ⊓ C.pointwiseFixer (Ω), that statement asserts that some TorusRootModelFamilyData A for N on Ω exists whose ordered integral multiplication (negative indivisible roots, then the torus, then positive indivisible roots) is an open immersion for every generic cocharacter ν and all injective complete enumerations of the indivisible roots positive on −ν and on ν. Of its two hypotheses, UnramifiedTorusIwahoriConnectedImageStatement is proved (unramifiedTorusIwahoriConnectedImage, Theorem 8.3.13 row) and UnramifiedTorusConnectedBoundStatement is unproved (its reduction is recorded in the Theorem 8.3.13 row), so this construction is conditional. TorusRootModelFamilyData.closedPoint_mem_range_orderedChart (module Langlands.BruhatTits.IntegralModels.TorusRootKernelCell, artifact 0b99e185-5c0f-470b-b962-2458d6743d2e, first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) proves the range condition for B's chart along e when A's chart along e is an open immersion, Ω and Ω' are nonempty and affine-bounded, N'.integralPoints ≤ E.zeroPoints ⊓ C.pointwiseFixer (Ω'), and OrderedFixerFactorization C E e Ω Ω' holds. That property (same module) says: whenever elements of the slot subgroups for Ω (the image of T(K)^0 for the torus slot, U_{a,Ω,0} for a root slot a) have their ordered product in E.zeroPoints ⊓ C.pointwiseFixer (Ω'), each lies in the slot subgroup for Ω'. unramifiedOrderedFixerFactorization (module Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationProof, artifact 76f11d1c-cb91-4b8a-a5cc-29ec876abb05, first published in Library commit b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a) proves UnramifiedOrderedFixerFactorizationStatement (module Langlands.BruhatTits.IntegralModels.OrderedFixerFactorizationStatement, artifact 5ece22ec-58bd-4a3a-a0f4-11842bf5863d, first published in Library commit e5365902d74534dbf1622c06e695dffdc128d723): for a zero datum as above, a generic cocharacter ν and injective complete enumerations of the indivisible roots positive on −ν and on ν, OrderedFixerFactorization holds for the order negative roots, torus, positive roots, for all Ω and every nonempty affine-bounded Ω'. No published declaration assembles these results and the chart theorems into UnramifiedCompatibleModelKernelSmoothConnectedStatement, which remains unproved. On this route the family and open-chart construction is conditional on UnramifiedTorusConnectedBoundStatement, and both chart theorems take UnramifiedRootDepthKernelStatement as a hypothesis, which unramifiedRootDepthKernel discharges.",
         "Recorded Lean reduction of parts (2) and (3): unramifiedFacetParabolicImage_of_generation_positive_modelKernel (module Langlands.BruhatTits.IntegralModels.UnramifiedFacetParabolicImageReduction, artifact 4d961e38-d988-4445-9780-ad3954763afc, first published in Library commit af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e) derives UnramifiedFacetParabolicImageStatement from UnramifiedUpstairsRadicalRootGenerationStatement, UnramifiedFacetPositiveRadicalStatement (Corollary 8.4.12 row) and UnramifiedModelKernelStatement. UnramifiedUpstairsRadicalRootGenerationStatement (module Langlands.BruhatTits.IntegralModels.UnramifiedUpstairsRadicalRootGenerationStatement, artifact fcb2faf8-b9a5-41f6-86d8-e63e44a756f3, first published in Library commit b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a; derived from Corollary 8.4.12) asserts that one subgroup H serves every smooth O-model with integral points E.zeroPoints ⊓ C.pointwiseFixer (Omega) for a nonempty subset Omega of one apartment facet: the image of the reduction preimage of its unipotent radical is H joined with the positive root fixers of Omega. unramifiedUpstairsRadicalRootGeneration_of_singleton (module Langlands.BruhatTits.IntegralModels.UnramifiedSingleFacetReduction, artifact a2db0fb0-b1bb-4210-82f9-000896e4d6d5, first published in Library commit af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e) derives it from its restriction to apartment singletons, UnramifiedUpstairsSingletonRadicalRootGenerationStatement. Hence UnramifiedFacetParabolicImageStatement follows from that singleton statement, UnramifiedFacetPositiveRadicalStatement and UnramifiedCompatibleModelKernelSmoothConnectedStatement. No published declaration states this composite or the one of the previous entry; both were checked with private lean_check runs.",
-        "Open obligations: UnramifiedModelKernelStatement has proof Task 6203 (6cb35eb6-b989-4438-a42a-5fe281a2a64b; statement Task 5901, 5edda489-0dfa-401e-b621-4c2603932be7), whose internal target is the smooth-connected statement. UnramifiedRootDepthKernelStatement (KP Lemma C.5.3) has proof Task 6392 (714e9a16-da57-41b5-93cd-3d91fea0c964) and follows from MultipliableRootGroupCoordinatesExistenceStatement, which has proof Task 7077 (375d1474-57eb-476d-ad2d-f012f18671b8). UnramifiedTorusConnectedBoundStatement, the unproved input of unramifiedOrderedIntegralOpenCellReduction, has proof Task 6469 (02be5145-9b9d-42f5-9ff3-fa91f9958b2b). UnramifiedFacetParabolicImageStatement, UnramifiedFacetParabolicOrderStatement and UnramifiedFacetCommonTorusStatement have proof Tasks 6317 (d54d3276-f5cc-4432-a6ff-6d9218a6c038), 6318 (33652ebf-da9c-4ca1-aa7b-4fb7c7b519d9) and 6320 (0d9f960a-6d9d-4ba2-bc9b-3c0a847189c2). IntegralModelAxiomsStatement has proof Task 5429."
+        "Recorded GL_N regression instance (the standard alcove F' and its hyperspecial vertex F; no building point; the first assertion of part (1), parts (2) and (3), the parabolicity of the image ℘_F(F') in the maximal reductive quotient, and the Axiom 4.1.22(7) inclusion, which KP derive from Corollary 8.4.12). F is a nonarchimedean local field with integers 𝒪[F] and residue field 𝓀[F], and the Iwahori model iwahoriModel F N, its model data iwahoriModelData F N and quotient data iwahoriQuotientData F N are those of item (11) of the Section 13.2.6 row: the unit group scheme of the Iwahori order Λ (integral matrices whose strictly lower entries lie in the maximal ideal), with integral points the Iwahori subgroup I, the diagonal torus as reductive quotient and radical preimage I^+. Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriKernel (artifact 072319b5-b828-4608-8d89-4031ecb76ef7, first published in Library commit 9ed11fc606807fab34c4852a4e88dbabebba69d1) defines matrixOrderModel F N, the unit group scheme of the order M_N(𝒪[F]) as an integral model of GL_N, and iwahoriMatrixHom F N, the model homomorphism from iwahoriModel F N induced by the inclusion Λ ⊆ M_N(𝒪[F]), with identity generic fibre. specialFibreKernelIso identifies the kernel of its special-fibre map with the unit group scheme 1 + J_-, where J_- is spanned by the classes of the scaled matrix units ϖE_ij (i > j) in 𝓀[F] ⊗ Λ, and iwahoriMatrixHom_specialFibreKernel_properties proves that this kernel is smooth, connected and unipotent. Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriImage (artifact 8c0e9ba5-cf9e-47e4-a540-94813ccf2bed, first published in Library commit 2016a0d994180c702214a75514a08546aa930f07) defines matrixOrderModelData F N (full and neutral model matrixOrderModel F N) and iwahoriMatrixModelHom : RelativeComponentModelHom (iwahoriModelData F N) (matrixOrderModelData F N). specialFibreImageIso identifies the schematic image of the special-fibre map with the upper triangular Borel subgroup scheme of GL_N over 𝓀[F] (the block parabolic for the weights −i), and the module proves HasSmoothConnectedUnipotentKernel, HasParabolicSpecialFibreImage, IsBorelSubgroup of the image and HasParabolicReductionPreimage for iwahoriMatrixModelHom F N: the sections of the hyperspecial model whose reduction lies in the rational points of the image are exactly the images of the sections of the Iwahori model. Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriStandard (artifact 0eec621f-fe71-4fb0-b667-9e6a588dffae, first published in Library commit 497ef49830025d23824f6b2e2b1d5d60b594f51e) proves matrixOrderModelIso, an isomorphism over the identity of GL_N from matrixOrderModel F N to the Library's standard model GeneralLinear.standardIntegralModel 𝒪[F] F (Fin N), the neutral model of generalLinearModelData F N (module Langlands.BruhatTits.IntegralModels.GeneralLinearDepthZero), and defines iwahoriStandardModelHom : RelativeComponentModelHom (iwahoriModelData F N) (generalLinearModelData F N), iwahoriMatrixHom F N followed by that isomorphism. Transport along it proves the same four predicates and Borelness for iwahoriStandardModelHom F N. For the identity quotient data generalLinearQuotientData F N of the hyperspecial model, iwahoriStandardModelHom_hasParabolicReductiveImage and iwahoriStandardModelHom_isBorelSubgroup_reductiveImage prove that the image in the reductive quotient is parabolic, indeed Borel, and generalLinearIwahori_satisfiesPositiveRadicalClause proves SatisfiesPositiveRadicalClause (generalLinearQuotientData F N) (iwahoriQuotientData F N): the reductions of both models are surjective on integral sections, and the positive subgroup of the hyperspecial quotient data, the principal congruence subgroup of GL_N(𝒪[F]), lies in I^+. Here I, I^+, GL_N(𝒪[F]) and its principal congruence subgroup play the roles of G(k)^0_{F'}, G(k)^{0+}_{F'}, G(k)^0_F and G(k)^{0+}_F. Nothing identifies these models with KP's G^0_{F'} and G^0_F, and no facet appears. The product description of the kernel, Ψ_F(F'), the common torus of Axiom 4.1.22(3) and the bijection of part (4) are not formalized for GL_N. The proofs compute with the Iwahori order and do not use the unproved statements of this row.",
+        "Open obligations: UnramifiedModelKernelStatement has proof Task 6203 (6cb35eb6-b989-4438-a42a-5fe281a2a64b; statement Task 5901, 5edda489-0dfa-401e-b621-4c2603932be7), whose internal target is the smooth-connected statement. UnramifiedTorusConnectedBoundStatement, the unproved input of unramifiedOrderedIntegralOpenCellReduction, has proof Task 6469 (02be5145-9b9d-42f5-9ff3-fa91f9958b2b). UnramifiedFacetParabolicImageStatement, UnramifiedFacetParabolicOrderStatement and UnramifiedFacetCommonTorusStatement have proof Tasks 6317 (d54d3276-f5cc-4432-a6ff-6d9218a6c038), 6318 (33652ebf-da9c-4ca1-aa7b-4fb7c7b519d9) and 6320 (0d9f960a-6d9d-4ba2-bc9b-3c0a847189c2). IntegralModelAxiomsStatement has proof Task 5429."
       ],
-      "consumer_or_regression": "Residue/facet correspondence and change-of-parahoric tests for depth-zero induction and double cosets; retain rational parabolics after Chapter 9 descent. The split SL_2 chamber-to-vertex kernel is a regression against the erroneous printed restricted index.",
+      "consumer_or_regression": "Residue/facet correspondence and change-of-parahoric tests for depth-zero induction and double cosets; retain rational parabolics after Chapter 9 descent. The split SL_2 chamber-to-vertex kernel is a regression against the erroneous printed restricted index. The GL_N Iwahori-to-hyperspecial model map of the recorded regression instance is a positive regression for the first assertion of part (1), parts (2) and (3), the parabolicity of ℘_F(F') and the Axiom 4.1.22(7) inclusion.",
       "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
@@ -4573,7 +4651,12 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "d9e32dd3-4773-430d-b20a-fbb7fe590aa5",
         "0b99e185-5c0f-470b-b962-2458d6743d2e",
         "5ece22ec-58bd-4a3a-a0f4-11842bf5863d",
-        "76f11d1c-cb91-4b8a-a5cc-29ec876abb05"
+        "76f11d1c-cb91-4b8a-a5cc-29ec876abb05",
+        "072319b5-b828-4608-8d89-4031ecb76ef7",
+        "8c0e9ba5-cf9e-47e4-a540-94813ccf2bed",
+        "0eec621f-fe71-4fb0-b667-9e6a588dffae",
+        "9b38dbed-a9c6-47c1-9130-1942f3d2dac6",
+        "4971879f-64d1-4091-be76-e33718ecfc57"
       ],
       "publication_commits": [
         "51e4d8972659f1ffcf0ca89e8eee9540a30b52d3",
@@ -4587,7 +4670,10 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "fab9caeae532b7a65e67e702bcab72d3194371ae",
         "b3dcc8cc4c93f1140c6b34374f589ccc637a1a22",
         "0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18",
-        "e5365902d74534dbf1622c06e695dffdc128d723"
+        "e5365902d74534dbf1622c06e695dffdc128d723",
+        "9ed11fc606807fab34c4852a4e88dbabebba69d1",
+        "2016a0d994180c702214a75514a08546aa930f07",
+        "497ef49830025d23824f6b2e2b1d5d60b594f51e"
       ],
       "axiom_reports": [
         {
@@ -4799,6 +4885,160 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "0bbe34a9-0cc9-4d11-9a35-3f21c9195de4",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit b3dcc8cc; kind theorem; the module is byte-identical to commit b3a1bdaf, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.matrixOrderModel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "abe740b8-4cbd-4927-b404-631b34ca9d8e",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 9ed11fc6, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixHom",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "a9433f88-f8d2-4931-9d6e-493e6b66860b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 9ed11fc6, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.specialFibreKernelIso",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "3cd8e310-3afa-4529-aa09-1055a75a9e1f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 9ed11fc6, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixHom_specialFibreKernel_properties",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "8d12b535-8d34-48fc-8e56-7beb8364ca77",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 9ed11fc6, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.matrixOrderModelData",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "15cba3b6-467a-4344-ad23-b1166a399b43",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "522f4799-d906-422a-b90c-835057ce8729",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.specialFibreImageIso",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "22ece6df-999a-43e1-b178-fb311297bb71",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_hasSmoothConnectedUnipotentKernel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "77b4f63b-49d9-45dd-ab3a-50353305aca0",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_hasParabolicSpecialFibreImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "373294dd-940f-4229-8de6-7979991fc552",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_isBorelSubgroup_specialFibreImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "a7c531ed-9196-4dc8-bfea-e79cfb0a735e",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriMatrixModelHom_hasParabolicReductionPreimage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "9f7a210b-3ab1-4861-be9d-08a613b236e2",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.matrixOrderModelIso",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "37446eef-95e0-4de8-ad0e-3b67745996a5",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "0e39c664-2a1f-4a0f-b07e-ee7da9414c42",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind definition; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasSmoothConnectedUnipotentKernel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "b2762161-9da5-4bce-ad03-d84b5791405d",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasParabolicSpecialFibreImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "fe7d68bd-bf9a-48ca-9671-a2dadeb6081c",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_isBorelSubgroup_specialFibreImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "07719e8e-db05-4adf-92d6-49ac484c9212",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasParabolicReductionPreimage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "150a7827-c984-4b24-946a-151e24b94399",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_hasParabolicReductiveImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ec6c8411-a5d7-46b2-b2a8-c4789b0f7955",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.iwahoriStandardModelHom_isBorelSubgroup_reductiveImage",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7cd57bdd-a59f-4c0a-956d-1015c4bbb13e",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.generalLinearIwahori_satisfiesPositiveRadicalClause",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7c9f6634-354f-47b9-b11e-238ae0955995",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.multipliableRootGroupCoordinatesExistence",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "a3bb0951-1940-46ee-9fc4-ec30a0a58590",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 2016a0d9, its first publication."
+        },
+        {
+          "declaration": "Langlands.BruhatTits.IntegralModels.unramifiedRootDepthKernel",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "60a16a00-f3d7-4fcf-aa83-68c7bb010940",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13 on 2026-11-15 at Library commit 72480b70; kind theorem; the module is byte-identical to commit 497ef498, its first publication."
         }
       ],
       "external_code": []
@@ -7207,6 +7447,27 @@ quotient data of `GL_N`, the general depth-zero theory gives `I/I^+ ≅
 1)^N`, the values KP 13.2.6 predicts at a chamber, and shows that `I`
 and `I^+` are compact open; the model is still not identified with KP's
 parahoric model.
+
+The thirtieth pass records Theorem 8.4.19 for the simplest incident pair
+of `GL_N`, the standard alcove `F'` and its hyperspecial vertex `F`. The
+inclusion of the Iwahori order `Λ` into `M_N(𝒪)` induces a model map
+from the Iwahori model to `GL_{N,𝒪}` that is the identity on generic
+fibres. On special fibres its kernel is `1 + J_-`, where `J_-` is
+spanned by the classes of the scaled strictly lower matrix units `ϖE_ij`
+in `𝓀 ⊗ Λ`, so it is smooth, connected and unipotent; its image is the
+upper triangular Borel subgroup; and the integral matrices that reduce
+into that subgroup form `I`. Together with the inclusion of the
+principal congruence subgroup in `I^+`, these give parts (1)–(3) of the
+theorem, except the product description of the kernel, together with the
+parabolicity of `℘_F(F')` and the inclusion of Corollary 8.4.12 at that
+pair. The models are still not identified with KP's parahoric models.
+The same pass records that KP Lemma C.5.3 is now proved for every
+relative root: valued unitary coordinates of the multipliable root
+groups exist, so the reduction recorded by the twenty-eighth pass
+applies. On the chart route to the kernel statement, the construction of
+families with open charts remains conditional on the unproved connected
+torus bound, and no published declaration assembles the factors into the
+kernel statement.
 
 ## Bundle E: filtrations, comparison alternatives and later instability
 

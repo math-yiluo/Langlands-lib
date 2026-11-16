@@ -115,8 +115,9 @@ It has no proof in the checked Library. A Worker 4 scratch file that imports the
 Library proof modules and pairs their theorems into the conjunction compiles against this
 Library (diagnostic `0e441105-9b2d-48c5-b124-8955a8dc9216`: 0 errors, 0 warnings; axioms
 `propext`, `Classical.choice`, `Quot.sound` only). Worker 4 published the exact proof Task
-6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`) for the conjunction; no proof of it is
-accepted yet.
+6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`) for the conjunction; no proof of it was
+accepted at that pass. The sixth pass below records its published proof
+`relativeRealCorootLinearAlgebra`.
 
 A fourth Worker 4 pass, also on 14 November, checks against Library
 `58ad0f796899b4aa457077d0146815c24758f739`. It updates the V.2.2 Remarks row and the
@@ -144,7 +145,8 @@ scratch file that imports the five Library proof modules and pairs their theorem
 conjunction compiles against this Library (diagnostic `a2deb435-d2ee-42cc-a88a-bd1d323df5c5`:
 0 errors, 0 warnings; axioms `propext`, `Classical.choice`, `Quot.sound` only). Worker 4
 published the exact proof Task 6866 (`e5eb891b-fc5e-4885-8241-647a8b70812f`) for the
-conjunction; no proof of it is accepted yet. This pass leaves unchanged the V.3.24 rows, the
+conjunction; no proof of it was accepted at that pass. The sixth pass below records its
+published proof `parabolicSplitComponents`. This pass leaves unchanged the V.3.24 rows, the
 V.3.24 evidence section, gap 7 and the V.3.24 sentences of the proof-task section, which
 Worker 1222 updates separately.
 
@@ -189,6 +191,32 @@ all test schemes; the normalizer equality concerns rational points only.
 The related maximal-Levi bound of two does not prove the arbitrary-Levi
 finiteness target. These ownership references supply no proof or
 acceptance evidence.
+
+A sixth Worker 4 pass, on 15 November, checks against Library
+`72480b70c88adff84a438bd7029d64ee3977469c`. It records the proofs of the two conjunctions
+that the third and fourth passes left open. It changes the evidence paragraph on the
+real-coroot unit, gaps 2 and 6 (only the sentence on the V.3.1–V.3.2 split-component
+unit), two sentences of the proof-task section, and the Task 6866 clause of the V.3.1
+split-component row. That row's clause on the arbitrary-Levi centralizer, Task 6918, is
+unchanged. Both proofs were independently accepted and first published at Library
+`497ef49830025d23824f6b2e2b1d5d60b594f51e`, and they are unchanged in the checked Library.
+The SHA256 digests of their Lean and Markdown files in the checked Library equal those of
+the accepted artifacts. Each theorem has exactly the type of its conjunction at universe `u`
+and builds it from the component theorems listed in the third and fourth passes. Worker 4
+found no `sorry`, `admit` or `axiom` in either proof file. A Worker 4 scratch file that
+imports both proof modules compiles against the checked Library and reports only the
+axioms `propext`, `Classical.choice` and `Quot.sound` for both theorems (diagnostic
+`481fbbd1-2bce-4a65-9954-6ea2c04a96ed`).
+
+| Rows | Statement | Theorem and proof module | Proof task | Accepted artifact, reviewer | Integration ID |
+| --- | --- | --- | --- | --- | --- |
+| V.3.7, V.3.12 and V.3.13, the real-coroot unit `89ad3e08` | `GS.RelativeRealCorootLinearAlgebraStatement` | `relativeRealCorootLinearAlgebra`, [RelativeRealCorootLinearAlgebraProof](../../Langlands/GroupScheme/Rational/RelativeRealCorootLinearAlgebraProof.md) | Task 6830 (`8a9c5345`) | `a8654d11-605a-46ed-bcd0-eed7ffba21ed`, Reviewer 4677 | `92287be0239c40f28284a89ae3030f7b` |
+| V.3.1 and the first sentence of V.3.2, the split-component unit `409bc563` | `GS.ParabolicSplitComponentStatements` | `parabolicSplitComponents`, [ParabolicSplitComponentStatementsProof](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatementsProof.md) | Task 6866 (`e5eb891b`) | `d40ca14a-7833-4179-82e6-2dafe6aec488`, Reviewer 4675 | `85cdbfae2b0c44ccb455cd863a363a6e` |
+
+At this pass the sibling statement `GS.ParabolicSplitComponentChamberStatement` (Task 6451)
+and the conjunction `GS.ParabolicChamberStatement` still have no proof in the checked
+Library; nor do the nine V.4.2 closed-root-subset statements (Tasks 6508–6516). This pass
+leaves unchanged the V.3.24 passages and Worker 1222's Levi recall rows and table.
 
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
@@ -281,7 +309,7 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | --- | --- | --- |
 | V.3 opening: parabolic subgroups, rational radicals | `IsParabolicSubgroup` | D; Rec |
 | V.3.1 Levi decomposition `P = M ⋉ N`; `N` acts simply transitively on the Levi factors | `GS.ParabolicRadicalTorusLeviStatement` and `GS.ParabolicRadicalTorusCentralizerLeviStatement` (a Levi factor is the centralizer of a maximal torus of the radical of `P`), `GS.RationalLeviConjugacyStatement` (two rational Levis are conjugate by a unique rational point of the unipotent radical), `GS.ParabolicRootPresentationExistenceStatement` | P (each has its proof) |
-| V.3.1 `M = Z(G, A)` for a split component `A` of `P`, `A = A_M`; Levi subgroups are the centralizers of split tori `A` with `A = A_M` | Worker 4's [ParabolicSplitComponentStatements](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatements.md), for a split component `A` of `P` (a maximal split torus of a supplied radical of `P`, as in V.2.1): `GS.ParabolicSplitComponentLeviStatement` (`Z(G, A)` is represented by a rational Levi factor of `P` whose split component is `A`), `GS.LeviSplitComponentRadicalStatement` (the split component of a rational Levi factor is a split component of `P`), `GS.ParabolicSplitComponentConjugacyStatement` (the unipotent radical acts transitively on the split components of `P`) and `GS.LeviCentralizerCharacterizationStatement` (the rational Levi factors of parabolics are the centralizers of split subtori `A` that are their split components). `GS.LeviSplitComponentCentralizerStatement` states `Z_G(A_M) = M` as subgroup functors for every rational Levi of a rational parabolic. Related: `GS.DynamicLeviCocharacterRealizationStatement`, `GS.MinimalParabolicLeviCentralizerStatement` | Rec (S08); P for the four split-component statements: `parabolicSplitComponentLevi` (Task 6452), `leviSplitComponentRadical` (Task 6454), `parabolicSplitComponentConjugacy` (Task 6455), `leviCentralizerCharacterization` (Task 6456); their conjunction with the V.3.2 statement has exact proof Task 6866; S for the arbitrary-Levi split-component centralizer, exact proof Task 6918; P for the related statements; see the V.3.5 row |
+| V.3.1 `M = Z(G, A)` for a split component `A` of `P`, `A = A_M`; Levi subgroups are the centralizers of split tori `A` with `A = A_M` | Worker 4's [ParabolicSplitComponentStatements](../../Langlands/GroupScheme/Rational/ParabolicSplitComponentStatements.md), for a split component `A` of `P` (a maximal split torus of a supplied radical of `P`, as in V.2.1): `GS.ParabolicSplitComponentLeviStatement` (`Z(G, A)` is represented by a rational Levi factor of `P` whose split component is `A`), `GS.LeviSplitComponentRadicalStatement` (the split component of a rational Levi factor is a split component of `P`), `GS.ParabolicSplitComponentConjugacyStatement` (the unipotent radical acts transitively on the split components of `P`) and `GS.LeviCentralizerCharacterizationStatement` (the rational Levi factors of parabolics are the centralizers of split subtori `A` that are their split components). `GS.LeviSplitComponentCentralizerStatement` states `Z_G(A_M) = M` as subgroup functors for every rational Levi of a rational parabolic. Related: `GS.DynamicLeviCocharacterRealizationStatement`, `GS.MinimalParabolicLeviCentralizerStatement` | Rec (S08); P for the four split-component statements: `parabolicSplitComponentLevi` (Task 6452), `leviSplitComponentRadical` (Task 6454), `parabolicSplitComponentConjugacy` (Task 6455), `leviCentralizerCharacterization` (Task 6456); P for their conjunction with the V.3.2 statement, `GS.ParabolicSplitComponentStatements`, by `parabolicSplitComponents` (Task 6866); S for the arbitrary-Levi split-component centralizer, exact proof Task 6918; P for the related statements; see the V.3.5 row |
 | V.3.1 opposite parabolic: the unique `Q ∈ P(M)` with `P ∩ Q = M` | `GS.OppositeDynamicParabolicUniquenessStatement` | P |
 | V.3.1 `P(M)` is finite | `GS.LeviParabolicFiniteStatement`, in [LeviSplitComponentRecallStatements](../../Langlands/GroupScheme/Rational/LeviSplitComponentRecallStatements.md): a uniform bound on finite families with distinct parabolic images and the same embedded rational Levi | Rec (S07); S, exact proof Task 6920. `GS.MaximalLeviParabolicCountStatement` covers maximal `M` (at most two) |
 | V.3.2 minimal parabolics; conjugacy of maximal split tori and of minimal parabolics | `GS.MinimalParabolicSplitComponentStatement` (first sentence: a parabolic is minimal if and only if its split components are maximal split tori of `G`), `GS.MinimalParabolicLeviCentralizerStatement`, `GS.MaximalSplitTorusConjugacyStatement`, `GS.MinimalParabolicConjugacyStatement` | P (the first sentence by `minimalParabolicSplitComponent`, Task 6457) |
@@ -353,9 +381,10 @@ independently approved it without qualifications. It is now public at Library
 public and workspace pairs agree exactly. Each of its four exact proof-successor tasks,
 Tasks 6345–6348, has an accepted and published proof: each component statement is proved at Library
 `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181` (table at the top of this note). The
-conjunction itself awaits its exact proof Task 6830
-(`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). Worker 4 retains ownership of this
-linear-algebra unit.
+conjunction itself is proved by `relativeRealCorootLinearAlgebra`, from its exact proof
+Task 6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`), first published at Library
+`497ef49830025d23824f6b2e2b1d5d60b594f51e` (table of the sixth Worker 4 pass). Worker 4
+retains ownership of this linear-algebra unit.
 
 Its statements are over arbitrary fields, on the shared actual torus spaces,
 and universally quantify over supplied integral reflection data. Existence of
@@ -722,9 +751,10 @@ not whole-section or whole-book completion.
    Levis are proved (`renardLeviCentralDecomposition`, Task 6224). The four
    real-coroot, real-basis, fundamental-weight and corrected standard-Levi
    statements of candidate `89ad3e08-f0ca-4e7e-b9fb-5a257e4a4616` are proved
-   (Tasks 6345–6348). Their conjunction awaits the exact proof Task 6830, which
-   only pairs the four proofs. The geometric compatible-component realization and
-   the actual split-component/ambient-annihilator comparisons remain distinct
+   (Tasks 6345–6348), and so is their conjunction, by
+   `relativeRealCorootLinearAlgebra` (Task 6830), which pairs the four proofs.
+   The geometric compatible-component realization and the actual
+   split-component/ambient-annihilator comparisons remain distinct
    obligations; their necessary published inputs do not alone establish every
    source-Levi instance.
 3. V.5.1 Corollary, `K_0`-conjugacy of every parabolic to a standard one: no longer a gap.
@@ -753,7 +783,8 @@ not whole-section or whole-book completion.
    direct product (V.2.2 Remark 2), formerly listed here, are proved by
    `torusAnisotropicPart` (Task 6398). The split-component assertions of
    V.3.1 and the first sentence of V.3.2 are proved by Tasks 6452 and
-   6454–6457; only their conjunction awaits Task 6866.
+   6454–6457, and their conjunction by `parabolicSplitComponents`
+   (Task 6866).
 7. V.3.24: proofs of the nonnegative comparison with the actual split-central
    uniformizer quotient, finite generation after its identification and the
    strict-face decomposition with actual standard Levi split components.
@@ -788,9 +819,10 @@ The compatible-component V.3.6 statement
 (`423ad442-9268-4104-a37f-3f1d8eb63388`). Its arbitrary-field scope, literal
 restriction kernel and actual pairing annihilator are retained. The four component
 statements of Worker 4's real-coroot unit are proved by Tasks 6345–6348; their
-conjunction has exact proof Task 6830 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). The five
-component statements of Worker 4's parabolic split-component unit (V.3.1–V.3.2) are proved
-by Tasks 6452 and 6454–6457; their conjunction has exact proof Task 6866
+conjunction is proved by `relativeRealCorootLinearAlgebra`, from its exact proof Task 6830
+(`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). The five component statements of Worker 4's
+parabolic split-component unit (V.3.1–V.3.2) are proved by Tasks 6452 and 6454–6457;
+their conjunction is proved by `parabolicSplitComponents`, from its exact proof Task 6866
 (`e5eb891b-fc5e-4885-8241-647a8b70812f`). For V.3.24, exact proof
 Tasks 6390, 6391 and 6429 are complete: `simpleRootSplitCentralImage`,
 `CocharacterUniformizer.quotientComparison` and
