@@ -32,7 +32,8 @@ Construction:
 ## `chart_lift`
 
 Let `E` be local artinian and formally étale with residue map `πE : E → L`, and `η ∈ F(Spec L)`.
-Let `J` be minimal among the ideals `I` such that `η` has an element over it on `E/I`, and let
+Let `J` be the least ideal `I` such that `η` has an element over it on `E/I` (hypothesis
+`hJmin`: `J ≤ I` for every such `I`; this is stronger than minimality), and let
 `ξ ∈ F(Spec (E/J))` be such an element. Let `A` be local artinian, `I ⊆ A` nilpotent,
 `u₀ : E/J → A/I`, and `v ∈ F(Spec A)` with `u₀^* ξ = v|_{A/I}`. Then `u₀` lifts to
 `u : E/J → A` with `u^* ξ = v`.
@@ -40,7 +41,7 @@ Let `J` be minimal among the ideals `I` such that `η` has an element over it on
 * Formal smoothness lifts `E → E/J → A/I` to `ψ : E → A`. Its kernel `K` lies in `m_E`, so
   `C = E/K` is local and embeds in `A`.
 * `v` lies over `η` along `C ⊆ A`: field points of `A` kill `I`, and `u₀^* ξ = v|_{A/I}`.
-* `descend_general` lifts `η` to `C = E/K`. Minimality of `J` gives `J ≤ K`, so `ψ` factors
+* `descend_general` lifts `η` to `C = E/K`. Since `J` is least, `J ≤ K`, so `ψ` factors
   through `u : E/J → A`.
 * `u^* ξ` and `v` have the same restriction `u₀^* ξ` to `A/I`. They are equal by strong (F5)
   (`nilInj`).

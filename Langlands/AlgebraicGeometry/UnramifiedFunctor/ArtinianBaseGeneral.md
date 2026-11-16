@@ -19,7 +19,8 @@ The module is internal to the proof.
   generated subalgebras), `ChartGluing.exists_of_isColimit`, and `BaseChange.good_all`
   (FilteredColimits over `Spec C`, from (F1a) and (F2)).
 * `exists_pow_injective`: let `C` be artinian, `A₀` a noetherian `C`-algebra, and `𝔮` an ideal
-  such that `1 - y` is regular on the image of `C` for all `y ∈ 𝔮`. Then `C` injects into
+  such that for all `y ∈ 𝔮` and `c ∈ C`, `(1 - y)·c = 0` in `A₀` forces `c = 0` (hypothesis
+  `hreg`; in particular `C → A₀` is injective). Then `C` injects into
   `A₀/𝔮^M` for some `M`. The kernels of `C → A₀/𝔮^M` decrease and stabilize, since `C` is
   artinian. An element in all of them lies in `⋂ 𝔮^M`, so by the Krull intersection theorem it
   is killed by some `1 - y`, `y ∈ 𝔮`.
@@ -33,7 +34,8 @@ The module is internal to the proof.
   ideal.
 * `descend_closed_point`: the closed point step. Let `x ∈ F(Spec A₀)`, with `A₀` noetherian and
   of finite type over `C`. Suppose `x` agrees with `η` at a maximal ideal `𝔮` whose residue
-  field is integral over `C`, and `1 - y` is regular on `C` for `y ∈ 𝔮`. Then `η` lifts to `C`.
+  field is integral over `C`, and for `y ∈ 𝔮` and `c ∈ C`, `(1 - y)·c = 0` in `A₀` forces
+  `c = 0`. Then `η` lifts to `C`.
   - With `M` from `exists_pow_injective`, `A₃ = A₀/𝔮^M` is local artinian, contains `C`, and
     is finite over `C` (integral and of finite type).
   - The restriction of `x` to `A₃` lies over `η`, and `descend_finite` applies.
@@ -47,6 +49,11 @@ The module is internal to the proof.
     (`finite_of_finite_type_of_isJacobsonRing`), a residue field `κ` of `D[1/a]` is finite
     over `ℓ`.
   - `𝔮` is the kernel of `A₀ → κ`. `A₀/𝔮` is a field by `isField_of_injective_finite`.
+  - `A₀/𝔮` embeds in `κ`. `κ` is finite over `ℓ`, and `ℓ` is finite over `C` (a quotient), so
+    `κ` and hence `A₀/𝔮` are integral over `C`.
+  - The spread agreement gives agreement of `x` and `η` at `κ`. Restriction along the field
+    embedding `A₀/𝔮 ↪ κ` is injective by (F1b) (`fieldInj`), so `x` agrees with `η` at
+    `A₀/𝔮`.
 
 ## `descend_general`
 

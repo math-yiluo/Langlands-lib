@@ -27,11 +27,16 @@ Murre pro-represents `F` at its points by (F4), using complete local rings `A_i`
 `MurreArtinianDetectionStatement`, which is not used here).
 
 The Lean proof avoids Lemma 1 and pro-representability. It builds, directly from (F4′) and
-strong (F5), a family of affine charts `Spec B ⟶ F`. Each `B` is a local artinian ring, finite
-type and formally unramified over `R`. The charts are glued with the Library theorem
+strong (F5), a family of affine charts `Spec B ⟶ F`. The family is indexed by `ChartIdx F`.
+Each indexed `B` is an artinian ring, of finite type and formally unramified over `R`
+(`ChartData.Good`). Locality of `B` is not part of the index condition. The charts constructed
+in `ArtinianBaseChart` are quotients `E/J` of a local ring `E` with `J ≤ ker πE`. They are
+therefore local, but Lean does not record this, and the family also contains every other chart
+satisfying `ChartData.Good`. The charts are glued with the Library theorem
 `ChartGluing.murreChartGluing` (module `ChartGluingRepr`), which is Murre's Lemma 3 in the form
-of SGA 3, XI, Proposition 3.5. The resulting scheme is discrete. This matches the expected
-shape: a disjoint union of spectra of local artinian rings, unramified over `R`.
+of SGA 3, XI, Proposition 3.5. The resulting scheme `Y` has the discrete topology
+(`discreteTopology_of_cover`), and this is used to prove separatedness. Lean proves nothing
+further about the shape of `Y`.
 
 ## Supporting modules
 

@@ -28,9 +28,10 @@ among the introduced binders.
    binders of the target.
 2. `maximalIdeal_inertiaDeg_eq_residue_finrank K L` (M138.024,
    [proof](InertiaDegreeProof.md)) gives
-   `(𝓂[L]).inertiaDeg 𝒪[K] = Module.finrank 𝓀[K] 𝓀[L]`. It needs only the
-   first ten binders. Rewriting right to left replaces the residue degree in
-   the goal by the inertia degree.
+   `(𝓂[L]).inertiaDeg 𝒪[K] = Module.finrank 𝓀[K] 𝓀[L]`. It needs ten of the
+   twelve instance binders, omitting `FiniteDimensional K L` and
+   `Module.Finite 𝒪[K] 𝒪[L]`. Rewriting right to left replaces the residue
+   degree in the goal by the inertia degree.
 3. The goal is now exactly the conclusion of
    `maximalIdeal_ramificationIdx_mul_inertiaDeg_eq_finrank K L` (M138.028,
    [proof](RamificationInertiaDegreeProof.md)), which closes it with `exact`.

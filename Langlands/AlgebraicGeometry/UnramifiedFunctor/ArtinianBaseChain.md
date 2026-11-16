@@ -8,7 +8,8 @@ In particular, `IsOver ι π η w` means that `w` lies over the field point `η`
 The module iterates (F4′) along chains of subalgebras whose consecutive members differ by
 length one. This is how a field point `η ∈ F(Spec ℓ)` is lifted from a bigger ring to a smaller
 one with the same residue field. Murre's reduction of (F4) to (F4′) (Bourbaki exp. 294,
-Corollary 1, PDF p. 6: "using (F1b) and (F5)") is not spelled out in the source. This module
+Corollary 1 on PDF p. 5, and the remark after it on PDF p. 6: "The equivalence of (F4) and
+(F4′) is straightforward by using (F1b) and (F5)") is not spelled out in the source. This module
 and the next two are the corresponding internal argument.
 
 ## One step
