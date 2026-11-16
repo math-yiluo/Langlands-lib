@@ -1,0 +1,15 @@
+# Equivariant morphisms on actual fixed and attracting schemes
+
+This is an internal construction from the actual pointwise action laws, affine spectrum comparisons and the all-test representation theorems in `AffineGmAttractingLimit` and its imports. It asserts no transcription of an external theorem and uses no regular-cocharacter, Borel or rank-one input.
+
+For an actual group scheme `H` over any scheme `S`, two actual actions and a supplied scheme morphism `f : X → Y`, the existing `PointwiseSchemeAction.IsEquivariant` predicate imported from `ImageGenerationActions` means that `f` commutes with the actions on every relative test scheme. Such a morphism preserves fixedness after all refinements. For `H = Gm`, it also preserves the actual orbit morphism and takes each affine-line orbit extension to an extension of the image point by postcomposition with `f`.
+
+For affine schemes over the spectrum of any commutative ring, `AffineSchemeCoordinates.map` extracts the contravariant algebra map from that same supplied morphism using the chosen affine spectrum comparisons. `pointEquiv_map_comp` proves its compatibility with every algebra-valued point, and `algSpec_map` identifies its spectrum with `f` transported by the two coordinate isomorphisms. `smooth_map` therefore transfers smoothness of `f` to smoothness of its coordinate ring homomorphism.
+
+For two actual multiplicative-group actions on affine schemes, `coordinateMap_act` transfers actual equivariance to the natural actions of units on the coordinate points. Evaluating at the universal Laurent unit gives `coordinateMap_coaction`, the equality between the coordinate map followed by the source coaction and the target coaction followed by the coefficientwise coordinate map.
+
+`schemeActionFixedMap` and `schemeActionAttractingMap` are morphisms between the previously constructed fixed and attracting schemes. Their existence follows from preservation of fixedness and attraction and the representation theorems on all relative tests. Their respective `_comp` identities say that postcomposing with the target's closed inclusion is the source inclusion followed by the original `f`. Since these inclusions are monomorphisms, these identities uniquely characterize the induced maps and also apply after any test-scheme refinement.
+
+Finally, `schemeActionAttractingMap_comp_zero` identifies zero evaluation after the induced attracting map with zero evaluation followed by `f`. The proof postcomposes the source universal extension with `f`, uses equivariance to identify its restriction, and applies uniqueness of extensions into the separated affine target. Canceling the target fixed inclusion then proves `schemeActionAttractingMap_comp_limit`: the attracting-to-fixed limit commutes with `f`.
+
+Every construction is in an arbitrary universe and over an arbitrary commutative base ring. There is no characteristic, reducedness, noetherian or field assumption, and the action target need not be a group scheme. This unit does not assert smoothness of the induced fixed or attracting maps, closedness of orbits, reductive quotient affineness, or `DynamicQuotientProperStatement`.

@@ -5,6 +5,8 @@ Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
 -/
 
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.UnramifiedNormQuotient.PrimeClass.Statements
+import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.FiniteNormQuotient.U010.Proofs
+import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.FiniteNormQuotient.U012.Proofs
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Degree.PrimeElements.Definitions
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Degree.ValuationLaws.Tower.Statements
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Degree.Fields.FiniteTower.Definitions
@@ -46,6 +48,10 @@ fact proved by its source proof. M010.138
 M010.100) is proved by a shorter route than the source fundamental identity;
 see the paired Markdown and `licenses/NYLL/LICENSE` and `licenses/NYLL/NOTICE`.
 -/
+
+/-! Integrator, 16 November 2026: reuse the independently accepted public
+M039.010 and M039.012 proofs and remove the corresponding private copies.
+The preceding dated port account describes the original submission. -/
 
 namespace Langlands.NYLL.ClassFormation
 
@@ -92,30 +98,6 @@ private theorem residueDegree_eq_degree_of_isUnramified_aux
       E.field.field.toSubgroup.relIndex E.base.field.toSubgroup := rfl
   rw [hres, hdeg, ← Subgroup.relIndex_comap, Subgroup.comap_map_eq,
     ← Subgroup.inf_relIndex_right, hsat]
-
-/-- The source proof of M039.010 `finiteNormClass_nsmul` (not yet published):
-finite norm classes commute with natural scalar multiplication. -/
-private theorem finiteNormClass_nsmul_aux
-    (A : Rep ℤ G) (K L : ClosedSubgroup G)
-    (hLK : L.toSubgroup ≤ K.toSubgroup)
-    [Finite (K.toSubgroup ⧸ (L.toSubgroup.subgroupOf K.toSubgroup))]
-    (n : ℕ) (a : ambientFixedAddSubgroup A K) :
-    finiteNormClass A K L hLK (n • a) =
-      n • finiteNormClass A K L hLK a := by
-  exact map_nsmul (finiteNormClassHom A K L hLK) n a
-
-/-- The source proof of M039.012 `finiteNormClass_eq_zero_iff` (not yet
-published): a finite norm class vanishes exactly when its representative lies
-in the norm subgroup. -/
-private theorem finiteNormClass_eq_zero_iff_aux
-    (A : Rep ℤ G) (K L : ClosedSubgroup G)
-    (hLK : L.toSubgroup ≤ K.toSubgroup)
-    [Finite (K.toSubgroup ⧸ (L.toSubgroup.subgroupOf K.toSubgroup))]
-    (a : ambientFixedAddSubgroup A K) :
-    finiteNormClass A K L hLK a = 0 ↔
-      a ∈ finiteNormSubgroup A K L hLK := by
-  unfold finiteNormClass finiteNormClassHom FiniteNormQuotient
-  exact QuotientAddGroup.eq_zero_iff _
 
 namespace DegreeData
 
@@ -382,8 +364,8 @@ theorem primeClass_addOrderOf
   have hn : 0 < n := E.degree.property
   have hng : n • g = 0 := by
     change n • finiteNormClass A K.field L hLK π = 0
-    rw [← finiteNormClass_nsmul_aux]
-    apply (finiteNormClass_eq_zero_iff_aux A K.field L hLK _).2
+    rw [← finiteNormClass_nsmul]
+    apply (finiteNormClass_eq_zero_iff A K.field L hLK _).2
     refine ⟨fixedFieldInclusion A K.field L hLK π, ?_⟩
     have hnorm :=
       relativeNorm_fixedFieldInclusion_aux A E.toFiniteAbstractExtension π
@@ -394,8 +376,9 @@ theorem primeClass_addOrderOf
     intro m hm
     have hm' :
         finiteNormClass A K.field L hLK (m • π) = 0 := by
-      simpa [g, finiteNormClass_nsmul_aux] using hm
-    have hmNorm := (finiteNormClass_eq_zero_iff_aux A K.field L hLK _).1 hm'
+      rw [finiteNormClass_nsmul A K.field L hLK m π]
+      exact hm
+    have hmNorm := (finiteNormClass_eq_zero_iff A K.field L hLK _).1 hm'
     obtain ⟨b, hb⟩ := hmNorm
     have htower := normalizedValuation_tower_aux v E b
     change (E.residueDegree D : ℕ) • _ = _ at htower

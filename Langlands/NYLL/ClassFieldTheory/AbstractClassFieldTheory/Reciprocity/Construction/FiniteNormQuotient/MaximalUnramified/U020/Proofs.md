@@ -31,8 +31,11 @@ Here `D : DegreeData G` (M010.002) is a degree datum, `A : Rep ℤ G` an integra
 
 ## Imports and dependencies
 
-The module imports only the published statement module
+The module imports the published statement module
 `Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.FiniteNormQuotient.MaximalUnramified.Statements`, unchanged. It defines the target and imports `finiteNormSubgroup` (M039.001), `FiniteNormQuotient` (M039.002), `finiteNormClassHom` (M039.005), `finiteNormClass` (M039.006), `maximalUnramifiedNormSubgroup` (M029.024), `infiniteNormSubgroup` (M029.004), `finiteIntermediateNormRange` (M029.003), the structure `FiniteIntermediateField` (M029.001) and `maximalUnramifiedField` (M029.016).
+
+It also imports `FiniteNormQuotient.U012.Proofs`, reusing the public
+`finiteNormClass_eq_zero_iff` theorem.
 
 The source proof of M039.019 also uses the definition M039.018 `DegreeData.fieldAsMaximalUnramifiedIntermediate` (the field `L` regarded as a finite intermediate field of `\widetilde L | K`), which is in an accepted candidate but not yet in the Library at this module's base. The private copy of that proof therefore writes the definition's body inline (see below) and the module does not import it.
 
@@ -40,9 +43,11 @@ The module opens `KummerTheory` and declares the variables, as the source does; 
 
 ## Implemented proof
 
-The source proof applies M039.012 `finiteNormClass_eq_zero_iff` and M039.019 `maximalUnramifiedNormSubgroup_le_finiteNormSubgroup`, whose proofs are not yet in the Library; the module proves them as private theorems with their source statements (the finiteness binder written with `Subgroup.subgroupOf`). `finiteNormClass_eq_zero_iff_aux` (a finite norm class `finiteNormClass A K L hLK a` vanishes iff `a ∈ finiteNormSubgroup A K L hLK`) has the source proof: unfold `finiteNormClass`, `finiteNormClassHom` and `FiniteNormQuotient`, then `QuotientAddGroup.eq_zero_iff`. `maximalUnramifiedNormSubgroup_le_finiteNormSubgroup_aux` has the proof of the M039.019 proof module: the source proof first rewrites with M029.025 `maximalUnramifiedNormSubgroup_eq_infiniteNormSubgroup`, a `rfl` theorem whose proof is not yet in the Library; the port states the rewritten goal `infiniteNormSubgroup A (D.maximalUnramifiedField L) K ≤ finiteNormSubgroup A K L hLK` with `show` instead (the two sides agree by definition). Then, as in the source, `rw [infiniteNormSubgroup]` exposes the infimum and `iInf_le_of_le` at one finite intermediate field reduces the goal to the norm subgroup of that field. The source takes the field `D.fieldAsMaximalUnramifiedIntermediate K L hLK` (M039.018); the port takes the structure literal that is its body, `{ field := L, above := show (D.maximalUnramifiedField L).toSubgroup ≤ L.toSubgroup from inf_le_left, below := hLK, finite := hfinite }` ascribed the type `FiniteIntermediateField (D.maximalUnramifiedField L) K`. The field `above` is the final step `inf_le_left` of the source proof of M029.019 `maximalUnramifiedField_le` (unpublished proof): `D.maximalUnramifiedField L` is by definition `D.fieldInertia L`, the closed subgroup `L ⊓ D.inertia`, so `inf_le_left` checks by definitional unfolding (the source first rewrites with the `rfl` theorem M029.017). The instance `hfinite` supplies `finite`, since `extensionSubgroup K L hLK` is by definition `L.toSubgroup.subgroupOf K.toSubgroup`. This is the literal of the accepted M039.018 candidate; `above` is a proof, so the structure is the same by proof irrelevance. Finally `rfl` closes the goal: the norm range of this intermediate field is by definition `finiteNormSubgroup A K L hLK`.
+The proof applies the public M039.012 `finiteNormClass_eq_zero_iff` and
+retains a private source proof of M039.019 with its original statement.
+`maximalUnramifiedNormSubgroup_le_finiteNormSubgroup_aux` has the proof of the M039.019 proof module: the source proof first rewrites with M029.025 `maximalUnramifiedNormSubgroup_eq_infiniteNormSubgroup`, a `rfl` theorem whose proof is not yet in the Library; the port states the rewritten goal `infiniteNormSubgroup A (D.maximalUnramifiedField L) K ≤ finiteNormSubgroup A K L hLK` with `show` instead (the two sides agree by definition). Then, as in the source, `rw [infiniteNormSubgroup]` exposes the infimum and `iInf_le_of_le` at one finite intermediate field reduces the goal to the norm subgroup of that field. The source takes the field `D.fieldAsMaximalUnramifiedIntermediate K L hLK` (M039.018); the port takes the structure literal that is its body, `{ field := L, above := show (D.maximalUnramifiedField L).toSubgroup ≤ L.toSubgroup from inf_le_left, below := hLK, finite := hfinite }` ascribed the type `FiniteIntermediateField (D.maximalUnramifiedField L) K`. The field `above` is the final step `inf_le_left` of the source proof of M029.019 `maximalUnramifiedField_le` (unpublished proof): `D.maximalUnramifiedField L` is by definition `D.fieldInertia L`, the closed subgroup `L ⊓ D.inertia`, so `inf_le_left` checks by definitional unfolding (the source first rewrites with the `rfl` theorem M029.017). The instance `hfinite` supplies `finite`, since `extensionSubgroup K L hLK` is by definition `L.toSubgroup.subgroupOf K.toSubgroup`. This is the literal of the accepted M039.018 candidate; `above` is a proof, so the structure is the same by proof irrelevance. Finally `rfl` closes the goal: the norm range of this intermediate field is by definition `finiteNormSubgroup A K L hLK`.
 
-After `show` states the published proposition unfolded, the main proof is the source's: for `a` in the maximal-unramified norm subgroup, `a` lies in the norm subgroup from `L` by `maximalUnramifiedNormSubgroup_le_finiteNormSubgroup_aux`, so its class vanishes by `finiteNormClass_eq_zero_iff_aux`, which is membership in the kernel. The development check reported only the axioms `propext`, `Classical.choice` and `Quot.sound` for the theorem.
+After `show` states the published proposition unfolded, the main proof is the source's: for `a` in the maximal-unramified norm subgroup, `a` lies in the norm subgroup from `L` by `maximalUnramifiedNormSubgroup_le_finiteNormSubgroup_aux`, so its class vanishes by `finiteNormClass_eq_zero_iff`, which is membership in the kernel. The development check reported only the axioms `propext`, `Classical.choice` and `Quot.sound` for the theorem.
 
 The development check with `lean_check` in the approved environment compiled the
 module with no errors or warnings. This check does not establish independent semantic
@@ -163,3 +168,10 @@ Library. No Mathlib code is copied.
 
 This module proves only M039.020. It discharges no host class-formation, cup,
 transfer, Tate or reciprocity target.
+
+## Integration update
+
+Integrator, 16 November 2026: the current implementation reuses the
+independently accepted public M039.012 lemma and removes their private copies.
+The dated source-modification account above records the original port;
+the target and the mathematical proof are unchanged.

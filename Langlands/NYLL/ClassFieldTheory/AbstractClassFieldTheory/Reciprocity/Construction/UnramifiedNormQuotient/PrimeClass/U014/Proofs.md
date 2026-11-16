@@ -35,7 +35,7 @@ Here `K : FiniteAbstractField G` (M010.121) is a finite abstract field with clos
 
 ## Imports and dependencies
 
-The module imports, unchanged:
+The module imports:
 
 - `Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.UnramifiedNormQuotient.PrimeClass.Statements`, which defines the target and imports the finite norm quotient and its class map, prime elements, the abstract unramified predicate and `FiniteAbstractFieldExtension.ofInclusion`;
 - `Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Degree.PrimeElements.Definitions`, the fixed-field inclusion `fixedFieldInclusion` (M028.001), the inclusion `A^{G_K} → A^{G_L}`, which does not change the underlying element of `A`;
@@ -49,6 +49,10 @@ The module imports, unchanged:
 - `Langlands.NYLL.GaloisCohomology.ProfiniteIntegers.ProfiniteInteger.U005.Proofs`, the published proof of M009.005 `zHatMulNat_injective` (multiplication by a positive natural number on `ℤ̂` is injective);
 - `Langlands.NYLL.GaloisCohomology.ProfiniteIntegers.ProfiniteInteger.Divide.U017.Proofs`, the published proof of M009.017 `zHatMulNat_zHatDivide`.
 
+It also imports `FiniteNormQuotient.U010.Proofs` and
+`FiniteNormQuotient.U012.Proofs`, reusing the public scalar-multiplication and
+vanishing lemmas in place of their identical private copies.
+
 The continuous additive reduction `zHatReduction n hn : ℤ̂ → ZMod n` (M008.018) comes through these imports. The module opens `KummerTheory`, `CyclicCohomology` and `scoped BigOperators`, as the M045.007 proof does; the source file opens the first two.
 
 ## Implemented proof
@@ -56,13 +60,13 @@ The continuous additive reduction `zHatReduction n hn : ℤ̂ → ZMod n` (M008.
 The main proof is the source proof. After `show` states the published proposition unfolded, it sets `E := ofInclusion L K hLK`, `n := [L : K]` and `g` the class of `π`, restates `hUnramified` as `hUn : E.IsUnramified D` by `change`, and records `0 < n`.
 
 - Upper bound `hng : n • g = 0`: move `n` inside the class (M039.010, `rw [← …]`), reduce to `n • π` lying in the norm subgroup (M039.012), and give the witness `ι π`, with `ι` the fixed-field inclusion: `N_{L|K}(ι π) = n • π` is M028.003 at `E.toFiniteAbstractExtension`, restated by `change`.
-- Divisibility `hdiv : m • g = 0 → n ∣ m`: from `m • g = 0` obtain `finiteNormClass (m • π) = 0` (`simpa [g, finiteNormClass_nsmul_aux]`), hence by M039.012 some `b ∈ A^{G_L}` with `N_{L|K} b = m • π`. The norm–valuation formula M027.007 at `b` gives `f_{L|K} • v_L(b) = v_K(N_{L|K} b)`; after `change` its multiplier is the relative residue degree `E.residueDegree D`, which unramifiedness turns into `n` (M010.138). The `calc` block `hval` then gives `n • v_L(b) = v_K(m • π) = m • v_K(π) = m • 1` in `ℤ̂` (`map_nsmul` for `v.valuationAt K`; `hπ` and M028.006 `(v.oneValue : ℤ̂) = 1`). Applying the reduction to `ZMod n` (`hredOne` by `rfl`, `simpa only [map_nsmul, hredOne]`) kills the left side, so `(m : ZMod n) = 0` and `n ∣ m` by `ZMod.natCast_eq_zero_iff`.
+- Divisibility `hdiv : m • g = 0 → n ∣ m`: from `m • g = 0` obtain `finiteNormClass (m • π) = 0` (rewrite by `finiteNormClass_nsmul A K.field L hLK m π`, then use `hm`), hence by M039.012 some `b ∈ A^{G_L}` with `N_{L|K} b = m • π`. The norm–valuation formula M027.007 at `b` gives `f_{L|K} • v_L(b) = v_K(N_{L|K} b)`; after `change` its multiplier is the relative residue degree `E.residueDegree D`, which unramifiedness turns into `n` (M010.138). The `calc` block `hval` then gives `n • v_L(b) = v_K(m • π) = m • v_K(π) = m • 1` in `ℤ̂` (`map_nsmul` for `v.valuationAt K`; `hπ` and M028.006 `(v.oneValue : ℤ̂) = 1`). Applying the reduction to `ZMod n` (`hredOne` by `rfl`, `simpa only [map_nsmul, hredOne]`) kills the left side, so `(m : ZMod n) = 0` and `n ∣ m` by `ZMod.natCast_eq_zero_iff`.
 - Conclusion: `Nat.dvd_antisymm`, with `addOrderOf g ∣ n` from `hng` (`addOrderOf_dvd_iff_nsmul_eq_zero`) and `n ∣ addOrderOf g` from `hdiv` at `addOrderOf_nsmul_eq_zero g`.
 
-The source prerequisites M039.010 `finiteNormClass_nsmul`, M039.012 `finiteNormClass_eq_zero_iff`, M028.003 `relativeNorm_fixedFieldInclusion`, M027.007 `ValuationData.normalizedValuation_tower`, M010.138 `FiniteAbstractFieldExtension.residueDegree_eq_degree_of_isUnramified` and M028.006 `ValuationData.oneValue_coe` have no published proofs in this Library. They are proved in this module as private theorems with an `_aux` suffix and with the source statements as explicit types:
+The M039.010 and M039.012 calls use the public theorems
+`finiteNormClass_nsmul` and `finiteNormClass_eq_zero_iff`. The remaining
+source prerequisites retain their private implementations:
 
-- `finiteNormClass_nsmul_aux` is M039.010 with its source proof `map_nsmul (finiteNormClassHom A K L hLK) n a`; since the source lemma is `@[simp]` and the source writes `simpa [g]` in the divisibility step, the module writes `simpa [g, finiteNormClass_nsmul_aux]` there.
-- `finiteNormClass_eq_zero_iff_aux` is M039.012 with its source proof: unfold `finiteNormClass`, `finiteNormClassHom` and `FiniteNormQuotient` and apply `QuotientAddGroup.eq_zero_iff`.
 - `ValuationData.oneValue_coe_aux` is M028.006 with its source proof `rfl`.
 - `relativeNorm_fixedFieldInclusion_aux` (M028.003) and `ValuationData.normalizedValuation_tower_aux` (M027.007), with the helpers `DegreeData.relativeResidueDegreeCardinal_eq_coe_aux` (M010.103), `DegreeData.residueDegree_mul_absoluteResidueDegree_aux` (M011.017), `ValuationData.residueDegree_nsmul_dividedAt_aux` (M025.023), `relativeCosetAction_towerProductEquiv_aux` (source-private M026.017) and `finiteTowerNormTransApplyAux_aux` (source-private M026.018), are the same Lean text as in Worker 745's accepted, not yet published candidate proof of M045.007 (artifact `a4f23504-029d-4999-8d0b-6848d2a77fa4`, module `Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.FiniteFieldUnitMaps.U007.Proofs`), which follows the shared drafts (revision 1) of Worker 5264 for Task `dd6e7eae-0db1-4832-bb64-e830afecdaf5` and Task `905dd316-beba-4d50-8384-657eb2f1e35f`. They follow the source proofs: M028.003 compares underlying elements, shows that every coset-action term of `ι a` is `a` (`a` is fixed by `G_K`), sums the constant and identifies the number of cosets with the degree through a local fact `hindex` proved by the source proof of M010.092; M027.007 multiplies by the base residue degree, uses the residue-degree tower law (M011.017, from the published M010.036 and M010.027 and the M010.103 helper) and `f • dividedAt = normCompositeAt` (M025.023), and concludes by transitivity of norms in the finite tower `L ≤ K ≤ baseField G` (M026.018, with M026.017 for the tower-product coset). As there, `extensionSubgroup K L h` is written as its abbreviation body `L.toSubgroup.subgroupOf K.toSubgroup`, and source rewrites with the `rfl` lemmas M024.002 `relativeCosetAction_mk`, M024.010 `relativeNorm_apply_coe` and M028.002 `fixedFieldInclusion_coe` are replaced by `change`, `show` and `rfl` steps.
 - `residueDegree_eq_degree_of_isUnramified_aux` is M010.138 (and, through it, M010.100), `(E.residueDegree D : ℕ) = (E.degree : ℕ)` for an unramified `E : FiniteAbstractFieldExtension G`, by a route different from the source. The source proves M010.100 by the fundamental identity `[L:K] = f_{L|K} e_{L|K}` (M010.095, itself from the index identity M006.009) and `e_{L|K} = 1` (M010.096), and M010.138 by applying M010.100 to `E.toFiniteAbstractExtension`. The module instead works with relative indices directly: with `G_L ≤ G_K` (`E.below`) and unramifiedness `hUn : G_K ⊓ ker d ≤ G_L`, it proves `hsat : (G_L ⊔ ker d) ⊓ G_K = G_L` (an element of the left side is `y z` with `y ∈ G_L`, `z ∈ ker d` by `Subgroup.mem_sup_of_normal_right`; then `z = y⁻¹ (y z) ∈ G_K`, so `z ∈ G_L` by `hUn`). By `rfl`, the residue degree is `(d(G_L)).relIndex (d(G_K))` and the degree is `G_L.relIndex G_K`; the rewrites `← Subgroup.relIndex_comap`, `Subgroup.comap_map_eq` (`d⁻¹(d(G_L)) = G_L ⊔ ker d`), `← Subgroup.inf_relIndex_right` and `hsat` turn the first into the second.
@@ -201,3 +205,10 @@ Library. No Mathlib code is copied.
 
 This module proves only M058.014. It discharges no host class-formation, cup,
 transfer, Tate or reciprocity target.
+
+## Integration update
+
+Integrator, 16 November 2026: the current implementation reuses the
+independently accepted public M039.010 and M039.012 lemmas and removes their private copies.
+The dated source-modification account above records the original port;
+the target and the mathematical proof are unchanged.

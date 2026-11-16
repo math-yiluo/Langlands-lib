@@ -5,6 +5,7 @@ Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
 -/
 
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.FiniteNormQuotient.MaximalUnramified.Statements
+import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Reciprocity.Construction.FiniteNormQuotient.U012.Proofs
 
 /-!
 # NYLL M039.020: the maximal-unramified norm subgroup lies in the finite norm-class kernel
@@ -21,7 +22,7 @@ proposition as its type and begin the proof with `show` stating it
 unfolded. The source proof applies `finiteNormClass_eq_zero_iff` (M039.012)
 and `maximalUnramifiedNormSubgroup_le_finiteNormSubgroup` (M039.019), whose
 proofs are not yet in the Library; this module proves them as the private
-theorems `finiteNormClass_eq_zero_iff_aux` and
+theorems `finiteNormClass_eq_zero_iff` and
 `maximalUnramifiedNormSubgroup_le_finiteNormSubgroup_aux` by their source
 proofs (in the latter the `rfl` rewrite with the unpublished M029.025 is
 replaced by `show`, and the field
@@ -33,6 +34,10 @@ module and omit the rest of the source file. See the paired Markdown and
 `licenses/NYLL/LICENSE` and `licenses/NYLL/NOTICE`.
 -/
 
+/-! Integrator, 16 November 2026: reuse the independently accepted public
+M039.012 proof and remove the corresponding private copies.
+The preceding dated port account describes the original submission. -/
+
 namespace Langlands.NYLL.ClassFormation
 
 open KummerTheory
@@ -43,19 +48,6 @@ section quotientMaps
 
 -- Mathlib's `Rep ℤ G` currently fixes the acting group to universe zero.
 variable {G : IntegralRepGroupType} [Group G] [TopologicalSpace G]
-
-/-- A finite norm class vanishes exactly when its representative lies in
-the norm subgroup (the source theorem `finiteNormClass_eq_zero_iff`,
-M039.012, proved by its source proof). -/
-private theorem finiteNormClass_eq_zero_iff_aux
-    (A : Rep ℤ G) (K L : ClosedSubgroup G)
-    (hLK : L.toSubgroup ≤ K.toSubgroup)
-    [Finite (K.toSubgroup ⧸ (L.toSubgroup.subgroupOf K.toSubgroup))]
-    (a : ambientFixedAddSubgroup A K) :
-    finiteNormClass A K L hLK a = 0 ↔
-      a ∈ finiteNormSubgroup A K L hLK := by
-  unfold finiteNormClass finiteNormClassHom FiniteNormQuotient
-  exact QuotientAddGroup.eq_zero_iff _
 
 namespace DegreeData
 
@@ -93,7 +85,7 @@ theorem _root_.Langlands.NYLL.PortInternal.M039.d020
   show D.maximalUnramifiedNormSubgroup A K L ≤
     (finiteNormClassHom A K L hLK).ker
   intro a ha
-  exact (finiteNormClass_eq_zero_iff_aux A K L hLK a).2
+  exact (finiteNormClass_eq_zero_iff A K L hLK a).2
     (maximalUnramifiedNormSubgroup_le_finiteNormSubgroup_aux D A K L hLK ha)
 
 end DegreeData
