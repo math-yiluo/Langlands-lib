@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Borel–Tits 3.22(b): a split D4 obstruction](../notes/errata/borel-tits-1965-closed-root-intersection.md) — A paper counterexample to the closed-root-subset intersection assertion, with explicit root words, comparison to the Library functors and the unaffected individually convex scope.
+
 - [Multiplicative type: absolute-Galois interfaces and remaining proofs](../notes/group-schemes/multiplicative-type-absolute-galois-progress.md) — Four verified category, actual-character statement, base-change and factorization publications, their exact hypotheses, the full-faithfulness statement's updated publication status and seven remaining proof owners.
 
 - [Dynamic subgroups: field and arbitrary-base proof obligations](../notes/group-schemes/dynamic-relative-progress.md) — Four verified dynamic statement publications, their exact field and base hypotheses, seven focused proof owners and the dependency between the complete unreviewed field-cell and connectedness drafts.

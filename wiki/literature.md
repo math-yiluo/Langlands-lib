@@ -93,6 +93,8 @@ a paywall or missing edition; include the exact citation and attempted locations
 
 ## Errata
 
+- [Borel–Tits 3.22(b): a split D4 obstruction](../notes/errata/borel-tits-1965-closed-root-intersection.md) — A paper counterexample to the closed-root-subset intersection assertion, with explicit root words, comparison to the Library functors and the unaffected individually convex scope.
+
 - [Springer reduction theory: stabilizer indexing and line weights](../notes/errata/springer-1994-reduction-global-fields.md) — Verified original-source discrepancies, the SL₃ and GL₂ character computations, Godement's preceding-intersection and ambient-character formulations, and remaining chamber-proof obligations.
 
 - [Relative root groups in characteristic two: exact-root generation and positive multiples](../notes/errata/milne-relative-root-groups-characteristic-two.md) — A paper quaternionic type-C₃ counterexample to the standard-group interpretation of Milne's exact-root generators, with maximal tori, all-test matrices, a quadratic-form obstruction and the unchanged positive-multiple Library scope.
