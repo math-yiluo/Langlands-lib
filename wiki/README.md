@@ -15,6 +15,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 ## Reference notes
 
+- [Multiplicative type: absolute-Galois interfaces and remaining proofs](../notes/group-schemes/multiplicative-type-absolute-galois-progress.md) — Four verified category, actual-character statement, base-change and factorization publications, their exact hypotheses, the full-faithfulness statement's updated publication status and seven remaining proof owners.
+
 - [Dynamic subgroups: field and arbitrary-base proof obligations](../notes/group-schemes/dynamic-relative-progress.md) — Four verified dynamic statement publications, their exact field and base hypotheses, seven focused proof owners and the dependency between the complete unreviewed field-cell and connectedness drafts.
 
 - [Springer reduction theory: stabilizer indexing and line weights](../notes/errata/springer-1994-reduction-global-fields.md) — Verified original-source discrepancies, the SL₃ and GL₂ character computations, Godement's preceding-intersection and ambient-character formulations, and remaining chamber-proof obligations.
