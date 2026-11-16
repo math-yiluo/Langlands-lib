@@ -21,13 +21,13 @@ set_option maxHeartbeats 1000000
 
 namespace Langlands.BruhatTits.IntegralModels
 
-local instance {F : Type u} [Field F] [ValuativeRel F]
+local instance unramifiedTorusClause_integerAlgebra {F : Type u} [Field F] [ValuativeRel F]
     [TopologicalSpace F] [IsNonarchimedeanLocalField F] :
     Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance {F : Type u} [Field F] [ValuativeRel F]
+local instance unramifiedTorusClause_integerScalarTower {F : Type u} [Field F] [ValuativeRel F]
     [TopologicalSpace F] [IsNonarchimedeanLocalField F] :
     IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger

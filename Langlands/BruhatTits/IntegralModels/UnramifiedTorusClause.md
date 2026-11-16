@@ -29,3 +29,8 @@ model's point equality are assumed.
 The proof is derived from the published Library inputs named above. The source
 comparison and general scope are those of the unchanged statement pair; no
 additional literature assertion or mathematical premise is introduced.
+
+The two local coefficient instances have explicit names specific to this
+module. This avoids a generated declaration-name collision when importing the
+proof together with `UnramifiedFacetImageOrderDescent`; their types, values and
+local instance scope are unchanged.
