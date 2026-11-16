@@ -39,10 +39,11 @@ Other rows retain their earlier audit status. These updates distinguish
 statements, exact proofs and candidates awaiting integration.
 
 A focused 16 November 2026 update checks Library
-`26a5c21c0dd926a6ba1106b5c4a08f30fdea612c` for the V.3.21 topology row and
-gap 8. The actual split-component topology statement is public. Its exact
-proof in Task 7234 has passed machine validation and independent semantic
-review, but is awaiting publication; it is not counted as a published proof.
+`b44618a4f02405d5be8c906f21cf7817e4eaafb9` for the V.3.21 topology row and
+gap 8. The actual split-component topology statement and its exact proof
+`leviChamberTopology` from Task 7234 are independently accepted and public.
+The public proof pair agrees with the accepted candidate, and a fresh
+development check compiles the statement and proof without errors or warnings.
 The other rows retain their separately dated status.
 
 On 14 November 2026 Worker 4, the second executor of the same task, updated the
@@ -349,7 +350,7 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.20 the kernel `(2iπ/ln q)ℛ` is a lattice; `Im X(M)` is the image of `i𝔞^*` and a compact torus isomorphic to `i𝔞^*/(2iπ/ln q)ℛ` | `PL.RationalImaginaryParameterQuotientStatement`: the periods are discrete and closed (in `𝔞^*_ℂ` and in `i𝔞^*`), the quotient of `i𝔞^*` by them is compact, and the imaginary exponential is an open quotient map inducing a homeomorphism, with the prescribed values, onto the unitary characters of `Λ(M)` and onto the unitary unramified characters of `M(F)` | P: `rationalImaginaryParameterQuotient` (topological formulation; its Markdown keeps the algebraic and manifold assertions separate) |
 | V.3.20 "on retrouve ainsi la structure de tore algébrique de `X(M)`"; `Im X(M)` is a real submanifold of the complex torus `X(M)` | Partial. The Library gives `X(M)` its coordinate algebra `ℂ[Λ(M)]` (V.2.4 above) and basis-dependent isomorphisms of topological groups `X(M) ≃ (ℂ^×)^r` and `Im X(M) ≃ (S¹)^r`, `r` the rank of `Λ(M)` (`PL.rationalCanonicalUnramifiedCharacterCoordinates`, `PL.rationalCanonicalUnitaryUnramifiedCharacterCoordinates`, definitions, in [RationalUnramifiedCharacterCoordinates](../../Langlands/Representation/Plancherel/RationalUnramifiedCharacterCoordinates.md)). It constructs no variety or manifold structure on `X(M)` itself, and no statement compares the exponential with the algebraic structure. The two published statement files of the previous rows list these assertions as separate obligations | D (coordinates); G (small) for the algebraic and submanifold assertions. See also remark R2 |
 | V.3.21 `M^+`, `M^{++}` (inverse images under `H_M` of the chambers) and the full cones `A^+_M`, `A^{++}_M` (all `a ∈ A_M` with `\|α(a)\|_F ≤ 1`, resp. `< 1`, for `α ∈ Δ(P)`) | [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md), namespace `Langlands.BruhatTits.Cartan.RenardLeviCones`: `leviPlus`, `leviStrict` (`M^+`, `M^{++}`: the points whose published positive centralizer valuation `H_M` lies in `closedChamber`, resp. `chamber`, on `𝔞_M = V A`) and `componentPlus`, `componentStrict` (`A^+_M`, `A^{++}_M`, defined by the norm form). The data `(i, ν, J, f)` make the dependence on `P` explicit; reading `leviPlus` as `M^+` requires the Levi, its split component and their inclusion as inputs, which the definitions do not enforce (as for `dominantCentralizer`). Proved there: the valuation forms `mem_componentPlus_iff_order`, `mem_componentStrict_iff_order`; for split `A`, agreement with the source definition `A^+_M = A_M ∩ M^+` (`map_mem_leviPlus_iff`, `preimage_leviPlus`, and the same for `A^{++}_M`); the monoid laws; `⁰M ⊂ M^+`; and `leviPlus_minimal`: `M_∅^+` is the published `dominantCentralizer` of [RenardDominantValuation](../../Langlands/Representation/Plancherel/RenardDominantValuation.md). `CocharacterUniformizer.CAplus` and `CAstrict` are the lattice cuts of V.3.23 (`CAplus_eq_inter`, `CAstrict_eq_inter`). Earlier inline uses, such as the hypotheses `characterNorm F S α x ≤ 1` in `StandardCasselmanUniformAsymptotics.lean`, are not rewritten through these names | D; P for all the listed theorems. The separate published topology target on actual standard-Levi split components is recorded in the next row |
-| V.3.15/V.3.21 topology of `chamber` and `closedChamber` on the actual `𝔞_M = V A` | `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviChamberTopologyStatement` ([statement and scope](../../Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyStatement.md)): for an actual connected reductive group over an arbitrary field, maximal split torus, generic cocharacter, subset of simple roots, represented closed standard Levi, its actual split component and compatible factor into the maximal split torus, the strict chamber is nonempty and open, the nonstrict chamber is closed, and it equals the topological closure of the strict chamber in `moduleTopology ℝ (V A)`. Nonemptiness is a conclusion; empty roots and central directions are included | S: independently accepted and published statement `3815da2b-1e51-4b7a-9733-ab8b5e957974`. Exact proof Task 7234 (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`), candidate `a6b1d812-cffd-4ded-baa9-dad583091837`, has accepted machine validation and independent semantic approval, but is not yet published. Evidence below; gap 8 |
+| V.3.15/V.3.21 topology of `chamber` and `closedChamber` on the actual `𝔞_M = V A` | `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviChamberTopologyStatement` ([statement and scope](../../Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyStatement.md)): for an actual connected reductive group over an arbitrary field, maximal split torus, generic cocharacter, subset of simple roots, represented closed standard Levi, its actual split component and compatible factor into the maximal split torus, the strict chamber is nonempty and open, the nonstrict chamber is closed, and it equals the topological closure of the strict chamber in `moduleTopology ℝ (V A)`. Nonemptiness is a conclusion; empty roots and central directions are included | P: `Langlands.BruhatTits.Cartan.RenardLeviCones.leviChamberTopology` ([proof](../../Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyProof.md)), independently accepted and published candidate `a6b1d812-cffd-4ded-baa9-dad583091837` from exact proof Task 7234 (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`). Statement `3815da2b-1e51-4b7a-9733-ab8b5e957974` is unchanged. Evidence below; gap 8 is closed |
 | V.3.21 (V.3.21.1) `A^+_M = ⊔_Q A^{++}_L` | none | Source issue I1 below |
 | V.3.22 `A^+(ε)` (all `a ∈ A_M` with `\|α(a)\|_F < ε`) | `componentEpsilon` in [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md), defined for every real `ε`. Proved there: `componentEpsilon_one` (`A^+(1) = A^{++}_M`), `componentEpsilon_mono`, `componentEpsilon_subset_componentStrict` for `ε ≤ 1`, `componentEpsilon_eq_empty` for `ε ≤ 0` and nonempty `Δ(P)`, and `CAepsilon_eq_inter`: `CocharacterUniformizer.CAepsilon` is the lattice cut `C_A^+(ε) = C_A ∩ A^+(ε)` of V.3.23. Earlier inline forms remain: the condition on every `t ∈ A(F)` in `RP.GeneralizedJacquetContractingRangeStatement` (GeneralizedJacquetRemarksStatements.lean) and `standardCone` in `StandardCasselmanConstantTerm.lean` | D; P for the listed theorems |
 | V.3.23 `C_A`, `F_M`, `C̃_A = C_A F_M`, `F_M ⊂ M^+`, `C_A^+`, `C_A^{++}`, `C_A^+(ε)` | `CocharacterUniformizer.CA`, `CAplus`, `CAstrict`, `CAepsilon`; `RC.FullLatticeRepresentativeStatement`, `RC.RenardDominantComparisonStatement`, `RC.IsChamberCompatibleTransversal` | D; P: `fullLatticeRepresentative` (representatives, Task 5679) and `renardDominantComparison` |
@@ -412,7 +413,7 @@ Reviewer 5050 approved it without qualifications. Integration
 `0f3c0c61f6de4192aee3351ba1a5dd12` first published the pair at commit
 `e9c05be9da1000900a43de75ec2ede66892aa158`. Its frozen pair and the public
 and workspace pair at audit base
-`26a5c21c0dd926a6ba1106b5c4a08f30fdea612c` have these exact SHA256 digests:
+`b44618a4f02405d5be8c906f21cf7817e4eaafb9` have these exact SHA256 digests:
 
 | File | SHA256 |
 | --- | --- |
@@ -429,28 +430,39 @@ the supplied maps are explicit. It neither assumes a positive chamber point nor
 removes the central directions. The ambient dual-face topology in
 `ParabolicChamberLinearAlgebraStatement` is a distinct result.
 
-The exact proof owner is Task 7234
+The exact proof is from Task 7234
 (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`), executed by Worker 706 with Worker
 1222 as coauthor of its candidate
-`a6b1d812-cffd-4ded-baa9-dad583091837`. The staged theorem is
+`a6b1d812-cffd-4ded-baa9-dad583091837`. The published theorem is
 `Langlands.BruhatTits.Cartan.RenardLeviCones.leviChamberTopology.{u}`.
 Machine evidence `ce29f28a-5b9a-44e0-83fc-8e2e0ac40203` accepts the Lake
 build, exact target, unchanged statement and frozen-input checks. Reviewer 5406
 independently approved the frozen candidate without qualifications in review
-`7670fd31-2480-4c98-92b6-66735587dc41`. At this inspection the candidate
-remains staged, with `accepted = false` and `public = false`, and has no
-publication receipt. These successful checks therefore supply no published
-proof for this ledger.
+`7670fd31-2480-4c98-92b6-66735587dc41`. Integration
+`167514e9f2e746038eb560aae161c57a` first published the proof at commit
+`c0c2e1210454ae2a1888a2989e3de794c1336819`. The fetched record has
+`accepted = true`, `public = true` and a published integration receipt.
+The accepted archive, first-publication, audit-Library and workspace proof
+pairs agree byte for byte:
 
-Recovery check `b248947c-6de0-41cc-8e51-8810374afa32` recompiles the statement
-and the transferred proof draft on the audit base with zero errors or warnings.
-The draft's proof pair agrees byte for byte with the staged candidate. This is
-development evidence only. The proof lifts a standard cocharacter through the
-actual split-component map to obtain a strict chamber point, then uses
-continuity of finitely many linear inequalities and a positive perturbation to
-prove the topology assertions. The separate source issue (V.3.21.1), integral
-and actual lattice partitions, valuation comparisons and additional
-representative-existence obligations retain their own status.
+| File | SHA256 |
+| --- | --- |
+| `Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyProof.lean` | `ab7c734a2ffc6e4899877e6268ff24be2482426c7de5c73b80866e207f884531` |
+| `Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyProof.md` | `5912b816864080534bac25e7557e6eff01965facf09afca0ec9a1ae8000fb759` |
+
+Public-module check `f1ddb4fc-3264-4ad2-a296-e553850279d6` and recovery
+check `1ca051c7-a279-4048-a80a-61d197e87237` compile the statement and public
+proof on the audit base with zero errors or warnings. The latter inspects the
+theorem with universe parameter `u` and only `propext`, `Classical.choice`
+and `Quot.sound`. These are development checks; the exact-target and
+independent acceptance evidence is recorded above.
+
+The proof lifts a standard cocharacter through the actual split-component map
+to obtain a strict chamber point, then uses continuity of finitely many linear
+inequalities and a positive perturbation to prove the topology assertions.
+The separate source issue (V.3.21.1), integral and actual lattice partitions,
+valuation comparisons and additional representative-existence obligations
+retain their own status.
 
 ## Evidence for the focused V.3.24 update
 
@@ -856,20 +868,21 @@ not whole-section or whole-book completion.
    6505. No accepted proof of the actual partition or freeness is counted.
 
 8. V.3.15/V.3.21 topology on the actual standard-Levi split component: the
-   nonemptiness, openness, closedness and topological closure assertion is now
-   the public `LeviChamberTopologyStatement`. Exact proof Task 7234
-   (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`) has staged candidate
-   `a6b1d812-cffd-4ded-baa9-dad583091837`, with accepted machine validation
-   and independent semantic approval but no publication yet. The former
-   missing-statement gap is closed; proof publication remains outstanding.
+   nonemptiness, openness, closedness and topological closure assertion
+   `LeviChamberTopologyStatement` is proved by the public
+   `leviChamberTopology`. Exact proof Task 7234
+   (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`) supplied independently accepted
+   and published candidate `a6b1d812-cffd-4ded-baa9-dad583091837`.
+   This focused gap is closed. The distinct source issue (V.3.21.1) and
+   actual lattice-partition obligations remain as recorded above.
 
 ## Proof tasks of Worker 1222's Chapter V statements
 
 `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviChamberTopologyStatement`
 has exact proof Task 7234 (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`). Its
-candidate `a6b1d812-cffd-4ded-baa9-dad583091837` has passed machine validation
-and independent review and awaits publication, as verified above. The parent
-whole-book task does not submit a duplicate proof.
+candidate `a6b1d812-cffd-4ded-baa9-dad583091837` is independently accepted
+and published as `leviChamberTopology`, with the exact public pair and
+publication receipt verified above.
 
 The three public Levi split-component recall statements have exact proof
 Tasks 6918–6920, and their conjunction has assembly Task 6921, as listed in
