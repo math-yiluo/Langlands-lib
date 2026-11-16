@@ -1,0 +1,11 @@
+# Finite coroot index and local torus commutators
+
+For the final torus theorem, fix an arbitrary commutative ring `R` in universe `u`, a finite coordinate type `I`, a reductive group scheme `G` over `Spec R` with `IsAffineHom G.X.hom`, semisimple geometric fibres, and a supplied closed coordinate-torus homomorphism `i` with `IsFibrewiseRootDatumOf I G i P`. The conclusion applies to every torus point on every test scheme over `Spec R`. The generic subgroup-functor and positive-multiple lemmas preceding it work over any base scheme.
+
+The local abstract commutator subgroups form a subgroup functor. A cocharacter lands in it whenever a positive multiple does: on affine tests, adjoin the corresponding positive root of the unit parameter and apply the multiple hypothesis to that root. Local membership then descends along the surjective fppf refinement and the affine cover.
+
+Fixed coordinate cocharacters depend integrally linearly on their exponent vectors. These internal algebra and descent helpers prepare passage from coroot images to the whole coordinate split torus.
+
+Assuming that every integral coordinate vector has a positive multiple in the coroot span, the pullback of the cocharacters-landing submodule under the fixed-exponent linear map contains every coroot, then every vector by saturation. Each coordinate cocharacter therefore lands in local commutators. The identity decomposition of the standard torus into the sum of its coordinate projection-inclusion maps expresses every torus point as a finite product of these values, giving `locallyCommutator_torus_of_finiteIndex`.
+
+For a relative semisimple group, any residue-field realization is semisimple. The published finite-root-index theorem and root/coroot index equivalence make the actual field coroot quotient finite. Mapping its positive-order relation through the exact cocharacter coordinate equivalence proves the required positive-multiple property in the common integral coordinate lattice. The proof then obtains `locallyCommutator_torus` with no finite-index assumption left. Empty test schemes use the empty fppf cover. The base ring may be zero or nonreduced and the test scheme is arbitrary; no maximal-torus assumption beyond the supplied closed torus and actual fibrewise root datum is added.

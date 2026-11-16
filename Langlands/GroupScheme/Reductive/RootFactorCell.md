@@ -1,0 +1,7 @@
+# Actual ordered factor cells
+
+This internal construction compares categorical finite products of actual group schemes with the vector-coordinate sources used by the published big-cell theorem. The first helper constructs the actual group-scheme isomorphism between the rank-`m` vector group over `Spec R` and the categorical product of `m` additive groups. Its natural point equivalence is given by the scalar coordinate of each factor, with inverse obtained by reassembling scalar points. Here `R` is any commutative ring object in universe `u`, and `m` is any natural number, including zero.
+
+The projection formulas retain the actual chosen factor isomorphisms. For arbitrary finite families `A : Fin m → GroupScheme S`, `B : Fin n → GroupScheme S`, and a middle group `D`, `sourceGroup` is their categorical product, associated as `(product A × D) × product B`. The map `multiplication` multiplies the negative-family values in index order, then the middle value, then the positive-family values in index order. It need not be a group homomorphism. Its source is smooth when every factor is smooth, and its image contains the full unit section.
+
+The local commutator lemmas assume local membership for every value of every factor. They evaluate the ordered multiplication as an actual finite list product and use the local commutator subgroup on the test scheme. Thus every value of the actual cell is locally a commutator under exactly those supplied factor hypotheses. No open-immersion property is asserted by this module.
