@@ -35,3 +35,8 @@ preimage and generic-point image completes the subgroup identification.
 
 No reduction-surjectivity or root-generation assertion is made here; those are
 separate obligations for consumers.
+
+The local integer and residue algebra instances have explicit names specific
+to this module. Their bodies are unchanged; the names prevent generated
+declaration collisions when this construction is imported with the
+unramified integral-point action.

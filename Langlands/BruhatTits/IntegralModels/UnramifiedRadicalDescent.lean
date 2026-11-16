@@ -49,11 +49,12 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {G : GroupScheme (Spec (CommRingCat.of F))}
   (M : IntegralModel ↥𝒪[F] F G)
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+local instance unramifiedRadicalDescentIntegerAlgebra :
+    Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance :
+local instance unramifiedRadicalDescentResidueAlgebra :
     Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
 
@@ -92,7 +93,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {G : GroupScheme (Spec (CommRingCat.of F))}
   {D : RelativeComponentModelData ↥𝒪[F] F G} (Q : SpecialFibreQuotientData D)
 
-local instance :
+local instance unramifiedRadicalDescentResidueAlgebra :
     Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
 

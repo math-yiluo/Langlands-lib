@@ -43,25 +43,25 @@ private instance incidentEmbedding_affine :
     (CategoryTheory.Limits.pullback.snd G.X.hom (GaloisPointComparison.baseMap F _))
   infer_instance
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+local instance incidentEmbeddingIntegerAlgebra : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+local instance incidentEmbeddingIntegerTower : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+local instance incidentEmbeddingIntegerLocal : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
 
-local instance : HenselianLocalRing (fixedFieldIntegers F) :=
+local instance incidentEmbeddingHenselian : HenselianLocalRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsHenselian F
 
-local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+local instance incidentEmbeddingResidueClosed : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).1
 
-local instance : Algebra.IsSeparable (IsLocalRing.ResidueField ↥𝒪[F])
+local instance incidentEmbeddingResidueSeparable : Algebra.IsSeparable (IsLocalRing.ResidueField ↥𝒪[F])
     (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   unramifiedResidue_isSeparable
 

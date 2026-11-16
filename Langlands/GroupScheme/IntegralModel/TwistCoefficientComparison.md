@@ -15,7 +15,8 @@ original chosen generic identification. The theorem
 cancels the pulled-back original generic isomorphism and compares projections
 to the original model using the published projection formula.
 
-The auxiliary `squareComparison_inv_fst_fst` records the inverse square
+The shared `squareComparison_inv_fst_fst` from
+`Langlands.GroupScheme.Descent.SquareComparisonProjection` records the inverse square
 comparison's projection formula. The general `squareComparison_cube` states
 that the two paths through a commuting coefficient cube agree. To prove it,
 the code collapses the target pullback tower, compares projections to the

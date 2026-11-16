@@ -35,3 +35,5 @@ All assertions concern subgroup functors on every scheme test, and hold at
 arbitrary universe `u`. This result supplies no source-model existence and
 does not assert that every parabolic is attained or that the host bijection
 has been proved.
+
+The local coefficient, tower, and residue-field instances have explicit module-specific names so this module can be imported together with the independent neutral-model descent interfaces. Their types and definitions are unchanged.

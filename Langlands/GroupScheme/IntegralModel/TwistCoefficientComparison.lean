@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Descent.SquareComparisonProjection
 import Langlands.GroupScheme.IntegralModel.SemilinearGenericSolution
 import Langlands.GroupScheme.IntegralModel.SemilinearExtension
 
@@ -17,17 +18,6 @@ namespace Langlands.GroupScheme.Descent
     ((baseChange b).map f).hom.hom.left ≫ pullback.fst H.X.hom b =
       pullback.fst G.X.hom b ≫ f.hom.hom.left :=
   pullback.lift_fst _ _ _
-
-/-- The inverse square comparison preserves the same original projection. -/
-@[reassoc] theorem squareComparison_inv_fst_fst {B S U V : Scheme.{u}}
-    (b : S ⟶ B) (c : V ⟶ S) (d : U ⟶ B) (e : V ⟶ U)
-    (h : c ≫ b = e ≫ d) (G : GroupScheme B) :
-    (squareComparison b c d e h G).inv.hom.hom.left ≫
-        pullback.fst ((baseChange b).obj G).X.hom c ≫ pullback.fst G.X.hom b =
-      pullback.fst ((baseChange d).obj G).X.hom e ≫ pullback.fst G.X.hom d := by
-  simp only [squareComparison, Iso.trans_inv, Iso.symm_inv, Grp.comp_hom_hom,
-    Over.comp_left, Category.assoc, pullbackComparison_inv_fst,
-    pullbackComparison_hom_fst]
 
 /-- The square comparisons around a commuting coefficient cube agree. -/
 theorem squareComparison_cube {B S U V : Scheme.{u}}

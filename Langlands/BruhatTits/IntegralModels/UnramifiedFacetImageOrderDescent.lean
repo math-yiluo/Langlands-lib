@@ -131,29 +131,29 @@ private instance unramifiedImageDescent_affine :
     (CategoryTheory.Limits.pullback.snd G.X.hom (GaloisPointComparison.baseMap F _))
   infer_instance
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+local instance imageOrderDescentIntegerAlgebra : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+local instance imageOrderDescentIntegerTower : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+local instance imageOrderDescentIntegerLocal : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
 
-local instance : HenselianLocalRing (fixedFieldIntegers F) :=
+local instance imageOrderDescentHenselian : HenselianLocalRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsHenselian F
 
-local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+local instance imageOrderDescentResidueClosed : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).1
 
-local instance : Algebra.IsAlgebraic (IsLocalRing.ResidueField ↥𝒪[F])
+local instance imageOrderDescentResidueAlgebraic : Algebra.IsAlgebraic (IsLocalRing.ResidueField ↥𝒪[F])
     (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   unramifiedResidue_isAlgebraic
 
-local instance : Algebra.IsSeparable (IsLocalRing.ResidueField ↥𝒪[F])
+local instance imageOrderDescentResidueSeparable : Algebra.IsSeparable (IsLocalRing.ResidueField ↥𝒪[F])
     (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   unramifiedResidue_isSeparable
 
