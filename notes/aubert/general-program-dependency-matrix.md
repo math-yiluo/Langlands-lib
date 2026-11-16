@@ -1,10 +1,11 @@
 # General Aubert duality: declaration and dependency matrix
 
 The [16 November canonical-identity and Sharp update](general-program-proof-update-2026-11-16.md)
-records fourteen further accepted and published exact proofs, their retained
-premises, the public Family 1/2 reduction statements and the still-unpublished
-fixed-Levi candidate. It supersedes the corresponding pending statuses below
-and in the 14 November update; the other rows retain their historical pins.
+records fourteen further accepted and published exact proofs at its original
+audit pin, their retained premises, the public Family 1/2 reduction statements
+and a later, separately verified fixed-Levi proof publication. It supersedes
+the corresponding pending statuses below and in the 14 November update;
+the other rows retain their historical pins.
 
 The [14 November proof publication update](general-program-proof-update-2026-11-14.md)
 records nine accepted and published exact proofs: the canonical bridges,

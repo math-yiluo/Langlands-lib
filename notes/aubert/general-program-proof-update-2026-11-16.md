@@ -3,6 +3,10 @@
 Author: Worker 3640. Checked on 16 November 2026 against Library commit
 `b4005ae3c4a406e2d1193548306b79d7ab745811`.
 
+The fixed-Levi publication addendum below was checked later on the same date
+against Library commit `a62c80eafd15a933bf75e7a7ff8577972c2945ae`.
+The original fourteen-proof audit retains its first pin.
+
 Fourteen further exact proofs are accepted and published: seven Sharp
 reductions, five reductions for canonical formal identities, and the canonical
 Jacquet compatibility and cuspidal eigenvalue targets. The five-statement
@@ -21,7 +25,8 @@ remains incomplete.
 
 ## Publication evidence
 
-Every proof below has an accepted `lean.proof@1` machine receipt covering
+Each of the fourteen proofs in the next three sections has an accepted
+`lean.proof@1` machine receipt covering
 `lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`, and
 independent semantic approval without review qualifications. Both files in
 each published Lean/Markdown pair match their frozen hashes in the checked
@@ -153,6 +158,38 @@ conjugation transport in the stated direction. The cuspidal eigenvalue
 retains irreducibility and Jacquet vanishing at every proper standard subset;
 it gives `(-1)^|S|` times the class. Empty simple-root systems are included.
 
+## Canonical fixed-Levi comparison: publication addendum
+
+At the later checked Library commit
+`a62c80eafd15a933bf75e7a7ff8577972c2945ae`, Task 6881
+(`957fb37f-88b8-4d25-8755-e58dbb78f542`) has an accepted and published exact
+proof
+[`canonicalRationalFixedLeviComparison`](../../Langlands/Representation/Aubert/General/CanonicalRationalFixedLeviComparisonProof.lean)
+([account](../../Langlands/Representation/Aubert/General/CanonicalRationalFixedLeviComparisonProof.md))
+of `CanonicalRationalFixedLeviComparisonStatement.{u,v}`.
+Candidate `65896294-6174-4734-98f9-5fbb83462942` was published at
+`e4a9b4d0164a5e0a9828dcaec5fa1cb7837ff8c6`, following Reviewer 4960's
+independent semantic approval without qualifications. Its accepted
+`lean.proof@1` receipt `9b5b4099-25e3-4551-908b-7caa907d5114` covers
+`lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`.
+Both files in its published Lean/Markdown pair match the frozen archive,
+checked Library and workspace hashes. This later publication is separate
+from the original fourteen-proof audit.
+
+The proof composes `canonicalRationalFixedLeviComparison_of_rational` with
+`rationalFixedLeviComparison`. It proves the natural isomorphism
+`D̃_{L_I} ∘ r_I ≅ r_I` on the full smooth support category for every standard
+subset `I`, as in the erratum, printed p.4690, immediately before (**).
+Here `D̃_{L_I}` is the full-support terminal functor of the actual Levi and
+`r_I` the actual normalized Jacquet functor. It adds no hypothesis and has no
+dynamic finite-length premise. The canonical topology and structural values
+are supplied by the published bridge. Its authors are Worker 29 with
+Worker 3640; Worker 444 submitted the unchanged Lean proof.
+
+This fixed-Levi result does not close corrected Theorem 3.6 or the
+associated-Levi comparison. Their `Whole` and `GradedVanishing` obligations
+remain as recorded below.
+
 ## Scope, dependencies and remaining work
 
 The general targets keep arbitrary nonarchimedean local fields, connected
@@ -173,18 +210,7 @@ publications here removes those premises, the two-sided corrected support,
 the length-order requirement or the surviving terminal homology. Proposition
 3.2 is not used as an established result.
 
-At this checked Library commit, Task 6881
-(`957fb37f-88b8-4d25-8755-e58dbb78f542`) has candidate
-`65896294-6174-4734-98f9-5fbb83462942` for the exact
-`CanonicalRationalFixedLeviComparisonStatement.{u,v}`. Its four-check
-machine receipt is accepted and Reviewer 4960 has independently approved it,
-but it is still staged, `accepted=false`, `public=false`, with no publication.
-It is not included in the fourteen proofs above. Its reviewed composition
-uses `canonicalRationalFixedLeviComparison_of_rational` and
-`rationalFixedLeviComparison`; even publication of that fixed-Levi result
-would not close corrected Theorem 3.6 or the associated-Levi comparison.
-
-These fourteen proofs do not discharge the representation inputs or change
+These publications do not discharge the representation inputs or change
 the [bottleneck owners](general-program-dependency-matrix.md#bottlenecks).
 The unconditional Sharp class-formula owner
 `13e2abdc-2be7-4191-b74b-9eae99a56fcc` and cuspidal-series owner
