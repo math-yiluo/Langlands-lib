@@ -29,7 +29,8 @@ actual split-character definitions reduces each equality to polynomial
 arithmetic over the complex numbers. Each corresponding recurrence therefore
 discharges `isRealIntertwinerModulo_blockFrobMap`.
 
-The inclusion from the original two-block standard module into its
+The public helper `RealInducedPairFrobenius.inclusion_intertwiner` shows
+that the inclusion from the original two-block standard module into its
 full-character principal series is also an exact intertwiner: its underlying
 function is unchanged, and standard-module stability gives the translated
 and differentiated functions in its source. Repeated `modulo_comp_bot`

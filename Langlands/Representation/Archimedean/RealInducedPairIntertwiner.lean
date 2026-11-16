@@ -27,7 +27,8 @@ def swapParameter (d e : ComplexCharacterData) : ℂ :=
   d.exponent - (d.weight.natAbs : ℂ) / 2 -
     e.exponent - (e.weight.natAbs : ℂ) / 2 + 1
 
-private theorem inclusion_intertwiner (d e : ComplexCharacterData) :
+/-- The inclusion into the full-character principal series is an exact intertwiner. -/
+theorem inclusion_intertwiner (d e : ComplexCharacterData) :
     IsRealIntertwinerModulo 4 (src d e) (l0 d e) ⊥
       (Submodule.inclusion (src_le_l0 d e)) := by
   refine ⟨fun k f => ⟨rightTranslation_mem_kFiniteFunctions_realStandardModule

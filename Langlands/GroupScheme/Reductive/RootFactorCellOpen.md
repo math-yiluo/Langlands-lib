@@ -1,0 +1,7 @@
+# Openness of actual factor cells from field coordinates
+
+This internal comparison starts over an arbitrary commutative ring `R`, a finite coordinate torus type `I`, actual finite factor families `A` and `B`, and an actual middle group `D`. Supplied additive isomorphisms for every factor and a coordinate-torus isomorphism for `D` identify the standard vector-cell source with the actual categorical product source.
+
+When the chosen additive coordinate maps compose with the supplied factor inclusions to the stated root maps, the ordered multiplication is exactly the published ordered root-point formula on every test scheme. No existence of coordinates is assumed without an explicit supplied isomorphism.
+
+The open-cell theorem assumes a reductive group over `Spec R`, a coordinate torus maximal on every residue fibre, a fibrewise coordinate root datum with a base and chosen negative/positive enumerations, smooth actual factor sources, and explicit additive coordinates on every field fibre whose composites are the prescribed root parametrizations. Under exactly these hypotheses, actual factor multiplication is an open immersion. On each residue fibre, the source comparison identifies the actual multiplication with the published standard big-cell map; invariance under source isomorphisms and the arbitrary-base fibrewise open-immersion criterion conclude. The actual factors need no global additive coordinates.
