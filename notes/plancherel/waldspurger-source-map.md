@@ -24,6 +24,76 @@ Library declarations that currently formalize part of it. It proves nothing.
 A proposition definition listed here is a statement, not a proof. Where no
 declaration is listed, the item is open.
 
+## Actual-point coverage update, 16 November 2026
+
+Worker 3642. The historical item rows and module inventory below retain their
+original scope and verification commits. This update adds the later actual-point
+results; the [actual-point ledger](actual-point-ledger.md) records their exact
+hypotheses, publication receipts and remaining obligations.
+
+For VI.1 and VI.3 (printed pp.295–296, 301), Task 6544
+`88d9ffed-e423-4af5-ae96-e00eaa1befca` has published four independently
+accepted topology units:
+`SmoothTorusTensorTopology`, `OrbitSectionFixedTensor`,
+`OrbitSectionFiniteProductTopology` and
+`RationalOrbitSectionFiniteProductTopology`, under
+`Langlands/HarmonicAnalysis/HarishChandraSchwartz/`. The first two are public
+at `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`, the last two at
+`af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
+They construct the independent scalar ordered-derivative and finite-product
+topologies and faithful actual-section coordinate maps. The theorems
+`finiteDimensional_orbitSectionFixedCoefficients` and
+`finiteDimensional_rationalOrbitSectionFixedCoefficients` prove finiteness
+of the actual compact-picture product fixed space. These are not assumed
+finiteness inputs. The maps retain self-twist covariance and assert no
+surjectivity onto arbitrary coefficient families.
+
+The three comparison aggregates in namespace
+`Langlands.HarishChandraSchwartz` remain unproved:
+`SmoothTensorBasisIndependenceStatement` (Task 7224
+`6ee6de28-240a-4826-b3c6-7c585dc27389`),
+`OrbitSectionFiniteProductTopologyStatement` (Task 7225
+`863c67b3-1483-41b5-8810-2654edf682ff`) and
+`RationalOrbitSectionFiniteProductTopologyStatement` (Task 7226
+`aa2dcfad-211a-4e0a-a280-a7d68a315f2a`). The rational proof must specialize
+the eventual published generic proof. The separate optional
+derivative-permutation target is not a premise of these section comparisons.
+
+For IV.1 (11), printed p.283, and the Hermitian argument used in IV.3 (6),
+printed p.287, the exact opposite-parabolic convergence-domain targets now
+have published proofs in namespace `Langlands.Plancherel`:
+`conditionalDynamicOppositeHermitianAdjunction` in
+`DynamicOppositeHermitianAdjunctionProof`, at
+`b3dcc8cc4c93f1140c6b34374f589ccc637a1a22` (Task 6449
+`2c792e2f-f6fa-4939-b0a0-0b9ee31b56a1`), and
+`conditionalDynamicOppositeDualAdjunction` in
+`DynamicOppositeDualAdjunctionProof`, at
+`ccd5c6bb63352c109b2bfde422a65c2dd78e57fd` (Task 6641
+`7222a94a-8ed5-4dbb-ad16-25f5c88276da`). Both retain the compact splitting
+and reverse-parameter convergence premises. They use pointwise integral
+specifications, Levi-invariance and normalized Iwasawa cutoff exchange;
+the dual theorem covers both orientations with the smooth contragredient.
+These convergence-domain results do not by themselves supply the full
+rational-family assertion of IV.1 (11), full-unitary inverse regularity or
+V.2.1. Existing conditional scalar reductions can consume the new theorems.
+
+For VI.3.1, printed pp.302–305, Task 7217
+`25cc1d80-3a4c-43b1-9260-eedb0ec42e56` prepares full actual-weight
+Schwartz-membership and continuous-linear-synthesis targets; no statement
+or proof from that task is yet claimed here. It must use the published
+`standardLeviPlancherelWeight`, whose continuation, convergence, generic
+irreducibility and full-unitary inverse-regularity premises remain visible.
+Its principal targets must not add coefficient Xi bounds or desired
+Schwartz estimates as assumptions. The existing actual-weight bound is
+central-valuation decay with a coefficient-bound premise, not full sigma
+decay or synthesis continuity. The source-normalized target must reuse I.1's
+character and orbit measures: split-component character Haar has mass one,
+the full character measure has restriction-kernel-cardinality mass, and
+the orbit measure divides its pushforward by stabilizer cardinality.
+The standard-Levi measure transport and valuation-index obligations remain
+explicit. The full VI.3.1 conclusions, literal source-topology comparison
+and the standing Plancherel theorem remain open.
+
 ## Source
 
 J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
