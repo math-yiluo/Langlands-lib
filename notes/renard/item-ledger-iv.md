@@ -15,6 +15,9 @@ appear below. The further IV.3.2 statement update uses Library
 `457e31a2131a1083c26931d33fec09a71fea54d6` and records the remaining exact proof task.
 The IV.3.2 definition update additionally verifies the published raw predicates and
 their admissibility comparison at Library `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
+The 16 November 2026 update adds the separate IV.3.2 counterexample assertion,
+its published statement and exact proof owner, checked at Library
+`b4005ae3c4a406e2d1193548306b79d7ab745811`.
 Other row statuses retain the original survey date and scope.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -82,6 +85,7 @@ another namespace is written, statements are in
 | IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
 | IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.SmoothRep.IsSquareIntegrableModuloCenter` and `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter` in [SmoothSquareIntegrability](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md) | D: neither assumes admissibility or irreducibility. The older `Langlands.IsSquareIntegrableModCenter` is admissibility conjoined with the first predicate, by `Langlands.SmoothRep.isSquareIntegrableModCenter_iff` |
 | IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | S; exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) remains open. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
+| IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | S; exact proof Task 7180 (`a326697e-2603-4828-9948-308b70e7369c`) remains open. Statement publication supplies no counterexample construction |
 | IV.3.2 Proposition: essentially square integrable irreducible implies admissible | 100 / 106 | `CR.EssentiallySquareIntegrableAdmissibleStatement` | P |
 | IV.3.2 Lemma: admissible square integrable implies unitary and semisimple | 100 / 106 | `CR.SquareIntegrableUnitarySemisimpleStatement` | P |
 | IV.3.3 Lemma (i)–(ii): Schur orthogonality and the formal degree | 101 / 107 | `CR.SchurOrthogonalityStatement` | P: `schurOrthogonality` |
@@ -257,11 +261,58 @@ statement and its exact proof Task 6678
 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) retain their statement-only and open-proof
 statuses, respectively; C3 is unchanged by this definition publication.
 
+## IV.3.2 counterexample statement publication, 16 November 2026
+
+The second assertion of the Remark, printed p.100 / PDF p.106, expressly states
+that the single-coefficient criterion fails without irreducibility. The source
+leaves the proof to the reader. It is a separate obligation from the positive
+irreducible implication. The original IV.3.1–IV.3.2 passage, printed pp.99–100 /
+PDF pp.105–106, was read again for this update.
+
+Statement `a6d3d023-4703-4073-8124-4de70be9c6b8` is independently accepted by
+Reviewer 4321 without qualifications and public. Integration
+`be26ad70dedc4ea6b2f91438c6f45330` first published its
+[Lean/Markdown pair](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md)
+at Library `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`. The frozen hashes agree
+with the workspace and this update's Library `b4005ae3c4a406e2d1193548306b79d7ab745811`:
+
+| File in `Langlands/Representation/MatrixCoefficient/` | SHA256 |
+| --- | --- |
+| `NonirreducibleSquareIntegrabilityCounterexampleStatement.lean` | `9c0fa0024578305d6846495e6d450ad8a0a03cfc1929433f9b9809ea10be3c55` |
+| `NonirreducibleSquareIntegrabilityCounterexampleStatement.md` | `9f2d2547cc555cc4e310562c92933fec718eee1a2a0eba82e209ecaa9f61c01a` |
+
+The proposition negates the universal single-coefficient implication restricted
+to nonirreducible smooth complex representations. Classically it asserts an
+actual nonirreducible representation with a unitary scalar central character
+and a nonzero smooth coefficient whose descended norm is in `L²`, which fails
+`Langlands.SmoothRep.IsSquareIntegrableModuloCenter`. That conclusion predicate
+contains neither admissibility nor irreducibility, so its failure concerns
+coefficient integrability itself.
+
+The statement retains Hausdorff locally compact totally disconnected groups,
+an ambient bi-invariant Borel Haar measure and a separate bi-invariant Borel
+Haar measure on the actual quotient `G/Z(G)`. Both the group and representation
+carrier lie in `Type 0`, as appropriate for this existence assertion. It assumes
+no admissibility, reductivity, finite dimension, finite length or countability.
+Fresh development check `41ba672e-419c-4fba-b53a-3c7429d043ba` compiled the
+statement without errors or warnings and inspected it as a Prop-valued
+definition. This check supplies no proof of the counterexample assertion.
+
+Exact proof Task 7180 (`a326697e-2603-4828-9948-308b70e7369c`), revision 1,
+targets
+`Langlands.Renard.CompactRepresentation.NonirreducibleSquareIntegrabilityCounterexampleStatement`.
+Its contract pins environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` and
+preserves the published target and imported objects. At this update it is ready
+and has no proof candidate. The positive criterion's Task 6678
+(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) was also inspected at revision 1:
+it remains ready with no candidate. Both assertions remain unproved.
+
 ## Summary
 
 The six formerly open proof rows now have proofs of their published propositions.
-The IV.3.2 Remark additionally has a published statement at the general source scope,
-with its exact proof still open. The IV.3.2 Definition now has published reusable
+The IV.3.2 Remark additionally has published statements for the general irreducible
+criterion and its failure without irreducibility, with both exact proofs still open.
+The IV.3.2 Definition now has published reusable
 predicates without admissibility and a proved comparison with the older predicate.
 The other rows retain their original statuses and scope.
 C1–C3 remain relevant: the
