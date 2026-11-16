@@ -1,0 +1,13 @@
+# Descent of relative parabolic extensions
+
+This internal construction extends relative parabolics from a reductive closed factor of a reductive ambient group over an arbitrary base scheme, assuming a supplied central multiplication isogeny. No normality premise on the factor is used in this inverse construction.
+
+Relative parabolicity is detected on any etale covering family. For one etale map, its open image receives an etale surjection from its source. The existing surjective etale criterion applies there, after transport through the canonical iterated-pullback comparison. The open images of a covering family form an open cover, so the existing Zariski criterion finishes the descent.
+
+Local `RelativeExtension` objects agree on pairwise overlaps. Pullback and transport through the canonical commuting comparison put both objects over the same factor, ambient group and prescribed subgroup. Base change of the supplied multiplication isogeny, through the actual product comparison, allows the extension uniqueness theorem to compare their all-test ranges. Composing with the inverse comparison gives precisely the range equality required by `CoverDescent.isMatching_of_overlap_range_eq`.
+
+`RelativeExtension.ofEtaleCover` applies effective closed subgroup descent to this matching family. Local relative parabolics are closed by the published closedness theorem. The descended inclusion recovers each local range, hence is relatively parabolic by the covering-family criterion. The all-test range of its actual intersection with the factor equals the prescribed subgroup: subgroup inverse images commute with base change and the equality is detected on the etale cover among monic representatives.
+
+`relativeExtension` chooses an etale-local dynamic presentation of the given relative parabolic in the reductive factor. Composing each local cocharacter into the ambient reductive group constructs the local extension. The preceding descent produces a global extension. Finally `exists_relative_inverse` uses its actual intersection equality, central containment in the resulting relative parabolic and the published restriction/transport theorem to construct the central isogeny from the central group times the prescribed parabolic onto the ambient parabolic, with the stated multiplication composite.
+
+The provenance is internal composition of the published local dynamic, pullback transport, central-product uniqueness, covering-family closed descent, parabolic locality and central-isogeny restriction interfaces. The full host derived-group correspondence also requires the global product isogeny and the torus clauses; those are not asserted here.
