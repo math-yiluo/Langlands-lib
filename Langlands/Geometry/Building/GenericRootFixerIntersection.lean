@@ -1,4 +1,4 @@
-import Langlands.Geometry.Building.MaximalUnramifiedApartmentInjective
+import Langlands.Geometry.Building.GenericApartmentInjection
 import Langlands.Geometry.Building.RootCharacterValuationKernel
 import Langlands.Geometry.Building.BoundedRootFixerFiltration
 

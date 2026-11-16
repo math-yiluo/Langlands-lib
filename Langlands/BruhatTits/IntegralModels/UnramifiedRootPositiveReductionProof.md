@@ -44,3 +44,8 @@ is zero, which is impossible.
 This is an internal composition of the imported root-factor, valuation and
 integral-model theorems. It proves the existential point criterion in the
 published statement; it does not replace it with positivity at every point.
+
+The generic adapter `toIntegralTorusData` is imported directly from
+`IntegralSplitTorusConversion`. It is the same published definition and the
+only input this proof needs from the former `UnramifiedFacetSignDescent`
+provider; the mathematical proof and theorem type are unchanged.

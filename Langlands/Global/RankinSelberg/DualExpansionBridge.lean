@@ -123,7 +123,7 @@ variable [CompactSpace (AdeleQuotient F)] {ψ : AddChar (Adeles F) ℂ}
   {W : Points F (m + K + 1) → ℂ}
 
 omit [CompactSpace (AdeleQuotient F)] in
-theorem iota_mem_rationalSubgroup {n : ℕ} {k : Points F n}
+theorem iota_mem_rationalSubgroup_of_mem {n : ℕ} {k : Points F n}
     (hk : k ∈ AdelicGroupPoints.rationalSubgroup F (Scheme F n)) :
     iota F n k ∈ AdelicGroupPoints.rationalSubgroup F (Scheme F n) := by
   obtain ⟨c, rfl⟩ := hk
@@ -173,7 +173,7 @@ theorem DualData.coefficient_eq_dualPeriod (hW : DualData F m ψ K W)
       cornerSum F m K W (iota F (m + K + 1) (k * y)) =
         cornerSum F m K W (iota F (m + K + 1) y) := by
     intro k hk y
-    rw [UnequalAnalytic.iota_mul, hWΓ _ (iota_mem_rationalSubgroup hk)]
+    rw [UnequalAnalytic.iota_mul, hWΓ _ (iota_mem_rationalSubgroup_of_mem hk)]
   rw [coefficient_eq_iterated ψ hψc hψF _ hfc hfΓ x]
   unfold dualPeriod
   set Z := wPoint * iota F (m + K + 1) x with hZ

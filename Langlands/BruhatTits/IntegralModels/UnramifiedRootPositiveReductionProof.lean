@@ -1,6 +1,6 @@
 import Langlands.BruhatTits.IntegralModels.UnramifiedRootPositiveReductionStatement
 import Langlands.BruhatTits.IntegralModels.HenselianIntegralOppositeFactors
-import Langlands.BruhatTits.IntegralModels.UnramifiedFacetSignDescent
+import Langlands.BruhatTits.IntegralModels.IntegralSplitTorusConversion
 import Langlands.BruhatTits.IntegralModels.UnramifiedZeroRoots
 import Langlands.GroupScheme.IntegralModel.HenselianReduction
 

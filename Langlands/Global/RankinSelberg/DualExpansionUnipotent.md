@@ -20,6 +20,10 @@ Provenance: internal.
 
 - `unipotentPeriod F K f`: the normalized integral `|E|⁻¹ ∫_E f` over the Library's chosen
   fundamental domain `E = unipotentFundamentalDomain F K` of `N_K(F)` in `N_K(𝔸)`.
+- `unipotentFundamentalDomain_haar_lt_top`: `E` has finite Haar measure (its measure is the
+  inverse of the nonzero quotient-mass normalizer, by compactness of `N_K(F) \ N_K(𝔸)`). This
+  lemma was first published as `haar_unipotentFundamentalDomain_lt_top`. It was renamed because
+  `WhittakerExpansionCore.WhittakerBasic` declares a different lemma with that full name.
 - `unipotentPeriod_succ`: for continuous left `N_(K+1)(F)`-invariant `φ`, the period over
   `N_(K+1)` is the period over `N_K` of the torus integral over the last column:
   `UP_(K+1) φ = UP_K (u ↦ T_c φ(colHom c · padHom u))`.

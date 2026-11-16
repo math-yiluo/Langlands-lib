@@ -1,0 +1,9 @@
+# Quasi-split inner forms from a natural pinned comparison
+
+This internal assembly constructs an actual quasi-split inner form of a reductive group scheme over any scheme in any universe, conditional on a supplied `RelativePinnedComparison`. It retains the same full-centre fppf quotient and action restricting to conjugation as the published `RelativeQuasiSplitInnerFormExistenceStatement`.
+
+`RelativeQuasiSplitInnerFormData` records the actual group, a surjective étale covering scheme over the base, a natural local group isomorphism from the original group to that group with inner discrepancy for the supplied action, and `RelativeQuasiSplitTorusData`. The latter supplies reductivity, an actual Borel subgroup, and a closed fibrewise maximal relative torus contained in that Borel.
+
+`relativeQuasiSplitInnerFormOfPinnedComparison` chooses the affine pinned atlas of the original reductive group. The arbitrary-base étale effectivity construction supplies the actual solution of its corrected datum. The inverse solution identification is the local isomorphism; the solution inner-discrepancy theorem applies to the supplied quotient and action. The actual-solution geometry supplies the Borel and torus on that same descended group. No descent solution, affine-base assumption or quasi-compactness of the covering morphism is supplied as a premise.
+
+`relativeQuasiSplitInnerFormExistence_of_pinnedComparison` extracts the recorded objects and predicates to prove the unchanged published existence statement from `RelativePinnedComparisonExistenceStatement`. This is an internal composition of the Library's atlas, effectivity, inner-discrepancy and geometric constructions. It introduces no new literature claim and leaves pinned comparison existence as its explicit premise. It does not prove the unconditional target.

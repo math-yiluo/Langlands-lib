@@ -1,3 +1,4 @@
+import Langlands.BruhatTits.IntegralModels.FacetLieWeights
 import Langlands.BruhatTits.IntegralModels.IntegralRootFiltration
 import Langlands.BruhatTits.IntegralModels.ReductiveQuotientRoots
 import Langlands.GroupScheme.Rational.SmoothRootQuotient

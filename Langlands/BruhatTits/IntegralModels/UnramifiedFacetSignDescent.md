@@ -18,6 +18,8 @@ hypotheses:
 
 The theorem does not prove the target statement and makes no claim about `hI`
 or `hII`. The other declarations of the module are the steps of this descent.
+The generic split-integral-torus adapter and its four field lemmas are provided
+by `IntegralSplitTorusConversion`, with their original names, types and bodies.
 
 ## Content
 
@@ -26,7 +28,8 @@ or `hII`. The other declarations of the module are the steps of this descent.
 Throughout, `R`, `A` are domains with fraction fields `K`, `L`, with the commuting
 square of algebras used by the Library's `RelativeComponentModelData.baseChange`.
 
-- `IntegralSplitTorusData.toIntegralTorusData` (definition): an
+- `IntegralSplitTorusData.toIntegralTorusData` (imported from
+  `IntegralSplitTorusConversion`): an
   `IntegralSplitTorusData` of the neutral model `D.neutral` of a model pair `D`, as
   `IntegralTorusData D S i`, with the same torus and inclusion. The generic
   identification is `underlyingTorusIso` of the given one. The simp lemmas

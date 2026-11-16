@@ -27,3 +27,6 @@ quotient image.
 This is a derived construction from the named Library interfaces. It makes no
 claim about the kernel of the root projection, survival of any particular
 character in the quotient, facet vanishing, or the final derivative root datum.
+
+The generic character map, its equivalence and character specialization are
+imported directly from `FacetLieWeights`, the provider of these definitions.

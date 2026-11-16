@@ -41,7 +41,7 @@ fixes it as well. The published arbitrary-field injectivity of
 Opposite factor pairs are supplied by the published
 `rootRankOneFactorization` for connected reductive groups and maximal split
 tori. Apartment injectivity comes from
-`MaximalUnramifiedApartmentInjective`; its generic theorem uses
+`GenericApartmentInjection`; its generic proof uses
 `GenericPointSharpExchange` and requires no apartment axioms.
 
 The reverse inclusions use that depth-zero root groups lie in the sharp

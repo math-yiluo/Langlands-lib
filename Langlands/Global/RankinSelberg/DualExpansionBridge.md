@@ -8,7 +8,7 @@ Provenance: internal.
 - `rectCoordHom`, `torusIntegral_rectCoords`: the linear change of variables
   `A ↦ (rectX A, rectC A)` preserves torus integrals: `T_A h(rectX A, rectC A) = T_X T_c h(X, c)`
   for continuous periodic `h`.
-- `iota_mem_rationalSubgroup`; continuity and periodicity of the rectangle integrand
+- `iota_mem_rationalSubgroup_of_mem`; continuity and periodicity of the rectangle integrand
   (`DualData.continuous_rectIntegrand`, `DualData.periodic_rectIntegrand`).
 - **`DualData.coefficient_eq_dualPeriod`**: let `W` be a `DualData` function at rank
   `n = m + K + 1` whose corner sum `S` is left invariant under `GL_n(F)`. Then the Library's

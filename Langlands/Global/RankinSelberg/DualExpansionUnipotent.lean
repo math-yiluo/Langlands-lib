@@ -391,7 +391,7 @@ local instance dualUnipAnalysisLocallyCompact (n : ℕ) : LocallyCompactSpace (u
   (isClosed_upperUnipotent_adelicPoints F n).locallyCompactSpace
 
 omit [CompactSpace (AdeleQuotient F)] in
-theorem haar_unipotentFundamentalDomain_lt_top :
+theorem unipotentFundamentalDomain_haar_lt_top :
     (Measure.haar : Measure (unipotentAdelic F K)) (unipotentFundamentalDomain F K) < ⊤ := by
   have := compactSpace_unipotentRationalQuotient F K
   rw [haar_unipotentFundamentalDomain]
@@ -402,7 +402,7 @@ instance isFiniteMeasure_restrict_unipotentFundamentalDomain :
     IsFiniteMeasure ((Measure.haar : Measure (unipotentAdelic F K)).restrict
       (unipotentFundamentalDomain F K)) :=
   ⟨by rw [Measure.restrict_apply MeasurableSet.univ, Set.univ_inter]
-      exact haar_unipotentFundamentalDomain_lt_top⟩
+      exact unipotentFundamentalDomain_haar_lt_top⟩
 
 /-- **Fubini for unipotent periods and torus integrals**. -/
 theorem unipotentPeriod_torusIntegral_comm {T : Type} [Fintype T]
@@ -441,7 +441,7 @@ theorem unipotentPeriod_tsum {Q : Type*} [Countable Q] (f : Q → unipotentAdeli
     refine ne_top_of_le_ne_top (b := ∫⁻ _ in unipotentFundamentalDomain F K, ENNReal.ofReal B
       ∂Measure.haar) ?_ (lintegral_mono fun u => ?_)
     · rw [lintegral_const, Measure.restrict_apply MeasurableSet.univ, Set.univ_inter]
-      exact ENNReal.mul_ne_top ENNReal.ofReal_ne_top haar_unipotentFundamentalDomain_lt_top.ne
+      exact ENNReal.mul_ne_top ENNReal.ofReal_ne_top unipotentFundamentalDomain_haar_lt_top.ne
     · simp only [← ofReal_norm]
       rw [← ENNReal.ofReal_tsum_of_nonneg (fun q => norm_nonneg _) (hs _)]
       exact ENNReal.ofReal_le_ofReal (hB _)

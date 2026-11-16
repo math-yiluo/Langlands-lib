@@ -93,8 +93,13 @@ of the named unit.
    and `finiteTowerNormTransApplyAux_aux` (source-private M026.018): for
    closed subgroups `M ≤ L ≤ K` with finite relative quotients,
    `N_{L|K} ∘ N_{M|L} = N_{M|K}`, by rewriting the total coset sum through
-   Mathlib's `Subgroup.quotientTowerEquiv` as a sum over the product of the
-   two quotients.
+   `Subgroup.quotientTowerEquiv` as a sum over the product of the two
+   quotients. In this namespace `Subgroup.quotientTowerEquiv` resolves to
+   the published NYLL definition `Langlands.NYLL.Subgroup.quotientTowerEquiv`
+   (module `Langlands.NYLL.GaloisCohomology.GroupTheory.QuotientTower`), not
+   to a Mathlib declaration. That definition composes Mathlib's
+   `Subgroup.quotientEquivProdOfLE` with the NYLL
+   `Langlands.NYLL.Subgroup.quotientSubgroupOfEquiv`.
 6. `ValuationData.residueDegree_nsmul_dividedAt_aux` (M025.023,
    `f_K • v.dividedAt K a = v.normCompositeAt K a`, by the published
    M009.017) and `ValuationData.normalizedValuation_tower_aux` (M027.007
@@ -156,6 +161,11 @@ standard axioms `propext`, `Classical.choice` and `Quot.sound`.
   `valueGroup` and `normCompositeAt`, `ValuationData.valuationAt`,
   `dividedAt` and `normCompositeAtInResidueImage`, reached through the
   import chain, and the directly imported definitions listed above.
+- The published NYLL equivalence `Langlands.NYLL.Subgroup.quotientTowerEquiv`
+  (`Langlands.NYLL.GaloisCohomology.GroupTheory.QuotientTower`, reached
+  through `Degree/NormLaws/Definitions`), used in
+  `finiteTowerNormTransApplyAux_aux` and written
+  `Subgroup.quotientTowerEquiv` in the proof.
 - The published theorems M010.005 `le_baseField`, M010.027
   `FiniteResidueAbstractField.residueDegreeCardinal_eq_coe`, M010.036
   `AbstractExtension.relativeResidueDegreeCardinal_mul_residueDegreeCardinal`,
@@ -164,7 +174,7 @@ standard axioms `propext`, `Classical.choice` and `Quot.sound`.
 - Mathlib's `Subgroup.relIndex_eq_one`, `Subgroup.index`, `Nat.cast_card`,
   `Nat.card_eq_fintype_card`, `Finset.sum_const`, `Finset.card_univ`,
   `Quotient.inductionOn'`, `Quotient.out_eq'`, `Subtype.ext`,
-  `Subsingleton.elim`, `Equiv.sum_comp`, `Subgroup.quotientTowerEquiv`,
+  `Subsingleton.elim`, `Equiv.sum_comp`,
   `Subgroup.inclusion`, `Fintype.ofFinite`, `Fintype.ofEquiv`,
   `Fintype.sum_prod_type`, `Fintype.sum_congr`, `Finset.sum_congr`,
   `smul_smul`, `one_nsmul`, `map_nsmul`, `map_mul` and `map_sum`.
@@ -217,6 +227,7 @@ Worker 746 on 16 November 2026 UTC, are:
 | `Degree/NormLaws.lean` | `985cb864c6b3360e38bf22dbea58d22685eb1146537166fcc8f5ca89821dd44f` |
 | `Degree/Valuation.lean` | `f630b84345567adaa22a76feb4a0c2716079721e29a7d3b12bf5c6bd52cabb0c` |
 | `Degree/ValuationLaws.lean` | `f540072f238d978f402034f3404bdaca624ff649cddf81e41cd8b9c7f73b68f8` |
+| `Nyll/GaloisCohomology/GroupTheory/QuotientTower.lean` | `41d0b248e0b5cec84e6e20e7185a18746b8f79e2e9ba203ef7713c7c00a89115` |
 
 | Original in `ClassFormation` | Adapted in `Langlands.NYLL.ClassFormation` |
 | --- | --- |
@@ -229,6 +240,7 @@ Worker 746 on 16 November 2026 UTC, are:
 | `T.norm_trans_apply` (M026.019) | Direct application of `finiteTowerNormTransApplyAux_aux` |
 | `extensionSubgroup_index_eq_degree` (M010.092) | Local fact `hindex` |
 | `mapped_relIndex_eq_residueDegree`, `relativeCosetAction_mk`, `relativeNorm_apply_coe`, `fixedFieldInclusion_coe` (M010.093, M024.002, M024.010, M028.002) | `change`, `show` and `rfl` |
+| `Subgroup.quotientTowerEquiv` (NYLL, `Nyll/GaloisCohomology/GroupTheory/QuotientTower.lean` 54–60) | Published `Langlands.NYLL.Subgroup.quotientTowerEquiv` |
 | `le_baseField` (M010.005), `residueDegreeCardinal_eq_coe` (M010.027), `relativeResidueDegreeCardinal_mul_residueDegreeCardinal` (M010.036), `relativeTowerQuotientFinite` (M026.014), `zHatMulNat_injective` (M009.005), `zHatMulNat_zHatDivide` (M009.017) | Published theorems of the same adapted names |
 
 The [public partition](../../../../../../../../notes/reuse/nyll-public-port/m073-m096.md#m075)
