@@ -33,7 +33,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Geometric reductivity: dependency audit against the rank-one and dynamic-Borel exclusions](../notes/group-schemes/haboush-independence-audit.md) — Where the Library's Haboush proof reaches the five excluded rank-one and dynamic-Borel inputs, which structural proofs are clean, a reusable type-and-value closure scanner, why root-datum existence already implies rank-one positive-root uniqueness and what that means for the dependency order, and the Task 7298 publisher's reading of the excluded regular-cocharacter route.
 
-- [Nilpotent field groups: central maximal tori and unipotent quotients](../notes/group-schemes/nilpotent-central-progress.md) — Verified arbitrary-field central-torus statement and exact proof, their geometric nilpotence and fppf quotient meanings, original-source comparison and remaining factorization obligations.
+- [Nilpotent field groups: central maximal tori, unipotent quotients and perfect-field products](../notes/group-schemes/nilpotent-central-progress.md) — Verified arbitrary-field central-torus and perfect-field unipotent-times-torus product proofs (Milne 16.47(a),(c) and 16.48), their geometric nilpotence, fppf quotient and group-scheme isomorphism meanings, implemented routes, original-source comparison and remaining obligations.
 
 - [Norm-one tori: rational lattices and split rank zero](../notes/group-schemes/norm-one-rational-progress.md) — Two verified norm-one proof publications, their actual-group hypotheses and proof routes, the anisotropy convention difference and remaining descent obligations.
 

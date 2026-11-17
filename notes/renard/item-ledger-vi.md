@@ -120,6 +120,35 @@ other row retains its earlier dated status. Proof modules are under
 | VI.6.1 Proposition, standard parabolics | `J.StandardIwahoriCanonicalSectionStatement` | `standardIwahoriCanonicalSection` | [Jacquet/StandardIwahoriCanonicalSectionProof](../../Langlands/Representation/Jacquet/StandardIwahoriCanonicalSectionProof.md) | `547b9e62-4d3d-49c7-915b-93e42c08ae27` | Reviewer 6602 | `01a425b180654ef695565817a91979df` | Task 6530 |
 | VI.10.6 Corollary | `CS.StandardLeviCompactInheritanceStatement` | `standardLeviCompactInheritance` | [CuspidalSupport/StandardLeviCompactInheritanceProof](../../Langlands/Representation/CuspidalSupport/StandardLeviCompactInheritanceProof.md) | `bd75a482-660c-48ac-b302-a1c8cb7546d8` | Reviewer 6668 | `8d836ee04dd04ccdb57f2eaa97cd37d7` | Task 6560 |
 
+The conditional reduction update of 17 November 2026, by Worker 445 (an executor of
+Task 6535), checks the VI.6.3 Corollary and VI.9.4 Corollary rows against Library
+`371b9c350ae74d42665a9e7e0ec32e4c66f56619`. Worker 432's module
+[`Jacquet/StandardIwahoriSubquotientGenerationReduction`](../../Langlands/Representation/Jacquet/StandardIwahoriSubquotientGenerationReduction.lean),
+with its [paired Markdown](../../Langlands/Representation/Jacquet/StandardIwahoriSubquotientGenerationReduction.md),
+proves the theorem
+`J.standardIwahoriFixedVectorSubquotientGeneration_of_specialVertexInputs`. Its
+only premise is the unproved `CS.RationalSpecialVertexCompactInputsStatement.{uF}`.
+Its conclusion is the unchanged
+`J.StandardIwahoriFixedVectorSubquotientGenerationStatement.{uF, uV}`. The variants
+`J.standardIwahoriFixedVectorSubquotientGeneration_of_jointBasis`, `_of_availability`
+and `_of_groupAxiomsExistence` instead take one of these premises:
+`Langlands.BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement`
+(proof Task 4169 `8c39faa0`), `Langlands.Geometry.Building.BruhatTitsAvailabilityStatement`
+or `Langlands.Geometry.Building.GroupAxiomsExistenceStatement`. All three are unproved
+at the checked commit. The source obtains the corollary by rerunning the proof of
+Corollary VI.6.3 with the generalized Jacquet lemma (printed p.200 / PDF p.206). The
+Lean proof uses instead a weak Jacquet lemma that holds for every smooth
+representation. Its contracting element is a power of the standard cocharacter, so the
+proof uses no hypothesis on `K` beyond those of the target statement. Definition
+candidate `322864b9-e7e8-4dc4-b024-0ccabb535681` (`lean.definition@1`) has as its entry
+the proposition-valued definition
+`J.standardIwahoriFixedVectorSubquotientGenerationOfSpecialVertexInputs`, whose type is
+this implication. Reviewer 6914 approved it independently without qualifications.
+Integration `5d185be9e3654eae8327f3f32c9b95ec` first published it at the checked
+Library commit. There both files have exactly the frozen candidate's SHA256. This is
+a conditional implication, not a proof of the target. Both rows keep their status and
+Task 6535 remains open. Every other row retains its earlier dated status.
+
 The proof-status update of 14 November 2026, by Worker 4, checks every row with
 status S against Library `a163f87c7a46874f408deed853c10c83207e9f69`. Every statement
 named in these rows was compared with the Library theorems whose type is exactly that
@@ -307,7 +336,7 @@ Status codes:
 | VI.6.3 Theorem (Howe) | 178 / 184 | `AG.RationalPointsFiniteLengthAdmissibleStatement`, `Langlands.SmoothRep.RationalPointsFinitelyGeneratedAdmissibleFiniteLengthStatement` | S: tasks 96949545, 03a0d235; finite length ⇒ finite type is immediate (a finite-length object is Noetherian) |
 | VI.6.3 Lemma | 178 / 184 | `Langlands.Jacquet.FixedVectorsGenerationStatement` (theorem `fixedVectorsGeneration`), `NormalizedJacquetBridge.normalized_generation` | P |
 | VI.6.3 Proposition | 178 / 184 | `CS.SupercuspidalSubquotientFixedVectorsStatement` (every compact open `K`) | S: task e0efe074 |
-| VI.6.3 Corollary | 179 / 185 | the VI.9.4 Corollary statement `J.StandardIwahoriFixedVectorSubquotientGenerationStatement` (no admissibility; `K` normal in `K₀` with Iwahori decompositions along every standard parabolic) | C: the admissible special case of this published statement, whose proof is open (Task 6535). The earlier basis-member version `J.StandardFixedVectorSubquotientGenerationStatement` remains S: task e8bd5ada |
+| VI.6.3 Corollary | 179 / 185 | the VI.9.4 Corollary statement `J.StandardIwahoriFixedVectorSubquotientGenerationStatement` (no admissibility; `K` normal in `K₀` with Iwahori decompositions along every standard parabolic) | C: the admissible special case of this published statement, whose proof is open (Task 6535). It follows from the unproved `CS.RationalSpecialVertexCompactInputsStatement` by the conditional reduction `J.standardIwahoriFixedVectorSubquotientGeneration_of_specialVertexInputs` (conditional reduction update of 17 November 2026 above). The earlier basis-member version `J.StandardFixedVectorSubquotientGenerationStatement` remains S: task e8bd5ada |
 | VI.6.4 (finite length of Jacquet modules) | 179 / 185 | `RP.LeviJacquetFiniteLengthStatement`, `AG.DynamicJacquetFiniteLengthStatement` | S: tasks 9b0a1303, 73e60be8 |
 
 ## VI.7 The Bernstein decomposition
@@ -363,7 +392,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.9.1 Proposition, `b ≤ c(G, K)`; Remarks 1–3 | 197–198 / 203–204 | `RPF.GeneralizedJacquetRemarksStatement` (bound, Remarks 1–2, dynamic parabolics), `RP.GeneralizedJacquetContractingRangeStatement` (Remark 3) (`Exponents/GeneralizedJacquetRemarksStatements`, published); bound and Remarks 1–2 along actual rational parabolics: `RP.RepresentedGeneralizedJacquetRemarksStatement` (`Exponents/RepresentedCanonicalSectionStatements`) | S: task 7a03c792 for the two published statements; Task 6596 for the represented statement |
 | VI.9.2 (VI.9.2.2) stability for the universal induced family | 198–199 / 204–205 | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` and the VI.9.1–VI.9.3 map (`uniform-compression-progress.md`) | St: step of the VI.9.1 Proposition; Jacquet-family finiteness P |
 | VI.9.3 extension to all smooth representations | 200 / 206 | conditional helpers in the VI.9.1–VI.9.3 map | St |
-| VI.9.4 Corollary | 201 / 207 | `J.StandardIwahoriFixedVectorSubquotientGenerationStatement`; earlier `J.StandardFixedVectorSubquotientGenerationStatement` | S: Task 6535 for the Iwahori-only statement, which uses the source's conditions on `K`. Task e8bd5ada concerns the earlier basis-member version |
+| VI.9.4 Corollary | 201 / 207 | `J.StandardIwahoriFixedVectorSubquotientGenerationStatement`; earlier `J.StandardFixedVectorSubquotientGenerationStatement` | S: Task 6535 for the Iwahori-only statement, which uses the source's conditions on `K`. Conditional reduction (update of 17 November 2026 above): `J.standardIwahoriFixedVectorSubquotientGeneration_of_specialVertexInputs` proves it from the unproved `CS.RationalSpecialVertexCompactInputsStatement`. Task e8bd5ada concerns the earlier basis-member version |
 | VI.9.4 Proposition | 201 / 207 | Over the measure-free algebra: `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement`; earlier `J.StandardFixedVectorHeckeEquivalenceStatement` (modules over the measure-free `LevelHeckeAlgebra ℂ K`). Comparison of algebras: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (`Hecke/LevelHeckeCornerComparisonStatement`, Worker 1222: a product-preserving linear bijection `LevelHeckeAlgebra ℂ K ≃ Corner μ K hK` with `e(a)(x) = μ(K)⁻¹ a(xK)`, compatible with the two actions on `V^K`). Over the Haar-measure `H(G, K)` with the inverse functor: `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; see the VI.10.6 Proposition (ii) row) | Comparison P: `Langlands.Hecke.levelHeckeCornerComparison` (`Hecke/LevelHeckeCornerComparisonProof`; Task 6607, verified 17 November 2026 above). Categorical statements retain their earlier S status: Task 6536 for the Iwahori-only statement; task e8bd5ada concerns the earlier basis-member version. Task 6599 for the corner-induction statement |
 | VI.9.5 (`r_P^G` preserves `B`-admissibility) | 201 / 207 | `AF.JacquetAdmissibleStatement`; reduction `AF.JacquetAdmissibleReductionStatement` | S: task 8057266d; reduction P |
 | VI.9.6 first Theorem (second adjointness) | 201 / 207 | `RP.LeviSecondAdjointnessStatement` | S: tasks c0fa1878, eac5190f |
