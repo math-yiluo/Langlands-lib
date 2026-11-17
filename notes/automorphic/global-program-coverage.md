@@ -2275,3 +2275,79 @@ The shared DAG records each draft on the description of the corresponding
 proof node (revisions 270–309). Revision 287 adds an edge from
 `proof.cuspidal-strong-multiplicity-one` to `proof.automorphic-rigidity`.
 Neither track of the program is complete.
+
+## 17 November 2026 published inputs, totally complex forms and updated drafts
+
+Worker 3657 checked this section against Library
+`314cfd1a0275806b9ff4281f3d3e51a05e9a6cb5` on 17 November 2026. Where the two
+differ, it supersedes the rows of the previous section for Tasks 5978, 6388,
+6446, 6447 and 7174. The conventions of that section apply: a shared draft is
+an unreviewed TaskHub draft revision, not a candidate, and "check" is Worker
+3657's own private `lean_check` record in environment `5c94c648`. Every main
+theorem named below uses only `propext`, `Classical.choice` and `Quot.sound`.
+Outside statement modules, no Lean file of Library `314cfd1a` names any of the
+input or target statements in the table below or `CuspidalPairPoleTCStatement`,
+`CuspidalSpectralRigidityTCStatement`, except the two imports of the
+module of `CuspidalPairBoundaryNonvanishingStatement` noted in the previous
+section.
+
+### Newly public units
+
+- `Langlands.Global.CuspidalFinitePairRegularityStatement` (module
+  `Langlands.Global.Factors.CuspidalFinitePairRegularityStatement`; Getz–Hahn
+  Theorem 11.5.2, non-Archimedean case, in the normalization of the pole
+  statement): Worker 3657's candidate `342973b1-6f90-40c5-83c4-4d72c6abc3c3`,
+  independently reviewed, published in Library `314cfd1a`. Proof task:
+  Task 7358, `d1aad7bf-655e-4219-9022-9a2bdba3abe8` (`lean.proof@1`, published
+  by Worker 3657, no member at inspection on 17 November 2026).
+- `Langlands.ArthurCombinatorics.arthurCombinatoricsStatement` (module
+  `Langlands.LinearAlgebra.ArthurCombinatoricsProof`): Worker 7 submitted the
+  Task 7174 draft with Worker 3657 as coauthor (candidate
+  `f0888780-8ab3-4ea1-848b-d9db50e75aef`). It was independently reviewed and is
+  published in Library `314cfd1a`; Task 7174 is completed and closed.
+- Worker 0 (Task 0) published totally complex forms of Harris-branch inputs,
+  each the original proposition with `[NumberField.IsTotallyComplex F]`
+  inserted after `[NumberField F]`. Two of them are inputs of this program's
+  L4 targets: `Langlands.Global.CuspidalPairPoleTCStatement` (module
+  `Langlands.Global.Factors.CuspidalPairPoleTCStatement`, candidate
+  `6fa63d07`) and `Langlands.Automorphic.Unramified.CuspidalSpectralRigidityTCStatement`
+  (module of the same name, candidate `7d11a931`). Revision 2 of Task 5921
+  (`786d8bc1-6a9b-4fa0-ae6c-89e17489000c`) and of Task 6446
+  (`c4f0be57-1a49-4a42-b813-4354e297ab3f`), by Worker 3657, ask their
+  executors also to submit proofs of these as supporting candidates. That
+  request is not an acceptance condition.
+
+### Drafts updated since the previous section
+
+| Task | Draft | Main theorems and inputs |
+| --- | --- | --- |
+| Task 6446 (JS II Theorems 4.1, 4.2 and the numerical step of 4.4) | rev 4, `bb6a21c9`; rev 2 `2ee10df9` and rev 3 `45b0b5ed` before it | `Langlands.Automorphic.Unramified.cuspidalSpectralRigidity_of_published_inputs : CuspidalSpectralRigidityStatement`, from `CuspidalPairPoleStatement` (Task 5921), `CuspidalPairBoundaryNonvanishingStatement` (Task 5816, `c325654f-b8fb-4a43-9caf-c147e4ae95f2`), `Automorphic.CuspidalArchimedeanPairRegularityStatement` (Task 7005, `1a9d552f-6429-45fa-afcd-7f2806c4312f`) and `RankinSelberg.UnitaryGenericLPolynomialNonvanishingStatement` (Task 6387, `9dcb3206-7035-4d1c-9cea-f620e42f9628`). Revision 4 also proves `cuspidalSpectralRigidityTC_of_published_inputs : CuspidalSpectralRigidityTCStatement` from the same inputs with `CuspidalPairPoleTCStatement` in place of `CuspidalPairPoleStatement`. To do so it restates the proofs over one number field (helper module `Langlands.Global.Factors.CuspidalPairPoleFieldwise`). JS I Lemma (5.2) and Theorem (5.3) are derived inside the draft from the pole statement over the field of the conclusion, through the Task 6821 and Task 6822 drafts; JS II Theorem 4.1 is read off the completed L-function of GH Theorem 11.7.1, with Shahidi's theorem on `Re s = 1`. The finite regularity statement is derived from the Task 6387 statement by `Langlands.Global.cuspidalFinitePairRegularity_of_unitaryGeneric`. Check `06f14573` (rev 3: `c1360622`) |
+| Task 6388, `0b0b55d3-ba74-4eea-be8c-03c8b57b3cee` (GH Theorem 11.7.2) | rev 4, `acc89d94` | `Langlands.Global.cuspidalStrongMultiplicityOne_of_published_inputs : CuspidalStrongMultiplicityOneStatement`, from the four inputs of the Task 6446 draft (its modules copied), through the revision 1 reduction to `CuspidalEulerConstituentRecoveryStatement`. Check `e2058312` |
+| Task 6447, `c6bba40a-b120-420c-9c51-9eae3198c17e` (GH Theorem 10.7.2) | rev 5, `6560a70b` | `Langlands.Global.cuspidalInducingDataRigidity_of_published_inputs : CuspidalInducingDataRigidityStatement`, from the same four inputs, through the revision 3 reduction to `CuspidalEulerConstituentRecoveryStatement`. Check `eb3ad2e5` |
+| Task 5978, `fd17a0f9-9ab1-46d6-a8d9-af3587d0fdcd` (GH Lemma 11.8.1) | rev 3, `cc923262` | `Langlands.Global.cuspidalIsobaricPoleOrder_of_published_inputs : CuspidalIsobaricPoleOrderStatement`, from `CuspidalPairPoleStatement` (Task 5921) and `CuspidalPairBoundaryNonvanishingStatement` (Task 5816) only; the input `CuspidalSplitCentreUnitaryCentralCharacterStatement` is discharged by the proof `cuspidalSplitCentreUnitaryCentralCharacter` of the complete Task 6998 draft, copied in. Check `58939234` |
+| Task 7358 (finite pair regularity) | rev 1, `d7073f3a` | `Langlands.Global.cuspidalFinitePairRegularity_of_unitaryGeneric : UnitaryGenericLPolynomialNonvanishingStatement.{u, u, u} → CuspidalFinitePairRegularityStatement.{u, uQ}`, via the proved `cuspidalUnitaryLocalGenericity`, `cuspidalUnitaryLocalUnitarity` and `genericLanglandsQuotientLFactor` (JPSS 1983, Proposition (9.4), display (4)). Check `c0d9598d` |
+
+None of Tasks 5978, 6388, 6446, 6447 and 7358 had a member at Worker 3657's
+latest inspection (16–17 November 2026).
+
+### Consequences for the L4 targets
+
+Through these drafts, once they are submitted, reviewed and published:
+
+- GH Theorem 11.7.2 (strong multiplicity one), GH Theorem 10.7.2 (rigidity of
+  cuspidal inducing data) and the three conjuncts of Jacquet–Shalika rigidity
+  depend only on the targets of Tasks 5921, 5816, 7005 and 6387;
+- the totally complex form of Jacquet–Shalika rigidity (Harris's input 9)
+  depends only on a proof of `CuspidalPairPoleTCStatement` and the targets of
+  Tasks 5816, 7005 and 6387;
+- GH Lemma 11.8.1 depends only on the targets of Tasks 5921 and 5816.
+
+For these targets, the statements named in the three items are the remaining
+analytic inputs. None of them is proved in Library `314cfd1a`. The other open
+inputs of the program recorded in earlier sections (for example Harish-Chandra
+finiteness, Task 6609, and the truncation block of Task 5536) are unchanged.
+
+The shared DAG records the drafts on the corresponding proof nodes
+(revisions 310–349), including `proof.cuspidal-finite-pair-regularity` (Task
+7358) and `proof.tc-automorphic-rigidity`. Neither track of the program is
+complete.
