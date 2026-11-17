@@ -35,6 +35,8 @@ comparison and actual strict partition remain open.
 The focused V.4.2 ownership audit on 14 November 2026 checks Library
 `1ddfc485145c40679728553e8c3a33a5450ce7f9`: all nine component statements
 have exact proof tasks, listed below; their proofs remain open.
+The seventh Worker 4 pass below, on 17 November, supersedes that status:
+eight of the nine are proved, and the ninth is false and its task retired.
 Other rows retain their earlier audit status. These updates distinguish
 statements, exact proofs and candidates awaiting integration.
 
@@ -176,7 +178,7 @@ The sibling statement `GS.ParabolicSplitComponentChamberStatement` (Task 6451) a
 conjunction `GS.ParabolicChamberStatement` of candidate
 `c074eb9d-450c-4886-9f71-857c5dcf0107` have no proof in the checked Library. This pass leaves
 unchanged the V.3.24 passages and the V.3.1 and V.3.5 rows on Worker 1222's Levi recall
-statements.
+statements. The seventh pass below records the proofs of both.
 
 A focused Worker 1222 ownership update, also on 14 November, checks the
 published [LeviSplitComponentRecallStatements](../../Langlands/GroupScheme/Rational/LeviSplitComponentRecallStatements.md)
@@ -225,6 +227,88 @@ At this pass the sibling statement `GS.ParabolicSplitComponentChamberStatement` 
 and the conjunction `GS.ParabolicChamberStatement` still have no proof in the checked
 Library; nor do the nine V.4.2 closed-root-subset statements (Tasks 6508–6516). This pass
 leaves unchanged the V.3.24 passages and Worker 1222's Levi recall rows and table.
+The seventh pass below records the proofs of the first two and of eight of the nine.
+
+A seventh Worker 4 pass, on 17 November, checks against Library
+`89bac3684c44d30f371d4959c363e25649af5e8d`. It records the proofs of the V.3.14–V.3.15
+split-component chamber statement, of the chamber conjunction and of eight of the nine
+V.4.2 closed-root-subset statements. It also records that the ninth V.4.2 statement is
+false. It updates the V.3.14, V.3.15 and two V.4.2 rows, the V.4.2 ownership paragraphs
+and table, issue I5, gaps 1 and 6, the V.4.2 sentence of the opening paragraph, the
+last sentence of the V.3.24 evidence section, which concerns Worker 4's units, and one
+paragraph of the proof-task section. It adds the status code F. Each
+proof below was independently accepted and is unchanged in the checked Library since its
+first publication. Each theorem has exactly the type of its statement at universe `u`.
+Worker 4 found no `sorry`, `admit` or `axiom` in any Lean file of the accepted bundles,
+as they stand in the checked Library. The only textual match is the English word "admit"
+in a documentation comment of `Langlands/LinearAlgebra/RationalPositiveFunctional.lean`.
+
+| Rows | Statement | Theorem and proof module | Proof task | Accepted artifact, reviewer | Integration ID | First published |
+| --- | --- | --- | --- | --- | --- | --- |
+| V.3.14–V.3.15, split-component comparisons | `GS.ParabolicSplitComponentChamberStatement` | `parabolicSplitComponentChamber`, [ParabolicSplitComponentChamberProof](../../Langlands/Representation/LanglandsClassification/ParabolicSplitComponentChamberProof.md), helpers [ParabolicSplitComponentTransport](../../Langlands/Representation/LanglandsClassification/ParabolicSplitComponentTransport.md) and [ParabolicSplitComponentCorootCones](../../Langlands/Representation/LanglandsClassification/ParabolicSplitComponentCorootCones.md) | Task 6451 (`46e6c7e2`) | `eb0510e4-0cfb-4fe4-8132-269fae3de5c6`, Reviewer 4997 | `30ef3e5f73a642fc80b032c9d1755bef` | `e4a9b4d0` |
+| V.3.14–V.3.16, the chamber unit `c074eb9d` | `GS.ParabolicChamberStatement` | `parabolicChamber`, [ParabolicChamberProof](../../Langlands/Representation/LanglandsClassification/ParabolicChamberProof.md) | Task 7268 (`51464b00`) | `afc4ebd8-357e-452c-ad24-a7f64d1eea4a`, Reviewer 5514 | `a270b0b921864516b4743d316770f421` | `a98af0ff` |
+| V.4.2, convexity by the cone hull | `GS.ConvexRootSubsetHullStatement` | `convexRootSubsetHull`, [ConvexRootSubsetHullProof](../../Langlands/GroupScheme/Rational/ConvexRootSubsetHullProof.md) | Task 6508 (`689b8a55`) | `e15ecfdb-5786-47f7-84de-8fad79a28564`, Reviewer 5356 | `336c7f1582874eed884039437a2c9497` | `c0c2e121` |
+| V.4.2, unipotence by a positive cocharacter | `GS.UnipotentRootSubsetCocharacterStatement` | `unipotentRootSubsetCocharacter`, [UnipotentRootSubsetCocharacterProof](../../Langlands/GroupScheme/Rational/UnipotentRootSubsetCocharacterProof.md) | Task 6509 (`158f9cfe`) | `12939486-7ab5-41c5-b6ab-3e358329fe33`, Reviewer 5349 | `1ae3fdea65974dbaad68d3c210470dd5` | `c0c2e121` |
+| V.4.2, symmetric subsets and their reflections | `GS.SymmetricRootSubsetWeylStatement` | `symmetricRootSubsetWeyl`, [SymmetricRootSubsetWeylProof](../../Langlands/GroupScheme/Rational/SymmetricRootSubsetWeylProof.md) | Task 6510 (`1ce939a6`) | `848d48bf-ba84-44e8-aa97-fe00305145ec`, Reviewer 5379 | `a0efcaf74943481397309e2e6bfa0885` | `c0c2e121` |
+| V.4.2 Proposition ([7] 5.12–5.18), the standard root triple | `GS.StandardParabolicRootTripleStatement` | `standardParabolicRootTriple`, [StandardParabolicRootTripleProof](../../Langlands/GroupScheme/Rational/StandardParabolicRootTripleProof.md), helper [StandardRootClosure](../../Langlands/GroupScheme/Rational/StandardRootClosure.md) | Task 6511 (`aa5f19bb`) | `5e73c153-2d3f-417d-88f6-19dc665048c2`, Reviewer 5361 | `ffb011ab7b8741ce836b82f186e6022d` | `c0c2e121` |
+| V.4.2, existence of `G(X)` and `U(X)` | `GS.RootSubsetGroupExistenceStatement` | `rootSubsetGroupExistence`, [RootSubsetGroupExistenceProof](../../Langlands/GroupScheme/Rational/RootSubsetGroupExistenceProof.md) | Task 6512 (`8ec48a06`) | `fbf49f5f-3982-4498-aaed-f6f10c867211`, Reviewer 5381 | `fd8fdc621aea44f9bc292b44f1c7d01c` | `c0c2e121` |
+| V.4.2 Proposition ([7] 5.12–5.18), the groups of the standard triple | `GS.StandardParabolicRootSubsetGroupStatement` | `standardParabolicRootSubsetGroup`, [StandardParabolicRootSubsetGroupProof](../../Langlands/GroupScheme/Rational/StandardParabolicRootSubsetGroupProof.md) | Task 6513 (`a989109c`) | `20211cb1-ee70-4d30-9581-925eaa5d2092`, Reviewer 5433 | `050e76bda7384ebca7c8cb7045cf034c` | `c0c2e121` |
+| V.4.2 (i), convex intersections | `GS.ConvexRootSubsetGroupIntersectionStatement` | `convexRootSubsetGroupIntersection`, [ConvexRootSubsetGroupIntersectionProof](../../Langlands/GroupScheme/Rational/ConvexRootSubsetGroupIntersectionProof.md) | Task 6515 (`77b1b105`) | `c4c1f133-8093-4c84-a072-6acbb0b5c43b`, Reviewer 5748 | `22fbe563948945698d15f70a7cf4e29e` | `c9fdbede` |
+| V.4.2 (ii), corrected ([7] 3.22(c)) | `GS.UnipotentRootSubsetGroupIntersectionStatement` | `unipotentRootSubsetGroupIntersection`, [UnipotentRootSubsetGroupIntersectionProof](../../Langlands/GroupScheme/Rational/UnipotentRootSubsetGroupIntersectionProof.md) | Task 6516 (`44b55f5d`) | `8bdef5d6-753a-4338-86a1-155fa78283d6`, Reviewer 5429 | `67459e5a0cf4432c851cecc3ef462616` | `c0c2e121` |
+
+The first-publication commits are `e4a9b4d0164a5e0a9828dcaec5fa1cb7837ff8c6`,
+`a98af0ff45faf7905209f65d641389deee5d8392`, `c0c2e1210454ae2a1888a2989e3de794c1336819`
+and `c9fdbede045511865f0ea27259a1e1a35f442905`. For Tasks 7268, 6508, 6510, 6512, 6513,
+6515 and 6516, the SHA256 digests of every Lean and Markdown file of the accepted bundle in
+the checked Library equal those of the bundle; the Task 6515 bundle has 40 files. For the
+other three proofs the Integrator removed a duplicated helper lemma, and the Library files
+differ from the bundles as follows. The theorem lines are unchanged.
+
+- Tasks 6509 and 6511: the bundles each proved the inclusion
+  `IsRelativeRootAmbient.subset_relativeRoots`, in `UnipotentRootSubsetCocharacterProof`
+  and in the helper `StandardRootClosure` respectively. In the Library both files import
+  [RootSubsetAmbient](../../Langlands/GroupScheme/Rational/RootSubsetAmbient.md), which
+  proves that lemma once, and their Markdown links to it.
+- Task 6451: the helper lemma `restrictedCorootChamber_eq_image` was removed from
+  `ParabolicSplitComponentTransport`. The proof now uses the published
+  `restrictedCorootChamber_eq_image_openFace` of
+  [SimpleCorootFaces](../../Langlands/Representation/LanglandsClassification/SimpleCorootFaces.md).
+  The Lean and Markdown files of `ParabolicSplitComponentTransport` and the Lean file of
+  `ParabolicSplitComponentChamberProof` differ from the bundle. They are the same at
+  `e4a9b4d0` and in the checked Library.
+
+The ninth V.4.2 statement, `GS.ClosedRootSubsetGroupIntersectionStatement`, is the
+Borel–Tits 3.22(b) assertion `G(S) ∩ G(X) = G(S ∩ X)` for closed `S` and `X` whose
+intersection is convex. It is false. The published erratum note
+[Borel–Tits 3.22(b): a split D4 obstruction](../errata/borel-tits-1965-closed-root-intersection.md)
+(Worker 248, with independent checks by Workers 292 and 785) gives a paper counterexample
+in split `SO₈`: two closed symmetric subsets of type `A₁⁴` with empty, hence convex,
+intersection, and a complex point of both generated groups outside `G(∅) = T`. It is not a
+Lean proof of the negation. Worker 4 checked the argument. The operator retired the proof Task
+6514 (`7f264fa7-67c6-4b59-88fa-a2499a6a83c1`) for this reason and opened no correction or
+refutation task. The nine-part conjunction `GS.ClosedRootSubsetStatements` therefore cannot
+be proved, and Worker 4 publishes no proof task for it. Renard's V.4.2(i) assumes both
+subsets convex and needs only `ConvexRootSubsetGroupIntersectionStatement`, proved above.
+
+The V.4.2 conjunction for this task is now
+`GS.RenardClosedRootSubsetStatements`, the conjunction of the other eight statements, in
+Worker 4's unit
+[RenardClosedRootSubsetStatements](../../Langlands/GroupScheme/Rational/RenardClosedRootSubsetStatements.md)
+(candidate `943f952a-086d-4c07-a8f8-127d09b37d38`, Reviewer 5896, integration
+`db3e0c3b6bad49069dd905e7f71f7577`, first published at `c9fdbede`). Its Lean and Markdown
+files in the checked Library equal those of the accepted candidate. It has no proof in the
+checked Library. A Worker 4 scratch file that imports the eight Library proof modules and
+pairs their theorems into the conjunction compiles against Library
+`276bcb8d72bd1a6ea95eac204206680403da83f7`, whose Lean files are those of the checked
+Library (diagnostic `92deb4fb-be36-4381-8e5f-922605ec8be5`: 0 errors, 0 warnings; axioms
+`propext`, `Classical.choice`, `Quot.sound` only). Worker 4 published the exact proof Task
+7357 (`22867e9f-d91c-4c14-8b74-4a4e05df7673`) for it; as inspected for this pass, the task
+is ready, with no executor and no artifact. The published Markdown of
+`ClosedRootSubsetStatements` predates the erratum and still describes 3.22(b) as a true
+source of V.4.2(i). This ledger and the erratum note supersede those passages; Worker 4
+plans a separate correction of that Markdown. This pass leaves unchanged the V.3.24 rows
+and the rest of the V.3.24 evidence section, Worker 1222's Levi recall rows and table, and
+the V.3.21 row and gap 8.
 
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
@@ -259,6 +343,9 @@ Status codes, as in the Chapter VI ledger:
 - **A**: candidate accepted by review, waiting for integration.
 - **R**: candidate staged, under review.
 - **G**: genuine gap.
+- **F**: published statement shown false by a published paper counterexample, which the
+  row cites; this is not a Lean proof of its negation. The row says what replaces it. (Code
+  added by Worker 4's seventh pass.)
 
 ## V.1 Nonarchimedean local fields (103–104 / 109–110)
 
@@ -338,8 +425,8 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.13 `𝔞_G ⊂ 𝔞_L ⊂ 𝔞_M ⊂ 𝔞_∅`, with `𝔞_M` the annihilator of `Δ^M_∅` | `GS.StandardLeviCentralDirectionsStatement`: for every standard Levi, the split component embeds into `A_∅` with real cocharacter image the annihilator of the selected simple roots, with the ranks | P (`standardLeviCentralDirections`) |
 | V.3.13 `𝔞^*_∅ = 𝔞^*_G ⊕ (𝔞^G_∅)^*`, with `(𝔞^G_∅)^*` the span of `Δ_∅` | the real part of `GS.RelativeCharacterRootComplementStatement` (the real root span and the restricted characters of `G` are complementary) | P |
 | V.3.13 `𝔞^*_M` as the annihilator of the coroots of `M`; `𝔞_∅ = 𝔞_G ⊕ 𝔞^G_∅` with `𝔞^G_∅` the coroot span; `𝔞^*_M = 𝔞^*_L ⊕ (𝔞^L_M)^*` and its dual; orthogonality; projections `p^L_M` | `GS.StandardLeviRealDecompositionStatement`: for `J ⊆ K ⊆ Δ_∅`, root and coroot annihilator models, their perfect restricted pairing, the direct sums and projected spanning sets, and orthogonality for every invariant scalar product. The relative character space is the intersection of the coroot annihilator of `J` with the span of `K`, correcting I4; dually for cocharacters. The direct sums determine the projections | P: `standardLeviRealDecomposition` ([proof](../../Langlands/GroupScheme/Rational/StandardLeviRealDecompositionProof.md), Task 6348 `ff6de4a1`). The actual split-component character-space comparison remains separate; no named `p^L_M` map is added by this statement. The printed unprojected span remains false (I4) |
-| V.3.14 `Δ(P)`, `Δ̂(P)`, `Δ^∨(P)`, `Δ̂^∨(P)`, `β̌` | [ParabolicChamberStatements](../../Langlands/Representation/LanglandsClassification/ParabolicChamberStatements.md), for a standard `P` given by its simple roots `J = Δ^M_∅`. In `𝔞^*_∅` and `𝔞_∅`: `GS.parabolicRoots`, `parabolicCoroots`, `parabolicFundamentalWeights`, `parabolicFundamentalCoweights` and the relation `IsParabolicCorootOf` (`β ↦ β̌`). On the split component `A` of `M`: `restrictedSimpleRoots` ([RestrictedSimpleRootCones](../../Langlands/GroupScheme/Rational/RestrictedSimpleRootCones.md)), `restrictedFundamentalWeights`, `restrictedParabolicCoroots`, `restrictedFundamentalCoweights` and `IsRestrictedParabolicCoroot`; also `GS.ParabolicRootPresentation`. Conjuncts 1–4 of `GS.ParabolicChamberLinearAlgebraStatement` state the uniqueness of the projections, the well-definedness of `β ↦ β̌` and the bases `Δ̂(P)` of `(𝔞^G_M)^*` and `Δ̂^∨(P)` of `𝔞^G_M`. Conjuncts 1–5 of `GS.ParabolicSplitComponentChamberStatement` compare the two settings | D; P for the module's inclusion and duality lemmas (`parabolicFundamentalWeights_subset`, `parabolicFundamentalCoweights_subset`, `pair_restrictedRootVector_of_isRealFundamentalCoweight`, `pair_restrict_of_isRealFundamentalWeight`); P for `ParabolicChamberLinearAlgebraStatement` by `parabolicChamberLinearAlgebra` (exact proof Task 6450, `f6359f4a-6550-49fd-b95f-10be692ddecf`; fifth-pass table at the top of this note); S for `ParabolicSplitComponentChamberStatement`: exact proof Task 6451 (`46e6c7e2-c2c6-4505-b59b-a9903aa05ac9`), not yet proved at this update. The source remark that `Δ(P)` is in general not a set of simple roots and `β̌` not a coroot has no precise content and is not formalized. The spanning remark `(𝔞^G_M)^* = span Δ(P)` is in `GS.StandardLeviRealDecompositionStatement` |
-| V.3.15 cones `⁺[𝔞^*]^G_P`, its closure, chambers `^G_P[𝔞^*]^+` and closure, the `𝔞`-versions, and the remark `χ = Σ c_α ϖ_α + μ` | On `𝔞^*_M = Vstar A`: `restrictedRootPositiveCone`, `restrictedRootNonnegCone`; `restrictedCorootChamber`, `restrictedClosedCorootChamber` ([LanglandsTriplet](../../Langlands/Representation/LanglandsClassification/LanglandsTriplet.md), defined by lifting to `𝔞^*_∅`) and the printed forms `GS.parabolicCorootChamber`, `parabolicClosedCorootChamber` (positivity against every `β̌`). In `𝔞^*_∅`: `openSimpleCorootFace`, `closedSimpleCorootFace`, `projectedRootPositiveCone`, `projectedRootNonnegCone`. The `𝔞`-versions: `projectedCorootPositiveCone`, `projectedCorootNonnegCone`, `restrictedCorootPositiveCone`, `restrictedCorootNonnegCone`, and the chambers `chamber`, `closedChamber` on `𝔞_M = V A` of [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md). The negative versions are pointwise negatives and have no names. Conjuncts 5–6 of `ParabolicChamberLinearAlgebraStatement` and 6–13 of `ParabolicSplitComponentChamberStatement` state that the printed and lifted chambers agree, the remark, the descriptions of the coroot cones and the comparison of the root cones | D; P for conjuncts 5–6 of `ParabolicChamberLinearAlgebraStatement` (`parabolicChamberLinearAlgebra`, Task 6450); S for conjuncts 6–13 of `ParabolicSplitComponentChamberStatement`: Task 6451 |
+| V.3.14 `Δ(P)`, `Δ̂(P)`, `Δ^∨(P)`, `Δ̂^∨(P)`, `β̌` | [ParabolicChamberStatements](../../Langlands/Representation/LanglandsClassification/ParabolicChamberStatements.md), for a standard `P` given by its simple roots `J = Δ^M_∅`. In `𝔞^*_∅` and `𝔞_∅`: `GS.parabolicRoots`, `parabolicCoroots`, `parabolicFundamentalWeights`, `parabolicFundamentalCoweights` and the relation `IsParabolicCorootOf` (`β ↦ β̌`). On the split component `A` of `M`: `restrictedSimpleRoots` ([RestrictedSimpleRootCones](../../Langlands/GroupScheme/Rational/RestrictedSimpleRootCones.md)), `restrictedFundamentalWeights`, `restrictedParabolicCoroots`, `restrictedFundamentalCoweights` and `IsRestrictedParabolicCoroot`; also `GS.ParabolicRootPresentation`. Conjuncts 1–4 of `GS.ParabolicChamberLinearAlgebraStatement` state the uniqueness of the projections, the well-definedness of `β ↦ β̌` and the bases `Δ̂(P)` of `(𝔞^G_M)^*` and `Δ̂^∨(P)` of `𝔞^G_M`. Conjuncts 1–5 of `GS.ParabolicSplitComponentChamberStatement` compare the two settings | D; P for the module's inclusion and duality lemmas (`parabolicFundamentalWeights_subset`, `parabolicFundamentalCoweights_subset`, `pair_restrictedRootVector_of_isRealFundamentalCoweight`, `pair_restrict_of_isRealFundamentalWeight`); P for `ParabolicChamberLinearAlgebraStatement` by `parabolicChamberLinearAlgebra` (exact proof Task 6450, `f6359f4a-6550-49fd-b95f-10be692ddecf`; fifth-pass table at the top of this note); P for `ParabolicSplitComponentChamberStatement` by `parabolicSplitComponentChamber` (exact proof Task 6451, `46e6c7e2-c2c6-4505-b59b-a9903aa05ac9`); P for the conjunction `GS.ParabolicChamberStatement` by `parabolicChamber` (Task 7268, `51464b00-ea5e-44f1-ab9a-dd521dc4b6ea`); seventh-pass table at the top of this note. The source remark that `Δ(P)` is in general not a set of simple roots and `β̌` not a coroot has no precise content and is not formalized. The spanning remark `(𝔞^G_M)^* = span Δ(P)` is in `GS.StandardLeviRealDecompositionStatement` |
+| V.3.15 cones `⁺[𝔞^*]^G_P`, its closure, chambers `^G_P[𝔞^*]^+` and closure, the `𝔞`-versions, and the remark `χ = Σ c_α ϖ_α + μ` | On `𝔞^*_M = Vstar A`: `restrictedRootPositiveCone`, `restrictedRootNonnegCone`; `restrictedCorootChamber`, `restrictedClosedCorootChamber` ([LanglandsTriplet](../../Langlands/Representation/LanglandsClassification/LanglandsTriplet.md), defined by lifting to `𝔞^*_∅`) and the printed forms `GS.parabolicCorootChamber`, `parabolicClosedCorootChamber` (positivity against every `β̌`). In `𝔞^*_∅`: `openSimpleCorootFace`, `closedSimpleCorootFace`, `projectedRootPositiveCone`, `projectedRootNonnegCone`. The `𝔞`-versions: `projectedCorootPositiveCone`, `projectedCorootNonnegCone`, `restrictedCorootPositiveCone`, `restrictedCorootNonnegCone`, and the chambers `chamber`, `closedChamber` on `𝔞_M = V A` of [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md). The negative versions are pointwise negatives and have no names. Conjuncts 5–6 of `ParabolicChamberLinearAlgebraStatement` and 6–13 of `ParabolicSplitComponentChamberStatement` state that the printed and lifted chambers agree, the remark, the descriptions of the coroot cones and the comparison of the root cones | D; P for conjuncts 5–6 of `ParabolicChamberLinearAlgebraStatement` (`parabolicChamberLinearAlgebra`, Task 6450); P for conjuncts 6–13 of `ParabolicSplitComponentChamberStatement` (`parabolicSplitComponentChamber`, Task 6451) |
 | V.3.16 the faces `^G_P[(𝔞^G_M)^*]^+` and their closures as the positive (nonnegative) combinations of `Δ̂(P)`; chamber = face ⊕ `𝔞^*_G`; openness and closure; the two cell decompositions over `Q ⊇ P` | `openCorootFace`, `closedCorootFace` and their cone structures `openCorootFaceCone`, `closedCorootFaceCone`. Proved in [ParabolicChamberStatements](../../Langlands/Representation/LanglandsClassification/ParabolicChamberStatements.md), in the ambient model `𝔞^*_L ⊂ 𝔞^*_M ⊂ 𝔞^*_∅`: `openCorootFace_eq_inter`, `closedCorootFace_eq_inter`, `convex_openCorootFace`, `convex_closedCorootFace`, and both cell decompositions, `closedCorootFace_eq_iUnion` with `pairwiseDisjoint_openCorootFace` and `closedSimpleCorootFace_eq_iUnion` with `pairwiseDisjoint_openSimpleCorootFace`. Conjuncts 3 and 7–9 of `ParabolicChamberLinearAlgebraStatement` state the fundamental-weight descriptions, the sums with `𝔞^*_G` and the topological assertions | P: the intersection formulas, convexity and the cell decompositions in the statement module; the rest by `parabolicChamberLinearAlgebra` (Task 6450) |
 | V.3.17 Lemma | `GS.CorootChamberUnipotentRootsStatement` | P: `corootChamberUnipotentRoots` ([proof](../../Langlands/Representation/LanglandsClassification/CorootChamberUnipotentRoots.md), Worker 128, task `e341f206`) |
 | V.3.18 Langlands' combinatorial lemma | `GS.LanglandsCombinatorialDecompositionStatement` ([statement](../../Langlands/GroupScheme/Rational/LanglandsDecompositionStatement.md), Worker 24 under Task 5474 `9abd0e5e`), for arbitrary connected reductive `G` and actual standard parabolics. The `μ⁻` condition follows the V.5.5 proof, not the literal `−p^L_M(…)` of (V.3.18.1), which does not determine `Q` (an `A_2` counterexample is in the Markdown of `LanglandsDecompositionCones`) | P: `langlandsCombinatorialDecomposition` ([proof](../../Langlands/GroupScheme/Rational/LanglandsDecompositionProof.md), Worker 5295, Task 5923 `cc6440ad`). The Euclidean projection theorem of V.5.5 is stated and proved (`Langlands.Renard.ConeProjectionStatements`) |
@@ -621,9 +708,9 @@ equality, group quotient comparison and integral finite generation are proved.
 The nonnegative comparison, finite generation after transport to the actual
 quotient, and the strict-face decomposition over actual standard Levi split
 components remain explicit obligations. Worker 4 retains the chamber,
-parabolic split-component and closed-root-subset units. The nine
-closed-root-subset proofs remain open obligations, owned by exact proof
-Tasks 6508–6516 in the V.4.2 ownership table below.
+parabolic split-component and closed-root-subset units. Eight of the nine
+closed-root-subset proofs are published, the ninth target is false, and the
+V.4.2 section below records their status (seventh Worker 4 pass).
 
 ## V.4 Weyl groups (118–122 / 124–128)
 
@@ -631,8 +718,8 @@ Tasks 6508–6516 in the V.4.2 ownership table below.
 | --- | --- | --- |
 | V.4 opening: root subgroups `U_γ` | root-subgroup constructions under `Langlands.GroupScheme.Rational` | D |
 | V.4.1 `W_G`, `S_∅`; Proposition ([7]): Tits system and Bruhat decomposition | `relativeWeylGroup`; `GS.RelativeTitsSystemStatement`, `GS.TitsStandardParabolicStatement` | P |
-| V.4.2 closed, convex, symmetric and unipotent subsets; `G(T)`, `U(T)`; Proposition ([7] 3.22) | `GS.ClosedRootSubsetStatements` and its nine components ([statements and scope](../../Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.md)); generated groups use closed minimality on all test schemes, with existence stated separately | Rec (S14); D for the notions and elementary laws, S for the nine targets: published candidate `cf347b48-66a3-4452-b3d4-0cbc3917dca8`, exact proof Tasks 6508–6516 (ownership table below). Intersection targets use reduced test schemes, and (ii) uses all relative roots; see I5 |
-| V.4.2 Proposition ([7] 5.12–5.18): standard parabolics and subsets `Θ ⊂ Δ_∅` | `GS.StandardParabolicClassificationStatement`, `GS.StandardCocharacterStatement`, `GS.StandardParabolicPointsStatement`; new `GS.StandardParabolicRootTripleStatement` and `GS.StandardParabolicRootSubsetGroupStatement` give the generated root triples and their groups | P for the existing classification and points statements; S for the new root-triple and generated-group comparisons, in `ClosedRootSubsetStatements`, exact proof Tasks 6511 and 6513 respectively |
+| V.4.2 closed, convex, symmetric and unipotent subsets; `G(T)`, `U(T)`; Proposition ([7] 3.22) | The nine components of `GS.ClosedRootSubsetStatements` ([statements and scope](../../Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.md)); generated groups use closed minimality on all test schemes, with existence stated separately. The V.4.2 conjunction is `GS.RenardClosedRootSubsetStatements` ([statement](../../Langlands/GroupScheme/Rational/RenardClosedRootSubsetStatements.md)), the conjunction of the eight components other than the Borel–Tits 3.22(b) statement `GS.ClosedRootSubsetGroupIntersectionStatement` | Rec (S14); D for the notions and elementary laws. P for eight targets (published candidate `cf347b48-66a3-4452-b3d4-0cbc3917dca8`; proofs from Tasks 6508–6513, 6515 and 6516, seventh-pass table at the top of this note). F for `ClosedRootSubsetGroupIntersectionStatement`, by the paper counterexample of the [erratum note](../errata/borel-tits-1965-closed-root-intersection.md); its Task 6514 is retired, and the nine-part conjunction is therefore not provable. S for `RenardClosedRootSubsetStatements` (candidate `943f952a-086d-4c07-a8f8-127d09b37d38`): exact pairing proof Task 7357 (`22867e9f-d91c-4c14-8b74-4a4e05df7673`). Intersection targets use reduced test schemes, and (ii) uses all relative roots; see I5 |
+| V.4.2 Proposition ([7] 5.12–5.18): standard parabolics and subsets `Θ ⊂ Δ_∅` | `GS.StandardParabolicClassificationStatement`, `GS.StandardCocharacterStatement`, `GS.StandardParabolicPointsStatement`; new `GS.StandardParabolicRootTripleStatement` and `GS.StandardParabolicRootSubsetGroupStatement` give the generated root triples and their groups | P for the existing classification and points statements; P for the new root-triple and generated-group comparisons, in `ClosedRootSubsetStatements`: `standardParabolicRootTriple` (Task 6511) and `standardParabolicRootSubsetGroup` (Task 6513) |
 | V.4.3 `W_M ↪ W_G`, `w·M`, `W(L, M)`, `W_M W(L,M) W_L = W(L,M)` | `standardRelativeWeylGroup`, [RelativeWeylConjugation](../../Langlands/Group/RelativeWeylConjugation.md), `GS.StandardLeviConjugationStatement` | D; P |
 | V.4.3 (V.4.3.3) `W(M, M)/W_M ≃ W(A)` | `GS.StandardLeviNormalizerQuotientStatement`; finiteness consequence `RP.LeviNormalizerFiniteQuotientStatement` | P: `standardLeviNormalizerQuotient` (Task 5688; statement candidate `4d34998c`); P (finiteness) |
 | V.4.4 `W(*, M)`, `W(M, *)`, `l(M)` | inline sets in `GS.StandardWeylElementaryChainStatement` (the VI.5.4 Lemma) and `GS.StandardMaximalLeviWeylStatement` | X/D (no named definition). Both statements are proved: `standardWeylElementaryChain` and `standardMaximalLeviWeyl` |
@@ -647,14 +734,14 @@ Worker 4's closed-root-subset candidate
 Reviewer 1683 and published at
 `db8d6b3d466f2fd453a4df4624ce6c90db8eed46`, integration
 `1b9ef7e8c26d404e8d16743bf3179597`. Its frozen, current Library and workspace
-pairs match exactly. Its nine proposition targets remain unproved in this unit.
-Their proofs remain open obligations, with exact proof Tasks 6508–6516
-listed below. The arbitrary-field
+pairs match exactly. The unit itself proves none of its nine proposition
+targets. As of the seventh Worker 4 pass, eight of them are proved by their
+exact proof tasks and the ninth is false; see the table below. The arbitrary-field
 statements distinguish the indivisible and possibly nonreduced ambient root
 sets. They do not identify scheme-theoretic intersections on arbitrary test
 schemes, and the symmetric-subset target gives integral reflections and their
 preservation of the subset rather than constructing a Mathlib root-system
-object. The separate proof obligations and source correction I5 are retained.
+object. Source correction I5 is retained.
 
 The 14 November ownership audit found all nine tasks at revision 1, ready,
 with no submitted artifacts. A search of the checked Library found the nine
@@ -666,25 +753,28 @@ torus. Where used, the generic cocharacter and simple-root subset remain
 quantified data. “Either ambient set” means the indivisible roots or all
 possibly nonreduced relative roots, as specified by `IsRelativeRootAmbient`.
 
-| Exact target | Scope of the open proof | Proof task |
+| Exact target | Scope | Proof task; status on 17 November |
 | --- | --- | --- |
-| `GS.ConvexRootSubsetHullStatement` | In either ambient set, convexity is equivalent to containing every ambient root in the real cone hull of the subset, with the subset condition retained | Task 6508 (`689b8a55-8c76-4965-b535-6ee283192b4b`) |
-| `GS.UnipotentRootSubsetCocharacterStatement` | In either ambient set, unipotence is equivalent to closedness and existence of a cocharacter positive on every member | Task 6509 (`158f9cfe-e93b-4a0e-af39-c9b1f47a7009`) |
-| `GS.SymmetricRootSubsetWeylStatement` | In either ambient set, integral reflections exist for each member of a symmetric subset; those reflections and their generated Weyl subgroup preserve the subset | Task 6510 (`1ce939a6-171f-45ff-bd20-432b2db9f3ca`) |
-| `GS.StandardParabolicRootTripleStatement` | In either ambient set, the standard triple has the explicit integral-span root descriptions, convexity, symmetry and unipotence properties and recovers `Θ` | Task 6511 (`aa5f19bb-1161-4b7d-b3f3-ade8d8fd5c25`) |
-| `GS.RootSubsetGroupExistenceStatement` | For every subset of all relative roots, smooth affine connected minimal closed groups `G(X)` and `U(X)` exist; `U(X)` is unipotent when `X` is unipotent in either ambient set | Task 6512 (`8ec48a06-a508-4334-ad07-0a603fc7e135`) |
-| `GS.StandardParabolicRootSubsetGroupStatement` | In either ambient set, minimal groups for the standard triple equal the existing parabolic, Levi and radical functors on all tests, and the generated Weyl subgroup equals the standard Levi Weyl subgroup | Task 6513 (`a989109c-457e-46dd-96ce-6e7960c4e93d`) |
-| `GS.ClosedRootSubsetGroupIntersectionStatement` | In all relative roots, closed `S` and `X` with convex overlap satisfy `G(S) ∩ G(X) = G(S ∩ X)` on reduced test schemes ([7] 3.22(b)) | Task 6514 (`7f264fa7-67c6-4b59-88fa-a2499a6a83c1`) |
-| `GS.ConvexRootSubsetGroupIntersectionStatement` | In the indivisible roots, convex `S` and `X` satisfy `G(S) ∩ G(X) = G(S ∩ X)` on reduced test schemes (V.4.2(i)) | Task 6515 (`77b1b105-0195-4b71-a588-ede7dd5a2aa6`) |
-| `GS.UnipotentRootSubsetGroupIntersectionStatement` | In all relative roots, closed `S` and unipotent `X` satisfy `G(S) ∩ U(X) = U(S ∩ X)` on reduced test schemes ([7] 3.22(c), corrected V.4.2(ii); see I5) | Task 6516 (`44b55f5d-dcd6-45f2-9aab-2d61d46b585e`) |
+| `GS.ConvexRootSubsetHullStatement` | In either ambient set, convexity is equivalent to containing every ambient root in the real cone hull of the subset, with the subset condition retained | Task 6508 (`689b8a55-8c76-4965-b535-6ee283192b4b`); P: `convexRootSubsetHull` |
+| `GS.UnipotentRootSubsetCocharacterStatement` | In either ambient set, unipotence is equivalent to closedness and existence of a cocharacter positive on every member | Task 6509 (`158f9cfe-e93b-4a0e-af39-c9b1f47a7009`); P: `unipotentRootSubsetCocharacter` |
+| `GS.SymmetricRootSubsetWeylStatement` | In either ambient set, integral reflections exist for each member of a symmetric subset; those reflections and their generated Weyl subgroup preserve the subset | Task 6510 (`1ce939a6-171f-45ff-bd20-432b2db9f3ca`); P: `symmetricRootSubsetWeyl` |
+| `GS.StandardParabolicRootTripleStatement` | In either ambient set, the standard triple has the explicit integral-span root descriptions, convexity, symmetry and unipotence properties and recovers `Θ` | Task 6511 (`aa5f19bb-1161-4b7d-b3f3-ade8d8fd5c25`); P: `standardParabolicRootTriple` |
+| `GS.RootSubsetGroupExistenceStatement` | For every subset of all relative roots, smooth affine connected minimal closed groups `G(X)` and `U(X)` exist; `U(X)` is unipotent when `X` is unipotent in either ambient set | Task 6512 (`8ec48a06-a508-4334-ad07-0a603fc7e135`); P: `rootSubsetGroupExistence` |
+| `GS.StandardParabolicRootSubsetGroupStatement` | In either ambient set, minimal groups for the standard triple equal the existing parabolic, Levi and radical functors on all tests, and the generated Weyl subgroup equals the standard Levi Weyl subgroup | Task 6513 (`a989109c-457e-46dd-96ce-6e7960c4e93d`); P: `standardParabolicRootSubsetGroup` |
+| `GS.ClosedRootSubsetGroupIntersectionStatement` | In all relative roots, closed `S` and `X` with convex overlap satisfy `G(S) ∩ G(X) = G(S ∩ X)` on reduced test schemes ([7] 3.22(b)) | Task 6514 (`7f264fa7-67c6-4b59-88fa-a2499a6a83c1`), retired by the operator; F: false by the paper counterexample of the [erratum note](../errata/borel-tits-1965-closed-root-intersection.md) |
+| `GS.ConvexRootSubsetGroupIntersectionStatement` | In the indivisible roots, convex `S` and `X` satisfy `G(S) ∩ G(X) = G(S ∩ X)` on reduced test schemes (V.4.2(i)) | Task 6515 (`77b1b105-0195-4b71-a588-ede7dd5a2aa6`); P: `convexRootSubsetGroupIntersection` |
+| `GS.UnipotentRootSubsetGroupIntersectionStatement` | In all relative roots, closed `S` and unipotent `X` satisfy `G(S) ∩ U(X) = U(S ∩ X)` on reduced test schemes ([7] 3.22(c), corrected V.4.2(ii); see I5) | Task 6516 (`44b55f5d-dcd6-45f2-9aab-2d61d46b585e`); P: `unipotentRootSubsetGroupIntersection` |
 
 The three intersection targets quantify over supplied minimal closed
-representatives; their existence is the separate Task 6512 obligation.
-These task assignments supply no proof acceptance. Worker 4 also retains
-the planned exact pairing of the nine components into
-`GS.ClosedRootSubsetStatements`. No proof task for that conjunction has yet
-been published: Worker 4 plans to publish it after all nine component proofs
-are public and a scratch pairing compiles.
+representatives; their existence is the separate Task 6512 obligation,
+now proved. The proofs, reviewers and integration receipts are in the
+seventh-pass table at the top of this note. Because the 3.22(b) target is
+false, the nine-part conjunction `GS.ClosedRootSubsetStatements` is not
+provable, and Worker 4 publishes no pairing task for it. The V.4.2
+conjunction is instead `GS.RenardClosedRootSubsetStatements`, the
+conjunction of the other eight, with exact pairing proof Task 7357
+(`22867e9f-d91c-4c14-8b74-4a4e05df7673`); it has no proof in the checked
+Library. Worker 4 retains responsibility for that task.
 
 ## V.5 Compact subgroups (122–129 / 128–135)
 
@@ -802,17 +892,30 @@ not whole-section or whole-book completion.
   scheme-theoretic intersection equality. This source correction is documented
   by the published statement unit, not proved as a Lean counterexample here.
 
+  A second correction, recorded by Worker 4's seventh pass, concerns the more
+  general Borel–Tits 3.22(b). The published unit states it in all relative
+  roots as `ClosedRootSubsetGroupIntersectionStatement`, and its Markdown
+  cites it as a source of (i). That statement is false. The published
+  [erratum note](../errata/borel-tits-1965-closed-root-intersection.md)
+  (Worker 248) gives a paper counterexample in split `SO₈` over `ℂ`. The
+  subsets `S = {±ε₁ ± ε₂, ±ε₃ ± ε₄}` and `X = {±ε₁ ± ε₃, ±ε₂ ± ε₄}`, of type
+  `A₁⁴`, are closed and disjoint, so `S ∩ X` is convex. The element `J`
+  exchanging each `e_r` with `f_r` lies in `G(S) ∩ G(X)` but not in
+  `G(∅) = T`. Neither subset is convex, so the counterexample does not affect
+  (i), which assumes both subsets convex and is proved as
+  `convexRootSubsetGroupIntersection` (Task 6515). The V.4.2 conjunction
+  `RenardClosedRootSubsetStatements` omits the false statement.
+
 ## Genuine gaps of Chapter V
 
-1. V.3.14–V.3.15: the constructions are published in Worker 4's
+1. V.3.14–V.3.16: no longer a gap. The constructions are published in Worker 4's
    `ParabolicChamberStatements`, where the intersection formulas, convexity and
-   both cell decompositions are proved. The ambient assertions, stated as
-   `ParabolicChamberLinearAlgebraStatement`, are proved by
-   `parabolicChamberLinearAlgebra` (Task 6450), so V.3.16 is no longer a gap.
-   The split-component comparisons `ParabolicSplitComponentChamberStatement`
-   remain open; their exact proof Task 6451 is not yet proved at this update.
-   The conjunction `ParabolicChamberStatement` has no proof task of its own:
-   once Task 6451 is proved, it follows by pairing the two proofs.
+   both cell decompositions are proved. The ambient assertions
+   `ParabolicChamberLinearAlgebraStatement` are proved by
+   `parabolicChamberLinearAlgebra` (Task 6450), the split-component comparisons
+   `ParabolicSplitComponentChamberStatement` by `parabolicSplitComponentChamber`
+   (Task 6451), and their conjunction `ParabolicChamberStatement` by
+   `parabolicChamber` (Task 7268), as recorded by the seventh Worker 4 pass.
    V.3.18 is no longer a gap; `langlandsCombinatorialDecomposition`
    proves it (Task 5923).
 2. V.3.6–V.3.13 realization: the compatible-diagram decompositions for arbitrary
@@ -842,11 +945,13 @@ not whole-section or whole-book completion.
    6918 respectively own those three statements; their conjunction has
    exact assembly Task 6921. The ownership table above gives full IDs and
    scopes. All four proofs remain open. The general
-   closed-subset assertions of V.4.2 are now stated by Worker 4's public
+   closed-subset assertions of V.4.2 are stated by Worker 4's public
    `ClosedRootSubsetStatements`, with the ambient-root and reduced-test
-   distinctions and source correction I5 above. Their nine proof targets
-   remain open obligations owned by Tasks 6508–6516 in the V.4.2 ownership
-   table; the conjunction pairing is planned but has no task yet.
+   distinctions and source correction I5 above. Eight of its nine targets
+   are proved (Tasks 6508–6513, 6515 and 6516). The ninth, Borel–Tits
+   3.22(b), is false (I5), and its Task 6514 is retired. The remaining V.4.2
+   obligation is the pairing of the eight proofs into
+   `RenardClosedRootSubsetStatements`, owned by exact proof Task 7357.
    The maximal anisotropic subtorus and almost
    direct product (V.2.2 Remark 2), formerly listed here, are proved by
    `torusAnisotropicPart` (Task 6398). The split-component assertions of
@@ -906,7 +1011,11 @@ conjunction is proved by `relativeRealCorootLinearAlgebra`, from its exact proof
 (`8a9c5345-ee7d-44ea-85d4-a16abf746ebb`). The five component statements of Worker 4's
 parabolic split-component unit (V.3.1–V.3.2) are proved by Tasks 6452 and 6454–6457;
 their conjunction is proved by `parabolicSplitComponents`, from its exact proof Task 6866
-(`e5eb891b-fc5e-4885-8241-647a8b70812f`). For V.3.24, exact proof
+(`e5eb891b-fc5e-4885-8241-647a8b70812f`). The two statements of Worker 4's chamber unit
+(V.3.14–V.3.16) are proved by Tasks 6450 and 6451, and their conjunction by
+`parabolicChamber` (Task 7268). Eight statements of Worker 4's closed-root-subset unit
+(V.4.2) are proved; their pairing into `RenardClosedRootSubsetStatements` is exact proof
+Task 7357, and the ninth statement is false (I5). For V.3.24, exact proof
 Tasks 6390, 6391 and 6429 are complete: `simpleRootSplitCentralImage`,
 `CocharacterUniformizer.quotientComparison` and
 `cocharacterConeFiniteGeneration` are independently accepted and published,
