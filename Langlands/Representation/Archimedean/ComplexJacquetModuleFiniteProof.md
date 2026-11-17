@@ -41,8 +41,10 @@ complexJacquetModuleFiniteReduction
   `VermaGL.BernsteinGelfandInputsStatement` implies `ComplexJacquetModuleFiniteStatement`. It
   chains the Bernstein–Gelfand reduction `complexJacquetBimoduleReduction`, the bridge
   `complexJacquetOneSided_of_bimodule` from Harish-Chandra bimodules to one-sided nonvanishing,
-  and `complexJacquetModuleFinite_of_oneSided` (module `ComplexJacquetFinite`), which also
-  contains the finite-dimensionality proof.
+  and `complexJacquetModuleFinite_of_oneSided` (module `ComplexJacquetOneSided`). That theorem
+  passes from one-sided to full nonvanishing and then applies
+  `complexJacquetModuleFinite_of_nonzero` (module `ComplexJacquetFinite`), which contains the
+  finite-dimensionality proof.
 * `VermaGL.BernsteinGelfandInputsStatement` (module `LowerVerma`) is the conjunction of six
   statements on lower Verma modules `M⁻(λ)` of `𝔤𝔩_n(ℂ)`. The anonymous constructor supplies
   their proofs, in this order:

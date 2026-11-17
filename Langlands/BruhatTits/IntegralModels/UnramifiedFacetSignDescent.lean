@@ -1,4 +1,6 @@
 import Langlands.BruhatTits.IntegralModels.IntegralSplitTorusConversion
+import Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientBaseChange
+import Langlands.BruhatTits.IntegralModels.UnramifiedResidueArithmetic
 import Langlands.BruhatTits.IntegralModels.FacetRootSignDescent
 import Langlands.BruhatTits.IntegralModels.UnramifiedFacetCommonTorusStatement
 import Langlands.BruhatTits.IntegralModels.UnramifiedFacetLieWeightSignStatement
@@ -36,54 +38,7 @@ namespace Langlands.BruhatTits.IntegralModels
 open GroupScheme
 
 
-section ReductiveQuotient
 
-variable {R K : Type u} [CommRing R] [IsDomain R] [Field K]
-  [Algebra R K] [IsFractionRing R K]
-  {G : GroupScheme (Spec (CommRingCat.of K))}
-  (A L : Type u) [CommRing A] [IsDomain A] [Field L]
-  [Algebra R A] [Algebra A L] [IsFractionRing A L]
-  [Algebra K L] [Algebra R L] [IsScalarTower R A L] [IsScalarTower R K L]
-  [IsLocalRing R] [IsLocalRing A] [IsLocalHom (algebraMap R A)]
-
-private instance neutralSpecialFibre_smooth (D : RelativeComponentModelData R K G) :
-    Smooth D.neutral.specialFibre.X.hom := by
-  have : Smooth D.neutral.group.X.hom := D.neutral_smooth
-  change Smooth (pullback.snd D.neutral.group.X.hom (IntegralModel.residueBaseMap R))
-  infer_instance
-
-private instance neutralSpecialFibre_isAffineHom (D : RelativeComponentModelData R K G) :
-    IsAffineHom D.neutral.specialFibre.X.hom := by
-  change IsAffineHom (pullback.snd D.neutral.group.X.hom (IntegralModel.residueBaseMap R))
-  infer_instance
-
-/-- **Base change of a maximal reductive quotient along a separable algebraic
-residue field extension.** If the residue field extension of `R → A` is
-separable and algebraic, the residue-field base change of a maximal reductive
-quotient of the neutral special fibre is a maximal reductive quotient of the
-special fibre of the base-changed model. -/
-theorem SpecialFibreQuotientData.isReductiveQuotient_baseChange
-    [Algebra.IsSeparable (IsLocalRing.ResidueField R) (IsLocalRing.ResidueField A)]
-    [Algebra.IsAlgebraic (IsLocalRing.ResidueField R) (IsLocalRing.ResidueField A)]
-    {D : RelativeComponentModelData R K G} (Q : SpecialFibreQuotientData D)
-    (hQ : Q.IsReductiveQuotient) : (Q.baseChange A L).IsReductiveQuotient := by
-  have hconn : ConnectedSpace D.neutral.specialFibre.X.left :=
-    D.neutral.hasConnectedSpecialFibre_of_hasConnectedFibres D.neutral_connectedFibres
-  refine ⟨?_, ?_, ?_⟩
-  · have h1 := (separableAlgebraicUnipotentRadical (IsLocalRing.ResidueField R)
-      (IsLocalRing.ResidueField A) D.neutral.specialFibre inferInstance inferInstance
-      hconn).1 Q.radical Q.radicalInclusion hQ.1
-    exact h1.comp_iso _
-  · have h2 := (hQ.2.1.baseChange (algebraBaseMap (IsLocalRing.ResidueField R)
-      (IsLocalRing.ResidueField A))).comapIso (specialFibreSquareIso A D.neutral.group)
-    change RelativeRoot.IsFppfQuotient (SubgroupFunctor.range
-      ((GroupScheme.baseChange _).map Q.radicalInclusion ≫
-        (specialFibreSquareIso A D.neutral.group).hom)) _
-    rw [SubgroupFunctor.range_comp_iso, SubgroupFunctor.range_baseChangeHom]
-    exact h2
-  · exact hQ.2.2.baseChange_of_algebraicExtension
-
-end ReductiveQuotient
 
 
 section GenericFactor
@@ -387,32 +342,6 @@ local instance unramifiedFacetSignIntegerLocalHom :
     IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
-
-/-- The residue-field algebra induced by the integral extension `𝒪[F] → O` is the
-published residue map. -/
-theorem unramifiedResidueAlgebra_eq :
-    (inferInstance : Algebra (IsLocalRing.ResidueField ↥𝒪[F])
-      (IsLocalRing.ResidueField (fixedFieldIntegers F))) = (residueToFixedField F).toAlgebra := by
-  apply Algebra.algebra_ext
-  intro x
-  obtain ⟨y, rfl⟩ := IsLocalRing.residue_surjective x
-  rfl
-
-/-- The residue field of `O` is algebraic over the residue field of `𝒪[F]`. -/
-theorem unramifiedResidue_isAlgebraic :
-    Algebra.IsAlgebraic (IsLocalRing.ResidueField ↥𝒪[F])
-      (IsLocalRing.ResidueField (fixedFieldIntegers F)) := by
-  have h := (fixedFieldResidueIsAlgClosure F).isAlgebraic
-  convert h
-  exact unramifiedResidueAlgebra_eq
-
-/-- The residue field of `O` is separable over the finite residue field of `𝒪[F]`. -/
-theorem unramifiedResidue_isSeparable :
-    Algebra.IsSeparable (IsLocalRing.ResidueField ↥𝒪[F])
-      (IsLocalRing.ResidueField (fixedFieldIntegers F)) := by
-  have : Finite (IsLocalRing.ResidueField ↥𝒪[F]) := inferInstanceAs (Finite 𝓀[F])
-  have := unramifiedResidue_isAlgebraic (F := F)
-  infer_instance
 
 set_option maxHeartbeats 1600000 in
 /-- Transporting a model over `O` by the inner automorphism `Int(g⁻¹)` turns the

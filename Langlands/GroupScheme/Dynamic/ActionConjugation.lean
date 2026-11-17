@@ -16,18 +16,6 @@ variable {S : Scheme.{u}} {H K G : GroupScheme S}
 
 namespace AutomorphicAction
 
-/-- The action morphism is determined by all its point actions. -/
-theorem ext_act {a b : AutomorphicAction H G}
-    (h : ∀ {T : Over S} (x : T ⟶ H.X) (g : T ⟶ G.X), a.act x g = b.act x g) :
-    a = b := by
-  have hh : a.hom = b.hom := by
-    simpa only [act, lift_fst_snd, Category.id_comp] using
-      h (fst H.X G.X) (snd H.X G.X)
-  cases a
-  cases b
-  cases hh
-  rfl
-
 /-- Restricting conjugation agrees with conjugation along the composite homomorphism. -/
 theorem restrict_conjugation (i : H ⟶ G) (f : K ⟶ H) :
     (conjugation i).restrict f = conjugation (f ≫ i) := by

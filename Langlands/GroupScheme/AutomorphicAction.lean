@@ -33,6 +33,18 @@ variable {H G K : GroupScheme S} (a : AutomorphicAction H G)
 def act {T : Over S} (h : T ⟶ H.X) (g : T ⟶ G.X) : T ⟶ G.X :=
   lift h g ≫ a.hom
 
+/-- The action morphism is determined by all its point actions. -/
+theorem ext_act {a b : AutomorphicAction H G}
+    (h : ∀ {T : Over S} (x : T ⟶ H.X) (g : T ⟶ G.X), a.act x g = b.act x g) :
+    a = b := by
+  have hh : a.hom = b.hom := by
+    simpa only [act, lift_fst_snd, Category.id_comp] using
+      h (fst H.X G.X) (snd H.X G.X)
+  cases a
+  cases b
+  cases hh
+  rfl
+
 theorem act_eq {T : Over S} (h : T ⟶ H.X) (g : T ⟶ G.X) :
     a.act h g = lift h g ≫ a.hom := rfl
 

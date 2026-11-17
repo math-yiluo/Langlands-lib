@@ -1,0 +1,13 @@
+# Affine principal neighborhoods on a supplied homogeneous quotient
+
+`affinePrincipalSections` is the set of actual quotient global sections whose principal opens are affine. Its definition only needs a field `k`, group schemes `H` and `J` over `Spec k`, a morphism `i : H ⟶ J`, and a supplied `Q : HomogeneousQuotient i`; it does not require that `Q` be affine.
+
+The separation and affine-principal-neighborhood theorems assume that `k` is algebraically closed, that `H` is smooth over `Spec k`, that the underlying scheme of `J` is affine, and that `H` satisfies the explicit predicate `IsGeometricallyReductive H`. These hypotheses apply to the same supplied homogeneous quotient `Q`. The preliminary translation-stability and vanishing-detection lemmas do not need these additional assumptions. This internal derived development does not assert an unconditional reductive-group affineness theorem.
+
+Right translation by a rational subgroup point leaves the quotient projection unchanged. Hence vanishing ideals of inverse images of quotient point sets are rationally stable. For disjoint closed sets with the second nonempty, the ambient affine vanishing ideals are comaximal and the second is proper. The invariant stable-ideal separation theorem produces an all-test invariant section with values zero and one on these two inverse images. Effective descent gives a section on the original supplied quotient, and surjectivity detects the corresponding vanishing properties downstairs.
+
+The resulting principal open contains the second closed set and avoids the first. The proof that it contains the second set uses the proper vanishing ideal of a singleton: if both the section and its difference from one vanish there, then one vanishes there.
+
+Provenance: derived from the implemented global-vanishing-ideal, invariant-ideal-lifting and supplied-quotient invariant-section interfaces, with Mathlib's affine-open and compact-space facts. No literature statement is transcribed.
+
+For a closed point and a prescribed open neighborhood, first choose an affine open neighborhood inside it. Separate the closed point from the complement of this affine open. The resulting principal open lies inside the affine open and is its principal open under restriction of the same section, so it is affine. Finally the affine ambient scheme maps surjectively onto the quotient, which is therefore compact. In this compact T₀ space every point specializes to a closed point. Its affine principal neighborhood also contains the original point. This establishes an affine principal open cover; it does not alone prove that the quotient is affine.

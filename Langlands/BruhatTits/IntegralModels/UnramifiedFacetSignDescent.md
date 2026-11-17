@@ -20,6 +20,9 @@ The theorem does not prove the target statement and makes no claim about `hI`
 or `hII`. The other declarations of the module are the steps of this descent.
 The generic split-integral-torus adapter and its four field lemmas are provided
 by `IntegralSplitTorusConversion`, with their original names, types and bodies.
+The generic reductive-quotient base-change theorem and its supporting local
+instances are provided by `SpecialFibreQuotientBaseChange`, also with the
+original theorem name, type and proof body.
 
 ## Content
 
@@ -36,7 +39,8 @@ square of algebras used by the Library's `RelativeComponentModelData.baseChange`
   `toIntegralTorusData_torus` and `toIntegralTorusData_inclusion`, and the lemmas
   `toIntegralTorusData_genericIso_hom` and `toIntegralTorusData_genericIso_inv`,
   record the fields.
-- `SpecialFibreQuotientData.isReductiveQuotient_baseChange`: let `R`, `A` be local
+- `SpecialFibreQuotientData.isReductiveQuotient_baseChange` (imported from
+  `SpecialFibreQuotientBaseChange`): let `R`, `A` be local
   and `R → A` local. Assume the residue field extension is separable
   (`Algebra.IsSeparable`) and algebraic (`Algebra.IsAlgebraic`). If
   `Q.IsReductiveQuotient`, then `(Q.baseChange A L).IsReductiveQuotient`.
@@ -85,9 +89,11 @@ The module fixes the algebra `𝒪[F] → O` and its scalar tower and local homo
 properties as local instances. They are the instances of the Library's
 `IntegralModel.baseChangeUnramified`.
 
-- `unramifiedResidueAlgebra_eq`: the residue field algebra induced by `𝒪[F] → O` is
+- `unramifiedResidueAlgebra_eq` (imported from
+  `UnramifiedResidueArithmetic`): the residue field algebra induced by `𝒪[F] → O` is
   the algebra given by the published residue map `residueToFixedField F`.
-- `unramifiedResidue_isAlgebraic` and `unramifiedResidue_isSeparable`: the residue
+- `unramifiedResidue_isAlgebraic` and `unramifiedResidue_isSeparable`
+  (imported from `UnramifiedResidueArithmetic`): the residue
   field of `O` is algebraic and separable over the residue field of `𝒪[F]`.
 - `integralPoints_transport_innerIso_inv`: if the integral points of a model `M` over
   `O` are `E(0) ∩ G(K)_{g • Y}` (pointwise fixer of the `g`-translate of

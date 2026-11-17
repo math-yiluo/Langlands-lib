@@ -2,6 +2,12 @@
 
 This internal construction combines the published coefficient base change of special-fibre quotients with special-fibre isomorphism transport. It uses a supplied actual residue recovery isomorphism and asserts no recovery or quotient existence theorem.
 
+`SpecialFibreQuotientBaseChange` supplies the unchanged generic theorem
+`isReductiveQuotient_baseChange`. It imports `FacetRootSignBaseChange`, which
+supplies `specialFibreSquareIso` and the coefficient base-change definitions.
+This provider import replaces the unrelated facet-sign descent interface; all
+declaration types and proof bodies in this module are unchanged.
+
 Work in arbitrary universe `u`. Let `R → A` be a local homomorphism of local domains, with fraction fields `K → L` and compatible scalar towers through both `A` and `K`. Let `D` be relative-component model data over `R` in a group over `K`, and let `E` be relative-component model data over `A` in a possibly different group over `L`. Write `resExt` for the induced residue-field coefficient map. Supply `Q : SpecialFibreQuotientData D` and an actual isomorphism `e : BC_resExt D.neutral.specialFibre ≅ E.neutral.specialFibre`.
 
 `Q.baseChangeSpecialFibreIso A L e` first uses `Q.baseChange A L`, then transports its ambient special fibre along `specialFibreSquareIso.symm ≪≫ e`. This permits use of the exact supplied `e` without identifying it with a separately implemented coefficient-square isomorphism. The quotient is definitionally `BC_resExt Q.quotient`. Its projection simplifies to `e.inv ≫ BC_resExt Q.projection`.

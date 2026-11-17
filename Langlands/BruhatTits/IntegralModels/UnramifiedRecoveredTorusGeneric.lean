@@ -1,6 +1,6 @@
 import Langlands.BruhatTits.IntegralModels.UnramifiedRecoveredTorusMap
 import Langlands.BruhatTits.IntegralModels.IntegralTorusCharacterNaturality
-import Langlands.BruhatTits.IntegralModels.UnramifiedFacetSignDescent
+import Langlands.BruhatTits.IntegralModels.IntegralSplitTorusConversion
 
 /-! # The specified generic map of recovered apartment tori -/
 

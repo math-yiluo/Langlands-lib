@@ -1,5 +1,5 @@
 import Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientTransport
-import Langlands.BruhatTits.IntegralModels.UnramifiedFacetSignDescent
+import Langlands.BruhatTits.IntegralModels.SpecialFibreQuotientBaseChange
 
 /-! # Reductive quotients along an actual residue recovery isomorphism -/
 

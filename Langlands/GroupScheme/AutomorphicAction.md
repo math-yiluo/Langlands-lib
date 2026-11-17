@@ -107,3 +107,7 @@ no torus, smoothness, reducedness or affineness hypothesis is added.
 This module constructs subgroup functors and their elementary laws.
 Representability, quotient-action descent and relative root groups are not
 consequences asserted by these declarations.
+
+The shared `AutomorphicAction.ext_act` lemma states that equality on every pair
+of test points determines the action. Dynamic action comparisons and supplied
+automorphism schemes both use this foundational declaration.

@@ -1,0 +1,15 @@
+# Underlying section maps through induction and local discreteness
+
+This internal categorical construction transports arbitrary natural maps of underlying sets of module presheaves through the actual twisted right Kan induction and the existing locally discrete subpresheaf. These maps need not be additive. Its purpose is to transport zero-preserving choices of preimages of coefficient maps without replacing any linear sheaf or functor.
+
+`inductionUnderlyingMap` applies the supplied underlying map in each ordinary translated coordinate and uses the published `moduleCoordinates` equivalence to recover an actual induced section. Naturality follows from the actual induction restriction formula and naturality of the supplied map along the ordinary transport arrows. It preserves identities, compositions and zero preservation.
+
+`smoothUnderlyingMap` restricts any such underlying natural map to locally discrete sections. The discrete sieve of a section is contained in that of its image, so a covering discrete sieve stays covering. The map preserves identities, compositions and zero preservation, and agrees with the existing linear locally discrete map when its input comes from a linear natural transformation.
+
+`ranMap_projection` proves naturality of the actual coordinate projections in the input linear presheaf, using naturality of the actual right Kan map and its counit. Consequently `inductionUnderlyingMap_whiskerRight` identifies induction of an underlying linear natural transformation with the underlying transformation of the existing linear right Kan functor. A natural section, expressed by the identity that its composite with the forward map is the identity, remains a section through either induction or the locally discrete part.
+
+`smoothInductionUnderlyingMap` composes these two constructions. It retains identities, compositions, zero preservation and natural sections, and agrees with the actual linear smooth-presheaf map. The sheaf specialization `smoothSheafInductionUnderlyingMap` has as its source and target the underlying presheaves of the existing sheaf induction followed by `smoothCoreflector`. Its linear comparison refers to the map of that existing composite sheaf functor.
+
+The category object and morphism universes, the group universe and the coefficient universe are independent. Ring and module carrier universes agree. The right Kan construction assumes its existing pointwise extension instances. The smooth constructions assume a topology on the group and admissible refinements for the supplied local action system and site topology. The sheaf specialization additionally assumes translation invariance of the ordinary topology and admissible refinements for its twisted topology.
+
+The provenance is the actual Kan coordinate formula, naturality of the existing counit and the existing discrete-sieve construction. The maps of underlying sets need not be additive; the sheaves and linear functors used throughout are the existing ones. No analytic comparison, support theorem, exactness or derived vanishing is claimed here.

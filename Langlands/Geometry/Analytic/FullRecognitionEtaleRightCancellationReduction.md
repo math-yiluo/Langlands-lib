@@ -1,0 +1,13 @@
+# Reduction of strong all-pieces etale right cancellation
+
+`EtaleRightCancellationReductionStatement` retains three explicit prerequisites and concludes the exact published `EtaleRightCancellationStatement`. It does not assert that any prerequisite is proved:
+
+1. `FiniteOverRightCancellationStatement`, for two finite maps over a common open base.
+2. For every actual strong map and point, a joint finite-pieces `IsEtaleAtPoint` certificate implies a joint all-pieces certificate. This is the proposition being separately developed as `FinitePiecesEtaleAllPiecesStatement`.
+3. Pointwise etale cancellation for finite-type triangles of bounded maps of presented affinoid algebras. This ring law has a separate implementation in `AffinoidPointwiseCancellation`; it remains a premise here to keep its independent publication separate.
+
+The included theorem `etaleRightCancellationReduction` proves this conditional statement. At each source point, it extracts unramifiedness over all pieces for the second map and combines the composite's flat and unramified certificates into a joint etale certificate. The first prerequisite constructs local finiteness of the first map by aligning the finite source and target neighborhoods over a common base. The generic finite-family cancellation lemma in `FullRecognitionFinitePiecesCancellation` then gives joint pointwise etaleness over a finite recognized family. Flatness and unramifiedness survive the clopen source restrictions used there, and the third prerequisite supplies cancellation in each actual algebra triangle. The second prerequisite upgrades the resulting finite family to all recognized pieces. Splitting this joint certificate at every point gives the global all-pieces etale conclusion, with the whole source as the required open neighborhood.
+
+The supporting module contains the complete neighborhood alignment and finite-family construction; its paired Markdown describes that proof. This reduction adds no assumption to the published target. The target's Lean and Markdown files and their imports are unchanged. Common-base finite cancellation and finite-to-all recognition still require unconditional proofs before the target can be discharged.
+
+This is internal provenance: it assembles the established finite-neighborhood, clopen-restriction, actual pair-composition and recognized-neighborhood APIs, conditional on the three precise laws above. It is not a new attribution to a literature theorem. The statement and implementation retain independent field, space and index universes, non-Hausdorff spaces, arbitrary positive finite polyradii and trivially valued fields.

@@ -93,3 +93,6 @@ scheme-theoretic invariance condition rather than testing only `Gm(T)`.
 No separatedness, smoothness, affineness, finite presentation, or reducedness
 assumption is used. The module constructs neither a semidirect product group
 scheme nor quotient-action descent or relative root groups.
+
+Action extensionality is imported from `AutomorphicAction`; this module uses
+the shared `AutomorphicAction.ext_act` declaration.
