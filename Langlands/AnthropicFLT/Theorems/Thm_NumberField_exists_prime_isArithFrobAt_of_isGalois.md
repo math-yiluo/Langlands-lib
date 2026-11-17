@@ -1,0 +1,14 @@
+# Every automorphism of a Galois extension of number fields is a Frobenius
+
+`NumberField.exists_prime_isArithFrobAt_of_isGalois` (the root of this port): let L/K be a Galois extension of number fields, with K : Type u and L : Type v, let σ ∈ Gal(L/K), and let S be a finite set of naturals. Then there are a prime p ∉ S and a maximal ideal P of the ring of integers of L with p ∈ P and `IsArithFrobAt ℤ σ P`. The conclusion is the absolute arithmetic Frobenius over ℤ and contains no unramifiedness clause. The adapter `Langlands/Global/Arithmetic/ChebotarevPrimeRealizationProof.lean` derives the relative, unramified form used in the Library. The proof applies the solution module.
+
+Source: `Theorems/Thm_NumberField_exists_prime_isArithFrobAt_of_isGalois.lean` (entire file, 15 lines) in the registered source `anthropic-flt-complete-lean-source-6e837e75`, commit `6e837e75355538c7f80bab5b956861e86c4eacc2`. Original file SHA256: `e305e6c6bca0323737399d251219da5644f6073c8b52bcf68f4f1ea471d3784a`. Declaration names and namespaces are unchanged.
+
+Copyright 2026 Anthropic, PBC; Apache License 2.0. The retained license, notice and attribution ledger are in `licenses/Anthropic-FLT/`. The source attribution ledger has no entry for this file. This module is supporting mathematics imported for the proof `Langlands.Global.chebotarevPrimeRealizationStatement` in `Langlands/Global/Arithmetic/ChebotarevPrimeRealizationProof.lean`.
+
+Port changes: imports of FLT modules use the `Langlands.AnthropicFLT` prefix; the source project's finite heartbeat and transparency options (`maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`) are set after the imports; the audit's modification comments are replaced by the port header; the import of `P2M.Util` is dropped. Apart from the universe generalization, the mathematical hypotheses and conclusions of the source are retained.
+
+The following edits of the audit `notes/reuse/anthropic-chebotarev-audit.md` are applied. Its evidence files `compatibility.md`, `universes.md` and `cleaned.md` in `notes/reuse/anthropic-chebotarev-evidence/` give the exact diffs.
+
+- Universes: `universe u v w` is declared; the binder of `K` (originally `Type`) is `Type u`; the binder of `L` (originally `Type`) is `Type v`. The audit named these universes `audit_u`, `audit_v`, `audit_w`.
+- Cleanup: the line `attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G` was removed; the line `attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec` was removed; the proof `by p2m_exact_reverting @_root_.P2MW.S_NumberField_exists_prime_isArithFrobAt_of_isGalois.solution` was replaced by `apply @_root_.P2MW.S_NumberField_exists_prime_isArithFrobAt_of_isGalois.solution <;> assumption`.

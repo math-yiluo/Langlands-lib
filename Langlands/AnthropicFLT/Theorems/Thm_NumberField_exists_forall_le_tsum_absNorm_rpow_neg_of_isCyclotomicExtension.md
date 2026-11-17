@@ -1,0 +1,14 @@
+# Divergence of the prime sums in each cyclotomic residue class
+
+`NumberField.exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension`: let L/K be cyclotomic for {m}, ζ a primitive m-th root of unity in L, τ ∈ Gal(L/K), and C real. Let a_τ ∈ (ℤ/m)ˣ be given by τ(ζ) = ζ^(a_τ) (`IsPrimitiveRoot.autToPow`). Then there is δ > 0 such that for 1 < s < 1 + δ, the sum of N(v)^(−s) over height-one primes v of K with N(v) ≡ a_τ modulo m is at least C. The proof applies the solution module.
+
+Source: `Theorems/Thm_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension.lean` (entire file, 18 lines) in the registered source `anthropic-flt-complete-lean-source-6e837e75`, commit `6e837e75355538c7f80bab5b956861e86c4eacc2`. Original file SHA256: `dbec019cf64ac8f475ea35553946ec01ee5bccc240590e4e954bc6e78f1fb36a`. Declaration names and namespaces are unchanged.
+
+Copyright 2026 Anthropic, PBC; Apache License 2.0. The retained license, notice and attribution ledger are in `licenses/Anthropic-FLT/`. The source attribution ledger has no entry for this file. This module is supporting mathematics imported for the proof `Langlands.Global.chebotarevPrimeRealizationStatement` in `Langlands/Global/Arithmetic/ChebotarevPrimeRealizationProof.lean`.
+
+Port changes: imports of FLT modules use the `Langlands.AnthropicFLT` prefix; the source project's finite heartbeat and transparency options (`maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`) are set after the imports; the audit's modification comments are replaced by the port header; the import of `P2M.Util` is dropped. Apart from the universe generalization, the mathematical hypotheses and conclusions of the source are retained.
+
+The following edits of the audit `notes/reuse/anthropic-chebotarev-audit.md` are applied. Its evidence files `compatibility.md`, `universes.md` and `cleaned.md` in `notes/reuse/anthropic-chebotarev-evidence/` give the exact diffs.
+
+- Universes: `universe u v w` is declared; the binder of `K` (originally `Type`) is `Type u`; the binder of `L` (originally `Type`) is `Type v`. The audit named these universes `audit_u`, `audit_v`, `audit_w`.
+- Cleanup: the line `attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G` was removed; the line `attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec` was removed; the proof `by p2m_exact_reverting @_root_.P2MW.S_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension.solution` was replaced by `apply @_root_.P2MW.S_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension.solution (m := m) <;> assumption`, where the modulus m is passed explicitly.

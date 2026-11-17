@@ -1,0 +1,153 @@
+/-
+Ported from
+`P2M/Sol/S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension.lean`
+(entire file, 120 lines, including its solution and auxiliary declarations) of the Anthropic Lean
+formalization of Fermat's Last Theorem: registered source
+`anthropic-flt-complete-lean-source-6e837e75`, commit 6e837e75355538c7f80bab5b956861e86c4eacc2,
+original file SHA256 f8e6f8632dcfb12e93e5803f9db0a2f96ad2d3ab76c095f2ac8e0c34cebedf55.
+Copyright 2026 Anthropic, PBC, licensed under the Apache License, Version 2.0; see
+`licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
+
+Complete list of edits to the source text (the paired Markdown file gives the same list; the audit
+`notes/reuse/anthropic-chebotarev-audit.md` and its evidence files `compatibility.md`,
+`universes.md` and `cleaned.md` in `notes/reuse/anthropic-chebotarev-evidence/` give the exact
+diffs):
+- Imports of FLT modules use the `Langlands.AnthropicFLT` prefix.
+- The source project's finite heartbeat and transparency options (`maxHeartbeats 4000000`,
+  `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`) are set
+  after the imports.
+- The audit's modification comments are replaced by the port header.
+- The import of `P2M.Util` is dropped.
+- Universes: `universe u v w` is declared; the binder of `K` (originally `Type`) is `Type u`; the
+  binder of `L` (originally `Type`) is `Type v`. The audit named these universes `audit_u`,
+  `audit_v`, `audit_w`.
+- Cleanup: the line `attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup
+  NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G` was removed.
+
+Declaration names and namespaces are unchanged. Apart from the universe generalization, the
+mathematical hypotheses and conclusions of the source are retained.
+-/
+import Mathlib
+import Langlands.AnthropicFLT.Definitions.Def_FrobeniusDensity_PrimeSums
+import Langlands.AnthropicFLT.Definitions.Def_NumberField_PrimeNormSums
+import Langlands.AnthropicFLT.Theorems.Thm_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension
+import Langlands.AnthropicFLT.Theorems.Thm_FrobeniusDensity_tailSum_le
+
+set_option maxHeartbeats 4000000
+set_option synthInstance.maxHeartbeats 400000
+set_option backward.isDefEq.respectTransparency.types false
+
+universe u v w
+namespace P2MW.S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
+
+set_option autoImplicit false
+
+noncomputable section
+
+namespace P2mHeckeExtract
+
+open NumberField IsDedekindDomain NumberField.PrimeNormSum Filter Topology
+open scoped Classical
+
+set_option linter.unusedSectionVars false
+
+variable {K : Type u} [Field K] [NumberField K]
+
+theorem tsum_le_card_of_support {E : Set (HeightOneSpectrum (𝓞 K))} (hE : E.Finite)
+    (f : HeightOneSpectrum (𝓞 K) → ℝ) (hf : ∀ v, f v ≤ 1) (hsupp : ∀ v, v ∉ E → f v = 0) :
+    ∑' v, f v ≤ hE.toFinset.card := by
+  rw [tsum_eq_sum (s := hE.toFinset) (fun v hv => hsupp v (by rwa [Set.Finite.mem_toFinset] at hv))]
+  calc ∑ v ∈ hE.toFinset, f v ≤ ∑ v ∈ hE.toFinset, (1 : ℝ) := Finset.sum_le_sum fun v _ => hf v
+    _ = hE.toFinset.card := by rw [Finset.sum_const, nsmul_eq_mul, mul_one]
+
+theorem finite_absNorm_mem (S : Finset ℕ) : {v : HeightOneSpectrum (𝓞 K) | Ideal.absNorm v.asIdeal ∈ S}.Finite := by
+  have hinj : Set.InjOn (fun v : HeightOneSpectrum (𝓞 K) => v.asIdeal) {v | Ideal.absNorm v.asIdeal ∈ S} :=
+    fun _ _ _ _ h => HeightOneSpectrum.ext h
+  refine Set.Finite.of_finite_image ?_ hinj
+  refine (Set.Finite.biUnion S.finite_toSet fun n _ => Ideal.finite_setOf_absNorm_eq (S := 𝓞 K) n).subset ?_
+  rintro _ ⟨v, hv, rfl⟩
+  simp only [Set.mem_setOf_eq] at hv
+  simp only [Set.mem_iUnion, Set.mem_setOf_eq]
+  exact ⟨_, hv, rfl⟩
+
+theorem tail_le {s : ℝ} (hs : 1 ≤ s) :
+    (∑' v : HeightOneSpectrum (𝓞 K), if (Ideal.absNorm v.asIdeal).Prime then 0 else pw K s v) ≤ Ctail K := by
+  rw [← tailSum_toReal, Ctail]
+  refine ENNReal.toReal_mono ?_ (FrobeniusDensity.tailSum_le K hs)
+  exact (ENNReal.mul_lt_top (ENNReal.natCast_ne_top _).lt_top tailConst_lt_top).ne
+
+variable {L : Type v} [Field L] [NumberField L] [Algebra K L]
+
+theorem main (m : ℕ) [NeZero m] [IsCyclotomicExtension {m} K L] {ζ : L} (hζ : IsPrimitiveRoot ζ m)
+    (τ : L ≃ₐ[K] L) (S : Finset ℕ) :
+    ∃ p : ℕ, p.Prime ∧ p ∉ S ∧
+      ∃ v : Ideal (𝓞 K), v.IsMaximal ∧ Ideal.absNorm v = p ∧ τ ζ = ζ ^ p := by
+  set a : (ZMod m)ˣ := hζ.autToPow K τ with hadef
+  set E : Set (HeightOneSpectrum (𝓞 K)) := {v | Ideal.absNorm v.asIdeal ∈ S} with hEdef
+  have hE : E.Finite := finite_absNorm_mem S
+  set C : ℝ := Ctail K + hE.toFinset.card + 1 with hCdef
+  obtain ⟨δ, hδ, hT⟩ :=
+    NumberField.exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension K L m hζ τ C
+  set s : ℝ := 1 + δ / 2 with hsdef
+  have hs : 1 < s := by rw [hsdef]; linarith
+  have hsδ : s < 1 + δ := by rw [hsdef]; linarith
+  have hTa : C ≤ T K m (a : ZMod m) s := hT s hs hsδ
+
+  set good : HeightOneSpectrum (𝓞 K) → Prop := fun v =>
+    (Ideal.absNorm v.asIdeal).Prime ∧ Ideal.absNorm v.asIdeal ∉ S ∧ (Ideal.absNorm v.asIdeal : ZMod m) = a
+    with hgood
+  set G : HeightOneSpectrum (𝓞 K) → ℝ := fun v => if good v then pw K s v else 0 with hG
+  set tl : HeightOneSpectrum (𝓞 K) → ℝ := fun v => if (Ideal.absNorm v.asIdeal).Prime then 0 else pw K s v with htl
+  set bS : HeightOneSpectrum (𝓞 K) → ℝ := fun v => if Ideal.absNorm v.asIdeal ∈ S then pw K s v else 0 with hbS
+  have hle : ∀ v, (if (Ideal.absNorm v.asIdeal : ZMod m) = a then pw K s v else 0) ≤ G v + tl v + bS v := by
+    intro v
+    simp only [hG, htl, hbS, hgood]
+    have := pw_nonneg s v
+    by_cases h1 : (Ideal.absNorm v.asIdeal).Prime <;> by_cases h2 : Ideal.absNorm v.asIdeal ∈ S <;>
+      by_cases h3 : (Ideal.absNorm v.asIdeal : ZMod m) = a <;> simp [h1, h2, h3, this]
+  have hGnn : ∀ v, 0 ≤ G v := fun v => by simp only [hG]; split_ifs; exacts [pw_nonneg s v, le_rfl]
+  have hGle : ∀ v, G v ≤ pw K s v := fun v => by simp only [hG]; split_ifs; exacts [le_rfl, pw_nonneg s v]
+  have hGsum : Summable G := (summable_pw hs).of_nonneg_of_le hGnn hGle
+  have htlsum : Summable tl := summable_tail hs
+  have hbSsum : Summable bS := by
+    refine (summable_pw hs).of_nonneg_of_le (fun v => ?_) (fun v => ?_)
+    · simp only [hbS]; split_ifs; exacts [pw_nonneg s v, le_rfl]
+    · simp only [hbS]; split_ifs; exacts [le_rfl, pw_nonneg s v]
+  have h1 : T K m (a : ZMod m) s ≤ ∑' v, (G v + tl v + bS v) :=
+    (summable_T (a : ZMod m) hs).tsum_le_tsum hle ((hGsum.add htlsum).add hbSsum)
+  rw [(hGsum.add htlsum).tsum_add hbSsum, hGsum.tsum_add htlsum] at h1
+  have h2 : (∑' v, tl v) ≤ Ctail K := tail_le hs.le
+  have h3 : (∑' v, bS v) ≤ hE.toFinset.card := tsum_le_card_of_support hE bS
+    (fun v => by simp only [hbS]; split_ifs; exacts [pw_le_one (by linarith) v, zero_le_one])
+    (fun v hv => by
+      simp only [hbS]
+      rw [if_neg (by rwa [hEdef, Set.mem_setOf_eq] at hv)])
+  have hGpos : 0 < ∑' v, G v := by rw [hCdef] at hTa; linarith
+
+  obtain ⟨v, hv⟩ : ∃ v, good v := by
+    by_contra hno
+    push Not at hno
+    have : (∑' v, G v) = 0 := by
+      rw [tsum_congr (fun v => by simp only [hG]; rw [if_neg (hno v)]), tsum_zero]
+    linarith
+  obtain ⟨hp, hpS, hpa⟩ := hv
+  refine ⟨Ideal.absNorm v.asIdeal, hp, hpS, v.asIdeal, v.isPrime.isMaximal v.ne_bot, rfl, ?_⟩
+
+  have hspec := hζ.autToPow_spec K τ
+  rw [← hadef] at hspec
+  have hval : ((a : (ZMod m)ˣ) : ZMod m).val = Ideal.absNorm v.asIdeal % m := by
+    rw [← hpa, ZMod.val_natCast]
+  rw [← hspec, hval, hζ.eq_orderOf, pow_mod_orderOf]
+
+end P2mHeckeExtract
+
+end
+
+open NumberField in
+theorem solution
+    (K : Type u) (L : Type v) [Field K] [NumberField K] [Field L] [NumberField L] [Algebra K L]
+    (m : ℕ) [NeZero m] [IsCyclotomicExtension {m} K L] {ζ : L} (hζ : IsPrimitiveRoot ζ m)
+    (τ : L ≃ₐ[K] L) (S : Finset ℕ) :
+    ∃ p : ℕ, p.Prime ∧ p ∉ S ∧
+      ∃ v : Ideal (𝓞 K), v.IsMaximal ∧ Ideal.absNorm v = p ∧ τ ζ = ζ ^ p :=
+  P2mHeckeExtract.main m hζ τ S

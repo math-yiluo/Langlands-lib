@@ -141,3 +141,8 @@ it is not asserted to descend to `F`. A reference integral source, its generic
 other geometric hypotheses of `ResidueSplitTorusGenericLift` remain necessary
 for that application. The main
 `UnramifiedFixedPointSplitTorusStatement` remains a separate obligation.
+
+The local coefficient, residue and valuation instances have explicit names
+unique to this module. This allows the pair-torus results to be imported
+together with the recovered apartment-torus construction; their definitions,
+mathematical statements and proof bodies are unchanged.

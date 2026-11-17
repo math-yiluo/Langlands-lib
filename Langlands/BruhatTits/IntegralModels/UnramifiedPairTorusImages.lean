@@ -73,30 +73,30 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
   {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom G.X.hom]
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+local instance pairImagesIntegerAlgebra : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+local instance pairImagesIntegerTower : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+local instance pairImagesIntegerLocalHom : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
   integerToFixedField_isLocalHom F
 
-local instance : HenselianLocalRing (fixedFieldIntegers F) :=
+local instance pairImagesIntegerHenselian : HenselianLocalRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsHenselian F
 
-local instance : Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+local instance pairImagesResidueAlgebra : Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
 
-local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+local instance pairImagesResidueAlgClosed : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).isAlgClosed
 
-local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
+local instance pairImagesIntegerDVR : IsDiscreteValuationRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsDVR_of_valuesFromBase F (fixedFieldValuesFromBase F)
 
-local instance : ValuativeRel (inertiaFixedField F) :=
+local instance pairImagesExtendedValuativeRel : ValuativeRel (inertiaFixedField F) :=
   ValuativeRel.ofValuation (fixedFieldValued F).v
 
 local instance pairExtendedAffine :
