@@ -2401,3 +2401,86 @@ Library `fcb85a7e`.
 
 The shared DAG records these drafts at revision 372. Neither track of the
 program is complete.
+
+## 17 November 2026 (evening) publications, the reverse local-component theorem and refreshed drafts
+
+Worker 3657 checked this section against Library
+`ab9053b1751d6b6557d044c38c04e4c8a67dfffc` on 17 November 2026. The
+conventions of the previous sections apply: a shared draft is an unreviewed
+TaskHub draft revision, not a candidate, and "check" is Worker 3657's own
+private `lean_check` record in environment `5c94c648`. Every theorem named
+below uses only `propext`, `Classical.choice` and `Quot.sound`.
+
+### Proofs published since the previous section
+
+Each of these tasks was published by Worker 3657 under this program. Its
+executor staged Worker 3657's complete draft with Worker 3657 as coauthor,
+and the candidate was independently reviewed and is in Library `ab9053b1`.
+All these tasks except Task 6822 are completed; Task 6822 waits for its second
+target.
+
+| Task | Candidate(s) | Executor |
+| --- | --- | --- |
+| Task 6387, `9dcb3206-7035-4d1c-9cea-f620e42f9628` (GH Theorem 11.5.2, p-adic case) | `144249d7` | Worker 828 |
+| Task 6998, `2dd46728-358f-4428-b1ee-387f98752a75` | `e87a1374` | Worker 830 |
+| Task 6999, `ae8500ea-b349-43af-a409-c33bbccb5317` | `adf41064` | Worker 378 |
+| Task 7000, `f273c02c-55ab-425f-b5d0-c51b0ea23a34` (two targets) | `0d0bbf6e`, `b44d9db1` | Worker 832 |
+| Task 7038, `77a8a491-bc89-4cd8-ad39-99a4c66876f9` (`CuspidalSupportDataReductionStatement`) | `3992f269` | Worker 573 |
+| Task 6815, `3e10ac73-00ae-4f30-a604-a09968ca2697` (`LocalComponentExistenceStatement`) | `86aa9114` | Worker 833 |
+| Task 6818, `7825d219-2a04-4194-9e19-95b05a84c4dc` (four targets) | `09de17d3`, `5cbfcc13`, `9776299d`, `c1f2082e` | Worker 831 |
+| Task 6822, `a8e36011-2be8-46cc-a440-0da01109d6e6` (target 1, JS I Theorem (5.3) from Lemma (5.2)) | `37f9ec80` | Worker 834 |
+
+Staged but not yet published at this check:
+
+- Task 7358 (`d1aad7bf-655e-4219-9022-9a2bdba3abe8`, finite pair
+  regularity): candidate `764465be-4c04-4509-b0e8-5b0e2ab97e9c` by Worker 829,
+  with Worker 3657 as coauthor (module
+  `Langlands.Global.Factors.CuspidalFinitePairRegularityProof`). Machine
+  validation accepted; peer review pending.
+- The four helper modules of the Task 7003 draft (real-place nonvanishing of
+  standard modules): candidate `72a4ffa0-e91a-474c-b2da-ccacba8bccd0`, staged
+  by Worker 771 under Task 7400 with Worker 3657 as coauthor. Review accepted,
+  not yet integrated in Library `ab9053b1`.
+
+### New complete drafts
+
+| Task | Draft | Main theorem |
+| --- | --- | --- |
+| Task 6817, `0e6a285c-e06e-4df1-a4d3-fbebc025050d` (GH Theorem 6.3.7 and the uniqueness of the factors; Flath Theorem 3) | rev 2, `3386f6fc` | `Langlands.Automorphic.localComponentDetermination : LocalComponentDeterminationStatement.{u}`, with no hypotheses, from the published `localComponentExistence`. Seven modules: `OpenSubgroupInduction` (open subgroups of `GL_n(𝔸_f)`, induction over local factors), `CommutingFamilyUniqueness` (an abstract uniqueness theorem for commuting, jointly irreducible families of isotypic actions with scalar self-intertwiners, almost-everywhere spherical lines and smooth vectors), `FreeMonoidGenerators` (the place actions read as free-monoid representations; common isotypic types), `OperatorSubquotientPlaceGeneration` (the place actions generate the operator algebra), and the forward, reverse and final modules `LocalComponentDetermination{Forward,Reverse,Proof}`. The reverse implication does not build the restricted tensor factorization; it uses the same inputs (isotypy at each place, Schur, one-dimensional spherical lines, smoothness) in the abstract theorem. Check `dbe84f71` |
+| Task 6816, `876084f9-496c-4109-818b-291f765e1077` (`LocalComponentEmbeddingStatement`) | rev 4, `809a6c3a` | `Langlands.Automorphic.localComponentEmbedding`, unchanged; revision 4 imports the published Task 6815 modules instead of copying them. Check `f6d6a64d` |
+
+Task 7003 (`d785ecd7-e7cc-4174-9da9-68b37467f224`) keeps its complete draft
+revision 2 (`cce64d95`). Tasks 6816, 6817 and 7003 had no member at this
+check; Worker 3657 asked the operator to assign executors.
+
+### Refreshed partial drafts
+
+| Task | Draft | Change |
+| --- | --- | --- |
+| Task 6446 | rev 6, `58fe338e` | imports the published Task 6387, 6822 and 6998 modules instead of copies; mathematics unchanged. Check `a0ff5d68` |
+| Task 6388 | rev 6, `9f348f49` | the same. Check `bde54f5d` |
+| Task 6447 | rev 7, `53ffbcfd` | the same. Check `42b0094c` |
+
+These three drafts still contain modified versions of two published modules,
+`Langlands.Automorphic.ContragredientUniqueness` and
+`Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof` (fieldwise
+forms added). Before any of them is submitted, the additions must move to new
+modules; their Markdown says so. Their remaining inputs are unchanged: the
+targets of Tasks 5921 (or `CuspidalPairPoleTCStatement` for the totally
+complex form), 5816 and 7005.
+
+### Consequences
+
+- The local-component block of statement module
+  `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement` is now
+  covered: existence is published, and complete drafts prove the embedding and
+  determination statements. Once Task 6817 is submitted, reviewed and
+  published, step 1 of the expected route of the isobaric strong multiplicity
+  one task (Task 6554, `377cdd2a-1281-43b5-bd23-92836e2f056f`) has all its
+  local-component inputs.
+- The status of the L4 analytic inputs is as in the previous section: the
+  rigidity theorems and GH Theorem 11.7.2 depend only on the targets of
+  Tasks 5921, 5816 and 7005, none of which is proved in Library `ab9053b1`.
+
+The shared DAG records the Task 6817 draft at revision 440. Neither track of
+the program is complete.

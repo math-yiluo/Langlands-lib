@@ -94,6 +94,32 @@ comparison changes from S to P. The
 categorical equivalence and inverse functor remain separate obligations with
 the dated statuses below; every other row retains its earlier dated status.
 
+The proof-status update of 17 November 2026, by Worker 4, checks the rows of the
+eight statements in the table below against Library
+`ab9053b1751d6b6557d044c38c04e4c8a67dfffc`. For each statement the Library has a
+theorem whose type is exactly that statement, proved by the task that the row named.
+Each proof candidate is accepted under `lean.proof@1`, with machine validation and
+independent approval without qualifications. Integration first published all eight
+at Library `2613dbbf784309977c42d9252b78c1e1cd40be63`. At the checked commit the Lean
+and Markdown files of each proof module have the SHA256 recorded in the accepted
+candidate and are byte-identical to `2613dbbf`; Worker 4 found no `sorry`, `admit`
+or `axiom` in them. Only these eight statements change from S to P. The rows
+VI.1.1 Remark, VI.2.1 Remark 1, VI.6.1 Theorem, VI.6.1 Proposition and VI.10.6
+Corollary, the framework comparisons F2–F4 and the gap list use this update; every
+other row retains its earlier dated status. Proof modules are under
+`Langlands/Representation/`.
+
+| Row | Statement | Theorem | Proof module | Proof candidate | Reviewer | Integration ID | Task |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| VI.1.1 Remark, first sentence | `RP.LeviUnnormalizedInductionRightAdjointStatement` | `leviUnnormalizedInductionRightAdjoint` | [Exponents/LeviUnnormalizedInductionRightAdjointProof](../../Langlands/Representation/Exponents/LeviUnnormalizedInductionRightAdjointProof.md) | `7691cee0-a189-4a38-87b2-b1563003ab86` | Reviewer 6765 | `7c2a99c22f234838bc9751f63ac302c4` | Task 6597 |
+| VI.2.1 Remark 1 | `RP.SupercuspidalStandardParabolicCriterionStatement` | `supercuspidalStandardParabolicCriterion` | [Exponents/SupercuspidalStandardParabolicCriterionProof](../../Langlands/Representation/Exponents/SupercuspidalStandardParabolicCriterionProof.md) | `adc29e84-bd8b-4b83-8965-ea05b82f4a2e` | Reviewer 6773 | `3850695b62074abeaf4284fb865ff5e8` | Task 6598 |
+| VI.6.1 Theorem | `RP.RepresentedIwahoriContractionStatement` | `representedIwahoriContraction` | [Exponents/RepresentedIwahoriContractionProof](../../Langlands/Representation/Exponents/RepresentedIwahoriContractionProof.md) | `8674f34d-a41d-411c-b090-845bf7cba165` | Reviewer 6614 | `5642c824885b480caa651ac409d94069` | Task 6533 |
+| VI.6.1 Theorem | `RP.RepresentedJacquetLemmaStatement` | `representedJacquetLemma` | [Exponents/RepresentedJacquetLemmaProof](../../Langlands/Representation/Exponents/RepresentedJacquetLemmaProof.md) | `072c5b3a-6ef3-45d1-a7f8-5ec788c60c58` | Reviewer 6800 | `6545e1652f2d43d998aab7674450eaee` | Task 6533 |
+| VI.6.1 Proposition | `RP.RepresentedChamberIwahoriContractionStatement` | `representedChamberIwahoriContraction` | [Exponents/RepresentedChamberIwahoriContractionProof](../../Langlands/Representation/Exponents/RepresentedChamberIwahoriContractionProof.md) | `357f8249-cbcc-4206-9e78-c9d893cc3f8f` | Reviewer 6745 | `833174eaac93494aa066f8fb5f84c4b8` | Task 6594 |
+| VI.6.1 Proposition | `RP.RepresentedCanonicalSectionStatement` | `representedCanonicalSection` | [Exponents/RepresentedCanonicalSectionProof](../../Langlands/Representation/Exponents/RepresentedCanonicalSectionProof.md) | `a96a253f-b9cb-4c71-959e-80e193122fff` | Reviewer 6767 | `3b4c4606d0114c70821263e29ed84ac6` | Task 6594 |
+| VI.6.1 Proposition, standard parabolics | `J.StandardIwahoriCanonicalSectionStatement` | `standardIwahoriCanonicalSection` | [Jacquet/StandardIwahoriCanonicalSectionProof](../../Langlands/Representation/Jacquet/StandardIwahoriCanonicalSectionProof.md) | `547b9e62-4d3d-49c7-915b-93e42c08ae27` | Reviewer 6602 | `01a425b180654ef695565817a91979df` | Task 6530 |
+| VI.10.6 Corollary | `CS.StandardLeviCompactInheritanceStatement` | `standardLeviCompactInheritance` | [CuspidalSupport/StandardLeviCompactInheritanceProof](../../Langlands/Representation/CuspidalSupport/StandardLeviCompactInheritanceProof.md) | `bd75a482-660c-48ac-b302-a1c8cb7546d8` | Reviewer 6668 | `8d836ee04dd04ccdb57f2eaa97cd37d7` | Task 6560 |
+
 The proof-status update of 14 November 2026, by Worker 4, checks every row with
 status S against Library `a163f87c7a46874f408deed853c10c83207e9f69`. Every statement
 named in these rows was compared with the Library theorems whose type is exactly that
@@ -193,7 +219,7 @@ Status codes:
 | VI.1.1 Theorem | 135 / 141 | `RP.LeviUnnormalizedFrobeniusReciprocityStatement`, `RP.LeviUnnormalizedFunctorsExactStatement` | P: `leviUnnormalizedFrobeniusReciprocity`, `leviUnnormalizedFunctorsExact` |
 | VI.1.1 Corollary | 135 / 141 | `RP.LeviUnnormalizedFunctorsPreserveLimitsStatement` | P: `leviUnnormalizedFunctorsPreserveLimits` |
 | VI.1.1 Remark, conclusion (`Ind_P^G` preserves colimits) | 135 / 141 | `RP.LeviUnnormalizedFunctorsPreserveLimitsStatement`, `RP.LeviUnnormalizedParabolicStatements` | P: `leviUnnormalizedFunctorsPreserveLimits` |
-| VI.1.1 Remark, first sentence (`Ind_P^G` has a right adjoint) | 135 / 141 | `RP.LeviUnnormalizedInductionRightAdjointStatement` (`Exponents/RepresentedParabolicRemarksStatements`): for every actual rational parabolic, `Ind_P^G` (pullback along the Levi-point equivalence, inflation, then smooth induction from `P(F)`, with no normalizing character) satisfies `IsLeftAdjoint` | S: Task 6597. The statement asserts existence of a right adjoint; it does not name the source's construction from `I_M^P`, the pseudo-forgetful functor and a twist |
+| VI.1.1 Remark, first sentence (`Ind_P^G` has a right adjoint) | 135 / 141 | `RP.LeviUnnormalizedInductionRightAdjointStatement` (`Exponents/RepresentedParabolicRemarksStatements`): for every actual rational parabolic, `Ind_P^G` (pullback along the Levi-point equivalence, inflation, then smooth induction from `P(F)`, with no normalizing character) satisfies `IsLeftAdjoint` | P: `leviUnnormalizedInductionRightAdjoint` (`Exponents/LeviUnnormalizedInductionRightAdjointProof`; Task 6597, proof-status update of 17 November 2026). The statement asserts existence of a right adjoint; it does not name the source's construction from `I_M^P`, the pseudo-forgetful functor and a twist |
 | VI.1.2 normalizations (VI.1.2.1)–(VI.1.2.2) | 135 / 141 | normalized functors of the represented-parabolic interface (`Langlands/Representation/Aubert/General/Parabolic`) | D |
 | VI.1.2 Remark (convention for `δ_P`) | 136 / 142 | modulus conventions recorded in `Aubert/General/Parabolic.md` | X |
 | VI.1.2 Proposition | 136 / 142 | `RP.LeviFrobeniusReciprocityStatement`, `RP.LeviParabolicFunctorsExactStatement` | P: `leviFrobeniusReciprocity`, `leviParabolicFunctorsExact` |
@@ -207,7 +233,7 @@ Status codes:
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
 | VI.2.1 Definition | 137 / 143 | `RP.IsSupercuspidal` (`Exponents/LeviSupercuspidalInductionSupport`) | D |
-| VI.2.1 Remark 1, first block (standard parabolics suffice) | 137 / 143 | `RP.SupercuspidalStandardParabolicCriterionStatement` (`Exponents/RepresentedParabolicRemarksStatements`): for a maximal split torus `i` and a generic cocharacter `ν`, `RP.IsSupercuspidal A` holds iff the normalized Jacquet module of `A` vanishes along every proper actual rational parabolic whose parabolic and Levi subgroup functors are `standardParabolic i ν J` and `standardLevi i ν J` for some `J ⊆ Δ` | S: Task 6598 |
+| VI.2.1 Remark 1, first block (standard parabolics suffice) | 137 / 143 | `RP.SupercuspidalStandardParabolicCriterionStatement` (`Exponents/RepresentedParabolicRemarksStatements`): for a maximal split torus `i` and a generic cocharacter `ν`, `RP.IsSupercuspidal A` holds iff the normalized Jacquet module of `A` vanishes along every proper actual rational parabolic whose parabolic and Levi subgroup functors are `standardParabolic i ν J` and `standardLevi i ν J` for some `J ⊆ Δ` | P: `supercuspidalStandardParabolicCriterion` (`Exponents/SupercuspidalStandardParabolicCriterionProof`; Task 6598, proof-status update of 17 November 2026) |
 | VI.2.1 Remark 2, first block (subquotients) | 137 / 143 | `RP.IsSupercuspidal.of_isSubquotient`; conjunct of `RP.SupercuspidalRemarksStatements` | P (theorem); S: task 63db6d7b for the conjunction |
 | VI.2.1 Theorem, (a) ⇔ (c) | 137 / 143 | `RPF.RationalCuspidalCompactRestrictionStatement`, `RPF.RationalCompactRestrictionCuspidalStatement` (standard-family cuspidality, `rationalPointTopology`) | P: `rationalCuspidalCompactRestriction`, `rationalCompactRestrictionCuspidal` |
 | VI.2.1 Theorem, (a) ⇔ (b) | 137 / 143 | `RP.SupercuspidalCoefficientCriterionStatement`; unitary irreducible case `RP.SupercuspidalUnitaryCoefficientCompactSupportStatement` | S: tasks ebdfeaa3, 1aa60759 |
@@ -274,9 +300,9 @@ Status codes:
 
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
-| VI.6.1 Theorem (Jacquet lemma, admissible `V`) | 176 / 182 | Source scope: `RP.RepresentedJacquetLemmaStatement` (`Exponents/RepresentedIwahoriDecompositionStatements`): actual rational parabolics `P = MN`, `P̄ = MN̄` with the same Levi and `P(F) ∩ P̄(F) = M(F)`, every compact open `K = (K ∩ N̄(F))(K ∩ M(F))(K ∩ N(F))`, every admissible `V`; with the derived `RP.RepresentedIwahoriContractionStatement` (large powers of an element of `A^{++}` satisfy `IsIwahoriContraction`). Earlier forms: `RPF.GeneralizedJacquetLemmaStatement` (all smooth `V`, dynamic parabolics, `K` admitting an `M`-central `g` with `IsIwahoriContraction`) and `Langlands.Jacquet.fixedJacquetMap_surjective_of_iwahoriContraction` (`Jacquet/IwahoriContractionAdmissibility`, given one explicit contraction) | S: Task 6533 for both represented statements. The dynamic statement is S (task cac6f709); the earlier admissible form is P under its explicit contraction hypothesis |
+| VI.6.1 Theorem (Jacquet lemma, admissible `V`) | 176 / 182 | Source scope: `RP.RepresentedJacquetLemmaStatement` (`Exponents/RepresentedIwahoriDecompositionStatements`): actual rational parabolics `P = MN`, `P̄ = MN̄` with the same Levi and `P(F) ∩ P̄(F) = M(F)`, every compact open `K = (K ∩ N̄(F))(K ∩ M(F))(K ∩ N(F))`, every admissible `V`; with the derived `RP.RepresentedIwahoriContractionStatement` (large powers of an element of `A^{++}` satisfy `IsIwahoriContraction`). Earlier forms: `RPF.GeneralizedJacquetLemmaStatement` (all smooth `V`, dynamic parabolics, `K` admitting an `M`-central `g` with `IsIwahoriContraction`) and `Langlands.Jacquet.fixedJacquetMap_surjective_of_iwahoriContraction` (`Jacquet/IwahoriContractionAdmissibility`, given one explicit contraction) | P for both represented statements: `representedJacquetLemma` and `representedIwahoriContraction` (`Exponents/RepresentedJacquetLemmaProof`, `Exponents/RepresentedIwahoriContractionProof`; Task 6533, proof-status update of 17 November 2026). The dynamic statement is S (task cac6f709); the earlier admissible form is P under its explicit contraction hypothesis |
 | VI.6.1 Corollary | 176 / 182 | `RP.ArbitraryParabolicJacquetAdmissibilityStatement` | P: `arbitraryParabolicJacquetAdmissibility` |
-| VI.6.1 Proposition and (VI.6.1.2) | 177 / 183 | Arbitrary parabolics: `RP.RepresentedCanonicalSectionStatement` (`Exponents/RepresentedCanonicalSectionStatements`; the setting of the VI.6.1 Theorem row, admissible `V`, one `ε ≤ 1` and one section `s` for all `t ∈ A^+(ε)`), with the derived `RP.RepresentedChamberIwahoriContractionStatement` (every `t ∈ A^+(ε)` satisfies `IsIwahoriContraction`). Standard parabolics: `J.StandardIwahoriCanonicalSectionStatement` (every compact open `K` with the ordered Iwahori decomposition); earlier `J.StandardCanonicalSectionStatement` | S: Task 6594 for the two represented statements; Task 6530 for the standard Iwahori-only statement. The earlier basis-member special case is P: `standardCanonicalSection` |
+| VI.6.1 Proposition and (VI.6.1.2) | 177 / 183 | Arbitrary parabolics: `RP.RepresentedCanonicalSectionStatement` (`Exponents/RepresentedCanonicalSectionStatements`; the setting of the VI.6.1 Theorem row, admissible `V`, one `ε ≤ 1` and one section `s` for all `t ∈ A^+(ε)`), with the derived `RP.RepresentedChamberIwahoriContractionStatement` (every `t ∈ A^+(ε)` satisfies `IsIwahoriContraction`). Standard parabolics: `J.StandardIwahoriCanonicalSectionStatement` (every compact open `K` with the ordered Iwahori decomposition); earlier `J.StandardCanonicalSectionStatement` | P for the two represented statements: `representedCanonicalSection` and `representedChamberIwahoriContraction` (`Exponents/RepresentedCanonicalSectionProof`, `Exponents/RepresentedChamberIwahoriContractionProof`; Task 6594). P for the standard Iwahori-only statement: `standardIwahoriCanonicalSection` (`Jacquet/StandardIwahoriCanonicalSectionProof`; Task 6530). Both from the proof-status update of 17 November 2026. The earlier basis-member special case is P: `standardCanonicalSection` |
 | VI.6.2 Lemma | 178 / 184 | `AG.DynamicInductionIrreducibleFiniteLengthStatement`; main assertion `RP.LeviInductionFiniteLengthStatement`, `AG.DynamicInductionFiniteLengthStatement` | S: tasks 02257068, 9b0a1303, 174d2de0 |
 | VI.6.3 Theorem (Howe) | 178 / 184 | `AG.RationalPointsFiniteLengthAdmissibleStatement`, `Langlands.SmoothRep.RationalPointsFinitelyGeneratedAdmissibleFiniteLengthStatement` | S: tasks 96949545, 03a0d235; finite length ⇒ finite type is immediate (a finite-length object is Noetherian) |
 | VI.6.3 Lemma | 178 / 184 | `Langlands.Jacquet.FixedVectorsGenerationStatement` (theorem `fixedVectorsGeneration`), `NormalizedJacquetBridge.normalized_generation` | P |
@@ -332,7 +358,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.9.1 Theorem (generalized Jacquet lemma) | 195 / 201 | Source scope: `RP.RepresentedGeneralizedJacquetLemmaStatement` (`Exponents/RepresentedIwahoriDecompositionStatements`; the setting of the VI.6.1 Theorem row, every smooth `V`). Dynamic form: `RPF.GeneralizedJacquetLemmaStatement` (dynamic parabolics; `K` admitting an `M`-central `g` with `IsIwahoriContraction`) | S: Task 6534; dynamic form S (task cac6f709) |
 | VI.9.1 first Lemma (`V(N) ∩ V^K = ⋃ ker A^i`) | 196 / 202 | `powerKernelSup_eq_ker_of_iwahoriContraction` (`Jacquet/IwahoriContractionAdmissibility`), `fixedJacquetMap_kernel_locally_nilpotent` (`Jacquet/CompressionLocalization`) | P |
 | VI.9.1 second Lemma (localization) | 196 / 202 | `compressionJacquetLocalizationEquiv`, `localizationEquivOfKernelExhaustion` | D / P (proved construction) |
-| VI.9.1 Proposition (uniform stabilization) | 197 / 203 | Arbitrary parabolics: `RP.RepresentedUniformCompressionStabilizationStatement` (`Exponents/RepresentedCanonicalSectionStatements`; every compact open `K` and every `M(F)`-central `g` with `IsIwahoriContraction`; `b` chosen after `K` and `g`, for all smooth `V`; it adds the conclusions `ker j = V_0^K` and `j` bijective on `V_*^K` drawn at the end of the proof of the Theorem). Dynamic form: `RPF.UniformCompressionStabilizationStatement` (`b` chosen after `χ`, `K` and `g`) | S: Task 6596; dynamic form S (task 47e556e6). C for the source's class of `K`: by `RP.RepresentedIwahoriContractionStatement`, every `K` with an Iwahori decomposition admits such a `g`. The source's `b = b(G, K)` follows from the bound clauses of the next row together with VI.2.3 |
+| VI.9.1 Proposition (uniform stabilization) | 197 / 203 | Arbitrary parabolics: `RP.RepresentedUniformCompressionStabilizationStatement` (`Exponents/RepresentedCanonicalSectionStatements`; every compact open `K` and every `M(F)`-central `g` with `IsIwahoriContraction`; `b` chosen after `K` and `g`, for all smooth `V`; it adds the conclusions `ker j = V_0^K` and `j` bijective on `V_*^K` drawn at the end of the proof of the Theorem). Dynamic form: `RPF.UniformCompressionStabilizationStatement` (`b` chosen after `χ`, `K` and `g`) | S: Task 6596; dynamic form S (task 47e556e6). C for the source's class of `K`: by `RP.RepresentedIwahoriContractionStatement`, proved by `representedIwahoriContraction` (VI.6.1 Theorem row), every `K` with an Iwahori decomposition admits such a `g`. The source's `b = b(G, K)` follows from the bound clauses of the next row together with VI.2.3 |
 | VI.9.1 Proposition, localization at `A` is `(V^K_*, A)` | 197 / 203 | the proved C.II theorem `Langlands.Renard.EndomorphismLocalization.stablePowerImageStatement` (`Algebra/RenardLocalizationStabilityProof`), for any endomorphism with a stable power | C: derived from that theorem and the Proposition's stable power `A^b`; the application to `compressedAction` is not published as a separate statement |
 | VI.9.1 Proposition, `b ≤ c(G, K)`; Remarks 1–3 | 197–198 / 203–204 | `RPF.GeneralizedJacquetRemarksStatement` (bound, Remarks 1–2, dynamic parabolics), `RP.GeneralizedJacquetContractingRangeStatement` (Remark 3) (`Exponents/GeneralizedJacquetRemarksStatements`, published); bound and Remarks 1–2 along actual rational parabolics: `RP.RepresentedGeneralizedJacquetRemarksStatement` (`Exponents/RepresentedCanonicalSectionStatements`) | S: task 7a03c792 for the two published statements; Task 6596 for the represented statement |
 | VI.9.2 (VI.9.2.2) stability for the universal induced family | 198–199 / 204–205 | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` and the VI.9.1–VI.9.3 map (`uniform-compression-progress.md`) | St: step of the VI.9.1 Proposition; Jacquet-family finiteness P |
@@ -364,7 +390,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.10.6 Theorem, Proposition | 213–214 / 219–220 | `CS.CompactOpenInertialFinitenessStatement`, `J.FixedVectorCategoryStatements` | S: tasks f504c0e1, 423c3289 |
 | VI.10.6 Proposition (i), the decomposition `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, and (iii)–(iv) for the source's class of `K` | 214 / 220 | `J.StandardIwahoriFixedVectorBlockDecompositionStatement` (a smooth representation is generated by its `K`-fixed vectors iff it is a coproduct of its components in the Bernstein blocks indexed by `B(G)_K`), `J.StandardIwahoriFixedVectorCategoryStatement` ((iii)–(iv) with only the ordered Iwahori decompositions on `K`), and the proved implication `J.fixedVectorCategoryStatements_of_standardIwahori` to the earlier basis-member conclusion (`Jacquet/StandardIwahoriFixedVectorCategoryStatements`) | S: published candidate `45eed456` (Reviewer 2414); Task 6639 for the block decomposition statement, Task 6640 for (iii)–(iv) |
 | VI.10.6 Proposition (ii) (inverse `M ↦ H(G) ⊗_{H(G,K)} M`) | 214 / 220 | `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; the Haar Hecke algebra `H(G)`, its corner `H(G, K) = e_K H(G) e_K`, the III.1.4 functor, the I.3.1 corner functor and the I.3.2 induction functor) | S: Task 6599 |
-| VI.10.6 Corollary (`B(M)_{K_M} = i_{MG}^{-1}(B(G)_K)`) | 215 / 221 | `CS.StandardLeviCompactInheritanceStatement` (the hypotheses on `K` pass to `K ∩ M`), `CS.StandardRepresentativeFixedVectorCriterionStatement`, `CS.StandardLeviFixedVectorSupportStatement` (`CuspidalSupport/StandardLeviFixedVectorSupportStatements`; standard Levi subgroups `M_J`; `B(M)` and `i_{MG}` through representatives, as in `CS.BernsteinInductionRestrictionStatement`) | S: Tasks 6560, 6561, 6562. `B(M)` as a type and `i_{MG}` as a function are not defined |
+| VI.10.6 Corollary (`B(M)_{K_M} = i_{MG}^{-1}(B(G)_K)`) | 215 / 221 | `CS.StandardLeviCompactInheritanceStatement` (the hypotheses on `K` pass to `K ∩ M`), `CS.StandardRepresentativeFixedVectorCriterionStatement`, `CS.StandardLeviFixedVectorSupportStatement` (`CuspidalSupport/StandardLeviFixedVectorSupportStatements`; standard Levi subgroups `M_J`; `B(M)` and `i_{MG}` through representatives, as in `CS.BernsteinInductionRestrictionStatement`) | `CS.StandardLeviCompactInheritanceStatement` P: `standardLeviCompactInheritance` (`CuspidalSupport/StandardLeviCompactInheritanceProof`; Task 6560, proof-status update of 17 November 2026). The other two statements S: Tasks 6561, 6562. `B(M)` as a type and `i_{MG}` as a function are not defined |
 | VI.10.7 Lemma, Theorem | 215 / 221 | `CS.FiniteTypeComponentCharacterizationStatement`, `RP.FiniteTypeCenterAdmissibleStatement` | S: task f504c0e1 |
 | VI.10.7 Corollary | 216 / 222 | `RP.HeckeAlgebraCenterFiniteStatement` | S: task aea42eff |
 | VI.10.7 Proposition | 216 / 222 | `CS.FiniteTypeComponentCharacterizationStatement` | S: task f504c0e1 |
@@ -381,7 +407,9 @@ printed VI.8 assertions to their units; this table gives the headed items.
 
 These comparisons record the scope and proof obligations of the rows above. The
 gap update of 14 November 2026 states the comparisons F2 and F4 and lists the
-proof tasks of F1 and F3. All their statements have open proofs.
+proof tasks of F1 and F3. The proof-status update of 17 November 2026 records the
+proofs of the F2 contraction statements, of the VI.6.1 represented statements, of the
+F3 canonical section and of F4; the other statements of F1–F3 have open proofs.
 
 - **F1. Bernstein blocks.** The published blocks (`BernsteinBlock`,
   `BernsteinSaturatedBlock`) use the induction-occurrence support relation. The
@@ -409,7 +437,11 @@ proof tasks of F1 and F3. All their statements have open proofs.
   (unit table above) are stated along every actual rational parabolic for such `K`.
   `RP.RepresentedIwahoriContractionStatement` and
   `RP.RepresentedChamberIwahoriContractionStatement` assert that such `K` admit
-  contracting elements. Their proofs are open: Tasks 6533, 6534, 6594 and 6596.
+  contracting elements. Both are proved: `representedIwahoriContraction` (Task 6533)
+  and `representedChamberIwahoriContraction` (Task 6594), with the VI.6.1 represented
+  statements `representedJacquetLemma` and `representedCanonicalSection`
+  (proof-status update of 17 November 2026). The represented VI.9.1 statements of
+  Tasks 6534 and 6596 have open proofs.
 - **F3. V.5.2 basis members: statement gap closed for standard parabolics.**
   The published `J.StandardIwahoriCanonicalSectionStatement`,
   `J.StandardIwahoriFixedVectorSubquotientGenerationStatement` and
@@ -425,13 +457,15 @@ proof tasks of F1 and F3. All their statements have open proofs.
   implications to the earlier basis-member versions by extracting the Iwahori
   conjunct. These are conditional implications, not proofs of the three new
   statements. Their proofs are Tasks 6530, 6535 and 6536, published by Worker 1222.
+  Task 6530's proof `standardIwahoriCanonicalSection` is published (proof-status
+  update of 17 November 2026); Tasks 6535 and 6536 remain open.
   The arbitrary-parabolic version of the VI.6.1 Proposition is stated under F2. The
   Haar-Hecke algebra and action comparison is proved (17 November 2026 update
   above). The categorical equivalence and inverse functor retain their separate
   proof obligations in the VI.9.4 Proposition row.
 - **F4. Represented versus standard parabolics.** For supercuspidality, the
   comparison is `RP.SupercuspidalStandardParabolicCriterionStatement` (VI.2.1
-  Remark 1 row; Task 6598).
+  Remark 1 row), proved by `supercuspidalStandardParabolicCriterion` (Task 6598).
 
 ## Genuine gaps of Chapter VI
 
@@ -440,10 +474,12 @@ The earlier audit listed seven gaps. Each one is now stated. The update of
 claim that Chapter VI has no other gaps. The individual rows remain authoritative.
 
 1. VI.1.1 Remark, first sentence (right adjoint of `Ind_P^G`):
-   `RP.LeviUnnormalizedInductionRightAdjointStatement`, Task 6597. The source's
-   construction of the adjoint is not named.
+   `RP.LeviUnnormalizedInductionRightAdjointStatement`, proved by
+   `leviUnnormalizedInductionRightAdjoint` (Task 6597). The source's construction of
+   the adjoint is not named.
 2. VI.2.1, first Remark of the first block (standard parabolics suffice):
-   `RP.SupercuspidalStandardParabolicCriterionStatement`, Task 6598.
+   `RP.SupercuspidalStandardParabolicCriterionStatement`, proved by
+   `supercuspidalStandardParabolicCriterion` (Task 6598).
 3. VI.10.2 Theorem: the quasi-inverse `M ↦ M ⊗_{R_Ω} Π_Ω` was not identified in the
    pinned Library. It is now stated by the published
    `BernsteinBlockTensorQuasiInverseStatement` (candidate `a4b157d0`, Library `79de65ce`),
@@ -451,7 +487,8 @@ claim that Chapter VI has no other gaps. The individual rows remain authoritativ
 4. VI.10.6 Corollary: `CS.StandardLeviCompactInheritanceStatement`,
    `CS.StandardRepresentativeFixedVectorCriterionStatement` and
    `CS.StandardLeviFixedVectorSupportStatement`, Tasks 6560–6562, for standard Levi
-   subgroups and through representatives of `B(M)`.
+   subgroups and through representatives of `B(M)`. The first is proved by
+   `standardLeviCompactInheritance` (Task 6560); the other two have open proofs.
 5. VI.10.7 Variant: `AF.FamilyFiniteTypeCenterAdmissibleStatement`,
    `AF.FamilyFiniteTypeComponentCharacterizationStatement` and
    `AF.FamilyLeviInductionFiniteTypeStatement`, Tasks 6565–6567.
@@ -466,6 +503,10 @@ claim that Chapter VI has no other gaps. The individual rows remain authoritativ
    represented statements of F2, Tasks 6533, 6534, 6594 and 6596. The source's class
    of `K` for standard parabolics in VI.6.1 Proposition, VI.6.3 Corollary and VI.9.4:
    the F3 targets, Tasks 6530, 6535 and 6536. The block comparison F1: Task 6571.
+   Tasks 6533, 6594 and 6530 are proved (proof-status update of 17 November 2026):
+   the represented VI.6.1 Theorem and Proposition statements and the F3 canonical
+   section have proofs. The represented VI.9.1 statements (Tasks 6534, 6596) and
+   Tasks 6535, 6536 and 6571 remain open.
 
 The update also states VI.10.6 Proposition (i), the decomposition
 `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, which the earlier statement
