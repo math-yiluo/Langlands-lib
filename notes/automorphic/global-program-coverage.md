@@ -2351,3 +2351,53 @@ The shared DAG records the drafts on the corresponding proof nodes
 (revisions 310–349), including `proof.cuspidal-finite-pair-regularity` (Task
 7358) and `proof.tc-automorphic-rigidity`. Neither track of the program is
 complete.
+
+## 17 November 2026 (later) complete drafts for Getz–Hahn Theorem 11.5.2, p-adic case, and finite pair regularity
+
+Worker 3657 checked this section against Library
+`fcb85a7ef43356fec01e6ccf1605f08568c08cb0` on 17 November 2026. The
+conventions of the two previous sections apply: a shared draft is an
+unreviewed TaskHub draft revision, not a candidate, and "check" is Worker
+3657's own private `lean_check` record in environment `5c94c648`. Every theorem
+named below uses only `propext`, `Classical.choice` and `Quot.sound`. Outside
+statement modules, no Lean file of Library `fcb85a7e` names
+`UnitaryGenericLPolynomialNonvanishingStatement`,
+`CuspidalFinitePairRegularityStatement`, `UnitaryEqualRankConvergenceStatement`
+or the statements of Tasks 5921 and 7005, and the only files naming the statement
+of Task 5816 are the two imports noted in the 15 November section.
+
+### New complete drafts
+
+| Task | Draft | Main theorem |
+| --- | --- | --- |
+| Task 6387, `9dcb3206-7035-4d1c-9cea-f620e42f9628` (GH Theorem 11.5.2, p-adic case) | rev 1, `7598cd1e` | `Langlands.RankinSelberg.UnitaryGeneric.unitaryGenericLPolynomialNonvanishing : UnitaryGenericLPolynomialNonvanishingStatement.{uF, uV, uW}`, with no hypotheses. Seven modules under `Langlands/Representation/RankinSelberg/`: `UnitaryWhittakerTorusSum` (Jacquet–Shalika I, (1.3.1), in torus form, from the published `padicCellBound`), `UnitaryWhittakerRestriction`, `UnitaryWeightedWhittakerSquare` (exponents `a ≥ 1/2`), `UnitaryEqualRankAnalytic` and `UnitaryZeroRowAnalytic` (convergence on `Re s ≥ 1`, holomorphy on `Re s > 1`), `BoundaryRationalRegularity` (regularity of rational continuations on `Re s = 1` from boundedness on a strip) and the assembly `UnitaryGenericLPolynomialNonvanishingProof`. The draft also proves the published `UnitaryEqualRankConvergenceStatement` (Jacquet–Shalika I, Proposition (1.5)(i)) as `unitaryEqualRankConvergence`. Checks `ffc7fc36`, `2bf88205`, `dddc6727` |
+| Task 7358, `d1aad7bf-655e-4219-9022-9a2bdba3abe8` (finite pair regularity) | rev 2, `e61d62f1` | `Langlands.Global.cuspidalFinitePairRegularity : CuspidalFinitePairRegularityStatement.{u, uQ}`, with no hypotheses: the revision 1 reduction applied to the Task 6387 draft proof, whose modules are copied. Check `4ef06a63` |
+
+Neither task has a member. Worker 3657 cannot submit these proofs while
+executing Task 3657 and asked the operator to assign executors (request
+`7a6a0449d7d659e894ab371e30e599f0`, pending), also for the earlier complete
+drafts of the 15 November section.
+
+### Updated partial drafts
+
+| Task | Draft | Main theorem and remaining inputs |
+| --- | --- | --- |
+| Task 6446 | rev 5, `e9650f8d` | `cuspidalSpectralRigidity_of_analytic_inputs` and `cuspidalSpectralRigidityTC_of_analytic_inputs`: `CuspidalSpectralRigidityStatement` from the targets of Tasks 5921, 5816 and 7005, and its totally complex form with `CuspidalPairPoleTCStatement` in place of the target of Task 5921. Check `9364be54` |
+| Task 6388 | rev 5, `e010a7c7` | `cuspidalStrongMultiplicityOne_of_analytic_inputs`, from the targets of Tasks 5921, 5816 and 7005. Check `91118822` |
+| Task 6447 | rev 6, `07667acd` | `cuspidalInducingDataRigidity_of_analytic_inputs`, from the targets of Tasks 5921, 5816 and 7005. Check `f20135b5` |
+
+Each of these drafts copies the seven Task 6387 modules.
+
+### Consequences
+
+Once the drafts are submitted, reviewed and published, the p-adic regularity
+input leaves the list of the previous section. Jacquet–Shalika rigidity, strong
+multiplicity one (GH Theorem 11.7.2) and the rigidity of cuspidal inducing data
+(GH Theorem 10.7.2) then depend only on the targets of Tasks 5921, 5816 and
+7005. The totally complex form of Jacquet–Shalika rigidity (Harris's input 9)
+depends only on a proof of `CuspidalPairPoleTCStatement` and the targets of
+Tasks 5816 and 7005. None of these three remaining statements is proved in
+Library `fcb85a7e`.
+
+The shared DAG records these drafts at revision 372. Neither track of the
+program is complete.
