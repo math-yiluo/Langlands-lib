@@ -1,0 +1,9 @@
+# Parabolic realization by the reduced inverse image
+
+`QuotientSubgroupRealization.HasParabolicImage q j` means that some parabolic embedding upstairs admits a surjective homomorphism to the source of `j` with the required commuting square. It is a supplied-image predicate; target parabolicity is a hypothesis of the construction theorem below.
+
+`QuotientSubgroupRealization.exists_parabolic_image_of_borel_realization` formalizes the reduced-inverse-image argument for the parabolic converse in Milne, *Algebraic Groups* (2017), Proposition 17.20, pp.357–358. It is an internal reduction: it assumes that each prescribed Borel downstairs is the image of a Borel upstairs. The ambient map is surjective, its source is locally of finite type, and the ground field is algebraically closed.
+
+For a prescribed parabolic `j`, form the actual group-scheme inverse image and take its reduced subgroup. The resulting embedding upstairs is smooth and closed. The projection to `j` is surjective because the inverse-image projection is surjective and passage to the reduction preserves the underlying point set. Choose a Borel inside `j` and realize it as the image of a source Borel. Its inclusion factors through the actual inverse image and then through the reduction, since its source is reduced. Hence the reduced inverse image contains a Borel of the ambient source. Base change of that witness to the algebraic closure gives exactly the Library's geometric-Borel definition of parabolicity. The constructed inclusion and projection retain the required commuting square.
+
+The proof uses the published reduced-subgroup and actual subgroup-preimage constructions. It does not claim a smooth full inverse image or an equality on nonreduced tests between the full inverse image and its reduction. Flatness of the ambient map is unnecessary for this reduction.

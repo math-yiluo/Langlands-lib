@@ -1,0 +1,13 @@
+# Full original parabolic actions on canonical face-weight terms
+
+For a separated group scheme, the actual limit decomposition of each parabolic point shows that a subgroup normalized by both the contracting group and the centralizer is normalized by the full parabolic. The proof writes a parabolic point `p` as `(p * limit(p)⁻¹) * limit(p)` and applies the two normalization assertions in sequence. This is a statement on every scheme test, without a field assumption.
+
+For supplied root-weight data inside an actual ambient group, the original commutator bounds already prove that each term is normal in the full auxiliary root-chart group. Its ambient image is therefore normalized by the actual contracting group represented by the positive term. When a coordinate cocharacter realizes a positive multiplier of the root weights, the ambient intrinsic-cutoff comparison also proves normalization by its actual centralizer. The limit decomposition combines these results in `range_ambientInclusion_isNormalizedBy_parabolic`.
+
+Now fix a nontrivial arbitrary commutative ring, an affine reductive group, a fibrewise maximal split torus, its supplied fibrewise root datum, actual root parametrizations, and a supplied split parabolic face chart. `range_inclusion_isNormalizedBy_originalParabolic` proves that every original unscaled face-weight term is normalized by the original actual parabolic on every scheme test. The positive-multiple face-height realization supplies the cocharacter, the exact root weights, and actual contracting representability. The proved equality of its actual parabolic with the original one then transfers normalization. A coordinate presentation of the affine ambient group is obtained from its affineness; it is not an extra existence premise.
+
+`originalParabolicAction` constructs the actual action of the original affine parabolic representative on each actual represented term by restricting ambient conjugation to this proved stable closed subgroup. The weights remain the original unscaled canonical face heights. No regularity of the original cocharacter, field, noetherian, or reducedness hypothesis is imposed; the nontrivial-ring premise is retained explicitly from the fixed-torus parabolic comparison.
+
+This unit supplies full original parabolic normalization. It does not establish different-torus overlap compatibility, effective global descent, or the final relative radical filtration statement.
+
+Provenance: internal combination of the original root commutator normality, actual ambient intrinsic cutoff identification, centralizer normalization for arbitrary test-dependent points, the dynamic limit decomposition, and actual face-cocharacter parabolic comparison.

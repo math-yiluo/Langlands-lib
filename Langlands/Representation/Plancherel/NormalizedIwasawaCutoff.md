@@ -1,0 +1,7 @@
+# Normalized cutoffs for arbitrary compact Iwasawa data
+
+This derived construction normalizes `1_(U K)` by the Haar mass of the actual projected compact open subgroup `projection(P ∩ K)`. It works in a second countable topological group with supplied Borel structures, a semidirect decomposition `P = M U`, and a compact open subgroup `K`. Closedness of `P` and continuity of its Levi projection make that subgroup compact; openness makes its Haar mass nonzero. Thus the normalizing mass is finite and positive.
+
+Under the actual factorization `G = M U K`, both left and right Levi orbit averages of this normalized cutoff equal one, with right invariance of the Levi Haar measure required for the right average. For two such semidirect decompositions with common Levi, the integrals of their normalized cutoffs times any nonnegative measurable left-Levi-invariant function agree. Ambient left-invariance and sigma-finiteness and two-sided Levi Haar invariance and sigma-finiteness are explicit hypotheses. No compact-splitting premise is used.
+
+The proof inserts the other cutoff's unit orbit average, uses Tonelli, translates by the Levi element in ambient left Haar, uses invariance of the function, and integrates the first cutoff's unit orbit average. This is an internal adaptation of the published `LeviInvariantIwasawaExchange.lintegral_cutoff_exchange` proof to the projected subgroup calculation from `ProjectedCompactCutoff`. Opposite Iwasawa coordinate pushforwards and complex integral adjunction remain separate work.

@@ -1,0 +1,139 @@
+# The Lie filtration `𝔤_{x,r}` on supplied data
+
+This module defines the Moy–Prasad lattices `𝔤_{x,r} ⊆ 𝔤 = Lie(G)` of
+Kaletha–Prasad §13.3. It follows the description in KP 13.3.3: `𝔤_{x,r}` is
+the `𝒪`-span of a lattice `z_r` in the Lie algebra of `Z = Z_G(S)` and of the
+Lie lattices `u_ψ` of the affine roots `ψ` with `ψ(x) ≥ r`. The lattices
+`z_r` and `u_ψ` are supplied data. The dependence on the point `x` is not
+supplied: it comes from the affine roots of the Library's building data.
+
+## Setting
+
+As in the Library's `Langlands.Geometry.Building.KPMoyPrasadFiltration`:
+`F` is a nonarchimedean local field with ring of integers `𝒪[F]`, `G` is a
+group scheme over `Spec F`, affine over `Spec F`, and
+`P : ParahoricBuildingData G` is the Library's building data. It contains the
+maximal split torus `P.i : S → G`, the centralizer `P.centralizer.j : Z → G`
+(a closed subgroup), the apartment `P.Apartment` and the affine roots
+`P.affineRoots` (KP Definition 6.3.4). These are affine functions
+`ψ : P.Apartment →ᵃ[ℝ] ℝ`. The derivative of an affine root is
+`ψ.linear = rootForm P.i α` for a relative root `α`.
+
+Lie algebras are the Library's `GenericLie 𝒪[F] H`
+(`IntegralModel.LieLattice`). This is the actual Lie algebra
+`Additive (lieKernel H F)` of a group `H` over `F`, viewed as an
+`𝒪[F]`-module. All lattices in this module are `𝒪[F]`-submodules of it.
+Differentials of homomorphisms are `GenericLie.map`.
+
+## Declarations
+
+In the namespace `Langlands.Geometry.Building.ParahoricBuildingData`:
+
+- `centralizer_isAffineHom` (instance): `Z` is affine over `Spec F`. The proof
+  uses that `P.centralizer.j` is a closed immersion.
+- `rootLieSpace P α : Submodule 𝒪[F] (GenericLie 𝒪[F] G)`, for a relative root
+  `α`, is the Lie algebra `u_α = Lie(U_α)` of the root group. It is the
+  Library's `RelativeRoot.positiveWeightSpan P.i α`, the span of the weight
+  spaces `𝔤_{nα}` for `n ≥ 1`, viewed as an `𝒪[F]`-submodule. For a connected
+  reductive group and a maximal split torus, as here, the Library's
+  `RelativeRoot.rootSubgroupRealization` proves that this span is the Lie
+  algebra of the root subgroup. `mem_rootLieSpace` unfolds membership, by
+  `Iff.rfl`.
+- `LieFiltrationData P` is the supplied data, a structure with these fields:
+  - `centralizerLie : NNReal → Submodule 𝒪[F] (GenericLie 𝒪[F] P.centralizer.Z)`,
+    the lattices `z_r ⊆ Lie(Z)`;
+  - `centralizerLie_antitone`: `z_s ⊆ z_r` for `r ≤ s`;
+  - `affineRootLie : P.affineRoots → Submodule 𝒪[F] (GenericLie 𝒪[F] G)`,
+    the lattices `u_ψ`;
+  - `affineRootLie_le`: if `ψ` has derivative `α`, then
+    `u_ψ ≤ P.rootLieSpace α`.
+
+In the namespace `LieFiltrationData`, for `L : P.LieFiltrationData`, a point
+`x : P.Apartment` and `r : NNReal`:
+
+- `centralizerLieImage r`, the image of `z_r` in `𝔤` under the differential of
+  `Z → G`. `centralizerLieImage_antitone`.
+- `rootLie x α r`, the root part `u_{α,x,r}`: the supremum (`𝒪`-span) of the
+  `u_ψ` over the affine roots `ψ` with derivative `α` and `ψ(x) ≥ r`.
+  - `affineRootLie_le_rootLie`: each such `u_ψ` lies in `u_{α,x,r}`.
+  - `rootLie_le_rootLieSpace`: `u_{α,x,r} ≤ u_α`.
+  - `rootLie_antitone`: `u_{α,x,s} ≤ u_{α,x,r}` for `r ≤ s`.
+- **`lieFiltration x r`** (the declaration of this unit), the lattice
+  `𝔤_{x,r}`. It is defined as
+  `centralizerLieImage r ⊔ ⨆ (ψ : P.affineRoots) (_ : r ≤ ψ x), u_ψ`, the
+  `𝒪`-span of `z_r` and of the `u_ψ` for `ψ ∈ Ψ_{x,r}`.
+  - `centralizerLieImage_le_lieFiltration`, `affineRootLie_le_lieFiltration`
+    and `rootLie_le_lieFiltration` place the pieces in `𝔤_{x,r}`.
+  - `lieFiltration_eq_sup_rootLie`:
+    `𝔤_{x,r} = z_r ⊔ ⨆_α u_{α,x,r}`. Every affine root has a derivative `α`,
+    taken from the definition of `P.affineRoots`.
+  - `lieFiltration_antitone`: `𝔤_{x,s} ≤ 𝔤_{x,r}` for `r ≤ s`. Both `z_r` and
+    the index set `Ψ_{x,r}` decrease as `r` grows.
+- `lieFiltrationPlus x r`, the lattice `𝔤_{x,r+} = ⋃_{s > r} 𝔤_{x,s}`. It is
+  defined as the supremum of submodules over `s > r`. For a decreasing family
+  this supremum is KP's union; the module does not state that separately. `lieFiltrationPlus_le` gives `𝔤_{x,r+} ≤ 𝔤_{x,r}`, and
+  `lieFiltration_le_lieFiltrationPlus` gives `𝔤_{x,s} ≤ 𝔤_{x,r+}` for `r < s`.
+
+## Comparison with Kaletha–Prasad
+
+KP 13.3.1 (printed p. 470; PDF p. 501) defines `𝔤_{x,r}`, for `r ≥ 0`, as the
+Lie algebra of the group scheme `𝒢_{x,r}` attached to the constant concave
+function `r` in §8.5. It then sets `𝔤_{x,r+} = ⋃_{s>r} 𝔤_{x,s}`. KP 13.3.3
+(printed pp. 470–471; PDF pp. 501–502) gives the description used here. "Given
+an affine root `ψ` with derivative `a ∈ Φ`, … let `u_ψ` be the Lie algebra of
+`𝒰_ψ`. … Let `z_r` be the Lie algebra of `𝒵_r`, a lattice in `z`. Then
+`𝔤_{x,r}` is the `o`-span of `z_r` and `u_ψ` for all `ψ ∈ Ψ_{x,r}`." Here
+`Ψ_{x,r} = {ψ ∈ Ψ | ψ(x) ≥ r}` (KP 13.2.1, printed p. 468; PDF p. 499). The
+group-side analogue in the Library is `CentralizerFiltration.moyPrasad`
+(KP Definition 13.2.1). It is generated by the supplied `Z(F)_r` and the
+filtration groups of the root groups.
+
+`lieFiltration` is this span formula, with `z_r` and `u_ψ` supplied. KP's
+characterizations of the pieces are not formalized:
+
+- `u_ψ` is the Lie algebra of the smooth model `𝒰_ψ` of `U_a` with
+  `𝒰_ψ(𝒪) = U_ψ` (KP 9.4.5). Equivalently, `u_ψ = 𝔤_z ∩ u_a`, where `𝔤_z` is
+  the Lie algebra of the parahoric model at a point `z` of the hyperplane
+  `H_ψ`. The module only requires `u_ψ ≤ u_a` (`affineRootLie_le`).
+- `z_r` is the Lie algebra of the fixed-point subgroup scheme `𝒵_r` of the
+  action of the standard model of `S` on `𝒢_{x,r}` (KP 9.8.3). The module
+  only requires the family to decrease.
+
+The supplied `z_r` plays the same role as the supplied filtration `Z(F)_r` of
+`CentralizerFiltration`. KP remark (13.2.2, for the groups) that `P_{x,r}`
+depends on the choice of filtration of `Z(F)`. No hypothesis relating `z_r` to
+`Z(F)_r` is imposed here. Such hypotheses belong to the statements that use
+both, like the Moy–Prasad isomorphism of KP 13.5.1.
+
+The corrections of 1 November 2024 have no entry for 13.2.1, §13.3, 9.4.5 or
+9.8.3. Their §9.4 entry concerns the proof of 9.4.8, their §9.8 entry the proof
+of Lemma 9.8.1, and their Chapter 13 entries are 13.5.2, 13.6.2 and 13.8.5.
+
+## Provenance
+
+Derived. The definition transcribes the span formula of KP 13.3.3 over the
+Library's building data, with the KP-defined pieces `z_r` and `u_ψ` replaced by
+supplied lattices. The choice to supply these pieces is internal. It mirrors
+the Library's `CentralizerFiltration`, and it was made because the
+concave-function models `𝒢_{x,r}`, `𝒰_ψ` and `𝒵_r` are not constructed in the
+Library. The Lean code uses published Library declarations:
+`ParahoricBuildingData`, `ValuationBuildingData.affineRoots`, `rootForm`,
+`CentralizerDatum`, `GenericLie`, `GenericLie.equiv`, `GenericLie.map` and
+`RelativeRoot.positiveWeightSpan`, together with Mathlib's lattice of
+submodules. No external code is adapted.
+
+## Not claimed
+
+- The models `𝒢_{x,r}`, `𝒰_ψ` and `𝒵_r` (KP §8.5, 9.4.5, 9.8.3) are not
+  constructed. Nothing identifies `lieFiltration x r` with the Lie algebra of
+  `𝒢_{x,r}`, or `u_ψ`, `z_r` with Lie algebras of models.
+- Nothing is proved that would need properties of the supplied lattices beyond
+  the two fields. This includes that `𝔤_{x,r}` is an `𝒪`-lattice, the
+  periodicity `𝔤_{x,r+n} = 𝔪^n 𝔤_{x,r}` (KP 13.3.1, from Proposition 8.5.16),
+  the descent `𝔤_{x,r} = (𝔤(K)_{x,r})^Γ`, and the Chevalley–Steinberg
+  description (KP 13.3.3, 8.5.20).
+- The extension of `𝔤_{x,r}` to `r ∈ ℝ`, the dual lattices `𝔤*_{x,r}`, and
+  the actions of `𝒢_x^0` and of `Gred_x` on these lattices and their graded
+  pieces (KP 13.3.1, 13.3.4) are not treated.
+- No relation between `lieFiltration` and the group filtration
+  `CentralizerFiltration.moyPrasad` is claimed.

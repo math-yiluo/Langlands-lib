@@ -20,7 +20,8 @@ Over a field, if the factors are semisimple, the target is connected reductive
 and `f` is surjective on the underlying scheme, its central kernel is finite,
 because the actual source has finite full centre. The map is flat by the
 field-group flatness theorem, and finite by fpqc descent from its finite kernel;
-it is therefore a central isogeny. The file concludes that it is an isomorphism
-when the target is simply connected or adjoint. The product can be empty.
+it is therefore a central isogeny. The file constructs `piHomIso_of_isSimplyConnected` and
+`piHomIso_of_isAdjoint` when the target is simply connected or adjoint. Their
+forward homomorphism is exactly the original supplied `f`. The product can be empty.
 All centres and kernels are full scheme-theoretic objects; no rational-point
 or reduced-subgroup replacement is used.

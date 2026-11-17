@@ -178,5 +178,33 @@ theorem isIso_piHom_of_isAdjoint (f : pi H ⟶ G)
   exact hf.isIso_of_center_eq_bot
     (center_pi_eq_bot_of_flat_surjective_piHom H f hmono hG.center_eq_bot)
 
+/-- Actual simply connected product-map isomorphism with the prescribed forward map. -/
+def piHomIso_of_isSimplyConnected (f : pi H ⟶ G)
+    (hH : ∀ i, IsSemisimple (H i)) (hG : IsSimplyConnected G)
+    (hmono : ∀ i, Mono (piFactorInclusionHom H i ≫ f).hom.hom)
+    (hs : Surjective f.hom.hom.left) : pi H ≅ G := by
+  let : IsIso f := isIso_piHom_of_isSimplyConnected H f hH hG hmono hs
+  exact asIso f
+
+/-- Actual adjoint product-map isomorphism with the prescribed forward map. -/
+def piHomIso_of_isAdjoint (f : pi H ⟶ G)
+    (hH : ∀ i, IsSemisimple (H i)) (hG : IsAdjoint G)
+    (hmono : ∀ i, Mono (piFactorInclusionHom H i ≫ f).hom.hom)
+    (hs : Surjective f.hom.hom.left) : pi H ≅ G := by
+  let : IsIso f := isIso_piHom_of_isAdjoint H f hH hG hmono hs
+  exact asIso f
+
+@[simp] theorem piHomIso_of_isSimplyConnected_hom (f : pi H ⟶ G)
+    (hH : ∀ i, IsSemisimple (H i)) (hG : IsSimplyConnected G)
+    (hmono : ∀ i, Mono (piFactorInclusionHom H i ≫ f).hom.hom)
+    (hs : Surjective f.hom.hom.left) :
+    (piHomIso_of_isSimplyConnected H f hH hG hmono hs).hom = f := rfl
+
+@[simp] theorem piHomIso_of_isAdjoint_hom (f : pi H ⟶ G)
+    (hH : ∀ i, IsSemisimple (H i)) (hG : IsAdjoint G)
+    (hmono : ∀ i, Mono (piFactorInclusionHom H i ≫ f).hom.hom)
+    (hs : Surjective f.hom.hom.left) :
+    (piHomIso_of_isAdjoint H f hH hG hmono hs).hom = f := rfl
+
 end Field
 end Langlands.GroupScheme

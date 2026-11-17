@@ -1,0 +1,9 @@
+# Positive forms for the actual opposite scalar's Levi representation
+
+This derived construction obtains an invariant positive definite Hermitian form on the original carrier of the coefficient representation in `ConditionalDynamicOppositeUnitaryScalarStatement`. It uses its connected reductive ambient group, nonempty irreducibility locus for the actual induced unramified twists, and square-integrability modulo the supplied arbitrary central subgroup with its supplied quotient Haar measure. It adds no unitarizability, compact splitting, or closedness assumption on that central subgroup. The local field and carrier universes remain independent.
+
+Choose one point in the nonempty irreducibility locus. The published full-parabolic versus Levi-inflated normalization equivalence identifies its induced representation with normalized induction. Irreducibility passes along this actual equivariant linear equivalence, without rewriting the dependent induced carrier. The irreducibility reflection theorem and the scalar-twist invariant-subspace order isomorphism then give irreducibility of the original coefficient representation. The locus need not be open for this deduction.
+
+The actual Levi is locally compact and second countable as a closed subgroup of the ambient rational points. Compact-open cofinality follows from the published nonarchimedean-group theorem. Its modular character is one by `DynamicOppositeHermitianAdjunctionProof.levi_modularCharacter_eq_one`, which transports reductive rational-point unimodularity from the centralizer scheme. The construction `squareIntegrableCentralSubgroupForm` now gives the required form for the exact square-integrability predicate and measure. Its full-center quotient uses its Borel measurable structure; the supplied central-subgroup quotient and measure are retained.
+
+This helper establishes coefficient unitarity only. It makes no claim about continuation regularity or the scalar's sign.

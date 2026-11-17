@@ -68,3 +68,9 @@ constructions, including the exact compatible maps, rather than assuming
 existence of the final torus. This proof does not use the Galois-fixed-building-point or building
 descent statements excluded by the task. Neither the target statement nor any
 of its imported Lean/Markdown pairs is changed.
+
+For combined imports with `UnramifiedTorusUnitFixedApartmentProof`, the
+eight local arithmetic instances now have explicit names beginning with
+`fixedPointSplitTorus`. This avoids collisions between Lean-generated
+declaration names in the two proof dependencies. Their types and implementations and all mathematical statements are
+unchanged.

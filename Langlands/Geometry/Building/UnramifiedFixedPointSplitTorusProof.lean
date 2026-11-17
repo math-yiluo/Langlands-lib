@@ -43,21 +43,21 @@ private instance fixedPointTorusExtendedAffine :
     (algebraBaseMap F (inertiaFixedField F)))
   infer_instance
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+local instance fixedPointSplitTorusIntegerAlgebra : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+local instance fixedPointSplitTorusIntegerScalarTower : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
-local instance : Algebra 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
+local instance fixedPointSplitTorusResidueAlgebra : Algebra 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
-local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
+local instance fixedPointSplitTorusDiscreteValuationRing : IsDiscreteValuationRing (fixedFieldIntegers F) :=
   (separableUnramifiedArithmetic F).2.2.2.1
-local instance : HenselianLocalRing (fixedFieldIntegers F) := fixedFieldIntegersIsHenselian F
-local instance : Algebra.IsAlgebraic 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
+local instance fixedPointSplitTorusHenselianLocalRing : HenselianLocalRing (fixedFieldIntegers F) := fixedFieldIntegersIsHenselian F
+local instance fixedPointSplitTorusResidueIsAlgebraic : Algebra.IsAlgebraic 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).2
-local instance : Fintype 𝓀[F] := Fintype.ofFinite _
-local instance : IsAlgClosed (ResidueField (fixedFieldIntegers F)) :=
+local instance fixedPointSplitTorusResidueFintype : Fintype 𝓀[F] := Fintype.ofFinite _
+local instance fixedPointSplitTorusResidueIsAlgClosed : IsAlgClosed (ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).1
 
 namespace KPApartmentData

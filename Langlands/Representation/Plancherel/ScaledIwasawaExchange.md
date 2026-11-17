@@ -1,0 +1,7 @@
+# Opposite Iwasawa integration up to a positive factor
+
+This internal derived construction compares actual Iwasawa integration measures for two semidirect decompositions `P = M U`, `P' = M V` and any common compact open `K` giving both factorizations. The parabolics are closed and their Levi projections continuous. The ambient group is second countable with its Borel structure, the supplied measures on the indicated subgroups are Borel Haar measures and sigma-finite, the Levi measure is also right invariant, and the ambient measure is sigma-finite and left invariant.
+
+The comparison ratio is the compact-coordinate mass for `M × V` divided by that for `M × U`. Both masses are finite and positive, so the ratio has strictly positive real value. Equality of the normalized quotient pushforwards from `NormalizedIwasawaPush` gives the exact identity `iwasawaPush(V) = ratio • iwasawaPush(U)`.
+
+For every measurable complex left-Levi-invariant function whose pullback to `K × V` is integrable, its pullback to `K × U` is integrable too. The iterated complex Iwasawa integrals satisfy `I_V = ratio.toReal • I_U`. The proof lifts the function to the actual Levi quotient, transfers integrability through the map and the nonzero finite measure rescaling, and applies the Bochner integral scaling formula. No compact splitting, positivity of the function or opposite-intertwiner convergence premise is assumed. This is a measure-theoretic helper; scalar continuation and adjunction remain separate work.

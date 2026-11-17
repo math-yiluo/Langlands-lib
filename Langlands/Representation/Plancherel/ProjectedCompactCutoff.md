@@ -1,0 +1,7 @@
+# Levi averages of Iwasawa cutoffs without compact splitting
+
+This internal derived construction works with a semidirect decomposition `P = M U` in a topological group and an arbitrary open subgroup `K`. Its `projectedCompactOpenSubgroup` is the image of `P ∩ K` under the Levi projection. It is open because it contains the open subgroup `M ∩ K`. If `P` is closed, `K` is compact, and the projection is continuous, it is compact as the continuous image of `P ∩ K`. No stability of `P ∩ K` under projection is assumed.
+
+For `m ∈ M`, `u ∈ U`, and `k ∈ K`, the actual cutoff `1_(U K)` at `m u k` equals the indicator of that projected subgroup at `m`. The proof uses the actual semidirect projection and normality of `U` in `P` in both directions. This replaces the compact splitting premise in the corresponding membership and cutoff calculation of `LeviInvariantIwasawaExchange`.
+
+If `G = M U K` and the supplied Borel measure on `M` is left invariant, the average `∫_M 1_(U K)(m⁻¹ g) dm` is the measure of the projected subgroup, independently of `g`. If this measure is also right invariant, `∫_M 1_(U K)(m g) dm` has the same value. These statements do not normalize that measure or assert it is Haar. The implementation reduces them to the indicator identity, translation invariance, and inversion closure of the projected subgroup. This helper supplies the cutoff constants needed for a later comparison of opposite Iwasawa integrals; it does not itself prove that comparison or an intertwiner adjunction.

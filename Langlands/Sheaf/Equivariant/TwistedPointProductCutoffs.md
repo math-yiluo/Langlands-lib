@@ -9,9 +9,16 @@ For a supplied map from point indices to a space with a group action,
 `spatialCoefficientMask` keeps a coefficient exactly when
 `g⁻¹ • π i` belongs to the selected set. This is the original spatial coordinate
 of the section, before translation. A subgroup preserving the set makes the
-family of coefficient transformations invariant under right multiplication.
-The preceding stable-coordinate theorem therefore proves that `spatialCutoff`
-preserves the existing locally discrete submodule. Its coordinate theorem
+family of coefficient transformations invariant under right multiplication;
+this algebraic invariance holds for any stabilizing subgroup.
+
+For preservation of the existing locally discrete submodule, the stabilizing
+subgroup must be open and `G` must be a topological group. The supplied local
+action system must satisfy `IsLiftSystem`, and the chosen topology must have
+its `HasAdmissibleRefinements` instance. Under these hypotheses the preceding
+stable-coordinate theorem proves that `spatialCutoff` preserves local
+discreteness: its proof intersects open fixing subgroups and conjugates the
+open invariance subgroup along twisted restrictions. The coordinate theorem
 identifies the operation with the stated zero-or-identity mask.
 
 The module also proves surjectivity of raw point-product restriction along
