@@ -56,9 +56,12 @@ open Langlands.LocalGalois.Separable
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 
-local instance : NontriviallyNormedField F := LocalGalois.localNormedField F
-local instance : IsUltrametricDist F := LocalGalois.localNormedField_ultrametric F
-local instance : CompleteSpace F := LocalGalois.localNormedField_complete F
+local instance coordinateValuationNormedField : NontriviallyNormedField F :=
+  LocalGalois.localNormedField F
+local instance coordinateValuationUltrametric : IsUltrametricDist F :=
+  LocalGalois.localNormedField_ultrametric F
+local instance coordinateValuationComplete : CompleteSpace F :=
+  LocalGalois.localNormedField_complete F
 
 /-- The geometric additive valuation has the exact normalized integer value on `F^ur`. -/
 theorem geometricAddValuation_base {x : inertiaFixedField F} (hx : x ≠ 0) :

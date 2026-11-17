@@ -24,9 +24,19 @@ rectangular lower integral. The implemented proofs substitute determinant
 norm one in the existing formulas, without cancelling an integral that
 could be infinite.
 
-The invariance theorem retains measurable input and the explicit padded
-right-symmetry hypothesis. This helper does not assert that padding maps
-one compact subgroup into another. All ranks `t < r`, including the
-zero-row rectangle, are retained. The construction uses only the
-published determinant, compactness and rectangular change-of-variables
-results; it supplies no majorization, integrability or Mellin convergence.
+For the standard compact subgroup, `rectangularLIntegral_standardCompact_mul`
+derives the padded symmetry from right standard compact invariance of the
+original function. The published `pad_mem_standardCompact` puts the padded
+element in the larger standard compact subgroup. The determinant-one
+specialization and the rectangular change of variables then prove that
+right multiplication by the original compact element preserves
+`rectangularLIntegral`. The corollary
+`rectangularLIntegral_standardCompact_mul_of_simpleRootGauge` extracts
+measurability and compact invariance from `IsAdelicSimpleRootGauge`; it
+does not use the gauge's Schwartz–Bruhat witness.
+
+All ranks `t < r`, including the zero-row rectangle, are retained. The
+construction uses only the published determinant, compactness, padding
+and rectangular change-of-variables results. It applies to infinite
+integrals as well and supplies no majorization, finiteness or Mellin
+convergence.

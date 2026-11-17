@@ -1,6 +1,9 @@
 import Langlands.Global.AdelicGroupNormOneFunctorial
 import Langlands.Global.AdelicGLStandardCompact
 import Langlands.Global.RankinSelberg.RectangularRightIntegration
+import Langlands.Global.RankinSelberg.RectangularLIntegral
+import Langlands.Global.RankinSelberg.StandardCompactPadding
+import Langlands.Global.RankinSelberg.AdelicSimpleRootGauge
 
 /-! # Compact subgroups and the rectangular determinant factor -/
 
@@ -82,5 +85,30 @@ theorem lintegral_rectangularPoint_right_invariant_of_compactSubgroup
         ∂rectangleMeasure F (r - (t + 1)) (t + 1) := by
   exact lintegral_rectangularPoint_right_invariant F h Ξ hΞ a
     (detNorm_eq_one_of_mem_compactSubgroup F K hK ha) hinv g
+
+/-- Standard compact right invariance is preserved by rectangular integration. -/
+theorem rectangularLIntegral_standardCompact_mul {r t : ℕ} (h : t < r)
+    (Ξ : Points F (r + 1) → ℝ≥0∞) (hΞ : Measurable Ξ)
+    (hinv : ∀ (k : gaugeStandardCompact F (r + 1)) (y : Points F (r + 1)),
+      Ξ (y * (k : Points F (r + 1))) = Ξ y)
+    (a : gaugeStandardCompact F (t + 1)) (g : Points F (t + 1)) :
+    rectangularLIntegral F h Ξ (g * (a : Points F (t + 1))) =
+      rectangularLIntegral F h Ξ g := by
+  apply lintegral_rectangularPoint_right_invariant F h Ξ hΞ a
+    (detNorm_eq_one_of_mem_standardCompact F a.property)
+  intro y
+  exact hinv
+    ⟨pad F (Nat.le_of_lt (Nat.succ_lt_succ h)) a,
+      pad_mem_standardCompact F (Nat.le_of_lt (Nat.succ_lt_succ h)) a a.property⟩ y
+
+/-- In particular, rectangular integration retains the compact symmetry of
+every adelic simple-root gauge, even if the integral is infinite. -/
+theorem rectangularLIntegral_standardCompact_mul_of_simpleRootGauge
+    {r t : ℕ} (h : t < r) {τ : ℝ}
+    {Ξ : Points F (r + 1) → ℝ≥0∞} (hΞ : IsAdelicSimpleRootGauge F r τ Ξ)
+    (a : gaugeStandardCompact F (t + 1)) (g : Points F (t + 1)) :
+    rectangularLIntegral F h Ξ (g * (a : Points F (t + 1))) =
+      rectangularLIntegral F h Ξ g :=
+  rectangularLIntegral_standardCompact_mul F h Ξ hΞ.2.1 hΞ.2.2.2.1 a g
 
 end Langlands.Global.RankinSelbergGlobal

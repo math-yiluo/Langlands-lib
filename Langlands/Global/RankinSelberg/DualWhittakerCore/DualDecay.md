@@ -23,6 +23,9 @@ smoothness instances of the group schemes as local instances, as the Library mod
 
 ## Points (section `Points`)
 
+The four component and inclusion identities below retain their original names
+and proofs and are imported from `Global/AdelicGLInverseTranspose`.
+
 * `infinite_inverseTranspose`, `finite_inverseTranspose`: transpose inverse commutes with the
   archimedean and finite components of an adelic matrix.
 * `inverseTranspose_ofFinite`, `inverseTranspose_ofInfinite`: and with the embeddings of the

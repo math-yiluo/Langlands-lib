@@ -1,0 +1,7 @@
+# Ample Mumford presentations under affine change of base
+
+This internal derivation proves preservation of `HasAmpleMumfordPresentation` along every affine base morphism of schemes in universe `u`, with the existing tensor preservation, Mumford Picard-zero and universal dual base-change prerequisites. The changed map is the actual scheme pullback followed by its canonical Poincare-compatible dual comparison. No polarization or positivity conclusion is asserted.
+
+`baseChangeFamilySpaceMap_addition` follows from multiplicativity of the actual pullback adjunction on group-valued points. Pullback tensor and composition isomorphisms transport the normalization's base line bundle, its unit evaluation and its normalized inverse evaluation. `baseChangeMumfordBundleIso` then compares the three tensor factors of the underlying actual Mumford family using compatibility with addition and the two projections.
+
+`hasAmpleMumfordPresentation_baseChange` pulls back the given ample line bundle along the affine total-space projection and uses `affinePullbackAmple`. The actual Poincare base-change isomorphism and the three-factor comparison identify the ordinary underlying families. The existing rigidification lifting lemma, applied to the relative projection and its section, lifts this to an isomorphism of rigidified families. Uniqueness of the Mumford classifier gives the required presentation of the changed map. Every inverse and evaluation is explicitly transported from the original presentation.

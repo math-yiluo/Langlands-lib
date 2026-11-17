@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicGLInverseTranspose
 import Langlands.Global.AdelicGLSiegelShape
 import Langlands.Automorphic.ConstantTerm
 import Langlands.Global.PositiveRealIdeles
@@ -51,26 +52,6 @@ namespace Langlands.Global
 variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
 namespace AdelicGL
-
-theorem ext_infinite_finite {g g' : AdelicGL K n} (h1 : infinite K n g = infinite K n g')
-    (h2 : finite K n g = finite K n g') : g = g' := by
-  rw [← pair_projections K n g, ← pair_projections K n g', h1, h2]
-
-@[simp]
-theorem infinite_ofInfinite (x : InfiniteAdelicGL K n) : infinite K n (ofInfinite K n x) = x := by
-  apply Units.ext; rfl
-
-@[simp]
-theorem finite_ofInfinite (x : InfiniteAdelicGL K n) : finite K n (ofInfinite K n x) = 1 := by
-  apply Units.ext; rfl
-
-@[simp]
-theorem infinite_ofFinite (x : FiniteAdelicGL K n) : infinite K n (ofFinite K n x) = 1 := by
-  apply Units.ext; rfl
-
-@[simp]
-theorem finite_ofFinite (x : FiniteAdelicGL K n) : finite K n (ofFinite K n x) = x := by
-  apply Units.ext; rfl
 
 theorem ofInfinite_commute (x : InfiniteAdelicGL K n) (y : FiniteAdelicGL K n) :
     ofInfinite K n x * ofFinite K n y = ofFinite K n y * ofInfinite K n x :=

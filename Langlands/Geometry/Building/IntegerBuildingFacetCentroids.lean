@@ -27,13 +27,16 @@ def centroidRootFintype : Fintype (relativeRoots B.i) := by
 
 attribute [local instance] centroidRootFintype
 
-local instance : NormedAddCommGroup (TranslationSpace B.i) :=
+/- The three local instances are named explicitly: anonymous instances of the same types in
+`IntegerValuationBuildingMetricReduction` and `IntegerValuationRetractionDistance` receive the
+same generated names, which would make the two modules impossible to import together. -/
+local instance centroidNormedAddCommGroup : NormedAddCommGroup (TranslationSpace B.i) :=
   RootTranslationMetric.normedAddCommGroup B.i
 
-local instance : NormedSpace ℝ (TranslationSpace B.i) :=
+local instance centroidNormedSpace : NormedSpace ℝ (TranslationSpace B.i) :=
   RootTranslationMetric.normedSpace B.i
 
-local instance : FiniteDimensional ℝ (TranslationSpace B.i) :=
+local instance centroidFiniteDimensional : FiniteDimensional ℝ (TranslationSpace B.i) :=
   RootTranslationMetric.finiteDimensional B.i
 
 /-- The original normalizer action preserves canonical affine facet centroids. -/

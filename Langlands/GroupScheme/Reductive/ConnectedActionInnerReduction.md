@@ -42,8 +42,9 @@ isomorphism. The required homomorphism is `inv j ≫ φ`. Functoriality of
 restriction proves the required equality of actions. Applying the locus's
 universal property to any other compatible homomorphism from `H` gives a
 map to `K` whose composite with `j` is the identity. That map is `inv j`,
-which proves uniqueness. The two private action-restriction lemmas verify
-identity and composition directly from `AutomorphicAction.restrict`.
+which proves uniqueness. The action-restriction calculations use the published
+`AutomorphicAction.restrict_id` and `AutomorphicAction.restrict_restrict`
+lemmas through `Rational.RootFactorPairExistenceReduction`.
 
 ## Provenance and remaining obligation
 
@@ -64,6 +65,3 @@ not assert or prove that premise. The designated construction and this
 reduction therefore do not establish the unconditional proposition
 `ReductiveConnectedActionInnerStatement` required by Task 6418.
 
-The action-restriction calculations reuse the published
-`AutomorphicAction.restrict_id` and `AutomorphicAction.restrict_restrict`
-lemmas through `Rational.RootFactorPairExistenceReduction`.

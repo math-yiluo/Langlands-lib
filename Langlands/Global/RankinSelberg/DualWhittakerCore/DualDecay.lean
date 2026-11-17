@@ -1,5 +1,6 @@
 import Langlands.Global.RankinSelberg.WhittakerExpansionCore.ExpansionRealization
 import Langlands.Global.RankinSelberg.UnequalAnalyticPoints
+import Langlands.Global.AdelicGLInverseTranspose
 
 /-! # Whittaker decay classes are stable under transpose inverse
 
@@ -35,38 +36,6 @@ variable (F : Type u) [Field F] [NumberField F]
 section Points
 
 variable {n : ℕ}
-
-theorem infinite_inverseTranspose (g : AdelicGL F n) :
-    AdelicGL.infinite F n (GeneralLinear.inverseTranspose n (Adeles F) g) =
-      GeneralLinear.inverseTranspose n _ (AdelicGL.infinite F n g) := by
-  apply Matrix.GeneralLinearGroup.ext
-  intro i j
-  rw [AdelicGL.infinite_apply, GeneralLinear.inverseTranspose_entry,
-    GeneralLinear.inverseTranspose_entry, ← map_inv, AdelicGL.infinite_apply]
-
-theorem finite_inverseTranspose (g : AdelicGL F n) :
-    AdelicGL.finite F n (GeneralLinear.inverseTranspose n (Adeles F) g) =
-      GeneralLinear.inverseTranspose n _ (AdelicGL.finite F n g) := by
-  apply Matrix.GeneralLinearGroup.ext
-  intro i j
-  rw [AdelicGL.finite_apply, GeneralLinear.inverseTranspose_entry,
-    GeneralLinear.inverseTranspose_entry, ← map_inv, AdelicGL.finite_apply]
-
-theorem inverseTranspose_ofFinite (l : FiniteAdelicGL F n) :
-    GeneralLinear.inverseTranspose n (Adeles F) (AdelicGL.ofFinite F n l) =
-      AdelicGL.ofFinite F n (GeneralLinear.inverseTranspose n _ l) := by
-  refine AdelicGL.ext_infinite_finite F n ?_ ?_
-  · rw [infinite_inverseTranspose, AdelicGL.infinite_ofFinite, AdelicGL.infinite_ofFinite,
-      map_one]
-  · rw [finite_inverseTranspose, AdelicGL.finite_ofFinite, AdelicGL.finite_ofFinite]
-
-theorem inverseTranspose_ofInfinite (x : InfiniteAdelicGL F n) :
-    GeneralLinear.inverseTranspose n (Adeles F) (AdelicGL.ofInfinite F n x) =
-      AdelicGL.ofInfinite F n (GeneralLinear.inverseTranspose n _ x) := by
-  refine AdelicGL.ext_infinite_finite F n ?_ ?_
-  · rw [infinite_inverseTranspose, AdelicGL.infinite_ofInfinite, AdelicGL.infinite_ofInfinite]
-  · rw [finite_inverseTranspose, AdelicGL.finite_ofInfinite, AdelicGL.finite_ofInfinite,
-      map_one]
 
 omit [NumberField F] in
 /-- If `Z² = 0` then `(-ᵗZ)² = 0`. -/

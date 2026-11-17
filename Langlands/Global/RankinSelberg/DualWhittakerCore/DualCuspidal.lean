@@ -1,6 +1,7 @@
 import Langlands.Automorphic.ConstantTerm
 import Langlands.Group.GL.Maps
 import Langlands.Global.RankinSelberg.UnequalAnalyticPoints
+import Langlands.Global.AdelicGLInverseTranspose
 
 /-! # Cuspidality of the transpose-inverse dual
 
@@ -94,11 +95,6 @@ theorem map_permutation {S : Type*} [CommRing S] (φ : R →+* S) (σ : Equiv.Pe
 end Matrices
 
 variable {K : Type u} [Field K] [NumberField K] {n : ℕ}
-
-theorem inverseTranspose_rational (γ : RationalGL K n) :
-    inverseTranspose n (NumberField.AdeleRing (𝓞 K) K) (AdelicGL.rational K n γ) =
-      AdelicGL.rational K n (inverseTranspose n K γ) :=
-  RankinSelbergGlobal.UnequalAnalytic.inverseTranspose_map _ γ
 
 theorem permutation_eq_rational (σ : Equiv.Perm (Fin n)) :
     permutation n (NumberField.AdeleRing (𝓞 K) K) σ = AdelicGL.rational K n (permutation n K σ) :=

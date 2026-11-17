@@ -7,8 +7,9 @@ isomorphism. `sectionCoordinates` parametrizes sections over `X` by a
 coefficient for each point and each element of its fiber over `X`.
 For a terminal object, `globalCoordinates` removes the singleton fiber
 indices, giving arbitrary coefficients indexed by the site points.
-The point/index/coefficient universe is `w`; the site object and morphism
-universes remain independent.
+The index universe is `wI`; the point fibers and coefficient modules lie in
+universe `max wI w`. Thus the indices may lie in a smaller universe than the
+fibers. The site object and morphism universes remain independent.
 
 `sectionCoordinate_restrict` identifies restriction with pullback of the fiber
 index. `coefficientRetraction` is the diagonal adjunction map from the actual

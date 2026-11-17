@@ -34,8 +34,9 @@ constant term of `f` along the `(a, b)` block parabolic: the integral of `f(u(X)
 ## Rational matrices
 
 * `inverseTranspose_rational`: transpose inverse commutes with the embedding
-  `AdelicGL.rational` of `GL_n(K)` into `GL_n(𝔸_K)` (the Library
-  `UnequalAnalytic.inverseTranspose_map`).
+  `AdelicGL.rational` of `GL_n(K)` into `GL_n(𝔸_K)`. This unchanged
+  declaration is imported from `Global/AdelicGLInverseTranspose`, where
+  the entrywise identity is shared with the ambient transpose construction.
 * `permutation_eq_rational`: an adelic permutation matrix is the image of the rational one.
 
 ## The dual function

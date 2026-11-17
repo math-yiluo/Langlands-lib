@@ -8,7 +8,12 @@ zero. It assumes no topology, local compactness, or apartment axioms.
 
 The finite actual relative roots give the existing root-coordinate norm on the
 reduced translation space, and their injective coordinate map gives finite
-dimensionality. The canonical affine centroid is the published
+dimensionality. These three local instances carry explicit names
+(`centroidNormedAddCommGroup`, `centroidNormedSpace`, `centroidFiniteDimensional`), so
+the module can be imported together with `IntegerValuationBuildingMetricReduction` and
+`IntegerValuationRetractionDistance`. Those modules declare anonymous instances of the same
+types, and anonymous instances would receive the same generated names. The canonical
+affine centroid is the published
 `AffineRootSystem.facetCentroid`, averaging all actual incident vertices in the
 original affine torsor. The empty root system on a point is included.
 

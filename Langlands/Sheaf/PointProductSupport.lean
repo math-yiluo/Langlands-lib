@@ -12,12 +12,16 @@ namespace Langlands.Sheaf.PointProduct
 
 open CategoryTheory CategoryTheory.Limits Opposite
 
-universe w v u
+universe wI w v u
 
 variable {C : Type u} [Category.{v} C] {J : GrothendieckTopology C}
-variable {I : Type w} (points : I → J.Point.{w})
-variable {R : Type w} [CommRing R]
-variable (M : I → ModuleCat.{w} R)
+variable {I : Type wI} (points : I → J.Point.{max wI w})
+variable {R : Type (max wI w)} [CommRing R]
+local instance : HasProducts.{wI} (ModuleCat.{max wI w} R) := by
+  let := hasLimitsOfSizeShrink.{wI, wI} (ModuleCat.{max wI w} R)
+  infer_instance
+
+variable (M : I → ModuleCat.{max wI w} R)
 
 /-- Evaluation at a point and an element of its fiber over a site object. -/
 def sectionCoordinate (X : C) (i : I) (x : (points i).fiber.obj X) :
@@ -57,9 +61,9 @@ theorem sectionCoordinates_apply (X : C)
         sectionCoordinate points M X i x := by
     simp only [sectionCoordinatesIso, Iso.trans_hom, Category.assoc,
       reassoc_of% ModuleCat.piIsoPi_hom_ker_subtype, ModuleCat.piIsoPi_hom_ker_subtype,
-      Pi.mapIso_hom_π_assoc,
-      sectionsIso_hom_π_assoc, sectionCoordinate]
-    rfl
+      Pi.mapIso_hom_π_assoc, sectionCoordinate]
+    exact congrArg (fun f => f ≫ Pi.π _ x)
+      (sectionsIso_hom_π points M X i)
   exact ConcreteCategory.congr_hom h s
 
 @[simp]
@@ -81,7 +85,7 @@ theorem sectionCoordinate_restrict {X Y : C} (f : Y ⟶ X)
   simp
 
 @[reassoc (attr := simp)]
-theorem sectionCoordinate_map {N : I → ModuleCat.{w} R} (f : M ⟶ N)
+theorem sectionCoordinate_map {N : I → ModuleCat.{max wI w} R} (f : M ⟶ N)
     (X : C) (i : I) (x : (points i).fiber.obj X) :
     ((productFunctor points (ModuleCat R)).map f).hom.app (op X) ≫
         sectionCoordinate points N X i x =
@@ -149,7 +153,7 @@ theorem support_subset_of_sectionCoordinates_zero {X : C} {K : Set I}
   apply hx
   rw [← hy, ← GrothendieckTopology.Point.toPresheafFiber_w_apply, hz, map_zero]
 
-variable [LocallySmall.{w} C]
+variable [LocallySmall.{max wI w} C]
 
 /-- At a terminal object, concrete global sections are arbitrary coefficients. -/
 def globalCoordinates (X : C) (hX : IsTerminal X) :
@@ -184,7 +188,7 @@ theorem coefficientSupport_subset_support (X : C) (hX : IsTerminal X)
 
 /-- A coefficientwise surjection lifts a section without enlarging any support
 bound whose complement is separated by site neighborhoods. -/
-theorem exists_lift_with_support {N : I → ModuleCat.{w} R} (f : M ⟶ N)
+theorem exists_lift_with_support {N : I → ModuleCat.{max wI w} R} (f : M ⟶ N)
     (hf : ∀ i, Function.Surjective (f i)) (X : C) (hX : IsTerminal X)
     {K : Set I} (hK : SeparatesComplement points X K)
     (s : (productSheaf points (ModuleCat R) N).obj.obj (op X))
@@ -234,7 +238,7 @@ def HasCompactSeparatingBounds (X : C) : Prop :=
 when compact coefficient bounds admit separating compact enlargements. -/
 theorem compactSections_map_surjective
     (X : C) (hX : IsTerminal X) (hbound : HasCompactSeparatingBounds points X)
-    {N : I → ModuleCat.{w} R} (f : M ⟶ N) (hf : ∀ i, Function.Surjective (f i)) :
+    {N : I → ModuleCat.{max wI w} R} (f : M ⟶ N) (hf : ∀ i, Function.Surjective (f i)) :
     Function.Surjective
       ((PointSupport.sheafCompactSections J points R X).map
         ((productFunctor points (ModuleCat R)).map f)) := by

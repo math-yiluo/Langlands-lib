@@ -35,3 +35,7 @@ definitions of `GeneralLinear.blockUnipotent`, `PrimitiveAdelicHeight.diagonalGL
   by `torInf x` multiplies the entry `Y i j` by
   `infiniteRealEmbedding (exp (x (e (inr j)) - x (e (inl i))))`; a specialization of
   the diagonal conjugation formula above.
+
+The component extensionality and four projection/inclusion identities listed
+above are imported from `Global/AdelicGLInverseTranspose`. Their declaration
+names, argument lists, proofs and simplification attributes are unchanged.
