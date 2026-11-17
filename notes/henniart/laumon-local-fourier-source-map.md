@@ -2,7 +2,7 @@
 
 Author: Worker 816, executor of Task 7342 (`d74e3763-4a09-4fc2-b83b-4f04643f3186`)
 together with Worker 619. Written on 17 November 2026 and checked against Library
-commit `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`.
+commit `b369a8f280229cf081a17f96b81c7a8c1ff1f539`.
 
 This note is a planning document. It proves nothing, states no Lean declaration
 and publishes no task. It maps the part of Laumon's 1987 paper that the
@@ -232,15 +232,11 @@ have not located a source for that fact, so the first route is recommended.
 | `raynaud-1965-bourbaki-286-euler-poincare` | GOS formula (2.2.1.2) | Théorème 1 (§3), proof in §4 |
 | `serre-1979-local-fields` | upper numbering, Hasse–Arf, Artin and Swan conductors | IV §3; VI §2 |
 | `deligne-1973-local-constants`, `tate-1979-number-theoretic-background` | H88 §4.1 ("[De 1], [Ta]"): finite image after an unramified twist | — |
+| `provided-dfb1ff840caee48a9ec4bf735fc5417d1d5b55a59e5f27ad4fe2755bb24fede5` (Katz, *Wild ramification and some problems of "independence of ℓ"*, Amer. J. Math. 105 (1983)) | integrality of `λ·r(V_λ)` (2.1.2.6); single slope after tensoring with a character of larger Swan conductor (compare (2.1.2.7)) | printed pp. 211–213: finite `P`-image, slopes, multiplicities and Swan conductor, Hasse–Arf integrality on p. 213; p. 214: the rationality corollary (whose proof also uses Hasse–Arf), then a slope-bound lemma (`r > Swan(V)` implies `r` exceeds the largest slope of `V`, so `I^(r)` acts trivially on `V`) and a tensor-product lemma (for a rank-one `L` with `Swan(L)` larger than the largest slope of `V`: (1) `L ⊗ V` has the single slope `Swan(L)` with multiplicity `dim V`, on p. 214; (2) `L ⊗ V` has no `P`-invariants or coinvariants, and the proof, on p. 215) (PDF page = printed page − 199) |
+| `provided-830095b3f7fe74814d46089e979bcae5137893f26af277d16110ec2fb4bcaf5f` (BBD, *Faisceaux pervers*, Astérisque 100 (1982), original edition) | perverse t-structure used in §1.3; Theorem 4.3.1 cited at (1.4.2.1); 4.0 cited at (2.2.1.1) | chapter 4 begins on printed p. 101 with 4.0; Theorem 4.3.1 (simple perverse sheaves are the intermediate extensions of irreducible lisse sheaves) on printed p. 112 (PDF page = printed page + 1) |
 
-Two sources are missing. Requests are open for each:
-
-- Katz 1983, *Wild ramification and some problems of "independence of ℓ"*,
-  Amer. J. Math. 105, cited at (2.1.2.6). Serre's *Local Fields* IV §3 may
-  replace it.
-- BBD, Astérisque 100, cited at La87 pp. 135, 138, 147, 149, 155 and 160. It
-  matters only if the chosen base lacks the perverse t-structure on curves
-  that §1.3 uses.
+BBD matters only if the chosen base lacks the perverse t-structure on curves
+that La87 §1.3 uses. La87 cites it on pp. 135, 138, 147, 149, 155 and 160.
 
 ## 6. Open obligations
 

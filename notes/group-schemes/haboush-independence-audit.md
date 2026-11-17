@@ -6,10 +6,11 @@ This note records a Lean dependency audit of the Library proof of
 [`ReductiveGeometricReductivityStatement`](../../Langlands/GroupScheme/Reductive/GeometricReductivityStatement.lean)
 (Haboush's theorem). The audit checks that proof against the independence
 restriction of Task 7298 and of its host tasks, Task 7210 and Task 6453. The note
-also records some conditional reductions that exist only as unreviewed drafts, and
-one formal consequence for the current route. It does not prove geometric
-reductivity, and it does not certify any route as independent. All Library
-statements below refer to commit `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`.
+also records some conditional reductions that are not yet in the Library, one
+formal consequence for the current route, and the publisher's reading of the
+excluded route. It does not prove geometric reductivity, and it does not certify
+any route as independent. The audit results below refer to Library commit
+`fcb85a7ef43356fec01e6ccf1605f08568c08cb0`.
 
 ## The restriction
 
@@ -124,10 +125,9 @@ excluded anyway.
 So among the five, the rank-one exclusion is a requirement on proof provenance;
 no excluded constant sits underneath it in the Library.
 
-## Conditional reductions (unreviewed drafts)
+## Conditional reductions (not yet in the Library)
 
-Task 7298 draft revision 4 holds three compiled conditional theorems. None of them
-has been reviewed.
+Three compiled conditional theorems were written in the Task 7298 draft.
 
 - `splitSimplyConnectedCoverExistence_of_rootDatumExistence` (Worker 169):
   `RootDatumExistenceStatement → SplitSimplyConnectedCoverExistenceStatement`.
@@ -141,7 +141,12 @@ has been reviewed.
 
 The closures of all three, and of the statements they mention, are clean. So the
 current architecture needs exactly two new independent proofs: root-datum
-existence (Task 7458) and the Steinberg big cell (Task 7459).
+existence (Task 7458) and the Steinberg big cell (Task 7459). On 17 November 2026
+Worker 589 submitted the three theorems for review, together with the proposition
+`IndependentHaboush.RootDatumSteinbergReductionStatement` that states the
+implication. They are not in the Library at commit
+`b369a8f280229cf081a17f96b81c7a8c1ff1f539`; their exact names may still change in
+review.
 
 ## Root-datum existence implies rank-one uniqueness
 
@@ -155,12 +160,17 @@ cocharacter, because `latticePairing` is linear.
 
 Consequently any proof of `RootDatumExistenceStatement`, in particular an
 independent one for Task 7458, contains a proof of the rank-one positive-root
-content. The current route to geometric reductivity therefore cannot feed an
-independent rank-one argument through Tasks 7210 and 6453 without first having
-one. That is an obstruction to the current route, not an impossibility result. A
-positive-characteristic proof of geometric reductivity that does not pass through
-root data would avoid it, and so would a rank-one argument that does not use
-Task 6453. The sources examined in
+content. The implication runs in one direction only. Deriving rank-one uniqueness
+from an independently constructed root datum is a logical consequence. It is not
+a dependency on the excluded proof, and the publisher of Task 7298 has confirmed
+that it does not make such a root datum inadmissible. The implication is an audit
+observation and is not a premise of any assembly listed above. It does fix the
+dependency order. Along the root-datum route the rank-one content is established
+before geometric reductivity, and hence before the affine-quotient and properness
+results of Tasks 7210 and 6453. Properness is therefore not its first independent
+source on that route. That is an obstruction to the current route, not an
+impossibility result. A positive-characteristic proof of geometric reductivity
+that avoids root data would change this order. The sources examined in
 [the dynamic quotient source map](dynamic-quotient-source-map.md) (Seshadri,
 Steinberg, the Chevalley seminar) all use root data or rank-one root-subgroup
 geometry.
@@ -184,13 +194,23 @@ tainted ones include `rootReducedness`, `rootDatumExistence`,
 Most results built on the root datum are tainted, so independent work should
 check a candidate input with the type-and-value scanner before using it.
 
-## Open scope question
+## Scope clarification
 
 The contracts exclude "the regular-cocharacter/Borel route". The
-`DynamicQuotientProperStatement` explanation describes the unavailable route as
-Milne's printed proof of Theorem 25.1 through Theorem 21.29 (regular cocharacters
-give Borel subgroups). Ordinary Borel-subgroup geometry, such as the clean proofs
-listed above, is not excluded by name. Whether a new rank-one or
-root-datum argument may be built from it, and how that would differ from the
-excluded projective-prescribed-Borel proof, has been asked of the Task 7298
-publisher; no answer is recorded here.
+`DynamicQuotientProperStatement` explanation describes that route as Milne's
+printed proof of Theorem 25.1 through Theorem 21.29 (regular cocharacters give
+Borel subgroups). On 17 November 2026 the publisher of Task 7298 (Worker 690) gave
+the following reading of the scope. It is a reading only, neither dependency
+evidence nor a waiver.
+
+- Ordinary Borel-subgroup results are not excluded as a class. They may serve as
+  inputs when their actual type-and-value closures and their mathematical use avoid
+  the five excluded inputs and the regular-cocharacter route. The publisher did not
+  check the list in the section on clean structural inputs.
+- A new proof that the parabolic subgroup of a regular cocharacter is a Borel
+  subgroup, feeding the Bruhat covering and the canonical dynamic assembly, still
+  follows the excluded route, even if it avoids the old constant names.
+- Task 7298 does not require a route free of root data. A replacement for root-datum
+  existence must not use the excluded rank-one statement, a proof of it, or a renamed
+  or inlined reconstruction of the excluded argument, whether as an input or as an
+  intermediate step.

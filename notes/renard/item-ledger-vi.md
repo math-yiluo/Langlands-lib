@@ -59,7 +59,40 @@ F3 statements have the proof tasks Task 6530
 `16c7f6c2`, Task 6535 `595f5cb5` and Task 6536 `00506a19`, published by Worker 1222. The
 F1 targets have Task 6571 `fcd6981d`, published by Worker 4. Worker 1222's
 `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (VI.9.4 Proposition row) has the
-proof task Task 6607 `49480f41`, published by Worker 4 at Worker 1222's request.
+proof task Task 6607 `49480f41-83dc-4536-93f4-9893f8b70d5f`, published by Worker 4
+at Worker 1222's request and now completed by the exact proof below.
+
+The Hecke comparison update of 17 November 2026, by Worker 1222, checks the
+normalized comparison in the VI.9.4 Proposition row and gap 6 against Library
+`b369a8f280229cf081a17f96b81c7a8c1ff1f539`. The theorem
+[`Langlands.Hecke.levelHeckeCornerComparison`](../../Langlands/Representation/Hecke/LevelHeckeCornerComparisonProof.lean)
+has exactly the type
+`Langlands.Hecke.LevelHeckeCornerComparisonStatement.{u, v}`, with independent
+group and representation-space universes. Its
+[proof Markdown](../../Langlands/Representation/Hecke/LevelHeckeCornerComparisonProof.md)
+describes the normalized coset expansion and its use for multiplication and
+actions. Proof candidate `21acc244-7185-4b26-b2b1-58a382f896d5`, by Worker 273
+with Worker 275, was independently approved by Reviewer 6178 without
+qualifications. Machine receipt `fe959146-2de7-4d40-99d6-5091171cf6f8` accepts
+the Lake build, exact target, unchanged statement and frozen inputs. Integration
+`0defab5d1122478a86dabd1a3e9dc94f` first published it at Library
+`f24f97443f21ff7e59b1cf3b509602157dae54c2`. At the checked Library commit, the
+proof and `Hecke/LevelHeckeCornerLinear` Lean–Markdown pairs have exactly the
+frozen candidate's hashes; the target pair is unchanged from the proof's base.
+
+This derived bridge supplies the complex linear equivalence from the
+measure-free `LevelHeckeAlgebra ℂ K` to `HeckeAlgebra.Corner μ K hK`, its
+pointwise formula `e(a)(x) = μ(K)⁻¹ a(xK)`, product preservation and compatibility
+with the two actions on `V^K`. It applies to every compact open subgroup of a
+Hausdorff nonarchimedean locally compact group with a Borel measurable structure
+and a left Haar measure, and every smooth complex representation. It needs no
+normality, Iwahori decomposition or unimodularity assumption. The normalization
+comes from Renard II.3.11–II.3.12 (printed pp.51–53 / PDF pp.57–59) and
+III.1.3–III.1.5 (printed pp.59–60 / PDF pp.65–66); the comparison is an
+derived implementation bridge for the use of `H(G,K)` in VI.9.4. Only this
+comparison changes from S to P. The
+categorical equivalence and inverse functor remain separate obligations with
+the dated statuses below; every other row retains its earlier dated status.
 
 The proof-status update of 14 November 2026, by Worker 4, checks every row with
 status S against Library `a163f87c7a46874f408deed853c10c83207e9f69`. Every statement
@@ -305,7 +338,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.9.2 (VI.9.2.2) stability for the universal induced family | 198–199 / 204–205 | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` and the VI.9.1–VI.9.3 map (`uniform-compression-progress.md`) | St: step of the VI.9.1 Proposition; Jacquet-family finiteness P |
 | VI.9.3 extension to all smooth representations | 200 / 206 | conditional helpers in the VI.9.1–VI.9.3 map | St |
 | VI.9.4 Corollary | 201 / 207 | `J.StandardIwahoriFixedVectorSubquotientGenerationStatement`; earlier `J.StandardFixedVectorSubquotientGenerationStatement` | S: Task 6535 for the Iwahori-only statement, which uses the source's conditions on `K`. Task e8bd5ada concerns the earlier basis-member version |
-| VI.9.4 Proposition | 201 / 207 | Over the measure-free algebra: `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement`; earlier `J.StandardFixedVectorHeckeEquivalenceStatement` (modules over the measure-free `LevelHeckeAlgebra ℂ K`). Comparison of algebras: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (`Hecke/LevelHeckeCornerComparisonStatement`, Worker 1222: a product-preserving linear bijection `LevelHeckeAlgebra ℂ K ≃ Corner μ K hK` with `e(a)(x) = μ(K)⁻¹ a(xK)`, compatible with the two actions on `V^K`). Over the Haar-measure `H(G, K)` with the inverse functor: `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; see the VI.10.6 Proposition (ii) row) | S: Task 6536 for the Iwahori-only statement; task e8bd5ada concerns the earlier basis-member version. Task 6599 for the corner-induction statement. The comparison statement has an open proof: Task 6607 |
+| VI.9.4 Proposition | 201 / 207 | Over the measure-free algebra: `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement`; earlier `J.StandardFixedVectorHeckeEquivalenceStatement` (modules over the measure-free `LevelHeckeAlgebra ℂ K`). Comparison of algebras: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (`Hecke/LevelHeckeCornerComparisonStatement`, Worker 1222: a product-preserving linear bijection `LevelHeckeAlgebra ℂ K ≃ Corner μ K hK` with `e(a)(x) = μ(K)⁻¹ a(xK)`, compatible with the two actions on `V^K`). Over the Haar-measure `H(G, K)` with the inverse functor: `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; see the VI.10.6 Proposition (ii) row) | Comparison P: `Langlands.Hecke.levelHeckeCornerComparison` (`Hecke/LevelHeckeCornerComparisonProof`; Task 6607, verified 17 November 2026 above). Categorical statements retain their earlier S status: Task 6536 for the Iwahori-only statement; task e8bd5ada concerns the earlier basis-member version. Task 6599 for the corner-induction statement |
 | VI.9.5 (`r_P^G` preserves `B`-admissibility) | 201 / 207 | `AF.JacquetAdmissibleStatement`; reduction `AF.JacquetAdmissibleReductionStatement` | S: task 8057266d; reduction P |
 | VI.9.6 first Theorem (second adjointness) | 201 / 207 | `RP.LeviSecondAdjointnessStatement` | S: tasks c0fa1878, eac5190f |
 | VI.9.6 second Theorem (`r_{P̄}^G π̃ ≅ (r_P^G π)~`) and the equivalence of the two | 201–202 / 207–208 | `RP.LeviJacquetContragredientStatement`, `RP.LeviSecondAdjointnessContragredientEquivalenceStatement` | `RP.LeviJacquetContragredientStatement` S: task c0fa1878; the equivalence P: `leviSecondAdjointnessContragredientEquivalence` (`Exponents/LeviSecondAdjointnessContragredientEquivalenceProof`; task 3ec57776) |
@@ -393,8 +426,9 @@ proof tasks of F1 and F3. All their statements have open proofs.
   conjunct. These are conditional implications, not proofs of the three new
   statements. Their proofs are Tasks 6530, 6535 and 6536, published by Worker 1222.
   The arbitrary-parabolic version of the VI.6.1 Proposition is stated under F2. The
-  Haar-Hecke comparison and the inverse functor are stated in the VI.9.4 Proposition
-  row.
+  Haar-Hecke algebra and action comparison is proved (17 November 2026 update
+  above). The categorical equivalence and inverse functor retain their separate
+  proof obligations in the VI.9.4 Proposition row.
 - **F4. Represented versus standard parabolics.** For supercuspidality, the
   comparison is `RP.SupercuspidalStandardParabolicCriterionStatement` (VI.2.1
   Remark 1 row; Task 6598).
@@ -421,9 +455,13 @@ claim that Chapter VI has no other gaps. The individual rows remain authoritativ
 5. VI.10.7 Variant: `AF.FamilyFiniteTypeCenterAdmissibleStatement`,
    `AF.FamilyFiniteTypeComponentCharacterizationStatement` and
    `AF.FamilyLeviInductionFiniteTypeStatement`, Tasks 6565–6567.
-6. VI.9.4 Proposition: `Langlands.Hecke.LevelHeckeCornerComparisonStatement` (Worker
-   1222; Task 6607) and `J.StandardIwahoriCornerInductionEquivalenceStatement`
-   (VI.10.6 Proposition (ii)), Task 6599.
+6. VI.9.4 Proposition: the normalized algebra, product and action comparison
+   `Langlands.Hecke.LevelHeckeCornerComparisonStatement` is now P:
+   `Langlands.Hecke.levelHeckeCornerComparison` (Task 6607; 17 November 2026
+   update above). The categorical equivalence
+   `J.StandardIwahoriFixedVectorHeckeEquivalenceStatement` (Task 6536) and
+   `J.StandardIwahoriCornerInductionEquivalenceStatement`, including the inverse
+   functor of VI.10.6 Proposition (ii) (Task 6599), retain their earlier S status.
 7. The arbitrary-parabolic scope of VI.6.1 (Theorem and Proposition) and VI.9.1: the
    represented statements of F2, Tasks 6533, 6534, 6594 and 6596. The source's class
    of `K` for standard parabolics in VI.6.1 Proposition, VI.6.3 Corollary and VI.9.4:

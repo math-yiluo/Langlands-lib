@@ -18,6 +18,9 @@ their admissibility comparison at Library `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e
 The 16 November 2026 update adds the separate IV.3.2 counterexample assertion,
 its published statement and exact proof owner, checked at Library
 `b4005ae3c4a406e2d1193548306b79d7ab745811`.
+On 17 November 2026, Worker 5099 (executor of Task 6678) updated clarification C3 and the
+IV.3.2 Remark row against Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`, at the
+operator's request.
 Other row statuses retain the original survey date and scope.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -84,7 +87,7 @@ another namespace is written, statements are in
 | IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | `Langlands.Induction.CentralL2` and its form `centralL2Form` | D |
 | IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
 | IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.SmoothRep.IsSquareIntegrableModuloCenter` and `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter` in [SmoothSquareIntegrability](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md) | D: neither assumes admissibility or irreducibility. The older `Langlands.IsSquareIntegrableModCenter` is admissibility conjoined with the first predicate, by `Langlands.SmoothRep.isSquareIntegrableModCenter_iff` |
-| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | S; exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) remains open. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
+| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | S; unproved in Lean and not to be used as a premise. A complete paper route is being formalized in exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`), which remains open. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
 | IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | S; exact proof Task 7180 (`a326697e-2603-4828-9948-308b70e7369c`) remains open. Statement publication supplies no counterexample construction |
 | IV.3.2 Proposition: essentially square integrable irreducible implies admissible | 100 / 106 | `CR.EssentiallySquareIntegrableAdmissibleStatement` | P |
 | IV.3.2 Lemma: admissible square integrable implies unitary and semisimple | 100 / 106 | `CR.SquareIntegrableUnitarySemisimpleStatement` | P |
@@ -127,6 +130,78 @@ another namespace is written, statements are in
   it can yield admissibility after this implication is proved, not as an initial input.
   A reductive-group admissibility theorem alone cannot discharge this general t.d.-group
   obligation. C3 is now a proof gap rather than a missing statement.
+
+  *Update, 17 November 2026 (Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`).* What
+  follows is a paper analysis. None of it is a Lean theorem, and it changes no status code
+  in the table.
+
+  - *Status.* No Library theorem has type `CR.SingleCoefficientSquareIntegrabilityStatement`.
+    The statement is unproved in Lean and is not to be used as a premise. Task 6678 stays
+    open for its proof. Its statement Markdown is unchanged.
+  - *Admissible case.* Under admissibility the Remark is proved. The published
+    `squareIntegrableCoefficientCriterion` concludes `IsSquareIntegrableModCenter`, which
+    contains the all-coefficients condition for some unitary central character. By
+    `coefficientNorm_eq` the coefficient norm does not depend on that choice, so the
+    condition holds for the specified character. No separate admissible-form module is
+    needed.
+  - *Reduction to admissibility.* Under the hypotheses of the general statement, its
+    conclusion holds exactly when `π` is admissible. One direction is the admissible case
+    above. For the other, `essentiallySquareIntegrableAdmissible` with the trivial twist
+    derives admissibility from the all-coefficients condition. So the open content is this:
+    an irreducible smooth representation with a unitary central character and one nonzero
+    smooth coefficient in L² is admissible. Restricted to discrete groups, the statement
+    is equivalent to assertion (D) of Proposition 3.3 in the
+    [analysis note](iv32-single-coefficient-analysis.md) (see its Sections 2–3): for
+    every discrete group `G` and every unitary character χ of `Z(G)` with `G/Z(G)`
+    infinite, the twisted space ℓ²(G/Z, χ) has no algebraically simple
+    ℂ[G]-submodule. The infinite-quotient hypothesis is
+    needed: for the trivial group, ℓ²(G/Z, χ) = ℂ is itself simple. When `G/Z(G)` is
+    finite, every coefficient is in L² and there is nothing to prove.
+  - *Paper route for every t.d. group.* Worker 4988 proposed this route, and Worker 5099
+    checked it on paper. It uses no countability, no von Neumann dimension theory and no
+    reductive structure. Write `χ` for the central character and `ℓ` for the functional
+    of the given coefficient.
+    1. The map `y ↦ (g ↦ ℓ(π(g) y))` is an injective linear map from `V` into the
+       χ-equivariant space L²(G/Z, χ). It intertwines `π` with right translation (Step A
+       of the analysis note). Fix an open compact `K` with `V^K ≠ 0`; then `χ` is trivial
+       on `K ∩ Z`. Let `H` be the closed subspace of right-`K`-invariant functions and
+       `V_K ⊆ H` the image of `V^K`.
+    2. Right translation by `g` followed by averaging over `K` gives a bounded operator
+       `e_K R(g) e_K` on `H`, and these operators commute with left translations. The
+       algebra `B` that they generate contains the identity and preserves `V_K`. By
+       irreducibility of `π`, `B v = V_K` for every nonzero `v ∈ V_K`.
+    3. Bounded Schur lemma: `End_B(V_K) = ℂ`. This endomorphism algebra `D` is a division
+       algebra. Fix `u ≠ 0` in `V_K`. For each `e ∈ D`, an operator in `B` that sends `u`
+       to `e u` acts on `D u` as right multiplication by `e`. Take `d ∈ D` and let `T` be
+       such an operator for `d`. If `d − λ` were invertible for every `λ ∈ ℂ`, the operators
+       for `(d − λ)⁻¹` would invert `T − λ` on the closure of `D u` for every `λ`. That
+       contradicts the nonempty spectrum of `T` there, so `d` is a scalar.
+    4. Let `N` be the commutant of left translations on `H`, and `ξ` the normalized
+       χ-twisted indicator function of `KZ`. Then `τ(x) = ⟨x ξ, ξ⟩` is a trace on `N`. For
+       `x ∈ N`, `x ξ` is bi-`K`-invariant and `(x* ξ)(g)` is the complex conjugate of
+       `(x ξ)(g⁻¹)`. Inversion preserves the bi-invariant `μ`, so `‖x ξ‖ = ‖x* ξ‖`, and
+       polarization gives `τ(x y) = τ(y x)`. The trace is faithful, because left
+       translates of `ξ` span a dense subspace of `H`.
+    5. Fix `v ≠ 0` in `V_K`. Let `q` be the orthogonal projection onto the common kernel
+       of all `b ∈ B` with `b v = 0`. This kernel is closed and invariant under left
+       translations, so `q ∈ N`; also `q v = v`, so `τ(q) > 0`. Let `u_1, …, u_n ∈ V_K` be
+       linearly independent. Take `b_j ∈ B` with `b_j v = u_j`, and, by Jacobson density
+       (using step 3), `a_i ∈ B` with `a_i u_j = δ_ij v`. Then `a_i b_j − δ_ij` kills `v`,
+       so `a_i b_j q = δ_ij q`. Hence `p = Σ_j b_j q a_j` is an idempotent in `N` with
+       `τ(p) = n τ(q)`. If `r` is the range projection of `p`, then
+       `p = r + r p (1 − r)`, so `τ(p) = τ(r) ≤ 1`. Thus `dim V^K ≤ 1/τ(q)`. Hence `π`
+       is admissible, and `squareIntegrableCoefficientCriterion` gives the conclusion.
+
+    The argument computes traces only of operators in `N`. An earlier version wrote the
+    vectors of `V_K` as `x ξ` with `x ∈ N`, which would need coefficient vectors to be
+    bounded vectors. The version being formalized avoids that step.
+  - *Formalization.* The route is being formalized in Task 6678. At the operator's
+    direction, it is staged in reviewable pieces: the bounded Schur lemma, the tracial
+    finiteness, then the Hecke operators and the admissibility theorem. If a step fails,
+    the failure is to be reported, and C3 then reverts to an unresolved gap. The
+    [analysis note](iv32-single-coefficient-analysis.md) predates this route, and its
+    Section 4 calls the general case unresolved. This update supersedes that assessment,
+    not the note's proofs.
 
 ## Proof-publication update, 14 November 2026
 
@@ -317,5 +392,6 @@ predicates without admissibility and a proved comparison with the older predicat
 The other rows retain their original statuses and scope.
 C1–C3 remain relevant: the
 IV.1.3 Lemma needs a nonzero representation, the printed argument of IV.2.1 Remark 1 is
-incomplete, and the IV.3.2 Remark without admissibility remains unproved.
+incomplete, and the IV.3.2 Remark without admissibility remains unproved in Lean. C3
+records its reduction to admissibility and a paper route that Task 6678 is formalizing.
 These distinctions remain relevant to exact source coverage and whole-book completion.
