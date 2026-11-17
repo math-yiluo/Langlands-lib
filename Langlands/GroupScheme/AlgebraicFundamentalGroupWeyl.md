@@ -50,10 +50,10 @@ declarations.
 
 ## Proofs
 
-- `toriAreSplit_of_isSepClosed`: `torusFiniteGaloisSplitting` splits the torus over a
-  finite Galois extension `K` of `E`. Since `E` is separably closed, `E → K` is bijective
-  (`IsSepClosed.algebraMap_bijective`), so `Spec K → Spec E` is an isomorphism, and
-  `IsSplitTorus.of_baseChange_of_isIso` descends the splitting.
+- `toriAreSplit_of_isSepClosed` is imported from
+  [`Torus.SeparablyClosedSplitting`](Torus/SeparablyClosedSplitting.md).
+  Its shared proof applies the published coalgebra spanning theorem through
+  `SplittingAssembly.isSplit_of_isSepClosed_of_prerequisites`.
 - `coweightEquiv_sub_mem_corootSpan`: induction over the Weyl group
   (`RootPairing.weylGroup.induction`). For a reflection, `coreflection_apply` gives
   `y - (y - ⟨α_i, y⟩ α_i^∨) = ⟨α_i, y⟩ α_i^∨`, an element of the coroot span. The identity

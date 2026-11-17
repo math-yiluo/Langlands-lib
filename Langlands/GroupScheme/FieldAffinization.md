@@ -1,0 +1,13 @@
+# Actual affine group of a quasi-compact field group
+
+Fix an arbitrary universe `u`, an arbitrary field `k : Type u`, and an actual group scheme `G` over `Spec k`. The constructions `FieldAffinization.group G` and `projection G` assume only that the structure morphism of `G` is quasi-compact. Field-group separatedness follows from the existing `fieldSeparated` theorem.
+
+`object G` regards the original scheme as an object of the full category of quasi-compact separated field schemes. `liftedGroup G` transports the actual original group object into this full category along its fully faithful inclusion. The explicit `inclusionIso` recovers the original group, with the identity on the underlying scheme; unit and multiplication preservation reduce to categorical identity laws.
+
+`group G` applies the product-preserving functor from `FieldAffinizationProducts` to this group object. The resulting actual scheme is exactly `Spec Γ(G,O)`, as `group_left` records. Its structure morphism is spectrum of the actual scalar map `(ΓSpecIso k).inv ≫ G.X.hom.appTop`, as `group_hom` records. Mathlib's functor on group objects transports the multiplication, identity and inverse together with all their laws, using the proved Cartesian product comparison.
+
+The natural transformation `FieldAffinization.unit k`, lifted to group objects and composed with `inclusionIso.inv`, gives the actual homomorphism `projection G : G → group G`. The equality `projection_left` identifies its underlying scheme morphism exactly with `G.X.left.toSpecΓ`. The target is affine, its structure map is affine, and `isAffinization G` proves the unchanged Library `IsAffinization` predicate: the canonical map on global sections is the isomorphism specified by `Scheme.toSpecΓ_appTop`. Thus the existing `IsAffinization.targetIso` and `comp_targetIso` also apply to this particular homomorphism.
+
+`exists_of_smooth_connected` supplies an actual `Q` and an actual homomorphism `q` with `IsAffinization q` for every smooth connected field group, with no quasi-compactness premise. It first invokes the published `quasiCompact_of_smooth_connected`, and then uses the constructions above.
+
+The provenance is internal assembly of the published field separatedness and quasi-compactness theorems, the product comparison in `FieldAffinizationProducts`, and Mathlib's fully faithful lifting and functorial transport of categorical group objects and natural transformations. No new mathematical premise is added. This module does not claim finite generation of the global-functions algebra, smoothness or surjectivity of the projection, or smoothness, connectedness or anti-affineness of the full kernel. Those remain separate geometric steps in the anti-affine quotient existence theorem.

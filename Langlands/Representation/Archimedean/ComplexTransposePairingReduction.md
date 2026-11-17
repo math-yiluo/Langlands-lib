@@ -1,0 +1,11 @@
+# Complex transpose pairing from unique standard heads
+
+This internal reduction derives the exact `ComplexTransposePairingStatement` from the existing `ComplexStandardLanglandsQuotientStatement`. The latter asserts the largest proper GK submodule of every Langlands-ordered complex standard module. It is the only retained input; no transpose-pairing or module-isomorphism premise is assumed.
+
+The first step constructs matched occurrence unconditionally. The published ordered quotient and subrepresentation theorems give nonzero maps `X(ds) → V → X(cs)` with decreasing real exponents in `ds` and increasing ones in `cs`. Their composite is nonzero because the first map is surjective. The published opposite-order Hom reduction, Jacquet-exponent theorem, and transpose-intertwiner theorem show `ds.Perm cs`. Both `cs` and `ds.reverse` are increasing by real exponent. A list induction aligns them by moving a selected head only across equal real exponents. Such characters are unlinked, so the published adjacent unlinked-swap intertwiners give an injective map `X(cs) → X(ds.reverse)`. Composing with the original embedding yields the required nonzero matched embedding.
+
+The matched-head criterion then applies: the quotient map and the transpose of this embedding have the same kernel, since both target modules are irreducible and `X(ds)` has a largest proper submodule. Descending and evaluating gives the actual nonzero bilinear inverse-transpose pairing. The carrier universe remains free and the complex Lie algebra remains the full scalar extension of the underlying real matrix Lie algebra.
+
+The proof is internal composition of existing Library theorems plus elementary list alignment. The unique-head statement retains its published source correspondence in `ComplexLargeStandardIrreducibleReduction.md`. This reduction does not prove that input and is not a proof of the unconditional real-and-complex conjunction. Its role is to isolate an existing, independently meaningful missing prerequisite for the complex half.
+
+The ordered quotient is supplied directly by the published `complexLanglandsQuotient` theorem in [`ComplexLanglandsQuotientProof`](ComplexLanglandsQuotientProof.md).

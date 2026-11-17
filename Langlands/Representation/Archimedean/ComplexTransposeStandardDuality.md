@@ -1,0 +1,11 @@
+# Inverse-transpose duality of complex standard modules
+
+This internal construction identifies the complex standard module of `ds.reverse` with the inverse-transpose twist of the actual compact-finite dual of the standard module of `ds`. The list has length `n`. No ordering, irreducibility, temperedness, unitary structure or genericity is assumed.
+
+The map first pulls functions back by `g ↦ w₀ (gᵀ)⁻¹`. Existing `ComplexReverseTwist` results prove that this sends the standard module of the reversed list to that of `ds.map complexCharacterDataInv`, and that applying it twice is the identity. Compact equivariance uses actual `compactIota`. The right derivative of this pullback is negative ordinary transpose, as proved by `ComplexReverseIntertwinerTied.rightDerivative_twistLin` without its later irreducibility hypotheses. Tensor linearity proves equivariance on the entire `ℂ ⊗[ℝ] Matrix (Fin n) (Fin n) ℂ`.
+
+Integration over `U(n)` then identifies the inverse-character standard module with the compact-finite dual. Nondegeneracy gives injectivity. Surjectivity uses the finite-dimensional compact isotypic blocks from admissibility: the separating invariant range of the pairing consists of compact-finite functionals, and `KFiniteDual.mem_of_separating` makes it the whole compact-finite dual. The negative dual Lie action follows from the integral Lie-invariance identity, again extended to the entire tensor product.
+
+Thus `transposeDualEquiv` carries `R_reverse(k)` to `kDualRep(R_ds)(compactIota k)` and carries `dR_reverse(X)` to `dualLie(dR_ds)(complexifiedMatrixLieIota X)`. The order formula is precisely reversal of `ds`, without further inversion of the final character data. The intermediate inverse-character data have both negated weight and negated exponent.
+
+The provenance is internal and derived from existing Library definitions and proved integration, twist and compact-finite dual results. This does not identify an arbitrary irreducible module with its twisted dual. Such a conclusion still needs an independent classification argument controlling its simple head or socle, or another actual module isomorphism; equality of parameter multisets alone does not provide one.

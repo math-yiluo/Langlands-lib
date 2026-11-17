@@ -1,0 +1,7 @@
+# Actual opposite conjugate-inverse convergence domains
+
+This derived adapter specializes the generic conjugate-domain theorem to the exact dynamic opposite standard integrals, their original source quotient measures, and the original arbitrary compact open Iwasawa subgroup `K`. It assumes the same two structural character statements as the scalar target, a connected reductive ambient group, and an admissible coefficient representation with an invariant positive form. The local field and carrier universes are independent.
+
+The actual Levi Haar measure is two-sided invariant by the published Levi modular-character theorem, and compact-open cofinality follows from the nonarchimedean group structure. The actual opposite radicals intersect trivially, have reciprocal Haar moduli by the structural character theorem, and have the published compatible source quotient measures. The reverse squared-modulus identity supplies the generic actual-domain theorem's remaining geometric premise. Thus every point of the actual forward full domain has its conjugate inverse in the actual reverse full domain, without a compact-splitting or conjugate-domain assumption.
+
+The definition `adjunctionScale` retains the exact positive comparison factor for the original source Haar normalizations. Its positivity follows from the compact-coordinate masses and requires no Iwasawa factorization beyond the hypotheses stated for those masses. This unit establishes convergence transport and the normalization factor only, not continued-operator adjunction or inverse scalar regularity.

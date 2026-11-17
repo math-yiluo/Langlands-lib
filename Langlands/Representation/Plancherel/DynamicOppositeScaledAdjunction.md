@@ -1,0 +1,7 @@
+# Actual compact adjunction after positive rescaling
+
+This derived construction rescales the original source compact Hermitian pairing by the strictly positive actual comparison factor from `DynamicOppositeConjugateDomain`. The rescaled sesquilinear form retains nonnegative real diagonal values and is definite on every nonzero source vector. Its carrier, the original compact subgroup `K`, and the original coefficient representation are unchanged.
+
+With the scalar target's two structural character statements and connected reductive ambient group, the actual forward and reverse compact standard integral families at conjugate-inverse parameters are exactly adjoint for this rescaled source form and the original opposite target form. Forward and conjugate reverse full-domain membership are the hypotheses of this adjunction identity. The actual conjugate-domain theorem supplies the latter from the former when the coefficient representation is admissible.
+
+The proof specializes `compactPicture_adjunction_scaled` with the actual radical Haar measures and compatible quotient measures. Actual Levi unimodularity and opposite Haar reciprocity are the published structural inputs. No compact Levi splitting is assumed and no normalization of the actual scalar is changed: the rescaling changes an auxiliary proof pairing only. Rational continuation and scalar positivity are not asserted in this unit.

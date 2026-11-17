@@ -1,0 +1,7 @@
+# Compact-picture scaled adjunction and rescaled positive pairings
+
+This internal derived module transports the scaled K-integral Hermitian adjunction through the actual compact-picture extension and restriction equivalences. For the original standard integral intertwiners at conjugate-inverse parameters, it proves that the compact target pairing of the forward operator equals the positive normalization factor times the source pairing with the reverse operator. Both actual standard integral identities are assumed at those parameters. All semidirect, modulus, compact Iwasawa, continuity, closedness and compatible quotient-measure hypotheses are explicit. No compact intersection splitting or normalization of its radical/Levi mass is required.
+
+The implementation follows the published compact-picture adjunction transport, inserting the exact factor from `OppositeIntertwiningScaledAdjunction.setIntegral_inner_eq_scaled`. The Haar probability on the supplied `K` and every source quotient measure are retained.
+
+The companion `scaledSesq` multiplies any complex sesquilinear form by a real scalar. A nonnegative scalar preserves real nonnegative diagonal values, and a positive scalar preserves nonzero diagonal values. These elementary facts allow the scaled adjunction to be expressed as an exact adjunction of two positive pairings for continuation arguments. This unit asserts no continuation or scalar-regularity theorem.

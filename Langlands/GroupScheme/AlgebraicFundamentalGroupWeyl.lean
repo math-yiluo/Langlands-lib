@@ -6,6 +6,7 @@ import Langlands.GroupScheme.CentralIsogeny.SplitRootDatumProof
 import Langlands.GroupScheme.SimplyConnected.DerivedCoverSplitTorusProof
 import Langlands.GroupScheme.Rational.CoweightCocenterCharacters
 import Langlands.GroupScheme.Torus.SplitDescent
+import Langlands.GroupScheme.Torus.SeparablyClosedSplitting
 import Mathlib.LinearAlgebra.RootSystem.WeylGroup
 
 /-! # Normalizing points act trivially modulo the coroot image -/
@@ -20,19 +21,6 @@ open CategoryTheory AlgebraicGeometry
 open scoped CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme
-
-/-- Over a separably closed field every torus is split: it splits over a finite Galois
-extension, which is trivial. -/
-theorem toriAreSplit_of_isSepClosed (E : Type u) [Field E] [IsSepClosed E] :
-    ToriAreSplit E := by
-  intro T hT
-  obtain ⟨K, hK, hAlg, _, hGal, hsplitK⟩ := torusFiniteGaloisSplitting E T hT
-  let : Field K := hK
-  let : Algebra E K := hAlg
-  have : IsGalois E K := hGal
-  have : IsIso (Spec.map (CommRingCat.ofHom (algebraMap E K))) :=
-    isIso_SpecMap_iff.mpr (IsSepClosed.algebraMap_bijective E K)
-  exact hsplitK.of_baseChange_of_isIso _
 
 namespace AlgebraicFundamentalGroup
 
