@@ -102,3 +102,17 @@ results. The additional argument combines those interfaces and reflects the
 group-object laws along faithful pullback. The chosen field and its existential
 packaging make precisely that conditional finite-stage conclusion available to
 the host proof.
+
+## General finite-stage isomorphism interface
+
+`exists_finiteIntermediateField_iso k Ω G H e` exposes the already
+implemented general finite-stage argument: assume `Ω/k` algebraic,
+`G.X.hom` quasi-compact and quasi-separated, and `H.X.hom` locally of
+finite presentation. An actual group-scheme isomorphism `G_Ω ≅ H_Ω`
+then gives a finite intermediate field `E` and an actual isomorphism
+`G_E ≅ H_E`. All rings and groups retain the same universe `u`. This
+wrapper is exactly `exists_finite_stage_iso`, with no changes to its
+proof or hypotheses. It allows the same internal limit and fpqc descent
+argument to be used with diagonalizable finite groups, including
+nonsmooth groups with character torsion. The existing torus results
+and their hypotheses are unchanged. Added by Worker 626.

@@ -278,6 +278,21 @@ private theorem exists_finite_stage_iso
     (finiteStageBaseChangeIso_hom_fst k Ω E G)
     (finiteStageBaseChangeIso_hom_fst k Ω E H) hg
 
+/-- An actual group-scheme isomorphism over an algebraic extension descends
+ to some finite intermediate field when its source is quasi-compact and
+ quasi-separated and its target is locally of finite presentation. -/
+theorem exists_finiteIntermediateField_iso
+    (k Ω : Type u) [Field k] [Field Ω] [Algebra k Ω] [Algebra.IsAlgebraic k Ω]
+    (G H : GroupScheme (Spec (CommRingCat.of k)))
+    [QuasiCompact G.X.hom] [QuasiSeparated G.X.hom]
+    [LocallyOfFinitePresentation H.X.hom]
+    (e : (baseChange (Spec.map (CommRingCat.ofHom (algebraMap k Ω)))).obj G ≅
+      (baseChange (Spec.map (CommRingCat.ofHom (algebraMap k Ω)))).obj H) :
+    ∃ E : FinIntermediateField k Ω,
+      Nonempty ((baseChange (Spec.map (CommRingCat.ofHom (algebraMap k E.1)))).obj G ≅
+        (baseChange (Spec.map (CommRingCat.ofHom (algebraMap k E.1)))).obj H) :=
+  exists_finite_stage_iso k Ω G H e
+
 /-- Splitting over an algebraic extension descends to a finite intermediate field
 when the original group scheme is quasi-compact and quasi-separated. -/
 theorem IsSplitTorus.exists_finiteIntermediateField_of_algebraic
