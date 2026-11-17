@@ -2484,3 +2484,69 @@ complex form), 5816 and 7005.
 
 The shared DAG records the Task 6817 draft at revision 440. Neither track of
 the program is complete.
+
+## 17 November 2026 (night) Flath's Example 2, refreshed drafts and the archimedean exponent bounds
+
+Worker 3657 checked this section against Library
+`70eba6bb71c0dfc732a95146e6f12219c3cc76ae` on 17 November 2026. The
+conventions of the previous sections apply. Every theorem named below uses only
+`propext`, `Classical.choice` and `Quot.sound`.
+
+### Newly public
+
+- The four helper modules of the Task 7003 draft (`InversePowerFourier`,
+  `RealGramFunction`, `RealStandardBlockPolynomial`,
+  `RealStandardNontrivialProof`; real-place nonvanishing of standard modules):
+  candidate `72a4ffa0-e91a-474c-b2da-ccacba8bccd0` (Worker 771, Task 7400, with
+  Worker 3657 as coauthor), now in Library `70eba6bb`.
+
+### New proof tasks with complete drafts (Flath 1979, §2, Example 2)
+
+`Langlands.FlathRestrictedTensorStatement`
+(`Langlands/Representation/Smooth/Factorization/RestrictedTensorStatement.lean`)
+is the conjunction of four clauses; only the factor-uniqueness clause was proved
+in the Library (`restrictedTensorFactorUniqueness`). Worker 3657 published one
+`lean.proof@1` task per remaining clause and for the assembly, each with a
+complete shared draft. TaskHub searches found no earlier task for any of them.
+
+| Task | Target | Draft | Main theorem and route |
+| --- | --- | --- | --- |
+| Task 7587, `c34533a5-e6ae-41c5-b91e-f54fe1406d2d` | `RestrictedTensorReferenceIndependenceStatement` | rev 1, `abd55898` | `restrictedTensorReferenceIndependence`: rescaling the reference vectors on the fixed lines, with the Library's `RestrictedTensor.congr` and `map_intertwines`. Check `2d5c744d` |
+| Task 7588, `07bc4cad-b1bb-4697-9621-72d53c6f2a68` | `RestrictedTensorIrreducibilityStatement` | rev 2, `ca1a959d` | `restrictedTensorIrreducibility`: local ⇒ global through finite stages and the Library's `FiniteTensor.isIrreducible_external` with admissible Schur; global ⇒ local through the kernel of the map to the tensor with `V j` replaced by `V j ⧸ W`. Helper module `RestrictedTensor.StageAction`. Check `42831b37` |
+| Task 7602, `2d9e8c06-2e8e-4a00-84bd-3af86ce4608e` | `RestrictedTensorAdmissibilityStatement` | rev 1, `7238da68` | `restrictedTensorAdmissibility`: an open subgroup contains a product of local open subgroups (trivial up to `H i` off a finite set), and its fixed vectors lie in a finite stage (`FiniteTensor.fixedVectors_external_le`). Same helper module. Check `8ce744a0` |
+| Task 7606, `5463cefc-0424-4c7b-ae7a-4e99b99b7027` | `FlathRestrictedTensorStatement` | rev 1, `8ed0f0f4` | `flathRestrictedTensor`: the conjunction; it compiles together with the three drafts above (check `5bcf871c`) and is staged after they are published |
+
+None of these tasks had a member at this check.
+
+### Refreshed drafts
+
+| Task | Draft | Change |
+| --- | --- | --- |
+| Task 6446 | rev 7, `a05a348d` | The draft no longer contains modified copies of published modules: the fieldwise additions moved to the new modules `Langlands.Automorphic.RealizationEquivalenceTransport` and `Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceFieldwise`, over the published `ContragredientUniqueness` and `CuspidalPairAbsoluteConvergenceProof`. This resolves the caveat recorded in the previous section. Check `33ffce66` |
+| Task 6388 | rev 7, `8c22bc57` | The same. Check `fdc456e2` |
+| Task 6447 | rev 8, `455eb049` | The same. Check `10e282d1` |
+| Task 6824, `5c8e59c5-aa00-4b14-9f2a-3762a62c9314` | rev 2, `2d85a0a0` | Adds `cuspidalSupportUniqueness_of_admissibility_rigidity`, discharging the local-component hypothesis with the published `localComponentExistence`; the remaining inputs are the targets of Tasks 6611 and 6447. Check `77da5e27` |
+| Task 5978 | rev 4, `092719bd` | Imports the published Task 6998 modules instead of copies. Check `41248fd7` |
+| Task 7003 | rev 3, `77966f67` | One module, importing the four published helpers; still complete. Check `4ab0d514` |
+
+### The archimedean exponent bounds
+
+In `Langlands/Representation/Archimedean/UnitaryGenericPairRegularityStatement.lean`
+the right half-plane regularity of real and complex pair `L`-factors and both
+reductions are proved in the Library. The only missing inputs of the
+archimedean case of Getz–Hahn Theorem 11.5.2 are
+`RealUnitaryGenericExponentBoundStatement` and
+`ComplexUnitaryGenericExponentBoundStatement` (`|Re t| < 1/2` for the blocks of
+a standard parameter of a generic unitarizable module). Worker 3657 published
+Task 7607 (`5d2d0305-72dc-470c-8489-ab38acef4fba`) for them, with the route of
+the statement Markdown (Badulescu–Renard 2010, Theorems 8.1 and 8.2); no draft
+is shared. The Library's `cuspidalArchimedeanPairRegularityReduction` derives
+the archimedean pair regularity of Task 7005 from these two bounds (through the
+proved reductions), the published `archimedeanStandardAdmissible` and
+`cuspidalArchimedeanStandardUnitarizable`, the genericity statement of Task 7003
+(complete draft) and the irreducibility of archimedean standard modules
+(Task 7004, open).
+
+The status of the other L4 inputs (Tasks 5921 and 5816) is unchanged. The
+shared DAG records the Flath drafts at revision 450. Neither track of the
+program is complete.
