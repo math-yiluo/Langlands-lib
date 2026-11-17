@@ -1,0 +1,9 @@
+# Transport of regular cochains along actual group-scheme maps
+
+For group schemes `H` and `G` over the same affine base, `ModuleRepresentation.precomp`, `OneCochain.precomp` and `TwoCochain.precomp` restrict an action or cochain on `G` along an actual group-scheme homomorphism `H → G`. They use the Library's actual maps on affine-test points. Naturality follows from compatibility of these point maps with extension of coefficients. The module proves that the one- and two-cocycle equations are preserved by this restriction.
+
+`HasVanishingLowDegreeCohomology.of_iso` transports low-degree vanishing along an actual source isomorphism `H ≅ G`. For a cocycle and action on `H`, restrict along the inverse isomorphism to apply vanishing on `G`. In degree one, the same base-module element then gives the original coboundary. In degree two, pull the resulting one-cochain back along the forward isomorphism. The inverse identities on actual affine points verify both coboundary equations.
+
+`hasVanishingLowDegreeCohomology_of_isDiagonalizable` applies this transport to the existing relative diagonalizable predicate over an affine base. That predicate supplies an isomorphism to the model obtained by base change from `Spec ℤ`. The published `Diagonalizable.relativeModelIso` compares it with the direct group-algebra model `D_R(Λ)`, to which the explicit arbitrary-module averaging theorem applies.
+
+This is an internal derived construction from the published actual affine-point functor and affine/relative diagonalizable comparison, together with the explicit regular cochain contractions in `DiagonalizableModuleAveraging`. It proves the split-source consequence for the precise Library predicate. It introduces no new source assertion and does not prove descent of cohomology vanishing through an fppf cover; the general multiplicative-type vanishing statement remains open.

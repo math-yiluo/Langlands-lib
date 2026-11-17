@@ -1,0 +1,9 @@
+# Nilpotent induction for affine test schemes
+
+For a scheme `S` and a morphism property `P` on `Over S`, `affineTestMorphismProperty P` is a property of ring maps. A map `f : A → B` has this property if every compatible choice of structural maps `a : Spec A → S` and `b : Spec B → S`, with `Spec(f) ≫ a = b`, gives an arrow `Spec B → Spec A` over `S` having `P`. Quantifying both structural maps makes the construction independent of choices of equality proofs and keeps the intermediate test scheme explicit during composition.
+
+Suppose `P` contains identities, is closed under composition and respects isomorphisms. The module proves the corresponding multiplicativity and isomorphism-invariance instances for its ring-map property. The spectrum construction reverses composition: the arrow associated to `f ≫ g` is the arrow for `g` followed by the arrow for `f`. Thus the composition proof applies `P` in that order. A ring isomorphism yields a spectrum isomorphism, and its compatible structural triangle gives an isomorphism in `Over S`.
+
+`affineTestMorphismProperty_nilpotent` states the resulting reduction: if `P` holds on every square-zero affine quotient inclusion with every compatible structure map to `S`, it holds on every nilpotent affine quotient inclusion with every such structure map. Its square-zero hypothesis is uniform over all commutative rings in the fixed universe. The theorem follows by applying `Langlands.CommutativeAlgebra.nilpotentQuotient_of_squareZero` to the constructed property of ring maps.
+
+This is an internal auxiliary construction from Mathlib's spectrum functor and over category, together with the generic nilpotent-quotient induction. It asserts no square-zero geometric lifting result. For the homomorphism lifting application, one may take `P` to be the separate `HomScheme.HasConjugatorLifting H G` property, once its square-zero instances have been established.

@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Torus.RelativeMultiplicativeTypeLocality
 import Langlands.GroupScheme.Torus.RelativeMultiplicativeTypeSubgroupStatement
 import Langlands.GroupScheme.Torus.FlatDiagonalizableSubgroup
 import Langlands.GroupScheme.Torus.DiagonalizableGeometry
@@ -29,16 +30,6 @@ local instance : MorphismProperty.IsStableUnderComposition
     let : LocallyOfFinitePresentation f := hf.2
     let : LocallyOfFinitePresentation g := hg.2
     exact ⟨inferInstance, inferInstance⟩
-
-/-- Multiplicative type can be checked on any fppf cover of the base. -/
-theorem IsMultiplicativeType.of_fppfCover
-    (𝒰 : Scheme.Cover.{u} (Scheme.precoverage (@Flat ⊓ @LocallyOfFinitePresentation)) S)
-    (hG : ∀ i, IsMultiplicativeType ((GroupScheme.baseChange (𝒰.f i)).obj G)) :
-    IsMultiplicativeType G := by
-  choose 𝒱 h𝒱 using hG
-  refine ⟨𝒰.bind 𝒱, fun ⟨i, j⟩ => ?_⟩
-  change IsDiagonalizable ((GroupScheme.baseChange ((𝒱 i).f j ≫ 𝒰.f i)).obj G)
-  exact IsDiagonalizable.of_iso (baseChangeCompIso (𝒰.f i) ((𝒱 i).f j) G) (h𝒱 i j)
 
 /-- Multiplicative type can be checked on any open cover of the base. -/
 theorem IsMultiplicativeType.of_openCover (𝒰 : Scheme.OpenCover.{u} S)

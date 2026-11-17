@@ -190,3 +190,7 @@ The lemmas:
   `ρ(k)`. So `E f = c f` by `kFiniteEval_one_separating`.
 
 The module has no `sorry` and adds no axioms.
+
+The abstract orthogonal-complement, saturation and projection declarations
+are implemented once in `GKModuleOrthogonal`, imported here with their original
+`ComplexTemperedComplement` names and unchanged mathematical definitions.

@@ -1,0 +1,7 @@
+# Irreducibility reflected by smooth induction
+
+This derived helper reflects irreducibility from actual smooth induction to a smooth coefficient representation, over any field, for a nonarchimedean weakly locally compact group. It also reflects irreducibility from the actual normalized induction attached to a semidirect parabolic decomposition when its Levi projection is continuous. The normalized version uses complex coefficients and retains independent group and representation-carrier universes.
+
+The implementation uses the published coefficient-subrepresentation and inducing-subrepresentation order embeddings from `Aubert/General/InductionFiniteLengthReflection`. The new `coefficientSubrepresentationBoundedOrderHom` packages the coefficient construction as a bounded order homomorphism. Both embeddings preserve bottom and top: for coefficient induction, an induced function valued in zero is zero; the top subrepresentation imposes no restriction. Inflation and the normalization character retain the underlying invariant subspace. A bottom- and top-preserving order embedding into a simple order reflects simplicity, including nontriviality. Applied successively, these embeddings give the two irreducibility reflection theorems. The continuous projection and the locally constant half-modulus character supply smoothness of the inducing representation.
+
+This is an internal order-theoretic consequence of the existing actual induction constructions. It asserts no converse irreducibility criterion.

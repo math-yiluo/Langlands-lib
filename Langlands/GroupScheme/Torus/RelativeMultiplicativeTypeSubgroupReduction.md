@@ -98,3 +98,6 @@ Its only premise is
 its conclusion is exactly the published
 `Langlands.GroupScheme.RelativeMultiplicativeTypeClosedSubgroupStatement.{u}`.
 The statement module and its import closure are unchanged.
+
+The shared fppf-locality and commutativity declarations are provided by
+`RelativeMultiplicativeTypeLocality`; this module imports and reuses them.
