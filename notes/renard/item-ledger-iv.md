@@ -21,6 +21,9 @@ its published statement and exact proof owner, checked at Library
 On 17 November 2026, Worker 5099 (executor of Task 6678) updated clarification C3 and the
 IV.3.2 Remark row against Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`, at the
 operator's request.
+On 18 November 2026, Worker 4988 (executor of Task 6678) updated the two IV.3.2 Remark rows,
+clarification C3 and the Summary against Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`, after both exact proofs were
+published.
 Other row statuses retain the original survey date and scope.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -87,8 +90,8 @@ another namespace is written, statements are in
 | IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | `Langlands.Induction.CentralL2` and its form `centralL2Form` | D |
 | IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
 | IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.SmoothRep.IsSquareIntegrableModuloCenter` and `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter` in [SmoothSquareIntegrability](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md) | D: neither assumes admissibility or irreducibility. The older `Langlands.IsSquareIntegrableModCenter` is admissibility conjoined with the first predicate, by `Langlands.SmoothRep.isSquareIntegrableModCenter_iff` |
-| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | S; unproved in Lean and not to be used as a premise. A complete paper route is being formalized in exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`), which remains open. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
-| IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | S; exact proof Task 7180 (`a326697e-2603-4828-9948-308b70e7369c`) remains open. Statement publication supplies no counterexample construction |
+| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | P: [`singleCoefficientSquareIntegrability`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md) (exact proof Task 6678, `cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`), without admissibility, countability or reductivity. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
+| IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | P: [`nonirreducibleSquareIntegrabilityCounterexample`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleProof.md) (exact proof Task 7180, `a326697e-2603-4828-9948-308b70e7369c`): the left regular representation of the discrete infinite dihedral group on its complex group algebra |
 | IV.3.2 Proposition: essentially square integrable irreducible implies admissible | 100 / 106 | `CR.EssentiallySquareIntegrableAdmissibleStatement` | P |
 | IV.3.2 Lemma: admissible square integrable implies unitary and semisimple | 100 / 106 | `CR.SquareIntegrableUnitarySemisimpleStatement` | P |
 | IV.3.3 Lemma (i)–(ii): Schur orthogonality and the formal degree | 101 / 107 | `CR.SchurOrthogonalityStatement` | P: `schurOrthogonality` |
@@ -124,20 +127,24 @@ another namespace is written, statements are in
   The newly published
   [SingleCoefficientSquareIntegrabilityStatement](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md)
   states the general t.d.-group Remark without admissibility, using the all-coefficients
-  condition directly. Its exact proof remains open in Task 6678
-  (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`). The published
+  condition directly. Its exact proof was then open in Task 6678
+  (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`); it is now published, see the 18 November
+  update below. The published
   `essentiallySquareIntegrableAdmissible` theorem consumes the all-coefficients condition;
   it can yield admissibility after this implication is proved, not as an initial input.
   A reductive-group admissibility theorem alone cannot discharge this general t.d.-group
-  obligation. C3 is now a proof gap rather than a missing statement.
+  obligation. With the publication of that statement, C3 became a proof gap rather than a
+  missing statement. That gap is closed: the 18 November update below records the current
+  status of C3.
 
   *Update, 17 November 2026 (Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`).* What
   follows is a paper analysis. None of it is a Lean theorem, and it changes no status code
   in the table.
 
-  - *Status.* No Library theorem has type `CR.SingleCoefficientSquareIntegrabilityStatement`.
-    The statement is unproved in Lean and is not to be used as a premise. Task 6678 stays
-    open for its proof. Its statement Markdown is unchanged.
+  - *Status (as of 17 November; superseded by the 18 November update below).* No Library
+    theorem had type `CR.SingleCoefficientSquareIntegrabilityStatement`. The statement was
+    unproved in Lean and was not to be used as a premise. Task 6678 stayed open for its
+    proof. Its statement Markdown is unchanged.
   - *Admissible case.* Under admissibility the Remark is proved. The published
     `squareIntegrableCoefficientCriterion` concludes `IsSquareIntegrableModCenter`, which
     contains the all-coefficients condition for some unitary central character. By
@@ -202,6 +209,41 @@ another namespace is written, statements are in
     [analysis note](iv32-single-coefficient-analysis.md) predates this route, and its
     Section 4 calls the general case unresolved. This update supersedes that assessment,
     not the note's proofs.
+
+  *Update, 18 November 2026 (Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`).* C3 is resolved. The exact proof
+  `82d49555-92de-46ac-ba53-8c6023899f61` of Task 6678 is independently accepted and
+  public, with accepted machine validation for `lake-build`, `exact-target`,
+  `unchanged-statement` and `frozen-inputs`. Its theorem
+  `CR.singleCoefficientSquareIntegrability`
+  ([SingleCoefficientSquareIntegrabilityProof](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md))
+  has type exactly `CR.SingleCoefficientSquareIntegrabilityStatement.{u, v}`. The
+  statement and its Markdown are unchanged. The *Status* bullet above is superseded:
+  the statement may now be used as a premise.
+
+  - *Implemented route.* `CR.SingleCoefficient.isAdmissible_of_memLp` proves the
+    admissibility claim of the *Reduction to admissibility* bullet, under the hypotheses
+    of the statement. Then `squareIntegrableCoefficientCriterion` and `coefficientNorm_eq`
+    give the conclusion, as in the *Admissible case* bullet. The admissibility proof
+    follows steps 1–5 of the paper route. The proof Markdown describes the implemented
+    version; two details differ from the wording above. The Hilbert space is
+    `ℓ²(G/J)` with `J = K · Z(G)` and `K` a compact open subgroup on whose central
+    elements `χ` is trivial; coefficient functions are recorded at chosen coset
+    representatives. With Mathlib's inner product, which is conjugate-linear in the
+    first argument, the trace is written `τ(x) = ⟨ξ, x ξ⟩`.
+  - *Pieces.* As the operator directed, the route was published in three reviewed
+    pieces. Definition `c451c9a6-eb97-47f6-8138-1a5c5c7d822d` contains the bounded
+    Schur lemma and the tracial finiteness theorem
+    (`Langlands/Analysis/BoundedSchur.lean`, `Langlands/Analysis/TracialFiniteness.lean`).
+    Definition `623e2c9c-8405-43cf-9920-8e7132a6c839` contains the Hecke operators on the
+    twisted coset space and their support files
+    (`Langlands/Representation/MatrixCoefficient/HeckeOperator.lean`, `TwistedCosetSpace.lean`,
+    `CentralCosetSum.lean` and `Langlands/Analysis/FiberLIntegral.lean`). The proof
+    `82d49555-92de-46ac-ba53-8c6023899f61` contains the admissibility theorem and the target.
+  - *Scope.* The Lean theorem has no admissibility, countability, reductivity or
+    finite-dimensionality hypothesis, and the group and carrier universes are independent.
+    The second assertion of the Remark, failure without irreducibility, is the separate
+    exact proof `8ce9377f-9877-4bc9-8716-6b42762d9824` of Task 7180 (accepted by
+    Reviewer 7809, Task 7180 done); its table row is updated together with this one.
 
 ## Proof-publication update, 14 November 2026
 
@@ -380,18 +422,20 @@ Its contract pins environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` and
 preserves the published target and imported objects. At this update it is ready
 and has no proof candidate. The positive criterion's Task 6678
 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) was also inspected at revision 1:
-it remains ready with no candidate. Both assertions remain unproved.
+it remains ready with no candidate. Both assertions remained unproved at this
+update; both are now proved (see the table rows and the 18 November update of C3).
 
 ## Summary
 
 The six formerly open proof rows now have proofs of their published propositions.
-The IV.3.2 Remark additionally has published statements for the general irreducible
-criterion and its failure without irreducibility, with both exact proofs still open.
+The IV.3.2 Remark additionally has published statements and published exact proofs for
+the general irreducible criterion without admissibility (Task 6678) and for its failure
+without irreducibility (Task 7180).
 The IV.3.2 Definition now has published reusable
 predicates without admissibility and a proved comparison with the older predicate.
 The other rows retain their original statuses and scope.
-C1–C3 remain relevant: the
-IV.1.3 Lemma needs a nonzero representation, the printed argument of IV.2.1 Remark 1 is
-incomplete, and the IV.3.2 Remark without admissibility remains unproved in Lean. C3
-records its reduction to admissibility and a paper route that Task 6678 is formalizing.
+C1 and C2 remain relevant: the
+IV.1.3 Lemma needs a nonzero representation, and the printed argument of IV.2.1 Remark 1 is
+incomplete. C3 is resolved: the IV.3.2 Remark without admissibility is proved in Lean
+through admissibility, by the trace argument that C3 records.
 These distinctions remain relevant to exact source coverage and whole-book completion.

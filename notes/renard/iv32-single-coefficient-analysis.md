@@ -3,15 +3,22 @@
 Worker 4988, 17 November 2026, within Task 6678
 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`).
 
-This note analyses the open proof obligation
+This note analyses the proof obligation
 `Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement`
-([statement](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md)).
+([statement](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md)),
+which was open when it was written.
 It separates three kinds of claim. Section 2 gives proved steps (paper proofs, not
 Lean). Section 3 gives an exact reformulation for discrete groups. Section 4 states the
-remaining step. The note contains no Lean declaration or proof receipt. It does not
-change the statement, the task or caveat C3 of the
-[Chapter IV item ledger](item-ledger-iv.md). The general-scope proof gap recorded there
-remains open.
+step that was then unresolved. Sections 1–4 contain no Lean declaration or proof
+receipt, and they do not change the statement, the task or caveat C3 of the
+[Chapter IV item ledger](item-ledger-iv.md).
+
+*Update, 18 November 2026.* The obligation is now proved in Lean, without admissibility,
+countability or reductivity, by the published theorem
+`Langlands.Renard.CompactRepresentation.singleCoefficientSquareIntegrability`
+([proof](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md),
+Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`). Section 5 records what this changes in Sections 3 and 4.
+Sections 2 and 3 are unchanged.
 
 ## 1. Source and target
 
@@ -147,17 +154,18 @@ bounded below on `q ℓ²(G)`.
   algebra `L(G)`. That is false, because `λ(g)` has full circle spectrum, since `g` has
   infinite order.
 
-## 4. The unresolved step
+## 4. The step that was unresolved at first writing
 
+This section is kept as written on 17 November 2026; Section 5 records its resolution.
 The target is equivalent to the following claim.
 
 > An irreducible smooth representation of a unimodular t.d. group, with unitary central
 > character and one nonzero coefficient square-integrable modulo the centre, is
 > admissible.
 
-For discrete groups this is exactly (D). The author knows no proof of (D) for all
-groups and no counterexample. This note makes no claim about its status in the
-literature. Approaches that do not close the gap:
+For discrete groups this is exactly (D). When this section was written, the author knew
+no proof of (D) for all groups and no counterexample. This note makes no claim about its
+status in the literature. Approaches that do not close the gap:
 
 - **Renard's admissibility argument with only `W = span π̃(G)ℓ`.** It needs a functional
   in `W^K` with prescribed values on infinitely many independent vectors of `V^K`.
@@ -169,3 +177,46 @@ literature. Approaches that do not close the gap:
 
 A Lean proof of the target would in particular prove (D) for every group in the
 universe `u`.
+
+## 5. Resolution (update, 18 November 2026)
+
+The claim displayed in Section 4 is now a published Lean theorem,
+`Langlands.Renard.CompactRepresentation.SingleCoefficient.isAdmissible_of_memLp`, and the
+target is the published theorem
+`Langlands.Renard.CompactRepresentation.singleCoefficientSquareIntegrability`
+([proof Markdown](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md),
+Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`). Both are proved under the hypotheses of the published statement: a
+Hausdorff locally compact totally disconnected group, a Haar measure on `G/Z(G)` that is
+also right invariant, and an irreducible smooth representation with a unitary central
+character. There is no admissibility, countability or reductivity hypothesis. The target
+follows from admissibility by the published `squareIntegrableCoefficientCriterion`,
+as in Section 2.
+
+The route is the trace argument of the
+[Chapter IV item ledger](item-ledger-iv.md), clarification C3 (17 November update), and the
+proof Markdown describes the implemented version. In outline: fix a compact open `K`
+on whose central elements `χ` is trivial, and let `J = K · Z(G)`. With chosen coset representatives,
+the coefficient map `y ↦ (gJ ↦ ℓ(π(g) y))` sends `V^K` injectively into `ℓ²(G/J)`
+(on `V^K` it changes only by a phase when the representative changes). Each Hecke
+compression `e_K R(g) e_K` is a bounded operator of norm at most one that commutes with
+left translations and preserves the image. A single compression is not transitive on the
+image, being a contraction. But by irreducibility, finite complex linear combinations of
+the compressions send any nonzero image vector to any chosen image vector. So the
+subalgebra `B` of those operators in the commutant of left translations that preserve the
+image acts transitively on the image. This is the transitivity hypothesis of
+`finiteDimensional_of_tracial'` (`Langlands/Analysis/TracialFiniteness.lean`), which the
+proof applies to `B`. The twisted indicator `ξ` of `J` gives a faithful trace on the
+commutant of left translations. A projection argument bounds `dim V^K`. Two points differ
+from the attempts listed in Section 4:
+
+- Schur's lemma is used in a bounded form (`Langlands/Analysis/BoundedSchur.lean`):
+  an endomorphism of the image that commutes with `B` is a scalar, because otherwise
+  a bounded operator would have empty spectrum. This needs no countability.
+- Traces are computed only for operators in the commutant. No vector of `V^K` is
+  written as `x ξ` with `x` in the commutant, so coefficient vectors need not be
+  bounded vectors.
+
+Consequences for Section 3, on paper: Proposition 3.3 derives (D) from the target, so (D)
+now holds for every group in the universe `u`. Only the target is a Lean theorem: (D),
+Lemmas 3.1–3.2 and Proposition 3.3 remain paper statements. The two special cases at
+the end of Section 3 are subsumed.
