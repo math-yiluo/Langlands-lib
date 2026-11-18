@@ -34,3 +34,8 @@ arbitrary supplied radical, establish choice compatibility, or descend
 the filtration. Its provenance is the existing coweight-face, split-cell,
 actual factored-root and independent-weight constructions; no new original
 literature translation is claimed.
+
+The local affine-source instance has the explicit internal name
+`splitParabolicWeightChart_affineSource`. This avoids an anonymous declaration-name
+collision when this module is imported together with the global root parametrization
+infrastructure. Its type, proof and local scope are unchanged.

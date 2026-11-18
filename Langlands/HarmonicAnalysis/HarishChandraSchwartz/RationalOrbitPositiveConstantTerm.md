@@ -174,6 +174,9 @@ split component of `M′`, and `standardComponentHom hA : A(F) →* M′(F)`.
 `RationalOrbitWeakConstantTermLimitStatement`, `RationalOrbitPositiveConstantTermDecayStatement`
 (principal target). Each takes the orbit data, `I′`, `A`, `qA`, `hA` as parameters (the decay
 target also the Levi Iwasawa pair `hM′` needed by `rationalLeviXi`).
+The weak-limit and decay propositions additionally quantify explicitly over
+`[BorelSpace (M_I(F) ⧸ C)]` inside their Prop bodies, for the already supplied
+quotient measurable-space instance.
 
 ### Unresolved obligations
 
@@ -278,6 +281,35 @@ The decay bound uses the published `rationalLeviXi hKc hM′` for the index `I�
 `minimalLeviInclusion … m ∈ M′(F)`; `hM′` is the Iwasawa pair of `P_∅(F) ∩ M′(F)` and
 `K ∩ M′(F)` required by `rationalLeviXi`.
 
+## Quotient-measure compatibility
+
+The weak-limit and positive-decay targets require the supplied measurable
+structure on `M_I(F) ⧸ C` to be the Borel sigma algebra of its quotient topology.
+Each proposition binds `[BorelSpace (M_I(F) ⧸ C)]` explicitly inside its Prop
+body. An unused section instance would not impose this condition on the target.
+`Measure.IsHaarMeasure` on an independently chosen measurable space does not
+itself identify that measurable space with the Borel structure.
+
+This corrects the interpretation of the square-integrability premise as an
+analytic condition for the topological quotient. Lemma III.5.1 starts with a
+tempered coefficient `f ∈ A^w(G)`, and VI.2.3 uses the unitary/non-unitary exponent
+split of those coefficients; neither source passage asserts their conclusions
+for square integrability on an unrelated sigma algebra. Borel compatibility is
+a natural sufficient requirement for the intended Haar-measure interface, not
+a claim of the weakest possible measure-theoretic condition.
+
+The orbit and constant-term constructions and their algebraic decomposition laws
+continue to accept the original measurable data. The existence and uniform
+threshold targets use admissibility and the algebraic-family result I.5, so this
+correction adds the Borel requirement only to the weak-limit and decay targets.
+Their structural premises and conclusions are otherwise the same. In particular,
+Borel compatibility supplies neither induced temperedness nor an exponent bound
+nor a coefficient estimate. For the general central subgroup `C` in this module,
+a proof must still justify the passage from its square-integrability premise to
+the actual split-center analytic results used by the source. The downstream
+VI.3.1 target in `StandardLeviPlancherelWavePacketSchwartz` already assumes Borel
+compatibility for its actual split-center quotient.
+
 ## Targets
 
 All four targets share the displayed structural premises, which are exactly those the published
@@ -306,14 +338,15 @@ properties of a weak constant term, the threshold, or any decay estimate.
    then `rationalOrbitWeakConstantTerm_add_positive`. (Page 303 states it on
    `M̄_0^+(J) ∩ {s(m) ≥ t}`; the p. 299 form used here implies it, since on that set the
    simple roots outside `Δ_0^{M′} = Δ_0 − J` have value `s(m) ≥ t`.)
-3. **`RationalOrbitWeakConstantTermLimitStatement`** (Lemma III.5.1). For every `ψ`, `ω ∈ O`
+3. **`RationalOrbitWeakConstantTermLimitStatement`** (Lemma III.5.1). Assuming the quotient
+   Borel compatibility above, for every `ψ`, `ω ∈ O`
    and `m′ ∈ M′(F)`: `TendstoZeroAlongParabolic H S` of
    `a ↦ δ_{U′}(m′a)^{−1/2} f_ω(m′a) − (f_ω)^w_{P′}(m′a)` on `A(F)`, with `H = rationalComponentH0`
    (`H_0` of the image of `a` in `M_0(F)`, which is the source's `H_{M′}(a)` under
    `a_{M′} ⊂ a_0`) and `S = rationalOutsideSimpleForms (Δ_0^{M′})`. Combined with the published
    uniqueness results, it identifies the weak part defined here with the source's `f^w_{P′}`.
 4. **`RationalOrbitPositiveConstantTermDecayStatement`** (Lemma VI.2.3, principal target).
-   For every norm `N` on `V(S)`, every `ψ` and every `δ > 0`, there are `ε > 0` and `C > 0`
+   Assuming the same quotient Borel compatibility, for every norm `N` on `V(S)`, every `ψ` and every `δ > 0`, there are `ε > 0` and `C > 0`
    such that for **every** `ω ∈ O` and every `m ∈ D_{M′}(δ)`,
    `‖(f_ω)^+_{P′}(m)‖ ≤ C Ξ^{M′}(m) e^{−ε N(H_0(m))}`. The constants depend on `ψ`, `I′`,
    `δ` and `N` only, uniformly over the orbit, as in the source.
@@ -410,3 +443,8 @@ into lower-Levi packets (V.1.1, Corollary V.2.3), which is a separate task.
 `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`): 0 errors, 0 warnings. Inspection of each of the
 four targets reports `statement_returns_prop: true`, level parameters `u, uV`, axioms
 `propext`, `Classical.choice`, `Quot.sound`.
+
+The quotient Borel correction was checked on both changed propositions with the
+same environment: compilation and exact proposition inspection report zero
+errors and warnings, `statement_returns_prop: true`, independent level parameters
+`u, uV`, and only `propext`, `Classical.choice`, `Quot.sound`.

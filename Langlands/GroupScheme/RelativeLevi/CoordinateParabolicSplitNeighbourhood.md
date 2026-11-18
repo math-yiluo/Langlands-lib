@@ -1,0 +1,13 @@
+# Principal split data in a prescribed parabolic torus
+
+Let `R` be any commutative ring in universe `u`. Let `p : H → G` be a supplied relative parabolic in an affine reductive group scheme over `Spec R`. Supply a finite coordinate split torus `t : Gm^I → H` whose composite with `p` is fibrewise maximal in the ambient group. For every specified point `s`, `principalParabolicSplitAt` constructs one principal localization through `s` carrying simultaneous actual split data.
+
+The data contain an element avoiding the prime `s`, a single fixed integral coordinate cocharacter, a full fibrewise root datum on the same coordinate torus, trivializations of all actual root weight lines over the localization, and the actual dynamic presentation of the original pulled-back parabolic inclusion. Neither the root datum nor the local dynamic presentation nor the free root lines are supplied as premises. The coordinate exponents are one integral function on `I`; there is no assertion that every torus cocharacter over a disconnected base has constant coordinates.
+
+The proof first presents the residue-field parabolic through the prescribed maximal torus. It composes the resulting residue-field cocharacter with the canonical coordinate-torus base-change isomorphism, extracts its integral coordinate vector over that field, and extends precisely that vector to the original base. The actual exponent-cocharacter base-change identity proves exact recovery of the residue-field cocharacter. The established local dynamic comparison then spreads this fixed vector's presentation to an open neighborhood.
+
+Independently, the full root datum and rank-one root weight condition spread to an open neighborhood of the same point. Simultaneous principal trivialization of finitely many actual weight lines is applied inside the intersection of these two open neighborhoods. The chosen principal map lifts through the original dynamic neighborhood. The actual normalized pullback-tower cocharacter equation and the direct-pullback presentation theorem retain the original parabolic inclusion. Restriction of fibrewise root data supplies the full datum on the localization.
+
+No locality, reducedness or nontriviality of `R` is assumed. A specified spectrum point already gives a nonempty neighborhood. This module supplies the root datum and actual free root lines needed by global root parametrization, but does not itself choose those parametrizations, construct a face chart, or descend a global filtration.
+
+The provenance is derived internal infrastructure: the construction combines actual field dynamic presentations, open spreading of root data, finite principal trivialization, and canonical pullback coherence. It adds no independent literature claim.

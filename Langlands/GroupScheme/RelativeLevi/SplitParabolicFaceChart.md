@@ -43,3 +43,8 @@ the unscaled root-span commutator construction. The chosen positive base,
 regular cocharacter and root parametrizations need not be canonical. This unit
 does not establish comparison under changing those choices or maximal tori,
 nor global descent of the filtration.
+
+The local affine-source instance has the explicit internal name
+`splitParabolicFaceChart_affineSource`. This avoids an anonymous declaration-name
+collision when this module is imported together with the global root parametrization
+infrastructure. Its type, proof and local scope are unchanged.

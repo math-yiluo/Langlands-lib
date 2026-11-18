@@ -30,3 +30,8 @@ all-test positive-weight comparison and root-weight-series transport.
 This unit supplies the split contracting-group case. It does not identify
 arbitrary supplied relative radicals or prove compatibility and descent of
 the resulting filtration between different split charts.
+
+The local affine-source instance has the explicit internal name
+`splitParabolicVectorSeries_affineSource`. This avoids an anonymous declaration-name
+collision when this module is imported together with the global root parametrization
+infrastructure. Its type, proof and local scope are unchanged.

@@ -540,8 +540,9 @@ def RationalOrbitConstantTermThresholdStatement : Prop :=
 structural data, for every `ψ`, every `ω ∈ O` and every `m' ∈ M'(F)`,
 `δ_{U'}(m' a)^{-1/2} f_ω(m' a) − (f_ω)^w_{P'}(m' a)` tends to `0` as `a →_{P'} ∞` in `A(F)`, in
 the sense of III.5 (`TendstoZeroAlongParabolic`), for `H_{M'}(a) = H_0(a)` and the simple roots
-`Δ_0 − Δ_0^{M'}`. -/
+`Δ_0 − Δ_0^{M'}`. The quotient measurable structure must be Borel for its quotient topology. -/
 def RationalOrbitWeakConstantTermLimitStatement : Prop :=
+  ∀ [BorelSpace (𝐌 ⧸ C)],
   ∀ {ζ : cocharacterLattice S},
     IsStandardCocharacter i ν (RationalPointFamily.rootSet i ν I') ζ →
   ∀ {K0 : Subgroup (rationalPoints G)} {B : Set (Subgroup (rationalPoints G))},
@@ -563,13 +564,15 @@ def RationalOrbitWeakConstantTermLimitStatement : Prop :=
 /-- **Waldspurger's Lemma VI.2.3 on actual rational points** (printed p. 299; principal target):
 under Renard's structural data, for every norm `N` on `V(S)`, every `ψ ∈ C^∞(O, P)` and every
 `δ > 0` there are `ε > 0` and `C > 0` such that for every `ω ∈ O` and every `m ∈ D_{M'}(δ)`,
-`|(f_ω)^+_{P'}(m)| ≤ C Ξ^{M'}(m) e^{−ε N(H_0(m))}`. -/
+`|(f_ω)^+_{P'}(m)| ≤ C Ξ^{M'}(m) e^{−ε N(H_0(m))}`. The quotient measurable structure
+must be Borel for its quotient topology. -/
 def RationalOrbitPositiveConstantTermDecayStatement
     (hM' : IsIwasawaPair
       ((standardParabolicPoints i ν ∅).subgroupOf
         (standardLeviPoints i ν (RationalPointFamily.rootSet i ν I')))
       ((K : Subgroup (rationalPoints G)).subgroupOf
         (standardLeviPoints i ν (RationalPointFamily.rootSet i ν I')))) : Prop :=
+  ∀ [BorelSpace (𝐌 ⧸ C)],
   ∀ {ζ : cocharacterLattice S},
     IsStandardCocharacter i ν (RationalPointFamily.rootSet i ν I') ζ →
   ∀ {K0 : Subgroup (rationalPoints G)} {B : Set (Subgroup (rationalPoints G))},

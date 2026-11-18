@@ -1,0 +1,12 @@
+# Scalar extension of intertwiners and transport of representation coordinates
+
+`MatrixRepresentation.transportCoordinates` transports an actual finite matrix representation along any supplied linear equivalence of its coordinate spaces. The new representation is a homomorphism of group schemes. The matrix of the supplied equivalence is a bijective intertwiner from the original representation to the new representation, and the matrix of its inverse intertwines in the other direction. The finite index types can differ, so the construction applies in particular when replacing arbitrary finite coordinates with coordinates indexed by `Fin m`.
+
+The construction uses the published restriction to invariant split coordinates. The inclusion and retraction are the matrices of the inverse equivalence and the equivalence. Their two products are identities. Hence the coordinate stability equation holds on every scheme test, and the resulting representation is the conjugated action. The inverse intertwiner is the published coordinate inclusion; cancellation through this injective inclusion proves the forward intertwiner.
+
+The supporting theorem `Intertwines.baseChange` maps a constant intertwining matrix entry by entry along an arbitrary extension of fields. The proof extends the published affine base-change comparison to any finite index type and applies the original intertwiner to the corresponding affine test over the smaller field. The scalar maps compose in the resulting tower. `Intertwines.baseChange_bijective` also preserves bijectivity, using the published injectivity and surjectivity comparisons for scalar-extended rectangular matrices.
+
+Provenance: these are internal functorial and linear-algebra adapters for the actual matrix representation APIs. They support the direct-sum descent route for Milne, *Algebraic Groups* (2017), discussion 22.5 (printed p.464), registered source `milne-2017-algebraic-groups`, SHA-256 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`. They do not assert irreducibility, highest-weight classification, or semisimple descent. The original-source errata snapshot registered as `milne-2017-algebraic-groups-errata-2026-11-02` was read and contains no amendment to the motivating discussion.
+
+`Intertwines.baseChange` is reused from `ScalarExtensionCoordinates`,
+with the same field-extension and rectangular-coordinate hypotheses.

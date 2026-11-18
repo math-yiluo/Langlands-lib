@@ -1,0 +1,15 @@
+# Affine representation of the quotient by the reduction
+
+For a group scheme `N` locally of finite type over a perfect field, `ReducedCosetAffine.model N` constructs an actual affine scheme representing the canonical coset sheaf `N/N_red`. Its `Model` record retains the comparison isomorphism, local finite type, and the actual smooth surjective scheme projection from `N`, with an equation identifying its Yoneda map with the canonical quotient projection. There is no affineness, smoothness, connectedness, quasi-compactness, or anti-affineness hypothesis on `N`.
+
+This is an internal derived construction from the published reduced subgroup, smooth-relation quotient, and separated dense affine open results. Worker 856 suggested using the reduced subgroup to analyze anti-affine smoothness. The formal implementation uses the full reduction and the actual homogeneous coset sheaf; it does not require the reduction to be normal or construct a group law on the quotient.
+
+The proof proceeds as follows.
+
+1. Every point of `N` on a reduced test scheme factors through its actual reduction and therefore maps to the neutral coset. A section of the quotient on a field test has a smooth surjective represented pullback of the canonical projection. This pullback is reduced because it is smooth over a field. The resulting local section is neutral, and the fppf sheaf condition descends this equality.
+2. An open subfunctor having a section on a nonempty scheme is the whole quotient. Restrict that section to a residue field. The field-section result identifies it with the neutral section; surjective descent for open membership puts the neutral section into the open over the base field. Test any other section on its residue fields to conclude membership everywhere.
+3. The quotient has a locally finite-type etale atlas. Choose a nonempty affine open in that atlas, using the neutral section to show the atlas has a point. Its sheafified image is open and hence is the whole quotient by step 2, so this affine chart is surjective.
+4. The diagonal is closed by `HomogeneousQuotientSheaf.isClosedImmersion_diagonal`, since the reduction is a closed smooth subgroup. Apply `separatedDenseAffineOpenLFT_of` to the affine etale surjective chart, supplying the published finite locally free quotient, invariant affine open, and invariant finite-locus proofs. It gives a represented affine open whose chart pullback is dense and nonempty. Step 2 makes that open the entire quotient. Its inclusion is both monic and epic as a presheaf map, hence an isomorphism.
+5. Transport the canonical quotient map across this representation through fully faithful scheme Yoneda. Relative smoothness and surjectivity are invariant under the comparison isomorphism and reflect to the actual scheme map, giving the two retained properties of `Model.projection`.
+
+All fields and schemes remain in the arbitrary universe `u`; only the presheaf values use the existing `u + 1` convention. The choice of affine representative is noncanonical, while the represented coset sheaf and retained projection equation are the canonical ones.

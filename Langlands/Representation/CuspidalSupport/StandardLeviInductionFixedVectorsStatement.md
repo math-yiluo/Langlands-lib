@@ -9,6 +9,10 @@ for the standard-Levi form of Renard VI.10.6, Corollary. It has universe paramet
 the torus embedding, the cocharacter and a `BernsteinStandardFamily`.
 The topology is the published rational-point topology, with the ambient local
 compactness and nonarchimedean group instances retained.
+The valuation relation and `IsNonarchimedeanLocalField F` are explicit
+definition binders. They are hypotheses even though the final fixed-space
+expression does not depend on their proofs: the stated derivation uses the
+local-field ambient criterion and induction-in-stages isomorphism.
 
 For finite standard indices `leviIndex J I ⊆ J`, a compact open subgroup `K`,
 a subgroup `K₀` normalizing `K`, the minimal Iwasawa factorization using `K₀`,

@@ -25,7 +25,7 @@ variable {R : Type u} [CommRing R]
   {P : RootDatum J (I → ℤ) (I → ℤ)}
   {fam : J → (Ga R ⟶ G)} {wt : I → ℤ}
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance splitParabolicVectorSeries_affineSource : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 namespace SplitParabolicWeightChart
 

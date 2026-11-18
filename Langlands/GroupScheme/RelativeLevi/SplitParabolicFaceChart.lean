@@ -55,7 +55,7 @@ variable {R : Type u} [CommRing R]
   (P : RootDatum J (I → ℤ) (I → ℤ))
   (fam : J → (Ga R ⟶ G)) (wt : I → ℤ)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance splitParabolicFaceChart_affineSource : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- An actual regular root chart together with unscaled integral face weights
 and the all-test identification of its positive term with the original U(wt). -/

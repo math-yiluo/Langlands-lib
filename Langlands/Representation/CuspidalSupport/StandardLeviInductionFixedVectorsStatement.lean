@@ -30,12 +30,16 @@ local instance standardLeviInductionCriterionFieldT2 : T2Space F :=
 local instance standardLeviInductionCriterionT2 : T2Space (rationalPoints G) :=
   rationalPoint_t2Space F G
 
-variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
-  (family : BernsteinStandardFamily i ν)
-
 /-- Nonzero fixed vectors of normalized induction inside a standard Levi are
 detected in the coefficient at the literal intersection with the prescribed normal level. -/
-def StandardLeviInductionFixedVectorsStatement : Prop :=
+def StandardLeviInductionFixedVectorsStatement
+    {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
+    [IsNonarchimedeanLocalField F]
+    {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom G.X.hom]
+    {T : CommGroupScheme (Spec (CommRingCat.of F))}
+    (i : T.toGrp ⟶ G) (ν : cocharacterLattice T)
+    [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
+    (family : BernsteinStandardFamily i ν) : Prop :=
   ∀ (J : Finset (SimpleRoot i ν)) (I : Finset J)
     (K : OpenSubgroup (rationalPoints G)) (_hK : IsCompact (K : Set (rationalPoints G)))
     (K₀ : Subgroup (rationalPoints G))

@@ -62,7 +62,7 @@ variable {R : Type u} [CommRing R]
   (P : RootDatum J (I → ℤ) (I → ℤ))
   (fam : J → (Ga R ⟶ G)) (wt : I → ℤ)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance splitParabolicWeightChart_affineSource : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Actual regular-cell coordinates with independent parabolic weights and
 explicit ambient root labels and composites. -/
