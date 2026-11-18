@@ -60,7 +60,11 @@ source proofs use. For every supplied building datum satisfying the
 apartment axioms, a filtration meeting all these premises exists
 (Lemma 9.8.1). An unformalized paper counterexample shows that the
 supplied-filtration statements of parts (1), (2) and (4) without that
-premise are false.
+premise are false. Theorem 13.5.1 has a partial published statement of
+part (1) on supplied data: under one of KP's three alternatives, with
+the component isomorphisms for the centralizer and each root block and
+a double-root commutator premise assumed, `P_{x,r}/P_{x,s}` is
+isomorphic to `g_{x,r}/g_{x,s}` as an abstract group.
 Section 9.2.1 (a Galois-fixed point
 of a stable apartment) is proved for supplied Galois-stable apartment
 data. Proposition 9.3.4 and its integral-model statement are proved for
@@ -1373,6 +1377,25 @@ its first commit, and Library commit `b369a8f2`, except
 commit `9e39a73d`. The header, coverage and README texts record the
 changes. The source and correction fields of every row are unchanged.
 
+A thirty-fourth pass on 18 November 2026 updates one row, adds none and
+changes one status: Theorem 13.5.1 changes from source-only to
+`statement`. It records `MoyPrasadIsomorphismStatement` (artifact
+`bc06423d-6faf-48c0-88fe-f7eeb662a1e0`, first published in Library
+commit `b86269dd`), a statement of part (1) on supplied data without the
+compatibility with unramified extensions, and the torus clause
+`HasWeaklyInducedMaximallySplitTorus` of its first alternative (artifact
+`3cacf07e-bfe8-45a1-a005-68accea2d32e`, first published in Library
+commit `fd643ece`). The statement assumes the component isomorphisms for
+the centralizer and each root block and the published double-root
+commutator premise; the row explains why. Five declarations were
+inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit `ba9d1e9a`, and
+every reported axiom set is `propext`, `Classical.choice`, `Quot.sound`.
+Both cited modules are byte-identical between their first commits and
+Library commit `ba9d1e9a`. The header, Bundle E, coverage and README
+texts record the changes. The source and correction fields of every row
+are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -1479,7 +1502,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); the other thirteen rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), Theorem 13.5.1 a partial published statement of part (1) on supplied data with the component isomorphisms for the centralizer and the root blocks and a double-root commutator premise assumed, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); the other twelve rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -7469,25 +7492,78 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Equip the category of tori specifically with the minimal congruent filtration. Fix real 0<r<=s and x in B(G). At least one of the following three alternatives holds.",
         "(1) A maximally split maximal torus of G_K becomes induced after a tame base change (weakly induced, B.6.2), and s<=2r.",
         "(2) r=r0+n with 0<=r0<1, n a positive integer and s<=r0+2n.",
-        "(3) 0<r<=s<=2r<=r+1."
+        "(3) 0<r<=s<=2r<=r+1.",
+        "Recorded Lean scope (part (1) without the compatibility with unramified extensions, on supplied data): MoyPrasadIsomorphismStatement (module Langlands.Geometry.Building.KPMoyPrasadIsomorphismStatement) quantifies over every nonarchimedean local field F, every G over Spec F with [IsAffineHom G.X.hom], every ParahoricBuildingData P of G satisfying the apartment axioms, every CentralizerFiltration Zf of Z(F) satisfying the filtration axioms and IsDoubleRootCommutatorFriendly, every LieFiltrationData L (supplied lattices z_r in Lie(Z) and u_psi in the root spaces, module Langlands.Geometry.Building.KPLieFiltration), every point x of the apartment and every r, s in NNReal with 0 < r <= s and MoyPrasadAlternative F G r s. MoyPrasadAlternative states the three alternatives above, the torus clause of (1) as HasWeaklyInducedMaximallySplitTorus F G (module Langlands.Geometry.Building.KPWeaklyInducedTorus: a maximally split maximal torus of G over the maximal unramified extension K becomes induced over a finite tamely ramified extension of K inside a separable closure, KP Definition B.6.2). Assuming Z(F)_r/Z(F)_s = z_r/z_s and, for every non-divisible relative root a, U_{a,x,r}U_{2a,x,r}/U_{a,x,s}U_{2a,x,s} = (u_{a,x,r}+u_{2a,x,r})/(u_{a,x,s}+u_{2a,x,s}) (rootBlockLie), it asserts P_{x,r}/P_{x,s} = g_{x,r}/g_{x,s} for Zf.moyPrasad and L.lieFiltration. Each = is HasMoyPrasadQuotientIso: a surjective homomorphism from the larger group onto the additive quotient, whose kernel is the smaller group, so an isomorphism of abstract groups. The component isomorphisms are hypotheses because the Library has neither the minimal congruent torus filtration nor the Lie algebras of KP's integral models; Zf and L are supplied and nothing else ties them together. Automorphism equivariance, agreement of alternatives (1) and (2), and parts (2) and (3) are not stated."
       ],
       "conclusion": "There exists an isomorphism of abstract abelian groups MP_{x,r,s}:P_{x,r}/P_{x,s} to g_{x,r}/g_{x,s}, compatible with unramified algebraic extensions of k. Under alternative (1) or (2), it can be chosen so that, for every k-rational automorphism theta of G, dtheta composed with MP_{x,r,s} composed with theta^-1 equals MP_{theta(x),r,s}. The theorem does not assert this general automorphism equivariance under (3) alone. When (1) and (2) both hold, their constructions coincide. This is not an unconditional exponential map or a k-linear group map.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.MoyPrasadIsomorphismStatement",
+        "Langlands.Geometry.Building.HasMoyPrasadQuotientIso",
+        "Langlands.Geometry.Building.MoyPrasadAlternative",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.rootBlockLie",
+        "Langlands.Geometry.Building.HasWeaklyInducedMaximallySplitTorus"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.KPMoyPrasadIsomorphismStatement",
+        "Langlands.Geometry.Building.KPWeaklyInducedTorus"
+      ],
       "dependencies": [
         "Alternative (2): Proposition A.5.19 on the actual congruence models and its functoriality for their morphisms",
         "Alternatives (1)/(3) over K: indivisible-root quotient products, C.5.1 root-model congruence and A.5.19; torus comparison B.6.9 under (1), and possibly nonfunctorial B.10.17 under (3). Resolve 13.2.5's indexing against its cited 7.3.3/7.3.12 construction before relying on it",
         "Descent: Lemma 8.1.4, smooth connected unipotent special fibres from 8.5.14 and perfect-residue H^1 vanishing from 2.4.2, for both group and Lie lattices",
         "Agreement under (1)/(2): A.5.19 functoriality and B.10.16 compatibility of the torus comparisons",
         "Corrected B.10.8 and added B.10.15 establish the minimal congruent torus filtration over k, Gamma-stability and smooth model descent. Functoriality of the filtration does not imply unrestricted functoriality of its Moy-Prasad isomorphisms at every positive depth",
-        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance.",
+        "Recorded statement (thirty-fourth pass, Library commit ba9d1e9a): MoyPrasadIsomorphismStatement, artifact bc06423d-6faf-48c0-88fe-f7eeb662a1e0 (lean.statement, Task 3557), first in Library commit b86269dd36757fdbea2e51976499d645ca61a625; the torus clause HasWeaklyInducedMaximallySplitTorus with IsWeaklyInducedTorus, artifact 3cacf07e-bfe8-45a1-a005-68accea2d32e (lean.definition, Task 3557), first in Library commit fd643ecec6997ef17c8356ddbc924138631307d9. The premise Zf.IsDoubleRootCommutatorFriendly is the one under which the Library proves [P_{x,r}, P_{x,s}] in P_{x,r+s} (moyPrasadDoubleRootCommutator, Proposition 13.2.5 row); a rejected first version of the statement omitted it, and its review pointed to the ramified quasi-split SU(3) over Q_2 example of the Library note notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md, in which P_{x,1/2}/P_{x,1} is not abelian. With the component isomorphisms and that premise assumed, the expected proof assembles the ordered products of MoyPrasadProductStatement (proved on supplied data by moyPrasadProduct, Proposition 13.2.5 row) at depths r and s and uses only the consequence s <= 2r of the alternatives. The statement has no proof and no proof task."
       ],
       "consumer_or_regression": "Positive-depth acceptance requires actual finite abelian graded quotients over local fields, character transport through this proved map and a nontrivial calculation. Test each applicable alternative separately and the (1)/(2) overlap; do not impose a global tame or large-residue-characteristic hypothesis.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "bc06423d-6faf-48c0-88fe-f7eeb662a1e0",
+        "3cacf07e-bfe8-45a1-a005-68accea2d32e"
+      ],
+      "publication_commits": [
+        "b86269dd36757fdbea2e51976499d645ca61a625",
+        "fd643ecec6997ef17c8356ddbc924138631307d9"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadIsomorphismStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "dd88ec5c-2942-4701-aab7-b1e72b5c7c9a",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-18 at Library commit ba9d1e9a; kind definition, at universe level u, statement_returns_prop true; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit ba9d1e9a."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.HasMoyPrasadQuotientIso",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "92663780-b608-4e1d-97b5-54fc91f4d0bd",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-18 at Library commit ba9d1e9a; kind definition, at universe levels u_1 and u_2, statement_returns_prop true; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit ba9d1e9a."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.MoyPrasadAlternative",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "1aaf6b0f-ddd2-448a-b8cc-2ee35a664b9f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-18 at Library commit ba9d1e9a; kind definition, at universe level u, statement_returns_prop true; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit ba9d1e9a."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.rootBlockLie",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "585e2305-5be2-44eb-a682-9696f3754bae",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-18 at Library commit ba9d1e9a; kind definition, at universe level u, a submodule-valued definition; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit ba9d1e9a."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.HasWeaklyInducedMaximallySplitTorus",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "debed947-94fd-42e8-b7f1-5baf83bf6a46",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-18 at Library commit ba9d1e9a; kind definition, at universe level u, statement_returns_prop true; the module was first published in Library commit fd643ece and is byte-identical between that commit and Library commit ba9d1e9a."
+        }
+      ],
       "external_code": []
     },
     {
@@ -8267,7 +8343,9 @@ The thirty-second pass records that the Lie lattice of a supplied smooth
 integral model is a lattice (Section 13.3.1) and that the integral
 points of a supplied integral model preserve its Lie lattice under the
 adjoint action (Section 13.3.4), so those two rows are `conditional`.
-The other five rows remain source-only. The two instability targets
+The thirty-fourth pass records a partial published statement of part
+(1) of Theorem 13.5.1 on supplied data, so that row is `statement`.
+The other four rows remain source-only. The two instability targets
 remain behind the separate positive-depth acceptance test.
 
 ### Ambient fields and torus filtrations
@@ -8522,6 +8600,17 @@ corresponding group and Lie-lattice cohomology vanishing. Corrections
 PDF p.50 repair B.10.8 and B.10.14 and add B.10.15; Gamma-stability
 and smooth model descent of the minimal congruent filtration belong to
 this dependency boundary.
+
+The published `MoyPrasadIsomorphismStatement` (Theorem 13.5.1 row)
+keeps the three alternatives as the hypothesis `MoyPrasadAlternative`.
+The Library has neither the minimal congruent filtration nor KP's Lie
+lattices, so the statement takes a supplied filtration of `Z(F)` and
+supplied Lie lattices and assumes the isomorphisms for the centralizer
+and for each root block that KP's proof derives from B.6.9, B.10.16,
+B.10.17, C.5.1 and A.5.19. It also assumes the double-root commutator
+premise, without which `P_{x,r}/P_{x,s}` need not be abelian for
+supplied filtrations. Unramified compatibility, equivariance and
+parts (2) and (3) are not stated.
 
 ### The ambient group in corrected Proposition 13.5.2
 
