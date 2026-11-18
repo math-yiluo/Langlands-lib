@@ -7,3 +7,7 @@ an almost-simple group have connected simple Cartan diagram. The proof assembles
 the rational actual-root pairing, applies relative-root irreducibility, uses
 Mathlib's Cartan-matrix induction, and transports the resulting paths back through
 the full simple-base equivalence with every ordered integral Cartan entry.
+
+`SplitAlmostSimpleCartanConnectedStatement` states this arbitrary-field assertion
+universally, and `splitAlmostSimpleCartanConnected` proves that proposition
+using the preceding actual-root theorem.

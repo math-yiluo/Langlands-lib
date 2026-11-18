@@ -1,3 +1,4 @@
+import Langlands.BruhatTits.SpecialCompact.StandardLeviBasisTransport
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalConstantTerm
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviScheme
 import Langlands.GroupScheme.Rational.StandardLeviFamilyRestriction
@@ -76,11 +77,8 @@ omit [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F]
 theorem simpleRelativeRoots_leviScheme (hG : IsConnectedReductive G)
     (hi : IsMaximalSplitTorus i) (hν : IsGenericCocharacter i ν)
     (hJ : J ⊆ simpleRelativeRoots i ν) :
-    simpleRelativeRoots (Standard.leviTorusHom i ν J) ν = J := by
-  have hL := Langlands.BruhatTits.SpecialCompact.standardLevi_isConnectedReductive hG i hi ν hν J hJ
-  exact (standardLeviStandardFamilies dynamicLie standardCocharacter F G hG S i hi ν hν J hJ
-    (Standard.leviScheme i ν J) hL (Standard.leviHom i ν J)
-    (Standard.isRepresentedBy_leviHom i ν J) (Standard.isClosedSubgroup_leviHom i ν J)).1
+    simpleRelativeRoots (Standard.leviTorusHom i ν J) ν = J :=
+  by apply Langlands.BruhatTits.SpecialCompact.simpleRelativeRoots_leviTorusHom_eq <;> assumption
 
 omit [LocallyOfFiniteType G.X.hom] in
 /-- A literal standard-Levi Cartan cover is a finite Cartan cover for its

@@ -69,4 +69,21 @@ theorem cartanConnected_of_splitAlmostSimple
         (Relation.EqvGen.symm _ _ (Relation.EqvGen.rel _ _ ⟨Ne.symm heq, hp⟩))
   simpa only [Equiv.symm_apply_apply] using hs (e c)
 
+/-- Universal connectedness assertion for the actual reduced integral simple
+Cartan diagram at a split maximal torus of an almost-simple group. -/
+def SplitAlmostSimpleCartanConnectedStatement : Prop :=
+  ∀ (k : Type u) [Field k]
+    (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom]
+    (T : CommGroupScheme (Spec (CommRingCat.of k)))
+    (t : T.toGrp ⟶ G) (J : Type u)
+    (P : RootDatum J (characterLattice T) (cocharacterLattice T)),
+    IsAlmostSimple G → IsSplitTorus T.toGrp → IsMaximalTorus t → IsRootDatumOf t P →
+    ∀ [P.IsReduced] (b : P.Base) (a c : b.support),
+      Relation.EqvGen (fun x y : b.support => x ≠ y ∧ P.pairing x y ≠ 0) a c
+
+/-- The universal assertion is proved by actual relative-root irreducibility. -/
+theorem splitAlmostSimpleCartanConnected : SplitAlmostSimpleCartanConnectedStatement.{u} := by
+  intro k _ G _ T t J P hG hT ht hP _ b a c
+  exact cartanConnected_of_splitAlmostSimple hG hT ht hP b a c
+
 end Langlands.GroupScheme

@@ -68,3 +68,5 @@ and the first two are auxiliary theorems in the namespace
 * D. A. Vogan, *Gelfand–Kirillov dimension for Harish-Chandra modules*, Invent. Math. 48 (1978),
   75–98, Theorem 6.2 and its proof of (a) ⇒ (f), pp. 89–93. The Lean proof follows the Library
   reductions above, not Vogan's translation and τ-invariant argument.
+
+The complex standard quotient uses the standalone proof `Langlands.Archimedean.complexStandardLanglandsQuotient`.

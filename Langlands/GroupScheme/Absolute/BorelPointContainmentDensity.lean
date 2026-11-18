@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.ClosedRationalPoints
 import Langlands.GroupScheme.Absolute.BorelPointContainmentStatement
 import Langlands.GroupScheme.Absolute.BorelConjugacyProof
 import Langlands.GroupScheme.Absolute.BorelTransport
@@ -47,13 +48,13 @@ theorem exists_rationalPoint_of_isClosed {X : Over (Spec (CommRingCat.of k))}
     [LocallyOfFiniteType X.hom] (z : X.left) (hz : IsClosed {z}) :
     ∃ x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ X,
       x.left (IsLocalRing.closedPoint k) = z :=
-  ⟨Over.homMk (pointOfClosedPoint X.hom z hz) (by simp), pointOfClosedPoint_apply _ _ _ _⟩
+  Langlands.AlgebraicGeometry.ClosedRationalPoints.exists_rationalPoint_of_isClosed z hz
 
 /-- The underlying point of a rational point is closed. -/
 theorem isClosed_rationalPoint {X : Over (Spec (CommRingCat.of k))} [LocallyOfFiniteType X.hom]
     (x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ X) :
     IsClosed {x.left (IsLocalRing.closedPoint k)} :=
-  ((pointEquivClosedPoint X.hom) ⟨x.left, by simp⟩).2
+  Langlands.AlgebraicGeometry.ClosedRationalPoints.isClosed_rationalPoint x
 
 end Points
 

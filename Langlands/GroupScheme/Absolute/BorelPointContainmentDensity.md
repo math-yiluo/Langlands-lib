@@ -137,3 +137,5 @@ of Theorem 17.33(b) in the same place. The formal statement of Lemma A
 subgroups) is internal to this proof.
 
 Axioms of the final theorem: `propext`, `Classical.choice`, `Quot.sound`.
+
+The two comparisons between rational points and closed points use the scheme-level results in `AlgebraicGeometry/ClosedRationalPoints`.

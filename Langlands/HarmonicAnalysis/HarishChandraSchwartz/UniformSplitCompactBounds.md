@@ -19,8 +19,10 @@ of the norm and weight on a product of compact sets.
 
 `continuous_uncurry_of_uniform_right_invariance` supplies joint continuity
 from continuity in the parameter at each fixed group point and invariance
-under one common open right-translation subgroup. Locally, the group variable
-lies in a single right coset and hence the family depends only on its parameter.
+under one common open right-translation subgroup `U`. At a group point `g`,
+the open left coset `gU`, described by `g⁻¹ * x ∈ U`, is a neighborhood on which
+each family member is constant in the group variable. On this neighborhood
+the family therefore depends only on its parameter.
 
 The positive-part transfer uses monic annihilators of fixed degrees with the
 uniform root gap from `HasUniformSplitAnnihilators`. On a compact set `Q`, the

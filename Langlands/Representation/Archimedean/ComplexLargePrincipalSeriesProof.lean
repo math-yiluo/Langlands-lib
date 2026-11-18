@@ -1,3 +1,4 @@
+import Langlands.Representation.Archimedean.ComplexStandardLanglandsQuotientProof
 import Langlands.Representation.Archimedean.ComplexLargePrincipalSeriesReduction
 import Langlands.Representation.Archimedean.ComplexLargeStandardIrreducibleReduction
 import Langlands.Representation.Archimedean.ComplexLanglandsQuotientProof
@@ -37,8 +38,7 @@ namespace ComplexLargePrincipalSeriesProof
 /-- The Langlands quotient of a Langlands-ordered complex standard module: its `U(n)`-finite
 functions have a largest proper `(𝔤, K)`-submodule. -/
 theorem standardLanglandsQuotient : ComplexStandardLanglandsQuotientStatement :=
-  complexBlockLanglandsQuotient complexBlockChartIntegrable complexBlockParabolicIntegration
-    complexTemperedStandardIrreducible
+  Langlands.Archimedean.complexStandardLanglandsQuotient
 
 /-- Vogan's injectivity step for `GL_n(ℂ)`: a nonzero intertwining map from a Langlands-ordered
 standard module into an irreducible admissible large `(𝔤𝔩_n(ℂ), U(n))`-module is injective. -/

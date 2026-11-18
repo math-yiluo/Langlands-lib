@@ -1,0 +1,162 @@
+import Langlands.GroupScheme.Reductive.StarFixedDominantDecomposition
+
+/-! # Star-fixed elements of the root span and star-orbit sums of simple roots -/
+
+noncomputable section
+
+universe u
+
+open CategoryTheory AlgebraicGeometry
+
+namespace Langlands.GroupScheme.GaloisPinningData
+
+variable {k K : Type u} [Field k] [Field K] [Algebra k K]
+  {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
+  (d : GaloisPinningData k K G)
+
+/-- The star action of `σ` on the simple roots. -/
+def starSupport (σ : K ≃ₐ[k] K) (i : d.toSplitPinning.base.support) :
+    d.toSplitPinning.base.support :=
+  ⟨(d.starAction σ).val.indexEquiv i, ((d.starAction σ).2 i).mp i.2⟩
+
+@[simp] theorem coe_starSupport (σ : K ≃ₐ[k] K) (i : d.toSplitPinning.base.support) :
+    (d.starSupport σ i : d.toSplitPinning.rootIndex) = (d.starAction σ).val.indexEquiv i :=
+  rfl
+
+theorem starSupport_one (i : d.toSplitPinning.base.support) : d.starSupport 1 i = i := by
+  apply Subtype.ext
+  rw [coe_starSupport, map_one]
+  rfl
+
+theorem starSupport_mul (σ τ : K ≃ₐ[k] K) (i : d.toSplitPinning.base.support) :
+    d.starSupport (σ * τ) i = d.starSupport σ (d.starSupport τ i) := by
+  apply Subtype.ext
+  rw [coe_starSupport, map_mul]
+  rfl
+
+theorem starSupport_inv_starSupport (σ : K ≃ₐ[k] K) (i : d.toSplitPinning.base.support) :
+    d.starSupport σ⁻¹ (d.starSupport σ i) = i := by
+  rw [← starSupport_mul, inv_mul_cancel, starSupport_one]
+
+/-- Two simple roots are in the same star orbit. -/
+def starOrbitSetoid : Setoid d.toSplitPinning.base.support where
+  r i j := ∃ σ : K ≃ₐ[k] K, d.starSupport σ i = j
+  iseqv :=
+    { refl := fun i => ⟨1, d.starSupport_one i⟩
+      symm := fun {i j} ⟨σ, h⟩ => ⟨σ⁻¹, by rw [← h, starSupport_inv_starSupport]⟩
+      trans := fun {i j l} ⟨σ, h⟩ ⟨τ, h'⟩ => ⟨τ * σ, by rw [starSupport_mul, h, h']⟩ }
+
+/-- The star orbits of simple roots. -/
+abbrev StarOrbit := Quotient d.starOrbitSetoid
+
+/-- The sum of the simple roots in a star orbit. -/
+def starOrbitSum (q : d.StarOrbit) : characterLattice d.toSplitPinning.torus := by
+  classical
+  exact ∑ i ∈ Finset.univ.filter (fun i => (Quotient.mk _ i : d.StarOrbit) = q),
+    d.toSplitPinning.rootDatum.root i
+
+omit [LocallyOfFiniteType G.X.hom] in
+theorem weightEquiv_root (e : d.toSplitPinning.rootDatum.Aut) (i : d.toSplitPinning.rootIndex) :
+    e.weightEquiv (d.toSplitPinning.rootDatum.root i) =
+      d.toSplitPinning.rootDatum.root (e.indexEquiv i) :=
+  RootPairing.Hom.root_weightMap_apply _ _ i e.toHom
+
+/-- Star-orbit sums of simple roots are star-fixed. -/
+theorem isStarFixedWeight_starOrbitSum (q : d.StarOrbit) : d.IsStarFixedWeight (d.starOrbitSum q) := by
+  classical
+  intro σ
+  rw [starOrbitSum, map_sum]
+  simp only [d.weightEquiv_root]
+  refine Finset.sum_nbij' (d.starSupport σ) (d.starSupport σ⁻¹) ?_ ?_ ?_ ?_ ?_
+  · intro i hi
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hi ⊢
+    rw [← hi]
+    exact Quotient.sound ⟨σ⁻¹, d.starSupport_inv_starSupport σ i⟩
+  · intro i hi
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hi ⊢
+    rw [← hi]
+    exact Quotient.sound ⟨σ, by rw [← starSupport_mul, mul_inv_cancel, starSupport_one]⟩
+  · intro i _
+    exact d.starSupport_inv_starSupport σ i
+  · intro i _
+    rw [← starSupport_mul, mul_inv_cancel, starSupport_one]
+  · intro i _
+    rfl
+
+/-- The coordinates of a star-fixed element of the root span in the simple roots are constant on
+star orbits. -/
+theorem coeff_starSupport {lam : characterLattice d.toSplitPinning.torus}
+    (hfix : d.IsStarFixedWeight lam) (c : d.toSplitPinning.base.support → ℤ)
+    (hc : ∑ i, c i • d.toSplitPinning.rootDatum.root i = lam) (σ : K ≃ₐ[k] K)
+    (i : d.toSplitPinning.base.support) : c (d.starSupport σ i) = c i := by
+  classical
+  have hli : LinearIndependent ℤ (fun i : d.toSplitPinning.base.support =>
+      d.toSplitPinning.rootDatum.root i) :=
+    d.toSplitPinning.base.linearIndepOn_root
+  have h1 : ∑ i, c i • d.toSplitPinning.rootDatum.root (d.starSupport σ i : _) = lam := by
+    conv_rhs => rw [← hfix σ, ← hc]
+    rw [map_sum]
+    refine Finset.sum_congr rfl fun j _ => ?_
+    rw [map_zsmul, d.weightEquiv_root]
+    rfl
+  have h2 : ∑ i, c (d.starSupport σ⁻¹ i) • d.toSplitPinning.rootDatum.root i = lam := by
+    rw [← h1]
+    refine Fintype.sum_equiv
+      ⟨d.starSupport σ⁻¹, d.starSupport σ, fun j => by
+        rw [← starSupport_mul, mul_inv_cancel, starSupport_one],
+        fun j => d.starSupport_inv_starSupport σ j⟩ _ _ ?_
+    intro j
+    simp only [Equiv.coe_fn_mk]
+    rw [← starSupport_mul, mul_inv_cancel, starSupport_one]
+  have h3 : ∑ i, (c (d.starSupport σ⁻¹ i) - c i) • d.toSplitPinning.rootDatum.root i = 0 := by
+    simp only [sub_smul, Finset.sum_sub_distrib, h2, hc, sub_self]
+  have h4 := Fintype.linearIndependent_iff.mp hli _ h3 (d.starSupport σ i)
+  rw [d.starSupport_inv_starSupport, sub_eq_zero] at h4
+  exact h4.symm
+
+/-- Every star-fixed element of the integral root span lies in the subgroup generated by the
+star-orbit sums of simple roots. -/
+theorem mem_closure_starOrbitSum {lam : characterLattice d.toSplitPinning.torus}
+    (hlam : lam ∈ d.toSplitPinning.rootDatum.rootSpan ℤ) (hfix : d.IsStarFixedWeight lam) :
+    lam ∈ AddSubgroup.closure (Set.range d.starOrbitSum) := by
+  classical
+  have hspan : lam ∈ Submodule.span ℤ (Set.range fun i : d.toSplitPinning.base.support =>
+      d.toSplitPinning.rootDatum.root i) := by
+    have h := d.toSplitPinning.base.span_int_root_support
+    have h' : (Set.range fun i : d.toSplitPinning.base.support =>
+        d.toSplitPinning.rootDatum.root i) =
+        d.toSplitPinning.rootDatum.root '' ↑d.toSplitPinning.base.support := by
+      ext x
+      simp
+    rw [h', h]
+    exact hlam
+  obtain ⟨c, hc⟩ := (Submodule.mem_span_range_iff_exists_fun ℤ).mp hspan
+  have hconst : ∀ i j, d.starOrbitSetoid i j → c i = c j := by
+    rintro i j ⟨σ, hσ⟩
+    rw [← hσ, d.coeff_starSupport hfix c hc σ i]
+  -- group the coordinates by orbit
+  have hsum : lam = ∑ q : d.StarOrbit,
+      (Quotient.liftOn q c hconst) • d.starOrbitSum q := by
+    rw [← hc, ← Finset.sum_fiberwise Finset.univ (fun i => (Quotient.mk _ i : d.StarOrbit))]
+    refine Finset.sum_congr rfl fun q _ => ?_
+    rw [starOrbitSum, Finset.smul_sum]
+    refine Finset.sum_congr rfl fun i hi => ?_
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hi
+    rw [← hi]
+    rfl
+  rw [hsum]
+  exact AddSubgroup.sum_mem _ fun q _ =>
+    AddSubgroup.zsmul_mem _ (AddSubgroup.subset_closure (Set.mem_range_self q)) _
+
+/-- The subgroup generated by the star-orbit sums consists of star-fixed weights. -/
+theorem isStarFixedWeight_of_mem_closure {x : characterLattice d.toSplitPinning.torus}
+    (hx : x ∈ AddSubgroup.closure (Set.range d.starOrbitSum)) : d.IsStarFixedWeight x := by
+  induction hx using AddSubgroup.closure_induction with
+  | mem x hx =>
+    obtain ⟨q, rfl⟩ := hx
+    exact d.isStarFixedWeight_starOrbitSum q
+  | zero => exact fun σ => map_zero _
+  | add x y _ _ hx hy => exact fun σ => by rw [map_add, hx σ, hy σ]
+  | neg x _ hx => exact fun σ => by rw [map_neg, hx σ]
+
+end Langlands.GroupScheme.GaloisPinningData
