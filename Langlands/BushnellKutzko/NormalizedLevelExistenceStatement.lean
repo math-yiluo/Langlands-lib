@@ -11,10 +11,14 @@ namespace Langlands.BushnellKutzko
 
 section Instances
 
-local instance {p : ℕ} [Fact p.Prime] (F : PadicField p) : TopologicalSpace F.Carrier :=
+/-! The canonical instances have module-specific names, so that the sibling statement modules
+of this namespace can be imported together. -/
+
+local instance levelExistenceTopologicalSpace {p : ℕ} [Fact p.Prime] (F : PadicField p) :
+    TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
-local instance {p : ℕ} [Fact p.Prime] (F : PadicField p) (n : ℕ) :
+local instance levelExistenceTopologicalSpaceGL {p : ℕ} [Fact p.Prime] (F : PadicField p) (n : ℕ) :
     TopologicalSpace (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopology n
 

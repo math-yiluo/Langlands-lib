@@ -15,14 +15,9 @@ adapts a draft by Worker 64.
 
 ## Transport along an isomorphism of the ambient group
 
-The ambient group is `G` over a field `k` or a ring `R`, and `Φ : G ≅ H` is an isomorphism of
-group schemes.
+The generic-fibre comparison uses `IsRootDatumOf.comp_iso` from
+`Langlands.GroupScheme.Reductive.RootDatumTorusTransport`.
 
-* `IsNormalizingPoint.comp_iso`: a point `n` that normalizes the torus `i` through `σ` gives a
-  point `n ≫ Φ` that normalizes `i ≫ Φ` through the same `σ`.
-* `IsRootDatumOf.comp_iso`: if `P` is the root datum of `(G, i)`, it is also the root datum of
-  `(H, i ≫ Φ)`. The roots agree by `roots_image_of_transport` for the identity of the torus.
-  Normalizing points are transported by the previous lemma.
 * `LocalSplitCell.IsWeylPoint.comp_iso`: a Weyl point `weylPoint u v` of a coordinate split
   torus `i` acting through `f` gives the Weyl point `weylPoint (u ≫ Φ) (v ≫ Φ)` of `i ≫ Φ`,
   also acting through `f`.

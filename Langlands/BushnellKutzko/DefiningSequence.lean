@@ -27,7 +27,7 @@ all six conditions of BK93 (2.4.2), pp. 65–66, for the pure stratum `S`. -/
 def IsDefiningSequence (S : Stratum O K V) {s : ℕ}
     (q : Fin (s + 1) → Stratum O K V) : Prop :=
   S.IsPure ∧
-  (∀ i, (q i).chain = S.chain ∧ (q i).n = S.n ∧ (q i).IsSimple) ∧
+  (∀ i, (q i).chain.order = S.chain.order ∧ (q i).n = S.n ∧ (q i).IsSimple) ∧
   (q 0).Equivalent S ∧ (q 0).r = S.r ∧
   StrictMono (fun i => (q i).r) ∧
   (∀ i : Fin s,

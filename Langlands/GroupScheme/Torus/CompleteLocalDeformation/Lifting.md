@@ -108,12 +108,15 @@ Here `C` is a commutative `R`-bialgebra.
   bialgebra map (`BialgHom.ofAlgHom`) and bijective, and `θ` is its inverse.
 - `comul_one_tmul J x`: the comultiplication of `(R ⧸ J) ⊗ C` on `1 ⊗ x` is the image of
   `1 ⊗ comul x` under `TensorProduct.AlgebraTensorModule.distribBaseChange`.
-- `exists_bialgEquiv_of_baseChange J hJ e`: let `C` be flat, `J` nilpotent and `N` an
-  additive commutative monoid. Given a bialgebra isomorphism
-  `e : (R ⧸ J) ⊗[R] C ≃ₐc[R ⧸ J] AddMonoidAlgebra (R ⧸ J) N`, there is a bialgebra
-  isomorphism `C ≃ₐc[R] AddMonoidAlgebra R N` (the conclusion is
-  `Nonempty (C ≃ₐc[R] AddMonoidAlgebra R N)`). Choose `y a` with `1 ⊗ y a = e⁻¹ (single a 1)`
-  and check the four hypotheses of `exists_bialgEquiv_of_isNilpotent` through `e` and
-  `one_tmul_eq_zero_iff`.
+- `exists_bialgEquiv_lift_of_baseChange J hJ e` (Worker 869) takes a flat `R`-bialgebra `C`,
+  a nilpotent ideal `J`, and an additive commutative monoid `N`. Given a bialgebra isomorphism
+  `e : (R ⧸ J) ⊗[R] C ≃ₐc[R ⧸ J] AddMonoidAlgebra (R ⧸ J) N`, it produces a bialgebra
+  isomorphism `θ : C ≃ₐc[R] AddMonoidAlgebra R N` with
+  `1 ⊗ θ.symm (single a 1) = e.symm (single a 1)` for every `a : N`. Choose `y a` with
+  `1 ⊗ y a = e.symm (single a 1)` and check the four hypotheses of
+  `exists_bialgEquiv_of_isNilpotent` through `e` and `one_tmul_eq_zero_iff`. Apply `θ.symm` to
+  its congruence `θ (y a) ≡ single a 1` to obtain the prescribed reduction on each monomial.
+- `exists_bialgEquiv_of_baseChange J hJ e` takes the same inputs and concludes
+  `Nonempty (C ≃ₐc[R] AddMonoidAlgebra R N)` by taking the equivalence from this lift.
 
 All results use only the standard axioms `propext`, `Classical.choice` and `Quot.sound`.

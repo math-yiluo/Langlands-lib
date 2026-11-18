@@ -53,18 +53,17 @@ theorem exists_parameterSectionIso
     {U M : Over S} (π : M ⟶ U) (s : M ⟶ I.parameter)
     (h : ∀ (T : Over S), Function.Bijective
       (fun z : (T ⟶ A.X) × (T ⟶ M) =>
-        prod.lift (lift z.1 (z.2 ≫ s) ≫ I.actionHom a) (z.2 ≫ π))) :
+        prod.lift (lift z.1 (z.2 ≫ s) ≫ I.actionHom a) (z.2 ≫ π)))
+    (hclassMap : LocallyOfFinitePresentation O.classMap.left := O.locallyOfFinitePresentation) :
     ∃ e : M ≅ O.parameter ⨯ U, e.hom ≫ prod.snd = π := by
   let b : SchemeAction A I.parameter := I.modObj a
   let q := b.parameterSectionClassMap π s h
   let c : I.parameter ⨯ U ⟶ O.parameter ⨯ U := prod.map O.classMap (𝟙 U)
-  let : LocallyOfFinitePresentation O.classMap.left := O.locallyOfFinitePresentation
   have hpb := (IsPullback.of_prod_fst_with_id O.classMap U).map (Over.forget S)
   let : Flat c.left := MorphismProperty.of_isPullback (P := @Flat) hpb O.flat
   let : Surjective c.left := MorphismProperty.of_isPullback (P := @Surjective) hpb O.surjective
   let : LocallyOfFinitePresentation c.left :=
-    MorphismProperty.of_isPullback (P := @LocallyOfFinitePresentation) hpb
-      O.locallyOfFinitePresentation
+    MorphismProperty.of_isPullback (P := @LocallyOfFinitePresentation) hpb hclassMap
   let : Flat q.left := b.parameterSectionClassMap_flat π s h
   let : Surjective q.left := b.parameterSectionClassMap_surjective π s h
   let : LocallyOfFinitePresentation q.left :=
@@ -97,9 +96,10 @@ theorem exists_localParameterIso
     {U M : Over S} (π : M ⟶ U) (s : M ⟶ I.parameter)
     (h : ∀ (T : Over S), Function.Bijective
       (fun z : (T ⟶ A.X) × (T ⟶ M) =>
-        prod.lift (lift z.1 (z.2 ≫ s) ≫ I.actionHom a) (z.2 ≫ π))) :
+        prod.lift (lift z.1 (z.2 ≫ s) ≫ I.actionHom a) (z.2 ≫ π)))
+    (hclassMap : LocallyOfFinitePresentation O.classMap.left := O.locallyOfFinitePresentation) :
     Nonempty ((Over.pullback U.hom).obj O.parameter ≅ Over.mk π.left) := by
-  obtain ⟨e, he⟩ := O.exists_parameterSectionIso π s h
+  obtain ⟨e, he⟩ := O.exists_parameterSectionIso π s h hclassMap
   let hpb := Over.isPullback_of_binaryFan_isLimit
     (BinaryFan.mk (prod.fst : O.parameter ⨯ U ⟶ O.parameter) prod.snd)
     (prodIsProd O.parameter U)

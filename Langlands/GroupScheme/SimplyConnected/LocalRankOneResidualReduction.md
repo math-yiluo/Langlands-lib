@@ -21,7 +21,14 @@ It proves the disjunction of the five exact desired alternatives and
 matrix, marking and full star action defined in `LocalRankOneResidualIndices`,
 not a premise or a conclusion about the existence of a proof.
 
-The proof exhausts the nine families in `HasIrreducibleCartanType`:
+The case split is implemented in
+`localRankOneTitsIndex_or_residual_of_typeE_exclusions`. It takes two
+separate exclusions for the exact E6 and E7 branch markings with trivial
+star action, for the supplied index `d`. The wrapper
+`localRankOneTitsIndex_or_residual_of_components` obtains both exclusions
+from its centre prerequisites using the actual kernel models.
+
+The core theorem exhausts the nine families in `HasIrreducibleCartanType`.
 
 | Family | Implemented reduction |
 | --- | --- |
@@ -29,7 +36,7 @@ The proof exhausts the nine families in `HasIrreducibleCartanType`:
 | B | In rank two, use the B2-to-C2 numbering and exact index theorem. Otherwise, the component reduction marks one of the final two vertices and gives the higher-B residual pattern. |
 | C | Apply the complete local type-C index theorem, including its rank bound. |
 | D | In ranks at least five, the component reduction gives exactly inner D5. In rank four, first obtain the central marking. A nontrivial full star action with a globally fixed leaf gives the exact outer-D4 index after renumbering. The trivial-star and no-fixed-leaf cases give the D4 residual pattern. |
-| E6, E7 | The component reductions give trivial full star and the branch marking. The two explicit centre prerequisites contradict the degree-six or degree-seven actual norm-one kernel model. |
+| E6, E7 | The component reductions give trivial full star and the branch marking. The core theorem applies the respective exclusion to this actual numbered index. |
 | E8, F4 | Apply the existing conditional component exclusions. |
 | G2 | The exact long-root marking and trivial full star give the G2 residual pattern. |
 

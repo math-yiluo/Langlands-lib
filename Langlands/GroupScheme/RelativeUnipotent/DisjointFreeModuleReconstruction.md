@@ -16,8 +16,10 @@ each piece.
 Its proof uses the actual disjoint inverse-image cover of that test,
 canonical section-composition comparisons and the original transformation's
 naturality. `reconstruct_unique` gives uniqueness among actual module maps
-with that action. Natural inverse transformations construct an actual module
-isomorphism with the reconstructed original maps in both directions.
+with that action. For `reconstructIso`, the target also has a supplied
+`DisjointFreePresentation`. Two natural linear section transformations that
+are mutually inverse on all tests then give the reconstructed forward and
+inverse module morphisms.
 
 The provenance is derived from canonical pullback coherence, actual free-source
 reconstruction and actual disjoint-cover morphism gluing. This is infrastructure

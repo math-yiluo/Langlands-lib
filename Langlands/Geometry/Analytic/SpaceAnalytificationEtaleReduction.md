@@ -39,3 +39,5 @@ from actual affine pullbacks, localized étale base change, and reflection
 for actual affine algebra maps. The source-descent type is expanded in
 the theorem hypotheses, so this module does not depend on a separate
 unproved source-descent declaration.
+
+`pointHom_changeRing` identifies change of test algebra on a ring point with precomposition of its represented point by the induced test morphism.

@@ -19,18 +19,23 @@ orbit representatives. The existing local-section change-of-base adapter
 expresses this family on every original-base test, retaining its projection
 to the chart. Exact-orbit local parameter comparison then identifies the
 outer parameter's actual pullback with that constant parameter. Fppf
-property descent supplies separatedness and étaleness. Affineness follows
-from the affine adjoint torsor, and pulling back the closed outer-class
-section through the identity gives the closed positive inner inclusion,
-using inversion to account for the inverse-precomposition convention.
+property descent supplies separatedness and étaleness. The comparison uses
+a proof of local finite presentation for the actual class map. The theorem
+also accepts a proof of its affineness. Both default proofs use the fpqc
+property descent for an arbitrary exact outer quotient.
+The closed-orbit theorem applied to the identity and composed with group
+inversion gives the closed positive inner inclusion.
 
-The second theorem uses the existing effective quotient construction from
-pinned charts to provide the outer quotient and this entire geometry at
-once. Both the full automorphism representative and the pinned chart
-statement remain inputs. In particular these theorems do not establish
-Aut representability by assuming the supplied-Isom chart statement alone.
-All universes, bases, relative tests, and possibly infinite outer label
-types are retained with no additional restrictions.
+The second theorem retains the canonical quotient representation `R`
+constructed from pinned charts and applies `outerOfQuotientRepresentation`.
+The outer quotient has `R.classMap` as its class map.
+`QuotientRepresentation.locallyOfFinitePresentation` and
+`QuotientRepresentation.classMap_property` give the two class-map proofs on
+this same morphism. For affineness the latter uses the affine adjoint group
+and descent along surjective flat locally finitely presented morphisms.
+Both the full automorphism representative and the pinned chart statement
+remain inputs. The geometry holds for all universes, arbitrary bases and
+relative tests, and possibly infinite outer label types.
 
 `automorphismOuterQuotientOfPinnedCharts` selects the actual outer quotient
 from the proved existence theorem. Its hypotheses remain the supplied

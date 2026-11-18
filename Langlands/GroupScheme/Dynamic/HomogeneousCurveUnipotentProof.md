@@ -48,11 +48,25 @@ constructed `CurveUnipotentData`, alongside its actual moving orbit.
 dynamic tangent comparison and disjoint root-weight subspaces to conclude
 equality of any two positive actual relative roots for the cocharacter.
 
+The quotient results apply to any closed solvable subgroup satisfying their
+quotient and noncontainment hypotheses. The prescribed-Borel application
+`positive_roots_eq_of_rankOne_curve_quotient_of_isConnectedReductive` uses
+`signedCurveUnipotentDataOfPseudoReductive` to select a noncontained direction
+and apply `curveUnipotentDataOfPseudoReductive`.
+[Rank-one curve application](../Reductive/RankOneCurvePositiveRootsProof.lean)
+
+The independent rank-one central-cover argument in Task 7586 applies
+`curveUnipotentDataOfPseudoReductive` to an ordinary flag quotient `G/B`.
+Białynicki–Birula limits, the classification of torus-fixed points and
+Hartogs extension give the dimension bound in that argument, which also
+supplies noncontainment. It obtains positive-root uniqueness from the
+resulting intrinsic tangent bound and the disjoint root-weight spaces.
+
 The proofs adapt the existing Library orbit and dynamic-curve constructions,
 using the new normal-closure unipotence theorem in place of their structural
 torus premise. Worker 317 proposed the original normality and action-kernel
 route; Worker 1547 implemented the existing stabilizer and curve constructions;
 Worker 1549 supplied the diagonal-kernel step and these consumers. This is
-derived internal content. The host positive-root uniqueness statement, actual
-quotient existence, the curve dimension bound, and the required dynamic
-noncontainment remain separate obligations.
+derived internal content. Actual quotient existence, the curve dimension bound,
+and the required dynamic noncontainment are supplied when applying the curve
+results.

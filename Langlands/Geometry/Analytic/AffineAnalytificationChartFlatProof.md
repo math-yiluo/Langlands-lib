@@ -113,3 +113,5 @@ use this one. Besides Mathlib, it uses the published Library modules
 `DistinguishedNormalization`, `WeierstrassQuotient`, `NoetherNormalization`
 and `FlatTargetDescent`, and the two new helper modules named above. The
 axioms are `propext`, `Classical.choice` and `Quot.sound`.
+
+The completion proof identifies the polynomial and Tate algebra completions at the relevant maximal ideals. [Proof by adic completion](AffineAnalytificationChartFlatCompletionProof.md)

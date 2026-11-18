@@ -13,6 +13,51 @@ open CategoryTheory CategoryTheory.Limits CategoryTheory.MonoidalCategory
   CategoryTheory.CartesianMonoidalCategory Opposite AlgebraicGeometry
 open scoped CategoryTheory.MonObj
 
+namespace Langlands.GroupScheme.SchemeAction
+
+variable {S : Scheme.{u}} {A : GroupScheme S} {X Q : Over S}
+  (b : SchemeAction A X)
+
+/-- Invariance and unique all-test differences identify the pullback along
+any family of representatives with the product by the acting group. -/
+theorem isPullback_of_point_of_exact_orbits (q : X ⟶ Q)
+    (hinvariant : ∀ (T : Over S) (d : T ⟶ A.X) (x : T ⟶ X),
+      b.act d x ≫ q = x ≫ q)
+    (horbit : ∀ (T : Over S) (x y : T ⟶ X), x ≫ q = y ≫ q →
+      ∃! d : T ⟶ A.X, b.act d x = y)
+    {U : Over S} (p : U ⟶ X) :
+    IsPullback (b.act prod.fst (prod.snd ≫ p) : A.X ⨯ U ⟶ X)
+      prod.snd q (p ≫ q) := by
+  have hw : (b.act prod.fst (prod.snd ≫ p) : A.X ⨯ U ⟶ X) ≫ q =
+      prod.snd ≫ (p ≫ q) := by
+    rw [hinvariant, Category.assoc]
+  refine ⟨⟨hw⟩, ⟨PullbackCone.isLimitAux' _ (fun s => ?_)⟩⟩
+  let h := horbit _ (s.snd ≫ p) s.fst
+    (by simpa only [Category.assoc] using s.condition.symm)
+  let d := h.choose
+  have hd := h.choose_spec.1
+  have huniq := h.choose_spec.2
+  refine ⟨prod.lift d s.snd, ?_, prod.lift_snd _ _, ?_⟩
+  · change prod.lift d s.snd ≫ b.act prod.fst (prod.snd ≫ p) = s.fst
+    rw [b.naturality, prod.lift_fst, prod.lift_snd_assoc, hd]
+  · change ∀ {m : s.pt ⟶ A.X ⨯ U},
+      m ≫ b.act prod.fst (prod.snd ≫ p) = s.fst →
+      m ≫ prod.snd = s.snd → m = prod.lift d s.snd
+    intro m hm₁ hm₂
+    apply prod.hom_ext (X := A.X) (Y := U)
+    · rw [prod.lift_fst]
+      apply huniq
+      calc
+        b.act (m ≫ prod.fst) (s.snd ≫ p) =
+            b.act (m ≫ prod.fst) (m ≫ (prod.snd ≫ p)) := by
+          rw [← Category.assoc, hm₂]
+        _ = m ≫ b.act prod.fst (prod.snd ≫ p) :=
+          (b.naturality m prod.fst (prod.snd ≫ p)).symm
+        _ = s.fst := hm₁
+    · exact hm₂.trans (prod.lift_snd d s.snd).symm
+
+end Langlands.GroupScheme.SchemeAction
+
 namespace Langlands.GroupScheme.SchemeAction.QuotientRepresentation
 
 open Langlands.AlgebraicGeometry.AlgebraicSpace
@@ -60,34 +105,9 @@ theorem isPullback_of_point
       Function.Injective (fun d : T ⟶ A.X => b.act d p))
     {U : Over S} (p : U ⟶ X) :
     IsPullback (b.act prod.fst (prod.snd ≫ p) : A.X ⨯ U ⟶ X)
-      prod.snd R.classMap (p ≫ R.classMap) := by
-  have hw : (b.act prod.fst (prod.snd ≫ p) : A.X ⨯ U ⟶ X) ≫ R.classMap =
-      prod.snd ≫ (p ≫ R.classMap) := by
-    rw [R.invariant, Category.assoc]
-  refine ⟨⟨hw⟩, ⟨PullbackCone.isLimitAux' _ (fun s => ?_)⟩⟩
-  let h := R.existsUnique_act hfree (s.snd ≫ p) s.fst
-    (by simpa only [Category.assoc] using s.condition.symm)
-  let d := h.choose
-  have hd := h.choose_spec.1
-  have huniq := h.choose_spec.2
-  refine ⟨prod.lift d s.snd, ?_, prod.lift_snd _ _, ?_⟩
-  · change prod.lift d s.snd ≫ b.act prod.fst (prod.snd ≫ p) = s.fst
-    rw [b.naturality, prod.lift_fst, prod.lift_snd_assoc, hd]
-  · change ∀ {m : s.pt ⟶ A.X ⨯ U},
-      m ≫ b.act prod.fst (prod.snd ≫ p) = s.fst →
-      m ≫ prod.snd = s.snd → m = prod.lift d s.snd
-    intro m hm₁ hm₂
-    apply prod.hom_ext (X := A.X) (Y := U)
-    · rw [prod.lift_fst]
-      apply huniq
-      calc
-        b.act (m ≫ prod.fst) (s.snd ≫ p) =
-            b.act (m ≫ prod.fst) (m ≫ (prod.snd ≫ p)) := by
-          rw [← Category.assoc, hm₂]
-        _ = m ≫ b.act prod.fst (prod.snd ≫ p) :=
-          (b.naturality m prod.fst (prod.snd ≫ p)).symm
-        _ = s.fst := hm₁
-    · exact hm₂.trans (prod.lift_snd d s.snd).symm
+      prod.snd R.classMap (p ≫ R.classMap) :=
+  b.isPullback_of_point_of_exact_orbits R.classMap (fun _ => R.invariant)
+    (fun _ => R.existsUnique_act hfree) p
 
 /-- The represented quotient map is locally surjective in the fppf topology. -/
 theorem classMap_isLocallySurjective :

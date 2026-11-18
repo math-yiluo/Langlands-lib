@@ -1,12 +1,13 @@
 # A fixed-dimensional threshold for stable-pairing ray asymptotics
 
-This derived module makes the power-ray asymptotic threshold explicit. For an
-actual stable-pairing datum, a smooth representation satisfying `Admits`, a
-good compact-open level, a fixed source vector and a fixed smooth functional,
-the stable-pairing asymptotic formula holds at every inverse contracting power
-whose exponent is at least the dimension of the fixed-vector space. Any upper
-bound on that dimension is therefore a common threshold for all such vectors
-and functionals, and for a family of actions having the same dimension bound.
+`HasStablePairingRayAsymptoticsFrom` says that the coefficient equality with
+the stable pairing holds on every inverse contracting power of exponent at
+least `d`, for all source vectors and smooth functionals fixed by the level
+`K`. For a smooth representation satisfying `Admits`, an actual stable
+pairing, and a good compact-open level with finite-dimensional fixed space,
+the theorem supplies this property for every upper bound `d` on the fixed
+dimension. The same bound works for a family of actions whose fixed
+dimensions are all at most `d`.
 
 The proof follows the implemented power-asymptotic argument, replacing its
 unspecified kernel-vanishing power by the fixed dimension. Lift the source

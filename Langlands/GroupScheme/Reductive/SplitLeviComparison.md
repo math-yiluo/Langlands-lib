@@ -120,3 +120,5 @@ All statements hold over every field and in every characteristic. The provenance
 internal: these are deductions from published Library structures (`GaloisPinningData`,
 `TitsIndexData`, `KernelComparison`, `AnisotropicKernelIndex`) and Mathlib's root-pairing
 bases.
+
+The pointedness lemma for the positive root monoid is shared with the tensor-weight comparison. [Positive root monoid](../Rational/PositiveRootMonoidPointed.md)

@@ -15,13 +15,14 @@ cover member, and its unique orbit decomposition on every original-base
 test. The previous local quotient comparison identifies that parameter
 with the pullback of the outer parameter over the cover member. Fppf
 locality of the morphism property then gives the conclusion.
+The comparison uses the supplied local finite presentation proof for the
+actual class map, with fpqc descent as its default.
 
 `geometry_of_localConstants` specializes to normalized parameters that are
 possibly infinite disjoint unions of copies of the local base. It proves
 that the supplied outer parameter is separated and étale. It also returns
-the actual local isomorphisms in the appropriate slice category. Thus the
-conclusion retains the exact scheme-level local constancy, and does not
-replace it with geometric-point or component information.
+the actual local isomorphisms in the appropriate slice category. The same
+class-map proof serves both property descents and the local isomorphisms.
 
 No outer quotient or full Isom representative is constructed in this
 module. The normalized families are substantive explicit inputs. The

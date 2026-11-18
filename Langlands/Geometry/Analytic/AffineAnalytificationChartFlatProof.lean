@@ -1,3 +1,4 @@
+import Langlands.Geometry.Analytic.AffineAnalytificationChartFlatCompletionProof
 import Langlands.Geometry.Analytic.TatePolynomialFlatness
 import Langlands.Geometry.Analytic.AffineAnalytificationChartFlatStatement
 import Langlands.Geometry.Analytic.GeneralizedAffinoid.StrictBaseChange

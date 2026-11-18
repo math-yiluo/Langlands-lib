@@ -19,9 +19,11 @@ scheme-level local constancy of any supplied exact outer quotient.
 The Lean proof compares two locally surjective presentations on `I × U`:
 the given outer class map with its extra base parameter, and the class map
 from the normalized-family product coordinates. Both are flat, surjective,
-and locally of finite presentation; the first uses fpqc property descent
-from the acting group. Their sectionwise kernels coincide by the actual
-orbit equations. The common-kernel sheaf theorem identifies their targets.
+and locally of finite presentation. The comparison accepts a proof of local
+finite presentation for the actual outer class map and pulls it back along
+the product projection. The default uses fpqc property descent from the
+acting group. The two class maps have the same sectionwise kernel by the
+actual orbit equations. The common-kernel sheaf theorem identifies their targets.
 Full faithfulness of the scheme Yoneda functor recovers an actual scheme
 isomorphism. Epimorphism cancellation proves preservation of the base
 projection, and the product pullback comparison puts the result in `Over U`.

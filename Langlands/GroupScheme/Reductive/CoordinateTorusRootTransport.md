@@ -1,0 +1,13 @@
+# Full root data and actual root ranges under a coordinate-torus isomorphism
+
+Let two affine reductive groups over a nontrivial arbitrary commutative ring have specified fibrewise maximal coordinate split tori and supplied full fibrewise root data. Supply an ambient group isomorphism, a fixed integral linear equivalence `E` between the coordinate character lattices, and the exact square expressing compatibility through the actual exponent torus isomorphism attached to `E`.
+
+`exists_rootDatumEquiv_of_coordinateTorusIso` proves the existence of a full root-pairing equivalence whose weight map is precisely `E`. Choose a maximal-ideal field fibre. Both actual tori remain maximal and both ambient groups become connected reductive. The original square base changes to the actual exponent torus square on that fibre. The published torus-compatible isomorphism theorem, applied to the inverse group and torus isomorphisms, gives the full equivalence in the required direction. Transporting it through the full coordinate realizations gives an equivalence of the original supplied coordinate data. The actual character formula for the exponent torus isomorphism proves its weight map is exactly the original `E`; the weight map is not an uncontrolled abstract equivalence.
+
+`rootDatumEquivOfCoordinateTorusIso` chooses this proved full equivalence, and its weight-map theorem retains that exact equality.
+
+For genuine actual root parametrizations on both sides, `range_root_comp_coordinateTorusIso` proves equality of all corresponding ambient root ranges after composition with the original group isomorphism, on every scheme test. The prescribed weight map matches the transported exponent characters with the target roots. The published `RelativeRoot.subgroup_comap_of_transport` identifies the preimage of the target root subgroup under the ambient isomorphism with the source root subgroup. The two parametrizations identify these subgroups with their ranges. Taking the preimage under the inverse isomorphism then gives the transported range equality by `SubgroupFunctor.range_comp_iso`.
+
+The fixed integral lattice equivalence and actual commuting square remain explicit inputs. No field, local, reducedness, or noetherian condition is imposed on the original ring; its nontriviality is used for the field fibre. This unit does not claim that an arbitrary torus isomorphism over a disconnected base has one constant matrix, nor assert the existence of a torus conjugator or global descent.
+
+Provenance: internal combination of actual fibrewise data and maximality, field torus-compatible full root-data comparison, exact exponent-isomorphism character formulas, and all-test relative-root transport.

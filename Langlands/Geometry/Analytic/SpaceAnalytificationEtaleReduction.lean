@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.PointTopology.ProductRingPoints
 import Langlands.Geometry.Analytic.SpaceAnalytificationEtaleStatement
 import Langlands.Geometry.Analytic.LocalizedEtaleComposition
 import Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleAffineTests
@@ -23,6 +24,21 @@ theorem pointHom_map {X' X : AlgebraicSpace (Spec (CommRingCat.of K))}
     (f : X' ⟶ X) {A : Type u} [CommRing A] [Algebra K A] (x : RingPoints K X' A) :
     pointHom K (RingPoints.map f x) = pointHom K x ≫ hom f :=
   (uliftYonedaEquiv_symm_comp x (hom f)).symm
+
+section
+
+variable {K}
+
+omit [IsUltrametricDist K] [CompleteSpace K] in
+/-- Yoneda conversion commutes with the change of test algebra. -/
+theorem pointHom_changeRing {X : AlgebraicSpace (Spec (CommRingCat.of K))}
+    {A B : Type u} [CommRing A] [Algebra K A] [CommRing B] [Algebra K B]
+    (φ : A →ₐ[K] B) (x : RingPoints K X A) :
+    pointHom K (RingPoints.changeRing φ x) =
+      (schemeYoneda _).map (Langlands.AlgebraicGeometry.PointTopology.ringTestMap K φ) ≫ pointHom K x :=
+  uliftYonedaEquiv_symm_map (Langlands.AlgebraicGeometry.PointTopology.ringTestMap K φ).op x
+
+end
 
 /-- The actual étale affine test points, with their algebra structures and
 presentations retained. Its index universe is `u + 1`. -/

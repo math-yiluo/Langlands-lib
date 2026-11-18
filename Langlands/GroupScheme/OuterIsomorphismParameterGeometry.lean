@@ -33,7 +33,8 @@ theorem parameter_property_of_etaleCover
       (s : M ⟶ I.parameter), P π.left ∧
         ∀ (T : Over S), Function.Bijective
           (fun z : (T ⟶ A.X) × (T ⟶ M) =>
-            prod.lift (lift z.1 (z.2 ≫ s) ≫ I.actionHom a) (z.2 ≫ π))) :
+            prod.lift (lift z.1 (z.2 ≫ s) ≫ I.actionHom a) (z.2 ≫ π)))
+    (hclassMap : LocallyOfFinitePresentation O.classMap.left := O.locallyOfFinitePresentation) :
     P O.parameter.hom := by
   let 𝒱 := Scheme.Cover.changeProp 𝒰
     (Q := @Flat ⊓ @LocallyOfFinitePresentation)
@@ -46,7 +47,7 @@ theorem parameter_property_of_etaleCover
   intro U b _ hb
   obtain ⟨i⟩ := hb
   obtain ⟨M, π, s, hP, h⟩ := hlocal i
-  obtain ⟨e⟩ := O.exists_localParameterIso π s h
+  obtain ⟨e⟩ := O.exists_localParameterIso π s h hclassMap
   change (Over.pullback (𝒰.f i)).obj O.parameter ≅ Over.mk π.left at e
   change P ((Over.pullback (𝒰.f i)).obj O.parameter).hom
   rw [← Over.w e.hom, P.cancel_left_of_respectsIso]
@@ -68,7 +69,8 @@ theorem geometry_of_localConstants
               (GroupIsomorphismScheme.constantParameter (𝒰.X i) D).hom rfl :
                 (Over.map (𝒰.f i)).obj
                   (GroupIsomorphismScheme.constantParameter (𝒰.X i) D) ⟶
-                    Over.mk (𝒰.f i))))) :
+                    Over.mk (𝒰.f i)))))
+    (hclassMap : LocallyOfFinitePresentation O.classMap.left := O.locallyOfFinitePresentation) :
     Etale O.parameter.hom ∧ IsSeparated O.parameter.hom ∧
       ∀ i, ∃ D : Type u, Nonempty ((Over.pullback (𝒰.f i)).obj O.parameter ≅
         GroupIsomorphismScheme.constantParameter (𝒰.X i) D) := by
@@ -83,12 +85,12 @@ theorem geometry_of_localConstants
     obtain ⟨D, s, h⟩ := hlocal i
     exact ⟨_, Over.homMk _ rfl, s, hconstant _ D, h⟩
   refine ⟨O.parameter_property_of_etaleCover (@Etale.{u}) 𝒰
-    (hP _ (fun _ _ => inferInstance)),
+    (hP _ (fun _ _ => inferInstance)) hclassMap,
     O.parameter_property_of_etaleCover (@IsSeparated.{u}) 𝒰
-      (hP _ (fun _ _ => inferInstance)), ?_⟩
+      (hP _ (fun _ _ => inferInstance)) hclassMap, ?_⟩
   intro i
   obtain ⟨D, s, h⟩ := hlocal i
-  exact ⟨D, O.exists_localParameterIso (Over.homMk _ rfl) s h⟩
+  exact ⟨D, O.exists_localParameterIso (Over.homMk _ rfl) s h hclassMap⟩
 
 /-- Choose the constant label type and actual local comparison isomorphism
 on every member of the supplied normalized-chart cover. -/

@@ -1,0 +1,7 @@
+# Whittaker vectors of finite-field cuspidal representations
+
+Fix a nontrivial additive character of the finite field. The Whittaker vector space is the joint eigenspace for the corresponding first-superdiagonal character on upper-unipotent matrices. Its nonvanishing is proved for every nonzero complex representation satisfying the Library's fixed-vector cuspidality condition.
+
+The proof descends through upper-unipotent groups fixing the successive initial columns. It starts with any nonzero vector for the stage consisting of the identity. At each proper cut, translate the current vector along the next column and take all additive weight projections. Each projection still transforms by the prescribed character on the old stage. The trivial column projection is fixed by the two-block radical, since clearing its column leaves identity in the trailing block. Cuspidality kills that projection. Finite additive orthogonality gives a nonzero projection for some nontrivial column character. Express that character by a row and translate the vector by a Levi matrix with the given last row. This converts its column character into the prescribed adjacent-entry character and preserves the old stage's covariance. Column factorization then gives the new stage. The first column is already fixed by every upper-unipotent matrix, so the last stage gives the full Whittaker space.
+
+This is an internal finite-field argument using the mirabolic radical coordinates. It uses finite character sums at the step where the local-field descent uses character localization.

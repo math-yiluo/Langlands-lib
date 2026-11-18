@@ -3,7 +3,7 @@ import Langlands.GroupScheme.Rational.CrossTorusLieTransport
 import Langlands.GroupScheme.Rational.CrossTorusWeylTransport
 import Mathlib.LinearAlgebra.RootSystem.Hom
 
-/-! # Actual root data under a change of torus -/
+/-! # Actual root data under torus and ambient group isomorphisms -/
 
 noncomputable section
 
@@ -16,6 +16,40 @@ namespace Langlands.GroupScheme
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 set_option autoImplicit false
+
+/-! ### Transport along an isomorphism of the ambient group -/
+
+section AmbientIso
+
+variable {k : Type u} [Field k] {T : CommGroupScheme (Spec (CommRingCat.of k))}
+  {G H : GroupScheme (Spec (CommRingCat.of k))}
+
+/-- A normalizing point stays normalizing after an isomorphism of the ambient groups. -/
+theorem IsNormalizingPoint.comp_iso {i : T.toGrp ⟶ G} {n : Over.mk (𝟙 _) ⟶ G.X} {σ : T ≅ T}
+    (h : IsNormalizingPoint i n σ) (Φ : G ≅ H) :
+    IsNormalizingPoint (i ≫ Φ.hom) (n ≫ Φ.hom.hom.hom) σ := by
+  unfold IsNormalizingPoint at h ⊢
+  rw [Category.assoc, ← innerIso_hom_comp, ← Category.assoc, h, Category.assoc]
+
+variable [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]
+
+/-- A root datum of a torus stays its root datum after an isomorphism of the ambient groups. -/
+theorem IsRootDatumOf.comp_iso {J : Type*} {i : T.toGrp ⟶ G}
+    {P : RootDatum J (characterLattice T) (cocharacterLattice T)} (hP : IsRootDatumOf i P)
+    (Φ : G ≅ H) : IsRootDatumOf (i ≫ Φ.hom) P := by
+  refine ⟨hP.1, ?_, fun α => ?_⟩
+  · have hs : i ≫ Φ.hom = CommGroupScheme.groupHom (Iso.refl T).hom ≫ (i ≫ Φ.hom) :=
+      (Category.id_comp _).symm
+    have hchar : ⇑(characterLattice.congr (Iso.refl T)) = id := by
+      funext a
+      exact Category.id_comp a
+    rw [hP.2.1, ← roots_image_of_transport (Iso.refl T) Φ hs, hchar, Set.image_id]
+  · obtain ⟨n, σ, hn, hσ⟩ := hP.2.2 α
+    exact ⟨n ≫ Φ.hom.hom.hom, σ, hn.comp_iso Φ, hσ⟩
+
+end AmbientIso
+
+/-! ### Transport along isomorphisms of the torus and ambient group -/
 
 variable {k : Type u} [Field k]
     {T T' : CommGroupScheme (Spec (CommRingCat.of k))}

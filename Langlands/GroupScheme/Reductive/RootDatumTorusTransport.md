@@ -1,9 +1,16 @@
-# Actual root data under a change of torus
+# Actual root data under torus and ambient group isomorphisms
 
 Provenance: internal. This module transports the published actual-root-datum
 predicate along supplied isomorphisms of the acting torus and ambient group.
 It is an interface needed when the pinning torus is identified with the base
 change of a descended torus, rather than literally equal to it.
+
+`IsNormalizingPoint.comp_iso` composes a normalizing point with an ambient
+group isomorphism and keeps the same torus automorphism.
+`IsRootDatumOf.comp_iso` uses this to preserve the reflection witnesses and
+uses root-set transport at the identity of the torus to preserve the roots.
+Both declarations come from `StrictHenselianModelPinning`, which still
+uses them for its generic-fibre calculation.
 
 `torusTransportRootDatum` applies `RootPairing.map` to the integral character
 and cocharacter equivalences of the supplied torus isomorphism, leaving root

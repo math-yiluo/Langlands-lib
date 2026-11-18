@@ -12,7 +12,23 @@ universe uG uV
 
 variable {G : Type uG} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   {V : Type uV} [AddCommGroup V] [Module ℂ V]
-  {D : StablePairingData G} {ρ : Representation ℂ G V} {hρ : IsSmooth ρ}
+
+/-- The stable-pairing coefficient equality holds at every inverse contracting
+power with exponent at least `d`, uniformly for the `K`-fixed vectors and
+smooth functionals. -/
+abbrev HasStablePairingRayAsymptoticsFrom (D : StablePairingData G)
+    (ρ : Representation ℂ G V)
+    (b : Coinvariants (smoothContragredient ρ) D.N →ₗ[ℂ]
+      Coinvariants ρ D.Nbar →ₗ[ℂ] ℂ)
+    (K : OpenSubgroup G) (d : ℕ) : Prop :=
+  ∀ {v : V}, v ∈ fixedVectors ρ K.toSubgroup →
+    ∀ {ℓ : SmoothDual ρ}, ℓ ∈ fixedVectors (smoothContragredient ρ) K.toSubgroup →
+      ∀ {r : ℕ}, d ≤ r →
+        smoothDualPairing ρ ℓ (ρ (D.g⁻¹ ^ r) v) =
+          b (Jacquet.mk (smoothContragredient ρ) D.N ℓ)
+            (Jacquet.mk ρ D.Nbar (ρ (D.g⁻¹ ^ r) v))
+
+variable {D : StablePairingData G} {ρ : Representation ℂ G V} {hρ : IsSmooth ρ}
   {b : Coinvariants (smoothContragredient ρ) D.N →ₗ[ℂ]
     Coinvariants ρ D.Nbar →ₗ[ℂ] ℂ}
 
@@ -23,13 +39,9 @@ theorem IsStablePairing.pow_asymptotics_of_finrank_le
     (hA : D.Admits ρ hρ) (hb : D.IsStablePairing ρ hρ b)
     (K : OpenSubgroup G) (hK : D.Good K)
     [FiniteDimensional ℂ (fixedVectors ρ K.toSubgroup)]
-    {d : ℕ} (hd : Module.finrank ℂ (fixedVectors ρ K.toSubgroup) ≤ d)
-    {v : V} (hv : v ∈ fixedVectors ρ K.toSubgroup)
-    {ℓ : SmoothDual ρ} (hℓ : ℓ ∈ fixedVectors (smoothContragredient ρ) K.toSubgroup)
-    {r : ℕ} (hr : d ≤ r) :
-    smoothDualPairing ρ ℓ (ρ (D.g⁻¹ ^ r) v) =
-      b (Jacquet.mk (smoothContragredient ρ) D.N ℓ)
-        (Jacquet.mk ρ D.Nbar (ρ (D.g⁻¹ ^ r) v)) := by
+    {d : ℕ} (hd : Module.finrank ℂ (fixedVectors ρ K.toSubgroup) ≤ d) :
+    D.HasStablePairingRayAsymptoticsFrom ρ b K d := by
+  intro v hv ℓ hℓ r hr
   let C := compressedAction ρ hρ K (D.isCompact K hK) D.g⁻¹
   obtain ⟨t, ht, hmk⟩ := D.exists_stable_mk_eq hA hK ⟨v, hv⟩
   have hker : (⟨v, hv⟩ : fixedVectors ρ K.toSubgroup) - t ∈

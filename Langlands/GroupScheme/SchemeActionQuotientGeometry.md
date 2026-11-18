@@ -7,10 +7,15 @@ properties. It assumes an actual representation of the quotient sheaf.
 The comparison with that sheaf identifies equality of represented classes
 with equality in the quotient. Freeness glues the unique difference point
 on each original relative test, with no restriction on that test.
-For any chosen point of the acted-on scheme, the pullback of the class
+For a family of points of the acted-on scheme, the pullback of the class
 morphism along its class is the product with the acting group.
-Local surjectivity follows from the canonical quotient map through the
-representing isomorphism.
+`SchemeAction.isPullback_of_point_of_exact_orbits` constructs the lift into
+that product from the unique difference and the projection to the family
+base. Naturality and uniqueness verify the pullback property. Both
+`QuotientRepresentation.isPullback_of_point` and the exact outer-quotient
+comparison use this lemma with their own invariance and orbit laws.
+For the represented quotient, local surjectivity follows from the canonical
+quotient map through the representing isomorphism.
 
 Each point of the represented quotient lies in the image of a member of
 the covering sieve of local representatives, so the actual class morphism

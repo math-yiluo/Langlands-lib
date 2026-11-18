@@ -31,15 +31,15 @@ when its type of labels is empty or infinite.
 The adjoint target is smooth and affine over the base, hence flat,
 locally of finite presentation and quasi-compact there. Its canonical
 inner action is faithful because the quotient kills exactly the full
-scheme-theoretic centre. The parameter-section descent constructor
-therefore returns the actual `OuterIsomorphismScheme` for the supplied
-representative and quotient action. Its class morphism is flat,
-surjective and quasi-compact, and the unique adjoint difference is on
-each original relative test.
+scheme-theoretic centre. `quotientRepresentationOfPinnedOuterCharts`
+passes the resulting free action and the local sections to
+`SchemeAction.quotientRepresentationOfLocalSections`. This retains the
+representation of the canonical action quotient and its class map for
+use by the geometry theorems. `outerOfPinnedOuterCharts` applies
+`GroupIsomorphismScheme.outerOfQuotientRepresentation` to the same data.
+Its class map is flat, surjective and quasi-compact, and the unique
+adjoint difference is on each original relative test.
 
-The reduction works over every base scheme and assumes no generic
-isomorphism. The final theorem specializes the constructor to prove the
-unchanged generic DVR existence target from the same explicit chart
-input. That classification input remains unproved: this file supplies
-no inhabitant of `PinnedOuterIsomorphismChartStatement` and no
-unconditional proof of the generic DVR existence statement.
+The reduction works over every base scheme. The final theorem specializes
+the constructor to prove the generic DVR existence statement from the
+same explicit pinned chart input.

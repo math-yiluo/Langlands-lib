@@ -102,16 +102,15 @@ namespace GroupIsomorphismScheme
 
 variable {S : Scheme.{u}} {G H A : GroupScheme S}
 
-/-- Pinned constant charts and the actual pinned atlases construct the outer quotient
-for every supplied reductive Isom representative and full-centre quotient. -/
-def outerOfPinnedOuterCharts
+/-- Pinned constant charts and the actual pinned atlases represent the canonical
+action quotient for every supplied reductive Isom representative. -/
+def quotientRepresentationOfPinnedOuterCharts
     (hchart : PinnedOuterIsomorphismChartStatement.{u})
     (hG : IsReductive G) (hH : IsReductive H)
     (q : G ⟶ A) (hq : IsRelativeAdjointQuotient q)
     (I : GroupIsomorphismScheme G H) :
-    OuterIsomorphismScheme I hq.innerAction := by
+    SchemeAction.QuotientRepresentation (I.modObj hq.innerAction) := by
   let : Smooth A.X.hom := hq.isReductive_target.smooth
-  let : IsAffineHom A.X.hom := hq.isReductive_target.isAffineHom
   have ha : hq.innerAction.IsFaithful :=
     AutomorphicAction.isFaithful_of_isFppfQuotient_center hq.isQuotient
       hq.innerAction hq.innerAction_restrict
@@ -119,7 +118,8 @@ def outerOfPinnedOuterCharts
   have hJ : J ∈ fppfTopology S (Over.mk (𝟙 S)) :=
     (fppfTopology S).intersection_covering
       (AffinePinnedAtlas.modelSieve_mem G hG) (AffinePinnedAtlas.modelSieve_mem H hH)
-  apply I.outerOfLocalSections hq.innerAction ha J hJ
+  apply SchemeAction.quotientRepresentationOfLocalSections (I.modObj hq.innerAction)
+    (I.actionHom_injective_of_isFaithful _ ha) J hJ
   intro U g hg
   obtain ⟨M, f, ⟨i⟩⟩ := hg.1
   obtain ⟨N, k, ⟨j⟩⟩ := hg.2
@@ -142,6 +142,22 @@ def outerOfPinnedOuterCharts
   · change LocallyOfFiniteType (constantParameter U.left D).hom
     infer_instance
   · exact I.localSection_bijective hq.innerAction U.hom s hs'
+
+/-- Pinned constant charts and the actual pinned atlases construct the outer quotient
+for every supplied reductive Isom representative and full-centre quotient. -/
+def outerOfPinnedOuterCharts
+    (hchart : PinnedOuterIsomorphismChartStatement.{u})
+    (hG : IsReductive G) (hH : IsReductive H)
+    (q : G ⟶ A) (hq : IsRelativeAdjointQuotient q)
+    (I : GroupIsomorphismScheme G H) :
+    OuterIsomorphismScheme I hq.innerAction := by
+  let : Smooth A.X.hom := hq.isReductive_target.smooth
+  let : IsAffineHom A.X.hom := hq.isReductive_target.isAffineHom
+  have ha : hq.innerAction.IsFaithful :=
+    AutomorphicAction.isFaithful_of_isFppfQuotient_center hq.isQuotient
+      hq.innerAction hq.innerAction_restrict
+  exact I.outerOfQuotientRepresentation hq.innerAction ha
+    (quotientRepresentationOfPinnedOuterCharts hchart hG hH q hq I)
 
 end GroupIsomorphismScheme
 

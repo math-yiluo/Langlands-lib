@@ -29,7 +29,7 @@ def basisConjugate (ρ : MatrixRepresentation G n) (B : GL n k) :
     MatrixRepresentation G n :=
   ρ.conjugate (GeneralLinear.CocharacterDiagonal.rationalMatrixPoint B⁻¹)
 
-private theorem standard_rationalMatrix_rationalMatrixPoint (B : GL n k) :
+theorem standard_rationalMatrix_rationalMatrixPoint (B : GL n k) :
     (standard n (CommRingCat.of k)).rationalMatrix
       (GeneralLinear.CocharacterDiagonal.rationalMatrixPoint B) = B := by
   have h := (standard n (CommRingCat.of k)).affineMatrix_constantPoint

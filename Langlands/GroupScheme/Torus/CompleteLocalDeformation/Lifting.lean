@@ -566,13 +566,14 @@ theorem comul_one_tmul (J : Ideal R) (x : C) :
   | tmul c d => simp
   | add s t hs ht => rw [TensorProduct.tmul_add, map_add, hs, ht, TensorProduct.tmul_add, map_add]
 
-/-- **Lifting a split reduction.** Let `J` be a nilpotent ideal of `R` and `C` a flat commutative
-`R`-bialgebra. If `(R ⧸ J) ⊗ C` is isomorphic as a bialgebra to the group algebra
-`(R ⧸ J)[N]`, then `C` is isomorphic as a bialgebra to `R[N]`. -/
-theorem exists_bialgEquiv_of_baseChange [Module.Flat R C] (J : Ideal R) (hJ : IsNilpotent J)
+/-- Lift a specified split reduction. The inverse equivalence lifts the inverse
+of the prescribed reduction on each group-algebra monomial. -/
+theorem exists_bialgEquiv_lift_of_baseChange [Module.Flat R C] (J : Ideal R) (hJ : IsNilpotent J)
     {N : Type w} [AddCommMonoid N]
     (e : (R ⧸ J) ⊗[R] C ≃ₐc[R ⧸ J] AddMonoidAlgebra (R ⧸ J) N) :
-    Nonempty (C ≃ₐc[R] AddMonoidAlgebra R N) := by
+    ∃ θ : C ≃ₐc[R] AddMonoidAlgebra R N, ∀ a : N,
+      (1 : R ⧸ J) ⊗ₜ[R] θ.symm (AddMonoidAlgebra.single a 1) =
+        e.symm (AddMonoidAlgebra.single a 1) := by
   classical
   choose y hy using fun a : N => exists_one_tmul_eq J (e.symm (AddMonoidAlgebra.single a 1))
   have hey : ∀ a, e ((1 : R ⧸ J) ⊗ₜ[R] y a) = AddMonoidAlgebra.single a 1 := fun a => by
@@ -609,7 +610,8 @@ theorem exists_bialgEquiv_of_baseChange [Module.Flat R C] (J : Ideal R) (hJ : Is
       refine ⟨Finsupp.single b r, ?_⟩
       rw [Finsupp.linearCombination_single, one_tmul_smul, hy b, ← map_smul,
         AddMonoidAlgebra.smul_single', mul_one]
-  refine (exists_bialgEquiv_of_isNilpotent J hJ y ?_ ?_ ?_ ?_).elim fun θ _ => ⟨θ⟩
+  refine (exists_bialgEquiv_of_isNilpotent J hJ y ?_ ?_ ?_ ?_).elim
+    (fun θ hθ => ⟨θ, fun a => ?_⟩)
   · rw [eq_top_iff]
     intro c _
     obtain ⟨k, hk⟩ := hsurj ((1 : R ⧸ J) ⊗ₜ[R] c)
@@ -641,6 +643,20 @@ theorem exists_bialgEquiv_of_baseChange [Module.Flat R C] (J : Ideal R) (hJ : Is
       rw [Algebra.TensorProduct.tmul_mul_tmul, one_mul]
     rw [hm, hy a, hy b, hy (a + b), ← map_mul, AddMonoidAlgebra.single_mul_single, one_mul,
       sub_self]
+  · rw [← hy a, ← sub_eq_zero, ← TensorProduct.tmul_sub, one_tmul_eq_zero_iff]
+    have h := map_mem_smul_top θ.symm.toAlgEquiv.toLinearMap J (hθ a)
+    change θ.symm (θ (y a) - AddMonoidAlgebra.single a 1) ∈ J • (⊤ : Submodule R C) at h
+    rw [map_sub, BialgEquiv.symm_apply_apply] at h
+    simpa only [neg_sub] using Submodule.neg_mem _ h
+
+/-- **Lifting a split reduction.** Let `J` be a nilpotent ideal of `R` and `C` a flat commutative
+`R`-bialgebra. If `(R ⧸ J) ⊗ C` is isomorphic as a bialgebra to the group algebra
+`(R ⧸ J)[N]`, then `C` is isomorphic as a bialgebra to `R[N]`. -/
+theorem exists_bialgEquiv_of_baseChange [Module.Flat R C] (J : Ideal R) (hJ : IsNilpotent J)
+    {N : Type w} [AddCommMonoid N]
+    (e : (R ⧸ J) ⊗[R] C ≃ₐc[R ⧸ J] AddMonoidAlgebra (R ⧸ J) N) :
+    Nonempty (C ≃ₐc[R] AddMonoidAlgebra R N) :=
+  (exists_bialgEquiv_lift_of_baseChange J hJ e).elim fun θ _ => ⟨θ⟩
 
 end Bialgebra
 

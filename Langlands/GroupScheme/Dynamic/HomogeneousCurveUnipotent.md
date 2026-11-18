@@ -38,8 +38,14 @@ this with the intrinsic dynamic tangent bound. The last theorem applies
 the disjoint-weight-space argument to conclude equality of any two
 positive roots for this cocharacter.
 
+The construction applies to any closed solvable subgroup satisfying the
+quotient and noncontainment hypotheses. One consumer is
+`positive_roots_eq_of_rankOne_curve_quotient`, which uses
+`signedCurveUnipotentData` to select a noncontained direction and apply
+`curveUnipotentData` to the prescribed subgroup's quotient.
+[Rank-one curve application](../Reductive/RankOneCurvePositiveRoots.lean)
+
 The construction composes existing Library constructions and proofs and
 is internal rather than a formalization of a new external source.
 The normal-solvable-torus theorem, quotient existence, its curve dimension,
-and the specified noncontainment remain explicit inputs. The full
-rank-one positive-root uniqueness theorem remains open.
+and the specified noncontainment remain explicit inputs.

@@ -38,3 +38,5 @@ need not be split. This result retains the actual reversing-point hypothesis.
 Identification with a maximal-split-torus lattice pairing, the rank-one root
 character relation, height estimates and adelic chamber coverage remain
 separate obligations.
+
+`standard_rationalMatrix_rationalMatrixPoint` identifies a rational matrix point with its defining matrix under the standard representation. The same identity enters the diagonalization with a prescribed eigenline.

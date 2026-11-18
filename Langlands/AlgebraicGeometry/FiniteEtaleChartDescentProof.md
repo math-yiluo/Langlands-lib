@@ -1,6 +1,6 @@
 # Proof of finite étale chart descent
 
-Worker 632. `finiteEtaleChartDescent` proves exactly the published proposition
+Worker 632, with Worker 5254. `finiteEtaleChartDescent` proves exactly the published proposition
 `Langlands.AlgebraicGeometry.FiniteEtaleChartDescentStatement.{u}`. Its pair is unchanged.
 
 ## The statement

@@ -29,23 +29,25 @@ variable {K : Type u} [Field K] [ValuativeRel K] [TopologicalSpace K]
   {G : GroupScheme (Spec (CommRingCat.of K))}
   [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
 
-/-- Given the explicit component and centre prerequisites and an exact
-irreducible Cartan type, a local rank-one index is one of the five desired
-indices or one of the three explicitly defined residual patterns. -/
-theorem localRankOneTitsIndex_or_residual_of_components
+/-- Exact component and Cartan information, together with exclusions for
+both branch-marked type-E patterns, leaves only the three residual patterns
+or the five desired indices. -/
+theorem localRankOneTitsIndex_or_residual_of_typeE_exclusions
     (hcomponents : LocalAnisotropicCartanComponentsStatement.{u})
-    (hclass : NormOneCenterAutomorphismOppositeStatement.{u})
-    (hmove : RankOneTypeEKernelCenterMovementStatement.{u})
     (d : TitsIndexData G) (htype : d.HasIrreducibleCartanType)
     (hsc : IsSimplyConnected G) (has : IsAbsolutelyAlmostSimple G)
-    (hrank : splitRank G = 1) :
+    (hrank : splitRank G = 1)
+    (hE6 : ∀ (e : d.Vertex ≃ Fin 6),
+      d.IsNumberingOf (CartanMatrix.E 6) (fun i => i.val = 1) e → d.StarIsTrivial → False)
+    (hE7 : ∀ (e : d.Vertex ≃ Fin 7),
+      d.IsNumberingOf (CartanMatrix.E 7) (fun i => i.val = 1) e → d.StarIsTrivial → False) :
     ((∃ degree : ℕ, d.HasRankOneInnerAIndex degree) ∨
       (∃ n : ℕ, d.HasRankOneOuterAIndex n) ∨
       (∃ n : ℕ, d.HasRankOneCIndex n) ∨
       d.HasRankOneOuterD4Index ∨ d.HasRankOneInnerD5Index) ∨
       d.HasResidualRankOneIndex := by
   classical
-  rcases htype with hA | hB | hC | hD | hE6 | hE7 | hE8 | hF | hG
+  rcases htype with hA | hB | hC | hD | hE₆ | hE₇ | hE8 | hF | hG
   · obtain ⟨n, hn, e, hA⟩ := hA
     by_cases hstar : d.StarIsTrivial
     · exact Or.inl (Or.inl
@@ -80,16 +82,14 @@ theorem localRankOneTitsIndex_or_residual_of_components
     · have hD5 := (localRankOneTypeD_innerD5_of_five_le_of_components
         hcomponents d e (by omega) hsc has hD hrank).2
       exact Or.inl (Or.inr (Or.inr (Or.inr (Or.inr hD5))))
-  · obtain ⟨e, hE⟩ := hE6
+  · obtain ⟨e, hE⟩ := hE₆
     obtain ⟨hmark, hstar⟩ :=
       localRankOneTypeE6_marking_of_components hcomponents d e hE hsc hrank
-    exact (d.not_E6_branch_mark_of_centerMovement
-      hclass hmove hsc has hrank hstar e hmark).elim
-  · obtain ⟨e, hE⟩ := hE7
+    exact (hE6 e hmark hstar).elim
+  · obtain ⟨e, hE⟩ := hE₇
     obtain ⟨hmark, hstar⟩ :=
       localRankOneTypeE7_marking_of_components hcomponents d e hE hrank
-    exact (d.not_E7_branch_mark_of_centerMovement
-      hclass hmove hsc has hrank hstar e hmark).elim
+    exact (hE7 e hmark hstar).elim
   · obtain ⟨e, hE⟩ := hE8
     exact (localRankOneTypeE8_false_of_components hcomponents d e hE hrank).elim
   · obtain ⟨e, hF⟩ := hF
@@ -97,6 +97,23 @@ theorem localRankOneTitsIndex_or_residual_of_components
   · obtain ⟨e, hG⟩ := hG
     obtain ⟨hmark, hstar⟩ := d.G2_rankOne_marking e hG hrank
     exact Or.inr (Or.inr (Or.inl ⟨⟨e, hmark⟩, hstar⟩))
+
+/-- The centre prerequisites supply both branch-marked type-E exclusions. -/
+theorem localRankOneTitsIndex_or_residual_of_components
+    (hcomponents : LocalAnisotropicCartanComponentsStatement.{u})
+    (hclass : NormOneCenterAutomorphismOppositeStatement.{u})
+    (hmove : RankOneTypeEKernelCenterMovementStatement.{u})
+    (d : TitsIndexData G) (htype : d.HasIrreducibleCartanType)
+    (hsc : IsSimplyConnected G) (has : IsAbsolutelyAlmostSimple G)
+    (hrank : splitRank G = 1) :
+    ((∃ degree : ℕ, d.HasRankOneInnerAIndex degree) ∨
+      (∃ n : ℕ, d.HasRankOneOuterAIndex n) ∨
+      (∃ n : ℕ, d.HasRankOneCIndex n) ∨
+      d.HasRankOneOuterD4Index ∨ d.HasRankOneInnerD5Index) ∨
+      d.HasResidualRankOneIndex :=
+  localRankOneTitsIndex_or_residual_of_typeE_exclusions hcomponents d htype hsc has hrank
+    (fun e h hstar => d.not_E6_branch_mark_of_centerMovement hclass hmove hsc has hrank hstar e h)
+    (fun e h hstar => d.not_E7_branch_mark_of_centerMovement hclass hmove hsc has hrank hstar e h)
 
 /-- The component premise can be reduced to actual factor realization:
 the unconditional local anisotropic type-A theorem supplies its other input. -/

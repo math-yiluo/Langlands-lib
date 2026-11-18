@@ -1,4 +1,5 @@
 import Langlands.GroupScheme.OuterIsomorphismSchemeOrbit
+import Langlands.GroupScheme.SchemeActionQuotientGeometry
 import Langlands.GroupScheme.RelativeInnerForm
 import Langlands.AlgebraicGeometry.SchemeFlatPropertyDescent
 import Mathlib.AlgebraicGeometry.Morphisms.LocalFlatDescent
@@ -24,33 +25,9 @@ variable {S : Scheme.{u}} {G H A : GroupScheme S}
 from the product with the acting group. -/
 theorem isPullback_of_point {U : Over S} (p : U ⟶ I.parameter) :
     IsPullback (lift (prod.fst : A.X ⨯ U ⟶ A.X) (prod.snd ≫ p) ≫ I.actionHom a)
-      prod.snd O.classMap (p ≫ O.classMap) := by
-  let := I.modObj a
-  have hw : (lift (prod.fst : A.X ⨯ U ⟶ A.X) (prod.snd ≫ p) ≫ I.actionHom a) ≫
-      O.classMap = prod.snd ≫ (p ≫ O.classMap) := by
-    rw [O.invariant, Category.assoc]
-  refine ⟨⟨hw⟩, ⟨PullbackCone.isLimitAux' _ (fun s => ?_)⟩⟩
-  let h := O.orbit s.pt (s.snd ≫ p) s.fst
-    (by simpa only [Category.assoc] using s.condition.symm)
-  let d := h.choose
-  have hd := h.choose_spec.1
-  have hu := h.choose_spec.2
-  refine ⟨prod.lift d s.snd, ?_, prod.lift_snd _ _, ?_⟩
-  · change prod.lift d s.snd ≫
-      (lift (prod.fst : A.X ⨯ U ⟶ A.X) (prod.snd ≫ p) ≫ I.actionHom a) = s.fst
-    rw [← Category.assoc, comp_lift, prod.lift_fst, prod.lift_snd_assoc]
-    exact hd
-  · intro m hm₁ hm₂
-    change s.pt ⟶ A.X ⨯ U at m
-    apply prod.hom_ext (X := A.X) (Y := U)
-    · rw [prod.lift_fst]
-      apply hu
-      change m ≫ prod.snd = s.snd at hm₂
-      change m ≫ (lift (prod.fst : A.X ⨯ U ⟶ A.X) (prod.snd ≫ p) ≫
-        I.actionHom a) = s.fst at hm₁
-      rw [← Category.assoc, comp_lift, ← Category.assoc, hm₂] at hm₁
-      exact hm₁
-    · exact hm₂.trans (prod.lift_snd d s.snd).symm
+      prod.snd O.classMap (p ≫ O.classMap) :=
+  SchemeAction.isPullback_of_point_of_exact_orbits (I.modObj a)
+    O.classMap O.invariant O.orbit p
 
 /-- Every base-change-stable property satisfying fpqc target descent transfers
 from the acting group to the outer class morphism. -/
@@ -89,26 +66,19 @@ abbrev orbitMap (O : OuterIsomorphismScheme I a)
 /-- A global orbit is exactly the pullback over its outer-class section. -/
 theorem orbitMap_isPullback (p : Over.mk (𝟙 S) ⟶ I.parameter) :
     IsPullback (O.orbitMap p) (toUnit A.X) O.classMap (p ≫ O.classMap) := by
-  have hw : O.orbitMap p ≫ O.classMap = toUnit A.X ≫ (p ≫ O.classMap) := by
-    rw [orbitMap, pointOrbit, O.invariant, Category.assoc]
-  refine ⟨⟨hw⟩, ⟨PullbackCone.isLimitAux' _ (fun s => ?_)⟩⟩
-  let h := O.orbit s.pt (s.snd ≫ p) s.fst
-    (by simpa only [Category.assoc] using s.condition.symm)
-  let d := h.choose
-  have hd := h.choose_spec.1
-  have hu := h.choose_spec.2
-  refine ⟨d, ?_, toUnit_unique _ _, ?_⟩
-  · change d ≫ O.orbitMap p = s.fst
-    rw [orbitMap, pointOrbit, ← Category.assoc, comp_lift, Category.comp_id, comp_toUnit_assoc,
-      toUnit_unique (toUnit s.pt) s.snd]
-    exact hd
-  · intro m hm₁ hm₂
-    change s.pt ⟶ A.X at m
-    apply hu
-    change m ≫ O.orbitMap p = s.fst at hm₁
-    rw [orbitMap, pointOrbit, ← Category.assoc, comp_lift, Category.comp_id, comp_toUnit_assoc,
-      toUnit_unique (toUnit s.pt) s.snd] at hm₁
-    exact hm₁
+  let e : A.X ⨯ Over.mk (𝟙 S) ≅ A.X :=
+    { hom := prod.fst
+      inv := prod.lift (𝟙 _) (toUnit _)
+      hom_inv_id := by
+        apply prod.hom_ext
+        · simp
+        · exact toUnit_unique _ _
+      inv_hom_id := prod.lift_fst _ _ }
+  refine (O.isPullback_of_point p).of_iso e (Iso.refl _) (Iso.refl _) (Iso.refl _)
+    ?_ ?_ (by simp) (by simp)
+  · simp only [e, Iso.refl_hom, Category.comp_id, orbitMap, O.comp_pointOrbit]
+    rw [toUnit_unique (toUnit _) (prod.snd : A.X ⨯ Over.mk (𝟙 S) ⟶ Over.mk (𝟙 S))]
+  · exact toUnit_unique _ _
 
 /-- Orbits through global sections are closed when the outer parameter is
 separated over the base. -/

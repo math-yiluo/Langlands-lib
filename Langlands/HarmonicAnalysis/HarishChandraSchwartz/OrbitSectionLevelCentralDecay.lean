@@ -75,9 +75,10 @@ theorem exists_levelCoordinate_derivative_control (H : OpenSubgroup G)
   exact (Finset.le_sup (f := inputSeminorms H) (Finset.mem_biUnion.mpr
     ⟨i, Finset.mem_univ i, Finset.mem_image.mpr ⟨l, hl, rfl⟩⟩)) q
 
-/-- The central Fourier estimate controlled by finitely many input derivatives,
-uniformly for all sections at the prescribed subgroup. -/
-theorem exists_levelOrbitWavePacket_central_decay [IsFiniteMeasure ρ] [ρ.IsMulLeftInvariant]
+omit [CompactSpace (K : Subgroup G)] [CompactSpace ((K : Subgroup G).subgroupOf M)] in
+/-- A uniform bound for each fixed compact vector over the unitary torus yields
+central Fourier decay controlled by finitely many input derivatives at one level. -/
+theorem exists_levelOrbitWavePacket_central_decay_of_coefficient_bound [IsFiniteMeasure ρ] [ρ.IsMulLeftInvariant]
     (hLaurent : HasLaurentUnitaryCoordinates ν e) (he : Continuous e)
     (hws : IsSmoothFiniteTorusFunction fun y =>
       w (discreteSeriesOrbitMap C hC μ ν (discreteSeriesClass C hC μ π hsq) (e.symm y)))
@@ -85,19 +86,19 @@ theorem exists_levelOrbitWavePacket_central_decay [IsFiniteMeasure ρ] [ρ.IsMul
     (hnK : ∀ k ∈ K, nG k = 1) (hnU : ∀ u ∈ U, nG u = 1)
     (hnM : ∀ (m : M) (z : L → Circle),
       ((e.symm (finiteTorusMonomial a z)).val m : ℂ) = torusCharacter (Multiplicative.toAdd (nG m)) z)
-    (hδU : IsUnimodularModulus U hU)
-    (hL : LeviData (K : Subgroup G) P₀ P M δ₀
-      (HaarModulus.closedRestrictCharacter U hU M h.levi_le_normalizer) δ₀M h.projection)
-    (hP₀K : IsIwasawaPair P₀ (K : Subgroup G))
-    (hMK : IsIwasawaPair (P₀.subgroupOf M) ((K : Subgroup G).subgroupOf M))
-    (hδ₀ : ∀ p : P₀, (p : G) ∈ K → δ₀ p = 1)
-    (hcoeff : ∀ (v : π.obj) (ℓ : SmoothDual π.obj.representation),
-      ∃ c : ℝ, 0 < c ∧ ∀ m, ‖ℓ.val (π.obj.representation m v)‖ ≤ c * xi hMK δ₀M m)
+    (Xi : G → ℝ)
+    (hcoeff : ∀ v : CompactPicture, ∃ c : ℝ, 0 < c ∧
+      ∀ (y : J → Circle) (g : G),
+        ‖twistedSectionCoefficient h hU π.obj K hK ν hν hP hr
+          (fun g => by
+            obtain ⟨p, k, hg⟩ := hPK g
+            exact ⟨p, p.2, k, k.2, hg⟩)
+          hG hδ π.property.2 (unitaryTorusParameter ν e y) v g‖ ≤ c * Xi g)
     (hcofinal : CompactOpenCofinal M) (H : OpenSubgroup G) (hHK : H ≤ K) (r : ℝ) :
     ∃ t : Finset (List J × Module.Dual ℂ CompactPicture), ∃ c : ℝ≥0,
       ∀ (q : SectionLevel H) (g : G),
       ‖inducedOrbitWavePacket h hU hP K hK hPK hG hδ ν π hν hr e C hC μ hsq ρ w (includeLevel H q) g‖ ≤
-        (c : ℝ) * (t.sup (inputSeminorms H)) q * xi hP₀K δ₀ g * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) := by
+        (c : ℝ) * (t.sup (inputSeminorms H)) q * Xi g * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) := by
   classical
   have hPK' : ∀ g : G, ∃ p ∈ P, ∃ k ∈ K, g = p * k := fun g => by
     obtain ⟨p, k, hg⟩ := hPK g
@@ -181,8 +182,7 @@ theorem exists_levelOrbitWavePacket_central_decay [IsFiniteMeasure ρ] [ρ.IsMul
       (fun u hu => by rw [latticeTorusCharacter_apply, hnU u hu, toAdd_one, torusCharacter_zero])
       (fun m => hnM m z) (v i) g
   -- the bounds of Lemma VI.2.2 for the fixed vectors
-  choose B hB0 hB using fun i => norm_twist_coefficientMap_le_xi h hU π.obj K hK ν hν hP hr hPK'
-    hG hδ π.property.2 hδU hL hP₀K hMK hδ₀ hcoeff (v i)
+  choose B hB0 hB using fun i => hcoeff (v i)
   -- One scalar derivative estimate works for every section and every coordinate.
   let k : ℕ := ⌈r⌉₊
   have hrk : r ≤ k := Nat.le_ceil r
@@ -232,22 +232,56 @@ theorem exists_levelOrbitWavePacket_central_decay [IsFiniteMeasure ρ] [ρ.IsMul
   rw [hpar, hmap, norm_smul, Real.norm_eq_abs, abs_inv, Nat.abs_cast]
   -- the estimate of each torus integral
   have hbound : ∀ i, ‖∫ y, (W y * (f q i).val y) * T (unitaryTorusParameter ν e y) (v i) g ∂μT‖ ≤
-      2 ^ k * (1 + Fintype.card L) * (A * N) * μT.real Set.univ * (B i * xi hP₀K δ₀ g) *
+      2 ^ k * (1 + Fintype.card L) * (A * N) * μT.real Set.univ * (B i * Xi g) *
         (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) := fun i =>
     norm_integral_mul_le_rpow μT νG (continuous_finiteTorusMonomial a)
       (hφs i).continuous
       (fun χ => isSmoothFiniteTorusFunction_comp_monomial_mul (hφs i) a χ)
       (hTc i g) (hTn i g) hrk (hM0 i) (hMd i)
-      (fun χ => hB i (unitaryTorusParameter ν e χ) (norm_unitaryTorusParameter_apply ν e χ) g)
+      (fun y => hB i y g)
   calc (S : ℝ)⁻¹ * ‖∑ i, ∫ y, (W y * (f q i).val y) * T (unitaryTorusParameter ν e y) (v i) g ∂μT‖
       ≤ (S : ℝ)⁻¹ * ∑ i, 2 ^ k * (1 + Fintype.card L) * (A * N) * μT.real Set.univ *
-          (B i * xi hP₀K δ₀ g) * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) :=
+          (B i * Xi g) * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) :=
         mul_le_mul_of_nonneg_left ((norm_sum_le _ _).trans (Finset.sum_le_sum fun i _ => hbound i))
           (inv_nonneg.mpr (Nat.cast_nonneg _))
-    _ = c₀ * N * xi hP₀K δ₀ g * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) := by
+    _ = c₀ * N * Xi g * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) := by
         simp only [c₀, Finset.sum_mul, Finset.mul_sum]
         refine Finset.sum_congr rfl fun i _ => ?_
         ring
+
+
+/-- The central Fourier estimate controlled by finitely many input derivatives,
+uniformly for all sections at the prescribed subgroup. -/
+theorem exists_levelOrbitWavePacket_central_decay [IsFiniteMeasure ρ] [ρ.IsMulLeftInvariant]
+    (hLaurent : HasLaurentUnitaryCoordinates ν e) (he : Continuous e)
+    (hws : IsSmoothFiniteTorusFunction fun y =>
+      w (discreteSeriesOrbitMap C hC μ ν (discreteSeriesClass C hC μ π hsq) (e.symm y)))
+    {L : Type uL} [Fintype L] (nG : G →* Multiplicative (L → ℤ)) (a : J → L → ℤ)
+    (hnK : ∀ k ∈ K, nG k = 1) (hnU : ∀ u ∈ U, nG u = 1)
+    (hnM : ∀ (m : M) (z : L → Circle),
+      ((e.symm (finiteTorusMonomial a z)).val m : ℂ) = torusCharacter (Multiplicative.toAdd (nG m)) z)
+    (hδU : IsUnimodularModulus U hU)
+    (hL : LeviData (K : Subgroup G) P₀ P M δ₀
+      (HaarModulus.closedRestrictCharacter U hU M h.levi_le_normalizer) δ₀M h.projection)
+    (hP₀K : IsIwasawaPair P₀ (K : Subgroup G))
+    (hMK : IsIwasawaPair (P₀.subgroupOf M) ((K : Subgroup G).subgroupOf M))
+    (hδ₀ : ∀ p : P₀, (p : G) ∈ K → δ₀ p = 1)
+    (hcoeff : ∀ (v : π.obj) (ℓ : SmoothDual π.obj.representation),
+      ∃ c : ℝ, 0 < c ∧ ∀ m, ‖ℓ.val (π.obj.representation m v)‖ ≤ c * xi hMK δ₀M m)
+    (hcofinal : CompactOpenCofinal M) (H : OpenSubgroup G) (hHK : H ≤ K) (r : ℝ) :
+    ∃ t : Finset (List J × Module.Dual ℂ CompactPicture), ∃ c : ℝ≥0,
+      ∀ (q : SectionLevel H) (g : G),
+      ‖inducedOrbitWavePacket h hU hP K hK hPK hG hδ ν π hν hr e C hC μ hsq ρ w (includeLevel H q) g‖ ≤
+        (c : ℝ) * (t.sup (inputSeminorms H)) q * xi hP₀K δ₀ g * (1 + ‖Multiplicative.toAdd (nG g)‖) ^ (-r) := by
+  refine exists_levelOrbitWavePacket_central_decay_of_coefficient_bound h hU hP K hK hPK
+    hG hδ ν π hν hr e C hC μ hsq ρ w hLaurent he hws nG a hnK hnU hnM
+    (xi hP₀K δ₀) (fun v => ?_) hcofinal H hHK r
+  obtain ⟨c, hc, hb⟩ := norm_twist_coefficientMap_le_xi h hU π.obj K hK ν hν hP hr
+    (fun g => by
+      obtain ⟨p, k, hg⟩ := hPK g
+      exact ⟨p, p.2, k, k.2, hg⟩)
+    hG hδ π.property.2 hδU hL hP₀K hMK hδ₀ hcoeff v
+  exact ⟨c, hc, fun y g => hb _ (norm_unitaryTorusParameter_apply ν e y) g⟩
 
 
 variable [IsFiniteMeasure ρ] [ρ.IsMulLeftInvariant]

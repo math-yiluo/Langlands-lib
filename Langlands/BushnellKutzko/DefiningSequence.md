@@ -2,27 +2,34 @@
 
 Source: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups*
 (1993), `bushnell-kutzko-1993-admissible-dual-gln`, (2.4.2)(i)–(vi),
-printed pp. 65–66 (PDF pp. 77–78).
+printed pp. 65–66 (PDF pp. 77–78). The order and lattice-chain
+correspondence is in §1.1, printed pp. 20–21 (PDF pp. 32–33).
 
 `Stratum.IsDefiningSequence S q` is the defining predicate on a finite
 family `q : Fin (s+1) → Stratum O K V`, representing the indices
 `0 ≤ i ≤ s`. It first requires the original stratum to be pure.
-Its clauses implement the six source conditions:
+The predicate implements the six source conditions.
 
-1. Every member has the original chain and level `n`, and is simple.
+1. Every member is simple and has the original hereditary order
+   `S.chain.order` and level `n`. Representatives of that order may
+   use different origins for the lattice-chain index.
 2. The first member is equivalent to `S`.
 3. Its depth is `S.r` and the depths are strictly increasing.
    The inequality `r_s < n` is already a defining condition of
    each `Stratum`.
 4. At adjacent indices `i,i+1`, the critical exponent at `γ_i`
    is `−r_{i+1}`, and
-   `γ_{i+1}−γ_i ∈ 𝔓^{−r_{i+1}}`. With the common chain and level,
-   this membership is exactly equivalence of
+   `γ_{i+1}−γ_i ∈ 𝔓^{−r_{i+1}}`. This membership expresses equivalence of
    `[𝔄,n,r_{i+1},γ_i]` and `[𝔄,n,r_{i+1},γ_{i+1}]`.
 5. The terminal critical exponent is `−n` or `−∞`.
 6. For each `1 ≤ i ≤ s`, every tame corestriction relative to
    the actual field `K[γ_i]` gives a derived stratum for
    `γ_{i−1}−γ_i` equivalent to a simple stratum over `K[γ_i]`.
+
+The critical exponents in clauses 4 and 5 and the radical power in
+clause 4 use `S.chain` as a presentation of the common order.
+A shift of the chain index preserves the filtration by reindexing
+the containment conditions in (1.1.2).
 
 Adjacent pairs are indexed by `Fin s`, using `castSucc` for the
 previous index and `succ` for the next. This also covers `s = 0`,

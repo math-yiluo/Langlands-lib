@@ -23,7 +23,13 @@ theorem automorphismOuterGeometry_of_pinnedCharts
     (hchart : PinnedOuterIsomorphismChartStatement.{u})
     {S : Scheme.{u}} {G A : GroupScheme S} (hG : IsReductive G)
     (q : G ⟶ A) (hq : IsRelativeAdjointQuotient q)
-    (I : GroupIsomorphismScheme G G) (O : OuterIsomorphismScheme I hq.innerAction) :
+    (I : GroupIsomorphismScheme G G) (O : OuterIsomorphismScheme I hq.innerAction)
+    (hclassMap : LocallyOfFinitePresentation O.classMap.left :=
+      letI := hq.isReductive_target.smooth
+      O.locallyOfFinitePresentation)
+    (hclassMapAffine : IsAffineHom O.classMap.left :=
+      letI := hq.isReductive_target.isAffineHom
+      O.affine) :
     Etale O.parameter.hom ∧ IsSeparated O.parameter.hom ∧
       IsAffineHom O.classMap.left ∧
       IsClosedImmersion (I.classify
@@ -32,7 +38,6 @@ theorem automorphismOuterGeometry_of_pinnedCharts
         ∀ i, ∃ D : Type u, Nonempty ((Over.pullback (𝒰.f i)).obj O.parameter ≅
           GroupIsomorphismScheme.constantParameter (𝒰.X i) D) := by
   let : Smooth A.X.hom := hq.isReductive_target.smooth
-  let : IsAffineHom A.X.hom := hq.isReductive_target.isAffineHom
   let C := AffinePinnedAtlas.ofReductive hG
   have hlocal : ∀ i : C.cover.I₀, ∃ (D : Type u)
       (s : (Over.map (C.cover.f i)).obj
@@ -60,9 +65,9 @@ theorem automorphismOuterGeometry_of_pinnedCharts
       exact hs
     exact ⟨D, I.localSection (C.cover.f i) s,
       I.localSection_bijective hq.innerAction (C.cover.f i) s hs'⟩
-  obtain ⟨he, hs, hc⟩ := O.geometry_of_localConstants C.cover hlocal
+  obtain ⟨he, hs, hc⟩ := O.geometry_of_localConstants C.cover hlocal hclassMap
   let : IsSeparated O.parameter.hom := hs
-  exact ⟨he, hs, O.affine, O.inner_isClosedImmersion, C.cover, hc⟩
+  exact ⟨he, hs, hclassMapAffine, O.inner_isClosedImmersion, C.cover, hc⟩
 
 /-- Pinned constant charts construct the outer quotient and all geometry
 required by the relative automorphism-scheme target, once I is supplied. -/
@@ -77,9 +82,24 @@ theorem exists_automorphismOuterGeometry_of_pinnedCharts
         ((LocalGroupIso.ofIso (Iso.refl G) A.X).twist hq.innerAction (𝟙 A.X))).left ∧
       ∃ 𝒰 : Scheme.Cover.{u} (Scheme.precoverage @Etale) S,
         ∀ i, ∃ D : Type u, Nonempty ((Over.pullback (𝒰.f i)).obj O.parameter ≅
-          GroupIsomorphismScheme.constantParameter (𝒰.X i) D) :=
-  ⟨I.outerOfPinnedOuterCharts hchart hG hG q hq,
-    automorphismOuterGeometry_of_pinnedCharts hchart hG q hq I _⟩
+          GroupIsomorphismScheme.constantParameter (𝒰.X i) D) := by
+  let : Smooth A.X.hom := hq.isReductive_target.smooth
+  let : IsAffineHom A.X.hom := hq.isReductive_target.isAffineHom
+  have ha : hq.innerAction.IsFaithful :=
+    AutomorphicAction.isFaithful_of_isFppfQuotient_center hq.isQuotient
+      hq.innerAction hq.innerAction_restrict
+  let hfree := I.actionHom_injective_of_isFaithful hq.innerAction ha
+  let R := GroupIsomorphismScheme.quotientRepresentationOfPinnedOuterCharts hchart hG hG q hq I
+  let O := I.outerOfQuotientRepresentation hq.innerAction ha R
+  have hclassMap : LocallyOfFinitePresentation R.classMap.left :=
+    R.locallyOfFinitePresentation hfree
+  let :=
+    instDescendsAlongSchemeMinMorphismPropertySurjectiveFlatLocallyOfFinitePresentationOfQuasiCompactOfIsZariskiLocalAtTarget
+      (@IsAffineHom.{u})
+  have hclassMapAffine : IsAffineHom R.classMap.left :=
+    R.classMap_property hfree (@IsAffineHom.{u}) inferInstance
+  exact ⟨O, automorphismOuterGeometry_of_pinnedCharts hchart hG q hq I O
+    hclassMap hclassMapAffine⟩
 
 /-- Select the actual outer quotient constructed from pinned constant charts. -/
 def automorphismOuterQuotientOfPinnedCharts
