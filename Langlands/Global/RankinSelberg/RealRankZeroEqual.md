@@ -80,3 +80,5 @@ This is the case `n = n' = 1` of Jacquet, *Archimedean Rankin–Selberg integral
 integrals at the real place (Tate's thesis; Cassels–Fröhlich 1967, Chapter XV). The
 reduction to `RealArchimedeanTateStatement` through Schur's lemma, the real-place
 parameter and the contragredient pairing is internal to this project.
+
+The rank-one list calculation is imported from `Langlands.LocalFactor.RealBlockRankOne`.

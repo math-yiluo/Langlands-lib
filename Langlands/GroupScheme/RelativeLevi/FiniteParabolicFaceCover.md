@@ -1,0 +1,11 @@
+# A finite affine etale face-chart cover and one weight bound
+
+Let `p : H → G` be a supplied relative parabolic in an affine reductive group scheme over a compact scheme `S` in universe `u`. In particular, an affine base is compact. `finiteParabolicFaceCover` constructs a finite collection of the actual affine etale face charts already derived through each base point, covering the original base, and one natural number bounding every original canonical face weight in every selected chart.
+
+`FiniteParabolicFaceCover` records a finite index `Fin count`, the actual pointed charts, joint coverage and the common bound. The chart coordinate types, root data, root-index types and exact-layer ranks may vary with the index. The weights are the original unscaled face weights. `weight_le_bound` states their explicit pointwise inequality. The bound is the maximum of the finitely many chart maxima; zero chart maxima and an empty index on an empty base are allowed. The existing generic root-weight termination theorem applies at any cutoff above these weights; this module does not add a separate all-test terminal-group wrapper or assert a descended filtration.
+
+`space` is the actual finite coproduct of the affine chart schemes and is proved affine. `baseMap` is the actual coproduct map to the original base, proved etale and surjective. Consequently it is the affine flat surjection used by the effective descent interfaces. The proof of surjectivity uses the selected chart points and the actual coproduct injection/composite equations.
+
+The construction uses openness of each etale chart image and compactness to select a finite subcover, then enumerates that finite set and takes the finite supremum of the chart maxima. All local root, dynamic and face-chart data have already been constructed from the supplied parabolic and reductivity; no local-chart existence or uniform-bound hypothesis is imposed here.
+
+This is derived internal infrastructure for finite vector-bundle filtrations of supplied relative radicals. Effective descent of local terms and linear quotients and the final finite-series statement remain separate steps. The argument uses existing actual affine charts, compactness, finite coproduct geometry and the finite root-weight maximum, with no new literature assertion.
