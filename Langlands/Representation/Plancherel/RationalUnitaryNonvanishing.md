@@ -50,3 +50,5 @@ or prove any Jacquet multiplicity, induction unitarity, admissibility or
 irreducibility theorem. A consumer selecting a regular unitary twist must
 still construct its finite nonzero regular conditions and prove that their
 nonvanishing implies regularity for the actual representations in question.
+
+`circleToUnits_zpow_val` identifies integer powers under the circle inclusion. `continuous_finiteLaurentEvaluation_circle` proves continuity on finite tuples of circle elements by induction on Laurent polynomials.

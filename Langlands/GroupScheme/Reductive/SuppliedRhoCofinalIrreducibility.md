@@ -22,8 +22,11 @@ The numerical height bound and specialization of highest-weight existence
 are generic Library adapters. The chosen basis uses the new supplied-family
 finite-dimensionality result, not the old canonical basis construction.
 The highest-weight existence proof uses a generic opposite dynamic cell,
-Levi characters, realized weights and covariant socles; its subgroup names
-include Borel terminology, but the implemented route does not identify a
-regular dynamic subgroup as Borel or invoke Borel quotient properness.
-No old canonical-rho Borel/big-cell assembly is used. This is derived internal
+Levi characters, realized weights and covariant socles. It uses ordinary
+Borel quotient properness transitively through maximal-torus centralizers,
+reductivity of dynamic centralizers and the Chevalley unipotent envelope:
+`unipotentTorusBorelsToAllBorels` applies `someBorelQuotientProper`.
+The implemented route avoids the five excluded inputs and their proofs,
+the regular-cocharacter identification of a dynamic subgroup as Borel,
+and the old canonical-rho Borel/big-cell assembly. This is derived internal
 content and adds no external source claim.

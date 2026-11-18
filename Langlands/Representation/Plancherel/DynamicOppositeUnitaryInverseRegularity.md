@@ -224,3 +224,5 @@ and the Borel instances `hermitianAdjunctionPointMeasurable` and
      no pole there, and regularity then pulls back to `X(M)` by step 2.
   Steps 1 and 2 are both needed: in several variables, boundedness on the
   unitary points does not imply regularity (`x² / (x² + y²)`).
+
+`circleToUnits_zpow_val` and `continuous_finiteLaurentEvaluation_circle` are imported from `RationalUnitaryNonvanishing`.

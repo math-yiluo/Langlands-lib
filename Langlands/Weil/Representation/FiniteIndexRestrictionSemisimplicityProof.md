@@ -135,3 +135,5 @@ syntactically the constant
 `Langlands.Weil.RepresentationFiniteIndexRestrictionSemisimplicity.{uG, uV}`.
 It also applied the theorem to a group in `Type 2` with the zero-dimensional
 carrier `Fin 0 → ℂ`, and to a group in `Type` with a carrier in `Type 3`.
+
+The comparison of representations with equal images is imported from `Representation.Category.SubrepresentationRange`.

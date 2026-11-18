@@ -107,6 +107,37 @@ theorem residueHom_restrict (E : IntermediateField K L) [Normal K E]
 
 end Langlands.LocalGalois
 
+namespace Langlands.LocalGalois.SepClosed
+
+open ValuativeRel IsLocalRing
+
+variable (K : Type*) [Field K] [ValuativeRel K] [TopologicalSpace K]
+    [IsNonarchimedeanLocalField K] (Ω : Type*) [Field Ω] [Algebra K Ω]
+    [Algebra.IsAlgebraic K Ω] [IsSepClosed Ω]
+
+local instance : NontriviallyNormedField K := localNormedField K
+local instance : IsUltrametricDist K := localNormedField_ultrametric K
+local instance : CompleteSpace K := localNormedField_complete K
+local instance : Finite (ResidueField (baseIntegers K)) := localResidue_finite K
+
+theorem residueTransport_continuous : Continuous (residueTransport K Ω) :=
+  semilinearAutCongr_continuous (localResidueEquiv K) (residueClosureEquiv K Ω)
+    (residueClosureEquiv_base K Ω)
+
+theorem absoluteResidueHom_continuous : Continuous (absoluteResidueHom K Ω) :=
+  (residueTransport_continuous K Ω).comp (residueHom_continuous K Ω)
+
+theorem absoluteResidueHom_ker : (absoluteResidueHom K Ω).ker = absoluteInertia K Ω := by
+  ext σ
+  change residueTransport K Ω (residueHom K Ω σ) = 1 ↔ residueHom K Ω σ = 1
+  exact (residueTransport K Ω).map_eq_one_iff
+
+theorem absoluteResidueHom_surjective [IsGalois K Ω] :
+    Function.Surjective (absoluteResidueHom K Ω) :=
+  (residueTransport K Ω).surjective.comp (residueHom_surjective K Ω)
+
+end Langlands.LocalGalois.SepClosed
+
 namespace Langlands.LocalGalois
 
 open ValuativeRel IsLocalRing
@@ -121,8 +152,7 @@ local instance : Finite (ResidueField (baseIntegers K)) := localResidue_finite K
 
 omit [CharZero K] in
 theorem localResidueTransport_continuous : Continuous (localResidueTransport K) :=
-  semilinearAutCongr_continuous (localResidueEquiv K) (localResidueClosureEquiv K)
-    (localResidueClosureEquiv_base K)
+  SepClosed.residueTransport_continuous K (AlgebraicClosure K)
 
 def localResidueTransportEquiv :
     Gal(ResidueField (closureIntegers K)/ResidueField (baseIntegers K)) ≃ₜ*
@@ -140,10 +170,10 @@ def localResidueTransportEquiv :
 
 omit [CharZero K] in
 theorem absoluteResidueHom_continuous : Continuous (absoluteResidueHom K) :=
-  (localResidueTransport_continuous K).comp (residueHom_continuous K (AlgebraicClosure K))
+  SepClosed.absoluteResidueHom_continuous K (AlgebraicClosure K)
 
 theorem absoluteResidueHom_surjective : Function.Surjective (absoluteResidueHom K) :=
-  (localResidueTransport K).surjective.comp (residueHom_surjective K (AlgebraicClosure K))
+  SepClosed.absoluteResidueHom_surjective K (AlgebraicClosure K)
 
 theorem absoluteResidueHom_isOpenMap : IsOpenMap (absoluteResidueHom K) :=
   (localResidueTransportEquiv K).toHomeomorph.isOpenMap.comp
@@ -162,11 +192,8 @@ theorem absoluteResidueHom_residue (σ : Field.absoluteGaloisGroup K)
   rfl
 
 omit [CharZero K] in
-theorem absoluteResidueHom_ker : (absoluteResidueHom K).ker = absoluteInertia K := by
-  ext σ
-  change localResidueTransport K (residueHom K (AlgebraicClosure K) σ) = 1 ↔
-    residueHom K (AlgebraicClosure K) σ = 1
-  exact (localResidueTransport K).map_eq_one_iff
+theorem absoluteResidueHom_ker : (absoluteResidueHom K).ker = absoluteInertia K :=
+  SepClosed.absoluteResidueHom_ker K (AlgebraicClosure K)
 
 omit [CharZero K] in
 theorem absoluteInertia_mem (σ : Field.absoluteGaloisGroup K) :

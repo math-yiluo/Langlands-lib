@@ -1,6 +1,7 @@
 # The separable inertia fixed field of a nonarchimedean local field
 
 Lean construction: Worker 785. Markdown and source audit: Worker 972.
+Rerouting through the general residue projection: Worker 122 (Task 7404).
 
 For every nonarchimedean local field \(F\), this file defines the fixed field
 \(U\) of the inertia subgroup of \(\operatorname{Gal}(\Omega/F)\), where
@@ -56,16 +57,19 @@ They are compared below through `localNormedField_integer` and
 `Gal(SeparableClosure F/F)` carries Mathlib's Krull topology; no other topology
 on the Galois group is introduced.
 
-- `sepClosureValuation F` is `spectralValuation F Ω`, the
-  \(\mathbb R_{\ge0}\)-valued valuation whose value at \(x\) is Mathlib's spectral
-  norm of \(x\) over \(F\) (`sepClosureValuation_apply`).
+- `sepClosureValuation F` is defined as the general
+  `SepClosed.closureValuation F Ω` of `AbsoluteDefinitions`, which is
+  `spectralValuation F Ω`: the \(\mathbb R_{\ge0}\)-valued valuation whose value
+  at \(x\) is Mathlib's spectral norm of \(x\) over \(F\)
+  (`sepClosureValuation_apply`, still proved by `rfl`).
 - `sepClosureIntegers F` is its valuation subring. By definition it is
   `extensionIntegers F Ω` (`sepClosureIntegers_eq`). Write \(B\) for it and
   \(k_B\) for its residue field.
 - The instance `sepClosureValuation_extends` proves Mathlib's
   `Valuation.HasExtension` from the *original* valuation `ValuativeRel.valuation F`
   to `sepClosureValuation F`. For \(x,y\in F\), \(v(x)\le v(y)\) holds if and only if
-  the spectral norms of their images satisfy the same inequality. The proof
+  the spectral norms of their images satisfy the same inequality. It is the
+  general instance `SepClosed.closureValuation_extends F Ω`, whose proof
   combines Mathlib's `spectralNorm_extends` with `localNormedField_le`. The
   extension therefore respects the order of the supplied valuation. Only the
   order is compared: the two valuations take values in different types (the
@@ -77,10 +81,20 @@ on the Galois group is introduced.
   homomorphism \(\operatorname{Gal}(\Omega/F)\to\operatorname{Aut}_{k_A}(k_B)\)
   sending \(\sigma\) to the map \(\bar b\mapsto\overline{\sigma b}\) for
   \(b\in B\).
-- `separableInertia F` is the Library's `inertia F Ω`, the kernel of that
-  homomorphism (`separableInertia_eq_ker` holds by definition). Write \(I\) for
-  it.
-  - It is normal (instance `separableInertia_normal`).
+- `separableInertia F` is defined as the general inertia
+  `SepClosed.absoluteInertia F Ω` of `AbsoluteDefinitions`, which is the
+  Library's `inertia F Ω`, the kernel of that homomorphism
+  (`separableInertia_eq_ker` holds by definition). Write \(I\) for it.
+  - It is normal (instance `separableInertia_normal`, which is
+    `SepClosed.absoluteInertia_normal F Ω`).
+  - It is also the kernel of the general residue projection
+    `SepClosed.absoluteResidueHom F Ω` to `Field.absoluteGaloisGroup 𝓀[F]`
+    (`SepClosed.absoluteResidueHom_ker F Ω` in `AbsoluteProof`). That projection
+    is `separableResidueHom F` followed by the conjugation
+    `SepClosed.residueTransport F Ω`, which identifies
+    \(\operatorname{Aut}_{k_A}(k_B)\) with `Field.absoluteGaloisGroup 𝓀[F]`; this
+    equation holds by `rfl`. `separableResidueHom F` itself keeps its codomain
+    \(\operatorname{Aut}_{k_A}(k_B)\) and is not the general projection.
   - \(\sigma\in I\) if and only if \(\overline{\sigma b}=\bar b\) for every
     \(b\in B\) (`mem_separableInertia_iff`, from the published
     `mem_inertia_iff`).
@@ -221,8 +235,9 @@ hypothesis, as input data or as a conclusion:
 
 Completeness and local compactness of \(U\) are not part of this construction.
 No comparison of `Gal(SeparableClosure F/F)` with the `AlgebraicClosure`-based
-`Field.absoluteGaloisGroup F` is made. The Library's `absoluteResidueHom` and
-`absoluteInertia` are neither used nor changed.
+`Field.absoluteGaloisGroup F` is made. The characteristic-zero
+`absoluteResidueHom` and `absoluteInertia` of `AbsoluteDefinitions` are not used;
+the general `SepClosed` declarations are used only as described above.
 
 ## Sources and correspondence
 
@@ -320,3 +335,22 @@ The project modules used are the published versions at Library commit
 The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 with
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. The file introduces no
 axioms and does not change any existing module.
+
+**Generalization (Task 7404).** The bodies of `separableInertia`,
+`separableInertia_normal`, `sepClosureValuation` and `sepClosureValuation_extends`
+were replaced by the general declarations `SepClosed.absoluteInertia`,
+`SepClosed.absoluteInertia_normal`, `SepClosed.closureValuation` and
+`SepClosed.closureValuation_extends` of `AbsoluteDefinitions` (namespace
+`Langlands.LocalGalois.SepClosed`) at \(\Omega=\) `SeparableClosure F`. These
+unfold to the previous bodies `inertia F Ω`, `inertia_normal F Ω`,
+`spectralValuation F Ω` and the same `HasExtension` proof, so every declaration
+of this file keeps its name, type and value; the fully elaborated types of all
+declarations were compared before and after the change and are identical, and all
+proofs of this file (including the `rfl` proofs) are unchanged. Equality with the
+general declarations is checked by `rfl` in a private draft:
+`separableInertia F = SepClosed.absoluteInertia F (SeparableClosure F)`,
+`sepClosureValuation F = SepClosed.closureValuation F (SeparableClosure F)`,
+`sepClosureIntegers F = SepClosed.closureIntegers F (SeparableClosure F)` and
+`integerToSepClosure F = SepClosed.integerMap F (SeparableClosure F)`. This
+rerouting was compiled in the environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` over Library commit `fcb85a7e`.

@@ -98,11 +98,11 @@ def splitTorus.exponentWeightAmbientEquiv (m : I → ℤ) :
   rw [hc] at E
   exact E
 
-local instance {k : Type u} [Field k] [Algebra R k] :
+local instance splitDataTransport_sourceFieldAffine {k : Type u} [Field k] [Algebra R k] :
     IsAffineHom ((baseChange (algebraBaseMap R k)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd G.X.hom (algebraBaseMap R k)))
 
-local instance {k : Type u} [Field k] [Algebra R k] :
+local instance splitDataTransport_targetFieldAffine {k : Type u} [Field k] [Algebra R k] :
     IsAffineHom ((baseChange (algebraBaseMap R k)).obj H).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd H.X.hom (algebraBaseMap R k)))
 

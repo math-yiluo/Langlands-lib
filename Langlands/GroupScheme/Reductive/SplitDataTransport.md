@@ -19,3 +19,9 @@ retains the same finite reduced coordinate datum and applies actual
 root-datum transport on each field fibre.
 `IsFibrewiseMaximalTorus.comp_ambientIso` similarly preserves maximality
 on every residue-field fibre.
+
+The local affine instances for the two field pullbacks have explicit distinct
+names. This permits importing the transport results together with rational
+root-restriction results whose local instance otherwise receives the same
+automatically generated declaration name. The instance types and bodies and
+all mathematical declarations are unchanged.

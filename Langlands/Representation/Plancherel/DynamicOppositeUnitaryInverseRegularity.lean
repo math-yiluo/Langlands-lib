@@ -40,38 +40,6 @@ namespace Langlands.Plancherel
 
 section Circle
 
-/-- Including a circle element in the complex units commutes with integer powers. -/
-theorem circleToUnits_zpow_val (z : Circle) (k : ℤ) :
-    ((Circle.toUnits z ^ k : ℂˣ) : ℂ) = ((z ^ k : Circle) : ℂ) := by
-  rw [← map_zpow]
-  rfl
-
-/-- Laurent evaluation on circle tuples is continuous in the tuple. -/
-theorem continuous_finiteLaurentEvaluation_circle {n : ℕ}
-    (p : AddMonoidAlgebra ℂ (Fin n → ℤ)) :
-    Continuous fun c : Fin n → Circle =>
-      finiteLaurentEvaluation (fun i => Circle.toUnits (c i)) p := by
-  induction p using AddMonoidAlgebra.induction_on with
-  | of m =>
-      have he : ∀ c : Fin n → Circle,
-          finiteLaurentEvaluation (fun i => Circle.toUnits (c i))
-            (AddMonoidAlgebra.of ℂ (Fin n → ℤ) (Multiplicative.ofAdd m)) =
-            ∏ i, ((c i ^ m i : Circle) : ℂ) := by
-        intro c
-        rw [AddMonoidAlgebra.of_apply, finiteLaurentEvaluation_single, one_mul]
-        exact Finset.prod_congr rfl fun i _ => circleToUnits_zpow_val (c i) (m i)
-      simp only [he]
-      refine continuous_finsetProd _ fun i _ => ?_
-      have h1 : Continuous fun c : Fin n → Circle => c i ^ m i :=
-        (continuous_apply i).zpow (m i)
-      exact continuous_subtype_val.comp h1
-  | add x y hx hy =>
-      simp only [map_add]
-      exact hx.add hy
-  | smul r x hx =>
-      simp only [map_smul, smul_eq_mul]
-      exact continuous_const.mul hx
-
 /-- Every neighbourhood of a point of the circle is infinite. -/
 theorem circle_infinite_of_mem_nhds {x : Circle} {s : Set Circle} (hs : s ∈ 𝓝 x) :
     s.Infinite := by

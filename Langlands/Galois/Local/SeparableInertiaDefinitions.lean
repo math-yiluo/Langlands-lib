@@ -28,12 +28,12 @@ def separableResidueHom :
   residueHom F (SeparableClosure F)
 
 def separableInertia : Subgroup Gal(SeparableClosure F/F) :=
-  inertia F (SeparableClosure F)
+  SepClosed.absoluteInertia F (SeparableClosure F)
 
 theorem separableInertia_eq_ker : separableInertia F = (separableResidueHom F).ker := rfl
 
 instance separableInertia_normal : (separableInertia F).Normal :=
-  inertia_normal F (SeparableClosure F)
+  SepClosed.absoluteInertia_normal F (SeparableClosure F)
 
 theorem mem_separableInertia_iff (σ : Gal(SeparableClosure F/F)) :
     σ ∈ separableInertia F ↔ ∀ x : extensionIntegers F (SeparableClosure F),
@@ -75,7 +75,7 @@ theorem fixedFieldToSepClosure_comp_baseToFixedField :
 /-! ### Valuations and integer rings -/
 
 def sepClosureValuation : Valuation (SeparableClosure F) ℝ≥0 :=
-  spectralValuation F (SeparableClosure F)
+  SepClosed.closureValuation F (SeparableClosure F)
 
 abbrev sepClosureIntegers : ValuationSubring (SeparableClosure F) :=
   (sepClosureValuation F).valuationSubring
@@ -87,13 +87,8 @@ theorem sepClosureValuation_apply (x : SeparableClosure F) :
     (sepClosureValuation F x : ℝ) = spectralNorm F (SeparableClosure F) x := rfl
 
 instance sepClosureValuation_extends :
-    (valuation F).HasExtension (sepClosureValuation F) where
-  val_isEquiv_comap x y := by
-    change valuation F x ≤ valuation F y ↔
-      spectralNorm F (SeparableClosure F) (algebraMap F (SeparableClosure F) x) ≤
-        spectralNorm F (SeparableClosure F) (algebraMap F (SeparableClosure F) y)
-    simp only [spectralNorm_extends]
-    exact (localNormedField_le F x y).symm
+    (valuation F).HasExtension (sepClosureValuation F) :=
+  SepClosed.closureValuation_extends F (SeparableClosure F)
 
 def fixedFieldValuation : Valuation (inertiaFixedField F) ℝ≥0 :=
   (sepClosureValuation F).comap (algebraMap (inertiaFixedField F) (SeparableClosure F))

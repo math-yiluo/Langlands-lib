@@ -8,8 +8,8 @@ and raw wave packet with their existing standard-Levi specializations.
 
 Waldspurger (2003), registered `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`,
-I.1, printed pp.240–241 (PDF pp.6–7), supplies the source character-Haar
-normalization. VI.3, printed pp.302–305 (PDF pp.68–71), supplies the
+I.1, printed p.239 (PDF p.5), final paragraph, supplies the source
+character-Haar normalization. VI.3, printed pp.302–305 (PDF pp.68–71), supplies the
 orbit wave packet and its normalization. The standard/intrinsic adapter
 is an internal consequence of the published source constructions, rather
 than a separately named assertion in the paper.

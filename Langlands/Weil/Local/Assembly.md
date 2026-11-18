@@ -1,81 +1,138 @@
-# Actual local Weil assembly
+# Local Weil assembly over a separable closure
 
-Author: Worker 53. This is a definition and construction contribution.
+Authors: Worker 53 (original p-adic assembly), Worker 215 (general assembly and
+in-place specializations). The general residue construction is by Worker 122.
+This is a definition and construction contribution.
 
-For every prime `p` and `F : PadicField.{u} p`, `localResidueField F` is the actual
-residue field of `F.canonicalTopologicalData`. The carrier universe `u` is
-unrestricted. `localResidueMap F` bundles the constructed absolute residue action
-with its proved continuity. Composing with the finite-field comparison gives
-`localResidueDegree F`, a continuous map from the actual absolute Galois group
-of `F.Carrier` to the genuine profinite completion of the integers. The
-comparison sends the arithmetic Frobenius `x ↦ x^q` to `-1`, so this is the
-geometric normalization: geometric Frobenius has degree `+1`.
+Let `K` have `[Field K] [ValuativeRel K] [TopologicalSpace K]
+[IsNonarchimedeanLocalField K]`. The namespace
+`Langlands.Weil.Local.SepClosed` constructs the Weil group using an extension
+`Ω` with `[Field Ω] [Algebra K Ω] [Algebra.IsAlgebraic K Ω] [IsSepClosed Ω]`.
+There is no characteristic hypothesis, and no topology on `Ω` is supplied.
+The automorphism group `Gal(Ω/K)` carries Mathlib's Krull topology. The hypotheses
+are deliberately broader than being a separable closure so the same definitions
+also specialize to the old algebraic-closure interface in every characteristic
+where that interface was already defined.
 
-`localWeilGroup F` is exactly the previously constructed `Weil.Pullback` of that
-map. It uses the subgroup topology inherited from the absolute Galois group
-times the discrete integers. `localProjection`, `localDegree`, and
-`localDegreeInt` expose the projection and geometric degree. No alternate
-Weil group or topology is introduced.
+For the task's specified `[IsSepClosure K Ω]`, algebraicity and `IsGalois K Ω`
+are inferred by Mathlib. Its separable-closedness certificate is installed locally
+with `letI := IsSepClosure.sep_closed K (K := Ω)`: this theorem is not itself a
+global instance. The canonical `SeparableClosure K` already has the needed
+instances. Thus all the constructions below apply to arbitrary separable closures,
+including those of positive-characteristic local fields.
 
-`localInertia F` is the kernel of this degree, as a subgroup of the Weil group.
-The finite-field comparison is injective, so the kernel of the profinite residue
-degree is the actual absolute inertia subgroup (`localResidueDegree_ker`).
-`localGaloisInertiaEquiv` records that equality as a continuous group
-equivalence; `localInertiaInclusion` composes it with the existing degree-zero
-inclusion into the pullback. These kernel and continuity proofs are intrinsic
-obligations of the constructed inclusion.
+The residue field `localResidueField K` is exactly `𝓀[K]`, finite by the local field
+instance. `localResidueMap K Ω` bundles
+`LocalGalois.SepClosed.absoluteResidueHom K Ω` with its proved continuity. Composing
+it with the existing finite-field Frobenius equivalence gives
+`localResidueDegree K Ω : Gal(Ω/K) →ₜ* ProfiniteIntegers`. The finite-field
+comparison sends arithmetic Frobenius to minus one, giving the geometric
+normalization. `localWeilGroup K Ω` is the existing `Weil.Pullback` of this degree
+along the integer map into the profinite integers, with the subgroup topology
+from `Gal(Ω/K) × Multiplicative ℤ`.
 
-The residue map and finite-field equivalence are both proved surjective in
-their respective arithmetic proof modules. Their composite is therefore
-surjective (`localResidueDegree_surjective`), and the existing pullback
-degree-surjectivity theorem applies (`localDegree_surjective`). Only then does
-`localGeometricFrobenius` choose a preimage of degree `+1`. Its degree equation
-`localGeometricFrobenius_degree` is proved from the choice witness. Two such
-lifts differ by an element of `localInertia F`, so values of characters trivial
-on inertia do not depend on the choice. No lift, surjectivity certificate,
-reciprocity map, or comparison equivalence is assumed as input.
+`localProjection`, `localDegree`, and `localDegreeInt` expose its two components.
+`localInertia` is the kernel of the integer degree, with normality inherited from
+the kernel construction. The injective finite-field comparison identifies the
+kernel of the profinite residue degree with absolute Galois inertia;
+`localGaloisInertiaEquiv` packages this equality as a topological group equivalence.
+`localInertiaInclusion` sends absolute inertia to pairs with degree zero. The
+continuity proofs use the ordinary subtype topologies.
 
-`localUnramifiedCharacter F z` sends an element of degree `n` to `z^n`.
-`localNormCharacter F` is the already constructed residue-normalized character
-for the canonical realization, so its formula is `q^(-n)`, where `q` is the
-actual residue cardinality; at geometric Frobenius it is `q^(-1)`. Complex
-units carry their usual topology. Inertia, topological, projection,
-residue-Frobenius and norm compatibility assertions are recorded separately in
-the statement target `Langlands.Weil.Local.LocalAssemblyStatement`.
+With the additional `[IsGalois K Ω]`, surjectivity of the constructed residue map
+and of the finite-field equivalence proves `localResidueDegree_surjective`; the
+existing pullback theorem then proves `localDegree_surjective`. These are
+construction obligations, needed to define
+`localGeometricFrobenius` as a preimage of degree plus one. Its degree equation is
+the corresponding choice certificate. The residue map, Weil group and inertia
+constructions do not require `IsGalois`, nor do the characters:
+`localUnramifiedCharacter K Ω z` sends degree `n` to `z^n`;
+`localNormCharacter K Ω` is the same character with degree-one value
+`(Nat.card 𝓀[K])⁻¹`, using the proved positivity of this finite field's cardinality.
+Its defining formula as a complex number is `q^(-n)` with `q = Nat.card 𝓀[K]`.
+Complex units carry their usual topology.
 
-This is derived assembly of the field-theoretic Weil description in Henniart,
-*Représentations du groupe de Weil d'un corps local* (1980), sections 2.1 and
-2.2 (opening paragraph), printed page 158 (PDF page 5): `W_F` is the subgroup of
-`G_F` acting on the residue field by integral powers of Frobenius, inertia is
-the open subgroup acting trivially, the topology on inertia is induced from
-`G_F`, and an element `Fr` inducing Frobenius generates `W_F / I_F ≅ ℤ`. The
-geometric norm convention is that of Tate, *Number theoretic background*
-(1979), Part II: (1.4.1), printed page 6 (PDF page 15), describes the same
-subgroup with inertia open and `‖Frobenius⁻¹‖ = q⁻¹` for uniformizers;
-(1.4.6), printed page 7 (PDF page 16), gives the norm homomorphism with image
-the powers of `q`; (4.1.3), printed page 20 (PDF page 29), defines the degree
-`v` by `‖w‖ = q^(-v(w))`. Here the group is realized as the pullback of the
-degree map rather than as a subgroup of `G_F`; the projection is the
-continuous inclusion of the sources, and its injectivity and density are
-assertions of the separate statement target, not of this module.
-The registered original sources are `henniart-1980-weil-representations`,
-PDF SHA-256
-`451a8bd31a58be9bf5ce49588503c2d229b1a73bf3e65ae0c7b2f491c1c4e017`,
-and `tate-1979-number-theoretic-background`, Part II PDF SHA-256
+## Characteristic assumptions and in-place specialization
+
+The old declarations in `Langlands.Weil.Local` keep their full names, types and
+meanings. They specialize these definitions at `K = F.Carrier`, with the instances
+of `F.canonicalTopologicalData`, and `Ω = AlgebraicClosure F.Carrier`. The p-adic
+field's characteristic-zero certificate is derived locally from its `Padic p`
+algebra where the Frobenius construction needs Galois surjectivity. This supplies
+perfection, so Mathlib's
+`IsSepClosure.of_isAlgClosure_of_perfectField` makes its algebraic closure a
+separable closure. Characteristic zero is used only in these p-adic
+specializations of surjectivity and geometric Frobenius. For an arbitrary
+characteristic-zero local field, the same general constructions at
+`Ω = AlgebraicClosure K` use this Mathlib instance.
+
+The former arithmetic inputs used characteristic zero in two places. First,
+algebraic-closedness of the residue field of an algebraic closure is replaced by
+`LocalGalois.SepClosed.residue_isAlgClosure`: the residue field of the integer ring
+of a separably closed extension is separably closed, and its algebraicity over the
+finite, hence perfect, field `𝓀[K]` makes it algebraically closed. This supplies the
+residue-field identification and continuous residue map. Second, Galoisness of
+the chosen closure in the residue-surjectivity proof is supplied directly by
+`IsSepClosure.isGalois`. The spectral valuation and its invariance, normality and
+kernel constructions, finite-field comparison, pullback topology, and the
+degree characters require no characteristic-zero argument.
+
+All specializations agree by unfolding; no comparison theorem is introduced.
+In particular the old norm character agrees by unfolding
+`canonicalResidueNormCharacter`, `residueNormCharacter`, and `normCharacter`,
+since both use the same actual residue cardinality. The old residue field,
+pullback, projection, degree and inertia definitions retain their defining
+expressions; their residue map is now obtained from the general constructor.
+
+| General declaration in `Langlands.Weil.Local.SepClosed` | Characteristic-zero specialization | P-adic specialization in `Langlands.Weil.Local` |
+| --- | --- | --- |
+| `localResidueField K` | `𝓀[K]` | `localResidueField F` |
+| `localResidueMap K Ω` | `Ω = AlgebraicClosure K` | `localResidueMap F` |
+| `localResidueDegree K Ω` | same closure | `localResidueDegree F` |
+| `localWeilGroup K Ω` | same closure | `localWeilGroup F` |
+| `localProjection K Ω` | same closure | `localProjection F` |
+| `localDegree K Ω`, `localDegreeInt K Ω` | same closure | `localDegree F`, `localDegreeInt F` |
+| `localInertia K Ω` | same closure | `localInertia F` |
+| `localInertia_normal K Ω` | same closure | `localInertia_normal F` |
+| `localResidueDegree_ker K Ω` | same closure | `localResidueDegree_ker F` |
+| `localGaloisInertiaEquiv K Ω` | same closure | `localGaloisInertiaEquiv F` |
+| `localInertiaInclusion K Ω` | same closure | `localInertiaInclusion F` |
+| `localResidueDegree_surjective K Ω` | same closure | `localResidueDegree_surjective F` |
+| `localDegree_surjective K Ω` | same closure | `localDegree_surjective F` |
+| `localGeometricFrobenius K Ω` | same closure | `localGeometricFrobenius F` |
+| `localGeometricFrobenius_degree K Ω` | same closure | `localGeometricFrobenius_degree F` |
+| `localUnramifiedCharacter K Ω z` | same closure | `localUnramifiedCharacter F z` |
+| `localNormCharacter K Ω` | same closure | `localNormCharacter F` |
+
+## Original sources and provenance
+
+Henniart, *Représentations du groupe de Weil d'un corps local* (1980), §§2.1–2.2
+(opening paragraph), printed p. 158 (PDF p. 5), defines the Weil group as the
+integer-Frobenius preimage, its inertia topology, and its integer quotient. This
+is source `henniart-1980-weil-representations`, original PDF SHA-256
+`451a8bd31a58be9bf5ce49588503c2d229b1a73bf3e65ae0c7b2f491c1c4e017`.
+Tate, *Number theoretic background* (1979), (1.4.1), printed p. 6 (PDF p. 15),
+explicitly gives the nonarchimedean local field description without restricting
+the characteristic. It uses inverse arithmetic Frobenius for uniformizers.
+Section (1.4.6), printed p. 7 (PDF p. 16), gives the norm homomorphism, and (4.1.3),
+printed p. 20 (PDF p. 29), writes it as `q^(-v(w))`. This is source
+`tate-1979-number-theoretic-background`, Part II PDF SHA-256
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
-These original passages were read directly in the registered files.
+Worker 215 read these original pages directly for this generalization.
 
-The project imports `Langlands.Galois.Local.AbsoluteProof`,
-`Langlands.Galois.FiniteField.ComparisonProof`, `Langlands.Weil.AlgebraicProof`,
-`Langlands.Weil.TopologyProof` and `Langlands.Weil.Local.ResidueCharacters` are
-published at Library commit `68e8013fc4fed0de284fd849695676aca2e0c32d`. The
-environment is Lean 4.34.0 with Mathlib commit
+This is derived assembly using the Library's spectral residue map, finite-field
+Frobenius comparison, generic pullback, and degree characters. Their authorship
+is retained in their respective modules: Worker 9 for the absolute residue map,
+Worker 28 for the finite-field comparison, Worker 2 for the generic pullback,
+and Worker 53 for the character constructors and original assembly. General
+residue constructions and their intrinsic proofs are developed by Worker 122.
+The topology, density, compactness, character evaluation, and residue Frobenius
+properties beyond these construction obligations belong to separate statement
+and proof contributions. Existing p-adic statement modules keep their text.
+The unchanged `Langlands.Weil.Local.AssemblyProof` compiles against the
+generalization. Private compilation probes also check the arbitrary
+`IsSepClosure K Ω` interface, the canonical separable closure of `LaurentSeries k`
+for finite fields `k`, definitional agreement of the p-adic constructors, and
+unchanged fully elaborated types of all 19 published Assembly declarations.
+The environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Upstream source authorship is retained: Worker 9 constructs the absolute
-residue action and proves its continuity, surjectivity and kernel, Worker 28
-constructs the finite-field equivalence, Worker 2 constructs the generic
-pullback, and the canonical local-field interface and normalization are reused
-from their published modules. This file assembles those constructions without
-copying their proofs. Actual finite-extension Weil subgroup maps, degree
-scaling, inertia intersection and norm restriction are further implementation
-obligations and are not supplied by this file.

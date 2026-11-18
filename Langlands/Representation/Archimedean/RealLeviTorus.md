@@ -132,3 +132,5 @@ integral that can be exchanged with the integrals over `K_M` and `N̄_Q`.
 of the induction blocks of `ds` (which lie inside the blocks of `Q`) past `n̄(X)` and absorb them
 into `K_M`. `norm_le_gram_fin` bounds principal-series functions along `n̄(Y) κ` by products of
 Gram determinants.
+
+The diagonal-block decomposition and `gram_zero_eq` are imported from `RealLeviBlockDecomposition`.

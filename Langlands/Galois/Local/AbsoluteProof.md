@@ -2,6 +2,52 @@
 
 Original mathematical and Lean author: Worker 9.
 Submission preparation and verification: Worker 68.
+General residue projection (any characteristic): Worker 122 (Task 7404).
+
+## The general residue projection
+
+The namespace `Langlands.LocalGalois.SepClosed` proves the properties of the
+general residue projection of `AbsoluteDefinitions` that the construction of the
+Weil group needs. Its arguments are those of `AbsoluteDefinitions.md`: a
+nonarchimedean local field `K` of any characteristic and `Ω` with
+`[Field Ω] [Algebra K Ω] [Algebra.IsAlgebraic K Ω] [IsSepClosed Ω]`.
+
+- `residueTransport_continuous K Ω`: the conjugation `residueTransport K Ω` from
+  \(\operatorname{Gal}(k_B/k_A)\) to `Field.absoluteGaloisGroup 𝓀[K]` is
+  continuous for the Krull topologies. It is `semilinearAutCongr_continuous`
+  (below) for \(k_A\simeq k\) and the chosen \(e:k_B\simeq\overline{k}\).
+- `absoluteResidueHom_continuous K Ω`: \(\rho_{K,\Omega}\) is continuous, as the
+  composition of this conjugation with the published continuous spectral residue
+  homomorphism `residueHom K Ω`.
+- `absoluteResidueHom_ker K Ω`: the kernel of \(\rho_{K,\Omega}\) is
+  `absoluteInertia K Ω`, because the conjugation is injective and inertia is the
+  kernel of `residueHom K Ω` by definition.
+- `absoluteResidueHom_surjective K Ω`, under the additional hypothesis
+  `[IsGalois K Ω]`: \(\rho_{K,\Omega}\) is surjective. It composes the published
+  surjectivity of `residueHom K Ω` for Galois extensions (stated in
+  `SpectralProof` with `[IsGalois K L]`) with the conjugation equivalence.
+
+`[IsGalois K Ω]` holds for every separable closure (Mathlib's instance
+`IsSepClosure.isGalois`), in particular for `SeparableClosure K` in every
+characteristic. It replaces characteristic zero: the published
+`absoluteResidueHom_surjective` keeps its hypothesis `[CharZero K]`, which is how
+it obtains `IsGalois K (AlgebraicClosure K)` (a perfect field), and it is now
+proved as `SepClosed.absoluteResidueHom_surjective K (AlgebraicClosure K)`.
+Likewise the published `localResidueTransport_continuous`,
+`absoluteResidueHom_continuous` and `absoluteResidueHom_ker` are now proved by
+the general lemmas at `Ω = AlgebraicClosure K`; their statements are unchanged.
+This file proves nothing else in the general setting. Openness, compactness of
+inertia and the quotient equivalence keep their characteristic-zero hypotheses,
+and their general analogue is a later statement task of Task 7341.
+
+| General (`LocalGalois.SepClosed`) | Characteristic 0 (`LocalGalois`) | p-adic (`PadicField`) |
+| --- | --- | --- |
+| `residueTransport_continuous K Ω` | `localResidueTransport_continuous K` | — |
+| `absoluteResidueHom_continuous K Ω` | `absoluteResidueHom_continuous K` | `absoluteResidueHom_continuous F T` |
+| `absoluteResidueHom_ker K Ω` | `absoluteResidueHom_ker K` | `absoluteResidueHom_ker F T` |
+| `absoluteResidueHom_surjective K Ω` (`[IsGalois K Ω]`) | `absoluteResidueHom_surjective K` (`[CharZero K]`) | `absoluteResidueHom_surjective F T` |
+
+## The published characteristic-zero and p-adic results
 
 The closing theorem is `Langlands.LocalGalois.padicResidueExactness`.
 Its local-field theorem `localResidueProperties` proves the entire conjunction
