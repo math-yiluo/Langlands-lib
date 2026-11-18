@@ -34,9 +34,10 @@ have exact independently accepted and published proofs. A further
 17 November refresh checks Library
 `ab9053b1751d6b6557d044c38c04e4c8a67dfffc`: the actual standard-Levi strict-image
 and nonnegative quotient comparisons also have exact independently accepted
-and published proofs. The actual strict partition awaits acceptance and
-publication; finite generation after transport to the actual quotient remains
-a separate obligation.
+and published proofs. A focused 18 November refresh checks Library
+`18c5dd82d119bef479b69de264324b22fe6f8d36`: the actual strict partition also
+has an independently accepted and published exact proof. Finite generation
+after transport to the actual quotient remains a separate obligation.
 The focused V.4.2 ownership audit on 14 November 2026 checks Library
 `1ddfc485145c40679728553e8c3a33a5450ce7f9`: all nine component statements
 have exact proof tasks, listed below; their proofs remain open.
@@ -518,7 +519,7 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.24 strict faces of the integral quotient | `GS.CocharacterCone.strictFace`, `mkQ_mem_strictFace_iff`, `strictFace_subset_quotient`, `existsUnique_strictFace`, `iUnion_strictFace`, `strictFace_disjoint` ([construction](../../Langlands/GroupScheme/Rational/CocharacterConeFaces.md)) | D/P: published candidate `fd6d0153-2b3d-4684-8b3a-8fd00e1f3822`; these are integral faces, before comparison with actual Levi split components |
 | V.3.24 strict uniformizer image of each actual standard Levi split component | `GS.CocharacterUniformizer.StandardLeviStrictImageStatement`: under every supplied compatible map, the strict section image equals the uniformizer image of `IsStandardCocharacter` | P: `CocharacterUniformizer.standardLeviStrictImage` ([proof](../../Langlands/Geometry/Building/StandardLeviStrictUniformizerProof.md)), published proof `b681ec57-8c14-4416-8b9e-8730b5833ac2`, exact proof Task 6472 (`f221e1b4-bd46-4391-9832-8df952b39f94`); statement candidate `55bbe167-ba81-42e2-8ce6-ac00610fdfc1` |
 | V.3.24 actual strict quotient pieces | `GS.CocharacterUniformizer.standardLeviStrictQuotientFace` takes the quotient images over all actual compatible standard-Levi representatives | D/P for the definition, introduction and invalid-index emptiness laws: published candidate `ccf31197-027a-486f-9b24-978b709baf46`. The unrestricted definition supplies no structural existence or partition proof |
-| V.3.24 `S = ⊔ S^{++}_L` in the actual common-uniformizer quotient | `GS.CocharacterUniformizer.StandardLeviStrictQuotientPartitionStatement`: each actual piece is contained in the nonnegative quotient, and every point of that quotient belongs to exactly one indexed piece | S: published statement candidate `02bea613-2825-43dc-a40d-ad0ac98db228`; exact proof Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`) has staged proof candidate `490ed375-a14a-4fe1-b24d-3c49a7e28a84`, awaiting independent acceptance and publication as checked on 17 November. Both comparison prerequisites are published; source issue I2 prevents the printed free-monoid conclusion |
+| V.3.24 `S = ⊔ S^{++}_L` in the actual common-uniformizer quotient | `GS.CocharacterUniformizer.StandardLeviStrictQuotientPartitionStatement`: each actual piece is contained in the nonnegative quotient, and every point of that quotient belongs to exactly one indexed piece | P: `CocharacterUniformizer.standardLeviStrictQuotientPartition` ([proof](../../Langlands/Geometry/Building/StandardLeviStrictQuotientPartitionProof.md)), published proof `490ed375-a14a-4fe1-b24d-3c49a7e28a84`, exact proof Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`); statement candidate `02bea613-2825-43dc-a40d-ad0ac98db228`. The 18 November verification is recorded below; source issue I2 still prevents the printed free-monoid conclusion |
 | V.3.25 `C_A/C_{A_G}(C_A ∩ ⁰G)` finite; `C^{++}_A ∩ ⁰G ≠ ∅` | not stated separately | St: step of VI.3.5 (`RPF.RationalCompactRestrictionCuspidalStatement`, proved) |
 
 ## Evidence for the focused V.3.6–V.3.13 update
@@ -788,27 +789,47 @@ field characteristic, non-split connected reductive groups, nonreduced
 relative roots, rank zero and every supplied compatible split-component map.
 They concern the actual common-uniformizer sections and quotient.
 
-Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`), executed by Worker 118,
-owns the actual partition. Its proof candidate
-`490ed375-a14a-4fe1-b24d-3c49a7e28a84`, with Worker 1222 as coauthor, is
-staged as checked on 17 November, with `accepted = false`, `public = false`
-and no acceptance evidence. Independent review
-`b20a9e72-89e5-410b-8a10-e91ffa8629f8` remains pending. Its reduction
-identifies actual pieces with integral strict faces and transfers the
-integral partition through the nonnegative comparison. Both comparison
-prerequisites from Tasks 6472 and 6505 are now published. The published
-`standardLeviSplitComponentStatement` supplies canonical actual representative
-data. Neither the draft nor the staged candidate counts as a published
-partition proof.
+On 18 November 2026 Worker 1222 verified Task 6605's exact actual-partition
+proof against Library `18c5dd82d119bef479b69de264324b22fe6f8d36`. The fetched
+record reports `accepted = true`, `public = true` and a published integration
+receipt. The independent review approves without qualifications, and the
+machine receipt accepts the Lake build, exact target, unchanged statement
+and frozen inputs.
+
+| Exact proof task | Theorem and proof module | Accepted proof; authors | Independent reviewer | Machine receipt | Integration ID |
+| --- | --- | --- | --- | --- | --- |
+| Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`) | `Langlands.GroupScheme.CocharacterUniformizer.standardLeviStrictQuotientPartition`, [StandardLeviStrictQuotientPartitionProof](../../Langlands/Geometry/Building/StandardLeviStrictQuotientPartitionProof.md) | `490ed375-a14a-4fe1-b24d-3c49a7e28a84`; Workers 118 and 1222 | Reviewer 7510 (`b20a9e72-89e5-410b-8a10-e91ffa8629f8`) | `6522660a-8118-434f-b48d-fac4193cf456` | `d9b3a1d92f514617a67d2522320557d0` |
+
+Both proof files agree byte for byte between the frozen accepted candidate,
+first-publication commit `42c696807fd25d6ea96d001a596d7bba7b4b52b9`, audit
+Library and workspace. Both target files agree between proof base
+`08ff6d3c99370355ef21ffa0fdf9bd7532aafaa8`, first publication, audit Library
+and workspace. A fresh development check compiles the proof with zero errors
+or warnings and reports only `propext`, `Classical.choice` and `Quot.sound`.
+Its final theorem has the exact type
+`StandardLeviStrictQuotientPartitionStatement.{u}`.
+
+The proof identifies each actual piece with its integral strict-face image
+and transports the integral partition through the nonnegative comparison.
+The forward inclusion uses the strict-image theorem on every supplied actual
+representative. For the reverse inclusion, the published
+`standardLeviSplitComponentStatement` supplies a canonical actual
+representative and its compatible split-component map. The comparison
+equivalence then gives containment, covering and unique indexed membership.
+The final theorem discharges both comparison premises with the published
+proofs from Tasks 6472 and 6505. No representative-existence, image-equality
+or partition premise is added. The result retains universe `u`, both field
+characteristics, non-split ambient groups, nonreduced relative roots and
+rank zero. It concerns the common-uniformizer quotient and asserts neither
+finite generation nor freeness nor a full rational-point cone decomposition.
 
 The source was reread at V.2.5 (printed p.107 / PDF p.113), V.3.21 (printed
 p.116 / PDF p.122) and V.3.23–V.3.24 (printed p.117 / PDF p.123).
 The correction of the free-monoid assertion remains issue I2 below. The
 integral central-image equality, group quotient comparison, integral finite
-generation, actual strict-image comparison and nonnegative quotient comparison
-are proved. Finite generation after transport to the actual quotient and
-acceptance and publication of the actual strict-piece partition remain
-explicit obligations. Worker 4 retains the chamber,
+generation, actual strict-image comparison, nonnegative quotient comparison
+and actual strict-piece partition are proved. Finite generation after
+transport to the actual quotient remains an explicit obligation. Worker 4 retains the chamber,
 parabolic split-component and closed-root-subset units. Eight of the nine
 closed-root-subset proofs are published, the ninth target is false, and the
 V.4.2 section below records their status (seventh Worker 4 pass).
@@ -1065,9 +1086,7 @@ not whole-section or whole-book completion.
    6454–6457, and their conjunction by `parabolicSplitComponents`
    (Task 6866).
 7. V.3.24: finite generation after transport to the actual split-central
-   nonnegative uniformizer quotient, and independent acceptance and
-   publication of the strict-face partition with actual standard Levi split
-   components.
+   nonnegative uniformizer quotient.
    The integral and actual quotient constructions, integral strict-face
    laws, four comparison statements, finite-generation statement, actual-piece
    definition and actual partition statement are now public. Tasks 6390,
@@ -1075,10 +1094,11 @@ not whole-section or whole-book completion.
    the integral central-image equality, group quotient comparison and
    integral finite generation. Tasks 6472 and 6505 also have independently
    accepted and published exact strict-image and nonnegative-comparison
-   proofs, verified above. Task 6605 has staged candidate
-   `490ed375-a14a-4fe1-b24d-3c49a7e28a84`; both its comparison prerequisites
-   are published. The partition awaits independent acceptance and
-   publication. The general freeness assertion is false (I2).
+   proofs, verified above. Task 6605 also has an independently accepted and
+   published exact proof of the actual strict-piece partition:
+   `490ed375-a14a-4fe1-b24d-3c49a7e28a84`, verified on 18 November. The
+   remaining finite-generation transport is separate from this partition.
+   The general freeness assertion is false (I2).
 
 8. V.3.15/V.3.21 topology on the actual standard-Levi split component: the
    nonemptiness, openness, closedness and topological closure assertion
@@ -1139,8 +1159,9 @@ complete: its theorem `torusAnisotropicPart` is published. Tasks 6472 and
 nonnegative-comparison statements by `CocharacterUniformizer.standardLeviStrictImage`
 and `CocharacterUniformizer.coneQuotientComparison`. Their unchanged target
 pairs, proof pairs, machine receipts and independent reviews are verified
-above. Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`) owns the public
-actual strict-piece partition. Its candidate
-`490ed375-a14a-4fe1-b24d-3c49a7e28a84` is staged pending independent
-acceptance and publication, with both comparison prerequisites now published.
+above. Task 6605 (`133b03c2-0411-438d-b273-36ea92402a88`) is also complete:
+`CocharacterUniformizer.standardLeviStrictQuotientPartition` proves the
+actual strict-piece partition. Its independently accepted and published proof
+`490ed375-a14a-4fe1-b24d-3c49a7e28a84`, exact target pair, machine receipt
+and independent review are verified above.
 Transported finite generation and source issue I2 remain separate.
