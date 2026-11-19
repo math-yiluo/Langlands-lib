@@ -113,11 +113,12 @@ theorem baseChange_subgroup (hF : IsMatching 𝒰 F) (i : 𝒰.I₀) :
   · intro hx j W a
     exact hF j i W V a x hx
 
-/-- The absolute membership sieve of the global condition is fppf closed if
-each local subgroup is represented by a closed subgroup scheme. -/
-theorem isClosed_membershipSieve_subgroup
+/-- The absolute membership sieve of a descended condition is closed for any
+subcanonical topology if each local subgroup has a closed representative. -/
+theorem isClosed_membershipSieve_subgroup_of_subcanonical
+    (J : GrothendieckTopology Scheme.{u}) [J.Subcanonical]
     (hc : ∀ i, (F i).IsClosedRepresentable) :
-    Scheme.fppfTopology.IsClosed (subgroup 𝒰 F).membershipSieve := by
+    J.IsClosed (subgroup 𝒰 F).membershipSieve := by
   intro Y x hx
   let T : Over S := Over.mk (x ≫ G.X.hom)
   let p : T ⟶ G.X := Over.homMk x rfl
@@ -129,9 +130,9 @@ theorem isClosed_membershipSieve_subgroup
   apply ((F i).schemeCondition_iff_mem y).mp
   apply ((F i).schemeCondition_iff_exists_of_isRepresentedBy hj y.left).mpr
   apply Langlands.AlgebraicGeometry.FppfClosedLocusDescent.exists_lift_of_covering
-    Scheme.fppfTopology j.hom.hom.left y.left
+    J j.hom.hom.left y.left
     (((subgroup 𝒰 F).membershipSieve.pullback x).pullback a.left)
-    (Scheme.fppfTopology.pullback_stable a.left hx)
+    (J.pullback_stable a.left hx)
   intro Z u hu
   let W : Over (𝒰.X i) := Over.mk (u ≫ V.hom)
   let v : W ⟶ V := Over.homMk u rfl
@@ -150,6 +151,13 @@ theorem isClosed_membershipSieve_subgroup
     simpa only [Category.id_comp, ← hy] using hlocal
   exact ((F i).schemeCondition_iff_exists_of_isRepresentedBy hj
     (v ≫ y).left).mp (((F i).schemeCondition_iff_mem (v ≫ y)).mpr hmem)
+
+/-- The absolute membership sieve of the global condition is fppf closed if
+each local subgroup is represented by a closed subgroup scheme. -/
+theorem isClosed_membershipSieve_subgroup
+    (hc : ∀ i, (F i).IsClosedRepresentable) :
+    Scheme.fppfTopology.IsClosed (subgroup 𝒰 F).membershipSieve :=
+  isClosed_membershipSieve_subgroup_of_subcanonical 𝒰 F Scheme.fppfTopology hc
 
 variable {𝒰 F}
 

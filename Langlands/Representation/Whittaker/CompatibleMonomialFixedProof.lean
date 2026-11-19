@@ -294,6 +294,73 @@ private theorem root_coefficient_eq (ψ : UnitaryAdditiveCharacter F) {n : ℕ}
   · split_ifs <;> ring
   · split_ifs <;> ring
 
+omit [TopologicalSpace F] in
+private theorem superdiagonal_sum_eq_double_sum {n : ℕ} (A : Matrix (Fin (n + 1)) (Fin (n + 1)) F) :
+    (∑ i : Fin n, A i.castSucc i.succ) =
+      ∑ a : Fin (n + 1), ∑ b : Fin (n + 1), if a.val + 1 = b.val then A a b else 0 := by
+  classical
+  rw [Fin.sum_univ_castSucc]
+  have hlast : (∑ b : Fin (n + 1),
+      if (Fin.last n).val + 1 = b.val then A (Fin.last n) b else 0) = 0 := by
+    apply Finset.sum_eq_zero
+    intro b _
+    apply ite_eq_right
+    simp only [Fin.val_last]
+    omega
+  rw [hlast, add_zero]
+  refine Finset.sum_congr rfl fun a _ => ?_
+  symm
+  rw [Finset.sum_eq_single a.succ]
+  · simp
+  · intro b _ hba
+    apply ite_eq_right
+    intro he
+    exact hba (Fin.ext he.symm)
+  · simp
+
+/-- The coefficients of the common root entries characterize monomial compatibility. -/
+theorem monomial_compatible_iff_root_coefficients (ψ : UnitaryAdditiveCharacter F)
+    {n : ℕ} (w : Equiv.Perm (Fin (n + 1))) (d : Fin (n + 1) → Fˣ) :
+    IsCharacterCompatibleRepresentative ψ n (permutation (n + 1) F w * Iwasawa.diagonalUnits d) ↔
+      ∀ a b : Fin (n + 1), a < b → w a < w b →
+        (if a.val + 1 = b.val then (1 : F) else 0) =
+          if (w a).val + 1 = (w b).val then (d a : F) * (d b : F)⁻¹ else 0 := by
+  constructor
+  · intro h a b hab hw
+    exact root_coefficient_eq ψ w d h hab hw
+  · intro h
+    apply (isCharacterCompatibleRepresentative_iff_complex _ _ _).mpr
+    intro u v huv
+    apply congrArg ψ.complex
+    change (∑ i : Fin n, u.val.val i.castSucc i.succ) = ∑ i : Fin n, v.val.val i.castSucc i.succ
+    rw [superdiagonal_sum_eq_double_sum, superdiagonal_sum_eq_double_sum]
+    conv_rhs => rw [← Equiv.sum_comp w]
+    refine Finset.sum_congr rfl fun a _ => ?_
+    conv_rhs => rw [← Equiv.sum_comp w]
+    refine Finset.sum_congr rfl fun b _ => ?_
+    have hconj : v.val (w a) (w b) = (d a : F) * u.val a b * (d b : F)⁻¹ := by
+      rw [← huv, monomial_conjugate_entry]
+      simp
+    change (if a.val + 1 = b.val then u.val a b else 0) =
+      if (w a).val + 1 = (w b).val then v.val (w a) (w b) else 0
+    rcases lt_trichotomy a b with hab | rfl | hba
+    · rcases lt_trichotomy (w a) (w b) with hw | he | hw
+      · have hc := congrArg (fun t : F => t * u.val a b) (h a b hab hw)
+        rw [hconj]
+        simpa only [ite_mul, one_mul, zero_mul, mul_right_comm (d a : F) (d b : F)⁻¹] using hc
+      · exact (ne_of_lt hab (w.injective he)).elim
+      · have hv : v.val (w a) (w b) = 0 := v.property.1 hw
+        rw [hv] at hconj
+        have hz : u.val a b = 0 := by
+          rcases mul_eq_zero.mp hconj.symm with h0 | h0
+          · exact (mul_eq_zero.mp h0).resolve_left (Units.ne_zero _)
+          · exact (inv_ne_zero (Units.ne_zero _)) h0 |>.elim
+        simp [hv, hz]
+    · simp
+    · have hu : u.val a b = 0 := u.property.1 hba
+      rw [hu, mul_zero, zero_mul] at hconj
+      simp [hu, hconj]
+
 variable [IsTopologicalRing F]
 
 /-- Over any field, a character-compatible monomial matrix

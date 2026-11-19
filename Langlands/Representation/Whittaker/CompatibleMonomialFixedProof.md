@@ -36,7 +36,15 @@ So the result holds for every field, not only p-adic fields. No premise on `w`
 or on `d` beyond compatibility is used. Rank one (`n = 0`) is covered by the same
 argument.
 
-All other declarations of the module are private helpers. They are described
+The theorem `monomial_compatible_iff_root_coefficients` gives the converse to the
+root coefficient test used in the first step below. Reindex the superdiagonal sum
+of the conjugate by applying the permutation to both row and column indices. A
+pair that lies below either diagonal contributes zero to both sums. For each
+remaining off-diagonal pair, multiplying the assumed coefficient equation by the
+matrix entry gives equality of the corresponding summands. This derived
+characterization uses the same conjugation entry formula as the original proof.
+
+The other declarations of the module are private helpers. They are described
 below in the order of the proof.
 
 ## Notation

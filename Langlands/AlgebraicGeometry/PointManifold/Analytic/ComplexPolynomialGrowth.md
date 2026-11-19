@@ -1,0 +1,3 @@
+# Polynomial growth on complex affine space
+
+This internal lemma supplies polynomiality for analytic sections of a finite étale map of complex affine spaces. Cauchy's estimate forces every derivative above the growth exponent to vanish for a one-variable entire function with a polynomial bound. Restrict the multivariable function to each complex line through zero. Its Taylor coefficients are the diagonal evaluations of the formal multilinear series at zero, and the one-variable Taylor formula expresses its value at the endpoint as a finite sum of those evaluations. Expanding each multilinear map on coordinate vectors writes the sum as the evaluation of a multivariate polynomial.

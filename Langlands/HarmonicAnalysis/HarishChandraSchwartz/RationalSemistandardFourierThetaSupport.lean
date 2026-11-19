@@ -386,14 +386,16 @@ variable {B : Finset (RationalPointFamily.SimpleRoot i nu) → CommGroupScheme (
   [hStdNormal : ∀ I, (rationalLeviSplitCenter I (b I)).Normal]
   [hStdMeas : ∀ I, MeasurableSpace
     (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
+  [hStdBorel : ∀ I, BorelSpace
+    (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
   (eta : ∀ I, Measure (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I)))
   [hStdHaar : ∀ I, (eta I).IsHaarMeasure]
   (hds : RationalSemistandardStandardDiscreteSeriesComparison.{u, uV}
     a ha muM hG hi hnu b hb eta)
 
 /-- On the existing standard product, the restriction of `psi_f` is supported in
-the existing standard `Theta^H` when `f` is right invariant under `H`. Only the
-published discrete-series comparison `hds` of the restriction is used. -/
+the existing standard `Theta^H` when `f` is right invariant under `H`, using the
+discrete-series comparison `hds` for the two Borel quotients. -/
 theorem rationalStandardFullRestrict_fourierFamily_support_subset_rationalThetaFixed
     {H : Subgroup (rationalPoints G)} (f : RationalSchwartzSpace hKc hPK rho)
     (hf : ∀ k ∈ H, ∀ g, f (g * k) = f g) :
@@ -406,9 +408,7 @@ theorem rationalStandardFullRestrict_fourierFamily_support_subset_rationalThetaF
     (rationalSemistandardFourierFamily_mem_thetaFixedSupported hG hi hnu hKc hPK rho hsw
       a ha muM d hdelta hT f hf)
 
-variable [hStdBorel : ∀ I, BorelSpace
-    (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
-  [hStdInv : ∀ I, (eta I).IsInvInvariant]
+variable [hStdInv : ∀ I, (eta I).IsInvInvariant]
   (hrho : IsClosedSubgroup rho)
   (hKrho : (K : Subgroup (rationalPoints G)) ≤ rationalHeightSubgroup (F := F) rho)
   (hM : ∀ I : Finset (RationalPointFamily.SimpleRoot i nu), IsIwasawaPair
@@ -425,6 +425,8 @@ variable [hStdBorel : ∀ I, BorelSpace
       IsRationalLeviTempered hKc rho (hM I) A.val.obj)
   (hsmc : ModelSmoothComparisonStatement.{u, uV} (F := F) (G := G) (i := i))
 
+set_option maxRecDepth 2048 in
+set_option maxHeartbeats 1000000 in
 /-- The standard restriction of the finite-support family is the existing
 standard family `rationalFourierThetaFamily f`, under Task 7260's standard
 comparison target and its normalization. -/

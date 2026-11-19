@@ -46,7 +46,7 @@ comparison statement.
 
 `exists_isAlgebraization_of_isFinite` and `eq_of_isAlgebraization_of_isFinite`
 move these inputs from spectra of finite algebras to arbitrary finite test
-schemes `V` on which `H` becomes diagonalizable. Choose `V ≅ Spec C` as above.
+schemes `V` on which `H` becomes diagonalizable. Choose `Spec C ≅ V` as above.
 For existence, evaluate the affine algebraization along the inverse
 isomorphism. `System.isAlgebraization_evaluate` keeps the algebraization
 property. For uniqueness, evaluate both algebraizations along the isomorphism,

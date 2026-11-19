@@ -25,7 +25,9 @@ Both models represent the same actual all-test Levi at
 identical subgroup `levi (standardIndex hG hi hnu I)` of `G(F)`.
 
 `RationalSemistandardStandardDiscreteSeriesComparison` is the Prop-valued
-target asserting, for every `I` and every identical actual `SmoothDualClass`
+target quantifying over Borel compatibility of both independently chosen
+quotient measurable structures on the standard slice, and asserting for every
+`I` and every identical actual `SmoothDualClass`
 of this literal Levi, equivalence of `IsDiscreteSeriesClass` for the full and
 old standard split-center and quotient-measure data. This compares membership
 in discrete series on the actual class, not just abstract isomorphic quotient
@@ -33,7 +35,21 @@ sets. No discrete-series equivalence, coefficient equivalence or conclusion of
 spectral finiteness is an input to this target. Its proof is a remaining
 substantive obligation.
 
-Given a proof `hds` of that target,
+The comparison maps require these two Borel compatibility families. No Borel
+condition on the nonstandard part of the semistandard index is needed. These
+requirements exclude arbitrary unrelated sigma algebras: Mathlib
+`Measure.IsHaarMeasure` by itself does not assert Borel compatibility.
+Each requirement is an explicit instance binder inside the Prop body, so it is
+part of the target even though the conclusion mentions only the original
+measurable-space instances. The consumers bind the same two families before
+using `hds`. This is a correction of the quotient-measure interface: `BorelSpace`
+identifies each supplied sigma algebra with the Borel sigma algebra of its
+quotient topology. It is a natural sufficient compatibility condition for Haar
+comparison, not a claim of the weakest possible measure-theoretic hypothesis.
+The representation, orbit and coefficient constructions retain their meanings;
+the comparison target still requires the equivalence to be proved.
+
+Given those compatibility instances and a proof `hds` of that target,
 `rationalStandardFullDiscreteSeriesEquiv` changes only the discrete-series
 membership proof and retains the underlying actual smooth-dual class.
 `rationalStandardFullOrbitEquiv` descends it to unitary unramified twist orbits.

@@ -29,12 +29,17 @@ required pure tensor of units.
 
 The direct imports are
 `Langlands.Algebra.RosenlichtTensorUnitsReduction` and
-`Langlands.Algebra.RosenlichtBoundedInversePairs`; their paired Markdown
-describes the implemented proofs and further imports. The project modules in
-the import closure are these two, `RosenlichtPolynomialFiniteness`,
-`RosenlichtSpecialization`, and the two published statements
-`RosenlichtTensorUnitsStatement` and `RosenlichtBoundedInversePairsStatement`
-(all in `Langlands/Algebra/`); every other import is from Mathlib.
+`Langlands.Algebra.RosenlichtBoundedInversePairs`. Their paired Markdown
+describes the implemented proofs and further imports. The project import
+closure also includes `Langlands.Algebra.RosenlichtPolynomialFiniteness`,
+`Langlands.Algebra.RosenlichtSpecialization`, the published statements
+`Langlands.Algebra.RosenlichtTensorUnitsStatement` and
+`Langlands.Algebra.RosenlichtBoundedInversePairsStatement`, and
+`Langlands.GroupScheme.KostantRosenlicht.Points`. The specialization module
+imports `Points` so that `exists_point_with_kernel` can use
+`Langlands.GroupScheme.KostantRosenlicht.exists_algHom_ker_eq` to obtain a
+rational point with a prescribed maximal-ideal kernel. The remaining imports
+are from Mathlib.
 The proof does not invoke the scheme-level product-units statement.
 The final theorem depends only on the axioms `propext`, `Classical.choice`
 and `Quot.sound`.

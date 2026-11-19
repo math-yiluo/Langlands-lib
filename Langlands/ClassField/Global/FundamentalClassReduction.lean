@@ -23,13 +23,6 @@ theorem nsmul_rationalClass (k : ℕ) (q : ℚ) :
     k • rationalClass q = rationalClass (k * q) := by
   rw [← map_nsmul, nsmul_eq_mul]
 
-theorem rationalClass_eq_zero_iff (q : ℚ) :
-    rationalClass q = 0 ↔ ∃ k : ℤ, (k : ℚ) = q := by
-  unfold rationalClass
-  rw [QuotientAddGroup.mk'_apply, QuotientAddGroup.eq_zero_iff,
-    AddSubgroup.mem_zmultiples_iff]
-  simp
-
 theorem nsmul_reciprocalClass_mul {k m : ℕ} (hk : k ≠ 0) :
     k • reciprocalClass (k * m) = reciprocalClass m := by
   unfold reciprocalClass

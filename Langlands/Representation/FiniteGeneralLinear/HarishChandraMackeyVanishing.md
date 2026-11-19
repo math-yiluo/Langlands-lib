@@ -1,0 +1,5 @@
+# Vanishing of cuspidal Harish–Chandra Mackey terms
+
+A Mackey term for two cuspidal data is the intertwining dimension on the stabilizer of their minimal permutation representative. The standard-intersection calculation expresses the source Levi intersection with the target radical as a product of radicals of refined blocks. On that subgroup the target action is trivial. If a refined block is proper, averaging the source tensor over its radical makes every intertwiner vanish. The averaging operator is zero because the corresponding cuspidal factor has zero fixed vectors. Multilinearity gives the same zero operator on the tensor.
+
+Thus a nonzero term maps the whole source Levi into the target Levi. Swapping the stabilizers by conjugation and inverting the summation variable preserves the Mackey dimension with source and target exchanged. The reverse inclusion follows, and the surviving permutation conjugates the two Levis. This is the internal Mackey vanishing step for disjointness of finite Harish–Chandra series.

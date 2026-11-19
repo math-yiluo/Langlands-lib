@@ -156,12 +156,15 @@ restriction. The constructors are the conditional constructors of
 ## Standard slice
 
 The variables `b hb eta` and the published discrete-series comparison `hds`
-are those of `RationalSemistandardStandardComparison`.
+are those of `RationalSemistandardStandardComparison`. The restrictions use
+Borel compatibility for both quotient measurable structures at each standard
+index. The full Fourier family already supplies this compatibility for its
+semistandard quotient data.
 
 - `rationalStandardFullRestrict_fourierFamily_support_subset_rationalThetaFixed`
   holds for right `H`-invariant `f`. The nonzero components of the
   restriction of `psi_f` to the existing standard product have indices in the
-  existing standard `rationalThetaFixed H`. Only `hds` is used. The theorem
+  existing standard `rationalThetaFixed H`. The theorem
   combines the support inclusion with
   `rationalStandardFullRestrict_support_subset_rationalThetaFixed`.
 - `rationalStandardFullSmoothRestrict_fourierThetaSmoothFamily_val`: restricting

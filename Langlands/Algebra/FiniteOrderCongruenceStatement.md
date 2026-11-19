@@ -4,8 +4,9 @@ Worker 330.
 
 `Langlands.FiniteOrderCongruenceDetectionStatement.{u} : Prop` is a closed,
 universe-polymorphic proposition definition. It states the algebraic input used
-in the proof of Conrad's Corollary B.3.6, with the strengthened bound `3 ≤ n`.
-A proof of this target is a separate task.
+in the proof of Conrad's Corollary B.3.6. The theorem
+`Langlands.FiniteOrderCongruence.finiteOrderCongruenceDetection` proves this
+proposition in `Langlands.Algebra.FiniteOrderCongruenceProof`.
 
 ## Exact statement
 
@@ -64,15 +65,15 @@ Registered source: `conrad-2014-reductive-group-schemes`; retained file
 SHA-256 `1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a`.
 The cited three pages were read for this statement.
 
-Conrad takes a finitely generated abelian group `M` and chooses `n > 3`
-divisible by the exponent of its torsion subgroup. He shows that the kernel
-of `Aut(M) → Aut(M/nM)` has no nonidentity finite-order element. The Lean
-premises encode these conditions as follows:
+Conrad chooses an integer `n ≥ 3` divisible by the exponent of the torsion
+subgroup `M_tor` of a finitely generated abelian group `M`. He shows that the
+kernel of `Aut(M) → Aut(M/nM)` is torsion-free.
 
 | Source condition | Lean formulation |
 | --- | --- |
 | Finitely generated abelian group | `[AddCommGroup M] [AddGroup.FG M]` |
-| Torsion subgroup killed by `n` | Every `x` killed by a positive `k` satisfies `n • x = 0` |
+| Integer level `n ≥ 3` | `n : ℕ` with `3 ≤ n` |
+| Level divisible by the exponent of `M_tor` | Every `x` killed by a positive `k` satisfies `n • x = 0` |
 | Finite-order element of `Aut(M)` | A positive power of `σ.toEquiv` is the identity permutation |
 | In the kernel of reduction modulo `nM` | `∀ x, ∃ y, σ x = x + n • y` |
 | Trivial automorphism | `σ = AddEquiv.refl M` |
@@ -82,14 +83,13 @@ annihilation by `n` is equivalent to the source's divisibility condition on
 its exponent. No exponent, decomposition or choice of generators is added
 as data to the target.
 
-The bound `3 ≤ n` is a conventional strengthening of Conrad's sufficient
-bound `3 < n`, rather than a literal translation of that bound. It includes
-`n = 3`, using the usual torsion-freeness of the principal congruence kernel
-in `GL_d(ℤ)` at level `3`. Conrad's remaining reduction also applies at that
-level: pass to `M/M_tor`, then use that `nM` is torsion-free to eliminate the
-torsion-valued difference from the identity. This records the provenance of
-the strengthened statement; it supplies no Lean proof of that extra case or
-of the general target.
+Conrad uses the same bound `n ≥ 3` when invoking torsion-freeness of the
+principal congruence kernel of `GL_d(ℤ) → GL_d(ℤ/nℤ)` for `d > 0`. The finite-order
+and congruence conditions descend to the free quotient `M/M_tor`, so the
+induced automorphism there is the identity, with the rank-zero case immediate.
+Thus `σ x - x` lies in `M_tor ∩ nM`. Since `n` kills `M_tor`, a decomposition of
+`M` into free and torsion summands shows that `nM` is torsion-free, so
+`σ x - x = 0` for every `x`.
 
 ## Scope
 

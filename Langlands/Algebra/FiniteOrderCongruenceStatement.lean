@@ -9,9 +9,10 @@ namespace Langlands
 
 /-- A finite-order additive automorphism of a finitely generated abelian group is
 the identity if it is the identity modulo `nM`, where `3 ≤ n` and multiplication
-by `n` kills every torsion element. This is the `n ≥ 3` strengthening of the
-algebraic input in Conrad, *Reductive group schemes* (2014), proof of
-Corollary B.3.6, p.294. -/
+by `n` kills every torsion element. This is the algebraic input in Conrad,
+*Reductive group schemes* (2014), proof of Corollary B.3.6, p. 294. Conrad
+chooses `n ≥ 3` divisible by the torsion exponent and uses the same bound when
+invoking torsion-freeness of the principal congruence kernel in `GL_d(ℤ)`. -/
 def FiniteOrderCongruenceDetectionStatement : Prop :=
   ∀ (M : Type u) [AddCommGroup M] [AddGroup.FG M]
     (n : ℕ), 3 ≤ n →

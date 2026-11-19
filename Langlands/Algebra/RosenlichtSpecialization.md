@@ -7,12 +7,15 @@ Rosenlicht tensor-unit proof. Their rational-point assertions concern finite-typ
 algebras over an algebraically closed field; zero detection and constancy also
 use the domain hypothesis on the first algebra.
 
-`exists_point_with_kernel` uses the finite-type field lemma in
-`Mathlib.RingTheory.Jacobson.Ring` and
-`IsAlgClosed.algebraMap_bijective_of_isIntegral`. A maximal-ideal quotient is
-finite over the ground field, so its scalar map is an isomorphism. The inverse
-composed with the quotient map gives a rational point with the prescribed
-kernel. `exists_point` follows by choosing a maximal ideal in a nonzero ring.
+`exists_point_with_kernel` applies
+`Langlands.GroupScheme.KostantRosenlicht.exists_algHom_ker_eq` from
+`Langlands.GroupScheme.KostantRosenlicht.Points`. That lemma equips the
+maximal-ideal quotient with its field structure and uses
+`finite_of_finite_type_of_isJacobsonRing` to show that it is finite over the
+ground field. It applies `IsAlgClosed.algebraMap_bijective_of_isIntegral` to
+identify the quotient with the ground field. Composing the inverse isomorphism
+with the quotient map gives a rational point with the prescribed kernel.
+`exists_point` follows by choosing a maximal ideal in a nonzero ring.
 `eq_zero_of_all_points` places an element vanishing at every rational point in
 the Jacobson radical. The finite-type Jacobson property and the radicality of
 the zero ideal of a domain force that element to be zero.
@@ -39,9 +42,7 @@ point. Its pure-tensor identity and tensor induction show that the two scalar
 evaluations commute. These coefficient bounds and evaluation identities are
 used to normalize tensor units and their inverses in the reduction module.
 
-The rational-point lemma reuses `KostantRosenlicht.exists_algHom_ker_eq` from
-`Langlands.GroupScheme.KostantRosenlicht.Points`. The Mathlib imports are
-`Mathlib.FieldTheory.IsAlgClosed.Basic`,
+The direct Mathlib imports are `Mathlib.FieldTheory.IsAlgClosed.Basic`,
 `Mathlib.RingTheory.Jacobson.Ring`, `Mathlib.RingTheory.TensorProduct.Maps`,
 `Mathlib.LinearAlgebra.TensorProduct.Basis`, and
 `Mathlib.LinearAlgebra.Basis.VectorSpace`. The arguments work with independent

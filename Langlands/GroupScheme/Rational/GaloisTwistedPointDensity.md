@@ -1,0 +1,31 @@
+# Density of twisted Galois values
+
+`Langlands.GroupScheme.GaloisTwistedPointDensityStatement` concerns a
+connected reductive group `G` over an infinite field `K`, a finite Galois
+extension `M/K` with `M` algebraically closed, and a nonidentity
+automorphism `σ`. For any point `y` of `G` over `M`, the values
+`f⁻¹ y σ(f)` as `f` varies over the `M`-points are Zariski dense in
+the scalar extension of `G` to `M`.
+
+Take the affine Weil restriction of that scalar extension. Over `M`
+it is the product indexed by the embeddings of `M` over `K`. The
+factors are connected reductive, so the Weil restriction is connected
+reductive by field-extension reflection. Unirationality and the
+infinitude of `K` give density of its ground-field points. Extending
+these sections to `M` preserves their density.
+
+On the geometric Weil restriction, use the inverse of the identity
+coordinate, multiplication by the constant point `y`, and the
+coordinate for `σ`. This morphism has a section obtained by varying
+only the `σ` coordinate. Applied to an extended ground-field point,
+the coordinate for an embedding is the image of the point under that
+embedding, by the compatibility of the Weil product decomposition
+with pullback evaluation. The image of the dense set of extended
+ground-field points therefore consists of twisted values.
+
+The density theorem proves `GaloisCocycleStronglyRegularValueStatement` by
+meeting the nonempty strongly regular open. The point chosen in the image
+of a twisted value lies in that open, so the entire image of its spectrum
+lies there. In characteristic zero the base field is infinite. The
+companion theorem `quadraticToralRepresentatives` applies the quadratic
+reduction to obtain a cocycle of a maximal torus over the base.

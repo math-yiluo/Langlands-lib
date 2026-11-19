@@ -25,14 +25,14 @@ particular topology.
 
 `membershipSieve F` expresses absolute membership as a sieve on the
 underlying scheme of the ambient group. If each local `F i` has a closed
-representative, `isClosed_membershipSieve_subgroup` proves that the global
-membership sieve is closed for the fppf topology. To prove membership after
-an fppf covering sieve, fix a restriction to a local base and pull the
-covering sieve back to that test scheme. The local represented condition
-gives local lifts through its closed immersion. The published
-`FppfClosedLocusDescent.exists_lift_of_covering` glues those lifts, using
-monomorphy and subcanonicity. The global all-test definition then gives the
-desired membership.
+representative, `isClosed_membershipSieve_subgroup_of_subcanonical` proves
+that the global membership sieve is closed for any subcanonical topology.
+Fix a restriction to a local base and pull the covering sieve back to that
+test scheme. The local represented condition gives lifts through its closed
+immersion. The published `FppfClosedLocusDescent.exists_lift_of_covering`
+glues the lifts by monomorphy and subcanonicity. The global all-test
+definition then gives the desired membership. The theorem
+`isClosed_membershipSieve_subgroup` specializes this to the fppf topology.
 
 `exists_closedRepresentative_pullback` verifies directly by the pullback
 universal property that closed representatives of a sieve are stable under

@@ -1,0 +1,3 @@
+# Analytic sections of finite algebras are algebraic
+
+This internal lemma turns a family of points over complex affine space into a map of coordinate rings when the family evaluates every algebra element holomorphically. Module finiteness supplies a monic equation for each element. Its coefficient polynomials have polynomial growth, so the Cauchy root bound gives polynomial growth for the pointwise evaluation of the element. The entire-function lemma then gives a representing polynomial. Evaluations over the infinite field determine a polynomial uniquely, which verifies the algebra homomorphism laws and compatibility with the base.

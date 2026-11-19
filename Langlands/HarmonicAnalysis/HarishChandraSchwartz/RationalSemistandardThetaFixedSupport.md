@@ -110,12 +110,13 @@ with the finite-support argument discharged by the finite-index step.
 
 ## Standard slice
 
-`rationalStandardFullRestrict_support_subset_rationalThetaFixed` uses only the
-published discrete-series comparison `hds`. If `f` is supported in the full
-`Theta^H`, then the nonzero components of `rationalStandardFullRestrict f` have
-indices in the existing standard `rationalThetaFixed H`. The proof combines the
-published support formula for the restriction with the preimage identity of
-the fixed sets. No hypothesis of the standard constructions is strengthened.
+`rationalStandardFullRestrict_support_subset_rationalThetaFixed` uses the
+published discrete-series comparison `hds` with Borel compatibility for
+both quotient measurable structures at each standard index. If `f` is
+supported in the full `Theta^H`, then the nonzero components of
+`rationalStandardFullRestrict f` have indices in the existing standard
+`rationalThetaFixed H`. The proof combines the published support formula for
+the restriction with the preimage identity of the fixed sets.
 
 ## Provenance
 

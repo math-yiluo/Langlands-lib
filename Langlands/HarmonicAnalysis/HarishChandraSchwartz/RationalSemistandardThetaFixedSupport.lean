@@ -367,12 +367,18 @@ variable {T : SemistandardSpectralIndex i → CommGroupScheme (Spec (CommRingCat
   (eta : ∀ I, Measure (standardLeviPoints i nu (RationalPointFamily.rootSet i nu I) ⧸
     rationalLeviSplitCenter I (b I)))
   [∀ I, (eta I).IsHaarMeasure]
+  [∀ I, BorelSpace
+    (levi (standardIndex hG hi hnu I) ⧸
+      (chosenLeviModel (standardIndex hG hi hnu I)).splitCenter
+        (a (standardIndex hG hi hnu I)))]
+  [∀ I, BorelSpace
+    (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
   (hds : RationalSemistandardStandardDiscreteSeriesComparison.{u, uV}
     a ha mu hG hi hnu b hb eta)
 
 /-- The restriction to the existing standard product of a family supported in
-the full `Theta^H` is supported in the existing standard `Theta^H`. Only the
-published discrete-series comparison `hds` is used. -/
+the full `Theta^H` is supported in the existing standard `Theta^H`, using the
+discrete-series comparison `hds` for the two Borel quotients. -/
 theorem rationalStandardFullRestrict_support_subset_rationalThetaFixed
     {H : Subgroup (rationalPoints G)} {f : RationalSemistandardThetaSections.{u, uV} a ha mu}
     (hf : f ∈ rationalSemistandardThetaFixedSupported.{u, uV} a ha mu H) :

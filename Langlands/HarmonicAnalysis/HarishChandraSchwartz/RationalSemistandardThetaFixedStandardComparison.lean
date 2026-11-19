@@ -46,12 +46,19 @@ variable {T : SemistandardSpectralIndex i → CommGroupScheme (Spec (CommRingCat
   (eta : ∀ I, Measure (standardLeviPoints i nu (RationalPointFamily.rootSet i nu I) ⧸ rationalLeviSplitCenter I (b I)))
   [hHaar : ∀ I, (eta I).IsHaarMeasure]
 
+variable [∀ I, BorelSpace
+      (levi (standardIndex hG hi hnu I) ⧸
+        (chosenLeviModel (standardIndex hG hi hnu I)).splitCenter
+          (a (standardIndex hG hi hnu I)))]
+    [∀ I, BorelSpace
+      (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
+
 variable (hds : RationalSemistandardStandardDiscreteSeriesComparison.{u, uV}
   a ha mu hG hi hnu b hb eta)
 
 /-- The actual full-to-standard index comparison preserves and reflects
-membership in the fixed-index sets at every subgroup level. Only the
-published same-class discrete-series comparison is needed. -/
+membership in the fixed-index sets at every subgroup level, using the
+same-class discrete-series comparison on its two Borel-compatible quotient families. -/
 theorem rationalStandardFullIndex_mem_fixed_iff
     (H : Subgroup (rationalPoints G)) (t : RationalStandardTheta.{u, uV} b hb eta) :
     rationalStandardFullIndex.{u, uV} a ha mu hG hi hnu b hb eta hds t ∈
@@ -72,7 +79,8 @@ theorem rationalStandardFullIndex_mem_fixed_iff
     exact (rationalStandardFullOrbitEquiv_mk a ha mu hG hi hnu b hb eta hds I w).symm.trans
       (congrArg (rationalStandardFullOrbitEquiv a ha mu hG hi hnu b hb eta hds I) hQ)
 
-/-- Restriction to the existing standard index gives exactly the old fixed set. -/
+/-- Restriction to the existing standard index gives exactly the old fixed set,
+with the two Borel-compatible quotient families of the comparison map. -/
 theorem rationalSemistandardThetaFixed_standard_preimage (H : Subgroup (rationalPoints G)) :
     (rationalStandardFullIndex.{u, uV} a ha mu hG hi hnu b hb eta hds) ⁻¹'
         rationalSemistandardThetaFixed.{u, uV} a ha mu H =
@@ -82,7 +90,8 @@ theorem rationalSemistandardThetaFixed_standard_preimage (H : Subgroup (rational
 
 include hds in
 /-- Full fixed-index finiteness transfers to the existing standard set by the
-published finite-fiber index map. No ambient or Levi finiteness premise is added. -/
+published finite-fiber index map on the two Borel-compatible quotient families.
+No ambient or Levi finiteness premise is added. -/
 theorem finite_rationalThetaFixed_of_full (H : Subgroup (rationalPoints G))
     (hfin : (rationalSemistandardThetaFixed.{u, uV} a ha mu H).Finite) :
     (rationalThetaFixed.{u, uV} hG hi hnu b hb eta H).Finite := by

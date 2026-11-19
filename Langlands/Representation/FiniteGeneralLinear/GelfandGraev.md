@@ -1,0 +1,7 @@
+# The finite Gelfand–Graev representation and its endomorphisms
+
+`gelfandGraev ψ n` is finite induction of the entrywise Whittaker character of the upper-unipotent subgroup of `GL_n(k)`. The character comes from the additive character `ψ` of the finite field `k`. The definition uses the Library's finite induction and the one-dimensional representation of a character.
+
+For a nontrivial `ψ`, its values have norm one because they have finite order. With the discrete topology on `k`, the Library's unitary character interface therefore applies. The group-theoretic stabilizer condition becomes the existing compatibility condition on a pair of conjugate upper-unipotents. The root coefficient characterization says that increasing common roots preserve adjacency, and adjacent increasing roots preserve their diagonal label. These are exactly the conditions of the labelled block pattern equivalence.
+
+The finite Mackey pairing expresses the endomorphism dimension as a sum over the monomial double-coset coordinates. The one-dimensional stabilizer term is one on compatible representatives and zero elsewhere. The block count gives `Nat.card kˣ * Nat.card k ^ n` in rank `n+1`. For commutativity, the Weyl-conjugated transpose preserves the entrywise character and fixes each compatible monomial representative by the Library's transpose theorem. The character coinduction kernel criterion gives commutativity in the function model, and the induced representation is equivalent to that model.

@@ -117,3 +117,5 @@ Derived; the mathematics is that of the sources cited by `FundamentalClassStatem
 argument there; `artin-tate-2009-class-field-theory`), with the formalization-specific
 local-degree and compositum lemmas above. The replacement of the cyclic extension by a
 ramified cyclotomic one in the uniqueness step is internal to this formalization.
+
+The kernel calculation `FundamentalClass.rationalClass_eq_zero_iff` comes from the module that defines `rationalClass`.

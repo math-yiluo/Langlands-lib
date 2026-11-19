@@ -118,6 +118,13 @@ abbrev RationalModIntegers := ℚ ⧸ AddSubgroup.zmultiples (1 : ℚ)
 def rationalClass : ℚ →+ RationalModIntegers :=
   QuotientAddGroup.mk' (AddSubgroup.zmultiples (1 : ℚ))
 
+theorem _root_.Langlands.ClassField.Global.FundamentalClass.rationalClass_eq_zero_iff (q : ℚ) :
+    rationalClass q = 0 ↔ ∃ k : ℤ, (k : ℚ) = q := by
+  unfold rationalClass
+  rw [QuotientAddGroup.mk'_apply, QuotientAddGroup.eq_zero_iff,
+    AddSubgroup.mem_zmultiples_iff]
+  simp
+
 /-- The subgroup `(1/n)ℤ/ℤ`, characterized intrinsically by annihilation by `n`. -/
 def denominatorSubgroup (n : ℕ) : AddSubgroup RationalModIntegers where
   carrier := {x | n • x = 0}

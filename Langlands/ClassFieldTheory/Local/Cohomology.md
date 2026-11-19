@@ -136,3 +136,5 @@ finite discrete comparison as a TODO. Exact prerequisite tasks
 `c6ea3f74-2826-48db-9ab1-46587ae2dd92` address those constructions.
 They are not imported assumptions, accepted dependencies, or substitutes
 for the remaining local proposition families.
+
+The kernel of `rationalClass` consists of the integers. The global fundamental-class module and the local connecting sequence use this quotient calculation.

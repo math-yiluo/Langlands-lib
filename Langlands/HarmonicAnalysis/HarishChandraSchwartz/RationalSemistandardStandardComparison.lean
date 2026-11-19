@@ -48,7 +48,13 @@ variable {T : SemistandardSpectralIndex i → CommGroupScheme (Spec (CommRingCat
 /-- The substantive split-component/quotient-measure comparison, stated on
 identical actual smooth-dual classes. No coefficient equivalence is an input. -/
 def RationalSemistandardStandardDiscreteSeriesComparison : Prop :=
-  ∀ (I : Finset (RationalPointFamily.SimpleRoot i nu))
+  ∀ [∀ I, BorelSpace
+      (levi (standardIndex hG hi hnu I) ⧸
+        (chosenLeviModel (standardIndex hG hi hnu I)).splitCenter
+          (a (standardIndex hG hi hnu I)))]
+    [∀ I, BorelSpace
+      (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
+    (I : Finset (RationalPointFamily.SimpleRoot i nu))
     (omega : SmoothDualClass.{0, u, uV} (k := ℂ) (G := levi (standardIndex hG hi hnu I))),
     IsDiscreteSeriesClass
       ((chosenLeviModel (standardIndex hG hi hnu I)).splitCenter (a (standardIndex hG hi hnu I)))
@@ -61,6 +67,13 @@ def RationalSemistandardStandardDiscreteSeriesComparison : Prop :=
       (inferInstanceAs (IsTopologicalGroup (levi (standardIndex hG hi hnu I))))
       (rationalLeviSplitCenter I (b I)) (hNormal I)
       (rationalLeviSplitCenter_le_center I (b I) (hb I)) (hMeas I) (eta I) (hHaar I) omega
+
+variable [∀ I, BorelSpace
+      (levi (standardIndex hG hi hnu I) ⧸
+        (chosenLeviModel (standardIndex hG hi hnu I)).splitCenter
+          (a (standardIndex hG hi hnu I)))]
+    [∀ I, BorelSpace
+      (levi (standardIndex hG hi hnu I) ⧸ rationalLeviSplitCenter I (b I))]
 
 variable (hds : RationalSemistandardStandardDiscreteSeriesComparison.{u, uV}
   a ha mu hG hi hnu b hb eta)

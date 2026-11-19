@@ -1,9 +1,10 @@
 import Langlands.GroupScheme.LeftRightAction
 import Langlands.GroupScheme.HomEqualityOpenLocus
 import Langlands.GroupScheme.FppfHomLocality
+import Langlands.GroupScheme.Torus.DiagonalizableActionNilpotentRigidity
 import Langlands.GroupScheme.Torus.MultiplicativeTypeAffineInfinitesimalCentrality
 
-/-! # Central infinitesimal uniqueness from diagonalizable action rigidity -/
+/-! # Central infinitesimal uniqueness for groups of multiplicative type -/
 
 noncomputable section
 
@@ -81,6 +82,11 @@ def DiagonalizableActionRigidityInput : Prop :=
       ∀ (t : (algSpec R).obj (op C) ⟶ (Diagonalizable.groupScheme R M).X)
         (x : (algSpec R).obj (op C) ⟶ X), a.act t x = x) →
     a.hom = snd (Diagonalizable.groupScheme R M).X X
+
+/-- Nilpotent rigidity for diagonalizable actions on arbitrary scheme targets. -/
+theorem diagonalizableActionRigidity : DiagonalizableActionRigidityInput.{u} := by
+  intro R M _ X a I hI h
+  exact a.hom_eq_snd_of_nilpotent_quotient I hI h
 
 /-- Diagonalizable action rigidity gives uniqueness for two homomorphisms
 with the same central nilpotent reduction. -/
@@ -196,5 +202,17 @@ theorem multiplicativeType_central_uniqueness_of_actionRigidity
       (baseChange (Spec.algebraMap A (A ⧸ J))).map g)
     (hc : IsCentral ((baseChange (Spec.algebraMap A (A ⧸ J))).map f)) : f = g :=
   central_uniqueness_over_commRingCat (R := CommRingCat.of A) hact J hJ G H f g hH he hc
+
+/-- Homomorphisms from a group of multiplicative type are equal if they have a
+common central reduction modulo a nilpotent ideal. -/
+theorem centralInfinitesimalUniqueness
+    (A : Type u) [CommRing A] (J : Ideal A) (hJ : IsNilpotent J)
+    (G H : GroupScheme (Spec (CommRingCat.of A))) (f g : H ⟶ G)
+    (hH : RelativeMultiplicativeType.IsMultiplicativeType H)
+    (he : (baseChange (Spec.algebraMap A (A ⧸ J))).map f =
+      (baseChange (Spec.algebraMap A (A ⧸ J))).map g)
+    (hc : IsCentral ((baseChange (Spec.algebraMap A (A ⧸ J))).map f)) : f = g :=
+  multiplicativeType_central_uniqueness_of_actionRigidity
+    diagonalizableActionRigidity A J hJ G H f g hH he hc
 
 end Langlands.GroupScheme.CentralInfinitesimalRigidity

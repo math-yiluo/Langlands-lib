@@ -1,0 +1,3 @@
+# Locally constant functions on affine inverse limits
+
+These lemmas supply finite-stage descent of locally constant comparison functions in the proof of isotriviality spreading. Every nonempty fibre on the affine limit is compact and open, and compactness gives finitely many such fibres. Mathlib's compact-open descent transfers them to one affine stage. The covering condition and the emptiness of each pairwise intersection descend to a further common stage, where the resulting partition defines the desired function. For two given functions, the open equality locus and Mathlib's limit criterion for the full open give eventual agreement.
