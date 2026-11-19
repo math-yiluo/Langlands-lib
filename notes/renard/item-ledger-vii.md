@@ -71,6 +71,7 @@ mathematical content.
 | VII.1.1 Remark (`P = G`) | 220 / 226 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.1 Lemma (i)–(ii) | 220–221 / 226–227 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S: Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`). Necessity P: `arbitraryParabolicCasselmanNecessity`. The corrected condition is the strictly positive root cone from the final decay test in the proof. The printed coroot-chamber necessity fails on an actual square-integrable representation of `Sp₄(ℚ₃)` (I2) |
+| VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper` | P for the overlap-tolerant upper estimate on the full central quotient used by sufficiency, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. The printed disjointness and equality fail by overlap of the labelled cells (I3) |
 | VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S: task 004e00e1; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
 | VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. The functor `r_D`, its faithfulness, the unit isomorphism `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`: `RP.MaximalLeviBlockProjectionEquivalenceStatement` (`Exponents/MaximalLeviBlockProjectionStatement`; the projection onto `M(M)_D` is a left adjoint of the inclusion of the block, whose existence is asserted). S: published candidate `17566075` (Reviewer 2361; integration ID `596546b6faf9495ba266d58426b8d8d3`, first Library commit `c40a0134`); proof Task 6621 `3c3f4d9e` |
 
@@ -279,6 +280,14 @@ as recorded.
   in the simple-root basis `e₁ − e₂, 2e₂` are `1, 1/2`, which satisfy the
   strict root-cone condition used by the published corrected statement and
   necessity proof. [Counterexample and normalization](../errata/renard-2026-representations-groupes-reductifs-padiques.md)
+
+- **I3. VII.1.2, Cartan cover and series (printed pp. 221–222 / PDF pp. 227–228).**
+  For `G = ℚ₃ˣ`, `K₀ = ℤ₃ˣ` and `K = 1 + 3ℤ₃`, each of the two cells in
+  the quotient by `3^ℤ` occurs twice in the labelled Cartan cover. With the
+  trivial coefficient and total quotient measure one, the integral is one
+  and the labelled sum is two. Summing each distinct cell once gives equality.
+  The Lean sufficiency assembly uses subadditivity on the countable cover.
+  [Counterexample and corrected integral bound](../errata/renard-vii12-cartan-cover.md)
 
 ## Genuine gaps of Chapter VII
 
