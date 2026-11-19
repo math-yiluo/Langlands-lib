@@ -262,6 +262,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Waldspurger 2003 Plancherel formula: source map](../notes/plancherel/waldspurger-source-map.md) — Every numbered item with source dependencies and partial Library coverage, plus the 16 November update on published adjunction and fixed-coefficient finiteness proofs and remaining topology and full VI.3.1 targets.
 - [Waldspurger on actual rational points: published units and structural ledger](../notes/plancherel/actual-point-ledger.md) — Published actual-point constructions, structural consumers, conditional density and orbit weight, proved convergence-domain adjunction and fixed-coefficient finiteness, the common-Levi scalar and composition targets, and the remaining topology, full-unitary regularity, full wave-packet synthesis, product formula and Plancherel obligations.
 
+- [Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness](../notes/errata/milne-2017-trigonalizable-section-conjugacy.md) — Paper counterexamples in characteristic p: α_p ⋊ μ_p (Raynaud's SGA 3 XVII 5.9(d) example, made explicit) and α_p ⋊ G_m, to section conjugacy and to the maximal-diagonalizable-subgroup description, the failing step (15.3 needs smooth groups), the SGA 3 XVII 5.1.1 ii) scope, and the falsity of `TrigonalizableSectionConjugacyStatement`.
+
 The links above are relative to the Library root (`paths.library`); the published
 notes themselves are in `paths.public_notes`.
 
