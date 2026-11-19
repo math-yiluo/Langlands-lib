@@ -12,10 +12,10 @@ ledger for family 6 of that program's contract. Family 6 covers:
 - central isogenies;
 - simply connected covers and their root-data comparisons.
 
-It describes Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. The previously published version described commit
-`e449cde988d4e97ab280b8d4d11262887ccc26e0`. This version changes rows A6, D9 and F3 only:
-F3 is now proved, D9 closes by a composite, and A6 and D9 now name proof tasks.
+The original rows describe Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0`
+and environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. That version updated
+A6, D9 and F3 from commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`.
+Row A9 records publications verified on 18 November 2026.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
 are relative to `Langlands/GroupScheme/` in that commit. "Field group" means a group
@@ -29,7 +29,7 @@ hypotheses, a status, the evidence, and the owner task.
 - **D (definition or internal result).** A published construction, or a published
   internal theorem that is not a proposition declaration, with the hypotheses listed in the
   row. The evidence is its module path.
-- **P (published proof).** The Library at the commit above contains a theorem whose type is
+- **P (published proof).** The cited Library commit contains a theorem whose type is
   exactly the statement. The evidence is that theorem and its module path. The author also
   type-checked `example : S := proof` for every P row in a private module. That check
   passed with no errors or warnings, but it is not public evidence. No further proof work is
@@ -201,6 +201,23 @@ proof shows that the twisted group is an inner form of `G`.
 - Status D (published internal theorem with the hypotheses above). It does not construct
   `τ`, `δ`, the pinning or the solution. The unconditional existence of quasi-split inner
   forms is B1.
+
+**A9. Short exactness for absolute-Galois characters of groups of multiplicative type.**
+Source is Milne 2017, §12.g and Theorem 12.23, printed pp.239–240 (PDF 255–256).
+
+- Status P. `multiplicativeTypeAbsoluteExactness` proves
+  `MultiplicativeTypeAbsoluteExactnessStatement.{u}` over every field
+  `k : Type u`. For composable maps of actual groups of multiplicative type,
+  closed subgroup inclusions and their represented fppf quotients correspond
+  to short exact sequences under the contravariant character functor. Its maps
+  are integral linear and equivariant for `Gal(k_s/k)`, with torsion allowed.
+  This applies to a central subgroup sequence when all three groups are of
+  multiplicative type.
+- Task 7761 (`786e06b5-2256-43b7-9bfb-7007258ac237`) published proof
+  `8da8da3c-ab65-4e77-bc97-7a67d6694700` at
+  `bb9e086196d00484fd52204977452d922bf3c660`. D4 in the family 2 ledger
+  records the categorical equivalence for the same functor.
+  [Modules, statement and proof receipts](multiplicative-type-absolute-galois-progress.md)
 
 ## B. Quasi-split groups and inner forms
 

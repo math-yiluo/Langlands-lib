@@ -15,7 +15,9 @@ It describes Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0` and envir
 `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. All Lean names are in `Langlands.GroupScheme`
 unless a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that
 commit, except paths beginning `Shimura/`, which are relative to `Langlands/`. "Field
-group" means a group scheme over `Spec k` for a field `k : Type u`.
+group" means a group scheme over `Spec k` for a field `k : Type u`. D4 records
+publications verified on 18 November 2026. Later evidence for D5 and F8 is
+recorded in the [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md).
 
 General results on maximal tori (existence, base change, conjugacy, finite-field and
 Henselian versions) belong to families 4 and 8 of the program and are not listed here. The
@@ -30,7 +32,7 @@ hypotheses, a status, the evidence, and the owner task.
 - **D (definition or internal result).** A published construction, or a published
   theorem that is not a proposition declaration, with the hypotheses listed in the row.
   The evidence is its module path. No owner task is needed.
-- **P (published proof).** The Library at the commit above contains a theorem whose type is
+- **P (published proof).** The cited Library commit contains a theorem whose type is
   exactly the statement. For a statement with parameters, the row lists the hypotheses
   under which the theorem proves it. The evidence is that theorem and its module path. The
   author also type-checked `example : S := proof` for every P row in a private module.
@@ -329,10 +331,23 @@ assumes the extension connected; here centrality replaces this.
   separately; see those rows.
 
 **D4. Classification of multiplicative-type groups by Galois modules.** Source: Milne 2017,
-Theorem 12.23, printed p.240 (PDF 256).
-- Status G. No Lean statement of the anti-equivalence between groups of multiplicative
-  type over `k` and finitely generated continuous `Gal(k_s/k)`-modules was found. A5 gives
-  full faithfulness for split targets only. No owner task was found.
+§12.g and Theorem 12.23, printed pp.239–240 (PDF 255–256).
+- Status P. `multiplicativeTypeAbsoluteEquivalence` proves
+  `MultiplicativeTypeAbsoluteEquivalenceStatement.{u}` for the contravariant
+  functor `MultiplicativeTypeGroup.characterFunctor k` from actual groups of
+  multiplicative type over any field `k` to `FGDiscreteGaloisModule.{u,u} k`.
+  Task 7346 (`39eda79f-8035-40ec-88d5-1448b9256c56`) published proof
+  `cb1c6305-cb95-417e-a84a-8f3226a7ce58` at
+  `42c696807fd25d6ea96d001a596d7bba7b4b52b9`.
+- Status P for the short exact sequence clause. `multiplicativeTypeAbsoluteExactness`
+  proves `MultiplicativeTypeAbsoluteExactnessStatement.{u}`. For any composable
+  pair in the same group category, a closed immersion with its represented fppf
+  quotient corresponds to injective, exact and surjective character pullbacks.
+  The quotient uses the kernel on every test scheme. Both theorems admit
+  torsion character groups. Task 7761 (`786e06b5-2256-43b7-9bfb-7007258ac237`)
+  published proof `8da8da3c-ab65-4e77-bc97-7a67d6694700` at
+  `bb9e086196d00484fd52204977452d922bf3c660`.
+  [Modules, statement and proof receipts](multiplicative-type-absolute-galois-progress.md)
 
 **D5. Smoothness of diagonalizable groups.** Source: Milne 2017, §12.b, opening paragraph,
 printed p.230 (PDF 246), which fixes a **finitely generated** commutative group `M`, and
@@ -569,10 +584,9 @@ printed p.236 (PDF 252).
   separable field extensions in detail (E1, E2). Purely inseparable restriction is not
   used to replace finite separability.
 
-## Remaining targets in family 2
+## Remaining targets in the original snapshot
 
-- Gaps G: the Galois-module classification of multiplicative-type groups (D4) and the
-  smoothness and connectedness criteria for `D(M)`, `M` finitely generated (D5). No owner
-  tasks were found.
+- Gap G at the original commit for the smoothness and connectedness criteria for
+  `D(M)`, with `M` finitely generated (D5).
 - Publication of the composite F8 (no owner task).
 - Named theorems for the six C norm-one components of F2, if a consumer needs them.

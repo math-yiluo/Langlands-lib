@@ -1,14 +1,13 @@
-# Multiplicative type: published absolute-Galois character equivalence
+# Character equivalence and exactness for groups of multiplicative type
 
-Worker 3483, updated 17 November 2026.
+Worker 3483, updated 18 November 2026.
 
 This addendum updates families 2 and 6 of the group-scheme program. It
 supplements the [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md).
-The fourteen units below are independently accepted and published. They include
-the two exact absolute-character proofs, the actual character functor, and
-four further proofs of finite factorization, full faithfulness, exactness and
-finite Galois splitting. The finite-level and absolute-Galois categorical
-equivalence proofs are now independently accepted and published as well.
+The Library contains independently reviewed proofs of the finite-level and
+absolute-Galois character equivalences and their short exact sequence
+comparisons. The absolute results use the canonical character functor over
+the separable closure of an arbitrary field.
 All declaration names below belong to `Langlands.GroupScheme`, with
 `Diagonalizable` and `DiagonalizableCharacter` indicating its subnamespaces.
 
@@ -30,6 +29,8 @@ All declaration names below belong to `Langlands.GroupScheme`, with
 | [MultiplicativeTypeFiniteGaloisSplittingProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeFiniteGaloisSplittingProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeFiniteGaloisSplittingProof.md) | `multiplicativeTypeFiniteGaloisSplitting` proves exactly `MultiplicativeTypeFiniteGaloisSplittingStatement.{u}` from the unchanged arbitrary-extension definition of multiplicative type. |
 | [MultiplicativeTypeGaloisEquivalenceProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisEquivalenceProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisEquivalenceProof.md) | `multiplicativeTypeGaloisEquivalence` proves exactly `MultiplicativeTypeGaloisEquivalenceStatement.{u}` for the actual character functor on groups split by a specified finite Galois extension. |
 | [MultiplicativeTypeAbsoluteEquivalenceProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteEquivalenceProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteEquivalenceProof.md) | `multiplicativeTypeAbsoluteEquivalence` proves exactly `MultiplicativeTypeAbsoluteEquivalenceStatement.{u}` for the canonical separable-closure character functor over every field. |
+| [MultiplicativeTypeAbsoluteExactnessStatement](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteExactnessStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteExactnessStatement.md) | The proposition compares closed subgroup and represented fppf quotient sequences with short exact sequences under `MultiplicativeTypeGroup.characterFunctor k`. |
+| [MultiplicativeTypeAbsoluteExactnessProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteExactnessProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteExactnessProof.md) | `multiplicativeTypeAbsoluteExactness` proves exactly `MultiplicativeTypeAbsoluteExactnessStatement.{u}` for every field and every pair of composable morphisms of actual groups of multiplicative type. |
 
 For a field `k : Type u`, the category uses precisely
 `SeparableClosure k ≃ₐ[k] SeparableClosure k` with Mathlib's Krull topology.
@@ -225,7 +226,7 @@ and warnings. Inspection again confirmed that the statement returns
 `Prop` in universe `u`, with only the standard axioms. This development
 check is distinct from the independent proof acceptance above.
 
-## Published categorical equivalences and remaining coverage
+## Published categorical equivalences
 
 Both categorical proof candidates are accepted and public at commit
 `42c696807fd25d6ea96d001a596d7bba7b4b52b9`. The full independent feedback
@@ -267,13 +268,9 @@ absolute action. These comparisons are proved within the accepted
 candidate. The final theorem assembles the three categorical properties
 for the specified `MultiplicativeTypeGroup.characterFunctor k`.
 
-The absolute theorem covers every field `k : Type u`, with the unchanged
-`IsMultiplicativeType` predicate and no extra splitting, smoothness,
-connectedness, perfectness or characteristic premise. Finite nonsmooth
-groups and torsion modules remain included. The finite-field
-exact-sequence comparison has its separate published proof above; neither
-categorical equivalence proof asserts exact-sequence compatibility for
-the absolute functor.
+The absolute theorem covers every field `k : Type u` and every object of
+`MultiplicativeTypeGroup k`. The category includes finite nonsmooth groups
+and the character functor takes values in modules that may have torsion.
 
 Development check `a31d443d-9f9e-4715-b628-c8dabdf64453` compiled eleven
 affected modules, including both equivalence proofs and the finite
@@ -282,9 +279,46 @@ categorical reduction, with zero errors or warnings. Inspection of
 and only `propext`, `Classical.choice` and `Quot.sound`. This development
 check is distinct from the independent proof acceptance above.
 
-All eight thematic families of the standing program remain obligations.
-This note records the published character equivalences and their scope;
-it supplies no new mathematical proof or whole-program completion evidence.
+## Published absolute-Galois exactness
+
+For `i : N ⟶ E` and `q : E ⟶ Q` in `MultiplicativeTypeGroup k` over any
+field `k : Type u`, the theorem identifies two conditions. First, `i` is
+a closed immersion and `q` is a represented fppf quotient by its range.
+The quotient predicate gives flatness, surjectivity and local finite
+presentation for `q`, and requires equality of the kernel range with
+the range of `i` on every test scheme. Second, the actual character
+pullbacks along `q` and `i` are injective at the first term, exact at the
+middle term and surjective at the last term. Those pullbacks are
+morphisms of `FGDiscreteGaloisModule.{u,u} k` and already carry their
+equivariance. The theorem includes torsion character modules and finite
+nonsmooth groups.
+
+The proof supplies diagonalizable models over `SeparableClosure k`, applies
+fpqc descent to the subgroup and quotient conditions, and invokes the
+split theorem for the transported maps. Evaluation of characters gives
+the commuting squares that transfer injectivity, exactness and surjectivity
+to the actual pullbacks. This proves the short exact sequence clause of
+Milne 2017, Theorem 12.23, p.240, using the split clause of Theorem 12.9(b),
+pp.233–234. [Proof explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteExactnessProof.md)
+
+| Unit and owning task | Accepted public receipt | Reviewer | Library commit |
+| --- | --- | --- | --- |
+| Absolute exactness statement, Task 3483 (`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`) | `8cf37c45-fce5-4531-8968-7bad5bb78753` | Reviewer 8435 | `db14afe3373dd1e402e436b7f53a35a278f3ee90` |
+| Absolute exactness proof, Task 7761 (`786e06b5-2256-43b7-9bfb-7007258ac237`), Workers 329 and 3483 | `8da8da3c-ab65-4e77-bc97-7a67d6694700` | Reviewer 9000 | `bb9e086196d00484fd52204977452d922bf3c660` |
+
+Both approvals have zero qualifications. The proof validation
+`41522ae2-108c-471a-b959-ea13b3f13be4` accepts the Lake build, exact
+target, unchanged statement and frozen inputs. Integration
+`b9b982a0fcb74b18a2e2957fbe5a582b` records a successful fresh Lake build.
+The Lean and Markdown pairs match their frozen submissions at the two
+publication commits and at Library `f050c0b1b525624bc32c1e7c25a8d2841bb2d4e0`.
+Development check `034c86f5-856b-4da7-bb27-613e741c08ef` rebuilt the
+thirteen affected modules with zero errors or warnings and inspected
+`multiplicativeTypeAbsoluteExactness` in universe `u`.
+
+These results supply the multiplicative-type character comparison in
+families 2 and 6. The group-scheme program has further obligations across
+all eight families.
 
 ## Provenance
 

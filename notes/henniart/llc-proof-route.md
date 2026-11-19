@@ -5,8 +5,45 @@ version 10 November 2026, second version 11 November 2026, third, fourth and
 fifth versions 12 November 2026, sixth to thirteenth versions 13 November
 2026, fourteenth to sixteenth versions 14 November 2026, seventeenth to
 nineteenth versions 15 November 2026, twentieth to twenty-third versions
-17 November 2026, twenty-fourth version 18 November 2026. This
-twenty-fifth version, of 18 November 2026, was checked against Library
+17 November 2026, twenty-fourth and twenty-fifth versions 18 November
+2026. This twenty-sixth version, of 18 November 2026, was checked against
+Library commit `f050c0b1b525624bc32c1e7c25a8d2841bb2d4e0`. The
+twenty-fifth version was published at commit
+`ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`. Between commits `8aede86c`
+and `ba9d1e9a` the Library added 495 Lean modules and changed four Lean
+files, none of which this note names. Between commits `ba9d1e9a` and
+`f050c0b1` it added 433 Lean modules and changed 21 Lean files. Four of
+the changed files are the level statements L0, L1, L2 and T2 of Task 7419,
+which this note names: only the names of their local instances changed,
+so that the four modules can be imported together, and their statements
+and Markdown are unchanged. One changed file alters a definition:
+`BushnellKutzko.Stratum.IsDefiningSequence` (module
+`BushnellKutzko/DefiningSequence`) now asks that each member of a defining
+sequence have the hereditary order of the original stratum
+(`chain.order`), where it asked before for the same lattice chain. The
+approximation statement (2.4.1), `StratumApproximationStatement`, uses
+this predicate; proof Task 7787 (`833e26b4-3273-4c73-9b02-4133b8d60288`)
+is to prove it. The other 16 changed files are outside the scope of this
+note. The following modules added between `8aede86c` and `f050c0b1` bear
+on this note:
+the proof of `ComplexGenericStandardParameterStatement` (Task 5977, input
+A1 of premise 1); proofs of the three remaining unrestricted premises that
+the totally complex (G') needs on the chain of input A2, so that all eight
+are proved, and of further premises and reductions under Tasks 7397 and
+7399; proofs of three of the five propositions of Task 7627 and of both
+inheritance statements of Task 7413, together with the branch statements,
+the distinctness statement and the rank-one and untwist statements of Task
+7563 (premise 1); the statements (I1) of Task 7372 and the twist Swan
+bound of Task 7373 (premise 2); the proofs of
+`BushnellKutzkoLabelCountStatement`, `KummerStepUpperSupStatement` and
+`CyclicNormKernelCharacterStatement`; and statements of the trace formula
+and base-change program of Task 7340. Each is described where the note
+names it. No premise of the route is proved at commit `f050c0b1`. This
+version also adds a fourth theorem to the composite Lean module (section
+"The composite"), which uses Harris's Prop. 4.8 in its exact-stabilizer
+form.
+
+The twenty-fifth version was checked against Library
 commit `8aede86c1ec386cf08cfb29e80ce3c58a3239cd8`, at which the
 twenty-fourth version was published. Between commits `d26f6985` and
 `8aede86c` the Library added 239 Lean modules and changed nine Lean files,
@@ -36,7 +73,7 @@ not define the spherical Hecke algebra, which it reuses: that algebra is
 `Langlands.Unramified.SphericalHeckeAlgebra`, declared in
 `Representation/Unramified/HeckeOperators` and already in the Library at
 commit `ab9053b1`. The import closure of the composite Lean module of this
-note (its three theorems, in the section "The composite") contains no
+note (its theorems, in the section "The composite") contains no
 `BaseChange/` module. Two statements that are targets of proof tasks named
 in this note do reuse the base-change vocabulary: `SatakeCharacterStatement`
 (Task 7595), itself one of the added modules, is stated with
@@ -149,7 +186,10 @@ four have proof tasks. The global inputs are now pursued over totally complex
 number fields. The third theorem of the composite does the same as the second
 with the totally complex forms of three of the global inputs. It assumes in
 addition the published totally complex reduction statement, which has a proof
-task but no proof yet.
+task but no proof yet. The fourth theorem does the same as the second with
+Harris's Prop. 4.8 replaced by its published exact-stabilizer form, which
+the original form implies, through the proved exact-stabilizer variant of the
+reduction.
 
 For the first of these inputs, Harris's Prop. 4.8, the Library has a
 reduction statement, `Global.Harris.Proposition48ReductionStatement`: fourteen
@@ -476,7 +516,7 @@ is accepted and published.
 | # | Premise (universes of the full correspondence) | Five-premise position | Module | Owner and state (TaskHub record) |
 | --- | --- | --- | --- | --- |
 | 1 | `Henniart.CandidateExistenceStatement.{uF, uP, uA, uP, uF}` (Henniart 2000, Thm 3.1 with §§3.7–3.8) | 1 | `Correspondence/HenniartStableMapStatement` | Task 5583 `54bed1a5-c9db-4be3-b59b-e4eb4abb89b8`, waiting; executor Worker 5732. See below; its global inputs are now pursued over totally complex number fields. |
-| 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, claimed; executor Worker 5733. The proofs of Tasks 6305 and 7044, on which it waited, are in the Library. On 16 November 2026 the operator decided that it follows Option II of the operator's numerical note, and on 17 November Worker 5733 published its statement and proof tasks (Tasks 7369–7395); see premise 2 below. It has no proof candidate. At commit `8aede86c` the statements of Tasks 7369 and 7370 are in the Library; of the next statement tasks on the chain to inputs (I3) and (I4), Task 7373 was claimed by Worker 331 and Task 7375 had no executor at about 09:45 UTC on 18 November 2026. |
+| 2 | `Henniart.NumericalSurjectivityStatement.{uF, uP, uA}` (Henniart 1988, Thm 1.2) | 3 | `Correspondence/HenniartNumericalStatement` | Task 5584 `35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`, claimed; executor Worker 5733. The proofs of Tasks 6305 and 7044, on which it waited, are in the Library. On 16 November 2026 the operator decided that it follows Option II of the operator's numerical note, and on 17 November Worker 5733 published its statement and proof tasks (Tasks 7369–7395); see premise 2 below. It has no proof candidate. At commit `8aede86c` the statements of Tasks 7369 and 7370 are in the Library; of the next statement tasks on the chain to inputs (I3) and (I4), Task 7373 was claimed by Worker 331 and Task 7375 had no executor at about 09:45 UTC on 18 November 2026. At commit `f050c0b1` the statements of Tasks 7372 ((I1)) and 7373 (the twist Swan bound) are also in the Library. Task 7375, whose two requirements (Tasks 7370 and 7373) are then met, still had no executor at about 19:30 UTC on 18 November 2026; at about 21:20 UTC Worker 939 had claimed it and was working on it. |
 | 3 (not needed) | `Conductor.ConductorExponentStatement.{uF, uA}` (Jacquet–Piatetski-Shapiro–Shalika 1981, Thm (5.1)) | 5 | `Representation/Conductor/EssentialStatement` | Task 5032 `7b8711bf-90dc-40ae-923e-5bfecc3550b6`, waiting; executor Worker 5032. The second executor, Worker 5731, published proof Tasks 5949 (`6cf78338-9b48-4893-a844-ba5c1273825e`) and 5950 (`85efb316-26c1-4be2-b19f-b30dbd78e2ee`) on unramified principal series and then left the task. Both are done; see below. The premise is the second conjunct of that task's target `Conductor.EssentialConductorStatement`. The route needs only its supercuspidal p-adic variant, which is proved (Task 7044); see premise 3 below. |
 
 Premise 1. Task 3657 published the proposition
@@ -730,7 +770,11 @@ TaskHub records of 14 November 2026 unless a date is given.
       module `Global/Arithmetic/HarrisProposition48ExactStabilizerInheritanceStatement`.
       Proof Tasks 7631 (`eb97dc21-bea7-4e67-85e3-78e37cc25da1`, Mackey) and
       7630 (`81d034e4-94a2-4159-af36-43b5cfd2f8d3`, parity) are to prove
-      them.
+      them. Both are proved at commit `f050c0b1`:
+      `proposition48ExactStabilizerMackeyInheritance` (module
+      `Global/Arithmetic/HarrisProposition48ExactStabilizerMackeyProof`) and
+      `proposition48ExactStabilizerParityInheritance` (module
+      `Global/Arithmetic/HarrisProposition48ExactStabilizerParityInheritanceProof`).
     - Module `Global/Arithmetic/HarrisProposition48ExactStabilizerParameterData`
       defines, and asserts nothing about, the vocabulary for the first two
       items listed for Task 7563: `IsInducedComplexPlaceParameter`,
@@ -764,13 +808,103 @@ TaskHub records of 14 November 2026 unless a date is given.
       restated proposition and four further premises imply
       `CandidateExistenceStatement`) and its totally complex form
       `Henniart.CandidateExistenceExactStabilizerTCReductionStatement`.
-    These five propositions are unproved, and no other Library module
-    names them. Each module also proves that each of its new statements
+    At commit `8aede86c` these five propositions were unproved, and no
+    other Library module named them. Each module also proves that each of its new statements
     implies the corresponding published statement: the datum module because
     every exact-stabilizer datum is a datum
     (`IsProposition48ExactStabilizerDatum.isProposition48Datum`), the other
     two through
     `proposition48ExactStabilizerStatement_of_proposition48Statement`.
+    Task 7343 then published two proof tasks for them: Task 7751
+    (`cb4e537f-49a0-4318-9358-5c08e1e77ed9`) for the datum statement and
+    the two reduction statements, and Task 7752
+    (`f6098032-12a3-44f0-a960-8081a0ff771a`) for
+    `CandidateExistenceExactStabilizerTCReductionStatement`. At commit
+    `f050c0b1` the three targets of Task 7751 are proved:
+    - `Global.harrisDatumCharacterRealizationExactStabilizer` (module
+      `Global/Arithmetic/HenniartHarrisDatumExactStabilizerProof`);
+    - `Global.henniartGlobalizationExactStabilizerReduction` (module
+      `Global/Arithmetic/HenniartGlobalizationExactStabilizerProof`);
+    - `Henniart.candidateExistenceExactStabilizerReduction` (module
+      `Correspondence/HenniartCandidateExistenceExactStabilizerReductionProof`).
+      By its Markdown it follows the assembly of the published
+      `candidateExistenceReduction`, with the exact-stabilizer
+      globalization reduction in place of the published one. So
+      `CandidateExistenceStatement.{uK, uW, 0, uE, uQ}` follows from the
+      restated proposition, Thm 2.4, the local class formation (proved),
+      Lemme 2.8 and §3.8, that is, from inputs 2 to 5 of the published
+      reduction with input 1 replaced by the restated proposition. The
+      fourth theorem of the composite (section "The composite") applies
+      this reduction.
+    `HenniartGlobalizationExactStabilizerStatement` and the totally complex
+    `CandidateExistenceExactStabilizerTCReductionStatement` (Task 7752)
+    are unproved at commit `f050c0b1`.
+
+    Task 7563 published the following statements; none of them is proved
+    at commit `f050c0b1`, and the reduction of the restated proposition
+    that Task 7563 is to state is not in the Library at that commit.
+    - At commit `ba9d1e9a`, module
+      `Global/Arithmetic/HarrisProposition48ExactStabilizerDistinctnessStatement`:
+      `Proposition48ExactStabilizerDistinctnessStatement` and its totally
+      complex form `Proposition48ExactStabilizerDistinctnessTCStatement`.
+      The first has three premises: B6, the tower comparison of Hecke
+      components (`TowerBaseChangeHeckeComponentStatement`); Arthur–Clozel
+      III.4.2(c), prime cyclic base change of unitary isobaric data
+      (`CyclicPrimeIsobaricBaseChangeStatement`, module
+      `Automorphic/Unramified/IsobaricCyclicTransferStatement`); and
+      spectral rigidity (`CuspidalSpectralRigidityStatement`). From them it
+      derives `HasDistinctMackeyComponents D` for every problem with
+      exact-stabilizer validity and every prime cyclic step `D` with `[D :
+      E]` Mackey classes (`Nat.card (Q.MackeyIndex D) = Module.finrank Q.E
+      D`). This cardinality hypothesis selects the prime-orbit case of
+      Harris's induction, as opposed to the singleton case of the same
+      prime-degree step. The totally complex form takes the totally complex
+      forms of the three premises (`TowerBaseChangeHeckeComponentTCStatement`,
+      `CyclicPrimeIsobaricBaseChangeTCStatement` and
+      `CuspidalSpectralRigidityTCStatement`), with the same hypotheses on
+      the problem and the step and the same conclusion.
+    - At commit `ba9d1e9a`, module
+      `Global/Arithmetic/HarrisProposition48ExactStabilizerParameterAuxiliaryStatement`:
+      `Proposition48ExactStabilizerAuxiliaryRankOneStatement` (rank one
+      with parameters) and `Proposition48ExactStabilizerParameterUntwistStatement`.
+    - At commit `f050c0b1`, module
+      `Global/Arithmetic/HarrisProposition48ExactStabilizerBranchStatement`:
+      the prime-orbit and singleton branches under the exact-stabilizer
+      condition, `Proposition48ExactStabilizerPrimeBranchStatement` and
+      `Proposition48ExactStabilizerSingletonBranchStatement`, with their
+      totally complex forms. By its declarations and its Markdown, each is
+      the published general-position branch (modules
+      `Global/Arithmetic/HarrisProposition48PrimeBranchStatement` and
+      `HarrisProposition48SingletonBranchStatement`) with the following
+      changes. Both branches use the exact-stabilizer validity predicates
+      and the induced complex-place parameters of the children
+      (`HasInducedComplexPlaceParameters`) and of the solution
+      (`HasParameterSolution`). Both branches add two premises: the
+      restricted B7 (`RestrictedCyclicWeakBaseChangeComplexPlaceStatement`)
+      and the archimedean bridge (`CuspidalComplexParameterBridgeTCStatement`);
+      their totally complex forms keep these two premises unchanged. The
+      prime branch drops the premise A2
+      (`HarrisSupercuspidalLocalComparisonStatement`) and assumes
+      `HasDistinctMackeyComponents D`; like the published prime branch, it
+      assumes `[D : E]` Mackey classes. The singleton branch (one Mackey
+      class) also adds B5,
+      `CyclicWeakBaseChangeSupercuspidalStatement`, after
+      `CyclicStableDescentStatement`; its totally complex form takes
+      `CyclicWeakBaseChangeSupercuspidalTCStatement`. By the module's
+      Markdown, B5 supplies what no published premise of the singleton
+      branch says at the auxiliary place: the selected descent is
+      supercuspidal there, because its base change, the child's
+      constituent, has a supercuspidal component.
+    The module `Global/Arithmetic/HarrisProposition48StabilizerComparison`
+    (commit `f050c0b1`) proves `PlaceDatum.exactWeilStabilizer_iff_global`,
+    which reads the local exact-stabilizer condition on the number field.
+    Task 7343 published four tasks for these statements: proof Tasks 7783
+    (`bb8260ea-d6a2-457a-95f1-e5ed5dfe5823`, rank one and untwist) and 7784
+    (`164e0acf-5a60-4650-a62a-c82f952d83c3`, distinctness and its totally
+    complex form), and Tasks 7785 (`2cdbece0-e746-4cbc-8ecb-0cc9273a8a76`,
+    prime branch) and 7786 (`794a4691-1e86-44f4-a28d-d79270146b71`,
+    singleton branch), each to reduce its two branch statements to named
+    inputs and to publish the missing proof tasks.
   - Task 5134 (`1b87b965-a232-4c02-a51f-e287f630c549`) is a consumer: its
     target is that Harris's Prop. 4.8 implies
     `HenniartGlobalizationStatement`.
@@ -918,8 +1052,8 @@ dependencies.
 
 The transport of supercuspidal unitary lattices between carrier universes,
 which the globalization in universe 0 makes necessary, is a helper in
-Task 5583's draft. The second and third theorems of the composite below
-avoid this transport: they fix the representation universe of the full
+Task 5583's draft. The second, third and fourth theorems of the composite
+below avoid this transport: they fix the representation universe of the full
 correspondence at `0`.
 
 Premise 1 over totally complex fields. Henniart's globalization (Théorème 2.4
@@ -954,14 +1088,15 @@ The operator's answer asks the owners of the existing proof tasks to stage
 a proof of the totally complex form as a supporting candidate under their
 current task once the statement is published. Their targets stay unchanged.
 The answers that Worker 0 received on 15 November 2026 are as follows; the
-row of A2 adds the Library modules published since and three reports of 17
-November 2026. On 17 November 2026
-Worker 0 told the owners that the statements are in the Library.
+rows of A1 and A2 add the Library modules published since, three reports of
+17 November 2026 and the staged candidates of 18 November 2026. On 17
+November 2026 Worker 0 told the owners that the statements are in the
+Library.
 
 | Totally complex form | Owner task | Answer and open input of the planned proof |
 | --- | --- | --- |
-| A1 archimedean parameters | Task 5720 (`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`) | Worker 174: will stage. A draft proof needs only `ComplexGenericStandardParameterStatement` (Task 5977), not the GL_n(R) input (Task 5975). No answer yet from Worker 20. |
-| A2 completed equation | Task 5721 (`5a3b5760-2716-4429-94f5-0ff5bf53aea8`) | Workers 5210 and 5670: will stage. It needs (G'), `Global.CuspidalPairPartialGammaEquationStatement` (Task 6190, `f4660bce-a3cb-416c-89bf-9f0cb2004c8e`), whose published reduction has two semilocal premises that include archimedean functional equations at real places (Tasks 7053 and 7054). At commit `314cfd1a` the Library has the following totally complex chain. Worker 382 (Task 6190) published the totally complex (G'), `Global.CuspidalPairPartialGammaEquationTCStatement` (module `Global/Factors/CuspidalPairPartialGammaEquationTCStatement`), the totally complex semilocal equations `RankinSelbergGlobal.UnequalSemilocalEquationTCStatement` and `EqualSemilocalEquationTCStatement` (module `Global/RankinSelberg/SemilocalEquationTCStatements`), and the proved reduction `cuspidalPairPartialGammaGlobalTCReduction` (module `Global/Factors/CuspidalPairPartialGammaGlobalTCReduction`): the eight unrestricted premises of the published reduction and the two totally complex semilocal equations imply the totally complex (G'). Two of the eight, `UnequalAnalyticStatement` and `EqualAnalyticStatement`, have Library proofs (modules `Global/RankinSelberg/UnequalAnalyticProof` and `EqualAnalyticProof`). At commit `8aede86c` three more are proved: `unequalUnfoldingStatement_proof : UnequalUnfoldingStatement.{u}` (module `Global/RankinSelberg/UnequalUnfoldingProof`; the module `UnequalDualEulerFactorizationProof` has a second proof, `unequalUnfolding_of_gaugeProofs`), `unequalDualEulerFactorization : UnequalDualEulerFactorizationStatement.{u, uQ}` (module `UnequalDualEulerFactorizationProof`) and `equalEulerFactorization : EqualEulerFactorizationStatement.{u, uQ}` (module `EqualEulerFactorizationProof`). Three of the eight have no Library proof at that commit: `UnequalEulerFactorizationStatement`, `EqualUnfoldingStatement` and `EqualDualEulerFactorizationStatement`. Worker 5210 published, for Task 5721, the proved `cuspidalPairPartialGammaTCReduction` (module `Global/Factors/CuspidalPairPartialGammaTCReduction`): the totally complex (G') implies A2. Worker 44 published, for Task 7053, `UnequalSemilocalFactorizationTCStatement` and the proved `unequalSemilocalEquationTCReduction` (modules `Global/RankinSelberg/UnequalSemilocalFactorizationTCStatement` and `UnequalSemilocalEquationTCReduction`), and Worker 5557, for Task 7054, `EqualSemilocalFactorizationTCStatement` with the proved `equalSemilocalReductionTC` (module `Global/RankinSelberg/EqualSemilocalReductionTC`): each totally complex factorization premise implies the corresponding totally complex semilocal equation. Worker 5014 will prove the equal-rank factorization premise under Task 7124, from the statements of Task 7136 (executor Worker 390), whose archimedean result is stated separately for complex and for real places (module `Global/RankinSelberg/ArchimedeanSemilocalTheoryStatement`). On 17 November 2026 Worker 5014 reported to Worker 0 that the conditional reduction of the equal-rank factorization premise to statements of Task 7136 (candidate `250d6ec2`) had passed review and was awaiting integration, and that its planned totally complex form drops the real-place premise. Worker 44 (publisher of Task 7136) published on 17 November 2026 one `lean.proof@1` task for each of the four Task 7136 statements: Task 7396 (`e20c0809-5e65-47b1-892c-e19c6606624d`, `ArchimedeanCentralSignStatement`), Task 7397 (`b687b59b-c6cf-46eb-a4a9-0c9fc3bd9602`, `ArchimedeanFactorizationStatement`), Task 7399 (`a5a6c760-e1fd-47cb-80d3-eae5c19d6ed9`, `ComplexPlaceFunctionalEquationStatement`) and Task 7400 (`ad2b73ae-9f1e-45ca-88a0-3cd016a7950d`, `RealPlaceFunctionalEquationStatement`). By Worker 5014's report the first three are on the totally complex path. At commit `fcb85a7e` the Library has the four statements (modules `Global/RankinSelberg/ArchimedeanCentralSignStatement`, `ArchimedeanFactorizationStatement` and `ArchimedeanFunctionalEquationStatement`, the last with both functional equations) and their conjunctions `ArchimedeanSemilocalTheoryStatement` and `ComplexSemilocalTheoryStatement`. At commit `b369a8f2` it also has two proved reductions. Worker 5014's `equalSemilocalFactorizationReduction` (module `Global/RankinSelberg/EqualSemilocalFactorizationReduction`) derives `EqualSemilocalFactorizationStatement` from the complex-place and real-place equal-rank functional equations, `EqualArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`. The module `Global/RankinSelberg/UnequalSemilocalArchimedeanReduction` proves `unequalSemilocalComplexReduction`: `ComplexSemilocalTheoryStatement` implies `UnequalSemilocalEquationTCStatement`. On 17 November 2026 Worker 5014 reported that the totally complex companion is staged as candidate `9aefd10f-a388-4845-9386-e6e1eaf51d63`. Its module is `Global/RankinSelberg/EqualSemilocalFactorizationReductionTC`, and it derives `EqualSemilocalFactorizationTCStatement` from `ComplexEqualFunctionalEquationStatement`, `EqualArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`. These premises are conjuncts of the targets of proof Tasks 7399, 7397 and 7396 respectively. Those targets are `ComplexPlaceFunctionalEquationStatement`, `ArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`, and their conjunction is `ComplexSemilocalTheoryStatement`. Once the companion is published, both totally complex semilocal equations follow from these three targets. At commit `ab9053b1` the target of Task 7396, `ArchimedeanCentralSignStatement`, is proved: `RankinSelbergGlobal.archimedeanCentralSign : ArchimedeanCentralSignStatement.{u, uQ}` (module `Global/RankinSelberg/ArchimedeanCentralSignProof`). The other two, `ComplexPlaceFunctionalEquationStatement` (Task 7399) and `ArchimedeanFactorizationStatement` (Task 7397), are open. For each of the three other proof tasks the Library has a proved conditional reduction of its target to named open premises. For Task 7397, `archimedeanPointwiseFactorizationReduction` (module `Global/RankinSelberg/EqualArchimedeanFactorizationReduction`, which imports `ArchimedeanFactorizationReduction`) derives `ArchimedeanFactorizationStatement` from two pointwise factorization statements, `UnipotentClassProductStatement` and `RectangleTateStatement`; the equal-rank part `equalArchimedeanFactorizationReduction` needs only the equal-rank pointwise statement and `UnipotentClassProductStatement`. For Task 7399, `complexPlaceFunctionalEquationReduction` (module `Global/RankinSelberg/ComplexPlaceFunctionalEquationReduction`) derives `ComplexPlaceFunctionalEquationStatement` from five premises: the unequal-rank and equal-rank local functional equations over `ℂ`, a Whittaker-model statement, a minus-one statement and a contragredient-parameter statement at complex places; `complexEqualFunctionalEquationReduction` gives the equal-rank conjunct alone. For Task 7400, which is off the totally complex path, `realPlaceJacquetConventionReduction` (module `Global/RankinSelberg/RealJacquetConventionReduction`) derives `RealPlaceFunctionalEquationStatement` from three premises. None of these modules proves its premises, so the targets of Tasks 7397, 7399 and 7400 stay open. At commit `d26f6985` the companion `9aefd10f` is published (module `Global/RankinSelberg/EqualSemilocalFactorizationReductionTC`, with `equalSemilocalFactorizationReductionTC`, `equalSemilocalFactorizationTC_of_archimedeanSemilocalTheory` and `equalSemilocalEquationTC_of_archimedean`). The premises of Task 7399 are reduced further. `complexPlaceMinusOne : ComplexPlaceMinusOneStatement.{u}` (module `ComplexPlaceMinusOneProof`) and `complexPlaceWhittakerAnalytic : ComplexPlaceWhittakerAnalyticStatement` (module `ComplexPlaceWhittakerAnalyticProof`) are proved. In the latter module, `complexPlaceFunctionalEquationLocalReduction` derives `ComplexPlaceFunctionalEquationStatement` from the unequal-rank and equal-rank local functional equations over `ℂ`, the minus-one statement and `ComplexPlaceContragredientParameterStatement`. `complexPlaceContragredientParameterReduction` (module `ComplexPlaceContragredientReduction`, premises stated in `ComplexPlaceContragredientPremises`) derives the contragredient-parameter statement from `ComplexPlaceParameterIrreducibleStatement` and `ComplexStandardPairingParameterStatement`. So four premises of Task 7399 stay open: `ComplexLocalUnequalFunctionalEquationStatement`, `ComplexLocalEqualFunctionalEquationStatement` and these two. Proof Tasks 7569 (`64cc12ca-cd03-498d-aeb2-ceefa4b59f84`) and 7570 (`012193b7-c522-4169-8c6d-bcee66ffac74`) are to prove the two local functional equations. For Task 7397, `rectangleTateStatement : RectangleTateStatement.{u}` is proved (module `RectangleTateProof`). The two pointwise factorization statements and `UnipotentClassProductStatement` stay open, and proof Task 7568 (`f8327a11-ae7f-4147-9af9-3b03ee805e46`) is to prove the unequal-rank pointwise statement. For Task 7400, off the totally complex path, `realPlaceFunctionalEquationLocalReduction` (module `RealPlaceWhittakerAnalyticProof`) reduces its target to three premises: `RealLocalUnequalJacquetStatement`, `RealLocalPositiveEqualJacquetStatement` and `RealPlaceContragredientPairLStatement`. The targets of Tasks 7397, 7399 and 7400 stay open, so A2 is not yet proved. |
+| A1 archimedean parameters | Task 5720 (`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`) | Worker 174: will stage. A draft proof needs only `ComplexGenericStandardParameterStatement` (Task 5977), not the GL_n(R) input (Task 5975). At commit `ba9d1e9a` that input is proved: `Archimedean.complexGenericStandardParameter` (module `Representation/Archimedean/ComplexGenericStandardParameterProof`). On 18 November 2026 two proofs of `Global.CuspidalArchimedeanParameterExistenceTCStatement` were staged under Task 5720, both on base `ba9d1e9a` and without added hypotheses: candidate `3ba08c59-d2f1-4dae-a029-cea902cab7e5` of Worker 20 with Worker 174 as coauthor (theorem `Global.cuspidalArchimedeanParameterExistenceTC`, module `Global/Factors/CuspidalArchimedeanParameterExistenceTCProof`), and candidate `a263fc91-1f3a-4dfc-9ed6-551533b1c2bf` of Worker 174 (theorem `Automorphic.cuspidalArchimedeanParameterExistenceTC`, module `Automorphic/CuspidalArchimedeanParameterExistenceTC`). Worker 0 told both workers of the duplicate. On 18 November 2026 Worker 20 told Worker 0 that the two workers keep `3ba08c59`, that they have asked for `a263fc91` to be withdrawn, and that Worker 174 was suspended, so the withdrawal may be delayed. Neither candidate is in the Library at commit `f050c0b1`. The record of `3ba08c59` says that it proves the totally complex form only and does not complete Task 5720. |
+| A2 completed equation | Task 5721 (`5a3b5760-2716-4429-94f5-0ff5bf53aea8`) | Workers 5210 and 5670: will stage. It needs (G'), `Global.CuspidalPairPartialGammaEquationStatement` (Task 6190, `f4660bce-a3cb-416c-89bf-9f0cb2004c8e`), whose published reduction has two semilocal premises that include archimedean functional equations at real places (Tasks 7053 and 7054). At commit `314cfd1a` the Library has the following totally complex chain. Worker 382 (Task 6190) published the totally complex (G'), `Global.CuspidalPairPartialGammaEquationTCStatement` (module `Global/Factors/CuspidalPairPartialGammaEquationTCStatement`), the totally complex semilocal equations `RankinSelbergGlobal.UnequalSemilocalEquationTCStatement` and `EqualSemilocalEquationTCStatement` (module `Global/RankinSelberg/SemilocalEquationTCStatements`), and the proved reduction `cuspidalPairPartialGammaGlobalTCReduction` (module `Global/Factors/CuspidalPairPartialGammaGlobalTCReduction`): the eight unrestricted premises of the published reduction and the two totally complex semilocal equations imply the totally complex (G'). Two of the eight, `UnequalAnalyticStatement` and `EqualAnalyticStatement`, have Library proofs (modules `Global/RankinSelberg/UnequalAnalyticProof` and `EqualAnalyticProof`). At commit `8aede86c` three more are proved: `unequalUnfoldingStatement_proof : UnequalUnfoldingStatement.{u}` (module `Global/RankinSelberg/UnequalUnfoldingProof`; the module `UnequalDualEulerFactorizationProof` has a second proof, `unequalUnfolding_of_gaugeProofs`), `unequalDualEulerFactorization : UnequalDualEulerFactorizationStatement.{u, uQ}` (module `UnequalDualEulerFactorizationProof`) and `equalEulerFactorization : EqualEulerFactorizationStatement.{u, uQ}` (module `EqualEulerFactorizationProof`). Three of the eight have no Library proof at that commit: `UnequalEulerFactorizationStatement`, `EqualUnfoldingStatement` and `EqualDualEulerFactorizationStatement`. Worker 5210 published, for Task 5721, the proved `cuspidalPairPartialGammaTCReduction` (module `Global/Factors/CuspidalPairPartialGammaTCReduction`): the totally complex (G') implies A2. Worker 44 published, for Task 7053, `UnequalSemilocalFactorizationTCStatement` and the proved `unequalSemilocalEquationTCReduction` (modules `Global/RankinSelberg/UnequalSemilocalFactorizationTCStatement` and `UnequalSemilocalEquationTCReduction`), and Worker 5557, for Task 7054, `EqualSemilocalFactorizationTCStatement` with the proved `equalSemilocalReductionTC` (module `Global/RankinSelberg/EqualSemilocalReductionTC`): each totally complex factorization premise implies the corresponding totally complex semilocal equation. Worker 5014 will prove the equal-rank factorization premise under Task 7124, from the statements of Task 7136 (executor Worker 390), whose archimedean result is stated separately for complex and for real places (module `Global/RankinSelberg/ArchimedeanSemilocalTheoryStatement`). On 17 November 2026 Worker 5014 reported to Worker 0 that the conditional reduction of the equal-rank factorization premise to statements of Task 7136 (candidate `250d6ec2`) had passed review and was awaiting integration, and that its planned totally complex form drops the real-place premise. Worker 44 (publisher of Task 7136) published on 17 November 2026 one `lean.proof@1` task for each of the four Task 7136 statements: Task 7396 (`e20c0809-5e65-47b1-892c-e19c6606624d`, `ArchimedeanCentralSignStatement`), Task 7397 (`b687b59b-c6cf-46eb-a4a9-0c9fc3bd9602`, `ArchimedeanFactorizationStatement`), Task 7399 (`a5a6c760-e1fd-47cb-80d3-eae5c19d6ed9`, `ComplexPlaceFunctionalEquationStatement`) and Task 7400 (`ad2b73ae-9f1e-45ca-88a0-3cd016a7950d`, `RealPlaceFunctionalEquationStatement`). By Worker 5014's report the first three are on the totally complex path. At commit `fcb85a7e` the Library has the four statements (modules `Global/RankinSelberg/ArchimedeanCentralSignStatement`, `ArchimedeanFactorizationStatement` and `ArchimedeanFunctionalEquationStatement`, the last with both functional equations) and their conjunctions `ArchimedeanSemilocalTheoryStatement` and `ComplexSemilocalTheoryStatement`. At commit `b369a8f2` it also has two proved reductions. Worker 5014's `equalSemilocalFactorizationReduction` (module `Global/RankinSelberg/EqualSemilocalFactorizationReduction`) derives `EqualSemilocalFactorizationStatement` from the complex-place and real-place equal-rank functional equations, `EqualArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`. The module `Global/RankinSelberg/UnequalSemilocalArchimedeanReduction` proves `unequalSemilocalComplexReduction`: `ComplexSemilocalTheoryStatement` implies `UnequalSemilocalEquationTCStatement`. On 17 November 2026 Worker 5014 reported that the totally complex companion is staged as candidate `9aefd10f-a388-4845-9386-e6e1eaf51d63`. Its module is `Global/RankinSelberg/EqualSemilocalFactorizationReductionTC`, and it derives `EqualSemilocalFactorizationTCStatement` from `ComplexEqualFunctionalEquationStatement`, `EqualArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`. These premises are conjuncts of the targets of proof Tasks 7399, 7397 and 7396 respectively. Those targets are `ComplexPlaceFunctionalEquationStatement`, `ArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`, and their conjunction is `ComplexSemilocalTheoryStatement`. Once the companion is published, both totally complex semilocal equations follow from these three targets. At commit `ab9053b1` the target of Task 7396, `ArchimedeanCentralSignStatement`, is proved: `RankinSelbergGlobal.archimedeanCentralSign : ArchimedeanCentralSignStatement.{u, uQ}` (module `Global/RankinSelberg/ArchimedeanCentralSignProof`). The other two, `ComplexPlaceFunctionalEquationStatement` (Task 7399) and `ArchimedeanFactorizationStatement` (Task 7397), are open. For each of the three other proof tasks the Library has a proved conditional reduction of its target to named open premises. For Task 7397, `archimedeanPointwiseFactorizationReduction` (module `Global/RankinSelberg/EqualArchimedeanFactorizationReduction`, which imports `ArchimedeanFactorizationReduction`) derives `ArchimedeanFactorizationStatement` from two pointwise factorization statements, `UnipotentClassProductStatement` and `RectangleTateStatement`; the equal-rank part `equalArchimedeanFactorizationReduction` needs only the equal-rank pointwise statement and `UnipotentClassProductStatement`. For Task 7399, `complexPlaceFunctionalEquationReduction` (module `Global/RankinSelberg/ComplexPlaceFunctionalEquationReduction`) derives `ComplexPlaceFunctionalEquationStatement` from five premises: the unequal-rank and equal-rank local functional equations over `ℂ`, a Whittaker-model statement, a minus-one statement and a contragredient-parameter statement at complex places; `complexEqualFunctionalEquationReduction` gives the equal-rank conjunct alone. For Task 7400, which is off the totally complex path, `realPlaceJacquetConventionReduction` (module `Global/RankinSelberg/RealJacquetConventionReduction`) derives `RealPlaceFunctionalEquationStatement` from three premises. None of these modules proves its premises, so the targets of Tasks 7397, 7399 and 7400 stay open. At commit `d26f6985` the companion `9aefd10f` is published (module `Global/RankinSelberg/EqualSemilocalFactorizationReductionTC`, with `equalSemilocalFactorizationReductionTC`, `equalSemilocalFactorizationTC_of_archimedeanSemilocalTheory` and `equalSemilocalEquationTC_of_archimedean`). The premises of Task 7399 are reduced further. `complexPlaceMinusOne : ComplexPlaceMinusOneStatement.{u}` (module `ComplexPlaceMinusOneProof`) and `complexPlaceWhittakerAnalytic : ComplexPlaceWhittakerAnalyticStatement` (module `ComplexPlaceWhittakerAnalyticProof`) are proved. In the latter module, `complexPlaceFunctionalEquationLocalReduction` derives `ComplexPlaceFunctionalEquationStatement` from the unequal-rank and equal-rank local functional equations over `ℂ`, the minus-one statement and `ComplexPlaceContragredientParameterStatement`. `complexPlaceContragredientParameterReduction` (module `ComplexPlaceContragredientReduction`, premises stated in `ComplexPlaceContragredientPremises`) derives the contragredient-parameter statement from `ComplexPlaceParameterIrreducibleStatement` and `ComplexStandardPairingParameterStatement`. So four premises of Task 7399 stay open: `ComplexLocalUnequalFunctionalEquationStatement`, `ComplexLocalEqualFunctionalEquationStatement` and these two. Proof Tasks 7569 (`64cc12ca-cd03-498d-aeb2-ceefa4b59f84`) and 7570 (`012193b7-c522-4169-8c6d-bcee66ffac74`) are to prove the two local functional equations. For Task 7397, `rectangleTateStatement : RectangleTateStatement.{u}` is proved (module `RectangleTateProof`). The two pointwise factorization statements and `UnipotentClassProductStatement` stay open, and proof Task 7568 (`f8327a11-ae7f-4147-9af9-3b03ee805e46`) is to prove the unequal-rank pointwise statement. For Task 7400, off the totally complex path, `realPlaceFunctionalEquationLocalReduction` (module `RealPlaceWhittakerAnalyticProof`) reduces its target to three premises: `RealLocalUnequalJacquetStatement`, `RealLocalPositiveEqualJacquetStatement` and `RealPlaceContragredientPairLStatement`. The targets of Tasks 7397, 7399 and 7400 stay open, so A2 is not yet proved. At commit `ba9d1e9a` a sixth of the eight unrestricted premises is proved: `equalUnfoldingStatement_proof : EqualUnfoldingStatement` (module `Global/RankinSelberg/EqualUnfoldingProof`). At commit `f050c0b1` the last two are proved: `unequalEulerFactorization : UnequalEulerFactorizationStatement.{u, uQ}` (module `UnequalEulerFactorizationProof`) and `equalDualEulerFactorization : EqualDualEulerFactorizationStatement.{u, uQ}` (module `EqualDualEulerFactorizationProof`). So all eight unrestricted premises of `cuspidalPairPartialGammaGlobalTCReduction` are proved, and the totally complex (G') needs only the two totally complex semilocal equations, which follow from the targets of Tasks 7397 and 7399 (the target of Task 7396 is proved). For Task 7399, both remaining non-local premises are proved at commit `ba9d1e9a`: `complexPlaceParameterIrreducible` (module `ComplexPlaceParameterIrreducibleProof`) and `complexStandardPairingParameter` (module `ComplexStandardPairingParameterProof`). The module `ComplexPlaceFunctionalEquationLocalFEReduction` proves `complexPlaceFunctionalEquationLocalFEReduction`: `ComplexLocalUnequalFunctionalEquationStatement` and `ComplexLocalEqualFunctionalEquationStatement` imply `ComplexPlaceFunctionalEquationStatement`. So the target of Task 7399 needs only the two local functional equations of Tasks 7569 and 7570. At commit `f050c0b1` further proved reductions of these two are in the Library, none of which proves either equation. The module `ComplexLocalEqualRankZeroReduction` splits the equal-rank equation by rank (`complexLocalEqualFunctionalEquationStatement_iff`) and proves the rank-index-zero case, `GL_1(ℂ) × GL_1(ℂ)`, from `LocalFactor.ComplexArchimedeanTateStatement` (`complexLocalEqualAtRankStatement_zero`); proof Task 7762 (`0bb086f1-3b38-48aa-b050-2f68c0ee7b1a`) is to prove that Tate statement. The modules `ComplexLocalEqualCharacterReduction`, `ComplexLocalEqualDualityReduction` and `ComplexLocalEqualIntertwinerReduction` (equal rank) and `ComplexUnequalAnalyticReduction` (unequal rank) prove further reductions to named analytic statements. For Task 7397, `unipotentClassProductStatement : UnipotentClassProductStatement` is proved at commit `ba9d1e9a` (module `UnipotentClassProductProof`). So its target needs only the two pointwise factorization statements, `UnequalPointwiseFactorizationStatement` (proof Task 7568) and `EqualPointwiseFactorizationStatement`; no TaskHub task names the latter in its objective (search of the task files on 18 November 2026), so only Task 7397 covers it, through its target. At commit `f050c0b1` the targets of Tasks 7397 and 7399 are open, so A2 is not yet proved. |
 | A3 global functional equation | Task 5493 (`8e9a5dd6-1b51-4e53-af72-ca2e6d42fe0a`) | Worker 5493: will stage, from the proofs of A1 and A2 and `cuspidalPairLocalData`. |
 | B1 Thm 2.3 | Task 5003 (`0fdacf55-4b2d-4416-a0bb-2c98acaa1979`) | no answer yet. |
 | B2 Cor. 2.3 | Task 5175 (`b5a124c7-ff98-4121-bd17-27c291f004d6`) | Worker 5175: will stage; a draft proof from B1 compiles. |
@@ -1208,9 +1343,9 @@ then executed it, Reviewer 8131 approved its candidate `d2cd2721`, and its
 module is in the Library at commit `d26f6985`. So Tasks 7371, 7372 and 7373
 no longer wait for another statement task. By their requirements, Task 7374
 also waits for Task 7371, Task 7377 for Tasks 7371 and 7372, and Task 7379
-(revision 3) for Tasks 7371–7373, 7375 and 7376. The next link of the chain
-to (I3) and (I4) is Task 7373: Task 7375 needs it, and Tasks 7376, 7378 and
-7453 need Task 7375. At about 06:30 UTC on 18 November 2026, Tasks 7373,
+(revision 3) for Tasks 7371–7373, 7375 and 7376. At commit `d26f6985` the
+next link of the chain to (I3) and (I4) was Task 7373: Task 7375 needs it,
+and Tasks 7376, 7378 and 7453 need Task 7375. At about 06:30 UTC on 18 November 2026, Tasks 7373,
 7375 and 7376 had no executor, and their recruitment was pending (TaskHub
 records). No module of Tasks 7371–7379 was in the Library or staged, and
 none of these tasks had a shared draft. Worker 0 reported this to the
@@ -1218,15 +1353,25 @@ operator on 18 November 2026 (message `896950d29bc75e2db08798612b5b941f`).
 At about 09:45 UTC on 18 November 2026, Worker 331 had claimed Task 7373
 and was working on it. Task 7375 was ready with no member and its
 recruitment pending; Task 7376 waits for it (TaskHub records). No module of
-Tasks 7371–7379 is in the Library at commit `8aede86c`.
+Tasks 7371–7379 is in the Library at commit `8aede86c`. By about 18:40 UTC
+on 18 November 2026 Worker 661 had joined Task 7373 as second executor, and
+the task was verifying its candidate `e8ff078d`. At commit `f050c0b1` the
+modules of Tasks 7372 (`HenniartGLUpperBoundStatement`) and 7373
+(`HenniartTwistSwanStatement`) are in the Library; neither statement is
+proved. So both requirements of Task 7375, Tasks 7370 and 7373, are met.
+At about 19:30 UTC on 18 November 2026 Task 7375 was still ready with no
+member, its recruitment pending (TaskHub record). At about 21:20 UTC Worker
+939 had claimed it and was working on it, with no candidate yet (TaskHub
+record). It is now the next link of the chain to (I3) and (I4): Tasks 7376,
+7378 and 7453 need it.
 
 | Task | Module | Content |
 | --- | --- | --- |
 | 7369 (`cd4c8f68-81e8-434a-bc74-d3d7711bf2dd`) | `HenniartPolarPart` (in the Library) | the polar-part model `ν(n, f, s; q)` and `PolarPartClosedFormulaStatement`, `PolarPartCountingIdentityStatement`, `PolarPartTruncatedUniquenessStatement` |
 | 7370 (`67ed0c1d-b4a2-42ea-9861-a79f84aff975`) | `HenniartRefinedStrata` (in the Library) | Swan exponents `Numerical.HasWeilSwan` and `Numerical.HasSupercuspidalSwan`, torsion numbers `Numerical.weilTorsionNumber` and `Numerical.supercuspidalTorsionNumber`, the refined orbit strata `W_K(n, s, f)` and `S_K(n, s, f)` (`Numerical.weilRefinedStratum` and `Numerical.supercuspidalRefinedStratum`), the counts `Numerical.weilTwistIrreducibleCount` and `Numerical.weilConductorCount`, the statement `C(L, x, N)` (`Numerical.CountsAgreeUpToSlope`), `WeilArtinConductorExistenceStatement` (Artin integrality) and `RefinedStrataStatement`, the conjunction of `NumericalInjectionRefinedStrataStatement` and `CountingSurjectivityStatement` (the counting-versus-surjectivity lemma) |
 | 7371 (`f5d725f4-f8c6-471f-8b13-2602ee6e4b01`) | `HenniartLaumonDeligneStatement` | (I2): `LaumonDeligneCountStatement`, the statement (LD) |
-| 7372 (`7cc9ca0f-8675-4db1-9209-cac8b51cf753`) | `HenniartGLUpperBoundStatement` | (I1): `SupercuspidalStratumUpperBoundStatement` |
-| 7373 (`4b18f9b2-c264-422a-a1b9-215f9549a7f9`) | `HenniartTwistSwanStatement` | twists by characters of `K^×` and `SupercuspidalTwistSwanBoundStatement`, `sw(χπ) ≤ max(sw π, n·sw χ)` |
+| 7372 (`7cc9ca0f-8675-4db1-9209-cac8b51cf753`) | `HenniartGLUpperBoundStatement` (in the Library at commit `f050c0b1`) | (I1): `SupercuspidalStratumUpperBoundStatement` |
+| 7373 (`4b18f9b2-c264-422a-a1b9-215f9549a7f9`) | `HenniartTwistSwanStatement` (in the Library at commit `f050c0b1`) | twists by characters of `K^×` and `SupercuspidalTwistSwanBoundStatement`, `sw(χπ) ≤ max(sw π, n·sw χ)` |
 | 7374 (`a058af44-6fab-4c02-9f56-ca924b697b56`) | `HenniartWeilElementaryLayer` | the truncated Weil-side counts: unramified descent, rank one, tame reduction, Henniart's Corollaire 1.4, the truncated Théorème 1.3 and the close-range count from (LD) |
 | 7375 (`5fae053d-2306-4560-9d69-61d0500952a3`) | `HenniartCyclicBaseChange` | cyclic steps of prime degree `Numerical.CyclicPrimeStep`, the Herbrand function, the weak base-change predicate `Numerical.IsWeakCyclicBaseChange` and (I3): `LocalCyclicBaseChangeStatement` |
 | 7376 (`88bd084f-4405-4f24-9646-699f6764fc66`) | `HenniartCompatibleInjections` | (I4): `CompatibleNumericalInjectionsStatement` |
@@ -1274,7 +1419,7 @@ not a premise. The five premises and their owners on 17 November 2026:
 
 | Premise | Statement | Proof owner |
 | --- | --- | --- |
-| (I1) | `SupercuspidalStratumUpperBoundStatement` (Task 7372) | program Task 7339 |
+| (I1) | `SupercuspidalStratumUpperBoundStatement` (Task 7372) | program Task 7339; on 18 November 2026 Worker 5428 published from it Task 7794 (`b44bd8f7-d7a7-4d06-a151-5bcd0457faa9`), which is to state the reduction of (I1) to the statements A1–A3 of Task 7447 and Q3 of Task 7445 and to publish proof tasks for the reduction and for (I1) |
 | (LD), input (I2) | `LaumonDeligneCountStatement` (Task 7371) | programs Task 7341 (E1a) and Task 7342 (E1b); the statements of the two halves wait for Task 7341's Weil groups in characteristic `p`, and the context of Task 7371 says that their statement tasks follow |
 | (I4) | `CompatibleNumericalInjectionsStatement` (Task 7376, revision 3) | program Task 7453 (`010fb780-e545-44b3-b923-936ad3f52066`), published by Worker 0 under operator answer `a3700c45` |
 | twist Swan bound | `SupercuspidalTwistSwanBoundStatement` (Task 7373) | program Task 7339, deliverable 5 (context of Task 7373) |
@@ -1399,7 +1544,11 @@ uniformizer and states six propositions:
 proves none of them. At commit `d26f6985` the third is proved:
 `herbrandPsiTruncation : HerbrandPsiTruncationStatement.{u}` (module
 `LocalFactor/Ramification/Herbrand/KummerTruncationProof`), the target of
-proof Task 7501. At the same commit the Library has the module of Task 7461,
+proof Task 7501. At commit `ba9d1e9a` the first is proved:
+`kummerStepUpperSup : KummerStepUpperSupStatement.{u}` (module
+`LocalFactor/Ramification/Herbrand/KummerStepUpperSupProof`), the target of
+proof Task 7502 (`8b2fe031-ec7b-43b5-9f19-94de9419abe2`). The other four
+are unproved at commit `f050c0b1`. At commit `d26f6985` the Library has the module of Task 7461,
 `LocalFactor/Ramification/Herbrand/TruncationQuotientStatement`. It defines
 the truncated quotients and states, among others,
 `KummerStageGaloisQuotientStatement` and `KummerStageWeilQuotientStatement`:
@@ -1471,7 +1620,11 @@ Tasks 7627, 7630 and 7631 under premise 1.
   `44b5eb29-398e-41ec-853f-29985ac885c9`), and T2,
   `SupercuspidalSwanLevelStatement` (Task 7683,
   `ecbe36d5-18e5-411a-bea5-1cface354d88`). The four level statements are
-  in modules of the same names under `BushnellKutzko/`.
+  in modules of the same names under `BushnellKutzko/`. At commit
+  `f050c0b1` the label count is proved:
+  `Henniart.bushnellKutzkoLabelCount` (module
+  `Correspondence/BushnellKutzkoLabelCountProof`). The four level
+  statements are unproved at that commit.
 - For Task 7340:
   - proof tasks for the norm lemma of cyclic base change,
     `CyclicNormLemmaStatement` (Task 7591,
@@ -1544,6 +1697,84 @@ route were published. The list is not complete.
   the norm-kernel Hecke character, Task 7733 (described under premise 2
   above).
 
+Between 09:45 and about 19:30 UTC on 18 November 2026 the following further
+tasks on the route were published. The list is not complete. The children
+of Task 7343 (Tasks 7751, 7752 and 7783–7786) are described under premise
+1, Task 7762 in the A2 row of the input table, and Task 7794 in the table
+of the five premises of the assembly under premise 2.
+
+- For Task 7339: proof tasks for six statements of Bushnell–Kutzko (1993)
+  that are successors of Task 7412: `TameCorestrictionStatement` (Task
+  7753, `0e682069-fdf5-4cbf-b28d-aa1f3b4a132a`),
+  `AdjointExactnessStatement` (Task 7754,
+  `1b1e5ead-a360-42f8-b500-b9a3bfba2caa`),
+  `MinimalCriticalExponentStatement` (Task 7755,
+  `aa2d5cfd-ea4f-44d7-bd63-b61fc064599f`), `SimpleIntertwiningStatement`
+  (Task 7756, `36e195cb-6f03-4bb7-a737-435aeeeeaaca`),
+  `StratumEquivalenceStatement` (Task 7757,
+  `812861b2-978f-471d-8097-f12745c6b478`) and `RefinementStatement` (Task
+  7758, `3dca5e89-f6e3-4dc8-bd02-1476f4df040c`), all in the namespace
+  `BushnellKutzko`. At commit `f050c0b1` the first two are proved
+  (`BushnellKutzko.tameCorestriction` and `BushnellKutzko.adjointExactness`,
+  modules `BushnellKutzko/TameCorestrictionProof` and
+  `BushnellKutzko/AdjointExactnessProof`). Task 7787 (see the beginning of
+  this note) is to prove `StratumApproximationStatement`.
+- For Task 7342, Worker 816 published Task 7759
+  (`cced8ae5-36ca-4b88-80d9-817711f3d9bd`). It is to define the Swan
+  exponent and the refined twist-orbit strata of l-adic Galois classes and
+  to state four results of Henniart (1988), §§4.1–4.3, among them Laumon's
+  twist-equivariant bijection, in a module
+  `Correspondence/HenniartLadicStatement`, from which Task 7342 is to prove
+  E1b (Task 7736). It uses the l-adic classes of Task 7555, whose module
+  `Correspondence/HenniartLadicClasses` is in the Library at commit
+  `f050c0b1`.
+- For Task 7340, proof tasks for statements of its trace formula and
+  base-change program. At commit `ba9d1e9a` the Library has, among others,
+  the modules `BaseChange/FundamentalLemmaStatement`,
+  `BaseChange/UnitFundamentalLemmaStatement`, `BaseChange/TwistedCharacter`,
+  `BaseChange/SigmaLiftCharacterIdentityStatement`,
+  `BaseChange/TwistedCharacterRegularValuesStatement`,
+  `BaseChange/SplitMatchingStatement`,
+  `BaseChange/OrbitalIntegralPositivityStatement`,
+  `TraceFormula/GeneralLinearSimpleTraceFormulaStatement`,
+  `TraceFormula/GeneralLinearCuspFormLocalVanishingStatement` and
+  `Automorphic/GeneralLinearCuspidalSummandRealizationStatement`. At
+  commit `f050c0b1` it also has, among others,
+  `TraceFormula/GeneralLinearSimpleTwistedTraceFormulaStatement`,
+  `TraceFormula/GeneralLinearBaseChangeTraceComparisonStatement`,
+  `TraceFormula/GeneralLinearSupercuspidalGlobalizationStatement` and
+  `TraceFormula/CyclicFieldGlobalizationStatement`. None of these
+  statements is proved at commit `f050c0b1` (`BaseChange/TwistedCharacter`
+  only defines twisted characters and lifts). Worker 3657 published, under
+  the program `34b81620-20d7-4059-9b08-6bedd1c1c029` and with Task 7340 as
+  a consumer, proof Tasks 7775 (`0767626e-cc7a-43a6-af97-34e0a605f2ef`) and
+  7776 (`eb0c889f-6748-4b62-9b12-3811f26d2b03`) for the two statements of
+  the module `Automorphic/GeneralLinearCuspidalSummandRealizationStatement`,
+  on the realization of cuspidal summands. The proof tasks published from
+  Task 7340 are Tasks 7789–7793 (`cf5b91ac-8c52-4136-933c-5a0c9e3309f9`,
+  `b22c8db6-3f03-4bda-98f6-da27400e0c2d`,
+  `d8dc30c5-8fea-4a6c-9dc5-c2a02f189280`,
+  `a2625558-6d79-4b2e-a039-8cfe02ccfce5`,
+  `b457924c-82ba-4382-b2dd-df91dee24ddc`), on separation of bounded
+  characters, Schur's lemma for Hilbert sums, traces along Hilbert sums,
+  the twist invariance of the cuspidal subspace and the globalization of a
+  cyclic extension of local fields; 7795 and 7798
+  (`8ac63c6e-64e4-4643-b6b0-ed0b9766e1e5`,
+  `2bffa8d9-ae6f-4d6f-9599-4c5b24bf42ae`), on the trace comparisons
+  between the positive and the norm-one quotients; 7796 and 7797
+  (`7075c5e3-02f3-4042-8d2a-89c862c16bda`,
+  `07a33632-5034-462f-8f0a-04f1d113df82`), for `SplitMatchingStatement`
+  and `OrbitalIntegralPositivityStatement`; 7799 and 7800
+  (`b920f86f-b0e0-4d8b-9704-b781e3d12715`,
+  `1dcf5732-7872-4c92-a704-d87aa2cc73f5`), on twisted centralizers and on
+  the adelic points of `Res_{L/K} GL_n`; 7808 and 7809
+  (`fd570889-5290-47bc-b580-c51425e201ba`,
+  `742f063b-94ea-44da-8b87-cb26bc8c3d77`), for
+  `GeneralLinearCuspFormLocalVanishingStatement` and the local trace
+  factorization on a cuspidal summand; and 7810
+  (`76f34c80-3a69-4af6-89f6-231702c05cab`), for
+  `UnitFundamentalLemmaStatement`.
+
 So, once the glue is published and proved, premise 2 follows from the five
 premises of the assembly, each of which now has a proof owner. The shared
 planning graph places the programs and the glue under premise 2: node
@@ -1602,6 +1833,10 @@ Tasks 7375, 7376 and 7465. Task 7376 waits for Task 7375, and Task 7375 for
 Task 7373. At about 06:30 UTC on 18 November 2026 none of the three had an
 executor; at about 09:45 UTC Worker 331 had claimed Task 7373, and Tasks
 7375 and 7376 still had none (see the statement tasks of Option II above).
+At commit `f050c0b1` the statement of Task 7373 is in the Library, so Task
+7375 no longer waits for another statement task; at about 19:30 UTC on 18
+November 2026 it still had no executor, and at about 21:20 UTC Worker 939
+had claimed it.
 
 The restricted III.5.1 is the target of Task 7465
 (`6cf9cf58-e349-4b29-89cf-1d33171cb458`). Worker 514 published it under Task
@@ -1637,8 +1872,8 @@ datum at a finite place (`IsobaricData.HasLocalSupercuspidalSupport`), and
 `Correspondence.supercuspidalSupportDatum`. Besides two lemmas on ranks, it
 states and proves no proposition. Task
 7465 depends on Task 7460 and on Task 7375, and Task 7375 stays unchanged.
-Since Task 7375 still waits for Task 7373, the statement of Task 7465 waits
-too. The proof of Task 7465 belongs to Task 7453.
+The statement of Task 7375 is not in the Library at commit `f050c0b1`, so
+the statement of Task 7465 still waits for it. The proof of Task 7465 belongs to Task 7453.
 
 The cyclic transfer statements B1–B3 (`CyclicStableDescentStatement`,
 `CyclicRegularInductionStatement`, `CyclicRegularOrbitLiftStatement`) assume
@@ -1657,7 +1892,11 @@ prove the statement, from the proved class-formation reciprocity and
 statement is in the Library, and it has no Library proof. On 18 November
 2026 Worker 96 published its proof task for Task 7345, Task 7733
 (`1649c12b-2d57-4323-9e10-1550a64b3a0f`, `lean.proof@1`), whose target is
-`CyclicNormKernelCharacterStatement.{uF, uE}` at all universe levels. Both the proof of unit 1 of
+`CyclicNormKernelCharacterStatement.{uF, uE}` at all universe levels. At
+commit `f050c0b1` the statement is proved:
+`Global.HeckeCharacter.cyclicNormKernelCharacter` (module
+`Global/Arithmetic/CyclicNormKernelCharacterProof`), for independent
+universes `uF` and `uE`. Both the proof of unit 1 of
 Task 7453 and Harris's Prop. 4.8 under the exact-stabilizer condition (Task
 7343) apply B1–B3 and so need this character. The planning graph's node
 `proof.cyclic-norm-kernel-hecke-character` records this.
@@ -2027,10 +2266,13 @@ R2 rulings). They concern only the exact-stabilizer branch of Harris's Prop.
      a trial of that move is under way. Until then there is to be no
      adapted copy of NYLL and no light port.
    - The cyclic transfer statements B1–B3 assume a Hecke character `η`
-     with `η.HasNormKernel E`, and the Library has no theorem that
-     produces one. At the operator's instruction, Worker 96 published Task
-     7475 (`f3e9b7a4-6895-4b0a-8229-4c115601c2df`) for it; see premise 2
-     above. The openness of the idele-class norm image, which the operator
+     with `η.HasNormKernel E`. When the operator answered (17 November
+     2026), the Library had no theorem that produced one. At the
+     operator's instruction, Worker 96 published Task 7475
+     (`f3e9b7a4-6895-4b0a-8229-4c115601c2df`) for it; see premise 2
+     above. At commit `f050c0b1` the Library proves its statement
+     (`Global.HeckeCharacter.cyclicNormKernelCharacter`, module
+     `Global/Arithmetic/CyclicNormKernelCharacterProof`). The openness of the idele-class norm image, which the operator
      also asked for, is already proved in the Library
      (`Global.AdelicFunctoriality.isOpenMap_ideleClassNorm`).
    - By the operator's answer, Task 7345 is complete with the audit note
@@ -2102,15 +2344,20 @@ premise 2 above) and is done.
 ## The composite
 
 The module below compiles at commit
-`8aede86c1ec386cf08cfb29e80ce3c58a3239cd8` in environment
+`f050c0b1b525624bc32c1e7c25a8d2841bb2d4e0` in environment
 `5c94c648-e8dc-4002-a50a-071ebf3f6096`, with 0 errors and 0 warnings. The
 check compiled the block verbatim as a private draft module in the Lean
 service, together with a second draft module that imports it and runs
-`#print axioms` on each of its three theorems. For each theorem the output
+`#print axioms` on each of its four theorems. For each theorem the output
 lists only the axioms `propext`, `Classical.choice` and `Quot.sound`. The
-diagnostic is the private record `cfac2077-60f7-4602-9ecb-42034a198b07`.
-The same check at commit `d26f6985` for the twenty-fourth version is the
-record `ec9f2cac-a0b1-46dd-934d-0baea266a667`. The twenty-fourth version corrected one docstring of the module (local
+diagnostic is the private record `00577b0e-54e6-4cdf-b483-976c655c6d30`.
+The twenty-sixth version added the fourth theorem and its import. The same
+check of the first three theorems, without that import, is the record
+`3eface77-ddb2-4fc2-919b-b6bd9a25963c` at commit `f050c0b1` and the record
+`07b382f6-49d8-41f7-8aa4-aaa58ce3e03b` at commit `ba9d1e9a`. At commit
+`8aede86c` for the twenty-fifth version it is the record
+`cfac2077-60f7-4602-9ecb-42034a198b07`, and at commit `d26f6985` for the
+twenty-fourth version the record `ec9f2cac-a0b1-46dd-934d-0baea266a667`. The twenty-fourth version corrected one docstring of the module (local
 relative class formation is the third input of `candidateExistenceReduction`,
 not the fifth); the same check before that correction, also at commit
 `d26f6985`, is the record `65aa3186-47a0-427c-9c5c-74d115f72584`.
@@ -2121,7 +2368,7 @@ for the twenty-second version the record
 declaration inspection once for each theorem, with the same axioms
 (records `5ec0c345`, `d11cf522` and `61df03da`). To reproduce the check,
 save the block as a draft module, save a second module that imports it and
-contains the three `#print axioms` commands, and compile both with
+contains the four `#print axioms` commands, and compile both with
 `lean_check`. The module is a development check, not a published proof.
 
 The first theorem, `fullCorrespondence_of_henniartTwoInputs`, has the two
@@ -2179,6 +2426,24 @@ proof of it would leave the four global hypotheses and premise 2. Like the
 second theorem, the third does not prove the target at an arbitrary universe
 `uA`.
 
+The fourth theorem, `fullCorrespondence_zero_of_henniartExactStabilizerInputs`,
+was added in the twenty-sixth version. It is the second theorem with
+Harris's Prop. 4.8 in its exact-stabilizer form: its first hypothesis is
+`Global.Harris.Proposition48ExactStabilizerStatement.{uF, 0, 0, 0, uS}`
+(the restated proposition of Task 7413, module
+`Global/Arithmetic/HarrisProposition48ExactStabilizerStatement`) instead of
+`Global.Harris.Proposition48Statement` at the same universes. Its other
+hypotheses and its conclusion are those of the second theorem. It obtains
+premise 1 at the same universes from the published
+`candidateExistenceExactStabilizerReduction.{uF, uP, uS, uP, uF}` (Task 7751,
+module `Correspondence/HenniartCandidateExistenceExactStabilizerReductionProof`),
+again with `localRelativeClassFormation.{0}` as the third input. The same
+module as the restated proposition proves
+`proposition48ExactStabilizerStatement_of_proposition48Statement`, so the
+first hypothesis of the fourth theorem follows from that of the second. Like
+the second theorem, the fourth does not prove the target at an arbitrary
+universe `uA`.
+
 ```lean
 import Langlands.Correspondence.FullCorrespondenceReduction
 import Langlands.Correspondence.HenniartSupercuspidalConductorReductionProof
@@ -2186,6 +2451,7 @@ import Langlands.Representation.Conductor.SupercuspidalPadicConductorExponentPro
 import Langlands.Correspondence.HenniartCandidateExistenceReductionProof
 import Langlands.Correspondence.HenniartCandidateExistenceTCReductionStatement
 import Langlands.ClassFieldTheory.Local.LocalRelativeClassFormationProof
+import Langlands.Correspondence.HenniartCandidateExistenceExactStabilizerReductionProof
 
 namespace Langlands.Correspondence
 
@@ -2237,6 +2503,23 @@ theorem fullCorrespondence_zero_of_henniartTCInputs
     FullCorrespondenceStatement.{uF, uP, 0} :=
   fullCorrespondence_of_henniartTwoInputs.{uF, uP, 0}
     (hD hHarris hasi ClassFieldTheory.Local.localRelativeClassFormation.{0} hpole hcomp)
+    hnum
+
+open Langlands.Henniart LocalFactor in
+/-- Exact-stabilizer variant: as `fullCorrespondence_zero_of_henniartGlobalInputs`, with
+Harris's Prop. 4.8 taken in its exact-stabilizer form
+`Global.Harris.Proposition48ExactStabilizerStatement`, through the published
+`candidateExistenceExactStabilizerReduction` (Task 7751). -/
+theorem fullCorrespondence_zero_of_henniartExactStabilizerInputs
+    (hHarris : Global.Harris.Proposition48ExactStabilizerStatement.{uF, 0, 0, 0, uS})
+    (hasi : ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uP, uS, uS})
+    (hpole : Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement.{0, uP, uS})
+    (hcomp : Global.PoleComparison.HenniartCompositeMapStatement.{0, uF, uP, uS, uP})
+    (hnum : NumericalSurjectivityStatement.{uF, uP, 0}) :
+    FullCorrespondenceStatement.{uF, uP, 0} :=
+  fullCorrespondence_of_henniartTwoInputs.{uF, uP, 0}
+    (candidateExistenceExactStabilizerReduction.{uF, uP, uS, uP, uF} hHarris hasi
+      ClassFieldTheory.Local.localRelativeClassFormation.{0} hpole hcomp)
     hnum
 
 end Langlands.Correspondence
