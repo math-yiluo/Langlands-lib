@@ -1,3 +1,4 @@
+import Langlands.LocalFactor.Ramification.Herbrand.GeneralAbsolute
 import Langlands.LocalFactor.Ramification.Herbrand.Finite
 import Langlands.ClassFieldTheory.Local.Galois
 
@@ -16,6 +17,13 @@ universe u v
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p)
 
+local instance : CharZero F.Carrier := Algebra.charZero_of_charZero (Padic p) F.Carrier
+
+private theorem padicBaseNorm_compatible (a b : Padic p) :
+    ‖a‖ ≤ ‖b‖ ↔ ValuativeRel.vle a b := by
+  change ‖a‖ ≤ ‖b‖ ↔ Padic.mulValuation a ≤ Padic.mulValuation b
+  simp only [← not_lt, Padic.norm_lt_norm_iff_mulValuation_lt]
+
 /-- An actual finite Galois intermediate field, packaged without changing its
 carrier, operations, or specified algebra maps. The ambient universe is independent. -/
 abbrev finiteGaloisPadicField {Ω : Type v} [Field Ω] [Algebra F.Carrier Ω]
@@ -32,17 +40,14 @@ abbrev absoluteFiniteExtension
 /-- Actual restriction, continuous for the existing Krull topologies. -/
 def absoluteFiniteRestriction
     (L : FiniteGaloisIntermediateField F.Carrier (AlgebraicClosure F.Carrier)) :
-    Field.absoluteGaloisGroup F.Carrier →ₜ* Gal(L/F.Carrier) where
-  toMonoidHom := AlgEquiv.restrictNormalHom (F := F.Carrier)
-    (K₁ := AlgebraicClosure F.Carrier) L
-  continuous_toFun := InfiniteGalois.restrictNormalHom_continuous L.toIntermediateField
+    Field.absoluteGaloisGroup F.Carrier →ₜ* Gal(L/F.Carrier) :=
+  Local.absoluteFiniteRestriction F.Carrier (AlgebraicClosure F.Carrier) L
 
 /-- Absolute upper numbering as the intersection of all finite restriction preimages. -/
 def absoluteUpperRamificationGroup (v : ℝ) :
     Subgroup (Field.absoluteGaloisGroup F.Carrier) :=
-  ⨅ L : FiniteGaloisIntermediateField F.Carrier (AlgebraicClosure F.Carrier),
-    (canonicalUpperRamificationGroup (absoluteFiniteExtension F L) F.Carrier v).comap
-      (absoluteFiniteRestriction F L).toMonoidHom
+  Local.absoluteUpperRamificationGroup (Padic p) F.Carrier
+    (AlgebraicClosure F.Carrier) (padicBaseNorm_compatible (p := p)) v
 
 /-- Exact elementwise meaning of the intersection. -/
 theorem mem_absoluteUpperRamificationGroup_iff (v : ℝ)
@@ -50,9 +55,9 @@ theorem mem_absoluteUpperRamificationGroup_iff (v : ℝ)
     σ ∈ absoluteUpperRamificationGroup F v ↔
       ∀ L : FiniteGaloisIntermediateField F.Carrier (AlgebraicClosure F.Carrier),
         absoluteFiniteRestriction F L σ ∈
-          canonicalUpperRamificationGroup (absoluteFiniteExtension F L) F.Carrier v := by
-  simp only [absoluteUpperRamificationGroup, Subgroup.mem_iInf, Subgroup.mem_comap]
-  rfl
+          canonicalUpperRamificationGroup (absoluteFiniteExtension F L) F.Carrier v :=
+  Local.mem_absoluteUpperRamificationGroup_iff (Padic p) F.Carrier
+    (AlgebraicClosure F.Carrier) (padicBaseNorm_compatible (p := p)) v σ
 
 /-- Finite evaluation explicitly uses the canonical integer-ring lower group
 at the ceiling of the inverse Herbrand parameter. -/
@@ -91,12 +96,9 @@ instance absoluteUpperRamificationGroup_normal (v : ℝ) :
 
 /-- Closedness follows from continuous restriction into finite discrete groups. -/
 theorem absoluteUpperRamificationGroup_isClosed (v : ℝ) :
-    IsClosed (absoluteUpperRamificationGroup F v : Set (Field.absoluteGaloisGroup F.Carrier)) := by
-  unfold absoluteUpperRamificationGroup
-  rw [Subgroup.coe_iInf]
-  apply isClosed_iInter
-  intro L
-  exact (isClosed_discrete _).preimage (absoluteFiniteRestriction F L).continuous
+    IsClosed (absoluteUpperRamificationGroup F v : Set (Field.absoluteGaloisGroup F.Carrier)) :=
+  Local.absoluteUpperRamificationGroup_isClosed (Padic p) F.Carrier
+    (AlgebraicClosure F.Carrier) (padicBaseNorm_compatible (p := p)) v
 
 /-- The real-indexed absolute filtration is decreasing. -/
 theorem absoluteUpperRamificationGroup_antitone : Antitone (absoluteUpperRamificationGroup F) := by
@@ -107,14 +109,26 @@ theorem absoluteUpperRamificationGroup_antitone : Antitone (absoluteUpperRamific
     (absoluteFiniteExtension F L).canonicalTopologicalData F.Carrier hvw (hσ L)
 
 @[simp] theorem absoluteUpperRamificationGroup_neg_one :
-    absoluteUpperRamificationGroup F (-1) = ⊤ := by
-  simp [absoluteUpperRamificationGroup, canonicalUpperRamificationGroup]
+    absoluteUpperRamificationGroup F (-1) = ⊤ :=
+  Local.absoluteUpperRamificationGroup_neg_one (Padic p) F.Carrier
+    (AlgebraicClosure F.Carrier) (padicBaseNorm_compatible (p := p))
 
 /-- The full group is retained for indices below Serre's domain as well. -/
 theorem absoluteUpperRamificationGroup_of_le_neg_one {v : ℝ} (hv : v ≤ -1) :
     absoluteUpperRamificationGroup F v = ⊤ := by
   apply top_unique
   simpa using absoluteUpperRamificationGroup_antitone F hv
+
+/-- The named closed positive upper limit, with the same Krull topology as
+the published absolute filtration. -/
+def wildInertia : Subgroup (Field.absoluteGaloisGroup F.Carrier) :=
+  Local.wildInertia (Padic p) F.Carrier (AlgebraicClosure F.Carrier)
+    (padicBaseNorm_compatible (p := p))
+
+instance wildInertia_normal : (wildInertia F).Normal := by
+  change ((⨆ (v : ℝ) (_ : 0 < v),
+    absoluteUpperRamificationGroup F v).topologicalClosure).Normal
+  exact Subgroup.is_normal_topologicalClosure _
 
 /-- The local abelianized upper group is the actual image under the published
 continuous closed-commutator quotient projection. -/

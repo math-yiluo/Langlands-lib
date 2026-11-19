@@ -21,3 +21,5 @@ absolute convergence for every added complex character, as in Proposition
 compact neighborhood of each point. The integral then agrees on that
 neighborhood with the jointly continuous integrand integrated over the
 common compact set in the smaller group. [Jacquet, *Archimedean Rankin–Selberg integrals*, §7.1, p. 43](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).
+
+`HasFullRowRank` uses the right-inverse predicate `Langlands.RankinSelberg.AdjacentRankFullRank`.

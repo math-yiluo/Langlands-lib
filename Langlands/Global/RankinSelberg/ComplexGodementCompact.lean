@@ -1,3 +1,4 @@
+import Langlands.Representation.RankinSelberg.AdjacentRankCompactOrbit
 import Langlands.Global.RankinSelberg.ComplexGodementSection
 import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
@@ -28,7 +29,7 @@ private abbrev Rect (m : ℕ) := Matrix (Fin m) (Fin (m + 1)) ℂ
 
 /-- A rectangular complex matrix with full row rank, expressed by a right inverse. -/
 def HasFullRowRank {m : ℕ} (X : Rect m) : Prop :=
-  ∃ Y : Matrix (Fin (m + 1)) (Fin m) ℂ, X * Y = 1
+  Langlands.RankinSelberg.AdjacentRankFullRank X
 
 private theorem isUnit_trailing {m : ℕ} {X : Rect m} (hzero : ∀ i, X i 0 = 0)
     (hX : HasFullRowRank X) : IsUnit (X.submatrix id Fin.succ) := by
@@ -45,11 +46,8 @@ private theorem isUnit_trailing {m : ℕ} {X : Rect m} (hzero : ∀ i, X i 0 = 0
   exact zero_ne_one hd
 
 private theorem fullRowRank_mul {m : ℕ} {X : Rect m} (hX : HasFullRowRank X)
-    (g : Langlands.GeneralLinear (m + 1) ℂ) : HasFullRowRank (X * g.val) := by
-  obtain ⟨Y, hY⟩ := hX
-  refine ⟨g⁻¹.val * Y, ?_⟩
-  rw [Matrix.mul_assoc, ← Matrix.mul_assoc g.val, ← Units.val_mul, mul_inv_cancel,
-    Units.val_one, Matrix.one_mul, hY]
+    (g : Langlands.GeneralLinear (m + 1) ℂ) : HasFullRowRank (X * g.val) :=
+  (Langlands.RankinSelberg.adjacentRankFullRank_mul_iff X g).2 hX
 
 private theorem trailingRows_mul_inv {m : ℕ} (g : Langlands.GeneralLinear (m + 1) ℂ) :
     trailingRows g.val * g⁻¹.val = trailingRows 1 := by

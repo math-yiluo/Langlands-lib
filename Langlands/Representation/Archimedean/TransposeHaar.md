@@ -1,0 +1,5 @@
+# Haar transposition on actual archimedean GL
+
+For the actual general linear group over a real-like field, the modular character is trivial on scalar matrices because left and right translations by a central element coincide. The Library's algebraic general linear character lemma then gives triviality everywhere. Regular Haar uniqueness proves right invariance and consequently inversion invariance. The involutive continuous automorphism of inverse transpose also preserves regular Haar measure. Composing it with inversion gives ordinary transpose.
+
+The Library's algebraic matrix conjugacy proof shows that each group element and its transpose are conjugate in the actual group. `densityIntegral` is the Mathlib Bochner integral of the product of a scalar density and a test function. In particular, it is the usual integral pairing for locally integrable densities and smooth compact tests. For a pointwise conjugation-invariant density, change of variables under transpose gives the same integral on the transposed test. This comparison uses a pointwise invariant density and follows internally from the Library's Haar and matrix lemmas.

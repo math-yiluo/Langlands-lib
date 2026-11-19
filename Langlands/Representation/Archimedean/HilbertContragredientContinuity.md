@@ -1,0 +1,7 @@
+# Joint continuity of the inverse-adjoint Hilbert action
+
+Let a jointly continuous complex Hilbert representation act on the units of a finite-dimensional real Banach algebra. The inverse-adjoint action is jointly continuous for the original Hilbert norm, with no unitary-action premise. The proof uses right Haar measure, obtained by inversion of left Haar measure.
+
+The adjoint image of every compact continuous kernel average has a norm-continuous orbit at the identity. The original operator composed with an inverse right translate varies continuously in operator norm, and the adjoint and evaluation maps are continuous. The subspace of vectors with continuous orbit at the identity is closed by local uniform bounds on the inverse-adjoint operators. Its orthogonal complement is annihilated by every compact kernel average. A nonzero vector is detected by one of these averages. Choose a nonnegative kernel supported where the real part of its diagonal coefficient is positive. The real part of the averaged coefficient is a positive integral, since the weight and coefficient are positive at the identity. Thus the orthogonal complement is zero.
+
+The group law transfers orbit continuity from the identity to every group element. Local uniform bounds and the triangle inequality then give joint continuity in the group element and the vector. These are internal consequences of Hilbert orthogonality, compact kernel averaging and the actual right Haar translation law.

@@ -1,3 +1,4 @@
+import Langlands.LocalFactor.Ramification.LocalGalois
 import Langlands.LocalField.Normalization.Definitions
 import Langlands.LocalFactor.Ramification.Conductor
 import Mathlib.Topology.Algebra.Valued.WithZeroMulInt
@@ -72,23 +73,8 @@ variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uL} p}
 /-- Every base-field automorphism acts on the actual supplied valuation ring.
 The canonical module topology proves the needed continuity. -/
 def integerAutomorphism (σ : F.Carrier ≃ₐ[K] F.Carrier) :
-    T.Integers ≃+* T.Integers := by
-  letI := T.topology
-  letI := T.valuativeRel
-  letI := T.moduleTopology
-  letI := T.localField
-  have hσ : Continuous (σ.restrictScalars (Padic p)) :=
-    IsModuleTopology.continuous_of_linearMap (σ.restrictScalars (Padic p)).toLinearMap
-  have hσinv : Continuous (σ.symm.restrictScalars (Padic p)) :=
-    IsModuleTopology.continuous_of_linearMap
-      (σ.symm.restrictScalars (Padic p)).toLinearMap
-  exact
-  { toFun x := ⟨σ x, preserves_integers_of_continuous σ.toRingEquiv hσinv x.property⟩
-    invFun x := ⟨σ.symm x, preserves_integers_of_continuous σ.symm.toRingEquiv hσ x.property⟩
-    left_inv x := Subtype.ext (σ.symm_apply_apply x)
-    right_inv x := Subtype.ext (σ.apply_symm_apply x)
-    map_mul' x y := Subtype.ext (σ.map_mul x y)
-    map_add' x y := Subtype.ext (σ.map_add x y) }
+    T.Integers ≃+* T.Integers :=
+  Local.integerAutomorphism T.toLocalData K σ
 
 /-- The actual restriction homomorphism on the integer ring. -/
 def integerAutHom : (F.Carrier ≃ₐ[K] F.Carrier) →* RingAut T.Integers where
@@ -144,33 +130,16 @@ def lowerRamificationGroup (i : ℕ) : Subgroup (F.Carrier ≃ₐ[K] F.Carrier) 
 @[simp] theorem mem_lowerRamificationGroup (i : ℕ) (σ : F.Carrier ≃ₐ[K] F.Carrier) :
     σ ∈ lowerRamificationGroup T K i ↔
       ∀ x : T.Integers, integerAutomorphism T K σ x - x ∈
-        maximalIdeal T.Integers ^ (i + 1) := Iff.rfl
+        maximalIdeal T.Integers ^ (i + 1) :=
+  Local.mem_lowerRamificationGroup T.toLocalData K i σ
 
 /-- The constructed zeroth group is exactly the constructed inertia kernel. -/
-theorem lowerRamificationGroup_zero : lowerRamificationGroup T K 0 = inertia T K := by
-  ext σ
-  rw [mem_lowerRamificationGroup]
-  simp only [zero_add, pow_one, inertia, MonoidHom.mem_ker]
-  constructor
-  · intro h
-    ext y
-    obtain ⟨x, rfl⟩ := IsLocalRing.residue_surjective y
-    change residue T.Integers (integerAutomorphism T K σ x) = residue T.Integers x
-    rw [← sub_eq_zero, ← map_sub, IsLocalRing.residue_eq_zero_iff]
-    exact h x
-  · intro h x
-    have hx := congrArg (fun e : RingAut T.ResidueField => e (residue T.Integers x)) h
-    change residue T.Integers (integerAutomorphism T K σ x) = residue T.Integers x at hx
-    rw [← IsLocalRing.residue_eq_zero_iff, map_sub, sub_eq_zero]
-    exact hx
+theorem lowerRamificationGroup_zero : lowerRamificationGroup T K 0 = inertia T K :=
+  Local.lowerRamificationGroup_zero T.toLocalData K
 
 theorem exists_lowerRamificationGroup_eq_bot :
-    ∃ b : ℕ, ∀ i ≥ b, lowerRamificationGroup T K i = ⊥ := by
-  let := integerAction T K
-  have := integerAction_faithful T K
-  have := integerRing_noetherian T
-  have := automorphismGroup_finite (F := F) K
-  exact exists_lowerGroup_eq_bot T.Integers (F.Carrier ≃ₐ[K] F.Carrier)
+    ∃ b : ℕ, ∀ i ≥ b, lowerRamificationGroup T K i = ⊥ :=
+  Local.exists_lowerRamificationGroup_eq_bot T.toLocalData K
 
 /-- Integer indexing, with `G_{-1}` equal to the full group and constant
 extension below `-1`. -/
@@ -179,18 +148,15 @@ def lowerRamificationGroupInt (i : ℤ) : Subgroup (F.Carrier ≃ₐ[K] F.Carrie
   lowerGroupInt T.Integers (F.Carrier ≃ₐ[K] F.Carrier) i
 
 @[simp] theorem lowerRamificationGroupInt_neg_one :
-    lowerRamificationGroupInt T K (-1) = ⊤ := by
-  let := integerAction T K
-  exact lowerGroupInt_neg_one _ _
+    lowerRamificationGroupInt T K (-1) = ⊤ :=
+  Local.lowerRamificationGroupInt_neg_one T.toLocalData K
 
 instance lowerRamificationGroup_normal (i : ℕ) :
-    (lowerRamificationGroup T K i).Normal := by
-  let := integerAction T K
-  exact lowerGroup_normal T.Integers (F.Carrier ≃ₐ[K] F.Carrier) i
+    (lowerRamificationGroup T K i).Normal :=
+  Local.lowerRamificationGroup_normal T.toLocalData K i
 
-theorem lowerRamificationGroup_antitone : Antitone (lowerRamificationGroup T K) := by
-  let := integerAction T K
-  exact lowerGroup_antitone T.Integers (F.Carrier ≃ₐ[K] F.Carrier)
+theorem lowerRamificationGroup_antitone : Antitone (lowerRamificationGroup T K) :=
+  Local.lowerRamificationGroup_antitone T.toLocalData K
 
 /-- Restriction to the actual finite inertia group. -/
 abbrev inertiaIntegerAction : MulSemiringAction (inertia T K) T.Integers :=
@@ -209,9 +175,8 @@ private theorem inertiaIntegerAction_faithful :
 def inertiaLowerGroup (i : ℕ) : Subgroup (inertia T K) :=
   (lowerRamificationGroup T K i).subgroupOf (inertia T K)
 
-@[simp] theorem inertiaLowerGroup_zero : inertiaLowerGroup T K 0 = ⊤ := by
-  ext σ
-  simp [inertiaLowerGroup, lowerRamificationGroup_zero]
+@[simp] theorem inertiaLowerGroup_zero : inertiaLowerGroup T K 0 = ⊤ :=
+  Local.inertiaLowerGroup_zero T.toLocalData K
 
 private theorem inertiaLowerGroup_eq (i : ℕ) :
     letI := inertiaIntegerAction T K
@@ -259,16 +224,8 @@ term uses invariants of that whole group. -/
 theorem inertiaArtinConductor_eq_tame_add_swan
     (ρ : Representation k (inertia T K) V) :
     inertiaArtinConductor T K ρ =
-      (fixedCodimension (inertia T K) ρ ⊤ : ℚ) + inertiaSwanConductor T K ρ := by
-  let := inertiaIntegerAction T K
-  have := inertiaIntegerAction_faithful T K
-  have := integerRing_noetherian T
-  have := automorphismGroup_finite (F := F) K
-  change Ramification.artinConductor T.Integers (inertia T K) ρ =
-    (fixedCodimension (inertia T K) ρ ⊤ : ℚ) +
-      Ramification.swanConductor T.Integers (inertia T K) ρ
-  rw [Ramification.artinConductor_eq_tame_add_swan,
-    ← inertiaLowerGroup_eq T K 0, inertiaLowerGroup_zero]
+      (fixedCodimension (inertia T K) ρ ⊤ : ℚ) + inertiaSwanConductor T K ρ :=
+  Local.inertiaArtinConductor_eq_tame_add_swan T.toLocalData K ρ
 
 universe uW
 variable {W : Type uW} [AddCommGroup W] [Module k W] [FiniteDimensional k W]
@@ -276,42 +233,26 @@ variable {W : Type uW} [AddCommGroup W] [Module k W] [FiniteDimensional k W]
 theorem artinConductor_equiv
     {ρ : Representation k (F.Carrier ≃ₐ[K] F.Carrier) V}
     {σ : Representation k (F.Carrier ≃ₐ[K] F.Carrier) W} (e : ρ.Equiv σ) :
-    artinConductor T K ρ = artinConductor T K σ := by
-  let := integerAction T K
-  have := integerAction_faithful T K
-  have := integerRing_noetherian T
-  have := automorphismGroup_finite (F := F) K
-  exact Ramification.artinConductor_equiv T.Integers (F.Carrier ≃ₐ[K] F.Carrier) e
+    artinConductor T K ρ = artinConductor T K σ :=
+  Local.artinConductor_equiv T.toLocalData K e
 
 theorem swanConductor_equiv
     {ρ : Representation k (F.Carrier ≃ₐ[K] F.Carrier) V}
     {σ : Representation k (F.Carrier ≃ₐ[K] F.Carrier) W} (e : ρ.Equiv σ) :
-    swanConductor T K ρ = swanConductor T K σ := by
-  let := integerAction T K
-  have := integerAction_faithful T K
-  have := integerRing_noetherian T
-  have := automorphismGroup_finite (F := F) K
-  exact Ramification.swanConductor_equiv T.Integers (F.Carrier ≃ₐ[K] F.Carrier) e
+    swanConductor T K ρ = swanConductor T K σ :=
+  Local.swanConductor_equiv T.toLocalData K e
 
 theorem inertiaArtinConductor_equiv
     {ρ : Representation k (inertia T K) V} {σ : Representation k (inertia T K) W}
     (e : ρ.Equiv σ) :
-    inertiaArtinConductor T K ρ = inertiaArtinConductor T K σ := by
-  let := inertiaIntegerAction T K
-  have := inertiaIntegerAction_faithful T K
-  have := integerRing_noetherian T
-  have := automorphismGroup_finite (F := F) K
-  exact Ramification.artinConductor_equiv T.Integers (inertia T K) e
+    inertiaArtinConductor T K ρ = inertiaArtinConductor T K σ :=
+  Local.inertiaArtinConductor_equiv T.toLocalData K e
 
 theorem inertiaSwanConductor_equiv
     {ρ : Representation k (inertia T K) V} {σ : Representation k (inertia T K) W}
     (e : ρ.Equiv σ) :
-    inertiaSwanConductor T K ρ = inertiaSwanConductor T K σ := by
-  let := inertiaIntegerAction T K
-  have := inertiaIntegerAction_faithful T K
-  have := integerRing_noetherian T
-  have := automorphismGroup_finite (F := F) K
-  exact Ramification.swanConductor_equiv T.Integers (inertia T K) e
+    inertiaSwanConductor T K ρ = inertiaSwanConductor T K σ :=
+  Local.inertiaSwanConductor_equiv T.toLocalData K e
 
 universe uJ
 variable {J : Type uJ} [Group J]
@@ -330,21 +271,16 @@ omit [FiniteDimensional k V] in
 @[simp] theorem descendInertiaRepresentation_apply
     (π : J →* inertia T K) (hπ : Function.Surjective π)
     (ρ : Representation k J V) (hker : π.ker ≤ ρ.ker) (j : J) :
-    descendInertiaRepresentation T K π hπ ρ hker (π j) = ρ j := by
-  simp [descendInertiaRepresentation, MonoidHom.liftOfSurjective,
-    Representation.asGroupHom_apply]
+    descendInertiaRepresentation T K π hπ ρ hker (π j) = ρ j :=
+  Local.descendInertiaRepresentation_apply T.toLocalData K π hπ ρ hker j
 
 omit [FiniteDimensional k V] in
 theorem descendInertiaRepresentation_unique
     (π : J →* inertia T K) (hπ : Function.Surjective π)
     (ρ : Representation k J V) (hker : π.ker ≤ ρ.ker)
     (σ : Representation k (inertia T K) V) (hσ : σ.comp π = ρ) :
-    σ = descendInertiaRepresentation T K π hπ ρ hker := by
-  apply MonoidHom.ext
-  intro g
-  obtain ⟨j, rfl⟩ := hπ g
-  rw [descendInertiaRepresentation_apply]
-  exact DFunLike.congr_fun hσ j
+    σ = descendInertiaRepresentation T K π hπ ρ hker :=
+  Local.descendInertiaRepresentation_unique T.toLocalData K π hπ ρ hker σ hσ
 
 /-- Artin expression for an explicit finite inertia quotient. -/
 def artinConductorOfQuotient

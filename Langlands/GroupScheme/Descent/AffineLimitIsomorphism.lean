@@ -36,10 +36,11 @@ variable {I : Type u} [Category.{u} I] [IsCofiltered I]
 
 include hc hp
 
-/-- Equality of two fixed maps at an affine limit holds at one level and
-at every later level. -/
-theorem exists_level_map_eq
-    {X Y : Over S} [IsAffine X.left] [LocallyOfFiniteType Y.hom]
+omit [IsAffine S] in
+/-- For a quasi-compact source over the base, equality of two fixed maps
+at an affine limit holds at one level and at every later level. -/
+theorem exists_level_map_eq_of_quasiCompact
+    {X Y : Over S} [QuasiCompact X.hom] [LocallyOfFiniteType Y.hom]
     (f g : X ⟶ Y)
     (h : (Over.pullback p).map f = (Over.pullback p).map g) :
     ∃ i : I, ∀ (j : I) (_ : j ⟶ i),
@@ -54,6 +55,9 @@ theorem exists_level_map_eq
   let a := pullback.snd (t.app i₀) X.hom ≫ f.left
   let b := pullback.snd (t.app i₀) X.hom ≫ g.left
   let tx := comparison D t X.hom ≫ (Functor.const I).map X.hom
+  have (i : I) : CompactSpace ((diagram D t X.hom).obj i) := by
+    change CompactSpace (pullback (t.app i) X.hom : Scheme.{u})
+    infer_instance
   obtain ⟨i, r, he⟩ := Scheme.exists_hom_comp_eq_comp_of_locallyOfFiniteType
     (diagram D t X.hom) tx Y.hom (cone D t X.hom c p hp)
     (isLimitCone D t X.hom c p hp hc) a b
@@ -75,6 +79,16 @@ theorem exists_level_map_eq
     simpa only [← Category.assoc, pullbackSymmetry_hom_comp_snd] using he
   · exact ((Over.pullback (t.app j)).map f).w.trans
       ((Over.pullback (t.app j)).map g).w.symm
+
+/-- Equality of two fixed maps at an affine limit holds at one level and
+at every later level. -/
+theorem exists_level_map_eq
+    {X Y : Over S} [IsAffine X.left] [LocallyOfFiniteType Y.hom]
+    (f g : X ⟶ Y)
+    (h : (Over.pullback p).map f = (Over.pullback p).map g) :
+    ∃ i : I, ∀ (j : I) (_ : j ⟶ i),
+      (Over.pullback (t.app j)).map f = (Over.pullback (t.app j)).map g :=
+  exists_level_map_eq_of_quasiCompact D t c hc p hp f g h
 
 /-- The homomorphism equations for a fixed map descend from an affine limit. -/
 theorem exists_level_isMonHom

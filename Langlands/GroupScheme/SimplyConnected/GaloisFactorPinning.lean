@@ -1,4 +1,5 @@
 import Langlands.GroupScheme.Reductive.PinningActualTitsDiagram
+import Langlands.GroupScheme.Reductive.TitsClassFactorProjection
 import Langlands.GroupScheme.SimplyConnected.GeometricFactorTorus
 import Langlands.GroupScheme.SimplyConnected.FactorComponentEmbedding
 import Langlands.GroupScheme.Reductive.RootDatumExistence
@@ -64,6 +65,17 @@ structure FactorPinningComparison (p : GaloisPinningData k L G)
     (vertices (pinning.simpleStarVertex σ b)).val.val =
       (p.starAction σ).val.indexEquiv (vertices b).val.val
 
+/-- The actual factor comparison together with the projection defining its
+simple-root inflation. -/
+structure FactorPinningWithProjection (p : GaloisPinningData k L G)
+    (D : SimplyConnectedAlmostSimpleProduct ((GroupScheme.baseChange (algebraBaseMap k L)).obj G))
+    (hG : IsSemisimple ((GroupScheme.baseChange (algebraBaseMap k L)).obj G))
+    (i : D.Index) (j : H ⟶ G) where
+  comparison : p.FactorPinningComparison D hG i H
+  projection : p.FactorProjection comparison.pinning
+  inclusion_eq : projection.inclusion = j
+  vertices_eq : ∀ b, projection.vertices b = (comparison.vertices b).val
+
 end GaloisPinningData
 namespace NormalFactorTorusProjection
 
@@ -96,8 +108,8 @@ include F r hr
 /-- Construct a genuine Galois pinning on the original normal-subgroup model.
 Its torus projection is defined over the ground field, so the entire ambient
 simple-root fibre comparison intertwines every full star element. -/
-theorem nonempty_galoisFactorPinning (hH : IsConnectedReductive H) :
-    Nonempty (p.FactorPinningComparison D hG i H) := by
+theorem nonempty_galoisFactorPinningWithProjection (hH : IsConnectedReductive H) :
+    Nonempty (p.FactorPinningWithProjection D hG i j) := by
   let B := GroupScheme.baseChange (algebraBaseMap k L)
   let BC := CommGroupScheme.baseChange (algebraBaseMap k L)
   let FG : D.FactorMaximalTorus p.toSplitPinning.inclusion i :=
@@ -131,18 +143,38 @@ theorem nonempty_galoisFactorPinning (hH : IsConnectedReductive H) :
     rootEmbedding := FG.rootComponentEmbedding D hG p.toSplitPinning hQG
     base_iff := FG.mem_inducedBase_iff D hG p.toSplitPinning hQG }
   let v := FG.simpleRootIndexEquiv D hG p.toSplitPinning hQG
-  refine ⟨{
+  let C : p.FactorPinningComparison D hG i H := {
     pinning := pH
     vertices := v
     cartan_eq := FG.pairing_simpleRootIndexEquiv D hG p.toSplitPinning hQG
-    star_eq := ?_ }⟩
-  intro σ a
-  have hnat (χ : characterLattice (BC.obj F.torus)) :
-      f.rootEmbedding.weightMap (characterLattice.galoisRepresentation k L F.torus σ χ) =
-        characterLattice.galoisRepresentation k L p.torus σ (f.rootEmbedding.weightMap χ) := by
-    exact (characterLattice.galoisRepresentation_naturality k L
-      (Additive.ofMul F.projection) σ χ).symm
-  exact pH.starAction_index_of_componentWeightIntertwining p f σ σ hnat a.val
+    star_eq := by
+      intro σ a
+      have hnat (χ : characterLattice (BC.obj F.torus)) :
+          f.rootEmbedding.weightMap (characterLattice.galoisRepresentation k L F.torus σ χ) =
+            characterLattice.galoisRepresentation k L p.torus σ (f.rootEmbedding.weightMap χ) := by
+        exact (characterLattice.galoisRepresentation_naturality k L
+          (Additive.ofMul F.projection) σ χ).symm
+      exact pH.starAction_index_of_componentWeightIntertwining p f σ σ hnat a.val }
+  let P : p.FactorProjection C.pinning := {
+    inclusion := j
+    projection := F.retraction
+    section_comp := F.inclusion_retraction
+    torusInclusion := F.torusHom
+    torusProjection := Additive.ofMul F.projection
+    torus_section_comp := congrArg Additive.ofMul F.projection_section
+    torusProjection_comp := F.projection_comp.symm
+    vertices := ⟨fun b => (v b).val, fun _ _ h => v.injective (Subtype.ext h)⟩
+    root_eq := fun b =>
+      (FG.rootIndex_root D hG p.isSplitTorus p.toSplitPinning.inclusion
+        p.isMaximalTorus p.isRootDatum hQG b.val).symm }
+  exact ⟨⟨C, P, rfl, fun _ => rfl⟩⟩
+
+/-- The actual pinning comparison obtained by keeping the diagram of the
+compatible projection construction. -/
+theorem nonempty_galoisFactorPinning (hH : IsConnectedReductive H) :
+    Nonempty (p.FactorPinningComparison D hG i H) := by
+  obtain ⟨C⟩ := F.nonempty_galoisFactorPinningWithProjection p D hG i r hr hH
+  exact ⟨C.comparison⟩
 
 end NormalFactorTorusProjection
 end Langlands.GroupScheme

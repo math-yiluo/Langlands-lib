@@ -1,0 +1,9 @@
+# The split algebraic similitude group in Harris's component factor
+
+Harris, *Supercuspidal representations in the cohomology of Drinfel'd's symmetric space* (1997), Appendix, printed pp. 112–114 (PDF pp. 38–40), uses similitudes of the product with the opposite algebra and the factor-swap involution. The pairs in (A.2) have an opposite-algebra unit `d` and a companion unit `d'` whose product is the scalar multiplier `e`. The coordinates are therefore `d` and `e`, and `d'` is recovered from the scalar times the inverse.
+
+`splitGroupScheme` constructs the product of the finite-algebra unit group of the opposite algebra and the multiplicative group over the base field. The finite-algebra group uses a finite basis for its determinant-open construction. The product is affine and smooth. On an arbitrary test scheme its points have the units of the scalar-extended opposite algebra and the invertible global functions as coordinates. The coordinate maps respect actual pullback of test schemes. The tensor comparison for opposite algebras and `splitSimilitudeCoordinates` identify these with the pairs satisfying the split similitude equation over the relative global sections.
+
+`splitGroupRationalPointsEquiv` identifies the base-field points with the original split similitudes. `splitMultiplierCharacter` is the projection to the multiplicative factor, and its rational evaluation equals the original multiplier. `splitRegularDeterminantCharacter` pulls back the determinant along the right regular representation of the opposite unit factor. On every test scheme it evaluates to the determinant of right multiplication by the inverse of the first unit.
+
+The construction supplies the group and two actual characters used to study the quotient in (A.2). It applies to any algebra over a field with the supplied finite basis of its opposite algebra.

@@ -13,3 +13,18 @@ existence of the precise input to the actual Tits-index/full-lift conversion.
 
 `descendedComponentPinning` chooses this actual complete comparison from the
 proved nonempty result, retaining the exact group and extension.
+
+`ComponentPinningWithProjection` also records the retraction of the
+extended ambient group onto that factor and the compatible maps of tori.
+The projection's section is the actual descended subgroup inclusion.
+After the root-datum comparison for scalar extension, the projection
+inflates each factor simple root to the vertex specified by the original
+Cartan component comparison.
+
+`nonempty_descendedComponentPinningWithProjection` constructs this witness
+for the original geometric factor descent. The group retraction comes from
+the normal factor of the ambient group over the stabilizer field. The tower
+base-change comparison recovers the original geometric inclusion, and the
+factor projection construction retains the corresponding simple-root map.
+The original existence theorem follows by taking the pinning comparison
+from the resulting witness.

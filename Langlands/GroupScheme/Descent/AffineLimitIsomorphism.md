@@ -14,10 +14,13 @@ the result asserts existence at a level.
 
 The paired theorems implement the following internal finite-data argument.
 
-- `exists_level_map_eq` descends equality of two fixed maps whose source is
-  affine and whose target is locally of finite type. It also records that the
+- `exists_level_map_eq` gives the affine-source result over an affine base.
+  `exists_level_map_eq_of_quasiCompact` descends equality of two fixed maps whose source is
+  quasi-compact over the base and whose target is locally of finite type. It also records that the
   equality holds at every level mapping to the chosen one. This uses Mathlib's
   finite-type equality theorem on the actual base-change limit cone.
+  Worker 668 generalized the source hypothesis to quasi-compactness for
+  descent of the centrality equation on the product of two groups.
 - `exists_level_isMonHom` applies that equality theorem to preservation of the
   unit and multiplication. A common cofiltered refinement satisfies both
   equations, so the map there is a homomorphism of group schemes.

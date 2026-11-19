@@ -1,0 +1,11 @@
+# Proof of positivity of the actual geometric Rosati trace form
+
+`Langlands.AbelianScheme.Rosati.positivity` has type `PositivityStatement.{u}` for arbitrary `u`. It proves symmetry, nonnegative diagonal, and strictly positive diagonal on every nonzero rational endomorphism of an abelian scheme with an actual geometric polarization over an algebraically closed characteristic-zero field. The theorem inherits the statement's quantification over the construction prerequisites, dual data, additivity witness, and each rational-inverse instance.
+
+The proof first applies `integralDiagonalPositive_of_ampleMumfordPresentation` to the published theorems `mumfordMixedEulerTrace` and `nonzeroEndomorphismMixedEulerPositive`. In positive dimension the trace formula identifies the integral diagonal times the positive top Euler coefficient with twice the positive mixed Euler coefficient. In dimension zero every integral endomorphism is zero, so the strict integral claim is vacuous.
+
+`geometricPolarizationIntegralPositive_of_amplePresentation` extends integral positivity to each actual geometric polarization. It obtains an ample presentation after taking the identity fibre and passing to a field extension and its algebraic closure. The transport of the Rosati product and the equality of the prime Tate traces let a nonzero fixed rational trace value at the last field supply the rational trace lift at the original field.
+
+For the given polarization and rational inverse, `traceForm_pos_of_integral` clears a nonzero integer denominator and uses bilinearity to divide by its positive square. This gives strict positivity on each nonzero rational endomorphism, and `traceForm_apply` expresses it as `0 < geometricEndomorphismTrace A (a * involution P W hadd lam a)`. At zero the bilinear form vanishes. At every nonzero endomorphism, strict positivity implies nonnegativity. The proof obtains symmetry from `traceForm_symm`, which uses adjunction for the actual polarized Weil pairing.
+
+The conclusion is the characteristic-zero case specified in `RosatiPositivityStatement.md` of Milne, *Abelian Varieties*, January 2, 2022 author revision, §17 Theorem 17.3, pp. 35–36 (registered source `milne-abelian-varieties-1986-author-2022`). The Lean proof uses the published Euler-coefficient formula, geometric descent, and Weil-pairing symmetry.

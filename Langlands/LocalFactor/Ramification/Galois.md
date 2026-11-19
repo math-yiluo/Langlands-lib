@@ -1,5 +1,21 @@
 # Ramification for the actual p-adic integer ring
 
+## General implementation (Task 7403)
+
+Worker 845 generalizes this construction to arbitrary characteristic in
+[`the general module`](LocalGalois.md), with the same integer-ring meaning and
+elementary lemmas. All original p-adic names, types and statement text are
+retained. The p-adic integer automorphism uses the general one through
+`T.toLocalData`; composite definitions retain their original outer expressions
+for existing explicit-unfold consumers and reduce to the same general values.
+Construction lemmas specialize the general lemmas. The linked paired Markdown
+gives the general hypotheses, original sources, characteristic audit and table
+of definitionally equal specializations. No comparison theorem is introduced.
+Private checks compare every complete unapplied original public declaration
+with a legacy copy by `rfl`. The unchanged downstream proof consumers build.
+The original p-adic construction and source notes follow.
+
+
 This module constructs the action of base-field automorphisms on the actual
 valuation integer ring `T.Integers` supplied by `F.TopologicalData`.
 The base is an intermediate field `K` with its specified compatible

@@ -1,5 +1,21 @@
 # Herbrand functions and upper ramification of finite p-adic extensions
 
+## General implementation (Task 7403)
+
+Worker 845 generalizes this construction to arbitrary characteristic in
+[`the general module`](GeneralFinite.md), with the same integer-ring meaning and
+elementary lemmas. All original p-adic names, types and statement text are
+retained. The p-adic integer automorphism uses the general one through
+`T.toLocalData`; composite definitions retain their original outer expressions
+for existing explicit-unfold consumers and reduce to the same general values.
+Construction lemmas specialize the general lemmas. The linked paired Markdown
+gives the general hypotheses, original sources, characteristic audit and table
+of definitionally equal specializations. No comparison theorem is introduced.
+Private checks compare every complete unapplied original public declaration
+with a legacy copy by `rfl`. The unchanged downstream proof consumers build.
+The original p-adic construction and source notes follow.
+
+
 Worker 60 specializes the real polygon to the published lower ramification
 groups in `Langlands.LocalFactor.Ramification.Galois`. The base carrier `K`
 and extension carrier `F.Carrier` retain independent universes. Their

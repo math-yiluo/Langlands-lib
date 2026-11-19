@@ -1,0 +1,9 @@
+# Derivatives of the actual smooth-vector action in the open units chart
+
+Consider a representation of the units of a finite-dimensional real Banach algebra by bounded complex linear operators on a complex normed space. In the open algebra chart, each genuine word coordinate of the orbit of a smooth vector is smooth in the original norm. Inverse-conjugation covariance puts the action outside the word. A finite real basis then expands each conjugated direction into fixed directions with smooth scalar coefficients. Induction reduces the coordinate smoothness to the original smooth orbits of these fixed derivatives.
+
+For a jointly continuous action, an arbitrary differentiable real curve in the chart has an orbit derivative in the genuine smooth-vector topology. Each word coordinate of the difference quotient has a limit. Closedness of the coordinate range gives a smooth vector with exactly these coordinates. The empty coordinate identifies this vector with the translate of the genuine Lie derivative in direction `g⁻¹Y`, where `Y` is the ambient algebra derivative of the chart curve at `g`. That coordinate is the original vector in the normed space, so it determines the lifted limit uniquely.
+
+If the smooth vector also varies on a differentiable curve, split the action difference quotient into the change of the fixed vector under the group curve and the translate of the vector curve's difference quotient. Joint action continuity gives the limit for the second term. The resulting derivative is the translate of the sum of the genuine Lie derivative and the vector curve's derivative. These are internal consequences of the published word topology and the units chart.
+
+The slope criterion used here has a topological real vector space as codomain. It follows from Mathlib's topological-vector-space little-o characterization of `HasDerivAt`, normalization by the scalar increment, and removal of the base point where the normalized remainder is zero.

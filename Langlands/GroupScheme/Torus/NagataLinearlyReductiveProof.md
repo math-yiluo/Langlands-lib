@@ -6,7 +6,7 @@ group scheme of finite type over a field of nonzero characteristic. It uses
 the all-test finite-coordinate definition of linear reductivity and the
 actual identity component, including for nonreduced groups.
 
-For the identity-component necessity, extend the ground field to its
+The assembly uses `nagataIdentityComponentNecessity`, whose proof extends the ground field to its
 algebraic closure. The published field-extension theorem transfers linear
 reductivity by the normalized-integral criterion. Over the algebraic closure,
 the proof uses the following Frobenius induction.

@@ -1,0 +1,7 @@
+# Compact kernel averages of the inverse-transpose Hilbert dual model
+
+`inverseAdjointTranspose` pulls the inverse-adjoint Hilbert action back by the actual inverse-transpose automorphism. It is jointly continuous when the original action is jointly continuous. `transposeConjugateKernel` composes a scalar kernel with ordinary matrix transpose and conjugates its values. It preserves continuity and compact support.
+
+Fix a Borel regular Haar measure on actual archimedean GL and a continuous compactly supported kernel. The averaging convention evaluates the kernel on the inverse of the integration variable. Test the averages on two Hilbert vectors. Transposition preserves the measure and moves the inverse transpose and inversion in the inverse-adjoint action into the kernel. The adjoint identity moves the original operator to the other side of the inner product. Complex conjugation commutes with the scalar Bochner integral. This gives an identity of bounded operators between the average of the pulled-back inverse-adjoint action and the adjoint of the original average with the conjugate-transposed kernel.
+
+If the latter original average is trace class, the identity computes the trace of the pulled-back Hilbert average by conjugating the original trace. The scalar conjugation records the conjugate-linearity of the Riesz identification. The development is internal to the Library's compact averaging, transpose Haar and trace-class results.

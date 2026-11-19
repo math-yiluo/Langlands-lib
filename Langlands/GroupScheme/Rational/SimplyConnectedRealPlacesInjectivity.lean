@@ -1,4 +1,4 @@
-import Langlands.GroupScheme.Rational.NumberFieldHassePrincipleStatement
+import Langlands.GroupScheme.Rational.NumberFieldHasseGaloisReduction
 import Langlands.GroupScheme.CocycleAffineRefinement
 import Langlands.GroupScheme.CocycleCohomology
 import Langlands.GroupScheme.SimplyConnected.LocalCocycleVanishingProof
@@ -112,14 +112,22 @@ def SimplyConnectedRealPlacesInjectivityStatement : Prop :=
         (ξ.baseChange b _ r).Cohomologous (ζ.baseChange b _ r)) →
       ξ.Cohomologous ζ
 
-/-- The all-place Hasse principle implies real-place injectivity. At finite places the
-published local vanishing theorem applies, and at complex places the cover has a section. -/
-theorem simplyConnectedRealPlacesInjectivity_of_hasse
-    (hasse : NumberFieldHassePrincipleStatement.{u}) :
-    SimplyConnectedRealPlacesInjectivityStatement.{u} := by
-  intro F _ _ G hG L _ _ _ _ ξ ζ hreal
-  apply hasse F G (Or.inl hG) L ξ ζ
-  intro i
+/-- For a simply connected group, real-place cohomology comparisons imply the
+corresponding comparisons over every completion. -/
+def SimplyConnectedRealToAllPlacesComparisonStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] (G : GroupScheme (Spec (CommRingCat.of F))),
+    IsSimplyConnected G →
+    ∀ (L : Type u) [Field L] [Algebra F L] [FiniteDimensional F L]
+      (ξ ζ : Cocycle G (ringTest F L)),
+      (∀ w : InfinitePlace F, w.IsReal →
+        let b := algebraBaseMap F (Langlands.Global.placeCompletion F (.inl w))
+        let r := (Over.mapPullbackAdj b).counit.app (ringTest F L)
+        (ξ.baseChange b _ r).Cohomologous (ζ.baseChange b _ r)) →
+      ξ.LocallyCohomologous ζ
+
+theorem simplyConnectedRealToAllPlacesComparison :
+    SimplyConnectedRealToAllPlacesComparisonStatement.{u} := by
+  intro F _ _ G hG L _ _ _ ξ ζ hreal i
   rcases i with w | v
   · by_cases hw : w.IsReal
     · exact hreal w hw
@@ -145,5 +153,13 @@ theorem simplyConnectedRealPlacesInjectivity_of_hasse
     exact cohomologous_of_isTrivial
       (isTrivial_pullback_of_fieldCovers h (ξ.baseChange b _ r))
       (isTrivial_pullback_of_fieldCovers h (ζ.baseChange b _ r))
+
+/-- The all-place Hasse principle implies real-place injectivity. -/
+theorem simplyConnectedRealPlacesInjectivity_of_hasse
+    (hasse : NumberFieldHassePrincipleStatement.{u}) :
+    SimplyConnectedRealPlacesInjectivityStatement.{u} := by
+  intro F _ _ G hG L _ _ _ _ ξ ζ hreal
+  exact hasse F G (Or.inl hG) L ξ ζ
+    (simplyConnectedRealToAllPlacesComparison F G hG L ξ ζ hreal)
 
 end Langlands.GroupScheme

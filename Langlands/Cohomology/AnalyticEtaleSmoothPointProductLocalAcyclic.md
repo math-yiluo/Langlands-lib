@@ -1,5 +1,31 @@
 # Local higher direct images of actual smooth point products
 
+> **Superseded; do not use as a target or as a premise.**
+> `AnalyticEtaleSmoothPointProductLocalAcyclicStatement` was stated without the
+> group-topology hypothesis by oversight. The module declares
+> `[IsTopologicalGroup G]` as a section variable, but the body of the definition
+> does not use it, so Lean leaves it out of the definition. The elaborated
+> proposition therefore quantifies over every group `G` with an arbitrary
+> topology. The intended setting, that of the source and of the task that
+> requested this statement, is a topological group. The proposition stays in the
+> Library unproved.
+>
+> It is replaced by
+> `AnalyticEtaleSmoothPointProductLocalAcyclicCorrectedStatement` in
+> `Langlands.Cohomology.AnalyticEtaleSmoothPointProductLocalAcyclicCorrected`.
+> That definition has the same body, with `[IsTopologicalGroup G]`,
+> `[Small.{max u (v + 1) uL} G]` and the admissible-refinement hypothesis bound
+> on the definition itself. Because it has the extra hypothesis, the corrected
+> proposition is the weaker one. A consumer of the old proposition must move to
+> the corrected one and must supply a topological group. The consumer
+> `analyticEtaleGodementCompactAcyclic_of_local_and_ordinary` below has the
+> counterpart `analyticEtaleGodementCompactAcyclic_of_correctedLocal_and_ordinary`
+> in the corrected module, with the same conclusion and ordinary premise.
+>
+> The rest of this page describes the original unit as it was published. Its
+> description of the hypotheses omits the topological-group hypothesis for the
+> reason above.
+
 `AnalyticEtaleSmoothPointProductLocalAcyclicStatement` is an unproved internal
 analytic prerequisite for Godement compact acyclicity. It retains the complete
 ultrametric ground field `K`, normed extension field `L`, actual analytic object

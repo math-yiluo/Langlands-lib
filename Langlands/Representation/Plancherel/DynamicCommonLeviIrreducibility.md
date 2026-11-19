@@ -1,0 +1,7 @@
+# Open irreducibility in the actual common-Levi family
+
+This module derives the nonempty open irreducibility locus for each actual dynamic parabolic with the specified common Levi. The input coefficient representation is irreducible and square-integrable for the given Borel-compatible Haar measure modulo a central subgroup. The result applies separately to each parabolic, with the parameters, topology and normalization already used by its standard intertwining family.
+
+`parabolicData` supplies an actual aligned parabolic presentation on the original parameter scheme and its split component. The literal point comparison transports the decomposition and the continuity of its Levi projection. The same comparison transports the central subgroup and its Haar measure by pullback. The compact quotient of the full center by the split component then gives square integrability modulo the split component for the Haar measure used in the represented theorem. `exists_open_irreducible_unconditional` gives the required open locus on that presentation. Its preimage under the actual character homeomorphism has the same irreducibility property by `unramifiedInductionComparison`.
+
+This is a derived application of the open-locus result used at the beginning of Waldspurger, *La formule de Plancherel pour les groupes p-adiques d'après Harish-Chandra*, 2003, IV.3, with the represented theorem based on IV.2.2 and the openness of irreducibility for an admissible inducing representation.

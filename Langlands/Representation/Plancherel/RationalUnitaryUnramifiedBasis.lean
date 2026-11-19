@@ -19,7 +19,8 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F] (G : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance instTopologicalSpaceRationalPoints_rationalUnitaryUnramifiedBasis :
+    TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 set_option quotPrecheck false in

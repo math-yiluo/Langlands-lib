@@ -1,0 +1,7 @@
+# Continuity of finite-algebra unit families as rational points
+
+Let `A` be an algebra with a finite basis over a topological field `k`. The affine unit scheme of `A` is the localization of the polynomial coordinate ring at the regular determinant. `continuous_rationalPointsEquiv_symm_of_basis` proves that a family of algebra units with continuous basis coordinates defines a continuous family of rational points of this scheme. The target uses the canonical affine rational-point topology, given by evaluation of regular functions.
+
+Each regular function on the determinant open is represented by a polynomial divided by a power of the determinant. Evaluation of a polynomial in the continuous basis coordinates is continuous. At a unit the determinant is nonzero, so evaluation of the quotient is continuous as well. Specialization of the localization map computes the corresponding regular-function value on the scheme point. The canonical affine-to-rational point comparison transports this continuity to the identity-test convention.
+
+`rationalPointOfUnit` packages the inverse of the existing rational unit-point equivalence as a continuous group homomorphism, assuming that all basis coordinates on `A` are continuous. This is derived from the unit scheme and the canonical evaluation topology in the Library. It applies in particular to unit families of the opposite algebra in Harris's split similitude group.

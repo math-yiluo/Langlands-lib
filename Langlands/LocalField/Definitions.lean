@@ -1,4 +1,4 @@
-import Mathlib.Analysis.Normed.Unbundled.SpectralNorm
+import Langlands.LocalField.Extension
 import Mathlib.NumberTheory.Padics.LocalField
 
 /-!
@@ -46,18 +46,18 @@ noncomputable def canonicalNorm (F : PadicField.{u} p) : F.Carrier → ℝ :=
 This is explicit data, not a global instance replacing a user's existing norm. -/
 noncomputable abbrev canonicalNormedField (F : PadicField.{u} p) :
     NontriviallyNormedField F.Carrier :=
-  spectralNorm.nontriviallyNormedField (Padic p) F.Carrier
+  LocalField.canonicalNormedField (Padic p) F.Carrier
 
 /-- The compatible normed algebra for the spectral norm. -/
 noncomputable abbrev canonicalNormedAlgebra (F : PadicField.{u} p) :
     letI := F.canonicalNormedField
     NormedAlgebra (Padic p) F.Carrier :=
-  spectralNorm.normedAlgebra (Padic p) F.Carrier
+  LocalField.canonicalNormedAlgebra (Padic p) F.Carrier
 
 /-- The canonical topology as the topology of a finite-dimensional module
 over the usual topological field `Padic p`. -/
 noncomputable abbrev canonicalTopology (F : PadicField.{u} p) : TopologicalSpace F.Carrier :=
-  moduleTopology (Padic p) F.Carrier
+  LocalField.canonicalTopology (Padic p) F.Carrier
 
 /-- A local-field realization of the algebraic extension, with the canonical
 module topology. The valuation is specified up to equivalence by `ValuativeRel`.
@@ -68,6 +68,25 @@ structure TopologicalData (F : PadicField.{u} p) where
   [valuativeExtension : ValuativeExtension (Padic p) F.Carrier]
   [moduleTopology : IsModuleTopology (Padic p) F.Carrier]
   [localField : IsNonarchimedeanLocalField F.Carrier]
+
+/-- View the same supplied realization over the general base interface.
+Every field is copied unchanged, so its integer ring is definitionally the same. -/
+abbrev TopologicalData.toLocalData {F : PadicField.{u} p} (T : F.TopologicalData) :
+    LocalField.TopologicalData (Padic p) F.Carrier where
+  topology := T.topology
+  valuativeRel := T.valuativeRel
+  valuativeExtension := T.valuativeExtension
+  moduleTopology := T.moduleTopology
+  localField := T.localField
+
+/-- Package a general realization over `Padic p` using the existing interface. -/
+abbrev TopologicalData.ofLocalData {F : PadicField.{u} p}
+    (T : LocalField.TopologicalData (Padic p) F.Carrier) : F.TopologicalData where
+  topology := T.topology
+  valuativeRel := T.valuativeRel
+  valuativeExtension := T.valuativeExtension
+  moduleTopology := T.moduleTopology
+  localField := T.localField
 
 /-- The degree-one algebraic base example, with the identity algebra structure. -/
 noncomputable def rational (p : ℕ) [Fact p.Prime] : PadicField.{0} p :=

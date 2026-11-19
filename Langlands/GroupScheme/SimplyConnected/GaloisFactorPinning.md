@@ -13,3 +13,14 @@ The actual subgroup recovery isomorphism and its exact ambient inclusion square
 are explicit inputs. No abstract model is substituted for the group.
 
 The vertex permutation `simpleStarVertex` uses `GaloisPinningData.simpleStar` on the support of the chosen base.
+
+`FactorPinningWithProjection` retains the compatible group and torus
+retractions from the original construction. Their sections come from
+`NormalFactorTorusProjection`. It identifies the group inclusion with the
+selected subgroup inclusion and identifies the vertices of the resulting
+`FactorProjection` with the ambient vertices in the pinning comparison.
+Over the extension field, the published geometric factor root formula
+identifies inflation of each simple root with the corresponding ambient
+simple root. The original `nonempty_galoisFactorPinning` follows by taking
+the pinning comparison from this construction. This extension uses the
+same fields, normal subgroup, and recovery isomorphism.

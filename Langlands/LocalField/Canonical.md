@@ -1,5 +1,25 @@
 # Canonical topological realization of a p-adic field
 
+## General base implementation (Task 7403)
+
+Worker 845 now delegates the spectral constructions to the characteristic-free
+[`Extension`](Extension.md) module. The original `PadicField` and
+`PadicField.TopologicalData` structures and every original declaration name and
+type are retained. The new `.toLocalData` and `.ofLocalData` conversions copy all
+five realization fields. The p-adic canonical constructor specializes
+`LocalField.canonicalTopologicalData (Padic p) F.Carrier` and proves the required
+base comparison by the same p-adic norm/valuation lemma used before. Its values,
+including the entire canonical realization, agree with the previous bodies by
+unfolding and proof irrelevance, checked privately with `rfl`.
+
+The paired `Extension.md` documents the general constructor, sources, explicit
+base comparison and specialization table. There is no characteristic assumption
+in the general layer, and no perfectness or separability was used implicitly by
+this finite-extension norm construction. The historical audit below describes
+the original p-adic interface; arbitrary-extension realization is now supplied
+by `Canonical` through this general implementation.
+
+
 `Langlands.PadicField.canonicalTopologicalData F` constructs
 `F.TopologicalData` from every algebraic `F : PadicField p`. The prime `p`
 is arbitrary under `[Fact p.Prime]`, and `F.Carrier` may live in any universe

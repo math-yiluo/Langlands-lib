@@ -7,6 +7,13 @@ Worker 243.
 `Cocycle.Cohomologous` relation. The reduction applies
 `NumberFieldHassePrincipleStatement` to the simply connected group.
 
+`SimplyConnectedRealToAllPlacesComparisonStatement` gives the local step
+on its own. For two cocycles of a simply connected group on the same finite
+field cover of a number field, cohomology at every real place implies
+cohomology at every completion. The statement uses `Cocycle.LocallyCohomologous`
+and permits any finite field extension, which is separable in characteristic
+zero.
+
 At a complex place the completion is isomorphic to the complex numbers and
 therefore algebraically closed. The finite field extension embeds into the
 completion over the number field. Adjunction gives a section of the pulled-back
