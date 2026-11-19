@@ -1,6 +1,6 @@
 # Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness
 
-Worker 386, 18 November 2026, for Task 7806
+Worker 386, 18 November 2026, revised 19 November 2026, for Task 7806
 (`ad802cf7-9b28-4355-8243-88707d9cc1e4`).
 
 This note gives two paper counterexamples, over any algebraically closed
@@ -283,6 +283,42 @@ action over a field that is not algebraically closed; there two liftings of
 example of §3, over an algebraically closed field with neither \(H\) nor
 \(U\) smooth.
 
+### Why 16.26 is not affected
+
+Milne's Theorem 16.26 (printed p.332, PDF p.348) asserts only existence: the
+extension \(e\to G_u\to G\to D\to e\) splits in each of the cases
+
+- (a) \(k\) is algebraically closed;
+- (b) \(k\) is perfect and \(G_u\) is smooth and connected;
+- (c) \(k\) is perfect and \(D\) is connected.
+
+These examples leave it intact, for three reasons.
+
+1. **Its statement is proved in SGA 3.** Case (a) is 5.1.1 i) a). Cases (b)
+   and (c) are instances of 5.1.1 i) b), "k est parfait et l'un des groupes
+   U ou H est connexe". Neither part asks for smoothness of \(H\), and part
+   i) a) asks for nothing beyond \(k\) algebraically closed. The
+   counterexamples concern only part ii), conjugacy.
+2. **The examples satisfy it.** In \(\alpha_p\rtimes H\), the map
+   \(t\mapsto(0,t)\) is a homomorphic section of \(q\).
+3. **Its proof avoids the failing step.** The step that fails in 16.27 is
+   the vanishing of \(H^1(D,N)\), that is, that every crossed homomorphism
+   \(D\to N\) is principal, taken from 15.3. The proof of 16.26 instead
+   shows that certain extensions of \(D\) by \(N\) split. In case (a) it
+   uses Theorem 15.34(d) (printed p.319, PDF p.335), which states
+   \(\operatorname{Ext}^1(G,U)=0\) for an algebraic subgroup \(U\) of
+   \(\mathbb G_a\) and a group \(G\) of multiplicative type, with no
+   smoothness hypothesis, when \(k\) is algebraically closed and the action
+   comes from a linear action on \(\mathbb G_a\). These are different
+   conditions: for \(\mu_p\) acting on \(\alpha_p\) by homotheties,
+   \(H^1(\mu_p,\alpha_p)\neq0\) (§3), yet the extension
+   \(\alpha_p\rtimes\mu_p\) splits.
+
+This note does not audit the proof of 15.34. The 2017 errata
+(entry for p.317) delete 15.29 and 15.30 and say that "the proofs in Section
+15h have been rewritten"; 15.34 is in Section 15h. The statement of 16.26
+rests in any case on SGA 3 XVII 5.1.1 i).
+
 ## 6. The corrected scope
 
 Let \(k\) be algebraically closed. Keep the notation of 16.27.
@@ -322,13 +358,24 @@ So, by §3 and §4, both conjuncts of its conclusion are false for every
 algebraically closed field of positive characteristic. **Do not use that
 proposition as a premise or as a proof target.**
 
-Task 7806 asked for its proof. Its executor has asked the operator to decide
-how to proceed (request `5639a3e0824c51b4b974ae79c240f1bf`). The proposed
-correction is a statement with the additional explicit binder
-`Smooth U.X.hom`, justified by §6.
+Task 7806 asked for its proof. The operator decided (answer to request
+`5639a3e0824c51b4b974ae79c240f1bf`, 19 November 2026) as follows.
+
+- The proposition stays in the Library unproved, with its Lean text
+  unchanged. Its Markdown marks it as not to be used as a target or as a
+  premise and points to this note.
+- The corrected statement
+  `Langlands.GroupScheme.TrigonalizableSectionConjugacySmoothStatement`, in
+  `Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothStatement.lean`,
+  adds the explicit binder `Smooth U.X.hom`, justified by §6. Its Markdown
+  says that (a) also holds when \(D\) is smooth and \(G_u\) is arbitrary
+  (SGA 3 XVII 5.1.1 ii) a)). That case is neither stated nor proved there,
+  so smoothness of \(G_u\) is not presented as necessary for (a).
+- Once that statement is published, Task 7806 is revised to prove it.
 
 The sibling `TrigonalizableExtensionSplitStatement` (Milne 16.26, existence
-of a section) is consistent with these examples and is not affected.
+of a section) is consistent with these examples and is not affected (§5,
+"Why 16.26 is not affected").
 
 This note supplies no Lean disproof and changes no Lean or paired Markdown
 file.
@@ -340,13 +387,14 @@ the non-vanishing of \(H^1(\mu_p,\alpha_p)\) are Raynaud's (SGA 3, XVII,
 §5.9(d)). Lemma B is the case \(G_u=\alpha_p\) of the opening of Milne's
 proof of 16.27(b); its proof here spells out that case from 14.17, 5.31 and
 5.34. The explicit sections and the coordinate and fppf-local argument of §3,
-Lemma A, the example of §4 and the derivation in §6 are arguments of this
-note. They use only the cited structural results.
+Lemma A, the example of §4, the comparison with 16.26 at the end of §5 and
+the derivation in §6 are arguments of this note. They use only the cited
+structural results.
 
 | Registered source | Locations used |
 | --- | --- |
-| `milne-2017-algebraic-groups`: J. S. Milne, *Algebraic Groups*, CUP 2017 | Proposition 5.31 and Theorem 5.34, printed pp.106–107/PDF pp.122–123; Theorem 12.9, printed p.233/PDF p.249; Proposition 16.2, printed pp.324–325/PDF pp.340–341; Corollaries 14.7 and 14.17, printed pp.282, 284/PDF pp.298, 300; Proposition 15.3, printed p.303/PDF p.319; Theorems 16.26–16.27, printed pp.332–333/PDF pp.348–349, including the opening of the proof of 16.27(b) on printed p.333/PDF p.349 (the source of Lemma B); Summary 16.29, printed p.334/PDF p.350. |
+| `milne-2017-algebraic-groups`: J. S. Milne, *Algebraic Groups*, CUP 2017 | Proposition 5.31 and Theorem 5.34, printed pp.106–107/PDF pp.122–123; Theorem 12.9, printed p.233/PDF p.249; Proposition 16.2, printed pp.324–325/PDF pp.340–341; Corollaries 14.7 and 14.17, printed pp.282, 284/PDF pp.298, 300; Proposition 15.3, printed p.303/PDF p.319; Theorem 15.34, printed p.319/PDF p.335; Theorems 16.26–16.27, printed pp.332–333/PDF pp.348–349, including the opening of the proof of 16.27(b) on printed p.333/PDF p.349 (the source of Lemma B); Summary 16.29, printed p.334/PDF p.350. |
 | `milne-2022-algebraic-groups`: corrected reprint, 2022 | Proposition 15.3, printed p.303/PDF p.314: same statement; the proof uses a chain indexed by divisibility in place of consecutive indices. Theorem 16.27, printed pp.333–334/PDF pp.344–345: the same mathematical statement and argument, with the proof continuing on printed p.334, where the proof of (b) opens; that opening sentence adds a comma after "q: G → D". Summary 16.29, printed p.334/PDF p.345: the assertions at issue are unchanged; case (a) reads "morphism of schemes" for "map of schemes". |
-| `milne-2017-algebraic-groups-errata-2026-11-02` | Complete official HTML snapshot. Its Chapter 15 entry deletes 15.29–15.30, and its Chapter 16 entries concern pp.324, 330 and 349. None touches 15.3, 16.26, 16.27 or 16.29. |
+| `milne-2017-algebraic-groups-errata-2026-11-02` | Complete official HTML snapshot. Its Chapter 15 entry (p.317) deletes 15.29–15.30 and says that the proofs in Section 15h, which contains 15.34, have been rewritten. Its Chapter 16 entries concern pp.324, 330 and 349. None touches 15.3, 16.26, 16.27 or 16.29. |
 | `milne-2022-algebraic-groups-errata-2026-11-04` | Complete official HTML snapshot. Its nearby entries concern 15.37 and 15.39 (pp.321–322). None touches 15.3, 16.27 or 16.29. |
-| `sga3-expose-xvii-gille-polo-2008`: M. Raynaud, SGA 3 Exp. XVII, Gille–Polo recomposed edition, version of November 2008 | Theorem 5.1.1, printed p.345/PDF p.21 (original pp.573–574); Lemma 5.2.3, printed p.346/PDF p.22; Proposition 5.3.1, printed p.348/PDF p.24; Proposition 5.6.1, printed pp.351–352/PDF pp.27–28; §5.9(d), first and final paragraphs, printed p.358/PDF p.34 (original p.601): the source of the group in §3 and of \(H^1(\mu_p,\alpha_p)\neq0\); Appendix I, Proposition A.1.1 b) (Raynaud's "App. I, prop. 11"), printed pp.366–367/PDF pp.42–43: the low-degree exact sequence used in §3. |
+| `sga3-expose-xvii-gille-polo-2008`: M. Raynaud, SGA 3 Exp. XVII, Gille–Polo recomposed edition, version of November 2008 | Theorem 5.1.1 i) and ii), printed p.345/PDF p.21 (original pp.573–574); Lemma 5.2.3, printed p.346/PDF p.22; Proposition 5.3.1, printed p.348/PDF p.24; Proposition 5.6.1, printed pp.351–352/PDF pp.27–28; §5.9(d), first and final paragraphs, printed p.358/PDF p.34 (original p.601): the source of the group in §3 and of \(H^1(\mu_p,\alpha_p)\neq0\); Appendix I, Proposition A.1.1 b) (Raynaud's "App. I, prop. 11"), printed pp.366–367/PDF pp.42–43: the low-degree exact sequence used in §3. |

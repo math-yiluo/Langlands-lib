@@ -16,8 +16,11 @@ It describes Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0` and envir
 unless a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that
 commit, except paths beginning `Shimura/`, which are relative to `Langlands/`. "Field
 group" means a group scheme over `Spec k` for a field `k : Type u`. D4 records
-publications verified on 18 November 2026. Later evidence for D5 and F8 is
-recorded in the [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md).
+publications verified on 18 November 2026. The theorem types and paired files
+for the D5 and F8 updates were checked at Library commit
+`ecb96e554fed652972a5c0308d69b041f6bc54e4`. The earlier independent coverage
+review is `1b928d65-4b9f-4177-b79c-9774be021f81`, and its published note gives
+the proof routes. [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md)
 
 General results on maximal tori (existence, base change, conjugacy, finite-field and
 Henselian versions) belong to families 4 and 8 of the program and are not listed here. The
@@ -349,17 +352,22 @@ assumes the extension connected; here centrality replaces this.
   `bb9e086196d00484fd52204977452d922bf3c660`.
   [Modules, statement and proof receipts](multiplicative-type-absolute-galois-progress.md)
 
-**D5. Smoothness of diagonalizable groups.** Source: Milne 2017, §12.b, opening paragraph,
+**D5. Smoothness and connectedness of diagonalizable groups.** Source: Milne 2017, §12.b, opening paragraph,
 printed p.230 (PDF 246), which fixes a **finitely generated** commutative group `M`, and
 Remark 12.5, printed p.232 (PDF 248). For a field `k` with characteristic exponent `p` and a
 finitely generated `M`: `D(M)` is smooth if and only if `M` has no `p`-torsion, connected
 if and only if the only torsion in `M` is `p`-torsion, and smooth and connected if and only
 if `M` is free (of finite rank, since `M` is finitely generated).
-- Finite generation is essential. `Diagonalizable.groupScheme k Λ` of B2 is defined for
-  every abelian group `Λ`; for `Λ` free of countably infinite rank it is not locally of
-  finite presentation over `k`, so it is not smooth, although `Λ` is free.
-- Status G. No Lean declaration of these criteria was found. B2 keeps non-smooth finite
-  factors but does not characterize smoothness or connectedness. No owner task was found.
+- Status P. `Diagonalizable.diagonalizableSmoothConnectedCriteria` proves
+  `DiagonalizableSmoothConnectedCriteriaStatement.{u}` with `[ExpChar k p]` and
+  `[AddGroup.FG M]`. Connectedness tests whether every finite-order element is
+  killed by some power of `p`. Smoothness tests whether `p • m = 0` implies
+  `m = 0`. The last clause uses `Module.Free ℤ M`.
+  [Statement](../../Langlands/GroupScheme/Torus/DiagonalizableSmoothConnectedCriteriaStatement.lean)
+  [Proof](../../Langlands/GroupScheme/Torus/DiagonalizableSmoothConnectedCriteriaProof.lean)
+- Finite generation is essential for the smoothness criterion. The construction
+  in B2 also accepts a free group of countably infinite rank, whose group scheme
+  fails local finite presentation over `k`.
 
 ## E. Finite separable Weil restriction and the Deligne torus
 
@@ -548,11 +556,12 @@ and Definition 19.20, printed pp.401–402 (PDF 417–418). The statement is der
     is surjective, with `j ≫ π = f ≫ i`.
 
   Conclusion: `j` is a maximal torus.
-- Status C: `finiteHomMaximalTorusReflection_of_torusImage torusImageClosedTorusStatement`
-  (`Torus/FiniteHomMaximalityReduction`, `Torus/ImageProof`). No owner task was found; a
-  TaskHub search for the statement name on 10 November 2026 returned no task. A
-  variant, `FiniteHomMaximalTorusReflectionSmoothStatement`, is proved in
+- Status P. `finiteHomMaximalTorusReflection` proves the exact proposition using
+  `finiteHomMaximalTorusReflection_of_torusImage torusImageClosedTorusStatement`.
+  A variant, `FiniteHomMaximalTorusReflectionSmoothStatement`, is proved in
   `Torus/FiniteHomMaximalitySmooth`.
+  [Statement](../../Langlands/GroupScheme/Torus/FiniteHomMaximalityStatement.lean)
+  [Proof](../../Langlands/GroupScheme/Torus/FiniteHomMaximalTorusReflectionProof.lean)
 
 **F9. Centres of reductive groups are of multiplicative type.** Source: Milne 2017, §19.b,
 paragraph "Reductive algebraic groups", printed p.400 (PDF 416), with Definition 12.17,
@@ -584,9 +593,6 @@ printed p.236 (PDF 252).
   separable field extensions in detail (E1, E2). Purely inseparable restriction is not
   used to replace finite separability.
 
-## Remaining targets in the original snapshot
+## Remaining targets from the original snapshot
 
-- Gap G at the original commit for the smoothness and connectedness criteria for
-  `D(M)`, with `M` finitely generated (D5).
-- Publication of the composite F8 (no owner task).
 - Named theorems for the six C norm-one components of F2, if a consumer needs them.
