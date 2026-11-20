@@ -22,7 +22,8 @@ for the proof-status update described below, checked at Library
 were checked on 19 November 2026 at Library
 `ecb96e554fed652972a5c0308d69b041f6bc54e4`. Other statuses retain their historical
 survey scope. The VII.1.2 and VII.1.3 additions below were checked on 20 November 2026
-at Library `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`. The status codes, the abbreviation of
+at Library `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`, with five further statement
+pairs checked at `edf9646441fdf5d75d692913b8928b89b9d92538`. The status codes, the abbreviation of
 task identifiers and the method of checking are those of the Chapter VI ledger.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 (abbreviated `RP`) unless another namespace is written. The focused source maps
@@ -74,10 +75,13 @@ mathematical content.
 | VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S: Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`). Necessity P: `arbitraryParabolicCasselmanNecessity`. The corrected condition is the strictly positive root cone from the final decay test in the proof. The printed coroot-chamber necessity fails on an actual square-integrable representation of `Sp₄(ℚ₃)` (I2) |
 | VII.1.2 Theorem with Bruhat–Tits availability | 221–224 / 227–230 | `RP.CasselmanFromBuildingStatement` | S: Task 8060. The published Bruhat–Tits availability proposition is the explicit premise for joint Cartan and Iwahori basis assembly and hence for sufficiency. The necessity proof applies independently |
 | VII.1.2 first paragraph of the proof, reduction to the central uniformizer lattice | 221 / 227 | `RP.CentralUniformizerSquareIntegrabilityStatement` | S: Task 8059. The evaluated cocharacter lattice is closed, its quotient in the full center is compact, and square integrability modulo the two central subgroups is equivalent for arbitrary quotient Haar normalizations |
-| VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper` | P for the overlap-tolerant upper estimate on the full central quotient used by sufficiency, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. The printed disjointness and equality fail by overlap of the labelled cells (I3) |
-| VII.1.2 double-coset volume following (VII.1.2.2) | 222–223 / 228–229 | `Langlands.Aubert.General.standardBasisMember_rayIndex`, `Langlands.Aubert.General.RationalPointFamily.rationalLatticeQuotientVolume` | P for the finite-translate upper bound on the full central quotient, checked at Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. The printed equality at `m=fz` lacks the Levi intersection index. I4 gives the exact correction on paper |
+| VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper`; `Langlands.HarishChandraSchwartz.CartanLabelledSeriesStatement` | P for the overlap-tolerant upper estimate on the full central quotient used by sufficiency, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. S: Task 8125 for the two-sided comparison on the uniformizer quotient, with disjoint coarse cells and at most \(r^2\) fine labels per point. Under the cover assumption the integral and labelled series are finite together (I3) |
+| VII.1.2 ambient Haar weights in the series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.HarishChandraSchwartz.CentralUniformizerCellVolumeStatement` | S: Task 8123. Each compact-open double coset embeds in the central uniformizer quotient and keeps its ambient Haar mass for the quotient measure compatible with counting measure on the lattice |
+| VII.1.2 partition by the \(S_M(n)\) after (VII.1.2.2) | 222–223 / 228–229 | `Langlands.GroupScheme.CocharacterCone.ThresholdPartitionStatement` | S: Task 8121. A finite residue set and exponents along diagonal cocharacter rays parameterize the actual integral cone modulo its annihilator. Bounded and unbounded exponents give the prescribed disjoint threshold pieces (I7) |
+| VII.1.2 double-coset volume following (VII.1.2.2) | 222–223 / 228–229 | `Langlands.Aubert.General.standardBasisMember_rayIndex`, `Langlands.Aubert.General.RationalPointFamily.rationalLatticeQuotientVolume`; `Langlands.HarishChandraSchwartz.IwahoriLeviDoubleCosetVolumeStatement` | P for the finite-translate upper bound on the full central quotient, checked at Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. S: Task 8118 for the exact formula including the Levi index, under the Iwahori factorization, ambient injectivity and the two radical contractions (I4) |
 | VII.1.3 opening paragraph, standard Levi transporters | 224 / 230 | `Langlands.GroupScheme.StandardLeviTransporterCosetsStatement`; `Langlands.GroupScheme.MaximalStandardLeviPointCosetsStatement` | S. The comparison of left coset sets is the target of Task 8061. The second statement uses the comparison and the Weyl-side V.4.8 result to count two cosets precisely for maximal proper standard parabolics and to identify the conjugate parabolic for a representative of the second coset (I5) |
 | VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S: task 004e00e1; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
+| VII.1.3 Theorem with a joint compact basis | 224–226 / 230–232 | `RP.MaximalLeviReducibilityFromJointBasisStatement` | S: Task 8126. The joint special-compact basis gives admissibility, compact support and the fixed-level VI.3.4 finiteness at the induced carrier universe. The conclusion is the full represented reducibility criterion |
 | VII.1.3 Corollary (i)–(iii) | 226–227 / 232–233 | `RP.MaximalLeviBlockStatements`; `RP.MaximalLeviBlockProjectionEquivalenceStatement` | S. The first statement (task `f4046ca6`) expresses (ii) as Jacquet nonvanishing and (iii) as full faithfulness and essential surjectivity of induction. The second statement (task `3c3f4d9e`) names `r_D` using a left adjoint to the block inclusion. It asserts projection existence, faithfulness of `r_D`, invertibility of `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`. Its statement record `17566075` first entered Library `c40a0134` under integration `596546b6faf9495ba266d58426b8d8d3` |
 
 The four new statement pairs first entered the Library at
@@ -92,6 +96,20 @@ await proof publication.
 | [Central uniformizer lattice](../../Langlands/Representation/Exponents/CentralUniformizerSquareIntegrabilityStatement.md) | `c74e419f-9221-46fe-8dee-eb21d6f20c2c` | `da07bcd9a3534387a7a4ab1ad425a1a3` | Task 8059 (`4845dbef-0fbe-49c6-8749-da714cbe5c5f`) |
 | [Standard Levi transporter cosets](../../Langlands/GroupScheme/Rational/StandardLeviTransporterCosetsStatement.md) | `11f65ad0-ddbf-4b98-8f06-68316a66e91b` | `e5ec3c65162f4403ab5ad726f3c23010` | Task 8061 (`efb26077-4f4c-4fb3-9723-39115214dc09`) |
 | [Maximal standard Levi point cosets](../../Langlands/GroupScheme/Rational/MaximalStandardLeviPointCosetsStatement.md) | `c817a331-6f7c-4741-b84d-d003a6dce3c7` | `7bd8513835ef4054aea6df8c8897a517` | Uses the proof of the preceding comparison |
+
+The following five statements first entered the Library at
+`6e9e589baa721ce995563f73f648b6f4e45718a1` after independent review and fresh
+integrated validation. Their Lean and Markdown files match the frozen pairs
+at the checked commit. Each proof task has a compile-checked shared draft at
+revision 1 awaiting proof review and publication.
+
+| Statement explanation | Statement record | Integration ID | Proof task |
+| --- | --- | --- | --- |
+| [Labelled Cartan series](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CartanLabelledSeriesStatement.md) | `b9f0ae75-6c7e-4d85-b646-3d31ca56fde2` | `c2c31caa05ae498a91563d1397c08fa5` | Task 8125 (`b77701f5-413c-4f3f-bde3-88501fbf2acd`) |
+| [Uniformizer quotient cell volume](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CentralUniformizerCellVolumeStatement.md) | `62976d5e-4a0c-4855-ac32-5070d348008f` | `fe8fb8d9a4834a68846dc225b27086a2` | Task 8123 (`c84f7f0e-a093-4804-8870-9e203fd9cf99`) |
+| [Cocharacter cone threshold partition](../../Langlands/GroupScheme/Rational/CocharacterConeThresholdPartitionStatement.md) | `d34beb48-4a84-42a4-9949-223d627c0959` | `4c52cb47e11842d48a24ac35663e60c5` | Task 8121 (`9f814f51-5671-40d0-8707-ef57915c71d7`) |
+| [Iwahori double-coset volume with the Levi index](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/IwahoriLeviDoubleCosetVolumeStatement.md) | `5f56bd8b-776d-421b-9cca-2160ed19fc5b` | `32e461bea9f44997bf04ffdd581282a4` | Task 8118 (`237d031c-bb81-46eb-88c3-43d5c8544c80`) |
+| [Maximal-Levi reducibility from a joint compact basis](../../Langlands/Representation/Exponents/MaximalLeviReducibilityFromJointBasisStatement.md) | `5e593895-e08f-4211-a758-b24a0a71c9c3` | `43cc151af16c48a0a410d814d7b49054` | Task 8126 (`52747171-71ba-4411-a132-a104466fca22`) |
 
 ## VII.2 Tempered representations
 
@@ -338,6 +356,17 @@ as recorded.
   The erratum was published as `46ab9a9d-e57b-4008-85dc-0ef828114c63`
   under integration `48af4d8510f14bf3bd00bb2d289bbb72`.
   [Example and self-endomorphism argument](../errata/renard-vii13-mutual-hom.md)
+
+- **I7. VII.1.2, the monoid underlying the threshold partition (printed pp. 222–223 / PDF pp. 228–229).**
+  A cocharacter \((a,b,-a-b)\) of the diagonal torus of split \(\mathrm{SL}_3\) has
+  simple-root coordinates \((p,q)=(a-b,a+2b)\), so the image consists of pairs
+  with \(p\equiv q\pmod 3\). In its nonnegative submonoid, the indecomposable
+  elements \((3,0),(0,3),(1,1)\) satisfy \((3,0)+(0,3)=3(1,1)\). This contradicts
+  the free-monoid description. Dividing by the coordinate steps of the two axis
+  rays leaves the residues \((0,0),(1,1),(2,2)\). The published threshold
+  statement retains a finite residue set and bounds the exponents in each
+  Levi piece using the source's cutoff.
+  [Threshold partition statement](../../Langlands/GroupScheme/Rational/CocharacterConeThresholdPartitionStatement.md)
 
 ## Genuine gaps of Chapter VII
 
