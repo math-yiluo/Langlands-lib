@@ -54,8 +54,9 @@ on 19 November, records the proofs of the V.5.3 subalgebra Lemma under (P) and o
 the V.3.20 and V.3.6/V.3.13 conjunctions. It also records the paper counterexample
 to the Lemma without (P) with the status correction of its statement, and Worker
 1222's corrected statement of (V.3.21.1) with its exact proof task.
-Other rows retain their earlier audit status. These updates distinguish
-statements, exact proofs and candidates awaiting integration.
+The 20 November follow-up records the published proof of the corrected
+(V.3.21.1) and publication of the V.5.3 Markdown correction. Other rows
+retain their earlier audit status.
 
 The V.5.3 subalgebra row, issue I6 and gap 4 record the paper counterexample to
 the printed Lemma, the
@@ -590,7 +591,8 @@ strict cones `A^{++}_L` of actual split components of the standard Levi `L` of i
 `K`, mapped into `A` by compatible maps. Each piece lies in the image of `A^+_M`, and
 each class of that image lies in exactly one piece. The exact proof Task 7852
 (`fc52e79f-597d-4c5c-bf3a-2c9026b21519`) has an independently accepted proof candidate,
-`8bb000ae-d8a9-40c0-a553-c2262d8938b2`, that awaits integration in the checked Library.
+`8bb000ae-d8a9-40c0-a553-c2262d8938b2`, not yet public at that commit. See the
+20 November follow-up for publication.
 
 Worker 956, the executor of Task 7777, found a paper counterexample to the V.5.3
 subalgebra Lemma without (P) and published it as the note
@@ -614,9 +616,9 @@ Worker 4's status correction `84ecf412-95b9-4326-9ebf-452b9de42766` of
 `Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` keeps the Lean file
 unchanged (SHA256 `725773ec…`) and replaces the Markdown. The new Markdown records that
 the assertion is false in general by this paper counterexample, with the scope just
-described. Reviewer 9848 approved it without qualifications (review `63a0a176`). In the
-checked Library it awaits integration, so the public Markdown of the statement still
-describes its truth as unknown.
+described. Reviewer 9848 approved it without qualifications (review `63a0a176`). At the
+checked commit the correction was not yet public. See the 20 November follow-up for
+publication.
 
 The following proofs were independently accepted without qualifications.
 
@@ -641,6 +643,36 @@ has no other change. The first Task 7817 candidate, `1ee831c7`, was rejected (Re
 9744). Development checks of the three proof modules against the checked Library report
 0 errors, 0 warnings and only the axioms `propext`, `Classical.choice` and `Quot.sound`
 (diagnostics `12e23196`, `817ed635` and `6f59ee7f`).
+
+The 20 November 2026 follow-up, by Worker 4, checks Library
+`7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`. Both publications below first entered the
+Library at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. The published Lean and Markdown
+files match the corresponding accepted bundles by SHA256.
+
+- **V.3.21.1 modulo `⁰A_M`.** Worker 1222 and Worker 118's
+  [`leviConePartition` proof](../../Langlands/BruhatTits/Cartan/RenardLeviConePartitionProof.md)
+  (`8bb000ae-d8a9-40c0-a553-c2262d8938b2`) proves the exact
+  `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviConePartitionStatement.{u}`. Machine
+  receipt `5fb2646f-ee63-4755-afe4-95a0632dc910` accepts the Lake build and exact-target
+  check; Reviewer 10583 approved it without qualifications. Integration
+  `5a5932df5a324e25a2b138a91227f625` published the proof, and Task 7852 is complete.
+  The proof recovers the index `K` of a piece as the set of simple roots whose
+  restricted character order on the quotient class is zero. All other simple-root
+  orders are positive, so each piece lies in the nonnegative image. To show that
+  every class occurs, the proof takes its uniformizer-section representative from
+  a cocharacter of `A`. The image of the cocharacter in `T` selects `K` by the same
+  zero set. The standard Levi inclusion and `leviSplitComponentInclusion` give the
+  compatible map from the `K`-Levi's split component to `A`. The strict uniformizer
+  image theorem and injectivity of `A(F) → T(F)` then give a strict point mapping to
+  the section representative. This proves the partition on
+  `A_M(F)/⁰A_M`, not the printed equality of point sets (I1).
+- **V.5.3 without (P).** Integration `df307e3dd6ea44e4bbb345e8c6c227aa` published
+  Worker 4's [Markdown correction](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md),
+  `84ecf412-95b9-4326-9ebf-452b9de42766`, approved without qualifications by Reviewer
+  9848. It changes no Lean code. The statement pair now records the paper
+  counterexample and the unproved building-availability premise needed to refute
+  the Lean proposition with this example. Task 7777 is retired; the proved statement
+  under (P) and the proved module form are unaffected.
 
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
@@ -770,7 +802,7 @@ The section refers to [7] (Borel–Tits) or [42] (Springer) for its recalled ass
 | V.3.20 "on retrouve ainsi la structure de tore algébrique de `X(M)`"; `Im X(M)` is a real submanifold of the complex torus `X(M)` | Algebraic side: the coordinate algebra `ℂ[Λ(M)]` (V.2.4 above) and the basis-dependent isomorphisms of topological groups `X(M) ≃ (ℂ^×)^r` and `Im X(M) ≃ (S¹)^r` (`PL.rationalCanonicalUnramifiedCharacterCoordinates`, `PL.rationalCanonicalUnitaryUnramifiedCharacterCoordinates`, in [RationalUnramifiedCharacterCoordinates](../../Langlands/Representation/Plancherel/RationalUnramifiedCharacterCoordinates.md)). Analytic side: Worker 4's definitions [RationalUnramifiedComplexChart](../../Langlands/Representation/Plancherel/RationalUnramifiedComplexChart.md) (the one-chart complex structure of each integer basis of `Λ(M)`) and statements [RationalUnramifiedComplexTorusStatement](../../Langlands/Representation/Plancherel/RationalUnramifiedComplexTorusStatement.md): `PL.RationalUnramifiedBasisChartIndependenceStatement` (every basis chart is a local biholomorphism), `PL.RationalUnramifiedComplexLieGroupStatement` (`X(M)` is a complex Lie group), `PL.RationalUnramifiedComplexExponentialStatement` (`𝔞*_ℂ → X(M)` is a local biholomorphism) and `PL.RationalUnitaryUnramifiedSubmanifoldStatement` (`Im X(M)` is an embedded real Lie subgroup, onto which the imaginary exponential is a local diffeomorphism), with conjunction `PL.RationalUnramifiedComplexTorusStatement`; stated for any connected reductive `G` in place of the Levi `M` | D (coordinates and charts); P for the four analytic statements (statements: eighth Worker 4 pass; proofs: tenth): `rationalUnramifiedBasisChartIndependence`, `rationalUnramifiedComplexLieGroup`, `rationalUnramifiedComplexExponential` and `rationalUnitaryUnramifiedSubmanifold`, from exact proof Tasks 7645–7648. P for the conjunction: `rationalUnramifiedComplexTorus` ([proof](../../Langlands/Representation/Plancherel/RationalUnramifiedComplexTorusProof.md)), pairing Task 7817 (`9cf51c25-f76d-48f1-80cf-f65e90bc442b`), whose accepted bundle includes the permitted rename of a clashing instance name (task: tenth pass; proof: eleventh). The complex structure is the analytic one; no scheme structure on `X(M)` is constructed. See also remark R2 |
 | V.3.21 `M^+`, `M^{++}` (inverse images under `H_M` of the chambers) and the full cones `A^+_M`, `A^{++}_M` (all `a ∈ A_M` with `\|α(a)\|_F ≤ 1`, resp. `< 1`, for `α ∈ Δ(P)`) | [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md), namespace `Langlands.BruhatTits.Cartan.RenardLeviCones`: `leviPlus`, `leviStrict` (`M^+`, `M^{++}`: the points whose published positive centralizer valuation `H_M` lies in `closedChamber`, resp. `chamber`, on `𝔞_M = V A`) and `componentPlus`, `componentStrict` (`A^+_M`, `A^{++}_M`, defined by the norm form). The data `(i, ν, J, f)` make the dependence on `P` explicit; reading `leviPlus` as `M^+` requires the Levi, its split component and their inclusion as inputs, which the definitions do not enforce (as for `dominantCentralizer`). Proved there: the valuation forms `mem_componentPlus_iff_order`, `mem_componentStrict_iff_order`; for split `A`, agreement with the source definition `A^+_M = A_M ∩ M^+` (`map_mem_leviPlus_iff`, `preimage_leviPlus`, and the same for `A^{++}_M`); the monoid laws; `⁰M ⊂ M^+`; and `leviPlus_minimal`: `M_∅^+` is the published `dominantCentralizer` of [RenardDominantValuation](../../Langlands/Representation/Plancherel/RenardDominantValuation.md). `CocharacterUniformizer.CAplus` and `CAstrict` are the lattice cuts of V.3.23 (`CAplus_eq_inter`, `CAstrict_eq_inter`). Earlier inline uses, such as the hypotheses `characterNorm F S α x ≤ 1` in `StandardCasselmanUniformAsymptotics.lean`, are not rewritten through these names | D; P for all the listed theorems. The separate published topology target on actual standard-Levi split components is recorded in the next row |
 | V.3.15/V.3.21 topology of `chamber` and `closedChamber` on the actual `𝔞_M = V A` | `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviChamberTopologyStatement` ([statement and scope](../../Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyStatement.md)): for an actual connected reductive group over an arbitrary field, maximal split torus, generic cocharacter, subset of simple roots, represented closed standard Levi, its actual split component and compatible factor into the maximal split torus, the strict chamber is nonempty and open, the nonstrict chamber is closed, and it equals the topological closure of the strict chamber in `moduleTopology ℝ (V A)`. Nonemptiness is a conclusion; empty roots and central directions are included | P: `Langlands.BruhatTits.Cartan.RenardLeviCones.leviChamberTopology` ([proof](../../Langlands/BruhatTits/Cartan/RenardLeviChamberTopologyProof.md)), independently accepted and published candidate `a6b1d812-cffd-4ded-baa9-dad583091837` from exact proof Task 7234 (`fdde72e2-596e-4f2a-b5bd-cc0ee54d7b39`). Statement `3815da2b-1e51-4b7a-9733-ab8b5e957974` is unchanged. Evidence below; gap 8 is closed |
-| V.3.21 (V.3.21.1) `A^+_M = ⊔_Q A^{++}_L` | Worker 1222's `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviConePartitionStatement` ([statement and scope](../../Langlands/BruhatTits/Cartan/RenardLeviConePartitionStatement.md)): for every standard index `J`, actual split component `A` of the standard Levi `M` and compatible `A → T`, the image of `A^+_M` in `A_M(F)/⁰A_M` is partitioned by the images of the strict cones `A^{++}_L` of actual split components of the standard Levis `L ⊇ M`, mapped compatibly into `A`. The printed equality of point sets is false (I1); the statement is its correction modulo `⁰A_M` | S: statement `ed213f6e-e570-4fbf-8997-dadfc5750288` (eleventh Worker 4 pass), exact proof Task 7852 (`fc52e79f-597d-4c5c-bf3a-2c9026b21519`). A: its proof candidate `8bb000ae-d8a9-40c0-a553-c2262d8938b2` is accepted and awaits integration. Source issue I1 below |
+| V.3.21 (V.3.21.1) `A^+_M = ⊔_Q A^{++}_L` | Worker 1222's `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviConePartitionStatement` ([statement and scope](../../Langlands/BruhatTits/Cartan/RenardLeviConePartitionStatement.md)): for every standard index `J`, actual split component `A` of the standard Levi `M` and compatible `A → T`, the image of `A^+_M` in `A_M(F)/⁰A_M` is partitioned by the images of the strict cones `A^{++}_L` of actual split components of the standard Levis `L ⊇ M`, mapped compatibly into `A`. The printed equality of point sets is false (I1); the statement is its correction modulo `⁰A_M` | P for the corrected quotient statement `ed213f6e-e570-4fbf-8997-dadfc5750288`: `Langlands.BruhatTits.Cartan.RenardLeviCones.leviConePartition` ([proof](../../Langlands/BruhatTits/Cartan/RenardLeviConePartitionProof.md)), published candidate `8bb000ae-d8a9-40c0-a553-c2262d8938b2` from exact proof Task 7852 (`fc52e79f-597d-4c5c-bf3a-2c9026b21519`). See the 20 November follow-up and source issue I1 |
 | V.3.22 `A^+(ε)` (all `a ∈ A_M` with `\|α(a)\|_F < ε`) | `componentEpsilon` in [RenardLeviCones](../../Langlands/BruhatTits/Cartan/RenardLeviCones.md), defined for every real `ε`. Proved there: `componentEpsilon_one` (`A^+(1) = A^{++}_M`), `componentEpsilon_mono`, `componentEpsilon_subset_componentStrict` for `ε ≤ 1`, `componentEpsilon_eq_empty` for `ε ≤ 0` and nonempty `Δ(P)`, and `CAepsilon_eq_inter`: `CocharacterUniformizer.CAepsilon` is the lattice cut `C_A^+(ε) = C_A ∩ A^+(ε)` of V.3.23. Earlier inline forms remain: the condition on every `t ∈ A(F)` in `RP.GeneralizedJacquetContractingRangeStatement` (GeneralizedJacquetRemarksStatements.lean) and `standardCone` in `StandardCasselmanConstantTerm.lean` | D; P for the listed theorems |
 | V.3.23 `C_A`, `F_M`, `C̃_A = C_A F_M`, `F_M ⊂ M^+`, `C_A^+`, `C_A^{++}`, `C_A^+(ε)` | `CocharacterUniformizer.CA`, `CAplus`, `CAstrict`, `CAepsilon`; `RC.FullLatticeRepresentativeStatement`, `RC.RenardDominantComparisonStatement`, `RC.IsChamberCompatibleTransversal` | D; P: `fullLatticeRepresentative` (representatives, Task 5679) and `renardDominantComparison` |
 | V.3.24 the nonnegative integral model and quotient by the common annihilator | `GS.CocharacterCone.nonnegative`, `quotient`, `mkQ_mem_quotient_iff`, `latticeSection_mem_CAplus_iff` ([construction](../../Langlands/GroupScheme/Rational/CocharacterCone.md)) | D/P for the construction and intrinsic laws; published candidate `6d296d7f-cdc6-4d8a-bbb7-580fab06a4b9` |
@@ -1196,7 +1228,7 @@ The section refers to [14] (Bruhat–Tits).
 | V.5.1 Corollary: every parabolic is `K_0`-conjugate to a standard one | `Langlands.BruhatTits.SpecialCompactParabolicConjugacyStatement` (hypothesis: property (1) of the Theorem, `G(F) = P_∅(F) K = K P_∅(F)`, for any subgroup `K` over any field) | P: `specialCompactParabolicConjugacy` ([proof](../../Langlands/BruhatTits/Parabolic/SpecialCompactConjugacyProof.md), Worker 283). For an actual `K_0`, property (1) comes from the Theorem row above |
 | V.5.2 Theorem ([24] 2.1) | `SC.AvailableSimultaneousStandardBasisStatement` (its third conjunct, `SC.SimultaneousStandardBasisAt` at every special vertex); `RP.PresentationConeContractionStatement` | P for valid corrected KP data: `availableSimultaneousStandardBasis` (Task 5310, `8d4643b8`); existence of such data is the open `BruhatTitsAvailabilityStatement` (see the V.5.1 Theorem row). P: `presentationConeContraction` (the contraction parts on root presentations). The task `44b8e3a8` listed here before was not found in the task records at this update |
 | V.5.3 `H_0`, the two Lemmas, the Corollary, the finiteness Lemma in module form, the Theorem and the Remark | `Langlands.Hecke.IwahoriHeckeDecompositionStatement` | P: `Langlands.Hecke.iwahoriHeckeDecomposition`, exact proof from Task 5575 (`de85c579-484b-43a2-bba9-043299101602`), verified below. Renard writes that `A` is generated by the `a_z`, `z ∈ C_∅`; the statement uses the dominant generators `z ∈ C_∅^+`, which is what the second Lemma and all later uses concern (see the statement's [Markdown](../../Langlands/Representation/Hecke/IwahoriHeckeDecompositionStatement.md), "Formal choices") |
-| V.5.3 finiteness Lemma for the generated subalgebra `M`: "L'algèbre `M` est un `A`-module de type fini" | Worker 4's `Langlands.Hecke.IwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessStatement.md)). It keeps the data of `IwahoriHeckeDecompositionStatement` and adds one hypothesis (P): every `t ∈ C̃_∅^+` satisfies the V.5.2 (ii) clauses for the minimal standard parabolic (`t` contracts `K ∩ N_∅`, `t⁻¹` contracts `K ∩ N̄_∅`, and `t` normalizes `K ∩ M_∅`). Let `A` and `M` be the unital subalgebras generated by the `a_z`, `z ∈ C_∅^+`, and by the `a_t`, `t ∈ C̃_∅^+`. The statement asserts `A ≤ M` and `M = ∑ₖ A D_k` for finitely many `D_k ∈ M` | P: `Langlands.Hecke.iwahoriHeckeSubalgebraFiniteness` ([proof](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessProof.md)), exact proof Task 7679 (`3e5f1cb1-7718-40d2-ba6f-eb59e653b591`) (statement: ninth Worker 4 pass; proof: eleventh). F for the Lemma without (P): Worker 4's `Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md)) states it for Renard's chamber-compatible transversal (V.3.23, `C̃_∅^+ = C_∅^+ F_∅`), with `A` generated by the `a_z`, `z ∈ C_∅^+` (a documented correction of the printed `z ∈ C_∅`), and with `M` generated by the `a_{zf}`, `z ∈ C_∅^+`, `f ∈ F_∅`. It is false in general by Worker 956's paper counterexample, the [ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md) (I6). The example refutes the Lean proposition whenever a building assignment is available for that group, which the Library does not prove; no Lean negation exists. Worker 4's status correction of its Markdown, `84ecf412-95b9-4326-9ebf-452b9de42766`, records this and awaits integration (A). Its exact proof Task 7777 (`a8ad2421-32c3-4bc4-b4c5-e91663f83bd7`) is retired (task: tenth Worker 4 pass; counterexample and retirement: eleventh; gap 4). The (P) statement's Markdown argues that (P) holds when `G` is split; this is not formalized. The Markdown of the module-form statement in the row above still lists the unconditional assertion as an outstanding source obligation ("Not stated"); by I6 it is false in general. The generated subalgebra can be larger than the module span (`G_m` over `ℚ_3`, `K = 1 + 3ℤ_3`, `F_0 = {-1}`: the span is `Aε` and the algebra is `A ⊕ Aε`), and the source proof treats only products `a_{z₁} a_{z₂ f}` |
+| V.5.3 finiteness Lemma for the generated subalgebra `M`: "L'algèbre `M` est un `A`-module de type fini" | Worker 4's `Langlands.Hecke.IwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessStatement.md)). It keeps the data of `IwahoriHeckeDecompositionStatement` and adds one hypothesis (P): every `t ∈ C̃_∅^+` satisfies the V.5.2 (ii) clauses for the minimal standard parabolic (`t` contracts `K ∩ N_∅`, `t⁻¹` contracts `K ∩ N̄_∅`, and `t` normalizes `K ∩ M_∅`). Let `A` and `M` be the unital subalgebras generated by the `a_z`, `z ∈ C_∅^+`, and by the `a_t`, `t ∈ C̃_∅^+`. The statement asserts `A ≤ M` and `M = ∑ₖ A D_k` for finitely many `D_k ∈ M` | P: `Langlands.Hecke.iwahoriHeckeSubalgebraFiniteness` ([proof](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessProof.md)), exact proof Task 7679 (`3e5f1cb1-7718-40d2-ba6f-eb59e653b591`) (statement: ninth Worker 4 pass; proof: eleventh). F for the Lemma without (P): Worker 4's `Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md)) states it for Renard's chamber-compatible transversal (V.3.23, `C̃_∅^+ = C_∅^+ F_∅`), with `A` generated by the `a_z`, `z ∈ C_∅^+` (a documented correction of the printed `z ∈ C_∅`), and with `M` generated by the `a_{zf}`, `z ∈ C_∅^+`, `f ∈ F_∅`. It is false in general by Worker 956's paper counterexample, the [ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md) (I6). The example refutes the Lean proposition whenever a building assignment is available for that group, which the Library does not prove; no Lean proof of the negation is published. The published Markdown correction `84ecf412-95b9-4326-9ebf-452b9de42766` records this without changing the Lean proposition (20 November follow-up). Its exact proof Task 7777 (`a8ad2421-32c3-4bc4-b4c5-e91663f83bd7`) is retired (task: tenth Worker 4 pass; counterexample and retirement: eleventh; gap 4). The (P) statement's Markdown argues that (P) holds when `G` is split; this is not formalized. The Markdown of the module-form statement in the row above still lists the unconditional assertion as an outstanding source obligation ("Not stated"); by I6 it is false in general. The generated subalgebra can be larger than the module span (`G_m` over `ℚ_3`, `K = 1 + 3ℤ_3`, `F_0 = {-1}`: the span is `Aε` and the algebra is `A ⊕ Aε`), and the source proof treats only products `a_{z₁} a_{z₂ f}` |
 | V.5.4 Proposition: `G` unimodular | `RPF.RationalReductiveUnimodularityStatement` | P: `rationalReductiveUnimodularity` |
 | V.5.4 Lemma: `δ_{P\G}(m) = δ_G(m)/δ_P(m) = δ_P(m)^{-1} = δ_N(m)^{-1} = δ_{N̄}(m)` on `M`, and the root-product formula on `A` | `RPF.RationalParabolicModulusStatement` (`G` unimodular and the modular character of a standard `P` is the Haar modulus of `N`), `RPF.RationalOppositeHaarReciprocityStatement` (the moduli of `N` and `N̄` are reciprocal), `RPF.DynamicUnipotentHaarDeterminantStatement` (Haar modulus = normalized absolute value of `det(Ad m \| Lie N)`), `GS.DynamicAdjointDeterminantFormulaStatement` and `GS.Dynamic.AdjointDeterminantTorusRestrictionStatement` (that determinant as a product of roots with multiplicities) | C: derived from these proved statements for standard `P`; no single statement states the Lemma, and Renard's modulus orientation (inverse to Mathlib's `modularCharacter`) must be tracked as in the cited Markdown |
 | V.5.5 Proposition (127 / 133): nearest point on the closure of an open cone `C` and its characterizations (i)–(iii); Corollary (128 / 134): the decomposition along a basis and its dual basis | `Langlands.Renard.ConeProjectionStatements`, in a corrected formulation: `C` is a nonempty convex open cone, and the equivalence with (iii) is asserted only for `C ≠ E` (for `C = E` the strict dual cone `Č` is empty and (iii) fails, although the projection is `v` itself). The Corollary has no extra hypothesis | P: `coneProjectionStatements` (Task 5418). See source issue I3 |
@@ -1258,7 +1290,7 @@ not whole-section or whole-book completion.
   states the correction modulo `⁰A_M` for actual split components (V.3.21.1 row,
   eleventh Worker 4 pass). In the image modulo `⁰A_M`, the class of `diag(1, u)` is
   the class of the identity, which lies in the piece of `Q = G`. Its exact proof
-  Task 7852 has an accepted candidate that awaits integration.
+  `leviConePartition` from Task 7852 is published (20 November follow-up).
 - **I2. V.3.24 (printed p.117 / PDF p.123).** The claim `S = C^+_∅/C_{A_G} ≅ ℕ^d` with
   `d = |Δ_∅|` is false in general. The published
   [IwahoriHeckeDecompositionStatement](../../Langlands/Representation/Hecke/IwahoriHeckeDecompositionStatement.md)
@@ -1395,9 +1427,9 @@ not whole-section or whole-book completion.
    that group, which the Library does not prove. The statement's Markdown also gives
    `Res_{E/F} SL₃`, `E/F` ramified, as a group with no chamber-compatible transversal,
    for which the statement is vacuous. Its exact proof Task 7777
-   (`a8ad2421-32c3-4bc4-b4c5-e91663f83bd7`) is retired, and Worker 4's status correction
-   of its Markdown (`84ecf412-95b9-4326-9ebf-452b9de42766`) awaits integration (eleventh
-   Worker 4 pass). No proof obligation remains for this Lemma.
+   (`a8ad2421-32c3-4bc4-b4c5-e91663f83bd7`) is retired. The Markdown correction
+   (`84ecf412-95b9-4326-9ebf-452b9de42766`) is published (20 November follow-up),
+   and the Lean statement is unchanged. No proof obligation remains for this Lemma.
 5. V.3.20: no longer a gap. The complex-torus structure of `X(M)` recovered
    through the exponential, and `Im X(M)` as a real submanifold of `X(M)`, are stated by
    Worker 4's public `RationalUnramifiedComplexTorusStatement` (eighth Worker 4 pass). Its
@@ -1467,9 +1499,9 @@ publication receipt verified above.
 
 `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviConePartitionStatement`, the
 corrected (V.3.21.1), has exact proof Task 7852
-(`fc52e79f-597d-4c5c-bf3a-2c9026b21519`). Its proof candidate
-`8bb000ae-d8a9-40c0-a553-c2262d8938b2` is independently accepted and awaits
-integration in the Library checked by the eleventh Worker 4 pass.
+(`fc52e79f-597d-4c5c-bf3a-2c9026b21519`). The task is complete: its independently
+accepted proof `8bb000ae-d8a9-40c0-a553-c2262d8938b2` is published as
+`leviConePartition`, with exact publication evidence in the 20 November follow-up.
 
 The three public Levi split-component recall statements have exact proof
 Tasks 6918–6920, and their conjunction has assembly Task 6921, as listed in

@@ -101,6 +101,8 @@ a paywall or missing edition; include the exact citation and attempted locations
 
 - [Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness](../notes/errata/milne-2017-trigonalizable-section-conjugacy.md) — Paper counterexamples in characteristic p: α_p ⋊ μ_p (Raynaud's SGA 3 XVII 5.9(d) example, made explicit) and α_p ⋊ G_m, to section conjugacy and to the maximal-diagonalizable-subgroup description, the failing step (15.3 needs smooth groups), the SGA 3 XVII 5.1.1 ii) scope, why 16.26 is unaffected, the falsity of `TrigonalizableSectionConjugacyStatement` and its corrected replacement `TrigonalizableSectionConjugacySmoothStatement`.
 
+- [Milne 16.62–16.63: a torus can have no fixed tangents without definite weights](../notes/errata/milne-torus-definiteness-luna-maps.md) — An opposite-weight action on the additive plane refuting strict definiteness and the universal Luna-isomorphism claim, with the stable complement, source locations and unaffected clauses.
+
 - [Renard VII.1.2 and the strict root cone](../notes/errata/renard-2026-representations-groupes-reductifs-padiques.md) — A square-integrable `Sp₄(ℚ₃)` representation with a normalized Jacquet exponent on a coroot wall, and the root-cone inequality given by the proof's decay test.
 
 - [Overlapping Cartan cells in Renard VII.1.2](../notes/errata/renard-vii12-cartan-cover.md) — A split torus example where the labelled sum counts each cell twice, with the corrected integral bound and the published Lean sufficiency estimates.

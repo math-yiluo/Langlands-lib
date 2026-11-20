@@ -2547,6 +2547,43 @@ proved reductions), the published `archimedeanStandardAdmissible` and
 (complete draft) and the irreducibility of archimedean standard modules
 (Task 7004, open).
 
-The status of the other L4 inputs (Tasks 5921 and 5816) is unchanged. The
-shared DAG records the Flath drafts at revision 450. Neither track of the
-program is complete.
+The status of the other L4 inputs (Tasks 5921 and 5816) is unchanged at this
+snapshot. The shared DAG records the Flath drafts at revision 450. Neither
+track of the program is complete.
+
+## Publication update, 20 November 2026
+
+The following results were verified in the current Library at `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`.
+The table records the integration commit of each candidate, not the date of
+machine validation or independent review alone.
+
+| Track and owner | Public declaration(s) | Candidate and integration commit | Scope |
+| --- | --- | --- | --- |
+| L4, Task 7004 (`c77dc5a4-25c6-4498-bc30-ecfbcf470106`, done) | `Langlands.Automorphic.cuspidalArchimedeanStandardIrreducible`, `Langlands.Automorphic.CuspidalArchimedeanComponentIrreducibleProof` | `7c7a323a-a027-4428-9456-7f4d5f99dad4`, `5f5d3a914cd43b9dc1cd32c07887a973f561df96` | Exact proof for both real and complex place parameters in Getz–Hahn §11.4, (11.14)–(11.17). It uses isotypy and a compact multiplicity-one witness, not the open generic exponent bounds. |
+| L4, Task 6821 (`1d8cbc81-142d-47eb-9f4d-8b2b13f0fd52`) | `Langlands.Global.cuspidalSelfPairContinuation`, `Langlands.Global.Factors.CuspidalSelfPairContinuationProof` | `252cfd3f-ba30-42ae-8074-0499eae137eb`, `95d37e11bd46972d484c6fc9e6b864ff7625cf9e` | Exact proof of the partial self-pair continuation target from Jacquet–Shalika I, Lemma (5.2), pp.554–555. For the specified contragredient and unitary central character it also supplies absolute product convergence throughout `Re s > 1`. The positive global integral, bilateral Landau theorem and nonnegative logarithmic series replace the proposed reduction through Task 5921. |
+| L4, Task 3657 | `Langlands.Global.CuspidalPairPoleReductionStatement`, with new premise definitions for slab pairing, semi-local ratios and strip bounds | `517128c6-87c0-46fb-9a59-aad111b56771`, `95d37e11bd46972d484c6fc9e6b864ff7625cf9e` | Proposition definitions, not an exact proof. For Getz–Hahn 11.7.1 (Cogdell 2004 §4, pp.219–222) the four premises are `CuspidalArchimedeanParameterExistenceStatement`, `RankinSelbergGlobal.CuspidalSlabPairingStatement`, `CuspidalPairSemilocalRatioStatement` and `CuspidalPairVerticalStripStatement`. The archimedean existence premise for both real and complex places is open under Task 5720 (`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`); `cuspidalArchimedeanParameterExistenceTC` covers totally complex fields only. The implication is distinct from the direct Cogdell route of Task 5921. |
+| L3, Task 5696 (`5453d037-1d90-4f14-a068-e04f492be43e`) | `Langlands.Global.standardParabolicSpectrumFiniteness`, `Langlands.Global.AdelicStandardParabolicFiniteness` | `1c8d476a-4bc9-48b0-a618-8200c5baec93`, `95d37e11bd46972d484c6fc9e6b864ff7625cf9e` | The finiteness part of Getz–Hahn 10.5.1, conditional on equality of spectra for associate presented standard parabolics. Uses rational parabolic classification and Levi conjugacy. |
+| L3, Task 5696 | `Langlands.Global.spectralDecomposition_of_reduction`, `Langlands.Global.AdelicSpectralDecompositionReduction` | `6a3e829a-0f88-44a5-b2f0-79722dcd9c9f`, `95d37e11bd46972d484c6fc9e6b864ff7625cf9e` | Proves Getz–Hahn 10.5.1 assuming `RelativeWavePacketOrthogonalityStatement`, `RelativeWavePacketAssociationStatement`, `RelativeWavePacketCompletenessStatement` and `GroupParabolicSpectrumStatement`. None of the four inputs is proved by this publication. |
+
+For Task 7005, Task 7004 is now a proved input, and Task 7003
+(`d785ecd7-e7cc-4174-9da9-68b37467f224`) has also published the exact proof
+`Langlands.Automorphic.cuspidalArchimedeanStandardGeneric`
+(`7ce500b4-e0af-4d94-b7f0-f4b37ffb9f1d`, commit
+`95d37e11bd46972d484c6fc9e6b864ff7625cf9e`). This supersedes the draft status
+above. It proves genericity for supplied real and complex place parameters,
+not their existence. Use the existing exponent-bound owners (Task 6819,
+real bound target, and Task 6820, complex bound); Task 7607 proposes the same
+targets and is not an additional proof dependency. The full pole/strip target
+is still owned by Task 5921, and the global boundary nonvanishing target by
+Task 5816. Neither the conditional pole statements nor the self-pair proof
+replaces them.
+
+For Task 5696, the orthogonality and completeness inputs still need the
+passage from the full rational quotient of Lapid Proposition 2 and Delorme
+Theorem 7.9 to the split-centre quotient of Getz–Hahn §10.5, pp.281–282. The
+paired reduction Markdown explains the required central twist and product
+wave-packet factorization; its proof does not implement them. Pullback of a
+centre-invariant function on `[G]` alone does not give an `L²` function on the
+full quotient when the split-centre factor has infinite Haar measure.
+The shared DAG records these publication statuses at revision 566. Neither
+program track is complete.

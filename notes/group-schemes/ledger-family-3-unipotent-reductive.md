@@ -375,6 +375,61 @@ algebraically closed field for (d); all three Lean statements assume `[IsAlgClos
   `σ : D ⟶ H` of `q`.
 - Status P: `solvableSplitExtension` (`Absolute/SolvableSplitExtensionProof`).
 
+### E3 update, 20 November 2026
+
+The following publications extend the historical snapshot. The statement
+pairs and the splitting reduction were checked at Library commit
+`7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`.
+
+- **Corrected section conjugacy and maximal diagonalizable subgroups.**
+  `TrigonalizableSectionConjugacySmoothStatement` assumes an algebraically
+  closed field, an affine group `G` locally of finite type, a smooth
+  unipotent normal closed subgroup `i : U ⟶ G`, and an fppf quotient
+  `q : G ⟶ D(Λ)` by its range with `Λ` finitely generated. In part (a),
+  two group-scheme sections of `q` are conjugate by a point of `U(k)`.
+  In part (b), a closed diagonalizable subgroup is maximal exactly when
+  its range is the range of a section of `q`. The explicit hypothesis
+  `Smooth U.X.hom` follows SGA 3 XVII 5.1.1 ii) b), Gille–Polo p. 345
+  (PDF p. 21), for conjugacy. The source for the maximality clause is
+  Milne's argument in 16.27(b), printed p. 333 (PDF p. 349). Part ii) a) of the
+  same SGA 3 theorem also gives conjugacy for a smooth quotient with a
+  possibly nonsmooth unipotent kernel. Status O. Candidate
+  `8e4cbe1e-d18a-4421-b8e8-cc57bd08c0e7` was approved in review
+  `90d70076-80d7-48ff-8938-f307d37364b1` and published at
+  `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. The correction ruling
+  assigns the proof to Task 7806 (`ad802cf7-9b28-4355-8243-88707d9cc1e4`)
+  after its contract is revised to the corrected target.
+  [Corrected statement](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothStatement.md)
+
+- **Historical statement and warning.** Over an algebraically closed field
+  of characteristic `p > 0`, `α_p ⋊ μ_p` refutes 16.27(a) and `α_p ⋊ G_m`
+  refutes 16.27(b) and the maximality claim in 16.29, printed p. 334
+  (PDF p. 350). The publication of the corrected statement also added a
+  warning that bars use of `TrigonalizableSectionConjugacyStatement` as a
+  premise or proof target. The counterexamples both have sections, and
+  the splitting assertions of 16.26 are covered by SGA 3 XVII 5.1.1 i).
+  [Historical declaration warning](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacyStatement.md),
+  [erratum and computations](../errata/milne-2017-trigonalizable-section-conjugacy.md)
+
+- **Splitting with a finite étale diagonalizable quotient.** Task 7805
+  (`2d5e38c2-6552-435c-b69c-d727ddb78b3a`) published
+  `EtaleDiagonalizableExtensionSplitStatement`, from SGA 3 XVII
+  5.2.3 i) c), Gille–Polo pp. 346–348 (PDF pp. 22–24). It asserts the
+  existence of a homomorphic section of an fppf quotient of an affine algebraic group
+  over a perfect field by a smooth connected unipotent normal closed
+  subgroup, when the quotient is `D(Λ)` for finite `Λ` of order prime
+  to the field's characteristic exponent. The accompanying theorem
+  `trigonalizableExtensionSplit_of_etale` deduces the full
+  `TrigonalizableExtensionSplitStatement` from this premise, using it
+  only in case (b). Candidate `739ac18e-93ed-49e2-93b4-f9126d29e86e`
+  was approved in review `bd492737-b880-4db6-a7c1-fea2284f2c13` and
+  published at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status O for
+  the étale premise, with proof owner Task 7944
+  (`f5b5803b-6be8-43b6-8625-c8f85818273a`). The full 16.26 proof in
+  Task 7805 awaits that result.
+  [Étale splitting statement](../../Langlands/GroupScheme/Trigonalizable/EtaleExtensionSplitStatement.md),
+  [splitting reduction](../../Langlands/GroupScheme/Trigonalizable/ExtensionSplitPerfectSmooth.md)
+
 **E4. Lie–Kolchin and triangular embeddings.** Source: Milne 2017, Theorem 16.30 and
 Corollary 16.32, printed pp.334–335 (PDF 350–351), and Proposition 16.34, printed p.336
 (PDF 352).
@@ -571,15 +626,23 @@ proof, printed pp.592–593 (PDF 618–619).
 
 ## Summary and remaining obligations
 
-Counted by the Lean statements named above, 61 have published proofs (P), including
+At Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`, the original
+ledger counted 61 statements with published proofs (P), including
 `PseudoParabolicQuotientRationalLiftingStatement` (G4) and `IsSemisimpleFieldExtensionStatement`
-(C2). Two have a
-composite and no wrapper theorem (C): `ConnectedReductiveAlgebraicExtensionAscentStatement`
-and `SemisimpleAlgebraicExtensionAscentStatement`, the two projections of the published
-`algebraicExtensionAscent`. One statement is open (O):
+(C2). The two projections of the published `algebraicExtensionAscent`,
+`ConnectedReductiveAlgebraicExtensionAscentStatement` and
+`SemisimpleAlgebraicExtensionAscentStatement`, had composites and lacked wrapper
+theorems (C). The sole open statement (O) was
 `PseudoParabolicQuotientLocalSectionsStatement` (G4).
 
-Source assertions of this family with no Lean statement (M), none with an owner task:
+The dated E3 update records two additional open statements (O),
+`TrigonalizableSectionConjugacySmoothStatement` and
+`EtaleDiagonalizableExtensionSplitStatement`. The published reduction of
+`TrigonalizableExtensionSplitStatement` leaves Task 7805's full proof
+dependent on Task 7944's proof of the finite étale premise.
+
+The original snapshot recorded three assertions with missing Lean statements (M)
+and no assigned proof owners.
 
 1. Conrad–Gabber–Prasad, Example 1.1.3: a pseudo-reductive group that is not reductive over
    an imperfect field (B5).

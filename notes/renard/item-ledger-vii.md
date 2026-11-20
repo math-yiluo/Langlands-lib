@@ -21,7 +21,8 @@ for the proof-status update described below, checked at Library
 `a163f87c7a46874f408deed853c10c83207e9f69`. The VII.1.2 row and source issue I2
 were checked on 19 November 2026 at Library
 `ecb96e554fed652972a5c0308d69b041f6bc54e4`. Other statuses retain their historical
-survey scope. The status codes, the abbreviation of
+survey scope. The VII.1.2 and VII.1.3 additions below were checked on 20 November 2026
+at Library `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`. The status codes, the abbreviation of
 task identifiers and the method of checking are those of the Chapter VI ledger.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 (abbreviated `RP`) unless another namespace is written. The focused source maps
@@ -71,10 +72,26 @@ mathematical content.
 | VII.1.1 Remark (`P = G`) | 220 / 226 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.1 Lemma (i)–(ii) | 220–221 / 226–227 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S: Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`). Necessity P: `arbitraryParabolicCasselmanNecessity`. The corrected condition is the strictly positive root cone from the final decay test in the proof. The printed coroot-chamber necessity fails on an actual square-integrable representation of `Sp₄(ℚ₃)` (I2) |
+| VII.1.2 Theorem with Bruhat–Tits availability | 221–224 / 227–230 | `RP.CasselmanFromBuildingStatement` | S: Task 8060. The published Bruhat–Tits availability proposition is the explicit premise for joint Cartan and Iwahori basis assembly and hence for sufficiency. The necessity proof applies independently |
+| VII.1.2 first paragraph of the proof, reduction to the central uniformizer lattice | 221 / 227 | `RP.CentralUniformizerSquareIntegrabilityStatement` | S: Task 8059. The evaluated cocharacter lattice is closed, its quotient in the full center is compact, and square integrability modulo the two central subgroups is equivalent for arbitrary quotient Haar normalizations |
 | VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper` | P for the overlap-tolerant upper estimate on the full central quotient used by sufficiency, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. The printed disjointness and equality fail by overlap of the labelled cells (I3) |
 | VII.1.2 double-coset volume following (VII.1.2.2) | 222–223 / 228–229 | `Langlands.Aubert.General.standardBasisMember_rayIndex`, `Langlands.Aubert.General.RationalPointFamily.rationalLatticeQuotientVolume` | P for the finite-translate upper bound on the full central quotient, checked at Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. The printed equality at `m=fz` lacks the Levi intersection index. I4 gives the exact correction on paper |
+| VII.1.3 opening paragraph, standard Levi transporters | 224 / 230 | `Langlands.GroupScheme.StandardLeviTransporterCosetsStatement`; `Langlands.GroupScheme.MaximalStandardLeviPointCosetsStatement` | S. The comparison of left coset sets is the target of Task 8061. The second statement uses the comparison and the Weyl-side V.4.8 result to count two cosets precisely for maximal proper standard parabolics and to identify the conjugate parabolic for a representative of the second coset (I5) |
 | VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S: task 004e00e1; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
-| VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. The functor `r_D`, its faithfulness, the unit isomorphism `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`: `RP.MaximalLeviBlockProjectionEquivalenceStatement` (`Exponents/MaximalLeviBlockProjectionStatement`; the projection onto `M(M)_D` is a left adjoint of the inclusion of the block, whose existence is asserted). S: published candidate `17566075` (Reviewer 2361; integration ID `596546b6faf9495ba266d58426b8d8d3`, first Library commit `c40a0134`); proof Task 6621 `3c3f4d9e` |
+| VII.1.3 Corollary (i)–(iii) | 226–227 / 232–233 | `RP.MaximalLeviBlockStatements`; `RP.MaximalLeviBlockProjectionEquivalenceStatement` | S. The first statement (task `f4046ca6`) expresses (ii) as Jacquet nonvanishing and (iii) as full faithfulness and essential surjectivity of induction. The second statement (task `3c3f4d9e`) names `r_D` using a left adjoint to the block inclusion. It asserts projection existence, faithfulness of `r_D`, invertibility of `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`. Its statement record `17566075` first entered Library `c40a0134` under integration `596546b6faf9495ba266d58426b8d8d3` |
+
+The four new statement pairs first entered the Library at
+`95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. The Lean and Markdown files at
+the checked commit match the frozen files. The three named proof tasks
+have shared draft revision 1 with complete Lean and Markdown pairs and
+await proof publication.
+
+| Statement explanation | Statement record | Integration ID | Proof task |
+| --- | --- | --- | --- |
+| [Casselman criterion with building availability](../../Langlands/Representation/Exponents/CasselmanFromBuildingStatement.md) | `2dfaa85f-8c49-46d7-aa4d-2e5839ad6fb9` | `2ff826e1e3fa487a9223267cad8224c5` | Task 8060 (`9857e929-2102-4c46-9d0d-cb7095342271`) |
+| [Central uniformizer lattice](../../Langlands/Representation/Exponents/CentralUniformizerSquareIntegrabilityStatement.md) | `c74e419f-9221-46fe-8dee-eb21d6f20c2c` | `da07bcd9a3534387a7a4ab1ad425a1a3` | Task 8059 (`4845dbef-0fbe-49c6-8749-da714cbe5c5f`) |
+| [Standard Levi transporter cosets](../../Langlands/GroupScheme/Rational/StandardLeviTransporterCosetsStatement.md) | `11f65ad0-ddbf-4b98-8f06-68316a66e91b` | `e5ec3c65162f4403ab5ad726f3c23010` | Task 8061 (`efb26077-4f4c-4fb3-9723-39115214dc09`) |
+| [Maximal standard Levi point cosets](../../Langlands/GroupScheme/Rational/MaximalStandardLeviPointCosetsStatement.md) | `c817a331-6f7c-4741-b84d-d003a6dce3c7` | `7bd8513835ef4054aea6df8c8897a517` | Uses the proof of the preceding comparison |
 
 ## VII.2 Tempered representations
 
@@ -297,24 +314,50 @@ as recorded.
   is \(q^6\), while \(\delta_P(m)=q^5\). The exact formula under the two
   radical contractions includes \([K_M:K_M\cap mK_Mm^{-1}]\). The published
   estimates use split-component rays and absorb finite translates by
-  submultiplicativity of double-coset indices.
+  submultiplicativity of double-coset indices. The erratum was published as
+  `788b0d0e-249b-4373-b5d9-ceda26630c5e` under integration
+  `6200a3ebc33340ab94634280b08ae0f0`.
   [Counterexample, index formula and upper bound](../errata/renard-vii12-iwahori-volume.md)
+
+- **I5. VII.1.3, Levi transporters (printed p. 224 / PDF p. 230).**
+  In split \(\mathrm{GL}_3\), the three-cycle sending \(1\) to \(2\), \(2\) to \(3\)
+  and \(3\) to \(1\) sends the standard Levi block \(\{1,2\}\) to \(\{2,3\}\).
+  Its square sends the block to \(\{3,1\}\), which is outside the standard Levi
+  list. Thus the transporter set may fail closure under multiplication.
+  The published statements use its set of left cosets.
+  [Transporter statement and example](../../Langlands/GroupScheme/Rational/StandardLeviTransporterCosetsStatement.md)
+
+- **I6. VII.1.3, nonsplitting after (VII.1.3.2) (printed p. 225 / PDF p. 231).**
+  Length two and one-dimensional Hom spaces in both directions exclude
+  simultaneous semisimplicity in the source argument. They allow one split
+  extension, as the upper-triangular algebra example shows. In the distinct-Levi
+  case, applying VI.5.3, first adjointness and Schur's lemma to each self-Hom
+  proves that each endomorphism space consists of scalars. This excludes a
+  projection onto a nonzero proper summand. In the unitary branch both
+  inductions are semisimple, so the mutual Hom computation suffices.
+  The erratum was published as `46ab9a9d-e57b-4008-85dc-0ef828114c63`
+  under integration `48af4d8510f14bf3bd00bb2d289bbb72`.
+  [Example and self-endomorphism argument](../errata/renard-vii13-mutual-hom.md)
 
 ## Genuine gaps of Chapter VII
 
 1. VII.1.2: sufficiency of the strictly positive root-cone condition in
    `RP.ArbitraryParabolicCasselmanCriterionStatement`. The exact equivalence
-   remains open in Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`).
-2. VII.1.3 Corollary: the functor `r_D`, its faithfulness as stated by the source, and the
-   unit isomorphism `π → i_P^G r_D(π)`. Stating them needs the projection of `r_P^G`
-   onto the component `M(M)_D`, which is not constructed. Update of 14 November 2026,
-   checked at Library `c0debd6f`: candidate `17566075` (Worker 4) states them as
-   `RP.MaximalLeviBlockProjectionEquivalenceStatement`. It characterizes the projection
-   as a left adjoint of the inclusion of `M(M)_D` and asserts that one exists. It was
-   accepted by Reviewer 2361 and was not yet integrated at that commit (A). Proof-status
-   update of 14 November 2026: the candidate is published, first in Library `c40a0134`,
-   with both files matching the frozen candidate hashes; its proof is Task 6621
-   `3c3f4d9e`, published by Worker 4.
+   remains open in Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`). Task
+   8060 supplies the intermediate target with Bruhat–Tits availability.
+2. VII.1.3 Corollary: projection existence, faithfulness, the adjunction unit
+   isomorphism and equivalence in `RP.MaximalLeviBlockProjectionEquivalenceStatement`
+   remain the proof target of Task 6621 (`3c3f4d9e-2356-4208-bf0b-c349909b7520`).
+   The published `RP.maximalLeviBlockProjectionEquivalenceOfDecompositionOfBlocks`
+   derives the exact proposition from the VI.3.3.1 inertia decomposition
+   `CuspidalSupport.RationalCuspidalInertiaDecompositionStatement` and
+   `RP.MaximalLeviBlockStatements`, which are still statement-only.
+   Its three definition records are `11c6dc2a-f4d9-4a09-85a9-a9027bddd060`,
+   `59f59e4d-b105-4585-808f-a59c239a378f` and
+   `bc01b73d-3aca-46ab-adbd-a9503974bd1e`. The source's last step applies the
+   adjunction triangle to the isomorphic counit, then reflects the resulting
+   unit isomorphism through the exact faithful `r_D`.
+   [Published conditional reduction](../../Langlands/Representation/Exponents/MaximalLeviBlockProjectionReduction.md)
 
 Update at Library `9951a27f`: the former gap 3 (VII.3.5, minimal-`M` form of the opening
 assertion) is stated by the published `MinimalParabolicDistanceLengthStatement` (candidate
