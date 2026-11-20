@@ -222,7 +222,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 - [Literature collection](literature.md) — Find, acquire and cite project sources.
 - [Henniart's construction: source audit](../notes/henniart/audit.md) — Source and dependency audit of Henniart's construction of the full local correspondence.
 - [Harris 1999 and the deferred general-coefficient argument](../notes/henniart/harris-1999.md) — Reading of Harris 1999, companion to the audit's section 3.1.
-- [Harris–Berkovich cohomological framework: declaration coverage](../notes/henniart/harris-cohomology-coverage.md) — Map from Harris's and Berkovich's cohomological inputs to Library statement declarations, with the parts not yet stated and their owners.
+- [Harris–Berkovich cohomological framework: declaration coverage](../notes/henniart/harris-cohomology-coverage.md) — Find the Library statements and proof status for Harris's and Berkovich's cohomological inputs, including the derived split-supercuspidal statements, the analytic comparison reductions, and the missing tower prerequisites.
 - [Silberger's quotient theorem](../notes/henniart/silberger.md) — Completed reading of Silberger's quotient-theorem article, companion to the audit's section 4.1.
 - [Registered originals and reading record](../notes/henniart/sources.md) — Exact registered source files, fingerprints and reading extents behind the audit's citations.
 
