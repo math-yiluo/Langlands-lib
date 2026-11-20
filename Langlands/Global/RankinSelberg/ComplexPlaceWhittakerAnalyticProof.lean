@@ -28,9 +28,9 @@ namespace ComplexPlaceAnalytic
 
 open Langlands.Global Langlands.Automorphic ArchimedeanWhittakerRegularity
 
-local instance analyticSchemeAffine (F : Type u) [Field F] (n : ℕ) :
+private local instance analyticSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     IsAffine (Scheme F n).X.left := GroupScheme.GeneralLinear.isAffine_groupScheme _ _
-local instance analyticSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
+private local instance analyticSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
     Smooth (Scheme F n).X.hom := GroupScheme.GeneralLinear.smoothStatement _ _
 
 section Height

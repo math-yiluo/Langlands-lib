@@ -1,0 +1,9 @@
+# Entire continuation of the nondual partial Euler product
+
+`Langlands.Global.CuspidalNondualPartialEulerContinuationStatement` concerns two equal-rank cuspidal realizations with trivial split-centre actions and spectral presentations with irreducible admissible finite components. When the first realization fails to be contragredient to the second, the proposition asks for an entire function agreeing on a right half-plane with the partial Euler product outside any finite set that contains both presentations' exceptional sets. It retains both the number-field and presentation universes.
+
+`cuspidalNondualPartialEulerContinuation_of_pairPole` derives this proposition from the completed pair pole theorem. The completion uses the product in Getz–Hahn, *An Introduction to Automorphic Representations* (2024), §11.7, pp. 308–309 (PDF pp. 319–320). Theorem 11.7.1, p. 309 (PDF p. 320), gives nonnegative meromorphic order at zero and one in the nondual case. The proof takes the meromorphic normal form of the completed function, which is entire and agrees with the given completion off those two points.
+
+The proof multiplies the entire completion by the omitted finite Euler denominators and all the archimedean denominators. The finite denominators are entire by the polynomial expression in the spectral parameter, and the archimedean denominators are entire by the reciprocal Gamma construction. Finite-place regularity and the real and complex Gamma block estimates give a common right half-plane where the denominators are nonzero and the completed product formula holds. The proof cancels the omitted factors there and uses the unramified pair polynomial identity to recover the stated partial Euler product.
+
+This derived statement isolates the analytic input for comparing the mixed and self-pair Euler products in Getz–Hahn Theorem 11.7.2, p. 309 (PDF p. 320), and Exercise 11.6, p. 314 (PDF p. 325).

@@ -171,6 +171,15 @@ private theorem isSheaf_zariski_of_openCover
     exact ⟨_, 𝒰.pullbackHom g i, 𝒰.f i, ⟨i⟩, 𝒰.pullbackHom_map g i⟩
   exact (ht₁ _ hm).trans (ht₂ _ hm).symm
 
+/-- Unique gluing of a relative presheaf on open covers gives a big Zariski
+sheaf of structural maps together with relative sections. -/
+theorem isSheaf_overTotal_of_openCover {B : Scheme.{u}}
+    (P : (Over B)ᵒᵖ ⥤ Type u)
+    (hP : ∀ (X : Over B) (𝒱 : Scheme.OpenCover.{u} X.left),
+      Presieve.IsSheafFor P (Langlands.AlgebraicGeometry.Picard.openCoverOver X 𝒱).presieve₀) :
+    Presieve.IsSheaf Scheme.zariskiTopology P.overTotal :=
+  isSheaf_zariski_of_openCover _ (overTotal_isSheafFor_cover P hP)
+
 /-- Actual admissible families form a big Zariski sheaf once effective
 admissibility of the matching subgroup has been established. -/
 theorem totalAdmissible_isSheaf (hG : HasEffectiveAdmissibleDescent G) :

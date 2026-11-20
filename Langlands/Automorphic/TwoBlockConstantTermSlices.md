@@ -1,0 +1,7 @@
+# Finite-smooth slices of a two-block constant term
+
+The two slice maps fix one complete adelic Levi argument in `blockConstantTermAt`. Rational covariance gives left invariance under the rational points in the varying block, and continuity follows from joint continuity of the constant term. For an ambient open level \(L\) and a finite translate \(d\), each slice is fixed at the pullback of \(dLd^{-1}\) by the finite block inclusion. Each compact group acts through the corresponding block inclusion at infinity.
+
+At any finite argument of a lower-rank slice, split the ambient adelic argument into its finite and infinite components. The resulting smooth function is the smooth constant term at the ambient finite argument pulled back by the block diagonal map with its other infinite argument fixed. The chain rule and differentiation of the constant term give its action by each real Lie generator. Induction through sums, complex scalar multiples, and products extends the identity to every element of the lower-rank enveloping algebra.
+
+The construction gives the restricted functions and operator identities used for the Levi induction of Harish-Chandra, *Automorphic forms on semisimple Lie groups* (1968), Chapter I, §6, proof of Theorem 1, printed pp. 19–20, PDF pp. 29–30. The functions here are actual adelic two-block constant terms with the quotient Haar measure normalized to mass one.

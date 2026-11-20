@@ -1,0 +1,7 @@
+# Finiteness of the block Levi centre over the ambient centre
+
+`blockCenterAlgebra` equips the centre of the enveloping algebra of the standard block Levi with the algebra action given by the ambient centre projection. `blockCenter_moduleFinite` proves that this algebra is finite as a module over the ambient centre. The ambient Lie algebra is a finite product of complex matrix algebras of one rank. The Levi is the product of the actual diagonal blocks in each matrix factor.
+
+Each diagonal variable is integral over the image of the ambient centre. The proof transports its monic relation from the one-matrix lower Verma Harish-Chandra map along the inclusion of that matrix factor. The polynomial algebra in all the diagonal variables is of finite type and integral, so it is finite over the image. Artin–Tate gives that the image is Noetherian. Injectivity of the diagonal centre projection identifies the ambient centre with this image. The Levi centre embeds into the same diagonal polynomial algebra, and the comparison of the two projections makes the embedding linear for the ambient centre action. The Levi centre is therefore a submodule of a finite module over the Noetherian ambient centre.
+
+This is the derived algebraic finiteness used for the infinitesimal centre condition in Langlands, *On the notion of an automorphic representation* (1979), Lemma 4, printed p. 204. The one-matrix finiteness result used in the proof is `VermaCentral.finite_imA` in the Library's `LowerVermaCentral.lean`.

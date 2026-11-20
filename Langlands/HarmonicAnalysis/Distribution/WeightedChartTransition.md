@@ -1,0 +1,7 @@
+# Weighted covariance of normalized chart distributions
+
+For a smooth chart `e` and an ambient continuous linear equivalence `A`, the local transition is `e.symm ∘ A ∘ e` on the open set where both coordinate expressions are defined. Its source and target are stated explicitly. When the ambient determinant has absolute value one, the chain rule gives the chart Jacobian at the image point times the absolute transition Jacobian equal to the chart Jacobian at the starting point. The proof compares the two derivatives after the fixed linear identification used to define the chart Jacobian. Determinant conjugacy removes the identification from the ambient factor.
+
+For a source coordinate open `U` contained in the overlap and a target coordinate open `V` contained in the image of `U`, the weighted test pullback takes a test on `V`, pulls it back by the transition, and multiplies it by the absolute transition Jacobian. The target inclusion ensures the entire pullback support is captured in `U`. Chart normalization divides tests by the chart Jacobian. The chain-rule identity then identifies the normalized weighted coordinate test with the ordinary ambient pullback of the normalized target test, after chart transport and extension by zero. Ambient scalar covariance therefore gives exactly the same scalar covariance on the normalized restrictions.
+
+These internal lemmas use Worker 839's chart test transport and Jacobian normalization and supply the local weighted covariance needed for the real transpose argument.

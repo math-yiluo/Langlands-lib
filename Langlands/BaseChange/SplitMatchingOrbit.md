@@ -1,0 +1,7 @@
+# The regular semisimple orbit map
+
+This is a convergence lemma for the split matching computation in Arthur–Clozel, Chapter I, §5, and Henniart–Lemaire, II.2.15. The proof uses the same left quotient and descended conjugate as `TraceFormula.orbitalIntegral`.
+
+For matrices `A` and `B`, define `D₀ = 0` and `Dₖ₊₁ = A Dₖ + Bᵏ`. Then `A Dₖ − Dₖ B = Aᵏ − Bᵏ`. Summing the `Dₖ` with the coefficients of the characteristic polynomial `p` of `A` gives a continuous matrix function of `B`. This function intertwines `A` and `B` on their common characteristic-polynomial fiber by Cayley–Hamilton. At `B = A` it is `p′(A)`, whose determinant is nonzero by the Bézout identity for `p` and `p′`. Thus it supplies a continuous conjugator on a neighborhood of `A` in the fiber. This elementary polynomial calculation is the route implemented here.
+
+The fiber is closed by continuity of characteristic-polynomial coefficients. A closure point of a regular semisimple orbit therefore belongs to the fiber and has one of these local conjugator neighborhoods. The neighborhood meets the orbit, so the closure point belongs to the orbit as well. Multiplying the local conjugators by a fixed representative of the corresponding coset gives local inverses to the quotient orbit map. The map is consequently a closed embedding. A compactly supported continuous function pulled back along it still has compact support, which supplies the integrability used in split matching.

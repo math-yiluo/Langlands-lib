@@ -2,9 +2,17 @@
 
 Lean module: `Langlands.LocalFactor.Ramification.Herbrand.SubextensionProof`
 (namespace `Langlands.Ramification.HerbrandBridge`). It imports
+`Langlands.LocalFactor.Ramification.Herbrand.GeneralSubextension`,
 `Langlands.LocalFactor.Ramification.Herbrand.TransportProof`,
 `Langlands.ClassFieldTheory.Local.ReciprocitySystem`, `Langlands.Weil.Local.IntermediateWeil`,
 `Langlands.VirtualRepresentation.Weil.Ramification` and `Mathlib.FieldTheory.Normal.Closure`.
+
+The change of base uses the constructions from `GeneralSubextension`. The
+relative index retains its p-adic composition so existing proofs can unfold it
+and rewrite with the p-adic Herbrand lemmas. Its composition is definitionally
+equal to `Local.relativeIndex` at `K₀ = Padic p` with the p-adic norm comparison.
+Both use the canonical realization of the same carrier of `M` viewed over the
+subextension.
 
 ## What the module proves
 
@@ -82,9 +90,12 @@ Let `F : PadicField.{u} p` and `E : FiniteIntermediateExtension F.Carrier`, with
 - `asPadicField_isScalarTower`: the `Padic p` scalar tower through `E` into
   `AlgebraicClosure F.Carrier`, for the `Padic p`-algebra of `E.asPadicField`.
 - `galoisClosure E` is a named definition: the normal closure of `E.field` over `F.Carrier`, as
-  a finite Galois subfield. `algebraMap_mem_galoisClosure` records that it contains `E`.
+  a finite Galois subfield. It specializes `Local.galoisClosure` to
+  `AlgebraicClosure F.Carrier`, which is a separable closure since `F.Carrier` has
+  characteristic zero. `algebraMap_mem_galoisClosure` records that it contains `E`.
 - `relativeHerbrandPsi E v` is a named definition: `ψ_{E/F}(v)`, which is `relativeIndex` for
-  `galoisClosure E`. `neg_one_le_relativeHerbrandPsi` says it maps `[-1, ∞)` into itself.
+  `galoisClosure E`. This composition unfolds to `Local.relativeHerbrandPsi` on `E.field`.
+  `neg_one_le_relativeHerbrandPsi` says it maps `[-1, ∞)` into itself.
 - `intermediateGaloisMap_mem_absoluteUpperRamificationGroup_iff E hv τ`. For `v ≥ -1` and every
   `τ : Field.absoluteGaloisGroup E.field`, consider the Library embedding
   `Weil.Local.intermediateGaloisMap F E`. Then `intermediateGaloisMap F E τ` lies in

@@ -23,11 +23,10 @@ local lifting on the source's nilpotent points.
 
 For an invertible tensor, clear denominators on its actual inverse as well.
 Bilinearity of composition and integral injectivity identify both integral
-composites with scalar powers. The target composite gives fppf local lifts
-through the numerator. The source composite embeds its actual kernel in the
-represented scalar-power kernel. `KernelQuotient` corepresents the subkernel
-by imposing the numerator's coordinate equations on that kernel algebra.
-The quotient is finite and is projective over the coefficient field.
+composites with scalar powers. The general criterion
+`Hom.isIsogeny_of_scalarComposites_overRing` applies to these identities over the
+coefficient field. It gives fppf local surjectivity and a finite locally free
+kernel for the numerator.
 
 `QuasiIsogeny.isIsogeny_of_clearsDenominator` applies to any integral numerator
 of the invertible tensor. `QuasiIsogeny.scalarIsogenyPresentation` supplies

@@ -25,3 +25,8 @@ underlying Jacquet's Godement section (7.1), with the bottom rows
 for the Library's upper triangular Borel. Principal-series
 equivariance and generation of sections are separate properties.
 [Jacquet, *Archimedean Rankin–Selberg Integrals*, §7.1, pp. 43–46](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)
+
+The proof exports the trailing-row continuous linear operator and its
+continuous dependence on the lower group parameter. It also exports
+compactness of the lift of a compact set of invertible matrices to the
+unit group. These facts apply to the Schwartz section as well.

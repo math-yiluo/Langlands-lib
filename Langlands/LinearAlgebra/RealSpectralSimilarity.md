@@ -1,0 +1,7 @@
+# Local real similarity after semisimple displacement
+
+The spectral rank label of a real square matrix is computed on its complexification. It has bounded coordinates, open strict superlevel sets, and is invariant under real similarity and transpose.
+
+Suppose the distinct complex roots of two real matrices \(A\) and \(B\) are matched by a conjugation-compatible bijection preserving algebraic multiplicities and shifted power ranks. The nilpotent parts of the corresponding generalized eigenspaces are then intertwined by linear equivalences. Interpolate the differences of matched eigenvalues in the polynomial semisimple algebra of \(A\). Adding this real matrix \(Z\) changes the eigenvalue on each original generalized eigenspace to the corresponding eigenvalue of \(B\) and leaves the nilpotent action on that space unchanged. The component intertwiners assemble to an invertible complex intertwiner, and real similarity descent gives an invertible real intertwiner between \(A+Z\) and \(B\).
+
+For all sufficiently nearby \(B\) with the same label as a fixed \(A\), the local spectral matching has the required rank and multiplicity equalities. It can be chosen close enough that it commutes with complex conjugation. Continuity of interpolation at zero lets \(Z\) belong to any prescribed neighborhood of zero. This internal result places the local fixed-label locus in the conjugation saturation of the transverse semisimple directions.

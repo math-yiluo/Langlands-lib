@@ -40,3 +40,7 @@ smooth standard module and extension along its principal-series
 inclusion.
 [Jacquet, *Archimedean Rankin–Selberg Integrals*, Lemmas 2.4 and 3.7 and §11](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)
 [Casselman, Hecht, and Miličić, *Bruhat filtrations and Whittaker vectors for real groups*, p. 152 and §8](https://www.math.utah.edu/~milicic/Eprints/whittaker.pdf)
+
+## Smooth lower inputs
+
+`CompactWhittakerSmoothRegularityStatement` applies the same smooth coefficient construction to every vector of the smooth position principal series. It proves regularity for all right derivative words and a common polynomial height exponent. The proof builds the derived source vector one direction at a time. The Whittaker law follows from multiplication in the translation action and the covariance of the form. The compact functional growth theorem gives a single exponent for all the resulting source vectors. This is the smooth-input estimate used for the Godement argument of Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2, pp. 47–48.

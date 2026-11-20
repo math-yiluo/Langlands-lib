@@ -1,11 +1,70 @@
 # Intrinsic Weil last-break labels and constituent extrema
 
-The declarations are in
-`Langlands.VirtualRepresentation.LocalWeil.Ramification`. The input is any
-`F : PadicField.{uF} p`, with `Fact p.Prime`. The representation carrier
-universe `uV` is independent of the field universe. Worker 34 implemented this
-unit, following Worker 46's proposed intrinsic threshold construction and
-including the fixed-space interface requested by Worker 38.
+Worker 34 implemented the p-adic declarations in
+`Langlands.VirtualRepresentation.LocalWeil.Ramification`, following Worker 46's
+intrinsic threshold construction and including the fixed-space interface
+requested by Worker 38. Worker 210 generalized these constructions in Task
+7415. The representation carrier universe is independent of the field and
+closure universes.
+
+## Local fields of either characteristic
+
+Write `LocalWeil` for `Langlands.VirtualRepresentation.LocalWeil`.
+The definitions in `LocalWeil.SepClosed.Ramification` take a field `K` with
+`[ValuativeRel K] [TopologicalSpace K] [IsNonarchimedeanLocalField K]` and
+an extension `Ω` with `[Field Ω] [Algebra K Ω] [IsSepClosure K Ω]`.
+The table gives the definitions and their p-adic names. The elementary lemmas
+described below have the same suffixes in both namespaces.
+
+| General declaration under `LocalWeil.SepClosed.Ramification` | P-adic declaration under `LocalWeil.Ramification` | Construction and source |
+| --- | --- | --- |
+| `upperGroup K Ω r` | `upperGroup F r` | Preimage of the absolute upper group along the Weil projection. Serre, IV §3, pp.73–75, and Deligne–Henniart, §0.4, pp.91–92. |
+| `upperFixedSpace K Ω A r` | `upperFixedSpace F A r` | Invariants of the restricted representation. Deligne–Henniart, §§0.4–0.6, pp.91–93. |
+| `IsTrivialAt K Ω A r` | `IsTrivialAt F A r` | Identity action of the upper group. Deligne–Henniart, §0.6, pp.92–93. |
+| `trivialityThresholds K Ω A` | `trivialityThresholds F A` | Nonnegative indices of identity action, derived from the final jump convention in §0.6. |
+| `lastBreak K Ω A` | `lastBreak F A` | Real infimum of the thresholds, with Mathlib's empty-set convention. Derived from §0.6. |
+| `classLastBreak K Ω c` | `classLastBreak F c` | The quotient lift of `lastBreak` to isomorphism classes, used to implement §0.6. |
+| `breakLabel K Ω b` | `breakLabel F b` | Last-break value of the underlying irreducible class. Deligne–Henniart, §0.6. |
+| `breakSupport K Ω x` | `breakSupport F x` | Finite set of labels of classes carrying nonzero coefficients. Deligne–Henniart, §§0.5–0.6. |
+| `minimumBreak K Ω x h` | `minimumBreak F x h` | Least label when the support is nonempty. Deligne–Henniart, §0.6. |
+| `maximumBreak K Ω x h` | `maximumBreak F x h` | Greatest label when the support is nonempty. Deligne–Henniart, §0.6. |
+| `AllBreaksAtLeast K Ω x a` | `AllBreaksAtLeast F x a` | Inclusive lower bound on the labels of all surviving constituents, derived from the minimum in §0.6. |
+| `AllBreaksBelow K Ω x b` | `AllBreaksBelow F x b` | Strict upper bound on the labels of all surviving constituents, derived from the maximum in §0.6. |
+| `PositiveBreakSupport K Ω x` | `PositiveBreakSupport F x` | Positive labels for all surviving constituents, derived from the positive minimum in §0.6. |
+
+The common implementation in `LocalWeil.SepClosed.Ramification.Spectral`
+uses the actual `Langlands.Ramification.Local.absoluteUpperRamificationGroup
+K₀ K Ω hbase` from Task 7403 and the actual
+`Langlands.Weil.Local.SepClosed.localProjection K Ω` from Task 7404.
+`K₀` is the complete locally compact ultrametric normed base and `K` is
+finite over `K₀`. The hypothesis `hbase` identifies the norm comparison on
+`K₀` with its valuative relation. The local-field interface sets `K₀ = K`
+with `LocalGalois.localNormedField K` and its valuation compatibility proof.
+Its `upperGroup` is definitionally the preimage of
+`Langlands.Ramification.Local.localAbsoluteUpperRamificationGroup K Ω r`.
+
+Each p-adic definition unfolds to the corresponding `Spectral` definition at
+`K₀ = Padic p`, `K = F.Carrier`, and `Ω = AlgebraicClosure F.Carrier`,
+using `F.canonicalTopologicalData` for the local field instances on `K`.
+This is the spectral base already used by the published p-adic absolute
+upper filtration. The p-adic upper-group, threshold, label and support
+formulas use the p-adic names for their component definitions. Unfolding them
+preserves the group and basis types that existing proofs use in rewrites.
+The `Basis` and `Lattice` of [Local.md](Local.md) use the same specialization
+of the Weil group and supply the signed constituents.
+
+The original Galois and Weil projection use the algebraic closure. The
+spectral absolute filtration also used its separability over `F.Carrier`.
+In the general definitions `[IsSepClosure K Ω]` supplies the separability
+and algebraicity of `Ω/K` and the separable closedness of `Ω` for the
+Weil projection and its ambient Weil group. The p-adic wrapper supplies
+the characteristic zero instance on `F.Carrier` to identify its algebraic
+closure as a separable closure. The operations on representations, quotient
+classes, coefficients and real labels use the same algebra and order
+constructions over either characteristic.
+
+The formulas below use the p-adic names. The same constructions and elementary
+arguments give their counterparts in the table.
 
 ## Actual filtration and threshold construction
 
@@ -141,8 +200,10 @@ The original sources read for this unit are:
   `serre-1979-local-fields`, SHA256
   `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-No source-specific errata file was present in the accessible published notes
-or project notes when these passages were read.
+The 2019 corrections to *Local Fields*, PDF p.2, correct the notation for
+the direct Herbrand function on p.74, line −7, and in Lemma 5 on p.75.
+The published absolute upper filtration uses the inverse Herbrand function
+to evaluate the lower group, as in Serre's upper-numbering definition.
 
 Serre defines real lower indices using the ceiling, upper indices using the
 inverse Herbrand function, and the infinite filtration using finite Galois
@@ -174,7 +235,7 @@ finite-inertia upper jumps and Swan/rank, and identify zero labels for the
 intended unramified and tame objects. None of those arithmetic conclusions
 is inferred from `Real.sInf_nonneg` or inserted into a construction input.
 
-The imported `Generic`/`Local` lattice is reused unchanged. This unit does
+The basis and lattice specialize the imported generic Weil lattice. This unit does
 not identify it with exact K0 or change the published split `Realization`.
 The exact Jordan–Hoelder comparison is separate. There is no epsilon system,
 stability theorem, arbitrary chosen inverse, supplied break function,

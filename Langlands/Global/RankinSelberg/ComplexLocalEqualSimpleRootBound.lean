@@ -25,7 +25,7 @@ def simpleRootLogSum (x : I → ℝ) : ℝ :=
 private theorem simpleRootLogSum_nonneg (x : I → ℝ) : 0 ≤ simpleRootLogSum x :=
   Finset.sum_nonneg fun _ _ => le_max_right _ _
 
-private theorem coord_le_last_add_simpleRootLogSum (r : ℕ) (x : Fin (r + 1) → ℝ)
+theorem coord_le_last_add_simpleRootLogSum (r : ℕ) (x : Fin (r + 1) → ℝ)
     (i : Fin (r + 1)) : x i ≤ x (Fin.last r) + simpleRootLogSum x := by
   induction r with
   | zero =>

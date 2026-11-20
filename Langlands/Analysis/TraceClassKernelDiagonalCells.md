@@ -1,0 +1,7 @@
+# Finite partitions and convergence of cell averages
+
+This is an internal helper for `TraceClassContinuousKernelDiagonalStatement`, implementing the refining averages used in C. Brislawn, *Traceable integral kernels on countably generated measure spaces*, Pacific J. Math. **150** (1991), §2. It works on finite measures, as required by the Mathlib form of Lévy's upward theorem; the trace proof uses it on finite restrictions of the given measure.
+
+Given a sequence `B` of measurable sets, `cell B m x` is the fiber through `x` of the code recording membership in the first `m` sets. The code takes only finitely many values. Its fiber σ-algebras increase with `m`. If the `B n` refine all neighborhoods in a Borel space, the supremum of the σ-algebras contains every open set. Each level has only finitely many null fibers, so almost every point lies in a nonnull fiber at every level.
+
+For real integrable `f`, the function that assigns each point the average of `f` on its fiber is measurable for the level σ-algebra and integrable (it has finite range). Integrals over unions of fibers agree with those of `f` by finite additivity and the definition of the average, also on null fibers. This characterizes the conditional expectation almost everywhere. `ae_tendsto_setAverage_cell` then applies `Integrable.tendsto_ae_condExp` to a strongly measurable representative and transfers the result back to `f`. `ae_tendsto_setAverage_cell_complex` applies the real theorem separately to the real and imaginary parts.

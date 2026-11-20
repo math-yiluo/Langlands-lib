@@ -21,21 +21,21 @@ namespace Langlands.Global.RankinSelbergGlobal
 
 open Langlands.Global Langlands.Automorphic
 
-local instance equivSchemeAffine (F : Type u) [Field F] (n : ℕ) :
+private local instance equivSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     IsAffine (Scheme F n).X.left := GroupScheme.GeneralLinear.isAffine_groupScheme _ _
-local instance equivSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
+private local instance equivSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
     Smooth (Scheme F n).X.hom := GroupScheme.GeneralLinear.smoothStatement _ _
-local instance equivRationalAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance equivRationalAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance equivContinuousAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance equivContinuousAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance equivSmoothAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance equivSmoothAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance equivFormsAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance equivFormsAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance equivStableAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance equivStableAddCommGroup (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance equivRealizationAddCommGroup {F : Type u} [Field F] [NumberField F] {n : ℕ}
+private local instance equivRealizationAddCommGroup {F : Type u} [Field F] [NumberField F] {n : ℕ}
     (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 section Points

@@ -108,7 +108,9 @@ private theorem signDiagonal_toUnits (a : Fin n → ℝˣ) :
     Matrix.diagonal (fun i => (signUnit (a i) : ℝ))
   simp only [signUnit_val]
 
-private theorem evaluation_isStandardFunctional (A : D →ₗ[ℂ] Std(n, ds))
+/-- Evaluation at the identity of a compact intertwiner satisfies the left
+sign equations and the block Fourier cutoff. -/
+theorem evaluation_isStandardFunctional (A : D →ₗ[ℂ] Std(n, ds))
     (hA : ∀ k x, A (ρ k x) = realStandardRep n ds k (A x)) :
     IsStandardFunctional ds ρ ((kFiniteEval (realStandardModule n ds) 1).comp A) := by
   constructor
@@ -121,6 +123,20 @@ private theorem evaluation_isStandardFunctional (A : D →ₗ[ℂ] Std(n, ds))
     simp only [LinearMap.comp_apply, kFiniteEval_apply, hA, compact_action_eval_one,
       compactBlockRotation_toUnits]
     simpa only [blockFourierCoefficient_eq_coeff, mul_one] using (A x).2.1.2 p d hd j hj 1
+
+/-- Equality of compact intertwiners can be checked by evaluation at the identity. -/
+theorem compactIntertwiner_ext {A B : D →ₗ[ℂ] Std(n, ds)}
+    (hA : ∀ k x, A (ρ k x) = realStandardRep n ds k (A x))
+    (hB : ∀ k x, B (ρ k x) = realStandardRep n ds k (B x))
+    (h : (kFiniteEval (realStandardModule n ds) 1).comp A =
+      (kFiniteEval (realStandardModule n ds) 1).comp B) :
+    A = B := by
+  apply LinearMap.ext
+  intro x
+  apply ext_of_compact
+  intro k
+  have he := DFunLike.congr_fun h (ρ k x)
+  simpa only [LinearMap.comp_apply, kFiniteEval_apply, hA, hB, compact_action_eval_one] using he
 
 /-- A one-dimensional space of qualifying linear forms with a nonzero continuous
 coefficient model supplies a vector scaled by all compact-equivariant endomorphisms. -/

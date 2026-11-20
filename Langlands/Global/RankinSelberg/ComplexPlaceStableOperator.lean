@@ -27,17 +27,17 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 
 open Langlands.Global Langlands.Global.ArchimedeanGL PlaceComponent
 
-local instance placeStableRationalAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance placeStableRationalAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance placeStableContinuousAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance placeStableContinuousAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance placeStableSmoothAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance placeStableSmoothAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance placeStableFormsAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance placeStableFormsAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance placeStableStableAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance placeStableStableAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance placeStableSpaceAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance placeStableSpaceAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}

@@ -56,7 +56,7 @@ attribute [local irreducible] GodementJacquet.biSmoothMatrixCoefficients
 
 /-- Full matrix data on a smooth full-type representation determine its
 complete trivial-test gamma certificate. -/
-private theorem gammaData_rankOne_of_matrix
+theorem gammaData_rankOne_of_matrix
     (ψ : UnitaryAdditiveCharacter F.Carrier) (μ : AdditiveHaarMeasure F.Carrier)
     (hself : IsSelfDual ψ μ) {r : ℕ}
     {V : Type uV} [AddCommGroup V] [Module ℂ V]

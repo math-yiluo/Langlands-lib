@@ -19,6 +19,9 @@ equivariance to the compact subgroup and then to the full functions. A vector
 where `ℓ` is nonzero therefore yields a nonzero standard module vector scaled
 by every such endomorphism.
 
+`compactIntertwiner_ext` also gives this extension of equality for arbitrary
+compact intertwiners from the same source representation.
+
 This is an internal compact-model argument for the multiplicity step in the
 archimedean cuspidal irreducibility proof. It follows directly from the
 Library's definitions of the principal series and real standard module in

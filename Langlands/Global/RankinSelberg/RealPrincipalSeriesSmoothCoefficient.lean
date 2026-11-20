@@ -355,4 +355,53 @@ def CompactWhittakerCoefficientStatement : Prop :=
 theorem compactWhittakerCoefficient : CompactWhittakerCoefficientStatement :=
   fun _ ds => isRealUniformWhittakerIntertwiner_functionalCoefficient ds
 
+/-- All derivative words of a smooth coefficient of a compact-derivative-bounded
+Whittaker form are regular for the given character, with one growth exponent. -/
+def CompactWhittakerSmoothRegularityStatement : Prop :=
+  ∀ (r : ℕ) (ds : List RealBlock) (a : ℝˣ)
+    (ℓ : principalSeries ℝ (r + 1) (realPositionCharacter ds) →ₗ[ℂ] ℂ),
+    HasCompactDerivativeBound r ds ℓ →
+    (∀ u ∈ GeneralLinear.upperUnipotent (r + 1) ℝ,
+      ∀ f : principalSeries ℝ (r + 1) (realPositionCharacter ds),
+        ℓ (translate r ds u f) = realWhittakerCharacter a u * ℓ f) →
+    ∀ f : principalSeries ℝ (r + 1) (realPositionCharacter ds),
+      let W := fun g => ℓ (translate r ds g f)
+      (∀ Xs, RealLocalWhittaker.iteratedRightDerivative r Xs W ∈
+        RealLocalWhittaker.regularFunctions r a) ∧ RealUniformWhittaker.HasUniformDerivativeGrowth W
+
+theorem compactWhittakerSmoothRegularity : CompactWhittakerSmoothRegularityStatement := by
+  intro r ds a ℓ hℓ hψ f W
+  obtain ⟨N, hN⟩ := compactFunctionalGrowth r ds ℓ hℓ
+  let C := fun x : principalSeries ℝ (r + 1) (realPositionCharacter ds) => fun g => ℓ (translate r ds g x)
+  have hWord (Xs : List (Matrix (Fin (r + 1)) (Fin (r + 1)) ℝ)) :
+      ∀ x : principalSeries ℝ (r + 1) (realPositionCharacter ds),
+        ∃ y : principalSeries ℝ (r + 1) (realPositionCharacter ds),
+          RealLocalWhittaker.iteratedRightDerivative r Xs (C x) = C y := by
+    induction Xs with
+    | nil => exact fun x => ⟨x, rfl⟩
+    | cons X Xs ih =>
+      intro x
+      obtain ⟨y, hy⟩ := ih x
+      refine ⟨sourceDerivative ds X y, ?_⟩
+      change rightDerivative (matrixModel ℝ (r + 1)) X
+        (RealLocalWhittaker.iteratedRightDerivative r Xs (C x)) = C (sourceDerivative ds X y)
+      rw [hy]
+      exact funext ((smoothCoefficient_and_rightDerivative ds ℓ hℓ y).2 X)
+  refine ⟨?_, N, ?_⟩
+  · intro Xs
+    obtain ⟨y, hy⟩ := hWord Xs f
+    change RealLocalWhittaker.iteratedRightDerivative r Xs (C f) ∈ RealLocalWhittaker.regularFunctions r a
+    rw [hy]
+    obtain ⟨B, hB, hg⟩ := hN y
+    refine ⟨fun u hu g => ?_, (smoothCoefficient_and_rightDerivative ds ℓ hℓ y).1, B, N, hB, hg⟩
+    change ℓ (translate r ds (u * g) y) = realWhittakerCharacter a u * ℓ (translate r ds g y)
+    rw [translate_mul_apply]
+    exact hψ u hu _
+  · intro Xs
+    obtain ⟨y, hy⟩ := hWord Xs f
+    change ∃ B : ℝ, 0 ≤ B ∧ ∀ g,
+      ‖RealLocalWhittaker.iteratedRightDerivative r Xs (C f) g‖ ≤ B * realMatrixHeight g ^ N
+    rw [hy]
+    exact hN y
+
 end Langlands.Global.RankinSelbergGlobal.RealPrincipalSeries

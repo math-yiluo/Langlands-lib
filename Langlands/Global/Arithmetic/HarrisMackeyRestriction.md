@@ -1,0 +1,3 @@
+# One-term Mackey restriction and irreducibility
+
+When the image of the restricting group meets every inducing coset, the Mackey double-coset set has one element. The published Mackey equivalence then identifies the restriction of the induced representation with induction from the preimage of the inducing subgroup. An invariant subspace for the original group is invariant for the restricting group, so irreducibility of that one term implies irreducibility of the original induced representation. This provides the representation comparison used for the projected auxiliary tower in Harris's Proposition 4.8.

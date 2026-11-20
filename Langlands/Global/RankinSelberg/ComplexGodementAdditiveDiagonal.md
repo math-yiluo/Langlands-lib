@@ -23,3 +23,5 @@ unitary Haar measure, and it gives equivalent absolute integrability
 before and after both changes of variables.
 
 [Jacquet, *Archimedean Rankin–Selberg integrals*, §7.1, proof of Proposition 7.1, pp. 43–44](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).
+
+`integral_multiplicativeComplexDiagonal` gives the same product density for complex-valued integrals of functions of the diagonal alone.

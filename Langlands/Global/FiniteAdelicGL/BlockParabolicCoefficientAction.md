@@ -1,0 +1,7 @@
+# The finite adelic normalized action on block coefficients
+
+`normalizedLeviAction` acts on the tensor of the blocks' finite restricted coefficient spaces. Its group elements are actual finite adelic parabolic matrices. The diagonal blocks act by their finite adelic representations and the action is multiplied by the restriction of the positive adelic parabolic half character.
+
+`parabolicCoefficientEquiv` intertwines this action with the restricted tensor of the normalized local parabolic actions, with nonzero block references outside the common exceptional set. For a given parabolic matrix, use stages containing its nonintegral places. On an array of pure factors, each local action multiplies by its canonical half modulus and acts on the diagonal blocks. The local scalars contribute their product, which is the actual finite adelic half character by `parabolicHalfCharacter_ofFinite_eq_prod`. The remaining array regroups into the blockwise finite adelic tensor action, because each finite local projection commutes with taking the diagonal block. Pure arrays determine the finite-stage maps, and these stages determine the maps on the restricted tensor.
+
+The comparison is internal to the algebraic induction construction. The local normalization is that of Getz and Hahn (2024), §8.1, p. 213 (PDF 226). Their §10.1, p. 271 (PDF 283), describes the place factorization of normalized induction. Flath (1979), §2, pp. 180–181 (PDF 176–177), supplies the restricted tensor construction and the maps induced by local linear maps.

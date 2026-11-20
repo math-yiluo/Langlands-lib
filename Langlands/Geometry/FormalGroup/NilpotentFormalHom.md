@@ -1,0 +1,7 @@
+# Integral formal homomorphisms over a nilpotent coefficient thickening
+
+This internal proof supplies the integral steps for the coordinated case of nilpotent rigidity in Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), §2, p. 52, equation (2.1). It works for a surjective coefficient algebra map with nilpotent kernel and an arbitrary distinguished scalar \(\pi\).
+
+For a fixed bound on coordinate nilpotence, the points of a target law are images of the universal truncated point. The scalar-power torsion hypothesis kills that one point by a single power \(\pi^k\). Consider any two pointed coordinate maps with equal reduction. On each test algebra, their evaluated difference reduces to zero modulo the extended kernel. Its coordinate nilpotence is bounded by the nilpotence exponent of the coefficient kernel, so the same scalar power kills every such difference.
+
+For injectivity, apply this bound to two integral homomorphisms with equal reduction. Scalar multiplication on the resulting evaluations agrees. Move the scalar to the source and cancel its fppf-locally surjective action. For lifting, first lift each coefficient of the pointed coordinate map, keeping the constant terms zero. Additivity and scalar linearity hold after reduction, so the uniform power kills both defects. The resulting natural linear maps on points assemble into an integral homomorphism. Equality on all test points identifies its coordinate map with the lifted coordinate map followed by scalar multiplication, which verifies the asserted reduction.

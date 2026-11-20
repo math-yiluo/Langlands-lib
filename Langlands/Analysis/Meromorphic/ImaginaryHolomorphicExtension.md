@@ -118,3 +118,5 @@ The case `m = 0` is trivial (`D' = ℂⁿ`). Otherwise `D` is open and dense.
 The module is about functions of the form `∑ i, coeff i s • ψ i` on `ℂⁿ`; it
 does not mention intertwining operators. The isometry identity, the Gram
 positivity and the hyperplane factorisation are hypotheses.
+
+The scalar identity theorem and closure under finite sums and products are supplied by [Scalar meromorphic identities](ScalarIdentity.md).

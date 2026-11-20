@@ -21,7 +21,8 @@ local notation "Y" => Matrix (Fin (m + 1)) (Fin (m + 1)) ℝ
 local notation "G" => Langlands.GeneralLinear m ℝ
 local notation "H" => Langlands.GeneralLinear (m + 1) ℝ
 
-private def rowsLinear (h : M) : Y →L[ℝ] X :=
+/-- The trailing rows of the upper translating matrix, multiplied on the left by `h`. -/
+def rowsLinear (h : M) : Y →L[ℝ] X :=
   LinearMap.toContinuousLinearMap
     { toFun := fun g => h * lastRows g
       map_add' := fun g g' => by
@@ -35,11 +36,13 @@ private def parameterOperator : M →ₗ[ℝ] Y →L[ℝ] X where
   map_add' h h' := ContinuousLinearMap.ext fun g => Matrix.add_mul h h' (lastRows g)
   map_smul' c h := ContinuousLinearMap.ext fun g => Matrix.smul_mul c h (lastRows g)
 
-private theorem continuous_parameterOperator : Continuous (fun h : G => rowsLinear h.val) :=
+/-- The trailing-row operator depends continuously on the lower group parameter. -/
+theorem continuous_parameterOperator : Continuous (fun h : G => rowsLinear h.val) :=
   (LinearMap.toContinuousLinearMap (parameterOperator (m := m))).continuous.comp
     (show Continuous (Units.val : G → M) from Units.continuous_val)
 
-private theorem isCompact_val_preimage {T : Set Y} (hT : IsCompact T)
+/-- A compact set of invertible matrices lifts to a compact set in the group of units. -/
+theorem isCompact_val_preimage {T : Set Y} (hT : IsCompact T)
     (hUnit : ∀ a ∈ T, IsUnit a) :
     IsCompact ((Units.val : H → Y) ⁻¹' T) := by
   apply Units.isOpenEmbedding_val.isEmbedding.isCompact_iff.mpr

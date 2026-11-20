@@ -1,0 +1,7 @@
+# The overlap of two ordered projector charts
+
+A matching of two systems of weights induces a map between their ordered projector schemes by relabelling the projectors. The two resulting subgroups agree on every test scheme. Uniqueness in the given universal moduli identifies the two maps to that moduli. Thus each matching gives a section of the second projection of the overlap.
+
+For the overlap description, both weight maps are injective, their weights generate the respective character groups, and the two diagonalizable sources are split tori. The character group of the second chart is finitely generated as an additive monoid. The two universal points on the overlap classify the same subgroup, so the local matching theorem gives an open neighborhood of each point that factors through a section. Distinct sections have disjoint ranges, since a common image point would give a nonempty pullback and hence equal matchings. For a point of the second chart, a neighborhood through its given section has that same matching. Its lift to the second chart is the pullback of the open immersion along the monic section, so it is open. These lifts cover the second chart and show that the section is an open immersion.
+
+The sections give a disjoint open cover. `overlapIso` identifies the overlap with the corresponding coproduct of copies of the second chart. There are finitely many matchings of the generating weights, so the second projection is finite and étale. This internal construction supplies the local geometry of the ordered chart maps.

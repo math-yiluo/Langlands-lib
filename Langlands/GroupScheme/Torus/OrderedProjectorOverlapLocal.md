@@ -1,0 +1,7 @@
+# Local matchings of equal ordered projector subgroups
+
+Projectors with generating weights define a closed subgroup over every test scheme. The point of the affine projector scheme corresponding to the given family pulls back its universal closed subgroup. The actual source and ambient pullback comparisons preserve the closed immersion.
+
+Suppose two ordered projector subgroups with distinct generating weights have the same range and the character group of the second is finitely generated as an additive monoid. Their closed inclusions represent the same subgroup functor. The comparison isomorphism between the diagonalizable sources is locally a fixed additive equivalence on characters. On an affine refinement containing the chosen point, the coefficient comparison then recovers the corresponding matching of projector labels. `LocalWeightMatching` records the neighborhood, the matching and the equality of the pulled-back projectors.
+
+With distinct generating weights in the second family, two matchings giving the same relabelled projectors on a nonempty test scheme produce the same actual homomorphism into the general linear group. Closedness lets us cancel the inclusion, and character restriction is faithful on a nonempty base. Equality of the lattice equivalences and distinctness of weights give equality of the labels. This identifies the local matchings on the overlaps of neighborhoods in the ordered chart comparison.

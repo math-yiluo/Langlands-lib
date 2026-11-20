@@ -1,0 +1,7 @@
+# Joint holomorphy of the ordinary complex unequal-rank integral
+
+The exact ordinary Rankin–Selberg integral is holomorphic in a finite-dimensional complex parameter when the two Whittaker families are continuous in the group, holomorphic at each group argument, and satisfy uniform simple-root bounds on the parameter domain. The spectral exponent may vary holomorphically with the same parameter.
+
+The proof bounds the kernel uniformly on any bounded interval of real spectral parts above a fixed threshold. On Iwasawa representatives the larger logarithmic torus is the smaller one padded by zeros. Its positive simple-root sum controls the positive parts of the smaller logarithms because the last padded coordinate is zero. Above the threshold the determinant power dominates the fixed toral growth in the negative directions. A simple-root decay order chosen at the upper endpoint controls the remaining terms uniformly throughout the interval. After cancellation with the exact toral marginal density, the majorant is an integrable exponential of the negative sum of absolute logarithms.
+
+The group-continuous quotient kernel is measurable. In the parameter it is a product of two pointwise holomorphic functions and an entire determinant factor. Around each parameter above the threshold, continuity of the spectral map gives a ball with a common upper bound of the real spectral part. The dominated holomorphic integration theorem applies on these balls.

@@ -43,8 +43,8 @@ weakened here. L1 of the same family is not a hypothesis.
 ## Universe levels
 
 All four propositions have the two universe parameters `uK` (the field
-`PadicField.{uK} p`) and `uV` (the carriers of the representations: the second parameter of
-`SmoothDualClass.{0, uK, uV}` in L0 and L2, and of
+`PadicField.{uK} p`) and `uV` (the carriers of the representations: the third universe
+argument of `SmoothDualClass.{0, uK, uV}` in L0 and L2, and the second universe argument of
 `SupercuspidalAutomorphicClass.{uK, uV}` in T2 and in the conclusion). Each is instantiated
 at `.{uK, uV}` in that order, which is the order of its declared level parameters, so all
 hypotheses and the conclusion concern the same field universe and the same carrier universe.

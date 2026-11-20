@@ -1,0 +1,7 @@
+# Critical degrees of Deligne's tangent sheaf
+
+Drinfeld's *Coverings of p-adic Symmetric Regions* (1976), §2A, printed pp. 109–110 (PDF pp. 3–4), specifies the tangent lines, the cyclic operator and the loci where it vanishes on a line fibre. Section 2B, printed p. 111 (PDF p. 5), uses the case where a selected tangent map vanishes. The results here are derived from the actual Library line sheaves and residue-field pullbacks.
+
+A nonzero map between line sheaves on the spectrum of a field is invertible. Both sheaves are isomorphic to the structure sheaf on that one-point scheme. After transport, the map is multiplication by a nonzero global scalar. The affine global-sections isomorphism identifies it with a unit of the field.
+
+The homogeneous iterate follows the degree-one maps through the cyclic grading. Its composite with the destination inclusion equals the original inclusion followed by the corresponding power of the total operator. At a residue-field point, a nilpotent structural scalar becomes zero, so the pulled-back total operator has zero \(d\)-th power. If every fibre component map were nonzero, the homogeneous \(d\)-fold iterate would be an isomorphism. Cancelling it shows that the destination inclusion vanishes. Composing the inclusion with its retraction gives zero identity on the destination line, which is impossible for a line on the spectrum of a field. Thus the actual Pi-zero loci cover the underlying scheme.

@@ -20,3 +20,10 @@ finite-dimensional space. `RealCompactWitnessExtension` extends these
 coefficients into the standard module. Evaluation at the identity recovers
 the linear form. The result `realStandardExistsCompactScalarVector` gives
 a nonzero vector scaled by every compact-equivariant endomorphism.
+
+`hasScalarCommutant_of_compactCyclicMap` applies the same uniqueness to an
+arbitrary compact intertwiner from this model. The evaluations of the
+intertwiner and its composition with an endomorphism are proportional,
+and compact equivariance extends the proportionality to all its coefficients.
+If the image generates under the Lie algebra, the scalar eigenspace contains
+the whole module.

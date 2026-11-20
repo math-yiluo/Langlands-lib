@@ -67,6 +67,15 @@ private theorem pi_multiplicativeComplexLebesgue (n : ℕ) :
       Fin.prod_univ_succ, Fin.insertNth_zero, Equiv.coe_fn_mk, Fin.cons_succ,
       Fin.zero_succAbove, cast_eq, Fin.cons_zero, ENNReal.coe_mul]
 
+/-- Integration on a finite product of complex multiplicative diagonals uses the inverse
+squared norm density in every coordinate relative to additive volume. -/
+theorem integral_multiplicativeComplexDiagonal {n : ℕ} (F : (Fin n → ℂ) → ℂ) :
+    (∫ z, F z ∂Measure.pi (fun _ : Fin n => multiplicativeComplexLebesgue)) =
+      ∫ z, (∏ j, (‖z j‖ ^ 2)⁻¹ : ℝ) • F z := by
+  rw [pi_multiplicativeComplexLebesgue, integral_withDensity_eq_integral_smul measurable_diagonalDensity]
+  simp only [NNReal.smul_def, diagonalDensity, NNReal.coe_prod, normDensity, NNReal.coe_inv,
+    NNReal.coe_pow, coe_nnnorm]
+
 variable {n : ℕ}
 local notation "G" => Langlands.GeneralLinear n ℂ
 local notation "K" => unitaryCompact ℂ n

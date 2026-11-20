@@ -1,0 +1,7 @@
+# The complex matrix equation for compact principal series pairings
+
+`ComplexPrincipalSeriesCompactEquationStatement` gives the normalized matrix equation at the standard trace character for a smooth complex principal series vector paired against a continuous function of the unitary variable. The coefficients in the inducing list are the characters in `d`. Both kernels converge absolutely on a common right half-plane and continue meromorphically. The reflected dual continuation divided by the dual gamma product equals the primal continuation divided by the primal gamma product, multiplied by the standard epsilon product, as punctured germs at every spectral parameter.
+
+The proof moves the compact pairing to an inverse left unitary average of the matrix test. On the dual side the unitary translation changes by inverse transpose, which is precisely the Fourier covariance of the averaged test. For an evaluated vector, triangular integration yields matched diagonal Schwartz tests. The published complex Tate theorem applied in each diagonal variable gives the equation for those tests. The matrix continuation and equation then apply to the original compact pairing by the two integral identities.
+
+This is the continuous compact pairing case of Jacquet (2009), §4.7, Proposition 4.4. To use it in the Whittaker induction, one still needs the compatibility of arbitrary right translations and compact projections under the Library's Whittaker intertwiners.

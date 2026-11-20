@@ -1,0 +1,9 @@
+# Archimedean multiplicity tensors for induced sections
+
+`commutingPlaceBases` consists of adelic matrices commuting with the image of a specified local parabolic. The real and complex embedding theorems take a compact-finite space \(W\) equipped with a linear injection into the actual normalized smooth adelic sections. The injection must commute with the compact action and with differentiation in the embedded real Lie directions.
+
+The coefficient functionals are continuous. Their orbits along each local block must lie in the corresponding block standard module. The family of functionals must separate coefficient vectors after allowing their translates by the embedded parabolic. A section for which all scalar slices vanish has zero values. Indeed, decompose each adelic matrix as \(y\iota_v(g)\) with \(y\) commuting with the local place group. Varying \(g\) by left multiplication with a local parabolic element tests the parabolic translates of the value at \(y\iota_v(g)\), by actual normalized section covariance.
+
+The slices of a compact-finite vector are compact-finite in the concatenated standard module. Evaluations of these slices separate the source. On each finite-dimensional compact orbit span, every linear functional is a finite linear combination of the evaluations, so the compact coefficients are continuous. Admissibility then bounds the span of all slice coordinates of each vector. The multiplicity tensor lemma lifts the coordinate family to an algebraic tensor. Its multiplicity factor is the space of scalar families indexed by the base points and coefficient probes. The compact actions and real directional Lie actions operate on the standard-module factor.
+
+This is an internal induction-in-stages reduction for step 4 of Task 7041. The source and coefficient hypotheses are explicit. The result supplies the tensor embedding used in the subquotient argument.

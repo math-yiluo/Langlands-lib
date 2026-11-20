@@ -1,3 +1,4 @@
+import Langlands.Analysis.Meromorphic.ScalarIdentity
 import Langlands.Analysis.Meromorphic.LinearCoordinates
 import Langlands.Analysis.Meromorphic.ImaginaryHyperplaneDivision
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
@@ -30,153 +31,6 @@ section Scalar
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
   {f g : E → ℂ} {U V W : Set E}
-
-private theorem isHolomorphicOn_iff_differentiableOn :
-    IsHolomorphicOn 𝓘(ℂ, E) f U ↔ DifferentiableOn ℂ f U := by
-  constructor
-  · intro hf
-    simpa using (hf (ContinuousLinearMap.id ℂ ℂ)).differentiableOn
-  · intro hf mu
-    exact (mu.differentiable.comp_differentiableOn hf).mdifferentiableOn
-
-private theorem eqOn_zero_of_convex (hf : DifferentiableOn ℂ f W)
-    (hW : IsOpen W) (hc : Convex ℝ W) (hV : IsOpen V) (hVW : V ⊆ W)
-    (hne : V.Nonempty) (hzero : EqOn f 0 V) : EqOn f 0 W := by
-  obtain ⟨x, hx⟩ := hne
-  intro y hy
-  let line : ℂ → E := fun t => t • (y - x) + x
-  have hline : Differentiable ℂ line :=
-    (differentiable_id.smul_const (y - x)).add_const x
-  have h0 : line 0 = x := by simp [line]
-  have h1 : line 1 = y := by simp [line]
-  have hpre : Convex ℝ (line ⁻¹' W) := by
-    let L : ℂ →ₗ[ℝ] E := ((LinearMap.id : ℂ →ₗ[ℂ] ℂ).smulRight (y - x)).restrictScalars ℝ
-    exact (hc.translate_preimage_left x).linear_preimage L
-  have hslice := (hf.comp hline.differentiableOn (mapsTo_preimage line W)).analyticOnNhd
-    (hW.preimage hline.continuous)
-  have hnear : f ∘ line =ᶠ[𝓝 0] 0 := by
-    filter_upwards [(hV.preimage hline.continuous).mem_nhds (show line 0 ∈ V by rwa [h0])]
-      with t ht
-    exact hzero ht
-  simpa [Function.comp_def, h1] using
-    hslice.eqOn_zero_of_preconnected_of_eventuallyEq_zero hpre.isPreconnected
-      (show line 0 ∈ W by rw [h0]; exact hVW hx) hnear (show line 1 ∈ W by rwa [h1])
-
-private theorem differentiableOn_eqOn_zero_of_isPreconnected (hf : DifferentiableOn ℂ f W)
-    (hW : IsOpen W) (hc : IsPreconnected W) (hV : IsOpen V) (hVW : V ⊆ W)
-    (hne : V.Nonempty) (hzero : EqOn f 0 V) : EqOn f 0 W := by
-  let S := interior (W ∩ {x | f x = 0})
-  have hVS : V ⊆ S := hV.subset_interior_iff.mpr fun x hx => ⟨hVW hx, hzero hx⟩
-  have hWS : W ⊆ S := hc.subset_of_closure_inter_subset isOpen_interior
-    (hne.mono fun x hx => ⟨hVW hx, hVS hx⟩) (by
-      rintro x ⟨hxS, hxW⟩
-      obtain ⟨r, hr, hB⟩ := Metric.isOpen_iff.mp hW x hxW
-      have hBne := mem_closure_iff.mp hxS _ Metric.isOpen_ball (Metric.mem_ball_self hr)
-      have hBzero := eqOn_zero_of_convex (hf.mono hB) Metric.isOpen_ball (convex_ball x r)
-        (Metric.isOpen_ball.inter isOpen_interior) inter_subset_left hBne
-        (fun y hy => (interior_subset hy.2).2)
-      have hBS : Metric.ball x r ⊆ S :=
-        Metric.isOpen_ball.subset_interior_iff.mpr fun y hy => ⟨hB hy, hBzero hy⟩
-      exact hBS (Metric.mem_ball_self hr))
-  exact fun x hx => (interior_subset (hWS hx)).2
-
-private theorem nonzero_somewhere (hf : DifferentiableOn ℂ f W)
-    (hW : IsOpen W) (hc : IsPreconnected W) (hnz : ∃ x ∈ W, f x ≠ 0)
-    (hV : IsOpen V) (hVW : V ⊆ W) (hne : V.Nonempty) : ∃ x ∈ V, f x ≠ 0 := by
-  by_contra! hzero
-  obtain ⟨x, hx, hfx⟩ := hnz
-  exact hfx (differentiableOn_eqOn_zero_of_isPreconnected hf hW hc hV hVW hne hzero hx)
-
-private theorem exists_local_presentations (hf : IsMeromorphicOn 𝓘(ℂ, E) f U)
-    (hg : IsMeromorphicOn 𝓘(ℂ, E) g V) (x : E) :
-    ∃ B : Set E, IsOpen B ∧ IsConnected B ∧ x ∈ B ∧
-      ∃ d e n m : E → ℂ, DifferentiableOn ℂ d B ∧ DifferentiableOn ℂ e B ∧
-        (∃ y ∈ B, d y * e y ≠ 0) ∧ DifferentiableOn ℂ n B ∧ DifferentiableOn ℂ m B ∧
-        EqOn (d * f) n ((U ∩ V) ∩ B) ∧ EqOn (e * g) m ((U ∩ V) ∩ B) := by
-  obtain ⟨W, hW, hcW, hxW, d, n, hd, hdnz, hn, hdf⟩ := hf.2.2.2 x
-  obtain ⟨Z, hZ, hcZ, hxZ, e, m, he, henz, hm, heg⟩ := hg.2.2.2 x
-  obtain ⟨r, hr, hB⟩ := Metric.isOpen_iff.mp (hW.inter hZ) x ⟨hxW, hxZ⟩
-  let B := Metric.ball x r
-  have hBo : IsOpen B := Metric.isOpen_ball
-  have hxB : x ∈ B := Metric.mem_ball_self hr
-  have hBW : B ⊆ W := fun _ hy => (hB hy).1
-  have hBZ : B ⊆ Z := fun _ hy => (hB hy).2
-  have hdB := hd.differentiableOn.mono hBW
-  have heB := he.differentiableOn.mono hBZ
-  obtain ⟨y, hy, hyd⟩ := nonzero_somewhere hd.differentiableOn hW hcW.2 hdnz
-    hBo hBW ⟨x, hxB⟩
-  let O := B ∩ d ⁻¹' ({0}ᶜ : Set ℂ)
-  have hO : IsOpen O := hdB.continuousOn.isOpen_inter_preimage hBo
-    isClosed_singleton.isOpen_compl
-  obtain ⟨z, hz, hze⟩ := nonzero_somewhere he.differentiableOn hZ hcZ.2 henz
-    hO (fun _ hz => hBZ hz.1) ⟨y, hy, hyd⟩
-  exact ⟨B, hBo, (convex_ball x r).isConnected ⟨x, hxB⟩, hxB, d, e, n, m, hdB, heB,
-    ⟨z, hz.1, mul_ne_zero hz.2 hze⟩, (isHolomorphicOn_iff_differentiableOn.mp hn).mono hBW,
-    (isHolomorphicOn_iff_differentiableOn.mp hm).mono hBZ,
-    fun y hy => hdf y ⟨hy.1.1, hBW hy.2⟩, fun y hy => heg y ⟨hy.1.2, hBZ hy.2⟩⟩
-
-private theorem IsMeromorphicOn.restrict_domain (hf : IsMeromorphicOn 𝓘(ℂ, E) f U)
-    (hV : IsOpen V) (hdV : Dense V) (hVU : V ⊆ U) : IsMeromorphicOn 𝓘(ℂ, E) f V := by
-  refine ⟨hV, hdV, fun mu => (hf.2.2.1 mu).mono hVU, fun x => ?_⟩
-  obtain ⟨W, hW, hcW, hxW, d, n, hd, hdnz, hn, hdf⟩ := hf.2.2.2 x
-  exact ⟨W, hW, hcW, hxW, d, n, hd, hdnz, hn, fun y hy => hdf y ⟨hVU hy.1, hy.2⟩⟩
-
-private theorem isMeromorphicOn_const (c : ℂ) :
-    IsMeromorphicOn 𝓘(ℂ, E) (fun _ : E => c) univ := by
-  have hc : DifferentiableOn ℂ (fun _ : E => c) univ := differentiableOn_const c
-  have h1 : DifferentiableOn ℂ (fun _ : E => (1 : ℂ)) univ := differentiableOn_const 1
-  exact ⟨isOpen_univ, dense_univ, isHolomorphicOn_iff_differentiableOn.mpr hc,
-    fun x => ⟨univ, isOpen_univ, isConnected_univ, mem_univ x, fun _ => 1, fun _ => c,
-      h1.mdifferentiableOn, ⟨x, mem_univ x, one_ne_zero⟩,
-      isHolomorphicOn_iff_differentiableOn.mpr hc, fun _ _ => one_smul _ _⟩⟩
-
-private theorem IsMeromorphicOn.add (hf : IsMeromorphicOn 𝓘(ℂ, E) f U)
-    (hg : IsMeromorphicOn 𝓘(ℂ, E) g V) : IsMeromorphicOn 𝓘(ℂ, E) (f + g) (U ∩ V) := by
-  refine ⟨hf.1.inter hg.1, hf.2.1.inter_of_isOpen_right hg.2.1 hg.1,
-    isHolomorphicOn_iff_differentiableOn.mpr
-      (((isHolomorphicOn_iff_differentiableOn.mp hf.2.2.1).mono inter_subset_left).add
-        ((isHolomorphicOn_iff_differentiableOn.mp hg.2.2.1).mono inter_subset_right)), ?_⟩
-  intro x
-  obtain ⟨B, hB, hcB, hxB, d, e, n, m, hd, he, hne, hn, hm, hdf, heg⟩ :=
-    exists_local_presentations hf hg x
-  refine ⟨B, hB, hcB, hxB, d * e, e * n + d * m, (hd.mul he).mdifferentiableOn,
-    hne, isHolomorphicOn_iff_differentiableOn.mpr ((he.mul hn).add (hd.mul hm)), ?_⟩
-  intro y hy
-  change d y * e y * (f y + g y) = e y * n y + d y * m y
-  calc
-    _ = e y * (d * f) y + d y * (e * g) y := by simp only [Pi.mul_apply]; ring
-    _ = _ := by rw [hdf hy, heg hy]
-
-private theorem IsMeromorphicOn.mul (hf : IsMeromorphicOn 𝓘(ℂ, E) f U)
-    (hg : IsMeromorphicOn 𝓘(ℂ, E) g V) : IsMeromorphicOn 𝓘(ℂ, E) (f * g) (U ∩ V) := by
-  refine ⟨hf.1.inter hg.1, hf.2.1.inter_of_isOpen_right hg.2.1 hg.1,
-    isHolomorphicOn_iff_differentiableOn.mpr
-      (((isHolomorphicOn_iff_differentiableOn.mp hf.2.2.1).mono inter_subset_left).mul
-        ((isHolomorphicOn_iff_differentiableOn.mp hg.2.2.1).mono inter_subset_right)), ?_⟩
-  intro x
-  obtain ⟨B, hB, hcB, hxB, d, e, n, m, hd, he, hne, hn, hm, hdf, heg⟩ :=
-    exists_local_presentations hf hg x
-  refine ⟨B, hB, hcB, hxB, d * e, n * m, (hd.mul he).mdifferentiableOn, hne,
-    isHolomorphicOn_iff_differentiableOn.mpr (hn.mul hm), ?_⟩
-  intro y hy
-  change d y * e y * (f y * g y) = n y * m y
-  calc
-    _ = (d * f) y * (e * g) y := by simp only [Pi.mul_apply]; ring
-    _ = _ := by rw [hdf hy, heg hy]
-
-private theorem IsMeromorphicOn.sum {κ : Type*} (s : Finset κ) {a : κ → E → ℂ}
-    (hU : IsOpen U) (hdU : Dense U) (ha : ∀ i ∈ s, IsMeromorphicOn 𝓘(ℂ, E) (a i) U) :
-    IsMeromorphicOn 𝓘(ℂ, E) (∑ i ∈ s, a i) U := by
-  classical
-  induction s using Finset.induction_on with
-  | empty =>
-    rw [Finset.sum_empty]
-    exact (isMeromorphicOn_const (E := E) 0).restrict_domain hU hdU (subset_univ U)
-  | @insert i t hi ih =>
-    have hai := ha i (Finset.mem_insert_self i t)
-    have hat := ih fun j hj => ha j (Finset.mem_insert_of_mem hj)
-    rw [Finset.sum_insert hi]
-    simpa only [inter_self] using hai.add hat
 
 /-- Multiplication by a constant keeps the domain of holomorphy (new). -/
 private theorem IsMeromorphicOn.mul_const (hf : IsMeromorphicOn 𝓘(ℂ, E) f U) (c : ℂ) :
@@ -228,11 +82,11 @@ theorem maximalExtension_eqOn (hD : Dense D) {N : Set (Fin n → ℂ)} (hN : IsO
 
 theorem subset_extensionDomain (hf : IsMeromorphicOn 𝓘(ℂ, Fin n → ℂ) f D) :
     D ⊆ extensionDomain f D := fun _ hs =>
-  ⟨D, hf.1, hs, f, isHolomorphicOn_iff_differentiableOn.mp hf.2.2.1, fun _ _ => rfl⟩
+  ⟨D, hf.1, hs, f, isHolomorphicOn_iff_differentiableOn_scalar.mp hf.2.2.1, fun _ _ => rfl⟩
 
 theorem maximalExtension_eqOn_self (hf : IsMeromorphicOn 𝓘(ℂ, Fin n → ℂ) f D) :
     EqOn (maximalExtension f D) f D :=
-  maximalExtension_eqOn hf.2.1 hf.1 (isHolomorphicOn_iff_differentiableOn.mp hf.2.2.1)
+  maximalExtension_eqOn hf.2.1 hf.1 (isHolomorphicOn_iff_differentiableOn_scalar.mp hf.2.2.1)
     fun _ _ => rfl
 
 theorem differentiableOn_maximalExtension (hD : Dense D) :
@@ -248,11 +102,11 @@ theorem isMeromorphicOn_maximalExtension (hf : IsMeromorphicOn 𝓘(ℂ, Fin n �
   have hsub := subset_extensionDomain hf
   have hdiff := differentiableOn_maximalExtension (f := f) hf.2.1
   refine ⟨isOpen_extensionDomain, hf.2.1.mono hsub,
-    isHolomorphicOn_iff_differentiableOn.mpr hdiff, fun s₀ => ?_⟩
+    isHolomorphicOn_iff_differentiableOn_scalar.mpr hdiff, fun s₀ => ?_⟩
   obtain ⟨W, hW, hcW, hs₀W, g, h, hg, hgnz, hh, hgh⟩ := hf.2.2.2 s₀
   refine ⟨W, hW, hcW, hs₀W, g, h, hg, hgnz, hh, ?_⟩
   have hg' : DifferentiableOn ℂ g W := hg.differentiableOn
-  have hh' : DifferentiableOn ℂ h W := isHolomorphicOn_iff_differentiableOn.mp hh
+  have hh' : DifferentiableOn ℂ h W := isHolomorphicOn_iff_differentiableOn_scalar.mp hh
   have hopen : IsOpen (extensionDomain f D ∩ W) := isOpen_extensionDomain.inter hW
   have heq : EqOn (fun s => g s • maximalExtension f D s) h
       ((extensionDomain f D ∩ W) ∩ D) := by
@@ -282,8 +136,8 @@ theorem isMeromorphicOn_comp_continuousLinearEquiv {E E' : Type*} [NormedAddComm
   obtain ⟨hU, hUd, hhol, hloc⟩ := hf
   have hTd : Differentiable ℂ T := T.differentiable
   refine ⟨hU.preimage T.continuous, hUd.preimage T.toHomeomorph.isOpenMap, ?_, fun s₀ => ?_⟩
-  · exact isHolomorphicOn_iff_differentiableOn.mpr
-      ((isHolomorphicOn_iff_differentiableOn.mp hhol).comp hTd.differentiableOn
+  · exact isHolomorphicOn_iff_differentiableOn_scalar.mpr
+      ((isHolomorphicOn_iff_differentiableOn_scalar.mp hhol).comp hTd.differentiableOn
         (mapsTo_preimage T U))
   · obtain ⟨W, hW, hcW, hs₀W, g, h, hg, hgnz, hh, hgh⟩ := hloc (T s₀)
     refine ⟨T ⁻¹' W, hW.preimage T.continuous, ?_, hs₀W, g ∘ T, h ∘ T, ?_, ?_, ?_, ?_⟩
@@ -299,8 +153,8 @@ theorem isMeromorphicOn_comp_continuousLinearEquiv {E E' : Type*} [NormedAddComm
     · exact (hg.differentiableOn.comp hTd.differentiableOn (mapsTo_preimage T W)).mdifferentiableOn
     · obtain ⟨s, hs, hgs⟩ := hgnz
       exact ⟨T.symm s, by simpa using hs, by simpa using hgs⟩
-    · exact isHolomorphicOn_iff_differentiableOn.mpr
-        ((isHolomorphicOn_iff_differentiableOn.mp hh).comp hTd.differentiableOn
+    · exact isHolomorphicOn_iff_differentiableOn_scalar.mpr
+        ((isHolomorphicOn_iff_differentiableOn_scalar.mp hh).comp hTd.differentiableOn
           (mapsTo_preimage T W))
     · intro s hs
       exact hgh (T s) hs
@@ -696,7 +550,7 @@ theorem exists_holomorphic_on_imaginary_of_isometry {m : ℕ} {Γ : Type} (ψ : 
       exact mul_left_cancel₀ hLs h1
     exact heq1.of_subset_closure
       ((hc'.mono inter_subset_left).continuousOn.mono inter_subset_left)
-      ((isHolomorphicOn_iff_differentiableOn.mp (hd_mero k).2.2.1).continuousOn.mono
+      ((isHolomorphicOn_iff_differentiableOn_scalar.mp (hd_mero k).2.2.1).continuousOn.mono
         inter_subset_right)
       inter_subset_left (hdense.open_subset_closure_inter hND)
   exact ⟨c, Ωa, fun s hs => mem_iInter.mpr fun k => hslice s hs k, hc_mero, hc_agree⟩

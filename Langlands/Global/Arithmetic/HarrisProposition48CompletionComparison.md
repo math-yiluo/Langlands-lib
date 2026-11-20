@@ -1,0 +1,7 @@
+# Descent from the completion at the auxiliary place
+
+The auxiliary place of Harris's Proposition 4.8 has one extension to the normal closure. Intermediate places inherit uniqueness by extension and restriction of primes. The finite local degree sum therefore reduces to a single degree. The published decomposition map identifies the local automorphism group with the stabilizer of the extended place, which here is the entire global automorphism group. This is the arithmetic comparison used to select the global field in the last prime cyclic step on printed page 202.
+
+Under this group isomorphism the fixing subgroup of a completed intermediate field pulls back the global fixing subgroup. The finite Galois correspondence gives an order isomorphism of intermediate fields, so it preserves composita. Normality of a fixing subgroup is equivalent on both sides. Applying the minimality of the normal closure to this order isomorphism shows that completion also commutes with taking the relative normal closure.
+
+For the further change of base, a commuting square of a base isomorphism and a top-field embedding sends intermediate fields to their images. Normality of each image is equivalent to normality of its source. The target normal closure lies in the image of the source normal closure. Its inverse image inside that field is normal and contains the inducing field, so minimality gives equality.

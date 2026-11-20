@@ -1,0 +1,7 @@
+# Quadratic splitting of number-field Brauer two-torsion
+
+`Langlands.Brauer.NumberFieldBrauerTwoTorsionStatement` states that a central simple algebra over a number field whose Brauer class is killed by two has a quadratic splitting field. The module deduces that a central division algebra over a number field isomorphic to its opposite has reduced degree one or two. This is the two-torsion consequence of the exponent-index equality discussed by Platonov and Rapinchuk, *Algebraic Groups and Number Theory*, Academic Press, 1994, §1.5.1, after Theorem 1.12, printed p. 38 (PDF p. 48).
+
+The proof chooses a totally complex quadratic extension with even completion degrees at the finitely many nonsplit finite places. At those places the degree law for the local Brauer invariant kills the localized two-torsion class. To apply the chart comparison, the proof embeds a splitting field of the extended local algebra in a finite Galois extension of the original local field. At the other finite places, the original algebra is already split. Infinite completions of the quadratic extension are complex and hence split the algebra.
+
+Brauer–Hasse–Noether now splits the algebra over the quadratic number field. For a division algebra the size of any splitting matrix divides the degree of the splitting field, so the reduced degree divides two. An isomorphism with the opposite algebra supplies the two-torsion condition.

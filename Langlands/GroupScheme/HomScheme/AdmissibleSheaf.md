@@ -34,3 +34,6 @@ restriction and total-presheaf interfaces. The effective-admissibility premise
 is explicit and remains to be proved separately.
 
 The parameter-slice cover reuses `Langlands.AlgebraicGeometry.Picard.openCoverOver`; its objects and arrows are the same actual cover objects and maps used by the admissible-family interface.
+
+`isSheaf_overTotal_of_openCover` exposes this argument for any small relative
+presheaf with unique gluing along relative open covers.

@@ -24,17 +24,17 @@ namespace Langlands.Automorphic
 
 open Langlands.Global Langlands.LocalFactor.Archimedean
 
-local instance bridgeRationalAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance bridgeRationalAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance bridgeContinuousAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance bridgeContinuousAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance bridgeSmoothAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance bridgeSmoothAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance bridgeFormsAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance bridgeFormsAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance bridgeStableAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance bridgeStableAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance bridgeSpaceAddCommGroup {F : Type u} [Field F] [NumberField F]
+private local instance bridgeSpaceAddCommGroup {F : Type u} [Field F] [NumberField F]
     {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 namespace OperatorRealization

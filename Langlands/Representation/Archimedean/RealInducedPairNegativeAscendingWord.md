@@ -2,14 +2,20 @@
 
 This internal construction uses the ascending quotient and four-crossing word
 of `RealInducedPairQuotientPresentation` and `RealInducedPairAscendingExchange`.
-Write \(h\) for the absolute value of the negative inner weight, \(L,M\) for
-the induction weights, \(P=L+M-h\) for the outer weight, and \(A=L-h\),
-\(B=M-h\) for the positive gaps. Choose the lower endpoint of the left block
-even and the lower endpoint of the right block of parity \(A\bmod2\).
-The outer and inner pair are resonant at \(P\) and \(-h\); the two middle
-crossings are generic at \(A,B\). The four actual Frobenius multipliers are
-the outer binomial, the two normalized generic multipliers, and the inner
-tail with the canonical character-swap reflection sign.
+Let \(d,e\) have absolute induction weights \(L,M\). Assume they are linked
+at \(k\in\mathbb N\), so that
+\[
+e.\mathrm{exponent}-d.\mathrm{exponent}=|L-M|/2+k+1,
+\]
+and assume that \(H=k+1-\min(L,M)\), the signed inner weight, is negative.
+Put \(h=-H\), \(P=L+M-h\), \(A=L-h\), and \(B=M-h\). Write \(u,v\) for
+the lower and upper endpoints of the left block and \(x,y\) for those of
+the right block. Choose \(u\) even and \(x\) of parity \(A\bmod2\).
+Linkage identifies the exponent differences \(y-u,\ x-u,\ y-v,\ x-v\)
+with \(P,\ A,\ B,\ -h\), respectively. The outer and inner crossings are
+resonant, and the two middle crossings are generic. The Frobenius
+multipliers are the outer binomial, the two normalized generic multipliers,
+and the inner tail with the canonical character-swap reflection sign.
 
 After the outer crossing, the two generic steps are onto by their reciprocal
 multipliers. The last canonical swap attains the high middle projection by

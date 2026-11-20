@@ -1,3 +1,4 @@
+import Langlands.Geometry.FormalGroup.ScalarCompositesIsogeny
 import Langlands.Geometry.FormalGroup.IsogenyKernelTorsion
 import Langlands.Geometry.FormalGroup.KernelQuotient
 import Langlands.Geometry.FormalGroup.PointFactorization
@@ -98,14 +99,8 @@ The other scalar composite gives fppf local surjectivity of the numerator. -/
 theorem isIsogeny_of_scalarComposites {f : Hom M N} {g : Hom N M}
     (hM : M.IsPiDivisible π) (hN : N.IsPiDivisible π) {j : ℕ}
     (hgf : g.comp f = M.scalarHom (π ^ j)) (hfg : f.comp g = N.scalarHom (π ^ j)) :
-    f.IsIsogeny := by
-  refine ⟨isFppfLocallySurjective_of_comp_eq_scalarHom hN g f j hfg, ?_⟩
-  obtain ⟨K⟩ := hM.scalarPower_finiteKernel j
-  have hsub (A : CommAlgCat.{v} k) (x : f.kernelPoints A) :
-      (M.scalarHom (π ^ j)).onAlgebraPoints x.val = 0 := by
-    rw [← hgf, onAlgebraPoints_comp, x.property, map_zero]
-  exact ⟨⟨KernelQuotient.coordinateAlgebra K f, inferInstance, inferInstance,
-    KernelQuotient.represents K f hsub⟩⟩
+    f.IsIsogeny :=
+  isIsogeny_of_scalarComposites_overRing hM hN hgf hfg
 
 end Hom
 

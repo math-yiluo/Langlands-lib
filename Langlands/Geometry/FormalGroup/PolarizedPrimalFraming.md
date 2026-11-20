@@ -1,0 +1,7 @@
+# The primal rigidifier of a split polarized affine point
+
+Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), §6.43, (6.17), and the proof of Lemma 6.44, printed pp. 308–310 (PDF pp. 320–322), split the polarized object and its rigidifier using the two factors of the order. The ordinary division order factor is selected by \((0,1)\) in the Library's order convention.
+
+For a polarized affine point `X`, the source and target of the quasi-isogeny are the actual coefficient extension of the fixed frame and the actual reduction of the polarized target. Choose integral coordinate presentations of the two division images over that reduced test. `PolarizedFramedAffinePoint.primalFraming` restricts the invertible section associated to `X.localFraming` to these images. Its forward section is the restriction of `X.rho`. Order-linearity of `X.rho` for \((0,b)\) and the composition rule for restriction give division order linearity of the new section.
+
+`HasPrimalFramingHeight` applies Harris's signed \(p\)-height relation to this actual restricted section. Harris, *Supercuspidal representations in the cohomology of Drinfel'd upper half spaces* (1997), Appendix, printed p. 112 (PDF p. 38), uses the difference between the numerator and scalar denominator kernel-rank exponents. The relation on the primal rigidifier is the raw height used for the division summand comparison with (A.3).

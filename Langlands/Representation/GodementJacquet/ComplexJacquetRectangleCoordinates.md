@@ -1,0 +1,5 @@
+# The complex rectangular Fourier identity in unipotent coordinates
+
+`integral_complexJacquetRectangle_unipotent` proves the complex case of Lemma 7.1 in Jacquet's *Archimedean Rankin–Selberg Integrals* (2009), p. 51. It uses the negative trace Fourier transform and a common Haar measure on the upper-unipotent group. Both kernels are absolutely integrable on the product with the free last column, whose measure is the product of the scalar self-dual measure. The primal phase has parameter `-a` and the Fourier-side phase has parameter `a`.
+
+The proof reindexes the strictly upper entries and last column by the free entries of the two complementary arrays. Column reversal describes the primal array and row reversal describes the Fourier-side array. In both cases the fixed entries pair with the adjacent upper entries and the last coordinate of the free column. The reindexings preserve product measure. Transport through the upper-entry homeomorphism changes that measure to Haar on the group. Haar uniqueness contributes the same scalar on both sides, and Fubini gives the iterated integral identity.

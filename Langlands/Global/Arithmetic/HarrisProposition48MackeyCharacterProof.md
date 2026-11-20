@@ -1,0 +1,9 @@
+# Character inheritance in the Harris Mackey step
+
+Harris uses the norm pullback of the conjugate of the parent character in the proof of Proposition 4.8 (1998, printed p. 202, TeX lines 1574–1614). This helper proves three character properties for that actual raw character on the compositum `D · a(E')`.
+
+At each archimedean place the completion over the conjugate source field has local degree one. The norm of a single-coordinate idele therefore recovers its source coordinate through the completion isomorphism. The Archimedean norm in the algebraicity formula is unchanged under either orientation of the complex embeddings. Composing the parent exponents with the field embedding and multiplying the resulting coordinate identities gives algebraicity with the same twist.
+
+For relative regularity, lift two places over a common place of `D` to embeddings into `ℂ` that extend the same embedding of `D`. If they restrict to the same place of the conjugate source field, their restricted embeddings are equal or complex conjugate. The latter possibility contradicts their common restriction to the totally complex parent base. In the former case they agree on both generators of the compositum, so the two places coincide. Thus distinct child places give distinct parent places. The completion maps carry the parent’s separating unit to a separating unit in the completion of `D`.
+
+For conjugate inversion, the CM involution on the child field commutes with the transported parent involution under the compositum inclusion. The adelic norm respects this square by its field-norm formula on diagonal elements and weak approximation, using the product topology on the finite completions. Passing to idele classes and applying the parent’s inversion identity proves inversion for the norm pullback.

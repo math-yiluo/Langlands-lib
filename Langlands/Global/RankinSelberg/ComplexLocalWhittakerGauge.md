@@ -33,3 +33,5 @@ in Jacquet 2009, §3.2, pp. 15–16, equations (3.11)–(3.12) and Proposition 3
 The constants are for each individual model vector and derivative word.
 The bound is stated on the diagonal times the unitary group. Applying it to
 the local integrals still requires the quotient measure and block estimates.
+
+`ComplexLocalWhittakerGauge.height_logTorus_mul_le` gives the height bound on a logarithmic diagonal times a unitary matrix, independently of the Whittaker vector.

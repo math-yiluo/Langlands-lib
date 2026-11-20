@@ -6,16 +6,17 @@ import Mathlib.Data.Finset.Max
 
 noncomputable section
 
-namespace Langlands.Ramification.Padic
+namespace Langlands.Ramification.Local
 
 open Module
 open scoped BigOperators Classical
 
-universe uK uL uV
+universe u₀ uK uL uV
 
-variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uL} p}
-  (T : F.TopologicalData) (K : Type uK) [Field K] [Algebra (Padic p) K]
-  [Algebra K F.Carrier] [IsScalarTower (Padic p) K F.Carrier]
+variable {K₀ : Type u₀} [Field K₀] [ValuativeRel K₀] [TopologicalSpace K₀]
+  {L : Type uL} [Field L] [Algebra K₀ L]
+  (T : LocalField.TopologicalData K₀ L) (K : Type uK) [Field K] [Algebra K₀ K]
+  [Algebra K L] [IsScalarTower K₀ K L]
   {V : Type uV} [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]
   (ρ : Representation ℂ (inertia T K) V)
 
@@ -62,13 +63,6 @@ theorem inertiaFixedDimension_of_lower_eq_bot {i : ℕ}
   rw [inertiaFixedDimension, inertiaFixedVectors_eq_top_of_lower_eq_bot T K ρ hi,
     finrank_top]
 
-omit [FiniteDimensional ℂ V] in
-theorem inertiaFixedDimension_of_cutoff {i : ℕ}
-    (hi : ramificationCutoff T K ≤ i) :
-    inertiaFixedDimension T K ρ i = finrank ℂ V :=
-  inertiaFixedDimension_of_lower_eq_bot T K ρ
-    (lowerRamificationGroup_eq_bot_of_cutoff T K i hi)
-
 /-- Zero accounts for the entire tame and unramified part. A positive index
 measures the increase from `G_i`-fixed to `G_(i+1)`-fixed vectors. -/
 def lowerBreakMultiplicity (i : ℕ) : ℕ :=
@@ -99,6 +93,15 @@ theorem lowerBreakMultiplicity_eq_zero_of_lower_eq_bot {i : ℕ} (hi : 0 < i)
     inertiaFixedDimension_of_lower_eq_bot T K ρ hbot]
   exact Nat.sub_eq_zero_of_le (inertiaFixedDimension_le_rank T K ρ (i + 1))
 
+variable [FiniteDimensional K₀ L]
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaFixedDimension_of_cutoff {i : ℕ}
+    (hi : ramificationCutoff T K ≤ i) :
+    inertiaFixedDimension T K ρ i = finrank ℂ V :=
+  inertiaFixedDimension_of_lower_eq_bot T K ρ
+    (lowerRamificationGroup_eq_bot_of_cutoff T K i hi)
+
 theorem lowerBreakMultiplicity_hasFiniteSupport :
     (lowerBreakMultiplicity T K ρ).HasFiniteSupport := by
   apply (Finset.range (ramificationCutoff T K + 1)).finite_toSet.subset
@@ -116,6 +119,7 @@ def lowerBreakMultiplicities : ℕ →₀ ℕ :=
 @[simp] theorem lowerBreakMultiplicities_apply (i : ℕ) :
     lowerBreakMultiplicities T K ρ i = lowerBreakMultiplicity T K ρ i := rfl
 
+omit [FiniteDimensional K₀ L] in
 /-- The partial sums telescope, including the full zero-break contribution. -/
 theorem sum_lowerBreakMultiplicity_range (n : ℕ) :
     ∑ i ∈ Finset.range (n + 1), lowerBreakMultiplicity T K ρ i =
@@ -127,6 +131,7 @@ theorem sum_lowerBreakMultiplicity_range (n : ℕ) :
       lowerBreakMultiplicity_pos_index T K ρ (Nat.succ_pos n)]
     exact Nat.add_sub_of_le (inertiaFixedDimension_monotone T K ρ (Nat.le_succ _))
 
+omit [FiniteDimensional K₀ L] in
 /-- Any valid termination bound gives the same rank, including bound zero. -/
 theorem sum_lowerBreakMultiplicity_of_bound (b : ℕ)
     (hb : lowerRamificationGroup T K b = ⊥) :
@@ -448,5 +453,297 @@ theorem maximumUpperBreak_lt_iff_fixed_eq_top {b : ℝ} (hb : 0 < b) :
     by_contra hn
     have hzero := (Finset.sum_eq_zero_iff.mp hz) r (Finset.mem_filter.mpr ⟨hr, hn⟩)
     exact (Nat.ne_of_gt ((mem_upperBreakSupport_iff T K ρ).mp hr)) hzero
+
+end Langlands.Ramification.Local
+
+namespace Langlands.Ramification.Padic
+
+open Module
+open scoped BigOperators Classical
+
+universe uK uL uV
+
+variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uL} p}
+  (T : F.TopologicalData) (K : Type uK) [Field K] [Algebra (Padic p) K]
+  [Algebra K F.Carrier] [IsScalarTower (Padic p) K F.Carrier]
+  {V : Type uV} [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]
+  (ρ : Representation ℂ (inertia T K) V)
+
+@[inherit_doc Local.inertiaFixedDimension]
+def inertiaFixedDimension (i : ℕ) : ℕ :=
+  Local.inertiaFixedDimension T.toLocalData K ρ i
+
+theorem inertiaLowerGroup_antitone : Antitone (inertiaLowerGroup T K) :=
+  Local.inertiaLowerGroup_antitone T.toLocalData K
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaFixedVectors_monotone :
+    Monotone (fun i => fixedVectors ρ (inertiaLowerGroup T K i)) :=
+  Local.inertiaFixedVectors_monotone T.toLocalData K ρ
+
+theorem inertiaFixedDimension_monotone : Monotone (inertiaFixedDimension T K ρ) :=
+  Local.inertiaFixedDimension_monotone T.toLocalData K ρ
+
+theorem inertiaFixedDimension_le_rank (i : ℕ) :
+    inertiaFixedDimension T K ρ i ≤ finrank ℂ V :=
+  Local.inertiaFixedDimension_le_rank T.toLocalData K ρ i
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaFixedVectors_eq_top_of_lower_eq_bot {i : ℕ}
+    (hi : lowerRamificationGroup T K i = ⊥) :
+    fixedVectors ρ (inertiaLowerGroup T K i) = ⊤ :=
+  Local.inertiaFixedVectors_eq_top_of_lower_eq_bot T.toLocalData K ρ hi
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaFixedDimension_of_lower_eq_bot {i : ℕ}
+    (hi : lowerRamificationGroup T K i = ⊥) :
+    inertiaFixedDimension T K ρ i = finrank ℂ V :=
+  Local.inertiaFixedDimension_of_lower_eq_bot T.toLocalData K ρ hi
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaFixedDimension_of_cutoff {i : ℕ}
+    (hi : ramificationCutoff T K ≤ i) :
+    inertiaFixedDimension T K ρ i = finrank ℂ V :=
+  Local.inertiaFixedDimension_of_cutoff T.toLocalData K ρ hi
+
+@[inherit_doc Local.lowerBreakMultiplicity]
+def lowerBreakMultiplicity (i : ℕ) : ℕ :=
+  Local.lowerBreakMultiplicity T.toLocalData K ρ i
+
+omit [FiniteDimensional ℂ V] in
+@[simp] theorem lowerBreakMultiplicity_zero :
+    lowerBreakMultiplicity T K ρ 0 = inertiaFixedDimension T K ρ 1 :=
+  Local.lowerBreakMultiplicity_zero T.toLocalData K ρ
+
+omit [FiniteDimensional ℂ V] in
+theorem lowerBreakMultiplicity_pos_index {i : ℕ} (hi : 0 < i) :
+    lowerBreakMultiplicity T K ρ i =
+      inertiaFixedDimension T K ρ (i + 1) - inertiaFixedDimension T K ρ i :=
+  Local.lowerBreakMultiplicity_pos_index T.toLocalData K ρ hi
+
+omit [FiniteDimensional ℂ V] in
+theorem lowerBreakMultiplicity_pos_iff {i : ℕ} (hi : 0 < i) :
+    0 < lowerBreakMultiplicity T K ρ i ↔
+      inertiaFixedDimension T K ρ i < inertiaFixedDimension T K ρ (i + 1) :=
+  Local.lowerBreakMultiplicity_pos_iff T.toLocalData K ρ hi
+
+theorem lowerBreakMultiplicity_eq_zero_of_lower_eq_bot {i : ℕ} (hi : 0 < i)
+    (hbot : lowerRamificationGroup T K i = ⊥) :
+    lowerBreakMultiplicity T K ρ i = 0 :=
+  Local.lowerBreakMultiplicity_eq_zero_of_lower_eq_bot T.toLocalData K ρ hi hbot
+
+theorem lowerBreakMultiplicity_hasFiniteSupport :
+    (lowerBreakMultiplicity T K ρ).HasFiniteSupport :=
+  Local.lowerBreakMultiplicity_hasFiniteSupport T.toLocalData K ρ
+
+@[inherit_doc Local.lowerBreakMultiplicities]
+def lowerBreakMultiplicities : ℕ →₀ ℕ :=
+  Local.lowerBreakMultiplicities T.toLocalData K ρ
+
+@[simp] theorem lowerBreakMultiplicities_apply (i : ℕ) :
+    lowerBreakMultiplicities T K ρ i = lowerBreakMultiplicity T K ρ i :=
+  Local.lowerBreakMultiplicities_apply T.toLocalData K ρ i
+
+@[inherit_doc Local.sum_lowerBreakMultiplicity_range]
+theorem sum_lowerBreakMultiplicity_range (n : ℕ) :
+    ∑ i ∈ Finset.range (n + 1), lowerBreakMultiplicity T K ρ i =
+      inertiaFixedDimension T K ρ (n + 1) :=
+  Local.sum_lowerBreakMultiplicity_range T.toLocalData K ρ n
+
+@[inherit_doc Local.sum_lowerBreakMultiplicity_of_bound]
+theorem sum_lowerBreakMultiplicity_of_bound (b : ℕ)
+    (hb : lowerRamificationGroup T K b = ⊥) :
+    ∑ i ∈ Finset.range (b + 1), lowerBreakMultiplicity T K ρ i = finrank ℂ V :=
+  Local.sum_lowerBreakMultiplicity_of_bound T.toLocalData K ρ b hb
+
+theorem sum_lowerBreakMultiplicities :
+    (lowerBreakMultiplicities T K ρ).sum (fun _ m => m) = finrank ℂ V :=
+  Local.sum_lowerBreakMultiplicities T.toLocalData K ρ
+
+@[inherit_doc Local.upperBreakIndex]
+def upperBreakIndex : ℕ ↪ ℝ :=
+  Local.upperBreakIndex T.toLocalData K
+
+@[simp] theorem upperBreakIndex_apply (i : ℕ) :
+    upperBreakIndex T K i = herbrandPhi T K i :=
+  Local.upperBreakIndex_apply T.toLocalData K i
+
+@[inherit_doc Local.upperBreakMultiplicities]
+def upperBreakMultiplicities : ℝ →₀ ℕ :=
+  Local.upperBreakMultiplicities T.toLocalData K ρ
+
+@[inherit_doc Local.upperBreakSupport]
+def upperBreakSupport : Finset ℝ :=
+  Local.upperBreakSupport T.toLocalData K ρ
+
+@[simp] theorem upperBreakMultiplicities_phi (i : ℕ) :
+    upperBreakMultiplicities T K ρ (herbrandPhi T K i) =
+      lowerBreakMultiplicity T K ρ i :=
+  Local.upperBreakMultiplicities_phi T.toLocalData K ρ i
+
+@[simp] theorem upperBreakMultiplicities_zero :
+    upperBreakMultiplicities T K ρ 0 = inertiaFixedDimension T K ρ 1 :=
+  Local.upperBreakMultiplicities_zero T.toLocalData K ρ
+
+theorem upperBreakMultiplicities_of_not_range {r : ℝ}
+    (hr : r ∉ Set.range (fun i : ℕ => herbrandPhi T K i)) :
+    upperBreakMultiplicities T K ρ r = 0 :=
+  Local.upperBreakMultiplicities_of_not_range T.toLocalData K ρ hr
+
+theorem mem_upperBreakSupport_iff {r : ℝ} :
+    r ∈ upperBreakSupport T K ρ ↔ 0 < upperBreakMultiplicities T K ρ r :=
+  Local.mem_upperBreakSupport_iff T.toLocalData K ρ
+
+theorem upperBreakSupport_eq_map :
+    upperBreakSupport T K ρ =
+      (lowerBreakMultiplicities T K ρ).support.map (upperBreakIndex T K) :=
+  Local.upperBreakSupport_eq_map T.toLocalData K ρ
+
+theorem mem_upperBreakSupport_iff_exists {r : ℝ} :
+    r ∈ upperBreakSupport T K ρ ↔
+      ∃ i : ℕ, 0 < lowerBreakMultiplicity T K ρ i ∧ herbrandPhi T K i = r :=
+  Local.mem_upperBreakSupport_iff_exists T.toLocalData K ρ
+
+@[inherit_doc Local.upperBreakSupport_description]
+theorem upperBreakSupport_description {r : ℝ} :
+    r ∈ upperBreakSupport T K ρ ↔
+      (r = 0 ∧ 0 < inertiaFixedDimension T K ρ 1) ∨
+      ∃ i : ℕ, 0 < i ∧ herbrandPhi T K i = r ∧
+        inertiaFixedDimension T K ρ i < inertiaFixedDimension T K ρ (i + 1) :=
+  Local.upperBreakSupport_description T.toLocalData K ρ
+
+@[inherit_doc Local.mem_upperBreakSupport_iff_of_bound]
+theorem mem_upperBreakSupport_iff_of_bound (b : ℕ)
+    (hb : lowerRamificationGroup T K b = ⊥) {r : ℝ} :
+    r ∈ upperBreakSupport T K ρ ↔
+      ∃ i ∈ Finset.range (b + 1),
+        0 < lowerBreakMultiplicity T K ρ i ∧ herbrandPhi T K i = r :=
+  Local.mem_upperBreakSupport_iff_of_bound T.toLocalData K ρ b hb
+
+theorem upperBreakSupport_nonneg {r : ℝ} (hr : r ∈ upperBreakSupport T K ρ) :
+    0 ≤ r :=
+  Local.upperBreakSupport_nonneg T.toLocalData K ρ hr
+
+theorem sum_upperBreakMultiplicities :
+    (upperBreakMultiplicities T K ρ).sum (fun _ m => m) = finrank ℂ V :=
+  Local.sum_upperBreakMultiplicities T.toLocalData K ρ
+
+theorem sum_upperBreakSupport :
+    ∑ r ∈ upperBreakSupport T K ρ, upperBreakMultiplicities T K ρ r = finrank ℂ V :=
+  Local.sum_upperBreakSupport T.toLocalData K ρ
+
+theorem upperBreakSupport_nonempty_iff :
+    (upperBreakSupport T K ρ).Nonempty ↔ 0 < finrank ℂ V :=
+  Local.upperBreakSupport_nonempty_iff T.toLocalData K ρ
+
+theorem upperBreakSupport_eq_empty_iff :
+    upperBreakSupport T K ρ = ∅ ↔ finrank ℂ V = 0 :=
+  Local.upperBreakSupport_eq_empty_iff T.toLocalData K ρ
+
+@[inherit_doc Local.upperBreakMultiplicities_of_tame]
+theorem upperBreakMultiplicities_of_tame
+    (ht : fixedVectors ρ (inertiaLowerGroup T K 1) = ⊤) :
+    upperBreakMultiplicities T K ρ = Finsupp.single 0 (finrank ℂ V) :=
+  Local.upperBreakMultiplicities_of_tame T.toLocalData K ρ ht
+
+theorem upperBreakSupport_of_tame
+    (ht : fixedVectors ρ (inertiaLowerGroup T K 1) = ⊤) (hv : 0 < finrank ℂ V) :
+    upperBreakSupport T K ρ = {0} :=
+  Local.upperBreakSupport_of_tame T.toLocalData K ρ ht hv
+
+theorem upperBreakSupport_of_trivial
+    (ht : ∀ g : inertia T K, ρ g = LinearMap.id) (hv : 0 < finrank ℂ V) :
+    upperBreakSupport T K ρ = {0} :=
+  Local.upperBreakSupport_of_trivial T.toLocalData K ρ ht hv
+
+@[inherit_doc Local.inertiaUpperFixedVectors]
+def inertiaUpperFixedVectors (r : ℝ) : Submodule ℂ V :=
+  fixedVectors ρ ((upperRamificationGroup T K r).subgroupOf (inertia T K))
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaUpperFixedVectors_phi (i : ℕ) :
+    inertiaUpperFixedVectors T K ρ (herbrandPhi T K i) =
+      fixedVectors ρ (inertiaLowerGroup T K i) :=
+  Local.inertiaUpperFixedVectors_phi T.toLocalData K ρ i
+
+theorem upperBreakIndex_lt_iff (i : ℕ) (r : ℝ) :
+    herbrandPhi T K i < r ↔ i < ⌈herbrandPsi T K r⌉₊ :=
+  Local.upperBreakIndex_lt_iff T.toLocalData K i r
+
+omit [FiniteDimensional ℂ V] in
+theorem inertiaUpperFixedVectors_eq_natceil {r : ℝ} (hr : 0 ≤ r) :
+    inertiaUpperFixedVectors T K ρ r =
+      fixedVectors ρ (inertiaLowerGroup T K ⌈herbrandPsi T K r⌉₊) :=
+  Local.inertiaUpperFixedVectors_eq_natceil T.toLocalData K ρ hr
+
+@[inherit_doc Local.sum_upperBreakSupport_lt]
+theorem sum_upperBreakSupport_lt {r : ℝ} (hr : 0 < r) :
+    ∑ b ∈ (upperBreakSupport T K ρ).filter (fun b => b < r),
+      upperBreakMultiplicities T K ρ b = finrank ℂ (inertiaUpperFixedVectors T K ρ r) :=
+  Local.sum_upperBreakSupport_lt T.toLocalData K ρ hr
+
+@[inherit_doc Local.minimumUpperBreak]
+def minimumUpperBreak (h : (upperBreakSupport T K ρ).Nonempty) : ℝ :=
+  Local.minimumUpperBreak T.toLocalData K ρ h
+
+@[inherit_doc Local.maximumUpperBreak]
+def maximumUpperBreak (h : (upperBreakSupport T K ρ).Nonempty) : ℝ :=
+  Local.maximumUpperBreak T.toLocalData K ρ h
+
+variable (h : (upperBreakSupport T K ρ).Nonempty)
+
+theorem minimumUpperBreak_mem :
+    minimumUpperBreak T K ρ h ∈ upperBreakSupport T K ρ :=
+  Local.minimumUpperBreak_mem T.toLocalData K ρ h
+
+theorem maximumUpperBreak_mem :
+    maximumUpperBreak T K ρ h ∈ upperBreakSupport T K ρ :=
+  Local.maximumUpperBreak_mem T.toLocalData K ρ h
+
+theorem minimumUpperBreak_le {r : ℝ} (hr : r ∈ upperBreakSupport T K ρ) :
+    minimumUpperBreak T K ρ h ≤ r :=
+  Local.minimumUpperBreak_le T.toLocalData K ρ h hr
+
+theorem le_maximumUpperBreak {r : ℝ} (hr : r ∈ upperBreakSupport T K ρ) :
+    r ≤ maximumUpperBreak T K ρ h :=
+  Local.le_maximumUpperBreak T.toLocalData K ρ h hr
+
+theorem minimumUpperBreak_le_maximumUpperBreak :
+    minimumUpperBreak T K ρ h ≤ maximumUpperBreak T K ρ h :=
+  Local.minimumUpperBreak_le_maximumUpperBreak T.toLocalData K ρ h
+
+theorem minimumUpperBreak_nonneg : 0 ≤ minimumUpperBreak T K ρ h :=
+  Local.minimumUpperBreak_nonneg T.toLocalData K ρ h
+
+theorem maximumUpperBreak_nonneg : 0 ≤ maximumUpperBreak T K ρ h :=
+  Local.maximumUpperBreak_nonneg T.toLocalData K ρ h
+
+@[inherit_doc Local.le_minimumUpperBreak_iff]
+theorem le_minimumUpperBreak_iff (a : ℝ) :
+    a ≤ minimumUpperBreak T K ρ h ↔ ∀ r ∈ upperBreakSupport T K ρ, a ≤ r :=
+  Local.le_minimumUpperBreak_iff T.toLocalData K ρ h a
+
+@[inherit_doc Local.maximumUpperBreak_lt_iff]
+theorem maximumUpperBreak_lt_iff (b : ℝ) :
+    maximumUpperBreak T K ρ h < b ↔ ∀ r ∈ upperBreakSupport T K ρ, r < b :=
+  Local.maximumUpperBreak_lt_iff T.toLocalData K ρ h b
+
+theorem upperBreakMultiplicities_eq_zero_below_minimum {r : ℝ}
+    (hr : r < minimumUpperBreak T K ρ h) : upperBreakMultiplicities T K ρ r = 0 :=
+  Local.upperBreakMultiplicities_eq_zero_below_minimum T.toLocalData K ρ h hr
+
+theorem upperBreakMultiplicities_eq_zero_above_maximum {r : ℝ}
+    (hr : maximumUpperBreak T K ρ h < r) : upperBreakMultiplicities T K ρ r = 0 :=
+  Local.upperBreakMultiplicities_eq_zero_above_maximum T.toLocalData K ρ h hr
+
+@[inherit_doc Local.le_minimumUpperBreak_iff_fixed_eq_bot]
+theorem le_minimumUpperBreak_iff_fixed_eq_bot {a : ℝ} (ha : 0 < a) :
+    a ≤ minimumUpperBreak T K ρ h ↔ inertiaUpperFixedVectors T K ρ a = ⊥ :=
+  Local.le_minimumUpperBreak_iff_fixed_eq_bot T.toLocalData K ρ h ha
+
+@[inherit_doc Local.maximumUpperBreak_lt_iff_fixed_eq_top]
+theorem maximumUpperBreak_lt_iff_fixed_eq_top {b : ℝ} (hb : 0 < b) :
+    maximumUpperBreak T K ρ h < b ↔ inertiaUpperFixedVectors T K ρ b = ⊤ :=
+  Local.maximumUpperBreak_lt_iff_fixed_eq_top T.toLocalData K ρ h hb
 
 end Langlands.Ramification.Padic

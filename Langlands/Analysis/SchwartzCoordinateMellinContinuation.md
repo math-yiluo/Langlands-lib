@@ -1,0 +1,5 @@
+# Meromorphic continuation of coordinate Mellin integrals
+
+`coordinateMellinContinuation` continues the Mellin integral of a real Schwartz test on the positive orthant. It agrees with the initial integral when each exponent has positive real part. Its restriction to any complex affine line with real coordinate slopes is meromorphic and is analytic wherever all coordinate exponents avoid the nonpositive integers.
+
+One differentiation in every coordinate shifts each exponent by one, with denominator factors given by coordinate integration by parts. The definition uses enough such shifts for absolute convergence. Adding another round multiplies numerator and denominator by the same nonzero factor, so all sufficient cutoffs give the same quotient. A fixed cutoff is sufficient on a neighborhood of each point of an affine line. There the numerator is holomorphic by the initial parameter-integral theorem and the denominator is a finite product of affine factors. This is an auxiliary continuation for the complex diagonal zeta integral.

@@ -1,0 +1,9 @@
+# Standard tensors from algebraic compact coefficients
+
+`HasRealCompactBlockSlices` expresses a condition on one linear functional on a compact-finite source. For each block and source vector, apply the functional after translation by the compact group in that diagonal block. The resulting compact function must be the restriction of a function in the real standard module of that block list.
+
+For a real Jacquet functional with the normalized exponents and signs of the concatenated list, `realCompactJacquetMap` uses the Library's Frobenius extension. Its value at a compact element \(k\) is the functional applied to the compact translate by \(k\). Each low-weight Fourier test at a compact ambient point reduces to the corresponding test for a block slice, using the embedding of its rotation. The Library's Fourier propagation theorem gives the tests at every ambient point. At a complex place, `complexCompactJacquetMap` uses the complex Frobenius extension with the weights and normalized diagonal derivatives of the prescribed list.
+
+If a family of functionals evaluated on all compact translates separates the source, the family of Frobenius extensions is injective. Each extension intertwines the compact action and the real matrix directions of the Lie action. Admissibility and compact finiteness give a finite-dimensional span of all coordinates of any fixed source vector, so the family lifts to an algebraic multiplicity tensor.
+
+This is an internal reduction for Task 7041, derived from the published Jacquet–Frobenius, Fourier propagation and standard module results. It applies to algebraic linear functionals in the compact picture. The Jacquet relations and separation are hypotheses on the supplied family.

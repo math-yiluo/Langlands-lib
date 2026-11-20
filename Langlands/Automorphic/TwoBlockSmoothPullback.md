@@ -1,0 +1,5 @@
+# Smooth restriction to one archimedean block
+
+`firstBlockSmoothPullback` and `secondBlockSmoothPullback` restrict an actual archimedean smooth function along the block diagonal embedding with the other group argument fixed. In mixed matrix coordinates, either restriction is an affine map. Its linear part inserts the varying matrix with zero in the other block, and its constant term is the fixed matrix in that other block. The chain rule in the open chart of invertible matrices proves smoothness and gives the derivative in the inserted Lie direction, since block diagonal multiplication carries \(gX\) to the ambient direction at the block diagonal point.
+
+This is the restriction of the genuine differential operators to a Levi factor used in Harish-Chandra, *Automorphic forms on semisimple Lie groups* (1968), Chapter I, §6, proof of Theorem 1, printed pp. 19–20, PDF pp. 29–30. Here both factors and the ambient group are general linear groups in the Library's actual archimedean coordinates.

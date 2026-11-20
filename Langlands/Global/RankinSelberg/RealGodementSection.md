@@ -31,3 +31,12 @@ positions reversed for the Library's upper Borel. The generation
 of principal-series vectors by these sections and the identities
 of their Whittaker coefficients are further steps in §7.
 [Jacquet, *Archimedean Rankin–Selberg Integrals*, §7.1, pp. 43–46](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)
+
+## Covariance of the absolute kernel
+
+The Borel change of variables also applies to the lower-group integral of the norm of the Godement kernel. Taking norms in the pointwise identity before integration makes the absolute section transform by the norm of the upper inducing character. This identity applies to the totalized integrals for any test. For Schwartz tests the separate convergence result supplies integrability on its stated half-plane.
+
+`sectionValue_covariant` records the complex Borel covariance for any test
+function. Its proof uses the same pointwise kernel identity as absolute
+covariance. The compact support in `RealGodementSectionStatement` is used
+for the separate smoothness argument.

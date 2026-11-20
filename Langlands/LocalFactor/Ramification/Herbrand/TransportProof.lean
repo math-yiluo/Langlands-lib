@@ -1,4 +1,5 @@
 import Langlands.LocalFactor.Ramification.Herbrand.InertiaProof
+import Langlands.LocalFactor.Ramification.Herbrand.GeneralTransport
 
 /-!
 # Transport of ramification groups along field isomorphisms
@@ -26,27 +27,13 @@ variable {p : ℕ} [Fact p.Prime] {L₁ : PadicField.{uL₁} p} {L₂ : PadicFie
   [Algebra K L₂.Carrier] [IsScalarTower (Padic p) K L₂.Carrier]
   (f : L₁.Carrier ≃ₐ[K] L₂.Carrier)
 
-/-- Integrality is preserved, so the two integer rings correspond. -/
-theorem map_mem_integers_iff (x : L₁.Carrier) : f x ∈ T₂.Integers ↔ x ∈ T₁.Integers := by
-  rw [← T₁.isIntegral_iff_mem_integers, ← T₂.isIntegral_iff_mem_integers]
-  let A := (ValuativeRel.valuation (Padic p)).integer
-  let := Algebra.compHom L₁.Carrier (algebraMap A (Padic p))
-  let := Algebra.compHom L₂.Carrier (algebraMap A (Padic p))
-  let g : L₁.Carrier →ₐ[A] L₂.Carrier :=
-    { toRingHom := (f : L₁.Carrier →+* L₂.Carrier)
-      commutes' := fun a => (f.restrictScalars (Padic p)).commutes (a : Padic p) }
-  exact isIntegral_algHom_iff g f.injective
+/-- The isomorphism preserves the two supplied valuation rings. -/
+theorem map_mem_integers_iff (x : L₁.Carrier) : f x ∈ T₂.Integers ↔ x ∈ T₁.Integers :=
+  Local.map_mem_integers_iff T₁.toLocalData T₂.toLocalData K f x
 
 /-- The ring isomorphism of integer rings induced by `f`. -/
-def integerEquiv : T₁.Integers ≃+* T₂.Integers where
-  toFun x := ⟨f x, (map_mem_integers_iff T₁ T₂ K f x).mpr x.property⟩
-  invFun y := ⟨f.symm y, by
-    rw [← map_mem_integers_iff T₁ T₂ K f, f.apply_symm_apply]
-    exact y.property⟩
-  left_inv x := Subtype.ext (f.symm_apply_apply x)
-  right_inv y := Subtype.ext (f.apply_symm_apply y)
-  map_mul' x y := Subtype.ext (map_mul f (x : L₁.Carrier) (y : L₁.Carrier))
-  map_add' x y := Subtype.ext (map_add f (x : L₁.Carrier) (y : L₁.Carrier))
+def integerEquiv : T₁.Integers ≃+* T₂.Integers :=
+  Local.integerEquiv T₁.toLocalData T₂.toLocalData K f
 
 /-- Conjugation by `f` is compatible with the integer-ring actions. -/
 theorem integerEquiv_smul (σ : L₁.Carrier ≃ₐ[K] L₁.Carrier) (a : T₁.Integers) :
@@ -147,18 +134,21 @@ variable {p : ℕ} [Fact p.Prime] (K : PadicField.{uK} p)
   (Ω₂ : Type uΩ₂) [Field Ω₂] [Algebra K.Carrier Ω₂] [Algebra (Padic p) Ω₂]
   [IsScalarTower (Padic p) K.Carrier Ω₂]
 
+private theorem padicBaseNorm_compatible (a b : Padic p) :
+    ‖a‖ ≤ ‖b‖ ↔ ValuativeRel.vle a b := by
+  change ‖a‖ ≤ ‖b‖ ↔ Padic.mulValuation a ≤ Padic.mulValuation b
+  simp only [← not_lt, Padic.norm_lt_norm_iff_mulValuation_lt]
+
 /-- The upper filtration of `Gal(Ω₁/K)`, computed from the canonical upper groups of all
 finite Galois subfields of `Ω₁`. -/
 def upperGroupIn (v : ℝ) : Subgroup Gal(Ω₁/K.Carrier) :=
-  ⨅ M : FiniteGaloisIntermediateField K.Carrier Ω₁,
-    (canonicalUpperRamificationGroup (finiteGaloisPadicField K M) K.Carrier v).comap
-      (AlgEquiv.restrictNormalHom (F := K.Carrier) (K₁ := Ω₁) M)
+  Local.upperGroupIn (Padic p) K.Carrier Ω₁ padicBaseNorm_compatible v
 
 theorem mem_upperGroupIn_iff (v : ℝ) (σ : Gal(Ω₁/K.Carrier)) :
     σ ∈ upperGroupIn K Ω₁ v ↔ ∀ M : FiniteGaloisIntermediateField K.Carrier Ω₁,
       AlgEquiv.restrictNormalHom (F := K.Carrier) (K₁ := Ω₁) M σ ∈
-        canonicalUpperRamificationGroup (finiteGaloisPadicField K M) K.Carrier v := by
-  simp only [upperGroupIn, Subgroup.mem_iInf, Subgroup.mem_comap]
+        canonicalUpperRamificationGroup (finiteGaloisPadicField K M) K.Carrier v :=
+  Local.mem_upperGroupIn_iff (Padic p) K.Carrier Ω₁ padicBaseNorm_compatible v σ
 
 /-- In the chosen algebraic closure this is the published absolute filtration. -/
 theorem absoluteUpperRamificationGroup_eq_upperGroupIn (v : ℝ) :
@@ -169,32 +159,21 @@ variable {Ω₁ Ω₂}
 /-- The preimage of a finite Galois subfield under an isomorphism over the base. -/
 def comapFiniteGalois (e : Ω₁ ≃ₐ[K.Carrier] Ω₂)
     (M : FiniteGaloisIntermediateField K.Carrier Ω₂) :
-    FiniteGaloisIntermediateField K.Carrier Ω₁ where
-  toIntermediateField := M.toIntermediateField.map (e.symm : Ω₂ →ₐ[K.Carrier] Ω₁)
-  finiteDimensional := LinearEquiv.finiteDimensional
-    (IntermediateField.equivMap M.toIntermediateField
-      (e.symm : Ω₂ →ₐ[K.Carrier] Ω₁)).toLinearEquiv
-  isGalois := IsGalois.of_algEquiv
-    (IntermediateField.equivMap M.toIntermediateField (e.symm : Ω₂ →ₐ[K.Carrier] Ω₁))
+    FiniteGaloisIntermediateField K.Carrier Ω₁ :=
+  Local.comapFiniteGalois K.Carrier e M
 
 /-- The restriction of `e` to the preimage field. -/
 def comapFiniteGaloisEquiv (e : Ω₁ ≃ₐ[K.Carrier] Ω₂)
     (M : FiniteGaloisIntermediateField K.Carrier Ω₂) :
     comapFiniteGalois K e M ≃ₐ[K.Carrier] M :=
-  (IntermediateField.equivMap M.toIntermediateField (e.symm : Ω₂ →ₐ[K.Carrier] Ω₁)).symm
+  Local.comapFiniteGaloisEquiv K.Carrier e M
 
 omit [Algebra (Padic p) Ω₁] [IsScalarTower (Padic p) K.Carrier Ω₁] [Algebra (Padic p) Ω₂]
   [IsScalarTower (Padic p) K.Carrier Ω₂] in
 theorem comapFiniteGaloisEquiv_coe (e : Ω₁ ≃ₐ[K.Carrier] Ω₂)
     (M : FiniteGaloisIntermediateField K.Carrier Ω₂) (z : comapFiniteGalois K e M) :
-    ((comapFiniteGaloisEquiv K e M z : M) : Ω₂) = e (z : Ω₁) := by
-  have h1 : ((IntermediateField.equivMap M.toIntermediateField (e.symm : Ω₂ →ₐ[K.Carrier] Ω₁)
-      (comapFiniteGaloisEquiv K e M z) : Ω₁)) = (z : Ω₁) :=
-    congrArg Subtype.val ((IntermediateField.equivMap M.toIntermediateField
-      (e.symm : Ω₂ →ₐ[K.Carrier] Ω₁)).apply_symm_apply z)
-  rw [IntermediateField.coe_equivMap_apply] at h1
-  rw [← h1]
-  simp
+    ((comapFiniteGaloisEquiv K e M z : M) : Ω₂) = e (z : Ω₁) :=
+  Local.comapFiniteGaloisEquiv_coe K.Carrier e M z
 
 omit [Algebra (Padic p) Ω₁] [IsScalarTower (Padic p) K.Carrier Ω₁] [Algebra (Padic p) Ω₂]
   [IsScalarTower (Padic p) K.Carrier Ω₂] in

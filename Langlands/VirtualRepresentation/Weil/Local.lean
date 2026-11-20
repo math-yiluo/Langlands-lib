@@ -5,7 +5,23 @@ import Langlands.Weil.Local.Parameters
 
 noncomputable section
 
-universe uF uV uQ
+universe uK uΩ uF uV uQ
+
+namespace Langlands.VirtualRepresentation.LocalWeil.SepClosed
+
+variable (K : Type uK) [Field K] [ValuativeRel K] [TopologicalSpace K]
+    [IsNonarchimedeanLocalField K]
+    (Ω : Type uΩ) [Field Ω] [Algebra K Ω] [IsSepClosure K Ω]
+
+/-- Continuous irreducible Weil classes over the specified separable closure, in all positive ranks. -/
+abbrev Basis :=
+  letI : IsSepClosed Ω := IsSepClosure.sep_closed K
+  Weil.IrreducibleBasis.{uΩ, uV} (Weil.Local.SepClosed.localWeilGroup K Ω)
+
+/-- The free integral group on these Weil classes. -/
+abbrev Lattice := IntegralLattice (Basis.{uK, uΩ, uV} K Ω)
+
+end Langlands.VirtualRepresentation.LocalWeil.SepClosed
 
 namespace Langlands.VirtualRepresentation.LocalWeil
 

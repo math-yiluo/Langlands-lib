@@ -1,0 +1,7 @@
+# Split and quaternionic models of simply connected type C over number fields
+
+`NumberFieldTypeCModelsStatement` specializes the division-form classification of the actual simply connected, absolutely almost simple group of type `C_r` to a number field. Its split alternative has an isomorphism to the symplectic matrix group scheme of size `2r`. Its division alternative has an isomorphism to the norm-one isometry group of a nondegenerate trace-valued antihermitian matrix of size `r` over a central division algebra of dimension four. The involution has a three-dimensional symmetric subspace.
+
+The proof applies the division-form classification of `TypeCDivisionFormProof`. Its involution identifies the division algebra with its opposite, so the number-field Brauer degree bound forces degree one or two. In degree one, the scalar map is an algebra isomorphism by dimension. The resulting one-by-one matrix chart and Darboux normalization over the number field give the split symplectic group scheme, using the identity base change. In degree two, the dimension and symmetric-space formulas give four and three, and the original classification isomorphism gives the division alternative.
+
+Kneser's *Lectures on Galois Cohomology of Classical Groups*, §5.8, p. 92 (PDF p. 98), gives the split and quaternionic alternatives at the start of the proof for type C. This module derives them from the Library's general classification and the two-torsion degree bound.

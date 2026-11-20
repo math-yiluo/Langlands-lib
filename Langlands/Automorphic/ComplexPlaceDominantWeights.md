@@ -1,0 +1,3 @@
+# Dominant integral weights of regular complex-place lists
+
+The two numerical lemmas use the published `ComplexPlaceParameterWeights` normalization from Clozel (1990), Definitions 1.8 and 3.12 and the proof of Theorem 3.13. Adding `ρ` to an antitone integral weight gives entries in `(n−1)/2 + ℤ` with pairwise distinct integer parts `μᵢ − i`. A list permutation preserves both properties. Conversely, sort the distinct integer parts of each exponent list in decreasing order. Successive integer parts differ by at least one, so adding the index gives an antitone integral weight. The two sorts are independent. These arguments apply also to empty lists.

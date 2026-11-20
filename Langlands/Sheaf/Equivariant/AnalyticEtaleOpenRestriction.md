@@ -1,0 +1,7 @@
+# Restriction of étale objects to an open subspace
+
+For an étale object `W → X` and an open subset `U` of the underlying space of `X`, `restrictEtaleObject` forms the canonical analytic domain of `W` whose points lie over `U`. Its projection to the analytic space `U` is étale. The composite with the inclusion into `X` is the composite of the étale open-domain inclusion into `W` and the original étale map. The target-domain theorem then gives étaleness over `U`.
+
+The two projections give an analytic pullback square. Its universal property gives `restrictEtaleFunctor` from the étale category of `X` to that of `U`, and gives the transition maps for inclusions of opens. Postcomposition with `U → X` puts the restrictions back over `X`. This defines `etaleOpenRestrictionFunctor`, a functor from opens of `X` to endofunctors of the étale category of `X`. The inclusions into the original objects are natural in both the open and the étale object.
+
+The construction is derived from Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Corollary 3.3.8 and the definition of the étale category after Corollary 3.3.9, printed pp. 63–64 / PDF pp. 60–61. The formal construction uses the Library's actual pullback of a canonical open-domain inclusion and the étale target-domain theorem. The registered source is `berkovich-1993-etale-cohomology`, SHA-256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.

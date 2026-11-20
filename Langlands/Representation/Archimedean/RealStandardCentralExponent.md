@@ -1,0 +1,9 @@
+# The central exponent of a real standard module
+
+These internal lemmas derive a necessary condition for infinitesimal unitarity from the real standard function model. The skew condition is Knapp–Vogan, *Cohomological Induction and Unitary Representations* (1995), display (0.5), p. 6 (PDF p. 28, `knapp-vogan-1995-cohomological-induction`). The central action calculation uses the Library's normalization of principal series and its block character formulas in `StandardModule`.
+
+`realStandardCentralExponent n ds` sums the first `n` unshifted complex position exponents. For arbitrary `n` and `ds`, `realStandardLie_identity` identifies this sum with the scalar action of the identity matrix direction by differentiating the left diagonal transformation law. This direction is central, so the left derivative agrees with the standard module's right derivative at each group element. The normalized induction shifts cancel in the sum. When `realRank ds = n`, the first `n` positions cover the whole list. A character block then contributes its exponent once and an induced block contributes its exponent twice because its two weight shifts are opposite.
+
+`realStandard_weightedExponent_eq_zero` assumes `realRank ds = n` and infinitesimal unitarity. It tests skewness of this scalar action on a nonzero vector, whose existence follows from the rank equality. The skewness equation gives the sum of the scalar and its complex conjugate times the vector's squared norm. Definiteness makes the norm nonzero. Taking real parts and using the rank equality gives zero for the rank-weighted sum over the list.
+
+`realStandard_exponent_eq_zero_of_tied` assumes `realRank ds = n`, infinitesimal unitarity and a common real exponent for all blocks. It factors the weighted sum as the total rank times the common exponent. If the list contains a block, the total rank is nonzero. Every block therefore has real exponent zero, giving the strict bound in this case.

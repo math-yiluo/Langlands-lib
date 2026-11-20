@@ -1,0 +1,11 @@
+# Reduction of the completed cuspidal-pair pole theorem
+
+`CuspidalPairPoleReductionStatement` implies the exact `CuspidalPairPoleStatement.{u,uQ}` from the completed functional equation and equal- and unequal-rank normalized-product statements. The two normalization statements require families of ordinary partial Whittaker integrals with entire normalized values having no common zero. Each family includes a nonzero normalized value with exponential strip growth. `cuspidalPairPole_of_equalCompletion` also permits supplying the equal-rank continuation and a suitable test directly.
+
+The proof chooses the standard adelic additive character and uses the conjugate realizations as contragredients. Their finite presentations are obtained in the prescribed factor universe. The functional equation supplies finite factor data and archimedean parameter existence for both pairs. Its data are used for the left-line estimates, and finite factor comparison permits arbitrary certified finite choices in the conclusion.
+
+For unequal ranks the entire global integrals and normalized covering give the pole-free completion. Symmetry of the finite and archimedean factors handles either order of the ranks. In equal rank the proof uses the two residue coefficients of the split-centre integral. The nonzero invariant period forces the contragredience, and the positive period for the actual conjugate pair gives the converse after transport of the same Euler factors.
+
+The completed equation bounds arbitrarily far-left lines by reflecting the dual right-strip bound. The local epsilon factors have constant modulus on a vertical line. The actual Euler product bounds arbitrarily far-right lines. The normalized test and the pole-cleared completed function satisfy the quotient growth estimate, so Phragmén–Lindelöf gives the strip bounds away from \(0\) and \(1\).
+
+The residue and continuation arguments follow Cogdell 2004, §2.3, printed pp. 208–211, and Theorems 4.1–4.2, pp. 219–222. The pole normalization and the functional-equation input follow Getz–Hahn 2024, (2.20), printed p. 68, and Theorem 11.7.1, p. 309. Jacquet 2009, Theorem 2.1 and Theorems 2.6–2.7, published pp. 62 and 65–66, describe the archimedean analytic inputs. The completed equation and the existence of the normalized families are explicit hypotheses in this reduction.

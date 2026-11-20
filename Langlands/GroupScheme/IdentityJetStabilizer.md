@@ -8,4 +8,4 @@ These are internal consequences of the scheme-level jet pullback and stabilizer 
 
 The inclusion over the base is `IdentityJet.overInclusion` from `IdentityJetConjugationAction`.
 
-The cartesian square for jets of a closed subgroup is the supporting lemma used in the containment proof. Its map, inclusion law and projection law come from `IdentityJetSeparatedBaseChange`.
+The containment proof uses the cartesian square for a closed subgroup from [Functoriality of identity jets](IdentityJetFunctorial.md). The jet map and its inclusion and projection laws come from `IdentityJetSeparatedBaseChange`.

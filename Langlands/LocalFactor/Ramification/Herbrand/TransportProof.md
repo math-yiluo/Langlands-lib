@@ -3,7 +3,8 @@
 Lean module: `Langlands.LocalFactor.Ramification.Herbrand.TransportProof`
 (namespace `Langlands.Ramification.HerbrandBridge`). It imports
 `Langlands.LocalFactor.Ramification.Herbrand.InertiaProof`, which brings in the earlier
-Herbrand modules.
+Herbrand modules, and [GeneralTransport](GeneralTransport.md), which supplies
+the constructions specialized here to `Padic p`.
 
 ## What the module proves
 
@@ -69,12 +70,11 @@ extension inside one fixed algebraic closure.
 
 ## Proof (as implemented)
 
-1. **Integers.** By `isIntegral_iff_mem_integers`, for any realization the integer ring is
-   the set of elements integral over the p-adic integers `(ValuativeRel.valuation (Padic p)).integer`.
-   The integers act through `Algebra.compHom` and `Padic p`. Since `f` is `K`-linear, it is
-   `Padic p`-linear (`AlgEquiv.restrictScalars`). So it is an injective algebra map over the
-   p-adic integers, and `isIntegral_algHom_iff` transfers integrality. This gives
-   `map_mem_integers_iff` and the ring isomorphism `integerEquiv`.
+1. **Integers.** `PadicField.TopologicalData.toLocalData` supplies the same valuations
+   and module topologies to `Local.map_mem_integers_iff`. There the field maps are
+   continuous over `Padic p`, and the convergence of powers of inverse elements
+   detects an image outside the integer ring. The integer-ring isomorphism is
+   `Local.integerEquiv` on these realizations.
 2. **Equivariance.** For `a` in `T₁.Integers`, `f (σ a) = (f ∘ σ ∘ f⁻¹) (f a)`.
 3. **Lower groups and their orders.** These are the `QuotientProof` lemmas
    `mem_lowerRamificationGroup_iff_of_equivariant` and `lowerRamificationCard_of_equivariant`,

@@ -62,7 +62,8 @@ private theorem determinantWeight_add_shift {n : ℕ} (c : RealCharacterData) (z
   simp only [absPower_apply, Complex.cpow_add _ _ (absPower_base_ne_zero _)]
   ring
 
-private theorem contMDiff_determinantWeight {n : ℕ} (c : RealCharacterData) (z : ℂ) :
+/-- Smoothness of the real inducing determinant character on the general linear group. -/
+theorem contMDiff_determinantWeight {n : ℕ} (c : RealCharacterData) (z : ℂ) :
     ContMDiff (matrixModel ℝ n) 𝓘(ℝ, ℂ) ∞
       (determinantWeight c z : Langlands.GeneralLinear n ℝ → ℂ) := by
   refine contMDiff_of_contDiffOn
@@ -204,6 +205,29 @@ private def lowerMultiplier (c : RealCharacterData) (f : G → ℂ) (h : G) : �
 def sectionValue (c : RealCharacterData) (f : G → ℂ) (Φ : X → ℂ) (g : H) : ℂ :=
   determinantWeight c ((m : ℂ) / 2) g * innerIntegral μ Φ (lowerMultiplier c f) g
 
+omit [MeasurableSpace G] [BorelSpace G] [Measure.IsMulRightInvariant μ] [IsFiniteMeasureOnCompacts μ] in
+private theorem weighted_kernel_borel (c : RealCharacterData) (ds : List RealBlock)
+    {f : G → ℂ} (hf : f ∈ principalSeries ℝ m (realPositionCharacter ds))
+    (Φ : X → ℂ) (a : Fin (m + 1) → ℝˣ) (u : upperUnipotent (m + 1) ℝ) (g : H) (h : G) :
+    let t := tailBorel a u
+    let b : H := Iwasawa.diagonalUnits a * u.val
+    let δ := determinantWeight (n := m) c (((m : ℂ) + 1) / 2)
+    let A := lowerMultiplier c f
+    δ t * (A h * Φ (rowPoint h.val (b * g))) =
+      principalSeriesCharacter ℝ m (realPositionCharacter ds) (Fin.tail a) *
+        (A (h * t) * Φ (rowPoint (h * t).val g)) := by
+  intro t b δ A
+  let lowerCharacter := principalSeriesCharacter ℝ m (realPositionCharacter ds) (Fin.tail a)
+  have hSource : f (h⁻¹) = lowerCharacter * f ((h * t)⁻¹) := by
+    calc
+      _ = f (t * (h * t)⁻¹) := by rw [mul_inv_rev, ← mul_assoc, mul_inv_cancel, one_mul]
+      _ = _ := hf.2 (Fin.tail a) (tailUnipotent u) ((h * t)⁻¹)
+  rw [show rowPoint h.val (b * g) = rowPoint (h * t).val g from rowPoint_borel a u h g]
+  change δ t * (f (h⁻¹) * δ h * Φ _) =
+    lowerCharacter * (f ((h * t)⁻¹) * δ (h * t) * Φ _)
+  rw [map_mul, hSource]
+  ring
+
 omit [IsFiniteMeasureOnCompacts μ] in
 private theorem weighted_inner_borel (c : RealCharacterData) (ds : List RealBlock)
     {f : G → ℂ} (hf : f ∈ principalSeries ℝ m (realPositionCharacter ds))
@@ -217,26 +241,80 @@ private theorem weighted_inner_borel (c : RealCharacterData) (ds : List RealBloc
   let lowerCharacter := principalSeriesCharacter ℝ m (realPositionCharacter ds) (Fin.tail a)
   let δ := determinantWeight (n := m) c (((m : ℂ) + 1) / 2)
   let A := lowerMultiplier c f
-  have hKernel (h : G) :
-      δ t * (A h * Φ (rowPoint h.val (b * g))) =
-      lowerCharacter * (A (h * t) * Φ (rowPoint (h * t).val g)) := by
-    have hSource : f (h⁻¹) = lowerCharacter * f ((h * t)⁻¹) := by
-      calc
-        _ = f (t * (h * t)⁻¹) := by rw [mul_inv_rev, ← mul_assoc, mul_inv_cancel, one_mul]
-        _ = _ := hf.2 (Fin.tail a) (tailUnipotent u) ((h * t)⁻¹)
-    rw [show rowPoint h.val (b * g) = rowPoint (h * t).val g from rowPoint_borel a u h g]
-    change δ t * (f (h⁻¹) * δ h * Φ _) =
-      lowerCharacter * (f ((h * t)⁻¹) * δ (h * t) * Φ _)
-    rw [map_mul, hSource]
-    ring
   change δ t * innerIntegral μ Φ A (b * g) = lowerCharacter * innerIntegral μ Φ A g
   unfold innerIntegral
   rw [← integral_const_mul, ← integral_const_mul]
   calc
     _ = ∫ h, lowerCharacter * (A (h * t) * Φ (rowPoint (h * t).val g)) ∂μ :=
-      integral_congr_ae (Filter.Eventually.of_forall hKernel)
+      integral_congr_ae (Filter.Eventually.of_forall (weighted_kernel_borel c ds hf Φ a u g))
     _ = _ := integral_mul_right_eq_self (μ := μ)
       (fun h : G => lowerCharacter * (A h * Φ (rowPoint h.val g))) t
+
+/-- The lower-group integral of the absolute Godement kernel, including the outer weight. -/
+def absoluteSectionValue (c : RealCharacterData) (f : G → ℂ) (Φ : X → ℂ) (g : H) : ℝ :=
+  ‖determinantWeight c ((m : ℂ) / 2) g‖ *
+    ∫ h, ‖lowerMultiplier c f h * Φ (rowPoint h.val g)‖ ∂μ
+
+omit [IsFiniteMeasureOnCompacts μ] in
+/-- The absolute section transforms by the norm of the upper inducing character. -/
+theorem absoluteSectionValue_covariant (c : RealCharacterData) (ds : List RealBlock)
+    {f : G → ℂ} (hf : f ∈ principalSeries ℝ m (realPositionCharacter ds))
+    (Φ : X → ℂ) (a : Fin (m + 1) → ℝˣ) (u : upperUnipotent (m + 1) ℝ) (g : H) :
+    absoluteSectionValue μ c f Φ (Iwasawa.diagonalUnits a * u.val * g) =
+      ‖principalSeriesCharacter ℝ (m + 1) (realPositionCharacter (.character c :: ds)) a‖ *
+        absoluteSectionValue μ c f Φ g := by
+  let t := tailBorel a u
+  let b : H := Iwasawa.diagonalUnits a * u.val
+  let A := lowerMultiplier c f
+  let p := determinantWeight (n := m + 1) c ((m : ℂ) / 2)
+  let w := determinantWeight c (((m : ℂ) + 1) / 2) t
+  let lowerCharacter := principalSeriesCharacter ℝ m (realPositionCharacter ds) (Fin.tail a)
+  let upperCharacter := principalSeriesCharacter ℝ (m + 1) (realPositionCharacter (.character c :: ds)) a
+  let I := fun q : H => ∫ h, ‖A h * Φ (rowPoint h.val q)‖ ∂μ
+  have hI : ‖w‖ * I (b * g) = ‖lowerCharacter‖ * I g := by
+    unfold I
+    rw [← integral_const_mul, ← integral_const_mul]
+    calc
+      _ = ∫ h, (fun x : G => ‖lowerCharacter‖ * ‖A x * Φ (rowPoint x.val g)‖) (h * t) ∂μ := by
+        refine integral_congr_ae (ae_of_all _ fun h => ?_)
+        simpa only [norm_mul] using congrArg norm (weighted_kernel_borel c ds hf Φ a u g h)
+      _ = _ := integral_mul_right_eq_self (μ := μ)
+        (fun x : G => ‖lowerCharacter‖ * ‖A x * Φ (rowPoint x.val g)‖) t
+  have hFactor : ‖p b‖ * ‖lowerCharacter‖ = ‖upperCharacter‖ * ‖w‖ := by
+    simpa only [norm_mul] using congrArg norm (godement_factor_identity c ds a u)
+  apply mul_left_cancel₀ (norm_ne_zero_iff.mpr (determinantWeight_ne_zero c _ t))
+  change ‖w‖ * (‖p (b * g)‖ * I (b * g)) = ‖w‖ * (‖upperCharacter‖ * (‖p g‖ * I g))
+  rw [map_mul, norm_mul]
+  calc
+    _ = ‖p b‖ * (‖p g‖ * (‖w‖ * I (b * g))) := by ring
+    _ = (‖p b‖ * ‖lowerCharacter‖) * (‖p g‖ * I g) := by rw [hI]; ring
+    _ = _ := by rw [hFactor]; ring
+
+omit [IsFiniteMeasureOnCompacts μ] in
+/-- The complex Godement section transforms by the upper inducing character. -/
+theorem sectionValue_covariant (c : RealCharacterData) (ds : List RealBlock)
+    {f : G → ℂ} (hf : f ∈ principalSeries ℝ m (realPositionCharacter ds))
+    (Φ : X → ℂ) (a : Fin (m + 1) → ℝˣ) (u : upperUnipotent (m + 1) ℝ) (g : H) :
+    sectionValue μ c f Φ (Iwasawa.diagonalUnits a * u.val * g) =
+      principalSeriesCharacter ℝ (m + 1) (realPositionCharacter (.character c :: ds)) a *
+        sectionValue μ c f Φ g := by
+  let t := tailBorel a u
+  let b : Langlands.GeneralLinear (m + 1) ℝ := Iwasawa.diagonalUnits a * u.val
+  let p := determinantWeight (n := m + 1) c ((m : ℂ) / 2)
+  let w := determinantWeight c (((m : ℂ) + 1) / 2) t
+  let I := innerIntegral μ Φ (lowerMultiplier c f)
+  let lowerCharacter := principalSeriesCharacter ℝ m (realPositionCharacter ds) (Fin.tail a)
+  let upperCharacter :=
+    principalSeriesCharacter ℝ (m + 1) (realPositionCharacter (.character c :: ds)) a
+  have hI : w * I (b * g) = lowerCharacter * I g := weighted_inner_borel μ c ds hf Φ a u g
+  have hFactor : p b * lowerCharacter = upperCharacter * w := godement_factor_identity c ds a u
+  apply mul_left_cancel₀ (determinantWeight_ne_zero c _ t)
+  change w * (p (b * g) * I (b * g)) = w * (upperCharacter * (p g * I g))
+  rw [map_mul]
+  calc
+    _ = p b * (p g * (w * I (b * g))) := by ring
+    _ = (p b * lowerCharacter) * (p g * I g) := by rw [hI]; ring
+    _ = _ := by rw [hFactor]; ring
 
 /-- Godement's construction from a compact full-row-rank test yields a smooth
 vector in the position principal series with the given leading character. -/
@@ -264,24 +342,7 @@ theorem realGodementSection : RealGodementSectionStatement := by
     rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at hPair
     have hMul : ContDiff ℝ ∞ (fun z : ℂ × ℂ => z.1 * z.2) := contDiff_fst.mul contDiff_snd
     exact hMul.comp_contMDiff hPair
-  · intro a u g
-    let t := tailBorel a u
-    let b : Langlands.GeneralLinear (m + 1) ℝ := Iwasawa.diagonalUnits a * u.val
-    let p := determinantWeight (n := m + 1) c ((m : ℂ) / 2)
-    let w := determinantWeight c (((m : ℂ) + 1) / 2) t
-    let I := innerIntegral μ Φ (lowerMultiplier c f)
-    let lowerCharacter := principalSeriesCharacter ℝ m (realPositionCharacter ds) (Fin.tail a)
-    let upperCharacter :=
-      principalSeriesCharacter ℝ (m + 1) (realPositionCharacter (.character c :: ds)) a
-    have hI : w * I (b * g) = lowerCharacter * I g := weighted_inner_borel μ c ds hf Φ a u g
-    have hFactor : p b * lowerCharacter = upperCharacter * w := godement_factor_identity c ds a u
-    apply mul_left_cancel₀ (determinantWeight_ne_zero c _ t)
-    change w * (p (b * g) * I (b * g)) = w * (upperCharacter * (p g * I g))
-    rw [map_mul]
-    calc
-      _ = p b * (p g * (w * I (b * g))) := by ring
-      _ = (p b * lowerCharacter) * (p g * I g) := by rw [hI]; ring
-      _ = _ := by rw [hFactor]; ring
+  · exact sectionValue_covariant μ c ds hf Φ
 
 end Integral
 

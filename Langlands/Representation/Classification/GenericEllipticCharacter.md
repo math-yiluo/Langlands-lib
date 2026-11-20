@@ -1,0 +1,7 @@
+# Generic elliptic characters and essential square integrability
+
+`PadicGenericEllipticCharacterVanishingStatement` says that a generic representation of positive rank over a p-adic field has zero character at every regular elliptic element if it fails essential square integrability. The topology and the p-adic square-integrability predicate are those of the supplied field data. The genericity hypothesis includes irreducibility, admissibility and an actual Whittaker functional.
+
+The proof applies the published generic segment product classification after an equivariant universe lift. The resulting product has at least one block because its rank is positive. If it has one block, the single-block normalized induction equivalence carries the representation to that block's special segment head. The published essential square-integrability theorem for that head contradicts the premise, after transporting rank and representation equivalence. Thus the product is normalized induction from a proper block parabolic. The inducing tensor product is admissible because its segment heads are irreducible and admissible. Proper parabolic character vanishing applies to the actual product, and equivalence transports the zero local value back to the supplied representation.
+
+This proves the p-adic case of the generic-member vanishing used in Henniart–Lemaire (2011), II.4.8, printed p. 91, from the classification in II.3.2 and the induced character formula in II.4.5.

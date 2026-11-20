@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.Cartier.FiniteDualGeometry
 import Langlands.GroupScheme.Torus.RelativeCharacterConstancyStatement
 import Langlands.GroupScheme.Torus.MultiplicativeTypeQuasiIsotrivialProof
 import Langlands.GroupScheme.Cartier.CharacterFamilyEvaluation
@@ -202,20 +203,13 @@ private theorem isIso_of_charactersMap_model {M N : AddCommGrpCat.{u}}
   · apply charactersMap_injective_model
     simp [charactersMap_comp, hg]
 
-private def charactersIsoOfIso {G H : CommGroupScheme S} (e : G ≅ H) :
-    characters H ≅ characters G where
-  hom := charactersMap e.hom
-  inv := charactersMap e.inv
-  hom_inv_id := by rw [← charactersMap_comp, e.inv_hom_id, charactersMap_id]
-  inv_hom_id := by rw [← charactersMap_comp, e.hom_inv_id, charactersMap_id]
-
 private theorem isIso_of_charactersMap_of_split {G H : CommGroupScheme S}
     (f : G ⟶ H) {M N : AddCommGrpCat.{u}}
     (p : G ≅ model S M) (q : H ≅ model S N)
     [IsIso (charactersMap f)] : IsIso f := by
   let g := p.inv ≫ f ≫ q.hom
-  let : IsIso (charactersMap p.inv) := (charactersIsoOfIso p.symm).isIso_hom
-  let : IsIso (charactersMap q.hom) := (charactersIsoOfIso q).isIso_hom
+  let : IsIso (charactersMap p.inv) := (Langlands.GroupScheme.Cartier.FiniteDual.charactersIso p.symm).isIso_hom
+  let : IsIso (charactersMap q.hom) := (Langlands.GroupScheme.Cartier.FiniteDual.charactersIso q).isIso_hom
   let : IsIso (charactersMap g) := by
     change IsIso (charactersMap (p.inv ≫ f ≫ q.hom))
     rw [charactersMap_comp, charactersMap_comp]
@@ -237,7 +231,7 @@ theorem relativeCharacterConstancy : RelativeCharacterConstancyStatement.{u} := 
   · rintro ⟨M, hM, hfg, ⟨e⟩⟩
     let : AddCommGroup M := hM
     let e' : G ≅ model S M := CommGroupScheme.isoOfGroupIso e
-    exact ⟨AddCommGrpCat.of M, hfg, ⟨(charactersIsoOfIso e').symm ≪≫ charactersIso S M⟩⟩
+    exact ⟨AddCommGrpCat.of M, hfg, ⟨(Langlands.GroupScheme.Cartier.FiniteDual.charactersIso e').symm ≪≫ charactersIso S M⟩⟩
   · rintro ⟨M, hfg, ⟨e⟩⟩
     let f := familyHom G M e.inv
     let : IsIso (charactersMap f) := by

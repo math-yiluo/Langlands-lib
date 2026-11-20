@@ -1,0 +1,7 @@
+# Fixed points and coordinate images of formal idempotents
+
+Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), (6.17) and the discussion leading to Lemma 6.44, printed pp. 309–310 (PDF pp. 321–322), use the two factors of the split order to take the summands of a polarized object. This module provides the formal-module image construction used to restrict maps to such a summand.
+
+`Hom.fixedPointFunctor e` uses the actual kernel functor of \(e-1\). On each coefficient algebra its submodule consists of the points fixed by \(e\), and for an idempotent it equals the pointwise range of \(e\). `Hom.IdempotentImage e M'` supplies a finite-coordinate formal law together with inclusion \(i\) and projection \(r\) satisfying \(ri=1\) and \(ir=e\). For any such presentation, evaluating \(i\) and \(r\) identifies the law's points with the fixed points. The equations also hold after arbitrary coefficient extension.
+
+A formal map \(f\) intertwining two projectors induces \(r_{\mathrm{target}} f i_{\mathrm{source}}\) on the corresponding laws. This restricted map agrees with \(f\) under inclusion. The pointwise projector identity gives the actual composition and identity formulas. Consequently two coordinate presentations of the same projector are integrally isomorphic by the induced maps of the ambient identity. The coordinate presentation is data in these results. Its construction on a cover requires formal coordinates for the image.

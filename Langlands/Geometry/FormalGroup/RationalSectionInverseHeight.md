@@ -1,0 +1,7 @@
+# Local height of the inverse of a ranked integral isogeny
+
+Harris, *Supercuspidal representations in the cohomology of Drinfel'd upper half spaces* (1997), Appendix, printed p. 112 (PDF p. 38), gives the signed height as the exponent of the numerator kernel rank minus the exponent of the scalar denominator kernel rank. The formula after (A.4) on printed p. 114 (PDF p. 40) uses the inverse of relative Frobenius and changes coefficients.
+
+`RationalSectionIso.inverseHeightPresentationOfHom` starts with an invertible rational section whose forward section comes from an actual integral isogeny of kernel rank \(q^n\). The source and target have the same positive scalar height. The integral map gives a global numerator with denominator one. The global inverse-height construction chooses an integral dual and its scalar denominator with opposite signed index. Uniqueness of the section isomorphism from its forward section identifies the resulting inverse with the given inverse, so its global ranked presentation restricts to a presentation of that actual section with index \(-n\).
+
+The derived composition theorem adds the inverse height pointwise, so inverse precomposition subtracts \(n\) from a witnessed height function. After scalar extension the underlying function is pulled back along the induced map of spectra. Integral coordinate isomorphisms preserve the pulled-back rank witnesses.

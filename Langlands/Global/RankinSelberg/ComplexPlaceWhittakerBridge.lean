@@ -31,9 +31,9 @@ namespace Langlands.Global.RankinSelbergGlobal
 
 open Langlands.Global.HeckeFunctionalEquation
 
-local instance bridgeSchemeAffine (F : Type u) [Field F] (n : ℕ) :
+private local instance bridgeSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     IsAffine (Scheme F n).X.left := GroupScheme.GeneralLinear.isAffine_groupScheme _ _
-local instance bridgeSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
+private local instance bridgeSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
     Smooth (Scheme F n).X.hom := GroupScheme.GeneralLinear.smoothStatement _ _
 
 /-- **Per-map intertwiner premise.** Let `T` be an actual cuspidal realization of `GL_(r+1)`

@@ -3,6 +3,41 @@
 Author: Worker 24. This module specializes the published representation
 lattice to the published actual local Weil group.
 
+## Basis and lattice over a separable closure
+
+Worker 210 generalized `Basis` and `Lattice` in Task 7415. The declarations
+in `Langlands.VirtualRepresentation.LocalWeil.SepClosed` take a
+nonarchimedean local field `K` and a specified separable closure `Ω`. They
+use `[IsSepClosure K Ω]` to infer algebraicity and to supply
+`IsSepClosure.sep_closed K` to `Langlands.Weil.Local.SepClosed.localWeilGroup`.
+This replaces the original absolute Galois group on `AlgebraicClosure F.Carrier`,
+where characteristic zero supplies separability. The base field, closure and
+representation carrier may lie in independent universes.
+
+`SepClosed.Basis K Ω` is `Weil.IrreducibleBasis` for that actual local Weil
+group. Its elements are positive ranks equipped with a continuous irreducible
+complex representation class of that rank. `SepClosed.Lattice K Ω` is
+`IntegralLattice` on this basis, the group of finitely supported integral
+coefficient functions. This is the derived split-lattice model for the
+irreducible indexing in Henniart (2000), §1.1, p.439, and the virtual
+constituents of Deligne–Henniart (1981), §0.5, p.92. The original literature
+records are `henniart-2000-simple-proof` and `deligne-henniart-1981-variation`.
+
+Both specializations are by unfolding at `K = F.Carrier` and
+`Ω = AlgebraicClosure F.Carrier`, with the topology and valuative relation of
+`F.canonicalTopologicalData`. For this specialization
+`Algebra.charZero_of_charZero (Padic p) F.Carrier` supplies the characteristic
+zero instance used to infer `IsSepClosure F.Carrier (AlgebraicClosure F.Carrier)`.
+The p-adic abbreviations refer to the existing `localWeilGroup F` so that
+rewriting in lattice proofs uses its group and topology instances directly.
+
+| General declaration under `LocalWeil` | P-adic specialization under `LocalWeil` |
+| --- | --- |
+| `SepClosed.Basis K Ω` | `Basis F` |
+| `SepClosed.Lattice K Ω` | `Lattice F` |
+
+## P-adic interface
+
 For every prime `p` and actual `F : PadicField.{uF} p`, this module specializes
 the published `VirtualRepresentation.Weil.Generic` construction to
 `Langlands.Weil.Local.localWeilGroup F`. That group is the actual pullback of

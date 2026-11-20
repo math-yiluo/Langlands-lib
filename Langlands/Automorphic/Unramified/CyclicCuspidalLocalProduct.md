@@ -1,0 +1,7 @@
+# Local cyclic norm-character product for cuspidal pairs
+
+Worker 539. This is the local denominator identity used in Arthur–Clozel, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula* (1989), Chapter III, proof of Theorem 3.1, printed p. 201 (PDF p. 215). The source is registered as `arthur-clozel-1989-base-change`, SHA-256 `c2e47ee562810367ebcacd3f1c242eda40b9e78b271668e36d99ce31001f9a19`.
+
+`CyclicCuspidalLocalProductStatement` uses the Library's pair Euler polynomial for two multisets of nonzero complex Satake parameters. Given a primitive root `ζ` of positive order `f` dividing the cyclic degree `d`, multiply the denominator evaluations after scaling the first multiset by `ζ^i` for every `i` in `Fin d`. This equals the pair denominator for both multisets raised to their `f`th powers and evaluated at `x^f`, raised to `d/f`. The result applies at `x = q_v^(-s)` and makes multiplicities explicit for all splitting types.
+
+The Lean proof enumerates the `f`th roots of unity by the first `f` distinct powers of `ζ` and applies the cyclotomic identity to obtain `1 - y^f` for one block. Successive blocks have the same product since `ζ^f = 1`. Presenting each eigenvalue multiset as a tuple preserves repeated entries. Commuting the finite products places the cyclic product inside the product over ordered pairs of eigenvalues. Each such pair uses the block identity with `y = a_i b_j x`.

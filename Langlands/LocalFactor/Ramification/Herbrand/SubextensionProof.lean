@@ -1,3 +1,4 @@
+import Langlands.LocalFactor.Ramification.Herbrand.GeneralSubextension
 import Langlands.LocalFactor.Ramification.Herbrand.TransportProof
 import Langlands.ClassFieldTheory.Local.ReciprocitySystem
 import Langlands.Weil.Local.IntermediateWeil
@@ -146,27 +147,15 @@ variable {F K} in
 def extendFiniteGalois {M : FiniteGaloisIntermediateField F.Carrier Ω}
     (h : ∀ x : K.Carrier, algebraMap K.Carrier Ω x ∈ M.toIntermediateField) :
     FiniteGaloisIntermediateField K.Carrier Ω :=
-  have : FiniteDimensional F.Carrier (M.toIntermediateField.toSubfield.toIntermediateField h) :=
-    M.finiteDimensional
-  have : IsGalois F.Carrier (M.toIntermediateField.toSubfield.toIntermediateField h) :=
-    M.isGalois
-  { toIntermediateField := M.toIntermediateField.toSubfield.toIntermediateField h
-    finiteDimensional := Module.Finite.of_restrictScalars_finite F.Carrier _ _
-    isGalois := IsGalois.tower_top_of_isGalois F.Carrier K.Carrier _ }
+  Local.extendFiniteGalois h
 
 variable {F K} in
 /-- The identity of carriers, as an isomorphism over the base. -/
 def extendFiniteGaloisEquiv {M : FiniteGaloisIntermediateField F.Carrier Ω}
     (h : ∀ x : K.Carrier, algebraMap K.Carrier Ω x ∈ M.toIntermediateField) :
     (finiteGaloisPadicField F M).Carrier ≃ₐ[F.Carrier]
-      (finiteGaloisPadicField K (extendFiniteGalois h)).Carrier where
-  toFun x := ⟨x, x.2⟩
-  invFun x := ⟨x, x.2⟩
-  left_inv _ := rfl
-  right_inv _ := rfl
-  map_mul' _ _ := rfl
-  map_add' _ _ := rfl
-  commutes' _ := rfl
+      (finiteGaloisPadicField K (extendFiniteGalois h)).Carrier :=
+  Local.extendFiniteGaloisEquiv h
 
 /-- The p-adic tower through the base for a finite Galois subfield over `K`. -/
 theorem extension_padicScalarTower (N : FiniteGaloisIntermediateField K.Carrier Ω) :
@@ -338,11 +327,9 @@ attribute [local instance] asPadicField_isScalarTower
 def galoisClosure : FiniteGaloisIntermediateField F.Carrier (AlgebraicClosure F.Carrier) :=
   have : CharZero F.Carrier :=
     charZero_of_injective_algebraMap (algebraMap (Padic p) F.Carrier).injective
-  have : IsGalois F.Carrier (AlgebraicClosure F.Carrier) := ⟨⟩
-  { toIntermediateField :=
-      IntermediateField.normalClosure F.Carrier E.field (AlgebraicClosure F.Carrier)
-    finiteDimensional := normalClosure.is_finiteDimensional F.Carrier E.field _
-    isGalois := IsGalois.normalClosure F.Carrier E.field _ }
+  have : IsSepClosure F.Carrier (AlgebraicClosure F.Carrier) :=
+    IsSepClosure.of_isAlgClosure_of_perfectField F.Carrier (AlgebraicClosure F.Carrier)
+  Local.galoisClosure E.field
 
 theorem algebraMap_mem_galoisClosure (x : (E.asPadicField (p := p)).Carrier) :
     algebraMap (E.asPadicField (p := p)).Carrier (AlgebraicClosure F.Carrier) x ∈

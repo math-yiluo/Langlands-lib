@@ -1,0 +1,9 @@
+# Reduction of twisted character regularity to compact pushforward geometry
+
+This internal reduction adapts Harish-Chandra's compact averaging argument in “A submersion principle and its applications” (1981), §§3–4, printed pp. 97–100, to the twisted character of a cyclic algebra. The conclusion is the Library's `TwistedCharacterRegularValuesStatement`, which formalizes the local constancy part of Arthur–Clozel (1989), Chapter 1, Proposition 2.2, and uses the cyclic-algebra setting of Henniart–Lemaire (2011), II.2.8. The reduction keeps the field, algebra and representation universes independent.
+
+`TwistedCharacterRegularValuesGeometryStatement` asks for witnesses at each σ-regular parameter under the field and cyclic algebra hypotheses of the Library statement. A compact subgroup `K` and a set `M` supply a double-coset covering by `K * m * K`. For every open subgroup `U` of the ambient group, one compact open subgroup `L` of the auxiliary subgroup `P` has `m⁻¹ * L * m ⊆ U` for all `m ∈ M`. For each compact open subgroup `L` of `P`, the pushforward of probability Haar measure on `K × L` under `(k,p) ↦ k * y * (σ k)⁻¹ * σ p` is constant for `y` in a neighborhood of the given parameter.
+
+The proof of `TwistedCharacterRegularValuesReductionStatement` uses the finite-coordinate homeomorphism of `E` over `F` and the embedding of matrix units by their value and inverse to obtain second countability. The algebra automorphism is continuous because it is linear for the module topology. Applying it to each matrix entry and passing to units gives continuity of the group automorphism. The intertwiner supplies the required linear identity, so the generic compact pushforward theorem gives local constancy of the averaged twisted operators. Smearing then identifies the trace of the common operator with a local value for every Haar measure.
+
+The geometric input still requires a proof for all cyclic algebras.

@@ -1,5 +1,6 @@
 import Langlands.Representation.Archimedean.RealCompactBlockBasis
 import Langlands.Representation.Archimedean.RealCompactFunctional
+import Langlands.Representation.Archimedean.RealTemperedCommutantReduction
 
 /-!
 # Compact coefficient multiplicity one for real standard modules
@@ -22,19 +23,22 @@ open RealCompactRows (flip_inl flip_inr)
 open RealCompactFunctional (V act gain gainScalar oneSign prod_oneSign_pow
   flipMatrix flipMatrix_eq_permMatrix
   FlipInvariant GainCovariant ElementaryGainCovariant FourierVanishing)
+open RealTemperedCommutantReduction
 
 variable {n : ℕ} {ds : List RealBlock}
 variable {D : Type*} [AddCommGroup D] [Module ℂ D]
 
 local notation "O(" n ")" => Matrix.unitaryGroup (Fin n) ℝ
 
-private def threshold (p : Pair n ds) : ℕ := p.datum.weight.natAbs + 1
+/-- The least absolute mode of a nonzero-weight induction block. -/
+def threshold (p : Pair n ds) : ℕ := p.datum.weight.natAbs + 1
 
 private theorem below_threshold (p : Pair n ds) (j : ℤ) :
     j.natAbs < threshold p - 1 ↔ |j| < |p.datum.weight| := by
   simp only [threshold, Nat.add_sub_cancel, Int.abs_eq_natAbs, Int.ofNat_lt]
 
-private def parity (i : Singleton n ds) : ℕ :=
+/-- The left diagonal sign on a singleton row. -/
+def parity (i : Singleton n ds) : ℕ :=
   (RealBlockPosition.realPositionSign ds i.val).val
 
 private theorem gain_one : gain (1 : Pair n ds → ℂ) (1 : Singleton n ds → ℂ) = 1 := by
@@ -184,5 +188,61 @@ theorem realStandardExistsCompactScalarVector (n : ℕ) (ds : List RealBlock)
       (fun p => Nat.zero_lt_succ p.datum.weight.natAbs)
       (fun i => Nat.le_of_lt_succ (RealBlockPosition.realPositionSign ds i.val).isLt)
   exact exists_scalarVector_of_functional hRank ℓ hne hFlip hGain hFourier hline
+
+/-- The orthogonal action on the compound-minor coefficient model. -/
+def compactSeedRep [LinearOrder (Rows n ds)] (hRank : realRank ds = n) :
+    Representation ℂ (O(n)) (V (@threshold n ds) (@parity n ds)) :=
+  (act (@threshold n ds) (@parity n ds)).comp (compactMatrix hRank)
+
+/-- A compact intertwiner from the coefficient model with Lie-generating image
+forces all simultaneous compact and Lie endomorphisms to be scalar. -/
+theorem hasScalarCommutant_of_compactCyclicMap [LinearOrder (Rows n ds)]
+    (hRank : realRank ds = n) (A : V (@threshold n ds) (@parity n ds) →ₗ[ℂ] KF n ds)
+    (hA : ∀ k x, A (compactSeedRep hRank k x) = realStandardRep n ds k (A x))
+    (hgen : ∀ W : Submodule ℂ (KF n ds), (∀ x, A x ∈ W) →
+      (∀ Z, ∀ x ∈ W, realStandardLie n ds Z x ∈ W) → W = ⊤) :
+    HasScalarCommutant n ds := by
+  intro E hK hLie
+  let ρ := compactSeedRep hRank
+  let ev := kFiniteEval (realStandardModule n ds) 1
+  obtain ⟨ℓ, _, _, _, _, hline⟩ :=
+    RealCompactFunctional.exists_functional (@threshold n ds) (@parity n ds)
+      (fun p => Nat.zero_lt_succ p.datum.weight.natAbs)
+      (fun i => Nat.le_of_lt_succ (RealBlockPosition.realPositionSign ds i.val).isLt)
+  have hform (B : V (@threshold n ds) (@parity n ds) →ₗ[ℂ] KF n ds)
+      (hB : ∀ k x, B (ρ k x) = realStandardRep n ds k (B x)) :
+      ∃ a : ℂ, ev.comp B = a • ℓ := by
+    obtain ⟨hFlip, hPair, hSingle, hFourier⟩ :=
+      conditions_of_isStandardFunctional _ hRank _ (evaluation_isStandardFunctional ρ B hB)
+    exact hline _ hFlip ⟨hPair, hSingle⟩ hFourier
+  have hEA (k : O(n)) (x : V (@threshold n ds) (@parity n ds)) :
+      (E.comp A) (ρ k x) = realStandardRep n ds k ((E.comp A) x) := by
+    simp only [LinearMap.comp_apply, ρ, hA, hK]
+  obtain ⟨a, ha⟩ := hform A hA
+  obtain ⟨b, hb⟩ := hform (E.comp A) hEA
+  by_cases ha0 : a = 0
+  · have hA0 : A = 0 := by
+      refine compactIntertwiner_ext ρ hA (by simp) ?_
+      simpa only [ev, ha0, zero_smul, LinearMap.comp_zero] using ha
+    have hBot : (⊥ : Submodule ℂ (KF n ds)) = ⊤ :=
+      hgen ⊥ (by simp [hA0]) (by simp)
+    refine ⟨0, fun x => ?_⟩
+    have hx : x ∈ (⊥ : Submodule ℂ (KF n ds)) := hBot ▸ Submodule.mem_top
+    have hx0 : x = 0 := by simpa using hx
+    rw [hx0, map_zero, smul_zero]
+  · let c := b / a
+    have hcA (k : O(n)) (x : V (@threshold n ds) (@parity n ds)) :
+        (c • A) (ρ k x) = realStandardRep n ds k ((c • A) x) := by
+      simp only [LinearMap.smul_apply, ρ, hA, map_smul]
+    have he : E.comp A = c • A := by
+      apply compactIntertwiner_ext ρ hEA hcA
+      change ev.comp (E.comp A) = ev.comp (c • A)
+      rw [LinearMap.comp_smul, ha, hb, smul_smul, div_mul_cancel₀ b ha0]
+    let W : Submodule ℂ (KF n ds) := LinearMap.ker (E - c • LinearMap.id)
+    have hW (x : KF n ds) : x ∈ W ↔ E x = c • x := by
+      simp [W, sub_eq_zero]
+    have hTop := hgen W (fun x => (hW _).mpr (DFunLike.congr_fun he x))
+      (fun Z x hx => (hW _).mpr (by rw [hLie, (hW x).mp hx, map_smul]))
+    exact ⟨c, fun x => (hW x).mp (hTop.symm ▸ Submodule.mem_top)⟩
 
 end Langlands.Archimedean.RealStandardCompactMultiplicityOne

@@ -1,0 +1,14 @@
+# Harish-Chandra module of compact-finite smooth Hilbert vectors
+
+Worker 1028. `Langlands.Archimedean.RealSmoothHilbertHarishChandraModuleStatement.{uH}` is an unproved proposition on the actual real general linear group. For each positive size `n = r + 1` and complete complex Hilbert space `H : Type uH`, take a bounded-operator representation `R` of `GL_n(ℝ)` satisfying `IsIrreducibleAdmissibleHilbertRepresentation ℝ n R`. This means joint continuity, topological irreducibility (including nontriviality of `H`), and compact admissibility; the operators are not required to be unitary.
+
+On `V = smoothHilbertKFinite ℝ n R` the statement asks for an `O(n)` representation `ρ` and a complex Lie algebra homomorphism `π` from `ℂ ⊗[ℝ] Matrix (Fin n) (Fin n) ℝ` to `Module.End ℂ V` that satisfy `IsRealGKModule n ρ π`, `IsIrreducibleGKModule ρ π`, and `IsAdmissibleGKModule ρ`. It requires that the submodule inclusion into `DerivativeSmoothVectors (matrixModel ℝ n) R` satisfy `IsSmoothGKIntertwiner ℝ n R ρ π`: the compact action must be the restriction of the actual compact action, and `π(1 ⊗ X)` must restrict the genuine derivative, for each real matrix direction `X`. Thus these are not abstract actions chosen on an isomorphic vector space with no relation to `R`.
+
+## Provenance and scope
+
+This is a derived specialization of the passage from an admissible representation to its Harish-Chandra module and the irreducibility comparison:
+
+- Wallach, *Real Reductive Groups I* (1988), `wallach-1988-real-reductive-groups-i` (SHA256 `c021af2481d3ab479ab1cca0ae66e3e077fcfdec11b77df02b4b91cd31ba8dc9`), Lemma 3.3.5 (printed p.81, PDF p.101) and Theorems 3.4.9 and 3.4.12 (printed pp.85–86, PDF pp.105–106).
+- Getz–Hahn, *An Introduction to Automorphic Representations* (2024), `getz-hahn-2024-automorphic-representations` (SHA256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`), Proposition 4.4.7 and Theorem 4.4.9 (printed pp.116–119, PDF pp.131–134), with the §4.4 corrections in `getz-hahn-2024-errata-2026-10` (SHA256 `e641ec2a5485443f792935afe5ae4940323755968f784ce290a96d9cd76fc1c2`), p.1. The compact group is all of `O(n)`, not just its identity component.
+
+The source argument concerns the induced actions on compact-finite vectors. For this statement one must realize the actions in the [published smooth carrier](SmoothHilbert.md), check the specific `IsRealGKModule` axioms in [GKModule](GKModule.md), transfer compact admissibility, and justify algebraic irreducibility from topological irreducibility. Density by itself does not give algebraic irreducibility: a proper submodule could a priori be dense and must be ruled out using the structure of the representation. The statement does not globalize an arbitrary Harish-Chandra module, assert a converse, or prove the analytic comparison.

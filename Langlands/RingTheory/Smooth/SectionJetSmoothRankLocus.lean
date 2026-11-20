@@ -15,8 +15,8 @@ namespace Algebra.SectionJet
 
 open Langlands.GroupScheme.CoordinateWeights
 
-/-- Smoothness at the image of a section, with a prescribed dimension of its
-conormal over each residue field of the base. -/
+/-- Formal smoothness of the localization at each section prime, with
+a prescribed conormal dimension over each residue field of the base. -/
 def SmoothAlongSectionOfRank {R A : Type*} [CommRing R] [CommRing A] [Algebra R A]
     (ε : A →ₐ[R] R) (r : ℕ) : Prop :=
   (∀ (s : Ideal R) [s.IsPrime], IsSmoothAt R (s.comap ε.toRingHom)) ∧

@@ -229,7 +229,8 @@ private theorem exists_diagonal_moment (W : V) :
 
 end RootDerivative
 
-private theorem height_logTorus_mul_le {n : ℕ} (y : Fin n → ℝ) (k : unitaryCompact ℂ n) :
+/-- A bound for the matrix height in logarithmic Iwasawa coordinates. -/
+theorem height_logTorus_mul_le {n : ℕ} (y : Fin n → ℝ) (k : unitaryCompact ℂ n) :
     max 1 (complexMatrixHeight (logTorus y * (k : Langlands.GeneralLinear n ℂ))) ≤
       (1 + 2 * (n : ℝ) ^ 2) * Real.exp (2 * ∑ j, |y j|) := by
   let G := Langlands.GeneralLinear n ℂ

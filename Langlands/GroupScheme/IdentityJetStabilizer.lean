@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.IdentityJetFunctorial
 import Langlands.GroupScheme.IdentityJetConjugationAction
 import Langlands.GroupScheme.ConjugationStabilizerBaseChange
 import Langlands.GroupScheme.IdentityJetSeparatedBaseChange
@@ -19,21 +20,6 @@ set_option backward.defeqAttrib.useBackward true
 namespace Langlands.GroupScheme.IdentityJet
 
 variable {S : Scheme.{u}} {H G : GroupScheme S}
-
-/-- Actual identity jets of an actual closed subgroup are the closed pullbacks
-of the corresponding jets of its ambient group. -/
-private theorem map_isPullback_of_isClosedImmersion [IsSeparated G.X.hom] (f : H ⟶ G)
-    [IsClosedImmersion f.hom.hom.left] (n : ℕ) :
-    IsPullback (inclusion H n) (map f n) f.hom.hom.left (inclusion G n) := by
-  have : IsClosedImmersion (inclusion H n) := inferInstanceAs (IsClosedImmersion (ideal H n).subschemeι)
-  have : IsClosedImmersion (inclusion G n) := inferInstanceAs (IsClosedImmersion (ideal G n).subschemeι)
-  have he : IsPullback H.identitySection (𝟙 S) f.hom.hom.left G.identitySection :=
-    IsPullback.of_vert_isIso_mono ⟨by rw [Category.id_comp, identitySection_naturality]⟩
-  have hk : G.identitySection.ker.comap f.hom.hom.left = H.identitySection.ker := by
-    rw [← Scheme.IdealSheafData.ker_fst_of_isClosedImmersion,
-      ← he.isoPullback_hom_fst, Scheme.Hom.ker_comp_of_isIso]
-  apply isPullback_of_isClosedImmersion _ _ _ _ (map_inclusion f n).symm
-  simp only [inclusion, Scheme.IdealSheafData.ker_subschemeι, ideal, idealSheaf_comap_pow, hk]
 
 /-- The actual identity neighborhood as a scheme over the base. -/
 def overScheme (H : GroupScheme S) (n : ℕ) : Over S := Over.mk (projection H n)
