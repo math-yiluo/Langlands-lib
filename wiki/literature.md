@@ -110,3 +110,5 @@ a paywall or missing edition; include the exact citation and attempted locations
 - [The Levi index in the double-coset volume of Renard VII.1.2](../notes/errata/renard-vii12-iwahori-volume.md) — A \(\mathrm{GL}_3\) counterexample to the printed volume identity, the corrected index formula and the finite-translate upper bound used for sufficiency.
 
 - [Hom dimensions and semisimplicity in Renard VII.1.3](../notes/errata/renard-vii13-mutual-hom.md) — A length-two example with one-dimensional Hom spaces in both directions and the self-endomorphism calculation that proves nonsplitting for each of the two inductions.
+
+- [Reflection coefficients in Renard VII.4.1](../notes/errata/renard-vii41-reflection-coefficients.md) — Two split \(\mathrm{SL}_3\) examples, the corrected Weyl length induction and the argument for nonzero displacement after restriction.
