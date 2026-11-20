@@ -297,6 +297,18 @@ search for "Chevalley group scheme over Z" returned nothing. The modules under
 `SplitExistence/` construct groups over each field from Chevalley data. They also prove
 that a reduced root datum has a base over `ℤ` (`SplitExistence/IntegralBase`). Status O.
 
+**G1 update, 20 November 2026.** Status P for the field-fibre realization in
+`ChevalleyIntegralExistenceStatement.{u}`, proved by `chevalleyIntegralExistence`.
+For a finite reduced root datum with finitely generated character lattice, the theorem
+gives one reductive group over `Spec (ULift ℤ)`, one closed coordinate split torus and
+one full coordinate root datum equivalent to the input. The torus is maximal after
+base change to each field over that ring, and the same full datum realizes the actual
+root datum on every such fibre. The relative root spaces over the base, integral
+pinnings and integral isomorphism classification remain distinct obligations.
+[Statement](../../Langlands/GroupScheme/Reductive/ChevalleyIntegralExistenceStatement.md),
+[proof](../../Langlands/GroupScheme/ChevalleyIntegral/Existence.md),
+[milestone evidence](ledger-milestones-interfaces.md#field-and-integral-proof-update-20-november-2026).
+
 **G2. Simultaneous reductive and parabolic spreading.** Source: Getz–Hahn, Proposition
 2.4.8, printed p.61 (PDF 78), and Proposition B.3.1, printed p.544 (PDF 549). The Lean
 statement packages both, and adds conditions on the base change to every field over the
@@ -343,6 +355,10 @@ fibre, its `𝒪_F`-points form a maximal compact subgroup of `G(F)`.
   `Reductive/LocalSplit*`.
 
 ## Remaining open targets in family 7
+
+The list below describes the original snapshot. Later proof publications
+for B2, E2, F1–F3, G1 and G2 are recorded in the
+[milestone ledger](ledger-milestones-interfaces.md#status-changes-since-the-family-ledgers).
 
 - The non-central isogeny theorem and the unpinned uniqueness clauses of Milne
   23.25–23.26: no Lean statement.
