@@ -160,8 +160,8 @@ inertial-support invariance. The direction (⇐) is Worker 841's published
 the statement are unused: the standard-cocharacter hypothesis, compactness of `K₀`
 and `K ≤ K₀`.
 
-For the third VI.10.6 Corollary statement, `CS.StandardLeviFixedVectorSupportStatement`,
-Task 6562 has so far published only a supporting result. The theorem
+At the 19 November check, Task 6562 had published a supporting result but not
+its exact target, `CS.StandardLeviFixedVectorSupportStatement`. The theorem
 `nontrivial_standardLeviInduction_fixedVectors_iff`
 ([`CuspidalSupport/StandardLeviInductionFixedVectors`](../../Langlands/Representation/CuspidalSupport/StandardLeviInductionFixedVectors.md))
 proves the separate proposition `CS.StandardLeviInductionFixedVectorsStatement`.
@@ -172,13 +172,45 @@ vector fixed by `K ∩ M_{leviIndex J I}(F)`. Its candidate
 approved by Reviewer 8644 without qualifications. Integration
 `7285136652834ea3a8ad66a38468ccae` first published it at Library
 `b86269dd36757fdbea2e51976499d645ca61a625`, and at the checked commit both files
-have the frozen candidate's SHA256. This result is a step of the target's proof,
-not a proof of it. Worker 705's proof candidate
-`a5905ed7-0aae-4951-aefb-afc90f09d026` for the target is staged. On 19 November 2026
-its machine validation was reported unavailable, and it had no review decision.
-`CS.StandardLeviFixedVectorSupportStatement` keeps status S. Only the VI.10.6
-Corollary row and gap 4 use this update; every other row retains its earlier dated
-status.
+have the frozen candidate's SHA256. This is a step of the target's proof, not the
+exact proof. The exact candidate was staged without a review decision at the
+19 November check. See the 20 November follow-up for its publication. Only the
+VI.10.6 Corollary row and gap 4 use this update.
+
+The proof-status follow-up of 20 November 2026, by Worker 4, checks Library
+`d6b462beebdb629f6b6746bdf0698a800d84104f`. Task 6562
+(`f0a0ac6b-cb4d-4d69-bd08-6fd64a0cb474`) has published the exact proof
+[`Langlands.CuspidalSupport.standardLeviFixedVectorSupport`](../../Langlands/Representation/CuspidalSupport/StandardLeviFixedVectorSupportProof.lean),
+of type `CS.StandardLeviFixedVectorSupportStatement.{uF, uV}`. Candidate
+`a5905ed7-0aae-4951-aefb-afc90f09d026`, by Worker 705 with Worker 780, was
+approved by Reviewer 11171 without qualifications. Machine receipt
+`5aafa412-c480-486e-8ec8-c1bbadd25d8d` accepts the Lake build, exact target,
+unchanged statement and frozen inputs. Integration `faeacb64389f4635adfdd9e36b6f705f`
+first published the proof at Library `6e9e589baa721ce995563f73f648b6f4e45718a1`.
+At both Library commits the proof pair has the frozen candidate's SHA256
+(`afa67699…` and `781b42bf…`); the statement pair still matches the proof's base.
+Development check `5c247a75-b689-4bf8-960d-110a2ef90cf6` compiles the proof
+module at the checked commit with no errors or warnings.
+
+For a standard Levi `M = M_J` and a nested standard cuspidal datum `b`, the
+result proves `[b]_M ∈ B(M)_{K ∩ M}` iff `[b]_G ∈ B(G)_K`. It keeps the
+published hypotheses, including the minimal Iwasawa factorization, compact
+open `K` normal in `K₀`, and the standard Iwahori decompositions. The
+[proof Markdown](../../Langlands/Representation/CuspidalSupport/StandardLeviFixedVectorSupportProof.md)
+explains the use of induction in stages instead of repeating the representative
+criterion inside `M` as on printed p.215 / PDF p.221. In the forward direction,
+compact-open fixed-vector exactness lifts nontriviality from an irreducible
+subquotient to the normalized induction inside `M` of its datum `b'`. The
+inside-Levi criterion then detects a fixed vector of the coefficient at
+`K ∩ M_{b'.roots}(F)`, and the ambient representative criterion gives an
+irreducible representation with nonzero `K`-fixed vectors. The `M`-inertia
+relation also gives equality of the two ambient inertial classes, implementing
+`i_{MG}` on representatives (VI.7.3, printed p.185 / PDF p.191). In the reverse
+direction, the two criteria give a nonzero fixed vector in the induction inside
+`M` of `b` itself, and `SmoothRep.hasFixedVectorConstituent_of_nontrivial`
+produces an irreducible subquotient retaining one. The proof does not construct
+`B(M)` as a type or `i_{MG}` as a function. Only the final support statement
+changes from S to P in this follow-up (VI.10.6 Corollary row and gap 4).
 
 The conditional reduction update of 17 November 2026, by Worker 445 (an executor of
 Task 6535), checks the VI.6.3 Corollary and VI.9.4 Corollary rows against Library
@@ -479,7 +511,7 @@ printed VI.8 assertions to their units; this table gives the headed items.
 | VI.10.6 Theorem, Proposition | 213–214 / 219–220 | `CS.CompactOpenInertialFinitenessStatement`, `J.FixedVectorCategoryStatements` | S: tasks f504c0e1, 423c3289 |
 | VI.10.6 Proposition (i), the decomposition `M(G)_K = ∏_{s ∈ B(G)_K} M(G)_s`, and (iii)–(iv) for the source's class of `K` | 214 / 220 | `J.StandardIwahoriFixedVectorBlockDecompositionStatement` (a smooth representation is generated by its `K`-fixed vectors iff it is a coproduct of its components in the Bernstein blocks indexed by `B(G)_K`), `J.StandardIwahoriFixedVectorCategoryStatement` ((iii)–(iv) with only the ordered Iwahori decompositions on `K`), and the proved implication `J.fixedVectorCategoryStatements_of_standardIwahori` to the earlier basis-member conclusion (`Jacquet/StandardIwahoriFixedVectorCategoryStatements`) | S: published candidate `45eed456` (Reviewer 2414); Task 6639 for the block decomposition statement, Task 6640 for (iii)–(iv) |
 | VI.10.6 Proposition (ii) (inverse `M ↦ H(G) ⊗_{H(G,K)} M`) | 214 / 220 | `J.StandardIwahoriCornerInductionEquivalenceStatement` (`Jacquet/StandardIwahoriCornerInductionStatement`; the Haar Hecke algebra `H(G)`, its corner `H(G, K) = e_K H(G) e_K`, the III.1.4 functor, the I.3.1 corner functor and the I.3.2 induction functor) | S: Task 6599 |
-| VI.10.6 Corollary (`B(M)_{K_M} = i_{MG}^{-1}(B(G)_K)`) | 215 / 221 | `CS.StandardLeviCompactInheritanceStatement` (the hypotheses on `K` pass to `K ∩ M`), `CS.StandardRepresentativeFixedVectorCriterionStatement`, `CS.StandardLeviFixedVectorSupportStatement` (`CuspidalSupport/StandardLeviFixedVectorSupportStatements`; standard Levi subgroups `M_J`; `B(M)` and `i_{MG}` through representatives, as in `CS.BernsteinInductionRestrictionStatement`) | `CS.StandardLeviCompactInheritanceStatement` P: `standardLeviCompactInheritance` (`CuspidalSupport/StandardLeviCompactInheritanceProof`; Task 6560, proof-status update of 17 November 2026). `CS.StandardRepresentativeFixedVectorCriterionStatement` P: `standardRepresentativeFixedVectorCriterion` (`CuspidalSupport/StandardRepresentativeFixedVectorCriterionProof`; Task 6561, proof-status update of 19 November 2026). `CS.StandardLeviFixedVectorSupportStatement` S: Task 6562; its supporting result `nontrivial_standardLeviInduction_fixedVectors_iff` is proved, and proof candidate `a5905ed7` was staged without a review decision on 19 November 2026. `B(M)` as a type and `i_{MG}` as a function are not defined |
+| VI.10.6 Corollary (`B(M)_{K_M} = i_{MG}^{-1}(B(G)_K)`) | 215 / 221 | `CS.StandardLeviCompactInheritanceStatement` (the hypotheses on `K` pass to `K ∩ M`), `CS.StandardRepresentativeFixedVectorCriterionStatement`, `CS.StandardLeviFixedVectorSupportStatement` (`CuspidalSupport/StandardLeviFixedVectorSupportStatements`; standard Levi subgroups `M_J`; `B(M)` and `i_{MG}` through representatives, as in `CS.BernsteinInductionRestrictionStatement`) | P: `standardLeviCompactInheritance` (`CuspidalSupport/StandardLeviCompactInheritanceProof`; Task 6560, 17 November proof-status update), `standardRepresentativeFixedVectorCriterion` (`CuspidalSupport/StandardRepresentativeFixedVectorCriterionProof`; Task 6561, 19 November proof-status update) and `standardLeviFixedVectorSupport` (`CuspidalSupport/StandardLeviFixedVectorSupportProof`; Task 6562, 20 November follow-up). The last proves the support equivalence through representatives, without defining `B(M)` as a type or `i_{MG}` as a function |
 | VI.10.7 Lemma, Theorem | 215 / 221 | `CS.FiniteTypeComponentCharacterizationStatement`, `RP.FiniteTypeCenterAdmissibleStatement` | S: task f504c0e1 |
 | VI.10.7 Corollary | 216 / 222 | `RP.HeckeAlgebraCenterFiniteStatement` | S: task aea42eff |
 | VI.10.7 Proposition | 216 / 222 | `CS.FiniteTypeComponentCharacterizationStatement` | S: task f504c0e1 |
@@ -576,10 +608,10 @@ claim that Chapter VI has no other gaps. The individual rows remain authoritativ
 4. VI.10.6 Corollary: `CS.StandardLeviCompactInheritanceStatement`,
    `CS.StandardRepresentativeFixedVectorCriterionStatement` and
    `CS.StandardLeviFixedVectorSupportStatement`, Tasks 6560–6562, for standard Levi
-   subgroups and through representatives of `B(M)`. The first two are proved by
-   `standardLeviCompactInheritance` (Task 6560) and
-   `standardRepresentativeFixedVectorCriterion` (Task 6561, proof-status update of
-   19 November 2026). The third has an open proof (Task 6562).
+   subgroups and through representatives of `B(M)`. All three are proved:
+   `standardLeviCompactInheritance` (Task 6560),
+   `standardRepresentativeFixedVectorCriterion` (Task 6561, 19 November proof-status
+   update) and `standardLeviFixedVectorSupport` (Task 6562, 20 November follow-up).
 5. VI.10.7 Variant: `AF.FamilyFiniteTypeCenterAdmissibleStatement`,
    `AF.FamilyFiniteTypeComponentCharacterizationStatement` and
    `AF.FamilyLeviInductionFiniteTypeStatement`, Tasks 6565–6567.
