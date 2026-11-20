@@ -91,6 +91,8 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [KP Moy–Prasad on supplied filtrations: ramified SU(3) counterexample](../notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md) — Unformalized paper argument that `MoyPrasadCommutatorStatement` and `MoyPrasadCovarianceStatement` fail for the minimal axiom-satisfying filtration of ramified SU(3) over Q_2, with the axiom checks, witnesses, odd-p remark and why the double-root variants are unaffected.
 
+- [KP §13.4: jump depths at all optimal points](../notes/bruhat-tits/kp-optimal-depth-scope.md) — A split `SL₃` paper calculation with a jump at every rational depth in `(0,1)` along the optimal edge, distinguishing Definition 13.4.2 from the chosen orbit set used by Lemma 13.4.4.
+
 - [Valued-field amalgamation: tensor sources and proof route](../notes/analytic/valued-field-amalgamation-sources.md) — Original tensor estimates covering trivial valuations, the derived common-field route, and the remaining full-universe Lean obligations.
 - [Relative Picard representability: source and construction boundaries](../notes/abelian-schemes/relative-picard-source-map.md) — Faltings–Chai's unrestricted algebraic-space route, Lan and EVM conventions, and the remaining actual-family comparisons.
 - [Flat affine-base ampleness reflection and supplied representers](../notes/abelian-schemes/flat-affine-ampleness-reflection.md) — Published support-preserving flat coefficients, arbitrary-affine ampleness reflection and geometric reflection for a supplied global representer, with the remaining effective-descent boundary.
