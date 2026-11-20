@@ -104,3 +104,7 @@ a paywall or missing edition; include the exact citation and attempted locations
 - [Renard VII.1.2 and the strict root cone](../notes/errata/renard-2026-representations-groupes-reductifs-padiques.md) — A square-integrable `Sp₄(ℚ₃)` representation with a normalized Jacquet exponent on a coroot wall, and the root-cone inequality given by the proof's decay test.
 
 - [Overlapping Cartan cells in Renard VII.1.2](../notes/errata/renard-vii12-cartan-cover.md) — A split torus example where the labelled sum counts each cell twice, with the corrected integral bound and the published Lean sufficiency estimates.
+
+- [The Levi index in the double-coset volume of Renard VII.1.2](../notes/errata/renard-vii12-iwahori-volume.md) — A \(\mathrm{GL}_3\) counterexample to the printed volume identity, the corrected index formula and the finite-translate upper bound used for sufficiency.
+
+- [Hom dimensions and semisimplicity in Renard VII.1.3](../notes/errata/renard-vii13-mutual-hom.md) — A length-two example with one-dimensional Hom spaces in both directions and the self-endomorphism calculation that proves nonsplitting for each of the two inductions.

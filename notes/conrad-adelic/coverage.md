@@ -23,8 +23,9 @@ audits below update selected rows against `ed924aef420de137b4cbaa3b063a3618afcd7
 `e1fa6f689f9e976eb7574f0dce4453b3b5705ac0`; the 16 November audit uses
 `b44618a4f02405d5be8c906f21cf7817e4eaafb9`, and the two 17 November audits use
 `f24f97443f21ff7e59b1cf3b509602157dae54c2` and
-`18790533e39c3ee1982619a07a6594528ad156dd`, and the 18 November audit uses
-`8aede86c1ec386cf08cfb29e80ce3c58a3239cd8`. Unchanged rows retain their earlier
+`18790533e39c3ee1982619a07a6594528ad156dd`, the 18 November audit uses
+`8aede86c1ec386cf08cfb29e80ce3c58a3239cd8`, and the 19 November audit uses
+`24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. Unchanged rows retain their earlier
 audit provenance. For each row the ledger
 records the declarations, the hypotheses under which the Lean statements assert the source
 claim, the proof status found by searching that commit, and the responsible task for each open
@@ -42,6 +43,307 @@ or `Langlands.AlgebraicGeometry.AffineLimit` (paths `Langlands/AlgebraicGeometry
 `FiniteTypeFinitenessDescent` and `FiniteTypeSurjectivityDescent`, which are in
 `Langlands.Algebra.FilteredRing` (path `Langlands/Algebra/`). Names written with a further prefix
 are relative to these namespaces; names beginning with `Langlands.` are absolute.
+
+## Proof publications, 19 November 2026
+
+This focused audit checks Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85` under the unchanged revision 2
+contract. It records proofs of twelve earlier parent statements, all
+analytification statements, the publication of Task 7086's own candidate,
+new conditional reductions and support modules for open statements, and the
+atlas-level ground-field extension of Task 7100.
+Each proof is a theorem whose type is exactly the published statement
+proposition with its universe parameters. Except for the first chart-flatness
+proof, each of the twelve was submitted under the proof task that the parent
+published for the statement. The parent takes no proofs. Except for Task 7086's
+candidate, described below, the commit that first contains each proof file is
+the commit of its publication record. No independent review report below carries
+a qualification. Two cited candidates carry author qualifications, each reported
+below with its candidate: the support candidate
+`243ba880-43d1-4170-85a1-2b9dd292dc62` carries one, and the Frobenius witness
+`6e02f6e0-d1b4-4923-85f3-09c0fcee0ea5` carries three. Each independent review
+acknowledges these in its rationale and adds no qualification of its own. No
+other candidate below carries an author qualification. All earlier dated sections, assertion and
+hypothesis cells, and table order are retained. This section updates the status
+cells of the analytification rows and remaining obligation 2. It does not
+certify whole-paper completion.
+
+All modules below are in `Langlands/Geometry/Analytic/`. In the items on affine
+analytification, center maps, scheme analytification and algebraic spaces, `K`
+is a complete, ultrametric, nontrivially normed field. The conditional
+reductions and the Task 7100 items at the end state their own field scopes.
+
+**Affine analytification** (namespace `Langlands.Analytic.AffineAnalytification`;
+all algebras carry finite polynomial presentations).
+
+- `finiteTypeDomainNormExtension` (module `FiniteTypeDomainNormExtensionProof`,
+  candidate `173a4feb-0cdc-482b-b9c6-7d0b2a63a913`, Task 7628
+  `3370013d-0145-4a35-b24b-4cdf01cdbc0d`, first published at
+  `b86269dd36757fdbea2e51976499d645ca61a625`) proves
+  `FiniteTypeDomainNormExtensionStatement`. Every finitely generated
+  `K`-algebra that is a domain carries a multiplicative seminorm that extends
+  the norm of `K` and vanishes only at zero. This is the norm input of the
+  center statement. Task 7628 is completed.
+- `affineAnalytificationChartFlat` (module `AffineAnalytificationChartFlatProof`,
+  candidate `4811589e-c705-43be-b0da-2fb66d31eb71`, submitted under Task 7655
+  `6f1f9bc0-d74b-4295-81e0-ccba71f22745`, first published at
+  `b86269dd36757fdbea2e51976499d645ca61a625`) proves
+  `AffineAnalytificationChartFlatStatement`. For every presentation `P` of `A`
+  and every chart index `m`, the map from `A` to the chart algebra of index `m`
+  is flat. Task 7657 `f5b29461-c4fc-44cd-8212-aacffc08f5e1` published its own
+  exact-target candidate `002b52f0-f88c-47ca-b5e5-17b860fc89db`, theorem
+  `affineAnalytificationChart_flat`, as module
+  `AffineAnalytificationChartFlatCompletionProof` (first at
+  `bb9e086196d00484fd52204977452d922bf3c660`); the earlier module now imports
+  it. Task 7657 is completed.
+- `affineAnalytificationQuasiFinite` (module `AffineAnalytificationQuasiFiniteProof`,
+  candidate `00460c05-7136-4e60-9075-0122f97ef477`, Task 7653
+  `9fb378cf-c57b-465b-bd06-c422a8ab8500`, first published at `c01485976764c3625bd56d1c496735f83b741f75`)
+  proves `AffineAnalytificationQuasiFiniteStatement`. A `K`-algebra map
+  `f : A → B` is quasi-finite exactly when the induced saturated analytic map is
+  quasi-finite.
+- `affineAnalytificationFiniteGermComparison` (module
+  `AffineAnalytificationFiniteGermComparisonProof`, candidate
+  `3e0af175-2439-47d7-99b4-100859f09e76`, Task 7655
+  `6f1f9bc0-d74b-4295-81e0-ccba71f22745`, first published at `5f5d3a914cd43b9dc1cd32c07887a973f561df96`)
+  proves `AffineAnalytificationFiniteGermComparisonStatement`. Let `y` be a chart
+  point at which the saturated analytic map of `f : A → B` is finite, and let
+  `q` be the prime of `B` below `y`. Then the analytic map is unramified at `y`
+  exactly when `f` is unramified at `q`, and flat at `y` exactly when the local
+  map of `f` at `q` is flat.
+- `affineAnalytificationFibreProduct` (module `AffineAnalytificationFibreProductProof`,
+  candidate `9f8a3553-0fbb-4043-b3f7-348b7dc277de`, Task 7168
+  `46196b21-c6e5-4dd5-be9c-8f78a02733a5`, first published at
+  `bb9e086196d00484fd52204977452d922bf3c660`) proves
+  `AffineAnalytificationFibreProductStatement`. For `K`-algebras `A` and `B`
+  over a `K`-algebra `C`, with presentations of `A`, `B`, `C` and `A ⊗_C B`, the
+  square of localized analytic maps induced by `C → A`, `C → B`, `A → A ⊗_C B`
+  and `B → A ⊗_C B` is a pullback in the localized analytic category.
+- `affineAnalytificationImmersion` (module `AffineAnalytificationImmersionProof`)
+  was already recorded as proved in the 18 November audit. Its Lean and Markdown
+  pair was first published at `18c5dd82d119bef479b69de264324b22fe6f8d36`, as a
+  support file of candidate `f0f59b3f-d8cc-4df1-9eee-21b7d2169251` (Task 7118).
+  Task 7086 `15296f18-5435-4142-bd49-fdaf726f1890` submitted the identical pair
+  as its own exact-target candidate `c455fdd5-29a7-4cb7-a0d6-148b2134a7e9`, whose
+  publication record is at the later commit
+  `b86269dd36757fdbea2e51976499d645ca61a625`. This is the one exception to the
+  rule that a proof file first appears at the commit of its publication record.
+  Task 7086 is completed.
+
+**Center maps and scheme analytification** (namespace
+`Langlands.Analytic.SchemeAnalytification`; `X` is a scheme locally of finite
+type over `K`).
+
+- `analytificationCenter` (module `AnalytificationCenterProof`, candidate
+  `1d4888c3-122f-4931-a308-b9a5ae36a006`, Task 7097
+  `b92d9284-a406-49b1-af51-96979d7e0e5c`, first published at `c01485976764c3625bd56d1c496735f83b741f75`)
+  proves `AnalytificationCenterStatement`. For affine analytifications and for
+  the glued analytification of `X`, the center map is surjective, and the
+  analytic point of a `K`-rational point is the only point whose center is the
+  center of that analytic point. In the affine case that center is the kernel of
+  the rational point; in the scheme case it is the image of the closed point,
+  and the preimage under the center map of each affine open `U` is the range of
+  the inclusion of the piece of `U`.
+- `schemeAnalytificationSeparated` (module `SchemeAnalytificationSeparatedProof`,
+  candidate `30b48802-3b78-49bd-b838-37f8519c56de`, Reviewer 8533, task
+  `cfbb18f9-1fde-4110-b937-4eb7423948e4`, first published at
+  `b86269dd36757fdbea2e51976499d645ca61a625`) proves the support statement
+  `SchemeAnalytificationSeparatedStatement`: `X → Spec K` is separated exactly
+  when the glued analytification is Hausdorff. The support candidate
+  `243ba880-43d1-4170-85a1-2b9dd292dc62` (module
+  `SchemeAnalytificationOpenGluing`, first published at
+  `b86269dd36757fdbea2e51976499d645ca61a625`) proves `affineOpenGluing`, the
+  four open gluing clauses. Its author record carries the qualification that it
+  proves those four clauses only, leaving the separatedness criterion to Task
+  7087. The independent review acknowledges this qualification in its rationale
+  and adds no qualification of its own.
+- `schemeAnalytificationGluing` (module `SchemeAnalytificationGluingProof`,
+  candidate `c2f0b0c1-1ed5-4280-8a09-7493d01fb9bc`, Task 7087
+  `d8f36429-3ce4-491e-9d69-e57ed9b29c76`, first published at `c01485976764c3625bd56d1c496735f83b741f75`)
+  proves `SchemeAnalytificationGluingStatement`. The restriction maps between
+  affine pieces and the inclusions of the affine pieces are open embeddings; the
+  intersection of two pieces is the union of the pieces of the affine opens
+  contained in both; for affine `X` the piece of `X` itself is a homeomorphism;
+  and `X → Spec K` is separated exactly when the glued space is Hausdorff.
+- `schemeAnalytificationAnalyticStructure` (module
+  `SchemeAnalytificationAnalyticStructureProof`, candidate
+  `db11ff30-a142-462a-b354-b705c0a09f03`, Task 7120
+  `032e0d8b-d716-44e2-ab5e-08385567bb55`, first published at `c01485976764c3625bd56d1c496735f83b741f75`)
+  proves `SchemeAnalytificationAnalyticStructureStatement`. The glued space is
+  homeomorphic to the underlying space of a saturated atlas presentation with
+  one analytic domain for each affine open `U`. The homeomorphism carries that
+  domain onto the range of the piece of `U`, the domain is isomorphic in the
+  localized category to the affine analytification of `U` compatibly with the
+  inclusion of the piece, and these isomorphisms are compatible with the
+  restriction maps.
+
+**Algebraic spaces** (namespace `Langlands.Analytic.SpaceAnalytification`; `X` is
+a separated algebraic space locally of finite type over `Spec K`, and `p` makes
+`Y` an analytification of `X` in the sense of `IsAnalytification`).
+
+- `spaceAnalytificationRationalPoints` (module
+  `SpaceAnalytificationRationalPointsProof`, candidate
+  `eae8e7ac-ffae-4f63-b67f-b71e3c0c572d`, Task 7247
+  `6145952e-407a-4855-8def-a8263bedfbf7`, first published at
+  `bb9e086196d00484fd52204977452d922bf3c660`) proves
+  `SpaceAnalytificationRationalPointsStatement`. The underlying space of `Y` is
+  Hausdorff, and `rationalPoint` is a topological embedding of `X(K)` with
+  `etaleChartTopology`.
+- `spaceAnalytificationFieldPoints` (module `SpaceAnalytificationFieldPointsProof`,
+  candidate `10955905-ab2d-428e-a85d-de76295d1c5f`, Task 7486
+  `74ee4c92-ea0c-4002-aefc-1da4675e9deb`, first published at
+  `bb9e086196d00484fd52204977452d922bf3c660`) proves
+  `SpaceAnalytificationFieldPointsStatement`. The `K`-valued points of `Y` are
+  determined by their underlying points, and they correspond bijectively to
+  `X(K)` over `rationalPoint`.
+- `spaceAnalytificationImmersion` (module `SpaceAnalytificationImmersionProof`,
+  candidate `f1d6e36b-b74e-4efb-add1-de6accdfb9c5`, Task 7251
+  `6aae2ba3-a5e5-4ca2-8e1e-209363dee704`, first published at
+  `bb9e086196d00484fd52204977452d922bf3c660`) proves
+  `SpaceAnalytificationImmersionStatement`. For a morphism `f : X' → X` of such
+  spaces and an analytic map compatible with `f` on all affine test points, an
+  open immersion `f` gives an open embedding and a closed immersion `f` gives a
+  closed embedding of underlying spaces.
+- `spaceAnalytificationScheme` (module `SpaceAnalytificationSchemeComparison`,
+  candidate `db752a63-a4cc-4780-97db-506b97d64328`, Task 7250
+  `63c57e1a-a624-4048-914e-dbe4f869dc25`, first published at `c01485976764c3625bd56d1c496735f83b741f75`)
+  proves `SpaceAnalytificationSchemeStatement`. For a separated scheme locally of
+  finite type over `K`, the underlying space of any analytification of its
+  algebraic space is homeomorphic to the glued analytification, compatibly with
+  the affine charts and with rational points.
+
+**Conditional reductions and Task 7100.** `SpaceAnalytificationExistenceReduction`
+(candidate `0b98f7cc-6f93-4021-90ba-e06507888c45`, first published at
+`b86269dd36757fdbea2e51976499d645ca61a625`) derives
+`SpaceAnalytificationExistenceStatement` (Task 7245) from seven explicit
+hypotheses, and `SpaceAnalytificationFibreProductReduction` (candidate
+`3912ea82-90d3-4ff5-aba4-8ddcb0fcce71`, first published at
+`bb9e086196d00484fd52204977452d922bf3c660`) derives
+`SpaceAnalytificationFibreProductStatement` (Task 7249) from three premises: the
+étale Hom-sheaf property, `AffineAnalytificationFibreProductStatement` (now
+proved by `affineAnalytificationFibreProduct`) and
+`LocalizedEtalePullbackStatement`. Each of these premises quantifies over
+complete, ultrametric, nontrivially normed fields. Both are conditional reductions; they
+prove neither target. `SpaceAnalytificationExistenceFiveInputReduction`
+(candidate `e04e68fa-a106-409c-89ec-4e4850f88d10`, first published at
+`5f5d3a914cd43b9dc1cd32c07887a973f561df96`) removes two of the seven
+hypotheses. Input 4 is supplied by `affineAnalytificationFibreProduct`. Input 7,
+joint surjectivity, is supplied by `exists_mem_range_localizedHom` (module
+`AffineAnalytificationJointSurjectivity`, same candidate), which is proved
+without extra hypotheses: for a complete, ultrametric, nontrivially normed field
+`K`, if `K`-algebra maps `A → Bᵢ` are jointly surjective on prime spectra, the
+analytified maps are jointly surjective on points. The module's theorem derives
+`SpaceAnalytificationExistenceStatement` from the remaining five premises, none
+of which has a Library proof. Each premise quantifies over its own class of
+fields:
+
+1. the chart quotient for étale affine chart families of separated algebraic
+   spaces, over every complete, ultrametric, nontrivially normed field;
+2. the étale Hom-sheaf property, over every complete, ultrametric normed field,
+   trivial valuations included;
+3. étale source descent through jointly surjective étale families, over every
+   complete, ultrametric normed field, trivial valuations included;
+4. localized étaleness of analytified étale algebra maps, over every complete,
+   ultrametric, nontrivially normed field;
+5. `LocalizedEtalePullbackStatement`, over every complete, ultrametric normed
+   field, trivial valuations included.
+
+The existence conclusion concerns complete, ultrametric, nontrivially normed
+fields. The seven-input reduction quantifies its corresponding inputs over the
+same classes, and its inputs 4 and 7 over complete, ultrametric, nontrivially
+normed fields. The five-input theorem does not prove the existence statement.
+
+The same Library contains new support for the immersion statements of Tasks
+7299 and 7300. In each of the five main theorems named below, `K` is a single
+complete, ultrametric, nontrivially normed field, and every hypothesis concerns
+that field. `closedImmersion_localizedHom_of_surjective` (module
+`AffineAnalytificationClosedImmersionPreservation`, namespace
+`Langlands.Analytic.AffineAnalytification`, candidate
+`116ed639-a067-47f7-800a-4748cdd2c6cd`, first published at
+`5f5d3a914cd43b9dc1cd32c07887a973f561df96`) proves that a surjective
+`K`-algebra map induces a closed immersion of localized affine
+analytifications, for any presentations. `localizedHom_injective` (module
+`AffineAnalytificationFaithfulness`, candidate
+`e10f014f-da3b-40ca-b6f0-05c9aa3b5bbc`) proves that localized affine
+analytification is injective on algebra maps between fixed presentations. For
+compatible analytifications of separated algebraic spaces with a source locally
+of finite type, `mono_of_mono_analytification_of_isSeparated` (module
+`SpaceAnalytificationMonomorphismDetection`, candidate
+`1a44e3fa-1a93-474e-a4b0-8bf927d18ee4`) proves that an analytic monomorphism
+comes from a monomorphism of algebraic spaces. The reflection theorems
+`isOpenImmersion_of_openImmersion_of_affineReflection` and
+`isClosedImmersion_of_closedImmersion_of_scheme_reflection` for open and closed
+immersions of algebraic spaces (namespace
+`Langlands.Analytic.SpaceAnalytification`, modules
+`SpaceAnalytificationOpenImmersionReflection` and
+`SpaceAnalytificationClosedImmersionReflection`, candidates
+`83e4ddd8-3ade-4ace-9d41-c73e65c7e32b` and
+`9be8f39c-792b-4c25-87c9-f5fc951e7dd9`) concern compatible analytifications of
+separated algebraic spaces locally of finite type over `Spec K` and assume
+further analytic inputs. The open-immersion theorem assumes étale pullbacks and
+reflection of affine étaleness. The closed-immersion theorem requires the
+algebraic morphism `f` to be quasi-compact (hypothesis `IsQuasiCompactMorphism
+f`), in addition to its three analytic inputs: compatible analytic test
+pullbacks, analytic closed-immersion base change, and a scheme reflection
+direction for closed immersions into affine tests. These four candidates were also first
+published at `5f5d3a914cd43b9dc1cd32c07887a973f561df96`. None of these modules proves
+`AffineAnalytificationAnalyticImmersionStatement` (Task 7299) or
+`SpaceAnalytificationAnalyticImmersionStatement` (Task 7300).
+
+For Task 7100, `domainPreservation` (module
+`GeneralizedAffinoid/GroundFieldExtensionDomainProof`, namespace
+`Langlands.Analytic.PresentedAffinoidAlgebra.GroundFieldExtension`, candidate
+`e716003b-d4ad-4db6-bc59-a7748de6e8c7`, task
+`c8ca3813-986d-4603-abb0-11a7e2833364`, first published at
+`bb9e086196d00484fd52204977452d922bf3c660`) proves `DomainPreservationStatement`.
+For complete ultrametric normed fields `K` and `L` with `NormedAlgebra K L`, if a
+bounded map of presented `K`-affinoid algebras represents a subset `V` of the
+spectrum, its ground-field extension represents the preimage of `V` under the
+spectrum projection. The ground-field extension of affinoid atlases is now
+constructed (candidate `54ad2f92-e23d-4823-b988-36c13df555c6`, modules
+`GroundFieldExtensionChartSystem` and `GroundFieldExtensionAtlas`, namespace
+`Langlands.Analytic.IndexedAffinoidAtlas.GroundFieldExtension`, first published
+at `5f5d3a914cd43b9dc1cd32c07887a973f561df96`). Here `K` and `L` are complete
+ultrametric normed fields with `NormedAlgebra K L`; trivial valuations are
+allowed. For every indexed `K`-affinoid atlas `a`, `chartSystem K L a` glues the
+ground-field extensions of the chart algebras along the extended restrictions,
+`presentation K L a` is the resulting `L`-affinoid atlas presentation, and
+`projection K L a` is the continuous map to the original space, surjective by
+`projection_surjective`; this atlas-object construction carries no coherence
+hypothesis. The map part of Task 7100 item 3 follows the trusted operator ruling
+`8973d525bf1558b581429516b9b7c170`: for arbitrary atlas presentations, the
+extension applies to `CompatibleStrongHom` maps; it also covers every
+`StrongHom` whose source is saturated, where compatibility is automatic; and the
+final functor goes from `SaturatedAtlasPresentation K` to the localized category
+`SaturatedAtlasPresentation.LocalizedCategory` over `L`. `StrongHom` itself is
+not strengthened. The ruling's reason is the Frobenius witness `weakMap`
+(module `GroundFieldExtensionCounterexample/WeakMap`, namespace
+`Langlands.Analytic.GroundFieldExtensionCounterexample`, candidate
+`6e02f6e0-d1b4-4923-85f3-09c0fcee0ea5`, first published at
+`2613dbbf784309977c42d9252b78c1e1cd40be63`): a `StrongHom` over
+`F₂` with the trivial norm whose pullbacks on the two triple target charts
+`leftDomain` and `rightDomain` differ by Frobenius. Its author record carries
+three qualifications. First, the unit contains only the `F₂` data and
+`weakMap`; the theorem that `weakMap` has no ground-field extension to `F₄` is
+reserved for a separate statement with its own proof task, after the atlas base
+change of Task 7100 item 3 is in the Library. Second, the Lean development does
+not prove that the target spectrum has exactly four points, that the two triple
+charts are incomparable, or that `weakMap` fails to be a `CompatibleStrongHom`
+(the failure of local compatibility of its pullbacks); its Markdown labels these
+as informal explanations. Third, the generic helper module
+`PolynomialLocusTrivialNorm` (namespace `Langlands.Analytic.PolynomialLocus`)
+works over an ultrametric normed field `K` that is not assumed complete. Its
+trivial-norm lemmas about unit-radius Tate series and unit-radius charts assume
+that every nonzero scalar of `K` has norm 1. Its bounded lift `lift` out of the
+unit-radius chart has no trivial-norm premise; it requires a complete
+ultrametric normed `K`-algebra as target and an algebra map whose values have
+norm at most 1. The independent review
+acknowledges all three in its rationale, and its qualification list is empty.
+The `F₄` non-extension statement and its proof remain pending. Task 7100 has not yet
+published the extension of `CompatibleStrongHom` maps, the extension of
+`StrongHom` maps with saturated source, or the functor from
+`SaturatedAtlasPresentation K`. The descent of that functor through
+quasi-isomorphisms to the localized category over `K`, towers, fibre products
+and the comparison `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ` remain with the parent.
 
 ## Proof publications, 18 November 2026
 
@@ -1694,12 +1996,12 @@ existing analytic foundations alone are not an algebraic-to-analytic bridge.
 
 | Source | Assertion | Lean declarations | Hypotheses and scope | Status and responsible task |
 | --- | --- | --- | --- | --- |
-| Conrad p.19, scheme case; CT §2.2 input | actual finite-type affine scheme analytification | `Langlands.Analytic.AffineAnalytification.Space`, `chartSystem` (`AffineAnalytificationGluing`); `atlas`, `saturated`, `localized` in the same namespace (`AffineAnalytificationAtlas`); `Langlands.Analytic.AffineSchemeAnalytification.spec`, `affineFiniteType`, `CoordinateRing`, `coordinateIso` (`AffineSchemeAnalytification`). Second 17 November audit: `FiniteTypeDomainNormExtensionStatement` | complete nontrivially valued nonarchimedean `K`; every finite-type commutative `K`-algebra, including nonreduced and zero algebras, the empty scheme and zero polynomial variables; actual polynomial-kernel quotient algebras, radius restrictions and atlas laws | constructed with intrinsic chart/algebra laws, independently accepted and published at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`: candidates `80ca43a1-4664-4d0a-b0dd-76e29cf3154e`, `b9fc0541-b432-46ba-aa27-773056f88d21` and `baa423a2-e367-43b8-8e65-accddb38b1bd`, Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd`. The wrapper uses actual global sections and the canonical affine scheme isomorphism in Mathlib's common universe. Affine maps, rational points, seminorm points, the center map and the scalar-extension comparison map are now constructed. The affine rational-point, functoriality, naturality, immersion and seminorm statements are published. The center and base-change statements were first published at `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd`, with proof Tasks 7097 `b92d9284-a406-49b1-af51-96979d7e0e5c` and 7099 `424733ee-4a23-47ac-b5b1-1b6dd83190b7` (second 15 November audit). Their proofs, the universal property and the scalar-extension isomorphism remain open. 16 November audit: the localized maps (`bf6b3e0d-14a1-4538-8cca-60f7c04d41b2`) and the maps from affinoid spectra (`6ff7b975-2be7-42b3-8e1a-80853bf9f638`) are constructed. The universal property for maps from affinoid spectra is stated (`f2a0ffab-aa9a-4ca4-843d-1d19bf009e05`, proof Task 7167 `ee943114-0baa-4432-9cb9-cef090ce46d0`), not proved. Second 17 November audit: the universal property is proved (`affineAnalytificationAffinoidUniversal`, Task 7167), and so is the seminorm description (`affineAnalytificationSeminorm`, Task 7083). The norm input of the center statement is stated, not proved (`FiniteTypeDomainNormExtensionStatement`, `f573206b-1571-41be-9bfb-1b55d4f51c5f`, proof Task 7628 `3370013d-0145-4a35-b24b-4cdf01cdbc0d`). The center and base-change statements remain open (Tasks 7097 and 7099) |
-| Conrad p.19, scheme agreement | affine independence and general scheme analytification by gluing | `Langlands.Analytic.SchemeAnalytification.Space`, `ι`, `localMap`, `desc` (`SchemeAnalytificationSpace`); `SchemeAnalytificationGluingStatement`; affine presentation independence in `AffineAnalytificationFunctorialityStatement` and `AffineAnalytificationLocalizedFunctorialityStatement`; `morphismLocalMap`, `IsAnalytificationMap` (`SchemeAnalytificationMorphism`); `SchemeAnalytificationMorphismStatement`; `SchemeAnalytificationAnalyticStructureStatement`; `Langlands.Analytic.SpaceAnalytification.SpaceAnalytificationSchemeStatement` | complete nontrivially valued nonarchimedean `K`; schemes locally of finite type, without a global affineness or finite-type restriction; actual affine constructions, restriction/gluing maps, independence and scheme morphisms | topological gluing constructed (`bae177d9-72c8-42f5-a1c1-969413a6cdae`, published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`). Its gluing properties are stated but not proved: open embeddings, intersections, the affine case, and separated ⇔ Hausdorff. Statement `2a2bc9e4-067c-428e-9c38-b421c96b84c7` is published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`; proof Task 7087 `d8f36429-3ce4-491e-9d69-e57ed9b29c76`. Affine presentation independence is stated (`352f61b7-1cd9-4582-8c59-71ad6e5c4b31`; proof Task 7085). Not constructed: maps of glued spaces for scheme morphisms and an analytic-space structure on the glued space; parent Task 3519 retains them. 16 November audit: both are now stated, not proved, and neither is constructed explicitly. The compatibility predicate `IsAnalytificationMap` is defined (`b2b8db01-be48-46bd-b636-6cdcf2e5eb76`). The existence and uniqueness of compatible maps of glued spaces, with centers, rational points and composites, is stated (`f1cd2c23-09f8-4fc6-b27c-188775e146b7`, proof Task 7118 `8074ec5b-c845-4d65-8cc4-6a5be50d7a84`). An analytic-space structure on the glued space with the affine analytifications as open domains is stated (`29cca3b4-5253-4c09-84e6-2963eb219508`, proof Task 7120 `032e0d8b-d716-44e2-ab5e-08385567bb55`). Presentation independence in the localized category is stated (`3d06a904-ef32-4438-af1f-e38189f80ab0`, proof Task 7119 `711fd0e4-3a70-4bec-99b8-e062dd42ff6a`). For a separated scheme, the underlying space of its algebraic-space analytification is stated to be homeomorphic to `Space K f`, compatibly with charts and rational points (`b2bfad48-98f5-4ae7-b7ca-6559ac012e19`, proof Task 7250 `63c57e1a-a624-4048-914e-dbe4f869dc25`). Second 17 November audit: affine presentation independence is proved (`affineAnalytificationFunctoriality` and `affineAnalytificationLocalizedFunctoriality`, Tasks 7085 and 7119). The gluing, scheme-morphism, analytic-structure and scheme-comparison statements remain open (Tasks 7087, 7118, 7120 and 7250). 18 November audit: the scheme-morphism statement is proved (`schemeAnalytificationMorphism`, module `SchemeAnalytificationMorphismProof`, Task 7118). A saturated presentation of the glued space is constructed under the open-gluing clauses of the gluing statement (`schemePresentation`, module `SchemeAnalytificationAnalyticStructure`); this reduces the analytic-structure statement to the gluing statement without proving either. The gluing, analytic-structure and scheme-comparison statements remain open (Tasks 7087, 7120 and 7250) |
-| CT Lemma 2.2.1, Definition 2.2.2, Theorems 4.2.1–4.2.2 | actual representable analytic étale sheaf quotient and chart independence | no actual scheme-to-analytic quotient construction identified; the existing analytic category and étale-site infrastructure do not give this bridge. 16 November audit: `Langlands.Analytic.SpaceAnalytification.PointFamily`, `IsAnalytification`, `rationalPoint` (`SpaceAnalytification`); `SpaceAnalytificationExistenceStatement`, `SpaceAnalytificationMorphismStatement` | quasi-separated separated algebraic spaces locally of finite type over complete nontrivially valued nonarchimedean `K`; an actual étale chart `R ⇉ U`, analytic quotient sheaf of `Uᵃⁿ` by `Rᵃⁿ`, its representation by an analytic space and canonical chart comparisons | not stated: parent Task 3519 retains the actual construction and its statement/proof successors; a quotient of bare point sets is insufficient. 16 November audit: characterized and stated, not constructed or proved. `IsAnalytification` (`3cc71666-89a1-4598-a886-cfa3cf413053`) characterizes an analytic space `Y` of the localized category with maps from the analytifications of all affine test points: natural, étale on étale points, jointly surjective from étale points, and sending affine fibre squares to pullbacks. Its Markdown relates it to the quotient of Conrad–Temkin, Definition 4.1.1. Existence for separated spaces locally of finite type is stated (`ab2455e5-f02e-4eb1-b9b7-c97af64005b7`, proof Task 7245 `90ee99f4-d134-4910-8621-d8e186bfea8f`). Uniqueness of compatible morphisms is stated (`193ba29a-ce42-426c-b217-6a0a47ca7a89`, proof Task 7246 `27620dd4-0641-4080-98cc-23e6dbc17f21`); applied to the identity, it makes any two analytifications of a separated space locally of finite type isomorphic by a unique compatible isomorphism. No quotient `Uᵃⁿ/Rᵃⁿ` of an étale chart is constructed |
-| Conrad p.19; CT Theorems 2.2.3 and 2.3.1 | functoriality, fibre products, open and closed immersions and étale maps | `Langlands.Analytic.AffineAnalytification.baseMap`, `strongHom` (`AffineAnalytificationMap`); `AffineAnalytificationFunctorialityStatement`, `AffineAnalytificationRationalPointNaturalityStatement`, `AffineAnalytificationImmersionStatement`; no scheme or algebraic-space interface. 16 November audit: `saturatedHom`, `localizedHom` (`AffineAnalytificationLocalizedMap`); `Langlands.Analytic.SaturatedAtlasPresentation.closedImmersion`, `openImmersion` (`AnalyticImmersion`); the affine statements `AffineAnalytificationLocalizedFunctorialityStatement`, `AffineAnalytificationFibreProductStatement`, `AffineAnalytificationEtaleStatement`, `AffineAnalytificationAnalyticImmersionStatement`; `SchemeAnalytificationMorphismStatement`; the algebraic-space statements `SpaceAnalytificationMorphismStatement`, `SpaceAnalytificationEtaleStatement`, `SpaceAnalytificationFibreProductStatement`, `SpaceAnalytificationImmersionStatement`, `SpaceAnalytificationAnalyticImmersionStatement`. Second 17 November audit: inputs to the affine étale statement, `AffineAnalytificationQuasiFiniteStatement`, `AffineAnalytificationFiniteGermComparisonStatement`, `AffineAnalytificationChartFlatStatement` | the separated locally finite-type class above, every morphism, the actual scheme/quotient realization and actual analytic comparison maps; no smoothness or fixed-dimension restriction | affine case stated, not proved; all three statements were published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`. They cover identities, composites and presentation independence (Task 7085 `6545548c-9d0b-4359-a868-8e52fd060af5`), naturality of analytic rational points (Task 7072 `8a49d73c-1180-41f0-8b5c-03f5bdff1d86`), and closed and basic open immersions (Task 7086 `15296f18-5435-4142-bd49-fdaf726f1890`). Not stated: fibre products, étale maps, and maps for general scheme and algebraic-space morphisms; parent Task 3519. 16 November audit: all are now stated, none proved. Affine: localized functoriality (`3d06a904-ef32-4438-af1f-e38189f80ab0`, Task 7119), fibre products (`0904b7b5-141b-4f86-a0d5-88663ff91632`, Task 7168 `46196b21-c6e5-4dd5-be9c-8f78a02733a5`), unramified, flat and étale maps (`c7d08a08-4b0d-4997-bd27-0fe17fde92c8`, Task 7169 `cd8fa5b0-d6a1-4c30-9d2a-046c2b5fffa1`), and analytic open and closed immersions in both directions (`ac81b9b6-81e8-4084-8be9-c873ad9838a5`, Task 7299 `b71751b5-5608-4451-b3f0-9a02e0ff976a`). Schemes: maps for morphisms (`f1cd2c23-09f8-4fc6-b27c-188775e146b7`, Task 7118). Algebraic spaces: unique compatible morphisms (`193ba29a-ce42-426c-b217-6a0a47ca7a89`, Task 7246), étale maps in both directions (`de3d20be-6c7b-48cc-9663-c31f8d179e6f`, Task 7248 `b20171a8-9554-4f51-b56f-227e66409b5b`), fibre products (`679cbaa9-20ac-4376-8bfb-38bf96474487`, Task 7249 `f65ed7bd-6eb8-46fe-a279-b68de84862b7`), open and closed embeddings of underlying spaces (`85e39fca-a132-4f8d-b1bf-6f1fef0c2819`, Task 7251 `6aae2ba3-a5e5-4ca2-8e1e-209363dee704`) and analytic immersions (`a5fcab52-0a1f-4110-9b56-d3418077be99`, Task 7300 `7392723a-c591-4e5e-ac51-bb0bcc559ebf`). The last asserts both directions for open immersions, the forward direction for closed immersions, and the converse for closed immersions when `f` is quasi-compact; its Markdown gives a counterexample without quasi-compactness. Second 17 November audit: three affine statements are proved: identities, composites and presentation independence (`affineAnalytificationFunctoriality`, Task 7085), naturality of analytic rational points (`affineAnalytificationRationalPointNaturality`, Task 7072) and localized functoriality (`affineAnalytificationLocalizedFunctoriality`, Task 7119). Three inputs to the affine étale statement are stated, not proved: quasi-finiteness is detected by the analytification (`5669db6e-d26c-4385-b61a-cee2a84d0d3a`, Task 7653 `9fb378cf-c57b-465b-bd06-c422a8ab8500`); at points where the analytified map is finite, its flatness and unramifiedness agree with the algebraic ones (`fcb1e6ae-c00f-4f1f-80ec-0af269091da9`, Task 7655 `6f1f9bc0-d74b-4295-81e0-ccba71f22745`); and the chart algebras are flat over the algebra (`949a27d0-4bbe-45d1-8820-1083316b804f`, Task 7657 `f5b29461-c4fc-44cd-8212-aacffc08f5e1`). The other statements of this row remain open in the tasks named above. 18 November audit: closed and basic open immersions of affine analytifications are proved (`affineAnalytificationImmersion`, module `AffineAnalytificationImmersionProof`, Task 7086), and so are the maps for scheme morphisms (`schemeAnalytificationMorphism`, Task 7118). The other statements of this row remain open |
-| Conrad p.19; CT Example 2.3.2, pp.11–12 | rational points and their topology | `Langlands.Analytic.AffineAnalytification.analyticPoint`, `toFieldPoint`, `toAlgPoint` (`AffineAnalytificationRationalPoints`); `AffineAnalytificationRationalPointsStatement`; `Langlands.Analytic.SchemeAnalytification.analyticRationalPoint` (`SchemeAnalytificationRationalPoints`); `FieldValuedPoints` supplies analytic chart characters. 16 November audit: `Langlands.Analytic.SpaceAnalytification.rationalPoint` (`SpaceAnalytification`); `SpaceAnalytificationRationalPointsStatement`, `SpaceAnalytificationSchemeStatement`. 17 November audit: `SpaceAnalytificationFieldPointsStatement`; `localizedFieldPointFunctor`, `localizedFieldPointProjection` (`FieldValuedPoints`) | the same fields and separated locally finite-type spaces; natural equivalence of actual algebraic and analytic rational points and homeomorphism between the affine-chart analytic topology and `etaleChartTopology`; agreement on schemes and descent through actual étale charts | affine case stated, not proved: `72e33ec6-47ec-4dd5-8942-0cf614440d22` was published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`, with proof Task 7084 `a12135e5-19d0-4b8d-88d1-cf7f0bf4a946`. It states a bijection with the atlas `K`-points and a topological embedding of `X(K)` into `Xᵃⁿ`. The scheme map is constructed (`aed9a7e3-4948-4161-aea5-85946e98b44d`, published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`). Its statement `8c5afff7-58f9-4bb3-8fde-46fbc7bbad04` (chart independence, injectivity, range, and an embedding for `schemePointTopology`) was first published at `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd`, with proof Task 7098 `b0baa8b3-a86f-4e40-91d6-2f1b4c947be0`; it is not proved. Not stated: the comparison with `etaleChartTopology` for algebraic spaces and descent through étale charts; parent Task 3519. The already-proved extension-point theorem does not supply them. 16 November audit: the topological comparison for algebraic spaces is stated, not proved. For a separated space locally of finite type, the analytification is Hausdorff and `rationalPoint` is a topological embedding of `X(K)` with `etaleChartTopology` (`a0f0327b-1ee0-44ab-8c95-2aa704cae60b`, proof Task 7247 `6145952e-407a-4855-8def-a8263bedfbf7`). For a separated scheme, the homeomorphism of `SpaceAnalytificationSchemeStatement` carries `rationalPoint` to `analyticRationalPoint` (`b2bfad48-98f5-4ae7-b7ca-6559ac012e19`, Task 7250). Not stated: that the image of `rationalPoint` is the set of `K`-points of the analytic space; parent Task 3519. 17 November audit: now stated, not proved. The `K`-valued points of the analytification are determined by their underlying points and correspond bijectively to `X(K)` over `rationalPoint` (`1e2ba471-6ab3-4524-bd8c-1dc0dff3baf7`, proof Task 7486 `74ee4c92-ea0c-4002-aefc-1da4675e9deb`). Second 17 November audit: the affine statement is proved (`affineAnalytificationRationalPoints`, Task 7084). The scheme, algebraic-space and `K`-valued-point statements remain open (Tasks 7098, 7247, 7250 and 7486) |
-| Conrad p.19; CT Theorem 2.3.5 | arbitrary complete nonarchimedean scalar extension | `Langlands.Analytic.AffineAnalytification.extensionMap`, `baseChangePresentation`, `baseChangeMap` (`AffineAnalytificationScalarExtension`); no isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`. Second 17 November audit (Task 7100 publications): `Langlands.Analytic.PresentedAffinoidAlgebra.GroundFieldExtension.algebra`, `iota`, `lift`, `functor`, `spectrumProjection` (`GeneralizedAffinoid/GroundFieldExtension`); `tensorEquiv` (`GeneralizedAffinoid/GroundFieldExtensionTensor`); `SpectrumProjectionSurjectiveStatement`, `DomainPreservationStatement`; `Langlands.Analytic.AffinoidChartSystem.AtlasProjection` (`AffinoidChartLift`) and `AtlasProjection.TopologyStatement` | every complete nontrivially valued nonarchimedean extension `L/K`, with no finite-degree, separability or algebraicity restriction; canonical analytic isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`, naturality, composition in towers and fibre-product compatibility | comparison map only. For affine `X` and every complete extension `L/K`, the continuous map `(X_L)ᵃⁿ → Xᵃⁿ` is constructed (`0d33d3ef-6034-4014-802f-926ed50b2190`, published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`). Its surjectivity and rational-fibre statement `868763f3-1de0-4519-aaf0-a148c86adbf7` was first published at `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd`, with proof Task 7099 `424733ee-4a23-47ac-b5b1-1b6dd83190b7`; it is not proved. Not constructed or stated: the analytic ground-field extension `(Xᵃⁿ)_L`, the canonical isomorphism, naturality, towers and fibre products; parent Task 3519. A finite-extension-only comparison is insufficient. 16 November audit: unchanged. The parent published Task 7100 `7b5d3807-3a12-4dac-ae8a-a7f93d7fc2b8` to construct the ground-field extension of presented affinoid algebras and affinoid atlases; this Library contains no such construction. Second 17 November audit: Task 7100 has published the algebra level, first at `2613dbbf784309977c42d9252b78c1e1cd40be63`. For ultrametric normed fields with `NormedAlgebra K L`, every presented `K`-affinoid algebra `A` has a presented `L`-affinoid extension `A_L`, with the structure map `iota`, a universal property (`lift`), a functor and the restriction map on spectra. For complete `L`, `tensorEquiv` identifies `A_L` with the completed tensor product `A ⊗̂_K L` as bounded `K`-algebras. For complete `K` and `L`, surjectivity of the spectrum projection is proved (`spectrumProjection_surjective`, module `GeneralizedAffinoid/GroundFieldExtensionSurjectiveProof`, first at `fd643ecec6997ef17c8356ddbc924138631307d9`). Preservation of affinoid domains (`DomainPreservationStatement`) is stated, not proved. `AtlasProjection` packages projections from a quotient chart system over `L` to an affinoid atlas over `K`, and its topological laws are proved (`AtlasProjection.topology`, module `AffinoidChartLiftTopology`, first at `fd643ecec6997ef17c8356ddbc924138631307d9`). The ground-field extension of affinoid atlases and analytic spaces, the canonical isomorphism, naturality, towers and fibre products are still neither constructed nor stated; Task 7100 and parent Task 3519 retain them. 18 November audit: the surjectivity and rational-fibre statement for affine `X` is proved (`affineAnalytificationBaseChange`, module `AffineAnalytificationBaseChangeProof`, Task 7099). The rest of this row is unchanged |
+| Conrad p.19, scheme case; CT §2.2 input | actual finite-type affine scheme analytification | `Langlands.Analytic.AffineAnalytification.Space`, `chartSystem` (`AffineAnalytificationGluing`); `atlas`, `saturated`, `localized` in the same namespace (`AffineAnalytificationAtlas`); `Langlands.Analytic.AffineSchemeAnalytification.spec`, `affineFiniteType`, `CoordinateRing`, `coordinateIso` (`AffineSchemeAnalytification`). Second 17 November audit: `FiniteTypeDomainNormExtensionStatement` | complete nontrivially valued nonarchimedean `K`; every finite-type commutative `K`-algebra, including nonreduced and zero algebras, the empty scheme and zero polynomial variables; actual polynomial-kernel quotient algebras, radius restrictions and atlas laws | constructed with intrinsic chart/algebra laws, independently accepted and published at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`: candidates `80ca43a1-4664-4d0a-b0dd-76e29cf3154e`, `b9fc0541-b432-46ba-aa27-773056f88d21` and `baa423a2-e367-43b8-8e65-accddb38b1bd`, Task 6230 `ad8e3e5e-2e0e-4f05-9924-191590422efd`. The wrapper uses actual global sections and the canonical affine scheme isomorphism in Mathlib's common universe. Affine maps, rational points, seminorm points, the center map and the scalar-extension comparison map are now constructed. The affine rational-point, functoriality, naturality, immersion and seminorm statements are published. The center and base-change statements were first published at `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd`, with proof Tasks 7097 `b92d9284-a406-49b1-af51-96979d7e0e5c` and 7099 `424733ee-4a23-47ac-b5b1-1b6dd83190b7` (second 15 November audit). Their proofs, the universal property and the scalar-extension isomorphism remain open. 16 November audit: the localized maps (`bf6b3e0d-14a1-4538-8cca-60f7c04d41b2`) and the maps from affinoid spectra (`6ff7b975-2be7-42b3-8e1a-80853bf9f638`) are constructed. The universal property for maps from affinoid spectra is stated (`f2a0ffab-aa9a-4ca4-843d-1d19bf009e05`, proof Task 7167 `ee943114-0baa-4432-9cb9-cef090ce46d0`), not proved. Second 17 November audit: the universal property is proved (`affineAnalytificationAffinoidUniversal`, Task 7167), and so is the seminorm description (`affineAnalytificationSeminorm`, Task 7083). The norm input of the center statement is stated, not proved (`FiniteTypeDomainNormExtensionStatement`, `f573206b-1571-41be-9bfb-1b55d4f51c5f`, proof Task 7628 `3370013d-0145-4a35-b24b-4cdf01cdbc0d`). The center and base-change statements remain open (Tasks 7097 and 7099). 18 November audit: the base-change statement is proved (`affineAnalytificationBaseChange`, Task 7099). 19 November audit: the norm input (`finiteTypeDomainNormExtension`, Task 7628) and the center statement (`analytificationCenter`, Task 7097) are proved. Every statement of this row is now proved; the scalar-extension isomorphism belongs to the scalar-extension row |
+| Conrad p.19, scheme agreement | affine independence and general scheme analytification by gluing | `Langlands.Analytic.SchemeAnalytification.Space`, `ι`, `localMap`, `desc` (`SchemeAnalytificationSpace`); `SchemeAnalytificationGluingStatement`; affine presentation independence in `AffineAnalytificationFunctorialityStatement` and `AffineAnalytificationLocalizedFunctorialityStatement`; `morphismLocalMap`, `IsAnalytificationMap` (`SchemeAnalytificationMorphism`); `SchemeAnalytificationMorphismStatement`; `SchemeAnalytificationAnalyticStructureStatement`; `Langlands.Analytic.SpaceAnalytification.SpaceAnalytificationSchemeStatement` | complete nontrivially valued nonarchimedean `K`; schemes locally of finite type, without a global affineness or finite-type restriction; actual affine constructions, restriction/gluing maps, independence and scheme morphisms | topological gluing constructed (`bae177d9-72c8-42f5-a1c1-969413a6cdae`, published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`). Its gluing properties are stated but not proved: open embeddings, intersections, the affine case, and separated ⇔ Hausdorff. Statement `2a2bc9e4-067c-428e-9c38-b421c96b84c7` is published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`; proof Task 7087 `d8f36429-3ce4-491e-9d69-e57ed9b29c76`. Affine presentation independence is stated (`352f61b7-1cd9-4582-8c59-71ad6e5c4b31`; proof Task 7085). Not constructed: maps of glued spaces for scheme morphisms and an analytic-space structure on the glued space; parent Task 3519 retains them. 16 November audit: both are now stated, not proved, and neither is constructed explicitly. The compatibility predicate `IsAnalytificationMap` is defined (`b2b8db01-be48-46bd-b636-6cdcf2e5eb76`). The existence and uniqueness of compatible maps of glued spaces, with centers, rational points and composites, is stated (`f1cd2c23-09f8-4fc6-b27c-188775e146b7`, proof Task 7118 `8074ec5b-c845-4d65-8cc4-6a5be50d7a84`). An analytic-space structure on the glued space with the affine analytifications as open domains is stated (`29cca3b4-5253-4c09-84e6-2963eb219508`, proof Task 7120 `032e0d8b-d716-44e2-ab5e-08385567bb55`). Presentation independence in the localized category is stated (`3d06a904-ef32-4438-af1f-e38189f80ab0`, proof Task 7119 `711fd0e4-3a70-4bec-99b8-e062dd42ff6a`). For a separated scheme, the underlying space of its algebraic-space analytification is stated to be homeomorphic to `Space K f`, compatibly with charts and rational points (`b2bfad48-98f5-4ae7-b7ca-6559ac012e19`, proof Task 7250 `63c57e1a-a624-4048-914e-dbe4f869dc25`). Second 17 November audit: affine presentation independence is proved (`affineAnalytificationFunctoriality` and `affineAnalytificationLocalizedFunctoriality`, Tasks 7085 and 7119). The gluing, scheme-morphism, analytic-structure and scheme-comparison statements remain open (Tasks 7087, 7118, 7120 and 7250). 18 November audit: the scheme-morphism statement is proved (`schemeAnalytificationMorphism`, module `SchemeAnalytificationMorphismProof`, Task 7118). A saturated presentation of the glued space is constructed under the open-gluing clauses of the gluing statement (`schemePresentation`, module `SchemeAnalytificationAnalyticStructure`); this reduces the analytic-structure statement to the gluing statement without proving either. The gluing, analytic-structure and scheme-comparison statements remain open (Tasks 7087, 7120 and 7250). 19 November audit: all three are proved: gluing (`schemeAnalytificationGluing`, Task 7087), the analytic structure of the glued space (`schemeAnalytificationAnalyticStructure`, Task 7120) and the comparison with the algebraic-space analytification of a separated scheme (`spaceAnalytificationScheme`, module `SpaceAnalytificationSchemeComparison`, Task 7250). Every statement of this row is now proved |
+| CT Lemma 2.2.1, Definition 2.2.2, Theorems 4.2.1–4.2.2 | actual representable analytic étale sheaf quotient and chart independence | no actual scheme-to-analytic quotient construction identified; the existing analytic category and étale-site infrastructure do not give this bridge. 16 November audit: `Langlands.Analytic.SpaceAnalytification.PointFamily`, `IsAnalytification`, `rationalPoint` (`SpaceAnalytification`); `SpaceAnalytificationExistenceStatement`, `SpaceAnalytificationMorphismStatement` | quasi-separated separated algebraic spaces locally of finite type over complete nontrivially valued nonarchimedean `K`; an actual étale chart `R ⇉ U`, analytic quotient sheaf of `Uᵃⁿ` by `Rᵃⁿ`, its representation by an analytic space and canonical chart comparisons | not stated: parent Task 3519 retains the actual construction and its statement/proof successors; a quotient of bare point sets is insufficient. 16 November audit: characterized and stated, not constructed or proved. `IsAnalytification` (`3cc71666-89a1-4598-a886-cfa3cf413053`) characterizes an analytic space `Y` of the localized category with maps from the analytifications of all affine test points: natural, étale on étale points, jointly surjective from étale points, and sending affine fibre squares to pullbacks. Its Markdown relates it to the quotient of Conrad–Temkin, Definition 4.1.1. Existence for separated spaces locally of finite type is stated (`ab2455e5-f02e-4eb1-b9b7-c97af64005b7`, proof Task 7245 `90ee99f4-d134-4910-8621-d8e186bfea8f`). Uniqueness of compatible morphisms is stated (`193ba29a-ce42-426c-b217-6a0a47ca7a89`, proof Task 7246 `27620dd4-0641-4080-98cc-23e6dbc17f21`); applied to the identity, it makes any two analytifications of a separated space locally of finite type isomorphic by a unique compatible isomorphism. No quotient `Uᵃⁿ/Rᵃⁿ` of an étale chart is constructed. 19 November audit: the existence and morphism statements remain open (Tasks 7245 and 7246). `SpaceAnalytificationExistenceReduction` (`0b98f7cc-6f93-4021-90ba-e06507888c45`) derives the existence statement from seven explicit hypotheses and proves none of them. `SpaceAnalytificationExistenceFiveInputReduction` (`e04e68fa-a106-409c-89ec-4e4850f88d10`) discharges input 4 by `affineAnalytificationFibreProduct` and input 7 by the unconditional joint-surjectivity theorem `exists_mem_range_localizedHom`; five premises remain unproved, so the existence statement is still open. Three of them (the étale Hom-sheaf property, étale source descent and `LocalizedEtalePullbackStatement`) quantify over every complete ultrametric normed field, trivial valuations included; the chart-quotient and affine-étaleness premises use nontrivially normed fields |
+| Conrad p.19; CT Theorems 2.2.3 and 2.3.1 | functoriality, fibre products, open and closed immersions and étale maps | `Langlands.Analytic.AffineAnalytification.baseMap`, `strongHom` (`AffineAnalytificationMap`); `AffineAnalytificationFunctorialityStatement`, `AffineAnalytificationRationalPointNaturalityStatement`, `AffineAnalytificationImmersionStatement`; no scheme or algebraic-space interface. 16 November audit: `saturatedHom`, `localizedHom` (`AffineAnalytificationLocalizedMap`); `Langlands.Analytic.SaturatedAtlasPresentation.closedImmersion`, `openImmersion` (`AnalyticImmersion`); the affine statements `AffineAnalytificationLocalizedFunctorialityStatement`, `AffineAnalytificationFibreProductStatement`, `AffineAnalytificationEtaleStatement`, `AffineAnalytificationAnalyticImmersionStatement`; `SchemeAnalytificationMorphismStatement`; the algebraic-space statements `SpaceAnalytificationMorphismStatement`, `SpaceAnalytificationEtaleStatement`, `SpaceAnalytificationFibreProductStatement`, `SpaceAnalytificationImmersionStatement`, `SpaceAnalytificationAnalyticImmersionStatement`. Second 17 November audit: inputs to the affine étale statement, `AffineAnalytificationQuasiFiniteStatement`, `AffineAnalytificationFiniteGermComparisonStatement`, `AffineAnalytificationChartFlatStatement` | the separated locally finite-type class above, every morphism, the actual scheme/quotient realization and actual analytic comparison maps; no smoothness or fixed-dimension restriction | affine case stated, not proved; all three statements were published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`. They cover identities, composites and presentation independence (Task 7085 `6545548c-9d0b-4359-a868-8e52fd060af5`), naturality of analytic rational points (Task 7072 `8a49d73c-1180-41f0-8b5c-03f5bdff1d86`), and closed and basic open immersions (Task 7086 `15296f18-5435-4142-bd49-fdaf726f1890`). Not stated: fibre products, étale maps, and maps for general scheme and algebraic-space morphisms; parent Task 3519. 16 November audit: all are now stated, none proved. Affine: localized functoriality (`3d06a904-ef32-4438-af1f-e38189f80ab0`, Task 7119), fibre products (`0904b7b5-141b-4f86-a0d5-88663ff91632`, Task 7168 `46196b21-c6e5-4dd5-be9c-8f78a02733a5`), unramified, flat and étale maps (`c7d08a08-4b0d-4997-bd27-0fe17fde92c8`, Task 7169 `cd8fa5b0-d6a1-4c30-9d2a-046c2b5fffa1`), and analytic open and closed immersions in both directions (`ac81b9b6-81e8-4084-8be9-c873ad9838a5`, Task 7299 `b71751b5-5608-4451-b3f0-9a02e0ff976a`). Schemes: maps for morphisms (`f1cd2c23-09f8-4fc6-b27c-188775e146b7`, Task 7118). Algebraic spaces: unique compatible morphisms (`193ba29a-ce42-426c-b217-6a0a47ca7a89`, Task 7246), étale maps in both directions (`de3d20be-6c7b-48cc-9663-c31f8d179e6f`, Task 7248 `b20171a8-9554-4f51-b56f-227e66409b5b`), fibre products (`679cbaa9-20ac-4376-8bfb-38bf96474487`, Task 7249 `f65ed7bd-6eb8-46fe-a279-b68de84862b7`), open and closed embeddings of underlying spaces (`85e39fca-a132-4f8d-b1bf-6f1fef0c2819`, Task 7251 `6aae2ba3-a5e5-4ca2-8e1e-209363dee704`) and analytic immersions (`a5fcab52-0a1f-4110-9b56-d3418077be99`, Task 7300 `7392723a-c591-4e5e-ac51-bb0bcc559ebf`). The last asserts both directions for open immersions, the forward direction for closed immersions, and the converse for closed immersions when `f` is quasi-compact; its Markdown gives a counterexample without quasi-compactness. Second 17 November audit: three affine statements are proved: identities, composites and presentation independence (`affineAnalytificationFunctoriality`, Task 7085), naturality of analytic rational points (`affineAnalytificationRationalPointNaturality`, Task 7072) and localized functoriality (`affineAnalytificationLocalizedFunctoriality`, Task 7119). Three inputs to the affine étale statement are stated, not proved: quasi-finiteness is detected by the analytification (`5669db6e-d26c-4385-b61a-cee2a84d0d3a`, Task 7653 `9fb378cf-c57b-465b-bd06-c422a8ab8500`); at points where the analytified map is finite, its flatness and unramifiedness agree with the algebraic ones (`fcb1e6ae-c00f-4f1f-80ec-0af269091da9`, Task 7655 `6f1f9bc0-d74b-4295-81e0-ccba71f22745`); and the chart algebras are flat over the algebra (`949a27d0-4bbe-45d1-8820-1083316b804f`, Task 7657 `f5b29461-c4fc-44cd-8212-aacffc08f5e1`). The other statements of this row remain open in the tasks named above. 18 November audit: closed and basic open immersions of affine analytifications are proved (`affineAnalytificationImmersion`, module `AffineAnalytificationImmersionProof`, Task 7086), and so are the maps for scheme morphisms (`schemeAnalytificationMorphism`, Task 7118). The other statements of this row remain open. 19 November audit: proved are affine fibre products (`affineAnalytificationFibreProduct`, Task 7168), the three inputs of the affine étale statement, namely quasi-finiteness (`affineAnalytificationQuasiFinite`, Task 7653), the finite-germ comparison (`affineAnalytificationFiniteGermComparison`, Task 7655) and chart flatness (`affineAnalytificationChartFlat`; Task 7657's `affineAnalytificationChart_flat`), and open and closed embeddings of underlying spaces for algebraic spaces (`spaceAnalytificationImmersion`, Task 7251). Open are affine étale maps (Task 7169), affine analytic immersions (Task 7299), and for algebraic spaces morphisms (Task 7246), étale maps (Task 7248), fibre products (Task 7249) and analytic immersions (Task 7300). `SpaceAnalytificationFibreProductReduction` (`3912ea82-90d3-4ff5-aba4-8ddcb0fcce71`) reduces the fibre-product statement to explicit premises without proving it. Toward the immersion statements, `closedImmersion_localizedHom_of_surjective` proves that a surjective algebra map gives a closed immersion of localized affine analytifications, and `mono_of_mono_analytification_of_isSeparated` reflects analytic monomorphisms for separated algebraic spaces with a source locally of finite type; the space-level open and closed immersion reflection theorems assume further analytic inputs. Neither immersion statement is proved |
+| Conrad p.19; CT Example 2.3.2, pp.11–12 | rational points and their topology | `Langlands.Analytic.AffineAnalytification.analyticPoint`, `toFieldPoint`, `toAlgPoint` (`AffineAnalytificationRationalPoints`); `AffineAnalytificationRationalPointsStatement`; `Langlands.Analytic.SchemeAnalytification.analyticRationalPoint` (`SchemeAnalytificationRationalPoints`); `FieldValuedPoints` supplies analytic chart characters. 16 November audit: `Langlands.Analytic.SpaceAnalytification.rationalPoint` (`SpaceAnalytification`); `SpaceAnalytificationRationalPointsStatement`, `SpaceAnalytificationSchemeStatement`. 17 November audit: `SpaceAnalytificationFieldPointsStatement`; `localizedFieldPointFunctor`, `localizedFieldPointProjection` (`FieldValuedPoints`) | the same fields and separated locally finite-type spaces; natural equivalence of actual algebraic and analytic rational points and homeomorphism between the affine-chart analytic topology and `etaleChartTopology`; agreement on schemes and descent through actual étale charts | affine case stated, not proved: `72e33ec6-47ec-4dd5-8942-0cf614440d22` was published at `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`, with proof Task 7084 `a12135e5-19d0-4b8d-88d1-cf7f0bf4a946`. It states a bijection with the atlas `K`-points and a topological embedding of `X(K)` into `Xᵃⁿ`. The scheme map is constructed (`aed9a7e3-4948-4161-aea5-85946e98b44d`, published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`). Its statement `8c5afff7-58f9-4bb3-8fde-46fbc7bbad04` (chart independence, injectivity, range, and an embedding for `schemePointTopology`) was first published at `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd`, with proof Task 7098 `b0baa8b3-a86f-4e40-91d6-2f1b4c947be0`; it is not proved. Not stated: the comparison with `etaleChartTopology` for algebraic spaces and descent through étale charts; parent Task 3519. The already-proved extension-point theorem does not supply them. 16 November audit: the topological comparison for algebraic spaces is stated, not proved. For a separated space locally of finite type, the analytification is Hausdorff and `rationalPoint` is a topological embedding of `X(K)` with `etaleChartTopology` (`a0f0327b-1ee0-44ab-8c95-2aa704cae60b`, proof Task 7247 `6145952e-407a-4855-8def-a8263bedfbf7`). For a separated scheme, the homeomorphism of `SpaceAnalytificationSchemeStatement` carries `rationalPoint` to `analyticRationalPoint` (`b2bfad48-98f5-4ae7-b7ca-6559ac012e19`, Task 7250). Not stated: that the image of `rationalPoint` is the set of `K`-points of the analytic space; parent Task 3519. 17 November audit: now stated, not proved. The `K`-valued points of the analytification are determined by their underlying points and correspond bijectively to `X(K)` over `rationalPoint` (`1e2ba471-6ab3-4524-bd8c-1dc0dff3baf7`, proof Task 7486 `74ee4c92-ea0c-4002-aefc-1da4675e9deb`). Second 17 November audit: the affine statement is proved (`affineAnalytificationRationalPoints`, Task 7084). The scheme, algebraic-space and `K`-valued-point statements remain open (Tasks 7098, 7247, 7250 and 7486). 19 November audit: proved are the algebraic-space statement (`spaceAnalytificationRationalPoints`, Task 7247), the `K`-valued-point statement (`spaceAnalytificationFieldPoints`, Task 7486) and the scheme comparison (`spaceAnalytificationScheme`, Task 7250). The scheme rational-point statement remains open (Task 7098) |
+| Conrad p.19; CT Theorem 2.3.5 | arbitrary complete nonarchimedean scalar extension | `Langlands.Analytic.AffineAnalytification.extensionMap`, `baseChangePresentation`, `baseChangeMap` (`AffineAnalytificationScalarExtension`); no isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`. Second 17 November audit (Task 7100 publications): `Langlands.Analytic.PresentedAffinoidAlgebra.GroundFieldExtension.algebra`, `iota`, `lift`, `functor`, `spectrumProjection` (`GeneralizedAffinoid/GroundFieldExtension`); `tensorEquiv` (`GeneralizedAffinoid/GroundFieldExtensionTensor`); `SpectrumProjectionSurjectiveStatement`, `DomainPreservationStatement`; `Langlands.Analytic.AffinoidChartSystem.AtlasProjection` (`AffinoidChartLift`) and `AtlasProjection.TopologyStatement` | every complete nontrivially valued nonarchimedean extension `L/K`, with no finite-degree, separability or algebraicity restriction; canonical analytic isomorphism `(Xᵃⁿ)_L ≅ (X_L)ᵃⁿ`, naturality, composition in towers and fibre-product compatibility | comparison map only. For affine `X` and every complete extension `L/K`, the continuous map `(X_L)ᵃⁿ → Xᵃⁿ` is constructed (`0d33d3ef-6034-4014-802f-926ed50b2190`, published at `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22`). Its surjectivity and rational-fibre statement `868763f3-1de0-4519-aaf0-a148c86adbf7` was first published at `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd`, with proof Task 7099 `424733ee-4a23-47ac-b5b1-1b6dd83190b7`; it is not proved. Not constructed or stated: the analytic ground-field extension `(Xᵃⁿ)_L`, the canonical isomorphism, naturality, towers and fibre products; parent Task 3519. A finite-extension-only comparison is insufficient. 16 November audit: unchanged. The parent published Task 7100 `7b5d3807-3a12-4dac-ae8a-a7f93d7fc2b8` to construct the ground-field extension of presented affinoid algebras and affinoid atlases; this Library contains no such construction. Second 17 November audit: Task 7100 has published the algebra level, first at `2613dbbf784309977c42d9252b78c1e1cd40be63`. For ultrametric normed fields with `NormedAlgebra K L`, every presented `K`-affinoid algebra `A` has a presented `L`-affinoid extension `A_L`, with the structure map `iota`, a universal property (`lift`), a functor and the restriction map on spectra. For complete `L`, `tensorEquiv` identifies `A_L` with the completed tensor product `A ⊗̂_K L` as bounded `K`-algebras. For complete `K` and `L`, surjectivity of the spectrum projection is proved (`spectrumProjection_surjective`, module `GeneralizedAffinoid/GroundFieldExtensionSurjectiveProof`, first at `fd643ecec6997ef17c8356ddbc924138631307d9`). Preservation of affinoid domains (`DomainPreservationStatement`) is stated, not proved. `AtlasProjection` packages projections from a quotient chart system over `L` to an affinoid atlas over `K`, and its topological laws are proved (`AtlasProjection.topology`, module `AffinoidChartLiftTopology`, first at `fd643ecec6997ef17c8356ddbc924138631307d9`). The ground-field extension of affinoid atlases and analytic spaces, the canonical isomorphism, naturality, towers and fibre products are still neither constructed nor stated; Task 7100 and parent Task 3519 retain them. 18 November audit: the surjectivity and rational-fibre statement for affine `X` is proved (`affineAnalytificationBaseChange`, module `AffineAnalytificationBaseChangeProof`, Task 7099). The rest of this row is unchanged. 19 November audit: preservation of affinoid domains is proved (`domainPreservation`, module `GeneralizedAffinoid/GroundFieldExtensionDomainProof`, candidate `e716003b-d4ad-4db6-bc59-a7748de6e8c7`). The ground-field extension of affinoid atlases is constructed: `Langlands.Analytic.IndexedAffinoidAtlas.GroundFieldExtension.chartSystem`, `presentation`, `projection` and `projection_surjective` (`GroundFieldExtensionChartSystem`, `GroundFieldExtensionAtlas`, candidate `54ad2f92-e23d-4823-b988-36c13df555c6`), for complete ultrametric normed fields `K`, `L` with `NormedAlgebra K L`, with no coherence hypothesis on the atlas. Under the trusted operator ruling `8973d525bf1558b581429516b9b7c170`, Task 7100's map part extends `CompatibleStrongHom` maps between arbitrary presentations and every `StrongHom` with saturated source, and gives the functor from `SaturatedAtlasPresentation K` to the localized category over `L`; `StrongHom` is not strengthened, because of the Frobenius witness `weakMap` (`GroundFieldExtensionCounterexample/WeakMap`). These map extensions and the functor (Task 7100), its descent through quasi-isomorphisms to the localized category over `K`, the canonical isomorphism, naturality, towers and fibre products (parent Task 3519) are still neither constructed nor stated |
 
 ## Derived intermediate statements and reductions
 
@@ -2142,8 +2444,8 @@ These carried proof tasks are stale: their targets are proved in the Library com
    henselian/quasi-separated scope, without completeness or local separatedness.
 2. Complete the retained analytification pipeline using Task 6230
    `ad8e3e5e-2e0e-4f05-9924-191590422efd`'s published finite-type affine
-   constructions. Twenty published analytification statements need proofs,
-   each through its own proof task published by the parent. Nine earlier
+   constructions. Eight published analytification statements need proofs,
+   each through its own proof task published by the parent. Twenty-one earlier
    statements are now proved. Six are recorded in the second 17 November audit:
    affine rational points
    (Task 7084 `a12135e5-19d0-4b8d-88d1-cf7f0bf4a946`), functoriality and
@@ -2155,31 +2457,29 @@ These carried proof tasks are stale: their targets are proved in the Library com
    are recorded in the 18 November audit: immersions on underlying spaces (Task
    7086 `15296f18-5435-4142-bd49-fdaf726f1890`), the ground-field extension map
    (Task 7099 `424733ee-4a23-47ac-b5b1-1b6dd83190b7`) and scheme morphisms (Task
-   7118 `8074ec5b-c845-4d65-8cc4-6a5be50d7a84`). The open affine and scheme
-   statements are scheme gluing (Task 7087
-   `d8f36429-3ce4-491e-9d69-e57ed9b29c76`), the center maps (Task 7097
-   `b92d9284-a406-49b1-af51-96979d7e0e5c`), scheme rational points (Task 7098
-   `b0baa8b3-a86f-4e40-91d6-2f1b4c947be0`), the analytic structure of the glued
-   space (Task 7120 `032e0d8b-d716-44e2-ab5e-08385567bb55`), affine fibre
-   products (Task 7168 `46196b21-c6e5-4dd5-be9c-8f78a02733a5`) and affine étale
-   maps (Task 7169 `cd8fa5b0-d6a1-4c30-9d2a-046c2b5fffa1`). Their open
-   prerequisite statements are the norm extension to finitely generated domains
-   (Task 7628 `3370013d-0145-4a35-b24b-4cdf01cdbc0d`, for the center maps) and,
-   for the étale maps, quasi-finiteness (Task 7653
+   7118 `8074ec5b-c845-4d65-8cc4-6a5be50d7a84`). Twelve are recorded in the
+   19 November audit: the norm extension to finitely generated domains
+   (Task 7628 `3370013d-0145-4a35-b24b-4cdf01cdbc0d`), chart flatness (Task 7657
+   `f5b29461-c4fc-44cd-8212-aacffc08f5e1`), quasi-finiteness (Task 7653
    `9fb378cf-c57b-465b-bd06-c422a8ab8500`), the finite-germ comparison (Task 7655
-   `6f1f9bc0-d74b-4295-81e0-ccba71f22745`) and chart flatness (Task 7657
-   `f5b29461-c4fc-44cd-8212-aacffc08f5e1`). The algebraic-space
-   statements are existence (Task 7245 `90ee99f4-d134-4910-8621-d8e186bfea8f`),
-   morphisms (Task 7246 `27620dd4-0641-4080-98cc-23e6dbc17f21`), rational points
-   (Task 7247 `6145952e-407a-4855-8def-a8263bedfbf7`), étale maps (Task 7248
-   `b20171a8-9554-4f51-b56f-227e66409b5b`), fibre products (Task 7249
-   `f65ed7bd-6eb8-46fe-a279-b68de84862b7`), the scheme case (Task 7250
-   `63c57e1a-a624-4048-914e-dbe4f869dc25`) and immersions of underlying spaces
-   (Task 7251 `6aae2ba3-a5e5-4ca2-8e1e-209363dee704`). Analytic immersions are
-   stated for affine schemes (Task 7299 `b71751b5-5608-4451-b3f0-9a02e0ff976a`)
-   and for algebraic spaces (Task 7300 `7392723a-c591-4e5e-ac51-bb0bcc559ebf`).
-   `K`-valued points of the analytification of an algebraic space are stated
-   (Task 7486 `74ee4c92-ea0c-4002-aefc-1da4675e9deb`).
+   `6f1f9bc0-d74b-4295-81e0-ccba71f22745`), affine fibre products (Task 7168
+   `46196b21-c6e5-4dd5-be9c-8f78a02733a5`), the center maps (Task 7097
+   `b92d9284-a406-49b1-af51-96979d7e0e5c`), scheme gluing (Task 7087
+   `d8f36429-3ce4-491e-9d69-e57ed9b29c76`), the analytic structure of the glued
+   space (Task 7120 `032e0d8b-d716-44e2-ab5e-08385567bb55`), and for algebraic
+   spaces rational points (Task 7247 `6145952e-407a-4855-8def-a8263bedfbf7`),
+   `K`-valued points (Task 7486 `74ee4c92-ea0c-4002-aefc-1da4675e9deb`),
+   immersions of underlying spaces (Task 7251
+   `6aae2ba3-a5e5-4ca2-8e1e-209363dee704`) and the scheme case (Task 7250
+   `63c57e1a-a624-4048-914e-dbe4f869dc25`). The eight open statements are scheme
+   rational points (Task 7098 `b0baa8b3-a86f-4e40-91d6-2f1b4c947be0`), affine
+   étale maps (Task 7169 `cd8fa5b0-d6a1-4c30-9d2a-046c2b5fffa1`), affine analytic
+   immersions (Task 7299 `b71751b5-5608-4451-b3f0-9a02e0ff976a`), and for
+   algebraic spaces existence (Task 7245 `90ee99f4-d134-4910-8621-d8e186bfea8f`),
+   morphisms (Task 7246 `27620dd4-0641-4080-98cc-23e6dbc17f21`), étale maps
+   (Task 7248 `b20171a8-9554-4f51-b56f-227e66409b5b`), fibre products (Task 7249
+   `f65ed7bd-6eb8-46fe-a279-b68de84862b7`) and analytic immersions (Task 7300
+   `7392723a-c591-4e5e-ac51-bb0bcc559ebf`).
    The dated audits above give each statement's first publication commit.
    The parent counts a published proof of the existence statement (Task 7245) as
    the construction of the analytification of a separated algebraic space locally
@@ -2191,11 +2491,19 @@ These carried proof tasks are stale: their targets are proved in the Library com
    naturality, towers and fibre products. Task 7100
    `7b5d3807-3a12-4dac-ae8a-a7f93d7fc2b8`, published by the parent, constructs
    the ground-field extension of presented affinoid algebras and affinoid atlases.
-   Its algebra-level construction is in the Library (scalar-extension row); its
-   atlas-level and space-level constructions are not. The parent retains this construction
-   and its statement interfaces; the proofs belong
-   to the proof tasks. The existing extension-point endpoint proof does not
-   discharge them.
+   Its algebra-level construction, the preservation of affinoid domains and the
+   atlas-level construction with its projection are in the Library
+   (scalar-extension row). Its map part, as fixed by the trusted operator ruling
+   `8973d525bf1558b581429516b9b7c170`, is not: the extension of
+   `CompatibleStrongHom` maps between arbitrary presentations, the extension of
+   every `StrongHom` with saturated source, and the functor from
+   `SaturatedAtlasPresentation K` to the localized category over `L`. The parent
+   retains the descent of that functor through quasi-isomorphisms to the
+   localized category over `K`, towers, fibre products, the comparison
+   and their statement interfaces; the proofs belong to the proof tasks. The
+   existing extension-point endpoint proof does not discharge them. Of the
+   existence statement's seven reduction inputs, two are now discharged
+   (`SpaceAnalytificationExistenceFiveInputReduction`); five remain unproved.
 3. Obtain a fresh independent whole-paper coverage review after verifying every
    retained mathematical publication and comparison. The earlier accepted
    focused notes and the present publication update do not certify whole-paper

@@ -72,6 +72,7 @@ mathematical content.
 | VII.1.1 Lemma (i)–(ii) | 220–221 / 226–227 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S: Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`). Necessity P: `arbitraryParabolicCasselmanNecessity`. The corrected condition is the strictly positive root cone from the final decay test in the proof. The printed coroot-chamber necessity fails on an actual square-integrable representation of `Sp₄(ℚ₃)` (I2) |
 | VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper` | P for the overlap-tolerant upper estimate on the full central quotient used by sufficiency, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. The printed disjointness and equality fail by overlap of the labelled cells (I3) |
+| VII.1.2 double-coset volume following (VII.1.2.2) | 222–223 / 228–229 | `Langlands.Aubert.General.standardBasisMember_rayIndex`, `Langlands.Aubert.General.RationalPointFamily.rationalLatticeQuotientVolume` | P for the finite-translate upper bound on the full central quotient, checked at Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. The printed equality at `m=fz` lacks the Levi intersection index. I4 gives the exact correction on paper |
 | VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S: task 004e00e1; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
 | VII.1.3 Corollary (i)–(iii) | 226 / 232 | `RP.MaximalLeviBlockStatements` | S: task f4046ca6. Derived: (ii) is stated as the nonvanishing criterion behind faithfulness (the passage to faithfulness of `r_D` uses the Bernstein decomposition of `M(M)` and A.VIII.1); (iii) is stated as `i_P^G` full, faithful and essentially surjective between the blocks. The functor `r_D`, its faithfulness, the unit isomorphism `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`: `RP.MaximalLeviBlockProjectionEquivalenceStatement` (`Exponents/MaximalLeviBlockProjectionStatement`; the projection onto `M(M)_D` is a left adjoint of the inclusion of the block, whose existence is asserted). S: published candidate `17566075` (Reviewer 2361; integration ID `596546b6faf9495ba266d58426b8d8d3`, first Library commit `c40a0134`); proof Task 6621 `3c3f4d9e` |
 
@@ -288,6 +289,16 @@ as recorded.
   and the labelled sum is two. Summing each distinct cell once gives equality.
   The Lean sufficiency assembly uses subadditivity on the countable cover.
   [Counterexample and corrected integral bound](../errata/renard-vii12-cartan-cover.md)
+
+- **I4. VII.1.2, double-coset volume (printed pp. 222–223 / PDF pp. 228–229).**
+  For the upper \((2,1)\) parabolic of \(\mathrm{GL}_3(F)\),
+  \(m=\operatorname{diag}(\varpi^3,\varpi^2,1)\) lies in the source's \(S_M(1)\).
+  For a principal congruence subgroup \(K\), the double-coset volume ratio
+  is \(q^6\), while \(\delta_P(m)=q^5\). The exact formula under the two
+  radical contractions includes \([K_M:K_M\cap mK_Mm^{-1}]\). The published
+  estimates use split-component rays and absorb finite translates by
+  submultiplicativity of double-coset indices.
+  [Counterexample, index formula and upper bound](../errata/renard-vii12-iwahori-volume.md)
 
 ## Genuine gaps of Chapter VII
 

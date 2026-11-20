@@ -118,7 +118,12 @@ Section 13.2.6. Section 13.3.3 has a partial published definition:
 `g_{x,r}` is the span of supplied lattices `z_r` and `u_psi`; on these
 lattices the Section 13.3.1 row also records the extension to real
 depths under a periodicity hypothesis and the dual lattices.
-The other ten rows retain
+Proposition 13.7.4 has a partial published statement of part (1) for
+points of one apartment and supplied Lie lattices: if `X` lies in
+`g_{x,r}` and the translate `X + g_{x,r+}` meets `g_{y,s}` for some
+`s > r`, the translate contains an element that a cocharacter contracts
+to zero (Definition 13.6.5).
+The other nine rows retain
 empty formal-status and evidence fields. The remaining Bundle B
 targets still require public ledger entries. Private source audits and
 unsubmitted drafts are not publication evidence.
@@ -1440,6 +1445,27 @@ fields of every row are unchanged. The header's count of the rows
 without a formal status, which read thirteen after the previous pass
 although twelve rows were source-only, is corrected to the current ten.
 
+A thirty-sixth pass on 19 November 2026 updates two rows, adds none and
+changes one status: Proposition 13.7.4 changes from source-only to
+`statement`. It records `DegenerateCosetOfDeeperIntersectionStatement`
+(artifact `68b96535-c0a8-4e5c-93bf-acbde4568eb0`, first published in
+Library commit `5f5d3a91`), a statement of part (1) for points of one
+apartment on the supplied real-depth Lie lattices of the Section 13.3.1
+row, and the Definition 13.6.5 predicates `IsCocharacterNilpotent` and
+`IsDegenerateLieCoset` with `cocharacterPositiveLie` (artifact
+`d7d91025-ba29-4db6-9cd6-683721769c2a`, first published in Library
+commit `b86269dd`). The Proposition 13.6.7 row stays source-only; a new
+dependency entry names these definitions and the inputs its two clauses
+lack. Four declarations were inspected with `lean_check` in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096` at Library commit `5f5d3a91`, and
+every reported axiom set is `propext`, `Classical.choice`, `Quot.sound`.
+The module `KPNilpotentCoset` is byte-identical between its first commit
+and Library commit `5f5d3a91`, which first published
+`KPDegenerateCosetStatement`. The header, Bundle E, coverage and README
+texts record the changes, and the header's count of rows without a
+formal status changes from ten to nine. The source and correction fields
+of every row are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -1546,7 +1572,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), Theorem 13.5.1 a partial published statement of part (1) on supplied data with the component isomorphisms for the centralizer and the root blocks and a double-root commutator premise assumed, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); for supplied integral-model and reductive-quotient data, g_{x,0}/g_{x,0+} is proved isomorphic to Lie(Gred_x) for an intrinsic g_{x,0+}, which equals the Lie lattice of a supplied model under hypotheses standing for Proposition 8.5.18 and Section 13.2.6 (Section 13.3.2); the span description of g_{x,r} has a partial published definition on supplied lattices (Section 13.3.3), on which the real-depth extension under a periodicity hypothesis and the dual lattices g^*_{x,r} are defined (Section 13.3.1); the other ten rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), Theorem 13.5.1 a partial published statement of part (1) on supplied data with the component isomorphisms for the centralizer and the root blocks and a double-root commutator premise assumed, Proposition 13.7.4 a partial published statement of part (1) for points of one apartment on supplied Lie lattices, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); for supplied integral-model and reductive-quotient data, g_{x,0}/g_{x,0+} is proved isomorphic to Lie(Gred_x) for an intrinsic g_{x,0+}, which equals the Lie lattice of a supplied model under hypotheses standing for Proposition 8.5.18 and Section 13.2.6 (Section 13.3.2); the span description of g_{x,r} has a partial published definition on supplied lattices (Section 13.3.3), on which the real-depth extension under a periodicity hypothesis and the dual lattices g^*_{x,r} are defined (Section 13.3.1); the other nine rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -7976,7 +8002,8 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "For instability the compatible cocharacter extends to the actual integral model and reduces to an f-cocharacter contracting the graded vector; use the action of 13.3.4. This is a separate clause and does not require the existence of a literal optimal point",
         "Independent empty-root boundary, not an authors' erratum: for G_m/Q_2, the reduced building has one point x (4.1.4(A0), PDF p.189), Sigma is empty, and (13.1.2) gives g_{x,1}=2 Z_2 and g_{x,1+}=4 Z_2. Zero is contracted by the identity cocharacter, so Xi=0+g_{x,1+} is degenerate by 13.6.5. There is no optimal y under 13.4.2, yet Xi is already contained in g_{x,2} and its zero graded vector is unstable. Thus the optimality requirement and 13.4.4 need resolution; this example does not refute depth raising or instability. The 1 November 2024 corrections, PDF pp.49-50, do not repair 13.4.2, 13.4.4 or this clause of 13.6.7",
         "The printed Remark 13.6.6 example is not a witness separating cocharacter nilpotence from Jordan nilpotence. In characteristic two, for x nonzero, X=[[1,x],[x^(-1),1]], B=[[x,1],[1,0]] and B^(-1)=[[0,1],[1,x]] satisfy det(B)=1, X^2=0 and B^(-1) X B=x^(-1) E_12. The k-defined cocharacter lambda(u)=B diag(u,u^(-1)) B^(-1) has lambda(u) X lambda(u)^(-1)=u^2 X, so it contracts X to zero. Nonconjugacy to E_12 does not imply absence of a contracting cocharacter. This is an independently demonstrated source discrepancy, not an authors' erratum or a Lean result; the 1 November 2024 corrections do not repair 13.6.6. Any broader non-equivalence claim needs a separately checked witness",
-        "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row."
+        "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row.",
+        "Library status (thirty-sixth pass, Library commit 5f5d3a91): Definition 13.6.5 for g is published as IsCocharacterNilpotent and IsDegenerateLieCoset (module Langlands.Geometry.Building.KPNilpotentCoset, recorded in the Proposition 13.7.4 row). Proposition 13.6.7 has no Lean statement. The Library defines no optimal points (Definition 13.4.2), which its first clause needs. Its instability clause needs an algebraic action of Gred_x on g_{x,r}/g_{x,r+}; the published representation of a subgroup of G(F) on these graded pieces (module Langlands.Geometry.Building.KPLieGradedAction) is an action of rational points, not that algebraic action."
       ],
       "consumer_or_regression": "After positive-depth acceptance, test full-coset containment, the strict s>r inequality, the G_m/Q_2 zero coset at r=1 (degenerate, no literal optimal point, contained at depth 2, unstable), and the explicit contraction of the printed characteristic-two matrix. Use the k-cocharacter definition; any comparison with Jordan nilpotence needs a separate proof.",
       "formal_status": null,
@@ -8002,24 +8029,69 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
         "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
-        "r is real and Xi is a Lie coset in g_{x,r}/g_{x,r+}. Nilpotent means algebraically contracted to zero by a k-defined cocharacter G_m to G, as in 13.6.5. Degenerate means containing such an element. Instability refers to the algebraic Gred_x-orbit closure in the f-rational graded representation of 13.3.4. This is distinct from valuation-topology closure of a G(k)-orbit in g."
+        "r is real and Xi is a Lie coset in g_{x,r}/g_{x,r+}. Nilpotent means algebraically contracted to zero by a k-defined cocharacter G_m to G, as in 13.6.5. Degenerate means containing such an element. Instability refers to the algebraic Gred_x-orbit closure in the f-rational graded representation of 13.3.4. This is distinct from valuation-topology closure of a G(k)-orbit in g.",
+        "Recorded Lean scope (part (1) for points of one apartment, on supplied Lie lattices): DegenerateCosetOfDeeperIntersectionStatement (module Langlands.Geometry.Building.KPDegenerateCosetStatement) quantifies over every nonarchimedean local field F, every G over Spec F with [IsAffineHom G.X.hom], every ParahoricBuildingData P of G, every LieFiltrationData L (supplied lattices z_r in Lie(Z) and u_psi in the root spaces, module Langlands.Geometry.Building.KPLieFiltration), all points x and y of the apartment and all real r < s. Neither the apartment axioms nor periodicity of L is assumed. For X in g_{x,r} (lieFiltrationReal, the real-depth extension of the Section 13.3.1 row), if some Y in g_{y,s} satisfies Y - X in g_{x,r+} (lieFiltrationPlusReal, the supremum of the g_{x,t} with t > r), it asserts IsDegenerateLieCoset g_{x,r+} X: some Y' with Y' - X in g_{x,r+} satisfies IsCocharacterNilpotent, that is, Y' lies in cocharacterPositiveLie nu, the sum of the weight spaces of Ad o nu with positive weight, for some homomorphism nu from G_m to G over F (KP Definition 13.6.5, module Langlands.Geometry.Building.KPNilpotentCoset). Under IsPeriodic, g_{x,r+} lies in g_{x,r} and X + g_{x,r+} is KP's coset in g_{x,r}/g_{x,r+}. For arbitrary L that inclusion can fail (the module's Markdown gives a G_m example), and the statement concerns the translate X + g_{x,r+} in Lie(G). Points y off the apartment and part (2), instability under the algebraic Gred_x-action, are not stated."
       ],
       "conclusion": "If there exist y in B(G) and real s>r with Xi intersect g_{y,s} nonempty, then Xi is degenerate. Also, Xi is unstable under the algebraic Gred_x-action if and only if Xi is degenerate. The first implication needs only an intersection, whereas the depth-raising clause printed in 13.6.7 asks for whole-coset containment and has the separate empty-root optimality obstruction recorded in its row. No local compactness or perfect-k hypothesis is added to this result; the perfect-residue/Henselian Chapter 13 setup is retained.",
-      "lean_declarations": [],
-      "modules": [],
+      "lean_declarations": [
+        "Langlands.Geometry.Building.DegenerateCosetOfDeeperIntersectionStatement",
+        "Langlands.Geometry.Building.IsDegenerateLieCoset",
+        "Langlands.Geometry.Building.IsCocharacterNilpotent",
+        "Langlands.Geometry.Building.cocharacterPositiveLie"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.KPDegenerateCosetStatement",
+        "Langlands.Geometry.Building.KPNilpotentCoset"
+      ],
       "dependencies": [
         "Lemma 13.7.3 proves g_{y,s} contained in g_{x,s}+N using an apartment displacement and its root-space decomposition, with N the cocharacter-defined nilpotent set",
         "Use only the separate instability clause of Proposition 13.6.7 for degenerate implies unstable, not its optimal-point assertion or an empty-root use of 13.4.4",
         "For unstable implies degenerate, Kempf's rational cocharacter theorem over perfect f gives a contracting f-cocharacter. Conjugacy of maximal f-split tori and the actual surjection P_x to Gred_x(f) lift it through a split o-torus. A small apartment translation raises the depth, and part (1) applies",
         "The additional perfect-k or locally compact hypotheses of nearby 13.7.2 concern the valuation-topology set N' and N=N', not the algebraic instability equivalence of 13.7.4. Register and read Kempf's original before a proof relies on that theorem directly",
-        "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row."
+        "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row.",
+        "Recorded statement (thirty-sixth pass, Library commit 5f5d3a91): DegenerateCosetOfDeeperIntersectionStatement, artifact 68b96535-c0a8-4e5c-93bf-acbde4568eb0 (lean.statement, Task 3557), first in Library commit 5f5d3a914cd43b9dc1cd32c07887a973f561df96; the Definition 13.6.5 predicates IsCocharacterNilpotent and IsDegenerateLieCoset with cocharacterPositiveLie, artifact d7d91025-ba29-4db6-9cd6-683721769c2a (lean.definition, Task 3557), first in Library commit b86269dd36757fdbea2e51976499d645ca61a625. The lattices lieFiltrationReal and lieFiltrationPlusReal are recorded in the Section 13.3.1 row. The expected proof follows Lemma 13.7.3 inside one apartment: it splits an element of g_{y,s} into a part in g_{x,s}, hence in g_{x,r+}, and root-space terms that a cocharacter of S near a lift of y - x contracts; the module's Markdown gives the argument, including negative depths. The statement has no proof and no proof task; the positive-depth gate of the entry above applies to any proof."
       ],
       "consumer_or_regression": "After positive-depth acceptance, test intersection versus containment and distinguish algebraic residue-field orbit closure from valuation-topology G(k)-orbit closure. Preserve the actual reduction surjectivity used in lifting cocharacters.",
-      "formal_status": null,
+      "formal_status": "statement",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-      "acceptance_artifact_ids": [],
-      "publication_commits": [],
-      "axiom_reports": [],
+      "acceptance_artifact_ids": [
+        "68b96535-c0a8-4e5c-93bf-acbde4568eb0",
+        "d7d91025-ba29-4db6-9cd6-683721769c2a"
+      ],
+      "publication_commits": [
+        "5f5d3a914cd43b9dc1cd32c07887a973f561df96",
+        "b86269dd36757fdbea2e51976499d645ca61a625"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.DegenerateCosetOfDeeperIntersectionStatement",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "9948fafb-c83a-42cd-8a4c-804ee4a288d3",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-19 at Library commit 5f5d3a91; kind definition, at universe level u, statement_returns_prop true; that commit first published the module."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IsDegenerateLieCoset",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "03d4e498-7a5d-482d-b021-9266db175b55",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-19 at Library commit 5f5d3a91; kind definition, at universe level u, statement_returns_prop true; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.IsCocharacterNilpotent",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "4be23dde-6826-41a3-9af9-02788303705c",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-19 at Library commit 5f5d3a91; kind definition, at universe level u, statement_returns_prop true; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.cocharacterPositiveLie",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "fb29ce9c-95fd-473b-be58-ac13d5a28bb4",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 3557 on 2026-11-19 at Library commit 5f5d3a91; kind definition, at universe level u, a submodule-valued definition; the module was first published in Library commit b86269dd and is byte-identical between that commit and Library commit 5f5d3a91."
+        }
+      ],
       "external_code": []
     },
     {
@@ -8667,9 +8739,11 @@ hypotheses (Section 13.3.2, `conditional`); that KP's intrinsic span
 description of `g_{x,r}` is a published definition on supplied lattices
 (Section 13.3.3, `definition`); and that the filtration, its extension
 to real depths under a periodicity hypothesis and the dual lattices are
-defined on those lattices (Section 13.3.1). The other two rows remain
-source-only. The two instability targets remain behind the separate
-positive-depth acceptance test.
+defined on those lattices (Section 13.3.1). The thirty-sixth pass
+records a partial published statement of part (1) of Proposition
+13.7.4 on supplied Lie lattices, so that row is `statement`.
+Proposition 13.6.7 remains source-only. The two instability targets
+remain behind the separate positive-depth acceptance test.
 
 ### Ambient fields and torus filtrations
 
@@ -9052,6 +9126,20 @@ valuation-topology orbit closure; they are not added to Proposition
 13.7.4. The relevant instability uses algebraic orbit closure over f.
 Lifting a contracting residue-field cocharacter uses the actual
 surjection `P_x → Gred_x(f)`.
+
+The published `DegenerateCosetOfDeeperIntersectionStatement`
+(Proposition 13.7.4 row) states part (1) for points `x` and `y` of one
+apartment and the real-depth lattices of the Section 13.3.1 row, with
+nilpotence and degeneracy given by the published Definition 13.6.5
+predicates `IsCocharacterNilpotent` and `IsDegenerateLieCoset`. If `X`
+lies in `g_{x,r}` and the translate `X + g_{x,r+}` meets `g_{y,s}` for
+some `s > r`, the translate contains a nilpotent element. Under the
+periodicity hypothesis `IsPeriodic`, `g_{x,r+}` lies in `g_{x,r}` and
+the translate is KP's coset in `g_{x,r}/g_{x,r+}`. For arbitrary
+supplied lattices that inclusion can fail, and the statement concerns
+the translate in `Lie(G)`. Part (2) and Proposition 13.6.7 have no Lean
+statement: the Library has no algebraic action of `Gred_x` on the graded
+pieces and no optimal points.
 
 These later rows do not extend the propositions to dual cosets, supply
 minimal K-types, or prove supercuspidality. Their implementation remains
