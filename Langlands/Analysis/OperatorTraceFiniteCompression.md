@@ -1,0 +1,3 @@
+# Operator traces through finite-dimensional Hilbert spaces
+
+Every bounded endomorphism of a finite-dimensional Hilbert space is trace class because its diagonal summability condition is a finite sum. A finite orthonormal basis computes its trace by the usual diagonal sum. For a bounded product factoring through a finite-dimensional Hilbert space, apply the Library's rectangular trace cyclicity to the identity of that space and the insertion and projection maps. This establishes trace-class membership of the product and identifies its trace with that of the reversed product on the finite-dimensional space. The results are internal to the Library's operator trace development.

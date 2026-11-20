@@ -43,13 +43,6 @@ private theorem identity_closedImmersion : IsClosedImmersion G.identitySection :
     infer_instance
   exact IsClosedImmersion.of_comp G.identitySection G.X.hom
 
-theorem range_inclusion_eq_range_identitySection (n : ℕ) :
-    Set.range (inclusion G n) = Set.range G.identitySection := by
-  let : IsClosedImmersion G.identitySection := identity_closedImmersion G
-  change Set.range ((G.identitySection.ker ^ (n + 1)).subschemeι) = _
-  rw [Scheme.IdealSheafData.range_subschemeι, Scheme.IdealSheafData.support_pow_succ,
-    Scheme.Hom.support_ker, G.identitySection.isClosedEmbedding.isClosed_range.closure_eq]
-
 /-- The lifted identity meets every scheme point of the identity neighborhood. -/
 theorem surjective_identityLift (n : ℕ) : Surjective (identityLift G n) := by
   constructor

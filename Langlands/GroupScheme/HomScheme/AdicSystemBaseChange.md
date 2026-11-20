@@ -33,3 +33,5 @@ The provenance is internal: these definitions connect the Library's existing
 `HomScheme.Adic.System`, actual Hom evaluation, and quotient-pullback theorem.
 No completeness, noetherianity, or diagonalizability assumption is needed for
 these adapters.
+
+The maps on adic quotient spectra and their Cartesian square are in [Adic quotient base change](../../AlgebraicGeometry/AdicQuotientBaseChange.md).

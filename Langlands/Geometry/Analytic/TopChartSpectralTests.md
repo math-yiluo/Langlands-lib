@@ -30,3 +30,5 @@ identity denominator.
 
 This comparison translates test triples on whole affinoid charts into
 the spectral estimates used on fibre-product patches in Task 7491.
+
+The common chart-coverage lemma is `range_greatestChart_eq_univ`.

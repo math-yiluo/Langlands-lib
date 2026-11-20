@@ -52,7 +52,7 @@ theorem identitySection_isPullback :
   exact ho.of_right (identitySection_baseChange_fst b G)
     (IsPullback.of_hasPullback G.X.hom b).flip
 
-variable [IsAffineHom G.X.hom] [IsOpenImmersion b]
+variable [IsSeparated G.X.hom] [IsOpenImmersion b]
 
 private theorem identity_ker_comap :
     G.identitySection.ker.comap (pullback.fst G.X.hom b) =

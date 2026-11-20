@@ -1,0 +1,5 @@
+# The complex local functional equation for `GL₁ × GL₁`
+
+This internal statement is the rank-index-zero instance of Jacquet, *Archimedean Rankin–Selberg integrals* (2009), Theorem 2.1 (i)–(iii), p. 6, in the Library’s conventions. It quantifies over the two singleton inducing lists, any nonzero complex additive parameter, every compatible quotient measure, every pair of Whittaker-model vectors and every Schwartz test. It supplies absolute convergence, holomorphy, meromorphic continuation and the functional equation for the ordinary and dual integrals.
+
+The Lean proof passes the published complex Tate theorem to `complexLocalEqualAtRankStatement_zero`. That reduction identifies the two rank-one Whittaker vectors with scalar multiples of their characters and transports the quotient integral to Tate’s complex zeta integral. It handles the compatible Haar scalar and the self-dual Fourier normalization, so the resulting rank-one Rankin–Selberg equation has the exact pair factors of the target and central sign exponent zero.

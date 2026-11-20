@@ -1,0 +1,7 @@
+# Complementary slices of the real Fourier transform
+
+For a Schwartz function on a product of finite-dimensional real inner-product spaces, fix a frequency in the first factor and a point in the second. Integrating the original function over the first-factor slice with a positive phase agrees with integrating its full positive Fourier transform over the complementary second-factor slice with a negative phase. Both integrands are absolutely integrable with respect to Lebesgue measure.
+
+The first-factor integral defines a continuous function of the second variable. A Schwartz seminorm bound gives a single integrable majorant over the first factor, so continuity follows by dominated convergence. On the whole product the integrand has the same norm as the Schwartz function, and Fubini gives integrability of the first-factor integral. The product and its Euclidean normed presentation carry the same Lebesgue measure under the standard equivalence.
+
+Fubini also identifies the positive Fourier transform of this partial integral with the complementary slice of the full transform. The full transform is Schwartz, so its norm bound along that slice gives integrability. Fourier inversion for continuous integrable functions with integrable transform now gives the slice identity. This is the analytic step in the real case of Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, Lemma 7.1, with the signs adapted to the Library's positive Fourier convention.

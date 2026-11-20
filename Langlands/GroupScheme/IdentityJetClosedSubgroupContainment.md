@@ -1,0 +1,7 @@
+# Closed subgroup containment detected on identity jets
+
+Over a locally noetherian base, let \(K\) be a smooth separated group with geometrically connected fibres. The statement considers a homomorphism \(K \to G\) and a closed subgroup \(H \hookrightarrow G\). If the restriction to each actual identity jet of \(K\) factors through \(H\), the homomorphism itself factors through \(H\). The conclusion expresses containment of the two literal subgroup functors on every test scheme.
+
+Pull back the closed immersion to \(K\). Factoring every identity jet puts the defining ideal of this pullback inside each positive power of the identity ideal. The ideal-power neighborhood lemma gives an open factorization near each unit point. These factorizations glue by the monomorphism property and yield a single open neighborhood of the unit. The product of two copies of this neighborhood surjects onto \(K\), by the product lemma for a connected group over a field applied after base change to the residue field of each point of \(K\). This product map is smooth. The two lifts into \(H\) give a lift from the product, which descends along the smooth surjection.
+
+This is an internal step for formalizing the finite detection of normalizers used in Raynaud, *SGA 3*, Exposé XV, §5.2. The open-neighborhood argument uses `IdealPowerClosedImmersionNeighborhood` and adapts the unit-product argument of `AdicClosedSubgroupContainment` to all unit points over a locally noetherian base.

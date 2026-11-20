@@ -1,10 +1,10 @@
 # Ordinary restriction of actual analytic étale sheaves
 
-This internal prerequisite constructs the ordinary-topology restriction of
-sheaves on the existing actual analytic étale site. It uses the published
-étaleness and universal property of canonical open analytic domains. The field
-and analytic-space universes remain independent, and the coefficient category
-has independent object and morphism universes.
+This module specializes the [conditional ordinary restriction](AnalyticOpenEtaleRestriction/Conditional.md)
+to the published proof `etaleOpenDomainStatement X` that canonical open
+analytic domains are étale. The field and analytic-space universes remain
+independent, and the coefficient category has independent object and morphism
+universes.
 
 `openEtaleObject` realizes an open subset of the actual underlying analytic
 space by its saturated analytic-domain presentation and canonical inclusion.
@@ -29,7 +29,5 @@ continuity.
 `etaleUnderlyingSheaf` is the resulting existing categorical sheaf direct image:
 its value on an ordinary open is exactly the original sheaf's sections on that
 open analytic domain, and restrictions are the original domain-factorization
-maps. This unit supplies no comparison of stalks, supports or right-derived
-compact sections, and no acyclicity assertion. Its provenance is the internal
-application of existing Library domain constructions and Mathlib site-continuity
-theorems; no additional original-literature claim is used.
+maps. This specialization uses the existing Library domain constructions and
+the Mathlib site-continuity argument in the conditional module.

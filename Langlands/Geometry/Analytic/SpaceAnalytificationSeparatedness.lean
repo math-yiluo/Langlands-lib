@@ -82,6 +82,30 @@ theorem isClosedMap_pair_baseMap_of_surjective
     exact hyS (hbound ⟨hyU, hyF⟩)
   exact image_mono inter_subset_right hxS
 
+/-- When the two maps generate the coordinate algebra, the inverse image of a
+compact subset of the product of affine analytifications is compact. -/
+theorem isCompact_preimage_pair_baseMap_of_surjective
+    (hsurj : Function.Surjective
+      (Algebra.TensorProduct.lift f g (fun a b => Commute.all (f a) (g b)) : A ⊗[K] B →ₐ[K] C))
+    {L : Set (Space K P × Space K Q)} (hL : IsCompact L) :
+    IsCompact ((fun t : Space K R => (baseMap K P R f t, baseMap K Q R g t)) ⁻¹' L) := by
+  classical
+  let F : Space K R → Space K P × Space K Q := fun t => (baseMap K P R f t, baseMap K Q R g t)
+  have hF : Continuous F := (baseMap K P R f).continuous.prodMk (baseMap K Q R g).continuous
+  have hbounds (i : Fin R.arity) : ∃ c : ℝ, ∀ t ∈ F ⁻¹' L, coordinateNorm K R i t ≤ c := by
+    obtain ⟨a, ha⟩ := hsurj (R.map (MvPolynomial.X i))
+    obtain ⟨b, hb⟩ := exists_continuous_bound_of_tensor P Q R f g a
+    obtain ⟨c, hc⟩ := (hL.image b.continuous).bddAbove
+    exact ⟨c, fun t ht => by
+      rw [SeminormComparison.coordinateNorm_eq, ← ha]
+      exact (hb t).trans (hc ⟨F t, ht, rfl⟩)⟩
+  choose c hc using hbounds
+  obtain ⟨n, hn⟩ := exists_radius_gt K (∑ i, |c i|)
+  refine (isCompact_range (continuous_chart K R n)).of_isClosed_subset
+    (hL.isClosed.preimage hF) fun t ht => (mem_range_chart_iff K R n t).mpr fun i => ?_
+  exact ((hc i t ht).trans ((le_abs_self (c i)).trans
+    (Finset.single_le_sum (fun j _ => abs_nonneg (c j)) (Finset.mem_univ i)))).trans hn.le
+
 end Langlands.Analytic.AffineAnalytification
 
 namespace Langlands.Analytic.SpaceAnalytification

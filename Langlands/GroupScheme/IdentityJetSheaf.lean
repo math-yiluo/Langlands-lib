@@ -6,7 +6,7 @@ import Mathlib.AlgebraicGeometry.Morphisms.Separated
 import Mathlib.AlgebraicGeometry.Morphisms.Smooth
 import Mathlib.Algebra.Category.ModuleCat.Sheaf.PullbackFree
 
-/-! # The actual identity jet module of an affine group scheme -/
+/-! # The actual identity jet module of a group scheme -/
 
 noncomputable section
 
@@ -83,13 +83,56 @@ def augmentation (U : S.Opens) :
       exact S.presheaf.map_id (op U)
     exact ConcreteCategory.congr_hom hh r
 
-variable [IsAffineHom G.X.hom]
+section Separated
+
+variable [IsSeparated G.X.hom]
 
 instance identity_isClosedImmersion : IsClosedImmersion G.identitySection := by
   have : IsClosedImmersion (G.identitySection ≫ G.X.hom) := by
     rw [G.identitySection_comp]
     infer_instance
   exact IsClosedImmersion.of_comp _ G.X.hom
+
+/-- Every positive power defining an identity jet has the same support
+as the identity section of the separated group. -/
+theorem range_inclusion_eq_range_identitySection (n : ℕ) : Set.range (inclusion G n) = Set.range G.identitySection := by
+  change Set.range (ideal G n).subschemeι = _
+  rw [Scheme.IdealSheafData.range_subschemeι]
+  change ((G.identitySection.ker ^ (n + 1)).support : Set G.X.left) = _
+  rw [Scheme.IdealSheafData.support_pow_succ, Scheme.Hom.support_ker,
+    G.identitySection.isClosedEmbedding.isClosed_range.closure_eq]
+
+/-- The projection of the identity neighborhood is affine even when the
+separated ambient group is not affine over its base. -/
+theorem projection_isAffineHom_of_isSeparated (n : ℕ) : IsAffineHom (projection G n) := by
+  have : IsClosedImmersion (inclusion G n) :=
+    inferInstanceAs (IsClosedImmersion (ideal G n).subschemeι)
+  have hfac (x : scheme G n) : G.identitySection (projection G n x) = inclusion G n x := by
+    have hx : inclusion G n x ∈ Set.range G.identitySection :=
+      range_inclusion_eq_range_identitySection G n ▸ Set.mem_range_self x
+    obtain ⟨y, hy⟩ := hx
+    have hp : projection G n x = y := by
+      change (inclusion G n ≫ G.X.hom) x = y
+      rw [Scheme.Hom.comp_apply, ← hy, ← Scheme.Hom.comp_apply, G.identitySection_comp]
+      rfl
+    exact hp ▸ hy
+  have hind : Topology.IsInducing (projection G n) := by
+    apply Topology.IsInducing.of_comp (projection G n).continuous G.identitySection.continuous
+    have h : (G.identitySection ∘ projection G n : scheme G n → G.X.left) = inclusion G n :=
+      funext hfac
+    rw [h]
+    exact (inclusion G n).isClosedEmbedding.isInducing
+  have hsurj : Function.Surjective (projection G n) := by
+    intro s
+    have hs : G.identitySection s ∈ Set.range (inclusion G n) :=
+      (range_inclusion_eq_range_identitySection G n).symm ▸ Set.mem_range_self s
+    obtain ⟨x, hx⟩ := hs
+    exact ⟨x, G.identitySection.isClosedEmbedding.injective ((hfac x).trans hx)⟩
+  exact isAffineHom_of_isInducing _ hind (Set.range_eq_univ.mpr hsurj ▸ isClosed_univ)
+
+end Separated
+
+variable [IsAffineHom G.X.hom]
 
 /-- The affine open of the group above an affine open of the base. -/
 def affineOpen (U : S.affineOpens) : G.X.left.affineOpens :=

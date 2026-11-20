@@ -1,5 +1,17 @@
 # Continuity on compact analytic pullbacks
 
+**Not to be used.** Do not use `CompactPullbackActionContinuityStatement` as a
+target or as a premise. It is replaced by
+`CompactPullbackActionContinuitySmallStatement` in
+`Langlands.Geometry.Analytic.CompactPullbackActionContinuitySmall`. That statement
+adds the explicit hypothesis
+`∀ R : PresentedAffinoidAlgebra K, Small.{v} (BanachSpectrum R)`. Without it, the
+pair chart of a pullback need not be an object of `LocalizedCategory.{u,v,v}`
+when the field `K : Type u` is not `v`-small; the replacement's Markdown gives the
+trivially valued example. This proposition is neither proved nor refuted, and its
+Lean text is left unchanged. The replacement was made at the operator's ruling on
+request `a87ede08952355398eb14c6ddc2957c0`, by the procedure of standing ruling 8.
+
 `CompactPullbackActionContinuityStatement` is an internal analytic prerequisite
 for the tuple-cone construction of Task 7491. It defines a proposition and does
 not prove continuity.

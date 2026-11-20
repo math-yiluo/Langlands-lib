@@ -1,0 +1,7 @@
+# Splitting at a root of a reduced characteristic polynomial
+
+`Langlands.CentralSimple.ReducedCharpolyRootSplittingStatement` says that adjoining a root of any irreducible factor of a separable reduced characteristic polynomial splits the algebra. This is the necessity direction of Lemma b in §5.4 of Martin Kneser, *Lectures on Galois Cohomology of Classical Groups*, TIFR Lectures on Mathematics 47, 1969, printed p. 68 (PDF p. 74). The module gives the result over any field extension in which such a root lies. [TIFR publication](https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr47.pdf)
+
+For a simple root in the ground field, the proof uses the generalized eigenspace for left multiplication by the element. The regular characteristic polynomial is the reduced characteristic polynomial raised to the reduced degree. Consequently the generalized eigenspace has dimension equal to the reduced degree. Right multiplication preserves it and gives an algebra homomorphism from the opposite algebra into its endomorphisms. The homomorphism is injective by simplicity and surjective by dimension. Matrix transposition then gives the required matrix chart for the original algebra.
+
+Scalar extension maps the coefficients of the reduced characteristic polynomial and preserves separability. A root over the extension therefore has multiplicity one, and the ground-field argument applies over the extension.

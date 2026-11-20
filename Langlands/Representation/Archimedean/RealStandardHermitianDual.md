@@ -1,0 +1,11 @@
+# The Hermitian-dual parameter of a unitarizable real standard module
+
+`exists_realStandardDualFiniteDualEquiv` realizes the compact-finite module of the actual dual blocks as the finite contragredient. The Library's `realStandardDualPairing` supplies the invariant bilinear pairing. Its functional in the first variable is equivariant in the second variable for the contragredient action, so it is compact-finite by preservation of orbit spans. The pairing separates the dual-block vectors, giving injectivity. The map is nonzero by rank-correct nontriviality. The irreducibility theorem for the finite contragredient and the stable-image argument give surjectivity.
+
+`realHermitianDualBlock` combines the inverse inducing character and conjugation of the exponent in the actual standard model. Its real exponent is the negative of the original real exponent. This is the parameter operation used in the Hermitian comparison with the positive form.
+
+`realStandard_hermitianDual_parameter` first shows that pointwise conjugation is onto the standard module with conjugated exponents. Conjugating twice is the identity on both function values and parameter data. The inverse conjugation carries the Hermitian-dual model conjugate-linearly to the dual-block model. The preceding pairing takes that model linearly to the finite contragredient. The inverse positive-form map takes the latter conjugate-linearly back to the original standard module. The composite is a linear equivalence with the required compact and real Lie compatibility, and the rank is preserved.
+
+`realUnitaryGenericExponentBound_of_standard_lower` applies a uniform strict lower bound on the canonical models to both standard presentations, using `realStandardParameter_model` for the Hermitian-dual one. Its lower bound at the negated exponent gives the upper bound at the original exponent. The resulting implication concludes the exact exponent-bound proposition at every carrier universe.
+
+This algebraic deduction reuses the Library's real finite contragredient and its standard-module dual pairing. The input positive form has the invariance and skew properties in Knapp–Vogan, *Cohomological Induction and Unitary Representations* (1995), display (0.5), p. 6 (PDF p. 28, `knapp-vogan-1995-cohomological-induction`).

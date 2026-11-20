@@ -1,0 +1,7 @@
+# Flat tests for distributions supported on a coordinate subspace
+
+This internal result concerns a smooth distribution on an open subset of \(E\times W\) that vanishes on tests supported away from \(E\times\{0\}\). The transverse space \(W\) is finite-dimensional. On any fixed compact-support step, the distribution kills a test whose transverse derivatives through the order from `SmoothCompactOrder` vanish at every \((x,0)\).
+
+`normalCutoffTest` multiplies the test by a fixed bump function evaluated at \(t\) times the transverse coordinate. The bump equals one near zero, so the difference from the original test has support away from the coordinate subspace. On the cutoff support, the transverse displacement is at most \(1/t\) for \(t\ge1\). Derivatives of order \(i\) of the cutoff are bounded by a constant times \(t^i\). When the full derivatives vanish through the compact order, each term in the Leibniz estimate for derivatives through that order gains at least \(i+1\) powers of \(1/t\) from the test. The compact-order bound therefore tends to zero.
+
+To pass from transverse to full derivative vanishing, differentiate the zero lower-order derivative along the coordinate subspace to handle a tangent input. Symmetry allows that input to occur in any slot. Multilinearity reduces general inputs to the terms with a tangent input and the all-transverse term, which vanishes by the hypothesis.

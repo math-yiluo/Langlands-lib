@@ -1,0 +1,16 @@
+# Quadratic patching of semisimple Galois representations
+
+`Langlands.GaloisRepresentation.QuadraticPatchingStatement` is the degree-two specialization of Sørensen's *A Patching Lemma*, §1, Definition 1 and Lemma 1, author manuscript pp. 1–5. Harris–Taylor, *The Geometry and Cohomology of Some Simple Shimura Varieties*, Theorem VII.1.9, pp. 230–231, uses this patching argument to remove the parity restriction on the totally real degree. [Sørensen's manuscript](https://mathweb.ucsd.edu/~csorense/patch.pdf)
+
+Fix a number field `F`, a finite set `S` of finite places, and a collection `I` of finite Galois intermediate fields of a single `AlgebraicClosure F`. The statement assumes the following conditions.
+
+- Every `N` in `I` has degree two over `F`.
+- For each finite place `v` outside `S` and each finite Galois intermediate field `M`, there is an `N` in `I` with `N ⊓ M = ⊥` in which `v` splits completely. For quadratic `N`, this is the disjointness condition of Definition 1. The test extensions may be taken Galois by passing to a normal closure.
+- Each `R N` is an actual rank-`n` continuous semisimple representation of the absolute Galois group of `N` over the same coefficient field `C`.
+- For each `F`-automorphism of `N`, pullback along that automorphism gives a representation isomorphic to `R N`. On each actual compositum `N ⊔ M`, the two restrictions of `R N` and `R M` are isomorphic. Both isomorphisms are `FiniteRepresentation.Equiv`, so they are linear and intertwine the group actions. `pullback` uses the Library's absolute Galois functor. Changing a compatible closure embedding gives a conjugate restriction as in `Langlands.Galois.ClosureRestriction`.
+
+The conclusion is an actual rank-`n` continuous semisimple representation of the absolute Galois group of `F` whose restriction to every `N` is isomorphic to `R N`. Any other continuous semisimple representation of that rank and with these restrictions is isomorphic to it.
+
+The coefficient field is algebraically closed of characteristic zero, with a Hausdorff topological ring structure. This generalizes the manuscript's algebraic closure of `ℚ_ℓ` with its `ℓ`-adic topology. In the argument, divisibility of the coefficient units extends invariant irreducibles over the cyclic quotient. Over a finite-dimensional carrier the matrix topology makes polynomial equations closed relative to `GL_n(C)`, so preimages of the finitely many components of the algebraic monodromy group are closed and open. Restriction, finite-index induction, and extension using finitely many open cosets preserve continuity. Uniqueness uses Frobenius conjugacy classes and semisimple character rigidity over `C`. This interface works at one coefficient place at a time. A model over a specified smaller coefficient field and compatibility across coefficient places require subsequent arguments.
+
+`Langlands.Global.AdelicFunctoriality.FiniteExtension.SplitsCompletelyAt` expresses the complete splitting condition used in Definition 1. At each prime `w` lying over `v`, the extension of actual completions induced by `FiniteExtension.completionMap` has degree one. The splitting predicate and the patching proposition are definitions. The proposition awaits proof.

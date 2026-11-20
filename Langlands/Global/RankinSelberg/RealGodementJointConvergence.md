@@ -1,0 +1,9 @@
+# Joint absolute convergence of the real Godement open-cell integral
+
+`RealGodementJointConvergenceStatement` takes a lower position principal-series vector and a rectangular Schwartz test that vanishes outside a compact set of full-row-rank matrices. If the real parts of the upper position exponents, including the new leading character, are strictly decreasing, the expanded kernel of the Godement section is integrable on the product of the upper entry Haar measure and the supplied lower group Haar measure. This holds for every upper translate and every nonzero real additive parameter.
+
+The proof takes the real parts of all inducing exponents, including the two positions of each induced block, and uses trivial sign characters to construct a positive spherical lower vector. Upper-Borel covariance bounds the norm of the original lower vector by a constant times this spherical vector. A nonnegative smooth cutoff in the open full-row-rank locus dominates the norm of the original test. Its compact support gives compact support in each lower group integral. The nonnegative majorant uses the norms of the determinant weights, which agree with the weights of the positive inducing character.
+
+The lower integral of this majorant is the Godement section of the spherical vector and the smooth cutoff. Individual open-cell convergence applies to that section because the real parts of the upper exponents coincide with the original real parts. Product integrability follows by integrating the norms of the compactly supported slices. The unitary phase leaves the norm of the original kernel unchanged, so the majorant gives joint absolute convergence.
+
+This is the positive comparison used by Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2, p. 47, after equation (7.4). It discharges the joint-integrability hypothesis of the open-cell Jacquet comparison for compact full-row-rank tests in the chamber.

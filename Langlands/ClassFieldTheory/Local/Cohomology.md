@@ -138,3 +138,5 @@ They are not imported assumptions, accepted dependencies, or substitutes
 for the remaining local proposition families.
 
 The kernel of `rationalClass` consists of the integers. The global fundamental-class module and the local connecting sequence use this quotient calculation.
+
+The class of one half in the rational quotient is nonzero. The local and global files share `Langlands.ClassField.Global.rationalClass_half_ne_zero`.

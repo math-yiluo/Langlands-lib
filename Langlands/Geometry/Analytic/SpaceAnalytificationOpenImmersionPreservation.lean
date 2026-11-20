@@ -1,4 +1,5 @@
 import Langlands.Geometry.Analytic.AnalyticImmersion
+import Langlands.Geometry.Analytic.EtaleDomainTargetCancellation
 import Langlands.Geometry.Analytic.EtaleOpenMap.Proof
 import Langlands.Geometry.Analytic.SpaceAnalytificationAffinePullback
 import Langlands.Geometry.Analytic.SpaceAnalytificationEtaleReflection
@@ -67,8 +68,7 @@ theorem isOpen_range_of_etale_composites (f : X ⟶ Y)
 
 section OpenImage
 
-variable (hBase : LocalizedEtalePullbackStatement.{u, u} K)
-  (hHom : ∀ (S T : LocalizedCategory.{u, u, u} (K := K)),
+variable (hHom : ∀ (S T : LocalizedCategory.{u, u, u} (K := K)),
     Presieve.IsSheaf (etaleTopology S)
       ((MorphismProperty.Over.forget _ _ S ⋙ Over.forget S).op ⋙ yoneda.obj T))
   (f : X ⟶ Y) (g : ∀ i, U i ⟶ X) (hg : ∀ i, etale (g i))
@@ -81,7 +81,7 @@ variable (hBase : LocalizedEtalePullbackStatement.{u, u} K)
 
 /-- An étale source cover with étale composites and common overlap
 relations gives an analytic isomorphism onto the open image domain. -/
-def openImageIsoOfEtaleSourceCover :
+def openImageIsoOfEtaleSourceCoverOfHomSheaf :
     let D := (presentationOf Y).openDomain (Set.range (localizedSpaceFunctor.map f))
       (isOpen_range_of_etale_composites f g hcover he)
     {e : X ≅ domainObj Y D // e.hom ≫ domainι Y D = f} := by
@@ -94,9 +94,7 @@ def openImageIsoOfEtaleSourceCover :
   let q (i : ι) : U i ⟶ domainObj Y D := g i ≫ a
   have hq (i : ι) : q i ≫ d = g i ≫ f := by simp only [q, Category.assoc, ha]
   have hqEtale (i : ι) : etale (q i) :=
-    SpaceAnalytification.etale_snd_of_isPullback_of_etalePullbacks K hBase
-      (IsPullback.of_horiz_isIso_mono (fst := 𝟙 (U i))
-        (g := domainι Y D) ⟨(Category.id_comp _).trans (hq i).symm⟩) (he i)
+    etale_of_comp_domainι D ((hq i).symm ▸ he i)
   have hqCover (z : localizedSpaceFunctor.obj (domainObj Y D)) :
       ∃ (i : ι) (t : localizedSpaceFunctor.obj (U i)), localizedSpaceFunctor.map (q i) t = z := by
     obtain ⟨x, hx⟩ := z.property
@@ -121,6 +119,26 @@ def openImageIsoOfEtaleSourceCover :
 
 end OpenImage
 
+set_option linter.unusedVariables false in
+/-- The open image isomorphism with the original étale pullback argument
+included for compatibility. -/
+def openImageIsoOfEtaleSourceCover
+    (hBase : LocalizedEtalePullbackStatement.{u, u} K)
+    (hHom : ∀ (S T : LocalizedCategory.{u, u, u} (K := K)),
+      Presieve.IsSheaf (etaleTopology S)
+        ((MorphismProperty.Over.forget _ _ S ⋙ Over.forget S).op ⋙ yoneda.obj T))
+    (f : X ⟶ Y) (g : ∀ i, U i ⟶ X) (hg : ∀ i, etale (g i))
+    (hcover : ∀ x : localizedSpaceFunctor.obj X,
+      ∃ (i : ι) (z : localizedSpaceFunctor.obj (U i)), localizedSpaceFunctor.map (g i) z = x)
+    (he : ∀ i, etale (g i ≫ f))
+    (hCompat : ∀ (i j : ι) {T : LocalizedCategory.{u, u, u} (K := K)}
+      (r : T ⟶ U i) (s : T ⟶ U j),
+      r ≫ g i ≫ f = s ≫ g j ≫ f → r ≫ g i = s ≫ g j) :
+    let D := (presentationOf Y).openDomain (Set.range (localizedSpaceFunctor.map f))
+      (isOpen_range_of_etale_composites f g hcover he)
+    {e : X ≅ domainObj Y D // e.hom ≫ domainι Y D = f} :=
+  openImageIsoOfEtaleSourceCoverOfHomSheaf hHom f g hg hcover he hCompat
+
 end Langlands.Analytic.SaturatedAtlasPresentation
 
 namespace Langlands.Analytic.SpaceAnalytification
@@ -129,10 +147,8 @@ open SaturatedAtlasPresentation
 
 variable (K : Type u) [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
 
-/-- The open-immersion preservation direction uses localized étale
-pullbacks and the analytic Hom sheaf property. -/
-theorem openImmersion_of_isOpenImmersion_of_homSheaf
-    (hBase : LocalizedEtalePullbackStatement.{u, u} K)
+/-- The open-immersion preservation direction uses the analytic Hom sheaf property. -/
+theorem openImmersion_of_isOpenImmersion_of_etaleHomSheaf
     (hHom : ∀ (S T : LocalizedCategory.{u, u, u} (K := K)),
       Presieve.IsSheaf (etaleTopology S)
         ((MorphismProperty.Over.forget _ _ S ⋙ Over.forget S).op ⋙ yoneda.obj T))
@@ -195,9 +211,30 @@ theorem openImmersion_of_isOpenImmersion_of_homSheaf
       ((Category.assoc _ _ _).trans
         (congrArg (l ≫ ·) hpbY'.w |>.trans
           ((Category.assoc _ _ _).symm.trans (congrArg (· ≫ g j) hs))))
-  obtain ⟨e, h⟩ := openImageIsoOfEtaleSourceCover
-    (hBase := hBase) (hHom := hHom) (f := F) (g := g) (hg := hg)
+  obtain ⟨e, h⟩ := openImageIsoOfEtaleSourceCoverOfHomSheaf
+    (hHom := hHom) (f := F) (g := g) (hg := hg)
     (hcover := hcover) (he := he) (hCompat := hCompat)
   exact ⟨_, isOpen_range_of_etale_composites F g hcover he, e, h⟩
+
+set_option linter.unusedVariables false in
+/-- Open-immersion preservation with the original étale pullback argument
+included for compatibility. -/
+theorem openImmersion_of_isOpenImmersion_of_homSheaf
+    (hBase : LocalizedEtalePullbackStatement.{u, u} K)
+    (hHom : ∀ (S T : LocalizedCategory.{u, u, u} (K := K)),
+      Presieve.IsSheaf (etaleTopology S)
+        ((MorphismProperty.Over.forget _ _ S ⋙ Over.forget S).op ⋙ yoneda.obj T))
+    {X' X : AlgebraicSpace (Spec (CommRingCat.of K))} (f : X' ⟶ X)
+    (hX' : IsSeparated X')
+    {Y' Y : LocalizedCategory.{u, u, u} (K := K)}
+    {p' : PointFamily K X' Y'} {p : PointFamily K X Y}
+    (hp' : IsAnalytification K X' Y' p') (hp : IsAnalytification K X Y p)
+    (F : Y' ⟶ Y)
+    (hF : ∀ (A : Type u) [CommRing A] [Algebra K A]
+      (P : FinitePolynomialPresentation K A) (x : RingPoints K X' A),
+      p' A P x ≫ F = p A P (RingPoints.map f x))
+    (hf : AlgebraicSpace.IsOpenImmersion (hom f)) :
+    openImmersion F :=
+  openImmersion_of_isOpenImmersion_of_etaleHomSheaf K hHom f hX' hp' hp F hF hf
 
 end Langlands.Analytic.SpaceAnalytification

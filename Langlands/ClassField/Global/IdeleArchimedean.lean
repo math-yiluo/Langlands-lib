@@ -461,14 +461,6 @@ section Invariant
 
 variable {F E : Type u} [Field F] [Field E] [NumberField E] [Algebra F E]
 
-theorem rationalClass_half_ne_zero : rationalClass (1 / 2 : ℚ) ≠ 0 := by
-  intro h
-  obtain ⟨n, hn⟩ := AddSubgroup.mem_zmultiples_iff.1 ((QuotientAddGroup.eq_zero_iff _).1 h)
-  rw [zsmul_eq_mul, mul_one] at hn
-  have h2 : (2 * n : ℚ) = 1 := by rw [hn]; norm_num
-  have h3 : (2 * n : ℤ) = 1 := by exact_mod_cast h2
-  omega
-
 /-- The idele `f(c,c) · f(1,1)`, in multiplicative notation, of a `2`-cochain with values
 in `J_E`. -/
 def ideleConjugationValue (c : E ≃ₐ[F] E)

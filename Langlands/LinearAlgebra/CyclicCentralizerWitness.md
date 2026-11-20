@@ -1,0 +1,7 @@
+# Cyclic matrices in centralizers
+
+This internal linear algebra result supplies the cyclic endpoint used in the real matrix centralizer orbit closure argument. Over an infinite field, every square matrix \(C\) commutes with a matrix \(B\) having a cyclic vector.
+
+Give the vector space its polynomial module structure defined by \(C\). Cayley–Hamilton makes this module torsion, and the principal ideal domain decomposition expresses it as a finite product of quotients by powers of irreducible polynomials. On each factor, `shiftedCyclicOperator` acts by multiplication by the residue of a translated variable and hence commutes with multiplication by the original variable. To choose the shifts, normalize the irreducible factors to be monic. Each has finite fibers as a polynomial function on the field, so the shifts can give the translated factors distinct constant terms. Those factors are then pairwise coprime. The Chinese remainder theorem shows that polynomial evaluation on the product vector \(1\) is surjective. Back on the original space, reduction modulo the characteristic polynomial of \(B\) shows that its first \(n\) vector iterates already span.
+
+For a real matrix \(A\) commuting with \(C\), choose the line through \(A\) with direction \(B-A-C\). Its endpoint after the shift by \(C\) is \(B\). The affine-line closure lemma places the pair \((A,q^{-1}A^{\mathsf T}q)\) in the closure of the pairs of matrices conjugate by units of the centralizer of \(C\), for any \(q\) conjugating \(C\) to its transpose.

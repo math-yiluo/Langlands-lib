@@ -1,0 +1,7 @@
+# Compact Godement generation of real K-finite vectors
+
+Every K-finite vector in the upper real position principal series lies in the complex span of Godement sections from the trailing position principal series, with smooth tests supported in compact full-row-rank sets. This is the K-finite case of the compact-support generation assertion in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, Section 7.1, Proposition 7.1(v). The measure on the lower group is Borel, right invariant, finite on compact sets, and positive on nonempty open sets.
+
+Fix the upper vector and take the finite-dimensional span of its right orthogonal translates. For each approximating pair of cutoffs, integrate the weighted kernel at the identity to obtain a linear functional on that span. The kernel formula on the orthogonal group expresses the restriction of the approximating section as this functional applied to the right translate of the original vector. These restrictions all lie in the image of the dual of the finite-dimensional translate span.
+
+Intersect this image with the restrictions of the span of compact Godement sections. The intersection is finite dimensional and closed in the product topology on functions of the orthogonal variable. The compact approximation with tolerance tending to zero puts the restriction of the original vector in the intersection. The section covariance theorem puts every element of the Godement span in the upper principal series, and Iwasawa then propagates agreement on the orthogonal subgroup to agreement on the full real group.

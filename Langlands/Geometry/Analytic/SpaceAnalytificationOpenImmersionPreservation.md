@@ -3,21 +3,20 @@
 For a complete ultrametric nontrivially normed field `K : Type u`, the
 module gives the open-immersion preservation implication for a
 compatible map `F : Y' ⟶ Y` of analytifications of algebraic spaces
-`X'` and `X` over `Spec K`, assuming `X'` is separated. It uses
-`LocalizedEtalePullbackStatement` and the sheaf property of analytic Hom
-presheaves on the small étale site as explicit premises. The analytic
-spaces are in universes `u, u, u`.
+`X'` and `X` over `Spec K`, assuming `X'` is separated. The theorem
+`openImmersion_of_isOpenImmersion_of_etaleHomSheaf` uses the sheaf
+property of analytic Hom presheaves on the small étale site as its
+analytic premise. The analytic spaces are in universes `u, u, u`.
 
 ## Implemented proof
 
-The general construction `openImageIsoOfEtaleSourceCover` starts with
+The construction `openImageIsoOfEtaleSourceCoverOfHomSheaf` starts with
 an étale source cover of a map `f` whose composites are étale. The
 range of `f` is the union of the open ranges of the composites, so it
 has an open analytic domain. The map `f` and the composites lift to
-that domain. Each lifted cover map is the pullback of its composite
-along the open domain inclusion. The étale pullback premise makes
-these lifted cover maps étale, and their point maps are jointly
-surjective onto the domain.
+that domain. Each lifted cover map is étale by cancellation along the
+domain inclusion, since its composite with the inclusion is one of the
+given étale maps. Their point maps are jointly surjective onto the domain.
 
 The hypothesis on common refinements of cover maps ensures the
 original maps to the source of `f` agree over the open image domain.
@@ -39,10 +38,14 @@ analytic overlap over `Y'` and `Y`. Thus every pair of lifts equal
 over `Y` factors through the overlap and is already equal over
 `Y'`. Applying the general construction proves `openImmersion F`.
 
+The original entry points `openImageIsoOfEtaleSourceCover` and
+`openImmersion_of_isOpenImmersion_of_homSheaf` still accept
+`LocalizedEtalePullbackStatement` and delegate to the strengthened results.
+
 ## Provenance
 
 This is a deduction from the published affine-test definition of
-analytification and the two explicit analytic premises. Its use of
+analytification, étale domain cancellation and analytic Hom descent. Its use of
 étale descent of morphisms for gluing analytic quotients follows the
 mechanism in Conrad–Temkin, *Non-archimedean analytification of
 algebraic spaces*, §4.1, printed pp. 18–19. The algebraic closed affine

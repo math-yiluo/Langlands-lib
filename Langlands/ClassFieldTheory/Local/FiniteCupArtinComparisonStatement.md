@@ -1,5 +1,17 @@
 # Character comparison of finite inverse-cup reciprocity and Artin symbols
 
+> **This proposition is false. Do not use it as a target or as a premise.**
+> Its negation is the statement `FiniteCupArtinCharacterComparisonFails` (module
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureStatement`). The proof of
+> the negation is the theorem `finiteCupArtinCharacterComparisonFails` (module
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureProof`), from Task 5658.
+> The Library proves the comparison with the other sign,
+> `finiteGeometricCupArtinCharacterComparison`: geometric inverse cup, which is the
+> inverse of arithmetic inverse cup, has these character values. An unramified cubic
+> extension then contradicts the proposition below. Its Lean text is unchanged. The rest
+> of this file is the original description, including its remarks on intended uses,
+> which do not apply.
+
 `Langlands.ClassFieldTheory.Local.FiniteCupArtinCharacterComparison` is an
 internal comparison target between two published constructions. It is a
 proposition definition, not a comparison theorem.

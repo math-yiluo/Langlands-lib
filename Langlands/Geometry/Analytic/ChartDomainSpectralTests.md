@@ -24,3 +24,5 @@ spectral convergence of the restricted action on every function of the
 chart algebra. These are internal comparison lemmas for the localized
 `IsNear` tests. The companion `PullbackActionTests` module provides the
 eventual chart preservation used to apply them.
+
+The range containment `range_chart_subset_chartDomainFullChart` is shared with the chart-patch construction.

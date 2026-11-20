@@ -111,3 +111,5 @@ the maximal-order characterization, arbitrary local coordinate gluing,
 the framing object and its rational endomorphism algebra, Drinfeld's triples
 and full group action, and representability remain further constructions
 or theorem obligations. No representing or universal object is an input.
+
+The scalar algebra on the subfield integer ring is `localDivisionSubfieldIntegerAlgebra`.

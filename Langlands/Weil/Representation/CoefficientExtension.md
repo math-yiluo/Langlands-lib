@@ -1,0 +1,5 @@
+# Coefficient extension and descent for finite representations
+
+This module supplies algebraic coefficient tools for the descent required in the Harris comparison. Scalar extension uses the tensor product of the coefficient field with the given carrier, and preserves the dimension. Each invariant submodule extends to an invariant submodule, and faithful flatness reflects the bottom and top submodules. This gives reflection of irreducibility.
+
+To descend an equivalence with irreducible source, fix a nonzero source vector and choose a nonzero coordinate of its image over the extension field. Apply a base-field linear functional that is nonzero on that coordinate to the tensor coefficients. The resulting base-field linear map intertwines the original actions because the projection commutes with extended base-field operators. It is nonzero on the chosen vector. Irreducibility gives injectivity, and equality of dimensions gives surjectivity. The construction permits independent coefficient, group and carrier universes.

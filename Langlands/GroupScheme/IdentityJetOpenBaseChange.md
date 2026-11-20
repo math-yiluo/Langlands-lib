@@ -1,6 +1,6 @@
 # Actual identity jets under open change of base
 
-Let `G/S` have affine structure morphism, and let `b : T → S` be an
+Let `G/S` have separated structure morphism, and let `b : T → S` be an
 open immersion. This internal construction compares the actual closed
 identity neighborhoods and their actual module sheaves under this base change.
 

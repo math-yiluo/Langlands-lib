@@ -1,0 +1,9 @@
+# Weyl transport of semistandard source constants
+
+`SourceConstants.unquotientedWeightAtIndex` gives the real VI.3 and VII.2 weight at an intrinsic triple. Its numerator uses the actual source scalars and literal Levi Weyl subgroup. Its denominator uses the ambient Weyl group and the actual parabolic fiber. `unquotientedWeightAtIndex_eq` identifies it with the existing weight evaluated at any dynamic cocharacter presentation of the triple. [Waldspurger, VI.3 and VII.2](https://doi.org/10.1017/S1474748003000082)
+
+`SourceConstants.eq_at_weylParabolicFiber` proves equality of the source gamma and Plancherel constant `c` at an intrinsic index and its conjugate parabolic. It uses the actual conjugate parabolic fiber and the existence of a Weyl representative in the fixed compact. The choice of dynamic cocharacter presentation disappears by `SourceConstants.eq_of_presentation`.
+
+With the torus fixed, the normalizer acts by dual lattice automorphisms that preserve the pairing. The character action carries the positive roots and Levi roots to the corresponding roots for the conjugate cocharacter. The cocharacter action maps the rank-one annihilator submodules to their conjugate counterparts. Their actual centralizer functors conjugate on every test scheme. Source Haar conjugation therefore preserves every rank-one factor for a lift in the compact. Reindexing the rank-one product and applying the source gamma conjugation theorem proves the claim.
+
+`SourceConstants.eq_at_weylConjugateLevi` extends the conclusion to every target parabolic over the conjugate Levi, conditional on `SourceConstantParabolicIndependenceStatement` at the common source-special compact. The compact-lift transport is a derived comparison for the scalars of Waldspurger (2003), I.1, printed pp. 240–241 (PDF pp. 6–7). The common-Levi premise is the scalar independence used there. [Original publication](https://doi.org/10.1017/S1474748003000082)

@@ -30,7 +30,7 @@ theorem localizedTopTargetHomEquiv_apply (j : B.presentation.atlas.Index)
     (φ : A ⟶ B) : localizedTopTargetHomEquiv j hj φ = localizationFunctor.map φ :=
   sourceHomEquiv.apply_symm_apply _
 
-private theorem range_greatestChart_eq_univ (i : A.presentation.atlas.Index)
+theorem range_greatestChart_eq_univ (i : A.presentation.atlas.Index)
     (hi : ∀ k, range (A.presentation.atlas.chart k) ⊆ range (A.presentation.atlas.chart i)) :
     range (A.presentation.atlas.chart i) = univ := by
   apply eq_univ_of_forall

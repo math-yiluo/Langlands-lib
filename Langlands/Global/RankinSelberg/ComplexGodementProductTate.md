@@ -1,0 +1,7 @@
+# The product Tate integral of a complex Godement section
+
+With the upper-Borel convention, take a smaller-group standard vector, a rectangular Schwartz test, and a fixed element of the larger general linear group. Keep the angular weight of the distinguished character fixed while shifting its exponent by `s`. The inner Godement integral over the smaller group agrees with a positive constant times the product Tate integral of a single Schwartz test on the additive diagonal, for every `s` at which the group integral is absolutely convergent. The constant depends only on the smaller-group two-sided Haar measure and the compact Haar measure.
+
+The existing additive diagonal formula expresses the group integral in diagonal, compact, and strictly upper coordinates and supplies absolute integrability for the product measure. The determinant of the compact group element has norm one, so the compact weight and the diagonal Schwartz test are independent of the shift. Fubini orders the integrations so that the compact average and the strictly upper integral give this test. For each diagonal position, the angular weight is the difference of the distinguished and retained weights, and the Tate parameter is the distinguished exponent minus the retained exponent, plus `s + 1`.
+
+This formalizes the equality of integrals in the reduction in Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.1, proof of Proposition 7.1, p. 44.

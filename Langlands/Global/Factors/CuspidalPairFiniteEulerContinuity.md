@@ -1,0 +1,5 @@
+# Continuity of the finite pair Euler product
+
+`FinitePairLChoice.RightHalfPlaneContinuous` says that the infinite product of the actual finite local factors is continuous on some right half-plane. The uniform estimate at spherical places uses the Satake bounds for the two given presentations, the spherical polynomial computation and a single summable majorant on the half-plane. The local denominators at the finitely many exceptional places are nonzero for sufficiently large real part because their constant terms are one. This makes every local factor continuous on a common half-plane. The locally uniform limit of the finite products is then continuous on it.
+
+The finite list of exceptional places and the spherical Euler factors use the setup of Cogdell (2004), §3, Theorems 3.1 and 3.3, pp. 213 and 215 (PDF pp. 216 and 218), and §4.1, pp. 218–219 (PDF pp. 221–222), `cogdell-2004-analytic-theory-gln`. The continuity statement is a derived analytic input for the completed L-function comparison.

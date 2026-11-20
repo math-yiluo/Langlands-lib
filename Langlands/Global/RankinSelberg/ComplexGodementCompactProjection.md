@@ -1,0 +1,7 @@
+# Compact coefficient separation for Godement tests
+
+Let a compact group act on the right through a continuous homomorphism into the unitary group, and let it carry a continuous unitary character. A continuous compact-finite function on the unitary group whose restriction to this compact group has the prescribed character law and whose value at one is nonzero can be separated by a compact-finite coefficient of the corresponding left character. The pairing integrates the original function at `x` times the separating coefficient at `x⁻¹` against right-invariant Haar measure on the unitary group, and has strictly positive real part.
+
+Average the original function on the right against the conjugate character using a left-invariant probability measure on the acting group. The right projection has the specified right character and has the original value at one. Its conjugate after inversion has the left character. Expand the original right translates in a basis of their finite-dimensional span to see that the conjugated projection still has a finite-dimensional right orbit. Fubini and the right Haar change of variables identify the pairing with the squared `L²` norm of the right projection, which is positive because the projection is continuous and has nonzero value at one.
+
+The diagonal unitary torus is the application of this compact coefficient separation in the Godement spanning argument associated with Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.1, Proposition 7.1(v), pp. 44–46.

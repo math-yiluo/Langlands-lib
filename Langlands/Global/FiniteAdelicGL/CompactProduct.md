@@ -1,0 +1,7 @@
+# Products of the finite adelic compact matrix groups
+
+`standardIntegralProductEquiv` identifies the actual standard integral finite adelic group with the product of the local integral matrix groups. Its forward map evaluates at each finite place. The inverse assembles the local matrices by the published restricted-product construction, using integrality at every place. The local evaluations distinguish the assembled matrices and prove both inverse identities. The forward map is continuous by coordinatewise evaluation. The source is compact and the product is Hausdorff, so the inverse is continuous.
+
+For the standard upper block parabolic, evaluation at one finite place preserves the parabolic vanishing conditions and commutes with extracting each diagonal block. Conversely, if all the projected matrices belong to their local parabolics, every entry below the block diagonal vanishes in the finite adele ring because it vanishes at every coordinate. Restricting the integral product equivalence along this criterion gives `standardIntegralParabolicProductEquiv`.
+
+This is an internal restriction of the published finite adelic restricted-product equivalence. The two topological group equivalences identify the compact group and the compact parabolic subgroup used in the finite part of the adelic compact induction model. The surrounding Iwasawa convention is that of Getz and Hahn (2024), §10.1, p. 270 (PDF 282).

@@ -1,0 +1,7 @@
+# Dominant real Jacquet coefficients in the uniform Whittaker model
+
+`RealGodementOpenCellModelStatement` concerns a standard K-finite vector whose position exponents have strictly decreasing real parts. Its convergent positive-phase Jacquet coefficient with parameter \(a\) belongs to `realUniformWhittakerModel` with parameter \(-a\).
+
+The proof bounds the Jacquet form at the identity by the supremum norm on the orthogonal group. The spherical vector with the real parts of the same exponents has compact value one. Its diagonal multiplier has the same norm as the multiplier of the original principal series. Upper-Borel covariance therefore bounds the absolute Jacquet integrand by the compact supremum times the absolute integrand of that spherical vector. The preceding dominant-chamber convergence theorem supplies a finite integral for this majorant, giving a compact derivative bound of order zero.
+
+The earlier covariance and translation identities show that the form is equivariant under the actual upper unipotent and that its coefficients are the specified open-cell values. The Library's bounded-functional construction supplies the smoothness, intertwining and common growth exponent required for the uniform model. This implements the dominant-chamber coefficient associated with the Jacquet form of Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2, p. 47. Its scope is the inclusion of the convergent coefficients in the specified model in the chamber.

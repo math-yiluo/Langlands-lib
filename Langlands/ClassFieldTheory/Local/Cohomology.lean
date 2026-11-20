@@ -213,4 +213,12 @@ abbrev absoluteRestriction (n : ℕ) :
 
 end AbsoluteRestriction
 
+theorem _root_.Langlands.ClassField.Global.rationalClass_half_ne_zero : rationalClass (1 / 2 : ℚ) ≠ 0 := by
+  intro h
+  obtain ⟨n, hn⟩ := AddSubgroup.mem_zmultiples_iff.1 ((QuotientAddGroup.eq_zero_iff _).1 h)
+  rw [zsmul_eq_mul, mul_one] at hn
+  have h2 : (2 * n : ℚ) = 1 := by rw [hn]; norm_num
+  have h3 : (2 * n : ℤ) = 1 := by exact_mod_cast h2
+  omega
+
 end Langlands.ClassFieldTheory.Local

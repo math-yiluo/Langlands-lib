@@ -1,0 +1,5 @@
+# Factorization of a compact kernel through a torus
+
+The Fourier coefficients of a continuous kernel on a finite torus times a compact input space are continuous profiles in the input variable. The torus has a left-invariant Borel probability measure. A continuous map from a compact output space to the torus gives a restricted kernel. When the torus slices are smooth with uniform bounds on their values and the specified coordinate derivatives, that restricted kernel factors through the torus. The Fourier decay estimate at order four times the number of circle coordinates bounds each coefficient by a fixed constant times the square of a summable positive weight. Dividing the coefficient by one factor of that weight and assigning the other to the output character produces two absolutely convergent continuous kernel series. Haar orthogonality and Fourier inversion recover the original kernel upon composition.
+
+This internal analytic result supplies a factorization by two continuous kernels for the trace-class argument in Task 7534.

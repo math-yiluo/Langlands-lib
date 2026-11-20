@@ -101,6 +101,17 @@ private theorem adele_galois_product [Fintype (L ≃ₐ[K] L)]
       (map_prod (MonoidHom.snd (InfiniteAdeleRing L) (FiniteAdeleRing (𝓞 L) L))
         (fun σ : L ≃ₐ[K] L => adeleEquiv σ.toRingEquiv a) Finset.univ).symm
 
+/-- The idele norm followed by inclusion is the product of Galois conjugates. -/
+theorem ideleInclusion_ideleNorm_eq_prod [Fintype (L ≃ₐ[K] L)]
+    (a : IdeleGroup (𝓞 L) L) :
+    ideleInclusion (ideleNorm (K := K) a) =
+      ∏ σ : L ≃ₐ[K] L, ideleEquiv σ.toRingEquiv a := by
+  apply Units.ext
+  change adeleInclusion (adeleNorm (K := K) a.val) =
+    (Units.coeHom _) (∏ σ : L ≃ₐ[K] L, ideleEquiv σ.toRingEquiv a)
+  rw [map_prod]
+  exact adele_galois_product (K := K) a.val
+
 /-- The actual quotient norm, followed by inclusion, is the Galois product. -/
 theorem ideleClassNormGaloisProduct : IdeleClassNormGaloisProduct.{u, v} := by
   classical
@@ -108,15 +119,7 @@ theorem ideleClassNormGaloisProduct : IdeleClassNormGaloisProduct.{u, v} := by
   let : Fintype (L ≃ₐ[K] L) := Fintype.ofFinite _
   intro x
   refine QuotientGroup.induction_on x fun a => ?_
-  rw [ideleClassNorm_mk, ideleClassInclusion_mk]
-  have h : ideleInclusion (ideleNorm (K := K) a) =
-      ∏ σ : L ≃ₐ[K] L, ideleEquiv σ.toRingEquiv a := by
-    apply Units.ext
-    change adeleInclusion (adeleNorm (K := K) a.val) =
-      (Units.coeHom _) (∏ σ : L ≃ₐ[K] L, ideleEquiv σ.toRingEquiv a)
-    rw [map_prod]
-    exact adele_galois_product (K := K) a.val
-  rw [h]
+  rw [ideleClassNorm_mk, ideleClassInclusion_mk, ideleInclusion_ideleNorm_eq_prod]
   exact map_prod (QuotientGroup.mk' (IdeleGroup.principalSubgroup (𝓞 L) L)) _ _
 
 end Langlands.ClassField.Global

@@ -1,0 +1,7 @@
+# Addition of actual rational heights
+
+This is a derived calculation for the actual rank-difference relation in `RationalHeight`. It uses Harris, *Supercuspidal representations in the cohomology of Drinfel'd upper half spaces* (1997), Appendix, printed p. 112 (PDF p. 38), for the numerator-minus-scalar-kernel convention. The implementation uses the formal `O`-height normalization with kernel ranks expressed as powers of `q`.
+
+`RationalSection.HeightPresentation.comp` composes the integral numerators with the sum of the denominator exponents. The published finite-kernel composition proof gives the sum of the numerator heights by multiplication of the ranks of the actual kernels. The finite scalar height of the source gives the denominator rank. When the source and intermediate modules have the same scalar height, the two original denominator heights sum to the new one, since powers of `q` are injective for `q ≥ 2` on a base with a prime. The indices therefore add.
+
+`RationalSection.HasHeightFunction.comp` restricts the two presentations to the intersection of their witnessing neighbourhoods at each point. The germ at that point shows the ring of sections on the intersection is nontrivial. `BasicAtlas.RationalHom.HasConstantChartHeight.comp` applies the result on each test algebra of the common cover, using actual coefficient extension of the chart scalar kernels and the compatibility of chart evaluation with composition.

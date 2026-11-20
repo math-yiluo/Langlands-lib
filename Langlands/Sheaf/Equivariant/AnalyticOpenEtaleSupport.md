@@ -7,7 +7,9 @@ space, field and coefficient universes.
 The canonical open domain for the whole space is isomorphic to the identity
 étale object. Applying a sheaf gives `etaleUnderlyingGlobalIso`, and its
 ordinary restrictions are the original étale restrictions to open analytic
-domains.
+domains. These specialize the
+[conditional global-sections comparison](AnalyticOpenEtaleRestriction/GlobalSections.md)
+at the published proof of open-domain étaleness.
 
 `underlyingTopologyPoint` is the usual point of the ordinary-open site: its
 fiber over an open is the lifted proposition that the point lies in that open.

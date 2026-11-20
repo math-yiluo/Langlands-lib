@@ -1,0 +1,7 @@
+# Signed kernel-rank height of the Drinfeld Frobenius comparison
+
+Drinfeld, *Coverings of p-adic symmetric regions* (1976), §2 A, printed p. 109 (PDF p. 3), uses \(\mathrm{Frob}^n\) from the inverse-shifted frame to the original frame. This module calculates its contribution \(nd\) to the signed height, where \(d\) is the dimension of the frame and the rank base \(q\) is the scalar residue cardinality. The normalization uses the numerator-minus-denominator convention of Harris, *Supercuspidal representations in the cohomology of Drinfel'd upper half spaces* (1997), Appendix, printed p. 112 (PDF p. 38).
+
+For \(n\geq 0\) and \(q=p^f\), the proof applies the exact relative Frobenius isogeny and kernel-rank proposition to the \(fn\)-fold characteristic-\(p\) map over the frame field. Coefficient extension preserves that actual rank, and the target isomorphism identifies the result with the positive map of the shifted frame. The rank is \(p^{fn d}=q^{nd}\). The resulting global presentation has scalar denominator one. The comparison uses the proof of the exact positive whole inverse proposition to match its forward tensor with this numerator.
+
+For \(n<0\), the signed comparison is the actual rational inverse of the positive comparison with the residue maps exchanged. The two scalar heights are \(d^2\), so a ranked integral dual of that positive comparison gives the opposite signed index. Extending these presentations to the original cover gives the same integer on every chart test.

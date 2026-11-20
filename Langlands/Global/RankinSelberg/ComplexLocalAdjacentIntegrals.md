@@ -1,0 +1,7 @@
+# Complex corank-one local integrals
+
+Jacquet, *Archimedean Rankin–Selberg integrals* (2009), p. 6, formulas (2.4) and (2.5), defines the ordinary unequal-rank integral and its counterpart with a rectangular matrix variable. At group sizes `r + 2` and `r + 1`, the rectangle has zero rows. These internal lemmas apply that specialization to the Library’s complex dual kernel and dual measure. They give the equalities used to describe the symmetric integral in §8.3, equations (8.3) and (8.4).
+
+The lower-block matrix with zero rectangular coordinate is the standard padded inclusion, and the last block of the Weyl representative has size one. The product measure on the rectangular space is the point mass of total mass one. Thus `complexUnequalDualKernel_adjacent` identifies the kernel with the ordinary unequal-rank kernel of the two Weyl-inverse-transpose duals. The pushforward description of the dual measure gives the integrability equivalence. Integrating over the point mass gives `complexUnequalDualIntegral_adjacent` with the original quotient measure.
+
+For ordinary unequal-rank integrals, write the determinant factor as an exponential linear in the complex parameter and absorb the fixed rank shift into the coefficient. `differentiableOn_integral_mul_cexp` gives holomorphy on any open set of absolute convergence. Applying the same argument to the duals yields holomorphy of the corank-one dual integral from its product-kernel convergence.

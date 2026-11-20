@@ -1,0 +1,5 @@
+# Weyl transport of the unquotiented semistandard weight
+
+`weylConjugateLeviWeylEquiv` restricts conjugation in the ambient relative Weyl group to the literal Levi Weyl subgroups. The proof lifts ambient Weyl elements to rational normalizer points. The actual conjugate Levi is the image of the source Levi under conjugation by the lift, so testing membership on these lifts identifies the two subgroups. The equivalence gives equality of their cardinalities.
+
+`SourceConstants.unquotientedWeightAtIndex_eq_at_weylConjugateLevi` proves equality of the real VI.3 and VII.2 weights at a source index and an arbitrary parabolic over its Weyl-conjugate Levi. It combines this Weyl cardinality equality, the published equivalence of the literal parabolic fibers, and the source scalar transport. For arbitrary target parabolics the scalar transport consumes `SourceConstantParabolicIndependenceStatement` at the displayed source-special compact. This is a derived comparison for the unquotiented weight of Waldspurger (2003), VI.3, printed pp. 305–306 (PDF pp. 71–72), and VII.2, printed p. 319 (PDF p. 85). [Original publication](https://doi.org/10.1017/S1474748003000082)

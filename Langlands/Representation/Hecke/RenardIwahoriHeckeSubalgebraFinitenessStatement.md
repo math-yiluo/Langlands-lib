@@ -21,12 +21,27 @@ published:
 This file states the subalgebra form **without (P)**. It is the Chapter V
 ledger's gap 4.
 
-**Whether this statement is true is not known to the author.** It is
-Renard's assertion, with one documented correction of the definition of `A`
-(see "Corrections and readings"). The printed proof does not establish it
-(see "Status of the assertion"). Its proof is a separate obligation, which
-may need a new argument. If it is disproved, the Lemma is a source error, to
-be recorded in the ledger.
+**This statement is false in general. Do not use it as a proof target or as
+a premise.** It is Renard's assertion, with one documented correction of the
+definition of `A` (see "Corrections and readings"). Worker 956, executing
+the proof task for this statement (Task 7777, `a8ad2421-32c3-4bc4-b4c5-e91663f83bd7`),
+found a counterexample on paper: `U(1,1)` for the ramified quadratic
+extension `ℚ₂(ζ₈)/ℚ₂(√2)`, with a subgroup `K` that satisfies every
+hypothesis of V.5.3. Worker 4 checked every step on paper. The argument is
+in the public note
+[Renard V.5.3: the generated subalgebra `M` need not be a finitely generated `A`-module](../../../notes/renard/v53-subalgebra-finiteness-counterexample.md)
+(candidate `b4f62326-d88e-4919-9632-e21d11cfe4c3`, first in the Library at
+`7e12a30cd33f6905b3d1d7477b73eaff3c7342b3`), and it is summarized under
+"Status of the assertion". It is not formalized.
+
+The Lean proposition quantifies over Kaletha–Prasad building assignments
+`𝔅` that are available for `G` (`𝔅.IsAvailableFor F G hG`). The example
+refutes it whenever such an assignment exists for this `U(1,1)`. The Library
+does not prove that one exists; if none exists, the proposition is vacuous
+for this group. So its negation is not proved in Lean. Renard's printed
+Lemma, for an arbitrary `K` as in V.5.3, is a source error, and the Chapter V
+ledger records it. The Lean statement is unchanged from its first
+publication; only this Markdown was corrected.
 
 ## Source and provenance
 
@@ -311,20 +326,64 @@ So (C) for `t` depends only on the class of `t` in `Λ(Z)`. Hence (C) is
 equivalent to the `WeakChamberContraction` part of (P), and the
 `LeviIntersectionNormalization` part of (P) is not needed.
 
-**What remains open.** Clause 2 of the hypothesis on `K`, for the minimal
-parabolic (`J = ∅`, whose split component is `S`), says that every
+**What holds in general.** Clause 2 of the hypothesis on `K`, for the
+minimal parabolic (`J = ∅`, whose split component is `S`), says that every
 `z ∈ C_∅^+` contracts `K_N` and that `z⁻¹` contracts `K_N̄`. The published
-proof of `IwahoriHeckeDecompositionStatement` uses it in this form. So (C) holds for `t^k` with `k = [Λ(Z) : Λ(S)]`. It also
-holds for every `t ∈ Z^+` when `Λ(Z) = Λ(S)`, for example when `G` is split.
-The author knows no argument for (C) itself when the class of `t` in `Λ(Z)`
-is not in `Λ(S)`. The author also knows no route to the Lemma that avoids
-(C), and no counterexample.
+proof of `IwahoriHeckeDecompositionStatement` uses it in this form. So (C)
+holds for `t^k` with `k = [Λ(Z) : Λ(S)]`. It also holds for every `t ∈ Z^+`
+when `Λ(Z) = Λ(S)`, for example when `G` is split. Under (C), Steps 1–2 above
+give the Lemma (a paper argument). The conditional statement `IwahoriHeckeSubalgebraFinitenessStatement`
+assumes the stronger (P) and is not affected by the counterexample below.
+
+**Counterexample (paper, not formalized).** Worker 956 found it; Worker 4
+checked it. The full argument is in the note linked above. Let
+`F = ℚ₂(√2)` and `E = F(i) = ℚ₂(ζ₈)`, a ramified quadratic extension, and let
+`G = U(1,1)` be the unitary group of the hermitian form with matrix
+`J = [[0,1],[1,0]]`. Write `n(x)`, `n̄(y)` (`x, y ∈ F i`) for the upper and
+lower unipotent matrices and `t(α) = diag(α, σ(α)⁻¹)` (`α ∈ E^×`, `σ` the
+conjugation of `E/F`). So `Z(F) = t(E^×)`, `Λ(Z) = ℤ` (the valuation of `α`)
+and `Λ(S) = 2ℤ`. `K₀ = G(F) ∩ GL₂(𝒪_E)` is the stabilizer of a vertex `y₀`
+of the Bruhat–Tits tree; every vertex is special.
+
+- Let `R₁ = ℤ₂ + 2√2 ℤ₂`, a subring of index 2 in `𝒪_F`. The norm maps
+  `𝒪_E^×` into `R₁^×`, but `N(1 − ζ₈) = 2 − √2 ∉ R₁`.
+- `F_∅ = {1, f}` with `f = t(1 − ζ₈)` is a chamber-compatible transversal.
+- For an integer `m ≥ 1` let `L = 2^m R₁ i`,
+  `T_K = {t(α) : α ∈ 1 + 2^m 𝒪_E, N(α) ∈ 1 + 2^{m+1} 𝒪_F}` and
+  `K = n(L) T_K n̄(L)`. Then `K` is a compact open subgroup, normal in `K₀`,
+  contained in `I + 2^m Mat₂(𝒪_E)`, with the Iwahori decomposition
+  `K_N = n(L)`, `K_M = T_K`, `K_N̄ = n̄(L)`. It satisfies the clauses of V.5.2
+  for the root subsets `∅` and `{α}`; for `{α}` they are trivial, since the
+  Levi factor is `G` and its centre `U(1)` is anisotropic. As `m` grows,
+  these `K` lie in every neighborhood of `1`.
+- (C) fails for `f`: `f K_N f⁻¹ = n((2 − √2) L) ⊄ n(L)`. The group
+  `K · f K_N f⁻¹ = K n(2^m 𝒪_F i)` contains `K` with index 2, with coset
+  representative `x₁ = n(2^m √2 i)`, which normalizes `K`. Hence, for
+  `z ∈ C_∅^+`, `a_f a_z = (a_{fz} + a_{x₁ f z}) / 2`, so `a_{x₁ f z} ∈ M`.
+- Let `y_ℓ = f^ℓ y₀`. For `ℓ = 2m + 3`, the coset `K x₁` meets no element of
+  the stabilizer of `y_ℓ`. A tree-distance argument then shows: for any
+  finitely many `D_k ∈ H(G, K)`, every `a_{z'} ∗ D_k` with `z' ∈ C_∅^+`
+  vanishes at `x₁ f z` once `z ∈ C_∅^+` is deep enough, while
+  `a_{x₁ f z}(x₁ f z) > 0`. So `M` is not a finitely generated `A`-module.
+
+Renard's computation controls only the products `a_{z₁} a_{z₂ f}`, that is,
+the module form, which holds for all data and is published. In the example,
+(C) fails only for the class of `f`. The example uses `p = 2`: the unit norms
+of the wildly ramified `E/F` lie in the proper order `R₁` of `𝒪_F`, while `f`
+acts through `2 − √2 ∉ R₁`. The note explains why a tamely ramified
+quadratic extension does not give such a `K`.
 
 ## Remaining obligations
 
-- The proof of this statement is a separate proof obligation. It is open, and
-  its truth is not known. See "Status of the assertion".
-- The Chapter V ledger records this statement under gap 4.
+- None for this statement: it is false in general (see "Status of the
+  assertion"). Its proof task, Task 7777, will not deliver a proof; its
+  executor published the counterexample note from that task instead. The
+  conditional form, with hypothesis (P), is
+  `IwahoriHeckeSubalgebraFinitenessStatement` (proof Task 7679).
+- The Chapter V ledger records the Lemma as a source error under gap 4.
+- A Lean formalization of the counterexample would need an available
+  building assignment for this `U(1,1)`, which the Library does not provide.
+  It is not attempted here.
 
 ## Imports
 

@@ -39,7 +39,7 @@ theorem idealSheaf_comap_pow {X Y : Scheme.{u}} (I : X.IdealSheafData)
   rw [Scheme.IdealSheafData.ideal_comap_of_le _ f (U y) (V y) (hVU y),
     Ideal.map_pow]
 
-variable {S T : Scheme.{u}} (G : GroupScheme S) [IsAffineHom G.X.hom]
+variable {S T : Scheme.{u}} (G : GroupScheme S) [IsSeparated G.X.hom]
   (b : T ⟶ S)
 
 private theorem identity_ker_baseChange :
@@ -91,11 +91,7 @@ theorem baseChange_isPullback (n : ℕ) :
 def baseChangeIso (n : ℕ) :
     (Scheme.Modules.pullback b).obj (module G n) ≅
       module ((GroupScheme.baseChange b).obj G) n := by
-  have : IsClosedImmersion (inclusion G n) :=
-    inferInstanceAs (IsClosedImmersion (ideal G n).subschemeι)
-  have : IsAffineHom (projection G n) := by
-    change IsAffineHom (inclusion G n ≫ G.X.hom)
-    infer_instance
+  have : IsAffineHom (projection G n) := projection_isAffineHom_of_isSeparated G n
   have : (Langlands.SchemeModule.structureModule (scheme G n)).IsQuasicoherent :=
     Langlands.AlgebraicGeometry.Modules.CechDegreeOne.isQuasicoherent_unit _
   exact

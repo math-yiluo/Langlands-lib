@@ -1,0 +1,7 @@
+# Covariance and linearity of the real Jacquet integral
+
+`RealGodementOpenCellCovarianceStatement` gives the left upper-unipotent covariance of the open-cell Jacquet value. The integrand uses the positive phase of the additive character of parameter \(a\). The resulting Whittaker multiplier has parameter \(-a\).
+
+Right translation in the strictly upper entries adds a correction at entry \((i,j)\) that involves only the moving entries \((i,k)\) with \(i<k<j\). These have smaller width. The finite triangular translation theorem preserves the product Haar measure, which gives right invariance of the actual upper-entry Haar measure. Substitute \(u\mapsto uv\) for the left displacement by \(v\) of the group argument and factor the inverse character of \(v\) out of the integral. The covariance equality uses the total Bochner integral. On the strictly dominant chamber the preceding convergence result supplies absolute integrability of the integrals involved.
+
+On a strictly dominant signed-power principal series, `additiveJacquetLinear` uses absolute integrability to obtain a linear map into functions of the group variable. The same integral commutes with right translation by associativity of group multiplication. These properties are the covariance and linearity of the open-cell integral in Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2, p. 47, expressed with the Library's upper-Borel and positive-phase conventions.

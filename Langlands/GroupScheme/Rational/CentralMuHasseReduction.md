@@ -1,0 +1,7 @@
+# Hasse reduction for central isogenies with roots-of-unity kernel
+
+`NumberFieldMuKernelHasseStatement` is the finite Galois Hasse kernel assertion for a group admitting a simply connected central cover with kernel isomorphic to `μ_n` for positive `n`. `numberFieldMuKernelHasse_of_simplyConnected` proves this assertion from the simply connected arithmetic kernel over number fields.
+
+The proof first lifts an everywhere locally trivial target cocycle after finite Galois refinement. One global kernel cocycle then corrects the lift at every infinite place after another finite Galois refinement. At a finite place, a completion of the coefficient field is a finite Galois cover of the base completion. The published simply connected local vanishing theorem gives a trivialization on this field cover. Fpqc descent reflects it to the actual pullback cover. Therefore the corrected lift is everywhere locally trivial and the simply connected arithmetic premise makes it globally trivial.
+
+Projection kills the central correction. The resulting trivialization on the final cover descends to the original cover by fpqc reflection. This implements the roots-of-unity kernel case of the adjoint reduction in Platonov–Rapinchuk, *Algebraic Groups and Number Theory*, Theorem 6.22 and Lemma 6.19, printed pp. 336–337. The finite-place comparison also applies to every simply connected group independently of this central-isogeny argument.

@@ -25,6 +25,12 @@ Intersecting the chart with the closed source set gives a compact set whose
 image in the Hausdorff product is closed. The closure point therefore belongs
 to this compact image.
 
+The theorem `isCompact_preimage_pair_baseMap_of_surjective` uses the same
+continuous bounds on a compact subset of the product. Each bound has a finite
+upper bound there. A single radius then contains its entire inverse image.
+This inverse image is closed by continuity and Hausdorffness of the product,
+so it is compact as a closed subset of that chart.
+
 For Hausdorffness, each pair of affine étale charts admits a pullback with
 coordinate algebra a quotient of the tensor product. The analytification
 pullback and ordinary point lifting identify the range of the joint map with

@@ -70,9 +70,9 @@ Mathlib's automorphism enumeration differs from the target's enumeration.
 
 This is a derived proof using the published arithmetic constructions,
 completed tensor comparison, principal norm compatibility, and weak
-approximation, together with Mathlib's field norm theorem. The new helper
-lemmas are private implementation steps; the only new public declaration
-is the exact requested theorem.
+approximation, together with Mathlib's field norm theorem.
+`ideleInclusion_ideleNorm_eq_prod` exposes the product formula on ideles
+before passing to classes. The coordinate proofs are private.
 
 J. S. Milne, *Class Field Theory*, version 4.03 (2020), Chapter VII section 2,
 printed pp. 206–207 (PDF pp. 215–216), supplies the mathematical source

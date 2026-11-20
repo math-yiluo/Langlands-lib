@@ -1,0 +1,9 @@
+# Split-torus Hom effectivity over a reduced complete local base
+
+`ReducedSplitTorusAdicEffectivityStatement` asserts bijectivity of restriction to the maximal-ideal quotients of a reduced complete Noetherian local ring \(A\). The source is the split torus with character lattice \(\mathbb Z^L\) for a finite index type \(L\). The target \(G\) is smooth, separated and quasi-compact, with affine actual residue-field fibres. The theorem `reducedSplitTorusAdicEffectivity` proves this in every universe.
+
+For a compatible system, the proof takes the actual residue-field realizations of its algebraized torsion maps. The product \(B\) of the minimal-prime residue fields receives an injection from \(A\). Indeed, each component map has the corresponding minimal prime as kernel, and their intersection is zero by reducedness. The coproduct description of \(\operatorname{Spec} B\) glues the realizations at the minimal primes and checks the torsion equations componentwise.
+
+The resulting graph maps into the union of the fibrewise graphs. Its schematic image is finite over the split torus by the DVR extension argument. Finite graph descent along \(A\hookrightarrow B\) now gives a homomorphism over \(A\). Schematic dominance checks that its torsion maps are the prescribed ones, so torsion detection identifies its adic restriction with the given system. The same detection gives injectivity.
+
+This is a derived split-source, reduced-base step toward Raynaud's affine-fibre comparison in SGA 3, Exposé XV, Corollary 4.4, Gille–Polo recomposition of 1 December 2008, recomposed p. 260, PDF p. 28. The finite graph and coefficient descent implement the prolongation step suggested by the proof of Lemma 3.10, recomposed pp. 257–258, PDF pp. 25–26. The Lean argument uses the scheme-theoretic torsion for every positive order.

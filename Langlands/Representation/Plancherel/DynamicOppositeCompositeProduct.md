@@ -1,0 +1,5 @@
+# The canonical fraction of a scalar product on the actual composite
+
+This derived comparison applies to the original continued composite on a dense open locus. It takes the scalar formula for that composite with one pointwise factor per actual rank-one chart and a nonzero constant at the supplied Haar scale. The input factor invariances apply when both parameters lie in the original locus.
+
+`conditionalCanonicalRationalScalar_spec` gives one regular numerator and denominator for the original canonical rational scalar and identifies their quotient with the exact composite on the common regular region. The original scalar is nonzero, so the numerator is nonzero. Intersect the locus of the product formula with the common continuation region and with the nonzero locus of the numerator. The resulting region is dense and open. Equality of the two scalar actions on a nonzero normalized induction vector, obtained from the fixed compact picture, identifies the two scalar values. This yields `HasDenseRankOneProduct` for the original scalar at its exact scale.

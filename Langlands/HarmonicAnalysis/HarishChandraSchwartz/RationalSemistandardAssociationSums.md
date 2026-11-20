@@ -1,0 +1,7 @@
+# Finite sums over semistandard association representatives
+
+`Association.Representatives` chooses one actual full index in each quotient class of the published `associationSetoid`. `representativeSum` sums over those indices. The support of its summand lies in the image of any support bound for the function on full indices. A finite bound gives the displayed finite sum over its image in `AssociationClass`.
+
+`finsum_eq_representativeSum` regroups any finite sum of values constant on the actual association classes. The fibers over the finite image of the support are the literal `associatedIndices` of the chosen representatives. They are pairwise disjoint and finite by the published relative Weyl finiteness, the named semistandard fiber finiteness and centralizer containment statements, and uniqueness of the transported orbit. Summing a constant value on each fiber multiplies it by the cardinality of that fiber. The identity holds for every representative choice, so the resulting sum of cardinality-weighted values is independent of the choice.
+
+This is the finite-sum step used with the packet and form transport in Waldspurger, *La formule de Plancherel pour les groupes p-adiques (d’après Harish-Chandra)* (2003), Remark VII.2.4, printed p. 320 (PDF p. 86). The packet, pairing, and source constant comparisons supply the class-constant values when applying this lemma. [Original publication](https://doi.org/10.1017/S1474748003000082)

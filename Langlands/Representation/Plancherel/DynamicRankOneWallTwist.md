@@ -1,0 +1,5 @@
+# Ambient character invariance of the rank-one gallery scalar
+
+At a represented rank-one wall, use the inverse cocharacter at each vertex for its fixed represented opposite. For each direction of the edge, the inner complement maps isomorphically onto the actual gallery complement. Pulling the fixed gallery Haar measure back through this isomorphism sets the lower normalization.
+
+The scalar transfer takes a scalar identity at the original representation and requires `representedIsPQRegular` in both orders at both the original and the twisted representations. At the original parameter, the two lower operators exist by descended regularity and stage restriction transfers the upper scalar to their composite. Multiply the two lower induced functions by the same smooth character of the wall Levi. Triviality on both inner radicals preserves both integral identities at their fixed measures. The restricted character is the same on the original common Levi in both parabolics. The two twisted regularity witnesses give the integral normalization of the upper maps at the twisted parameter, so stage restriction carries the lower scalar back to the twisted upper composite.

@@ -1,0 +1,3 @@
+# Prime divisors shared by all scalings of a Laurent block
+
+This algebraic lemma is derived for the rank-one product route to full-unitary regularity. Group the coefficients of a Laurent polynomial by their exponents in the scaled block. Every summand is a monomial unit of that block times a Laurent polynomial on the first block. Modulo a prime that divides all the scalings, the groupings give a linear combination of distinct multiplicative characters that vanishes identically. Dedekind independence over the quotient domain makes each coefficient zero there. At least one unscaled first-block polynomial is nonzero, and primality removes the monomial unit from its divisibility conclusion.

@@ -21,9 +21,15 @@ proved from `e ≫ p = id`. The algebra structure on the source, exposed as
 `p.app U`. It is installed only locally in this module; users can install
 that explicit algebra structure when using the quotient comparison.
 
+When `p` is separated, the identity section is a closed immersion. The
+support of each positive power of its defining ideal is the image of the
+section. Thus the projection from the jet to the base is a homeomorphism on
+underlying spaces, with inverse given on points by the section. The projection
+is affine by the affine-morphism criterion for an inducing map with closed
+range. This step applies to any separated ambient group.
+
 Now assume `p` is affine and `U` is an affine open of `S`. Then `p⁻¹U` is
-affine, represented by `affineOpen G U`. The section `e` is a closed
-immersion because `p` is separated and `e ≫ p = id`. Consequently its
+affine, represented by `affineOpen G U`. The section's
 scheme-theoretic kernel on `p⁻¹U` is the actual kernel of its map on affine
 functions. The equality `e⁻¹p⁻¹U = U` identifies that kernel with the kernel
 of `augmentation G U`; `ker_augmentation` and `ideal_apply` record these

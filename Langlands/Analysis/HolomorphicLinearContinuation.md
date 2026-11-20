@@ -1,0 +1,9 @@
+# Continuation of linear functionals from holomorphic spanning families
+
+`HolomorphicLinearContinuationStatement` fixes a complex normed parameter space and a finite coordinate space. An indexed family of vectors has holomorphic coordinates and contains a basis at each parameter. Each vector has a prescribed holomorphic scalar value. On a nonempty open set, a coefficient vector represents those values by dot products. The theorem supplies coefficient functions holomorphic on the whole parameter space that give the prescribed dot products everywhere and agree with the original coefficients on the open set.
+
+For any chosen tuple of indices, form the matrix whose rows are the corresponding family vectors. The Cramer numerator is holomorphic because each coordinate is a determinant. On the open set, multiplication of the prescribed values by the adjugate gives the original coefficient vector times the determinant. Taking the dot product with any generator gives a holomorphic identity that holds on the open set even where the frame determinant vanishes. Restricting to an affine complex line through a point of the open set and the desired parameter extends this identity by the complex identity theorem.
+
+At each parameter choose a tuple whose determinant is nonzero and divide the Cramer numerator by it. The extended identity gives every prescribed value. For a fixed parameter, the same tuple has nonzero determinant throughout a neighborhood, and the values on its rows determine the coefficients by Cramer's rule there. This proves holomorphy and gives agreement with the original coefficients on the open set.
+
+This is internal linear and analytic infrastructure for continuing Jacquet evaluations from families of compact Godement sections. The hypothesis of an invertible tuple at every parameter is the finite-dimensional spanning input.

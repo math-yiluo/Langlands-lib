@@ -1,0 +1,7 @@
+# Reduced characteristic polynomials from splitting factor fields
+
+`Langlands.CentralSimple.ReducedCharpolyFromSplitFactorsStatement` gives a sufficient condition for a monic separable polynomial of the reduced degree of a finite-dimensional central simple algebra to be a reduced characteristic polynomial. Each monic irreducible factor must give a splitting field when adjoined to the base field. The result is the sufficiency direction of Lemma b in §5.4 of Martin Kneser, *Lectures on Galois Cohomology of Classical Groups*, TIFR Lectures on Mathematics 47, 1969, printed p. 68 (PDF p. 74). [TIFR publication](https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr47.pdf)
+
+The proof equips the column space over each factor field with the left action of the algebra through a splitting chart. The product of these modules has the same dimension over the ground field as the regular module. Artin–Wedderburn gives an isomorphism of left modules. The product of the factor fields acts faithfully by scalar multiplication, so the isomorphism transports the tuple of adjoined roots to an endomorphism of the regular left module. Such an endomorphism is right multiplication by an algebra element.
+
+Reduced Cayley–Hamilton follows by applying matrix Cayley–Hamilton in a splitting chart. Applying it to the constructed element shows that its reduced characteristic polynomial vanishes at each adjoined root. The corresponding factors thus divide that polynomial. Their pairwise coprimality, monicity and total degree give the equality of polynomials.

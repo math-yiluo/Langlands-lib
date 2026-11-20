@@ -1,0 +1,5 @@
+# Simultaneous transpose conjugacy for a commuting pair with a cyclic member
+
+The cyclic vector matrix has columns given by the first `n` powers of a square matrix applied to one vector. If its determinant is nonzero, any desired vector is a linear combination of these columns and hence the value of a polynomial in the matrix on the chosen vector.
+
+A matrix commuting with the cyclic matrix is itself a polynomial in it. Choose a polynomial whose value on the cyclic vector matches the commuting matrix. The identity then extends to all vectors because polynomial evaluations on the cyclic vector exhaust the space and both operators commute with every such evaluation. Transposition commutes with evaluation in one matrix by the transpose algebra equivalence into the opposite ring. The Library's conjugator for the cyclic matrix therefore also conjugates its commuting polynomial to its transpose. This is an internal polynomial argument, relevant to the adjoint orbit geometry behind the archimedean transposition problem.

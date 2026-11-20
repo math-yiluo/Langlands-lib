@@ -1,0 +1,3 @@
+# Finite algebraic closures of archimedean completions
+
+`FiniteArchimedeanAlgebraicClosureStatement` asserts finite dimensionality of the algebraic closure of the actual completion of a number field at each infinite place. The theorem chooses a finite extension containing a square root of `-1` by using a polynomial splitting field. Every infinite place of that extension is complex. A place over the given place has a finite-dimensional completion by the existing archimedean comparison. Its identification with the complex field makes it algebraically closed. Embedding the algebraic closure of the original completion into this finite extension proves finite dimensionality. This is an internal input for using actual finite Galois covers at infinite places.

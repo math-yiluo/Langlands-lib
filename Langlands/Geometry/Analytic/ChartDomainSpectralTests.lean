@@ -17,7 +17,7 @@ open AffinoidAtlasPresentation.StrongHom
 variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   {X Y Z : LocalizedCategory.{u, v, v} (K := K)}
 
-private theorem chartDomainFullChart_contains (A : SaturatedAtlasPresentation.{u, v, v} K)
+theorem range_chart_subset_chartDomainFullChart (A : SaturatedAtlasPresentation.{u, v, v} K)
     (i : A.presentation.atlas.Index) (j : (A.domain (A.chartDomain i)).presentation.atlas.Index) :
     range ((A.domain (A.chartDomain i)).presentation.atlas.chart j) ⊆
       range ((A.domain (A.chartDomain i)).presentation.atlas.chart (chartDomainFullChart A i)) := by
@@ -33,8 +33,8 @@ def chartDomainPullback (i : (presentationOf X).presentation.atlas.Index)
     BoundedAlgHom K ((presentationOf Y).presentation.atlas.algebra j)
       ((presentationOf X).presentation.atlas.algebra i) :=
   ((localizedTopTargetHomEquiv (chartDomainFullChart (presentationOf Y) j)
-    (chartDomainFullChart_contains (presentationOf Y) j)).symm φ).pullbackAtTop
-      (chartDomainFullChart (presentationOf Y) j) (chartDomainFullChart_contains (presentationOf Y) j)
+    (range_chart_subset_chartDomainFullChart (presentationOf Y) j)).symm φ).pullbackAtTop
+      (chartDomainFullChart (presentationOf Y) j) (range_chart_subset_chartDomainFullChart (presentationOf Y) j)
       (chartDomainFullChart (presentationOf X) i)
 
 @[simp]
@@ -43,7 +43,7 @@ theorem chartDomainPullback_id (i : (presentationOf X).presentation.atlas.Index)
       BoundedAlgHom.id K ((presentationOf X).presentation.atlas.algebra i) := by
   let D := (presentationOf X).domain ((presentationOf X).chartDomain i)
   let j := chartDomainFullChart (presentationOf X) i
-  let e := localizedTopTargetHomEquiv (A := D) j (chartDomainFullChart_contains (presentationOf X) i)
+  let e := localizedTopTargetHomEquiv (A := D) j (range_chart_subset_chartDomainFullChart (presentationOf X) i)
   have h : e.symm (𝟙 (localizationFunctor.obj D)) = 𝟙 D := by
     apply e.injective
     rw [Equiv.apply_symm_apply]
@@ -66,8 +66,8 @@ theorem chartDomainPullback_comp (i : (presentationOf X).presentation.atlas.Inde
   let i' := chartDomainFullChart (presentationOf X) i
   let j' := chartDomainFullChart (presentationOf Y) j
   let k' := chartDomainFullChart (presentationOf Z) k
-  let hj := chartDomainFullChart_contains (presentationOf Y) j
-  let hk := chartDomainFullChart_contains (presentationOf Z) k
+  let hj := range_chart_subset_chartDomainFullChart (presentationOf Y) j
+  let hk := range_chart_subset_chartDomainFullChart (presentationOf Z) k
   let a := (localizedTopTargetHomEquiv j' hj).symm φ
   let b := (localizedTopTargetHomEquiv k' hk).symm ψ
   have h : (localizedTopTargetHomEquiv k' hk).symm (φ ≫ ψ) = a ≫ b := by
@@ -123,7 +123,7 @@ theorem IsNear.spectralBound_preservedChartPullback (τ : TestTriple (presentati
   let D := (presentationOf X).chartDomain τ.domain
   let A := (presentationOf X).domain D
   let i := chartDomainFullChart (presentationOf X) τ.domain
-  let hi := chartDomainFullChart_contains (presentationOf X) τ.domain
+  let hi := range_chart_subset_chartDomainFullChart (presentationOf X) τ.domain
   let τ' : TestTriple A := ⟨i, τ.function, τ.bound, τ.bound_pos⟩
   have he : τ'.ambient = τ := rfl
   have hpre := h.preimage_eq
@@ -163,7 +163,7 @@ theorem isNear_id_of_spectralBound_preservedChartPullback (τ : TestTriple (pres
   let D := B.chartDomain τ.domain
   let A := B.domain D
   let i := chartDomainFullChart B τ.domain
-  let hi := chartDomainFullChart_contains B τ.domain
+  let hi := range_chart_subset_chartDomainFullChart B τ.domain
   let τ' : TestTriple A := ⟨i, τ.function, τ.bound, τ.bound_pos⟩
   let ψ := domainRestrict D D φ (mapsTo_chart_of_preimage_eq τ.domain φ hpre)
   let e := localizedTopTargetHomEquiv (A := A) i hi

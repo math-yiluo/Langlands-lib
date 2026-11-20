@@ -18,3 +18,5 @@ This is an internal extension of the Library's identity jet geometry.
 It works over an arbitrary base, including with a non-affine ambient group.
 It gives the actual finite jet schemes used
 in the conjugation representation approach.
+
+`IdentityJetSheaf` proves the equality between the ranges of the jet inclusion and the identity section.

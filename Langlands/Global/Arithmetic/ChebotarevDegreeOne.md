@@ -1,0 +1,5 @@
+# Finite Chebotarev realization at degree-one primes
+
+`Langlands.Global.ChebotarevDegreeOneStatement` says that an automorphism of a finite Galois extension of number fields is an arithmetic Frobenius at an unramified prime over a base place outside a given finite set. The base residue field has prime cardinality, so that place has residue degree one over its rational prime. The two number fields have independent universes.
+
+This refinement for the Harris comparison uses the same ported `NumberField.exists_prime_isArithFrobAt_of_isGalois` input as the Library's finite Chebotarev realization. The Lean proof excludes the rational primes below the given finite set and the rational prime divisors of the extension field's discriminant. It contracts the resulting prime to the base field and uses the published `ChebotarevRealization.base_card_eq_prime` to identify the cardinality of that residue field with the rational prime. The other conclusions follow from the published avoidance, unramifiedness and relative Frobenius lemmas.

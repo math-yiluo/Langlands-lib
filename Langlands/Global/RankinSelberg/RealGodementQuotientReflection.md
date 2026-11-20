@@ -1,0 +1,7 @@
+# Fourier reflection on the real Godement quotient
+
+For the descended Godement integrand of equation (7.8) in Jacquet's real calculation, the Weyl inverse-transpose change of variables preserves absolute convergence and gives the functional equation with factor `c((-1)^m)`. The transformed data are the positive rectangular Schwartz Fourier transform, the reflected lower coefficient, the inverse inducing character and the negated phase parameter.
+
+The reflection of a lower representative descends to the existing homeomorphism on `N_m \ GL(m)`. Its automorphism part on the ambient group and on the unipotent subgroup is involutive, so both Haar moduli are one. The compatible quotient measure is also right invariant, which handles the remaining right translation by the Weyl matrix. The reflected coefficient has the opposite unipotent law, so the pointwise kernel reflection gives equality on the quotient. Measure preservation and the nonzero inducing-character value transport integrability in both directions and give the stated equality of integrals.
+
+This formalizes the integral change of variables in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, Section 7.3, Proposition 7.3, for the upper inducing Borel and the positive Fourier convention. Absolute convergence for the Whittaker inputs and the identification with the Jacquet integral are analytic steps preceding this identity.

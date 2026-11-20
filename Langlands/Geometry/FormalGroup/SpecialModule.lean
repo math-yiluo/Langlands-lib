@@ -1,3 +1,4 @@
+import Langlands.Algebra.LocalDivisionSubfieldInteger
 import Langlands.Geometry.FormalGroup.DivisionOrder
 import Langlands.Geometry.FormalGroup.TangentCharacters
 import Langlands.Geometry.FormalGroup.IsogenyBaseChange
@@ -25,7 +26,7 @@ abbrev SubfieldIntegerRing := (localDivisionSubfieldValuation K D ι).integer
 
 /-- The original integral scalar map equips the embedded integer ring with its O-algebra. -/
 instance subfieldIntegerAlgebra : Algebra 𝒪[K] (SubfieldIntegerRing K D ι) :=
-  (localDivisionSubfieldBaseIntegerMap K D ι).toAlgebra
+  localDivisionSubfieldIntegerAlgebra K D ι
 
 /-- Inclusion of the embedded integer ring into the actual division order respects scalars. -/
 def subfieldIntegerInclusion : SubfieldIntegerRing K D ι →ₐ[𝒪[K]] IntegerRing K D where

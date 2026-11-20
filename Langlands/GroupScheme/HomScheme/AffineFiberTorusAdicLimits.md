@@ -1,0 +1,7 @@
+# Adic limits for closed tori from algebraization of homomorphisms
+
+For a smooth separated quasi-compact group scheme with affine residue fibres, `affineFiberTorusAdicLimits_of_homEffectivity` proves the adic limit condition for the presheaf of actual closed tori, assuming algebraization of compatible torus homomorphisms that are closed immersions on every positive thickening.
+
+A closed torus over a complete test ring is determined by its restrictions, since containment in a closed subgroup is detected on the adic thickenings. For existence, a compatible sequence of subgroups is first transported to the pullback of the ambient group over the complete ring. A single relative torus over that ring supplies the compatible formal sources. If the resulting system algebraizes to a homomorphism, each of its positive torsion restrictions is a closed immersion. The torsion criterion makes the homomorphism a monomorphism, and the affine-residue-fibre valuative criterion makes it a closed immersion. Its literal range gives the required lift on all tests over each positive thickening. The reduction at exponent zero follows by compatibility.
+
+This implements the implication from Hom effectivity to subgroup effectivity in SGA 3, Exposé XV, Proposition 8.1, for the smooth separated affine-residue-fibre setting. The proof uses positive torsion to obtain closedness of the algebraized homomorphism.

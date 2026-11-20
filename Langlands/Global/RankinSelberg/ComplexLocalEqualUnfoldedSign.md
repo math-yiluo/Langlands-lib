@@ -1,0 +1,7 @@
+# The sign of the unfolded complex equal-rank dual integral
+
+This internal comparison accounts for the dual sign in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, pp. 55–58, under the Library’s positive Fourier convention. It starts with the double integral of the form (8.1). Let `m = r + 1` be the smaller group size, `Z = -I_m` and `J = diag(Z,1)`. The square Fourier identity identifies the mixed test with the positive square transform evaluated after left multiplication by `J`.
+
+Translate the outer group variable by `J` and the inner quotient variable by `Z`. The first change preserves group Haar and the second preserves the compatible quotient measure. The identity `diag(hZ,1) J g = diag(h,1) g` preserves the argument of the larger Whittaker function, and the inner function contributes its central scalar `c`. Both determinant norms are unchanged. The determinant character contributes `η(-1)^m` in the outer variable. This cancels the recursion multiplier because its square is one. The result is the unfolded double integral with the positive square Fourier transform and common scalar `c`, intended to be `complexCentralSign ds` for the smaller first inducing list.
+
+The statement assumes left-unipotent invariance of the inner products and the displayed central covariance. It relates the two unfolded expressions. An equality between the original dual zeta integral and its unfolded expression requires the recursive Whittaker formula and the corresponding quotient and absolute convergence arguments.

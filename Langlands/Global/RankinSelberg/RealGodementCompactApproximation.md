@@ -1,0 +1,7 @@
+# Uniform compact approximation by real Godement sections
+
+For every smooth upper position principal-series vector and every positive error tolerance, one real Godement integral with a compact full-row-rank test gives a smaller error everywhere on the upper orthogonal group. The lower cutoff uses the trailing position characters of the upper vector. The lower-rank Borel measure is finite on compact sets and gives positive measure to nonempty open sets. When it is right invariant, the section covariance theorem also places the integral in the upper principal series.
+
+Choose a compact invertible Gram window about the identity. Smooth nonnegative bumps at Gram identity and angular zero have small enough supports that the localized kernel differs from the upper vector by less than half the requested tolerance. The product of the two bumps in the lower variable has compact support and equals one at the identity. Continuity and positivity of the measure on open sets give a positive integral. Divide the Gram bump by this integral to obtain a weight of total integral one.
+
+The compact kernel formula identifies the error as the integral of the localized pointwise error against this normalized weight. The norm estimate bounds it by half the tolerance, uniformly on the upper orthogonal group. This estimate is derived for the Library proof of the K-finite case of the generation result in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, Section 7.1, Proposition 7.1(v).

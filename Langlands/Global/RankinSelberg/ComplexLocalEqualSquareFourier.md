@@ -1,0 +1,5 @@
+# The square Fourier test in the complex equal-rank unfolding
+
+This internal identity concerns the square test in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, pp. 55–58. The test is the product of a function of the first rows and a function of the last row. The Library’s square and rectangular transforms use the entrywise trace pairing and the same scalar self-dual Haar measure on every entry.
+
+Splitting off the last row is a measure-preserving equivalence to the product of the row space and the rectangular space. The Fourier pairing splits as a sum, so the additive character splits as a product. The integral of the product is the product of the two Fourier integrals. Negating the additive parameter in the rectangular factor negates the rectangular argument of its positive transform and leaves the scalar measure unchanged. Thus the dual test with the two Fourier parameters `-a` and `a` is the positive square transform with its first rows negated. This is the matrix test identity used before the group change of variables in the paired equal-rank unfolding.

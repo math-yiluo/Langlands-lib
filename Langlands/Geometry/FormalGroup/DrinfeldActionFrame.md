@@ -1,0 +1,5 @@
+# Fixed-frame comparisons in Drinfeld’s action
+
+Drinfeld, *Coverings of p-adic symmetric regions* (1976), §2 A, printed p. 109 (PDF p. 3), gives the ordered framing formula \(\rho g_1^{-1}g_2^{-1}\mathrm{Frob}^{n}\), where \(n\) is the sum of the normalized determinant and reduced-norm orders. `DrinfeldResidue.actionFrameQuasiIsogeny` gives the signed relative Frobenius and inverse-matrix part over the ring receiving the residue maps. The division unit enters its Frobenius exponent. In the full framing formula, the division-unit map acts on the reduced target.
+
+For the identity pair, the exponent is zero and the matrix gives the identity quasi-isogeny. For successive shifts, naturality of signed Frobenius moves the first inverse matrix past the second Frobenius, transporting the matrix to the final coefficients. The Frobenius exponents then add, and the matrix factors compose in inverse product order. The resulting whole quasi-isogeny is the fixed-frame comparison for the group product. The construction uses the supplied fixed-frame matrix coordinates and proofs of the published positive relative Frobenius invertibility proposition.

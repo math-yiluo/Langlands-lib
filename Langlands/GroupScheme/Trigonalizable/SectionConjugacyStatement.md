@@ -4,6 +4,30 @@
 proposition definition. This module defines the proposition and proves
 nothing.
 
+## Do not use: this proposition is false
+
+This proposition is false over every algebraically closed field of
+characteristic `p > 0`, and so are Milne's Theorem 16.27 and the
+maximal-subgroup sentence of his Summary 16.29 as printed. **Do not use it
+as a proof target or as a premise.** It stays in the Library unproved, with
+its Lean text unchanged, by the operator's answer to request
+`5639a3e0824c51b4b974ae79c240f1bf` and standing ruling 8.
+
+- Part (a) fails for `α_p ⋊ μ_p` (Raynaud, SGA 3 XVII 5.9 d)), and part (b)
+  fails for `α_p ⋊ G_m`, whose diagonalizable quotient `G_m` is smooth. The
+  computations are in the note
+  [Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness](../../../notes/errata/milne-2017-trigonalizable-section-conjugacy.md).
+- The corrected statement is
+  `Langlands.GroupScheme.TrigonalizableSectionConjugacySmoothStatement`
+  (module
+  [`Trigonalizable.SectionConjugacySmoothStatement`](SectionConjugacySmoothStatement.md)).
+  It adds the explicit hypothesis `Smooth U.X.hom` (SGA 3 XVII 5.1.1 ii) b))
+  and is otherwise the same.
+- The sibling existence statement `TrigonalizableExtensionSplitStatement`
+  (Milne 16.26) is not affected; the note explains why.
+
+The rest of this file describes the proposition as it was published.
+
 ## Statement
 
 Let `k : Type u` be an algebraically closed field and let

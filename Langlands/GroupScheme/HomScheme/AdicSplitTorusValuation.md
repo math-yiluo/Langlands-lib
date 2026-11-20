@@ -1,0 +1,9 @@
+# DVR tests for algebraized split-torus torsion
+
+Let \(A\) be a complete noetherian local ring. For a formal homomorphism \(s\) from a split torus \(H\) to a group scheme \(G\) over the maximal-ideal quotients of \(A\), `System.RealizesSplitTorsion` says that a homomorphism \(H_V \to G_V\) on a test scheme \(V\) restricts on each positive-order scheme-theoretic torsion subgroup to the pullback of the corresponding algebraized torsion homomorphism of \(s\). This condition is preserved by restriction to test schemes and determines the realizing homomorphism uniquely.
+
+`System.HasSplitTorusHomOnDvrTests` requires a realizing homomorphism on every test \(\operatorname{Spec} R \to \operatorname{Spec} A\) with \(R\) a discrete valuation ring. `System.exists_splitTorusHom_on_dvrTest` proves this condition when \(G\) is smooth, separated and quasi-compact over the base with affine residue fibres, and the torsion realizations exist on all residue fields of \(A\).
+
+The fraction-field point of a DVR test factors through the residue field of its image in \(\operatorname{Spec} A\), giving a homomorphism over the fraction field of \(R\). The pullback of \(G\) to \(\operatorname{Spec} R\) is affine by the DVR affineness result. Each torsion restriction extends there because it is the pullback of the algebraized torsion homomorphism over \(A\). Laurent coefficient descent along the fraction-field embedding extends the full homomorphism. Schematic dominance detects equality of the torsion restrictions over \(R\) because their source is flat and the target is separated.
+
+Raynaud tests prolongation of split-torus homomorphisms on DVRs in *SGA 3*, Exposé XV, proof of Lemma 3.10, recomposed pp. 257–258, PDF pp. 25–26 in the Gille–Polo edition dated 1 December 2008. The Lean argument is derived from this valuation step. It works with a fixed split source and prescribes all the algebraized positive torsion restrictions of a formal homomorphism.

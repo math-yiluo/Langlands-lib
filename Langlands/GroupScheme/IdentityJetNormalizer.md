@@ -1,0 +1,9 @@
+# Finite detection of normalizers by actual identity jets
+
+Let \(H\hookrightarrow G\) be a smooth, geometrically connected closed subgroup over the spectrum of a noetherian ring. Suppose that \(G\) is separated, locally of finite type and quasi-compact over the base. `IdentityJetNormalizerStatement` asserts that the all-test normalizer is represented by a closed subgroup of \(G\) and agrees, as a subgroup functor, with the conjugation stabilizer of the actual order-\(m\) identity jet of \(H\) for every sufficiently large \(m\).
+
+The finite, flat, locally finitely presented jet has a closed conjugation stabilizer. The descending stabilizers give ascending defining ideals on the noetherian ambient group. Finite support of their sum gives a bound, and lifting along the closed immersions identifies all the later stabilizers. The universal point of the stationary stabilizer therefore preserves the jet of every order. Over its own locally noetherian test scheme it gives an inner automorphism of the base-changed group. The jet factorizations for that automorphism and its inverse give containment in the closed subgroup by `identityJetClosedSubgroupContainment`. Base-change compatibility carries normalizer membership back to the original universal point, whose restrictions give the result on all tests. The full normalizer preserves every jet by `normalizer_le_stabilizer`.
+
+This is the noetherian affine-base case of the finite detection step used in Raynaud's proof of SGA 3, Exposé XV, Theorem 5.2, recomposed p. 265. Raynaud cites Exposé XI, Corollary 6.11. The Lean proof uses the scheme-level jet stabilizers and the previously proved closed-containment criterion.
+
+Finiteness, flatness, and local finite presentation of the jet projection come from `IdentityJetFiniteProjection` and `IdentityJetSeparatedLocalBases`.

@@ -1,4 +1,5 @@
 import Langlands.Sheaf.Equivariant.AnalyticOpenEtaleRestriction
+import Langlands.Sheaf.Equivariant.AnalyticOpenEtaleRestriction.GlobalSections
 import Langlands.Sheaf.Equivariant.AnalyticEtaleCompactGeometry
 
 /-! # Ordinary-open germs and actual analytic étale support -/
@@ -22,26 +23,17 @@ variable (X : LocalizedCategory.{u, v, v} (K := K))
 /-- The canonical arrow of an actual open domain to the identity étale object. -/
 def openEtaleToSelf (U : Opens (localizedSpaceFunctor.obj X)) :
     openEtaleObject X U ⟶ etaleSelf X :=
-  MorphismProperty.Over.homMk
-    (domainι X ((presentationOf X).openDomain (U : Set (localizedSpaceFunctor.obj X)) U.isOpen))
-    (Category.comp_id _)
+  OpenEtaleRestriction.openEtaleToSelf X (etaleOpenDomainStatement X) U
 
 /-- The full open analytic domain is canonically the original identity object. -/
-def openEtaleTopIso : openEtaleObject X ⊤ ≅ etaleSelf X where
-  hom := openEtaleToSelf X ⊤
-  inv := openEtaleLift X ⊤ (etaleSelf X) (fun _ => trivial)
-  hom_inv_id := Subsingleton.elim _ _
-  inv_hom_id := by
-    apply MorphismProperty.Over.Hom.ext
-    exact (Category.comp_id _).symm.trans
-      (MorphismProperty.Over.w
-        (openEtaleLift X ⊤ (etaleSelf X) (fun _ => trivial) ≫ openEtaleToSelf X ⊤))
+def openEtaleTopIso : openEtaleObject X ⊤ ≅ etaleSelf X :=
+  OpenEtaleRestriction.openEtaleTopIso X (etaleOpenDomainStatement X)
 
 /-- Ordinary restriction retains the original global section module. -/
 def etaleUnderlyingGlobalIso {A : Type*} [Category A] (F : Sheaf (etaleTopology X) A) :
     F.obj.obj (op (etaleSelf X)) ≅
       ((etaleUnderlyingSheaf X A).obj F).obj.obj (op ⊤) :=
-  F.obj.mapIso (openEtaleTopIso X).op
+  OpenEtaleRestriction.etaleUnderlyingGlobalIso X (etaleOpenDomainStatement X) F
 
 /-- Restriction of the global comparison is the original étale restriction. -/
 theorem etaleUnderlyingGlobalIso_restrict
@@ -52,16 +44,9 @@ theorem etaleUnderlyingGlobalIso_restrict
     ((etaleUnderlyingSheaf X (ModuleCat R)).obj F).obj.map
         (homOfLE le_top : U ⟶ ⊤).op ((etaleUnderlyingGlobalIso X F).hom s) =
       F.obj.map (openEtaleToSelf X U).op s := by
-  have he : openEtaleMap X (homOfLE le_top : U ⟶ ⊤) ≫ openEtaleToSelf X ⊤ =
-      openEtaleToSelf X U := by
-    apply MorphismProperty.Over.Hom.ext
-    apply (cancel_mono (𝟙 X)).1
-    exact (MorphismProperty.Over.w
-      (openEtaleMap X (homOfLE le_top : U ⟶ ⊤) ≫ openEtaleToSelf X ⊤)).trans
-        (MorphismProperty.Over.w (openEtaleToSelf X U)).symm
-  change F.obj.map (openEtaleMap X (homOfLE le_top : U ⟶ ⊤)).op
-    (F.obj.map (openEtaleToSelf X ⊤).op s) = _
-  rw [← ModuleCat.comp_apply, ← F.obj.map_comp, ← op_comp, he]
+  simpa only [ModuleCat.comp_apply] using!
+    congrArg (fun f => f s)
+      (OpenEtaleRestriction.etaleUnderlyingGlobalIso_restrict X (etaleOpenDomainStatement X) F U)
 
 /-- The usual ordinary-topology point, with its fiber universe lifted to the
 coefficient universe rather than identified with the space universe. -/

@@ -1,0 +1,9 @@
+# The compact induction model of scalar block sections
+
+Let \(H=P\cap K\), viewed as a subgroup of the actual standard adelic compact group \(K\). The diagonal-block projection gives the action of \(H\) on `coefficientValues` by right translation on the Levi. Each projected block has a finite factor and an infinite compact factor. The proof that this action preserves the coefficients writes a scalar coefficient as a tensor evaluation and applies the blockwise finite and infinite compact operators to that tensor. The two evaluation identities and the splitting of the Levi matrix give the required translated scalar coefficient.
+
+`compactCoefficientEquiv` sends a scalar compact section to the same function on \(K\) with values bundled in the coefficient submodule. The scalar covariance for \(H\) reduces to the ordinary covariance of `Induction.EquivariantFunctions` because the parabolic half character is one on \(H\). The inverse takes the underlying scalar function of each coefficient value. These pointwise operations are inverses and linear.
+
+`compactInductionEquiv` first restricts an actual scalar section to its normalized compact slices and then applies `compactCoefficientEquiv`. The representation equivalence retains right translation by \(K\). This follows from associativity in the scalar evaluation formula since the right translates are evaluated at compact points.
+
+The comparison is internal. It uses the compact slice construction, the realized coefficient tensor and the compact Levi projection. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the scalar inducing space, its twisted right action and the compact convention. Here the two scalar and coefficient-valued pictures are compared at the algebraic compact level. Smoothness and the action of noncompact archimedean operators require additional arguments.

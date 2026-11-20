@@ -1,0 +1,5 @@
+# Prime factors of a Laurent polynomial in one coordinate
+
+This derived algebraic result turns a Laurent block divisibility relation into divisibility by a coordinate binomial. On a rank-zero first block a nonzero Laurent polynomial maps to a nonzero constant, hence a unit. On a rank-one first block the polynomial fraction presentation clears the Laurent powers. A prime dividing the original Laurent polynomial then divides the mapped numerator. Factor the nonzero numerator over the complex numbers. Primality excludes the leading-coefficient unit and locates one linear factor. The root of this factor is nonzero because the first-coordinate monomial is a unit.
+
+`joinFirstLaurentCoordinate` concatenates the first coordinate and its complement into the finite Laurent chart. The mapped linear factor there is the usual coordinate root, whose ideal is the kernel of evaluation in the first coordinate. Its target is the Laurent domain in the complementary variables, which proves the root factor is prime.

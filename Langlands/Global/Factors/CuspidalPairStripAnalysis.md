@@ -1,0 +1,7 @@
+# Growth and strip bounds for a holomorphic quotient
+
+`EntireQuotientStripGrowth` concerns entire functions \(G,H\) with \(G\) nonzero at some point and with \(G\) and \(GH\) of at most exponential growth in the absolute imaginary part on each vertical strip. On every closed vertical strip and for every \(\epsilon>0\), the norm of \(H(x+iy)\) is bounded by \(\exp(M\exp(\epsilon |y|))\) for some \(M\ge 0\).
+
+The proof centers a wide vertical strip at the real part of a point \(s_0\) with \(G(s_0)\ne0\). Multiplying \(G\) and \(GH\) by \(\exp(s^2)\) makes both bounded on this wider strip, by Gaussian decay for large imaginary parts and continuity on a compact rectangle. A single positive scaling makes both bounds at most one. For suitably small \(k>0\), the coordinate \(u=\exp(ik(s-s_0))\) sends the wide strip to the right half-plane, and \(w=(u-1)/(u+1)\) sends that half-plane to the disk. The narrower strip has \(\operatorname{Re}u\ge |u|/2\). The identity \(1-|w|^2=4\operatorname{Re}u/|u+1|^2\) then gives \(1/(1-|w|)\le 4\exp(k|\operatorname{Im}(s-s_0)|)\). Applying `boundedHolomorphicQuotientDiskGrowth` in this coordinate yields the desired bound by choosing \(k\le\epsilon\).
+
+`norm_le_on_verticalStrip_of_entireQuotient` applies Mathlib's `PhragmenLindelof.vertical_strip` with a rate strictly less than \(\pi\) divided by the strip width. A common bound for \(H\) on the two boundary lines therefore holds throughout the strip. This is an analytic consequence of the disk estimate and Phragmén–Lindelöf for use with Rankin–Selberg continuation.

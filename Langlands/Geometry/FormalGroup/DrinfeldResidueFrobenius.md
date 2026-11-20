@@ -1,0 +1,7 @@
+# Signed residue Frobenius shifts for Drinfeld's functor
+
+Drinfeld, *Coverings of p-adic symmetric regions* (1976), §2 A, printed p. 109 (PDF p. 3), changes the residue homomorphism in a framed triple from \(\psi\) to \(\psi\circ\mathrm{Fr}^{-n}\) and uses the relative Frobenius from the shifted frame to the original frame. Here the frame field \(\kappa\) is an algebraic extension of the scalar residue field \(k_K\), with its integer-ring scalar action factoring through \(k_K\). This includes the algebraically closed residue field used in the source.
+
+`DrinfeldResidue.frobenius` is the actual integer-ring algebra automorphism of \(\kappa\) obtained from the \(\#k_K\)-power map. For \(\#k_K=p^f\), its \(n\)-th nonnegative power has exactly the coefficient ring homomorphism used by the actual \(p^{fn}\)-variable-power relative Frobenius. A finite-field cardinality result supplies a suitable positive \(f\) and characteristic \(p\).
+
+`shift` precomposes \(\psi\) by the \((-n)\)-th power of this automorphism. Composing the shifted homomorphism with the \(n\)-th power recovers \(\psi\), so coefficient extension of the positive relative map along the shifted homomorphism ends at the original frame. The zero shift is the identity, successive shifts add, and postcomposition with any coefficient extension commutes with shifting. `shiftNatIso` assembles the maps and their opposite shifts into natural automorphisms of the actual residue-map functor on `Nilp`.

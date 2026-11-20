@@ -95,10 +95,6 @@ theorem rationalLeviConjugationHalfWeight_sq_mul_modulus (a : P₀M) :
 
 section Averaging
 
-local instance : SecondCountableTopology (rationalPoints G) :=
-  rationalPoint_secondCountableTopology F G
-local instance : SecondCountableTopology M := TopologicalSpace.Subtype.secondCountableTopology _
-
 include hKo hG hi hν hJ in
 /-- The local Levi Xi-square estimate gives actual convolution weights on the
 Levi subgroup with the restriction of the ambient compact envelope. -/
@@ -108,6 +104,8 @@ theorem rationalLeviConvolutionWeights_of_squareIntegrableWeight
       (fun m : M => rationalHeight (F := F) ρ m)) :
     haveI := compactSpace_subgroupOf_standardLevi (i := i) (ν := ν) (J := J) hKc
     ConvolutionWeights muM KM ΞM (fun m : M => rationalCompactHeight ρ K m) := by
+  letI : SecondCountableTopology (rationalPoints G) := rationalPoint_secondCountableTopology F G
+  letI : SecondCountableTopology M := TopologicalSpace.Subtype.secondCountableTopology _
   have := compactSpace_subgroupOf_standardLevi (i := i) (ν := ν) (J := J) hKc
   have hδ (p : P₀M) (hp : (p : M) ∈ KM) :=
     standardLeviMinimalModulusOf_eq_one hKo hKc hG hi hν hJ p (Subgroup.mem_subgroupOf.mp hp)

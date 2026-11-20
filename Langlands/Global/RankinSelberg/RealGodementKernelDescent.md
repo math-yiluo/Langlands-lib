@@ -1,0 +1,5 @@
+# Unipotent descent of the real Godement outer integrand
+
+In the model with upper-unipotent coefficient variable `k`, the lower translator in the Godement slice is `h = k⁻¹ w_m`. Replacing `k` by `u k` replaces `h` by `h (w_m u⁻¹ w_m)`. The inner rectangular change of variables comes from left multiplication in the upper step chart by the padded matrix `diag(u⁻¹,1)`. It preserves the scalar-entry Haar measure. The character of that padded matrix is the lower standard character evaluated at `u⁻¹`.
+
+In the resulting slice integral the change of variables contributes the standard character of `u`, since the phase is compared through the inverse change. This cancels the inverse-character factor of the lower coefficient. The determinant is unchanged, so the full integrand descends to the left upper-unipotent quotient. Inverting the representative and multiplying by the Weyl matrix identifies this with the right lower-unipotent quotient used in the upper-Borel form of equation (7.8) in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, Section 7.2.

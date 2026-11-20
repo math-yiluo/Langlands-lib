@@ -1,0 +1,9 @@
+# A compact weight reproducing evaluation
+
+This internal ingredient for Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2–8.3, constructs a compact test that reproduces evaluation on a finite-dimensional space of continuous functions on a compact group. The pairing uses the same Haar measure as the compact convolution.
+
+In a finite basis, integration against the conjugate basis functions gives a square Gram map. A vector in its kernel has integral of its squared modulus zero. Continuity and positivity of Haar measure on open sets imply the vector is identically zero, and the basis then forces all coefficients to vanish. The Gram map is invertible by finite dimensionality. Solving the linear equations of evaluation on the basis gives reproduction on the entire space.
+
+For the square matrix test `Φ`, take the coefficient functions `k ↦ η(det k) Φ(k⁻¹ X)`, indexed by the matrix `X`. The finite span of the left translates of `Φ` gives a finite span of the coefficient functions, by taking coordinates in a basis of the matrix-function span. Left translation of a coefficient function changes `X` to `h X` and multiplies it by `η(det h⁻¹)`. The coefficient space is therefore left invariant. The reproducing weight furnished by the Gram map is the conjugate of a vector in that space. Its own left translates lie in the span of the conjugate basis functions, so it has the finite left-translate span needed for the compact projection.
+
+The result requires a continuous square test with finite span under compact left translation, a continuous determinant character and a compact Haar measure. It produces the averaging identity used in Jacquet’s expansion for such tests. Establishing the finite translate span for the tests arising in the local integrals and applying the resulting averages to those integrals are further steps.
