@@ -25,6 +25,8 @@ survey scope. The VII.1.2 and VII.1.3 additions below were checked on 20 Novembe
 at Library `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`, with five further statement
 pairs checked at `edf9646441fdf5d75d692913b8928b89b9d92538`. The status codes, the abbreviation of
 task identifiers and the method of checking are those of the Chapter VI ledger.
+The VII.4 proof steps, conditional proofs and source issues below were checked
+on 20 November 2026 at Library `5704217a2667191d63b37f0e85a2da41c15b21d2`.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 (abbreviated `RP`) unless another namespace is written. The focused source maps
 [root-exponent-tempered-progress](root-exponent-tempered-progress.md) and
@@ -149,8 +151,52 @@ revision 1 awaiting proof review and publication.
 | --- | --- | --- | --- |
 | VII.4.1 Definition (Langlands triplet) | 241 / 247 | `IsLanglandsTriplet`, chambers `Langlands.GroupScheme.restrictedCorootChamber` (`LanglandsClassification/LanglandsTriplet`) | D |
 | VII.4.1 Lemma | 241 / 247 | `RP.LanglandsTripletOppositeRegularityStatement`; proved steps `RP.LanglandsTripletOppositePieceSeparationStatement`, `RP.LanglandsTripletOppositeRegularityReductionStatement` | P: `langlandsTripletOppositeRegularity` (`LanglandsClassification/LanglandsTripletRegularityProof`; task 78bf8d31); steps P |
-| VII.4.2 Theorem (i)–(iii) | 243 / 249 | `RP.LanglandsQuotientUniqueStatement`, `RP.LanglandsQuotientInjectiveStatement`, `RP.LanglandsQuotientExhaustiveStatement`, conjunction `RP.LanglandsClassificationStatement` | S: task 717df3ca |
-| VII.4.2 sentence after (i): `J(P, σ, ψ)` is characterized by `ℜ(ψ) ∈ ℜ(Exp(A_M, r_{P̄}^G(π)))` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | S: Task 5653 |
+| (VII.4.1.1), cone for the tempered exponent contribution | 241 / 247 | `RP.GeometricLemmaIntersectionDatum.normalizedRealPart_sub_unramifiedPieceRealPart_mem_nonnegCone`, `Langlands.GroupScheme.ParabolicRootPresentation.neg_mem_nonnegCone_of_opposite` | P as the `hxQ` and `hxP` steps of `langlandsTripletOppositePieceSeparation`. The bound is on the full geometric-lemma piece's exponent after subtracting its unramified contribution |
+| (VII.4.1.2), nonzero negative-cone shift for the unramified contribution | 241–242 / 247–248 | `RP.GeometricLemmaIntersectionDatum.unramifiedPieceDisplacement_mem_nonnegCone_and_ne_zero` | P as the `hδ` step of `langlandsTripletOppositePieceSeparation`. Lean uses the original inducing real part minus the piece parameter, so the displacement lies in the nonnegative cone of \(P\) |
+| VII.4.2 Theorem (i)–(iii) | 243–246 / 249–252 | `RP.LanglandsQuotientUniqueStatement`, `RP.LanglandsQuotientInjectiveStatement`, `RP.LanglandsQuotientExhaustiveStatement`, conjunction `RP.LanglandsClassificationStatement` | S: Task 5295 (`717df3ca-7a3c-40fc-a8b3-79617086393e`). P for `RP.LanglandsClassificationFromInputsStatement`, with four Chapter VI premises. See the proof receipts below and source issue I9 |
+| VII.4.2 sentence after the proof of (i), exponent characterization of `J(P, σ, ψ)` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | S: Task 5653 (`1df73c68-230c-4ced-8325-dc9c910df8d8`). P for `RP.LanglandsQuotientExponentCharacterizationFromSecondAdjointnessStatement`, with second adjointness as its sole premise |
+
+In (VII.4.1.1)–(VII.4.1.2), the compatible presentation of \(P\) comes from the
+Langlands triplet. The proof obtains an opposite presentation on the same split
+component and uses Jacquet admissibility of the twisted source. For a hypothetical
+common exponent, its tempered offset \(x\) lies in the opposite cone. Hence \(-x\) and
+the nonzero displacement \(\delta\) lie in the cone of \(P\). Pointedness gives
+\(-x+\delta\ne 0\), contradicting equality of the exponent real parts.
+[Piece separation proof](../../Langlands/Representation/LanglandsClassification/LanglandsTripletOppositePieceSeparation.md)
+
+### VII.4.2 conditional proof publications
+
+The two implication proofs below have independently approved publications. Their
+Lean and Markdown pairs and the pairs of their target implications match the
+corresponding frozen records. Both proofs were validated with `lake-build`,
+`exact-target`, `unchanged-statement` and `frozen-inputs`.
+
+| Target implication | Statement record | Proof record | Integration ID | First Library commit of proof |
+| --- | --- | --- | --- | --- |
+| `LanglandsClassificationFromInputsStatement` | `5ca1c954-6ef1-4929-a40c-67f07d378daa` | `cd3326ce-0b34-4b95-aaf3-77c0429d2d60` | `9369e828df9a4a8b8c2429ffa25fde99` | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| `LanglandsQuotientExponentCharacterizationFromSecondAdjointnessStatement` | `45af50ab-3e52-492e-9f83-383d1f51f434` | `2a777930-54db-4d08-967d-a9d8961fc7e1` | `799cdd36dd0740699679cff4871c73c2` | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
+
+- `langlandsClassificationFromInputs` proves all three parts at independent
+  field and representation-carrier universes `u, v`. It takes second adjointness
+  (`RP.LeviSecondAdjointnessStatement`, VI.9.6, Task 4834), finite length under
+  normalized induction and Jacquet restriction (`RP.LeviInductionFiniteLengthStatement`,
+  `RP.LeviJacquetFiniteLengthStatement`, VI.6.2 and VI.6.4, Task 4950), and
+  irreducible admissibility (`Langlands.Aubert.General.RationalPointsIrreducibleAdmissibleStatement`,
+  VI.2.2, Task 3838). Part (i) uses finite length to obtain a quotient and the
+  VII.4.1 regularity argument to identify its kernel. Part (ii) uses mutual
+  opposite intertwiners to compare the two triplets. Part (iii) uses a maximal
+  positive part of an opposite Jacquet exponent to select a tempered untwist
+  and applies second adjointness to obtain the quotient map.
+  [Classification proof](../../Langlands/Representation/LanglandsClassification/LanglandsClassificationFromInputsProof.md)
+- `langlandsQuotientExponentCharacterizationFromSecondAdjointness` takes
+  `RP.LeviSecondAdjointnessStatement.{u, v}`. For an irreducible subquotient \(\pi\)
+  of \(i_P^G(\sigma\otimes\psi)\), it proves that \(\pi\) is a quotient if and only if
+  a normalized exponent of \(r_{\bar P}^G(\pi)\) on the Levi split component has
+  real part \(\Re\psi\). For the reverse implication the proof separates the
+  given exponent from all nonidentity pieces using their action ideals. It
+  obtains a nonzero map from the inducing twist to \(r_{\bar P}^G(\pi)\) and
+  applies second adjointness.
+  [Exponent characterization proof](../../Langlands/Representation/LanglandsClassification/LanglandsQuotientExponentCharacterizationFromSecondAdjointnessProof.md)
 
 ## VII.5 Notes on Chapter VII
 
@@ -368,6 +414,34 @@ as recorded.
   Levi piece using the source's cutoff.
   [Threshold partition statement](../../Langlands/GroupScheme/Rational/CocharacterConeThresholdPartitionStatement.md)
 
+- **I8. (VII.4.1.3), reflection coefficients (printed p. 242 / PDF p. 248).**
+  If \(\beta_i\) is dual to the simple roots, then
+  \(\beta_i-s_j\beta_i=\delta_{ij}\alpha_j^\vee\). The coroot
+  \(\alpha_j^\vee\) gives both corrected coefficients in the printed length
+  induction and yields the stated ambient bound. The correction with two split
+  \(\mathrm{SL}_3\) examples was published as `a9e9412e-cbe1-4ccf-afbe-0e15fa5de41f`
+  under integration `4d4aaf5f35464b3b8b47811a0a2bc608`.
+  [Reflection coefficients and Levi restriction](../errata/renard-vii41-reflection-coefficients.md)
+
+- **I9. VII.4.2(ii), central part of the real parameter (printed p. 246 / PDF p. 252).**
+  After obtaining \(\mu_1=\mu_2\), the printed argument writes each full
+  parameter as a positive sum of restricted simple roots. Every such root
+  vanishes on the split center of \(G\), whereas V.3.15–16 allow any central
+  component in the coroot chamber (printed pp. 113–114 / PDF pp. 119–120).
+  For the upper Borel of split \(\mathrm{GL}_2\), the unramified character
+  \(\psi(\operatorname{diag}(x,y))=|x|_F\) has normalized real parameter \(e_1\).
+  Its pairing with the single simple coroot is \(1\). Its restriction to the
+  central cocharacter \(z\mapsto\operatorname{diag}(z,z)\) is also \(1\), so it
+  lies outside the span of \(e_1-e_2\). It has central component
+  \((e_1+e_2)/2\).
+  The published `RP.fullRealPart_eq_and_index_eq_of_mutual_mem_nonnegCone`
+  obtains equality of the full parameters by the invariant form comparison.
+  It applies `Langlands.GroupScheme.RelativeRootReflectionData.selected_eq_of_pair`
+  to recover each standard Levi index as the simple roots whose coroots pair to
+  zero with the common full parameter. This proves the Levi equality required
+  at the end of VII.4.2(ii).
+  [Mutual parameter comparison](../../Langlands/Representation/LanglandsClassification/MutualOppositeParameterComparison.md)
+
 ## Genuine gaps of Chapter VII
 
 1. VII.1.2: sufficiency of the strictly positive root-cone condition in
@@ -387,10 +461,14 @@ as recorded.
    adjunction triangle to the isomorphic counit, then reflects the resulting
    unit isomorphism through the exact faithful `r_D`.
    [Published conditional reduction](../../Langlands/Representation/Exponents/MaximalLeviBlockProjectionReduction.md)
+3. VII.4.2: the unconditional classification and its exponent characterization
+   await the Chapter VI premises named above. Second adjointness suffices for
+   the characterization and for the injectivity part of the classification.
 
-Update at Library `9951a27f`: the former gap 3 (VII.3.5, minimal-`M` form of the opening
-assertion) is stated by the published `MinimalParabolicDistanceLengthStatement` (candidate
-`5d306e19`, proof Task 5687). For non-minimal `M`, and for the length relative to `P_∅` when
-`P ≠ P_∅`, the printed assertion fails as written (I1). `6a38904d` (VII.4.2 sentence after
-(i)) is published, with proof Task 5653. `9492bbaa` (VII.2.6 Remark and the VII.3.1 extremes
-of the Bruhat order) is published, with proof Task 5685.
+Update at Library `9951a27f`: the VII.3.5 gap on the minimal-`M` form of the
+opening assertion is stated by the published `MinimalParabolicDistanceLengthStatement`
+(candidate `5d306e19`, proof Task 5687). For non-minimal `M`, and for the length
+relative to `P_∅` when `P ≠ P_∅`, the printed assertion fails as written (I1).
+`6a38904d` is the published unconditional VII.4.2 exponent characterization
+statement (Task 5653). `9492bbaa` (VII.2.6 Remark and the VII.3.1 extremes of the
+Bruhat order) is published, with proof Task 5685.
