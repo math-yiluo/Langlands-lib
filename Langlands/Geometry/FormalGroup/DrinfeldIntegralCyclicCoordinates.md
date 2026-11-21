@@ -1,0 +1,5 @@
+# Integral cyclic coordinates of the actual division order
+
+For an embedded unramified field of reduced degree, the reduced norm on a coefficient is its field norm. The normalized order of that norm is the reduced degree times the coefficient order. The division uniformizer has order one because its reduced-degree power is the scalar uniformizer. Thus a nonzero term with coefficient order `r` and power index `i` has order `d r + i`. Distinct indices between zero and `d − 1` give distinct orders, and such a term is integral exactly when its coefficient is integral.
+
+In a cyclic expansion of an element of the division algebra, the nonzero term of largest multiplicative valuation determines the valuation of the sum. This proves the integral expansion criterion and constructs the equivalence `integerCyclicCoordinates` from the actual order to the tuple of embedded integer coefficients. It proves the integral normal form underlying the generators and relations in Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 B, printed p. 110.

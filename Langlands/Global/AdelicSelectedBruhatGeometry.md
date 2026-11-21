@@ -1,0 +1,5 @@
+# The selected Weyl class in the tested Bruhat sum
+
+Fix an actual relative Weyl Coxeter realization and a Weyl class that carries the source and target Levi simple-root sets to each other. For any test index contained in the target index, the two sets of simple-root images are positive, so the class is minimal in the corresponding double coset. Whenever the class is minimal for a test, its target intersection has the full test index exactly when that test is contained in the target index. The source intersection for the full target is the original source index.
+
+The proof uses the Coxeter length criterion and the description of the intersection by simple-reflection conjugacy. Positivity identifies each conjugated simple reflection with the actual image of its root. The two given directions of root transport then identify which test roots occur. This establishes the index calculation for the selected term in the convergent constant-term comparison in Bernstein–Lapid, §6.10, equation (6.20).

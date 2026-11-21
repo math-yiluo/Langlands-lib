@@ -1,0 +1,5 @@
+# Godement restrictions at the local zeta points
+
+The determinant-normalized chart formulas apply to the Godement generator translated on the right by the tail Weyl matrix. This derived statement gives both pointwise restrictions and their common Haar constant for the comparison in Jacquet’s Section 10.2.
+
+For the ordinary value, the padding identity puts the argument in the consecutive chart and the right translation contributes the adjoining character at the tail Weyl determinant. In the dual block value, inverse transpose fixes the tail Weyl matrix. Its two occurrences cancel, leaving the unrotated Godement generator to which continued Godement reflection applies. A compatible upper-unipotent quotient measure supplies the group Haar used by that reflection. The adjoining character at the central sign cancels its inverse from the dual restriction, and the leading determinant contributes the same half-power on both sides. The integrability clauses apply to the indicated chart integrals at fixed quotient and complementary rectangle variables.

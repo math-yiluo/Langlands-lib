@@ -1,0 +1,5 @@
+# Normalized continuation with strip growth from a rapid theta reflection
+
+A single pair of rapid weights with the prescribed Gaussian Mellin transforms suffices for entire normalized continuation with strip exponential type. The input is the theta reflection at every positive scale and the absolute Mellin moments on a right half-plane.
+
+Taking the Mellin transform of the common theta function gives an entire function. Dividing by the nonvanishing epsilon and Gaussian factors gives the two normalized continuations and their reflection. The absolute Mellin integrals at the endpoints of each strip bound the common transform uniformly there. Division by the Gaussian consequently gives at most quadratic exponential growth. On the right boundary the absolute moment and the reciprocal Gamma bound give linear exponential growth. Reflection gives the corresponding left bound. The Gaussian Phragmén–Lindelöf theorem promotes the interior estimate to exponential type, and the normalized reflection gives the estimate for the second continuation.

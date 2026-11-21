@@ -1,0 +1,11 @@
+# Strict exponent bound for real unitary generic standard parameters
+
+`realUnitaryGenericExponentBound` proves `RealUnitaryGenericExponentBoundStatement` in the original carrier universe.
+
+The algebraic proof transfers an irreducible unitary generic module to its standard model and normalizes the inducing parameters. Expansion of a weight-zero block and choice of the positive induced weight both preserve the real exponent. The existing compact-finite intertwining maps preserve irreducibility, infinitesimal unitarity and genericity throughout the transfer.
+
+Elliptic Cartan comparison gives positive-weight uniqueness. The normalized Hermitian-dual list differs from the original by reflection of the real exponents. Uniqueness permits grouping into singleton unitary discrete blocks and pairs of opposite real twists of a unitary discrete block. The unlinkage theorem permits reordering to make these factors consecutive.
+
+Irreducibility in stages gives an irreducible standard module for each factor. Its actual equivalence to its Hermitian-dual list permits descent of positivity from the whole standard module. A singleton already has exponent zero. For a pair twisted by \(a\) and \(-a\) with \(a>0\), the rank-two character estimate gives \(2a<1\) for the real exponent difference. For two twists of an induced block, the rank-four estimate gives \(|a|<1/2\) using their common nonzero weight and their unlinkage. The resulting grouped list satisfies the Library's generic unitary inducing-data predicate, whose exponent bound transfers through the permutation and normalization to the given parameter.
+
+The algebraic descent follows Vogan (1986), Proposition 10.5(b), printed p. 476 (PDF p. 28). Vogan's rank-two complementary interval appears in Proposition 2.5, printed p. 453 (PDF p. 5). The rank-four estimate uses compact highest-weight and Casimir calculations and excludes equality by Mœglin (1997), Theorem 10b(iii), printed pp. 164–165 (PDF pp. 173–174). Badulescu–Renard (2010), Theorem 8.2, printed p. 1131 (PDF p. 18), and Proposition 9.4, printed p. 1133 (PDF p. 20), give the generic unitary factors with the same determinant-twist convention. Knapp (1994), Theorem 1(c), printed p. 400 (PDF p. 410), gives the uniqueness used in the Hermitian grouping.

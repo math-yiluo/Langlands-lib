@@ -1,0 +1,5 @@
+# Proper Witt transitivity in a split quaternion chart
+
+`QuaternionicProperWittSplitStatement` concerns a nondegenerate skew Gram matrix after a characteristic-zero quaternion division algebra has split. The quaternionic rank is at least two. Two rows with the same invertible skew value are carried to one another by a Gram-preserving matrix unit of reduced norm one.
+
+The two scalar rows of each quaternionic row embed a common nonsingular binary form into the split scalar Gram form. The scalar Witt extension gives an ambient isometry taking the first pair of rows to the second pair. If its determinant is minus one, a reflection in a nonsingular line in the target pair's orthogonal complement corrects the determinant and fixes the target pair. The split matrix chart carries the resulting determinant-one isometry back to a skew Gram isometry. The reduced norm equals the determinant in this chart. [Kneser, *Lectures on Galois cohomology of classical groups*, §2.6 Lemma 2, pp. 32–33](https://www.math.tifr.res.in/~publ/ln/tifr47.pdf)

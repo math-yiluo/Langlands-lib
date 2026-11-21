@@ -6,8 +6,8 @@ import Langlands.BushnellKutzko.RefinementElementExactness
 
 /-! # Bounded approximation of a field generator by lower-degree elements
 
-An algebraic replacement for the compactness argument in the proof of BK93 (2.4.1)(i),
-printed pp. 67–68.
+An algebraic replacement for the compactness argument in the termination step after (2.4.6) in
+the proof of BK93 (2.4.1)(i), printed pp. 69–70.
 -/
 
 noncomputable section

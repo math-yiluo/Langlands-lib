@@ -1,0 +1,5 @@
+# The dual zeta integral in the separated chart
+
+Suppose the full dual restriction formula holds with the chart's Haar scalar. The separated dual kernel is then almost everywhere strongly measurable and has absolute moments in the product determinant for all sufficiently large real exponents. On the same right half-plane, its product-determinant Mellin integral times the Haar scalar is the original dual zeta integral.
+
+For the unintegrated chart, the product of the two complex determinant powers is the complex power of the original quotient determinant. Joint absolute integrability allows Fubini in the full complementary rectangle and the Haar chart. The factor of a half power in the restriction formula gives the determinant exponent of the smaller rank. After the quotient shear the two powers become the Mellin power of the product determinant of the separated variables. A positive right-hand moment gives measurability of the unweighted separated kernel by division by its nonzero determinant power. This relates the original dual integral to the separated expression in Jacquet's Section 10.4.

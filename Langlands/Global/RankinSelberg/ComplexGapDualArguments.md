@@ -1,0 +1,5 @@
+# Matrix arguments in the split dual Godement integral
+
+`complexGapDualArguments` identifies the leading test matrix, each tail test column, the last Fourier frequency and the Whittaker argument on the dual Haar chart. The leading test is evaluated at the inverse-transpose retained matrix times the stack of the inverse-transpose leading variable and the sheared complementary rows. The tail columns come in reverse order. The last frequency is the original first tail column. The Whittaker argument is the smaller dual lower block followed by the tail Weyl element and a fixed right translate.
+
+The proof multiplies the two lower block shears and the embedded leading matrix in consecutive coordinates. The lower block fixes the tail columns. Its last row remains the last standard basis row, so tail reversal moves the last frequency to the first tail column. The shear of the complementary rows is a translation followed by row reversal, and both preserve the rectangular measure. [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 10.3, (10.7)–(10.9)](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

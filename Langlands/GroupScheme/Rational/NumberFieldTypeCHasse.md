@@ -1,0 +1,7 @@
+# The number-field Hasse kernel in simply connected type C
+
+`NumberFieldTypeCSimplyConnectedGaloisHasseKernelStatement` specializes the finite Galois localization kernel to an absolutely almost-simple simply connected group with type C Cartan matrix of rank at least two. The local hypothesis is triviality on the full pullback cover to every finite and archimedean completion. The conclusion is triviality on the original cover.
+
+The number-field models give either a split symplectic scheme or the actual group of an invertible antihermitian quaternionic Gram matrix. In the split case evaluation on the affine Galois cover gives actual symplectic matrices, and matrix Hilbert 90 and Darboux normalization give a primitive. In the quaternionic case the cocycle gives a descended Gram matrix. Local triviality gives Gram congruence on every completion. A coordinate on the one-dimensional alternating subspace gives nondegenerate scalar quadratic forms on the underlying row spaces, which remain isometric on the completion tensor spaces. The published quadratic isometry theorem gives a global scalar isometry using a ground-field basis. Reflection of scalar isometry gives an invertible quaternionic Gram congruence. It corrects the ambient primitive to an actual symplectic primitive.
+
+The result treats Kneser's type C case in *Lectures on Galois Cohomology of Classical Groups* (1969), §5.8, pp. 92–93 (PDF pp. 98–99). The Library implementation uses an isometry theorem for the scalar forms and quadratic Witt extension to recover quaternionic isometry.

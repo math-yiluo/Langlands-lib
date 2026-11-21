@@ -1,5 +1,6 @@
 import Langlands.Global.RankinSelberg.UnequalFiniteWhittakerTests
 import Langlands.Global.RankinSelberg.UnequalKernelPointwise
+import Langlands.Global.RankinSelberg.UnequalFactorizationAtStatement
 
 /-! # Unequal-rank pointwise factorization from normalized infinite Whittaker products -/
 
@@ -125,6 +126,60 @@ def UnequalInfiniteWhittakerTestStatement : Prop :=
           I.κ' * ((∏ v, I.WR' v (realComponent F (t + 1) v g)) *
             ∏ w, I.WC' w (complexComponent F (t + 1) w g))
 
+/-- The joint infinite test at one number field `F`: the body of
+`UnequalInfiniteWhittakerTestStatement` after its field binders. -/
+def UnequalInfiniteWhittakerTestAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+    (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
+  ∀ (r t : ℕ) (h : t < r) (T Td : CuspidalOperatorRealization F r)
+    (T' Td' : CuspidalOperatorRealization F t),
+    OperatorRealization.IsContragredientOf Td.realization T.realization →
+    OperatorRealization.IsContragredientOf Td'.realization T'.realization →
+  ∀ (P : CuspidalSpectralPresentation.{u, uQ} T)
+    (P' : CuspidalSpectralPresentation.{u, uQ} T')
+    (hI : HasIrreducibleAdmissibleComponents P) (hI' : HasIrreducibleAdmissibleComponents P')
+    (S : Finset (FinitePlace F)) (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S),
+    FunctionalEquationComparison.FiniteAdditiveSupport ψ S →
+  ∀ (aR : {v : InfinitePlace F // v.IsReal} → ℝˣ),
+    (∀ v, IsRealAdditiveComponent ψ v.1 v.2 (aR v)) →
+  ∀ (aC : {v : InfinitePlace F // v.IsComplex} → ℂˣ),
+    (∀ w, IsComplexAdditiveComponent ψ w.1 w.2 (aC w)) →
+  ∀ (dR dR' dRd dRd' : {v : InfinitePlace F // v.IsReal} → List RealBlock),
+    (∀ v, OperatorRealization.HasRealPlaceParameter T.realization v (dR v)) →
+    (∀ v, OperatorRealization.HasRealPlaceParameter T'.realization v (dR' v)) →
+    (∀ v, OperatorRealization.HasRealPlaceParameter Td.realization v (dRd v)) →
+    (∀ v, OperatorRealization.HasRealPlaceParameter Td'.realization v (dRd' v)) →
+  ∀ (dC dC' dCd dCd' : {w : InfinitePlace F // w.IsComplex} → List ComplexCharacterData),
+    (∀ w, OperatorRealization.HasComplexPlaceParameter T.realization w (dC w)) →
+    (∀ w, OperatorRealization.HasComplexPlaceParameter T'.realization w (dC' w)) →
+    (∀ w, OperatorRealization.HasComplexPlaceParameter Td.realization w (dCd w)) →
+    (∀ w, OperatorRealization.HasComplexPlaceParameter Td'.realization w (dCd' w)) →
+  ∀ (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (padicField v.1)),
+    (∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v)) →
+  ∀ (ℓ : ∀ v : S, FactorFunctionals P v.1 (ψv v))
+    (ℓ' : ∀ v : S, FactorFunctionals P' v.1 (inverseFinite v.1 (ψv v)))
+    (a₀ : ∀ v : S, P.localFactor v) (a₀' : ∀ v : S, P'.localFactor v),
+    (∀ v : S, (ℓ v).val (a₀ v) = 1) → (∀ v : S, (ℓ' v).val (a₀' v) = 1) →
+    ∃ (τ : ⨂[ℂ] i, (T.placeDensityModels.subspace i : Type u))
+      (τ' : ⨂[ℂ] i, (T'.placeDensityModels.subspace i : Type u))
+      (I : UnequalInfiniteTestData h T T' ψ aR aC),
+      (∀ g : Points F (r + 1),
+        infiniteResidual S P hI hPS ψ.complex a₀ τ g =
+          I.κ * ((∏ v, I.WR v (realComponent F (r + 1) v g)) *
+            ∏ w, I.WC w (complexComponent F (r + 1) w g))) ∧
+      ∀ g : Points F (t + 1),
+        infiniteResidual S P' hI' hPS' ψ.complex⁻¹ a₀' τ' g =
+          I.κ' * ((∏ v, I.WR' v (realComponent F (t + 1) v g)) *
+            ∏ w, I.WC' w (complexComponent F (t + 1) w g))
+
+/-- Quantifying the fixed-field test over all fields gives the unrestricted test. -/
+theorem unequalInfiniteWhittakerTestStatement_iff_forall_at :
+    UnequalInfiniteWhittakerTestStatement.{u, uQ} ↔
+      ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+        UnequalInfiniteWhittakerTestAt.{u, uQ} F :=
+  Iff.rfl
+
 section Product
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] {n : ℕ}
@@ -178,12 +233,13 @@ local instance unequalInfinitePadicQuotientMeasurable (v : FinitePlace F) (n : �
 
 open UnequalFiniteWhittakerTests
 
-/-- Finite separation and support reduce the exact unequal-rank pointwise target to the
-normalized archimedean products and tests. -/
-theorem unequalPointwiseOfInfiniteTests (hInfinite : UnequalInfiniteWhittakerTestStatement.{u, uQ}) :
-    UnequalPointwiseFactorizationStatement.{u, uQ} := by
+variable (F) [CompactSpace (AdeleQuotient F)] in
+/-- Finite separation and support reduce the pointwise target at `F` to the normalized
+archimedean products and tests over this same field. -/
+theorem unequalPointwiseOfInfiniteTestsAt (hInfinite : UnequalInfiniteWhittakerTestAt.{u, uQ} F) :
+    UnequalPointwiseFactorizationAt.{u, uQ} F := by
   classical
-  intro F _ _ _ ψ hψ r t h T Td T' Td' hTd hTd' P P' hI hI' S hPS hPS' hsupp aR haR aC haC
+  intro ψ hψ r t h T Td T' Td' hTd hTd' P P' hI hI' S hPS hPS' hsupp aR haR aC haC
     dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd' ψv hψv νv hνv
   choose D hn hn' using fun v : S =>
     exists_tests P P' v.1 (ψv v.1) h hI hI' (νv v.1) (hνv v.1)
@@ -198,7 +254,7 @@ theorem unequalPointwiseOfInfiniteTests (hInfinite : UnequalInfiniteWhittakerTes
   let a' (v : S) := (second v).vector
   have ha₀ (v : S) : (ℓ v).val (a₀ v) = 1 := (first v).reference_value
   have ha₀' (v : S) : (ℓ' v).val (a₀' v) = 1 := (second v).reference_value
-  obtain ⟨τ, τ', I, hinfinite, hinfinite'⟩ := hInfinite F ψ hψ r t h T Td T' Td' hTd hTd'
+  obtain ⟨τ, τ', I, hinfinite, hinfinite'⟩ := hInfinite ψ hψ r t h T Td T' Td' hTd hTd'
     P P' hI hI' S hPS hPS' hsupp aR haR aC haC dR dR' dRd dRd' hdR hdR' hdRd hdRd'
     dC dC' dCd dCd' hdC hdC' hdCd hdCd' (fun v => ψv v.1) (fun v => hψv v.1)
     ℓ ℓ' a₀ a₀' ha₀ ha₀'
@@ -255,6 +311,22 @@ theorem unequalPointwiseOfInfiniteTests (hInfinite : UnequalInfiniteWhittakerTes
   · exact dual_product h ψ hχ x x' L M hW hW' χR χC χS hR hR' hC hC' hS hS' hx hsupp
 
 end Pointwise
+
+/-- The fixed-field implication, at every number field. -/
+def UnequalInfiniteWhittakerReductionAtStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    UnequalInfiniteWhittakerTestAt.{u, uQ} F → UnequalPointwiseFactorizationAt.{u, uQ} F
+
+/-- The fixed-field reduction. -/
+theorem unequalInfiniteWhittakerReductionAt : UnequalInfiniteWhittakerReductionAtStatement.{u, uQ} :=
+  unequalPointwiseOfInfiniteTestsAt
+
+/-- Finite separation and support reduce the exact unequal-rank pointwise target to the
+normalized archimedean products and tests; this applies the fixed-field proof at each field. -/
+theorem unequalPointwiseOfInfiniteTests (hInfinite : UnequalInfiniteWhittakerTestStatement.{u, uQ}) :
+    UnequalPointwiseFactorizationStatement.{u, uQ} := by
+  intro F _ _ _
+  exact unequalPointwiseOfInfiniteTestsAt F (hInfinite F)
 
 /-- The exact unequal-rank pointwise factorization is conditional only on the archimedean tests. -/
 def UnequalInfiniteWhittakerReductionStatement : Prop :=

@@ -1,0 +1,5 @@
+# Diagonal Mellin moments on the normalized ordinary gap chart
+
+The normalized ordinary split kernel has a finite absolute moment when both determinant profiles are the same real power and the exponent is sufficiently large. The smaller quotient and leading group carry the two independent determinants. The complementary rectangle is evaluated at zero using Dirac measure. The measured outer multiplier can contribute any fixed power of the leading determinant.
+
+The proof specializes the separate power bounds from `complexGapNormalizedPowerBounds`. It chooses the maximum of the two thresholds and zero. Both determinant arguments are positive, so the norm of the complex-valued real power is exactly the corresponding positive real power. The logarithmic determinant rescalings after the normalizing shear only increase the prescribed exponential bound in the tail logs. This is the ordinary chart moment used by the absolute Fubini argument for the convolution of Jacquet's two radial comparisons in §10.

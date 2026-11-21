@@ -3,3 +3,5 @@
 A lower-block Rankin–Selberg integral of a Godement value can be written as an integral of smaller-rank unequal Rankin–Selberg integrals on two right-translated functions. The theorem assumes joint absolute integrability of the displayed changed kernel. The positive Haar chart constant and the sign of the added character remain outside the integral.
 
 The fixed-rectangle evaluation puts the embedded first block on the right of the tail. The right quotient shift by this block preserves the product measure. It removes its inverse from the first Whittaker argument, inserts the block as a right translation of the second, and places its zeta determinant power alongside its Godement determinant character. The opposite Whittaker characters justify evaluation at the shifted representative. Fubini's theorem transports the resulting absolutely integrable kernel. This implements the quotient change in Jacquet's *Archimedean Rankin–Selberg integrals*, §10.3.
+
+The pre-shear kernel and the measure-preserving quotient shear also apply to determinant weights that depend on the ambient Haar variable.

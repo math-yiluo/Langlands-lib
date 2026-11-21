@@ -1,0 +1,7 @@
+# Holomorphy of the adelic intertwining operator in the regular region
+
+`IntertwiningRegularHolomorphyStatement` gives a threshold such that, for every adelic argument and every complex linear coordinate system, the normalized operator defined by the intertwining integral is holomorphic on the corresponding open regular region.
+
+The parameter dependence of each integrand is a constant factor times the exponential of a complex linear form. The quotient continuity theorem gives measurability in the integration variable. The published absolute convergence theorem supplies an integrable majorant on every compact subset of the regular region. On a small closed ball about a regular parameter, the Cauchy estimate bounds the norm of the parameter derivative by the same majorant divided by a positive radius. Dominated differentiation proves holomorphy of the integral. Multiplication by the inverse target height twist preserves holomorphy because it is also the exponential of a complex linear form.
+
+This is a derived analytic input for Task 8092, using the convergence region and integral of Mœglin–Waldspurger, *Spectral Decomposition and Eisenstein Series* (1995), II.1.6, proposition (i) and (iv), pp. 87–89 (`moeglin-waldspurger-1995-spectral-decomposition`). The proof uses the Library's compact majorant for the general automorphic input and proves pointwise holomorphy in the full parameter space on that region. The bound also applies when there are no unipotent roots, in which case the regular region is the whole parameter space.

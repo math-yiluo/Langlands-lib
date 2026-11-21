@@ -113,3 +113,5 @@ published modules `SectionPullback`, `LocalizationSectionsBaseChange`,
 `AffinePullbackQuasicoherent`, `AffineSectionsBaseChange`, `SquarePullbackComparison`
 and `PullbackQuasicoherent`, and pinned Mathlib (commit
 `5ed2965256430c3649e86755f9576b54eca72435`), but no new external assertion.
+
+`pullback_map_app_sectionPullbackLE` identifies the two ways to apply a module morphism and pull a section back to a smaller open.

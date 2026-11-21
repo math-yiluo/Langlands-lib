@@ -5,3 +5,8 @@
 At each infinite place the normalized slice map has a value one at the identity for some vector, so its range is nonzero. The local generation hypotheses select ordinary tests at any requested spectral point using the compatible real and complex quotient measures. Their padded products are left-unipotent invariant by the local character identities. The model range equalities realize the selected functions on the two actual infinite pure tensors, using the normalized reference vectors at finite places. Padding commutes with both archimedean projections and removal of the finite coordinates. The two nonzero residual scalars multiply to give the required partial-domain product, with the standard local factors at infinity.
 
 This uses the local pointwise generation input of Jacquet (2009), Theorems 2.3 and 2.6, pp. 8–9 of the author-posted version, in the prescribed product construction of Cogdell (2004), §4.1, printed pp. 219–220 (registered PDF pp. 222–223).
+
+`hasCoveringUnequalArchimedeanTests_of_local_at` invokes real generation at
+each real place using that place as a witness. This premise is vacuous over
+totally complex fields. The original theorem supplies the real generation
+premise at every field.

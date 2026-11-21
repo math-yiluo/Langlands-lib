@@ -18,15 +18,7 @@ namespace Langlands.AbelianScheme.PolarizedFiniteLevel
 
 variable {P : Prerequisites.{u}} {S : Scheme.{u}} {g d n : ℕ}
 
-/-- Pulling back a morphism of module sheaves commutes with restricted section pullback. -/
-lemma pullback_map_app_sectionPullbackLE {X Y : Scheme.{u}} (f : X ⟶ Y) {M N : Y.Modules}
-    (φ : M ⟶ N) {U : X.Opens} {V : Y.Opens} (h : U ≤ f ⁻¹ᵁ V) (m : Γ(M, V)) :
-    ((Scheme.Modules.pullback f).map φ).app U (sectionPullbackLE f M h m) =
-      sectionPullbackLE f N h (φ.app V m) := by
-  simp only [sectionPullbackLE]
-  rw [sectionPullback_naturality]
-  exact PresheafOfModules.naturality_apply ((Scheme.Modules.pullback f).map φ).val
-    (homOfLE h).op _
+export Langlands.Scheme.Modules (pullback_map_app_sectionPullbackLE)
 
 /-- The inverse identity comparison sends a section to its pullback along the identity. -/
 lemma pullbackId_inv_app_eq_sectionPullbackLE {X : Scheme.{u}} (M : X.Modules) (U : X.Opens)

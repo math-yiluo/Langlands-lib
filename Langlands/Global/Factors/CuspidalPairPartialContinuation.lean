@@ -1,4 +1,5 @@
 import Langlands.Global.Factors.CuspidalPairPoleFieldwise
+import Langlands.Global.Factors.CuspidalPairPoleArchimedeanProduct
 import Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof
 import Langlands.Global.Factors.CuspidalFinitePairRegularityStatement
 import Langlands.Global.Factors.CuspidalPairFiniteLayer
@@ -160,23 +161,53 @@ def PartialPairContinuationAt (F : Type u) [Field F] [NumberField F]
         (∃ hrt : r = t, OperatorRealization.IsContragredientOf (n := t + 1)
           (hrt ▸ T.realization) T'.realization) → meromorphicOrderAt L 1 = -1)
 
-set_option maxHeartbeats 4000000 in
-/-- **The partial pair L-function near `Re s = 1`.** Under the pole statement and the absolute
-convergence for `Re s > 1`, there is a function `L`, meromorphic on `ℂ`, equal to
-`exp (l(s))` on `Re s > 1`, with no pole outside `{0, 1}` and order at least `-1` at `1`.
-The order at `1` is nonnegative unless `T` realizes the contragredient of `T'`,
-and the local regularity statements give a simple pole in the contragredient case. -/
-theorem exists_partialPairL (hPole : CuspidalPairPoleAt.{u, uQ} F)
-    (hconv : CuspidalPairAbsoluteConvergenceStatement.{u, uQ}) :
-    PartialPairContinuationAt.{u, uQ} F := by
+/-- A certified completed L-function with its simple pole profile for each pair
+of split-centre-trivial cuspidal presentations. The witnesses include the finite
+L-data and the parameters at the real and complex places. -/
+def CompletedPoleProfileAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (r t : ℕ) (T : CuspidalOperatorRealization F r) (T' : CuspidalOperatorRealization F t),
+    IsTrivialOnSplitCentre T → IsTrivialOnSplitCentre T' →
+    ∀ (P : CuspidalSpectralPresentation.{u, uQ} T) (P' : CuspidalSpectralPresentation.{u, uQ} T')
+      (h : HasIrreducibleAdmissibleComponents P) (h' : HasIrreducibleAdmissibleComponents P'),
+    ∃ (c : FinitePairLChoice P P' h h')
+      (dR dR' : {v : InfinitePlace F // v.IsReal} → List RealBlock)
+      (dC dC' : {v : InfinitePlace F // v.IsComplex} → List ComplexCharacterData),
+      (∀ v, OperatorRealization.HasRealPlaceParameter T.realization v (dR v)) ∧
+      (∀ v, OperatorRealization.HasRealPlaceParameter T'.realization v (dR' v)) ∧
+      (∀ v, OperatorRealization.HasComplexPlaceParameter T.realization v (dC v)) ∧
+      (∀ v, OperatorRealization.HasComplexPlaceParameter T'.realization v (dC' v)) ∧
+      ∃ Λ : ℂ → ℂ, c.IsCompletedLFunction (archimedeanPairProduct dR dR' dC dC') Λ ∧
+        HasSimplePoleProfile Λ (∃ hrt : r = t,
+          OperatorRealization.IsContragredientOf (n := t + 1)
+            (hrt ▸ T.realization) T'.realization)
+
+/-- Choose one completed L-function with its pole profile from the fieldwise pole theorem. -/
+theorem completedPoleProfileAt_of_poleAt (hPole : CuspidalPairPoleAt.{u, uQ} F) :
+    CompletedPoleProfileAt.{u, uQ} F := by
   classical
-  intro r t T T' hT hT' htriv htriv' P P' h h' S hP hP'
+  intro r t T T' htriv htriv' P P' h h'
   obtain ⟨⟨⟨c⟩, hR, hC⟩, hmain⟩ := hPole r t T T' htriv htriv' P P' h h'
   choose dR hdR using fun v => (hR v).1
   choose dR' hdR' using fun v => (hR v).2
   choose dC hdC using fun v => (hC v).1
   choose dC' hdC' using fun v => (hC v).2
-  obtain ⟨Λ, ⟨σΛ, hσΛ⟩, ⟨hΛd, hΛp⟩, -⟩ := hmain c dR dR' hdR hdR' dC dC' hdC hdC'
+  obtain ⟨Λ, hCompleted, hProfile, _⟩ := hmain c dR dR' hdR hdR' dC dC' hdC hdC'
+  exact ⟨c, dR, dR', dC, dC', hdR, hdR', hdC, hdC', Λ, hCompleted, hProfile⟩
+
+set_option maxHeartbeats 4000000 in
+/-- **The partial pair L-function near `Re s = 1`.** Under the completed pole profile and the absolute
+convergence for `Re s > 1`, there is a function `L`, meromorphic on `ℂ`, equal to
+`exp (l(s))` on `Re s > 1`, with no pole outside `{0, 1}` and order at least `-1` at `1`.
+The order at `1` is nonnegative unless `T` realizes the contragredient of `T'`,
+and the local regularity statements give a simple pole in the contragredient case. -/
+theorem exists_partialPairL_of_completedPoleProfile (hPole : CompletedPoleProfileAt.{u, uQ} F)
+    (hconv : CuspidalPairAbsoluteConvergenceStatement.{u, uQ}) :
+    PartialPairContinuationAt.{u, uQ} F := by
+  classical
+  intro r t T T' hT hT' htriv htriv' P P' h h' S hP hP'
+  obtain ⟨c, dR, dR', dC, dC', hdR, hdR', hdC, hdC', Λ, ⟨σΛ, hσΛ⟩, ⟨hΛd, hΛp⟩⟩ :=
+    hPole r t T T' htriv htriv' P P' h h'
   -- the auxiliary functions
   let Dinf : ℂ → ℂ := fun s => (∏ v, (realPairLFactor (dR v) (dR' v)).denominator s) *
     ∏ v, (complexPairLFactor (dC v) (dC' v)).denominator s
@@ -237,6 +268,7 @@ theorem exists_partialPairL (hPole : CuspidalPairPoleAt.{u, uQ} F)
   have heq : ∀ s : ℂ, σ₁ < s.re → Dinf s ≠ 0 → L s = Complex.exp (ser s) := by
     intro s hs' hDs
     obtain ⟨hsumΛ, p, hp, hΛs⟩ := hσΛ s (by linarith)
+    unfold archimedeanPairProduct at hΛs
     obtain ⟨-, -, hprod⟩ := hconv F r t T T' hT hT' P P' S hP hP' s (by linarith)
     have hinf : ((∏ v, ((realPairLFactor (dR v) (dR' v)).denominator s)⁻¹) *
         ∏ v, ((complexPairLFactor (dC v) (dC' v)).denominator s)⁻¹) * Dinf s = 1 := by
@@ -339,6 +371,12 @@ theorem exists_partialPairL (hPole : CuspidalPairPoleAt.{u, uQ} F)
       meromorphicOrderAt_mul_of_ne_zero (hGan 1) hG1
     rw [h1]
     exact eq_neg_one_of_le_of_lt (hΛp 1 hmem1).2.1 ((hΛp 1 hmem1).2.2.mpr hcond)
+
+/-- The fieldwise pole theorem supplies the completed data for the partial L-function. -/
+theorem exists_partialPairL (hPole : CuspidalPairPoleAt.{u, uQ} F)
+    (hconv : CuspidalPairAbsoluteConvergenceStatement.{u, uQ}) :
+    PartialPairContinuationAt.{u, uQ} F :=
+  exists_partialPairL_of_completedPoleProfile (completedPoleProfileAt_of_poleAt hPole) hconv
 
 /-- The completed pair pole statement implies partial continuation over every
 number field. Its totally complex form suffices for a totally complex field. -/

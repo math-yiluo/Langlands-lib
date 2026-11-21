@@ -18,6 +18,10 @@ For each polynomial separately, the complex linear span of the functions
 finite dimensional. This is the translate action `translateTest` of the
 Library's complex Godement construction. The theorem
 `complexGodementGaussianPolynomial` proves the packaged statement.
+The same argument proves `finiteDimensional_rightTranslate_gaussianPolynomial`
+with arbitrary row and column counts.
+`exists_gaussianPolynomial_mul_unitary` gives the translated polynomial
+and its total-degree bound.
 
 ## Provenance and scope
 

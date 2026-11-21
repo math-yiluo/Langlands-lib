@@ -61,3 +61,5 @@ The right-hand side is converted at the start with
 `pullbackSection_eq_sectionPullback` and `sectionPullbackLE_self`. The
 unfolded composite is identified with the nested application by `rfl`, and
 the four equations are rewritten in turn.
+
+The module reexports restricted section-pullback naturality from [Pullback over affine opens](../../AlgebraicGeometry/Modules/PullbackAffineSections.md).

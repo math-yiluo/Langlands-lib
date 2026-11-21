@@ -8,7 +8,7 @@ Namespaces: `Langlands.Plancherel.UnramifiedOperatorFamily` (generic part) and
 
 ## Purpose and status
 
-The published target `WeightedCRegularityStatement` (module `RationalWeakExpansionTargets`,
+The published target `WeightedCRegularityBorelStatement` (module `RationalWeakExpansionTargets`,
 Waldspurger Corollary V.2.3) asks, for every Weyl index `s`, for **one** rational extension
 `WeightedCExtension` of `c̃_{P'|P}(s, ·)`. Such an extension has one regular denominator that
 vanishes at no unitary character. Waldspurger's proof (printed p.294) fixes one point
@@ -16,15 +16,42 @@ vanishes at no unitary character. Waldspurger's proof (printed p.294) fixes one 
 
 This module proves that the pointwise statement implies the target:
 
-- `WeightedCRegularityReductionStatement` is the implication
-  `WeightedCLocalRegularityStatement → WeightedCRegularityStatement`, for the same data. It is proved
-  in the module by `weightedCRegularityReduction`.
-- The premise `WeightedCLocalRegularityStatement` is **not proved** here or anywhere in the
+- `WeightedCRegularityBorelReductionStatement` is the implication
+  `WeightedCLocalRegularityBorelStatement → WeightedCRegularityBorelStatement`, for the same data
+  and the same Borel instance on `M_I(F)/C_M`. It is proved in the module by
+  `weightedCRegularityBorelReduction`.
+- The premise `WeightedCLocalRegularityBorelStatement` is **not proved** here or anywhere in the
   Library. It contains the analytic content of Waldspurger's proof of V.2.3: IV.1 (12), Lemma V.2.2
   (the norm identity) and the minimality argument on `Q(λ) = ∏ ⟨λ, α̌⟩^{n(α)}`.
-- So `WeightedCRegularityStatement` is **not proved** by this module. The module does not use or
-  prove `WeightedWeakExpansionStatement`, `WeightedCDecompositionStatement` or
+- So `WeightedCRegularityBorelStatement` is **not proved** by this module. The module does not use
+  or prove `WeightedWeakExpansionStatement`, `WeightedCDecompositionBorelStatement` or
   `WeightedPacketIdentityStatement`.
+
+### Binder correction (Task 7826, operator ruling 8)
+
+The first version of this module stated `WeightedCLocalRegularityStatement` and the reduction
+`WeightedCRegularityReductionStatement` (proved by `weightedCRegularityReduction`) toward the
+published `WeightedCRegularityStatement`. That target omitted the Borel structure of
+`M_I(F)/C_M` from its elaborated signature and was replaced by `WeightedCRegularityBorelStatement`
+(see the Markdown of `RationalWeakExpansionTargets`, "Binder correction"). The pointwise
+statement had the same omission: it declares `[BorelSpace (𝐌 ⧸ CM)]` only as a section variable,
+and its body does not use that instance, so Lean dropped it. `Measure.IsHaarMeasure` for a given
+measurable structure does not imply that the structure is Borel, while Waldspurger III.1 (printed
+p.263) uses Haar measure on the topological quotient.
+
+The corrected definitions `WeightedCLocalRegularityBorelStatement` and
+`WeightedCRegularityBorelReductionStatement` bind `[BorelSpace (𝐌 ⧸ CM)]` explicitly. Their
+bodies are those of the old definitions, with `WeightedCRegularityBorelStatement` in place of
+`WeightedCRegularityStatement` as the conclusion of the reduction. They change no other premise,
+construction or conclusion. `WeightedCLocalRegularityStatement` (unproved) and
+`WeightedCRegularityReductionStatement` with its proof `weightedCRegularityReduction` are kept for
+the record; **do not use `WeightedCLocalRegularityStatement` or `WeightedCRegularityReductionStatement`
+as a target or a premise**. Elaborated-signature probe (development check
+`a72af090-aac5-4699-85e1-90d08a5795ed`): `WeightedCLocalRegularityBorelStatement`,
+`WeightedCRegularityBorelReductionStatement` and `weightedCRegularityBorelReduction` each have
+exactly one `BorelSpace` binder, the two old definitions none. The overlapping-instance linter is
+switched off for the three new declarations only, because it also counts the omitted section
+instance. No Library module other than this one uses the old pointwise statement.
 
 ## Generic part (namespace `Langlands.Plancherel.UnramifiedOperatorFamily`)
 
@@ -87,10 +114,11 @@ pictures).
   compact torus by the published circle coordinates `leviRationalUnitaryCoordinates`. So
   `exists_unitaryRegular_of_local` applies. Its output, together with the nonempty interior, gives
   the fields of `WeightedCExtension`.
-- **Definition `WeightedCLocalRegularityStatement`** (the premise, not proved). It has exactly the
-  explicit arguments of `WeightedCRegularityStatement`: `hG hi hν I I' hζ hζ' hKc hPK sc hs π mu
-  hRefl hCST PG R PM`. It also has the same three premises as the target, as arrows in its body:
-  - square integrability of `π` modulo `C_M`;
+- **Definition `WeightedCLocalRegularityBorelStatement`** (the premise, not proved). It has
+  exactly the explicit arguments of `WeightedCRegularityBorelStatement`: `hG hi hν I I' hζ hζ' hKc
+  hPK sc hs π mu hRefl hCST PG R PM`, and the instance argument `[BorelSpace (𝐌 ⧸ CM)]`. It also
+  has the same three premises as the target, as arrows in its body:
+  - square integrability of `π` modulo `C_M` for the Haar measure `μ` on the Borel quotient;
   - properness of `I'`;
   - `IsSpecialVertexCompact ν hi K`.
 
@@ -98,9 +126,14 @@ pictures).
   asserts two things:
   1. the interior of `cWeightedDomain … (nₛ s) …` is nonempty;
   2. `WeightedCRegularAt … (nₛ s) … (hN s) z` holds for every unitary `z`.
-- **Definition `WeightedCRegularityReductionStatement`** (the recorded statement) and its proof
-  **`weightedCRegularityReduction`**. Given the premise, fix the target's premises, `hN` and `s`,
-  and apply `nonempty_weightedCExtension_of_local` to the two conjuncts.
+- **Definition `WeightedCRegularityBorelReductionStatement`** (the recorded statement) and its
+  proof **`weightedCRegularityBorelReduction`**. Given the premise, fix the target's premises, `hN`
+  and `s`, and apply `nonempty_weightedCExtension_of_local` to the two conjuncts.
+- **Superseded:** `WeightedCLocalRegularityStatement` has the same body as
+  `WeightedCLocalRegularityBorelStatement` without the Borel instance argument;
+  `WeightedCRegularityReductionStatement` is the implication from it to the superseded
+  `WeightedCRegularityStatement`, proved by `weightedCRegularityReduction` by the same argument.
+  Neither statement is a target or a premise (see "Binder correction").
 
 ## Relation to the source
 
@@ -113,7 +146,7 @@ of "rationnel et régulier sur `O`" is in V.1, printed p.288.
   c_{P'|P}(s, ω ⊗ χ_λ)` "est régulière en `λ = 0`". It then shows, with Lemma V.2.2 and the
   minimality of the `n(α)`, that `Q = 1`, so that the function of the corollary is regular at `ω`.
   That conclusion at every `ω ∈ O`, for the actual family `c̃` on its convergence domain, is the
-  content of `WeightedCLocalRegularityStatement`.
+  content of `WeightedCLocalRegularityBorelStatement`.
 - The nonempty interior of `D₀`, the first conjunct of the premise, is part of the published
   `WeightedCExtension` (its field `interior_nonempty`), and the reduction needs it for that reason.
   In the source, the intertwining integrals from which the c-function is built converge on an open

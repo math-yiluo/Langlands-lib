@@ -148,9 +148,11 @@ theorem hasCoveringUnequalArchimedeanTests_of_slice_test_ranges
   exact (congrArg₂ (· * ·) hleft' hright').trans (mul_products κ κ' _ _ _ _)
 
 /-- Given exact model ranges and pointwise local generation, choose compatible local
-quotient measures and realize the required normalized unequal-rank products on cuspidal tensors. -/
-theorem hasCoveringUnequalArchimedeanTests_of_local
-    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+quotient measures and realize the required normalized unequal-rank products on cuspidal tensors.
+Use real generation only when the field has a real place. -/
+theorem hasCoveringUnequalArchimedeanTests_of_local_at
+    (hGReal : Nonempty RP → RealOrdinaryNormalizedGenerationStatement)
+    (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
@@ -173,7 +175,7 @@ theorem hasCoveringUnequalArchimedeanTests_of_local
       (fun w s => ((complexPairLFactor (dC w) (dC' w)).denominator s)⁻¹) := by
   refine hasCoveringUnequalArchimedeanTests_of_slice_test_ranges hψF hS hψv M M' ?_
   intro s₀
-  have hgR (v : RP) := (hGReal.1 r t hrt (dR v) (dR' v) (hdR v).1 (hdR' v).1 (hiR v) (hiR' v)
+  have hgR (v : RP) := ((hGReal ⟨v⟩).1 r t hrt (dR v) (dR' v) (hdR v).1 (hdR' v).1 (hiR v) (hiR' v)
     (aR v) (realQuotientMeasureData t)
     (hR.1 v ▸ range_ne_bot_of_normalized 1 (M.normalized (.inl v)))
     (hR'.1 v ▸ range_ne_bot_of_normalized 1 (M'.normalized (.inl v)))).1 s₀
@@ -203,5 +205,30 @@ theorem hasCoveringUnequalArchimedeanTests_of_local
       hNR, hNC, fun v => realUnequal_pair_invariant hrt (R v).1.property (R v).2.property,
       fun w => complexUnequal_pair_invariant hrt (C w).1.property (C w).2.property⟩
   exact ⟨A, hWR, hWC, hWR', hWC'⟩
+
+theorem hasCoveringUnequalArchimedeanTests_of_local
+    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w))
+    (hiR : ∀ v, IsIrreducibleGKModule (realStandardRep (r + 1) (dR v)) (realStandardLie (r + 1) (dR v)))
+    (hiR' : ∀ v, IsIrreducibleGKModule (realStandardRep (t + 1) (dR' v)) (realStandardLie (t + 1) (dR' v)))
+    (hiC : ∀ w, IsIrreducibleGKModule (complexStandardRep (r + 1) (dC w)) (complexStandardLie (r + 1) (dC w)))
+    (hiC' : ∀ w, IsIrreducibleGKModule (complexStandardRep (t + 1) (dC' w)) (complexStandardLie (t + 1) (dC' w))) :
+    HasCoveringUnequalArchimedeanTests (P := P) (P' := P') hP hP' hPS hPS' ψ hrt ψv
+      (fun v s => ((realPairLFactor (dR v) (dR' v)).denominator s)⁻¹)
+      (fun w s => ((complexPairLFactor (dC w) (dC' w)).denominator s)⁻¹) :=
+  hasCoveringUnequalArchimedeanTests_of_local_at (fun _ => hGReal) hGComplex
+    hψF hS hψv M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC' hiR hiR' hiC hiC'
 
 end Langlands.Global.CuspidalPairPoles

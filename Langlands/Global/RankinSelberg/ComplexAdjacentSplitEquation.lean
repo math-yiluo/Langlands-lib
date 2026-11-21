@@ -86,7 +86,8 @@ private theorem inversePairBlocks (d : ComplexCharacterData) (es : List ComplexC
   · simp only [Function.comp_apply, ComplexCharacterData.inv_exponent, ComplexCharacterData.mul]
     exact neg_add _ _
 
-private theorem twistedSquare_normalization (μ : Measure H) [μ.IsHaarMeasure]
+/-- The determinant-twisted square coefficient equation in pair-factor normalization. -/
+theorem twistedSquare_normalization (μ : Measure H) [μ.IsHaarMeasure]
     (κ : @Measure Kc Kspace) (hk : letI := Kspace; IsFiniteMeasure κ)
     (hHaar : letI := Kspace; κ.IsHaarMeasure) (a : ℂˣ) (d : ComplexCharacterData)
     (es : Fin (r + 1) → ComplexCharacterData) (Φ : 𝓢(Mat, ℂ)) (f : H → ℂ)

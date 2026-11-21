@@ -29,3 +29,5 @@ Jacquet, *Archimedean Rankin–Selberg Integrals*, 2009, DOI
 `10.1090/conm/489/09547`.
 
 `complexAdjacentSplitDecomposition` gives the finite product formulas on the right half-plane. The square pairs in these formulas have whole-plane normalized continuations with exponential strip growth. `complexAdjacentSplitGrowth` combines them with lower equal-rank pairs having that property. The proof uses the finite product growth theorem and transfers the agreement through both split integral identities, with a common right half-plane for the agreements.
+
+`twistedSquare_normalization` also exports the square coefficient comparison in pair-factor normalization for use at a larger gap.

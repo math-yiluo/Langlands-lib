@@ -1,0 +1,5 @@
+# Joint absolute convergence in the alternate complex gap chart
+
+The split alternate test is integrable when the two leading real determinant exponents are sufficiently large. The conclusion uses the compatible small quotient measure and the exact diagonal, compact, first-column and unipotent measures of the triangular chart. The lower rectangle measure can be additive Haar or restriction to the zero rectangle, using the stated integrability of one radial power. The leading matrix multiplier and smaller right translate may be replaced by matrices with at most their original heights.
+
+The proof uses Whittaker simple-root decay for the large coefficient and the polynomial dependence on the right translate for the small coefficient. The leading Schwartz factor gives separate square-matrix and lower-rectangle decay. The alternate tail estimate absorbs the remaining height and the growth of the two logarithmic measures. Multiplying the integrable factors gives joint absolute convergence for a measurable kernel dominated by the displayed norm.

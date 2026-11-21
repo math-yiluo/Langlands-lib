@@ -1,0 +1,9 @@
+# The integral stalks at a critical point of Deligne's datum
+
+Drinfeld's *Coverings of p-adic Symmetric Regions* (1976), §2A, printed p. 110 (PDF p. 4), condition (a), requires the lattice component on the zero locus of the corresponding tangent operator to be constant with fibre \(O^d\). Section 2B uses this locus in its local description. This development derives consequences of condition (a) in the Library's actual sheaf model.
+
+The stalk of a constant module sheaf is identified with its given coefficient module by taking constant-vector germs. The existing surjectivity result supplies all germs. Injectivity uses the stalk isomorphism of sheafification and equality of the original constant sections on a common neighbourhood. The inverse-image stalk isomorphism then transports the trivialization on the actual zero locus back to the original integral stalk.
+
+The path between two lattice degrees applies the homogeneous Pi operator as many times as the least nonnegative residue of their difference. It is invertible after scalar extension because the full Pi cycle is multiplication by the nonzero uniformizer. The natural integral-to-rational stalk map is injective on each homogeneous component, by composing it with the rationalized inclusion into the total stalk. Naturality therefore gives an injection on integral stalks for each homogeneous Pi path.
+
+Over a principal ideal domain with injective coefficient map to \(F\), the path from any degree to the critical degree embeds that degree's stalk in \(O^d\). This gives finite generation, and a basis of the image submodule gives a basis of the original stalk. The path in the opposite direction injects \(O^d\) into the stalk, so the two rank inequalities force the basis to have \(d\) elements. Reindexing it gives a linear equivalence between that stalk and \(O^d\).

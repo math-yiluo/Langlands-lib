@@ -1,3 +1,4 @@
+import Langlands.LocalField.PadicTowerModuleTopology
 import Langlands.BaseChange.SphericalNormLift
 import Langlands.BaseChange.NormCentralizer
 import Langlands.TraceFormula.CompactOpenOrbitalIntegral
@@ -26,27 +27,8 @@ local instance fieldModuleTopology (L : PadicField.{w} p) : IsModuleTopology (Pa
 
 /-- The canonical topology of a p-adic field extension is its module topology
 over the intermediate p-adic field as well. -/
-theorem canonicalRelativeModuleTopology : IsModuleTopology F.Carrier E.Carrier := by
-  have hF : Continuous (algebraMap (Padic p) F.Carrier) :=
-    IsModuleTopology.continuous_of_linearMap (Algebra.linearMap (Padic p) F.Carrier)
-  have hE : Continuous (algebraMap F.Carrier E.Carrier) :=
-    IsModuleTopology.continuous_of_linearMap (IsScalarTower.toAlgHom (Padic p) F.Carrier E.Carrier).toLinearMap
-  have hle : moduleTopology (Padic p) E.Carrier ≤ moduleTopology F.Carrier E.Carrier := by
-    let : TopologicalSpace E.Carrier := moduleTopology F.Carrier E.Carrier
-    let : ContinuousAdd E.Carrier := ModuleTopology.continuousAdd F.Carrier E.Carrier
-    let : ContinuousSMul F.Carrier E.Carrier := ModuleTopology.continuousSMul F.Carrier E.Carrier
-    let : ContinuousSMul (Padic p) E.Carrier := ⟨by
-      have h := (continuous_smul (M := F.Carrier) (X := E.Carrier)).comp
-        ((hF.comp continuous_fst).prodMk continuous_snd)
-      change Continuous (fun t : Padic p × E.Carrier => algebraMap (Padic p) F.Carrier t.1 • t.2) at h
-      simpa only [algebraMap_smul] using h⟩
-    exact moduleTopology_le (Padic p) E.Carrier
-  let : ContinuousSMul F.Carrier E.Carrier := ⟨by
-    have h := (hE.comp continuous_fst).mul (continuous_snd (X := F.Carrier))
-    change Continuous (fun t : F.Carrier × E.Carrier => algebraMap F.Carrier E.Carrier t.1 * t.2) at h
-    simpa only [Algebra.smul_def] using h⟩
-  exact ⟨le_antisymm ((eq_moduleTopology (Padic p) E.Carrier).le.trans hle)
-    (moduleTopology_le F.Carrier E.Carrier)⟩
+theorem canonicalRelativeModuleTopology : IsModuleTopology F.Carrier E.Carrier :=
+  Langlands.PadicField.padicTowerModuleTopology p F E
 
 variable {σ : E.Carrier ≃ₐ[F.Carrier] E.Carrier} {l r : ℕ}
 

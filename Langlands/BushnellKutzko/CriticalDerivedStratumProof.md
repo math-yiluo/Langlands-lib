@@ -2,7 +2,7 @@
 
 `Langlands.BushnellKutzko.criticalDerivedStratum` proves the unchanged Library proposition `Langlands.BushnellKutzko.CriticalDerivedStratumStatement`, with the field and vector space in independent universes. It uses the given equivalent simple stratum and an arbitrary tame corestriction for its actual generated field. The derived chain has the same underlying lattices as the ambient chain, and the simple witness has exactly the same chain and integers as the derived stratum.
 
-Source: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), registered as `bushnell-kutzko-1993-admissible-dual-gln`, (2.4.1)(iii), printed p. 65 (PDF p. 77); source proof printed pp. 73–75 (PDF pp. 85–87). The Lean proof uses a different reduction and a cyclic lift informed by the graded calculations of §2.5 (printed pp. 77–85). It does not assume (2.4.1)(i), (2.4.1)(ii)(c), or the aggregate approximation theorem.
+Source: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), registered as `bushnell-kutzko-1993-admissible-dual-gln`, (2.4.1)(iii), printed p. 65 (PDF p. 77); source proof printed pp. 73–75 (PDF pp. 85–87). The Lean proof uses a different reduction and a cyclic lift informed by the graded calculations of §2.5 (printed pp. 76–83, PDF pp. 88–95). It does not assume (2.4.1)(i), (2.4.1)(ii)(c), or the aggregate approximation theorem.
 
 ## Implemented proof
 

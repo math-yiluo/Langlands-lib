@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.Modules.MonoidalTensorComparison
 import Langlands.AlgebraicGeometry.SmoothValuationStalkPicard
 import Langlands.AlgebraicGeometry.Picard.LineBundleInverse
 import Langlands.AlgebraicGeometry.Picard.LineBundleQuasicoherent
@@ -29,7 +30,7 @@ private theorem portedIsInvertible (L : LineBundle X) :
 sheafification of the same sectionwise tensor product. -/
 def portedTensorExplicitIso (M N : X.Modules) :
     Scheme.Modules.tensor M N ≅ Langlands.Scheme.Modules.tensorObj M N :=
-  (Scheme.Modules.tensorIsoSheafify M N).symm
+  Langlands.AlgebraicGeometry.Modules.monoidalTensorIso M N
 
 /-- Sections of a line bundle on an affine scheme are an invertible module
 over the actual ring of global functions. -/

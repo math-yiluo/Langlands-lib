@@ -1,0 +1,5 @@
+# Inverse to the skew Gram presentation
+
+`QuaternionicSkewQuadraticComparisonStatement` applies to an invertible Gram matrix for canonical conjugation over a characteristic-zero quaternion division algebra. It constructs a nondegenerate quotient-valued quadratic form for the original orthogonal involution whose skew Gram is the given matrix.
+
+If \(\ell\) is the invertible alternating coefficient used to twist the involution, multiplying the skew matrix on the right by the scalar matrix of \(\ell\) gives a self-adjoint matrix for the original involution. The quotient class of half of that matrix has the required polar Gram matrix. The skew conversion recovers the original matrix by right multiplication by the inverse scalar matrix. The same calculation compares the pairing values, with the inverse coefficient on the right. This lets the proper Witt theorem for the quotient-valued form act directly on rows of the canonical skew Gram matrix. [Kneser, *Lectures on Galois cohomology of classical groups*, §2.6 Lemma 2 and the discussion of classical groups, pp. 32–34](https://www.math.tifr.res.in/~publ/ln/tifr47.pdf)

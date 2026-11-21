@@ -16,9 +16,11 @@ of `ξ` and, by `normComp_isUnramifiedAt`, the norm-pullback component are trivi
 there.
 
 Let `a = ν.finiteUniformizerValue v`, the value at the canonical lower
-uniformizer. The private valuation lemma identifies the canonical normalized
-discrete valuation with the completion valuation and evaluates that uniformizer
-at `exp (-1)`. Given **any** upper uniformizer family `ϖ`, the published
+uniformizer. The published lemma
+[`Langlands.Global.FiniteAdelicGL.completion_uniformizer_value`](../Global/FiniteAdelicGL/SphericalArithmeticTransport.md)
+identifies the canonical normalized discrete valuation with the completion
+valuation and evaluates that uniformizer at `exp (-1)`. Given **any** upper
+uniformizer family `ϖ`, the published
 [`normComp_finiteComponent_uniformizer`](../Global/HeckeCharacterUnramifiedNorm.md)
 then gives the value `a ^ f(w | v)` at `ϖ w`. This norm lemma uses ramification
 index one to compare with the image of the lower uniformizer, discards the

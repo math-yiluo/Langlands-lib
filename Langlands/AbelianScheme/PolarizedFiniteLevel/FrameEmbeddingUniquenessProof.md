@@ -1,0 +1,9 @@
+# Uniqueness of frame-normalized cubic embeddings
+
+`Langlands.AbelianScheme.PolarizedFiniteLevel.frameEmbeddingUniqueness` proves `FrameEmbeddingUniquenessStatement` in the same universe and over every base scheme.
+
+A cover of the base simultaneously trivializes the two cubic twists. Since `a.frameLocus ρ = ⊤`, every base point has an open neighborhood on which all joint frame evaluations have invertible stalk maps. The stalk criterion makes the evaluations isomorphisms on the base, and open-immersion base change gives the corresponding isomorphisms on the cover.
+
+On each open the pulled-back coordinates give two generating families of sections of the same cubic bundle. At the last torsion section all the coordinates in each family have a common value. Both common values generate the restricted line bundle, and their ratio is a unit on the base open. After multiplying one family by that unit, the two families agree at the last torsion section. For each coordinate `i`, its sections also agree at each of the other coordinate points by vanishing. The joint evaluation omitting index `i` therefore proves equality of these sections. The scalar automorphism identifies the linear-system morphisms, and their local equality yields equality on the whole source.
+
+This internal uniqueness result concerns frame normalization of a fixed cubic datum. The source context is Mumford, Fogarty and Kirwan, *Geometric Invariant Theory*, 3rd ed. (1994), §7.2. Definitions 7.5–7.6 on printed p. 130 introduce linear rigidifications and the associated functor. The action on printed p. 135 changes a rigidification by postcomposition, and Proposition 7.5(a) on printed p. 136 compares two rigidifications of a fixed polarized abelian scheme with level structure by an `S`-valued point of `PGL(m + 1)`. The registered source is `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`.

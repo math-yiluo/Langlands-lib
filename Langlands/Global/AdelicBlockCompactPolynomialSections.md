@@ -1,0 +1,7 @@
+# Realized scalar sections from a compact polynomial seed
+
+`polynomialOrbit` is the span of the right translates of the infinite seed polynomial under the standard infinite compact group, acting through its archimedean matrix coordinates; it is finite dimensional. Evaluating its elements in the mixed matrix coordinates gives smooth infinite compact coefficients with the required left covariance. The finite and infinite parabolic intersections multiply in separate adelic coordinates. Their covariance equations therefore give the full compact covariance of the paired coefficients.
+
+The scalar compact-picture map extends the paired coefficients to actual adelic sections. Smoothness of the finite inducing representation gives a common open stabilizer. The compact polynomial orbit gives compact finiteness and smoothness of the infinite slices. A nonzero compact finite evaluation paired with the seed value at the identity gives a nonzero Levi coefficient. The corresponding scalar section is nonzero because its normalized compact slices recover it. The theorem `exists_smoothSectionFamily_of_compactPolynomial` states the result: injective coefficient evaluation, smooth finite evaluations and one nonzero finite compact evaluation give a family of smooth compact-finite sections with the prescribed slices, not all zero.
+
+This is the nonzero compact seed construction for the original induction in Langlands, *On the notion of an automorphic representation* (1979), Lemma 1, printed p. 203, Corvallis Part I PDF p. 198.

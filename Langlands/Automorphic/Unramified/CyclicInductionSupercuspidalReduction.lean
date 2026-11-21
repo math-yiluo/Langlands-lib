@@ -79,11 +79,16 @@ section LocalRealization
 
 variable {K : Type uF} [Field K] [NumberField K] {r : ℕ} {v : FinitePlace K}
 
-local instance (n : ℕ) : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
-local instance (A : LocalRealization K (r + 1) v) : AddCommGroup A.Space := Submodule.addCommGroup _
+local instance reductionRationalAddCommGroup (n : ℕ) :
+    AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
+local instance reductionContinuousAddCommGroup (n : ℕ) :
+    AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
+local instance reductionSmoothAddCommGroup (n : ℕ) :
+    AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
+local instance reductionFormAddCommGroup (n : ℕ) :
+    AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
+local instance reductionLocalAddCommGroup (A : LocalRealization K (r + 1) v) :
+    AddCommGroup A.Space := Submodule.addCommGroup _
 
 namespace LocalRealization
 
@@ -130,11 +135,16 @@ namespace Unramified
 
 variable {K : Type*} [Field K] [NumberField K] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
-local instance {v : FinitePlace K} (A : LocalRealization K n v) : AddCommGroup A.Space :=
+local instance inductionRationalAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions K n) := Submodule.addCommGroup _
+local instance inductionContinuousAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions K n) := Submodule.addCommGroup _
+local instance inductionSmoothAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions K n) := Submodule.addCommGroup _
+local instance inductionFormAddCommGroup :
+    AddCommGroup (AutomorphicForms K n) := Submodule.addCommGroup _
+local instance inductionLocalAddCommGroup {v : FinitePlace K} (A : LocalRealization K n v) :
+    AddCommGroup A.Space :=
   Submodule.addCommGroup _
 
 /-- At a unique finite place in prime degree, a unitary regular source with
@@ -163,7 +173,9 @@ def CyclicInductionMatchingAtUniquePlaceStatement : Prop :=
         BaseChange.IsCyclicLocalInductionOf (uniquePlaceCompletionAutEquiv w hw σ)
           (Module.finrank F E) (Q.localComponent v).representation (P.localComponent w.1).representation
 
-private theorem isCyclicAlgebra_uniquePlace
+/-- At a unique finite place, the extension of a global cyclic generator
+presents the completion as a cyclic algebra of the global degree. -/
+theorem isCyclicAlgebra_uniquePlace
     {F : Type uF} {E : Type uE} [Field F] [NumberField F] [Field E] [NumberField E]
     [Algebra F E] [IsGalois F E] {v : FinitePlace F} (w : FinitePlacesAbove E v)
     (hw : ∀ w' : FinitePlacesAbove E v, w' = w) (σ : E ≃ₐ[F] E)

@@ -9,3 +9,5 @@ Exact unequal-rank kernel convergence applies to each pair of intertwiner values
 The integrating character for the larger canonical Jacquet integral is \(a\), so its left character and the parameter of the resulting unequal-rank equation are \(-a\). [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 8.3](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).
 
 `complexAdjacentCanonicalChamberGrowth` uses lower equal-rank normalizations of exponential strip growth. The same split generators span the upper canonical Jacquet values in the strong chamber. The normalized split equation supplies growth for each generator. The growth-preserving submodule of convergent unequal pairs extends the conclusion from these generators to the whole canonical image.
+
+`godementSection_finset_sum` is available for the finite Gaussian monomial decomposition at larger gaps as well.

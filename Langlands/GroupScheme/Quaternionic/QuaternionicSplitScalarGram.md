@@ -1,0 +1,7 @@
+# Scalar Gram coordinates for a split skew-hermitian pairing
+
+In a two-by-two matrix chart of a scalar-extended quaternion algebra, a row of quaternionic coordinates gives two ordinary scalar rows. The scalar Gram matrix is obtained by multiplying each Gram block on the right by the standard alternating matrix \(J\) and then flattening the blocks. The construction also gives the inverse map from a pair of scalar rows to the original coordinates.
+
+`QuaternionicSplitScalarGramStatement` applies to a skew-hermitian matrix for the scalar extension of canonical quaternion conjugation. An invertible skew Gram matrix gives a symmetric invertible scalar Gram matrix. For two quaternionic rows \(x,y\), the chart of their skew pairing times \(J\) has as its entries the four scalar pairings of the rows of \(x\) and \(y\).
+
+The proof uses the chart identity \(\overline{a}J=Ja^{\mathsf T}\). The skew condition on the blocks and \(J^{\mathsf T}=-J\) give symmetry. Invertibility follows from the block diagonal matrix with blocks \(J\) and the ring equivalence flattening square block matrices. The pairing identity follows by flattening a rectangular block product. The scalar Gram matrix and pair of rows implement the split symplectic involution calculation used by Springer. [Kneser, *Lectures on Galois cohomology of classical groups*, Springer appendix, §1, equation (2), p. 106](https://www.math.tifr.res.in/~publ/ln/tifr47.pdf)

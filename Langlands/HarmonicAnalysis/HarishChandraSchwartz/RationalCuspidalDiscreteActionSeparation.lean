@@ -1,5 +1,6 @@
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.CentralProjectionFamily
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.CentralQuotientGeneration
+import Langlands.HarmonicAnalysis.HarishChandraSchwartz.DiscreteSeriesSmallRealization
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalCuspidalCentralKernelStep
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalCuspidalDiscreteUpper
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiSquareIntegrable
@@ -21,9 +22,9 @@ attribute [local instance] rationalWeightsIsAffine rationalWeightsTopology
   rationalWeightsTopologicalGroup rationalWeightsT2Field rationalWeightsLocallyCompact
   rationalWeightsMeasurableSpace rationalWeightsBorelSpace
 
-/-- The final vanishing step of VIII.5, conditional on the actual central and
-ambient weight estimates and finite projected cuspidal levels. -/
-def RationalCuspidalDiscreteActionSeparationStatement : Prop :=
+/-- The final vanishing step of VIII.5 with the discrete-series actions
+tested in the independent carrier universe `uV`. -/
+def RationalCuspidalDiscreteActionSeparationAtUniverseStatement : Prop :=
   ∀ (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
     (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffineHom G.X.hom]
@@ -52,7 +53,7 @@ def RationalCuspidalDiscreteActionSeparationStatement : Prop :=
               (χ : A →ₜ* ℂˣ).toMonoidHom H.toSubgroup)) →
           ∀ φ : RationalSchwartzSpace hKc hPK ρ,
             φ ∈ rationalCuspidalSubmodule hKc hPK ρ →
-            (∀ ω : DiscreteSeriesClass.{u, max u uV} A hA mu,
+            (∀ ω : DiscreteSeriesClass.{u, uV} A hA mu,
               ∃ hT : HasTemperedCoefficients (rationalXi hKc hPK)
                 (rationalHeight (F := F) ρ) ω.val.out.obj.representation,
                 schwartzAction hL ω.val.out.property.2 hT
@@ -60,10 +61,10 @@ def RationalCuspidalDiscreteActionSeparationStatement : Prop :=
                     (rationalHeight_inv ρ) φ) = 0) →
             φ = 0
 
-/-- Apply the actual central-projection upper inclusion and Fourier uniqueness
-on the split center to the cuspidal Schwartz function. -/
-theorem rationalCuspidalDiscreteActionSeparation :
-    RationalCuspidalDiscreteActionSeparationStatement.{u, uV} := by
+/-- Compare the coefficient sum with the same sum in the prescribed carrier
+universe and apply Fourier uniqueness on the split center. -/
+theorem rationalCuspidalDiscreteActionSeparationAtUniverse :
+    RationalCuspidalDiscreteActionSeparationAtUniverseStatement.{u, uV} := by
   intro F _ _ _ _ G _ _ hG S i hi ν hν K hKc hPK N _ ρ hρ T s hs A hA
   let : A.Normal := A.normal_of_le_center hA
   let : MeasurableSpace (rationalPoints G ⧸ A) := borel _
@@ -94,10 +95,14 @@ theorem rationalCuspidalDiscreteActionSeparation :
   have hchi : IsUnitaryCharacter chiHom := isUnitaryCharacter_of_mem_unitaryCharacters χ
   have hupper := rationalCuspidalDiscreteUpperEstimate.{u, uV} F G hG S i hi ν hν K hKc hPK
     N ρ hρ T s hs muA muG hcentral hL mu chiHom (χ : A →ₜ* ℂˣ).continuous hchi (hfinite χ)
-  have hmem : centralProjection muA chiHom (φ : rationalPoints G → ℂ) ∈
+  have hmemLift : centralProjection muA chiHom (φ : rationalPoints G → ℂ) ∈
       discreteSeriesCentralCoefficientSpace.{u, max u uV} A hA mu chiHom :=
     hupper ⟨φ, hφ, rfl⟩
-  have hle : discreteSeriesCentralCoefficientSpace.{u, max u uV} A hA mu chiHom ≤
+  have hmem : centralProjection muA chiHom (φ : rationalPoints G → ℂ) ∈
+      discreteSeriesCentralCoefficientSpace.{u, uV} A hA mu chiHom := by
+    rw [discreteSeriesCentralCoefficientSpace_eq_of_separable.{u, uV, max u uV} A hA mu chiHom]
+    exact hmemLift
+  have hle : discreteSeriesCentralCoefficientSpace.{u, uV} A hA mu chiHom ≤
       pairingAnnihilator muG (φ : rationalPoints G → ℂ) := by
     apply (discreteSeriesCentralCoefficientSpace_le_iff A hA mu chiHom _).mpr
     intro ω _
@@ -117,5 +122,14 @@ theorem rationalCuspidalDiscreteActionSeparation :
     obtain ⟨H, hH⟩ := (mem_schwartzSubmodule_iff _ _).mp (Space.coe_mem φ)
     exact (IsBiInvariant.isLocallyConstant (hH.1.centralProjection (μA := muA) hA chiHom)).continuous
   exact centralProjection_eq_zero_of_mem_pairingAnnihilator hclosed hQ hchi hcont (hle hmem)
+
+/-- The VIII.5 implication at the carrier universe of the upper inclusion. -/
+def RationalCuspidalDiscreteActionSeparationStatement : Prop :=
+  RationalCuspidalDiscreteActionSeparationAtUniverseStatement.{u, max u uV}
+
+/-- Apply the vanishing implication at the carrier universe of the upper inclusion. -/
+theorem rationalCuspidalDiscreteActionSeparation :
+    RationalCuspidalDiscreteActionSeparationStatement.{u, uV} :=
+  rationalCuspidalDiscreteActionSeparationAtUniverse.{u, max u uV}
 
 end Langlands.HarishChandraSchwartz

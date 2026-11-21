@@ -11,6 +11,14 @@ The totally complex completed pole statement suffices over totally complex
 fields. Both implications keep `u` for the number field and `uQ` for the
 attached spectral factors.
 
+`CompletedPoleProfileAt F` packages the witnesses used in the partial
+continuation argument. For each pair it gives certified finite L-data,
+archimedean parameters, and a completed L-function with its simple pole
+profile. `completedPoleProfileAt_of_poleAt` chooses these witnesses from the
+fieldwise pole theorem. `exists_partialPairL_of_completedPoleProfile` applies
+the continuation argument directly to this data, and `exists_partialPairL`
+combines the two steps for callers with the fieldwise pole theorem.
+
 For the fieldwise implication, let `T` and `T'` have unitary central characters
 and be trivial on the split centre. Their spectral presentations have
 irreducible admissible components at every finite place. Enlarge the omitted

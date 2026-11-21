@@ -1,0 +1,7 @@
+# Strong multiplicity one for cuspidal realizations of GL₁
+
+`CuspidalStrongMultiplicityOneRankOneStatement` specializes the published `CuspidalStrongMultiplicityOneStatement` to `r = 0`, which denotes `GL₁`. It retains both universe parameters, the supplied spectral presentations, and the cofinite equality of irreducible admissible finite local classes. This is the rank-one case of Getz–Hahn, *An Introduction to Automorphic Representations* (2024), Theorem 11.7.2, p. 309 (PDF p. 320), and Exercise 11.6, p. 314 (PDF p. 325).
+
+The proof transports the central character of the first realization to the second by the Library's `hasCentralCharacter_of_localClass_eq`. The theorem `AdelicGL.scalar_determinant_one` identifies every rank-one adelic invertible matrix with the scalar matrix of its determinant. The transformation law under scalar ideles therefore determines each realized function from its value at the identity and the common central character. A nonzero vector in either realization has nonzero value at the identity. Scaling such a vector to match the value at the identity of an arbitrary vector in the other realization gives equality of the underlying functions and hence of the ambient vectors.
+
+The two resulting submodule inclusions give equality of the actual operator realizations and therefore equality of their full operator classes. This direct argument specializes the central-character step of the route for Exercise 11.6. The proof uses the concrete rank-one scalar action and the published comparison of central characters.

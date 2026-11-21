@@ -1,0 +1,5 @@
+# Ordinary and dual Godement restriction with one Haar constant
+
+`complexGapNormalizedRestriction` restricts the Weyl-translated ordinary Godement value to a padded leading matrix and the transformed dual value to a padded lower block. Both use the determinant-normalized chart and the same positive Haar constant. The ordinary expression integrates over the upper unipotent tail before the retained coordinates. On the dual side the complementary lower rectangle is fixed and the chart integrand is absolutely integrable.
+
+The proof begins with the ordinary padded restriction and pulls its integral back under the normalized triangular Haar formula. The last-column calculation identifies the ordinary split fibers. Their triangular Fourier exchange has determinant factor one on this chart. Right translation by the tail Weyl element reverses the tail tests and contributes its character value. The dual padded restriction uses the dual Haar chart and the determinant-one lower shear, leaving the same Haar constant. [Jacquet, *Archimedean Rankin–Selberg integrals*, Sections 10.2–10.3](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

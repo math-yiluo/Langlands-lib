@@ -1,0 +1,7 @@
+# Galois coverings by full ordered frames
+
+Fix a nonempty finite fibre power of a compact quasi-étale analytic map. Over an open of the base, assume that the map from this power is étale, a distinct frame of its length exists over each ordinary base point, and no distinct frame with one more coordinate exists there. The open of distinct frames over this base open is a Galois covering with the finite group of coordinate permutations.
+
+Its structure map is étale by restriction of the étale slice of the power. Surjectivity follows from the assumed existence of ordinary frames, and permutations restrict because they preserve both distinctness and the base map. On a full point with values in a complete algebraically closed field, its distinct coordinates give an injection into the geometric fibre of the original map. Every point of that fibre occurs as a coordinate. Otherwise adjoining a missing point produces a tuple with one more distinct coordinate, which lifts to the larger fibre power and contradicts the hypothesis on ordinary points. Two bijective tuples in the same geometric fibre differ by a unique permutation. The geometric-fibre criterion then gives the analytic deck-graph partition.
+
+This is the derived ordered-frame step for the finite Galois refinement of an étale germ, in the setting of Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Theorem 3.4.1, printed p. 65. The permutation action produces the graph condition used in Milne, *Étale Cohomology*, Chapter III, §2, Example 2.6, printed pp. 99–100.

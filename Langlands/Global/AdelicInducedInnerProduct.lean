@@ -91,6 +91,26 @@ def inducedInnerProduct (K : Subgroup (AdelicGroupPoints F G))
 
 end Measures
 
+section Integrand
+
+variable {F : Type} [Field F] [NumberField F]
+  {G P M : GroupScheme (Spec (CommRingCat.of F))}
+  [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+  [IsAffine P.X.left] [LocallyOfFiniteType P.X.hom]
+  [IsAffine M.X.left] [LocallyOfFiniteType M.X.hom]
+
+/-- The integrand `(k, x) ↦ β(y(m)) δ_P(m)⁻¹ φ(m k) conj ψ(m k)` (`m = x.out`) of the iterated
+integral `inducedInnerProduct K hKc p l μM e β φ ψ` on `K × M(F) \ M(𝔸)`. -/
+def inducedInnerProductIntegrand (K : Subgroup (AdelicGroupPoints F G)) (p : P ⟶ G) (l : M ⟶ P)
+    {n : ℕ} (e : (Fin n → ℝ) ≃ₗ[ℝ] RealCharacterParameter F P) (β : (Fin n → ℝ) → ℝ)
+    (φ ψ : AdelicGroupPoints F G → ℂ) (z : K × RationalQuotient F M) : ℂ :=
+  (β (parameterCoordinates F P e (characterLog F P (map F M P l z.2.out))) : ℂ) *
+    parameterPower F P (-modulusParameter F P) (map F M P l z.2.out) *
+    φ (map F P G p (map F M P l z.2.out) * (z.1 : AdelicGroupPoints F G)) *
+    (starRingEnd ℂ) (ψ (map F P G p (map F M P l z.2.out) * (z.1 : AdelicGroupPoints F G)))
+
+end Integrand
+
 section Weyl
 
 variable {F : Type u} [Field F] [NumberField F]

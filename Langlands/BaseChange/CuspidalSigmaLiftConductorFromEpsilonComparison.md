@@ -1,0 +1,13 @@
+# The conductor formula from the cross-field epsilon comparison
+
+`cuspidalSigmaLiftConductorFromEpsilonComparison` proves `CuspidalSigmaLiftConductorFromEpsilonComparisonStatement`: the premise `CuspidalSigmaLiftEpsilonComparisonStatement` implies the exact four-universe `CuspidalSigmaLiftConductorStatement`. This is a conditional reduction, not a proof of the target. Every same-field local certificate is constructed here; only the comparison across the extension remains as a premise.
+
+The premise has the target's hypotheses: `F` of characteristic zero, `IsCyclicAlgebra σ l`, an irreducible admissible supercuspidal `π`, an irreducible supercuspidal `P₁`, an admissible `P` equivalent to the reindexed `sigmaOrbitProduct`, `IsSigmaLift`, the residue degree `f`, the different exponent `d`, and the finite set `X` of norm-trivial characters. For these it asserts that some nontrivial additive characters `ψF` and `ψE` with `ψE x = ψF (Tr_{E/F} x)`, together with self-dual Haar measures, satisfy the following. For every family `eF` of actual pair epsilon factors of the twists `κπ` (`κ ∈ X`) against the trivial character of `GL₁`, and every such factor `eP` of `P`, the comparison `EpsilonMonomialProductComparison q_F q_E X eF eP` holds:
+
+`∏_{κ∈X} ε(z, κπ, ψF) = C · ε(z, P, ψE)` for some constant `C`.
+
+The characters are not required to have conductor zero. This is the form produced by the global functional equations at the distinguished place, where the additive characters are the components of a standard adelic character.
+
+The proof applies `cuspidalSigmaLiftConductorFromArbitraryTraceData`, which needs the arbitrary-character local data. From the premise it takes the characters, measures and trace relation. `cuspidalSigmaLiftCharZeroEpsilonFactors` gives, at these same characters and measures, the actual standard epsilon and newvector certificates of every `κπ` and of every orbit block `P₁ ∘ σ^i`, and the multiplicativity of the orbit epsilon monomials for `P`. The block conductors are those of `P₁`, by `Conductor.isNewvectorConductor_comp_fieldEquiv_iff` and the continuity of `σ^i` for the module topology, so a common conductor `a₁` is obtained from the first block (`s > 0` since `s (k₁ + 1) = k + 1`). The premise then gives the monomial comparison for the certified factors of the twists and of `P`, which completes the data.
+
+This internal reduction serves Task 7843. The remaining premise is Arthur–Clozel's identity (6.17) at the distinguished place (Ch. 1, printed pp. 69–70), up to a constant. Its proof needs the globalization, the global lift and the global functional equations; none of these is assumed or constructed here.

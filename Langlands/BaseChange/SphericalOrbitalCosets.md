@@ -28,3 +28,5 @@ uses the equality of ramification indices to produce a base matrix extending to
 `z * k` with `k ∈ K_E`. Its conjugate of `γ` is spherical by reflection, and it
 represents the required ordinary orbit. This comparison is derived for the unit
 fundamental lemma.
+
+The relative topology uses the [module-topology theorem for a tower of p-adic fields](../LocalField/PadicTowerModuleTopology.md).

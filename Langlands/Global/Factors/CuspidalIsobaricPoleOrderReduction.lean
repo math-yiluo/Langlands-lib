@@ -105,20 +105,14 @@ private theorem finiteL_eq_partialEulerFactor (c : FinitePairLChoice P P' h h')
     (hasSphericalSpectrum_padicObject P' h' v.1 (fun hv => v.2 (hP' hv)))
     (c.lPolynomial_spec v.1)]
 
-private theorem completed_order_nonpos (hBoundary : CuspidalPairBoundaryNonvanishingStatement.{u, uQ})
-    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+private theorem completed_order_nonpos
+    {S : Finset (FinitePlace F)} (hP : P.exceptional ⊆ S) (hP' : P'.exceptional ⊆ S)
+    {L : ℂ → ℂ} (hL : IsPartialPairLFunction P P' hP hP' L)
+    (hLorder : meromorphicOrderAt L 1 ≤ 0)
     (c : FinitePairLChoice P P' h h') {Linf Λ : ℂ → ℂ} (hinf : Meromorphic Linf)
     (hinfOrder : meromorphicOrderAt Linf 1 ≤ 0) (hΛ : MeromorphicOn Λ Set.univ)
     (hc : c.IsCompletedLFunction Linf Λ) : meromorphicOrderAt Λ 1 ≤ 0 := by
   classical
-  let S := P.exceptional ∪ P'.exceptional
-  have hP : P.exceptional ⊆ S := Finset.subset_union_left
-  have hP' : P'.exceptional ⊆ S := Finset.subset_union_right
-  obtain ⟨⟨L, hL⟩, hBoundaryOrder⟩ := hBoundary F r t T T'
-    (cuspidalSplitCentreUnitaryCentralCharacter F r T hT)
-    (cuspidalSplitCentreUnitaryCentralCharacter F t T' hT') P P' S hP hP'
-  have hLorder : meromorphicOrderAt L 1 ≤ 0 := by
-    simpa using hBoundaryOrder L hL 0
   let Lfinite (s : ℂ) := ∏ v ∈ S, c.finiteL v s
   have hfinite : Meromorphic Lfinite ∧ meromorphicOrderAt Lfinite 1 ≤ 0 :=
     reciprocalProduct_properties S (finiteDenominator c) 1
@@ -172,17 +166,27 @@ private theorem poleOrder_of_factorOrders {k : ℕ} (p : Fin k → Prop) (Λ : F
     ← WithTop.coe_sum, hsum, min_eq_left]
   exact_mod_cast neg_nonpos.mpr (Int.natCast_nonneg _)
 
+/-- Each split-centre-trivial pair with irreducible admissible finite components
+has a partial L-function of nonpositive order at `1`. -/
+def PartialPairNonvanishingAtOne (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (r t : ℕ) (T : CuspidalOperatorRealization F r) (T' : CuspidalOperatorRealization F t),
+    IsTrivialOnSplitCentre T → IsTrivialOnSplitCentre T' →
+    ∀ (P : CuspidalSpectralPresentation.{u, uQ} T) (P' : CuspidalSpectralPresentation.{u, uQ} T'),
+      HasIrreducibleAdmissibleComponents P → HasIrreducibleAdmissibleComponents P' →
+      ∀ (S : Finset (FinitePlace F)) (hP : P.exceptional ⊆ S) (hP' : P'.exceptional ⊆ S),
+        ∃ L : ℂ → ℂ, IsPartialPairLFunction P P' hP hP' L ∧ meromorphicOrderAt L 1 ≤ 0
+
 end CuspidalIsobaricPoles
 
-/-- The pair-pole theorem and boundary nonvanishing imply the published isobaric pole order. -/
-def CuspidalIsobaricPoleOrderReductionStatement : Prop :=
-  CuspidalPairPoleStatement.{u, uQ} → CuspidalPairBoundaryNonvanishingStatement.{u, uQ} →
-    CuspidalIsobaricPoleOrderStatement.{u, uQ}
-
-/-- Assemble the existence and pole-order conclusions from the two analytic pair theorems. -/
-theorem cuspidalIsobaricPoleOrderReduction : CuspidalIsobaricPoleOrderReductionStatement.{u, uQ} := by
+/-- Assemble existence and the pole order using a partial pair representative
+of nonpositive order at `1` for each pair. -/
+theorem cuspidalIsobaricPoleOrder_of_partialPairNonvanishingAtOne
+    (hPair : CuspidalPairPoleStatement.{u, uQ})
+    (hPartial : ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+      PartialPairNonvanishingAtOne.{u, uQ} F) : CuspidalIsobaricPoleOrderStatement.{u, uQ} := by
   classical
-  intro hPair hBoundary F _ _ _ r₀ T₀ k r T hT₀ hT P₀ P h₀ h
+  intro F _ _ _ r₀ T₀ k r T hT₀ hT P₀ P h₀ h
   have hself := hPair F r₀ r₀ T₀ T₀ hT₀ hT₀ P₀ P₀ h₀ h₀
   have hpair (i : Fin k) := hPair F r₀ (r i) T₀ (T i) hT₀ (hT i) P₀ (P i) h₀ (h i)
   refine ⟨⟨fun i => (hpair i).1.1,
@@ -214,7 +218,12 @@ theorem cuspidalIsobaricPoleOrderReduction : CuspidalIsobaricPoleOrderReductionS
       reciprocalProduct_properties Finset.univ realD 1
     have hcomplex : Meromorphic complexL ∧ meromorphicOrderAt complexL 1 ≤ 0 :=
       reciprocalProduct_properties Finset.univ complexD 1
-    apply completed_order_nonpos hBoundary hT₀ (hT i) (c i) (hreal.1.mul hcomplex.1)
+    let S := P₀.exceptional ∪ (P i).exceptional
+    have hP₀ : P₀.exceptional ⊆ S := Finset.subset_union_left
+    have hP : (P i).exceptional ⊆ S := Finset.subset_union_right
+    obtain ⟨L, hL, hLorder⟩ :=
+      hPartial F r₀ (r i) T₀ (T i) hT₀ (hT i) P₀ (P i) h₀ (h i) S hP₀ hP
+    apply completed_order_nonpos hP₀ hP hL hLorder (c i) (hreal.1.mul hcomplex.1)
       _ (hΛ i).1 (hΛ i).2
     change meromorphicOrderAt (realL * complexL) 1 ≤ 0
     rw [meromorphicOrderAt_mul (hreal.1 1) (hcomplex.1 1)]
@@ -222,5 +231,20 @@ theorem cuspidalIsobaricPoleOrderReduction : CuspidalIsobaricPoleOrderReductionS
   · intro i
     rw [horder i]
     exact (hprofile i).2.2.trans (contragredient_iff T₀ (T i))
+
+/-- The pair-pole theorem and boundary nonvanishing imply the published isobaric pole order. -/
+def CuspidalIsobaricPoleOrderReductionStatement : Prop :=
+  CuspidalPairPoleStatement.{u, uQ} → CuspidalPairBoundaryNonvanishingStatement.{u, uQ} →
+    CuspidalIsobaricPoleOrderStatement.{u, uQ}
+
+/-- Assemble the existence and pole-order conclusions from the two analytic pair theorems. -/
+theorem cuspidalIsobaricPoleOrderReduction : CuspidalIsobaricPoleOrderReductionStatement.{u, uQ} := by
+  intro hPair hBoundary
+  apply cuspidalIsobaricPoleOrder_of_partialPairNonvanishingAtOne hPair
+  intro F _ _ _ r t T T' hT hT' P P' _ _ S hP hP'
+  obtain ⟨⟨L, hL⟩, hBoundaryOrder⟩ := hBoundary F r t T T'
+    (cuspidalSplitCentreUnitaryCentralCharacter F r T hT)
+    (cuspidalSplitCentreUnitaryCentralCharacter F t T' hT') P P' S hP hP'
+  exact ⟨L, hL, by simpa using hBoundaryOrder L hL 0⟩
 
 end Langlands.Global

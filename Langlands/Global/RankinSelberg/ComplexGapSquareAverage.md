@@ -1,0 +1,3 @@
+# Moving the leading square average to the coefficient
+
+The determinant-twisted square integrals used in Jacquet’s Section 10.2 admit a compact averaging identity. Lean places the determinant character in the coefficient and its inverse in the compact averaging weight. The usual change of variables for square zeta integrals then takes the compact average of the test to the compact average of the coefficient. The polynomial bound for the determinant character follows from the height bound for real powers of the determinant. Together with the coefficient’s height bound, it gives integrability in a right half-plane. This is a derived step in forming the finite sum of square matrix coefficients in (10.10).

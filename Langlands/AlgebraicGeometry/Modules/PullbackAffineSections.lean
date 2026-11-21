@@ -59,6 +59,16 @@ def sectionPullbackLE (f : X ⟶ Y) (M : Y.Modules) {U : X.Opens} {V : Y.Opens}
   ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M).presheaf.map (homOfLE h).op
     (sectionPullback f M V m)
 
+/-- Pulling back a morphism of module sheaves commutes with restricted section pullback. -/
+lemma pullback_map_app_sectionPullbackLE (f : X ⟶ Y) {M N : Y.Modules}
+    (φ : M ⟶ N) {U : X.Opens} {V : Y.Opens} (h : U ≤ f ⁻¹ᵁ V) (m : Γ(M, V)) :
+    ((AlgebraicGeometry.Scheme.Modules.pullback f).map φ).app U (sectionPullbackLE f M h m) =
+      sectionPullbackLE f N h (φ.app V m) := by
+  simp only [sectionPullbackLE]
+  rw [sectionPullback_naturality]
+  exact PresheafOfModules.naturality_apply ((AlgebraicGeometry.Scheme.Modules.pullback f).map φ).val
+    (homOfLE h).op _
+
 lemma sectionPullbackLE_self (f : X ⟶ Y) (M : Y.Modules) (V : Y.Opens) (m : Γ(M, V)) :
     sectionPullbackLE f M (le_refl (f ⁻¹ᵁ V)) m = sectionPullback f M V m := by
   have : (homOfLE (le_refl (f ⁻¹ᵁ V))).op = 𝟙 (op (f ⁻¹ᵁ V)) := rfl

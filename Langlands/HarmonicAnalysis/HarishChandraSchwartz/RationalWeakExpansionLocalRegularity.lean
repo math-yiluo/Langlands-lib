@@ -5,9 +5,9 @@ import Langlands.Representation.Plancherel.RationalUnramifiedScalarCancellation
 /-! # From pointwise to global unitary regularity of the weighted c-family
 
 Waldspurger's proof of Corollary V.2.3 (printed p.294) shows that `c̃_{P'|P}(s, ·)` is regular at
-each point `ω` of the orbit `O`. The published target `WeightedCRegularityStatement` asks for one
-rational extension (`WeightedCExtension`) whose single denominator vanishes at no point of `O`.
-This module bridges the two.
+each point `ω` of the orbit `O`. The published target `WeightedCRegularityBorelStatement` asks for
+one rational extension (`WeightedCExtension`) whose single denominator vanishes at no point of
+`O`. This module bridges the two.
 
 * Generic part (namespace `Langlands.Plancherel.UnramifiedOperatorFamily`):
   `IsRegularAtUnitary` (a presentation `N/d` of a family on the interior of a set `D₀` with
@@ -16,8 +16,11 @@ This module bridges the two.
   them, with denominator `Σ_j d_j† d_j`.
 * Specialization: `WeightedCRegularAt` (regularity of `c̃_{P'|P}(s, ·)` at one unitary point),
   `nonempty_weightedCExtension_of_local`, the pointwise statement
-  `WeightedCLocalRegularityStatement` (not proved here), and the proved reduction
-  `WeightedCRegularityReductionStatement` (`weightedCRegularityReduction`). -/
+  `WeightedCLocalRegularityBorelStatement` (not proved here), and the proved reduction
+  `WeightedCRegularityBorelReductionStatement` (`weightedCRegularityBorelReduction`). The
+  superseded `WeightedCLocalRegularityStatement` and its reduction
+  `WeightedCRegularityReductionStatement` omit the Borel structure of the inducing Levi quotient;
+  they are kept for the record and are not targets or premises. -/
 
 noncomputable section
 
@@ -286,10 +289,10 @@ local notation "nₛ" => R.normalizer
 set_option hygiene false in
 local notation "hnₛ" => R.levi_le
 
-/-- **Pointwise regularity statement (Waldspurger, Corollary V.2.3, in the form proved on printed
-p.294).** Under the premises of `WeightedCRegularityStatement`, for every `s ∈ W(M'|G|M)` the
-interior of the domain of `c̃_{P'|P}(s, ·)` is nonempty and `c̃_{P'|P}(s, ·)` is regular at every
-unitary character (`WeightedCRegularAt`). -/
+/-- **Superseded pointwise regularity statement.** The section variable for the Borel structure of
+the inducing Levi quotient was not retained in this definition. This wider proposition is left
+unproved; do not use it as a target or as a premise. Use
+`WeightedCLocalRegularityBorelStatement`. -/
 def WeightedCLocalRegularityStatement : Prop :=
   IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →
   (∃ α : SimpleRoot i ν, α ∉ I') →
@@ -302,9 +305,10 @@ def WeightedCLocalRegularityStatement : Prop :=
       WeightedCRegularAt hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl hCST hPK π PG (PM s)
         (hN s) z
 
-/-- **Reduction of Corollary V.2.3 to pointwise regularity**: the pointwise statement
-`WeightedCLocalRegularityStatement` implies the regularity target `WeightedCRegularityStatement`,
-for the same data. -/
+/-- **Reduction for the superseded statements**: the superseded pointwise statement
+`WeightedCLocalRegularityStatement` implies the superseded `WeightedCRegularityStatement`, for the
+same data. Both omit the Borel structure of the inducing Levi quotient; the reduction for the
+corrected statements is `WeightedCRegularityBorelReductionStatement`. -/
 def WeightedCRegularityReductionStatement : Prop :=
   WeightedCLocalRegularityStatement hG hi hν I I' hζ hζ' hKc hPK sc hs π mu hRefl hCST PG R PM →
     WeightedCRegularityStatement hG hi hν I I' hζ hζ' hKc hPK sc hs π mu hRefl hCST PG R PM
@@ -315,6 +319,48 @@ omit [IsAffine Tc.X.left] [(rationalPoints.map sc).range.Normal] [BorelSpace (�
 theorem weightedCRegularityReduction :
     WeightedCRegularityReductionStatement hG hi hν I I' hζ hζ' hKc hPK sc hs π mu hRefl hCST PG
       R PM := by
+  intro h hsq hα hK hN s
+  obtain ⟨hint, hloc⟩ := h hsq hα hK hN s
+  exact nonempty_weightedCExtension_of_local hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl hCST
+    hPK π PG (PM s) (hN s) hint hloc
+
+omit [BorelSpace (𝐌 ⧸ CM)] in
+set_option linter.overlappingInstances false in
+/-- **Pointwise regularity statement (Waldspurger, Corollary V.2.3, in the form proved on printed
+p.294).** Under the premises of `WeightedCRegularityBorelStatement` (in particular on the Borel
+quotient `M_I(F)/C_M` with Haar measure `μ`), for every `s ∈ W(M'|G|M)` the interior of the domain
+of `c̃_{P'|P}(s, ·)` is nonempty and `c̃_{P'|P}(s, ·)` is regular at every unitary character
+(`WeightedCRegularAt`). This replaces `WeightedCLocalRegularityStatement`, which omitted the Borel
+instance from its elaborated signature. -/
+def WeightedCLocalRegularityBorelStatement [BorelSpace (𝐌 ⧸ CM)] : Prop :=
+  IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →
+  (∃ α : SimpleRoot i ν, α ∉ I') →
+  IsSpecialVertexCompact ν hi K →
+  ∀ hN : SourceCompactNormalization hG hi hν I I' hζ (K := K) π hRefl hCST PG R PM,
+  ∀ s : WeylIndex i ν (rootSet i ν I) (rootSet i ν I'),
+    (interior (cWeightedDomain hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl hCST π PG
+      (PM s))).Nonempty ∧
+    ∀ z : unitaryUnramifiedCharacters νM,
+      WeightedCRegularAt hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl hCST hPK π PG (PM s)
+        (hN s) z
+
+omit [BorelSpace (𝐌 ⧸ CM)] in
+set_option linter.overlappingInstances false in
+/-- **Reduction of Corollary V.2.3 to pointwise regularity**: on the Borel quotient, the pointwise
+statement `WeightedCLocalRegularityBorelStatement` implies the regularity target
+`WeightedCRegularityBorelStatement`, for the same data and the same Borel instance. -/
+def WeightedCRegularityBorelReductionStatement [BorelSpace (𝐌 ⧸ CM)] : Prop :=
+  WeightedCLocalRegularityBorelStatement hG hi hν I I' hζ hζ' hKc hPK sc hs π mu hRefl hCST PG
+      R PM →
+    WeightedCRegularityBorelStatement hG hi hν I I' hζ hζ' hKc hPK sc hs π mu hRefl hCST PG R PM
+
+omit [IsAffine Tc.X.left] [(rationalPoints.map sc).range.Normal] [BorelSpace (𝐌 ⧸ CM)] in
+set_option linter.overlappingInstances false in
+/-- Proof of `WeightedCRegularityBorelReductionStatement`: apply
+`nonempty_weightedCExtension_of_local` for each Weyl index `s`. -/
+theorem weightedCRegularityBorelReduction [BorelSpace (𝐌 ⧸ CM)] :
+    WeightedCRegularityBorelReductionStatement hG hi hν I I' hζ hζ' hKc hPK sc hs π mu hRefl hCST
+      PG R PM := by
   intro h hsq hα hK hN s
   obtain ⟨hint, hloc⟩ := h hsq hα hK hN s
   exact nonempty_weightedCExtension_of_local hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl hCST

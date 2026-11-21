@@ -1,0 +1,7 @@
+# Rigidity of rational formal maps with order action
+
+Drinfeld's *Coverings of p-adic Symmetric Regions* (1976), §2A, printed p. 109 (PDF p. 3), uses an order-equivariant quasi-isogeny over the reduction of the test algebra. This module derives a lifting result for the actual rational Hom of globally coordinated formal laws across a surjective coefficient map with nilpotent kernel.
+
+For injectivity, the source is scalar-divisible and the target points are scalar-power torsion. Integral rigidity gives an injective map on formal homomorphisms, and flatness of the rational coefficient field preserves injectivity on the tensor Hom. For surjectivity, the integral lifting theorem lifts each tensor numerator after multiplying it by a power of the distinguished scalar. Its image in the rational coefficient field is nonzero, so dividing the tensor coefficient by that power gives a lift of the original pure tensor. Adding the lifts gives surjectivity on the whole tensor product.
+
+The unique lift of a rational map that commutes with the order again commutes with each order element. Both composites in its commutation equation have the same reduction, so injectivity identifies them. This gives the linear equivalence on actual order-equivariant rational Hom. For two scalar-divisible laws and the fraction field of the scalar ring, lift the forward and inverse maps separately. The same injectivity on rational endomorphisms reflects the two inverse equations, giving bijectivity on order-equivariant quasi-isogenies.

@@ -209,7 +209,8 @@ private theorem ordinaryKernel_eq (a : ℂˣ) (T : SplitTailTest k q) (ds : List
   simp only [hCol]
   ring
 
-private theorem alternateKernel_eq (a : ℂˣ) (T : SplitTailTest k q) (ds : List ComplexCharacterData)
+/-- The complete alternate kernel factors through the triangular Fourier kernel. -/
+theorem alternateKernel_eq (a : ℂˣ) (T : SplitTailTest k q) (ds : List ComplexCharacterData)
     (W : complexWhittakerModel (k + q) ds (-a)) (χ : ℂˣ →* ℂ) (g h : H) (B : G) (Z : N) :
     alternateBlockTailKernel k q a T W.val χ g h B Z =
       fixedTailFactor k q T W.val χ g h B * triangularFourier k q a B T.later Z := by

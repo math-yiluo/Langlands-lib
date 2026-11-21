@@ -175,7 +175,24 @@ def ComplexAdjacentUnfoldingStatement : Prop :=
     complexUnequalIntegral (Nat.lt_succ_self r) D Wbig V s =
       c * ∫ x, unfoldedKernel d p s Φ φ W V x ∂ν.prod D.measure
 
-theorem complexAdjacentUnfolding : ComplexAdjacentUnfoldingStatement (r := r) := by
+/-- The same unfolded absolute integrability also gives absolute integrability of the
+ordinary quotient kernel. -/
+def ComplexAdjacentAbsoluteUnfoldingStatement : Prop :=
+  ∀ (D : ComplexQuotientMeasureData r) [SFinite D.measure]
+    (ν : Measure G) [SFinite ν] [ν.IsMulRightInvariant]
+    (d : ComplexCharacterData) (p s : ℂ) (Φ : Mat → ℂ) (φ : Vec → ℂ) (a : ℂˣ)
+    (W V : G → ℂ) (Wbig : G' → ℂ) (c : ℂ),
+    (∀ (u : N) g, W (u.val * g) = complexWhittakerCharacter a u.val * W g) →
+    (∀ (u : N) g, V (u.val * g) = complexWhittakerCharacter (-a) u.val * V g) →
+    (∀ g, Wbig (padGL (Nat.le_succ r.succ) g) = c *
+      characterWeight d (p + 1 / 2) (determinant g) *
+        ∫ h, Φ (h * g).val * φ (Langlands.RankinSelberg.lastRow h⁻¹) * W h⁻¹ * characterWeight d p (determinant h) ∂ν) →
+    Integrable (unfoldedKernel d p s Φ φ W V) (ν.prod D.measure) →
+    Integrable (complexUnequalIntegrand (Nat.lt_succ_self r) Wbig V s) D.measure ∧
+      complexUnequalIntegral (Nat.lt_succ_self r) D Wbig V s =
+        c * ∫ x, unfoldedKernel d p s Φ φ W V x ∂ν.prod D.measure
+
+theorem complexAdjacentAbsoluteUnfolding : ComplexAdjacentAbsoluteUnfoldingStatement (r := r) := by
   intro D _ ν _ _ d p s Φ φ a W V Wbig c hW hV hBig hU
   let I := intermediateKernel d p s Φ φ W V
   let U := unfoldedKernel d p s Φ φ W V
@@ -192,6 +209,7 @@ theorem complexAdjacentUnfolding : ComplexAdjacentUnfoldingStatement (r := r) :=
       ArchimedeanLocal.detPower complexNormalizedAbs q.out (s - (((r.succ - r : ℕ) : ℂ)) / 2) = _
     rw [show r.succ - r = 1 by omega, Nat.cast_one, detPower_eq, hBig]
     exact unfold_inner ν d p s Φ φ W V q.out c
+  refine ⟨(hI.integral_prod_right.const_mul c).congr (ae_of_all _ fun q => (hIavg q).symm), ?_⟩
   change (∫ q, complexUnequalIntegrand (Nat.lt_succ_self r) Wbig V s q ∂D.measure) = _
   simp_rw [hIavg, integral_const_mul]
   congr 1
@@ -200,5 +218,9 @@ theorem complexAdjacentUnfolding : ComplexAdjacentUnfoldingStatement (r := r) :=
       (integral_prod_symm I hI).symm
     _ = ∫ x, I (e x) ∂ν.prod D.measure := (hpres.integral_comp' I).symm
     _ = _ := by change (∫ x, (I ∘ rightShear N) x ∂ν.prod D.measure) = _; rw [hcomp]
+
+theorem complexAdjacentUnfolding : ComplexAdjacentUnfoldingStatement (r := r) := by
+  intro D _ ν _ _ d p s Φ φ a W V Wbig c hW hV hBig hU
+  exact (complexAdjacentAbsoluteUnfolding D ν d p s Φ φ a W V Wbig c hW hV hBig hU).2
 
 end Langlands.Global.RankinSelbergGlobal.ComplexAdjacentUnfolding

@@ -1,0 +1,7 @@
+# Opposite regular binary subforms
+
+`OppositeBinarySubformsStatement` takes two finite-dimensional nondegenerate symmetric bilinear forms over a field with `2 ≠ 0`. Each dimension is at least two. If their orthogonal sum contains a totally isotropic plane, the two forms contain regular binary subforms with opposite diagonal values in orthogonal bases.
+
+If both forms are anisotropic, project the isotropic plane to the two summands. Orthogonalizing one projected basis simultaneously orthogonalizes the other, and each of the two diagonal values is nonzero. If both forms are isotropic, a hyperbolic pair in each represents the opposite binary forms. If one is isotropic, remove a hyperbolic plane from it. The remaining sum is isotropic by the isotropic-plane complement lemma. It supplies an opposite nonzero line in the anisotropic form and in the first form's complement. If the isotropic vector lies entirely in the complement, that complement itself contains a hyperbolic plane and represents the opposite of any nonzero anisotropic value. A second line orthogonal to the chosen anisotropic line has its opposite represented in the removed hyperbolic plane.
+
+This is a derived scalar linear algebra input for the common-value assertion of Lemma 5.3.4(a) in Springer's appendix to Kneser's *Lectures on Galois Cohomology of Classical Groups* (1969), printed p. 111 (PDF p. 117), in the split quaternion case.

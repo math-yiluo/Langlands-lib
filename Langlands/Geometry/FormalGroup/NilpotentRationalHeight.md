@@ -1,0 +1,9 @@
+# The height of a quasi-isogeny reflected by nilpotent reduction
+
+Drinfeld's *Coverings of p-adic Symmetric Regions* (1976), §2A, printed p. 109 (PDF p. 3), imposes height zero on the actual framing quasi-isogeny. This module proves that the Library's signed kernel-rank height is preserved and reflected by nilpotent coefficient reduction. The scalar ring is a discrete valuation ring with finite residue field. Each source and target chart has a supplied height for the distinguished uniformizer.
+
+An invertible rational tensor has a unique height function on the affine spectrum. Its reduced height function is the pullback along the actual coefficient spectrum map. For a surjective coefficient map with nilpotent kernel, every prime contains that kernel and lies in the image of the map on spectra. Constancy of the reduced height therefore forces constancy with the same value on the original spectrum.
+
+For an atlas, apply this argument to every test algebra and its actual quotient by the extended coefficient kernel. The reduced atlas uses a chosen original generator over each image generator. The coordinate comparisons and original transitions transport the height condition from that chosen generator to any requested original chart. The coefficient triangle then identifies the rational map on the quotient test with the coefficient extension of the original map, up to integral isomorphisms, under which the height condition is equivalent. This reflection works even when distinct generators have the same image.
+
+On a finite principal cover with distinct image generators, full-order lifting and height reflection give an equivalence on quasi-isogenies of any specified constant signed height, including zero. Its forward map is actual coefficient reduction with the transported height certificate.

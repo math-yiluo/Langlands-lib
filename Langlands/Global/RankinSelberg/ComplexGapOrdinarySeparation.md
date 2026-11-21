@@ -1,0 +1,5 @@
+# Separating the ordinary and mixed Godement kernels
+
+The normalized chart gives two integrable separated kernels with independent rapid determinant weights. Both use the ordinary smaller-rank quotient kernel. The square factor uses the leading restriction in the ordinary kernel and its positive Fourier transform in the mixed kernel.
+
+An upper packed tail fixes the leading stack with zero trailing rows, so it leaves the leading square test unchanged. The triangular Fourier identity combines the tail contribution and the translated Whittaker function. This identifies the remaining factors with the normalized joint majorant. The retained character has norm one, and the adjoining square determinant factor has norm given by a fixed real power. The ordinary leading rectangle is evaluated at zero using a point mass. In the mixed case, integrating that rectangle with additive Haar gives the positive square transform. A product measure permutation and Fubini transfer the resulting joint integrability and integral identities to the separated kernels. These are the ordinary and mixed steps in Jacquet's Section 10.4.

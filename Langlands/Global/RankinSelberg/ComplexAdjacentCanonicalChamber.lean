@@ -82,7 +82,8 @@ def HasAdjacentLowerEqualGrowthInputs (D : ComplexQuotientMeasureData r) (ds es 
       (complexEqualIntegral D U.val V (splitRowTransform a φ))
       (complexEqualDualIntegral (-a) D U.val V (splitRowTransform a φ))
 
-private theorem godementSection_finset_sum {I : Type*} (T : Finset I) (ν : Measure H)
+/-- The Godement section is additive in an integrable finite family of Schwartz tests. -/
+theorem godementSection_finset_sum {I : Type*} (T : Finset I) (ν : Measure H)
     (d : ComplexCharacterData) (Φ : I → 𝓢(Rect, ℂ)) (f : H → ℂ)
     (hI : ∀ i ∈ T, ∀ g, Integrable (godementSectionIntegrand d (Φ i) f g) ν) :
     godementSection ν d (show 𝓢(Rect, ℂ) from ∑ i ∈ T, Φ i) f =

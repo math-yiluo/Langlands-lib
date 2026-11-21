@@ -1,0 +1,7 @@
+# Pushforward from a discrete left quotient with compact fibres
+
+For subgroups `Γ ≤ H` of a locally compact Polish group `G`, `projectionOfLE` sends `Γ g` to `H g`. If both subgroups are closed and the left quotient of `H` by `Γ` is compact, `isCompact_preimage_projection` shows that the inverse image of a compact set of `H`-cosets is compact. The proof lifts the compact set to a compact subset of `G`, lifts the compact fibre to a compact subset of `H`, and covers the inverse image by the image of their product.
+
+`discreteQuotientMeasurePushforward` assumes discrete `Γ` and two-sided Haar measures on `G` and `H`. Its pushforward of the discrete quotient measure on `Γ \ G` is a positive finite multiple of any supplied compatible quotient measure on `H \ G`. Compactness of inverse images gives local finiteness. The pushforward is nonzero and inherits right invariance, since the projection commutes with right translations. The Library's uniqueness theorem for regular right-invariant quotient measures supplies the comparison. For an integrand that descends to `H \ G`, this comparison permits integrating on the closed-subgroup quotient up to a fixed positive factor.
+
+This derived measure comparison supports the rational-to-adelic quotient passage in Mœglin–Waldspurger, *Spectral Decomposition and Eisenstein Series* (1995), II.1.6, pp. 87–89. The result leaves the factor unspecified and takes compactness of the fibre as a hypothesis. The proof depends on general quotient topology and Haar measure uniqueness.

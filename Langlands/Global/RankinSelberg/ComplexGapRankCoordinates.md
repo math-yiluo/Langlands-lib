@@ -1,0 +1,3 @@
+# Consecutive coordinates of the unequal-rank kernels
+
+The padding, lower rectangle, and tail Weyl matrix in the complex local zeta integrals of Jacquet’s Section 2 agree with the consecutive block coordinates used in Section 10.2. Lean reindexes the rectangle using an equivalence of row indices and preserves its product Haar measure. In the smaller pair, appending a zero row to the rectangle gives the once-padded lower block. The larger pair uses a full lower shear and one final identity row. The tail Weyl matrix has square one and is fixed by inverse transpose. These derived identities identify the chart calculations with the points in the local integrals.

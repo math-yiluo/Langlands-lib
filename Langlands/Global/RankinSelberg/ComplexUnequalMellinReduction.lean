@@ -97,7 +97,8 @@ private theorem complexCentralSign_ne_zero (ds : List ComplexCharacterData) : co
   | cons d ds ih =>
     exact mul_ne_zero (d.character (-1)).ne_zero ih
 
-private theorem sigmaFinite_quotient {t : ℕ} (D : ComplexQuotientMeasureData t) : SigmaFinite D.measure := by
+/-- The compatible measure on the complex left-unipotent quotient is sigma finite. -/
+theorem sigmaFinite_quotient {t : ℕ} (D : ComplexQuotientMeasureData t) : SigmaFinite D.measure := by
   let e := Langlands.QuotientIntegration.leftQuotient_isOpenQuotientMap
     (Langlands.GeneralLinear.upperUnipotent (t + 1) ℂ)
   let : SecondCountableTopology (G (t + 1)) :=

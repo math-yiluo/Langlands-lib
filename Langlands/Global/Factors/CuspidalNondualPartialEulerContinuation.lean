@@ -3,6 +3,8 @@ import Langlands.Correspondence.AutomorphicGammaGerm
 import Langlands.Global.Factors.CuspidalFinitePairRegularityProof
 import Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingStatement
 import Langlands.Global.Factors.CuspidalPairFiniteLayer
+import Langlands.Global.Factors.CuspidalPairPoleArchimedeanProduct
+import Langlands.Global.Factors.CuspidalPairPoleFiniteEuler
 import Langlands.Global.Factors.CuspidalPairPoleStatement
 import Langlands.Global.Factors.CuspidalPairResidueCardinality
 import Langlands.Global.Factors.CuspidalSplitCentreUnitaryProof
@@ -92,23 +94,25 @@ private theorem cleared_hasProd {Q I J : Type*} [Fintype I] [Fintype J]
   exact hprod
 
 set_option maxHeartbeats 1400000 in
-/-- Clearing the omitted local denominators of the entire nondual completion
-continues the equal-rank partial Euler product. -/
-theorem cuspidalNondualPartialEulerContinuation_of_pairPole
-    (hpole : CuspidalPairPoleStatement.{u,uQ}) :
-    CuspidalNondualPartialEulerContinuationStatement.{u,uQ} := by
-  intro F _ _ _ r T T' hT hT' P P' h h' hn S hPS hP'S
+/-- An equal-rank completion with no poles gives entire continuation of the
+product outside any finite set containing both exceptional sets. -/
+theorem partialEulerContinuation_of_nondual_completion
+    {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] {r : ℕ}
+    {T T' : CuspidalOperatorRealization F r}
+    {P : CuspidalSpectralPresentation.{u,uQ} T} {P' : CuspidalSpectralPresentation.{u,uQ} T'}
+    {h : HasIrreducibleAdmissibleComponents P} {h' : HasIrreducibleAdmissibleComponents P'}
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (c : FinitePairLChoice P P' h h')
+    (dR dR' : {v : InfinitePlace F // v.IsReal} → List RealBlock)
+    (dC dC' : {v : InfinitePlace F // v.IsComplex} → List ComplexCharacterData)
+    {Λ : ℂ → ℂ} {cond : Prop} (hΛ : c.IsCompletedLFunction (archimedeanPairProduct dR dR' dC dC') Λ)
+    (hprof : HasSimplePoleProfile Λ cond) (hn : ¬ cond)
+    (S : Finset (FinitePlace F)) (hPS : P.exceptional ⊆ S) (hP'S : P'.exceptional ⊆ S) :
+    ∃ L : ℂ → ℂ, Differentiable ℂ L ∧ ∃ σ : ℝ, ∀ s : ℂ, σ < s.re →
+      HasProd (fun v : {v // v ∉ S} => partialEulerFactor P P' hPS hP'S v s) (L s) := by
   classical
-  obtain ⟨⟨⟨c⟩, hR, hC⟩, hΛ⟩ := hpole F r r T T' hT hT' P P' h h'
-  choose dR hdR using fun v => (hR v).1
-  choose dR' hdR' using fun v => (hR v).2
-  choose dC hdC using fun v => (hC v).1
-  choose dC' hdC' using fun v => (hC v).2
-  obtain ⟨Λ, ⟨σ, hprod⟩, hprof, _⟩ := hΛ c dR dR' hdR hdR' dC dC' hdC hdC'
-  obtain ⟨Λ₀, hΛ₀, heqΛ⟩ := entire_of_nondual hprof (by
-    rintro ⟨hrt, hcontr⟩
-    cases Subsingleton.elim hrt rfl
-    exact hn hcontr)
+  obtain ⟨σ, hprod⟩ := hΛ
+  obtain ⟨Λ₀, hΛ₀, heqΛ⟩ := entire_of_nondual hprof hn
   let f (v : FinitePlace F) (s : ℂ) :=
     (c.lPolynomial v).eval (RankinSelberg.spectralPoint (residueCardinality v) s)
   let R (v : {v : InfinitePlace F // v.IsReal}) := realPairLFactor (dR v) (dR' v)
@@ -141,18 +145,30 @@ theorem cuspidalNondualPartialEulerContinuation_of_pairPole
   have hCne (v : {v : InfinitePlace F // v.IsComplex}) : (C v).denominator s ≠ 0 := by
     simpa using Finset.prod_ne_zero_iff.mp (hσC s hsC) v (Finset.mem_univ v)
   have heuler (v : {v : FinitePlace F // v ∉ S}) :
-      (f v s)⁻¹ = partialEulerFactor P P' hPS hP'S v s := by
-    have he := isAutomorphicPairLPolynomial_eq_pairEulerPolynomial (CompletionPadic.padicField v.1)
-      (c.additive v.1) (c.measure_spec v.1) _ _
-      (hasSphericalSpectrum_padicObject P h v.1 (fun hv => v.2 (hPS hv)))
-      (hasSphericalSpectrum_padicObject P' h' v.1 (fun hv => v.2 (hP'S hv)))
-      (c.lPolynomial_spec v.1)
-    change ((c.lPolynomial v.1).eval (RankinSelberg.spectralPoint (residueCardinality v.1) s))⁻¹ = _
-    rw [he]
-    rfl
+      (f v s)⁻¹ = partialEulerFactor P P' hPS hP'S v s :=
+    c.finiteL_eq_partialEulerFactor hPS hP'S v s
   obtain ⟨_, p, hp, he⟩ := hprod s hsσ
   change HasProd _ (A s * Λ₀ s)
   rw [heqΛ hreg, ← funext heuler]
   exact cleared_hasProd S hp he (fun v _ => hf v) hRne hCne
+
+set_option maxHeartbeats 1400000 in
+/-- Clearing the omitted local denominators of the entire nondual completion
+continues the equal-rank partial Euler product. -/
+theorem cuspidalNondualPartialEulerContinuation_of_pairPole
+    (hpole : CuspidalPairPoleStatement.{u,uQ}) :
+    CuspidalNondualPartialEulerContinuationStatement.{u,uQ} := by
+  intro F _ _ _ r T T' hT hT' P P' h h' hn S hPS hP'S
+  obtain ⟨⟨⟨c⟩, hR, hC⟩, hΛ⟩ := hpole F r r T T' hT hT' P P' h h'
+  choose dR hdR using fun v => (hR v).1
+  choose dR' hdR' using fun v => (hR v).2
+  choose dC hdC using fun v => (hC v).1
+  choose dC' hdC' using fun v => (hC v).2
+  obtain ⟨Λ, hprod, hprof, _⟩ := hΛ c dR dR' hdR hdR' dC dC' hdC hdC'
+  refine partialEulerContinuation_of_nondual_completion hT hT' c dR dR' dC dC'
+    hprod hprof ?_ S hPS hP'S
+  rintro ⟨hrt, hcontr⟩
+  cases Subsingleton.elim hrt rfl
+  exact hn hcontr
 
 end Langlands.Global

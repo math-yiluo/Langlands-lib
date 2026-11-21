@@ -15,8 +15,9 @@ open CliffordAlgebra
 variable {R : Type u} {V : Type v} [CommRing R] [AddCommGroup V] [Module R V]
   (Q : QuadraticForm R V)
 
-/-- The pairs of a norm-one even Clifford unit and its determinant-one action on vectors.
-The vector condition is stated without an inverse in its coefficients. -/
+/-- Pairs of a grade-involution-fixed Clifford unit of reversion norm one
+and a linear automorphism of determinant one. The intertwining equation
+relates the unit and the automorphism on every vector. -/
 def cliffordSpinLiftSubgroup : Subgroup ((CliffordAlgebra Q)ˣ × (V ≃ₗ[R] V)) where
   carrier := {g | involute (g.1 : CliffordAlgebra Q) = g.1 ∧
     reverse (g.1 : CliffordAlgebra Q) * (g.1 : CliffordAlgebra Q) = 1 ∧

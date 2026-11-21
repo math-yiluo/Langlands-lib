@@ -7,7 +7,10 @@ Whittaker integral on fixed original vectors and is continuous for
 the genuine derivative topology. Choosing these continuous functionals
 produces a family of the exact kind used by mixed-smooth gluing.
 
-This is an internal consequence of the cuspidal Whittaker band bound
-and the published finite-word extension interface. It retains the
-band bound, the supplied smooth embedding, norm equality and real
-generator identities.
+This is an internal application of
+`exists_cuspWhittaker_smoothExtensions_of_bandBound`. It retains the actual
+band integrability witness and derivative bound, standard additive character,
+injectivity of the supplied smooth map, norm equality and real-generator
+identities. Existence here does not require density or compatibility between
+the chosen extensions; compatibility on common fixed vectors is proved by
+the gluing argument.

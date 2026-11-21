@@ -136,6 +136,25 @@ private theorem exists_completion
   obtain ⟨hsum, hprod⟩ := hb s ((le_max_right _ _).trans_lt hs)
   exact ⟨hsum, _, hprod.multipliable.hasProd, ha s ((le_max_left _ _).trans_lt hs)⟩
 
+/-- For a nondual pair, a covering family gives a completion whose pole
+condition is false. -/
+theorem exists_nondual_completion
+    (family : EqualNormalizedTestFamily c S ψ Linf)
+    (hψ : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hP : P.exceptional ⊆ S) (hP' : P'.exceptional ⊆ S)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hn : ¬ T.realization.IsContragredientOf T'.realization)
+    (hL : ∃ σ : ℝ, ContinuousOn (fun s => Linf s * ∏' v, c.finiteL v s) {s | σ < s.re}) :
+    ∃ Λ : ℂ → ℂ, c.IsCompletedLFunction Linf Λ ∧
+      HasSimplePoleProfile Λ (T.realization.IsContragredientOf T'.realization) := by
+  obtain ⟨ω, hω, _⟩ := T.realization.existsUnique_hasCentralCharacter T.irreducible
+  obtain ⟨ω', hω', _⟩ := T'.realization.existsUnique_hasCentralCharacter T'.irreducible
+  obtain ⟨j, _⟩ := family.nonvanishing 0
+  obtain ⟨Λ, hΛ, hpol, _⟩ := family.exists_completion hψ hP hP' hS hT hT' hω hω' hL
+    (fun hd => (hn hd).elim) (testProperty := fun _ => True) j trivial
+  exact ⟨Λ, hΛ, hpol⟩
+
 end EqualNormalizedTestFamily
 
 end Family

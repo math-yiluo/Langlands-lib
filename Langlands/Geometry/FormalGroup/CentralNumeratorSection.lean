@@ -48,7 +48,8 @@ def centralNumerator (P : OrderScalarPresentation p E G z) :
       ((G.centralOrder ht).overAlgebra ((coefficientStructurePresheaf R).obj (op U))) :=
   P.numerator.centralScalarsOverAlgebra _
 
-/-- Divide the actual numerator by the original scalar power in the new fraction field. -/
+/-- Scale the actual numerator by the inverse of the original scalar power in
+the new coefficient field, using the field's total inverse. -/
 def centralSection (P : OrderScalarPresentation p E G z) :
     RationalSection K (E.centralModule hs) (G.centralModule ht) U :=
   ((p : K) ^ P.exponent)⁻¹ • ofIntegral U (P.centralNumerator (hs := hs) (ht := ht)).val

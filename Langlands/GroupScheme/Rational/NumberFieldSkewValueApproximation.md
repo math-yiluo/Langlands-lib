@@ -1,0 +1,7 @@
+# Simultaneous approximation of opposite skew values
+
+`NumberFieldSkewValueApproximationStatement` considers a binary Gram matrix and a skew Gram matrix of arbitrary rank over a quaternion division algebra over a number field. The actual scalar-extended pairings must represent opposite invertible values at every completion. The binary form must represent every skew value at all but finitely many finite completions. A global row in the second form then has nonzero skew value whose negative is represented by the binary form at every completion.
+
+At each infinite place and each of the exceptional finite places, choose a row of the second form giving an invertible opposite value. Its value varies continuously with the coordinates of the row. The openness of the skew congruence orbit gives an open neighborhood of the row on which the binary form continues to represent the opposite value. Weak approximation in the original field completions gives a single global row in all these neighborhoods. Its value is nonzero because it is invertible at an infinite completion. At every other finite place the almost-everywhere representation hypothesis applies to its negative. The coordinate computation identifies these values with the actual tensor extensions of the global skew value.
+
+This implements the approximation step in Springer's appendix to Kneser's *Lectures on Galois Cohomology of Classical Groups* (1969), Lemma 5.3.4 and Theorem 5.3.3(ii), printed pp. 111–112 (PDF pp. 117–118).

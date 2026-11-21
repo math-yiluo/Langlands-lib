@@ -55,6 +55,10 @@ variable {𝕜 B} {W : Submodule ℂ (G n 𝕜 → ℂ)}
 local notation "K" => unitaryCompact 𝕜 n
 local notation "E" => indexedEvaluation (fun i => Submodule.subtype (V i))
 
+/-- Scalar evaluation of the block tensor at a fixed local Levi point. -/
+def scalarLeviEvaluation (m : B.Levi 𝕜) : (⨂[ℂ] i, V i) →ₗ[ℂ] ℂ :=
+  (LinearMap.proj m).comp E
+
 theorem levi_value (k : K) (f : W) (m : B.Levi 𝕜) :
     f.val (B.leviEmbedding 𝕜 m * k.val) =
       localLeviHalf 𝕜 B m * E (D.evaluation k f) m := by
@@ -117,7 +121,7 @@ theorem exists_sum_of_levi_values (ρ : Representation ℂ K W)
   let : AddCommGroup S := Submodule.addCommGroup S
   let : Module ℂ S := Submodule.module S
   let : FiniteDimensional ℂ S := by dsimp only [S]; infer_instance
-  let ev (m : B.Levi 𝕜) := (LinearMap.proj m).comp E
+  let ev (m : B.Levi 𝕜) := scalarLeviEvaluation (V := V) m
   have hsep : ∀ x ∈ S, (∀ m, ev m x = 0) → x = 0 := by
     intro x _ hx
     apply indexedEvaluation_injective (fun i => (V i).subtype) (fun i => (V i).subtype_injective)

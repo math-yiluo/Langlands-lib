@@ -141,3 +141,5 @@ No statement about these objects is made here: convergence of the inner
 product, its independence of `β`, the existence of compatible measures and
 the finiteness of `Ω(P, Q)` are not asserted. The definitions take arbitrary
 `p`, `iU`, `l`, `K` and measures.
+
+`AdelicGroupPoints.inducedInnerProductIntegrand` evaluates the cutoff, modulus and two form values at a compact element and a rational Levi coset. Its iterated integral is `inducedInnerProduct`.

@@ -1,0 +1,7 @@
+# The alternate split Godement integral
+
+`complexGapAlternateRestriction` evaluates the continued Godement value at a padded leading matrix for a test given by one leading rectangle and Schwartz factors in each remaining column. The formula integrates first in the upper unipotent tail and then in the retained triangular chart. The later column factors are Fourier transformed at consecutive columns of the inverse transpose. The change of variables supplies the inverse normalized determinant of the retained matrix to the power `q`.
+
+The proof computes the partial Fourier transform in the last column of the split test. Block matrix multiplication fixes each tail column on right multiplication by the embedded leading group and fixes the last row on left multiplication by that group. These identities identify the integrand of the padded restriction with the ordinary split kernel. The triangular Haar formula pulls its absolute integrability back to the chart. Fubini and the fixed-data tail exchange give the alternate formula and absolute integrability of each alternate fiber and of its integrated value over the outer variables. [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 10.2, (10.4)–(10.5)](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)
+
+The pointwise last-column identity and the identification on a chart with arbitrary retained matrix are also available for the dual calculation.

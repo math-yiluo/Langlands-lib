@@ -1,0 +1,5 @@
+# Drinfeld's equivariant representability with its constructed frame
+
+Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 A, printed p. 109 (PDF p. 3), states the comparison of the height-zero functor with completed-base Deligne points, with the matrix and division action. The Lean target uses the chosen special frame of dimension \(d\) and height \(d^2\) and its constructed rational matrix coordinates. The scalar uniformizer and Drinfeld's invariant are the inputs. The arithmetic conjugation convention of §2 B, printed p. 110 (PDF p. 4), uses the opposite class for the Library local invariant.
+
+The target asserts a natural isomorphism on the actual affine `Nilp` algebras. The Deligne base coordinate reduces to the residue coordinate of the framed class, and the natural isomorphism intertwines both actions. The implication from the comparison for a supplied frame uses the chosen arithmetic subfield and uniformizer to discharge its cyclic relations. The comparison itself is the theorem obligation.

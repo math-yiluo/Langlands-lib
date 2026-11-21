@@ -1,0 +1,7 @@
+# The ordinary zeta integral on the separated determinant chart
+
+The ordinary restriction of the rotated Godement value uses the same positive Haar constant as the reflected restriction. This theorem takes the ordinary restriction identity at the zero Godement parameter and proves the ordinary spectral equality on a right half-plane. The Weyl constant and the Haar constant multiply the separated chart Mellin transform. The theorem also gives absolute moments and a.e. strong measurability of the unweighted separated kernel.
+
+The normalized power moment yields integrability with two equal real powers on the chart. Integrating the complementary rectangle at zero gives the corresponding moments for the separated kernel. The product of the two determinant variables is positive and measurable. Dividing an integrable power-weighted kernel by its nonzero power recovers a.e. strong measurability of the unweighted kernel.
+
+The inverse of the right quotient shear replaces a representative `g` by `g * z⁻¹`, with `z` the leading Haar argument. The product of the quotient determinant after the shift and the normalized determinant of `z` is the original quotient determinant. At spectral parameter zero the pointwise separation gives the exact ordinary split factors. The half-modulus from the Godement restriction changes the enlarged exponent into the smaller exponent. The common absolute moment justifies Fubini, and measure preservation transfers the shifted integral to the product chart. This implements the ordinary integral in Jacquet's §10 gap recurrence.

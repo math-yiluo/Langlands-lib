@@ -1,0 +1,5 @@
+# Matrix coordinates on the fixed special frame
+
+In the rational scalar-linear block algebra, conjugate by the diagonal whose entry at index `i` is the `i`-th power of arithmetic Frobenius of the line. Its powers are units because the reduced-degree power is the scalar uniformizer. Conjugation makes every embedded coefficient act by the same line endomorphism, and leaves the uniformizer diagonal fixed.
+
+Commutation with these two sets of diagonal matrices is entrywise. The integral cyclic basis extends the commutation equations on the generators to the actual full division order. The rational line calculation identifies each entry of a commuting matrix with a unique scalar from the original field. Entrywise inclusion of field scalars and inverse conjugation therefore give the algebra equivalence between field matrices and rational full-order endomorphisms of the fixed frame. Taking units gives the `GL(d,F)` of the framing action in Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 A–B, printed pp. 109–110.

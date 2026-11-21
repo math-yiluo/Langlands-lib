@@ -9,7 +9,18 @@ in both universes of the target, `u` for the number field and `uQ` for the
 factor universe of the spectral presentations. The two analytic propositions
 are explicit premises.
 
+The shared assembly theorem
+`Langlands.Global.cuspidalIsobaricPoleOrder_of_partialPairNonvanishingAtOne`
+takes the same completed pair-pole premise and a fieldwise witness
+condition `Langlands.Global.CuspidalIsobaricPoles.PartialPairNonvanishingAtOne F`.
+For two split-centre-trivial cuspidal realizations with irreducible admissible
+finite components and any finite set `S` containing both exceptional sets,
+the condition supplies a meromorphic representative of the partial Euler
+product outside `S` with order at most `0` at `1`.
+
 ## Proof
+
+The following steps prove the shared assembly theorem.
 
 1. Apply the pair-pole premise to each pair `(T₀, T i)` to obtain the finite
    pair choices and the archimedean parameters of the constituents. Take the
@@ -30,10 +41,9 @@ are explicit premises.
    to identify that criterion with the predicate counted by
    `contragredientMultiplicity`.
 3. Bound the order of `Λ i` above by `0`. For this pair, let `S` be the
-   union of the two exceptional sets of finite places. The split-centre
-   unitarity theorem supplies the unitary central characters required by
-   the boundary premise. Apply that premise at imaginary part `0` to the
-   partial function over places outside `S`. At each such place the
+   union of the two exceptional sets of finite places. The fieldwise
+   condition supplies the partial function over places outside `S` and
+   its upper order bound at `1`. At each such place the
    spherical polynomial comparison identifies the supplied finite local
    factor with `partialEulerFactor`. On a common right half-plane,
    `Finset.hasProd` and `HasProd.mul_compl` then identify `Λ i` with the
@@ -55,14 +65,22 @@ are explicit premises.
    `HasPoleOrder`. For an empty family the sum and multiplicity are both
    zero.
 
+For `cuspidalIsobaricPoleOrderReduction`, the split-centre unitarity
+theorem supplies the unitary central characters required by the boundary
+premise. That premise gives the partial representative for each eligible
+set `S` and bounds its order at imaginary part `0`. These witnesses give
+`PartialPairNonvanishingAtOne F` at every field, so the shared assembly
+applies.
+
 ## Provenance
 
 The reduction formalizes the route in §6 of
 [`CuspidalIsobaricPoleOrderStatement.md`](CuspidalIsobaricPoleOrderStatement.md).
 Getz and Hahn invoke the pair-pole theorem for the isobaric formula.
-Shahidi's boundary nonvanishing supplies the upper order bound used here
-to rule out cancellation by a zero of a constituent's completed
-function. Worker 3657's shared Task 5978 draft developed the pairwise
+The fieldwise witness condition isolates the partial-factor order bound
+used to rule out cancellation by a zero of a constituent's completed
+function. Shahidi's boundary theorem provides that bound in the
+two-premise reduction. Worker 3657's shared Task 5978 draft developed the pairwise
 reduction and Euler product comparisons. This implementation uses
 Worker 814's symmetry lemma, which transposes an invariant pairing, and
 the Library theorem `cuspidalSplitCentreUnitaryCentralCharacter`.

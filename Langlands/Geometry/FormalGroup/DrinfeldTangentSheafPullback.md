@@ -1,0 +1,7 @@
+# Coefficient pullback of the actual Drinfeld graded tangent sheaf
+
+Let \(Y\) be a special formal order module on an affine nilpotent test ring \(B\), with its specified embedded unramified degree-\(d\) coefficient field \(L\). A residue embedding \(\chi:k_L\hookrightarrow\kappa\) and the residue coordinate \(\psi:\kappa\to B/(\pi)\) give the split coefficient characters by unique finite étale lifting. The indexing uses inverse arithmetic Frobenius powers. The given division uniformizer satisfies \(\Pi^d=\pi\) and \(\Pi a=\sigma(a)\Pi\), with \(\sigma\) arithmetic on the residue field of \(L\).
+
+For a map \(B\to B'\) of nilpotent test rings, transport \(Y\) by coefficient extension and \(\psi\) by composition with \(B/(\pi)\to B'/(\pi)\). The pullback of the total tangent sheaf is the associated sheaf of the scalar extension of its coordinate module. The comparison with the transported tangent module intertwines the derivative of \(\Pi\) and all character projectors. The affine splitting and its pullback compute the corresponding homogeneous sheaf projectors, which determine the component isomorphisms.
+
+Naturality of the affine global-sections isomorphism identifies the pulled scalar uniformizer with the structural scalar of \(B'\). This gives the coefficient comparison for the actual graded affine tangent sheaf with its distinguished operator. The comparison implements the affine tangent base change used in Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 B and Proposition 2.4, printed pp. 110–111 (PDF pp. 4–5).

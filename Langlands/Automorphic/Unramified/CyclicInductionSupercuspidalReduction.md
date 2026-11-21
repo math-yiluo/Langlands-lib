@@ -6,7 +6,7 @@
 
 `CyclicLocalInductionSupercuspidalAtCompletionStatement` is the same implication at the actual completions for a finite place of a number field and a place above it. It uses the valuative relations and local-field instances supplied by `FiniteCompletion`.
 
-`isCyclicAlgebra_of_galois_generator` uses the degree formula for the order of the Galois group. An element fixed by the generator is fixed by every group element, so it belongs to the image of the base field. The proof transfers generation through `uniquePlaceCompletionAutEquiv` to apply the lemma to the actual completions. Their degree equals the global degree.
+`isCyclicAlgebra_of_galois_generator` uses the degree formula for the order of the Galois group. An element fixed by the generator is fixed by every group element, so it belongs to the image of the base field. The lemma `isCyclicAlgebra_uniquePlace` transfers generation through `uniquePlaceCompletionAutEquiv` and applies the cyclic-algebra result to the actual completions. Their degree equals the global degree.
 
 `LocalRealization.isSupercuspidal_iff_representation` passes between the canonical p-adic class formulation and the Jacquet-vanishing property of the original action. For the forward implication it chooses a representative of the supercuspidal class and uses the equivalence supplied by class equality. For the reverse implication the original action itself represents a supercuspidal class. The completion topology agrees with the canonical p-adic topology.
 

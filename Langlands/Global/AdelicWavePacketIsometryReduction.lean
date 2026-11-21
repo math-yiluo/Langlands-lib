@@ -35,15 +35,6 @@ variable {F : Type} [Field F] [NumberField F]
   (p : P ⟶ G) (l : M ⟶ P) (μM : Measure (AdelicGroupPoints F M)) {n : ℕ}
   (e : (Fin n → ℝ) ≃ₗ[ℝ] RealCharacterParameter F P) (β : (Fin n → ℝ) → ℝ)
 
-/-- The integrand `(k, m) ↦ β(y(m)) δ_P(m)⁻¹ φ(m k) conj ψ(m k)` of `inducedInnerProduct` on
-`K × M(F) \ M(𝔸)`. -/
-def inducedInnerProductIntegrand (φ ψ : AdelicGroupPoints F G → ℂ)
-    (z : K × RationalQuotient F M) : ℂ :=
-  (β (parameterCoordinates F P e (characterLog F P (map F M P l z.2.out))) : ℂ) *
-    parameterPower F P (-modulusParameter F P) (map F M P l z.2.out) *
-    φ (map F P G p (map F M P l z.2.out) * (z.1 : AdelicGroupPoints F G)) *
-    (starRingEnd ℂ) (ψ (map F P G p (map F M P l z.2.out) * (z.1 : AdelicGroupPoints F G)))
-
 /-- The measure `dk × dm` on `K × M(F) \ M(𝔸)` underlying `inducedInnerProduct`. -/
 def inducedInnerProductMeasure : Measure (K × RationalQuotient F M) :=
   (compactHaarProbability F G K hKc).prod

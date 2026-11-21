@@ -1,3 +1,4 @@
+import Langlands.AlgebraicGeometry.Modules.MonoidalTensorComparison
 import Langlands.AlgebraicGeometry.Picard.RelativeDivisorFibreSequence
 import Langlands.AlgebraicGeometry.Modules.GeometricFibreSectionsDim
 import Langlands.AlgebraicGeometry.Modules.ProjectiveRelativeDivisorFibreHilbertStatement
@@ -35,7 +36,7 @@ variable {X : Scheme.{u}}
 /-- The FLT tensor and the explicit sheafified tensor agree. -/
 def fltTensorIso (A B : X.Modules) :
     Scheme.Modules.tensor A B ≅ Langlands.Scheme.Modules.tensorObj A B :=
-  (Scheme.Modules.tensorIsoSheafify A B).symm
+  Langlands.AlgebraicGeometry.Modules.monoidalTensorIso A B
 
 /-- The FLT twist `M ⊗ L^{⊗ n}` agrees with the explicit-tensor twist. -/
 def twistIsoTwistObj (L M : X.Modules) : (n : ℕ) → twistF L M n ≅ twistObj L M n

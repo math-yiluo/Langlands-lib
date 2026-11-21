@@ -1,0 +1,5 @@
+# The tail Weyl translate of the alternate Godement integral
+
+`complexGapWeylRestriction` evaluates the continued Godement value at a padded leading matrix multiplied on the right by the tail Weyl element. The alternate integral uses the same leading factor and reverses the tail factors. The scalar from the translate is the adjoining character evaluated at the determinant of the long Weyl matrix on the tail.
+
+The proof computes the columns of the block Weyl element. Multiplication by it fixes the leading rectangle and sends the tail columns to their reverse order. Reindexing the product gives the split factors for the right-translated test. The `continuedValue` definition translates that test and contributes the determinant weight. The normalized determinant of the Weyl element is one, which leaves only the character value. Applying the alternate formula then gives the iterated integral and its convergence. [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 10.2, (10.6)](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

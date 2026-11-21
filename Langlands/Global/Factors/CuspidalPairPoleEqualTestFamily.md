@@ -7,3 +7,11 @@
 This is an internal construction of the equal-rank family consumed by the pole reduction. The origin test and the covering tests use the ordinary global integral of J. W. Cogdell, *Analytic Theory of L-Functions for GL(n)*, chapter 9 of Bernstein and Gelbart, eds., *An Introduction to the Langlands Program*, Birkhäuser, 2004, Theorem 4.1, printed pp. 218–221.
 
 `exists_equalNormalizedFamily_of_local_at` uses real continuation and generation only in the presence of a real place. Its fixed-field implementation assembles both the covering and conjugate residue tests. The import of `CuspidalPairPoleEqualLocalTests` supplies the covering family construction directly.
+
+`exists_equalNormalizedFamily_with_test_of_local_at` takes only the equal-rank
+continuation clauses. It passes the assembled covering tests, the exceptional
+set inclusions and the finite additive support to a callback that chooses a
+normalized member satisfying the specified predicate. The family contains that
+member as well as the conjugate residue witness. For the strip estimate,
+`exists_equalNormalizedFamily_of_local_at` specializes the predicate to
+nonvanishing somewhere and exponential strip growth.

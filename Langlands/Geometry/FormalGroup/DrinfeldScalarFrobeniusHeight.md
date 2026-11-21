@@ -1,0 +1,5 @@
+# Scalar-kernel heights when the uniformizer acts by Frobenius
+
+Formal maps with the same coordinate series have naturally equivalent point kernels because their evaluation maps agree on the same underlying nilpotent tuples. This transfers the actual represented kernel ranks and the fppf lifting property of relative Frobenius to scalar multiplication whenever its coordinates are the same powers of the variables.
+
+If the uniformizer acts by the `m`-fold residue-cardinality power, its `n`-th power has kernel rank `q^(n m dim)`. Each nilpotent coordinate is killed by a sufficiently large such power, which verifies scalar-power torsion. Together with the vanishing of the uniformizer in the residue coefficients, these statements give the actual formal-module height `m dim`. The coordinate formula passes from a one-dimensional factor to its finite product. For a factor of height `d` and a product of `d` copies, this gives the height `d²` required for the special frame of Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 A, printed p. 109.

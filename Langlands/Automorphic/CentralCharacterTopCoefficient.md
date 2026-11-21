@@ -60,6 +60,10 @@ by `GL_(r+1)(𝒪_v)` for the local restriction at `v`.
   presented spectrum (`CuspidalSpectralPresentation.corner_eq_smul`). That scalar is the top
   elementary coefficient (`standardHeckeScalar_last`), which equals `δ_v(ϖ_v)` by
   hypothesis. Irreducibility and the membership criterion conclude as before.
+- `finiteUniformizerValue_eq_elementaryCoefficient`: if `T` has central character `δ`,
+  then its scalar uniformizer action on `b` is multiplication by `δ_v(ϖ_v)`. The same
+  top Hecke operator calculation gives a second scalar for this action. Since `b` is
+  nonzero, the two scalars are equal.
 - `finiteIdeleInclusion_mem_centralCharacterSubgroup`: under both hypotheses, every
   `a ∈ F_v^×` lies in `H`. The preimage of `H` in `F_v^×` contains the integral units and
   `ϖ_v`, so it is everything (`CompletionPadic.subgroup_eq_top_of_uniformizer_mem`).

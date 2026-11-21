@@ -63,16 +63,16 @@ universe u
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
+private local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+private local instance (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 variable [CompactSpace (AdeleQuotient F)] {r : ℕ} (T : CuspidalOperatorRealization F r)
 
-local instance (p : InfinitePlaceFamily.Index F) :
+private local instance (p : InfinitePlaceFamily.Index F) :
     AddCommGroup (T.placeDensityModels.subspace p) := Submodule.addCommGroup _
 
 /-- A real standard parameter gives the very coefficient factor chosen in the

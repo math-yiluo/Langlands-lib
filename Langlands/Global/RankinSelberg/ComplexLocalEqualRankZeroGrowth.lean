@@ -1,7 +1,7 @@
 import Langlands.Global.RankinSelberg.ComplexLocalEqualRankZero
 import Langlands.Global.RankinSelberg.ComplexLocalFourierSchwartz
 import Langlands.Global.RankinSelberg.ComplexLocalNormalizedGrowth
-import Langlands.Global.RankinSelberg.ComplexTateProductStripGrowth
+import Langlands.Global.RankinSelberg.ComplexRankZeroStripGrowth
 
 /-! # Exponential strip growth for the complex rank-zero equal pair -/
 
@@ -17,9 +17,7 @@ set_option backward.isDefEq.respectTransparency false
 namespace Langlands.Global.RankinSelbergGlobal.ComplexJacquet
 
 open ArchimedeanLocal
-open ComplexRankZero (lineSchwartz lineSchwartz_apply equalIntegral_eq complexPairLFactor_singleton)
-open ComplexTateProduct (affineParameter normalizedZeta gammaNormalizer additiveWeight
-  complexTateProductEntireFamily complexTateProductStripGrowth)
+open FunctionalEquationComparison.CompletedEquationAdapter (complexPairLFactor_denominator_ne_zero)
 
 attribute [local instance] archimedeanEquationComplexGLMeasurable
   archimedeanEquationComplexGLBorel archimedeanEquationComplexNMeasurable
@@ -30,30 +28,6 @@ local notation "I" => Fin (0 + 1)
 local notation "G" => Langlands.GeneralLinear (0 + 1) ℂ
 local notation "Test" => 𝓢((I → ℂ), ℂ)
 
-private local instance : Unique I := inferInstanceAs (Unique (Fin 1))
-
-private theorem zeta_on_single_coordinate (Φ : Test) (w : ℤ) (t s : ℂ) :
-    ComplexRankZero.ComplexTate.zeta (lineSchwartz Φ) w t s =
-      2 * ComplexTateProduct.zeta Φ (fun _ => w) (fun _ => s + t) := by
-  rw [ComplexRankZero.ComplexTate.zeta, ComplexRankZero.ComplexTate.integral_two_smul, ComplexTateProduct.zeta]
-  congr 1
-  let f := ComplexTateProduct.integrand (Φ : (I → ℂ) → ℂ) (fun _ => w) (fun _ => s + t)
-  have he := (volume_preserving_funUnique I ℂ).symm.integral_comp' f
-  rw [← he]
-  refine integral_congr_ae (ae_of_all _ fun z => ?_)
-  change ComplexRankZero.ComplexTate.integrand (lineSchwartz Φ) w t s z = f (fun _ => z)
-  by_cases hz : z = 0 <;>
-    simp [f, ComplexTateProduct.integrand, ComplexRankZero.ComplexTate.integrand, additiveWeight,
-      lineSchwartz_apply, hz, mul_assoc]
-
-private theorem stripGrowth_mul_const_left {f : ℂ → ℂ} (hf : HasStripExponentialGrowth f) (c : ℂ) :
-    HasStripExponentialGrowth (fun s => c * f s) := by
-  intro a b
-  obtain ⟨C, K, T, hC, hK, h⟩ := hf a b
-  refine ⟨‖c‖ * C, K, T, mul_nonneg (norm_nonneg _) hC, hK, fun s ha hb ht => ?_⟩
-  rw [norm_mul, mul_assoc]
-  exact mul_le_mul_of_nonneg_left (h s ha hb ht) (norm_nonneg _)
-
 private theorem rank_zero_trace_growth (D : ComplexQuotientMeasureData 0) (d e : ComplexCharacterData)
     (W V : G → ℂ) (C E : ℂ) (Φ : Test)
     (hW : ∀ g, W g = C * (d.character (GeneralLinear.determinant g) : ℂ))
@@ -61,34 +35,13 @@ private theorem rank_zero_trace_growth (D : ComplexQuotientMeasureData 0) (d e :
     ∃ N : ℂ → ℂ, Differentiable ℂ N ∧ HasStripExponentialGrowth N ∧
       ∃ σ : ℝ, ∀ s : ℂ, σ < s.re →
         N s = (complexPairLFactor [d] [e]).denominator s * complexEqualIntegral D W V Φ s := by
-  obtain ⟨κ, _, hκ⟩ := ComplexRankZero.exists_measure_eq D
-  let c : ℂ := (κ : ℂ) * (C * E)
-  let w := (d.mul e).weight
-  let t := (d.mul e).exponent
-  have hZ (s : ℂ) : complexEqualIntegral D W V Φ s =
-      c * ComplexTateProduct.zeta Φ (fun _ => w) (fun _ => s + t) := by
-    rw [equalIntegral_eq d e hκ hW hV, zeta_on_single_coordinate]
-    dsimp only [c, w, t]
-    ring
-  obtain ⟨H, hH⟩ := complexTateProductEntireFamily 0
-  let N (s : ℂ) := c * H Φ (fun _ => w) (fun _ => s + t)
-  have hAffine (s : ℂ) : affineParameter (fun _ : I => t) (fun _ => 1) s = fun _ => s + t := by
-    funext j
-    simp [affineParameter, add_comm t]
-  have hN : Differentiable ℂ N := by
-    simpa only [N, hAffine] using
-      (hH.1 Φ (fun _ => w) (fun _ => t) (fun _ => 1)).const_mul c
-  have hNg : HasStripExponentialGrowth N := by
-    simpa only [N, hAffine] using stripGrowth_mul_const_left
-      (complexTateProductStripGrowth 0 H hH Φ (fun _ => w) (fun _ => t) (fun _ => 1)) c
-  refine ⟨N, hN, hNg, |t.re|, fun s hs => ?_⟩
-  have hPos : 0 < (s + t).re := by rw [Complex.add_re]; linarith [neg_abs_le t.re]
-  dsimp only [N]
-  rw [hH.2 _ _ _ (fun _ => hPos), hZ, complexPairLFactor_singleton, normalizedZeta]
-  rw [show (∏ _ : I, gammaNormalizer w (s + t)) = gammaNormalizer w (s + t) from
-    Fin.prod_univ_one (fun _ : Fin 1 => gammaNormalizer w (s + t))]
-  simp only [gammaNormalizer, w, t, add_assoc]
-  ring
+  obtain ⟨N, hGrowth⟩ := ComplexRankZero.complexRankZeroStripGrowth D d e W V C E hW hV Φ
+  obtain ⟨σ, hN⟩ := N.eq_on_right
+  obtain ⟨τ, hτ⟩ := complexPairLFactor_denominator_ne_zero [d] [e]
+  refine ⟨N.value, fun s => (N.analytic s (Set.mem_univ _)).differentiableAt, hGrowth,
+    max σ τ, fun s hs => ?_⟩
+  rw [hN s ((le_max_left _ _).trans_lt hs), mul_left_comm,
+    mul_inv_cancel₀ (hτ s ((le_max_right _ _).trans_lt hs)), mul_one]
 
 private theorem dual_rank_zero_scalar (d : ComplexCharacterData) {W : G → ℂ} {C : ℂ}
     (hW : ∀ g, W g = C * (d.character (GeneralLinear.determinant g) : ℂ)) (g : G) :

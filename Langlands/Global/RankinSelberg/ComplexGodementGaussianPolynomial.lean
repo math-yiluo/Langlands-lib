@@ -201,12 +201,30 @@ private def weightedEval (m n : ℕ) : MvPolynomial (Coordinates m n) ℂ →ₗ
     ext A
     simp [MvPolynomial.smul_eq_C_mul, mul_assoc]
 
-/-- The span of the right unitary translates of every polynomial Gaussian test is finite dimensional. -/
-theorem finiteDimensional_translateTest_gaussianPolynomial (p : MvPolynomial (Coordinates m (m + 1)) ℂ) :
-    FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : unitaryCompact ℂ (m + 1) =>
-      translateTest k.val (gaussianPolynomial p))) := by
-  let V := restrictTotalDegree (Coordinates m (m + 1)) ℂ p.totalDegree
-  let L := (weightedEval m (m + 1)).comp V.subtype
+/-- A right unitary translate has a polynomial representative of no larger total degree. -/
+theorem exists_gaussianPolynomial_mul_unitary (p : MvPolynomial (Coordinates m n) ℂ)
+    (k : unitaryCompact ℂ n) :
+    ∃ q : MvPolynomial (Coordinates m n) ℂ,
+      q.totalDegree ≤ p.totalDegree ∧
+      ∀ A : Mat m n, gaussianPolynomial p (A * k.val.val) = gaussianPolynomial q A := by
+  refine ⟨bind₁ (translateVariable k.val.val) p,
+    totalDegree_bind₁_le _ (totalDegree_translateVariable k.val.val) p, fun A => ?_⟩
+  rw [gaussianPolynomial_apply, gaussianPolynomial_apply, matrixGaussian_mul_unitary]
+  congr 1
+  change aeval (coordinates (A * k.val.val)) p =
+    aeval (coordinates A) (bind₁ (translateVariable k.val.val) p)
+  rw [aeval_bind₁]
+  simp_rw [show ∀ i, aeval (coordinates A) (translateVariable k.val.val i) =
+      coordinates (A * k.val.val) i from eval_translateVariable A k.val.val]
+
+/-- Right unitary translates of a polynomial Gaussian on any rectangular matrix space
+span a finite-dimensional space. -/
+theorem finiteDimensional_rightTranslate_gaussianPolynomial
+    (p : MvPolynomial (Coordinates m n) ℂ) :
+    FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : unitaryCompact ℂ n =>
+      fun A : Mat m n => gaussianPolynomial p (A * k.val.val))) := by
+  let V := restrictTotalDegree (Coordinates m n) ℂ p.totalDegree
+  let L := (weightedEval m n).comp V.subtype
   refine Submodule.finiteDimensional_of_le (S₂ := LinearMap.range L) (Submodule.span_le.mpr ?_)
   rintro _ ⟨k, rfl⟩
   let q := bind₁ (translateVariable k.val.val) p
@@ -221,6 +239,13 @@ theorem finiteDimensional_translateTest_gaussianPolynomial (p : MvPolynomial (Co
   rw [show q = bind₁ (translateVariable k.val.val) p from rfl, aeval_bind₁]
   simp_rw [show ∀ i, aeval (coordinates A) (translateVariable k.val.val i) =
       coordinates (A * k.val.val) i from eval_translateVariable A k.val.val]
+
+/-- In the Godement rectangle the right action is `translateTest`. -/
+theorem finiteDimensional_translateTest_gaussianPolynomial
+    (p : MvPolynomial (Coordinates m (m + 1)) ℂ) :
+    FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : unitaryCompact ℂ (m + 1) =>
+      translateTest k.val (gaussianPolynomial p))) :=
+  finiteDimensional_rightTranslate_gaussianPolynomial p
 
 /-- The span of right unitary translates of each fixed Gaussian-polynomial test
 is finite dimensional. -/

@@ -1,0 +1,13 @@
+# Relative and ambient factors of the actual parabolic parameters
+
+For an actual presented parabolic `p : P ⟶ G` of a connected reductive group over a number field, `relativeAmbientParameterEquiv r hG` is the real-linear equivalence
+
+`relativeParameterSpace p × RealCharacterParameter F G ≃ₗ[ℝ] RealCharacterParameter F P`.
+
+It sends `(x,z)` to the inclusion of `x` plus the actual pullback `p*z`. There is no supplied complement or auxiliary coordinate choice. The source of the first factor is exactly the existing annihilator subspace used in `IsRelativeWavePacket`, not a replacement defined by a new splitting. The proof constructs the lift of the canonical split component of `G` into `P` through the supplied actual Levi, using the all-test central factorization. It identifies the annihilator with the kernel of real restriction to that lift: every real logarithmic functional of the split torus occurs on its intrinsic positive subgroup, and every adelic point of `P` mapping into `A_G` is such a lifted point because the closed immersion is injective. Pairing adjointness and real dual separation then give the kernel identity.
+
+The ambient projection restricts to the lifted component and applies the inverse of the real character equivalence for the canonical split component of `G`. Finite index and injectivity of the integral character restriction justify that comparison. This projection is a left inverse to `p*` and has the stated relative kernel. The inverse to the product map takes a full parameter to its ambient projection together with the remainder after subtracting the ambient pullback. The imaginary inclusion sends the resulting sum to the relative imaginary parameter plus the ambient imaginary pullback.
+
+`ambientParameterChart hG` chooses a real linear coordinate chart in the ambient parameters of `G`, independent of the parabolic. The character lattice of the split component is finitely generated; extending scalars and using the real ambient restriction equivalence shows that the ambient parameter space is finite dimensional. The chart is the inverse coordinate map of a chosen finite basis, not a claim that there is a preferred basis.
+
+This is a derived implementation of the real parameter splitting used for the relative imaginary integration in Getz–Hahn, *An Introduction to Automorphic Representations* (2024), §10.5, pp. 281–282 (PDF pp. 293–294), (10.22)–(10.24), using their split-centre subgroup convention in §2.6, pp. 68–69 (PDF pp. 85–86), (2.19)–(2.22). The exact kernel, pullback and imaginary-inclusion comparisons are implementation laws. No parameter measure is transported in this module, and there is no claim yet about synthesis or the `L²` norm of a wave packet.

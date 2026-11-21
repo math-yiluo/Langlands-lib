@@ -1,0 +1,9 @@
+# Universe enlargement of the actual analytic categories
+
+For a saturated affinoid atlas over a complete ultrametric normed field, `universeLift` changes the ambient space and chart indices by independent `ULift`s. The chart algebras and bounded restrictions are unchanged. Transport preserves saturation: read a local domain in the enlarged atlas in the old indices and old ambient space, choose its original chart using saturation, and lift that chart back to the new index. Conversely every chart is a whole local domain.
+
+`universeLiftFunctor` sends a saturated strong map to its compatible transport, forgetting only the proof of compatibility. It lifts the continuous map by `x ↦ ULift.up (f x.down)` and retains the bounded pullback at each relabeled admissible pair. Identity and composition are checked using one full admissible chart chain per source chart and compatible strong-map extensionality. They are not just equalities on the induced point maps.
+
+The lift preserves full quasi-isomorphisms by the transport construction. `localizedUniverseLift` uses the strict localization universal property to give the functor on the actual localized categories. The original presentation and map formulas hold after applying the localization functors. `localizedUniverseLift_spaceFunctor` identifies the resulting underlying topological-space functor with the original one followed by Mathlib's `TopCat.uliftFunctor`. The proof compares the two descents of the same functor from saturated atlases, so the identification holds on all localized morphisms, including formal inverses.
+
+This is an internal universe adapter for comparing ground-field extension to the analytification of algebraic base change. It changes no ground field and makes no assertion about analytifications or full faithfulness between the different universe levels.

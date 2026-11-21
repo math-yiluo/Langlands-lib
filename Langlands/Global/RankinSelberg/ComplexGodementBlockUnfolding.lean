@@ -80,7 +80,8 @@ variable {A : Type} [Group A] [TopologicalSpace A] [IsTopologicalGroup A]
 
 local notation "QH" => Langlands.QuotientIntegration.LeftQuotient H
 
-private def quotientShift (k : S → A) (hk : Measurable k) : QH × S ≃ᵐ QH × S where
+/-- Right translation of a quotient by a measurable group parameter. -/
+def quotientShift (k : S → A) (hk : Measurable k) : QH × S ≃ᵐ QH × S where
   toFun p := (rightTranslate H (k p.2) p.1, p.2)
   invFun p := (rightTranslate H ((k p.2)⁻¹) p.1, p.2)
   left_inv := by
@@ -98,7 +99,8 @@ private def quotientShift (k : S → A) (hk : Measurable k) : QH × S ≃ᵐ QH 
   measurable_invFun := ((continuous_rightTranslate_joint H).measurable.comp
     (measurable_fst.prodMk (hk.inv.comp measurable_snd))).prodMk measurable_snd
 
-private theorem measurePreserving_quotientShift (τ : Measure QH) (ρ : Measure S)
+/-- A right-invariant quotient measure is preserved by the parameter-dependent shear. -/
+theorem measurePreserving_quotientShift (τ : Measure QH) (ρ : Measure S)
     [SFinite ρ] [SFinite τ] (hInv : ∀ a : A, MeasurePreserving (rightTranslate H a) τ τ)
     (k : S → A) (hk : Measurable k) :
     MeasurePreserving (quotientShift H k hk) (τ.prod ρ) (τ.prod ρ) := by
@@ -147,13 +149,15 @@ def blockUnfoldedKernel {r t : ℕ} (h : t < r) (μ : AdditiveHaarMeasure ℂ)
     complexUnequalIntegrand h (ArchimedeanLocal.translateFunction k₂⁻¹ W)
       (ArchimedeanLocal.translateFunction k₁ V) z p.1
 
-private def beforeBlockKernel {r t : ℕ} (h : t < r) (μ : AdditiveHaarMeasure ℂ)
+/-- The right-tail block kernel before shearing the quotient coordinate. -/
+def beforeBlockKernel {r t : ℕ} (h : t < r) (μ : AdditiveHaarMeasure ℂ)
     (d : ComplexCharacterData) (a : ℂˣ) (Φ : Test r) (W : G (r + 1) → ℂ) (V : G (t + 1) → ℂ)
     (s z : ℂ) (p : Q t × (XSpace r t × Coords r t)) : ℂ :=
   twoBlockRestrictionKernel (Nat.succ_pos t) (Nat.succ_lt_succ h) μ d a Φ W p.1.out
     (lowerRectangle h p.2.1) s p.2.2 * V p.1.out * P p.1.out (z - ((r - t : ℕ) : ℂ) / 2)
 
-private theorem blockUnfoldedKernel_shift {r t : ℕ} (h : t < r) (μ : AdditiveHaarMeasure ℂ)
+/-- The two block kernels are related by the right quotient shear. -/
+theorem blockUnfoldedKernel_shift {r t : ℕ} (h : t < r) (μ : AdditiveHaarMeasure ℂ)
     (d : ComplexCharacterData) (a : ℂˣ) (Φ : Test r) (W : G (r + 1) → ℂ) (V : G (t + 1) → ℂ)
     (hW : HasLeftCharacter (-a) W) (hV : HasLeftCharacter a V) (s z : ℂ)
     (p : Q t × (XSpace r t × Coords r t)) :

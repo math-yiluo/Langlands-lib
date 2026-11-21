@@ -147,3 +147,5 @@ for `t : T i i'`.
   the expansions in steps 3 and 5 would not hold, since `inducedInnerProduct`
   is defined through Bochner integrals, which are `0` for non-integrable
   functions.
+
+The pointwise integrand is defined alongside the [induced inner product](AdelicInducedInnerProduct.md).

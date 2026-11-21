@@ -10,10 +10,12 @@ Then `T` has central character `δ`.
 
 At such a place, `T` has a nonzero spherical vector. The scalar matrices of integral units
 fix it and `δ_v` is trivial on integral units, while the scalar matrix of `ϖ_v` acts on it
-as the top standard Hecke operator, by the top elementary coefficient. By irreducibility
-these scalar matrices act by `δ_v` on all of `T`, so `F_v^×` lies in the closed subgroup of
-ideles whose scalar matrices act by `δ`. That subgroup contains the principal ideles, hence
-is the whole idele group by weak approximation.
+as the top standard Hecke operator, by the top elementary coefficient. Comparing this
+action with any given central character recovers its uniformizer value. Conversely,
+if this value agrees with `δ_v(ϖ_v)`, irreducibility makes the scalar matrices act
+by `δ_v` on all of `T`. Thus `F_v^×` lies in the closed subgroup of ideles whose
+scalar matrices act by `δ`. That subgroup contains the principal ideles, hence is
+the whole idele group by weak approximation.
 -/
 
 noncomputable section
@@ -106,6 +108,51 @@ theorem finiteIdeleInclusion_units_mem_centralCharacterSubgroup
   exact hfix.trans ((one_smul ℂ (b : T.realization.Space)).symm.trans
     (congrArg (fun c : ℂ => c • (b : T.realization.Space)) h1.symm))
 
+private theorem uniformizer_scalar_on_sphericalVector
+    (T : CuspidalOperatorRealization F r) (P : CuspidalSpectralPresentation.{uF, uP} T)
+    (hv : v ∉ P.exceptional)
+    (b : fixedVectors (T.realization.localRepresentation v)
+      (sphericalOpenSubgroup (CompletionPadic.padicField v) r).toSubgroup) :
+    T.realization.localRepresentation v
+        (Matrix.GeneralLinearGroup.scalar (Fin (r + 1))
+          (LocalFactor.PadicAbelian.uniformizerUnit
+            (CompletionPadic.padicField v).canonicalTopologicalData))
+        (b : T.realization.Space) =
+      elementaryCoefficient (P.spectralSystem.eigenvalues v hv) (r + 1) •
+        (b : T.realization.Space) := by
+  have hcorner := congrArg Subtype.val (P.corner_eq_smul v hv b (Fin.last (r + 1)))
+  have htop := standardHecke_cornerAction_last (CompletionPadic.padicField v)
+    (T.realization.localRepresentation v)
+    (T.realization.localRepresentation_isSmooth_canonical v) b
+  have hdiag := standardDiagonal_last (CompletionPadic.padicField v) (r := r)
+  have hscalar : standardHeckeScalar (CompletionPadic.padicField v)
+      (P.spectralSystem.eigenvalues v hv) (Fin.last (r + 1)) =
+        elementaryCoefficient (P.spectralSystem.eigenvalues v hv) (r + 1) :=
+    standardHeckeScalar_last _ _
+  exact (congrArg (fun g => T.realization.localRepresentation v g (b : T.realization.Space))
+    hdiag.symm).trans (htop.symm.trans (hcorner.trans
+      ((Submodule.coe_smul _ b).trans
+        (congrArg (fun c : ℂ => c • (b : T.realization.Space)) hscalar))))
+
+/-- The central character's value at a good uniformizer is the top elementary
+coefficient of the actual presented spectrum. -/
+theorem finiteUniformizerValue_eq_elementaryCoefficient
+    {T : CuspidalOperatorRealization F r} {δ : HeckeCharacter F}
+    (hδ : T.HasCentralCharacter δ) (P : CuspidalSpectralPresentation.{uF, uP} T)
+    (hv : v ∉ P.exceptional) :
+    (δ.finiteUniformizerValue v : ℂ) =
+      elementaryCoefficient (P.spectralSystem.eigenvalues v hv) (r + 1) := by
+  let uniformizer := (CompletionPadic.padicField v).canonicalTopologicalData.uniformizerUnit
+  have hmem : finiteIdeleInclusion F v uniformizer ∈ T.realization.centralCharacterSubgroup δ :=
+    (T.realization.mem_centralCharacterSubgroup δ _).mpr
+      (fun f x => T.realization.centralCharacter_evaluate δ hδ f _ x)
+  obtain ⟨b, hb⟩ := P.exists_spherical_ne_zero v hv
+  have hb0 : (b : T.realization.Space) ≠ 0 := fun h0 => hb (Subtype.ext h0)
+  have hscalar := (T.realization.finiteIdeleInclusion_mem_centralCharacterSubgroup_iff
+    δ v uniformizer).mp hmem (b : T.realization.Space)
+  exact smul_left_injective ℂ hb0
+    (hscalar.symm.trans (uniformizer_scalar_on_sphericalVector v T P hv b))
+
 /-- At a place where the presentation is unramified and `δ_v(ϖ_v)` is the top elementary
 coefficient of the presented spectrum, the scalar matrix of the uniformizer acts on `T`
 by `δ`. -/
@@ -122,19 +169,8 @@ theorem finiteIdeleInclusion_uniformizer_mem_centralCharacterSubgroup
   have hb0 : (b : T.realization.Space) ≠ 0 := fun h0 => hb (Subtype.ext h0)
   refine (T.realization.finiteIdeleInclusion_mem_centralCharacterSubgroup_iff δ v _).mpr ?_
   refine T.realization.localScalar_eq_smul_of_ne_zero T.irreducible v _ _ hb0 ?_
-  have hcorner := congrArg Subtype.val (P.corner_eq_smul v hv b (Fin.last (r + 1)))
-  have htop := standardHecke_cornerAction_last (CompletionPadic.padicField v)
-    (T.realization.localRepresentation v)
-    (T.realization.localRepresentation_isSmooth_canonical v) b
-  have hdiag := standardDiagonal_last (CompletionPadic.padicField v) (r := r)
-  have hscalar : standardHeckeScalar (CompletionPadic.padicField v)
-      (P.spectralSystem.eigenvalues v hv) (Fin.last (r + 1)) =
-        (δ.finiteUniformizerValue v : ℂ) :=
-    (standardHeckeScalar_last _ _).trans he.symm
-  exact (congrArg (fun g => T.realization.localRepresentation v g (b : T.realization.Space))
-    hdiag.symm).trans (htop.symm.trans (hcorner.trans
-      ((Submodule.coe_smul _ b).trans
-        (congrArg (fun c : ℂ => c • (b : T.realization.Space)) hscalar))))
+  exact (uniformizer_scalar_on_sphericalVector v T P hv b).trans
+    (congrArg (fun c : ℂ => c • (b : T.realization.Space)) he.symm)
 
 /-- At a place where `δ` and the presentation are unramified and `δ_v(ϖ_v)` is the top
 elementary coefficient of the presented spectrum, every local idele at `v` acts on `T`

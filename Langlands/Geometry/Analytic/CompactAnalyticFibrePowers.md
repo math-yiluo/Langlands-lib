@@ -1,0 +1,7 @@
+# Finite nonempty analytic fibre powers
+
+A compact quasi-étale source whose image lies in a Hausdorff subspace of the base has compact Hausdorff finite nonempty fibre powers. Each common structure map is quasi-étale. The coordinate maps have the universal property of the fibre power for analytic arrows and for full points with values in a complete algebraically closed extension field.
+
+The construction starts with the original source. A binary pullback along its structure arrow adds a first coordinate to the preceding fibre power. The compatible locus of pairs of ordinary points is closed in the product of the two compact Hausdorff sources because the two structure maps take values in the chosen Hausdorff subspace. Compactness and Hausdorffness of the analytic pullback follow from compact inverse images of compatible pairs. The proof of the field-point universal property inducts using preservation of the binary quasi-étale pullbacks. The coordinate maps also determine the action of permutations by permuting coordinates with the inverse permutation.
+
+This is derived infrastructure for the ordered-frame construction of a finite Galois refinement. The analytic fibre products are those of Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Proposition 1.4.1, printed pp. 29–30. Finite Galois refinements of the corresponding étale germs use the setting of Theorem 3.4.1, printed p. 65.

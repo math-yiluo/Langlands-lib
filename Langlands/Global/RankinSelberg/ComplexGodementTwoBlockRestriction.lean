@@ -56,7 +56,8 @@ def twoBlockRestrictionKernel {r k : ℕ} (hk : 0 < k) (hkn : k < r + 1)
     (h₂⁻¹.val (Fin.last r))) * W (padGL hkn.le (g * h₁⁻¹) * h₂⁻¹) *
     characterWeight d e (determinant h₁) * characterWeight d e (determinant h₂)
 
-private theorem twoBlockRestrictionKernel_chart {r k : ℕ} (hk : 0 < k) (hkn : k < r + 1)
+/-- The two-block kernel is the pullback of the padded kernel along the right Haar chart. -/
+theorem twoBlockRestrictionKernel_chart {r k : ℕ} (hk : 0 < k) (hkn : k < r + 1)
     (μ : AdditiveHaarMeasure ℂ) (d : ComplexCharacterData) (a : ℂˣ)
     (Φ : 𝓢(Rect r, ℂ)) (W : G (r + 1) → ℂ) (g : G k) (b : G (r + 1)) (s : ℂ)
     (p : Coords (r + 1) k) :

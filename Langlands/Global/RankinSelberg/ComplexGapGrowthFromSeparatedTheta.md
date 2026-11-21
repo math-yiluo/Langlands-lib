@@ -1,0 +1,5 @@
+# Normalized complex gap growth from the two-scale chart reflection
+
+The two chart kernels have separate determinant variables and absolute moments of their product on a right half-plane. The input comparison is the separated theta identity for the two half-rate Gaussian pairs. The ordinary side includes the adjoining Weyl phase, and inversion changes each of the two positive scale parameters to its reciprocal.
+
+The proof moves the phase into the first weight and uses the absolute product moment at the common boundary to integrate the separated identity over the logarithmic scale. The product determinant then carries a single convolved weight on each side. The explicit Mellin transforms for the convolved weights give the reciprocal local factors for the enlarged list of characters. The theta continuation theorem yields the two entire normalized integrals and their exponential bounds on vertical strips. Equality on a common right half-plane transfers this conclusion from the chart integrals to the specified integrals.
