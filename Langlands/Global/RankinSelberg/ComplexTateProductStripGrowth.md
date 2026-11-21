@@ -1,0 +1,9 @@
+# Exponential strip growth of normalized complex product Tate integrals
+
+`complexTateProductStripGrowth` gives exponential growth on every vertical strip for the affine specialization of any entire normalized complex product Tate family. The family is entire along spectral lines with real slopes and agrees with the normalized product Tate integral where all coordinate real parts are positive.
+
+The common-strip Fourier identity in one coordinate extends to the entire family along an affine line through the given parameter and a point with all real parts equal to one half. The identity theorem then gives the reflection at the original parameter. In a box of positive coordinate real parts the norms of the additive weights are bounded by the endpoint powers, choosing an endpoint in each coordinate according to whether the modulus is at most one. A finite sum of the corresponding integrable corner kernels bounds the absolute integral. The shifted reciprocal Gamma factors provide an exponential bound in the sum of the absolute imaginary parts.
+
+Reflection in a coordinate whose real part is below one half moves it to the positive box and replaces the test by its coordinate Fourier transform. Its phase has norm one and reflection preserves the absolute imaginary part. Induction over coordinates gives the box estimate for arbitrary lower real bounds. Along a real-slope affine line the sum of absolute imaginary parts is bounded by a constant plus a multiple of the absolute height, giving the stated vertical-strip estimate.
+
+This extends the product Tate continuation used in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.1, proof of Proposition 7.1, author-version p. 44. The implemented estimate uses the published coordinatewise Tate reflection and the exponential bounds for reciprocal complex Gamma, as a growth input for normalized square zeta integrals.

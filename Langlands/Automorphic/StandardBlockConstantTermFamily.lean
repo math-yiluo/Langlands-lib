@@ -80,15 +80,15 @@ local notation "RF" => CommRingCat.of F
 local notation "GLG" => GroupScheme.GeneralLinear.groupScheme (Fin n) RF
 local notation "N₀" => blockUnipotent (Fin n) RF (standardBlockWeight ∅)
 
-local instance : IsAffine (GLG).X.left := isAffine_groupScheme (Fin n) RF
+local instance blockTermFamilyAffine : IsAffine (GLG).X.left := isAffine_groupScheme (Fin n) RF
 
-local instance : Smooth (GLG).X.hom := smoothStatement (Fin n) RF
+local instance blockTermFamilySmooth : Smooth (GLG).X.hom := smoothStatement (Fin n) RF
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance blockTermFamilyRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
 
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockTermFamilyContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
 
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockTermFamilyFiniteSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
 
 /-- The constant term with no cuts is the original function at corresponding points. -/
 theorem finiteSmoothBlockConstantTerm_empty
@@ -122,11 +122,11 @@ theorem finiteSmoothBlockConstantTerm_empty
   rw [hconst, integral_const, probReal_univ, one_smul]
   rfl
 
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance blockTermFamilyFormsAddCommGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
 
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance blockTermFamilyStableAddCommGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
-local instance (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance blockTermFamilyRealizationAddCommGroup (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 private def realizedAmbientInclusion (S : OperatorRealization F n) :
     S.representation.IntertwiningMap (automorphicOperatorAction F n) :=

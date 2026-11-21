@@ -12,7 +12,30 @@ open scoped Manifold Matrix Matrix.Norms.Operator
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
+namespace Langlands.Global.RankinSelbergGlobal.ComplexModulusOpenCell
+
+open Langlands.GeneralLinear (inverseTranspose inverseTranspose_coe continuous_inverseTranspose)
+
+/-- Transpose of an invertible complex matrix. -/
+def groupTranspose {m : ℕ} (g : Langlands.GeneralLinear m ℂ) : Langlands.GeneralLinear m ℂ :=
+  inverseTranspose m ℂ g⁻¹
+
+theorem groupTranspose_val {m : ℕ} (g : Langlands.GeneralLinear m ℂ) :
+    (groupTranspose g).val = g.val.transpose := by
+  rw [groupTranspose, inverseTranspose_coe, inv_inv]
+
+theorem continuous_groupTranspose {m : ℕ} :
+    Continuous (groupTranspose (m := m)) := (continuous_inverseTranspose m ℂ).comp continuous_inv
+
+theorem groupTranspose_mul {m : ℕ} (g h : Langlands.GeneralLinear m ℂ) :
+    groupTranspose (g * h) = groupTranspose h * groupTranspose g := by
+  simp only [groupTranspose, mul_inv_rev, map_mul]
+
+end Langlands.Global.RankinSelbergGlobal.ComplexModulusOpenCell
+
 namespace Langlands.Global.RankinSelbergGlobal.ComplexJacquetChamberConvergence
+
+open Langlands.Global.RankinSelbergGlobal.ComplexModulusOpenCell (groupTranspose groupTranspose_val continuous_groupTranspose groupTranspose_mul)
 
 open GeneralLinear (upperUnipotent weylLong inverseTranspose inverseTranspose_coe
   continuous_inverseTranspose weylLong_mul_self)
@@ -32,20 +55,6 @@ local instance jacquetChamberNBorel (m : ℕ) : BorelSpace (upperUnipotent m ℂ
 local instance jacquetChamberGLMeasurable (m : ℕ) :
     MeasurableSpace (Langlands.GeneralLinear m ℂ) := borel _
 local instance jacquetChamberGLBorel (m : ℕ) : BorelSpace (Langlands.GeneralLinear m ℂ) := ⟨rfl⟩
-
-private def groupTranspose {m : ℕ} (g : Langlands.GeneralLinear m ℂ) : Langlands.GeneralLinear m ℂ :=
-  inverseTranspose m ℂ g⁻¹
-
-private theorem groupTranspose_val {m : ℕ} (g : Langlands.GeneralLinear m ℂ) :
-    (groupTranspose g).val = g.val.transpose := by
-  rw [groupTranspose, inverseTranspose_coe, inv_inv]
-
-private theorem continuous_groupTranspose {m : ℕ} :
-    Continuous (groupTranspose (m := m)) := (continuous_inverseTranspose m ℂ).comp continuous_inv
-
-private theorem groupTranspose_mul {m : ℕ} (g h : Langlands.GeneralLinear m ℂ) :
-    groupTranspose (g * h) = groupTranspose h * groupTranspose g := by
-  simp only [groupTranspose, mul_inv_rev, map_mul]
 
 private theorem groupTranspose_lastColumn {m : ℕ} (v : Fin m → ℂ) :
     groupTranspose (lastColumnUpper v).val = chartGL v := by

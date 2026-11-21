@@ -30,6 +30,11 @@ to vanish. Applying the isotropy premise produces a nonzero zero
 Choose \(z\) with \(\operatorname{polar}(r)(y,z)\ne 0\) by nondegeneracy.
 The vector \(z+((a-r(z))/\operatorname{polar}(r)(y,z))y\) has value \(a\).
 
+The same construction is exposed by `QuadraticIsometryReduction.represents_of_local`.
+It takes local representations of a prescribed scalar over every full completion,
+including the zero scalar. The isometry proof supplies those representations by
+transporting the scalar value of the chosen vector.
+
 For each form, the line spanned by a vector of value \(a\) has orthogonal
 complement given by the polar bilinear form. Their product is linearly
 equivalent to the original space by `Submodule.prodEquivOfIsCompl`, and

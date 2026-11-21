@@ -1,0 +1,5 @@
+# Central division-image atlas comparisons
+
+The structural central tangent condition passes to each actual image retraction after localization. Over an extended coefficient ring, the central atlas of the extended image has the same formal addition, order action and transition coordinates as the coefficient extension of the original central atlas. For the order formula, use the square of localization and coefficient maps on the ambient endomorphism and the extended inclusion and projection on the image. The identity-coordinate comparisons give an integral order isomorphism.
+
+For a globally coordinated image, the same construction compares its centralized image atlas with the usual cover atlas of its central formal law and division order. The order series localize from the global image, and the transition series are the identity in both atlases. These two comparisons apply to the reduced target and the fixed frame in the split comparison of Rapoport–Zink, (6.17) and Lemma 6.44, printed pp. 309–310.

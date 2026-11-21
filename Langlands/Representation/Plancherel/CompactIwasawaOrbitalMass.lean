@@ -72,8 +72,8 @@ private theorem measurableSet_compactConjugationPreimage :
   K.isOpen.measurableSet.preimage
     ((continuous_subtype_val.inv.mul_const a).mul continuous_subtype_val |>.const_mul a⁻¹).measurable
 
-/-- With radical Haar mass one on its compact intersection, the orbital test
-has exactly the displacement's Haar scale as its radical mass. -/
+/-- If the displacement pushforward scales the radical measure and the
+compact radical intersection has mass one, the preimage mass is that scale. -/
 theorem measure_compactConjugationPreimage_of_map
     (β : W ≃ₜ* W) (hβ : ∀ w : W, ((β w : W) : G) = a⁻¹ * (w : G) * a)
     (μW : Measure W) (hnorm : μW {w : W | (w : G) ∈ K} = 1) (c : ℝ≥0∞)

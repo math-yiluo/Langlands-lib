@@ -25,6 +25,14 @@ Q(f,h)=\int_{O(n)} (S f)(k)\,h(k)\,dk .
 It is the Library's `RealPrincipalSeriesDuality.pairing` precomposed with \(S\) in its first
 argument. Haar invariance and equivariance of \(S\) give the compact group identity.
 
+`RealStandardCompactDualPairingStatement` states the same invariance and separation for the
+explicit pairing attached to a supplied \(S\). Its hypotheses include a right-split
+forward map \(T\) with the Lie intertwining and disjoint-slot Fourier multiplier formulas
+used below. `realStandardCompactDualPairing` proves the identities for these maps, and
+`realStandardDualPairing` applies it to the maps supplied by `RealTemperedForm.chain`.
+An application that constructs the maps block by block can thus use the specific lift
+in its compact integral.
+
 ## Lie invariance and separation
 
 For each \(h \in I(\mathrm{dual})\), the proof constructs \(g \in I(ds)\) with

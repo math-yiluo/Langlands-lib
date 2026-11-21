@@ -45,6 +45,28 @@ def CyclicLocalInductionSupercuspidalCriterionStatement : Prop :=
       IsCyclicLocalInductionOf σ d π τ →
       GeneralLinear.IsSupercuspidal π
 
+open Langlands.Global Langlands.Global.AdelicFunctoriality
+open scoped NumberField FiniteExtension
+
+/-- The local criterion over the actual completions at a pair of finite places. -/
+def CyclicLocalInductionSupercuspidalAtCompletionStatement : Prop :=
+  ∀ (F : Type uF) (E : Type uE) [Field F] [NumberField F] [Field E] [NumberField E]
+    [Algebra F E] (v : FinitePlace F) (w : FinitePlace E) [w.asIdeal.LiesOver v.asIdeal],
+    let := FiniteCompletion.valuativeRel v
+    let := FiniteCompletion.valuativeRel w
+    have := FiniteCompletion.isNonarchimedeanLocalField v
+    have := FiniteCompletion.isNonarchimedeanLocalField w
+    ∀ (σ : FiniteCompletion E w ≃ₐ[FiniteCompletion F v] FiniteCompletion E w)
+      (d : ℕ), d.Prime → IsCyclicAlgebra σ d →
+      ∀ (r m : ℕ) (V : Type uV) [AddCommGroup V] [Module ℂ V]
+        (W : Type uW) [AddCommGroup W] [Module ℂ W]
+        (π : Representation ℂ (GeneralLinear (r + 1) (FiniteCompletion F v)) V)
+        (τ : Representation ℂ (GeneralLinear (m + 1) (FiniteCompletion E w)) W),
+        GeneralLinear.IsSupercuspidal τ →
+        HasTrivialGaloisStabilizer (FiniteCompletion F v) τ →
+        IsCyclicLocalInductionOf σ d π τ →
+        GeneralLinear.IsSupercuspidal π
+
 end Langlands.BaseChange
 
 namespace Langlands.Automorphic
@@ -161,21 +183,15 @@ private theorem isCyclicAlgebra_uniquePlace
   exact (map_zpow e σ i).symm.trans ((congrArg e hi).trans (e.apply_symm_apply τ))
 
 set_option maxHeartbeats 1000000 in
-/-- The unique-place consequence follows from matched induction existence,
-the local criterion, and cuspidal Euler rigidity. -/
-theorem cyclicWeakInductionSupercuspidal_of_matching
+/-- Matched induction, the criterion at finite completions and cuspidal
+Euler rigidity imply the unique-place consequence. -/
+theorem cyclicWeakInductionSupercuspidal_of_matching_at_completion
     (hMatch : CyclicInductionMatchingAtUniquePlaceStatement.{uF, uE, uV, uW})
-    (hLocal : BaseChange.CyclicLocalInductionSupercuspidalCriterionStatement.{uF, uE, uF, uE})
+    (hLocal : BaseChange.CyclicLocalInductionSupercuspidalAtCompletionStatement.{uF, uE, uF, uE})
     (hRig : CuspidalEulerConstituentRecoveryStatement.{uF, uV}) :
     CyclicWeakInductionSupercuspidalStatement.{uF, uE, uV, uW} := by
   intro F E _ _ _ _ _ _ _ _ hPrime σ hgen v w hw r m S T P hunit hP hconj hweak
   let : w.1.asIdeal.LiesOver v.asIdeal := w.2
-  let := FiniteCompletion.valuativeRel v
-  let := FiniteCompletion.valuativeRel w.1
-  have := FiniteCompletion.isNonarchimedeanLocalField v
-  have := FiniteCompletion.isNonarchimedeanLocalField w.1
-  have : CharZero (FiniteCompletion F v) :=
-    charZero_of_injective_algebraMap (algebraMap F (FiniteCompletion F v)).injective
   have hP' := (P.localComponent w.1).isSupercuspidal_iff_representation.mp hP
   have hreg (i : ℕ) (hi : 0 < i) (hdeg : i < Module.finrank F E) :
       ¬ T.isoClass.IsGaloisStable (σ ^ i) := by
@@ -188,7 +204,7 @@ theorem cyclicWeakInductionSupercuspidal_of_matching
       exact ⟨U, Q, hTU, hQ.choose, hne⟩)
   obtain ⟨U, Q, hweak', hlocal⟩ :=
     hMatch F E hPrime σ hgen v w hw r m T P hweak.rank_eq hunit hP hreg
-  have hQ := hLocal (FiniteCompletion F v) (FiniteCompletion E w.1)
+  have hQ := hLocal F E v w.1
     (uniquePlaceCompletionAutEquiv w hw σ) (Module.finrank F E) hPrime
     (isCyclicAlgebra_uniquePlace w hw σ hgen) r m _ _
     (Q.localComponent v).representation (P.localComponent w.1).representation hP'.2 hstab hlocal
@@ -196,6 +212,22 @@ theorem cyclicWeakInductionSupercuspidal_of_matching
   have hclasses := weakInductionUniqueness_of_cuspidalEulerConstituentRecovery hRig
     F E r m U.isoClass S.isoClass T.isoClass hweak' hweak
   exact ⟨U, Q, hclasses, (Q.localComponent v).isSupercuspidal_iff_representation.mpr ⟨hψ.1, hQ⟩⟩
+
+/-- The criterion over local fields specializes to the actual completions. -/
+theorem cyclicWeakInductionSupercuspidal_of_matching
+    (hMatch : CyclicInductionMatchingAtUniquePlaceStatement.{uF, uE, uV, uW})
+    (hLocal : BaseChange.CyclicLocalInductionSupercuspidalCriterionStatement.{uF, uE, uF, uE})
+    (hRig : CuspidalEulerConstituentRecoveryStatement.{uF, uV}) :
+    CyclicWeakInductionSupercuspidalStatement.{uF, uE, uV, uW} := by
+  apply cyclicWeakInductionSupercuspidal_of_matching_at_completion hMatch ?_ hRig
+  intro F E _ _ _ _ _ v w _
+  let := FiniteCompletion.valuativeRel v
+  let := FiniteCompletion.valuativeRel w
+  have := FiniteCompletion.isNonarchimedeanLocalField v
+  have := FiniteCompletion.isNonarchimedeanLocalField w
+  have : CharZero (FiniteCompletion F v) :=
+    charZero_of_injective_algebraMap (algebraMap F (FiniteCompletion F v)).injective
+  exact hLocal (FiniteCompletion F v) (FiniteCompletion E w)
 
 /-- The unrestricted statement specializes to the totally complex input by
 introducing the additional base-field instance. -/

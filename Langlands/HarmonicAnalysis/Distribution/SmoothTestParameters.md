@@ -11,8 +11,10 @@ that support, so the same continuity holds in the derivative
 coordinates of the fixed-support test space.
 
 The integral over \([0,1]\) of the first-coordinate derivative at
-\((ut,x)\) is a jointly smooth extension of the divided difference
-of \(h(t,x)\) from \(t=0\). At zero it is the first-coordinate
+\((ut,x)\) is jointly smooth. It uses Mathlib's interval integral,
+which vanishes identically for an incomplete target space. For a
+complete target space it extends the time divided difference of
+\(h(t,x)\) smoothly through \(t=0\). At zero it is the first-coordinate
 derivative. Multiplying by \(t\) gives \(h(t,x)-h(0,x)\), by rescaling
 the interval integral and applying the fundamental theorem of
 calculus.

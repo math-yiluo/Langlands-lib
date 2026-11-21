@@ -1,0 +1,9 @@
+# Transpose-odd vanishing on the full real matrix space
+
+A centered coordinate box in a real normed space is the image under a supplied continuous linear coordinate equivalence of a product of symmetric open intervals. The preimage under that equivalence is the original box. Every open neighborhood of zero contains such a box of positive radius, because the product of symmetric intervals is an open ball for the supremum norm in the coordinate space.
+
+Let a conjugation-invariant, transpose-odd distribution vanish above the spectral label of a matrix \(A\). Take the real spectral stratum chart at \(A\). On a sufficiently small chart product, a point off the zero normal section has higher label, so the normalized distribution vanishes off that section. Shrink to a product contained in a compact subset of the original product to obtain finite transverse order. Within this product choose a centered coordinate box in the orbit direction and a neighborhood in the semisimple direction. Shrink the latter so that the diagonal pairs stay in the similarity recovery neighborhood and the orbit tangent image stays equal to the tangent at \(A\).
+
+The local coefficient descent theorem gives zero of the normalized restriction on the resulting product. Multiplication by the chart Jacobian recovers the raw restriction, and chart transport gives vanishing on an open neighborhood of \(A\). The maximal spectral label argument on the support now gives zero of the full distribution. Applying this vanishing to a conjugation-invariant distribution minus its transpose transport proves transpose invariance.
+
+This is the internal full-matrix support descent used to prove Aizenbud and Gourevitch's real general linear transpose invariance result. The passage to tests supported on the invertible matrices uses the separate determinant localization theorem.

@@ -94,3 +94,5 @@ For each of the finitely many subsets `S` of the simple roots, `exists_list_prod
 `exists_bound_list` (with the empty word) give a constant `C_S`. The final constant is
 `(∑_S C_S) · ((r+1)^(2M))^r · (2(r+1)²)^N`, and the bound at `torus y · k` uses the subset
 `S` determined by `y`.
+
+`gauge_bound_of_derivative_growth` takes the common polynomial growth exponent `N` as an input. Its gauge bound uses the exponential growth exponent `2N` in the sum of the absolute logarithmic coordinates. This choice holds simultaneously for every regular coefficient satisfying the bound of degree `N`, with constants allowed to depend on the coefficient and the decay order.

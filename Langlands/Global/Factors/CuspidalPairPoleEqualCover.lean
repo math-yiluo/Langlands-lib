@@ -20,10 +20,10 @@ open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents localCla
 open RankinSelbergGlobal RankinSelbergGlobal.EqualAnalytic
 open LocalFactor.Archimedean
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+local instance equalCoverSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     AlgebraicGeometry.IsAffine (Scheme F n).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme _ _
-local instance (F : Type u) [Field F] (n : ℕ) :
+local instance equalCoverSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
     AlgebraicGeometry.Smooth (Scheme F n).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement _ _
 
@@ -172,15 +172,15 @@ section Transfer
 
 variable {F : Type u} [Field F] [NumberField F]
 
-local instance (n : ℕ) : AddCommGroup (Automorphic.RationalInvariantFunctions F n) :=
+local instance equalCoverRationalInvariantFunctions (n : ℕ) : AddCommGroup (Automorphic.RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (Automorphic.ContinuousRationalFunctions F n) :=
+local instance equalCoverContinuousRationalFunctions (n : ℕ) : AddCommGroup (Automorphic.ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (Automorphic.FiniteSmoothRationalFunctions F n) :=
+local instance equalCoverFiniteSmoothRationalFunctions (n : ℕ) : AddCommGroup (Automorphic.FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (Automorphic.AutomorphicForms F n) :=
+local instance equalCoverAutomorphicForms (n : ℕ) : AddCommGroup (Automorphic.AutomorphicForms F n) :=
   Submodule.addCommGroup _
-local instance {n : ℕ} {v : FinitePlace F} (A : LocalRealization F n v) :
+local instance equalCoverLocalSpace {n : ℕ} {v : FinitePlace F} (A : LocalRealization F n v) :
     AddCommGroup A.Space := Submodule.addCommGroup _
 
 private theorem local_component_of_isoClass_eq {r : ℕ} {v : FinitePlace F}

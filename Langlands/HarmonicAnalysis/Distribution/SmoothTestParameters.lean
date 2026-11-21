@@ -92,7 +92,8 @@ theorem continuous_compactTestFamily {K : Compacts E} {s : Set P} {h : P × E �
   · rw [hout u hx, hout t hx, dist_self]
     exact dist_nonneg
 
-/-- The smooth extension of the divided difference in the first coordinate. -/
+/-- Integrate the time derivative over the rescaled unit interval. For complete
+`F`, this extends the time divided difference smoothly through time zero. -/
 def smoothTimeDifferenceQuotient (h : ℝ × E → F) (p : ℝ × E) : F :=
   ∫ u in (0 : ℝ)..1, fderiv ℝ h (p.1 * u, p.2) (1, 0)
 

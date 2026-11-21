@@ -44,3 +44,5 @@ inclusion.
 ## Smooth lower inputs
 
 `CompactWhittakerSmoothRegularityStatement` applies the same smooth coefficient construction to every vector of the smooth position principal series. It proves regularity for all right derivative words and a common polynomial height exponent. The proof builds the derived source vector one direction at a time. The Whittaker law follows from multiplication in the translation action and the covariance of the form. The compact functional growth theorem gives a single exponent for all the resulting source vectors. This is the smooth-input estimate used for the Godement argument of Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2, pp. 47–48.
+
+`exists_commonExponent_compactWhittakerSmoothRegularity` makes the order of choices explicit. One exponent works for all smooth source vectors and all right derivative words. The bounds retain a constant for each vector and word.

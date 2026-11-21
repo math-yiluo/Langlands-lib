@@ -169,7 +169,12 @@ RealTaylorLeftPolynomialStatement → RealLinkedJacquetFunctionalStatement →
 RealLinkedQuotientGrowthStatement`.
 
 Fix `n` and `ds` satisfying the hypotheses. Take `ℓ, a, e, p, k` from the Jacquet functional
-statement. The steps follow.
+statement. From this point on, no rank, ordering or linkage hypothesis on the block list is
+used. `RealLinkedJacquetFunctional.quotientGrowth_of_functional` supplies that part of the
+argument: it starts with a given nonzero functional satisfying the Jacquet, exponent-shift
+and lower-root conditions, and concludes the same slow-growth bound for a proper quotient of
+`I(ds)`. This internal refactor makes the Frobenius and growth argument available when a
+functional is produced in another way. The steps follow.
 
 1. **The Frobenius map.** `I(ds)` is a real `(𝔤, K)`-module (`isRealGKModule_realStandardModule`).
    As in the proof of `realJacquetFrobenius`, each `B v = frobFun ρ ℓ a e v` lies in the

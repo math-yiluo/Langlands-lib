@@ -1,0 +1,5 @@
+# Generation by pure cuspidal vectors at a finite set of places
+
+`poleEqualPureSpan` is the complex span in the actual cuspidal space of pure tensor vectors with the reference factors outside the retained finite set. Enlarging the set preserves the span inclusion, since the transition adjoins the specified reference vectors. The span consists of vectors spherical outside the retained set.
+
+`exists_mem_poleEqualPureSpan` places any actual cuspidal vector in such a span after enlarging any initial finite set. Under the all-place tensor equivalence, a simple tensor has its finite factor represented at some stage of the restricted tensor product. Enlarge that stage to contain the initial set and the exceptional places. Ordinary tensor induction in the two factors proves membership in the indicated span, and a union of finite sets handles addition of members. This is an internal derivation from the Library's restricted tensor construction and all-place tensor equivalence. It allows pure-test normalizations to be extended to given cuspidal vectors.

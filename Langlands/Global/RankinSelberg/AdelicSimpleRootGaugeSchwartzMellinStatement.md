@@ -24,8 +24,8 @@ adjacent diagonal ratios. The last-row Schwartz factor supplies decay in the
 remaining scalar diagonal coordinate.
 
 This is derived internal infrastructure for `WhittakerSchwartzGaugeStatement`,
-motivated by Jacquet and Shalika, *On Euler products and the classification
-of automorphic forms I*, *Amer. J. Math.* 103 (1981), §4.5, printed pp. 550–551
+motivated by Jacquet and Shalika, *On Euler Products and the Classification
+of Automorphic Representations I*, *Amer. J. Math.* 103 (1981), §4.5, printed pp. 550–551
 (source `provided-6d5abbbab517cf7269b6ab243e0d7a101940980b658f88cb722e13748f802ad4`).
 Page 550 recalls the simple-root gauge bound and introduces the weighted
 two-Whittaker integral. Page 551 reduces the justification of unfolding to

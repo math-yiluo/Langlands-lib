@@ -1,7 +1,9 @@
 import Langlands.Global.RankinSelberg.RealStandardIntertwinerPairLReduction
 import Langlands.Representation.Archimedean.RealCharacterCrossing
+import Langlands.Representation.Archimedean.RealDiscretePresentation
 import Langlands.Representation.Archimedean.RealGenericUnitaryInducingData
 import Langlands.Representation.Archimedean.RealStandardHermitianDual
+import Langlands.Representation.Archimedean.RealUnlinkedStandardPermutation
 
 /-! # Hermitian pairs in real standard parameters -/
 
@@ -17,6 +19,7 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 
 open Langlands.LocalFactor.Archimedean
 open Langlands.Global.RankinSelbergGlobal.RealLocalJacquet
+open InductionStages (KFin)
 
 private def reflectExponent (x : RealBlock) : RealBlock :=
   realBlockTwist (-2 * realBlockExponent x) x
@@ -243,5 +246,74 @@ def RealStandardHermitianPairDecompositionStatement : Prop :=
 theorem realStandardHermitianPairDecomposition : RealStandardHermitianPairDecompositionStatement := by
   intro hunique n ds hrank hpos hirr hgen hunit
   exact hermitian_factors_of_perm ds hpos (reflect_perm hunique hrank hpos hirr hgen hunit)
+
+private theorem unitary_discrete_twist_weight_pos {δ : RealBlock}
+    (hδ : IsRealUnitaryDiscreteBlock δ) {a : ℝ} {d : ComplexCharacterData}
+    (hd : .induced d = realBlockTwist a δ) : 0 < d.weight := by
+  cases δ with
+  | character c => cases hd
+  | induced e =>
+    cases hd
+    exact hδ.2
+
+private theorem reflect_twist {δ : RealBlock} (hδ : realBlockExponent δ = 0) (a : ℝ) :
+    reflectExponent (realBlockTwist a δ) = realBlockTwist (-a) δ := by
+  rw [reflectExponent, realBlockExponent_twist, hδ, zero_add, twist_twist]
+  congr 1
+  ring
+
+private theorem hermitian_factor_normalized_dual_perm {A : List RealBlock}
+    (hA : IsRealHermitianInducingFactor A) :
+    ((A.map realHermitianDualBlock).flatMap realBlockNormalize).Perm A := by
+  obtain ⟨δ, hδ, rfl | ⟨a, _, rfl⟩⟩ := hA
+  · have hpos (d : ComplexCharacterData) (hd : .induced d ∈ [δ]) : 0 < d.weight := by
+      rw [List.mem_singleton] at hd
+      exact unitary_discrete_twist_weight_pos hδ (a := 0)
+        (by simpa only [twist_zero] using hd)
+    rw [normalize_map_hermitianDual _ hpos, List.map_cons, List.map_nil]
+    simp [reflectExponent, hδ.1, twist_zero]
+  · have hpos (d : ComplexCharacterData)
+        (hd : .induced d ∈ [realBlockTwist a δ, realBlockTwist (-a) δ]) :
+        0 < d.weight := by
+      simp only [List.mem_cons, List.not_mem_nil, or_false] at hd
+      rcases hd with hd | hd
+      · exact unitary_discrete_twist_weight_pos hδ hd
+      · exact unitary_discrete_twist_weight_pos hδ hd
+    rw [normalize_map_hermitianDual _ hpos]
+    simp only [List.map_cons, List.map_nil, reflect_twist hδ.1, neg_neg]
+    exact List.Perm.swap _ _ []
+
+/-- An irreducible, pairwise unlinked Hermitian inducing factor is equivalent
+to the standard module of its Hermitian-dual block list. -/
+def RealHermitianInducingFactorDualEquivalenceStatement : Prop :=
+  ∀ A : List RealBlock, IsRealHermitianInducingFactor A → A.Pairwise AreRealBlocksUnlinked →
+    let n := realRank A
+    let dual := A.map realHermitianDualBlock
+    IsIrreducibleGKModule (realStandardRep n A) (realStandardLie n A) →
+      ∃ E : KFin n A ≃ₗ[ℂ] KFin n dual,
+        IsRealStandardIntertwiner n (realStandardRep n dual) (realStandardLie n dual) A
+          E.toLinearMap
+
+theorem realHermitianInducingFactor_dualEquiv :
+    RealHermitianInducingFactorDualEquivalenceStatement := by
+  intro A hA hu
+  dsimp only
+  intro hirr
+  let n := realRank A
+  let dual := A.map realHermitianDualBlock
+  let normalized := dual.flatMap realBlockNormalize
+  have hperm : normalized.Perm A := hermitian_factor_normalized_dual_perm hA
+  have hrank : realRank normalized = n := realRank_perm hperm
+  have hpair := hperm.symm.pairwise hu (fun h => h.symm)
+  have hT := realUnlinkedStandardPermutation n normalized A hrank hpair hperm
+  obtain ⟨T, hTi, hI⟩ := hT.of_eq (realStandardModule_flatMap_normalize n dual) rfl
+  have hRankDual : realRank dual = n := (realRank_flatMap_normalize dual).symm.trans hrank
+  let hnontrivial := realStandardNontrivial n dual hRankDual
+  have hT0 : T ≠ 0 := by
+    obtain ⟨f, hf⟩ := exists_ne (0 : KFin n dual)
+    intro hzero
+    exact hf (hTi (by simp [hzero]))
+  have hbij : Function.Bijective T := ⟨hTi, hI.surjective hirr hT0⟩
+  exact ⟨(LinearEquiv.ofBijective T hbij).symm, RealDiscretePresentation.isGKMap_symm hI hbij⟩
 
 end Langlands.Archimedean

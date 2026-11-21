@@ -1,0 +1,9 @@
+# Support descent by real matrix spectral labels
+
+For real matrices of a fixed size, the spectral label orders the number of distinct complex eigenvalues and the sum of shifted power ranks lexicographically. The label of a matrix is a lower bound for labels of sufficiently nearby matrices. Suppose an open chart is centered at the matrix on a zero section, and nearby matrices of the same label pull back to that section. A nearby point of the chart with nonzero normal coordinate then has strictly higher label. The proof pulls the spectral comparison and the equal-label condition back through the chart and uses its left inverse on the source. Intersecting this neighborhood with any prescribed neighborhood of the chart center and using the product neighborhood basis gives open factors around the center. The off-zero part of their product maps into the strict superlevel.
+
+There are finitely many labels because both coordinates are bounded. If the support of a smooth distribution is nonempty, choose a point in the support with maximal label. The distribution vanishes on the open complement of its support and hence on the strict superlevel of this label. A local vanishing criterion that applies at each center under this strict-superlevel hypothesis gives an open neighborhood of the chosen point where the distribution vanishes. This contradicts membership in the support, so the distribution is zero.
+
+For a smooth chart on normed spaces, the image of an open product contained in its source is open. If the restricted coordinate distribution on that product is zero, the chart test transport result gives vanishing on the image. The image contains the chart value of each point of the product, in particular its chosen center.
+
+These are internal consequences of the real spectral chart, smooth distribution locality, and chart test transport results. The global descent assumes local vanishing at every center under the strict-superlevel hypothesis.

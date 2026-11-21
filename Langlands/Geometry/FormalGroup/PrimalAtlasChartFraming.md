@@ -1,0 +1,5 @@
+# Projection of the local rigidifier on a chart test
+
+On a test algebra of the common principal cover, extend the ambient local quasi-isogeny to that algebra. The extended source and target retractions come from the image atlases, and the extended rigidifier intertwines their projectors because it commutes with the split order. Restricting with the retractions gives an actual local quasi-isogeny on the division images. The action of each division-order element is the restriction of the ambient action of that element in the division factor, which proves order-linearity of the projected section.
+
+The structural central tangent condition extends to the test algebra. The central law on its division image and the test law of the centralized atlas have the same addition and order series, so the identity coordinates give an integral order isomorphism. These calculations give the local chart maps of the primal division quasi-isogeny in Rapoport–Zink, (6.17) and Lemma 6.44, printed pp. 309–310.

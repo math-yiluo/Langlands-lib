@@ -1,0 +1,7 @@
+# Exponential strip growth for the real rank-one ordinary local integral
+
+`realRankZeroStripGrowth` gives an entire normalization of exponential strip growth for the actual real \(\mathrm{GL}_1\times\mathrm{GL}_1\) ordinary integral with a Schwartz test. The two Whittaker functions are scalar multiples of the characters on the determinant. The normalization uses the reciprocal of the prescribed pair L-denominator and satisfies the original integral identity on a right half-plane.
+
+On a positive closed real-part interval the absolute Tate integrand is bounded by the sum of its values in norm at the two real endpoints, where it is integrable. The reciprocal Gamma bound then gives exponential growth for the normalized function on the part of a strip with real part at least one half. On the other part the real Tate functional equation reflects the spectral parameter and replaces the test by its inverse Fourier transform. The phase has norm one, and the reflected spectral parameter lies in the positive range with the same absolute height. These two bounds give the scalar estimate. The exact rank-one quotient integral formula transfers the estimate after its spectral shift and the Haar and coefficient scalars. Right-half-plane nonvanishing of the reciprocal denominator gives the ordinary normalization identity.
+
+This is the strip-growth deduction for the real Tate case of Hervé Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §2.1, (2.2), (2.6) and Theorem 2.1, author-version pp. 5–7.

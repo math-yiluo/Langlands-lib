@@ -166,15 +166,24 @@ theorem frobLin_codRestrict_rep
 
 end Frobenius
 
-end RealLinkedJacquetFunctional
-
-open RealJacquetFrobenius RealLinkedJacquetFunctional in
-/-- **Slow growth of a quotient from the three statements.** -/
-theorem realLinkedQuotientGrowth_of_split (hS1 : RealLeftPolynomialGrowthStatement)
-    (hS3 : RealTaylorLeftPolynomialStatement) (hS2 : RealLinkedJacquetFunctionalStatement) :
-    RealLinkedQuotientGrowthStatement := by
-  intro n ds hrank hord hlink
-  obtain ⟨ℓ, a, e, p, k, hp, hℓ0, hℓ, ha, hY⟩ := hS2 n ds hrank hord hlink
+/-- Once a Jacquet functional satisfies the exponent shift and the lower-root power
+condition, the standard module has a proper quotient of slow growth. No ordering
+hypothesis on `ds` is needed for this step. -/
+theorem quotientGrowth_of_functional (hS1 : RealLeftPolynomialGrowthStatement)
+    (hS3 : RealTaylorLeftPolynomialStatement) {n : ℕ} {ds : List RealBlock}
+    {ℓ : kFiniteFunctions (realStandardModule n ds) (unitaryCompact ℝ n) →ₗ[ℂ] ℂ}
+    {a : Fin n → ℂ} {e : Fin n → Fin 2} {p k : ℕ} {hp : p + 1 < n}
+    (hℓ0 : ℓ ≠ 0)
+    (hℓ : IsRealJacquetFunctional n (realStandardRep n ds) (realStandardLie n ds) ℓ a e)
+    (ha : a ⟨p, Nat.lt_of_succ_lt hp⟩ - a ⟨p + 1, hp⟩ = 1 - (k : ℂ))
+    (hY : ∀ v, ℓ ((realStandardLie n ds (1 ⊗ₜ lowerRootMatrix n p hp) ^ k) v) = 0) :
+    ∃ W : Submodule ℂ (kFiniteFunctions (realStandardModule n ds) (unitaryCompact ℝ n)),
+      IsGKSubmodule (realStandardRep n ds) (realStandardLie n ds) W ∧ W ≠ ⊤ ∧
+      ∃ C : ℝ, ∀ d : ℕ,
+        (Module.finrank ℂ ((degreeFiltration ℂ (ℂ ⊗[ℝ] Matrix (Fin n) (Fin n) ℝ) d).map
+          (LinearMap.llcomp ℂ _ _ _ W.mkQ ∘ₗ
+            (envelopingAction (realStandardLie n ds)).toLinearMap)) : ℝ) ≤
+          C * ((d : ℝ) + 1) ^ (n * (n - 1) - 1) := by
   have hgk := isRealGKModule_realStandardModule n ds
   have hsign : ∀ (j : Fin n)
       (v : kFiniteFunctions (realStandardModule n ds) (unitaryCompact ℝ n)),
@@ -236,5 +245,15 @@ theorem realLinkedQuotientGrowth_of_split (hS1 : RealLeftPolynomialGrowthStateme
       congrFun (congrArg Subtype.val (LinearMap.mem_ker.1 hv)) 1
     rw [← frobFun_apply_one hsign v, h0, LinearMap.zero_apply]
   · exact (Nat.cast_le.mpr (finrank_quotient_ker_le _ _ B hlie _)).trans (hC d)
+
+end RealLinkedJacquetFunctional
+
+/-- **Slow growth of a quotient from the three statements.** -/
+theorem realLinkedQuotientGrowth_of_split (hS1 : RealLeftPolynomialGrowthStatement)
+    (hS3 : RealTaylorLeftPolynomialStatement) (hS2 : RealLinkedJacquetFunctionalStatement) :
+    RealLinkedQuotientGrowthStatement := by
+  intro n ds hrank hord hlink
+  obtain ⟨ℓ, a, e, p, k, hp, hℓ0, hℓ, ha, hY⟩ := hS2 n ds hrank hord hlink
+  exact RealLinkedJacquetFunctional.quotientGrowth_of_functional hS1 hS3 hℓ0 hℓ ha hY
 
 end Langlands.Archimedean

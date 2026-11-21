@@ -1,0 +1,9 @@
+# The lattices of a simple stratum
+
+Source: C. J. Bushnell and P. C. Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), (3.1.6)–(3.1.8) and the remarks on defining sequences and filtered lattices, printed pp. 90–91 (PDF pp. 102–103). Defining sequences are from (2.4.2), printed pp. 65–66 (PDF pp. 77–78).
+
+The construction is **relative to a defining sequence**, as in the remark after (3.1.7). `Stratum.DefiningSequenceChoice S` is a published-predicate defining sequence for `S` whose first element is the actual input element `β = S.b`. Its `tail` lists only the successive approximation elements, in order. `Stratum.IsCriticalApproximation S T` is notation for the simple equivalent `T = [𝔄,n,r,γ]` used at a finite critical depth `r`. These are input interfaces for the induction, not claims about its result.
+
+`simpleStratumLattices L n β tail` computes both `ℌ(β,𝔄)` and `𝔍(β,𝔄)` in the common order given by `L`. Write `𝔅_β = 𝔄 ∩ B_β`, implemented by the published `centralizerLattice L β 0`. At the terminal (minimal) element, the lattices are `𝔅_β + 𝔓^{⌊n/2⌋+1}` and `𝔅_β + 𝔓^{⌊(n+1)/2⌋}`, including the scalar case. At a step with next element `γ` and critical depth `r = −k₀(β,𝔄)`, they are `𝔅_β + (ℌ(γ,𝔄) ∩ 𝔓^{⌊r/2⌋+1})` and `𝔅_β + (𝔍(γ,𝔄) ∩ 𝔓^{⌊(r+1)/2⌋})`. These are submodule sums and intersections over the order's base ring. `simpleCriticalDepth` represents `r` including `∞`; `finiteCriticalDepth` extracts the integer at a nonterminal step (its default value `n` at `∞` is not used by any valid step). The underlying recursion is total on arbitrary lists; the source interpretation is for the tail of a `DefiningSequenceChoice`.
+
+`simpleHLayer` and `simpleJLayer` intersect the corresponding lattice with `𝔓^k` for natural `k`, as on printed p. 91. This module does not assume multiplicative closure or independence from the defining sequence. Those are substantive conclusions of (3.1.9)–(3.1.13).

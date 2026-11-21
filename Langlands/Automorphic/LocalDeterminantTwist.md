@@ -1,0 +1,9 @@
+# Actual local components of finite-order determinant twists
+
+`LocalFiniteOrderDeterminantTwistStatement` concerns two full cuspidal realizations of the same positive rank over a number field. It takes their actual spectral presentations, a finite place with irreducible components of both presentations, and the finite-order determinant-twist relation on the full cuspidal classes. The first component twisted by the finite local Hecke character through the matrix determinant is equivalent to the second. The field and the two presentation universes are independent.
+
+The class relation gives the intertwining equations on the supplied full realizations. Restricting the finite adelic equation along the finite local inclusion gives an equivalence of their full local restrictions with the prescribed twist. The equality `finiteLocalDeterminant_eq_finiteComponent_det` identifies the character of this twist. The first local component embeds after twisting, and the second embeds directly. Both actions are irreducible, so the comparison of irreducible components in one full realization supplies their equivalence.
+
+For a finite abelian extension, `exists_localDeterminantSelfTwist_of_normKernel` applies this result to a global self-twist. Given `LocalGlobalNormImageStatement`, the kernel of the restricted Hecke character is the image of the norm on the unit groups of the actual completions. The proof passes between representatives of idele classes and the actual quotient norm, then restricts along the finite local class inclusion. The resulting character and equivalence give the determinant self-twist clause of `IsCyclicLocalInductionOf`.
+
+The comparison is derived from the full determinant-twist equations and the actual finite component interface. Its application takes the global self-twist of Henniart (2012), Theorem 3(ii), printed p. 5, to the local self-twist of Theorem 6(ii), printed p. 7.

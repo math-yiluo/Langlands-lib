@@ -1,0 +1,7 @@
+# Rank induction for the complex equal-rank local equation
+
+This internal reduction implements the order of the rank induction in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2–8.3, pp. 54–60, for the clauses of the Library’s local equal-rank target. The base is the `GL₁(ℂ) × GL₁(ℂ)` case from complex Tate theory. Given the equal-rank equation at size `r + 1`, the adjacent expansion gives the equation at sizes `r + 2` and `r + 1`. The equal-rank expansion then gives the equation at size `r + 2`.
+
+In each step the first inducing list is nonempty by its length. Splitting it into its first entry and tail puts the paired expansion in the form used by the preceding finite-sum lemmas. Those lemmas supply the two meromorphic continuations and the equation with its exact central sign. Absolute convergence gives the holomorphy clauses. Induction on `r` and the Library’s equivalence between the rank-indexed statements and the all-rank target give `ComplexLocalJacquetInductionReductionStatement`.
+
+The base case uses `complexLocalEqualRankZero`, the Library’s proof from complex Tate theory. Each of the two retained data statements requires absolute convergence and matched, signed half-plane expansions for every pair of Whittaker-model vectors in the corresponding step. The matrix continuations and their equations occur in the expansion premises. The unfolding, analytic estimates, compact projections and passage to arbitrary Schwartz tests used to establish those premises require separate proofs.

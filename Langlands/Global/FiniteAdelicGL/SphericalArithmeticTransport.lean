@@ -38,7 +38,8 @@ theorem residueCardinality_finitePlaceEquiv (a : L ≃+* K) (v : FinitePlace K) 
       map_add' := fun x y => Subtype.ext (e.map_add (x : FiniteCompletion L w) y) }
   exact Nat.card_congr (IsLocalRing.ResidueField.mapEquiv integersEquiv).toEquiv
 
-private theorem completion_uniformizer_value (v : FinitePlace K) :
+/-- The canonical uniformizer of the completion has valuation `exp (-1)`. -/
+theorem completion_uniformizer_value (v : FinitePlace K) :
     (Valued.v : Valuation (FiniteCompletion K v) ℤᵐ⁰)
       ((padicField v).canonicalTopologicalData.uniformizerUnit : FiniteCompletion K v) =
         WithZero.exp (-1) := by

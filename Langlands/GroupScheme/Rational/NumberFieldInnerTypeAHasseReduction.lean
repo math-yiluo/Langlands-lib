@@ -22,7 +22,9 @@ set_option backward.isDefEq.respectTransparency.types false
 
 namespace CentralSimpleUnits
 
-private theorem exists_finiteGalois_over_baseChange
+/-- A finite field cover admits a common coefficient field finite Galois over the
+new base, through the two compatible inclusions into a tensor quotient. -/
+theorem exists_finiteGalois_over_baseChange
     (F K L : Type u) [Field F] [Field K] [Field L] [Algebra F K] [Algebra F L]
     [CharZero K] [FiniteDimensional F L] :
     ∃ (M : Type u) (_ : Field M) (_ : Algebra K M)

@@ -1,0 +1,7 @@
+# Unnormalized Clifford coordinates of reflection products
+
+`reversionNorm` is the product of the reversion of a tensor Clifford element with the element itself. Extending the coefficient algebra commutes with this product. Multiplication by a coefficient scalar multiplies the norm by the square of the scalar, and preserves the grading and vector intertwining equations when they vanish.
+
+Over a coefficient field, `exists_pair_of_even_reflectionWord` gives an even Clifford unit and its determinant-one matrix action from an even reflection word. Its reversion norm is the product of the quadratic values of the reflection vectors. Conversely, for a regular base-extended form, `exists_even_reflectionWord_of_pair` treats a tensor unit with the same grading and action equations, determinant one, and scalar reversion norm. The unit induces an isometry since conjugation preserves the squares of Clifford vectors. Cartan–Dieudonné gives an even reflection word for this action. The even Clifford centralizer shows that the two lifts differ by a nonzero scalar, so the value product of the word is the given norm times a nonzero square.
+
+This is the coefficient-coordinate version of the Clifford calculation underlying the spinor norm in Kneser, *Lectures on Galois Cohomology of Classical Groups*, §5.11, p. 99. The normalization is deferred so the calculation applies to a tensor unit whose norm is any scalar.

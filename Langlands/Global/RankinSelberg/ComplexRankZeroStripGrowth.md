@@ -1,0 +1,7 @@
+# Exponential strip growth for the complex rank-one ordinary local integral
+
+`complexRankZeroStripGrowth` gives an entire normalization of exponential strip growth for the actual complex \(\mathrm{GL}_1\times\mathrm{GL}_1\) ordinary integral with a Schwartz test. The two Whittaker functions are scalar multiples of the characters on the determinant. The normalization uses the reciprocal of the prescribed pair L-denominator and satisfies the ordinary integral identity on a right half-plane.
+
+The scalar complex Tate integral is twice the singleton additive product Tate integral. Evaluation identifies the singleton product of complex planes with the complex plane and preserves Lebesgue measure. Tate’s self-dual measure for the trace character is twice this Lebesgue measure. The two entire normalizations, with this factor two included in the product, agree on the right by their integral formulas and hence everywhere by the identity theorem. The product Tate strip bound therefore applies to the scalar normalization. The exact rank-one quotient integral formula then transfers the bound after its spectral shift and Haar and coefficient scalars. Right-half-plane nonvanishing of the reciprocal denominator gives the required ordinary normalization identity.
+
+This is the strip-growth deduction for the complex Tate case of Hervé Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §2.1 and the case of two rank-one groups in Theorem 2.1, author-version pp. 5–7, with the diagonal Tate procedure of §7.1, p. 44.

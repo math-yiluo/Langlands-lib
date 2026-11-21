@@ -1,0 +1,5 @@
+# Local-to-global representation of spinor norms by two values
+
+Let `q` be a finite-dimensional quadratic form of dimension at least four over a number field, with nondegenerate polar form. Suppose a scalar `a` has, at every actual infinite completion, the square class of the product of values of an even list of nonisotropic vectors. For each vector `x` of nonzero value there is a global `y` with `q y = a * q x`. Thus the class of `a` is a product of two values modulo squares, with the product `q x * q y = a * (q x)^2`.
+
+At complex places every scalar multiplier is a square. At real places a nonnegative multiplier is a square. A negative multiplier forces the even list to contain values of both signs, so a vector of the appropriate sign can be scaled to represent the desired value. The number-field quadratic representation theorem in dimension at least four then gives the global vector. This uses the archimedean representation argument in Kneser, *Lectures on Galois Cohomology of Classical Groups* (1969), §5.9, pp. 93–94, and the spinor-norm interpretation in §5.11, p. 99.

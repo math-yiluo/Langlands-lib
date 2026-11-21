@@ -1,0 +1,5 @@
+# Projection to the actual scalar special orthogonal group
+
+Let `q` be a scalar quadratic-form presentation of positive dimension over a characteristic-zero field, and use its polar matrix as the matrix of the quadratic form for the Clifford group. The standard basis and the tensor base-change isometry identify the Clifford vector action with a column-vector matrix. Since the actual scalar norm-one isometry scheme is expressed in row coordinates, its column action is the inverse transpose of its usual coordinate matrix.
+
+The column chart is injective. Its image over every commutative coefficient algebra is exactly the determinant-one isometries of the scalar-extended form. The natural map from Clifford lift pairs into this image induces an actual group-scheme homomorphism to the norm-one isometry group. Its affine coefficient matrix is the vector action of the lift. This is the projection appearing in the scalar spinor-norm sequence discussed by Kneser, *Lectures on Galois Cohomology of Classical Groups* (1969), §5.11, p. 99.

@@ -12,7 +12,7 @@ set_option autoImplicit false
 
 namespace Langlands
 
-private theorem exists_subquotient_of_coordinates
+private theorem exists_nonzero_subquotient_of_coordinates
     {𝕜 : Type*} [Field 𝕜] {α ι V E Q : Type*}
     [AddCommGroup V] [Module 𝕜 V] [AddCommGroup E] [Module 𝕜 E]
     [AddCommGroup Q] [Module 𝕜 Q]
@@ -22,10 +22,9 @@ private theorem exists_subquotient_of_coordinates
     (hcoord : ∀ a z j, coordinates (act a z) j = source a (coordinates z j))
     (q : E →ₗ[𝕜] Q) (hq : ∀ a z, q (act a z) = target a (q z))
     {J : Submodule 𝕜 Q} (hJq : J ≤ LinearMap.range q) (hJ0 : J ≠ ⊥)
-    (hJs : ∀ a x, x ∈ J → target a x ∈ J)
-    (hJirr : ∀ U : Submodule 𝕜 Q, U ≤ J →
-      (∀ a x, x ∈ U → target a x ∈ U) → U = ⊥ ∨ U = J) :
-    ∃ (W : Submodule 𝕜 V) (A : W →ₗ[𝕜] Q), LinearMap.range A = J ∧
+    (hJs : ∀ a x, x ∈ J → target a x ∈ J) :
+    ∃ (W : Submodule 𝕜 V) (A : W →ₗ[𝕜] Q),
+      LinearMap.range A ≤ J ∧ LinearMap.range A ≠ ⊥ ∧
       ∀ a (w : W), ∃ hw : source a w.val ∈ W, A ⟨_, hw⟩ = target a (A w) := by
   classical
   obtain ⟨y, hyJ, hy0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot hJ0
@@ -100,12 +99,24 @@ private theorem exists_subquotient_of_coordinates
       LinearMap.mem_range.mpr ⟨pr.rangeRestrict ⟨x, hxZ⟩, hA ⟨x, hxZ⟩⟩
     rw [h, Submodule.mem_bot] at hxmem
     exact hx0 hxmem
-  have hAs (a : ι) (y : Q) (hy : y ∈ LinearMap.range A) :
-      target a y ∈ LinearMap.range A := by
-    obtain ⟨w, rfl⟩ := hy
-    obtain ⟨hw, heq⟩ := hAop a w
-    exact ⟨⟨_, hw⟩, heq⟩
-  exact ⟨_, A, (hJirr _ hAJ hAs).resolve_left hA0, hAop⟩
+  exact ⟨_, A, hAJ, hA0, hAop⟩
+
+/-- Suppose all source operators on `V ⊗ M` act on `V` alone. A nonzero stable
+subspace `J` in the image of an equivariant map from a stable subspace of `V ⊗ M`
+contains the nonzero image of an equivariant map from a stable subspace of `V`. -/
+def TensorProductNonzeroSubquotientStatement
+    (𝕜 : Type*) [Field 𝕜] (ι V M Q : Type*)
+    [AddCommGroup V] [Module 𝕜 V] [AddCommGroup M] [Module 𝕜 M]
+    [AddCommGroup Q] [Module 𝕜 Q] : Prop :=
+  ∀ (source : ι → Module.End 𝕜 V) (target : ι → Module.End 𝕜 Q)
+    {S : Submodule 𝕜 (V ⊗[𝕜] M)} (q : S →ₗ[𝕜] Q)
+    (hS : ∀ a (z : S), TensorProduct.map (source a) LinearMap.id z.val ∈ S),
+    (∀ a (z : S), q ⟨_, hS a z⟩ = target a (q z)) →
+    ∀ {J : Submodule 𝕜 Q}, J ≤ LinearMap.range q → J ≠ ⊥ →
+    (∀ a x, x ∈ J → target a x ∈ J) →
+    ∃ (W : Submodule 𝕜 V) (A : W →ₗ[𝕜] Q),
+      LinearMap.range A ≤ J ∧ LinearMap.range A ≠ ⊥ ∧
+      ∀ a (w : W), ∃ hw : source a w.val ∈ W, A ⟨_, hw⟩ = target a (A w)
 
 /-- Suppose all source operators on `V ⊗ M` act on `V` alone. A nonzero irreducible
 stable subspace `J` in the image of an equivariant map from a stable subspace of
@@ -125,12 +136,12 @@ def TensorProductSubquotientStatement
     ∃ (W : Submodule 𝕜 V) (A : W →ₗ[𝕜] Q), LinearMap.range A = J ∧
       ∀ a (w : W), ∃ hw : source a w.val ∈ W, A ⟨_, hw⟩ = target a (A w)
 
-/-- Extract an irreducible subquotient by evaluating a coordinate of minimum support. -/
-theorem exists_subquotient_of_tensorProduct
+/-- Extract a nonzero subquotient by evaluating a coordinate of minimum support. -/
+theorem exists_nonzero_subquotient_of_tensorProduct
     {𝕜 : Type*} [Field 𝕜] {ι V M Q : Type*}
     [AddCommGroup V] [Module 𝕜 V] [AddCommGroup M] [Module 𝕜 M]
-    [AddCommGroup Q] [Module 𝕜 Q] : TensorProductSubquotientStatement 𝕜 ι V M Q := by
-  intro source target S q hS hq J hJq hJ0 hJs hJirr
+    [AddCommGroup Q] [Module 𝕜 Q] : TensorProductNonzeroSubquotientStatement 𝕜 ι V M Q := by
+  intro source target S q hS hq J hJq hJ0 hJs
   let coordinates : V ⊗[𝕜] M ≃ₗ[𝕜] Module.Free.ChooseBasisIndex 𝕜 M →₀ V :=
     TensorProduct.equivFinsuppOfBasisRight (Module.Free.chooseBasis 𝕜 M)
   let act (a : ι) : Module.End 𝕜 S :=
@@ -143,8 +154,23 @@ theorem exists_subquotient_of_tensorProduct
       simp only [TensorProduct.map_tmul, LinearMap.id_apply, coordinates,
         TensorProduct.equivFinsuppOfBasisRight_apply_tmul_apply, map_smul]
     | add z z' hz hz' => simp only [map_add, Finsupp.add_apply, hz, hz']
-  exact exists_subquotient_of_coordinates source act target
+  exact exists_nonzero_subquotient_of_coordinates source act target
     (coordinates.toLinearMap.comp S.subtype) (coordinates.injective.comp Subtype.val_injective)
-    (fun a z j => hcoord a z.val j) q hq hJq hJ0 hJs hJirr
+    (fun a z j => hcoord a z.val j) q hq hJq hJ0 hJs
+
+/-- Extract an irreducible subquotient by evaluating a coordinate of minimum support. -/
+theorem exists_subquotient_of_tensorProduct
+    {𝕜 : Type*} [Field 𝕜] {ι V M Q : Type*}
+    [AddCommGroup V] [Module 𝕜 V] [AddCommGroup M] [Module 𝕜 M]
+    [AddCommGroup Q] [Module 𝕜 Q] : TensorProductSubquotientStatement 𝕜 ι V M Q := by
+  intro source target S q hS hq J hJq hJ0 hJs hJirr
+  obtain ⟨W, A, hAJ, hA0, hAop⟩ :=
+    exists_nonzero_subquotient_of_tensorProduct source target q hS hq hJq hJ0 hJs
+  have hAs (a : ι) (y : Q) (hy : y ∈ LinearMap.range A) :
+      target a y ∈ LinearMap.range A := by
+    obtain ⟨w, rfl⟩ := hy
+    obtain ⟨hw, heq⟩ := hAop a w
+    exact ⟨⟨_, hw⟩, heq⟩
+  exact ⟨W, A, (hJirr _ hAJ hAs).resolve_left hA0, hAop⟩
 
 end Langlands

@@ -17,8 +17,10 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {G H : GroupScheme (Spec (CommRingCat.of F))}
   [IsAffine G.X.left] [IsAffine H.X.left]
 
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
-local instance : TopologicalSpace (rationalPoints H) := rationalPointTopology F H.X
+local instance rationalUnitaryCharacterIso_sourceTopology :
+    TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance rationalUnitaryCharacterIso_targetTopology :
+    TopologicalSpace (rationalPoints H) := rationalPointTopology F H.X
 
 /-- Actual unitary unramified character transport through a group-scheme
 isomorphism. The norm families on both sides remain the actual rational ones. -/
@@ -56,7 +58,8 @@ section Restriction
 variable {T : CommGroupScheme (Spec (CommRingCat.of F))} [IsAffine T.X.left]
   (s : T.toGrp ⟶ G) (e : G ≅ H)
 
-local instance : TopologicalSpace (rationalPoints T.toGrp) :=
+local instance rationalUnitaryCharacterIso_restrictionTopology :
+    TopologicalSpace (rationalPoints T.toGrp) :=
   rationalPointTopology F T.X
 
 /-- Transport commutes with restriction to the same affine commutative source. -/
@@ -106,10 +109,10 @@ section Measure
 
 variable [LocallyOfFiniteType G.X.hom] [LocallyOfFiniteType H.X.hom]
 
-local instance : CompactSpace
+local instance rationalUnitaryCharacterIso_sourceCompact : CompactSpace
     (unitaryUnramifiedCharacters (fun χ => (rationalNormCharacters G χ).toMul)) :=
   compactSpace_rationalUnitaryUnramifiedCharacters G
-local instance : CompactSpace
+local instance rationalUnitaryCharacterIso_targetCompact : CompactSpace
     (unitaryUnramifiedCharacters (fun χ => (rationalNormCharacters H χ).toMul)) :=
   compactSpace_rationalUnitaryUnramifiedCharacters H
 

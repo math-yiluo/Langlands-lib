@@ -97,7 +97,8 @@ private theorem exists_basis_root_associated_of_all_translates
       (MulEquiv.prime_iff basisAlg.toMulEquiv).mpr (finiteLaurentCoordinateRoot_prime n z)
     exact ⟨n, B, z, hprime.associated_of_dvd hpRoot hd⟩
 
-private theorem basis_root_eq_circle_of_eval_zero {n : ℕ}
+/-- A basis-coordinate root that vanishes on the unitary group lies on the unit circle. -/
+theorem basis_root_eq_circle_of_eval_zero {n : ℕ}
     (B : Module.Basis (Fin (n + 1)) ℤ Λ) (a : ℂˣ) (w : U)
     (hw : rationalUnitaryRegularRestriction H (rationalUnramifiedBasisCoordinateRoot H B a) w = 0) :
     ∃ t : Circle, a = Circle.toUnits t := by
@@ -112,6 +113,22 @@ private theorem basis_root_eq_circle_of_eval_zero {n : ℕ}
 variable (hH : IsConnectedReductive H)
 
 local notation "K" => rationalUnramifiedFunctionField H hp hH
+
+/-- Every prime in the reduced denominator of a fraction with the specified
+vanishing differences is associated to a basis-coordinate root. -/
+theorem denominator_prime_associated_of_rankOne_differences
+    (charts : List (RankOneTranslationChart H)) {a b p : R}
+    (ha : a ≠ 0) (hb : b ≠ 0) (hpPrime : Prime p) (hpb : p ∣ b) (hpa : ¬ p ∣ a)
+    (hdiff : MultiplicativeDifferencesVanish (charts.map (RankOneTranslationChart.translations H))
+      (algebraMap R K a / algebraMap R K b)) :
+    ∃ n : ℕ, ∃ B : Module.Basis (Fin (n + 1)) ℤ Λ, ∃ s : ℂˣ,
+      Associated p (rationalUnramifiedBasisCoordinateRoot H B s) := by
+  let : IsDomain R := rationalUnramifiedRegularFunctions_isDomain H hp hH
+  obtain ⟨S, hS, c, hc, hdiv⟩ := exists_translationSet_prime_dvd_every_translate p hpPrime _ a b
+    ha hb (Or.inr ⟨hpb, hpa⟩) hdiff
+  obtain ⟨data, _, rfl⟩ := List.mem_map.mp hS
+  exact exists_basis_root_associated_of_all_translates H hH data.coordinates
+    data.rank_le_one p c hpPrime hc (fun t => hdiv _ ⟨t, rfl⟩)
 
 /-- Rank-one translation differences and a dense norm bound exclude every
 prime divisor of the reduced denominator at every unitary point. -/
@@ -150,11 +167,8 @@ theorem unitaryRegular_of_rankOne_differences
     have hpna : ¬ p ∣ a := fun h => hprime.not_isUnit (hcop h hpb)
     have hd : MultiplicativeDifferencesVanish (charts.map (RankOneTranslationChart.translations H))
         (algebraMap R K a / algebraMap R K (b : R)) := hab.symm ▸ hdiff
-    obtain ⟨S, hS, c, hc, hdiv⟩ := exists_translationSet_prime_dvd_every_translate p hprime _ a b
-      ha hb (Or.inr ⟨hpb, hpna⟩) hd
-    obtain ⟨data, _, rfl⟩ := List.mem_map.mp hS
-    obtain ⟨n, B, s, hassoc⟩ := exists_basis_root_associated_of_all_translates H hH data.coordinates
-      data.rank_le_one p c hprime hc (fun t => hdiv _ ⟨t, rfl⟩)
+    obtain ⟨n, B, s, hassoc⟩ :=
+      denominator_prime_associated_of_rankOne_differences H hH charts ha hb hprime hpb hpna hd
     let root := rationalUnramifiedBasisCoordinateRoot H B s
     have hr0 : rationalUnitaryRegularRestriction H root z = 0 :=
       zero_dvd_iff.mp (hp0 ▸ map_dvd eval hassoc.dvd)

@@ -30,9 +30,13 @@ private def leftRightLinearEquiv (A : G) (B : H) : X ≃L[ℝ] X :=
        change A.val * (c • x) * B.val = c • (A.val * x * B.val)
        rw [Matrix.mul_smul, Matrix.smul_mul] } : X ≃ₗ[ℝ] X).toContinuousLinearEquiv
 
+/-- Left-right pullback as a continuous complex-linear map on Schwartz space. -/
+def rectangularTranslateCLM (A : G) (B : H) : 𝓢(X, ℂ) →L[ℂ] 𝓢(X, ℂ) :=
+  SchwartzMap.compCLMOfContinuousLinearEquiv ℂ (leftRightLinearEquiv A B)
+
 /-- Pull back a real rectangular Schwartz function by `X ↦ A X B`. -/
 def rectangularTranslate (A : G) (B : H) (Φ : 𝓢(X, ℂ)) : 𝓢(X, ℂ) :=
-  SchwartzMap.compCLMOfContinuousLinearEquiv ℂ (leftRightLinearEquiv A B) Φ
+  rectangularTranslateCLM A B Φ
 
 @[simp] theorem rectangularTranslate_apply (A : G) (B : H) (Φ : 𝓢(X, ℂ)) (x : X) :
     rectangularTranslate A B Φ x = Φ (A.val * x * B.val) := rfl

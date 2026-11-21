@@ -1,0 +1,5 @@
+# A compact test detecting a nonzero continued Godement value
+
+A smaller-rank function with a nonzero value at the identity gives a nonzero continued Godement value at the identity for a suitably chosen compact full-row-rank test. The smaller family satisfies the continuity and simple-root bounds used in the continued integral.
+
+Choose a nonnegative smooth bump in the last-column variable near zero, where the real part of the Fourier character at the desired frequency is positive. Its partial Fourier integral is nonzero at the frequency of the identity and is continuous in the frequency. The remaining integrand factor is therefore continuous and nonzero at the group identity. Multiply it by its conjugate there and choose a nonnegative smooth bump in the leading square block supported where the real part is positive. The product test has compact support and full row rank on its support because its leading block is invertible there. The exact iterated integral has a nonnegative real part everywhere and a positive real part on a neighborhood of the identity, so Haar positivity gives a nonzero integral. The outside scalar at the group identity is nonzero.

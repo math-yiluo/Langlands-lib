@@ -73,6 +73,32 @@ def firstColumnFourier (a : ℝˣ) (Φ : 𝓢(X, ℂ)) (ξ : V) (A : M) : ℂ :=
   scaledFirstFactorFourier a (columnTest Φ) (WithLp.toLp 2 ξ)
     (WithLp.toLp 2 (Function.uncurry A))
 
+/-- The first-column Fourier integral at fixed slice coordinates is complex-linear in the test. -/
+def firstColumnFourierLinear (a : ℝˣ) (ξ : V) (A : M) : 𝓢(X, ℂ) →ₗ[ℂ] ℂ := by
+  let u : E := WithLp.toLp 2 ξ
+  let v : F := WithLp.toLp 2 (Function.uncurry A)
+  let f (Φ : 𝓢(X, ℂ)) (x : E) :=
+    realScaledCharacter a (inner ℝ x u) • columnTest Φ (WithLp.toLp 2 (x, v))
+  have hInt (Φ : 𝓢(X, ℂ)) := (realGodementScaledProductFourier E F a (columnTest Φ) u v).1
+  refine { toFun := fun Φ => firstColumnFourier a Φ ξ A, map_add' := ?_, map_smul' := ?_ }
+  · intro Φ Ψ
+    change (∫ x, f (Φ + Ψ) x ∂euclideanSelfDualMeasure a E) =
+      (∫ x, f Φ x ∂euclideanSelfDualMeasure a E) + ∫ x, f Ψ x ∂euclideanSelfDualMeasure a E
+    have hAdd (x : E) : f (Φ + Ψ) x = f Φ x + f Ψ x := by
+      simp only [f, columnTest, map_add, _root_.add_apply, smul_add]
+    simp_rw [hAdd]
+    exact integral_add (hInt Φ) (hInt Ψ)
+  · intro c Φ
+    change (∫ x, f (c • Φ) x ∂euclideanSelfDualMeasure a E) =
+      c • ∫ x, f Φ x ∂euclideanSelfDualMeasure a E
+    have hSmul (x : E) : f (c • Φ) x = c • f Φ x := by
+      simp only [f, columnTest, map_smul, _root_.smul_apply, smul_comm c]
+    simp_rw [hSmul]
+    exact integral_smul c (f Φ)
+
+@[simp] theorem firstColumnFourierLinear_apply (a : ℝˣ) (ξ : V) (A : M) (Φ : 𝓢(X, ℂ)) :
+    firstColumnFourierLinear a ξ A Φ = firstColumnFourier a Φ ξ A := rfl
+
 private theorem realColumnMeasure_eq (a : ℝˣ) :
     rowMeasure (realSelfDualMeasure a) m = ENNReal.ofReal (euclideanHaarFactor a E) • volume := by
   let c : ℝ≥0 := NNReal.sqrt ‖(a : ℝ)‖₊
@@ -86,7 +112,8 @@ private theorem realColumnMeasure_eq (a : ℝˣ) :
     finrank_euclideanSpace]
   rw [← hc, ← NNReal.coe_pow, ENNReal.ofReal_coe_nnreal, ENNReal.coe_pow]
 
-private theorem measurePreserving_columnToEuclidean (a : ℝˣ) :
+/-- Euclidean coordinates preserve the self-dual measure on a real column. -/
+theorem measurePreserving_columnToEuclidean (a : ℝˣ) :
     MeasurePreserving (MeasurableEquiv.toLp 2 V) (rowMeasure (realSelfDualMeasure a) m)
       (euclideanSelfDualMeasure a E) := by
   have h := PiLp.volume_preserving_toLp (Fin m)
@@ -187,13 +214,24 @@ private theorem firstColumnFourier_continuous (a : ℝˣ) (Φ : 𝓢(X, ℂ)) :
   have h := hCont.comp (hLeft.prodMk hRight)
   exact h.congr (fun _ => rfl)
 
+/-- The decay constant in first-column Fourier coordinates is a continuous
+Schwartz seminorm of the original rectangular test. -/
+theorem firstColumnFourier_decay_seminorm (a : ℝˣ) (N : ℕ) :
+    ∃ q : Seminorm ℝ 𝓢(X, ℂ), Continuous q ∧ ∀ (Φ : 𝓢(X, ℂ)) (ξ : V) (A : M),
+      (1 + ‖(WithLp.toLp 2 ξ : E)‖) ^ N *
+      (1 + ‖(WithLp.toLp 2 (Function.uncurry A) : F)‖) ^ N *
+        ‖firstColumnFourier a Φ ξ A‖ ≤ q Φ := by
+  obtain ⟨q, hq, hBounds⟩ := scaledFirstFactorFourier_decay_seminorm («E» := E) («F» := F) a N
+  let T := (SchwartzMap.compCLMOfContinuousLinearEquiv («F» := ℂ) ℂ
+    (firstColumnCoordinates m)).restrictScalars ℝ
+  exact ⟨q.comp T.toLinearMap, hq.comp T.continuous,
+    fun Φ ξ A => hBounds (T Φ) (WithLp.toLp 2 ξ) (WithLp.toLp 2 (Function.uncurry A))⟩
+
 theorem realGodementFirstColumn : RealGodementFirstColumnStatement := by
   intro m a Φ
   refine ⟨firstColumnFourier_continuous a Φ, ?_, firstColumnFourier_mul a Φ⟩
   intro N
-  have hDecay := (realGodementPartialFourier
-    (EuclideanSpace ℝ (Fin m)) (EuclideanSpace ℝ (Fin m × Fin m)) a (columnTest Φ)).2 N
-  obtain ⟨C, hC, h⟩ := hDecay
-  exact ⟨C, hC, fun ξ A => h (WithLp.toLp 2 ξ) (WithLp.toLp 2 (Function.uncurry A))⟩
+  obtain ⟨q, _, hq⟩ := firstColumnFourier_decay_seminorm (m := m) a N
+  exact ⟨q Φ, apply_nonneg _ _, hq Φ⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealGodement

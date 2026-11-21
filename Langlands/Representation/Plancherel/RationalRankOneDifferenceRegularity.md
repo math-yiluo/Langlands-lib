@@ -3,3 +3,7 @@
 This derived result uses charts on the actual valuation lattice of the inducing Levi. Each chart has at most one unscaled coordinate and gives a set of actual regular-ring translations that scale the complementary coordinates independently. Suppose a nonzero fraction has vanishing iterated multiplicative differences for the list of translation sets and a uniform norm bound for its regular values on a dense subset of the actual unitary group.
 
 Take a reduced fraction in the actual scalar algebra. A prime of its denominator divides every translate of a nonzero polynomial for one chart. The Laurent block argument reduces it to divisibility of a nonzero polynomial in the first block. Rank zero gives a unit. Rank one identifies the prime up to association with a root binomial in an actual integral basis. A zero at a unitary character makes the binomial's root a circle value. The bound and the unitary hyperplane divisibility theorem would force that binomial to divide the numerator, contradicting the reduced fraction. Prime factorization now gives a denominator nonvanishing at every unitary character, and the reduced fraction witnesses algebraic regularity there.
+
+`denominator_prime_associated_of_rankOne_differences` isolates the
+association of each denominator prime with a basis-coordinate root. It uses
+the vanishing differences and the prime's absence from the numerator.

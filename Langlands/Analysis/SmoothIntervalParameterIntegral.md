@@ -2,8 +2,10 @@
 
 For a compact space with a finite measure, Bochner integration is a
 continuous real-linear map on continuous functions with values in a
-real normed space. The supremum norm times the measure of the space
-bounds the norm of the integral.
+real normed space. The operator uses Mathlib's Bochner integral. It is
+ordinary Bochner integration for a complete target space and the zero
+map for an incomplete target space. The supremum norm times the
+measure of the space bounds the norm of the integral.
 
 For a smooth function \(h(x,t)\) of a parameter and a real variable,
 restriction to a fixed compact interval gives a smooth map of the
@@ -11,7 +13,8 @@ parameter into the space of continuous functions on that interval.
 Composing with integration shows that the interval integral is smooth
 in the parameter. Including the variable upper endpoint among the
 parameters and rescaling the interval to \([0,1]\) proves joint
-smoothness of the corresponding indefinite integral.
+smoothness of the corresponding indefinite integral. Both interval
+integrals use the same convention for incomplete target spaces.
 
 This internal construction supplies the compact-parameter integrals
 used to differentiate smooth test families and to construct

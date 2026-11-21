@@ -163,9 +163,9 @@ theorem blockUnipotentSubgroup_eq_shape (A : Type u) [CommRing A] :
 
 variable (F : Type u) [Field F] [NumberField F]
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockShapeTermRationalAddCommGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance blockShapeTermContinuousAddCommGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockShapeTermFiniteSmoothAddCommGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
 
 /-- The actual normalized constant term for an ordered block shape, evaluated
 on the original adelic matrix group. -/

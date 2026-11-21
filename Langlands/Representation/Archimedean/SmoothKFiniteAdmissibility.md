@@ -1,0 +1,9 @@
+# Algebraic admissibility on genuine compact-finite smooth vectors
+
+Worker 1028, Task 7767. This internal comparison works for the given representation of actual `GL_n(F)` on a complex normed space (Lean parameters `F : Type` and `[RCLike F]`). It does not assume completeness, joint continuity, or irreducibility of the full action. Its conclusion is `IsAdmissibleGKModule` on the genuine compact-finite submodule, not the smooth-carrier admissibility predicate already proved in [SmoothCompactAdmissibility](SmoothCompactAdmissibility.md).
+
+`unitaryCompactMatrix` is a continuous surjective monoid homomorphism from the compact subgroup of matrix units to the matrix unitary group, sending each unit to its underlying matrix. Applying `Unitary.toUnits` recovers the original unit. Over `ℝ` it is the matrix comparison also used by `InductionStages.toUnitary`.
+
+`smoothKFiniteRepresentation` restricts the genuine smooth action to the matrix unitary group through `Unitary.toUnits` and then to `smoothKFinite`. Inclusion of this submodule intertwines the actual actions. A continuous finite-dimensional matrix type `τ` pulls back continuously along `unitaryCompactMatrix`. Postcomposing its algebraic intertwiners with the inclusion gives a linear injection into the genuine smooth intertwiner space for that pulled-back type. If the genuine smooth action is admissible, the latter is finite-dimensional, proving `isAdmissibleGKModule_smoothKFinite_of_smooth`.
+
+`isAdmissibleGKModule_smoothKFinite` obtains the same conclusion from norm admissibility by applying the published `DerivativeSmoothVectors.isAdmissible_of_norm` before the new inclusion step. The argument uses [SmoothCasselmanWallachStatement](SmoothCasselmanWallachStatement.md) only for the existing submodule definition; it does not use or prove an extension theorem.

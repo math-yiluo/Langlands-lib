@@ -1,0 +1,7 @@
+# Cuspidal pair data for comparing the finite epsilon bases
+
+The real and complex standard-module presentations attached to the completed cuspidal pair equation supply the two kinds of input needed by the finite epsilon base comparison. A real pair of ranks `r` and `t` supplies `r · t` real Gamma factors and a complex pair supplies `2 · r · t`. In each archimedean epsilon factor the dependence on the spectral variable is the corresponding power of the absolute value of the additive-character scale. The value at zero supplies the remaining unit.
+
+The adapter turns the actual `FinitePairFactorChoice.CompletedEquationHolds` into a `RelativeWeilEngine.HasGlobalEquation` using the same `finiteL`, `finiteDualL` and `finiteEpsilon`. It takes nonvanishing of the finite factors on a right half-plane as an input. Absolute convergence then gives nonzero product limits. The adapter removes the archimedean Gamma factors from the completed L-functions by multiplying by their entire denominators, and recovers the functional equation as an equality of punctured germs.
+
+The formulas are internal consequences of the Library's published `realPairLFactor`, `complexPairLFactor`, `realPairEpsilon` and `complexPairEpsilon`. They are used in the comparison in Arthur and Clozel, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula* (1989), Chapter 1, §6, equations (6.15)–(6.17), printed pp. 69–70.

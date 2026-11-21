@@ -111,7 +111,9 @@ theorem realMatrixStratumNormalQuotientEquiv_apply_mk (X : Mat) :
     realMatrixStratumNormalQuotientEquiv hZW hTW hN (Submodule.Quotient.mk X) =
       realMatrixStratumNormalProjection hZW hTW hN X := rfl
 
-/-- The action on the normal quotient represented on the chosen complement. -/
+/-- Compress an ambient map to the chosen normal complement by inclusion and projection.
+If the map preserves the sum of the orbit tangent and semisimple directions, this compression
+represents the induced map on the normal quotient. -/
 def realMatrixStratumNormalAction (L : Mat →L[ℝ] Mat) : N →L[ℝ] N :=
   (realMatrixStratumNormalProjection hZW hTW hN).comp (L.comp (W.subtypeL.comp N.subtypeL))
 

@@ -50,7 +50,8 @@ theorem hasFiniteCompactConvolutionKernel_of_finite_translates (κ : K → ℂ) 
 
 omit [Group K] [TopologicalSpace K] [IsTopologicalGroup K] [CompactSpace K] [T2Space K]
   [MeasurableSpace K] [BorelSpace K] in
-private theorem linearForm_eq_finitelyManyEvaluations
+/-- A linear form on a finite-dimensional space of functions is a finite sum of evaluations. -/
+theorem linearForm_eq_finitelyManyEvaluations
     [FiniteDimensional ℂ E] (ρ : E →ₗ[ℂ] (K → ℂ)) (hρ : Function.Injective ρ) (ℓ : E →ₗ[ℂ] ℂ) :
     ∃ c : K →₀ ℂ, ∀ v : E, ℓ v = ∑ x ∈ c.support, c x * ρ v x := by
   classical

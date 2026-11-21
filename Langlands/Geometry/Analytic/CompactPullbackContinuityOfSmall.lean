@@ -1,4 +1,5 @@
 import Langlands.Geometry.Analytic.CompactPullbackActionContinuity
+import Langlands.Geometry.Analytic.CompactPullbackActionContinuitySmall
 import Langlands.Geometry.Analytic.AffinoidPatchGoodCharts
 import Langlands.Geometry.Analytic.LocallyGoodChartContinuity
 import Langlands.Geometry.Analytic.PairChartConvergence
@@ -46,20 +47,11 @@ theorem isLocallyGood_of_pullback_of_small
     exact isGoodChart_of_affinoidPatch (c.eventually_preimage_patch hU hV hp hq)
       (c.spectralConvergesOn_patchPullback hP hU hV hp hq) W hW) y
 
-/-- The pullback continuity statement, under the hypothesis that all spectra
-of presented affinoid algebras are small in the space universe. -/
-theorem compactPullbackActionContinuity_of_small
-    (hS : AffinoidSpectraSmall.{u, v} K) :
-    ∀ (B U V P : LocalizedCategory.{u, v, v} (K := K))
-      (f : U ⟶ B) (g : V ⟶ B) (p : P ⟶ U) (q : P ⟶ V),
-      IsCompactSpace B → IsCompactSpace U → IsCompactSpace V → IsCompactSpace P →
-      IsPullback p q f g →
-      ∀ (σ : G →* Aut P) (σU : G →* Aut U) (σV : G →* Aut V),
-        IsContinuousAction σU → IsContinuousAction σV →
-        (∀ h, (σ h).hom ≫ p = p ≫ (σU h).hom) →
-        (∀ h, (σ h).hom ≫ q = q ≫ (σV h).hom) →
-        IsContinuousAction σ := by
-  intro B U V P f g p q _ _ _ hPc hP σ σU σV hU hV hp hq
+/-- Continuity on a compact analytic pullback, assuming smallness of the
+spectra of presented affinoid algebras. -/
+theorem compactPullbackActionContinuity_of_small :
+    CompactPullbackActionContinuitySmallStatement.{u, v, z} (K := K) (G := G) := by
+  intro hS B U V P f g p q _ _ _ hPc hP σ σU σV hU hV hp hq
   have := hPc.2
   exact isContinuousAction_of_locallyGood
     (isLocallyGood_of_pullback_of_small hS hP hU hV hp hq)

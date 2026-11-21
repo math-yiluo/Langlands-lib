@@ -17,7 +17,8 @@ namespace Langlands
 
 variable {K V W : Type*} [Field K] [AddCommGroup V] [Module K V] [AddCommGroup W] [Module K W]
 
-/-- The nilpotent part of an endomorphism on a specified generalized eigenspace. -/
+/-- The shifted endomorphism `f - a • 1` restricted to the maximal generalized
+`a`-eigenspace. The restriction is locally nilpotent and is nilpotent in finite dimension. -/
 def generalizedEigenNilpotent (f : End K V) (a : K) : End K (f.maxGenEigenspace a) :=
   (f - a • 1).restrict (f.mapsTo_maxGenEigenspace_of_comm
     (Algebra.mul_sub_algebraMap_commutes f a) a)
@@ -84,7 +85,8 @@ theorem exists_generalizedEigenNilpotent_equiv [FiniteDimensional K V] [FiniteDi
     finrank_ker_generalizedEigenNilpotent_pow] at hf
   exact Nat.add_right_cancel hf
 
-/-- The generalized eigenspaces of the distinct eigenvalues give an internal direct sum. -/
+/-- In finite dimension over an algebraically closed field, the generalized eigenspaces of
+the distinct eigenvalues give an internal direct sum. -/
 theorem isInternal_finset_maxGenEigenspace [DecidableEq K] [IsAlgClosed K] [FiniteDimensional K V]
     (f : End K V) (s : Finset K) (hs : ∀ z, z ∈ s ↔ f.HasEigenvalue z) :
     DirectSum.IsInternal (fun z : s => f.maxGenEigenspace (z : K)) := by

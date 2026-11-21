@@ -1,0 +1,9 @@
+# Ordinary normalized integrals for GL₁ × GL₁
+
+`rankOneOrdinaryNormalizedTests` proves the rank-index-zero equal-rank continuation and generation clauses of `ArchimedeanOrdinaryNormalizedTestsStatement`. It applies to all real and complex additive scales and compatible quotient measures. Every ordinary test has an entire normalization by its pair L-factor. When both Whittaker models are nonzero, one test has normalization identically one. This gives the finite sum and hence the covering property at every spectral point.
+
+The real proof uses the one-dimensional compact-finite standard module of a character. Its inclusion into functions, multiplied by any scalar, is a Whittaker intertwiner because the rank-one unipotent subgroup is trivial. Smoothness and the determinant height bound give the required regularity. Evaluation at the identity then identifies every real intertwiner with a scalar multiple of this inclusion. The complex proof uses the published rank-one Whittaker model calculation.
+
+In each field the ordinary test reduces to the Tate integral for the product character. The published normalized Tate integral gives the entire function, and the nonvanishing of the reciprocal Gamma denominator on a right half-plane gives the defining identity of `OrdinaryIntegralNormalization`. For generation the proof chooses a nonzero vector from each model and uses the parity-adapted real Gaussian or angular complex Gaussian, rescaled to absorb the quotient measure and the two vector scalars.
+
+This is a derived specialization of H. Jacquet, *Archimedean Rankin–Selberg integrals* (2009), formula (2.6) and Theorem 2.1(ii), pp. 6–7, for the ordinary integral and its normalized continuation. Theorem 2.7, pp. 9–10, gives the equal-rank generation context. Appendix 16.1, pp. 109–110, gives the real and complex Tate factors. These page numbers are those in the registered author PDF `jacquet-2009-archimedean-rankin-selberg`.

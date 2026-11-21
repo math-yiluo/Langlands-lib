@@ -24,7 +24,7 @@ variable (F : Type u) [Field F] [NumberField F]
   (hN : 0 < N) (hrho : Langlands.GroupScheme.IsClosedSubgroup rho)
   {R S : ℝ} {L M : Subgroup (FiniteAdelicGroupPoints F G)}
 
-local instance : AddCommGroup (FinitePlotSmoothRationalFunctions F G) :=
+local instance growthCompareAddCommGroup : AddCommGroup (FinitePlotSmoothRationalFunctions F G) :=
   Module.addCommMonoidToAddCommGroup ℂ
 
 local notation "Growth[" R "," L "]" =>

@@ -27,21 +27,21 @@ local notation "N(" e ")" => blockUnipotent (Fin n) RF e
 local notation "P(" e ")" => blockParabolic (Fin n) RF e
 local notation "L(" e ")" => blockLevi (Fin n) RF e
 
-local instance : IsAffine (GLG).X.left := isAffine_groupScheme (Fin n) RF
+local instance generalLinearLeviSliceAffine : IsAffine (GLG).X.left := isAffine_groupScheme (Fin n) RF
 
-local instance : Smooth (GLG).X.hom := smoothStatement (Fin n) RF
+local instance generalLinearLeviSliceSmooth : Smooth (GLG).X.hom := smoothStatement (Fin n) RF
 
-local instance (e : Fin n → ℤ) :
+local instance generalLinearLeviSliceClosed (e : Fin n → ℤ) :
     IsClosed (adelicPoints F GLG N(e) : Set (AdelicGroupPoints F GLG)) :=
   isClosed_adelicPoints_blockUnipotent F e
 
-local instance (e : Fin n → ℤ) : CompactSpace (RationalQuotient F GLG N(e)) :=
+local instance generalLinearLeviSliceCompact (e : Fin n → ℤ) : CompactSpace (RationalQuotient F GLG N(e)) :=
   blockUnipotentRationalQuotientCompactSpace F e
 
-local instance (e : Fin n → ℤ) : BorelSpace (RationalQuotient F GLG N(e)) :=
+local instance generalLinearLeviSliceBorel (e : Fin n → ℤ) : BorelSpace (RationalQuotient F GLG N(e)) :=
   rationalQuotientBorelSpace F GLG N(e)
 
-local instance (e : Fin n → ℤ) :
+local instance generalLinearLeviSliceProbability (e : Fin n → ℤ) :
     IsProbabilityMeasure (normalizedRationalQuotientHaarMeasure F GLG N(e)) :=
   normalizedRationalQuotientHaarMeasure_isProbabilityMeasure F GLG N(e)
 

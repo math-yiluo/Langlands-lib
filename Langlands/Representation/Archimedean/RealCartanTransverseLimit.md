@@ -1,0 +1,5 @@
+# Transverse limit of the weighted compact Cartan trace
+
+Assume the finite family of fixed cosets and their fixed left factors as in the localization theorem. The ordered Levi blocks have size one or two. In each coset assume a positive placed diagonal commuting with the compact Levi factors and a nonzero projected transverse determinant. For a continuous weight, the inverse-volume-scaled cone trace converges to the common chart coefficient and cone mass times the sum of the central weights integrated over the fixed cosets and divided by the absolute transverse determinant.
+
+The cone tests concentrate at the identity by the cutoff in the lower entries and the diagonal cutoff. The compact family of transverse derivatives gives uniform linear bounds at the center and nonlinear bounds on a small source ball. A common small radius serves the finitely many cosets. Rescaling and dominated convergence give the cone of the derivative times the central weight. The Lebesgue-preserving join of the lower coordinates and linear change of variables give the reciprocal determinant. The cone mass is positive because the continuous cone is nonnegative and positive at zero.

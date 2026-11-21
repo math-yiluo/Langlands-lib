@@ -19,11 +19,16 @@ open Langlands.Global
 
 variable (F : Type uF) [Field F] [NumberField F] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance pullbackRationalAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance pullbackContinuousAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance pullbackSmoothAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance pullbackFormsAddCommGroup :
+    AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance pullbackStableAddCommGroup :
+    AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
 
 /-- One formal generator for each translation and differential operator. -/
 abbrev OperatorIndex :=

@@ -1,0 +1,7 @@
+# An invariant form on the complex principal series
+
+`exists_hermitianIntertwiner` realizes an infinitesimally invariant positive Hermitian form on the compact-finite principal series as an injective intertwiner into the series defined by the Hermitian-dual inducing characters. The bilinear integral pairs that series with the series of conjugate characters. Composing pointwise conjugation into the first slot of the positive form gives a bilinear map on the original and conjugate series. Each vector of the original series therefore defines a compact-finite functional on the conjugate series. Admissibility and the separating integral pairing represent the functional by a unique vector of the Hermitian-dual series. The two invariance identities give equivariance, and the diagonal identity and definiteness give injectivity.
+
+`perm_hermitianData_of_irreducible_unitarizable` applies this construction after putting the inducing list in decreasing order of the real exponents. The Hermitian-dual list has increasing real exponents. The Library's opposite-order intertwiner theorem gives equality up to permutation. Transporting the two lists back through their permutations gives the stated symmetry.
+
+The bilinear representability argument uses the Library's `ComplexStandardHomTransposeProof` and `ComplexDuality` modules. The symmetry prepares the paired inducing data for Vogan's signature argument in *The unitary dual of GL(n) over an archimedean field* (1986), Proposition 10.5, p. 476.

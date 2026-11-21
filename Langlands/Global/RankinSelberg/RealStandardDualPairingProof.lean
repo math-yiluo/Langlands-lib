@@ -20,6 +20,7 @@ namespace Langlands.Global.RankinSelbergGlobal
 
 open Langlands.Archimedean Langlands.Automorphic Langlands.LocalFactor.Archimedean
 open RealLocalJacquet RealBlockPosition RealTemperedForm RealPrincipalSeriesDuality
+open RealInducedBlockBound RealInducedTorusCore
 open GramFormula (realPositionExponent)
 
 attribute [local instance 100] LieRing.ofAssociativeRing
@@ -115,15 +116,32 @@ private theorem pairing_eq_conj_integral {n : ℕ} {ds es : List RealBlock}
   dsimp only
   rw [map_mul, hf k k.2, Complex.conj_conj, Complex.conj_conj, mul_comm]
 
-/-- The bilinear pairing with the dual-block module is invariant and separates
-every vector of the dual-block module. -/
-theorem realStandardDualPairing : RealStandardDualPairingStatement := by
-  intro n ds hn _
-  have hchain : ChainData (n := n) 0 (ds.flatMap repl) ds := by
-    simpa using chain (n := n) ds [] (by simpa using hn)
-  obtain ⟨T, S, L, W, hTS, hSK, hTL, hL, -, hW⟩ := hchain
+/-- A supplied Fourier multiplier and split lift give the compact dual pairing.
+The conclusion names the pairing formed with that lift. -/
+def RealStandardCompactDualPairingStatement : Prop :=
+  ∀ (n : ℕ) (ds : List RealBlock), realRank ds = n →
+    ∀ (T : realStandardKFinite n (ds.flatMap repl) →ₗ[ℂ] realStandardKFinite n ds)
+      (S : realStandardKFinite n ds →ₗ[ℂ] realStandardKFinite n (ds.flatMap repl))
+      (L : List (Slot n)) (W : List ℤ → ℕ),
+      (∀ f, T (S f) = f) →
+      (∀ (k : Matrix.unitaryGroup (Fin n) ℝ) f,
+        S (realStandardRep n ds k f) = realStandardRep n (ds.flatMap repl) k (S f)) →
+      (∀ (X : Matrix (Fin n) (Fin n) ℝ) u, T (realStandardLie n (ds.flatMap repl) (1 ⊗ₜ X) u) =
+        realStandardLie n ds (1 ⊗ₜ X) (T u)) →
+      L.Pairwise Slot.Disjoint →
+      (∀ (J : List ℤ), J.length = L.length → ∀ u k, k ∈ unitaryCompact ℝ n →
+        coeffs (withModes L J) (T u).val k = (W J : ℂ) * coeffs (withModes L J) u.val k) →
+      let Q := (pairing n (ds.flatMap repl) (ds.map dualBlock)).comp S
+      ((∀ k f h, Q (realStandardRep n ds k f) (realStandardRep n (ds.map dualBlock) k h) = Q f h) ∧
+        ∀ (X : Matrix (Fin n) (Fin n) ℝ) f h,
+          Q (realStandardLie n ds (1 ⊗ₜ X) f) h +
+            Q f (realStandardLie n (ds.map dualBlock) (1 ⊗ₜ X) h) = 0) ∧
+      ∀ h, h ≠ 0 → ∃ f, Q f h ≠ 0
+
+theorem realStandardCompactDualPairing : RealStandardCompactDualPairingStatement := by
+  intro n ds hn T S L W hTS hSK hTL hL hW
   let P := pairing n (ds.flatMap repl) (ds.map dualBlock)
-  refine ⟨P.comp S, ⟨?_, ?_⟩, ?_⟩
+  refine ⟨⟨?_, ?_⟩, ?_⟩
   · intro k f h
     simp only [LinearMap.comp_apply, hSK]
     exact pairing_rightTranslation _ _ ⟨Unitary.toUnits k, k.2⟩ (S f) h _ _
@@ -161,5 +179,14 @@ theorem realStandardDualPairing : RealStandardDualPairingStatement := by
     have hconj := hf k hk
     rw [hf0] at hconj
     simpa using (congrArg (starRingEnd ℂ) hconj).symm
+
+/-- The bilinear pairing with the dual-block module is invariant and separates
+every vector of the dual-block module. -/
+theorem realStandardDualPairing : RealStandardDualPairingStatement := by
+  intro n ds hn _
+  have hchain : ChainData (n := n) 0 (ds.flatMap repl) ds := by
+    simpa using chain (n := n) ds [] (by simpa using hn)
+  obtain ⟨T, S, L, W, hTS, hSK, hTL, hL, -, hW⟩ := hchain
+  exact ⟨_, realStandardCompactDualPairing n ds hn T S L W hTS hSK hTL hL hW⟩
 
 end Langlands.Global.RankinSelbergGlobal

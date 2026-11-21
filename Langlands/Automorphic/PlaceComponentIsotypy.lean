@@ -76,12 +76,12 @@ end Transport
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance placeComponentIsotypyRationalInvariantFunctions : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance placeComponentIsotypyContinuousRationalFunctions : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeComponentIsotypyFiniteSmoothRationalFunctions : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance placeComponentIsotypyAutomorphicForms : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance placeComponentIsotypyStableAutomorphicFunctions : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance placeComponentIsotypyOperatorSpace (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 namespace CuspidalOperatorRealization
 

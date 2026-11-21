@@ -1,0 +1,7 @@
+# Local Gram congruence from triviality on the full pullback
+
+`TensorGramCongruent` uses the actual tensor algebra of the coefficient field and the base-changed involution. It asserts the existence of a unit whose Gram transform takes the original matrix to the scalar extension of the second matrix.
+
+Suppose the original cocycle is on a finite Galois field cover, the Gram matrix is invertible and antihermitian, and the involution has symmetric dimension `d(d+1)/2`, where `d` is the reduced degree. If the actual pullback to a characteristic-zero base field is trivial, a finite Galois comparison field over the new field receives the original coefficient field. The local primitive evaluated over this comparison field preserves the original Gram matrix. Its left quotient with the ambient primitive is fixed by the relative Galois action because the two primitives have the same coboundary. The quotient descends to an ambient unit over the new base field.
+
+Over the comparison field, the inverse of this descended unit gives the prescribed Gram congruence. The tensor algebra embeds into its coefficient extension over the comparison field, so the congruence holds over the new base field. The argument uses the original full pullback and applies at finite and archimedean completions. It provides the local form comparisons for Kneser's quaternionic symplectic argument in *Lectures on Galois Cohomology of Classical Groups*, §5.8, pp. 92–93 (PDF pp. 98–99).

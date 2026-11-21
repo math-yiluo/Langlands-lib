@@ -1,0 +1,5 @@
+# Isolation of the distinguished finite epsilon comparison
+
+After regrouping the finite places and comparing the completed equations, suppose the positive bases of the global finite epsilon products agree. At each auxiliary place the corresponding bases agree and are positive. At the distinguished place the base-field factors use the actual finite family of epsilon monomials in the local reduction, and the lift has a single epsilon monomial. The theorem produces `EpsilonMonomialProductComparison` at that place.
+
+This is the finite-product comparison used in Arthur and Clozel, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula* (1989), Chapter 1, §6, equation (6.17) and Lemma 6.13, printed pp. 69–70. In Lean the global and auxiliary base identities are supplied. The proof separates the distinguished factors and cancels the positive auxiliary product. It writes each finite epsilon product as its unit coefficient times the power of its positive base and uses the quotient of the unit coefficients as the scalar in the local comparison. The regrouping lemma applies to disjoint finite fibers of places.

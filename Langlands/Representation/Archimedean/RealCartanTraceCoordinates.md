@@ -1,0 +1,5 @@
+# Transverse coordinates for the compact Cartan trace
+
+An opposed lower-block chart is translated to a fixed flag, and the angular chart is translated to its fixed left compact factor. The resulting lower projection of the compact argument has a jointly continuous family of transverse derivatives. The statement assumes that the translated Cartan matrix factors as a positive diagonal times the placed orthogonal matrix, with the diagonal commuting with the compact Levi frames and the Levi blocks of sizes one or two.
+
+The proof expresses the compact argument as a matrix function of the transverse variables and two ambient matrix parameters. Signed orthogonal factorization is smooth on the invertible inputs, and the angular chart is smooth in its within-block coordinates. Restricting the ambient Fréchet derivative to the transverse directions gives the continuous family. At the center the existing Cartan argument differential formula applies with the within-block skew derivative. The chart has lower coordinate zero on the translated block subgroup by the strict trailing-minor bound.

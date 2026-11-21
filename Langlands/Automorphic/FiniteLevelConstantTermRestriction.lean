@@ -75,10 +75,14 @@ open Langlands.Global.PrimitiveAdelicHeight
 
 variable (F : Type u) [Field F] [NumberField F] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance finiteLevelConstantTermRationalGroup : AddCommGroup (RationalInvariantFunctions F n) :=
+  Submodule.addCommGroup _
+local instance finiteLevelConstantTermContinuousGroup : AddCommGroup (ContinuousRationalFunctions F n) :=
+  Submodule.addCommGroup _
+local instance finiteLevelConstantTermSmoothGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) :=
+  Submodule.addCommGroup _
+local instance finiteLevelConstantTermFormGroup : AddCommGroup (AutomorphicForms F n) :=
+  Submodule.addCommGroup _
 
 variable [CompactSpace (AdeleQuotient F)]
 

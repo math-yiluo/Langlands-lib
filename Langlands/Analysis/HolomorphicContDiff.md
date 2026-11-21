@@ -1,0 +1,11 @@
+# Smoothness on finite-dimensional complex domains
+
+`Langlands.Analysis.contDiffOn_of_differentiableOn` proves that a complex Fréchet-differentiable map on an open subset of a finite-dimensional complex normed space is `ContDiffOn ℂ ∞` there, with values in a complete complex normed space. The source and target spaces in this declaration lie in the same universe. The conclusion is differentiability of all finite orders, not a power-series assertion. The scalar-coordinate corollary `contDiff_comp_of_differentiableOn` gives real `C^∞` smoothness after composition with a real continuous linear map `ℝⁿ → ℂᵐ` whose image lies in the open domain.
+
+## Implemented proof
+
+In the namespace `Langlands.Analysis.HolomorphicContDiff`, fix a direction \(v\) and apply Mathlib's one-variable Cauchy derivative formula to \(t\mapsto f(z+tv)\) on a disk about \(0\). `fderiv_apply_eq_integral` writes \(Df(z)v\) as the resulting circle integral with the usual factor \((2\pi i)^{-1}\). With the circle parametrized by angle the kernel has norm \(R^{-1}\) for a circle of radius \(R>0\).
+
+`exists_radius` chooses one radius for all \(z\) in a small ball about a given point, with the disks in the same compact ball contained in the domain. A bound for \(f\) on that ball and dominated convergence give continuity of \(z\mapsto Df(z)v\). Finite dimensionality gives continuity of the derivative in operator norm from continuity of its evaluations. Bounding this continuous derivative on the compact ball then justifies differentiation under the angle integral. It follows that each evaluation \(z\mapsto Df(z)v\) is complex differentiable. `differentiableOn_fderiv` uses a finite basis and its continuous coordinate functionals to reassemble the evaluations into the derivative as a map to continuous linear maps. The main theorem inducts on derivative order, allowing the complete target space to vary. The real-coordinate corollary restricts scalars and composes with the supplied linear map.
+
+This is an internal calculus helper, proved from Mathlib's Cauchy integral, finite-dimensional topology, and dominated integral differentiation theorems. Its use in `AdelicSymmetricFamilyDensity` is to restrict scalar intertwining coefficients that are holomorphic on their named domain to the imaginary parameter slice.

@@ -1,185 +1,239 @@
 # Actual finite inertia restrictions and Weil representation presentations
 
-Worker 104 authors this derived construction unit. All declarations are in
-`Langlands.Ramification.Padic`, including the two presentation namespaces.
-The field universe `u` and the representation-carrier universe `v` are
-independent. The prime `p` and `F : PadicField.{u} p` are unrestricted.
+Worker 104 authored the original p-adic construction. Worker 849 generalizes
+it in place using the published characteristic-free finite ramification,
+absolute inertia, and local Weil group. The field and representation-carrier
+universes remain independent.
 
-## Sources and scope
+## Local fields and finite integer rings
 
-Jean-Pierre Serre, *Local Fields* (Greenberg translation, 1979), Chapter IV,
-section 1, printed pages 61–62 (PDF pages 68–69), defines the actual
-ramification groups by their action on the integer ring modulo powers of its
-maximal ideal. The zeroth group is the residue-action kernel, namely inertia.
-Section 3, printed pages 73–75 (PDF pages 80–82), describes upper numbering,
-its quotient compatibility and the inverse limit over finite Galois
-subextensions. These passages were read directly in the registered original:
-`serre-1979-local-fields`,
-`/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
+For a nonarchimedean local field `K` and a specified separable closure `Ω`,
+`Langlands.Ramification.Local.SepClosed` takes Mathlib's `Field`,
+`ValuativeRel`, `TopologicalSpace` and `IsNonarchimedeanLocalField` on `K`,
+and `Field`, `Algebra K Ω` and `IsSepClosure K Ω` on `Ω`. Its
+`finiteTopologicalData K Ω L` for a finite Galois subextension `L` is the
+published `localTopologicalData K L`. Its `finiteBaseEmbedding` uses the
+actual algebra map from `K` to `L`.
+
+The shared declarations in `Langlands.Ramification.Local` allow a common
+spectral base `K₀` as in `Herbrand.GeneralAbsolute`. In this form `K` is
+finite over `K₀` and `K₀` has a complete nontrivial ultrametric norm, is
+locally compact, and has a valuative relation agreeing with the norm
+comparison (`hbase`). The finite integer rings use that spectral norm on
+`L`. For maps to the closure, `hK` identifies the `K₀`-spectral unit ball on
+`K` with the integers of the supplied valuative relation on `K`. The
+ordinary local-field entry points take `K₀ = K`. They obtain both
+compatibility proofs from the published `LocalGalois.localNormedField`
+adapter and the base restriction of the spectral norm.
+
+`finiteClosureIntegerMap` restricts the actual inclusion `L → Ω` to the
+integer rings. The proof identifies the closure integer ring with the
+`K₀`-spectral unit ball. The integers of `K` are integral over the integers
+of `K₀` by the published `integral_iff_mem_spectralIntegers` and `hK`.
+The actual tower of integer scalars then identifies integrality over the two
+base rings in `Ω`. The spectral norm over `K₀` agrees under `L → Ω` by
+`spectralNorm.eq_of_tower`. These facts give preservation and reflection of
+integer membership, and `finiteClosureIntegerMap_coe` gives the actual field
+inclusion on representatives. At `h : L ≤ M`, `finiteIntegerMap h` similarly
+restricts `IntermediateField.inclusion h`, using the spectral norm over `K₀`
+on both fields. Both ring inclusions are local homomorphisms. An inverse in
+the target integer ring is the image of the inverse in the source field,
+and reflection of membership places that inverse in the source integer ring.
+Their induced maps of residue fields are injective.
+
+## Inertia restrictions
+
+`absoluteInertiaRestriction` restricts the published continuous
+`absoluteFiniteRestriction`, whose field operation is
+`AlgEquiv.restrictNormalHom`. Absolute inertia is the actual residue kernel
+`LocalGalois.SepClosed.absoluteInertia`. To see that the restriction lands in
+finite inertia, lift a residue class in the finite field to an integer and
+apply the injective map to the closure residue field. The absolute inertia
+condition gives the resulting equality, since the restricted automorphism
+and the original automorphism agree on the embedded integer. Continuity is
+inherited through the two subgroup topologies. The `_coe` and `_apply`
+lemmas give the finite Galois element and its evaluation in `Ω`.
+
+`weilInertiaProjection` restricts the published Weil projection from
+`Weil.Local.SepClosed.localInertia` to absolute inertia. A Weil element of
+degree zero has trivial profinite residue degree, and the published
+`localResidueDegree_ker` identifies this kernel with absolute inertia.
+`weilInertiaRestriction` composes the projection with absolute inertia
+restriction. Its evaluation is the restriction of the original Weil
+projection on the same field element.
+
+`finiteGaloisRestriction h` uses `AlgEquiv.restrictNormalHom` for the algebra
+structure from `IntermediateField.inclusion h`. Finite Galois groups have
+their discrete Krull topologies. The injective residue map along the finite
+integer map proves the residue kernel condition by the same elementwise
+argument as for absolute inertia. It gives `finiteInertiaRestriction h`.
+`finiteInertiaRestriction_absolute` and `finiteInertiaRestriction_weil` show
+that restriction through `M` agrees with restriction directly to `L`.
+Consequently the Weil inertia restriction kernel for `M` is contained in
+the one for `L`.
+
+## Presentations, conductor sums and refinement
+
+For `A : FiniteRepresentation ℂ (Weil.Local.SepClosed.localWeilGroup K Ω)`,
+`localInertiaRepresentation` restricts the actual representation to Weil
+inertia on the original carrier. `FiniteInertiaPresentation` specializes the
+shared record `FiniteInertiaPresentationData`. Its fields are `extension`, a
+finite Galois subextension, and `kernel_le`, asserting that the kernel of Weil
+inertia restriction to that extension acts trivially on `A`. Keeping that
+condition as a parameter of the underlying record lets its constructor and
+projections use the field data directly.
+
+`P.representation hsurj` descends along `weilInertiaRestriction` for
+`P.extension` with the supplied surjectivity proof `hsurj` and `P.kernel_le`.
+It evaluates on Weil inertia images as the original action. The rational
+values `P.artinConductor hsurj` and `P.swanConductor hsurj` use the published
+`artinConductorOfQuotient` and `swanConductorOfQuotient`. The Artin sum has a
+term for each lower group from index zero, with weight `|Gᵢ| / |G₀|` times
+the codimension of its fixed vectors. The Swan sum uses the positive lower
+indices. Trivial lower groups give zero terms, so the published termination
+bound suffices for the sums. Each value is attached to the supplied
+presentation.
+
+`P.refine M h` uses the kernel containment for the inclusion into `M`.
+`P.pullback hsurj M h` precomposes the descended action at `P.extension`
+with actual finite inertia restriction. Its evaluation on Weil inertia
+follows from the restriction square. Descent at `M`, given surjectivity
+there, equals this pullback because both agree on every lifted element.
+
+`FiniteInertiaCommonRefinement` specializes `FiniteInertiaCommonRefinementData`
+with a common subextension `extension` and inclusions `left_le` and
+`right_le`. `compositum` uses the finite Galois compositum of the two
+subextensions. `leftRepresentation` and `rightRepresentation` give the two
+pullbacks. Their elements agree on images of Weil inertia, so surjectivity at
+the common subextension gives `representations_eq`. The existing separate
+statement targets address surjectivity, existence of a presentation for a
+continuous representation, and independence of the conductor sums.
+
+## Characteristic and p-adic specialization
+
+The former absolute Galois, absolute inertia and Weil objects used
+`AlgebraicClosure F.Carrier`, which is separable over the characteristic-zero
+base. The general closure `Ω` supplies separability and separable closedness
+through `IsSepClosure K Ω` for the corresponding published groups. The
+individual finite subextensions already have separability and normality in
+`FiniteGaloisIntermediateField`. The former finite fields and their integer
+rings were packaged over `Padic p`. The general finite constructor uses
+`LocalField.canonicalTopologicalData`, and the integer and residue map proofs
+use the scalar tower and spectral integrality in either characteristic.
+The representation and descent arguments use only the specified group maps
+and complex linear algebra.
+
+The `Langlands.Ramification.Padic` definitions unfold through the shared
+spectral construction at `K₀ = Padic p`, `K = F.Carrier` and
+`Ω = AlgebraicClosure F.Carrier`. The base is given
+`F.canonicalTopologicalData`'s valuative relation and topology, and
+`finiteTopologicalData` is the general view of the canonical topological
+data of `absoluteFiniteExtension F L`. The specialized record types use the
+same shared constructors. The p-adic record applies the named p-adic
+restrictions in its kernel condition, so existing constructor syntax
+introduces elements of the p-adic Weil inertia type. The p-adic constructor,
+projection and eliminator names are available in the original namespaces,
+with the original universe order and the original argument names, order and
+implicitness. The constructor injectivity lemmas specialize the generated
+lemmas of the shared records, preserving their field argument names.
+The p-adic finite integer inclusion used in the old residue proof is
+`Weil.Local.extensionIntegerMap` at the scalar restriction of
+`IntermediateField.inclusion h`.
+
+| Shared `Langlands.Ramification.Local` | P-adic `Langlands.Ramification.Padic` |
+| --- | --- |
+| `finiteTopologicalData` | `(absoluteFiniteExtension F L).canonicalTopologicalData.toLocalData` |
+| `finiteIntegerMap` | `Weil.Local.extensionIntegerMap` on the actual inclusion |
+| `finiteBaseEmbedding` | `finiteBaseEmbedding` |
+| `finiteClosureIntegerMap` | `finiteClosureIntegerMap` |
+| `finiteClosureIntegerMap_coe` | `finiteClosureIntegerMap_coe` |
+| `finiteClosureIntegerMap_isLocalHom` | `finiteClosureIntegerMap_isLocalHom` |
+| `absoluteFiniteRestriction_mem_inertia` | `absoluteFiniteRestriction_mem_inertia` |
+| `absoluteInertiaRestriction` | `absoluteInertiaRestriction` |
+| `absoluteInertiaRestriction_coe` | `absoluteInertiaRestriction_coe` |
+| `absoluteInertiaRestriction_apply` | `absoluteInertiaRestriction_apply` |
+| `weilInertiaProjection` | `weilInertiaProjection` |
+| `weilInertiaProjection_coe` | `weilInertiaProjection_coe` |
+| `weilInertiaRestriction` | `weilInertiaRestriction` |
+| `weilInertiaRestriction_coe` | `weilInertiaRestriction_coe` |
+| `weilInertiaRestriction_apply` | `weilInertiaRestriction_apply` |
+| `finiteGaloisRestriction` | `finiteGaloisRestriction` |
+| `finiteGaloisRestriction_apply` | `finiteGaloisRestriction_apply` |
+| `finiteGaloisRestriction_mem_inertia` | `finiteGaloisRestriction_mem_inertia` |
+| `finiteInertiaRestriction` | `finiteInertiaRestriction` |
+| `finiteInertiaRestriction_coe` | `finiteInertiaRestriction_coe` |
+| `finiteInertiaRestriction_absolute` | `finiteInertiaRestriction_absolute` |
+| `finiteInertiaRestriction_weil` | `finiteInertiaRestriction_weil` |
+| `weilInertiaRestriction_ker_le` | `weilInertiaRestriction_ker_le` |
+| `localInertiaRepresentation` | `localInertiaRepresentation` |
+| `FiniteInertiaPresentation` | `FiniteInertiaPresentation` |
+| `FiniteInertiaPresentationData.mk` | `FiniteInertiaPresentation.mk` |
+| `FiniteInertiaPresentationData.extension` | `FiniteInertiaPresentation.extension` |
+| `FiniteInertiaPresentationData.kernel_le` | `FiniteInertiaPresentation.kernel_le` |
+| `FiniteInertiaPresentationData.rec` | `FiniteInertiaPresentation.rec` |
+| `FiniteInertiaPresentationData.recOn` | `FiniteInertiaPresentation.recOn` |
+| `FiniteInertiaPresentationData.casesOn` | `FiniteInertiaPresentation.casesOn` |
+| `FiniteInertiaPresentationData.ctorIdx` | `FiniteInertiaPresentation.ctorIdx` |
+| `FiniteInertiaPresentationData._sizeOf_inst` | `FiniteInertiaPresentation._sizeOf_inst` |
+| `FiniteInertiaPresentationData._sizeOf_1` | `FiniteInertiaPresentation._sizeOf_1` |
+| `FiniteInertiaPresentationData.mk._flat_ctor` | `FiniteInertiaPresentation.mk._flat_ctor` |
+| `FiniteInertiaPresentationData.mk.inj` | `FiniteInertiaPresentation.mk.inj` |
+| `FiniteInertiaPresentationData.mk.injEq` | `FiniteInertiaPresentation.mk.injEq` |
+| `FiniteInertiaPresentationData.mk.sizeOf_spec` | `FiniteInertiaPresentation.mk.sizeOf_spec` |
+| `FiniteInertiaPresentationData.noConfusionType` | `FiniteInertiaPresentation.noConfusionType` |
+| `FiniteInertiaPresentationData.noConfusion` | `FiniteInertiaPresentation.noConfusion` |
+| `FiniteInertiaPresentationData.mk.noConfusion` | `FiniteInertiaPresentation.mk.noConfusion` |
+| `FiniteInertiaPresentation.representation` | `FiniteInertiaPresentation.representation` |
+| `FiniteInertiaPresentation.representation_apply` | `FiniteInertiaPresentation.representation_apply` |
+| `FiniteInertiaPresentation.artinConductor` | `FiniteInertiaPresentation.artinConductor` |
+| `FiniteInertiaPresentation.swanConductor` | `FiniteInertiaPresentation.swanConductor` |
+| `FiniteInertiaPresentation.refine` | `FiniteInertiaPresentation.refine` |
+| `FiniteInertiaPresentation.pullback` | `FiniteInertiaPresentation.pullback` |
+| `FiniteInertiaPresentation.pullback_apply` | `FiniteInertiaPresentation.pullback_apply` |
+| `FiniteInertiaPresentation.representation_refine` | `FiniteInertiaPresentation.representation_refine` |
+| `FiniteInertiaCommonRefinement` | `FiniteInertiaCommonRefinement` |
+| `FiniteInertiaCommonRefinement.compositum` | `FiniteInertiaCommonRefinement.compositum` |
+| `FiniteInertiaCommonRefinementData.mk` | `FiniteInertiaCommonRefinement.mk` |
+| `FiniteInertiaCommonRefinementData.extension` | `FiniteInertiaCommonRefinement.extension` |
+| `FiniteInertiaCommonRefinementData.left_le` | `FiniteInertiaCommonRefinement.left_le` |
+| `FiniteInertiaCommonRefinementData.right_le` | `FiniteInertiaCommonRefinement.right_le` |
+| `FiniteInertiaCommonRefinementData.rec` | `FiniteInertiaCommonRefinement.rec` |
+| `FiniteInertiaCommonRefinementData.recOn` | `FiniteInertiaCommonRefinement.recOn` |
+| `FiniteInertiaCommonRefinementData.casesOn` | `FiniteInertiaCommonRefinement.casesOn` |
+| `FiniteInertiaCommonRefinementData.ctorIdx` | `FiniteInertiaCommonRefinement.ctorIdx` |
+| `FiniteInertiaCommonRefinementData._sizeOf_inst` | `FiniteInertiaCommonRefinement._sizeOf_inst` |
+| `FiniteInertiaCommonRefinementData._sizeOf_1` | `FiniteInertiaCommonRefinement._sizeOf_1` |
+| `FiniteInertiaCommonRefinementData.mk._flat_ctor` | `FiniteInertiaCommonRefinement.mk._flat_ctor` |
+| `FiniteInertiaCommonRefinementData.mk.inj` | `FiniteInertiaCommonRefinement.mk.inj` |
+| `FiniteInertiaCommonRefinementData.mk.injEq` | `FiniteInertiaCommonRefinement.mk.injEq` |
+| `FiniteInertiaCommonRefinementData.mk.sizeOf_spec` | `FiniteInertiaCommonRefinement.mk.sizeOf_spec` |
+| `FiniteInertiaCommonRefinementData.noConfusionType` | `FiniteInertiaCommonRefinement.noConfusionType` |
+| `FiniteInertiaCommonRefinementData.noConfusion` | `FiniteInertiaCommonRefinement.noConfusion` |
+| `FiniteInertiaCommonRefinementData.mk.noConfusion` | `FiniteInertiaCommonRefinement.mk.noConfusion` |
+| `FiniteInertiaCommonRefinement.leftRepresentation` | `FiniteInertiaCommonRefinement.leftRepresentation` |
+| `FiniteInertiaCommonRefinement.rightRepresentation` | `FiniteInertiaCommonRefinement.rightRepresentation` |
+| `FiniteInertiaCommonRefinement.leftRepresentation_apply` | `FiniteInertiaCommonRefinement.leftRepresentation_apply` |
+| `FiniteInertiaCommonRefinement.rightRepresentation_apply` | `FiniteInertiaCommonRefinement.rightRepresentation_apply` |
+| `FiniteInertiaCommonRefinement.representations_eq` | `FiniteInertiaCommonRefinement.representations_eq` |
+
+## Sources and provenance
+
+Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg,
+GTM 67 (1979), Chapter IV, §1, Lemma 1 and Proposition 1, printed pp. 61–62
+(retained PDF pp. 68–69), describes the integer-ring filtration and its
+zeroth group. Section 3, printed pp. 73–75 (PDF pp. 80–82), describes finite
+and absolute upper numbering. Chapter VI, §2, printed pp. 99–101
+(PDF pp. 106–108), especially Proposition 2 and Corollary 1′, gives the
+weighted fixed-space codimension formula for conductors. The registered
+source is `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
 Pierre Deligne and Guy Henniart, *Sur la variation, par torsion, des constantes
-locales d'équations fonctionnelles de fonctions L* (1981), section 0.5,
-printed page 92 (PDF page 4), uses continuous finite-dimensional complex
-representations and states that inertia acts through a finite group. This
-page was read directly in the registered original:
-`deligne-henniart-1981-variation`,
-`/home/taskhub/central-library/Deligne-Henniart--Sur la variation, par torsion, des constantes locales d'equations fonctionnelles de fonctions L--1981.pdf`,
-SHA256 `54fe3348af12263a8d3774a0353fff352cb041728f446fb0cccc4b0f97803a3e`.
-No source-specific errata file was present in the workspace's published notes.
-
-The restriction maps and presentation records below are internal constructions
-from these actual field and representation objects. They are not quotations
-of a presentation definition in the sources. This unit constructs maps and
-proves their well-definedness and elementary composition, kernel and descent
-properties. It does not prove inertia-restriction surjectivity, existence of
-presentations for continuous representations, independence or integrality of
-conductor sums, or comparisons of ramification breaks or indices. In
-particular, Serre's upper-numbering quotient theorem is not assumed here.
-No local constants or Deligne–Henniart stability result is constructed or used.
-
-## Actual fields, integer rings and restriction
-
-For `L : FiniteGaloisIntermediateField F.Carrier (AlgebraicClosure F.Carrier)`,
-the published `absoluteFiniteExtension F L` has exactly the carrier `L` and
-its inherited algebra embeddings. Its topology is
-`(absoluteFiniteExtension F L).canonicalTopologicalData`.
-`finiteBaseEmbedding F L` is the existing scalar-tower embedding from `F`
-over `Padic p`. No replacement field or valuation certificate is input data.
-The subtype's universe agrees with Mathlib's chosen algebraic closure;
-representation carriers remain in the independent universe `v`. The published
-`finiteGaloisPadicField` helper retains its independent ambient universe.
-
-`finiteClosureIntegerMap F L` embeds this finite canonical integer ring into
-`F.closureIntegers F.canonicalTopologicalData` by the actual inclusion into the
-algebraic closure. Its construction uses the published
-`Weil.Local.extensionIntegers_isIntegral`: a finite integer is integral over
-the base integer ring, so `LocalGalois.closureIntegers_integral` places its
-image in the closure integer ring. The coercion formula
-`finiteClosureIntegerMap_coe` is definitional. The instance
-`finiteClosureIntegerMap_isLocalHom` proves localness: the closure integer
-ring is integral over the base integer ring, hence over the embedded finite
-integer ring, and the embedding is injective. Mathlib's theorem that an
-injective integral ring map reflects units applies. Thus the induced residue
-map exists and, as a field homomorphism, is injective.
-
-`absoluteFiniteRestriction_mem_inertia` proves that an actual absolute inertia
-element restricts into `Ramification.Padic.inertia` for the finite extension.
-After lifting a residue class to an integer, apply the injective residue map
-just constructed. The equality upstairs is exactly the absolute inertia
-kernel condition; the actions commute because `AlgEquiv.restrictNormal`
-commutes with the actual field inclusion. No map-membership certificate is
-supplied by a caller.
-
-`absoluteInertiaRestriction F L` is the resulting continuous homomorphism.
-Its underlying map is the published `absoluteFiniteRestriction`, namely
-`AlgEquiv.restrictNormalHom`, restricted on source and target. Continuity is
-inherited from that map by composition with the source subtype and restriction
-to the target subtype. `absoluteInertiaRestriction_coe` identifies the
-underlying finite Galois element; `absoluteInertiaRestriction_apply` states
-that evaluating at `x : L` and including in the closure gives the original
-absolute automorphism evaluated at the same `x`.
-
-`weilInertiaProjection F` restricts the actual `localProjection F` to
-`localInertia F` and absolute inertia. It reuses the forward continuous
-homomorphism of the published `Weil.Local.localInertiaEquiv F` from
-`Weil.Local.AssemblyProof`; the underlying map is still the actual projection.
-`weilInertiaProjection_coe` is its exact projection formula.
-`weilInertiaRestriction F L` composes this with
-`absoluteInertiaRestriction F L`; it is a continuous homomorphism on the
-actual subgroup topologies. Its `_coe` and `_apply` lemmas state the exact
-underlying restriction and elementwise evaluation formulas. In particular,
-this is a specified arithmetic map, not an arbitrary quotient homomorphism.
-
-## Nested finite fields
-
-For an actual inclusion `h : L ≤ M`, `finiteGaloisRestriction F h` is
-`AlgEquiv.restrictNormalHom` for the algebra structure induced by
-`IntermediateField.inclusion h`. The finite Galois groups have their existing
-discrete Krull topologies, so this map is continuous.
-`finiteGaloisRestriction_apply` gives its evaluation after inclusion into the
-same algebraic closure.
-
-`finiteGaloisRestriction_mem_inertia` again uses residue injectivity, now for
-the published `extensionResidueMap` of the actual finite-field inclusion.
-It proves membership without an arithmetic hypothesis. This constructs
-`finiteInertiaRestriction F h`, whose `_coe` lemma identifies the underlying
-finite Galois restriction. `finiteInertiaRestriction_absolute` and
-`finiteInertiaRestriction_weil` prove the composition square with the
-absolute and Weil restriction maps, respectively. Both are equalities of
-actual finite inertia elements. Their proof compares evaluations on each
-field element and uses the restriction evaluation formulas.
-
-`weilInertiaRestriction_ker_le` follows from that square: the kernel for the
-larger field is contained in the kernel for the smaller field.
-
-## Presentations, descent and common refinements
-
-For `A : FiniteRepresentation.{0,u,v} ℂ (localWeilGroup F)`,
-`localInertiaRepresentation F A` is the actual action restricted to
-`localInertia F`, on the original finite-dimensional carrier `A`.
-
-`FiniteInertiaPresentation F A` has exactly two fields: an actual finite
-Galois subextension `extension`, and `kernel_le`, asserting that the kernel
-of `weilInertiaRestriction F extension` is contained in the kernel of that
-restricted representation. This data makes sense for any genuine algebraic
-finite-dimensional complex representation. Continuity is not needed to
-construct or use a given presentation; it belongs to the separate existence
-statement for the continuous objects of Deligne–Henniart section 0.5.
-Neither universal existence nor surjectivity nor any conductor law is a
-field of this record.
-
-For a presentation `P`, `P.representation hsurj` reuses the published
-`descendInertiaRepresentation` with this specific restriction map and
-`P.kernel_le`. The hypothesis `hsurj` explicitly asserts surjectivity of
-`weilInertiaRestriction F P.extension`. The theorem `P.representation_apply`
-identifies its value on the image of any Weil inertia element with the original
-action. `P.artinConductor hsurj` and `P.swanConductor hsurj` directly reuse
-`artinConductorOfQuotient` and `swanConductorOfQuotient` on the same data.
-These are expressions at this chosen presentation, without an independence
-claim.
-
-`P.refine M h` constructs a presentation at a containing actual finite field
-using the proved kernel containment. `P.pullback hsurj M h` is the genuine
-representation obtained by precomposing `P.representation hsurj` with
-`finiteInertiaRestriction F h`. Its evaluation lemma follows from the
-composition square. `P.representation_refine` identifies it with descent at
-`M` when surjectivity at `M` is also supplied, by lifting each finite inertia
-element to Weil inertia and using the evaluation formulas.
-
-`FiniteInertiaCommonRefinement F A P Q` consists only of an actual finite
-Galois field and its two actual inclusions of the fields of `P` and `Q`.
-`FiniteInertiaCommonRefinement.compositum F A P Q` constructs such data using
-Mathlib's finite Galois compositum `P.extension ⊔ Q.extension`.
-The functions `R.leftRepresentation` and `R.rightRepresentation` are the
-actual pullbacks of the two descended actions. Their evaluation lemmas give
-the original action on every image of Weil inertia. `R.representations_eq`
-proves equality of these pullbacks if surjectivity at the common field is
-supplied separately. No equality is stored as common-refinement data, and
-this equality of actions does not assert equality of conductor sums.
-
-## Remaining statement obligations
-
-The precise missing surjectivity assertion is, for every prime, every actual
-`F`, and every actual finite Galois subextension `L`,
-`Function.Surjective (weilInertiaRestriction F L)`.
-The corresponding assertion for `absoluteInertiaRestriction F L` is also
-not proved here. The precise presentation-existence assertion is, with
-independent field and carrier universes, for every `A` as above,
-`A.IsContinuous → Nonempty (FiniteInertiaPresentation F A)`.
-It must not be replaced by an assertion assuming presentations already exist
-for all representations. Conductor independence, integrality, and
-ramification-break comparisons remain separate arithmetic obligations.
-
-## Published dependencies
-
-The module imports `Ramification.Herbrand.Absolute` (Worker 68's actual field
-packaging and restriction), `Ramification.Descent` (Worker 20's descent and
-conductor interfaces), `Weil.Local.AssemblyProof` (the published local inertia
-equivalence), `Weil.Local.ExtensionWeil` (Worker 53's assembly,
-integer/residue maps and integrality, using Worker 9's absolute Galois layer),
-and `Weil.Representation.Predicates` (Worker 17's actual finite-dimensional
-representations and separate continuity predicate). All are reused by their
-published Lean names; no unpublished draft is imported or copied. The pinned
-environment is Lean 4.34.0 and Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`.
+locales d'équations fonctionnelles de fonctions L* (1981), §0.5, printed p. 92
+(PDF p. 4), specifies continuous finite-dimensional complex representations
+of the Weil group and finite image on inertia. The registered source is
+`deligne-henniart-1981-variation`, SHA256
+`54fe3348af12263a8d3774a0353fff352cb041728f446fb0cccc4b0f97803a3e`.
+The explicit Lean restriction maps, kernel fields and refinements are
+internal constructions on the supplied arithmetic objects. They reuse the
+published finite and absolute ramification, Weil assembly and descent APIs.

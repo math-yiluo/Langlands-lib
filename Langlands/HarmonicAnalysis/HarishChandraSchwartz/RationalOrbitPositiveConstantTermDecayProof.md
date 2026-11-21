@@ -18,12 +18,16 @@ graded piece, which gives a uniform unipotence order. The Xi reduction
 uses that order in the dominant lattice coefficient bound and specializes
 to translates of the spherical vector and functional.
 
-The proof of `rationalOrbitConstantTermThreshold` obtains a common
-Casselman depth from fixed-vector dimensions for the original unramified
-twists. Compact transport extends the identity to the full closed
-minimal-Levi threshold region, and comparison with the same dynamic
-constant term identifies the result with the original chosen constant
-term. This supplies the threshold input for the same orbit and indices.
+The proof uses `rationalOrbitConstantTermThreshold` from
+`RationalOrbitConstantTermThresholdProof`. All orbit coefficients are
+bi-invariant under one compact open subgroup, and averaging puts them in
+the span of coefficients of fixed vectors and fixed functionals. The normalized
+inductions of the unramified twists share a compact picture on `K`, so one
+fixed-vector dimension bound gives a common Casselman depth.
+`exists_region_dimension_threshold` extends the identity to the full closed
+threshold region using the minimal-Levi Cartan covering. The comparison in
+`exists_constantTerm_dimension_threshold` uses `standardConstantTerm_eq` to
+identify the resulting right-finite term with the chosen constant term.
 
 `rationalOrbitPositiveDecay_of_xiUpperBound_and_threshold` applies the
 threshold to the original coefficient bound and compares Xi on the

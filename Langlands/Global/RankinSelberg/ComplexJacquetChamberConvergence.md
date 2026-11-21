@@ -33,3 +33,5 @@ estimate to \(w_nu\).
 This is the chamber convergence used in Jacquet, *Archimedean
 Rankin–Selberg integrals* (2009), §7.2, (7.3), p. 47. The upper-Borel
 convention reverses the order of the exponents in the displayed chamber.
+
+The open-cell calculations share `ComplexModulusOpenCell.groupTranspose`, its matrix entries, continuity and reversal of multiplication.

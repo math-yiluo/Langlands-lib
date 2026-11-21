@@ -1,4 +1,5 @@
 import Langlands.Representation.Plancherel.RationalRankOneDifferenceRegularity
+import Langlands.Representation.Plancherel.RationalUnitaryPoleFactorization
 
 /-! # Pointwise rank-one products and rational multiplicative differences -/
 
@@ -168,5 +169,109 @@ theorem unitaryRegular_of_denseRankOneProduct
     exact rationalFunctionUnitaryRegular_algebraMap H hH _
   · exact unitaryRegular_of_rankOne_differences H hH ds f hf
       (multiplicativeDifferencesVanish_of_denseRankOneProduct H hH ds f hds hprod) hbound
+
+set_option hygiene false in
+local notation "Λ" => Additive (rationalDiscreteValuationImage H)
+
+/-- A fraction with a pole-factorable denominator and an identity after
+cross multiplication with the original scalar fraction. -/
+structure RankOneScalarPolePresentation (a b : R) where
+  numerator : R
+  denominator : R
+  factors : RationalUnitaryPoleFactorization H denominator
+  cross : b * numerator = denominator * a
+
+private def factorization_of_associated {b c : R}
+    (P : RationalUnitaryPoleFactorization H c) (h : Associated c b) :
+    RationalUnitaryPoleFactorization H b :=
+  Classical.choice (by
+    obtain ⟨u, hu⟩ := h
+    refine ⟨⟨P.poles, P.remainder * (u : R), ?_, fun z => ?_⟩⟩
+    · calc
+        b = c * (u : R) := hu.symm
+        _ = rationalUnitaryPoleProduct H P.poles * (P.remainder * (u : R)) := by
+          rw [← mul_assoc]
+          exact congrArg (fun r : R => r * (u : R)) P.factorization
+    · let e := UnramifiedNormalized.evaluation ν (unitaryToUnramified H z)
+      exact mul_ne_zero (P.remainder_nonzero z) ((Units.isUnit u).map e).ne_zero)
+
+private def basisRootFactorization {n : ℕ}
+    (B : Module.Basis (Fin (n + 1)) ℤ Λ) (s : ℂˣ) :
+    RationalUnitaryPoleFactorization H (rationalUnramifiedBasisCoordinateRoot H B s) := by
+  classical
+  by_cases hs : ∃ t : Circle, s = Circle.toUnits t
+  · exact Classical.choice (by
+      obtain ⟨t, rfl⟩ := hs
+      let p : RationalUnitaryBasisPole H := ⟨n, B, t, 1⟩
+      refine ⟨⟨[p], 1, ?_, fun _ => one_ne_zero⟩⟩
+      simp only [rationalUnitaryPoleProduct, List.map_cons, List.map_nil,
+        List.prod_cons, List.prod_nil, mul_one, p, RationalUnitaryBasisPole.factor, pow_one])
+  · exact RationalUnitaryPoleFactorization.ofNonvanishing H _ (fun z hz =>
+      hs (basis_root_eq_circle_of_eval_zero H B s z hz))
+
+private theorem nonempty_factorization_prod (s : Multiset R)
+    (h : ∀ p ∈ s, Nonempty (RationalUnitaryPoleFactorization H p)) :
+    Nonempty (RationalUnitaryPoleFactorization H s.prod) := by
+  induction s using Multiset.induction with
+  | empty =>
+    exact ⟨RationalUnitaryPoleFactorization.ofNonvanishing H 1 (fun _ => one_ne_zero)⟩
+  | cons p s ih =>
+    obtain ⟨P⟩ := h p (Multiset.mem_cons_self _ _)
+    obtain ⟨Q⟩ := ih (fun t ht => h t (Multiset.mem_cons_of_mem ht))
+    rw [Multiset.prod_cons]
+    exact ⟨P.mul H Q⟩
+
+set_option maxHeartbeats 400000 in
+/-- A dense rank-one product supplies a factored denominator for a nonzero
+fraction before any norm estimates on that fraction are imposed. -/
+def RankOneScalarPolePresentation.ofDenseRankOneProduct
+    (ds : charts) (a b : R) (ha : a ≠ 0) (hb : b ≠ 0)
+    (hprod : HasDenseRankOneProduct H hH ds (algebraMap R K a / algebraMap R K b)) :
+    RankOneScalarPolePresentation H a b :=
+  Classical.choice (by
+    let : IsDomain R := rationalUnramifiedRegularFunctions_isDomain H hp hH
+    let : UniqueFactorizationMonoid R := rationalUnramifiedRegularFunctions_uniqueFactorizationMonoid H hp hH
+    let i := algebraMap R K
+    have hi := IsFractionRing.injective R K
+    have hb' : i b ≠ 0 := (map_ne_zero_iff i hi).mpr hb
+    by_cases hds : ds = []
+    · subst ds
+      obtain ⟨a', b', κ, D, fs, hfrac, hD, _, hInv, hvalue⟩ := hprod
+      cases hInv
+      have hconst := regular_fraction_eq_constant H hH D hD a' b' (κ : ℂ)
+        (fun z hz => (hvalue z hz).2.1) (fun z hz => by simpa using (hvalue z hz).2.2)
+      let c : R := algebraMap ℂ R (κ : ℂ)
+      have he : i a / i b = i c := hfrac.trans hconst
+      refine ⟨⟨c, 1, RationalUnitaryPoleFactorization.ofNonvanishing H 1 (fun _ => one_ne_zero), ?_⟩⟩
+      rw [one_mul, mul_comm b]
+      apply hi
+      rw [map_mul]
+      exact ((div_eq_iff hb').mp he).symm
+    · obtain ⟨a', b', hcop, hfrac⟩ := IsFractionRing.exists_reduced_fraction R (i a / i b)
+      rw [IsFractionRing.mk'_eq_div] at hfrac
+      have hb₀ : (b' : R) ≠ 0 := nonZeroDivisors.ne_zero b'.property
+      have ha₀ : a' ≠ 0 := by
+        intro h0
+        have hn : i a / i b ≠ 0 := div_ne_zero ((map_ne_zero_iff i hi).mpr ha) hb'
+        apply hn
+        rw [← hfrac, h0, map_zero, zero_div]
+      have hdiff := multiplicativeDifferencesVanish_of_denseRankOneProduct H hH ds _ hds hprod
+      rw [← hfrac] at hdiff
+      obtain ⟨s, hprime, hassoc⟩ :=
+        rationalUnramifiedRegularFunctions_exists_prime_factors H hp hH b' hb₀
+      have hprimeDvd (p : R) (hpMem : p ∈ s) : p ∣ (b' : R) :=
+        (Multiset.dvd_prod hpMem).trans hassoc.dvd
+      obtain ⟨P⟩ := nonempty_factorization_prod H s (fun p hpMem => by
+        have hpr := hprime p hpMem
+        have hd := hprimeDvd p hpMem
+        have hnd : ¬ p ∣ a' := fun h => hpr.not_isUnit (hcop h hd)
+        obtain ⟨n, B, t, hroot⟩ :=
+          denominator_prime_associated_of_rankOne_differences H hH ds ha₀ hb₀ hpr hd hnd hdiff
+        exact ⟨factorization_of_associated H (basisRootFactorization H B t) hroot.symm⟩)
+      refine ⟨⟨a', b', factorization_of_associated H P hassoc, ?_⟩⟩
+      rw [mul_comm b, mul_comm (b' : R)]
+      apply hi
+      rw [map_mul, map_mul]
+      exact (div_eq_div_iff ((map_ne_zero_iff i hi).mpr hb₀) hb').mp hfrac)
 
 end Langlands.Plancherel.ValuationKernelCoordinates

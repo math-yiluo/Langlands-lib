@@ -1,5 +1,22 @@
 # Common-closure existence reduced to the finite cup comparison
 
+> **The hypothesis `FiniteCupArtinCharacterComparison` is false. Do not cite the
+> declarations of this module.** Every declaration here
+> (`constructedReciprocityFamily_galoisTransfer`, `constructedReciprocityFamily_transfer`,
+> `constructedReciprocityFamily_normalized`, `normalizedSystemOfFiniteComparison` and
+> `commonClosureReciprocityExistence_of_finiteCupComparison`) takes that proposition as a
+> hypothesis, so they say nothing. Its negation is the statement
+> `FiniteCupArtinCharacterComparisonFails` (module
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureStatement`), proved as
+> `finiteCupArtinCharacterComparisonFails` (module
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureProof`). The
+> common-closure target is proved unconditionally by the geometric route:
+> `commonClosureReciprocityExistence` (module
+> `Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof`), through
+> `CommonClosureExistenceGeometricReduction`. The Lean text is unchanged. The rest of this
+> file is the original description, including its remarks about removing the hypothesis,
+> which do not apply.
+
 This internal reduction keeps `FiniteCupArtinCharacterComparison` as an
 explicit mathematical premise. It is not an unconditional proof of the
 host task's common-closure reciprocity existence target.

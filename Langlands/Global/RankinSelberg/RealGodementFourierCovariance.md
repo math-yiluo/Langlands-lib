@@ -1,5 +1,7 @@
 # Left-right covariance of the real rectangular Schwartz Fourier transform
 
+`rectangularTranslateCLM` bundles the left-right Schwartz pullback as a continuous complex-linear map. Its underlying function is the pullback used in the covariance identity.
+
 For a real Schwartz test on `r × s` matrices, pulling back by `X ↦ A X B` gives a Schwartz test. Its positive Fourier transform is the Fourier transform of the original test at `A⁻ᵀ X B⁻ᵀ`, multiplied by `(|det A|^s |det B|^r)⁻¹`. The Fourier transform uses the specified real self-dual measure in every matrix coordinate.
 
 The left-right map is a linear isomorphism of finite-dimensional real spaces, so its Schwartz pullback is defined. Scalar multiplication on the real Haar line has its usual absolute-value Jacobian. The Library's determinant change of variables for rectangular product measures gives the stated powers. The raw left-right Fourier transport theorem moves the inverse matrices to the other argument of the entry pairing by transposition. The rectangular Schwartz transform agrees with that raw integral, giving the identity used in the proof of Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, Proposition 7.3.

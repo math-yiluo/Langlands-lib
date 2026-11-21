@@ -1,0 +1,5 @@
+# The full scalar kernel of the Clifford lift projection
+
+For a regular positive-dimensional scalar form over a characteristic-zero field with `2` invertible, the kernel of the actual Clifford projection to the norm-one isometry scheme is isomorphic to `μ₂`. The isomorphism is on all relative test schemes, including nonreduced ones. Under the Clifford pair coordinates it sends a square root of unity to its scalar Clifford unit and the identity matrix.
+
+An orthogonal basis of the regular form has unit values after every coefficient extension. The even Clifford centralizer then identifies the Clifford units with trivial vector action as scalars. Reversion norm one is the square-root-of-unity equation on the scalar. The natural coordinate comparison on relative global sections gives the scheme isomorphism by Yoneda. The scalar inclusion commutes with every Clifford lift after any restriction, so the full kernel is central. This is the kernel of the spin covering in Kneser, *Lectures on Galois Cohomology of Classical Groups* (1969), §5.11, p. 99.

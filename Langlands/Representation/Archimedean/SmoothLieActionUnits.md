@@ -1,0 +1,12 @@
+# The Lie algebra action on genuine smooth vectors of a units representation
+
+Worker 1028, Task 7767. This derived construction uses the actual units action and the genuine word-derivative topology of [SmoothUnitAction](SmoothUnitAction.md) and [SmoothUnitActionDerivative](SmoothUnitActionDerivative.md). It is a step toward the Lie action on the compact-finite vectors, not a Harish-Chandra module or smooth pairing theorem.
+
+Let `A` be a complete normed real algebra, let `E` be a complex normed space, and let `R` be a representation of `Aˣ` by bounded complex-linear operators on `E`. Write `D` for its genuine smooth carrier, `R∞` for its group action there, and `dR(X)` for `DerivativeSmoothVectors.operator` in the identity-chart direction `X : A`.
+
+* `operatorDirection R` packages real linearity in `X`. Transporting along `toSmooth` reduces the two linearity laws to those of `smoothLieDerivativeDirection`.
+* `operator_mul_representation_units` reparametrizes genuine unit covariance as `dR(gY) R∞(g) v = R∞(g) dR(Yg) v`. Indeed, `g⁻¹ (gY) g = Yg` in `A`.
+* With `A` finite-dimensional over `ℝ` and the action on `E` jointly continuous, `operator_commutator_units` proves `dR(XY − YX)v = dR(X)dR(Y)v − dR(Y)dR(X)v`. It differentiates the reparametrized covariance at the identity along the open chart curve `c(t) = 1 + tX`. The unit-valued representative exists near `0` since the units form an open subset of `A`. The chart translate of `v` is `o(t)` with derivative `dR(X)v`. The left side of covariance is `dR(Y)o(t) + t • dR(XY)o(t)`, whose slope tends to `dR(Y)dR(X)v + dR(XY)v`, using continuity of the smooth operators and `o(0) = v`. The right side is the chart action on `dR(Y)v + t • dR(YX)v`, with derivative `dR(X)dR(Y)v + dR(YX)v` by the joint chart derivative theorem. These are limits in the genuine word topology. The curves agree near `0`, so their slopes have the same limit by Hausdorffness.
+* `operatorLieHom R hR` bundles this as the real Lie homomorphism `A →ₗ⁅ℝ⁆ Module.End ℂ D`, with the associative commutator on both sides. Its value on `X` acts by the original `dR(X)`, as stated by `operatorLieHom_apply`.
+
+No irreducibility, admissibility, or Hilbert structure is used. Preservation of compact finiteness and complexification are separate steps. The proof is internal to the units chart and the published derivative API; it does not assume a bracket theorem for these smooth operators.

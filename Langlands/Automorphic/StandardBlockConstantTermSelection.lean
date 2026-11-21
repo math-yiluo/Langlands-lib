@@ -55,12 +55,12 @@ end Module
 
 variable (F : Type u) [Field F] [NumberField F]
 
-local instance {n : ℕ} : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance {n : ℕ} : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance {n : ℕ} : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance {n : ℕ} : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance {n : ℕ} : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance blockTermSelectionRationalAddCommGroup {n : ℕ} : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance blockTermSelectionContinuousAddCommGroup {n : ℕ} : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockTermSelectionFiniteSmoothAddCommGroup {n : ℕ} : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockTermSelectionFormsAddCommGroup {n : ℕ} : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance blockTermSelectionStableAddCommGroup {n : ℕ} : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance blockTermSelectionRealizationAddCommGroup {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 /-- The cyclic image of an actual block constant term, in the quotient model for
 its transported operator action. -/

@@ -1,0 +1,3 @@
+# Convergent rank-one intertwining integral
+
+The Library constructs an adjacent-swap Jacquet functional using a correction by a diagonal right derivative. When the difference of the two inducing exponents has positive real part, the ordinary chart integral converges. The diagonal formula and Euler's integration-by-parts identity identify the corrected functional at `c = 1` with the ordinary integral multiplied by twice the exponent difference. Frobenius reciprocity with evaluation at the identity then gives the compact restriction formula for the swap. This is an internal comparison for the project’s rank-one realization of the intertwining operators used by Vogan, *The unitary dual of GL(n) over an archimedean field* (1986), Theorem 11.5(f)–(h), p. 479.

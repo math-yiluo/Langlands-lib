@@ -26,29 +26,36 @@ local notation "RF" => CommRingCat.of F
 local notation "GLG" => GroupScheme.GeneralLinear.groupScheme (Fin n) RF
 local notation "N(" e ")" => GroupScheme.GeneralLinear.blockUnipotent (Fin n) RF e
 
-local instance : IsAffine (GLG).X.left := GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) RF
+local instance blockConstantTermOperatorAffine : IsAffine (GLG).X.left :=
+  GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) RF
 
-local instance : Smooth (GLG).X.hom := GroupScheme.GeneralLinear.smoothStatement (Fin n) RF
+local instance blockConstantTermOperatorSmooth : Smooth (GLG).X.hom :=
+  GroupScheme.GeneralLinear.smoothStatement (Fin n) RF
 
-local instance (e : Fin n → ℤ) :
+local instance blockConstantTermOperatorClosed (e : Fin n → ℤ) :
     IsClosed (adelicPoints F GLG N(e) : Set (AdelicGroupPoints F GLG)) :=
   isClosed_adelicPoints_blockUnipotent F e
 
-local instance (e : Fin n → ℤ) : CompactSpace (RationalQuotient F GLG N(e)) :=
+local instance blockConstantTermOperatorCompact (e : Fin n → ℤ) :
+    CompactSpace (RationalQuotient F GLG N(e)) :=
   GroupSchemeFunctions.blockUnipotentRationalQuotientCompactSpace F e
 
-local instance (e : Fin n → ℤ) : BorelSpace (RationalQuotient F GLG N(e)) :=
+local instance blockConstantTermOperatorBorel (e : Fin n → ℤ) :
+    BorelSpace (RationalQuotient F GLG N(e)) :=
   rationalQuotientBorelSpace F GLG N(e)
 
-local instance (e : Fin n → ℤ) :
+local instance blockConstantTermOperatorProbability (e : Fin n → ℤ) :
     IsProbabilityMeasure (normalizedRationalQuotientHaarMeasure F GLG N(e)) :=
   normalizedRationalQuotientHaarMeasure_isProbabilityMeasure F GLG N(e)
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance blockConstantTermOperatorRationalAddCommGroup :
+    AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
 
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockConstantTermOperatorContinuousAddCommGroup :
+    AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
 
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance blockConstantTermOperatorFiniteSmoothAddCommGroup :
+    AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
 
 private theorem constantTerm_hasDerivAt
     {G : GroupScheme (Spec RF)} [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]

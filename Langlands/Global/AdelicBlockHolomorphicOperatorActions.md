@@ -1,0 +1,9 @@
+# Holomorphic families of block-section operators
+
+`sectionOperatorAction` lifts the finite adelic, infinite compact and enveloping actions on a fixed complex section carrier to the free operator algebra. Finite and enveloping operators can vary with the parameter. The infinite compact action is fixed, as in the compact picture where right multiplication by an element of the Iwasawa compact leaves the height unchanged.
+
+`sectionOperatorAction_generator_mem` takes finite holomorphic expansions for the finite translations and the real Lie generators on every constant section. The fixed compact operators give constant families. Complex linearity extends the Lie generator result to the complexified Lie algebra. Induction on the tensor-algebra presentation then gives the result for the enveloping algebra. `FiniteHolomorphicSections.freeAlgebra_apply_mem` and `FiniteHolomorphicSections.freeAlgebra_finsuppSum_mem` apply to every free operator and to combinations on finitely supported constant seeds.
+
+`mem_finiteHolomorphicSections_of_parameterRightAction` and `mem_finiteHolomorphicSections_of_parameterDirectionalSection` give these expansions when the supplied action agrees with the scalar formula under a faithful scalar realization. They reflect the finite height displacement expansion and the affine invariant derivative expansion through the injective linear realization. The finite comparison uses a product Iwasawa compact with compact open finite factor. The differential comparison uses smooth infinite slices of the given section and of the height pairings.
+
+These derived lemmas implement the parameter-dependent differential and translation operators on holomorphic compact-picture sections used in Langlands' proof of Proposition 2, printed p. 206 (Corvallis Part I PDF p. 201). The scalar comparisons use the Iwasawa height twist described by Bernstein–Lapid, Section 2.2 immediately before (2.1), printed p. 191 (PDF p. 5).

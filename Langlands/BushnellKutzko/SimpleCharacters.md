@@ -1,0 +1,11 @@
+# Simple characters of a simple stratum
+
+Source: C. J. Bushnell and P. C. Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), definitions (3.2.1) and (3.2.3) and the extension of notation after (3.2.3), printed pp. 98–99 (PDF pp. 110–111). The base additive character is specified on printed pp. 19–20 (PDF pp. 31–32).
+
+`simpleCharacters ψF L n β tail m` is a set of group homomorphisms `H^{m+1}(β,𝔄) → ℂˣ`, computed relative to a defining sequence using the same tail as the lattice and group constructions. The definition takes `ψF` explicitly; the source conductor condition is expressed by `IsBKAdditiveCharacter`: trivial on `𝔭_F` but not on `𝔬_F`. The functions `ψ_b(g) = ψ_F(tr_A(b(g−1)))` are the published `elementCharacter` applied to `traceCharacter ψF`.
+
+- At the terminal (minimal) element, a character must agree with `ψ_β` on the intersection with `U^{⌊n/2⌋+1}(𝔄)` and factor through `det_B` on its intersection with `B_β^×`. This includes a scalar `β`.
+- At a nonterminal element with next approximation `γ` and `m<r=−k₀(β,𝔄)`, a character must factor through `det_B` on its intersection with `B_β^×`, be normalized by `𝔎(𝔅_β)`, and agree on `H^{j+1}(β,𝔄)` with `θ₀ ψ_{β−γ}`, for `j=max(m,⌊r/2⌋)` and `θ₀ ∈ C(𝔄,j,γ)`.
+- For a step with `r≤m`, membership is membership in `C(𝔄,m,γ)` on the same domain. The definition compares subgroup equality and transported values explicitly, so it does not assume an equality theorem in the recursion. The source range in the task is `0≤m≤n−1`; the recursion is total on all natural indices.
+
+`factorsThroughCentralizerDet` uses the actual field `F[β]` acting on `V`, not the absolute determinant over `F`: it pulls the domain back along restriction of scalars on `End_{F[β]}(V)^×`, and uses a character of the determinant image of that pullback. This is the restriction to `H∩B_β^×`. `characterAgreesOn` is a helper for comparing (possibly twisted) restrictions: for every element of the entire test subgroup it records membership in each domain and equality of the values after twisting. It does not ignore elements missing from either domain. The formulas do not assert the independence, existence or other properties of simple characters.

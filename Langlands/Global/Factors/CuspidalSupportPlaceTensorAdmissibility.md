@@ -1,0 +1,9 @@
+# Archimedean constituents from nonzero standard tensor maps
+
+Fix an irreducible nonzero operator subquotient `Q` over a number field. At a real or complex place, suppose a rank-correct standard module tensored with a multiplicity space has a stable subspace with a nonzero equivariant map to the place restriction of `Q`. The stable domain and its map have the matrix-direction and compact covariance of `IsPlaceTensorIntertwining`. `ArchimedeanPlaceStandardConstituentOfNonzeroTensorStatement` gives the corresponding place constituent of `Q` with those parameters.
+
+Take the range of the map as the stable space in `exists_nonzero_subquotient_of_tensorProduct`. This produces `p` from a stable subspace of the standard module with nonzero image in that range. The compact type spaces in the domain of `p` are finite-dimensional by standard-module admissibility. They surject onto the compact type spaces of its range by `CompactMaschke.exists_lift_intertwiner`, since the source action is locally finite and weakly continuous. Thus the range of `p` is admissible for the place compact group.
+
+The global irreducibility of `Q` gives a compact matrix representation that detects every nonzero stable subspace at the place. Minimizing its multiplicity inside the range of `p` yields an irreducible stable subspace. The existing constituent adapters apply with that subspace as the irreducible image. The admissibility used here is the local compact admissibility inherited from the standard model on one multiplicity coordinate.
+
+The minimum-support extraction is derived from the finite-tensor argument in R. P. Langlands, *On the notion of an automorphic representation* (1979), Lemma 1, printed p. 203 (PDF p. 198), in the single-place constituent step of Proposition 2, printed pp. 204–205 (PDF pp. 199–200).

@@ -95,7 +95,8 @@ private theorem characterWeight_shifted (d : ComplexCharacterData) (s t : ℂ) (
   rw [shifted_character_apply, normPower_detPower]
   ring
 
-private theorem shifted_character_sign (d : ComplexCharacterData) (s : ℂ) (m : ℕ) :
+/-- Shifting the adjoining exponent preserves the character at `(-1)^m`. -/
+theorem shifted_character_sign (d : ComplexCharacterData) (s : ℂ) (m : ℕ) :
     ((characterOfParams d.weight (d.exponent + s)).character ((-1 : ℂˣ) ^ m) : ℂ) =
       (d.character ((-1 : ℂˣ) ^ m) : ℂ) := by
   rw [shifted_character_apply, map_pow (normPower s),
@@ -119,6 +120,16 @@ def continuedValue (ν : Measure G) (μ : AdditiveHaarMeasure ℂ) (d : ComplexC
       ArchimedeanLocal.detPower complexNormalizedAbs g s *
         ∫ h, iteratedKernel (complexScaledCharacter a) μ d (rightTest g Φ) W
           ((((r + 1 : ℕ) + 1 : ℂ) / 2) + s) h ∂ν
+
+/-- The continuation at a shift is the zero-shift value for the actual shifted character. -/
+theorem continuedValue_eq_shiftedCharacter (ν : Measure G) (μ : AdditiveHaarMeasure ℂ)
+    (d : ComplexCharacterData) (a : ℂˣ) (Φ : 𝓢(Rect, ℂ)) (W : G → ℂ) (g : G') (s : ℂ) :
+    continuedValue ν μ d a Φ W g s =
+      continuedValue ν μ (characterOfParams d.weight (d.exponent + s)) a Φ W g 0 := by
+  have hzero : ArchimedeanLocal.detPower complexNormalizedAbs g 0 = 1 := by
+    simp only [ArchimedeanLocal.detPower, zero_mul, Complex.exp_zero]
+  simp only [continuedValue, shifted_character_sign, characterWeight_shifted, hzero, add_zero,
+    iteratedKernel_shifted, mul_assoc, mul_one]
 
 private theorem differentiable_continuedValue (ν : Measure G) (hν : ν.IsHaarMeasure)
     (μ : AdditiveHaarMeasure ℂ) (d : ComplexCharacterData) (ds : List ComplexCharacterData)

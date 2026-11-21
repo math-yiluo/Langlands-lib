@@ -425,20 +425,16 @@ theorem prod_rootSize_pow_le (y : Fin (r + 1) → ℝ) (k : unitaryCompact ℝ (
 
 /-! ### The gauge estimate -/
 
-/-- **Gauge estimate.** If all iterated right derivatives of `W` are character-equivariant,
-smooth and polynomially bounded with one common exponent, then on `torus y * k` the function
-`W` decays faster than any exponential in the positive parts of the simple-root coordinates
-`y_i - y_(i+1)`, at the cost of a fixed exponential factor in `∑ |y_j|`. -/
-theorem exists_gauge_bound {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
+/-- The gauge estimate with the growth exponent specified in advance. -/
+theorem gauge_bound_of_derivative_growth {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
     (hreg : ∀ Xs, iteratedRightDerivative r Xs W ∈ regularFunctions r a)
-    (hgrowth : ∃ N : ℕ, ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
+    {N : ℕ} (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
       ‖iteratedRightDerivative r Xs W g‖ ≤ C * realMatrixHeight g ^ N) :
-    ∃ N : ℕ, ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧
+    ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧
       ∀ (y : Fin (r + 1) → ℝ) (k : unitaryCompact ℝ (r + 1)),
         ‖W (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))‖ ≤ C * Real.exp (-(M : ℝ) * ∑ i : Fin r, max (y i.castSucc - y i.succ) 0 +
-          (N : ℝ) * ∑ j, |y j|) := by
-  obtain ⟨N, hN⟩ := hgrowth
-  refine ⟨2 * N, fun M => ?_⟩
+          ((2 * N : ℕ) : ℝ) * ∑ j, |y j|) := by
+  intro M
   have hS : ∀ S : Finset (Fin r), ∃ C : ℝ, 0 ≤ C ∧ ∀ g, ‖W g‖ ≤
       C * (∏ i : Fin r, rootSize g i ^ (if i ∈ S then M else 0)) * realMatrixHeight g ^ N := by
     intro S
@@ -472,5 +468,18 @@ theorem exists_gauge_bound {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ 
     _ = _ := by
       rw [Real.exp_add]
       ring
+
+/-- If all iterated right derivatives of `W` are character-equivariant, smooth and
+polynomially bounded with a common exponent, then the simple-root gauge estimate holds. -/
+theorem exists_gauge_bound {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
+    (hreg : ∀ Xs, iteratedRightDerivative r Xs W ∈ regularFunctions r a)
+    (hgrowth : ∃ N : ℕ, ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
+      ‖iteratedRightDerivative r Xs W g‖ ≤ C * realMatrixHeight g ^ N) :
+    ∃ N : ℕ, ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧
+      ∀ (y : Fin (r + 1) → ℝ) (k : unitaryCompact ℝ (r + 1)),
+        ‖W (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))‖ ≤ C * Real.exp (-(M : ℝ) * ∑ i : Fin r, max (y i.castSucc - y i.succ) 0 +
+          (N : ℝ) * ∑ j, |y j|) := by
+  obtain ⟨N, hN⟩ := hgrowth
+  exact ⟨2 * N, gauge_bound_of_derivative_growth hreg hN⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealWhittakerGauge

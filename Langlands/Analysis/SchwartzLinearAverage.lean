@@ -34,7 +34,8 @@ private theorem continuous_linearPullbackDerivative (Φ : SchwartzMap F ℂ) (n 
   exact hC.clm_apply hΦ
 
 omit [TopologicalSpace P] [SecondCountableTopology P] [MeasurableSpace P] [OpensMeasurableSpace P] in
-private theorem norm_pow_mul_linearPullbackDerivative_le (Φ : SchwartzMap F ℂ)
+/-- A pointwise weighted derivative bound for the pullback by a linear map. -/
+theorem norm_pow_mul_linearPullbackDerivative_le (Φ : SchwartzMap F ℂ)
     (k n : ℕ) (x : E) (L : E →L[ℝ] F) {A B : ℝ} (hA : ‖L‖ ≤ A)
     (hB₀ : 0 ≤ B) (hB : ‖x‖ ≤ B * ‖L x‖) :
     ‖x‖ ^ k * ‖iteratedFDeriv ℝ n (Φ ∘ L) x‖ ≤

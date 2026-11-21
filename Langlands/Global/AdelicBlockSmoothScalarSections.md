@@ -1,0 +1,9 @@
+# Smooth archimedean slices of adelic scalar sections
+
+`infiniteSliceExtension` fixes a finite adelic argument and uses the open units chart to evaluate the scalar section in ambient mixed archimedean matrix coordinates. At every invertible matrix the extension evaluates the original section at the corresponding infinite adelic argument.
+
+For a finite-smooth, infinite-compact-finite realized section with `HasSmoothCompactSlices`, `contDiffAt_infiniteSliceExtension` proves real smoothness at every invertible mixed matrix. Fix the finite Iwasawa factors and choose the smooth local infinite Iwasawa factors at the matrix in question. The scalar section at these factors is the finite half character times the infinite half character times the normalized compact slice evaluated at the projected Levi argument. The compact slice expansion expresses that last term as a finite sum of smooth coordinate functions multiplied by smooth evaluations of actual Levi coefficients. On a neighborhood of the matrix this formula agrees with `infiniteSliceExtension`. Restricting the extension to the invertible matrices gives `infiniteSlice_mem_smoothFunctions` in the function space used for archimedean differentiation.
+
+Conversely, `hasSmoothCompactSlices_of_infiniteSlice_mem` obtains the local scalar compact extensions from smoothness at each fixed finite argument. For a fixed Levi point, compose the full slice in the units chart with left multiplication by the infinite Levi matrix, and multiply by the inverse Levi half character. At a compact point this is precisely the normalized compact slice.
+
+Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the Iwasawa compact model and its scalar normalization. This internal argument uses the local archimedean Iwasawa factors, the finite-dimensional smooth compact slice expansion, and smooth evaluation of the realized Levi coefficients to relate the two smoothness conditions in that model.

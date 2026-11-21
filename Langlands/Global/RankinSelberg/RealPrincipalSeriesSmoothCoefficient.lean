@@ -369,8 +369,18 @@ def CompactWhittakerSmoothRegularityStatement : Prop :=
       (∀ Xs, RealLocalWhittaker.iteratedRightDerivative r Xs W ∈
         RealLocalWhittaker.regularFunctions r a) ∧ RealUniformWhittaker.HasUniformDerivativeGrowth W
 
-theorem compactWhittakerSmoothRegularity : CompactWhittakerSmoothRegularityStatement := by
-  intro r ds a ℓ hℓ hψ f W
+variable (r) in
+/-- The height exponent for smooth Whittaker coefficients is independent of the source vector. -/
+theorem exists_commonExponent_compactWhittakerSmoothRegularity
+    (a : ℝˣ) (ℓ : P →ₗ[ℂ] ℂ) (hℓ : HasCompactDerivativeBound r ds ℓ)
+    (hψ : ∀ u ∈ GeneralLinear.upperUnipotent (r + 1) ℝ, ∀ f : P,
+      ℓ (translate r ds u f) = realWhittakerCharacter a u * ℓ f) :
+    ∃ N : ℕ, ∀ f : P,
+      let W := fun g => ℓ (translate r ds g f)
+      (∀ Xs, RealLocalWhittaker.iteratedRightDerivative r Xs W ∈
+        RealLocalWhittaker.regularFunctions r a) ∧
+      (∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
+        ‖RealLocalWhittaker.iteratedRightDerivative r Xs W g‖ ≤ C * realMatrixHeight g ^ N) := by
   obtain ⟨N, hN⟩ := compactFunctionalGrowth r ds ℓ hℓ
   let C := fun x : principalSeries ℝ (r + 1) (realPositionCharacter ds) => fun g => ℓ (translate r ds g x)
   have hWord (Xs : List (Matrix (Fin (r + 1)) (Fin (r + 1)) ℝ)) :
@@ -387,7 +397,7 @@ theorem compactWhittakerSmoothRegularity : CompactWhittakerSmoothRegularityState
         (RealLocalWhittaker.iteratedRightDerivative r Xs (C x)) = C (sourceDerivative ds X y)
       rw [hy]
       exact funext ((smoothCoefficient_and_rightDerivative ds ℓ hℓ y).2 X)
-  refine ⟨?_, N, ?_⟩
+  refine ⟨N, fun f => ⟨?_, ?_⟩⟩
   · intro Xs
     obtain ⟨y, hy⟩ := hWord Xs f
     change RealLocalWhittaker.iteratedRightDerivative r Xs (C f) ∈ RealLocalWhittaker.regularFunctions r a
@@ -403,5 +413,10 @@ theorem compactWhittakerSmoothRegularity : CompactWhittakerSmoothRegularityState
       ‖RealLocalWhittaker.iteratedRightDerivative r Xs (C f) g‖ ≤ B * realMatrixHeight g ^ N
     rw [hy]
     exact hN y
+
+theorem compactWhittakerSmoothRegularity : CompactWhittakerSmoothRegularityStatement := by
+  intro r ds a ℓ hℓ hψ f W
+  obtain ⟨N, hN⟩ := exists_commonExponent_compactWhittakerSmoothRegularity r ds a ℓ hℓ hψ
+  exact ⟨(hN f).1, N, (hN f).2⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealPrincipalSeries

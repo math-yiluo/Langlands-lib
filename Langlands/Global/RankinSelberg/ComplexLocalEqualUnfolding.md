@@ -1,0 +1,7 @@
+# The double integral in the complex equal-rank unfolding
+
+This internal comparison implements the change of variables leading to (8.1) in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, pp. 54–56. The recursion is supplied in the form with the full upper-unipotent Haar integration. Converting the rectangle recursion to this form requires the block unipotent Haar comparison. The larger second function has left character `-a`, so its value on `u g` supplies the phase in the recursive unipotent integral.
+
+The proof first interchanges the two quotient integrals on their product measure. Weil integration combines the large quotient and unipotent integrals at each integrable smaller-quotient fiber. In this group integral the substitution `g ↦ diag(h,1)g` cancels the inverse matrix `h⁻¹` acting on the first rows and fixes the last row. The two determinant characters of `h` cancel. The smaller determinant exponent is `s - 1/2`, and the larger exponent is `s + (r + 1)/2`. A second Fubini step gives the integral of the smaller adjacent-rank inner integrals against the weighted square matrix test, with the supplied compatible measures.
+
+The statement retains the recursive formula, the second function’s unipotent covariance and the integrability hypotheses for both changes of integration order and the intermediate Weil integration. The same statement can be applied to the dual functions and their recursive test. `ComplexLocalEqualUnfoldedSign` then converts the mixed Fourier test into the positive square Fourier test.

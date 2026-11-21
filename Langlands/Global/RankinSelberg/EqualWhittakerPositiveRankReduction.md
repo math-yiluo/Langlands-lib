@@ -1,0 +1,9 @@
+# Equal-rank factorization with local inputs above rank one
+
+This reduction concludes the Library proposition `EqualArchimedeanFactorizationStatement` with both universes free. It takes three local assertions in ranks \(r+1\ge 2\) as premises. These are the slice comparison `InfiniteWhittakerSliceModelPositiveRankStatement` and the real and complex tests `RealEqualPlaceTestsPositiveRankStatement` and `ComplexEqualPlaceTestsPositiveRankStatement`. Each place test uses the same actual Whittaker restrictions, quotient measure, and Schwartz function for the ordinary and dual integrals.
+
+At \(r=0\), every adelic matrix is a scalar and central-character covariance determines a vector from its value at the adelic identity. The rank-one Whittaker coefficient agrees with the form. These facts give the normalized local linear functional and the central-character factor in each infinite slice for the actual spectral presentation.
+
+The local coefficients in the real and complex tests are nonzero multiples of their determinant characters. The proof chooses the real parity Gaussian and the complex angular Gaussian for the product character on the one-dimensional row space. The ordinary zeta integrals are nonzero multiples of the corresponding Gamma factors on a right half-plane. The local Tate functional equations give holomorphy and carry nonvanishing to the dual tests. The complex branch uses the published theorem `ComplexTate.complexArchimedeanTateStatement`. Compatible real and complex measures come from two-sided Haar measures on the ambient group and its closed unipotent subgroup.
+
+Splitting on \(r\) now supplies the local slice and test assertions for every rank. The local comparison reduction forms the two infinite products, combines the nonzero local tests, and feeds the existing equal-rank factorization. Its ordinary and dual products use the same normalization, with the prescribed Fourier transform of the product Schwartz function.

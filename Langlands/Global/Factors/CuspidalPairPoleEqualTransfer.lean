@@ -54,15 +54,15 @@ def HasNormalizedStripTest (Λ : ℂ → ℂ) : Prop :=
 
 variable {F : Type u} [Field F] [NumberField F]
 
-local instance (n : ℕ) : AddCommGroup (Automorphic.RationalInvariantFunctions F n) :=
+local instance equalTransferRationalInvariantFunctions (n : ℕ) : AddCommGroup (Automorphic.RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (Automorphic.ContinuousRationalFunctions F n) :=
+local instance equalTransferContinuousRationalFunctions (n : ℕ) : AddCommGroup (Automorphic.ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (Automorphic.FiniteSmoothRationalFunctions F n) :=
+local instance equalTransferFiniteSmoothRationalFunctions (n : ℕ) : AddCommGroup (Automorphic.FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (Automorphic.AutomorphicForms F n) :=
+local instance equalTransferAutomorphicForms (n : ℕ) : AddCommGroup (Automorphic.AutomorphicForms F n) :=
   Submodule.addCommGroup _
-local instance {n : ℕ} {v : FinitePlace F} (A : LocalRealization F n v) :
+local instance equalTransferLocalSpace {n : ℕ} {v : FinitePlace F} (A : LocalRealization F n v) :
     AddCommGroup A.Space := Submodule.addCommGroup _
 
 private theorem isIrreducibleAdmissible_of_isoClass_eq {r : ℕ} {v : FinitePlace F}

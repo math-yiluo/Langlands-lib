@@ -131,7 +131,14 @@ private theorem realRank_map_conj (ds : List RealBlock) :
   | nil => rfl
   | cons x ds ih => cases x <;> simp [realBlockConjExponent, RealBlock.rank, ih]
 
-private theorem conjugation_surjective (n : ℕ) (ds : List RealBlock) :
+/-- Hermitian duality preserves the sum of the block sizes. -/
+theorem realRank_map_hermitianDual (ds : List RealBlock) :
+    realRank (ds.map realHermitianDualBlock) = realRank ds := by
+  change realRank (ds.map (realBlockConjExponent ∘ dualBlock)) = realRank ds
+  rw [← List.map_map, realRank_map_conj, realRank_map_dualBlock]
+
+/-- Pointwise conjugation is onto the standard module with conjugated exponents. -/
+theorem realStandardConjugation_surjective (n : ℕ) (ds : List RealBlock) :
     Function.Surjective (realStandardConjugation n ds) := by
   intro f
   have hcomp : realBlockConjExponent ∘ realBlockConjExponent = id :=
@@ -159,7 +166,7 @@ theorem realStandard_hermitianDual_parameter {n : ℕ} {ds : List RealBlock}
   let es := ds.map dualBlock
   let cs := es.map realBlockConjExponent
   let C := LinearEquiv.ofBijective (realStandardConjugation n es)
-    ⟨realStandardConjugation_injective n es, conjugation_surjective n es⟩
+    ⟨realStandardConjugation_injective n es, realStandardConjugation_surjective n es⟩
   let U := LinearEquiv.ofBijective (b.toKFiniteDual hgk.1)
     ⟨b.toKFiniteDual_injective hgk.1, realGK_toKFiniteDual_surjective hgk b hb hirr
       (realStandardAdmissible n ds)⟩

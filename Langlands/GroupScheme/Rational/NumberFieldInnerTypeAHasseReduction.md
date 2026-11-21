@@ -15,7 +15,8 @@ norm obstruction gives a unit-group primitive on the given cover
 and a scalar \(a\) over the number field. At each completion \(K\),
 a maximal ideal of \(K\otimes_F L\) gives a finite residue field
 of \(K\) receiving the original coefficient field \(L\). A finite
-Galois overfield of that residue field gives a comparison field.
+Galois overfield of that residue field gives a comparison field. The
+construction is `CentralSimpleUnits.exists_finiteGalois_over_baseChange`.
 Local triviality on the actual pullback to \(K\) then makes the
 image of \(a\) a reduced norm over \(K\). Reduced-norm locality
 makes \(a\) a norm over \(F\), and the global correction produces

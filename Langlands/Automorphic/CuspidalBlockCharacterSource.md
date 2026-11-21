@@ -1,0 +1,5 @@
+# The cyclic action on a translated block term
+
+The actual translated-period quotient carries the original concrete automorphic operator algebra. The restricted algebra action on the cyclic space of a block-character eigenvector agrees with this action under inclusion. Every vector of the cyclic space is one operator applied to the generator. The block scalars commute with those operators, so every cyclic vector has the same block character.
+
+The inclusion transfers compact finiteness and finite adelic smoothness from the translated-period quotient. It also intertwines the complex Lie action, so compact orbit curves on the cyclic space have the actual Lie derivative against every algebraic linear functional. These are the inherited properties needed to extract the original simple quotient from cuspidal Levi coefficients in Task 6823. The cyclic construction occurs in Langlands, *On the notion of an automorphic representation* (1979), Lemma 6, printed pp. 204–205.

@@ -69,6 +69,37 @@ private theorem compactTestSectionValues_polynomial (y : Y) :
   simp only [Fin.sum_univ_one, unramifiedEvaluationRegular_apply]
   exact he (ξ z.val)
 
+set_option maxHeartbeats 450000 in
+set_option backward.isDefEq.respectTransparency.types false in
+/-- The finite test integral defines a polynomial vector family on the whole
+character space, with compact support for the test sections at every parameter. -/
+theorem exists_compactTestPolynomialIntegral
+    [MeasurableSpace Y] [OpensMeasurableSpace Y] (measure : Measure Y)
+    [IsFiniteMeasureOnCompacts measure] (hj : Continuous j)
+    (z₀ : CharL) (hc : HasCompactSupport (fun y => B y z₀)) :
+    ∃ S : CharL → A, IsPolynomialOn Set.univ (fun w => S w.val) ∧ ∀ w : CharL,
+      HasCompactSupport (fun y => B y w) ∧
+      ∀ ℓ : A →ₗ[ℂ] ℂ, ℓ (S w) = ∫ y, ℓ (B y w) ∂measure := by
+  let restrict (a : CharL → A) (w : ↥(Set.univ : Set CharL)) := a w.val
+  let b (y : Y) := restrict (B y)
+  have hLoc : IsLocallyConstant b :=
+    (compactTestSectionValues_locallyConstant L h hU hδ K hP hK hPK hr e hν A f j hj).comp restrict
+  have hSupp : HasCompactSupport b :=
+    (compactTestSectionValues_hasCompactSupport L h hU hδ K hP hK hPK hr e hν A f j z₀ hc).comp_left
+      (g := restrict) rfl
+  have hb (y : Y) : IsPolynomialOn Set.univ (b y) :=
+    compactTestSectionValues_polynomial L h hU hδ K hP hK hPK hr e hν A f j y
+  let S := compactParametricIntegral measure b hLoc hSupp
+  have hS : IsPolynomialOn Set.univ S :=
+    isPolynomialOn_compactParametricIntegral measure b hLoc hSupp hb
+  refine ⟨fun w => S ⟨w, Set.mem_univ w⟩, ?_, fun w => ?_⟩
+  · exact hS
+  · let ws : ↥(Set.univ : Set CharL) := ⟨w, Set.mem_univ w⟩
+    refine ⟨?_, fun ℓ => (compactParametricIntegral_spec measure b hLoc hSupp ws ℓ).2⟩
+    let ev (s : ↥(Set.univ : Set CharL) → A) := s ws
+    change HasCompactSupport (ev ∘ b)
+    exact hSupp.comp_left (g := ev) rfl
+
 section GeneralEvaluation
 
 variable {H : Type*} [Group H] [TopologicalSpace H] [IsTopologicalGroup H]

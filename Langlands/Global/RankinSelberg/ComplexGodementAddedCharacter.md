@@ -19,7 +19,9 @@ fixed smaller-rank vector.
 `continuedValue` evaluates the integral at the shifted exponent,
 and includes the determinant power of the larger group argument.
 The upper-Borel factor \(d((-1)^m)\) stays fixed because the shifted
-absolute value at \((-1)^m\) is one. The chamber comparison identifies
+absolute value at \((-1)^m\) is one. `continuedValue_eq_shiftedCharacter`
+expresses the same value at shift zero using the actual shifted
+character. The chamber comparison identifies
 this entire function with the larger open-cell Godement value wherever
 the new first exponent and the fixed tail form the strict chamber.
 The initial test is Schwartz with compact support in the full-row-rank

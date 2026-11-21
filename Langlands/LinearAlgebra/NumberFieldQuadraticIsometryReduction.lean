@@ -149,29 +149,66 @@ variable {F : Type u} [Field F] [NumberField F]
 
 local instance : Invertible (2 : F) := invertibleOfNonzero (two_ne_zero : (2 : F) ≠ 0)
 
+/-- A representation after scalar extension gives an isotropic vector of the
+corresponding scalar-extended sum with the negative line. -/
+theorem lineProduct_baseChange_not_anisotropic_of_represents
+    {V : Type u} [AddCommGroup V] [Module F V]
+    (q : QuadraticForm F V) (a : F) (v : Global.Place F)
+    (h : ∃ y, (q.baseChange (Global.placeCompletion F v)) y =
+      algebraMap F (Global.placeCompletion F v) a) :
+    ¬ (QuadraticForm.baseChange (Global.placeCompletion F v)
+      ((-a • (QuadraticMap.sq : QuadraticForm F F)).prod q)).Anisotropic := by
+  let A := Global.placeCompletion F v
+  let : Field A := (Global.placeCompletion.isField F v).toField
+  obtain ⟨z, hz⟩ := h
+  let f := (extendLineProduct A (-a) q).symm
+  let y : A × (A ⊗[F] V) := (1, z)
+  apply (not_anisotropic_iff_exists _).mpr
+  refine ⟨f y, ?_, (f.map_app y).trans ?_⟩
+  · intro hzero
+    have hy : y = 0 := f.toLinearEquiv.injective (hzero.trans (map_zero f).symm)
+    exact one_ne_zero (congrArg Prod.fst hy)
+  · change algebraMap F A (-a) * (1 * 1) + (q.baseChange A) z = 0
+    rw [hz]
+    simp [A]
+
+/-- Local isotropy of the sum with the negative line suffices for representation. -/
+theorem represents_of_local_lineProduct_isotropy (isotropy : NumberFieldQuadraticIsotropyStatement.{u})
+    {V : Type u} [AddCommGroup V] [Module F V] [FiniteDimensional F V]
+    (q : QuadraticForm F V) (hq : q.polarBilin.Nondegenerate) (a : F)
+    (hloc : ∀ v : Global.Place F, ¬ (QuadraticForm.baseChange (Global.placeCompletion F v)
+      ((-a • (QuadraticMap.sq : QuadraticForm F F)).prod q)).Anisotropic) :
+    ∃ y, q y = a := by
+  by_cases ha : a = 0
+  · exact ⟨0, (map_zero q).trans ha.symm⟩
+  apply represents_of_isotropic_lineProduct q hq
+  exact isotropy F (F × V) _ (lineProduct_nondegenerate (-a) (neg_ne_zero.mpr ha) hq) hloc
+
+/-- A regular quadratic form represents a scalar globally if its actual scalar extensions
+represent that scalar at every completion, given local-to-global isotropy. -/
+theorem represents_of_local (isotropy : NumberFieldQuadraticIsotropyStatement.{u})
+    {V : Type u} [AddCommGroup V] [Module F V] [FiniteDimensional F V]
+    (q : QuadraticForm F V) (hq : q.polarBilin.Nondegenerate) (a : F)
+    (hloc : ∀ v : Global.Place F, ∃ y,
+      (q.baseChange (Global.placeCompletion F v)) y = algebraMap F (Global.placeCompletion F v) a) :
+    ∃ y, q y = a :=
+  represents_of_local_lineProduct_isotropy isotropy q hq a
+    (fun v => lineProduct_baseChange_not_anisotropic_of_represents q a v (hloc v))
+
 private theorem represents_of_local_equivalent (isotropy : NumberFieldQuadraticIsotropyStatement.{u})
     {V W : Type u} [AddCommGroup V] [Module F V] [AddCommGroup W] [Module F W]
     [FiniteDimensional F W] (q : QuadraticForm F V) (r : QuadraticForm F W)
     (hr : r.polarBilin.Nondegenerate)
     (hloc : ∀ v : Global.Place F, (q.baseChange (Global.placeCompletion F v)).Equivalent
       (r.baseChange (Global.placeCompletion F v)))
-    (x : V) (hx : q x ≠ 0) : ∃ y, r y = q x := by
-  apply represents_of_isotropic_lineProduct r hr
-  apply isotropy F (F × W) _ (lineProduct_nondegenerate (-q x) (neg_ne_zero.mpr hx) hr)
+    (x : V) : ∃ y, r y = q x := by
+  apply represents_of_local isotropy r hr (q x)
   intro v
   let A := Global.placeCompletion F v
-  let : Field A := (Global.placeCompletion.isField F v).toField
   obtain ⟨e⟩ := hloc v
-  let f := (extendLineProduct A (-q x) r).symm
-  let y : A × (A ⊗[F] W) := (1, e (1 ⊗ₜ[F] x))
-  apply (not_anisotropic_iff_exists _).mpr
-  refine ⟨f y, ?_, (f.map_app y).trans ?_⟩
-  · intro h
-    have hy : y = 0 := f.toLinearEquiv.injective (h.trans (map_zero f).symm)
-    exact one_ne_zero (congrArg Prod.fst hy)
-  · change algebraMap F A (-q x) * (1 * 1) + (r.baseChange A) (e (1 ⊗ₜ[F] x)) = 0
-    rw [e.map_app, QuadraticForm.baseChange_tmul]
-    simp [A, Algebra.smul_def]
+  refine ⟨e (1 ⊗ₜ[F] x), ?_⟩
+  rw [e.map_app, QuadraticForm.baseChange_tmul]
+  simp [Algebra.smul_def]
 
 private theorem equivalent_of_local_equivalent (isotropy : NumberFieldQuadraticIsotropyStatement.{u})
     (n : ℕ) :
@@ -199,7 +236,7 @@ private theorem equivalent_of_local_equivalent (isotropy : NumberFieldQuadraticI
       by_contra! h
       apply LinearMap.BilinForm.Nondegenerate.ne_zero hq
       exact LinearMap.ext₂ fun x y => by simp [polarBilin_apply_apply, polar, h]
-    obtain ⟨y, hy⟩ := represents_of_local_equivalent isotropy q r hr hloc x hx
+    obtain ⟨y, hy⟩ := represents_of_local_equivalent isotropy q r hr hloc x
     have hy₀ : r y ≠ 0 := fun h => hx (hy.symm.trans h)
     let q' := q.restrict (lineComplement q x)
     let r' := r.restrict (lineComplement r y)

@@ -1,5 +1,12 @@
+import Langlands.Global.ArchimedeanAnalyticJetProof
+import Langlands.Global.ArchimedeanCompactAverageTranslation
+import Langlands.Global.ArchimedeanCompactComponentCoverageProof
+import Langlands.Global.ArchimedeanEnvelopingJetProof
 import Langlands.Global.ArchimedeanFiniteUniformGrowthProof
+import Langlands.Global.ArchimedeanJointFiniteAnalyticityProof
 import Langlands.Global.ArchimedeanPlaceEnveloping
+import Langlands.Global.ArchimedeanPlaceRestriction
+import Langlands.Global.RankinSelberg.ComplexLocalCompactProjection
 import Langlands.Global.RankinSelberg.ComplexLocalWhittakerRegularity
 import Langlands.Global.RankinSelberg.ComplexPlaceWhittakerAnalyticProof
 import Langlands.Representation.Archimedean.ComplexPrincipalSeriesInfinitesimalCharacter
@@ -339,7 +346,366 @@ private theorem liftModel_finite (w : CP) (W : V) :
   subst W'
   exact hW'
 
+private theorem liftIntertwiner_enveloping (w : CP) (B : S →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (u : EnvelopingAlgebra F n) (f : S) :
+    ArchimedeanGL.envelopingAction F n u (liftIntertwiner w B hB f) =
+      liftIntertwiner w B hB
+        (Langlands.Archimedean.envelopingAction (complexStandardLie n ds)
+          (complexPlaceEnvelopingProjection F n w u) f) := by
+  rw [← AlgHom.comp_apply, ← projectedEnvelopingAction]
+  exact (envelopingAction_intertwine (projectedLieAction w) (complexSmoothLieAction F n)
+    (liftIntertwiner w B hB) (liftIntertwiner_lie w B hB) u f).symm
+
+private theorem liftIntertwiner_jointFinite (w : CP) (B : S →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (f : S) :
+    IsJointFinite F n (liftIntertwiner w B hB f) :=
+  separateJointFinite F n _ (liftIntertwiner_centerFinite w B hB f)
+    (compactGroupFiniteDifferential F n _ (liftIntertwiner_compactFinite w B hB f))
+
+private theorem liftIntertwiner_eval_at_compact (w : CP) (B : S →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (f : S) (k : K) :
+    (liftIntertwiner w B hB f).val k.val = B (complexStandardRep n ds (compactProjection w k) f) 1 := by
+  let κ := compactProjection w k
+  let k' : unitaryCompact ℂ n := ⟨projection w k.val, κ.2⟩
+  have hκ : Unitary.toUnits κ = (k' : G) := Units.ext rfl
+  have h := hB.2.2.2.1 k' f (complexStandardRep n ds κ f) (by
+    rw [principalSeriesRep_apply_coe, hκ])
+  have he := congrFun h (1 : G)
+  change B (complexStandardRep n ds κ f) 1 = B f (1 * k'.val) at he
+  change B f k'.val = B (complexStandardRep n ds κ f) 1
+  exact (he.trans (congrArg (B f) (one_mul k'.val))).symm
+
+set_option maxHeartbeats 1000000 in
+private theorem eq_of_eval_atPlace (w : CP) {B C : S →ₗ[ℂ] (G → ℂ)}
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (hC : IsComplexWhittakerIntertwiner r ds a C)
+    (h : ∀ f, B f 1 = C f 1) : B = C := by
+  apply LinearMap.ext
+  intro f
+  funext g
+  let W := liftIntertwiner w B hB f - liftIntertwiner w C hC f
+  have hW : IsJointFinite F n W := (jointFiniteFunctions F n).sub_mem
+    (liftIntertwiner_jointFinite w B hB f) (liftIntertwiner_jointFinite w C hC f)
+  obtain ⟨k, hk⟩ := compactComponentCoverage F n (inclusion w g)
+  have hz (u : EnvelopingAlgebra F n) : (ArchimedeanGL.envelopingAction F n u W).val k.val = 0 := by
+    simp only [W, map_sub, Submodule.coe_sub, Pi.sub_apply, liftIntertwiner_enveloping,
+      liftIntertwiner_eval_at_compact, h, sub_self]
+  have he := analyticMatrixJetUniqueness F n W k.val (jointFiniteAnalyticity F n W hW)
+    (envelopingZeroJet F n W k.val hz) (inclusion w g) hk
+  change B f (projection w (inclusion w g)) - C f (projection w (inclusion w g)) = 0 at he
+  rw [projection_inclusion] at he
+  exact sub_eq_zero.mp he
+
 end Finiteness
+
+section CompactAverage
+
+open MeasureTheory Set
+open ArchimedeanGL.DerivativeSmoothFunctions
+open ArchimedeanGL.SmoothFamily (averageLM averagedTranslate_mem compactRepresentation rightRepresentation)
+open ComplexJacquet (hasFiniteCompactConvolutionKernel_of_finite_translates)
+
+local instance whittakerProjectionMeasurable (j : ℕ) :
+    MeasurableSpace (unitaryCompact ℂ j) := borel _
+local instance whittakerProjectionBorel (j : ℕ) : BorelSpace (unitaryCompact ℂ j) := ⟨rfl⟩
+
+variable {F : Type} [Field F] [NumberField F] {r : ℕ}
+variable {ds : List ComplexCharacterData} {a : ℂˣ}
+
+local notation "CP" => {v : InfinitePlace F // InfinitePlace.IsComplex v}
+local notation "n" => (r + 1)
+local notation "G" => Langlands.GeneralLinear n ℂ
+local notation "A" => InfiniteAdelicGL F n
+local notation "K" => standardInfiniteCompact F n
+local notation "U" => unitaryCompact ℂ n
+local notation "Std" => Automorphic.complexStandardKFinite n ds
+local notation "Fam" => ArchimedeanGL.SmoothFamily F n Bool
+
+private def liftStandard (w : CP) : Std →ₗ[ℂ] SmoothFunctions F n :=
+  liftSmoothLinearMap w (Automorphic.complexStandardKFinite n ds) (fun _ hf => hf.1.1)
+
+private theorem liftStandard_compact (w : CP) (k : K) (f : Std) :
+    smoothRightAction F n k.val (liftStandard w f) =
+      liftStandard w (complexStandardRep n ds (compactProjection w k) f) := by
+  apply Subtype.ext
+  funext g
+  change f.val (projection w (g * k.val)) =
+    (complexStandardRep n ds (compactProjection w k) f).val (projection w g)
+  rw [map_mul, principalSeriesRep_apply_coe]
+  rw [show Unitary.toUnits (compactProjection w k) = projection w k.val from Units.ext rfl]
+  rfl
+
+private theorem liftStandard_lie (w : CP) (Z : ComplexLieAlgebra F n) (f : Std) :
+    liftStandard w (projectedLieAction w Z f) = complexSmoothLieAction F n Z (liftStandard w f) := by
+  induction Z using TensorProduct.inductionOn with
+  | tmul z X =>
+    have hz : z ⊗ₜ[ℝ] X = z • ((1 : ℂ) ⊗ₜ[ℝ] X) := by
+      rw [TensorProduct.smul_tmul', smul_eq_mul, mul_one]
+    rw [hz, map_smul, map_smul, LinearMap.smul_apply, LinearMap.smul_apply, map_smul]
+    apply congrArg (z • ·)
+    apply Subtype.ext
+    funext g
+    let Y := complexPlaceLieProjection F n w X
+    change (complexStandardLie n ds (1 ⊗ₜ[ℝ] Y) f).val (projection w g) =
+      (complexSmoothLieAction F n (1 ⊗ₜ[ℝ] X) (liftStandard w f)).val g
+    rw [principalSeriesLie_one_tmul_apply_coe, complexSmoothLieAction_tmul, one_smul,
+      show liftStandard w f = liftSmooth w f.val f.2.1.1 from rfl, smoothDifferential_lift]
+  | add X Y hX hY => simp only [map_add, LinearMap.add_apply, hX, hY]
+
+private theorem liftStandard_enveloping (w : CP) (q : EnvelopingAlgebra F n) (f : Std) :
+    ArchimedeanGL.envelopingAction F n q (liftStandard w f) =
+      liftStandard w (Langlands.Archimedean.envelopingAction (complexStandardLie n ds)
+        (complexPlaceEnvelopingProjection F n w q) f) := by
+  rw [← AlgHom.comp_apply, ← projectedEnvelopingAction]
+  exact (envelopingAction_intertwine (projectedLieAction w) (complexSmoothLieAction F n)
+    (liftStandard w) (liftStandard_lie w) q f).symm
+
+private theorem liftStandard_jointFinite (w : CP) (f : Std) : IsJointFinite F n (liftStandard w f) := by
+  apply separateJointFinite F n
+  · apply Submodule.finiteDimensional_of_le (S₂ := ℂ ∙ liftStandard w f)
+    rw [centerOrbitSpan_eq_range]
+    rintro _ ⟨z, rfl⟩
+    have hz : complexPlaceEnvelopingProjection F n w z.val ∈
+        Subalgebra.center ℂ (ComplexPlaceEnvelopingAlgebra n) :=
+      Subalgebra.map_center_le_center (complexPlaceEnvelopingProjection_surjective F n w)
+        ⟨z.val, z.2, rfl⟩
+    obtain ⟨c, hc⟩ := complexStandardLie_hasInfinitesimalCharacter n ds _ hz
+    change ArchimedeanGL.envelopingAction F n z.val (liftStandard w f) ∈ _
+    rw [liftStandard_enveloping, hc, Module.algebraMap_end_apply, map_smul]
+    exact Submodule.smul_mem _ _ (Submodule.mem_span_singleton_self _)
+  · apply compactGroupFiniteDifferential F n
+    let Q := FiniteVectors.orbitSpan (complexStandardRep n ds) f
+    have : Module.Finite ℂ Q := (isComplexGKModule_complexStandardModule n ds).1 f
+    apply Submodule.finiteDimensional_of_le (S₂ := Q.map (liftStandard w))
+    apply Submodule.span_le.mpr
+    rintro _ ⟨k, rfl⟩
+    change smoothRightAction F n k.val (liftStandard w f) ∈ _
+    rw [liftStandard_compact]
+    exact Submodule.mem_map_of_mem (FiniteVectors.action_mem_orbitSpan _ _ _)
+
+private def liftPair (w : CP) (B : Std →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) : Std →ₗ[ℂ] Fam :=
+  LinearMap.pi fun b => (toSmooth F n).symm.toLinearMap.comp
+    (Bool.rec (liftStandard w) (liftIntertwiner w B hB) b)
+
+private theorem liftPair_compact (w : CP) (B : Std →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (k : K) (f : Std) :
+    compactRepresentation k (liftPair w B hB f) =
+      liftPair w B hB (complexStandardRep n ds (compactProjection w k) f) := by
+  funext b
+  apply (toSmooth F n).injective
+  rw [ArchimedeanGL.SmoothFamily.compactRepresentation_apply, compactAction_apply, toSmooth_rightAction]
+  cases b
+  · simpa only [liftPair, LinearMap.pi_apply, LinearMap.comp_apply, LinearEquiv.coe_coe,
+      LinearEquiv.apply_symm_apply] using liftStandard_compact w k f
+  · have h := Representation.IntertwiningMap.isIntertwining _ _ (liftCompactIntertwiner w B hB) k f
+    change liftIntertwiner w B hB (complexStandardRep n ds (compactProjection w k) f) =
+      smoothRightAction F n k.val (liftIntertwiner w B hB f) at h
+    simpa only [liftPair, LinearMap.pi_apply, LinearMap.comp_apply, LinearEquiv.coe_coe,
+      LinearEquiv.apply_symm_apply] using h.symm
+
+private theorem liftPair_enveloping (w : CP) (B : Std →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (q : EnvelopingAlgebra F n) (f : Std) :
+    q • liftPair w B hB f =
+      liftPair w B hB (Langlands.Archimedean.envelopingAction (complexStandardLie n ds)
+        (complexPlaceEnvelopingProjection F n w q) f) := by
+  funext b
+  apply (toSmooth F n).injective
+  change toSmooth F n (operator F n q ((liftPair w B hB f) b)) = _
+  rw [toSmooth_operator]
+  cases b
+  · simpa only [liftPair, LinearMap.pi_apply, LinearMap.comp_apply, LinearEquiv.coe_coe,
+      LinearEquiv.apply_symm_apply] using liftStandard_enveloping w q f
+  · simpa only [liftPair, LinearMap.pi_apply, LinearMap.comp_apply, LinearEquiv.coe_coe,
+      LinearEquiv.apply_symm_apply] using liftIntertwiner_enveloping w B hB q f
+
+private theorem liftPair_eval (w : CP) (B : Std →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (f : Std) (g : A) :
+    evalCLM F n g (liftPair w B hB f false) = f.val (projection w g) ∧
+    evalCLM F n g (liftPair w B hB f true) = B f (projection w g) := by
+  simp only [evalCLM_apply, liftPair, LinearMap.pi_apply, LinearMap.comp_apply,
+    LinearEquiv.coe_coe, LinearEquiv.apply_symm_apply]
+  exact ⟨rfl, rfl⟩
+
+private theorem liftPair_compactFinite (w : CP) (B : Std →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (f : Std) :
+    FiniteDimensional ℂ (FiniteVectors.orbitSpan (compactRepresentation (ι := Bool)) (liftPair w B hB f)) := by
+  let Q := FiniteVectors.orbitSpan (complexStandardRep n ds) f
+  have : Module.Finite ℂ Q := (isComplexGKModule_complexStandardModule n ds).1 f
+  apply Submodule.finiteDimensional_of_le (S₂ := Q.map (liftPair w B hB))
+  apply Submodule.span_le.mpr
+  rintro _ ⟨k, rfl⟩
+  change compactRepresentation k (liftPair w B hB f) ∈ _
+  rw [liftPair_compact]
+  exact Submodule.mem_map_of_mem (FiniteVectors.action_mem_orbitSpan _ _ _)
+
+private def placeCompactMap (w : CP) : C(U, A) :=
+  ⟨fun k => (complexPlaceCompactInclusion F n w ⟨k.val.val, k.2⟩).val,
+    continuous_subtype_val.comp ((complexPlaceCompactInclusion F n w).continuous.comp
+      ((Units.continuous_val.comp continuous_subtype_val).subtype_mk _))⟩
+
+omit [NumberField F] in
+private theorem placeCompactMap_mem (w : CP) (k : U) : placeCompactMap w k ∈ K :=
+  (complexPlaceCompactInclusion F n w ⟨k.val.val, k.2⟩).2
+
+omit [NumberField F] in
+private theorem projection_placeCompactMap (w : CP) (k : U) : projection w (placeCompactMap w k) = k.val := by
+  have h := complexPlaceGL_unitary w (⟨k.val.val, k.2⟩ : Matrix.unitaryGroup (Fin n) ℂ)
+  have he : placeCompactMap w k = inclusion w k.val := by
+    change (complexPlaceCompactInclusion F n w ⟨k.val.val, k.2⟩).val = _
+    apply (archimedeanGLCoordinates F n).injective
+    change _ = archimedeanGLCoordinates F n
+      ((archimedeanGLCoordinates F n).symm (complexPlaceGL F n w k.val))
+    rw [ContinuousMulEquiv.apply_symm_apply]
+    exact h.symm.trans (congrArg (complexPlaceGL F n w) (Units.ext rfl))
+  rw [he, projection_inclusion]
+
+set_option maxHeartbeats 1600000 in
+private theorem compact_projection_atPlace (w : CP) (ν : Measure U) [ν.IsHaarMeasure]
+    (κ : C(U, ℂ)) (hκ : FiniteDimensional ℂ (Submodule.span ℂ (Set.range
+      fun h : U => fun k => κ (h⁻¹ * k)))) (B : Std →ₗ[ℂ] (G → ℂ))
+    (hB : IsComplexWhittakerIntertwiner r ds a B) (f : Std) (g : G) :
+    ∃ p : Std, (∀ x : G, p.val x = ∫ k : U, κ k * f.val (x * k.val * g) ∂ν) ∧
+      ∀ x : G, B p x = ∫ k : U, κ k * B f (x * k.val * g) ∂ν := by
+  let L := liftPair w B hB
+  let Q := LinearMap.range L
+  let j := placeCompactMap (r := r) w
+  let P : Fam →ₗ[ℂ] Fam := averageLM j ν κ
+  have hstab (k : K) (q : EnvelopingAlgebra F n) (v : Fam) (hv : v ∈ Q) :
+      compactRepresentation k (q • v) ∈ Q := by
+    obtain ⟨v, rfl⟩ := hv
+    change compactRepresentation k (q • liftPair w B hB v) ∈ Q
+    rw [liftPair_enveloping, liftPair_compact]
+    exact LinearMap.mem_range_self _ _
+  have hfin (v : Fam) (hv : v ∈ Q) : FiniteDimensional ℂ
+      (FiniteVectors.orbitSpan compactRepresentation v) := by
+    obtain ⟨v, rfl⟩ := hv
+    exact liftPair_compactFinite w B hB v
+  have hPQ : Q.map P ≤ Q := by
+    apply Submodule.map_le_iff_le_comap.mpr
+    intro v hv
+    let O := FiniteVectors.orbitSpan (compactRepresentation (ι := Bool)) v
+    have : FiniteDimensional ℂ O := hfin v hv
+    have hO : O ≤ Q := Submodule.span_le.mpr (by
+      rintro _ ⟨k, rfl⟩
+      change compactRepresentation k v ∈ Q
+      simpa only [one_smul] using hstab k 1 v hv)
+    have ha : P v ∈ O.topologicalClosure := by
+      apply ArchimedeanGL.SmoothFamily.averageLM_mem_topologicalClosure
+      intro k
+      exact O.le_topologicalClosure
+        (FiniteVectors.action_mem_orbitSpan compactRepresentation ⟨j k, placeCompactMap_mem w k⟩ v)
+    rw [O.closed_of_finiteDimensional.submodule_topologicalClosure_eq] at ha
+    exact hO ha
+  let E : Fam →ₗ[ℂ] (U → ℂ) :=
+    LinearMap.pi fun k => (evalCLM F n (inclusion w k.val)).toLinearMap.comp (LinearMap.proj false)
+  have hE_inj : Function.Injective (E.comp Q.subtype) := by
+    rintro ⟨v, hv⟩ ⟨v', hv'⟩ he
+    obtain ⟨f₁, rfl⟩ := hv
+    obtain ⟨f₂, rfl⟩ := hv'
+    have hEq : f₁ = f₂ := by
+      apply Subtype.ext
+      apply ComplexPrincipalSeriesExtension.eq_of_eqOn_unitary f₁.2.1 f₂.2.1
+      intro k hk
+      have eq := congrFun he (⟨k, hk⟩ : U)
+      change evalCLM F n (inclusion w k) (liftPair w B hB f₁ false) =
+        evalCLM F n (inclusion w k) (liftPair w B hB f₂ false) at eq
+      rw [(liftPair_eval w B hB f₁ _).1, (liftPair_eval w B hB f₂ _).1, projection_inclusion] at eq
+      exact eq
+    subst f₂
+    rfl
+  obtain ⟨d, α, β, hβ, hsep⟩ :=
+    hasFiniteCompactConvolutionKernel_of_finite_translates κ κ.continuous hκ
+  let T := Submodule.span ℂ (Set.range α)
+  have : FiniteDimensional ℂ T := FiniteDimensional.span_of_finite ℂ (Set.finite_range α)
+  have hET (v : Fam) (hv : v ∈ Q.map P) : E v ∈ T := by
+    obtain ⟨v, hv, rfl⟩ := hv
+    obtain ⟨f, rfl⟩ := hv
+    have he : E (P (L f)) = ∑ l, (∫ k : U, β l k * f.val k.val ∂ν) • α l := by
+      funext x
+      change evalCLM F n (inclusion w x.val) (P (L f) false) = _
+      rw [show P (L f) false = CompactIndexAverage.averageLM j ν κ (L f false) from rfl,
+        CompactIndexAverage.eval_averageLM]
+      simp only [L, (liftPair_eval w B hB f _).1, map_mul, projection_inclusion,
+        projection_placeCompactMap, j]
+      have hs : (∫ k : U, κ (x⁻¹ * k) * f.val k.val ∂ν) =
+          ∑ l, α l x * (∫ k : U, β l k * f.val k.val ∂ν) := by
+        simp_rw [hsep, Finset.sum_mul, mul_assoc]
+        rw [integral_finsetSum]
+        · exact Finset.sum_congr rfl (fun l _ => integral_const_mul _ _)
+        · intro l _
+          exact (((hβ l).mul (f.2.1.1.continuous.comp continuous_subtype_val)).const_mul
+            (α l x)).integrable_of_hasCompactSupport (HasCompactSupport.of_compactSpace _)
+      rw [show (∫ k : U, κ k * f.val (x.val * k.val) ∂ν) =
+        ∫ k : U, κ (x⁻¹ * k) * f.val k.val ∂ν by
+          rw [← integral_mul_left_eq_self (fun k : U => κ (x⁻¹ * k) * f.val k.val) x]
+          simp only [inv_mul_cancel_left]; rfl, hs]
+      simp only [Finset.sum_apply, Pi.smul_apply, smul_eq_mul, mul_comm]
+    rw [he]
+    exact Submodule.sum_mem _ (fun l _ => Submodule.smul_mem _ _ (Submodule.subset_span ⟨l, rfl⟩))
+  have hRank : FiniteDimensional ℂ (Q.map P) := by
+    let e : (Q.map P) →ₗ[ℂ] T := (E.comp (Q.map P).subtype).codRestrict T (fun v => hET v v.2)
+    have hi : Function.Injective e := by
+      intro u v h
+      have hh := hE_inj (show E.comp Q.subtype ⟨u.val, hPQ u.2⟩ =
+        E.comp Q.subtype ⟨v.val, hPQ v.2⟩ from congrArg Subtype.val h)
+      exact Subtype.ext (congrArg (fun z : Q => z.val) hh)
+    exact FiniteDimensional.of_injective e hi
+  have hjoint (b : Bool) : IsJointFinite F n (toSmooth F n (L f b)) := by
+    cases b
+    · simpa only [L, liftPair, LinearMap.pi_apply, LinearMap.comp_apply, LinearEquiv.coe_coe,
+        LinearEquiv.apply_symm_apply] using liftStandard_jointFinite w f
+    · simpa only [L, liftPair, LinearMap.pi_apply, LinearMap.comp_apply, LinearEquiv.coe_coe,
+        LinearEquiv.apply_symm_apply] using liftIntertwiner_jointFinite w B hB f
+  obtain ⟨p, hp⟩ := averagedTranslate_mem j ν κ Q hstab (placeCompactMap_mem w) hfin hRank
+    (LinearMap.mem_range_self L f) hjoint (inclusion w g)
+  refine ⟨p, fun x => ?_, fun x => ?_⟩
+  · have h := congrArg (fun v : Fam => evalCLM F n (inclusion w x) (v false)) hp
+    change evalCLM F n (inclusion w x) (L p false) =
+      evalCLM F n (inclusion w x) (P (rightRepresentation (inclusion w g) (L f)) false) at h
+    rw [show P (rightRepresentation (inclusion w g) (L f)) false =
+      CompactIndexAverage.averageLM j ν κ (rightAction F n (inclusion w g) (L f false)) from rfl,
+      CompactIndexAverage.eval_averageLM] at h
+    simpa only [L, (liftPair_eval w B hB _ _).1, evalCLM_rightAction, map_mul,
+      projection_inclusion, j, projection_placeCompactMap] using h
+  · have h := congrArg (fun v : Fam => evalCLM F n (inclusion w x) (v true)) hp
+    change evalCLM F n (inclusion w x) (L p true) =
+      evalCLM F n (inclusion w x) (P (rightRepresentation (inclusion w g) (L f)) true) at h
+    rw [show P (rightRepresentation (inclusion w g) (L f)) true =
+      CompactIndexAverage.averageLM j ν κ (rightAction F n (inclusion w g) (L f true)) from rfl,
+      CompactIndexAverage.eval_averageLM] at h
+    simpa only [L, (liftPair_eval w B hB _ _).2, evalCLM_rightAction, map_mul,
+      projection_inclusion, j, projection_placeCompactMap] using h
+
+variable (r) in
+/-- Compact convolution of a genuine translate gives a compact-finite standard vector,
+and exact Whittaker intertwiners commute with this operation on both function spaces. -/
+def ComplexWhittakerCompactProjectionStatement : Prop :=
+  ∀ (ds : List ComplexCharacterData) (a : ℂˣ) (ν : Measure U), ν.IsHaarMeasure →
+  ∀ (κ : C(U, ℂ)),
+    FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun h : U => fun k => κ (h⁻¹ * k))) →
+  ∀ (B : Automorphic.complexStandardKFinite (r + 1) ds →ₗ[ℂ] (G → ℂ)),
+    IsComplexWhittakerIntertwiner r ds a B →
+  ∀ (f : Automorphic.complexStandardKFinite (r + 1) ds) (g : G),
+    ∃ p : Automorphic.complexStandardKFinite (r + 1) ds,
+      (∀ x : G, p.val x = ∫ k : U, κ k * f.val (x * k.val * g) ∂ν) ∧
+      ∀ x : G, B p x = ∫ k : U, κ k * B f (x * k.val * g) ∂ν
+
+theorem complexWhittakerCompactProjection : ComplexWhittakerCompactProjectionStatement r := by
+  intro ds a ν hν κ hκ B hB f g
+  let F : Type := ℚ⟮Complex.I⟯
+  have : FiniteDimensional ℚ F := IntermediateField.adjoin.finiteDimensional (Complex.isIntegral_I ℚ)
+  have : NumberField F := {}
+  let e : F →+* ℂ := algebraMap F ℂ
+  have he : InfinitePlace.IsComplex (InfinitePlace.mk e) := by
+    rw [InfinitePlace.isComplex_mk_iff, ComplexEmbedding.isReal_iff]
+    intro h
+    let i : F := ⟨Complex.I, IntermediateField.mem_adjoin_simple_self ℚ _⟩
+    have hi := congrArg (fun f : F →+* ℂ => (f i).im) h
+    change (starRingEnd ℂ Complex.I).im = Complex.I.im at hi
+    norm_num at hi
+  exact compact_projection_atPlace ⟨InfinitePlace.mk e, he⟩ ν κ hκ B hB f g
+
+end CompactAverage
 
 section Growth
 
@@ -436,5 +802,28 @@ theorem complexWhittakerUniformDerivativeGrowth : ComplexWhittakerUniformDerivat
     change (starRingEnd ℂ Complex.I).im = Complex.I.im at hi
     norm_num at hi
   exact uniformGrowthAtPlace ⟨InfinitePlace.mk e, he⟩ W
+
+/-- Evaluation at the identity on the compact-finite standard vectors determines an exact
+complex Whittaker intertwiner. -/
+def ComplexWhittakerEvaluationStatement : Prop :=
+  ∀ (r : ℕ) (ds : List ComplexCharacterData) (a : ℂˣ)
+    (B C : Automorphic.complexStandardKFinite (r + 1) ds →ₗ[ℂ] (Langlands.GeneralLinear (r + 1) ℂ → ℂ)),
+    IsComplexWhittakerIntertwiner r ds a B → IsComplexWhittakerIntertwiner r ds a C →
+    (∀ f, B f 1 = C f 1) → B = C
+
+theorem complexWhittakerEvaluation : ComplexWhittakerEvaluationStatement := by
+  intro r ds a B C hB hC h
+  let F : Type := ℚ⟮Complex.I⟯
+  have : FiniteDimensional ℚ F := IntermediateField.adjoin.finiteDimensional (Complex.isIntegral_I ℚ)
+  have : NumberField F := {}
+  let e : F →+* ℂ := algebraMap F ℂ
+  have he : InfinitePlace.IsComplex (InfinitePlace.mk e) := by
+    rw [InfinitePlace.isComplex_mk_iff, ComplexEmbedding.isReal_iff]
+    intro h'
+    let i : F := ⟨Complex.I, IntermediateField.mem_adjoin_simple_self ℚ _⟩
+    have hi := congrArg (fun f : F →+* ℂ => (f i).im) h'
+    change (starRingEnd ℂ Complex.I).im = Complex.I.im at hi
+    norm_num at hi
+  exact eq_of_eval_atPlace ⟨InfinitePlace.mk e, he⟩ hB hC h
 
 end Langlands.Global.RankinSelbergGlobal

@@ -1,0 +1,7 @@
+# Real Godement sections with fixed compact restriction
+
+Start with strictly dominant lower real position data and a smooth lower vector. A rectangular Schwartz test supported in a compact subset of the full-row-rank locus defines an upper Godement section. The same section on the orthogonal group is realized at every leading exponent by modifying the test within its original support. The resulting upper sections are the fixed compact-picture extensions, and their first-column values for the lower open-cell coefficient are entire in the leading exponent at each upper group element.
+
+The logarithm of the absolute Gram determinant is smooth wherever the rows have full rank. A cutoff extends its restriction on the compact support to a smooth multiplier on the matrix space. On the orthogonal group the Gram determinant at the row point is the square of the lower determinant. The spectral exponential of minus half its logarithm cancels the change in the lower determinant weight in the defining section integral. The outer determinant has absolute value one on the orthogonal group. Compact restriction determines the smooth position vector, and the parameter-dependent column estimate proves holomorphy for the compensated test family.
+
+This compact-picture construction is derived for the real version of Jacquet's Godement formulas (7.4)–(7.7), *Archimedean Rankin–Selberg Integrals*, §7.2, pp. 47–48.

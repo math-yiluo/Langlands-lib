@@ -9,3 +9,5 @@
 `realUnitaryGenericExponentBound_of_standard_lower` applies a uniform strict lower bound on the canonical models to both standard presentations, using `realStandardParameter_model` for the Hermitian-dual one. Its lower bound at the negated exponent gives the upper bound at the original exponent. The resulting implication concludes the exact exponent-bound proposition at every carrier universe.
 
 This algebraic deduction reuses the Library's real finite contragredient and its standard-module dual pairing. The input positive form has the invariance and skew properties in Knapp–Vogan, *Cohomological Induction and Unitary Representations* (1995), display (0.5), p. 6 (PDF p. 28, `knapp-vogan-1995-cohomological-induction`).
+
+`realStandardConjugation_surjective` exposes the surjectivity of pointwise conjugation for arbitrary block lists. `realRank_map_hermitianDual` combines preservation of rank under conjugation and under block duality.

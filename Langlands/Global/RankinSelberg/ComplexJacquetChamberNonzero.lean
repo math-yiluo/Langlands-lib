@@ -185,23 +185,27 @@ attribute [local instance] ArchimedeanLocal.archimedeanComplexNMeasurable
 variable {r : ℕ}
 local notation "N₊" => GeneralLinear.upperUnipotent (r + 1) ℂ
 
-private theorem exists_pos_integral_pow (ν : Measure N₊) [ν.IsHaarMeasure]
-    {F : N₊ → ℂ} (hF : Continuous F) (hi : Integrable F ν) (hF₁ : F 1 = 1) :
-    ∃ j : ℕ, 0 < (∫ u, F u * (openCellWeight u : ℂ) ^ j ∂ν).re := by
-  let U : Set N₊ := {u | 1 / 2 < (F u).re}
+/-- A continuous weight that peaks uniformly at a point detects a nonzero integral of a
+continuous integrable function taking value one there. -/
+theorem exists_pos_integral_pow_of_peak {X : Type*} [TopologicalSpace X] [MeasurableSpace X]
+    [BorelSpace X] [LocallyCompactSpace X] [T2Space X] (ν : Measure X) [ν.IsOpenPosMeasure]
+    [IsFiniteMeasureOnCompacts ν] {x₀ : X} {F : X → ℂ} (hF : Continuous F)
+    (hi : Integrable F ν) (hF₁ : F x₀ = 1) {q : X → ℝ} (hqc : Continuous q)
+    (hq₀ : ∀ x, 0 ≤ q x) (hq₁ : ∀ x, q x ≤ 1) (hq₁_at : q x₀ = 1)
+    (hpeak : ∀ U : Set X, IsOpen U → x₀ ∈ U → ∃ c : ℝ, 0 ≤ c ∧ c < 1 ∧ ∀ x ∉ U, q x ≤ c) :
+    ∃ j : ℕ, 0 < (∫ u, F u * (q u : ℂ) ^ j ∂ν).re := by
+  let U : Set X := {u | 1 / 2 < (F u).re}
   have hU : IsOpen U := isOpen_lt continuous_const (Complex.continuous_re.comp hF)
-  have hU₁ : (1 : N₊) ∈ U := by simpa [U, hF₁] using (by norm_num : (1 / 2 : ℝ) < 1)
-  obtain ⟨c, hc, hc₁, hcB⟩ := exists_uniform_pivotProduct_bound hU hU₁
+  have hU₁ : x₀ ∈ U := by simpa [U, hF₁] using (by norm_num : (1 / 2 : ℝ) < 1)
+  obtain ⟨c, hc, hc₁, hcB⟩ := hpeak U hU hU₁
   let d := (c + 1) / 2
   have hd₀ : 0 < d := by dsimp [d]; linarith
   have hcd : c < d := by dsimp [d]; linarith
   have hd₁ : d < 1 := by dsimp [d]; linarith
-  let V : Set N₊ := U ∩ {u | d < openCellWeight u}
-  have hV : IsOpen V := hU.inter (isOpen_lt continuous_const continuous_openCellWeight)
-  have hV₁ : (1 : N₊) ∈ V := ⟨hU₁, by simpa only [mem_ofPred_eq, openCellWeight_one] using hd₁⟩
-  let : LocallyCompactSpace N₊ :=
-    (upperEntryCoordinates (K := ℂ) (r + 1)).isClosedEmbedding.locallyCompactSpace
-  obtain ⟨L, ⟨hL₁, hL⟩, hLV⟩ := (compact_basis_nhds (1 : N₊)).mem_iff.mp (hV.mem_nhds hV₁)
+  let V : Set X := U ∩ {u | d < q u}
+  have hV : IsOpen V := hU.inter (isOpen_lt continuous_const hqc)
+  have hV₁ : x₀ ∈ V := ⟨hU₁, by simpa only [mem_ofPred_eq, hq₁_at] using hd₁⟩
+  obtain ⟨L, ⟨hL₁, hL⟩, hLV⟩ := (compact_basis_nhds x₀).mem_iff.mp (hV.mem_nhds hV₁)
   have hLm : MeasurableSet L := hL.isClosed.measurableSet
   have hLfin : ν L ≠ ∞ := hL.measure_lt_top.ne
   have hLpos : 0 < ν.real L := ENNReal.toReal_pos (Measure.measure_pos_of_mem_nhds ν hL₁).ne' hLfin
@@ -216,12 +220,9 @@ private theorem exists_pos_integral_pow (ν : Measure N₊) [ν.IsHaarMeasure]
     change A * (c / d) ^ j < ν.real L / 2 at hj
     rw [div_pow, ← mul_div_assoc, div_lt_iff₀ hdj] at hj
     linarith [show ν.real L * (d ^ j / 2) = ν.real L / 2 * d ^ j by ring]
-  let q := openCellWeight (n := r + 1)
-  have hq₀ (u : N₊) : 0 ≤ q u := pivotProduct_nonneg _
-  have hq₁ (u : N₊) : q u ≤ 1 := pivotProduct_le_one _
-  let E : N₊ → ℝ := L.indicator (fun _ => d ^ j / 2)
+  let E : X → ℝ := L.indicator (fun _ => d ^ j / 2)
   have hE : Integrable E ν := (integrableOn_const (C := d ^ j / 2) hLfin).integrable_indicator hLm
-  have hdom (u : N₊) : E u - c ^ j * ‖F u‖ ≤ (F u).re * q u ^ j := by
+  have hdom (u : X) : E u - c ^ j * ‖F u‖ ≤ (F u).re * q u ^ j := by
     have htail : 0 ≤ c ^ j * ‖F u‖ := mul_nonneg (pow_nonneg hc j) (norm_nonneg _)
     by_cases hu : u ∈ U
     · have hre : (1 / 2 : ℝ) ≤ (F u).re := (show (1 / 2 : ℝ) < (F u).re from hu).le
@@ -243,14 +244,14 @@ private theorem exists_pos_integral_pow (ν : Measure N₊) [ν.IsHaarMeasure]
           (neg_nonpos.mpr (norm_nonneg _))
         _ ≤ (F u).re * q u ^ j := mul_le_mul_of_nonneg_right
           (neg_le_of_abs_le (Complex.abs_re_le_norm _)) (pow_nonneg (hq₀ u) j)
-  let G₀ : N₊ → ℂ := fun u => F u * (q u : ℂ) ^ j
-  have hcG : Continuous G₀ := hF.mul ((Complex.continuous_ofReal.comp continuous_openCellWeight).pow j)
+  let G₀ : X → ℂ := fun u => F u * (q u : ℂ) ^ j
+  have hcG : Continuous G₀ := hF.mul ((Complex.continuous_ofReal.comp hqc).pow j)
   have hiG : Integrable G₀ ν := by
     refine hi.norm.mono' hcG.aestronglyMeasurable (ae_of_all _ fun u => ?_)
     change ‖F u * (q u : ℂ) ^ j‖ ≤ ‖F u‖
     rw [norm_mul, norm_pow, Complex.norm_real, Real.norm_of_nonneg (hq₀ u)]
     exact mul_le_of_le_one_right (norm_nonneg _) (pow_le_one₀ (hq₀ u) (hq₁ u))
-  have hreG (u : N₊) : (G₀ u).re = (F u).re * q u ^ j := by
+  have hreG (u : X) : (G₀ u).re = (F u).re * q u ^ j := by
     simp [G₀, ← Complex.ofReal_pow, Complex.mul_re]
   have hmono := integral_mono (hE.sub (hi.norm.const_mul (c ^ j))) hiG.re (fun u => by
     change E u - c ^ j * ‖F u‖ ≤ (G₀ u).re
@@ -263,6 +264,15 @@ private theorem exists_pos_integral_pow (ν : Measure N₊) [ν.IsHaarMeasure]
     simp only [E, integral_indicator_const _ hLm, smul_eq_mul]
   rw [hEval] at hmono
   exact ⟨j, hpos.trans_le hmono⟩
+
+private theorem exists_pos_integral_pow (ν : Measure N₊) [ν.IsHaarMeasure]
+    {F : N₊ → ℂ} (hF : Continuous F) (hi : Integrable F ν) (hF₁ : F 1 = 1) :
+    ∃ j : ℕ, 0 < (∫ u, F u * (openCellWeight u : ℂ) ^ j ∂ν).re := by
+  let : LocallyCompactSpace N₊ :=
+    (upperEntryCoordinates (K := ℂ) (r + 1)).isClosedEmbedding.locallyCompactSpace
+  exact exists_pos_integral_pow_of_peak ν hF hi hF₁ continuous_openCellWeight
+    (fun _ => pivotProduct_nonneg _) (fun _ => pivotProduct_le_one _) openCellWeight_one
+    (fun _ => exists_uniform_pivotProduct_bound)
 
 end Concentration
 

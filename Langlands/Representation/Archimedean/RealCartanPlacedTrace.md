@@ -1,0 +1,5 @@
+# The actual compact Cartan trace over the original blocks
+
+For a separated regular source Cartan and an original ordered block list with the same complex-slot count, the low-mode trace limit has a finite expression over matched blocks. This statement takes the common nonzero value of the normalized transverse product as a hypothesis. The limit is the chart coefficient and ambient cone mass divided by this value, times the sum over assignments of the unshifted radial product and the integral of the original compact block weights at the fixed left factor. The module also gives the eventual support and vanishing statements for the corresponding cone tests of the actual trace.
+
+The proof uses the original list for the block sizes, compact measure, and extension. The fixed flag classification supplies the disjoint cosets. Positive block-scalar diagonals and the placed orthogonal factors give the coordinate formula and its fixed left factor. The Borel half-density occurs in both the radial weight and the absolute transverse determinant, and cancels in the limit integral. The remaining terms are central radial twists and the untouched block Haar densities.

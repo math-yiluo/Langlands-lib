@@ -1,0 +1,9 @@
+# Finite block induction references from cuspidal spectral presentations
+
+`finiteReferences` uses the union of the tensor exceptional sets in the supplied spectral presentations. At each finite place, the local component equivalence transports each block reference to its actual embedded component, which carries the same action as its canonical p-adic object. Outside the union, these vectors are nonzero and fixed by the respective integral blocks. Their pure tensor extends to an integral-fixed normalized induced section with this constant value on the local integral group. The references at places in the union impose no condition on the restricted tensor.
+
+`blockTensorPresentationEquiv` applies the inverses of the local component equivalences to the restricted tensor of each block. They carry every transported reference back to the original reference and intertwine the actual finite adelic action. The two sides may have different exceptional sets and different carrier universes.
+
+`finiteReferencesEquiv` compares the tensor of normalized sections with any supplied family of induced sections that are integral-fixed and nonzero outside a finite set. On the complement of the two exceptional sets, irreducibility and admissibility of the local block components make each integral-fixed space a line. The nonzero transported block references span those lines. The compact evaluation lemma expresses each supplied section as a scalar multiple of the normalized section. This scalar is nonzero by the hypothesis on the supplied section. Multiplication by these units gives the equivariant change of reference.
+
+The comparisons are internal to the actual finite adelic block model. Getz and Hahn (2024), §8.1, p. 213 (PDF 226), give the normalized covariance used for the local sections. Flath (1979), §2, pp. 180–181 (PDF 176–177), gives the restricted tensor construction and its component maps.

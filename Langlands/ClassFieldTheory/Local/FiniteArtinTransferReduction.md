@@ -1,5 +1,21 @@
 # Finite Artin transfer reduced to the inverse-cup character comparison
 
+> **The hypothesis `FiniteCupArtinCharacterComparison` is false. Do not cite
+> `arithmeticReciprocityOfCup_eq_symbol`, `arithmeticTransfer` or `geometricTransfer`.**
+> These three theorems take that proposition as a hypothesis, so they say nothing. Its
+> negation is the statement `FiniteCupArtinCharacterComparisonFails` (module
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureStatement`), proved as
+> `finiteCupArtinCharacterComparisonFails` (module
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureProof`). The true
+> comparison is `finiteGeometricCupArtinCharacterComparison`. The transfer squares for the
+> carry symbols are proved from it in `FiniteGeometricCupArtinComparison`
+> (`arithmeticTransfer_of_geometricCupComparison`, `geometricTransfer_of_geometricCupComparison`).
+> The other declarations of this module (`canonicalClassFormation`, `fundamentalClass`,
+> `fundamentalClass_spec`, `cup_bijective`, `geometricSymbol`, `fundamentalClass_restriction`)
+> do not use the false hypothesis. The Lean text is unchanged. The rest of this file is the
+> original description, including its remarks about proving the comparison, which do not
+> apply.
+
 This internal construction isolates the finite arithmetic input to actual
 transfer compatibility. Its only unproved mathematical premise is the
 exact proposition `FiniteCupArtinCharacterComparison`; the file does not

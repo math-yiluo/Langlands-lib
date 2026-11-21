@@ -52,10 +52,10 @@ and the trivial L-polynomials for a supercuspidal of rank `N ≥ 2` paired with 
 `X = 1` gives `c = c'`; evaluating at `X = 2` then gives `2^a = 2^m` in `ℂ`, hence in `ℝ`, and
 `a = m` by injectivity of `k ↦ 2^k`.
 
-`isPadicSymmetricGammaFactor_of_matrixFunctionalEquationData`: this repeats the argument of the
-private Library lemma `gammaData_rankOne_of_matrix` (module
-`Langlands.Representation.RankinSelberg.AdjacentRankGammaData`) with the ambient representation
-equal to `σ`. Choose a nonzero Whittaker functional `ℓ`. The Whittaker model map, restricted to
+The proof of `isPadicSymmetricGammaFactor_of_matrixFunctionalEquationData` applies
+`RankinSelberg.Padic.gammaData_rankOne_of_matrix` from
+`Langlands.Representation.RankinSelberg.AdjacentRankGammaData`. That lemma chooses a nonzero
+Whittaker functional `ℓ`. The Whittaker model map, restricted to
 the top subrepresentation, is a surjective intertwining map onto the Whittaker model, so the
 Library theorem `GodementJacquet.Padic.subquotientCoefficientInclusion` puts the matrix
 coefficients of the Whittaker model among those of `σ`. The Library comparison

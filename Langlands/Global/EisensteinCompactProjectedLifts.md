@@ -1,0 +1,7 @@
+# Compact-projected lifts on a free module of Eisenstein seeds
+
+`operatorSeedSpecialization` evaluates a finitely supported operator combination on the seeds at the chosen parameter. Its domain is the inverse image of the numerator submodule of the desired specialization. An element of the numerator lying in the seed space can be encoded by its basis coordinates, using the images of the scalars in the operator algebra. If its image in the simple target is nonzero, that image generates the target, which gives surjectivity of the induced specialization map.
+
+`projectedOperatorSection` applies the chosen joint projection to the entire word family, with values in the projection range. The family has a finite holomorphic expansion because the projection is linear. The values of the original family lie in the finite-dimensional span of its constant sections. `exists_smul_eq_projectedOperatorSection` implements the joint projection on that span with one fixed operator element using the parameter-independent compact actions. Multiplying the original word by this element yields a lift in its cyclic submodule whose evaluation gives the projected family at every parameter.
+
+This algebraic construction implements the compact-type restriction in Langlands' proof of Proposition 2, printed pp. 206–207 (Corvallis Part I PDF pp. 201–202). The finite level and the infinite compact type are imposed by `jointCompactProjection`. The construction uses the given holomorphic operator expansions and prepares the section families for the Taylor coefficient test.

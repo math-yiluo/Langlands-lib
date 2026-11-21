@@ -32,25 +32,27 @@ for `moduliFunctor`.
   isomorphism of abelian schemes is an isomorphism, with inverse `hom e.inv`.
 - `isIsogeny_of_iso e`: isomorphisms of abelian schemes are isogenies. The proof applies the
   Library's `GroupScheme.isIsogeny_of_isIso` to the underlying group-scheme isomorphism.
-- `dualBaseChangeMap_dualPullback stability universality b g hA hB fB`. Let `g : A ⟶ B` and
-  `fB : B.X ⟶ dualScheme B hB`, and form the transported map `g ≫ fB ≫ dualSchemeMap g`.
-  Its base change `dualBaseChangeMap` along `b` equals the transport of
-  `dualBaseChangeMap B hB universality b fB` along the base-changed homomorphism
-  `(baseChange b).map g`. Both sides use the dual witnesses `hasDualScheme_baseChange`.
-  The proof unfolds `dualBaseChangeMap` (pullback of the map followed by
-  `dualSchemeBaseChangeIso`). It then uses the Library's naturality lemma
-  `dualSchemeMap_dualSchemeBaseChangeIso`, which needs the prerequisite
-  `PicardZeroPullbackStatement`.
 - `hasAmpleMumfordAfterBaseChange_iso`: for an isomorphism `e : A ≅ B`, the condition
   `HasAmpleMumfordAfterBaseChange … B hB universality b fB` implies the same condition for
   `A`, `hA` and the transported map `e.hom ≫ fB ≫ dualSchemeMap e.hom hA hB`. After
-  rewriting with `dualBaseChangeMap_dualPullback`, this is the Library's
+  rewriting with the base-change comparison below, this is the Library's
   `hasAmpleMumfordPresentation_dualPullback` for the homomorphism `(baseChange b).map e.hom`.
   Its underlying morphism is an isomorphism, hence affine.
 - `hasFieldAmpleMumfordPresentation_iso`: the same transport for
   `HasFieldAmpleMumfordPresentation` over `Spec k`. That predicate asks for
   `HasAmpleMumfordAfterBaseChange` along `Spec K ⟶ Spec k` for some field extension
   `k →+* K`. The proof keeps the same extension.
+
+## Base-change comparison used in the proof
+
+The existing lemma `dualBaseChangeMap_dualPullback stability universality b g hB hA fB`
+(from `DualPullbackPolarization`) applies to `g : A ⟶ B` with target dual witness `hB`
+passed before source dual witness `hA`. For `fB : B.X ⟶ dualScheme B hB`, it identifies
+base change along `b` of the composite
+`(groupHom g).hom.hom ≫ fB ≫ dualSchemeMap homPicardZeroPullback g hA hB` with the transport
+of `dualBaseChangeMap B hB universality b fB` along `(baseChange b).map g`. Both sides
+use the canonical witnesses `hasDualScheme_baseChange`. The comparison follows from
+naturality of `dualSchemeBaseChangeIso` with respect to the dual map of `g`.
 
 ## Proof of the main result
 

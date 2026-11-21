@@ -1,0 +1,5 @@
+# Scalar p-height on the split primal atlas
+
+For the primal summand in Rapoport–Zink 1996, (6.17) and Lemma 6.44, printed pp. 309–310 (PDF pp. 321–322), base change the affine polarized framed object to the localization of a chosen atlas chart. The localized ring is a nilpotent test because the image of the structural uniformizer stays nilpotent. Its actual polarized target is the coefficient extension of the original target. Identifying the two presentations of its scalar algebra uses the same localization ring map on coefficients.
+
+The chart's image retraction can therefore be used to restrict the localized rigidifier. The chart law has the p-height of the specified primal frame by transfer across this local quasi-isogeny and reflection from the nilpotent quotient. The central formal module law on that chart has the same p-power kernels and ranks. Thus every chart of the actual split primal atlas has the same scalar p-height as the fixed primal frame. The height formula for the central uniformizer uses a further comparison of scalar powers.

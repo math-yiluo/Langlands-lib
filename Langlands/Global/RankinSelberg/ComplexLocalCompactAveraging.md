@@ -1,0 +1,7 @@
+# Inserting a compact weight in a matrix integral
+
+This internal comparison carries out the compact insertion in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2–8.3, pp. 56–59. The square test is supplied with its reproducing compact identity for the inverse determinant character. The matrix coefficient may be any function satisfying the stated joint integrability condition.
+
+The determinant of a unitary matrix has norm one. Its inverse left translation preserves the determinant norm power, and the inverse determinant character in the test identity combines with the matrix determinant character. This gives a reproducing identity for the entire weighted test. The shear `(k,g) ↦ (k,kg)` preserves the product of the compact measure and group Haar, since each fiber map is Haar left translation. It transports absolute integrability in both directions and turns the shifted test kernel into one with an unshifted test. Fubini then moves the compact average from the weighted test to the coefficient.
+
+For the unfolded integral, the proof also accepts a quotient variable and a pointwise finite expansion of the averaged coefficient. Absolute integrability exchanges the order of the quotient and matrix integrals. Applying the compact insertion for almost every quotient variable and integrating the finite sum gives a sum of products of quotient integrals and weighted matrix integrals. Separate integrability of the finite coefficient factors is a premise.

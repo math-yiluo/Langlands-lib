@@ -30,18 +30,18 @@ local notation "GLG" => GroupScheme.GeneralLinear.groupScheme (Fin n) RF
 local notation "N(" e ")" => blockUnipotent (Fin n) RF e
 local notation "U(" e "," w ")" => leviUnipotent (Fin n) RF e w
 
-local instance : IsAffine (GLG).X.left := isAffine_groupScheme (Fin n) RF
+local instance blockTermTransitivityAffine : IsAffine (GLG).X.left := isAffine_groupScheme (Fin n) RF
 
-local instance : Smooth (GLG).X.hom := smoothStatement (Fin n) RF
+local instance blockTermTransitivitySmooth : Smooth (GLG).X.hom := smoothStatement (Fin n) RF
 
-local instance (e : Fin n → ℤ) :
+local instance blockTermTransitivityClosed (e : Fin n → ℤ) :
     IsClosed (adelicPoints F GLG N(e) : Set (AdelicGroupPoints F GLG)) :=
   isClosed_adelicPoints_blockUnipotent F e
 
-local instance (e : Fin n → ℤ) : LocallyCompactSpace (adelicPoints F GLG N(e)) :=
+local instance blockTermTransitivityRadicalLocallyCompact (e : Fin n → ℤ) : LocallyCompactSpace (adelicPoints F GLG N(e)) :=
   (isClosed_adelicPoints_blockUnipotent F e).locallyCompactSpace
 
-local instance (e w : Fin n → ℤ) :
+local instance blockTermTransitivityComplementLocallyCompact (e w : Fin n → ℤ) :
     LocallyCompactSpace (adelicPoints F GLG U(e,w)) :=
   (isClosed_adelicPoints_leviUnipotent F e w).locallyCompactSpace
 
@@ -53,7 +53,7 @@ theorem blockUnipotentRationalQuotientCompactSpace (e : Fin n → ℤ) :
     (isRationalParabolicRadical_dynamic parabolicDynamic
       (isConnectedReductive_generalLinear F (Fin n)) (diagonalCocharacter (Fin n) RF e))
 
-local instance (e : Fin n → ℤ) : CompactSpace (RationalQuotient F GLG N(e)) :=
+local instance blockTermTransitivityQuotientCompact (e : Fin n → ℤ) : CompactSpace (RationalQuotient F GLG N(e)) :=
   blockUnipotentRationalQuotientCompactSpace F e
 
 /-- Constant term of a continuous rational-invariant function on `GL_n(𝔸)`, using

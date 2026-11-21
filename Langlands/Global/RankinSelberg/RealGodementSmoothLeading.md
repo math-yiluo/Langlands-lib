@@ -5,3 +5,5 @@
 The open-cell functional on the smooth lower series has the compact order-zero estimate. Opposite-sign Whittaker covariance and the smooth derivative estimate give regularity for every derivative word and a common height exponent. Those bounds are the hypotheses of the entire column Mellin theorem. Its translated argument is shifted by half the stated rank index, and the determinant factor is a fixed sign times an entire absolute-value power. In the dominant half-plane the joint absolute convergence theorem gives the Fubini identity with the original upper open-cell integral.
 
 This is the smooth-position-input form of the leading-character continuation in Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2, pp. 47–48. It supplies the values on the smooth compact-frame generators.
+
+`exists_commonGrowth_additiveJacquetIntegral` applies the compact functional estimate to the dominant lower Jacquet form. It chooses a single height exponent for all smooth vectors of that fixed lower series and all right derivative words of their Jacquet coefficients.

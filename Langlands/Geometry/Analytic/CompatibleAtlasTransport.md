@@ -1,0 +1,9 @@
+# Compatible strong maps under ambient and index transport
+
+`AffinoidAtlasPresentation.transportReindex` assembles an atlas presentation from the given one by transporting its chart maps along an ambient homeomorphism and renaming its chart indices along an equivalence. It retains the actual affinoid chart algebras and bounded restrictions. The ambient and index universes may change independently, over the same complete ultrametric normed field.
+
+`StrongHom.transportReindex` for a map `f : A → B` conjugates its continuous map by the two ambient homeomorphisms. The image of each transported source chart is the image under the target homeomorphism of the corresponding original chart image. Thus the relabeled chart pairs are admissible exactly when the original pairs are. For every such pair the transported map uses the original bounded pullback, with the original chart and restriction equations. In particular the locus in the target chart spectrum is unchanged. `StrongHom.IsQuasiIso.transportReindex` transports both the ambient homeomorphism and the full affinoid-test representation at all admissible chart pairs.
+
+`CompatibleStrongHom.transportReindex` uses these same bounded maps. The published equivalence of local compatibility with the all-coefficient chart-change law lets the proof transport that law along the target ambient homeomorphism and chart-index equivalence. The construction applies to maps of unsaturated atlases, assumes no ambient global Hausdorffness, and does not turn an arbitrary strong map into a compatible one.
+
+This is an internal adapter for the Library's indexed atlas presentations, used to put scalar extension and analytification in a common space and index universe. It uses the existing `AtlasHomeomorph`, `AtlasReindexing`, `LocalDomainTransport` and `LocalDomainReindexing` constructions. It makes no claim about analytification or localized scalar extension on its own.

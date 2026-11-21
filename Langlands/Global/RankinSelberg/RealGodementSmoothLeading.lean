@@ -31,12 +31,16 @@ local notation "G" => Langlands.GeneralLinear (t + 1) ℝ
 local notation "H" => Langlands.GeneralLinear (t + 2) ℝ
 local notation "X" => Matrix (Fin (t + 1)) (Fin (t + 2)) ℝ
 
-theorem regular_additiveJacquetIntegral (a : ℝˣ) {ds : List RealBlock}
-    (hDom : IsStrictlyDominant (realPositionExponent ds) t)
-    (f : principalSeries ℝ (t + 1) (realPositionCharacter ds)) :
-    (∀ Xs, RealLocalWhittaker.iteratedRightDerivative t Xs (additiveJacquetIntegral a f.val) ∈
-      RealLocalWhittaker.regularFunctions t (-a)) ∧
-    RealUniformWhittaker.HasUniformDerivativeGrowth (additiveJacquetIntegral a f.val) := by
+/-- All smooth lower Jacquet coefficients in the fixed dominant source have a common
+polynomial exponent for their right derivatives. -/
+theorem exists_commonGrowth_additiveJacquetIntegral (a : ℝˣ) {ds : List RealBlock}
+    (hDom : IsStrictlyDominant (realPositionExponent ds) t) :
+    ∃ N : ℕ, ∀ f : principalSeries ℝ (t + 1) (realPositionCharacter ds),
+      let W := additiveJacquetIntegral a f.val
+      (∀ Xs, RealLocalWhittaker.iteratedRightDerivative t Xs W ∈
+        RealLocalWhittaker.regularFunctions t (-a)) ∧
+      (∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
+        ‖RealLocalWhittaker.iteratedRightDerivative t Xs W g‖ ≤ C * realMatrixHeight g ^ N) := by
   let L := additiveJacquetForm a hDom
   have hψ (u : G) (hu : u ∈ GeneralLinear.upperUnipotent (t + 1) ℝ)
       (x : principalSeries ℝ (t + 1) (realPositionCharacter ds)) :
@@ -45,14 +49,24 @@ theorem regular_additiveJacquetIntegral (a : ℝˣ) {ds : List RealBlock}
       realWhittakerCharacter (-a) u * additiveJacquetIntegral a x.val 1
     rw [additiveJacquetIntegral_rightTranslate, one_mul]
     simpa only [mul_one] using realGodementOpenCellCovariance t a x.val ⟨u, hu⟩ 1
-  have h := compactWhittakerSmoothRegularity t ds (-a) L
-    (hasCompactDerivativeBound_additiveJacquetForm a hDom) hψ f
+  obtain ⟨N, hN⟩ := exists_commonExponent_compactWhittakerSmoothRegularity t ds (-a) L
+    (hasCompactDerivativeBound_additiveJacquetForm a hDom) hψ
+  refine ⟨N, fun f => ?_⟩
   have hValue : (fun g => L (translate t ds g f)) = additiveJacquetIntegral a f.val := by
     funext g
     change additiveJacquetIntegral a (fun k => f.val (k * g)) 1 = additiveJacquetIntegral a f.val g
     rw [additiveJacquetIntegral_rightTranslate, one_mul]
   rw [← hValue]
-  exact h
+  exact hN f
+
+theorem regular_additiveJacquetIntegral (a : ℝˣ) {ds : List RealBlock}
+    (hDom : IsStrictlyDominant (realPositionExponent ds) t)
+    (f : principalSeries ℝ (t + 1) (realPositionCharacter ds)) :
+    (∀ Xs, RealLocalWhittaker.iteratedRightDerivative t Xs (additiveJacquetIntegral a f.val) ∈
+      RealLocalWhittaker.regularFunctions t (-a)) ∧
+    RealUniformWhittaker.HasUniformDerivativeGrowth (additiveJacquetIntegral a f.val) := by
+  obtain ⟨N, hN⟩ := exists_commonGrowth_additiveJacquetIntegral a hDom
+  exact ⟨(hN f).1, N, (hN f).2⟩
 
 /-- Entire column values for a lower coefficient satisfying the smooth derivative estimates. -/
 theorem differentiable_godementLeadingFamily_of_regular (D : RealQuotientMeasureData t) (a : ℝˣ)

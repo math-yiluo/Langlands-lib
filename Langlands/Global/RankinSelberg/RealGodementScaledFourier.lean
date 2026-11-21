@@ -49,11 +49,16 @@ private def dilation (a : ℝˣ) : V ≃L[ℝ] V :=
      map_add' x y := smul_add _ _ _
      map_smul' c x := smul_comm _ _ _ } : V ≃ₗ[ℝ] V).toContinuousLinearEquiv
 
+/-- Continuous linear form of the positive, scaled Schwartz Fourier transform. -/
+def scaledEuclideanFourierCLM (a : ℝˣ) : 𝓢(V, ℂ) →L[ℂ] 𝓢(V, ℂ) :=
+  (euclideanHaarFactor a V : ℂ) •
+    (SchwartzMap.compCLMOfContinuousLinearEquiv ℂ (dilation a)).comp
+      (FourierTransform.fourierInvCLM ℂ 𝓢(V, ℂ))
+
 /-- The positive Schwartz Fourier transform for the real additive character of
 parameter `a` and its self-dual measure. -/
 def scaledEuclideanFourier (a : ℝˣ) (Φ : 𝓢(V, ℂ)) : 𝓢(V, ℂ) :=
-  (euclideanHaarFactor a V : ℂ) • SchwartzMap.compCLMOfContinuousLinearEquiv ℂ (dilation a)
-    (𝓕⁻ Φ : 𝓢(V, ℂ))
+  scaledEuclideanFourierCLM a Φ
 
 theorem scaledEuclideanFourier_apply (a : ℝˣ) (Φ : 𝓢(V, ℂ)) (y : V) :
     scaledEuclideanFourier a Φ y =

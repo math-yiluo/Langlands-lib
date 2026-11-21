@@ -1,0 +1,5 @@
+# Smooth families with common compact support in Schwartz space
+
+A jointly smooth family of Schwartz functions with support in one compact set is continuous as a map into Schwartz space. Each iterated spatial derivative is the corresponding joint derivative restricted to directions in the spatial variable, so it is jointly smooth. Compactness controls its variation uniformly on the support. The defining Schwartz seminorms then tend to zero on differences with the initial slice. The result is an internal analytic input for spectral families of Godement tests.
+
+For a smooth complex function `b` and a Schwartz test `Φ` vanishing outside a compact set, `exponentialTest` gives the Schwartz test `f(z)(x) = exp(z b(x)) Φ(x)`. At every `z`, the difference `f(z + r) − f(z)` is `r • V(r)` for a continuous Schwartz-valued family `V`, with `V(0)(x) = b(x) f(z)(x)`. Joint smoothness follows from the analytic extension of `(exp w − 1) / w` at zero. The common support of the difference quotients gives their continuity by the compact-family result.

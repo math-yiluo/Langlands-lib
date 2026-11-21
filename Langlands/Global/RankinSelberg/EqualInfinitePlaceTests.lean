@@ -80,7 +80,8 @@ private theorem mul {f g : ℂ → ℂ} (hf : HolomorphicNonzeroOnRightHalfPlane
   exact hz' (han.eqOn_zero_of_preconnected_of_eventuallyEq_zero
     (convex_halfSpace_re_gt τ).isPreconnected (hτ hw) hgz hz)
 
-private theorem finsetProd {I : Type*} (s : Finset I) (f : I → ℂ → ℂ)
+/-- A finite family of functions holomorphic and nonzero on right half-planes has the same property after multiplication. -/
+theorem finset_prod {I : Type*} (s : Finset I) (f : I → ℂ → ℂ)
     (hf : ∀ i, HolomorphicNonzeroOnRightHalfPlane (f i)) :
     HolomorphicNonzeroOnRightHalfPlane (fun z => ∏ i ∈ s, f i z) := by
   induction s using Finset.induction_on with
@@ -160,9 +161,9 @@ theorem infiniteTestData_of_local
   choose WR WR' ΦR DR hWR hWR' hoR hdR using hR
   choose WC WC' ΦC DC hWC hWC' hoC hdC using hC
   refine ⟨⟨1, one_ne_zero, WR, WR', WC, WC', hWR, hWR', hWC, hWC', ΦR, ΦC, DR, DC, ?_, ?_⟩⟩
-  · exact ((HolomorphicNonzeroOnRightHalfPlane.finsetProd Finset.univ _ hoR).mul
-      (HolomorphicNonzeroOnRightHalfPlane.finsetProd Finset.univ _ hoC)).exists_ne_zero_above
-  · exact ((HolomorphicNonzeroOnRightHalfPlane.finsetProd Finset.univ _ hdR).mul
-      (HolomorphicNonzeroOnRightHalfPlane.finsetProd Finset.univ _ hdC)).exists_ne_zero_above
+  · exact ((HolomorphicNonzeroOnRightHalfPlane.finset_prod Finset.univ _ hoR).mul
+      (HolomorphicNonzeroOnRightHalfPlane.finset_prod Finset.univ _ hoC)).exists_ne_zero_above
+  · exact ((HolomorphicNonzeroOnRightHalfPlane.finset_prod Finset.univ _ hdR).mul
+      (HolomorphicNonzeroOnRightHalfPlane.finset_prod Finset.univ _ hdC)).exists_ne_zero_above
 
 end Langlands.Global.RankinSelbergGlobal

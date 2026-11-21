@@ -1,0 +1,7 @@
+# Continuous scalar tests for the actual matrix automorphic operators
+
+Consider the complex span of the functionals obtained by evaluating a single enveloping differential at an adelic point. Pullback by a finite translation changes the evaluation point, since finite translations commute with the infinite differential action. Pullback by an infinite compact translation also conjugates the enveloping element by the inverse compact element. Pullback by another differential multiplies the enveloping elements. Induction in the concrete automorphic operator algebra proves that this span is invariant under pullback by every operator of that algebra.
+
+Each generating functional of the span restricts to a continuous linear test on the fixed-level growth space. The comparison for \(GL_n\) identifies the enveloping element with an actual group-scheme differential, and the defining weighted derivative bounds give continuity of its evaluation. Ordinary evaluation is the test for the unit enveloping element. Hence evaluation after any operator is continuous on the growth space. For a weakly holomorphic curve with automorphic values on a nonempty open subset of its preconnected holomorphy domain, this test reads the operator applied to the actual Taylor vector by taking the scalar derivative and dividing by the factorial.
+
+This is an internal implementation of the operator tests for the holomorphic coefficients in Langlands, *On the notion of an automorphic representation* (1979), proof of Proposition 2, printed pp. 205–206 (Corvallis Part I PDF pp. 200–201).

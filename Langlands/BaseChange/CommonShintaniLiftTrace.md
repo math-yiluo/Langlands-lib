@@ -1,0 +1,9 @@
+# Proportional traces on regular norms in a common Shintani fibre
+
+`CommonShintaniLiftTraceOnNormsStatement` concerns two admissible complex actions on `GL_n(F)` and one irreducible admissible action on `GL_n(E)`. The three spaces and the two coefficient algebras have independent universes. Each downstairs action has the same upstairs action as a Shintani lift, with its own intertwiner and nonzero constant. The conclusion gives one nonzero scalar relating all downstairs traces of test functions supported on regular semisimple norms, for every Haar measure on the downstairs group.
+
+Schur's lemma identifies the second intertwiner with a nonzero scalar multiple of the first. The two Shintani identities and uniqueness of the local twisted value give proportional ordinary character values at every regular norm. With constants `c`, `c'` and the intertwiner ratio `s`, the second ordinary value is `s c / c'` times the first.
+
+The difference of the ordinary distributions with this scalar factor has zero local value at each point of the test function's support. The proof extends tests by zero on each open neighbourhood where this difference vanishes. The topological support of the difference therefore misses every point where the given test is nonzero, and its trace vanishes by `Distribution.mem_supportedOn_support`.
+
+This is a derived consequence of the pointwise identity in G. Henniart and B. Lemaire, *Changement de base et induction automorphe pour GL(n) en caractéristique non nulle*, Mémoires de la Société Mathématique de France 124 (2011), II.2.9, printed pp. 69–70. It supplies a distributional comparison on the regular norm set used in II.4.8, printed pp. 90–91. The elliptic norm criterion can supply the support hypothesis for elliptic tests whose determinants lie in the scalar norm group.

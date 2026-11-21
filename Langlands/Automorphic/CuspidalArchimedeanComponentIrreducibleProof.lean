@@ -39,12 +39,12 @@ private theorem intertwines_complexifiedLie
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance cuspidalArchimedeanIrreducibleRationalInvariantFunctions : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalArchimedeanIrreducibleContinuousRationalFunctions : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalArchimedeanIrreducibleFiniteSmoothRationalFunctions : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalArchimedeanIrreducibleAutomorphicForms : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance cuspidalArchimedeanIrreducibleStableAutomorphicFunctions : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance cuspidalArchimedeanIrreducibleOperatorSpace (S : OperatorRealization F n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 namespace CuspidalOperatorRealization
 

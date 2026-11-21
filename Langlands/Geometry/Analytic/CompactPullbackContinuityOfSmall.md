@@ -1,66 +1,62 @@
-# Continuity on compact analytic pullbacks under pair-chart smallness
+# Continuity on compact analytic pullbacks with small affinoid spectra
 
-Module `Langlands.Geometry.Analytic.CompactPullbackContinuityOfSmall`,
-namespace `Langlands.Analytic.SaturatedAtlasPresentation`.
+The theorem `Langlands.Analytic.SaturatedAtlasPresentation.compactPullbackActionContinuity_of_small`
+in `Langlands.Geometry.Analytic.CompactPullbackContinuityOfSmall` proves
+`CompactPullbackActionContinuitySmallStatement` from
+`Langlands.Geometry.Analytic.CompactPullbackActionContinuitySmall`. This is the
+assembly of the internal chart argument developed for Task 7765.
 
-## Purpose and provenance
+## Statement proved
 
-This module assembles the Task 7765 development into the target
-proposition `CompactPullbackActionContinuityStatement`
-(`CompactPullbackActionContinuity`). It proves the target under one extra
-hypothesis, and proves it unconditionally whenever the field universe is at
-most the space universe (`UnivLE.{u, v}`), in particular when both are the
-same universe. No literature statement is transcribed. The
-mathematical content is in the imported modules:
+Let `K : Type u` be a complete ultrametric normed field and `G : Type z` a
+group with a topology. Assume that the spectrum of every presented affinoid
+algebra over `K` is `v`-small. Consider a categorical pullback `P` of
+`U → B ← V` in `LocalizedCategory.{u,v,v}`, with all four spaces compact
+and Hausdorff. Suppose that `G` acts by analytic automorphisms on `P`, `U`
+and `V`, the two projections are equivariant as analytic arrows, and both
+factor actions are continuous in the Library's Berkovich test-triple sense.
+The theorem proves `IsContinuousAction` for the supplied action on `P`.
 
-- `PairChartPatch` and `AffinoidPatchPullback` (Worker 931): pair charts, i.e.
-  affinoid fibre products of charts, identified with patches of the pullback.
-- `PairChartConvergence` (Worker 931): spectral convergence of the action on
-  pair charts, and eventual preservation of patches.
-- `PairChartCover` (Worker 931): every point of the pullback is locally
-  covered by charts inside pair-chart patches.
-- `AffinoidPatchGoodCharts` (Worker 976): charts inside an affinoid patch
-  with converging pullbacks are good charts.
-- `GoodChartContinuity` and `LocallyGoodChartContinuity` (Worker 976): on a
-  Hausdorff space, local covers by good charts give `IsContinuousAction`.
+The field, space and group universes are independent. The smallness
+hypothesis is explicit; it is not a universe inequality. The local argument
+uses it only to realize each pair chart, the spectrum of an affinoid pushout,
+as an object in the same localized category. `AffinoidSpectraSmall.{u,v} K`
+packages this hypothesis for the helper theorem below. It is definitionally
+the leading premise of the statement. Both `affinoidSpectraSmall_of_univLE`
+and the statement module's `small_banachSpectrum_of_univLE` furnish the
+hypothesis if `[UnivLE.{u,v}]` is available, in particular if `u = v`.
 
-## The smallness hypothesis
+## Implemented proof
 
-`AffinoidSpectraSmall.{u, v} K` is the proposition
-`∀ R : PresentedAffinoidAlgebra K, Small.{v} (BanachSpectrum R)`. It says
-that the Berkovich spectrum of every presented affinoid algebra over `K` is
-small in the space universe `v`. The proof needs it only to make each pair
-chart, the small spectrum of an affinoid pushout algebra, an object of
-`LocalizedCategory.{u, v, v}`. The Library's `greatestChartPullback` takes the same
-smallness, as an instance argument for its pushout algebra. It holds automatically whenever `UnivLE.{u, v}`
-(`affinoidSpectraSmall_of_univLE`, via Mathlib's instance `UnivLE.small`),
-in particular when `u = v`. Whether the target holds without it
-in general universes is the open question in operator request
-`a87ede08952355398eb14c6ddc2957c0`. The hypothesis is option (a) proposed
-there.
+1. **Cover by pair-chart patches.** `PairChartCover` gives a finite cover of a
+   neighbourhood of each point of `P` by charts lying inside patches of the
+   form `p⁻¹(Uᵢ) ∩ q⁻¹(Vⱼ)`, with `Uᵢ` and `Vⱼ` lying over a common
+   chart of `B`. This cover uses the commutativity of the supplied square.
+2. **Realize the patch affinoidly.** For each such pair, `hS c.algebra`
+   supplies smallness of the spectrum of the completed affinoid pushout.
+   `PairChartPatch` identifies the resulting localized pair-chart object with
+   the analytic domain of `P` cut out by the two chart preimages, using the
+   categorical pullback universal properties. This is `PairChartData.patchIso`.
+3. **Control the action on the model.** `PairChartConvergence` gives eventual
+   preservation of the patch near the identity and spectral convergence of the
+   induced pullbacks on the pair chart. The factor actions control the two
+   blocks of coordinates by equivariance of the full projection arrows.
+   `AffinoidPushout.spectralConvergesOn_of_factors` extends the estimates to
+   the whole pushout by finite polynomial approximation.
+4. **Pass to the original charts.** `isGoodChart_of_affinoidPatch` in
+   `AffinoidPatchGoodCharts` transfers preservation and spectral convergence to
+   any chart of `P` contained in the patch, by representing it as an affinoid
+   domain of the model. Applying this argument to the cover of step 1 gives
+   `IsLocallyGood σ` via `isLocallyGood_of_pullback_of_small`.
+5. **Verify the tests.** The main theorem extracts Hausdorffness of `P` from
+   `IsCompactSpace P` and applies `isContinuousAction_of_locallyGood`. This
+   criterion takes a finite subcover of the compact chart of each test triple,
+   obtains goodness of that chart from the finite cover, and then uses its
+   eventual preservation and spectral bound to give `IsNear` for that test at
+   the identity. The proof does not otherwise use compactness of the four spaces.
 
-## Declarations
-
-- `AffinoidSpectraSmall.{u, v} K` (definition, a proposition): the smallness
-  hypothesis above.
-- `affinoidSpectraSmall_of_univLE [UnivLE.{u, v}] : AffinoidSpectraSmall.{u, v} K`.
-- `isLocallyGood_of_pullback_of_small hS hP hU hV hp hq : IsLocallyGood σ`.
-  Here `hP : IsPullback p q f g`, `σU` and `σV` are continuous, and `p`, `q`
-  are equivariant. The proof applies `isLocallyChartCovered_of_pairCharts`
-  with `Q := IsGoodChart σ`. For a chart `W` inside the patch of a pair
-  chart `c`, it applies `isGoodChart_of_affinoidPatch` to
-  `c.eventually_preimage_patch` and `c.spectralConvergesOn_patchPullback`.
-  The smallness instance for `c.algebra` comes from `hS`.
-- `compactPullbackActionContinuity_of_small hS`: the body of
-  `CompactPullbackActionContinuityStatement`, verbatim, under `hS`. The
-  Hausdorff property of `P` is the second component of `IsCompactSpace P`.
-  The theorem then applies `isContinuousAction_of_locallyGood` to the
-  previous result. Compactness of `B`, `U`, `V` and `P` is not otherwise
-  used.
-- `compactPullbackActionContinuityStatement_of_univLE [UnivLE.{u, v}] :
-  CompactPullbackActionContinuityStatement.{u, v, z}`: the target statement,
-  with no extra hypothesis, whenever the field universe is at most the space
-  universe. Worker 976 suggested this form of the corollary.
-- `compactPullbackActionContinuityStatement_of_univ_eq :
-  CompactPullbackActionContinuityStatement.{u, u, z}`: the special case of
-  equal universes.
+There is no topological-group instance or action on `B`, no quasi-étale or
+additional lifting or uniqueness premise, and no description of pullback
+points as pairs. The two existing `UnivLE` and equal-universe corollaries
+specialize the theorem after supplying smallness; neither proves the
+superseded proposition at independent universes without that hypothesis.

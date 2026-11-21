@@ -1,0 +1,7 @@
+# Drinfeld's formula and the original framed comparisons
+
+Drinfel'd, *Coverings of p-adic symmetric regions*, §2 A, printed p. 109 (PDF p. 3), gives the conjugation of the target order action and the transformed framing. In the special-atlas implementation, simultaneous conjugation at both endpoints of a comparison retains the underlying formal isomorphism and its refinements. Extending coefficients preserves these underlying data, as shown by forgetting the order action before extension and by equality elimination for the coefficient algebra transport.
+
+The proof rewrites the framing square on each reduced refinement test as an equality of whole forward tensors. The reduced comparison after twisting has the same underlying maps and refinements, with the reduced target atlases identified along the actual twist and reduction equalities. The normalized chart formula gives the three source factors for each representative. Equal residue maps identify these source factors and give the identity comparisons of their coefficient-extended frames. Associativity transports the original framing square to the transformed one. The forward tensor determines the inverse, so the resulting certificate is a square of the actual full-order quasi-isogenies.
+
+`DrinfeldFramedAtlas.Comparison.act` uses this square with the actual twisted target comparison of the given representatives. It takes the chosen frame matrix coordinates and the proofs of the published nonnegative relative Frobenius rank and invertibility propositions used by the representative transformation.

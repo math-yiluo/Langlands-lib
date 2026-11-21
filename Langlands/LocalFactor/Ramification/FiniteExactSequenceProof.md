@@ -123,28 +123,33 @@ characteristic zero. The lower groups are `lowerGroup R G n`.
 
 `Padic.artinConductor T K` and `Padic.swanConductor T K` (module
 `Langlands.LocalFactor.Ramification.Galois`) are the generic sums for the
-action `Padic.integerAction T K` of `G` on the integer ring `T.Integers`. The
-instance facts used in their definitions are private there, so this module
-proves them again with the same arguments.
+actual action `Padic.integerAction T K` of `G` on the integer ring
+`T.Integers`. The proof uses three published lemmas to supply the same
+instance facts as the private proofs in `Galois`:
 
-- `Langlands.Ramification.HerbrandBridge.integerAction_faithful`. `G` acts faithfully on `T.Integers`. Proof:
-  `T.Integers` is the valuation subring, so `F.Carrier` is its fraction field.
-  Two automorphisms that agree on it agree on `F.Carrier`
-  (`IsFractionRing.ringHom_ext`).
-- `Langlands.LocalFactor.SpectralConductor.integerRing_noetherian'`. `T.Integers` is Noetherian, by instance search
-  with the topology, valuation relation and local-field structure of `T`.
-- `finite_automorphismGroup`. `G` is finite. Proof: `F.Carrier` is
-  finite-dimensional over `Padic p`, hence over `K`
-  (`Module.Finite.of_restrictScalars_finite`). The automorphism group of a
-  finite-dimensional algebra over a field is finite.
+- `Langlands.Ramification.HerbrandBridge.integerAction_faithful` (module
+  `Langlands.LocalFactor.Ramification.Herbrand.QuotientProof`) gives
+  faithfulness. Two automorphisms that agree on the valuation subring
+  `T.Integers` agree on its fraction field `F.Carrier` by
+  `IsFractionRing.ringHom_ext`.
+- `Langlands.LocalFactor.SpectralConductor.integerRing_noetherian'` (module
+  `Langlands.LocalFactor.SpectralConductorFunctional`) gives Noetherianity
+  of `T.Integers` using the topology, valuation relation and local-field
+  structure of `T`.
+- `Langlands.LocalFactor.SpectralConductor.automorphismGroup_finite'` (the
+  same module) gives finiteness of `G`. It first obtains finite dimension of
+  `F.Carrier` over `K` from finite dimension over `Padic p` by
+  `Module.Finite.of_restrictScalars_finite`, then uses finiteness of the
+  automorphism group of a finite-dimensional field extension.
 
-`finiteGaloisConductorExactSequence`. Introduce the Galois instance, the
-representations, the intertwiners and the three hypotheses. Install the
-integer action and the three facts above as local instances. Then apply
-`artinConductor_eq_add` and `swanConductor_eq_add` with
-`R = T.Integers`. These match the goal definitionally. The goal unfolds
-`Padic.artinConductor` to the generic sum, whose remaining instance arguments
-are proofs of propositions and hence agree with the ones given here.
+`finiteGaloisConductorExactSequence` introduces the Galois premise, the
+representations, the intertwiners and the three exactness hypotheses. It
+installs the integer action and the three facts above as local instances,
+then applies `artinConductor_eq_add` and `swanConductor_eq_add` with
+`R = T.Integers`. Both p-adic definitions unfold to the corresponding
+`R`-based definitions with the same action. The three instance arguments
+are proofs of propositions, so the imported proofs and the private ones in
+`Galois` agree by proof irrelevance.
 
 ## Checks
 

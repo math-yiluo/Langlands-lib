@@ -40,11 +40,11 @@ variable [ValuativeRel k] [TopologicalSpace k] [IsNonarchimedeanLocalField k]
   [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
   (hG : IsConnectedReductive G)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+local instance displacementAmbientAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
-local instance : TopologicalSpace (RationalPoint k G.X) := pointTopology
+local instance displacementAmbientTopology : TopologicalSpace (RationalPoint k G.X) := pointTopology
 
-local instance : IsTopologicalGroup (RationalPoint k G.X) :=
+local instance displacementAmbientTopologicalGroup : IsTopologicalGroup (RationalPoint k G.X) :=
   rationalPoint_isTopologicalGroup k G
 
 include hG in

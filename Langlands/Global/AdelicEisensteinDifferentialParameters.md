@@ -1,0 +1,7 @@
+# Parameter dependence of the actual invariant derivative
+
+Assume the scalar pairings of the Iwasawa height with complex character parameters are smooth on every infinite slice at a fixed finite coordinate. A scalar section with smooth infinite slices stays smooth after multiplication by the height power. The real invariant derivative of each height pairing is complex-linear in the parameter, by additivity and complex scalar linearity of the directional derivative on smooth functions.
+
+The chain rule for the complex exponential as a real smooth map and the product rule compute the derivative of the twisted section. Dividing by the same nonzero exponential gives the untwisted derivative plus the value of the original section times the derivative of the height pairing. In finite-dimensional linear parameter coordinates, the affine expression is a finite sum of fixed scalar functions with entire coefficients. The proof uses the coordinate functions of a basis and the constant contribution at parameter zero.
+
+This internal calculation uses the twist preceding equation (2.1) in Bernstein–Lapid, *On the meromorphic continuation of Eisenstein series*, §2.2, printed p. 191 (PDF p. 5). It supplies the dependence on the inducing parameter for real differential operators in the holomorphic families used in Langlands, *On the notion of an automorphic representation*, proof of Proposition 2, printed p. 206 (Corvallis Part I PDF p. 201).

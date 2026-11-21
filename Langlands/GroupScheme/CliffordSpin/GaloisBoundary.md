@@ -1,0 +1,9 @@
+# The spinor-norm boundary and the scalar Clifford Hasse kernel
+
+`scalarSpinorNormBoundary_projection` verifies the boundary formula for the actual Clifford projection to the scalar norm-one isometry group. It applies to regular scalar quadratic presentations of positive dimension in characteristic zero. The coefficient fields can be any tower `F ⊆ K ⊆ M` with `M/K` finite Galois. Given a unit `a` of `K` and a unit `z` of `M` with `z² = a`, the kernel class has a coboundary primitive in the Clifford lift group over `M` exactly when `a` modulo squares is the value product of an even reflection word over `K`.
+
+The scalar kernel formula identifies the Galois defect of the primitive with the scalar `σ(z)/z`. Multiplying its Clifford component by `z` makes the ambient pair fixed. Effective descent of affine points gives a pair over `K`. It is even, intertwines a determinant-one matrix, and has reversion norm `a`. The unnormalized Clifford comparison supplies the reflection word. In the other direction, a word with value product `a t²` gives a tensor unit and matrix over `K`. Extending the pair to `M` and dividing the unit by `zt` gives norm one and the required defect, with the determinant and intertwining equations preserved.
+
+`scalarCliffordSpinGaloisHasseKernel` proves `ScalarCliffordSpinGaloisHasseKernelStatement`. For a regular scalar presentation of dimension at least four over a number field, every everywhere locally trivial cocycle in the affine Clifford lift group is a coboundary on its original finite Galois cover. The proof applies the scalar spin Hasse reduction to the verified central isogeny, the full μ₂ kernel, and the boundary formula above.
+
+The boundary calculation and its role in the Hasse principle follow Kneser, *Lectures on Galois Cohomology of Classical Groups*, §5.11, p. 99. The Lean proof works with the actual relative affine points and all finite Galois coefficients.
