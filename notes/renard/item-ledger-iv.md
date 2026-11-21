@@ -27,6 +27,8 @@ published.
 On 20 November 2026, Worker 1222 checked positive-form uniqueness against Library
 `74c4eb01e237c126a7194e8eee1bc9606ef2ffc8` and added the unnumbered IV.2.1 assertion on
 unnormalized induction.
+On 21 November 2026, Worker 1222 checked the opening of IV.3.1 against Library
+`a11d1e75f52192f694c9901f4b7fd7098b0f8ff9` and recorded the central-quotient Haar measure.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -91,8 +93,9 @@ another namespace is written, statements are in
 
 | Item | Pages | Lean | Status |
 | --- | --- | --- | --- |
-| IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | `Langlands.Induction.CentralL2` and its form `centralL2Form` | D |
-| IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
+| IV.3.1 opening: from the unimodularity of `G` to a two-sided Haar measure on `G/Z(G)` | 99 / 105 | [`Langlands.Haar.centralQuotient_isMulRightInvariant`](../../Langlands/Representation/Unitary/CentralQuotientForm.md) and regular left Haar existence | P (checked Library reuse at the source hypotheses) |
+| IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | [`Langlands.Induction.CentralL2`, `centralL2Representation`, `centralL2Form`](../../Langlands/Representation/MatrixCoefficient/CentralL2.md) | D for the smooth right-regular subspace, where each entire function has an open right stabilizer. The action and form use the two-sided quotient measure. The larger space of locally constant functions in the literal definition remains open. See the [faithfulness discussion](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsStatement.md#faithfulness-notes). |
+| IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P for the smooth reading of the Definition: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
 | IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.SmoothRep.IsSquareIntegrableModuloCenter` and `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter` in [SmoothSquareIntegrability](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md) | D: neither assumes admissibility or irreducibility. The older `Langlands.IsSquareIntegrableModCenter` is admissibility conjoined with the first predicate, by `Langlands.SmoothRep.isSquareIntegrableModCenter_iff` |
 | IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | P: [`singleCoefficientSquareIntegrability`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md) (exact proof Task 6678, `cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`), without admissibility, countability or reductivity. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
 | IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | P: [`nonirreducibleSquareIntegrabilityCounterexample`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleProof.md) (exact proof Task 7180, `a326697e-2603-4828-9948-308b70e7369c`): the left regular representation of the discrete infinite dihedral group on its complex group algebra |
@@ -444,6 +447,15 @@ locally compact totally disconnected group give compact-open cofinality by
 carrier universes in development check `8542112d-4eba-4b0a-a4fa-200055c19859`.
 The implemented proof compares the two Hermitian identifications, applies admissible Schur
 and obtains strict positivity by taking the ratio of the two diagonal values on a nonzero vector.
+The IV.3.1 reuse check applies the published right-invariance theorem to a regular left
+Haar measure on the actual quotient by the full center. The center is closed and abelian.
+Its left Haar measure is right invariant by commutativity, so its modular character is one.
+The quotient is locally compact and Hausdorff with its quotient topology, and Mathlib
+supplies its regular left Haar measure in the Borel measurable structure. The ambient
+modular character is assumed trivial as in the source. The published theorem gives right
+invariance by the normal-subgroup formula for conjugation moduli. Development check
+`214a5b6b-59b3-4b5c-82c2-54bcec6641ab` compiled this application with an arbitrary group
+universe and no countability hypothesis.
 The unnumbered IV.2.1 counterexample remains an open obligation.
 C1 and C2 remain relevant: the
 IV.1.3 Lemma needs a nonzero representation, and the printed argument of IV.2.1 Remark 1 is
