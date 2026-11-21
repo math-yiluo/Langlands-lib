@@ -39,10 +39,9 @@ hypotheses, a status, the evidence, and the owner task.
   passed with no errors or warnings, and `#print axioms` reported only `propext`,
   `Classical.choice` and `Quot.sound`; it is not public evidence. No further proof work or
   owner task is needed.
-- **C (composite, not published).** No published theorem has the statement as its type, but
-  a projection out of a published conjunction has it. The author type-checked the
-  projection in the same private module. What is missing is a named wrapper theorem, not
-  mathematics. The row names the owner task, or says that there is none.
+- **C (checked composite).** A Lean term built from published theorems proves the
+  statement. The row gives the ingredients of that term and the owner of
+  the named theorem if one exists.
 - **O (open).** A Lean statement exists, but no published proof and no composite from
   published results is known.
 - **M (missing statement).** A source assertion of this family has no Lean statement in the
@@ -375,11 +374,12 @@ algebraically closed field for (d); all three Lean statements assume `[IsAlgClos
   `σ : D ⟶ H` of `q`.
 - Status P: `solvableSplitExtension` (`Absolute/SolvableSplitExtensionProof`).
 
-### E3 update, 20 November 2026
+### E3 updates, 20–21 November 2026
 
-The following publications extend the historical snapshot. The statement
-pairs and the splitting reduction were checked at Library commit
-`7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`.
+The statement pairs and the splitting reduction were checked at Library commit
+`7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`. Both new proofs and the
+full splitting composite were checked against their exact target types
+at `1704ae21875deeabd17a51ced41447cc741572dd`.
 
 - **Corrected section conjugacy and maximal diagonalizable subgroups.**
   `TrigonalizableSectionConjugacySmoothStatement` assumes an algebraically
@@ -393,13 +393,20 @@ pairs and the splitting reduction were checked at Library commit
   (PDF p. 21), for conjugacy. The source for the maximality clause is
   Milne's argument in 16.27(b), printed p. 333 (PDF p. 349). Part ii) a) of the
   same SGA 3 theorem also gives conjugacy for a smooth quotient with a
-  possibly nonsmooth unipotent kernel. Status O. Candidate
+  possibly nonsmooth unipotent kernel. Statement candidate
   `8e4cbe1e-d18a-4421-b8e8-cc57bd08c0e7` was approved in review
   `90d70076-80d7-48ff-8938-f307d37364b1` and published at
-  `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. The correction ruling
-  assigns the proof to Task 7806 (`ad802cf7-9b28-4355-8243-88707d9cc1e4`)
-  after its contract is revised to the corrected target.
-  [Corrected statement](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothStatement.md)
+  `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status P.
+  Task 7806 (`ad802cf7-9b28-4355-8243-88707d9cc1e4`) published
+  `trigonalizableSectionConjugacySmooth`, which uses the coboundary
+  theorem for diagonalizable actions on smooth unipotent groups and
+  the algebraically closed splitting case of Milne 16.26(a).
+  Candidate `6ceedaa6-71e3-4522-81cf-b464488d2c1c` passed independent
+  review `2c702577-c32c-4f78-8c7d-b02cba1f1ea5` and exact-target
+  validation `841809ab-5bfe-4978-9368-6411ff4187cf` and was published
+  at `032961776f43ccd672c6266d265a9c644faeba13`.
+  [Corrected statement](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothStatement.md),
+  [published proof](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothProof.md)
 
 - **Historical statement and warning.** Over an algebraically closed field
   of characteristic `p > 0`, `α_p ⋊ μ_p` refutes 16.27(a) and `α_p ⋊ G_m`
@@ -418,16 +425,35 @@ pairs and the splitting reduction were checked at Library commit
   existence of a homomorphic section of an fppf quotient of an affine algebraic group
   over a perfect field by a smooth connected unipotent normal closed
   subgroup, when the quotient is `D(Λ)` for finite `Λ` of order prime
-  to the field's characteristic exponent. The accompanying theorem
-  `trigonalizableExtensionSplit_of_etale` deduces the full
-  `TrigonalizableExtensionSplitStatement` from this premise, using it
-  only in case (b). Candidate `739ac18e-93ed-49e2-93b4-f9126d29e86e`
+  to the field's characteristic exponent. Statement candidate
+  `739ac18e-93ed-49e2-93b4-f9126d29e86e`
   was approved in review `bd492737-b880-4db6-a7c1-fea2284f2c13` and
-  published at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status O for
-  the étale premise, with proof owner Task 7944
-  (`f5b5803b-6be8-43b6-8625-c8f85818273a`). The full 16.26 proof in
-  Task 7805 awaits that result.
+  published at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status P.
+  Task 7944 (`f5b5803b-6be8-43b6-8625-c8f85818273a`) published
+  `etaleDiagonalizableExtensionSplit`. In characteristic zero the proof
+  splits a character-linear kernel tower. In positive characteristic
+  it reduces to vector kernels, where torsor triviality, averaging over
+  the finite geometric point group and descent give a section.
+  Candidate `874cb923-45d4-4697-a72e-c87436a77d52` passed independent
+  review `ce70e976-9b02-4106-a97d-b5f037b5acb8` and exact-target
+  validation `18ee1995-b562-423c-811b-113780988d73` and was published
+  at `032961776f43ccd672c6266d265a9c644faeba13`.
   [Étale splitting statement](../../Langlands/GroupScheme/Trigonalizable/EtaleExtensionSplitStatement.md),
+  [published proof](../../Langlands/GroupScheme/Trigonalizable/EtaleExtensionSplitProof.md)
+
+- **Full trigonalizable extension splitting.** `TrigonalizableExtensionSplitStatement`
+  gives a group-scheme section of a supplied fppf quotient `G ⟶ D(Λ)`
+  of an affine algebraic group by a normal closed unipotent subgroup.
+  Here `Λ` is finitely generated. The cases of Milne 16.26 are an
+  algebraically closed field (a), a perfect field with smooth connected
+  kernel (b), and a perfect field with connected quotient (c).
+  Status C at the checked commit. The exact term
+  `trigonalizableExtensionSplit_of_etale etaleDiagonalizableExtensionSplit`
+  supplies the finite étale splitting theorem to the reduction in
+  case (b). The named theorem `trigonalizableExtensionSplit` remains
+  with Task 7805 (`2d5e38c2-6552-435c-b69c-d727ddb78b3a`), which has
+  staged candidate `460e41f9-6bc8-4f69-ab8b-aa460a4b260c`.
+  [Full splitting statement](../../Langlands/GroupScheme/Trigonalizable/ExtensionSplitStatement.md),
   [splitting reduction](../../Langlands/GroupScheme/Trigonalizable/ExtensionSplitPerfectSmooth.md)
 
 **E4. Lie–Kolchin and triangular embeddings.** Source: Milne 2017, Theorem 16.30 and
@@ -635,11 +661,11 @@ ledger counted 61 statements with published proofs (P), including
 theorems (C). The sole open statement (O) was
 `PseudoParabolicQuotientLocalSectionsStatement` (G4).
 
-The dated E3 update records two additional open statements (O),
+The dated E3 updates add two exact published proofs (P) for
 `TrigonalizableSectionConjugacySmoothStatement` and
-`EtaleDiagonalizableExtensionSplitStatement`. The published reduction of
-`TrigonalizableExtensionSplitStatement` leaves Task 7805's full proof
-dependent on Task 7944's proof of the finite étale premise.
+`EtaleDiagonalizableExtensionSplitStatement`. The latter completes the checked
+composite (C) for `TrigonalizableExtensionSplitStatement`, with its named
+theorem staged by Task 7805.
 
 The original snapshot recorded three assertions with missing Lean statements (M)
 and no assigned proof owners.
