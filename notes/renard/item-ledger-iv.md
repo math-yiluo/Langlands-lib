@@ -24,7 +24,9 @@ operator's request.
 On 18 November 2026, Worker 4988 (executor of Task 6678) updated the two IV.3.2 Remark rows,
 clarification C3 and the Summary against Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`, after both exact proofs were
 published.
-Other row statuses retain the original survey date and scope.
+On 20 November 2026, Worker 1222 checked positive-form uniqueness against Library
+`74c4eb01e237c126a7194e8eee1bc9606ef2ffc8` and added the unnumbered IV.2.1 assertion on
+unnormalized induction.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -76,8 +78,10 @@ another namespace is written, statements are in
 | IV.2.1 `V̄`, `π^h` and Definition: hermitian representations | 96 / 102 | hermitian forms in [HermitianRepresentationStatements](../../Langlands/Representation/Unitary/HermitianRepresentationStatements.md) | D |
 | IV.2.1 Remark 1: `π^h ≅ π` implies hermitian; converse for admissible `π` | 97 / 103 | `CR.HermitianOfSelfDualStatement`, `CR.SelfDualOfHermitianStatement` | P (`hermitianOfSelfDual`, `selfDualOfHermitian`). The printed one-line argument for the first assertion is incomplete; see clarification C2 |
 | IV.2.1 Remark 2: uniqueness of the form up to a scalar | 97 / 103 | `CR.HermitianFormUniquenessStatement` | P: `hermitianFormUniqueness` |
+| IV.2.1 unnormalized induction can fail to preserve hermitian representations even when `H \ G` is compact | 97 / 103 | Counterexample still to formalize in Task 1222 | Open. The candidate witness is the trivial representation of the upper Borel of `GL₂(ℚ₂)`. |
 | IV.2.1 (IV.2.1.1)–(IV.2.1.2): normalized induction `i_H^G` and its compatibility with `~` and `h` | 97 / 103 | `CR.CompactQuotientNormalizedInductionDualityStatement` | P: [`compactQuotientNormalizedInductionDuality`](../../Langlands/Representation/Unitary/CompactQuotientNormalizedInductionDualityProof.md), carried Library theorem |
-| IV.2.2 Definition: unitary representations; uniqueness of the positive form up to a positive scalar | 97 / 103 | `IsUnitarizable`; `CR.HermitianFormUniquenessStatement` | D; C |
+| IV.2.2 definition of a unitary representation | 97 / 103 | `Langlands.InvariantPositiveForm` and `Langlands.IsUnitarizable` | D. The first carries a chosen invariant positive form, and the second asserts its existence. |
+| IV.2.2 uniqueness of the invariant positive form up to a positive real scalar | 97 / 103 | [`Langlands.InvariantPositiveForm.exists_pos_rescale_eq`](../../Langlands/Representation/Unitary/AdmissibleFormUniqueness.md) | P (checked Library reuse at the source hypotheses). |
 | IV.2.2 Corollary (ii): admissible unitary representations are semisimple | 98 / 104 | `Langlands.AdmissibleUnitarySemisimplicityStatement` (every invariant subspace has an invariant complement) | P: `admissibleUnitarySemisimplicity` |
 | IV.2.2 Proposition: for a `G`-stable `V₁`, `V₁^⊥` is `G`-stable and `V = V₁ ⊕ V₁^⊥` | 98 / 104 | `Langlands.AdmissibleUnitaryOrthogonalComplementStatement`, specifying the actual orthogonal complement | P: [`Langlands.admissibleUnitaryOrthogonalComplement`](../../Langlands/Representation/Unitary/AdmissibleOrthogonalComplementProof.md) |
 | IV.2.2 Corollary (i): `dim End_G(V) = 1` iff irreducible | 98 / 104 | `CR.UnitaryAdmissibleEndomorphismStatement` | P: `unitaryAdmissibleEndomorphism` |
@@ -433,7 +437,14 @@ the general irreducible criterion without admissibility (Task 6678) and for its 
 without irreducibility (Task 7180).
 The IV.3.2 Definition now has published reusable
 predicates without admissibility and a proved comparison with the older predicate.
-The other rows retain their original statuses and scope.
+The IV.2.2 uniqueness check applies `exists_pos_rescale_eq` to two positive forms on an
+irreducible admissible smooth complex representation. The hypotheses of a Hausdorff,
+locally compact totally disconnected group give compact-open cofinality by
+`CR.HermitianProof.compactOpenCofinal`. The example compiled with independent group and
+carrier universes in development check `8542112d-4eba-4b0a-a4fa-200055c19859`.
+The implemented proof compares the two Hermitian identifications, applies admissible Schur
+and obtains strict positivity by taking the ratio of the two diagonal values on a nonzero vector.
+The unnumbered IV.2.1 counterexample remains an open obligation.
 C1 and C2 remain relevant: the
 IV.1.3 Lemma needs a nonzero representation, and the printed argument of IV.2.1 Remark 1 is
 incomplete. C3 is resolved: the IV.3.2 Remark without admissibility is proved in Lean

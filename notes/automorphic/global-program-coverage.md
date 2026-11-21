@@ -2587,3 +2587,30 @@ centre-invariant function on `[G]` alone does not give an `L²` function on the
 full quotient when the split-centre factor has infinite Haar measure.
 The shared DAG records these publication statuses at revision 566. Neither
 program track is complete.
+
+### Additional L3 and L4 publications verified at `b0a10aa9`
+
+For L3, the [Arthur foundations ledger](arthur-l3-foundations-coverage.md)
+records Task 5536's five public construction and statement units, maps the
+exact comparison, `(G, M)`-family and truncation targets to Tasks 8038–8049,
+and explains the remaining analytic scope. In particular, the actual
+parabolic spaces and truncation are not being replaced by a second abstract
+model; the abstract combinatorial lemma is already proved, while the actual
+height comparison, truncation estimates and proper-field descent have
+separate obligations. The linked ledger's proof-task statuses are a dated
+snapshot.
+
+For L4, Task 5816 (`c325654f-b8fb-4a43-9caf-c147e4ae95f2`) has published
+[`Langlands.Global.cuspidalPairBoundaryNonvanishingReduction`](../../Langlands/Global/Factors/CuspidalPairBoundaryNonvanishingReduction.md)
+(candidate `b7cd46e7-a9b3-4a09-addc-39339072a2af`, integration commit
+`95d37e11bd46972d484c6fc9e6b864ff7625cf9e`). It proves the implication
+from `CuspidalPairBoundaryNonvanishingEnlargedStatement`: for each admissible
+finite omitted set `S`, the premise gives one meromorphic Euler-product
+representative for a superset `S₀` with nonpositive order on `Re s = 1`.
+Restoring the finitely many omitted reciprocal-polynomial factors cannot
+increase the order; uniqueness of the continued product gives the statement
+for every representative outside `S`. This implements the set-of-places
+passage in Shahidi 1981, Theorems 5.1–5.2, pp.351–353. It does **not** prove
+the enlarged-set premise, the holomorphy of the corresponding generic
+Eisenstein coefficient, or the full nonvanishing target. These remain
+analytic inputs for L4 and the H3 factor comparison.
