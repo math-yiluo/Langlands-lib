@@ -22,6 +22,8 @@ for the D5 and F8 updates were checked at Library commit
 review is `1b928d65-4b9f-4177-b79c-9774be021f81`, and its published note gives
 the proof routes. [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md)
 
+D6 was checked at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
+
 General results on maximal tori (existence, base change, conjugacy, finite-field and
 Henselian versions) belong to families 4 and 8 of the program and are not listed here. The
 only maximal-torus rows here are the central-torus results F6–F7 and the reflection result
@@ -368,6 +370,27 @@ if `M` is free (of finite rank, since `M` is finitely generated).
 - Finite generation is essential for the smoothness criterion. The construction
   in B2 also accepts a free group of countably infinite rank, whose group scheme
   fails local finite presentation over `k`.
+
+**D6. Rational characters and cocharacters as Galois invariants.** Milne 2017,
+§12.g, printed p.239 (PDF 255), identifies rational characters of affine
+algebraic groups with the fixed characters over the separable closure.
+- `GaloisInvariantLatticesStatement.{u}` treats any Galois extension `K/k`
+  and any affine commutative group scheme `T` over `k`. Both canonical
+  integral maps induced by scalar extension, from `X^*(T)` and `X_*(T)` to
+  the respective `Gal(K/k)`-invariant submodules of `X^*(T_K)` and
+  `X_*(T_K)`, are bijections. This includes all field tori and allows
+  infinite Galois extensions. The character clause at `K = k_s` includes
+  the commutative finite-type case of Milne's formula.
+- Status P. `galoisInvariantLattices` uses injectivity of scalar extension
+  and descends each fixed homomorphism by the affine Galois graph descent
+  theorem, with `𝔾_m` on the target or source side. Task 7959
+  (`7bb1a480-7982-4b50-b08c-204069bb66ff`) published proof
+  `a36c4dfb-7c34-461f-983e-6cb1f929067a` at
+  `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`, with independent review
+  `07b968c9-4fef-4832-b2ce-ac745417c7df` and Lake and exact-target receipt
+  `c5332c0a-6a14-4f31-ab80-b23e60e116a5`.
+  [Statement](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesStatement.md),
+  [proof](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesProof.md)
 
 ## E. Finite separable Weil restriction and the Deligne torus
 

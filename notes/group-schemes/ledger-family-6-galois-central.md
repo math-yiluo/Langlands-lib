@@ -15,7 +15,8 @@ ledger for family 6 of that program's contract. Family 6 covers:
 The original rows describe Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0`
 and environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. That version updated
 A6, D9 and F3 from commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`.
-Row A9 records publications verified on 18 November 2026.
+Row A9 records publications verified on 18 November 2026. A10 was checked
+at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
 are relative to `Langlands/GroupScheme/` in that commit. "Field group" means a group
@@ -218,6 +219,27 @@ Source is Milne 2017, §12.g and Theorem 12.23, printed pp.239–240 (PDF 255–
   `bb9e086196d00484fd52204977452d922bf3c660`. D4 in the family 2 ledger
   records the categorical equivalence for the same functor.
   [Modules, statement and proof receipts](multiplicative-type-absolute-galois-progress.md)
+
+**A10. Fixed lattices and rational morphisms.** Milne 2017, §12.g, printed
+p.239 (PDF 255), gives the fixed-character formula over the separable
+closure. The character half of `GaloisInvariantLatticesStatement.{u}`
+specializes to that formula for commutative affine algebraic groups.
+- For an affine commutative `k`-group scheme `T` and any Galois extension
+  `K/k`, scalar extension identifies the actual `k`-homomorphisms
+  `T ⟶ 𝔾_m` and `𝔾_m ⟶ T` with the fixed homomorphisms of the respective
+  types over `K`. The two comparisons are bijections to the integral
+  invariant submodules for A1, with the canonical `𝔾_m` base-change
+  isomorphism. This covers `K = SeparableClosure k`.
+- Status P. `galoisInvariantLattices` in
+  `Torus/GaloisInvariantLatticesProof` proves both comparisons. Task 7959
+  (`7bb1a480-7982-4b50-b08c-204069bb66ff`) published
+  `a36c4dfb-7c34-461f-983e-6cb1f929067a` at
+  `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`. Review
+  `07b968c9-4fef-4832-b2ce-ac745417c7df` approved the proof,
+  and receipt `c5332c0a-6a14-4f31-ab80-b23e60e116a5` records the Lake and
+  exact-target checks. [Statement](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesStatement.md),
+  [proof](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesProof.md),
+  [family 2, D6](ledger-family-2-tori.md#d-field-tori-and-galois-actions-on-lattices)
 
 ## B. Quasi-split groups and inner forms
 

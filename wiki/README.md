@@ -45,7 +45,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Group-scheme ledger, family 1: group-scheme and affine foundations](../notes/group-schemes/ledger-family-1-foundations.md) — Source-to-declaration rows for general-base group schemes, kernels, closed and normal subgroup functors and base change, affine groups and Hopf algebras, the dual-number Lie algebra, images, monomorphisms and flatness, fppf and homogeneous quotients, fixed-point and normalizer representability, and geometric integrality, with exact hypotheses, status, evidence and owner tasks.
 
-- [Group-scheme ledger, family 2: tori and groups of multiplicative type](../notes/group-schemes/ledger-family-2-tori.md) — Source-to-declaration rows for split tori and their lattices, diagonalizable and multiplicative-type groups with smoothness and connectedness criteria, tori in smooth groups with finite-map reflection, Galois actions and the absolute character comparison, finite separable Weil restriction with the real Deligne torus, and norm-one and central tori.
+- [Group-scheme ledger, family 2: tori and groups of multiplicative type](../notes/group-schemes/ledger-family-2-tori.md) — Source-to-declaration rows for split tori and their lattices, diagonalizable and multiplicative-type groups with smoothness and connectedness criteria, tori in smooth groups with finite-map reflection, Galois actions and invariant-lattice descent, the absolute character comparison, finite separable Weil restriction with the real Deligne torus, and norm-one and central tori.
 
 - [Diagonalizable groups and finite-Galois modules: family 2 coverage update](../notes/group-schemes/diagonalizable-galois-coverage-2026-11-14.md) — Four published character, module-realization, smoothness and maximal-torus reflection proofs, their exact hypotheses and source comparison, and the remaining full-faithfulness and categorical obligations.
 
@@ -79,7 +79,7 @@ your conversation. There are no page-change reminders or reading acknowledgments
 
 - [Actual Tits indices: existence, anisotropic kernel and open targets](../notes/group-schemes/tits-index-progress.md) — Status of the Tits §§2.1–2.3 index interface over arbitrary fields: the published existence and anisotropic-kernel proofs, how to use `titsIndexExistence`, the unproved independence, relative-structure and kernel-index statements with their tasks, and the first input of the local rank-one reduction that it now supplies.
 
-- [Group-scheme ledger, family 6: Galois and central structure](../notes/group-schemes/ledger-family-6-galois-central.md) — Source-to-declaration rows for torus lattice actions, absolute character exactness, the star action, quasi-split groups and inner forms, centres and adjoint groups, derived groups and cocentres, central isogenies and simply connected covers.
+- [Group-scheme ledger, family 6: Galois and central structure](../notes/group-schemes/ledger-family-6-galois-central.md) — Source-to-declaration rows for torus lattice actions and invariant-lattice descent, absolute character exactness, the star action, quasi-split groups and inner forms, centres and adjoint groups, derived groups and cocentres, central isogenies and simply connected covers.
 
 - [Galois and derived structure: family 6 coverage update](../notes/group-schemes/galois-derived-coverage-2026-11-13.md) — Exact published quasi-split star-action, derived-structure conjunction and arbitrary-algebra derived-annihilation proofs, with their scopes and the historical ledger statuses they replace.
 
