@@ -242,4 +242,14 @@ theorem complexTateProductStripGrowth : ComplexTateProductStripGrowthStatement :
     (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_left hI hK)) hC) ?_)
   simp only [mul_add, mul_assoc, Real.exp_add, le_refl]
 
+/-- The normalized Tate product strip estimate with the rank fixed. -/
+def ComplexTateProductStripGrowthAtRank : Prop :=
+  ∀ H : 𝓢(Fin (n + 1) → ℂ, ℂ) → (Fin (n + 1) → ℤ) → (Fin (n + 1) → ℂ) → ℂ, IsEntireNormalization H →
+    ∀ (F : 𝓢(Fin (n + 1) → ℂ, ℂ)) (m : Fin (n + 1) → ℤ) (t : Fin (n + 1) → ℂ) (c : Fin (n + 1) → ℝ),
+      HasStripExponentialGrowth (fun s => H F m (affineParameter t c s))
+
+/-- Specialize the all-ranks estimate to the specified rank. -/
+theorem complexTateProductStripGrowthAtRank : ComplexTateProductStripGrowthAtRank (n := n) :=
+  complexTateProductStripGrowth n
+
 end Langlands.Global.RankinSelbergGlobal.ComplexTateProduct

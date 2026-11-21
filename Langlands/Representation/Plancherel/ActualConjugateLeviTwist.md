@@ -44,3 +44,8 @@ using the proved literal-Levi character identity. In particular, this
 unit introduces no scalar, Haar measure or formal-degree renormalization.
 The actual translated forward/inverse-reverse-dual coefficient tensor
 and its substantive extension properties are separate constructions.
+
+The heterogeneous equality `conjugateTwistEquiv_linear_heq` records the
+identity of the underlying linear equivalence on the inducing carrier.
+It supports comparisons that present the source and target as distinct
+smooth representation objects.

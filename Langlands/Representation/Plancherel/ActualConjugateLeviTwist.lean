@@ -55,6 +55,12 @@ private def pullbackTwistEquiv (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M
       (β m : ℂ) • A.representation (e m) v
     rw [h]
 
+private theorem pullbackTwistEquiv_linear_heq (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M)
+    (α : M →* ℂˣ) (β : N →* ℂˣ)
+    (hα : IsOpen (α.ker : Set M)) (hβ : IsOpen (β.ker : Set N))
+    (h : ∀ m, β m = α (e m)) :
+    HEq (pullbackTwistEquiv e A α β hα hβ h).toLinearEquiv (LinearEquiv.refl ℂ A) := HEq.rfl
+
 end PullbackTwist
 
 attribute [local instance]
@@ -132,6 +138,16 @@ def conjugateTwistEquiv (z : unramifiedCharacters (normCharacters χ))
     (parameterTransport χ z).val.toMonoidHom
     (parameterTransport χg (conjugateParameter χ g z)).val.toMonoidHom
     (unramifiedCharacter_isOpen_ker _ _) (unramifiedCharacter_isOpen_ker _ _)
+    (conjugateParameter_apply χ g z)
+
+set_option maxHeartbeats 540000 in
+/-- The canonical inducing equivalence of the conjugate twists has the
+identity linear equivalence on the original carrier. -/
+theorem conjugateTwistEquiv_linear_heq (z : unramifiedCharacters (normCharacters χ))
+    (A : SmoothRep.{0, u, uV} ℂ (levi χ)) :
+    HEq (conjugateTwistEquiv χ g z A).toLinearEquiv (LinearEquiv.refl ℂ A) := by
+  delta conjugateTwistEquiv
+  exact pullbackTwistEquiv_linear_heq (leviConjugation χ g).symm A _ _ _ _
     (conjugateParameter_apply χ g z)
 
 end Langlands.Plancherel.ActualConjugateLeviTwist

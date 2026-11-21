@@ -87,7 +87,7 @@ private theorem bpart_upper {n : ℕ} (g : Langlands.GeneralLinear n ℂ) :
   rw [bpart_eq, Units.val_mul, logTorus_val]
   exact LinearAlgebra.TriangularUnitary.isUpperTriangular_mul_diagonal (npart g).2.1 _
 
-private theorem exp_neg_alpha {n : ℕ} (g : Langlands.GeneralLinear n ℂ) (i : Fin n) :
+theorem exp_neg_alpha {n : ℕ} (g : Langlands.GeneralLinear n ℂ) (i : Fin n) :
     (Real.exp (-alpha g i) : ℂ) = (bpart g)⁻¹.val i i := by
   rw [bpart_eq, mul_inv_rev, Units.val_mul, logTorus_inv_val, Matrix.diagonal_mul]
   have h : ((npart g).val⁻¹).val i i = 1 :=

@@ -29,19 +29,6 @@ private theorem exponent_reflect (x : RealBlock) :
   rw [reflectExponent, realBlockExponent_twist]
   ring
 
-private theorem characterOfParams_eta (d : ComplexCharacterData) :
-    characterOfParams d.weight d.exponent = d := by
-  cases d with
-  | mk χ w t hχ =>
-    have he : χ = (characterOfParams w t).character := by
-      ext1 z
-      apply Units.ext
-      change (χ z : ℂ) = borelFactor w (2 * t) (z : ℂ)
-      rw [borelFactor_eq_cpow w (2 * t) z.ne_zero]
-      exact hχ z
-    subst χ
-    rfl
-
 private theorem twist_zero (x : RealBlock) : realBlockTwist 0 x = x := by
   cases x <;> simp [realBlockTwist, RealCharacterCrossing.charData_eta, characterOfParams_eta]
 

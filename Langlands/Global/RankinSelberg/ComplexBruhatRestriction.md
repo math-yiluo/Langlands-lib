@@ -1,0 +1,5 @@
+# Injectivity of restriction to the open complex Bruhat cell
+
+A smooth Whittaker functional on the exact principal series with a finite compact difference bound is determined by its values on extensions of compact tests from the long-permutation Gauss chart. `ComplexBruhatRestrictionStatement` gives the zero-kernel form.
+
+Descend through the regions consisting of cells whose inversion count is at least a given integer. The highest region is empty because the permutations have at most as many inversions as there are index pairs. At the next step, cover each point by the Gauss chart over its cell neighborhood. The intersection with that neighborhood contains the cell and points of greater inversion count. Consequently, the induced chart distribution vanishes on tests supported off the cell there, by the induction hypothesis. The lower-cell vanishing theorem kills the chart distribution on the neighborhood. For the long permutation the restriction hypothesis gives chart vanishing directly. Finite localization on the compact unitary group makes the section functional vanish in the new region. The region at inversion count zero covers the group.

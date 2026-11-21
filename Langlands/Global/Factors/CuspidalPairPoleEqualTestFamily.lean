@@ -1,3 +1,4 @@
+import Langlands.Global.Factors.CuspidalPairPoleEqualLocalTests
 import Langlands.Global.Factors.CuspidalPairPoleEqualCover
 import Langlands.Global.Factors.CuspidalPairPoleNormalizedResidueTest
 
@@ -99,11 +100,11 @@ private theorem exists_equalNormalizedFamily_of_tests
 
 /-- Given the actual local slice ranges, ordinary local continuation and generation,
 only the strip-growth test remains as a separate input to constructing the family. -/
-theorem exists_equalNormalizedFamily_of_local
+theorem exists_equalNormalizedFamily_of_local_at
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
-    (hNR : RealOrdinaryNormalizedContinuationStatement) (hNC : ComplexOrdinaryNormalizedContinuationStatement)
-    (hGR : RealOrdinaryNormalizedGenerationStatement) (hGC : ComplexOrdinaryNormalizedGenerationStatement)
+    (hNR : Nonempty RP → RealOrdinaryNormalizedContinuationStatement) (hNC : ComplexOrdinaryNormalizedContinuationStatement)
+    (hGR : Nonempty RP → RealOrdinaryNormalizedGenerationStatement) (hGC : ComplexOrdinaryNormalizedGenerationStatement)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
@@ -133,7 +134,8 @@ theorem exists_equalNormalizedFamily_of_local
       ∀ e : T = T'.conjugate, ConjugateResidueTestFor c S ψ Linf e := by
     by_cases h : T = T'.conjugate
     · subst T
-      have hex := exists_normalizedConjugateResidueTest_of_local c hT' hψF hNR hNC M M' aR aC
+      have hex := exists_normalizedConjugateResidueTest_placewise c hT' hψF
+        (fun v => (hNR v).2 r) (hNC.2 r) M M' aR aC
         dR dR' dC dC' hR hR' hdR hdR' hdC hdC' ∅
       refine ⟨hex.choose, hex.choose_spec.2.1, hex.choose_spec.2.2.1, hex.choose_spec.2.2.2.1, ?_⟩
       intro e
@@ -151,8 +153,40 @@ theorem exists_equalNormalizedFamily_of_local
   let ν (v : S) : LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v) :=
     ⟨Correspondence.localSelfDualHaar (padicField v.1) (ψv v),
       Correspondence.isSelfDual_localSelfDualHaar (padicField v.1) (ψv v)⟩
-  have hCov := exists_coveringEqualPureTest_of_local c hPS hPS' hT hT' hψF hS hψv ν
+  have hCov := exists_coveringEqualPureTest_of_local_at c hPS hPS' hT hT' hψF hS hψv ν
     hGR hGC M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC'
   exact ⟨S, hPS, hPS', hS, exists_equalNormalizedFamily_of_tests c hCov (hG S hPS hPS' hS) hRes⟩
+
+
+theorem exists_equalNormalizedFamily_of_local
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hNR : RealOrdinaryNormalizedContinuationStatement) (hNC : ComplexOrdinaryNormalizedContinuationStatement)
+    (hGR : RealOrdinaryNormalizedGenerationStatement) (hGC : ComplexOrdinaryNormalizedGenerationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w))
+    (hG : ∀ S : Finset (FinitePlace F), P.exceptional ⊆ S → P'.exceptional ⊆ S →
+      FunctionalEquationComparison.FiniteAdditiveSupport ψ S →
+      ∃ i : NormalizedEqualPoleTest c S ψ (archimedeanPairProduct dR dR' dC dC'),
+        (∃ z, i.2.value z ≠ 0) ∧ HasStripExponentialGrowth i.2.value) :
+    let Linf := archimedeanPairProduct dR dR' dC dC'
+    ∃ S : Finset (FinitePlace F), P.exceptional ⊆ S ∧ P'.exceptional ⊆ S ∧
+      FunctionalEquationComparison.FiniteAdditiveSupport ψ S ∧
+      ∃ D : EqualNormalizedTestFamily c S ψ Linf,
+        (∃ i, (∃ z, D.normalized i z ≠ 0) ∧ HasStripExponentialGrowth (D.normalized i)) ∧
+        ∀ e : T = T'.conjugate, ∃ i : D.Test,
+          (D.test i).right ≠ 0 ∧
+          (e ▸ (D.test i).left : T'.conjugate.Space) = T'.conjugateEquiv (D.test i).right ∧
+          (D.test i).schwartz 0 ≠ 0 ∧ fourierTransform F (r + 1) ψ.complex (D.test i).schwartz 0 ≠ 0 :=
+  exists_equalNormalizedFamily_of_local_at c hT hT' hψF (fun _ => hNR) hNC (fun _ => hGR) hGC
+    M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC' hG
 
 end Langlands.Global.CuspidalPairPoles

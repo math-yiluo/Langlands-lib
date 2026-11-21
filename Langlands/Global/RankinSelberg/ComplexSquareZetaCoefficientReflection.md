@@ -5,3 +5,5 @@
 The proof moves the compact coefficient average to the Schwartz test using inverse left translates. Under inverse transpose the compact variable acts through `conjK`, and the group height remains unchanged because inversion exchanges the two sums and transposition reindexes their entries. Compact Fourier covariance gives the dual left average of the transformed test, so the standard-vector reflection applies to this single pair of tests. The proof enlarges the convergence threshold to include the height bounds used in both coefficient integrals.
 
 This is the square zeta identity used for matrix coefficients in Jacquet's induction. [Jacquet, *Archimedean Rankin–Selberg integrals*, §4.7 and §8.3](https://doi.org/10.1090/conm/489/09547).
+
+`complexSquareCoefficientFunctionalEquationGrowth` supplies exponential strip growth for the two normalized witnesses. Compact averaging replaces the test in the standard-vector equation, which supplies both bounds by the product Tate theorem. The coefficient integral identities transport the same two witnesses, so their bounds apply directly to the normalized coefficient integrals.

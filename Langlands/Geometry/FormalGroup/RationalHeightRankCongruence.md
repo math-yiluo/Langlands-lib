@@ -26,3 +26,19 @@ successive quotients yields a quotient by individual powers whose ideal is
 between two equal box ideals. Its dimension is \(D\).
 `finrank_modEq_of_equivariant_equations` therefore compares \(D\) with
 \(L^{\#\{\text{variables}\}}\) modulo the order of \(c\).
+
+## Diagonal weights of a common order
+
+`diagonalScale` permits a separate nonzero weight for each polynomial
+variable. `finrank_modEq_of_diagonal_equations` assumes that the equation
+paired with a variable has that variable's weight and that these weights
+have a common multiplicative order. The perturbation still adds the same
+power of each variable. In the determinant step, quotienting by a
+stabilized power of one variable uses its own eigenvalue. Its order is the
+common modulus, so the dimension comparison survives each quotient. The
+original uniform-weight theorem follows by taking constant diagonal weights.
+
+This generalization supplies the finite-kernel rank calculation when the
+unramified division subfield acts through the distinct special tangent
+characters in Drinfeld 1976, §2A, printed p. 109. A generator of the residue
+units has the same order in each of those characters.

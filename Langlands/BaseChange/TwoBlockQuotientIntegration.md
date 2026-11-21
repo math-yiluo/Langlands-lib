@@ -1,0 +1,7 @@
+# Two-block integration on centralizer quotients
+
+The quotient integration formula applies to a closed subgroup of the two-block Levi and its isomorphic image in the ambient group. The radical Haar measure gives integral rectangles volume one. The ambient group and each block have their usual spherical Haar normalization.
+
+A compactly supported continuous complex function on the ambient left quotient has a compact lift under subgroup averaging. Multiply its pullback by a real compact test function whose subgroup average equals one on its support. The ambient Weil formula gives the integral of this lift. The two-block parabolic formula then integrates the lift over the Levi, the radical, and the standard compact subgroup. For each radical and compact coordinate, the Levi Weil formula averages the lift over the Levi subgroup. Transporting that subgroup measure to the ambient subgroup introduces the inverse relative Haar scalar. Right spherical invariance removes the compact coordinate, which has measure one. Compact support on the Levi quotient times the radical allows the final Fubini step.
+
+The quotient disintegration implements the spherical specialization of the parabolic descent calculation in Laumon, *Cohomology of Drinfeld Modular Varieties, Part I* (1996), Propositions 4.3.11 and 4.4.9. The two left quotients and their compatible measures are those of the Library's Weil formula.

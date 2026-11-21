@@ -1,0 +1,11 @@
+# Proof of the standard parabolics in the adelic geometric lemma
+
+The positive relative root conditions imply Coxeter double coset minimality. The Levi intersection theorems then identify the intersections with the Weyl conjugates as intersections with standard parabolics indexed by subsets of the original simple Levi roots.
+
+On rational points, the nested standard parabolic decomposition writes each smaller parabolic as its intersection with the original Levi times the original radical. The dynamic intersection product writes the intersection with the Weyl conjugate as the corresponding Levi intersection times the intersection with the original radical. These products give the subgroup joins required by `IsGeometricLemmaDatum`. The principal adelic point embedding preserves the joins, intersections, and conjugations in these identities.
+
+Representability turns the inclusions of standard subgroup functors into group-scheme morphisms whose composites are the original canonical maps. The same construction includes the minimal standard parabolic and supplies Iwasawa coverage for the two smaller parabolics.
+
+For the intermediate result with prescribed minimum-length representative, the proof keeps the two Coxeter intersection subsets. Pulling back the target Levi intersection by the inner automorphism gives the source Levi intersection on every test scheme. The comparison of represented subgroups then supplies the isomorphism in `IsWeylConjugation` for the two smaller standard Levis.
+
+The radical identities of Bernstein–Lapid Lemma 6.7(iii) also hold on every test scheme. On the source side the dynamic product factors a point of the conjugated target radical inside the source parabolic into a Levi point and a radical point. The Levi intersection theorem puts the first factor in the smaller source radical. Nested standard radical inclusion gives the same membership for the second factor. Pulling this identity back by the inverse inner automorphism gives the target-side intersection. For the target radical product, the nested standard decomposition gives a factor in the target Levi and a factor in the original target radical. The target Levi intersection theorem identifies the Levi factor with a point of the conjugated source radical.

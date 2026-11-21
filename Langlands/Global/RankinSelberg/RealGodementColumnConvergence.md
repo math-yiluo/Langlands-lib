@@ -9,3 +9,5 @@ Specializing the bound to each real exponent gives absolute convergence for all 
 `exists_columnMellin_uniform_seminorm` chooses the continuous seminorm before the lower coefficient once its derivative growth exponent is specified. The exponent and strip radius determine the gauge and Fourier decay orders. The constant in the gauge estimate depends on the lower coefficient and is included in the Haar majorant.
 
 The seminorm bound is derived from the fixed-lower-coefficient argument for equation (7.7) in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, §7.2, Proposition 7.2, pp. 48–49. It applies with the two column conventions related by the long Weyl reversal and at the identity in the upper group.
+
+For a family sharing the lower derivative constants as well as the exponent, the bound has one integrable lower Haar majorant for all members. The simple-root gauge bound supplies a common constant, and the Mellin strip and Schwartz seminorm estimates then apply over the entire family.

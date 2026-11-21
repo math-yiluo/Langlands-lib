@@ -1,0 +1,7 @@
+# The adjoint kernel modulo the full centre
+
+`SmoothAdjointKernelCenterQuotientStatement` is the smooth affine case of Milne, *Algebraic Groups*, 2022 corrected reprint, Proposition 14.23, printed p. 285. It is an input to the proof of the converse in Corollary 16.61(b), pp. 346–347.
+
+For a smooth connected affine group `G` over a field `k` and supplied finite tangent coordinates `c : Lie.FiniteCoordinates G d`, put `N = kernel (Lie.adjointRepresentation c)`. The kernel is the actual scheme kernel, not its reduced group. The centre in `N` is specified by pulling back the all-test centre functor of `G` along `kernelι (Lie.adjointRepresentation c)`. In the source this is denoted `Z(G)`, since central points act trivially by conjugation and hence on tangents. No smoothness of the kernel or centre is required or concluded.
+
+The proposition asks for an affine locally finite-type group scheme `Q` and an actual projection `q : N ⟶ Q` exhibiting `Q` as the fppf quotient by that subgroup functor, with `IsUnipotent Q`. In particular it does not identify `Q(k)` with a quotient of abstract rational point groups. Smoothness and affineness of `G` are retained explicitly; smoothness over the field and affineness imply finite type. This unit does not state the nonsmooth case of Milne's connected algebraic-group result. The finite tangent coordinates express the actual adjoint representation in a basis, not an auxiliary arbitrary representation. The Lean declaration is a proposition only.

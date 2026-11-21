@@ -1,0 +1,5 @@
+# Comparison of the upper radical Jacobians at exact norms
+
+Write `C_U(x) = U₀ x U₁⁻¹` for the Levi action on the rectangle. The twisted radical difference is the composition of `1 − C_D σ` with `−C_D⁻¹`. In entrywise coordinates `C_D` is a Kronecker matrix. The cyclic semilinear determinant theorem computes the base-field determinant of `1 − C_D σ` from the ordered product of its cyclic weights. At blockwise exact norms this product is `C_L` after extension of coefficients. Hence the base-field determinant equals the ordinary determinant of `1 − C_L`.
+
+The ordinary difference is `1 − C_L⁻¹ = −C_L⁻¹ (1 − C_L)`. The coprimality hypothesis makes its determinant nonzero. The determinant characters of the two Levi elements agree blockwise at the exact norms, so the absolute Jacobians of `C_D⁻¹` and `C_L⁻¹` agree. Negation preserves additive Haar. Combining the finite p-adic linear Haar formula for the defect with rectangular multiplication gives the claimed equality of pushforward scalars. This is the upper rectangular form of the Jacobian comparison in Laumon, Propositions 4.3.11 and 4.4.9.

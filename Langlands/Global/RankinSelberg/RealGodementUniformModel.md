@@ -1,0 +1,5 @@
+# Continued real Godement evaluation on the K-finite standard module
+
+For strictly dominant lower position exponents and an arbitrary leading parity and exponent, the continued Jacquet evaluation on the compact real Godement section span restricts to a uniform Whittaker coefficient map of the upper K-finite standard module. Its phase is the negative of the supplied real additive parameter. The evaluation on the span retains the column formula for every compact full-row-rank Schwartz generator.
+
+Every vector of the K-finite standard module is a K-finite vector in the upper position principal series. Compact Godement generation therefore puts its function in the span. The Lean proof composes this inclusion with the linear evaluation from spectral continuation. The left unipotent law, smoothness, right compact action and matrix Lie action follow from the corresponding statements on the span. A single polynomial height exponent on the span gives the bound required for all source vectors. The theorem constructs a coefficient map in the specified model at these parameters.

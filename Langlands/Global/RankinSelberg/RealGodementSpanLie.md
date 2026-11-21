@@ -1,0 +1,11 @@
+# Smoothness and Lie derivatives on the real Godement span
+
+Fix strictly dominant lower position parameters, a leading parity and a leading exponent. A complex-linear map from the compact Godement section span that agrees with the continued column formula on its generators has smooth coefficient functions. Every matrix right derivative preserves the span and commutes with the map.
+
+For smoothness of a generator coefficient, the first-column Mellin estimate supplies a Schwartz seminorm bound for the integral at the fixed exponent. Locally the right pullbacks of its test have common compact support. Smooth scalar evaluation on this family, multiplication by the determinant weight and translation by the long Weyl element give smoothness on the upper group.
+
+For the derivative, both integrals have the same scalar determinant factor under right translation. At a fixed upper group element the section is a linear functional of tests with a common compact full-row-rank support. The part of the lower group that maps into this support is compact, and the integral of the absolute kernel on it gives a bound in the order-zero Schwartz seminorm. The column functional is bounded by the first-column Mellin estimate composed with a fixed pullback. The local test orbit differentiates at the identity to \(x\mapsto d\Phi_x(xB)\) in direction \(B\). This test is supported in the original compact full-row-rank set. The product rule gives the same combination of the original test and its first variation for the section and the coefficient. The induced linear maps on the span then agree by their values on the generators. This supplies the smooth and differentiated actions for the continuation of the Godement construction.
+
+The column part uses only regularity and uniform derivative growth of the lower coefficient. For a leading character with exponent \(w\), the determinant derivative is \(w+(t+1)/2\) times the derivative of the complexified real logarithm of the determinant at the identity. On a neighborhood with positive determinant the parity factor is one, and the formula follows by differentiating the exponential there.
+
+`exists_columnMellinLinear_bound` gives a continuous Schwartz seminorm bounding a fixed first-column Mellin linear functional.

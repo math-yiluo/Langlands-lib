@@ -1,0 +1,5 @@
+# A cyclic basis for the actual local division algebra
+
+Embed a Galois subfield of reduced degree `d` in the local division algebra. Let `j` be a division unit implementing an automorphism of order `d`. The basis `implementingUnitBasis` consists of `1, j, …, j^(d − 1)` for the left action of the embedded field. Right multiplication by a primitive element of the field is linear for that left action. The powers of `j` are eigenvectors whose distinct eigenvalues are the conjugates of the primitive element. The dimension formula for the tower makes these powers a basis.
+
+The element `j^d` commutes with each coefficient and each basis power, hence with the entire division algebra. Centrality identifies it with a unique scalar in the base field. The result constructs this scalar as a unit `cyclicParameter` and verifies its value in the division algebra. It supplies the basis and central parameter needed for the integral relations in Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 B, printed p. 110.

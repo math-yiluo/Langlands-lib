@@ -1,5 +1,7 @@
 import Langlands.Representation.Archimedean.PrincipalSeriesExtension
 import Langlands.Representation.Archimedean.RealBlockPositionData
+import Langlands.Representation.Archimedean.TranslateFinite
+import Mathlib.Analysis.Calculus.ContDiff.Polynomial
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-! # Smooth lower compact-picture cutoffs for real Godement sections -/
@@ -164,5 +166,45 @@ theorem realGodementLowerCutoff : RealGodementLowerCutoffStatement := by
   · exact extension_mul_left _ (realPositionCharacter_eq_signUnit_mul ds)
       (lowerCompactTest_sign_mul ds b)
   · exact extension_unitary _ _
+
+/-- A polynomial angular test has a K-finite lower position section. -/
+theorem lowerCutoff_polynomial_mem_kFiniteFunctions (ds : List RealBlock) (p : Polynomial ℝ) :
+    lowerCutoff ds p.eval ∈ kFiniteFunctions (principalSeries ℝ n (realPositionCharacter ds))
+      (unitaryCompact ℝ n) := by
+  classical
+  let A := MvPolynomial (Fin n × Fin n) ℂ
+  let Q : A := ∑ i : Fin n, ∑ j ∈ Finset.univ.erase i, MvPolynomial.X (i, j) ^ 2
+  let C : ℝ →+* A := (MvPolynomial.C : ℂ →+* A).comp Complex.ofRealHom
+  let P : A := p.eval₂ C Q * ∏ i : Fin n, MvPolynomial.X (i, i) ^ (realPositionSign ds i).val
+  have hP (κ : K) : lowerCompactTest ds p.eval κ.val =
+      MvPolynomial.eval (fun ij => (κ.val ij.1 ij.2 : ℂ)) P := by
+    let e : A →+* ℂ := MvPolynomial.eval (fun ij => (κ.val ij.1 ij.2 : ℂ))
+    have hX (ij : Fin n × Fin n) : e (MvPolynomial.X ij) = (κ.val ij.1 ij.2 : ℂ) :=
+      MvPolynomial.eval_X ij
+    have hQ : e Q = (offDiagonalSquare κ.val : ℂ) := by
+      simp only [Q, offDiagonalSquare, map_sum, map_pow, hX, Complex.ofReal_sum, Complex.ofReal_pow]
+    have hC : e.comp C = Complex.ofRealHom := by
+      ext x
+      change e (MvPolynomial.C (Complex.ofRealHom x)) = Complex.ofRealHom x
+      exact MvPolynomial.eval_C _
+    have hAngle : e (p.eval₂ C Q) = ((p.eval (offDiagonalSquare κ.val) : ℝ) : ℂ) := by
+      rw [Polynomial.hom_eval₂, hC, hQ]
+      exact Polynomial.eval₂_hom Complex.ofRealHom _
+    change lowerCompactTest ds p.eval κ.val = e P
+    simp only [P, map_mul, map_prod, map_pow, hX, hAngle, lowerCompactTest]
+  have hp : ContDiff ℝ ∞ p.eval := by
+    simpa only [Polynomial.aeval_def, Algebra.algebraMap_self, Polynomial.eval₂_id]
+      using p.contDiff_aeval (𝕜 := ℝ) ∞
+  have hFin : FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : K =>
+      fun κ : K => lowerCompactTest ds p.eval (κ * k).val)) := by
+    have hEq : (fun k κ : K => lowerCompactTest ds p.eval (κ * k).val) =
+        fun k κ : K => MvPolynomial.eval (fun ij => ((κ * k).val ij.1 ij.2 : ℂ)) P := by
+      funext k κ
+      exact hP (κ * k)
+    rw [hEq]
+    exact TranslateFinite.finiteDimensional_span_eval P
+  exact extension_mem_kFiniteFunctions _ (realPositionCharacter_eq_signUnit_mul ds)
+    ((contDiff_lowerCompactTest ds hp).continuous.comp continuous_subtype_val) hFin
+    (lowerCompactTest_sign_mul ds p.eval)
 
 end Langlands.Global.RankinSelbergGlobal.RealGodement

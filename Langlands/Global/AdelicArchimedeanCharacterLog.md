@@ -1,0 +1,5 @@
+# Smooth extensions of archimedean character logarithms
+
+The value of a rational character is evaluation of the pullback of the universal unit of the multiplicative group. On an infinite-factor point the finite component of the unit is one, so the logarithmic functional is the logarithm of the product of archimedean norms with the usual local multiplicities. Along a closed subgroup of an affine group the pulled-back regular function lifts to a regular function on the ambient affine scheme. Every archimedean evaluation of this lift is nonzero at points of the subgroup. Regular-function smoothness in the actual adelic atlas, smoothness of the norm at nonzero points, and the product and logarithm rules give the asserted smooth extension there.
+
+This is a derived step for differentiating the holomorphic sections in the proof of Langlands, *On the notion of an automorphic representation* (1979), Proposition 2, printed pp. 204–206, Corvallis Part I PDF pp. 199–201. The character and logarithm are those used in the Eisenstein parameter height of Bernstein–Lapid, *On the meromorphic continuation of Eisenstein series* (2024), §2.2, printed p. 191, article PDF p. 5.

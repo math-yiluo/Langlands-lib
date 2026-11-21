@@ -54,6 +54,15 @@ private theorem map_columnEquiv (μ : Measure Vec) [μ.IsAddHaarMeasure] (h : G)
   rw [hd, Complex.normSq_eq_norm_sq, abs_of_nonneg (inv_nonneg.mpr (sq_nonneg _))] at hmap
   exact hmap
 
+/-- Multiplication by an invertible complex matrix scales a column integral by
+the inverse normalized absolute value of the determinant. -/
+theorem integral_mulVec (μ : Measure Vec) [μ.IsAddHaarMeasure] (h : G) (F : Vec → ℂ) :
+    (∫ x, F (h.val.mulVec x) ∂μ) =
+      ((complexNormalizedAbs h.val.det)⁻¹ : ℝ) • ∫ x, F x ∂μ := by
+  simp_rw [← columnEquiv_apply]
+  rw [← integral_map_equiv, map_columnEquiv, integral_smul_measure,
+    ENNReal.toReal_ofReal (inv_nonneg.mpr (detAbs_pos h).le)]
+
 private def inverseLastRow (h : G) : Vec := h⁻¹.val (Fin.last r)
 
 private theorem pairing_columnEquiv (h : G) (v : Vec) :

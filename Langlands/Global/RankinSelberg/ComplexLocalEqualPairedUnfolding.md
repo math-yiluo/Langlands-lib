@@ -1,0 +1,5 @@
+# Paired equal-rank unfolding for the quotient recursion
+
+This internal statement gives the two equal-rank unfoldings in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, printed pp. 54–57, for the exact rectangle-coordinate recursion. It assumes continuity and absolute integrability of the corresponding square-test kernel for each identity.
+
+The full-unipotent formula for the first Whittaker coefficient is a positive multiple of its rectangular formula. The scalar depends only on the Haar choices and is common to the original and dual formulas. The proof applies the Weil and Fubini comparison to the original rectangular test and to its Fourier transform for the opposite character. In the dual formula the two Whittaker characters cancel on the padded smaller unipotent subgroup. The mixed Fourier identity and the smaller coefficient's central character replace the negative sign on the first rows by the scalar `complexCentralSign ds`. This leaves the positive square Fourier transform in the dual result.

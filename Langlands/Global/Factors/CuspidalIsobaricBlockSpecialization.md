@@ -1,0 +1,7 @@
+# Realization of the prescribed isobaric tensor in the block section model
+
+An injective intertwiner identifies the original-order induction tensor with a subrepresentation of the smooth block sections at parameter zero. Restrict it to the invariant numerator of the prescribed constituent tensor. The image of that numerator in the block sections still surjects onto the same constituent tensor, with its full operator action.
+
+`exists_freeOperatorQuotient_of_block_subquotient` chooses the compact projection on the smooth block sections and applies Eisenstein specialization. Joint admissibility of the inducing blocks, meromorphic continuation, and convergence-region injectivity give a quotient of a stable space of automorphic functions. The quotient acts by the exact finite translations, compact action, and enveloping action on the prescribed tensor. `hasTensorRealization_of_blockSectionEmbedding` then gives the realization used by the all-places assembly.
+
+This is the application of Langlands, *On the notion of an automorphic representation* (1979), Lemma 1 and Proposition 2, printed pp. 203–204, and the proof of Proposition 2, printed pp. 205–207 (Corvallis Part I PDF pp. 198–202). The intended application is Getz–Hahn, *An Introduction to Automorphic Representations* (2024), Theorems 10.7.1 and 10.7.5, printed pp. 286 and 288 (PDF pp. 298 and 300). The comparison and the two analytic results are premises of this reduction.

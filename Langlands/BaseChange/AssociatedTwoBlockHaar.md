@@ -1,0 +1,3 @@
+# Common Haar scale at an associated block pair
+
+The product of the ordinary block centralizer measures transports to the product of the associated twisted block measures. At exact regular norms, the ambient association is also transport by coefficient extension. The two coefficient extension paths from the ordinary block centralizer subgroup to the ambient twisted centralizer agree. Consequently the scalar relating the supplied ambient ordinary Haar measure to the block product is also the scalar relating the ambient twisted Haar measure to its block product. This is the product measure compatibility needed to apply the two orbital formulas with the association of Henniart–Lemaire, I.2.5.

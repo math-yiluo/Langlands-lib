@@ -1,0 +1,3 @@
+# Coordinatewise transport of two-block subgroup Haar measures
+
+The subgroup of the two-factor dependent product is isomorphic to the binary product of the two subgroup carriers. The existing product measure is the pushforward along the inverse of that coordinate isomorphism. A subgroup isomorphism acting by the two given isomorphisms in these coordinates therefore pushes the product measure to the product of their individual pushforwards. The Lean proof checks the two coordinate maps agree and applies the product measure pushforward formula. This is a consequence of the product normalization used for the two-block Levi quotient.

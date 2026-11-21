@@ -1,0 +1,7 @@
+# Continuation of complex pair normalizations in the exponents
+
+Fix the two tuples of angular weights and let their inducing exponents depend holomorphically on a complex parameter \(z\). Suppose the ordinary and dual raw integrals are jointly holomorphic on \(\lvert z\rvert<3\) times a uniform right spectral half-plane. If the two integrals satisfy `HasComplexPairNormalization` with the same nonzero scalar \(c\) at every \(z\) near zero, `complexPairParameterReflection` gives that normalization at \(z=1\).
+
+The proof writes the two denominators as finite products of shifted reciprocal complex Gamma functions. Inverting a character negates both its weight and its exponent, so the same argument applies to the dual denominator. At fixed additive character the epsilon factor is a finite product of holomorphic powers of a positive base times constant phases. It is nonzero at every parameter, as are its constituent unit-valued epsilon factors. These formulas verify the hypotheses of `entireSpectralReflection` for the two normalized integrals. The module also computes the central sign for a tuple with fixed weights, so that the scalar \(c\) can be held fixed when both tuples of exponents vary.
+
+This derived continuation result applies to the adjacent- and equal-rank chamber arguments. [Jacquet, *Archimedean Rankin–Selberg integrals*, Sections 8.1 and 9](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).

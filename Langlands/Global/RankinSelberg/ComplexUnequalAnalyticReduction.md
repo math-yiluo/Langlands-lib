@@ -31,7 +31,9 @@ Pairs of kernels with both properties form a complex submodule. The proof uses l
 of both integrals in the kernels, taking intersections of right
 half-planes when adding witnesses. The ordinary and dual kernels are bilinear in the two
 Whittaker functions, so submodule preimages in each variable extend the premises through
-the suprema of the intertwiner ranges. The poles of the finite products of shifted complex
+the suprema of the intertwiner ranges. The reusable declarations are `normalizedKernelPairs`,
+`complexUnequalKernelPair`, and the Fubini identity `complexUnequalDualIntegral_eq_prod`.
+The poles of the finite products of shifted complex
 Gamma factors have real parts bounded above. On a common smaller right half-plane, dividing
 the entire witnesses by their denominators gives the original integrals. These quotients
 are meromorphic on the complex plane. Multiplying the normalized equation by the two

@@ -1,0 +1,9 @@
+# The matrix factor in the complex Jacquet comparisons
+
+Jacquet’s §8.2 and §8.3 use a square matrix integral with the determinant character of the removed inducing block. The matrix comparison gives absolute convergence in a common right half-plane, meromorphic continuations and the pair functional equation for that integral and its Fourier dual at the standard trace character.
+
+The proof multiplies the inducing function by the determinant character and modifies the compact weight by the inverse of the character on the compact element. Multiplicativity cancels the character of that element inside the compact integral. The resulting principal-series data multiply the removed character into every remaining block. Inverse transpose changes the determinant to its inverse, which supplies the inverse character in the dual square integral.
+
+The canonical matrix group Haar measure and the prescribed Haar measure differ by a scalar. The proof multiplies both continuations by this scalar, so each agrees with its integral for the prescribed measure on the same right half-plane. It identifies the diagonal Gamma products and the product of standard phases with the pair factors. Away from the discrete zero sets of the entire denominators, clearing the Gamma factors turns the normalized matrix equation into the pair equation used in the finite Jacquet expansions.
+
+The growth comparison uses the normalized diagonal Tate products. Multiplication by the same Haar scalar preserves their strip bounds. Each entire function is identified on the right half-plane with the corresponding continuation times its Gamma denominator. The identity theorem after clearing denominators gives the normalized reflection everywhere. These bounds apply to the same matrix continuations used in the compact expansion.

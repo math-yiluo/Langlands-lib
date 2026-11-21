@@ -76,6 +76,21 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 variable (G : GroupScheme (Spec (CommRingCat.of F)))
 
+/-- Two actual valuation monomials and the fixed scalar relating them on the
+excluded hyperplane. -/
+structure UnramifiedPointSeparation where
+  left : GroupScheme.rationalPoints G
+  right : GroupScheme.rationalPoints G
+  distinct : rationalValuationImageProjection G left ≠ rationalValuationImageProjection G right
+  scalar : ℂ
+
+/-- Separation means the character evaluations at the original points
+do not satisfy the specified scalar relation. -/
+def UnramifiedPointSeparation.holds [TopologicalSpace (GroupScheme.rationalPoints G)]
+    (test : UnramifiedPointSeparation G)
+    (χ : unramifiedCharacters (fun ψ => (rationalNormCharacters G ψ).toMul)) : Prop :=
+  (χ.val test.left : ℂ) ≠ test.scalar * (χ.val test.right : ℂ)
+
 /-- Two actual rational points with distinct images in the valuation lattice are separated,
 up to any fixed scalar `c`, by every unramified character on one nonzero principal open in the
 published finite coordinates. -/
@@ -107,6 +122,31 @@ theorem exists_ne_zero_rationalUnramifiedPrincipalOpen_apply_ne
   rw [e.symm_apply_apply] at hx hy
   rw [hx, hy]
   exact hsep (e χ) hχ
+
+/-- One nonzero polynomial principal open satisfies all the finitely many
+point-separation tests. -/
+theorem exists_principalOpen_of_pointSeparations
+    (hG : GroupScheme.IsConnectedReductive G) (tests : List (UnramifiedPointSeparation G)) :
+    letI : IsAffine G.X.left := by
+      have := hG.isAffineHom
+      exact isAffine_of_isAffineHom G.X.hom
+    letI : TopologicalSpace (GroupScheme.rationalPoints G) := rationalPointTopology F G.X
+    ∃ p : MvPolynomial (Fin (rationalImageRank G)) ℂ, p ≠ 0 ∧
+      ∀ χ ∈ rationalUnramifiedPrincipalOpen G hG p, ∀ test ∈ tests, test.holds G χ := by
+  classical
+  let : IsAffine G.X.left := by
+    have := hG.isAffineHom
+    exact isAffine_of_isAffineHom G.X.hom
+  let : TopologicalSpace (GroupScheme.rationalPoints G) := rationalPointTopology F G.X
+  choose poly hp h using fun test : UnramifiedPointSeparation G =>
+    exists_ne_zero_rationalUnramifiedPrincipalOpen_apply_ne G hG test.left test.right
+      test.distinct test.scalar
+  refine ⟨∏ test ∈ tests.toFinset, poly test, Finset.prod_ne_zero_iff.mpr (fun test _ => hp test), ?_⟩
+  intro z hz test ht
+  have hz' := (mem_rationalUnramifiedPrincipalOpen G hG _ z).mp hz
+  rw [map_prod] at hz'
+  exact h test z ((mem_rationalUnramifiedPrincipalOpen G hG _ z).mpr
+    (Finset.prod_ne_zero_iff.mp hz' test (List.mem_toFinset.mpr ht)))
 
 end Rational
 

@@ -1,0 +1,12 @@
+# Algebraic irreducibility of genuine compact-finite smooth vectors for real GL_n
+
+Worker 1028, Task 7767. This internal theorem is the topological-to-algebraic irreducibility comparison: for admissible Hilbert representations it is Wallach, *Real Reductive Groups I*, Theorem 3.4.12 (PDF p.106, registered `wallach-1988-real-reductive-groups-i`) and Getz–Hahn Theorem 4.4.9 (PDF p.134). The proof here works for complex Banach spaces and uses no unitarity. It replaces Wallach's analytic-vector argument by the Library's elliptic regularity through [MixedOrbitCoefficient](MixedOrbitCoefficient.md). Declarations are in `Langlands.Archimedean.RealSmoothIrreducible`.
+
+- `isFiniteVector_subgroup_of_mem_smoothKFinite`: a vector of `smoothKFinite ℝ n R` also has finite orbit span under the subgroup `unitaryCompact ℝ n` of actual units, whose elements are the images of orthogonal matrices.
+- `eq_bot_or_smoothKFinite_le`: let `E` be a complete complex normed space, and let `R` be a representation of actual `GL_n(ℝ)` on `E`. Assume `R` is jointly continuous, topologically irreducible and admissible for the orthogonal subgroup. Let `W` be a submodule of the genuine smooth carrier contained in `smoothKFinite ℝ n R`, stable under the actual orthogonal action and under every genuine derivative `dR(X)`. Then `W = 0` or `W` contains every compact-finite smooth vector.
+
+Proof:
+
+1. Each vector of `W` is compact finite, and the transported Cartan square sum commutes with the orthogonal action ([RealCartanSquareSum](RealCartanSquareSum.md)). The genuine smooth action is admissible (`DerivativeSmoothVectors.isAdmissible_of_norm`). So [SmoothCompactPolynomialAnnihilation](SmoothCompactPolynomialAnnihilation.md) annihilates each vector by a monic polynomial in the square sum.
+2. With the component covering of `RealCartanSquareSum`, [MixedOrbitClosure](MixedOrbitClosure.md) shows that the norm closure `C` of the empty-word image of `W` contains every `R(g)`-translate. By continuity `C` is a closed invariant subspace, so it is `0` or `E`.
+3. If `C = 0`, injectivity of the empty-word map gives `W = 0`. If `C = E`, apply [CompactFiniteClosure](CompactFiniteClosure.md) to the image of `W`, a compact-invariant subspace of compact-finite vectors, with a normalized Haar measure on the compact subgroup. It recovers the image of every compact-finite smooth vector inside the image of `W`, and injectivity gives the claimed inclusion.

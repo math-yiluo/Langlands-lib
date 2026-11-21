@@ -1,0 +1,5 @@
+# Infinitesimal equivariance of smooth complex Whittaker functionals
+
+A complex-linear functional on the smooth principal series with a finite compact right-difference bound and the group Whittaker character law satisfies the corresponding derivative law in every strictly upper triangular direction. The coefficient is the derivative of the same trace character at the identity.
+
+The proof takes the affine upper-unipotent path with matrix `1 + tX`. It represents the translated compact profile by one smooth matrix extension on a compact family of unitary matrices multiplied by the path. The divided difference of the translated extension minus the character times the initial extension is jointly smooth, with common compact support for the parameter near zero. Its fixed-support test seminorms control the compact right differences. The functional vanishes on the group differences, so continuity of the compact seminorms lets the proof evaluate at the limiting derivative as well. The ordinary derivative formula on invertible matrices identifies this limit with the right derivative minus the frequency times the original section.

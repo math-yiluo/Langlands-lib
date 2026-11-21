@@ -15,7 +15,7 @@ namespace Langlands.Automorphic
 
 open Langlands.Global ArchimedeanGL ContinuousRationalFunctions
 
-private theorem map_aeval_apply {V W : Type*}
+theorem map_aeval_apply {V W : Type*}
     [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]
     (A : Module.End ℂ V) (B : Module.End ℂ W) (i : V →ₗ[ℂ] W)
     (hi : ∀ v, i (A v) = B (i v)) (p : Polynomial ℂ) (v : V) :

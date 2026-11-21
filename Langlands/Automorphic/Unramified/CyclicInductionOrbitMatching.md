@@ -1,0 +1,9 @@
+# The local data in unique-place automorphic induction matching
+
+`CyclicInductionOrbitMatchingAtUniquePlaceStatement` isolates the orbit-product identity in the strong comparison at a unique finite place in prime degree. For the given regular unitary cuspidal source and its supercuspidal component, it asks for a unitary cuspidal weak induction with an actual irreducible admissible factor at the base place, a global determinant self-twist by the norm-kernel Hecke character, and the sigma-lift identity for the entire upstairs orbit product. Both presentations use the independent factor universes of the global matching statement.
+
+`CyclicInductionOrbitMatchingReductionStatement` derives `CyclicInductionMatchingAtUniquePlaceStatement` from that orbit comparison. The given generator makes the global Galois group cyclic. The finite cyclic norm-image theorem gives the kernel of the local component of the norm-kernel Hecke character. Restriction of the global determinant twist supplies the actual self-twist equivalence at the completion.
+
+Admissibility gives smoothness on both sides. The actual local unitarity and genericity results for unitary cuspidal presentations give invariant positive forms and Whittaker functionals. For the genericity witnesses, existence of a nontrivial unitary additive character in the canonical p-adic model and equality of the field topologies give the same statement over the original finite completion. These results and the supplied orbit lift give `IsCyclicLocalInductionOf` on the two original actions.
+
+The orbit input is a specialization of the global construction and strong comparison in Henniart (2012), Theorems 3–5, printed pp. 5–7. The local data assemble the conditions of Theorem 6, printed p. 7. The finite cyclic norm-image theorem comes from the local and global Weil transfer identities of Tate (1979), §1.5 and Proposition (1.6.1).

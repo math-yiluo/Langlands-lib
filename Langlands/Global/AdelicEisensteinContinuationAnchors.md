@@ -1,0 +1,7 @@
+# Convergence anchors from meromorphic continuation of constant sections
+
+`eisensteinConvergenceAnchorFilter` uses the regularity inequalities of the presented parabolic in complex linear coordinates. Increasing the threshold shrinks the regular region. Each region is open by the real linear inequalities and nonempty by the split-component cocharacter argument in `ParabolicRootPresentation.exists_regularParameter`.
+
+`exists_continuedSection_on_convergenceAnchorFilter` specializes the supplied meromorphic continuation theorem to one automorphic inducing section. The continued family agrees with the actual series at sufficiently regular parameters. The local meromorphic witnesses give open dense loci of automorphic outputs. Taking the interior of the full locus of smooth rational outputs makes a single open dense set. Absolute convergence gives compact majorants above a second threshold. On the common filter the section therefore belongs to `smoothConvergenceSections`, and the theorem retains all local continuation data for later normalization.
+
+This derived interface connects the absolute convergence assertion in Bernstein–Lapid, Section 2.2, and the continuation in Theorem 2.3(1), both on printed p. 191 (PDF p. 5), to the one-open-set identity used in Langlands' proof of Proposition 2, printed pp. 205–207 (Corvallis Part I PDF pp. 200–202). The result takes the exact meromorphic continuation proposition as a hypothesis.

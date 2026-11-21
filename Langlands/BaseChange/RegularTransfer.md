@@ -1,0 +1,11 @@
+# Regular transfer
+
+The theorem proves `Langlands.BaseChange.RegularTransferStatement` with both universe parameters free. It works with the characteristic-zero nonarchimedean local base field, cyclic algebra, and arbitrary Borel ambient Haar measures of that statement.
+
+The proof uses the characteristic coefficients of the ordinary element and those of a rational norm associate of the twisted element. These two parameter maps preserve regularity and are invariant under the respective conjugations. Equality of their values is exactly norm association at a regular ordinary element. The twisted chart uses a continuous perturbation polynomial in an ordinary norm associate. It gives a section with fixed twisted centralizer over a coefficient neighborhood. The near-identity conjugators then supply a product chart on the full fibers. The ordinary chart is the degree-one case.
+
+Normalize each centralizer Haar measure to give its largest compact open subgroup mass one and choose compatible quotient measures. The norm centralizer equivalence makes these choices associated. The chart-to-profile theorem gives integrability, local constancy, and invariance for the normalized orbital integrals. Its hypotheses hold for both coefficient maps because the parameter space is a finite power of the local field and the charts cover the two regular loci.
+
+`regularTransferReduction` turns a regularly supported test function into a compactly supported locally constant function of the orbit parameter, by taking its normalized orbital integral and extending by zero. It realizes the resulting profile on the other side using a compact open cutoff. In the direction from the ordinary group, the assumed vanishing off norms ensures that the profile is supported in the twisted parameter image. In the direction from the twisted group, zero extension gives that vanishing for the transferred ordinary test. The cyclic basis theorem supplies the commutativity of the scalar-extended ordinary centralizer, and quotient measure scaling gives concordance for every associated measure pair.
+
+This implements the regular-support proposition in Henniart–Lemaire, *Changement de base et induction automorphe pour GLₙ en caractéristique non nulle*, Mém. SMF 124 (2011), I.2.5–I.2.8, printed pp. 17–21, PDF pp. 25–29.

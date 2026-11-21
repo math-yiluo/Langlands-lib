@@ -1,0 +1,7 @@
+# The Lie algebra of a semisimple group in characteristic zero
+
+`SemisimpleLieAlgebraCharZeroStatement` formalizes the first assertion of Milne, *Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field*, 2022 corrected reprint, Theorem 22.53, printed p. 482. That proof cites the argument sketched in §22c, p. 477, where a Lie algebra is defined to be semisimple when its only solvable ideal is zero (p. 476).
+
+The binders are a field `k` of characteristic zero, a group scheme `G` over `Spec k` with affine structure morphism, and `IsSemisimple G` (connected reductive with finite scheme-theoretic centre). The affine binder is already implied by reductivity; it is listed so that the tangent bracket can be formed. The Lie algebra is the actual tangent `Additive (lieKernel G k)` with the constructed bracket `instAffineKernelLieRing` and `instAffineKernelLieAlgebra` from `Langlands/GroupScheme/Lie/AffineBracket.lean`. The conclusion is Mathlib's `LieAlgebra.HasTrivialRadical`: the maximal solvable ideal is zero, which is exactly Milne's definition. It is not stated as Mathlib's `LieAlgebra.IsSemisimple` (a direct sum of non-abelian simple ideals).
+
+The characteristic-zero hypothesis is essential: in characteristic `p`, the Lie algebra of `SL_p` has the nonzero central solvable ideal of scalar matrices. This file states the proposition only. The remaining assertions of Theorem 22.53, on the representation categories `Rep(G)` and `Rep(g)`, are not stated here.

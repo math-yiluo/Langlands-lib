@@ -63,10 +63,10 @@ def HasNormalizedConjugateResidueTest (c : FinitePairLChoice P P' hP hP')
 
 /-- A residue test with conjugate vectors can be normalized after a joint enlargement
 of the finite set, using the ordinary local continuation and slice range results. -/
-theorem exists_normalizedConjugateResidueTest_of_local
+theorem exists_normalizedConjugateResidueTest_placewise
     (c : FinitePairLChoice P P' hP hP') (hT : IsTrivialOnSplitCentre T)
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
-    (hNR : RealOrdinaryNormalizedContinuationStatement) (hNC : ComplexOrdinaryNormalizedContinuationStatement)
+    (hNR : Nonempty RP → RealEqualOrdinaryNormalizedContinuationAt r) (hNC : ComplexEqualOrdinaryNormalizedContinuationAt r)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
@@ -115,7 +115,7 @@ theorem exists_normalizedConjugateResidueTest_of_local
   have hΦ := poleEqualSchwartzTensor_spec ΦR ΦC ΦS
   let Linf := archimedeanPairProduct dR dR' dC dC'
   have hNorm := hasOrdinaryEqualNormalizationsOnPureSpans c hPS hP'S hψF hS Φ hΦ.1 hΦ.2 Linf
-    (fun a a' b b' => exists_ordinaryEqualNormalization_of_pure_tensors c hPS hP'S
+    (fun a a' b b' => exists_ordinaryEqualNormalization_of_pure_tensors_placewise c hPS hP'S
       (SelfPair.isTrivialOnSplitCentre_conjugate T hT) hT hψF hS hψv ν hNR hNC M M' aR aC
       dR dR' dC dC' hR hR' hdR hdR' hdC hdC' a a' b b' ΦR ΦC ΦS)
   refine ⟨S, Finset.subset_union_left.trans (hBU.trans hUS), hPS, hP'S, hS,
@@ -128,5 +128,50 @@ theorem exists_normalizedConjugateResidueTest_of_local
     intro hz
     rw [hz, Complex.zero_re] at h1
     exact (lt_irrefl 0) h1
+
+
+theorem exists_normalizedConjugateResidueTest_of_local_at
+    (c : FinitePairLChoice P P' hP hP') (hT : IsTrivialOnSplitCentre T)
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hNR : RealEqualOrdinaryNormalizedContinuationAt r) (hNC : ComplexEqualOrdinaryNormalizedContinuationAt r)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.conjugate.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.conjugate.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T.realization.HasComplexPlaceParameter w (dC' w))
+    (B : Finset (FinitePlace F)) :
+    ∃ S : Finset (FinitePlace F), B ⊆ S ∧ P.exceptional ⊆ S ∧ P'.exceptional ⊆ S ∧
+      FunctionalEquationComparison.FiniteAdditiveSupport ψ S ∧
+      HasNormalizedConjugateResidueTest c S ψ (archimedeanPairProduct dR dR' dC dC') :=
+  exists_normalizedConjugateResidueTest_placewise c hT hψF (fun _ => hNR) hNC M M' aR aC
+    dR dR' dC dC' hR hR' hdR hdR' hdC hdC' B
+
+/-- A residue test with conjugate vectors can be normalized after a joint enlargement
+of the finite set, using the ordinary local continuation and slice range results. -/
+theorem exists_normalizedConjugateResidueTest_of_local
+    (c : FinitePairLChoice P P' hP hP') (hT : IsTrivialOnSplitCentre T)
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hNR : RealOrdinaryNormalizedContinuationStatement) (hNC : ComplexOrdinaryNormalizedContinuationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.conjugate.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.conjugate.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T.realization.HasComplexPlaceParameter w (dC' w))
+    (B : Finset (FinitePlace F)) :
+    ∃ S : Finset (FinitePlace F), B ⊆ S ∧ P.exceptional ⊆ S ∧ P'.exceptional ⊆ S ∧
+      FunctionalEquationComparison.FiniteAdditiveSupport ψ S ∧
+      HasNormalizedConjugateResidueTest c S ψ (archimedeanPairProduct dR dR' dC dC') :=
+  exists_normalizedConjugateResidueTest_of_local_at c hT hψF (hNR.2 r) (hNC.2 r) M M' aR aC
+    dR dR' dC dC' hR hR' hdR hdR' hdC hdC' B
 
 end Langlands.Global.CuspidalPairPoles

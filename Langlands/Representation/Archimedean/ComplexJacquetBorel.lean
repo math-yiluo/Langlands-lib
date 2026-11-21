@@ -254,4 +254,18 @@ theorem characterOfParams_weight (l : ℤ) (t : ℂ) : (characterOfParams l t).w
 theorem characterOfParams_exponent (l : ℤ) (t : ℂ) : (characterOfParams l t).exponent = t :=
   rfl
 
+/-- The character reconstructed from its weight and exponent is the original character. -/
+theorem characterOfParams_eta (d : ComplexCharacterData) :
+    characterOfParams d.weight d.exponent = d := by
+  cases d with
+  | mk χ w t hχ =>
+    have he : χ = (characterOfParams w t).character := by
+      ext1 z
+      apply Units.ext
+      change (χ z : ℂ) = borelFactor w (2 * t) (z : ℂ)
+      rw [borelFactor_eq_cpow w (2 * t) z.ne_zero]
+      exact hχ z
+    subst χ
+    rfl
+
 end Langlands.Archimedean

@@ -126,7 +126,8 @@ section IntegralHolomorphy
 variable {r t : ℕ} (h : t < r) (a : ℂˣ) (D : ComplexQuotientMeasureData t)
   (W : Langlands.GeneralLinear (r + 1) ℂ → ℂ) (W' : Langlands.GeneralLinear (t + 1) ℂ → ℂ)
 
-private theorem complexUnequalDualIntegral_eq_prod (s : ℂ)
+/-- Under absolute convergence, the dual integral is the integral of the joint kernel. -/
+theorem complexUnequalDualIntegral_eq_prod (s : ℂ)
     (hint : Integrable (complexUnequalDualKernel h W W' s) (complexUnequalDualMeasure (r := r) a D)) :
     complexUnequalDualIntegral h a D W W' s =
       ∫ p, complexUnequalDualKernel h W W' s p ∂complexUnequalDualMeasure (r := r) a D := by
@@ -172,7 +173,8 @@ end IntegralHolomorphy
 
 /-! ### Extension from intertwiner values -/
 
-private def normalizedKernelPairs {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
+/-- The submodule of integrable kernel pairs satisfying the indicated normalized equation. -/
+def normalizedKernelPairs {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
     (μ : Measure X) (ν : Measure Y) (L Ld E : ℂ → ℂ) :
     Submodule ℂ ((ℂ → X → ℂ) × (ℂ → Y → ℂ)) where
   carrier := {K | ∃ (σ : ℝ) (N Nd : ℂ → ℂ),
@@ -210,7 +212,8 @@ private def normalizedKernelPairs {X Y : Type*} [MeasurableSpace X] [MeasurableS
       simp only [Pi.smul_apply, smul_eq_mul, hE s]
       ring
 
-private def complexUnequalKernelPair {r t : ℕ} (h : t < r) :
+/-- The ordinary and dual unequal-rank kernels as a bilinear map in the two input functions. -/
+def complexUnequalKernelPair {r t : ℕ} (h : t < r) :
     (Langlands.GeneralLinear (r + 1) ℂ → ℂ) →ₗ[ℂ]
       (Langlands.GeneralLinear (t + 1) ℂ → ℂ) →ₗ[ℂ]
       ((ℂ → LeftUnipotentQuotient t ℂ → ℂ) ×

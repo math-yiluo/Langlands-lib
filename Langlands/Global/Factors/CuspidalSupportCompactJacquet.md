@@ -10,8 +10,9 @@ slices also supply the Fourier conditions for the concatenated blocks.
 equations for compact translation and Lie differentiation in real
 matrix directions.
 
-The quotient map descends to the range of the embedding by precomposing
-with the inverse of the linear equivalence onto that range. The range is
+`exists_surjective_placeTensor_of_embedding` transports the quotient map
+to the range of the embedding by precomposing with the inverse of the
+linear equivalence onto that range. The range is
 stable because the embedding intertwines each compact and Lie operator.
 The resulting map from the range is surjective and intertwines the induced
 operators. The place constituent extraction in

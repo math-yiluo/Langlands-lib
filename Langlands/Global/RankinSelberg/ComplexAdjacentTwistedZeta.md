@@ -19,3 +19,5 @@ continuations with the stated reflection.
 This is the determinant twist in the square integrals in Section 8.3
 of Hervé Jacquet, *Archimedean Rankin–Selberg Integrals*, 2009, DOI
 `10.1090/conm/489/09547`, using the square equation of Proposition 4.4.
+
+`complexAdjacentTwistedZetaGrowth` retains exponential strip growth of the two normalized functions. The determinant twist changes the input vector and the compact weight. The proof uses the square coefficient theorem with strip growth for this vector and transports the same functions along the kernel identities.

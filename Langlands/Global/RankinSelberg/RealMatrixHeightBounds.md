@@ -32,3 +32,5 @@ real exponent `β`, including negative exponents. Put
 `|det g|^β ≤ B^|β| ≤ B^k`. Expanding the last power supplies the explicit
 constant `C = (n!)^k` and exponent `N = n*k`. The theorem is independent
 of number fields and applies to every positive matrix size.
+
+If the absolute value of the real power is at most \(R\), the same determinant estimate works uniformly by taking the integer ceiling of \(R\) in the proof. The fixed-exponent bound follows by taking \(R\) to be the absolute value of the supplied exponent.

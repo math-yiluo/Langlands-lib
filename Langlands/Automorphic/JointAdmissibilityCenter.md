@@ -1,0 +1,5 @@
+# Finiteness of central orbits from joint admissibility
+
+The finite-dimensional compact orbit of a fixed vector stays fixed by its open finite stabilizer. The center action commutes with that stabilizer and is conjugated by the compact subgroup through a finite image. Take one copy of the compact orbit space for each element of that image, with the compact action permuting those copies. For each central element, applying its corresponding conjugate to each copy and adding gives a compact intertwiner into the fixed vectors. Evaluating at the vector in the identity copy gives the central orbit as a subspace of the image of one finite-dimensional multiplicity space. The annihilator ideal has finite codimension by the linear quotient and range equivalence.
+
+This derived algebraic step is used for simultaneous center finiteness of the actual inducing sections in Langlands, *On the notion of an automorphic representation* (1979), proof of Proposition 2, printed pp. 204–206, Corvallis Part I PDF pp. 199–201.

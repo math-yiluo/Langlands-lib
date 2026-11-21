@@ -69,6 +69,24 @@ private theorem exp_le_mul_norm_lastRow (y : Fin r.succ → ℝ) (k : K) :
     exact h₁.trans (le_mul_of_one_le_right (by positivity)
       (le_add_of_nonneg_right (by positivity)))
 
+/-- A bound for the Schwartz test in the last logarithmic coordinate, expressed
+through finitely many order-zero Schwartz seminorms. -/
+def lastRowTestBound (q : ℕ) (Φ : 𝓢(Vec, ℂ)) : ℝ :=
+  (r.succ : ℝ) ^ q * (2 ^ q *
+    ((Finset.Iic (q, 0)).sup fun m => SchwartzMap.seminorm ℝ m.1 m.2) Φ)
+
+theorem continuous_lastRowTestBound (q : ℕ) : Continuous (lastRowTestBound (r := r) q) := by
+  refine ((Seminorm.continuous_finsetSup fun m _ => ?_).const_mul _).const_mul _
+  exact (schwartz_withSeminorms ℝ Vec ℂ).continuous_seminorm m
+
+@[simp]
+theorem lastRowTestBound_zero (q : ℕ) : lastRowTestBound (r := r) q 0 = 0 := by
+  simp [lastRowTestBound]
+
+theorem lastRowTestBound_nonneg (q : ℕ) (Φ : 𝓢(Vec, ℂ)) : 0 ≤ lastRowTestBound q Φ := by
+  unfold lastRowTestBound
+  positivity
+
 /-- A Schwartz test on the complex last row has arbitrary exponential decay in the
 positive part of its last logarithmic diagonal coordinate. -/
 def ComplexLastRowSchwartzStatement : Prop :=
@@ -76,10 +94,10 @@ def ComplexLastRowSchwartzStatement : Prop :=
     ‖Φ (Langlands.RankinSelberg.lastRow (logTorus y * k.val))‖ ≤
       C * Real.exp (-(q : ℝ) * max (y (Fin.last r)) 0)
 
-theorem complexLastRowSchwartz : ComplexLastRowSchwartzStatement (r := r) := by
-  intro Φ q
+theorem norm_lastRow_le_testBound (Φ : 𝓢(Vec, ℂ)) (q : ℕ) (y : Fin r.succ → ℝ) (k : K) :
+    ‖Φ (Langlands.RankinSelberg.lastRow (logTorus y * k.val))‖ ≤
+      lastRowTestBound q Φ * Real.exp (-(q : ℝ) * max (y (Fin.last r)) 0) := by
   let C := 2 ^ q * ((Finset.Iic (q, 0)).sup fun m => SchwartzMap.seminorm ℝ m.1 m.2) Φ
-  refine ⟨(r.succ : ℝ) ^ q * C, by dsimp [C]; positivity, fun y k => ?_⟩
   let v := Langlands.RankinSelberg.lastRow (logTorus y * k.val)
   let m := max (y (Fin.last r)) 0
   have hΦ : (1 + ‖v‖) ^ q * ‖Φ v‖ ≤ C := by
@@ -97,5 +115,8 @@ theorem complexLastRowSchwartz : ComplexLastRowSchwartzStatement (r := r) := by
   change ‖Φ v‖ ≤ (r.succ : ℝ) ^ q * C * Real.exp (-(q : ℝ) * m)
   rw [neg_mul, Real.exp_neg, ← div_eq_mul_inv]
   exact (le_div_iff₀ (Real.exp_pos _)).2 (by simpa only [mul_comm] using h)
+
+theorem complexLastRowSchwartz : ComplexLastRowSchwartzStatement (r := r) :=
+  fun Φ q => ⟨lastRowTestBound q Φ, lastRowTestBound_nonneg q Φ, norm_lastRow_le_testBound Φ q⟩
 
 end Langlands.Global.RankinSelbergGlobal.ComplexLastRowSchwartz

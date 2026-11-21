@@ -1,0 +1,5 @@
+# The standard adelic additive character and relative trace
+
+`StandardAdelicTraceCharacterStatement` identifies the pullback of the standard character of the base adeles along the actual adelic trace with the standard character upstairs. It applies to every finite extension of number fields. For the conductor comparison, this choice gives trace-related finite characters and the standard additive scale at each infinite place.
+
+The standard character can be evaluated after subtracting any global element that makes the finite part integral. The trace of such an integral finite adele is integral, so the traced global element is an allowed subtraction downstairs. The absolute traces of the resulting infinite parts agree by trace transitivity on the dense global field and continuity. The comparison thus gives the same exponential on both sides. Arthur–Clozel use trace-related additive characters in Chapter 1, proof of Proposition 6.9(ii), printed p. 70 (PDF p. 84), immediately before the completed equation (6.15).

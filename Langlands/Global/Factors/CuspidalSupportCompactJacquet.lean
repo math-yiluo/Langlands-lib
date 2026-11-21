@@ -38,7 +38,8 @@ def IsPlaceQuotientIntertwining
   (∀ k w, q (κ k w) = κQ k (q w)) ∧
     ∀ (X : L) w, q (π (1 ⊗ₜ X) w) = πQ (1 ⊗ₜ X) (q w)
 
-private theorem exists_surjective_placeTensor_of_embedding
+/-- Transport a surjective place quotient through an equivariant tensor embedding. -/
+theorem exists_surjective_placeTensor_of_embedding
     (κ : Representation ℂ K W) (π : (ℂ ⊗[ℝ] L) →ₗ⁅ℂ⁆ Module.End ℂ W)
     (ρ : Representation ℂ K V) (τ : (ℂ ⊗[ℝ] L) →ₗ⁅ℂ⁆ Module.End ℂ V)
     (κQ : Representation ℂ K H) (πQ : (ℂ ⊗[ℝ] L) →ₗ⁅ℂ⁆ Module.End ℂ H)
@@ -73,12 +74,12 @@ namespace OperatorSubquotient
 variable {F : Type u} [Field F] [NumberField F]
   {W : Type uW} [AddCommGroup W] [Module ℂ W] {I : Type uI}
 
-local instance (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance {n : ℕ} (T : OperatorRealization F n) : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance supportCompactJacquetRationalGroup (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance supportCompactJacquetContinuousGroup (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance supportCompactJacquetFiniteSmoothGroup (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance supportCompactJacquetFormGroup (n : ℕ) : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance supportCompactJacquetStableGroup (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance supportCompactJacquetRealizationGroup {n : ℕ} (T : OperatorRealization F n) : AddCommGroup T.Space := Submodule.addCommGroup _
 
 local notation "RP" =>
   {v : NumberField.InfinitePlace F // NumberField.InfinitePlace.IsReal v}

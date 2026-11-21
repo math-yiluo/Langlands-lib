@@ -1,0 +1,5 @@
+# Joint ordinary-tail domination in the complex gap recurrence
+
+The ordinary right-tail test evaluates a matrix Schwartz function on the trailing columns and a vector Schwartz function on the last row of the inverse. These tests supply separate decay in the additive tail matrix and the upper rectangle. The estimate allows any fixed polynomial weight in the trailing-column norm, which is needed when a leading rectangular test is bounded using the chart height.
+
+The negative logarithmic coordinates of the inverse tail block are bounded by the logarithm of a constant times one plus the trailing-column norm. The positive part of the last coordinate is bounded by the analogous logarithm of one plus the norm of the inverse last row. With the prescribed first determinant exponent and sufficiently large simple-root decay, the toral estimate leaves an integrable exponential in the first torus and a polynomial cost in the two test arguments. Increasing the Schwartz seminorm orders absorbs that cost and gives the separate polynomial decay factors in the original tail variables.

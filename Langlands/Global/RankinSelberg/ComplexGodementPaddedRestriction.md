@@ -1,0 +1,5 @@
+# Restriction of the complex Godement integral to the padded group
+
+At the padded argument `diag(g b,1)`, right translation by `g⁻¹` in the Godement variable separates the factor `|det g|_ℂ^(1/2)`. The first square block in the partially Fourier-transformed test becomes `h b`. Its last column is the last row of `g h⁻¹`, used as the inverse-transpose frequency. The theorem proves absolute integrability of the resulting kernel and the equality for the continued value for every head exponent.
+
+The proof uses the existing determinant change from the column integral to the partial Fourier transform. Right multiplication by a matrix padded with a final identity changes the first columns of the Schwartz argument and preserves the last column. Right Haar invariance then transports absolute integrability and the integral. The determinant characters cancel on the translated factor, leaving the half power. If `g` is padded from a strictly smaller block, its last row is the standard row and the frequency depends only on `h`. The formula is the restriction used in Jacquet's *Archimedean Rankin–Selberg integrals*, §§9.1 and 10.1.

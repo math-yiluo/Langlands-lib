@@ -1,0 +1,7 @@
+# Normalized block evaluation of a principal-series function
+
+`principalSeries_parabolic_tensorValue` starts with an ambient principal-series function and a tensor of inducing block functions. The position characters agree in the given block order. At a fixed base point the tensor agrees with the ambient function on all compact block translates.
+
+Factor an arbitrary parabolic argument by ambient Iwasawa as a diagonal matrix, an upper unipotent, and a compact element. The compact element remains in the parabolic and is the block diagonal embedding of its compact Levi projection. The Borel Levi projection formula therefore allows the principal-series relation to be applied in each block. The pure-tensor identities extend to all tensors by linearity. The principal-series character of the ambient Borel is the product of those block characters times the positive outer half modulus. The determinant norms of the compact factors and the determinants of the unipotent factors are one, so that modulus is the one at the original parabolic argument.
+
+`localLeviHalf_realPlace` and `localLeviHalf_complexPlace` identify this positive factor with the actual adelic half character restricted to the place. This is an internal induction-in-stages calculation. Knapp and Vogan (1995), Chapter XI, (11.196), give the function-level induction-in-stages comparison, and Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the normalized adelic scalar slices.

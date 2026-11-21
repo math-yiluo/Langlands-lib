@@ -1,0 +1,5 @@
+# The mixed Whittaker model for a compatible source embedding
+
+The compatible source data record that the mixed and smooth embeddings agree on their smooth values. The smooth map is injective and its Hilbert norm is the supplied original norm. The archimedean action is unitary, its smooth part is Hilbert dense, and the source is derivative dense at every fixed finite level. The finite and compact action identities and the infinitesimal generator identity are stated on underlying Hilbert values.
+
+For a cuspidal realization with compact additive adèle quotient, specialize these identities to the original actions and determinant-band `L²` norm. The band-bound construction evaluates the Whittaker functional using the smooth embedding and its finite intertwining identity. Subtype extensionality identifies the resulting source map with the supplied mixed source and gives the same integral values, character, continuity, and nonvanishing. This is an internal compatibility result for the actual Whittaker functional.

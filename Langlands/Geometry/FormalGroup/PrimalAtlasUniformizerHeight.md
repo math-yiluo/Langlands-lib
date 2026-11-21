@@ -1,0 +1,7 @@
+# Central uniformizer height of the primal atlas
+
+Drinfeld 1976, §2 A, printed p. 109 (PDF p. 3), uses special formal division modules of height the square of the reduced degree. The primal factor in Rapoport–Zink 1996, (6.17) and Lemma 6.44, printed pp. 309–310 (PDF pp. 321–322), carries the corresponding unpolarized rigidifier. The rank convention used here is `ModuleLaw.HasPiHeight` in `PiDivisible.lean`. The scalar-kernel proof below derives the change of rank between the two normalizations. Rapoport–Zink 1996, printed p. 109 (PDF p. 123), immediately before Definition 3.57 gives the corresponding degree factor for the ranks of their crystals.
+
+Given the actual uniformizer height of the primal residue frame, compare its scalar kernels with the p-power kernels using the supplied relation of p to a central uniformizer power and the residue cardinality. The scalar p-height transfers along the primal rigidifier to each chart on the original base. On each chart, the supplied finite locally free central uniformizer kernels, together with scalar p-divisibility, give central uniformizer divisibility. The residue-field rank comparison then proves the uniformizer height of that chart is the square of the reduced degree.
+
+The resulting finite-height atlas has the chart laws and transitions constructed from the actual split target. Its remaining geometric input is representability and finite local freeness of the central uniformizer-power kernels on those charts. The height equality follows from the kernel ranks of the primal frame.

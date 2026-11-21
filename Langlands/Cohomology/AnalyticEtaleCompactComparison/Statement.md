@@ -301,10 +301,13 @@ The ordinary comparison `H^q(X{G}, F) ≅ H^q(X, b^*F)` for compact `X` is the
 companion statement
 `Langlands.Cohomology.AnalyticEtaleGlobalComparison.AnalyticEtaleGlobalComparisonStatement`
 (Berkovich's Theorem 1.6.1(ii), étale case). Neither statement is derived from
-the other here. The quasi-étale analogue of this proposition with supports in
-`L`-valued points is not stated: the coverage note records a counterexample on
-the quasi-étale model, whose topos has rank-two points that no `L`-valued
-point detects.
+the other here. Corollary 1.5.2(i) does not state a quasi-étale compact-support
+comparison. For an analogous statement with `L`-valued point supports, a
+[paper rank-two support obstruction](../../../notes/henniart/harris-cohomology-coverage.md#retained-source-gaps-and-scope-decisions)
+is known in the manuscript-style quasi-étale setting; it has not been checked
+for the Library's generated quasi-étale topology. Neither that obstruction
+nor the discrete translation obstruction to the spectral sequence of
+Corollary 1.5.2(i) is a counterexample to this étale comparison proposition.
 
 ## Role in the Harris framework
 

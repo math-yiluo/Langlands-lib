@@ -69,7 +69,28 @@ def ComplexAdjacentTwistedZetaStatement : Prop :=
       ∀ s : ℂ, Nd (1 - s) =
         (complexEpsilon ds a ‖(a : ℂ)‖₊ (nnnorm_pos.mpr a.ne_zero) s : ℂ) * N s
 
-theorem complexAdjacentTwistedZeta : ComplexAdjacentTwistedZetaStatement (r := r) := by
+/-- The determinant-twisted square functional equation with exponential strip growth. -/
+def ComplexAdjacentTwistedZetaGrowthStatement : Prop :=
+  ∀ (μ : Measure G) [μ.IsHaarMeasure] (κ : Measure K) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
+    (a : ℂˣ) (d : ComplexCharacterData) (es : Fin (r + 1) → ComplexCharacterData)
+    (Φ : 𝓢(Mat, ℂ)) (f : G → ℂ) (w : K → ℂ),
+    f ∈ complexStandardModule (r + 1) (List.ofFn es) → Continuous w →
+    let ds := List.ofFn fun i => (es i).mul d
+    let C := compactCoefficient κ id w f
+    let Z := zetaKernel Φ (fun g => detCharacter d.character g * C g)
+    let Zd := zetaKernel (matrixTransform (-a) Φ)
+      (fun g => detCharacter d.inv.character g * C (ι g))
+    ∃ (σ : ℝ) (N Nd : ℂ → ℂ), Differentiable ℂ N ∧ Differentiable ℂ Nd ∧
+      HasStripExponentialGrowth N ∧ HasStripExponentialGrowth Nd ∧
+      (∀ s : ℂ, σ < s.re →
+        Integrable (Z s) μ ∧ Integrable (Zd s) μ ∧
+        N s = (complexLFactor ds).denominator s * ∫ g, Z s g ∂μ ∧
+        Nd s = (complexLFactor (ds.map ComplexCharacterData.inv)).denominator s *
+          ∫ g, Zd s g ∂μ) ∧
+      ∀ s : ℂ, Nd (1 - s) =
+        (complexEpsilon ds a ‖(a : ℂ)‖₊ (nnnorm_pos.mpr a.ne_zero) s : ℂ) * N s
+
+theorem complexAdjacentTwistedZetaGrowth : ComplexAdjacentTwistedZetaGrowthStatement (r := r) := by
   intro μ _ κ _ _ a d es Φ f w hf hw ds C Z Zd
   let f' (g : G) := detCharacter d.character g * f g
   let w' (k : K) := detCharacter d.character⁻¹ k.val * w k
@@ -84,11 +105,17 @@ theorem complexAdjacentTwistedZeta : ComplexAdjacentTwistedZetaStatement (r := r
       determinantContinuous.continuous)).comp continuous_subtype_val).mul hw
   have hC : compactCoefficient κ id w' f' = fun g => detCharacter d.character g * C g :=
     funext (compactCoefficient_detMul κ d w f)
-  obtain ⟨σ, M, Md, hM, hMd, hEq, hReflect⟩ :=
-    complexSquareCoefficientFunctionalEquation μ κ (-a) (fun i => (es i).mul d) Φ f' w' hf' hw'
-  refine ⟨σ, M, Md, hM, hMd, ?_, ?_⟩
+  obtain ⟨σ, M, Md, hM, hMd, hMg, hMdg, hEq, hReflect⟩ :=
+    complexSquareCoefficientFunctionalEquationGrowth μ κ (-a) (fun i => (es i).mul d) Φ f' w' hf' hw'
+  refine ⟨σ, M, Md, hM, hMd, hMg, hMdg, ?_, ?_⟩
   · intro s hs
     simpa only [Z, Zd, hC, detCharacter_inverseTranspose] using hEq s hs
   · simpa only [neg_neg, Units.val_neg, nnnorm_neg] using hReflect
+
+
+theorem complexAdjacentTwistedZeta : ComplexAdjacentTwistedZetaStatement (r := r) := by
+  intro μ _ κ _ _ a d es Φ f w hf hw
+  obtain ⟨σ, N, Nd, hN, hNd, _, _, hZ, hEq⟩ := complexAdjacentTwistedZetaGrowth μ κ a d es Φ f w hf hw
+  exact ⟨σ, N, Nd, hN, hNd, hZ, hEq⟩
 
 end Langlands.Global.RankinSelbergGlobal.ComplexSquareZeta

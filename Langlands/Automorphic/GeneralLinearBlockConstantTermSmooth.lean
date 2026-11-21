@@ -80,18 +80,18 @@ local notation "G" => GroupScheme.GeneralLinear.groupScheme (Fin n) RF
 local notation "N(" e ")" => blockUnipotent (Fin n) RF e
 local notation "R(" e ")" => adelicPoints F G N(e)
 
-local instance constantTermSmoothAffine : IsAffine (G).X.left := isAffine_groupScheme (Fin n) RF
-local instance constantTermSmoothSmooth : Smooth (G).X.hom := smoothStatement (Fin n) RF
-local instance constantTermSmoothLocallyCompact (e : Fin n → ℤ) : LocallyCompactSpace R(e) :=
+local instance blockConstantTermSmoothAffine : IsAffine (G).X.left := isAffine_groupScheme (Fin n) RF
+local instance blockConstantTermSmoothSmooth : Smooth (G).X.hom := smoothStatement (Fin n) RF
+local instance blockConstantTermSmoothLocallyCompact (e : Fin n → ℤ) : LocallyCompactSpace R(e) :=
   (isClosed_adelicPoints_blockUnipotent F e).locallyCompactSpace
-local instance constantTermSmoothCompactQuotient (e : Fin n → ℤ) :
+local instance blockConstantTermSmoothCompactQuotient (e : Fin n → ℤ) :
     CompactSpace (RationalQuotient F G N(e)) :=
   GroupSchemeFunctions.blockUnipotentRationalQuotientCompactSpace F e
-local instance generalLinearConstantTermSmoothRationalAddCommGroup :
+local instance blockConstantTermSmoothRationalAddCommGroup :
     AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance generalLinearConstantTermSmoothContinuousAddCommGroup :
+local instance blockConstantTermSmoothContinuousAddCommGroup :
     AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance generalLinearConstantTermSmoothFiniteAddCommGroup :
+local instance blockConstantTermSmoothFiniteAddCommGroup :
     AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
 
 /-- The same normalized constant term is computed on a measurable fundamental

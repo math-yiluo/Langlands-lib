@@ -91,14 +91,14 @@ private theorem inv_Gamma_eq_reflection (s : ℂ) (hs : s.im ≠ 0) :
   rw [mul_inv_cancel₀ hΓ, ← mul_div_assoc, ← mul_assoc, h]
   field_simp
 
-/-- Euler reflection and a shift of the Gamma integral give an exponential bound for the
-entire reciprocal Gamma function on each vertical strip. -/
-theorem hasStripExponentialGrowth_inv_Gamma : HasStripExponentialGrowth (fun s => (Complex.Gamma s)⁻¹) := by
-  intro a b
+/-- The exponent `π` in the large-imaginary-part estimate is independent of the real strip. -/
+theorem norm_inv_Gamma_le_exp_of_one_le (a b : ℝ) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ s : ℂ, a ≤ s.re → s.re ≤ b → 1 ≤ |s.im| →
+      ‖(Complex.Gamma s)⁻¹‖ ≤ C * Real.exp (Real.pi * |s.im|) := by
   obtain ⟨N, hN⟩ := exists_nat_gt b
   have hpos : 0 < 1 - b + (N : ℝ) := by linarith
   obtain ⟨C, hC, hΓ⟩ := norm_Gamma_le_on_strip (b := 1 - a + (N : ℝ)) hpos
-  refine ⟨C / Real.pi, Real.pi, 1, div_nonneg hC Real.pi_pos.le, Real.pi_pos.le, ?_⟩
+  refine ⟨C / Real.pi, div_nonneg hC Real.pi_pos.le, ?_⟩
   intro s hlo hhi hs
   have hsim : s.im ≠ 0 := by intro h; norm_num [h] at hs
   have him : 1 ≤ |(1 - s).im| := by simpa only [Complex.sub_im, Complex.one_im, zero_sub, abs_neg] using hs
@@ -115,6 +115,45 @@ theorem hasStripExponentialGrowth_inv_Gamma : HasStripExponentialGrowth (fun s =
     _ ≤ C * Real.exp (Real.pi * |s.im|) / Real.pi := by
       exact div_le_div_of_nonneg_right (mul_le_mul hbound hs' (norm_nonneg _) hC) Real.pi_pos.le
     _ = _ := by ring
+
+/-- Euler reflection and a shift of the Gamma integral give an exponential bound for the
+entire reciprocal Gamma function on each vertical strip. -/
+theorem hasStripExponentialGrowth_inv_Gamma : HasStripExponentialGrowth (fun s => (Complex.Gamma s)⁻¹) := by
+  intro a b
+  obtain ⟨C, hC, h⟩ := norm_inv_Gamma_le_exp_of_one_le a b
+  exact ⟨C, Real.pi, 1, hC, Real.pi_pos.le, h⟩
+
+/-- The complex reciprocal Gamma block has rate `π` on each closed vertical strip. -/
+theorem norm_gammaComplex_denominator_le_exp (a b : ℝ) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ s : ℂ, a ≤ s.re → s.re ≤ b →
+      ‖gammaComplex.denominator s‖ ≤ C * Real.exp (Real.pi * |s.im|) := by
+  obtain ⟨C, hC, h⟩ := norm_inv_Gamma_le_exp_of_one_le a b
+  let R := max |a| |b| + 1
+  obtain ⟨B, hB⟩ := (isCompact_closedBall (0 : ℂ) R).exists_bound_of_continuousOn
+    (gammaComplex.entire.continuous.continuousOn)
+  have hπ : 1 ≤ 2 * Real.pi := by linarith [Real.one_le_pi_div_two]
+  let A := C * (2 * Real.pi) ^ b / 2
+  refine ⟨max (max B 0) A, (le_max_right B 0).trans (le_max_left _ _), fun s hs ht => ?_⟩
+  by_cases hi : 1 ≤ |s.im|
+  · change ‖(Complex.Gammaℂ s)⁻¹‖ ≤ _
+    rw [Complex.Gammaℂ_def, mul_inv_rev, mul_inv_rev, Complex.cpow_neg, inv_inv,
+      norm_mul, norm_mul, norm_inv (2 : ℂ), Complex.norm_ofNat,
+      show (2 : ℂ) * Real.pi = ((2 * Real.pi : ℝ) : ℂ) by push_cast; rfl,
+      Complex.norm_cpow_eq_rpow_re_of_pos (zero_lt_one.trans_le hπ)]
+    have hg : ‖(Complex.Gamma s)⁻¹‖ ≤ C * Real.exp (Real.pi * |s.im|) := h s hs ht hi
+    have hp := Real.rpow_le_rpow_of_exponent_le hπ ht
+    calc
+      _ ≤ (C * Real.exp (Real.pi * |s.im|)) * ((2 * Real.pi) ^ b * (2 : ℝ)⁻¹) := by gcongr
+      _ = A * Real.exp (Real.pi * |s.im|) := by dsimp only [A]; ring
+      _ ≤ _ := mul_le_mul_of_nonneg_right (le_max_right _ _) (Real.exp_pos _).le
+  · have hr : |s.re| ≤ max |a| |b| := abs_le.mpr
+      ⟨(neg_le_neg (le_max_left |a| |b|)).trans ((neg_abs_le a).trans hs),
+        ht.trans ((le_abs_self b).trans (le_max_right _ _))⟩
+    have hsR : s ∈ Metric.closedBall (0 : ℂ) R := mem_closedBall_zero_iff.mpr <|
+      (Complex.norm_le_abs_re_add_abs_im _).trans (add_le_add hr (le_of_not_ge hi))
+    exact (hB s hsR).trans <| (le_max_left B 0).trans <|
+      (le_max_left (max B 0) A).trans <| le_mul_of_one_le_right
+        ((le_max_right B 0).trans (le_max_left _ _)) (Real.one_le_exp (by positivity))
 
 /-- Strip growth is preserved by multiplication. -/
 theorem HasStripExponentialGrowth.mul {f g : ℂ → ℂ}
@@ -228,5 +267,47 @@ theorem stripGrowth_complexPairLFactor_denominator (xs ys : List ComplexCharacte
     HasStripExponentialGrowth (complexPairLFactor xs ys).denominator := by
   rw [complexPairLFactor, complexLFactor_eq_gammaProduct]
   exact stripGrowth_gammaProduct_denominator _
+
+namespace HasStripExponentialGrowth
+
+/-- Constant functions have exponential strip growth. -/
+theorem const (c : ℂ) : HasStripExponentialGrowth (fun _ => c) :=
+  fun _ _ => ⟨‖c‖, 0, 0, norm_nonneg _, le_rfl, fun _ _ _ _ => by simp⟩
+
+/-- The sum of two functions of exponential strip growth has the same property. -/
+theorem add {f g : ℂ → ℂ} (hf : HasStripExponentialGrowth f) (hg : HasStripExponentialGrowth g) :
+    HasStripExponentialGrowth (f + g) := by
+  intro a b
+  obtain ⟨C, K, T, hC, hK, hf⟩ := hf a b
+  obtain ⟨D, L, S, hD, hL, hg⟩ := hg a b
+  refine ⟨C + D, max K L, max T S, add_nonneg hC hD, hK.trans (le_max_left _ _), ?_⟩
+  intro s hs ht hw
+  have hMax (k : ℝ) (hk : k ≤ max K L) :
+      Real.exp (k * |s.im|) ≤ Real.exp (max K L * |s.im|) :=
+    Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_right hk (abs_nonneg _))
+  rw [Pi.add_apply, add_mul]
+  exact (norm_add_le _ _).trans (add_le_add
+    ((hf s hs ht ((le_max_left _ _).trans hw)).trans
+      (mul_le_mul_of_nonneg_left (hMax K (le_max_left _ _)) hC))
+    ((hg s hs ht ((le_max_right _ _).trans hw)).trans
+      (mul_le_mul_of_nonneg_left (hMax L (le_max_right _ _)) hD)))
+
+/-- Multiplication by a fixed complex scalar preserves exponential strip growth. -/
+theorem const_mul {f : ℂ → ℂ} (hf : HasStripExponentialGrowth f) (c : ℂ) :
+    HasStripExponentialGrowth (fun s => c * f s) :=
+  (const c).mul hf
+
+/-- A finite sum of functions of exponential strip growth has the same property. -/
+theorem fun_sum {ι : Type*} (s : Finset ι) (f : ι → ℂ → ℂ)
+    (hf : ∀ j ∈ s, HasStripExponentialGrowth (f j)) :
+    HasStripExponentialGrowth (fun z => ∑ j ∈ s, f j z) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simpa using const 0
+  | @insert j s hj ih =>
+    simp only [Finset.sum_insert hj]
+    exact (hf j (Finset.mem_insert_self j s)).add (ih fun i hi => hf i (Finset.mem_insert_of_mem hi))
+
+end HasStripExponentialGrowth
 
 end Langlands.LocalFactor.Archimedean

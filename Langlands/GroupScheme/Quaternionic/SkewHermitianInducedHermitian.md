@@ -1,0 +1,7 @@
+# Hermitian pairing induced by a skew-hermitian component
+
+Let `Q` be quaternion coordinates over a field `F` in a division algebra `D`, with quadratic subfield `E` and nonzero second generator `j`. On a left `D`-module with the compatible `F`-action, let `B` be skew-hermitian for an involution agreeing with the standard quaternion conjugation `Q.bar`. Write `C` for the symmetric `E`-bilinear component and `T` for left multiplication by `j`. Then `inducedHermitian` is the pairing `root * C(x, Ty)`. It is linear in its first argument, conjugate-linear in its second, and interchanging the arguments conjugates its value.
+
+On a totally isotropic `E`-subspace `W` for `C`, if each vector is a sum `u + Tv` with `u, v` in `W` and `B` is left-separating, the induced pairing on `W` is left-separating. A vector in both `W` and `T(W)` has skew self-value zero because `T²` is scalar multiplication. When `2` is nonzero, a paired vector `u + Tv` with both entries in `W` has skew self-value zero exactly when their induced Hermitian pairing is zero and the sum of their Hermitian self-values weighted by `1` and `j²` is zero.
+
+This construction formalizes the pairing on the isotropic subspace in Springer's appendix to Kneser, *Lectures on Galois Cohomology of Classical Groups* (1969), Theorem 5.3.3(i), printed p. 110 (PDF p. 116). The conjugation and separation formulas follow from the two coefficients of the quaternion product.

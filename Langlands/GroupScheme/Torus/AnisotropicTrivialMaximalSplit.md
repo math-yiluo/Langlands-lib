@@ -1,0 +1,7 @@
+# The trivial maximal split torus in an anisotropic group
+
+For a separated group scheme `G` over a field `k` with `IsAnisotropic G` (the Library's split-rank-zero condition), `TorusExistence.anisotropicMaximalSplitTorus G ha` gives actual maximal split torus data. Its domain is `TorusExistence.trivialTorus k`, the split torus indexed by the empty type, and its inclusion is the existing `TorusExistence.trivialTorusHom G`, the identity-section inclusion. The conclusion does not assert that this torus is geometrically maximal, and does not require `G` to be reductive or connected.
+
+The exported lemma `TorusExistence.isMaximalSplitTorus_trivialTorusHom G ha` proves maximality on the actual inclusion. It is closed by separatedness. For any factorization through another closed split torus, anisotropy makes each of that split torus's endomorphisms equal, and the endomorphisms of the trivial torus are also equal. The morphism back to the trivial torus through `Grp.trivial` is therefore a two-sided inverse of the factorization map. No rational-point argument is used.
+
+**Provenance.** This is an internal extraction and bundling of the local maximality argument `hmaxsplit` in `Reductive/TitsKernelIndexData.lean` (Worker 146, Task 5619), using `IsAnisotropic.subsingleton_hom_of_isSplitSubtorus` from `Rational/SplitTorus.lean` and the existing identity inclusion from `Torus/ExistenceProof.lean`. It exports the common lemma for consumers including Task 3557 without changing the Tits-index construction or importing valuation or building data.

@@ -7,3 +7,5 @@ For any chosen tuple of indices, form the matrix whose rows are the correspondin
 At each parameter choose a tuple whose determinant is nonzero and divide the Cramer numerator by it. The extended identity gives every prescribed value. For a fixed parameter, the same tuple has nonzero determinant throughout a neighborhood, and the values on its rows determine the coefficients by Cramer's rule there. This proves holomorphy and gives agreement with the original coefficients on the open set.
 
 This is internal linear and analytic infrastructure for continuing Jacquet evaluations from families of compact Godement sections. The hypothesis of an invertible tuple at every parameter is the finite-dimensional spanning input.
+
+The identity principle on a nonempty open set, holomorphy of the determinant, and holomorphy of Cramer numerators are available separately for the local reconstruction of group-valued families.

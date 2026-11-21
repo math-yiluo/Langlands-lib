@@ -73,6 +73,31 @@ theorem hasCompactDerivativeBound_additiveJacquetForm (a : ℝˣ)
       integral_mono hfint.norm (hFint.norm.const_mul (B 0)) hPointKernel
     _ = _ := by rw [integral_const_mul, mul_comm]
 
+/-- The convergent open-cell coefficient as a linear map on the standard source. -/
+def additiveJacquetUniformLinear (a : ℝˣ) (hDom : IsStrictlyDominant (realPositionExponent ds) t) :
+    Automorphic.realStandardKFinite (t + 1) ds →ₗ[ℂ] (G → ℂ) :=
+  functionalCoefficient ds (additiveJacquetForm a hDom)
+
+theorem additiveJacquetUniformLinear_apply (a : ℝˣ) (hDom : IsStrictlyDominant (realPositionExponent ds) t)
+    (f : Automorphic.realStandardKFinite (t + 1) ds) :
+    additiveJacquetUniformLinear a hDom f = additiveJacquetIntegral a f.val := by
+  funext g
+  change additiveJacquetIntegral a (fun k => f.val (k * g)) 1 = additiveJacquetIntegral a f.val g
+  rw [additiveJacquetIntegral_rightTranslate, one_mul]
+
+theorem isRealUniformWhittakerIntertwiner_additiveJacquetUniformLinear (a : ℝˣ)
+    (hDom : IsStrictlyDominant (realPositionExponent ds) t) :
+    IsRealUniformWhittakerIntertwiner t ds (-a) (additiveJacquetUniformLinear a hDom) := by
+  let L := additiveJacquetForm a hDom
+  have hEquivariant (u : G) (hu : u ∈ GeneralLinear.upperUnipotent (t + 1) ℝ) (x : P) :
+      L (translate t ds u x) = realWhittakerCharacter (-a) u * L x := by
+    change additiveJacquetIntegral a (fun g => x.val (g * u)) 1 =
+      realWhittakerCharacter (-a) u * additiveJacquetIntegral a x.val 1
+    rw [additiveJacquetIntegral_rightTranslate, one_mul]
+    simpa only [mul_one] using realGodementOpenCellCovariance t a x.val ⟨u, hu⟩ 1
+  exact isRealUniformWhittakerIntertwiner_functionalCoefficient ds (-a) L
+    (hasCompactDerivativeBound_additiveJacquetForm a hDom) hEquivariant
+
 /-- The Jacquet coefficient of every standard K-finite vector in the dominant
 chamber belongs to the uniform Whittaker model for the opposite phase. -/
 def RealGodementOpenCellModelStatement : Prop :=
@@ -83,25 +108,10 @@ def RealGodementOpenCellModelStatement : Prop :=
 
 theorem realGodementOpenCellModel : RealGodementOpenCellModelStatement := by
   intro t ds a hDom f
-  let L := additiveJacquetForm a hDom
-  let C := functionalCoefficient ds L
-  have hEquivariant (u : Langlands.GeneralLinear (t + 1) ℝ)
-      (hu : u ∈ GeneralLinear.upperUnipotent (t + 1) ℝ)
-      (x : principalSeries ℝ (t + 1) (realPositionCharacter ds)) :
-      L (translate t ds u x) = realWhittakerCharacter (-a) u * L x := by
-    change additiveJacquetIntegral a (fun g => x.val (g * u)) 1 =
-      realWhittakerCharacter (-a) u * additiveJacquetIntegral a x.val 1
-    rw [additiveJacquetIntegral_rightTranslate, one_mul]
-    simpa only [mul_one] using realGodementOpenCellCovariance t a x.val ⟨u, hu⟩ 1
-  have hC : IsRealUniformWhittakerIntertwiner t ds (-a) C :=
-    isRealUniformWhittakerIntertwiner_functionalCoefficient ds (-a) L
-      (hasCompactDerivativeBound_additiveJacquetForm a hDom) hEquivariant
-  have hValue : C f = additiveJacquetIntegral a f.val := by
-    funext g
-    change additiveJacquetIntegral a (fun k => f.val (k * g)) 1 = additiveJacquetIntegral a f.val g
-    rw [additiveJacquetIntegral_rightTranslate, one_mul]
+  let C := additiveJacquetUniformLinear a hDom
+  have hC := isRealUniformWhittakerIntertwiner_additiveJacquetUniformLinear a hDom
   have hle : LinearMap.range C ≤ realUniformWhittakerModel t ds (-a) :=
     le_iSup_of_le C (le_iSup_of_le hC le_rfl)
-  exact hle ⟨f, hValue⟩
+  exact hle ⟨f, additiveJacquetUniformLinear_apply a hDom f⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealGodement

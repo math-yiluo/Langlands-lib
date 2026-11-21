@@ -1,6 +1,6 @@
 # The formal group law on an idempotent image
 
-The split pair of Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), (6.17), printed p. 309 (PDF p. 321), uses the images of the two order idempotents as formal groups. This module constructs the group law once the image has pointed coordinate inclusion and projection.
+In Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), §6.43, printed pp. 308–309 (PDF pp. 320–321), the split order idempotents give two \(p\)-divisible factors. The first is a special formal module and the second is its Cartier dual, which can have an étale part. Equation (6.17) gives the resulting moduli-space isomorphism. The derived construction here applies to a given formal group law with a pointed retraction, such as the identity formal completion of a \(p\)-divisible group when given in finite coordinates.
 
 `CoordinateMap.IdempotentCoordinates.imageLaw` includes the two inputs, adds them using the ambient formal law, and projects the sum. It restricts inversion by the same procedure. Inclusion is injective and identifies these operations with the ambient ones because the included points are fixed by the projector. The group-law identities follow on series points and hence on the actual coordinate maps. The inclusion and projection preserve addition, and their composites recover the identity and the given formal endomorphism.
 

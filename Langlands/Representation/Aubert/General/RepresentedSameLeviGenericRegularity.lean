@@ -65,11 +65,9 @@ variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rational
   {hrQ : LeviSubgroup.IsGeometricUnipotentRadical rQ} {hlQ : IsRationalLeviSubgroup lQ}
   {hmulQ : IsIso (subgroupMultiplication lQ rQ)} {z : rationalPoints G}
 
-/-- On a non-identity same-Levi piece, a nonzero polynomial in the unramified
-coordinates of `M(F)` separates, off its zero locus, every generalized character
-of the split component on the piece of `σψ` from the character `c · ψ|_A`; the
-piece also has a finite-dimensional action quotient. -/
-theorem exists_generic_piece_separation
+/-- The finitely many evaluation tests separating the nonidentity piece
+exponents from the inducing split-component character. -/
+theorem exists_piece_pointSeparations
     (hG : IsConnectedReductive G) (hLevi : l ≫ p = lQ ≫ q)
     (D : GeometricLemmaIntersectionDatum p l r hp hr hl hmul q lQ rQ hq hrQ hlQ hmulQ z)
     (hz : DoubleCoset.mk (pointImage p) (pointImage q) z ≠ identityParabolicDoubleCoset p q)
@@ -79,8 +77,8 @@ theorem exists_generic_piece_separation
     letI := leviPointTopology l hl
     haveI := leviPoints_nonarchimedeanGroup p l hp hl
     ∀ σ : SmoothRep.{0, u, v} ℂ (rationalPoints M), σ.IsIrreducible → σ.IsAdmissible →
-      ∃ poly : MvPolynomial (Fin (Plancherel.rationalImageRank M)) ℂ, poly ≠ 0 ∧
-        ∀ ψ ∈ Plancherel.rationalUnramifiedPrincipalOpen M hl.isConnectedReductive poly,
+      ∃ tests : List (Plancherel.UnramifiedPointSeparation M),
+        ∀ ψ, (∀ test ∈ tests, test.holds M ψ) →
           Module.Finite ℂ (actionQuotient ((D.pieceFunctor.obj
             (σ.twist ψ.val.toMonoidHom (Plancherel.unramifiedCharacter_isOpen_ker _ ψ))).ρ.comp
               (rationalPoints.map a))) ∧
@@ -119,10 +117,12 @@ theorem exists_generic_piece_separation
   obtain ⟨hJa, hJf⟩ := hJ σ hirr hadm
   have hΘ := finite_normalizedJacquetExponents_of_leviJacquet D.p' D.l' D.r' D.hp' D.hl' D.hr'
     D.hmul' (ha'.comp_iso D.φ) σ hJa hJf
-  choose P hP0 hPsep using fun θ : rationalPoints A'.toGrp →* ℂˣ =>
-    Plancherel.exists_ne_zero_rationalUnramifiedPrincipalOpen_apply_ne M hM _ _ ht
-      ((θ (rationalPoints.map (CommGroupScheme.groupHom f) t) : ℂ) * ((c t)⁻¹ : ℂˣ))
-  refine ⟨∏ θ ∈ hΘ.toFinset, P θ, Finset.prod_ne_zero_iff.mpr fun θ _ => hP0 θ, ?_⟩
+  let test (θ : rationalPoints A'.toGrp →* ℂˣ) : Plancherel.UnramifiedPointSeparation M :=
+    ⟨rationalPoints.map a t,
+      rationalPoints.map (CommGroupScheme.groupHom f ≫ a' ≫ D.φ.hom ≫ D.l' ≫ D.p') t,
+      ht, (θ (rationalPoints.map (CommGroupScheme.groupHom f) t) : ℂ) * ((c t)⁻¹ : ℂˣ)⟩
+  classical
+  refine ⟨hΘ.toFinset.toList.map test, ?_⟩
   intro ψ hψ
   have hτirr := (SmoothRep.isIrreducible_twist_iff ψ.val.toMonoidHom
     (Plancherel.unramifiedCharacter_isOpen_ker _ ψ) σ).mpr hirr
@@ -134,11 +134,10 @@ theorem exists_generic_piece_separation
   obtain ⟨θ, hθ, hχθ, -⟩ :=
     D.exists_untwisted_sourceJacquetExponent_of_twisted_piece p l r hp hl hr hmul ha ha' f hf σ ψ
       hτJa χ hχ
-  have hψθ : ψ ∈ Plancherel.rationalUnramifiedPrincipalOpen M hM (P θ) := by
-    rw [Plancherel.mem_rationalUnramifiedPrincipalOpen] at hψ ⊢
-    rw [map_prod] at hψ
-    exact Finset.prod_ne_zero_iff.mp hψ θ (hΘ.mem_toFinset.mpr hθ)
-  apply hPsep θ ψ hψθ
+  apply hψ (test θ) (List.mem_map.mpr ⟨θ, Finset.mem_toList.mpr (hΘ.mem_toFinset.mpr hθ), rfl⟩)
+  change (ψ.val (rationalPoints.map a t) : ℂ) =
+    (θ (rationalPoints.map (CommGroupScheme.groupHom f) t) : ℂ) * ((c t)⁻¹ : ℂˣ) *
+      (ψ.val (rationalPoints.map (CommGroupScheme.groupHom f ≫ a' ≫ D.φ.hom ≫ D.l' ≫ D.p') t) : ℂ)
   have h1 := DFunLike.congr_fun (hχθ.symm.trans hχeq) t
   simp only [MonoidHom.mul_apply, MonoidHom.comp_apply] at h1
   rw [← Units.val_mul, ← Units.val_mul]
@@ -154,7 +153,111 @@ theorem exists_generic_piece_separation
             (CommGroupScheme.groupHom f ≫ a' ≫ D.φ.hom ≫ D.l' ≫ D.p') t) := by
         rw [mul_left_comm, ← mul_assoc]
 
+/-- On a non-identity same-Levi piece, a nonzero polynomial in the unramified
+coordinates of `M(F)` separates, off its zero locus, every generalized character
+of the split component on the piece of `σψ` from the character `c · ψ|_A`; the
+piece also has a finite-dimensional action quotient. -/
+theorem exists_generic_piece_separation
+    (hG : IsConnectedReductive G) (hLevi : l ≫ p = lQ ≫ q)
+    (D : GeometricLemmaIntersectionDatum p l r hp hr hl hmul q lQ rQ hq hrQ hlQ hmulQ z)
+    (hz : DoubleCoset.mk (pointImage p) (pointImage q) z ≠ identityParabolicDoubleCoset p q)
+    {A : CommGroupScheme (Spec (CommRingCat.of k))} {a : A.toGrp ⟶ M}
+    (ha : IsSplitComponent a) (c : rationalPoints A.toGrp →* ℂˣ) :
+    haveI := hl.isConnectedReductive.isAffineHom
+    letI := leviPointTopology l hl
+    haveI := leviPoints_nonarchimedeanGroup p l hp hl
+    ∀ σ : SmoothRep.{0, u, v} ℂ (rationalPoints M), σ.IsIrreducible → σ.IsAdmissible →
+      ∃ poly : MvPolynomial (Fin (Plancherel.rationalImageRank M)) ℂ, poly ≠ 0 ∧
+        ∀ ψ ∈ Plancherel.rationalUnramifiedPrincipalOpen M hl.isConnectedReductive poly,
+          Module.Finite ℂ (actionQuotient ((D.pieceFunctor.obj
+            (σ.twist ψ.val.toMonoidHom (Plancherel.unramifiedCharacter_isOpen_ker _ ψ))).ρ.comp
+              (rationalPoints.map a))) ∧
+          ∀ χ, IsGeneralizedEigencharacter ((D.pieceFunctor.obj
+            (σ.twist ψ.val.toMonoidHom (Plancherel.unramifiedCharacter_isOpen_ker _ ψ))).ρ.comp
+              (rationalPoints.map a)) χ →
+            χ ≠ c * ψ.val.toMonoidHom.comp (rationalPoints.map a) := by
+  have := hl.isConnectedReductive.isAffineHom
+  let := leviPointTopology l hl
+  have := leviPoints_nonarchimedeanGroup p l hp hl
+  intro σ hirr hadm
+  obtain ⟨tests, htests⟩ := exists_piece_pointSeparations hG hLevi D hz ha c σ hirr hadm
+  obtain ⟨poly, hp, h⟩ := Plancherel.exists_principalOpen_of_pointSeparations M
+    hl.isConnectedReductive tests
+  exact ⟨poly, hp, fun ψ hψ => htests ψ (h ψ hψ)⟩
+
 end GeometricLemmaIntersectionDatum
+
+/-- The ordered pair is `PQ`-regular whenever the finitely many original
+valuation-monomial separation tests hold. -/
+theorem exists_pointSeparations_isPQRegular
+    (k : Type u) [Field k] [ValuativeRel k] [TopologicalSpace k]
+    [IsNonarchimedeanLocalField k] [T2Space k]
+    (G : GroupScheme (Spec (CommRingCat.of k))) (hG : IsConnectedReductive G) :
+    haveI := hG.isAffineHom
+    letI : TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
+    ∀ [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
+      (P M N Q U : GroupScheme (Spec (CommRingCat.of k)))
+      (p : P ⟶ G) (l : M ⟶ P) (r : N ⟶ P)
+      (hp : IsParabolicSubgroup p) (hl : IsRationalLeviSubgroup l)
+      (hr : LeviSubgroup.IsGeometricUnipotentRadical r)
+      (hmul : IsIso (subgroupMultiplication l r))
+      (q : Q ⟶ G) (lQ : M ⟶ Q) (rQ : U ⟶ Q)
+      (hq : IsParabolicSubgroup q) (hlQ : IsRationalLeviSubgroup lQ)
+      (hrQ : LeviSubgroup.IsGeometricUnipotentRadical rQ)
+      (hmulQ : IsIso (subgroupMultiplication lQ rQ)),
+      l ≫ p = lQ ≫ q →
+      ∀ (A : CommGroupScheme (Spec (CommRingCat.of k))) (a : A.toGrp ⟶ M),
+        IsSplitComponent a →
+        letI := leviPointTopology l hl
+        haveI := leviPoints_nonarchimedeanGroup p l hp hl
+        ∀ (σ : SmoothRep.{0, u, v} ℂ (rationalPoints M)), σ.IsIrreducible → σ.IsAdmissible →
+          ∃ tests : List (Plancherel.UnramifiedPointSeparation M),
+            ∀ ψ, (∀ test ∈ tests, test.holds M ψ) →
+              IsPQRegular p l r hp hr hl hmul q lQ rQ hq hrQ hlQ hmulQ a
+                (σ.twist ψ.val.toMonoidHom (Plancherel.unramifiedCharacter_isOpen_ker _ ψ)) := by
+  have := hG.isAffineHom
+  let : TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
+  intro _ _ P M N Q U p l r hp hl hr hmul q lQ rQ hq hlQ hrQ hmulQ hsame A a ha
+  let := leviPointTopology l hl
+  have := leviPoints_nonarchimedeanGroup p l hp hl
+  intro σ hirr hadm
+  obtain ⟨m, c₀, z, hz, E, -⟩ := representedGeometricLemma.{u, v} k G hG P M N Q M U
+    p l r hp hl hr hmul q lQ rQ hq hlQ hrQ hmulQ
+  let z' : parabolicDoubleCosets p q → rationalPoints G := fun w => z (c₀.symm w)
+  have hz' : ∀ w, DoubleCoset.mk (pointImage p) (pointImage q) (z' w) = w :=
+    fun w => (hz _).trans (c₀.apply_symm_apply w)
+  let D' : ∀ w, Geometric.BruhatLT (pointImage p) (pointImage q) w
+      (identityParabolicDoubleCoset p q) →
+      GeometricLemmaIntersectionDatum p l r hp hr hl hmul q lQ rQ hq hrQ hlQ hmulQ (z' w) :=
+    fun w _ => E (c₀.symm w)
+  obtain ⟨n, cc, s, e⟩ := pqRegularityPieceFiltration.{u, v} k G hG P M N Q U
+    p l r hp hl hr hmul q lQ rQ hq hlQ hrQ hmulQ hsame z' hz' D'
+  obtain ⟨cσ, hcσ⟩ := exists_splitComponent_scalar ha σ hirr hadm
+  have hsep := fun i : Fin n =>
+    GeometricLemmaIntersectionDatum.exists_piece_pointSeparations hG hsame
+      (D' (cc i).val (cc i).property) (by rw [hz']; exact (cc i).property.2) ha cσ
+      σ hirr hadm
+  choose tests hTests using hsep
+  refine ⟨(List.ofFn tests).flatten, fun ψ hψ => ?_⟩
+  have hψi (i : Fin n) (test : Plancherel.UnramifiedPointSeparation M) (hi : test ∈ tests i) :
+      test.holds M ψ :=
+    hψ test (List.mem_flatten.mpr ⟨tests i, List.mem_ofFn.mpr ⟨i, rfl⟩, hi⟩)
+  set τ := σ.twist ψ.val.toMonoidHom (Plancherel.unramifiedCharacter_isOpen_ker _ ψ) with hτ
+  have hτa : ∀ t, (τ.obj.ρ.comp (rationalPoints.map a)) t =
+      ((cσ * ψ.val.toMonoidHom.comp (rationalPoints.map a)) t : ℂ) • 1 := by
+    intro t
+    change (ψ.val.toMonoidHom (rationalPoints.map a t) : ℂ) •
+      σ.representation (rationalPoints.map a t) = _
+    rw [hcσ t, smul_smul, MonoidHom.mul_apply, MonoidHom.comp_apply, Units.val_mul, mul_comm]
+  have : Module.Finite ℂ (actionQuotient (τ.obj.ρ.comp (rationalPoints.map a))) :=
+    CentralActionQuotient.finite_actionQuotient_of_scalar _ _ hτa
+  have : ∀ i, Module.Finite ℂ (actionQuotient
+      (((D' (cc i).val (cc i).property).pieceFunctor.obj τ).ρ.comp (rationalPoints.map a))) :=
+    fun i => (hTests i ψ (hψi i)).1
+  exact pqRegularity_of_disjoint_generalizedCharacters p l r hp hr hl hmul q lQ rQ hq hrQ hlQ
+    hmulQ a s (fun i => (D' (cc i).val (cc i).property).pieceFunctor) e τ
+    (fun i => Set.disjoint_left.mpr fun χ hχ hχi => (hTests i ψ (hψi i)).2 χ hχi
+      (CentralActionQuotient.eq_of_isGeneralizedEigencharacter_of_scalar _ _ hτa χ hχ))
 
 /-- For represented parabolics `P = MN` and `Q = MU` with the same Levi subgroup and an
 irreducible admissible representation `σ` of `M(F)`, the twist `σψ` is `PQ`-regular for a
@@ -191,46 +294,10 @@ theorem exists_generic_isPQRegular
   let := leviPointTopology l hl
   have := leviPoints_nonarchimedeanGroup p l hp hl
   intro σ hirr hadm
-  obtain ⟨m, c₀, z, hz, E, -⟩ := representedGeometricLemma.{u, v} k G hG P M N Q M U
-    p l r hp hl hr hmul q lQ rQ hq hlQ hrQ hmulQ
-  let z' : parabolicDoubleCosets p q → rationalPoints G := fun w => z (c₀.symm w)
-  have hz' : ∀ w, DoubleCoset.mk (pointImage p) (pointImage q) (z' w) = w :=
-    fun w => (hz _).trans (c₀.apply_symm_apply w)
-  let D' : ∀ w, Geometric.BruhatLT (pointImage p) (pointImage q) w
-      (identityParabolicDoubleCoset p q) →
-      GeometricLemmaIntersectionDatum p l r hp hr hl hmul q lQ rQ hq hrQ hlQ hmulQ (z' w) :=
-    fun w _ => E (c₀.symm w)
-  obtain ⟨n, cc, s, e⟩ := pqRegularityPieceFiltration.{u, v} k G hG P M N Q U
-    p l r hp hl hr hmul q lQ rQ hq hlQ hrQ hmulQ hsame z' hz' D'
-  obtain ⟨cσ, hcσ⟩ := exists_splitComponent_scalar ha σ hirr hadm
-  have hsep := fun i : Fin n =>
-    GeometricLemmaIntersectionDatum.exists_generic_piece_separation hG hsame
-      (D' (cc i).val (cc i).property) (by rw [hz']; exact (cc i).property.2) ha cσ
-      σ hirr hadm
-  choose Pi hP0 hPψ using hsep
-  refine ⟨∏ i, Pi i, Finset.prod_ne_zero_iff.mpr fun i _ => hP0 i, ?_⟩
-  intro ψ hψ
-  have hψi : ∀ i, ψ ∈ Plancherel.rationalUnramifiedPrincipalOpen M hl.isConnectedReductive
-      (Pi i) := by
-    intro i
-    rw [Plancherel.mem_rationalUnramifiedPrincipalOpen] at hψ ⊢
-    rw [map_prod] at hψ
-    exact Finset.prod_ne_zero_iff.mp hψ i (Finset.mem_univ i)
-  set τ := σ.twist ψ.val.toMonoidHom (Plancherel.unramifiedCharacter_isOpen_ker _ ψ) with hτ
-  have hτa : ∀ t, (τ.obj.ρ.comp (rationalPoints.map a)) t =
-      ((cσ * ψ.val.toMonoidHom.comp (rationalPoints.map a)) t : ℂ) • 1 := by
-    intro t
-    change (ψ.val.toMonoidHom (rationalPoints.map a t) : ℂ) •
-      σ.representation (rationalPoints.map a t) = _
-    rw [hcσ t, smul_smul, MonoidHom.mul_apply, MonoidHom.comp_apply, Units.val_mul, mul_comm]
-  have : Module.Finite ℂ (actionQuotient (τ.obj.ρ.comp (rationalPoints.map a))) :=
-    CentralActionQuotient.finite_actionQuotient_of_scalar _ _ hτa
-  have : ∀ i, Module.Finite ℂ (actionQuotient
-      (((D' (cc i).val (cc i).property).pieceFunctor.obj τ).ρ.comp (rationalPoints.map a))) :=
-    fun i => (hPψ i ψ (hψi i)).1
-  exact pqRegularity_of_disjoint_generalizedCharacters p l r hp hr hl hmul q lQ rQ hq hrQ hlQ
-    hmulQ a s (fun i => (D' (cc i).val (cc i).property).pieceFunctor) e τ
-    (fun i => Set.disjoint_left.mpr fun χ hχ hχi => (hPψ i ψ (hψi i)).2 χ hχi
-      (CentralActionQuotient.eq_of_isGeneralizedEigencharacter_of_scalar _ _ hτa χ hχ))
+  obtain ⟨tests, htests⟩ := exists_pointSeparations_isPQRegular k G hG P M N Q U
+    p l r hp hl hr hmul q lQ rQ hq hlQ hrQ hmulQ hsame A a ha σ hirr hadm
+  obtain ⟨poly, hp, h⟩ := Plancherel.exists_principalOpen_of_pointSeparations M
+    hl.isConnectedReductive tests
+  exact ⟨poly, hp, fun ψ hψ => htests ψ (h ψ hψ)⟩
 
 end Langlands.Aubert.General.RepresentedParabolic

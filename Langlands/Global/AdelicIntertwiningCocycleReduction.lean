@@ -560,7 +560,7 @@ private theorem realParameterRestriction_surjective
   rw [← hnat, hx, LinearEquiv.apply_symm_apply]
 
 /-- Each regularity threshold is achieved by a complex character parameter. -/
-private theorem exists_regularParameter (R : ℝ) :
+theorem exists_regularParameter (R : ℝ) :
     ∃ lam : ComplexCharacterParameter F P, r.IsRegularParameter hA hT R lam := by
   let : Module.Finite ℤ (characterLattice A) := hA.finite_characterLattice
   let : FiniteDimensional ℝ (RealTorusSpace.Vstar A) :=

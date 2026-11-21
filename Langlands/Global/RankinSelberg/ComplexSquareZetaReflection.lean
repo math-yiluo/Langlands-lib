@@ -4,6 +4,7 @@ import Langlands.Global.RankinSelberg.ComplexSquareZetaDualChange
 import Langlands.Global.RankinSelberg.ComplexSquareZetaNormalization
 import Langlands.Global.RankinSelberg.ComplexTateProductReversal
 import Langlands.Global.RankinSelberg.ComplexTateProductScaledReflection
+import Langlands.Global.RankinSelberg.ComplexTateProductStripGrowth
 
 /-! # Functional equation for the complex square zeta integral of a standard vector -/
 
@@ -20,7 +21,8 @@ open Langlands.GeneralLinear Langlands.LocalFactor.Archimedean
 open ComplexGodement (upperTriangularEntries)
 open ComplexSquareFourier
 open ComplexTateProduct (reverseTest reverseTest_apply complexTateProductReversal
-  IsEntireNormalization complexTateProductEntireFamily complexTateProductScaledReflection)
+  IsEntireNormalization complexTateProductEntireFamily complexTateProductScaledReflection
+  complexTateProductStripGrowth)
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -106,8 +108,27 @@ def ComplexSquareStandardFunctionalEquationStatement : Prop :=
       ∀ s : ℂ, Nd (1 - s) =
         (complexEpsilon (List.ofFn ds) (-a) ‖(a : ℂ)‖₊ (nnnorm_pos.mpr a.ne_zero) s : ℂ) * N s
 
-theorem complexSquareStandardFunctionalEquation :
-    ComplexSquareStandardFunctionalEquationStatement (r := r) := by
+private theorem squareConstantGrowth (c : ℂ) : HasStripExponentialGrowth (fun _ => c) :=
+  fun _ _ => ⟨‖c‖, 0, 0, norm_nonneg _, le_rfl, fun _ _ _ _ => by simp⟩
+
+/-- The same square functional equation with exponential growth on each vertical strip. -/
+def ComplexSquareStandardFunctionalEquationGrowthStatement : Prop :=
+  ∀ (μ : Measure G) [μ.IsHaarMeasure] (κ : Measure K) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
+    (a : ℂˣ) (ds : Fin Rank → ComplexCharacterData) (Φ : 𝓢(Mat, ℂ)) (f : G → ℂ),
+    f ∈ complexStandardModule Rank (List.ofFn ds) →
+    ∃ (σ : ℝ) (N Nd : ℂ → ℂ), Differentiable ℂ N ∧ Differentiable ℂ Nd ∧
+      HasStripExponentialGrowth N ∧ HasStripExponentialGrowth Nd ∧
+      (∀ s : ℂ, σ < s.re →
+        Integrable (zetaKernel Φ f s) μ ∧
+        Integrable (zetaKernel (matrixTransform a Φ) (dualVector f) s) μ ∧
+        N s = (complexLFactor (List.ofFn ds)).denominator s * ∫ g, zetaKernel Φ f s g ∂μ ∧
+        Nd s = (complexLFactor ((List.ofFn ds).map ComplexCharacterData.inv)).denominator s *
+          ∫ g, zetaKernel (matrixTransform a Φ) (dualVector f) s g ∂μ) ∧
+      ∀ s : ℂ, Nd (1 - s) =
+        (complexEpsilon (List.ofFn ds) (-a) ‖(a : ℂ)‖₊ (nnnorm_pos.mpr a.ne_zero) s : ℂ) * N s
+
+theorem complexSquareStandardFunctionalEquationGrowth :
+    ComplexSquareStandardFunctionalEquationGrowthStatement (r := r) := by
   intro μ _ κ _ _ a ds Φ f hf
   obtain ⟨H, hH⟩ := complexTateProductEntireFamily r
   obtain ⟨c, _, hN⟩ := complexSquareZetaNormalization μ κ a H hH
@@ -130,7 +151,19 @@ theorem complexSquareStandardFunctionalEquation :
   let q := (((Rank : ℂ) - 1) / 2).re
   let S : ℝ := ∑ j : Fin Rank, |(ds j).exponent.re|
   let σ := max ((Rank : ℝ) + M + Md + |q|) S
-  refine ⟨σ, N, Nd, hNent, hNdent, ?_, ?_⟩
+  have hGrowth (test : 𝓢(Z, ℂ)) (weight : Fin Rank → ℤ) (exponent : Z) :
+      HasStripExponentialGrowth (fun s => (c : ℂ) * H test weight (fun j => s + exponent j)) := by
+    have h := (squareConstantGrowth (c : ℂ)).mul
+      (complexTateProductStripGrowth r H hH test weight exponent (fun _ => 1))
+    change HasStripExponentialGrowth
+      (fun s => (c : ℂ) * H test weight (ComplexTateProduct.affineParameter exponent (fun _ => 1) s)) at h
+    have he (s : ℂ) : ComplexTateProduct.affineParameter exponent (fun _ => 1) s =
+        fun j => s + exponent j := by
+      funext j
+      change exponent j + ((1 : ℝ) : ℂ) * s = s + exponent j
+      rw [Complex.ofReal_one, one_mul, add_comm]
+    simpa only [he] using h
+  refine ⟨σ, N, Nd, hNent, hNdent, hGrowth T m _, hGrowth Td md _, ?_, ?_⟩
   · intro s hs
     have ht : ((Rank : ℝ) + M + Md + |q|) < s.re := (le_max_left _ _).trans_lt hs
     have hs0 : S < s.re := (le_max_right _ _).trans_lt hs
@@ -169,5 +202,12 @@ theorem complexSquareStandardFunctionalEquation :
     change (c : ℂ) * H Td md (ud (1 - s)) = _ * ((c : ℂ) * H T m (u s))
     rw [hT, hm, hu, complexTateProductReversal H hH, ht]
     ring
+
+
+theorem complexSquareStandardFunctionalEquation :
+    ComplexSquareStandardFunctionalEquationStatement (r := r) := by
+  intro μ _ κ _ _ a ds Φ f hf
+  obtain ⟨σ, N, Nd, hN, hNd, _, _, hZ, hEq⟩ := complexSquareStandardFunctionalEquationGrowth μ κ a ds Φ f hf
+  exact ⟨σ, N, Nd, hN, hNd, hZ, hEq⟩
 
 end Langlands.Global.RankinSelbergGlobal.ComplexSquareZeta

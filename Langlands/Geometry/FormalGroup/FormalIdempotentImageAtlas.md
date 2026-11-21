@@ -1,5 +1,5 @@
 # Formal atlas of a projector image
 
-The split decomposition of Rapoport–Zink 1996, (6.17), printed p. 309 (PDF p. 321), uses the images of actual formal projectors. This construction assembles the formal image from any supplied principal cover with coordinate retractions of one ambient projector.
+The split order in Rapoport–Zink 1996, §6.43, printed pp. 308–309 (PDF pp. 320–321), acts through the two projectors of the polarized p-divisible group. Motivated by the formal summand in (6.17), this construction starts from one actual formal projector on a finite-coordinate formal module. It assembles a given principal cover with retractions of its localization on every chart. All chart laws use the same fixed finite coordinate type.
 
 Over a test algebra on which two charts are defined, the ambient laws obtained through either chart have the same original formal coordinates. Transport both image retractions into that common ambient law using its identity-coordinate comparison. The transition from one chart to another is its source inclusion followed by its target projection. The retraction identities give the identity and cocycle equations. Coefficient restriction preserves each factor of the transition by the uniqueness of the localization map. These data give the existing formal atlas of actual coordinate laws and natural transitions.

@@ -15,11 +15,11 @@ open Langlands.Global ArchimedeanGL DerivativeSmoothFunctions ContinuousRational
 
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ} (S : OperatorRealization F n)
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup S.Space := Submodule.addCommGroup _
+local instance fixedFamilyGroup1 : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance fixedFamilyGroup2 : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance fixedFamilyGroup3 : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance fixedFamilyGroup4 : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance fixedFamilyGroup5 : AddCommGroup S.Space := Submodule.addCommGroup _
 
 variable (J : Ideal (EnvelopingCenter F n)) (L : Subgroup (FiniteAdelicGL F n))
 variable {m : ℕ} (σ : Representation ℂ (standardInfiniteCompact F n) (Fin m → ℂ))

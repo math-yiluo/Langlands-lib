@@ -119,10 +119,14 @@ open Langlands.Global Langlands.GeneralLinear ContinuousRationalFunctions
 
 variable (F : Type u) [Field F] [NumberField F] {a b n : ℕ} (h : a + b = n)
 
-local instance (r : ℕ) : AddCommGroup (RationalInvariantFunctions F r) := Submodule.addCommGroup _
-local instance (r : ℕ) : AddCommGroup (ContinuousRationalFunctions F r) := Submodule.addCommGroup _
-local instance (r : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F r) := Submodule.addCommGroup _
-local instance (r : ℕ) : AddCommGroup (AutomorphicForms F r) := Submodule.addCommGroup _
+local instance twoBlockConstantTermActionsRationalGroup (r : ℕ) :
+    AddCommGroup (RationalInvariantFunctions F r) := Submodule.addCommGroup _
+local instance twoBlockConstantTermActionsContinuousGroup (r : ℕ) :
+    AddCommGroup (ContinuousRationalFunctions F r) := Submodule.addCommGroup _
+local instance twoBlockConstantTermActionsFiniteSmoothGroup (r : ℕ) :
+    AddCommGroup (FiniteSmoothRationalFunctions F r) := Submodule.addCommGroup _
+local instance twoBlockConstantTermActionsFormGroup (r : ℕ) :
+    AddCommGroup (AutomorphicForms F r) := Submodule.addCommGroup _
 
 /-- The pullback of the conjugated ambient level to the finite two-block Levi. -/
 def twoBlockConstantTermLevel (L : OpenSubgroup (FiniteAdelicGL F n)) (d : FiniteAdelicGL F n) :

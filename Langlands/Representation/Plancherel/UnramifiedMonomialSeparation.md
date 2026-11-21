@@ -39,3 +39,9 @@ as the corresponding Laurent monomials in the coordinates of `χ`.
 
 The provenance is internal. The argument is elementary polynomial algebra in the
 published coordinates. It makes no literature claim.
+`UnramifiedPointSeparation` also records the two original rational points,
+their distinct valuation images, and the complex scalar in the excluded
+equality. A finite list of those tests holds on one nonzero polynomial
+principal open, obtained by multiplying the polynomials of the individual
+tests. Retaining the test data also permits using their Laurent binomials
+directly in the pole argument of Waldspurger IV.1(13).

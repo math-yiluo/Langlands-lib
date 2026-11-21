@@ -1,0 +1,7 @@
+# Joint convergence of the equal-rank double integral
+
+This internal result proves absolute convergence of the double kernel (8.1) in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, pp. 55–56, for a sufficiently large adjoining real exponent and a right half-plane in the spectral variable. The two thresholds are independent of each other and of the square Schwartz test. The smaller quotient measure and the larger Haar measure retain their supplied normalizations.
+
+The opposite Whittaker characters cancel on the padded unipotent subgroup, so the kernel can be evaluated on any representative of the smaller quotient. Its continuous group formula descends to a continuous product kernel. The shifted toral estimate applies in the full product Iwasawa integration formula. For fixed compact and matrix variables, translation of the smaller logarithms removes the shift in the exponential envelope. Tonelli therefore bounds the absolute quotient integral by a fixed multiple of the matrix majorant. The matrix norm power is absorbed by the Schwartz test, and the residual determinant power is integrable once the adjoining real exponent passes its threshold.
+
+The same bounds control the integral of the absolute kernel by a continuous function of the test which vanishes at zero. The norms of the determinant factors depend only on the real parts of the two parameters, so one bound works for every choice of their imaginary parts.

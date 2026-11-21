@@ -1,0 +1,5 @@
+# Arithmetic Frobenius of a full-residue division subfield
+
+A full-residue Galois subfield of reduced degree with faithful reduction has the same Galois group as the division residue field. The group orders agree by the residue degree theorem. This gives a canonical lift of the arithmetic cardinality power to the original embedded field and proves its order is exactly the reduced degree. Reduction of each integral element gives the strict valuation estimate for the difference of its Frobenius image and its cardinality power.
+
+The construction applies to the Library's original subfield obtained from a monic lift of a separable residue generator. The lifted polynomial splits in that field and the residue action is faithful by uniqueness of its simple lifted roots. Skolem–Noether gives a division unit implementing the arithmetic Frobenius. This supplies the conjugation relation used in Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 B, printed p. 110. The power of the implementing unit remains to be normalized to the prescribed base uniformizer.

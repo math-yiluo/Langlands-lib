@@ -1,0 +1,3 @@
+# Compatible quotient measures in a two-factor dependent product
+
+The diagonal blocks of a standard two-block Levi are a dependent product over `Fin 2`. Evaluation at the two indices gives a continuous group isomorphism to the binary product, which also identifies the subgroup and quotient coordinates. In these coordinates the two-factor compatible measures transport to the dependent product with the same normalization. The ambient measure agrees with the Lean `Measure.pi` by `measurePreserving_piFinTwo`. The quotient measure becomes the product of the two block quotient measures under evaluation on the quotient coordinates. This is a coordinate specialization of the product Weil formula.

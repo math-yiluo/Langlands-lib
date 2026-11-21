@@ -5,3 +5,12 @@
 The Euler integral bounds the norm of the complex Gamma function by the real Gamma value at its real part, uniformly on compact intervals of positive real parts. At absolute imaginary part at least one, the Gamma recurrence bounds the norm at an argument by its norm after any positive integer shift. Euler's reflection identity expresses the reciprocal Gamma function using the reflected argument and a sine, whose norm is bounded by its exponential formula. Together these give the strip growth bound for the reciprocal Gamma function.
 
 Translations, positive real dilations and finite products preserve the growth bound. The powers of \(\pi\) and \(2\pi\) in the archimedean factors have norm bounded in terms of the real part alone. Applying these facts to the Library's real and complex Gamma blocks proves the bound for both pair L-factor denominators. The normalization and shift and product conventions are those of Jacquet (2009), §16, pp. 164–166 (registered author version pp. 109–111, `jacquet-2009-archimedean-rankin-selberg`). The exponential estimate is a derived step using the Mathlib proofs of Euler's integral, recurrence, and reflection formula.
+
+`norm_inv_Gamma_le_exp_of_one_le` records that the exponential rate in
+this estimate is `π` for every real strip. For `gammaComplex`, the
+additional power of `2π` has norm bounded on a real strip. On its
+bounded portion with absolute imaginary part at most one, continuity
+of the entire denominator gives a uniform bound. Together these give
+`norm_gammaComplex_denominator_le_exp` with rate `π` on the full strip.
+
+Exponential strip growth is preserved by addition, multiplication by a complex constant and finite sums. Constant functions satisfy the bound.

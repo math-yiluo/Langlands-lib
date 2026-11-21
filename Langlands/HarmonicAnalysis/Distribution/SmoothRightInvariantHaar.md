@@ -1,0 +1,5 @@
+# Right invariant distributions in smooth global group coordinates
+
+`SmoothRightInvariantHaarStatement` proves that a continuous complex-linear functional on compactly supported smooth tests, invariant under right translations, is a scalar multiple of integration. The coordinate compatibility assumptions give smooth group multiplication and inversion on a real finite-dimensional normed space. The measure is Haar and invariant on both sides.
+
+Fix a smooth bump with positive integral. For a test \(f\) and the bump \(g\), average the two joint functions \(f(x)g(yx^{-1})\) and \(f(xy)g(x^{-1})\) in \(y\). Their parameter support lies in the product of the supports of \(g\) and \(f\). The compact smooth test integration theorem allows the functional to pass through both averages. For each parameter the two slices are right translates in the test variable, so the functional takes the same value on them. Right and left Haar invariance evaluate the averages as \((\int g)f\) and \((\int f)(g\circ\mathrm{inv})\). Division by the positive integral of the bump gives the claimed coefficient.

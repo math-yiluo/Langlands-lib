@@ -1,6 +1,6 @@
 # Formal idempotent images on principal opens
 
-The two summands in the split polarized object of Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), §6.43 and (6.17), printed pp. 308–309 (PDF pp. 320–321), can be treated in local finite coordinates. This module constructs those coordinates for an actual formal idempotent on an affine coefficient ring.
+Rapoport–Zink, *Period Spaces for p-divisible Groups* (1996), §6.43, printed pp. 308–309 (PDF pp. 320–321), split the polarized \(p\)-divisible group into a special formal module and its Cartier dual. Equation (6.17) states the resulting moduli-space isomorphism. The construction here starts from an actual idempotent on a finite-coordinate formal module, for example on an identity formal completion that has such coordinates. A Cartier dual with an étale part also carries data beyond that completion.
 
 The tangent image is the range of the actual tangent projector. The range inclusion and the range restriction of the projector exhibit it as a direct summand of the finite free coordinate module, so it is finite projective. Coefficient extension of the formal tangent is matrix coefficient extension, which is the tensor extension under the finite coordinate basis comparison. Thus a basis of the scalar extension of the tangent image gives the two linear maps needed to construct the image law.
 

@@ -1,0 +1,7 @@
+# Compact and Lie equivariance of the canonical real Jacquet map
+
+`RealGodementCanonicalEquivarianceStatement` makes the canonical Jacquet map a Whittaker intertwiner on the actual real character standard module at every inducing exponent vector. The previously established regularity supplies smoothness, left Whittaker covariance and polynomial growth for each coefficient.
+
+Changing the exponent vector preserves the compact restriction, and this transfer commutes with right translation by orthogonal elements. Thus both sides of the compact equivariance identity are pointwise holomorphic in the exponents. The convergent integral commutes with right translation, so the identity theorem gives compact equivariance everywhere.
+
+The right derivative of a fixed profile has affine dependence on the exponent vector in the compact picture. Its constant term is the derivative at exponent zero. The coefficient of each exponent is obtained by subtracting that constant term from the derivative at the corresponding coordinate vector. Each of those sections has a fixed K-finite compact profile. Linearity and fixed-profile continuation therefore give holomorphy of the Jacquet map applied to the varying derivative section. Holomorphy of the right derivative of the continued coefficient was proved in the spectral induction. Both expressions agree on the strict chamber because the convergent coefficient is the coefficient of a compact-derivative-bounded form. The identity theorem gives Lie equivariance at all exponents.

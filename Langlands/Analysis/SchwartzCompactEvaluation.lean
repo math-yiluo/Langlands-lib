@@ -32,7 +32,8 @@ def supportedSchwartz (S : Set E) : Submodule ℂ 𝓢(E, ℂ) where
     change c • _ = (0 : ℂ)
     rw [hΦ x hx, smul_zero]
 
-private def derivativeCoordinate (S : Set E) (n : ℕ) :
+/-- One spatial derivative of a supported Schwartz function, restricted to its support set. -/
+def derivativeCoordinate (S : Set E) (n : ℕ) :
     supportedSchwartz S →ₗ[ℂ] C(S, E [×n]→L[ℝ] ℂ) where
   toFun Φ := ⟨fun x => iteratedFDeriv ℝ n Φ.val x.val,
     ((Φ.val.smooth n).continuous_iteratedFDeriv le_rfl).comp continuous_subtype_val⟩
@@ -100,6 +101,26 @@ private theorem seminorm_le_compactCoordinates {S : Set E} (hS : IsCompact S)
     simp only [Pi.zero_apply, norm_zero, mul_zero]
     positivity
 
+/-- A bounded evaluation on compactly supported Schwartz tests factors through a
+finite family of continuous spatial derivative coordinates. -/
+theorem exists_compactJet_factor {S : Set E} (hS : IsCompact S) [CompactSpace S]
+    (L : supportedSchwartz S →ₗ[ℂ] ℂ) (q : Seminorm ℝ 𝓢(E, ℂ)) (hq : Continuous q)
+    (hB : ∀ f : supportedSchwartz S, ‖L f‖ ≤ q f.val) :
+    ∃ (I : Finset (ℕ × ℕ)) (T : ((i : I) → C(S, E [×i.val.2]→L[ℝ] ℂ)) →L[ℂ] ℂ),
+      ∀ f : supportedSchwartz S, T (fun i => derivativeCoordinate S i.val.2 f) = L f := by
+  obtain ⟨I, A, _, hA⟩ := Seminorm.bound_of_continuous (schwartz_withSeminorms ℝ E ℂ) q hq
+  let Y := (i : I) → C(S, E [×i.val.2]→L[ℝ] ℂ)
+  let J : supportedSchwartz S →ₗ[ℂ] Y := LinearMap.pi fun i => derivativeCoordinate S i.val.2
+  obtain ⟨C, _, hBound⟩ := seminorm_le_compactCoordinates hS I
+  have hJ (f : supportedSchwartz S) : ‖L f‖ ≤ (A : ℝ) * C * ‖J f‖ := by
+    calc
+      _ ≤ q f.val := hB f
+      _ ≤ (A : ℝ) * I.sup (schwartzSeminormFamily ℝ E ℂ) f.val := hA _
+      _ ≤ (A : ℝ) * (C * ‖J f‖) := mul_le_mul_of_nonneg_left (hBound f) A.coe_nonneg
+      _ = _ := (mul_assoc _ _ _).symm
+  obtain ⟨T, hT⟩ := exists_continuous_factor (Z := Y) J L (C := (A : ℝ) * C) hJ
+  exact ⟨I, T, hT⟩
+
 private theorem fderiv_iteratedFDeriv_slice {F : P × E → ℂ} (hF : ContDiff ℝ ∞ F)
     (n : ℕ) (p : P) (a : P) (x : E) (v : Fin n → E) :
     fderiv ℝ (fun q => iteratedFDeriv ℝ n (fun y => F (q, y)) x v) p a =
@@ -151,17 +172,9 @@ def SchwartzCompactEvaluationStatement : Prop :=
 theorem schwartzCompactEvaluation : SchwartzCompactEvaluationStatement.{u, v} := by
   intro P E _ _ _ _ S hS L q hq hB U hU Φ F hΦ hF
   let : CompactSpace S := isCompact_iff_compactSpace.mp hS
-  obtain ⟨I, A, _, hA⟩ := Seminorm.bound_of_continuous (schwartz_withSeminorms ℝ E ℂ) q hq
+  obtain ⟨I, T, hT⟩ := exists_compactJet_factor hS L q hq hB
   let Y := (i : I) → C(S, E [×i.val.2]→L[ℝ] ℂ)
   let J : supportedSchwartz S →ₗ[ℂ] Y := LinearMap.pi fun i => derivativeCoordinate S i.val.2
-  obtain ⟨C, hC, hBound⟩ := seminorm_le_compactCoordinates hS I
-  have hJ (f : supportedSchwartz S) : ‖L f‖ ≤ (A : ℝ) * C * ‖J f‖ := by
-    calc
-      _ ≤ q f.val := hB f
-      _ ≤ (A : ℝ) * I.sup (schwartzSeminormFamily ℝ E ℂ) f.val := hA _
-      _ ≤ (A : ℝ) * (C * ‖J f‖) := mul_le_mul_of_nonneg_left (hBound f) A.coe_nonneg
-      _ = _ := (mul_assoc _ _ _).symm
-  obtain ⟨T, hT⟩ := exists_continuous_factor (Z := Y) J L (C := (A : ℝ) * C) hJ
   have hDiff : ContDiffOn ℝ ∞ (fun p => J (Φ p)) U := by
     apply contDiffOn_pi.2
     intro i

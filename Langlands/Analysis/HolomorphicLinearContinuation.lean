@@ -18,7 +18,8 @@ variable {n : ℕ}
 local notation "V" => Fin n → ℂ
 local notation "Mat" => Matrix (Fin n) (Fin n) ℂ
 
-private theorem eq_of_differentiable_eqOn_open {f g : E → ℂ} (hf : Differentiable ℂ f)
+/-- Entire scalar functions on a complex normed space agree if they agree on a nonempty open set. -/
+theorem eq_of_differentiable_eqOn_open {f g : E → ℂ} (hf : Differentiable ℂ f)
     (hg : Differentiable ℂ g) {S : Set E} (hS : IsOpen S) (hne : S.Nonempty) (hfg : EqOn f g S) : f = g := by
   obtain ⟨q, hq⟩ := hne
   funext p
@@ -35,7 +36,8 @@ private theorem eq_of_differentiable_eqOn_open {f g : E → ℂ} (hf : Different
     (fun z _ => (hf.comp hL).analyticAt z) (fun z _ => (hg.comp hL).analyticAt z) heq
   simpa only [Function.comp_apply, hLone] using congrFun h 1
 
-private theorem differentiable_det {A : E → Mat}
+/-- The determinant of a matrix with holomorphic entries is holomorphic. -/
+theorem differentiable_det {A : E → Mat}
     (hA : ∀ i j, Differentiable ℂ (fun q => A q i j)) : Differentiable ℂ (fun q => (A q).det) := by
   simp only [Matrix.det_apply']
   apply Differentiable.fun_sum
@@ -48,7 +50,9 @@ private theorem differentiable_det {A : E → Mat}
       exact (hA (e i) i).mul ih
   exact (hprod Finset.univ).const_mul _
 
-private theorem differentiable_cramer {A : E → Mat} {y : E → V}
+/-- The Cramer numerators are holomorphic when the matrix and right-hand side have
+holomorphic entries. -/
+theorem differentiable_cramer {A : E → Mat} {y : E → V}
     (hA : ∀ i j, Differentiable ℂ (fun q => A q i j)) (hy : ∀ i, Differentiable ℂ (fun q => y q i))
     (i : Fin n) : Differentiable ℂ (fun q => (A q).cramer (y q) i) := by
   simp only [Matrix.cramer_apply]

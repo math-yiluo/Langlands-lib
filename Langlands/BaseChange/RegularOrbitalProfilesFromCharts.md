@@ -1,0 +1,9 @@
+# Regular orbital profiles from product charts
+
+Let the ambient group be locally compact, Hausdorff, and second countable, with its Borel measurable space, a continuous twist, and a left-invariant measure. Let the regular locus be open and invariant under twisted conjugation, with a continuous invariant parameter map. Suppose the parameter space is Hausdorff with a compact open neighborhood basis. Around every parameter in the image, suppose there is an open product chart whose fibers are the full orbits of a section with fixed centralizer. Given compatible measures normalized by the largest compact open subgroups, the charts give the integrability, local constancy, and fiber invariance required by `RegularOrbitalProfileData`.
+
+The proof uses a single quotient measure on each chart. The section centralizers are the same subgroup, so their normalized Haar measures agree. Uniqueness for the Weil formula then identifies each section's quotient measure with the fixed one. A test function supported on the regular locus restricts to a Schwartz–Bruhat function there. Integration in the chart gives integrability and local constancy for the fixed measure.
+
+For a conjugate of a section value, the centralizer equivalence preserves Haar normalization, and the corresponding left translation of the quotient preserves compatibility. Quotient uniqueness identifies the transported measure with the chosen measure at the conjugate. The change of variables for the orbital integral transfers the integrability and value from the section to every point of the fiber. The parameter map is open because each chart identifies its restriction with the projection onto an open set of parameters.
+
+This internal result implements the analytic consequences of regular slices used in Henniart–Lemaire, *Changement de base et induction automorphe pour GLₙ en caractéristique non nulle*, Mém. SMF 124 (2011), I.2.7–I.2.8, printed pp. 20–21, PDF pp. 28–29.

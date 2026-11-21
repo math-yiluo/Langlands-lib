@@ -1,0 +1,5 @@
+# From complex unequal-rank Mellin pair identities to the local equation
+
+The exact radial pair identities for the two unequal-rank Whittaker kernels imply the published local functional equation. The retained premise is the pair identity itself for all vectors of the finite Whittaker models. Its integrands use the positive normalized determinant on the smaller unipotent quotient and the exact complex epsilon, central sign, and self-dual rectangular measure of the target.
+
+The proof takes the Mellin transform of the theta identity obtained by scaling the radial weights. Absolute convergence of the original kernels provides the real-power moments on a half-plane. The theta identity supplies an entire Mellin transform with an expression on each of the two reflected half-planes. Dividing by the nonvanishing Gaussian and epsilon factors gives the entire normalized continuations and their exact reflection. The published analytic reduction then gives the target proposition. The method follows Jacquet's *Archimedean Rankin–Selberg integrals*, Proposition 4.1.

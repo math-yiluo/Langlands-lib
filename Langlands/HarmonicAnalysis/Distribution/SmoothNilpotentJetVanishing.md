@@ -1,0 +1,5 @@
+# Vanishing from nilpotence of the derivative on a product zero section
+
+A continuous complex-linear distribution supported on the zero section in a product vanishes if it annihilates the identity plus a first-order test operator of the stated type. The vector field and the zeroth-order coefficient vanish on the zero section, and the normal derivative of the field has a uniformly zero power.
+
+The full field derivative kills the tangent space of the zero section, so one additional power lifts the normal nilpotence to the full derivative. In the first degree where a test can have a nonzero jet, the operator acts by the sum of the slot insertions of that derivative, multiplied by the coefficient of the differential term. The zeroth-order term contributes zero at this degree. Iteration successively kills every jet through the finite order of the distribution on the fixed compact support. The flat-jet theorem applies to the real and imaginary parts of the iterated test. The original distribution value agrees with that of the iterated test up to sign by the assumed equation, and is therefore zero.

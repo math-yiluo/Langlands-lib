@@ -1,0 +1,7 @@
+# Spanning compact-finite profiles by continuous pairings
+
+Let \(f\) be a continuous function on a compact group with finite-dimensional right translate span. Suppose \(S\) is a family of profiles with finite-dimensional right translate spans contained in \(\operatorname{span}_{\mathbb C} S\). The continuous compact weights are assumed integrable against each member of \(S\). If every continuous weight that pairs to zero with all of \(S\) also pairs to zero with \(f\), then `compactPairingSpanning` puts \(f\) in \(\operatorname{span}_{\mathbb C} S\).
+
+The proof uses the compact reproducing weight for \(f\). Its left translates span a finite-dimensional space \(U\) of continuous weights. Pairing with these weights sends each profile to a linear form on \(U\). Dual annihilator duality expresses the form for \(f\) in the span of the forms for \(S\). Evaluation at the left translates of the reproducing weight recovers \(f\). On each profile of \(S\), the same evaluations give a weighted average of its right translates by the left Haar change of variables. Pointwise integration in the finite-dimensional right translate span keeps that average in \(\operatorname{span}_{\mathbb C} S\).
+
+This internal result converts the Gaussian moment argument for Godement tests into an exact spanning relation for the adjacent-rank proof. [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 8.3](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).

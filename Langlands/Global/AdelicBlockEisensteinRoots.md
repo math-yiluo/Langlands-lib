@@ -1,0 +1,5 @@
+# Root and parameter data of the actual scheme block parabolic
+
+The block weights give a cocharacter for which the matrices defining the parabolic, Levi and radical represent the three corresponding dynamic subgroups. The general geometric radical theorem gives the actual unipotent radical assertion. Reductivity of the dynamic centralizer and its product with the radical give the rational Levi. Choose a split component of this Levi and a compatible root presentation of the given inclusions. The presentation supplies both split tori and its finite Weyl group. Its factor to the torus is a monomorphism by cancellation from the composite of the closed inclusions. The finite-dimensional complex character space then admits coordinates from its finite basis.
+
+This block construction supplies the parabolic and character data in the setup of Langlands, *On the notion of an automorphic representation* (1979), proof of Proposition 2, printed pp. 204–206, Corvallis Part I PDF pp. 199–201, and of Bernstein–Lapid, *On the meromorphic continuation of Eisenstein series* (2024), §2.2 and §3.1, printed pp. 191–192, article PDF pp. 5–6.

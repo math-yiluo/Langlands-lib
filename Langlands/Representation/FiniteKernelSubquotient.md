@@ -16,6 +16,13 @@ surjective image in the simple quotient. The equation at the cyclic
 generator in the filtration theorem and linearity imply that the
 surjection kills the selected projection's kernel on this source.
 
+`exists_compatibleCyclicProjectionKernel` retains this selected kernel and
+the generator of the new cyclic subsource. For a cyclic initial source it
+is enough that only finitely many of the kernels miss its generator,
+because each stable kernel containing the generator contains the entire
+source. On the selected cyclic subsource the original surjection is
+still surjective and kills the chosen kernel.
+
 On restricting the group action, `descendIntertwinerToRange` uses the
 quotient by a kernel and its linear equivalence with the actual range.
 The descended map is equivariant by applying the original maps to a

@@ -18,14 +18,14 @@ section Average
 variable {V W : Type*} [AddCommGroup V] [Module k V] [AddCommGroup W] [Module k W]
 
 /-- The average that extracts the eigenvalue `c` from a cyclic action. -/
-private def weightedAverage (m : ℕ) (c : k) (x : ℕ → V) : V :=
+def weightedAverage (m : ℕ) (c : k) (x : ℕ → V) : V :=
   (m : k)⁻¹ • ∑ j ∈ Finset.range m, c⁻¹ ^ j • x j
 
-private theorem map_weightedAverage (L : V →ₗ[k] W) (m : ℕ) (c : k) (x : ℕ → V) :
+theorem map_weightedAverage (L : V →ₗ[k] W) (m : ℕ) (c : k) (x : ℕ → V) :
     L (weightedAverage m c x) = weightedAverage m c (L ∘ x) := by
   simp [weightedAverage]
 
-private theorem weightedAverage_shift {m : ℕ} {c : k} (hm : m ≠ 0) (hc : c ^ m = 1)
+theorem weightedAverage_shift {m : ℕ} {c : k} (hm : m ≠ 0) (hc : c ^ m = 1)
     (x : ℕ → V) (hx : x m = x 0) :
     weightedAverage m c (fun j => x (j + 1)) = c • weightedAverage m c x := by
   have hc₀ : c ≠ 0 := fun h => by simp [h, hm] at hc
@@ -44,7 +44,7 @@ private theorem weightedAverage_shift {m : ℕ} {c : k} (hm : m ≠ 0) (hc : c ^
   rw [hsum]
   exact smul_comm (m : k)⁻¹ c _
 
-private theorem weightedAverage_smul_pows {m : ℕ} {c : k} (hm : (m : k) ≠ 0)
+theorem weightedAverage_smul_pows {m : ℕ} {c : k} (hm : (m : k) ≠ 0)
     (hc : c ≠ 0) (x : V) :
     weightedAverage m c (fun j => c ^ j • x) = x := by
   simp only [weightedAverage, smul_smul, ← mul_pow, inv_mul_cancel₀ hc, one_pow, one_smul,

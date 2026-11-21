@@ -24,3 +24,9 @@ polynomial equations of the same weight. `exists_equivariant_equations`
 compares the resulting quotient dimension with the original kernel quotient
 dimension at the chosen width and at every smaller characteristic-power
 width greater than one.
+
+The cyclic weighted average and its linear-map, shift and eigenvector laws
+are available as `weightedAverage`, `map_weightedAverage`,
+`weightedAverage_shift` and `weightedAverage_smul_pows`. The formal cyclic
+coordinate construction uses these same finite sums on the complete
+coordinate series.

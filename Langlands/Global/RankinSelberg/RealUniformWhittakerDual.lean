@@ -148,7 +148,8 @@ private theorem positionCharacter_dual {n : ℕ} {cs : List RealCharacterData} (
   rw [RealCharacterReverseKernel.realPositionCharacter_reverse hDs _ (by rw [hd]; exact i.isLt), hd, Fin.val_rev]
   rw [show n - 1 - i.val = n - (i.val + 1) by omega]
 
-private theorem standardKFinite_map_character (n : ℕ) (cs : List RealCharacterData) :
+/-- For a character list the standard module is the full position principal series on K-finite vectors. -/
+theorem standardKFinite_map_character (n : ℕ) (cs : List RealCharacterData) :
     realStandardKFinite n (cs.map RealBlock.character) =
       kFiniteFunctions (principalSeries ℝ n (realPositionCharacter (cs.map RealBlock.character)))
         (unitaryCompact ℝ n) := by

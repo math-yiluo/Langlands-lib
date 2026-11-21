@@ -1,0 +1,5 @@
+# Holomorphy of the real column with a varying lower coefficient
+
+On an open set of a finite-dimensional complex parameter space, let a lower Whittaker family vary holomorphically at each group element. Assume its right derivatives are regular and have one polynomial growth exponent locally, with bounds uniform in the parameters on each chosen neighborhood. If the leading exponent also varies holomorphically, the resulting real Godement column coefficient is holomorphic at every fixed upper group element. This holds for every Schwartz test.
+
+The Lean proof uses the family simple-root gauge and first-column estimates to choose a common integrable bound on a small parameter ball. The Mellin exponent stays in a bounded strip there. The integrand is pointwise holomorphic by the holomorphy of the lower value and exponential weight. On a smaller ball the Cauchy estimate bounds the parameter derivative by a constant multiple of the same integrable function. Differentiation under the integral gives holomorphy of the Mellin integral. The outer determinant weight is holomorphic by the exponential formula for shifting its exponent.

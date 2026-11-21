@@ -1,0 +1,7 @@
+# The leading symbols of the lifted operators
+
+This internal step in the proof of BK93 (2.4.1)(iii) implements the filtered part of the cyclic construction inspired by §2.5. It compares, on the same splitting basis, the endomorphisms from the two monic root algebras with the original commuting shifting units `z` and `τ`.
+
+For the degree-zero comparison, both operators act identically on vectors whose residual power has a successor in the basis. On the last residual power, the lifted operator satisfies the lifted monic polynomial exactly. Expanding that polynomial and comparing all its short powers on each generator identifies the difference with the original polynomial evaluation, followed by the short shift power and a minus sign. This difference has one extra filtration degree by the hypothesis on the evaluation. The splitting-basis test then proves equality of symbols in degree zero.
+
+For the shift comparison, both operators again act identically when the shift exponent has a successor. On the last shift power, each carry is the uniformizer times the same integer power of its respective residual operator. The degree-zero symbol comparison persists through integer powers, and multiplying by the uniformizer puts the carry comparison in the period degree. The exact weights of the splitting basis convert it into a comparison in shift degree `g`. Finally, a unit congruent to a shifting unit in its leading degree has the same shift.

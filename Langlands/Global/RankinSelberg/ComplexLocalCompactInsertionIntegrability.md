@@ -1,0 +1,5 @@
+# Absolute integrability for the compact insertion
+
+This internal estimate supplies the fixed-quotient-variable integrability needed for the compact insertion in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2–8.3, printed pp. 56–59. The matrix test is Schwartz and carries the determinant character and norm power. The coefficient belongs to the complex Whittaker model. A continuous compact weight and a continuous unitary reparametrization allow both the original and inverse-transpose averages.
+
+The compact shear transports the kernel to one with the unshifted matrix test. For a fixed left multiplier `x`, moderate growth and submultiplicativity of `max 1 H` bound the coefficient at `x i(k) g` by a product of powers of the heights of `x i(k)` and `g`. The compact factor, including the continuous weight, is integrable for the finite compact measure. The matrix factor is integrable by the Schwartz matrix majorant on a right half-plane depending on the growth order and the adjoining character. The threshold works for every `x`.

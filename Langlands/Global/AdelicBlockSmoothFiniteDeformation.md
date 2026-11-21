@@ -1,0 +1,5 @@
+# Finite deformation on smooth block-induced sections
+
+Smooth compact-finite sections include into the full compact-finite section space. The group-scheme diffeomorphism identifies the smooth-slice condition with the existing matrix condition at each fixed finite argument. The deformed finite action shifts that argument and multiplies its slice by a constant, so it restricts to the smooth carrier. The injective inclusion also transfers finite holomorphic expansions. At zero the action is the original normalized finite action, and its restriction to the standard integral compact has the original action for every parameter. Scalar evaluation also intertwines the original infinite compact action with right translation.
+
+This derived construction supplies the finite and compact actions for the fixed-carrier family in Langlands, *On the notion of an automorphic representation* (1979), proof of Proposition 2, printed pp. 205–206, Corvallis Part I PDF pp. 200–201. It uses the matrix smooth-section space and the original compact action from `AdelicBlockScalarLieAction`.

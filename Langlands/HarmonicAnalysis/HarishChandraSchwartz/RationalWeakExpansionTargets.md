@@ -1,6 +1,7 @@
 # Targets: the weighted weak-constant-term expansion (Waldspurger V.1.1, V.2.3)
 
 Author: Worker 131, task `b2eba110-082e-4b07-9076-f64b90cd0dc3` (Task 7454, revision 1).
+Regularity binder correction: Worker 986, task `f27f47c6-b5d0-4d3d-888a-4b73f31c1d94` (Task 7826).
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionTargets`,
 namespace `Langlands.HarishChandraSchwartz.WeakExpansion`.
@@ -9,9 +10,9 @@ namespace `Langlands.HarishChandraSchwartz.WeakExpansion`.
 
 This module states the four targets of Task 7454 as named Prop-valued definitions:
 
-- `WeightedCRegularityStatement` (Corollary V.2.3);
+- `WeightedCRegularityBorelStatement` (Corollary V.2.3; replaces `WeightedCRegularityStatement`);
 - `WeightedWeakExpansionStatement` (Proposition V.1.1, in the weighted form used on p.304);
-- `WeightedCDecompositionStatement` (the finite decomposition of p.304 into smooth multiples of
+- `WeightedCDecompositionBorelStatement` (replaces `WeightedCDecompositionStatement`; the finite decomposition of p.304 into smooth multiples of
   specializations of fixed polynomial (algebraic) lower families);
 - `WeightedPacketIdentityStatement` (the packet identity of pp.303–304).
 
@@ -41,8 +42,8 @@ wave packets for the dynamic parabolic of a cocharacter), `DynamicOrbitPlanchere
   the decomposition of p.304 keep this base point. In `WeightedWeakExpansionStatement` and
   `WeightedPacketIdentityStatement` it is the argument `hsq`, which their bodies use (the orbit
   `O`, the weight `µ^G`, the weak constant term and the lower orbit data depend on it). The
-  bodies of `WeightedCRegularityStatement` and `WeightedCDecompositionStatement` do not depend on
-  it, so there it is the explicit first premise
+  bodies of `WeightedCRegularityBorelStatement` and `WeightedCDecompositionBorelStatement` do not depend
+  on it, so there it is the explicit first premise
   `IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →`, so that it appears
   in their elaborated signatures.
 - **`K` is the special maximal compact subgroup of the source** (`IsSpecialVertexCompact ν hi K`,
@@ -132,14 +133,32 @@ scheme of `I` (`lowerAmbient_isConnectedReductive`).
 
 ## The targets
 
-1. `WeightedCRegularityStatement`: if `π` is square integrable modulo `C_M`, `I'` is proper,
-   `IsSpecialVertexCompact ν hi K` and `SourceCompactNormalization` hold, then for every `s`,
-   `Nonempty (WeightedCExtension … s)`.
+1. `WeightedCRegularityBorelStatement`: on the quotient `M_I(F)/C_M` with its Borel measurable
+   structure and original Haar measure `μ`, if `π` is square integrable modulo `C_M`, `I'` is
+   proper, `IsSpecialVertexCompact ν hi K` and `SourceCompactNormalization` hold, then for every
+   `s`, `Nonempty (WeightedCExtension … s)`.
    Source, Corollary V.2.3 (printed p.294): "l'application `ω ↦ µ^G(ω)µ^{M'}(sω)^{-1}c_{P'|P}(s,
    ω)` est rationnelle et régulière sur `O`." The definition of "rationnel et régulier sur `O`" is
    that of V.1, printed p.288: "on peut prolonger `A` en un opérateur rationnel sur un ouvert de
    `O_C` contenant `O`". Here the extension agrees with `c̃` on the interior of its convergence
    domain `D₀`, so it is the continuation of the actual integrals.
+
+   **Binder correction (Task 7826, operator ruling 8).** The original definition declared
+   `[BorelSpace (𝐌 ⧸ CM)]` as a section variable. Its body uses `μ` in the square-integrability
+   premise, but does not use the Borel instance, so Lean omitted the latter from the elaborated
+   statement. `Measure.IsHaarMeasure` for a given measurable structure does not imply that the
+   structure is Borel. Waldspurger III.1 (printed p.263) uses Haar measure on the topological
+   quotient by the split center, and transport to the conjugate Levi quotient in
+   `RationalWeakExpansionLowerOrbit` uses its Borel structure. The corrected definition binds
+   that instance explicitly. It changes no other premises, constructions, or conclusions.
+   `WeightedCRegularityStatement` is retained unproved for the record; **do not use it as a target
+   or a premise**. The same omission occurred in `WeightedCDecompositionStatement`; it is
+   corrected in the same way by `WeightedCDecompositionBorelStatement`, and the old definition is
+   likewise retained unproved and must not be used as a target or a premise. Elaborated-signature
+   probe: each corrected definition has exactly one `BorelSpace` binder, while the two old ones
+   have none. The overlapping-instance linter is switched off for these two definitions only,
+   because it also counts the omitted section instance. This correction does not change either identity statement, which already uses
+   the Borel instance in its body.
 2. `WeightedWeakExpansionStatement` (for `π` square integrable, argument `hsq`): if `I'` is
    proper and `IsSpecialVertexCompact ν hi K`, `LiftsInCompact R` and `SourceCompactNormalization`
    hold, then for every `q` there are extensions `E_s` and lower sections
@@ -152,7 +171,7 @@ scheme of `I` (`lowerAmbient_isConnectedReductive`).
    Σ_s µ^{M'}(s(ω⊗χ))(E^{M'}_{M'∩s·P} sp_χ c̃_{P'|P}(s)ψ)(m')`", obtained there from Proposition
    V.1.1 (printed p.289), which is stated for G-regular `ω`, and Corollary V.2.3. The target holds
    at every orbit point, as on p.304.
-3. `WeightedCDecompositionStatement`: if `π` is square integrable modulo `C_M`, `I'` is proper,
+3. `WeightedCDecompositionBorelStatement`: on the Borel quotient with Haar measure `μ`, if `π` is square integrable modulo `C_M`, `I'` is proper,
    and `IsSpecialVertexCompact ν hi K` and `SourceCompactNormalization` hold, then for every `q`
    and `s` there are an extension `E`, a number `N`, families
    `ψ'_k : X(s·M) → (lower compact picture)` for `k < N`, where `X(s·M)` is the group of complex
@@ -284,7 +303,7 @@ The proof (printed pp.293–294) uses exactly the normalizations of this formali
 Lemma V.2.2 is not a separate target here. In the source it is used only in the proof of
 Corollary V.2.3 (equation (1), printed p.294: the norm of `C(λ)ψ` in terms of
 `µ^G(ω ⊗ χ_λ) µ^{M'}(s(ω ⊗ χ_λ))⁻¹ = Π µ_α(s(ω ⊗ χ_λ))`), whose conclusion is
-`WeightedCRegularityStatement`. A proof of that target will need it; the constants `c(G|M)`,
+`WeightedCRegularityBorelStatement`. A proof on that route uses it; the constants `c(G|M)`,
 `c(M'|s·M)` are nonzero constants and do not affect regularity.
 
 ## The special maximal compact subgroup `K`
@@ -364,7 +383,7 @@ of the expansion depends on the lift `n_s`, not only on its Weyl class.
   with the Haar probability of `K ∩ M'(F)`, which is invariant under `m`, and
   `µ^{M'}(wsω) = µ^{M'}(sω)` (Lemma V.2.1 for `M'`), so the summands are unchanged. This is the reason the source indexes the sum by `W(M'|G|M)`; it is not formalized
   here.
-- `WeightedCRegularityStatement` and `WeightedCDecompositionStatement` do not assume
+- `WeightedCRegularityBorelStatement` and `WeightedCDecompositionBorelStatement` do not assume
   `LiftsInCompact`. Each concerns the single family `c̃(s, ·)` of one lift, and its content
   (a rational continuation regular on `O`; a finite decomposition into smooth multiples of
   polynomial families) does not compare different summands. A change of lift changes `c̃(s, ·)`
@@ -396,8 +415,8 @@ of the expansion depends on the lift `n_s`, not only on its Weyl class.
 - New proved lemmas: `leviPolynomial_eq_zero_of_isOpen`, `leviRationalContinuation_value_eq`,
   `WeightedCExtension.unitaryValue_eq` (uniqueness of the unitary values), `lowerK_isCompact`,
   `lowerPackage_iwasawa` (restatements of package fields).
-- New targets (unproved, for proof successors): `WeightedCRegularityStatement`,
-  `WeightedWeakExpansionStatement`, `WeightedCDecompositionStatement`,
+- Targets (unproved, for proof successors): `WeightedCRegularityBorelStatement`,
+  `WeightedWeakExpansionStatement`, `WeightedCDecompositionBorelStatement`,
   `WeightedPacketIdentityStatement`.
 - Unresolved obligations: the four targets; nonemptiness of the convergence domains is part of
   them (through `WeightedCExtension`).

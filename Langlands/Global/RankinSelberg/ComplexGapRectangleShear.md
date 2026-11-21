@@ -1,0 +1,5 @@
+# The rectangle change of variables in the split tail
+
+In the tail coordinates of (10.4), separate the first column `x` of the upper right rectangle from its remaining columns. Moving the factor with first column `x` to the left of the tail unipotent introduces a correction whose entry in row `i` and later column `j` is `x i * Z 0 j.succ`. `splitTailRectangle` subtracts this correction from the later columns and leaves the first column and tail matrix fixed.
+
+`complexGapRectangleShear` proves that the map takes the original rectangle measure and tail entry Haar measure to the product of the first-column measure and the two measures used by the triangular Fourier integral. Splitting columns reindexes the products of scalar measures. For each fixed first column and tail matrix, the correction is a translation on the later rectangle, so its measure remains the same. The proof also covers the empty later rectangle. [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 10.2, after (10.5)](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).

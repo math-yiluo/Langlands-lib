@@ -20,10 +20,10 @@ open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents localCla
 open RankinSelbergGlobal RankinSelbergGlobal.EqualAnalytic
 open LocalFactor.Archimedean
 
-local instance equalCoverSchemeAffine (F : Type u) [Field F] (n : ℕ) :
+local instance poleEqualCoverAffine (F : Type u) [Field F] (n : ℕ) :
     AlgebraicGeometry.IsAffine (Scheme F n).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme _ _
-local instance equalCoverSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
+local instance poleEqualCoverSmooth (F : Type u) [Field F] (n : ℕ) :
     AlgebraicGeometry.Smooth (Scheme F n).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement _ _
 
@@ -99,11 +99,11 @@ private theorem exists_completion
       (∀ z, ideleChar F (ω * ω') z = 1) ∧
         ∃ i : D.Test, D.period i ≠ 0 ∧ (D.test i).schwartz 0 ≠ 0 ∧
           fourierTransform F (r + 1) ψ.complex (D.test i).schwartz 0 ≠ 0)
-    (j : D.Test) (hj : ∃ z, D.normalized j z ≠ 0)
-    (hG : HasStripExponentialGrowth (D.normalized j)) :
+    {testProperty : (ℂ → ℂ) → Prop} (j : D.Test) (hj : testProperty (D.normalized j)) :
     ∃ Λ : ℂ → ℂ, c.IsCompletedLFunction Linf Λ ∧
       HasSimplePoleProfile Λ (T.realization.IsContragredientOf T'.realization) ∧
-      HasNormalizedStripTest Λ := by
+      ∃ I R : ℂ → ℂ, IsBoundedInVerticalStrips I ∧ Differentiable ℂ R ∧ testProperty R ∧
+        ∀ s ∉ ({0, 1} : Set ℂ), I s = R s * Λ s := by
   have hstd := isStandardAdditiveCharacter_of_unitary ψ hψ
   choose σ I hI hIb hIr using fun i : D.Test =>
     equalIntegral_splitCentre_continuation T T' hT hT' hω hω' ψ.complex hstd
@@ -132,7 +132,7 @@ private theorem exists_completion
     D.analytic D.nonvanishing hL hMatch hp
   obtain ⟨b, hb⟩ := c.exists_finiteL_convergence hP hP'
   refine ⟨Λ, ⟨max a b, fun s hs => ?_⟩, hpol, I j, D.normalized j, hIb j,
-    fun s => (D.analytic j s (mem_univ s)).differentiableAt, hj, hG, hΛ j⟩
+    fun s => (D.analytic j s (mem_univ s)).differentiableAt, hj, hΛ j⟩
   obtain ⟨hsum, hprod⟩ := hb s ((le_max_right _ _).trans_lt hs)
   exact ⟨hsum, _, hprod.multipliable.hasProd, ha s ((le_max_left _ _).trans_lt hs)⟩
 
@@ -140,15 +140,13 @@ end EqualNormalizedTestFamily
 
 end Family
 
-/-- Equal-rank normalization can be witnessed by a selected family. The family
-includes a nonzero normalized value of exponential strip growth. For the actual
-conjugate pair it also includes a nonzero vector paired with its conjugate and a
-Schwartz function with both origin evaluations nonzero. -/
-def EqualCoveringNormalizedProductStatement : Prop :=
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
-    (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
-  ∀ (r : ℕ) (T T' : CuspidalOperatorRealization F r),
+/-- A covering family at a fixed field and rank, with a prescribed property of
+one normalization and an origin witness for conjugate pairs. -/
+def EqualCoveringNormalizedProductAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] (r : ℕ)
+    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
+    (testProperty : (ℂ → ℂ) → Prop) : Prop :=
+  ∀ (T T' : CuspidalOperatorRealization F r),
     IsTrivialOnSplitCentre T → IsTrivialOnSplitCentre T' →
   ∀ (P : CuspidalSpectralPresentation.{u, uQ} T) (P' : CuspidalSpectralPresentation.{u, uQ} T')
     (h : HasIrreducibleAdmissibleComponents P) (h' : HasIrreducibleAdmissibleComponents P')
@@ -162,25 +160,34 @@ def EqualCoveringNormalizedProductStatement : Prop :=
     ∃ S : Finset (FinitePlace F), P.exceptional ⊆ S ∧ P'.exceptional ⊆ S ∧
       FunctionalEquationComparison.FiniteAdditiveSupport ψ S ∧
       ∃ D : EqualNormalizedTestFamily c S ψ (archimedeanPairProduct dR dR' dC dC'),
-        (∃ i, (∃ z, D.normalized i z ≠ 0) ∧ HasStripExponentialGrowth (D.normalized i)) ∧
+        (∃ i, testProperty (D.normalized i)) ∧
         ∀ e : T = T'.conjugate, ∃ i : D.Test,
           (D.test i).right ≠ 0 ∧
           (e ▸ (D.test i).left : T'.conjugate.Space) = T'.conjugateEquiv (D.test i).right ∧
           (D.test i).schwartz 0 ≠ 0 ∧ fourierTransform F (r + 1) ψ.complex (D.test i).schwartz 0 ≠ 0
 
+/-- At each equal rank, choose a covering family with a strip-growth test and a
+residue witness on the actual conjugate pair. -/
+def EqualCoveringNormalizedProductStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
+    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+    (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
+  ∀ r : ℕ, EqualCoveringNormalizedProductAt.{u,uQ} F r ψ
+    (fun R => (∃ z, R z ≠ 0) ∧ HasStripExponentialGrowth R)
+
 section Transfer
 
 variable {F : Type u} [Field F] [NumberField F]
 
-local instance equalCoverRationalInvariantFunctions (n : ℕ) : AddCommGroup (Automorphic.RationalInvariantFunctions F n) :=
+local instance poleEqualCoverRationalGroup (n : ℕ) : AddCommGroup (Automorphic.RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance equalCoverContinuousRationalFunctions (n : ℕ) : AddCommGroup (Automorphic.ContinuousRationalFunctions F n) :=
+local instance poleEqualCoverContinuousGroup (n : ℕ) : AddCommGroup (Automorphic.ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance equalCoverFiniteSmoothRationalFunctions (n : ℕ) : AddCommGroup (Automorphic.FiniteSmoothRationalFunctions F n) :=
+local instance poleEqualCoverFiniteSmoothGroup (n : ℕ) : AddCommGroup (Automorphic.FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance equalCoverAutomorphicForms (n : ℕ) : AddCommGroup (Automorphic.AutomorphicForms F n) :=
+local instance poleEqualCoverAutomorphicGroup (n : ℕ) : AddCommGroup (Automorphic.AutomorphicForms F n) :=
   Submodule.addCommGroup _
-local instance equalCoverLocalSpace {n : ℕ} {v : FinitePlace F} (A : LocalRealization F n v) :
+local instance poleEqualCoverLocalGroup {n : ℕ} {v : FinitePlace F} (A : LocalRealization F n v) :
     AddCommGroup A.Space := Submodule.addCommGroup _
 
 private theorem local_component_of_isoClass_eq {r : ℕ} {v : FinitePlace F}
@@ -192,12 +199,30 @@ private theorem local_component_of_isoClass_eq {r : ℕ} {v : FinitePlace F}
 
 end Transfer
 
-/-- A covering family with the conjugate-pair residue witness suffices for the
-exact equal-rank pole criterion and a normalized test for the strip argument. -/
-theorem equalPairCompletion_of_covering_normalized_products
-    (hNorm : EqualCoveringNormalizedProductStatement.{u, uQ}) : EqualPairCompletionStatement.{u, uQ} := by
+/-- Continue the completed product at a fixed field and rank. Carry the selected
+test property through the comparison with the actual conjugate pair. -/
+theorem equalPairCompletion_of_covering_normalized_products_at
+    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r : ℕ)
+    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
+    (hψ : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    {testProperty : (ℂ → ℂ) → Prop}
+    (hNorm : EqualCoveringNormalizedProductAt.{u,uQ} F r ψ testProperty)
+    (T T' : CuspidalOperatorRealization F r)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (P : CuspidalSpectralPresentation.{u,uQ} T) (P' : CuspidalSpectralPresentation.{u,uQ} T')
+    (h : HasIrreducibleAdmissibleComponents P) (h' : HasIrreducibleAdmissibleComponents P')
+    (c : FinitePairLChoice P P' h h')
+    (dR dR' : {v : InfinitePlace F // v.IsReal} → List RealBlock)
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (dC dC' : {w : InfinitePlace F // w.IsComplex} → List ComplexCharacterData)
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w)) :
+    ∃ Λ : ℂ → ℂ, c.IsCompletedLFunction (archimedeanPairProduct dR dR' dC dC') Λ ∧
+      HasSimplePoleProfile Λ (T.realization.IsContragredientOf T'.realization) ∧
+      ∃ I R : ℂ → ℂ, IsBoundedInVerticalStrips I ∧ Differentiable ℂ R ∧ testProperty R ∧
+        ∀ s ∉ ({0, 1} : Set ℂ), I s = R s * Λ s := by
   classical
-  intro F _ _ _ ψ hψ r T T' hT hT' P P' h h' c dR dR' hdR hdR' dC dC' hdC hdC'
   obtain ⟨ω', hω', _⟩ := T'.realization.existsUnique_hasCentralCharacter T'.irreducible
   by_cases hcontra : T.realization.IsContragredientOf T'.realization
   · have hc := SelfPair.conjugate_isContragredientOf_of_splitCentre T' hT'
@@ -210,7 +235,7 @@ theorem equalPairCompletion_of_covering_normalized_products
         (h v).1 (h v).2 (hIQ v).1 (hIQ v).2).mpr (P.transport_localComponent_isoClass e v).symm
     let c₀ := c.of_localClass_eq heq (fun _ => rfl)
     have hTc := SelfPair.isTrivialOnSplitCentre_conjugate T' hT'
-    obtain ⟨S, hQS, hP'S, hS, D, ⟨j, hj, hG⟩, hWitness⟩ := hNorm F ψ hψ r T'.conjugate T'
+    obtain ⟨S, hQS, hP'S, hS, D, ⟨j, hj⟩, hWitness⟩ := hNorm T'.conjugate T'
       hTc hT' Q P' hIQ h' c₀ dR dR' (fun v => (hdR v).of_equiv e) hdR'
       dC dC' (fun v => (hdC v).of_equiv e) hdC'
     have hLc := exists_continuousOn_archimedeanPairProduct_mul dR dR' dC dC' c₀.rightHalfPlaneContinuous
@@ -225,15 +250,24 @@ theorem equalPairCompletion_of_covering_normalized_products
       exact (lt_irrefl 0) hpos
     have htriv := (hasEqualTestPeriod_conjugate hT' hω' hP'S).1
     obtain ⟨Λ, hΛ, hp, htest⟩ := D.exists_completion hψ hQS hP'S hS hTc hT' hωc hω' hLc
-      (fun _ => ⟨htriv, i, hres, h0, h1⟩) j hj hG
+      (fun _ => ⟨htriv, i, hres, h0, h1⟩) j hj
     exact ⟨Λ, hΛ, ⟨hp.1, fun p hp' => ⟨(hp.2 p hp').1, (hp.2 p hp').2.1,
       ((hp.2 p hp').2.2).trans ⟨fun _ => hcontra, fun _ => hc⟩⟩⟩, htest⟩
   · obtain ⟨ω, hω, _⟩ := T.realization.existsUnique_hasCentralCharacter T.irreducible
-    obtain ⟨S, hPS, hP'S, hS, D, ⟨j, hj, hG⟩, _⟩ := hNorm F ψ hψ r T T' hT hT'
+    obtain ⟨S, hPS, hP'S, hS, D, ⟨j, hj⟩, _⟩ := hNorm T T' hT hT'
       P P' h h' c dR dR' hdR hdR' dC dC' hdC hdC'
     have hLc := exists_continuousOn_archimedeanPairProduct_mul dR dR' dC dC' c.rightHalfPlaneContinuous
     exact D.exists_completion hψ hPS hP'S hS hT hT' hω hω' hLc
-      (fun hn => (hcontra hn).elim) j hj hG
+      (fun hn => (hcontra hn).elim) j hj
+
+/-- A covering family with the conjugate-pair residue witness suffices for the
+exact equal-rank pole criterion and a normalized test for the strip argument. -/
+theorem equalPairCompletion_of_covering_normalized_products
+    (hNorm : EqualCoveringNormalizedProductStatement.{u, uQ}) : EqualPairCompletionStatement.{u, uQ} := by
+  intro F _ _ _ ψ hψ r T T' hT hT' P P' h h' c dR dR' hdR hdR' dC dC' hdC hdC'
+  simpa only [HasNormalizedStripTest, and_assoc] using
+    equalPairCompletion_of_covering_normalized_products_at F r ψ hψ (hNorm F ψ hψ r)
+      T T' hT hT' P P' h h' c dR dR' hdR hdR' dC dC' hdC hdC'
 
 /-- Assemble the full pole statement using selected tests in equal rank. -/
 theorem cuspidalPairPole_of_covering_normalized_products

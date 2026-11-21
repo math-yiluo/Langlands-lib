@@ -143,12 +143,12 @@ private theorem determinantWeight_leadingShift {n : ℕ} (p : Fin 2) (s z w : �
   rw [hPow]
   ring
 
-private theorem compactKernel_weighted_mem {W : Submodule ℂ (K → ℂ)}
+private theorem compactLowerBlock_weighted_mem {W : Submodule ℂ (K → ℂ)}
     (hW : ∀ f ∈ W, ∀ q : K, (fun k : K => f (q * k)) ∈ W)
     (c : RealCharacterData) (ds : List RealBlock) {F : H → ℂ}
     (hF : F ∈ principalSeries ℝ (m + 1) (realPositionCharacter (.character c :: ds)))
     (hFW : compactSectionRestriction F ∈ W) (h : G) (a : ℂ) :
-    (fun k : K => a * compactKernel ds F h k.val) ∈ W := by
+    (fun k : K => a * F (lowerBlock h * k.val)) ∈ W := by
   obtain ⟨d, u, k, hk, hEq⟩ := exists_diagonalUnits_mul_upperUnipotent_mul_unitaryCompact (lowerBlock h)
   let q : K := ⟨k, hk⟩
   have hValue (k' : K) : F (lowerBlock h * k'.val) = principalSeriesCharacter ℝ (m + 1)
@@ -156,13 +156,10 @@ private theorem compactKernel_weighted_mem {W : Submodule ℂ (K → ℂ)}
     rw [hEq, mul_assoc _ k, hF.2]
     rfl
   let D := principalSeriesCharacter ℝ (m + 1) (realPositionCharacter (.character c :: ds)) d
-  let L := lowerCutoff ds (fun _ => 1) h⁻¹
-  let s : ℂ := Real.sqrt |h.val.det|
-  have he : (fun k : K => a * compactKernel ds F h k.val) =
-      (a * D * L * s) • (fun k : K => compactSectionRestriction F (q * k)) := by
+  have he : (fun k : K => a * F (lowerBlock h * k.val)) =
+      (a * D) • (fun k : K => compactSectionRestriction F (q * k)) := by
     funext k'
-    simp only [compactKernel, hValue, Pi.smul_apply, smul_eq_mul, D, L, s]
-    ring
+    simp only [hValue, Pi.smul_apply, smul_eq_mul, D, mul_assoc]
   rw [he]
   exact W.smul_mem _ (hW _ hFW q)
 
@@ -191,69 +188,67 @@ def CompactSectionFamily.column {p : Fin 2} {ds : List RealBlock} {W : Submodule
     (C : CompactSectionFamily μ p ds W) (z : ℂ) : K → ℂ :=
   compactSectionRestriction (sectionValue μ (charData p z) C.lower C.test)
 
-private theorem column_eq_weightedKernel (p : Fin 2) (z w : ℂ) (ds : List RealBlock)
-    {F : H → ℂ} (hF : F ∈ principalSeries ℝ (m + 1)
-      (realPositionCharacter (.character (charData p w) :: ds)))
-    (β : M → ℝ) (b : ℝ → ℝ) (k : K) :
-    sectionValue μ (charData p z) (lowerCutoff ds b) (gramTest (charData p w) F β) k.val =
-      ∫ h : G, ((gramAngularWeight β b h : ℂ) * absDetPower (z - w) h) * compactKernel ds F h k.val ∂μ := by
-  let f : G → ℂ := fun h => lowerCutoff ds b h * absDetPower (z - w) h⁻¹
+private theorem sectionValue_shiftOnCompact (p : Fin 2) (z w : ℂ) (f : G → ℂ)
+    (test : X → ℂ) (k : K) :
+    sectionValue μ (charData p z) f test k.val =
+      sectionValue μ (charData p w) (fun h => f h * absDetPower (z - w) h⁻¹) test k.val := by
   have hOuter : determinantWeight (charData p z) ((m : ℂ) / 2) k.val =
       determinantWeight (charData p w) ((m : ℂ) / 2) k.val := by
     rw [determinantWeight_leadingShift p _ z w k.val]
     simp only [absDetPower, MaximalParabolicIntegration.abs_det_unitary k, Complex.ofReal_one,
       Complex.one_cpow, mul_one]
-  calc
-    _ = sectionValue μ (charData p w) f (gramTest (charData p w) F β) k.val := by
-      unfold sectionValue innerIntegral
-      rw [hOuter]
-      congr 1
-      apply integral_congr_ae
-      refine ae_of_all _ fun h => ?_
-      change (lowerCutoff ds b h⁻¹ * determinantWeight (charData p z) (((m : ℂ) + 1) / 2) h) * _ =
-        (f h⁻¹ * determinantWeight (charData p w) (((m : ℂ) + 1) / 2) h) * _
-      rw [determinantWeight_leadingShift p _ z w h]
-      simp only [f, inv_inv]
-      ring
-    _ = _ := by
-      rw [sectionValue_gramTest μ (charData p w) ds hF f β k.val]
-      apply integral_congr_ae
-      refine ae_of_all _ fun h => ?_
-      simp only [f, inv_inv, lowerCutoff_factor ds b h, rowGram_rowPoint_of_orthogonal _ k.property,
-        gramAngularWeight, lowerGram, Complex.ofReal_mul, compactKernel, absDetPower]
-      rw [Real.sqrt_eq_rpow, Complex.ofReal_cpow (abs_nonneg _)]
-      norm_num
-      ring
+  unfold sectionValue innerIntegral
+  rw [hOuter]
+  congr 1
+  apply integral_congr_ae
+  refine ae_of_all _ fun h => ?_
+  change (f h⁻¹ * determinantWeight (charData p z) (((m : ℂ) + 1) / 2) h) * _ =
+    ((f h⁻¹ * absDetPower (z - w) (h⁻¹)⁻¹) *
+      determinantWeight (charData p w) (((m : ℂ) + 1) / 2) h) * _
+  rw [determinantWeight_leadingShift p _ z w h]
+  simp only [inv_inv]
+  ring
 
 variable [BorelSpace (Langlands.GeneralLinear m ℝ)] [IsFiniteMeasureOnCompacts μ]
 
-private theorem compactGramColumn_mem (p : Fin 2) (w : ℂ) (ds : List RealBlock) (W : Submodule ℂ (K → ℂ))
+/-- A Gram test from a reference upper section has all its compact Godement
+restrictions in the same finite left-stable space, for any continuous lower input. -/
+theorem compactGramSection_mem (p : Fin 2) (w : ℂ) (ds : List RealBlock) (W : Submodule ℂ (K → ℂ))
     [FiniteDimensional ℂ W] (hW : ∀ f ∈ W, ∀ q : K, (fun k : K => f (q * k)) ∈ W)
     {F : H → ℂ} (hF : F ∈ principalSeries ℝ (m + 1)
       (realPositionCharacter (.character (charData p w) :: ds))) (hFW : compactSectionRestriction F ∈ W)
     {S : Set M} (hS : IsCompact S) (hUnit : ∀ y ∈ S, IsUnit y) {β : M → ℝ}
-    (hβ : Continuous β) (hβZero : ∀ y ∉ S, β y = 0) {b : ℝ → ℝ} (hb : Continuous b)
+    (hβ : Continuous β) (hβZero : ∀ y ∉ S, β y = 0) {f : G → ℂ} (hf : Continuous f)
     (z : ℂ) : compactSectionRestriction
-      (sectionValue μ (charData p z) (lowerCutoff ds b) (gramTest (charData p w) F β)) ∈ W := by
-  let a : G → ℂ := fun h => (gramAngularWeight β b h : ℂ) * absDetPower (z - w) h
-  let B : G → K → ℂ := fun h k => a h * compactKernel ds F h k.val
+      (sectionValue μ (charData p z) f (gramTest (charData p w) F β)) ∈ W := by
+  let a : G → ℂ := fun h => (β (lowerGram h) : ℂ) *
+    (f h⁻¹ * absDetPower (z - w) h) * absDetPower (1 / 2) h
+  let B : G → K → ℂ := fun h k => a h * F (lowerBlock h * k.val)
   have hEq : compactSectionRestriction
-      (sectionValue μ (charData p z) (lowerCutoff ds b) (gramTest (charData p w) F β)) =
+      (sectionValue μ (charData p z) f (gramTest (charData p w) F β)) =
       fun k : K => ∫ h : G, B h k ∂μ := by
     funext k
-    exact column_eq_weightedKernel μ p z w ds hF β b k
-  have ha : Continuous a := (Complex.continuous_ofReal.comp
-    (continuous_gramAngularWeight hβ hb)).mul (continuous_absDetPower (z - w))
-  have hWeight : HasCompactSupport (fun h : G => (gramAngularWeight β b h : ℂ)) :=
-    (hasCompactSupport_gramAngularWeight b hS hUnit hβZero).comp_left
-      (g := Complex.ofReal) Complex.ofReal_zero
-  have hS' : HasCompactSupport a := hWeight.mul_right
-  have hB (h : G) : B h ∈ W := compactKernel_weighted_mem hW (charData p w) ds hF hFW h (a h)
-  have hKernel : Continuous (fun p : G × H => compactKernel ds F p.1 p.2) :=
-    continuous_compactKernel (m := m) ds (F := F) (charData p w) hF
+    change sectionValue μ (charData p z) f (gramTest (charData p w) F β) k.val = _
+    rw [sectionValue_shiftOnCompact μ p z w f _ k, sectionValue_gramTest μ (charData p w) ds hF]
+    apply integral_congr_ae
+    refine ae_of_all _ fun h => ?_
+    simp only [inv_inv, rowGram_rowPoint_of_orthogonal _ k.property, B, a, absDetPower, lowerGram]
+    ring
+  have ha : Continuous a := ((Complex.continuous_ofReal.comp (hβ.comp continuous_lowerGram)).mul
+    ((hf.comp continuous_inv).mul (continuous_absDetPower (z - w)))).mul
+    (continuous_absDetPower (1 / 2))
+  have hWeight : HasCompactSupport (fun h : G => (β (lowerGram h) : ℂ)) := by
+    have hK := isCompact_lowerGram_preimage hS hUnit
+    apply hK.of_isClosed_subset isClosed_closure
+    apply closure_minimal _ hK.isClosed
+    intro h hh
+    by_contra! hOutside
+    exact hh (by simp [hβZero _ hOutside])
+  have hS' : HasCompactSupport a := hWeight.mul_right.mul_right
+  have hB (h : G) : B h ∈ W := compactLowerBlock_weighted_mem hW (charData p w) ds hF hFW h (a h)
   have hInt (k : K) : Integrable (fun h => B h k) μ := by
-    have hPair : Continuous (fun h : G => (h, k.val)) := continuous_id.prodMk continuous_const
-    have hk := hKernel.comp hPair
+    have hk : Continuous (fun h : G => F (lowerBlock h * k.val)) :=
+      hF.1.continuous.comp (continuous_lowerBlock.mul continuous_const)
     have hSupport : HasCompactSupport (fun h => B h k) := hS'.mul_right
     exact (ha.mul hk).integrable_of_hasCompactSupport hSupport
   exact hEq.symm ▸ integral_mem_finite_functionSpace μ W B hB hInt
@@ -273,7 +268,8 @@ private def compactGramColumn (p : Fin 2) (w : ℂ) (ds : List RealBlock) (W : S
   test := gramTest (charData p w) F β
   test_smooth := contDiff_gramTest _ _ hF hS.isClosed hUnit hβ hβZero
   test_zero _ hx := gramTest_eq_zero _ _ hβZero hx
-  compact_mem := compactGramColumn_mem μ p w ds W hW hF hFW hS hUnit hβ.continuous hβZero hb.continuous
+  compact_mem := compactGramSection_mem μ p w ds W hW hF hFW hS hUnit hβ.continuous hβZero
+    (realGodementLowerCutoff m ds b hb).1.1.continuous
 
 variable [Measure.IsOpenPosMeasure μ] [Measure.IsMulRightInvariant μ]
 

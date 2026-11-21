@@ -1,0 +1,5 @@
+# Block parabolic coordinates for complex general linear Haar measure
+
+`ComplexParabolicHaarStatement` expresses a Haar measure on the actual complex general linear group as the pushforward of Haar measures on a standard block Levi, its unipotent radical and the unitary group, up to a positive scalar. The formula multiplies the three factors in that order. For inversion-invariant factor measures and ambient measure the same scalar gives the reversed product order.
+
+The Levi times radical factorization of the parabolic is a homeomorphism. In these coordinates left multiplication translates the Levi component and translates the radical component by a conjugate that depends on the Levi coordinate. A measure-preserving skew product therefore proves that the pushforward of the two Haar factors is Haar on the parabolic. Complex Iwasawa decomposition covers the ambient group by this parabolic times the unitary group because the upper triangular subgroup lies in the parabolic. The compact factorization theorem gives the positive scalar. Inverting the multiplication map reverses the order and leaves the stipulated measures unchanged.

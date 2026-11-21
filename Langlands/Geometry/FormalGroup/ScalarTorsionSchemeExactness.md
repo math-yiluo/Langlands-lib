@@ -1,0 +1,7 @@
+# Short exactness of the actual scalar torsion schemes on affine fppf tests
+
+`AffineFppfShortExact` is the affine-test formulation for a sequence of commutative group scheme maps. The first arrow is injective on points of every affine test. Its image is the kernel of the second arrow on each such test. A point in the target of the second arrow has a lift after a faithfully flat finitely presented extension of the test algebra.
+
+`torsionSchemes_affineFppfShortExact` applies these conditions to the actual represented scalar kernels. The sequence includes the \(\pi^n\)-kernel into the \(\pi^{m+n}\)-kernel and applies multiplication by \(\pi^n\) to land in the \(\pi^m\)-kernel. The affine point equivalences identify these two scheme maps with the original formal-module point maps. The proof transfers the pointwise kernel calculation and actual fppf local lifting for the scalar transition through those equivalences.
+
+Tate, *p-Divisible Groups* (1967), §1.3 and §2.1, printed pp. 159–161 (PDF pp. 1–2), defines finite-group exactness and gives the sequence (2) for powers of \(p\). This module derives the affine fppf conditions for the corresponding distinguished scalar of a coordinate formal module. Rapoport–Zink (1996), Definition 2.6 and the last paragraph on printed p. 51 (PDF p. 66), use the finite locally free kernel and fppf local lifting conditions for an isogeny and for multiplication by \(p\).

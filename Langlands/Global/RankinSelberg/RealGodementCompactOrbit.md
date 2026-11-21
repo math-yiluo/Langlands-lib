@@ -1,0 +1,5 @@
+# Local compact supports for the real Godement test orbit
+
+Let a Schwartz test on real \(m\)-by-\((m+1)\) matrices vanish off a compact set of full-row-rank matrices. Near any invertible translating matrix, the right pullbacks \(x\mapsto\Phi(xA)\) can all be represented in one compactly supported Schwartz submodule. Its supporting set contains the original set and consists of full-row-rank matrices.
+
+The Lean proof takes a small open ball whose closed ball is in the invertible locus. It lifts the closed ball to a compact set of units and takes the union of the original support with its image under right multiplication by the inverses of these units. Matrix multiplication is continuous, and multiplying a right inverse by the translating unit verifies full row rank on the image. The joint pullback is smooth by bilinearity. The bundled linear evaluation lemma for compact Schwartz families then gives smooth scalar evaluations and identifies the derivative at the identity in the direction \(B\) as evaluation on \(x\mapsto d\Phi_x(xB)\). This last test vanishes off the same compact set as \(\Phi\).

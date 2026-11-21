@@ -96,3 +96,5 @@ For each of the finitely many subsets `S` of the simple roots, `exists_list_prod
 `S` determined by `y`.
 
 `gauge_bound_of_derivative_growth` takes the common polynomial growth exponent `N` as an input. Its gauge bound uses the exponential growth exponent `2N` in the sum of the absolute logarithmic coordinates. This choice holds simultaneously for every regular coefficient satisfying the bound of degree `N`, with constants allowed to depend on the coefficient and the decay order.
+
+The family estimate uses one growth exponent and, for each derivative word, one norm constant across all coefficients. At each step in the finite simple-root list, the proof adds only the constants from the finitely many next matrix directions. The resulting gauge constant is uniform over the family. The single-coefficient estimate is its specialization to a singleton.

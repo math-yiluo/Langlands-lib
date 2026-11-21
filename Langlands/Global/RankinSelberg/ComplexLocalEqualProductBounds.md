@@ -1,0 +1,5 @@
+# Shifted toral majorants of the equal-rank double kernel
+
+This internal estimate prepares the absolute convergence proof for the unfolded equal-rank integral in Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, printed pp. 55–56. The smaller coefficient and the larger opposite-character coefficient belong to their complex Whittaker models. The real linear functional in the estimate is the density exponent of the smaller quotient measure.
+
+The smaller logarithmic variable is translated by the first large Iwasawa logarithms minus the last one. The larger Whittaker function then has simple-root decay in the shifted padded variable. The growth of both coefficients and the toral density contribute a fixed power of the sum of absolute large logarithms. Splitting that sum into twice the positive parts minus the signed sum replaces the negative parts by a fixed determinant power. The remaining positive logarithms are bounded by the operator norm of the large matrix. The resulting matrix weight has a fixed determinant shift and a positive matrix norm power that may depend on the spectral parameter.

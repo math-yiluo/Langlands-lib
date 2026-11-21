@@ -7,6 +7,8 @@ import Langlands.Global.RankinSelberg.RealUniformWhittakerModel
 
 noncomputable section
 
+universe u
+
 open Langlands.GeneralLinear Langlands.HarmonicAnalysis Langlands.LocalFactor.Archimedean
 open Langlands.Global.RankinSelbergGlobal.RealConvergenceAnalysis
 open Langlands.Global.RankinSelbergGlobal.RealIwasawa
@@ -47,7 +49,8 @@ private theorem norm_columnMellinBase (a : ℝˣ) (Φ : 𝓢(X, ℂ)) (W : G →
   simp only [columnMellinBase, norm_mul, norm_pow, Complex.norm_real, Real.norm_eq_abs,
     abs_div, abs_abs, div_self hdet, one_pow, mul_one]
 
-private theorem continuous_columnMellinBase {W : G → ℂ} (hW : Continuous W)
+/-- Continuity of the weighted column before the spectral Mellin factor. -/
+theorem continuous_columnMellinBase {W : G → ℂ} (hW : Continuous W)
     (a : ℝˣ) (Φ : 𝓢(X, ℂ)) (p : ℕ) : Continuous (columnMellinBase a Φ W p) := by
   have hFreq : Continuous (columnFrequency (t := t)) := by
     unfold columnFrequency
@@ -82,16 +85,16 @@ private theorem norm_columnRepresentative (a : ℝˣ) {W : G → ℂ}
   rw [← he, hW.1 u.val u.property k, norm_mul, realWhittakerCharacter,
     UnitaryAdditiveCharacter.norm_complex, one_mul]
 
-private theorem columnMellin_majorant (a : ℝˣ) (N₀ L : ℕ) (radius : ℝ) (hRadius : 0 ≤ radius) :
+private theorem columnMellin_majorant_family {ι : Type u} (a : ℝˣ) (N₀ L : ℕ) (radius : ℝ) (hRadius : 0 ≤ radius) :
     ∃ q : Seminorm ℝ 𝓢(X, ℂ), Continuous q ∧
-      ∀ (W : G → ℂ),
-        (∀ Xs, RealLocalWhittaker.iteratedRightDerivative t Xs W ∈
+      ∀ (W : ι → G → ℂ),
+        (∀ j Xs, RealLocalWhittaker.iteratedRightDerivative t Xs (W j) ∈
           RealLocalWhittaker.regularFunctions t (-a)) →
-        (∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
-          ‖RealLocalWhittaker.iteratedRightDerivative t Xs W g‖ ≤ C * realMatrixHeight g ^ N₀) →
+        (∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+          ‖RealLocalWhittaker.iteratedRightDerivative t Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N₀) →
         ∃ C : ℝ, 0 ≤ C ∧
-          ∀ (Φ : 𝓢(X, ℂ)) (p : ℕ) (β : ℝ), |β - (t + 1 : ℕ)| ≤ radius → ∀ h : G,
-            ‖columnMellinBase a Φ W p h‖ * Real.exp (β * Real.log |h.val.det|) ≤
+          ∀ (j : ι) (Φ : 𝓢(X, ℂ)) (p : ℕ) (β : ℝ), |β - (t + 1 : ℕ)| ≤ radius → ∀ h : G,
+            ‖columnMellinBase a Φ (W j) p h‖ * Real.exp (β * Real.log |h.val.det|) ≤
               q Φ * (C * (|h.val.det| ^ (t + 1) * ((1 + matrixEntryNorm h.val) ^ L)⁻¹)) := by
   let N := 2 * N₀
   let m : ℝ := (t + 1 : ℕ)
@@ -99,13 +102,13 @@ private theorem columnMellin_majorant (a : ℝˣ) (N₀ L : ℕ) (radius : ℝ) 
   have hQ : m * ((N : ℝ) + radius) ≤ Q := Nat.le_ceil _
   obtain ⟨q, hq, hDecay⟩ := firstColumnFourier_decay_seminorm (m := t + 1) a (Q + L)
   refine ⟨q, hq, fun W hreg hGrowth => ?_⟩
-  obtain ⟨C_W, hC_W, hCW⟩ := RealWhittakerGauge.gauge_bound_of_derivative_growth hreg hGrowth Q
+  obtain ⟨C_W, hC_W, hCW⟩ := RealWhittakerGauge.gauge_bound_of_derivative_growth_family W hreg hGrowth Q
   have hm : 1 ≤ m := by
     change (1 : ℝ) ≤ ((t + 1 : ℕ) : ℝ)
     exact_mod_cast Nat.succ_pos t
   let C := C_W * m ^ (Q + Q)
   refine ⟨C, mul_nonneg hC_W (pow_nonneg (zero_le_one.trans hm) _), ?_⟩
-  intro Φ p β hβ h
+  intro j Φ p β hβ h
   let y := alpha (columnRepresentative h)
   let R := rootPos y
   let S := ∑ j, |y j|
@@ -140,14 +143,14 @@ private theorem columnMellin_majorant (a : ℝˣ) (N₀ L : ℕ) (radius : ℝ) 
       _ = -(Q : ℝ) * R + (m * ((N : ℝ) + radius)) * T := by ring
       _ ≤ -(Q : ℝ) * R + (Q : ℝ) * T := add_le_add (le_refl _) (mul_le_mul_of_nonneg_right hQ hT)
       _ = _ := by dsimp only [T]; ring
-  have hW0 : W ∈ RealLocalWhittaker.regularFunctions t (-a) := hreg []
-  have hWBound : ‖W (columnRepresentative h)‖ ≤ C_W * Real.exp (-(Q : ℝ) * R + (N : ℝ) * S) := by
+  have hW0 : W j ∈ RealLocalWhittaker.regularFunctions t (-a) := hreg j []
+  have hWBound : ‖W j (columnRepresentative h)‖ ≤ C_W * Real.exp (-(Q : ℝ) * R + (N : ℝ) * S) := by
     rw [norm_columnRepresentative a hW0]
-    exact hCW y (kpart (columnRepresentative h))
+    exact hCW j y (kpart (columnRepresentative h))
   have hApos := lt_of_lt_of_le zero_lt_one hA
   have hBpos := lt_of_lt_of_le zero_lt_one hB
   have hmpos := lt_of_lt_of_le zero_lt_one hm
-  have hWDet : ‖W (columnRepresentative h)‖ * Real.exp ((β - m) * Real.log D) ≤
+  have hWDet : ‖W j (columnRepresentative h)‖ * Real.exp ((β - m) * Real.log D) ≤
       C_W * ((m * A) ^ Q * (m * B) ^ Q) := by
     calc
       _ ≤ (C_W * Real.exp (-(Q : ℝ) * R + (N : ℝ) * S)) * Real.exp ((β - m) * Real.log D) :=
@@ -168,7 +171,7 @@ private theorem columnMellin_majorant (a : ℝˣ) (N₀ L : ℕ) (radius : ℝ) 
     (mul_le_mul_of_nonneg_right
       (mul_le_mul_of_nonneg_left (pow_le_pow_right₀ hB (Nat.le_add_right Q L)) (pow_nonneg hApos.le _))
       (norm_nonneg _)).trans hP
-  have hComb : P * (‖W (columnRepresentative h)‖ * Real.exp ((β - m) * Real.log D)) ≤
+  have hComb : P * (‖W j (columnRepresentative h)‖ * Real.exp ((β - m) * Real.log D)) ≤
       (q Φ * C) * (A ^ L)⁻¹ := by
     rw [← div_eq_mul_inv]
     apply (le_div_iff₀ (pow_pos hApos _)).mpr
@@ -187,16 +190,17 @@ private theorem columnMellin_majorant (a : ℝˣ) (N₀ L : ℕ) (radius : ℝ) 
     change Real.exp (((t + 1 : ℕ) : ℝ) * Real.log D) * _ = _
     rw [Real.exp_nat_mul, Real.exp_log hDA]
   rw [norm_columnMellinBase]
-  change P * ‖W (columnRepresentative h)‖ * Real.exp (β * Real.log D) ≤
+  change P * ‖W j (columnRepresentative h)‖ * Real.exp (β * Real.log D) ≤
     q Φ * (C * (D ^ (t + 1) * (A ^ L)⁻¹))
   rw [hDetExp]
   calc
-    _ = D ^ (t + 1) * (P * (‖W (columnRepresentative h)‖ * Real.exp ((β - m) * Real.log D))) := by ring
+    _ = D ^ (t + 1) * (P * (‖W j (columnRepresentative h)‖ * Real.exp ((β - m) * Real.log D))) := by ring
     _ ≤ D ^ (t + 1) * ((q Φ * C) * (A ^ L)⁻¹) :=
       mul_le_mul_of_nonneg_left hComb (pow_nonneg hDA.le _)
     _ = _ := by ring
 
-private theorem continuous_logAbsDet : Continuous (fun h : G => Real.log |h.val.det|) :=
+/-- The logarithm of the absolute determinant is continuous on the real group. -/
+theorem continuous_logAbsDet : Continuous (fun h : G => Real.log |h.val.det|) :=
   Units.continuous_val.matrix_det.abs.log (fun h => abs_ne_zero.mpr (determinant h).ne_zero)
 
 open scoped Matrix.Norms.Frobenius in
@@ -221,6 +225,33 @@ private theorem exists_integrable_columnDensity (μ : Measure G) [μ.IsHaarMeasu
       nnnormHom_apply, coe_nnnorm, Real.norm_eq_abs] using h
   exact ⟨L, by simpa only [norm_uncurry_eq_frobenius, b] using hAdd⟩
 
+/-- The same continuous seminorm and integrable Haar majorant work on the whole family
+when every derivative word has a bound uniform across its members. -/
+theorem exists_columnMellin_family_seminorm {ι : Type u} (μ : Measure G) [μ.IsHaarMeasure]
+    (a : ℝˣ) (N : ℕ) (radius : ℝ) (hRadius : 0 ≤ radius) :
+    ∃ q : Seminorm ℝ 𝓢(X, ℂ), Continuous q ∧
+      ∀ (W : ι → G → ℂ),
+        (∀ j Xs, RealLocalWhittaker.iteratedRightDerivative t Xs (W j) ∈
+          RealLocalWhittaker.regularFunctions t (-a)) →
+        (∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+          ‖RealLocalWhittaker.iteratedRightDerivative t Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N) →
+        ∃ B : G → ℝ, Integrable B μ ∧ (∀ h, 0 ≤ B h) ∧
+          ∀ (j : ι) (Φ : 𝓢(X, ℂ)) (p : ℕ) (s : ℂ), |s.re - (t + 1 : ℕ)| ≤ radius → ∀ h : G,
+            ‖columnMellinIntegrand a Φ (W j) p s h‖ ≤ q Φ * B h := by
+  obtain ⟨L, hAdd⟩ := exists_integrable_columnDensity μ
+  obtain ⟨q, hq, hBounds⟩ := columnMellin_majorant_family (ι := ι) (t := t) a N L radius hRadius
+  refine ⟨q, hq, fun W hreg hGrowth => ?_⟩
+  obtain ⟨C, hC, hBound⟩ := hBounds W hreg hGrowth
+  let B (h : G) := C * (|h.val.det| ^ (t + 1) * ((1 + matrixEntryNorm h.val) ^ L)⁻¹)
+  refine ⟨B, hAdd.const_mul C, ?_, ?_⟩
+  · intro h
+    have hEntry : 0 ≤ matrixEntryNorm h.val := norm_nonneg _
+    dsimp only [B]
+    positivity
+  · intro j Φ p s hs h
+    rw [columnMellinIntegrand, norm_mul, norm_cexp_mul_ofReal]
+    exact hBound j Φ p s.re hs h
+
 /-- The same Schwartz seminorm works for all lower coefficients with the specified
 common derivative growth exponent. -/
 theorem exists_columnMellin_uniform_seminorm (μ : Measure G) [μ.IsHaarMeasure]
@@ -234,19 +265,11 @@ theorem exists_columnMellin_uniform_seminorm (μ : Measure G) [μ.IsHaarMeasure]
         ∃ B : G → ℝ, Integrable B μ ∧ (∀ h, 0 ≤ B h) ∧
           ∀ (Φ : 𝓢(X, ℂ)) (p : ℕ) (s : ℂ), |s.re - (t + 1 : ℕ)| ≤ radius → ∀ h : G,
             ‖columnMellinIntegrand a Φ W p s h‖ ≤ q Φ * B h := by
-  obtain ⟨L, hAdd⟩ := exists_integrable_columnDensity μ
-  obtain ⟨q, hq, hBounds⟩ := columnMellin_majorant (t := t) a N L radius hRadius
+  obtain ⟨q, hq, hBound⟩ := exists_columnMellin_family_seminorm (ι := Unit) μ a N radius hRadius
   refine ⟨q, hq, fun W hreg hGrowth => ?_⟩
-  obtain ⟨C, hC, hBound⟩ := hBounds W hreg hGrowth
-  let B (h : G) := C * (|h.val.det| ^ (t + 1) * ((1 + matrixEntryNorm h.val) ^ L)⁻¹)
-  refine ⟨B, hAdd.const_mul C, ?_, ?_⟩
-  · intro h
-    have hEntry : 0 ≤ matrixEntryNorm h.val := norm_nonneg _
-    dsimp only [B]
-    positivity
-  · intro Φ p s hs h
-    rw [columnMellinIntegrand, norm_mul, norm_cexp_mul_ofReal]
-    exact hBound Φ p s.re hs h
+  obtain ⟨B, hB, hB₀, hI⟩ := hBound (fun _ => W) (fun _ => hreg)
+    (fun Xs => by obtain ⟨C, hC, h⟩ := hGrowth Xs; exact ⟨C, hC, fun _ => h⟩)
+  exact ⟨B, hB, hB₀, hI ()⟩
 
 /-- On a bounded strip of real parts the Mellin kernel admits a majorant
 given by a continuous seminorm in the test and an integrable function on GL. -/

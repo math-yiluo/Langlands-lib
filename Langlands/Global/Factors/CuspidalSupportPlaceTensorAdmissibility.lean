@@ -126,12 +126,12 @@ universe u uM
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
   {M : Type uM} [AddCommGroup M] [Module ℂ M]
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance (T : OperatorRealization F n) : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance supportTensorAdmissibilityRationalGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorAdmissibilityContinuousGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorAdmissibilityFiniteSmoothGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorAdmissibilityFormGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance supportTensorAdmissibilityStableGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorAdmissibilityRealizationGroup (T : OperatorRealization F n) : AddCommGroup T.Space := Submodule.addCommGroup _
 
 local notation "RP" => {v : NumberField.InfinitePlace F // NumberField.InfinitePlace.IsReal v}
 local notation "CP" => {v : NumberField.InfinitePlace F // NumberField.InfinitePlace.IsComplex v}

@@ -19,7 +19,7 @@ noncomputable section
 
 set_option autoImplicit false
 
-universe u
+universe u v
 
 namespace Langlands.ClassField.Global.RelativeWeilGroup
 
@@ -93,7 +93,9 @@ namespace Langlands.Global.AdelicFunctoriality
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open scoped NumberField
 
-variable {K : Type u} {L : Type u} [Field K] [Field L]
+section FiniteIdeleNorm
+
+variable {K : Type u} {L : Type v} [Field K] [Field L]
   [NumberField K] [NumberField L] [Algebra K L]
 
 /-- The idele norm of an idele supported at one finite place `q` above `p` is supported at
@@ -137,6 +139,11 @@ theorem ideleClassNorm_ofAdicCompletion (p : HeightOneSpectrum (𝓞 K)) (q : Fi
   change ideleClassNorm (K := K) (QuotientGroup.mk (IdeleGroup.ofAdicCompletion (𝓞 L) L q.1 x)) = _
   rw [ideleClassNorm_mk, ideleNorm_ofAdicCompletion]
   rfl
+
+end FiniteIdeleNorm
+
+variable {K : Type u} {L : Type u} [Field K] [Field L]
+  [NumberField K] [NumberField L] [Algebra K L]
 
 /-- The idele norm of an idele supported at one infinite place `w` above `v` is supported at
 `v`, with the local norm there. -/

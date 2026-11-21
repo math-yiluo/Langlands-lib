@@ -1,0 +1,5 @@
+# Principal-series functionals as Gauss chart distributions
+
+A complex-linear functional bounded by a fixed order of compact right differences restricts to a continuous functional on the smooth compactly supported tests of each Gauss chart. Its value on a chart test is its value on the associated smooth principal-series section.
+
+For tests supported in one compact set, the Borel saturation of that set meets the unitary group in a compact subset of the chart. A smooth matrix cutoff equals one on this subset. A second cutoff equals one on the support of the first. These cutoffs let the proof use a fixed globally smooth multiplier and coordinate map to represent all the extended tests on the unitary group. Derivatives of these two fixed matrix functions are bounded through the required order. The composition and product estimates bound the derivatives of each matrix test extension by the corresponding finite test seminorm. The compact-difference estimate then bounds the original functional on that compact test space. The test-function universal property assembles these compact restrictions into the continuous functional.

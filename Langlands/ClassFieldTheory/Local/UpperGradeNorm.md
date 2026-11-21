@@ -1,0 +1,11 @@
+# Norms on unit grades when the base upper group fixes the extension
+
+`Langlands.LocalClassField.UpperGradeNorm.normToBaseUnits` is the common-closure field norm to the bottom finite intermediate field, followed by its identification with the units of the given p-adic base field. The module uses actual Weil reciprocity on that field and on an actual finite intermediate extension `E`. It works with a supplied normalized reciprocity family. It does not assume `E` is Galois.
+
+If the upper group of the base at a nonnegative index `s` fixes `E`, the relative Herbrand subgroup theorem identifies that entire group with the carried upper group of `E` at `ψ(s)`. Upper-numbering reciprocity sends these groups onto the unit levels `⌈s⌉` and `⌈ψ(s)⌉`. The norm square then gives equality of the norm image of the latter unit level with the former, not just inclusion.
+
+At a positive integral index `l` under this fixing hypothesis, take an index `b` just to the right of `l`. Continuity and monotonicity of the relative inverse Herbrand function ensure that the source ceiling either stays the same or increases by one, while the base ceiling increases by one. It cannot stay the same: the norm of a single source unit level would then equal two different base unit levels. Their difference follows from the nontrivial residue-field grade at a positive index. This proves `exists_next_ceiling_levels`, which is sufficient to apply the norm image theorem to the two adjacent levels. The module does not need an explicit formula for the inverse Herbrand function at the bound.
+
+`normUnitLevel` and `normUnitGrade` construct the induced homomorphisms from the asserted image equalities. In particular the grade map is surjective: first lift a class to a unit at level `l`, then lift that unit through the norm at the corresponding level of `E`.
+
+This is internal support for the norm step of the direct proof of Henniart's Proposition 3.3 in `prop:H33` of the 16 November 2026 numerical LLC route note. The route note cites Serre, *Local Fields*, Chapter V §§2 and 6 for the graded norm. Here the surjectivity portion is obtained from the published relative upper-group theorem and reciprocity norm square. The module does not assert the coinvariant description of the kernel needed to descend invariant characters.

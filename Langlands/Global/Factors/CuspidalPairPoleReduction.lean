@@ -29,9 +29,9 @@ open RankinSelbergGlobal
 /-- The normalization input for unequal ranks. It provides the covering family
 of ordinary partial integrals and one nonzero normalized member of exponential
 strip growth. The larger rank is in the first position. -/
-def UnequalNormalizedProductStatement : Prop :=
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+def UnequalNormalizedProductAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
     (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
   ∀ (r t : ℕ) (hrt : t < r) (T : CuspidalOperatorRealization F r)
     (T' : CuspidalOperatorRealization F t),
@@ -50,6 +50,11 @@ def UnequalNormalizedProductStatement : Prop :=
       ∃ D : UnequalNormalizedTests.{u, uQ, u} c hrt S ψ (archimedeanPairProduct dR dR' dC dC'),
         ∃ i, (∃ z, D.normalized i z ≠ 0) ∧ HasStripExponentialGrowth (D.normalized i)
 
+/-- The fieldwise premise at every number field. -/
+def UnequalNormalizedProductStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    UnequalNormalizedProductAt.{u,uQ} F
+
 private theorem HasSimplePoleProfile.congr_condition {Λ : ℂ → ℂ} {p q : Prop}
     (h : HasSimplePoleProfile Λ p) (he : p ↔ q) : HasSimplePoleProfile Λ q :=
   ⟨h.1, fun s hs => ⟨(h.2 s hs).1, (h.2 s hs).2.1, ((h.2 s hs).2.2).trans he⟩⟩
@@ -57,9 +62,9 @@ private theorem HasSimplePoleProfile.congr_condition {Λ : ℂ → ℂ} {p q : P
 /-- The equal-rank continuation with a normalized test for the strip estimate.
 This can be obtained from a covering subfamily of tests that contains a positive
 residue witness in the conjugate case. -/
-def EqualPairCompletionStatement : Prop :=
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+def EqualPairCompletionAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
     (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
   ∀ (r : ℕ) (T T' : CuspidalOperatorRealization F r),
     IsTrivialOnSplitCentre T → IsTrivialOnSplitCentre T' →
@@ -76,6 +81,11 @@ def EqualPairCompletionStatement : Prop :=
       HasSimplePoleProfile Λ (T.realization.IsContragredientOf T'.realization) ∧
       HasNormalizedStripTest Λ
 
+/-- The fieldwise premise at every number field. -/
+def EqualPairCompletionStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    EqualPairCompletionAt.{u,uQ} F
+
 section Continuation
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
@@ -84,7 +94,7 @@ variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
   {h : HasIrreducibleAdmissibleComponents P} {h' : HasIrreducibleAdmissibleComponents P'}
 
 private theorem exists_unequal_completion_of_normalized_products
-    (hNorm : UnequalNormalizedProductStatement.{u, uQ}) (hrt : t < r)
+    (hNorm : UnequalNormalizedProductAt.{u,uQ} F) (hrt : t < r)
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψ : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
@@ -98,7 +108,7 @@ private theorem exists_unequal_completion_of_normalized_products
     ∃ Λ : ℂ → ℂ, c.IsCompletedLFunction (archimedeanPairProduct dR dR' dC dC') Λ ∧
       HasSimplePoleProfile Λ False ∧ HasNormalizedStripTest Λ := by
   obtain ⟨S, hPS, hP'S, hS, D, i, hi, hG⟩ :=
-    hNorm F ψ hψ r t hrt T T' hT hT' P P' h h' c dR dR' hdR hdR' dC dC' hdC hdC'
+    hNorm ψ hψ r t hrt T T' hT hT' P P' h h' c dR dR' hdR hdR' dC dC' hdC hdC'
   have hLc := exists_continuousOn_archimedeanPairProduct_mul dR dR' dC dC' c.rightHalfPlaneContinuous
   obtain ⟨Λ, hΛ, hp, hEq⟩ := D.exists_completion hψ hPS hP'S hS hLc
   have hstd := isStandardAdditiveCharacter_of_unitary ψ hψ
@@ -112,9 +122,10 @@ private theorem exists_unequal_completion_of_normalized_products
   exact ⟨Λ, hΛ, hp, D.integral i, D.normalized i, hI,
     fun s => (D.analytic i s (mem_univ s)).differentiableAt, hi, hG, hEq i⟩
 
-private theorem exists_completion_of_normalized_products
-    (hEqual : EqualPairCompletionStatement.{u, uQ})
-    (hUnequal : UnequalNormalizedProductStatement.{u, uQ})
+/-- Assemble both rank orders of the normalized continuation at the given field. -/
+theorem exists_completion_of_normalized_products_at
+    (hEqual : EqualPairCompletionAt.{u,uQ} F)
+    (hUnequal : UnequalNormalizedProductAt.{u,uQ} F)
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψ : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
@@ -134,7 +145,7 @@ private theorem exists_completion_of_normalized_products
       ψ hψ hT hT' c dR dR' hdR hdR' dC dC' hdC hdC'
     exact ⟨Λ, hΛ, hp.congr_condition ⟨False.elim, fun ⟨heq, _⟩ => hlt.ne heq.symm⟩, htest⟩
   · subst t
-    obtain ⟨Λ, hΛ, hp, htest⟩ := hEqual F ψ hψ r T T' hT hT' P P' h h'
+    obtain ⟨Λ, hΛ, hp, htest⟩ := hEqual ψ hψ r T T' hT hT' P P' h h'
       c dR dR' hdR hdR' dC dC' hdC hdC'
     exact ⟨Λ, hΛ, hp.congr_condition ⟨fun h => ⟨rfl, h⟩, fun ⟨_, h⟩ => h⟩, htest⟩
   · obtain ⟨Λ, hΛ, hp, htest⟩ := exists_unequal_completion_of_normalized_products hUnequal hgt
@@ -190,8 +201,8 @@ theorem cuspidalPairPole_of_equalCompletion
   choose dRd' hdRd' using fun v => (hReal v).2.2.2.2
   choose dCd hdCd using fun v => (hComplex v).2.2.2.1
   choose dCd' hdCd' using fun v => (hComplex v).2.2.2.2
-  obtain ⟨Λ, hL, hp, I, R, hI, hRa, hRn, hRg, hMatch⟩ := exists_completion_of_normalized_products
-    hEqual hUnequal ψ hψ hT hT' c dR dR' hdR hdR' dC dC' hdC hdC'
+  obtain ⟨Λ, hL, hp, I, R, hI, hRa, hRn, hRg, hMatch⟩ := exists_completion_of_normalized_products_at
+    (hEqual F) (hUnequal F) ψ hψ hT hT' c dR dR' hdR hdR' dC dC' hdC hdC'
   have hLeft := hasLeftVerticalLineBounds_of_completedEquation c e S
     dR dR' dRd dRd' dC dC' dCd dCd' aR aC hp hL
     ((hE e).2 aR haR aC haC dR dR' dRd dRd' hdR hdR' hdRd hdRd'

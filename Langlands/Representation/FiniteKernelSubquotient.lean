@@ -1,5 +1,6 @@
 import Langlands.Automorphic.ConstantTermFiltration
 import Langlands.Correspondence.UnramifiedNormalization
+import Langlands.Representation.FiniteVectors
 import Mathlib.RepresentationTheory.Irreducible
 
 /-! A simple full-operator quotient descends along one finite-equivariant projection. -/
@@ -13,13 +14,13 @@ namespace Langlands
 
 open Representation
 
-private theorem exists_submodule_of_finiteKernels
+private theorem exists_cyclic_submodule_of_finiteKernels
     {R V W : Type*} [Ring R] [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W]
     [IsSimpleModule R W] {k : ℕ} (K : Fin k → Submodule R V)
     (q : V →ₗ[R] W) (hq : Function.Surjective q)
     (hkill : ∀ x, (∀ i, x ∈ K i) → q x = 0) :
-    ∃ (i : Fin k) (A : Submodule R V), Function.Surjective (q.comp A.subtype) ∧
-      ∀ x : A, x.val ∈ K i → q x.val = 0 := by
+    ∃ (i : Fin k) (x : V), Function.Surjective (q.comp (R ∙ x).subtype) ∧
+      ∀ y : R ∙ x, y.val ∈ K i → q y.val = 0 := by
   let K' : Fin (k + 1) → Submodule R V := Fin.cons ⊥ K
   let c (j : Fin (k + 1)) : V →ₗ[R] V ⧸ K' j := (K' j).mkQ
   have hsep (x : V) (hx : ∀ j, c j x = 0) : x = 0 :=
@@ -37,7 +38,7 @@ private theorem exists_submodule_of_finiteKernels
       have hqA : q.comp A.subtype ≠ 0 := by
         intro h
         exact hqx (congrArg (fun f : A →ₗ[R] W => f x') h)
-      refine ⟨i, A, (LinearMap.surjective_or_eq_zero (q.comp A.subtype)).resolve_right hqA, ?_⟩
+      refine ⟨i, x, (LinearMap.surjective_or_eq_zero (q.comp A.subtype)).resolve_right hqA, ?_⟩
       intro y hy
       obtain ⟨a, ha⟩ := Submodule.mem_span_singleton.mp y.property
       let z : R ∙ c i.succ x := ⟨c i.succ x, Submodule.mem_span_singleton_self _⟩
@@ -117,8 +118,9 @@ theorem exists_subquotient_of_finiteProjections
     intro i
     have hmem : x ∈ (K i).asSubmodule := by simpa only [KM, Equiv.symm_apply_apply] using hx (e i)
     exact (hK i x).mp ((Subrepresentation.mem_asSubmodule_iff (σ := K i) (v := x)).mp hmem)
-  obtain ⟨j, P, hP, hker⟩ := exists_submodule_of_finiteKernels KM qM hq hkillM
+  obtain ⟨j, x, hP, hker⟩ := exists_cyclic_submodule_of_finiteKernels KM qM hq hkillM
   let i := e.symm j
+  let P := MonoidAlgebra ℂ M ∙ x
   let A : Subrepresentation ρ := Subrepresentation.ofSubmodule' P
   let A₀ : Subrepresentation (ρ.comp α) :=
     ⟨A.toSubmodule, fun g => A.apply_mem_toSubmodule (α g)⟩
@@ -137,5 +139,50 @@ theorem exists_subquotient_of_finiteProjections
   let x₀ : A₀.toSubmodule := ⟨x.val, x.prop⟩
   refine ⟨f₀.toLinearMap.rangeRestrict x₀, ?_⟩
   exact (descendIntertwinerToRange_apply f₀ q₀ h₀ x₀).trans hx
+
+section RetainKernel
+
+variable {M V W : Type*} [Monoid M]
+  [AddCommGroup V] [Module ℂ V] [AddCommGroup W] [Module ℂ W]
+  {ρ : Representation ℂ M V} {τ : Representation ℂ M W}
+
+/-- The cyclic subsource retains the simple quotient, and the chosen projection
+kernel is killed on this subsource. -/
+def IsCompatibleCyclicProjectionKernel (q : ρ.IntertwiningMap τ)
+    (K : Subrepresentation ρ) (x : ρ.asModule) : Prop :=
+  let P : Subrepresentation ρ := Subrepresentation.ofSubmodule' (MonoidAlgebra ℂ M ∙ x)
+  Function.Surjective (q.toLinearMap.comp P.toSubmodule.subtype) ∧
+    ∀ y : P.toSubmodule, y.val ∈ K → q y.val = 0
+
+/-- With stable kernels and finite support on a cyclic generator, one can
+retain both the chosen projection and the full cyclic subsource. -/
+theorem exists_compatibleCyclicProjectionKernel {J : Type*} [τ.IsIrreducible]
+    (q : ρ.IntertwiningMap τ) (hq : Function.Surjective q) (K : J → Subrepresentation ρ)
+    (hkill : ∀ y, (∀ j, y ∈ K j) → q y = 0) (v : V)
+    (hv : FiniteVectors.orbitSpan ρ v = ⊤) (hfin : {j | v ∉ K j}.Finite) :
+    ∃ (j : J) (x : ρ.asModule), IsCompatibleCyclicProjectionKernel q (K j) x := by
+  classical
+  let J₀ := {j : J // v ∉ K j}
+  let : Fintype J₀ := hfin.fintype
+  let e := Fintype.equivFin J₀
+  let qM := IntertwiningMap.equivLinearMapAsModule ρ τ q
+  let KM (j : Fin (Fintype.card J₀)) := (K (e.symm j).val).asSubmodule
+  have hkillM (y : ρ.asModule) (hy : ∀ j, y ∈ KM j) : qM y = 0 := by
+    apply hkill y
+    intro j
+    by_cases hj : v ∈ K j
+    · have htop : ⊤ ≤ (K j).toSubmodule :=
+        hv ▸ FiniteVectors.orbitSpan_le ρ v (K j) hj
+      exact htop Submodule.mem_top
+    · have hmem : y ∈ (K j).asSubmodule := by
+        simpa only [KM, Equiv.symm_apply_apply] using hy (e ⟨j, hj⟩)
+      exact (Subrepresentation.mem_asSubmodule_iff (σ := K j) (v := y)).mp hmem
+  obtain ⟨j, x, hP, hker⟩ := exists_cyclic_submodule_of_finiteKernels KM qM hq hkillM
+  refine ⟨(e.symm j).val, x, hP, ?_⟩
+  intro y hy
+  exact hker y ((Subrepresentation.mem_asSubmodule_iff
+    (σ := K (e.symm j).val) (v := y.val)).mpr hy)
+
+end RetainKernel
 
 end Langlands

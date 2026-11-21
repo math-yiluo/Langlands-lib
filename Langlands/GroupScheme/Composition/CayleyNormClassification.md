@@ -1,0 +1,9 @@
+# Classification of Cayley data by the norm
+
+`Langlands.GroupScheme.CayleyDatum.NormClassificationStatement` says that two Cayley data over a field of characteristic different from two have isometric norms exactly when there is a linear equivalence preserving their unit and multiplication. `normClassification` proves this statement. The two directions are available as `exists_preserves_mul_unit_of_norm_isometry` and `norm_eq_of_preserves_mul_unit`. The latter applies in every characteristic.
+
+Starting from a norm isometry, a quadratic reflection construction aligns the two units. Choose two orthogonal trace-zero vectors of nonzero norm and use their images for the second datum. The two resulting four-dimensional unit blocks carry the same diagonal form. Witt extension adjusts the isometry to match the block vectors, so a nonzero-norm vector orthogonal to the first block goes to one orthogonal to the second. The smaller orthogonal complements needed for these choices are nondegenerate and have positive dimension. The eight-vector bases now have matching generator norms. The left-multiplication formulas from `CayleyOrthogonalFrame` show that the basis correspondence intertwines the three generators. For a remaining basis vector, its trace and pairings with the generators vanish. Anticommutation then determines its left multiplication on both blocks. Bilinearity makes the correspondence multiplicative on all vectors.
+
+In the reverse direction, compare the two quadratic equations for a vector and its image. Off the line spanned by the unit, equality of the two expressions determines the norm coefficient. On the unit line, the norm is the square of the scalar.
+
+This is an explicit form of Knus, Merkurjev, Rost and Tignol, *The Book of Involutions*, §33.C, Theorem 33.19, printed pp. 460–461 (PDF pp. 483–484). The proof uses the polarized multiplicative norm identities and Witt extension to compare frames.

@@ -322,16 +322,17 @@ private theorem modEq_finrank_quotient_power [Module.Finite k B] (δ : B ≃ₐ[
     (Nat.ModEq.refl (Module.finrank k (B ⧸ I))).add (Nat.modEq_zero_iff_dvd.mpr hdiv)
 
 /-- Successive quotienting by stabilized powers of the eigenvectors preserves
-the rank modulo the order of their common eigenvalue. -/
+the rank modulo their common eigenvalue order. -/
 private theorem modEq_finrank_quotient_boxPowers [Module.Finite k B] {σ : Type} [Finite σ]
-    (δ : B ≃ₐ[k] B) {c : k} (hc : c ≠ 0) (x : σ → B) (hx : ∀ i, δ (x i) = c • x i)
+    (δ : B ≃ₐ[k] B) (c : σ → k) (hc : ∀ i, c i ≠ 0) (x : σ → B)
+    (hx : ∀ i, δ (x i) = c i • x i) {r : ℕ} (hr : ∀ i, orderOf (c i) = r)
     (t : ℕ) (hstable : ∀ i, ∃ y : B, x i ^ (t + 1) * y = x i ^ t) :
-    Module.finrank k B ≡ Module.finrank k (B ⧸ boxPowers x t) [MOD orderOf c] := by
+    Module.finrank k B ≡ Module.finrank k (B ⧸ boxPowers x t) [MOD r] := by
   classical
   let : Fintype σ := Fintype.ofFinite σ
   let I (s : Finset σ) := Ideal.span ((fun i => x i ^ t) '' (↑s : Set σ))
   have step (s : Finset σ) :
-      Module.finrank k B ≡ Module.finrank k (B ⧸ I s) [MOD orderOf c] := by
+      Module.finrank k B ≡ Module.finrank k (B ⧸ I s) [MOD r] := by
     induction s using Finset.induction_on with
     | empty =>
       have hI : I ∅ = ⊥ := by simp [I]
@@ -343,10 +344,10 @@ private theorem modEq_finrank_quotient_boxPowers [Module.Finite k B] {σ : Type}
       have hinv : I s = (I s).map (δ : B →+* B) :=
         (map_span_of_eigenvectors δ.toAlgHom _ fun z hz => by
           obtain ⟨j, _, rfl⟩ := hz
-          exact ⟨c ^ t, pow_ne_zero _ hc, scale_eigen_pow (δ := δ.toAlgHom) (hx j) t⟩).symm
+          exact ⟨c j ^ t, pow_ne_zero _ (hc j), scale_eigen_pow (δ := δ.toAlgHom) (hx j) t⟩).symm
       let f := Ideal.Quotient.mkₐ k (I s)
       let δ' := Ideal.quotientEquivAlg (I s) (I s) δ hinv
-      have hδ : δ' (f (x i)) = c • f (x i) := by
+      have hδ : δ' (f (x i)) = c i • f (x i) := by
         change δ' (Ideal.Quotient.mk (I s) (x i)) = _
         rw [Ideal.quotientEquivAlg_mk]
         change f (δ (x i)) = _
@@ -354,11 +355,11 @@ private theorem modEq_finrank_quotient_boxPowers [Module.Finite k B] {σ : Type}
       have hst : ∃ y : B ⧸ I s, f (x i) ^ (t + 1) * y = f (x i) ^ t := by
         obtain ⟨y, hy⟩ := hstable i
         exact ⟨f y, by simpa only [map_mul, map_pow] using congrArg f hy⟩
-      have hs := modEq_finrank_quotient_power δ' hc (f (x i)) hδ t hst
+      have hs := modEq_finrank_quotient_power δ' (hc i) (f (x i)) hδ t hst
       have hJ : J.map f = Ideal.span ({f (x i) ^ t} : Set (B ⧸ I s)) := by
         rw [show J = Ideal.span _ from rfl, Ideal.map_span, Set.image_singleton, map_pow]
       rw [← hJ, (DoubleQuot.quotQuotEquivQuotSupₐ k (I s) J).toLinearEquiv.finrank_eq,
-        ← hinsert] at hs
+        ← hinsert, hr i] at hs
       exact ih.trans hs
   have hI : I Finset.univ = boxPowers x t := by
     unfold I boxPowers
@@ -387,9 +388,78 @@ private theorem exists_stable_box_width [Module.Finite k B] {σ : Type} [Finite 
 
 end Determinants
 
+section DiagonalScaling
+
+variable {σ : Type}
+
+/-- Diagonal scaling of the polynomial variables by the given weight family. -/
+def diagonalScale (c : σ → k) : MvPolynomial σ k →ₐ[k] MvPolynomial σ k :=
+  aeval fun i => c i • X i
+
+@[simp]
+theorem diagonalScale_X (c : σ → k) (i : σ) : diagonalScale c (X i) = c i • X i :=
+  aeval_X _ _
+
+@[simp]
+theorem diagonalScale_const (c : k) : diagonalScale (fun _ : σ => c) = scale c := rfl
+
+theorem diagonalScale_comp (c d : σ → k) :
+    (diagonalScale c).comp (diagonalScale d) = diagonalScale (fun i => d i * c i) :=
+  MvPolynomial.algHom_ext fun i => by simp [smul_smul]
+
+end DiagonalScaling
+
 section EquivariantPerturbation
 
 variable {σ : Type} [Finite σ]
+
+/-- Equations having the weights of their corresponding variables give a rank
+congruence modulo the common order of the diagonal eigenvalues. -/
+theorem finrank_modEq_of_diagonal_equations (F : σ → MvPolynomial σ k)
+    (c : σ → k) (hc : ∀ i, c i ≠ 0) {r : ℕ} (hr : ∀ i, orderOf (c i) = r)
+    (hF : ∀ i, diagonalScale c (F i) = c i • F i)
+    {n m L D : ℕ} (hn : 0 < n) (hm : 2 * n ≤ m) (hL : m ≤ L)
+    (hdeg : ∀ i, (F i).totalDegree < L) (hcL : ∀ i, c i ^ L = c i)
+    (hrn : Module.finrank k (truncAlg k σ n ⧸
+      Ideal.span (Set.range fun i => truncProj k σ n (F i))) = D)
+    (hrm : Module.finrank k (truncAlg k σ m ⧸
+      Ideal.span (Set.range fun i => truncProj k σ m (F i))) = D) :
+    L ^ Nat.card σ ≡ D [MOD r] := by
+  let G : σ → MvPolynomial σ k := fun i => X i ^ L + F i
+  let I := Ideal.span (Set.range G)
+  let B := MvPolynomial σ k ⧸ I
+  let f := Ideal.Quotient.mkₐ k I
+  let x : σ → B := fun i => f (X i)
+  let E := AlgEquiv.ofAlgHom (diagonalScale c) (diagonalScale (fun i => (c i)⁻¹))
+    (by rw [diagonalScale_comp, show (fun i => (c i)⁻¹ * c i) = (fun _ : σ => 1) from
+      funext fun i => inv_mul_cancel₀ (hc i), diagonalScale_const, scale_one])
+    (by rw [diagonalScale_comp, show (fun i => c i * (c i)⁻¹) = (fun _ : σ => 1) from
+      funext fun i => mul_inv_cancel₀ (hc i), diagonalScale_const, scale_one])
+  have hG (i : σ) : diagonalScale c (G i) = c i • G i := by
+    change diagonalScale c (X i ^ L + F i) = c i • (X i ^ L + F i)
+    rw [map_add, scale_eigen_pow (diagonalScale_X c i) L, hcL i, hF, smul_add]
+  have hI : I = I.map (E : MvPolynomial σ k →+* MvPolynomial σ k) :=
+    (map_span_of_eigenvectors (diagonalScale c) (Set.range G) fun z hz => by
+      obtain ⟨i, rfl⟩ := hz
+      exact ⟨c i, hc i, hG i⟩).symm
+  let δ := Ideal.quotientEquivAlg I I E hI
+  have hδ (i : σ) : δ (x i) = c i • x i := by
+    change δ (Ideal.Quotient.mk I (X i)) = _
+    rw [Ideal.quotientEquivAlg_mk]
+    change f (diagonalScale c (X i)) = _
+    rw [diagonalScale_X, map_smul]
+  obtain ⟨hfin, hrB⟩ := finite_perturbation F (show 0 < L by omega) hdeg
+  let : Module.Finite k B := hfin
+  have hnD : Module.finrank k (B ⧸ boxPowers x n) = D :=
+    (perturbation_box_finrank F (show n ≤ L by omega)).trans hrn
+  have hmD : Module.finrank k (B ⧸ boxPowers x m) = D :=
+    (perturbation_box_finrank F hL).trans hrm
+  obtain ⟨t, ht, hstable⟩ := exists_stable_box_width (k := k) x n
+  have htD : Module.finrank k (B ⧸ boxPowers x t) = D := by
+    rw [boxPowers_eq_of_finrank x hn hm (hnD.trans hmD.symm) ht, hnD]
+  have h := modEq_finrank_quotient_boxPowers δ c hc x hδ hr t hstable
+  rw [show Module.finrank k B = _ from hrB, htD] at h
+  exact h
 
 /-- Two compatible rectangular presentations of the same rank give the rank
 congruence forced by simultaneous scaling of the equations and variables. -/
@@ -401,40 +471,9 @@ theorem finrank_modEq_of_equivariant_equations (F : σ → MvPolynomial σ k)
       Ideal.span (Set.range fun i => truncProj k σ n (F i))) = D)
     (hrm : Module.finrank k (truncAlg k σ m ⧸
       Ideal.span (Set.range fun i => truncProj k σ m (F i))) = D) :
-    L ^ Nat.card σ ≡ D [MOD orderOf c] := by
-  let G : σ → MvPolynomial σ k := fun i => X i ^ L + F i
-  let I := Ideal.span (Set.range G)
-  let B := MvPolynomial σ k ⧸ I
-  let f := Ideal.Quotient.mkₐ k I
-  let x : σ → B := fun i => f (X i)
-  let E := AlgEquiv.ofAlgHom (scale (σ := σ) c) (scale c⁻¹)
-    (by rw [scale_comp, inv_mul_cancel₀ hc, scale_one])
-    (by rw [scale_comp, mul_inv_cancel₀ hc, scale_one])
-  have hG (i : σ) : scale c (G i) = c • G i := by
-    change scale c (X i ^ L + F i) = c • (X i ^ L + F i)
-    rw [map_add, scale_eigen_pow (scale_X c i) L, hcL, hF, smul_add]
-  have hI : I = I.map (E : MvPolynomial σ k →+* MvPolynomial σ k) :=
-    (map_span_of_eigenvectors (scale c) (Set.range G) fun z hz => by
-      obtain ⟨i, rfl⟩ := hz
-      exact ⟨c, hc, hG i⟩).symm
-  let δ := Ideal.quotientEquivAlg I I E hI
-  have hδ (i : σ) : δ (x i) = c • x i := by
-    change δ (Ideal.Quotient.mk I (X i)) = _
-    rw [Ideal.quotientEquivAlg_mk]
-    change f (scale c (X i)) = _
-    rw [scale_X, map_smul]
-  obtain ⟨hfin, hrB⟩ := finite_perturbation F (show 0 < L by omega) hdeg
-  let : Module.Finite k B := hfin
-  have hnD : Module.finrank k (B ⧸ boxPowers x n) = D :=
-    (perturbation_box_finrank F (show n ≤ L by omega)).trans hrn
-  have hmD : Module.finrank k (B ⧸ boxPowers x m) = D :=
-    (perturbation_box_finrank F hL).trans hrm
-  obtain ⟨t, ht, hstable⟩ := exists_stable_box_width (k := k) x n
-  have htD : Module.finrank k (B ⧸ boxPowers x t) = D := by
-    rw [boxPowers_eq_of_finrank x hn hm (hnD.trans hmD.symm) ht, hnD]
-  have h := modEq_finrank_quotient_boxPowers δ hc x hδ t hstable
-  rw [show Module.finrank k B = _ from hrB, htD] at h
-  exact h
+    L ^ Nat.card σ ≡ D [MOD orderOf c] :=
+  finrank_modEq_of_diagonal_equations F (fun _ => c) (fun _ => hc) (fun _ => rfl)
+    hF hn hm hL hdeg (fun _ => hcL) hrn hrm
 
 end EquivariantPerturbation
 

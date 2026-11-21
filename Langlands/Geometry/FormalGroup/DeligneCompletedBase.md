@@ -1,0 +1,5 @@
+# Deligne points over the completed maximal unramified base
+
+Drinfel'd, *Coverings of p-adic symmetric regions* (1976), §2 A, printed p. 109 (PDF p. 3), states representability by Deligne's formal scheme after completed base extension to the completed strict henselization. On an affine `Nilp` test algebra `B`, `nilpDeligneCompletedFunctor` pairs the actual Deligne point class with an algebra map from the completed maximal unramified integers to `B`. Pullback on the Deligne class and postcomposition on the base map define the functor. The image of the original uniformizer in `B` is nilpotent, so the base map kills a power of that uniformizer.
+
+`nilpDeligneCompletedDivisionAction` uses the existing left projective action of the matrix factor. On the actual base map it precomposes by the negative power of arithmetic Frobenius whose exponent is the sum of the determinant and reduced-norm orders. The two coordinates give a natural group action on the paired points. This is the Deligne side of the equivariant representability assertion.

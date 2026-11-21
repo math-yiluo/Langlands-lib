@@ -1,0 +1,7 @@
+# The number-field Hasse kernel in type D with distinguished vector vertex
+
+`Langlands.GroupScheme.NumberFieldTypeDVectorVertexHasseStatement` covers affine, locally finite type, absolutely almost-simple simply connected groups over a number field, numbered in type `D_n` for `n ≥ 4`. The star action fixes the nonfork vertices, and the vector vertex numbered zero is distinguished. A cocycle on a finite Galois cover that is trivial on the full pullback at every completion is then trivial on its original cover. `numberFieldTypeDVectorVertexHasse` proves this statement.
+
+Use the actual classical type D spin presentation, including its formula for the distinguished vertices. At the vector vertex the formula makes the division degree a divisor of one. The division algebra therefore identifies with the number field, and its first-kind involution becomes the identity. Matrix transport identifies the full isometry group with that of a regular scalar form. This isomorphism restricts to the identity components and transports the central isogeny of the original spin presentation. The scalar even-spin theorem then applies to the original source group and cocycle.
+
+The division-form presentation and vertex formula are those of `ClassicalTypeDSpinPresentationProof`. The scalar arithmetic step is derived from the spinor-norm exact sequence in Kneser, *Lectures on Galois Cohomology of Classical Groups*, §5.11, p. 99 (PDF p. 105).

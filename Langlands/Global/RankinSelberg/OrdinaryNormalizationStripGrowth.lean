@@ -16,15 +16,12 @@ namespace Langlands.Global.RankinSelbergGlobal
 
 open LocalFactor LocalFactor.Archimedean
 
-private theorem stripGrowth_const (c : ℂ) : HasStripExponentialGrowth (fun _ => c) :=
-  fun _ _ => ⟨‖c‖, 0, 0, norm_nonneg _, le_rfl, fun _ _ _ _ => by simp⟩
-
 private theorem stripGrowth_finset_prod {ι : Type*} (S : Finset ι) (f : ι → ℂ → ℂ)
     (hf : ∀ i ∈ S, HasStripExponentialGrowth (f i)) :
     HasStripExponentialGrowth (fun s => ∏ i ∈ S, f i s) := by
   classical
   induction S using Finset.induction_on with
-  | empty => simpa using stripGrowth_const 1
+  | empty => simpa using HasStripExponentialGrowth.const 1
   | insert i S hi ih =>
     simp only [Finset.prod_insert hi]
     exact (hf i (Finset.mem_insert_self i S)).mul
@@ -136,6 +133,6 @@ def NormalizedProductStripGrowthStatement : Prop :=
 
 theorem normalizedProductStripGrowth : NormalizedProductStripGrowthStatement := by
   intro ι S f c hf
-  exact (stripGrowth_const c).mul (stripGrowth_finset_prod S f hf)
+  exact (HasStripExponentialGrowth.const c).mul (stripGrowth_finset_prod S f hf)
 
 end Langlands.Global.RankinSelbergGlobal

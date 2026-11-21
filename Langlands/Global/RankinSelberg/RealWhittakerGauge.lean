@@ -200,20 +200,20 @@ theorem rootSize_nonneg (g : Langlands.GeneralLinear (r + 1) ℝ) (i : Fin r) :
     0 ≤ rootSize g i :=
   Finset.sum_nonneg fun _ _ => Finset.sum_nonneg fun _ _ => abs_nonneg _
 
-/-- Each simple root in the list contributes a factor `rootSize g i`, at the cost of one more
-right derivative, which keeps the common growth exponent. -/
-theorem exists_bound_list {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
-    (hreg : ∀ Xs, iteratedRightDerivative r Xs W ∈ regularFunctions r a) {N : ℕ}
-    (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
-      ‖iteratedRightDerivative r Xs W g‖ ≤ C * realMatrixHeight g ^ N)
+/-- The simple-root list estimate shares its constant across a family with common bounds
+for the right derivatives. -/
+theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.GeneralLinear (r + 1) ℝ → ℂ)
+    (hreg : ∀ j Xs, iteratedRightDerivative r Xs (W j) ∈ regularFunctions r a) {N : ℕ}
+    (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+      ‖iteratedRightDerivative r Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N)
     (is : List (Fin r)) :
-    ∀ Ys, ∃ C : ℝ, 0 ≤ C ∧ ∀ g, ‖iteratedRightDerivative r Ys W g‖ ≤
+    ∀ Ys, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g, ‖iteratedRightDerivative r Ys (W j) g‖ ≤
       C * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := by
   induction is with
   | nil =>
     intro Ys
     obtain ⟨C, hC0, hC⟩ := hN Ys
-    exact ⟨C, hC0, fun g => by simpa using hC g⟩
+    exact ⟨C, hC0, fun j g => by simpa using hC j g⟩
   | cons i is ih =>
     intro Ys
     choose C hC0 hC using fun pq : Fin (r + 1) × Fin (r + 1) =>
@@ -222,23 +222,23 @@ theorem exists_bound_list {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ �
     have ha : 0 < 2 * π * |(a : ℝ)| := by
       have := abs_pos.mpr a.ne_zero
       positivity
-    refine ⟨(∑ pq, C pq) / (2 * π * |(a : ℝ)|), div_nonneg hD0 ha.le, fun g => ?_⟩
+    refine ⟨(∑ pq, C pq) / (2 * π * |(a : ℝ)|), div_nonneg hD0 ha.le, fun j g => ?_⟩
     have hP : 0 ≤ (is.map (rootSize g)).prod :=
       List.prod_nonneg fun x hx => by
         obtain ⟨j, -, rfl⟩ := List.mem_map.mp hx
         exact rootSize_nonneg g j
     have hH : 0 ≤ realMatrixHeight g ^ N :=
       pow_nonneg (RealPlaceRestriction.realMatrixHeight_nonneg g) N
-    have key := rightDerivative_conjRoot (hreg Ys) g i
-    have h1 : ‖iteratedRightDerivative r Ys W g‖ * (2 * π * |(a : ℝ)|) =
+    have key := rightDerivative_conjRoot (hreg j Ys) g i
+    have h1 : ‖iteratedRightDerivative r Ys (W j) g‖ * (2 * π * |(a : ℝ)|) =
         ‖rightDerivative (matrixModel ℝ (r + 1)) (conjRoot g i)
-          (iteratedRightDerivative r Ys W) g‖ := by
+          (iteratedRightDerivative r Ys (W j)) g‖ := by
       rw [key]
       simp only [norm_mul, Complex.norm_I, Complex.norm_real, Real.norm_eq_abs,
         Complex.norm_ofNat, abs_of_pos Real.pi_pos]
       ring
     have h2 : ‖rightDerivative (matrixModel ℝ (r + 1)) (conjRoot g i)
-          (iteratedRightDerivative r Ys W) g‖ ≤
+          (iteratedRightDerivative r Ys (W j)) g‖ ≤
         rootSize g i * ((∑ pq, C pq) * (is.map (rootSize g)).prod *
           realMatrixHeight g ^ N) := by
       refine (norm_rightDerivative_le _ _ g).trans ?_
@@ -249,21 +249,35 @@ theorem exists_bound_list {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ �
       refine mul_le_mul_of_nonneg_left ?_ (abs_nonneg _)
       calc
         ‖rightDerivative (matrixModel ℝ (r + 1)) (Matrix.single p q 1)
-            (iteratedRightDerivative r Ys W) g‖ =
-            ‖iteratedRightDerivative r (Matrix.single p q 1 :: Ys) W g‖ := rfl
-        _ ≤ C (p, q) * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := hC (p, q) g
+            (iteratedRightDerivative r Ys (W j)) g‖ =
+            ‖iteratedRightDerivative r (Matrix.single p q 1 :: Ys) (W j) g‖ := rfl
+        _ ≤ C (p, q) * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := hC (p, q) j g
         _ ≤ (∑ pq, C pq) * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := by
           gcongr
           exact Finset.single_le_sum (f := C) (fun pq _ => hC0 pq) (Finset.mem_univ (p, q))
     rw [List.map_cons, List.prod_cons]
     have h3 := h1.trans_le h2
     calc
-      ‖iteratedRightDerivative r Ys W g‖ =
-          ‖iteratedRightDerivative r Ys W g‖ * (2 * π * |(a : ℝ)|) / (2 * π * |(a : ℝ)|) := by
+      ‖iteratedRightDerivative r Ys (W j) g‖ =
+          ‖iteratedRightDerivative r Ys (W j) g‖ * (2 * π * |(a : ℝ)|) / (2 * π * |(a : ℝ)|) := by
         field_simp
       _ ≤ rootSize g i * ((∑ pq, C pq) * (is.map (rootSize g)).prod *
           realMatrixHeight g ^ N) / (2 * π * |(a : ℝ)|) := by gcongr
       _ = _ := by ring
+
+/-- Each simple root in the list contributes a factor `rootSize g i`, at the cost of one more
+right derivative, which keeps the common growth exponent. -/
+theorem exists_bound_list {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
+    (hreg : ∀ Xs, iteratedRightDerivative r Xs W ∈ regularFunctions r a) {N : ℕ}
+    (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
+      ‖iteratedRightDerivative r Xs W g‖ ≤ C * realMatrixHeight g ^ N)
+    (is : List (Fin r)) :
+    ∀ Ys, ∃ C : ℝ, 0 ≤ C ∧ ∀ g, ‖iteratedRightDerivative r Ys W g‖ ≤
+      C * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := by
+  intro Ys
+  obtain ⟨C, hC₀, hC⟩ := exists_bound_list_family (fun _ : Unit => W) (fun _ => hreg)
+    (fun Xs => by obtain ⟨C, h0, h1⟩ := hN Xs; exact ⟨C, h0, fun _ => h1⟩) is Ys
+  exact ⟨C, hC₀, hC ()⟩
 
 theorem exists_list_prod (m : Fin r → ℕ) :
     ∃ is : List (Fin r), ∀ f : Fin r → ℝ, (is.map f).prod = ∏ i, f i ^ m i := by
@@ -425,6 +439,51 @@ theorem prod_rootSize_pow_le (y : Fin (r + 1) → ℝ) (k : unitaryCompact ℝ (
 
 /-! ### The gauge estimate -/
 
+/-- A common derivative bound gives a uniform gauge on the whole family. -/
+theorem gauge_bound_of_derivative_growth_family {ι : Type*} {a : ℝˣ}
+    (W : ι → Langlands.GeneralLinear (r + 1) ℝ → ℂ)
+    (hreg : ∀ j Xs, iteratedRightDerivative r Xs (W j) ∈ regularFunctions r a)
+    {N : ℕ} (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+      ‖iteratedRightDerivative r Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N) :
+    ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧
+      ∀ (j : ι) (y : Fin (r + 1) → ℝ) (k : unitaryCompact ℝ (r + 1)),
+        ‖W j (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))‖ ≤ C * Real.exp (-(M : ℝ) * ∑ i : Fin r, max (y i.castSucc - y i.succ) 0 +
+          ((2 * N : ℕ) : ℝ) * ∑ j, |y j|) := by
+  intro M
+  have hS : ∀ S : Finset (Fin r), ∃ C : ℝ, 0 ≤ C ∧ ∀ j g, ‖W j g‖ ≤
+      C * (∏ i : Fin r, rootSize g i ^ (if i ∈ S then M else 0)) * realMatrixHeight g ^ N := by
+    intro S
+    obtain ⟨is, his⟩ := exists_list_prod fun i : Fin r => if i ∈ S then M else 0
+    have his' : ∀ f : Fin r → ℝ,
+        (is.map f).prod = ∏ i, f i ^ (if i ∈ S then M else 0) := his
+    obtain ⟨C, hC0, hC⟩ := exists_bound_list_family W hreg hN is []
+    refine ⟨C, hC0, fun j g => ?_⟩
+    rw [← his' (rootSize g)]
+    exact hC j g
+  choose C hC0 hC using hS
+  have hD0 : 0 ≤ ∑ S, C S := Finset.sum_nonneg fun S _ => hC0 S
+  refine ⟨(∑ S, C S) * ((((r : ℝ) + 1) ^ 2) ^ M) ^ r * (2 * ((r : ℝ) + 1) ^ 2) ^ N,
+    mul_nonneg (mul_nonneg hD0 (by positivity)) (by positivity), fun j y k => ?_⟩
+  have h1 := hC (Finset.univ.filter fun i : Fin r => 0 ≤ y i.castSucc - y i.succ) j (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))
+  have h2 := prod_rootSize_pow_le y k M
+  have h3 := realMatrixHeight_torus_mul_pow_le y k N
+  have hCS : C (Finset.univ.filter fun i : Fin r => 0 ≤ y i.castSucc - y i.succ) ≤ ∑ S, C S :=
+    Finset.single_le_sum (fun S _ => hC0 S) (Finset.mem_univ _)
+  have hP0 : 0 ≤ ∏ i : Fin r, rootSize (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ)) i ^
+      (if i ∈ Finset.univ.filter (fun i : Fin r => 0 ≤ y i.castSucc - y i.succ) then M else 0) :=
+    Finset.prod_nonneg fun i _ => pow_nonneg (rootSize_nonneg _ _) _
+  calc
+    ‖W j (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))‖ ≤ _ := h1
+    _ ≤ (∑ S, C S) * (((((r : ℝ) + 1) ^ 2) ^ M) ^ r *
+          Real.exp (-(M : ℝ) * ∑ i : Fin r, max (y i.castSucc - y i.succ) 0)) *
+        ((2 * ((r : ℝ) + 1) ^ 2) ^ N * Real.exp (((2 * N : ℕ) : ℝ) * ∑ j, |y j|)) :=
+      mul_le_mul (mul_le_mul hCS h2 hP0 hD0) h3
+        (pow_nonneg (RealPlaceRestriction.realMatrixHeight_nonneg _) _)
+        (mul_nonneg hD0 (by positivity))
+    _ = _ := by
+      rw [Real.exp_add]
+      ring
+
 /-- The gauge estimate with the growth exponent specified in advance. -/
 theorem gauge_bound_of_derivative_growth {a : ℝˣ} {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
     (hreg : ∀ Xs, iteratedRightDerivative r Xs W ∈ regularFunctions r a)
@@ -435,39 +494,9 @@ theorem gauge_bound_of_derivative_growth {a : ℝˣ} {W : Langlands.GeneralLinea
         ‖W (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))‖ ≤ C * Real.exp (-(M : ℝ) * ∑ i : Fin r, max (y i.castSucc - y i.succ) 0 +
           ((2 * N : ℕ) : ℝ) * ∑ j, |y j|) := by
   intro M
-  have hS : ∀ S : Finset (Fin r), ∃ C : ℝ, 0 ≤ C ∧ ∀ g, ‖W g‖ ≤
-      C * (∏ i : Fin r, rootSize g i ^ (if i ∈ S then M else 0)) * realMatrixHeight g ^ N := by
-    intro S
-    obtain ⟨is, his⟩ := exists_list_prod fun i : Fin r => if i ∈ S then M else 0
-    have his' : ∀ f : Fin r → ℝ,
-        (is.map f).prod = ∏ i, f i ^ (if i ∈ S then M else 0) := his
-    obtain ⟨C, hC0, hC⟩ := exists_bound_list hreg hN is []
-    refine ⟨C, hC0, fun g => ?_⟩
-    rw [← his' (rootSize g)]
-    exact hC g
-  choose C hC0 hC using hS
-  have hD0 : 0 ≤ ∑ S, C S := Finset.sum_nonneg fun S _ => hC0 S
-  refine ⟨(∑ S, C S) * ((((r : ℝ) + 1) ^ 2) ^ M) ^ r * (2 * ((r : ℝ) + 1) ^ 2) ^ N,
-    mul_nonneg (mul_nonneg hD0 (by positivity)) (by positivity), fun y k => ?_⟩
-  have h1 := hC (Finset.univ.filter fun i : Fin r => 0 ≤ y i.castSucc - y i.succ) (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))
-  have h2 := prod_rootSize_pow_le y k M
-  have h3 := realMatrixHeight_torus_mul_pow_le y k N
-  have hCS : C (Finset.univ.filter fun i : Fin r => 0 ≤ y i.castSucc - y i.succ) ≤ ∑ S, C S :=
-    Finset.single_le_sum (fun S _ => hC0 S) (Finset.mem_univ _)
-  have hP0 : 0 ≤ ∏ i : Fin r, rootSize (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ)) i ^
-      (if i ∈ Finset.univ.filter (fun i : Fin r => 0 ≤ y i.castSucc - y i.succ) then M else 0) :=
-    Finset.prod_nonneg fun i _ => pow_nonneg (rootSize_nonneg _ _) _
-  calc
-    ‖W (torus y * (k : Langlands.GeneralLinear (r + 1) ℝ))‖ ≤ _ := h1
-    _ ≤ (∑ S, C S) * (((((r : ℝ) + 1) ^ 2) ^ M) ^ r *
-          Real.exp (-(M : ℝ) * ∑ i : Fin r, max (y i.castSucc - y i.succ) 0)) *
-        ((2 * ((r : ℝ) + 1) ^ 2) ^ N * Real.exp (((2 * N : ℕ) : ℝ) * ∑ j, |y j|)) :=
-      mul_le_mul (mul_le_mul hCS h2 hP0 hD0) h3
-        (pow_nonneg (RealPlaceRestriction.realMatrixHeight_nonneg _) _)
-        (mul_nonneg hD0 (by positivity))
-    _ = _ := by
-      rw [Real.exp_add]
-      ring
+  obtain ⟨C, hC₀, hC⟩ := gauge_bound_of_derivative_growth_family (fun _ : Unit => W) (fun _ => hreg)
+    (fun Xs => by obtain ⟨C, h0, h1⟩ := hN Xs; exact ⟨C, h0, fun _ => h1⟩) M
+  exact ⟨C, hC₀, hC ()⟩
 
 /-- If all iterated right derivatives of `W` are character-equivariant, smooth and
 polynomially bounded with a common exponent, then the simple-root gauge estimate holds. -/

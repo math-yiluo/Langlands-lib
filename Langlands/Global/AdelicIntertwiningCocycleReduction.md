@@ -199,7 +199,7 @@ If the originals are published later, the names do not clash.
   - finiteness of the unipotent roots;
   - the regular region is open in every chart;
   - surjectivity of the real-part and restriction maps;
-  - existence of a regular parameter for every threshold, from
+  - `exists_regularParameter` proves existence of a regular parameter for every threshold, from
     nondegeneracy of the Weyl-induced form and positivity of the pairing
     with the split-component cocharacter;
   - nonemptiness of the regular region in every chart.

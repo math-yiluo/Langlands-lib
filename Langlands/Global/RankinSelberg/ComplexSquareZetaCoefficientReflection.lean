@@ -82,8 +82,26 @@ def ComplexSquareCoefficientFunctionalEquationStatement : Prop :=
       ∀ s : ℂ, Nd (1 - s) =
         (complexEpsilon (List.ofFn ds) (-a) ‖(a : ℂ)‖₊ (nnnorm_pos.mpr a.ne_zero) s : ℂ) * N s
 
-theorem complexSquareCoefficientFunctionalEquation :
-    ComplexSquareCoefficientFunctionalEquationStatement (r := r) := by
+/-- The same square functional equation with exponential growth on each vertical strip. -/
+def ComplexSquareCoefficientFunctionalEquationGrowthStatement : Prop :=
+  ∀ (μ : Measure G) [μ.IsHaarMeasure] (κ : Measure K) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
+    (a : ℂˣ) (ds : Fin Rank → ComplexCharacterData) (Φ : 𝓢(Mat, ℂ)) (f : G → ℂ)
+    (w : K → ℂ), f ∈ complexStandardModule Rank (List.ofFn ds) → Continuous w →
+    let F := compactCoefficient κ id w f
+    let Fd (g : G) := F (inverseTranspose Rank ℂ g)
+    ∃ (σ : ℝ) (N Nd : ℂ → ℂ), Differentiable ℂ N ∧ Differentiable ℂ Nd ∧
+      HasStripExponentialGrowth N ∧ HasStripExponentialGrowth Nd ∧
+      (∀ s : ℂ, σ < s.re →
+        Integrable (zetaKernel Φ F s) μ ∧
+        Integrable (zetaKernel (matrixTransform a Φ) Fd s) μ ∧
+        N s = (complexLFactor (List.ofFn ds)).denominator s * ∫ g, zetaKernel Φ F s g ∂μ ∧
+        Nd s = (complexLFactor ((List.ofFn ds).map ComplexCharacterData.inv)).denominator s *
+          ∫ g, zetaKernel (matrixTransform a Φ) Fd s g ∂μ) ∧
+      ∀ s : ℂ, Nd (1 - s) =
+        (complexEpsilon (List.ofFn ds) (-a) ‖(a : ℂ)‖₊ (nnnorm_pos.mpr a.ne_zero) s : ℂ) * N s
+
+theorem complexSquareCoefficientFunctionalEquationGrowth :
+    ComplexSquareCoefficientFunctionalEquationGrowthStatement (r := r) := by
   intro μ _ κ _ _ a ds Φ f w hf hw
   let Ψ := leftAverageInv κ id continuous_id w hw Φ
   let Φd := matrixTransform a Φ
@@ -91,14 +109,15 @@ theorem complexSquareCoefficientFunctionalEquation :
   have hfd : Continuous fd := by
     have hc : Continuous (fun g : G => f (conjAut g)) := hf.1.continuous.comp continuous_conjAut
     simpa only [fd, inverseTranspose_eq_conjAut] using hc
-  obtain ⟨R, N, Nd, hN, hNd, hZ, hEq⟩ := complexSquareStandardFunctionalEquation μ κ a ds Ψ f hf
+  obtain ⟨R, N, Nd, hN, hNd, hNg, hNdg, hZ, hEq⟩ :=
+    complexSquareStandardFunctionalEquationGrowth μ κ a ds Ψ f hf
   obtain ⟨M, hM⟩ := exists_height_bound_standard (Nat.succ_pos r) (List.ofFn ds) List.length_ofFn
   obtain ⟨C, hC, hbound⟩ := hM f hf
   have hboundd (g : G) : ‖fd g‖ ≤ C * complexMatrixHeight g ^ M := by
     simpa only [height_inverseTranspose] using hbound (inverseTranspose Rank ℂ g)
   let q := (((Rank : ℂ) - 1) / 2).re
   let σ := max R ((Rank : ℝ) + M + |q|)
-  refine ⟨σ, N, Nd, hN, hNd, ?_, hEq⟩
+  refine ⟨σ, N, Nd, hN, hNd, hNg, hNdg, ?_, hEq⟩
   intro s hs
   have hsZ := (le_max_left R ((Rank : ℝ) + M + |q|)).trans_lt hs
   have hsM : (Rank : ℝ) + M ≤ (s + ((Rank : ℂ) - 1) / 2).re := by
@@ -119,5 +138,12 @@ theorem complexSquareCoefficientFunctionalEquation :
     ∫ g, zetaKernel (matrixTransform a Ψ) fd s g ∂μ at hNd₀
   rw [he, ← hCd.2, ← hd] at hNd₀
   exact ⟨hC₀.1, hd ▸ hCd.1, hN₀.trans (congrArg (_ * ·) hC₀.2.symm), hNd₀⟩
+
+
+theorem complexSquareCoefficientFunctionalEquation :
+    ComplexSquareCoefficientFunctionalEquationStatement (r := r) := by
+  intro μ _ κ _ _ a ds Φ f w hf hw
+  obtain ⟨σ, N, Nd, hN, hNd, _, _, hZ, hEq⟩ := complexSquareCoefficientFunctionalEquationGrowth μ κ a ds Φ f w hf hw
+  exact ⟨σ, N, Nd, hN, hNd, hZ, hEq⟩
 
 end Langlands.Global.RankinSelbergGlobal.ComplexSquareZeta

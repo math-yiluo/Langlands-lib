@@ -74,13 +74,12 @@ theorem norm_det_inv_le_realMatrixHeight (hn : 0 < n) (g : Langlands.GeneralLine
     ‖((g⁻¹).val).det‖ ≤ (n.factorial : ℝ) * realMatrixHeight g ^ n := by
   simpa only [realMatrixHeight_inv] using norm_det_le_realMatrixHeight hn g⁻¹
 
-/-- Both signs of the real determinant exponent have polynomial growth in the matrix/inverse
-height. The bound has a natural exponent depending on the given real exponent. -/
-theorem exists_det_rpow_le_realMatrixHeight (hn : 0 < n) (β : ℝ) :
-    ∃ (C : ℝ) (N : ℕ), 0 ≤ C ∧ ∀ g : Langlands.GeneralLinear n ℝ,
+/-- One polynomial height bound works for absolute determinant powers with exponent in a bounded interval. -/
+theorem exists_det_rpow_le_realMatrixHeight_of_abs_le (hn : 0 < n) (R : ℝ) :
+    ∃ (C : ℝ) (N : ℕ), 0 ≤ C ∧ ∀ β : ℝ, |β| ≤ R → ∀ g : Langlands.GeneralLinear n ℝ,
       |g.val.det| ^ β ≤ C * realMatrixHeight g ^ N := by
-  let k : ℕ := ⌈|β|⌉₊
-  refine ⟨(n.factorial : ℝ) ^ k, n * k, by positivity, fun g => ?_⟩
+  let k : ℕ := ⌈R⌉₊
+  refine ⟨(n.factorial : ℝ) ^ k, n * k, by positivity, fun β hβ g => ?_⟩
   let B := (n.factorial : ℝ) * realMatrixHeight g ^ n
   have hH : 1 ≤ realMatrixHeight g := le_trans (by norm_num) (two_le_realMatrixHeight hn g)
   have hB : 1 ≤ B := one_le_mul_of_one_le_of_one_le
@@ -105,9 +104,16 @@ theorem exists_det_rpow_le_realMatrixHeight (hn : 0 < n) (β : ℝ) :
       exact (le_abs_self _).trans ((abs_mul _ _).le.trans
         (mul_le_mul_of_nonneg_right hl (abs_nonneg β)))
     _ = B ^ |β| := (Real.rpow_def_of_pos (lt_of_lt_of_le zero_lt_one hB) _).symm
-    _ ≤ B ^ (k : ℝ) := Real.rpow_le_rpow_of_exponent_le hB (Nat.le_ceil _)
+    _ ≤ B ^ (k : ℝ) := Real.rpow_le_rpow_of_exponent_le hB (hβ.trans (Nat.le_ceil _))
     _ = (n.factorial : ℝ) ^ k * realMatrixHeight g ^ (n * k) := by
       rw [Real.rpow_natCast, mul_pow, pow_mul]
+
+/-- Both signs of the real determinant exponent have polynomial growth in the matrix/inverse height. -/
+theorem exists_det_rpow_le_realMatrixHeight (hn : 0 < n) (β : ℝ) :
+    ∃ (C : ℝ) (N : ℕ), 0 ≤ C ∧ ∀ g : Langlands.GeneralLinear n ℝ,
+      |g.val.det| ^ β ≤ C * realMatrixHeight g ^ N := by
+  obtain ⟨C, N, hC, h⟩ := exists_det_rpow_le_realMatrixHeight_of_abs_le hn |β|
+  exact ⟨C, N, hC, h β le_rfl⟩
 
 end RealPlaceRestriction
 end Langlands.Global.RankinSelbergGlobal

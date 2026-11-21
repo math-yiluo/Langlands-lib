@@ -1,0 +1,7 @@
+# Placewise tensors of the realized cuspidal Levi coefficients
+
+`groupedCoefficientEquiv` identifies the realized scalar Levi coefficient space with a tensor of two factors. The first is the indexed tensor of the finite restricted coefficients of the original cuspidal blocks. The second is indexed by the infinite places and has the tensor of the block coefficients at each place. The infinite coefficients are the actual chosen source models of the supplied cuspidal realizations.
+
+The proof transposes the place and block indices at infinity. It then pairs the finite and infinite factors within each block by two-slot tensor regrouping. `blockVectorEquiv` first transports the finite tensor back to its original spectral presentation and then applies the presentation's all-place equivalence. Evaluating the resulting tensor of actual block vectors gives `groupedCoefficientEquiv`. On pure tensors, Lean identifies the scalar coefficient as the product of the realized block evaluations. `blockVectorEquiv_finite` proves the finite right-translation identity on a binary pure tensor using the finite presentation intertwiner and the finite action law of the all-place equivalence.
+
+This is an internal comparison of the coefficient models. Flath (1979), §2, pp. 180–181 (PDF 176–177), gives the restricted tensor product and its component maps. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), describe the scalar Levi slices in the adelic induction model.

@@ -77,3 +77,5 @@ All declarations are in the namespace `Langlands.Archimedean`.
 - `characterOfParams l t` (definition): the `ComplexCharacterData` with character
   `z ↦ (z/‖z‖)^l ‖z‖^{2t}` (that is, `borelFactor l (2t)`), weight `l` and exponent `t`;
   `characterOfParams_weight` and `characterOfParams_exponent` record the last two fields.
+
+`characterOfParams_eta` recovers the original complex character datum from its weight and exponent.

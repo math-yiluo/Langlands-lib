@@ -1,0 +1,5 @@
+# Compact K-finite tests in a common real Godement frame
+
+`RealGodementFiniteCompactTestStatement` takes a Schwartz test of compact full-row-rank support whose right orthogonal translates span a finite-dimensional space. For any fixed lower compact profile, the resulting spectral Godement sections restrict on the upper orthogonal group to one finite-dimensional left-translation-stable space. The test and the lower profile therefore define a generator of the spectral frame.
+
+The compact upper restriction is a matrix coefficient of the finite right orbit of the test, multiplied by the outer determinant character on the orthogonal group. That character depends only on the leading parity. At every exponent the lower integral gives a linear evaluation on the finite test orbit by restricting integration to the common compact preimage of the support. Left translation of these matrix coefficients composes the evaluation with another operator on the finite orbit and multiplies it by the corresponding determinant scalar. This proves left stability independently of the exponent.

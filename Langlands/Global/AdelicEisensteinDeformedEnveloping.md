@@ -1,0 +1,5 @@
+# Extending deformed real operators to the enveloping algebra
+
+A smooth realized section has an infinite slice at every finite point after multiplication by its parameter height. These slice maps are jointly injective because the scalar realization is injective and the height factor is nowhere zero. The defining formula for a deformed real operator makes each slice map intertwine it with actual invariant differentiation. The real linearity and Lie bracket relations therefore follow from the existing smooth Lie action on the slices. Complexification and enveloping then give the original matrix enveloping algebra action, with the supplied real operators on its generators.
+
+This derived step constructs the full archimedean operator action of a fixed-carrier deformed family in Langlands, *On the notion of an automorphic representation* (1979), proof of Proposition 2, printed pp. 205–206, Corvallis Part I PDF pp. 200–201. It takes as input the closure of the deformed real operators on the section carrier.

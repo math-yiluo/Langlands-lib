@@ -1,0 +1,5 @@
+# Vanishing in a neighborhood of a lower complex Bruhat cell
+
+If a chart distribution satisfies the Whittaker derivative equations and is supported on the lower Bruhat cell in an open coordinate neighborhood, its restriction to that neighborhood is zero.
+
+Split the chart coordinates into the entries along the cell and the normal entries. The smooth stabilizer depends only on the tangential entries. The variable-direction equation gives a smooth real correction to the scalar coefficient. On the zero normal section the inducing scalar vanishes and the exact Whittaker frequency is `4πi`. The scalar coefficient there is therefore nonzero. Its reciprocal, extended constantly in the normal variables, is a smooth multiplier. Applying the variable equation to the test times this multiplier rewrites the annihilated operator as the identity plus a first-order operator whose field and zeroth-order coefficient vanish along the zero section. The field has cube-zero normal derivative. The finite-jet vanishing theorem gives zero on the split open test domain, and the inverse coordinate change gives zero on every test supported in the original neighborhood.

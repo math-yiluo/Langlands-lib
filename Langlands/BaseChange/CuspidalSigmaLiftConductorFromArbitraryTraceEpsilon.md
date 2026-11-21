@@ -1,0 +1,15 @@
+# Conductor reduction for an arbitrary trace-related additive character
+
+`cuspidalSigmaLiftConductorFromArbitraryTraceEpsilon` proves `CuspidalSigmaLiftConductorFromArbitraryTraceEpsilonStatement`. This is a conditional reduction of the exact four-universe `CuspidalSigmaLiftConductorStatement`; it is not a proof of that target. It has three explicit premises.
+
+1. `NormTrivialCountStatement`: for a characteristic-zero local field `F`, a local field `E` with an `F`-algebra structure and module topology, and `σ` with `IsCyclicAlgebra σ l`, every finite set `X` that contains exactly the characters `κ : Fˣ →* ℂˣ` trivial on norms (`IsNormTrivial E κ`) has `l` elements.
+2. `TraceAdditiveConductorFormulaStatement`: for such `F` and `E` with `E` finite over `F`, residue degree `f` (`IsResidueDegree`), different exponent `d` (`IsDifferentExponent`), and nontrivial additive characters with `ψE x = ψF (Tr_{E/F} x)`, Tate's additive conductors satisfy `f · n(ψE) = [E:F] · n(ψF) + f · d`.
+3. `CuspidalSigmaLiftArbitraryTraceEpsilonDataStatement`: the local data of the published `CuspidalSigmaLiftLocalEpsilonDataStatement`, except that the pair `(ψF, ψE)` is only required to satisfy the trace relation pointwise. No conductor of either character is prescribed. Thus the data consist of the actual standard epsilon certificates and newvector conductors of the norm-trivial twists `κπ`, a common newvector conductor `a₁` of `P₁`, and actual standard epsilon certificates of the orbit blocks `P₁ ∘ σ^i` with exponent `a₁ + (k₁ + 1) n(ψE)`. They also include multiplicativity of the orbit epsilon monomials for `P`, and comparison of the product of the twists' epsilon monomials with that of `P` up to a unit.
+
+The proof follows the published `cuspidalSigmaLiftConductorFromLocalEpsilon`, keeping the additive conductors. `EpsilonMonomialProductComparison.sum_eq`, with `q_E = q_F^f`, gives `Σ_{κ∈X} e(κπ) = f · e(P)` for the integer exponents. The certificates give `e(κπ) = a(κπ) + (k + 1) n(ψF)`. The orbit product and `s (k₁ + 1) = k + 1` give `e(P) = s a₁ + (k + 1) n(ψE)`. Hence
+
+`Σ a(κπ) + |X| (k + 1) n(ψF) = f s a₁ + f (k + 1) n(ψE)`.
+
+Substituting `|X| = l = [E:F]` (premise 1 and `IsCyclicAlgebra`) and premise 2 cancels both additive conductors, leaving `Σ a(κπ) = f (s a₁ + (k + 1) d)` in `ℕ`. Finally the newvector certificates identify `a(κπ)` and `a₁` with `Conductor.firstFixedLevel`, as in the published reduction. Its private helper for that identification is restated here, with a primed name.
+
+This internal reduction serves the global step of Task 7843. That step uses the standard adelic additive characters, whose components at the distinguished place need not have conductor zero, so the published conductor-zero reduction cannot be applied directly. The premises are stated for characteristic-zero `F`, the scope in which the project's p-adic realizations can prove them. The Library has them only for supplied p-adic data, in staged candidates of this task. This module proves neither premise and constructs no epsilon data, additive characters, globalization or global lift.

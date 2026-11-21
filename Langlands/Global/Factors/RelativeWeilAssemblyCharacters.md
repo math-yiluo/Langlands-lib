@@ -41,7 +41,8 @@ fields.
 
 - `ideleNorm_ofAdicCompletion`, `ideleClassNorm_ofAdicCompletion`: the (class) norm of the
   idele supported at a finite place `q` above `p` with value `x` is supported at `p`, with value
-  the local unit norm `FiniteExtension.localUnitNorm p q x`.
+  the local unit norm `FiniteExtension.localUnitNorm p q x`. The two number fields
+  can belong to separate universes.
 - `ideleNorm_ofCompletion`, `ideleClassNorm_ofCompletion`: the same at an infinite place
   `w` above `v`, with `InfiniteExtension.localUnitNorm v w`.
 

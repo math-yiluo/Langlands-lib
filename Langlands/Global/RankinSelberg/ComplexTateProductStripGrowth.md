@@ -7,3 +7,7 @@ The common-strip Fourier identity in one coordinate extends to the entire family
 Reflection in a coordinate whose real part is below one half moves it to the positive box and replaces the test by its coordinate Fourier transform. Its phase has norm one and reflection preserves the absolute imaginary part. Induction over coordinates gives the box estimate for arbitrary lower real bounds. Along a real-slope affine line the sum of absolute imaginary parts is bounded by a constant plus a multiple of the absolute height, giving the stated vertical-strip estimate.
 
 This extends the product Tate continuation used in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.1, proof of Proposition 7.1, author-version p. 44. The implemented estimate uses the published coordinatewise Tate reflection and the exponential bounds for reciprocal complex Gamma, as a growth input for normalized square zeta integrals.
+
+Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §4.7, printed pp. 30–31, relates the meromorphic matrix integral to its \(L\)-factor. The boundedness of the meromorphic integral used after (8.2) in §8.2, printed p. 57, comes from the separate strip estimate in §4.7.
+
+`ComplexTateProductStripGrowthAtRank` fixes the rank before quantifying over the entire family. `complexTateProductStripGrowthAtRank` specializes the all-ranks estimate to that rank.

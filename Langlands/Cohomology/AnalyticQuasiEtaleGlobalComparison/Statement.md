@@ -4,8 +4,9 @@ Author: Worker 16.
 
 This module defines one proposition,
 `Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.AnalyticQuasiEtaleGlobalComparisonStatement`.
-It is the quasi-étale case of Berkovich's Theorem 1.6.1(ii): if a topological
-group `G` acts continuously on a compact analytic space `X`, then for every
+It gives the quasi-étale comparison of Berkovich's Theorem 1.6.1(ii) in the
+Library model: if a topological group `G` acts continuously on a compact
+Hausdorff analytic space `X`, then for every
 quasi-étale `G`-sheaf `F` the comparison maps `H^q(X{G}, F) → H^q(X, b^*F)` are
 isomorphisms in every degree `q`. It is a theorem-statement definition, not a
 proof. The isomorphism is the conclusion; it is not supplied as data or as a
@@ -27,8 +28,8 @@ analytic spaces, quasi-étale site and continuous actions.
 - `R : Type (max u (v + 1) uL)` is a commutative ring. Sheaves take values in
   `R`-modules. This coefficient universe is the one of Worker 26's derived
   functors.
-- `quasiEtaleGSheafCohomology ρ R q` is Berkovich's `H^q(X{G}, F)`. It is the
-  `q`-th right derived functor of `quasiEtaleGSheafSections ρ R`, Berkovich's
+- `quasiEtaleGSheafCohomology ρ R q` models `H^q(X{G}, F)`. It is the
+  `q`-th right derived functor of `quasiEtaleGSheafSections ρ R`, the model
   `Γ_{X{G}}`: the smooth part of the representation of `G` on the global
   sections of `F`. Derived functors are computed with injective resolutions in
   the category of quasi-étale `G`-sheaves `QuasiEtaleGSheaf ρ`, and the values
@@ -40,7 +41,7 @@ analytic spaces, quasi-étale site and continuous actions.
   `quasiEtaleGSheafCohomology ρ R q ⋙ smoothForget R G` (the underlying modules
   of `H^q(X{G}, F)`) to
   `quasiEtaleGSheafRestriction ρ R ⋙ quasiEtaleCohomology X R q`. Here
-  `quasiEtaleGSheafRestriction` is Berkovich's `b^*`. Worker 26 defines the map
+  `quasiEtaleGSheafRestriction` models Berkovich's `b^*`. Worker 26 defines the map
   as the base change, along the exact functors `b^*` and `smoothForget`, of the
   inclusion `Γ_{X{G}}(F) ⊆ (b^*F)(X)` of smooth global sections into all
   global sections.
@@ -114,22 +115,27 @@ Printed page numbers equal PDF page numbers.
 
 ## Correspondence and modelling choices
 
-- Berkovich's quasi-étale abelian sheaves on `X(G)` are modelled by Worker
-  26's quasi-étale `G`-sheaves `QuasiEtaleGSheaf ρ`, through Theorem 1.4.2, as
-  in all of Worker 26's quasi-étale modules. Theorem 1.4.2 is not formalized.
+- The input sheaves are Worker 26's `QuasiEtaleGSheaf ρ`. The derived smooth
+  sections are computed in that model, and ordinary cohomology of the
+  restriction is computed on the Library's generated `quasiEtaleTopology`.
+  The manuscript uses Theorem 1.4.2 to pass from its equivariant site to
+  quasi-étale `G`-sheaves. The corresponding formal transfer for these
+  model functors is not established here, nor is an identification of
+  the Library's covering rule with the manuscript's.
 - Berkovich works with abelian sheaves. Here sheaves take values in
   `R`-modules for an arbitrary commutative ring `R` in the coefficient universe;
   abelian sheaves are the case `R = ULift ℤ`. The statement for all `R` is the
   natural generalization. Berkovich's argument (below) uses nothing specific
   to abelian groups.
-- Only the isomorphism of Theorem 1.6.1(ii) is stated. Its spectral sequence,
-  the étale case ("resp. étale"), part (i) for paracompact `X` and part (iii)
-  are not stated. The Library has no invariant cohomology `H^q(X(G), F)` and no
-  étale cohomology of `G`-sheaves to state them with.
-- The hypotheses are exactly Berkovich's: `X` is a `G`-space and `X` is
-  compact. The two instance binders are needed only to form the source
-  category and its derived functors; they are not hypotheses of Berkovich's
-  theorem.
+- This module states only the quasi-étale comparison of Theorem 1.6.1(ii),
+  not its spectral sequence or parts (i) and (iii). The étale comparison is
+  a separate statement in `AnalyticEtaleGlobalComparison.Statement`.
+- `IsCompactSpace` includes Berkovich's standing Hausdorff condition.
+  `IsContinuousAction` is imposed for an action over the fixed field `K`;
+  the manuscript also allows isometric automorphisms of the base field
+  (§1.1, p.1). The two instance binders provide the Library's size and
+  refinement conditions for the source category and its derived functors;
+  they are not separate hypotheses in Berkovich's theorem.
 
 ## Why the proposition is expected to hold
 
@@ -149,21 +155,24 @@ In degree zero the Library model behaves the same way. When `X` is compact and
 is an admissible lift in `compactLiftSystem ρ`. The discreteness condition of
 `QuasiEtaleGSheaf ρ` then says that every global section is fixed by an open
 subgroup. So the inclusion `Γ_{X{G}}(F) ⊆ (b^*F)(X)` is an equality, and
-`quasiEtaleComparison ρ R 0` is an isomorphism. In positive degrees the
-argument needs Čech cohomology and Berkovich's Key Lemma on lifts, which the
-Library does not yet have.
+`quasiEtaleComparison ρ R 0` is an isomorphism (see `DegreeZero.lean`). The
+positive-degree route uses compact Čech covers and compatible lifts; see
+`CompactCechAcyclic.lean` and `CompactTupleComparison.lean` for the Library
+reductions. These are on the model sites and do not prove the transfer
+through Theorem 1.4.2.
 
 ## Relation to the compactly supported comparison
 
-Theorem 1.6.1(ii) concerns ordinary cohomology. Its compactly supported
-analogue, Berkovich's Corollary 1.5.2(i), is stated in the manuscript only for
-étale sheaves. On the Library's quasi-étale model, with supports in `L`-valued
-points, Worker 26's compactly supported comparison
-`quasiEtaleCompactComparison` is not an isomorphism for some sheaves on a
-noncompact `X`. An example is in `notes/henniart/harris-cohomology-coverage.md`,
-section "Retained source gaps and scope decisions". That is why this module
-states the ordinary comparison for compact `X`, which uses no points and is
-exactly the quasi-étale case of Berkovich's theorem.
+Theorem 1.6.1(ii) concerns ordinary cohomology on a compact base and uses no
+point-support family. The compact-support comparison of Corollary 1.5.2(i),
+pp. 11–12, concerns only étale sheaves. The Library constructs an analogous
+map `quasiEtaleCompactComparison` using `L`-valued points to test supports,
+but its invertibility is not asserted here. The
+[coverage note](../../../notes/henniart/harris-cohomology-coverage.md#retained-source-gaps-and-scope-decisions)
+gives a paper degree-zero obstruction with rank-two points in the
+manuscript-style quasi-étale setting on a noncompact base. That argument is
+not verified for the Library's generated topology and does not concern the
+ordinary compact-base comparison.
 
 ## Role in the Harris framework
 

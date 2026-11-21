@@ -1,0 +1,9 @@
+# The equal-rank successor with strip growth
+
+At the standard complex additive character, the normalized equation with strip growth for every adjacent pair of sizes \(r+2\) and \(r+1\) gives the corresponding equation for equal sizes \(r+2\). The step assumes proportionality of the Whittaker identity evaluations to canonical Jacquet evaluation, which provides the canonical range description of both Whittaker models.
+
+Choose compatible quotient measures in the smaller rank. For a rectangular recursion generator with compact full-row-rank support, form the square Schwartz test by multiplying the rectangle test by the prescribed last-row test. The adjacent opposite-character theorem supplies the lower-rank normalization in the order used by the square limit. The square limit gives two chamber values for this test and its Fourier transform. Recovery of the ordinary traces gives the normalization and strip growth at the requested adjoining exponent.
+
+For fixed second coefficient and last-row test, the primal and dual integrands are linear in the first coefficient. Pairs of kernels with absolutely convergent half-plane integrals and strip-growing normalized witnesses form a submodule. Addition uses the common right half-plane and the sum of the two witnesses, and scalar multiplication scales both witnesses. The compact recursion span maps into this submodule because each generator has the normalized equation and absolute convergence on a right half-plane. The canonical range description extends the conclusion to every pair in the ordinary Whittaker models.
+
+This internal induction step implements the equal-rank calculation in Jacquet, *Archimedean Rankin–Selberg Integrals*, §8.2, printed and PDF pp. 54–58.

@@ -1,0 +1,11 @@
+# Reflection of simplicity from a full-degree simple stratum
+
+Source context: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), `bushnell-kutzko-1993-admissible-dual-gln`, (2.2.2), printed pp. 52–53 (PDF pp. 64–65). The source proposition is at top depth `r = n−1`. `MaximalSimpleReflectionStatement` proves a derived extension to any simple depth in the Library's chain model: if `S` is simple, its generated-field degree equals `dim_F V`, and `T` is equivalent with the same chain and integers, then `T` is simple and its generated-field degree also equals `dim_F V`. No purity assumption on `T` is made.
+
+## Implemented proof
+
+Write `α = S.b`, `y = T.b`, and `E = F[α]`. Since `E` has full degree, `V` has dimension one over `E`. Take a one-element relative basis; its sole matrix unit is the identity. If `X` is in filtration depth `t` and `[y,X]` is in depth `t−r`, then `[α,X]` is in depth `t−r` as well, using the congruence `α−y ∈ 𝔓^{−r}` on both products. Simplicity gives `k₀(α) ≤ −r−1`. Adjoint exactness at `m=t+1`, `k=−r−1` gives an `E`-linear `Z` with `X−Z ∈ 𝔓^{t+1}`.
+
+In particular this estimate applies to every `X` commuting with `y`. The published field-line comparison lemmas of `RefinementCentralizer` now give normalizing units for `F[y]` and surjectivity of its entry map to `E`; the dimension formula bounds its degree by `dim_F V`. It is therefore a full-degree field. The perturbation lies at strictly greater depth than `α`, so the valuation of `y` is still `−n`.
+
+To prove simplicity, apply the same adjoint estimate at `t=0` to every element of the adjoint lattice of `y` at `−r`. The `E`-linear approximation is multiplication by an element of `E`, by the one-line formula for a commuting compression. It belongs to depth zero. `approx_range_elementAlgebra` replaces it modulo depth one by an element of `F[y]`, which centralizes `y`. Thus this adjoint lattice is contained in the depth-zero centralizer plus depth one. Antitonicity and the greatest-critical-index theorem exclude all critical indices at or above `−r`; the scalar case is bottom. This proof does not use the source's compactness or its intertwining theorem. It uses finite heartbeat limits for elaboration with the generated field's instances.

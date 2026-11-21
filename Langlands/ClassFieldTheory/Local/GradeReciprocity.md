@@ -1,0 +1,9 @@
+# Frobenius lifts and conjugation on the unit grades of the common closure
+
+`weilRestriction` is the restriction of the Galois projection of the actual Weil group to an actual finite Galois intermediate field. It is surjective by density of the Weil projection and discreteness of the finite Galois group. Its kernel is the fixing Weil subgroup, so conjugation by a base Weil element acts on that same subgroup.
+
+The spectral residue action of the finite Galois group is surjective. Lifting the arithmetic Frobenius gives an automorphism inducing the residue-cardinality power map there. The integer-ring comparison with the canonical p-adic model is the identity on field elements, hence commutes with the field automorphism. Passing to residues gives the same power map on the canonical residue ring. Composing with Weil restriction gives an actual Weil lift of this action. The induced action on a unit filtration subgroup has underlying field unit given by the same automorphism; this follows from the integer-unit and field-unit comparison.
+
+For a normalized reciprocity family, `reciprocityUnits_conjugateWeil` reads the published common-closure conjugation square on a normal intermediate field. It compares the original and transported reciprocity components in the common closure, avoiding a choice of coordinates on the conjugate field. Consequently the base norm is invariant under the lifted field automorphism: by reciprocity and the norm square, this is invariance of an abelian-valued homomorphism under conjugation.
+
+This is internal compatibility support for the graded norm and Frobenius coinvariant argument in Task 7386, on the route to Henniart's Proposition 3.3 and Corollaire 1.4. It uses the actual finite residue reduction and normalized reciprocity already in the Library, and does not assert the scalar descent or conductor-count theorem.

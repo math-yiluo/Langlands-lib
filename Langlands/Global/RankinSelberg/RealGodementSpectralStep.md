@@ -1,0 +1,9 @@
+# The rank step for real Jacquet continuation
+
+`RealGodementSpectralStepStatement` passes fixed-profile Jacquet continuation from \(\mathrm{GL}_{t+1}(\mathbb R)\) to \(\mathrm{GL}_{t+2}(\mathbb R)\) using the lower-rank quotient measure data. The continued family agrees with the Jacquet integral on the strict leading chamber. At every parameter all right derivatives are regular Whittaker functions, are holomorphic at each group element as the parameter varies, and share one locally uniform polynomial growth exponent.
+
+The compact restriction of the input profile lies in a finite left-translation-stable space. The fixed-test Godement families span the principal-series restrictions in that space at every parameter. A linear coordinate functional on that finite space is a finite sum of compact point evaluations, so the generator coordinates are holomorphic. Apply the lower-rank hypothesis to each lower compact profile and substitute its coefficient in the first-column formula. The spectral Godement estimates give smooth upper group slices, holomorphic right derivatives and locally uniform growth. On the strict chamber the lower coefficients equal their convergent Jacquet integrals. The compact unfolding identifies the resulting upper columns with the upper convergent integral, which is linear on the fixed compact space after extending the profiles to the principal series.
+
+The finite spectral descent therefore produces the upper family and preserves its derivative estimates. The identity theorem propagates left Whittaker covariance from the chamber. Right differentiation commutes with left multiplication, so every derivative has the same covariance and meets the regularity conditions.
+
+This is the induction step in the real character principal-series continuation of Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.2. It retains uniform growth for all iterated right derivatives for subsequent column integrals.

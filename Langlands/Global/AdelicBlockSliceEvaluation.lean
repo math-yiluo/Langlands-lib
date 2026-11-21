@@ -35,13 +35,13 @@ local notation "M" => FullLevi F B
 local notation "V" => RealizedSections F B S
 local notation "W" => coefficientValues F B S
 
-local instance (t : ℕ) : AddCommGroup (RationalInvariantFunctions F t) := Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (ContinuousRationalFunctions F t) := Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F t) :=
+local instance blockSliceEvaluationRationalAddCommGroup (t : ℕ) : AddCommGroup (RationalInvariantFunctions F t) := Submodule.addCommGroup _
+local instance blockSliceEvaluationContinuousAddCommGroup (t : ℕ) : AddCommGroup (ContinuousRationalFunctions F t) := Submodule.addCommGroup _
+local instance blockSliceEvaluationFiniteSmoothAddCommGroup (t : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F t) :=
   Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (AutomorphicForms F t) := Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (StableAutomorphicFunctions F t) := Submodule.addCommGroup _
-local instance {t : ℕ} (T : OperatorRealization F t) : AddCommGroup T.Space :=
+local instance blockSliceEvaluationAutomorphicAddCommGroup (t : ℕ) : AddCommGroup (AutomorphicForms F t) := Submodule.addCommGroup _
+local instance blockSliceEvaluationStableAddCommGroup (t : ℕ) : AddCommGroup (StableAutomorphicFunctions F t) := Submodule.addCommGroup _
+local instance blockSliceEvaluationRealizationAddCommGroup {t : ℕ} (T : OperatorRealization F t) : AddCommGroup T.Space :=
   Submodule.addCommGroup _
 
 /-- The finite coefficient action is the product of the realized block actions. -/

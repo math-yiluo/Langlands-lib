@@ -1,0 +1,5 @@
+# Reduction to the unequal-rank equation on canonical Jacquet pairs
+
+`ComplexLocalUnequalFromCanonicalStatement` reduces the published local unequal-rank proposition to one premise, `ComplexUnequalCanonicalNormalizedEquationStatement`. That premise gives the entire normalized ordinary and dual integrals and their functional equation on canonical Jacquet values, at every pair of inducing parameters and for all unequal ranks. It uses the fixed complex additive Haar normalization for the canonical maps and the original quotient measure data for the zeta integrals.
+
+Recover each inducing list from its exact weights and exponents. Multiplicity one represents the two given intertwiners as scalar multiples of the canonical maps. Apply the premise to the two scalar-multiplied input vectors, so the functions inserted in the integrals are exactly the original intertwiner values. The prior analytic reduction supplies the exact target on the full models, including convergence, holomorphy on a half-plane and meromorphic continuation.

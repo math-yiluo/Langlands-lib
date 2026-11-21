@@ -1,0 +1,5 @@
+# Unequal-rank local kernels at a quotient class
+
+This is an internal calculation for pointwise factorization. It uses the matrix conventions of `ArchimedeanLocal`, not an extra representation-theoretic assumption. Over any field, take functions of reciprocal left unipotent characters, given by an additive character of the sum of the first superdiagonal entries. Neither topology nor convergence is needed.
+
+For the ordinary integrand, padding a unitriangular matrix preserves its superdiagonal sum. The two character multipliers then cancel, and the determinant weight is unchanged. For the dual kernel, left multiplication of the leading block becomes left multiplication by the padded unipotent on the rectangular point, even after the right Weyl translation. Under the dual transform the unipotent is reflected by inverse transpose and the long Weyl element; this negates the superdiagonal sum. The resulting two multipliers again cancel. In each case `apply_out_mk` identifies the value on the chosen representative of a quotient class with the value on the originally supplied matrix.

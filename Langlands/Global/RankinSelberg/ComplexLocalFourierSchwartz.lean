@@ -16,11 +16,14 @@ namespace Langlands.Global.RankinSelbergGlobal
 
 open ArchimedeanLocal
 
-/-- The Fourier transform with the Library's positive complex trace pairing and self-dual
-product measure has a Schwartz representative which agrees at every point. -/
-theorem exists_schwartz_complexFourierTransform {n : ℕ} (a : ℂˣ)
-    (Φ : SchwartzMap (Fin n → ℂ) ℂ) :
-    ∃ Ψ : SchwartzMap (Fin n → ℂ) ℂ, (Ψ : (Fin n → ℂ) → ℂ) = complexFourierTransform a Φ := by
+/-- The Fourier transform with the Library's positive complex trace pairing and
+self-dual product measure is represented by a continuous linear map on Schwartz space. -/
+def ComplexLocalFourierContinuityStatement (n : ℕ) : Prop :=
+  ∀ a : ℂˣ, ∃ F : SchwartzMap (Fin n → ℂ) ℂ →L[ℂ] SchwartzMap (Fin n → ℂ) ℂ,
+    ∀ Φ, (F Φ : (Fin n → ℂ) → ℂ) = complexFourierTransform a Φ
+
+theorem complexLocalFourierContinuity (n : ℕ) : ComplexLocalFourierContinuityStatement n := by
+  intro a
   let V := EuclideanSpace ℂ (Fin n)
   let : InnerProductSpace ℝ V := InnerProductSpace.rclikeToReal ℂ V
   let E : (Fin n → ℂ) ≃L[ℝ] V := (PiLp.continuousLinearEquiv 2 ℝ (fun _ : Fin n => ℂ)).symm
@@ -55,15 +58,20 @@ theorem exists_schwartz_complexFourierTransform {n : ℕ} (a : ℂˣ)
   let c := Measure.addHaarScalarFactor (μ.map E) (volume : Measure V)
   have hMeasure : μ.map E = c • (volume : Measure V) :=
     Measure.isAddLeftInvariant_eq_smul _ _
-  let H := SchwartzMap.compCLMOfContinuousLinearEquiv ℂ E.symm Φ
-  let Ψ := (c : ℝ) • SchwartzMap.compCLMOfContinuousLinearEquiv ℂ J (𝓕⁻ H)
-  refine ⟨Ψ, funext fun x => ?_⟩
+  let pull := SchwartzMap.compCLMOfContinuousLinearEquiv ℂ (F := ℂ) E.symm
+  let transform := FourierTransform.fourierInvCLM ℂ (SchwartzMap V ℂ)
+  let push := SchwartzMap.compCLMOfContinuousLinearEquiv ℂ (F := ℂ) J
+  let T := (c : ℂ) • (push.comp (transform.comp pull))
+  refine ⟨T, fun Φ => funext fun x => ?_⟩
+  let H := pull Φ
   let F (v : V) := ((Real.fourierChar ⟪v, J x⟫_ℝ : Circle) : ℂ) * H v
   calc
-    Ψ x = (c : ℝ) • ∫ v, F v := by
-      simp only [Ψ, smul_apply, SchwartzMap.compCLMOfContinuousLinearEquiv_apply,
+    T Φ x = (c : ℝ) • ∫ v, F v := by
+      simp only [T, push, ContinuousLinearMap.comp_apply,
+        transform, FourierTransform.fourierInvCLM_apply, ← Complex.real_smul,
+        smul_apply, SchwartzMap.compCLMOfContinuousLinearEquiv_apply,
         Function.comp_apply, SchwartzMap.fourierInv_coe, Real.fourierInv_eq, Circle.smul_def,
-        smul_eq_mul, F]
+        smul_eq_mul, F, H]
     _ = ∫ v, F v ∂μ.map E := by
       rw [hMeasure, integral_smul_nnreal_measure, NNReal.smul_def]
     _ = ∫ y, F (E y) ∂μ := E.toHomeomorph.measurableEmbedding.integral_map F
@@ -72,9 +80,16 @@ theorem exists_schwartz_complexFourierTransform {n : ℕ} (a : ℂˣ)
         ∫ y, Φ y * (complexScaledCharacter a).complex (∑ j : Fin n, y j * x j) ∂μ
       apply integral_congr_ae
       refine Filter.Eventually.of_forall fun y => ?_
-      simp only [F, hPair, H, SchwartzMap.compCLMOfContinuousLinearEquiv_apply, Function.comp_apply,
+      simp only [F, hPair, H, pull, SchwartzMap.compCLMOfContinuousLinearEquiv_apply, Function.comp_apply,
         ContinuousLinearEquiv.symm_apply_apply,
         HarmonicAnalysis.UnitaryAdditiveCharacter.complex_apply, complexScaledCharacter_apply]
       exact mul_comm _ _
+
+/-- The exact Fourier transform has a Schwartz representative agreeing at every point. -/
+theorem exists_schwartz_complexFourierTransform {n : ℕ} (a : ℂˣ)
+    (Φ : SchwartzMap (Fin n → ℂ) ℂ) :
+    ∃ Ψ : SchwartzMap (Fin n → ℂ) ℂ, (Ψ : (Fin n → ℂ) → ℂ) = complexFourierTransform a Φ := by
+  obtain ⟨F, hF⟩ := complexLocalFourierContinuity n a
+  exact ⟨F Φ, hF Φ⟩
 
 end Langlands.Global.RankinSelbergGlobal

@@ -145,12 +145,12 @@ section Places
 variable {F : Type u} [Field F] [NumberField F] {n : ℕ}
   {M : Type uM} [AddCommGroup M] [Module ℂ M]
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance (T : OperatorRealization F n) : AddCommGroup T.Space := Submodule.addCommGroup _
+local instance supportTensorRationalGroup : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorContinuousGroup : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorFiniteSmoothGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorFormGroup : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+local instance supportTensorStableGroup : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
+local instance supportTensorRealizationGroup (T : OperatorRealization F n) : AddCommGroup T.Space := Submodule.addCommGroup _
 
 local notation "RP" =>
   {v : NumberField.InfinitePlace F // NumberField.InfinitePlace.IsReal v}

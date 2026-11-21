@@ -1,0 +1,7 @@
+# Infinitesimal lifting for maximal unramified integers
+
+The integer subalgebra of a finite intermediate field in the inertia fixed field is étale over the original valuation integers. The proof identifies it with the spectral integer ring. That ring is finite free over the base spectral integers. The arithmetic unramifiedness theorem gives equality of the extended maximal ideal with the maximal ideal upstairs and separability of the residue extension. The local ring criterion then gives formal unramifiedness. Finite presentation and flatness give étaleness, which the two integer ring equivalences transport to the coefficient inclusion.
+
+`fixedFieldIntegerLift` lifts an algebra map from the maximal unramified integers across a nilpotent ideal. Each element lies at a finite stage, and the compositum gives a common stage for any two finite stages. At each stage formal smoothness gives a lift and formal unramifiedness proves compatibility with every inclusion. The directed supremum glues the lifts. The same uniqueness at each stage proves injectivity of reduction.
+
+This construction supplies the unique nilpotent lift for the unramified base coordinate in the completed-base point functor. Drinfeld uses that base and its residue coordinate in *Coverings of p-adic Symmetric Regions* (1976), §2 A, printed p. 109. The lift here is derived from the Library's inertia and finite unramified integer constructions.

@@ -1,0 +1,11 @@
+# The normalized adjacent-rank equation in a strong chamber
+
+Fix the retained radial exponents and the larger angular weights. `complexAdjacentCanonicalChamber` gives a sufficient lower bound on the real adjoining exponent. Under that bound and strict upper-Borel dominance, the normalized adjacent-rank equation holds for every larger canonical Jacquet value against any smaller value of an exact Whittaker intertwiner. The smaller equal-rank absolute convergence and normalized equation are explicit premises in `HasAdjacentLowerEqualInputs`.
+
+The larger compact-finite module is spanned by polynomial Gaussian Godement sections. In the chamber, the canonical Jacquet map takes each section to the continued Godement value for the actual adjoining character. Expand the test by its monomials and apply Godement convergence to commute the finite sum with the section integral. Each monomial splits into a square and a column factor with the required finite left unitary orbit on the square. The compact projection theorem supplies the convolution identity for the smaller intertwiner, so the split adjacent-rank equation applies to each monomial.
+
+Exact unequal-rank kernel convergence applies to each pair of intertwiner values. Together with the normalized split equation, it places the larger monomial values in the normalized submodule for the fixed smaller value. The finite sum and the full Gaussian spanning relation therefore lie in that submodule. The membership characterization gives the ordinary and dual normalization at the larger canonical value with the stipulated sign and epsilon factor.
+
+The integrating character for the larger canonical Jacquet integral is \(a\), so its left character and the parameter of the resulting unequal-rank equation are \(-a\). [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 8.3](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).
+
+`complexAdjacentCanonicalChamberGrowth` uses lower equal-rank normalizations of exponential strip growth. The same split generators span the upper canonical Jacquet values in the strong chamber. The normalized split equation supplies growth for each generator. The growth-preserving submodule of convergent unequal pairs extends the conclusion from these generators to the whole canonical image.

@@ -56,13 +56,13 @@ local notation "Kf" => OpenSubgroup.toSubgroup (FiniteAdelicGL.standardIntegral 
 local notation "K" => (standardCompact F n)
 local notation "V" => RealizedSections F B S
 
-local instance (t : ℕ) : AddCommGroup (RationalInvariantFunctions F t) := Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (ContinuousRationalFunctions F t) := Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F t) :=
+local instance blockJointAdmissibilityRationalAddCommGroup (t : ℕ) : AddCommGroup (RationalInvariantFunctions F t) := Submodule.addCommGroup _
+local instance blockJointAdmissibilityContinuousAddCommGroup (t : ℕ) : AddCommGroup (ContinuousRationalFunctions F t) := Submodule.addCommGroup _
+local instance blockJointAdmissibilityFiniteSmoothAddCommGroup (t : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F t) :=
   Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (AutomorphicForms F t) := Submodule.addCommGroup _
-local instance (t : ℕ) : AddCommGroup (StableAutomorphicFunctions F t) := Submodule.addCommGroup _
-local instance {t : ℕ} (T : OperatorRealization F t) : AddCommGroup T.Space :=
+local instance blockJointAdmissibilityAutomorphicAddCommGroup (t : ℕ) : AddCommGroup (AutomorphicForms F t) := Submodule.addCommGroup _
+local instance blockJointAdmissibilityStableAddCommGroup (t : ℕ) : AddCommGroup (StableAutomorphicFunctions F t) := Submodule.addCommGroup _
+local instance blockJointAdmissibilityRealizationAddCommGroup {t : ℕ} (T : OperatorRealization F t) : AddCommGroup T.Space :=
   Submodule.addCommGroup _
 
 private theorem compactPoint_eq (k : K) (x : Kf) (a : standardInfiniteCompact F n)
@@ -146,8 +146,8 @@ theorem RealizedSections.isJointlyAdmissible (h : ∀ i, (S i).IsJointlyAdmissib
   rw [hzero q (σ a v), map_zero, Pi.zero_apply] at ht
   exact ht.symm
 
-local instance : AddCommGroup (FiniteSmoothRealizedSections F B S) := Submodule.addCommGroup _
-local instance : AddCommGroup (CompactFiniteRealizedSections F B S) := Submodule.addCommGroup _
+local instance blockJointAdmissibilityFiniteSectionsAddCommGroup : AddCommGroup (FiniteSmoothRealizedSections F B S) := Submodule.addCommGroup _
+local instance blockJointAdmissibilityCompactSectionsAddCommGroup : AddCommGroup (CompactFiniteRealizedSections F B S) := Submodule.addCommGroup _
 
 /-- Joint admissibility also holds after taking the finite-smooth,
 infinite-compact-finite carrier. -/

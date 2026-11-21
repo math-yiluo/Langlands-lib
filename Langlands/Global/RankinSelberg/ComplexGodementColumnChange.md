@@ -11,6 +11,9 @@ frequency \(h^{-T}e_m\). The test in the resulting partial Fourier
 integral is evaluated at the matrix with first block \(h\) and this
 appended frequency column.
 
+`integral_mulVec` gives the same additive change of variables for an
+arbitrary column integrand and an additive Haar measure on the column space.
+
 `integrable_column` proves absolute convergence of every inner
 column integral when the original test is Schwartz. It restricts the
 test to the affine column slice, whose inclusion has a lower norm

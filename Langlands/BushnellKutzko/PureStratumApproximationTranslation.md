@@ -1,0 +1,9 @@
+# Strata on index-translated lattice chains
+
+Source context: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), `bushnell-kutzko-1993-admissible-dual-gln`, printed p. 20 (PDF p. 32). A hereditary order determines its lattice chain only up to translation of the index. The final step of the proof of (2.4.1)(i), printed p. 71 (PDF p. 83), identifies the order `𝔄'` with `𝔄`. The Library represents strata by indexed chains, so this identification needs a transfer lemma. This is a derived comparison, not a numbered result of the source.
+
+`ChainTranslationStatement` is a closed proposition over any commutative ring `O`, field `K` and `K`-space `V` with compatible `O`-action. It concerns two strata `S` and `T` with `S.chain.lattice i = T.chain.lattice (i + t)` for all `i` and some integer `t`, and with the same integers `n`, `r` and element `b`. Then `S` is pure exactly when `T` is pure, `S` is simple exactly when `T` is simple, `S.coset = T.coset`, and the two chains have the same period.
+
+## Implemented proof
+
+`mem_endFiltration_iff_of_translate` reindexes the definition of `𝔓^n`: `x L_i ⊆ L_{i+n}` for all `i` on one chain is the same condition after replacing `i` by `i ± t`. Every other ingredient is defined through these filtration memberships, so it transfers. `criticalExponent_eq_of_translate` covers the adjoint and centralizer lattices, the critical index set and `k₀`. `valuation_eq_of_translate` covers the valuation `v_𝔄`. `mem_stabilizer_iff_of_translate` reindexes the stabilizer condition `g L_i = L_j`. `period_eq_of_translate` checks the defining relation `L_{i+e} = 𝔭 L_i` on the translated chain and applies `LatticeChain.period_unique`. In `chainTranslation`, the field part of purity is unchanged. The normalization part uses the stabilizer transfer, the valuation part the valuation transfer, the simplicity bound the critical-exponent transfer, and the coset the filtration transfer.

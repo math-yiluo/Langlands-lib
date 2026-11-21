@@ -45,6 +45,31 @@ attribute [local instance] coefficientAlgebra coefficientScalarTower
 namespace SpecialAtlas
 
 set_option backward.isDefEq.respectTransparency false in
+/-- The comparison of the two extended fixed frames uses the underlying target atlas. -/
+def quotientFrameBaseChangeOnAtlasIso (Φ : SpecialModule K D ι κ)
+    (ψ : κ →ₐ[𝒪[K]]
+      ((Nilp.reductionFunctor R (algebraMap 𝒪[K] R π)).obj A).obj)
+    (Y : BasicAtlas 𝒪[K] A.obj (Fin (CentralSimple.reducedDegree K D))) (f : A ⟶ B) :
+    let φ := Nilp.reducedScalarMap 𝒪[K] f
+    let U := ((Y.baseChangeAlong (Nilp.scalarMap 𝒪[K] f)).reduction (A := B))
+    BasicAtlas.OrderAction.Iso
+      ((BasicAtlas.ofGlobalCoverOrderAction (Φ.order.map ψ) Y.reduction.opens
+        Y.reduction.covers).baseChangeAlong φ)
+      (BasicAtlas.ofGlobalCoverOrderAction (Φ.order.map (φ.comp ψ)) U.opens U.covers)
+      (Y.reductionBaseChangeOpens_eq f).symm := by
+  let φ := Nilp.reducedScalarMap 𝒪[K] f
+  let U := ((Y.baseChangeAlong (Nilp.scalarMap 𝒪[K] f)).reduction (A := B))
+  let t := φ '' Y.reduction.opens
+  have ht : Ideal.span t = ⊤ :=
+    Y.reduction.baseOpens_covers (BasicAtlas.coefficientTest φ)
+  let c₁ := BasicAtlas.globalCoverBaseAlongIso (Φ.order.map ψ)
+    Y.reduction.opens Y.reduction.covers φ
+  let c₂ := BasicAtlas.ofGlobalOrderIso (Φ.order.mapCompIso ψ φ) t ht
+  let c₃ := BasicAtlas.globalCoverOrderIsoOfCoverEq (Φ.order.map (φ.comp ψ)) t U.opens ht U.covers
+    (Y.reductionBaseChangeOpens_eq f).symm
+  exact c₁.trans (c₂.trans c₃)
+
+set_option backward.isDefEq.respectTransparency false in
 /-- The extended original frame compares by actual full-order maps with the frame on the new quotient cover. -/
 def quotientFrameBaseChangeIso (Φ : SpecialModule K D ι κ)
     (ψ : κ →ₐ[𝒪[K]]
@@ -54,19 +79,8 @@ def quotientFrameBaseChangeIso (Φ : SpecialModule K D ι κ)
       ((quotientFrame Φ ψ Y).order.baseChangeAlong (Nilp.reducedScalarMap 𝒪[K] f))
       (quotientFrame Φ ((Nilp.reducedScalarMap 𝒪[K] f).comp ψ)
         (Y.baseChangeAlong (Nilp.scalarMap 𝒪[K] f))).order
-      (Y.atlas.reductionBaseChangeOpens_eq f).symm := by
-  let φ := Nilp.reducedScalarMap 𝒪[K] f
-  let t := φ '' Y.reduction.atlas.opens
-  have ht : Ideal.span t = ⊤ :=
-    Y.reduction.atlas.baseOpens_covers (BasicAtlas.coefficientTest φ)
-  let c₁ := BasicAtlas.globalCoverBaseAlongIso (Φ.mapSameUniverse ψ).order
-    Y.reduction.atlas.opens Y.reduction.atlas.covers φ
-  let c₂ := BasicAtlas.ofGlobalOrderIso (Φ.order.mapCompIso ψ φ) t ht
-  let c₃ := BasicAtlas.globalCoverOrderIsoOfCoverEq (Φ.order.map (φ.comp ψ)) t
-    (Y.baseChangeAlong (Nilp.scalarMap 𝒪[K] f)).reduction.atlas.opens ht
-    (Y.baseChangeAlong (Nilp.scalarMap 𝒪[K] f)).reduction.atlas.covers
-    (Y.atlas.reductionBaseChangeOpens_eq f).symm
-  exact c₁.trans (c₂.trans c₃)
+      (Y.atlas.reductionBaseChangeOpens_eq f).symm :=
+  quotientFrameBaseChangeOnAtlasIso Φ ψ Y.atlas f
 
 end SpecialAtlas
 

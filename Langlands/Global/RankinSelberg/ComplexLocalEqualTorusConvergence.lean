@@ -50,7 +50,7 @@ private theorem sum_eq_positive_sub_negative (x : I → ℝ) :
   · rw [max_eq_left hi, max_eq_right (neg_nonpos.mpr hi), sub_zero]
   · rw [max_eq_right hi, max_eq_left (neg_nonneg.mpr hi), zero_sub, neg_neg]
 
-private theorem sum_abs_eq_positive_add_negative (x : I → ℝ) :
+theorem sum_abs_eq_positive_add_negative (x : I → ℝ) :
     (∑ i, |x i|) = positiveLogSum x + positiveLogSum (-x) := by
   unfold positiveLogSum
   rw [← Finset.sum_add_distrib]

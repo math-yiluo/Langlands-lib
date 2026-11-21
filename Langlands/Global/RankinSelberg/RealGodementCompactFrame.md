@@ -4,4 +4,6 @@
 
 The compact-picture transport identifies the subspace at any exponent with the one at the reference exponent zero. The proof approximates a vector at a specified exponent by the compact Gram-cutoff construction. Varying the exponent in one of these already chosen tests multiplies its lower-group integrand by an absolute determinant power. The integrand on the upper orthogonal group is a scalar multiple of a left translate of the reference restriction. The integral remains in the finite-dimensional space since finitely many point evaluations identify its vectors and integration commutes with their linear reconstruction. The span of the resulting columns is a closed subspace, so it contains the limit of the approximants. The module also constructs a suitable finite-dimensional left-translation-stable space for each K-finite upper vector using coefficients of its finite right orbit.
 
+`compactGramSection_mem` establishes the compact-space inclusion for any continuous lower input. Its scalar weight is supported on the compact lower Gram preimage.
+
 This is an internal form of the compact generation used in Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §7.1, Proposition 7.1(v), and §7.2, pp. 46–48. It gives the fixed compact space and spanning for the continuation argument with smooth lower position inputs.

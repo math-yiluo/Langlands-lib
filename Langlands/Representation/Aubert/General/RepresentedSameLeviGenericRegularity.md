@@ -76,3 +76,11 @@ Proof:
    finite action quotients and avoid this character, by the choice of `Pi i`.
 4. `pqRegularity_of_disjoint_generalizedCharacters` turns the finiteness and the
    disjointness of generalized characters into `IsPQRegular`.
+The separation proof retains the actual rational points and scalar
+for each unramified monomial inequality. The finite lists are indexed
+by the untwisted Jacquet exponents on each nonidentity piece of the
+filtration. The order of these lists does not enter the pointwise
+criterion. If all their tests hold at a parameter, the ordered pair
+is `PQ`-regular there. Multiplying the principal-open polynomials
+for the tests gives the nonzero polynomial used in the generic
+regularity formulation.

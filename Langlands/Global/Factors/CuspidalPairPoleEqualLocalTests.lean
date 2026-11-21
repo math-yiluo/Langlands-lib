@@ -89,7 +89,7 @@ def HasCoveringEqualPartialTests (c : FinitePairLChoice P P' hP hP')
 
 /-- Pointwise normalized local generation supplies a covering family of actual equal-rank
 partial integrals, with standard finite data outside the chosen set. -/
-theorem exists_coveringEqualPureTest_of_local
+theorem exists_coveringEqualPureTest_of_local_at
     (c : FinitePairLChoice P P' hP hP')
     (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
@@ -97,7 +97,7 @@ theorem exists_coveringEqualPureTest_of_local
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
-    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (hGReal : Nonempty RP → RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
@@ -112,7 +112,7 @@ theorem exists_coveringEqualPureTest_of_local
   intro s₀
   have hFinite (v : S) := exists_poleFiniteEqualTest v.1 (ψv v) c (ν v) rfl hT hT' s₀
   choose D ΦS NS hNS using hFinite
-  have hgR (v : RP) := (hGReal.2 r (dR v) (dR' v) (hdR v).1 (hdR' v).1
+  have hgR (v : RP) := ((hGReal ⟨v⟩).2 r (dR v) (dR' v) (hdR v).1 (hdR' v).1
     (T.isIrreducibleRealStandard v _ (hdR v)) (T'.isIrreducibleRealStandard v _ (hdR' v))
     (aR v) (realQuotientMeasureData r)
     (hR.1 v ▸ range_ne_bot 1 (M.normalized (.inl v)))
@@ -172,5 +172,29 @@ theorem exists_coveringEqualPureTest_of_local
     (mul_ne_zero (Finset.prod_ne_zero_iff.mpr fun v _ => hNR v)
       (Finset.prod_ne_zero_iff.mpr fun w _ => hNC w))
     (Finset.prod_ne_zero_iff.mpr fun v _ => (hNS v).1))
+
+
+theorem exists_coveringEqualPureTest_of_local
+    (c : FinitePairLChoice P P' hP hP')
+    (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
+    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w)) :
+    HasCoveringEqualPartialTests c S ψ (archimedeanPairProduct dR dR' dC dC') :=
+  exists_coveringEqualPureTest_of_local_at c hPS hPS' hT hT' hψF hS hψv ν
+    (fun _ => hGReal) hGComplex M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC'
 
 end Langlands.Global.CuspidalPairPoles

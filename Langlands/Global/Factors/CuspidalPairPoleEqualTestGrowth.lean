@@ -78,7 +78,7 @@ def HasGrowthNormalizedEqualTestAt (c : FinitePairLChoice P P' hP hP')
 
 /-- Choose an actual ordinary equal-rank normalized test nonzero at the indicated point.
 Local growth and the product formula give strip growth of its normalized function. -/
-theorem exists_growthNormalizedEqualTest_of_local
+theorem exists_growthNormalizedEqualTest_of_local_at
     (c : FinitePairLChoice P P' hP hP')
     (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
@@ -86,7 +86,7 @@ theorem exists_growthNormalizedEqualTest_of_local
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
-    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (hGReal : Nonempty RP → RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
@@ -105,7 +105,7 @@ theorem exists_growthNormalizedEqualTest_of_local
     HasGrowthNormalizedEqualTestAt c S ψ (archimedeanPairProduct dR dR' dC dC') s₀ := by
   have hFinite (v : S) := exists_poleFiniteEqualTest v.1 (ψv v) c (ν v) rfl hT hT' s₀
   choose D ΦS NS hNS using hFinite
-  have hgR (v : RP) := (hGReal.2 r (dR v) (dR' v) (hdR v).1 (hdR' v).1
+  have hgR (v : RP) := ((hGReal ⟨v⟩).2 r (dR v) (dR' v) (hdR v).1 (hdR' v).1
     (T.isIrreducibleRealStandard v _ (hdR v)) (T'.isIrreducibleRealStandard v _ (hdR' v))
     (aR v) (realQuotientMeasureData r)
     (hR.1 v ▸ range_ne_bot 1 (M.normalized (.inl v)))
@@ -174,5 +174,34 @@ theorem exists_growthNormalizedEqualTest_of_local
       (fun v => hGrowR v (R v) (NR v)) (fun w => hGrowC w (C w) (NC w))
       (fun v => stripGrowth_of_norm_bounded_on_strips (hNS v).2)
     exact (funext hN.choose_spec.2.choose_spec).symm ▸ hGrow
+
+
+theorem exists_growthNormalizedEqualTest_of_local
+    (c : FinitePairLChoice P P' hP hP')
+    (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
+    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w))
+    (hGrowR : ∀ v, HasOrdinaryNormalizationStripGrowth
+      (realOrdinaryEqualTest r (dR v) (dR' v) (aR v) (realQuotientMeasureData r)) (realPairLFactor (dR v) (dR' v)))
+    (hGrowC : ∀ w, HasOrdinaryNormalizationStripGrowth
+      (complexOrdinaryEqualTest r (dC w) (dC' w) (aC w) (complexQuotientMeasureData r))
+      (complexPairLFactor (dC w) (dC' w))) (s₀ : ℂ) :
+    HasGrowthNormalizedEqualTestAt c S ψ (archimedeanPairProduct dR dR' dC dC') s₀ :=
+  exists_growthNormalizedEqualTest_of_local_at c hPS hPS' hT hT' hψF hS hψv ν
+    (fun _ => hGReal) hGComplex M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC' hGrowR hGrowC s₀
 
 end Langlands.Global.CuspidalPairPoles

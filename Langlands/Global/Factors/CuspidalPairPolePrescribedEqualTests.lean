@@ -1,4 +1,7 @@
-import Langlands.Global.Factors.CuspidalPairPoleEqualLocalTests
+import Langlands.Global.Factors.CuspidalPairPoleEqualNormalizedProduct
+import Langlands.Global.Factors.CuspidalPairPoleArchimedeanProduct
+import Langlands.Global.Factors.CuspidalPairPoleUnequalLocalTests
+import Langlands.Global.RankinSelberg.ComplexLocalEqualQuotientChange
 import Langlands.Global.Factors.CuspidalPairPolePrescribedFiniteTests
 
 /-! # Ordinary normalization of arbitrary pure equal-rank adelic tests -/
@@ -64,9 +67,21 @@ theorem poleEqualPureVector_sphericalOutside (P : CuspidalSpectralPresentation.{
     IsSphericalOutside F T S (poleEqualPureVector P hP hPS a b) :=
   P.allPlaceTensorEquiv_finitePure_sphericalOutside hP S hPS a _
 
+/-- Ordinary real equal-rank continuation for the indicated rank. -/
+def RealEqualOrdinaryNormalizedContinuationAt (r : ℕ) : Prop :=
+  ∀ (d e : List RealBlock), realRank d = r + 1 → realRank e = r + 1 →
+    ∀ (a : ℝˣ) (D : RealQuotientMeasureData r),
+      HasEntireOrdinaryNormalizations (realOrdinaryEqualTest r d e a D) (realPairLFactor d e)
+
+/-- Ordinary complex equal-rank continuation for the indicated rank. -/
+def ComplexEqualOrdinaryNormalizedContinuationAt (r : ℕ) : Prop :=
+  ∀ (d e : List ComplexCharacterData), d.length = r + 1 → e.length = r + 1 →
+    ∀ (a : ℂˣ) (D : ComplexQuotientMeasureData r),
+      HasEntireOrdinaryNormalizations (complexOrdinaryEqualTest r d e a D) (complexPairLFactor d e)
+
 /-- Normalize the partial integral of any indicated pure equal-rank test using ordinary
 local continuation for the specified coefficient models. -/
-theorem exists_ordinaryEqualNormalization_of_pure_tensors
+theorem exists_ordinaryEqualNormalization_of_pure_tensors_placewise
     (c : FinitePairLChoice P P' hP hP')
     (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
@@ -74,8 +89,8 @@ theorem exists_ordinaryEqualNormalization_of_pure_tensors
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
-    (hNReal : RealOrdinaryNormalizedContinuationStatement)
-    (hNComplex : ComplexOrdinaryNormalizedContinuationStatement)
+    (hNReal : Nonempty RP → RealEqualOrdinaryNormalizedContinuationAt r)
+    (hNComplex : ComplexEqualOrdinaryNormalizedContinuationAt r)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
@@ -113,9 +128,9 @@ theorem exists_ordinaryEqualNormalization_of_pure_tensors
     hR.2 w ▸ LinearMap.mem_range_self _ (b (.inr w))
   have hWC' (w : CP) : WC' w ∈ complexWhittakerModel r (dC' w) (-aC w) :=
     hR'.2 w ▸ LinearMap.mem_range_self _ (b' (.inr w))
-  let NR (v : RP) := Classical.choice (hNReal.2 r _ _ (hdR v).1 (hdR' v).1 (aR v)
+  let NR (v : RP) := Classical.choice (hNReal ⟨v⟩ _ _ (hdR v).1 (hdR' v).1 (aR v)
     (realQuotientMeasureData r) (⟨WR v, hWR v⟩, ⟨WR' v, hWR' v⟩, ΦR v))
-  let NC (w : CP) := Classical.choice (hNComplex.2 r _ _ (hdC w).1 (hdC' w).1 (aC w)
+  let NC (w : CP) := Classical.choice (hNComplex _ _ (hdC w).1 (hdC' w).1 (aC w)
     (complexQuotientMeasureData r) (⟨WC w, hWC w⟩, ⟨WC' w, hWC' w⟩, ΦC w))
   have hPairR (v : RP) (u : GeneralLinear.upperUnipotent (r + 1) ℝ) (g : GeneralLinear (r + 1) ℝ) :
       WR v (u.val * g) * WR' v (u.val * g) = WR v g * WR' v g := by
@@ -172,5 +187,78 @@ theorem exists_ordinaryEqualNormalization_of_pure_tensors
   have he := congrArg₂ I ha ha'
   change Nonempty (OrdinaryIntegralNormalization (I a a') _)
   exact ⟨he ▸ hN.choose_spec.2.choose⟩
+
+
+theorem exists_ordinaryEqualNormalization_of_pure_tensors_at
+    (c : FinitePairLChoice P P' hP hP')
+    (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
+    (hNReal : RealEqualOrdinaryNormalizedContinuationAt r)
+    (hNComplex : ComplexEqualOrdinaryNormalizedContinuationAt r)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w))
+    (a : ∀ v : S, P.localFactor v) (a' : ∀ v : S, P'.localFactor v)
+    (b : ∀ i : Index F, T.placeDensityModels.subspace i)
+    (b' : ∀ i : Index F, T'.placeDensityModels.subspace i)
+    (ΦR : RP → SchwartzMap (Fin (r + 1) → ℝ) ℂ) (ΦC : CP → SchwartzMap (Fin (r + 1) → ℂ) ℂ)
+    (ΦS : ∀ v : S, finiteRowTest F (r + 1) v.1) :
+    let x := poleEqualPureVector P hP hPS a b
+    let x' := poleEqualPureVector P' hP' hPS' a' b'
+    Nonempty (OrdinaryIntegralNormalization
+      (partialEqualWhittakerIntegral F S (cuspWhittaker F T ψ.complex x)
+        (cuspWhittaker F T' ψ.complex⁻¹ x') (poleEqualSchwartzTensor ΦR ΦC ΦS))
+      (fun s => archimedeanPairProduct dR dR' dC dC' s * ∏ v ∈ S, c.finiteL v s)) :=
+  exists_ordinaryEqualNormalization_of_pure_tensors_placewise c hPS hPS' hT hT' hψF hS hψv ν
+    (fun _ => hNReal) hNComplex M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC'
+    a a' b b' ΦR ΦC ΦS
+
+/-- Normalize the partial integral of any indicated pure equal-rank test using ordinary
+local continuation for the specified coefficient models. -/
+theorem exists_ordinaryEqualNormalization_of_pure_tensors
+    (c : FinitePairLChoice P P' hP hP')
+    (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
+    (hNReal : RealOrdinaryNormalizedContinuationStatement)
+    (hNComplex : ComplexOrdinaryNormalizedContinuationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w))
+    (a : ∀ v : S, P.localFactor v) (a' : ∀ v : S, P'.localFactor v)
+    (b : ∀ i : Index F, T.placeDensityModels.subspace i)
+    (b' : ∀ i : Index F, T'.placeDensityModels.subspace i)
+    (ΦR : RP → SchwartzMap (Fin (r + 1) → ℝ) ℂ) (ΦC : CP → SchwartzMap (Fin (r + 1) → ℂ) ℂ)
+    (ΦS : ∀ v : S, finiteRowTest F (r + 1) v.1) :
+    let x := poleEqualPureVector P hP hPS a b
+    let x' := poleEqualPureVector P' hP' hPS' a' b'
+    Nonempty (OrdinaryIntegralNormalization
+      (partialEqualWhittakerIntegral F S (cuspWhittaker F T ψ.complex x)
+        (cuspWhittaker F T' ψ.complex⁻¹ x') (poleEqualSchwartzTensor ΦR ΦC ΦS))
+      (fun s => archimedeanPairProduct dR dR' dC dC' s * ∏ v ∈ S, c.finiteL v s)) :=
+  exists_ordinaryEqualNormalization_of_pure_tensors_at c hPS hPS' hT hT' hψF hS hψv ν
+    (hNReal.2 r) (hNComplex.2 r) M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC'
+    a a' b b' ΦR ΦC ΦS
 
 end Langlands.Global.CuspidalPairPoles

@@ -6,6 +6,8 @@ import Langlands.Global.RankinSelberg.RealEqualDualConvergence
 
 noncomputable section
 
+universe u
+
 open Langlands.Archimedean Langlands.GeneralLinear Langlands.LocalFactor.Archimedean
 open Langlands.Global.RankinSelbergGlobal.ArchimedeanLocal
 open Langlands.RankinSelberg (LeftUnipotentQuotient)
@@ -50,43 +52,72 @@ def RealGodementColumnGrowthStatement : Prop :=
       ∃ C : ℝ, 0 ≤ C ∧ ∀ g,
         ‖godementLeadingFamily D a Φ W p g w‖ ≤ C * realMatrixHeight g ^ M
 
-theorem realGodementColumnGrowth : RealGodementColumnGrowthStatement := by
-  intro t D a p w N
+/-- A lower family with shared constants and bounded leading exponents admits one upper
+polynomial growth bound for each fixed Schwartz test. -/
+def RealGodementColumnFamilyGrowthStatement : Prop :=
+  ∀ (ι : Type u) (t : ℕ) (D : RealQuotientMeasureData t) (a : ℝˣ) (p : Fin 2)
+    (T : ℝ), 0 ≤ T → ∀ N : ℕ, ∃ M : ℕ,
+      ∀ (W : ι → Langlands.GeneralLinear (t + 1) ℝ → ℂ),
+        (∀ j Xs, RealLocalWhittaker.iteratedRightDerivative t Xs (W j) ∈
+          RealLocalWhittaker.regularFunctions t (-a)) →
+        (∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+          ‖RealLocalWhittaker.iteratedRightDerivative t Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N) →
+        ∀ (w : ι → ℂ), (∀ j, ‖w j‖ ≤ T) →
+        ∀ (Φ : 𝓢(Matrix (Fin (t + 1)) (Fin (t + 2)) ℝ, ℂ)),
+        ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+          ‖godementLeadingFamily D a Φ (W j) p g (w j)‖ ≤ C * realMatrixHeight g ^ M
+
+theorem realGodementColumnFamilyGrowth : RealGodementColumnFamilyGrowthStatement.{u} := by
+  intro ι t D a p T hT N
   let μ := D.groupHaar
   let : μ.IsHaarMeasure := D.groupHaar_isHaar
-  let s := w + (t : ℂ) / 2
   let S := (((t : ℂ) + 1) / 2)
-  let R := |s.re - (t + 1 : ℕ)|
-  obtain ⟨q, hq, hBounds⟩ := exists_columnMellin_uniform_seminorm μ a N R (abs_nonneg _)
+  let v := (t : ℂ) / 2
+  let R := T + |v.re - (t + 1 : ℕ)|
+  obtain ⟨q, hq, hBounds⟩ := exists_columnMellin_family_seminorm (ι := ι) μ a N R
+    (add_nonneg hT (abs_nonneg _))
   have hRank : 0 < t + 2 := by omega
   obtain ⟨I, L, A, hA, hQ⟩ := realGodementTranslatedSeminorm (t + 1) (t + 2) hRank q hq
-  obtain ⟨C, K, hC, hD⟩ := exists_det_rpow_le_realMatrixHeight hRank (w + S).re
-  refine ⟨K + L, fun W hReg hGrowth Φ => ?_⟩
+  obtain ⟨C, K, hC, hD⟩ := exists_det_rpow_le_realMatrixHeight_of_abs_le hRank (T + |S.re|)
+  refine ⟨K + L, fun W hReg hGrowth w hw Φ => ?_⟩
+  let s (j : ι) := w j + v
+  have hRe (j : ι) : |(w j).re| ≤ T := (Complex.abs_re_le_norm _).trans (hw j)
+  have hStrip (j : ι) : |(s j).re - (t + 1 : ℕ)| ≤ R := by
+    rw [show (s j).re - (t + 1 : ℕ) = (w j).re + (v.re - (t + 1 : ℕ)) by
+      simp only [s, Complex.add_re]; ring]
+    exact (abs_add_le _ _).trans (add_le_add_left (hRe j) _)
+  have hDetBound (j : ι) : |(w j + S).re| ≤ T + |S.re| := by
+    rw [Complex.add_re]
+    exact (abs_add_le _ _).trans (add_le_add_left (hRe j) _)
   obtain ⟨B, hB, hB₀, hPoint⟩ := hBounds W hReg hGrowth
   let b := ∫ h, B h ∂μ
   let P := I.sup (schwartzSeminormFamily ℝ (Matrix (Fin (t + 1)) (Fin (t + 2)) ℝ) ℂ) Φ
   have hb : 0 ≤ b := integral_nonneg hB₀
   have hP : 0 ≤ P := apply_nonneg _ _
-  refine ⟨C * (A * P * b), by positivity, fun g => ?_⟩
+  refine ⟨C * (A * P * b), by positivity, fun j g => ?_⟩
   let e := weylLong (t + 2) ℝ * g
   let Ψ := rectangularTranslate 1 e Φ
-  let F := columnMellinIntegrand a Ψ W p.val s
-  have hFi : Integrable F μ := (realGodementColumnConvergence t μ a Ψ W hReg ⟨N, hGrowth⟩ p.val).1 s
+  let F := columnMellinIntegrand a Ψ (W j) p.val (s j)
+  have hG : RealUniformWhittaker.HasUniformDerivativeGrowth (W j) := by
+    refine ⟨N, fun Xs => ?_⟩
+    obtain ⟨C, hC, h⟩ := hGrowth Xs
+    exact ⟨C, hC, h j⟩
+  have hFi : Integrable F μ := (realGodementColumnConvergence t μ a Ψ (W j) (hReg j) hG p.val).1 (s j)
   have hF : ‖∫ h, F h ∂μ‖ ≤ q Ψ * b := by
     calc
       _ ≤ ∫ h, ‖F h‖ ∂μ := norm_integral_le_integral_norm _
-      _ ≤ ∫ h, q Ψ * B h ∂μ := integral_mono hFi.norm (hB.const_mul _) (hPoint Ψ p.val s le_rfl)
+      _ ≤ ∫ h, q Ψ * B h ∂μ := integral_mono hFi.norm (hB.const_mul _) (hPoint j Ψ p.val (s j) (hStrip j))
       _ = _ := integral_const_mul _ _
   have hHeight : realMatrixHeight e = realMatrixHeight g :=
     RealPrincipalSeries.realMatrixHeight_unitary_mul (RealEqualDualConvergence.weylLong_mem_unitary (r := t + 1)) g
-  have hDet : ‖determinantWeight (charData p w) S e‖ ≤ C * realMatrixHeight g ^ K := by
+  have hDet : ‖determinantWeight (charData p (w j)) S e‖ ≤ C * realMatrixHeight g ^ K := by
     rw [norm_determinantWeight_charData, ← hHeight]
-    exact hD e
+    exact hD _ (hDetBound j) e
   have hTest : q Ψ ≤ A * realMatrixHeight g ^ L * P := by
     rw [← hHeight]
     exact hQ e Φ
   have hH : 0 ≤ realMatrixHeight g := realMatrixHeight_nonneg g
-  change ‖determinantWeight (charData p w) S e * (∫ h, F h ∂μ)‖ ≤ _
+  change ‖determinantWeight (charData p (w j)) S e * (∫ h, F h ∂μ)‖ ≤ _
   rw [norm_mul]
   calc
     _ ≤ (C * realMatrixHeight g ^ K) * (q Ψ * b) :=
@@ -94,5 +125,14 @@ theorem realGodementColumnGrowth : RealGodementColumnGrowthStatement := by
     _ ≤ (C * realMatrixHeight g ^ K) * ((A * realMatrixHeight g ^ L * P) * b) :=
       mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_right hTest hb) (by positivity)
     _ = _ := by rw [pow_add]; ring
+
+theorem realGodementColumnGrowth : RealGodementColumnGrowthStatement := by
+  intro t D a p w N
+  obtain ⟨M, hM⟩ := realGodementColumnFamilyGrowth Unit t D a p ‖w‖ (norm_nonneg _) N
+  refine ⟨M, fun W hReg hGrowth Φ => ?_⟩
+  obtain ⟨C, hC, h⟩ := hM (fun _ => W) (fun _ => hReg)
+    (fun Xs => by obtain ⟨C, hC, h⟩ := hGrowth Xs; exact ⟨C, hC, fun _ => h⟩)
+    (fun _ => w) (fun _ => le_rfl) Φ
+  exact ⟨C, hC, h ()⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealGodement

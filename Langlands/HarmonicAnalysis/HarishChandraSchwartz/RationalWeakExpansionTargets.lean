@@ -9,12 +9,12 @@ import Langlands.Geometry.Building.KPApartmentAxioms
 
 Named Prop-valued targets, unproved here:
 
-* `WeightedCRegularityStatement`: `c̃_{P'|P}(s, ·)` extends to a rational family regular on `O`
-  (Corollary V.2.3);
+* `WeightedCRegularityBorelStatement`: `c̃_{P'|P}(s, ·)` extends to a rational family regular on `O`
+  (Corollary V.2.3), with the Borel structure of the inducing Levi quotient explicitly bound;
 * `WeightedWeakExpansionStatement`: at every `ω ∈ O` and `m' ∈ M'(F)`,
   `µ^G(ω)(f_ω)^w_{P'}(m') = Σ_s µ^{M'}(sω)(E^{M'}_{M'∩s·P} c̃_{P'|P}(s, ω)q_ω)(m')`
   (Proposition V.1.1 in the form of printed p.304);
-* `WeightedCDecompositionStatement`: the finite decomposition of p.304 of `c̃(s, ω)q_ω` into
+* `WeightedCDecompositionBorelStatement`: the finite decomposition of p.304 of `c̃(s, ω)q_ω` into
   smooth multiples of specializations of fixed polynomial (algebraic) lower families;
 * `WeightedPacketIdentityStatement`: the orbit integral of the weighted weak constant terms is the
   sum over `s` of the `µ^{M'}`-weighted lower wave packets of the sections `sω ↦ c̃(s, ω)q_ω`.
@@ -489,13 +489,27 @@ def SourceCompactNormalization : Prop :=
   ∀ s : WeylIndex i ν (rootSet i ν I) (rootSet i ν I'),
     CommonCompactNormalization hG hi hν I I' hζ (nₛ s) (hnₛ s) K hRefl hCST π PG (PM s)
 
-/-- **Regularity target (Waldspurger, Corollary V.2.3, printed pp.293–294).** For `π` square
-integrable modulo `A_M(F)` (the first premise), `K` the special maximal compact subgroup of the
-source and the common source normalization, for every `s ∈ W(M'|G|M)` the weighted family `c̃_{P'|P}(s, ·)`
-has a rational extension that agrees with it on the nonempty interior of its domain and whose
-denominator vanishes at no unitary character, that is, it extends to a rational family regular on
-the whole orbit `O`. -/
+/-- **Superseded regularity statement.** The section variable for the Borel structure of the
+inducing Levi quotient was not retained in this definition. This wider proposition is left
+unproved; do not use it as a target or as a premise. Use `WeightedCRegularityBorelStatement`. -/
 def WeightedCRegularityStatement : Prop :=
+  IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →
+  (∃ α : SimpleRoot i ν, α ∉ I') →
+  IsSpecialVertexCompact ν hi K →
+  ∀ hN : SourceCompactNormalization hG hi hν I I' hζ (K := K) π hRefl hCST PG R PM,
+  ∀ s : WeylIndex i ν (rootSet i ν I) (rootSet i ν I'),
+    Nonempty (WeightedCExtension hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl
+      hCST hPK π PG (PM s) (hN s))
+
+omit [BorelSpace (𝐌 ⧸ CM)] in
+set_option linter.overlappingInstances false in
+/-- **Regularity target (Waldspurger, Corollary V.2.3, printed pp.293–294).** For `π` square
+integrable on the Borel Haar quotient modulo `A_M(F)`, `K` the special maximal compact subgroup
+of the source and the common source normalization, for every `s ∈ W(M'|G|M)` the weighted family
+`c̃_{P'|P}(s, ·)` has a rational extension that agrees with it on the nonempty interior of its
+domain and whose denominator vanishes at no unitary character. This replaces
+`WeightedCRegularityStatement`, which omitted the Borel instance from its elaborated signature. -/
+def WeightedCRegularityBorelStatement [BorelSpace (𝐌 ⧸ CM)] : Prop :=
   IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →
   (∃ α : SimpleRoot i ν, α ∉ I') →
   IsSpecialVertexCompact ν hi K →
@@ -552,6 +566,37 @@ def WeightedWeakExpansionStatement : Prop :=
               (lowerOrbitMap hG hi hν I I' hζ (nₛ s) (hnₛ s) CM hCM mu π hsq ω) m
 
 set_option maxHeartbeats 3000000 in
+/-- **Superseded decomposition statement.** The section variable for the Borel structure of the
+inducing Levi quotient was not retained in this definition. This wider proposition is left
+unproved; do not use it as a target or as a premise. Use `WeightedCDecompositionBorelStatement`. -/
+def WeightedCDecompositionStatement : Prop :=
+  IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →
+  (∃ α : SimpleRoot i ν, α ∉ I') →
+  IsSpecialVertexCompact ν hi K →
+  ∀ hN : SourceCompactNormalization hG hi hν I I' hζ (K := K) π hRefl hCST PG R PM,
+  ∀ (q : rationalInducedSmoothOrbitSections hG hi hν I hKc hPK π)
+    (s : WeylIndex i ν (rootSet i ν I) (rootSet i ν I')),
+    ∃ (E : WeightedCExtension hG hi hν I I' hζ hζ' (nₛ s) (hnₛ s) K hKc hRefl hCST hPK π PG (PM s)
+        (hN s))
+      (N : ℕ)
+      (ψ' : Fin N → unramifiedCharacters (leviNormCharacters (χ_ s)) →
+        ProductInducedCompactPicture (decomposition (χ_ s))
+          (lowerK hG hi hν I I' hζ (nₛ s) (hnₛ s) hRefl hCST π (PM s))
+          (SmoothRep.pullback (lowerLeviConjugation i ν (rootSet i ν I) (rootSet i ν I') hG hi hν
+            (rootSet_subset i ν I) ζ hζ (nₛ s) (hnₛ s)).symm π.obj))
+      (φ : Fin N → unitaryUnramifiedCharacters (leviNormCharacters (χ_ s)) → ℂ),
+      (∀ k, UnramifiedOperatorFamily.IsPolynomialOn Set.univ (fun χ => ψ' k χ.val)) ∧
+      (∀ k, IsSmoothFiniteTorusFunction fun c =>
+        φ k ((DynamicInducedOrbit.leviUnitaryCoordinates (H := 𝐋) hM' (χ_ s)).symm c)) ∧
+      ∀ z : unitaryUnramifiedCharacters νM,
+        E.unitaryValue z (sectionCompactPicture hG hi hν I hKc hPK π q z) =
+          ∑ k, φ k (lowerCharacterConjugation hG hi hν I I' hζ (nₛ s) (hnₛ s) z) •
+            ψ' k ⟨(lowerCharacterConjugation hG hi hν I I' hζ (nₛ s) (hnₛ s) z).val,
+              (lowerCharacterConjugation hG hi hν I I' hζ (nₛ s) (hnₛ s) z).property.1⟩
+
+omit [BorelSpace (𝐌 ⧸ CM)] in
+set_option linter.overlappingInstances false in
+set_option maxHeartbeats 3000000 in
 /-- **Finite decomposition into algebraic lower families (printed p.304).** For `π` square
 integrable modulo `A_M(F)` (the first premise), `K` the special maximal compact subgroup of the
 source and the common source normalization, for every section `q` and every `s` there are a
@@ -561,8 +606,10 @@ picture (the compact picture of the algebraic families `L^{M'}(sω_B, M' ∩ s·
 specialized at each point) and smooth functions `φ_k` on `Im X(s·M)` such that for every
 `χ ∈ Im X(M_I)`, with `ω_0 = π` as base point:
 `c̃_{P'|P}(s, π ⊗ χ) q_{π⊗χ} = Σ_k φ_k(sχ) sp_{sχ} ψ'_k`, read in the fixed compact pictures.
-The families and the functions depend only on `q`, `s` and the base point `π`. -/
-def WeightedCDecompositionStatement : Prop :=
+The families and the functions depend only on `q`, `s` and the base point `π`.
+This replaces `WeightedCDecompositionStatement`, which omitted the Borel instance of the
+inducing Levi quotient from its elaborated signature. -/
+def WeightedCDecompositionBorelStatement [BorelSpace (𝐌 ⧸ CM)] : Prop :=
   IsSquareIntegrableModCentralSubgroup CM hCM π.obj.representation mu →
   (∃ α : SimpleRoot i ν, α ∉ I') →
   IsSpecialVertexCompact ν hi K →

@@ -1,0 +1,5 @@
+# Arithmetic division uniformizer from the local invariant
+
+The normalized order of any irreducible element of the scalar valuation integers is one. Positivity follows from its strict valuation inequality. A scalar field unit of order one belongs to the maximal ideal, so its valuation bounds the valuation of a generator of that ideal from below. The order of the generator is therefore at most one.
+
+For an embedded finite arithmetic-unramified stage of reduced degree, Skolem–Noether gives an implementing unit for its arithmetic Frobenius. The opposite Brauer invariant computes the normalized order of the central power of that unit modulo the reduced degree. When the invariant is the positive reciprocal, this order agrees modulo the degree with the order of the selected scalar uniformizer. The unramified norm adjustment then constructs `arithmeticDivisionUniformizer` with the required exact power and unchanged conjugation law. This is the normalization in Drinfeld, *Coverings of p-adic Symmetric Regions* (1976), §2 A–B, printed pp. 109–110, using the Library's opposite-class convention.

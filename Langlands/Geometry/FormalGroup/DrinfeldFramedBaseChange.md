@@ -29,6 +29,11 @@ constructed source comparison and the inverse target quotient-naturality
 comparison. Both rational maps and both inverse equations come from the actual
 quasi-isogeny calculus.
 
+`SpecialAtlas.quotientFrameBaseChangeOnAtlasIso` constructs the three source
+comparisons using the underlying target atlas and its quotient cover. The fixed
+frame supplies the order action in each source comparison. The special-atlas
+comparison applies this construction to the target's underlying atlas.
+
 The old all-test height-zero certificate survives scalar extension by
 `HasConstantChartHeight.baseChangeAlong`. The full-order atlas isomorphism
 transport theorem preserves this actual local kernel-rank height. The exact

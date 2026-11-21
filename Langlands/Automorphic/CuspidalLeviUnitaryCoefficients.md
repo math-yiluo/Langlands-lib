@@ -1,0 +1,7 @@
+# Cuspidal Levi coefficients with unitary central characters
+
+For a block of rank `dᵢ > 0` with central character `ωᵢ`, take the positive Hecke character `μᵢ(z) = |ωᵢ(z)|^(-1/dᵢ)`. On scalar matrices the determinant raises the scalar to the block rank. The resulting central character `μᵢ^dᵢ ωᵢ` has modulus one. Actual determinant multiplication carries the fixed-character cuspidal realization into the realization with this unitary character.
+
+Assume compactness of the additive adelic quotient. The coefficient theorem takes an equivariant linear map from a compact-finite source to the translated block constant terms of a realization `S`. The image has a block scalar eigencharacter whose restrictions are the pullbacks of the given `ωᵢ`. All strict-refinement constant terms vanish on `S`. Under these hypotheses the actual Levi slice maps give a linear tensor whose evaluation at `m` is the original period multiplied by `∏ᵢ μᵢ(det mᵢ)`. For differentiation in block `i` along `X`, the twisted block Lie action has the scalar correction `-OperatorRealization.heckeLieShift (μᵢ) X`.
+
+The positive determinant characters implement the unitarizing step for the subsequent cuspidal decomposition. This is the use of the positive character in the proof after Lemma 6 in Langlands, *On the notion of an automorphic representation* (1979), Proposition 2, printed p. 205 (Corvallis Part I, PDF p. 200).

@@ -1,0 +1,5 @@
+# Evaluation of compact Schwartz averages
+
+`SchwartzCompactAverageEvaluationStatement` concerns a compact family of real-linear pullbacks of a complex-valued Schwartz test, all vanishing off the same compact set. A complex-linear evaluation bounded by a continuous Schwartz seminorm is continuous on this family and commutes with its weighted integral for every continuous complex weight and finite Borel measure on the parameter space. The pullback operators satisfy the uniform lower norm bound used to construct the Schwartz average.
+
+The bound on evaluation gives a continuous linear factor through finitely many spatial derivatives on the common compact set. Joint continuity of each derivative makes these coordinates continuous as functions of the parameter with the sup norm. The derivative formula for the Schwartz average identifies its coordinates with their Bochner integral. The continuous linear factor commutes with this integral, giving the scalar formula. This is an internal step in replacing a real Godement test by a compact-group average with finite orbit span.

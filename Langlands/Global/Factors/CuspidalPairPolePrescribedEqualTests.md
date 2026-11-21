@@ -7,3 +7,10 @@
 The theorem takes any two pure cuspidal tensors with reference factors outside `S` and any product Schwartz test standard there. Use the specified finite coefficients and evaluate the slice models on the supplied infinite factors. The ordinary local normalizations and the pure semilocal product formula give an entire multiplier for the exact partial integral. Multiplying it by the prescribed archimedean and retained finite L-factor product agrees with that integral on a right half-plane. The proof uses the same two vectors and Schwartz test throughout.
 
 This is an internal derivation from J. W. Cogdell, *Analytic Theory of L-Functions for GL(n)*, chapter 9 of Bernstein and Gelbart, eds., *An Introduction to the Langlands Program*, Birkhäuser, 2004. See the decomposable equal-rank integral in §2.3, printed pp. 210–211 (PDF pp. 213–214), and the normalized product in the proof of Theorem 4.1, printed pp. 218–221 (PDF pp. 221–224). The local continuation premises concern H. Jacquet, *Archimedean Rankin–Selberg Integrals*, 2009, display (2.6) and Theorem 2.1(i)–(ii), author PDF pp. 6–7.
+
+`exists_ordinaryEqualNormalization_of_pure_tensors_at` uses the real and complex
+ordinary equal-rank continuation hypotheses for the fixed rank `r`. The all-rank
+version specializes its continuation hypotheses to that rank and applies the
+same proof.
+
+`exists_ordinaryEqualNormalization_of_pure_tensors_placewise` obtains the real equal-rank continuation clause only at a real place of the field. The unconditional fixed-rank and all-rank versions supply the corresponding continuation clauses.

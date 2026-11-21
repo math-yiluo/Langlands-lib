@@ -136,7 +136,7 @@ def HasCoveringUnequalNormalizedGrowthTests (c : FinitePairLChoice P P' hP hP')
 
 /-- Realize the local normalized unequal tests at the indicated parameters and multiply
 the local growth estimates using the actual normalized partial integral formula. -/
-theorem hasCoveringUnequalNormalizedGrowthTests_of_local
+theorem hasCoveringUnequalNormalizedGrowthTests_of_local_at
     (c : FinitePairLChoice P P' hP hP') (hrt : t < r)
     (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
     (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
@@ -144,7 +144,7 @@ theorem hasCoveringUnequalNormalizedGrowthTests_of_local
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
-    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (hGReal : Nonempty RP → RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
@@ -173,7 +173,7 @@ theorem hasCoveringUnequalNormalizedGrowthTests_of_local
     let k := r - (t + 1)
     have hr : r = t + (0 + k + 1) := by dsimp [k]; omega
     choose D NS hNS using fun v : S => exists_poleFiniteUnequalTest v.1 (ψv v) c (ν v) hr hT hT' s₀
-    have hgR (v : RP) := (hGReal.1 r t hrt (dR v) (dR' v) (hdR v).1 (hdR' v).1
+    have hgR (v : RP) := ((hGReal ⟨v⟩).1 r t hrt (dR v) (dR' v) (hdR v).1 (hdR' v).1
       (T.isIrreducibleRealStandard v _ (hdR v)) (T'.isIrreducibleRealStandard v _ (hdR' v))
       (aR v) (realQuotientMeasureData t)
       (hR.1 v ▸ range_ne_bot_of_normalized 1 (M.normalized (.inl v)))
@@ -315,5 +315,34 @@ theorem hasCoveringUnequalNormalizedGrowthTests_of_local
     fun i => ?_⟩, ULift.up 0, ⟨0, (hN 0).1⟩, (hN 0).2⟩
   obtain ⟨b, hb⟩ := (N i.down).eq_on_right
   exact ⟨b, fun s hs => (hb s hs).trans (mul_assoc _ _ _).symm⟩
+
+
+theorem hasCoveringUnequalNormalizedGrowthTests_of_local
+    (c : FinitePairLChoice P P' hP hP') (hrt : t < r)
+    (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
+    (hGReal : RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w))
+    (hGrowR : ∀ v, HasOrdinaryNormalizationStripGrowth
+      (realOrdinaryUnequalTest hrt (dR v) (dR' v) (aR v) (realQuotientMeasureData t)) (realPairLFactor (dR v) (dR' v)))
+    (hGrowC : ∀ w, HasOrdinaryNormalizationStripGrowth
+      (complexOrdinaryUnequalTest hrt (dC w) (dC' w) (aC w) (complexQuotientMeasureData t))
+      (complexPairLFactor (dC w) (dC' w))) :
+    HasCoveringUnequalNormalizedGrowthTests c hrt S ψ (archimedeanPairProduct dR dR' dC dC') :=
+  hasCoveringUnequalNormalizedGrowthTests_of_local_at c hrt hPS hPS' hT hT' hψF hS hψv ν
+    (fun _ => hGReal) hGComplex M M' aR aC dR dR' dC dC' hR hR' hdR hdR' hdC hdC' hGrowR hGrowC
 
 end Langlands.Global.CuspidalPairPoles
