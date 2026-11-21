@@ -12,6 +12,8 @@ modules named in the rows before that are also byte-identical to their versions 
 versions at `7d0469f6b963a3184585874ef8a502809dcbd51b`, against which those rows were checked.
 The topology and adjunction additions of 16 November are checked against their separate
 publication receipts below; their current Lean/Markdown pairs match the frozen published pairs.
+The 21 November update records subsequent results checked at Library
+`a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
 
 This note lists the published modules used by this task that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
@@ -299,7 +301,12 @@ The last assertion of I.2 (p.243), "if `∏_{χ ∈ Y}(ρ(a) − χ(a))^D` annul
 (at each `a` one of the three factors vanishes) but `X = {1} ⊄ Y`; `FiniteFunctionUniqueness.md`
 gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ ∈ Y}`.
 
-## Open obligations on these chains
+## Obligations recorded in the 16 November coverage
+
+This section records the obligations at the earlier coverage snapshot.
+The 21 November update below records subsequent proofs of the `Ξ` upper
+bound and split-center height estimates, and subsequent spectral constructions
+and proper-Levi comparisons.
 
 - **Upper bound of Lemma II.1.1** (`RationalXiUpperBoundStatement`, unproved; proof task Task
   5326 `d27429ee-ab4e-47b4-8486-8cdd92ff4d34`). Of the inputs of Waldspurger's proof (p.251), the
@@ -732,3 +739,103 @@ gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ �
   Lemma VIII.2.3 beyond the vanishing of `f₁ ∗ f_ψ` and `f_ψ ∗ f₁`.
 - **I.1 (6)** (`1 + σ(m) ≍ 1 + |H_0(m)|`) for the actual `rationalHeight` is not stated in two-sided
   form.
+
+## Weight estimates, spectral families and rank induction, 21 November 2026
+
+The published pairs below were checked at Library
+`a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`. The entries follow the
+rank induction in VIII.1, the proper Fourier cutoff in VIII.2.1, and
+the full-group residual argument on printed p. 332.
+
+- `rationalXiUpperBound` proves the exact `RationalXiUpperBoundStatement`
+  using the proved Jacquet unipotence. Combined with
+  `rationalXiSquareIntegrable_of_upperBound`, it supplies the analytic
+  input to II.1.5 with the simultaneous standard basis and finite
+  Cartan covering still explicit. Publication
+  `c3935b0b-4feb-4684-bddd-f9ac2c1cf9d6`.
+  [Xi upper bound](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalXiUpperBoundProof.md)
+- `rationalSplitCenterHeight` proves the exact
+  `RationalSplitCenterHeightStatement`. Its two estimates give the
+  height comparison on translates by `G¹` and integrability of an
+  inverse power of the height on the split center.
+  `rationalCuspidalCentralImage_subset_of_specialCompact` uses this
+  proof and the II.1.5 weight estimate for the upper inclusion of
+  VIII.4.2, with explicit structural inputs and finite projected levels.
+  Height publication `9d13322d-30f0-40c6-ba95-d57d231db0eb`.
+  [Split-center heights](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSplitCenterHeightProof.md),
+  [Upper inclusion](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalCuspidalRankZero.md)
+- `rationalSemistandardThetaSmoothSections` constructs `C^∞(Θ)` as
+  the finite-support submodule of the coherent smooth components
+  on the full actual semistandard index. `weightedSynthesis` uses
+  this submodule as its domain and evaluates the raw weighted sum
+  over its finite literal support. The invariant Fourier lift and
+  the VII.2.5 identity on synthesis remain separate obligations.
+  [Smooth spectral families](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardSpectralFamily.md),
+  [Weighted synthesis](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardWeightedSynthesis.md)
+- `semistandardProperLeviRank` proves strict rank decrease for each
+  proper intrinsic semistandard parabolic, using its literal closed
+  reductive Levi model and the inherited maximal split torus. The
+  ambient and Levi ranks use their relative root spans. Publication
+  `78fe22e7-7aa1-491b-851f-56b92158033e`.
+  [SemistandardProperLeviRankProof](../../Langlands/GroupScheme/Rational/SemistandardProperLeviRankProof.md)
+- `RationalExactRankDiscreteSeriesOrbitFinitenessStatement` restricts
+  VIII.1.2 to one rank. `rationalStrictlyLowerRankOrbitFiniteness_succ_iff`
+  adds the next rank to a strict bound, and
+  `rationalStrictlyLowerRankOrbitFiniteness_one_iff` uses the rank-zero
+  proposition published as `e35df980-a95b-46fe-bac6-b53abdb9f0b5`.
+  `allLeviOrbitFiniteness_of_rank_lt` takes orbit finiteness at all
+  ranks below a strict bound containing the ambient rank and supplies
+  every semistandard Levi premise of VIII.1.3. The rank equivalences
+  and all-Levi deduction are in publication
+  `92ead55c-c483-4359-a16b-17df0ef282d8`.
+  [RationalOrbitFinitenessByRank](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalOrbitFinitenessByRank.md)
+- `rationalSemistandardLeviFourierVanishing` takes zero proper Fourier
+  cutoff to the vanishing of the actual Fourier product of each
+  translated constant term on the proper Levi. Its premises include
+  coverage by the lifted nested indices with the specified measure
+  and weight comparisons, and the outer radical conjugation modulus.
+  A zero-kernel statement for the Levi Fourier product then gives
+  vanishing of those constant terms. Publication
+  `67734de5-c76d-43c0-9415-9284b4bf89a6`.
+  [RationalSemistandardLeviFourierVanishing](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardLeviFourierVanishing.md)
+- `fullLeviSplitCenter_map` identifies the actual split-center point
+  images under the full standard Levi equivalence. With this
+  comparison, `rationalFullLeviFourierActionVanishing` turns zero
+  induced Fourier tensors at the full index into zero actions of
+  the inverted Schwartz function on the ambient discrete series.
+  The hypotheses include the ambient `SquareIntegrableWeight` and
+  tempered coefficient bounds for the normalized inductions of the
+  inducing discrete series. The proof uses the actual induction
+  equivalence, positivity of the inducing formal degree and square
+  integrability under either central-quotient Haar scale. Publications
+  `9b2d637d-09d7-47e4-b328-3474ea610896` and
+  `0b0a6b6d-c354-42fa-986e-69b42d44a30a`.
+  [Full Levi split center](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardFullLeviSplitCenter.md),
+  [Full Levi Fourier action](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalFullLeviFourierAction.md)
+- `rationalCuspidalDiscreteActionSeparation` proves that such action
+  vanishing separates the intrinsic cuspidal subspace under the
+  displayed ambient and central weight estimates and finite
+  projected cuspidal levels. It applies the upper coefficient
+  inclusion of VIII.4.2 and split-center Fourier uniqueness. Its
+  carrier universe is `max u uV`. The separate
+  `discreteSeriesCentralCoefficientSpace_eq_of_separable` compares
+  the coefficient sums at independent carrier universes, by
+  equivalent realizations preserving the quotient Haar measure.
+  Publications `268c59a3-556d-4955-a201-259ee90dc8be` and
+  `4ad21459-0db7-475b-8a8e-2eff101a24cf`.
+  [Cuspidal separation](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalCuspidalDiscreteActionSeparation.md),
+  [Small realization](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/DiscreteSeriesSmallRealization.md)
+- `compactQuotientCentralProjectionFinite` proves finite dimension
+  of the actual central projection span at an open bi-invariant
+  level on a compact central quotient. It evaluates character
+  equivariant functions at finitely many coset representatives.
+  This supplies the finiteness part of VIII.4.1 when the actual
+  split-central quotient is compact. Publication
+  `21120965-c179-4429-98ea-d079b8dc0657`.
+  [Central projection on a compact quotient](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CentralProjectionCompactQuotient.md)
+
+The general reconstruction step still needs the intrinsic
+proper-Levi cuspidality criterion, an invariant finite-support
+Fourier lift, and the VII.2.5 identity on the actual synthesis
+image. The general VIII.4.1 finite-level conclusion remains a
+premise of the published cuspidal separation theorem.

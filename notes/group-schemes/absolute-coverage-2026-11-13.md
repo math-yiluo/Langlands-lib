@@ -8,9 +8,9 @@ entries listed as composites in the
 [family 4 ledger](ledger-family-4-absolute.md) have exact named proof
 theorems: C13, E3 and the first two internal interfaces of F. This update
 marks those entries P under the ledger's convention: a theorem in the
-published Library has exactly the named statement as its type. The older
-ledger remains a dated snapshot. The independent C11 proof and the third
-interface of F still await proof publication.
+published Library has exactly the named statement as its type. The
+[21 November update](#verified-proof-publications-21-november-2026) records
+the later publications for C11 and the third interface of F.
 
 All declaration names below have prefix `Langlands.GroupScheme`; module
 paths have prefix `Langlands/GroupScheme/`.
@@ -104,7 +104,7 @@ Lie-weight and centralizer constructions. Smoothness and connectedness of
 the cocharacter of a general Borel overgroup. No duplicate wrapper tasks
 are needed.
 
-## Outstanding proof publications
+## Proof status on 13 November 2026
 
 **C11, supplied dynamic quotient properness.** The current owner is
 Task 6453, `5934d030-06ab-45a5-bed4-6bd68943c20d`, revision 1, for
@@ -175,3 +175,43 @@ comparison, and D7 gives a Bruhat covering without disjointness.
 The separate [dynamic update](dynamic-relative-progress.md) records
 additional field and arbitrary-base obligations. The broader program,
 including rational and general-base structure, remains incomplete.
+
+## Verified proof publications, 21 November 2026
+
+Both remaining targets from the 13 November update have published proofs.
+Their Lean and Markdown pairs match the archived submissions at their
+publication commits and in Library `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
+The statement pairs also match the ones at the proof submissions' Library
+bases. Two exact-type applications compiled with zero errors or warnings
+over that current Library.
+
+| Ledger entry | Exact theorem | Proof candidate and publication commit | Independent review task and exact-target validation receipt |
+| --- | --- | --- | --- |
+| C11, Task 6453 | `dynamicQuotientProper : DynamicQuotientProperStatement.{u}` | `3d9b328b-a689-4d58-a01b-6ace8b31d0d8` at `032961776f43ccd672c6266d265a9c644faeba13` | `6d48d57f-fa53-4614-a734-5b7593213345` and `7f02986a-03ee-4c66-906d-7aad48ad668c` |
+| F, third interface, Task 6428 | `triangularDiagonalKernelTower : TriangularDiagonalKernelTowerStatement.{u}` | `0c7fd545-28ce-4ac7-9f07-91dbe42c9a79` at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` | `e9e5dd07-1744-42c0-85bc-d5a73eab3bb9` and `13fd8441-ffaa-4328-a1f3-381970d58a3d` |
+
+For C11 the theorem proves properness of the supplied `Q` over an
+algebraically closed field of arbitrary characteristic. It retains all
+test schemes in the right-coset equality and includes trivial and central
+cocharacters. The proof uses affineness of a linear homogeneous quotient,
+proved using geometric reductivity from the independent rank-one central
+cover. A closed orbit in the affine quotient gives a closed immersion of
+the supplied `Q` into the proper general linear dynamic quotient. The
+independent review verified the type-and-value dependency audit against
+Task 6453's exclusions.
+[Statement](../../Langlands/GroupScheme/Dynamic/QuotientProperStatement.md),
+[proof and dependency audit](../../Langlands/GroupScheme/Dynamic/QuotientProperProof.md).
+
+For F the theorem constructs a tower for the supplied fppf diagonal
+quotient `q : H ⟶ D(Λ)` of an affine locally finite type closed triangular
+subgroup over any field. It retains every matrix size, including zero,
+and permits torsion in the finitely generated abelian `Λ`. The proof
+supplies `affineHomImage` and `affineNormalSubgroupQuotient` to
+`TriangularLayer.admitsTower_diagonalizable_of_affine_image_and_normal_quotient`.
+Each transition is an fppf quotient whose full kernel embeds as a closed
+subgroup of `𝔾ₐ`. Conjugation factors through `D(Λ)`, and the kernel
+embedding is equivariant for a character of `D(Λ)` on every test scheme.
+This includes nonreduced kernels. The terminal map to `D(Λ)` is an
+isomorphism.
+[Statement](../../Langlands/GroupScheme/Absolute/TriangularDiagonalKernelTowerStatement.md),
+[proof](../../Langlands/GroupScheme/Absolute/TriangularDiagonalKernelTowerProof.md).

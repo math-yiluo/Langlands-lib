@@ -4,6 +4,11 @@ For the additional dynamic statement publications and proof owners as of
 13 November 2026, see [the dated dynamic update](dynamic-relative-progress.md).
 It supplements rows C3, C7 and C8; the labels below describe the original snapshot.
 
+The [absolute coverage update](absolute-coverage-2026-11-13.md) records the
+published proofs for C13, E3 and the first two interfaces of F. Its
+[21 November section](absolute-coverage-2026-11-13.md#verified-proof-publications-21-november-2026)
+records the exact independent proofs for C11 and the third interface of F.
+
 Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
 `2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
 ledger for family 4 of that program's contract. Family 4 covers:
@@ -432,6 +437,13 @@ p.546 (PDF 562); A.75–A.76, printed p.583 (PDF 599).
   is now published (B8). The composite above therefore cannot discharge Task 4665 as the
   contract stands.
 
+**C11 update, 21 November 2026.** Status P. Task 6453 published
+`dynamicQuotientProper` in `Dynamic/QuotientProperProof`. It proves
+properness of the supplied `Q` via a closed immersion into a proper general
+linear dynamic quotient. The review verified the dependency audit against
+the independent-route contract.
+[Proof publication and exact-target evidence](absolute-coverage-2026-11-13.md#verified-proof-publications-21-november-2026).
+
 **C12. Dynamic subgroups of `GL_n` for diagonal cocharacters.** Source: CGP, Example 2.1.1,
 printed pp.45–47 (PDF 71–73); Lemma 2.1.5, printed pp.50–51 (PDF 76–77); Proposition
 2.1.8(2), printed p.53 (PDF 79).
@@ -591,7 +603,14 @@ theorems are missing. The third is open.
   Conclusion: `q` admits a finite character-linear kernel tower. No smoothness,
   connectedness or splitting is assumed. Status O.
 
-## Remaining targets in family 4
+**F update, 21 November 2026.** The third interface has status P. Task 6428
+published `triangularDiagonalKernelTower` in
+`Absolute/TriangularDiagonalKernelTowerProof`. The theorem supplies the
+tower for the original `q`, with full actual kernels, character
+equivariance on all tests and an isomorphism at the terminal stage.
+[Proof publication and exact-target evidence](absolute-coverage-2026-11-13.md#verified-proof-publications-21-november-2026).
+
+## Remaining targets at the original snapshot
 
 - O row: the third internal interface of F (`TriangularDiagonalKernelTowerStatement`). No
   owner task was found.

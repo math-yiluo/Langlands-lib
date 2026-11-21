@@ -27,6 +27,8 @@ pairs checked at `edf9646441fdf5d75d692913b8928b89b9d92538`. The status codes, t
 task identifiers and the method of checking are those of the Chapter VI ledger.
 The VII.4 proof steps, conditional proofs and source issues below were checked
 on 20 November 2026 at Library `5704217a2667191d63b37f0e85a2da41c15b21d2`.
+The four statement publications and proof-task assignments below were checked
+on 21 November 2026 at Library `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 (abbreviated `RP`) unless another namespace is written. The focused source maps
 [root-exponent-tempered-progress](root-exponent-tempered-progress.md) and
@@ -52,6 +54,19 @@ recorded in the record:
 | VII.3.1 extremes | `bruhatIdentityExtremes` | [BruhatIdentityExtremesProof](../../Langlands/Representation/Exponents/BruhatIdentityExtremesProof.md) | `0ec4ea93-fabc-48fb-9af2-e1a7ef1f68da` | `86a35b120bfe4abea6228234fde9bbea` | `730bd1f2` |
 | VII.3.5 opening assertion, minimal `M` | `minimalParabolicDistanceLength` | [MinimalParabolicDistanceLengthProof](../../Langlands/GroupScheme/Rational/MinimalParabolicDistanceLengthProof.md) | `c68de2e3-f0ef-4f04-9d6b-2fb94aebee90` | `42fa7a88d0524773b7e00c1054efb59b` | `730bd1f2` |
 | VII.4.1 Lemma | `langlandsTripletOppositeRegularity` | [LanglandsTripletRegularityProof](../../Langlands/Representation/LanglandsClassification/LanglandsTripletRegularityProof.md) | `ae39328b-9b9a-4a08-b89b-96877fa75d12` | `2dffde5df03e4e6fb61057315d0004d1` | `b128d289` |
+
+The following Lean and Markdown statement pairs entered the Library at
+`032961776f43ccd672c6266d265a9c644faeba13`. Worker 1222 compared them to the
+frozen pairs and verified independent approval and machine validation. Each
+proof task has a shared draft checked against its published target. All four
+drafts await independent proof review and publication.
+
+| Coverage | Published statement | Statement record | Integration ID | Proof task |
+| --- | --- | --- | --- | --- |
+| VII.2.4 standard vanishing test | [`UnitaryJacquetVanishingStandardReductionStatement`](../../Langlands/Representation/Exponents/UnitaryJacquetVanishingStandardReductionStatement.md) | `ddd6f77a-277d-4936-aef0-cd7b2acce711` | `6c633fcfcaaa42498e5eca6c4fc0294a` | Task 8164 (`b89694cf-7cca-4001-84b4-28c4e07216fe`) |
+| VII.2.6 standard embedding witness | [`DiscreteSeriesEmbeddingStandardReductionStatement`](../../Langlands/Representation/Exponents/DiscreteSeriesEmbeddingStandardReductionStatement.md) | `f0607d3c-e043-4a79-a91d-d84c852801d9` | `4e46e1cf801249398630bc2d14917441` | Task 8173 (`96b89ce6-834b-4b79-9bc2-b59d883602d4`) |
+| VII.2.4 and VII.2.6 from building data | [`TemperedDiscreteSeriesFromBuildingStatement`](../../Langlands/Representation/Exponents/TemperedDiscreteSeriesFromBuildingStatement.md) | `8819ed07-e63f-4477-b77a-d54e2639ade3` | `a09e36748d6a4eab9760e7ebb0c79bd1` | Task 8175 (`c0eadf62-3dfa-48b7-bb06-830a697d8abb`) |
+| (VII.4.1.3) ambient displacement | [`DominantWeylDisplacementStatement`](../../Langlands/Representation/LanglandsClassification/DominantWeylDisplacementStatement.md) | `ba0ed0cf-d000-41e7-9e6a-f43c48864ca2` | `1d7967d9643b4c81afcd76d86d002a5a` | Task 8174 (`4732fe04-37e4-4ffe-9f3c-f2bd2fa699df`) |
 
 Most Chapter VII statements are **derived formulations** for the represented-parabolic
 interface. They range over arbitrary actual rational parabolics instead of standard ones,
@@ -126,10 +141,13 @@ revision 1 awaiting proof review and publication.
 | VII.2.3 Lemma | 229 / 235 | `RP.UnitaryJacquetPartTemperedStatement` | P: `unitaryJacquetPartTempered` |
 | VII.2.4 Proposition | 229 / 235 | `RP.TemperedInductionUnitaryReciprocityStatement`, `RP.TemperedJacquetUnitaryRestrictionStatement` | P: `temperedInductionUnitaryReciprocity`, `temperedJacquetUnitaryRestriction` |
 | VII.2.4 Lemma | 230 / 236 | `RP.TemperedSquareIntegrableUnitaryPartStatement` | S: task f0ff1d42 |
+| VII.2.4 Lemma, standard-parabolic test | 230 / 236 | `RP.UnitaryJacquetVanishingStandardReductionStatement` | S: Task 8164. For any smooth complex representation, rational conjugation compares vanishing at all proper represented rational parabolics with vanishing in the fixed proper standard family |
 | VII.2.5 Proposition | 230 / 236 | `RP.TemperedGeometricLemmaStatement` | P: `temperedGeometricLemma` |
 | VII.2.6 Theorem | 231 / 237 | `RP.TemperedIrreducibleDiscreteSeriesStatement`, `RP.TemperedIrreducibleDiscreteSeriesUniquenessStatement`; step `RP.NormalizedTemperedSubrepresentationStatement` | `RP.TemperedIrreducibleDiscreteSeriesStatement` S: task 225f7d3d; uniqueness P: `temperedIrreducibleDiscreteSeriesUniqueness` (`Exponents/TemperedIrreducibleDiscreteSeriesUniquenessProof`); step P: `normalizedTemperedSubrepresentation` |
+| VII.2.6 Theorem, standard-parabolic witness | 231 / 237 | `RP.DiscreteSeriesEmbeddingStandardReductionStatement` | S: Task 8173. A single rational conjugation standardizes the parabolic and Levi. The comparison retains square integrability of the inducing representation for every Borel Haar measure on its center quotient |
 | VII.2.6 Corollary | 232 / 238 | `RP.TemperedIrreducibleUnitarizableStatement` | S: task 225f7d3d |
 | VII.2.6 Remark (without irreducibility the Corollary can fail) | 232 / 238 | `RP.TemperedReducibleNotUnitarizableStatement` | P: `temperedReducibleNotUnitarizable` (`Exponents/TemperedReducibleNotUnitarizableProof`; Task 5685, statement candidate `9492bbaa`) |
+| VII.2.4 Lemma and VII.2.6 Theorem, existence equivalence, and Corollary with building data | 230–232 / 236–238 | `RP.TemperedDiscreteSeriesFromBuildingStatement` | S: Task 8175. `Langlands.Geometry.Building.GroupAxiomsExistenceStatement` is the explicit premise for the joint compact basis used in Casselman's sufficiency. Tasks 4788 and 4772 retain the unconditional targets |
 
 ## VII.3 Intertwining operators of induced representations
 
@@ -153,6 +171,7 @@ revision 1 awaiting proof review and publication.
 | VII.4.1 Lemma | 241 / 247 | `RP.LanglandsTripletOppositeRegularityStatement`; proved steps `RP.LanglandsTripletOppositePieceSeparationStatement`, `RP.LanglandsTripletOppositeRegularityReductionStatement` | P: `langlandsTripletOppositeRegularity` (`LanglandsClassification/LanglandsTripletRegularityProof`; task 78bf8d31); steps P |
 | (VII.4.1.1), cone for the tempered exponent contribution | 241 / 247 | `RP.GeometricLemmaIntersectionDatum.normalizedRealPart_sub_unramifiedPieceRealPart_mem_nonnegCone`, `Langlands.GroupScheme.ParabolicRootPresentation.neg_mem_nonnegCone_of_opposite` | P as the `hxQ` and `hxP` steps of `langlandsTripletOppositePieceSeparation`. The bound is on the full geometric-lemma piece's exponent after subtracting its unramified contribution |
 | (VII.4.1.2), nonzero negative-cone shift for the unramified contribution | 241–242 / 247–248 | `RP.GeometricLemmaIntersectionDatum.unramifiedPieceDisplacement_mem_nonnegCone_and_ne_zero` | P as the `hδ` step of `langlandsTripletOppositePieceSeparation`. Lean uses the original inducing real part minus the piece parameter, so the displacement lies in the nonnegative cone of \(P\) |
+| (VII.4.1.3), ambient Weyl displacement | 241–242 / 247–248 | `Langlands.GroupScheme.DominantWeylDisplacementStatement` | S: Task 8174. Over any field, a point of the closed coroot chamber minus its inverse Weyl translate lies in the nonnegative simple-root cone in the full real character space (I8) |
 | VII.4.2 Theorem (i)–(iii) | 243–246 / 249–252 | `RP.LanglandsQuotientUniqueStatement`, `RP.LanglandsQuotientInjectiveStatement`, `RP.LanglandsQuotientExhaustiveStatement`, conjunction `RP.LanglandsClassificationStatement` | S: Task 5295 (`717df3ca-7a3c-40fc-a8b3-79617086393e`). P for `RP.LanglandsClassificationFromInputsStatement`, with four Chapter VI premises. See the proof receipts below and source issue I9 |
 | VII.4.2 sentence after the proof of (i), exponent characterization of `J(P, σ, ψ)` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | S: Task 5653 (`1df73c68-230c-4ced-8325-dc9c910df8d8`). P for `RP.LanglandsQuotientExponentCharacterizationFromSecondAdjointnessStatement`, with second adjointness as its sole premise |
 

@@ -3,6 +3,8 @@
 Worker 773 and Worker 853 prepared this route for Task 6698
 (`cd19dd55-136e-42e9-b062-5a23b2c7a6b2`). The declaration and proof status
 below refers to Library `168b7fb5bf8d14e1be7bf425cb6cd43c1995d50d`.
+The later publication of the strong base-change statement is recorded in the
+complex-place discussion.
 Shared graph revision 586 records the proof route under
 `proof.harris-global-galois-existence`.
 
@@ -199,7 +201,7 @@ The arithmetic normalization scales each Satake root by `q^(r/2)` and hence
 commutes with raising to the residue degree, since `q_w = q_v^f`.
 
 The complex-place input is the standalone totally complex B7 proposition.
-Clause C of the draft `Langlands.Automorphic.Unramified.CyclicStrongBaseChangeSupportStatement`
+Clause C of `Langlands.Automorphic.Unramified.CyclicStrongBaseChangeSupportStatement`
 gives the third conjunct of B7 after totally complex specialization. For
 actual unitary isobaric data related by weak lifting along a prime-degree
 cyclic extension, it asserts equivalence of the aggregate parameter relation
@@ -209,12 +211,16 @@ comparisons, and the regular-orbit induction comparison to derive canonical
 B7 conditionally. The general strong-lift assertion of Arthur–Clozel III.5.1
 (pp. 212–213) at complex places and its translation to the Library's aggregate
 predicate remain an external proof input under the operator's B7 ruling.
-Task 7889 owns the strong-lift statement draft, using Task 7513
-(`b4232035-f988-4ae7-84e0-3f644a479933`) for the published σ-lift vocabulary
-in its separate finite-place clause. The R2 complex-place comparison requires
+Task 7889 subsequently published the named premise as
+`231ee3e9-faaf-4345-b03f-a7860e747e94` at Library commit
+`032961776f43ccd672c6266d265a9c644faeba13`. Its separate finite-place clause
+uses the σ-lift vocabulary published by Task 7513
+(`b4232035-f988-4ae7-84e0-3f644a479933`) as
+`abd1655c-871c-4880-aa12-210c36ce9e29`. The R2 complex-place comparison requires
 a supercuspidal pair, whereas Harris's parity input permits a square-integrable
 component at the prescribed split place.
 [Canonical B7 statements](../../Langlands/Automorphic/Unramified/CyclicWeakBaseChangeComplexPlaceStatement.md),
+[strong-lift support and parameters](../../Langlands/Automorphic/Unramified/CyclicStrongBaseChangeSupportStatement.md),
 [finite-place σ-lift vocabulary](../../Langlands/BaseChange/SigmaLiftOnSupercuspidals.md)
 
 At a fixed coefficient place the upper representations over the common
@@ -254,7 +260,7 @@ geometry is an open input with its own planning task.
 | `Langlands.Automorphic.Unramified.CyclicPrimeIsobaricBaseChangeTCStatement` | Arthur–Clozel III.4.2(c) existence and uniqueness for the totally complex weak lift. Proof Task 7860 (`835f1bf4-f1d3-4a52-ac52-54475877d275`). |
 | `Langlands.Automorphic.Unramified.QuadraticWeakBaseChangeSplitSquareIntegrableStatement` | III.5.1 at a split square-integrable place and singleton cuspidality of the lift. Task 7968 (`77f4211e-5a47-4f28-aef7-858306db19f3`) |
 | `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceTCStatement` | Task 7479 (`abcbb7a8-e133-45df-b7cf-6413542ec954`) published canonical B7 and its totally complex form. Task 7340 (`0407c885-1c0b-496b-a8bf-829f3c1a7038`) owns the conditional derivation. |
-| `Langlands.Automorphic.Unramified.CyclicStrongBaseChangeSupportStatement`, clause C | Task 7889 (`daa579fe-3dfe-42c0-98d3-87cc6da1bc8c`) owns the draft statement of the open aggregate complex-place input under the general III.5.1 program of Task 7343 (`d6ca8ef3-60ca-4650-a436-8b5a00655394`). |
+| `Langlands.Automorphic.Unramified.CyclicStrongBaseChangeSupportStatement`, clause C | Task 7889 (`daa579fe-3dfe-42c0-98d3-87cc6da1bc8c`) published the statement as `231ee3e9-faaf-4345-b03f-a7860e747e94`. The aggregate complex-place comparison from Arthur–Clozel III.5.1 remains an unproved external input under Task 7343 (`d6ca8ef3-60ca-4650-a436-8b5a00655394`). |
 | `Langlands.Automorphic.CuspidalComplexParameterBridgeTCStatement` | Actual infinitesimal character comparison and regular algebraicity. Task 7870 (`a97be363-c387-4cc1-b0d8-75e4761b29a1`) published `Langlands.Automorphic.cuspidalComplexParameterBridgeTC`, artifact `059c3673-af5d-4313-8777-42e5f877949a`. |
 | `HarrisParityBaseChangeStatement` | Conditional assembly of the four automorphic comparisons for the lifted class. Task 7971 (`225355e9-9b94-4cd7-bf6c-e9d8e60874c9`) |
 | `QuadraticPatchingStatement` | Patching and uniqueness for a rich family of actual quadratic restrictions. Task 7920 (`ec9a652c-b05e-4bc7-a62e-cee2e9b08970`) |
