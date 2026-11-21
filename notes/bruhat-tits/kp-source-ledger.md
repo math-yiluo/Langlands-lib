@@ -6,7 +6,7 @@ and their verified formal status. Both parts of Theorem 1.1.15, Corollary
 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields,
 Proposition 9.3.4 and Lemma 11.5.2 have independently accepted,
 published proofs, recorded below in five of the
-fifty-two rows. The separately verified metric fixed-point aggregate assembles
+fifty-four rows. The separately verified metric fixed-point aggregate assembles
 six published component proofs and adds no source row. The separately verified
 finite separable-unramified prerequisite is recorded below without adding a KP
 source row. Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of
@@ -117,7 +117,14 @@ supplied model under hypotheses standing for Proposition 8.5.18 and
 Section 13.2.6. Section 13.3.3 has a partial published definition:
 `g_{x,r}` is the span of supplied lattices `z_r` and `u_psi`; on these
 lattices the Section 13.3.1 row also records the extension to real
-depths under a periodicity hypothesis and the dual lattices.
+depths under a periodicity hypothesis and the dual lattices. On supplied
+lattices the rational-point graded actions and conditional quotient
+actions, the opposite-depth residue pairing with its surjectivity and
+kernel criteria, the resulting residue-field graded duality, bounded
+finiteness of jump depths, a sufficient criterion for real-depth left
+continuity and a split-torus regression are published. Definitions
+13.4.1 and 13.4.2 give rational and optimal points, with no existence
+theorem recorded here.
 Proposition 13.7.4 has a partial published statement of part (1) for
 points of one apartment and supplied Lie lattices: if `X` lies in
 `g_{x,r}` and the translate `X + g_{x,r+}` meets `g_{y,s}` for some
@@ -1466,6 +1473,34 @@ texts record the changes, and the header's count of rows without a
 formal status changes from ten to nine. The source and correction fields
 of every row are unchanged.
 
+A thirty-seventh pass on 21 November 2026 updates four rows (Sections
+13.3.1, 13.3.3 and 13.3.4 and the dependency note in Proposition 13.6.7)
+and adds two, Definitions 13.4.1 and 13.4.2. No existing row changes
+formal status. The publications are `KPLieGradedAction` (artifact
+`639a0916-bff2-43fb-8a76-35979a889790`, first published `5f5d3a91`);
+`KPLieGradedPairing` (artifact `d7430c4b-fecf-47b3-9190-48df763f7b48`,
+first published `6e9e589b`); `KPLieFiltrationLeftContinuity` (artifact
+`9c13713d-5db0-4b28-9978-a30b5e75418c`, first published `6e9e589b`);
+`KPOptimalPoints` (artifact `1c535074-6335-4e3b-908e-69072f096075`, first
+published `03296177`); `KPLieGradedResidue` (artifact
+`4448a2a6-2781-4cfe-a347-1cd61a999d3d`, first published `2d12bd93`);
+`KPLieJumpDepths` (artifact `54231df9-7716-4b62-b003-3eae86e6fdfa`, first
+published `2d12bd93`); `KPSplitTorusLieFiltration` (artifact
+`9ee5abbf-9089-41f9-b7d4-92264614ba12`, first published `2d12bd93`). The
+§13.3 rows retain precisely the periodicity, lattice, finite-generation,
+left-continuity and subgroup-action premises of the individual results.
+The split-torus calculation is a regression for the standard torus, not a
+comparison with constructed positive-depth models. In §13.4,
+KPOptimalPoints uses a regular chamber and the literal
+positive-indecomposable generator rule, not the wall-root definition. It
+gives the least period and finite strip in the stated scope and the
+empty-root obstruction, not existence of optimizers or Lemma 13.4.4. The
+47 newly indexed declarations have standard axiom reports (`propext`,
+`Classical.choice`, `Quot.sound`) from Lean service checks in environment
+`5c94c648-e8dc-4002-a50a-071ebf3f6096`; their module sources match the
+published files checked at Library commit `b47a2385`. The source and
+correction fields of the existing rows are unchanged.
+
 The normative sources are Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, and the
 authors' corrections of 1 November 2024, registered as
@@ -1572,7 +1607,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
 {
   "schema_version": 1,
   "program_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), Theorem 13.5.1 a partial published statement of part (1) on supplied data with the component isomorphisms for the centralizer and the root blocks and a double-root commutator premise assumed, Proposition 13.7.4 a partial published statement of part (1) for points of one apartment on supplied Lie lattices, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); for supplied integral-model and reductive-quotient data, g_{x,0}/g_{x,0+} is proved isomorphic to Lie(Gred_x) for an intrinsic g_{x,0+}, which equals the Lie lattice of a supplied model under hypotheses standing for Proposition 8.5.18 and Section 13.2.6 (Section 13.3.2); the span description of g_{x,r} has a partial published definition on supplied lattices (Section 13.3.3), on which the real-depth extension under a periodicity hypothesis and the dual lattices g^*_{x,r} are defined (Section 13.3.1); the other nine rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), Theorem 13.5.1 a partial published statement of part (1) on supplied data with the component isomorphisms for the centralizer and the root blocks and a double-root commutator premise assumed, Proposition 13.7.4 a partial published statement of part (1) for points of one apartment on supplied Lie lattices, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); for supplied integral-model and reductive-quotient data, g_{x,0}/g_{x,0+} is proved isomorphic to Lie(Gred_x) for an intrinsic g_{x,0+}, which equals the Lie lattice of a supplied model under hypotheses standing for Proposition 8.5.18 and Section 13.2.6 (Section 13.3.2); the span description of g_{x,r} has a partial published definition on supplied lattices (Section 13.3.3), on which the real-depth extension under a periodicity hypothesis and the dual lattices g^*_{x,r} are defined (Section 13.3.1); on supplied data the strict graded Lie and dual actions of rational points and conditional quotient actions (Section 13.3.4), opposite-depth residue pairing with separate surjectivity and kernel hypotheses, the resulting residue-field graded duality with finiteness and stabilizer equivariance, bounded finiteness of jump depths and a sufficient left-continuity criterion (Section 13.3.1) and a split-torus regression (Section 13.3.3) are published; rational and optimal points are defined (Definitions 13.4.1–13.4.2), without an optimal-point existence theorem or Lemma 13.4.4 recorded here; the other nine rows remain source-only. The building construction and release gates remain open.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional; acceptance and publication are separate mandatory evidence.",
   "rows": [
     {
@@ -7325,7 +7360,11 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
         "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
         "Recorded Lean scope (the lattice assertion of the first sentence only, for an arbitrary supplied smooth integral model in place of G_{x,r}): the module Langlands.GroupScheme.IntegralModel.LieLattice, artifact f00ec5c0-9e2a-4957-b936-856b649ee19d, first published in Library commit c9fdbede045511865f0ea27259a1e1a35f442905, works with a commutative domain R with fraction field K, an affine group scheme G over Spec K and an integral model M : IntegralModel R K G. Langlands.GroupScheme.GenericLie R G is the Lie algebra Lie(G) of G over K, the Library's dual-number identity kernel, viewed as an R-module. Langlands.GroupScheme.IntegralModel.lieMap is the R-linear map from the Lie algebra of the model M.group to GenericLie R G given by change of coefficients from R to K followed by the identification of the generic fibre with G; Langlands.GroupScheme.IntegralModel.lieMap_injective proves that it is injective for every model, and Langlands.GroupScheme.IntegralModel.lieLattice is its range. Langlands.GroupScheme.IntegralModel.lieLattice_isLattice proves that for smooth M this range is a lattice in the sense of Mathlib's Submodule.IsLattice K: a finitely generated R-submodule that spans Lie(G) over K, matching KP's definition of an o-lattice (printed p.515 / PDF p.546). Langlands.GroupScheme.IntegralModel.Hom.map_lieLattice_le proves that a model homomorphism over a K-homomorphism f maps the Lie lattice of its source into that of its target under the Lie map of f. With R = o, K = k and M a smooth model of G this is the first assertion, that the Lie algebra of the model, identified with its image in g(k) as in KP Remark 2.10.8 (printed p.123 / PDF p.154), is an o-lattice in g(k); no Lean declaration constructs the congruence model G_{x,r}. The row's conditional status refers to lieLattice_isLattice, proved for every supplied smooth integral model, and to the results on supplied lattices recorded in the next entry.",
-        "Recorded Lean scope (the filtration, the extension to real depths and the dual lattices, for the supplied lattices g_{x,r}, r >= 0, of the Section 13.3.3 row): in the module Langlands.Geometry.Building.KPLieFiltration, artifact 6626002e-0686-4ff3-b59c-b607b330808f, first published in Library commit fd643ecec6997ef17c8356ddbc924138631307d9, Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration x r is g_{x,r} for supplied L : P.LieFiltrationData, x : P.Apartment and r : NNReal (see that row); lieFiltration_antitone proves that it is decreasing in r, and lieFiltrationPlus x r is g_{x,r+}, the supremum of the g_{x,s} over s > r. In the module Langlands.Geometry.Building.KPLieFiltrationDual, artifact e4111e6b-a4a3-4a67-ba6c-952e370fe8a6, first published in Library commit b86269dd36757fdbea2e51976499d645ca61a625, Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.IsPeriodic L is the predicate g_{x,r+1} = m • g_{x,r} for all x and all r >= 0, the case n = 1 of the identity that KP take from Proposition 8.5.16; it is a hypothesis here, not a theorem. Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltrationReal x r, for real r, is the submodule of the X with a • X in g_{x,r+n} for every a in m^n, where n = ⌈-r⌉₊; this is KP's m^{-n} g_{x,r+n} written without a uniformizer. lieFiltrationReal_coe proves that it equals g_{x,r} for r >= 0, and lieFiltrationReal_antitone proves, under IsPeriodic, that it is decreasing in r; lieFiltrationPlusReal x r is the supremum over s > r, and mem_lieFiltrationPlusReal proves, under IsPeriodic, that it is KP's union of the lattices at s > r (without a hypothesis that makes the real family decreasing, the supremum can be larger than the union). Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualLieFiltration x r is g^*_{x,r}, the 𝒪[F]-submodule of Module.Dual F (GenericLie 𝒪[F] G) of the X with X(Y) in m for every Y in lieFiltrationPlusReal x (-r); mem_dualLieFiltration states this membership condition with the supremum unfolded (for every s > -r and every Y in the real-depth lattice at s, X(Y) is in m), keeping m, the minus sign and the strict plus, and dualLieFiltration_antitone proves g^*_{x,r} decreasing in r; dualLieFiltrationPlus x r is the supremum of the g^*_{x,s} over s > r, and mem_dualLieFiltrationPlus proves with no hypothesis that it is the union. The supplied lattices are arbitrary 𝒪[F]-submodules: their lattice property, openness and separatedness, the identity m^n g_{x,r} = g_{x,r+n} for negative r, the independence of the extension from the choice of n, the identification of lieFiltrationPlus (r >= 0) with a union, the identification of lieFiltrationPlusReal with the union without IsPeriodic, and the duality between g_{x,r} and g^*_{x,-r} are not formalized."
+        "Recorded Lean scope (the filtration, the extension to real depths and the dual lattices, for the supplied lattices g_{x,r}, r >= 0, of the Section 13.3.3 row): in the module Langlands.Geometry.Building.KPLieFiltration, artifact 6626002e-0686-4ff3-b59c-b607b330808f, first published in Library commit fd643ecec6997ef17c8356ddbc924138631307d9, Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration x r is g_{x,r} for supplied L : P.LieFiltrationData, x : P.Apartment and r : NNReal (see that row); lieFiltration_antitone proves that it is decreasing in r, and lieFiltrationPlus x r is g_{x,r+}, the supremum of the g_{x,s} over s > r. In the module Langlands.Geometry.Building.KPLieFiltrationDual, artifact e4111e6b-a4a3-4a67-ba6c-952e370fe8a6, first published in Library commit b86269dd36757fdbea2e51976499d645ca61a625, Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.IsPeriodic L is the predicate g_{x,r+1} = m • g_{x,r} for all x and all r >= 0, the case n = 1 of the identity that KP take from Proposition 8.5.16; it is a hypothesis here, not a theorem. Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltrationReal x r, for real r, is the submodule of the X with a • X in g_{x,r+n} for every a in m^n, where n = ⌈-r⌉₊; this is KP's m^{-n} g_{x,r+n} written without a uniformizer. lieFiltrationReal_coe proves that it equals g_{x,r} for r >= 0, and lieFiltrationReal_antitone proves, under IsPeriodic, that it is decreasing in r; lieFiltrationPlusReal x r is the supremum over s > r, and mem_lieFiltrationPlusReal proves, under IsPeriodic, that it is KP's union of the lattices at s > r (without a hypothesis that makes the real family decreasing, the supremum can be larger than the union). Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualLieFiltration x r is g^*_{x,r}, the 𝒪[F]-submodule of Module.Dual F (GenericLie 𝒪[F] G) of the X with X(Y) in m for every Y in lieFiltrationPlusReal x (-r); mem_dualLieFiltration states this membership condition with the supremum unfolded (for every s > -r and every Y in the real-depth lattice at s, X(Y) is in m), keeping m, the minus sign and the strict plus, and dualLieFiltration_antitone proves g^*_{x,r} decreasing in r; dualLieFiltrationPlus x r is the supremum of the g^*_{x,s} over s > r, and mem_dualLieFiltrationPlus proves with no hypothesis that it is the union. The supplied lattices are arbitrary 𝒪[F]-submodules: their lattice property, openness and separatedness, the identity m^n g_{x,r} = g_{x,r+n} for negative r, the independence of the extension from the choice of n, the identification of lieFiltrationPlus (r >= 0) with a union, and the identification of lieFiltrationPlusReal with the union without IsPeriodic are not formalized.",
+        "Recorded Lean scope (derived residue pairing, KPLieGradedPairing): for the supplied L : P.LieFiltrationData, apartment point x and real r, IsPeriodic is used to make evaluation of X in g^*_{x,r} on Y in g_{x,-r} integral. Reduction of X(Y) gives an 𝒪[F]-bilinear pairing into the residue field. gradedLieDualPairing quotients the Lie input by g_{x,(-r)+}; g^*_{x,r+} pairs to zero. With Submodule.IsLattice F on the lattice at -r, gradedLieDualPairing_surjective gives all 𝒪[F]-linear forms of its graded piece into the residue field, and ker_gradedLieDualPairing_flip is trivial. With IsLeftContinuousAt x (-r) instead, ker_gradedLieDualPairing identifies the left kernel with the comap of g^*_{x,r+}. The two hypotheses concern different sides. This module declares no perfect-pairing identification of full lattices; the graded linear equivalence obtained from these results is recorded in the next item.",
+        "Recorded Lean scope (derived residue duality, KPLieGradedResidue): dualGradedLieProjection maps g^*_{x,r} onto dualGradedLie x r, and ker_dualGradedLieProjection identifies its kernel with the comap of g^*_{x,r+}. Under IsPeriodic, gradedLieResidueModule and dualGradedLieResidueModule make the Lie and dual grades modules over the residue field 𝓀[F], through which the 𝒪[F]-action factors. finite_gradedLie proves that the Lie grade at r is finite when g_{x,r} is finitely generated over 𝒪[F]. Assume IsPeriodic, IsLeftContinuousAt x (-r) and Submodule.IsLattice F for g_{x,-r}. Then dualGradedLieLinearEquiv is an 𝒪[F]-linear equivalence from g^*_{x,r}/g^*_{x,r+} to the 𝒪[F]-linear forms on g_{x,-r}/g_{x,(-r)+} with values in the residue field. dualGradedLieResidueEquiv is the same map as an 𝓀[F]-linear equivalence onto the residue-field dual, and finite_dualGradedLie proves that the dual grade is finite. All of this concerns the supplied lattices.",
+        "Recorded Lean scope (derived jump finiteness, KPLieJumpDepths): lieJumpDepths x is the set of real r with g_{x,r+} < g_{x,r}. Assume IsPeriodic and that g_{x,0} is finitely generated over 𝒪[F]. Then finite_lieFiltrationReal_image_Icc shows that the real-depth lattices at x take finitely many values on each closed bounded interval, and finite_lieJumpDepths_inter_Icc gives finitely many jumps there. For a finite set X of apartment points with this finite generation at each member, isClosed_and_isDiscrete_biUnion_lieJumpDepths proves that the union of their jump sets is closed and discrete in ℝ. Rationality of jumps, the set of all optimal points and the building-wide set O are not involved.",
+        "Recorded Lean scope (derived left continuity, KPLieFiltrationLeftContinuity): IsCentralizerLieLeftContinuous assumes a left interval of constancy for z_r at each positive nonnegative-real endpoint. Under this premise, IsPeriodic and RelativeRoot.HasOppositeFactorPairs P.i, isLeftContinuousAt_of_oppositePairs proves IsLeftContinuousAt at all real depths in the supplied apartment. The left-interval inclusion is equality by antitonicity. None of the three premises is discharged for constructed descended Lie models here."
       ],
       "conclusion": "For r>=0, g_{x,r}=Lie(G_{x,r}) is an o-lattice in g(k). The identity g_{x,r+n}=m^n g_{x,r} for nonnegative integers n extends the definition consistently to every real depth. The resulting open additive subgroups form a separated descending filtration, with g_{x,r+}=union_{s>r} g_{x,s}. The dual lattice is exactly g^*_{x,r}={X in g^* : X(Y) in m for every Y in g_{x,(-r)+}}. The maximal ideal m, the minus sign and the strict plus in this annihilator convention are retained.",
       "lean_declarations": [
@@ -7348,12 +7387,34 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.mem_dualLieFiltration",
         "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualLieFiltration_antitone",
         "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualLieFiltrationPlus",
-        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.mem_dualLieFiltrationPlus"
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.mem_dualLieFiltrationPlus",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieDualPairing",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieDualPairing_surjective",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.ker_gradedLieDualPairing_flip",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.ker_gradedLieDualPairing",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.IsCentralizerLieLeftContinuous",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.isLeftContinuousAt_of_oppositePairs",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieProjection",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.ker_dualGradedLieProjection",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieResidueModule",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_gradedLie",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieResidueModule",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieLinearEquiv",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieResidueEquiv",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_dualGradedLie",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_lieFiltrationReal_image_Icc",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieJumpDepths",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_lieJumpDepths_inter_Icc",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.isClosed_and_isDiscrete_biUnion_lieJumpDepths"
       ],
       "modules": [
         "Langlands.GroupScheme.IntegralModel.LieLattice",
         "Langlands.Geometry.Building.KPLieFiltration",
-        "Langlands.Geometry.Building.KPLieFiltrationDual"
+        "Langlands.Geometry.Building.KPLieFiltrationDual",
+        "Langlands.Geometry.Building.KPLieGradedPairing",
+        "Langlands.Geometry.Building.KPLieFiltrationLeftContinuity",
+        "Langlands.Geometry.Building.KPLieGradedResidue",
+        "Langlands.Geometry.Building.KPLieJumpDepths"
       ],
       "dependencies": [
         "Section 8.5 constructs the actual constant-concave-function models; Proposition 8.5.16 proves their Lie-lattice periodicity",
@@ -7361,7 +7422,11 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Section 1.6 supplies the real-depth-plus convention; well-defined extension to negative depths is a proof obligation, not a separately assumed lattice family",
         "Recorded Lean construction: the proofs in the module LieLattice use Lie.affineMap_jointly_injective for the injectivity of lieMap, Lie.finite_lieKernel_of_smooth for finite generation, and the scalar-extension isomorphism of Lie algebras of smooth models (Lie.smoothKernelScalarExtension, packaged as IntegralModel.lieBaseChangeEquiv) for the K-span.",
         "Recorded Lean construction (module KPLieFiltrationDual): lieFiltrationReal is an infimum of comaps of g_{x,r+n} under multiplication by the elements of m^n; lieFiltrationReal_antitone uses smul_lieFiltration_le, m^k • g_{x,t} ≤ g_{x,t+k} under IsPeriodic, proved by induction on k with Submodule.mul_smul; dualLieFiltration has as carrier the X such that g_{x,(-r)+} lies in the comap under X of m, viewed as an 𝒪[F]-submodule of F (dualPairingSubmodule).",
-        "Open obligations: the descended congruence models G_{x,r} of Section 8.5 and Chapter 9 are not constructed in Lean, so the supplied lattices of LieFiltrationData are not identified with Lie(G_{x,r}) and lieLattice_isLattice does not apply to them; the periodicity of Proposition 8.5.16 is a hypothesis (IsPeriodic), and the consistency of the extension to negative depths, separatedness and the exact duality between g_{x,r} and g^*_{x,-r} have no Lean statement.",
+        "Recorded Lean proof: the shift by one and the maximal-ideal-valued dual test make evaluation integral by cancellation of a uniformizer. Lifting through residue reduction and extending an integral lattice basis over F gives surjectivity. Left continuity gives a shallower strict Lie lattice contained in g_{x,-r}, yielding the left-kernel comparison.",
+        "Recorded Lean proof: bounded finiteness of root evaluations under opposite factor pairs gives a gap immediately below the cutoff; combine it with the centralizer gap and use periodicity at the change of the natural-ceiling shift to propagate left continuity.",
+        "Recorded Lean proof (residue duality): periodicity makes the maximal ideal kill both grades, so Module.IsTorsionBySet.module gives the residue structures. The equivalence is LinearEquiv.ofBijective applied to the pairing of chosen representatives. Injectivity comes from the published kernel description under left continuity and surjectivity from the published surjectivity under the lattice premise. Scalars extend along the surjection of 𝒪[F] onto the residue field.",
+        "Recorded Lean proof (jump finiteness): with A = g_{x,0}, the shifted nonnegative lattices over a bounded interval lie between 𝔪^N A and A. Since A/𝔪^N A is finite over the finite ring 𝒪[F]/𝔪^N, only finitely many intermediate submodules occur. A jump at r < s forces g_{x,s} < g_{x,r}, so jumps inject into lattice values.",
+        "Open obligations: construct the descended congruence models G_{x,r} of Section 8.5 and Chapter 9; identify their Lie lattices with the supplied span; prove their lattice property, openness, separatedness, Proposition 8.5.16 periodicity and the consistency of the negative-depth extension with all shifts. The derived residue pairing, graded residue duality, jump finiteness and left continuity do not supply these hypotheses or a full-lattice duality theorem.",
         "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
       ],
       "consumer_or_regression": "Check positive and negative integer shifts and the exact dual annihilator pairing in equal and mixed characteristic. The general lattice construction requires no quasi-splitness of G.",
@@ -7370,12 +7435,18 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
       "acceptance_artifact_ids": [
         "f00ec5c0-9e2a-4957-b936-856b649ee19d",
         "6626002e-0686-4ff3-b59c-b607b330808f",
-        "e4111e6b-a4a3-4a67-ba6c-952e370fe8a6"
+        "e4111e6b-a4a3-4a67-ba6c-952e370fe8a6",
+        "d7430c4b-fecf-47b3-9190-48df763f7b48",
+        "9c13713d-5db0-4b28-9978-a30b5e75418c",
+        "4448a2a6-2781-4cfe-a347-1cd61a999d3d",
+        "54231df9-7716-4b62-b003-3eae86e6fdfa"
       ],
       "publication_commits": [
         "c9fdbede045511865f0ea27259a1e1a35f442905",
         "fd643ecec6997ef17c8356ddbc924138631307d9",
-        "b86269dd36757fdbea2e51976499d645ca61a625"
+        "b86269dd36757fdbea2e51976499d645ca61a625",
+        "6e9e589baa721ce995563f73f648b6f4e45718a1",
+        "2d12bd934a2a0da7808014bfe52c6d67fde3eb62"
       ],
       "axiom_reports": [
         {
@@ -7517,6 +7588,132 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "a9a1b71d-7dd2-446d-a929-0c080ebc4d9e",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 13 on 2026-11-18 at Library commit ba9d1e9a; kind theorem; the module is byte-identical to commit b86269dd, its first publication."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieDualPairing",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "066bd3d6-ada1-4a1e-87b2-2f4ff1929a54",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieDualPairing_surjective",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ca46af98-1db2-4d22-9ff9-4dd7442a4e29",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.ker_gradedLieDualPairing_flip",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "9fdbcd98-60f4-40e7-93f7-0c31c861f35d",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.ker_gradedLieDualPairing",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "4e55af6e-1d73-44a6-a62f-b4f6e31243f3",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.IsCentralizerLieLeftContinuous",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "d01cabc3-7817-4411-b2ec-9ddee258cb9d",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; statement_returns_prop true; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.isLeftContinuousAt_of_oppositePairs",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "c1b66f22-88dd-4ef5-847c-ae099b08faba",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieProjection",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.ker_dualGradedLieProjection",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieResidueModule",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_gradedLie",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieResidueModule",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieLinearEquiv",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieResidueEquiv",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "d1b5e547-a943-445d-84f3-cec1c9d3b483",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_dualGradedLie",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_lieFiltrationReal_image_Icc",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieJumpDepths",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "4dbb0663-1ad7-4b03-bb3b-97ec550d0b39",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.finite_lieJumpDepths_inter_Icc",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.isClosed_and_isDiscrete_biUnion_lieJumpDepths",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "64030dbc-e860-41e3-8f20-d76b97b18d87",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
         }
       ],
       "external_code": []
@@ -7659,7 +7856,8 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
         "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
         "r is real.",
-        "Recorded Lean scope (partial definition: the intrinsic span description of g_{x,r}, r >= 0, from supplied lattices z_r and u_psi): the module Langlands.Geometry.Building.KPLieFiltration, artifact 6626002e-0686-4ff3-b59c-b607b330808f, first published in Library commit fd643ecec6997ef17c8356ddbc924138631307d9, works with a group scheme G over a nonarchimedean local field F with ring of integers 𝒪[F] and supplied P : ParahoricBuildingData G; GenericLie 𝒪[F] G is Lie(G) as an 𝒪[F]-module. Langlands.Geometry.Building.ParahoricBuildingData.rootLieSpace a is u_a = Lie(U_a), the 𝒪[F]-submodule underlying the span of the weight spaces g_{na}, n >= 1, of the relative root a (RelativeRoot.positiveWeightSpan). The structure Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData P supplies a decreasing family z_r, r : NNReal, of 𝒪[F]-submodules of Lie(Z) for the centralizer Z = P.centralizer.Z (centralizerLie), and for each affine root psi of P.affineRoots an 𝒪[F]-submodule u_psi (affineRootLie) contained in u_a for the gradient a of psi. Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.rootLie x a r is the supremum of the u_psi with gradient a and psi(x) >= r, and Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration x r is the supremum, that is the 𝒪[F]-span, of the image of z_r in Lie(G) and of the u_psi with psi(x) >= r: KP's description of g_{x,r} as the o-span of z_r and the u_psi for psi in Psi_{x,r}. lieFiltration_eq_sup_rootLie regroups it as the image of z_r plus the supremum over a of rootLie x a r, lieFiltration_antitone proves it decreasing in r, and lieFiltrationPlus x r is the supremum over s > r. The supplied z_r and u_psi are not shown to be the Lie lattice of the S-fixed subgroup scheme of G_{x,r} or Lie(U_psi) = g_z ∩ u_a(k), and lieFiltration is not shown to be Lie(G_{x,r}). The identity g_{x,r} = g(K)_{x,r}^Gamma and the Chevalley–Steinberg basis formula are not formalized. The definition status covers only the span description on supplied lattices."
+        "Recorded Lean scope (partial definition: the intrinsic span description of g_{x,r}, r >= 0, from supplied lattices z_r and u_psi): the module Langlands.Geometry.Building.KPLieFiltration, artifact 6626002e-0686-4ff3-b59c-b607b330808f, first published in Library commit fd643ecec6997ef17c8356ddbc924138631307d9, works with a group scheme G over a nonarchimedean local field F with ring of integers 𝒪[F] and supplied P : ParahoricBuildingData G; GenericLie 𝒪[F] G is Lie(G) as an 𝒪[F]-module. Langlands.Geometry.Building.ParahoricBuildingData.rootLieSpace a is u_a = Lie(U_a), the 𝒪[F]-submodule underlying the span of the weight spaces g_{na}, n >= 1, of the relative root a (RelativeRoot.positiveWeightSpan). The structure Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData P supplies a decreasing family z_r, r : NNReal, of 𝒪[F]-submodules of Lie(Z) for the centralizer Z = P.centralizer.Z (centralizerLie), and for each affine root psi of P.affineRoots an 𝒪[F]-submodule u_psi (affineRootLie) contained in u_a for the gradient a of psi. Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.rootLie x a r is the supremum of the u_psi with gradient a and psi(x) >= r, and Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration x r is the supremum, that is the 𝒪[F]-span, of the image of z_r in Lie(G) and of the u_psi with psi(x) >= r: KP's description of g_{x,r} as the o-span of z_r and the u_psi for psi in Psi_{x,r}. lieFiltration_eq_sup_rootLie regroups it as the image of z_r plus the supremum over a of rootLie x a r, lieFiltration_antitone proves it decreasing in r, and lieFiltrationPlus x r is the supremum over s > r. The supplied z_r and u_psi are not shown to be the Lie lattice of the S-fixed subgroup scheme of G_{x,r} or Lie(U_psi) = g_z ∩ u_a(k), and lieFiltration is not shown to be Lie(G_{x,r}). The identity g_{x,r} = g(K)_{x,r}^Gamma and the Chevalley–Steinberg basis formula are not formalized. The definition status covers only the span description on supplied lattices.",
+        "Recorded Lean regression (derived split-torus calculation, KPSplitTorusLieFiltration): for the actual split torus T = G_m^I over F, with I finite and no characteristic restriction, and the published ParahoricBuildingData.ofTorus datum, splitTorusLieFiltration constructs LieFiltrationData. Its centralizer input at r >= 0 is 𝔪^⌈r⌉₊ A₀, where A₀ is the Lie lattice of the smooth standard model splitTorusModel. There are no affine-root inputs because the relative roots are empty. The theorems give g_{x,r} = 𝔪^⌈r⌉₊ A₀ at every apartment point (splitTorus_lieFiltration) and the unit shift (splitTorus_lieFiltration_isPeriodic). At every real r they give g_{x,r} = π^⌈r⌉ A₀ (splitTorus_lieFiltrationReal), g_{x,r+} = π^(⌊r⌋+1) A₀ (splitTorus_lieFiltrationPlusReal) and the lattice property (splitTorus_lieFiltrationReal_isLattice). By splitTorus_lieFiltrationPlusReal_lt_iff, jumps occur exactly at integers when I is nonempty and never when I is empty. The centralizer input is the Section 8.5.20 torus formula in this case; the positive-depth models of Section 8.5 are not constructed or compared."
       ],
       "conclusion": "Let g(K)_{x,r} be the O-Lie lattice of the base-changed actual model. Then g_{x,r}=g(K)_{x,r}^Gamma. The Chevalley-Steinberg basis formula of 8.5.20 describes the O-lattice over K and works over o when G is quasi-split. There is also an intrinsic description over o: choose a maximal k-split S with x in its apartment; let z_r be the Lie lattice of the S-fixed subgroup scheme of G_{x,r}, with generic fibre Z_G(S). For an affine root psi, let u_psi=Lie(U_psi)=g_z intersect u_a(k), for any z on H_psi and a the derivative of psi. Then g_{x,r} is the o-span of z_r and the u_psi for psi(x)>=r. The quasi-split hypothesis belongs to the explicit basis formula over o, not to the general lattice or its intrinsic span description.",
       "lean_declarations": [
@@ -7669,27 +7867,38 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration",
         "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration_eq_sup_rootLie",
         "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltration_antitone",
-        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltrationPlus"
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.lieFiltrationPlus",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorusLieFiltration",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltration",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltration_isPeriodic",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationReal",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationPlusReal",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationReal_isLattice",
+        "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationPlusReal_lt_iff"
       ],
       "modules": [
-        "Langlands.Geometry.Building.KPLieFiltration"
+        "Langlands.Geometry.Building.KPLieFiltration",
+        "Langlands.Geometry.Building.KPSplitTorusLieFiltration"
       ],
       "dependencies": [
         "Section 8.5.20 gives the explicit Chevalley-Steinberg lattice over O; the actual model descent gives the invariant lattice",
         "Section 9.4.5 constructs U_psi; Proposition 9.8.3 supplies the standard integral S-model action and its centralizer filtration. Section 13.2.1 defines Psi_{x,r} by psi(x)>=r",
         "The model construction and the root-space span formula must be proved for the constructed objects; a chosen basis or an assumed Gamma-invariant lattice is insufficient",
         "Recorded Lean construction: rootLieSpace is the comap of RelativeRoot.positiveWeightSpan (module Langlands.GroupScheme.Rational.RootSubgroupStructureStatement) under GenericLie.equiv, with scalars restricted to 𝒪[F]; lieFiltration_eq_sup_rootLie uses that every element of P.affineRoots has a relative root as gradient.",
+        "Recorded Lean proof (split torus): the empty root summands vanish and the identity centralizer inclusion has identity differential. The real-depth piece is computed by testing the generator π^n of 𝔪^n and cancelling. The strict supremum is attained at ⌊r⌋+1. At an integer, Nakayama for the finitely generated nonzero A₀ gives 𝔪A₀ ≠ A₀; for empty I the infinitesimal-coordinate equivalence makes the Lie space zero.",
         "Open obligations: the models G_{x,r}, their base change to O and the Gamma-invariants are not constructed in Lean, so g_{x,r} = g(K)_{x,r}^Gamma has no Lean statement; the lattices z_r and u_psi are supplied rather than constructed from Section 9.4.5 and Proposition 9.8.3, and the basis formula of 8.5.20 has no Lean statement.",
         "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
       ],
-      "consumer_or_regression": "Compare split basis calculations with a non-quasi-split descended lattice and a multipliable-root case. Retain the actual maximal split torus, centralizer and affine-root valuation conventions.",
+      "consumer_or_regression": "Compare split basis calculations with a non-quasi-split descended lattice and a multipliable-root case. Retain the actual maximal split torus, centralizer and affine-root valuation conventions. The root-free split-torus case is now a Lean regression on the actual standard depth-zero torus model; the descended non-quasi-split and multipliable-root comparisons remain open.",
       "formal_status": "definition",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
-        "6626002e-0686-4ff3-b59c-b607b330808f"
+        "6626002e-0686-4ff3-b59c-b607b330808f",
+        "9ee5abbf-9089-41f9-b7d4-92264614ba12"
       ],
       "publication_commits": [
-        "fd643ecec6997ef17c8356ddbc924138631307d9"
+        "fd643ecec6997ef17c8356ddbc924138631307d9",
+        "2d12bd934a2a0da7808014bfe52c6d67fde3eb62"
       ],
       "axiom_reports": [
         {
@@ -7740,6 +7949,55 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "dc3c2096-03e8-42e3-9d6a-66f14948f6cb",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 13 on 2026-11-17 at Library commit fd643ece; kind definition; that commit first published the module."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorusLieFiltration",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "c6eb068e-d46f-400c-b3e4-e5538b861e99",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltration",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltration_isPeriodic",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationReal",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationPlusReal",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationReal_isLattice",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.splitTorus_lieFiltrationPlusReal_lt_iff",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "31ca571a-1232-488d-a162-5bc5f0323e73",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
         }
       ],
       "external_code": []
@@ -7762,33 +8020,57 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Until Section 13.5, choose any functorial admissible filtration on tori satisfying Section 7.2(1),(2), hence commutator-friendly by 7.2.3; Section 9.8 supplies the centralizer filtration. P_{x,r}=G(k)_{x,r} is generated by the actual root and centralizer filtrations as in 13.2.1 and 7.3.3. The strict-depth convention is X_{r+}=union_{s>r} X_s.",
         "The smooth congruence models and their morphisms come from Section 8.5, with the actual Chapter 9 descent over o. Parahorics, full stabilizers, the whole special fibre H_x and its maximal reductive quotient Gred_x retain distinct meanings. Chapter 8 models over O alone do not supply the descended construction.",
         "r is real. Gred_x is the actual maximal reductive quotient of the parahoric special fibre; both Lie and dual lattices use Section 13.3.1's conventions.",
-        "Recorded Lean scope (preservation of the Lie lattice by the integral points of a supplied integral model, the case r = 0 of the first sentence at the level of points): the module Langlands.GroupScheme.IntegralModel.LieLatticeAdjoint, artifact ea40ee29-ebb9-45d4-86a2-5da2327d283e, first published in Library commit 9e39a73d21bd6ed6fac00b01cc5e01c0db5d105b, has the setting of the Section 13.3.1 row (a commutative domain R with fraction field K, an affine K-group G and an integral model M), with no smoothness hypothesis. Langlands.GroupScheme.GenericLie.adjoint R g is the adjoint action of g in G(K) on GenericLie R G, as an R-linear map (the Library's adjoint action, conjugation by a constant dual-number point, applied through AffineWeil.sectionsCoeffEquiv). Langlands.GroupScheme.IntegralModel.map_adjoint_lieLattice proves M.lieLattice.map (GenericLie.adjoint R g) = M.lieLattice for every g in M.integralPoints, and Langlands.GroupScheme.IntegralModel.lieLatticeAdjoint is the resulting representation M.integralPoints →* Module.End R M.lieLattice. With M the connected parahoric model G_{x,0} this would be the action of its o-points on g_{x,0}; no Lean declaration constructs that model. The action of the group scheme, the depths r ≠ 0, the dual lattices, the strict graded pieces and the factorization through Gred_x are not formalized. The row's conditional status refers to map_adjoint_lieLattice, proved for every supplied integral model."
+        "Recorded Lean scope (preservation of the Lie lattice by the integral points of a supplied integral model, the case r = 0 of the first sentence at the level of points): the module Langlands.GroupScheme.IntegralModel.LieLatticeAdjoint, artifact ea40ee29-ebb9-45d4-86a2-5da2327d283e, first published in Library commit 9e39a73d21bd6ed6fac00b01cc5e01c0db5d105b, has the setting of the Section 13.3.1 row (a commutative domain R with fraction field K, an affine K-group G and an integral model M), with no smoothness hypothesis. Langlands.GroupScheme.GenericLie.adjoint R g is the adjoint action of g in G(K) on GenericLie R G, as an R-linear map (the Library's adjoint action, conjugation by a constant dual-number point, applied through AffineWeil.sectionsCoeffEquiv). Langlands.GroupScheme.IntegralModel.map_adjoint_lieLattice proves M.lieLattice.map (GenericLie.adjoint R g) = M.lieLattice for every g in M.integralPoints, and Langlands.GroupScheme.IntegralModel.lieLatticeAdjoint is the resulting representation M.integralPoints →* Module.End R M.lieLattice. With M the connected parahoric model G_{x,0} this would be the action of its o-points on g_{x,0}; no Lean declaration constructs that model. This integral-model theorem alone does not give a group-scheme action at all depths or its factorization through Gred_x.",
+        "Recorded Lean scope (rational points, KPLieGradedAction): on supplied L : P.LieFiltrationData, filtrationStabilizer x consists of rational points preserving every nonnegative-depth Lie submodule under the adjoint action. It acts by adjoint and coadjoint on the respective real-depth pieces. gradedLie quotients the real lattice by the inverse image of the strict supremum (it is KP's strict quotient under IsPeriodic); dualGradedLie is the image of the dual lattice in the quotient by its deeper piece. For H contained in this stabilizer, quotientGradedAdjoint and quotientDualGradedAdjoint give 𝒪[F]-linear representations of H/(N.subgroupOf H) assuming normality of that subgroup and the respective triviality on the full graded piece. Taking H as the connected parahoric and N as its positive radical preimage requires these hypotheses. This is not a group-scheme representation of Gred_x.",
+        "Recorded Lean scope (residue equivariance, KPLieGradedResidue): under the hypotheses of the graded residue equivalence in the Section 13.3.1 row, dualGradedLieLinearEquiv_dualGradedAdjoint shows that for g in filtrationStabilizer x the equivalence carries the coadjoint action on the dual grade at r to the contragredient of the graded adjoint action at -r. This is equivariance for the rational-point stabilizer only.",
+        "Recorded Lean scope (dual transfer and invariance): actsTriviallyOnDualGraded_of_lieFiltrationPlusReal_le transfers N-triviality at Lie depth -r to dual depth r if g_{x,s+} ≤ g_{x,-r} for some s < -r. Periodicity and IsLeftContinuousAt at -r suffice; actsTriviallyOnDualGraded_of_oppositePairs obtains that premise by the Section 13.3.1 criterion. The residue pairing obeys gradedLieDualPairing_gradedAdjoint under IsPeriodic for elements of filtrationStabilizer x acting coadjointly on g^*_{x,r} and adjointly on the opposite-depth graded Lie piece. No triviality for the actual radical or scheme-level equivariance is inferred."
       ],
       "conclusion": "Conjugation by the connected parahoric model induces actions on the Lie and dual lattices. On their strict graded pieces g_{x,r}/g_{x,r+} and g^*_{x,r}/g^*_{x,r+}, these induce genuine f-rational representations of Gred_x. Factorization through the reductive quotient and preservation of the lattices are part of the conclusion, not structure fields to assume.",
       "lean_declarations": [
         "Langlands.GroupScheme.GenericLie.adjoint",
         "Langlands.GroupScheme.IntegralModel.map_adjoint_lieLattice",
-        "Langlands.GroupScheme.IntegralModel.lieLatticeAdjoint"
+        "Langlands.GroupScheme.IntegralModel.lieLatticeAdjoint",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedAdjoint",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedAdjoint",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.quotientGradedAdjoint",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.quotientDualGradedAdjoint",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.IsLeftContinuousAt",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.actsTriviallyOnDualGraded_of_lieFiltrationPlusReal_le",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.actsTriviallyOnDualGraded_of_oppositePairs",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieDualPairing_gradedAdjoint",
+        "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieLinearEquiv_dualGradedAdjoint"
       ],
       "modules": [
-        "Langlands.GroupScheme.IntegralModel.LieLatticeAdjoint"
+        "Langlands.GroupScheme.IntegralModel.LieLatticeAdjoint",
+        "Langlands.Geometry.Building.KPLieGradedAction",
+        "Langlands.Geometry.Building.KPLieFiltrationLeftContinuity",
+        "Langlands.Geometry.Building.KPLieGradedPairing",
+        "Langlands.Geometry.Building.KPLieGradedResidue"
       ],
       "dependencies": [
         "Proposition 13.2.5 gives normality over K; Corollary 2.10.10 extends the actual conjugation action to integral models",
         "Apply the Lie functor, dual action and reduction, with periodicity for all real depths, then prove the action factors through Gred_x on both strict graded pieces",
         "Sections 13.3.1-3 and the actual Chapter 9 model descent",
         "Recorded Lean construction: the proof of map_adjoint_lieLattice identifies the generic points of integral sections (IntegralModel.sectionsCoeffEquiv_integralPointMap) and proves IntegralModel.lieMap_adjoint, that lieMap intertwines the adjoint action of an integral section on the Lie algebra of the model with GenericLie.adjoint of its generic point; IntegralModel.adjoint_mem_lieLattice and the inverse point give both inclusions.",
-        "Open obligations: the parahoric and congruence models of Sections 8.5 and Chapter 9 are not constructed in Lean; the action of the group scheme on the lattices, the dual lattices, the strict graded pieces g_{x,r}/g_{x,r+} and g^*_{x,r}/g^*_{x,r+} and the factorization through Gred_x have no Lean statement.",
+        "Recorded Lean construction: restriction and descent of GenericLie.adjoint and the inverse-transpose coadjoint dual to the grade use the stabilizer inclusion. QuotientGroup.lift uses the respective normal-subgroup kernel premise. The dual transfer evaluates X on Ad(n^{-1})Y - Y and uses the maximal-ideal pairing on g_{x,(-r)+}. The pairing invariance uses cancellation of Ad(g^{-1}) with Ad(g).",
+        "Open obligations: construct the descended models and their conjugation morphisms, prove their parahoric stabilizer and radical triviality premises and produce the genuine f-rational action of Gred_x with a comparison to the points-level actions. The abstract quotient construction is not the scheme-level descent or the algebraic instability input.",
         "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
       ],
       "consumer_or_regression": "Graded adjoint/coadjoint action and pairing-equivariance tests; this rational reductive-quotient action is the one used for later algebraic instability, not a valuation-topology orbit action.",
       "formal_status": "conditional",
       "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
       "acceptance_artifact_ids": [
-        "ea40ee29-ebb9-45d4-86a2-5da2327d283e"
+        "ea40ee29-ebb9-45d4-86a2-5da2327d283e",
+        "639a0916-bff2-43fb-8a76-35979a889790",
+        "9c13713d-5db0-4b28-9978-a30b5e75418c",
+        "d7430c4b-fecf-47b3-9190-48df763f7b48",
+        "4448a2a6-2781-4cfe-a347-1cd61a999d3d"
       ],
       "publication_commits": [
-        "9e39a73d21bd6ed6fac00b01cc5e01c0db5d105b"
+        "9e39a73d21bd6ed6fac00b01cc5e01c0db5d105b",
+        "5f5d3a914cd43b9dc1cd32c07887a973f561df96",
+        "6e9e589baa721ce995563f73f648b6f4e45718a1",
+        "2d12bd934a2a0da7808014bfe52c6d67fde3eb62"
       ],
       "axiom_reports": [
         {
@@ -7811,6 +8093,254 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
           "inspection_id": "7e841eda-bbb9-4b77-a539-52e6fc2deaf3",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection by Worker 13 on 2026-11-17 at Library commit fcb85a7e; kind definition; the module is byte-identical to commit 9e39a73d, its first publication."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedAdjoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "90f3e921-80d7-4087-bf3f-e74d69e439b1",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedAdjoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.quotientGradedAdjoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "ea04ea98-d092-4086-98f6-38ac58978116",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.quotientDualGradedAdjoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "85440a2d-1791-43ed-82e4-8ba99338de4b",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.IsLeftContinuousAt",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.actsTriviallyOnDualGraded_of_lieFiltrationPlusReal_le",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 5f5d3a91."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.actsTriviallyOnDualGraded_of_oppositePairs",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.gradedLieDualPairing_gradedAdjoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "2143732e-7a11-4a74-ab1e-5d8979fe4305",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind theorem; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 6e9e589b."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ParahoricBuildingData.LieFiltrationData.dualGradedLieLinearEquiv_dualGradedAdjoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 2d12bd93."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Definition 13.4.1",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.472 / PDF p.503, including the preceding positivity and indecomposability definitions; compare Definition 1.3.19, printed p.22 / PDF p.53 for wall roots"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13",
+        "change": "No correction to Section 13.4 is listed."
+      },
+      "hypotheses": [
+        "The apartment of a fixed maximal k-split torus, with its actual affine roots Ψ, and a fixed chamber C. The source calls a positive affine root simple if it is not the sum of two positive affine roots.",
+        "Recorded Lean scope (KPOptimalPoints): for any real affine torsor A with a set Ψ of affine functionals, IsRationalPoint means all root values are in the image of ℚ → ℝ. IsRationalAffineFunctional requires a regular representative c, and membership in the finite rational span of indecomposablePositiveRoots Ψ (facet Ψ c); these are exactly the positive roots not expressible as a sum of two positive roots. No affine-root axioms are needed to state these predicates."
+      ],
+      "conclusion": "A functional is rational if it is a rational linear combination of the specified simple affine roots. A point is rational if every affine root takes a rational value there. The Lean evaluation lemma proves that such a functional has rational value at each rational point.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.AffineRootSystem.IsRationalPoint",
+        "Langlands.Geometry.Building.AffineRootSystem.indecomposablePositiveRoots",
+        "Langlands.Geometry.Building.AffineRootSystem.IsRationalAffineFunctional",
+        "Langlands.Geometry.Building.AffineRootSystem.IsRationalAffineFunctional.apply_mem_range"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.KPOptimalPoints"
+      ],
+      "dependencies": [
+        "KPOptimalPoints uses the existing chamber and positive-root conventions of AffineRootSystem and implements the rational span by a finite sum. At a rational point, evaluation carries each summand into the image of Rat.castHom ℝ.",
+        "The literal generator rule is distinct from the Chapter 1 positive indivisible wall roots (Definition 1.3.19). In reduced affine A₁, two slopes ±1 cannot sum to an allowed slope, so all positive affine roots are indecomposable. The set is not asserted to be a finite basis and no generator comparison is proved."
+      ],
+      "consumer_or_regression": "Rationality predicate for Definition 13.4.2 and later rational optimization; keep the two generator conventions separate.",
+      "formal_status": "definition",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "1c535074-6335-4e3b-908e-69072f096075"
+      ],
+      "publication_commits": [
+        "032961776f43ccd672c6266d265a9c644faeba13"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.IsRationalPoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.indecomposablePositiveRoots",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.IsRationalAffineFunctional",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.IsRationalAffineFunctional.apply_mem_range",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        }
+      ],
+      "external_code": []
+    },
+    {
+      "source_item": "Definition 13.4.2",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed p.472 / PDF p.503, including the definitions of ℓ and Σ in the preceding paragraphs"
+      },
+      "erratum": {
+        "literature_id": "kaletha-prasad-2024-corrections",
+        "content_sha256": "23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed",
+        "locator": "PDF p.49, Chapter 13",
+        "change": "No correction to Section 13.4 is listed."
+      },
+      "hypotheses": [
+        "Fix an apartment, an open chamber C and the least positive rational period ℓ of its nonempty affine-root set. Σ consists of the roots ψ positive on C with ψ - ℓ negative on C. Take a nonempty subset S of the finite set Σ.",
+        "Recorded Lean scope (KPOptimalPoints): on an abstract real affine torsor, IsOptimalPointFor Ψ c S x requires IsRegular Ψ c, a nonempty Finset S contained in positiveRootsBelowPeriod Ψ c, x in facetClosure Ψ c, maximality of min_{ψ∈S} ψ(x) over that closure, and IsRationalPoint Ψ x. AffineRootSystem.IsOptimalPoint existentially chooses c and S. ValuationBuildingData.IsOptimalPoint on the reduced building is the existence of a rational-point translate of an apartment optimum under a chart. The chamber and lattice geometry remain supplied.",
+        "For the period lemmas the abstract finiteness argument uses nonempty roots, bounded-finite derivative fibres and a positive rational period. The abstract strip finiteness holds under IsAffineRootSystemWithRankZero; strip nonemptiness also uses regularity, nonempty roots and membership of rootPeriod in rationalRootPeriods. For the supplied nonarchimedean local-field valuation apartment, period 2 is proved, so nonempty actual affine roots suffice for a least positive rational period; with regular c, Σ is finite and nonempty. The empty-root obstruction for building optimality is proved separately."
+      ],
+      "conclusion": "An optimal point for S in the closed chamber attains the maximum of the finite minimum and is rational on every root. A building point is optimal if it is such a point in some apartment and chamber for some nonempty S.",
+      "lean_declarations": [
+        "Langlands.Geometry.Building.AffineRootSystem.rationalRootPeriods",
+        "Langlands.Geometry.Building.AffineRootSystem.rootPeriod",
+        "Langlands.Geometry.Building.AffineRootSystem.positiveRootsBelowPeriod",
+        "Langlands.Geometry.Building.AffineRootSystem.IsOptimalPointFor",
+        "Langlands.Geometry.Building.AffineRootSystem.IsOptimalPoint",
+        "Langlands.Geometry.Building.ValuationBuildingData.isLeast_rootPeriod_affineRoots",
+        "Langlands.Geometry.Building.ValuationBuildingData.positiveRootsBelowPeriod_affineRoots_finite_nonempty",
+        "Langlands.Geometry.Building.ValuationBuildingData.IsOptimalPoint",
+        "Langlands.Geometry.Building.ValuationBuildingData.not_isOptimalPoint_of_affineRoots_eq_empty"
+      ],
+      "modules": [
+        "Langlands.Geometry.Building.KPOptimalPoints"
+      ],
+      "dependencies": [
+        "Section 13.4.1 rational points; KPOptimalPoints uses the root period as an infimum, identifies it as the least period under the given hypotheses, and uses weak signs for the closed chamber. Root stability under normalizer action and the translation by 2 yield the supplied valuation-apartment period. The existing rational-point translate charts give the building predicate.",
+        "Open in this row: optimal-point existence for the nonempty subsets, the chosen family x_S and the set O of its rational-point translates for Lemma 13.4.4. A predicate on all optimal points is not that choice family. Example 13.4.3 and discreteness of optimal depths are not asserted."
+      ],
+      "consumer_or_regression": "The first clause of Proposition 13.6.7; the empty-root boundary for G_m. The instability clause is independent of this requirement.",
+      "formal_status": "definition",
+      "owner_task": "f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703",
+      "acceptance_artifact_ids": [
+        "1c535074-6335-4e3b-908e-69072f096075"
+      ],
+      "publication_commits": [
+        "032961776f43ccd672c6266d265a9c644faeba13"
+      ],
+      "axiom_reports": [
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.rationalRootPeriods",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.rootPeriod",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.positiveRootsBelowPeriod",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.IsOptimalPointFor",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "8e2228cd-71b6-4f70-98f6-c8e798c24dfe",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful local declaration inspection by Worker 13; kind definition; statement_returns_prop true; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.AffineRootSystem.IsOptimalPoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingData.isLeast_rootPeriod_affineRoots",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingData.positiveRootsBelowPeriod_affineRoots_finite_nonempty",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingData.IsOptimalPoint",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.ValuationBuildingData.not_isOptimalPoint_of_affineRoots_eq_empty",
+          "environment_artifact": "5c94c648-e8dc-4002-a50a-071ebf3f6096",
+          "inspection_id": "7e6f09b5-5413-4d30-8a77-c5dd88be367f",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Successful #print axioms check in the Lean service by Worker 13; the inspected module source is byte-identical to the published file at Library commit b47a2385 and to the frozen validated bundle first published at 03296177."
         }
       ],
       "external_code": []
@@ -8003,7 +8533,7 @@ obligation; it is not evidence of its fulfillment. Conditional code will remain
         "Independent empty-root boundary, not an authors' erratum: for G_m/Q_2, the reduced building has one point x (4.1.4(A0), PDF p.189), Sigma is empty, and (13.1.2) gives g_{x,1}=2 Z_2 and g_{x,1+}=4 Z_2. Zero is contracted by the identity cocharacter, so Xi=0+g_{x,1+} is degenerate by 13.6.5. There is no optimal y under 13.4.2, yet Xi is already contained in g_{x,2} and its zero graded vector is unstable. Thus the optimality requirement and 13.4.4 need resolution; this example does not refute depth raising or instability. The 1 November 2024 corrections, PDF pp.49-50, do not repair 13.4.2, 13.4.4 or this clause of 13.6.7",
         "The printed Remark 13.6.6 example is not a witness separating cocharacter nilpotence from Jordan nilpotence. In characteristic two, for x nonzero, X=[[1,x],[x^(-1),1]], B=[[x,1],[1,0]] and B^(-1)=[[0,1],[1,x]] satisfy det(B)=1, X^2=0 and B^(-1) X B=x^(-1) E_12. The k-defined cocharacter lambda(u)=B diag(u,u^(-1)) B^(-1) has lambda(u) X lambda(u)^(-1)=u^2 X, so it contracts X to zero. Nonconjugacy to E_12 does not imply absence of a contracting cocharacter. This is an independently demonstrated source discrepancy, not an authors' erratum or a Lean result; the 1 November 2024 corrections do not repair 13.6.6. Any broader non-equivalence claim needs a separately checked witness",
         "Later target: implement only after positive-depth acceptance has constructed finite abelian graded quotients, transported characters through the proved comparison and verified a nontrivial filtration calculation. No minimal K-type or supercuspidality theorem follows from this source row.",
-        "Library status (thirty-sixth pass, Library commit 5f5d3a91): Definition 13.6.5 for g is published as IsCocharacterNilpotent and IsDegenerateLieCoset (module Langlands.Geometry.Building.KPNilpotentCoset, recorded in the Proposition 13.7.4 row). Proposition 13.6.7 has no Lean statement. The Library defines no optimal points (Definition 13.4.2), which its first clause needs. Its instability clause needs an algebraic action of Gred_x on g_{x,r}/g_{x,r+}; the published representation of a subgroup of G(F) on these graded pieces (module Langlands.Geometry.Building.KPLieGradedAction) is an action of rational points, not that algebraic action."
+        "Library status (thirty-seventh pass): Definition 13.6.5 for g is published as IsCocharacterNilpotent and IsDegenerateLieCoset (KPNilpotentCoset, recorded in the Proposition 13.7.4 row). Definition 13.4.2 now has the predicate ValuationBuildingData.IsOptimalPoint on the reduced building (KPOptimalPoints, first published at 032961776f43ccd672c6266d265a9c644faeba13); it does not prove existence or Lemma 13.4.4. This row records no statement of Proposition 13.6.7. For the instability clause, KPLieGradedAction acts on graded pieces by a subgroup of G(F), with abstract normal-quotient factorizations under explicit hypotheses; it does not supply the algebraic Gred_x-action."
       ],
       "consumer_or_regression": "After positive-depth acceptance, test full-coset containment, the strict s>r inequality, the G_m/Q_2 zero coset at r=1 (degenerate, no literal optimal point, contained at depth 2, unstable), and the explicit contraction of the printed characteristic-two matrix. Use the k-cocharacter definition; any comparison with Jordan nilpotence needs a separate proof.",
       "formal_status": null,
@@ -8713,10 +9243,10 @@ definition.
 
 ## Bundle E: filtrations, comparison alternatives and later instability
 
-This bundle has nine rows: Proposition 13.2.5, Sections 13.3.1–4,
-Theorem 13.5.1, corrected Proposition 13.5.2, and the later Propositions
-13.6.7 and 13.7.4. All nine were source-only when the bundle was first
-recorded. Positive-depth implementation remains behind the depth-zero
+This bundle now has eleven rows: Proposition 13.2.5, Sections 13.3.1–4,
+Definitions 13.4.1–13.4.2, Theorem 13.5.1, corrected Proposition 13.5.2,
+and the later Propositions 13.6.7 and 13.7.4. The nine original rows were
+source-only when the bundle was first recorded. Positive-depth implementation remains behind the depth-zero
 release and its inflation/compact-induction consumer. The seventh pass
 records a published statement of Proposition 13.2.5 on supplied data,
 the eighth pass adds its part (3), and the ninth adds parts (5) and (6)
@@ -8741,7 +9271,9 @@ description of `g_{x,r}` is a published definition on supplied lattices
 to real depths under a periodicity hypothesis and the dual lattices are
 defined on those lattices (Section 13.3.1). The thirty-sixth pass
 records a partial published statement of part (1) of Proposition
-13.7.4 on supplied Lie lattices, so that row is `statement`.
+13.7.4 on supplied Lie lattices, so that row is `statement`. The
+thirty-seventh pass expands the scope of Sections 13.3.1, 13.3.3 and
+13.3.4 on supplied data and adds the two optimal-point definition rows.
 Proposition 13.6.7 remains source-only. The two instability targets
 remain behind the separate positive-depth acceptance test.
 
@@ -8968,9 +9500,13 @@ and intrinsic span constructions have no such extra hypothesis. Section
 13.3.4 obtains actual f-rational representations of Gred_x on the Lie
 and dual strict graded pieces from model conjugation. Descent and
 factorization through Gred_x remain construction and proof obligations.
-Lattice preservation is proved only in the form that the integral points
-of a supplied integral model preserve its own Lie lattice, the
-depth-zero case at the level of points (the Section 13.3.4 row).
+For a supplied integral model its integral points preserve its own Lie
+lattice, the depth-zero result at the level of points. On supplied Lie
+lattices the rational points preserving the filtration act on its strict
+graded pieces. The abstract quotient actions have separate stabilizer,
+normality and triviality hypotheses (Section 13.3.4). In particular they
+do not provide the algebraic reductive-quotient representation needed for
+instability.
 
 The formalizations recorded in these rows take the models as supplied
 data. For Section 13.3.2, `g_{x,0+}` is defined intrinsically as the
@@ -8980,6 +9516,19 @@ lattice of a supplied model under hypotheses standing for Section
 13.3.1 and 13.3.3, `g_{x,r}` is defined from supplied lattices `z_r` and
 `u_psi` by the intrinsic span, and the periodicity used to extend it to
 real `r` is a hypothesis.
+
+At opposite depths r and −r, periodicity makes evaluation integral and
+gives a residue pairing. Its surjectivity and right nondegeneracy use the
+lattice property at −r; its left kernel is the deeper dual piece under
+left continuity at −r. A sufficient criterion for the latter uses opposite
+factor pairs, periodicity and left continuity of the supplied centralizer
+family at positive depths. The pairing is invariant under the rational
+filtration stabilizer; this is not algebraic equivariance of a constructed
+model action. Under the three hypotheses together, the dual grade at r is
+identified with the residue-field dual of the Lie grade at −r, both grades
+are finite, and the identification intertwines the stabilizer actions.
+Under periodicity and finite generation at depth zero, the jump depths of
+finitely many apartment points form a closed discrete subset of ℝ.
 
 ### All three alternatives of Theorem 13.5.1
 
@@ -9111,6 +9660,20 @@ Definition 13.4.2 is adopted or proved here. The corrections of
 1 November 2024, PDF pp.49–50, supply no repair of Definition 13.4.2,
 Lemma 13.4.4 or this clause of Proposition 13.6.7. This is an
 independently identified source boundary, not an authors' erratum.
+
+The literal rationality and optimality predicates are now defined in
+KPOptimalPoints. The empty-affine-root obstruction is proved for any
+supplied valuation building. This does not construct the chosen family of
+optimizers or prove Lemma 13.4.4. The chapter's positive-indecomposable
+generator rule for rational affine functionals is kept separate from the
+Chapter 1 wall-root convention.
+
+Separately, the [split type A₂ paper
+calculation](kp-optimal-depth-scope.md) shows that the union of Lie jump
+depths over all Definition 13.4.2 points need not be discrete. This rules
+out that reading of the discreteness sentence following the construction
+of O. The calculation is not Lean evidence and does not affect the
+existence assertion of Proposition 13.6.7.
 
 The separate clause of Proposition 13.6.7 gives the algebraic
 instability target under Gred_x. Its route extends the compatible
