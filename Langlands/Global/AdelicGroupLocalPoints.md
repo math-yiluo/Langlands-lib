@@ -123,3 +123,5 @@ module implements the coordinate-wise gluing and the continuity statements
 needed for the local-to-global argument of Theorem 2.7.1 (printed p.71). Neither
 a faithful representation nor the open compact subgroups `K_v` of that
 proposition appear here: integrality is tested on all regular functions.
+
+`AdelicGroupPoints.map_ofInfinite` identifies the map of an infinite-factor inclusion with the inclusion of the mapped point. The infinite and finite projections determine the equality in the product decomposition.

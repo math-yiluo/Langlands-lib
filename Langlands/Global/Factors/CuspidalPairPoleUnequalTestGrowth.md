@@ -7,3 +7,9 @@
 This is an internal derivation for the product of ordinary Rankin–Selberg integrals in J. W. Cogdell, *Analytic Theory of L-Functions for GL(n)*, chapter 9 of Bernstein and Gelbart, eds., *An Introduction to the Langlands Program*, Birkhäuser, 2004, Theorem 4.2, printed pp. 221–222. The local analytic premises use Jacquet, *Archimedean Rankin–Selberg Integrals*, 2009, Theorems 2.1 and 2.6, author PDF pp. 6–10.
 
 `hasCoveringUnequalNormalizedGrowthTests_of_local_at` obtains real generation only at a real place. The complex generation and the placewise growth estimates enter as before.
+
+The prescribed-tuple entry point
+`exists_normalizedUnequalPureTest_of_prescribed` keeps the product identity
+for any supplied normalized local tests and states its nonzero scalar.
+The covering and growth construction applies it after choosing the local
+tests at each point.

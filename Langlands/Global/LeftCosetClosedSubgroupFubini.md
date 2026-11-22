@@ -1,0 +1,7 @@
+# Quotient integration through a closed subgroup containing the lattice
+
+Let a discrete subgroup \(\Gamma\) lie in a closed subgroup \(H\) of a second-countable locally compact Hausdorff group \(G\). Use the Borel structures on \(G\), \(H\), and \(H\backslash G\). Take measures \(\mu_G\) and \(\mu_H\) finite on compact sets, with \(\mu_H\) s-finite and invariant under both left and right translation. The quotient measure \(\nu\) satisfies `IsCompatible H μG μH ν`.
+
+For a measurable function on \(G\) invariant under left \(\Gamma\)-translation, its integral on the chosen \(\Gamma\)-fundamental domain is the integral on \(H\backslash G\) of its period over the chosen fundamental domain inside \(H\). The complex formula assumes absolute integrability on the ambient fundamental domain and gives integrability of the outer period. Under the same measure hypotheses, the nonnegative formula permits an infinite value.
+
+The proof applies Weil integration to the function multiplied by the indicator of the ambient fundamental domain. Its pullback on each subgroup orbit is supported on a fundamental domain of the restricted lattice. Left invariance of the function and the subgroup measure under that lattice permits replacement by the chosen subgroup domain. Right invariance of \(\mu_H\) makes the translated orbit kernel independent of the representative of the closed coset. This kernel justifies integrating the outer period and applies to the normalized Haar measures of the geometric lemma.

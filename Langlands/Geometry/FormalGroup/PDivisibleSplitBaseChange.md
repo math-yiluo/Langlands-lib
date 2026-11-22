@@ -1,5 +1,11 @@
 # Pullback of the actual split tower and its order action
 
+For an affine coefficient map `R → S`, the dual and split comparisons
+and the order-equivariance equation take a proof of
+`FiniteCartierDualExactnessStatement`. It supplies the reversed short
+exact sequences needed to form the actual Cartier dual towers over both
+bases, including when `S` is the special-fibre coefficient algebra.
+
 `baseChangeDualIso` compares the pullback of the actual dual tower
 with the dual of the pulled-back primal. The finite Cartier comparison
 on each level is natural for the primal transfer maps. Since their

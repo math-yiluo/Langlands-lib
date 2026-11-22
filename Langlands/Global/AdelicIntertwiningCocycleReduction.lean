@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicEisensteinRegularRegion
 import Langlands.Global.AdelicIntertwiningCocycleStatement
 import Langlands.Global.AdelicEisensteinFunctionalEquationStatement
 import Langlands.Global.AdelicEisensteinPointwiseContinuationStatement
@@ -406,29 +407,6 @@ open Langlands.GroupScheme
 variable {F : Type u} [Field F]
   {P Q M M' : GroupScheme (Spec (CommRingCat.of F))}
 
-private theorem characterRestrict_injective_of_levi {l : M ⟶ P}
-    (hl : IsRationalLeviSubgroup l) : Function.Injective (characterRestrict l) := by
-  obtain ⟨U, i, hi, hmul⟩ := hl.exists_unipotentRadical
-  let : IsIso (subgroupMultiplication l i) := hmul
-  intro χ ψ h
-  apply Additive.toMul.injective
-  apply hom_ext_points
-  intro T x
-  have hfactor (θ : rationalCharacters P) :
-      x ≫ θ.toMul.hom.hom = leviComponent l i x ≫ (characterRestrict l θ).toMul.hom.hom := by
-    have htriv := hi.1.isUnipotent.comp_eq_one_of_isSplitTorus isSplitTorus_gm
-      (i ≫ θ.toMul) T (radicalComponent l i x)
-    simp only [Grp.comp_hom_hom] at htriv
-    calc
-      _ = ((leviComponent l i x ≫ l.hom.hom) *
-          (radicalComponent l i x ≫ i.hom.hom)) ≫ θ.toMul.hom.hom :=
-        congrArg (fun y : T ⟶ P.X => y ≫ θ.toMul.hom.hom)
-          (leviComponent_mul_radicalComponent l i x).symm
-      _ = _ := by
-        simp only [MonObj.mul_comp, Category.assoc, htriv, mul_one,
-          characterRestrict_apply, Grp.comp_hom_hom]
-  rw [hfactor χ, hfactor ψ, h]
-
 private theorem characterRestrict_rightInverse {L H : GroupScheme (Spec (CommRingCat.of F))}
     (j : L ⟶ H) (q : H ⟶ L) (hq : j ≫ q = 𝟙 L) :
     Function.RightInverse (characterRestrict q) (characterRestrict j) := by
@@ -436,48 +414,6 @@ private theorem characterRestrict_rightInverse {L H : GroupScheme (Spec (CommRin
   change ((characterRestrict j).comp (characterRestrict q)) χ = χ
   rw [← characterRestrict_comp, hq, characterRestrict_id]
   rfl
-
-/-- Restriction to a rational Levi is bijective on rational characters. -/
-private theorem characterRestrict_bijective_of_levi
-    {l : M ⟶ P} (hl : IsRationalLeviSubgroup l) : Function.Bijective (characterRestrict l) := by
-  obtain ⟨_, _, π, _, _, hπ, _⟩ := hl.exists_unipotentRadical_retraction
-  exact ⟨characterRestrict_injective_of_levi hl, (characterRestrict_rightInverse l π hπ).surjective⟩
-
-private noncomputable def leviCharacterEquiv {L H : GroupScheme (Spec (CommRingCat.of F))}
-    (j : L ⟶ H) (hj : IsRationalLeviSubgroup j) (q : H ⟶ L) (hq : j ≫ q = 𝟙 L) :
-    rationalCharacters H ≃+ rationalCharacters L where
-  toFun := characterRestrict j
-  invFun := characterRestrict q
-  left_inv χ := characterRestrict_injective_of_levi hj
-    (characterRestrict_rightInverse j q hq (characterRestrict j χ))
-  right_inv := characterRestrict_rightInverse j q hq
-  map_add' := (characterRestrict j).map_add
-
-private noncomputable def isoCharacterEquiv (c : M' ⟶ M) [IsIso c] :
-    rationalCharacters M ≃+ rationalCharacters M' where
-  toFun := characterRestrict c
-  invFun := characterRestrict (inv c)
-  left_inv := characterRestrict_rightInverse (inv c) c (IsIso.inv_hom_id c)
-  right_inv := characterRestrict_rightInverse c (inv c) (IsIso.hom_inv_id c)
-  map_add' := (characterRestrict c).map_add
-
-/-- The Weyl parameter map is a complex linear equivalence. Its forward map
-uses the indicated retraction of the target Levi. -/
-private theorem exists_weylParameter_linearEquiv [NumberField F] (l : M ⟶ P) (l' : M' ⟶ Q)
-    (hl : IsRationalLeviSubgroup l) (hl' : IsRationalLeviSubgroup l')
-    (c : M' ⟶ M) [IsIso c] (π' : Q ⟶ M') (hπ' : l' ≫ π' = 𝟙 M') :
-    ∃ e : ComplexCharacterParameter F P ≃ₗ[ℂ] ComplexCharacterParameter F Q,
-      e.toLinearMap = weylParameter l c π' := by
-  obtain ⟨_, _, π, _, _, hπ, _⟩ := hl.exists_unipotentRadical_retraction
-  let e := ((leviCharacterEquiv l hl π hπ).trans (isoCharacterEquiv c)).trans
-    (leviCharacterEquiv l' hl' π' hπ').symm
-  refine ⟨AlgebraTensorModule.congr (LinearEquiv.refl ℂ ℂ) e.toIntLinearEquiv, ?_⟩
-  apply AlgebraTensorModule.ext
-  intro s χ
-  change s ⊗ₜ[ℤ] characterRestrict π' (characterRestrict c (characterRestrict l χ)) =
-    weylParameter l c π' (s ⊗ₜ[ℤ] χ)
-  simp only [weylParameter_tmul, characterRestrict_comp, AddMonoidHom.comp_apply]
-
 
 end Langlands.Global.AdelicGroupPoints
 
@@ -494,108 +430,10 @@ variable {F : Type u} [Field F]
   [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
   {p : P ⟶ G} {l : M ⟶ P} {a : A.toGrp ⟶ M} (r : ParabolicRootPresentation p l a)
 
-private theorem finite_unipotentRoots (hT : IsSplitTorus r.data.T.toGrp) :
-    r.unipotentRoots.Finite :=
-  ((hT.finite_positiveRelativeRoots r.data.i r.data.ν).image (r.data.f ≫ ·)).subset
-    (fun _ h => h.2)
-
 variable
   [Mono r.data.i.hom.hom.left] [Fintype (relativeWeylGroup r.data.i)]
   [Mono (CommGroupScheme.groupHom r.data.f).hom.hom.left]
   (hA : IsSplitTorus A.toGrp) (hT : IsSplitTorus r.data.T.toGrp)
-
-/-- The strict inequalities that define regular parameters give an open
-region in every complex linear chart. -/
-private theorem isOpen_regularParameter_inCoordinates (R : ℝ) {n : ℕ}
-    (e : (Fin n → ℂ) ≃ₗ[ℂ] ComplexCharacterParameter F P) :
-    IsOpen {x | r.IsRegularParameter hA hT R (e x)} := by
-  let : Finite r.unipotentRoots := (r.finite_unipotentRoots hT).to_subtype
-  let B := weylInducedCharacterForm hA hT r.data.f r.data.i
-  let L (α : characterLattice A) : (Fin n → ℂ) →ₗ[ℝ] ℝ :=
-    (B.flip ((1 : ℝ) ⊗ₜ[ℤ] α)).comp
-      ((realParameterRestriction (a ≫ l)).comp
-        ((parameterRealPart F P).comp (e.toLinearMap.restrictScalars ℝ)))
-  have heq : {x | r.IsRegularParameter hA hT R (e x)} =
-      ⋂ α : r.unipotentRoots, {x | R < L α x} := by
-    ext x
-    simp only [mem_iInter, mem_ofPred_eq, Subtype.forall]
-    rfl
-  rw [heq]
-  exact isOpen_iInter_of_finite (fun α => isOpen_lt continuous_const
-    (L α).continuous_of_finiteDimensional)
-
-private theorem parameterRealPart_surjective :
-    Function.Surjective (parameterRealPart F P) := by
-  let f : RealCharacterParameter F P →ₗ[ℝ] ComplexCharacterParameter F P :=
-    AlgebraTensorModule.map Complex.ofRealCLM.toLinearMap LinearMap.id
-  have hf : (parameterRealPart F P).comp f = LinearMap.id := by
-    apply AlgebraTensorModule.ext
-    intro s χ
-    change (s : ℂ).re ⊗ₜ[ℤ] χ = s ⊗ₜ[ℤ] χ
-    rw [Complex.ofReal_re]
-  exact fun y => ⟨f y, LinearMap.congr_fun hf y⟩
-
-private theorem realParameterRestriction_surjective
-    (hl : IsRationalLeviSubgroup l) (ha : IsSplitComponent a) :
-    Function.Surjective (realParameterRestriction (F := F) (a ≫ l)) := by
-  let f := (characterRestrict (a ≫ l)).toIntLinearMap
-  have hf : Function.Surjective (f.baseChange ℚ) := by
-    have hs₁ := LinearMap.baseChange_surjective ℚ
-      (g := (characterRestrict l).toIntLinearMap) (characterRestrict_bijective_of_levi hl).surjective
-    have hs₂ := ha.rationalCharacterRestrictRat_surjective hl.isConnectedReductive
-    change Function.Surjective (((characterRestrict (a ≫ l)).toIntLinearMap).baseChange ℚ)
-    rw [characterRestrict_comp]
-    change Function.Surjective (((characterRestrict a).toIntLinearMap.comp
-      (characterRestrict l).toIntLinearMap).baseChange ℚ)
-    rw [LinearMap.baseChange_comp]
-    exact hs₂.comp hs₁
-  intro y
-  obtain ⟨x, hx⟩ := (LinearMap.baseChange_surjective ℝ hf)
-    ((rationalRealTensorEquiv (characterLattice A)).symm y)
-  refine ⟨rationalRealTensorEquiv (rationalCharacters P) x, ?_⟩
-  have hnat := LinearMap.congr_fun (rationalRealTensorEquiv_naturality f) x
-  change (rationalRealTensorEquiv (characterLattice A)) ((f.baseChange ℚ).baseChange ℝ x) =
-    (f.baseChange ℝ) (rationalRealTensorEquiv (rationalCharacters P) x) at hnat
-  change (f.baseChange ℝ) (rationalRealTensorEquiv (rationalCharacters P) x) = y
-  rw [← hnat, hx, LinearEquiv.apply_symm_apply]
-
-/-- Each regularity threshold is achieved by a complex character parameter. -/
-theorem exists_regularParameter (R : ℝ) :
-    ∃ lam : ComplexCharacterParameter F P, r.IsRegularParameter hA hT R lam := by
-  let : Module.Finite ℤ (characterLattice A) := hA.finite_characterLattice
-  let : FiniteDimensional ℝ (RealTorusSpace.Vstar A) :=
-    inferInstanceAs (Module.Finite ℝ (ℝ ⊗[ℤ] characterLattice A))
-  let B := weylInducedCharacterForm hA hT r.data.f r.data.i
-  have hB : B.Nondegenerate :=
-    weylInducedCharacterForm_nondegenerate hA hT r.data.f r.data.i
-  let s := max R 0 + 1
-  obtain ⟨v, hv⟩ := (B.toDual hB).surjective (s • r.splitComponentEvaluation)
-  obtain ⟨u, hu⟩ := realParameterRestriction_surjective
-    r.isCompatible.levi r.isCompatible.splitComponent v
-  obtain ⟨lam, hlam⟩ := parameterRealPart_surjective u
-  refine ⟨lam, ?_⟩
-  rintro α ⟨hne, β, hβ, rfl⟩
-  have hroot := (r.restrict_positive_eq_zero_or_mem hβ).resolve_left hne
-  have hone : (1 : ℤ) ≤ latticePairing A (r.data.f ≫ β) r.splitComponentCocharacter := by
-    have hpos := hroot.2
-    omega
-  have hone' : (1 : ℝ) ≤ latticePairing A (r.data.f ≫ β) r.splitComponentCocharacter := by
-    exact_mod_cast hone
-  have hs : 0 ≤ s := (le_max_right R 0).trans (le_add_of_nonneg_right zero_le_one)
-  change R < B (realParameterRestriction (a ≫ l) (parameterRealPart F P lam))
-    ((1 : ℝ) ⊗ₜ[ℤ] (r.data.f ≫ β))
-  rw [hlam, hu, ← LinearMap.BilinForm.toDual_def hB, hv, LinearMap.smul_apply,
-    r.splitComponentEvaluation_tmul, one_mul, smul_eq_mul]
-  calc
-    R < s := (le_max_left R 0).trans_lt (lt_add_of_pos_right _ zero_lt_one)
-    _ ≤ _ := by simpa only [mul_one] using mul_le_mul_of_nonneg_left hone' hs
-
-/-- The regular region is nonempty in any specified chart. -/
-private theorem nonempty_regularParameter_inCoordinates (R : ℝ) {n : ℕ}
-    (e : (Fin n → ℂ) ≃ₗ[ℂ] ComplexCharacterParameter F P) :
-    {x | r.IsRegularParameter hA hT R (e x)}.Nonempty := by
-  obtain ⟨lam, hlam⟩ := r.exists_regularParameter hA hT R
-  exact ⟨e.symm lam, by simpa using hlam⟩
 
 /-! The following two lemmas are new in this module. -/
 

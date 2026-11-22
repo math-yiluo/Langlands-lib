@@ -1,3 +1,4 @@
+import Langlands.Geometry.Analytic.FullRecognitionChartMorphisms
 import Langlands.Geometry.Analytic.AffinoidQuotientPullbackDescent
 import Langlands.Geometry.Analytic.LocalizedDomainBaseChange
 import Langlands.Geometry.Analytic.QuasiIsoReverseRecognition
@@ -17,58 +18,6 @@ open PresentedAffinoidAlgebra IndexedAffinoidAtlas SpaceAnalytification
 
 variable {K : Type u} [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
   {A B : SaturatedAtlasPresentation.{u, u, u} K}
-
-set_option backward.isDefEq.respectTransparency false in
-private theorem exists_recognized_locus_of_affinoid_iso (D : A.AnalyticDomain)
-    (R : PresentedAffinoidAlgebra K)
-    (e : localizationFunctor.obj (A.domain D) ≅ localizedAffinoidSpectrum R) :
-    ∃ W : A.presentation.atlas.saturatedAtlas.RecognizedSubset, W.locus = D.carrier := by
-  let S := SmallAffinoidSpectrum.saturated.{u, u} R
-  let i := SmallAffinoidSpectrum.topIndex.{u, u} R
-  let t := localizedTopTargetHomEquiv (A := A.domain D) (B := S) i
-    (SmallAffinoidSpectrum.top_contains R)
-  let m : A.domain D ⟶ S := t.symm e.hom
-  have hm : localizationFunctor.map m = e.hom :=
-    (localizedTopTargetHomEquiv_apply i (SmallAffinoidSpectrum.top_contains R) m).symm.trans
-      (t.apply_symm_apply e.hom)
-  let : IsIso (localizationFunctor.map m) := hm.symm ▸ e.isIso_hom
-  let hq := isQuasiIso_of_isIso_localizationFunctor_map m
-  let hc := m.hasCoherentPullbacks_of_saturated (A.domain D).hasAllLocalDomains
-  let Q : S.presentation.atlas.saturatedAtlas.RecognizedSubset :=
-    S.presentation.atlas.saturatedAtlas.originalRecognitionIndex
-      (S.presentation.atlas.originalSaturatedIndex i)
-  have hQ : Q.locus = univ :=
-    (S.presentation.atlas.saturatedAtlas_original_range i).trans
-      (SmallAffinoidSpectrum.range_topIndex R)
-  let V := hq.reverseRecognizedImage hc S.hasAllLocalDomains Q
-  have hV : V.locus = univ := by
-    change (hq.reverseRecognizedImage hc S.hasAllLocalDomains Q).locus = univ
-    rw [hq.reverseRecognizedImage_locus, hQ, preimage_univ]
-  let j := A.domainInclusion D
-  let hj := domainInclusion_isDomainEmbedding A D
-  let hjc := j.hasCoherentPullbacks_of_saturated (A.domain D).hasAllLocalDomains
-  refine ⟨hj.recognizedImage hjc V, ?_⟩
-  rw [hj.recognizedImage_locus hjc V, hV]
-  change Subtype.val '' (univ : Set D.carrier) = D.carrier
-  rw [image_univ, Subtype.range_coe]
-
-set_option backward.isDefEq.respectTransparency false in
-private theorem smallChartSpectrumInclusion_comp_map (f : A ⟶ B)
-    (i : A.presentation.atlas.Index) (j : B.presentation.atlas.Index)
-    (h : f.baseMap '' range (A.presentation.atlas.chart i) ⊆ range (B.presentation.atlas.chart j)) :
-    localizationFunctor.map (A.smallChartSpectrumInclusion i) ≫ localizationFunctor.map f =
-      SmallAffinoidSpectrum.localizedMapEquiv.{u, u} _ _ (f.pullback i j h) ≫
-        localizationFunctor.map (B.smallChartSpectrumInclusion j) := by
-  let R := A.presentation.atlas.algebra i
-  let S := B.presentation.atlas.algebra j
-  let g := f.pullback i j h
-  have h₁ := SmallAffinoidSpectrum.chartMap_comp R i (BoundedAlgHom.id K R) f j h
-  have h₂ := SmallAffinoidSpectrum.map_comp_chartMap.{u, u} g j (BoundedAlgHom.id K S)
-  rw [BoundedAlgHom.id_comp] at h₁
-  rw [BoundedAlgHom.comp_id] at h₂
-  exact (localizationFunctor.map_comp _ _).symm.trans
-    ((congrArg localizationFunctor.map (h₁.trans h₂.symm)).trans
-      (localizationFunctor.map_comp _ _))
 
 private abbrev chartIso (A : SaturatedAtlasPresentation.{u, u, u} K)
     (i : A.presentation.atlas.Index) :=
@@ -116,7 +65,7 @@ private theorem isPullback_smallChart_of_preimage (f : A ⟶ B)
     rw [Category.assoc, eqToHom_comp_domainι hE]
     exact chartIso_hom_comp A i
   have hb : (chartIso B j).hom ≫ domainι Y D = jB := chartIso_hom_comp B j
-  have hp : jA ≫ F = p ≫ jB := smallChartSpectrumInclusion_comp_map f i j h
+  have hp : jA ≫ F = p ≫ jB := localizedSmallChart_comp_map f i j h
   apply (domainPreimage_isPullback F D).of_iso' e (Iso.refl X) (chartIso B j) (Iso.refl Y)
   · exact he.trans (Category.comp_id _).symm
   · apply (cancel_mono (domainι Y D)).mp

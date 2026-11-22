@@ -7,6 +7,8 @@ coordinates preserves its first superdiagonal sum. Left multiplication in
 the leading block acts by that padding on the full rectangular point with
 the rectangular variable fixed. The Whittaker characters cancel, and the
 spectral weight is invariant because the unipotent determinant is one.
+The same cancellation holds for fixed right translates of both Whittaker
+factors, as recorded by `complexUnequalTranslatedProduct_unipotent_mul`.
 In the dual kernel the Weyl inverse transpose reverses both characters,
 giving the same cancellation.
 

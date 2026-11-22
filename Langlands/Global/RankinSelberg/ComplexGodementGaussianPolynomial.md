@@ -61,3 +61,6 @@ or prove either local functional equation.
   under weighted polynomial evaluation, of `restrictTotalDegree` for the
   original degree. That polynomial space is finite dimensional, as are its
   image and the span contained in the image. This also covers empty rows.
+
+The affine-substitution degree bound `totalDegree_bind₁_le` also applies
+when the variables are restricted to an upper triangular slice.

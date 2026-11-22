@@ -29,3 +29,14 @@ The use of local Whittaker models and the normalized test product is
 in J. W. Cogdell, *Analytic theory of L-functions for GL_n* (2004),
 §3.1, printed p. 213 (PDF p. 216), and §4.1, p. 220 (PDF p. 223).
 The Lean proof performs the finite local selection and transport.
+
+## Finite bounded combinations
+
+`poleFiniteBoundedTestFamilies` realizes the whole bounded combination of
+ordinary normalized rational zeta values on the same two prescribed tensor
+factors. Each indexed rational value comes from an actual local test.
+Realize both coefficients by the same local multiplicity-one argument and
+take the regularized Laurent value as its normalization. The combination
+from the finite local L-polynomial is unchanged by this choice of witnesses,
+and its Laurent weights are bounded on vertical strips. This applies in
+equal rank and in the ordinary integral at every positive rank gap.

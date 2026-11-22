@@ -1,0 +1,7 @@
+# An exponential height moment on a discrete left quotient
+
+`LeftCosetExponentialHeightMomentStatement` concerns a second-countable locally compact Hausdorff group \(G\) with a left-invariant measure finite on compact sets, a discrete subgroup \(\Gamma\), and a finite-dimensional real normed space \(V\). On \(\Gamma\backslash G\) let \(h\) be a height coordinate with measurable norm. Assume every coset \(z\) has a representative \(p\,a(h(z))\,k\) with \(p,k\) in fixed compact sets and \(a\) a continuous homomorphism from the additive group \(V\) into \(G\).
+
+There is \(c>0\) such that \(\exp(-r\|h\|)\) has finite integral against the discrete quotient measure for every \(r\ge c\). The proof takes a compact identity neighborhood \(D\) containing both compact factors and the image under \(a\) of the closed unit ball. The square of \(D\) is covered by finitely many left translates of \(D\). Left invariance then bounds the measures of the powers of \(D\) by a geometric progression. When \(\|h(z)\|\le n+1\), the torus point is the \((n+1)\)-st power of a point in the unit ball image and the representative lies in \(D^{n+3}\). The quotient measure of this image is at most the ambient measure of \(D^{n+3}\). Integration on each unit-width shell is bounded by a term of a summable geometric series for a sufficiently large \(r\).
+
+This measure estimate is an internal tool for the sufficiently positive weights on Siegel domains in Bernstein–Lapid, §7.4, pp. 215–217. The proof uses only the stated compact-factor hypothesis and the discrete quotient measure.

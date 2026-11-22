@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicBlockInfiniteCompactSections
 import Langlands.Global.Factors.CuspidalBlockInfiniteEvaluation
 import Langlands.Global.AdelicBlockCompactProduct
 
@@ -72,8 +73,7 @@ theorem infiniteCompactCoordinates_inclusion (v : Index F) (d : Compact n v) :
 intersection are elements of the actual infinite compact groups of the blocks. -/
 def infiniteLeviCompact (p : infiniteCompactIntersection F B) (i : Fin B.length) :
     standardInfiniteCompact F (B.size i) :=
-  ⟨B.leviProjection (InfiniteAdeles F) p.val i,
-    leviProjection_mem_standardInfiniteCompact B F p.val p.property i⟩
+  infiniteCompactLeviProjection F B p i
 
 theorem infiniteCompactCoordinates_levi_real (p : infiniteCompactIntersection F B)
     (v : {x : InfinitePlace F // x.IsReal}) :

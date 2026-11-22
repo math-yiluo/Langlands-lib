@@ -171,6 +171,14 @@ private theorem fixedTailFactor_mul (T : SplitTailTest k q) (a : ℂˣ) (ds : Li
     whittaker_mul_packed k q a ds W _ B Y Z hY]
   ring
 
+/-- An upper rectangle supported in the later columns leaves all retained factors fixed. -/
+theorem fixedTailFactor_mul_laterRectangle (T : SplitTailTest k q) (a : ℂˣ)
+    (ds : List ComplexCharacterData) (W : complexWhittakerModel (k + q) ds (-a))
+    (χ : ℂˣ →* ℂ) (g h : H) (B : G) (Y : Rect) (hY : ∀ i, Y i 0 = 0) :
+    fixedTailFactor k q T W.val χ g h (B * (packedTail k q Y 1).val) =
+      fixedTailFactor k q T W.val χ g h B := by
+  rw [fixedTailFactor_mul k q T a ds W χ g h B Y 1 hY, map_one, Units.val_one, mul_one]
+
 /-- The ordinary block kernel after the first rectangular column has been separated. -/
 def ordinaryBlockTailKernel (T : SplitTailTest k q) (W : G → ℂ) (χ : ℂˣ →* ℂ)
     (g h : H) (B : G) (p : Tail × N) : ℂ :=

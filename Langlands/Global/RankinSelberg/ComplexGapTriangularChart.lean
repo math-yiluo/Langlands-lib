@@ -65,7 +65,8 @@ def triangularRightChart (p : Outer k q × (Tail × N)) : G Size :=
   retainedMatrix k q p.1 * (packedTail k q (laterRectangle k q p.2.1) p.2.2).val *
     rankInclusion TailSize p.1.1.1.1
 
-private theorem continuous_packedTail : Continuous (fun p : Rect × N => (packedTail k q p.1 p.2).val) := by
+/-- The upper rectangle and unipotent tail together vary continuously. -/
+theorem continuous_packedTail : Continuous (fun p : Rect × N => (packedTail k q p.1 p.2).val) := by
   apply (Units.isOpenEmbedding_val (R := Matrix (Fin Size) (Fin Size) ℂ)).isEmbedding.continuous_iff.mpr
   apply continuous_matrix
   intro i j

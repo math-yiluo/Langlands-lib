@@ -3,12 +3,15 @@
 `Langlands.Global.RankinSelbergGlobal.RealBorelAverageContinuity.RealBorelAverageContinuityStatement`
 realizes each right-derivative word of an upper triangular average,
 restricted to a compact set of invertible outputs, by a continuous real
-linear map from the matrix test space to continuous functions on that
-compact set.
+linear map to the complex-valued continuous functions on that compact set.
+The source consists of complex-valued smooth matrix tests with compact
+support inside the invertible locus. The Borel measure on the upper
+triangular subgroup is finite on compact sets, and the complex-valued weight
+on that subgroup is continuous.
 
 For a fixed compact test support, the proof bounds the output supremum
-by the test supremum. The bound is the measure of the common compact
-integration set times a bound for the weight on that set. The resulting
+by the test supremum. Compact finiteness gives finite measure to the common
+compact integration set, and continuity bounds the weight on that set. The resulting
 fixed-support maps give a continuous map on the whole test space. A
 right derivative on the test is the Fréchet derivative followed by
 pointwise application to a smooth linear matrix vector field. Both

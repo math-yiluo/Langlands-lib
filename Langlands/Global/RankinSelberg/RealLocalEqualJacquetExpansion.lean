@@ -1,3 +1,4 @@
+import Langlands.Global.RankinSelberg.RealLocalEqualNormalizedFactors
 import Langlands.Global.Factors.CuspidalPairPartialGammaGlobalReduction
 import Langlands.Global.RankinSelberg.RealParameterDeterminant
 import Langlands.Global.RankinSelberg.RealUniformContinuationReduction
@@ -34,66 +35,6 @@ def PairMeromorphicIdentity (ds es : List RealBlock) (b : ℝˣ) (sign : ℂ)
       ((realPairLFactor (ds.map RealLocalJacquet.dualBlock)
         (es.map RealLocalJacquet.dualBlock)).denominator (1 - s))⁻¹ * M s
 
-private theorem realPairLFactor_cons (d : RealBlock) (ds es : List RealBlock) :
-    realPairLFactor (d :: ds) es = (realPairLFactor [d] es).mul (realPairLFactor ds es) := by
-  simpa only [realPairLFactor, realPairBlocks, List.flatMap_cons, List.flatMap_nil,
-    List.append_nil] using realLFactor_append (es.flatMap d.tensor) (realPairBlocks ds es)
-
-private theorem realPairEpsilon_cons (d : RealBlock) (ds es : List RealBlock)
-    (a : ℝˣ) (c : NNReal) (hc : 0 < c) (s : ℂ) :
-    realPairEpsilon (d :: ds) es a c hc s =
-      realPairEpsilon [d] es a c hc s * realPairEpsilon ds es a c hc s := by
-  simpa only [realPairEpsilon, realPairBlocks, List.flatMap_cons, List.flatMap_nil,
-    List.append_nil] using realEpsilon_append (es.flatMap d.tensor) (realPairBlocks ds es) a c hc s
-
-private theorem determinant_cons (d : RealBlock) (ds : List RealBlock) (a : ℝˣ) :
-    determinant (d :: ds) a = d.determinant a * determinant ds a := rfl
-
-private theorem block_determinant_one (d : RealBlock) : d.determinant 1 = 1 := by
-  cases d with
-  | character d => exact map_one d.character
-  | induced d =>
-    have h : realToComplex 1 = 1 := map_one (Units.map Complex.ofRealHom.toMonoidHom)
-    have hsign : realSign 1 = 1 := by
-      apply Units.ext
-      simp [coe_realSign]
-    simp [RealBlock.determinant, ComplexCharacterData.realInducedDeterminant, h, hsign]
-
-private theorem determinant_minusOne_sq (ds : List RealBlock) :
-    (determinant ds (-1) : ℂ) ^ 2 = 1 := by
-  induction ds with
-  | nil => simp [determinant]
-  | cons d ds ih =>
-    have hd := block_determinant_neg d (-1)
-    rw [neg_neg, block_determinant_one, ← pow_two] at hd
-    have hd' := congrArg (fun z : ℂˣ => (z : ℂ)) hd.symm
-    rw [Units.val_pow_eq_pow_val, Units.val_one] at hd'
-    rw [determinant_cons, Units.val_mul, mul_pow, hd', ih, one_mul]
-
-private theorem equal_coefficient {r : ℕ} (d : RealCharacterData) (ds es : List RealBlock)
-    (hd : realRank ds = r + 1) (he : realRank es = r + 2)
-    (a : ℝˣ) (c : NNReal) (hc : 0 < c) (s : ℂ) :
-    (d.character (-1) : ℂ) ^ (r + 1) *
-      ((((determinant es (-1) : ℂ) ^ (r + 1) * (determinant ds (-1) : ℂ)) *
-          (realPairEpsilon ds es a c hc s : ℂ)) *
-        (realPairEpsilon [.character d] es (-a) c hc s : ℂ)) =
-    (determinant (.character d :: ds) (-1) : ℂ) ^ (r + 1) *
-      (realPairEpsilon (.character d :: ds) es (-a) c hc s : ℂ) := by
-  have hflip := pair_epsilon_neg ds es (-a) c hc s
-  rw [neg_neg, determinant_realPairBlocks, Units.val_mul, Units.val_pow_eq_pow_val,
-    Units.val_pow_eq_pow_val, hd, he] at hflip
-  have hsign := unequal_sign _ _ (determinant_minusOne_sq es) (determinant_minusOne_sq ds) (r + 1) r
-  rw [hflip, realPairEpsilon_cons (.character d) ds es (-a) c hc s,
-    Units.val_mul, determinant_cons, Units.val_mul, mul_pow]
-  change _ = ((d.character (-1) : ℂ) ^ (r + 1) * (determinant ds (-1) : ℂ) ^ (r + 1)) * _
-  calc
-    _ = (d.character (-1) : ℂ) ^ (r + 1) *
-        (((determinant es (-1) : ℂ) ^ (r + 1) * (determinant ds (-1) : ℂ)) *
-          ((determinant es (-1) : ℂ) ^ (r + 1) * (determinant ds (-1) : ℂ) ^ (r + 2))) *
-        ((realPairEpsilon [.character d] es (-a) c hc s : ℂ) *
-          (realPairEpsilon ds es (-a) c hc s : ℂ)) := by ring
-    _ = _ := by rw [hsign]
-
 /-- Multiply the adjacent and matrix equations term by term, including the Weyl sign
 of the dual expansion and the epsilon sign change in the adjacent equation. -/
 theorem pairMeromorphicIdentity_equal_sum_products {r k : ℕ} (d : RealCharacterData)
@@ -108,8 +49,8 @@ theorem pairMeromorphicIdentity_equal_sum_products {r k : ℕ} (d : RealCharacte
       (fun s => (d.character (-1) : ℂ) ^ (r + 1) * ∑ i, Ad i s * Zd i s) := by
   unfold PairMeromorphicIdentity at hA hZ ⊢
   filter_upwards [eventually_all.mpr hA, eventually_all.mpr hZ] with s hsA hsZ
-  simp only [List.map_cons, realPairLFactor_cons (.character d) ds es,
-    realPairLFactor_cons (RealLocalJacquet.dualBlock (.character d))
+  simp only [List.map_cons, realPairLFactor_cons_mul (.character d) ds es,
+    realPairLFactor_cons_mul (RealLocalJacquet.dualBlock (.character d))
       (ds.map RealLocalJacquet.dualBlock) (es.map RealLocalJacquet.dualBlock),
     ReciprocalEntire.denominator_mul, mul_inv, mul_assoc, Finset.mul_sum,
     Units.val_neg, nnnorm_neg]
@@ -138,7 +79,7 @@ theorem pairMeromorphicIdentity_equal_sum_products {r k : ℕ} (d : RealCharacte
     _ = u * ((L ds es * Ad i (1 - s)) * (L [.character d] es * Zd i (1 - s))) := by ring
     _ = (u * ((v * E ds es a) * E [.character d] es (-a))) *
           (Ld [.character d] es * (Ld ds es * (A i s * Z i s))) := by rw [ha, hz]; ring
-    _ = _ := by rw [equal_coefficient d ds es hd he a c hc s]; ring
+    _ = _ := by rw [equal_epsilon_coefficient d ds es hd he a c hc s]; ring
 
 /-- The adjacent-rank continuation input, restricted to indices `r+1` and `r`. -/
 def AdjacentContinuationAtRank (r : ℕ) : Prop :=

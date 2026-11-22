@@ -9,3 +9,6 @@
 `EqualNormalizedTestFamily.exists_nondual_completion` uses the same gluing proof on a covering family for a nondual pair. The residue witness is discharged by nonduality. Coverage at zero supplies a test, whose required property is `True`. The result gives the completion and its pole profile.
 
 `cuspidalPairPole_of_covering_normalized_products` combines this result with the unequal-rank reduction and the completed functional equation. Its conclusion is the unchanged pole statement in both universes. The completed equation and the two normalization existence statements enter as hypotheses. The fixed-rank formulation is derived by retaining the selected normalization through the same gluing and transfer argument. The proof uses the equal-rank unfolding, residue and continuation arguments of Cogdell 2004, §2.3 and Theorems 4.1–4.2, printed pp. 208–211 and 219–222.
+
+`EqualNormalizedTestFamily.integral_eq_on_right` exposes the matching
+on the initial half-plane for reuse with other strip-bound arguments.

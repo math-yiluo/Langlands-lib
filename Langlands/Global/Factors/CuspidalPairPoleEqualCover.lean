@@ -60,7 +60,9 @@ private def period (i : D.Test) : ℂ :=
   residueConstant F r (fun g => cuspFunction F T (D.test i).left g *
     cuspFunction F T' (D.test i).right g) 0
 
-private theorem integral_eq_on_right (hψ : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+/-- Each test integral agrees with its normalized factor times the completed
+Euler product on a right half-plane. -/
+theorem integral_eq_on_right (hψ : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (hP : P.exceptional ⊆ S) (hP' : P'.exceptional ⊆ S)
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hω : T.realization.HasCentralCharacter ω) (hω' : T'.realization.HasCentralCharacter ω') :

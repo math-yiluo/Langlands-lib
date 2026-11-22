@@ -60,9 +60,10 @@ private theorem equalFamily_kernel_mk {a : ℂˣ} {W V : G → ℂ}
   congrArg (descend N (fun g => W g * V g * φ (row g) * P g s)
     (equalFamily_invariance hW hV φ s)) (Quotient.out_eq (Quotient.mk _ g))
 
-private theorem equalFamily_kernel_continuous {a : ℂˣ} {W V : G → ℂ}
+/-- The exact equal kernel descends continuously for continuous coefficients and row test. -/
+theorem equalFamily_kernel_continuous {a : ℂˣ} {W V : G → ℂ}
     (hW : HasLeftCharacter a W) (hV : HasLeftCharacter (-a) V)
-    (hWc : Continuous W) (hVc : Continuous V) (φ : 𝓢(Row, ℂ)) (s : ℂ) :
+    (hWc : Continuous W) (hVc : Continuous V) (φ : Row → ℂ) (hφ : Continuous φ) (s : ℂ) :
     Continuous (complexEqualIntegrand W V φ s) := by
   have hq := leftQuotient_isOpenQuotientMap N
   rw [← hq.continuous_comp_iff]
@@ -76,7 +77,7 @@ private theorem equalFamily_kernel_continuous {a : ℂˣ} {W V : G → ℂ}
   have hP : Continuous (fun g : G => P g s) :=
     Complex.continuous_exp.comp (continuous_const.mul (Complex.continuous_ofReal.comp
       (hd.log fun g => pow_ne_zero 2 (norm_ne_zero_iff.mpr g.det_ne_zero))))
-  exact ((hWc.mul hVc).mul (φ.continuous.comp hrow)).mul hP
+  exact ((hWc.mul hVc).mul (hφ.comp hrow)).mul hP
 
 private theorem sum_positive_le_last_root (y : Fin n → ℝ) :
     ∑ j, max (y j) 0 ≤ (n : ℝ) * (max (y (Fin.last r)) 0 + rootPos y) := by
@@ -102,12 +103,16 @@ private theorem equalFamily_exponent_bound (y : Fin n → ℝ)
   have hsum := congrArg (T * ·) (sum_add_abs y)
   linarith [RealEqualConvergence.linear_le L y]
 
-private theorem equalFamily_halfPlaneDomination {E : Type*} {a : ℂˣ}
+/-- Uniform last-row decay for a test family and uniform simple-root bounds for
+the two coefficients give common integrable majorants. -/
+theorem equalFamily_halfPlaneDomination_of_lastRowBound {E : Type*} {a : ℂˣ}
     (D : ComplexQuotientMeasureData r) (S : Set E) (W V : E → G → ℂ)
-    (s : E → ℂ) (φ : 𝓢(Row, ℂ))
+    (s : E → ℂ) (φ : E → Row → ℂ)
     (hW : ∀ p, HasLeftCharacter a (W p)) (hV : ∀ p, HasLeftCharacter (-a) (V p))
-    (hWb : HasUniformSimpleRootBound S W) (hVb : HasUniformSimpleRootBound S V) :
-    ∃ σ, HalfPlaneDomination D.measure S s (fun p => complexEqualIntegrand (W p) (V p) φ (s p)) σ := by
+    (hWb : HasUniformSimpleRootBound S W) (hVb : HasUniformSimpleRootBound S V)
+    (hφ : ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ p ∈ S, ∀ (y : Fin n → ℝ) (k : K),
+      ‖φ p (row (logTorus y * k.val))‖ ≤ C * Real.exp (-(M : ℝ) * max (y (Fin.last r)) 0)) :
+    ∃ σ, HalfPlaneDomination D.measure S s (fun p => complexEqualIntegrand (W p) (V p) (φ p) (s p)) σ := by
   obtain ⟨κ, L, hκL⟩ := complexIwasawaToralMeasure r D
   obtain ⟨B, hB⟩ := hWb
   obtain ⟨B', hB'⟩ := hVb
@@ -117,7 +122,7 @@ private theorem equalFamily_halfPlaneDomination {E : Type*} {a : ℂˣ}
   refine ⟨σ, fun τ => ?_⟩
   obtain ⟨M, hM⟩ := exists_nat_gt (2 * (2 * τ) * (n : ℝ))
   obtain ⟨C₁, hC₁, hb₁⟩ := hB M
-  obtain ⟨C₃, hC₃, hb₃⟩ := (complexLastRowSchwartz (r := r)) φ M
+  obtain ⟨C₃, hC₃, hb₃⟩ := hφ M
   let C := C₁ * C₂ * C₃
   have hC : 0 ≤ C := mul_nonneg (mul_nonneg hC₁ hC₂) hC₃
   refine ⟨fun q => C * Real.exp (-(∑ j, |alphaQ q j|) - L (alphaQ q)),
@@ -128,7 +133,7 @@ private theorem equalFamily_halfPlaneDomination {E : Type*} {a : ℂˣ}
     refine le_trans ?_ hM.le
     exact mul_le_mul_of_nonneg_right (by dsimp [T]; linarith) (by positivity)
   have hrep (y : Fin n → ℝ) (k : K) :
-      ‖complexEqualIntegrand (W p) (V p) φ (s p) (Quotient.mk _ (logTorus y * k.val))‖ ≤
+      ‖complexEqualIntegrand (W p) (V p) (φ p) (s p) (Quotient.mk _ (logTorus y * k.val))‖ ≤
         C * Real.exp (-(∑ j, |y j|) - L y) := by
     let g := logTorus y * k.val
     have hgα : alpha g = y := by
@@ -145,7 +150,7 @@ private theorem equalFamily_halfPlaneDomination {E : Type*} {a : ℂˣ}
             (C₃ * Real.exp (-(M : ℝ) * max (y (Fin.last r)) 0)) *
               Real.exp (T * ∑ j, y j) := by
         gcongr
-        exact hb₃ y k
+        exact hb₃ p hp y k
       _ = C * Real.exp (A * (∑ j, |y j|) + T * (∑ j, y j) -
             (M : ℝ) * (max (y (Fin.last r)) 0 + rootPos y)) := by
         rw [show A * (∑ j, |y j|) + T * (∑ j, y j) -
@@ -163,6 +168,16 @@ private theorem equalFamily_halfPlaneDomination {E : Type*} {a : ℂˣ}
     dsimp only
     rw [alphaQ_mk, mk_eq_mk_logTorus_mul_kpart g]
     exact hrep (alpha g) (kpart g)
+
+private theorem equalFamily_halfPlaneDomination {E : Type*} {a : ℂˣ}
+    (D : ComplexQuotientMeasureData r) (S : Set E) (W V : E → G → ℂ)
+    (s : E → ℂ) (φ : 𝓢(Row, ℂ))
+    (hW : ∀ p, HasLeftCharacter a (W p)) (hV : ∀ p, HasLeftCharacter (-a) (V p))
+    (hWb : HasUniformSimpleRootBound S W) (hVb : HasUniformSimpleRootBound S V) :
+    ∃ σ, HalfPlaneDomination D.measure S s (fun p => complexEqualIntegrand (W p) (V p) φ (s p)) σ := by
+  refine equalFamily_halfPlaneDomination_of_lastRowBound D S W V s (fun _ => φ) hW hV hWb hVb fun M => ?_
+  obtain ⟨C, hC, h⟩ := (complexLastRowSchwartz (r := r)) φ M
+  exact ⟨C, hC, fun _ _ => h⟩
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [FiniteDimensional ℂ E]
 
@@ -184,7 +199,7 @@ theorem complexLocalEqualFamily : ComplexLocalEqualFamilyStatement (r := r) (E :
   intro a D S W V s φ hS hs hW hV hWc hVc hWd hVd hWb hVb
   obtain ⟨σ, hdom⟩ := equalFamily_halfPlaneDomination D S W V s φ hW hV hWb hVb
   refine ⟨σ, differentiableOn_integral_of_halfPlaneDomination hS hs (fun p =>
-    (equalFamily_kernel_continuous (hW p) (hV p) (hWc p) (hVc p) φ (s p)).aestronglyMeasurable)
+    (equalFamily_kernel_continuous (hW p) (hV p) (hWc p) (hVc p) φ φ.continuous (s p)).aestronglyMeasurable)
     (fun q => ?_) hdom⟩
   change DifferentiableOn ℂ (fun p =>
     W p q.out * V p q.out * φ (row q.out) * P q.out (s p)) S

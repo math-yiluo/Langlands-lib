@@ -7,3 +7,7 @@ For fixed outer data, the later rectangle and the upper unipotent tail act throu
 This is the fixed outer data identity for (10.4) and (10.5). [Jacquet, *Archimedean Rankin–Selberg integrals*, Section 10.2](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).
 
 `alternateKernel_eq` identifies the alternate tail kernel with the fixed factor times the triangular Fourier kernel.
+
+When the tail block is the identity, the later rectangle has trivial
+Whittaker character. `fixedTailFactor_mul_laterRectangle` gives the
+resulting invariance of the retained factor.

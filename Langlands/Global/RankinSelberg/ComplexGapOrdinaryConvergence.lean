@@ -79,10 +79,12 @@ private theorem exists_integrable_tail_decay (n : ℕ) (hn : 0 < n) :
   unfold weightedMatrixTail at hp
   simpa only [pow_zero, one_mul, Real.rpow_natCast] using hp
 
-private def firstTorusDecay {t : ℕ} (A : ℝ) (q : Q t) : ℝ :=
+/-- The exponential majorant on the quotient logarithms. -/
+def firstTorusDecay {t : ℕ} (A : ℝ) (q : Q t) : ℝ :=
   Real.exp (-(A + 1) * ∑ i, |alphaQ q i|)
 
-private theorem integrable_firstTorusDecay {t : ℕ} (D : ComplexQuotientMeasureData t)
+/-- The norm of the logarithmic density functional supplies an integrable decay rate. -/
+theorem integrable_firstTorusDecay {t : ℕ} (D : ComplexQuotientMeasureData t)
     (c : ℝ≥0) (L : (Fin (t + 1) → ℝ) →L[ℝ] ℝ)
     (hL : ∀ B : (Fin (t + 1) → ℝ) → ℝ≥0∞, Measurable B →
       ∫⁻ q, B (alphaQ q) ∂D.measure = (c : ℝ≥0∞) * ∫⁻ y, ENNReal.ofReal (Real.exp (L y)) * B y) :

@@ -1,3 +1,4 @@
+import Langlands.Geometry.Analytic.StrongEtaleSourceOpenLocality
 import Langlands.Geometry.Analytic.LocalizedChartCoverLifts
 import Langlands.Geometry.Analytic.PairSystemLocalizedMorphisms
 import Langlands.Geometry.Analytic.LocalizedDomainBaseChange
@@ -225,5 +226,50 @@ theorem fullRecognition_comp {R : AffinoidAtlasPresentation.{u, u, u} K}
     fullRecognitionIso_naturality, ← Category.assoc, ← localizationFunctor.map_comp, h]
 
 end Recognition
+
+end Langlands.Analytic.SaturatedAtlasPresentation
+
+namespace Langlands.Analytic.SaturatedAtlasPresentation
+
+open _root_.CategoryTheory Set
+open PresentedAffinoidAlgebra IndexedAffinoidAtlas SpaceAnalytification
+
+variable {K : Type u} [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
+  {A : SaturatedAtlasPresentation.{u, u, u} K}
+
+set_option backward.isDefEq.respectTransparency false in
+/-- An affinoid spectrum identifying a localized analytic domain recognizes its locus. -/
+theorem exists_recognized_locus_of_affinoid_iso (D : A.AnalyticDomain)
+    (R : PresentedAffinoidAlgebra K)
+    (e : localizationFunctor.obj (A.domain D) ≅ localizedAffinoidSpectrum R) :
+    ∃ W : A.presentation.atlas.saturatedAtlas.RecognizedSubset, W.locus = D.carrier := by
+  let S := SmallAffinoidSpectrum.saturated.{u, u} R
+  let i := SmallAffinoidSpectrum.topIndex.{u, u} R
+  let t := localizedTopTargetHomEquiv (A := A.domain D) (B := S) i
+    (SmallAffinoidSpectrum.top_contains R)
+  let m : A.domain D ⟶ S := t.symm e.hom
+  have hm : localizationFunctor.map m = e.hom :=
+    (localizedTopTargetHomEquiv_apply i (SmallAffinoidSpectrum.top_contains R) m).symm.trans
+      (t.apply_symm_apply e.hom)
+  let : IsIso (localizationFunctor.map m) := hm.symm ▸ e.isIso_hom
+  let hq := isQuasiIso_of_isIso_localizationFunctor_map m
+  let hc := m.hasCoherentPullbacks_of_saturated (A.domain D).hasAllLocalDomains
+  let Q : S.presentation.atlas.saturatedAtlas.RecognizedSubset :=
+    S.presentation.atlas.saturatedAtlas.originalRecognitionIndex
+      (S.presentation.atlas.originalSaturatedIndex i)
+  have hQ : Q.locus = univ :=
+    (S.presentation.atlas.saturatedAtlas_original_range i).trans
+      (SmallAffinoidSpectrum.range_topIndex R)
+  let V := hq.reverseRecognizedImage hc S.hasAllLocalDomains Q
+  have hV : V.locus = univ := by
+    change (hq.reverseRecognizedImage hc S.hasAllLocalDomains Q).locus = univ
+    rw [hq.reverseRecognizedImage_locus, hQ, preimage_univ]
+  let j := A.domainInclusion D
+  let hj := domainInclusion_isDomainEmbedding A D
+  let hjc := j.hasCoherentPullbacks_of_saturated (A.domain D).hasAllLocalDomains
+  refine ⟨hj.recognizedImage hjc V, ?_⟩
+  rw [hj.recognizedImage_locus hjc V, hV]
+  change Subtype.val '' (univ : Set D.carrier) = D.carrier
+  rw [image_univ, Subtype.range_coe]
 
 end Langlands.Analytic.SaturatedAtlasPresentation

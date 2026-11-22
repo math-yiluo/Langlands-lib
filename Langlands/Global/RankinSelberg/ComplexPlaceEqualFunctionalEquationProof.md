@@ -4,7 +4,7 @@
 
 ## Induction at the standard character
 
-The induction proves that multiplication by the corresponding reciprocal Gamma products gives two entire functions of exponential strip growth. These functions agree with the normalized ordinary and dual integrals on a common right half-plane and obey the normalized reflection identity everywhere. For size one the model coefficients are scalar multiples of the inducing characters. The integral comparison and the one-coordinate Tate equation give the two normalizations and their strip bounds with a common Haar scalar.
+`complexLocalEqualStandardGrowth` proves that multiplication by the corresponding reciprocal Gamma products gives two entire functions of exponential strip growth. These functions agree with the normalized ordinary and dual integrals on a common right half-plane and obey the normalized reflection identity everywhere. For size one the model coefficients are scalar multiples of the inducing characters. The integral comparison and the one-coordinate Tate equation give the two normalizations and their strip bounds with a common Haar scalar.
 
 Whittaker multiplicity one identifies each exact model with the range of canonical continued Jacquet evaluation. The smooth extension of a compact-finite intertwiner has the required unipotent character. On the long Bruhat chart a finite-order Whittaker functional is a scalar multiple of the character-weighted Haar integral, and restriction to that chart is injective by the vanishing of the transverse jets on the boundary cells. The canonical evaluation has a nonzero value at the identity. Proportionality of the exact intertwiners supplies the identity comparison used by the equal-rank successor.
 

@@ -18,4 +18,7 @@ The two-scale identity is integrated in the relative logarithmic scale. Absolute
 
 ## Passage to the published proposition
 
+`complexUnequalNormalizedGrowth` exposes the ordinary and dual
+entire normalizations with strip growth furnished by the rank induction.
+
 Gaussian spanning first gives the normalized equation in the strict inducing chamber. Holomorphic continuation along affine parameter lines removes the chamber and the constraint on the adjoined exponent. The canonical Jacquet range identifies the resulting functions with the full finite Whittaker model. The unequal-rank induction now applies at every strict rank inequality. Finally, the analytic reduction combines the normalized reflection with the convergence and holomorphy results for the original integrals. Dividing by the reciprocal local factors gives meromorphic continuations and yields the stated equation away from their discrete zero sets. [Canonical growth](ComplexGapCanonicalGrowth.md), [removal of normalization](ComplexLocalUnequalFromNormalized.md)

@@ -87,43 +87,43 @@ def HasCoveringEqualPartialTests (c : FinitePairLChoice P P' hP hP')
         (fun s => Linf s * ∏ v ∈ S, c.finiteL v s),
         N.value s₀ ≠ 0
 
-/-- Pointwise normalized local generation supplies a covering family of actual equal-rank
-partial integrals, with standard finite data outside the chosen set. -/
-theorem exists_coveringEqualPureTest_of_local_at
+/-- An ordinary test tuple at the infinite places and the specified finite places
+realizes its product of normalized values up to a nonzero scalar. -/
+theorem exists_normalizedEqualPureTest_of_prescribed
     (c : FinitePairLChoice P P' hP hP')
     (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
-    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
-    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
-    (hGReal : Nonempty RP → RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
     (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
     (aR : RP → ℝˣ) (aC : CP → ℂˣ)
     (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
     (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
     (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
       M' (fun v => -aR v) (fun w => -aC w) dR' dC')
-    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
-    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
-    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
-    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w)) :
-    HasCoveringEqualPartialTests c S ψ (archimedeanPairProduct dR dR' dC dC') := by
-  intro s₀
-  have hFinite (v : S) := exists_poleFiniteEqualTest v.1 (ψv v) c (ν v) rfl hT hT' s₀
-  choose D ΦS NS hNS using hFinite
-  have hgR (v : RP) := ((hGReal ⟨v⟩).2 r (dR v) (dR' v) (hdR v).1 (hdR' v).1
-    (T.isIrreducibleRealStandard v _ (hdR v)) (T'.isIrreducibleRealStandard v _ (hdR' v))
-    (aR v) (realQuotientMeasureData r)
-    (hR.1 v ▸ range_ne_bot 1 (M.normalized (.inl v)))
-    (hR'.1 v ▸ range_ne_bot 1 (M'.normalized (.inl v)))).1 s₀
-  have hgC (w : CP) := (hGComplex.2 r (dC w) (dC' w) (hdC w).1 (hdC' w).1
-    (T.isIrreducibleComplexStandard w _ (hdC w)) (T'.isIrreducibleComplexStandard w _ (hdC' w))
-    (aC w) (complexQuotientMeasureData r)
-    (hR.2 w ▸ range_ne_bot 1 (M.normalized (.inr w)))
-    (hR'.2 w ▸ range_ne_bot 1 (M'.normalized (.inr w)))).1 s₀
-  choose R NR hNR using hgR
-  choose C NC hNC using hgC
+    (R : ∀ v : RP, realWhittakerModel r (dR v) (aR v) ×
+      (realWhittakerModel r (dR' v) (-aR v) × SchwartzMap (Fin (r + 1) → ℝ) ℂ))
+    (C : ∀ w : CP, complexWhittakerModel r (dC w) (aC w) ×
+      (complexWhittakerModel r (dC' w) (-aC w) × SchwartzMap (Fin (r + 1) → ℂ) ℂ))
+    (NR : ∀ v, OrdinaryIntegralNormalization
+      (realOrdinaryEqualTest r (dR v) (dR' v) (aR v) (realQuotientMeasureData r) (R v))
+      (fun s => ((realPairLFactor (dR v) (dR' v)).denominator s)⁻¹))
+    (NC : ∀ w, OrdinaryIntegralNormalization
+      (complexOrdinaryEqualTest r (dC w) (dC' w) (aC w) (complexQuotientMeasureData r) (C w))
+      (fun s => ((complexPairLFactor (dC w) (dC' w)).denominator s)⁻¹))
+    (D : ∀ v : S, PoleFiniteTestVectors v.1 (ψv v) P P')
+    (ΦS : ∀ v : S, finiteRowTest F (r + 1) v.1)
+    (NS : ∀ v : S, OrdinaryIntegralNormalization
+      (poleEqualFiniteIntegral v.1 (ψv v) (D v) (ΦS v)) (c.finiteL v.1)) :
+    ∃ (x : T.Space) (x' : T'.Space) (Φ : RowVector F (r + 1) → ℂ),
+      IsSphericalOutside F T S x ∧ IsSphericalOutside F T' S x' ∧
+      Φ ∈ schwartzBruhat F (r + 1) ∧ IsStandardOutside F (r + 1) S Φ ∧
+      ∃ N : OrdinaryIntegralNormalization
+        (partialEqualWhittakerIntegral F S (cuspWhittaker F T ψ.complex x)
+          (cuspWhittaker F T' ψ.complex⁻¹ x') Φ)
+        (fun s => archimedeanPairProduct dR dR' dC dC' s * ∏ v ∈ S, c.finiteL v s),
+        ∃ A : ℂ, A ≠ 0 ∧ ∀ s, N.value s = A *
+          (((∏ v, (NR v).value s) * ∏ w, (NC w).value s) * ∏ v : S, (NS v).value s) := by
   let WR (v : RP) := (R v).1.val
   let WR' (v : RP) := (R v).2.1.val
   let WC (w : CP) := (C w).1.val
@@ -164,15 +164,56 @@ theorem exists_coveringEqualPureTest_of_local_at
   let Φ := poleEqualSchwartzTensor ΦR ΦC ΦS
   have hΦ := poleEqualSchwartzTensor_spec ΦR ΦC ΦS
   let N := hN.choose_spec.2.choose
-  have hvalue := hN.choose_spec.2.choose_spec s₀
-  refine ⟨x, x', Φ, P.allPlaceTensorEquiv_finitePure_sphericalOutside hP S hPS _ b,
-    P'.allPlaceTensorEquiv_finitePure_sphericalOutside hP' S hPS' _ b', hΦ.1, hΦ.2, N, ?_⟩
+  exact ⟨x, x', Φ, P.allPlaceTensorEquiv_finitePure_sphericalOutside hP S hPS _ b,
+    P'.allPlaceTensorEquiv_finitePure_sphericalOutside hP' S hPS' _ b', hΦ.1, hΦ.2, N,
+    hN.choose, hN.choose_spec.1, hN.choose_spec.2.choose_spec⟩
+
+/-- Pointwise normalized local generation supplies a covering family of actual equal-rank
+partial integrals, with standard finite data outside the chosen set. -/
+theorem exists_coveringEqualPureTest_of_local_at
+    (c : FinitePairLChoice P P' hP hP')
+    (hPS : P.exceptional ⊆ S) (hPS' : P'.exceptional ⊆ S)
+    (hT : IsTrivialOnSplitCentre T) (hT' : IsTrivialOnSplitCentre T')
+    (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
+    (hS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
+    (hψv : ∀ v : S, IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (ν : ∀ v : S, LocalFactor.PadicAbelian.SelfDualHaar (padicField v.1).canonicalTopologicalData (ψv v))
+    (hGReal : Nonempty RP → RealOrdinaryNormalizedGenerationStatement) (hGComplex : ComplexOrdinaryNormalizedGenerationStatement)
+    (M : ModelData P hP ψ.complex) (M' : ModelData P' hP' (inverseCharacter ψ).complex)
+    (aR : RP → ℝˣ) (aC : CP → ℂˣ)
+    (dR dR' : RP → List RealBlock) (dC dC' : CP → List ComplexCharacterData)
+    (hR : HasSpecifiedWhittakerSliceRanges (P := P) (ψ := ψ) M aR aC dR dC)
+    (hR' : HasSpecifiedWhittakerSliceRanges (P := P') (ψ := inverseCharacter ψ)
+      M' (fun v => -aR v) (fun w => -aC w) dR' dC')
+    (hdR : ∀ v, T.realization.HasRealPlaceParameter v (dR v))
+    (hdR' : ∀ v, T'.realization.HasRealPlaceParameter v (dR' v))
+    (hdC : ∀ w, T.realization.HasComplexPlaceParameter w (dC w))
+    (hdC' : ∀ w, T'.realization.HasComplexPlaceParameter w (dC' w)) :
+    HasCoveringEqualPartialTests c S ψ (archimedeanPairProduct dR dR' dC dC') := by
+  intro s₀
+  have hFinite (v : S) := exists_poleFiniteEqualTest v.1 (ψv v) c (ν v) rfl hT hT' s₀
+  choose D ΦS NS hNS using hFinite
+  have hgR (v : RP) := ((hGReal ⟨v⟩).2 r (dR v) (dR' v) (hdR v).1 (hdR' v).1
+    (T.isIrreducibleRealStandard v _ (hdR v)) (T'.isIrreducibleRealStandard v _ (hdR' v))
+    (aR v) (realQuotientMeasureData r)
+    (hR.1 v ▸ range_ne_bot 1 (M.normalized (.inl v)))
+    (hR'.1 v ▸ range_ne_bot 1 (M'.normalized (.inl v)))).1 s₀
+  have hgC (w : CP) := (hGComplex.2 r (dC w) (dC' w) (hdC w).1 (hdC' w).1
+    (T.isIrreducibleComplexStandard w _ (hdC w)) (T'.isIrreducibleComplexStandard w _ (hdC' w))
+    (aC w) (complexQuotientMeasureData r)
+    (hR.2 w ▸ range_ne_bot 1 (M.normalized (.inr w)))
+    (hR'.2 w ▸ range_ne_bot 1 (M'.normalized (.inr w)))).1 s₀
+  choose R NR hNR using hgR
+  choose C NC hNC using hgC
+  obtain ⟨x, x', Φ, hx, hx', hΦ, hstd, N, A, hA, hvalue⟩ :=
+    exists_normalizedEqualPureTest_of_prescribed c hPS hPS' hψF hS hψv M M'
+      aR aC dR dR' dC dC' hR hR' R C NR NC D ΦS NS
+  refine ⟨x, x', Φ, hx, hx', hΦ, hstd, N, ?_⟩
   rw [hvalue]
-  exact mul_ne_zero hN.choose_spec.1 (mul_ne_zero
+  exact mul_ne_zero hA (mul_ne_zero
     (mul_ne_zero (Finset.prod_ne_zero_iff.mpr fun v _ => hNR v)
       (Finset.prod_ne_zero_iff.mpr fun w _ => hNC w))
     (Finset.prod_ne_zero_iff.mpr fun v _ => (hNS v).1))
-
 
 theorem exists_coveringEqualPureTest_of_local
     (c : FinitePairLChoice P P' hP hP')

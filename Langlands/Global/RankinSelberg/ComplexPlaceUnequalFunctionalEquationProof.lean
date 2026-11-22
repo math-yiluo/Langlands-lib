@@ -231,6 +231,12 @@ private theorem complexGapMonomialGrowth_from_lower
 
 end Gap
 
+/-- The rank induction gives the normalized unequal equation with strip growth. -/
+theorem complexUnequalNormalizedGrowth (r t : ℕ) (h : t < r) :
+    ComplexLocalUnequalGrowthAtRanks r t h :=
+  complexUnequalGrowth_all (complexUnequalGrowthGapStep_of_monomialGrowth
+    complexGapMonomialGrowth_from_lower) r t h
+
 /-- The local Jacquet functional equation for complex induced representations of unequal ranks. -/
 theorem complexLocalUnequalFunctionalEquation : ComplexLocalUnequalFunctionalEquationStatement :=
   complexUnequalFromMonomialGrowth complexGapMonomialGrowth_from_lower

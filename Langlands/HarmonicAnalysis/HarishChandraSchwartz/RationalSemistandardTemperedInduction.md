@@ -1,0 +1,5 @@
+# Tempered induction on the actual semistandard index
+
+`SemistandardTemperedInductionStatement` applies Waldspurger III.2.3, printed p. 266, to an actual semistandard parabolic, with its Levi and radical on rational points. It takes a chamber in which this triple is standard, Iwasawa data at the displayed ambient compact and its intersection with the Levi, and a closed ambient matrix model in which the compact has integral image. The inducing representation is smooth and admissible with tempered coefficients for the displayed Levi Xi and restricted height. The conclusion is tempered growth for the actual normalized induction with the original ambient Xi and height.
+
+The proof identifies the literal triple with the standard triple. Finiteness of the simple roots identifies its face with a finite subset for the published standard theorem. Changing the minimal parabolic preserves the ambient Iwasawa factorization and the ambient Xi at the same compact. The standard theorem thus gives the desired estimate on the same induced representation.

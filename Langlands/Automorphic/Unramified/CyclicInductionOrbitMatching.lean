@@ -34,25 +34,6 @@ local instance orbitMatchingLocalAddCommGroup {v : FinitePlace K} (A : LocalReal
     AddCommGroup A.Space :=
   Submodule.addCommGroup _
 
-private theorem exists_generic_at_completion
-    {F : Type uF} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    {r : ℕ} {S : CuspidalOperatorRealization F r}
-    (hS : HasUnitaryCentralCharacter S)
-    (P : CuspidalSpectralPresentation.{uF, uV} S) (v : FinitePlace F)
-    (hI : (P.localComponent v).IsIrreducible) (hA : (P.localComponent v).IsAdmissible) :
-    ∃ ψ : UnitaryAdditiveCharacter (FiniteCompletion F v),
-      Whittaker.IsGeneric ψ r (P.localComponent v).representation := by
-  let Fv := CompletionPadic.padicField v
-  let T := Fv.canonicalTopologicalData
-  obtain ⟨ψ⟩ := padicUnitaryAdditiveCharacterExists Fv T
-  have hgen := cuspidalUnitaryLocalGenericity F r S hS P v hI hA ψ
-  let genericAtTopology (t : TopologicalSpace (FiniteCompletion F v)) : Prop :=
-    letI := t
-    ∃ ψ : UnitaryAdditiveCharacter (FiniteCompletion F v),
-      Whittaker.IsGeneric ψ r (P.localComponent v).representation
-  have hcanonical : genericAtTopology T.topology := ⟨ψ, hgen⟩
-  exact (congrArg genericAtTopology (CompletionPadic.completion_topology_eq v)).mpr hcanonical
-
 /-- The orbit-lift part of the strong comparison at the distinguished finite
 place, with the unitary weak induction and its global norm-kernel self-twist. -/
 def CyclicInductionOrbitMatchingAtUniquePlaceStatement : Prop :=
@@ -104,8 +85,8 @@ theorem cyclicInductionMatching_of_orbitMatching :
   obtain ⟨e⟩ :=
     Q.nonempty_localComponent_equiv_of_finiteOrderDeterminantTwist Q v χ hSelf hQI hQI
   obtain ⟨hPI, hPA, _⟩ := hP
-  have hGenQ := exists_generic_at_completion hU Q v hQI hQA
-  have hGenP := exists_generic_at_completion hT P w.1 hPI hPA
+  have hGenQ := Q.exists_generic_at_completion hU v hQI hQA
+  have hGenP := P.exists_generic_at_completion hT w.1 hPI hPA
   have hUniQ := cuspidalUnitaryLocalUnitarity F r U hU Q v hQI hQA
   have hUniP := cuspidalUnitaryLocalUnitarity E m T hT P w.1 hPI hPA
   exact ⟨U, Q, hWeak, hQA.1, hUniQ, hGenQ, hPA.1, hUniP, hGenP,

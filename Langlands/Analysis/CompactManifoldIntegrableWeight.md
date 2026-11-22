@@ -1,0 +1,7 @@
+# Compact manifold integrals with an integrable scalar weight
+
+`CompactManifoldIntegrableWeightStatement` integrates a jointly smooth, complex Banach-valued kernel against a measurable integrable scalar weight on a compact Borel space. The kernel sees the integration variable through a continuous map to a real manifold. The integral is defined at every parameter, is smooth on the parameter manifold, and its derivative evaluated on a tangent vector is the integral of the corresponding derivatives of the kernel. The parameter manifold has a finite-dimensional real model without boundary.
+
+The proof puts the absolute value of the scalar weight into a finite measure. It pushes this measure along the graph of the phase of the weight, taking phase zero where the weight vanishes. The new integration space is the product of the original compact space with the closed complex unit disk. The disk coordinate is a continuous scalar weight on this product, so the existing compact manifold vector integral theorem supplies smoothness and the derivative identity. The measurable graph and the density formula identify both integrals with the original weighted integrals. The original kernel values are integrable by a compact bound and integrability of the weight.
+
+This derived analytic step permits a locally integrable convolution input to be used as the weight on a compact region of integration. It supplies the differentiation under the integral needed in the smooth case of Bernstein–Lapid §7.4, Lemma (2), p. 216, and Mœglin–Waldspurger I.2.5, p. 27.

@@ -27,7 +27,8 @@ def invertibleDomain (r : ℕ) : Opens (Matrix (Fin (r + 1)) (Fin (r + 1)) ℝ) 
   ⟨range (Units.val : Langlands.GeneralLinear (r + 1) ℝ → Matrix (Fin (r + 1)) (Fin (r + 1)) ℝ),
     Units.isOpenEmbedding_val.isOpen_range⟩
 
-/-- The ambient left and right infinitesimal covariance laws. -/
+/-- Ambient left infinitesimal upper-unipotent invariance and right
+Whittaker covariance, with eigenvalue `eigen` in adjacent right directions. -/
 def IsInfinitesimalWhittakerCovariant (D : 𝓓'(invertibleDomain r, ℂ)) (eigen : ℂ) : Prop :=
   ∀ j (f : 𝓓(invertibleDomain r, ℝ)),
     D (smoothVectorFieldDerivativeTest (ambientField j).contDiff.contDiffOn f) =
@@ -73,8 +74,8 @@ private theorem isChartWhittakerCovariant (w : Equiv.Perm (Fin (r + 1)))
     (ambientField j).contDiff (contDiffOn_coordinateField w j)]
   exact hD j _
 
-/-- A real distribution with infinitesimal Whittaker covariance vanishes if
-its restriction to the reversal Bruhat cell vanishes. -/
+/-- Under left infinitesimal invariance and nonzero right Whittaker covariance,
+vanishing on tests supported in the reversal Bruhat cell implies vanishing. -/
 theorem eq_zero_of_reversalCell_vanishing (D : 𝓓'(invertibleDomain r, ℂ)) (eigen : ℂ)
     (heigen : eigen ≠ 0) (hD : IsInfinitesimalWhittakerCovariant D eigen)
     (hrev : Distribution.IsVanishingOn D (reversalCellImage r)) : D = 0 := by
@@ -134,8 +135,8 @@ theorem eq_zero_of_reversalCell_vanishing (D : 𝓓'(invertibleDomain r, ℂ)) (
   intro f
   exact hv f (f.tsupport_subset.trans hcover)
 
-/-- Infinitesimal Whittaker covariance determines real matrix distributions
-on the invertible locus by the reversal Bruhat cell. -/
+/-- With left infinitesimal invariance and nonzero right Whittaker covariance,
+the restriction to the reversal Bruhat cell determines the distribution. -/
 def RealBruhatDistributionRestrictionStatement : Prop :=
   ∀ (r : ℕ) (D : 𝓓'(invertibleDomain r, ℂ)) (eigen : ℂ), eigen ≠ 0 →
     IsInfinitesimalWhittakerCovariant D eigen →

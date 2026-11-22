@@ -41,7 +41,8 @@ attribute [local instance] archimedeanEquationComplexGLMeasurable
 
 local notation "G" => fun n => Langlands.GeneralLinear n ℂ
 
-private theorem standardEqualGrowth : ∀ r, ComplexLocalEqualGrowthAtRank r := by
+/-- The standard trace character admits equal-rank normalized growth in every rank. -/
+theorem standardEqualGrowth : ∀ r, ComplexLocalEqualGrowthAtRank r := by
   have hId : ComplexJacquetIdentityProportionality := by
     intro r μ a l p B hB
     obtain ⟨c, hc⟩ := (complexJacquetMultiplicityOne r μ a l p).1 B hB

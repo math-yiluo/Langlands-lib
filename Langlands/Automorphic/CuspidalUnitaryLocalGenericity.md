@@ -63,3 +63,11 @@ This is the classical route: a nonzero cusp form has a nonvanishing Whittaker co
 and evaluation of the coefficient gives a Whittaker functional on every local component. The
 proof is formalized directly, not ported from any source. It does not show that a Whittaker
 functional is unique.
+
+## Genericity at the actual completion
+
+`CuspidalSpectralPresentation.exists_generic_at_completion` chooses a nontrivial
+unitary additive character of the canonical p-adic field and applies
+`cuspidalUnitaryLocalGenericity`. It transports the existential statement along
+`CompletionPadic.completion_topology_eq`, giving a continuous character and a
+Whittaker functional on the original local action at `FiniteCompletion F v`.

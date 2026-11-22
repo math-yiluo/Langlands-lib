@@ -373,3 +373,28 @@ end FiniteAdelic
 end AdelicGroupPoints
 
 end Langlands.Global
+
+namespace Langlands.Global.AdelicGroupPoints
+
+open Langlands.GroupScheme
+
+variable {F : Type u} [Field F] [NumberField F]
+  {G H : GroupScheme (Spec (CommRingCat.of F))}
+  [IsAffine G.X.left] [IsAffine H.X.left]
+
+/-- The inclusion of the infinite factor commutes with a group-scheme point map. -/
+theorem map_ofInfinite (j : H ⟶ G) (x : InfiniteAdelicGroupPoints F H) :
+    map F H G j (ofInfinite F H x) =
+      ofInfinite F G (H.affinePointsTarget j (CommAlgCat.of F (InfiniteAdeleRing F)) x) := by
+  have hInf (g : AdelicGroupPoints F H) : infinite F G (map F H G j g) =
+      H.affinePointsTarget j (CommAlgCat.of F (InfiniteAdeleRing F)) (infinite F H g) :=
+    DFunLike.congr_fun (H.affinePointsTarget_naturality j
+      (CommAlgCat.ofHom (AlgHom.fst F (InfiniteAdeleRing F) (FiniteAdeleRing (𝓞 F) F)))) g
+  have hFin (g : AdelicGroupPoints F H) : finite F G (map F H G j g) =
+      H.affinePointsTarget j (CommAlgCat.of F (FiniteAdeleRing (𝓞 F) F)) (finite F H g) :=
+    DFunLike.congr_fun (H.affinePointsTarget_naturality j
+      (CommAlgCat.ofHom (AlgHom.snd F (InfiniteAdeleRing F) (FiniteAdeleRing (𝓞 F) F)))) g
+  apply (split F G).injective
+  simp only [split_apply, hInf, hFin, infinite_ofInfinite, finite_ofInfinite, map_one]
+
+end Langlands.Global.AdelicGroupPoints

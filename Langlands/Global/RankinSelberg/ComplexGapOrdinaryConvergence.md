@@ -3,3 +3,7 @@
 The theorem applies to measurable complex kernels dominated by the split ordinary kernel with the two prescribed large determinant powers. These bounds allow rapid radial weights to be inserted independently. The product uses the actual compatible quotient measure, the two complex general-linear Haar measures, two additive rectangle measures, and compact Haar. A determinant density of the right-tail chart can be included in the fixed tail power in the bound.
 
 The pointwise majorant splits all variables. The logarithmic Iwasawa marginal of the quotient measure has an exponential linear density. Taking the norm of that linear functional as the extra rate in the first-quotient bound leaves an integrable absolute-value exponential against Lebesgue measure. The leading square majorant is integrable from the large determinant exponent. The normalization of the other square majorant compensates exactly for the tail Haar density. The rectangle factors are integrable by choosing their powers above their real dimensions, and the compact Haar measure has finite mass. The product majorant then gives joint absolute integrability.
+
+`integrable_firstTorusDecay` gives the quotient exponential estimate with
+the density functional as an input. The alternate tail chart uses the
+same estimate.

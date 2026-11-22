@@ -24,3 +24,5 @@ This gives the comparison for étaleness and the composition rule.
 
 This is an internal consequence of the localized chart-domain
 isomorphisms and the actual admissible-net localization.
+
+Over a complete nontrivially normed ultrametric field, `exists_recognized_locus_of_affinoid_iso` recognizes the locus of an analytic domain whose localization is isomorphic to an affinoid spectrum. The quasi-isomorphism transports the whole spectrum to the domain, and the domain inclusion transports it into the ambient atlas.

@@ -82,11 +82,13 @@ private theorem upperRectangle_val (Y : X k (n - k)) :
 
 end Entries
 
-private def groupCongr {m n : ℕ} (h : m = n) : G m ≃ᵐ G n := by
+/-- Transport between equal dimensions of the complex general linear group. -/
+def groupCongr {m n : ℕ} (h : m = n) : G m ≃ᵐ G n := by
   subst n
   exact MeasurableEquiv.refl _
 
-private def rectangleCongr (k : ℕ) {m n : ℕ} (h : m = n) : X k m ≃ᵐ X k n := by
+/-- Transport a rectangle along an equality of its column counts. -/
+def rectangleCongr (k : ℕ) {m n : ℕ} (h : m = n) : X k m ≃ᵐ X k n := by
   subst n
   exact MeasurableEquiv.refl _
 
@@ -127,7 +129,8 @@ variable (k q : ℕ)
 local notation "n" => k + q + 1
 local notation "m" => q + 1
 
-private theorem tailSize : m = n - k := by omega
+/-- The count of trailing rows in the consecutive block coordinates. -/
+theorem tailSize : m = n - k := by omega
 
 private theorem primeBlock_eq (hk : 0 < k) (hkn : k < n) (g : G k) (z : G m) :
     diagonalBlocks hk hkn g (groupCongr (tailSize k q) z) = blockSum (g, z) := by
@@ -139,6 +142,13 @@ private theorem upperBlock_eq (hk : 0 < k) (hkn : k < n) (Y : X k m) :
   apply Units.ext
   rw [upperRectangle_val]
   exact reindex_rectangleCongr (tailSize k q) (Nat.add_sub_of_le hkn.le) Y
+
+/-- The general two-block right-tail factor in the consecutive block sizes. -/
+theorem rightTail_eq_consecutive (hk : 0 < k) (hkn : k < n) (z : G m)
+    (Y : X k m) (u : K n) :
+    rightTail hk hkn (groupCongr (tailSize k q) z) (rectangleCongr k (tailSize k q) Y) u =
+      u.val * blockSum (1, z) * (packedTail k q Y 1).val := by
+  rw [rightTail, primeBlock_eq, upperBlock_eq]
 
 /-- The full group chart with explicitly consecutive leading and trailing sizes. -/
 def consecutiveRightChart (p : Coords k m n) : G n :=

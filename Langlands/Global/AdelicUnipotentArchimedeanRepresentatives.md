@@ -1,0 +1,7 @@
+# Compact archimedean representatives for unipotent translates
+
+`AdelicUnipotentArchimedeanRepresentativesStatement` considers a smooth connected affine unipotent group U over a number field and a homomorphism j into an affine group G. Fix a compact set of finite adelic coordinates in G and an open subgroup L of G(𝔸_f). There is a compact set D in the archimedean group of U such that for every u in U(𝔸) there are v in D and q in U(F) with the following property. At each x in G(𝔸) whose finite coordinate lies in the fixed compact set, j(q)j(u)x equals j(v)x times an element of L on the right. Here v and the element of L are included using the product of the infinite and finite adelic groups.
+
+The proof finds an open identity neighbourhood in U(𝔸_f) whose image is conjugated into L by every point of the fixed compact set. Finite-adelic strong approximation gives an open cover of a compact set of rational quotient representatives, indexed by the rational translates whose finite coordinates land in this neighbourhood. A finite subcover yields the compact archimedean set by projecting the corresponding translates. The product decomposition of adelic points moves the finite factor to the right of x, where it belongs to L.
+
+This is a form of the finite-level reduction used for unipotent integration in Mœglin–Waldspurger, §I.2.10, pp. 30–31. It gives a compact set for testing bounds of functions that are invariant under rational unipotent translation on the left and L on the right.

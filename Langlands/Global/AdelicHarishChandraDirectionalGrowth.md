@@ -1,0 +1,9 @@
+# Uniform directional growth of Harish-Chandra components
+
+`AdelicHarishChandraDirectionalGrowthStatement` uses a compatible standard parabolic family over a number field, a positive-rank closed matrix representation, the chosen archimedean differential data, a growth exponent \(R\ge0\), and an open finite right level. Let \(S\) be a continuous complex-linear map from a normed complex space into the uniform-growth Fréchet space at this exponent and level.
+
+For each finite set \(P\) of characters, the actual Harish-Chandra component of \(S(q)\) has continuous linear evaluations in \(q\). Its index is \(P\cap\Delta_0\), where \(\Delta_0\) is the set of simple relative roots. For each input \(q\), the component is continuous, smooth on archimedean slices, fixed at the same finite right level, invariant under the rational minimal parabolic and the adelic unipotent radical of its index, and cuspidal along that index. Each finite word of archimedean right-orbit derivatives is bounded by a word-dependent constant times \(H(x)^R\|q\|\) at all adelic points \(x\), with the same exponent \(R\).
+
+The evaluation is the finite alternating sum of the continuous linear constant-term evaluations. The archimedean slice derivative operators act linearly on the smooth function submodule, so the same holds for each derivative word and the sum. The normalized constant-term growth estimates therefore combine with the original Fréchet seminorm bounds. Containment in each parabolic gives rational minimal-parabolic normalizer invariance, and reverse containment of radicals gives the adelic unipotent invariance term by term. Cuspidality follows from the published alternating-sum identity.
+
+This proves the uniform-family regularity needed for the boundary compactness step of Bernstein–Lapid, §7.4, pp. 216–217, for the Harish-Chandra components of §7.3, pp. 214–215.

@@ -181,7 +181,8 @@ private theorem totalDegree_translateVariable (K : Mat n n) (v : Coordinates m n
   refine (totalDegree_add _ _).trans (max_le ?_ ?_) <;>
     exact (totalDegree_mul _ _).trans (by simp)
 
-private theorem totalDegree_bind₁_le {ι κ : Type*} (f : ι → MvPolynomial κ ℂ)
+/-- Substituting affine polynomials for the variables does not increase total degree. -/
+theorem totalDegree_bind₁_le {ι κ : Type*} (f : ι → MvPolynomial κ ℂ)
     (hf : ∀ i, (f i).totalDegree ≤ 1) (p : MvPolynomial ι ℂ) :
     (bind₁ f p).totalDegree ≤ p.totalDegree := by
   classical

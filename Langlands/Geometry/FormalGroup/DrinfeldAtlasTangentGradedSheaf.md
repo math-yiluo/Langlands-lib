@@ -1,0 +1,7 @@
+# The graded tangent line datum of a special formal atlas
+
+Fix a special formal atlas over an affine nilpotent test ring \(B\), its embedded degree-\(d\) unramified coefficient field, a residue embedding into \(\kappa\) and a residue coordinate \(\kappa\to B/\pi B\). Use the actual tangent overlap module and the images of its split coefficient projectors. Orthogonality and the sum identity make the images a direct sum indexed by \(\mathbb Z/d\mathbb Z\).
+
+The chosen division algebra unit \(\Pi\) satisfies \(\Pi^d=\pi\) and the cyclic commutation relation with an automorphism of the embedded field inducing arithmetic Frobenius on the residue field. With characters indexed by inverse Frobenius, its derivative advances each component by one and has \(d\)-th power equal to scalar multiplication by \(\pi\). The degree advance is checked in every universal chart localization, where evaluation identifies the operator and the projectors with those of the actual chart module.
+
+`SpecialAtlas.tangentLinePiSheaf` associates a sheaf on the affine test scheme to the compatible module, with its uniformizer operator and cyclic grading. The homogeneous sheaves are the associated sheaves of the global tangent projector images and have local line trivializations. This supplies the graded tangent line datum in Drinfeld, *Coverings of p-adic symmetric regions* (1976), §2 B, printed p. 110 (PDF p. 4).

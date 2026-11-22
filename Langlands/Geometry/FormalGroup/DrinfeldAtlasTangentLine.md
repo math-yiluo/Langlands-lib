@@ -1,0 +1,5 @@
+# Tangent line sheaves of a special formal atlas
+
+Fix a special atlas over an affine nilpotent test ring \(B\), its embedded degree-\(d\) unramified coefficient field, a residue embedding into \(\kappa\), and a residue coordinate \(\kappa \to B/\pi B\). A character component of the compatible tangent module is the image of the corresponding projector. Its localization at each chart is the actual special chart component. Finite presentation and flatness descend along the principal cover, so the component is finite and projective over \(B\). Every prime belongs to a chart. The chart component has rank one at the corresponding prime by specialness, and localization preserves that rank.
+
+`SpecialAtlas.tangentComponentSheaf` is the sheaf associated to the compatible component. Finite projectivity and the rank calculation give its local line trivializations. This implements the homogeneous lines in the tangent construction of Drinfeld, *Coverings of p-adic symmetric regions* (1976), §2 B, printed p. 110 (PDF p. 4).

@@ -9,3 +9,9 @@ Apply the Library's irreducibility theorem to each supplied archimedean paramete
 This is an internal derivation for the global Rankin–Selberg argument of J. W. Cogdell, *Analytic Theory of L-Functions for GL(n)*, chapter 9 of Bernstein and Gelbart, eds., *An Introduction to the Langlands Program*, Birkhäuser, 2004. Theorem 4.1 gives the equal-rank normalized product at printed p. 219 (PDF p. 222). The pointwise nonvanishing and pole argument is in §4.2, printed pp. 221–222 (PDF pp. 224–225). The ordinary local integral and normalized generation premises follow the formulation in H. Jacquet, *Archimedean Rankin–Selberg Integrals*, 2009, display (2.6), Theorem 2.1(ii), Remark 2.2, and Theorems 2.6(ii) and 2.7(ii), author PDF pp. 6–10.
 
 `exists_coveringEqualPureTest_of_local_at` invokes real generation only for an actual real place of the field. The all-rank interface supplies that premise at every field.
+
+The prescribed-tuple entry point `exists_normalizedEqualPureTest_of_prescribed`
+performs the same assembly for any given local normalized ordinary tests.
+It retains the exact product of their normalized values up to its nonzero
+scalar. The covering theorem selects a tuple at each spectral point and
+then applies this entry point.

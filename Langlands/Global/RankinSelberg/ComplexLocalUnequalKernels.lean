@@ -119,14 +119,24 @@ theorem complexRectangularPoint_mul_left (u g : GL[t]) (x : Rect) :
 variable {d d' : List ComplexCharacterData} {a : ℂˣ}
 variable {W : GL[r] → ℂ} {W' : GL[t] → ℂ}
 
+/-- The product of opposite Whittaker characters still cancels after fixed right
+translations of both factors. -/
+theorem complexUnequalTranslatedProduct_unipotent_mul
+    (hW : W ∈ complexWhittakerModel r d a) (hW' : W' ∈ complexWhittakerModel t d' (-a))
+    (u : Unip[t]) (g b' : GL[t]) (b : GL[r]) :
+    W (padGL (Nat.succ_le_succ h.le) (u.val * g) * b) * W' ((u.val * g) * b') =
+      W (padGL (Nat.succ_le_succ h.le) g * b) * W' (g * b') := by
+  rw [map_mul, mul_assoc, mul_assoc u.val, complexWhittakerModel_left_equivariant hW _
+      (padGL_mem_upperUnipotent h u),
+    complexWhittakerModel_left_equivariant hW' _ u.2, complexWhittakerCharacter_padGL a h u,
+    mul_mul_mul_comm, complexWhittakerCharacter_mul_neg, one_mul]
+
 private theorem complexUnequalProduct_unipotent_mul
     (hW : W ∈ complexWhittakerModel r d a) (hW' : W' ∈ complexWhittakerModel t d' (-a))
     (u : Unip[t]) (g : GL[t]) :
     W (padGL (Nat.succ_le_succ h.le) (u.val * g)) * W' (u.val * g) =
       W (padGL (Nat.succ_le_succ h.le) g) * W' g := by
-  rw [map_mul, complexWhittakerModel_left_equivariant hW _ (padGL_mem_upperUnipotent h u),
-    complexWhittakerModel_left_equivariant hW' _ u.2, complexWhittakerCharacter_padGL a h u,
-    mul_mul_mul_comm, complexWhittakerCharacter_mul_neg, one_mul]
+  simpa only [mul_one] using complexUnequalTranslatedProduct_unipotent_mul h hW hW' u g 1 1
 
 private theorem complexUnequalDualProduct_unipotent_mul
     (hW : W ∈ complexWhittakerModel r d a) (hW' : W' ∈ complexWhittakerModel t d' (-a))

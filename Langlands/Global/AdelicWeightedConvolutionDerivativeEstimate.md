@@ -1,0 +1,7 @@
+# A common growth exponent for weighted convolution derivatives
+
+`AdelicWeightedConvolutionDerivativeEstimateStatement` bounds every archimedean enveloping derivative of adelic right convolution with one exponent of the representation height. The exponent is chosen for the polynomial bound on the weight before the compact set of finite components, the test kernel and the enveloping element. The coefficient can depend on the three latter choices. At the evaluation point the finite coordinate must belong to the prescribed compact set and the Iwasawa heights of the translated kernel support must lie in the supplied measurable region. The input is measurable, locally Haar-integrable and left invariant under the principal parabolic subgroup. Its norm is the weighted fundamental-domain norm for that region.
+
+The proof transfers the enveloping element to a differentiated test kernel supported in the original compact set. Continuity and compact support give its square integrability. The weighted pointwise bound on the original compact set then applies with its common exponent. The differentiated kernel's square-integrable norm enters the coefficient.
+
+This is a derived form of the derivative estimate used in the smooth part of Bernstein–Lapid, §7.4, Lemma (2), p. 216. The Lean result uses a supplied translated-support containment and the ambient fundamental-domain norm. It prepares the estimate on Siegel representatives for the uniform-growth Fréchet space.

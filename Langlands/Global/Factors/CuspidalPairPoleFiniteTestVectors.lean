@@ -1,4 +1,5 @@
 import Langlands.Global.Factors.CuspidalPairPoleFiniteIntegrals
+import Langlands.Global.Factors.CuspidalPairPoleStripSums
 import Langlands.Global.RankinSelberg.EqualFiniteWhittakerTests
 import Langlands.Global.RankinSelberg.PadicOrdinaryNormalization
 
@@ -148,5 +149,71 @@ theorem exists_poleFiniteUnequalTest {k : ℕ} (hr : r = t + (0 + k + 1))
   let rValue := (⟨R, mem_zetaSpan R.property⟩ : zetaSpan _)
   exact ⟨⟨left, right, DL, DR⟩, ordinaryNormalizationOfRationalContinuation hGen hq rValue hI,
     hR, ordinaryNormalizationOfRationalContinuation_strip_bound hGen hq rValue hI⟩
+
+/-- The Laurent combination of the prescribed finite pair factor is realized
+by normalized tests on the exact local factors of both presentations. -/
+def PoleFiniteBoundedTestFamiliesStatement : Prop :=
+  IsTrivialOnSplitCentre T → IsTrivialOnSplitCentre T' →
+  (∀ hr : r = t,
+    ∃ (I : Type) (D : I → PoleFiniteTestVectors v ψ P P')
+      (Φ : I → SchwartzBruhat (Fin (t + 1) → (padicField v).Carrier))
+      (N : ∀ i, OrdinaryIntegralNormalization
+        (equalRankIntegral ψ abv (μ t) (hr ▸ (D i).left) (D i).right (Φ i)) (c.finiteL v)),
+      HasBoundedNormalizedSum (fun i => (N i).value)) ∧
+  ∀ (k : ℕ) (hr : r = t + (0 + k + 1)),
+    ∃ (I : Type) (D : I → PoleFiniteTestVectors v ψ P P')
+      (N : ∀ i, OrdinaryIntegralNormalization
+        (unequalRankIntegralAt 0 k hr ψ abv (μ t) (rectangularMeasure ν.val 0 (t + 1))
+          (D i).left (D i).right) (c.finiteL v)),
+      HasBoundedNormalizedSum (fun i => (N i).value)
+
+private abbrev generatorValues {values : Set RationalFunctions} {p : Polynomial ℂ}
+    (_ : IsNormalizedGenerator values p) : Set RationalFunctions :=
+  values
+
+set_option maxHeartbeats 5000000 in
+set_option backward.isDefEq.respectTransparency false in
+include ν in
+theorem poleFiniteBoundedTestFamilies : PoleFiniteBoundedTestFamiliesStatement v ψ c ν := by
+  intro hT hT'
+  have hq := (padicField v).canonicalTopologicalData.residueCardinality_gt_one
+  have hω := cuspidalSplitCentreUnitaryCentralCharacter F r T hT
+  have hω' := cuspidalSplitCentreUnitaryCentralCharacter F t T' hT'
+  constructor
+  · intro hr
+    subst r
+    have hPoly := (isPadicSymmetricLPolynomial_of_le (le_refl t)).mp (c.isIntegralPolynomialAt v ψ ν hT hT')
+    have hGen := hPoly.normalizedGenerator_ordinaryEqual
+    let I := generatorValues hGen
+    have hTests (R : I) : ∃ (D : PoleFiniteTestVectors v ψ P P')
+        (Φ : SchwartzBruhat (Fin (t + 1) → (padicField v).Carrier))
+        (N : OrdinaryIntegralNormalization (equalRankIntegral ψ abv (μ t) D.left D.right Φ) (c.finiteL v)),
+        N.value = fun s => laurentEval (spectralUnit (Nat.zero_lt_one.trans hq) s)
+          (hGen.normalizedLaurent ⟨R, mem_zetaSpan R.property⟩) := by
+      obtain ⟨left, hleft, right, hright, Φ, _, hI⟩ := R.property
+      obtain ⟨⟨DL⟩, ⟨DR⟩⟩ := exists_factor_coefficients (h := h) (h' := h') v ψ hω hω'
+        left hleft right hright
+      exact ⟨⟨left, right, DL, DR⟩, Φ,
+        ordinaryNormalizationOfRationalContinuation hGen hq ⟨R, mem_zetaSpan R.property⟩ hI, rfl⟩
+    choose D Φ N hN using hTests
+    exact ⟨I, D, Φ, N, by simpa only [hN] using hasBoundedNormalizedSum_of_normalizedGenerator hGen hq⟩
+  · intro k hr
+    subst r
+    have hle : t ≤ t + (0 + k + 1) := by omega
+    have hPoly := (isPadicSymmetricLPolynomial_of_le hle).mp (c.isIntegralPolynomialAt v ψ ν hT hT')
+    have hGen := hPoly.normalizedGenerator_ordinaryUnequal
+    let I := generatorValues hGen
+    have hTests (R : I) : ∃ (D : PoleFiniteTestVectors v ψ P P')
+        (N : OrdinaryIntegralNormalization
+          (unequalRankIntegralAt 0 k rfl ψ abv (μ t) (rectangularMeasure ν.val 0 (t + 1)) D.left D.right)
+          (c.finiteL v)), N.value = fun s => laurentEval (spectralUnit (Nat.zero_lt_one.trans hq) s)
+            (hGen.normalizedLaurent ⟨R, mem_zetaSpan R.property⟩) := by
+      obtain ⟨left, hleft, right, hright, _, hI⟩ := R.property
+      obtain ⟨⟨DL⟩, ⟨DR⟩⟩ := exists_factor_coefficients (h := h) (h' := h') v ψ hω hω'
+        left hleft right hright
+      exact ⟨⟨left, right, DL, DR⟩,
+        ordinaryNormalizationOfRationalContinuation hGen hq ⟨R, mem_zetaSpan R.property⟩ hI, rfl⟩
+    choose D N hN using hTests
+    exact ⟨I, D, N, by simpa only [hN] using hasBoundedNormalizedSum_of_normalizedGenerator hGen hq⟩
 
 end Langlands.Global.CuspidalPairPoles

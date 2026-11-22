@@ -16,14 +16,15 @@ private theorem identityProportionality : ComplexJacquetIdentityProportionality 
   obtain ⟨c, hc⟩ := (ComplexJacquetMultiplicityOne.complexJacquetMultiplicityOne r μ a l p).1 B hB
   exact ⟨c, fun f => congrArg (fun T => T f 1) hc⟩
 
-/-- The equal-rank local complex equation for the published compact-finite Whittaker models. -/
-theorem complexLocalEqualFunctionalEquation : ComplexLocalEqualFunctionalEquationStatement := by
-  apply complexLocalEqualGrowthReduction
-  show ∀ r, ComplexLocalEqualGrowthAtRank r
-  intro r
+/-- The entire equal-rank pair at the standard trace character has exponential strip growth. -/
+theorem complexLocalEqualStandardGrowth (r : ℕ) : ComplexLocalEqualGrowthAtRank r := by
   induction r with
   | zero => exact complexLocalEqualRankZeroGrowth
   | succ r ih =>
       exact complexLocalEqualGrowthStep identityProportionality (complexAdjacentFromEqualGrowth r ih)
+
+/-- The equal-rank local complex equation for the published compact-finite Whittaker models. -/
+theorem complexLocalEqualFunctionalEquation : ComplexLocalEqualFunctionalEquationStatement :=
+  complexLocalEqualGrowthReduction complexLocalEqualStandardGrowth
 
 end Langlands.Global.RankinSelbergGlobal

@@ -32,15 +32,6 @@ private theorem infinite_map_apply (g : AdelicGroupPoints F P) :
   DFunLike.congr_fun (P.affinePointsTarget_naturality p
     (CommAlgCat.ofHom (AlgHom.fst F (InfiniteAdeleRing F) (FiniteAdeleRing (𝓞 F) F)))) g
 
-omit [IsClosedImmersion p.hom.hom.left] in
-private theorem map_ofInfinite_apply (a : InfiniteAdelicGroupPoints F P) :
-    map F P G p (ofInfinite F P a) =
-      ofInfinite F G (P.affinePointsTarget p (CommAlgCat.of F (InfiniteAdeleRing F)) a) := by
-  apply (split F G).injective
-  change (infinite F G _, finite F G _) = (infinite F G _, finite F G _)
-  rw [infinite_map_apply, finite_map, infinite_ofInfinite, finite_ofInfinite, infinite_ofInfinite,
-    finite_ofInfinite, map_one]
-
 /-- The finite displacement is invariant under the left parabolic action. -/
 theorem finiteHeightDisplacement_map_mul (d : FinitePoints)
     (q : AdelicGroupPoints F P) (g : Adeles) :
@@ -65,7 +56,7 @@ theorem finiteHeightDisplacement_pair (hInf : ∀ k ∈ K, ofInfinite F G (infin
   rw [map_mul, infinite_map_apply, infinite_ofInfinite] at hinf
   have heq : ofInfinite F G a =
       map F P G p (ofInfinite F P (infinite F P q)) * ofInfinite F G (infinite F G k) := by
-    rw [map_ofInfinite_apply, ← map_mul, hinf]
+    rw [map_ofInfinite, ← map_mul, hinf]
   have hpair : pair F G a b = ofInfinite F G a * ofFinite F G b := by
     rw [ofInfinite_eq_pair, ofFinite_eq_pair, pair_mul, mul_one, one_mul]
   rw [hpair, heq, mul_assoc, (factors_commute F G (infinite F G k) b).eq,

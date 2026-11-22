@@ -1,0 +1,7 @@
+# Translation coordinates for the local-finiteness system
+
+`LocalFinitenessTorusCoordinatesStatement` uses the actual maximal split torus \(T\) and the group data of \(\Xi_{\mathrm{main}}\) for a connected reductive group over a number field. On the real character dual of \(T\), it gives continuous linear coordinates indexed by the simple relative roots and the supplied central directions. A root coordinate is the log evaluation at the root divided by its positive log step on the prescribed translation. The central coordinates vanish together exactly when the ambient group character logarithm vanishes.
+
+The logarithm of each prescribed maximal-parabolic translation has one unit coordinate at its own root and zero in the other coordinates. Each prescribed central translation has one unit coordinate at its central index and zero elsewhere. Joint spanning of the simple roots and the ambient rational characters restricted to \(T\) gives injectivity of the coordinate map. The translations supply all the coordinate vectors, which gives surjectivity. The ambient central coordinate map uses the given basis of the real ambient character dual. Finite dimensionality gives continuity of the linear equivalence and its inverse.
+
+These coordinates use the exact translations in Bernstein–Lapid, §7.2, pp. 211–212. They put the root and central shifts of the weighted slab equations in §7.5 and §7.7 into independent coordinate directions.

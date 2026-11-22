@@ -132,6 +132,14 @@ private theorem integrable_compactTriangular (κ : Measure K) [IsFiniteMeasure �
   rw [norm_mul, Real.rpow_neg (by positivity), Real.rpow_natCast, mul_assoc]
   exact mul_le_mul (hd p.1) hΦ' (norm_nonneg _) (le_max_right _ _)
 
+/-- Every fixed-diagonal upper triangular slice of a square Schwartz test is integrable. -/
+theorem integrable_upperTriangularSlice (Φ : 𝓢(Mat, ℂ)) (d : Z) :
+    Integrable (fun u : X => Φ (upperTriangularEntries d u)) volume := by
+  have h := (integrable_compactTriangular (Measure.dirac (1 : K))
+    (fun _ => 1) continuous_const Φ d).prod_right_ae
+  rw [ae_dirac_eq] at h
+  simpa only [Filter.eventually_pure, OneMemClass.coe_one, Units.val_one, mul_one, one_mul] using h
+
 private theorem upperMarginal_rightAverage (κ : Measure K) [IsFiniteMeasure κ]
     (w : K → ℂ) (hw : Continuous w) (Φ : 𝓢(Mat, ℂ)) (a : ℂˣ) (d : Z) :
     upperMarginal a (rightAverage κ w hw Φ) d =

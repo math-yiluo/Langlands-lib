@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.AffineBaseChangeCoherence
 import Langlands.Geometry.FormalGroup.PDivisibleRationalBaseChange
 import Langlands.AbelianScheme.Tate.BaseChangeCoherence
 import Langlands.GroupScheme.Torus.SplitLatticeBaseChange
@@ -65,27 +66,12 @@ section Composition
 
 variable [Algebra R S] [Algebra S T] [Algebra R T] [IsScalarTower R S T]
 
-private theorem specBase_comp : specBase R T = specBase S T ≫ specBase R S := by
-  rw [← Spec.map_comp, ← CommRingCat.ofHom_comp, ← IsScalarTower.algebraMap_eq]
-
-private def levelBaseChangeCompNatIso :
-    CommGroupScheme.baseChange (specBase R T) ≅
-      CommGroupScheme.baseChange (specBase R S) ⋙ CommGroupScheme.baseChange (specBase S T) :=
-  eqToIso (congrArg CommGroupScheme.baseChange (specBase_comp (R := R) (S := S) (T := T))) ≪≫
-  NatIso.ofComponents (fun G => GroupScheme.CommGroupScheme.isoOfGroupIso
-    (GroupScheme.baseChangeCompIso (specBase R S) (specBase S T) G.toGrp))
-    (by
-      intro G H f
-      exact congrArg Additive.ofMul
-        ((Functor.mapGrpNatIso (Over.pullbackComp (specBase S T) (specBase R S)) ≪≫
-          Functor.mapGrpCompIso).hom.naturality f.toMul))
-
 /-- A direct pullback is isomorphic to the successive pullback of the actual tower. -/
 def baseChangeCompIso (G : PDivisibleGroup (CommRingCat.of R) p) :
     (baseChangeFunctor R T p).obj G ≅ (baseChangeFunctor R S p ⋙ baseChangeFunctor S T p).obj G := by
   let H₁ := (baseChangeFunctor R T p).obj G
   let H₂ := (baseChangeFunctor R S p ⋙ baseChangeFunctor S T p).obj G
-  let e := levelBaseChangeCompNatIso (R := R) (S := S) (T := T)
+  let e := CommGroupScheme.affineBaseChangeCompNatIso (R := R) (S := S) (T := T)
   let e' : H₁.inclusions ≅ H₂.inclusions := NatIso.ofComponents
     (fun n => e.app (G.inclusions.obj n)) (fun i => e.hom.naturality (G.inclusions.map i))
   exact isoOfInclusionDiagrams (G := H₁) (H := H₂) e'
@@ -98,7 +84,7 @@ def baseChangeCompNatIso (R S T : Type u) [CommRing R] [CommRing S] [CommRing T]
     intro G H f
     apply Hom.ext
     intro n
-    exact (levelBaseChangeCompNatIso (R := R) (S := S) (T := T)).hom.naturality (f.app n))
+    exact (CommGroupScheme.affineBaseChangeCompNatIso (R := R) (S := S) (T := T)).hom.naturality (f.app n))
 
 end Composition
 

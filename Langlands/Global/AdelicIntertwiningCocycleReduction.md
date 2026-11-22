@@ -175,10 +175,7 @@ transfers it back in step 8.
 
 ## Helper lemmas
 
-The private sections reproduce helper lemmas written by Worker 587 in their
-draft for Task 5502 (the functional equation). They are copied here as
-private declarations, in the original namespaces so that dot notation works.
-If the originals are published later, the names do not clash.
+The meromorphic-function arguments use helpers from the functional-equation development. The Weyl-parameter equivalence and the regular-region proofs come from `AdelicWeylParameterEquivalence` and `AdelicEisensteinRegularRegion`.
 
 - *Scalar meromorphic functions* (`Langlands.Analysis.Meromorphic`):
   - weak holomorphy of scalar functions is complex differentiability;
@@ -195,7 +192,7 @@ If the originals are published later, the names do not clash.
   - restriction of rational characters to a rational Levi subgroup is
     bijective;
   - `exists_weylParameter_linearEquiv`.
-- *Regular regions* (`Langlands.GroupScheme.ParabolicRootPresentation`):
+- *Regular regions* from [the regular-parameter module](AdelicEisensteinRegularRegion.md)
   - finiteness of the unipotent roots;
   - the regular region is open in every chart;
   - surjectivity of the real-part and restriction maps;
