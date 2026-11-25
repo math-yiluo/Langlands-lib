@@ -12,6 +12,8 @@ The topology and adjunction modules are checked against the commits at which the
 in the Library (below); their Lean and Markdown files there match the present ones.
 The section on weight estimates records later results checked at Library
 `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
+The final section records the scalar and common-Levi comparisons at
+`b304c4f466feb1c522f6ac175d373bc1a9cab490`.
 
 This note lists the Library modules that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
@@ -825,3 +827,105 @@ proper-Levi cuspidality criterion, an invariant finite-support
 Fourier lift, and the VII.2.5 identity on the actual synthesis
 image. The general VIII.4.1 finite-level conclusion remains a
 premise of the published cuspidal separation theorem.
+
+## The unitary scalar and common-Levi comparisons
+
+- `Langlands.Plancherel.conditionalDynamicOppositeUnitaryScalar` proves
+  `ConditionalDynamicOppositeUnitaryScalarStatement`. It gives nonvanishing
+  of \(j_P\) as a rational function and regularity and nonnegativity of
+  \(j_P^{-1}\) at every unitary unramified character. This is the opposite
+  scalar input from IV.3(6) to the regularity and positivity clauses of
+  V.2.1, printed pp. 287 and 292–293. The theorem uses the actual
+  open compact with both opposite Iwasawa factorizations, the forward
+  and reverse continuations with their convergence regions, a nonempty
+  open generic-irreducibility locus, and square integrability with the
+  specified central-quotient Haar measure and finite-index condition.
+  The root-reflection and central-torus character premises have the
+  dischargers listed above. `plancherelDensity_unitaryRegular` carries an
+  inverse-scalar regularity proof to the density at the same
+  normalization.
+  [Opposite scalar proof](../../Langlands/Representation/Plancherel/DynamicOppositeUnitaryScalarProof.md)
+  [Unitary density comparison](../../Langlands/Representation/Plancherel/RationalUnitaryRegularValue.md)
+
+- `Langlands.Plancherel.ActualCommonLeviV3.closedV31` proves the
+  same-Levi `ClosedV31Statement` for V.3.1, printed p. 295. Its input
+  representations are irreducible and square integrable modulo the
+  actual split center with the given inversion-invariant quotient Haar
+  measure. For two parabolics with the literal common Levi and Iwasawa
+  factorizations at one compact, the proof constructs the continued
+  comparisons for the inducing representation and its smooth
+  contragredient. The resulting regular unitary family preserves the
+  actual coefficient map and formal-degree form.
+  [Common-Levi comparison](../../Langlands/Representation/Plancherel/ActualCommonLeviV3Proof.md)
+
+- `Langlands.Plancherel.ActualCommonLeviCoherence.closedCommonLeviCoherence`
+  proves the identity, composition, inverse and presentation-independence
+  laws for these literal common-Levi comparisons. It uses the pairwise
+  theorem and dense unitary irreducibility. For translated comparisons,
+  `ActualConjugateLeviV3.ClosedV31Statement` specifies the family with the
+  source compact and the transported quotient Haar measure.
+  `ActualConjugateLeviCoherence.ClosedV32Statement` specifies existence
+  and coherence of comparisons with actual conjugation and the same
+  source normalization.
+  [Common-Levi coherence](../../Langlands/Representation/Plancherel/ActualCommonLeviCoherenceProof.md)
+  [Translated comparison](../../Langlands/Representation/Plancherel/ActualConjugateLeviV3Statement.md)
+  [Translated coherence](../../Langlands/Representation/Plancherel/ActualConjugateLeviCoherenceStatement.md)
+
+### Association representatives in VII.2.4
+
+`Langlands.HarishChandraSchwartz.RationalSemistandard.Association.associationFormula_of_transport`
+proves `AssociationFormulaStatement` under the premises below. It
+rewrites the synthesis and Hermitian form of finite-support invariant
+families as sums over arbitrary actual association representatives.
+Both sums have the coefficient
+\[
+ c(G\mid M)^{-2}\gamma(G\mid M)^{-1}/|\operatorname{Stab}(\mathcal O,M)|.
+\]
+`card_association_mul_unquotientedWeight` identifies this coefficient
+with the unquotiented coefficient multiplied by the size of the
+association class. The two sums are those of Waldspurger Remark VII.2.4,
+printed p. 320 (PDF p. 86).
+[Association formulas](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardAssociationFormula.md)
+[Association count](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardAssociationCount.md)
+
+- `WeylSectionComparisonData` fixes the cocharacter presentations and
+  the intrinsic source normalization at each orbit. Its
+  `closedSectionComparison` field supplies `ClosedSectionComparisonStatement`
+  for every actual compact lift of a Weyl transporter. That statement gives
+  the regular comparison on fibres and the smooth section equivalence
+  respecting compact levels. The comparison data supplies a lift reaching
+  each associated index, and invariance identifies that index's component
+  with the transported section.
+  [Comparison data](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardInvariantComparison.md)
+  [Section comparison](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardWeylSectionStatement.md)
+- `OrbitPacketData` at the chosen base of each orbit supplies the two
+  opposite-parabolic factorizations, the continued standard operators
+  with their open convergence regions, the generic irreducibility region
+  and full-unitary regularity of the inverse of their canonical composition
+  scalar. It also includes the structural reflection and character inputs
+  for that scalar. The orbit measure construction uses
+  `(RenardCartan.splitValuationImage (a p)).FiniteIndex` for the split
+  component of every intrinsic Levi.
+  [Packet data and synthesis](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardWeightedSynthesis.md)
+- The chosen maximal split torus and generic cocharacter carry
+  `SpecialCompactProperties` at the same compact open `K0`. The explicit
+  equalities `(d p).compact = K0` and `(Q t).compact = K0` for every
+  semistandard index `p` and orbit index `t` tie the coefficient and
+  packet compact pictures to it. The split-central quotients use their
+  Borel Haar measures with inversion invariance.
+  `IntrinsicQuotientNormalization` normalizes each quotient Haar measure
+  using the compact restricted to that Levi.
+  [Common normalization](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardComparisonHaar.md)
+- `SemistandardSpectralDynamicCoverageStatement` presents every
+  semistandard index via a cocharacter.
+  `SemistandardSpectralFiberFinitenessStatement` gives finite nonempty
+  fibres of parabolics at each literal semistandard Levi.
+  `SourceConstantParabolicIndependenceStatement` supplies equality of
+  \(\gamma(G\mid M)\) and \(c(G\mid M)\) for presentations of the same
+  Levi, from Waldspurger I.1(3), printed pp. 240–241 (PDF pp. 6–7).
+  `CoefficientTransportStatement`, `DensityTransportStatement` and
+  `PairingTransportStatement` supply the three one-orbit transport laws
+  used to make the packet and form summands constant on association classes.
+  [Semistandard index](../../Langlands/GroupScheme/Rational/SemistandardSpectralIndex.md)
+  [Source constants](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardSourceConstants.md)
+  [Orbit transport](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardOrbitIntegralTransport.md)
